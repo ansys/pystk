@@ -30,7 +30,10 @@ dependencies = [
 name = "ansys.stk.core"
 
 [project.urls]
+Homepage = "https://www.ansys.com/products/missions/ansys-stk"
+Documentation = "https://stk.docs.pyansys.com/"
 Source = "https://github.com/pyansys/pystk"
+Tracker = "https://github.com/pyansys/pystk/issues"
 
 [tool.black]
 line-length = 80
