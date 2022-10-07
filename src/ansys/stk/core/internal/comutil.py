@@ -1,0 +1,479 @@
+# Copyright 2020-2020, Analytical Graphics, Inc. 
+
+import os
+import typing
+
+from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_byte, c_ubyte, c_wchar_p, c_double, c_float, c_bool
+from ctypes import POINTER, Structure, Union, byref, cast, pointer
+
+
+###############################################################################
+#   COM Types
+###############################################################################
+BSTR = c_wchar_p
+BYTE = c_ubyte
+CHAR = c_ubyte
+DOUBLE = c_double
+DWORD = c_ulong
+INT = c_int
+LONG = c_int #don't use c_long because of cross-platform size differences
+FLOAT = c_float
+HRESULT = c_int
+LONGLONG = c_longlong
+LPCOLESTR = c_wchar_p
+LPCVOID = c_void_p
+LPOLESTR = c_wchar_p
+LPVOID = c_void_p
+LPCWSTR = c_wchar_p
+LPWSTR = c_wchar_p
+OLESTR = c_wchar_p
+PVOID = c_void_p
+SHORT = c_short
+UINT = c_uint
+ULONG = c_uint #don't use c_long because of cross-platform size differences
+ULONGLONG = c_ulonglong
+USHORT = c_ushort
+VARIANT_BOOL = c_short
+VARTYPE = c_int
+WORD = c_ushort
+BOOL = c_bool
+
+DATE = DOUBLE
+DISPID = LONG
+LCID = DWORD
+OLE_COLOR = ULONG
+OLE_HANDLE = UINT
+OLE_XPOS_PIXELS = LONG
+OLE_YPOS_PIXELS = LONG
+SAFEARRAY = PVOID
+LPSTREAM = PVOID
+
+
+###############################################################################
+#   Constants
+###############################################################################
+# CLSCTX Enumeration
+CLSCTX_INPROC_SERVER = 1
+CLSCTX_LOCAL_SERVER = 0x4
+
+# COINIT enumeration
+COINIT_APARTMENTTHREADED = 0x2
+
+# HRESULT values
+S_OK                = 0
+E_NOTIMPL           = 0x80004001
+E_NOINTERFACE       = 0x80004002
+CO_E_NOTINITIALIZED = 0x800401F0
+
+# Numeric Limits
+ULLONG_MAX =  0xffffffffffffffff
+LLONG_MAX  =  9223372036854775807
+LLONG_MIN  = -9223372036854775808
+LONG_MAX   =  2147483647
+LONG_MIN   = -2147483648
+
+# VARIANT_BOOL
+VARIANT_FALSE = VARIANT_BOOL(0)
+VARIANT_TRUE = VARIANT_BOOL(-1)
+
+# VARIANT Types
+VT_EMPTY           = 0x0000
+VT_NULL            = 0x0001
+VT_I2              = 0x0002
+VT_I4              = 0x0003
+VT_R4              = 0x0004
+VT_R8              = 0x0005
+VT_CY              = 0x0006
+VT_DATE            = 0x0007
+VT_BSTR            = 0x0008
+VT_DISPATCH        = 0x0009
+VT_ERROR           = 0x000A
+VT_BOOL            = 0x000B
+VT_VARIANT         = 0x000C
+VT_UNKNOWN         = 0x000D
+VT_DECIMAL         = 0x000E
+VT_I1              = 0x0010
+VT_UI1             = 0x0011
+VT_UI2             = 0x0012
+VT_UI4             = 0x0013
+VT_I8              = 0x0014
+VT_UI8             = 0x0015
+VT_INT             = 0x0016
+VT_UINT            = 0x0017
+VT_VOID            = 0x0018
+VT_HRESULT         = 0x0019
+VT_PTR             = 0x001A
+VT_SAFEARRAY       = 0x001B
+VT_CARRAY          = 0x001C
+VT_USERDEFINED     = 0x001D
+VT_LPSTR           = 0x001E
+VT_LPWSTR          = 0x001F
+VT_INT_PTR         = 0x0025
+VT_UINT_PTR        = 0x0026
+VT_ARRAY           = 0x2000
+VT_BYREF           = 0x4000
+
+
+###############################################################################
+#   COM Structures
+###############################################################################
+class GUID(Structure):
+    _fields_ = [("Data1", BYTE*4), ("Data2", BYTE*2), ("Data3", BYTE*2), ("Data4", BYTE*8)]
+    def __init__(self, name=None):
+        if name is not None:
+            CLSIDFromString(str(name), byref(self))
+    def __eq__(self, other):
+        are_equal = True
+        if self.Data1[0] != other.Data1[0]: are_equal = False
+        if self.Data1[1] != other.Data1[1]: are_equal = False
+        if self.Data1[2] != other.Data1[2]: are_equal = False
+        if self.Data1[3] != other.Data1[3]: are_equal = False
+        if self.Data2[0] != other.Data2[0]: are_equal = False
+        if self.Data2[1] != other.Data2[1]: are_equal = False
+        if self.Data3[0] != other.Data3[0]: are_equal = False
+        if self.Data3[1] != other.Data3[1]: are_equal = False
+        if self.Data4[0] != other.Data4[0]: are_equal = False
+        if self.Data4[1] != other.Data4[1]: are_equal = False
+        if self.Data4[2] != other.Data4[2]: are_equal = False
+        if self.Data4[3] != other.Data4[3]: are_equal = False
+        if self.Data4[4] != other.Data4[4]: are_equal = False
+        if self.Data4[5] != other.Data4[5]: are_equal = False
+        if self.Data4[6] != other.Data4[6]: are_equal = False
+        if self.Data4[7] != other.Data4[7]: are_equal = False
+        return are_equal
+    def __str__(self):
+        return '{{{:02X}{:02X}{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}{:02X}{:02X}{:02X}{:02X}}}'.format(
+            self.Data1[3],
+            self.Data1[2],
+            self.Data1[1],
+            self.Data1[0],
+            self.Data2[1],
+            self.Data2[0],
+            self.Data3[1],
+            self.Data3[0],
+            self.Data4[0],
+            self.Data4[1],
+            self.Data4[2],
+            self.Data4[3],
+            self.Data4[4],
+            self.Data4[5],
+            self.Data4[6],
+            self.Data4[7])
+
+IID = GUID
+REFIID = POINTER(IID)
+            
+class varUnion(Union):
+    # GCC throws an error when trying to marshall ctypes.Union to C++ methods. Therefore the VARIANT class
+    # only has a raw buffer that is equivalent in size to the varUnion.
+    _fields_ = [
+                ("buffer", BYTE*16),
+                ("llVal", LONGLONG), #VT_I8
+                ("lVal", LONG), #VT_I4
+                ("bVal", BYTE), #VT_UI1
+                ("iVal", SHORT), #VT_I2
+                ("fltVal", FLOAT), #VT_R4
+                ("dblVal", DOUBLE), #VT_R8
+                ("boolVal", VARIANT_BOOL), #VT_BOOL
+                ("bstrVal", BSTR), #VT_BSTR
+                ("punkVal", PVOID), #VT_UNKNOWN
+                ("parray", SAFEARRAY), #VT_ARRAY
+                ("pbVal", POINTER(BYTE)), #VT_UI1|VT_BYREF
+                ("piVal", POINTER(SHORT)), #VT_I2|VT_BYREF
+                ("plVal", POINTER(LONG)), #VT_I4|VT_BYREF
+                ("pllVal", POINTER(LONGLONG)), #VT_I8|VT_BYREF
+                ("pfltVal", POINTER(FLOAT)), #VT_R4|VT_BYREF
+                ("pdblVal", POINTER(DOUBLE)), #VT_R8|VT_BYREF
+                ("pboolVal", POINTER(VARIANT_BOOL)), #VT_BOOL|VT_BYREF
+                ("pbstrVal", POINTER(BSTR)), #VT_BSTR|VT_BYREF
+                ("ppunkVal", POINTER(PVOID)), #VT_UNKNOWN|VT_BYREF
+                ("pparray", POINTER(SAFEARRAY)), #VT_ARRAY|VT_BYREF
+                ("cVal", CHAR), #VT_I1
+                ("uiVal", USHORT), #VT_UI2
+                ("ulVal", ULONG), #VT_UI4
+                ("ullVal", ULONGLONG), #VT_UI8
+                ("intVal", INT), #VT_INT
+                ("uintVal", UINT), #VT_UINT
+                ("pcVal", POINTER(CHAR)), #VT_I1|VT_BYREF
+                ("puiVal", POINTER(USHORT)), #VT_UI2|VT_BYREF
+                ("pulVal", POINTER(ULONG)), #VT_UI4|VT_BYREF
+                ("pullVal", POINTER(ULONGLONG)), #VT_UI8|VT_BYREF
+                ("pintVal", POINTER(INT)), #VT_INT|VT_BYREF
+                ("puintVal", POINTER(UINT)), #VT_UINT|VT_BYREF
+                ("pvarVal", POINTER(PVOID)), #VT_VARIANT|VT_BYREF
+                ("scode", HRESULT), #VT_ERROR
+                ("pscode", POINTER(HRESULT)), #VT_ERROR|VT_BYREF
+                ("pdispVal", PVOID), #VT_DISPATCH
+                ("ppdispVal", POINTER(PVOID)) #VT_DISPATCH|VT_BYREF
+               ]
+                
+class VARIANT(Structure):
+    # Copy a varUnion into the buffer to get the correct data.
+    _fields_ = [("vt", WORD), ("wReserved1", WORD), ("wReserved2", WORD), ("wReserved3", WORD), ("buffer", BYTE*16)]
+    def __init__(self):
+        # To initialize VARIANT from python data, use marshall.VARIANT_from_python_data
+        pass
+    
+class SAFEARRAYBOUND(Structure):
+    _fields_ = [("cElements", ULONG), ("lLbound", LONG)]
+    
+class DISPPARAMS(Structure):
+    _fields_ = [("rgvarg", POINTER(VARIANT)), ("rgdispidNamedArgs", POINTER(DISPID)), ("cArgs", UINT), ("cNamedArgs", UINT)]
+    
+class EXCEPINFO(Structure):
+    _fields_ = [
+                ("wCode", WORD), 
+                ("wReserved", WORD), 
+                ("bstrSource", BSTR), 
+                ("bstrDescription", BSTR), 
+                ("bstrHelpFile", BSTR), 
+                ("dwHelpContext", DWORD), 
+                ("pvReserved", POINTER(ULONG)), 
+                ("pfnDeferredFillIn", POINTER(ULONG)), 
+                ("scode", HRESULT)
+            ]
+
+###############################################################################
+#   COM Methods
+###############################################################################
+if os.name == "nt":
+    from ctypes import WINFUNCTYPE, windll
+    ole32lib = windll.ole32
+    oleaut32lib = windll.OleAut32
+else:
+    from ctypes import CFUNCTYPE, cdll
+    WINFUNCTYPE=CFUNCTYPE
+    ole32lib = cdll.LoadLibrary("libagxcom.so")
+    oleaut32lib = cdll.LoadLibrary("libagxcom.so")
+
+CLSIDFromString     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromString", ole32lib), ((1, "lpsz"), (1, "pclsid")))
+CLSIDFromProgID     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromProgID", ole32lib), ((1, "lpszProgID"), (1, "lpclsid")))
+CoCreateInstance    = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, DWORD, POINTER(GUID), POINTER(LPVOID))(("CoCreateInstance", ole32lib),
+                      ((1, "rclsid"), (1, "pUnkOuter"), (1, 'dwClsContext'), (1, 'riid'), (1, 'ppv')))
+CoInitializeEx      = WINFUNCTYPE(HRESULT, c_void_p, DWORD)(("CoInitializeEx", ole32lib), ((1, "pvReserved"), (1, "dwCoInit")))
+CoTaskMemFree       = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", ole32lib), ((1, "pv"),))
+CoUninitialize      = WINFUNCTYPE(None)(("CoUninitialize", ole32lib))
+GetActiveObject     = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, POINTER(LPVOID))(("GetActiveObject", oleaut32lib),
+                      ((1, "rclsid"), (1, "pvReserved"), (1, 'ppunk'))) if os.name=='nt' else None
+GetErrorInfo        = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetErrorInfo", oleaut32lib), ((1, "dwReserved"), (1, "ppErrorInfo")))
+StringFromCLSID     = WINFUNCTYPE(HRESULT, POINTER(GUID), POINTER(LPOLESTR))(("StringFromCLSID", ole32lib), ((1, "rclsid"), (1, "lplpsz")))
+SafeArrayCreate     = WINFUNCTYPE(SAFEARRAY, VARTYPE, UINT, POINTER(SAFEARRAYBOUND))(("SafeArrayCreate", oleaut32lib), ((1, "vt"), (1, "cDims"), (1, "rgsabound")))
+SafeArrayDestroy    = WINFUNCTYPE(HRESULT, SAFEARRAY)(("SafeArrayDestroy", oleaut32lib), ((1, "pSafeArray"),))
+SafeArrayGetDim     = WINFUNCTYPE(UINT,    SAFEARRAY)(("SafeArrayGetDim", oleaut32lib), ((1, "pSafeArray"),))
+SafeArrayGetLBound  = WINFUNCTYPE(HRESULT, SAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetLBound", oleaut32lib), ((1, "pSafeArray"), (1, "nDim"), (1, "pLBound")))
+SafeArrayGetUBound  = WINFUNCTYPE(HRESULT, SAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetUBound", oleaut32lib), ((1, "pSafeArray"), (1, "nDim"), (1, "pUBound")))
+SafeArrayGetVartype = WINFUNCTYPE(HRESULT, SAFEARRAY, POINTER(VARTYPE))(("SafeArrayGetVartype", oleaut32lib), ((1, "pSafeArray"), (1, "vt")))
+SafeArrayGetElement = WINFUNCTYPE(HRESULT, SAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayGetElement", oleaut32lib), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
+SafeArrayPutElement = WINFUNCTYPE(HRESULT, SAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayPutElement", oleaut32lib), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
+SysAllocString      = WINFUNCTYPE(LPVOID, LPOLESTR)(("SysAllocString", oleaut32lib), ((1, "psz"),))
+SysFreeString       = WINFUNCTYPE(None, LPOLESTR)(("SysFreeString", oleaut32lib), ((1, "bstrString"),))
+VariantClear        = WINFUNCTYPE(HRESULT, POINTER(VARIANT))(("VariantClear", oleaut32lib), ((1, "pVariant"),))
+VariantCopy         = WINFUNCTYPE(HRESULT, POINTER(VARIANT), POINTER(VARIANT))(("VariantCopy", oleaut32lib), ((1, "pvargDest"),(1, "pvargSrc")))
+VariantInit         = WINFUNCTYPE(None, POINTER(VARIANT))(("VariantInit", oleaut32lib), ((1, "pVariant"),))
+
+if os.name=='nt':
+    CoMarshalInterThreadInterfaceInStream = WINFUNCTYPE(HRESULT, REFIID, PVOID, POINTER(LPSTREAM))(("CoMarshalInterThreadInterfaceInStream", ole32lib), ((1, "riid"), (1, "pUnk"), (1, "ppStm")))
+    CoGetInterfaceAndReleaseStream        = WINFUNCTYPE(HRESULT, LPSTREAM, REFIID, POINTER(PVOID))(("CoGetInterfaceAndReleaseStream", ole32lib), ((1, "pStm"), (1, "iid"), (1, "ppv")))
+    CoReleaseMarshalData                  = WINFUNCTYPE(HRESULT, LPSTREAM)(("CoReleaseMarshalData", ole32lib), ((1, "pStm"),))
+    
+    
+###############################################################################
+#   Helper functions
+###############################################################################
+def Succeeded(hr):
+    return hr >= S_OK
+
+class _CreateAgObjectLifetimeManager(object):
+    '''
+    Singleton class for managing reference counts on COM interfaces.
+    '''
+    _AddRef = WINFUNCTYPE(ULONG, LPVOID)
+    _Release = WINFUNCTYPE(ULONG, LPVOID)
+    if os.name == "nt":
+        _AddRefIndex = 1
+        _ReleaseIndex = 2
+    else:
+        _AddRefIndex = 0
+        _ReleaseIndex = 1
+
+    def __init__(self):
+        self._ref_counts = dict()
+        self._applications = list()
+        
+    @staticmethod
+    def _ReleaseImpl(pUnk:"IUnknown"):
+        _CreateAgObjectLifetimeManager._Release(pUnk._getVtblEntry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
+        
+    @staticmethod
+    def _AddRefImpl(pUnk:"IUnknown"):
+        _CreateAgObjectLifetimeManager._AddRef(pUnk._getVtblEntry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
+                
+    def CreateOwnership(self, pUnk:"IUnknown"):
+        ptraddress = pUnk.p.value
+        if ptraddress is not None:
+            _CreateAgObjectLifetimeManager._AddRefImpl(pUnk)
+            self.TakeOwnership(pUnk, False)
+                
+    def TakeOwnership(self, pUnk:"IUnknown", isApplication=False):
+        ptraddress = pUnk.p.value
+        if ptraddress is not None:
+            if isApplication:
+                self._applications.append(ptraddress)
+            if ptraddress in self._ref_counts:
+                _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
+                self.InternalAddRef(pUnk)
+            else:
+                self._ref_counts[ptraddress] = 1
+                
+    def InternalAddRef(self, pUnk:"IUnknown"):
+        ptraddress = pUnk.p.value
+        if ptraddress in self._ref_counts:
+            self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
+
+    def Release(self, pUnk:"IUnknown"):
+        ptraddress = pUnk.p.value
+        if ptraddress is not None:
+            if ptraddress in self._ref_counts:
+                if self._ref_counts[ptraddress] == 1:
+                    _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
+                    del(self._ref_counts[ptraddress])
+                else:
+                    self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
+                
+    def ReleaseAll(self, releaseApplication=True):
+        preserved_app_ref_counts = dict()
+        while len(self._ref_counts) > 0:
+            ref_count = self._ref_counts.popitem()
+            ptraddress = ref_count[0]
+            if not releaseApplication and ptraddress in self._applications:
+                preserved_app_ref_counts[ptraddress] = ref_count[1]
+                continue
+            pUnk = IUnknown()
+            pUnk.p = c_void_p(ptraddress)
+            _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
+            pUnk.p = c_void_p(0)
+        self._ref_counts = preserved_app_ref_counts
+
+ObjectLifetimeManager = _CreateAgObjectLifetimeManager()
+
+
+class _CreateCoInitializeManager(object):
+    def __init__(self):
+        self.init_count = 0
+        
+    def initialize(self):
+        if self.init_count == 0:
+            CoInitializeEx(None, COINIT_APARTMENTTHREADED)
+        self.init_count = self.init_count + 1
+        
+    def uninitialize(self):
+        self.init_count = self.init_count - 1
+        if self.init_count == 0:
+            CoUninitialize()
+            
+CoInitializeManager = _CreateCoInitializeManager()
+
+###############################################################################
+#   Interfaces
+###############################################################################
+class IUnknown(object):
+    _guid = '{00000000-0000-0000-C000-000000000046}'
+    _vtable_offset = 0
+    _num_methods = 3
+    _QueryInterface = WINFUNCTYPE(HRESULT, LPVOID, POINTER(GUID), POINTER(LPVOID))
+    if os.name == "nt":
+        _QIIndex = 0
+    else:
+        _QIIndex = 2
+    def __init__(self, pUnk=None):
+        if pUnk is not None:
+            self.p = pUnk.p
+            self.AddRef()
+        else:
+            self.p = c_void_p()
+    def __del__(self):
+        if self:
+            self.Release()
+    def __eq__(self, other):
+        return self.p.value == other.p.value
+    def __bool__(self):
+        return self.p.value is not None and self.p.value > 0
+    def _getVtblEntry(self, index):
+        vptr = cast(self.p, POINTER(c_void_p))
+        vtbl = cast(vptr.contents, POINTER(c_void_p))
+        return vtbl[index]
+    def QueryInterface(self, iid:GUID) -> "IUnknown":
+        pIntf = IUnknown()
+        hr = IUnknown._QueryInterface(self._getVtblEntry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
+        if not Succeeded(hr):
+            return None
+        pIntf.TakeOwnership()
+        return pIntf
+    def CreateOwnership(self):
+        '''
+        Calls AddRef on the pointer, and registers the pointer to be Released when the ref count goes to zero.
+        '''
+        ObjectLifetimeManager.CreateOwnership(self) 
+    def TakeOwnership(self, isApplication=False):
+        '''
+        Registers the pointer to be Released when the ref count goes to zero but does not call AddRef.
+        '''
+        ObjectLifetimeManager.TakeOwnership(self, isApplication) 
+    def AddRef(self):
+        ''' 
+        Increments the ref count on the pointer if the pointer was registered with CreateOwnership or TakeOwnership.
+        '''
+        ObjectLifetimeManager.InternalAddRef(self)  
+    def Release(self):
+        '''
+        Decrements the ref count on the pointer if the pointer was registered with CreateOwnership or TakeOwnership.
+        Calls Release if the ref count goes to zero.
+        '''
+        ObjectLifetimeManager.Release(self)          
+
+class IDispatch(IUnknown):
+    _guid = '{00020400-0000-0000-C000-000000000046}'
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _num_methods = 4
+    def __init__(self, pUnk: IUnknown):
+        IUnknown.__init__(self, pUnk)
+          
+class IPictureDisp(IUnknown):
+    def __init__(self):
+        raise STKRuntimeError('IPictureDisp not supported.')
+        
+class IEnumVARIANT(object):
+    guid = '{00020404-0000-0000-C000-000000000046}'
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _num_methods = 4
+    def __init__(self, pUnk):
+        self.pUnk = pUnk
+        IID_IEnumVARIANT = GUID(IEnumVARIANT.guid)
+        vtable_offset_local = IEnumVARIANT._vtable_offset - 1
+        self._Next  = IAGFUNCTYPE(pUnk, IID_IEnumVARIANT, vtable_offset_local+1, ULONG, POINTER(VARIANT), POINTER(ULONG))
+        self._Reset = IAGFUNCTYPE(pUnk, IID_IEnumVARIANT, vtable_offset_local+3)
+    def Next(self) -> VARIANT:
+        one_obj = ULONG(1)
+        num_fetched = ULONG()
+        obj = VARIANT()
+        if self._Next(one_obj, byref(obj), byref(num_fetched)) == S_OK:
+            return obj
+        else:
+            return None
+    def Reset(self) -> None:
+        self._Reset()
+          
+class IAGFUNCTYPE(object):
+    '''
+    Wrapper for calling methods into COM interface vtables.
+    '''
+    def __init__(self, pUnk, iid, method_index, *argtypes):
+        self.pUnk = pUnk
+        self.iid = iid
+        self.index = method_index
+        self.method = WINFUNCTYPE(HRESULT, LPVOID, *argtypes)
+    def __call__(self, *args):
+        pIntf = self.pUnk.QueryInterface(self.iid)
+        ret = self.method(pIntf._getVtblEntry(self.index))(pIntf.p, *args)
+        del(pIntf)
+        return ret

@@ -1,0 +1,166 @@
+from typing import Set, Dict
+from functools import wraps
+
+import importlib
+
+try:
+    # check and do imports for forward references for function return type hints
+    from numpy import ndarray
+    from pandas import DataFrame
+
+    # imports for package references in functions
+    import pandas as pd
+    import numpy as np
+except ModuleNotFoundError:
+    pass
+
+
+def required_package(package_name: str):
+    """
+    Checks if a package is installed by importing it.
+
+    Parameters
+    ----------
+    package_name: str
+        Name of the package to import.
+
+    Raises
+    ----------
+    ModuleNotFoundError
+        Raised when a package is not installed.
+    """
+
+    def decorator(function):
+        @wraps(function)
+        def wrapper(*args, **kwargs):
+            """
+            Tries to import the required package and calls the decorated function.
+            """
+            try:
+                importlib.import_module(package_name)
+                return function(*args, **kwargs)
+            except ModuleNotFoundError:
+                error_msg = (
+                    f'The package "{package_name}" is required.'
+                )
+                raise ModuleNotFoundError(error_msg)
+        return wrapper
+
+    return decorator
+
+
+@required_package('numpy')
+def to_numpy_array(results: 'IAgDrDataSetCollection') -> 'ndarray':
+    results_arr = np.array([])
+
+    # create numpy array from row formatted dataset elements
+    row_elements = results.ToArray()
+    unshaped_elements_arr = np.array(row_elements)
+
+    # get unique element names and unique element count
+    unique_element_names = _get_unique_element_names(results)
+    num_unique_columns = len(unique_element_names)
+
+    # reshape to flatten list while preserving the proper column dimensions
+    if num_unique_columns:
+        results_arr = unshaped_elements_arr.reshape(-1, num_unique_columns)
+
+    return results_arr
+
+
+@required_package('pandas')
+def to_pandas_dataframe(results: 'IAgDrDataSetCollection', index_element_name: str = None,
+                 data_provider_elements: 'IAgDataPrvElements' = None) -> 'DataFrame':
+    results_df = pd.DataFrame()
+    results_arr = to_numpy_array(results)
+
+    if results_arr.size > 0:
+        unique_element_names = _get_unique_element_names(results)
+        num_unique_elements = len(unique_element_names)
+
+        # Slice element names list to get unique column names in the order that they appear in the DataSet. This
+        # ensures that the order of the unique column names is maintained when they are used as columns in the
+        # new DataFrame.
+        unique_element_names = results.ElementNames[0:num_unique_elements]
+
+        # normalize element names to mitigate errors working and comparing DataFrame column names as column names are
+        # case sensitive
+        normalized_unique_element_names = [name.lower() for name in unique_element_names]
+
+        results_df = pd.DataFrame(data=results_arr, columns=normalized_unique_element_names)
+
+        # set DataFrame index column
+        if index_element_name:
+            normalized_index_column = None
+
+            # check that element name to be used as the DataFrame index column is valid
+            for name in normalized_unique_element_names:
+                if index_element_name.lower() == name:
+                    normalized_index_column = index_element_name.lower()
+                    break
+
+            if normalized_index_column:
+                results_df = results_df.set_index(normalized_index_column)
+            else:
+                element_names_str = ','.join(normalized_unique_element_names)
+                error_message = f'"{index_element_name}" is not a valid data provider element name. Valid ' \
+                                f'element names are: {element_names_str}'
+                raise ValueError(error_message)
+
+        # map data provider element types to pandas dtypes
+        if data_provider_elements:
+            dtypes_dict = _map_element_types_to_pandas_dtypes(data_provider_elements,
+                                                              index_element_name=index_element_name)
+
+            # Update DataFrame column dtypes with mapped types. If we encounter values that can not be
+            # converted such as None or Nan ignore them and return the original object, this allows the caller to
+            # determine how to they would like to handle Nan etc values.
+            results_df = results_df.astype(dtypes_dict, errors='ignore')
+
+    return results_df
+
+
+def _get_unique_element_names(results: 'IAgDrDataSetCollection') -> Set:
+    """
+    Returns a unique set of element names as a set.
+    """
+
+    unique_element_names = set(results.ElementNames)
+
+    return unique_element_names
+
+
+@required_package('numpy')
+def _map_element_types_to_pandas_dtypes(data_provider_elements: 'IAgDataPrvElements',
+                                        index_element_name: str = None) -> Dict[str, object]:
+    """
+    Returns a mapping of STK data provider element names and their types to corresponding pandas dtypes.
+
+    Notes
+    -----
+    This function requires ``numpy``.
+    """
+
+    dtype_element_name_mapping = dict()
+
+    for element in data_provider_elements:
+        normalized_element_name = element.Name.lower()
+        element_type_name = element.Type.name.lower()
+        element_dimensions_name = element.DimensionName.lower()
+
+        # By default to avoid issues with possible leap seconds or other time precision related issues we map date
+        # dimension elements as string dtypes in pandas. Future work plans to implement more robust datetime support
+        # for pandas.
+        if element_type_name == 'ereal' and element_dimensions_name not in 'date':
+            pd_dtype = np.float64
+        elif element_type_name == 'eint':
+            pd_dtype = np.int64
+        else:
+            # by default make everything else a str, strings like datatime strings can be handled/parsed
+            # separately
+            pd_dtype = str
+
+        if not index_element_name or normalized_element_name != index_element_name.lower():
+            dtype_element_name_mapping[normalized_element_name] = pd_dtype
+
+    return dtype_element_name_mapping
