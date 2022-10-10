@@ -38,9 +38,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class AgEForceModelType(IntEnum):
-    '''
-    Enumeration of force model contributors
-    '''
+    """Enumeration of force model contributors"""
     # Gravity.
     eGravityModel = 0,
     # Solid tides.
@@ -66,9 +64,7 @@ agcls.AgTypeNameMap['AgEForceModelType'] = AgEForceModelType
 __all__.append('AgEForceModelType')
 
 class AgEAsHpopPluginErrorCodes(IntEnum):
-    '''
-    Enumeration of AgAsHpopPlugin General Error Codes
-    '''
+    """Enumeration of AgAsHpopPlugin General Error Codes"""
     # Hpop Plugin: An internal failure occurred.
     eHpopPluginErrorInternalFailure = (((1 << 31) | (4 << 16)) | 0x101),
     # Hpop Plugin: Not configured properly.
@@ -102,9 +98,7 @@ agcls.AgTypeNameMap['AgEAsHpopPluginErrorCodes'] = AgEAsHpopPluginErrorCodes
 __all__.append('AgEAsHpopPluginErrorCodes')
 
 class AgEAsHpopPluginEventIndicators(IntEnum):
-    '''
-    Enumeration of AgAsHpopPlugin Event Indicators
-    '''
+    """Enumeration of AgAsHpopPlugin Event Indicators"""
     # Stops propagation.
     eHpopPluginEventIndicatorsStopPropagation = 0,
     # Ends current segment.
@@ -116,9 +110,7 @@ agcls.AgTypeNameMap['AgEAsHpopPluginEventIndicators'] = AgEAsHpopPluginEventIndi
 __all__.append('AgEAsHpopPluginEventIndicators')
 
 class AgEAccelType(IntEnum):
-    '''
-    Enumeration of contributions to the total force model acceleration
-    '''
+    """Enumeration of contributions to the total force model acceleration"""
     # Total accleration.
     eTotalAccel = 0,
     # Two body contribution.
@@ -150,9 +142,7 @@ agcls.AgTypeNameMap['AgEAccelType'] = AgEAccelType
 __all__.append('AgEAccelType')
 
 class AgEAsLightReflectionErrorCodes(IntEnum):
-    '''
-    Enumeration of AgAsLightReflectionPlugin General Error Codes
-    '''
+    """Enumeration of AgAsLightReflectionPlugin General Error Codes"""
     # LightReflection Plugin: An internal failure occurred.
     eLightReflectionErrorInternalFailure = (((1 << 31) | (4 << 16)) | 0x101),
     # LightReflection Plugin: Not configured properly.
@@ -176,9 +166,7 @@ agcls.AgTypeNameMap['AgEAsLightReflectionErrorCodes'] = AgEAsLightReflectionErro
 __all__.append('AgEAsLightReflectionErrorCodes')
 
 class AgEAsDragModelErrorCodes(IntEnum):
-    '''
-    Enumeration of AgAsDragModelPlugin General Error Codes
-    '''
+    """Enumeration of AgAsDragModelPlugin General Error Codes"""
     # DragModel Plugin: An internal failure occurred.
     eDragModelErrorInternalFailure = (((1 << 31) | (4 << 16)) | 0x101),
     # DragModel Plugin: Not configured properly.
@@ -202,9 +190,7 @@ agcls.AgTypeNameMap['AgEAsDragModelErrorCodes'] = AgEAsDragModelErrorCodes
 __all__.append('AgEAsDragModelErrorCodes')
 
 class AgEAsEOMFuncPluginErrorCodes(IntEnum):
-    '''
-    Enumeration of AgAsEOMFuncPlugin General Error Codes
-    '''
+    """Enumeration of AgAsEOMFuncPlugin General Error Codes"""
     # EOMFunc Plugin: An internal failure occurred.
     eEOMFuncPluginErrorInternalFailure = (((1 << 31) | (4 << 16)) | 0x101),
     # EOMFunc Plugin: Not configured properly.
@@ -228,9 +214,7 @@ agcls.AgTypeNameMap['AgEAsEOMFuncPluginErrorCodes'] = AgEAsEOMFuncPluginErrorCod
 __all__.append('AgEAsEOMFuncPluginErrorCodes')
 
 class AgEAsEOMFuncPluginInputStateValues(IntEnum):
-    '''
-    Enumeration of state vector input values
-    '''
+    """Enumeration of state vector input values"""
     # X-component of position (inertial).
     eEOMFuncPluginInputStateValuesPosX = 0,
     # Y-component of position (inertial).
@@ -552,9 +536,7 @@ agcls.AgTypeNameMap['AgEAsEOMFuncPluginInputStateValues'] = AgEAsEOMFuncPluginIn
 __all__.append('AgEAsEOMFuncPluginInputStateValues')
 
 class AgEAsEOMFuncPluginOutputStateValues(IntEnum):
-    '''
-    Enumeration of state vector output values
-    '''
+    """Enumeration of state vector output values"""
     # Dry mass.
     eEOMFuncPluginOutputStateValuesDryMass = 0,
     # Fuel mass.
@@ -586,9 +568,7 @@ agcls.AgTypeNameMap['AgEAsEOMFuncPluginOutputStateValues'] = AgEAsEOMFuncPluginO
 __all__.append('AgEAsEOMFuncPluginOutputStateValues')
 
 class AgEAsEOMFuncPluginEventTypes(IntEnum):
-    '''
-    Enumeration of event types
-    '''
+    """Enumeration of event types"""
     # Pre-propagate
     eEOMFuncPluginEventTypesPrePropagate = 0,
     # Pre-next step
@@ -602,9 +582,7 @@ agcls.AgTypeNameMap['AgEAsEOMFuncPluginEventTypes'] = AgEAsEOMFuncPluginEventTyp
 __all__.append('AgEAsEOMFuncPluginEventTypes')
 
 class AgEAsDensityModelErrorCodes(IntEnum):
-    '''
-    Enumeration of AgAsDensityModelPlugin General Error Codes
-    '''
+    """Enumeration of AgAsDensityModelPlugin General Error Codes"""
     # DensityModel Plugin: An internal failure occurred.
     eDensityModelPluginInternalFailure = (((1 << 31) | (4 << 16)) | 0x101),
     # DensityModel Plugin: Not configured properly.
@@ -631,9 +609,7 @@ __all__.append('AgEAsDensityModelErrorCodes')
 
 
 class IAgAsHpopPluginResult(object):
-    '''
-    HPOP plugin interface used to get/set force model settings. Supports the IAgEpoch interface.
-    '''
+    """HPOP plugin interface used to get/set force model settings. Supports the IAgEpoch interface."""
     _uuid = '{33922BCB-FA7A-40B6-B94F-AE9C18A928FA}'
     _num_methods = 52
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -755,9 +731,7 @@ class IAgAsHpopPluginResult(object):
         self.__dict__['_RefEpochElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgAsHpopPluginResult, vtable_offset_local+51, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_RefEpochString'] = IAGFUNCTYPE(pUnk, IID_IAgAsHpopPluginResult, vtable_offset_local+52, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsHpopPluginResult.__dict__ and type(IAgAsHpopPluginResult.__dict__[attrname]) == property:
@@ -771,163 +745,125 @@ class IAgAsHpopPluginResult(object):
     
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def Cd(self) -> float:
-        '''
-        Drag Coefficient. Can only be set if Drag is on.
-        '''
+        """Drag Coefficient. Can only be set if Drag is on."""
         with agmarshall.DOUBLE_arg() as arg_pCd:
             agcls.evaluate_hresult(self.__dict__['_GetCd'](byref(arg_pCd.COM_val)))
             return arg_pCd.python_val
 
     @Cd.setter
     def Cd(self, newCd:float) -> None:
-        '''
-        Drag Coefficient. Can only be set if Drag is on.
-        '''
+        """Drag Coefficient. Can only be set if Drag is on."""
         with agmarshall.DOUBLE_arg(newCd) as arg_newCd:
             agcls.evaluate_hresult(self.__dict__['_SetCd'](arg_newCd.COM_val))
 
     @property
     def Cr(self) -> float:
-        '''
-        SRP Coefficient. Can only be set if SRP is on.
-        '''
+        """SRP Coefficient. Can only be set if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pCr:
             agcls.evaluate_hresult(self.__dict__['_GetCr'](byref(arg_pCr.COM_val)))
             return arg_pCr.python_val
 
     @Cr.setter
     def Cr(self, newCr:float) -> None:
-        '''
-        SRP Coefficient. Can only be set if SRP is on.
-        '''
+        """SRP Coefficient. Can only be set if SRP is on."""
         with agmarshall.DOUBLE_arg(newCr) as arg_newCr:
             agcls.evaluate_hresult(self.__dict__['_SetCr'](arg_newCr.COM_val))
 
     @property
     def DragArea(self) -> float:
-        '''
-        Drag Area in meters^2. Can only be set if Drag is on.
-        '''
+        """Drag Area in meters^2. Can only be set if Drag is on."""
         with agmarshall.DOUBLE_arg() as arg_pDragArea:
             agcls.evaluate_hresult(self.__dict__['_GetDragArea'](byref(arg_pDragArea.COM_val)))
             return arg_pDragArea.python_val
 
     @DragArea.setter
     def DragArea(self, newDragArea:float) -> None:
-        '''
-        Drag Area in meters^2. Can only be set if Drag is on.
-        '''
+        """Drag Area in meters^2. Can only be set if Drag is on."""
         with agmarshall.DOUBLE_arg(newDragArea) as arg_newDragArea:
             agcls.evaluate_hresult(self.__dict__['_SetDragArea'](arg_newDragArea.COM_val))
 
     @property
     def SRPArea(self) -> float:
-        '''
-        SRP Area in meters^2. Can only be set if SRP is on.
-        '''
+        """SRP Area in meters^2. Can only be set if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSRPArea:
             agcls.evaluate_hresult(self.__dict__['_GetSRPArea'](byref(arg_pSRPArea.COM_val)))
             return arg_pSRPArea.python_val
 
     @SRPArea.setter
     def SRPArea(self, newSRPArea:float) -> None:
-        '''
-        SRP Area in meters^2. Can only be set if SRP is on.
-        '''
+        """SRP Area in meters^2. Can only be set if SRP is on."""
         with agmarshall.DOUBLE_arg(newSRPArea) as arg_newSRPArea:
             agcls.evaluate_hresult(self.__dict__['_SetSRPArea'](arg_newSRPArea.COM_val))
 
     @property
     def TimeSinceRefEpoch(self) -> float:
-        '''
-        Current epoch expressed in seconds since reference epoch.
-        '''
+        """Current epoch expressed in seconds since reference epoch."""
         with agmarshall.DOUBLE_arg() as arg_pTimeSinceRefEpoch:
             agcls.evaluate_hresult(self.__dict__['_GetTimeSinceRefEpoch'](byref(arg_pTimeSinceRefEpoch.COM_val)))
             return arg_pTimeSinceRefEpoch.python_val
 
     def SetAtmFluxLags(self, f10p7Lag:float, geoFluxLag:float) -> None:
-        '''
-        Sets the lag times (in secs) used when evaluating the density flux values (F10.7 / Avg F10.7, ap / kp).
-        '''
+        """Sets the lag times (in secs) used when evaluating the density flux values (F10.7 / Avg F10.7, ap / kp)."""
         with agmarshall.DOUBLE_arg(f10p7Lag) as arg_f10p7Lag, \
              agmarshall.DOUBLE_arg(geoFluxLag) as arg_geoFluxLag:
             agcls.evaluate_hresult(self.__dict__['_SetAtmFluxLags'](arg_f10p7Lag.COM_val, arg_geoFluxLag.COM_val))
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude in meters.
-        '''
+        """Current altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def LightSpeed(self) -> float:
-        '''
-        Speed of light in meters/second.
-        '''
+        """Speed of light in meters/second."""
         with agmarshall.DOUBLE_arg() as arg_pLightSpeed:
             agcls.evaluate_hresult(self.__dict__['_GetLightSpeed'](byref(arg_pLightSpeed.COM_val)))
             return arg_pLightSpeed.python_val
 
     @property
     def SolarFlux(self) -> float:
-        '''
-        Current solar flux in watts/meter^2. Available only if SRP is on.
-        '''
+        """Current solar flux in watts/meter^2. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarFlux:
             agcls.evaluate_hresult(self.__dict__['_GetSolarFlux'](byref(arg_pSolarFlux.COM_val)))
             return arg_pSolarFlux.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -935,9 +871,7 @@ class IAgAsHpopPluginResult(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -948,25 +882,19 @@ class IAgAsHpopPluginResult(object):
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def CurrentAtmFlux_Array(self) -> list:
-        '''
-        Flux values used by the density model, evaluated at the current time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp.
-        '''
+        """Flux values used by the density model, evaluated at the current time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentAtmFlux_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def AtmFlux_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated.
-        '''
+        """Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -975,26 +903,20 @@ class IAgAsHpopPluginResult(object):
             return arg_pArray.python_val
 
     def AtmFluxLags_Array(self) -> list:
-        '''
-        The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag.
-        '''
+        """The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_AtmFluxLags_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IsForceModelOn(self, type:"AgEForceModelType") -> bool:
-        '''
-        Indicates whether a particular force model contributor is being considered.
-        '''
+        """Indicates whether a particular force model contributor is being considered."""
         with agmarshall.AgEnum_arg(AgEForceModelType, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_IsForceModelOn'](arg_type.COM_val, byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     def ForceModelName(self, type:"AgEForceModelType") -> str:
-        '''
-        A translation of the enumerated type into a string.
-        '''
+        """A translation of the enumerated type into a string."""
         with agmarshall.AgEnum_arg(AgEForceModelType, type) as arg_type, \
              agmarshall.BSTR_arg() as arg_pName:
             agcls.evaluate_hresult(self.__dict__['_ForceModelName'](arg_type.COM_val, byref(arg_pName.COM_val)))
@@ -1002,132 +924,100 @@ class IAgAsHpopPluginResult(object):
 
     @property
     def RadPressureCoefficient(self) -> float:
-        '''
-        Radiation pressure coefficient, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on.
-        '''
+        """Radiation pressure coefficient, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on."""
         with agmarshall.DOUBLE_arg() as arg_pCoef:
             agcls.evaluate_hresult(self.__dict__['_GetRadPressureCoefficient'](byref(arg_pCoef.COM_val)))
             return arg_pCoef.python_val
 
     @RadPressureCoefficient.setter
     def RadPressureCoefficient(self, newCoef:float) -> None:
-        '''
-        Radiation pressure coefficient, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on.
-        '''
+        """Radiation pressure coefficient, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on."""
         with agmarshall.DOUBLE_arg(newCoef) as arg_newCoef:
             agcls.evaluate_hresult(self.__dict__['_SetRadPressureCoefficient'](arg_newCoef.COM_val))
 
     @property
     def RadPressureArea(self) -> float:
-        '''
-        Radiation pressure area in meters^2, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on.
-        '''
+        """Radiation pressure area in meters^2, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on."""
         with agmarshall.DOUBLE_arg() as arg_pArea:
             agcls.evaluate_hresult(self.__dict__['_GetRadPressureArea'](byref(arg_pArea.COM_val)))
             return arg_pArea.python_val
 
     @RadPressureArea.setter
     def RadPressureArea(self, newArea:float) -> None:
-        '''
-        Radiation pressure area in meters^2, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on.
-        '''
+        """Radiation pressure area in meters^2, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on."""
         with agmarshall.DOUBLE_arg(newArea) as arg_newArea:
             agcls.evaluate_hresult(self.__dict__['_SetRadPressureArea'](arg_newArea.COM_val))
 
     @property
     def DryMass(self) -> float:
-        '''
-        Dry Mass in kilograms.
-        '''
+        """Dry Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pDryMass:
             agcls.evaluate_hresult(self.__dict__['_GetDryMass'](byref(arg_pDryMass.COM_val)))
             return arg_pDryMass.python_val
 
     @DryMass.setter
     def DryMass(self, newDryMass:float) -> None:
-        '''
-        Dry Mass in kilograms.
-        '''
+        """Dry Mass in kilograms."""
         with agmarshall.DOUBLE_arg(newDryMass) as arg_newDryMass:
             agcls.evaluate_hresult(self.__dict__['_SetDryMass'](arg_newDryMass.COM_val))
 
     @property
     def FuelMass(self) -> float:
-        '''
-        Fuel Mass in kilograms.
-        '''
+        """Fuel Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pFuelMass:
             agcls.evaluate_hresult(self.__dict__['_GetFuelMass'](byref(arg_pFuelMass.COM_val)))
             return arg_pFuelMass.python_val
 
     @FuelMass.setter
     def FuelMass(self, newFuelMass:float) -> None:
-        '''
-        Fuel Mass in kilograms.
-        '''
+        """Fuel Mass in kilograms."""
         with agmarshall.DOUBLE_arg(newFuelMass) as arg_newFuelMass:
             agcls.evaluate_hresult(self.__dict__['_SetFuelMass'](arg_newFuelMass.COM_val))
 
     @property
     def TotalMass(self) -> float:
-        '''
-        Total Mass in kilograms.
-        '''
+        """Total Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pTotalMass:
             agcls.evaluate_hresult(self.__dict__['_GetTotalMass'](byref(arg_pTotalMass.COM_val)))
             return arg_pTotalMass.python_val
 
     def StopPropagation(self) -> None:
-        '''
-        Stops propagation.  For fatal errors.
-        '''
+        """Stops propagation.  For fatal errors."""
         agcls.evaluate_hresult(self.__dict__['_StopPropagation']())
 
     def IndicateEvent(self, eventIndicator:"AgEAsHpopPluginEventIndicators") -> None:
-        '''
-        Marks an event to the propagator.
-        '''
+        """Marks an event to the propagator."""
         with agmarshall.AgEnum_arg(AgEAsHpopPluginEventIndicators, eventIndicator) as arg_eventIndicator:
             agcls.evaluate_hresult(self.__dict__['_IndicateEvent'](arg_eventIndicator.COM_val))
 
     def SetMaxStep(self, maxStep:float) -> None:
-        '''
-        Sets the maximum step size in seconds for the propagator.
-        '''
+        """Sets the maximum step size in seconds for the propagator."""
         with agmarshall.DOUBLE_arg(maxStep) as arg_maxStep:
             agcls.evaluate_hresult(self.__dict__['_SetMaxStep'](arg_maxStep.COM_val))
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def RefEpochElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Reference epoch expressed in requested time scale in day count and date formats as the array: WholeDays, SecsIntoDay, Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Reference epoch expressed in requested time scale in day count and date formats as the array: WholeDays, SecsIntoDay, Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_RefEpochElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def RefEpochString(self, dateAbbrv:str) -> str:
-        '''
-        Reference epoch expressed using the date format abbreviation specified.
-        '''
+        """Reference epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pRefEpochString:
             agcls.evaluate_hresult(self.__dict__['_RefEpochString'](arg_dateAbbrv.COM_val, byref(arg_pRefEpochString.COM_val)))
@@ -1139,9 +1029,7 @@ agcls.AgTypeNameMap['IAgAsHpopPluginResult'] = IAgAsHpopPluginResult
 __all__.append('IAgAsHpopPluginResult')
 
 class IAgAsHpopPluginResultEval(object):
-    '''
-    HPOP plugin interface used to get/set force model settings during the computation of a step. Supports the IAgEpoch interface.
-    '''
+    """HPOP plugin interface used to get/set force model settings during the computation of a step. Supports the IAgEpoch interface."""
     _uuid = '{4518FC76-4B7D-4926-9CB5-E36AF7D94733}'
     _num_methods = 56
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1271,9 +1159,7 @@ class IAgAsHpopPluginResultEval(object):
         self.__dict__['_RefEpochElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgAsHpopPluginResultEval, vtable_offset_local+55, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_RefEpochString'] = IAGFUNCTYPE(pUnk, IID_IAgAsHpopPluginResultEval, vtable_offset_local+56, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsHpopPluginResultEval.__dict__ and type(IAgAsHpopPluginResultEval.__dict__[attrname]) == property:
@@ -1287,172 +1173,132 @@ class IAgAsHpopPluginResultEval(object):
     
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def Cd(self) -> float:
-        '''
-        Drag Coefficient. Can only be set if Drag is on.
-        '''
+        """Drag Coefficient. Can only be set if Drag is on."""
         with agmarshall.DOUBLE_arg() as arg_pCd:
             agcls.evaluate_hresult(self.__dict__['_GetCd'](byref(arg_pCd.COM_val)))
             return arg_pCd.python_val
 
     @Cd.setter
     def Cd(self, newCd:float) -> None:
-        '''
-        Drag Coefficient. Can only be set if Drag is on.
-        '''
+        """Drag Coefficient. Can only be set if Drag is on."""
         with agmarshall.DOUBLE_arg(newCd) as arg_newCd:
             agcls.evaluate_hresult(self.__dict__['_SetCd'](arg_newCd.COM_val))
 
     @property
     def Cr(self) -> float:
-        '''
-        SRP Coefficient. Can only be set if SRP is on.
-        '''
+        """SRP Coefficient. Can only be set if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pCr:
             agcls.evaluate_hresult(self.__dict__['_GetCr'](byref(arg_pCr.COM_val)))
             return arg_pCr.python_val
 
     @Cr.setter
     def Cr(self, newCr:float) -> None:
-        '''
-        SRP Coefficient. Can only be set if SRP is on.
-        '''
+        """SRP Coefficient. Can only be set if SRP is on."""
         with agmarshall.DOUBLE_arg(newCr) as arg_newCr:
             agcls.evaluate_hresult(self.__dict__['_SetCr'](arg_newCr.COM_val))
 
     @property
     def DragArea(self) -> float:
-        '''
-        Drag Area in meters^2. Can only be set if Drag is on.
-        '''
+        """Drag Area in meters^2. Can only be set if Drag is on."""
         with agmarshall.DOUBLE_arg() as arg_pDragArea:
             agcls.evaluate_hresult(self.__dict__['_GetDragArea'](byref(arg_pDragArea.COM_val)))
             return arg_pDragArea.python_val
 
     @DragArea.setter
     def DragArea(self, newDragArea:float) -> None:
-        '''
-        Drag Area in meters^2. Can only be set if Drag is on.
-        '''
+        """Drag Area in meters^2. Can only be set if Drag is on."""
         with agmarshall.DOUBLE_arg(newDragArea) as arg_newDragArea:
             agcls.evaluate_hresult(self.__dict__['_SetDragArea'](arg_newDragArea.COM_val))
 
     @property
     def SRPArea(self) -> float:
-        '''
-        SRP Area in meters^2. Can only be set if SRP is on.
-        '''
+        """SRP Area in meters^2. Can only be set if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSRPArea:
             agcls.evaluate_hresult(self.__dict__['_GetSRPArea'](byref(arg_pSRPArea.COM_val)))
             return arg_pSRPArea.python_val
 
     @SRPArea.setter
     def SRPArea(self, newSRPArea:float) -> None:
-        '''
-        SRP Area in meters^2. Can only be set if SRP is on.
-        '''
+        """SRP Area in meters^2. Can only be set if SRP is on."""
         with agmarshall.DOUBLE_arg(newSRPArea) as arg_newSRPArea:
             agcls.evaluate_hresult(self.__dict__['_SetSRPArea'](arg_newSRPArea.COM_val))
 
     @property
     def TimeSinceRefEpoch(self) -> float:
-        '''
-        Current epoch expressed in seconds since reference epoch.
-        '''
+        """Current epoch expressed in seconds since reference epoch."""
         with agmarshall.DOUBLE_arg() as arg_pTimeSinceRefEpoch:
             agcls.evaluate_hresult(self.__dict__['_GetTimeSinceRefEpoch'](byref(arg_pTimeSinceRefEpoch.COM_val)))
             return arg_pTimeSinceRefEpoch.python_val
 
     def SetAtmFluxLags(self, f10p7Lag:float, geoFluxLag:float) -> None:
-        '''
-        Sets the lag times (in secs) used when evaluating the density flux values (F10.7 / Avg F10.7, ap / kp).
-        '''
+        """Sets the lag times (in secs) used when evaluating the density flux values (F10.7 / Avg F10.7, ap / kp)."""
         with agmarshall.DOUBLE_arg(f10p7Lag) as arg_f10p7Lag, \
              agmarshall.DOUBLE_arg(geoFluxLag) as arg_geoFluxLag:
             agcls.evaluate_hresult(self.__dict__['_SetAtmFluxLags'](arg_f10p7Lag.COM_val, arg_geoFluxLag.COM_val))
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude in meters.
-        '''
+        """Current altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     @property
     def DragAltitude(self) -> float:
-        '''
-        Current altitude in meters used by density model. Available only if Drag is on.
-        '''
+        """Current altitude in meters used by density model. Available only if Drag is on."""
         with agmarshall.DOUBLE_arg() as arg_pDragAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetDragAltitude'](byref(arg_pDragAltitude.COM_val)))
             return arg_pDragAltitude.python_val
 
     @property
     def AtmTemperature(self) -> float:
-        '''
-        Current atmospheric temperature in Kelvin. Available only if Drag is on and the density model can provide this data.
-        '''
+        """Current atmospheric temperature in Kelvin. Available only if Drag is on and the density model can provide this data."""
         with agmarshall.DOUBLE_arg() as arg_pAtmTemperature:
             agcls.evaluate_hresult(self.__dict__['_GetAtmTemperature'](byref(arg_pAtmTemperature.COM_val)))
             return arg_pAtmTemperature.python_val
 
     @property
     def AtmPressure(self) -> float:
-        '''
-        Current atmospheric pressure in Pascals. Available only if Drag is on and the density model can provide this data.
-        '''
+        """Current atmospheric pressure in Pascals. Available only if Drag is on and the density model can provide this data."""
         with agmarshall.DOUBLE_arg() as arg_pAtmPressure:
             agcls.evaluate_hresult(self.__dict__['_GetAtmPressure'](byref(arg_pAtmPressure.COM_val)))
             return arg_pAtmPressure.python_val
 
     @property
     def Density(self) -> float:
-        '''
-        Current density in kilograms/meter^3. Available only if Drag is on.
-        '''
+        """Current density in kilograms/meter^3. Available only if Drag is on."""
         with agmarshall.DOUBLE_arg() as arg_pDensity:
             agcls.evaluate_hresult(self.__dict__['_GetDensity'](byref(arg_pDensity.COM_val)))
             return arg_pDensity.python_val
 
     @Density.setter
     def Density(self, newDensity:float) -> None:
-        '''
-        Current density in kilograms/meter^3. Available only if Drag is on.
-        '''
+        """Current density in kilograms/meter^3. Available only if Drag is on."""
         with agmarshall.DOUBLE_arg(newDensity) as arg_newDensity:
             agcls.evaluate_hresult(self.__dict__['_SetDensity'](arg_newDensity.COM_val))
 
     @property
     def SolarIntensity(self) -> float:
-        '''
-        Current solar intensity. Available only if SRP is on.
-        '''
+        """Current solar intensity. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarIntensity:
             agcls.evaluate_hresult(self.__dict__['_GetSolarIntensity'](byref(arg_pSolarIntensity.COM_val)))
             return arg_pSolarIntensity.python_val
 
     @SolarIntensity.setter
     def SolarIntensity(self, newSolarIntensity:float) -> None:
-        '''
-        Current solar intensity. Available only if SRP is on.
-        '''
+        """Current solar intensity. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg(newSolarIntensity) as arg_newSolarIntensity:
             agcls.evaluate_hresult(self.__dict__['_SetSolarIntensity'](arg_newSolarIntensity.COM_val))
 
     def AddAcceleration(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> None:
-        '''
-        Add the acceleration in meters/second^2 in the given frame to the force model.
-        '''
+        """Add the acceleration in meters/second^2 in the given frame to the force model."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -1460,61 +1306,47 @@ class IAgAsHpopPluginResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_AddAcceleration'](arg_frame.COM_val, arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def LightSpeed(self) -> float:
-        '''
-        Speed of light in meters/second.
-        '''
+        """Speed of light in meters/second."""
         with agmarshall.DOUBLE_arg() as arg_pLightSpeed:
             agcls.evaluate_hresult(self.__dict__['_GetLightSpeed'](byref(arg_pLightSpeed.COM_val)))
             return arg_pLightSpeed.python_val
 
     @property
     def SolarFlux(self) -> float:
-        '''
-        Current solar flux in watts/meter^2. Available only if SRP is on.
-        '''
+        """Current solar flux in watts/meter^2. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarFlux:
             agcls.evaluate_hresult(self.__dict__['_GetSolarFlux'](byref(arg_pSolarFlux.COM_val)))
             return arg_pSolarFlux.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -1522,9 +1354,7 @@ class IAgAsHpopPluginResultEval(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -1535,25 +1365,19 @@ class IAgAsHpopPluginResultEval(object):
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude (meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude (meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def CurrentAtmFlux_Array(self) -> list:
-        '''
-        Flux values used by the density model, evaluated at the current time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp.
-        '''
+        """Flux values used by the density model, evaluated at the current time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentAtmFlux_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def AtmFlux_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated.
-        '''
+        """Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -1562,26 +1386,20 @@ class IAgAsHpopPluginResultEval(object):
             return arg_pArray.python_val
 
     def AtmFluxLags_Array(self) -> list:
-        '''
-        The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag.
-        '''
+        """The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_AtmFluxLags_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IsForceModelOn(self, type:"AgEForceModelType") -> bool:
-        '''
-        Indicates whether a particular force model contributor is being considered.
-        '''
+        """Indicates whether a particular force model contributor is being considered."""
         with agmarshall.AgEnum_arg(AgEForceModelType, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_IsForceModelOn'](arg_type.COM_val, byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     def ForceModelName(self, type:"AgEForceModelType") -> str:
-        '''
-        A translation of the enumerated type into a string.
-        '''
+        """A translation of the enumerated type into a string."""
         with agmarshall.AgEnum_arg(AgEForceModelType, type) as arg_type, \
              agmarshall.BSTR_arg() as arg_pName:
             agcls.evaluate_hresult(self.__dict__['_ForceModelName'](arg_type.COM_val, byref(arg_pName.COM_val)))
@@ -1589,102 +1407,78 @@ class IAgAsHpopPluginResultEval(object):
 
     @property
     def RadPressureCoefficient(self) -> float:
-        '''
-        Radiation pressure coefficient, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on.
-        '''
+        """Radiation pressure coefficient, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on."""
         with agmarshall.DOUBLE_arg() as arg_pCoef:
             agcls.evaluate_hresult(self.__dict__['_GetRadPressureCoefficient'](byref(arg_pCoef.COM_val)))
             return arg_pCoef.python_val
 
     @RadPressureCoefficient.setter
     def RadPressureCoefficient(self, newCoef:float) -> None:
-        '''
-        Radiation pressure coefficient, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on.
-        '''
+        """Radiation pressure coefficient, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on."""
         with agmarshall.DOUBLE_arg(newCoef) as arg_newCoef:
             agcls.evaluate_hresult(self.__dict__['_SetRadPressureCoefficient'](arg_newCoef.COM_val))
 
     @property
     def RadPressureArea(self) -> float:
-        '''
-        Radiation pressure area in meters^2, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on.
-        '''
+        """Radiation pressure area in meters^2, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on."""
         with agmarshall.DOUBLE_arg() as arg_pArea:
             agcls.evaluate_hresult(self.__dict__['_GetRadPressureArea'](byref(arg_pArea.COM_val)))
             return arg_pArea.python_val
 
     @RadPressureArea.setter
     def RadPressureArea(self, newArea:float) -> None:
-        '''
-        Radiation pressure area in meters^2, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on.
-        '''
+        """Radiation pressure area in meters^2, used by albedo and thermal radiation pressure. Can only be set if albedo or thermal radiation pressure is on."""
         with agmarshall.DOUBLE_arg(newArea) as arg_newArea:
             agcls.evaluate_hresult(self.__dict__['_SetRadPressureArea'](arg_newArea.COM_val))
 
     @property
     def DryMass(self) -> float:
-        '''
-        Dry Mass in kilograms.
-        '''
+        """Dry Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pDryMass:
             agcls.evaluate_hresult(self.__dict__['_GetDryMass'](byref(arg_pDryMass.COM_val)))
             return arg_pDryMass.python_val
 
     @property
     def FuelMass(self) -> float:
-        '''
-        Fuel Mass in kilograms.
-        '''
+        """Fuel Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pFuelMass:
             agcls.evaluate_hresult(self.__dict__['_GetFuelMass'](byref(arg_pFuelMass.COM_val)))
             return arg_pFuelMass.python_val
 
     @property
     def TotalMass(self) -> float:
-        '''
-        Total Mass in kilograms.
-        '''
+        """Total Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pTotalMass:
             agcls.evaluate_hresult(self.__dict__['_GetTotalMass'](byref(arg_pTotalMass.COM_val)))
             return arg_pTotalMass.python_val
 
     def StopPropagation(self) -> None:
-        '''
-        Stops propagation.  For fatal errors.
-        '''
+        """Stops propagation.  For fatal errors."""
         agcls.evaluate_hresult(self.__dict__['_StopPropagation']())
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def RefEpochElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Reference epoch expressed in requested time scale in day count and date formats as the array: WholeDays, SecsIntoDay, Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Reference epoch expressed in requested time scale in day count and date formats as the array: WholeDays, SecsIntoDay, Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_RefEpochElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def RefEpochString(self, dateAbbrv:str) -> str:
-        '''
-        Reference epoch expressed using the date format abbreviation specified.
-        '''
+        """Reference epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pRefEpochString:
             agcls.evaluate_hresult(self.__dict__['_RefEpochString'](arg_dateAbbrv.COM_val, byref(arg_pRefEpochString.COM_val)))
@@ -1696,9 +1490,7 @@ agcls.AgTypeNameMap['IAgAsHpopPluginResultEval'] = IAgAsHpopPluginResultEval
 __all__.append('IAgAsHpopPluginResultEval')
 
 class IAgAsHpopPluginResultPostEval(object):
-    '''
-    HPOP plugin interface used to get/set force model settings. Supports the IAgEpoch interface.
-    '''
+    """HPOP plugin interface used to get/set force model settings. Supports the IAgEpoch interface."""
     _uuid = '{11317870-1AE0-416a-9E15-E00B71DFD5D9}'
     _num_methods = 50
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1816,9 +1608,7 @@ class IAgAsHpopPluginResultPostEval(object):
         self.__dict__['_RefEpochElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgAsHpopPluginResultPostEval, vtable_offset_local+49, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_RefEpochString'] = IAGFUNCTYPE(pUnk, IID_IAgAsHpopPluginResultPostEval, vtable_offset_local+50, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsHpopPluginResultPostEval.__dict__ and type(IAgAsHpopPluginResultPostEval.__dict__[attrname]) == property:
@@ -1832,62 +1622,48 @@ class IAgAsHpopPluginResultPostEval(object):
     
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def Cd(self) -> float:
-        '''
-        Drag Coefficient.
-        '''
+        """Drag Coefficient."""
         with agmarshall.DOUBLE_arg() as arg_pCd:
             agcls.evaluate_hresult(self.__dict__['_GetCd'](byref(arg_pCd.COM_val)))
             return arg_pCd.python_val
 
     @property
     def Cr(self) -> float:
-        '''
-        SRP Coefficient.
-        '''
+        """SRP Coefficient."""
         with agmarshall.DOUBLE_arg() as arg_pCr:
             agcls.evaluate_hresult(self.__dict__['_GetCr'](byref(arg_pCr.COM_val)))
             return arg_pCr.python_val
 
     @property
     def DragArea(self) -> float:
-        '''
-        Drag Area in meters^2.
-        '''
+        """Drag Area in meters^2."""
         with agmarshall.DOUBLE_arg() as arg_pDragArea:
             agcls.evaluate_hresult(self.__dict__['_GetDragArea'](byref(arg_pDragArea.COM_val)))
             return arg_pDragArea.python_val
 
     @property
     def SRPArea(self) -> float:
-        '''
-        SRP Area in meters^2.
-        '''
+        """SRP Area in meters^2."""
         with agmarshall.DOUBLE_arg() as arg_pSRPArea:
             agcls.evaluate_hresult(self.__dict__['_GetSRPArea'](byref(arg_pSRPArea.COM_val)))
             return arg_pSRPArea.python_val
 
     @property
     def TimeSinceRefEpoch(self) -> float:
-        '''
-        Current epoch expressed in seconds since reference epoch.
-        '''
+        """Current epoch expressed in seconds since reference epoch."""
         with agmarshall.DOUBLE_arg() as arg_pTimeSinceRefEpoch:
             agcls.evaluate_hresult(self.__dict__['_GetTimeSinceRefEpoch'](byref(arg_pTimeSinceRefEpoch.COM_val)))
             return arg_pTimeSinceRefEpoch.python_val
 
     def AccelName(self, type:"AgEAccelType") -> str:
-        '''
-        A translation of the enumerated type into a string.
-        '''
+        """A translation of the enumerated type into a string."""
         with agmarshall.AgEnum_arg(AgEAccelType, type) as arg_type, \
              agmarshall.BSTR_arg() as arg_pName:
             agcls.evaluate_hresult(self.__dict__['_AccelName'](arg_type.COM_val, byref(arg_pName.COM_val)))
@@ -1895,69 +1671,53 @@ class IAgAsHpopPluginResultPostEval(object):
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude in meters.
-        '''
+        """Current altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def LightSpeed(self) -> float:
-        '''
-        Speed of light in meters/second.
-        '''
+        """Speed of light in meters/second."""
         with agmarshall.DOUBLE_arg() as arg_pLightSpeed:
             agcls.evaluate_hresult(self.__dict__['_GetLightSpeed'](byref(arg_pLightSpeed.COM_val)))
             return arg_pLightSpeed.python_val
 
     @property
     def SolarFlux(self) -> float:
-        '''
-        Current solar flux in watts/meter^2. Available only if SRP is on.
-        '''
+        """Current solar flux in watts/meter^2. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarFlux:
             agcls.evaluate_hresult(self.__dict__['_GetSolarFlux'](byref(arg_pSolarFlux.COM_val)))
             return arg_pSolarFlux.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -1965,9 +1725,7 @@ class IAgAsHpopPluginResultPostEval(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -1978,25 +1736,19 @@ class IAgAsHpopPluginResultPostEval(object):
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude (meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude (meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def CurrentAtmFlux_Array(self) -> list:
-        '''
-        Flux values used by the density model, evaluated at the current time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp.
-        '''
+        """Flux values used by the density model, evaluated at the current time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentAtmFlux_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def AtmFlux_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated.
-        '''
+        """Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -2005,62 +1757,48 @@ class IAgAsHpopPluginResultPostEval(object):
             return arg_pArray.python_val
 
     def AtmFluxLags_Array(self) -> list:
-        '''
-        The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag.
-        '''
+        """The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_AtmFluxLags_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     @property
     def DragAltitude(self) -> float:
-        '''
-        Current altitude in meters used by density model. Available only if Drag is on.
-        '''
+        """Current altitude in meters used by density model. Available only if Drag is on."""
         with agmarshall.DOUBLE_arg() as arg_pDragAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetDragAltitude'](byref(arg_pDragAltitude.COM_val)))
             return arg_pDragAltitude.python_val
 
     @property
     def AtmTemperature(self) -> float:
-        '''
-        Current atmospheric temperature in Kelvin. Available only if Drag is on and the density model can provide this data.
-        '''
+        """Current atmospheric temperature in Kelvin. Available only if Drag is on and the density model can provide this data."""
         with agmarshall.DOUBLE_arg() as arg_pAtmTemperature:
             agcls.evaluate_hresult(self.__dict__['_GetAtmTemperature'](byref(arg_pAtmTemperature.COM_val)))
             return arg_pAtmTemperature.python_val
 
     @property
     def AtmPressure(self) -> float:
-        '''
-        Current atmospheric pressure in Pascals. Available only if Drag is on and the density model can provide this data.
-        '''
+        """Current atmospheric pressure in Pascals. Available only if Drag is on and the density model can provide this data."""
         with agmarshall.DOUBLE_arg() as arg_pAtmPressure:
             agcls.evaluate_hresult(self.__dict__['_GetAtmPressure'](byref(arg_pAtmPressure.COM_val)))
             return arg_pAtmPressure.python_val
 
     @property
     def Density(self) -> float:
-        '''
-        Current density in kilograms/meter^3. Available only if Drag is on.
-        '''
+        """Current density in kilograms/meter^3. Available only if Drag is on."""
         with agmarshall.DOUBLE_arg() as arg_pDensity:
             agcls.evaluate_hresult(self.__dict__['_GetDensity'](byref(arg_pDensity.COM_val)))
             return arg_pDensity.python_val
 
     @property
     def SolarIntensity(self) -> float:
-        '''
-        Current solar intensity. Available only if SRP is on.
-        '''
+        """Current solar intensity. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarIntensity:
             agcls.evaluate_hresult(self.__dict__['_GetSolarIntensity'](byref(arg_pSolarIntensity.COM_val)))
             return arg_pSolarIntensity.python_val
 
     def AddAcceleration(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> None:
-        '''
-        Add the acceleration in meters/second^2 in the given frame to the force model.
-        '''
+        """Add the acceleration in meters/second^2 in the given frame to the force model."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -2068,9 +1806,7 @@ class IAgAsHpopPluginResultPostEval(object):
             agcls.evaluate_hresult(self.__dict__['_AddAcceleration'](arg_frame.COM_val, arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def GetAcceleration_Array(self, type:"AgEAccelType", frame:"AgEUtFrame") -> list:
-        '''
-        The acceleration in meters/second^2 contribution of the indicated Type, returned as cartesian components in the specified frame as the array X, Y, Z.
-        '''
+        """The acceleration in meters/second^2 contribution of the indicated Type, returned as cartesian components in the specified frame as the array X, Y, Z."""
         with agmarshall.AgEnum_arg(AgEAccelType, type) as arg_type, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -2078,18 +1814,14 @@ class IAgAsHpopPluginResultPostEval(object):
             return arg_pArray.python_val
 
     def IsForceModelOn(self, type:"AgEForceModelType") -> bool:
-        '''
-        Indicates whether a particular force model contributor is being considered.
-        '''
+        """Indicates whether a particular force model contributor is being considered."""
         with agmarshall.AgEnum_arg(AgEForceModelType, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_IsForceModelOn'](arg_type.COM_val, byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     def ForceModelName(self, type:"AgEForceModelType") -> str:
-        '''
-        A translation of the enumerated type into a string.
-        '''
+        """A translation of the enumerated type into a string."""
         with agmarshall.AgEnum_arg(AgEForceModelType, type) as arg_type, \
              agmarshall.BSTR_arg() as arg_pName:
             agcls.evaluate_hresult(self.__dict__['_ForceModelName'](arg_type.COM_val, byref(arg_pName.COM_val)))
@@ -2097,86 +1829,66 @@ class IAgAsHpopPluginResultPostEval(object):
 
     @property
     def RadPressureCoefficient(self) -> float:
-        '''
-        Radiation pressure coefficient, used by albedo and thermal radiation pressure.
-        '''
+        """Radiation pressure coefficient, used by albedo and thermal radiation pressure."""
         with agmarshall.DOUBLE_arg() as arg_pCoef:
             agcls.evaluate_hresult(self.__dict__['_GetRadPressureCoefficient'](byref(arg_pCoef.COM_val)))
             return arg_pCoef.python_val
 
     @property
     def RadPressureArea(self) -> float:
-        '''
-        Radiation pressure area in meters^2, used by albedo and thermal radiation pressure.
-        '''
+        """Radiation pressure area in meters^2, used by albedo and thermal radiation pressure."""
         with agmarshall.DOUBLE_arg() as arg_pArea:
             agcls.evaluate_hresult(self.__dict__['_GetRadPressureArea'](byref(arg_pArea.COM_val)))
             return arg_pArea.python_val
 
     @property
     def DryMass(self) -> float:
-        '''
-        Dry Mass in kilograms.
-        '''
+        """Dry Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pDryMass:
             agcls.evaluate_hresult(self.__dict__['_GetDryMass'](byref(arg_pDryMass.COM_val)))
             return arg_pDryMass.python_val
 
     @property
     def FuelMass(self) -> float:
-        '''
-        Fuel Mass in kilograms.
-        '''
+        """Fuel Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pFuelMass:
             agcls.evaluate_hresult(self.__dict__['_GetFuelMass'](byref(arg_pFuelMass.COM_val)))
             return arg_pFuelMass.python_val
 
     @property
     def TotalMass(self) -> float:
-        '''
-        Total Mass in kilograms.
-        '''
+        """Total Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pTotalMass:
             agcls.evaluate_hresult(self.__dict__['_GetTotalMass'](byref(arg_pTotalMass.COM_val)))
             return arg_pTotalMass.python_val
 
     def StopPropagation(self) -> None:
-        '''
-        Stops propagation.  For fatal errors.
-        '''
+        """Stops propagation.  For fatal errors."""
         agcls.evaluate_hresult(self.__dict__['_StopPropagation']())
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def RefEpochElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Reference epoch expressed in requested time scale in day count and date formats as the array: WholeDays, SecsIntoDay, Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Reference epoch expressed in requested time scale in day count and date formats as the array: WholeDays, SecsIntoDay, Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_RefEpochElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def RefEpochString(self, dateAbbrv:str) -> str:
-        '''
-        Reference epoch expressed using the date format abbreviation specified.
-        '''
+        """Reference epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pRefEpochString:
             agcls.evaluate_hresult(self.__dict__['_RefEpochString'](arg_dateAbbrv.COM_val, byref(arg_pRefEpochString.COM_val)))
@@ -2188,9 +1900,7 @@ agcls.AgTypeNameMap['IAgAsHpopPluginResultPostEval'] = IAgAsHpopPluginResultPost
 __all__.append('IAgAsHpopPluginResultPostEval')
 
 class IAgAsHpopPluginSampleEngine(object):
-    '''
-    HPOP sample plugin
-    '''
+    """HPOP sample plugin"""
     _uuid = '{04F3121D-439F-4618-A6DC-4B0EC3D94C68}'
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2220,9 +1930,7 @@ class IAgAsHpopPluginSampleEngine(object):
         self.__dict__['_GetDebugMode'] = IAGFUNCTYPE(pUnk, IID_IAgAsHpopPluginSampleEngine, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetDebugMode'] = IAGFUNCTYPE(pUnk, IID_IAgAsHpopPluginSampleEngine, vtable_offset_local+6, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsHpopPluginSampleEngine.__dict__ and type(IAgAsHpopPluginSampleEngine.__dict__[attrname]) == property:
@@ -2236,52 +1944,40 @@ class IAgAsHpopPluginSampleEngine(object):
     
     @property
     def Accel(self) -> float:
-        '''
-        Thrust acceleration value, in m/sec^2.
-        '''
+        """Thrust acceleration value, in m/sec^2."""
         with agmarshall.DOUBLE_arg() as arg_pAccel:
             agcls.evaluate_hresult(self.__dict__['_GetAccel'](byref(arg_pAccel.COM_val)))
             return arg_pAccel.python_val
 
     @Accel.setter
     def Accel(self, newAccel:float) -> None:
-        '''
-        Thrust acceleration value, in m/sec^2.
-        '''
+        """Thrust acceleration value, in m/sec^2."""
         with agmarshall.DOUBLE_arg(newAccel) as arg_newAccel:
             agcls.evaluate_hresult(self.__dict__['_SetAccel'](arg_newAccel.COM_val))
 
     @property
     def ReportFrequency(self) -> int:
-        '''
-        Frequency of output of debug messages, in number of integration steps.
-        '''
+        """Frequency of output of debug messages, in number of integration steps."""
         with agmarshall.LONG_arg() as arg_pFreq:
             agcls.evaluate_hresult(self.__dict__['_GetReportFrequency'](byref(arg_pFreq.COM_val)))
             return arg_pFreq.python_val
 
     @ReportFrequency.setter
     def ReportFrequency(self, newFreq:int) -> None:
-        '''
-        Frequency of output of debug messages, in number of integration steps.
-        '''
+        """Frequency of output of debug messages, in number of integration steps."""
         with agmarshall.LONG_arg(newFreq) as arg_newFreq:
             agcls.evaluate_hresult(self.__dict__['_SetReportFrequency'](arg_newFreq.COM_val))
 
     @property
     def DebugMode(self) -> bool:
-        '''
-        Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency.
-        '''
+        """Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pDebugMode:
             agcls.evaluate_hresult(self.__dict__['_GetDebugMode'](byref(arg_pDebugMode.COM_val)))
             return arg_pDebugMode.python_val
 
     @DebugMode.setter
     def DebugMode(self, newDebugMode:bool) -> None:
-        '''
-        Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency.
-        '''
+        """Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency."""
         with agmarshall.VARIANT_BOOL_arg(newDebugMode) as arg_newDebugMode:
             agcls.evaluate_hresult(self.__dict__['_SetDebugMode'](arg_newDebugMode.COM_val))
 
@@ -2291,9 +1987,7 @@ agcls.AgTypeNameMap['IAgAsHpopPluginSampleEngine'] = IAgAsHpopPluginSampleEngine
 __all__.append('IAgAsHpopPluginSampleEngine')
 
 class IAgAsLightReflectionResultRegister(object):
-    '''
-    LightReflection plugin interface used to register parameters that may be estimated.
-    '''
+    """LightReflection plugin interface used to register parameters that may be estimated."""
     _uuid = '{EF4CBEC2-8BC9-4e4f-811E-1CC9B2209D37}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2323,9 +2017,7 @@ class IAgAsLightReflectionResultRegister(object):
         self.__dict__['_RegisterUserInput'] = IAGFUNCTYPE(pUnk, IID_IAgAsLightReflectionResultRegister, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.LONG))
         self.__dict__['_RegisterUserParameterOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAsLightReflectionResultRegister, vtable_offset_local+6, agcom.BSTR, POINTER(agcom.LONG))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsLightReflectionResultRegister.__dict__ and type(IAgAsLightReflectionResultRegister.__dict__[attrname]) == property:
@@ -2338,9 +2030,7 @@ class IAgAsLightReflectionResultRegister(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsLightReflectionResultRegister.')
     
     def RegisterParameter(self, name:str, defaultValue:float, minValue:float, maxValue:float, dimension:str) -> int:
-        '''
-        Registers a parameter of the computation that may be estimated. Returns an index identifier of the parameter used by other interfaces.
-        '''
+        """Registers a parameter of the computation that may be estimated. Returns an index identifier of the parameter used by other interfaces."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.DOUBLE_arg(defaultValue) as arg_defaultValue, \
              agmarshall.DOUBLE_arg(minValue) as arg_minValue, \
@@ -2351,44 +2041,34 @@ class IAgAsLightReflectionResultRegister(object):
             return arg_index.python_val
 
     def Message(self, msgType:"AgEUtLogMsgType", message:str) -> None:
-        '''
-        Send a message to the message viewer.
-        '''
+        """Send a message to the message viewer."""
         with agmarshall.AgEnum_arg(AgEUtLogMsgType, msgType) as arg_msgType, \
              agmarshall.BSTR_arg(message) as arg_message:
             agcls.evaluate_hresult(self.__dict__['_Message'](arg_msgType.COM_val, arg_message.COM_val))
 
     @property
     def InstallDirectory(self) -> str:
-        '''
-        The directory path of the installation of the application.
-        '''
+        """The directory path of the installation of the application."""
         with agmarshall.BSTR_arg() as arg_dirPath:
             agcls.evaluate_hresult(self.__dict__['_GetInstallDirectory'](byref(arg_dirPath.COM_val)))
             return arg_dirPath.python_val
 
     @property
     def ConfigDirectory(self) -> str:
-        '''
-        The directory path of the user configuration area.
-        '''
+        """The directory path of the user configuration area."""
         with agmarshall.BSTR_arg() as arg_dirPath:
             agcls.evaluate_hresult(self.__dict__['_GetConfigDirectory'](byref(arg_dirPath.COM_val)))
             return arg_dirPath.python_val
 
     def RegisterUserInput(self, userValue:str) -> int:
-        '''
-        Registers as input to the plugin a user value in the state vector.
-        '''
+        """Registers as input to the plugin a user value in the state vector."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.LONG_arg() as arg_index:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserInput'](arg_userValue.COM_val, byref(arg_index.COM_val)))
             return arg_index.python_val
 
     def RegisterUserParameterOutput(self, userValue:str) -> int:
-        '''
-        Registers a user value in the state vector as a parameter output of the plugin.
-        '''
+        """Registers a user value in the state vector as a parameter output of the plugin."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.LONG_arg() as arg_index:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserParameterOutput'](arg_userValue.COM_val, byref(arg_index.COM_val)))
@@ -2400,9 +2080,7 @@ agcls.AgTypeNameMap['IAgAsLightReflectionResultRegister'] = IAgAsLightReflection
 __all__.append('IAgAsLightReflectionResultRegister')
 
 class IAgAsLightReflectionResult(object):
-    '''
-    LightReflection plugin interface used to get/set settings. Supports the IAgEpoch interface.
-    '''
+    """LightReflection plugin interface used to get/set settings. Supports the IAgEpoch interface."""
     _uuid = '{4825C756-3384-4028-AC6B-9C492CF54298}'
     _num_methods = 31
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2482,9 +2160,7 @@ class IAgAsLightReflectionResult(object):
         self.__dict__['_GetInputValue'] = IAGFUNCTYPE(pUnk, IID_IAgAsLightReflectionResult, vtable_offset_local+30, agcom.INT, POINTER(agcom.DOUBLE))
         self.__dict__['_SetParameterOutputValue'] = IAGFUNCTYPE(pUnk, IID_IAgAsLightReflectionResult, vtable_offset_local+31, agcom.INT, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsLightReflectionResult.__dict__ and type(IAgAsLightReflectionResult.__dict__[attrname]) == property:
@@ -2497,61 +2173,47 @@ class IAgAsLightReflectionResult(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsLightReflectionResult.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     @property
     def LightSpeed(self) -> float:
-        '''
-        Speed of light in meters/second.
-        '''
+        """Speed of light in meters/second."""
         with agmarshall.DOUBLE_arg() as arg_pLightSpeed:
             agcls.evaluate_hresult(self.__dict__['_GetLightSpeed'](byref(arg_pLightSpeed.COM_val)))
             return arg_pLightSpeed.python_val
 
     @property
     def SolarIntensity(self) -> float:
-        '''
-        Current solar intensity. Available only if SRP is on.
-        '''
+        """Current solar intensity. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarIntensity:
             agcls.evaluate_hresult(self.__dict__['_GetSolarIntensity'](byref(arg_pSolarIntensity.COM_val)))
             return arg_pSolarIntensity.python_val
 
     @property
     def SolarFlux(self) -> float:
-        '''
-        Current solar flux in watts/meter^2. Available only if SRP is on.
-        '''
+        """Current solar flux in watts/meter^2. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarFlux:
             agcls.evaluate_hresult(self.__dict__['_GetSolarFlux'](byref(arg_pSolarFlux.COM_val)))
             return arg_pSolarFlux.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
@@ -2559,43 +2221,33 @@ class IAgAsLightReflectionResult(object):
 
     @property
     def TotalMass(self) -> float:
-        '''
-        Total Mass in kilograms.
-        '''
+        """Total Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pTotalMass:
             agcls.evaluate_hresult(self.__dict__['_GetTotalMass'](byref(arg_pTotalMass.COM_val)))
             return arg_pTotalMass.python_val
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude in meters.
-        '''
+        """Current altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -2603,9 +2255,7 @@ class IAgAsLightReflectionResult(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -2616,18 +2266,14 @@ class IAgAsLightReflectionResult(object):
             return arg_pArray.python_val
 
     def IncidentDirection_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Incident light direction (unitless) on the body, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident light direction (unitless) on the body, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirection_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def TransformVectorToBody_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float) -> list:
-        '''
-        Transforms a vector from the input frame to the body frame returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the body frame returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -2637,9 +2283,7 @@ class IAgAsLightReflectionResult(object):
             return arg_pArray.python_val
 
     def TransformVectorFromBody_Array(self, xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the body frame to the output frame returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the body frame to the output frame returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
              agmarshall.DOUBLE_arg(zFrom) as arg_zFrom, \
@@ -2649,44 +2293,34 @@ class IAgAsLightReflectionResult(object):
             return arg_pArray.python_val
 
     def IncidentDirectionInBody_Array(self) -> list:
-        '''
-        Incident light direction (unitless) on the body, in the body frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident light direction (unitless) on the body, in the body frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionInBody_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def GetInputValue(self, index:int) -> float:
-        '''
-        Gets the value of an input to the plugin in internal units.
-        '''
+        """Gets the value of an input to the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetInputValue'](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetParameterOutputValue(self, index:int, val:float) -> None:
-        '''
-        Sets the value of a parameter output of the plugin in internal units.
-        '''
+        """Sets the value of a parameter output of the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetParameterOutputValue'](arg_index.COM_val, arg_val.COM_val))
@@ -2697,9 +2331,7 @@ agcls.AgTypeNameMap['IAgAsLightReflectionResult'] = IAgAsLightReflectionResult
 __all__.append('IAgAsLightReflectionResult')
 
 class IAgAsLightReflectionResultEval(object):
-    '''
-    LightReflection plugin interface used to get/set settings during evaluation. Used to set reflectance vector (and optionally its partial derivs) used in computation of the srp force. Supports the IAgEpoch interface.
-    '''
+    """LightReflection plugin interface used to get/set settings during evaluation. Used to set reflectance vector (and optionally its partial derivs) used in computation of the srp force. Supports the IAgEpoch interface."""
     _uuid = '{18153B47-D0B5-46c1-8F58-FCC8EBDEBD19}'
     _num_methods = 61
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2839,9 +2471,7 @@ class IAgAsLightReflectionResultEval(object):
         self.__dict__['_GetInputValue'] = IAGFUNCTYPE(pUnk, IID_IAgAsLightReflectionResultEval, vtable_offset_local+60, agcom.INT, POINTER(agcom.DOUBLE))
         self.__dict__['_SetParameterOutputValue'] = IAGFUNCTYPE(pUnk, IID_IAgAsLightReflectionResultEval, vtable_offset_local+61, agcom.INT, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsLightReflectionResultEval.__dict__ and type(IAgAsLightReflectionResultEval.__dict__[attrname]) == property:
@@ -2854,61 +2484,47 @@ class IAgAsLightReflectionResultEval(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsLightReflectionResultEval.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     @property
     def LightSpeed(self) -> float:
-        '''
-        Speed of light in meters/second.
-        '''
+        """Speed of light in meters/second."""
         with agmarshall.DOUBLE_arg() as arg_pLightSpeed:
             agcls.evaluate_hresult(self.__dict__['_GetLightSpeed'](byref(arg_pLightSpeed.COM_val)))
             return arg_pLightSpeed.python_val
 
     @property
     def SolarIntensity(self) -> float:
-        '''
-        Current solar intensity. Available only if SRP is on.
-        '''
+        """Current solar intensity. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarIntensity:
             agcls.evaluate_hresult(self.__dict__['_GetSolarIntensity'](byref(arg_pSolarIntensity.COM_val)))
             return arg_pSolarIntensity.python_val
 
     @property
     def SolarFlux(self) -> float:
-        '''
-        Current solar flux in watts/meter^2. Available only if SRP is on.
-        '''
+        """Current solar flux in watts/meter^2. Available only if SRP is on."""
         with agmarshall.DOUBLE_arg() as arg_pSolarFlux:
             agcls.evaluate_hresult(self.__dict__['_GetSolarFlux'](byref(arg_pSolarFlux.COM_val)))
             return arg_pSolarFlux.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
@@ -2916,43 +2532,33 @@ class IAgAsLightReflectionResultEval(object):
 
     @property
     def TotalMass(self) -> float:
-        '''
-        Total Mass in kilograms.
-        '''
+        """Total Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pTotalMass:
             agcls.evaluate_hresult(self.__dict__['_GetTotalMass'](byref(arg_pTotalMass.COM_val)))
             return arg_pTotalMass.python_val
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude in meters.
-        '''
+        """Current altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -2960,9 +2566,7 @@ class IAgAsLightReflectionResultEval(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -2973,27 +2577,21 @@ class IAgAsLightReflectionResultEval(object):
             return arg_pArray.python_val
 
     def IncidentDirection_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Incident light direction (unitless) on the body, in the requested framereturned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident light direction (unitless) on the body, in the requested framereturned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirection_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SetReflectanceInBody(self, x:float, y:float, z:float) -> None:
-        '''
-        Sets reflectance (in m^2) in body components. Force = solarIntensity*luminosity/(4*pi*speedOfLight*distanceToSun^2)*reflectanceVec. reflectanceVec = sum of surface contributions where each surface N is cr_N*area_N*unitDirection_N.
-        '''
+        """Sets reflectance (in m^2) in body components. Force = solarIntensity*luminosity/(4*pi*speedOfLight*distanceToSun^2)*reflectanceVec. reflectanceVec = sum of surface contributions where each surface N is cr_N*area_N*unitDirection_N."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceInBody'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def SetReflectance(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> None:
-        '''
-        Sets reflectance (in m^2) in specified frame. Force = solarIntensity*luminosity/(4*pi*speedOfLight*distanceToSun^2)*reflectanceVec. reflectanceVec = sum of surface contributions where each surface N is cr_N*area_N*unitDirection_N.
-        '''
+        """Sets reflectance (in m^2) in specified frame. Force = solarIntensity*luminosity/(4*pi*speedOfLight*distanceToSun^2)*reflectanceVec. reflectanceVec = sum of surface contributions where each surface N is cr_N*area_N*unitDirection_N."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -3001,60 +2599,46 @@ class IAgAsLightReflectionResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectance'](arg_frame.COM_val, arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def IncidentDirectionVecInBodyPosPartials_Array(self) -> list:
-        '''
-        The partial derivatives in meters^-1 of the incident direction wrt inertial position coordinates, expressed in body components, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in meters^-1 of the incident direction wrt inertial position coordinates, expressed in body components, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionVecInBodyPosPartials_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionVecPosPartials_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        The partial derivatives in meters^-1 of the incident direction wrt inertial position coordinates, expressed in components of the requested frame, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in meters^-1 of the incident direction wrt inertial position coordinates, expressed in components of the requested frame, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionVecPosPartials_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionBodyCompPosPartials_Array(self) -> list:
-        '''
-        The partial derivatives in meters^-1 of the incident direction body components wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in meters^-1 of the incident direction body components wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionBodyCompPosPartials_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionCompPosPartials_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        The partial derivatives in meters^-1 of the incident direction components, expressed in the requested frame, wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in meters^-1 of the incident direction components, expressed in the requested frame, wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionCompPosPartials_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionBodyCompVelPartials_Array(self) -> list:
-        '''
-        The partial derivatives in seconds/meter of the incident direction body components wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in seconds/meter of the incident direction body components wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionBodyCompVelPartials_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionCompVelPartials_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        The partial derivatives in seconds/meter of the incident direction components, expressed in the requested frame, wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in seconds/meter of the incident direction components, expressed in the requested frame, wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionCompVelPartials_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SetReflectanceBodyCompPosPartials(self, reflectXwrtX:float, reflectXwrtY:float, reflectXwrtZ:float, reflectYwrtX:float, reflectYwrtY:float, reflectYwrtZ:float, reflectZwrtX:float, reflectZwrtY:float, reflectZwrtZ:float) -> None:
-        '''
-        Sets the partial derivatives in meters of the body components of reflectance wrt inertial position coordinates.
-        '''
+        """Sets the partial derivatives in meters of the body components of reflectance wrt inertial position coordinates."""
         with agmarshall.DOUBLE_arg(reflectXwrtX) as arg_reflectXwrtX, \
              agmarshall.DOUBLE_arg(reflectXwrtY) as arg_reflectXwrtY, \
              agmarshall.DOUBLE_arg(reflectXwrtZ) as arg_reflectXwrtZ, \
@@ -3067,9 +2651,7 @@ class IAgAsLightReflectionResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceBodyCompPosPartials'](arg_reflectXwrtX.COM_val, arg_reflectXwrtY.COM_val, arg_reflectXwrtZ.COM_val, arg_reflectYwrtX.COM_val, arg_reflectYwrtY.COM_val, arg_reflectYwrtZ.COM_val, arg_reflectZwrtX.COM_val, arg_reflectZwrtY.COM_val, arg_reflectZwrtZ.COM_val))
 
     def SetReflectanceCompPosPartials(self, frame:"AgEUtFrame", reflectXwrtX:float, reflectXwrtY:float, reflectXwrtZ:float, reflectYwrtX:float, reflectYwrtY:float, reflectYwrtZ:float, reflectZwrtX:float, reflectZwrtY:float, reflectZwrtZ:float) -> None:
-        '''
-        Sets the partial derivatives in meters of the components of reflectance (expressed in the specified frame) wrt inertial position coordinates.
-        '''
+        """Sets the partial derivatives in meters of the components of reflectance (expressed in the specified frame) wrt inertial position coordinates."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(reflectXwrtX) as arg_reflectXwrtX, \
              agmarshall.DOUBLE_arg(reflectXwrtY) as arg_reflectXwrtY, \
@@ -3083,9 +2665,7 @@ class IAgAsLightReflectionResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceCompPosPartials'](arg_frame.COM_val, arg_reflectXwrtX.COM_val, arg_reflectXwrtY.COM_val, arg_reflectXwrtZ.COM_val, arg_reflectYwrtX.COM_val, arg_reflectYwrtY.COM_val, arg_reflectYwrtZ.COM_val, arg_reflectZwrtX.COM_val, arg_reflectZwrtY.COM_val, arg_reflectZwrtZ.COM_val))
 
     def SetReflectanceBodyCompVelPartials(self, reflectXwrtVX:float, reflectXwrtVY:float, reflectXwrtVZ:float, reflectYwrtVX:float, reflectYwrtVY:float, reflectYwrtVZ:float, reflectZwrtVX:float, reflectZwrtVY:float, reflectZwrtVZ:float) -> None:
-        '''
-        Sets the partial derivatives in meter-seconds of the body components of reflectance wrt inertial velocity coordinates.
-        '''
+        """Sets the partial derivatives in meter-seconds of the body components of reflectance wrt inertial velocity coordinates."""
         with agmarshall.DOUBLE_arg(reflectXwrtVX) as arg_reflectXwrtVX, \
              agmarshall.DOUBLE_arg(reflectXwrtVY) as arg_reflectXwrtVY, \
              agmarshall.DOUBLE_arg(reflectXwrtVZ) as arg_reflectXwrtVZ, \
@@ -3098,9 +2678,7 @@ class IAgAsLightReflectionResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceBodyCompVelPartials'](arg_reflectXwrtVX.COM_val, arg_reflectXwrtVY.COM_val, arg_reflectXwrtVZ.COM_val, arg_reflectYwrtVX.COM_val, arg_reflectYwrtVY.COM_val, arg_reflectYwrtVZ.COM_val, arg_reflectZwrtVX.COM_val, arg_reflectZwrtVY.COM_val, arg_reflectZwrtVZ.COM_val))
 
     def SetReflectanceCompVelPartials(self, frame:"AgEUtFrame", reflectXwrtVX:float, reflectXwrtVY:float, reflectXwrtVZ:float, reflectYwrtVX:float, reflectYwrtVY:float, reflectYwrtVZ:float, reflectZwrtVX:float, reflectZwrtVY:float, reflectZwrtVZ:float) -> None:
-        '''
-        Sets the partial derivatives in meter-seconds of the components of reflectance (expressed in the specified frame) wrt inertial velocity coordinates.
-        '''
+        """Sets the partial derivatives in meter-seconds of the components of reflectance (expressed in the specified frame) wrt inertial velocity coordinates."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(reflectXwrtVX) as arg_reflectXwrtVX, \
              agmarshall.DOUBLE_arg(reflectXwrtVY) as arg_reflectXwrtVY, \
@@ -3114,9 +2692,7 @@ class IAgAsLightReflectionResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceCompVelPartials'](arg_frame.COM_val, arg_reflectXwrtVX.COM_val, arg_reflectXwrtVY.COM_val, arg_reflectXwrtVZ.COM_val, arg_reflectYwrtVX.COM_val, arg_reflectYwrtVY.COM_val, arg_reflectYwrtVZ.COM_val, arg_reflectZwrtVX.COM_val, arg_reflectZwrtVY.COM_val, arg_reflectZwrtVZ.COM_val))
 
     def BodyFixedVectorPosPartials_Array(self, x:float, y:float, z:float) -> list:
-        '''
-        The partial derivatives of the given body-fixed vector wrt inertial position coordinates in internal units, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives of the given body-fixed vector wrt inertial position coordinates in internal units, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z, \
@@ -3125,9 +2701,7 @@ class IAgAsLightReflectionResultEval(object):
             return arg_pArray.python_val
 
     def FrameFixedVectorPosPartials_Array(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> list:
-        '''
-        The partial derivatives of the given frame-fixed vector wrt inertial position coordinates in internal units, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives of the given frame-fixed vector wrt inertial position coordinates in internal units, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -3137,9 +2711,7 @@ class IAgAsLightReflectionResultEval(object):
             return arg_pArray.python_val
 
     def BodyFixedVectorVelPartials_Array(self, x:float, y:float, z:float) -> list:
-        '''
-        The partial derivatives of the given body-fixed vector wrt inertial velocity coordinates in internal units, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives of the given body-fixed vector wrt inertial velocity coordinates in internal units, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z, \
@@ -3148,9 +2720,7 @@ class IAgAsLightReflectionResultEval(object):
             return arg_pArray.python_val
 
     def FrameFixedVectorVelPartials_Array(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> list:
-        '''
-        The partial derivatives of the given frame-fixed vector wrt inertial velocity coordinates in internal units, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives of the given frame-fixed vector wrt inertial velocity coordinates in internal units, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -3160,9 +2730,7 @@ class IAgAsLightReflectionResultEval(object):
             return arg_pArray.python_val
 
     def ParameterValue(self, index:int) -> float:
-        '''
-        Parameter value in internal units for a registered parameter with indicated index.
-        '''
+        """Parameter value in internal units for a registered parameter with indicated index."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_value:
             agcls.evaluate_hresult(self.__dict__['_ParameterValue'](arg_index.COM_val, byref(arg_value.COM_val)))
@@ -3170,17 +2738,13 @@ class IAgAsLightReflectionResultEval(object):
 
     @property
     def ParameterValue_Array(self) -> list:
-        '''
-        Parameter values in internal units for all registered parameters, returned in index order.
-        '''
+        """Parameter values in internal units for all registered parameters, returned in index order."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_GetParameterValue_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SetReflectanceInBodyParamPartials(self, index:int, reflectXwrtParam:float, reflectYwrtParam:float, reflectZwrtParam:float) -> None:
-        '''
-        Sets the partial derivatives of the body components of reflectance wrt the registered parameter specified by Index.  Uses internal units.
-        '''
+        """Sets the partial derivatives of the body components of reflectance wrt the registered parameter specified by Index.  Uses internal units."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(reflectXwrtParam) as arg_reflectXwrtParam, \
              agmarshall.DOUBLE_arg(reflectYwrtParam) as arg_reflectYwrtParam, \
@@ -3188,9 +2752,7 @@ class IAgAsLightReflectionResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceInBodyParamPartials'](arg_index.COM_val, arg_reflectXwrtParam.COM_val, arg_reflectYwrtParam.COM_val, arg_reflectZwrtParam.COM_val))
 
     def SetReflectanceParamPartials(self, index:int, frame:"AgEUtFrame", reflectXwrtParam:float, reflectYwrtParam:float, reflectZwrtParam:float) -> None:
-        '''
-        Sets the partial derivatives of the components of reflectance (expressed in the specified frame) wrt the registered parameter specified by Index.  Uses internal units.
-        '''
+        """Sets the partial derivatives of the components of reflectance (expressed in the specified frame) wrt the registered parameter specified by Index.  Uses internal units."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(reflectXwrtParam) as arg_reflectXwrtParam, \
@@ -3199,9 +2761,7 @@ class IAgAsLightReflectionResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceParamPartials'](arg_index.COM_val, arg_frame.COM_val, arg_reflectXwrtParam.COM_val, arg_reflectYwrtParam.COM_val, arg_reflectZwrtParam.COM_val))
 
     def TransformVectorToBody_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float) -> list:
-        '''
-        Transforms a vector from the input frame to the body frame returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the body frame returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -3211,9 +2771,7 @@ class IAgAsLightReflectionResultEval(object):
             return arg_pArray.python_val
 
     def TransformVectorFromBody_Array(self, xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the body frame to the output frame returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the body frame to the output frame returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
              agmarshall.DOUBLE_arg(zFrom) as arg_zFrom, \
@@ -3223,44 +2781,34 @@ class IAgAsLightReflectionResultEval(object):
             return arg_pArray.python_val
 
     def IncidentDirectionInBody_Array(self) -> list:
-        '''
-        Incident light direction (unitless) on the body, in the body frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident light direction (unitless) on the body, in the body frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionInBody_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def GetInputValue(self, index:int) -> float:
-        '''
-        Gets the value of an input to the plugin in internal units.
-        '''
+        """Gets the value of an input to the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetInputValue'](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetParameterOutputValue(self, index:int, val:float) -> None:
-        '''
-        Sets the value of a parameter output of the plugin in internal units.
-        '''
+        """Sets the value of a parameter output of the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetParameterOutputValue'](arg_index.COM_val, arg_val.COM_val))
@@ -3271,9 +2819,7 @@ agcls.AgTypeNameMap['IAgAsLightReflectionResultEval'] = IAgAsLightReflectionResu
 __all__.append('IAgAsLightReflectionResultEval')
 
 class IAgAsLightReflectionPluginSample(object):
-    '''
-    Light Reflection sample plugin
-    '''
+    """Light Reflection sample plugin"""
     _uuid = '{597D4D2B-FCDD-479f-88CC-2026F011F5CF}'
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3299,9 +2845,7 @@ class IAgAsLightReflectionPluginSample(object):
         self.__dict__['_GetDebugMode'] = IAGFUNCTYPE(pUnk, IID_IAgAsLightReflectionPluginSample, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetDebugMode'] = IAGFUNCTYPE(pUnk, IID_IAgAsLightReflectionPluginSample, vtable_offset_local+4, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsLightReflectionPluginSample.__dict__ and type(IAgAsLightReflectionPluginSample.__dict__[attrname]) == property:
@@ -3315,35 +2859,27 @@ class IAgAsLightReflectionPluginSample(object):
     
     @property
     def ReportFrequency(self) -> int:
-        '''
-        Frequency of output of debug messages, in number of integration steps.
-        '''
+        """Frequency of output of debug messages, in number of integration steps."""
         with agmarshall.LONG_arg() as arg_pFreq:
             agcls.evaluate_hresult(self.__dict__['_GetReportFrequency'](byref(arg_pFreq.COM_val)))
             return arg_pFreq.python_val
 
     @ReportFrequency.setter
     def ReportFrequency(self, newFreq:int) -> None:
-        '''
-        Frequency of output of debug messages, in number of integration steps.
-        '''
+        """Frequency of output of debug messages, in number of integration steps."""
         with agmarshall.LONG_arg(newFreq) as arg_newFreq:
             agcls.evaluate_hresult(self.__dict__['_SetReportFrequency'](arg_newFreq.COM_val))
 
     @property
     def DebugMode(self) -> bool:
-        '''
-        Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency.
-        '''
+        """Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pDebugMode:
             agcls.evaluate_hresult(self.__dict__['_GetDebugMode'](byref(arg_pDebugMode.COM_val)))
             return arg_pDebugMode.python_val
 
     @DebugMode.setter
     def DebugMode(self, newDebugMode:bool) -> None:
-        '''
-        Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency.
-        '''
+        """Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency."""
         with agmarshall.VARIANT_BOOL_arg(newDebugMode) as arg_newDebugMode:
             agcls.evaluate_hresult(self.__dict__['_SetDebugMode'](arg_newDebugMode.COM_val))
 
@@ -3353,9 +2889,7 @@ agcls.AgTypeNameMap['IAgAsLightReflectionPluginSample'] = IAgAsLightReflectionPl
 __all__.append('IAgAsLightReflectionPluginSample')
 
 class IAgAsDragModelResultRegister(object):
-    '''
-    DragModel plugin interface used to register parameters that may be estimated.
-    '''
+    """DragModel plugin interface used to register parameters that may be estimated."""
     _uuid = '{9788104C-76AD-4349-B2E7-BB07BE622BCB}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3385,9 +2919,7 @@ class IAgAsDragModelResultRegister(object):
         self.__dict__['_RegisterUserInput'] = IAGFUNCTYPE(pUnk, IID_IAgAsDragModelResultRegister, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.LONG))
         self.__dict__['_RegisterUserParameterOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAsDragModelResultRegister, vtable_offset_local+6, agcom.BSTR, POINTER(agcom.LONG))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDragModelResultRegister.__dict__ and type(IAgAsDragModelResultRegister.__dict__[attrname]) == property:
@@ -3400,9 +2932,7 @@ class IAgAsDragModelResultRegister(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsDragModelResultRegister.')
     
     def RegisterParameter(self, name:str, defaultValue:float, minValue:float, maxValue:float, dimension:str) -> int:
-        '''
-        Registers a parameter of the computation that may be estimated. Returns an index identifier of the parameter used by other interfaces.
-        '''
+        """Registers a parameter of the computation that may be estimated. Returns an index identifier of the parameter used by other interfaces."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.DOUBLE_arg(defaultValue) as arg_defaultValue, \
              agmarshall.DOUBLE_arg(minValue) as arg_minValue, \
@@ -3413,44 +2943,34 @@ class IAgAsDragModelResultRegister(object):
             return arg_index.python_val
 
     def Message(self, msgType:"AgEUtLogMsgType", message:str) -> None:
-        '''
-        Send a message to the message viewer.
-        '''
+        """Send a message to the message viewer."""
         with agmarshall.AgEnum_arg(AgEUtLogMsgType, msgType) as arg_msgType, \
              agmarshall.BSTR_arg(message) as arg_message:
             agcls.evaluate_hresult(self.__dict__['_Message'](arg_msgType.COM_val, arg_message.COM_val))
 
     @property
     def InstallDirectory(self) -> str:
-        '''
-        The directory path of the installation of the application.
-        '''
+        """The directory path of the installation of the application."""
         with agmarshall.BSTR_arg() as arg_dirPath:
             agcls.evaluate_hresult(self.__dict__['_GetInstallDirectory'](byref(arg_dirPath.COM_val)))
             return arg_dirPath.python_val
 
     @property
     def ConfigDirectory(self) -> str:
-        '''
-        The directory path of the user configuration area.
-        '''
+        """The directory path of the user configuration area."""
         with agmarshall.BSTR_arg() as arg_dirPath:
             agcls.evaluate_hresult(self.__dict__['_GetConfigDirectory'](byref(arg_dirPath.COM_val)))
             return arg_dirPath.python_val
 
     def RegisterUserInput(self, userValue:str) -> int:
-        '''
-        Registers as input to the plugin a user value in the state vector.
-        '''
+        """Registers as input to the plugin a user value in the state vector."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.LONG_arg() as arg_index:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserInput'](arg_userValue.COM_val, byref(arg_index.COM_val)))
             return arg_index.python_val
 
     def RegisterUserParameterOutput(self, userValue:str) -> int:
-        '''
-        Registers a user value in the state vector as a parameter output of the plugin.
-        '''
+        """Registers a user value in the state vector as a parameter output of the plugin."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.LONG_arg() as arg_index:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserParameterOutput'](arg_userValue.COM_val, byref(arg_index.COM_val)))
@@ -3462,9 +2982,7 @@ agcls.AgTypeNameMap['IAgAsDragModelResultRegister'] = IAgAsDragModelResultRegist
 __all__.append('IAgAsDragModelResultRegister')
 
 class IAgAsDragModelResult(object):
-    '''
-    DragModel plugin interface used to get/set settings. Supports the IAgEpoch interface.
-    '''
+    """DragModel plugin interface used to get/set settings. Supports the IAgEpoch interface."""
     _uuid = '{448B43F7-3B38-4bab-90C0-02679BAB34CB}'
     _num_methods = 36
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3554,9 +3072,7 @@ class IAgAsDragModelResult(object):
         self.__dict__['_GetInputValue'] = IAGFUNCTYPE(pUnk, IID_IAgAsDragModelResult, vtable_offset_local+35, agcom.INT, POINTER(agcom.DOUBLE))
         self.__dict__['_SetParameterOutputValue'] = IAGFUNCTYPE(pUnk, IID_IAgAsDragModelResult, vtable_offset_local+36, agcom.INT, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDragModelResult.__dict__ and type(IAgAsDragModelResult.__dict__[attrname]) == property:
@@ -3569,43 +3085,33 @@ class IAgAsDragModelResult(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsDragModelResult.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def Date_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        This method is deprecated. Use DateElements instead. Current epoch in requested time scale expressed in date format returned as an array representing year [yyyy], dayOfYear, month [0-11], hour [0-23], minute [0-59], seconds. Useful for scripting clients.
-        '''
+        """This method is deprecated. Use DateElements instead. Current epoch in requested time scale expressed in date format returned as an array representing year [yyyy], dayOfYear, month [0-11], hour [0-23], minute [0-59], seconds. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_Date_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
@@ -3613,43 +3119,33 @@ class IAgAsDragModelResult(object):
 
     @property
     def TotalMass(self) -> float:
-        '''
-        Total Mass in kilograms.
-        '''
+        """Total Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pTotalMass:
             agcls.evaluate_hresult(self.__dict__['_GetTotalMass'](byref(arg_pTotalMass.COM_val)))
             return arg_pTotalMass.python_val
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude in meters.
-        '''
+        """Current altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -3660,18 +3156,14 @@ class IAgAsDragModelResult(object):
             return arg_pArray.python_val
 
     def IncidentDirection_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Incident particle direction (unitless) on the body, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident particle direction (unitless) on the body, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirection_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def TransformVectorToBody_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float) -> list:
-        '''
-        Transforms a vector from the input frame to the body frame returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the body frame returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -3681,9 +3173,7 @@ class IAgAsDragModelResult(object):
             return arg_pArray.python_val
 
     def TransformVectorFromBody_Array(self, xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the body frame to the output frame returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the body frame to the output frame returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
              agmarshall.DOUBLE_arg(zFrom) as arg_zFrom, \
@@ -3693,34 +3183,26 @@ class IAgAsDragModelResult(object):
             return arg_pArray.python_val
 
     def IncidentDirectionInBody_Array(self) -> list:
-        '''
-        Incident particle direction (unitless) on the body, in the body frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident particle direction (unitless) on the body, in the body frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionInBody_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentVector_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Incident particle vector on the body in meters/second, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident particle vector on the body in meters/second, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentVector_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentVectorInBody_Array(self) -> list:
-        '''
-        Incident particle vector on the body in meters/second, in the body frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident particle vector on the body in meters/second, in the body frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentVectorInBody_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -3728,45 +3210,35 @@ class IAgAsDragModelResult(object):
             return arg_pArray.python_val
 
     def SunPositionInBody_Array(self, sunPosType:"AgEUtSunPosType") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the body frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the body frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_SunPositionInBody_Array'](arg_sunPosType.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def GetInputValue(self, index:int) -> float:
-        '''
-        Gets the value of an input to the plugin in internal units.
-        '''
+        """Gets the value of an input to the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetInputValue'](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetParameterOutputValue(self, index:int, val:float) -> None:
-        '''
-        Sets the value of a parameter output of the plugin in internal units.
-        '''
+        """Sets the value of a parameter output of the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetParameterOutputValue'](arg_index.COM_val, arg_val.COM_val))
@@ -3777,9 +3249,7 @@ agcls.AgTypeNameMap['IAgAsDragModelResult'] = IAgAsDragModelResult
 __all__.append('IAgAsDragModelResult')
 
 class IAgAsDragModelResultEval(object):
-    '''
-    DragModel plugin interface used to get/set settings during evaluation. Used to set reflectance vector (and optionally its partial derivs) used in computation of the drag/lift/side force. Supports the IAgEpoch interface.
-    '''
+    """DragModel plugin interface used to get/set settings during evaluation. Used to set reflectance vector (and optionally its partial derivs) used in computation of the drag/lift/side force. Supports the IAgEpoch interface."""
     _uuid = '{446E6858-5D1E-4bac-89D1-E5DC42343F2B}'
     _num_methods = 71
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3939,9 +3409,7 @@ class IAgAsDragModelResultEval(object):
         self.__dict__['_GetInputValue'] = IAGFUNCTYPE(pUnk, IID_IAgAsDragModelResultEval, vtable_offset_local+70, agcom.INT, POINTER(agcom.DOUBLE))
         self.__dict__['_SetParameterOutputValue'] = IAGFUNCTYPE(pUnk, IID_IAgAsDragModelResultEval, vtable_offset_local+71, agcom.INT, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDragModelResultEval.__dict__ and type(IAgAsDragModelResultEval.__dict__[attrname]) == property:
@@ -3954,43 +3422,33 @@ class IAgAsDragModelResultEval(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsDragModelResultEval.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def Date_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        This method is deprecated. Use DateElements instead. Current epoch in requested time scale expressed in date format returned as an array representing year [yyyy], dayOfYear, month [0-11], hour [0-23], minute [0-59], seconds. Useful for scripting clients.
-        '''
+        """This method is deprecated. Use DateElements instead. Current epoch in requested time scale expressed in date format returned as an array representing year [yyyy], dayOfYear, month [0-11], hour [0-23], minute [0-59], seconds. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_Date_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
@@ -3998,43 +3456,33 @@ class IAgAsDragModelResultEval(object):
 
     @property
     def TotalMass(self) -> float:
-        '''
-        Total Mass in kilograms.
-        '''
+        """Total Mass in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pTotalMass:
             agcls.evaluate_hresult(self.__dict__['_GetTotalMass'](byref(arg_pTotalMass.COM_val)))
             return arg_pTotalMass.python_val
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude in meters.
-        '''
+        """Current altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -4042,9 +3490,7 @@ class IAgAsDragModelResultEval(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -4055,27 +3501,21 @@ class IAgAsDragModelResultEval(object):
             return arg_pArray.python_val
 
     def IncidentDirection_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Incident particle direction (unitless) on the body, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident particle direction (unitless) on the body, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirection_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SetReflectanceInBody(self, x:float, y:float, z:float) -> None:
-        '''
-        Sets reflectance (in m^2) in body components. Force = 0.5*density*velCBF^2*reflectanceVec. reflectanceVec = sum of surface contributions where each surface N is cd_N*area_N*unitDirection_N.
-        '''
+        """Sets reflectance (in m^2) in body components. Force = 0.5*density*velCBF^2*reflectanceVec. reflectanceVec = sum of surface contributions where each surface N is cd_N*area_N*unitDirection_N."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceInBody'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def SetReflectance(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> None:
-        '''
-        Sets reflectance (in m^2) in specified frame. Force = 0.5*density*velCBF^2*reflectanceVec. reflectanceVec = sum of surface contributions where each surface N is cd_N*area_N*unitDirection_N.
-        '''
+        """Sets reflectance (in m^2) in specified frame. Force = 0.5*density*velCBF^2*reflectanceVec. reflectanceVec = sum of surface contributions where each surface N is cd_N*area_N*unitDirection_N."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -4083,60 +3523,46 @@ class IAgAsDragModelResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectance'](arg_frame.COM_val, arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def IncidentDirectionVecInBodyPosPartials_Array(self) -> list:
-        '''
-        The partial derivatives in meters^-1 of the incident direction wrt inertial position coordinates, expressed in body components, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in meters^-1 of the incident direction wrt inertial position coordinates, expressed in body components, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionVecInBodyPosPartials_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionVecPosPartials_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        The partial derivatives in meters^-1 of the incident direction wrt inertial position coordinates, expressed in components of the requested frame, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in meters^-1 of the incident direction wrt inertial position coordinates, expressed in components of the requested frame, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionVecPosPartials_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionBodyCompPosPartials_Array(self) -> list:
-        '''
-        The partial derivatives in meters^-1 of the incident direction body components wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in meters^-1 of the incident direction body components wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionBodyCompPosPartials_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionCompPosPartials_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        The partial derivatives in meters^-1 of the incident direction components, expressed in the requested frame, wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in meters^-1 of the incident direction components, expressed in the requested frame, wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionCompPosPartials_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionBodyCompVelPartials_Array(self) -> list:
-        '''
-        The partial derivatives in seconds/meter of the incident direction body components wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in seconds/meter of the incident direction body components wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionBodyCompVelPartials_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentDirectionCompVelPartials_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        The partial derivatives in seconds/meter of the incident direction components, expressed in the requested frame, wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.
-        '''
+        """The partial derivatives in seconds/meter of the incident direction components, expressed in the requested frame, wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionCompVelPartials_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SetReflectanceBodyCompPosPartials(self, reflectXwrtX:float, reflectXwrtY:float, reflectXwrtZ:float, reflectYwrtX:float, reflectYwrtY:float, reflectYwrtZ:float, reflectZwrtX:float, reflectZwrtY:float, reflectZwrtZ:float) -> None:
-        '''
-        Sets the partial derivatives in meters of the body components of reflectance wrt inertial position coordinates.
-        '''
+        """Sets the partial derivatives in meters of the body components of reflectance wrt inertial position coordinates."""
         with agmarshall.DOUBLE_arg(reflectXwrtX) as arg_reflectXwrtX, \
              agmarshall.DOUBLE_arg(reflectXwrtY) as arg_reflectXwrtY, \
              agmarshall.DOUBLE_arg(reflectXwrtZ) as arg_reflectXwrtZ, \
@@ -4149,9 +3575,7 @@ class IAgAsDragModelResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceBodyCompPosPartials'](arg_reflectXwrtX.COM_val, arg_reflectXwrtY.COM_val, arg_reflectXwrtZ.COM_val, arg_reflectYwrtX.COM_val, arg_reflectYwrtY.COM_val, arg_reflectYwrtZ.COM_val, arg_reflectZwrtX.COM_val, arg_reflectZwrtY.COM_val, arg_reflectZwrtZ.COM_val))
 
     def SetReflectanceCompPosPartials(self, frame:"AgEUtFrame", reflectXwrtX:float, reflectXwrtY:float, reflectXwrtZ:float, reflectYwrtX:float, reflectYwrtY:float, reflectYwrtZ:float, reflectZwrtX:float, reflectZwrtY:float, reflectZwrtZ:float) -> None:
-        '''
-        Sets the partial derivatives in meters of the components of reflectance (expressed in the specified frame) wrt inertial position coordinates.
-        '''
+        """Sets the partial derivatives in meters of the components of reflectance (expressed in the specified frame) wrt inertial position coordinates."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(reflectXwrtX) as arg_reflectXwrtX, \
              agmarshall.DOUBLE_arg(reflectXwrtY) as arg_reflectXwrtY, \
@@ -4165,9 +3589,7 @@ class IAgAsDragModelResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceCompPosPartials'](arg_frame.COM_val, arg_reflectXwrtX.COM_val, arg_reflectXwrtY.COM_val, arg_reflectXwrtZ.COM_val, arg_reflectYwrtX.COM_val, arg_reflectYwrtY.COM_val, arg_reflectYwrtZ.COM_val, arg_reflectZwrtX.COM_val, arg_reflectZwrtY.COM_val, arg_reflectZwrtZ.COM_val))
 
     def SetReflectanceBodyCompVelPartials(self, reflectXwrtVX:float, reflectXwrtVY:float, reflectXwrtVZ:float, reflectYwrtVX:float, reflectYwrtVY:float, reflectYwrtVZ:float, reflectZwrtVX:float, reflectZwrtVY:float, reflectZwrtVZ:float) -> None:
-        '''
-        Sets the partial derivatives in meter-seconds of the body components of reflectance wrt inertial velocity coordinates.
-        '''
+        """Sets the partial derivatives in meter-seconds of the body components of reflectance wrt inertial velocity coordinates."""
         with agmarshall.DOUBLE_arg(reflectXwrtVX) as arg_reflectXwrtVX, \
              agmarshall.DOUBLE_arg(reflectXwrtVY) as arg_reflectXwrtVY, \
              agmarshall.DOUBLE_arg(reflectXwrtVZ) as arg_reflectXwrtVZ, \
@@ -4180,9 +3602,7 @@ class IAgAsDragModelResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceBodyCompVelPartials'](arg_reflectXwrtVX.COM_val, arg_reflectXwrtVY.COM_val, arg_reflectXwrtVZ.COM_val, arg_reflectYwrtVX.COM_val, arg_reflectYwrtVY.COM_val, arg_reflectYwrtVZ.COM_val, arg_reflectZwrtVX.COM_val, arg_reflectZwrtVY.COM_val, arg_reflectZwrtVZ.COM_val))
 
     def SetReflectanceCompVelPartials(self, frame:"AgEUtFrame", reflectXwrtVX:float, reflectXwrtVY:float, reflectXwrtVZ:float, reflectYwrtVX:float, reflectYwrtVY:float, reflectYwrtVZ:float, reflectZwrtVX:float, reflectZwrtVY:float, reflectZwrtVZ:float) -> None:
-        '''
-        Sets the partial derivatives in meter-seconds of the components of reflectance (expressed in the specified frame) wrt inertial velocity coordinates.
-        '''
+        """Sets the partial derivatives in meter-seconds of the components of reflectance (expressed in the specified frame) wrt inertial velocity coordinates."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(reflectXwrtVX) as arg_reflectXwrtVX, \
              agmarshall.DOUBLE_arg(reflectXwrtVY) as arg_reflectXwrtVY, \
@@ -4196,9 +3616,7 @@ class IAgAsDragModelResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceCompVelPartials'](arg_frame.COM_val, arg_reflectXwrtVX.COM_val, arg_reflectXwrtVY.COM_val, arg_reflectXwrtVZ.COM_val, arg_reflectYwrtVX.COM_val, arg_reflectYwrtVY.COM_val, arg_reflectYwrtVZ.COM_val, arg_reflectZwrtVX.COM_val, arg_reflectZwrtVY.COM_val, arg_reflectZwrtVZ.COM_val))
 
     def BodyFixedVectorPosPartials_Array(self, x:float, y:float, z:float) -> list:
-        '''
-        The partial derivatives of the given body-fixed vector wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.  Uses internal units.
-        '''
+        """The partial derivatives of the given body-fixed vector wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.  Uses internal units."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z, \
@@ -4207,9 +3625,7 @@ class IAgAsDragModelResultEval(object):
             return arg_pArray.python_val
 
     def FrameFixedVectorPosPartials_Array(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> list:
-        '''
-        The partial derivatives of the given frame-fixed vector wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.  Uses internal units.
-        '''
+        """The partial derivatives of the given frame-fixed vector wrt inertial position coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.  Uses internal units."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -4219,9 +3635,7 @@ class IAgAsDragModelResultEval(object):
             return arg_pArray.python_val
 
     def BodyFixedVectorVelPartials_Array(self, x:float, y:float, z:float) -> list:
-        '''
-        The partial derivatives of the given body-fixed vector wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.  Uses internal units.
-        '''
+        """The partial derivatives of the given body-fixed vector wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.  Uses internal units."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z, \
@@ -4230,9 +3644,7 @@ class IAgAsDragModelResultEval(object):
             return arg_pArray.python_val
 
     def FrameFixedVectorVelPartials_Array(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> list:
-        '''
-        The partial derivatives of the given frame-fixed vector wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.  Uses internal units.
-        '''
+        """The partial derivatives of the given frame-fixed vector wrt inertial velocity coordinates, returned as an array representing the rows of the matrix. Useful for scripting clients.  Uses internal units."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -4242,9 +3654,7 @@ class IAgAsDragModelResultEval(object):
             return arg_pArray.python_val
 
     def ParameterValue(self, index:int) -> float:
-        '''
-        Parameter value for a registered parameter with indicated index.  Uses internal units.
-        '''
+        """Parameter value for a registered parameter with indicated index.  Uses internal units."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_value:
             agcls.evaluate_hresult(self.__dict__['_ParameterValue'](arg_index.COM_val, byref(arg_value.COM_val)))
@@ -4252,17 +3662,13 @@ class IAgAsDragModelResultEval(object):
 
     @property
     def ParameterValue_Array(self) -> list:
-        '''
-        Parameter values for all registered parameters, returned in index order.  Uses internal units.
-        '''
+        """Parameter values for all registered parameters, returned in index order.  Uses internal units."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_GetParameterValue_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SetReflectanceInBodyParamPartials(self, index:int, reflectXwrtParam:float, reflectYwrtParam:float, reflectZwrtParam:float) -> None:
-        '''
-        Sets the partial derivatives of the body components of reflectance wrt the registered parameter specified by Index.  Uses internal units.
-        '''
+        """Sets the partial derivatives of the body components of reflectance wrt the registered parameter specified by Index.  Uses internal units."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(reflectXwrtParam) as arg_reflectXwrtParam, \
              agmarshall.DOUBLE_arg(reflectYwrtParam) as arg_reflectYwrtParam, \
@@ -4270,9 +3676,7 @@ class IAgAsDragModelResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceInBodyParamPartials'](arg_index.COM_val, arg_reflectXwrtParam.COM_val, arg_reflectYwrtParam.COM_val, arg_reflectZwrtParam.COM_val))
 
     def SetReflectanceParamPartials(self, index:int, frame:"AgEUtFrame", reflectXwrtParam:float, reflectYwrtParam:float, reflectZwrtParam:float) -> None:
-        '''
-        Sets the partial derivatives of the components of reflectance (expressed in the specified frame) wrt the registered parameter specified by Index.  Uses internal units.
-        '''
+        """Sets the partial derivatives of the components of reflectance (expressed in the specified frame) wrt the registered parameter specified by Index.  Uses internal units."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(reflectXwrtParam) as arg_reflectXwrtParam, \
@@ -4281,9 +3685,7 @@ class IAgAsDragModelResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetReflectanceParamPartials'](arg_index.COM_val, arg_frame.COM_val, arg_reflectXwrtParam.COM_val, arg_reflectYwrtParam.COM_val, arg_reflectZwrtParam.COM_val))
 
     def TransformVectorToBody_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float) -> list:
-        '''
-        Transforms a vector from the input frame to the body frame returned as an array representing x, y, z. Useful for scripting clients.  Uses internal units.
-        '''
+        """Transforms a vector from the input frame to the body frame returned as an array representing x, y, z. Useful for scripting clients.  Uses internal units."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -4293,9 +3695,7 @@ class IAgAsDragModelResultEval(object):
             return arg_pArray.python_val
 
     def TransformVectorFromBody_Array(self, xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the body frame to the output frame returned as an array representing x, y, z. Useful for scripting clients.  Uses internal units.
-        '''
+        """Transforms a vector from the body frame to the output frame returned as an array representing x, y, z. Useful for scripting clients.  Uses internal units."""
         with agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
              agmarshall.DOUBLE_arg(zFrom) as arg_zFrom, \
@@ -4305,34 +3705,26 @@ class IAgAsDragModelResultEval(object):
             return arg_pArray.python_val
 
     def IncidentDirectionInBody_Array(self) -> list:
-        '''
-        Incident particle direction (unitless) on the body, in the body frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident particle direction (unitless) on the body, in the body frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentDirectionInBody_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentVector_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Incident particle vector on the body in meters/second, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident particle vector on the body in meters/second, in the requested frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentVector_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def IncidentVectorInBody_Array(self) -> list:
-        '''
-        Incident particle vector on the body in meters/second, in the body frame, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Incident particle vector on the body in meters/second, in the body frame, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_IncidentVectorInBody_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPositionInBody_Array(self, sunPosType:"AgEUtSunPosType") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the body frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the body frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_SunPositionInBody_Array'](arg_sunPosType.COM_val, byref(arg_pArray.COM_val)))
@@ -4340,80 +3732,62 @@ class IAgAsDragModelResultEval(object):
 
     @property
     def Density(self) -> float:
-        '''
-        Current atmospheric density in kg/meter^3.
-        '''
+        """Current atmospheric density in kg/meter^3."""
         with agmarshall.DOUBLE_arg() as arg_pDensity:
             agcls.evaluate_hresult(self.__dict__['_GetDensity'](byref(arg_pDensity.COM_val)))
             return arg_pDensity.python_val
 
     @property
     def AtmPressure(self) -> float:
-        '''
-        Current atmospheric pressure in pascals (N/m^2). Available if supported by atm density model (MSIS).
-        '''
+        """Current atmospheric pressure in pascals (N/m^2). Available if supported by atm density model (MSIS)."""
         with agmarshall.DOUBLE_arg() as arg_pPressure:
             agcls.evaluate_hresult(self.__dict__['_GetAtmPressure'](byref(arg_pPressure.COM_val)))
             return arg_pPressure.python_val
 
     @property
     def AtmTemperature(self) -> float:
-        '''
-        Current atmospheric temperature in K. Available if supported by atm density model (MSIS).
-        '''
+        """Current atmospheric temperature in K. Available if supported by atm density model (MSIS)."""
         with agmarshall.DOUBLE_arg() as arg_pTemperature:
             agcls.evaluate_hresult(self.__dict__['_GetAtmTemperature'](byref(arg_pTemperature.COM_val)))
             return arg_pTemperature.python_val
 
     @property
     def DragAltitude(self) -> float:
-        '''
-        Altitude used for current atmospheric density computation in meters.
-        '''
+        """Altitude used for current atmospheric density computation in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAlt:
             agcls.evaluate_hresult(self.__dict__['_GetDragAltitude'](byref(arg_pAlt.COM_val)))
             return arg_pAlt.python_val
 
     @property
     def MeanMolecularMass(self) -> float:
-        '''
-        Mean molecular mass from current atmospheric density computation in kg/kmol. Available if supported by atm density model (MSIS).
-        '''
+        """Mean molecular mass from current atmospheric density computation in kg/kmol. Available if supported by atm density model (MSIS)."""
         with agmarshall.DOUBLE_arg() as arg_pMMM:
             agcls.evaluate_hresult(self.__dict__['_GetMeanMolecularMass'](byref(arg_pMMM.COM_val)))
             return arg_pMMM.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def GetInputValue(self, index:int) -> float:
-        '''
-        Gets the value of an input to the plugin in internal units.
-        '''
+        """Gets the value of an input to the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetInputValue'](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetParameterOutputValue(self, index:int, val:float) -> None:
-        '''
-        Sets the value of a parameter output of the plugin in internal units.
-        '''
+        """Sets the value of a parameter output of the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetParameterOutputValue'](arg_index.COM_val, arg_val.COM_val))
@@ -4424,9 +3798,7 @@ agcls.AgTypeNameMap['IAgAsDragModelResultEval'] = IAgAsDragModelResultEval
 __all__.append('IAgAsDragModelResultEval')
 
 class IAgAsDragModelPluginSample(object):
-    '''
-    Drag model sample plugin
-    '''
+    """Drag model sample plugin"""
     _uuid = '{E3A2A809-6F1E-41f2-809C-237D1D5929DB}'
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -4452,9 +3824,7 @@ class IAgAsDragModelPluginSample(object):
         self.__dict__['_GetDebugMode'] = IAGFUNCTYPE(pUnk, IID_IAgAsDragModelPluginSample, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetDebugMode'] = IAGFUNCTYPE(pUnk, IID_IAgAsDragModelPluginSample, vtable_offset_local+4, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDragModelPluginSample.__dict__ and type(IAgAsDragModelPluginSample.__dict__[attrname]) == property:
@@ -4468,35 +3838,27 @@ class IAgAsDragModelPluginSample(object):
     
     @property
     def ReportFrequency(self) -> int:
-        '''
-        Frequency of output of debug messages, in number of integration steps.
-        '''
+        """Frequency of output of debug messages, in number of integration steps."""
         with agmarshall.LONG_arg() as arg_pFreq:
             agcls.evaluate_hresult(self.__dict__['_GetReportFrequency'](byref(arg_pFreq.COM_val)))
             return arg_pFreq.python_val
 
     @ReportFrequency.setter
     def ReportFrequency(self, newFreq:int) -> None:
-        '''
-        Frequency of output of debug messages, in number of integration steps.
-        '''
+        """Frequency of output of debug messages, in number of integration steps."""
         with agmarshall.LONG_arg(newFreq) as arg_newFreq:
             agcls.evaluate_hresult(self.__dict__['_SetReportFrequency'](arg_newFreq.COM_val))
 
     @property
     def DebugMode(self) -> bool:
-        '''
-        Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency.
-        '''
+        """Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pDebugMode:
             agcls.evaluate_hresult(self.__dict__['_GetDebugMode'](byref(arg_pDebugMode.COM_val)))
             return arg_pDebugMode.python_val
 
     @DebugMode.setter
     def DebugMode(self, newDebugMode:bool) -> None:
-        '''
-        Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency.
-        '''
+        """Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency."""
         with agmarshall.VARIANT_BOOL_arg(newDebugMode) as arg_newDebugMode:
             agcls.evaluate_hresult(self.__dict__['_SetDebugMode'](arg_newDebugMode.COM_val))
 
@@ -4506,9 +3868,7 @@ agcls.AgTypeNameMap['IAgAsDragModelPluginSample'] = IAgAsDragModelPluginSample
 __all__.append('IAgAsDragModelPluginSample')
 
 class IAgAsEOMFuncPluginRegisterHandler(object):
-    '''
-    EOM func plugin interface used to register the plugin's inputs, outputs, and events.
-    '''
+    """EOM func plugin interface used to register the plugin's inputs, outputs, and events."""
     _uuid = '{7B7AAACB-773C-4c5d-BD88-62D0A9F05663}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -4538,9 +3898,7 @@ class IAgAsEOMFuncPluginRegisterHandler(object):
         self.__dict__['_RegisterUserDerivativeOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAsEOMFuncPluginRegisterHandler, vtable_offset_local+5, agcom.BSTR)
         self.__dict__['_ExcludeEvent'] = IAGFUNCTYPE(pUnk, IID_IAgAsEOMFuncPluginRegisterHandler, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsEOMFuncPluginRegisterHandler.__dict__ and type(IAgAsEOMFuncPluginRegisterHandler.__dict__[attrname]) == property:
@@ -4553,44 +3911,32 @@ class IAgAsEOMFuncPluginRegisterHandler(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsEOMFuncPluginRegisterHandler.')
     
     def RegisterInput(self, stateValue:"AgEAsEOMFuncPluginInputStateValues") -> None:
-        '''
-        Registers as input to the plugin a built-in value in the state vector.
-        '''
+        """Registers as input to the plugin a built-in value in the state vector."""
         with agmarshall.AgEnum_arg(AgEAsEOMFuncPluginInputStateValues, stateValue) as arg_stateValue:
             agcls.evaluate_hresult(self.__dict__['_RegisterInput'](arg_stateValue.COM_val))
 
     def RegisterUserInput(self, userValue:str) -> None:
-        '''
-        Registers as input to the plugin a user value in the state vector.
-        '''
+        """Registers as input to the plugin a user value in the state vector."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserInput'](arg_userValue.COM_val))
 
     def RegisterParameterOutput(self, stateValue:"AgEAsEOMFuncPluginOutputStateValues") -> None:
-        '''
-        Registers a built-in value in the state vector as a parameter output of the plugin.
-        '''
+        """Registers a built-in value in the state vector as a parameter output of the plugin."""
         with agmarshall.AgEnum_arg(AgEAsEOMFuncPluginOutputStateValues, stateValue) as arg_stateValue:
             agcls.evaluate_hresult(self.__dict__['_RegisterParameterOutput'](arg_stateValue.COM_val))
 
     def RegisterUserParameterOutput(self, userValue:str) -> None:
-        '''
-        Registers a user value in the state vector as a parameter output of the plugin.
-        '''
+        """Registers a user value in the state vector as a parameter output of the plugin."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserParameterOutput'](arg_userValue.COM_val))
 
     def RegisterUserDerivativeOutput(self, userValue:str) -> None:
-        '''
-        Registers a user value in the state vector of which the plugin will give the 1st derivative.
-        '''
+        """Registers a user value in the state vector of which the plugin will give the 1st derivative."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserDerivativeOutput'](arg_userValue.COM_val))
 
     def ExcludeEvent(self, eventType:"AgEAsEOMFuncPluginEventTypes") -> None:
-        '''
-        Registers an event on which the plugin should not be run.
-        '''
+        """Registers an event on which the plugin should not be run."""
         with agmarshall.AgEnum_arg(AgEAsEOMFuncPluginEventTypes, eventType) as arg_eventType:
             agcls.evaluate_hresult(self.__dict__['_ExcludeEvent'](arg_eventType.COM_val))
 
@@ -4600,9 +3946,7 @@ agcls.AgTypeNameMap['IAgAsEOMFuncPluginRegisterHandler'] = IAgAsEOMFuncPluginReg
 __all__.append('IAgAsEOMFuncPluginRegisterHandler')
 
 class IAgAsEOMFuncPluginSetIndicesHandler(object):
-    '''
-    EOM func plugin interface used to set the indices of the plugin's input and output.
-    '''
+    """EOM func plugin interface used to set the indices of the plugin's input and output."""
     _uuid = '{C0B4C47F-9292-4f13-BA9B-7DC4117E6720}'
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -4630,9 +3974,7 @@ class IAgAsEOMFuncPluginSetIndicesHandler(object):
         self.__dict__['_GetUserParameterOutputIndex'] = IAGFUNCTYPE(pUnk, IID_IAgAsEOMFuncPluginSetIndicesHandler, vtable_offset_local+4, agcom.BSTR, POINTER(agcom.INT))
         self.__dict__['_GetUserDerivativeOutputIndex'] = IAGFUNCTYPE(pUnk, IID_IAgAsEOMFuncPluginSetIndicesHandler, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.INT))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsEOMFuncPluginSetIndicesHandler.__dict__ and type(IAgAsEOMFuncPluginSetIndicesHandler.__dict__[attrname]) == property:
@@ -4645,45 +3987,35 @@ class IAgAsEOMFuncPluginSetIndicesHandler(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsEOMFuncPluginSetIndicesHandler.')
     
     def GetInputIndex(self, stateValue:"AgEAsEOMFuncPluginInputStateValues") -> int:
-        '''
-        Gets the index of an input to the plugin of a built-in value in the state vector.
-        '''
+        """Gets the index of an input to the plugin of a built-in value in the state vector."""
         with agmarshall.AgEnum_arg(AgEAsEOMFuncPluginInputStateValues, stateValue) as arg_stateValue, \
              agmarshall.INT_arg() as arg_pIndex:
             agcls.evaluate_hresult(self.__dict__['_GetInputIndex'](arg_stateValue.COM_val, byref(arg_pIndex.COM_val)))
             return arg_pIndex.python_val
 
     def GetUserInputIndex(self, userValue:str) -> int:
-        '''
-        Gets the index of an input to the plugin of a user value in the state vector.
-        '''
+        """Gets the index of an input to the plugin of a user value in the state vector."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.INT_arg() as arg_pIndex:
             agcls.evaluate_hresult(self.__dict__['_GetUserInputIndex'](arg_userValue.COM_val, byref(arg_pIndex.COM_val)))
             return arg_pIndex.python_val
 
     def GetParameterOutputIndex(self, stateValue:"AgEAsEOMFuncPluginOutputStateValues") -> int:
-        '''
-        Gets the index of parameter output of the plugin of a built-in value in the state vector.
-        '''
+        """Gets the index of parameter output of the plugin of a built-in value in the state vector."""
         with agmarshall.AgEnum_arg(AgEAsEOMFuncPluginOutputStateValues, stateValue) as arg_stateValue, \
              agmarshall.INT_arg() as arg_pIndex:
             agcls.evaluate_hresult(self.__dict__['_GetParameterOutputIndex'](arg_stateValue.COM_val, byref(arg_pIndex.COM_val)))
             return arg_pIndex.python_val
 
     def GetUserParameterOutputIndex(self, userValue:str) -> int:
-        '''
-        Gets the index of parameter output of the plugin of a built-in value in the state vector.
-        '''
+        """Gets the index of parameter output of the plugin of a built-in value in the state vector."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.INT_arg() as arg_pIndex:
             agcls.evaluate_hresult(self.__dict__['_GetUserParameterOutputIndex'](arg_userValue.COM_val, byref(arg_pIndex.COM_val)))
             return arg_pIndex.python_val
 
     def GetUserDerivativeOutputIndex(self, userValue:str) -> int:
-        '''
-        Gets the index of a user value in the state vector of which the plugin will give the 1st derivative.
-        '''
+        """Gets the index of a user value in the state vector of which the plugin will give the 1st derivative."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.INT_arg() as arg_pIndex:
             agcls.evaluate_hresult(self.__dict__['_GetUserDerivativeOutputIndex'](arg_userValue.COM_val, byref(arg_pIndex.COM_val)))
@@ -4695,9 +4027,7 @@ agcls.AgTypeNameMap['IAgAsEOMFuncPluginSetIndicesHandler'] = IAgAsEOMFuncPluginS
 __all__.append('IAgAsEOMFuncPluginSetIndicesHandler')
 
 class IAgAsEOMFuncPluginStateVector(object):
-    '''
-    State vector interface for EOM func plugins.
-    '''
+    """State vector interface for EOM func plugins."""
     _uuid = '{0BCCB4E4-1CA6-4919-9F24-DCA7B7407FAD}'
     _num_methods = 22
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -4759,9 +4089,7 @@ class IAgAsEOMFuncPluginStateVector(object):
         self.__dict__['_RefEpochElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgAsEOMFuncPluginStateVector, vtable_offset_local+21, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_RefEpochString'] = IAGFUNCTYPE(pUnk, IID_IAgAsEOMFuncPluginStateVector, vtable_offset_local+22, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsEOMFuncPluginStateVector.__dict__ and type(IAgAsEOMFuncPluginStateVector.__dict__[attrname]) == property:
@@ -4774,70 +4102,54 @@ class IAgAsEOMFuncPluginStateVector(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsEOMFuncPluginStateVector.')
     
     def GetInputValue(self, index:int) -> float:
-        '''
-        Gets the value of an input to the plugin in internal units.
-        '''
+        """Gets the value of an input to the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetInputValue'](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetParameterOutputValue(self, index:int, val:float) -> None:
-        '''
-        Sets the value of a parameter output of the plugin in internal units.
-        '''
+        """Sets the value of a parameter output of the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetParameterOutputValue'](arg_index.COM_val, arg_val.COM_val))
 
     def AddDerivativeOutputValue(self, index:int, val:float) -> None:
-        '''
-        Sets the value of a first derivative in internal units.
-        '''
+        """Sets the value of a first derivative in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_AddDerivativeOutputValue'](arg_index.COM_val, arg_val.COM_val))
 
     @property
     def TimeSinceRefEpoch(self) -> float:
-        '''
-        Current epoch expressed in seconds since reference epoch.
-        '''
+        """Current epoch expressed in seconds since reference epoch."""
         with agmarshall.DOUBLE_arg() as arg_pTimeSinceRefEpoch:
             agcls.evaluate_hresult(self.__dict__['_GetTimeSinceRefEpoch'](byref(arg_pTimeSinceRefEpoch.COM_val)))
             return arg_pTimeSinceRefEpoch.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) in the requested frame returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -4848,9 +4160,7 @@ class IAgAsEOMFuncPluginStateVector(object):
             return arg_pArray.python_val
 
     def AddAcceleration(self, frame:"AgEUtFrame", x:float, y:float, z:float) -> None:
-        '''
-        Add the acceleration in meters/second^2 in the given frame to the force model.
-        '''
+        """Add the acceleration in meters/second^2 in the given frame to the force model."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -4859,64 +4169,48 @@ class IAgAsEOMFuncPluginStateVector(object):
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     def StopPropagation(self) -> None:
-        '''
-        Stops propagation.  For fatal errors.
-        '''
+        """Stops propagation.  For fatal errors."""
         agcls.evaluate_hresult(self.__dict__['_StopPropagation']())
 
     def IndicateEvent(self, eventIndicator:"AgEAsHpopPluginEventIndicators") -> None:
-        '''
-        Marks an event to the propagator.
-        '''
+        """Marks an event to the propagator."""
         with agmarshall.AgEnum_arg(AgEAsHpopPluginEventIndicators, eventIndicator) as arg_eventIndicator:
             agcls.evaluate_hresult(self.__dict__['_IndicateEvent'](arg_eventIndicator.COM_val))
 
     def SetMaxStep(self, maxStep:float) -> None:
-        '''
-        Sets the maximum step size in seconds for the propagator.
-        '''
+        """Sets the maximum step size in seconds for the propagator."""
         with agmarshall.DOUBLE_arg(maxStep) as arg_maxStep:
             agcls.evaluate_hresult(self.__dict__['_SetMaxStep'](arg_maxStep.COM_val))
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def RefEpochElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Reference epoch expressed in requested time scale in day count and date formats as the array: WholeDays, SecsIntoDay, Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Reference epoch expressed in requested time scale in day count and date formats as the array: WholeDays, SecsIntoDay, Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_RefEpochElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def RefEpochString(self, dateAbbrv:str) -> str:
-        '''
-        Reference epoch expressed using the date format abbreviation specified.
-        '''
+        """Reference epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pRefEpochString:
             agcls.evaluate_hresult(self.__dict__['_RefEpochString'](arg_dateAbbrv.COM_val, byref(arg_pRefEpochString.COM_val)))
@@ -4928,9 +4222,7 @@ agcls.AgTypeNameMap['IAgAsEOMFuncPluginStateVector'] = IAgAsEOMFuncPluginStateVe
 __all__.append('IAgAsEOMFuncPluginStateVector')
 
 class IAgAsDensityModelResultRegister(object):
-    '''
-    DensityModel plugin interface used to register parameters that may be estimated.
-    '''
+    """DensityModel plugin interface used to register parameters that may be estimated."""
     _uuid = '{9788104C-76AD-4349-B2E7-BB07BE622BCA}'
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -4962,9 +4254,7 @@ class IAgAsDensityModelResultRegister(object):
         self.__dict__['_GetConfigDirectory'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelResultRegister, vtable_offset_local+6, POINTER(agcom.BSTR))
         self.__dict__['_SetParameterizationName'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelResultRegister, vtable_offset_local+7, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDensityModelResultRegister.__dict__ and type(IAgAsDensityModelResultRegister.__dict__[attrname]) == property:
@@ -4977,9 +4267,7 @@ class IAgAsDensityModelResultRegister(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsDensityModelResultRegister.')
     
     def RegisterParameter(self, name:str, defaultValue:float, minValue:float, maxValue:float, dimension:str) -> int:
-        '''
-        Registers a parameter of the computation that may be estimated. Returns an index identifier of the parameter used by other interfaces.
-        '''
+        """Registers a parameter of the computation that may be estimated. Returns an index identifier of the parameter used by other interfaces."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.DOUBLE_arg(defaultValue) as arg_defaultValue, \
              agmarshall.DOUBLE_arg(minValue) as arg_minValue, \
@@ -4990,53 +4278,41 @@ class IAgAsDensityModelResultRegister(object):
             return arg_index.python_val
 
     def RegisterUserInput(self, userValue:str) -> int:
-        '''
-        Registers as input to the plugin a user value in the state vector.
-        '''
+        """Registers as input to the plugin a user value in the state vector."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.LONG_arg() as arg_index:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserInput'](arg_userValue.COM_val, byref(arg_index.COM_val)))
             return arg_index.python_val
 
     def RegisterUserParameterOutput(self, userValue:str) -> int:
-        '''
-        Registers a user value in the state vector as a parameter output of the plugin.
-        '''
+        """Registers a user value in the state vector as a parameter output of the plugin."""
         with agmarshall.BSTR_arg(userValue) as arg_userValue, \
              agmarshall.LONG_arg() as arg_index:
             agcls.evaluate_hresult(self.__dict__['_RegisterUserParameterOutput'](arg_userValue.COM_val, byref(arg_index.COM_val)))
             return arg_index.python_val
 
     def Message(self, msgType:"AgEUtLogMsgType", message:str) -> None:
-        '''
-        Send a message to the message viewer.
-        '''
+        """Send a message to the message viewer."""
         with agmarshall.AgEnum_arg(AgEUtLogMsgType, msgType) as arg_msgType, \
              agmarshall.BSTR_arg(message) as arg_message:
             agcls.evaluate_hresult(self.__dict__['_Message'](arg_msgType.COM_val, arg_message.COM_val))
 
     @property
     def InstallDirectory(self) -> str:
-        '''
-        The directory path of the installation of the application.
-        '''
+        """The directory path of the installation of the application."""
         with agmarshall.BSTR_arg() as arg_dirPath:
             agcls.evaluate_hresult(self.__dict__['_GetInstallDirectory'](byref(arg_dirPath.COM_val)))
             return arg_dirPath.python_val
 
     @property
     def ConfigDirectory(self) -> str:
-        '''
-        The directory path of the user configuration area.
-        '''
+        """The directory path of the user configuration area."""
         with agmarshall.BSTR_arg() as arg_dirPath:
             agcls.evaluate_hresult(self.__dict__['_GetConfigDirectory'](byref(arg_dirPath.COM_val)))
             return arg_dirPath.python_val
 
     def SetParameterizationName(self, name:str) -> None:
-        '''
-        Registers a name for the estimation parameterization. This name is used during the selection of estimation parameters and to validate files of pre-computed corrections.
-        '''
+        """Registers a name for the estimation parameterization. This name is used during the selection of estimation parameters and to validate files of pre-computed corrections."""
         with agmarshall.BSTR_arg(name) as arg_name:
             agcls.evaluate_hresult(self.__dict__['_SetParameterizationName'](arg_name.COM_val))
 
@@ -5046,9 +4322,7 @@ agcls.AgTypeNameMap['IAgAsDensityModelResultRegister'] = IAgAsDensityModelResult
 __all__.append('IAgAsDensityModelResultRegister')
 
 class IAgAsDensityModelResult(object):
-    '''
-    DensityModel plugin interface used to get settings during numerical integration events. Supports the IAgEpoch interface.
-    '''
+    """DensityModel plugin interface used to get settings during numerical integration events. Supports the IAgEpoch interface."""
     _uuid = '{1672791D-FE81-459A-B8F4-26B7E68C7063}'
     _num_methods = 30
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -5126,9 +4400,7 @@ class IAgAsDensityModelResult(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelResult, vtable_offset_local+29, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelResult, vtable_offset_local+30, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDensityModelResult.__dict__ and type(IAgAsDensityModelResult.__dict__[attrname]) == property:
@@ -5141,34 +4413,26 @@ class IAgAsDensityModelResult(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsDensityModelResult.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
@@ -5176,34 +4440,26 @@ class IAgAsDensityModelResult(object):
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current detic altitude in meters.
-        '''
+        """Current detic altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) returned as an array representing X, Y, Z, VX, VY, VZ. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) returned as an array representing X, Y, Z, VX, VY, VZ. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -5211,9 +4467,7 @@ class IAgAsDensityModelResult(object):
             return arg_pArray.python_val
 
     def ParameterValue(self, index:int) -> float:
-        '''
-        Parameter value for a registered parameter with indicated index.  Uses internal units.
-        '''
+        """Parameter value for a registered parameter with indicated index.  Uses internal units."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_value:
             agcls.evaluate_hresult(self.__dict__['_ParameterValue'](arg_index.COM_val, byref(arg_value.COM_val)))
@@ -5221,42 +4475,32 @@ class IAgAsDensityModelResult(object):
 
     @property
     def ParameterValue_Array(self) -> list:
-        '''
-        Parameter values for all registered parameters, returned in index order.  Uses internal units.
-        '''
+        """Parameter values for all registered parameters, returned in index order.  Uses internal units."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_GetParameterValue_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def GetInputValue(self, index:int) -> float:
-        '''
-        Gets the value of an input to the plugin in internal units.
-        '''
+        """Gets the value of an input to the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetInputValue'](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetParameterOutputValue(self, index:int, val:float) -> None:
-        '''
-        Sets the value of a parameter output of the plugin in internal units.
-        '''
+        """Sets the value of a parameter output of the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetParameterOutputValue'](arg_index.COM_val, arg_val.COM_val))
 
     def CurrentAtmFlux_Array(self) -> list:
-        '''
-        Flux values used by the density model, evaluated at the current time using model supplied time lags, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp.
-        '''
+        """Flux values used by the density model, evaluated at the current time using model supplied time lags, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentAtmFlux_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def AtmFlux_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated.
-        '''
+        """Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -5265,25 +4509,19 @@ class IAgAsDensityModelResult(object):
             return arg_pArray.python_val
 
     def AtmFluxLags_Array(self) -> list:
-        '''
-        The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag.
-        '''
+        """The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_AtmFluxLags_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def CurrentAugmentedAtmFlux_Array(self) -> list:
-        '''
-        Augmented flux values used by the density model, evaluated at the current time using model supplied time lags, returned as an array representing M10.7, AvgM10.7, S10.7, AvgS10.7, Y10.7, AvgY10.7, DstDTc.
-        '''
+        """Augmented flux values used by the density model, evaluated at the current time using model supplied time lags, returned as an array representing M10.7, AvgM10.7, S10.7, AvgS10.7, Y10.7, AvgY10.7, DstDTc."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentAugmentedAtmFlux_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def AugmentedAtmFlux_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Augmented flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, M10.7, AvgM10.7, S10.7, AvgS10.7, Y10.7, AvgY10.7, DstDTc. No time lags are incorporated.
-        '''
+        """Augmented flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, M10.7, AvgM10.7, S10.7, AvgS10.7, Y10.7, AvgY10.7, DstDTc. No time lags are incorporated."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -5293,26 +4531,20 @@ class IAgAsDensityModelResult(object):
 
     @property
     def ComputeParameterPartials(self) -> bool:
-        '''
-        Indicates if registered density model parameters are being estimated. If the returned value is false, parameter partials need not be computed
-        '''
+        """Indicates if registered density model parameters are being estimated. If the returned value is false, parameter partials need not be computed"""
         with agmarshall.VARIANT_BOOL_arg() as arg_pComputeParameterPartials:
             agcls.evaluate_hresult(self.__dict__['_GetComputeParameterPartials'](byref(arg_pComputeParameterPartials.COM_val)))
             return arg_pComputeParameterPartials.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -5324,9 +4556,7 @@ agcls.AgTypeNameMap['IAgAsDensityModelResult'] = IAgAsDensityModelResult
 __all__.append('IAgAsDensityModelResult')
 
 class IAgAsDensityModelResultEval(object):
-    '''
-    DensityModel plugin interface used to get/set settings during evaluation. Supports the IAgEpoch interface.
-    '''
+    """DensityModel plugin interface used to get/set settings during evaluation. Supports the IAgEpoch interface."""
     _uuid = '{446E6858-5D1E-4bac-89D1-E5DC42343F2C}'
     _num_methods = 38
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -5420,9 +4650,7 @@ class IAgAsDensityModelResultEval(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelResultEval, vtable_offset_local+37, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelResultEval, vtable_offset_local+38, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDensityModelResultEval.__dict__ and type(IAgAsDensityModelResultEval.__dict__[attrname]) == property:
@@ -5435,43 +4663,33 @@ class IAgAsDensityModelResultEval(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsDensityModelResultEval.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant in meters^3/second^2.
-        '''
+        """Gravitational constant in meters^3/second^2."""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def Date_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        This method is deprecated. Use DateElements_Array instead. Current epoch in requested time scale expressed in date format returned as an array representing year [yyyy], dayOfYear, month [0-11], hour [0-23], minute [0-59], seconds.
-        '''
+        """This method is deprecated. Use DateElements_Array instead. Current epoch in requested time scale expressed in date format returned as an array representing year [yyyy], dayOfYear, month [0-11], hour [0-23], minute [0-59], seconds."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_Date_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
@@ -5479,43 +4697,33 @@ class IAgAsDensityModelResultEval(object):
 
     @property
     def TotalMass(self) -> float:
-        '''
-        This property is deprecated. Total Mass of the satellite in kilograms.
-        '''
+        """This property is deprecated. Total Mass of the satellite in kilograms."""
         with agmarshall.DOUBLE_arg() as arg_pTotalMass:
             agcls.evaluate_hresult(self.__dict__['_GetTotalMass'](byref(arg_pTotalMass.COM_val)))
             return arg_pTotalMass.python_val
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current detic altitude in meters.
-        '''
+        """Current detic altitude in meters."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude (radians), detic longitude (radians), and altitude(meters) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position (meters) and velocity (meters/second) returned as an array representing X, Y, Z, VX, VY, VZ. Useful for scripting clients.
-        '''
+        """Current position (meters) and velocity (meters/second) returned as an array representing X, Y, Z, VX, VY, VZ. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun in meters wrt the current satellite position, in the requested frame, computed in the requested manner, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -5523,9 +4731,7 @@ class IAgAsDensityModelResultEval(object):
             return arg_pArray.python_val
 
     def ParameterValue(self, index:int) -> float:
-        '''
-        Parameter value for a registered parameter with indicated index.  Uses internal units.
-        '''
+        """Parameter value for a registered parameter with indicated index.  Uses internal units."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_value:
             agcls.evaluate_hresult(self.__dict__['_ParameterValue'](arg_index.COM_val, byref(arg_value.COM_val)))
@@ -5533,63 +4739,47 @@ class IAgAsDensityModelResultEval(object):
 
     @property
     def ParameterValue_Array(self) -> list:
-        '''
-        Parameter values for all registered parameters, returned in index order.  Uses internal units.
-        '''
+        """Parameter values for all registered parameters, returned in index order.  Uses internal units."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_GetParameterValue_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SetDensity(self, density:float) -> None:
-        '''
-        Sets the Density for the model
-        '''
+        """Sets the Density for the model"""
         with agmarshall.DOUBLE_arg(density) as arg_density:
             agcls.evaluate_hresult(self.__dict__['_SetDensity'](arg_density.COM_val))
 
     def SetTemperature(self, temperature:float) -> None:
-        '''
-        Sets the Temperature for the model in Kelvin
-        '''
+        """Sets the Temperature for the model in Kelvin"""
         with agmarshall.DOUBLE_arg(temperature) as arg_temperature:
             agcls.evaluate_hresult(self.__dict__['_SetTemperature'](arg_temperature.COM_val))
 
     def SetPressure(self, pressure:float) -> None:
-        '''
-        Sets the Pressure for the model
-        '''
+        """Sets the Pressure for the model"""
         with agmarshall.DOUBLE_arg(pressure) as arg_pressure:
             agcls.evaluate_hresult(self.__dict__['_SetPressure'](arg_pressure.COM_val))
 
     def GetInputValue(self, index:int) -> float:
-        '''
-        Gets the value of an input to the plugin in internal units.
-        '''
+        """Gets the value of an input to the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetInputValue'](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetParameterOutputValue(self, index:int, val:float) -> None:
-        '''
-        Sets the value of a parameter output of the plugin in internal units.
-        '''
+        """Sets the value of a parameter output of the plugin in internal units."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetParameterOutputValue'](arg_index.COM_val, arg_val.COM_val))
 
     def CurrentAtmFlux_Array(self) -> list:
-        '''
-        Flux values used by the density model, evaluated at the current time using model supplied time lags, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp.
-        '''
+        """Flux values used by the density model, evaluated at the current time using model supplied time lags, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentAtmFlux_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def AtmFlux_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated.
-        '''
+        """Flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, Ap, DailyAp, Kp, DailyKp. No time lags are incorporated."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -5598,25 +4788,19 @@ class IAgAsDensityModelResultEval(object):
             return arg_pArray.python_val
 
     def AtmFluxLags_Array(self) -> list:
-        '''
-        The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag.
-        '''
+        """The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated, returned as an array of F10.7 lag, geo flux lag."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_AtmFluxLags_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def CurrentAugmentedAtmFlux_Array(self) -> list:
-        '''
-        Augmented flux values used by the density model, evaluated at the current time using model supplied time lags, returned as an array representing M10.7, AvgM10.7, S10.7, AvgS10.7, Y10.7, AvgY10.7, DstDTc.
-        '''
+        """Augmented flux values used by the density model, evaluated at the current time using model supplied time lags, returned as an array representing M10.7, AvgM10.7, S10.7, AvgS10.7, Y10.7, AvgY10.7, DstDTc."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentAugmentedAtmFlux_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def AugmentedAtmFlux_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Augmented flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, M10.7, AvgM10.7, S10.7, AvgS10.7, Y10.7, AvgY10.7, DstDTc. No time lags are incorporated.
-        '''
+        """Augmented flux values used by density models, evaluated at the requested time, returned as an array representing F10.7, AvgF10.7, M10.7, AvgM10.7, S10.7, AvgS10.7, Y10.7, AvgY10.7, DstDTc. No time lags are incorporated."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -5625,35 +4809,27 @@ class IAgAsDensityModelResultEval(object):
             return arg_pArray.python_val
 
     def SetParameterPartialDerivative(self, index:int, partialDeriv:float) -> None:
-        '''
-        Set value of partial derivative of density with respect to parameter value for a registered parameter with indicated index. Required for parameter estimation. Uses internal units.
-        '''
+        """Set value of partial derivative of density with respect to parameter value for a registered parameter with indicated index. Required for parameter estimation. Uses internal units."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(partialDeriv) as arg_partialDeriv:
             agcls.evaluate_hresult(self.__dict__['_SetParameterPartialDerivative'](arg_index.COM_val, arg_partialDeriv.COM_val))
 
     @property
     def ComputeParameterPartials(self) -> bool:
-        '''
-        Indicates if registered density model parameters are being estimated. If the returned value is false, parameter partials need not be computed
-        '''
+        """Indicates if registered density model parameters are being estimated. If the returned value is false, parameter partials need not be computed"""
         with agmarshall.VARIANT_BOOL_arg() as arg_pComputeParameterPartials:
             agcls.evaluate_hresult(self.__dict__['_GetComputeParameterPartials'](byref(arg_pComputeParameterPartials.COM_val)))
             return arg_pComputeParameterPartials.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -5665,9 +4841,7 @@ agcls.AgTypeNameMap['IAgAsDensityModelResultEval'] = IAgAsDensityModelResultEval
 __all__.append('IAgAsDensityModelResultEval')
 
 class IAgAsDensityModelPluginAtmFluxLagsConfig(object):
-    '''
-    DensityModel plugin interface used to get/set AtmFluxLag values
-    '''
+    """DensityModel plugin interface used to get/set AtmFluxLag values"""
     _uuid = '{E7C297CE-097E-463D-83F0-5D7E0DC3A68C}'
     _num_methods = 20
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -5725,9 +4899,7 @@ class IAgAsDensityModelPluginAtmFluxLagsConfig(object):
         self.__dict__['_SetDstDTcLag'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelPluginAtmFluxLagsConfig, vtable_offset_local+19, agcom.DOUBLE)
         self.__dict__['_GetDstDTcLag'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelPluginAtmFluxLagsConfig, vtable_offset_local+20, POINTER(agcom.DOUBLE))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDensityModelPluginAtmFluxLagsConfig.__dict__ and type(IAgAsDensityModelPluginAtmFluxLagsConfig.__dict__[attrname]) == property:
@@ -5741,171 +4913,131 @@ class IAgAsDensityModelPluginAtmFluxLagsConfig(object):
     
     @property
     def F10p7Lag(self) -> float:
-        '''
-        Gets or sets the F10p7Lag
-        '''
+        """Gets or sets the F10p7Lag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetF10p7Lag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @F10p7Lag.setter
     def F10p7Lag(self, val:float) -> None:
-        '''
-        Gets or sets the F10p7Lag
-        '''
+        """Gets or sets the F10p7Lag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetF10p7Lag'](arg_val.COM_val))
 
     @property
     def F10p7MeanLag(self) -> float:
-        '''
-        Gets or sets the F10p7MeanLag
-        '''
+        """Gets or sets the F10p7MeanLag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetF10p7MeanLag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @F10p7MeanLag.setter
     def F10p7MeanLag(self, val:float) -> None:
-        '''
-        Gets or sets the F10p7MeanLag
-        '''
+        """Gets or sets the F10p7MeanLag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetF10p7MeanLag'](arg_val.COM_val))
 
     @property
     def GeoFluxLag(self) -> float:
-        '''
-        Gets or sets the GeoFluxLag
-        '''
+        """Gets or sets the GeoFluxLag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetGeoFluxLag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @GeoFluxLag.setter
     def GeoFluxLag(self, val:float) -> None:
-        '''
-        Gets or sets the GeoFluxLag
-        '''
+        """Gets or sets the GeoFluxLag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetGeoFluxLag'](arg_val.COM_val))
 
     @property
     def M10p7Lag(self) -> float:
-        '''
-        Gets or sets the M10p7Lag
-        '''
+        """Gets or sets the M10p7Lag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetM10p7Lag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @M10p7Lag.setter
     def M10p7Lag(self, val:float) -> None:
-        '''
-        Gets or sets the M10p7Lag
-        '''
+        """Gets or sets the M10p7Lag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetM10p7Lag'](arg_val.COM_val))
 
     @property
     def M10p7MeanLag(self) -> float:
-        '''
-        Gets or sets the M10p7MeanLag
-        '''
+        """Gets or sets the M10p7MeanLag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetM10p7MeanLag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @M10p7MeanLag.setter
     def M10p7MeanLag(self, val:float) -> None:
-        '''
-        Gets or sets the M10p7MeanLag
-        '''
+        """Gets or sets the M10p7MeanLag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetM10p7MeanLag'](arg_val.COM_val))
 
     @property
     def S10p7Lag(self) -> float:
-        '''
-        Gets or sets the S10p7Lag
-        '''
+        """Gets or sets the S10p7Lag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetS10p7Lag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @S10p7Lag.setter
     def S10p7Lag(self, val:float) -> None:
-        '''
-        Gets or sets the S10p7Lag
-        '''
+        """Gets or sets the S10p7Lag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetS10p7Lag'](arg_val.COM_val))
 
     @property
     def S10p7MeanLag(self) -> float:
-        '''
-        Gets or sets the S10p7MeanLag
-        '''
+        """Gets or sets the S10p7MeanLag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetS10p7MeanLag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @S10p7MeanLag.setter
     def S10p7MeanLag(self, val:float) -> None:
-        '''
-        Gets or sets the S10p7MeanLag
-        '''
+        """Gets or sets the S10p7MeanLag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetS10p7MeanLag'](arg_val.COM_val))
 
     @property
     def Y10p7Lag(self) -> float:
-        '''
-        Gets or sets the Y10p7Lag
-        '''
+        """Gets or sets the Y10p7Lag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetY10p7Lag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @Y10p7Lag.setter
     def Y10p7Lag(self, val:float) -> None:
-        '''
-        Gets or sets the Y10p7Lag
-        '''
+        """Gets or sets the Y10p7Lag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetY10p7Lag'](arg_val.COM_val))
 
     @property
     def Y10p7MeanLag(self) -> float:
-        '''
-        Gets or sets the Y10p7MeanLag
-        '''
+        """Gets or sets the Y10p7MeanLag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetY10p7MeanLag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @Y10p7MeanLag.setter
     def Y10p7MeanLag(self, val:float) -> None:
-        '''
-        Gets or sets the Y10p7MeanLag
-        '''
+        """Gets or sets the Y10p7MeanLag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetY10p7MeanLag'](arg_val.COM_val))
 
     @property
     def DstDTcLag(self) -> float:
-        '''
-        Gets or sets the DstDTcLag
-        '''
+        """Gets or sets the DstDTcLag"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetDstDTcLag'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @DstDTcLag.setter
     def DstDTcLag(self, val:float) -> None:
-        '''
-        Gets or sets the DstDTcLag
-        '''
+        """Gets or sets the DstDTcLag"""
         with agmarshall.DOUBLE_arg(val) as arg_val:
             agcls.evaluate_hresult(self.__dict__['_SetDstDTcLag'](arg_val.COM_val))
 
@@ -5915,9 +5047,7 @@ agcls.AgTypeNameMap['IAgAsDensityModelPluginAtmFluxLagsConfig'] = IAgAsDensityMo
 __all__.append('IAgAsDensityModelPluginAtmFluxLagsConfig')
 
 class IAgAsDensityModelPluginAtmFluxLags(object):
-    '''
-    Density Model plugin interface that handles the getting/setting of AtmFluxLags
-    '''
+    """Density Model plugin interface that handles the getting/setting of AtmFluxLags"""
     _uuid = '{81378D5F-EDE9-4EEE-82AD-AB010C2DD06D}'
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -5937,9 +5067,7 @@ class IAgAsDensityModelPluginAtmFluxLags(object):
         vtable_offset_local = IAgAsDensityModelPluginAtmFluxLags._vtable_offset - 1
         self.__dict__['_OverrideAtmFluxLags'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelPluginAtmFluxLags, vtable_offset_local+1, agcom.PVOID)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDensityModelPluginAtmFluxLags.__dict__ and type(IAgAsDensityModelPluginAtmFluxLags.__dict__[attrname]) == property:
@@ -5952,9 +5080,7 @@ class IAgAsDensityModelPluginAtmFluxLags(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgAsDensityModelPluginAtmFluxLags.')
     
     def OverrideAtmFluxLags(self, fluxLags:"IAgAsDensityModelPluginAtmFluxLagsConfig") -> None:
-        '''
-        The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated.
-        '''
+        """The lag times (in secs), relative to the current epoch, at which the density flux values are evaluated."""
         with agmarshall.AgInterface_in_arg(fluxLags, IAgAsDensityModelPluginAtmFluxLagsConfig) as arg_fluxLags:
             agcls.evaluate_hresult(self.__dict__['_OverrideAtmFluxLags'](arg_fluxLags.COM_val))
 
@@ -5964,9 +5090,7 @@ agcls.AgTypeNameMap['IAgAsDensityModelPluginAtmFluxLags'] = IAgAsDensityModelPlu
 __all__.append('IAgAsDensityModelPluginAtmFluxLags')
 
 class IAgAsDensityModelPluginSample(object):
-    '''
-    Density model sample plugin
-    '''
+    """Density model sample plugin"""
     _uuid = '{E3A2A809-6F1E-41f2-809C-237D1D5929DC}'
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -5992,9 +5116,7 @@ class IAgAsDensityModelPluginSample(object):
         self.__dict__['_GetDebugMode'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelPluginSample, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetDebugMode'] = IAGFUNCTYPE(pUnk, IID_IAgAsDensityModelPluginSample, vtable_offset_local+4, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAsDensityModelPluginSample.__dict__ and type(IAgAsDensityModelPluginSample.__dict__[attrname]) == property:
@@ -6008,35 +5130,27 @@ class IAgAsDensityModelPluginSample(object):
     
     @property
     def ReportFrequency(self) -> int:
-        '''
-        Frequency of output of debug messages, in number of integration steps.
-        '''
+        """Frequency of output of debug messages, in number of integration steps."""
         with agmarshall.LONG_arg() as arg_pFreq:
             agcls.evaluate_hresult(self.__dict__['_GetReportFrequency'](byref(arg_pFreq.COM_val)))
             return arg_pFreq.python_val
 
     @ReportFrequency.setter
     def ReportFrequency(self, newFreq:int) -> None:
-        '''
-        Frequency of output of debug messages, in number of integration steps.
-        '''
+        """Frequency of output of debug messages, in number of integration steps."""
         with agmarshall.LONG_arg(newFreq) as arg_newFreq:
             agcls.evaluate_hresult(self.__dict__['_SetReportFrequency'](arg_newFreq.COM_val))
 
     @property
     def DebugMode(self) -> bool:
-        '''
-        Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency.
-        '''
+        """Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pDebugMode:
             agcls.evaluate_hresult(self.__dict__['_GetDebugMode'](byref(arg_pDebugMode.COM_val)))
             return arg_pDebugMode.python_val
 
     @DebugMode.setter
     def DebugMode(self, newDebugMode:bool) -> None:
-        '''
-        Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency.
-        '''
+        """Flag to turn debug mode on/off. When on, messages are reported to message viewer at the ReportFrequency."""
         with agmarshall.VARIANT_BOOL_arg(newDebugMode) as arg_newDebugMode:
             agcls.evaluate_hresult(self.__dict__['_SetDebugMode'](arg_newDebugMode.COM_val))
 
@@ -6047,297 +5161,217 @@ __all__.append('IAgAsDensityModelPluginSample')
 
 
 class IAgAsHpopPlugin(object):
-    '''
+    """
     HPOP plugin engine interface whose methods are called at certain events in the propagation process. A method returning false indicates an error.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin.
-        '''
+        """Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is freed from use to allow for any additional cleanup.
-        '''
+        """Triggered just before the plugin is freed from use to allow for any additional cleanup."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
     def PrePropagate(self, result:"IAgAsHpopPluginResult") -> bool:
-        '''
-        Triggered just before propagation starts. Use the input interface to access force model settings. Set initial values for parameters and variables in this method.
-        '''
+        """Triggered just before propagation starts. Use the input interface to access force model settings. Set initial values for parameters and variables in this method."""
         raise STKPluginMethodNotImplementedError('PrePropagate was not implemented.')
 
     def PostPropagate(self, result:"IAgAsHpopPluginResult") -> bool:
-        '''
-        Triggered just after the last propagation step has been taken. Use the input interface to access force model settings.
-        '''
+        """Triggered just after the last propagation step has been taken. Use the input interface to access force model settings."""
         raise STKPluginMethodNotImplementedError('PostPropagate was not implemented.')
 
     def PreNextStep(self, result:"IAgAsHpopPluginResult") -> bool:
-        '''
-        Triggered just before the next propagation step is attempted. Use the input interface to access force model settings. Returning false will turn this callback off.
-        '''
+        """Triggered just before the next propagation step is attempted. Use the input interface to access force model settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('PreNextStep was not implemented.')
 
     def Evaluate(self, resultEval:"IAgAsHpopPluginResultEval") -> bool:
-        '''
-        Triggered on every force model evaluation during the propagation of a step. Use the input interface to access force model settings. Returning false will turn this callback off.
-        '''
+        """Triggered on every force model evaluation during the propagation of a step. Use the input interface to access force model settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
     def PostEvaluate(self, resultPostEval:"IAgAsHpopPluginResultPostEval") -> bool:
-        '''
-        Triggered on every force model evaluation during the propagation of a step, but after the individual force model components have been computed. The components can be obtained from the input interface. Returning false will turn this callback off.
-        '''
+        """Triggered on every force model evaluation during the propagation of a step, but after the individual force model components have been computed. The components can be obtained from the input interface. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('PostEvaluate was not implemented.')
 
     def Name(self) -> str:
-        '''
-        Triggered after initialization to set the name of the plugin used in messages.
-        '''
+        """Triggered after initialization to set the name of the plugin used in messages."""
         raise STKPluginMethodNotImplementedError('Name was not implemented.')
 
 __all__.append('IAgAsHpopPlugin')
 
 class IAgAsLightReflectionPlugin(object):
-    '''
+    """
     This interface is deprecated. Use IAgAsLightReflectionPlugin2 instead. Used to set reflectance vector (and optionally its partial derivs) used in computation of the srp force. A method returning false indicates an error.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Register(self, result:"IAgAsLightReflectionResultRegister") -> None:
-        '''
-        Triggered before computation starts, when configuration settings are sought. Used to used to register parameters that may be estimated.
-        '''
+        """Triggered before computation starts, when configuration settings are sought. Used to used to register parameters that may be estimated."""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin.
-        '''
+        """Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is freed from use to allow for any additional cleanup.
-        '''
+        """Triggered just before the plugin is freed from use to allow for any additional cleanup."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
     def PreCompute(self, result:"IAgAsLightReflectionResult") -> bool:
-        '''
-        Triggered just before the computation starts. Use the input interface to access settings.
-        '''
+        """Triggered just before the computation starts. Use the input interface to access settings."""
         raise STKPluginMethodNotImplementedError('PreCompute was not implemented.')
 
     def PostCompute(self, result:"IAgAsLightReflectionResult") -> bool:
-        '''
-        Triggered after the last evaluation before the plugin calls Free(). Use the input interface to access settings.
-        '''
+        """Triggered after the last evaluation before the plugin calls Free(). Use the input interface to access settings."""
         raise STKPluginMethodNotImplementedError('PostCompute was not implemented.')
 
     def Evaluate(self, resultEval:"IAgAsLightReflectionResultEval") -> bool:
-        '''
-        Triggered on every force model evaluation during the propagation of a step. Use the input interface to access force model settings. Returning false will turn this callback off.
-        '''
+        """Triggered on every force model evaluation during the propagation of a step. Use the input interface to access force model settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
 __all__.append('IAgAsLightReflectionPlugin')
 
 class IAgAsLightReflectionPlugin2(IAgAsLightReflectionPlugin):
-    '''
+    """
     Light Reflection plugin interface. Inherits from IAgAsLightReflectionPlugin. Used to set reflectance vector (and optionally its partial derivs) used in computation of the srp force. A method returning false indicates an error.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def PreNextStep(self, result:"IAgAsLightReflectionResult") -> bool:
-        '''
-        Triggered just before the next propagation step is attempted. Use the input interface to access settings. Returning false will turn this callback off.
-        '''
+        """Triggered just before the next propagation step is attempted. Use the input interface to access settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('PreNextStep was not implemented.')
 
 __all__.append('IAgAsLightReflectionPlugin2')
 
 class IAgAsDragModelPlugin(object):
-    '''
+    """
     This interface is deprecated. Use IAgAsDragModelPlugin2 instead. Used to set reflectance vector (and optionally its partial derivs) used in computation of the drag/lift/side force. A method returning false indicates an error.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Register(self, result:"IAgAsDragModelResultRegister") -> None:
-        '''
-        Triggered before computation starts, when configuration settings are sought. Used to used to register parameters that may be estimated.
-        '''
+        """Triggered before computation starts, when configuration settings are sought. Used to used to register parameters that may be estimated."""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin.
-        '''
+        """Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is freed from use to allow for any additional cleanup.
-        '''
+        """Triggered just before the plugin is freed from use to allow for any additional cleanup."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
     def PreCompute(self, result:"IAgAsDragModelResult") -> bool:
-        '''
-        Triggered just before the computation starts. Use the input interface to access settings.
-        '''
+        """Triggered just before the computation starts. Use the input interface to access settings."""
         raise STKPluginMethodNotImplementedError('PreCompute was not implemented.')
 
     def PostCompute(self, result:"IAgAsDragModelResult") -> bool:
-        '''
-        Triggered after the last evaluation before the plugin calls Free(). Use the input interface to access settings.
-        '''
+        """Triggered after the last evaluation before the plugin calls Free(). Use the input interface to access settings."""
         raise STKPluginMethodNotImplementedError('PostCompute was not implemented.')
 
     def Evaluate(self, resultEval:"IAgAsDragModelResultEval") -> bool:
-        '''
-        Triggered on every force model evaluation during the propagation of a step. Use the input interface to access force model settings. Returning false will turn this callback off.
-        '''
+        """Triggered on every force model evaluation during the propagation of a step. Use the input interface to access force model settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
 __all__.append('IAgAsDragModelPlugin')
 
 class IAgAsDragModelPlugin2(IAgAsDragModelPlugin):
-    '''
+    """
     Drag model plugin interface. Inherits from IAgAsDragModelPlugin. Used to set reflectance vector (and optionally its partial derivs) used in computation of the drag/lift/side force. A method returning false indicates an error.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def PreNextStep(self, result:"IAgAsDragModelResult") -> bool:
-        '''
-        Triggered just before the next propagation step is attempted. Use the input interface to access settings. Returning false will turn this callback off.
-        '''
+        """Triggered just before the next propagation step is attempted. Use the input interface to access settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('PreNextStep was not implemented.')
 
 __all__.append('IAgAsDragModelPlugin2')
 
 class IAgAsEOMFuncPlugin(object):
-    '''
+    """
     HPOP plugin engine interface for user-defined equations of motion.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin.
-        '''
+        """Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is freed from use to allow for any additional cleanup.
-        '''
+        """Triggered just before the plugin is freed from use to allow for any additional cleanup."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
     def Register(self, pRegisterHandler:"IAgAsEOMFuncPluginRegisterHandler") -> bool:
-        '''
-        Method to register the plugin's inputs, outputs, and events
-        '''
+        """Method to register the plugin's inputs, outputs, and events"""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def SetIndices(self, pSetIndicesHandler:"IAgAsEOMFuncPluginSetIndicesHandler") -> bool:
-        '''
-        Gives the plugin the indices into the state vector for its inputs/outputs
-        '''
+        """Gives the plugin the indices into the state vector for its inputs/outputs"""
         raise STKPluginMethodNotImplementedError('SetIndices was not implemented.')
 
     def Calc(self, eventType:"AgEAsEOMFuncPluginEventTypes", pStateVector:"IAgAsEOMFuncPluginStateVector") -> bool:
-        '''
-        Calculate method for plugin
-        '''
+        """Calculate method for plugin"""
         raise STKPluginMethodNotImplementedError('Calc was not implemented.')
 
     def Name(self) -> str:
-        '''
-        Triggered after initialization to set the name of the plugin used in messages.
-        '''
+        """Triggered after initialization to set the name of the plugin used in messages."""
         raise STKPluginMethodNotImplementedError('Name was not implemented.')
 
 __all__.append('IAgAsEOMFuncPlugin')
 
 class IAgAsDensityModelPlugin(object):
-    '''
+    """
     Density model plugin interface. A method returning false indicates an error.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Register(self, result:"IAgAsDensityModelResultRegister") -> None:
-        '''
-        Triggered before computation starts, when configuration settings are sought. Used to used to register parameters that may be estimated.
-        '''
+        """Triggered before computation starts, when configuration settings are sought. Used to used to register parameters that may be estimated."""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin.
-        '''
+        """Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is freed from use to allow for any additional cleanup.
-        '''
+        """Triggered just before the plugin is freed from use to allow for any additional cleanup."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
     def Evaluate(self, resultEval:"IAgAsDensityModelResultEval") -> bool:
-        '''
-        Triggered on every force model evaluation during the propagation of a step. Use the input interface to access force model settings. Returning false will turn this callback off.
-        '''
+        """Triggered on every force model evaluation during the propagation of a step. Use the input interface to access force model settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
     def CentralBody(self) -> str:
-        '''
-        Triggered on every density plugin before evaluation to determine the central body for which the atmosphere model applies.
-        '''
+        """Triggered on every density plugin before evaluation to determine the central body for which the atmosphere model applies."""
         raise STKPluginMethodNotImplementedError('CentralBody was not implemented.')
 
     def ComputesTemperature(self) -> bool:
-        '''
-        Triggered on every density plugin before evaluation to check if the plugin computes temperature.
-        '''
+        """Triggered on every density plugin before evaluation to check if the plugin computes temperature."""
         raise STKPluginMethodNotImplementedError('ComputesTemperature was not implemented.')
 
     def ComputesPressure(self) -> bool:
-        '''
-        Triggered on every density plugin before evaluation to check if the plugin computes pressure.
-        '''
+        """Triggered on every density plugin before evaluation to check if the plugin computes pressure."""
         raise STKPluginMethodNotImplementedError('ComputesPressure was not implemented.')
 
     def UsesAugmentedSpaceWeather(self) -> bool:
-        '''
-        Triggered on every density plugin before evaluation to check if the plugin uses augmented space weather data such as M10, S10, Y10 and DstDTc.
-        '''
+        """Triggered on every density plugin before evaluation to check if the plugin uses augmented space weather data such as M10, S10, Y10 and DstDTc."""
         raise STKPluginMethodNotImplementedError('UsesAugmentedSpaceWeather was not implemented.')
 
     def GetLowestValidAltitude(self) -> float:
-        '''
-        The lowest valid altitude for input to atmospheric density model in meters.
-        '''
+        """The lowest valid altitude for input to atmospheric density model in meters."""
         raise STKPluginMethodNotImplementedError('GetLowestValidAltitude was not implemented.')
 
 __all__.append('IAgAsDensityModelPlugin')
 
 class IAgAsDensityModelPluginExtended(IAgAsDensityModelPlugin):
-    '''
+    """
     Extends the IAgAsDensityModelPlugin interface for use with numerical integration events.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def PreCompute(self, result:"IAgAsDensityModelResult") -> bool:
-        '''
-        Triggered just before numerical integration starts. Use the input interface to access settings.
-        '''
+        """Triggered just before numerical integration starts. Use the input interface to access settings."""
         raise STKPluginMethodNotImplementedError('PreCompute was not implemented.')
 
     def PreNextStep(self, result:"IAgAsDensityModelResult") -> bool:
-        '''
-        Triggered just before the next propagation step is attempted during numerical integration. Use the input interface to access settings. Returning false will turn this callback off.
-        '''
+        """Triggered just before the next propagation step is attempted during numerical integration. Use the input interface to access settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('PreNextStep was not implemented.')
 
     def PostCompute(self, result:"IAgAsDensityModelResult") -> bool:
-        '''
-        Triggered after the last evaluation of numerical integration before the plugin calls Free(). Use the input interface to access settings.
-        '''
+        """Triggered after the last evaluation of numerical integration before the plugin calls Free(). Use the input interface to access settings."""
         raise STKPluginMethodNotImplementedError('PostCompute was not implemented.')
 
 __all__.append('IAgAsDensityModelPluginExtended')
@@ -6345,18 +5379,14 @@ __all__.append('IAgAsDensityModelPluginExtended')
 
 
 class AgAsHpopPluginResult(IAgAsHpopPluginResult):
-    '''
-    HPOP plugin class used to get/set force model settings
-    '''
+    """HPOP plugin class used to get/set force model settings"""
     def __init__(self, sourceObject=None):
         IAgAsHpopPluginResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsHpopPluginResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6371,18 +5401,14 @@ __all__.append('AgAsHpopPluginResult')
 
 
 class AgAsHpopPluginResultEval(IAgAsHpopPluginResultEval):
-    '''
-    HPOP plugin class used to get/set force model settings during the propagation of a step
-    '''
+    """HPOP plugin class used to get/set force model settings during the propagation of a step"""
     def __init__(self, sourceObject=None):
         IAgAsHpopPluginResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsHpopPluginResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6397,18 +5423,14 @@ __all__.append('AgAsHpopPluginResultEval')
 
 
 class AgAsHpopPluginResultPostEval(IAgAsHpopPluginResultPostEval):
-    '''
-    HPOP plugin class used to get/set force model settings during the propagation of a step
-    '''
+    """HPOP plugin class used to get/set force model settings during the propagation of a step"""
     def __init__(self, sourceObject=None):
         IAgAsHpopPluginResultPostEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsHpopPluginResultPostEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6423,9 +5445,7 @@ __all__.append('AgAsHpopPluginResultPostEval')
 
 
 class AgAsHpopPluginSampleEngine(IAgAsHpopPluginSampleEngine, IAgAsHpopPlugin, IAgUtPluginConfig):
-    '''
-    Sample HPOP Plugin Class
-    '''
+    """Sample HPOP Plugin Class"""
     def __init__(self, sourceObject=None):
         IAgAsHpopPluginSampleEngine.__init__(self, sourceObject)
         IAgAsHpopPlugin.__init__(self, sourceObject)
@@ -6436,9 +5456,7 @@ class AgAsHpopPluginSampleEngine(IAgAsHpopPluginSampleEngine, IAgAsHpopPlugin, I
         IAgAsHpopPlugin._private_init(self, pUnk)
         IAgUtPluginConfig._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6455,18 +5473,14 @@ __all__.append('AgAsHpopPluginSampleEngine')
 
 
 class AgAsLightReflectionResultRegister(IAgAsLightReflectionResultRegister):
-    '''
-    LightReflection plugin interface used to register parameters that may be estimated.
-    '''
+    """LightReflection plugin interface used to register parameters that may be estimated."""
     def __init__(self, sourceObject=None):
         IAgAsLightReflectionResultRegister.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsLightReflectionResultRegister._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6481,18 +5495,14 @@ __all__.append('AgAsLightReflectionResultRegister')
 
 
 class AgAsLightReflectionResult(IAgAsLightReflectionResult):
-    '''
-    Light reflection plugin class used to get/set reflection settings
-    '''
+    """Light reflection plugin class used to get/set reflection settings"""
     def __init__(self, sourceObject=None):
         IAgAsLightReflectionResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsLightReflectionResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6507,18 +5517,14 @@ __all__.append('AgAsLightReflectionResult')
 
 
 class AgAsLightReflectionResultEval(IAgAsLightReflectionResultEval):
-    '''
-    Light reflection plugin class used to get/set reflection settings during Evaluation call
-    '''
+    """Light reflection plugin class used to get/set reflection settings during Evaluation call"""
     def __init__(self, sourceObject=None):
         IAgAsLightReflectionResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsLightReflectionResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6533,9 +5539,7 @@ __all__.append('AgAsLightReflectionResultEval')
 
 
 class AgAsLightReflectionPluginSample(IAgAsLightReflectionPluginSample, IAgAsLightReflectionPlugin2, IAgUtPluginConfig):
-    '''
-    Sample Light Reflection Plugin Class
-    '''
+    """Sample Light Reflection Plugin Class"""
     def __init__(self, sourceObject=None):
         IAgAsLightReflectionPluginSample.__init__(self, sourceObject)
         IAgAsLightReflectionPlugin2.__init__(self, sourceObject)
@@ -6546,9 +5550,7 @@ class AgAsLightReflectionPluginSample(IAgAsLightReflectionPluginSample, IAgAsLig
         IAgAsLightReflectionPlugin2._private_init(self, pUnk)
         IAgUtPluginConfig._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6565,18 +5567,14 @@ __all__.append('AgAsLightReflectionPluginSample')
 
 
 class AgAsDragModelResultRegister(IAgAsDragModelResultRegister):
-    '''
-    DragModel plugin interface used to register parameters that may be estimated.
-    '''
+    """DragModel plugin interface used to register parameters that may be estimated."""
     def __init__(self, sourceObject=None):
         IAgAsDragModelResultRegister.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsDragModelResultRegister._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6591,18 +5589,14 @@ __all__.append('AgAsDragModelResultRegister')
 
 
 class AgAsDragModelResult(IAgAsDragModelResult):
-    '''
-    DragModel plugin class used to get/set particle reflection settings
-    '''
+    """DragModel plugin class used to get/set particle reflection settings"""
     def __init__(self, sourceObject=None):
         IAgAsDragModelResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsDragModelResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6617,18 +5611,14 @@ __all__.append('AgAsDragModelResult')
 
 
 class AgAsDragModelResultEval(IAgAsDragModelResultEval):
-    '''
-    DragModel plugin class used to get/set particle reflection settings during Evaluation call
-    '''
+    """DragModel plugin class used to get/set particle reflection settings during Evaluation call"""
     def __init__(self, sourceObject=None):
         IAgAsDragModelResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsDragModelResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6643,9 +5633,7 @@ __all__.append('AgAsDragModelResultEval')
 
 
 class AgAsDragModelPluginSample(IAgAsDragModelPluginSample, IAgAsDragModelPlugin2, IAgUtPluginConfig):
-    '''
-    Sample DragModel Plugin Class
-    '''
+    """Sample DragModel Plugin Class"""
     def __init__(self, sourceObject=None):
         IAgAsDragModelPluginSample.__init__(self, sourceObject)
         IAgAsDragModelPlugin2.__init__(self, sourceObject)
@@ -6656,9 +5644,7 @@ class AgAsDragModelPluginSample(IAgAsDragModelPluginSample, IAgAsDragModelPlugin
         IAgAsDragModelPlugin2._private_init(self, pUnk)
         IAgUtPluginConfig._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6675,18 +5661,14 @@ __all__.append('AgAsDragModelPluginSample')
 
 
 class AgAsDensityModelResultRegister(IAgAsDensityModelResultRegister):
-    '''
-    DensityModel plugin interface used to register parameters that may be estimated.
-    '''
+    """DensityModel plugin interface used to register parameters that may be estimated."""
     def __init__(self, sourceObject=None):
         IAgAsDensityModelResultRegister.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsDensityModelResultRegister._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6701,18 +5683,14 @@ __all__.append('AgAsDensityModelResultRegister')
 
 
 class AgAsDensityModelResult(IAgAsDensityModelResult):
-    '''
-    DensityModel plugin class used to get settings during numerical integration events.
-    '''
+    """DensityModel plugin class used to get settings during numerical integration events."""
     def __init__(self, sourceObject=None):
         IAgAsDensityModelResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsDensityModelResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6727,18 +5705,14 @@ __all__.append('AgAsDensityModelResult')
 
 
 class AgAsDensityModelResultEval(IAgAsDensityModelResultEval):
-    '''
-    DensityModel plugin class used to get/set density settings during Evaluation call
-    '''
+    """DensityModel plugin class used to get/set density settings during Evaluation call"""
     def __init__(self, sourceObject=None):
         IAgAsDensityModelResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsDensityModelResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6753,18 +5727,14 @@ __all__.append('AgAsDensityModelResultEval')
 
 
 class AgAsDensityModelPluginAtmFluxLagsConfig(IAgAsDensityModelPluginAtmFluxLagsConfig):
-    '''
-    DensityModel plugin class used to get/set AtmFluxLag values
-    '''
+    """DensityModel plugin class used to get/set AtmFluxLag values"""
     def __init__(self, sourceObject=None):
         IAgAsDensityModelPluginAtmFluxLagsConfig.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsDensityModelPluginAtmFluxLagsConfig._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6779,9 +5749,7 @@ __all__.append('AgAsDensityModelPluginAtmFluxLagsConfig')
 
 
 class AgAsDensityModelPluginSample(IAgAsDensityModelPluginExtended, IAgAsDensityModelPluginSample, IAgAsDensityModelPlugin, IAgUtPluginConfig):
-    '''
-    Sample DensityModel Plugin Class
-    '''
+    """Sample DensityModel Plugin Class"""
     def __init__(self, sourceObject=None):
         IAgAsDensityModelPluginExtended.__init__(self, sourceObject)
         IAgAsDensityModelPluginSample.__init__(self, sourceObject)
@@ -6794,9 +5762,7 @@ class AgAsDensityModelPluginSample(IAgAsDensityModelPluginExtended, IAgAsDensity
         IAgAsDensityModelPlugin._private_init(self, pUnk)
         IAgUtPluginConfig._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6814,18 +5780,14 @@ __all__.append('AgAsDensityModelPluginSample')
 
 
 class AgEOMFuncHPOPPluginResult(IAgAsHpopPluginResult):
-    '''
-    Plugin class used to get/set propagator settings with EOM Manager
-    '''
+    """Plugin class used to get/set propagator settings with EOM Manager"""
     def __init__(self, sourceObject=None):
         IAgAsHpopPluginResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsHpopPluginResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6840,18 +5802,14 @@ __all__.append('AgEOMFuncHPOPPluginResult')
 
 
 class AgEOMFuncHPOPPluginResultEval(IAgAsHpopPluginResultEval):
-    '''
-    APlugin class used to get/set propagator settings during the propagation of a step with EOM Manager
-    '''
+    """APlugin class used to get/set propagator settings during the propagation of a step with EOM Manager"""
     def __init__(self, sourceObject=None):
         IAgAsHpopPluginResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsHpopPluginResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6866,18 +5824,14 @@ __all__.append('AgEOMFuncHPOPPluginResultEval')
 
 
 class AgEOMFuncHPOPPluginResultPostEval(IAgAsHpopPluginResultPostEval):
-    '''
-    Plugin class used to get/set propagator settings during the propagation of a step with EOM Manager
-    '''
+    """Plugin class used to get/set propagator settings during the propagation of a step with EOM Manager"""
     def __init__(self, sourceObject=None):
         IAgAsHpopPluginResultPostEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsHpopPluginResultPostEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6892,18 +5846,14 @@ __all__.append('AgEOMFuncHPOPPluginResultPostEval')
 
 
 class AgAsEOMFuncPluginRegisterHandler(IAgAsEOMFuncPluginRegisterHandler):
-    '''
-    Plugin class used to register plugin's inputs and outputs
-    '''
+    """Plugin class used to register plugin's inputs and outputs"""
     def __init__(self, sourceObject=None):
         IAgAsEOMFuncPluginRegisterHandler.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsEOMFuncPluginRegisterHandler._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6918,18 +5868,14 @@ __all__.append('AgAsEOMFuncPluginRegisterHandler')
 
 
 class AgAsEOMFuncPluginSetIndicesHandler(IAgAsEOMFuncPluginSetIndicesHandler):
-    '''
-    Plugin class used to set plugin's indices
-    '''
+    """Plugin class used to set plugin's indices"""
     def __init__(self, sourceObject=None):
         IAgAsEOMFuncPluginSetIndicesHandler.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsEOMFuncPluginSetIndicesHandler._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -6944,18 +5890,14 @@ __all__.append('AgAsEOMFuncPluginSetIndicesHandler')
 
 
 class AgAsEOMFuncPluginStateVector(IAgAsEOMFuncPluginStateVector):
-    '''
-    Plugin class used to get and set state values during propagation in plugin's calc method
-    '''
+    """Plugin class used to get and set state values during propagation in plugin's calc method"""
     def __init__(self, sourceObject=None):
         IAgAsEOMFuncPluginStateVector.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAsEOMFuncPluginStateVector._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

@@ -37,9 +37,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class IAgAvtrStrategyMATLABNav(object):
-    '''
-    Interface used to access options for a MATLAB - Horizontal Plane Strategy of a Basic Maneuver Procedure.
-    '''
+    """Interface used to access options for a MATLAB - Horizontal Plane Strategy of a Basic Maneuver Procedure."""
     _uuid = '{e53fcce4-1a17-488d-9053-c236d27b8b6e}'
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -71,9 +69,7 @@ class IAgAvtrStrategyMATLABNav(object):
         self.__dict__['_GetDisplayOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetDisplayOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAvtrStrategyMATLABNav.__dict__ and type(IAgAvtrStrategyMATLABNav.__dict__[attrname]) == property:
@@ -87,60 +83,46 @@ class IAgAvtrStrategyMATLABNav(object):
     
     @property
     def FunctionName(self) -> str:
-        '''
-        The name of the MATLAB function.
-        '''
+        """The name of the MATLAB function."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetFunctionName'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @FunctionName.setter
     def FunctionName(self, newVal:str) -> None:
-        '''
-        The name of the MATLAB function.
-        '''
+        """The name of the MATLAB function."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetFunctionName'](arg_newVal.COM_val))
 
     def IsFunctionPathValid(self) -> bool:
-        '''
-        Check if the MATLAB function path is valid.
-        '''
+        """Check if the MATLAB function path is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_IsFunctionPathValid'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def CheckForErrors(self) -> bool:
-        '''
-        The option to check the function for errors.
-        '''
+        """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCheckForErrors'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @CheckForErrors.setter
     def CheckForErrors(self, newVal:bool) -> None:
-        '''
-        The option to check the function for errors.
-        '''
+        """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetCheckForErrors'](arg_newVal.COM_val))
 
     @property
     def DisplayOutput(self) -> bool:
-        '''
-        The option to display the output from the MATLAB function.
-        '''
+        """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetDisplayOutput'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @DisplayOutput.setter
     def DisplayOutput(self, newVal:bool) -> None:
-        '''
-        The option to display the output from the MATLAB function.
-        '''
+        """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetDisplayOutput'](arg_newVal.COM_val))
 
@@ -150,9 +132,7 @@ agcls.AgTypeNameMap['IAgAvtrStrategyMATLABNav'] = IAgAvtrStrategyMATLABNav
 __all__.append('IAgAvtrStrategyMATLABNav')
 
 class IAgAvtrStrategyMATLABProfile(object):
-    '''
-    Interface used to access options for a MATLAB - Vertical Plane Strategy of a Basic Maneuver Procedure.
-    '''
+    """Interface used to access options for a MATLAB - Vertical Plane Strategy of a Basic Maneuver Procedure."""
     _uuid = '{c5c0a490-9e7d-4ff9-95e9-9c10ed89500b}'
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -184,9 +164,7 @@ class IAgAvtrStrategyMATLABProfile(object):
         self.__dict__['_GetDisplayOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetDisplayOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAvtrStrategyMATLABProfile.__dict__ and type(IAgAvtrStrategyMATLABProfile.__dict__[attrname]) == property:
@@ -200,60 +178,46 @@ class IAgAvtrStrategyMATLABProfile(object):
     
     @property
     def FunctionName(self) -> str:
-        '''
-        The name of the MATLAB function.
-        '''
+        """The name of the MATLAB function."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetFunctionName'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @FunctionName.setter
     def FunctionName(self, newVal:str) -> None:
-        '''
-        The name of the MATLAB function.
-        '''
+        """The name of the MATLAB function."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetFunctionName'](arg_newVal.COM_val))
 
     def IsFunctionPathValid(self) -> bool:
-        '''
-        Check if the MATLAB function path is valid.
-        '''
+        """Check if the MATLAB function path is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_IsFunctionPathValid'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def CheckForErrors(self) -> bool:
-        '''
-        The option to check the function for errors.
-        '''
+        """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCheckForErrors'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @CheckForErrors.setter
     def CheckForErrors(self, newVal:bool) -> None:
-        '''
-        The option to check the function for errors.
-        '''
+        """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetCheckForErrors'](arg_newVal.COM_val))
 
     @property
     def DisplayOutput(self) -> bool:
-        '''
-        The option to display the output from the MATLAB function.
-        '''
+        """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetDisplayOutput'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @DisplayOutput.setter
     def DisplayOutput(self, newVal:bool) -> None:
-        '''
-        The option to display the output from the MATLAB function.
-        '''
+        """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetDisplayOutput'](arg_newVal.COM_val))
 
@@ -263,9 +227,7 @@ agcls.AgTypeNameMap['IAgAvtrStrategyMATLABProfile'] = IAgAvtrStrategyMATLABProfi
 __all__.append('IAgAvtrStrategyMATLABProfile')
 
 class IAgAvtrStrategyMATLABFull3D(object):
-    '''
-    Interface used to access options for a MATLAB - Full 3D Strategy of a Basic Maneuver Procedure.
-    '''
+    """Interface used to access options for a MATLAB - Full 3D Strategy of a Basic Maneuver Procedure."""
     _uuid = '{eb6b432e-50fc-4546-9d4b-a4285ae96a9d}'
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -297,9 +259,7 @@ class IAgAvtrStrategyMATLABFull3D(object):
         self.__dict__['_GetDisplayOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetDisplayOutput'] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAvtrStrategyMATLABFull3D.__dict__ and type(IAgAvtrStrategyMATLABFull3D.__dict__[attrname]) == property:
@@ -313,60 +273,46 @@ class IAgAvtrStrategyMATLABFull3D(object):
     
     @property
     def FunctionName(self) -> str:
-        '''
-        The name of the MATLAB function.
-        '''
+        """The name of the MATLAB function."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetFunctionName'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @FunctionName.setter
     def FunctionName(self, newVal:str) -> None:
-        '''
-        The name of the MATLAB function.
-        '''
+        """The name of the MATLAB function."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetFunctionName'](arg_newVal.COM_val))
 
     def IsFunctionPathValid(self) -> bool:
-        '''
-        Check if the MATLAB function path is valid.
-        '''
+        """Check if the MATLAB function path is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_IsFunctionPathValid'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def CheckForErrors(self) -> bool:
-        '''
-        The option to check the function for errors.
-        '''
+        """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCheckForErrors'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @CheckForErrors.setter
     def CheckForErrors(self, newVal:bool) -> None:
-        '''
-        The option to check the function for errors.
-        '''
+        """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetCheckForErrors'](arg_newVal.COM_val))
 
     @property
     def DisplayOutput(self) -> bool:
-        '''
-        The option to display the output from the MATLAB function.
-        '''
+        """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetDisplayOutput'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @DisplayOutput.setter
     def DisplayOutput(self, newVal:bool) -> None:
-        '''
-        The option to display the output from the MATLAB function.
-        '''
+        """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetDisplayOutput'](arg_newVal.COM_val))
 
@@ -376,9 +322,7 @@ agcls.AgTypeNameMap['IAgAvtrStrategyMATLABFull3D'] = IAgAvtrStrategyMATLABFull3D
 __all__.append('IAgAvtrStrategyMATLABFull3D')
 
 class IAgAvtrStrategyMATLAB3DGuidance(object):
-    '''
-    Interface used to access options for a MATLAB - 3D Guidance Strategy of a Basic Maneuver Procedure.
-    '''
+    """Interface used to access options for a MATLAB - 3D Guidance Strategy of a Basic Maneuver Procedure."""
     _uuid = '{fa4719ee-da5b-4845-af69-09ce61f4109e}'
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -450,9 +394,7 @@ class IAgAvtrStrategyMATLAB3DGuidance(object):
         self.__dict__['_SetComputeTASDot'] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+26, agcom.VARIANT_BOOL)
         self.__dict__['_GetAirspeedOptions'] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+27, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgAvtrStrategyMATLAB3DGuidance.__dict__ and type(IAgAvtrStrategyMATLAB3DGuidance.__dict__[attrname]) == property:
@@ -466,231 +408,177 @@ class IAgAvtrStrategyMATLAB3DGuidance(object):
     
     @property
     def TargetName(self) -> str:
-        '''
-        The target name.
-        '''
+        """The target name."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetTargetName'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @TargetName.setter
     def TargetName(self, newVal:str) -> None:
-        '''
-        The target name.
-        '''
+        """The target name."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetTargetName'](arg_newVal.COM_val))
 
     @property
     def ValidTargetNames(self) -> list:
-        '''
-        Returns the valid target names.
-        '''
+        """Returns the valid target names."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetValidTargetNames'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
     def TargetResolution(self) -> float:
-        '''
-        The target position/velocity sampling resolution.
-        '''
+        """The target position/velocity sampling resolution."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetTargetResolution'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @TargetResolution.setter
     def TargetResolution(self, newVal:float) -> None:
-        '''
-        The target position/velocity sampling resolution.
-        '''
+        """The target position/velocity sampling resolution."""
         with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetTargetResolution'](arg_newVal.COM_val))
 
     @property
     def UseStopTimeToGo(self) -> bool:
-        '''
-        The option to specify a time to go stopping condition.
-        '''
+        """The option to specify a time to go stopping condition."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetUseStopTimeToGo'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def StopTimeToGo(self) -> float:
-        '''
-        The stop time from the target at which the maneuver will stop.
-        '''
+        """The stop time from the target at which the maneuver will stop."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetStopTimeToGo'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetStopTimeToGo(self, enable:bool, time:float) -> None:
-        '''
-        Set the option to use the stop time from target stopping condition and set the according value.
-        '''
+        """Set the option to use the stop time from target stopping condition and set the according value."""
         with agmarshall.VARIANT_BOOL_arg(enable) as arg_enable, \
              agmarshall.DOUBLE_arg(time) as arg_time:
             agcls.evaluate_hresult(self.__dict__['_SetStopTimeToGo'](arg_enable.COM_val, arg_time.COM_val))
 
     @property
     def UseStopSlantRange(self) -> bool:
-        '''
-        The option to specify a range from target stopping condition.
-        '''
+        """The option to specify a range from target stopping condition."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetUseStopSlantRange'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def StopSlantRange(self) -> float:
-        '''
-        The range from the target at which the maneuver will stop.
-        '''
+        """The range from the target at which the maneuver will stop."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetStopSlantRange'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetStopSlantRange(self, enable:bool, range:float) -> None:
-        '''
-        Set the option to use the stop slant range stopping condition and set the according value.
-        '''
+        """Set the option to use the stop slant range stopping condition and set the according value."""
         with agmarshall.VARIANT_BOOL_arg(enable) as arg_enable, \
              agmarshall.DOUBLE_arg(range) as arg_range:
             agcls.evaluate_hresult(self.__dict__['_SetStopSlantRange'](arg_enable.COM_val, arg_range.COM_val))
 
     @property
     def FunctionName(self) -> str:
-        '''
-        The name of the MATLAB function.
-        '''
+        """The name of the MATLAB function."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetFunctionName'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @FunctionName.setter
     def FunctionName(self, newVal:str) -> None:
-        '''
-        The name of the MATLAB function.
-        '''
+        """The name of the MATLAB function."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetFunctionName'](arg_newVal.COM_val))
 
     def IsFunctionPathValid(self) -> bool:
-        '''
-        Check if the MATLAB function path is valid.
-        '''
+        """Check if the MATLAB function path is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_IsFunctionPathValid'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def CheckForErrors(self) -> bool:
-        '''
-        The option to check the function for errors.
-        '''
+        """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCheckForErrors'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @CheckForErrors.setter
     def CheckForErrors(self, newVal:bool) -> None:
-        '''
-        The option to check the function for errors.
-        '''
+        """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetCheckForErrors'](arg_newVal.COM_val))
 
     @property
     def DisplayOutput(self) -> bool:
-        '''
-        The option to display the output from the MATLAB function.
-        '''
+        """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetDisplayOutput'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @DisplayOutput.setter
     def DisplayOutput(self, newVal:bool) -> None:
-        '''
-        The option to display the output from the MATLAB function.
-        '''
+        """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetDisplayOutput'](arg_newVal.COM_val))
 
     @property
     def ClosureMode(self) -> "AgEAvtrClosureMode":
-        '''
-        The closure mode for the guidance strategy.
-        '''
+        """The closure mode for the guidance strategy."""
         with agmarshall.AgEnum_arg(AgEAvtrClosureMode) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetClosureMode'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ClosureMode.setter
     def ClosureMode(self, newVal:"AgEAvtrClosureMode") -> None:
-        '''
-        The closure mode for the guidance strategy.
-        '''
+        """The closure mode for the guidance strategy."""
         with agmarshall.AgEnum_arg(AgEAvtrClosureMode, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetClosureMode'](arg_newVal.COM_val))
 
     @property
     def HOBSMaxAngle(self) -> typing.Any:
-        '''
-        The closure high off boresight max angle.
-        '''
+        """The closure high off boresight max angle."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetHOBSMaxAngle'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @HOBSMaxAngle.setter
     def HOBSMaxAngle(self, newVal:typing.Any) -> None:
-        '''
-        The closure high off boresight max angle.
-        '''
+        """The closure high off boresight max angle."""
         with agmarshall.VARIANT_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetHOBSMaxAngle'](arg_newVal.COM_val))
 
     @property
     def HOBSAngleTol(self) -> typing.Any:
-        '''
-        The closure high off boresight angle tolerance.
-        '''
+        """The closure high off boresight angle tolerance."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetHOBSAngleTol'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @HOBSAngleTol.setter
     def HOBSAngleTol(self, newVal:typing.Any) -> None:
-        '''
-        The closure high off boresight angle tolerance.
-        '''
+        """The closure high off boresight angle tolerance."""
         with agmarshall.VARIANT_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetHOBSAngleTol'](arg_newVal.COM_val))
 
     @property
     def ComputeTASDot(self) -> bool:
-        '''
-        The option to allow MATLAB to compute the true airspeed for the aircraft.
-        '''
+        """The option to allow MATLAB to compute the true airspeed for the aircraft."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetComputeTASDot'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ComputeTASDot.setter
     def ComputeTASDot(self, newVal:bool) -> None:
-        '''
-        The option to allow MATLAB to compute the true airspeed for the aircraft.
-        '''
+        """The option to allow MATLAB to compute the true airspeed for the aircraft."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetComputeTASDot'](arg_newVal.COM_val))
 
     @property
     def AirspeedOptions(self) -> "IAgAvtrBasicManeuverAirspeedOptions":
-        '''
-        Get the airspeed options.
-        '''
+        """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetAirspeedOptions'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -703,9 +591,7 @@ __all__.append('IAgAvtrStrategyMATLAB3DGuidance')
 
 
 class AgAvtrStrategyMATLABNav(IAgAvtrStrategyMATLABNav, IAgAvtrBasicManeuverStrategy):
-    '''
-    Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure.
-    '''
+    """Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
         IAgAvtrStrategyMATLABNav.__init__(self, sourceObject)
         IAgAvtrBasicManeuverStrategy.__init__(self, sourceObject)
@@ -714,9 +600,7 @@ class AgAvtrStrategyMATLABNav(IAgAvtrStrategyMATLABNav, IAgAvtrBasicManeuverStra
         IAgAvtrStrategyMATLABNav._private_init(self, pUnk)
         IAgAvtrBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -732,9 +616,7 @@ __all__.append('AgAvtrStrategyMATLABNav')
 
 
 class AgAvtrStrategyMATLABProfile(IAgAvtrStrategyMATLABProfile, IAgAvtrBasicManeuverStrategy):
-    '''
-    Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure.
-    '''
+    """Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
         IAgAvtrStrategyMATLABProfile.__init__(self, sourceObject)
         IAgAvtrBasicManeuverStrategy.__init__(self, sourceObject)
@@ -743,9 +625,7 @@ class AgAvtrStrategyMATLABProfile(IAgAvtrStrategyMATLABProfile, IAgAvtrBasicMane
         IAgAvtrStrategyMATLABProfile._private_init(self, pUnk)
         IAgAvtrBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -761,9 +641,7 @@ __all__.append('AgAvtrStrategyMATLABProfile')
 
 
 class AgAvtrStrategyMATLABFull3D(IAgAvtrStrategyMATLABFull3D, IAgAvtrBasicManeuverStrategy):
-    '''
-    Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure.
-    '''
+    """Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
         IAgAvtrStrategyMATLABFull3D.__init__(self, sourceObject)
         IAgAvtrBasicManeuverStrategy.__init__(self, sourceObject)
@@ -772,9 +650,7 @@ class AgAvtrStrategyMATLABFull3D(IAgAvtrStrategyMATLABFull3D, IAgAvtrBasicManeuv
         IAgAvtrStrategyMATLABFull3D._private_init(self, pUnk)
         IAgAvtrBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -790,9 +666,7 @@ __all__.append('AgAvtrStrategyMATLABFull3D')
 
 
 class AgAvtrStrategyMATLAB3DGuidance(IAgAvtrStrategyMATLAB3DGuidance, IAgAvtrBasicManeuverStrategy):
-    '''
-    Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure.
-    '''
+    """Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
         IAgAvtrStrategyMATLAB3DGuidance.__init__(self, sourceObject)
         IAgAvtrBasicManeuverStrategy.__init__(self, sourceObject)
@@ -801,9 +675,7 @@ class AgAvtrStrategyMATLAB3DGuidance(IAgAvtrStrategyMATLAB3DGuidance, IAgAvtrBas
         IAgAvtrStrategyMATLAB3DGuidance._private_init(self, pUnk)
         IAgAvtrBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -819,18 +691,14 @@ __all__.append('AgAvtrStrategyMATLAB3DGuidance')
 
 
 class AgAvtrBasicManeuverMATLABFactory(IAgAvtrAutomationStrategyFactory):
-    '''
-    Class defining the factory to create the basic maneuver PropNav strategies.
-    '''
+    """Class defining the factory to create the basic maneuver PropNav strategies."""
     def __init__(self, sourceObject=None):
         IAgAvtrAutomationStrategyFactory.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgAvtrAutomationStrategyFactory._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

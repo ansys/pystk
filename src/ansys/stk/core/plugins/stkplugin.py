@@ -40,9 +40,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class IAgStkPluginSite(IAgUtPluginSite):
-    '''
-    STK application plugin site
-    '''
+    """STK application plugin site"""
     _uuid = '{F1D25E90-2512-4f8f-8B4E-1FEDE57606BD}'
     _num_methods = 6
     _vtable_offset = IAgUtPluginSite._vtable_offset + IAgUtPluginSite._num_methods
@@ -73,9 +71,7 @@ class IAgStkPluginSite(IAgUtPluginSite):
         self.__dict__['_GetStkRootObject'] = IAGFUNCTYPE(pUnk, IID_IAgStkPluginSite, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__['_GetCalcToolProvider'] = IAGFUNCTYPE(pUnk, IID_IAgStkPluginSite, vtable_offset_local+6, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkPluginSite.__dict__ and type(IAgStkPluginSite.__dict__[attrname]) == property:
@@ -89,54 +85,42 @@ class IAgStkPluginSite(IAgUtPluginSite):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ScenarioDirectory(self) -> str:
-        '''
-        The directory path of the current scenario.
-        '''
+        """The directory path of the current scenario."""
         with agmarshall.BSTR_arg() as arg_pDirPath:
             agcls.evaluate_hresult(self.__dict__['_GetScenarioDirectory'](byref(arg_pDirPath.COM_val)))
             return arg_pDirPath.python_val
 
     @property
     def InstallDirectory(self) -> str:
-        '''
-        The directory path of the installation of the application.
-        '''
+        """The directory path of the installation of the application."""
         with agmarshall.BSTR_arg() as arg_pDirPath:
             agcls.evaluate_hresult(self.__dict__['_GetInstallDirectory'](byref(arg_pDirPath.COM_val)))
             return arg_pDirPath.python_val
 
     @property
     def ConfigDirectory(self) -> str:
-        '''
-        The directory path of the user configuration area.
-        '''
+        """The directory path of the user configuration area."""
         with agmarshall.BSTR_arg() as arg_pDirPath:
             agcls.evaluate_hresult(self.__dict__['_GetConfigDirectory'](byref(arg_pDirPath.COM_val)))
             return arg_pDirPath.python_val
 
     @property
     def StkRootObject(self) -> typing.Any:
-        '''
-        Returns an instance of the STK Object Model Root Object
-        '''
+        """Returns an instance of the STK Object Model Root Object"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetStkRootObject'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
@@ -147,9 +131,7 @@ agcls.AgTypeNameMap['IAgStkPluginSite'] = IAgStkPluginSite
 __all__.append('IAgStkPluginSite')
 
 class IAgGatorPluginSite(IAgUtPluginSite):
-    '''
-    Astrogator plugin site interface.
-    '''
+    """Astrogator plugin site interface."""
     _uuid = '{62BD3410-1F8F-4d19-AE3B-FD3AA8669FBD}'
     _num_methods = 8
     _vtable_offset = IAgUtPluginSite._vtable_offset + IAgUtPluginSite._num_methods
@@ -184,9 +166,7 @@ class IAgGatorPluginSite(IAgUtPluginSite):
         self.__dict__['_GetDisplayUnit'] = IAGFUNCTYPE(pUnk, IID_IAgGatorPluginSite, vtable_offset_local+7, agcom.BSTR, POINTER(agcom.BSTR))
         self.__dict__['_GetCalcToolProvider'] = IAGFUNCTYPE(pUnk, IID_IAgGatorPluginSite, vtable_offset_local+8, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgGatorPluginSite.__dict__ and type(IAgGatorPluginSite.__dict__[attrname]) == property:
@@ -200,62 +180,48 @@ class IAgGatorPluginSite(IAgUtPluginSite):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def GatorProvider(self) -> "IAgGatorPluginProvider":
-        '''
-        Creates an IAgGatorPluginProvider object.
-        '''
+        """Creates an IAgGatorPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppGatorPrv:
             agcls.evaluate_hresult(self.__dict__['_GetGatorProvider'](byref(arg_ppGatorPrv.COM_val)))
             return arg_ppGatorPrv.python_val
 
     @property
     def ScenarioDirectory(self) -> str:
-        '''
-        The directory path of the current scenario.
-        '''
+        """The directory path of the current scenario."""
         with agmarshall.BSTR_arg() as arg_pDirPath:
             agcls.evaluate_hresult(self.__dict__['_GetScenarioDirectory'](byref(arg_pDirPath.COM_val)))
             return arg_pDirPath.python_val
 
     @property
     def InstallDirectory(self) -> str:
-        '''
-        The directory path of the installation of the application.
-        '''
+        """The directory path of the installation of the application."""
         with agmarshall.BSTR_arg() as arg_pDirPath:
             agcls.evaluate_hresult(self.__dict__['_GetInstallDirectory'](byref(arg_pDirPath.COM_val)))
             return arg_pDirPath.python_val
 
     @property
     def ConfigDirectory(self) -> str:
-        '''
-        The directory path of the user configuration area.
-        '''
+        """The directory path of the user configuration area."""
         with agmarshall.BSTR_arg() as arg_pDirPath:
             agcls.evaluate_hresult(self.__dict__['_GetConfigDirectory'](byref(arg_pDirPath.COM_val)))
             return arg_pDirPath.python_val
 
     @property
     def StkRootObject(self) -> typing.Any:
-        '''
-        Returns an instance of the STK Object Model Root Object
-        '''
+        """Returns an instance of the STK Object Model Root Object"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetStkRootObject'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def GetDisplayUnit(self, dimension:str) -> str:
-        '''
-        Gets the display unit (scenario unit) for the given dimension.
-        '''
+        """Gets the display unit (scenario unit) for the given dimension."""
         with agmarshall.BSTR_arg(dimension) as arg_dimension, \
              agmarshall.BSTR_arg() as arg_pDisplayUnit:
             agcls.evaluate_hresult(self.__dict__['_GetDisplayUnit'](arg_dimension.COM_val, byref(arg_pDisplayUnit.COM_val)))
@@ -263,9 +229,7 @@ class IAgGatorPluginSite(IAgUtPluginSite):
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
@@ -278,18 +242,14 @@ __all__.append('IAgGatorPluginSite')
 
 
 class AgStkPluginSite(IAgStkPluginSite):
-    '''
-    STK plugin site.
-    '''
+    """STK plugin site."""
     def __init__(self, sourceObject=None):
         IAgStkPluginSite.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkPluginSite._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -304,9 +264,7 @@ __all__.append('AgStkPluginSite')
 
 
 class AgGatorPluginSite(IAgStkPluginSite, IAgGatorPluginSite):
-    '''
-    Astrogator plugin site.
-    '''
+    """Astrogator plugin site."""
     def __init__(self, sourceObject=None):
         IAgStkPluginSite.__init__(self, sourceObject)
         IAgGatorPluginSite.__init__(self, sourceObject)
@@ -315,9 +273,7 @@ class AgGatorPluginSite(IAgStkPluginSite, IAgGatorPluginSite):
         IAgStkPluginSite._private_init(self, pUnk)
         IAgGatorPluginSite._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

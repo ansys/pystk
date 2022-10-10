@@ -94,9 +94,7 @@ class NativeContainerMethods:
             self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
         
 class ControlBase(Frame):
-    '''
-    Base class for Tkinter controls.
-    '''
+    """Base class for Tkinter controls."""
     _shift = 0x0001
     _control = 0x0004
     _lAlt = 0x0008
@@ -139,9 +137,7 @@ class ControlBase(Frame):
             Frame.__setattr__(self, attrname, value)
         
     def _Configure(self, event):
-        '''
-        Occurs when the frame is resized.
-        '''
+        """Occurs when the frame is resized."""
         if not self._is_container_attached:
             self._xDisplay = None if os.name=='nt' else self._XOpenDisplay(self.winfo_screen().encode('utf-8'))
             self._nativeContainerMethods.AttachContainer(self._container, self.winfo_id(), self._xDisplay)
@@ -149,25 +145,19 @@ class ControlBase(Frame):
         self._nativeContainerMethods.ResizeContainer(self._container, 0, 0, event.width, event.height)
             
     def destroy(self):
-        '''
-        Occurs before the frame is destroyed.
-        '''
+        """Occurs before the frame is destroyed."""
         self._nativeContainerMethods.DetachContainer(self._container)
         self._nativeContainerMethods.ReleaseContainer(self._container)
         super().destroy()
 
     if os.name!='nt':
         def _Expose(self, event):
-            '''
-            Occurs when at least some part of the frame becomes visible after having been covered up by another window.
-            '''
+            """Occurs when at least some part of the frame becomes visible after having been covered up by another window."""
             if self._is_container_attached:
                 self._nativeContainerMethods.Paint(self._container)
             
         def _ButtonPress(self, event):
-            '''
-            Occurs when a mouse button is pressed.
-            '''
+            """Occurs when a mouse button is pressed."""
             if event.num == 4:
                 if not(event.state & self._mouse1 or event.state & self._mouse2 or event.state & self._mouse3):
                     self._nativeContainerMethods.MouseWheelMoved(self._container, event.x, event.y, 1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
@@ -179,33 +169,23 @@ class ControlBase(Frame):
                     self._nativeContainerMethods.MousePressed(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
         def _ButtonRelease(self, event):
-            '''
-            Occurs when a mouse button is released.
-            '''
+            """Occurs when a mouse button is released."""
             self._nativeContainerMethods.MouseReleased(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
         def _Motion(self, event):
-            '''
-            Occurs when mouse motion occurs.
-            '''
+            """Occurs when mouse motion occurs."""
             self._nativeContainerMethods.MouseMoved(self._container, event.x, event.y, event.state & self._mouse1, event.state & self._mouse2, event.state & self._mouse3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
         def _KeyPress(self, event):
-            '''
-            Occurs when a key is pressed.
-            '''
+            """Occurs when a key is pressed."""
             self._nativeContainerMethods.KeyPressed(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
         def _KeyRelease(self, event):
-            '''
-            Occurs when key is released.
-            '''
+            """Occurs when key is released."""
             self._nativeContainerMethods.KeyReleased(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
 class GlobeControl(IAgUiAxVOCntrl, ControlBase):
-    '''
-    The 3D Globe control for Tkinter.
-    '''
+    """The 3D Globe control for Tkinter."""
     _progid = "STKX12.VOControl.1"
     _interface = IAgUiAxVOCntrl
 
@@ -216,9 +196,7 @@ class GlobeControl(IAgUiAxVOCntrl, ControlBase):
         ControlBase.__setattr__(self, attrname, value)
 
 class MapControl(IAgUiAx2DCntrl, ControlBase):
-    '''
-    The 2D Map control for Tkinter.
-    '''
+    """The 2D Map control for Tkinter."""
     _progid = "STKX12.2DControl.1"
     _interface = IAgUiAx2DCntrl
 
@@ -229,9 +207,7 @@ class MapControl(IAgUiAx2DCntrl, ControlBase):
         ControlBase.__setattr__(self, attrname, value)
 
 class GfxAnalysisControl(IAgUiAxGfxAnalysisCntrl, ControlBase):
-    '''
-    The Graphics Analysis control for Tkinter.
-    '''
+    """The Graphics Analysis control for Tkinter."""
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = IAgUiAxGfxAnalysisCntrl
 

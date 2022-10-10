@@ -60,23 +60,23 @@ class STKEventSubscriber(object):
         del(self._cpc)
     
     def Subscribe(self):
-        ''' Use to re-subscribe to events after calling Unsubscribe.  This class is initialized as subscribed when returned from IAgStkObjectRoot.Subscribe(). '''
+        """Use to re-subscribe to events after calling Unsubscribe.  This class is initialized as subscribed when returned from IAgStkObjectRoot.Subscribe()."""
         if self._event_manager_id is None:
             self.__dict__['_event_manager_id'] = EventSubscriptionManager.Subscribe(self)
             
     def _SubscribeImpl(self):
-        ''' Private method, called by EventSubscriptionManager '''
+        """Private method, called by EventSubscriptionManager"""
         if self._connection_id is None:
             self.__dict__['_connection_id'] = self._cp.Advise(addressof(self._base_pUnkSink))
         
     def Unsubscribe(self):
-        ''' Unsubscribe from events. '''
+        """Unsubscribe from events."""
         if self._event_manager_id is not None:
             EventSubscriptionManager.Unsubscribe(self._event_manager_id)
             self.__dict__['_event_manager_id'] = None
             
     def _UnsubscribeImpl(self):
-        ''' Private method, called by EventSubscriptionManager '''
+        """Private method, called by EventSubscriptionManager"""
         if self._connection_id is not None:
             self._cp.Unadvise(self._connection_id)
             self.__dict__['_connection_id'] = None
@@ -322,7 +322,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
             
     @property
     def OnScenarioNew(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioNew(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioNew(Path:str) -> None]"""
         return self._OnScenarioNewEvent
         
     @OnScenarioNew.setter
@@ -331,7 +331,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioLoad(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioLoad(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioLoad(Path:str) -> None]"""
         return self._OnScenarioLoadEvent
         
     @OnScenarioLoad.setter
@@ -340,7 +340,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioClose(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioClose() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioClose() -> None]"""
         return self._OnScenarioCloseEvent
         
     @OnScenarioClose.setter
@@ -349,7 +349,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioSave(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioSave(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioSave(Path:str) -> None]"""
         return self._OnScenarioSaveEvent
         
     @OnScenarioSave.setter
@@ -358,7 +358,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnLogMessage(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"AgELogMsgType", errorCode:int, fileName:str, lineNo:int, dispID:"AgELogMsgDispID") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"AgELogMsgType", errorCode:int, fileName:str, lineNo:int, dispID:"AgELogMsgDispID") -> None]"""
         return self._OnLogMessageEvent
         
     @OnLogMessage.setter
@@ -367,7 +367,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
 
     @property
     def OnAnimUpdate(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimUpdate(timeEpSec:float) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimUpdate(timeEpSec:float) -> None]"""
         return self._OnAnimUpdateEvent
         
     @OnAnimUpdate.setter
@@ -376,7 +376,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnStkObjectAdded(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectAdded(Sender:typing.Any) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectAdded(Sender:typing.Any) -> None]"""
         return self._OnStkObjectAddedEvent
         
     @OnStkObjectAdded.setter
@@ -385,7 +385,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectDeleted(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectDeleted(Sender:typing.Any) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectDeleted(Sender:typing.Any) -> None]"""
         return self._OnStkObjectDeletedEvent
         
     @OnStkObjectDeleted.setter
@@ -394,7 +394,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectRenamed(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectRenamed(Sender:typing.Any, OldPath:str, NewPath:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectRenamed(Sender:typing.Any, OldPath:str, NewPath:str) -> None]"""
         return self._OnStkObjectRenamedEvent
         
     @OnStkObjectRenamed.setter
@@ -403,7 +403,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnAnimationPlayback(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"AgEAnimationActions", eDirection:"AgEAnimationDirections") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"AgEAnimationActions", eDirection:"AgEAnimationDirections") -> None]"""
         return self._OnAnimationPlaybackEvent
         
     @OnAnimationPlayback.setter
@@ -412,7 +412,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnAnimationRewind(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationRewind() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationRewind() -> None]"""
         return self._OnAnimationRewindEvent
         
     @OnAnimationRewind.setter
@@ -421,7 +421,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnAnimationPause(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPause(CurrentTime:float) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPause(CurrentTime:float) -> None]"""
         return self._OnAnimationPauseEvent
         
     @OnAnimationPause.setter
@@ -430,7 +430,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioBeforeSave(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"IAgScenarioBeforeSaveEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"IAgScenarioBeforeSaveEventArgs") -> None]"""
         return self._OnScenarioBeforeSaveEvent
         
     @OnScenarioBeforeSave.setter
@@ -439,7 +439,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnAnimationStep(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationStep(CurrentTime:float) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationStep(CurrentTime:float) -> None]"""
         return self._OnAnimationStepEvent
         
     @OnAnimationStep.setter
@@ -448,7 +448,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnAnimationStepBack(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationStepBack(CurrentTime:float) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationStepBack(CurrentTime:float) -> None]"""
         return self._OnAnimationStepBackEvent
         
     @OnAnimationStepBack.setter
@@ -457,7 +457,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnAnimationSlower(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationSlower() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationSlower() -> None]"""
         return self._OnAnimationSlowerEvent
         
     @OnAnimationSlower.setter
@@ -466,7 +466,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnAnimationFaster(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationFaster() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationFaster() -> None]"""
         return self._OnAnimationFasterEvent
         
     @OnAnimationFaster.setter
@@ -475,7 +475,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnPercentCompleteUpdate(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"IAgPctCmpltEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"IAgPctCmpltEventArgs") -> None]"""
         return self._OnPercentCompleteUpdateEvent
         
     @OnPercentCompleteUpdate.setter
@@ -484,7 +484,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnPercentCompleteEnd(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteEnd() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteEnd() -> None]"""
         return self._OnPercentCompleteEndEvent
         
     @OnPercentCompleteEnd.setter
@@ -493,7 +493,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnPercentCompleteBegin(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteBegin() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteBegin() -> None]"""
         return self._OnPercentCompleteBeginEvent
         
     @OnPercentCompleteBegin.setter
@@ -502,7 +502,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectChanged(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"IAgStkObjectChangedEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"IAgStkObjectChangedEventArgs") -> None]"""
         return self._OnStkObjectChangedEvent
         
     @OnStkObjectChanged.setter
@@ -511,7 +511,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioBeforeClose(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeClose() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeClose() -> None]"""
         return self._OnScenarioBeforeCloseEvent
         
     @OnScenarioBeforeClose.setter
@@ -520,7 +520,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectPreDelete(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"IAgStkObjectPreDeleteEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"IAgStkObjectPreDeleteEventArgs") -> None]"""
         return self._OnStkObjectPreDeleteEvent
         
     @OnStkObjectPreDelete.setter
@@ -529,7 +529,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnStkObjectStart3dEditing(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectStart3dEditing(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectStart3dEditing(Path:str) -> None]"""
         return self._OnStkObjectStart3dEditingEvent
         
     @OnStkObjectStart3dEditing.setter
@@ -538,7 +538,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectStop3dEditing(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectStop3dEditing(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectStop3dEditing(Path:str) -> None]"""
         return self._OnStkObjectStop3dEditingEvent
         
     @OnStkObjectStop3dEditing.setter
@@ -547,7 +547,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectApply3dEditing(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectApply3dEditing(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectApply3dEditing(Path:str) -> None]"""
         return self._OnStkObjectApply3dEditingEvent
         
     @OnStkObjectApply3dEditing.setter
@@ -556,7 +556,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectCancel3dEditing(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCancel3dEditing(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCancel3dEditing(Path:str) -> None]"""
         return self._OnStkObjectCancel3dEditingEvent
         
     @OnStkObjectCancel3dEditing.setter
@@ -565,7 +565,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectPreCut(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"IAgStkObjectCutCopyPasteEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"IAgStkObjectCutCopyPasteEventArgs") -> None]"""
         return self._OnStkObjectPreCutEvent
         
     @OnStkObjectPreCut.setter
@@ -574,7 +574,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectCopy(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"IAgStkObjectCutCopyPasteEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"IAgStkObjectCutCopyPasteEventArgs") -> None]"""
         return self._OnStkObjectCopyEvent
         
     @OnStkObjectCopy.setter
@@ -583,7 +583,7 @@ class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnStkObjectPaste(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"IAgStkObjectCutCopyPasteEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"IAgStkObjectCutCopyPasteEventArgs") -> None]"""
         return self._OnStkObjectPasteEvent
         
     @OnStkObjectPaste.setter
@@ -836,7 +836,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioNew(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioNew(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioNew(Path:str) -> None]"""
         return self._OnScenarioNewEvent
         
     @OnScenarioNew.setter
@@ -845,7 +845,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioLoad(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioLoad(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioLoad(Path:str) -> None]"""
         return self._OnScenarioLoadEvent
         
     @OnScenarioLoad.setter
@@ -854,7 +854,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioClose(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioClose() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioClose() -> None]"""
         return self._OnScenarioCloseEvent
         
     @OnScenarioClose.setter
@@ -863,7 +863,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnScenarioSave(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioSave(Path:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioSave(Path:str) -> None]"""
         return self._OnScenarioSaveEvent
         
     @OnScenarioSave.setter
@@ -872,7 +872,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnLogMessage(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"AgELogMsgType", errorCode:int, fileName:str, lineNo:int, dispID:"AgELogMsgDispID") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"AgELogMsgType", errorCode:int, fileName:str, lineNo:int, dispID:"AgELogMsgDispID") -> None]"""
         return self._OnLogMessageEvent
         
     @OnLogMessage.setter
@@ -881,7 +881,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
 
     @property
     def OnAnimUpdate(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimUpdate(timeEpSec:float) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimUpdate(timeEpSec:float) -> None]"""
         return self._OnAnimUpdateEvent
         
     @OnAnimUpdate.setter
@@ -890,7 +890,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnNewGlobeCtrlRequest(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGlobeCtrlRequest(SceneID:int) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGlobeCtrlRequest(SceneID:int) -> None]"""
         return self._OnNewGlobeCtrlRequestEvent
         
     @OnNewGlobeCtrlRequest.setter
@@ -899,7 +899,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnNewMapCtrlRequest(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnNewMapCtrlRequest(WinID:int) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewMapCtrlRequest(WinID:int) -> None]"""
         return self._OnNewMapCtrlRequestEvent
         
     @OnNewMapCtrlRequest.setter
@@ -908,7 +908,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnBeforeNewScenario(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnBeforeNewScenario(Scenario:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnBeforeNewScenario(Scenario:str) -> None]"""
         return self._OnBeforeNewScenarioEvent
         
     @OnBeforeNewScenario.setter
@@ -917,7 +917,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnBeforeLoadScenario(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnBeforeLoadScenario(Scenario:str) -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnBeforeLoadScenario(Scenario:str) -> None]"""
         return self._OnBeforeLoadScenarioEvent
         
     @OnBeforeLoadScenario.setter
@@ -926,7 +926,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnBeginScenarioClose(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnBeginScenarioClose() -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnBeginScenarioClose() -> None]"""
         return self._OnBeginScenarioCloseEvent
         
     @OnBeginScenarioClose.setter
@@ -935,7 +935,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnNewGfxAnalysisCtrlRequest(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"AgEGfxAnalysisMode") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"AgEGfxAnalysisMode") -> None]"""
         return self._OnNewGfxAnalysisCtrlRequestEvent
         
     @OnNewGfxAnalysisCtrlRequest.setter
@@ -944,7 +944,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnSSLCertificateServerError(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnSSLCertificateServerError(pArgs:"IAgSTKXSSLCertificateErrorEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnSSLCertificateServerError(pArgs:"IAgSTKXSSLCertificateErrorEventArgs") -> None]"""
         return self._OnSSLCertificateServerErrorEvent
         
     @OnSSLCertificateServerError.setter
@@ -953,7 +953,7 @@ class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnConControlQuitReceived(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnConControlQuitReceived(pArgs:"IAgSTKXConControlQuitReceivedEventArgs") -> None] '''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnConControlQuitReceived(pArgs:"IAgSTKXConControlQuitReceivedEventArgs") -> None]"""
         return self._OnConControlQuitReceivedEvent
         
     @OnConControlQuitReceived.setter
@@ -1091,7 +1091,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
     
     @property
     def KeyDown(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [KeyDown(KeyCode:int, Shift:int) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [KeyDown(KeyCode:int, Shift:int) -> None]"""
         return self._KeyDownEvent
         
     @KeyDown.setter
@@ -1105,7 +1105,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
 
     @property
     def KeyPress(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [KeyPress(KeyAscii:int) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [KeyPress(KeyAscii:int) -> None]"""
         return self._KeyPressEvent
         
     @KeyPress.setter
@@ -1119,7 +1119,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         
     @property
     def KeyUp(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [KeyUp(KeyCode:int, Shift:int) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [KeyUp(KeyCode:int, Shift:int) -> None]"""
         return self._KeyUpEvent
         
     @KeyUp.setter
@@ -1133,7 +1133,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         
     @property
     def Click(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [Click() -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [Click() -> None]"""
         return self._ClickEvent
         
     @Click.setter
@@ -1147,7 +1147,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         
     @property
     def DblClick(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [DblClick() -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [DblClick() -> None]"""
         return self._DblClickEvent
         
     @DblClick.setter
@@ -1161,7 +1161,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
                 
     @property
     def MouseDown(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [MouseDown(Button:int, Shift:int, X:int, Y:int) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [MouseDown(Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._MouseDownEvent
         
     @MouseDown.setter
@@ -1175,7 +1175,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
 
     @property
     def MouseMove(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [MouseMove(Button:int, Shift:int, X:int, Y:int) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [MouseMove(Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._MouseMoveEvent
         
     @MouseMove.setter
@@ -1189,7 +1189,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
 
     @property
     def MouseUp(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [MouseUp(Button:int, Shift:int, X:int, Y:int) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [MouseUp(Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._MouseUpEvent
         
     @MouseUp.setter
@@ -1203,7 +1203,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         
     @property
     def OLEDragDrop(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OLEDragDrop(Data:"IAgDataObject", Effect:int, Button:int, Shift:int, X:int, Y:int) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OLEDragDrop(Data:"IAgDataObject", Effect:int, Button:int, Shift:int, X:int, Y:int) -> None]"""
         return self._OLEDragDropEvent
         
     @OLEDragDrop.setter
@@ -1218,7 +1218,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         
     @property
     def MouseWheel(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [MouseWheel(Button:int, Shift:int, Delta:int, X:int, Y:int) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [MouseWheel(Button:int, Shift:int, Delta:int, X:int, Y:int) -> None]"""
         return self._MouseWheelEvent
         
     @MouseWheel.setter
@@ -1371,7 +1371,7 @@ class IAgUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
             
     @property
     def OnObjectEditingStart(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingStart(Path:str) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingStart(Path:str) -> None]"""
         return self._OnObjectEditingStartEvent
         
     @OnObjectEditingStart.setter
@@ -1385,7 +1385,7 @@ class IAgUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
         
     @property
     def OnObjectEditingApply(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingApply(Path:str) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingApply(Path:str) -> None]"""
         return self._OnObjectEditingApplyEvent
         
     @OnObjectEditingApply.setter
@@ -1399,7 +1399,7 @@ class IAgUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
         
     @property
     def OnObjectEditingCancel(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingCancel(Path:str) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingCancel(Path:str) -> None]"""
         return self._OnObjectEditingCancelEvent
         
     @OnObjectEditingCancel.setter
@@ -1413,7 +1413,7 @@ class IAgUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
         
     @property
     def OnObjectEditingStop(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingStop(Path:str) -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnObjectEditingStop(Path:str) -> None]"""
         return self._OnObjectEditingStopEvent
         
     @OnObjectEditingStop.setter
@@ -1510,7 +1510,7 @@ class IAgStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
           
     @property
     def Rendering(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [Rendering(Sender:typing.Any, Args:"IAgStkGraphicsRenderingEventArgs") -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [Rendering(Sender:typing.Any, Args:"IAgStkGraphicsRenderingEventArgs") -> None]"""
         return self._RenderingEvent
         
     @Rendering.setter
@@ -1608,7 +1608,7 @@ class IAgStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerB
 
     @property
     def DocumentLoaded(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [DocumentLoaded(Sender:typing.Any, Args:"IAgStkGraphicsKmlDocumentLoadedEventArgs") -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [DocumentLoaded(Sender:typing.Any, Args:"IAgStkGraphicsKmlDocumentLoadedEventArgs") -> None]"""
         return self._DocumentLoadedEvent
         
     @DocumentLoaded.setter
@@ -1706,7 +1706,7 @@ class IAgStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHand
 
     @property
     def AddComplete(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs") -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs") -> None]"""
         return self._AddCompleteEvent
         
     @AddComplete.setter
@@ -1804,7 +1804,7 @@ class IAgStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHa
 
     @property
     def AddComplete(self):
-        ''' Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"IAgStkGraphicsTerrainOverlayAddCompleteEventArgs") -> None]'''
+        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"IAgStkGraphicsTerrainOverlayAddCompleteEventArgs") -> None]"""
         return self._AddCompleteEvent
         
     @AddComplete.setter

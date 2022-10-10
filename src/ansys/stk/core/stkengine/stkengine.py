@@ -34,9 +34,10 @@ class STKEngineTimerType(IntEnum):
     SigRt             = 5
 
 class STKEngineApplication(AgSTKXApplication):
-    '''
-    Interact with STK Engine.  Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
-    '''
+    """
+    Interact with STK Engine.
+    Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
+    """
     def __init__(self):
         AgSTKXApplication.__init__(self)
         self.__dict__['_stk_install_dir'] = None
@@ -112,9 +113,7 @@ class STKEngineApplication(AgSTKXApplication):
                 self.__dict__['_timer_impl'] = TclTimer()
         
     def NewObjectRoot(self) -> AgStkObjectRoot:
-        '''
-        Create a new object model root for the STK Engine application.
-        '''
+        """Create a new object model root for the STK Engine application."""
         if not self.__dict__['_initialized']:
             raise RuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
         CLSID_AgStkObjectRoot = GUID()
@@ -128,9 +127,7 @@ class STKEngineApplication(AgSTKXApplication):
             return root
 
     def ShutDown(self) -> None:
-        '''
-        Shut down the STK Engine application.
-        '''
+        """Shut down the STK Engine application."""
         if self._initialized:
             EventSubscriptionManager.UnsubscribeAll()
             self._timer_impl.Terminate()
@@ -142,9 +139,7 @@ class STKEngineApplication(AgSTKXApplication):
 
 
 class STKEngine(object):
-    '''
-    Initialize and manage the STK Engine application.
-    '''
+    """Initialize and manage the STK Engine application."""
     _is_engine_running = False
     _stk_config_dir = None
     _stk_install_dir = None
@@ -162,9 +157,10 @@ class STKEngine(object):
             
     @staticmethod
     def StartApplication(noGraphics:bool=True) -> STKEngineApplication:
-        '''
-        Initialize STK Engine in-process and return the instance.  Must only be used once per Python process.
-        '''
+        """
+        Initialize STK Engine in-process and return the instance.
+        Must only be used once per Python process.
+        """
         if STKEngine._is_engine_running:
             raise RuntimeError('Only one STKEngine instance is allowed per Python process.')
         CoInitializeManager.initialize()
@@ -185,20 +181,20 @@ class STKEngine(object):
     if os.name != 'nt':
         @staticmethod
         def SetSTKInstallDir(stkInstallDir:str) -> None:
-            '''
+            """
             Setting the install directory using this method will override the STK_INSTALL_DIR environment variable.
             If this method is not called, STK_INSTALL_DIR will be used instead.  This method must be called before
             StartApplication().
-            '''
+            """
             STKEngine._stk_install_dir = stkInstallDir
             
         @staticmethod
         def SetSTKConfigDir(stkConfigDir:str) -> None:
-            '''
+            """
             Setting the config directory using this method will override the STK_CONFIG_DIR environment variable.
             If this method is not called, STK_CONFIG_DIR will be used instead.  This method must be called before
             StartApplication().
-            '''
+            """
             STKEngine._stk_config_dir = stkConfigDir
         
        

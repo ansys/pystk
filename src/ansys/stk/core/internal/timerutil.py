@@ -41,7 +41,7 @@ class _ClockTimer(object):
             
     @staticmethod
     def NextTimerProc(timers:dict):
-        ''' Return time in sec until next timer proc '''
+        """Return time in sec until next timer proc"""
         if len(timers) == 0:
             return 0.050
         else:
@@ -110,7 +110,7 @@ if os.name != 'nt':
                 timers[timerid].fire()
             
         def _NextTimerProc(self):
-            ''' Return time in ms until next timer proc '''
+            """Return time in ms until next timer proc"""
             return int(_ClockTimer.NextTimerProc(self._timers.copy())*1000)
                     
         def _LoopTimers(self):

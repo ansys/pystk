@@ -37,9 +37,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class AgEUtTimeScale(IntEnum):
-    '''
-    Enumeration of time scales of UTC, TAI, TDT, UT1, STKEpochSec, TDB, GPS
-    '''
+    """Enumeration of time scales of UTC, TAI, TDT, UT1, STKEpochSec, TDB, GPS"""
     # UTC time scale (civil time, Greenwich meridian).
     eUtTimeScaleUTC = 0,
     # TAI time scale (atomic time).
@@ -59,9 +57,7 @@ agcls.AgTypeNameMap['AgEUtTimeScale'] = AgEUtTimeScale
 __all__.append('AgEUtTimeScale')
 
 class AgEUtLogMsgType(IntEnum):
-    '''
-    Enumeration of log message types of Debug, Informational, Force Informational, Warning, Alarm
-    '''
+    """Enumeration of log message types of Debug, Informational, Force Informational, Warning, Alarm"""
     # Debugging message.
     eUtLogMsgDebug = 0,
     # Informational message.
@@ -77,9 +73,7 @@ agcls.AgTypeNameMap['AgEUtLogMsgType'] = AgEUtLogMsgType
 __all__.append('AgEUtLogMsgType')
 
 class AgEUtFrame(IntEnum):
-    '''
-    Enumeration of reference frames of inertial, fixed, local vertical local horizontal (Gauss), normal tangential crosstrack (Frenet), ICRF, J2000
-    '''
+    """Enumeration of reference frames of inertial, fixed, local vertical local horizontal (Gauss), normal tangential crosstrack (Frenet), ICRF, J2000"""
     # Inertial frame of the central body.
     eUtFrameInertial = 0,
     # Fixed frame of the central body.
@@ -97,9 +91,7 @@ agcls.AgTypeNameMap['AgEUtFrame'] = AgEUtFrame
 __all__.append('AgEUtFrame')
 
 class AgEUtSunPosType(IntEnum):
-    '''
-    Enumeration of sun position computation methods of apparent to true of central body, apparent, true position, method of current force model
-    '''
+    """Enumeration of sun position computation methods of apparent to true of central body, apparent, true position, method of current force model"""
     # Apparent Sun position from center of central body
     eUtSunPosTypeApparentToTrueCB = 0,
     # Apparent Sun position as viewed by Satellite
@@ -113,9 +105,7 @@ agcls.AgTypeNameMap['AgEUtSunPosType'] = AgEUtSunPosType
 __all__.append('AgEUtSunPosType')
 
 class AgEUtPluginErrorCodes(IntEnum):
-    '''
-    Enumeration of AgUtPlugin General Error Codes
-    '''
+    """Enumeration of AgUtPlugin General Error Codes"""
     # Plugin: An internal failure occurred.
     eUtPluginInternalFailure = (((1 << 31) | (4 << 16)) | 0x0001),
     # Plugin: The square root of an invalid value occurred.
@@ -134,9 +124,7 @@ __all__.append('AgEUtPluginErrorCodes')
 
 
 class IAgUtPluginSite(object):
-    '''
-    Plugin caller interface
-    '''
+    """Plugin caller interface"""
     _uuid = '{65F51C50-BB26-463c-9F61-EF4D3E719B53}'
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -158,9 +146,7 @@ class IAgUtPluginSite(object):
         self.__dict__['_GetSiteName'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginSite, vtable_offset_local+1, POINTER(agcom.BSTR))
         self.__dict__['_Message'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginSite, vtable_offset_local+2, agcom.LONG, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUtPluginSite.__dict__ and type(IAgUtPluginSite.__dict__[attrname]) == property:
@@ -174,17 +160,13 @@ class IAgUtPluginSite(object):
     
     @property
     def SiteName(self) -> str:
-        '''
-        Returns the site name calling the plugin.
-        '''
+        """Returns the site name calling the plugin."""
         with agmarshall.BSTR_arg() as arg_pName:
             agcls.evaluate_hresult(self.__dict__['_GetSiteName'](byref(arg_pName.COM_val)))
             return arg_pName.python_val
 
     def Message(self, msgType:"AgEUtLogMsgType", message:str) -> None:
-        '''
-        Send a message to the message viewer.
-        '''
+        """Send a message to the message viewer."""
         with agmarshall.AgEnum_arg(AgEUtLogMsgType, msgType) as arg_msgType, \
              agmarshall.BSTR_arg(message) as arg_message:
             agcls.evaluate_hresult(self.__dict__['_Message'](arg_msgType.COM_val, arg_message.COM_val))
@@ -195,9 +177,7 @@ agcls.AgTypeNameMap['IAgUtPluginSite'] = IAgUtPluginSite
 __all__.append('IAgUtPluginSite')
 
 class IAgUtPluginConfigVerifyResult(object):
-    '''
-    Plugin Configuration Verify Result Interface
-    '''
+    """Plugin Configuration Verify Result Interface"""
     _uuid = '{73C70857-08E0-49a5-A1B6-C2E3D44A4075}'
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -223,9 +203,7 @@ class IAgUtPluginConfigVerifyResult(object):
         self.__dict__['_GetMessage'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+3, POINTER(agcom.BSTR))
         self.__dict__['_SetMessage'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+4, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUtPluginConfigVerifyResult.__dict__ and type(IAgUtPluginConfigVerifyResult.__dict__[attrname]) == property:
@@ -239,35 +217,27 @@ class IAgUtPluginConfigVerifyResult(object):
     
     @property
     def Result(self) -> bool:
-        '''
-        The result of the validation of the configuration whether it has succeeded or failed.
-        '''
+        """The result of the validation of the configuration whether it has succeeded or failed."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pbResult:
             agcls.evaluate_hresult(self.__dict__['_GetResult'](byref(arg_pbResult.COM_val)))
             return arg_pbResult.python_val
 
     @Result.setter
     def Result(self, result:bool) -> None:
-        '''
-        The result of the validation of the configuration whether it has succeeded or failed.
-        '''
+        """The result of the validation of the configuration whether it has succeeded or failed."""
         with agmarshall.VARIANT_BOOL_arg(result) as arg_result:
             agcls.evaluate_hresult(self.__dict__['_SetResult'](arg_result.COM_val))
 
     @property
     def Message(self) -> str:
-        '''
-        The message of the validation of the configuration if it has failed.
-        '''
+        """The message of the validation of the configuration if it has failed."""
         with agmarshall.BSTR_arg() as arg_pbstrMessage:
             agcls.evaluate_hresult(self.__dict__['_GetMessage'](byref(arg_pbstrMessage.COM_val)))
             return arg_pbstrMessage.python_val
 
     @Message.setter
     def Message(self, message:str) -> None:
-        '''
-        The message of the validation of the configuration if it has failed.
-        '''
+        """The message of the validation of the configuration if it has failed."""
         with agmarshall.BSTR_arg(message) as arg_message:
             agcls.evaluate_hresult(self.__dict__['_SetMessage'](arg_message.COM_val))
 
@@ -277,9 +247,7 @@ agcls.AgTypeNameMap['IAgUtPluginConfigVerifyResult'] = IAgUtPluginConfigVerifyRe
 __all__.append('IAgUtPluginConfigVerifyResult')
 
 class IAgUtPluginLicensing(object):
-    '''
-    Plugin Licensing Interface
-    '''
+    """Plugin Licensing Interface"""
     _uuid = '{30B9CDD7-A424-4780-9562-15D358E20313}'
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -299,9 +267,7 @@ class IAgUtPluginLicensing(object):
         vtable_offset_local = IAgUtPluginLicensing._vtable_offset - 1
         self.__dict__['_CheckLicense'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginLicensing, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUtPluginLicensing.__dict__ and type(IAgUtPluginLicensing.__dict__[attrname]) == property:
@@ -314,9 +280,7 @@ class IAgUtPluginLicensing(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgUtPluginLicensing.')
     
     def CheckLicense(self) -> bool:
-        '''
-        Check to see if plugin is licensed
-        '''
+        """Check to see if plugin is licensed"""
         with agmarshall.VARIANT_BOOL_arg() as arg_pPluginCfgResult:
             agcls.evaluate_hresult(self.__dict__['_CheckLicense'](byref(arg_pPluginCfgResult.COM_val)))
             return arg_pPluginCfgResult.python_val
@@ -327,9 +291,7 @@ agcls.AgTypeNameMap['IAgUtPluginLicensing'] = IAgUtPluginLicensing
 __all__.append('IAgUtPluginLicensing')
 
 class IAgPythonPluginAttrs(object):
-    '''
-    COM Plugin Attribute interface for updating plugin attributes.
-    '''
+    """COM Plugin Attribute interface for updating plugin attributes."""
     _uuid = '{FB0A773D-277E-4959-85C9-671FD5BAAE78}'
     _num_methods = 0
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -347,9 +309,7 @@ class IAgPythonPluginAttrs(object):
         IID_IAgPythonPluginAttrs = agcom.GUID(IAgPythonPluginAttrs._uuid)
         vtable_offset_local = IAgPythonPluginAttrs._vtable_offset - 1
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgPythonPluginAttrs.__dict__ and type(IAgPythonPluginAttrs.__dict__[attrname]) == property:
@@ -368,20 +328,16 @@ __all__.append('IAgPythonPluginAttrs')
 
 
 class IAgUtPluginConfig(object):
-    '''
+    """
     Plugin Configuration Interface
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def GetPluginConfig(self, pAttrBuilder:"IAgAttrBuilder") -> typing.Any:
-        '''
-        Get an attribute container of the configuration settings.
-        '''
+        """Get an attribute container of the configuration settings."""
         raise STKPluginMethodNotImplementedError('GetPluginConfig was not implemented.')
 
     def VerifyPluginConfig(self, pPluginCfgResult:"IAgUtPluginConfigVerifyResult") -> None:
-        '''
-        Verify the Plugin Config
-        '''
+        """Verify the Plugin Config"""
         raise STKPluginMethodNotImplementedError('VerifyPluginConfig was not implemented.')
 
 __all__.append('IAgUtPluginConfig')
@@ -389,18 +345,14 @@ __all__.append('IAgUtPluginConfig')
 
 
 class AgUtPluginConfigVerifyResult(IAgUtPluginConfigVerifyResult):
-    '''
-    Class used as parameter to the VerifyPluginConfig method of IAgUtPluginConfig interface.
-    '''
+    """Class used as parameter to the VerifyPluginConfig method of IAgUtPluginConfig interface."""
     def __init__(self, sourceObject=None):
         IAgUtPluginConfigVerifyResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUtPluginConfigVerifyResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -415,18 +367,14 @@ __all__.append('AgUtPluginConfigVerifyResult')
 
 
 class AgUtPluginSite(IAgUtPluginSite):
-    '''
-    Plugin caller interface
-    '''
+    """Plugin caller interface"""
     def __init__(self, sourceObject=None):
         IAgUtPluginSite.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUtPluginSite._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

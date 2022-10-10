@@ -37,9 +37,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class AgELogMsgType(IntEnum):
-    '''
-    Log message types.
-    '''
+    """Log message types."""
     # Debugging message.
     eLogMsgDebug = 0,
     # Informational message.
@@ -55,9 +53,7 @@ agcls.AgTypeNameMap['AgELogMsgType'] = AgELogMsgType
 __all__.append('AgELogMsgType')
 
 class AgELogMsgDispID(IntEnum):
-    '''
-    Log message destination options.
-    '''
+    """Log message destination options."""
     # STK displays the message in all the log destination.
     eLogMsgDispAll = -1,
     # STK displays the message in the default log destination.
@@ -71,9 +67,7 @@ agcls.AgTypeNameMap['AgELogMsgDispID'] = AgELogMsgDispID
 __all__.append('AgELogMsgDispID')
 
 class AgELineStyle(IntEnum):
-    '''
-    Line Style
-    '''
+    """Line Style"""
     # Specifies a solid line.
     eSolid = 0,
     # Specifies a dashed line.
@@ -115,9 +109,7 @@ agcls.AgTypeNameMap['AgELineStyle'] = AgELineStyle
 __all__.append('AgELineStyle')
 
 class AgEExecMultiCmdResultAction(IntFlag):
-    '''
-    Enumeration defines a set of actions when an error occurs while executing a command batch.
-    '''
+    """Enumeration defines a set of actions when an error occurs while executing a command batch."""
     # Continue executing the remaining commands in the command batch.
     eContinueOnError = 0,
     # Terminate the execution of the command batch but do not throw an exception.
@@ -131,9 +123,7 @@ agcls.AgTypeNameMap['AgEExecMultiCmdResultAction'] = AgEExecMultiCmdResultAction
 __all__.append('AgEExecMultiCmdResultAction')
 
 class AgEShiftValues(IntEnum):
-    '''
-    State of the Shift/Ctrl/Alt keys.
-    '''
+    """State of the Shift/Ctrl/Alt keys."""
     # The Shift key was pressed.
     eShiftPressed = 1,
     # The Ctrl key was pressed.
@@ -145,9 +135,7 @@ agcls.AgTypeNameMap['AgEShiftValues'] = AgEShiftValues
 __all__.append('AgEShiftValues')
 
 class AgEButtonValues(IntEnum):
-    '''
-    Numeric value of the mouse button pressed.
-    '''
+    """Numeric value of the mouse button pressed."""
     # The left button is pressed.
     eLeftPressed = 1,
     # The right button is pressed.
@@ -159,9 +147,7 @@ agcls.AgTypeNameMap['AgEButtonValues'] = AgEButtonValues
 __all__.append('AgEButtonValues')
 
 class AgEOLEDropMode(IntEnum):
-    '''
-    Specifies how to handle OLE drop operations.
-    '''
+    """Specifies how to handle OLE drop operations."""
     # None. The control does not accept OLE drops and displays the No Drop cursor.
     eNone = 0,
     # Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code.
@@ -173,9 +159,7 @@ agcls.AgTypeNameMap['AgEOLEDropMode'] = AgEOLEDropMode
 __all__.append('AgEOLEDropMode')
 
 class AgEMouseMode(IntEnum):
-    '''
-    Mouse modes.
-    '''
+    """Mouse modes."""
     # Automatic. The control handles the mouse events and then fires the events to the container for additional processing.
     eMouseModeAutomatic = 0,
     # None. No default action happens on mouse events. Events are fired to the container.
@@ -185,9 +169,7 @@ agcls.AgTypeNameMap['AgEMouseMode'] = AgEMouseMode
 __all__.append('AgEMouseMode')
 
 class AgELoggingMode(IntEnum):
-    '''
-    Specifies the state of the log file.
-    '''
+    """Specifies the state of the log file."""
     # The log file is not created.
     eLogInactive = 0,
     # The log file is created but deleted upon application termination.
@@ -199,9 +181,7 @@ agcls.AgTypeNameMap['AgELoggingMode'] = AgELoggingMode
 __all__.append('AgELoggingMode')
 
 class AgEGfxAnalysisMode(IntEnum):
-    '''
-    Specifies the mode of Gfx Analysis Control.
-    '''
+    """Specifies the mode of Gfx Analysis Control."""
     # The Solar Panel Tool mode.
     eSolarPanelTool = 1,
     # The Area Tool mode.
@@ -215,9 +195,7 @@ agcls.AgTypeNameMap['AgEGfxAnalysisMode'] = AgEGfxAnalysisMode
 __all__.append('AgEGfxAnalysisMode')
 
 class AgEGfxDrawCoords(IntEnum):
-    '''
-    Specifies the draw coordinates for Map Control.
-    '''
+    """Specifies the draw coordinates for Map Control."""
     # The draw coordinates values in pixels.
     ePixelDrawCoords = 1,
     # The draw coordinates values in screen coordinates.
@@ -227,9 +205,7 @@ agcls.AgTypeNameMap['AgEGfxDrawCoords'] = AgEGfxDrawCoords
 __all__.append('AgEGfxDrawCoords')
 
 class AgEShowProgressImage(IntEnum):
-    '''
-    Specifies to show progress image.
-    '''
+    """Specifies to show progress image."""
     # Do not show any progress Image.
     eShowProgressImageNone = 1,
     # Show the default progress image.
@@ -241,9 +217,7 @@ agcls.AgTypeNameMap['AgEShowProgressImage'] = AgEShowProgressImage
 __all__.append('AgEShowProgressImage')
 
 class AgEFeatureCodes(IntEnum):
-    '''
-    The enumeration values are used to check availability of a given feature.
-    '''
+    """The enumeration values are used to check availability of a given feature."""
     # The enumeration is used to check whether the engine runtime is available.
     eFeatureCodeEngineRuntime = 1,
     # The enumeration is used to check whether the globe is available.
@@ -253,9 +227,7 @@ agcls.AgTypeNameMap['AgEFeatureCodes'] = AgEFeatureCodes
 __all__.append('AgEFeatureCodes')
 
 class AgEProgressImageXOrigin(IntEnum):
-    '''
-    Specifies to align progress image X origin.
-    '''
+    """Specifies to align progress image X origin."""
     # Align progress Image from X left.
     eProgressImageXLeft = 1,
     # Align progress Image from X right.
@@ -267,9 +239,7 @@ agcls.AgTypeNameMap['AgEProgressImageXOrigin'] = AgEProgressImageXOrigin
 __all__.append('AgEProgressImageXOrigin')
 
 class AgEProgressImageYOrigin(IntEnum):
-    '''
-    Specifies to align progress image Y origin.
-    '''
+    """Specifies to align progress image Y origin."""
     # Align progress Image from Y top.
     eProgressImageYTop = 1,
     # Align progress Image from Y bottom.
@@ -282,9 +252,7 @@ __all__.append('AgEProgressImageYOrigin')
 
 
 class IAgSTKXSSLCertificateErrorEventArgs(object):
-    '''
-    Provides information about an SSL certificate that is expired or invalid.
-    '''
+    """Provides information about an SSL certificate that is expired or invalid."""
     _uuid = '{D0C7ACBC-D1DD-45AE-9582-C7AE5C2E5BEF}'
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -326,9 +294,7 @@ class IAgSTKXSSLCertificateErrorEventArgs(object):
         self.__dict__['_GetHandled'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXSSLCertificateErrorEventArgs, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetHandled'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXSSLCertificateErrorEventArgs, vtable_offset_local+12, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgSTKXSSLCertificateErrorEventArgs.__dict__ and type(IAgSTKXSSLCertificateErrorEventArgs.__dict__[attrname]) == property:
@@ -341,105 +307,81 @@ class IAgSTKXSSLCertificateErrorEventArgs(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgSTKXSSLCertificateErrorEventArgs.')
     
     def SetIgnoreError(self, ignoreError:bool) -> None:
-        '''
-        Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server.
-        '''
+        """Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server."""
         with agmarshall.VARIANT_BOOL_arg(ignoreError) as arg_ignoreError:
             agcls.evaluate_hresult(self.__dict__['_SetIgnoreError'](arg_ignoreError.COM_val))
 
     @property
     def IsErrorIgnored(self) -> bool:
-        '''
-        Returns whether the invalid certificate error is ignored.
-        '''
+        """Returns whether the invalid certificate error is ignored."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetIsErrorIgnored'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     def SetIgnoreErrorPermanently(self, ignoreErrorPermanently:bool) -> None:
-        '''
-        Specify True to ignore the certificate error and add the certificate to the list of trusted certificates.
-        '''
+        """Specify True to ignore the certificate error and add the certificate to the list of trusted certificates."""
         with agmarshall.VARIANT_BOOL_arg(ignoreErrorPermanently) as arg_ignoreErrorPermanently:
             agcls.evaluate_hresult(self.__dict__['_SetIgnoreErrorPermanently'](arg_ignoreErrorPermanently.COM_val))
 
     @property
     def SerialNumber(self) -> str:
-        '''
-        Certificate's serial number.
-        '''
+        """Certificate's serial number."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetSerialNumber'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def Issuer(self) -> str:
-        '''
-        The provider who issued the certificate.
-        '''
+        """The provider who issued the certificate."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetIssuer'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def Subject(self) -> str:
-        '''
-        Certificate's subject field.
-        '''
+        """Certificate's subject field."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetSubject'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def ValidDate(self) -> datetime:
-        '''
-        Certificate's valid date.
-        '''
+        """Certificate's valid date."""
         with agmarshall.DATE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetValidDate'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def ExpirationDate(self) -> datetime:
-        '''
-        Certificate's expiration date.
-        '''
+        """Certificate's expiration date."""
         with agmarshall.DATE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetExpirationDate'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def IsExpired(self) -> bool:
-        '''
-        Whether the certificate is expired.
-        '''
+        """Whether the certificate is expired."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetIsExpired'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def PEMData(self) -> str:
-        '''
-        Certificate's PEM data encoded as base-64.
-        '''
+        """Certificate's PEM data encoded as base-64."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetPEMData'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def Handled(self) -> bool:
-        '''
-        Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
-        '''
+        """Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetHandled'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @Handled.setter
     def Handled(self, bHandled:bool) -> None:
-        '''
-        Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
-        '''
+        """Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
         with agmarshall.VARIANT_BOOL_arg(bHandled) as arg_bHandled:
             agcls.evaluate_hresult(self.__dict__['_SetHandled'](arg_bHandled.COM_val))
 
@@ -449,9 +391,7 @@ agcls.AgTypeNameMap['IAgSTKXSSLCertificateErrorEventArgs'] = IAgSTKXSSLCertifica
 __all__.append('IAgSTKXSSLCertificateErrorEventArgs')
 
 class IAgSTKXConControlQuitReceivedEventArgs(object):
-    '''
-    Arguments for the OnConControlQuitReceived event.
-    '''
+    """Arguments for the OnConControlQuitReceived event."""
     _uuid = '{F8925F99-8841-4DF3-A6E4-CE63E298868C}'
     _num_methods = 2
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -473,9 +413,7 @@ class IAgSTKXConControlQuitReceivedEventArgs(object):
         self.__dict__['_GetAcknowledge'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXConControlQuitReceivedEventArgs, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetAcknowledge'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXConControlQuitReceivedEventArgs, vtable_offset_local+2, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgSTKXConControlQuitReceivedEventArgs.__dict__ and type(IAgSTKXConControlQuitReceivedEventArgs.__dict__[attrname]) == property:
@@ -489,18 +427,14 @@ class IAgSTKXConControlQuitReceivedEventArgs(object):
     
     @property
     def Acknowledge(self) -> bool:
-        '''
-        Indicates whether or not to acknowledge the connect command.
-        '''
+        """Indicates whether or not to acknowledge the connect command."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetAcknowledge'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @Acknowledge.setter
     def Acknowledge(self, acknowledge:bool) -> None:
-        '''
-        Indicates whether or not to acknowledge the connect command.
-        '''
+        """Indicates whether or not to acknowledge the connect command."""
         with agmarshall.VARIANT_BOOL_arg(acknowledge) as arg_acknowledge:
             agcls.evaluate_hresult(self.__dict__['_SetAcknowledge'](arg_acknowledge.COM_val))
 
@@ -510,9 +444,7 @@ agcls.AgTypeNameMap['IAgSTKXConControlQuitReceivedEventArgs'] = IAgSTKXConContro
 __all__.append('IAgSTKXConControlQuitReceivedEventArgs')
 
 class IAgPickInfoData(object):
-    '''
-    Mouse pick details.
-    '''
+    """Mouse pick details."""
     _uuid = '{C87F43DA-DD89-4F13-BCB6-D78D0FE8D7E4}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -542,9 +474,7 @@ class IAgPickInfoData(object):
         self.__dict__['_GetIsObjPathValid'] = IAGFUNCTYPE(pUnk, IID_IAgPickInfoData, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_GetIsLatLonAltValid'] = IAGFUNCTYPE(pUnk, IID_IAgPickInfoData, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgPickInfoData.__dict__ and type(IAgPickInfoData.__dict__[attrname]) == property:
@@ -558,54 +488,42 @@ class IAgPickInfoData(object):
     
     @property
     def ObjPath(self) -> str:
-        '''
-        Path of the STK object picked if any (or empty string).
-        '''
+        """Path of the STK object picked if any (or empty string)."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetObjPath'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Lat(self) -> float:
-        '''
-        Latitude of point clicked (if available).
-        '''
+        """Latitude of point clicked (if available)."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLat'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Lon(self) -> float:
-        '''
-        Longitude of point clicked (if available).
-        '''
+        """Longitude of point clicked (if available)."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLon'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Alt(self) -> float:
-        '''
-        Altitude of point clicked (if available).
-        '''
+        """Altitude of point clicked (if available)."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetAlt'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def IsObjPathValid(self) -> bool:
-        '''
-        Indicate if the ObjPath property is valid.
-        '''
+        """Indicate if the ObjPath property is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
             agcls.evaluate_hresult(self.__dict__['_GetIsObjPathValid'](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
 
     @property
     def IsLatLonAltValid(self) -> bool:
-        '''
-        Indicate if the Lat/Lon/Alt properties are valid.
-        '''
+        """Indicate if the Lat/Lon/Alt properties are valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
             agcls.evaluate_hresult(self.__dict__['_GetIsLatLonAltValid'](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
@@ -616,9 +534,7 @@ agcls.AgTypeNameMap['IAgPickInfoData'] = IAgPickInfoData
 __all__.append('IAgPickInfoData')
 
 class IAgRubberBandPickInfoData(object):
-    '''
-    Rubber-band mouse pick result.
-    '''
+    """Rubber-band mouse pick result."""
     _uuid = '{54417F99-E500-4BD8-A762-DC3367C7624C}'
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -638,9 +554,7 @@ class IAgRubberBandPickInfoData(object):
         vtable_offset_local = IAgRubberBandPickInfoData._vtable_offset - 1
         self.__dict__['_GetObjPaths'] = IAGFUNCTYPE(pUnk, IID_IAgRubberBandPickInfoData, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgRubberBandPickInfoData.__dict__ and type(IAgRubberBandPickInfoData.__dict__[attrname]) == property:
@@ -654,9 +568,7 @@ class IAgRubberBandPickInfoData(object):
     
     @property
     def ObjPaths(self) -> "IAgObjPathCollection":
-        '''
-        List of object paths selected.
-        '''
+        """List of object paths selected."""
         with agmarshall.AgInterface_out_arg() as arg_ppColl:
             agcls.evaluate_hresult(self.__dict__['_GetObjPaths'](byref(arg_ppColl.COM_val)))
             return arg_ppColl.python_val
@@ -667,9 +579,7 @@ agcls.AgTypeNameMap['IAgRubberBandPickInfoData'] = IAgRubberBandPickInfoData
 __all__.append('IAgRubberBandPickInfoData')
 
 class IAgSTKXApplication(object):
-    '''
-    STK X Application object.
-    '''
+    """STK X Application object."""
     _uuid = '{A2BB8372-EA5F-4D9D-84C3-4D9E5B9A8840}'
     _num_methods = 27
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -741,9 +651,7 @@ class IAgSTKXApplication(object):
         self.__dict__['_SetShowSLAIfNotAccepted'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXApplication, vtable_offset_local+26, agcom.VARIANT_BOOL)
         self.__dict__['_SetUseHook'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXApplication, vtable_offset_local+27, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgSTKXApplication.__dict__ and type(IAgSTKXApplication.__dict__[attrname]) == property:
@@ -755,12 +663,10 @@ class IAgSTKXApplication(object):
         else:
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgSTKXApplication.')
     def Subscribe(self) -> IAgSTKXApplicationEventHandler:
-        ''' Returns an IAgSTKXApplicationEventHandler that is subscribed to handle events associated with this instance of IAgSTKXApplication. '''
+        """Returns an IAgSTKXApplicationEventHandler that is subscribed to handle events associated with this instance of IAgSTKXApplication."""
         return IAgSTKXApplicationEventHandler(self._pUnk)    
     def ExecuteCommand(self, command:str) -> "IAgExecCmdResult":
-        '''
-        Send a connect command to STK X.
-        '''
+        """Send a connect command to STK X."""
         with agmarshall.BSTR_arg(command) as arg_command, \
              agmarshall.AgInterface_out_arg() as arg_ppExecCmdRes:
             agcls.evaluate_hresult(self.__dict__['_ExecuteCommand'](arg_command.COM_val, byref(arg_ppExecCmdRes.COM_val)))
@@ -768,9 +674,7 @@ class IAgSTKXApplication(object):
 
     @property
     def EnableConnect(self) -> bool:
-        '''
-        Enable or disable TCP/IP connect command processing (default: disabled).
-        '''
+        """Enable or disable TCP/IP connect command processing (default: disabled)."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetEnableConnect'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -782,9 +686,7 @@ class IAgSTKXApplication(object):
 
     @property
     def ConnectPort(self) -> int:
-        '''
-        Specify TCP/IP port to be used by Connect (default: 5001).
-        '''
+        """Specify TCP/IP port to be used by Connect (default: 5001)."""
         with agmarshall.SHORT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetConnectPort'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -796,44 +698,34 @@ class IAgSTKXApplication(object):
 
     @property
     def HostID(self) -> str:
-        '''
-        Returns the Host ID.
-        '''
+        """Returns the Host ID."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetHostID'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     @property
     def RegistrationID(self) -> str:
-        '''
-        Returns the Registration ID.
-        '''
+        """Returns the Registration ID."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetRegistrationID'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     @property
     def Version(self) -> str:
-        '''
-        Returns the version number
-        '''
+        """Returns the version number"""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetVersion'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     def GetLicensingReport(self) -> str:
-        '''
-        This method is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document.
-        '''
+        """This method is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetLicensingReport'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     @property
     def VendorID(self) -> str:
-        '''
-        This property is deprecated. The identifier of the vendor.
-        '''
+        """This property is deprecated. The identifier of the vendor."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetVendorID'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
@@ -844,9 +736,7 @@ class IAgSTKXApplication(object):
             agcls.evaluate_hresult(self.__dict__['_SetVendorID'](arg_vendorID.COM_val))
 
     def SetOnlineOptions(self, useProxy:bool, serverName:str, portNum:int, userName:str, password:str, savePassword:bool) -> bool:
-        '''
-        Set http proxy online options
-        '''
+        """Set http proxy online options"""
         with agmarshall.VARIANT_BOOL_arg(useProxy) as arg_useProxy, \
              agmarshall.BSTR_arg(serverName) as arg_serverName, \
              agmarshall.LONG_arg(portNum) as arg_portNum, \
@@ -858,9 +748,7 @@ class IAgSTKXApplication(object):
             return arg_pVal.python_val
 
     def GetOnlineOptions(self) -> typing.Tuple[bool, str, int, str, bool]:
-        '''
-        Get http proxy online options
-        '''
+        """Get http proxy online options"""
         with agmarshall.VARIANT_BOOL_arg() as arg_useProxy, \
              agmarshall.BSTR_arg() as arg_serverName, \
              agmarshall.LONG_arg() as arg_portNum, \
@@ -870,27 +758,21 @@ class IAgSTKXApplication(object):
             return arg_useProxy.python_val, arg_serverName.python_val, arg_portNum.python_val, arg_userName.python_val, arg_pVal.python_val
 
     def SetConnectHandler(self, commandID:str, progID:str) -> None:
-        '''
-        Set callback to handle a certain connect command
-        '''
+        """Set callback to handle a certain connect command"""
         with agmarshall.BSTR_arg(commandID) as arg_commandID, \
              agmarshall.BSTR_arg(progID) as arg_progID:
             agcls.evaluate_hresult(self.__dict__['_SetConnectHandler'](arg_commandID.COM_val, arg_progID.COM_val))
 
     @property
     def LogFileFullName(self) -> str:
-        '''
-        Returns full path and log file name.
-        '''
+        """Returns full path and log file name."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetLogFileFullName'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     @property
     def LoggingMode(self) -> "AgELoggingMode":
-        '''
-        Controls the log file generation, and if the log file is deleted or not on application exit.
-        '''
+        """Controls the log file generation, and if the log file is deleted or not on application exit."""
         with agmarshall.AgEnum_arg(AgELoggingMode) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLoggingMode'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -902,9 +784,7 @@ class IAgSTKXApplication(object):
 
     @property
     def ConnectMaxConnections(self) -> int:
-        '''
-        Specify the maximum number of Connect connections to allow.
-        '''
+        """Specify the maximum number of Connect connections to allow."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetConnectMaxConnections'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -915,9 +795,7 @@ class IAgSTKXApplication(object):
             agcls.evaluate_hresult(self.__dict__['_SetConnectMaxConnections'](arg_newVal.COM_val))
 
     def ExecuteMultipleCommands(self, connectCommands:list, eAction:"AgEExecMultiCmdResultAction") -> "IAgExecMultiCmdResult":
-        '''
-        Executes multiple CONNECT actions. The method throws an exception if any of the specified commands have failed.
-        '''
+        """Executes multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
         with agmarshall.SAFEARRAY_arg(connectCommands) as arg_connectCommands, \
              agmarshall.AgEnum_arg(AgEExecMultiCmdResultAction, eAction) as arg_eAction, \
              agmarshall.AgInterface_out_arg() as arg_ppResult:
@@ -925,9 +803,7 @@ class IAgSTKXApplication(object):
             return arg_ppResult.python_val
 
     def IsFeatureAvailable(self, featureCode:"AgEFeatureCodes") -> bool:
-        '''
-        Returns true if the specified feature is available.
-        '''
+        """Returns true if the specified feature is available."""
         with agmarshall.AgEnum_arg(AgEFeatureCodes, featureCode) as arg_featureCode, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_IsFeatureAvailable'](arg_featureCode.COM_val, byref(arg_pRetVal.COM_val)))
@@ -935,9 +811,7 @@ class IAgSTKXApplication(object):
 
     @property
     def NoGraphics(self) -> bool:
-        '''
-        Start engine with or without graphics (default: engine starts with graphics.).
-        '''
+        """Start engine with or without graphics (default: engine starts with graphics.)."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetNoGraphics'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -948,16 +822,12 @@ class IAgSTKXApplication(object):
             agcls.evaluate_hresult(self.__dict__['_SetNoGraphics'](arg_newVal.COM_val))
 
     def Terminate(self) -> None:
-        '''
-        Terminates the use of STK Engine. This must be the last call to STK Engine.
-        '''
+        """Terminates the use of STK Engine. This must be the last call to STK Engine."""
         agcls.evaluate_hresult(self.__dict__['_Terminate']())
 
     @property
     def ShowSLAIfNotAccepted(self) -> bool:
-        '''
-        Shows the Software License Agreement dialog if not already accepted.
-        '''
+        """Shows the Software License Agreement dialog if not already accepted."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetShowSLAIfNotAccepted'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -969,17 +839,13 @@ class IAgSTKXApplication(object):
 
     @property
     def UseHook(self) -> None:
-        '''
-        UseHook is a write-only property.
-        '''
+        """UseHook is a write-only property."""
         raise RuntimeError('UseHook is a write-only property.')
 
 
     @UseHook.setter
     def UseHook(self, newVal:bool) -> None:
-        '''
-        Start engine with or without message hook setup (default: engine starts with message hook setup.).
-        '''
+        """Start engine with or without message hook setup (default: engine starts with message hook setup.)."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__['_SetUseHook'](arg_newVal.COM_val))
 
@@ -989,9 +855,7 @@ agcls.AgTypeNameMap['IAgSTKXApplication'] = IAgSTKXApplication
 __all__.append('IAgSTKXApplication')
 
 class IAgDataObject(object):
-    '''
-    IAgDataObject is used for OLE drag and drop operations
-    '''
+    """IAgDataObject is used for OLE drag and drop operations"""
     _uuid = '{557F091D-247F-4040-B1E9-10E5BCEDFFD5}'
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1011,9 +875,7 @@ class IAgDataObject(object):
         vtable_offset_local = IAgDataObject._vtable_offset - 1
         self.__dict__['_GetFiles'] = IAGFUNCTYPE(pUnk, IID_IAgDataObject, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDataObject.__dict__ and type(IAgDataObject.__dict__[attrname]) == property:
@@ -1027,9 +889,7 @@ class IAgDataObject(object):
     
     @property
     def Files(self) -> "IAgDataObjectFiles":
-        '''
-        Returns a collection of filenames.
-        '''
+        """Returns a collection of filenames."""
         with agmarshall.AgInterface_out_arg() as arg_pFile:
             agcls.evaluate_hresult(self.__dict__['_GetFiles'](byref(arg_pFile.COM_val)))
             return arg_pFile.python_val
@@ -1040,9 +900,7 @@ agcls.AgTypeNameMap['IAgDataObject'] = IAgDataObject
 __all__.append('IAgDataObject')
 
 class IAgObjPathCollection(object):
-    '''
-    Collection of object paths.
-    '''
+    """Collection of object paths."""
     _uuid = '{831E53E8-4E79-4E2E-B289-A6AD76A76F3A}'
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1069,9 +927,7 @@ class IAgObjPathCollection(object):
         self.__dict__['_Get_NewEnum'] = IAGFUNCTYPE(pUnk, IID_IAgObjPathCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
         self.__dict__['_Range'] = IAGFUNCTYPE(pUnk, IID_IAgObjPathCollection, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgObjPathCollection.__dict__ and type(IAgObjPathCollection.__dict__[attrname]) == property:
@@ -1096,17 +952,13 @@ class IAgObjPathCollection(object):
     
     @property
     def Count(self) -> int:
-        '''
-        Number of elements contained in the collection.
-        '''
+        """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
     def Item(self, index:int) -> str:
-        '''
-        Gets the element at the specified index (0-based).
-        '''
+        """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.BSTR_arg() as arg_pItem:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_pItem.COM_val)))
@@ -1114,17 +966,13 @@ class IAgObjPathCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an object that can be used to iterate through all the object paths in the collection.
-        '''
+        """Returns an object that can be used to iterate through all the object paths in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
     def Range(self, startIndex:int, stopIndex:int) -> list:
-        '''
-        Return the elements within the specified range.
-        '''
+        """Return the elements within the specified range."""
         with agmarshall.LONG_arg(startIndex) as arg_startIndex, \
              agmarshall.LONG_arg(stopIndex) as arg_stopIndex, \
              agmarshall.SAFEARRAY_arg() as arg_pVar:
@@ -1140,9 +988,7 @@ agcls.AgTypeNameMap['IAgObjPathCollection'] = IAgObjPathCollection
 __all__.append('IAgObjPathCollection')
 
 class IAgDrawElem(object):
-    '''
-    Draw element.
-    '''
+    """Draw element."""
     _uuid = '{C661025D-FFB3-429A-A0B1-D8421DE76AC6}'
     _num_methods = 2
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1164,9 +1010,7 @@ class IAgDrawElem(object):
         self.__dict__['_GetVisible'] = IAGFUNCTYPE(pUnk, IID_IAgDrawElem, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetVisible'] = IAGFUNCTYPE(pUnk, IID_IAgDrawElem, vtable_offset_local+2, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDrawElem.__dict__ and type(IAgDrawElem.__dict__[attrname]) == property:
@@ -1180,9 +1024,7 @@ class IAgDrawElem(object):
     
     @property
     def Visible(self) -> bool:
-        '''
-        Show or hide the element.
-        '''
+        """Show or hide the element."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetVisible'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1198,9 +1040,7 @@ agcls.AgTypeNameMap['IAgDrawElem'] = IAgDrawElem
 __all__.append('IAgDrawElem')
 
 class IAgDrawElemRect(IAgDrawElem):
-    '''
-    Defines a rectangle in control coordinates.
-    '''
+    """Defines a rectangle in control coordinates."""
     _uuid = '{B017EED9-DC32-4865-BDB9-6C586DC1818C}'
     _num_methods = 11
     _vtable_offset = IAgDrawElem._vtable_offset + IAgDrawElem._num_methods
@@ -1241,9 +1081,7 @@ class IAgDrawElemRect(IAgDrawElem):
         self.__dict__['_GetLineStyle'] = IAGFUNCTYPE(pUnk, IID_IAgDrawElemRect, vtable_offset_local+10, POINTER(agcom.LONG))
         self.__dict__['_SetLineStyle'] = IAGFUNCTYPE(pUnk, IID_IAgDrawElemRect, vtable_offset_local+11, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDrawElemRect.__dict__ and type(IAgDrawElemRect.__dict__[attrname]) == property:
@@ -1257,44 +1095,34 @@ class IAgDrawElemRect(IAgDrawElem):
     
     @property
     def Left(self) -> int:
-        '''
-        The x-coordinate of the left edge of this rectangle.
-        '''
+        """The x-coordinate of the left edge of this rectangle."""
         with agmarshall.OLE_XPOS_PIXELS_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLeft'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Right(self) -> int:
-        '''
-        The x-coordinate of the right edge of this rectangle.
-        '''
+        """The x-coordinate of the right edge of this rectangle."""
         with agmarshall.OLE_XPOS_PIXELS_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetRight'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Top(self) -> int:
-        '''
-        The y-coordinate of the top edge of this rectangle.
-        '''
+        """The y-coordinate of the top edge of this rectangle."""
         with agmarshall.OLE_YPOS_PIXELS_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetTop'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Bottom(self) -> int:
-        '''
-        The y-coordinate of the bottom edge of this rectangle.
-        '''
+        """The y-coordinate of the bottom edge of this rectangle."""
         with agmarshall.OLE_YPOS_PIXELS_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetBottom'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def Set(self, left:int, top:int, right:int, bottom:int) -> None:
-        '''
-        Set the rectangle coordinates.
-        '''
+        """Set the rectangle coordinates."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
              agmarshall.OLE_XPOS_PIXELS_arg(right) as arg_right, \
@@ -1303,9 +1131,7 @@ class IAgDrawElemRect(IAgDrawElem):
 
     @property
     def Color(self) -> agcolor.Color:
-        '''
-        Color of the rectangle.
-        '''
+        """Color of the rectangle."""
         with agmarshall.OLE_COLOR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetColor'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1317,9 +1143,7 @@ class IAgDrawElemRect(IAgDrawElem):
 
     @property
     def LineWidth(self) -> float:
-        '''
-        Specifies the width of the line.
-        '''
+        """Specifies the width of the line."""
         with agmarshall.FLOAT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLineWidth'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1331,9 +1155,7 @@ class IAgDrawElemRect(IAgDrawElem):
 
     @property
     def LineStyle(self) -> "AgELineStyle":
-        '''
-        Specifies the style of the line.
-        '''
+        """Specifies the style of the line."""
         with agmarshall.AgEnum_arg(AgELineStyle) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLineStyle'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1349,9 +1171,7 @@ agcls.AgTypeNameMap['IAgDrawElemRect'] = IAgDrawElemRect
 __all__.append('IAgDrawElemRect')
 
 class IAgDrawElemCollection(object):
-    '''
-    Collection of elements to draw on the control.
-    '''
+    """Collection of elements to draw on the control."""
     _uuid = '{3D6D784D-7C84-4A30-95D8-7D57AF7C560E}'
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1386,9 +1206,7 @@ class IAgDrawElemCollection(object):
         self.__dict__['_GetVisible'] = IAGFUNCTYPE(pUnk, IID_IAgDrawElemCollection, vtable_offset_local+7, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetVisible'] = IAGFUNCTYPE(pUnk, IID_IAgDrawElemCollection, vtable_offset_local+8, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDrawElemCollection.__dict__ and type(IAgDrawElemCollection.__dict__[attrname]) == property:
@@ -1413,17 +1231,13 @@ class IAgDrawElemCollection(object):
     
     @property
     def Count(self) -> int:
-        '''
-        Number of elements contained in the collection.
-        '''
+        """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def Item(self, index:int) -> "IAgDrawElem":
-        '''
-        Gets the element at the specified index (0-based).
-        '''
+        """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_pVal.COM_val)))
@@ -1431,40 +1245,30 @@ class IAgDrawElemCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an object that can be used to iterate through all the strings in the collection.
-        '''
+        """Returns an object that can be used to iterate through all the strings in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppUnk:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppUnk.COM_val)))
             return arg_ppUnk.python_val
 
     def Clear(self) -> None:
-        '''
-        Clears the contents of the collection and updates the display.
-        '''
+        """Clears the contents of the collection and updates the display."""
         agcls.evaluate_hresult(self.__dict__['_Clear']())
 
     def Add(self, elemType:str) -> "IAgDrawElem":
-        '''
-        Factory to create and add a new element to the end of the sequence.
-        '''
+        """Factory to create and add a new element to the end of the sequence."""
         with agmarshall.BSTR_arg(elemType) as arg_elemType, \
              agmarshall.AgInterface_out_arg() as arg_ppDrawElem:
             agcls.evaluate_hresult(self.__dict__['_Add'](arg_elemType.COM_val, byref(arg_ppDrawElem.COM_val)))
             return arg_ppDrawElem.python_val
 
     def Remove(self, drawElem:"IAgDrawElem") -> None:
-        '''
-        Remove the specified element.
-        '''
+        """Remove the specified element."""
         with agmarshall.AgInterface_in_arg(drawElem, IAgDrawElem) as arg_drawElem:
             agcls.evaluate_hresult(self.__dict__['_Remove'](arg_drawElem.COM_val))
 
     @property
     def Visible(self) -> bool:
-        '''
-        Show or hide all the elements.
-        '''
+        """Show or hide all the elements."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetVisible'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1483,9 +1287,7 @@ agcls.AgTypeNameMap['IAgDrawElemCollection'] = IAgDrawElemCollection
 __all__.append('IAgDrawElemCollection')
 
 class IAgWinProjPos(object):
-    '''
-    Projected window postion detail.
-    '''
+    """Projected window postion detail."""
     _uuid = '{56FF29E4-6311-4E94-B91D-53C02288C55A}'
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1509,9 +1311,7 @@ class IAgWinProjPos(object):
         self.__dict__['_GetYPos'] = IAGFUNCTYPE(pUnk, IID_IAgWinProjPos, vtable_offset_local+2, POINTER(agcom.DOUBLE))
         self.__dict__['_GetIsWinProjPosValid'] = IAGFUNCTYPE(pUnk, IID_IAgWinProjPos, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgWinProjPos.__dict__ and type(IAgWinProjPos.__dict__[attrname]) == property:
@@ -1525,27 +1325,21 @@ class IAgWinProjPos(object):
     
     @property
     def XPos(self) -> float:
-        '''
-        Projected window X position.
-        '''
+        """Projected window X position."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetXPos'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def YPos(self) -> float:
-        '''
-        Projected window Y position.
-        '''
+        """Projected window Y position."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetYPos'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def IsWinProjPosValid(self) -> bool:
-        '''
-        Indicates if the returned projected positon is valid or not.
-        '''
+        """Indicates if the returned projected positon is valid or not."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
             agcls.evaluate_hresult(self.__dict__['_GetIsWinProjPosValid'](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
@@ -1556,9 +1350,7 @@ agcls.AgTypeNameMap['IAgWinProjPos'] = IAgWinProjPos
 __all__.append('IAgWinProjPos')
 
 class IAgDrawElemLine(IAgDrawElem):
-    '''
-    Defines a line in control coordinates.
-    '''
+    """Defines a line in control coordinates."""
     _uuid = '{1A550DDC-7769-4A6C-9D0C-8E9D8C1757E2}'
     _num_methods = 11
     _vtable_offset = IAgDrawElem._vtable_offset + IAgDrawElem._num_methods
@@ -1599,9 +1391,7 @@ class IAgDrawElemLine(IAgDrawElem):
         self.__dict__['_GetLineStyle'] = IAGFUNCTYPE(pUnk, IID_IAgDrawElemLine, vtable_offset_local+10, POINTER(agcom.LONG))
         self.__dict__['_SetLineStyle'] = IAGFUNCTYPE(pUnk, IID_IAgDrawElemLine, vtable_offset_local+11, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDrawElemLine.__dict__ and type(IAgDrawElemLine.__dict__[attrname]) == property:
@@ -1615,44 +1405,34 @@ class IAgDrawElemLine(IAgDrawElem):
     
     @property
     def Left(self) -> int:
-        '''
-        The x-coordinate of the left edge of this line.
-        '''
+        """The x-coordinate of the left edge of this line."""
         with agmarshall.OLE_XPOS_PIXELS_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLeft'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Right(self) -> int:
-        '''
-        The x-coordinate of the right edge of this line.
-        '''
+        """The x-coordinate of the right edge of this line."""
         with agmarshall.OLE_XPOS_PIXELS_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetRight'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Top(self) -> int:
-        '''
-        The y-coordinate of the top edge of this line.
-        '''
+        """The y-coordinate of the top edge of this line."""
         with agmarshall.OLE_YPOS_PIXELS_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetTop'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Bottom(self) -> int:
-        '''
-        The y-coordinate of the bottom edge of this line.
-        '''
+        """The y-coordinate of the bottom edge of this line."""
         with agmarshall.OLE_YPOS_PIXELS_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetBottom'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def Set(self, left:int, top:int, right:int, bottom:int) -> None:
-        '''
-        Set the rectangle coordinates.
-        '''
+        """Set the rectangle coordinates."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
              agmarshall.OLE_XPOS_PIXELS_arg(right) as arg_right, \
@@ -1661,9 +1441,7 @@ class IAgDrawElemLine(IAgDrawElem):
 
     @property
     def Color(self) -> agcolor.Color:
-        '''
-        Color of the rectangle.
-        '''
+        """Color of the rectangle."""
         with agmarshall.OLE_COLOR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetColor'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1675,9 +1453,7 @@ class IAgDrawElemLine(IAgDrawElem):
 
     @property
     def LineWidth(self) -> float:
-        '''
-        Specifies the width of the line.
-        '''
+        """Specifies the width of the line."""
         with agmarshall.FLOAT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLineWidth'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1689,9 +1465,7 @@ class IAgDrawElemLine(IAgDrawElem):
 
     @property
     def LineStyle(self) -> "AgELineStyle":
-        '''
-        Specifies the style of the line.
-        '''
+        """Specifies the style of the line."""
         with agmarshall.AgEnum_arg(AgELineStyle) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLineStyle'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1707,9 +1481,7 @@ agcls.AgTypeNameMap['IAgDrawElemLine'] = IAgDrawElemLine
 __all__.append('IAgDrawElemLine')
 
 class IAgExecCmdResult(object):
-    '''
-    Collection of strings returned by the ExecuteCommand.
-    '''
+    """Collection of strings returned by the ExecuteCommand."""
     _uuid = '{90EF2D03-F064-4F54-9E02-6E34E3CF5D55}'
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1738,9 +1510,7 @@ class IAgExecCmdResult(object):
         self.__dict__['_Range'] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_GetIsSucceeded'] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgExecCmdResult.__dict__ and type(IAgExecCmdResult.__dict__[attrname]) == property:
@@ -1765,17 +1535,13 @@ class IAgExecCmdResult(object):
     
     @property
     def Count(self) -> int:
-        '''
-        Number of elements contained in the collection.
-        '''
+        """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
     def Item(self, index:int) -> str:
-        '''
-        Gets the element at the specified index (0-based).
-        '''
+        """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.BSTR_arg() as arg_pItem:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_pItem.COM_val)))
@@ -1783,17 +1549,13 @@ class IAgExecCmdResult(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an object that can be used to iterate through all the strings in the collection.
-        '''
+        """Returns an object that can be used to iterate through all the strings in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
     def Range(self, startIndex:int, stopIndex:int) -> list:
-        '''
-        Return the elements within the specified range.
-        '''
+        """Return the elements within the specified range."""
         with agmarshall.LONG_arg(startIndex) as arg_startIndex, \
              agmarshall.LONG_arg(stopIndex) as arg_stopIndex, \
              agmarshall.SAFEARRAY_arg() as arg_ppVar:
@@ -1802,9 +1564,7 @@ class IAgExecCmdResult(object):
 
     @property
     def IsSucceeded(self) -> bool:
-        '''
-        Indicates whether the object contains valid results.
-        '''
+        """Indicates whether the object contains valid results."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetIsSucceeded'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -1818,9 +1578,7 @@ agcls.AgTypeNameMap['IAgExecCmdResult'] = IAgExecCmdResult
 __all__.append('IAgExecCmdResult')
 
 class IAgExecMultiCmdResult(object):
-    '''
-    Collection of objects returned by the ExecuteMultipleCommands.
-    '''
+    """Collection of objects returned by the ExecuteMultipleCommands."""
     _uuid = '{0558BE8E-AF66-4F52-9C6D-76962FC52577}'
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1845,9 +1603,7 @@ class IAgExecMultiCmdResult(object):
         self.__dict__['_Item'] = IAGFUNCTYPE(pUnk, IID_IAgExecMultiCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
         self.__dict__['_Get_NewEnum'] = IAGFUNCTYPE(pUnk, IID_IAgExecMultiCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgExecMultiCmdResult.__dict__ and type(IAgExecMultiCmdResult.__dict__[attrname]) == property:
@@ -1872,17 +1628,13 @@ class IAgExecMultiCmdResult(object):
     
     @property
     def Count(self) -> int:
-        '''
-        Number of elements contained in the collection.
-        '''
+        """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
     def Item(self, index:int) -> "IAgExecCmdResult":
-        '''
-        Gets the element at the specified index (0-based).
-        '''
+        """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_pRetVal.COM_val)))
@@ -1890,9 +1642,7 @@ class IAgExecMultiCmdResult(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an object that can be used to iterate through all the objects in the collection.
-        '''
+        """Returns an object that can be used to iterate through all the objects in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
@@ -1906,9 +1656,7 @@ agcls.AgTypeNameMap['IAgExecMultiCmdResult'] = IAgExecMultiCmdResult
 __all__.append('IAgExecMultiCmdResult')
 
 class IAgUiAxVOCntrl(object):
-    '''
-    AGI Globe control.
-    '''
+    """AGI Globe control."""
     _uuid = '{0975BA23-E273-4B8F-BA8D-32ECB328C092}'
     _num_methods = 48
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2022,9 +1770,7 @@ class IAgUiAxVOCntrl(object):
         self.__dict__['_GetPictureFromFile'] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+47, POINTER(agcom.BSTR))
         self.__dict__['_SetPictureFromFile'] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+48, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiAxVOCntrl.__dict__ and type(IAgUiAxVOCntrl.__dict__[attrname]) == property:
@@ -2036,13 +1782,11 @@ class IAgUiAxVOCntrl(object):
         else:
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgUiAxVOCntrl.')
     def Subscribe(self) -> IAgUiAxVOCntrlEventHandler:
-        ''' Returns an IAgUiAxVOCntrlEventHandler that is subscribed to handle events associated with this instance of IAgUiAxVOCntrl. '''
+        """Returns an IAgUiAxVOCntrlEventHandler that is subscribed to handle events associated with this instance of IAgUiAxVOCntrl."""
         return IAgUiAxVOCntrlEventHandler(self._pUnk)    
     @property
     def BackColor(self) -> agcolor.Color:
-        '''
-        The background color of the control.
-        '''
+        """The background color of the control."""
         with agmarshall.OLE_COLOR_arg() as arg_pclr:
             agcls.evaluate_hresult(self.__dict__['_GetBackColor'](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
@@ -2054,9 +1798,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def Picture(self) -> IPictureDisp:
-        '''
-        The splash logo graphic to be displayed in the control.
-        '''
+        """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
             agcls.evaluate_hresult(self.__dict__['_GetPicture'](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
@@ -2071,9 +1813,7 @@ class IAgUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__['_SetPicture'](byref(arg_pPicture.COM_val)))
 
     def PickInfo(self, x:int, y:int) -> "IAgPickInfoData":
-        '''
-        Get detailed information about a mouse pick.
-        '''
+        """Get detailed information about a mouse pick."""
         with agmarshall.OLE_XPOS_PIXELS_arg(x) as arg_x, \
              agmarshall.OLE_YPOS_PIXELS_arg(y) as arg_y, \
              agmarshall.AgInterface_out_arg() as arg_ppPickData:
@@ -2082,9 +1822,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def WinID(self) -> int:
-        '''
-        Window identifier (for Connect commands).
-        '''
+        """Window identifier (for Connect commands)."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetWinID'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2096,24 +1834,18 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def Application(self) -> "IAgSTKXApplication":
-        '''
-        Reference to the STK X application object.
-        '''
+        """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetApplication'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def ZoomIn(self) -> None:
-        '''
-        Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom.
-        '''
+        """Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom."""
         agcls.evaluate_hresult(self.__dict__['_ZoomIn']())
 
     @property
     def NoLogo(self) -> bool:
-        '''
-        If true, the splash logo is not shown.
-        '''
+        """If true, the splash logo is not shown."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pNoLogo:
             agcls.evaluate_hresult(self.__dict__['_GetNoLogo'](byref(arg_pNoLogo.COM_val)))
             return arg_pNoLogo.python_val
@@ -2125,9 +1857,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def OLEDropMode(self) -> "AgEOLEDropMode":
-        '''
-        How the control handles drop operations.
-        '''
+        """How the control handles drop operations."""
         with agmarshall.AgEnum_arg(AgEOLEDropMode) as arg_psOLEDropMode:
             agcls.evaluate_hresult(self.__dict__['_GetOLEDropMode'](byref(arg_psOLEDropMode.COM_val)))
             return arg_psOLEDropMode.python_val
@@ -2139,9 +1869,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def VendorID(self) -> str:
-        '''
-        This property is deprecated. The identifier of the vendor.
-        '''
+        """This property is deprecated. The identifier of the vendor."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetVendorID'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
@@ -2152,9 +1880,7 @@ class IAgUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__['_SetVendorID'](arg_vendorID.COM_val))
 
     def RubberBandPickInfo(self, left:int, top:int, right:int, bottom:int) -> "IAgRubberBandPickInfoData":
-        '''
-        Get detailed information about a rubber-band mouse pick. The values must be within the VO window (0 to width-1 for left and right, 0 to height-1 for top and bottom).
-        '''
+        """Get detailed information about a rubber-band mouse pick. The values must be within the VO window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
              agmarshall.OLE_XPOS_PIXELS_arg(right) as arg_right, \
@@ -2165,9 +1891,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def MouseMode(self) -> "AgEMouseMode":
-        '''
-        Whether this control responds to mouse events.
-        '''
+        """Whether this control responds to mouse events."""
         with agmarshall.AgEnum_arg(AgEMouseMode) as arg_psMouseMode:
             agcls.evaluate_hresult(self.__dict__['_GetMouseMode'](byref(arg_psMouseMode.COM_val)))
             return arg_psMouseMode.python_val
@@ -2179,27 +1903,21 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def DrawElements(self) -> "IAgDrawElemCollection":
-        '''
-        Elements to draw on the control.
-        '''
+        """Elements to draw on the control."""
         with agmarshall.AgInterface_out_arg() as arg_ppDrawElemColl:
             agcls.evaluate_hresult(self.__dict__['_GetDrawElements'](byref(arg_ppDrawElemColl.COM_val)))
             return arg_ppDrawElemColl.python_val
 
     @property
     def ReadyState(self) -> int:
-        '''
-        Returns/sets the background color of the control.
-        '''
+        """Returns/sets the background color of the control."""
         with agmarshall.LONG_arg() as arg_pclr:
             agcls.evaluate_hresult(self.__dict__['_GetReadyState'](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
     @property
     def PptPreloadMode(self) -> bool:
-        '''
-        Special mode for PowerPoint : if true the VO contol window is kept around when switching between slides.
-        '''
+        """Special mode for PowerPoint : if true the VO contol window is kept around when switching between slides."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pPptPreloadMode:
             agcls.evaluate_hresult(self.__dict__['_GetPptPreloadMode'](byref(arg_pPptPreloadMode.COM_val)))
             return arg_pPptPreloadMode.python_val
@@ -2211,9 +1929,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def AdvancedPickMode(self) -> bool:
-        '''
-        If true, sets the advance pick mode.
-        '''
+        """If true, sets the advance pick mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pAdvancePickMode:
             agcls.evaluate_hresult(self.__dict__['_GetAdvancedPickMode'](byref(arg_pAdvancePickMode.COM_val)))
             return arg_pAdvancePickMode.python_val
@@ -2224,75 +1940,55 @@ class IAgUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__['_SetAdvancedPickMode'](arg_bAdvancePickMode.COM_val))
 
     def CopyFromWinID(self, winID:int) -> None:
-        '''
-        Copies an existing Window's scene into this control
-        '''
+        """Copies an existing Window's scene into this control"""
         with agmarshall.LONG_arg(winID) as arg_winID:
             agcls.evaluate_hresult(self.__dict__['_CopyFromWinID'](arg_winID.COM_val))
 
     def StartObjectEditing(self, objEditPath:str) -> None:
-        '''
-        Enters into 3D object editing mode.
-        '''
+        """Enters into 3D object editing mode."""
         with agmarshall.BSTR_arg(objEditPath) as arg_objEditPath:
             agcls.evaluate_hresult(self.__dict__['_StartObjectEditing'](arg_objEditPath.COM_val))
 
     def ApplyObjectEditing(self) -> None:
-        '''
-        Commits changes when in 3D object editing mode.
-        '''
+        """Commits changes when in 3D object editing mode."""
         agcls.evaluate_hresult(self.__dict__['_ApplyObjectEditing']())
 
     def StopObjectEditing(self, canceled:bool) -> None:
-        '''
-        Ends 3D object editing mode.
-        '''
+        """Ends 3D object editing mode."""
         with agmarshall.VARIANT_BOOL_arg(canceled) as arg_canceled:
             agcls.evaluate_hresult(self.__dict__['_StopObjectEditing'](arg_canceled.COM_val))
 
     @property
     def IsObjectEditing(self) -> bool:
-        '''
-        Returns true if in 3D object editing mode.
-        '''
+        """Returns true if in 3D object editing mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_p3DObjectEditing:
             agcls.evaluate_hresult(self.__dict__['_GetIsObjectEditing'](byref(arg_p3DObjectEditing.COM_val)))
             return arg_p3DObjectEditing.python_val
 
     @property
     def InZoomMode(self) -> bool:
-        '''
-        Returns true if in zoom in mode.
-        '''
+        """Returns true if in zoom in mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pZoomIn:
             agcls.evaluate_hresult(self.__dict__['_GetInZoomMode'](byref(arg_pZoomIn.COM_val)))
             return arg_pZoomIn.python_val
 
     def SetMouseCursorFromFile(self, cursorFileName:str) -> None:
-        '''
-        Sets mouse cursor to the selected cursor file.
-        '''
+        """Sets mouse cursor to the selected cursor file."""
         with agmarshall.BSTR_arg(cursorFileName) as arg_cursorFileName:
             agcls.evaluate_hresult(self.__dict__['_SetMouseCursorFromFile'](arg_cursorFileName.COM_val))
 
     def RestoreMouseCursor(self) -> None:
-        '''
-        Restores mouse cursor back to normal.
-        '''
+        """Restores mouse cursor back to normal."""
         agcls.evaluate_hresult(self.__dict__['_RestoreMouseCursor']())
 
     def SetMouseCursorFromHandle(self, cursorHandle:int) -> None:
-        '''
-        Sets mouse cursor to the passed cursor handle.
-        '''
+        """Sets mouse cursor to the passed cursor handle."""
         with agmarshall.OLE_HANDLE_arg(cursorHandle) as arg_cursorHandle:
             agcls.evaluate_hresult(self.__dict__['_SetMouseCursorFromHandle'](arg_cursorHandle.COM_val))
 
     @property
     def ShowProgressImage(self) -> "AgEShowProgressImage":
-        '''
-        The animated progress image type.
-        '''
+        """The animated progress image type."""
         with agmarshall.AgEnum_arg(AgEShowProgressImage) as arg_psProgressImage:
             agcls.evaluate_hresult(self.__dict__['_GetShowProgressImage'](byref(arg_psProgressImage.COM_val)))
             return arg_psProgressImage.python_val
@@ -2304,9 +2000,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def ProgressImageXOffset(self) -> int:
-        '''
-        The horizontal X offset for animated progress image.
-        '''
+        """The horizontal X offset for animated progress image."""
         with agmarshall.LONG_arg() as arg_pXOffset:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageXOffset'](byref(arg_pXOffset.COM_val)))
             return arg_pXOffset.python_val
@@ -2318,9 +2012,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def ProgressImageYOffset(self) -> int:
-        '''
-        The vertical Y offset for animated progress image.
-        '''
+        """The vertical Y offset for animated progress image."""
         with agmarshall.LONG_arg() as arg_pYOffset:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageYOffset'](byref(arg_pYOffset.COM_val)))
             return arg_pYOffset.python_val
@@ -2332,9 +2024,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def ProgressImageFile(self) -> str:
-        '''
-        The complete image file name/path for animated progress image.
-        '''
+        """The complete image file name/path for animated progress image."""
         with agmarshall.BSTR_arg() as arg_pImageFile:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageFile'](byref(arg_pImageFile.COM_val)))
             return arg_pImageFile.python_val
@@ -2346,9 +2036,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def ProgressImageXOrigin(self) -> "AgEProgressImageXOrigin":
-        '''
-        The X origin alignment for animated progress image.
-        '''
+        """The X origin alignment for animated progress image."""
         with agmarshall.AgEnum_arg(AgEProgressImageXOrigin) as arg_psProgressImageXOrigin:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageXOrigin'](byref(arg_psProgressImageXOrigin.COM_val)))
             return arg_psProgressImageXOrigin.python_val
@@ -2360,9 +2048,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def ProgressImageYOrigin(self) -> "AgEProgressImageYOrigin":
-        '''
-        The Y origin alignment for animated progress image.
-        '''
+        """The Y origin alignment for animated progress image."""
         with agmarshall.AgEnum_arg(AgEProgressImageYOrigin) as arg_psProgressImageYOrigin:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageYOrigin'](byref(arg_psProgressImageYOrigin.COM_val)))
             return arg_psProgressImageYOrigin.python_val
@@ -2374,18 +2060,14 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def PictureFromFile(self) -> str:
-        '''
-        The splash logo graphic file to be displayed in the control.
-        '''
+        """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg() as arg_pPictureFile:
             agcls.evaluate_hresult(self.__dict__['_GetPictureFromFile'](byref(arg_pPictureFile.COM_val)))
             return arg_pPictureFile.python_val
 
     @PictureFromFile.setter
     def PictureFromFile(self, pictureFile:str) -> None:
-        '''
-        The splash logo graphic file to be displayed in the control.
-        '''
+        """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg(pictureFile) as arg_pictureFile:
             agcls.evaluate_hresult(self.__dict__['_SetPictureFromFile'](arg_pictureFile.COM_val))
 
@@ -2395,9 +2077,7 @@ agcls.AgTypeNameMap['IAgUiAxVOCntrl'] = IAgUiAxVOCntrl
 __all__.append('IAgUiAxVOCntrl')
 
 class IAgUiAx2DCntrl(object):
-    '''
-    AGI Map control.
-    '''
+    """AGI Map control."""
     _uuid = '{A5C18751-1656-4FB9-BA4E-D5746D509CFC}'
     _num_methods = 45
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2505,9 +2185,7 @@ class IAgUiAx2DCntrl(object):
         self.__dict__['_GetPanModeEnabled'] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+44, POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_SetPanModeEnabled'] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+45, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiAx2DCntrl.__dict__ and type(IAgUiAx2DCntrl.__dict__[attrname]) == property:
@@ -2519,13 +2197,11 @@ class IAgUiAx2DCntrl(object):
         else:
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgUiAx2DCntrl.')
     def Subscribe(self) -> IAgUiAx2DCntrlEventHandler:
-        ''' Returns an IAgUiAx2DCntrlEventHandler that is subscribed to handle events associated with this instance of IAgUiAx2DCntrl. '''
+        """Returns an IAgUiAx2DCntrlEventHandler that is subscribed to handle events associated with this instance of IAgUiAx2DCntrl."""
         return IAgUiAx2DCntrlEventHandler(self._pUnk)    
     @property
     def BackColor(self) -> agcolor.Color:
-        '''
-        The background color of the control.
-        '''
+        """The background color of the control."""
         with agmarshall.OLE_COLOR_arg() as arg_pclr:
             agcls.evaluate_hresult(self.__dict__['_GetBackColor'](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
@@ -2537,9 +2213,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def Picture(self) -> IPictureDisp:
-        '''
-        The splash logo graphic to be displayed in the control.
-        '''
+        """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
             agcls.evaluate_hresult(self.__dict__['_GetPicture'](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
@@ -2555,9 +2229,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def WinID(self) -> int:
-        '''
-        Window identifier (for Connect commands).
-        '''
+        """Window identifier (for Connect commands)."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetWinID'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2568,21 +2240,15 @@ class IAgUiAx2DCntrl(object):
             agcls.evaluate_hresult(self.__dict__['_SetWinID'](arg_newVal.COM_val))
 
     def ZoomIn(self) -> None:
-        '''
-        Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom.
-        '''
+        """Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom."""
         agcls.evaluate_hresult(self.__dict__['_ZoomIn']())
 
     def ZoomOut(self) -> None:
-        '''
-        Zoom out to view a larger portion of a previously magnified map.
-        '''
+        """Zoom out to view a larger portion of a previously magnified map."""
         agcls.evaluate_hresult(self.__dict__['_ZoomOut']())
 
     def PickInfo(self, x:int, y:int) -> "IAgPickInfoData":
-        '''
-        Get detailed information about a mouse pick.
-        '''
+        """Get detailed information about a mouse pick."""
         with agmarshall.OLE_XPOS_PIXELS_arg(x) as arg_x, \
              agmarshall.OLE_YPOS_PIXELS_arg(y) as arg_y, \
              agmarshall.AgInterface_out_arg() as arg_ppPickData:
@@ -2591,18 +2257,14 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def Application(self) -> "IAgSTKXApplication":
-        '''
-        Reference to the STK X application object.
-        '''
+        """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_ppApp:
             agcls.evaluate_hresult(self.__dict__['_GetApplication'](byref(arg_ppApp.COM_val)))
             return arg_ppApp.python_val
 
     @property
     def NoLogo(self) -> bool:
-        '''
-        If true, the splash logo is not shown.
-        '''
+        """If true, the splash logo is not shown."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pNoLogo:
             agcls.evaluate_hresult(self.__dict__['_GetNoLogo'](byref(arg_pNoLogo.COM_val)))
             return arg_pNoLogo.python_val
@@ -2614,9 +2276,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def OLEDropMode(self) -> "AgEOLEDropMode":
-        '''
-        How the control handles drop operations.
-        '''
+        """How the control handles drop operations."""
         with agmarshall.AgEnum_arg(AgEOLEDropMode) as arg_psOLEDropMode:
             agcls.evaluate_hresult(self.__dict__['_GetOLEDropMode'](byref(arg_psOLEDropMode.COM_val)))
             return arg_psOLEDropMode.python_val
@@ -2628,9 +2288,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def VendorID(self) -> str:
-        '''
-        This property is deprecated. The identifier of the vendor.
-        '''
+        """This property is deprecated. The identifier of the vendor."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetVendorID'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
@@ -2642,9 +2300,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def MouseMode(self) -> "AgEMouseMode":
-        '''
-        Whether this control responds to mouse events.
-        '''
+        """Whether this control responds to mouse events."""
         with agmarshall.AgEnum_arg(AgEMouseMode) as arg_psMouseMode:
             agcls.evaluate_hresult(self.__dict__['_GetMouseMode'](byref(arg_psMouseMode.COM_val)))
             return arg_psMouseMode.python_val
@@ -2656,24 +2312,18 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def ReadyState(self) -> int:
-        '''
-        Returns/sets the background color of the control.
-        '''
+        """Returns/sets the background color of the control."""
         with agmarshall.LONG_arg() as arg_pclr:
             agcls.evaluate_hresult(self.__dict__['_GetReadyState'](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
     def CopyFromWinID(self, winID:int) -> None:
-        '''
-        Copies an existing Window's scene into this control
-        '''
+        """Copies an existing Window's scene into this control"""
         with agmarshall.LONG_arg(winID) as arg_winID:
             agcls.evaluate_hresult(self.__dict__['_CopyFromWinID'](arg_winID.COM_val))
 
     def RubberBandPickInfo(self, left:int, top:int, right:int, bottom:int) -> "IAgRubberBandPickInfoData":
-        '''
-        Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom).
-        '''
+        """Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
              agmarshall.OLE_XPOS_PIXELS_arg(right) as arg_right, \
@@ -2684,9 +2334,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def AdvancedPickMode(self) -> bool:
-        '''
-        If true, sets the advance pick mode.
-        '''
+        """If true, sets the advance pick mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pAdvancePickMode:
             agcls.evaluate_hresult(self.__dict__['_GetAdvancedPickMode'](byref(arg_pAdvancePickMode.COM_val)))
             return arg_pAdvancePickMode.python_val
@@ -2697,9 +2345,7 @@ class IAgUiAx2DCntrl(object):
             agcls.evaluate_hresult(self.__dict__['_SetAdvancedPickMode'](arg_bAdvancePickMode.COM_val))
 
     def GetWindowProjectedPosition(self, lat:float, lon:float, alt:float, drawCoords:"AgEGfxDrawCoords") -> "IAgWinProjPos":
-        '''
-        Get the window projected position for given values.
-        '''
+        """Get the window projected position for given values."""
         with agmarshall.DOUBLE_arg(lat) as arg_lat, \
              agmarshall.DOUBLE_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt, \
@@ -2710,38 +2356,28 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def InZoomMode(self) -> bool:
-        '''
-        Returns true if in zoom in mode.
-        '''
+        """Returns true if in zoom in mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pZoomIn:
             agcls.evaluate_hresult(self.__dict__['_GetInZoomMode'](byref(arg_pZoomIn.COM_val)))
             return arg_pZoomIn.python_val
 
     def SetMouseCursorFromFile(self, cursorFileName:str) -> None:
-        '''
-        Sets mouse cursor to the selected cursor file.
-        '''
+        """Sets mouse cursor to the selected cursor file."""
         with agmarshall.BSTR_arg(cursorFileName) as arg_cursorFileName:
             agcls.evaluate_hresult(self.__dict__['_SetMouseCursorFromFile'](arg_cursorFileName.COM_val))
 
     def RestoreMouseCursor(self) -> None:
-        '''
-        Restores mouse cursor back to normal.
-        '''
+        """Restores mouse cursor back to normal."""
         agcls.evaluate_hresult(self.__dict__['_RestoreMouseCursor']())
 
     def SetMouseCursorFromHandle(self, cursorHandle:int) -> None:
-        '''
-        Sets mouse cursor to the passed cursor handle.
-        '''
+        """Sets mouse cursor to the passed cursor handle."""
         with agmarshall.OLE_HANDLE_arg(cursorHandle) as arg_cursorHandle:
             agcls.evaluate_hresult(self.__dict__['_SetMouseCursorFromHandle'](arg_cursorHandle.COM_val))
 
     @property
     def ShowProgressImage(self) -> "AgEShowProgressImage":
-        '''
-        The animated progress image type.
-        '''
+        """The animated progress image type."""
         with agmarshall.AgEnum_arg(AgEShowProgressImage) as arg_psProgressImage:
             agcls.evaluate_hresult(self.__dict__['_GetShowProgressImage'](byref(arg_psProgressImage.COM_val)))
             return arg_psProgressImage.python_val
@@ -2753,9 +2389,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def ProgressImageXOffset(self) -> int:
-        '''
-        The horizontal X offset for animated progress image.
-        '''
+        """The horizontal X offset for animated progress image."""
         with agmarshall.LONG_arg() as arg_pXOffset:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageXOffset'](byref(arg_pXOffset.COM_val)))
             return arg_pXOffset.python_val
@@ -2767,9 +2401,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def ProgressImageYOffset(self) -> int:
-        '''
-        The vertical Y offset for animated progress image.
-        '''
+        """The vertical Y offset for animated progress image."""
         with agmarshall.LONG_arg() as arg_pYOffset:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageYOffset'](byref(arg_pYOffset.COM_val)))
             return arg_pYOffset.python_val
@@ -2781,9 +2413,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def ProgressImageFile(self) -> str:
-        '''
-        The complete image file name/path for animated progress image.
-        '''
+        """The complete image file name/path for animated progress image."""
         with agmarshall.BSTR_arg() as arg_pImageFile:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageFile'](byref(arg_pImageFile.COM_val)))
             return arg_pImageFile.python_val
@@ -2795,9 +2425,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def ProgressImageXOrigin(self) -> "AgEProgressImageXOrigin":
-        '''
-        The X origin alignment for animated progress image.
-        '''
+        """The X origin alignment for animated progress image."""
         with agmarshall.AgEnum_arg(AgEProgressImageXOrigin) as arg_psProgressImageXOrigin:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageXOrigin'](byref(arg_psProgressImageXOrigin.COM_val)))
             return arg_psProgressImageXOrigin.python_val
@@ -2809,9 +2437,7 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def ProgressImageYOrigin(self) -> "AgEProgressImageYOrigin":
-        '''
-        The Y origin alignment for animated progress image.
-        '''
+        """The Y origin alignment for animated progress image."""
         with agmarshall.AgEnum_arg(AgEProgressImageYOrigin) as arg_psProgressImageYOrigin:
             agcls.evaluate_hresult(self.__dict__['_GetProgressImageYOrigin'](byref(arg_psProgressImageYOrigin.COM_val)))
             return arg_psProgressImageYOrigin.python_val
@@ -2823,26 +2449,20 @@ class IAgUiAx2DCntrl(object):
 
     @property
     def PictureFromFile(self) -> str:
-        '''
-        The splash logo graphic file to be displayed in the control.
-        '''
+        """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg() as arg_pPictureFile:
             agcls.evaluate_hresult(self.__dict__['_GetPictureFromFile'](byref(arg_pPictureFile.COM_val)))
             return arg_pPictureFile.python_val
 
     @PictureFromFile.setter
     def PictureFromFile(self, pictureFile:str) -> None:
-        '''
-        The splash logo graphic file to be displayed in the control.
-        '''
+        """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg(pictureFile) as arg_pictureFile:
             agcls.evaluate_hresult(self.__dict__['_SetPictureFromFile'](arg_pictureFile.COM_val))
 
     @property
     def PanModeEnabled(self) -> bool:
-        '''
-        Enables/disables pan mode for map control.
-        '''
+        """Enables/disables pan mode for map control."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pPanMode:
             agcls.evaluate_hresult(self.__dict__['_GetPanModeEnabled'](byref(arg_pPanMode.COM_val)))
             return arg_pPanMode.python_val
@@ -2858,9 +2478,7 @@ agcls.AgTypeNameMap['IAgUiAx2DCntrl'] = IAgUiAx2DCntrl
 __all__.append('IAgUiAx2DCntrl')
 
 class IAgSTKXApplicationPartnerAccess(object):
-    '''
-    Access to the application object model for business partners.
-    '''
+    """Access to the application object model for business partners."""
     _uuid = '{ABF4E08E-211F-40B6-A2F0-6938DAA560CE}'
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2880,9 +2498,7 @@ class IAgSTKXApplicationPartnerAccess(object):
         vtable_offset_local = IAgSTKXApplicationPartnerAccess._vtable_offset - 1
         self.__dict__['_GrantPartnerAccess'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXApplicationPartnerAccess, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgSTKXApplicationPartnerAccess.__dict__ and type(IAgSTKXApplicationPartnerAccess.__dict__[attrname]) == property:
@@ -2895,9 +2511,7 @@ class IAgSTKXApplicationPartnerAccess(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgSTKXApplicationPartnerAccess.')
     
     def GrantPartnerAccess(self, vendor:str, product:str, key:str) -> "IAgSTKXApplication":
-        '''
-        Provide object model root for authorized business partners.
-        '''
+        """Provide object model root for authorized business partners."""
         with agmarshall.BSTR_arg(vendor) as arg_vendor, \
              agmarshall.BSTR_arg(product) as arg_product, \
              agmarshall.BSTR_arg(key) as arg_key, \
@@ -2911,9 +2525,7 @@ agcls.AgTypeNameMap['IAgSTKXApplicationPartnerAccess'] = IAgSTKXApplicationPartn
 __all__.append('IAgSTKXApplicationPartnerAccess')
 
 class IAgDataObjectFiles(object):
-    '''
-    Collection of file names.
-    '''
+    """Collection of file names."""
     _uuid = '{C4428821-C59F-45B1-9747-0AD1F988317E}'
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2938,9 +2550,7 @@ class IAgDataObjectFiles(object):
         self.__dict__['_Item'] = IAGFUNCTYPE(pUnk, IID_IAgDataObjectFiles, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
         self.__dict__['_GetCount'] = IAGFUNCTYPE(pUnk, IID_IAgDataObjectFiles, vtable_offset_local+3, POINTER(agcom.LONG))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDataObjectFiles.__dict__ and type(IAgDataObjectFiles.__dict__[attrname]) == property:
@@ -2965,17 +2575,13 @@ class IAgDataObjectFiles(object):
     
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an object that can be used to iterate through all the file names in the collection.
-        '''
+        """Returns an object that can be used to iterate through all the file names in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppUnk:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppUnk.COM_val)))
             return arg_ppUnk.python_val
 
     def Item(self, index:int) -> str:
-        '''
-        Gets the file name at the specified index (0-based).
-        '''
+        """Gets the file name at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_pVal.COM_val)))
@@ -2983,9 +2589,7 @@ class IAgDataObjectFiles(object):
 
     @property
     def Count(self) -> int:
-        '''
-        Number of file names contained in the collection.
-        '''
+        """Number of file names contained in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2999,9 +2603,7 @@ agcls.AgTypeNameMap['IAgDataObjectFiles'] = IAgDataObjectFiles
 __all__.append('IAgDataObjectFiles')
 
 class IAgUiAxGfxAnalysisCntrl(object):
-    '''
-    AGI Gfx Analysis control.
-    '''
+    """AGI Gfx Analysis control."""
     _uuid = '{5933D068-12E5-4B73-96A3-E06CC3ACC05A}'
     _num_methods = 17
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3053,9 +2655,7 @@ class IAgUiAxGfxAnalysisCntrl(object):
         self.__dict__['_GetWinID'] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+16, POINTER(agcom.LONG))
         self.__dict__['_SetWinID'] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+17, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiAxGfxAnalysisCntrl.__dict__ and type(IAgUiAxGfxAnalysisCntrl.__dict__[attrname]) == property:
@@ -3069,9 +2669,7 @@ class IAgUiAxGfxAnalysisCntrl(object):
     
     @property
     def BackColor(self) -> agcolor.Color:
-        '''
-        The background color of the control.
-        '''
+        """The background color of the control."""
         with agmarshall.OLE_COLOR_arg() as arg_pclr:
             agcls.evaluate_hresult(self.__dict__['_GetBackColor'](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
@@ -3083,9 +2681,7 @@ class IAgUiAxGfxAnalysisCntrl(object):
 
     @property
     def Picture(self) -> IPictureDisp:
-        '''
-        The splash logo graphic to be displayed in the control.
-        '''
+        """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
             agcls.evaluate_hresult(self.__dict__['_GetPicture'](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
@@ -3101,9 +2697,7 @@ class IAgUiAxGfxAnalysisCntrl(object):
 
     @property
     def NoLogo(self) -> bool:
-        '''
-        If true, the splash logo is not shown.
-        '''
+        """If true, the splash logo is not shown."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pNoLogo:
             agcls.evaluate_hresult(self.__dict__['_GetNoLogo'](byref(arg_pNoLogo.COM_val)))
             return arg_pNoLogo.python_val
@@ -3115,9 +2709,7 @@ class IAgUiAxGfxAnalysisCntrl(object):
 
     @property
     def VendorID(self) -> str:
-        '''
-        This property is deprecated. The identifier of the vendor.
-        '''
+        """This property is deprecated. The identifier of the vendor."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
             agcls.evaluate_hresult(self.__dict__['_GetVendorID'](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
@@ -3129,27 +2721,21 @@ class IAgUiAxGfxAnalysisCntrl(object):
 
     @property
     def ReadyState(self) -> int:
-        '''
-        Returns the ready state of the control.
-        '''
+        """Returns the ready state of the control."""
         with agmarshall.LONG_arg() as arg_pclr:
             agcls.evaluate_hresult(self.__dict__['_GetReadyState'](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
     @property
     def Application(self) -> "IAgSTKXApplication":
-        '''
-        Reference to the STK X application object.
-        '''
+        """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetApplication'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def ControlMode(self) -> "AgEGfxAnalysisMode":
-        '''
-        The Graphics control mode.
-        '''
+        """The Graphics control mode."""
         with agmarshall.AgEnum_arg(AgEGfxAnalysisMode) as arg_peGfxAnalysisMode:
             agcls.evaluate_hresult(self.__dict__['_GetControlMode'](byref(arg_peGfxAnalysisMode.COM_val)))
             return arg_peGfxAnalysisMode.python_val
@@ -3161,26 +2747,20 @@ class IAgUiAxGfxAnalysisCntrl(object):
 
     @property
     def PictureFromFile(self) -> str:
-        '''
-        The splash logo graphic file to be displayed in the control.
-        '''
+        """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg() as arg_pPictureFile:
             agcls.evaluate_hresult(self.__dict__['_GetPictureFromFile'](byref(arg_pPictureFile.COM_val)))
             return arg_pPictureFile.python_val
 
     @PictureFromFile.setter
     def PictureFromFile(self, pictureFile:str) -> None:
-        '''
-        The splash logo graphic file to be displayed in the control.
-        '''
+        """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg(pictureFile) as arg_pictureFile:
             agcls.evaluate_hresult(self.__dict__['_SetPictureFromFile'](arg_pictureFile.COM_val))
 
     @property
     def WinID(self) -> int:
-        '''
-        Window identifier (for Connect commands).
-        '''
+        """Window identifier (for Connect commands)."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetWinID'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -3198,18 +2778,14 @@ __all__.append('IAgUiAxGfxAnalysisCntrl')
 
 
 class AgExecCmdResult(IAgExecCmdResult):
-    '''
-    Collection of strings returned by the ExecuteCommand.
-    '''
+    """Collection of strings returned by the ExecuteCommand."""
     def __init__(self, sourceObject=None):
         IAgExecCmdResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgExecCmdResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3224,18 +2800,14 @@ __all__.append('AgExecCmdResult')
 
 
 class AgExecMultiCmdResult(IAgExecMultiCmdResult):
-    '''
-    Collection of objects returned by the ExecuteMultipleCommands.
-    '''
+    """Collection of objects returned by the ExecuteMultipleCommands."""
     def __init__(self, sourceObject=None):
         IAgExecMultiCmdResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgExecMultiCmdResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3250,18 +2822,14 @@ __all__.append('AgExecMultiCmdResult')
 
 
 class AgUiAxVOCntrl(IAgUiAxVOCntrl):
-    '''
-    AGI Globe control.
-    '''
+    """AGI Globe control."""
     def __init__(self, sourceObject=None):
         IAgUiAxVOCntrl.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiAxVOCntrl._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3276,18 +2844,14 @@ __all__.append('AgUiAxVOCntrl')
 
 
 class AgUiAx2DCntrl(IAgUiAx2DCntrl):
-    '''
-    AGI Map control.
-    '''
+    """AGI Map control."""
     def __init__(self, sourceObject=None):
         IAgUiAx2DCntrl.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiAx2DCntrl._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3302,18 +2866,14 @@ __all__.append('AgUiAx2DCntrl')
 
 
 class AgPickInfoData(IAgPickInfoData):
-    '''
-    Single mouse pick result.
-    '''
+    """Single mouse pick result."""
     def __init__(self, sourceObject=None):
         IAgPickInfoData.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgPickInfoData._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3328,18 +2888,14 @@ __all__.append('AgPickInfoData')
 
 
 class AgSTKXApplication(IAgSTKXApplication):
-    '''
-    STK X Application object.
-    '''
+    """STK X Application object."""
     def __init__(self, sourceObject=None):
         IAgSTKXApplication.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgSTKXApplication._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3354,18 +2910,14 @@ __all__.append('AgSTKXApplication')
 
 
 class AgSTKXApplicationPartnerAccess(IAgSTKXApplicationPartnerAccess):
-    '''
-    STK X Application Partner Access object.
-    '''
+    """STK X Application Partner Access object."""
     def __init__(self, sourceObject=None):
         IAgSTKXApplicationPartnerAccess.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgSTKXApplicationPartnerAccess._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3380,18 +2932,14 @@ __all__.append('AgSTKXApplicationPartnerAccess')
 
 
 class AgDataObject(IAgDataObject):
-    '''
-    Data Object for OLE drag & drop operations.
-    '''
+    """Data Object for OLE drag & drop operations."""
     def __init__(self, sourceObject=None):
         IAgDataObject.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDataObject._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3406,18 +2954,14 @@ __all__.append('AgDataObject')
 
 
 class AgDataObjectFiles(IAgDataObjectFiles):
-    '''
-    Collection of files for OLE drag & drop operations.
-    '''
+    """Collection of files for OLE drag & drop operations."""
     def __init__(self, sourceObject=None):
         IAgDataObjectFiles.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDataObjectFiles._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3432,18 +2976,14 @@ __all__.append('AgDataObjectFiles')
 
 
 class AgRubberBandPickInfoData(IAgRubberBandPickInfoData):
-    '''
-    Rubber-band mouse pick result.
-    '''
+    """Rubber-band mouse pick result."""
     def __init__(self, sourceObject=None):
         IAgRubberBandPickInfoData.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgRubberBandPickInfoData._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3458,18 +2998,14 @@ __all__.append('AgRubberBandPickInfoData')
 
 
 class AgObjPathCollection(IAgObjPathCollection):
-    '''
-    Collection of object paths.
-    '''
+    """Collection of object paths."""
     def __init__(self, sourceObject=None):
         IAgObjPathCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgObjPathCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3484,18 +3020,14 @@ __all__.append('AgObjPathCollection')
 
 
 class AgDrawElemRect(IAgDrawElemRect):
-    '''
-    Defines a rectangle in window coordinates.
-    '''
+    """Defines a rectangle in window coordinates."""
     def __init__(self, sourceObject=None):
         IAgDrawElemRect.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDrawElemRect._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3510,18 +3042,14 @@ __all__.append('AgDrawElemRect')
 
 
 class AgDrawElemCollection(IAgDrawElemCollection):
-    '''
-    Collection of elements to draw on the control.
-    '''
+    """Collection of elements to draw on the control."""
     def __init__(self, sourceObject=None):
         IAgDrawElemCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDrawElemCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3536,18 +3064,14 @@ __all__.append('AgDrawElemCollection')
 
 
 class AgDraw2DElemRect(IAgDrawElemRect):
-    '''
-    Defines a rectangle in window coordinates for map control.
-    '''
+    """Defines a rectangle in window coordinates for map control."""
     def __init__(self, sourceObject=None):
         IAgDrawElemRect.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDrawElemRect._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3562,18 +3086,14 @@ __all__.append('AgDraw2DElemRect')
 
 
 class AgDraw2DElemCollection(IAgDrawElemCollection):
-    '''
-    Collection of elements to draw on map control.
-    '''
+    """Collection of elements to draw on map control."""
     def __init__(self, sourceObject=None):
         IAgDrawElemCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDrawElemCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3588,18 +3108,14 @@ __all__.append('AgDraw2DElemCollection')
 
 
 class AgUiAxGfxAnalysisCntrl(IAgUiAxGfxAnalysisCntrl):
-    '''
-    AGI Graphics Analysis Control
-    '''
+    """AGI Graphics Analysis Control"""
     def __init__(self, sourceObject=None):
         IAgUiAxGfxAnalysisCntrl.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiAxGfxAnalysisCntrl._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3614,18 +3130,14 @@ __all__.append('AgUiAxGfxAnalysisCntrl')
 
 
 class AgWinProjPos(IAgWinProjPos):
-    '''
-    Projected window postion result.
-    '''
+    """Projected window postion result."""
     def __init__(self, sourceObject=None):
         IAgWinProjPos.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgWinProjPos._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3640,18 +3152,14 @@ __all__.append('AgWinProjPos')
 
 
 class AgDrawElemLine(IAgDrawElemLine):
-    '''
-    Defines a line in window coordinates.
-    '''
+    """Defines a line in window coordinates."""
     def __init__(self, sourceObject=None):
         IAgDrawElemLine.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDrawElemLine._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3666,18 +3174,14 @@ __all__.append('AgDrawElemLine')
 
 
 class AgSTKXSSLCertificateErrorEventArgs(IAgSTKXSSLCertificateErrorEventArgs):
-    '''
-    Provides information about an SSL certificate that is expired or invalid.
-    '''
+    """Provides information about an SSL certificate that is expired or invalid."""
     def __init__(self, sourceObject=None):
         IAgSTKXSSLCertificateErrorEventArgs.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgSTKXSSLCertificateErrorEventArgs._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3692,18 +3196,14 @@ __all__.append('AgSTKXSSLCertificateErrorEventArgs')
 
 
 class AgSTKXConControlQuitReceivedEventArgs(IAgSTKXConControlQuitReceivedEventArgs):
-    '''
-    Arguments for the OnConControlQuitReceived event.
-    '''
+    """Arguments for the OnConControlQuitReceived event."""
     def __init__(self, sourceObject=None):
         IAgSTKXConControlQuitReceivedEventArgs.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgSTKXConControlQuitReceivedEventArgs._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

@@ -40,9 +40,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class AgEStkRadarValidSystems(IntEnum):
-    '''
-    Enumeration of valid radar systems.
-    '''
+    """Enumeration of valid radar systems."""
     # All radar systems.
     eStkRadarAllSystems = 1,
     # Monostatic radar system only.
@@ -54,9 +52,7 @@ agcls.AgTypeNameMap['AgEStkRadarValidSystems'] = AgEStkRadarValidSystems
 __all__.append('AgEStkRadarValidSystems')
 
 class AgEStkRadarPosVelProviderRole(IntEnum):
-    '''
-    Enumeration of the position and velocity providers roles.
-    '''
+    """Enumeration of the position and velocity providers roles."""
     # Transmitter
     eStkRadarTransmitterPosVelRole = 1,
     # Receiver
@@ -70,9 +66,7 @@ agcls.AgTypeNameMap['AgEStkRadarPosVelProviderRole'] = AgEStkRadarPosVelProvider
 __all__.append('AgEStkRadarPosVelProviderRole')
 
 class AgEStkRadarTerrainInterpMethod(IntEnum):
-    '''
-    Enumeration of terrain interpolation methods.
-    '''
+    """Enumeration of terrain interpolation methods."""
     # Bilinear Interpolation
     eStkRadarBilinearTerrainInterp = 1,
     # Highest Post
@@ -85,9 +79,7 @@ __all__.append('AgEStkRadarTerrainInterpMethod')
 
 
 class IAgStkRadarCBIntersectComputeParams(object):
-    '''
-    Interface implemented by an object that represents the input parameters for a central body intersect computation.
-    '''
+    """Interface implemented by an object that represents the input parameters for a central body intersect computation."""
     _uuid = '{7C5B738D-7541-4881-A337-2731061BDB2E}'
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -117,9 +109,7 @@ class IAgStkRadarCBIntersectComputeParams(object):
         self.__dict__['_GetDirectionCBFArray'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarCBIntersectComputeParams, vtable_offset_local+5, POINTER(agcom.SAFEARRAY))
         self.__dict__['_SetDirectionCBF'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarCBIntersectComputeParams, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarCBIntersectComputeParams.__dict__ and type(IAgStkRadarCBIntersectComputeParams.__dict__[attrname]) == property:
@@ -132,9 +122,7 @@ class IAgStkRadarCBIntersectComputeParams(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgStkRadarCBIntersectComputeParams.')
     
     def GetBasePositionCBF(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the base position vector in the central body fixed frame.
-        '''
+        """Gets the base position vector in the central body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -143,26 +131,20 @@ class IAgStkRadarCBIntersectComputeParams(object):
 
     @property
     def BasePositionCBFArray(self) -> list:
-        '''
-        Gets the base position vector in central body fixed frame as an array.
-        '''
+        """Gets the base position vector in central body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetBasePositionCBFArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def SetBasePositionCBF(self, x:float, y:float, z:float) -> None:
-        '''
-        Sets the base position vector in the central body fixed frame.
-        '''
+        """Sets the base position vector in the central body fixed frame."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_SetBasePositionCBF'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def GetDirectionCBF(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the direction vector in the central body fixed frame.
-        '''
+        """Gets the direction vector in the central body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -171,17 +153,13 @@ class IAgStkRadarCBIntersectComputeParams(object):
 
     @property
     def DirectionCBFArray(self) -> list:
-        '''
-        Gets the direction vector in the central body fixed frame as an array.
-        '''
+        """Gets the direction vector in the central body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetDirectionCBFArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def SetDirectionCBF(self, x:float, y:float, z:float) -> None:
-        '''
-        Sets the direction vector in the central body fixed frame.
-        '''
+        """Sets the direction vector in the central body fixed frame."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
@@ -193,9 +171,7 @@ agcls.AgTypeNameMap['IAgStkRadarCBIntersectComputeParams'] = IAgStkRadarCBInters
 __all__.append('IAgStkRadarCBIntersectComputeParams')
 
 class IAgStkRadarCBIntersectComputeResult(object):
-    '''
-    Interface implemented by an object that represents the result of a central body computation.
-    '''
+    """Interface implemented by an object that represents the result of a central body computation."""
     _uuid = '{FA9A261B-0C93-41B8-A58C-B49D6DEDE879}'
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -235,9 +211,7 @@ class IAgStkRadarCBIntersectComputeResult(object):
         self.__dict__['_GetDirectionCBF'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarCBIntersectComputeResult, vtable_offset_local+10, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
         self.__dict__['_GetDirectionCBFArray'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarCBIntersectComputeResult, vtable_offset_local+11, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarCBIntersectComputeResult.__dict__ and type(IAgStkRadarCBIntersectComputeResult.__dict__[attrname]) == property:
@@ -251,17 +225,13 @@ class IAgStkRadarCBIntersectComputeResult(object):
     
     @property
     def IntersectionFound(self) -> bool:
-        '''
-        Gets the intersection found indicator.
-        '''
+        """Gets the intersection found indicator."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIntersectionFound:
             agcls.evaluate_hresult(self.__dict__['_GetIntersectionFound'](byref(arg_pIntersectionFound.COM_val)))
             return arg_pIntersectionFound.python_val
 
     def GetIntercept1CBF(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the position vector of the first point of intersection in the central body fixed frame.
-        '''
+        """Gets the position vector of the first point of intersection in the central body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -270,17 +240,13 @@ class IAgStkRadarCBIntersectComputeResult(object):
 
     @property
     def Intercept1CBFArray(self) -> list:
-        '''
-        Gets the position vector  of the first point of intersection in the central body fixed frame as an array.
-        '''
+        """Gets the position vector  of the first point of intersection in the central body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetIntercept1CBFArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetIntercept2CBF(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the position vector of the second point of intersection in the central body fixed frame.
-        '''
+        """Gets the position vector of the second point of intersection in the central body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -289,35 +255,27 @@ class IAgStkRadarCBIntersectComputeResult(object):
 
     @property
     def Intercept2CBFArray(self) -> list:
-        '''
-        Gets the position vector of the second point of the intersection in the central body fixed frame as an array.
-        '''
+        """Gets the position vector of the second point of the intersection in the central body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetIntercept2CBFArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     @property
     def Multiplier1(self) -> float:
-        '''
-        Gets the first multiplier.
-        '''
+        """Gets the first multiplier."""
         with agmarshall.DOUBLE_arg() as arg_pMultiplier1:
             agcls.evaluate_hresult(self.__dict__['_GetMultiplier1'](byref(arg_pMultiplier1.COM_val)))
             return arg_pMultiplier1.python_val
 
     @property
     def Multiplier2(self) -> float:
-        '''
-        Gets the second multiplier.
-        '''
+        """Gets the second multiplier."""
         with agmarshall.DOUBLE_arg() as arg_pMultiplier2:
             agcls.evaluate_hresult(self.__dict__['_GetMultiplier2'](byref(arg_pMultiplier2.COM_val)))
             return arg_pMultiplier2.python_val
 
     def GetBasePositionCBF(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the base position vector in the central body fixed frame.
-        '''
+        """Gets the base position vector in the central body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -326,17 +284,13 @@ class IAgStkRadarCBIntersectComputeResult(object):
 
     @property
     def BasePositionCBFArray(self) -> list:
-        '''
-        Gets the base position vector in the central body fixed frame as an array.
-        '''
+        """Gets the base position vector in the central body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetBasePositionCBFArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetDirectionCBF(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the direction vector in the central body fixed frame.
-        '''
+        """Gets the direction vector in the central body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -345,9 +299,7 @@ class IAgStkRadarCBIntersectComputeResult(object):
 
     @property
     def DirectionCBFArray(self) -> list:
-        '''
-        Gets the direction vector in the central body fixed frame as an array.
-        '''
+        """Gets the direction vector in the central body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetDirectionCBFArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
@@ -358,9 +310,7 @@ agcls.AgTypeNameMap['IAgStkRadarCBIntersectComputeResult'] = IAgStkRadarCBInters
 __all__.append('IAgStkRadarCBIntersectComputeResult')
 
 class IAgStkRadarPosVelProvider(object):
-    '''
-    Interface implemented by an object that provides the position and velocity for an STK radar object or radar target object.
-    '''
+    """Interface implemented by an object that provides the position and velocity for an STK radar object or radar target object."""
     _uuid = '{E675D82D-945C-46F9-9E26-0632D13884D4}'
     _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -446,9 +396,7 @@ class IAgStkRadarPosVelProvider(object):
         self.__dict__['_GetRole'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarPosVelProvider, vtable_offset_local+33, POINTER(agcom.LONG))
         self.__dict__['_ComputeCentralBodyIntersectInCBF'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarPosVelProvider, vtable_offset_local+34, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarPosVelProvider.__dict__ and type(IAgStkRadarPosVelProvider.__dict__[attrname]) == property:
@@ -462,17 +410,13 @@ class IAgStkRadarPosVelProvider(object):
     
     @property
     def CurrentTime(self) -> float:
-        '''
-        Gets the current time in EpSec.
-        '''
+        """Gets the current time in EpSec."""
         with agmarshall.DOUBLE_arg() as arg_pCurrentTime:
             agcls.evaluate_hresult(self.__dict__['_GetCurrentTime'](byref(arg_pCurrentTime.COM_val)))
             return arg_pCurrentTime.python_val
 
     def GetVelocityCBF(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets velocity in the central body fixed frame.
-        '''
+        """Gets velocity in the central body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -481,17 +425,13 @@ class IAgStkRadarPosVelProvider(object):
 
     @property
     def VelocityCBFArray(self) -> list:
-        '''
-        Gets velocity in the central body fixed frame as an array.
-        '''
+        """Gets velocity in the central body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetVelocityCBFArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetPositionCBF(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets position in the central body fixed frame.
-        '''
+        """Gets position in the central body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -500,17 +440,13 @@ class IAgStkRadarPosVelProvider(object):
 
     @property
     def PositionCBFArray(self) -> list:
-        '''
-        Gets position in the central body fixed frame as an array.
-        '''
+        """Gets position in the central body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetPositionCBFArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetPositionLLA(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets position in latitude, longitude, and altitude.
-        '''
+        """Gets position in latitude, longitude, and altitude."""
         with agmarshall.DOUBLE_arg() as arg_latitude, \
              agmarshall.DOUBLE_arg() as arg_longitude, \
              agmarshall.DOUBLE_arg() as arg_altitude:
@@ -519,35 +455,27 @@ class IAgStkRadarPosVelProvider(object):
 
     @property
     def PositionLLAArray(self) -> list:
-        '''
-        Gets position in latitude, longitude, and altitude as an array.
-        '''
+        """Gets position in latitude, longitude, and altitude as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetPositionLLAArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     @property
     def LocalRadiusDetic(self) -> float:
-        '''
-        Gets the central body radius detic using the position/velocity provider's current latitude and longitude.
-        '''
+        """Gets the central body radius detic using the position/velocity provider's current latitude and longitude."""
         with agmarshall.DOUBLE_arg() as arg_pLocalRadiusDetic:
             agcls.evaluate_hresult(self.__dict__['_GetLocalRadiusDetic'](byref(arg_pLocalRadiusDetic.COM_val)))
             return arg_pLocalRadiusDetic.python_val
 
     @property
     def LocalRadiusCentric(self) -> float:
-        '''
-        Gets the central body radius centric using the position/velocity provider's current latitude and longitude.
-        '''
+        """Gets the central body radius centric using the position/velocity provider's current latitude and longitude."""
         with agmarshall.DOUBLE_arg() as arg_pLocalRadiusCentric:
             agcls.evaluate_hresult(self.__dict__['_GetLocalRadiusCentric'](byref(arg_pLocalRadiusCentric.COM_val)))
             return arg_pLocalRadiusCentric.python_val
 
     def GetSurfaceNormalDetic(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the surface normal detic.
-        '''
+        """Gets the surface normal detic."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -556,17 +484,13 @@ class IAgStkRadarPosVelProvider(object):
 
     @property
     def SurfaceNormalDeticArray(self) -> list:
-        '''
-        Gets the surface normal detic as an array.
-        '''
+        """Gets the surface normal detic as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetSurfaceNormalDeticArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetSurfaceNormalCentric(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the surface normal centric as an array.
-        '''
+        """Gets the surface normal centric as an array."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -575,26 +499,20 @@ class IAgStkRadarPosVelProvider(object):
 
     @property
     def SurfaceNormalCentricArray(self) -> list:
-        '''
-        Gets the surface normal centric as an array.
-        '''
+        """Gets the surface normal centric as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetSurfaceNormalCentricArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetTerrainHeight(self, interpMethod:"AgEStkRadarTerrainInterpMethod") -> float:
-        '''
-        Gets the terrain height.
-        '''
+        """Gets the terrain height."""
         with agmarshall.AgEnum_arg(AgEStkRadarTerrainInterpMethod, interpMethod) as arg_interpMethod, \
              agmarshall.DOUBLE_arg() as arg_pTerrainHeight:
             agcls.evaluate_hresult(self.__dict__['_GetTerrainHeight'](arg_interpMethod.COM_val, byref(arg_pTerrainHeight.COM_val)))
             return arg_pTerrainHeight.python_val
 
     def GetTerrainHeightForLatLon(self, latitude:float, longitude:float, interpMethod:"AgEStkRadarTerrainInterpMethod") -> float:
-        '''
-        Gets the terrain height for a specified latitude and longitude.
-        '''
+        """Gets the terrain height for a specified latitude and longitude."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.AgEnum_arg(AgEStkRadarTerrainInterpMethod, interpMethod) as arg_interpMethod, \
@@ -603,9 +521,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_pTerrainHeight.python_val
 
     def ComputeLocalRadiusDetic(self, latitude:float, longitude:float) -> float:
-        '''
-        Computes the central body radius detic for a given latitude and longitude.
-        '''
+        """Computes the central body radius detic for a given latitude and longitude."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.DOUBLE_arg() as arg_pLocalRadiusDetic:
@@ -613,9 +529,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_pLocalRadiusDetic.python_val
 
     def ComputeLocalRadiusCentric(self, latitude:float, longitude:float) -> float:
-        '''
-        Computes the central body radius centric for a given latitude and longitude.
-        '''
+        """Computes the central body radius centric for a given latitude and longitude."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.DOUBLE_arg() as arg_pLocalRadiusCentric:
@@ -623,9 +537,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_pLocalRadiusCentric.python_val
 
     def ComputeSurfaceNormalDetic(self, latitude:float, longitude:float) -> typing.Tuple[float, float, float]:
-        '''
-        Computes the surface normal detic vector for a given latitude and longitude.
-        '''
+        """Computes the surface normal detic vector for a given latitude and longitude."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.DOUBLE_arg() as arg_x, \
@@ -635,9 +547,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_x.python_val, arg_y.python_val, arg_z.python_val
 
     def ComputeSurfaceNormalDeticArray(self, latitude:float, longitude:float) -> list:
-        '''
-        Computes the surface normal detic vector for a given latitude and longitude as an array.
-        '''
+        """Computes the surface normal detic vector for a given latitude and longitude as an array."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.SAFEARRAY_arg() as arg_ppArray:
@@ -645,9 +555,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_ppArray.python_val
 
     def ComputeSurfaceNormalCentric(self, latitude:float, longitude:float) -> typing.Tuple[float, float, float]:
-        '''
-        Computes the surface normal centric vector for a given latitude and longitude.
-        '''
+        """Computes the surface normal centric vector for a given latitude and longitude."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.DOUBLE_arg() as arg_x, \
@@ -657,9 +565,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_x.python_val, arg_y.python_val, arg_z.python_val
 
     def ComputeSurfaceNormalCentricArray(self, latitude:float, longitude:float) -> list:
-        '''
-        Computes the surface normal centric vector for a given latitude and longitude as an array.
-        '''
+        """Computes the surface normal centric vector for a given latitude and longitude as an array."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.SAFEARRAY_arg() as arg_ppArray:
@@ -667,9 +573,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_ppArray.python_val
 
     def ConvertCBFCartesianToLLA(self, x:float, y:float, z:float) -> typing.Tuple[float, float, float]:
-        '''
-        Converts central body fixed cartesian to latitude, longitude, and altitude.
-        '''
+        """Converts central body fixed cartesian to latitude, longitude, and altitude."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z, \
@@ -680,9 +584,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_latitude.python_val, arg_longitude.python_val, arg_altitude.python_val
 
     def ConvertCBFCartesianToLLAArray(self, x:float, y:float, z:float) -> list:
-        '''
-        Converts central body fixed cartesian to latitude, longitude, and altitude as an array.
-        '''
+        """Converts central body fixed cartesian to latitude, longitude, and altitude as an array."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z, \
@@ -691,9 +593,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_ppArray.python_val
 
     def ConvertLLAToCBFCartesian(self, latitude:float, longitude:float, altitude:float) -> typing.Tuple[float, float, float]:
-        '''
-        Converts latitude, longitude, and altitude to central body fixed cartesian.
-        '''
+        """Converts latitude, longitude, and altitude to central body fixed cartesian."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.DOUBLE_arg(altitude) as arg_altitude, \
@@ -704,9 +604,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_x.python_val, arg_y.python_val, arg_z.python_val
 
     def ConvertLLAToCBFCartesianArray(self, latitude:float, longitude:float, altitude:float) -> list:
-        '''
-        Converts latitude, longitude, and altitude to central body fixed cartesian as an array.
-        '''
+        """Converts latitude, longitude, and altitude to central body fixed cartesian as an array."""
         with agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
              agmarshall.DOUBLE_arg(altitude) as arg_altitude, \
@@ -715,9 +613,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_ppArray.python_val
 
     def ConvertCBFCartesianToVVLHCartesian(self, xCbf:float, yCbf:float, zCbf:float) -> typing.Tuple[float, float, float]:
-        '''
-        Converts a central body fixed cartesian into the VVLA frame.
-        '''
+        """Converts a central body fixed cartesian into the VVLA frame."""
         with agmarshall.DOUBLE_arg(xCbf) as arg_xCbf, \
              agmarshall.DOUBLE_arg(yCbf) as arg_yCbf, \
              agmarshall.DOUBLE_arg(zCbf) as arg_zCbf, \
@@ -728,9 +624,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_xVvlh.python_val, arg_yVvlh.python_val, arg_zVvlh.python_val
 
     def ConvertCBFCartesianToVVLHCartesianArray(self, xCbf:float, yCbf:float, zCbf:float) -> list:
-        '''
-        Converts a central body fixed cartesian into the VVLA frame as an array.
-        '''
+        """Converts a central body fixed cartesian into the VVLA frame as an array."""
         with agmarshall.DOUBLE_arg(xCbf) as arg_xCbf, \
              agmarshall.DOUBLE_arg(yCbf) as arg_yCbf, \
              agmarshall.DOUBLE_arg(zCbf) as arg_zCbf, \
@@ -739,9 +633,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_ppArray.python_val
 
     def ConvertBodyCartesianToCBFCartesian(self, xBody:float, yBody:float, zBody:float) -> typing.Tuple[float, float, float]:
-        '''
-        Converts a vector in body coordinates into CBF fixed coordinates
-        '''
+        """Converts a vector in body coordinates into CBF fixed coordinates"""
         with agmarshall.DOUBLE_arg(xBody) as arg_xBody, \
              agmarshall.DOUBLE_arg(yBody) as arg_yBody, \
              agmarshall.DOUBLE_arg(zBody) as arg_zBody, \
@@ -752,9 +644,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_xCbf.python_val, arg_yCbf.python_val, arg_zCbf.python_val
 
     def ConvertBodyCartesianToCBFCartesianArray(self, xBody:float, yBody:float, zBody:float) -> list:
-        '''
-        Converts a vector in body coordinates into CBF fixed coordinates as an array.
-        '''
+        """Converts a vector in body coordinates into CBF fixed coordinates as an array."""
         with agmarshall.DOUBLE_arg(xBody) as arg_xBody, \
              agmarshall.DOUBLE_arg(yBody) as arg_yBody, \
              agmarshall.DOUBLE_arg(zBody) as arg_zBody, \
@@ -763,9 +653,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_ppArray.python_val
 
     def ConvertCBFCartesianToBodyCartesian(self, xCbf:float, yCbf:float, zCbf:float) -> typing.Tuple[float, float, float]:
-        '''
-        Converts a vector in CBF coordinates into body coordinates.
-        '''
+        """Converts a vector in CBF coordinates into body coordinates."""
         with agmarshall.DOUBLE_arg(xCbf) as arg_xCbf, \
              agmarshall.DOUBLE_arg(yCbf) as arg_yCbf, \
              agmarshall.DOUBLE_arg(zCbf) as arg_zCbf, \
@@ -776,9 +664,7 @@ class IAgStkRadarPosVelProvider(object):
             return arg_xBody.python_val, arg_yBody.python_val, arg_zBody.python_val
 
     def ConvertCBFCartesianToBodyCartesianArray(self, xCbf:float, yCbf:float, zCbf:float) -> list:
-        '''
-        Converts a vector in CBF coordinates into body coordinates as an array.
-        '''
+        """Converts a vector in CBF coordinates into body coordinates as an array."""
         with agmarshall.DOUBLE_arg(xCbf) as arg_xCbf, \
              agmarshall.DOUBLE_arg(yCbf) as arg_yCbf, \
              agmarshall.DOUBLE_arg(zCbf) as arg_zCbf, \
@@ -788,17 +674,13 @@ class IAgStkRadarPosVelProvider(object):
 
     @property
     def Role(self) -> "AgEStkRadarPosVelProviderRole":
-        '''
-        Gets the IAgStkRadarPosVelProvider role.
-        '''
+        """Gets the IAgStkRadarPosVelProvider role."""
         with agmarshall.AgEnum_arg(AgEStkRadarPosVelProviderRole) as arg_pPosVelRole:
             agcls.evaluate_hresult(self.__dict__['_GetRole'](byref(arg_pPosVelRole.COM_val)))
             return arg_pPosVelRole.python_val
 
     def ComputeCentralBodyIntersectInCBF(self, baseX:float, baseY:float, baseZ:float, dirX:float, dirY:float, dirZ:float) -> "IAgStkRadarCBIntersectComputeResult":
-        '''
-        Computes the central body intersection using central body fixed coordinates.
-        '''
+        """Computes the central body intersection using central body fixed coordinates."""
         with agmarshall.DOUBLE_arg(baseX) as arg_baseX, \
              agmarshall.DOUBLE_arg(baseY) as arg_baseY, \
              agmarshall.DOUBLE_arg(baseZ) as arg_baseZ, \
@@ -815,9 +697,7 @@ agcls.AgTypeNameMap['IAgStkRadarPosVelProvider'] = IAgStkRadarPosVelProvider
 __all__.append('IAgStkRadarPosVelProvider')
 
 class IAgStkRadarLinkGeometry(object):
-    '''
-    Interface implemented by an object that provides the geometry for a radar link.
-    '''
+    """Interface implemented by an object that provides the geometry for a radar link."""
     _uuid = '{1BD6A448-FA3F-4774-AF3A-24FD7C8F972F}'
     _num_methods = 30
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -895,9 +775,7 @@ class IAgStkRadarLinkGeometry(object):
         self.__dict__['_GetRcvRdr2TgtRelPosCBFCartesian'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarLinkGeometry, vtable_offset_local+29, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
         self.__dict__['_GetRcvRdr2TgtRelPosCBFCartesianArray'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarLinkGeometry, vtable_offset_local+30, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarLinkGeometry.__dict__ and type(IAgStkRadarLinkGeometry.__dict__[attrname]) == property:
@@ -911,206 +789,160 @@ class IAgStkRadarLinkGeometry(object):
     
     @property
     def TargetPosVelProvider(self) -> "IAgStkRadarPosVelProvider":
-        '''
-        Gets the target position/velocity provider interface.
-        '''
+        """Gets the target position/velocity provider interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppTargetPosVelProvider:
             agcls.evaluate_hresult(self.__dict__['_GetTargetPosVelProvider'](byref(arg_ppTargetPosVelProvider.COM_val)))
             return arg_ppTargetPosVelProvider.python_val
 
     @property
     def TransmitRadarPosVelProvider(self) -> "IAgStkRadarPosVelProvider":
-        '''
-        Gets the transmit radar position/velocity provider interface.
-        '''
+        """Gets the transmit radar position/velocity provider interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppTransmitRadarPosVelProvider:
             agcls.evaluate_hresult(self.__dict__['_GetTransmitRadarPosVelProvider'](byref(arg_ppTransmitRadarPosVelProvider.COM_val)))
             return arg_ppTransmitRadarPosVelProvider.python_val
 
     @property
     def ReceiveRadarPosVelProvider(self) -> "IAgStkRadarPosVelProvider":
-        '''
-        Gets the receive radar position/velocity provider interface.
-        '''
+        """Gets the receive radar position/velocity provider interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppReceiveRadarPosVelProvider:
             agcls.evaluate_hresult(self.__dict__['_GetReceiveRadarPosVelProvider'](byref(arg_ppReceiveRadarPosVelProvider.COM_val)))
             return arg_ppReceiveRadarPosVelProvider.python_val
 
     @property
     def ReceiveRadarRange(self) -> float:
-        '''
-        Gets the receive radar range.
-        '''
+        """Gets the receive radar range."""
         with agmarshall.DOUBLE_arg() as arg_pRange:
             agcls.evaluate_hresult(self.__dict__['_GetReceiveRadarRange'](byref(arg_pRange.COM_val)))
             return arg_pRange.python_val
 
     @property
     def ReceiveRadarAngleRate(self) -> float:
-        '''
-        Gets the receive radar angle rate.
-        '''
+        """Gets the receive radar angle rate."""
         with agmarshall.DOUBLE_arg() as arg_pAngleRate:
             agcls.evaluate_hresult(self.__dict__['_GetReceiveRadarAngleRate'](byref(arg_pAngleRate.COM_val)))
             return arg_pAngleRate.python_val
 
     @property
     def ReceiveRadarRangeRate(self) -> float:
-        '''
-        Gets the receive radar range rate.
-        '''
+        """Gets the receive radar range rate."""
         with agmarshall.DOUBLE_arg() as arg_pRangeRate:
             agcls.evaluate_hresult(self.__dict__['_GetReceiveRadarRangeRate'](byref(arg_pRangeRate.COM_val)))
             return arg_pRangeRate.python_val
 
     @property
     def ReceiveRadarConeAngle(self) -> float:
-        '''
-        Gets the receive radar cone angle.
-        '''
+        """Gets the receive radar cone angle."""
         with agmarshall.DOUBLE_arg() as arg_pConeAngle:
             agcls.evaluate_hresult(self.__dict__['_GetReceiveRadarConeAngle'](byref(arg_pConeAngle.COM_val)))
             return arg_pConeAngle.python_val
 
     @property
     def ReceiveRadarPropTime(self) -> float:
-        '''
-        Gets the receive radar prop time.
-        '''
+        """Gets the receive radar prop time."""
         with agmarshall.DOUBLE_arg() as arg_pPropTime:
             agcls.evaluate_hresult(self.__dict__['_GetReceiveRadarPropTime'](byref(arg_pPropTime.COM_val)))
             return arg_pPropTime.python_val
 
     @property
     def TransmitRadarRange(self) -> float:
-        '''
-        Gets the transmit radar range.
-        '''
+        """Gets the transmit radar range."""
         with agmarshall.DOUBLE_arg() as arg_pRange:
             agcls.evaluate_hresult(self.__dict__['_GetTransmitRadarRange'](byref(arg_pRange.COM_val)))
             return arg_pRange.python_val
 
     @property
     def TransmitRadarAngleRate(self) -> float:
-        '''
-        Gets the transmit radar angle rate.
-        '''
+        """Gets the transmit radar angle rate."""
         with agmarshall.DOUBLE_arg() as arg_pAngleRate:
             agcls.evaluate_hresult(self.__dict__['_GetTransmitRadarAngleRate'](byref(arg_pAngleRate.COM_val)))
             return arg_pAngleRate.python_val
 
     @property
     def TransmitRadarRangeRate(self) -> float:
-        '''
-        Gets the transmit radar range rate.
-        '''
+        """Gets the transmit radar range rate."""
         with agmarshall.DOUBLE_arg() as arg_pRangeRate:
             agcls.evaluate_hresult(self.__dict__['_GetTransmitRadarRangeRate'](byref(arg_pRangeRate.COM_val)))
             return arg_pRangeRate.python_val
 
     @property
     def TransmitRadarConeAngle(self) -> float:
-        '''
-        Gets the transmit radar cone angle.
-        '''
+        """Gets the transmit radar cone angle."""
         with agmarshall.DOUBLE_arg() as arg_pConeAngle:
             agcls.evaluate_hresult(self.__dict__['_GetTransmitRadarConeAngle'](byref(arg_pConeAngle.COM_val)))
             return arg_pConeAngle.python_val
 
     @property
     def TransmitRadarPropTime(self) -> float:
-        '''
-        Gets the transmit radar prop time.
-        '''
+        """Gets the transmit radar prop time."""
         with agmarshall.DOUBLE_arg() as arg_pPropTime:
             agcls.evaluate_hresult(self.__dict__['_GetTransmitRadarPropTime'](byref(arg_pPropTime.COM_val)))
             return arg_pPropTime.python_val
 
     @property
     def RangeSum(self) -> float:
-        '''
-        Gets the range sum.
-        '''
+        """Gets the range sum."""
         with agmarshall.DOUBLE_arg() as arg_pRangeSum:
             agcls.evaluate_hresult(self.__dict__['_GetRangeSum'](byref(arg_pRangeSum.COM_val)))
             return arg_pRangeSum.python_val
 
     @property
     def Closure(self) -> float:
-        '''
-        Gets the closure.
-        '''
+        """Gets the closure."""
         with agmarshall.DOUBLE_arg() as arg_pClosure:
             agcls.evaluate_hresult(self.__dict__['_GetClosure'](byref(arg_pClosure.COM_val)))
             return arg_pClosure.python_val
 
     @property
     def MLCVelocity(self) -> float:
-        '''
-        Gets the main lobe clutter velocity.
-        '''
+        """Gets the main lobe clutter velocity."""
         with agmarshall.DOUBLE_arg() as arg_pMLCVelocity:
             agcls.evaluate_hresult(self.__dict__['_GetMLCVelocity'](byref(arg_pMLCVelocity.COM_val)))
             return arg_pMLCVelocity.python_val
 
     @property
     def BistaticAngle(self) -> float:
-        '''
-        Gets the bistatic angle.
-        '''
+        """Gets the bistatic angle."""
         with agmarshall.DOUBLE_arg() as arg_pBistaticAngle:
             agcls.evaluate_hresult(self.__dict__['_GetBistaticAngle'](byref(arg_pBistaticAngle.COM_val)))
             return arg_pBistaticAngle.python_val
 
     @property
     def IncidentAzimuth(self) -> float:
-        '''
-        Gets the incident azimuth.
-        '''
+        """Gets the incident azimuth."""
         with agmarshall.DOUBLE_arg() as arg_pIncidentAz:
             agcls.evaluate_hresult(self.__dict__['_GetIncidentAzimuth'](byref(arg_pIncidentAz.COM_val)))
             return arg_pIncidentAz.python_val
 
     @property
     def IncidentElevation(self) -> float:
-        '''
-        Gets the incident elevation.
-        '''
+        """Gets the incident elevation."""
         with agmarshall.DOUBLE_arg() as arg_pIncidentEl:
             agcls.evaluate_hresult(self.__dict__['_GetIncidentElevation'](byref(arg_pIncidentEl.COM_val)))
             return arg_pIncidentEl.python_val
 
     @property
     def ReflectedAzimuth(self) -> float:
-        '''
-        Gets the reflected azimuth.
-        '''
+        """Gets the reflected azimuth."""
         with agmarshall.DOUBLE_arg() as arg_pReflectedAz:
             agcls.evaluate_hresult(self.__dict__['_GetReflectedAzimuth'](byref(arg_pReflectedAz.COM_val)))
             return arg_pReflectedAz.python_val
 
     @property
     def ReflectedElevation(self) -> float:
-        '''
-        Gets the reflected elevation.
-        '''
+        """Gets the reflected elevation."""
         with agmarshall.DOUBLE_arg() as arg_pReflectedEl:
             agcls.evaluate_hresult(self.__dict__['_GetReflectedElevation'](byref(arg_pReflectedEl.COM_val)))
             return arg_pReflectedEl.python_val
 
     @property
     def XYAngleRate(self) -> float:
-        '''
-        Gets the xy angle rate.
-        '''
+        """Gets the xy angle rate."""
         with agmarshall.DOUBLE_arg() as arg_pXYAngleRate:
             agcls.evaluate_hresult(self.__dict__['_GetXYAngleRate'](byref(arg_pXYAngleRate.COM_val)))
             return arg_pXYAngleRate.python_val
 
     def GetTgt2XmtRdrRelPosCBFCartesian(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the relative position vector from the target to the transmitting radar in central body fixed coordinates
-        '''
+        """Gets the relative position vector from the target to the transmitting radar in central body fixed coordinates"""
         with agmarshall.DOUBLE_arg() as arg_xCbf, \
              agmarshall.DOUBLE_arg() as arg_yCbf, \
              agmarshall.DOUBLE_arg() as arg_zCbf:
@@ -1119,17 +951,13 @@ class IAgStkRadarLinkGeometry(object):
 
     @property
     def Tgt2XmtRdrRelPosCBFCartesianArray(self) -> list:
-        '''
-        Gets the relative position vector from the target to the transmitting radar in central body fixed coordinates as an array.
-        '''
+        """Gets the relative position vector from the target to the transmitting radar in central body fixed coordinates as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetTgt2XmtRdrRelPosCBFCartesianArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetTgt2RcvRdrRelPosCBFCartesian(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the relative position vector from the target to the receiving radar in central body fixed coordinates.
-        '''
+        """Gets the relative position vector from the target to the receiving radar in central body fixed coordinates."""
         with agmarshall.DOUBLE_arg() as arg_xCbf, \
              agmarshall.DOUBLE_arg() as arg_yCbf, \
              agmarshall.DOUBLE_arg() as arg_zCbf:
@@ -1138,17 +966,13 @@ class IAgStkRadarLinkGeometry(object):
 
     @property
     def Tgt2RcvRdrRelPosCBFCartesianArray(self) -> list:
-        '''
-        Gets the relative position vector from the target to the receiving radar in central body fixed coordinates as an array.
-        '''
+        """Gets the relative position vector from the target to the receiving radar in central body fixed coordinates as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetTgt2RcvRdrRelPosCBFCartesianArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetXmtRdr2TgtRelPosCBFCartesian(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the relative position vector from the transmitting radar to the target in central body fixed coordinates.
-        '''
+        """Gets the relative position vector from the transmitting radar to the target in central body fixed coordinates."""
         with agmarshall.DOUBLE_arg() as arg_xCbf, \
              agmarshall.DOUBLE_arg() as arg_yCbf, \
              agmarshall.DOUBLE_arg() as arg_zCbf:
@@ -1157,17 +981,13 @@ class IAgStkRadarLinkGeometry(object):
 
     @property
     def XmtRdr2TgtRelPosCBFCartesianArray(self) -> list:
-        '''
-        Gets the relative position vector from the transmitting radar to the target in central body fixed coordinates as an array.
-        '''
+        """Gets the relative position vector from the transmitting radar to the target in central body fixed coordinates as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetXmtRdr2TgtRelPosCBFCartesianArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetRcvRdr2TgtRelPosCBFCartesian(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the relative position vector from the receiving radar to the target in central body fixed coordinates.
-        '''
+        """Gets the relative position vector from the receiving radar to the target in central body fixed coordinates."""
         with agmarshall.DOUBLE_arg() as arg_xCbf, \
              agmarshall.DOUBLE_arg() as arg_yCbf, \
              agmarshall.DOUBLE_arg() as arg_zCbf:
@@ -1176,9 +996,7 @@ class IAgStkRadarLinkGeometry(object):
 
     @property
     def RcvRdr2TgtRelPosCBFCartesianArray(self) -> list:
-        '''
-        Gets the relative position vector from the receiving radar to the target in central body fixed coordinates as an array.
-        '''
+        """Gets the relative position vector from the receiving radar to the target in central body fixed coordinates as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetRcvRdr2TgtRelPosCBFCartesianArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
@@ -1189,9 +1007,7 @@ agcls.AgTypeNameMap['IAgStkRadarLinkGeometry'] = IAgStkRadarLinkGeometry
 __all__.append('IAgStkRadarLinkGeometry')
 
 class IAgStkRadarLink(object):
-    '''
-    Interface implemented by an object that represents the multi-hop link from a radar transmitter to the target, and back to the receive radar.
-    '''
+    """Interface implemented by an object that represents the multi-hop link from a radar transmitter to the target, and back to the receive radar."""
     _uuid = '{7F15B06B-0F53-48DF-BA18-E1D28F7180F9}'
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1219,9 +1035,7 @@ class IAgStkRadarLink(object):
         self.__dict__['_ComputeIsoDoppler'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarLink, vtable_offset_local+4, agcom.PVOID, POINTER(agcom.SAFEARRAY))
         self.__dict__['_ComputeIsoRange'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarLink, vtable_offset_local+5, agcom.PVOID, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarLink.__dict__ and type(IAgStkRadarLink.__dict__[attrname]) == property:
@@ -1235,44 +1049,34 @@ class IAgStkRadarLink(object):
     
     @property
     def Geometry(self) -> "IAgStkRadarLinkGeometry":
-        '''
-        Gets the link geometry.
-        '''
+        """Gets the link geometry."""
         with agmarshall.AgInterface_out_arg() as arg_ppLinkGeometry:
             agcls.evaluate_hresult(self.__dict__['_GetGeometry'](byref(arg_ppLinkGeometry.COM_val)))
             return arg_ppLinkGeometry.python_val
 
     def ComputeDopplerResolution(self, radarSignal:"IAgCRSignal") -> float:
-        '''
-        Computes the doppler resolution for the supplied signal.
-        '''
+        """Computes the doppler resolution for the supplied signal."""
         with agmarshall.AgInterface_in_arg(radarSignal, IAgCRSignal) as arg_radarSignal, \
              agmarshall.DOUBLE_arg() as arg_pDopplerResolution:
             agcls.evaluate_hresult(self.__dict__['_ComputeDopplerResolution'](arg_radarSignal.COM_val, byref(arg_pDopplerResolution.COM_val)))
             return arg_pDopplerResolution.python_val
 
     def ComputeRangeResolution(self, radarSignal:"IAgCRSignal") -> float:
-        '''
-        Computes the range resolution for the supplied signal.
-        '''
+        """Computes the range resolution for the supplied signal."""
         with agmarshall.AgInterface_in_arg(radarSignal, IAgCRSignal) as arg_radarSignal, \
              agmarshall.DOUBLE_arg() as arg_pRangeResolution:
             agcls.evaluate_hresult(self.__dict__['_ComputeRangeResolution'](arg_radarSignal.COM_val, byref(arg_pRangeResolution.COM_val)))
             return arg_pRangeResolution.python_val
 
     def ComputeIsoDoppler(self, radarSignal:"IAgCRSignal") -> list:
-        '''
-        Computes the iso doppler array for the supplied signal.
-        '''
+        """Computes the iso doppler array for the supplied signal."""
         with agmarshall.AgInterface_in_arg(radarSignal, IAgCRSignal) as arg_radarSignal, \
              agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_ComputeIsoDoppler'](arg_radarSignal.COM_val, byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def ComputeIsoRange(self, radarSignal:"IAgCRSignal") -> list:
-        '''
-        Computes the iso range array for the supplied signal.
-        '''
+        """Computes the iso range array for the supplied signal."""
         with agmarshall.AgInterface_in_arg(radarSignal, IAgCRSignal) as arg_radarSignal, \
              agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_ComputeIsoRange'](arg_radarSignal.COM_val, byref(arg_ppArray.COM_val)))
@@ -1284,9 +1088,7 @@ agcls.AgTypeNameMap['IAgStkRadarLink'] = IAgStkRadarLink
 __all__.append('IAgStkRadarLink')
 
 class IAgStkRadarSignal(object):
-    '''
-    Interface implemented by an object that represents a radar signal.
-    '''
+    """Interface implemented by an object that represents a radar signal."""
     _uuid = '{5F85A0C9-7DA4-4364-8934-8A21DEBF7AE1}'
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1316,9 +1118,7 @@ class IAgStkRadarSignal(object):
         self.__dict__['_GetRcs'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarSignal, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetRcs'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarSignal, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarSignal.__dict__ and type(IAgStkRadarSignal.__dict__[attrname]) == property:
@@ -1332,54 +1132,42 @@ class IAgStkRadarSignal(object):
     
     @property
     def PulseRepetitionFrequency(self) -> float:
-        '''
-        Gets the signal pulse repetition frequency.
-        '''
+        """Gets the signal pulse repetition frequency."""
         with agmarshall.DOUBLE_arg() as arg_pPrf:
             agcls.evaluate_hresult(self.__dict__['_GetPulseRepetitionFrequency'](byref(arg_pPrf.COM_val)))
             return arg_pPrf.python_val
 
     @property
     def PulseCompressionRatio(self) -> float:
-        '''
-        Gets the signal pulse compression ratio.
-        '''
+        """Gets the signal pulse compression ratio."""
         with agmarshall.DOUBLE_arg() as arg_pPcr:
             agcls.evaluate_hresult(self.__dict__['_GetPulseCompressionRatio'](byref(arg_pPcr.COM_val)))
             return arg_pPcr.python_val
 
     @property
     def PulseWidth(self) -> float:
-        '''
-        Gets the signal pulse width.
-        '''
+        """Gets the signal pulse width."""
         with agmarshall.DOUBLE_arg() as arg_pPulseWidth:
             agcls.evaluate_hresult(self.__dict__['_GetPulseWidth'](byref(arg_pPulseWidth.COM_val)))
             return arg_pPulseWidth.python_val
 
     @property
     def NumberOfPulses(self) -> int:
-        '''
-        Gets the number of pulses.
-        '''
+        """Gets the number of pulses."""
         with agmarshall.INT_arg() as arg_pNumPulses:
             agcls.evaluate_hresult(self.__dict__['_GetNumberOfPulses'](byref(arg_pNumPulses.COM_val)))
             return arg_pNumPulses.python_val
 
     @property
     def Rcs(self) -> float:
-        '''
-        Gets or sets the signal RCS.
-        '''
+        """Gets or sets the signal RCS."""
         with agmarshall.DOUBLE_arg() as arg_pRcs:
             agcls.evaluate_hresult(self.__dict__['_GetRcs'](byref(arg_pRcs.COM_val)))
             return arg_pRcs.python_val
 
     @Rcs.setter
     def Rcs(self, rcs:float) -> None:
-        '''
-        Gets or sets the signal RCS'
-        '''
+        """Gets or sets the signal RCS."""
         with agmarshall.DOUBLE_arg(rcs) as arg_rcs:
             agcls.evaluate_hresult(self.__dict__['_SetRcs'](arg_rcs.COM_val))
 
@@ -1389,9 +1177,7 @@ agcls.AgTypeNameMap['IAgStkRadarSignal'] = IAgStkRadarSignal
 __all__.append('IAgStkRadarSignal')
 
 class IAgStkRadarClutterPatch(object):
-    '''
-    Interface implemented by an object that represents a clutter patch.
-    '''
+    """Interface implemented by an object that represents a clutter patch."""
     _uuid = '{59DC586B-E3E3-49F3-8889-4631B472E13C}'
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1423,9 +1209,7 @@ class IAgStkRadarClutterPatch(object):
         self.__dict__['_GetScatteringPointComponentName'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterPatch, vtable_offset_local+6, POINTER(agcom.BSTR))
         self.__dict__['_SetScatteringPointComponentName'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterPatch, vtable_offset_local+7, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarClutterPatch.__dict__ and type(IAgStkRadarClutterPatch.__dict__[attrname]) == property:
@@ -1439,26 +1223,20 @@ class IAgStkRadarClutterPatch(object):
     
     @property
     def PosVelProvider(self) -> "IAgStkRadarPosVelProvider":
-        '''
-        Gets the patch position/velocity provider interface.
-        '''
+        """Gets the patch position/velocity provider interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppPosVelProvider:
             agcls.evaluate_hresult(self.__dict__['_GetPosVelProvider'](byref(arg_ppPosVelProvider.COM_val)))
             return arg_ppPosVelProvider.python_val
 
     def SetPositionCBF(self, x:float, y:float, z:float) -> None:
-        '''
-        Sets the patch position in the central body fixed frame.
-        '''
+        """Sets the patch position in the central body fixed frame."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_SetPositionCBF'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def SetVelocityCBF(self, x:float, y:float, z:float) -> None:
-        '''
-        Sets the patch velocity in the central body fixed frame.
-        '''
+        """Sets the patch velocity in the central body fixed frame."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
@@ -1466,35 +1244,27 @@ class IAgStkRadarClutterPatch(object):
 
     @property
     def Area(self) -> float:
-        '''
-        Gets or sets the patch area.
-        '''
+        """Gets or sets the patch area."""
         with agmarshall.DOUBLE_arg() as arg_pArea:
             agcls.evaluate_hresult(self.__dict__['_GetArea'](byref(arg_pArea.COM_val)))
             return arg_pArea.python_val
 
     @Area.setter
     def Area(self, area:float) -> None:
-        '''
-        Gets or sets the patch area.
-        '''
+        """Gets or sets the patch area."""
         with agmarshall.DOUBLE_arg(area) as arg_area:
             agcls.evaluate_hresult(self.__dict__['_SetArea'](arg_area.COM_val))
 
     @property
     def ScatteringPointComponentName(self) -> str:
-        '''
-        Gets or set the patch scattering point model by component name.
-        '''
+        """Gets or set the patch scattering point model by component name."""
         with agmarshall.BSTR_arg() as arg_pScatteringPoitnModelComponentName:
             agcls.evaluate_hresult(self.__dict__['_GetScatteringPointComponentName'](byref(arg_pScatteringPoitnModelComponentName.COM_val)))
             return arg_pScatteringPoitnModelComponentName.python_val
 
     @ScatteringPointComponentName.setter
     def ScatteringPointComponentName(self, scatteringPoitnModelComponentName:str) -> None:
-        '''
-        Gets or sets the patch scattering point model by component name.
-        '''
+        """Gets or sets the patch scattering point model by component name."""
         with agmarshall.BSTR_arg(scatteringPoitnModelComponentName) as arg_scatteringPoitnModelComponentName:
             agcls.evaluate_hresult(self.__dict__['_SetScatteringPointComponentName'](arg_scatteringPoitnModelComponentName.COM_val))
 
@@ -1504,9 +1274,7 @@ agcls.AgTypeNameMap['IAgStkRadarClutterPatch'] = IAgStkRadarClutterPatch
 __all__.append('IAgStkRadarClutterPatch')
 
 class IAgStkRadarClutterPatchCollection(object):
-    '''
-    Interface implemented by a collection of clutter patch objects.
-    '''
+    """Interface implemented by a collection of clutter patch objects."""
     _uuid = '{061AF1AD-821F-462D-BAA3-00E2389E1C59}'
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1539,9 +1307,7 @@ class IAgStkRadarClutterPatchCollection(object):
         self.__dict__['_RemoveAll'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterPatchCollection, vtable_offset_local+6, )
         self.__dict__['_Add'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterPatchCollection, vtable_offset_local+7, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarClutterPatchCollection.__dict__ and type(IAgStkRadarClutterPatchCollection.__dict__[attrname]) == property:
@@ -1566,17 +1332,13 @@ class IAgStkRadarClutterPatchCollection(object):
     
     @property
     def Count(self) -> int:
-        '''
-        Returns the number of elements in the collection.
-        '''
+        """Returns the number of elements in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
     def Item(self, index:int) -> "IAgStkRadarClutterPatch":
-        '''
-        Given an index, returns an element in the collection.
-        '''
+        """Given an index, returns an element in the collection."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppClutterPatch:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_ppClutterPatch.COM_val)))
@@ -1584,37 +1346,27 @@ class IAgStkRadarClutterPatchCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an enumerator that can iterate through the collection.
-        '''
+        """Returns an enumerator that can iterate through the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
     def Remove(self, item:"IAgStkRadarClutterPatch") -> None:
-        '''
-        Removes the specified element from the collection.
-        '''
+        """Removes the specified element from the collection."""
         with agmarshall.AgInterface_in_arg(item, IAgStkRadarClutterPatch) as arg_item:
             agcls.evaluate_hresult(self.__dict__['_Remove'](arg_item.COM_val))
 
     def RemoveAt(self, index:int) -> None:
-        '''
-        Removes an element from the collection using specified index.
-        '''
+        """Removes an element from the collection using specified index."""
         with agmarshall.LONG_arg(index) as arg_index:
             agcls.evaluate_hresult(self.__dict__['_RemoveAt'](arg_index.COM_val))
 
     def RemoveAll(self) -> None:
-        '''
-        Removes all elements from the collection.
-        '''
+        """Removes all elements from the collection."""
         agcls.evaluate_hresult(self.__dict__['_RemoveAll']())
 
     def Add(self) -> "IAgStkRadarClutterPatch":
-        '''
-        Adds a new element to the collection.
-        '''
+        """Adds a new element to the collection."""
         with agmarshall.AgInterface_out_arg() as arg_ppClutterPatch:
             agcls.evaluate_hresult(self.__dict__['_Add'](byref(arg_ppClutterPatch.COM_val)))
             return arg_ppClutterPatch.python_val
@@ -1628,9 +1380,7 @@ agcls.AgTypeNameMap['IAgStkRadarClutterPatchCollection'] = IAgStkRadarClutterPat
 __all__.append('IAgStkRadarClutterPatchCollection')
 
 class IAgStkRadarClutterGeometryPluginRegInfo(object):
-    '''
-    Interface implemented by an object that represents the registration information for the clutter geometry plugin.
-    '''
+    """Interface implemented by an object that represents the registration information for the clutter geometry plugin."""
     _uuid = '{CB97AE64-AFE6-4F78-A9E4-C56330720ECE}'
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1650,9 +1400,7 @@ class IAgStkRadarClutterGeometryPluginRegInfo(object):
         vtable_offset_local = IAgStkRadarClutterGeometryPluginRegInfo._vtable_offset - 1
         self.__dict__['_SetValidRadarSystems'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterGeometryPluginRegInfo, vtable_offset_local+1, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarClutterGeometryPluginRegInfo.__dict__ and type(IAgStkRadarClutterGeometryPluginRegInfo.__dict__[attrname]) == property:
@@ -1666,17 +1414,13 @@ class IAgStkRadarClutterGeometryPluginRegInfo(object):
     
     @property
     def ValidRadarSystems(self) -> None:
-        '''
-        ValidRadarSystems is a write-only property.
-        '''
+        """ValidRadarSystems is a write-only property."""
         raise RuntimeError('ValidRadarSystems is a write-only property.')
 
 
     @ValidRadarSystems.setter
     def ValidRadarSystems(self, validRadarSystems:"AgEStkRadarValidSystems") -> None:
-        '''
-        Sets the valid radar system mask.
-        '''
+        """Sets the valid radar system mask."""
         with agmarshall.AgEnum_arg(AgEStkRadarValidSystems, validRadarSystems) as arg_validRadarSystems:
             agcls.evaluate_hresult(self.__dict__['_SetValidRadarSystems'](arg_validRadarSystems.COM_val))
 
@@ -1686,9 +1430,7 @@ agcls.AgTypeNameMap['IAgStkRadarClutterGeometryPluginRegInfo'] = IAgStkRadarClut
 __all__.append('IAgStkRadarClutterGeometryPluginRegInfo')
 
 class IAgStkRadarClutterGeometryComputeParams(object):
-    '''
-    Interface implemented by an object that represents the parameters to be passed into the clutter geometry plugin Compute method.
-    '''
+    """Interface implemented by an object that represents the parameters to be passed into the clutter geometry plugin Compute method."""
     _uuid = '{B5C1B0B7-838F-41AA-9C2E-2BDB00390E11}'
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1712,9 +1454,7 @@ class IAgStkRadarClutterGeometryComputeParams(object):
         self.__dict__['_GetSignal'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterGeometryComputeParams, vtable_offset_local+2, POINTER(agcom.PVOID))
         self.__dict__['_GetClutterPatches'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterGeometryComputeParams, vtable_offset_local+3, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarClutterGeometryComputeParams.__dict__ and type(IAgStkRadarClutterGeometryComputeParams.__dict__[attrname]) == property:
@@ -1728,27 +1468,21 @@ class IAgStkRadarClutterGeometryComputeParams(object):
     
     @property
     def RadarLink(self) -> "IAgStkRadarLink":
-        '''
-        Gets the radar link
-        '''
+        """Gets the radar link"""
         with agmarshall.AgInterface_out_arg() as arg_ppRadarLink:
             agcls.evaluate_hresult(self.__dict__['_GetRadarLink'](byref(arg_ppRadarLink.COM_val)))
             return arg_ppRadarLink.python_val
 
     @property
     def Signal(self) -> "IAgCRSignal":
-        '''
-        Gets the transmit signal
-        '''
+        """Gets the transmit signal"""
         with agmarshall.AgInterface_out_arg() as arg_ppSignal:
             agcls.evaluate_hresult(self.__dict__['_GetSignal'](byref(arg_ppSignal.COM_val)))
             return arg_ppSignal.python_val
 
     @property
     def ClutterPatches(self) -> "IAgStkRadarClutterPatchCollection":
-        '''
-        Gets the clutter patch collection
-        '''
+        """Gets the clutter patch collection"""
         with agmarshall.AgInterface_out_arg() as arg_ppClutterPatchCollection:
             agcls.evaluate_hresult(self.__dict__['_GetClutterPatches'](byref(arg_ppClutterPatchCollection.COM_val)))
             return arg_ppClutterPatchCollection.python_val
@@ -1759,9 +1493,7 @@ agcls.AgTypeNameMap['IAgStkRadarClutterGeometryComputeParams'] = IAgStkRadarClut
 __all__.append('IAgStkRadarClutterGeometryComputeParams')
 
 class IAgStkRadarClutterGeometryPluginScatteringModels(object):
-    '''
-    Interface implemented by an object that represents a clutter geometry plugin that can configure clutter patches with scattering models.
-    '''
+    """Interface implemented by an object that represents a clutter geometry plugin that can configure clutter patches with scattering models."""
     _uuid = '{8C8FE438-C3BC-4B06-A8EF-A97BA63A7C43}'
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1781,9 +1513,7 @@ class IAgStkRadarClutterGeometryPluginScatteringModels(object):
         vtable_offset_local = IAgStkRadarClutterGeometryPluginScatteringModels._vtable_offset - 1
         self.__dict__['_GetScatteringModelComponentNames'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterGeometryPluginScatteringModels, vtable_offset_local+1, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarClutterGeometryPluginScatteringModels.__dict__ and type(IAgStkRadarClutterGeometryPluginScatteringModels.__dict__[attrname]) == property:
@@ -1797,9 +1527,7 @@ class IAgStkRadarClutterGeometryPluginScatteringModels(object):
     
     @property
     def ScatteringModelComponentNames(self) -> list:
-        '''
-        Returns the list of scattering model component names which the plugin intends to set on the returned clutter patches.
-        '''
+        """Returns the list of scattering model component names which the plugin intends to set on the returned clutter patches."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetScatteringModelComponentNames'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
@@ -1810,9 +1538,7 @@ agcls.AgTypeNameMap['IAgStkRadarClutterGeometryPluginScatteringModels'] = IAgStk
 __all__.append('IAgStkRadarClutterGeometryPluginScatteringModels')
 
 class IAgStkRadarClutterMapComputeParams(object):
-    '''
-    Interface implemented by an object that represents the parameters to be passed into the clutter map plugin Compute method.
-    '''
+    """Interface implemented by an object that represents the parameters to be passed into the clutter map plugin Compute method."""
     _uuid = '{D58CDC19-794D-4603-87B8-40B7783F730E}'
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1842,9 +1568,7 @@ class IAgStkRadarClutterMapComputeParams(object):
         self.__dict__['_ConstructPolarizationCopy'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterMapComputeParams, vtable_offset_local+5, agcom.PVOID, POINTER(agcom.PVOID))
         self.__dict__['_ConstructOrthogonalPolarization'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarClutterMapComputeParams, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarClutterMapComputeParams.__dict__ and type(IAgStkRadarClutterMapComputeParams.__dict__[attrname]) == property:
@@ -1858,53 +1582,41 @@ class IAgStkRadarClutterMapComputeParams(object):
     
     @property
     def RadarLink(self) -> "IAgStkRadarLink":
-        '''
-        Gets the radar link.
-        '''
+        """Gets the radar link."""
         with agmarshall.AgInterface_out_arg() as arg_ppRadarLink:
             agcls.evaluate_hresult(self.__dict__['_GetRadarLink'](byref(arg_ppRadarLink.COM_val)))
             return arg_ppRadarLink.python_val
 
     @property
     def ClutterPatch(self) -> "IAgStkRadarClutterPatch":
-        '''
-        Gets the clutter patch.
-        '''
+        """Gets the clutter patch."""
         with agmarshall.AgInterface_out_arg() as arg_ppClutterPatch:
             agcls.evaluate_hresult(self.__dict__['_GetClutterPatch'](byref(arg_ppClutterPatch.COM_val)))
             return arg_ppClutterPatch.python_val
 
     @property
     def Signal(self) -> "IAgCRSignal":
-        '''
-        Gets the signal.
-        '''
+        """Gets the signal."""
         with agmarshall.AgInterface_out_arg() as arg_ppSignal:
             agcls.evaluate_hresult(self.__dict__['_GetSignal'](byref(arg_ppSignal.COM_val)))
             return arg_ppSignal.python_val
 
     def ConstructPolarization(self, polType:"AgECRPolarizationType") -> "IAgCRPolarization":
-        '''
-        Constructs a new polarization object.
-        '''
+        """Constructs a new polarization object."""
         with agmarshall.AgEnum_arg(AgECRPolarizationType, polType) as arg_polType, \
              agmarshall.AgInterface_out_arg() as arg_ppPolarization:
             agcls.evaluate_hresult(self.__dict__['_ConstructPolarization'](arg_polType.COM_val, byref(arg_ppPolarization.COM_val)))
             return arg_ppPolarization.python_val
 
     def ConstructPolarizationCopy(self, polarizationToCopy:"IAgCRPolarization") -> "IAgCRPolarization":
-        '''
-        Constructs a copy of the specified polarization.
-        '''
+        """Constructs a copy of the specified polarization."""
         with agmarshall.AgInterface_in_arg(polarizationToCopy, IAgCRPolarization) as arg_polarizationToCopy, \
              agmarshall.AgInterface_out_arg() as arg_ppPolarizationCopy:
             agcls.evaluate_hresult(self.__dict__['_ConstructPolarizationCopy'](arg_polarizationToCopy.COM_val, byref(arg_ppPolarizationCopy.COM_val)))
             return arg_ppPolarizationCopy.python_val
 
     def ConstructOrthogonalPolarization(self, polarizationToCopy:"IAgCRPolarization") -> "IAgCRPolarization":
-        '''
-        Constructs an orthogonal instance of the specified polarization.
-        '''
+        """Constructs an orthogonal instance of the specified polarization."""
         with agmarshall.AgInterface_in_arg(polarizationToCopy, IAgCRPolarization) as arg_polarizationToCopy, \
              agmarshall.AgInterface_out_arg() as arg_ppOrthoPolarization:
             agcls.evaluate_hresult(self.__dict__['_ConstructOrthogonalPolarization'](arg_polarizationToCopy.COM_val, byref(arg_ppOrthoPolarization.COM_val)))
@@ -1916,9 +1628,7 @@ agcls.AgTypeNameMap['IAgStkRadarClutterMapComputeParams'] = IAgStkRadarClutterMa
 __all__.append('IAgStkRadarClutterMapComputeParams')
 
 class IAgStkRadarRcsProcessSignalsParams(object):
-    '''
-    Interface implemented by an object that represents the parameters to be passed into the RCS plugin ProcessSignals method.
-    '''
+    """Interface implemented by an object that represents the parameters to be passed into the RCS plugin ProcessSignals method."""
     _uuid = '{AF578053-2B0A-46CA-9C78-8F46C0A895D6}'
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1954,9 +1664,7 @@ class IAgStkRadarRcsProcessSignalsParams(object):
         self.__dict__['_ConstructPolarizationCopy'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarRcsProcessSignalsParams, vtable_offset_local+8, agcom.PVOID, POINTER(agcom.PVOID))
         self.__dict__['_ConstructOrthogonalPolarization'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarRcsProcessSignalsParams, vtable_offset_local+9, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarRcsProcessSignalsParams.__dict__ and type(IAgStkRadarRcsProcessSignalsParams.__dict__[attrname]) == property:
@@ -1969,9 +1677,7 @@ class IAgStkRadarRcsProcessSignalsParams(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgStkRadarRcsProcessSignalsParams.')
     
     def GetIncidentBodyFixedVector(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the incident body fixed vector.
-        '''
+        """Gets the incident body fixed vector."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -1980,17 +1686,13 @@ class IAgStkRadarRcsProcessSignalsParams(object):
 
     @property
     def InicidentBodyFixedVectorArray(self) -> list:
-        '''
-        Gets the incident body fixed vector as an array.
-        '''
+        """Gets the incident body fixed vector as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetInicidentBodyFixedVectorArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetReflectedBodyFixedVector(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the reflected body fixed vector.
-        '''
+        """Gets the reflected body fixed vector."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -1999,53 +1701,41 @@ class IAgStkRadarRcsProcessSignalsParams(object):
 
     @property
     def ReflectedBodyFixedVectorArray(self) -> list:
-        '''
-        Gets the reflected body fixed vector as an array.
-        '''
+        """Gets the reflected body fixed vector as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetReflectedBodyFixedVectorArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     @property
     def PrimaryPolChannelSignal(self) -> "IAgCRSignal":
-        '''
-        Gets the read-only signal.
-        '''
+        """Gets the read-only signal."""
         with agmarshall.AgInterface_out_arg() as arg_ppSignal:
             agcls.evaluate_hresult(self.__dict__['_GetPrimaryPolChannelSignal'](byref(arg_ppSignal.COM_val)))
             return arg_ppSignal.python_val
 
     @property
     def OrthoPolChannelSignal(self) -> "IAgCRSignal":
-        '''
-        Gets the read-only signal.
-        '''
+        """Gets the read-only signal."""
         with agmarshall.AgInterface_out_arg() as arg_ppSignal:
             agcls.evaluate_hresult(self.__dict__['_GetOrthoPolChannelSignal'](byref(arg_ppSignal.COM_val)))
             return arg_ppSignal.python_val
 
     def ConstructPolarization(self, polType:"AgECRPolarizationType") -> "IAgCRPolarization":
-        '''
-        Constructs a new polarization object.
-        '''
+        """Constructs a new polarization object."""
         with agmarshall.AgEnum_arg(AgECRPolarizationType, polType) as arg_polType, \
              agmarshall.AgInterface_out_arg() as arg_ppPolarization:
             agcls.evaluate_hresult(self.__dict__['_ConstructPolarization'](arg_polType.COM_val, byref(arg_ppPolarization.COM_val)))
             return arg_ppPolarization.python_val
 
     def ConstructPolarizationCopy(self, polarizationToCopy:"IAgCRPolarization") -> "IAgCRPolarization":
-        '''
-        Constructs a copy of the specified polarization.
-        '''
+        """Constructs a copy of the specified polarization."""
         with agmarshall.AgInterface_in_arg(polarizationToCopy, IAgCRPolarization) as arg_polarizationToCopy, \
              agmarshall.AgInterface_out_arg() as arg_ppPolarizationCopy:
             agcls.evaluate_hresult(self.__dict__['_ConstructPolarizationCopy'](arg_polarizationToCopy.COM_val, byref(arg_ppPolarizationCopy.COM_val)))
             return arg_ppPolarizationCopy.python_val
 
     def ConstructOrthogonalPolarization(self, polarizationToCopy:"IAgCRPolarization") -> "IAgCRPolarization":
-        '''
-        Constructs an orthogonal instance of the specified polarization.
-        '''
+        """Constructs an orthogonal instance of the specified polarization."""
         with agmarshall.AgInterface_in_arg(polarizationToCopy, IAgCRPolarization) as arg_polarizationToCopy, \
              agmarshall.AgInterface_out_arg() as arg_ppOrthoPolarization:
             agcls.evaluate_hresult(self.__dict__['_ConstructOrthogonalPolarization'](arg_polarizationToCopy.COM_val, byref(arg_ppOrthoPolarization.COM_val)))
@@ -2057,9 +1747,7 @@ agcls.AgTypeNameMap['IAgStkRadarRcsProcessSignalsParams'] = IAgStkRadarRcsProces
 __all__.append('IAgStkRadarRcsProcessSignalsParams')
 
 class IAgStkRadarRcsComputeParams(object):
-    '''
-    Interface implemented by an object that represents the parameters to be passed into the RCS plugin Compute method.
-    '''
+    """Interface implemented by an object that represents the parameters to be passed into the RCS plugin Compute method."""
     _uuid = '{60F9C3C1-F3E2-4F03-906D-DB9A57EABE2C}'
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2097,9 +1785,7 @@ class IAgStkRadarRcsComputeParams(object):
         self.__dict__['_SetOrthoChannelRcs'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarRcsComputeParams, vtable_offset_local+9, agcom.DOUBLE)
         self.__dict__['_SetOrthoChannelRcsCross'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarRcsComputeParams, vtable_offset_local+10, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarRcsComputeParams.__dict__ and type(IAgStkRadarRcsComputeParams.__dict__[attrname]) == property:
@@ -2113,26 +1799,20 @@ class IAgStkRadarRcsComputeParams(object):
     
     @property
     def Time(self) -> float:
-        '''
-        Gets the current time.
-        '''
+        """Gets the current time."""
         with agmarshall.DOUBLE_arg() as arg_pTime:
             agcls.evaluate_hresult(self.__dict__['_GetTime'](byref(arg_pTime.COM_val)))
             return arg_pTime.python_val
 
     @property
     def Frequency(self) -> float:
-        '''
-        Gets the signal frequency.
-        '''
+        """Gets the signal frequency."""
         with agmarshall.DOUBLE_arg() as arg_pFrequency:
             agcls.evaluate_hresult(self.__dict__['_GetFrequency'](byref(arg_pFrequency.COM_val)))
             return arg_pFrequency.python_val
 
     def GetIncidentBodyFixedVector(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the incident body fixed vector.
-        '''
+        """Gets the incident body fixed vector."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -2141,17 +1821,13 @@ class IAgStkRadarRcsComputeParams(object):
 
     @property
     def InicidentBodyFixedVectorArray(self) -> list:
-        '''
-        Gets the incident body fixed vector as an array.
-        '''
+        """Gets the incident body fixed vector as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetInicidentBodyFixedVectorArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def GetReflectedBodyFixedVector(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the reflected body fixed vector.
-        '''
+        """Gets the reflected body fixed vector."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -2160,74 +1836,56 @@ class IAgStkRadarRcsComputeParams(object):
 
     @property
     def ReflectedBodyFixedVectorArray(self) -> list:
-        '''
-        Gets the reflected body fixed vector as an array.
-        '''
+        """Gets the reflected body fixed vector as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetReflectedBodyFixedVectorArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     @property
     def PrimaryChannelRcs(self) -> None:
-        '''
-        PrimaryChannelRcs is a write-only property.
-        '''
+        """PrimaryChannelRcs is a write-only property."""
         raise RuntimeError('PrimaryChannelRcs is a write-only property.')
 
 
     @PrimaryChannelRcs.setter
     def PrimaryChannelRcs(self, rcs:float) -> None:
-        '''
-        Sets the primary channel RCS value
-        '''
+        """Sets the primary channel RCS value"""
         with agmarshall.DOUBLE_arg(rcs) as arg_rcs:
             agcls.evaluate_hresult(self.__dict__['_SetPrimaryChannelRcs'](arg_rcs.COM_val))
 
     @property
     def PrimaryChannelRcsCross(self) -> None:
-        '''
-        PrimaryChannelRcsCross is a write-only property.
-        '''
+        """PrimaryChannelRcsCross is a write-only property."""
         raise RuntimeError('PrimaryChannelRcsCross is a write-only property.')
 
 
     @PrimaryChannelRcsCross.setter
     def PrimaryChannelRcsCross(self, rcsCross:float) -> None:
-        '''
-        Sets the primary channel cross pol RCS value
-        '''
+        """Sets the primary channel cross pol RCS value"""
         with agmarshall.DOUBLE_arg(rcsCross) as arg_rcsCross:
             agcls.evaluate_hresult(self.__dict__['_SetPrimaryChannelRcsCross'](arg_rcsCross.COM_val))
 
     @property
     def OrthoChannelRcs(self) -> None:
-        '''
-        OrthoChannelRcs is a write-only property.
-        '''
+        """OrthoChannelRcs is a write-only property."""
         raise RuntimeError('OrthoChannelRcs is a write-only property.')
 
 
     @OrthoChannelRcs.setter
     def OrthoChannelRcs(self, rcs:float) -> None:
-        '''
-        Sets the primary channel RCS value.
-        '''
+        """Sets the primary channel RCS value."""
         with agmarshall.DOUBLE_arg(rcs) as arg_rcs:
             agcls.evaluate_hresult(self.__dict__['_SetOrthoChannelRcs'](arg_rcs.COM_val))
 
     @property
     def OrthoChannelRcsCross(self) -> None:
-        '''
-        OrthoChannelRcsCross is a write-only property.
-        '''
+        """OrthoChannelRcsCross is a write-only property."""
         raise RuntimeError('OrthoChannelRcsCross is a write-only property.')
 
 
     @OrthoChannelRcsCross.setter
     def OrthoChannelRcsCross(self, rcsCross:float) -> None:
-        '''
-        Sets the primary channel cross pol RCS value.
-        '''
+        """Sets the primary channel cross pol RCS value."""
         with agmarshall.DOUBLE_arg(rcsCross) as arg_rcsCross:
             agcls.evaluate_hresult(self.__dict__['_SetOrthoChannelRcsCross'](arg_rcsCross.COM_val))
 
@@ -2237,9 +1895,7 @@ agcls.AgTypeNameMap['IAgStkRadarRcsComputeParams'] = IAgStkRadarRcsComputeParams
 __all__.append('IAgStkRadarRcsComputeParams')
 
 class IAgStkRadarFixedPRFProbabilityDetectionComputeParams(object):
-    '''
-    Interface implemented by an object that represents the parameters to be passed into the Probability of Detection CFAR plugin Compute method.
-    '''
+    """Interface implemented by an object that represents the parameters to be passed into the Probability of Detection CFAR plugin Compute method."""
     _uuid = '{0D35F146-2F96-4486-BD49-0C69BA138052}'
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2275,9 +1931,7 @@ class IAgStkRadarFixedPRFProbabilityDetectionComputeParams(object):
         self.__dict__['_SetProbabilityOfDetectionSinglePulse'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarFixedPRFProbabilityDetectionComputeParams, vtable_offset_local+8, agcom.DOUBLE)
         self.__dict__['_SetProbabilityOfDetectionIntegrated'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarFixedPRFProbabilityDetectionComputeParams, vtable_offset_local+9, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarFixedPRFProbabilityDetectionComputeParams.__dict__ and type(IAgStkRadarFixedPRFProbabilityDetectionComputeParams.__dict__[attrname]) == property:
@@ -2291,78 +1945,60 @@ class IAgStkRadarFixedPRFProbabilityDetectionComputeParams(object):
     
     @property
     def SinglePulseSignaltoNoiseRatio(self) -> float:
-        '''
-        Gets the radar link single pulse signal-to-noise ratio value.
-        '''
+        """Gets the radar link single pulse signal-to-noise ratio value."""
         with agmarshall.DOUBLE_arg() as arg_pSnrSinglePulse:
             agcls.evaluate_hresult(self.__dict__['_GetSinglePulseSignaltoNoiseRatio'](byref(arg_pSnrSinglePulse.COM_val)))
             return arg_pSnrSinglePulse.python_val
 
     @property
     def IntegratedSignaltoNoiseRatio(self) -> float:
-        '''
-        Gets the radar link integrated signal-to-noise ratio value.
-        '''
+        """Gets the radar link integrated signal-to-noise ratio value."""
         with agmarshall.DOUBLE_arg() as arg_pSnrIntegrated:
             agcls.evaluate_hresult(self.__dict__['_GetIntegratedSignaltoNoiseRatio'](byref(arg_pSnrIntegrated.COM_val)))
             return arg_pSnrIntegrated.python_val
 
     @property
     def CoherentIntegration(self) -> bool:
-        '''
-        Gets a flag indicating whether or not the signal-to-noise ratio was integrated coherently.
-        '''
+        """Gets a flag indicating whether or not the signal-to-noise ratio was integrated coherently."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pCoherentIntegration:
             agcls.evaluate_hresult(self.__dict__['_GetCoherentIntegration'](byref(arg_pCoherentIntegration.COM_val)))
             return arg_pCoherentIntegration.python_val
 
     @property
     def NoisePower(self) -> float:
-        '''
-        Gets the radar receiver noise power.
-        '''
+        """Gets the radar receiver noise power."""
         with agmarshall.DOUBLE_arg() as arg_pNoisePower:
             agcls.evaluate_hresult(self.__dict__['_GetNoisePower'](byref(arg_pNoisePower.COM_val)))
             return arg_pNoisePower.python_val
 
     @property
     def NumberOfIntegratedPulses(self) -> int:
-        '''
-        Gets the radar link number of pulse integrated.
-        '''
+        """Gets the radar link number of pulse integrated."""
         with agmarshall.INT_arg() as arg_pNumberOfIntegratedPulses:
             agcls.evaluate_hresult(self.__dict__['_GetNumberOfIntegratedPulses'](byref(arg_pNumberOfIntegratedPulses.COM_val)))
             return arg_pNumberOfIntegratedPulses.python_val
 
     @property
     def ReceivedRadarSignal(self) -> "IAgCRSignal":
-        '''
-        Gets the radar link signal data.
-        '''
+        """Gets the radar link signal data."""
         with agmarshall.AgInterface_out_arg() as arg_ppRadarSignal:
             agcls.evaluate_hresult(self.__dict__['_GetReceivedRadarSignal'](byref(arg_ppRadarSignal.COM_val)))
             return arg_ppRadarSignal.python_val
 
     @property
     def ClutterSignals(self) -> "IAgCRSignalCollection":
-        '''
-        Gets the radar link clutter signal collection.
-        '''
+        """Gets the radar link clutter signal collection."""
         with agmarshall.AgInterface_out_arg() as arg_ppClutterSignals:
             agcls.evaluate_hresult(self.__dict__['_GetClutterSignals'](byref(arg_ppClutterSignals.COM_val)))
             return arg_ppClutterSignals.python_val
 
     def SetProbabilityOfDetectionSinglePulse(self, probDetSinglePulse:float) -> None:
-        '''
-        Sets the probability of detection single pulse value.
-        '''
+        """Sets the probability of detection single pulse value."""
         with agmarshall.DOUBLE_arg(probDetSinglePulse) as arg_probDetSinglePulse:
             agcls.evaluate_hresult(self.__dict__['_SetProbabilityOfDetectionSinglePulse'](arg_probDetSinglePulse.COM_val))
 
     def SetProbabilityOfDetectionIntegrated(self, probDetIntegrated:float) -> None:
-        '''
-        Sets the integrated probability of detection value.
-        '''
+        """Sets the integrated probability of detection value."""
         with agmarshall.DOUBLE_arg(probDetIntegrated) as arg_probDetIntegrated:
             agcls.evaluate_hresult(self.__dict__['_SetProbabilityOfDetectionIntegrated'](arg_probDetIntegrated.COM_val))
 
@@ -2372,9 +2008,7 @@ agcls.AgTypeNameMap['IAgStkRadarFixedPRFProbabilityDetectionComputeParams'] = IA
 __all__.append('IAgStkRadarFixedPRFProbabilityDetectionComputeParams')
 
 class IAgStkRadarFixedPRFProbabilityDetectionPlugin(object):
-    '''
-    Interface implemented by an object that represents a Probability of Detection CFAR plugin.
-    '''
+    """Interface implemented by an object that represents a Probability of Detection CFAR plugin."""
     _uuid = '{AD4F24AB-0BEA-4EB2-8A07-F2C674846A3E}'
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2408,9 +2042,7 @@ class IAgStkRadarFixedPRFProbabilityDetectionPlugin(object):
         self.__dict__['_Free'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarFixedPRFProbabilityDetectionPlugin, vtable_offset_local+7, )
         self.__dict__['_GetNumberOfConstantFalseAlarmRateCells'] = IAGFUNCTYPE(pUnk, IID_IAgStkRadarFixedPRFProbabilityDetectionPlugin, vtable_offset_local+8, POINTER(agcom.INT))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgStkRadarFixedPRFProbabilityDetectionPlugin.__dict__ and type(IAgStkRadarFixedPRFProbabilityDetectionPlugin.__dict__[attrname]) == property:
@@ -2423,58 +2055,42 @@ class IAgStkRadarFixedPRFProbabilityDetectionPlugin(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgStkRadarFixedPRFProbabilityDetectionPlugin.')
     
     def Initialize(self, site:"IAgUtPluginSite") -> None:
-        '''
-        Initializes the plugin with the plugin site.
-        '''
+        """Initializes the plugin with the plugin site."""
         with agmarshall.AgInterface_in_arg(site, IAgUtPluginSite) as arg_site:
             agcls.evaluate_hresult(self.__dict__['_Initialize'](arg_site.COM_val))
 
     def PreCompute(self) -> bool:
-        '''
-        Probability of Detection CFAR plugin pre-compute.
-        '''
+        """Probability of Detection CFAR plugin pre-compute."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pValidPreCompute:
             agcls.evaluate_hresult(self.__dict__['_PreCompute'](byref(arg_pValidPreCompute.COM_val)))
             return arg_pValidPreCompute.python_val
 
     def Compute(self, computeParams:"IAgStkRadarFixedPRFProbabilityDetectionComputeParams") -> None:
-        '''
-        Probability of Detection CFAR plugin compute with SNR.
-        '''
+        """Probability of Detection CFAR plugin compute with SNR."""
         with agmarshall.AgInterface_in_arg(computeParams, IAgStkRadarFixedPRFProbabilityDetectionComputeParams) as arg_computeParams:
             agcls.evaluate_hresult(self.__dict__['_Compute'](arg_computeParams.COM_val))
 
     def ComputeJamming(self, computeParams:"IAgStkRadarFixedPRFProbabilityDetectionComputeParams") -> None:
-        '''
-        Probability of Detection CFAR plugin compute with S/(N+J).
-        '''
+        """Probability of Detection CFAR plugin compute with S/(N+J)."""
         with agmarshall.AgInterface_in_arg(computeParams, IAgStkRadarFixedPRFProbabilityDetectionComputeParams) as arg_computeParams:
             agcls.evaluate_hresult(self.__dict__['_ComputeJamming'](arg_computeParams.COM_val))
 
     def ComputeJammingClutter(self, computeParams:"IAgStkRadarFixedPRFProbabilityDetectionComputeParams") -> None:
-        '''
-        Probability of Detection CFAR plugin compute with S/(N+J+C).
-        '''
+        """Probability of Detection CFAR plugin compute with S/(N+J+C)."""
         with agmarshall.AgInterface_in_arg(computeParams, IAgStkRadarFixedPRFProbabilityDetectionComputeParams) as arg_computeParams:
             agcls.evaluate_hresult(self.__dict__['_ComputeJammingClutter'](arg_computeParams.COM_val))
 
     def PostCompute(self) -> None:
-        '''
-        Probability of Detection CFAR plugin post-compute.
-        '''
+        """Probability of Detection CFAR plugin post-compute."""
         agcls.evaluate_hresult(self.__dict__['_PostCompute']())
 
     def Free(self) -> None:
-        '''
-        Free Probability of Detection CFAR plugin.
-        '''
+        """Free Probability of Detection CFAR plugin."""
         agcls.evaluate_hresult(self.__dict__['_Free']())
 
     @property
     def NumberOfConstantFalseAlarmRateCells(self) -> int:
-        '''
-        Gets the number of constant false alarm rate cells.
-        '''
+        """Gets the number of constant false alarm rate cells."""
         with agmarshall.INT_arg() as arg_pNumberOfFalseAlarmRateCells:
             agcls.evaluate_hresult(self.__dict__['_GetNumberOfConstantFalseAlarmRateCells'](byref(arg_pNumberOfFalseAlarmRateCells.COM_val)))
             return arg_pNumberOfFalseAlarmRateCells.python_val
@@ -2485,9 +2101,7 @@ agcls.AgTypeNameMap['IAgStkRadarFixedPRFProbabilityDetectionPlugin'] = IAgStkRad
 __all__.append('IAgStkRadarFixedPRFProbabilityDetectionPlugin')
 
 class IAgSTKRadarSTCAttenComputeParams(object):
-    '''
-    Interface implemented by an object that represents the parameters to be passed into the STC plugin Compute method.
-    '''
+    """Interface implemented by an object that represents the parameters to be passed into the STC plugin Compute method."""
     _uuid = '{48F46A9F-659A-448A-8681-1FB26BD6749A}'
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2521,9 +2135,7 @@ class IAgSTKRadarSTCAttenComputeParams(object):
         self.__dict__['_GetDirectionArray'] = IAGFUNCTYPE(pUnk, IID_IAgSTKRadarSTCAttenComputeParams, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
         self.__dict__['_SetSTCAttenuation'] = IAGFUNCTYPE(pUnk, IID_IAgSTKRadarSTCAttenComputeParams, vtable_offset_local+8, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgSTKRadarSTCAttenComputeParams.__dict__ and type(IAgSTKRadarSTCAttenComputeParams.__dict__[attrname]) == property:
@@ -2537,53 +2149,41 @@ class IAgSTKRadarSTCAttenComputeParams(object):
     
     @property
     def Time(self) -> float:
-        '''
-        Gets the time value.
-        '''
+        """Gets the time value."""
         with agmarshall.DOUBLE_arg() as arg_pTime:
             agcls.evaluate_hresult(self.__dict__['_GetTime'](byref(arg_pTime.COM_val)))
             return arg_pTime.python_val
 
     @property
     def Frequency(self) -> float:
-        '''
-        Gets the frequency value.
-        '''
+        """Gets the frequency value."""
         with agmarshall.DOUBLE_arg() as arg_pFrequency:
             agcls.evaluate_hresult(self.__dict__['_GetFrequency'](byref(arg_pFrequency.COM_val)))
             return arg_pFrequency.python_val
 
     @property
     def Range(self) -> float:
-        '''
-        Gets the radar link range value.
-        '''
+        """Gets the radar link range value."""
         with agmarshall.DOUBLE_arg() as arg_pRange:
             agcls.evaluate_hresult(self.__dict__['_GetRange'](byref(arg_pRange.COM_val)))
             return arg_pRange.python_val
 
     @property
     def AzimuthAngle(self) -> float:
-        '''
-        Gets the radar link Azimuth angle value.
-        '''
+        """Gets the radar link Azimuth angle value."""
         with agmarshall.DOUBLE_arg() as arg_pAzimuthAngle:
             agcls.evaluate_hresult(self.__dict__['_GetAzimuthAngle'](byref(arg_pAzimuthAngle.COM_val)))
             return arg_pAzimuthAngle.python_val
 
     @property
     def ElevationAngle(self) -> float:
-        '''
-        Gets the radar link Elevation Angle value.
-        '''
+        """Gets the radar link Elevation Angle value."""
         with agmarshall.DOUBLE_arg() as arg_pElevationAngle:
             agcls.evaluate_hresult(self.__dict__['_GetElevationAngle'](byref(arg_pElevationAngle.COM_val)))
             return arg_pElevationAngle.python_val
 
     def GetDirection(self) -> typing.Tuple[float, float, float]:
-        '''
-        Gets the direction vector in the body fixed frame.
-        '''
+        """Gets the direction vector in the body fixed frame."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -2592,17 +2192,13 @@ class IAgSTKRadarSTCAttenComputeParams(object):
 
     @property
     def DirectionArray(self) -> list:
-        '''
-        Gets the direction vector in the body fixed frame as an array.
-        '''
+        """Gets the direction vector in the body fixed frame as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppArray:
             agcls.evaluate_hresult(self.__dict__['_GetDirectionArray'](byref(arg_ppArray.COM_val)))
             return arg_ppArray.python_val
 
     def SetSTCAttenuation(self, sTCAttenuation:float) -> None:
-        '''
-        Sets the STC attenuation value.
-        '''
+        """Sets the STC attenuation value."""
         with agmarshall.DOUBLE_arg(sTCAttenuation) as arg_sTCAttenuation:
             agcls.evaluate_hresult(self.__dict__['_SetSTCAttenuation'](arg_sTCAttenuation.COM_val))
 
@@ -2612,9 +2208,7 @@ agcls.AgTypeNameMap['IAgSTKRadarSTCAttenComputeParams'] = IAgSTKRadarSTCAttenCom
 __all__.append('IAgSTKRadarSTCAttenComputeParams')
 
 class IAgSTKRadarSTCAttenPlugin(object):
-    '''
-    Interface implemented by an object that represents a STC plugin.
-    '''
+    """Interface implemented by an object that represents a STC plugin."""
     _uuid = '{0532400A-A1A2-4E2B-BF49-60D7DA3E4750}'
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2642,9 +2236,7 @@ class IAgSTKRadarSTCAttenPlugin(object):
         self.__dict__['_PostCompute'] = IAGFUNCTYPE(pUnk, IID_IAgSTKRadarSTCAttenPlugin, vtable_offset_local+4, )
         self.__dict__['_Free'] = IAGFUNCTYPE(pUnk, IID_IAgSTKRadarSTCAttenPlugin, vtable_offset_local+5, )
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgSTKRadarSTCAttenPlugin.__dict__ and type(IAgSTKRadarSTCAttenPlugin.__dict__[attrname]) == property:
@@ -2657,37 +2249,27 @@ class IAgSTKRadarSTCAttenPlugin(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgSTKRadarSTCAttenPlugin.')
     
     def Initialize(self, site:"IAgUtPluginSite") -> None:
-        '''
-        Initializes the plugin with the plugin site.
-        '''
+        """Initializes the plugin with the plugin site."""
         with agmarshall.AgInterface_in_arg(site, IAgUtPluginSite) as arg_site:
             agcls.evaluate_hresult(self.__dict__['_Initialize'](arg_site.COM_val))
 
     def PreCompute(self) -> bool:
-        '''
-        STC plugin pre-compute.
-        '''
+        """STC plugin pre-compute."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pValidPreCompute:
             agcls.evaluate_hresult(self.__dict__['_PreCompute'](byref(arg_pValidPreCompute.COM_val)))
             return arg_pValidPreCompute.python_val
 
     def ComputeAttenuation(self, computeParams:"IAgSTKRadarSTCAttenComputeParams") -> None:
-        '''
-        STC plugin compute attenuation.
-        '''
+        """STC plugin compute attenuation."""
         with agmarshall.AgInterface_in_arg(computeParams, IAgSTKRadarSTCAttenComputeParams) as arg_computeParams:
             agcls.evaluate_hresult(self.__dict__['_ComputeAttenuation'](arg_computeParams.COM_val))
 
     def PostCompute(self) -> None:
-        '''
-        STC plugin post-compute.
-        '''
+        """STC plugin post-compute."""
         agcls.evaluate_hresult(self.__dict__['_PostCompute']())
 
     def Free(self) -> None:
-        '''
-        Free STC plugin.
-        '''
+        """Free STC plugin."""
         agcls.evaluate_hresult(self.__dict__['_Free']())
 
 
@@ -2697,130 +2279,94 @@ __all__.append('IAgSTKRadarSTCAttenPlugin')
 
 
 class IAgStkRadarClutterGeometryPlugin(object):
-    '''
+    """
     Interface implemented by an object that represents a clutter geometry plugin.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Register(self, registrationInfo:"IAgStkRadarClutterGeometryPluginRegInfo") -> None:
-        '''
-        Registers the plugin with the application.
-        '''
+        """Registers the plugin with the application."""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def Initialize(self, site:"IAgUtPluginSite") -> None:
-        '''
-        Initializes the plugin with the plugin site.
-        '''
+        """Initializes the plugin with the plugin site."""
         raise STKPluginMethodNotImplementedError('Initialize was not implemented.')
 
     def PreCompute(self) -> bool:
-        '''
-        Clutter geometry plugin pre-compute.
-        '''
+        """Clutter geometry plugin pre-compute."""
         raise STKPluginMethodNotImplementedError('PreCompute was not implemented.')
 
     def Compute(self, computeParams:"IAgStkRadarClutterGeometryComputeParams") -> None:
-        '''
-        Clutter geometry plugin compute.
-        '''
+        """Clutter geometry plugin compute."""
         raise STKPluginMethodNotImplementedError('Compute was not implemented.')
 
     def PostCompute(self) -> None:
-        '''
-        Clutter geometry plugin post-compute.
-        '''
+        """Clutter geometry plugin post-compute."""
         raise STKPluginMethodNotImplementedError('PostCompute was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Free clutter geometry plugin.
-        '''
+        """Free clutter geometry plugin."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
 __all__.append('IAgStkRadarClutterGeometryPlugin')
 
 class IAgStkRadarClutterMapPlugin(object):
-    '''
+    """
     Interface implemented by an object that represents a clutter map plugin.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Initialize(self, site:"IAgUtPluginSite") -> None:
-        '''
-        Initializes the plugin with the plugin site.
-        '''
+        """Initializes the plugin with the plugin site."""
         raise STKPluginMethodNotImplementedError('Initialize was not implemented.')
 
     def PreCompute(self) -> bool:
-        '''
-        Clutter map plugin pre-compute.
-        '''
+        """Clutter map plugin pre-compute."""
         raise STKPluginMethodNotImplementedError('PreCompute was not implemented.')
 
     def Compute(self, computeParams:"IAgStkRadarClutterMapComputeParams") -> None:
-        '''
-        Clutter map plugin compute'
-        '''
+        """Clutter map plugin compute."""
         raise STKPluginMethodNotImplementedError('Compute was not implemented.')
 
     def PostCompute(self) -> None:
-        '''
-        Clutter map plugin post-compute.
-        '''
+        """Clutter map plugin post-compute."""
         raise STKPluginMethodNotImplementedError('PostCompute was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Free clutter map plugin.
-        '''
+        """Free clutter map plugin."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
 __all__.append('IAgStkRadarClutterMapPlugin')
 
 class IAgStkRadarRcsPlugin(object):
-    '''
+    """
     Interface implemented by an object that represents an RCS plugin.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Initialize(self, site:"IAgUtPluginSite") -> None:
-        '''
-        Initializes the plugin with the plugin site.
-        '''
+        """Initializes the plugin with the plugin site."""
         raise STKPluginMethodNotImplementedError('Initialize was not implemented.')
 
     def PreCompute(self) -> bool:
-        '''
-        RCS plugin pre-compute.
-        '''
+        """RCS plugin pre-compute."""
         raise STKPluginMethodNotImplementedError('PreCompute was not implemented.')
 
     def ProcessSignals(self, processSignalsParams:"IAgStkRadarRcsProcessSignalsParams") -> None:
-        '''
-        Processes the incident primary and orthogonal channel signals.
-        '''
+        """Processes the incident primary and orthogonal channel signals."""
         raise STKPluginMethodNotImplementedError('ProcessSignals was not implemented.')
 
     def Compute(self, computeRcsParams:"IAgStkRadarRcsComputeParams") -> None:
-        '''
-        RCS plugin compute.
-        '''
+        """RCS plugin compute."""
         raise STKPluginMethodNotImplementedError('Compute was not implemented.')
 
     def PostCompute(self) -> None:
-        '''
-        RCS plugin post-compute
-        '''
+        """RCS plugin post-compute"""
         raise STKPluginMethodNotImplementedError('PostCompute was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Free RCS plugin.
-        '''
+        """Free RCS plugin."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
     def IsDynamic(self) -> bool:
-        '''
-        Gets a flag indicating whether or not the radar cross section is dynamic.
-        '''
+        """Gets a flag indicating whether or not the radar cross section is dynamic."""
         raise STKPluginMethodNotImplementedError('IsDynamic was not implemented.')
 
 __all__.append('IAgStkRadarRcsPlugin')
@@ -2828,18 +2374,14 @@ __all__.append('IAgStkRadarRcsPlugin')
 
 
 class AgCRPolarizationCircular(IAgCRPolarization):
-    '''
-    The CoClass for the IAgCRPolarization interface.
-    '''
+    """The CoClass for the IAgCRPolarization interface."""
     def __init__(self, sourceObject=None):
         IAgCRPolarization.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCRPolarization._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -2854,9 +2396,7 @@ __all__.append('AgCRPolarizationCircular')
 
 
 class AgCRPolarizationLinear(IAgCRPolarizationLinear, IAgCRPolarization):
-    '''
-    The CoClass for the IAgCRPolarization and IAgCRPolarizationLinear interfaces.
-    '''
+    """The CoClass for the IAgCRPolarization and IAgCRPolarizationLinear interfaces."""
     def __init__(self, sourceObject=None):
         IAgCRPolarizationLinear.__init__(self, sourceObject)
         IAgCRPolarization.__init__(self, sourceObject)
@@ -2865,9 +2405,7 @@ class AgCRPolarizationLinear(IAgCRPolarizationLinear, IAgCRPolarization):
         IAgCRPolarizationLinear._private_init(self, pUnk)
         IAgCRPolarization._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -2883,9 +2421,7 @@ __all__.append('AgCRPolarizationLinear')
 
 
 class AgCRPolarizationElliptical(IAgCRPolarizationElliptical, IAgCRPolarization):
-    '''
-    The CoClass for the IAgCRPolarization and IAgCRPolarizationElliptical interfaces.
-    '''
+    """The CoClass for the IAgCRPolarization and IAgCRPolarizationElliptical interfaces."""
     def __init__(self, sourceObject=None):
         IAgCRPolarizationElliptical.__init__(self, sourceObject)
         IAgCRPolarization.__init__(self, sourceObject)
@@ -2894,9 +2430,7 @@ class AgCRPolarizationElliptical(IAgCRPolarizationElliptical, IAgCRPolarization)
         IAgCRPolarizationElliptical._private_init(self, pUnk)
         IAgCRPolarization._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -2912,18 +2446,14 @@ __all__.append('AgCRPolarizationElliptical')
 
 
 class AgStkRadarCBIntersectComputeParams(IAgStkRadarCBIntersectComputeParams):
-    '''
-    The CoClass for the IAgStkRadarCBIntersectComputeParams interface.
-    '''
+    """The CoClass for the IAgStkRadarCBIntersectComputeParams interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarCBIntersectComputeParams.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarCBIntersectComputeParams._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -2938,18 +2468,14 @@ __all__.append('AgStkRadarCBIntersectComputeParams')
 
 
 class AgStkRadarCBIntersectComputeResult(IAgStkRadarCBIntersectComputeResult):
-    '''
-    The CoClass for the IAgStkRadarCBIntersectComputeResult interface.
-    '''
+    """The CoClass for the IAgStkRadarCBIntersectComputeResult interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarCBIntersectComputeResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarCBIntersectComputeResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -2964,18 +2490,14 @@ __all__.append('AgStkRadarCBIntersectComputeResult')
 
 
 class AgStkRadarPosVelProvider(IAgStkRadarPosVelProvider):
-    '''
-    The CoClass for the IAgStkRadarPosVelProvider interface.
-    '''
+    """The CoClass for the IAgStkRadarPosVelProvider interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarPosVelProvider.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarPosVelProvider._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -2990,18 +2512,14 @@ __all__.append('AgStkRadarPosVelProvider')
 
 
 class AgStkRadarPositionProvider(IAgStkRadarPosVelProvider):
-    '''
-    The CoClass for the IAgStkRadarPosVelProvider interface.
-    '''
+    """The CoClass for the IAgStkRadarPosVelProvider interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarPosVelProvider.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarPosVelProvider._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3016,18 +2534,14 @@ __all__.append('AgStkRadarPositionProvider')
 
 
 class AgStkRadarLinkGeometry(IAgStkRadarLinkGeometry):
-    '''
-    The CoClass for the IAgStkRadarLinkGeometry interface.
-    '''
+    """The CoClass for the IAgStkRadarLinkGeometry interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarLinkGeometry.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarLinkGeometry._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3042,18 +2556,14 @@ __all__.append('AgStkRadarLinkGeometry')
 
 
 class AgStkRadarLink(IAgStkRadarLink):
-    '''
-    The CoClass for the IAgStkRadarLink interface.
-    '''
+    """The CoClass for the IAgStkRadarLink interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarLink.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarLink._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3068,9 +2578,7 @@ __all__.append('AgStkRadarLink')
 
 
 class AgStkRadarSignal(IAgCRSignal, IAgStkRadarSignal):
-    '''
-    The CoClass for the IAgCRSignal and IAgStkRadarSignal interfaces.
-    '''
+    """The CoClass for the IAgCRSignal and IAgStkRadarSignal interfaces."""
     def __init__(self, sourceObject=None):
         IAgCRSignal.__init__(self, sourceObject)
         IAgStkRadarSignal.__init__(self, sourceObject)
@@ -3079,9 +2587,7 @@ class AgStkRadarSignal(IAgCRSignal, IAgStkRadarSignal):
         IAgCRSignal._private_init(self, pUnk)
         IAgStkRadarSignal._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3097,18 +2603,14 @@ __all__.append('AgStkRadarSignal')
 
 
 class AgStkRadarClutterPatch(IAgStkRadarClutterPatch):
-    '''
-    The CoClass for the IAgStkRadarClutterPatch interface.
-    '''
+    """The CoClass for the IAgStkRadarClutterPatch interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarClutterPatch.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarClutterPatch._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3123,18 +2625,14 @@ __all__.append('AgStkRadarClutterPatch')
 
 
 class AgStkRadarClutterPatchCollection(IAgStkRadarClutterPatchCollection):
-    '''
-    The CoClass for the IAgStkRadarClutterPatchCollection interface.
-    '''
+    """The CoClass for the IAgStkRadarClutterPatchCollection interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarClutterPatchCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarClutterPatchCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3149,18 +2647,14 @@ __all__.append('AgStkRadarClutterPatchCollection')
 
 
 class AgStkRadarClutterGeometryPluginRegInfo(IAgStkRadarClutterGeometryPluginRegInfo):
-    '''
-    The CoClass for the IAgStkRadarClutterGeometryPluginRegInfo interface.
-    '''
+    """The CoClass for the IAgStkRadarClutterGeometryPluginRegInfo interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarClutterGeometryPluginRegInfo.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarClutterGeometryPluginRegInfo._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3175,18 +2669,14 @@ __all__.append('AgStkRadarClutterGeometryPluginRegInfo')
 
 
 class AgStkRadarClutterGeometryComputeParams(IAgStkRadarClutterGeometryComputeParams):
-    '''
-    The CoClass for the IAgStkRadarClutterGeometryComputeParams interface.
-    '''
+    """The CoClass for the IAgStkRadarClutterGeometryComputeParams interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarClutterGeometryComputeParams.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarClutterGeometryComputeParams._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3201,18 +2691,14 @@ __all__.append('AgStkRadarClutterGeometryComputeParams')
 
 
 class AgStkRadarClutterMapComputeParams(IAgStkRadarClutterMapComputeParams):
-    '''
-    The CoClass for the IAgStkRadarClutterMapComputeParams interface.
-    '''
+    """The CoClass for the IAgStkRadarClutterMapComputeParams interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarClutterMapComputeParams.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarClutterMapComputeParams._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3227,18 +2713,14 @@ __all__.append('AgStkRadarClutterMapComputeParams')
 
 
 class AgStkRadarRcsProcessSignalsParams(IAgStkRadarRcsProcessSignalsParams):
-    '''
-    The CoClass for the IAgStkRadarRcsProcessSignalsParams interface.
-    '''
+    """The CoClass for the IAgStkRadarRcsProcessSignalsParams interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarRcsProcessSignalsParams.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarRcsProcessSignalsParams._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3253,18 +2735,14 @@ __all__.append('AgStkRadarRcsProcessSignalsParams')
 
 
 class AgStkRadarRcsComputeParams(IAgStkRadarRcsComputeParams):
-    '''
-    The CoClass for the IAgStkRadarRcsComputeParams interface.
-    '''
+    """The CoClass for the IAgStkRadarRcsComputeParams interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarRcsComputeParams.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarRcsComputeParams._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3279,18 +2757,14 @@ __all__.append('AgStkRadarRcsComputeParams')
 
 
 class AgStkRadarFixedPRFProbabilityDetectionComputeParams(IAgStkRadarFixedPRFProbabilityDetectionComputeParams):
-    '''
-    The CoClass for the IAgStkRadarFixedPRFProbabilityDetectionComputeParams interface.
-    '''
+    """The CoClass for the IAgStkRadarFixedPRFProbabilityDetectionComputeParams interface."""
     def __init__(self, sourceObject=None):
         IAgStkRadarFixedPRFProbabilityDetectionComputeParams.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgStkRadarFixedPRFProbabilityDetectionComputeParams._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -3305,18 +2779,14 @@ __all__.append('AgStkRadarFixedPRFProbabilityDetectionComputeParams')
 
 
 class AgStkRadarSTCAttenComputeParams(IAgSTKRadarSTCAttenComputeParams):
-    '''
-    The CoClass for the IAgSTKRadarSTCAttenComputeParams interface.
-    '''
+    """The CoClass for the IAgSTKRadarSTCAttenComputeParams interface."""
     def __init__(self, sourceObject=None):
         IAgSTKRadarSTCAttenComputeParams.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgSTKRadarSTCAttenComputeParams._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
