@@ -35,9 +35,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class IAgSTKXInitialize(object):
-    '''
-    STK X Advanced Initialization Options.
-    '''
+    """STK X Advanced Initialization Options."""
     _uuid = '{EDC9E451-09B3-4D8B-9EC5-B75C6D95A52D}'
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -61,9 +59,7 @@ class IAgSTKXInitialize(object):
         self.__dict__['_InitializeData'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXInitialize, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
         self.__dict__['_InitializeDataEx'] = IAGFUNCTYPE(pUnk, IID_IAgSTKXInitialize, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgSTKXInitialize.__dict__ and type(IAgSTKXInitialize.__dict__[attrname]) == property:
@@ -76,23 +72,17 @@ class IAgSTKXInitialize(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgSTKXInitialize.')
     
     def InitializeActivationContext(self) -> None:
-        '''
-        Initialize the activation context to be used by STK Engine based on the current activation context.
-        '''
+        """Initialize the activation context to be used by STK Engine based on the current activation context."""
         agcls.evaluate_hresult(self.__dict__['_InitializeActivationContext']())
 
     def InitializeData(self, installHome:str, configDirectory:str) -> None:
-        '''
-        Copy the virtual registry to the Config directory and initialize it with the install home specified.
-        '''
+        """Copy the virtual registry to the Config directory and initialize it with the install home specified."""
         with agmarshall.BSTR_arg(installHome) as arg_installHome, \
              agmarshall.BSTR_arg(configDirectory) as arg_configDirectory:
             agcls.evaluate_hresult(self.__dict__['_InitializeData'](arg_installHome.COM_val, arg_configDirectory.COM_val))
 
     def InitializeDataEx(self, installHome:str, configDirectory:str, bDefaults:bool, bStyles:bool, bVGT:bool, bAMM:bool, bGator:bool, bOnlineData:bool, bOnlineSGP4:bool) -> None:
-        '''
-        Copy the virtual registry to the Config directory and initialize it with the install home specified, and config options.
-        '''
+        """Copy the virtual registry to the Config directory and initialize it with the install home specified, and config options."""
         with agmarshall.BSTR_arg(installHome) as arg_installHome, \
              agmarshall.BSTR_arg(configDirectory) as arg_configDirectory, \
              agmarshall.VARIANT_BOOL_arg(bDefaults) as arg_bDefaults, \
@@ -112,18 +102,14 @@ __all__.append('IAgSTKXInitialize')
 
 
 class AgSTKXInitialize(IAgSTKXInitialize):
-    '''
-    STK X Initialize object.
-    '''
+    """STK X Initialize object."""
     def __init__(self, sourceObject=None):
         IAgSTKXInitialize.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgSTKXInitialize._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

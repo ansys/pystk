@@ -35,9 +35,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class AgEWindowService(IntEnum):
-    '''
-    Well-known types of services.
-    '''
+    """Well-known types of services."""
     # A 2D window.
     eWindowService2DWindow = 1,
     # A 3D window.
@@ -47,9 +45,7 @@ agcls.AgTypeNameMap['AgEWindowService'] = AgEWindowService
 __all__.append('AgEWindowService')
 
 class AgEWindowState(IntEnum):
-    '''
-    Window states.
-    '''
+    """Window states."""
     # Window is maximized.
     eWindowStateMaximized = 1,
     # Window is minimized.
@@ -61,9 +57,7 @@ agcls.AgTypeNameMap['AgEWindowState'] = AgEWindowState
 __all__.append('AgEWindowState')
 
 class AgEArrangeStyle(IntEnum):
-    '''
-    Window layout styles.
-    '''
+    """Window layout styles."""
     # Child windows are cascaded within the main window.
     eArrangeStyleCascade = 1,
     # Child windows are tiled horizontally within the main window.
@@ -75,9 +69,7 @@ agcls.AgTypeNameMap['AgEArrangeStyle'] = AgEArrangeStyle
 __all__.append('AgEArrangeStyle')
 
 class AgEDockStyle(IntEnum):
-    '''
-    Window docking styles.
-    '''
+    """Window docking styles."""
     # Child window is integrated into the main window.
     eDockStyleIntegrated = 1,
     # Child window is docked to the left side of the within the main window.
@@ -95,9 +87,7 @@ agcls.AgTypeNameMap['AgEDockStyle'] = AgEDockStyle
 __all__.append('AgEDockStyle')
 
 class AgEFloatState(IntEnum):
-    '''
-    Floating state.
-    '''
+    """Floating state."""
     # The UI element is floated.
     eFloatStateFloated = 1,
     # The UI element is docked.
@@ -108,9 +98,7 @@ __all__.append('AgEFloatState')
 
 
 class IAgUiToolbar(object):
-    '''
-    Provides methods and properties to control a toolbar.
-    '''
+    """Provides methods and properties to control a toolbar."""
     _uuid = '{69C72C16-36F2-42d4-A183-6879BB5B8070}'
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -140,9 +128,7 @@ class IAgUiToolbar(object):
         self.__dict__['_GetFloatState'] = IAGFUNCTYPE(pUnk, IID_IAgUiToolbar, vtable_offset_local+5, POINTER(agcom.LONG))
         self.__dict__['_SetFloatState'] = IAGFUNCTYPE(pUnk, IID_IAgUiToolbar, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiToolbar.__dict__ and type(IAgUiToolbar.__dict__[attrname]) == property:
@@ -156,27 +142,21 @@ class IAgUiToolbar(object):
     
     @property
     def ID(self) -> int:
-        '''
-        The identity.
-        '''
+        """The identity."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetID'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Caption(self) -> str:
-        '''
-        The caption.
-        '''
+        """The caption."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCaption'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Visible(self) -> bool:
-        '''
-        The visibility.
-        '''
+        """The visibility."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetVisible'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -188,9 +168,7 @@ class IAgUiToolbar(object):
 
     @property
     def FloatState(self) -> "AgEFloatState":
-        '''
-        The float state.
-        '''
+        """The float state."""
         with agmarshall.AgEnum_arg(AgEFloatState) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetFloatState'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -206,9 +184,7 @@ agcls.AgTypeNameMap['IAgUiToolbar'] = IAgUiToolbar
 __all__.append('IAgUiToolbar')
 
 class IAgUiToolbarCollection(object):
-    '''
-    Provides methods and properties to obtain a window's toolbars.
-    '''
+    """Provides methods and properties to obtain a window's toolbars."""
     _uuid = '{62AA135B-4F2F-45de-94A6-31BB0984AD28}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -239,9 +215,7 @@ class IAgUiToolbarCollection(object):
         self.__dict__['_GetItemByIndex'] = IAGFUNCTYPE(pUnk, IID_IAgUiToolbarCollection, vtable_offset_local+5, agcom.INT, POINTER(agcom.PVOID))
         self.__dict__['_GetItemByName'] = IAGFUNCTYPE(pUnk, IID_IAgUiToolbarCollection, vtable_offset_local+6, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiToolbarCollection.__dict__ and type(IAgUiToolbarCollection.__dict__[attrname]) == property:
@@ -265,9 +239,7 @@ class IAgUiToolbarCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     def Item(self, indexOrCaption:typing.Any) -> "IAgUiToolbar":
-        '''
-        Retrieves a toolbar object.
-        '''
+        """Retrieves a toolbar object."""
         with agmarshall.VARIANT_arg(indexOrCaption) as arg_indexOrCaption, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_indexOrCaption.COM_val, byref(arg_pVal.COM_val)))
@@ -275,44 +247,34 @@ class IAgUiToolbarCollection(object):
 
     @property
     def Count(self) -> int:
-        '''
-        Returns a total number of toolbars in the collection.
-        '''
+        """Returns a total number of toolbars in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Enumerates the toolbars in the collection.
-        '''
+        """Enumerates the toolbars in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     def GetToolbarByID(self, id:int) -> "IAgUiToolbar":
-        '''
-        Returns a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
-        '''
+        """Returns a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object."""
         with agmarshall.LONG_arg(id) as arg_id, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetToolbarByID'](arg_id.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgUiToolbar":
-        '''
-        Retrieves a toolbar object based on the index in the collection.
-        '''
+        """Retrieves a toolbar object based on the index in the collection."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_GetItemByIndex'](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgUiToolbar":
-        '''
-        Retrieves a toolbar object based on the name of the Toolbar in the collection.
-        '''
+        """Retrieves a toolbar object based on the name of the Toolbar in the collection."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_GetItemByName'](arg_name.COM_val, byref(arg_ppVal.COM_val)))
@@ -327,9 +289,7 @@ agcls.AgTypeNameMap['IAgUiToolbarCollection'] = IAgUiToolbarCollection
 __all__.append('IAgUiToolbarCollection')
 
 class IAgUiWindow(object):
-    '''
-    Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
-    '''
+    """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
     _uuid = '{05F59555-F74C-48b2-AAB4-1E6C58D7AEB7}'
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -395,9 +355,7 @@ class IAgUiWindow(object):
         self.__dict__['_GetServiceByName'] = IAGFUNCTYPE(pUnk, IID_IAgUiWindow, vtable_offset_local+23, agcom.BSTR, POINTER(agcom.PVOID))
         self.__dict__['_GetServiceByType'] = IAGFUNCTYPE(pUnk, IID_IAgUiWindow, vtable_offset_local+24, agcom.LONG, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiWindow.__dict__ and type(IAgUiWindow.__dict__[attrname]) == property:
@@ -411,32 +369,24 @@ class IAgUiWindow(object):
     
     @property
     def Caption(self) -> str:
-        '''
-        The window caption. Can only be set within UI plugins for the non unique windows they own.
-        '''
+        """The window caption. Can only be set within UI plugins for the non unique windows they own."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCaption'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @Caption.setter
     def Caption(self, caption:str) -> None:
-        '''
-        The window caption. Can only be set within UI plugins for the non unique windows they own.
-        '''
+        """The window caption. Can only be set within UI plugins for the non unique windows they own."""
         with agmarshall.BSTR_arg(caption) as arg_caption:
             agcls.evaluate_hresult(self.__dict__['_SetCaption'](arg_caption.COM_val))
 
     def Activate(self) -> None:
-        '''
-        Activates the window.
-        '''
+        """Activates the window."""
         agcls.evaluate_hresult(self.__dict__['_Activate']())
 
     @property
     def WindowState(self) -> "AgEWindowState":
-        '''
-        The window state.
-        '''
+        """The window state."""
         with agmarshall.AgEnum_arg(AgEWindowState) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetWindowState'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -447,16 +397,12 @@ class IAgUiWindow(object):
             agcls.evaluate_hresult(self.__dict__['_SetWindowState'](arg_newVal.COM_val))
 
     def Close(self) -> None:
-        '''
-        Closes the window.
-        '''
+        """Closes the window."""
         agcls.evaluate_hresult(self.__dict__['_Close']())
 
     @property
     def Height(self) -> int:
-        '''
-        The window height.
-        '''
+        """The window height."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetHeight'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -468,9 +414,7 @@ class IAgUiWindow(object):
 
     @property
     def Width(self) -> int:
-        '''
-        The window width.
-        '''
+        """The window width."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetWidth'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -482,9 +426,7 @@ class IAgUiWindow(object):
 
     @property
     def Left(self) -> int:
-        '''
-        The window horizontal position.
-        '''
+        """The window horizontal position."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLeft'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -496,9 +438,7 @@ class IAgUiWindow(object):
 
     @property
     def Top(self) -> int:
-        '''
-        The window vertical position
-        '''
+        """The window vertical position"""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetTop'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -510,9 +450,7 @@ class IAgUiWindow(object):
 
     @property
     def DockStyle(self) -> "AgEDockStyle":
-        '''
-        The window docking style.
-        '''
+        """The window docking style."""
         with agmarshall.AgEnum_arg(AgEDockStyle) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetDockStyle'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -524,9 +462,7 @@ class IAgUiWindow(object):
 
     @property
     def NoWBClose(self) -> bool:
-        '''
-        Whether to close the window when the application workbook is loaded/closed.
-        '''
+        """Whether to close the window when the application workbook is loaded/closed."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetNoWBClose'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -538,9 +474,7 @@ class IAgUiWindow(object):
 
     @property
     def UnPinned(self) -> bool:
-        '''
-        The window's pinned state.
-        '''
+        """The window's pinned state."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetUnPinned'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -552,35 +486,27 @@ class IAgUiWindow(object):
 
     @property
     def SupportsPinning(self) -> bool:
-        '''
-        Returns whether the window supports pinning.
-        '''
+        """Returns whether the window supports pinning."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetSupportsPinning'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Toolbars(self) -> "IAgUiToolbarCollection":
-        '''
-        Returns the window's toolbar collection.
-        '''
+        """Returns the window's toolbar collection."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_GetToolbars'](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     def GetServiceByName(self, name:str) -> typing.Any:
-        '''
-        Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name.
-        '''
+        """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetServiceByName'](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def GetServiceByType(self, serviceType:"AgEWindowService") -> typing.Any:
-        '''
-        Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type.
-        '''
+        """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
         with agmarshall.AgEnum_arg(AgEWindowService, serviceType) as arg_serviceType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetServiceByType'](arg_serviceType.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -592,9 +518,7 @@ agcls.AgTypeNameMap['IAgUiWindow'] = IAgUiWindow
 __all__.append('IAgUiWindow')
 
 class IAgUiWindowsCollection(object):
-    '''
-    Provides methods and properties to manage the application's windows.
-    '''
+    """Provides methods and properties to manage the application's windows."""
     _uuid = '{4DD6FB87-C329-41a5-A359-8A9C03569635}'
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -627,9 +551,7 @@ class IAgUiWindowsCollection(object):
         self.__dict__['_GetItemByIndex'] = IAGFUNCTYPE(pUnk, IID_IAgUiWindowsCollection, vtable_offset_local+6, agcom.INT, POINTER(agcom.PVOID))
         self.__dict__['_GetItemByName'] = IAGFUNCTYPE(pUnk, IID_IAgUiWindowsCollection, vtable_offset_local+7, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiWindowsCollection.__dict__ and type(IAgUiWindowsCollection.__dict__[attrname]) == property:
@@ -653,9 +575,7 @@ class IAgUiWindowsCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     def Item(self, indexOrCaption:typing.Any) -> "IAgUiWindow":
-        '''
-        Retrieves a window object.
-        '''
+        """Retrieves a window object."""
         with agmarshall.VARIANT_arg(indexOrCaption) as arg_indexOrCaption, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_indexOrCaption.COM_val, byref(arg_pVal.COM_val)))
@@ -663,24 +583,18 @@ class IAgUiWindowsCollection(object):
 
     @property
     def Count(self) -> int:
-        '''
-        Returns a total number of window objects in the collection.
-        '''
+        """Returns a total number of window objects in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def Arrange(self, arrangeStyle:"AgEArrangeStyle") -> None:
-        '''
-        Arranges the application windows using the specified style.
-        '''
+        """Arranges the application windows using the specified style."""
         with agmarshall.AgEnum_arg(AgEArrangeStyle, arrangeStyle) as arg_arrangeStyle:
             agcls.evaluate_hresult(self.__dict__['_Arrange'](arg_arrangeStyle.COM_val))
 
     def Add(self, pluginID:str, initData:typing.Any) -> "IAgUiWindow":
-        '''
-        Creates a new window. The bstrPluginID is a COM ProgID associated with an STK plugin.
-        '''
+        """Creates a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
         with agmarshall.BSTR_arg(pluginID) as arg_pluginID, \
              agmarshall.VARIANT_arg(initData) as arg_initData, \
              agmarshall.AgInterface_out_arg() as arg_pNewWin:
@@ -689,26 +603,20 @@ class IAgUiWindowsCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Enumerates the windows in the collection.
-        '''
+        """Enumerates the windows in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgUiWindow":
-        '''
-        Retrieves a window object by index in collection.
-        '''
+        """Retrieves a window object by index in collection."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_GetItemByIndex'](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgUiWindow":
-        '''
-        Retrieves a window object by name of window object.
-        '''
+        """Retrieves a window object by name of window object."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_GetItemByName'](arg_name.COM_val, byref(arg_ppVal.COM_val)))
@@ -723,9 +631,7 @@ agcls.AgTypeNameMap['IAgUiWindowsCollection'] = IAgUiWindowsCollection
 __all__.append('IAgUiWindowsCollection')
 
 class IAgUiWindowMapObject(object):
-    '''
-    Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties.
-    '''
+    """Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties."""
     _uuid = '{A94C0929-7448-4e9e-BEB8-8F7A8F252D0D}'
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -745,9 +651,7 @@ class IAgUiWindowMapObject(object):
         vtable_offset_local = IAgUiWindowMapObject._vtable_offset - 1
         self.__dict__['_GetMapID'] = IAGFUNCTYPE(pUnk, IID_IAgUiWindowMapObject, vtable_offset_local+1, POINTER(agcom.LONG))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiWindowMapObject.__dict__ and type(IAgUiWindowMapObject.__dict__[attrname]) == property:
@@ -761,9 +665,7 @@ class IAgUiWindowMapObject(object):
     
     @property
     def MapID(self) -> int:
-        '''
-        A unique identifier associated with the window that can be used with Connect to control the 2D map.
-        '''
+        """A unique identifier associated with the window that can be used with Connect to control the 2D map."""
         with agmarshall.LONG_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetMapID'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -774,9 +676,7 @@ agcls.AgTypeNameMap['IAgUiWindowMapObject'] = IAgUiWindowMapObject
 __all__.append('IAgUiWindowMapObject')
 
 class IAgUiWindowGlobeObject(object):
-    '''
-    Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties.
-    '''
+    """Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties."""
     _uuid = '{B958EDBD-0569-4596-A253-BD90328844D0}'
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -796,9 +696,7 @@ class IAgUiWindowGlobeObject(object):
         vtable_offset_local = IAgUiWindowGlobeObject._vtable_offset - 1
         self.__dict__['_GetSceneID'] = IAGFUNCTYPE(pUnk, IID_IAgUiWindowGlobeObject, vtable_offset_local+1, POINTER(agcom.LONG))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUiWindowGlobeObject.__dict__ and type(IAgUiWindowGlobeObject.__dict__[attrname]) == property:
@@ -812,9 +710,7 @@ class IAgUiWindowGlobeObject(object):
     
     @property
     def SceneID(self) -> int:
-        '''
-        A unique identifier associated with the window that can be used with Connect to control the 3D globe.
-        '''
+        """A unique identifier associated with the window that can be used with Connect to control the 3D globe."""
         with agmarshall.LONG_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetSceneID'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -827,18 +723,14 @@ __all__.append('IAgUiWindowGlobeObject')
 
 
 class AgUiWindowsCollection(IAgUiWindowsCollection):
-    '''
-    Provides methods and properties to manage the windows.
-    '''
+    """Provides methods and properties to manage the windows."""
     def __init__(self, sourceObject=None):
         IAgUiWindowsCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiWindowsCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -853,18 +745,14 @@ __all__.append('AgUiWindowsCollection')
 
 
 class AgUiWindow(IAgUiWindow):
-    '''
-    Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
-    '''
+    """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
     def __init__(self, sourceObject=None):
         IAgUiWindow.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiWindow._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -879,18 +767,14 @@ __all__.append('AgUiWindow')
 
 
 class AgUiToolbar(IAgUiToolbar):
-    '''
-    Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar.
-    '''
+    """Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar."""
     def __init__(self, sourceObject=None):
         IAgUiToolbar.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiToolbar._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -905,18 +789,14 @@ __all__.append('AgUiToolbar')
 
 
 class AgUiToolbarCollection(IAgUiToolbarCollection):
-    '''
-    Provides methods and properties to manage the toolbars.
-    '''
+    """Provides methods and properties to manage the toolbars."""
     def __init__(self, sourceObject=None):
         IAgUiToolbarCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiToolbarCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -931,18 +811,14 @@ __all__.append('AgUiToolbarCollection')
 
 
 class AgUiWindowMapObject(IAgUiWindowMapObject):
-    '''
-    Provides methods and properties to manipulate the 2D map.
-    '''
+    """Provides methods and properties to manipulate the 2D map."""
     def __init__(self, sourceObject=None):
         IAgUiWindowMapObject.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiWindowMapObject._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -957,18 +833,14 @@ __all__.append('AgUiWindowMapObject')
 
 
 class AgUiWindowGlobeObject(IAgUiWindowGlobeObject):
-    '''
-    Provides methods and properties to manipulate the 3D globe.
-    '''
+    """Provides methods and properties to manipulate the 3D globe."""
     def __init__(self, sourceObject=None):
         IAgUiWindowGlobeObject.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUiWindowGlobeObject._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

@@ -33,9 +33,7 @@ def required_package(package_name: str):
     def decorator(function):
         @wraps(function)
         def wrapper(*args, **kwargs):
-            """
-            Tries to import the required package and calls the decorated function.
-            """
+            """Tries to import the required package and calls the decorated function."""
             try:
                 importlib.import_module(package_name)
                 return function(*args, **kwargs)
@@ -121,9 +119,7 @@ def to_pandas_dataframe(results: 'IAgDrDataSetCollection', index_element_name: s
 
 
 def _get_unique_element_names(results: 'IAgDrDataSetCollection') -> Set:
-    """
-    Returns a unique set of element names as a set.
-    """
+    """Returns a unique set of element names as a set."""
 
     unique_element_names = set(results.ElementNames)
 

@@ -1,17 +1,15 @@
 # Copyright 2020-2020, Analytical Graphics, Inc. 
-'''
+"""
 This module is used to communicate color information between Python and STK.
 Color is the color object type and Colors is the factory for creating Color objects.
-'''
+"""
 
 import typing
 
 from agi.stk12.utilities.exceptions import STKColorError
 
 class Color(object):
-    '''
-    An opaque color representation that can be used with the STK Object Model.
-    '''
+    """An opaque color representation that can be used with the STK Object Model."""
     def __init__(self):
         self._r = 0
         self._g = 0
@@ -40,9 +38,7 @@ class Color(object):
         
     @classmethod
     def FromRGB(cls, r:int, g:int, b:int) -> "Color":
-        '''
-        Create a new Color from R, G, B values.
-        '''
+        """Create a new Color from R, G, B values."""
         c = Color()
         c._r = Color._validate_rgb(r)
         c._g = Color._validate_rgb(g)
@@ -50,15 +46,11 @@ class Color(object):
         return c
         
     def GetRGB(self) -> typing.Tuple[int, int, int]:
-        '''
-        Return the R, G, B representation of this color.
-        '''
+        """Return the R, G, B representation of this color."""
         return (self._r, self._g, self._b)
             
 class ColorRGBA(object):
-    '''
-    A variably translucent color representation that can be used with certain methods in the STK Object Model.
-    '''
+    """A variably translucent color representation that can be used with certain methods in the STK Object Model."""
     def __init__(self, c:Color, alpha=255):
         self._color = c
         self._alpha = alpha
@@ -71,9 +63,7 @@ class ColorRGBA(object):
 
     @property
     def alpha(self) -> float:
-        '''
-        Alpha ranges between 0 (fully translucent) and 255 (fully opaque).
-        '''
+        """Alpha ranges between 0 (fully translucent) and 255 (fully opaque)."""
         return self._alpha
         
     @alpha.setter
@@ -85,9 +75,7 @@ class ColorRGBA(object):
             
     @property
     def color(self) -> Color:
-        '''
-        The Color value that contains R, G, B values
-        '''
+        """The Color value that contains R, G, B values"""
         return self._color
 
 class _ColorsImpl(object):
@@ -96,22 +84,18 @@ class _ColorsImpl(object):
         return Color.FromRGB(r, g, b)
     
 class Colors(object):
-    '''
+    """
     A factory for creating Color objects that may be used with the STK object model.
     Contains factory methods and named colors.
-    '''
+    """
     @staticmethod
     def FromRGB(r:int, g:int, b:int) -> Color:
-        '''
-        Create a new Color from R, G, B values in the range [0, 255].
-        '''
+        """Create a new Color from R, G, B values in the range [0, 255]."""
         return _ColorsImpl.FromRGB(r, g, b)
         
     @staticmethod
     def FromRGBA(r:int, g:int, b:int, a:int) -> ColorRGBA:
-        '''
-        Create a new Color from R, G, B, A values in the range [0, 255].
-        '''
+        """Create a new Color from R, G, B, A values in the range [0, 255]."""
         c = _ColorsImpl.FromRGB(r, g, b)
         return ColorRGBA(c, a)
         

@@ -37,9 +37,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class AgECrdnEulerSequence(IntEnum):
-    '''
-    Enumeration AgECrdnEulerSequence.
-    '''
+    """Enumeration AgECrdnEulerSequence."""
     # Sequence defined by rotation about x-axis, then about rotated y-axis, then about rotated x-axis.
     eCrdnEulerSequence121 = 121,
     # Sequence defined by rotation about x-axis, then about rotated y-axis, then about rotated z-axis.
@@ -70,9 +68,7 @@ __all__.append('AgECrdnEulerSequence')
 
 
 class IAgCrdnConfiguredVector(object):
-    '''
-    Crdn Vector object interface which computes its components.
-    '''
+    """Crdn Vector object interface which computes its components."""
     _uuid = '{2ABB252C-9FFA-4f2b-BF41-4CC3A4E4DF84}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -102,9 +98,7 @@ class IAgCrdnConfiguredVector(object):
         self.__dict__['_CurrentValue'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredVector, vtable_offset_local+5, agcom.PVOID, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_CurrentValue_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredVector, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredVector.__dict__ and type(IAgCrdnConfiguredVector.__dict__[attrname]) == property:
@@ -118,26 +112,20 @@ class IAgCrdnConfiguredVector(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any.
-        '''
+        """Text explaining configuration errors, if any."""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the Vector (in internal units) at the given time returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Computes the Vector (in internal units) at the given time returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -146,9 +134,7 @@ class IAgCrdnConfiguredVector(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the Vector (in internal units) at the interface's current time, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Computes the Vector (in internal units) at the interface's current time, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -160,9 +146,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredVector'] = IAgCrdnConfiguredVector
 __all__.append('IAgCrdnConfiguredVector')
 
 class IAgCrdnConfiguredVectorWithRate(object):
-    '''
-    Crdn Vector object interface which computes its components and rates.
-    '''
+    """Crdn Vector object interface which computes its components and rates."""
     _uuid = '{3F126133-81A4-4126-95B5-3F832EB3D2A8}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -192,9 +176,7 @@ class IAgCrdnConfiguredVectorWithRate(object):
         self.__dict__['_CurrentValue'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredVectorWithRate, vtable_offset_local+5, agcom.PVOID, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_CurrentValue_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredVectorWithRate, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredVectorWithRate.__dict__ and type(IAgCrdnConfiguredVectorWithRate.__dict__[attrname]) == property:
@@ -208,26 +190,20 @@ class IAgCrdnConfiguredVectorWithRate(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the Vector and its rate (in internal units) at the given time returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Computes the Vector and its rate (in internal units) at the given time returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -236,9 +212,7 @@ class IAgCrdnConfiguredVectorWithRate(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the Vector and its rate (in internal units) at the interface's current time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Computes the Vector and its rate (in internal units) at the interface's current time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -250,9 +224,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredVectorWithRate'] = IAgCrdnConfiguredVector
 __all__.append('IAgCrdnConfiguredVectorWithRate')
 
 class IAgCrdnConfiguredAxes(object):
-    '''
-    Crdn Axes object interface which computes its quaternion.
-    '''
+    """Crdn Axes object interface which computes its quaternion."""
     _uuid = '{05D845F4-4C85-4e09-B03D-791FF9F130EE}'
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -290,9 +262,7 @@ class IAgCrdnConfiguredAxes(object):
         self.__dict__['_TransformComponentsAtEpoch'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredAxes, vtable_offset_local+9, agcom.LONG, agcom.LONG, agcom.DOUBLE, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_TransformComponentsAtEpoch_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredAxes, vtable_offset_local+10, agcom.LONG, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredAxes.__dict__ and type(IAgCrdnConfiguredAxes.__dict__[attrname]) == property:
@@ -306,26 +276,20 @@ class IAgCrdnConfiguredAxes(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the quaternion representing the Axes at the given time returned as an array representing q1, q2, q3, q4. Useful for scripting clients.
-        '''
+        """Computes the quaternion representing the Axes at the given time returned as an array representing q1, q2, q3, q4. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -334,18 +298,14 @@ class IAgCrdnConfiguredAxes(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the quaternion representing the Axes at the interface's current time, returned as an array representing q1, q2, q3, q4. Useful for scripting clients.
-        '''
+        """Computes the quaternion representing the Axes at the interface's current time, returned as an array representing q1, q2, q3, q4. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def TransformComponents_Array(self, dispInterface:"IDispatch", x:float, y:float, z:float) -> list:
-        '''
-        Transforms vector components given wrt Axes into those wrt RefAxes at the interface's current time, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms vector components given wrt Axes into those wrt RefAxes at the interface's current time, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -355,9 +315,7 @@ class IAgCrdnConfiguredAxes(object):
             return arg_pArray.python_val
 
     def TransformComponentsAtEpoch_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float, x:float, y:float, z:float) -> list:
-        '''
-        Transforms vector components given wrt Axes into those wrt RefAxes at the given time, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms vector components given wrt Axes into those wrt RefAxes at the given time, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -374,9 +332,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredAxes'] = IAgCrdnConfiguredAxes
 __all__.append('IAgCrdnConfiguredAxes')
 
 class IAgCrdnConfiguredAxesWithRate(object):
-    '''
-    Crdn Axes object interface which computes its quaternion and angular velocity.
-    '''
+    """Crdn Axes object interface which computes its quaternion and angular velocity."""
     _uuid = '{5B2F635E-140B-435c-8B39-CF0BE6D11C79}'
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -414,9 +370,7 @@ class IAgCrdnConfiguredAxesWithRate(object):
         self.__dict__['_TransformComponentsAtEpoch'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredAxesWithRate, vtable_offset_local+9, agcom.LONG, agcom.LONG, agcom.DOUBLE, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_TransformComponentsAtEpoch_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredAxesWithRate, vtable_offset_local+10, agcom.LONG, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredAxesWithRate.__dict__ and type(IAgCrdnConfiguredAxesWithRate.__dict__[attrname]) == property:
@@ -430,26 +384,20 @@ class IAgCrdnConfiguredAxesWithRate(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the quaternion representing the Axes and its angular rate in reference components at the given time returned as an array representing q1, q2, q3, q4, wx, wy, wz. Useful for scripting clients.
-        '''
+        """Computes the quaternion representing the Axes and its angular rate in reference components at the given time returned as an array representing q1, q2, q3, q4, wx, wy, wz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -458,18 +406,14 @@ class IAgCrdnConfiguredAxesWithRate(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the quaternion representing the Axes and its angular rate in reference components at the interface's current time, returned as an array representing q1, q2, q3, q4, wx, wy, wz. Useful for scripting clients.
-        '''
+        """Computes the quaternion representing the Axes and its angular rate in reference components at the interface's current time, returned as an array representing q1, q2, q3, q4, wx, wy, wz. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def TransformComponents_Array(self, dispInterface:"IDispatch", x:float, y:float, z:float, vx:float, vy:float, vz:float) -> list:
-        '''
-        Transforms vector components given wrt Axes into those wrt RefAxes at the interface's current time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Transforms vector components given wrt Axes into those wrt RefAxes at the interface's current time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -482,9 +426,7 @@ class IAgCrdnConfiguredAxesWithRate(object):
             return arg_pArray.python_val
 
     def TransformComponentsAtEpoch_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float, x:float, y:float, z:float, vx:float, vy:float, vz:float) -> list:
-        '''
-        Transforms vector components given wrt Axes into those wrt RefAxes at the given time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Transforms vector components given wrt Axes into those wrt RefAxes at the given time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -504,9 +446,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredAxesWithRate'] = IAgCrdnConfiguredAxesWith
 __all__.append('IAgCrdnConfiguredAxesWithRate')
 
 class IAgCrdnConfiguredAngle(object):
-    '''
-    Crdn Angle object interface.
-    '''
+    """Crdn Angle object interface."""
     _uuid = '{1E5501EF-C66B-43ed-BD34-BFE573A36D3A}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -536,9 +476,7 @@ class IAgCrdnConfiguredAngle(object):
         self.__dict__['_CurrentValue'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredAngle, vtable_offset_local+5, agcom.PVOID, POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_CurrentValue_RetVal'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredAngle, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.DOUBLE))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredAngle.__dict__ and type(IAgCrdnConfiguredAngle.__dict__[attrname]) == property:
@@ -552,26 +490,20 @@ class IAgCrdnConfiguredAngle(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_RetVal(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> float:
-        '''
-        Computes the Angle (rad) at the given time
-        '''
+        """Computes the Angle (rad) at the given time"""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -580,9 +512,7 @@ class IAgCrdnConfiguredAngle(object):
             return arg_pAngle.python_val
 
     def CurrentValue_RetVal(self, dispInterface:"IDispatch") -> float:
-        '''
-        Computes the Angle (rad) at the interface's current time
-        '''
+        """Computes the Angle (rad) at the interface's current time"""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.DOUBLE_arg() as arg_pAngle:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_RetVal'](arg_dispInterface.COM_val, byref(arg_pAngle.COM_val)))
@@ -594,9 +524,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredAngle'] = IAgCrdnConfiguredAngle
 __all__.append('IAgCrdnConfiguredAngle')
 
 class IAgCrdnConfiguredAngleWithRate(object):
-    '''
-    Crdn Angle object interface.
-    '''
+    """Crdn Angle object interface."""
     _uuid = '{933C8F8C-9D24-4b77-9F67-4DB1AB2725EA}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -626,9 +554,7 @@ class IAgCrdnConfiguredAngleWithRate(object):
         self.__dict__['_CurrentValue'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredAngleWithRate, vtable_offset_local+5, agcom.PVOID, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_CurrentValue_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredAngleWithRate, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredAngleWithRate.__dict__ and type(IAgCrdnConfiguredAngleWithRate.__dict__[attrname]) == property:
@@ -642,26 +568,20 @@ class IAgCrdnConfiguredAngleWithRate(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the Angle and its rate at the given time returned as an array representing angle, angeRate. Useful for scripting clients.
-        '''
+        """Computes the Angle and its rate at the given time returned as an array representing angle, angeRate. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -670,9 +590,7 @@ class IAgCrdnConfiguredAngleWithRate(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the Angle (rad) and its rate (rad/sec) at the interface's current time.
-        '''
+        """Computes the Angle (rad) and its rate (rad/sec) at the interface's current time."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -684,9 +602,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredAngleWithRate'] = IAgCrdnConfiguredAngleWi
 __all__.append('IAgCrdnConfiguredAngleWithRate')
 
 class IAgCrdnConfiguredPoint(object):
-    '''
-    Crdn Point object interface which computes its components.
-    '''
+    """Crdn Point object interface which computes its components."""
     _uuid = '{186C9B1E-C3B1-4222-A05E-9177AB68FF69}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -716,9 +632,7 @@ class IAgCrdnConfiguredPoint(object):
         self.__dict__['_CurrentValue'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredPoint, vtable_offset_local+5, agcom.PVOID, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_CurrentValue_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredPoint, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredPoint.__dict__ and type(IAgCrdnConfiguredPoint.__dict__[attrname]) == property:
@@ -732,26 +646,20 @@ class IAgCrdnConfiguredPoint(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the Point (in internal units) at the given time returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Computes the Point (in internal units) at the given time returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -760,9 +668,7 @@ class IAgCrdnConfiguredPoint(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the Point (in internal units) at the interface's current time, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Computes the Point (in internal units) at the interface's current time, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -774,9 +680,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredPoint'] = IAgCrdnConfiguredPoint
 __all__.append('IAgCrdnConfiguredPoint')
 
 class IAgCrdnConfiguredPointWithRate(object):
-    '''
-    Crdn Point object interface which computes its components and rates.
-    '''
+    """Crdn Point object interface which computes its components and rates."""
     _uuid = '{0E587016-A94B-4919-BE0E-AFFDB53D4833}'
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -806,9 +710,7 @@ class IAgCrdnConfiguredPointWithRate(object):
         self.__dict__['_CurrentValue'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredPointWithRate, vtable_offset_local+5, agcom.PVOID, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_CurrentValue_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredPointWithRate, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredPointWithRate.__dict__ and type(IAgCrdnConfiguredPointWithRate.__dict__[attrname]) == property:
@@ -822,26 +724,20 @@ class IAgCrdnConfiguredPointWithRate(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the Point and its rate (in internal units) at the given time returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Computes the Point and its rate (in internal units) at the given time returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -850,9 +746,7 @@ class IAgCrdnConfiguredPointWithRate(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the Point and its rate (in internal units) at the interface's current time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Computes the Point and its rate (in internal units) at the interface's current time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -864,9 +758,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredPointWithRate'] = IAgCrdnConfiguredPointWi
 __all__.append('IAgCrdnConfiguredPointWithRate')
 
 class IAgCrdnConfiguredSystem(object):
-    '''
-    Crdn System object interface which computes its components.
-    '''
+    """Crdn System object interface which computes its components."""
     _uuid = '{58B4303A-78BD-4715-A91F-ED28DBA1F32C}'
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -904,9 +796,7 @@ class IAgCrdnConfiguredSystem(object):
         self.__dict__['_TransformComponentsAtEpoch'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredSystem, vtable_offset_local+9, agcom.LONG, agcom.LONG, agcom.DOUBLE, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_TransformComponentsAtEpoch_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredSystem, vtable_offset_local+10, agcom.LONG, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredSystem.__dict__ and type(IAgCrdnConfiguredSystem.__dict__[attrname]) == property:
@@ -920,26 +810,20 @@ class IAgCrdnConfiguredSystem(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the System position (in internal units) and quaternion at the given time returned as an array representing x, y, z, q1, q2, q3, q4. Useful for scripting clients.
-        '''
+        """Computes the System position (in internal units) and quaternion at the given time returned as an array representing x, y, z, q1, q2, q3, q4. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -948,18 +832,14 @@ class IAgCrdnConfiguredSystem(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the System position (in internal units) and quaternion at the interface's current time, returned as an array representing x, y, z, q1, q2, q3, q4. Useful for scripting clients.
-        '''
+        """Computes the System position (in internal units) and quaternion at the interface's current time, returned as an array representing x, y, z, q1, q2, q3, q4. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def TransformComponents_Array(self, dispInterface:"IDispatch", x:float, y:float, z:float) -> list:
-        '''
-        Transforms vector components given wrt System into those wrt RefSystem at the interface's current time, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms vector components given wrt System into those wrt RefSystem at the interface's current time, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -969,9 +849,7 @@ class IAgCrdnConfiguredSystem(object):
             return arg_pArray.python_val
 
     def TransformComponentsAtEpoch_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float, x:float, y:float, z:float) -> list:
-        '''
-        Transforms vector components given wrt System into those wrt RefSystem at the given time, returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms vector components given wrt System into those wrt RefSystem at the given time, returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -988,9 +866,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredSystem'] = IAgCrdnConfiguredSystem
 __all__.append('IAgCrdnConfiguredSystem')
 
 class IAgCrdnConfiguredSystemWithRate(object):
-    '''
-    Crdn System object interface which computes its components and rates.
-    '''
+    """Crdn System object interface which computes its components and rates."""
     _uuid = '{01D0AEC2-16CD-4bfd-B964-B420F66FBC35}'
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1028,9 +904,7 @@ class IAgCrdnConfiguredSystemWithRate(object):
         self.__dict__['_TransformComponentsAtEpoch'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredSystemWithRate, vtable_offset_local+9, agcom.LONG, agcom.LONG, agcom.DOUBLE, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT_BOOL))
         self.__dict__['_TransformComponentsAtEpoch_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredSystemWithRate, vtable_offset_local+10, agcom.LONG, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredSystemWithRate.__dict__ and type(IAgCrdnConfiguredSystemWithRate.__dict__[attrname]) == property:
@@ -1044,26 +918,20 @@ class IAgCrdnConfiguredSystemWithRate(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the System position and velocity, quaternion, and angular rate in reference components (in internal units) at the given time returned as an array representing x, y, z, vx, vy, vz, q1, q2, q3, q4, wx, wy, wz. Useful for scripting clients.
-        '''
+        """Computes the System position and velocity, quaternion, and angular rate in reference components (in internal units) at the given time returned as an array representing x, y, z, vx, vy, vz, q1, q2, q3, q4, wx, wy, wz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -1072,18 +940,14 @@ class IAgCrdnConfiguredSystemWithRate(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the System position and velocity, quaternion, and angular rate in reference components (in internal units) at the interface's current time, returned as an array representing x, y, z, vx, vy, vz, q1, q2, q3, q4, wx, wy, wz.
-        '''
+        """Computes the System position and velocity, quaternion, and angular rate in reference components (in internal units) at the interface's current time, returned as an array representing x, y, z, vx, vy, vz, q1, q2, q3, q4, wx, wy, wz."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def TransformComponents_Array(self, dispInterface:"IDispatch", x:float, y:float, z:float, vx:float, vy:float, vz:float) -> list:
-        '''
-        Transforms vector components given wrt System into those wrt RefSystem at the interface's current time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Transforms vector components given wrt System into those wrt RefSystem at the interface's current time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
@@ -1096,9 +960,7 @@ class IAgCrdnConfiguredSystemWithRate(object):
             return arg_pArray.python_val
 
     def TransformComponentsAtEpoch_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float, x:float, y:float, z:float, vx:float, vy:float, vz:float) -> list:
-        '''
-        Transforms vector components given wrt System into those wrt RefSystem at the given time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Transforms vector components given wrt System into those wrt RefSystem at the given time, returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -1118,9 +980,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredSystemWithRate'] = IAgCrdnConfiguredSystem
 __all__.append('IAgCrdnConfiguredSystemWithRate')
 
 class IAgCrdnConfiguredCalcScalar(object):
-    '''
-    Crdn Calc Scalar object interface.
-    '''
+    """Crdn Calc Scalar object interface."""
     _uuid = '{8129F3FC-A2C2-4671-B026-F4A36794CB9C}'
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1156,9 +1016,7 @@ class IAgCrdnConfiguredCalcScalar(object):
         self.__dict__['_GetUnitAbbrv'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredCalcScalar, vtable_offset_local+8, POINTER(agcom.BSTR))
         self.__dict__['_SetUnits'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredCalcScalar, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredCalcScalar.__dict__ and type(IAgCrdnConfiguredCalcScalar.__dict__[attrname]) == property:
@@ -1172,26 +1030,20 @@ class IAgCrdnConfiguredCalcScalar(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the Scalar value in internal units at the given time, returned as an array representing value, errFlag. Useful for scripting clients.
-        '''
+        """Computes the Scalar value in internal units at the given time, returned as an array representing value, errFlag. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -1200,9 +1052,7 @@ class IAgCrdnConfiguredCalcScalar(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the Scalar value in internal units at the interface's current time, returned as an array representing value, errFlag. Useful for scripting clients.
-        '''
+        """Computes the Scalar value in internal units at the interface's current time, returned as an array representing value, errFlag. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -1210,26 +1060,20 @@ class IAgCrdnConfiguredCalcScalar(object):
 
     @property
     def Dimension(self) -> str:
-        '''
-        Name of the dimension of this calc scalar.
-        '''
+        """Name of the dimension of this calc scalar."""
         with agmarshall.BSTR_arg() as arg_pDimension:
             agcls.evaluate_hresult(self.__dict__['_GetDimension'](byref(arg_pDimension.COM_val)))
             return arg_pDimension.python_val
 
     @property
     def UnitAbbrv(self) -> str:
-        '''
-        Unit abbreviation for the current units used in the Evaluate and CurrentValue methods.
-        '''
+        """Unit abbreviation for the current units used in the Evaluate and CurrentValue methods."""
         with agmarshall.BSTR_arg() as arg_pUnitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_GetUnitAbbrv'](byref(arg_pUnitAbbrv.COM_val)))
             return arg_pUnitAbbrv.python_val
 
     def SetUnits(self, unitAbbrv:str) -> bool:
-        '''
-        Sets the current units. Returns true for valid units, else returns false.
-        '''
+        """Sets the current units. Returns true for valid units, else returns false."""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_SetUnits'](arg_unitAbbrv.COM_val, byref(arg_pResult.COM_val)))
@@ -1241,9 +1085,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredCalcScalar'] = IAgCrdnConfiguredCalcScalar
 __all__.append('IAgCrdnConfiguredCalcScalar')
 
 class IAgCrdnConfiguredCalcScalarWithRate(object):
-    '''
-    Crdn Calc ScalarWithRate object interface.
-    '''
+    """Crdn Calc ScalarWithRate object interface."""
     _uuid = '{E8E2A828-56A7-4c0b-88E2-FF96268311BE}'
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1279,9 +1121,7 @@ class IAgCrdnConfiguredCalcScalarWithRate(object):
         self.__dict__['_GetUnitAbbrv'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredCalcScalarWithRate, vtable_offset_local+8, POINTER(agcom.BSTR))
         self.__dict__['_SetUnits'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredCalcScalarWithRate, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredCalcScalarWithRate.__dict__ and type(IAgCrdnConfiguredCalcScalarWithRate.__dict__[attrname]) == property:
@@ -1295,26 +1135,20 @@ class IAgCrdnConfiguredCalcScalarWithRate(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the Scalar value and rate in internal units at the given time, returned as an array representing value, rate, errFlag. Useful for scripting clients.
-        '''
+        """Computes the Scalar value and rate in internal units at the given time, returned as an array representing value, rate, errFlag. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -1323,9 +1157,7 @@ class IAgCrdnConfiguredCalcScalarWithRate(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the Scalar value and rate in internal units at the interface's current time, returned as an array representing value, rate, errFlag. Useful for scripting clients.
-        '''
+        """Computes the Scalar value and rate in internal units at the interface's current time, returned as an array representing value, rate, errFlag. Useful for scripting clients."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -1333,26 +1165,20 @@ class IAgCrdnConfiguredCalcScalarWithRate(object):
 
     @property
     def Dimension(self) -> str:
-        '''
-        Name of the dimension of this calc scalar.
-        '''
+        """Name of the dimension of this calc scalar."""
         with agmarshall.BSTR_arg() as arg_pDimension:
             agcls.evaluate_hresult(self.__dict__['_GetDimension'](byref(arg_pDimension.COM_val)))
             return arg_pDimension.python_val
 
     @property
     def UnitAbbrv(self) -> str:
-        '''
-        Unit abbreviation for the current units used in the Evaluate and CurrentValue methods.
-        '''
+        """Unit abbreviation for the current units used in the Evaluate and CurrentValue methods."""
         with agmarshall.BSTR_arg() as arg_pUnitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_GetUnitAbbrv'](byref(arg_pUnitAbbrv.COM_val)))
             return arg_pUnitAbbrv.python_val
 
     def SetUnits(self, unitAbbrv:str) -> bool:
-        '''
-        Sets the current units. Returns true for valid units, else returns false. Rates are given in the current units per sec
-        '''
+        """Sets the current units. Returns true for valid units, else returns false. Rates are given in the current units per sec"""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_SetUnits'](arg_unitAbbrv.COM_val, byref(arg_pResult.COM_val)))
@@ -1364,9 +1190,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredCalcScalarWithRate'] = IAgCrdnConfiguredCa
 __all__.append('IAgCrdnConfiguredCalcScalarWithRate')
 
 class IAgCrdnConfiguredCalcParameterSet(object):
-    '''
-    Crdn Calc ParameterSet object interface.
-    '''
+    """Crdn Calc ParameterSet object interface."""
     _uuid = '{F1B9B070-E89D-4b2b-BC10-A0976DA08F32}'
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1392,9 +1216,7 @@ class IAgCrdnConfiguredCalcParameterSet(object):
         self.__dict__['_Evaluate_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredCalcParameterSet, vtable_offset_local+3, agcom.LONG, agcom.LONG, agcom.DOUBLE, POINTER(agcom.SAFEARRAY))
         self.__dict__['_CurrentValue_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredCalcParameterSet, vtable_offset_local+4, agcom.PVOID, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredCalcParameterSet.__dict__ and type(IAgCrdnConfiguredCalcParameterSet.__dict__[attrname]) == property:
@@ -1408,26 +1230,20 @@ class IAgCrdnConfiguredCalcParameterSet(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the set of parameters at the given time, returned as an array. The last element of the array is an error flag indicator.
-        '''
+        """Computes the set of parameters at the given time, returned as an array. The last element of the array is an error flag indicator."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -1436,9 +1252,7 @@ class IAgCrdnConfiguredCalcParameterSet(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the set of parameters at the interface's current time, returned as an array. The last element of the array is an error flag indicator.
-        '''
+        """Computes the set of parameters at the interface's current time, returned as an array. The last element of the array is an error flag indicator."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -1450,9 +1264,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredCalcParameterSet'] = IAgCrdnConfiguredCalc
 __all__.append('IAgCrdnConfiguredCalcParameterSet')
 
 class IAgCrdnConfiguredCalcParameterSetWithRate(object):
-    '''
-    Crdn Calc ParameterSetWithRate object interface.
-    '''
+    """Crdn Calc ParameterSetWithRate object interface."""
     _uuid = '{57516BE0-2EC5-4e0b-94DA-FFEE2906D418}'
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1478,9 +1290,7 @@ class IAgCrdnConfiguredCalcParameterSetWithRate(object):
         self.__dict__['_Evaluate_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredCalcParameterSetWithRate, vtable_offset_local+3, agcom.LONG, agcom.LONG, agcom.DOUBLE, POINTER(agcom.SAFEARRAY))
         self.__dict__['_CurrentValue_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConfiguredCalcParameterSetWithRate, vtable_offset_local+4, agcom.PVOID, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnConfiguredCalcParameterSetWithRate.__dict__ and type(IAgCrdnConfiguredCalcParameterSetWithRate.__dict__[attrname]) == property:
@@ -1494,26 +1304,20 @@ class IAgCrdnConfiguredCalcParameterSetWithRate(object):
     
     @property
     def IsConfigured(self) -> bool:
-        '''
-        Flag indicating whether object is configured properly for use.
-        '''
+        """Flag indicating whether object is configured properly for use."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_GetIsConfigured'](byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     @property
     def ErrorText(self) -> str:
-        '''
-        Text explaining configuration errors, if any
-        '''
+        """Text explaining configuration errors, if any"""
         with agmarshall.BSTR_arg() as arg_pErrorText:
             agcls.evaluate_hresult(self.__dict__['_GetErrorText'](byref(arg_pErrorText.COM_val)))
             return arg_pErrorText.python_val
 
     def Evaluate_Array(self, scale:"AgEUtTimeScale", wholeDays:int, secsIntoDay:float) -> list:
-        '''
-        Computes the set of parameters and their rates at the given time, returned as an array. The last element of the array is an error flag indicator.
-        '''
+        """Computes the set of parameters and their rates at the given time, returned as an array. The last element of the array is an error flag indicator."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.LONG_arg(wholeDays) as arg_wholeDays, \
              agmarshall.DOUBLE_arg(secsIntoDay) as arg_secsIntoDay, \
@@ -1522,9 +1326,7 @@ class IAgCrdnConfiguredCalcParameterSetWithRate(object):
             return arg_pArray.python_val
 
     def CurrentValue_Array(self, dispInterface:"IDispatch") -> list:
-        '''
-        Computes the set of parameters and their rates at the interface's current time, returned as an array. The last element of the array is an error flag indicator.
-        '''
+        """Computes the set of parameters and their rates at the interface's current time, returned as an array. The last element of the array is an error flag indicator."""
         with agmarshall.AgInterface_in_arg(dispInterface, IDispatch) as arg_dispInterface, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_CurrentValue_Array'](arg_dispInterface.COM_val, byref(arg_pArray.COM_val)))
@@ -1536,9 +1338,7 @@ agcls.AgTypeNameMap['IAgCrdnConfiguredCalcParameterSetWithRate'] = IAgCrdnConfig
 __all__.append('IAgCrdnConfiguredCalcParameterSetWithRate')
 
 class IAgCrdnPluginProvider(object):
-    '''
-    Vector Tool plugin provider interface.
-    '''
+    """Vector Tool plugin provider interface."""
     _uuid = '{F5373CD2-6AAF-48ab-B199-E170AD72D643}'
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1578,9 +1378,7 @@ class IAgCrdnPluginProvider(object):
         self.__dict__['_ConfigureSystem'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPluginProvider, vtable_offset_local+10, agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
         self.__dict__['_ConfigureSystemWithRate'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPluginProvider, vtable_offset_local+11, agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnPluginProvider.__dict__ and type(IAgCrdnPluginProvider.__dict__[attrname]) == property:
@@ -1594,17 +1392,13 @@ class IAgCrdnPluginProvider(object):
     
     @property
     def SourceNameDefault(self) -> str:
-        '''
-        Name of the instance path used by default for sourceName and refSourceName when creating IAgCrdn interfaces. Used when the input sourceName, refSourceName are input as null strings.
-        '''
+        """Name of the instance path used by default for sourceName and refSourceName when creating IAgCrdn interfaces. Used when the input sourceName, refSourceName are input as null strings."""
         with agmarshall.BSTR_arg() as arg_pSourceNameDefault:
             agcls.evaluate_hresult(self.__dict__['_GetSourceNameDefault'](byref(arg_pSourceNameDefault.COM_val)))
             return arg_pSourceNameDefault.python_val
 
     def ConfigureVector(self, vectorName:str, sourceName:str, refAxesName:str, refAxesSourceName:str) -> "IAgCrdnConfiguredVector":
-        '''
-        Creates an IAgCrdnConfiguredVector object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredVector object from the given inputs."""
         with agmarshall.BSTR_arg(vectorName) as arg_vectorName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.BSTR_arg(refAxesName) as arg_refAxesName, \
@@ -1614,9 +1408,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppVector.python_val
 
     def ConfigureVectorWithRate(self, vectorName:str, sourceName:str, refAxesName:str, refAxesSourceName:str) -> "IAgCrdnConfiguredVectorWithRate":
-        '''
-        Creates an IAgCrdnConfiguredVectorWithRate object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredVectorWithRate object from the given inputs."""
         with agmarshall.BSTR_arg(vectorName) as arg_vectorName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.BSTR_arg(refAxesName) as arg_refAxesName, \
@@ -1626,9 +1418,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppVector.python_val
 
     def ConfigureAxes(self, axesName:str, sourceName:str, refAxesName:str, refAxesSourceName:str) -> "IAgCrdnConfiguredAxes":
-        '''
-        Creates an IAgCrdnConfiguredAxes object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredAxes object from the given inputs."""
         with agmarshall.BSTR_arg(axesName) as arg_axesName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.BSTR_arg(refAxesName) as arg_refAxesName, \
@@ -1638,9 +1428,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppAxes.python_val
 
     def ConfigureAxesWithRate(self, axesName:str, sourceName:str, refAxesName:str, refAxesSourceName:str) -> "IAgCrdnConfiguredAxesWithRate":
-        '''
-        Creates an IAgCrdnConfiguredAxesWithRate object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredAxesWithRate object from the given inputs."""
         with agmarshall.BSTR_arg(axesName) as arg_axesName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.BSTR_arg(refAxesName) as arg_refAxesName, \
@@ -1650,9 +1438,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppAxes.python_val
 
     def ConfigureAngle(self, angleName:str, sourceName:str) -> "IAgCrdnConfiguredAngle":
-        '''
-        Creates an IAgCrdnConfiguredAngle object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredAngle object from the given inputs."""
         with agmarshall.BSTR_arg(angleName) as arg_angleName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.AgInterface_out_arg() as arg_ppAngle:
@@ -1660,9 +1446,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppAngle.python_val
 
     def ConfigureAngleWithRate(self, angleName:str, sourceName:str) -> "IAgCrdnConfiguredAngleWithRate":
-        '''
-        Creates an IAgCrdnConfiguredAngleWithRate object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredAngleWithRate object from the given inputs."""
         with agmarshall.BSTR_arg(angleName) as arg_angleName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.AgInterface_out_arg() as arg_ppAngle:
@@ -1670,9 +1454,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppAngle.python_val
 
     def ConfigurePoint(self, pointName:str, sourceName:str, refSystemName:str, refSystemSourceName:str) -> "IAgCrdnConfiguredPoint":
-        '''
-        Creates an IAgCrdnConfiguredPoint object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredPoint object from the given inputs."""
         with agmarshall.BSTR_arg(pointName) as arg_pointName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.BSTR_arg(refSystemName) as arg_refSystemName, \
@@ -1682,9 +1464,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppPoint.python_val
 
     def ConfigurePointWithRate(self, pointName:str, sourceName:str, refSystemName:str, refSystemSourceName:str) -> "IAgCrdnConfiguredPointWithRate":
-        '''
-        Creates an IAgCrdnConfiguredPointWithRate object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredPointWithRate object from the given inputs."""
         with agmarshall.BSTR_arg(pointName) as arg_pointName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.BSTR_arg(refSystemName) as arg_refSystemName, \
@@ -1694,9 +1474,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppPoint.python_val
 
     def ConfigureSystem(self, systemName:str, sourceName:str, refSystemName:str, refSystemSourceName:str) -> "IAgCrdnConfiguredSystem":
-        '''
-        Creates an IAgCrdnConfiguredSystem object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredSystem object from the given inputs."""
         with agmarshall.BSTR_arg(systemName) as arg_systemName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.BSTR_arg(refSystemName) as arg_refSystemName, \
@@ -1706,9 +1484,7 @@ class IAgCrdnPluginProvider(object):
             return arg_ppSystem.python_val
 
     def ConfigureSystemWithRate(self, systemName:str, sourceName:str, refSystemName:str, refSystemSourceName:str) -> "IAgCrdnConfiguredSystemWithRate":
-        '''
-        Creates an IAgCrdnConfiguredSystemWithRate object from the given inputs.
-        '''
+        """Creates an IAgCrdnConfiguredSystemWithRate object from the given inputs."""
         with agmarshall.BSTR_arg(systemName) as arg_systemName, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.BSTR_arg(refSystemName) as arg_refSystemName, \
@@ -1723,9 +1499,7 @@ agcls.AgTypeNameMap['IAgCrdnPluginProvider'] = IAgCrdnPluginProvider
 __all__.append('IAgCrdnPluginProvider')
 
 class IAgCrdnPluginCalcProvider(object):
-    '''
-    Vector Tool plugin provider interface.
-    '''
+    """Vector Tool plugin provider interface."""
     _uuid = '{A429EFEE-1973-4c8d-B35C-7BC629A2A75A}'
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1753,9 +1527,7 @@ class IAgCrdnPluginCalcProvider(object):
         self.__dict__['_GetCalcParameterSet'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPluginCalcProvider, vtable_offset_local+4, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
         self.__dict__['_GetCalcParameterSetWithRate'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPluginCalcProvider, vtable_offset_local+5, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnPluginCalcProvider.__dict__ and type(IAgCrdnPluginCalcProvider.__dict__[attrname]) == property:
@@ -1769,17 +1541,13 @@ class IAgCrdnPluginCalcProvider(object):
     
     @property
     def SourceNameDefault(self) -> str:
-        '''
-        Name of the instance path used by default for sourceName and refSourceName when creating IAgCrdn interfaces. Used when the input sourceName, refSourceName are input as null strings.
-        '''
+        """Name of the instance path used by default for sourceName and refSourceName when creating IAgCrdn interfaces. Used when the input sourceName, refSourceName are input as null strings."""
         with agmarshall.BSTR_arg() as arg_pSourceNameDefault:
             agcls.evaluate_hresult(self.__dict__['_GetSourceNameDefault'](byref(arg_pSourceNameDefault.COM_val)))
             return arg_pSourceNameDefault.python_val
 
     def GetCalcScalar(self, name:str, sourceName:str) -> "IAgCrdnConfiguredCalcScalar":
-        '''
-        Creates an IAgCrdnConfiguredCalcScalar handle to the named Calc Scalar.
-        '''
+        """Creates an IAgCrdnConfiguredCalcScalar handle to the named Calc Scalar."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.AgInterface_out_arg() as arg_ppCalcScalar:
@@ -1787,9 +1555,7 @@ class IAgCrdnPluginCalcProvider(object):
             return arg_ppCalcScalar.python_val
 
     def GetCalcScalarWithRate(self, name:str, sourceName:str) -> "IAgCrdnConfiguredCalcScalarWithRate":
-        '''
-        Creates an IAgCrdnConfiguredCalcScalarWithRate handle to the named Calc Scalar.
-        '''
+        """Creates an IAgCrdnConfiguredCalcScalarWithRate handle to the named Calc Scalar."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.AgInterface_out_arg() as arg_ppCalcScalarWithRate:
@@ -1797,9 +1563,7 @@ class IAgCrdnPluginCalcProvider(object):
             return arg_ppCalcScalarWithRate.python_val
 
     def GetCalcParameterSet(self, name:str, sourceName:str) -> "IAgCrdnConfiguredCalcParameterSet":
-        '''
-        Creates an IAgCrdnConfiguredCalcParameterSet handle to the named Calc ParameterSet.
-        '''
+        """Creates an IAgCrdnConfiguredCalcParameterSet handle to the named Calc ParameterSet."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.AgInterface_out_arg() as arg_ppCalcParameterSet:
@@ -1807,9 +1571,7 @@ class IAgCrdnPluginCalcProvider(object):
             return arg_ppCalcParameterSet.python_val
 
     def GetCalcParameterSetWithRate(self, name:str, sourceName:str) -> "IAgCrdnConfiguredCalcParameterSetWithRate":
-        '''
-        Creates an IAgCrdnConfiguredCalcParameterSetWithRate handle to the named Calc ParameterSet.
-        '''
+        """Creates an IAgCrdnConfiguredCalcParameterSetWithRate handle to the named Calc ParameterSet."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(sourceName) as arg_sourceName, \
              agmarshall.AgInterface_out_arg() as arg_ppCalcParameterSetWithRate:
@@ -1822,9 +1584,7 @@ agcls.AgTypeNameMap['IAgCrdnPluginCalcProvider'] = IAgCrdnPluginCalcProvider
 __all__.append('IAgCrdnPluginCalcProvider')
 
 class IAgCrdnVectorPluginResultReg(object):
-    '''
-    COM Plugin Result interface for the Register method of IAgCrdnVectorPlugin.
-    '''
+    """COM Plugin Result interface for the Register method of IAgCrdnVectorPlugin."""
     _uuid = '{23D36CFE-E264-45d2-BB9C-21121E38BC56}'
     _num_methods = 13
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1868,9 +1628,7 @@ class IAgCrdnVectorPluginResultReg(object):
         self.__dict__['_ClearSpecialTimes'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorPluginResultReg, vtable_offset_local+12, )
         self.__dict__['_AddSpecialTime'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorPluginResultReg, vtable_offset_local+13, agcom.BSTR, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnVectorPluginResultReg.__dict__ and type(IAgCrdnVectorPluginResultReg.__dict__[attrname]) == property:
@@ -1884,114 +1642,86 @@ class IAgCrdnVectorPluginResultReg(object):
     
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Not supported by central bodies.
-        '''
+        """The short description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Not supported by central bodies.
-        '''
+        """The short description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Not supported by central bodies.
-        '''
+        """The long description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Not supported by central bodies.
-        '''
+        """The long description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     @property
     def Dimension(self) -> None:
-        '''
-        Dimension is a write-only property.
-        '''
+        """Dimension is a write-only property."""
         raise RuntimeError('Dimension is a write-only property.')
 
 
     @Dimension.setter
     def Dimension(self, dimension:str) -> None:
-        '''
-        Sets the dimension of the vector.
-        '''
+        """Sets the dimension of the vector."""
         with agmarshall.BSTR_arg(dimension) as arg_dimension:
             agcls.evaluate_hresult(self.__dict__['_SetDimension'](arg_dimension.COM_val))
 
     def SetRefAxes(self, name:str, sourcePath:str) -> None:
-        '''
-        Sets the reference axes of the vector.
-        '''
+        """Sets the reference axes of the vector."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(sourcePath) as arg_sourcePath:
             agcls.evaluate_hresult(self.__dict__['_SetRefAxes'](arg_name.COM_val, arg_sourcePath.COM_val))
 
     def ClearAvailability(self) -> None:
-        '''
-        Clears any availability intervals that may have been set. Vector is considered available at all times.
-        '''
+        """Clears any availability intervals that may have been set. Vector is considered available at all times."""
         agcls.evaluate_hresult(self.__dict__['_ClearAvailability']())
 
     def AddAvailabilityInterval(self, dateAbbrv:str, startDate:str, stopDate:str) -> None:
-        '''
-        Adds an availability interval. The Vector is available at a given time only if the time is within one of the vector's availability intervals.
-        '''
+        """Adds an availability interval. The Vector is available at a given time only if the time is within one of the vector's availability intervals."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg(startDate) as arg_startDate, \
              agmarshall.BSTR_arg(stopDate) as arg_stopDate:
             agcls.evaluate_hresult(self.__dict__['_AddAvailabilityInterval'](arg_dateAbbrv.COM_val, arg_startDate.COM_val, arg_stopDate.COM_val))
 
     def ClearSpecialTimes(self) -> None:
-        '''
-        Clears any special times that may have been set.
-        '''
+        """Clears any special times that may have been set."""
         agcls.evaluate_hresult(self.__dict__['_ClearSpecialTimes']())
 
     def AddSpecialTime(self, dateAbbrv:str, specialTime:str) -> None:
-        '''
-        Adds a special time that will be incorporated during sampling of the vector's value.
-        '''
+        """Adds a special time that will be incorporated during sampling of the vector's value."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg(specialTime) as arg_specialTime:
             agcls.evaluate_hresult(self.__dict__['_AddSpecialTime'](arg_dateAbbrv.COM_val, arg_specialTime.COM_val))
@@ -2002,9 +1732,7 @@ agcls.AgTypeNameMap['IAgCrdnVectorPluginResultReg'] = IAgCrdnVectorPluginResultR
 __all__.append('IAgCrdnVectorPluginResultReg')
 
 class IAgCrdnVectorPluginResultReset(object):
-    '''
-    COM Plugin Result interface for the Reset method of IAgCrdnVectorPlugin.
-    '''
+    """COM Plugin Result interface for the Reset method of IAgCrdnVectorPlugin."""
     _uuid = '{BC419354-9340-4609-BD80-5799AD1868AA}'
     _num_methods = 14
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2050,9 +1778,7 @@ class IAgCrdnVectorPluginResultReset(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorPluginResultReset, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorPluginResultReset, vtable_offset_local+14, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnVectorPluginResultReset.__dict__ and type(IAgCrdnVectorPluginResultReset.__dict__[attrname]) == property:
@@ -2066,105 +1792,81 @@ class IAgCrdnVectorPluginResultReset(object):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -2176,9 +1878,7 @@ agcls.AgTypeNameMap['IAgCrdnVectorPluginResultReset'] = IAgCrdnVectorPluginResul
 __all__.append('IAgCrdnVectorPluginResultReset')
 
 class IAgCrdnVectorPluginResultEval(object):
-    '''
-    COM Plugin Result interface for the Evaluate method of IAgCrdnVectorPlugin.
-    '''
+    """COM Plugin Result interface for the Evaluate method of IAgCrdnVectorPlugin."""
     _uuid = '{2F83CE49-DE6E-4997-9D33-1A627D35ACD9}'
     _num_methods = 16
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2228,9 +1928,7 @@ class IAgCrdnVectorPluginResultEval(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorPluginResultEval, vtable_offset_local+15, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorPluginResultEval, vtable_offset_local+16, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnVectorPluginResultEval.__dict__ and type(IAgCrdnVectorPluginResultEval.__dict__[attrname]) == property:
@@ -2244,123 +1942,95 @@ class IAgCrdnVectorPluginResultEval(object):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def SetVectorComponents(self, x:float, y:float, z:float) -> None:
-        '''
-        Set the vector components in internal units.
-        '''
+        """Set the vector components in internal units."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_SetVectorComponents'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def SetVectorRateComponents(self, x:float, y:float, z:float) -> None:
-        '''
-        Set the vector rate components in internal units.
-        '''
+        """Set the vector rate components in internal units."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_SetVectorRateComponents'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -2372,9 +2042,7 @@ agcls.AgTypeNameMap['IAgCrdnVectorPluginResultEval'] = IAgCrdnVectorPluginResult
 __all__.append('IAgCrdnVectorPluginResultEval')
 
 class IAgCrdnPointPluginResultReg(object):
-    '''
-    COM Plugin Result interface for the Register method of IAgCrdnPointPlugin.
-    '''
+    """COM Plugin Result interface for the Register method of IAgCrdnPointPlugin."""
     _uuid = '{293955B9-7601-4791-98C4-1FE0CC7B1D2C}'
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2416,9 +2084,7 @@ class IAgCrdnPointPluginResultReg(object):
         self.__dict__['_ClearSpecialTimes'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointPluginResultReg, vtable_offset_local+11, )
         self.__dict__['_AddSpecialTime'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointPluginResultReg, vtable_offset_local+12, agcom.BSTR, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnPointPluginResultReg.__dict__ and type(IAgCrdnPointPluginResultReg.__dict__[attrname]) == property:
@@ -2432,98 +2098,74 @@ class IAgCrdnPointPluginResultReg(object):
     
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Not supported by central bodies.
-        '''
+        """The short description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Not supported by central bodies.
-        '''
+        """The short description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Not supported by central bodies.
-        '''
+        """The long description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Not supported by central bodies.
-        '''
+        """The long description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def SetRefSystem(self, name:str, sourcePath:str) -> None:
-        '''
-        Sets the reference system for the point.
-        '''
+        """Sets the reference system for the point."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(sourcePath) as arg_sourcePath:
             agcls.evaluate_hresult(self.__dict__['_SetRefSystem'](arg_name.COM_val, arg_sourcePath.COM_val))
 
     def ClearAvailability(self) -> None:
-        '''
-        Clears any availability intervals that may have been set. Point is considered available at all times.
-        '''
+        """Clears any availability intervals that may have been set. Point is considered available at all times."""
         agcls.evaluate_hresult(self.__dict__['_ClearAvailability']())
 
     def AddAvailabilityInterval(self, dateAbbrv:str, startDate:str, stopDate:str) -> None:
-        '''
-        Adds an availability interval. The Point is available at a given time only if the time is within one of the point's availability intervals.
-        '''
+        """Adds an availability interval. The Point is available at a given time only if the time is within one of the point's availability intervals."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg(startDate) as arg_startDate, \
              agmarshall.BSTR_arg(stopDate) as arg_stopDate:
             agcls.evaluate_hresult(self.__dict__['_AddAvailabilityInterval'](arg_dateAbbrv.COM_val, arg_startDate.COM_val, arg_stopDate.COM_val))
 
     def ClearSpecialTimes(self) -> None:
-        '''
-        Clears any special times that may have been set.
-        '''
+        """Clears any special times that may have been set."""
         agcls.evaluate_hresult(self.__dict__['_ClearSpecialTimes']())
 
     def AddSpecialTime(self, dateAbbrv:str, specialTime:str) -> None:
-        '''
-        Adds a special time that will be incorporated during sampling of the point's location.
-        '''
+        """Adds a special time that will be incorporated during sampling of the point's location."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg(specialTime) as arg_specialTime:
             agcls.evaluate_hresult(self.__dict__['_AddSpecialTime'](arg_dateAbbrv.COM_val, arg_specialTime.COM_val))
@@ -2534,9 +2176,7 @@ agcls.AgTypeNameMap['IAgCrdnPointPluginResultReg'] = IAgCrdnPointPluginResultReg
 __all__.append('IAgCrdnPointPluginResultReg')
 
 class IAgCrdnPointPluginResultReset(object):
-    '''
-    COM Plugin Result interface for the Reset method of IAgCrdnPointPlugin.
-    '''
+    """COM Plugin Result interface for the Reset method of IAgCrdnPointPlugin."""
     _uuid = '{13D01153-A788-46c3-8045-BC38F8C8D385}'
     _num_methods = 14
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2582,9 +2222,7 @@ class IAgCrdnPointPluginResultReset(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointPluginResultReset, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointPluginResultReset, vtable_offset_local+14, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnPointPluginResultReset.__dict__ and type(IAgCrdnPointPluginResultReset.__dict__[attrname]) == property:
@@ -2598,105 +2236,81 @@ class IAgCrdnPointPluginResultReset(object):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -2708,9 +2322,7 @@ agcls.AgTypeNameMap['IAgCrdnPointPluginResultReset'] = IAgCrdnPointPluginResultR
 __all__.append('IAgCrdnPointPluginResultReset')
 
 class IAgCrdnPointPluginResultEval(object):
-    '''
-    COM Plugin Result interface for the Evaluate method of IAgCrdnPointPlugin.
-    '''
+    """COM Plugin Result interface for the Evaluate method of IAgCrdnPointPlugin."""
     _uuid = '{B4FA32EA-53DD-4a97-A497-C2D97A631933}'
     _num_methods = 16
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2760,9 +2372,7 @@ class IAgCrdnPointPluginResultEval(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointPluginResultEval, vtable_offset_local+15, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointPluginResultEval, vtable_offset_local+16, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnPointPluginResultEval.__dict__ and type(IAgCrdnPointPluginResultEval.__dict__[attrname]) == property:
@@ -2776,123 +2386,95 @@ class IAgCrdnPointPluginResultEval(object):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def SetPosition(self, x:float, y:float, z:float) -> None:
-        '''
-        Set the position components in meters.
-        '''
+        """Set the position components in meters."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_SetPosition'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def SetVelocity(self, x:float, y:float, z:float) -> None:
-        '''
-        Set the velocity components in meters/sec.
-        '''
+        """Set the velocity components in meters/sec."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_SetVelocity'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -2904,9 +2486,7 @@ agcls.AgTypeNameMap['IAgCrdnPointPluginResultEval'] = IAgCrdnPointPluginResultEv
 __all__.append('IAgCrdnPointPluginResultEval')
 
 class IAgCrdnAxesPluginResultReg(object):
-    '''
-    COM Plugin Result interface for the Register method of IAgCrdnAxesPlugin.
-    '''
+    """COM Plugin Result interface for the Register method of IAgCrdnAxesPlugin."""
     _uuid = '{DBFDD0C5-0F8B-4e2e-BAA0-38BB6CA4CD69}'
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -2948,9 +2528,7 @@ class IAgCrdnAxesPluginResultReg(object):
         self.__dict__['_ClearSpecialTimes'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesPluginResultReg, vtable_offset_local+11, )
         self.__dict__['_AddSpecialTime'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesPluginResultReg, vtable_offset_local+12, agcom.BSTR, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnAxesPluginResultReg.__dict__ and type(IAgCrdnAxesPluginResultReg.__dict__[attrname]) == property:
@@ -2964,98 +2542,74 @@ class IAgCrdnAxesPluginResultReg(object):
     
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Not supported by central bodies.
-        '''
+        """The short description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Not supported by central bodies.
-        '''
+        """The short description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Not supported by central bodies.
-        '''
+        """The long description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Not supported by central bodies.
-        '''
+        """The long description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def SetRefAxes(self, name:str, sourcePath:str) -> None:
-        '''
-        Sets the reference axes of the vector.
-        '''
+        """Sets the reference axes of the vector."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(sourcePath) as arg_sourcePath:
             agcls.evaluate_hresult(self.__dict__['_SetRefAxes'](arg_name.COM_val, arg_sourcePath.COM_val))
 
     def ClearAvailability(self) -> None:
-        '''
-        Clears any availability intervals that may have been set. Axes is considered available at all times.
-        '''
+        """Clears any availability intervals that may have been set. Axes is considered available at all times."""
         agcls.evaluate_hresult(self.__dict__['_ClearAvailability']())
 
     def AddAvailabilityInterval(self, dateAbbrv:str, startDate:str, stopDate:str) -> None:
-        '''
-        Adds an availability interval. The Axes is available at a given time only if the time is within one of the vector's availability intervals.
-        '''
+        """Adds an availability interval. The Axes is available at a given time only if the time is within one of the vector's availability intervals."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg(startDate) as arg_startDate, \
              agmarshall.BSTR_arg(stopDate) as arg_stopDate:
             agcls.evaluate_hresult(self.__dict__['_AddAvailabilityInterval'](arg_dateAbbrv.COM_val, arg_startDate.COM_val, arg_stopDate.COM_val))
 
     def ClearSpecialTimes(self) -> None:
-        '''
-        Clears any special times that may have been set.
-        '''
+        """Clears any special times that may have been set."""
         agcls.evaluate_hresult(self.__dict__['_ClearSpecialTimes']())
 
     def AddSpecialTime(self, dateAbbrv:str, specialTime:str) -> None:
-        '''
-        Adds a special time that will be incorporated during sampling of the vector's value.
-        '''
+        """Adds a special time that will be incorporated during sampling of the vector's value."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg(specialTime) as arg_specialTime:
             agcls.evaluate_hresult(self.__dict__['_AddSpecialTime'](arg_dateAbbrv.COM_val, arg_specialTime.COM_val))
@@ -3066,9 +2620,7 @@ agcls.AgTypeNameMap['IAgCrdnAxesPluginResultReg'] = IAgCrdnAxesPluginResultReg
 __all__.append('IAgCrdnAxesPluginResultReg')
 
 class IAgCrdnAxesPluginResultReset(object):
-    '''
-    COM Plugin Result interface for the Reset method of IAgCrdnAxesPlugin.
-    '''
+    """COM Plugin Result interface for the Reset method of IAgCrdnAxesPlugin."""
     _uuid = '{8544B432-172C-420a-B0D0-0BD7958A67A1}'
     _num_methods = 14
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3114,9 +2666,7 @@ class IAgCrdnAxesPluginResultReset(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesPluginResultReset, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesPluginResultReset, vtable_offset_local+14, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnAxesPluginResultReset.__dict__ and type(IAgCrdnAxesPluginResultReset.__dict__[attrname]) == property:
@@ -3130,105 +2680,81 @@ class IAgCrdnAxesPluginResultReset(object):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -3240,9 +2766,7 @@ agcls.AgTypeNameMap['IAgCrdnAxesPluginResultReset'] = IAgCrdnAxesPluginResultRes
 __all__.append('IAgCrdnAxesPluginResultReset')
 
 class IAgCrdnAxesPluginResultEval(object):
-    '''
-    COM Plugin Result interface for the Evaluate method of IAgCrdnAxesPlugin.
-    '''
+    """COM Plugin Result interface for the Evaluate method of IAgCrdnAxesPlugin."""
     _uuid = '{E4707CDD-E425-40e1-AF3D-D6C22B36B71B}'
     _num_methods = 19
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3298,9 +2822,7 @@ class IAgCrdnAxesPluginResultEval(object):
         self.__dict__['_SetAngularVelocity'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesPluginResultEval, vtable_offset_local+18, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
         self.__dict__['_SetAngularVelocityUsingRefAxes'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesPluginResultEval, vtable_offset_local+19, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnAxesPluginResultEval.__dict__ and type(IAgCrdnAxesPluginResultEval.__dict__[attrname]) == property:
@@ -3314,114 +2836,88 @@ class IAgCrdnAxesPluginResultEval(object):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
             return arg_pDateString.python_val
 
     def SetQuaternion(self, q1:float, q2:float, q3:float, q4:float) -> None:
-        '''
-        Set the orientation using a quaternion representing the rotation to these axes from the references axes. (q1,q2,q3) is the vector part; q4 is the scalar part.
-        '''
+        """Set the orientation using a quaternion representing the rotation to these axes from the references axes. (q1,q2,q3) is the vector part; q4 is the scalar part."""
         with agmarshall.DOUBLE_arg(q1) as arg_q1, \
              agmarshall.DOUBLE_arg(q2) as arg_q2, \
              agmarshall.DOUBLE_arg(q3) as arg_q3, \
@@ -3429,9 +2925,7 @@ class IAgCrdnAxesPluginResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetQuaternion'](arg_q1.COM_val, arg_q2.COM_val, arg_q3.COM_val, arg_q4.COM_val))
 
     def EulerRotate(self, sequence:"AgECrdnEulerSequence", first:float, second:float, third:float) -> None:
-        '''
-        Sets the orientation using a sequence of euler rotations.
-        '''
+        """Sets the orientation using a sequence of euler rotations."""
         with agmarshall.AgEnum_arg(AgECrdnEulerSequence, sequence) as arg_sequence, \
              agmarshall.DOUBLE_arg(first) as arg_first, \
              agmarshall.DOUBLE_arg(second) as arg_second, \
@@ -3439,9 +2933,7 @@ class IAgCrdnAxesPluginResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_EulerRotate'](arg_sequence.COM_val, arg_first.COM_val, arg_second.COM_val, arg_third.COM_val))
 
     def SetDCM(self, xx:float, xy:float, xz:float, yx:float, yy:float, yz:float, zx:float, zy:float, zz:float) -> None:
-        '''
-        Sets the orientation using a direction cosine matrix representing the rotation to these axes from the references axes.
-        '''
+        """Sets the orientation using a direction cosine matrix representing the rotation to these axes from the references axes."""
         with agmarshall.DOUBLE_arg(xx) as arg_xx, \
              agmarshall.DOUBLE_arg(xy) as arg_xy, \
              agmarshall.DOUBLE_arg(xz) as arg_xz, \
@@ -3454,18 +2946,14 @@ class IAgCrdnAxesPluginResultEval(object):
             agcls.evaluate_hresult(self.__dict__['_SetDCM'](arg_xx.COM_val, arg_xy.COM_val, arg_xz.COM_val, arg_yx.COM_val, arg_yy.COM_val, arg_yz.COM_val, arg_zx.COM_val, arg_zy.COM_val, arg_zz.COM_val))
 
     def SetAngularVelocity(self, wx:float, wy:float, wz:float) -> None:
-        '''
-        Set the angular velocity in rad/sec. The components are to be specifed with respect to this Axes object.
-        '''
+        """Set the angular velocity in rad/sec. The components are to be specifed with respect to this Axes object."""
         with agmarshall.DOUBLE_arg(wx) as arg_wx, \
              agmarshall.DOUBLE_arg(wy) as arg_wy, \
              agmarshall.DOUBLE_arg(wz) as arg_wz:
             agcls.evaluate_hresult(self.__dict__['_SetAngularVelocity'](arg_wx.COM_val, arg_wy.COM_val, arg_wz.COM_val))
 
     def SetAngularVelocityUsingRefAxes(self, wx:float, wy:float, wz:float) -> None:
-        '''
-        Set the angular velocity in rad/sec. The components are to be specifed with respect to the RefAxes.
-        '''
+        """Set the angular velocity in rad/sec. The components are to be specifed with respect to the RefAxes."""
         with agmarshall.DOUBLE_arg(wx) as arg_wx, \
              agmarshall.DOUBLE_arg(wy) as arg_wy, \
              agmarshall.DOUBLE_arg(wz) as arg_wz:
@@ -3477,9 +2965,7 @@ agcls.AgTypeNameMap['IAgCrdnAxesPluginResultEval'] = IAgCrdnAxesPluginResultEval
 __all__.append('IAgCrdnAxesPluginResultEval')
 
 class IAgCrdnCalcScalarPluginResultReg(object):
-    '''
-    COM Plugin Result interface for the Register method of IAgCrdnCalcScalarPlugin.
-    '''
+    """COM Plugin Result interface for the Register method of IAgCrdnCalcScalarPlugin."""
     _uuid = '{8B84D52C-D688-4e44-98F2-A28D40E1C3DB}'
     _num_methods = 15
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3527,9 +3013,7 @@ class IAgCrdnCalcScalarPluginResultReg(object):
         self.__dict__['_GetUnitAbbrv'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarPluginResultReg, vtable_offset_local+14, POINTER(agcom.BSTR))
         self.__dict__['_SetUnits'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarPluginResultReg, vtable_offset_local+15, agcom.BSTR, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnCalcScalarPluginResultReg.__dict__ and type(IAgCrdnCalcScalarPluginResultReg.__dict__[attrname]) == property:
@@ -3543,124 +3027,94 @@ class IAgCrdnCalcScalarPluginResultReg(object):
     
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Not supported by central bodies.
-        '''
+        """The short description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Not supported by central bodies.
-        '''
+        """The short description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Not supported by central bodies.
-        '''
+        """The long description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Not supported by central bodies.
-        '''
+        """The long description of the object. Not supported by central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def ClearAvailability(self) -> None:
-        '''
-        Clears any availability intervals that may have been set. Point is considered available at all times.
-        '''
+        """Clears any availability intervals that may have been set. Point is considered available at all times."""
         agcls.evaluate_hresult(self.__dict__['_ClearAvailability']())
 
     def AddAvailabilityInterval(self, dateAbbrv:str, startDate:str, stopDate:str) -> None:
-        '''
-        Adds an availability interval. The Point is available at a given time only if the time is within one of the point's availability intervals.
-        '''
+        """Adds an availability interval. The Point is available at a given time only if the time is within one of the point's availability intervals."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg(startDate) as arg_startDate, \
              agmarshall.BSTR_arg(stopDate) as arg_stopDate:
             agcls.evaluate_hresult(self.__dict__['_AddAvailabilityInterval'](arg_dateAbbrv.COM_val, arg_startDate.COM_val, arg_stopDate.COM_val))
 
     def ClearSpecialTimes(self) -> None:
-        '''
-        Clears any special times that may have been set.
-        '''
+        """Clears any special times that may have been set."""
         agcls.evaluate_hresult(self.__dict__['_ClearSpecialTimes']())
 
     def AddSpecialTime(self, dateAbbrv:str, specialTime:str) -> None:
-        '''
-        Adds a special time that will be incorporated during sampling of the point's location.
-        '''
+        """Adds a special time that will be incorporated during sampling of the point's location."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg(specialTime) as arg_specialTime:
             agcls.evaluate_hresult(self.__dict__['_AddSpecialTime'](arg_dateAbbrv.COM_val, arg_specialTime.COM_val))
 
     @property
     def Dimension(self) -> str:
-        '''
-        Name of the dimension.
-        '''
+        """Name of the dimension."""
         with agmarshall.BSTR_arg() as arg_pDimension:
             agcls.evaluate_hresult(self.__dict__['_GetDimension'](byref(arg_pDimension.COM_val)))
             return arg_pDimension.python_val
 
     @Dimension.setter
     def Dimension(self, dimension:str) -> None:
-        '''
-        Name of the dimension.
-        '''
+        """Name of the dimension."""
         with agmarshall.BSTR_arg(dimension) as arg_dimension:
             agcls.evaluate_hresult(self.__dict__['_SetDimension'](arg_dimension.COM_val))
 
     @property
     def UnitAbbrv(self) -> str:
-        '''
-        Unit abbreviation for the current units.
-        '''
+        """Unit abbreviation for the current units."""
         with agmarshall.BSTR_arg() as arg_pUnitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_GetUnitAbbrv'](byref(arg_pUnitAbbrv.COM_val)))
             return arg_pUnitAbbrv.python_val
 
     def SetUnits(self, unitAbbrv:str) -> bool:
-        '''
-        Sets the current units.
-        '''
+        """Sets the current units."""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_SetUnits'](arg_unitAbbrv.COM_val, byref(arg_pResult.COM_val)))
@@ -3672,9 +3126,7 @@ agcls.AgTypeNameMap['IAgCrdnCalcScalarPluginResultReg'] = IAgCrdnCalcScalarPlugi
 __all__.append('IAgCrdnCalcScalarPluginResultReg')
 
 class IAgCrdnCalcScalarPluginResultReset(object):
-    '''
-    COM Plugin Result interface for the Reset method of IAgCrdnCalcScalarPlugin.
-    '''
+    """COM Plugin Result interface for the Reset method of IAgCrdnCalcScalarPlugin."""
     _uuid = '{D3934CCB-73BC-45a1-94FE-DA0C0D7701C8}'
     _num_methods = 17
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3726,9 +3178,7 @@ class IAgCrdnCalcScalarPluginResultReset(object):
         self.__dict__['_GetUnitAbbrv'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarPluginResultReset, vtable_offset_local+16, POINTER(agcom.BSTR))
         self.__dict__['_SetUnits'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarPluginResultReset, vtable_offset_local+17, agcom.BSTR, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnCalcScalarPluginResultReset.__dict__ and type(IAgCrdnCalcScalarPluginResultReset.__dict__[attrname]) == property:
@@ -3742,105 +3192,81 @@ class IAgCrdnCalcScalarPluginResultReset(object):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -3848,26 +3274,20 @@ class IAgCrdnCalcScalarPluginResultReset(object):
 
     @property
     def Dimension(self) -> str:
-        '''
-        Name of the dimension.
-        '''
+        """Name of the dimension."""
         with agmarshall.BSTR_arg() as arg_pDimension:
             agcls.evaluate_hresult(self.__dict__['_GetDimension'](byref(arg_pDimension.COM_val)))
             return arg_pDimension.python_val
 
     @property
     def UnitAbbrv(self) -> str:
-        '''
-        Unit abbreviation for the current units.
-        '''
+        """Unit abbreviation for the current units."""
         with agmarshall.BSTR_arg() as arg_pUnitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_GetUnitAbbrv'](byref(arg_pUnitAbbrv.COM_val)))
             return arg_pUnitAbbrv.python_val
 
     def SetUnits(self, unitAbbrv:str) -> bool:
-        '''
-        Sets the current units.
-        '''
+        """Sets the current units."""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_SetUnits'](arg_unitAbbrv.COM_val, byref(arg_pResult.COM_val)))
@@ -3879,9 +3299,7 @@ agcls.AgTypeNameMap['IAgCrdnCalcScalarPluginResultReset'] = IAgCrdnCalcScalarPlu
 __all__.append('IAgCrdnCalcScalarPluginResultReset')
 
 class IAgCrdnCalcScalarPluginResultEval(object):
-    '''
-    COM Plugin Result interface for the Evaluate method of IAgCrdnCalcScalarPlugin.
-    '''
+    """COM Plugin Result interface for the Evaluate method of IAgCrdnCalcScalarPlugin."""
     _uuid = '{824518FA-47BD-4cb3-A0DB-CE2BCB269137}'
     _num_methods = 19
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3937,9 +3355,7 @@ class IAgCrdnCalcScalarPluginResultEval(object):
         self.__dict__['_SetValue'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarPluginResultEval, vtable_offset_local+18, agcom.DOUBLE)
         self.__dict__['_SetValueAndRate'] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarPluginResultEval, vtable_offset_local+19, agcom.DOUBLE, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCrdnCalcScalarPluginResultEval.__dict__ and type(IAgCrdnCalcScalarPluginResultEval.__dict__[attrname]) == property:
@@ -3953,105 +3369,81 @@ class IAgCrdnCalcScalarPluginResultEval(object):
     
     @property
     def VectorToolProvider(self) -> "IAgCrdnPluginProvider":
-        '''
-        Creates an IAgCrdnPluginProvider object.
-        '''
+        """Creates an IAgCrdnPluginProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetVectorToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def CalcToolProvider(self) -> "IAgCrdnPluginCalcProvider":
-        '''
-        Creates an IAgCrdnPluginCalcProvider object.
-        '''
+        """Creates an IAgCrdnPluginCalcProvider object."""
         with agmarshall.AgInterface_out_arg() as arg_ppCrdnPrv:
             agcls.evaluate_hresult(self.__dict__['_GetCalcToolProvider'](byref(arg_ppCrdnPrv.COM_val)))
             return arg_ppCrdnPrv.python_val
 
     @property
     def ObjectPath(self) -> str:
-        '''
-        The object path of the object.
-        '''
+        """The object path of the object."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetObjectPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ParentPath(self) -> str:
-        '''
-        The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario.
-        '''
+        """The object path of the parent of the object. Returns 'No Object Available' if the parent is the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def GrandParentPath(self) -> str:
-        '''
-        The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario.
-        '''
+        """The object path of the parent of the parent of the object. Returns 'No Object Available' if the grandparent is or above the scenario."""
         with agmarshall.BSTR_arg() as arg_pPath:
             agcls.evaluate_hresult(self.__dict__['_GetGrandParentPath'](byref(arg_pPath.COM_val)))
             return arg_pPath.python_val
 
     @property
     def ShortDescription(self) -> str:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetShortDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @ShortDescription.setter
     def ShortDescription(self, newDescription:str) -> None:
-        '''
-        The short description of the object. Cannot be set for central bodies.
-        '''
+        """The short description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetShortDescription'](arg_newDescription.COM_val))
 
     @property
     def LongDescription(self) -> str:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg() as arg_pDescription:
             agcls.evaluate_hresult(self.__dict__['_GetLongDescription'](byref(arg_pDescription.COM_val)))
             return arg_pDescription.python_val
 
     @LongDescription.setter
     def LongDescription(self, newDescription:str) -> None:
-        '''
-        The long description of the object. Cannot be set for central bodies.
-        '''
+        """The long description of the object. Cannot be set for central bodies."""
         with agmarshall.BSTR_arg(newDescription) as arg_newDescription:
             agcls.evaluate_hresult(self.__dict__['_SetLongDescription'](arg_newDescription.COM_val))
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -4059,42 +3451,32 @@ class IAgCrdnCalcScalarPluginResultEval(object):
 
     @property
     def Dimension(self) -> str:
-        '''
-        Name of the dimension.
-        '''
+        """Name of the dimension."""
         with agmarshall.BSTR_arg() as arg_pDimension:
             agcls.evaluate_hresult(self.__dict__['_GetDimension'](byref(arg_pDimension.COM_val)))
             return arg_pDimension.python_val
 
     @property
     def UnitAbbrv(self) -> str:
-        '''
-        Unit abbreviation for the current units.
-        '''
+        """Unit abbreviation for the current units."""
         with agmarshall.BSTR_arg() as arg_pUnitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_GetUnitAbbrv'](byref(arg_pUnitAbbrv.COM_val)))
             return arg_pUnitAbbrv.python_val
 
     def SetUnits(self, unitAbbrv:str) -> bool:
-        '''
-        Sets the current units.
-        '''
+        """Sets the current units."""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_SetUnits'](arg_unitAbbrv.COM_val, byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     def SetValue(self, value:float) -> None:
-        '''
-        Sets the value in the current units.
-        '''
+        """Sets the value in the current units."""
         with agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__['_SetValue'](arg_value.COM_val))
 
     def SetValueAndRate(self, value:float, valueRate:float) -> None:
-        '''
-        Sets the value and valueRate in current units and current units per sec.
-        '''
+        """Sets the value and valueRate in current units and current units per sec."""
         with agmarshall.DOUBLE_arg(value) as arg_value, \
              agmarshall.DOUBLE_arg(valueRate) as arg_valueRate:
             agcls.evaluate_hresult(self.__dict__['_SetValueAndRate'](arg_value.COM_val, arg_valueRate.COM_val))
@@ -4106,149 +3488,109 @@ __all__.append('IAgCrdnCalcScalarPluginResultEval')
 
 
 class IAgCrdnVectorPlugin(object):
-    '''
+    """
     COM Plugin interface for a Crdn Vector.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered just before the first computational event trigger.
-        '''
+        """Triggered just before the first computational event trigger."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Register(self, result:"IAgCrdnVectorPluginResultReg") -> None:
-        '''
-        Triggered after Init() to allow setting for Dimension and Reference Axes.
-        '''
+        """Triggered after Init() to allow setting for Dimension and Reference Axes."""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def Reset(self, result:"IAgCrdnVectorPluginResultReset") -> bool:
-        '''
-        Triggered on a Reset event.
-        '''
+        """Triggered on a Reset event."""
         raise STKPluginMethodNotImplementedError('Reset was not implemented.')
 
     def Evaluate(self, result:"IAgCrdnVectorPluginResultEval") -> bool:
-        '''
-        Triggered when the plugin is evaluated for the vector components
-        '''
+        """Triggered when the plugin is evaluated for the vector components"""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is destroyed.
-        '''
+        """Triggered just before the plugin is destroyed."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
 __all__.append('IAgCrdnVectorPlugin')
 
 class IAgCrdnPointPlugin(object):
-    '''
+    """
     COM Plugin interface for a Crdn Point.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered just before the first computational event trigger.
-        '''
+        """Triggered just before the first computational event trigger."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Register(self, result:"IAgCrdnPointPluginResultReg") -> None:
-        '''
-        Triggered after Init() to allow setting of Reference System.
-        '''
+        """Triggered after Init() to allow setting of Reference System."""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def Reset(self, result:"IAgCrdnPointPluginResultReset") -> bool:
-        '''
-        Triggered on a Reset event.
-        '''
+        """Triggered on a Reset event."""
         raise STKPluginMethodNotImplementedError('Reset was not implemented.')
 
     def Evaluate(self, result:"IAgCrdnPointPluginResultEval") -> bool:
-        '''
-        Triggered when the plugin is evaluated for the position (and velocity) components
-        '''
+        """Triggered when the plugin is evaluated for the position (and velocity) components"""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is destroyed.
-        '''
+        """Triggered just before the plugin is destroyed."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
 __all__.append('IAgCrdnPointPlugin')
 
 class IAgCrdnAxesPlugin(object):
-    '''
+    """
     COM Plugin interface for a Crdn Axes.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered just before the first computational event trigger.
-        '''
+        """Triggered just before the first computational event trigger."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Register(self, result:"IAgCrdnAxesPluginResultReg") -> None:
-        '''
-        Triggered after Init() to allow setting of Reference Axes.
-        '''
+        """Triggered after Init() to allow setting of Reference Axes."""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def Reset(self, result:"IAgCrdnAxesPluginResultReset") -> bool:
-        '''
-        Triggered on a Reset event.
-        '''
+        """Triggered on a Reset event."""
         raise STKPluginMethodNotImplementedError('Reset was not implemented.')
 
     def Evaluate(self, result:"IAgCrdnAxesPluginResultEval") -> bool:
-        '''
-        Triggered when the plugin is evaluated for the axes orientation
-        '''
+        """Triggered when the plugin is evaluated for the axes orientation"""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is destroyed.
-        '''
+        """Triggered just before the plugin is destroyed."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
 __all__.append('IAgCrdnAxesPlugin')
 
 class IAgCrdnCalcScalarPlugin(object):
-    '''
+    """
     COM Plugin interface for a Crdn CalcScalar.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered just before the first computational event trigger.
-        '''
+        """Triggered just before the first computational event trigger."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def Register(self, result:"IAgCrdnCalcScalarPluginResultReg") -> None:
-        '''
-        Triggered after Init() to allow setting of any registration information.
-        '''
+        """Triggered after Init() to allow setting of any registration information."""
         raise STKPluginMethodNotImplementedError('Register was not implemented.')
 
     def Reset(self, result:"IAgCrdnCalcScalarPluginResultReset") -> bool:
-        '''
-        Triggered on a Reset event.
-        '''
+        """Triggered on a Reset event."""
         raise STKPluginMethodNotImplementedError('Reset was not implemented.')
 
     def Evaluate(self, result:"IAgCrdnCalcScalarPluginResultEval") -> bool:
-        '''
-        Triggered when the plugin is evaluated for the value and valueRate
-        '''
+        """Triggered when the plugin is evaluated for the value and valueRate"""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is destroyed.
-        '''
+        """Triggered just before the plugin is destroyed."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
 __all__.append('IAgCrdnCalcScalarPlugin')
@@ -4256,18 +3598,14 @@ __all__.append('IAgCrdnCalcScalarPlugin')
 
 
 class AgCrdnConfiguredVector(IAgCrdnConfiguredVector):
-    '''
-    Crdn Vector object which computes its components
-    '''
+    """Crdn Vector object which computes its components"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredVector.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredVector._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4282,18 +3620,14 @@ __all__.append('AgCrdnConfiguredVector')
 
 
 class AgCrdnConfiguredVectorWithRate(IAgCrdnConfiguredVectorWithRate):
-    '''
-    Crdn Vector object which computes its components and rate
-    '''
+    """Crdn Vector object which computes its components and rate"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredVectorWithRate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredVectorWithRate._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4308,18 +3642,14 @@ __all__.append('AgCrdnConfiguredVectorWithRate')
 
 
 class AgCrdnConfiguredAxes(IAgCrdnConfiguredAxes):
-    '''
-    Crdn Axes object which computes its quaternion
-    '''
+    """Crdn Axes object which computes its quaternion"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredAxes.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredAxes._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4334,18 +3664,14 @@ __all__.append('AgCrdnConfiguredAxes')
 
 
 class AgCrdnConfiguredAxesWithRate(IAgCrdnConfiguredAxesWithRate):
-    '''
-    Crdn Axes object which computes its quaternion and angular velocity
-    '''
+    """Crdn Axes object which computes its quaternion and angular velocity"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredAxesWithRate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredAxesWithRate._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4360,18 +3686,14 @@ __all__.append('AgCrdnConfiguredAxesWithRate')
 
 
 class AgCrdnConfiguredAngle(IAgCrdnConfiguredAngle):
-    '''
-    Crdn Angle object which computes its angle.
-    '''
+    """Crdn Angle object which computes its angle."""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredAngle.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredAngle._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4386,18 +3708,14 @@ __all__.append('AgCrdnConfiguredAngle')
 
 
 class AgCrdnConfiguredAngleWithRate(IAgCrdnConfiguredAngleWithRate):
-    '''
-    Crdn Angle object which computes its angle and rate.
-    '''
+    """Crdn Angle object which computes its angle and rate."""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredAngleWithRate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredAngleWithRate._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4412,18 +3730,14 @@ __all__.append('AgCrdnConfiguredAngleWithRate')
 
 
 class AgCrdnConfiguredPoint(IAgCrdnConfiguredPoint):
-    '''
-    Crdn Point object which computes its components
-    '''
+    """Crdn Point object which computes its components"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredPoint.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredPoint._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4438,18 +3752,14 @@ __all__.append('AgCrdnConfiguredPoint')
 
 
 class AgCrdnConfiguredPointWithRate(IAgCrdnConfiguredPointWithRate):
-    '''
-    Crdn Point object which computes its components and rate
-    '''
+    """Crdn Point object which computes its components and rate"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredPointWithRate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredPointWithRate._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4464,18 +3774,14 @@ __all__.append('AgCrdnConfiguredPointWithRate')
 
 
 class AgCrdnConfiguredSystem(IAgCrdnConfiguredSystem):
-    '''
-    Crdn System object which computes its components
-    '''
+    """Crdn System object which computes its components"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredSystem.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredSystem._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4490,18 +3796,14 @@ __all__.append('AgCrdnConfiguredSystem')
 
 
 class AgCrdnConfiguredSystemWithRate(IAgCrdnConfiguredSystemWithRate):
-    '''
-    Crdn System object which computes its components and rate
-    '''
+    """Crdn System object which computes its components and rate"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredSystemWithRate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredSystemWithRate._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4516,18 +3818,14 @@ __all__.append('AgCrdnConfiguredSystemWithRate')
 
 
 class AgCrdnPluginProvider(IAgCrdnPluginProvider):
-    '''
-    Vector Tool plugin provider.
-    '''
+    """Vector Tool plugin provider."""
     def __init__(self, sourceObject=None):
         IAgCrdnPluginProvider.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnPluginProvider._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4542,18 +3840,14 @@ __all__.append('AgCrdnPluginProvider')
 
 
 class AgCrdnConfiguredCalcScalar(IAgCrdnConfiguredCalcScalar):
-    '''
-    Crdn Calc Scalar object which computes its value
-    '''
+    """Crdn Calc Scalar object which computes its value"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredCalcScalar.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredCalcScalar._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4568,18 +3862,14 @@ __all__.append('AgCrdnConfiguredCalcScalar')
 
 
 class AgCrdnConfiguredCalcScalarWithRate(IAgCrdnConfiguredCalcScalarWithRate):
-    '''
-    Crdn Calc Scalar object which computes its value and rate
-    '''
+    """Crdn Calc Scalar object which computes its value and rate"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredCalcScalarWithRate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredCalcScalarWithRate._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4594,18 +3884,14 @@ __all__.append('AgCrdnConfiguredCalcScalarWithRate')
 
 
 class AgCrdnConfiguredCalcParameterSet(IAgCrdnConfiguredCalcParameterSet):
-    '''
-    Crdn Calc ParameterSet object which computes a set of scalar parameters
-    '''
+    """Crdn Calc ParameterSet object which computes a set of scalar parameters"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredCalcParameterSet.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredCalcParameterSet._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4620,18 +3906,14 @@ __all__.append('AgCrdnConfiguredCalcParameterSet')
 
 
 class AgCrdnConfiguredCalcParameterSetWithRate(IAgCrdnConfiguredCalcParameterSetWithRate):
-    '''
-    Crdn Calc ParameterSet object which computes a set of scalar parameters and their rates
-    '''
+    """Crdn Calc ParameterSet object which computes a set of scalar parameters and their rates"""
     def __init__(self, sourceObject=None):
         IAgCrdnConfiguredCalcParameterSetWithRate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnConfiguredCalcParameterSetWithRate._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4646,18 +3928,14 @@ __all__.append('AgCrdnConfiguredCalcParameterSetWithRate')
 
 
 class AgCrdnPluginCalcProvider(IAgCrdnPluginCalcProvider):
-    '''
-    Calc Tool plugin provider.
-    '''
+    """Calc Tool plugin provider."""
     def __init__(self, sourceObject=None):
         IAgCrdnPluginCalcProvider.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnPluginCalcProvider._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4672,18 +3950,14 @@ __all__.append('AgCrdnPluginCalcProvider')
 
 
 class AgCrdnVectorPluginResultReg(IAgCrdnVectorPluginResultReg):
-    '''
-    COM Plugin Result interface for the Register method of IAgCrdnVectorPlugin.
-    '''
+    """COM Plugin Result interface for the Register method of IAgCrdnVectorPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnVectorPluginResultReg.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnVectorPluginResultReg._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4698,18 +3972,14 @@ __all__.append('AgCrdnVectorPluginResultReg')
 
 
 class AgCrdnVectorPluginResultReset(IAgCrdnVectorPluginResultReset):
-    '''
-    COM Plugin Result interface for the Reset method of IAgCrdnVectorPlugin.
-    '''
+    """COM Plugin Result interface for the Reset method of IAgCrdnVectorPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnVectorPluginResultReset.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnVectorPluginResultReset._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4724,18 +3994,14 @@ __all__.append('AgCrdnVectorPluginResultReset')
 
 
 class AgCrdnVectorPluginResultEval(IAgCrdnVectorPluginResultEval):
-    '''
-    COM Plugin Result interface for the Evaluate method of IAgCrdnVectorPlugin.
-    '''
+    """COM Plugin Result interface for the Evaluate method of IAgCrdnVectorPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnVectorPluginResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnVectorPluginResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4750,18 +4016,14 @@ __all__.append('AgCrdnVectorPluginResultEval')
 
 
 class AgCrdnPointPluginResultReg(IAgCrdnPointPluginResultReg):
-    '''
-    COM Plugin Result interface for the Register method of IAgCrdnPointPlugin.
-    '''
+    """COM Plugin Result interface for the Register method of IAgCrdnPointPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnPointPluginResultReg.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnPointPluginResultReg._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4776,18 +4038,14 @@ __all__.append('AgCrdnPointPluginResultReg')
 
 
 class AgCrdnPointPluginResultReset(IAgCrdnPointPluginResultReset):
-    '''
-    COM Plugin Result interface for the Reset method of IAgCrdnPointPlugin.
-    '''
+    """COM Plugin Result interface for the Reset method of IAgCrdnPointPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnPointPluginResultReset.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnPointPluginResultReset._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4802,18 +4060,14 @@ __all__.append('AgCrdnPointPluginResultReset')
 
 
 class AgCrdnPointPluginResultEval(IAgCrdnPointPluginResultEval):
-    '''
-    COM Plugin Result interface for the Evaluate method of IAgCrdnPointPlugin.
-    '''
+    """COM Plugin Result interface for the Evaluate method of IAgCrdnPointPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnPointPluginResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnPointPluginResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4828,18 +4082,14 @@ __all__.append('AgCrdnPointPluginResultEval')
 
 
 class AgCrdnAxesPluginResultReg(IAgCrdnAxesPluginResultReg):
-    '''
-    COM Plugin Result interface for the Register method of IAgCrdnAxesPlugin.
-    '''
+    """COM Plugin Result interface for the Register method of IAgCrdnAxesPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnAxesPluginResultReg.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnAxesPluginResultReg._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4854,18 +4104,14 @@ __all__.append('AgCrdnAxesPluginResultReg')
 
 
 class AgCrdnAxesPluginResultReset(IAgCrdnAxesPluginResultReset):
-    '''
-    COM Plugin Result interface for the Reset method of IAgCrdnAxesPlugin.
-    '''
+    """COM Plugin Result interface for the Reset method of IAgCrdnAxesPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnAxesPluginResultReset.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnAxesPluginResultReset._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4880,18 +4126,14 @@ __all__.append('AgCrdnAxesPluginResultReset')
 
 
 class AgCrdnAxesPluginResultEval(IAgCrdnAxesPluginResultEval):
-    '''
-    COM Plugin Result interface for the Evaluate method of IAgCrdnAxesPlugin.
-    '''
+    """COM Plugin Result interface for the Evaluate method of IAgCrdnAxesPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnAxesPluginResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnAxesPluginResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4906,18 +4148,14 @@ __all__.append('AgCrdnAxesPluginResultEval')
 
 
 class AgCrdnCalcScalarPluginResultReg(IAgCrdnCalcScalarPluginResultReg):
-    '''
-    COM Plugin Result interface for the Register method of IAgCrdnCalcScalarPlugin.
-    '''
+    """COM Plugin Result interface for the Register method of IAgCrdnCalcScalarPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnCalcScalarPluginResultReg.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnCalcScalarPluginResultReg._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4932,18 +4170,14 @@ __all__.append('AgCrdnCalcScalarPluginResultReg')
 
 
 class AgCrdnCalcScalarPluginResultReset(IAgCrdnCalcScalarPluginResultReset):
-    '''
-    COM Plugin Result interface for the Reset method of IAgCrdnCalcScalarPlugin.
-    '''
+    """COM Plugin Result interface for the Reset method of IAgCrdnCalcScalarPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnCalcScalarPluginResultReset.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnCalcScalarPluginResultReset._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4958,18 +4192,14 @@ __all__.append('AgCrdnCalcScalarPluginResultReset')
 
 
 class AgCrdnCalcScalarPluginResultEval(IAgCrdnCalcScalarPluginResultEval):
-    '''
-    COM Plugin Result interface for the Evaluate method of IAgCrdnCalcScalarPlugin.
-    '''
+    """COM Plugin Result interface for the Evaluate method of IAgCrdnCalcScalarPlugin."""
     def __init__(self, sourceObject=None):
         IAgCrdnCalcScalarPluginResultEval.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCrdnCalcScalarPluginResultEval._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

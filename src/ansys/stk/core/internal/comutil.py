@@ -284,9 +284,7 @@ def Succeeded(hr):
     return hr >= S_OK
 
 class _CreateAgObjectLifetimeManager(object):
-    '''
-    Singleton class for managing reference counts on COM interfaces.
-    '''
+    """Singleton class for managing reference counts on COM interfaces."""
     _AddRef = WINFUNCTYPE(ULONG, LPVOID)
     _Release = WINFUNCTYPE(ULONG, LPVOID)
     if os.name == "nt":
@@ -410,25 +408,19 @@ class IUnknown(object):
         pIntf.TakeOwnership()
         return pIntf
     def CreateOwnership(self):
-        '''
-        Calls AddRef on the pointer, and registers the pointer to be Released when the ref count goes to zero.
-        '''
+        """Calls AddRef on the pointer, and registers the pointer to be Released when the ref count goes to zero."""
         ObjectLifetimeManager.CreateOwnership(self) 
     def TakeOwnership(self, isApplication=False):
-        '''
-        Registers the pointer to be Released when the ref count goes to zero but does not call AddRef.
-        '''
+        """Registers the pointer to be Released when the ref count goes to zero but does not call AddRef."""
         ObjectLifetimeManager.TakeOwnership(self, isApplication) 
     def AddRef(self):
-        ''' 
-        Increments the ref count on the pointer if the pointer was registered with CreateOwnership or TakeOwnership.
-        '''
+        """Increments the ref count on the pointer if the pointer was registered with CreateOwnership or TakeOwnership."""
         ObjectLifetimeManager.InternalAddRef(self)  
     def Release(self):
-        '''
+        """
         Decrements the ref count on the pointer if the pointer was registered with CreateOwnership or TakeOwnership.
         Calls Release if the ref count goes to zero.
-        '''
+        """
         ObjectLifetimeManager.Release(self)          
 
 class IDispatch(IUnknown):
@@ -464,9 +456,7 @@ class IEnumVARIANT(object):
         self._Reset()
           
 class IAGFUNCTYPE(object):
-    '''
-    Wrapper for calling methods into COM interface vtables.
-    '''
+    """Wrapper for calling methods into COM interface vtables."""
     def __init__(self, pUnk, iid, method_index, *argtypes):
         self.pUnk = pUnk
         self.iid = iid
