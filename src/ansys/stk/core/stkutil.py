@@ -35,9 +35,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class AgEPositionType(IntEnum):
-    '''
-    Facility/place/target position types.
-    '''
+    """Facility/place/target position types."""
     # Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude.
     eCartesian = 0x0,
     # Cylindrical: position specified in terms of radius (polar), longitude (measured in degrees from -360.0 degrees to +360.0 degrees), and the Z component of the object's position vector.
@@ -57,9 +55,7 @@ agcls.AgTypeNameMap['AgEPositionType'] = AgEPositionType
 __all__.append('AgEPositionType')
 
 class AgEEulerDirectionSequence(IntEnum):
-    '''
-    Euler direction sequences.
-    '''
+    """Euler direction sequences."""
     # 12 sequence.
     e12 = 0,
     # 21 sequence.
@@ -73,9 +69,7 @@ agcls.AgTypeNameMap['AgEEulerDirectionSequence'] = AgEEulerDirectionSequence
 __all__.append('AgEEulerDirectionSequence')
 
 class AgEDirectionType(IntEnum):
-    '''
-    Direction options for aligned and constrained vectors.
-    '''
+    """Direction options for aligned and constrained vectors."""
     # Euler B and C angles.
     eDirEuler = 0,
     # Pitch and Roll angles.
@@ -89,9 +83,7 @@ agcls.AgTypeNameMap['AgEDirectionType'] = AgEDirectionType
 __all__.append('AgEDirectionType')
 
 class AgEPRSequence(IntEnum):
-    '''
-    Pitch-Roll (PR) direction sequences.
-    '''
+    """Pitch-Roll (PR) direction sequences."""
     # PR sequence.
     ePR = 0
 
@@ -99,9 +91,7 @@ agcls.AgTypeNameMap['AgEPRSequence'] = AgEPRSequence
 __all__.append('AgEPRSequence')
 
 class AgEOrientationType(IntEnum):
-    '''
-    Orientation methods.
-    '''
+    """Orientation methods."""
     # AzEl (azimuth-elevation) method.
     eAzEl = 0,
     # Euler angles method.
@@ -115,9 +105,7 @@ agcls.AgTypeNameMap['AgEOrientationType'] = AgEOrientationType
 __all__.append('AgEOrientationType')
 
 class AgEAzElAboutBoresight(IntEnum):
-    '''
-    About Boresight options for AzEl orientation method.
-    '''
+    """About Boresight options for AzEl orientation method."""
     # Hold: rotation about the Y axis followed by rotation about the new X-axis.
     eAzElAboutBoresightHold = 0,
     # Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle.
@@ -127,9 +115,7 @@ agcls.AgTypeNameMap['AgEAzElAboutBoresight'] = AgEAzElAboutBoresight
 __all__.append('AgEAzElAboutBoresight')
 
 class AgEEulerOrientationSequence(IntEnum):
-    '''
-    Euler rotation sequence options:
-    '''
+    """Euler rotation sequence options:"""
     # 121 rotation.
     e121 = 0,
     # 123 rotation.
@@ -159,9 +145,7 @@ agcls.AgTypeNameMap['AgEEulerOrientationSequence'] = AgEEulerOrientationSequence
 __all__.append('AgEEulerOrientationSequence')
 
 class AgEYPRAnglesSequence(IntEnum):
-    '''
-    Yaw-Pitch-Roll (YPR) sequences.
-    '''
+    """Yaw-Pitch-Roll (YPR) sequences."""
     # PRY sequence.
     ePRY = 0,
     # PYR sequence.
@@ -179,9 +163,7 @@ agcls.AgTypeNameMap['AgEYPRAnglesSequence'] = AgEYPRAnglesSequence
 __all__.append('AgEYPRAnglesSequence')
 
 class AgEOrbitStateType(IntEnum):
-    '''
-    Coordinate types used in specifying orbit state.
-    '''
+    """Coordinate types used in specifying orbit state."""
     # Cartesian coordinate type.
     eOrbitStateCartesian = 0,
     # Classical (Keplerian) coordinate type.
@@ -201,9 +183,7 @@ agcls.AgTypeNameMap['AgEOrbitStateType'] = AgEOrbitStateType
 __all__.append('AgEOrbitStateType')
 
 class AgECoordinateSystem(IntEnum):
-    '''
-    Earth-centered coordinate systems for defining certain propagators.
-    '''
+    """Earth-centered coordinate systems for defining certain propagators."""
     # Represents coordinate system not supported by the Object Model
     eCoordinateSystemUnknown = -1,
     # Alignment at Epoch: an inertial system coincident with ECF at the Coord Epoch. Often used to specify launch trajectories.
@@ -257,9 +237,7 @@ agcls.AgTypeNameMap['AgECoordinateSystem'] = AgECoordinateSystem
 __all__.append('AgECoordinateSystem')
 
 class AgELogMsgType(IntEnum):
-    '''
-    Log message types.
-    '''
+    """Log message types."""
     # Debugging message.
     eLogMsgDebug = 0,
     # Informational message.
@@ -275,9 +253,7 @@ agcls.AgTypeNameMap['AgELogMsgType'] = AgELogMsgType
 __all__.append('AgELogMsgType')
 
 class AgELogMsgDispID(IntEnum):
-    '''
-    Log message destination options.
-    '''
+    """Log message destination options."""
     # STK displays the message in all the log destination.
     eLogMsgDispAll = -1,
     # STK displays the message in the default log destination.
@@ -291,9 +267,7 @@ agcls.AgTypeNameMap['AgELogMsgDispID'] = AgELogMsgDispID
 __all__.append('AgELogMsgDispID')
 
 class AgELineStyle(IntEnum):
-    '''
-    Line Style
-    '''
+    """Line Style"""
     # Specifies a solid line.
     eSolid = 0,
     # Specifies a dashed line.
@@ -335,9 +309,7 @@ agcls.AgTypeNameMap['AgELineStyle'] = AgELineStyle
 __all__.append('AgELineStyle')
 
 class AgEExecMultiCmdResultAction(IntFlag):
-    '''
-    Enumeration defines a set of actions when an error occurs while executing a command batch.
-    '''
+    """Enumeration defines a set of actions when an error occurs while executing a command batch."""
     # Continue executing the remaining commands in the command batch.
     eContinueOnError = 0,
     # Terminate the execution of the command batch but do not throw an exception.
@@ -351,9 +323,7 @@ agcls.AgTypeNameMap['AgEExecMultiCmdResultAction'] = AgEExecMultiCmdResultAction
 __all__.append('AgEExecMultiCmdResultAction')
 
 class AgEFillStyle(IntEnum):
-    '''
-    Fill Style
-    '''
+    """Fill Style"""
     # Specifies a solid fill style.
     eFillStyleSolid = 0,
     # Specifies a horizontally striped fill style.
@@ -375,9 +345,7 @@ agcls.AgTypeNameMap['AgEFillStyle'] = AgEFillStyle
 __all__.append('AgEFillStyle')
 
 class AgEPropertyInfoValueType(IntEnum):
-    '''
-    The enumeration used to determine what type of property is being used.
-    '''
+    """The enumeration used to determine what type of property is being used."""
     # Property is of type int.
     ePropertyInfoValueTypeInt = 0,
     # Property is of type real.
@@ -398,9 +366,7 @@ __all__.append('AgEPropertyInfoValueType')
 
 
 class IAgLocationData(object):
-    '''
-    Base interface IAgLocationData. IAgPosition derives from this interface.
-    '''
+    """Base interface IAgLocationData. IAgPosition derives from this interface."""
     _uuid = '{C1E99EDA-C666-4971-AFD0-2259CB7E8452}'
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -418,9 +384,7 @@ class IAgLocationData(object):
         IID_IAgLocationData = agcom.GUID(IAgLocationData._uuid)
         vtable_offset_local = IAgLocationData._vtable_offset - 1
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgLocationData.__dict__ and type(IAgLocationData.__dict__[attrname]) == property:
@@ -438,9 +402,7 @@ agcls.AgTypeNameMap['IAgLocationData'] = IAgLocationData
 __all__.append('IAgLocationData')
 
 class IAgPosition(object):
-    '''
-    IAgPosition provides access to the position of the object
-    '''
+    """IAgPosition provides access to the position of the object"""
     _uuid = '{F25960CE-1D73-4BA0-A429-541DD6D808DE}'
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -500,9 +462,7 @@ class IAgPosition(object):
         self.__dict__['_QueryCylindricalArray'] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+20, POINTER(agcom.SAFEARRAY))
         self.__dict__['_QueryCartesianArray'] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+21, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgPosition.__dict__ and type(IAgPosition.__dict__[attrname]) == property:
@@ -515,9 +475,7 @@ class IAgPosition(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgPosition.')
     
     def ConvertTo(self, type:"AgEPositionType") -> "IAgPosition":
-        '''
-        Changes the position coordinates to type specified.
-        '''
+        """Changes the position coordinates to type specified."""
         with agmarshall.AgEnum_arg(AgEPositionType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgPosition:
             agcls.evaluate_hresult(self.__dict__['_ConvertTo'](arg_type.COM_val, byref(arg_ppIAgPosition.COM_val)))
@@ -525,87 +483,67 @@ class IAgPosition(object):
 
     @property
     def PosType(self) -> "AgEPositionType":
-        '''
-        Gets the type of position currently being used.
-        '''
+        """Gets the type of position currently being used."""
         with agmarshall.AgEnum_arg(AgEPositionType) as arg_pType:
             agcls.evaluate_hresult(self.__dict__['_GetPosType'](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
     def Assign(self, pPosition:"IAgPosition") -> None:
-        '''
-        This assigns the coordinates into the system.
-        '''
+        """This assigns the coordinates into the system."""
         with agmarshall.AgInterface_in_arg(pPosition, IAgPosition) as arg_pPosition:
             agcls.evaluate_hresult(self.__dict__['_Assign'](arg_pPosition.COM_val))
 
     def AssignGeocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
-        '''
-        Helper method to assign the position using the Geocentric representation.
-        '''
+        """Helper method to assign the position using the Geocentric representation."""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt:
             agcls.evaluate_hresult(self.__dict__['_AssignGeocentric'](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
 
     def AssignGeodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
-        '''
-        Helper method to assign the position using the Geodetic representation.
-        '''
+        """Helper method to assign the position using the Geodetic representation."""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt:
             agcls.evaluate_hresult(self.__dict__['_AssignGeodetic'](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
 
     def AssignSpherical(self, lat:typing.Any, lon:typing.Any, radius:float) -> None:
-        '''
-        Helper method to assign the position using the Spherical representation
-        '''
+        """Helper method to assign the position using the Spherical representation"""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(radius) as arg_radius:
             agcls.evaluate_hresult(self.__dict__['_AssignSpherical'](arg_lat.COM_val, arg_lon.COM_val, arg_radius.COM_val))
 
     def AssignCylindrical(self, radius:float, z:float, lon:typing.Any) -> None:
-        '''
-        Helper method to assign the position using the Cylindrical representation
-        '''
+        """Helper method to assign the position using the Cylindrical representation"""
         with agmarshall.DOUBLE_arg(radius) as arg_radius, \
              agmarshall.DOUBLE_arg(z) as arg_z, \
              agmarshall.VARIANT_arg(lon) as arg_lon:
             agcls.evaluate_hresult(self.__dict__['_AssignCylindrical'](arg_radius.COM_val, arg_z.COM_val, arg_lon.COM_val))
 
     def AssignCartesian(self, x:float, y:float, z:float) -> None:
-        '''
-        Helper method to assign the position using the Cartesian representation
-        '''
+        """Helper method to assign the position using the Cartesian representation"""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_AssignCartesian'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def AssignPlanetocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
-        '''
-        Helper method to assign the position using the Planetocentric representation
-        '''
+        """Helper method to assign the position using the Planetocentric representation"""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt:
             agcls.evaluate_hresult(self.__dict__['_AssignPlanetocentric'](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
 
     def AssignPlanetodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
-        '''
-        Helper method to assign the position using the Planetodetic representation
-        '''
+        """Helper method to assign the position using the Planetodetic representation"""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt:
             agcls.evaluate_hresult(self.__dict__['_AssignPlanetodetic'](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
 
     def QueryPlanetocentric(self) -> typing.Tuple[typing.Any, typing.Any, float]:
-        '''
-        Helper method to get the position using the Planetocentric representation
-        '''
+        """Helper method to get the position using the Planetocentric representation"""
         with agmarshall.VARIANT_arg() as arg_lat, \
              agmarshall.VARIANT_arg() as arg_lon, \
              agmarshall.DOUBLE_arg() as arg_alt:
@@ -613,9 +551,7 @@ class IAgPosition(object):
             return arg_lat.python_val, arg_lon.python_val, arg_alt.python_val
 
     def QueryPlanetodetic(self) -> typing.Tuple[typing.Any, typing.Any, float]:
-        '''
-        Helper method to get the position using the Planetodetic representation
-        '''
+        """Helper method to get the position using the Planetodetic representation"""
         with agmarshall.VARIANT_arg() as arg_lat, \
              agmarshall.VARIANT_arg() as arg_lon, \
              agmarshall.DOUBLE_arg() as arg_alt:
@@ -623,9 +559,7 @@ class IAgPosition(object):
             return arg_lat.python_val, arg_lon.python_val, arg_alt.python_val
 
     def QuerySpherical(self) -> typing.Tuple[typing.Any, typing.Any, float]:
-        '''
-        Helper method to get the position using the Spherical representation
-        '''
+        """Helper method to get the position using the Spherical representation"""
         with agmarshall.VARIANT_arg() as arg_lat, \
              agmarshall.VARIANT_arg() as arg_lon, \
              agmarshall.DOUBLE_arg() as arg_radius:
@@ -633,9 +567,7 @@ class IAgPosition(object):
             return arg_lat.python_val, arg_lon.python_val, arg_radius.python_val
 
     def QueryCylindrical(self) -> typing.Tuple[float, typing.Any, float]:
-        '''
-        Helper method to get the position using the Cylindrical representation
-        '''
+        """Helper method to get the position using the Cylindrical representation"""
         with agmarshall.DOUBLE_arg() as arg_radius, \
              agmarshall.VARIANT_arg() as arg_lon, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -643,9 +575,7 @@ class IAgPosition(object):
             return arg_radius.python_val, arg_lon.python_val, arg_z.python_val
 
     def QueryCartesian(self) -> typing.Tuple[float, float, float]:
-        '''
-        Helper method to get the position using the Cartesian representation
-        '''
+        """Helper method to get the position using the Cartesian representation"""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -654,49 +584,37 @@ class IAgPosition(object):
 
     @property
     def CentralBodyName(self) -> str:
-        '''
-        Gets the central body.
-        '''
+        """Gets the central body."""
         with agmarshall.BSTR_arg() as arg_pCBName:
             agcls.evaluate_hresult(self.__dict__['_GetCentralBodyName'](byref(arg_pCBName.COM_val)))
             return arg_pCBName.python_val
 
     def QueryPlanetocentricArray(self) -> list:
-        '''
-        Returns the Planetocentric elements as an array.
-        '''
+        """Returns the Planetocentric elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryPlanetocentricArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryPlanetodeticArray(self) -> list:
-        '''
-        Returns the Planetodetic elements as an array.
-        '''
+        """Returns the Planetodetic elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryPlanetodeticArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QuerySphericalArray(self) -> list:
-        '''
-        Returns the Spherical elements as an array.
-        '''
+        """Returns the Spherical elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QuerySphericalArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryCylindricalArray(self) -> list:
-        '''
-        Returns the Cylindrical elements as an array.
-        '''
+        """Returns the Cylindrical elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryCylindricalArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryCartesianArray(self) -> list:
-        '''
-        Returns the Cartesian elements as an array.
-        '''
+        """Returns the Cartesian elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryCartesianArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -707,9 +625,7 @@ agcls.AgTypeNameMap['IAgPosition'] = IAgPosition
 __all__.append('IAgPosition')
 
 class IAgPlanetocentric(IAgPosition):
-    '''
-    Planetocentric Position Type.
-    '''
+    """Planetocentric Position Type."""
     _uuid = '{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}'
     _num_methods = 6
     _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
@@ -740,9 +656,7 @@ class IAgPlanetocentric(IAgPosition):
         self.__dict__['_GetAlt'] = IAGFUNCTYPE(pUnk, IID_IAgPlanetocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetAlt'] = IAGFUNCTYPE(pUnk, IID_IAgPlanetocentric, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgPlanetocentric.__dict__ and type(IAgPlanetocentric.__dict__[attrname]) == property:
@@ -756,9 +670,7 @@ class IAgPlanetocentric(IAgPosition):
     
     @property
     def Lat(self) -> typing.Any:
-        '''
-        Uses Latitude Dimension.
-        '''
+        """Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLat'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -770,9 +682,7 @@ class IAgPlanetocentric(IAgPosition):
 
     @property
     def Lon(self) -> typing.Any:
-        '''
-        Uses Longitude Dimension.
-        '''
+        """Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLon'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -784,9 +694,7 @@ class IAgPlanetocentric(IAgPosition):
 
     @property
     def Alt(self) -> float:
-        '''
-        Dimension depends on context.
-        '''
+        """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetAlt'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -802,9 +710,7 @@ agcls.AgTypeNameMap['IAgPlanetocentric'] = IAgPlanetocentric
 __all__.append('IAgPlanetocentric')
 
 class IAgGeocentric(IAgPosition):
-    '''
-    Geocentric Position Type.
-    '''
+    """Geocentric Position Type."""
     _uuid = '{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}'
     _num_methods = 6
     _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
@@ -835,9 +741,7 @@ class IAgGeocentric(IAgPosition):
         self.__dict__['_GetAlt'] = IAGFUNCTYPE(pUnk, IID_IAgGeocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetAlt'] = IAGFUNCTYPE(pUnk, IID_IAgGeocentric, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgGeocentric.__dict__ and type(IAgGeocentric.__dict__[attrname]) == property:
@@ -851,9 +755,7 @@ class IAgGeocentric(IAgPosition):
     
     @property
     def Lat(self) -> typing.Any:
-        '''
-        Uses Latitude Dimension.
-        '''
+        """Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLat'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -865,9 +767,7 @@ class IAgGeocentric(IAgPosition):
 
     @property
     def Lon(self) -> typing.Any:
-        '''
-        Uses Longitude Dimension.
-        '''
+        """Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLon'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -879,9 +779,7 @@ class IAgGeocentric(IAgPosition):
 
     @property
     def Alt(self) -> float:
-        '''
-        Dimension depends on context.
-        '''
+        """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetAlt'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -897,9 +795,7 @@ agcls.AgTypeNameMap['IAgGeocentric'] = IAgGeocentric
 __all__.append('IAgGeocentric')
 
 class IAgSpherical(IAgPosition):
-    '''
-    Spherical Position Type.
-    '''
+    """Spherical Position Type."""
     _uuid = '{62B93DF1-C615-4363-B4D9-DAA1ACE56204}'
     _num_methods = 6
     _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
@@ -930,9 +826,7 @@ class IAgSpherical(IAgPosition):
         self.__dict__['_GetRadius'] = IAGFUNCTYPE(pUnk, IID_IAgSpherical, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetRadius'] = IAGFUNCTYPE(pUnk, IID_IAgSpherical, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgSpherical.__dict__ and type(IAgSpherical.__dict__[attrname]) == property:
@@ -946,9 +840,7 @@ class IAgSpherical(IAgPosition):
     
     @property
     def Lat(self) -> typing.Any:
-        '''
-        Uses Latitude Dimension.
-        '''
+        """Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLat'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -960,9 +852,7 @@ class IAgSpherical(IAgPosition):
 
     @property
     def Lon(self) -> typing.Any:
-        '''
-        Uses Longitude Dimension.
-        '''
+        """Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLon'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -974,9 +864,7 @@ class IAgSpherical(IAgPosition):
 
     @property
     def Radius(self) -> float:
-        '''
-        Dimension depends on context.
-        '''
+        """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetRadius'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -992,9 +880,7 @@ agcls.AgTypeNameMap['IAgSpherical'] = IAgSpherical
 __all__.append('IAgSpherical')
 
 class IAgCylindrical(IAgPosition):
-    '''
-    Cylindrical Position Type.
-    '''
+    """Cylindrical Position Type."""
     _uuid = '{36F08499-F7C4-41DE-AB49-794EC65C5165}'
     _num_methods = 6
     _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
@@ -1025,9 +911,7 @@ class IAgCylindrical(IAgPosition):
         self.__dict__['_GetLon'] = IAGFUNCTYPE(pUnk, IID_IAgCylindrical, vtable_offset_local+5, POINTER(agcom.VARIANT))
         self.__dict__['_SetLon'] = IAGFUNCTYPE(pUnk, IID_IAgCylindrical, vtable_offset_local+6, agcom.VARIANT)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCylindrical.__dict__ and type(IAgCylindrical.__dict__[attrname]) == property:
@@ -1041,9 +925,7 @@ class IAgCylindrical(IAgPosition):
     
     @property
     def Radius(self) -> float:
-        '''
-        Dimension depends on context.
-        '''
+        """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetRadius'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1055,9 +937,7 @@ class IAgCylindrical(IAgPosition):
 
     @property
     def Z(self) -> float:
-        '''
-        Uses Angle Dimension.
-        '''
+        """Uses Angle Dimension."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetZ'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1069,9 +949,7 @@ class IAgCylindrical(IAgPosition):
 
     @property
     def Lon(self) -> typing.Any:
-        '''
-        Dimension depends on context.
-        '''
+        """Dimension depends on context."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetLon'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1087,9 +965,7 @@ agcls.AgTypeNameMap['IAgCylindrical'] = IAgCylindrical
 __all__.append('IAgCylindrical')
 
 class IAgCartesian(IAgPosition):
-    '''
-    IAgCartesian Interface used to access a position using Cartesian Coordinates
-    '''
+    """IAgCartesian Interface used to access a position using Cartesian Coordinates"""
     _uuid = '{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}'
     _num_methods = 6
     _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
@@ -1120,9 +996,7 @@ class IAgCartesian(IAgPosition):
         self.__dict__['_GetZ'] = IAGFUNCTYPE(pUnk, IID_IAgCartesian, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetZ'] = IAGFUNCTYPE(pUnk, IID_IAgCartesian, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCartesian.__dict__ and type(IAgCartesian.__dict__[attrname]) == property:
@@ -1136,9 +1010,7 @@ class IAgCartesian(IAgPosition):
     
     @property
     def X(self) -> float:
-        '''
-        Dimension depends on context.
-        '''
+        """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetX'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1150,9 +1022,7 @@ class IAgCartesian(IAgPosition):
 
     @property
     def Y(self) -> float:
-        '''
-        Dimension depends on context.
-        '''
+        """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetY'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1164,9 +1034,7 @@ class IAgCartesian(IAgPosition):
 
     @property
     def Z(self) -> float:
-        '''
-        Dimension depends on context.
-        '''
+        """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetZ'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1182,9 +1050,7 @@ agcls.AgTypeNameMap['IAgCartesian'] = IAgCartesian
 __all__.append('IAgCartesian')
 
 class IAgGeodetic(IAgPosition):
-    '''
-    IAgGeodetic sets the position using Geodetic properties.
-    '''
+    """IAgGeodetic sets the position using Geodetic properties."""
     _uuid = '{93D3322B-C842-48D2-AFCF-BC42B59DB28E}'
     _num_methods = 6
     _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
@@ -1215,9 +1081,7 @@ class IAgGeodetic(IAgPosition):
         self.__dict__['_GetAlt'] = IAGFUNCTYPE(pUnk, IID_IAgGeodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetAlt'] = IAGFUNCTYPE(pUnk, IID_IAgGeodetic, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgGeodetic.__dict__ and type(IAgGeodetic.__dict__[attrname]) == property:
@@ -1231,9 +1095,7 @@ class IAgGeodetic(IAgPosition):
     
     @property
     def Lat(self) -> typing.Any:
-        '''
-        Latitude. Uses Latitude Dimension.
-        '''
+        """Latitude. Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pLat:
             agcls.evaluate_hresult(self.__dict__['_GetLat'](byref(arg_pLat.COM_val)))
             return arg_pLat.python_val
@@ -1245,9 +1107,7 @@ class IAgGeodetic(IAgPosition):
 
     @property
     def Lon(self) -> typing.Any:
-        '''
-        Longitude. Uses Longitude Dimension.
-        '''
+        """Longitude. Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pLon:
             agcls.evaluate_hresult(self.__dict__['_GetLon'](byref(arg_pLon.COM_val)))
             return arg_pLon.python_val
@@ -1259,9 +1119,7 @@ class IAgGeodetic(IAgPosition):
 
     @property
     def Alt(self) -> float:
-        '''
-        Altitude. Dimension depends on context.
-        '''
+        """Altitude. Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pAlt:
             agcls.evaluate_hresult(self.__dict__['_GetAlt'](byref(arg_pAlt.COM_val)))
             return arg_pAlt.python_val
@@ -1277,9 +1135,7 @@ agcls.AgTypeNameMap['IAgGeodetic'] = IAgGeodetic
 __all__.append('IAgGeodetic')
 
 class IAgPlanetodetic(IAgPosition):
-    '''
-    IAgPlanetodetic sets the position using Planetodetic properties.
-    '''
+    """IAgPlanetodetic sets the position using Planetodetic properties."""
     _uuid = '{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}'
     _num_methods = 6
     _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
@@ -1310,9 +1166,7 @@ class IAgPlanetodetic(IAgPosition):
         self.__dict__['_GetAlt'] = IAGFUNCTYPE(pUnk, IID_IAgPlanetodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetAlt'] = IAGFUNCTYPE(pUnk, IID_IAgPlanetodetic, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgPlanetodetic.__dict__ and type(IAgPlanetodetic.__dict__[attrname]) == property:
@@ -1326,9 +1180,7 @@ class IAgPlanetodetic(IAgPosition):
     
     @property
     def Lat(self) -> typing.Any:
-        '''
-        Latitude. Uses Latitude Dimension.
-        '''
+        """Latitude. Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pLat:
             agcls.evaluate_hresult(self.__dict__['_GetLat'](byref(arg_pLat.COM_val)))
             return arg_pLat.python_val
@@ -1340,9 +1192,7 @@ class IAgPlanetodetic(IAgPosition):
 
     @property
     def Lon(self) -> typing.Any:
-        '''
-        Longitude. Uses Longitude Dimension.
-        '''
+        """Longitude. Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pLon:
             agcls.evaluate_hresult(self.__dict__['_GetLon'](byref(arg_pLon.COM_val)))
             return arg_pLon.python_val
@@ -1354,9 +1204,7 @@ class IAgPlanetodetic(IAgPosition):
 
     @property
     def Alt(self) -> float:
-        '''
-        Altitude. Dimension depends on context.
-        '''
+        """Altitude. Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pAlt:
             agcls.evaluate_hresult(self.__dict__['_GetAlt'](byref(arg_pAlt.COM_val)))
             return arg_pAlt.python_val
@@ -1372,9 +1220,7 @@ agcls.AgTypeNameMap['IAgPlanetodetic'] = IAgPlanetodetic
 __all__.append('IAgPlanetodetic')
 
 class IAgDirection(object):
-    '''
-    Interface to set and retrieve direction options for aligned and constrained vectors.
-    '''
+    """Interface to set and retrieve direction options for aligned and constrained vectors."""
     _uuid = '{8304507A-4915-453D-8944-2080659C0257}'
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1422,9 +1268,7 @@ class IAgDirection(object):
         self.__dict__['_QueryRADecArray'] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
         self.__dict__['_QueryXYZArray'] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+15, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDirection.__dict__ and type(IAgDirection.__dict__[attrname]) == property:
@@ -1437,9 +1281,7 @@ class IAgDirection(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgDirection.')
     
     def ConvertTo(self, type:"AgEDirectionType") -> "IAgDirection":
-        '''
-        Method to changes the direction to the type specified.
-        '''
+        """Method to changes the direction to the type specified."""
         with agmarshall.AgEnum_arg(AgEDirectionType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgDirection:
             agcls.evaluate_hresult(self.__dict__['_ConvertTo'](arg_type.COM_val, byref(arg_ppIAgDirection.COM_val)))
@@ -1447,58 +1289,44 @@ class IAgDirection(object):
 
     @property
     def DirectionType(self) -> "AgEDirectionType":
-        '''
-        Returns the type of direction currently being used.
-        '''
+        """Returns the type of direction currently being used."""
         with agmarshall.AgEnum_arg(AgEDirectionType) as arg_pType:
             agcls.evaluate_hresult(self.__dict__['_GetDirectionType'](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
     def Assign(self, pDirection:"IAgDirection") -> None:
-        '''
-        Assign a new direction.
-        '''
+        """Assign a new direction."""
         with agmarshall.AgInterface_in_arg(pDirection, IAgDirection) as arg_pDirection:
             agcls.evaluate_hresult(self.__dict__['_Assign'](arg_pDirection.COM_val))
 
     def AssignEuler(self, b:typing.Any, c:typing.Any, sequence:"AgEEulerDirectionSequence") -> None:
-        '''
-        Helper method to set direction using the Euler representation. Params B and C use Angle Dimension.
-        '''
+        """Helper method to set direction using the Euler representation. Params B and C use Angle Dimension."""
         with agmarshall.VARIANT_arg(b) as arg_b, \
              agmarshall.VARIANT_arg(c) as arg_c, \
              agmarshall.AgEnum_arg(AgEEulerDirectionSequence, sequence) as arg_sequence:
             agcls.evaluate_hresult(self.__dict__['_AssignEuler'](arg_b.COM_val, arg_c.COM_val, arg_sequence.COM_val))
 
     def AssignPR(self, pitch:typing.Any, roll:typing.Any) -> None:
-        '''
-        Helper method to set direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension.
-        '''
+        """Helper method to set direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         with agmarshall.VARIANT_arg(pitch) as arg_pitch, \
              agmarshall.VARIANT_arg(roll) as arg_roll:
             agcls.evaluate_hresult(self.__dict__['_AssignPR'](arg_pitch.COM_val, arg_roll.COM_val))
 
     def AssignRADec(self, ra:typing.Any, dec:typing.Any) -> None:
-        '''
-        Helper method to set direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude.
-        '''
+        """Helper method to set direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
         with agmarshall.VARIANT_arg(ra) as arg_ra, \
              agmarshall.VARIANT_arg(dec) as arg_dec:
             agcls.evaluate_hresult(self.__dict__['_AssignRADec'](arg_ra.COM_val, arg_dec.COM_val))
 
     def AssignXYZ(self, x:float, y:float, z:float) -> None:
-        '''
-        Helper method to set direction using the Cartesian representation. Params X, Y and Z are dimensionless.
-        '''
+        """Helper method to set direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_AssignXYZ'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def QueryEuler(self, sequence:"AgEEulerDirectionSequence") -> typing.Tuple[typing.Any, typing.Any]:
-        '''
-        Helper method to get direction using the Euler representation. Params B and C use Angle Dimension.
-        '''
+        """Helper method to get direction using the Euler representation. Params B and C use Angle Dimension."""
         with agmarshall.AgEnum_arg(AgEEulerDirectionSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg() as arg_b, \
              agmarshall.VARIANT_arg() as arg_c:
@@ -1506,9 +1334,7 @@ class IAgDirection(object):
             return arg_b.python_val, arg_c.python_val
 
     def QueryPR(self, sequence:"AgEPRSequence") -> typing.Tuple[typing.Any, typing.Any]:
-        '''
-        Helper method to get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension.
-        '''
+        """Helper method to get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         with agmarshall.AgEnum_arg(AgEPRSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg() as arg_pitch, \
              agmarshall.VARIANT_arg() as arg_roll:
@@ -1516,18 +1342,14 @@ class IAgDirection(object):
             return arg_pitch.python_val, arg_roll.python_val
 
     def QueryRADec(self) -> typing.Tuple[typing.Any, typing.Any]:
-        '''
-        Helper method to get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude.
-        '''
+        """Helper method to get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
         with agmarshall.VARIANT_arg() as arg_ra, \
              agmarshall.VARIANT_arg() as arg_dec:
             agcls.evaluate_hresult(self.__dict__['_QueryRADec'](byref(arg_ra.COM_val), byref(arg_dec.COM_val)))
             return arg_ra.python_val, arg_dec.python_val
 
     def QueryXYZ(self) -> typing.Tuple[float, float, float]:
-        '''
-        Helper method to get direction using the Cartesian representation. Params X, Y and Z are dimensionless.
-        '''
+        """Helper method to get direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -1535,35 +1357,27 @@ class IAgDirection(object):
             return arg_x.python_val, arg_y.python_val, arg_z.python_val
 
     def QueryEulerArray(self, sequence:"AgEEulerDirectionSequence") -> list:
-        '''
-        Returns the Euler elements in an array.
-        '''
+        """Returns the Euler elements in an array."""
         with agmarshall.AgEnum_arg(AgEEulerDirectionSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryEulerArray'](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryPRArray(self, sequence:"AgEPRSequence") -> list:
-        '''
-        Returns the PR elements in an array.
-        '''
+        """Returns the PR elements in an array."""
         with agmarshall.AgEnum_arg(AgEPRSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryPRArray'](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryRADecArray(self) -> list:
-        '''
-        Returns the RADec elements in an array.
-        '''
+        """Returns the RADec elements in an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryRADecArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryXYZArray(self) -> list:
-        '''
-        Returns the XYZ elements in an array.
-        '''
+        """Returns the XYZ elements in an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryXYZArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -1574,9 +1388,7 @@ agcls.AgTypeNameMap['IAgDirection'] = IAgDirection
 __all__.append('IAgDirection')
 
 class IAgDirectionEuler(IAgDirection):
-    '''
-    Interface for Euler direction sequence.
-    '''
+    """Interface for Euler direction sequence."""
     _uuid = '{9CBDC138-72D1-4734-8F95-2140266D37B5}'
     _num_methods = 6
     _vtable_offset = IAgDirection._vtable_offset + IAgDirection._num_methods
@@ -1607,9 +1419,7 @@ class IAgDirectionEuler(IAgDirection):
         self.__dict__['_GetSequence'] = IAGFUNCTYPE(pUnk, IID_IAgDirectionEuler, vtable_offset_local+5, POINTER(agcom.LONG))
         self.__dict__['_SetSequence'] = IAGFUNCTYPE(pUnk, IID_IAgDirectionEuler, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDirectionEuler.__dict__ and type(IAgDirectionEuler.__dict__[attrname]) == property:
@@ -1623,9 +1433,7 @@ class IAgDirectionEuler(IAgDirection):
     
     @property
     def B(self) -> typing.Any:
-        '''
-        Euler B angle. Uses Angle Dimension.
-        '''
+        """Euler B angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetB'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1637,9 +1445,7 @@ class IAgDirectionEuler(IAgDirection):
 
     @property
     def C(self) -> typing.Any:
-        '''
-        Euler C angle. Uses Angle Dimension.
-        '''
+        """Euler C angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetC'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1651,9 +1457,7 @@ class IAgDirectionEuler(IAgDirection):
 
     @property
     def Sequence(self) -> "AgEEulerDirectionSequence":
-        '''
-        Euler direction sequence.  Must be set before B,C values. Otherwise the B,C values will converted to the Sequence specified.
-        '''
+        """Euler direction sequence.  Must be set before B,C values. Otherwise the B,C values will converted to the Sequence specified."""
         with agmarshall.AgEnum_arg(AgEEulerDirectionSequence) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetSequence'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1669,9 +1473,7 @@ agcls.AgTypeNameMap['IAgDirectionEuler'] = IAgDirectionEuler
 __all__.append('IAgDirectionEuler')
 
 class IAgDirectionPR(IAgDirection):
-    '''
-    Interface for Pitch-Roll (PR) direction sequence.
-    '''
+    """Interface for Pitch-Roll (PR) direction sequence."""
     _uuid = '{5AC01BF1-2B95-4C13-8B69-09FDC485330E}'
     _num_methods = 6
     _vtable_offset = IAgDirection._vtable_offset + IAgDirection._num_methods
@@ -1702,9 +1504,7 @@ class IAgDirectionPR(IAgDirection):
         self.__dict__['_GetSequence'] = IAGFUNCTYPE(pUnk, IID_IAgDirectionPR, vtable_offset_local+5, POINTER(agcom.LONG))
         self.__dict__['_SetSequence'] = IAGFUNCTYPE(pUnk, IID_IAgDirectionPR, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDirectionPR.__dict__ and type(IAgDirectionPR.__dict__[attrname]) == property:
@@ -1718,9 +1518,7 @@ class IAgDirectionPR(IAgDirection):
     
     @property
     def Pitch(self) -> typing.Any:
-        '''
-        Pitch angle. Uses Angle Dimension.
-        '''
+        """Pitch angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetPitch'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1732,9 +1530,7 @@ class IAgDirectionPR(IAgDirection):
 
     @property
     def Roll(self) -> typing.Any:
-        '''
-        Roll angle. Uses Angle Dimension.
-        '''
+        """Roll angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetRoll'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1746,9 +1542,7 @@ class IAgDirectionPR(IAgDirection):
 
     @property
     def Sequence(self) -> "AgEPRSequence":
-        '''
-        PR direction sequence. Must be set before Pitch,Roll values. Otherwise the current Pitch,Roll values will be converted to the Sequence specified.
-        '''
+        """PR direction sequence. Must be set before Pitch,Roll values. Otherwise the current Pitch,Roll values will be converted to the Sequence specified."""
         with agmarshall.AgEnum_arg(AgEPRSequence) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetSequence'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1764,9 +1558,7 @@ agcls.AgTypeNameMap['IAgDirectionPR'] = IAgDirectionPR
 __all__.append('IAgDirectionPR')
 
 class IAgDirectionRADec(IAgDirection):
-    '''
-    Interface for Spherical direction (Right Ascension and Declination).
-    '''
+    """Interface for Spherical direction (Right Ascension and Declination)."""
     _uuid = '{A921E587-EC8A-4F1E-99BB-6E13B8E0D5E7}'
     _num_methods = 6
     _vtable_offset = IAgDirection._vtable_offset + IAgDirection._num_methods
@@ -1797,9 +1589,7 @@ class IAgDirectionRADec(IAgDirection):
         self.__dict__['_GetMagnitude'] = IAGFUNCTYPE(pUnk, IID_IAgDirectionRADec, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetMagnitude'] = IAGFUNCTYPE(pUnk, IID_IAgDirectionRADec, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDirectionRADec.__dict__ and type(IAgDirectionRADec.__dict__[attrname]) == property:
@@ -1813,9 +1603,7 @@ class IAgDirectionRADec(IAgDirection):
     
     @property
     def Dec(self) -> typing.Any:
-        '''
-        Declination: angle above the x-y plane. Uses Latitude Dimension.
-        '''
+        """Declination: angle above the x-y plane. Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetDec'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1827,9 +1615,7 @@ class IAgDirectionRADec(IAgDirection):
 
     @property
     def RA(self) -> typing.Any:
-        '''
-        Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension.
-        '''
+        """Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetRA'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1841,9 +1627,7 @@ class IAgDirectionRADec(IAgDirection):
 
     @property
     def Magnitude(self) -> float:
-        '''
-        A unitless value that represents magnitude.
-        '''
+        """A unitless value that represents magnitude."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetMagnitude'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1859,9 +1643,7 @@ agcls.AgTypeNameMap['IAgDirectionRADec'] = IAgDirectionRADec
 __all__.append('IAgDirectionRADec')
 
 class IAgDirectionXYZ(IAgDirection):
-    '''
-    Interface for Cartesian direction.
-    '''
+    """Interface for Cartesian direction."""
     _uuid = '{2B499A22-6662-4F20-8B82-AA7701CD87A4}'
     _num_methods = 6
     _vtable_offset = IAgDirection._vtable_offset + IAgDirection._num_methods
@@ -1892,9 +1674,7 @@ class IAgDirectionXYZ(IAgDirection):
         self.__dict__['_GetZ'] = IAGFUNCTYPE(pUnk, IID_IAgDirectionXYZ, vtable_offset_local+5, POINTER(agcom.DOUBLE))
         self.__dict__['_SetZ'] = IAGFUNCTYPE(pUnk, IID_IAgDirectionXYZ, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDirectionXYZ.__dict__ and type(IAgDirectionXYZ.__dict__[attrname]) == property:
@@ -1908,9 +1688,7 @@ class IAgDirectionXYZ(IAgDirection):
     
     @property
     def X(self) -> float:
-        '''
-        X component. Dimensionless
-        '''
+        """X component. Dimensionless"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetX'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1922,9 +1700,7 @@ class IAgDirectionXYZ(IAgDirection):
 
     @property
     def Y(self) -> float:
-        '''
-        Y component. Dimensionless
-        '''
+        """Y component. Dimensionless"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetY'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1936,9 +1712,7 @@ class IAgDirectionXYZ(IAgDirection):
 
     @property
     def Z(self) -> float:
-        '''
-        Z component. Dimensionless
-        '''
+        """Z component. Dimensionless"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetZ'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -1954,9 +1728,7 @@ agcls.AgTypeNameMap['IAgDirectionXYZ'] = IAgDirectionXYZ
 __all__.append('IAgDirectionXYZ')
 
 class IAgCartesian3Vector(object):
-    '''
-    Represents a cartesian 3-D vector.
-    '''
+    """Represents a cartesian 3-D vector."""
     _uuid = '{7B741836-71F9-4115-97F8-EAB30362E5C7}'
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1992,9 +1764,7 @@ class IAgCartesian3Vector(object):
         self.__dict__['_Set'] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
         self.__dict__['_ToArray'] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+9, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCartesian3Vector.__dict__ and type(IAgCartesian3Vector.__dict__[attrname]) == property:
@@ -2008,9 +1778,7 @@ class IAgCartesian3Vector(object):
     
     @property
     def X(self) -> float:
-        '''
-        X coordinate
-        '''
+        """X coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetX'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -2022,9 +1790,7 @@ class IAgCartesian3Vector(object):
 
     @property
     def Y(self) -> float:
-        '''
-        Y coordinate
-        '''
+        """Y coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetY'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -2036,9 +1802,7 @@ class IAgCartesian3Vector(object):
 
     @property
     def Z(self) -> float:
-        '''
-        Z coordinate
-        '''
+        """Z coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetZ'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -2049,9 +1813,7 @@ class IAgCartesian3Vector(object):
             agcls.evaluate_hresult(self.__dict__['_SetZ'](arg_z.COM_val))
 
     def Get(self) -> typing.Tuple[float, float, float]:
-        '''
-        Returns cartesian vector
-        '''
+        """Returns cartesian vector"""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
@@ -2059,18 +1821,14 @@ class IAgCartesian3Vector(object):
             return arg_x.python_val, arg_y.python_val, arg_z.python_val
 
     def Set(self, x:float, y:float, z:float) -> None:
-        '''
-        Sets cartesian vector
-        '''
+        """Sets cartesian vector"""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
             agcls.evaluate_hresult(self.__dict__['_Set'](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
     def ToArray(self) -> list:
-        '''
-        Returns coordinates as an array.
-        '''
+        """Returns coordinates as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_ToArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -2081,9 +1839,7 @@ agcls.AgTypeNameMap['IAgCartesian3Vector'] = IAgCartesian3Vector
 __all__.append('IAgCartesian3Vector')
 
 class IAgOrientation(object):
-    '''
-    Interface to set and retrieve the orientation method.
-    '''
+    """Interface to set and retrieve the orientation method."""
     _uuid = '{8467175F-1BD8-4498-90FD-08C67072D120}'
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2131,9 +1887,7 @@ class IAgOrientation(object):
         self.__dict__['_QueryQuaternionArray'] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
         self.__dict__['_QueryYPRAnglesArray'] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+15, agcom.LONG, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgOrientation.__dict__ and type(IAgOrientation.__dict__[attrname]) == property:
@@ -2146,9 +1900,7 @@ class IAgOrientation(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgOrientation.')
     
     def ConvertTo(self, type:"AgEOrientationType") -> "IAgOrientation":
-        '''
-        Method to change the orientation method to the type specified.
-        '''
+        """Method to change the orientation method to the type specified."""
         with agmarshall.AgEnum_arg(AgEOrientationType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgOrientation:
             agcls.evaluate_hresult(self.__dict__['_ConvertTo'](arg_type.COM_val, byref(arg_ppIAgOrientation.COM_val)))
@@ -2156,33 +1908,25 @@ class IAgOrientation(object):
 
     @property
     def OrientationType(self) -> "AgEOrientationType":
-        '''
-        Returns the orientation method currently being used.
-        '''
+        """Returns the orientation method currently being used."""
         with agmarshall.AgEnum_arg(AgEOrientationType) as arg_pType:
             agcls.evaluate_hresult(self.__dict__['_GetOrientationType'](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
     def Assign(self, pOrientation:"IAgOrientation") -> None:
-        '''
-        Assign a new orientation method.
-        '''
+        """Assign a new orientation method."""
         with agmarshall.AgInterface_in_arg(pOrientation, IAgOrientation) as arg_pOrientation:
             agcls.evaluate_hresult(self.__dict__['_Assign'](arg_pOrientation.COM_val))
 
     def AssignAzEl(self, azimuth:typing.Any, elevation:typing.Any, aboutBoresight:"AgEAzElAboutBoresight") -> None:
-        '''
-        Helper method to set orientation using the AzEl representation.
-        '''
+        """Helper method to set orientation using the AzEl representation."""
         with agmarshall.VARIANT_arg(azimuth) as arg_azimuth, \
              agmarshall.VARIANT_arg(elevation) as arg_elevation, \
              agmarshall.AgEnum_arg(AgEAzElAboutBoresight, aboutBoresight) as arg_aboutBoresight:
             agcls.evaluate_hresult(self.__dict__['_AssignAzEl'](arg_azimuth.COM_val, arg_elevation.COM_val, arg_aboutBoresight.COM_val))
 
     def AssignEulerAngles(self, sequence:"AgEEulerOrientationSequence", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
-        '''
-        Helper method to set orientation using the Euler angles representation.
-        '''
+        """Helper method to set orientation using the Euler angles representation."""
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg(a) as arg_a, \
              agmarshall.VARIANT_arg(b) as arg_b, \
@@ -2190,9 +1934,7 @@ class IAgOrientation(object):
             agcls.evaluate_hresult(self.__dict__['_AssignEulerAngles'](arg_sequence.COM_val, arg_a.COM_val, arg_b.COM_val, arg_c.COM_val))
 
     def AssignQuaternion(self, qx:float, qy:float, qz:float, qs:float) -> None:
-        '''
-        Helper method to set orientation using the Quaternion representation.
-        '''
+        """Helper method to set orientation using the Quaternion representation."""
         with agmarshall.DOUBLE_arg(qx) as arg_qx, \
              agmarshall.DOUBLE_arg(qy) as arg_qy, \
              agmarshall.DOUBLE_arg(qz) as arg_qz, \
@@ -2200,9 +1942,7 @@ class IAgOrientation(object):
             agcls.evaluate_hresult(self.__dict__['_AssignQuaternion'](arg_qx.COM_val, arg_qy.COM_val, arg_qz.COM_val, arg_qs.COM_val))
 
     def AssignYPRAngles(self, sequence:"AgEYPRAnglesSequence", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> None:
-        '''
-        Helper method to set orientation using the YPR angles representation.
-        '''
+        """Helper method to set orientation using the YPR angles representation."""
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg(yaw) as arg_yaw, \
              agmarshall.VARIANT_arg(pitch) as arg_pitch, \
@@ -2210,9 +1950,7 @@ class IAgOrientation(object):
             agcls.evaluate_hresult(self.__dict__['_AssignYPRAngles'](arg_sequence.COM_val, arg_yaw.COM_val, arg_pitch.COM_val, arg_roll.COM_val))
 
     def QueryAzEl(self) -> typing.Tuple[typing.Any, typing.Any, AgEAzElAboutBoresight]:
-        '''
-        Helper method to get orientation using the AzEl representation.
-        '''
+        """Helper method to get orientation using the AzEl representation."""
         with agmarshall.VARIANT_arg() as arg_azimuth, \
              agmarshall.VARIANT_arg() as arg_elevation, \
              agmarshall.AgEnum_arg(AgEAzElAboutBoresight) as arg_aboutBoresight:
@@ -2220,9 +1958,7 @@ class IAgOrientation(object):
             return arg_azimuth.python_val, arg_elevation.python_val, arg_aboutBoresight.python_val
 
     def QueryEulerAngles(self, sequence:"AgEEulerOrientationSequence") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
-        '''
-        Helper method to get orientation using the Euler angles representation.
-        '''
+        """Helper method to get orientation using the Euler angles representation."""
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg() as arg_a, \
              agmarshall.VARIANT_arg() as arg_b, \
@@ -2231,9 +1967,7 @@ class IAgOrientation(object):
             return arg_a.python_val, arg_b.python_val, arg_c.python_val
 
     def QueryQuaternion(self) -> typing.Tuple[float, float, float, float]:
-        '''
-        Helper method to get orientation using the Quaternion representation.
-        '''
+        """Helper method to get orientation using the Quaternion representation."""
         with agmarshall.DOUBLE_arg() as arg_qx, \
              agmarshall.DOUBLE_arg() as arg_qy, \
              agmarshall.DOUBLE_arg() as arg_qz, \
@@ -2242,9 +1976,7 @@ class IAgOrientation(object):
             return arg_qx.python_val, arg_qy.python_val, arg_qz.python_val, arg_qs.python_val
 
     def QueryYPRAngles(self, sequence:"AgEYPRAnglesSequence") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
-        '''
-        Helper method to get orientation using the YPR angles representation.
-        '''
+        """Helper method to get orientation using the YPR angles representation."""
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg() as arg_yaw, \
              agmarshall.VARIANT_arg() as arg_pitch, \
@@ -2253,34 +1985,26 @@ class IAgOrientation(object):
             return arg_yaw.python_val, arg_pitch.python_val, arg_roll.python_val
 
     def QueryAzElArray(self) -> list:
-        '''
-        Returns the AzEl elements as an array.
-        '''
+        """Returns the AzEl elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryAzElArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryEulerAnglesArray(self, sequence:"AgEEulerOrientationSequence") -> list:
-        '''
-        Returns the Euler elements as an array.
-        '''
+        """Returns the Euler elements as an array."""
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryEulerAnglesArray'](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryQuaternionArray(self) -> list:
-        '''
-        Returns the Quaternion elements as an array.
-        '''
+        """Returns the Quaternion elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryQuaternionArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryYPRAnglesArray(self, sequence:"AgEYPRAnglesSequence") -> list:
-        '''
-        Returns the YPR Angles elements as an array.
-        '''
+        """Returns the YPR Angles elements as an array."""
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryYPRAnglesArray'](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -2292,9 +2016,7 @@ agcls.AgTypeNameMap['IAgOrientation'] = IAgOrientation
 __all__.append('IAgOrientation')
 
 class IAgOrientationAzEl(IAgOrientation):
-    '''
-    Interface for AzEl orientation method.
-    '''
+    """Interface for AzEl orientation method."""
     _uuid = '{6A6B1D7D-6A7F-48B3-98CA-019CA46499FE}'
     _num_methods = 6
     _vtable_offset = IAgOrientation._vtable_offset + IAgOrientation._num_methods
@@ -2325,9 +2047,7 @@ class IAgOrientationAzEl(IAgOrientation):
         self.__dict__['_GetAboutBoresight'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationAzEl, vtable_offset_local+5, POINTER(agcom.LONG))
         self.__dict__['_SetAboutBoresight'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationAzEl, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgOrientationAzEl.__dict__ and type(IAgOrientationAzEl.__dict__[attrname]) == property:
@@ -2341,9 +2061,7 @@ class IAgOrientationAzEl(IAgOrientation):
     
     @property
     def Azimuth(self) -> typing.Any:
-        '''
-        Measured in the XY plane of the parent reference frame about its Z axis in the right-handed sense for both vehicle-based sensors and facility-based sensors. Uses Angle Dimension.
-        '''
+        """Measured in the XY plane of the parent reference frame about its Z axis in the right-handed sense for both vehicle-based sensors and facility-based sensors. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetAzimuth'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2355,9 +2073,7 @@ class IAgOrientationAzEl(IAgOrientation):
 
     @property
     def Elevation(self) -> typing.Any:
-        '''
-        Defined as the angle between the XY plane of the parent reference frame and the sensor or antenna boresight measured toward the positive Z axis. Uses Angle Dimension.
-        '''
+        """Defined as the angle between the XY plane of the parent reference frame and the sensor or antenna boresight measured toward the positive Z axis. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetElevation'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2369,9 +2085,7 @@ class IAgOrientationAzEl(IAgOrientation):
 
     @property
     def AboutBoresight(self) -> "AgEAzElAboutBoresight":
-        '''
-        Determines orientation of the X and Y axes with respect to the parent's reference frame.
-        '''
+        """Determines orientation of the X and Y axes with respect to the parent's reference frame."""
         with agmarshall.AgEnum_arg(AgEAzElAboutBoresight) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetAboutBoresight'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2387,9 +2101,7 @@ agcls.AgTypeNameMap['IAgOrientationAzEl'] = IAgOrientationAzEl
 __all__.append('IAgOrientationAzEl')
 
 class IAgOrientationEulerAngles(IAgOrientation):
-    '''
-    Interface for Euler Angles orientation method.
-    '''
+    """Interface for Euler Angles orientation method."""
     _uuid = '{4204C7E1-EC21-40AD-A905-BB35A3FDF7BD}'
     _num_methods = 8
     _vtable_offset = IAgOrientation._vtable_offset + IAgOrientation._num_methods
@@ -2424,9 +2136,7 @@ class IAgOrientationEulerAngles(IAgOrientation):
         self.__dict__['_GetC'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
         self.__dict__['_SetC'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+8, agcom.VARIANT)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgOrientationEulerAngles.__dict__ and type(IAgOrientationEulerAngles.__dict__[attrname]) == property:
@@ -2440,9 +2150,7 @@ class IAgOrientationEulerAngles(IAgOrientation):
     
     @property
     def Sequence(self) -> "AgEEulerOrientationSequence":
-        '''
-        Euler rotation sequence. Must be set before A,B,C values. Otherwise the current A,B,C values will be converted to the Sequence specified.
-        '''
+        """Euler rotation sequence. Must be set before A,B,C values. Otherwise the current A,B,C values will be converted to the Sequence specified."""
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetSequence'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2454,9 +2162,7 @@ class IAgOrientationEulerAngles(IAgOrientation):
 
     @property
     def A(self) -> typing.Any:
-        '''
-        Euler A angle. Uses Angle Dimension.
-        '''
+        """Euler A angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetA'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2468,9 +2174,7 @@ class IAgOrientationEulerAngles(IAgOrientation):
 
     @property
     def B(self) -> typing.Any:
-        '''
-        Euler b angle. Uses Angle Dimension.
-        '''
+        """Euler b angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetB'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2482,9 +2186,7 @@ class IAgOrientationEulerAngles(IAgOrientation):
 
     @property
     def C(self) -> typing.Any:
-        '''
-        Euler C angle. Uses Angle Dimension.
-        '''
+        """Euler C angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetC'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2500,9 +2202,7 @@ agcls.AgTypeNameMap['IAgOrientationEulerAngles'] = IAgOrientationEulerAngles
 __all__.append('IAgOrientationEulerAngles')
 
 class IAgOrientationQuaternion(IAgOrientation):
-    '''
-    Interface for Quaternion orientation method.
-    '''
+    """Interface for Quaternion orientation method."""
     _uuid = '{101FAC5C-8DDB-4D4F-9C73-58146CA8EB01}'
     _num_methods = 8
     _vtable_offset = IAgOrientation._vtable_offset + IAgOrientation._num_methods
@@ -2537,9 +2237,7 @@ class IAgOrientationQuaternion(IAgOrientation):
         self.__dict__['_GetQS'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+7, POINTER(agcom.DOUBLE))
         self.__dict__['_SetQS'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+8, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgOrientationQuaternion.__dict__ and type(IAgOrientationQuaternion.__dict__[attrname]) == property:
@@ -2553,9 +2251,7 @@ class IAgOrientationQuaternion(IAgOrientation):
     
     @property
     def QX(self) -> float:
-        '''
-        The first element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QX = nx si...
-        '''
+        """The first element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QX = nx si..."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetQX'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2567,9 +2263,7 @@ class IAgOrientationQuaternion(IAgOrientation):
 
     @property
     def QY(self) -> float:
-        '''
-        The second element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QY = ny s...
-        '''
+        """The second element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QY = ny s..."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetQY'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2581,9 +2275,7 @@ class IAgOrientationQuaternion(IAgOrientation):
 
     @property
     def QZ(self) -> float:
-        '''
-        The third element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QZ = nz si...
-        '''
+        """The third element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QZ = nz si..."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetQZ'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2595,9 +2287,7 @@ class IAgOrientationQuaternion(IAgOrientation):
 
     @property
     def QS(self) -> float:
-        '''
-        The scalar component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QS = cos(A/2). Dimensionless.
-        '''
+        """The scalar component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QS = cos(A/2). Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetQS'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2613,9 +2303,7 @@ agcls.AgTypeNameMap['IAgOrientationQuaternion'] = IAgOrientationQuaternion
 __all__.append('IAgOrientationQuaternion')
 
 class IAgOrientationYPRAngles(IAgOrientation):
-    '''
-    Interface for Yaw-Pitch Roll (YPR) Angles orientation system.
-    '''
+    """Interface for Yaw-Pitch Roll (YPR) Angles orientation system."""
     _uuid = '{97A9D45D-E718-41FC-ACD2-CEBBEFD2011B}'
     _num_methods = 8
     _vtable_offset = IAgOrientation._vtable_offset + IAgOrientation._num_methods
@@ -2650,9 +2338,7 @@ class IAgOrientationYPRAngles(IAgOrientation):
         self.__dict__['_GetRoll'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
         self.__dict__['_SetRoll'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+8, agcom.VARIANT)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgOrientationYPRAngles.__dict__ and type(IAgOrientationYPRAngles.__dict__[attrname]) == property:
@@ -2666,9 +2352,7 @@ class IAgOrientationYPRAngles(IAgOrientation):
     
     @property
     def Sequence(self) -> "AgEYPRAnglesSequence":
-        '''
-        YPR sequence. Must be set before Yaw,Pitch,Roll values. Otherwise the current Yaw,Pitch,Roll values will be converted to the Sequence specified.
-        '''
+        """YPR sequence. Must be set before Yaw,Pitch,Roll values. Otherwise the current Yaw,Pitch,Roll values will be converted to the Sequence specified."""
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetSequence'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2680,9 +2364,7 @@ class IAgOrientationYPRAngles(IAgOrientation):
 
     @property
     def Yaw(self) -> typing.Any:
-        '''
-        Yaw angle. Uses Angle Dimension.
-        '''
+        """Yaw angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetYaw'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2694,9 +2376,7 @@ class IAgOrientationYPRAngles(IAgOrientation):
 
     @property
     def Pitch(self) -> typing.Any:
-        '''
-        Pitch angle. Uses Angle Dimension.
-        '''
+        """Pitch angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetPitch'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2708,9 +2388,7 @@ class IAgOrientationYPRAngles(IAgOrientation):
 
     @property
     def Roll(self) -> typing.Any:
-        '''
-        Roll angle. Uses Angle Dimension.
-        '''
+        """Roll angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetRoll'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -2726,9 +2404,7 @@ agcls.AgTypeNameMap['IAgOrientationYPRAngles'] = IAgOrientationYPRAngles
 __all__.append('IAgOrientationYPRAngles')
 
 class IAgOrientationPositionOffset(object):
-    '''
-    Interface for defining the orientation origin position offset relative to the parent object.
-    '''
+    """Interface for defining the orientation origin position offset relative to the parent object."""
     _uuid = '{0DDA686C-559C-4BEA-969B-BF40708242B6}'
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2748,9 +2424,7 @@ class IAgOrientationPositionOffset(object):
         vtable_offset_local = IAgOrientationPositionOffset._vtable_offset - 1
         self.__dict__['_GetPositionOffset'] = IAGFUNCTYPE(pUnk, IID_IAgOrientationPositionOffset, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgOrientationPositionOffset.__dict__ and type(IAgOrientationPositionOffset.__dict__[attrname]) == property:
@@ -2764,9 +2438,7 @@ class IAgOrientationPositionOffset(object):
     
     @property
     def PositionOffset(self) -> "IAgCartesian3Vector":
-        '''
-        Gets or sets the position offset cartesian vector.
-        '''
+        """Gets or sets the position offset cartesian vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetPositionOffset'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -2777,9 +2449,7 @@ agcls.AgTypeNameMap['IAgOrientationPositionOffset'] = IAgOrientationPositionOffs
 __all__.append('IAgOrientationPositionOffset')
 
 class IAgOrbitState(object):
-    '''
-    Interface to set and retrieve the coordinate type used to specify the orbit state.
-    '''
+    """Interface to set and retrieve the coordinate type used to specify the orbit state."""
     _uuid = '{42342AD2-F6C5-426B-AB2A-3688F05353C8}'
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2823,9 +2493,7 @@ class IAgOrbitState(object):
         self.__dict__['_GetEpoch'] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+12, POINTER(agcom.VARIANT))
         self.__dict__['_SetEpoch'] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+13, agcom.VARIANT)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgOrbitState.__dict__ and type(IAgOrbitState.__dict__[attrname]) == property:
@@ -2838,9 +2506,7 @@ class IAgOrbitState(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgOrbitState.')
     
     def ConvertTo(self, type:"AgEOrbitStateType") -> "IAgOrbitState":
-        '''
-        Method to changes the coordinate type to the type specified.
-        '''
+        """Method to changes the coordinate type to the type specified."""
         with agmarshall.AgEnum_arg(AgEOrbitStateType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgOrbitState:
             agcls.evaluate_hresult(self.__dict__['_ConvertTo'](arg_type.COM_val, byref(arg_ppIAgOrbitState.COM_val)))
@@ -2848,24 +2514,18 @@ class IAgOrbitState(object):
 
     @property
     def OrbitStateType(self) -> "AgEOrbitStateType":
-        '''
-        Returns the coordinate type currently being used.
-        '''
+        """Returns the coordinate type currently being used."""
         with agmarshall.AgEnum_arg(AgEOrbitStateType) as arg_pType:
             agcls.evaluate_hresult(self.__dict__['_GetOrbitStateType'](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
     def Assign(self, pOrbitState:"IAgOrbitState") -> None:
-        '''
-        Assign a new coordinate type.
-        '''
+        """Assign a new coordinate type."""
         with agmarshall.AgInterface_in_arg(pOrbitState, IAgOrbitState) as arg_pOrbitState:
             agcls.evaluate_hresult(self.__dict__['_Assign'](arg_pOrbitState.COM_val))
 
     def AssignClassical(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, eccentricity:float, inclination:float, argOfPerigee:float, rAAN:float, meanAnomaly:float) -> None:
-        '''
-        Helper method to assign a new orbit state using Classical representation
-        '''
+        """Helper method to assign a new orbit state using Classical representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(semiMajorAxis) as arg_semiMajorAxis, \
              agmarshall.DOUBLE_arg(eccentricity) as arg_eccentricity, \
@@ -2876,9 +2536,7 @@ class IAgOrbitState(object):
             agcls.evaluate_hresult(self.__dict__['_AssignClassical'](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_eccentricity.COM_val, arg_inclination.COM_val, arg_argOfPerigee.COM_val, arg_rAAN.COM_val, arg_meanAnomaly.COM_val))
 
     def AssignCartesian(self, eCoordinateSystem:"AgECoordinateSystem", xPosition:float, yPosition:float, zPosition:float, xVelocity:float, yVelocity:float, zVelocity:float) -> None:
-        '''
-        Helper method to assign a new orbit state using Cartesian representation
-        '''
+        """Helper method to assign a new orbit state using Cartesian representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(xPosition) as arg_xPosition, \
              agmarshall.DOUBLE_arg(yPosition) as arg_yPosition, \
@@ -2889,9 +2547,7 @@ class IAgOrbitState(object):
             agcls.evaluate_hresult(self.__dict__['_AssignCartesian'](arg_eCoordinateSystem.COM_val, arg_xPosition.COM_val, arg_yPosition.COM_val, arg_zPosition.COM_val, arg_xVelocity.COM_val, arg_yVelocity.COM_val, arg_zVelocity.COM_val))
 
     def AssignGeodetic(self, eCoordinateSystem:"AgECoordinateSystem", latitude:float, longitude:float, altitude:float, latitudeRate:float, longitudeRate:float, altitudeRate:float) -> None:
-        '''
-        Helper method to assign a new orbit state using Geodetic representation
-        '''
+        """Helper method to assign a new orbit state using Geodetic representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
@@ -2902,9 +2558,7 @@ class IAgOrbitState(object):
             agcls.evaluate_hresult(self.__dict__['_AssignGeodetic'](arg_eCoordinateSystem.COM_val, arg_latitude.COM_val, arg_longitude.COM_val, arg_altitude.COM_val, arg_latitudeRate.COM_val, arg_longitudeRate.COM_val, arg_altitudeRate.COM_val))
 
     def AssignEquinoctialPosigrade(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
-        '''
-        Helper method to assign a new orbit state using Equinoctial representation
-        '''
+        """Helper method to assign a new orbit state using Equinoctial representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(semiMajorAxis) as arg_semiMajorAxis, \
              agmarshall.DOUBLE_arg(h) as arg_h, \
@@ -2915,9 +2569,7 @@ class IAgOrbitState(object):
             agcls.evaluate_hresult(self.__dict__['_AssignEquinoctialPosigrade'](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_h.COM_val, arg_k.COM_val, arg_p.COM_val, arg_q.COM_val, arg_meanLon.COM_val))
 
     def AssignEquinoctialRetrograde(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
-        '''
-        Helper method to assign a new orbit state using Equinoctial representation
-        '''
+        """Helper method to assign a new orbit state using Equinoctial representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(semiMajorAxis) as arg_semiMajorAxis, \
              agmarshall.DOUBLE_arg(h) as arg_h, \
@@ -2928,9 +2580,7 @@ class IAgOrbitState(object):
             agcls.evaluate_hresult(self.__dict__['_AssignEquinoctialRetrograde'](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_h.COM_val, arg_k.COM_val, arg_p.COM_val, arg_q.COM_val, arg_meanLon.COM_val))
 
     def AssignMixedSpherical(self, eCoordinateSystem:"AgECoordinateSystem", latitude:float, longitude:float, altitude:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
-        '''
-        Helper method to assign a new orbit state using Mixed Spherical representation
-        '''
+        """Helper method to assign a new orbit state using Mixed Spherical representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(longitude) as arg_longitude, \
@@ -2941,9 +2591,7 @@ class IAgOrbitState(object):
             agcls.evaluate_hresult(self.__dict__['_AssignMixedSpherical'](arg_eCoordinateSystem.COM_val, arg_latitude.COM_val, arg_longitude.COM_val, arg_altitude.COM_val, arg_horFlightPathAngle.COM_val, arg_flightPathAzimuth.COM_val, arg_velocity.COM_val))
 
     def AssignSpherical(self, eCoordinateSystem:"AgECoordinateSystem", rightAscension:float, declination:float, radius:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
-        '''
-        Helper method to assign a new orbit state using Spherical representation
-        '''
+        """Helper method to assign a new orbit state using Spherical representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(rightAscension) as arg_rightAscension, \
              agmarshall.DOUBLE_arg(declination) as arg_declination, \
@@ -2955,18 +2603,14 @@ class IAgOrbitState(object):
 
     @property
     def CentralBodyName(self) -> str:
-        '''
-        Gets the central body.
-        '''
+        """Gets the central body."""
         with agmarshall.BSTR_arg() as arg_pCBName:
             agcls.evaluate_hresult(self.__dict__['_GetCentralBodyName'](byref(arg_pCBName.COM_val)))
             return arg_pCBName.python_val
 
     @property
     def Epoch(self) -> typing.Any:
-        '''
-        The state epoch
-        '''
+        """The state epoch"""
         with agmarshall.VARIANT_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetEpoch'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -2982,9 +2626,7 @@ agcls.AgTypeNameMap['IAgOrbitState'] = IAgOrbitState
 __all__.append('IAgOrbitState')
 
 class IAgCartesian2Vector(object):
-    '''
-    Represents a cartesian 2-D vector.
-    '''
+    """Represents a cartesian 2-D vector."""
     _uuid = '{DA459BD7-5810-4B30-8397-21EDA9E52D2B}'
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3016,9 +2658,7 @@ class IAgCartesian2Vector(object):
         self.__dict__['_Set'] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE)
         self.__dict__['_ToArray'] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgCartesian2Vector.__dict__ and type(IAgCartesian2Vector.__dict__[attrname]) == property:
@@ -3032,9 +2672,7 @@ class IAgCartesian2Vector(object):
     
     @property
     def X(self) -> float:
-        '''
-        X coordinate
-        '''
+        """X coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetX'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -3046,9 +2684,7 @@ class IAgCartesian2Vector(object):
 
     @property
     def Y(self) -> float:
-        '''
-        Y coordinate
-        '''
+        """Y coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetY'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -3059,26 +2695,20 @@ class IAgCartesian2Vector(object):
             agcls.evaluate_hresult(self.__dict__['_SetY'](arg_y.COM_val))
 
     def Get(self) -> typing.Tuple[float, float]:
-        '''
-        Returns cartesian vector
-        '''
+        """Returns cartesian vector"""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y:
             agcls.evaluate_hresult(self.__dict__['_Get'](byref(arg_x.COM_val), byref(arg_y.COM_val)))
             return arg_x.python_val, arg_y.python_val
 
     def Set(self, x:float, y:float) -> None:
-        '''
-        Sets cartesian vector
-        '''
+        """Sets cartesian vector"""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y:
             agcls.evaluate_hresult(self.__dict__['_Set'](arg_x.COM_val, arg_y.COM_val))
 
     def ToArray(self) -> list:
-        '''
-        Returns coordinates as an array.
-        '''
+        """Returns coordinates as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_ToArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -3089,9 +2719,7 @@ agcls.AgTypeNameMap['IAgCartesian2Vector'] = IAgCartesian2Vector
 __all__.append('IAgCartesian2Vector')
 
 class IAgUnitPrefsDim(object):
-    '''
-    Provides info on a Dimension from the global unit table.
-    '''
+    """Provides info on a Dimension from the global unit table."""
     _uuid = '{AA966FFD-1A99-45D8-9193-C519BBBA99FA}'
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3119,9 +2747,7 @@ class IAgUnitPrefsDim(object):
         self.__dict__['_GetCurrentUnit'] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDim, vtable_offset_local+4, POINTER(agcom.PVOID))
         self.__dict__['_SetCurrentUnit'] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDim, vtable_offset_local+5, agcom.BSTR)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUnitPrefsDim.__dict__ and type(IAgUnitPrefsDim.__dict__[attrname]) == property:
@@ -3135,44 +2761,34 @@ class IAgUnitPrefsDim(object):
     
     @property
     def Id(self) -> int:
-        '''
-        Returns the ID of the dimension.
-        '''
+        """Returns the ID of the dimension."""
         with agmarshall.LONG_arg() as arg_pId:
             agcls.evaluate_hresult(self.__dict__['_GetId'](byref(arg_pId.COM_val)))
             return arg_pId.python_val
 
     @property
     def Name(self) -> str:
-        '''
-        Returns the current Dimension's full name.
-        '''
+        """Returns the current Dimension's full name."""
         with agmarshall.BSTR_arg() as arg_pName:
             agcls.evaluate_hresult(self.__dict__['_GetName'](byref(arg_pName.COM_val)))
             return arg_pName.python_val
 
     @property
     def AvailableUnits(self) -> "IAgUnitPrefsUnitCollection":
-        '''
-        Returns collection of Units.
-        '''
+        """Returns collection of Units."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnitCollection:
             agcls.evaluate_hresult(self.__dict__['_GetAvailableUnits'](byref(arg_ppUnitPrefsUnitCollection.COM_val)))
             return arg_ppUnitPrefsUnitCollection.python_val
 
     @property
     def CurrentUnit(self) -> "IAgUnitPrefsUnit":
-        '''
-        Returns the current unit for this dimension.
-        '''
+        """Returns the current unit for this dimension."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__['_GetCurrentUnit'](byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
     def SetCurrentUnit(self, unitAbbrv:str) -> None:
-        '''
-        Sets the Unit for this simple dimension.
-        '''
+        """Sets the Unit for this simple dimension."""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_SetCurrentUnit'](arg_unitAbbrv.COM_val))
 
@@ -3182,9 +2798,7 @@ agcls.AgTypeNameMap['IAgUnitPrefsDim'] = IAgUnitPrefsDim
 __all__.append('IAgUnitPrefsDim')
 
 class IAgPropertyInfo(object):
-    '''
-    Property information.
-    '''
+    """Property information."""
     _uuid = '{26A48B4B-BF6A-4F9D-9658-44A7A2DBBE2A}'
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3218,9 +2832,7 @@ class IAgPropertyInfo(object):
         self.__dict__['_GetMin'] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+7, POINTER(agcom.VARIANT))
         self.__dict__['_GetMax'] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+8, POINTER(agcom.VARIANT))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgPropertyInfo.__dict__ and type(IAgPropertyInfo.__dict__[attrname]) == property:
@@ -3234,69 +2846,53 @@ class IAgPropertyInfo(object):
     
     @property
     def Name(self) -> str:
-        '''
-        The name of the property.
-        '''
+        """The name of the property."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetName'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def PropertyType(self) -> "AgEPropertyInfoValueType":
-        '''
-        The type of property.
-        '''
+        """The type of property."""
         with agmarshall.AgEnum_arg(AgEPropertyInfoValueType) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetPropertyType'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def GetValue(self) -> typing.Any:
-        '''
-        The value of the property. Use PropertyType to determine the type to cast to.
-        '''
+        """The value of the property. Use PropertyType to determine the type to cast to."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetValue'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetValue(self, propertyInfo:typing.Any) -> None:
-        '''
-        The value of the property. Use PropertyType to determine the type to cast to.
-        '''
+        """The value of the property. Use PropertyType to determine the type to cast to."""
         with agmarshall.VARIANT_arg(propertyInfo) as arg_propertyInfo:
             agcls.evaluate_hresult(self.__dict__['_SetValue'](arg_propertyInfo.COM_val))
 
     @property
     def HasMin(self) -> bool:
-        '''
-        Used to determine if the property has a minimum value.
-        '''
+        """Used to determine if the property has a minimum value."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetHasMin'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def HasMax(self) -> bool:
-        '''
-        Used to determine if the property has a maximum value.
-        '''
+        """Used to determine if the property has a maximum value."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetHasMax'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Min(self) -> typing.Any:
-        '''
-        The minimum value of this property. Use PropertyType to determine the type to cast to.
-        '''
+        """The minimum value of this property. Use PropertyType to determine the type to cast to."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetMin'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Max(self) -> typing.Any:
-        '''
-        The maximum value of this property. Use PropertyType to determine the type to cast to.
-        '''
+        """The maximum value of this property. Use PropertyType to determine the type to cast to."""
         with agmarshall.VARIANT_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetMax'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -3307,9 +2903,7 @@ agcls.AgTypeNameMap['IAgPropertyInfo'] = IAgPropertyInfo
 __all__.append('IAgPropertyInfo')
 
 class IAgPropertyInfoCollection(object):
-    '''
-    The collection of properties.
-    '''
+    """The collection of properties."""
     _uuid = '{198E6280-1D5A-4AED-9DE3-ACE354B95287}'
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3338,9 +2932,7 @@ class IAgPropertyInfoCollection(object):
         self.__dict__['_GetItemByIndex'] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfoCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
         self.__dict__['_GetItemByName'] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfoCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgPropertyInfoCollection.__dict__ and type(IAgPropertyInfoCollection.__dict__[attrname]) == property:
@@ -3364,9 +2956,7 @@ class IAgPropertyInfoCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     def Item(self, indexOrName:typing.Any) -> "IAgPropertyInfo":
-        '''
-        Allows the user to iterate through the properties.
-        '''
+        """Allows the user to iterate through the properties."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_indexOrName.COM_val, byref(arg_ppVal.COM_val)))
@@ -3374,35 +2964,27 @@ class IAgPropertyInfoCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Enumerates through the properties.
-        '''
+        """Enumerates through the properties."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
     def Count(self) -> int:
-        '''
-        The number of properties available.
-        '''
+        """The number of properties available."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgPropertyInfo":
-        '''
-        Retrieve a property from the collection by Index.
-        '''
+        """Retrieve a property from the collection by Index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_GetItemByIndex'](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgPropertyInfo":
-        '''
-        Retrieve a property from the collection by Name.
-        '''
+        """Retrieve a property from the collection by Name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_GetItemByName'](arg_name.COM_val, byref(arg_ppVal.COM_val)))
@@ -3417,9 +2999,7 @@ agcls.AgTypeNameMap['IAgPropertyInfoCollection'] = IAgPropertyInfoCollection
 __all__.append('IAgPropertyInfoCollection')
 
 class IAgRuntimeTypeInfo(object):
-    '''
-    Interface used to retrieve the properties at runtime.
-    '''
+    """Interface used to retrieve the properties at runtime."""
     _uuid = '{01F8872C-9586-4131-A724-F97C6ADD083F}'
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3445,9 +3025,7 @@ class IAgRuntimeTypeInfo(object):
         self.__dict__['_GetCount'] = IAGFUNCTYPE(pUnk, IID_IAgRuntimeTypeInfo, vtable_offset_local+3, POINTER(agcom.LONG))
         self.__dict__['_GetItem'] = IAGFUNCTYPE(pUnk, IID_IAgRuntimeTypeInfo, vtable_offset_local+4, agcom.LONG, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgRuntimeTypeInfo.__dict__ and type(IAgRuntimeTypeInfo.__dict__[attrname]) == property:
@@ -3461,35 +3039,27 @@ class IAgRuntimeTypeInfo(object):
     
     @property
     def Properties(self) -> "IAgPropertyInfoCollection":
-        '''
-        The collection of properties.
-        '''
+        """The collection of properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetProperties'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
     def IsCollection(self) -> bool:
-        '''
-        Determines if the interface is a collection.
-        '''
+        """Determines if the interface is a collection."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetIsCollection'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def Count(self) -> int:
-        '''
-        If the interface is a collection, returns the collection count.
-        '''
+        """If the interface is a collection, returns the collection count."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def GetItem(self, index:int) -> "IAgPropertyInfo":
-        '''
-        Returns the property of the collection at the given index.
-        '''
+        """Returns the property of the collection at the given index."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__['_GetItem'](arg_index.COM_val, byref(arg_ppVal.COM_val)))
@@ -3501,9 +3071,7 @@ agcls.AgTypeNameMap['IAgRuntimeTypeInfo'] = IAgRuntimeTypeInfo
 __all__.append('IAgRuntimeTypeInfo')
 
 class IAgRuntimeTypeInfoProvider(object):
-    '''
-    Access point for IAgRuntimeTypeInfo.
-    '''
+    """Access point for IAgRuntimeTypeInfo."""
     _uuid = '{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}'
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3523,9 +3091,7 @@ class IAgRuntimeTypeInfoProvider(object):
         vtable_offset_local = IAgRuntimeTypeInfoProvider._vtable_offset - 1
         self.__dict__['_GetProvideRuntimeTypeInfo'] = IAGFUNCTYPE(pUnk, IID_IAgRuntimeTypeInfoProvider, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgRuntimeTypeInfoProvider.__dict__ and type(IAgRuntimeTypeInfoProvider.__dict__[attrname]) == property:
@@ -3539,9 +3105,7 @@ class IAgRuntimeTypeInfoProvider(object):
     
     @property
     def ProvideRuntimeTypeInfo(self) -> "IAgRuntimeTypeInfo":
-        '''
-        Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
-        '''
+        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetProvideRuntimeTypeInfo'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -3552,9 +3116,7 @@ agcls.AgTypeNameMap['IAgRuntimeTypeInfoProvider'] = IAgRuntimeTypeInfoProvider
 __all__.append('IAgRuntimeTypeInfoProvider')
 
 class IAgExecCmdResult(object):
-    '''
-    Collection of strings returned by the ExecuteCommand.
-    '''
+    """Collection of strings returned by the ExecuteCommand."""
     _uuid = '{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}'
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3583,9 +3145,7 @@ class IAgExecCmdResult(object):
         self.__dict__['_Range'] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_GetIsSucceeded'] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgExecCmdResult.__dict__ and type(IAgExecCmdResult.__dict__[attrname]) == property:
@@ -3610,17 +3170,13 @@ class IAgExecCmdResult(object):
     
     @property
     def Count(self) -> int:
-        '''
-        Number of elements contained in the collection.
-        '''
+        """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
     def Item(self, index:int) -> str:
-        '''
-        Gets the element at the specified index (0-based).
-        '''
+        """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.BSTR_arg() as arg_pItem:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_pItem.COM_val)))
@@ -3628,17 +3184,13 @@ class IAgExecCmdResult(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an object that can be used to iterate through all the strings in the collection.
-        '''
+        """Returns an object that can be used to iterate through all the strings in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
     def Range(self, startIndex:int, stopIndex:int) -> list:
-        '''
-        Return the elements within the specified range.
-        '''
+        """Return the elements within the specified range."""
         with agmarshall.LONG_arg(startIndex) as arg_startIndex, \
              agmarshall.LONG_arg(stopIndex) as arg_stopIndex, \
              agmarshall.SAFEARRAY_arg() as arg_ppVar:
@@ -3647,9 +3199,7 @@ class IAgExecCmdResult(object):
 
     @property
     def IsSucceeded(self) -> bool:
-        '''
-        Indicates whether the object contains valid results.
-        '''
+        """Indicates whether the object contains valid results."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_GetIsSucceeded'](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -3663,9 +3213,7 @@ agcls.AgTypeNameMap['IAgExecCmdResult'] = IAgExecCmdResult
 __all__.append('IAgExecCmdResult')
 
 class IAgExecMultiCmdResult(object):
-    '''
-    Collection of objects returned by the ExecuteMultipleCommands.
-    '''
+    """Collection of objects returned by the ExecuteMultipleCommands."""
     _uuid = '{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}'
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3690,9 +3238,7 @@ class IAgExecMultiCmdResult(object):
         self.__dict__['_Item'] = IAGFUNCTYPE(pUnk, IID_IAgExecMultiCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
         self.__dict__['_Get_NewEnum'] = IAGFUNCTYPE(pUnk, IID_IAgExecMultiCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgExecMultiCmdResult.__dict__ and type(IAgExecMultiCmdResult.__dict__[attrname]) == property:
@@ -3717,17 +3263,13 @@ class IAgExecMultiCmdResult(object):
     
     @property
     def Count(self) -> int:
-        '''
-        Number of elements contained in the collection.
-        '''
+        """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
     def Item(self, index:int) -> "IAgExecCmdResult":
-        '''
-        Gets the element at the specified index (0-based).
-        '''
+        """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_pRetVal.COM_val)))
@@ -3735,9 +3277,7 @@ class IAgExecMultiCmdResult(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an object that can be used to iterate through all the objects in the collection.
-        '''
+        """Returns an object that can be used to iterate through all the objects in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
@@ -3751,9 +3291,7 @@ agcls.AgTypeNameMap['IAgExecMultiCmdResult'] = IAgExecMultiCmdResult
 __all__.append('IAgExecMultiCmdResult')
 
 class IAgUnitPrefsUnit(object):
-    '''
-    Provides info about a unit.
-    '''
+    """Provides info about a unit."""
     _uuid = '{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}'
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3779,9 +3317,7 @@ class IAgUnitPrefsUnit(object):
         self.__dict__['_GetId'] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnit, vtable_offset_local+3, POINTER(agcom.LONG))
         self.__dict__['_GetDimension'] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnit, vtable_offset_local+4, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUnitPrefsUnit.__dict__ and type(IAgUnitPrefsUnit.__dict__[attrname]) == property:
@@ -3795,36 +3331,28 @@ class IAgUnitPrefsUnit(object):
     
     @property
     def FullName(self) -> str:
-        '''
-        Returns the fullname of the unit.
-        '''
+        """Returns the fullname of the unit."""
         with agmarshall.BSTR_arg() as arg_pName:
             agcls.evaluate_hresult(self.__dict__['_GetFullName'](byref(arg_pName.COM_val)))
             return arg_pName.python_val
 
     @property
     def Abbrv(self) -> str:
-        '''
-        Returns the abbreviation of the unit.
-        '''
+        """Returns the abbreviation of the unit."""
         with agmarshall.BSTR_arg() as arg_pAbbrv:
             agcls.evaluate_hresult(self.__dict__['_GetAbbrv'](byref(arg_pAbbrv.COM_val)))
             return arg_pAbbrv.python_val
 
     @property
     def Id(self) -> int:
-        '''
-        Returns the ID of the unit.
-        '''
+        """Returns the ID of the unit."""
         with agmarshall.LONG_arg() as arg_pId:
             agcls.evaluate_hresult(self.__dict__['_GetId'](byref(arg_pId.COM_val)))
             return arg_pId.python_val
 
     @property
     def Dimension(self) -> "IAgUnitPrefsDim":
-        '''
-        Returns the Dimension for this unit.
-        '''
+        """Returns the Dimension for this unit."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__['_GetDimension'](byref(arg_ppUnitPrefsDim.COM_val)))
             return arg_ppUnitPrefsDim.python_val
@@ -3835,9 +3363,7 @@ agcls.AgTypeNameMap['IAgUnitPrefsUnit'] = IAgUnitPrefsUnit
 __all__.append('IAgUnitPrefsUnit')
 
 class IAgUnitPrefsUnitCollection(object):
-    '''
-    Provides access to the Unit collection.
-    '''
+    """Provides access to the Unit collection."""
     _uuid = '{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}'
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3866,9 +3392,7 @@ class IAgUnitPrefsUnitCollection(object):
         self.__dict__['_GetItemByIndex'] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnitCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
         self.__dict__['_GetItemByName'] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnitCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUnitPrefsUnitCollection.__dict__ and type(IAgUnitPrefsUnitCollection.__dict__[attrname]) == property:
@@ -3892,9 +3416,7 @@ class IAgUnitPrefsUnitCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     def Item(self, indexOrName:typing.Any) -> "IAgUnitPrefsUnit":
-        '''
-        Returns the specific item in the collection given a unit identifier or an index.
-        '''
+        """Returns the specific item in the collection given a unit identifier or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_indexOrName.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
@@ -3902,35 +3424,27 @@ class IAgUnitPrefsUnitCollection(object):
 
     @property
     def Count(self) -> int:
-        '''
-        Returns the number of items in the collection.
-        '''
+        """Returns the number of items in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns an enumeration of AgUnitPrefsUnit.
-        '''
+        """Returns an enumeration of AgUnitPrefsUnit."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgUnitPrefsUnit":
-        '''
-        Returns the specific item in the collection given an index.
-        '''
+        """Returns the specific item in the collection given an index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__['_GetItemByIndex'](arg_index.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
     def GetItemByName(self, name:str) -> "IAgUnitPrefsUnit":
-        '''
-        Returns the specific item in the collection given a unit identifier.
-        '''
+        """Returns the specific item in the collection given a unit identifier."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__['_GetItemByName'](arg_name.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
@@ -3945,9 +3459,7 @@ agcls.AgTypeNameMap['IAgUnitPrefsUnitCollection'] = IAgUnitPrefsUnitCollection
 __all__.append('IAgUnitPrefsUnitCollection')
 
 class IAgUnitPrefsDimCollection(object):
-    '''
-    Provides accesses to the global unit table.
-    '''
+    """Provides accesses to the global unit table."""
     _uuid = '{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}'
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -3990,9 +3502,7 @@ class IAgUnitPrefsDimCollection(object):
         self.__dict__['_GetItemByIndex'] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+11, agcom.INT, POINTER(agcom.PVOID))
         self.__dict__['_GetItemByName'] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgUnitPrefsDimCollection.__dict__ and type(IAgUnitPrefsDimCollection.__dict__[attrname]) == property:
@@ -4016,9 +3526,7 @@ class IAgUnitPrefsDimCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     def Item(self, indexOrName:typing.Any) -> "IAgUnitPrefsDim":
-        '''
-        Returns an IAgUnitPrefsDim given a Dimension name or an index.
-        '''
+        """Returns an IAgUnitPrefsDim given a Dimension name or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_indexOrName.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
@@ -4026,25 +3534,19 @@ class IAgUnitPrefsDimCollection(object):
 
     @property
     def Count(self) -> int:
-        '''
-        Returns the number of items in the collection.
-        '''
+        """Returns the number of items in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetCurrentUnit(self, dimension:str, unitAbbrv:str) -> None:
-        '''
-        Returns the Current unit for a Dimension.
-        '''
+        """Returns the Current unit for a Dimension."""
         with agmarshall.BSTR_arg(dimension) as arg_dimension, \
              agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_SetCurrentUnit'](arg_dimension.COM_val, arg_unitAbbrv.COM_val))
 
     def GetCurrentUnitAbbrv(self, indexOrDimName:typing.Any) -> str:
-        '''
-        Returns the Current Unit for a Dimension.
-        '''
+        """Returns the Current Unit for a Dimension."""
         with agmarshall.VARIANT_arg(indexOrDimName) as arg_indexOrDimName, \
              agmarshall.BSTR_arg() as arg_pUnitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_GetCurrentUnitAbbrv'](arg_indexOrDimName.COM_val, byref(arg_pUnitAbbrv.COM_val)))
@@ -4052,9 +3554,7 @@ class IAgUnitPrefsDimCollection(object):
 
     @property
     def MissionElapsedTime(self) -> typing.Any:
-        '''
-        The MissionElapsedTime.
-        '''
+        """The MissionElapsedTime."""
         with agmarshall.VARIANT_arg() as arg_pMisElapTime:
             agcls.evaluate_hresult(self.__dict__['_GetMissionElapsedTime'](byref(arg_pMisElapTime.COM_val)))
             return arg_pMisElapTime.python_val
@@ -4066,9 +3566,7 @@ class IAgUnitPrefsDimCollection(object):
 
     @property
     def JulianDateOffset(self) -> float:
-        '''
-        The JulianDateOffset.
-        '''
+        """The JulianDateOffset."""
         with agmarshall.DOUBLE_arg() as arg_pJDateOffset:
             agcls.evaluate_hresult(self.__dict__['_GetJulianDateOffset'](byref(arg_pJDateOffset.COM_val)))
             return arg_pJDateOffset.python_val
@@ -4080,32 +3578,24 @@ class IAgUnitPrefsDimCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns a collection of IAgUnitPrefsDim.
-        '''
+        """Returns a collection of IAgUnitPrefsDim."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def ResetUnits(self) -> None:
-        '''
-        Resets the unitpreferences to the Default units
-        '''
+        """Resets the unitpreferences to the Default units"""
         agcls.evaluate_hresult(self.__dict__['_ResetUnits']())
 
     def GetItemByIndex(self, index:int) -> "IAgUnitPrefsDim":
-        '''
-        Returns an IAgUnitPrefsDim given an index.
-        '''
+        """Returns an IAgUnitPrefsDim given an index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__['_GetItemByIndex'](arg_index.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
             return arg_ppAgUnitPrefsDim.python_val
 
     def GetItemByName(self, name:str) -> "IAgUnitPrefsDim":
-        '''
-        Returns an IAgUnitPrefsDim given a Dimension name .
-        '''
+        """Returns an IAgUnitPrefsDim given a Dimension name ."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__['_GetItemByName'](arg_name.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
@@ -4120,9 +3610,7 @@ agcls.AgTypeNameMap['IAgUnitPrefsDimCollection'] = IAgUnitPrefsDimCollection
 __all__.append('IAgUnitPrefsDimCollection')
 
 class IAgQuantity(object):
-    '''
-    Provides helper methods for a quantity.
-    '''
+    """Provides helper methods for a quantity."""
     _uuid = '{C0BBB39C-54E2-4344-B24E-58AA6AA4446B}'
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -4158,9 +3646,7 @@ class IAgQuantity(object):
         self.__dict__['_MultiplyQty'] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+8, agcom.PVOID, POINTER(agcom.PVOID))
         self.__dict__['_DivideQty'] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+9, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgQuantity.__dict__ and type(IAgQuantity.__dict__[attrname]) == property:
@@ -4174,34 +3660,26 @@ class IAgQuantity(object):
     
     @property
     def Dimension(self) -> str:
-        '''
-        Gets the name of the dimension
-        '''
+        """Gets the name of the dimension"""
         with agmarshall.BSTR_arg() as arg_pDimName:
             agcls.evaluate_hresult(self.__dict__['_GetDimension'](byref(arg_pDimName.COM_val)))
             return arg_pDimName.python_val
 
     @property
     def Unit(self) -> str:
-        '''
-        The current Unit abbreviation.
-        '''
+        """The current Unit abbreviation."""
         with agmarshall.BSTR_arg() as arg_pUnitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_GetUnit'](byref(arg_pUnitAbbrv.COM_val)))
             return arg_pUnitAbbrv.python_val
 
     def ConvertToUnit(self, unitAbbrv:str) -> None:
-        '''
-        Changes the value in this quantity to the specified unit.
-        '''
+        """Changes the value in this quantity to the specified unit."""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv:
             agcls.evaluate_hresult(self.__dict__['_ConvertToUnit'](arg_unitAbbrv.COM_val))
 
     @property
     def Value(self) -> float:
-        '''
-        The current value.
-        '''
+        """The current value."""
         with agmarshall.DOUBLE_arg() as arg_pValue:
             agcls.evaluate_hresult(self.__dict__['_GetValue'](byref(arg_pValue.COM_val)))
             return arg_pValue.python_val
@@ -4212,36 +3690,28 @@ class IAgQuantity(object):
             agcls.evaluate_hresult(self.__dict__['_SetValue'](arg_value.COM_val))
 
     def Add(self, quantity:"IAgQuantity") -> "IAgQuantity":
-        '''
-        Adds the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
-        '''
+        """Adds the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IAgQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__['_Add'](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
     def Subtract(self, quantity:"IAgQuantity") -> "IAgQuantity":
-        '''
-        Subtracts the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
-        '''
+        """Subtracts the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IAgQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__['_Subtract'](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
     def MultiplyQty(self, quantity:"IAgQuantity") -> "IAgQuantity":
-        '''
-        Multiplies the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
-        '''
+        """Multiplies the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IAgQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__['_MultiplyQty'](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
     def DivideQty(self, quantity:"IAgQuantity") -> "IAgQuantity":
-        '''
-        Divides the value from the IAgQuantity interface to this interface. The dimensions must be similar.
-        '''
+        """Divides the value from the IAgQuantity interface to this interface. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IAgQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__['_DivideQty'](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
@@ -4253,9 +3723,7 @@ agcls.AgTypeNameMap['IAgQuantity'] = IAgQuantity
 __all__.append('IAgQuantity')
 
 class IAgDate(object):
-    '''
-    Provides helper methods for a date.
-    '''
+    """Provides helper methods for a date."""
     _uuid = '{BFC8EA09-19BD-432A-923D-C553E8E37993}'
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -4303,9 +3771,7 @@ class IAgDate(object):
         self.__dict__['_Subtract'] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+14, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
         self.__dict__['_Span'] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDate.__dict__ and type(IAgDate.__dict__[attrname]) == property:
@@ -4318,27 +3784,21 @@ class IAgDate(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgDate.')
     
     def Format(self, unit:str) -> str:
-        '''
-        Returns the value of the date given the unit.
-        '''
+        """Returns the value of the date given the unit."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.BSTR_arg() as arg_pValue:
             agcls.evaluate_hresult(self.__dict__['_Format'](arg_unit.COM_val, byref(arg_pValue.COM_val)))
             return arg_pValue.python_val
 
     def SetDate(self, unit:str, value:str) -> None:
-        '''
-        Sets this date with the given date value and unit type.
-        '''
+        """Sets this date with the given date value and unit type."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.BSTR_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__['_SetDate'](arg_unit.COM_val, arg_value.COM_val))
 
     @property
     def OLEDate(self) -> datetime:
-        '''
-        The current time in OLE DATE Format.
-        '''
+        """The current time in OLE DATE Format."""
         with agmarshall.DATE_arg() as arg_pDate:
             agcls.evaluate_hresult(self.__dict__['_GetOLEDate'](byref(arg_pDate.COM_val)))
             return arg_pDate.python_val
@@ -4350,9 +3810,7 @@ class IAgDate(object):
 
     @property
     def WholeDays(self) -> int:
-        '''
-        The Julian Day Number of the date of interest.
-        '''
+        """The Julian Day Number of the date of interest."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetWholeDays'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -4364,9 +3822,7 @@ class IAgDate(object):
 
     @property
     def SecIntoDay(self) -> float:
-        '''
-        Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0
-        '''
+        """Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetSecIntoDay'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -4378,9 +3834,7 @@ class IAgDate(object):
 
     @property
     def WholeDaysUTC(self) -> int:
-        '''
-        The UTC Day Number of the date of interest.
-        '''
+        """The UTC Day Number of the date of interest."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetWholeDaysUTC'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -4392,9 +3846,7 @@ class IAgDate(object):
 
     @property
     def SecIntoDayUTC(self) -> float:
-        '''
-        Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0
-        '''
+        """Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetSecIntoDayUTC'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -4405,9 +3857,7 @@ class IAgDate(object):
             agcls.evaluate_hresult(self.__dict__['_SetSecIntoDayUTC'](arg_secIntoDay.COM_val))
 
     def Add(self, unit:str, value:float) -> "IAgDate":
-        '''
-        Adds the value in the given unit and returns a new date interface.
-        '''
+        """Adds the value in the given unit and returns a new date interface."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppDate:
@@ -4415,9 +3865,7 @@ class IAgDate(object):
             return arg_ppDate.python_val
 
     def Subtract(self, unit:str, value:float) -> "IAgDate":
-        '''
-        Subtracts the value in the given unit and returns a new date interface.
-        '''
+        """Subtracts the value in the given unit and returns a new date interface."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppDate:
@@ -4425,9 +3873,7 @@ class IAgDate(object):
             return arg_ppDate.python_val
 
     def Span(self, date:"IAgDate") -> "IAgQuantity":
-        '''
-        Subtracts the value from the IAgDate interface and returns an IAgQuantity.
-        '''
+        """Subtracts the value from the IAgDate interface and returns an IAgQuantity."""
         with agmarshall.AgInterface_in_arg(date, IAgDate) as arg_date, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__['_Span'](arg_date.COM_val, byref(arg_ppQuantity.COM_val)))
@@ -4439,9 +3885,7 @@ agcls.AgTypeNameMap['IAgDate'] = IAgDate
 __all__.append('IAgDate')
 
 class IAgConversionUtility(object):
-    '''
-    Provides conversion utilities.
-    '''
+    """Provides conversion utilities."""
     _uuid = '{2B04A4E2-C647-4920-88FF-DE0413252D1C}'
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -4495,9 +3939,7 @@ class IAgConversionUtility(object):
         self.__dict__['_NewCartesian3VectorFromDirection'] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+17, agcom.PVOID, POINTER(agcom.PVOID))
         self.__dict__['_NewCartesian3VectorFromPosition'] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+18, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgConversionUtility.__dict__ and type(IAgConversionUtility.__dict__[attrname]) == property:
@@ -4510,9 +3952,7 @@ class IAgConversionUtility(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgConversionUtility.')
     
     def ConvertQuantity(self, dimensionName:str, fromUnit:str, toUnit:str, fromValue:float) -> float:
-        '''
-        Converts the specified quantity value from a given unit to another unit.
-        '''
+        """Converts the specified quantity value from a given unit to another unit."""
         with agmarshall.BSTR_arg(dimensionName) as arg_dimensionName, \
              agmarshall.BSTR_arg(fromUnit) as arg_fromUnit, \
              agmarshall.BSTR_arg(toUnit) as arg_toUnit, \
@@ -4522,9 +3962,7 @@ class IAgConversionUtility(object):
             return arg_pToValue.python_val
 
     def ConvertDate(self, fromUnit:str, toUnit:str, fromValue:str) -> str:
-        '''
-        Converts the specified date from a given unit to another unit.
-        '''
+        """Converts the specified date from a given unit to another unit."""
         with agmarshall.BSTR_arg(fromUnit) as arg_fromUnit, \
              agmarshall.BSTR_arg(toUnit) as arg_toUnit, \
              agmarshall.BSTR_arg(fromValue) as arg_fromValue, \
@@ -4533,9 +3971,7 @@ class IAgConversionUtility(object):
             return arg_pToValue.python_val
 
     def ConvertQuantityArray(self, dimensionName:str, fromUnit:str, toUnit:str, quantityValues:list) -> list:
-        '''
-        Converts the specified quantity values from a given unit to another unit.
-        '''
+        """Converts the specified quantity values from a given unit to another unit."""
         with agmarshall.BSTR_arg(dimensionName) as arg_dimensionName, \
              agmarshall.BSTR_arg(fromUnit) as arg_fromUnit, \
              agmarshall.BSTR_arg(toUnit) as arg_toUnit, \
@@ -4545,9 +3981,7 @@ class IAgConversionUtility(object):
             return arg_ppConvertedQuantityValues.python_val
 
     def ConvertDateArray(self, fromUnit:str, toUnit:str, fromValues:list) -> list:
-        '''
-        Converts the specified dates from a given unit to another unit.
-        '''
+        """Converts the specified dates from a given unit to another unit."""
         with agmarshall.BSTR_arg(fromUnit) as arg_fromUnit, \
              agmarshall.BSTR_arg(toUnit) as arg_toUnit, \
              agmarshall.SAFEARRAY_arg(fromValues) as arg_fromValues, \
@@ -4556,9 +3990,7 @@ class IAgConversionUtility(object):
             return arg_ppConvertedDateValues.python_val
 
     def NewQuantity(self, dimension:str, unitAbbrv:str, value:float) -> "IAgQuantity":
-        '''
-        Creates an IAgQuantity interface with the given dimension, unit and value
-        '''
+        """Creates an IAgQuantity interface with the given dimension, unit and value"""
         with agmarshall.BSTR_arg(dimension) as arg_dimension, \
              agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
@@ -4567,9 +3999,7 @@ class IAgConversionUtility(object):
             return arg_ppQuantity.python_val
 
     def NewDate(self, unitAbbrv:str, value:str) -> "IAgDate":
-        '''
-        Creates an IAgDate interface with the given unit and value
-        '''
+        """Creates an IAgDate interface with the given unit and value"""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.BSTR_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppDate:
@@ -4577,17 +4007,13 @@ class IAgConversionUtility(object):
             return arg_ppDate.python_val
 
     def NewPositionOnEarth(self) -> "IAgPosition":
-        '''
-        Creates an IAgPosition interface with earth as its central body.
-        '''
+        """Creates an IAgPosition interface with earth as its central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewPositionOnEarth'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def ConvertPositionArray(self, positionType:"AgEPositionType", positionArray:list, convertTo:"AgEPositionType") -> list:
-        '''
-        Converts the specified position values from a given position type to another position type.
-        '''
+        """Converts the specified position values from a given position type to another position type."""
         with agmarshall.AgEnum_arg(AgEPositionType, positionType) as arg_positionType, \
              agmarshall.SAFEARRAY_arg(positionArray) as arg_positionArray, \
              agmarshall.AgEnum_arg(AgEPositionType, convertTo) as arg_convertTo, \
@@ -4596,51 +4022,39 @@ class IAgConversionUtility(object):
             return arg_ppOutVal.python_val
 
     def NewDirection(self) -> "IAgDirection":
-        '''
-        Creates an IAgDirection interface.
-        '''
+        """Creates an IAgDirection interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewDirection'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewOrientation(self) -> "IAgOrientation":
-        '''
-        Creates an IAgOrientation interface.
-        '''
+        """Creates an IAgOrientation interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewOrientation'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewOrbitStateOnEarth(self) -> "IAgOrbitState":
-        '''
-        Creates an IAgOrbitState interface with earth as its central body.
-        '''
+        """Creates an IAgOrbitState interface with earth as its central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewOrbitStateOnEarth'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewPositionOnCB(self, centralBodyName:str) -> "IAgPosition":
-        '''
-        Creates an IAgPosition interface using the supplied central body.
-        '''
+        """Creates an IAgPosition interface using the supplied central body."""
         with agmarshall.BSTR_arg(centralBodyName) as arg_centralBodyName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewPositionOnCB'](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewOrbitStateOnCB(self, centralBodyName:str) -> "IAgOrbitState":
-        '''
-        Creates an IAgOrbitState interface using the supplied central body.
-        '''
+        """Creates an IAgOrbitState interface using the supplied central body."""
         with agmarshall.BSTR_arg(centralBodyName) as arg_centralBodyName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewOrbitStateOnCB'](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def QueryDirectionCosineMatrix(self, inputOrientation:"IAgOrientation") -> typing.Tuple[IAgCartesian3Vector, IAgCartesian3Vector, IAgCartesian3Vector]:
-        '''
-        Returns a Direction Cosine Matrix (DCM).
-        '''
+        """Returns a Direction Cosine Matrix (DCM)."""
         with agmarshall.AgInterface_in_arg(inputOrientation, IAgOrientation) as arg_inputOrientation, \
              agmarshall.AgInterface_out_arg() as arg_px, \
              agmarshall.AgInterface_out_arg() as arg_py, \
@@ -4649,35 +4063,27 @@ class IAgConversionUtility(object):
             return arg_px.python_val, arg_py.python_val, arg_pz.python_val
 
     def QueryDirectionCosineMatrixArray(self, inputOrientation:"IAgOrientation") -> list:
-        '''
-        Returns a Direction Cosine Matrix (DCM) as an array.
-        '''
+        """Returns a Direction Cosine Matrix (DCM) as an array."""
         with agmarshall.AgInterface_in_arg(inputOrientation, IAgOrientation) as arg_inputOrientation, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_QueryDirectionCosineMatrixArray'](arg_inputOrientation.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewCartesian3Vector(self) -> "IAgCartesian3Vector":
-        '''
-        Creates a cartesian vector.
-        '''
+        """Creates a cartesian vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewCartesian3Vector'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewCartesian3VectorFromDirection(self, inputDirection:"IAgDirection") -> "IAgCartesian3Vector":
-        '''
-        Converts the direction to cartesian vector.
-        '''
+        """Converts the direction to cartesian vector."""
         with agmarshall.AgInterface_in_arg(inputDirection, IAgDirection) as arg_inputDirection, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewCartesian3VectorFromDirection'](arg_inputDirection.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewCartesian3VectorFromPosition(self, inputPosition:"IAgPosition") -> "IAgCartesian3Vector":
-        '''
-        Converts the position to cartesian vector.
-        '''
+        """Converts the position to cartesian vector."""
         with agmarshall.AgInterface_in_arg(inputPosition, IAgPosition) as arg_inputPosition, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_NewCartesian3VectorFromPosition'](arg_inputPosition.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -4689,9 +4095,7 @@ agcls.AgTypeNameMap['IAgConversionUtility'] = IAgConversionUtility
 __all__.append('IAgConversionUtility')
 
 class IAgDoublesCollection(object):
-    '''
-    Represents a collection of doubles.
-    '''
+    """Represents a collection of doubles."""
     _uuid = '{DEE2EB74-C19C-44C9-8825-09010A8F60BE}'
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -4726,9 +4130,7 @@ class IAgDoublesCollection(object):
         self.__dict__['_ToArray'] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
         self.__dict__['_SetAt'] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgDoublesCollection.__dict__ and type(IAgDoublesCollection.__dict__[attrname]) == property:
@@ -4752,9 +4154,7 @@ class IAgDoublesCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     def Item(self, index:int) -> float:
-        '''
-        Returns a double at a specified position.
-        '''
+        """Returns a double at a specified position."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_Item'](arg_index.COM_val, byref(arg_pVal.COM_val)))
@@ -4762,54 +4162,40 @@ class IAgDoublesCollection(object):
 
     @property
     def Count(self) -> int:
-        '''
-        Returns the number of items in the collection.
-        '''
+        """Returns the number of items in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__['_GetCount'](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        '''
-        Returns a collection enumerator.
-        '''
+        """Returns a collection enumerator."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_Get_NewEnum'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def Add(self, value:float) -> None:
-        '''
-        Add a value to the collection of doubles.
-        '''
+        """Add a value to the collection of doubles."""
         with agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__['_Add'](arg_value.COM_val))
 
     def RemoveAt(self, index:int) -> None:
-        '''
-        Remove an element from the collection at a specified position.
-        '''
+        """Remove an element from the collection at a specified position."""
         with agmarshall.LONG_arg(index) as arg_index:
             agcls.evaluate_hresult(self.__dict__['_RemoveAt'](arg_index.COM_val))
 
     def RemoveAll(self) -> None:
-        '''
-        Clears the collection.
-        '''
+        """Clears the collection."""
         agcls.evaluate_hresult(self.__dict__['_RemoveAll']())
 
     def ToArray(self) -> list:
-        '''
-        Returns an array of the elements in the collection
-        '''
+        """Returns an array of the elements in the collection"""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__['_ToArray'](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def SetAt(self, index:int, value:float) -> None:
-        '''
-        Updates an element in the collection at a specified position.
-        '''
+        """Updates an element in the collection at a specified position."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__['_SetAt'](arg_index.COM_val, arg_value.COM_val))
@@ -4825,18 +4211,14 @@ __all__.append('IAgDoublesCollection')
 
 
 class AgExecCmdResult(IAgExecCmdResult):
-    '''
-    Collection of strings returned by the ExecuteCommand.
-    '''
+    """Collection of strings returned by the ExecuteCommand."""
     def __init__(self, sourceObject=None):
         IAgExecCmdResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgExecCmdResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4851,18 +4233,14 @@ __all__.append('AgExecCmdResult')
 
 
 class AgExecMultiCmdResult(IAgExecMultiCmdResult):
-    '''
-    Collection of objects returned by the ExecuteMultipleCommands.
-    '''
+    """Collection of objects returned by the ExecuteMultipleCommands."""
     def __init__(self, sourceObject=None):
         IAgExecMultiCmdResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgExecMultiCmdResult._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4877,18 +4255,14 @@ __all__.append('AgExecMultiCmdResult')
 
 
 class AgUnitPrefsUnit(IAgUnitPrefsUnit):
-    '''
-    Object that contains info on the unit.
-    '''
+    """Object that contains info on the unit."""
     def __init__(self, sourceObject=None):
         IAgUnitPrefsUnit.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUnitPrefsUnit._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4903,18 +4277,14 @@ __all__.append('AgUnitPrefsUnit')
 
 
 class AgUnitPrefsUnitCollection(IAgUnitPrefsUnitCollection):
-    '''
-    Object that contains a collection of IAgUnitPrefsUnit.
-    '''
+    """Object that contains a collection of IAgUnitPrefsUnit."""
     def __init__(self, sourceObject=None):
         IAgUnitPrefsUnitCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUnitPrefsUnitCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4929,18 +4299,14 @@ __all__.append('AgUnitPrefsUnitCollection')
 
 
 class AgUnitPrefsDim(IAgUnitPrefsDim):
-    '''
-    Object that contains info on the Dimension.
-    '''
+    """Object that contains info on the Dimension."""
     def __init__(self, sourceObject=None):
         IAgUnitPrefsDim.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUnitPrefsDim._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4955,18 +4321,14 @@ __all__.append('AgUnitPrefsDim')
 
 
 class AgUnitPrefsDimCollection(IAgUnitPrefsDimCollection):
-    '''
-    Object that contains a collection of dimensions.
-    '''
+    """Object that contains a collection of dimensions."""
     def __init__(self, sourceObject=None):
         IAgUnitPrefsDimCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgUnitPrefsDimCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -4981,18 +4343,14 @@ __all__.append('AgUnitPrefsDimCollection')
 
 
 class AgConversionUtility(IAgConversionUtility):
-    '''
-    Object that contains a unit conversion utility.
-    '''
+    """Object that contains a unit conversion utility."""
     def __init__(self, sourceObject=None):
         IAgConversionUtility.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgConversionUtility._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5007,18 +4365,14 @@ __all__.append('AgConversionUtility')
 
 
 class AgQuantity(IAgQuantity):
-    '''
-    Object that contains a quantity.
-    '''
+    """Object that contains a quantity."""
     def __init__(self, sourceObject=None):
         IAgQuantity.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgQuantity._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5033,18 +4387,14 @@ __all__.append('AgQuantity')
 
 
 class AgDate(IAgDate):
-    '''
-    Object that contains a date.
-    '''
+    """Object that contains a date."""
     def __init__(self, sourceObject=None):
         IAgDate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDate._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5059,9 +4409,7 @@ __all__.append('AgDate')
 
 
 class AgPosition(IAgLocationData, IAgPosition):
-    '''
-    The Position class.
-    '''
+    """The Position class."""
     def __init__(self, sourceObject=None):
         IAgLocationData.__init__(self, sourceObject)
         IAgPosition.__init__(self, sourceObject)
@@ -5070,9 +4418,7 @@ class AgPosition(IAgLocationData, IAgPosition):
         IAgLocationData._private_init(self, pUnk)
         IAgPosition._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5088,9 +4434,7 @@ __all__.append('AgPosition')
 
 
 class AgCartesian(IAgCartesian, IAgPosition):
-    '''
-    Class used to access a position using Cartesian Coordinates.
-    '''
+    """Class used to access a position using Cartesian Coordinates."""
     def __init__(self, sourceObject=None):
         IAgCartesian.__init__(self, sourceObject)
         IAgPosition.__init__(self, sourceObject)
@@ -5099,9 +4443,7 @@ class AgCartesian(IAgCartesian, IAgPosition):
         IAgCartesian._private_init(self, pUnk)
         IAgPosition._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5117,9 +4459,7 @@ __all__.append('AgCartesian')
 
 
 class AgGeodetic(IAgGeodetic, IAgPosition):
-    '''
-    Class defining Geodetic position.
-    '''
+    """Class defining Geodetic position."""
     def __init__(self, sourceObject=None):
         IAgGeodetic.__init__(self, sourceObject)
         IAgPosition.__init__(self, sourceObject)
@@ -5128,9 +4468,7 @@ class AgGeodetic(IAgGeodetic, IAgPosition):
         IAgGeodetic._private_init(self, pUnk)
         IAgPosition._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5146,9 +4484,7 @@ __all__.append('AgGeodetic')
 
 
 class AgGeocentric(IAgGeocentric, IAgPosition):
-    '''
-    Class defining Geocentric position.
-    '''
+    """Class defining Geocentric position."""
     def __init__(self, sourceObject=None):
         IAgGeocentric.__init__(self, sourceObject)
         IAgPosition.__init__(self, sourceObject)
@@ -5157,9 +4493,7 @@ class AgGeocentric(IAgGeocentric, IAgPosition):
         IAgGeocentric._private_init(self, pUnk)
         IAgPosition._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5175,9 +4509,7 @@ __all__.append('AgGeocentric')
 
 
 class AgPlanetodetic(IAgPlanetodetic, IAgPosition):
-    '''
-    Class defining Planetodetic position.
-    '''
+    """Class defining Planetodetic position."""
     def __init__(self, sourceObject=None):
         IAgPlanetodetic.__init__(self, sourceObject)
         IAgPosition.__init__(self, sourceObject)
@@ -5186,9 +4518,7 @@ class AgPlanetodetic(IAgPlanetodetic, IAgPosition):
         IAgPlanetodetic._private_init(self, pUnk)
         IAgPosition._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5204,9 +4534,7 @@ __all__.append('AgPlanetodetic')
 
 
 class AgPlanetocentric(IAgPlanetocentric, IAgPosition):
-    '''
-    Class defining Planetocentric position.
-    '''
+    """Class defining Planetocentric position."""
     def __init__(self, sourceObject=None):
         IAgPlanetocentric.__init__(self, sourceObject)
         IAgPosition.__init__(self, sourceObject)
@@ -5215,9 +4543,7 @@ class AgPlanetocentric(IAgPlanetocentric, IAgPosition):
         IAgPlanetocentric._private_init(self, pUnk)
         IAgPosition._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5233,9 +4559,7 @@ __all__.append('AgPlanetocentric')
 
 
 class AgSpherical(IAgSpherical, IAgPosition):
-    '''
-    Class defining spherical position.
-    '''
+    """Class defining spherical position."""
     def __init__(self, sourceObject=None):
         IAgSpherical.__init__(self, sourceObject)
         IAgPosition.__init__(self, sourceObject)
@@ -5244,9 +4568,7 @@ class AgSpherical(IAgSpherical, IAgPosition):
         IAgSpherical._private_init(self, pUnk)
         IAgPosition._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5262,9 +4584,7 @@ __all__.append('AgSpherical')
 
 
 class AgCylindrical(IAgCylindrical, IAgPosition):
-    '''
-    Class defining cylindrical position.
-    '''
+    """Class defining cylindrical position."""
     def __init__(self, sourceObject=None):
         IAgCylindrical.__init__(self, sourceObject)
         IAgPosition.__init__(self, sourceObject)
@@ -5273,9 +4593,7 @@ class AgCylindrical(IAgCylindrical, IAgPosition):
         IAgCylindrical._private_init(self, pUnk)
         IAgPosition._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5291,18 +4609,14 @@ __all__.append('AgCylindrical')
 
 
 class AgDirection(IAgDirection):
-    '''
-    Class defining direction options for aligned and constrained vectors.
-    '''
+    """Class defining direction options for aligned and constrained vectors."""
     def __init__(self, sourceObject=None):
         IAgDirection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDirection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5317,9 +4631,7 @@ __all__.append('AgDirection')
 
 
 class AgDirectionEuler(IAgDirectionEuler, IAgDirection):
-    '''
-    Euler direction sequence.
-    '''
+    """Euler direction sequence."""
     def __init__(self, sourceObject=None):
         IAgDirectionEuler.__init__(self, sourceObject)
         IAgDirection.__init__(self, sourceObject)
@@ -5328,9 +4640,7 @@ class AgDirectionEuler(IAgDirectionEuler, IAgDirection):
         IAgDirectionEuler._private_init(self, pUnk)
         IAgDirection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5346,9 +4656,7 @@ __all__.append('AgDirectionEuler')
 
 
 class AgDirectionPR(IAgDirectionPR, IAgDirection):
-    '''
-    Pitch-Roll (PR) direction sequence.
-    '''
+    """Pitch-Roll (PR) direction sequence."""
     def __init__(self, sourceObject=None):
         IAgDirectionPR.__init__(self, sourceObject)
         IAgDirection.__init__(self, sourceObject)
@@ -5357,9 +4665,7 @@ class AgDirectionPR(IAgDirectionPR, IAgDirection):
         IAgDirectionPR._private_init(self, pUnk)
         IAgDirection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5375,9 +4681,7 @@ __all__.append('AgDirectionPR')
 
 
 class AgDirectionRADec(IAgDirectionRADec, IAgDirection):
-    '''
-    Spherical direction (Right Ascension and Declination).
-    '''
+    """Spherical direction (Right Ascension and Declination)."""
     def __init__(self, sourceObject=None):
         IAgDirectionRADec.__init__(self, sourceObject)
         IAgDirection.__init__(self, sourceObject)
@@ -5386,9 +4690,7 @@ class AgDirectionRADec(IAgDirectionRADec, IAgDirection):
         IAgDirectionRADec._private_init(self, pUnk)
         IAgDirection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5404,9 +4706,7 @@ __all__.append('AgDirectionRADec')
 
 
 class AgDirectionXYZ(IAgDirectionXYZ, IAgDirection):
-    '''
-    Cartesian direction.
-    '''
+    """Cartesian direction."""
     def __init__(self, sourceObject=None):
         IAgDirectionXYZ.__init__(self, sourceObject)
         IAgDirection.__init__(self, sourceObject)
@@ -5415,9 +4715,7 @@ class AgDirectionXYZ(IAgDirectionXYZ, IAgDirection):
         IAgDirectionXYZ._private_init(self, pUnk)
         IAgDirection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5433,18 +4731,14 @@ __all__.append('AgDirectionXYZ')
 
 
 class AgOrientation(IAgOrientation):
-    '''
-    Class defining the orientation of an orbit.
-    '''
+    """Class defining the orientation of an orbit."""
     def __init__(self, sourceObject=None):
         IAgOrientation.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgOrientation._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5459,9 +4753,7 @@ __all__.append('AgOrientation')
 
 
 class AgOrientationAzEl(IAgOrientationAzEl, IAgOrientation):
-    '''
-    AzEl orientation method.
-    '''
+    """AzEl orientation method."""
     def __init__(self, sourceObject=None):
         IAgOrientationAzEl.__init__(self, sourceObject)
         IAgOrientation.__init__(self, sourceObject)
@@ -5470,9 +4762,7 @@ class AgOrientationAzEl(IAgOrientationAzEl, IAgOrientation):
         IAgOrientationAzEl._private_init(self, pUnk)
         IAgOrientation._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5488,9 +4778,7 @@ __all__.append('AgOrientationAzEl')
 
 
 class AgOrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation):
-    '''
-    Euler Angles orientation method.
-    '''
+    """Euler Angles orientation method."""
     def __init__(self, sourceObject=None):
         IAgOrientationEulerAngles.__init__(self, sourceObject)
         IAgOrientation.__init__(self, sourceObject)
@@ -5499,9 +4787,7 @@ class AgOrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation):
         IAgOrientationEulerAngles._private_init(self, pUnk)
         IAgOrientation._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5517,9 +4803,7 @@ __all__.append('AgOrientationEulerAngles')
 
 
 class AgOrientationQuaternion(IAgOrientationQuaternion, IAgOrientation):
-    '''
-    Quaternion orientation method.
-    '''
+    """Quaternion orientation method."""
     def __init__(self, sourceObject=None):
         IAgOrientationQuaternion.__init__(self, sourceObject)
         IAgOrientation.__init__(self, sourceObject)
@@ -5528,9 +4812,7 @@ class AgOrientationQuaternion(IAgOrientationQuaternion, IAgOrientation):
         IAgOrientationQuaternion._private_init(self, pUnk)
         IAgOrientation._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5546,9 +4828,7 @@ __all__.append('AgOrientationQuaternion')
 
 
 class AgOrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation):
-    '''
-    Yaw-Pitch Roll (YPR) Angles orientation system.
-    '''
+    """Yaw-Pitch Roll (YPR) Angles orientation system."""
     def __init__(self, sourceObject=None):
         IAgOrientationYPRAngles.__init__(self, sourceObject)
         IAgOrientation.__init__(self, sourceObject)
@@ -5557,9 +4837,7 @@ class AgOrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation):
         IAgOrientationYPRAngles._private_init(self, pUnk)
         IAgOrientation._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5575,18 +4853,14 @@ __all__.append('AgOrientationYPRAngles')
 
 
 class AgDoublesCollection(IAgDoublesCollection):
-    '''
-    A collection of doubles.
-    '''
+    """A collection of doubles."""
     def __init__(self, sourceObject=None):
         IAgDoublesCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgDoublesCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5601,18 +4875,14 @@ __all__.append('AgDoublesCollection')
 
 
 class AgCartesian3Vector(IAgCartesian3Vector):
-    '''
-    A 3-D cartesian vector.
-    '''
+    """A 3-D cartesian vector."""
     def __init__(self, sourceObject=None):
         IAgCartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCartesian3Vector._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5627,18 +4897,14 @@ __all__.append('AgCartesian3Vector')
 
 
 class AgCartesian2Vector(IAgCartesian2Vector):
-    '''
-    A 2-D cartesian vector.
-    '''
+    """A 2-D cartesian vector."""
     def __init__(self, sourceObject=None):
         IAgCartesian2Vector.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCartesian2Vector._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5653,18 +4919,14 @@ __all__.append('AgCartesian2Vector')
 
 
 class AgPropertyInfo(IAgPropertyInfo):
-    '''
-    Property Infomation coclass.
-    '''
+    """Property Infomation coclass."""
     def __init__(self, sourceObject=None):
         IAgPropertyInfo.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgPropertyInfo._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5679,18 +4941,14 @@ __all__.append('AgPropertyInfo')
 
 
 class AgPropertyInfoCollection(IAgPropertyInfoCollection):
-    '''
-    Property Infomation Collection coclass.
-    '''
+    """Property Infomation Collection coclass."""
     def __init__(self, sourceObject=None):
         IAgPropertyInfoCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgPropertyInfoCollection._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5705,18 +4963,14 @@ __all__.append('AgPropertyInfoCollection')
 
 
 class AgRuntimeTypeInfo(IAgRuntimeTypeInfo):
-    '''
-    Runtime Type info coclass.
-    '''
+    """Runtime Type info coclass."""
     def __init__(self, sourceObject=None):
         IAgRuntimeTypeInfo.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgRuntimeTypeInfo._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5731,9 +4985,7 @@ __all__.append('AgRuntimeTypeInfo')
 
 
 class AgCROrientationAzEl(IAgOrientationAzEl, IAgOrientation, IAgOrientationPositionOffset):
-    '''
-    AzEl orientation method.
-    '''
+    """AzEl orientation method."""
     def __init__(self, sourceObject=None):
         IAgOrientationAzEl.__init__(self, sourceObject)
         IAgOrientation.__init__(self, sourceObject)
@@ -5744,9 +4996,7 @@ class AgCROrientationAzEl(IAgOrientationAzEl, IAgOrientation, IAgOrientationPosi
         IAgOrientation._private_init(self, pUnk)
         IAgOrientationPositionOffset._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5763,9 +5013,7 @@ __all__.append('AgCROrientationAzEl')
 
 
 class AgCROrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation, IAgOrientationPositionOffset):
-    '''
-    Euler Angles orientation method.
-    '''
+    """Euler Angles orientation method."""
     def __init__(self, sourceObject=None):
         IAgOrientationEulerAngles.__init__(self, sourceObject)
         IAgOrientation.__init__(self, sourceObject)
@@ -5776,9 +5024,7 @@ class AgCROrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation, IAgO
         IAgOrientation._private_init(self, pUnk)
         IAgOrientationPositionOffset._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5795,9 +5041,7 @@ __all__.append('AgCROrientationEulerAngles')
 
 
 class AgCROrientationQuaternion(IAgOrientationQuaternion, IAgOrientation, IAgOrientationPositionOffset):
-    '''
-    Quaternion orientation method.
-    '''
+    """Quaternion orientation method."""
     def __init__(self, sourceObject=None):
         IAgOrientationQuaternion.__init__(self, sourceObject)
         IAgOrientation.__init__(self, sourceObject)
@@ -5808,9 +5052,7 @@ class AgCROrientationQuaternion(IAgOrientationQuaternion, IAgOrientation, IAgOri
         IAgOrientation._private_init(self, pUnk)
         IAgOrientationPositionOffset._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5827,9 +5069,7 @@ __all__.append('AgCROrientationQuaternion')
 
 
 class AgCROrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation, IAgOrientationPositionOffset):
-    '''
-    Yaw-Pitch Roll (YPR) Angles orientation system.
-    '''
+    """Yaw-Pitch Roll (YPR) Angles orientation system."""
     def __init__(self, sourceObject=None):
         IAgOrientationYPRAngles.__init__(self, sourceObject)
         IAgOrientation.__init__(self, sourceObject)
@@ -5840,9 +5080,7 @@ class AgCROrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation, IAgOrien
         IAgOrientation._private_init(self, pUnk)
         IAgOrientationPositionOffset._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -5859,18 +5097,14 @@ __all__.append('AgCROrientationYPRAngles')
 
 
 class AgCROrientationOffsetCart(IAgCartesian3Vector):
-    '''
-    Orientation offset cartesian.
-    '''
+    """Orientation offset cartesian."""
     def __init__(self, sourceObject=None):
         IAgCartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgCartesian3Vector._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

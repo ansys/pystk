@@ -15,9 +15,7 @@ from agi.stk12.utilities.exceptions import *
 ###############################################################################
 
 class _CreateAgClassCatalog(object):
-    '''
-    Singleton class for registering STK Object Model classes by clsid
-    '''
+    """Singleton class for registering STK Object Model classes by clsid"""
     def __init__(self):
         self.catalog = dict()
         self.clsid_from_pyclass = dict()
@@ -68,9 +66,7 @@ class _IErrorInfo(object):
             return desc
             
 def evaluate_hresult(hr:HRESULT) -> None:
-    '''
-    Get error info and raise an exception if an HRESULT value is failing.
-    '''
+    """Get error info and raise an exception if an HRESULT value is failing."""
     if not Succeeded(hr):
         punk = IUnknown()
         msg = None
@@ -193,9 +189,7 @@ class _IProvideClassInfo(object):
         return None
         
 def get_concrete_class(punk:IUnknown) -> typing.Any:
-    '''
-    Convert an interface pointer to the concrete class it belongs to.
-    '''
+    """Convert an interface pointer to the concrete class it belongs to."""
     coclass = COMObject()
     if punk:
         coclass._pUnk = punk
@@ -215,9 +209,7 @@ def get_concrete_class(punk:IUnknown) -> typing.Any:
     return coclass
     
 def compare_com_objects(first, second) -> bool:
-    '''
-    Used to compare whether the given interfaces point to the same COM object.
-    '''
+    """Used to compare whether the given interfaces point to the same COM object."""
     if first is None and second is None:
         return True
     elif first is None or second is None:

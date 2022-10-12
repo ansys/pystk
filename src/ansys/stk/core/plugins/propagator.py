@@ -38,9 +38,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
 
 class AgEPropagatorWrapperPluginErrorCodes(IntEnum):
-    '''
-    Enumeration of AgPropagatorWrapperPlugin General Error Codes
-    '''
+    """Enumeration of AgPropagatorWrapperPlugin General Error Codes"""
     # Gator Plugin: An internal failure occurred.
     E_PROPAGATOR_WRAPPERS_PLUGIN_INTERNAL_FAILURE = (((1 << 31) | (4 << 16)) | 0x101),
     # Gator Plugin: Not configured properly.
@@ -60,9 +58,7 @@ agcls.AgTypeNameMap['AgEPropagatorWrapperPluginErrorCodes'] = AgEPropagatorWrapp
 __all__.append('AgEPropagatorWrapperPluginErrorCodes')
 
 class AgEEulerSequence(IntEnum):
-    '''
-    Enumeration AgEEulerSequence.
-    '''
+    """Enumeration AgEEulerSequence."""
     # Sequence defined by rotation about x-axis, then about rotated y-axis, then about rotated x-axis.
     e121 = 121,
     # Sequence defined by rotation about x-axis, then about rotated y-axis, then about rotated z-axis.
@@ -93,9 +89,7 @@ __all__.append('AgEEulerSequence')
 
 
 class IAgGatorPluginResultState(object):
-    '''
-    Astrogator plugin interface used to get state values. Supports IAgGatorState and IAgEpoch.
-    '''
+    """Astrogator plugin interface used to get state values. Supports IAgGatorState and IAgEpoch."""
     _uuid = '{1FE7D2CB-DC59-4e05-A3C2-CBAB2C00EC45}'
     _num_methods = 28
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -169,9 +163,7 @@ class IAgGatorPluginResultState(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgGatorPluginResultState, vtable_offset_local+27, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgGatorPluginResultState, vtable_offset_local+28, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgGatorPluginResultState.__dict__ and type(IAgGatorPluginResultState.__dict__[attrname]) == property:
@@ -184,132 +176,102 @@ class IAgGatorPluginResultState(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgGatorPluginResultState.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant of the state central body
-        '''
+        """Gravitational constant of the state central body"""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def Cd(self) -> float:
-        '''
-        Drag Coefficient.
-        '''
+        """Drag Coefficient."""
         with agmarshall.DOUBLE_arg() as arg_pCd:
             agcls.evaluate_hresult(self.__dict__['_GetCd'](byref(arg_pCd.COM_val)))
             return arg_pCd.python_val
 
     @property
     def Cr(self) -> float:
-        '''
-        SRP Coefficient.
-        '''
+        """SRP Coefficient."""
         with agmarshall.DOUBLE_arg() as arg_pCr:
             agcls.evaluate_hresult(self.__dict__['_GetCr'](byref(arg_pCr.COM_val)))
             return arg_pCr.python_val
 
     @property
     def DragArea(self) -> float:
-        '''
-        Drag Area.
-        '''
+        """Drag Area."""
         with agmarshall.DOUBLE_arg() as arg_pDragArea:
             agcls.evaluate_hresult(self.__dict__['_GetDragArea'](byref(arg_pDragArea.COM_val)))
             return arg_pDragArea.python_val
 
     @property
     def SRPArea(self) -> float:
-        '''
-        SRP Area.
-        '''
+        """SRP Area."""
         with agmarshall.DOUBLE_arg() as arg_pSRPArea:
             agcls.evaluate_hresult(self.__dict__['_GetSRPArea'](byref(arg_pSRPArea.COM_val)))
             return arg_pSRPArea.python_val
 
     @property
     def Mass(self) -> float:
-        '''
-        Total Mass.
-        '''
+        """Total Mass."""
         with agmarshall.DOUBLE_arg() as arg_pMass:
             agcls.evaluate_hresult(self.__dict__['_GetMass'](byref(arg_pMass.COM_val)))
             return arg_pMass.python_val
 
     @property
     def DryMass(self) -> float:
-        '''
-        Dry Mass.
-        '''
+        """Dry Mass."""
         with agmarshall.DOUBLE_arg() as arg_pDryMass:
             agcls.evaluate_hresult(self.__dict__['_GetDryMass'](byref(arg_pDryMass.COM_val)))
             return arg_pDryMass.python_val
 
     @property
     def FuelMass(self) -> float:
-        '''
-        Fuel Mass.
-        '''
+        """Fuel Mass."""
         with agmarshall.DOUBLE_arg() as arg_pFuelMass:
             agcls.evaluate_hresult(self.__dict__['_GetFuelMass'](byref(arg_pFuelMass.COM_val)))
             return arg_pFuelMass.python_val
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude.
-        '''
+        """Current altitude."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position and velocity in the requested frame (in internal units) returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position and velocity in the requested frame (in internal units) returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude, detic longitude, and altitude(in internal units) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude, detic longitude, and altitude(in internal units) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun wrt the current satellite position, in the requested frame, computed in the requested manner, (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun wrt the current satellite position, in the requested frame, computed in the requested manner, (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -317,9 +279,7 @@ class IAgGatorPluginResultState(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -330,45 +290,33 @@ class IAgGatorPluginResultState(object):
             return arg_pArray.python_val
 
     def StopPropagation(self) -> None:
-        '''
-        Stops propagation.  For fatal errors.
-        '''
+        """Stops propagation.  For fatal errors."""
         agcls.evaluate_hresult(self.__dict__['_StopPropagation']())
 
     def IndicateEvent(self, eEventIndicator:"AgEAsHpopPluginEventIndicators") -> None:
-        '''
-        Marks an event to the propagator.
-        '''
+        """Marks an event to the propagator."""
         with agmarshall.AgEnum_arg(AgEAsHpopPluginEventIndicators, eEventIndicator) as arg_eEventIndicator:
             agcls.evaluate_hresult(self.__dict__['_IndicateEvent'](arg_eEventIndicator.COM_val))
 
     def SetMaxStep(self, maxStep:float) -> None:
-        '''
-        Sets the maximum step size for the propagator.
-        '''
+        """Sets the maximum step size for the propagator."""
         with agmarshall.DOUBLE_arg(maxStep) as arg_maxStep:
             agcls.evaluate_hresult(self.__dict__['_SetMaxStep'](arg_maxStep.COM_val))
 
     def SetColor(self, color:str) -> None:
-        '''
-        Sets the segment color.
-        '''
+        """Sets the segment color."""
         with agmarshall.BSTR_arg(color) as arg_color:
             agcls.evaluate_hresult(self.__dict__['_SetColor'](arg_color.COM_val))
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -380,9 +328,7 @@ agcls.AgTypeNameMap['IAgGatorPluginResultState'] = IAgGatorPluginResultState
 __all__.append('IAgGatorPluginResultState')
 
 class IAgGatorPluginResultEvalEngineModel(object):
-    '''
-    Astrogator plugin interface used to get/set engine model settings during the computation of a step. Supports IAgGatorState and IAgEpoch.
-    '''
+    """Astrogator plugin interface used to get/set engine model settings during the computation of a step. Supports IAgGatorState and IAgEpoch."""
     _uuid = '{D120DA1E-B666-4a30-8D32-E59133C72B87}'
     _num_methods = 32
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -464,9 +410,7 @@ class IAgGatorPluginResultEvalEngineModel(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgGatorPluginResultEvalEngineModel, vtable_offset_local+31, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgGatorPluginResultEvalEngineModel, vtable_offset_local+32, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgGatorPluginResultEvalEngineModel.__dict__ and type(IAgGatorPluginResultEvalEngineModel.__dict__[attrname]) == property:
@@ -479,132 +423,102 @@ class IAgGatorPluginResultEvalEngineModel(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgGatorPluginResultEvalEngineModel.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant of the state central body
-        '''
+        """Gravitational constant of the state central body"""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def Cd(self) -> float:
-        '''
-        Drag Coefficient.
-        '''
+        """Drag Coefficient."""
         with agmarshall.DOUBLE_arg() as arg_pCd:
             agcls.evaluate_hresult(self.__dict__['_GetCd'](byref(arg_pCd.COM_val)))
             return arg_pCd.python_val
 
     @property
     def Cr(self) -> float:
-        '''
-        SRP Coefficient.
-        '''
+        """SRP Coefficient."""
         with agmarshall.DOUBLE_arg() as arg_pCr:
             agcls.evaluate_hresult(self.__dict__['_GetCr'](byref(arg_pCr.COM_val)))
             return arg_pCr.python_val
 
     @property
     def DragArea(self) -> float:
-        '''
-        Drag Area.
-        '''
+        """Drag Area."""
         with agmarshall.DOUBLE_arg() as arg_pDragArea:
             agcls.evaluate_hresult(self.__dict__['_GetDragArea'](byref(arg_pDragArea.COM_val)))
             return arg_pDragArea.python_val
 
     @property
     def SRPArea(self) -> float:
-        '''
-        SRP Area.
-        '''
+        """SRP Area."""
         with agmarshall.DOUBLE_arg() as arg_pSRPArea:
             agcls.evaluate_hresult(self.__dict__['_GetSRPArea'](byref(arg_pSRPArea.COM_val)))
             return arg_pSRPArea.python_val
 
     @property
     def Mass(self) -> float:
-        '''
-        Total Mass.
-        '''
+        """Total Mass."""
         with agmarshall.DOUBLE_arg() as arg_pMass:
             agcls.evaluate_hresult(self.__dict__['_GetMass'](byref(arg_pMass.COM_val)))
             return arg_pMass.python_val
 
     @property
     def DryMass(self) -> float:
-        '''
-        Dry Mass.
-        '''
+        """Dry Mass."""
         with agmarshall.DOUBLE_arg() as arg_pDryMass:
             agcls.evaluate_hresult(self.__dict__['_GetDryMass'](byref(arg_pDryMass.COM_val)))
             return arg_pDryMass.python_val
 
     @property
     def FuelMass(self) -> float:
-        '''
-        Fuel Mass.
-        '''
+        """Fuel Mass."""
         with agmarshall.DOUBLE_arg() as arg_pFuelMass:
             agcls.evaluate_hresult(self.__dict__['_GetFuelMass'](byref(arg_pFuelMass.COM_val)))
             return arg_pFuelMass.python_val
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude.
-        '''
+        """Current altitude."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position and velocity in the requested frame (in internal units) returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position and velocity in the requested frame (in internal units) returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude, detic longitude, and altitude(in internal units) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude, detic longitude, and altitude(in internal units) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun wrt the current satellite position, in the requested frame, computed in the requested manner, (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun wrt the current satellite position, in the requested frame, computed in the requested manner, (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -612,9 +526,7 @@ class IAgGatorPluginResultEvalEngineModel(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -626,44 +538,34 @@ class IAgGatorPluginResultEvalEngineModel(object):
 
     @property
     def Thrust(self) -> float:
-        '''
-        Current thrust (N).
-        '''
+        """Current thrust (N)."""
         with agmarshall.DOUBLE_arg() as arg_pThrust:
             agcls.evaluate_hresult(self.__dict__['_GetThrust'](byref(arg_pThrust.COM_val)))
             return arg_pThrust.python_val
 
     @property
     def Isp(self) -> float:
-        '''
-        Current Isp (secs).
-        '''
+        """Current Isp (secs)."""
         with agmarshall.DOUBLE_arg() as arg_pIsp:
             agcls.evaluate_hresult(self.__dict__['_GetIsp'](byref(arg_pIsp.COM_val)))
             return arg_pIsp.python_val
 
     @property
     def MassFlowRate(self) -> float:
-        '''
-        Current mass flow rate (kg/sec).
-        '''
+        """Current mass flow rate (kg/sec)."""
         with agmarshall.DOUBLE_arg() as arg_pMassFlowRate:
             agcls.evaluate_hresult(self.__dict__['_GetMassFlowRate'](byref(arg_pMassFlowRate.COM_val)))
             return arg_pMassFlowRate.python_val
 
     @property
     def TimeSinceIgnition(self) -> float:
-        '''
-        Time since ignition (secs).
-        '''
+        """Time since ignition (secs)."""
         with agmarshall.DOUBLE_arg() as arg_pTimeSinceIgnition:
             agcls.evaluate_hresult(self.__dict__['_GetTimeSinceIgnition'](byref(arg_pTimeSinceIgnition.COM_val)))
             return arg_pTimeSinceIgnition.python_val
 
     def SetThrustAndIsp(self, thrust:float, isp:float) -> bool:
-        '''
-        Sets the current thrust (N) and isp (secs). Computes the mass flow rate using the rocket equation. Returns false on an error.
-        '''
+        """Sets the current thrust (N) and isp (secs). Computes the mass flow rate using the rocket equation. Returns false on an error."""
         with agmarshall.DOUBLE_arg(thrust) as arg_thrust, \
              agmarshall.DOUBLE_arg(isp) as arg_isp, \
              agmarshall.VARIANT_BOOL_arg() as arg_pReturn:
@@ -671,9 +573,7 @@ class IAgGatorPluginResultEvalEngineModel(object):
             return arg_pReturn.python_val
 
     def SetThrustAndMassFlowRate(self, thrust:float, massFlowRate:float) -> bool:
-        '''
-        Sets the current thrust(N) and mass flow rate (kg/sec). Computes the isp using the rocket equation. Returns false on an error.
-        '''
+        """Sets the current thrust(N) and mass flow rate (kg/sec). Computes the isp using the rocket equation. Returns false on an error."""
         with agmarshall.DOUBLE_arg(thrust) as arg_thrust, \
              agmarshall.DOUBLE_arg(massFlowRate) as arg_massFlowRate, \
              agmarshall.VARIANT_BOOL_arg() as arg_pReturn:
@@ -681,9 +581,7 @@ class IAgGatorPluginResultEvalEngineModel(object):
             return arg_pReturn.python_val
 
     def SetIspAndMassFlowRate(self, isp:float, massFlowRate:float) -> bool:
-        '''
-        Sets the current isp and mass flow rate. Computes the thrust using the rocket equation. Returns false on an error.
-        '''
+        """Sets the current isp and mass flow rate. Computes the thrust using the rocket equation. Returns false on an error."""
         with agmarshall.DOUBLE_arg(isp) as arg_isp, \
              agmarshall.DOUBLE_arg(massFlowRate) as arg_massFlowRate, \
              agmarshall.VARIANT_BOOL_arg() as arg_pReturn:
@@ -691,24 +589,18 @@ class IAgGatorPluginResultEvalEngineModel(object):
             return arg_pReturn.python_val
 
     def StopPropagation(self) -> None:
-        '''
-        Stops propagation.  For fatal errors.
-        '''
+        """Stops propagation.  For fatal errors."""
         agcls.evaluate_hresult(self.__dict__['_StopPropagation']())
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -720,9 +612,7 @@ agcls.AgTypeNameMap['IAgGatorPluginResultEvalEngineModel'] = IAgGatorPluginResul
 __all__.append('IAgGatorPluginResultEvalEngineModel')
 
 class IAgGatorPluginResultAttCtrl(object):
-    '''
-    Astrogator plugin interface used to get/set attitude controller settings. Supports IAgGatorState and IAgEpoch.
-    '''
+    """Astrogator plugin interface used to get/set attitude controller settings. Supports IAgGatorState and IAgEpoch."""
     _uuid = '{96E6BDF6-C1C6-4a50-9A93-6782BFF9FE5F}'
     _num_methods = 33
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -806,9 +696,7 @@ class IAgGatorPluginResultAttCtrl(object):
         self.__dict__['_DateElements_Array'] = IAGFUNCTYPE(pUnk, IID_IAgGatorPluginResultAttCtrl, vtable_offset_local+32, agcom.LONG, POINTER(agcom.SAFEARRAY))
         self.__dict__['_DateString'] = IAGFUNCTYPE(pUnk, IID_IAgGatorPluginResultAttCtrl, vtable_offset_local+33, agcom.BSTR, POINTER(agcom.BSTR))
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         if attrname in IAgGatorPluginResultAttCtrl.__dict__ and type(IAgGatorPluginResultAttCtrl.__dict__[attrname]) == property:
@@ -821,132 +709,102 @@ class IAgGatorPluginResultAttCtrl(object):
             raise STKAttributeError(attrname + ' is not a recognized attribute in IAgGatorPluginResultAttCtrl.')
     
     def Trace(self, numCalls:int) -> None:
-        '''
-        Set this interface to trace the next numCalls by outputting a message to the message viewer.
-        '''
+        """Set this interface to trace the next numCalls by outputting a message to the message viewer."""
         with agmarshall.LONG_arg(numCalls) as arg_numCalls:
             agcls.evaluate_hresult(self.__dict__['_Trace'](arg_numCalls.COM_val))
 
     @property
     def CbName(self) -> str:
-        '''
-        Name of the central body used as reference frame origin.
-        '''
+        """Name of the central body used as reference frame origin."""
         with agmarshall.BSTR_arg() as arg_pCbName:
             agcls.evaluate_hresult(self.__dict__['_GetCbName'](byref(arg_pCbName.COM_val)))
             return arg_pCbName.python_val
 
     @property
     def Mu(self) -> float:
-        '''
-        Gravitational constant of the state central body
-        '''
+        """Gravitational constant of the state central body"""
         with agmarshall.DOUBLE_arg() as arg_pMu:
             agcls.evaluate_hresult(self.__dict__['_GetMu'](byref(arg_pMu.COM_val)))
             return arg_pMu.python_val
 
     @property
     def Cd(self) -> float:
-        '''
-        Drag Coefficient.
-        '''
+        """Drag Coefficient."""
         with agmarshall.DOUBLE_arg() as arg_pCd:
             agcls.evaluate_hresult(self.__dict__['_GetCd'](byref(arg_pCd.COM_val)))
             return arg_pCd.python_val
 
     @property
     def Cr(self) -> float:
-        '''
-        SRP Coefficient.
-        '''
+        """SRP Coefficient."""
         with agmarshall.DOUBLE_arg() as arg_pCr:
             agcls.evaluate_hresult(self.__dict__['_GetCr'](byref(arg_pCr.COM_val)))
             return arg_pCr.python_val
 
     @property
     def DragArea(self) -> float:
-        '''
-        Drag Area.
-        '''
+        """Drag Area."""
         with agmarshall.DOUBLE_arg() as arg_pDragArea:
             agcls.evaluate_hresult(self.__dict__['_GetDragArea'](byref(arg_pDragArea.COM_val)))
             return arg_pDragArea.python_val
 
     @property
     def SRPArea(self) -> float:
-        '''
-        SRP Area.
-        '''
+        """SRP Area."""
         with agmarshall.DOUBLE_arg() as arg_pSRPArea:
             agcls.evaluate_hresult(self.__dict__['_GetSRPArea'](byref(arg_pSRPArea.COM_val)))
             return arg_pSRPArea.python_val
 
     @property
     def Mass(self) -> float:
-        '''
-        Total Mass.
-        '''
+        """Total Mass."""
         with agmarshall.DOUBLE_arg() as arg_pMass:
             agcls.evaluate_hresult(self.__dict__['_GetMass'](byref(arg_pMass.COM_val)))
             return arg_pMass.python_val
 
     @property
     def DryMass(self) -> float:
-        '''
-        Dry Mass.
-        '''
+        """Dry Mass."""
         with agmarshall.DOUBLE_arg() as arg_pDryMass:
             agcls.evaluate_hresult(self.__dict__['_GetDryMass'](byref(arg_pDryMass.COM_val)))
             return arg_pDryMass.python_val
 
     @property
     def FuelMass(self) -> float:
-        '''
-        Fuel Mass.
-        '''
+        """Fuel Mass."""
         with agmarshall.DOUBLE_arg() as arg_pFuelMass:
             agcls.evaluate_hresult(self.__dict__['_GetFuelMass'](byref(arg_pFuelMass.COM_val)))
             return arg_pFuelMass.python_val
 
     @property
     def Altitude(self) -> float:
-        '''
-        Current altitude.
-        '''
+        """Current altitude."""
         with agmarshall.DOUBLE_arg() as arg_pAltitude:
             agcls.evaluate_hresult(self.__dict__['_GetAltitude'](byref(arg_pAltitude.COM_val)))
             return arg_pAltitude.python_val
 
     def DayCount_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in day count format returned as an array representing wholeDays, secsIntoDay. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DayCount_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def PosVel_Array(self, frame:"AgEUtFrame") -> list:
-        '''
-        Current position and velocity in the requested frame (in internal units) returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients.
-        '''
+        """Current position and velocity in the requested frame (in internal units) returned as an array representing x, y, z, vx, vy, vz. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_PosVel_Array'](arg_frame.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def LatLonAlt_Array(self) -> list:
-        '''
-        Current detic latitude, detic longitude, and altitude(in internal units) returned as an array representing lat, lon, alt. Useful for scripting clients.
-        '''
+        """Current detic latitude, detic longitude, and altitude(in internal units) returned as an array representing lat, lon, alt. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_LatLonAlt_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def SunPosition_Array(self, sunPosType:"AgEUtSunPosType", frame:"AgEUtFrame") -> list:
-        '''
-        Position of the sun wrt the current satellite position, in the requested frame, computed in the requested manner, (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Position of the sun wrt the current satellite position, in the requested frame, computed in the requested manner, (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtSunPosType, sunPosType) as arg_sunPosType, \
              agmarshall.AgEnum_arg(AgEUtFrame, frame) as arg_frame, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
@@ -954,9 +812,7 @@ class IAgGatorPluginResultAttCtrl(object):
             return arg_pArray.python_val
 
     def TransformVector_Array(self, frameFrom:"AgEUtFrame", xFrom:float, yFrom:float, zFrom:float, frameTo:"AgEUtFrame") -> list:
-        '''
-        Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients.
-        '''
+        """Transforms a vector from the input frame to the output frame (in internal units) returned as an array representing x, y, z. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtFrame, frameFrom) as arg_frameFrom, \
              agmarshall.DOUBLE_arg(xFrom) as arg_xFrom, \
              agmarshall.DOUBLE_arg(yFrom) as arg_yFrom, \
@@ -968,26 +824,20 @@ class IAgGatorPluginResultAttCtrl(object):
 
     @property
     def RefAxes(self) -> str:
-        '''
-        Name of the reference axes.
-        '''
+        """Name of the reference axes."""
         with agmarshall.BSTR_arg() as arg_pRefAxesName:
             agcls.evaluate_hresult(self.__dict__['_GetRefAxes'](byref(arg_pRefAxesName.COM_val)))
             return arg_pRefAxesName.python_val
 
     def SetRefAxes(self, name:str) -> bool:
-        '''
-        Sets the reference axes.
-        '''
+        """Sets the reference axes."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.VARIANT_BOOL_arg() as arg_pResult:
             agcls.evaluate_hresult(self.__dict__['_SetRefAxes'](arg_name.COM_val, byref(arg_pResult.COM_val)))
             return arg_pResult.python_val
 
     def SetQuaternion(self, q1:float, q2:float, q3:float, q4:float) -> None:
-        '''
-        Sets the current orientation using a quaternion.
-        '''
+        """Sets the current orientation using a quaternion."""
         with agmarshall.DOUBLE_arg(q1) as arg_q1, \
              agmarshall.DOUBLE_arg(q2) as arg_q2, \
              agmarshall.DOUBLE_arg(q3) as arg_q3, \
@@ -995,9 +845,7 @@ class IAgGatorPluginResultAttCtrl(object):
             agcls.evaluate_hresult(self.__dict__['_SetQuaternion'](arg_q1.COM_val, arg_q2.COM_val, arg_q3.COM_val, arg_q4.COM_val))
 
     def EulerRotate(self, sequence:"AgEEulerSequence", first:float, second:float, third:float) -> None:
-        '''
-        Sets the current orientation using a sequence of euler rotations.
-        '''
+        """Sets the current orientation using a sequence of euler rotations."""
         with agmarshall.AgEnum_arg(AgEEulerSequence, sequence) as arg_sequence, \
              agmarshall.DOUBLE_arg(first) as arg_first, \
              agmarshall.DOUBLE_arg(second) as arg_second, \
@@ -1005,9 +853,7 @@ class IAgGatorPluginResultAttCtrl(object):
             agcls.evaluate_hresult(self.__dict__['_EulerRotate'](arg_sequence.COM_val, arg_first.COM_val, arg_second.COM_val, arg_third.COM_val))
 
     def GetQuaternion(self) -> typing.Tuple[float, float, float, float]:
-        '''
-        Gets the current orientation as a quaternion.
-        '''
+        """Gets the current orientation as a quaternion."""
         with agmarshall.DOUBLE_arg() as arg_q1, \
              agmarshall.DOUBLE_arg() as arg_q2, \
              agmarshall.DOUBLE_arg() as arg_q3, \
@@ -1016,17 +862,13 @@ class IAgGatorPluginResultAttCtrl(object):
             return arg_q1.python_val, arg_q2.python_val, arg_q3.python_val, arg_q4.python_val
 
     def GetQuaternion_Array(self) -> list:
-        '''
-        Gets the current orientation as a quaternion returned as an array representing Q1, Q2, Q3, and Q4. Useful for scripting clients.
-        '''
+        """Gets the current orientation as a quaternion returned as an array representing Q1, Q2, Q3, and Q4. Useful for scripting clients."""
         with agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_GetQuaternion_Array'](byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def GetEulerRotation(self, sequence:"AgEEulerSequence") -> typing.Tuple[float, float, float]:
-        '''
-        Gets the current orientation as euler angles.
-        '''
+        """Gets the current orientation as euler angles."""
         with agmarshall.AgEnum_arg(AgEEulerSequence, sequence) as arg_sequence, \
              agmarshall.DOUBLE_arg() as arg_first, \
              agmarshall.DOUBLE_arg() as arg_second, \
@@ -1035,33 +877,25 @@ class IAgGatorPluginResultAttCtrl(object):
             return arg_first.python_val, arg_second.python_val, arg_third.python_val
 
     def GetEulerRotation_Array(self, sequence:"AgEEulerSequence") -> list:
-        '''
-        Gets the current orientation as euler rotations returned as an array. Useful for scripting clients.
-        '''
+        """Gets the current orientation as euler rotations returned as an array. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEEulerSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_GetEulerRotation_Array'](arg_sequence.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def StopPropagation(self) -> None:
-        '''
-        Stops propagation.  For fatal errors.
-        '''
+        """Stops propagation.  For fatal errors."""
         agcls.evaluate_hresult(self.__dict__['_StopPropagation']())
 
     def DateElements_Array(self, scale:"AgEUtTimeScale") -> list:
-        '''
-        Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients.
-        '''
+        """Current epoch in requested time scale expressed in date format returned as the array: Year [yyyy], DayOfYear [1-366], Month [1-12], DayOfMonth [1-31], Hour [0-23], Minute [0-59], Seconds [0-60]. Useful for scripting clients."""
         with agmarshall.AgEnum_arg(AgEUtTimeScale, scale) as arg_scale, \
              agmarshall.SAFEARRAY_arg() as arg_pArray:
             agcls.evaluate_hresult(self.__dict__['_DateElements_Array'](arg_scale.COM_val, byref(arg_pArray.COM_val)))
             return arg_pArray.python_val
 
     def DateString(self, dateAbbrv:str) -> str:
-        '''
-        Current epoch expressed using the date format abbreviation specified.
-        '''
+        """Current epoch expressed using the date format abbreviation specified."""
         with agmarshall.BSTR_arg(dateAbbrv) as arg_dateAbbrv, \
              agmarshall.BSTR_arg() as arg_pDateString:
             agcls.evaluate_hresult(self.__dict__['_DateString'](arg_dateAbbrv.COM_val, byref(arg_pDateString.COM_val)))
@@ -1074,87 +908,63 @@ __all__.append('IAgGatorPluginResultAttCtrl')
 
 
 class IAgGatorPluginEngineModel(object):
-    '''
+    """
     Astrogator plugin engine model interface whose methods are called at certain events in the propagation process. A method returning false indicates an error.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Name(self) -> str:
-        '''
-        Triggered to set the name of the plugin used in messages.
-        '''
+        """Triggered to set the name of the plugin used in messages."""
         raise STKPluginMethodNotImplementedError('Name was not implemented.')
 
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin.
-        '''
+        """Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def PrePropagate(self, resultState:"IAgGatorPluginResultState") -> bool:
-        '''
-        Triggered just before propagation starts. Use the input interface to access engine model settings.
-        '''
+        """Triggered just before propagation starts. Use the input interface to access engine model settings."""
         raise STKPluginMethodNotImplementedError('PrePropagate was not implemented.')
 
     def PreNextStep(self, resultState:"IAgGatorPluginResultState") -> bool:
-        '''
-        Triggered just before the next propagation step is attempted. Use the input interface to access engine model settings. Returning false will turn this callback off.
-        '''
+        """Triggered just before the next propagation step is attempted. Use the input interface to access engine model settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('PreNextStep was not implemented.')
 
     def Evaluate(self, resultEvalEngineModel:"IAgGatorPluginResultEvalEngineModel") -> bool:
-        '''
-        Triggered on every force model evaluation during the propagation of a step. Use the input interface to access engine model settings. Returning false will turn this callback off.
-        '''
+        """Triggered on every force model evaluation during the propagation of a step. Use the input interface to access engine model settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is freed from use to allow for any additional cleanup.
-        '''
+        """Triggered just before the plugin is freed from use to allow for any additional cleanup."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
 __all__.append('IAgGatorPluginEngineModel')
 
 class IAgGatorPluginAttCtrl(object):
-    '''
+    """
     Astrogator plugin attitude controller interface whose methods are called at certain events in the propagation process. A method returning false indicates an error.
     This interface may be inherited from to assist in development of the plugin.  All methods should be overridden.
-    '''
+    """
     def Name(self) -> str:
-        '''
-        Triggered to set the name of the plugin used in messages.
-        '''
+        """Triggered to set the name of the plugin used in messages."""
         raise STKPluginMethodNotImplementedError('Name was not implemented.')
 
     def Init(self, site:"IAgUtPluginSite") -> bool:
-        '''
-        Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin.
-        '''
+        """Triggered when the plugin is initialized to allow for any additional needed initialization. Must return true to turn on use of plugin."""
         raise STKPluginMethodNotImplementedError('Init was not implemented.')
 
     def PrePropagate(self, resultAttCtrl:"IAgGatorPluginResultAttCtrl") -> bool:
-        '''
-        Triggered just before propagation starts. Use the input interface to access attitude controller settings.
-        '''
+        """Triggered just before propagation starts. Use the input interface to access attitude controller settings."""
         raise STKPluginMethodNotImplementedError('PrePropagate was not implemented.')
 
     def PreNextStep(self, resultAttCtrl:"IAgGatorPluginResultAttCtrl") -> bool:
-        '''
-        Triggered just before the next propagation step is attempted. Use the input interface to access attitude controller settings. Returning false will turn this callback off.
-        '''
+        """Triggered just before the next propagation step is attempted. Use the input interface to access attitude controller settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('PreNextStep was not implemented.')
 
     def Evaluate(self, resultAttCtrl:"IAgGatorPluginResultAttCtrl") -> bool:
-        '''
-        Triggered on every force model evaluation during the propagation of a step. Use the input interface to access attitude controller settings. Returning false will turn this callback off.
-        '''
+        """Triggered on every force model evaluation during the propagation of a step. Use the input interface to access attitude controller settings. Returning false will turn this callback off."""
         raise STKPluginMethodNotImplementedError('Evaluate was not implemented.')
 
     def Free(self) -> None:
-        '''
-        Triggered just before the plugin is freed from use to allow for any additional cleanup.
-        '''
+        """Triggered just before the plugin is freed from use to allow for any additional cleanup."""
         raise STKPluginMethodNotImplementedError('Free was not implemented.')
 
 __all__.append('IAgGatorPluginAttCtrl')
@@ -1162,18 +972,14 @@ __all__.append('IAgGatorPluginAttCtrl')
 
 
 class AgGatorPluginResultState(IAgGatorPluginResultState):
-    '''
-    Astrogator plugin class used to get state values
-    '''
+    """Astrogator plugin class used to get state values"""
     def __init__(self, sourceObject=None):
         IAgGatorPluginResultState.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgGatorPluginResultState._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -1188,18 +994,14 @@ __all__.append('AgGatorPluginResultState')
 
 
 class AgGatorPluginResultEvalEngineModel(IAgGatorPluginResultEvalEngineModel):
-    '''
-    Astrogator plugin class used to get/set engine model settings during the propagation of a step
-    '''
+    """Astrogator plugin class used to get/set engine model settings during the propagation of a step"""
     def __init__(self, sourceObject=None):
         IAgGatorPluginResultEvalEngineModel.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgGatorPluginResultEvalEngineModel._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
@@ -1214,18 +1016,14 @@ __all__.append('AgGatorPluginResultEvalEngineModel')
 
 
 class AgGatorPluginResultAttCtrl(IAgGatorPluginResultAttCtrl):
-    '''
-    Astrogator plugin class used to get/set attitude controller settings during the propagation of a step
-    '''
+    """Astrogator plugin class used to get/set attitude controller settings during the propagation of a step"""
     def __init__(self, sourceObject=None):
         IAgGatorPluginResultAttCtrl.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__['_pUnk'] = pUnk
         IAgGatorPluginResultAttCtrl._private_init(self, pUnk)
     def __eq__(self, other):
-        '''
-        Checks equality of the underlying STK references.
-        '''
+        """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None

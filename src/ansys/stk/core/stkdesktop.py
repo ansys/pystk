@@ -40,9 +40,7 @@ class ThreadMarshaller(object):
         del(self._obj)
        
     def GetMarshalledToCurrentThread(self) -> typing.Any:
-        '''
-        Returns an instance of the original stk_object that may be used on the current thread. May only be called once.
-        '''
+        """Returns an instance of the original stk_object that may be used on the current thread. May only be called once."""
         if self._pStream is None:
             raise STKRuntimeError(f'{self._obj_type} object has already been marshalled to a thread.')
         pUnk_raw = PVOID()
@@ -61,22 +59,18 @@ class ThreadMarshaller(object):
         return marshalled_obj
         
     def InitializeThread(self) -> None:
-        '''
-        Must be called on the destination thread prior to calling GetMarshalledToCurrentThread().
-        '''
+        """Must be called on the destination thread prior to calling GetMarshalledToCurrentThread()."""
         CoInitializeEx(None, COINIT_APARTMENTTHREADED)
         
     def ReleaseThread(self) -> None:
-        '''
-        Call in the destination thread after all calls to STK are finished.
-        '''
+        """Call in the destination thread after all calls to STK are finished."""
         CoUninitialize()
 
 class STKDesktopApplication(AgUiApplication):
-    '''
+    """
     Interact with an STK Desktop application.  Use STKDesktop.StartApplication() or 
     STKDesktop.AttachToApplication() to obtain an initialized STKDesktopApplication object.
-    '''
+    """
     def __init__(self):
         self.__dict__['_pUnk'] = None
         AgUiApplication.__init__(self)
@@ -94,9 +88,7 @@ class STKDesktopApplication(AgUiApplication):
 
     @property
     def Root(self) -> AgStkObjectRoot:
-        '''
-        Get the object model root associated with this instance of STK Desktop application.
-        '''
+        """Get the object model root associated with this instance of STK Desktop application."""
         if not self.__dict__['_initialized']:
             raise RuntimeError('STKDesktopApplication has not been properly initialized.  Use StartApplication() or AttachToApplication() to obtain the STKDesktopApplication object.')
         if self.__dict__['_root'] is not None:
@@ -106,9 +98,7 @@ class STKDesktopApplication(AgUiApplication):
             return self.__dict__['_root']
             
     def ShutDown(self) -> None:
-        '''
-        Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication()).
-        '''
+        """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
         if self.__dict__['_pUnk'] is not None:
             if self.__dict__['_root'] is not None:
                 self.__dict__['_root'].CloseScenario()
@@ -118,18 +108,16 @@ class STKDesktopApplication(AgUiApplication):
             
 
 class STKDesktop(object):
-    '''
-    Create, initialize, and manage STK Desktop application instances.
-    '''
+    """Create, initialize, and manage STK Desktop application instances."""
 
     @staticmethod
     def StartApplication(visible:bool=False, userControl:bool=False) -> STKDesktopApplication:
-        '''
+        """
         Create a new STK Desktop application instance.  
         Specify visible = True to show the application window.
         Specify userControl = True to return the application to the user's control 
         (the application remains open) after terminating the Python API connection.
-        '''
+        """
         CoInitializeManager.initialize()
         CLSID_AgUiApplication = GUID()
         if Succeeded(CLSIDFromString('STK12.Application', CLSID_AgUiApplication)):
@@ -146,12 +134,12 @@ class STKDesktop(object):
         
     @staticmethod
     def AttachToApplication(pid:int=None) -> STKDesktopApplication:
-        '''
+        """
         Attach to an existing STK Desktop instance. 
         Specify the Process ID (PID) in case multiple processes are open.
         Specify userControl = True to return the application to the user's control 
         (the application remains open) after terminating the Python API connection.
-        '''
+        """
         CoInitializeManager.initialize()
         if pid is None:
             CLSID_AgUiApplication = GUID()
@@ -176,17 +164,13 @@ class STKDesktop(object):
 
     @staticmethod
     def ReleaseAll() -> None:
-        '''
-        Releases all handles from Python to STK Desktop applications.
-        '''
+        """Releases all handles from Python to STK Desktop applications."""
         EventSubscriptionManager.UnsubscribeAll()
         ObjectLifetimeManager.ReleaseAll()
         
     @staticmethod
     def CreateThreadMarshaller(stk_object:typing.Any) -> ThreadMarshaller:
-        '''
-        Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
-        '''
+        """Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread."""
         return ThreadMarshaller(stk_object)
        
 
