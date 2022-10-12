@@ -34,7 +34,7 @@ from agi.stk12.plugins.attrautomation import *
 
 
 def _raise_uninitialized_error(*args):
-    raise STKRuntimeError('Valid STK object model classes are returned from STK methods and should not be created independently.')
+    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class AgEUtTimeScale(IntEnum):
     """Enumeration of time scales of UTC, TAI, TDT, UT1, STKEpochSec, TDB, GPS"""
@@ -53,8 +53,8 @@ class AgEUtTimeScale(IntEnum):
     # GPS time scale (seconds past 06 Jan 1980 00:00:00 UTC).
     eUtTimeScaleGPS = 6
 
-agcls.AgTypeNameMap['AgEUtTimeScale'] = AgEUtTimeScale
-__all__.append('AgEUtTimeScale')
+agcls.AgTypeNameMap["AgEUtTimeScale"] = AgEUtTimeScale
+__all__.append("AgEUtTimeScale")
 
 class AgEUtLogMsgType(IntEnum):
     """Enumeration of log message types of Debug, Informational, Force Informational, Warning, Alarm"""
@@ -69,8 +69,8 @@ class AgEUtLogMsgType(IntEnum):
     # Alarm message.
     eUtLogMsgAlarm = 4
 
-agcls.AgTypeNameMap['AgEUtLogMsgType'] = AgEUtLogMsgType
-__all__.append('AgEUtLogMsgType')
+agcls.AgTypeNameMap["AgEUtLogMsgType"] = AgEUtLogMsgType
+__all__.append("AgEUtLogMsgType")
 
 class AgEUtFrame(IntEnum):
     """Enumeration of reference frames of inertial, fixed, local vertical local horizontal (Gauss), normal tangential crosstrack (Frenet), ICRF, J2000"""
@@ -87,8 +87,8 @@ class AgEUtFrame(IntEnum):
     # J2000 frame of the central body (origin at central body with axes parallel to J2000).
     eUtFrameJ2000 = 5
 
-agcls.AgTypeNameMap['AgEUtFrame'] = AgEUtFrame
-__all__.append('AgEUtFrame')
+agcls.AgTypeNameMap["AgEUtFrame"] = AgEUtFrame
+__all__.append("AgEUtFrame")
 
 class AgEUtSunPosType(IntEnum):
     """Enumeration of sun position computation methods of apparent to true of central body, apparent, true position, method of current force model"""
@@ -101,8 +101,8 @@ class AgEUtSunPosType(IntEnum):
     # Use the method defined by the current force model settings
     eUtSunPosTypeSRP = 3
 
-agcls.AgTypeNameMap['AgEUtSunPosType'] = AgEUtSunPosType
-__all__.append('AgEUtSunPosType')
+agcls.AgTypeNameMap["AgEUtSunPosType"] = AgEUtSunPosType
+__all__.append("AgEUtSunPosType")
 
 class AgEUtPluginErrorCodes(IntEnum):
     """Enumeration of AgUtPlugin General Error Codes"""
@@ -119,32 +119,32 @@ class AgEUtPluginErrorCodes(IntEnum):
     # Plugin: The date abbreviation was not recognized.
     eUtPluginInvalidDateAbbrv = (((1 << 31) | (4 << 16)) | 0x0006)
 
-agcls.AgTypeNameMap['AgEUtPluginErrorCodes'] = AgEUtPluginErrorCodes
-__all__.append('AgEUtPluginErrorCodes')
+agcls.AgTypeNameMap["AgEUtPluginErrorCodes"] = AgEUtPluginErrorCodes
+__all__.append("AgEUtPluginErrorCodes")
 
 
 class IAgUtPluginSite(object):
     """Plugin caller interface"""
-    _uuid = '{65F51C50-BB26-463c-9F61-EF4D3E719B53}'
+    _uuid = "{65F51C50-BB26-463c-9F61-EF4D3E719B53}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
-        self.__dict__['_pUnk'] = None
-        self.__dict__['_GetSiteName'] = _raise_uninitialized_error
-        self.__dict__['_Message'] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__['_pUnk'] is not None:
-            pUnk = sourceObject.__dict__['_pUnk'].QueryInterface(agcom.GUID(IAgUtPluginSite._uuid))
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_GetSiteName"] = _raise_uninitialized_error
+        self.__dict__["_Message"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUtPluginSite._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError('Failed to create IAgUtPluginSite from source object.')
+                raise STKInvalidCastError("Failed to create IAgUtPluginSite from source object.")
     def _private_init(self, pUnk:IUnknown):
-        self.__dict__['_pUnk'] = pUnk
+        self.__dict__["_pUnk"] = pUnk
         IID_IAgUtPluginSite = agcom.GUID(IAgUtPluginSite._uuid)
         vtable_offset_local = IAgUtPluginSite._vtable_offset - 1
-        self.__dict__['_GetSiteName'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginSite, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__['_Message'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginSite, vtable_offset_local+2, agcom.LONG, agcom.BSTR)
+        self.__dict__["_GetSiteName"] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginSite, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_Message"] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginSite, vtable_offset_local+2, agcom.LONG, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -156,52 +156,52 @@ class IAgUtPluginSite(object):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + ' is not a recognized attribute in IAgUtPluginSite.')
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUtPluginSite.")
     
     @property
     def SiteName(self) -> str:
         """Returns the site name calling the plugin."""
         with agmarshall.BSTR_arg() as arg_pName:
-            agcls.evaluate_hresult(self.__dict__['_GetSiteName'](byref(arg_pName.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_GetSiteName"](byref(arg_pName.COM_val)))
             return arg_pName.python_val
 
     def Message(self, msgType:"AgEUtLogMsgType", message:str) -> None:
         """Send a message to the message viewer."""
         with agmarshall.AgEnum_arg(AgEUtLogMsgType, msgType) as arg_msgType, \
              agmarshall.BSTR_arg(message) as arg_message:
-            agcls.evaluate_hresult(self.__dict__['_Message'](arg_msgType.COM_val, arg_message.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_Message"](arg_msgType.COM_val, arg_message.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry('{65F51C50-BB26-463c-9F61-EF4D3E719B53}', IAgUtPluginSite)
-agcls.AgTypeNameMap['IAgUtPluginSite'] = IAgUtPluginSite
-__all__.append('IAgUtPluginSite')
+agcls.AgClassCatalog.add_catalog_entry("{65F51C50-BB26-463c-9F61-EF4D3E719B53}", IAgUtPluginSite)
+agcls.AgTypeNameMap["IAgUtPluginSite"] = IAgUtPluginSite
+__all__.append("IAgUtPluginSite")
 
 class IAgUtPluginConfigVerifyResult(object):
     """Plugin Configuration Verify Result Interface"""
-    _uuid = '{73C70857-08E0-49a5-A1B6-C2E3D44A4075}'
+    _uuid = "{73C70857-08E0-49a5-A1B6-C2E3D44A4075}"
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
-        self.__dict__['_pUnk'] = None
-        self.__dict__['_GetResult'] = _raise_uninitialized_error
-        self.__dict__['_SetResult'] = _raise_uninitialized_error
-        self.__dict__['_GetMessage'] = _raise_uninitialized_error
-        self.__dict__['_SetMessage'] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__['_pUnk'] is not None:
-            pUnk = sourceObject.__dict__['_pUnk'].QueryInterface(agcom.GUID(IAgUtPluginConfigVerifyResult._uuid))
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_GetResult"] = _raise_uninitialized_error
+        self.__dict__["_SetResult"] = _raise_uninitialized_error
+        self.__dict__["_GetMessage"] = _raise_uninitialized_error
+        self.__dict__["_SetMessage"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUtPluginConfigVerifyResult._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError('Failed to create IAgUtPluginConfigVerifyResult from source object.')
+                raise STKInvalidCastError("Failed to create IAgUtPluginConfigVerifyResult from source object.")
     def _private_init(self, pUnk:IUnknown):
-        self.__dict__['_pUnk'] = pUnk
+        self.__dict__["_pUnk"] = pUnk
         IID_IAgUtPluginConfigVerifyResult = agcom.GUID(IAgUtPluginConfigVerifyResult._uuid)
         vtable_offset_local = IAgUtPluginConfigVerifyResult._vtable_offset - 1
-        self.__dict__['_GetResult'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__['_SetResult'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+2, agcom.VARIANT_BOOL)
-        self.__dict__['_GetMessage'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+3, POINTER(agcom.BSTR))
-        self.__dict__['_SetMessage'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+4, agcom.BSTR)
+        self.__dict__["_GetResult"] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetResult"] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+2, agcom.VARIANT_BOOL)
+        self.__dict__["_GetMessage"] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+3, POINTER(agcom.BSTR))
+        self.__dict__["_SetMessage"] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginConfigVerifyResult, vtable_offset_local+4, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -213,59 +213,59 @@ class IAgUtPluginConfigVerifyResult(object):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + ' is not a recognized attribute in IAgUtPluginConfigVerifyResult.')
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUtPluginConfigVerifyResult.")
     
     @property
     def Result(self) -> bool:
         """The result of the validation of the configuration whether it has succeeded or failed."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pbResult:
-            agcls.evaluate_hresult(self.__dict__['_GetResult'](byref(arg_pbResult.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_GetResult"](byref(arg_pbResult.COM_val)))
             return arg_pbResult.python_val
 
     @Result.setter
     def Result(self, result:bool) -> None:
         """The result of the validation of the configuration whether it has succeeded or failed."""
         with agmarshall.VARIANT_BOOL_arg(result) as arg_result:
-            agcls.evaluate_hresult(self.__dict__['_SetResult'](arg_result.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_SetResult"](arg_result.COM_val))
 
     @property
     def Message(self) -> str:
         """The message of the validation of the configuration if it has failed."""
         with agmarshall.BSTR_arg() as arg_pbstrMessage:
-            agcls.evaluate_hresult(self.__dict__['_GetMessage'](byref(arg_pbstrMessage.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_GetMessage"](byref(arg_pbstrMessage.COM_val)))
             return arg_pbstrMessage.python_val
 
     @Message.setter
     def Message(self, message:str) -> None:
         """The message of the validation of the configuration if it has failed."""
         with agmarshall.BSTR_arg(message) as arg_message:
-            agcls.evaluate_hresult(self.__dict__['_SetMessage'](arg_message.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_SetMessage"](arg_message.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry('{73C70857-08E0-49a5-A1B6-C2E3D44A4075}', IAgUtPluginConfigVerifyResult)
-agcls.AgTypeNameMap['IAgUtPluginConfigVerifyResult'] = IAgUtPluginConfigVerifyResult
-__all__.append('IAgUtPluginConfigVerifyResult')
+agcls.AgClassCatalog.add_catalog_entry("{73C70857-08E0-49a5-A1B6-C2E3D44A4075}", IAgUtPluginConfigVerifyResult)
+agcls.AgTypeNameMap["IAgUtPluginConfigVerifyResult"] = IAgUtPluginConfigVerifyResult
+__all__.append("IAgUtPluginConfigVerifyResult")
 
 class IAgUtPluginLicensing(object):
     """Plugin Licensing Interface"""
-    _uuid = '{30B9CDD7-A424-4780-9562-15D358E20313}'
+    _uuid = "{30B9CDD7-A424-4780-9562-15D358E20313}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
-        self.__dict__['_pUnk'] = None
-        self.__dict__['_CheckLicense'] = _raise_uninitialized_error
-        if sourceObject is not None and sourceObject.__dict__['_pUnk'] is not None:
-            pUnk = sourceObject.__dict__['_pUnk'].QueryInterface(agcom.GUID(IAgUtPluginLicensing._uuid))
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_CheckLicense"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUtPluginLicensing._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError('Failed to create IAgUtPluginLicensing from source object.')
+                raise STKInvalidCastError("Failed to create IAgUtPluginLicensing from source object.")
     def _private_init(self, pUnk:IUnknown):
-        self.__dict__['_pUnk'] = pUnk
+        self.__dict__["_pUnk"] = pUnk
         IID_IAgUtPluginLicensing = agcom.GUID(IAgUtPluginLicensing._uuid)
         vtable_offset_local = IAgUtPluginLicensing._vtable_offset - 1
-        self.__dict__['_CheckLicense'] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginLicensing, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_CheckLicense"] = IAGFUNCTYPE(pUnk, IID_IAgUtPluginLicensing, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -277,35 +277,35 @@ class IAgUtPluginLicensing(object):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + ' is not a recognized attribute in IAgUtPluginLicensing.')
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUtPluginLicensing.")
     
     def CheckLicense(self) -> bool:
         """Check to see if plugin is licensed"""
         with agmarshall.VARIANT_BOOL_arg() as arg_pPluginCfgResult:
-            agcls.evaluate_hresult(self.__dict__['_CheckLicense'](byref(arg_pPluginCfgResult.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_CheckLicense"](byref(arg_pPluginCfgResult.COM_val)))
             return arg_pPluginCfgResult.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry('{30B9CDD7-A424-4780-9562-15D358E20313}', IAgUtPluginLicensing)
-agcls.AgTypeNameMap['IAgUtPluginLicensing'] = IAgUtPluginLicensing
-__all__.append('IAgUtPluginLicensing')
+agcls.AgClassCatalog.add_catalog_entry("{30B9CDD7-A424-4780-9562-15D358E20313}", IAgUtPluginLicensing)
+agcls.AgTypeNameMap["IAgUtPluginLicensing"] = IAgUtPluginLicensing
+__all__.append("IAgUtPluginLicensing")
 
 class IAgPythonPluginAttrs(object):
     """COM Plugin Attribute interface for updating plugin attributes."""
-    _uuid = '{FB0A773D-277E-4959-85C9-671FD5BAAE78}'
+    _uuid = "{FB0A773D-277E-4959-85C9-671FD5BAAE78}"
     _num_methods = 0
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
-        self.__dict__['_pUnk'] = None
-        if sourceObject is not None and sourceObject.__dict__['_pUnk'] is not None:
-            pUnk = sourceObject.__dict__['_pUnk'].QueryInterface(agcom.GUID(IAgPythonPluginAttrs._uuid))
+        self.__dict__["_pUnk"] = None
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgPythonPluginAttrs._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError('Failed to create IAgPythonPluginAttrs from source object.')
+                raise STKInvalidCastError("Failed to create IAgPythonPluginAttrs from source object.")
     def _private_init(self, pUnk:IUnknown):
-        self.__dict__['_pUnk'] = pUnk
+        self.__dict__["_pUnk"] = pUnk
         IID_IAgPythonPluginAttrs = agcom.GUID(IAgPythonPluginAttrs._uuid)
         vtable_offset_local = IAgPythonPluginAttrs._vtable_offset - 1
     def __eq__(self, other):
@@ -319,12 +319,12 @@ class IAgPythonPluginAttrs(object):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + ' is not a recognized attribute in IAgPythonPluginAttrs.')
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAgPythonPluginAttrs.")
     
 
-agcls.AgClassCatalog.add_catalog_entry('{FB0A773D-277E-4959-85C9-671FD5BAAE78}', IAgPythonPluginAttrs)
-agcls.AgTypeNameMap['IAgPythonPluginAttrs'] = IAgPythonPluginAttrs
-__all__.append('IAgPythonPluginAttrs')
+agcls.AgClassCatalog.add_catalog_entry("{FB0A773D-277E-4959-85C9-671FD5BAAE78}", IAgPythonPluginAttrs)
+agcls.AgTypeNameMap["IAgPythonPluginAttrs"] = IAgPythonPluginAttrs
+__all__.append("IAgPythonPluginAttrs")
 
 
 class IAgUtPluginConfig(object):
@@ -334,13 +334,13 @@ class IAgUtPluginConfig(object):
     """
     def GetPluginConfig(self, pAttrBuilder:"IAgAttrBuilder") -> typing.Any:
         """Get an attribute container of the configuration settings."""
-        raise STKPluginMethodNotImplementedError('GetPluginConfig was not implemented.')
+        raise STKPluginMethodNotImplementedError("GetPluginConfig was not implemented.")
 
     def VerifyPluginConfig(self, pPluginCfgResult:"IAgUtPluginConfigVerifyResult") -> None:
         """Verify the Plugin Config"""
-        raise STKPluginMethodNotImplementedError('VerifyPluginConfig was not implemented.')
+        raise STKPluginMethodNotImplementedError("VerifyPluginConfig was not implemented.")
 
-__all__.append('IAgUtPluginConfig')
+__all__.append("IAgUtPluginConfig")
 
 
 
@@ -349,7 +349,7 @@ class AgUtPluginConfigVerifyResult(IAgUtPluginConfigVerifyResult):
     def __init__(self, sourceObject=None):
         IAgUtPluginConfigVerifyResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
-        self.__dict__['_pUnk'] = pUnk
+        self.__dict__["_pUnk"] = pUnk
         IAgUtPluginConfigVerifyResult._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
@@ -360,10 +360,10 @@ class AgUtPluginConfigVerifyResult(IAgUtPluginConfigVerifyResult):
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + ' is not a recognized attribute in AgUtPluginConfigVerifyResult.')
+            raise STKAttributeError(attrname + " is not a recognized attribute in AgUtPluginConfigVerifyResult.")
         
-agcls.AgClassCatalog.add_catalog_entry('{B25FE56B-CD7F-4938-A895-33106BB53CBE}', AgUtPluginConfigVerifyResult)
-__all__.append('AgUtPluginConfigVerifyResult')
+agcls.AgClassCatalog.add_catalog_entry("{B25FE56B-CD7F-4938-A895-33106BB53CBE}", AgUtPluginConfigVerifyResult)
+__all__.append("AgUtPluginConfigVerifyResult")
 
 
 class AgUtPluginSite(IAgUtPluginSite):
@@ -371,7 +371,7 @@ class AgUtPluginSite(IAgUtPluginSite):
     def __init__(self, sourceObject=None):
         IAgUtPluginSite.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
-        self.__dict__['_pUnk'] = pUnk
+        self.__dict__["_pUnk"] = pUnk
         IAgUtPluginSite._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
@@ -382,10 +382,10 @@ class AgUtPluginSite(IAgUtPluginSite):
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + ' is not a recognized attribute in AgUtPluginSite.')
+            raise STKAttributeError(attrname + " is not a recognized attribute in AgUtPluginSite.")
         
-agcls.AgClassCatalog.add_catalog_entry('{BA95A65F-0938-4EBF-AEC1-A77E0325DE24}', AgUtPluginSite)
-__all__.append('AgUtPluginSite')
+agcls.AgClassCatalog.add_catalog_entry("{BA95A65F-0938-4EBF-AEC1-A77E0325DE24}", AgUtPluginSite)
+__all__.append("AgUtPluginSite")
 
 
 
