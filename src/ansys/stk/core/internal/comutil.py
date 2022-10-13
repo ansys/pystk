@@ -142,7 +142,7 @@ class GUID(Structure):
         if self.Data4[7] != other.Data4[7]: are_equal = False
         return are_equal
     def __str__(self):
-        return '{{{:02X}{:02X}{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}{:02X}{:02X}{:02X}{:02X}}}'.format(
+        return "{{{:02X}{:02X}{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}{:02X}{:02X}{:02X}{:02X}}}".format(
             self.Data1[3],
             self.Data1[2],
             self.Data1[1],
@@ -249,12 +249,12 @@ else:
 CLSIDFromString     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromString", ole32lib), ((1, "lpsz"), (1, "pclsid")))
 CLSIDFromProgID     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromProgID", ole32lib), ((1, "lpszProgID"), (1, "lpclsid")))
 CoCreateInstance    = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, DWORD, POINTER(GUID), POINTER(LPVOID))(("CoCreateInstance", ole32lib),
-                      ((1, "rclsid"), (1, "pUnkOuter"), (1, 'dwClsContext'), (1, 'riid'), (1, 'ppv')))
+                      ((1, "rclsid"), (1, "pUnkOuter"), (1, "dwClsContext"), (1, "riid"), (1, "ppv")))
 CoInitializeEx      = WINFUNCTYPE(HRESULT, c_void_p, DWORD)(("CoInitializeEx", ole32lib), ((1, "pvReserved"), (1, "dwCoInit")))
 CoTaskMemFree       = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", ole32lib), ((1, "pv"),))
 CoUninitialize      = WINFUNCTYPE(None)(("CoUninitialize", ole32lib))
 GetActiveObject     = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, POINTER(LPVOID))(("GetActiveObject", oleaut32lib),
-                      ((1, "rclsid"), (1, "pvReserved"), (1, 'ppunk'))) if os.name=='nt' else None
+                      ((1, "rclsid"), (1, "pvReserved"), (1, "ppunk"))) if os.name=="nt" else None
 GetErrorInfo        = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetErrorInfo", oleaut32lib), ((1, "dwReserved"), (1, "ppErrorInfo")))
 StringFromCLSID     = WINFUNCTYPE(HRESULT, POINTER(GUID), POINTER(LPOLESTR))(("StringFromCLSID", ole32lib), ((1, "rclsid"), (1, "lplpsz")))
 SafeArrayCreate     = WINFUNCTYPE(SAFEARRAY, VARTYPE, UINT, POINTER(SAFEARRAYBOUND))(("SafeArrayCreate", oleaut32lib), ((1, "vt"), (1, "cDims"), (1, "rgsabound")))
@@ -271,7 +271,7 @@ VariantClear        = WINFUNCTYPE(HRESULT, POINTER(VARIANT))(("VariantClear", ol
 VariantCopy         = WINFUNCTYPE(HRESULT, POINTER(VARIANT), POINTER(VARIANT))(("VariantCopy", oleaut32lib), ((1, "pvargDest"),(1, "pvargSrc")))
 VariantInit         = WINFUNCTYPE(None, POINTER(VARIANT))(("VariantInit", oleaut32lib), ((1, "pVariant"),))
 
-if os.name=='nt':
+if os.name=="nt":
     CoMarshalInterThreadInterfaceInStream = WINFUNCTYPE(HRESULT, REFIID, PVOID, POINTER(LPSTREAM))(("CoMarshalInterThreadInterfaceInStream", ole32lib), ((1, "riid"), (1, "pUnk"), (1, "ppStm")))
     CoGetInterfaceAndReleaseStream        = WINFUNCTYPE(HRESULT, LPSTREAM, REFIID, POINTER(PVOID))(("CoGetInterfaceAndReleaseStream", ole32lib), ((1, "pStm"), (1, "iid"), (1, "ppv")))
     CoReleaseMarshalData                  = WINFUNCTYPE(HRESULT, LPSTREAM)(("CoReleaseMarshalData", ole32lib), ((1, "pStm"),))
@@ -375,7 +375,7 @@ CoInitializeManager = _CreateCoInitializeManager()
 #   Interfaces
 ###############################################################################
 class IUnknown(object):
-    _guid = '{00000000-0000-0000-C000-000000000046}'
+    _guid = "{00000000-0000-0000-C000-000000000046}"
     _vtable_offset = 0
     _num_methods = 3
     _QueryInterface = WINFUNCTYPE(HRESULT, LPVOID, POINTER(GUID), POINTER(LPVOID))
@@ -424,7 +424,7 @@ class IUnknown(object):
         ObjectLifetimeManager.Release(self)          
 
 class IDispatch(IUnknown):
-    _guid = '{00020400-0000-0000-C000-000000000046}'
+    _guid = "{00020400-0000-0000-C000-000000000046}"
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _num_methods = 4
     def __init__(self, pUnk: IUnknown):
@@ -432,10 +432,10 @@ class IDispatch(IUnknown):
           
 class IPictureDisp(IUnknown):
     def __init__(self):
-        raise STKRuntimeError('IPictureDisp not supported.')
+        raise STKRuntimeError("IPictureDisp not supported.")
         
 class IEnumVARIANT(object):
-    guid = '{00020404-0000-0000-C000-000000000046}'
+    guid = "{00020404-0000-0000-C000-000000000046}"
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _num_methods = 4
     def __init__(self, pUnk):

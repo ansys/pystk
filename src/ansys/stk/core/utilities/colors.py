@@ -29,7 +29,7 @@ class Color(object):
     @staticmethod
     def _validate_rgb(val):
         if val > 255 or val < 0:
-            raise STKColorError('RGB values should be between 0 and 255, inclusive.')
+            raise STKColorError("RGB values should be between 0 and 255, inclusive.")
         return val
         
     def _ToArgb(self) -> int:
@@ -71,7 +71,7 @@ class ColorRGBA(object):
         if value >= 0 and value <= 255:
             self._alpha = value
         else:
-            raise STKColorError('Alpha value should be between 0 (fully translucent) and 255 (fully opaque), inclusive.')
+            raise STKColorError("Alpha value should be between 0 (fully translucent) and 255 (fully opaque), inclusive.")
             
     @property
     def color(self) -> Color:

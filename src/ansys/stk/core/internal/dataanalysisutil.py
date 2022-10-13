@@ -39,7 +39,7 @@ def required_package(package_name: str):
                 return function(*args, **kwargs)
             except ModuleNotFoundError:
                 error_msg = (
-                    f'The package "{package_name}" is required.'
+                    f"The package \"{package_name}\" is required."
                 )
                 raise ModuleNotFoundError(error_msg)
         return wrapper
@@ -47,8 +47,8 @@ def required_package(package_name: str):
     return decorator
 
 
-@required_package('numpy')
-def to_numpy_array(results: 'IAgDrDataSetCollection') -> 'ndarray':
+@required_package("numpy")
+def to_numpy_array(results: "IAgDrDataSetCollection") -> "ndarray":
     results_arr = np.array([])
 
     # create numpy array from row formatted dataset elements
@@ -66,9 +66,9 @@ def to_numpy_array(results: 'IAgDrDataSetCollection') -> 'ndarray':
     return results_arr
 
 
-@required_package('pandas')
-def to_pandas_dataframe(results: 'IAgDrDataSetCollection', index_element_name: str = None,
-                 data_provider_elements: 'IAgDataPrvElements' = None) -> 'DataFrame':
+@required_package("pandas")
+def to_pandas_dataframe(results: "IAgDrDataSetCollection", index_element_name: str = None,
+                 data_provider_elements: "IAgDataPrvElements" = None) -> "DataFrame":
     results_df = pd.DataFrame()
     results_arr = to_numpy_array(results)
 
@@ -100,9 +100,9 @@ def to_pandas_dataframe(results: 'IAgDrDataSetCollection', index_element_name: s
             if normalized_index_column:
                 results_df = results_df.set_index(normalized_index_column)
             else:
-                element_names_str = ','.join(normalized_unique_element_names)
-                error_message = f'"{index_element_name}" is not a valid data provider element name. Valid ' \
-                                f'element names are: {element_names_str}'
+                element_names_str = ",".join(normalized_unique_element_names)
+                error_message = f"\"{index_element_name}\" is not a valid data provider element name. Valid " \
+                                f"element names are: {element_names_str}"
                 raise ValueError(error_message)
 
         # map data provider element types to pandas dtypes
@@ -113,12 +113,12 @@ def to_pandas_dataframe(results: 'IAgDrDataSetCollection', index_element_name: s
             # Update DataFrame column dtypes with mapped types. If we encounter values that can not be
             # converted such as None or Nan ignore them and return the original object, this allows the caller to
             # determine how to they would like to handle Nan etc values.
-            results_df = results_df.astype(dtypes_dict, errors='ignore')
+            results_df = results_df.astype(dtypes_dict, errors="ignore")
 
     return results_df
 
 
-def _get_unique_element_names(results: 'IAgDrDataSetCollection') -> Set:
+def _get_unique_element_names(results: "IAgDrDataSetCollection") -> Set:
     """Returns a unique set of element names as a set."""
 
     unique_element_names = set(results.ElementNames)
@@ -126,8 +126,8 @@ def _get_unique_element_names(results: 'IAgDrDataSetCollection') -> Set:
     return unique_element_names
 
 
-@required_package('numpy')
-def _map_element_types_to_pandas_dtypes(data_provider_elements: 'IAgDataPrvElements',
+@required_package("numpy")
+def _map_element_types_to_pandas_dtypes(data_provider_elements: "IAgDataPrvElements",
                                         index_element_name: str = None) -> Dict[str, object]:
     """
     Returns a mapping of STK data provider element names and their types to corresponding pandas dtypes.
@@ -147,9 +147,9 @@ def _map_element_types_to_pandas_dtypes(data_provider_elements: 'IAgDataPrvEleme
         # By default to avoid issues with possible leap seconds or other time precision related issues we map date
         # dimension elements as string dtypes in pandas. Future work plans to implement more robust datetime support
         # for pandas.
-        if element_type_name == 'ereal' and element_dimensions_name not in 'date':
+        if element_type_name == "ereal" and element_dimensions_name not in "date":
             pd_dtype = np.float64
-        elif element_type_name == 'eint':
+        elif element_type_name == "eint":
             pd_dtype = np.int64
         else:
             # by default make everything else a str, strings like datatime strings can be handled/parsed

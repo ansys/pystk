@@ -2,14 +2,14 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################
 
-__all__ = ['STKEngine', 'STKEngineApplication', 'STKEngineTimerType']
+__all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
 
 import os
 from ctypes import byref
 from enum import IntEnum
 from agi.stk12.internal.timerutil import *
 
-if os.name != 'nt':
+if os.name != "nt":
     from ctypes                       import CFUNCTYPE, cdll
     from ctypes.util                  import find_library
 
@@ -40,68 +40,68 @@ class STKEngineApplication(AgSTKXApplication):
     """
     def __init__(self):
         AgSTKXApplication.__init__(self)
-        self.__dict__['_stk_install_dir'] = None
-        self.__dict__['_stk_config_dir'] = None
-        self.__dict__['_initialized'] = False
+        self.__dict__["_stk_install_dir"] = None
+        self.__dict__["_stk_config_dir"] = None
+        self.__dict__["_initialized"] = False
 
     def _private_init(self, pUnk:IUnknown, stk_install_dir, stk_config_dir, noGraphics):
         AgSTKXApplication._private_init(self, pUnk)
-        self.__dict__['_stk_install_dir'] = stk_install_dir
-        self.__dict__['_stk_config_dir'] = stk_config_dir
+        self.__dict__["_stk_install_dir"] = stk_install_dir
+        self.__dict__["_stk_config_dir"] = stk_config_dir
         self._STKXInitialize()
         self._STKXInitializeTimer(noGraphics)
-        self.__dict__['_initialized'] = True
+        self.__dict__["_initialized"] = True
         
     def __del__(self):
         self.ShutDown()
         
     def _STKXInitialize(self):
-        if os.name=='nt':
+        if os.name=="nt":
             return
         CLSID_AgSTKXInitialize = GUID()
-        if Succeeded(CLSIDFromString('{3B85901D-FC82-4733-97E6-5BB25CE69379}', CLSID_AgSTKXInitialize)):
+        if Succeeded(CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", CLSID_AgSTKXInitialize)):
             IID_IUnknown = GUID(IUnknown._guid)
             stkxinit_unk = IUnknown()
             if Succeeded(CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
                 stkxinit_unk.TakeOwnership()
                 pInit = IAgSTKXInitialize()
                 pInit._private_init(stkxinit_unk)
-                install_dir = self.__dict__['_stk_install_dir'] if self.__dict__['_stk_install_dir'] is not None else os.getenv('STK_INSTALL_DIR')
+                install_dir = self.__dict__["_stk_install_dir"] if self.__dict__["_stk_install_dir"] is not None else os.getenv("STK_INSTALL_DIR")
                 if install_dir is None:
-                    raise STKInitializationError('Please set a valid STK_INSTALL_DIR environment variable.')
-                config_dir = self.__dict__['_stk_config_dir'] if self.__dict__['_stk_config_dir'] is not None else os.getenv('STK_CONFIG_DIR')
+                    raise STKInitializationError("Please set a valid STK_INSTALL_DIR environment variable.")
+                config_dir = self.__dict__["_stk_config_dir"] if self.__dict__["_stk_config_dir"] is not None else os.getenv("STK_CONFIG_DIR")
                 if config_dir is None:
-                    raise STKInitializationError('Please set a valid STK_CONFIG_DIR environment variable.')
+                    raise STKInitializationError("Please set a valid STK_CONFIG_DIR environment variable.")
                 pInit.InitializeData(install_dir, config_dir)
                 
     @staticmethod
     def _get_signo(sigrtmin_offset):
-        if os.name=='nt':
+        if os.name=="nt":
             return None
         libc = cdll.LoadLibrary(find_library("c"))
         __libc_current_sigrtmin = CFUNCTYPE(c_int)(("__libc_current_sigrtmin", libc))
         return __libc_current_sigrtmin() + sigrtmin_offset
         
     def _set_timer_type_from_env(self):
-        timer_type = int(os.getenv('STK_PYTHONAPI_TIMERTYPE', '4'))
-        if os.name=='nt' or timer_type == STKEngineTimerType.DisableTimers:
-            self.__dict__['_timer_impl'] = NullTimer()
+        timer_type = int(os.getenv("STK_PYTHONAPI_TIMERTYPE", "4"))
+        if os.name=="nt" or timer_type == STKEngineTimerType.DisableTimers:
+            self.__dict__["_timer_impl"] = NullTimer()
         elif timer_type == STKEngineTimerType.TkinterMainloop or timer_type == STKEngineTimerType.InteractivePython:
-            self.__dict__['_timer_impl'] = TclTimer()
+            self.__dict__["_timer_impl"] = TclTimer()
         elif timer_type == STKEngineTimerType.SigAlarm:
-            self.__dict__['_timer_impl'] = SigAlarmTimer()
+            self.__dict__["_timer_impl"] = SigAlarmTimer()
         elif timer_type == STKEngineTimerType.SigRt:
-            sigrtmin_offset = int(os.getenv('STK_PYTHONAPI_TIMERTYPE5_SIGRTMIN_OFFSET', '0'))
+            sigrtmin_offset = int(os.getenv("STK_PYTHONAPI_TIMERTYPE5_SIGRTMIN_OFFSET", "0"))
             signo = STKEngineApplication._get_signo(sigrtmin_offset)
-            self.__dict__['_timer_impl'] = SigRtTimer(signo)
+            self.__dict__["_timer_impl"] = SigRtTimer(signo)
             
     def _user_override_timer_type(self) -> bool:
-        return ('STK_PYTHONAPI_TIMERTYPE' in os.environ)
+        return ("STK_PYTHONAPI_TIMERTYPE" in os.environ)
                 
     def _STKXInitializeTimer(self, noGraphics):
-        if os.name=='nt':
+        if os.name=="nt":
             #Timers are not implemented on Windows, use a placeholder.
-            self.__dict__['_timer_impl'] = NullTimer()
+            self.__dict__["_timer_impl"] = NullTimer()
         elif noGraphics:
             self._set_timer_type_from_env()
         else:
@@ -110,14 +110,14 @@ class STKEngineApplication(AgSTKXApplication):
             if self._user_override_timer_type():
                 self._set_timer_type_from_env()
             else:
-                self.__dict__['_timer_impl'] = TclTimer()
+                self.__dict__["_timer_impl"] = TclTimer()
         
     def NewObjectRoot(self) -> AgStkObjectRoot:
         """Create a new object model root for the STK Engine application."""
-        if not self.__dict__['_initialized']:
-            raise RuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
+        if not self.__dict__["_initialized"]:
+            raise RuntimeError("STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.")
         CLSID_AgStkObjectRoot = GUID()
-        if Succeeded(CLSIDFromString('{96C1CE4E-C61D-4657-99CB-8581E12693FE}', CLSID_AgStkObjectRoot)):
+        if Succeeded(CLSIDFromString("{96C1CE4E-C61D-4657-99CB-8581E12693FE}", CLSID_AgStkObjectRoot)):
             IID_IUnknown = GUID(IUnknown._guid)
             root_unk = IUnknown()
             CoCreateInstance(byref(CLSID_AgStkObjectRoot), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(root_unk.p))
@@ -135,7 +135,7 @@ class STKEngineApplication(AgSTKXApplication):
             self.Terminate()
             ObjectLifetimeManager.ReleaseAll(releaseApplication=True)
             CoInitializeManager.uninitialize()
-            self.__dict__['_initialized'] = False
+            self.__dict__["_initialized"] = False
 
 
 class STKEngine(object):
@@ -146,14 +146,14 @@ class STKEngine(object):
             
     @staticmethod
     def _initX11(noGraphics):
-        if noGraphics or os.name=='nt':
+        if noGraphics or os.name=="nt":
             return
         try:
             x11lib = cdll.LoadLibrary(find_library("X11"))
             XInitThreads = CFUNCTYPE(None)(("XInitThreads", x11lib))
             XInitThreads()
         except:
-            raise STKRuntimeError('Failed attempting to run graphics mode without X11.')
+            raise STKRuntimeError("Failed attempting to run graphics mode without X11.")
             
     @staticmethod
     def StartApplication(noGraphics:bool=True) -> STKEngineApplication:
@@ -162,10 +162,10 @@ class STKEngine(object):
         Must only be used once per Python process.
         """
         if STKEngine._is_engine_running:
-            raise RuntimeError('Only one STKEngine instance is allowed per Python process.')
+            raise RuntimeError("Only one STKEngine instance is allowed per Python process.")
         CoInitializeManager.initialize()
         CLSID_AgSTKXApplication = GUID()
-        if Succeeded(CLSIDFromString('{062AB565-B121-45B5-A9A9-B412CEFAB6A9}', CLSID_AgSTKXApplication)):
+        if Succeeded(CLSIDFromString("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", CLSID_AgSTKXApplication)):
             pUnk = IUnknown()
             IID_IUnknown = GUID(IUnknown._guid)
             if Succeeded(CoCreateInstance(byref(CLSID_AgSTKXApplication), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
@@ -178,7 +178,7 @@ class STKEngine(object):
                 return engine
         raise STKInitializationError("Failed to create STK Engine application.  Check for successful install and registration.")
                 
-    if os.name != 'nt':
+    if os.name != "nt":
         @staticmethod
         def SetSTKInstallDir(stkInstallDir:str) -> None:
             """

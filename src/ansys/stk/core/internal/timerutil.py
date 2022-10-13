@@ -16,7 +16,7 @@ TIMERPROC = CFUNCTYPE(None, c_size_t)
 INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)
 DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
 
-if os.name != 'nt':
+if os.name != "nt":
     agutillib = cdll.LoadLibrary("libagutil.so")
     AgUtSetTimerCallbacks = CFUNCTYPE(None, INSTALLTIMER, DELETETIMER, c_void_p)(("AgUtSetTimerCallbacks", agutillib), ((1, "pInstallTimer"), (1, "pDeleteTimer"), (1, "pCallbackData")))
     AgUtInitializeLibrtTimers = CFUNCTYPE(None, c_int)(("AgUtInitializeLibrtTimers", agutillib), ((1, "signo"),))
@@ -56,7 +56,7 @@ class _ClockTimer(object):
     
 class NullTimer(object):
     def __init__(self):
-        if os.name != 'nt':
+        if os.name != "nt":
             self._install_timer_cfunc = INSTALLTIMER(self.__InstallTimer)
             self._delete_timer_cfunc = DELETETIMER(self.__DeleteTimer)
             AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
@@ -72,13 +72,13 @@ class NullTimer(object):
     def __DeleteTimer(self, timerID, callbackData):
         return 0
     
-if os.name != 'nt':
+if os.name != "nt":
     try:
         from tkinter import Tcl
     except:
         class Tcl(object):
             def __init__(self):
-                raise STKInvalidTimerError('Cannot use STKEngineTimerType.TkinterMainloop nor STKEngineTimerType.InteractivePython because tkinter installation is not found.')
+                raise STKInvalidTimerError("Cannot use STKEngineTimerType.TkinterMainloop nor STKEngineTimerType.InteractivePython because tkinter installation is not found.")
             
     class TclTimer(object):
         def __init__(self):

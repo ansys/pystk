@@ -45,7 +45,7 @@ AgTypeNameMap = {}
 ###############################################################################
         
 class _IErrorInfo(object):
-    guid = '{1CF2B120-547D-101B-8E65-08002B2BD119}'
+    guid = "{1CF2B120-547D-101B-8E65-08002B2BD119}"
     def __init__(self, pUnk):
         IID__IErrorInfo = GUID(_IErrorInfo.guid)
         vtable_offset = IUnknown._num_methods - 1
@@ -54,7 +54,7 @@ class _IErrorInfo(object):
         GetDescriptionIndex  = 3
         #GetHelpFileIndex    = 4 (skipping GetHelpFile as it is not needed)
         #GetHelpContextIndex = 5 (skipping GetHelpContext as it is not needed)
-        if os.name!='nt':
+        if os.name!="nt":
             GetDescriptionIndex = 1
         self._GetDescription = IAGFUNCTYPE(pUnk, IID__IErrorInfo, vtable_offset + GetDescriptionIndex, POINTER(BSTR))
     def GetDescription(self):
@@ -78,7 +78,7 @@ def evaluate_hresult(hr:HRESULT) -> None:
             del(punk)
         elif (hr & 0xFFFFFFFF) == 0x80070057: # E_INVALIDARG
             msg = "One or more arguments are invalid."
-        hresult_val = '(HRESULT = 0x%x)' % (hr & 0xFFFFFFFF)
+        hresult_val = "(HRESULT = 0x%x)" % (hr & 0xFFFFFFFF)
         raise STKRuntimeError(msg if msg is not None else hresult_val)
             
             
@@ -87,7 +87,7 @@ def evaluate_hresult(hr:HRESULT) -> None:
 ###############################################################################
             
 class _IAgProvideClassId(object):
-    guid = '{C86B17CD-D670-46D8-AC90-CEFAEAE867DC}'
+    guid = "{C86B17CD-D670-46D8-AC90-CEFAEAE867DC}"
     def __init__(self, pUnk):
         IID__IAgProvideClassId = GUID(_IAgProvideClassId.guid)
         pIntf = pUnk.QueryInterface(iid=IID__IAgProvideClassId)
@@ -126,7 +126,7 @@ class _TYPEATTR(Structure):
                ]  
         
 class _ITypeInfo(object):
-    guid = '{00020401-0000-0000-C000-000000000046}'
+    guid = "{00020401-0000-0000-C000-000000000046}"
     def __init__(self, pUnk):
         IID__ITypeInfo = GUID(_ITypeInfo.guid)
         vtable_offset = IUnknown._num_methods - 1
@@ -158,7 +158,7 @@ class _ITypeInfo(object):
             return ta
             
 class _IProvideClassInfo(object):
-    guid = '{B196B283-BAB4-101A-B69C-00AA00341D07}'
+    guid = "{B196B283-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
         IID__IProvideClassInfo = GUID(_IProvideClassInfo.guid)
         pIntf = pUnk.QueryInterface(iid=IID__IProvideClassInfo)
@@ -196,7 +196,7 @@ def get_concrete_class(punk:IUnknown) -> typing.Any:
         my_clsid = None
         with _IAgProvideClassId(punk) as provideClassInfo:
             my_clsid = provideClassInfo.GetClsid()
-        if my_clsid is None and os.name=='nt':
+        if my_clsid is None and os.name=="nt":
             with _IProvideClassInfo(punk) as provideClassInfo:
                 my_clsid = provideClassInfo.GetClassInfo()
         if my_clsid is not None:
@@ -214,10 +214,10 @@ def compare_com_objects(first, second) -> bool:
         return True
     elif first is None or second is None:
         return False
-    if hasattr(first, '_pUnk') and hasattr(second, '_pUnk'):
+    if hasattr(first, "_pUnk") and hasattr(second, "_pUnk"):
         iid_IUnknown = GUID(IUnknown._guid)
-        first_pUnk = first.__dict__['_pUnk'].QueryInterface(iid_IUnknown)
-        second_pUnk = second.__dict__['_pUnk'].QueryInterface(iid_IUnknown)
+        first_pUnk = first.__dict__["_pUnk"].QueryInterface(iid_IUnknown)
+        second_pUnk = second.__dict__["_pUnk"].QueryInterface(iid_IUnknown)
         result = (first_pUnk == second_pUnk)
         del(first_pUnk)
         del(second_pUnk)
@@ -229,7 +229,7 @@ def compare_com_objects(first, second) -> bool:
 #   Events related classes
 ###############################################################################
 class IConnectionPoint(object):
-    guid = '{B196B286-BAB4-101A-B69C-00AA00341D07}'
+    guid = "{B196B286-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
         IID_IConnectionPoint = GUID(IConnectionPoint.guid)
         vtable_offset = IUnknown._num_methods - 1
@@ -255,7 +255,7 @@ class IConnectionPoint(object):
         self._Unadvise(cookie)
             
 class IConnectionPointContainer(object):
-    guid = '{B196B284-BAB4-101A-B69C-00AA00341D07}'
+    guid = "{B196B284-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
         IID_IConnectionPointContainer = GUID(IConnectionPointContainer.guid)
         vtable_offset = IUnknown._num_methods - 1
@@ -288,14 +288,14 @@ def IUnknown_from_IDispatch(pdisp:PVOID) -> IUnknown:
 ###############################################################################
 #   attach_to_stk_by_pid (Windows-only)
 ###############################################################################
-if os.name=='nt':
+if os.name=="nt":
     CreateClassMoniker    = WINFUNCTYPE(HRESULT, GUID, POINTER(LPVOID))(("CreateClassMoniker", ole32lib), ((1, "rclsid"), (1, "ppmk")))
     GetRunningObjectTable = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetRunningObjectTable", ole32lib), ((1, "dwReserved"), (1, "pprot")))
     CreateBindCtx         = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CreateBindCtx", ole32lib), ((1, "dwReserved"), (1, "ppbc")))
     CoGetMalloc           = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CoGetMalloc", ole32lib), ((1, "dwMemContext"), (1, "ppMalloc")))
             
     class _IRunningObjectTable(object):
-        guid = '{00000010-0000-0000-C000-000000000046}'
+        guid = "{00000010-0000-0000-C000-000000000046}"
         def __init__(self, pUnk):
             self.gettingAnApplication = True
             IID__IRunningObjectTable = GUID(_IRunningObjectTable.guid)
@@ -323,7 +323,7 @@ if os.name=='nt':
             return iEnumMon
         
     class _IEnumMoniker(object):
-        guid = '{00000102-0000-0000-C000-000000000046}'
+        guid = "{00000102-0000-0000-C000-000000000046}"
         def __init__(self, pUnk):
             IID__IEnumMoniker = GUID(_IEnumMoniker.guid)
             vtable_offset = IUnknown._num_methods - 1
@@ -338,7 +338,7 @@ if os.name=='nt':
             num_fetched = ULONG(0)
             pUnk = IUnknown()
             CLSID_AgUiApplication = GUID()
-            CLSIDFromString('STK12.Application', CLSID_AgUiApplication)
+            CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
             CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
             pUnk.TakeOwnership()
             self._Next(one_obj, byref(pUnk.p), byref(num_fetched))
@@ -350,7 +350,7 @@ if os.name=='nt':
             self._Reset()
         
     class _IMalloc(object):
-        guid = '{00000002-0000-0000-C000-000000000046}'
+        guid = "{00000002-0000-0000-C000-000000000046}"
         def __init__(self, pUnk):
             IID__IMalloc = GUID(_IMalloc.guid)
             vtable_offset = IUnknown._num_methods - 1
@@ -365,7 +365,7 @@ if os.name=='nt':
             self._Free(pv)
        
     class _IMoniker(object):
-        guid = '{0000000f-0000-0000-C000-000000000046}'
+        guid = "{0000000f-0000-0000-C000-000000000046}"
         def __init__(self, pUnk):
             self.pUnk = pUnk
             IID__IMoniker = GUID(_IMoniker.guid)
@@ -432,5 +432,5 @@ if os.name=='nt':
             del(enumMoniker)
             del(runningObjectTable)
         else:
-            raise RuntimeError('Failed to retrieve the Running Object Table.')
+            raise RuntimeError("Failed to retrieve the Running Object Table.")
         

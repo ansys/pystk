@@ -2,7 +2,7 @@
 #          Copyright 2021-2021, Analytical Graphics, Inc.
 ################################################################################
 
-__all__ = ['GlobeControl', 'MapControl', 'GfxAnalysisControl']
+__all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]
 
 import os
 from tkinter                    import Frame
@@ -26,7 +26,7 @@ class NativeContainerMethods:
         self.AgPythonGetIAgUnknown                                           = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID)(("AgPythonGetIAgUnknown", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer")))
         self.Java_agi_core_awt_AgAwtNativeContainer_DetachContainer          = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID)(("Java_agi_core_awt_AgAwtNativeContainer_DetachContainer", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer")))
         self.Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer         = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID)(("Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer")))
-        if os.name!='nt':
+        if os.name!="nt":
             self.Java_agi_core_awt_AgAwtNativeContainer_Paint                                               = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID)(("Java_agi_core_awt_AgAwtNativeContainer_Paint", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer")))
             self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MousePressed           = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, LONG, BOOL, BOOL, BOOL, BOOL, BOOL, BOOL)(("Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MousePressed", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "x"), (1, "y"), (1, "leftButtonDown"), (1, "middleButtonDown"), (1, "rightButtonDown"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
             self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MouseReleased          = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, LONG, BOOL, BOOL, BOOL, BOOL, BOOL, BOOL)(("Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MouseReleased", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "x"), (1, "y"), (1, "leftButtonDown"), (1, "middleButtonDown"), (1, "rightButtonDown"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
@@ -38,15 +38,15 @@ class NativeContainerMethods:
         if not STKEngine._is_engine_running:
             raise STKRuntimeError(f"STKEngine.StartApplication() must be called before using the STK Engine controls")
             
-        if os.name != 'nt':
-            return 'libagjnicore.so'
+        if os.name != "nt":
+            return "libagjnicore.so"
         else:
-            kernel32 = WinDLL('kernel32', use_last_error=True)
+            kernel32 = WinDLL("kernel32", use_last_error=True)
 
             kernel32.GetModuleHandleW.restype = LPVOID
             kernel32.GetModuleHandleW.argtypes = [LPCWSTR]
 
-            stkxModuleHandle = kernel32.GetModuleHandleW('stkx.dll')
+            stkxModuleHandle = kernel32.GetModuleHandleW("stkx.dll")
             if stkxModuleHandle is None:
                 raise STKRuntimeError(f"Error getting stkx.dll module handle ({WinError(get_last_error())})")
 
@@ -57,13 +57,13 @@ class NativeContainerMethods:
             res = kernel32.GetModuleFileNameW(LPVOID(stkxModuleHandle), cPath, DWORD(1024))
             if res == 0:
                 err = get_last_error()
-                errormsg = 'Failed to get STKX module file name'
+                errormsg = "Failed to get STKX module file name"
                 if err != 0:
-                    errormsg += f' ({WinError(err)})'
+                    errormsg += f" ({WinError(err)})"
                 raise STKRuntimeError(errormsg)
             stkxdllpath = cPath.value
 
-            jniCoreDllPath = os.path.join(os.path.dirname(stkxdllpath), 'AgJNICore.dll')
+            jniCoreDllPath = os.path.join(os.path.dirname(stkxdllpath), "AgJNICore.dll")
             return jniCoreDllPath
     def CreateContainer(self, progid):
         return self.AgPythonCreateContainer(LPVOID(None), LPVOID(None), LPCWSTR(progid))
@@ -77,7 +77,7 @@ class NativeContainerMethods:
         self.Java_agi_core_awt_AgAwtNativeContainer_DetachContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer))
     def ReleaseContainer(self, pContainer):
         self.Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-    if os.name!='nt':
+    if os.name!="nt":
         def Paint(self, pContainer):
             self.Java_agi_core_awt_AgAwtNativeContainer_Paint(LPVOID(None), LPVOID(None), LPVOID(pContainer))
         def MousePressed(self, pContainer, x, y, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
@@ -105,11 +105,11 @@ class ControlBase(Frame):
 
     def __init__(self, parent, *args, **kwargs):
         # Set background to empty string to prevent tk from drawing background over opengl draws
-        kwargs['bg'] = ""
+        kwargs["bg"] = ""
         Frame.__init__(self, parent, *args, **kwargs)
         self._is_container_attached = False
         self._nativeContainerMethods = NativeContainerMethods()
-        if os.name!='nt':
+        if os.name!="nt":
             self._x11lib = cdll.LoadLibrary(find_library("X11"))
             self._XOpenDisplay = WINFUNCTYPE(POINTER(CHAR))(("XOpenDisplay", self._x11lib))
         
@@ -121,14 +121,14 @@ class ControlBase(Frame):
         
         self._interface._private_init(self, _cntrlinit_unk)
         
-        self.bind('<Configure>', self._Configure)
-        if os.name!='nt':
-            self.bind('<Expose>', self._Expose)
-            self.bind('<ButtonPress>', self._ButtonPress)
-            self.bind('<ButtonRelease>', self._ButtonRelease)
-            self.bind('<Motion>', self._Motion)
-            self.bind_all('<Any-KeyPress>', self._KeyPress)
-            self.bind_all('<Any-KeyRelease>', self._KeyRelease)
+        self.bind("<Configure>", self._Configure)
+        if os.name!="nt":
+            self.bind("<Expose>", self._Expose)
+            self.bind("<ButtonPress>", self._ButtonPress)
+            self.bind("<ButtonRelease>", self._ButtonRelease)
+            self.bind("<Motion>", self._Motion)
+            self.bind_all("<Any-KeyPress>", self._KeyPress)
+            self.bind_all("<Any-KeyRelease>", self._KeyRelease)
         
     def __setattr__(self, attrname, value):
         try:
@@ -139,7 +139,7 @@ class ControlBase(Frame):
     def _Configure(self, event):
         """Occurs when the frame is resized."""
         if not self._is_container_attached:
-            self._xDisplay = None if os.name=='nt' else self._XOpenDisplay(self.winfo_screen().encode('utf-8'))
+            self._xDisplay = None if os.name=="nt" else self._XOpenDisplay(self.winfo_screen().encode("utf-8"))
             self._nativeContainerMethods.AttachContainer(self._container, self.winfo_id(), self._xDisplay)
             self._is_container_attached = True
         self._nativeContainerMethods.ResizeContainer(self._container, 0, 0, event.width, event.height)
@@ -150,7 +150,7 @@ class ControlBase(Frame):
         self._nativeContainerMethods.ReleaseContainer(self._container)
         super().destroy()
 
-    if os.name!='nt':
+    if os.name!="nt":
         def _Expose(self, event):
             """Occurs when at least some part of the frame becomes visible after having been covered up by another window."""
             if self._is_container_attached:

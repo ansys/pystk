@@ -71,14 +71,14 @@ def pytype_to_vartype(item: typing.Any) -> int:
             return agcom.VT_ARRAY|vt
         else:
             return agcom.VT_ARRAY|agcom.VT_NULL
-    elif hasattr(item, '_pUnk') and type(item._pUnk)==agcom.IUnknown:
+    elif hasattr(item, "_pUnk") and type(item._pUnk)==agcom.IUnknown:
         return agcom.VT_UNKNOWN
 
 def VARIANT_from_python_data(data:typing.Any) -> agcom.VARIANT:
     var = agcom.VARIANT()
     var.vt = agcom.VT_EMPTY
     if data is not None:
-        if hasattr(data, '_ToArgb'):
+        if hasattr(data, "_ToArgb"):
             data = data._ToArgb()
         var.vt = pytype_to_vartype(data)
         union_val = agcom.varUnion()
@@ -244,7 +244,7 @@ def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
             return python_val_from_VARIANT(ctypes_val)
     elif vt in [agcom.VT_EMPTY, agcom.VT_NULL]:
         return None
-    raise RuntimeError('Unrecognized variant type: ' + str(vt))
+    raise RuntimeError("Unrecognized variant type: " + str(vt))
     
 def python_val_from_VARIANT(var:agcom.VARIANT) -> typing.Any:
         return python_val_from_ctypes_val(ctype_val_from_VARIANT(var), var.vt)
@@ -382,7 +382,7 @@ def _vartype_to_ctypes_type(vt:agcom.INT) -> typing.Any:
     elif vt == agcom.VT_DISPATCH|agcom.VT_BYREF:
         return POINTER(agcom.PVOID)
     else:
-        raise RuntimeError('Unrecognized variant type: ' + str(vt))
+        raise RuntimeError("Unrecognized variant type: " + str(vt))
 
 def _single_dimension_list_from_SAFEARRAY(sa:agcom.SAFEARRAY, index:int, from_2d_array=False) -> list:
     python_array = list()
@@ -416,7 +416,7 @@ def _single_dimension_list_from_SAFEARRAY(sa:agcom.SAFEARRAY, index:int, from_2d
         elif vt.value == agcom.VT_ARRAY:
             agcom.SafeArrayDestroy(pElem)
         elif vt.value == agcom.VT_UNKNOWN or vt.value == agcom.VT_DISPATCH or vt.value & agcom.VT_BYREF:
-            raise RuntimeError(f'Unsupported SAFEARRAY type detected: vt = {vt.value}.')
+            raise RuntimeError(f"Unsupported SAFEARRAY type detected: vt = {vt.value}.")
         python_array.append(python_elem)
     return python_array
 
@@ -436,7 +436,7 @@ def list_from_SAFEARRAY(sa:agcom.SAFEARRAY) -> list:
             ret.append(_single_dimension_list_from_SAFEARRAY(sa, i, True))
         return ret
     else:
-        raise RuntimeError('Unexpected dimension of SafeArray.  Expected 1 or 2, got ' + str(dim) + '.')
+        raise RuntimeError("Unexpected dimension of SafeArray.  Expected 1 or 2, got " + str(dim) + ".")
         
         
 ###############################################################################
@@ -601,7 +601,7 @@ class OLE_COLOR_arg(object):
             self.OLE_COLOR = agcom.OLE_COLOR()
         else:
             if type(val) == agcolor.ColorRGBA:
-                raise STKColorError('Argument type is RGB only, use Color class instead of ColorRGBA.')
+                raise STKColorError("Argument type is RGB only, use Color class instead of ColorRGBA.")
             self.OLE_COLOR = agcom.OLE_COLOR(val._ToOLECOLOR())
     def __enter__(self):
         return self
@@ -706,7 +706,7 @@ class BYTE_arg(object):
         return self.BYTE
     @property
     def python_val(self) -> bytes:
-        return bytes(chr(self.BYTE.value), 'ascii')
+        return bytes(chr(self.BYTE.value), "ascii")
 
 class CHAR_arg(object):
     def __init__(self, val: typing.Any = None):
@@ -728,7 +728,7 @@ class CHAR_arg(object):
         return self.CHAR
     @property
     def python_val(self) -> bytes:
-        return bytes(chr(self.CHAR.value), 'ascii')
+        return bytes(chr(self.CHAR.value), "ascii")
 
 class VARIANT_arg(object):
     def __init__(self, val: typing.Any = None):
@@ -759,7 +759,7 @@ class AgInterface_in_arg(object):
         if type(val) == agcomobj.COMObject:
             self.val = val
             self.rawptr = val.GetPointer()
-        elif val is not None and hasattr(val, '_pUnk'):
+        elif val is not None and hasattr(val, "_pUnk"):
             self.val = val
             if as_interface==agcom.IDispatch:
                 self.pIntf = val._pUnk.QueryInterface(agcom.GUID(agcom.IDispatch._guid))
@@ -782,7 +782,7 @@ class AgInterface_in_arg(object):
         return False
     @property
     def COM_val(self) -> agcom.PVOID:
-        if hasattr(self.rawptr, 'value'):
+        if hasattr(self.rawptr, "value"):
             return agcom.PVOID(self.rawptr.value)
         else:
             return agcom.PVOID(int(self.rawptr))
@@ -827,7 +827,7 @@ class AgInterface_event_callback_arg(object):
         return False
     @property
     def COM_val(self) -> agcom.PVOID:
-        return self.intf.__dict__['_pUnk'].p
+        return self.intf.__dict__["_pUnk"].p
     @property
     def python_val(self) -> typing.Any:
         return self.intf

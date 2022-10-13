@@ -2,12 +2,12 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################
 
-__all__ = ['STKDesktop', 'STKDesktopApplication']
+__all__ = ["STKDesktop", "STKDesktopApplication"]
 
 import os
 from ctypes import byref
 
-if os.name !='nt':
+if os.name !="nt":
     raise RuntimeError("STKDesktop is only available on Windows.  Use STKEngine.")
     
 from agi.stk12.internal.comutil       import *
@@ -26,13 +26,13 @@ from agi.stk12.vgt                    import *
 class ThreadMarshaller(object):
     _iid_IUnknown = GUID(IUnknown._guid)
     def __init__(self, obj):
-       if not hasattr(obj, '_pUnk'):
-           raise STKRuntimeError('Invalid object to passed to ThreadMarshaller.')
+       if not hasattr(obj, "_pUnk"):
+           raise STKRuntimeError("Invalid object to passed to ThreadMarshaller.")
        self._obj = obj
        self._obj_type = type(obj)
        self._pStream = PVOID()
        if not Succeeded(CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._pUnk.p, byref(self._pStream))):
-           raise STKRuntimeError('ThreadMarshaller failed to initialize.')
+           raise STKRuntimeError("ThreadMarshaller failed to initialize.")
            
     def __del__(self):
         if self._pStream is not None:
@@ -42,15 +42,15 @@ class ThreadMarshaller(object):
     def GetMarshalledToCurrentThread(self) -> typing.Any:
         """Returns an instance of the original stk_object that may be used on the current thread. May only be called once."""
         if self._pStream is None:
-            raise STKRuntimeError(f'{self._obj_type} object has already been marshalled to a thread.')
+            raise STKRuntimeError(f"{self._obj_type} object has already been marshalled to a thread.")
         pUnk_raw = PVOID()
         hr = CoGetInterfaceAndReleaseStream(self._pStream, byref(ThreadMarshaller._iid_IUnknown), byref(pUnk_raw))
         self._pStream = None
         if not Succeeded(hr):
             if hr == CO_E_NOTINITIALIZED:
-                raise STKRuntimeError('Thread not initialized. Call InitializeThread() before the call to GetMarshalledToCurrentThread().')
+                raise STKRuntimeError("Thread not initialized. Call InitializeThread() before the call to GetMarshalledToCurrentThread().")
             else:
-                raise STKRuntimeError('Could not marshall to thread.')
+                raise STKRuntimeError("Could not marshall to thread.")
         pUnk = IUnknown()
         pUnk.p = pUnk_raw
         marshalled_obj = self._obj_type()
@@ -72,39 +72,39 @@ class STKDesktopApplication(AgUiApplication):
     STKDesktop.AttachToApplication() to obtain an initialized STKDesktopApplication object.
     """
     def __init__(self):
-        self.__dict__['_pUnk'] = None
+        self.__dict__["_pUnk"] = None
         AgUiApplication.__init__(self)
-        self.__dict__['_initialized'] = False
-        self.__dict__['_root'] = None
+        self.__dict__["_initialized"] = False
+        self.__dict__["_root"] = None
         
     def _private_init(self, pUnk:IUnknown):
-        self.__dict__['_pUnk'] = pUnk
+        self.__dict__["_pUnk"] = pUnk
         AgUiApplication._private_init(self, pUnk)
-        self.__dict__['_initialized'] = True
+        self.__dict__["_initialized"] = True
         
     def __del__(self):
-        if self.__dict__['_initialized']:
+        if self.__dict__["_initialized"]:
             CoInitializeManager.uninitialize()
 
     @property
     def Root(self) -> AgStkObjectRoot:
         """Get the object model root associated with this instance of STK Desktop application."""
-        if not self.__dict__['_initialized']:
-            raise RuntimeError('STKDesktopApplication has not been properly initialized.  Use StartApplication() or AttachToApplication() to obtain the STKDesktopApplication object.')
-        if self.__dict__['_root'] is not None:
-            return self.__dict__['_root']
-        if self.__dict__['_pUnk'] is not None:
-            self.__dict__['_root'] = self.Personality2
-            return self.__dict__['_root']
+        if not self.__dict__["_initialized"]:
+            raise RuntimeError("STKDesktopApplication has not been properly initialized.  Use StartApplication() or AttachToApplication() to obtain the STKDesktopApplication object.")
+        if self.__dict__["_root"] is not None:
+            return self.__dict__["_root"]
+        if self.__dict__["_pUnk"] is not None:
+            self.__dict__["_root"] = self.Personality2
+            return self.__dict__["_root"]
             
     def ShutDown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
-        if self.__dict__['_pUnk'] is not None:
-            if self.__dict__['_root'] is not None:
-                self.__dict__['_root'].CloseScenario()
+        if self.__dict__["_pUnk"] is not None:
+            if self.__dict__["_root"] is not None:
+                self.__dict__["_root"].CloseScenario()
             self.Quit()
-            self.__dict__['_root'] = None
-            self.__dict__['_pUnk'] = None
+            self.__dict__["_root"] = None
+            self.__dict__["_pUnk"] = None
             
 
 class STKDesktop(object):
@@ -120,7 +120,7 @@ class STKDesktop(object):
         """
         CoInitializeManager.initialize()
         CLSID_AgUiApplication = GUID()
-        if Succeeded(CLSIDFromString('STK12.Application', CLSID_AgUiApplication)):
+        if Succeeded(CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
             pUnk = IUnknown()
             IID_IUnknown = GUID(IUnknown._guid)
             if Succeeded(CoCreateInstance(byref(CLSID_AgUiApplication), None, CLSCTX_LOCAL_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
@@ -143,7 +143,7 @@ class STKDesktop(object):
         CoInitializeManager.initialize()
         if pid is None:
             CLSID_AgUiApplication = GUID()
-            if Succeeded(CLSIDFromString('STK12.Application', CLSID_AgUiApplication)):
+            if Succeeded(CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
                 pUnk = IUnknown()
                 IID_IUnknown = GUID(IUnknown._guid)
                 if Succeeded(GetActiveObject(byref(CLSID_AgUiApplication), None, byref(pUnk.p))):
@@ -152,7 +152,7 @@ class STKDesktop(object):
                     app._private_init(pUnk)
                     return app
                 else:
-                    raise STKInitializationError('Failed to attach to an active STK 12 Application instance.')
+                    raise STKInitializationError("Failed to attach to an active STK 12 Application instance.")
         else:
             pUnk = attach_to_stk_by_pid(pid)
             if pUnk is not None: 
@@ -160,7 +160,7 @@ class STKDesktop(object):
                 app._private_init(pUnk)
                 return app
             else:
-                raise STKInitializationError('Failed to attach to STK with pid ' + str(pid) + '.')
+                raise STKInitializationError("Failed to attach to STK with pid " + str(pid) + ".")
 
     @staticmethod
     def ReleaseAll() -> None:
