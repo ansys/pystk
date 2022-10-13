@@ -3,7 +3,7 @@
   color: d42a34
 
 - name: code-style
-  description: Improvements related with code style
+  description: Improvements related to code style
   color: c2c2c2
 
 - name: dependencies
