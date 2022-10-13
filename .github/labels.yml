@@ -2,6 +2,10 @@
   description: Something isn't working
   color: d42a34
 
+- name: code-style
+  description: Improvements related to code style
+  color: c2c2c2
+
 - name: dependencies
   description: Related with project dependencies
   color: ffc0cb
