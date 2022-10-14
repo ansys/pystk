@@ -3,6 +3,8 @@ Ansys
 ansys
 PySTK
 FOM
+fom
 LOD
+lod
 Precessing
 precessing
