@@ -2438,7 +2438,7 @@ class IAgAvtrPayloadStation(object):
             return arg_ppFuelTank.python_val
 
     def GetExternalFuelTank(self) -> "IAgAvtrFuelTankExternal":
-        """Get's the external fuel tank attached to the payload station."""
+        """Get the external fuel tank attached to the payload station."""
         with agmarshall.AgInterface_out_arg() as arg_ppFuelTank:
             agcls.evaluate_hresult(self.__dict__["_GetExternalFuelTank"](byref(arg_ppFuelTank.COM_val)))
             return arg_ppFuelTank.python_val
