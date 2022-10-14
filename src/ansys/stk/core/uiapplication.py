@@ -210,14 +210,14 @@ class IAgUiFileOpenExt(object):
     
     @property
     def FileName(self) -> "IAgUiFileOpenExtCollection":
-        """Gets/sets the mulitple file open collection."""
+        """Gets/sets the multiple file open collection."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetFileName"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @FileName.setter
     def FileName(self, newVal:"IAgUiFileOpenExtCollection") -> None:
-        """Gets/sets the mulitple file open collection."""
+        """Gets/sets the multiple file open collection."""
         with agmarshall.AgInterface_in_arg(newVal, IAgUiFileOpenExtCollection) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetFileName"](arg_newVal.COM_val))
 

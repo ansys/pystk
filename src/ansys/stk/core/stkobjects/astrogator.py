@@ -647,7 +647,7 @@ class AgEVAControlLaunch(IntEnum):
     eVAControlLaunchBurnoutAzAltAlt = 516,
     # The geocentric azimuth of the launch trajectory.
     eVAControlLaunchBurnoutAzRadAz = 517,
-    # The geocentric downrange distnce of the burnout point.
+    # The geocentric downrange distance of the burnout point.
     eVAControlLaunchBurnoutAzRadDownrangeDist = 518,
     # The geocentric radius of the burnout point.
     eVAControlLaunchBurnoutAzRadRad = 519,
@@ -1269,7 +1269,7 @@ class AgEVALambertSolutionOptionType(IntEnum):
     """Lambert Solution Option Type."""
     # Fixed time - The type of Lambert solution to calculate.
     eAgEVALambertSolutionOptionFixedTime = 0,
-    # Minumum Eccentricity - The type of Lambert solution to calculate.
+    # Minimum Eccentricity - The type of Lambert solution to calculate.
     eAgEVALambertSolutionOptionMinEccentricity = 1,
     # Minimum Energy - The type of Lambert solution to calculate.
     eAgEVALambertSolutionOptionMinEnergy = 2
@@ -1437,7 +1437,7 @@ class AgEVACalcObjectAngleSign(IntEnum):
     """The sign of the angle when the relative position has a component along the orbit normal."""
     # Use the positive sign for the angle when the relative position has a positive component along the orbit normal.
     eAgEVACalcObjectAngleSignPositive = 0,
-    # Use the negative sign for the angle when the relative position does not have a poistive component along the orbit normal.
+    # Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal.
     eAgEVACalcObjectAngleSignNegative = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectAngleSign"] = AgEVACalcObjectAngleSign
@@ -2087,7 +2087,7 @@ class AgEVAThrottleTableOperationMode(IntEnum):
     eVAEngineOperationRegPoly = 0,
     # Interpolation of engine performance data based on a piecewise linear model.
     eVAEngineOperationPiecewiseLinear = 1,
-    # Discrete engine opration: piecewise constant engine performance as a function of available power.
+    # Discrete engine operation: piecewise constant engine performance as a function of available power.
     eVAEngineOperationDiscrete = 2
 
 agcls.AgTypeNameMap["AgEVAThrottleTableOperationMode"] = AgEVAThrottleTableOperationMode
@@ -45641,7 +45641,7 @@ class IAgVARK2nd3rd(object):
 
     @property
     def HighSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to decrease step size if the error is too high. Dimensionless."""
+        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetHighSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -45653,7 +45653,7 @@ class IAgVARK2nd3rd(object):
 
     @property
     def LowSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to increase step size if the error is too low. Dimensionless."""
+        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetLowSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -45921,7 +45921,7 @@ class IAgVARK4th5th(object):
 
     @property
     def HighSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to decrease step size if the error is too high. Dimensionless."""
+        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetHighSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -45933,7 +45933,7 @@ class IAgVARK4th5th(object):
 
     @property
     def LowSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to increase step size if the error is too low. Dimensionless."""
+        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetLowSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46149,7 +46149,7 @@ class IAgVARK4thAdapt(object):
 
     @property
     def HighSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to decrease step size if the error is too high. Dimensionless."""
+        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetHighSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46161,7 +46161,7 @@ class IAgVARK4thAdapt(object):
 
     @property
     def LowSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to increase step size if the error is too low. Dimensionless."""
+        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetLowSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46377,7 +46377,7 @@ class IAgVARKF7th8th(object):
 
     @property
     def HighSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to decrease step size if the error is too high. Dimensionless."""
+        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetHighSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46389,7 +46389,7 @@ class IAgVARKF7th8th(object):
 
     @property
     def LowSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to increase step size if the error is too low. Dimensionless."""
+        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetLowSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46609,7 +46609,7 @@ class IAgVARKV8th9th(object):
 
     @property
     def HighSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to decrease step size if the error is too high. Dimensionless."""
+        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetHighSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46621,7 +46621,7 @@ class IAgVARKV8th9th(object):
 
     @property
     def LowSafetyCoefficient(self) -> float:
-        """The 'safety' coefficent used to increase step size if the error is too low. Dimensionless."""
+        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetLowSafetyCoefficient"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val

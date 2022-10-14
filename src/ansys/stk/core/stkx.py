@@ -1287,7 +1287,7 @@ agcls.AgTypeNameMap["IAgDrawElemCollection"] = IAgDrawElemCollection
 __all__.append("IAgDrawElemCollection")
 
 class IAgWinProjPos(object):
-    """Projected window postion detail."""
+    """Projected window position detail."""
     _uuid = "{56FF29E4-6311-4E94-B91D-53C02288C55A}"
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -1339,7 +1339,7 @@ class IAgWinProjPos(object):
 
     @property
     def IsWinProjPosValid(self) -> bool:
-        """Indicates if the returned projected positon is valid or not."""
+        """Indicates if the returned projected position is valid or not."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
             agcls.evaluate_hresult(self.__dict__["_GetIsWinProjPosValid"](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
@@ -1917,7 +1917,7 @@ class IAgUiAxVOCntrl(object):
 
     @property
     def PptPreloadMode(self) -> bool:
-        """Special mode for PowerPoint : if true the VO contol window is kept around when switching between slides."""
+        """Special mode for PowerPoint : if true the VO control window is kept around when switching between slides."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pPptPreloadMode:
             agcls.evaluate_hresult(self.__dict__["_GetPptPreloadMode"](byref(arg_pPptPreloadMode.COM_val)))
             return arg_pPptPreloadMode.python_val
@@ -3130,7 +3130,7 @@ __all__.append("AgUiAxGfxAnalysisCntrl")
 
 
 class AgWinProjPos(IAgWinProjPos):
-    """Projected window postion result."""
+    """Projected window position result."""
     def __init__(self, sourceObject=None):
         IAgWinProjPos.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):

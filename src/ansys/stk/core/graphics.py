@@ -4008,7 +4008,7 @@ class IAgStkGraphicsCustomImageGlobeOverlay(object):
 
     @property
     def Projection(self) -> "AgEStkGraphicsMapProjection":
-        """Gets the map projection. Valid values are mercator and equidistant cylindical."""
+        """Gets the map projection. Valid values are mercator and equidistant cylindrical."""
         with agmarshall.AgEnum_arg(AgEStkGraphicsMapProjection) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProjection"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -12077,7 +12077,7 @@ class IAgStkGraphicsOverlay(object):
 
     @property
     def DisplayCondition(self) -> "IAgStkGraphicsDisplayCondition":
-        """Gets or sets the display condition that determines if the overlay should be rendered. Both this and display must evaulate to true for the overlay to be rendered."""
+        """Gets or sets the display condition that determines if the overlay should be rendered. Both this and display must evaluate to true for the overlay to be rendered."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetDisplayCondition"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -14439,7 +14439,7 @@ agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayPickResult"] = IAgStkGraphicsScr
 __all__.append("IAgStkGraphicsScreenOverlayPickResult")
 
 class IAgStkGraphicsSolidPrimitive(object):
-    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hidding the outline of the backside of the solid..."""
+    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
     _uuid = "{10ae68b3-ec89-4ced-9b4c-8aae9123eb24}"
     _num_methods = 39
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -20916,7 +20916,7 @@ agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayFactory"] = IAgStkGraphicsScreen
 __all__.append("IAgStkGraphicsScreenOverlayFactory")
 
 class IAgStkGraphicsSolidPrimitiveFactory(object):
-    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hidding the outline of the backside of the solid..."""
+    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
     _uuid = "{b76858bc-4b6c-41c0-928a-2ae8fe8d6e03}"
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -24707,7 +24707,7 @@ __all__.append("AgStkGraphicsScreenOverlayPickResult")
 
 
 class AgStkGraphicsSolidPrimitive(IAgStkGraphicsSolidPrimitive, IAgStkGraphicsPrimitive):
-    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hidding the outline of the backside of the solid..."""
+    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
     def __init__(self, sourceObject=None):
         IAgStkGraphicsSolidPrimitive.__init__(self, sourceObject)
         IAgStkGraphicsPrimitive.__init__(self, sourceObject)
@@ -26528,7 +26528,7 @@ __all__.append("AgStkGraphicsScreenOverlayFactory")
 
 
 class AgStkGraphicsSolidPrimitiveFactory(IAgStkGraphicsSolidPrimitiveFactory):
-    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hidding the outline of the backside of the solid..."""
+    """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
     def __init__(self, sourceObject=None):
         IAgStkGraphicsSolidPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):

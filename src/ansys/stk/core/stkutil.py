@@ -4919,7 +4919,7 @@ __all__.append("AgCartesian2Vector")
 
 
 class AgPropertyInfo(IAgPropertyInfo):
-    """Property Infomation coclass."""
+    """Property Information coclass."""
     def __init__(self, sourceObject=None):
         IAgPropertyInfo.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -4941,7 +4941,7 @@ __all__.append("AgPropertyInfo")
 
 
 class AgPropertyInfoCollection(IAgPropertyInfoCollection):
-    """Property Infomation Collection coclass."""
+    """Property Information Collection coclass."""
     def __init__(self, sourceObject=None):
         IAgPropertyInfoCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
