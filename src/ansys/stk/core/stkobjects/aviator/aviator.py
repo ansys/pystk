@@ -476,7 +476,7 @@ agcls.AgTypeNameMap["AgEAvtrLandingApproachFixRangeMode"] = AgEAvtrLandingApproa
 __all__.append("AgEAvtrLandingApproachFixRangeMode")
 
 class AgEAvtrAccelerationAdvAccelMode(IntEnum):
-    """Accleration mode for aircraft advanced acceleration models."""
+    """Acceleration mode for aircraft advanced acceleration models."""
     # Max acceleration.
     eAccelModeMaxAccel = 0,
     # Manually override the acceleration.
@@ -600,7 +600,7 @@ agcls.AgTypeNameMap["AgEAvtrADDSMissingMsgType"] = AgEAvtrADDSMissingMsgType
 __all__.append("AgEAvtrADDSMissingMsgType")
 
 class AgEAvtrADDSMsgExtrapType(IntEnum):
-    """The wind effect to apply if the procedure(s) extend beyond the intervals of any avilable messages."""
+    """The wind effect to apply if the procedure(s) extend beyond the intervals of any available messages."""
     # Zero Wind.
     eExtrapMsgZeroWind = 0,
     # Hold End Point Wind.
@@ -683,7 +683,7 @@ class AgEAvtrBasicManeuverAirspeedMode(IntEnum):
     eAccelDecelUnderGravity = 9,
     # Accel/Decel using Aero/Propulsion with throttle setting
     eAccelDecelAeroProp = 10,
-    # Sepcify thrust (using drag from Aerodynamics model)
+    # Specify thrust (using drag from Aerodynamics model)
     eThrust = 11,
     # Interpolate Accelerate/Decelerate over interval
     eInterpolateAccelDecel = 12
@@ -1393,7 +1393,7 @@ class AgEAvtrAdvFixedWingPowerplantStrategy(IntEnum):
     eSubSuperHyperPowerplant = 3,
     # A thermodynamic model of a dual-spool turbofan engine that has an afterburner.
     eTurbofanBasicAB = 4,
-    # An empirical model for a turbofan engine tha produces significantly more fan thrust than jet thrust.
+    # An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust.
     eTurbofanHighBypass = 5,
     # An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust.
     eTurbofanLowBypass = 6,
@@ -1457,7 +1457,7 @@ class AgEAvtrMinimizeSiteProcTimeDiff(IntEnum):
     eMinimizeTimeDifferenceOff = 0,
     # Always recalculate.
     eMinimizeTimeDifferenceAlways = 1,
-    # Only recalculate when udpated.
+    # Only recalculate when updated.
     eMinimizeTimeDifferenceNextUpdate = 2
 
 agcls.AgTypeNameMap["AgEAvtrMinimizeSiteProcTimeDiff"] = AgEAvtrMinimizeSiteProcTimeDiff
@@ -2438,7 +2438,7 @@ class IAgAvtrPayloadStation(object):
             return arg_ppFuelTank.python_val
 
     def GetExternalFuelTank(self) -> "IAgAvtrFuelTankExternal":
-        """Get's the external fuel tank attached to the payload station."""
+        """Get the external fuel tank attached to the payload station."""
         with agmarshall.AgInterface_out_arg() as arg_ppFuelTank:
             agcls.evaluate_hresult(self.__dict__["_GetExternalFuelTank"](byref(arg_ppFuelTank.COM_val)))
             return arg_ppFuelTank.python_val
@@ -2796,14 +2796,14 @@ class IAgAvtrLevelTurns(object):
 
     @property
     def ManeuverMode(self) -> "AgEAvtrAccelManeuverMode":
-        """The mode that the aircraft will adhere to the specified acceleration paramters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
+        """The mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetManeuverMode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ManeuverMode.setter
     def ManeuverMode(self, newVal:"AgEAvtrAccelManeuverMode") -> None:
-        """The mode that the aircraft will adhere to the specified acceleration paramters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
+        """The mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetManeuverMode"](arg_newVal.COM_val))
 
@@ -2983,14 +2983,14 @@ class IAgAvtrClimbAndDescentTransitions(object):
 
     @property
     def ManeuverMode(self) -> "AgEAvtrAccelManeuverMode":
-        """The mode that the aircraft will adhere to the specified acceleration paramters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
+        """The mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetManeuverMode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ManeuverMode.setter
     def ManeuverMode(self, newVal:"AgEAvtrAccelManeuverMode") -> None:
-        """The mode that the aircraft will adhere to the specified acceleration paramters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
+        """The mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetManeuverMode"](arg_newVal.COM_val))
 
@@ -3346,7 +3346,7 @@ agcls.AgTypeNameMap["IAgAvtrAircraftBasicClimbModel"] = IAgAvtrAircraftBasicClim
 __all__.append("IAgAvtrAircraftBasicClimbModel")
 
 class IAgAvtrAircraftBasicAccelerationModel(object):
-    """Interface used to access the basic acceleration model options for an accleration model of an aircraft in the Aviator catalog."""
+    """Interface used to access the basic acceleration model options for an acceleration model of an aircraft in the Aviator catalog."""
     _uuid = "{a1a75a12-5730-4442-b84c-dc51c7783896}"
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -9998,14 +9998,14 @@ class IAgAvtrMissileAdvancedAero(object):
 
     @property
     def NoseTipDiameter(self) -> float:
-        """The missile nose's diamater at the tip."""
+        """The missile nose's diameter at the tip."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetNoseTipDiameter"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @NoseTipDiameter.setter
     def NoseTipDiameter(self, newVal:float) -> None:
-        """The missile nose's diamater at the tip."""
+        """The missile nose's diameter at the tip."""
         with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetNoseTipDiameter"](arg_newVal.COM_val))
 
@@ -10037,14 +10037,14 @@ class IAgAvtrMissileAdvancedAero(object):
 
     @property
     def MinMach(self) -> float:
-        """The minimum mach number of hte missile."""
+        """The minimum mach number of the missile."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetMinMach"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @MinMach.setter
     def MinMach(self, newVal:float) -> None:
-        """The minimum mach number of hte missile."""
+        """The minimum mach number of the missile."""
         with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetMinMach"](arg_newVal.COM_val))
 
@@ -14275,7 +14275,7 @@ agcls.AgTypeNameMap["IAgAvtrConfiguration"] = IAgAvtrConfiguration
 __all__.append("IAgAvtrConfiguration")
 
 class IAgAvtrCatalogSource(object):
-    """Interface used to access options for a source in the Aviator Catalog. Examples of sources include User Aicraft Models, ARINC424runways, User Runways, etc."""
+    """Interface used to access options for a source in the Aviator Catalog. Examples of sources include User Aircraft Models, ARINC424runways, User Runways, etc."""
     _uuid = "{ea6e896f-5c4d-4614-9835-4a9f598e52b3}"
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -20621,7 +20621,7 @@ class IAgAvtrBasicManeuverStrategyAutopilotNav(object):
 
     @property
     def ControlLimitHorizAccel(self) -> float:
-        """The specified horiztonal acceleration for a control limit mode of specify max horiz accel."""
+        """The specified horizontal acceleration for a control limit mode of specify max horiz accel."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetControlLimitHorizAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -20634,7 +20634,7 @@ class IAgAvtrBasicManeuverStrategyAutopilotNav(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -20899,7 +20899,7 @@ class IAgAvtrBasicManeuverStrategyAutopilotProf(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -22529,7 +22529,7 @@ class IAgAvtrBasicManeuverStrategySimpleTurn(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -22787,7 +22787,7 @@ class IAgAvtrBasicManeuverStrategyIntercept(object):
 
     @property
     def ControlLimitHorizAccel(self) -> float:
-        """The specified horiztonal acceleration for a control limit mode of specify max horiz accel."""
+        """The specified horizontal acceleration for a control limit mode of specify max horiz accel."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetControlLimitHorizAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -22839,7 +22839,7 @@ class IAgAvtrBasicManeuverStrategyIntercept(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -22999,7 +22999,7 @@ class IAgAvtrBasicManeuverStrategyRelativeBearing(object):
 
     @property
     def ControlLimitHorizAccel(self) -> float:
-        """The specified horiztonal acceleration for a control limit mode of specify max horiz accel."""
+        """The specified horizontal acceleration for a control limit mode of specify max horiz accel."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetControlLimitHorizAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -23012,7 +23012,7 @@ class IAgAvtrBasicManeuverStrategyRelativeBearing(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -23256,7 +23256,7 @@ class IAgAvtrBasicManeuverStrategyRelativeCourse(object):
 
     @property
     def ControlLimitHorizAccel(self) -> float:
-        """The specified horiztonal acceleration for a control limit mode of specify max horiz accel."""
+        """The specified horizontal acceleration for a control limit mode of specify max horiz accel."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetControlLimitHorizAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -23321,7 +23321,7 @@ class IAgAvtrBasicManeuverStrategyRelativeCourse(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -24003,7 +24003,7 @@ class IAgAvtrBasicManeuverStrategyStationkeeping(object):
 
     @property
     def ControlLimitHorizAccel(self) -> float:
-        """The specified horiztonal acceleration for a control limit mode of specify max horiz accel."""
+        """The specified horizontal acceleration for a control limit mode of specify max horiz accel."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetControlLimitHorizAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -24016,7 +24016,7 @@ class IAgAvtrBasicManeuverStrategyStationkeeping(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -24258,7 +24258,7 @@ class IAgAvtrBasicManeuverStrategyRelativeFPA(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -24601,7 +24601,7 @@ class IAgAvtrBasicManeuverStrategyRelSpeedAlt(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -24827,7 +24827,7 @@ class IAgAvtrBasicManeuverStrategyBezier(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -25095,7 +25095,7 @@ class IAgAvtrBasicManeuverStrategyPushPull(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -25237,7 +25237,7 @@ class IAgAvtrBasicManeuverStrategyGlideProfile(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -25378,7 +25378,7 @@ class IAgAvtrBasicManeuverStrategyCruiseProfile(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -25446,7 +25446,7 @@ class IAgAvtrBasicManeuverStrategyStraightAhead(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -25577,7 +25577,7 @@ class IAgAvtrBasicManeuverStrategyWeave(object):
 
     @property
     def ControlLimitHorizAccel(self) -> float:
-        """The specified horiztonal acceleration for a control limit mode of specify max horiz accel."""
+        """The specified horizontal acceleration for a control limit mode of specify max horiz accel."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetControlLimitHorizAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -25590,7 +25590,7 @@ class IAgAvtrBasicManeuverStrategyWeave(object):
 
     @property
     def CompensateForCoriolisAccel(self) -> bool:
-        """The option to compensate for the accleration due to the Coriolis effect."""
+        """The option to compensate for the acceleration due to the Coriolis effect."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCompensateForCoriolisAccel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -27388,14 +27388,14 @@ class IAgAvtrLandingEnterDownwindPattern(object):
 
     @property
     def FinalTurn(self) -> "AgEAvtrNavigatorTurnDir":
-        """The direction of the turn that the aircraft wil make when it lines up over the runway to land."""
+        """The direction of the turn that the aircraft will make when it lines up over the runway to land."""
         with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetFinalTurn"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @FinalTurn.setter
     def FinalTurn(self, inVal:"AgEAvtrNavigatorTurnDir") -> None:
-        """The direction of the turn that the aircraft wil make when it lines up over the runway to land."""
+        """The direction of the turn that the aircraft will make when it lines up over the runway to land."""
         with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_SetFinalTurn"](arg_inVal.COM_val))
 
@@ -32791,14 +32791,14 @@ class IAgAvtrProcedureAirway(object):
 
     @property
     def Router(self) -> str:
-        """The router used to provide avilable airways."""
+        """The router used to provide available airways."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetRouter"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @Router.setter
     def Router(self, newVal:str) -> None:
-        """The router used to provide avilable airways."""
+        """The router used to provide available airways."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetRouter"](arg_newVal.COM_val))
 
@@ -32979,7 +32979,7 @@ class IAgAvtrProcedureAirwayRouter(object):
 
     @property
     def Router(self) -> str:
-        """The router used to provide avilable airways."""
+        """The router used to provide available airways."""
         with agmarshall.BSTR_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetRouter"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -40452,7 +40452,7 @@ __all__.append("AgAvtrAdvFixedWingScramjetBasic")
 
 
 class AgAvtrAircraftVTOLModel(IAgAvtrAircraftVTOLModel):
-    """Class defining the VTOL perforamnce model of an aircraft."""
+    """Class defining the VTOL performance model of an aircraft."""
     def __init__(self, sourceObject=None):
         IAgAvtrAircraftVTOLModel.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -40499,7 +40499,7 @@ __all__.append("AgAvtrAircraftVTOL")
 
 
 class AgAvtrAircraftTerrainFollowModel(IAgAvtrAircraftTerrainFollowModel):
-    """Class defining the TerrainFollow perforamnce model of an aircraft."""
+    """Class defining the TerrainFollow performance model of an aircraft."""
     def __init__(self, sourceObject=None):
         IAgAvtrAircraftTerrainFollowModel.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):

@@ -59,15 +59,15 @@ __all__.append("AgEGatorPluginErrorCodes")
 
 class AgESearchPluginErrorCodes(IntEnum):
     """Enumeration of AgSearchPlugin General Error Codes."""
-    # Seach Plugin: Operand Error.
+    # Search Plugin: Operand Error.
     eSearchPluginErrorCodesOperandError = (((1 << 31) | (4 << 16)) | 0x108),
-    # Seach Plugin: Profile Failure.
+    # Search Plugin: Profile Failure.
     eSearchPluginErrorCodesOperandProfileFailure = (((1 << 31) | (4 << 16)) | 0x109),
     # Search Plugin: GUI Data Failure.
     eSearchPluginErrorCodesGUIDataFailure = (((1 << 31) | (4 << 16)) | 0x110),
-    # Seach Plugin: Operand Stopped.
+    # Search Plugin: Operand Stopped.
     eSearchPluginErrorCodesOperandStopped = (((1 << 31) | (4 << 16)) | 0x111),
-    # Seach Plugin: Operand Canceled.
+    # Search Plugin: Operand Canceled.
     eSearchPluginErrorCodesOperandCanceled = (((1 << 31) | (4 << 16)) | 0x112)
 
 agcls.AgTypeNameMap["AgESearchPluginErrorCodes"] = AgESearchPluginErrorCodes

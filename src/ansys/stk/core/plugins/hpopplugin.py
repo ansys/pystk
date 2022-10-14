@@ -111,7 +111,7 @@ __all__.append("AgEAsHpopPluginEventIndicators")
 
 class AgEAccelType(IntEnum):
     """Enumeration of contributions to the total force model acceleration"""
-    # Total accleration.
+    # Total acceleration.
     eTotalAccel = 0,
     # Two body contribution.
     eTwoBodyAccel = 1,
@@ -599,7 +599,7 @@ class AgEAsDensityModelErrorCodes(IntEnum):
     eDensityModelPluginInputNotReal = (((1 << 31) | (4 << 16)) | 0x107),
     # DensityModel Plugin: Not using a flux file.
     eDensityModelPluginNotUsingFluxFile = (((1 << 31) | (4 << 16)) | 0x108),
-    # DensityModel Plugin: Data file or some indicies null.
+    # DensityModel Plugin: Data file or some indices null.
     eDensityModelPluginNullData = (((1 << 31) | (4 << 16)) | 0x109),
     # DensityModel Plugin: The parameter cannot be found.
     eDensityModelPluginParameterNotFound = (((1 << 31) | (4 << 16)) | 0x10A)

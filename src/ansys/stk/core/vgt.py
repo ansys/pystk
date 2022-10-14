@@ -70,7 +70,7 @@ class AgECrdnCalcScalarType(IntEnum):
     eCrdnCalcScalarTypeSurfaceDistanceBetweenPoints = 13,
     # Scalar equal to the dot product between two vectors.
     eCrdnCalcScalarTypeDotProduct = 14,
-    # Scalar equal to the specified component of a vector when resolved in the specifed axes.
+    # Scalar equal to the specified component of a vector when resolved in the specified axes.
     eCrdnCalcScalarTypeVectorComponent = 15
 
 agcls.AgTypeNameMap["AgECrdnCalcScalarType"] = AgECrdnCalcScalarType
@@ -466,7 +466,7 @@ class AgECrdnSignalPathReferenceSystem(IntEnum):
     eCrdnSignalPathReferenceSystemUseAccessDefault = -1,
     # Use central body inertial system
     eCrdnSignalPathReferenceSystemCentralBodyInertial = 0,
-    # Use solar sysyem barycenter system
+    # Use solar system barycenter system
     eCrdnSignalPathReferenceSystemSolarSystemBarycenter = 1,
     # User will specify a system
     eCrdnSignalPathReferenceSystemCustom = 2
@@ -7911,7 +7911,7 @@ class IAgCrdnEventArrayFactory(object):
             return arg_pRetVal.python_val
 
     def CreateEventArrayFixedTimes(self, name:str, description:str) -> "IAgCrdnEventArray":
-        """Create an event array using specfied times."""
+        """Create an event array using specified times."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -15408,7 +15408,7 @@ class IAgCrdnVolumeCombined(object):
 
     @property
     def ConditionCount(self) -> int:
-        """Returns the spatial condition vectore size."""
+        """Returns the spatial condition vector size."""
         with agmarshall.INT_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetConditionCount"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -15425,20 +15425,20 @@ class IAgCrdnVolumeCombined(object):
             agcls.evaluate_hresult(self.__dict__["_SetAllConditions"](byref(arg_conditions.COM_val)))
 
     def SetCondition(self, ref:"IAgCrdnVolume", pos:int) -> None:
-        """Set spatial conditions at a postion."""
+        """Set spatial conditions at a position."""
         with agmarshall.AgInterface_in_arg(ref, IAgCrdnVolume) as arg_ref, \
              agmarshall.INT_arg(pos) as arg_pos:
             agcls.evaluate_hresult(self.__dict__["_SetCondition"](arg_ref.COM_val, arg_pos.COM_val))
 
     def GetCondition(self, pos:int) -> "IAgCrdnVolume":
-        """Get spatial conditions at a postion."""
+        """Get spatial conditions at a position."""
         with agmarshall.INT_arg(pos) as arg_pos, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetCondition"](arg_pos.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def RemoveCondition(self, pos:int) -> None:
-        """Remove spatial conditions at a postion."""
+        """Remove spatial conditions at a position."""
         with agmarshall.INT_arg(pos) as arg_pos:
             agcls.evaluate_hresult(self.__dict__["_RemoveCondition"](arg_pos.COM_val))
 
@@ -16237,7 +16237,7 @@ class IAgCrdnVolumeGridLatLonAlt(object):
 
     @property
     def LatitudeCoordinates(self) -> "IAgCrdnGridCoordinateDefinition":
-        """Returns latitute Coordinates parameters for the Theta system."""
+        """Returns latitude Coordinates parameters for the Theta system."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetLatitudeCoordinates"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -16274,7 +16274,7 @@ agcls.AgTypeNameMap["IAgCrdnVolumeGridLatLonAlt"] = IAgCrdnVolumeGridLatLonAlt
 __all__.append("IAgCrdnVolumeGridLatLonAlt")
 
 class IAgCrdnVolumeGridResult(object):
-    """An interafcce that genereates Volume Grid results."""
+    """An interface that generates Volume Grid results."""
     _uuid = "{1C3B106C-011E-4C51-B321-20389C8EAF76}"
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -22008,7 +22008,7 @@ class IAgCrdnVectorEccentricity(object):
 
     @property
     def ReferencePoint(self) -> "IAgCrdnPointRefTo":
-        """Eliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
+        """Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetReferencePoint"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -22186,7 +22186,7 @@ class IAgCrdnVectorOrbitAngularMomentum(object):
 
     @property
     def ReferencePoint(self) -> "IAgCrdnPointRefTo":
-        """Eliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
+        """Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetReferencePoint"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -22256,7 +22256,7 @@ class IAgCrdnVectorOrbitNormal(object):
 
     @property
     def ReferencePoint(self) -> "IAgCrdnPointRefTo":
-        """Eliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
+        """Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetReferencePoint"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -22326,7 +22326,7 @@ class IAgCrdnVectorPeriapsis(object):
 
     @property
     def ReferencePoint(self) -> "IAgCrdnPointRefTo":
-        """Eliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
+        """Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetReferencePoint"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -31348,7 +31348,7 @@ __all__.append("AgCrdnVolumeGridLatLonAlt")
 
 
 class AgCrdnVolumeGridResult(IAgCrdnVolumeGridResult):
-    """An interafcce that genereates Volume Grid results."""
+    """An interface that generates Volume Grid results."""
     def __init__(self, sourceObject=None):
         IAgCrdnVolumeGridResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):

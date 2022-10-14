@@ -42,7 +42,7 @@ class AgEUtTimeScale(IntEnum):
     eUtTimeScaleUTC = 0,
     # TAI time scale (atomic time).
     eUtTimeScaleTAI = 1,
-    # TDT time scale (terrestial dynamical time).
+    # TDT time scale (terrestrial dynamical time).
     eUtTimeScaleTDT = 2,
     # UT1 time scale (universal time, corrected for polar motion. Related to the mean diurnal motion of the Sun.).
     eUtTimeScaleUT1 = 3,

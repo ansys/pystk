@@ -2946,14 +2946,14 @@ class IAgCrdnAxesPluginResultEval(object):
             agcls.evaluate_hresult(self.__dict__["_SetDCM"](arg_xx.COM_val, arg_xy.COM_val, arg_xz.COM_val, arg_yx.COM_val, arg_yy.COM_val, arg_yz.COM_val, arg_zx.COM_val, arg_zy.COM_val, arg_zz.COM_val))
 
     def SetAngularVelocity(self, wx:float, wy:float, wz:float) -> None:
-        """Set the angular velocity in rad/sec. The components are to be specifed with respect to this Axes object."""
+        """Set the angular velocity in rad/sec. The components are to be specified with respect to this Axes object."""
         with agmarshall.DOUBLE_arg(wx) as arg_wx, \
              agmarshall.DOUBLE_arg(wy) as arg_wy, \
              agmarshall.DOUBLE_arg(wz) as arg_wz:
             agcls.evaluate_hresult(self.__dict__["_SetAngularVelocity"](arg_wx.COM_val, arg_wy.COM_val, arg_wz.COM_val))
 
     def SetAngularVelocityUsingRefAxes(self, wx:float, wy:float, wz:float) -> None:
-        """Set the angular velocity in rad/sec. The components are to be specifed with respect to the RefAxes."""
+        """Set the angular velocity in rad/sec. The components are to be specified with respect to the RefAxes."""
         with agmarshall.DOUBLE_arg(wx) as arg_wx, \
              agmarshall.DOUBLE_arg(wy) as arg_wy, \
              agmarshall.DOUBLE_arg(wz) as arg_wz:
