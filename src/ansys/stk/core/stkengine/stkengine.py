@@ -7,24 +7,24 @@ __all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
 import os
 from ctypes import byref
 from enum import IntEnum
-from agi.stk12.internal.timerutil import *
+from ..internal.timerutil import *
 
 if os.name != "nt":
     from ctypes                       import CFUNCTYPE, cdll
     from ctypes.util                  import find_library
 
-from agi.stk12.internal.comutil            import CLSCTX_INPROC_SERVER, COINIT_APARTMENTTHREADED, GUID
-from agi.stk12.internal.comutil            import CLSIDFromString, CoCreateInstance, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
-from agi.stk12.internal.eventutil          import EventSubscriptionManager
-from agi.stk12.internal.stkxinitialization import *
-from agi.stk12.utilities.exceptions        import *
-from agi.stk12.graphics                    import *
-from agi.stk12.stkobjects                  import *
-from agi.stk12.stkobjects.astrogator       import *
-from agi.stk12.stkobjects.aviator          import *
-from agi.stk12.stkutil                     import *
-from agi.stk12.stkx                        import *
-from agi.stk12.vgt                         import *
+from ..internal.comutil            import CLSCTX_INPROC_SERVER, COINIT_APARTMENTTHREADED, GUID
+from ..internal.comutil            import CLSIDFromString, CoCreateInstance, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
+from ..internal.eventutil          import EventSubscriptionManager
+from ..internal.stkxinitialization import *
+from ..utilities.exceptions        import *
+from ..graphics                    import *
+from ..stkobjects                  import *
+from ..stkobjects.astrogator       import *
+from ..stkobjects.aviator          import *
+from ..stkutil                     import *
+from ..stkx                        import *
+from ..vgt                         import *
 
 class STKEngineTimerType(IntEnum):
     DisableTimers     = 1

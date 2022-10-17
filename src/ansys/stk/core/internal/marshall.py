@@ -7,12 +7,12 @@ from ctypes   import byref, cast, pointer, POINTER
 from datetime import datetime, timedelta
 from math     import floor, ceil
 
-import agi.stk12.internal.comutil     as agcom
-import agi.stk12.internal.coclassutil as agcoclass
-import agi.stk12.utilities.colors     as agcolor
-import agi.stk12.utilities.comobject  as agcomobj
+from .           import comutil     as agcom
+from .           import coclassutil as agcoclass
+from ..utilities import colors      as agcolor
+from ..utilities import comobject   as agcomobj
 
-from agi.stk12.utilities.exceptions import *
+from ..utilities.exceptions import *
 
 ###############################################################################
 #   Marshalling DATE

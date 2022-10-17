@@ -8,9 +8,9 @@ import os
 from tkinter                    import Frame
 from ctypes                     import *
 
-from agi.stk12.stkx             import IAgUiAxVOCntrl, IAgUiAx2DCntrl, IAgUiAxGfxAnalysisCntrl
-from agi.stk12.internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL
-from agi.stk12.stkengine        import *
+from ..stkx             import IAgUiAxVOCntrl, IAgUiAx2DCntrl, IAgUiAxGfxAnalysisCntrl
+from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL
+from ..stkengine        import *
 
 if os.name != "nt":
     from ctypes import CFUNCTYPE

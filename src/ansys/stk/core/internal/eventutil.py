@@ -15,10 +15,10 @@ import os
 import typing
 from ctypes import CFUNCTYPE, POINTER, c_void_p, cast, addressof, sizeof, Structure
 
-import agi.stk12.internal.marshall     as agmarshall
-import agi.stk12.internal.coclassutil  as agcls
-from   agi.stk12.internal.comutil      import *
-from   agi.stk12.utilities.exceptions  import *
+from .                       import marshall     as agmarshall
+from .                       import coclassutil  as agcls
+from .comutil                import *
+from ..utilities.exceptions  import *
 
 invalid_use_exception = STKEventsAPIError("Use operator += to register an event callback or operator -= to unregister the callback.")
 

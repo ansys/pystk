@@ -10,7 +10,7 @@ from enum import Enum
 from ctypes import CFUNCTYPE, cdll, c_size_t, c_int, c_void_p
 from ctypes.util import find_library
 
-from agi.stk12.utilities.exceptions import *
+from ..utilities.exceptions import *
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
 INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)
