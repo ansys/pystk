@@ -5,10 +5,10 @@ import typing
 
 from ctypes import byref, cast, pointer, POINTER, Structure
 
-from agi.stk12.internal.comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, LPVOID, PVOID, ULONG, S_OK
-from agi.stk12.internal.comutil import CLSIDFromString, CoTaskMemFree, IAGFUNCTYPE, IUnknown, GetErrorInfo, ole32lib, Succeeded, StringFromCLSID, SysFreeString, WINFUNCTYPE
-from agi.stk12.utilities.comobject  import COMObject
-from agi.stk12.utilities.exceptions import *
+from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, LPVOID, PVOID, ULONG, S_OK
+from .comutil import CLSIDFromString, CoTaskMemFree, IAGFUNCTYPE, IUnknown, GetErrorInfo, ole32lib, Succeeded, StringFromCLSID, SysFreeString, WINFUNCTYPE
+from ..utilities.comobject  import COMObject
+from ..utilities.exceptions import *
 
 ###############################################################################
 #   Class Catalog

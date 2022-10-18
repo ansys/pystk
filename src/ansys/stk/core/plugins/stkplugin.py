@@ -20,20 +20,20 @@ try:
 except ModuleNotFoundError:
     pass
 
-import agi.stk12.internal.comutil          as agcom
-import agi.stk12.internal.coclassutil      as agcls
-import agi.stk12.internal.marshall         as agmarshall
-import agi.stk12.internal.dataanalysisutil as agdata
-import agi.stk12.utilities.colors          as agcolor
-from   agi.stk12.internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTYPE, IEnumVARIANT
-from   agi.stk12.internal.eventutil   import *
-from   agi.stk12.utilities.exceptions import *
+from ..internal  import comutil          as agcom
+from ..internal  import coclassutil      as agcls
+from ..internal  import marshall         as agmarshall
+from ..internal  import dataanalysisutil as agdata
+from ..utilities import colors           as agcolor
+from ..internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTYPE, IEnumVARIANT
+from ..internal.eventutil   import *
+from ..utilities.exceptions import *
 
 
-from agi.stk12.plugins.attrautomation import *
-from agi.stk12.plugins.utplugin import *
-from agi.stk12.plugins.crdnplugin import *
-from agi.stk12.plugins.gatorplugin import *
+from ..plugins.attrautomation import *
+from ..plugins.utplugin import *
+from ..plugins.crdnplugin import *
+from ..plugins.gatorplugin import *
 
 
 def _raise_uninitialized_error(*args):
