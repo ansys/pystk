@@ -6,7 +6,7 @@ Color is the color object type and Colors is the factory for creating Color obje
 
 import typing
 
-from agi.stk12.utilities.exceptions import STKColorError
+from .exceptions import STKColorError
 
 class Color(object):
     """An opaque color representation that can be used with the STK Object Model."""

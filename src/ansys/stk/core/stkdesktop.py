@@ -10,18 +10,18 @@ from ctypes import byref
 if os.name !="nt":
     raise RuntimeError("STKDesktop is only available on Windows.  Use STKEngine.")
     
-from agi.stk12.internal.comutil       import *
-from agi.stk12.internal.coclassutil   import attach_to_stk_by_pid
-from agi.stk12.internal.eventutil     import EventSubscriptionManager
-from agi.stk12.utilities.exceptions   import *
-from agi.stk12.graphics               import *
-from agi.stk12.stkobjects             import *
-from agi.stk12.stkobjects.astrogator  import *
-from agi.stk12.stkobjects.aviator     import *
-from agi.stk12.stkutil                import *
-from agi.stk12.uiapplication          import *
-from agi.stk12.uicore                 import *
-from agi.stk12.vgt                    import *
+from .internal.comutil       import *
+from .internal.coclassutil   import attach_to_stk_by_pid
+from .internal.eventutil     import EventSubscriptionManager
+from .utilities.exceptions   import *
+from .graphics               import *
+from .stkobjects             import *
+from .stkobjects.astrogator  import *
+from .stkobjects.aviator     import *
+from .stkutil                import *
+from .uiapplication          import *
+from .uicore                 import *
+from .vgt                    import *
 
 class ThreadMarshaller(object):
     _iid_IUnknown = GUID(IUnknown._guid)
