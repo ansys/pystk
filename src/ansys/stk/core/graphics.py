@@ -2,7 +2,143 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgEStkGraphicsAntiAliasing", "AgEStkGraphicsBinaryLogicOperation", "AgEStkGraphicsBlurMethod", "AgEStkGraphicsCameraSnapshotFileFormat", 
+"AgEStkGraphicsCameraVideoFormat", "AgEStkGraphicsConstrainedUpAxis", "AgEStkGraphicsCullFace", "AgEStkGraphicsCylinderFill", 
+"AgEStkGraphicsEdgeDetectMethod", "AgEStkGraphicsFlipAxis", "AgEStkGraphicsFontStyle", "AgEStkGraphicsGlobeOverlayRole", 
+"AgEStkGraphicsGradientDetectMethod", "AgEStkGraphicsIndicesOrderHint", "AgEStkGraphicsInternalTextureFormat", "AgEStkGraphicsJpeg2000CompressionProfile", 
+"AgEStkGraphicsKmlNetworkLinkRefreshMode", "AgEStkGraphicsKmlNetworkLinkViewRefreshMode", "AgEStkGraphicsMagnificationFilter", 
+"AgEStkGraphicsMaintainAspectRatio", "AgEStkGraphicsMapProjection", "AgEStkGraphicsMarkerBatchRenderPass", "AgEStkGraphicsMarkerBatchRenderingMethod", 
+"AgEStkGraphicsMarkerBatchSizeSource", "AgEStkGraphicsMarkerBatchSortOrder", "AgEStkGraphicsMarkerBatchUnit", "AgEStkGraphicsMinificationFilter", 
+"AgEStkGraphicsModelTransformationType", "AgEStkGraphicsModelUpAxis", "AgEStkGraphicsOrigin", "AgEStkGraphicsOutlineAppearance", 
+"AgEStkGraphicsPathPrimitiveRemoveLocation", "AgEStkGraphicsPolylineType", "AgEStkGraphicsPrimitivesSortOrder", "AgEStkGraphicsRasterBand", 
+"AgEStkGraphicsRasterFormat", "AgEStkGraphicsRasterOrientation", "AgEStkGraphicsRasterType", "AgEStkGraphicsRefreshRate", 
+"AgEStkGraphicsRenderPass", "AgEStkGraphicsRenderPassHint", "AgEStkGraphicsRendererShadeModel", "AgEStkGraphicsScreenOverlayOrigin", 
+"AgEStkGraphicsScreenOverlayPinningOrigin", "AgEStkGraphicsScreenOverlayUnit", "AgEStkGraphicsSetHint", "AgEStkGraphicsSharpenMethod", 
+"AgEStkGraphicsStereoProjectionMode", "AgEStkGraphicsStereoscopicDisplayMode", "AgEStkGraphicsSurfaceMeshRenderingMethod", 
+"AgEStkGraphicsTextureWrap", "AgEStkGraphicsVideoPlayback", "AgEStkGraphicsVisibility", "AgEStkGraphicsWindingOrder", "AgStkGraphicsAGICustomTerrainOverlay", 
+"AgStkGraphicsAGICustomTerrainOverlayFactory", "AgStkGraphicsAGIProcessedImageGlobeOverlay", "AgStkGraphicsAGIProcessedImageGlobeOverlayFactory", 
+"AgStkGraphicsAGIProcessedTerrainOverlay", "AgStkGraphicsAGIProcessedTerrainOverlayFactory", "AgStkGraphicsAGIRoamImageGlobeOverlay", 
+"AgStkGraphicsAGIRoamImageGlobeOverlayFactory", "AgStkGraphicsAlphaFromLuminanceFilter", "AgStkGraphicsAlphaFromLuminanceFilterFactory", 
+"AgStkGraphicsAlphaFromPixelFilter", "AgStkGraphicsAlphaFromPixelFilterFactory", "AgStkGraphicsAlphaFromRasterFilter", "AgStkGraphicsAlphaFromRasterFilterFactory", 
+"AgStkGraphicsAltitudeDisplayCondition", "AgStkGraphicsAltitudeDisplayConditionFactory", "AgStkGraphicsAxesPrimitive", "AgStkGraphicsAxesPrimitiveFactory", 
+"AgStkGraphicsBandExtractFilter", "AgStkGraphicsBandExtractFilterFactory", "AgStkGraphicsBandOrderFilter", "AgStkGraphicsBandOrderFilterFactory", 
+"AgStkGraphicsBatchPrimitiveIndex", "AgStkGraphicsBlurFilter", "AgStkGraphicsBlurFilterFactory", "AgStkGraphicsBoundingSphere", 
+"AgStkGraphicsBoundingSphereFactory", "AgStkGraphicsBoxTriangulatorInitializer", "AgStkGraphicsBrightnessFilter", "AgStkGraphicsBrightnessFilterFactory", 
+"AgStkGraphicsCamera", "AgStkGraphicsCameraSnapshot", "AgStkGraphicsCameraVideoRecording", "AgStkGraphicsCentralBodyGraphics", 
+"AgStkGraphicsCentralBodyGraphicsIndexer", "AgStkGraphicsClouds", "AgStkGraphicsColorToLuminanceFilter", "AgStkGraphicsColorToLuminanceFilterFactory", 
+"AgStkGraphicsCompositeDisplayCondition", "AgStkGraphicsCompositeDisplayConditionFactory", "AgStkGraphicsCompositePrimitive", 
+"AgStkGraphicsCompositePrimitiveFactory", "AgStkGraphicsConstantDisplayCondition", "AgStkGraphicsConstantDisplayConditionFactory", 
+"AgStkGraphicsContrastFilter", "AgStkGraphicsContrastFilterFactory", "AgStkGraphicsConvolutionFilter", "AgStkGraphicsConvolutionFilterFactory", 
+"AgStkGraphicsCustomImageGlobeOverlay", "AgStkGraphicsCustomImageGlobeOverlayPluginActivator", "AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory", 
+"AgStkGraphicsCustomImageGlobeOverlayPluginProxy", "AgStkGraphicsCylinderTriangulatorInitializer", "AgStkGraphicsDisplayCondition", 
+"AgStkGraphicsDistanceDisplayCondition", "AgStkGraphicsDistanceDisplayConditionFactory", "AgStkGraphicsDistanceToGlobeOverlayDisplayCondition", 
+"AgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory", "AgStkGraphicsDistanceToPositionDisplayCondition", "AgStkGraphicsDistanceToPositionDisplayConditionFactory", 
+"AgStkGraphicsDistanceToPrimitiveDisplayCondition", "AgStkGraphicsDistanceToPrimitiveDisplayConditionFactory", "AgStkGraphicsDurationPathPrimitiveUpdatePolicy", 
+"AgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory", "AgStkGraphicsEdgeDetectFilter", "AgStkGraphicsEdgeDetectFilterFactory", 
+"AgStkGraphicsEllipsoidTriangulatorInitializer", "AgStkGraphicsExtrudedPolylineTriangulatorInitializer", "AgStkGraphicsExtrudedPolylineTriangulatorResult", 
+"AgStkGraphicsFactoryAndInitializers", "AgStkGraphicsFilteringRasterStream", "AgStkGraphicsFilteringRasterStreamFactory", 
+"AgStkGraphicsFlipFilter", "AgStkGraphicsFlipFilterFactory", "AgStkGraphicsFrameRate", "AgStkGraphicsGammaCorrectionFilter", 
+"AgStkGraphicsGammaCorrectionFilterFactory", "AgStkGraphicsGaussianBlurFilter", "AgStkGraphicsGaussianBlurFilterFactory", 
+"AgStkGraphicsGeospatialImageGlobeOverlay", "AgStkGraphicsGeospatialImageGlobeOverlayFactory", "AgStkGraphicsGlobeImageOverlay", 
+"AgStkGraphicsGlobeImageOverlayAddCompleteEventArgs", "AgStkGraphicsGlobeImageOverlayInitializer", "AgStkGraphicsGlobeOverlay", 
+"AgStkGraphicsGlobeOverlaySettings", "AgStkGraphicsGradientDetectFilter", "AgStkGraphicsGradientDetectFilterFactory", "AgStkGraphicsGraphicsFont", 
+"AgStkGraphicsGraphicsFontFactory", "AgStkGraphicsGreatArcInterpolator", "AgStkGraphicsGreatArcInterpolatorFactory", "AgStkGraphicsImageCollection", 
+"AgStkGraphicsJpeg2000WriterInitializer", "AgStkGraphicsKmlContainer", "AgStkGraphicsKmlDocument", "AgStkGraphicsKmlDocumentCollection", 
+"AgStkGraphicsKmlDocumentLoadedEventArgs", "AgStkGraphicsKmlFeature", "AgStkGraphicsKmlFeatureCollection", "AgStkGraphicsKmlFolder", 
+"AgStkGraphicsKmlGraphics", "AgStkGraphicsKmlNetworkLink", "AgStkGraphicsLevelsFilter", "AgStkGraphicsLevelsFilterFactory", 
+"AgStkGraphicsLighting", "AgStkGraphicsMarkerBatchPrimitive", "AgStkGraphicsMarkerBatchPrimitiveFactory", "AgStkGraphicsMarkerBatchPrimitiveOptionalParameters", 
+"AgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory", "AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy", "AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory", 
+"AgStkGraphicsModelArticulation", "AgStkGraphicsModelArticulationCollection", "AgStkGraphicsModelPrimitive", "AgStkGraphicsModelPrimitiveFactory", 
+"AgStkGraphicsModelTransformation", "AgStkGraphicsObjectCollection", "AgStkGraphicsOverlay", "AgStkGraphicsPathPoint", "AgStkGraphicsPathPointCollection", 
+"AgStkGraphicsPathPointFactory", "AgStkGraphicsPathPrimitive", "AgStkGraphicsPathPrimitiveFactory", "AgStkGraphicsPathPrimitiveUpdatePolicy", 
+"AgStkGraphicsPickResult", "AgStkGraphicsPickResultCollection", "AgStkGraphicsPixelSizeDisplayCondition", "AgStkGraphicsPixelSizeDisplayConditionFactory", 
+"AgStkGraphicsPointBatchPrimitive", "AgStkGraphicsPointBatchPrimitiveFactory", "AgStkGraphicsPolylinePrimitive", "AgStkGraphicsPolylinePrimitiveFactory", 
+"AgStkGraphicsPolylinePrimitiveOptionalParameters", "AgStkGraphicsPolylinePrimitiveOptionalParametersFactory", "AgStkGraphicsPositionInterpolator", 
+"AgStkGraphicsPrimitive", "AgStkGraphicsPrimitiveManager", "AgStkGraphicsProjectedRasterOverlay", "AgStkGraphicsProjectedRasterOverlayFactory", 
+"AgStkGraphicsProjection", "AgStkGraphicsProjectionFactory", "AgStkGraphicsProjectionRasterStreamPluginActivator", "AgStkGraphicsProjectionRasterStreamPluginActivatorFactory", 
+"AgStkGraphicsProjectionRasterStreamPluginProxy", "AgStkGraphicsProjectionStream", "AgStkGraphicsRaster", "AgStkGraphicsRasterAttributes", 
+"AgStkGraphicsRasterAttributesFactory", "AgStkGraphicsRasterFactory", "AgStkGraphicsRasterFilter", "AgStkGraphicsRasterImageGlobeOverlay", 
+"AgStkGraphicsRasterImageGlobeOverlayFactory", "AgStkGraphicsRasterStream", "AgStkGraphicsRendererTexture2D", "AgStkGraphicsRendererTextureTemplate2D", 
+"AgStkGraphicsRenderingEventArgs", "AgStkGraphicsRhumbLineInterpolator", "AgStkGraphicsRhumbLineInterpolatorFactory", "AgStkGraphicsRotateFilter", 
+"AgStkGraphicsRotateFilterFactory", "AgStkGraphicsScene", "AgStkGraphicsSceneCollection", "AgStkGraphicsSceneDisplayCondition", 
+"AgStkGraphicsSceneDisplayConditionFactory", "AgStkGraphicsSceneGlobeOverlaySettings", "AgStkGraphicsSceneManager", "AgStkGraphicsSceneManagerInitializer", 
+"AgStkGraphicsScreenOverlay", "AgStkGraphicsScreenOverlayCollection", "AgStkGraphicsScreenOverlayCollectionBase", "AgStkGraphicsScreenOverlayFactory", 
+"AgStkGraphicsScreenOverlayManager", "AgStkGraphicsScreenOverlayPickResult", "AgStkGraphicsScreenOverlayPickResultCollection", 
+"AgStkGraphicsSequenceFilter", "AgStkGraphicsSequenceFilterFactory", "AgStkGraphicsSharpenFilter", "AgStkGraphicsSharpenFilterFactory", 
+"AgStkGraphicsSolidPrimitive", "AgStkGraphicsSolidPrimitiveFactory", "AgStkGraphicsSolidTriangulatorResult", "AgStkGraphicsStereoscopic", 
+"AgStkGraphicsSurfaceExtentTriangulatorInitializer", "AgStkGraphicsSurfaceMeshPrimitive", "AgStkGraphicsSurfaceMeshPrimitiveFactory", 
+"AgStkGraphicsSurfacePolygonTriangulatorInitializer", "AgStkGraphicsSurfaceShapesInitializer", "AgStkGraphicsSurfaceShapesResult", 
+"AgStkGraphicsSurfaceTriangulatorResult", "AgStkGraphicsTerrainCollection", "AgStkGraphicsTerrainOverlay", "AgStkGraphicsTerrainOverlayAddCompleteEventArgs", 
+"AgStkGraphicsTerrainOverlayInitializer", "AgStkGraphicsTextBatchPrimitive", "AgStkGraphicsTextBatchPrimitiveFactory", "AgStkGraphicsTextBatchPrimitiveOptionalParameters", 
+"AgStkGraphicsTextBatchPrimitiveOptionalParametersFactory", "AgStkGraphicsTextOverlay", "AgStkGraphicsTextOverlayFactory", 
+"AgStkGraphicsTexture2DFactory", "AgStkGraphicsTextureFilter2D", "AgStkGraphicsTextureFilter2DFactory", "AgStkGraphicsTextureMatrix", 
+"AgStkGraphicsTextureMatrixFactory", "AgStkGraphicsTextureScreenOverlay", "AgStkGraphicsTextureScreenOverlayFactory", "AgStkGraphicsTimeIntervalDisplayCondition", 
+"AgStkGraphicsTimeIntervalDisplayConditionFactory", "AgStkGraphicsTriangleMeshPrimitive", "AgStkGraphicsTriangleMeshPrimitiveFactory", 
+"AgStkGraphicsTriangleMeshPrimitiveOptionalParameters", "AgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory", "AgStkGraphicsTriangulatorResult", 
+"AgStkGraphicsVectorPrimitive", "AgStkGraphicsVectorPrimitiveFactory", "AgStkGraphicsVideoStream", "AgStkGraphicsVideoStreamFactory", 
+"AgStkGraphicsVisualEffects", "IAgStkGraphicsAGICustomTerrainOverlay", "IAgStkGraphicsAGICustomTerrainOverlayFactory", "IAgStkGraphicsAGIProcessedImageGlobeOverlay", 
+"IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory", "IAgStkGraphicsAGIProcessedTerrainOverlay", "IAgStkGraphicsAGIProcessedTerrainOverlayFactory", 
+"IAgStkGraphicsAGIRoamImageGlobeOverlay", "IAgStkGraphicsAGIRoamImageGlobeOverlayFactory", "IAgStkGraphicsAlphaFromLuminanceFilter", 
+"IAgStkGraphicsAlphaFromLuminanceFilterFactory", "IAgStkGraphicsAlphaFromPixelFilter", "IAgStkGraphicsAlphaFromPixelFilterFactory", 
+"IAgStkGraphicsAlphaFromRasterFilter", "IAgStkGraphicsAlphaFromRasterFilterFactory", "IAgStkGraphicsAltitudeDisplayCondition", 
+"IAgStkGraphicsAltitudeDisplayConditionFactory", "IAgStkGraphicsAxesPrimitive", "IAgStkGraphicsAxesPrimitiveFactory", "IAgStkGraphicsBandExtractFilter", 
+"IAgStkGraphicsBandExtractFilterFactory", "IAgStkGraphicsBandOrderFilter", "IAgStkGraphicsBandOrderFilterFactory", "IAgStkGraphicsBatchPrimitiveIndex", 
+"IAgStkGraphicsBlurFilter", "IAgStkGraphicsBlurFilterFactory", "IAgStkGraphicsBoundingSphere", "IAgStkGraphicsBoundingSphereFactory", 
+"IAgStkGraphicsBoxTriangulatorInitializer", "IAgStkGraphicsBrightnessFilter", "IAgStkGraphicsBrightnessFilterFactory", "IAgStkGraphicsCamera", 
+"IAgStkGraphicsCameraSnapshot", "IAgStkGraphicsCameraVideoRecording", "IAgStkGraphicsCentralBodyGraphics", "IAgStkGraphicsCentralBodyGraphicsIndexer", 
+"IAgStkGraphicsClouds", "IAgStkGraphicsColorToLuminanceFilter", "IAgStkGraphicsColorToLuminanceFilterFactory", "IAgStkGraphicsCompositeDisplayCondition", 
+"IAgStkGraphicsCompositeDisplayConditionFactory", "IAgStkGraphicsCompositePrimitive", "IAgStkGraphicsCompositePrimitiveFactory", 
+"IAgStkGraphicsConstantDisplayCondition", "IAgStkGraphicsConstantDisplayConditionFactory", "IAgStkGraphicsContrastFilter", 
+"IAgStkGraphicsContrastFilterFactory", "IAgStkGraphicsConvolutionFilter", "IAgStkGraphicsConvolutionFilterFactory", "IAgStkGraphicsCustomImageGlobeOverlay", 
+"IAgStkGraphicsCustomImageGlobeOverlayPluginActivator", "IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory", "IAgStkGraphicsCustomImageGlobeOverlayPluginProxy", 
+"IAgStkGraphicsCylinderTriangulatorInitializer", "IAgStkGraphicsDisplayCondition", "IAgStkGraphicsDistanceDisplayCondition", 
+"IAgStkGraphicsDistanceDisplayConditionFactory", "IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition", "IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory", 
+"IAgStkGraphicsDistanceToPositionDisplayCondition", "IAgStkGraphicsDistanceToPositionDisplayConditionFactory", "IAgStkGraphicsDistanceToPrimitiveDisplayCondition", 
+"IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory", "IAgStkGraphicsDurationPathPrimitiveUpdatePolicy", "IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory", 
+"IAgStkGraphicsEdgeDetectFilter", "IAgStkGraphicsEdgeDetectFilterFactory", "IAgStkGraphicsEllipsoidTriangulatorInitializer", 
+"IAgStkGraphicsExtrudedPolylineTriangulatorInitializer", "IAgStkGraphicsExtrudedPolylineTriangulatorResult", "IAgStkGraphicsFactoryAndInitializers", 
+"IAgStkGraphicsFilteringRasterStream", "IAgStkGraphicsFilteringRasterStreamFactory", "IAgStkGraphicsFlipFilter", "IAgStkGraphicsFlipFilterFactory", 
+"IAgStkGraphicsFrameRate", "IAgStkGraphicsGammaCorrectionFilter", "IAgStkGraphicsGammaCorrectionFilterFactory", "IAgStkGraphicsGaussianBlurFilter", 
+"IAgStkGraphicsGaussianBlurFilterFactory", "IAgStkGraphicsGeospatialImageGlobeOverlay", "IAgStkGraphicsGeospatialImageGlobeOverlayFactory", 
+"IAgStkGraphicsGlobeImageOverlay", "IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs", "IAgStkGraphicsGlobeImageOverlayInitializer", 
+"IAgStkGraphicsGlobeOverlay", "IAgStkGraphicsGlobeOverlaySettings", "IAgStkGraphicsGradientDetectFilter", "IAgStkGraphicsGradientDetectFilterFactory", 
+"IAgStkGraphicsGraphicsFont", "IAgStkGraphicsGraphicsFontFactory", "IAgStkGraphicsGreatArcInterpolator", "IAgStkGraphicsGreatArcInterpolatorFactory", 
+"IAgStkGraphicsImageCollection", "IAgStkGraphicsJpeg2000WriterInitializer", "IAgStkGraphicsKmlContainer", "IAgStkGraphicsKmlDocument", 
+"IAgStkGraphicsKmlDocumentCollection", "IAgStkGraphicsKmlDocumentLoadedEventArgs", "IAgStkGraphicsKmlFeature", "IAgStkGraphicsKmlFeatureCollection", 
+"IAgStkGraphicsKmlFolder", "IAgStkGraphicsKmlGraphics", "IAgStkGraphicsKmlNetworkLink", "IAgStkGraphicsLevelsFilter", "IAgStkGraphicsLevelsFilterFactory", 
+"IAgStkGraphicsLighting", "IAgStkGraphicsMarkerBatchPrimitive", "IAgStkGraphicsMarkerBatchPrimitiveFactory", "IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters", 
+"IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory", "IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy", "IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory", 
+"IAgStkGraphicsModelArticulation", "IAgStkGraphicsModelArticulationCollection", "IAgStkGraphicsModelPrimitive", "IAgStkGraphicsModelPrimitiveFactory", 
+"IAgStkGraphicsModelTransformation", "IAgStkGraphicsObjectCollection", "IAgStkGraphicsOverlay", "IAgStkGraphicsPathPoint", 
+"IAgStkGraphicsPathPointCollection", "IAgStkGraphicsPathPointFactory", "IAgStkGraphicsPathPrimitive", "IAgStkGraphicsPathPrimitiveFactory", 
+"IAgStkGraphicsPathPrimitiveUpdatePolicy", "IAgStkGraphicsPickResult", "IAgStkGraphicsPickResultCollection", "IAgStkGraphicsPixelSizeDisplayCondition", 
+"IAgStkGraphicsPixelSizeDisplayConditionFactory", "IAgStkGraphicsPointBatchPrimitive", "IAgStkGraphicsPointBatchPrimitiveFactory", 
+"IAgStkGraphicsPolylinePrimitive", "IAgStkGraphicsPolylinePrimitiveFactory", "IAgStkGraphicsPolylinePrimitiveOptionalParameters", 
+"IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory", "IAgStkGraphicsPositionInterpolator", "IAgStkGraphicsPrimitive", 
+"IAgStkGraphicsPrimitiveManager", "IAgStkGraphicsProjectedRasterOverlay", "IAgStkGraphicsProjectedRasterOverlayFactory", 
+"IAgStkGraphicsProjection", "IAgStkGraphicsProjectionFactory", "IAgStkGraphicsProjectionRasterStreamPluginActivator", "IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory", 
+"IAgStkGraphicsProjectionRasterStreamPluginProxy", "IAgStkGraphicsProjectionStream", "IAgStkGraphicsRaster", "IAgStkGraphicsRasterAttributes", 
+"IAgStkGraphicsRasterAttributesFactory", "IAgStkGraphicsRasterFactory", "IAgStkGraphicsRasterFilter", "IAgStkGraphicsRasterImageGlobeOverlay", 
+"IAgStkGraphicsRasterImageGlobeOverlayFactory", "IAgStkGraphicsRasterStream", "IAgStkGraphicsRendererTexture2D", "IAgStkGraphicsRendererTextureTemplate2D", 
+"IAgStkGraphicsRenderingEventArgs", "IAgStkGraphicsRhumbLineInterpolator", "IAgStkGraphicsRhumbLineInterpolatorFactory", 
+"IAgStkGraphicsRotateFilter", "IAgStkGraphicsRotateFilterFactory", "IAgStkGraphicsScene", "IAgStkGraphicsSceneCollection", 
+"IAgStkGraphicsSceneDisplayCondition", "IAgStkGraphicsSceneDisplayConditionFactory", "IAgStkGraphicsSceneGlobeOverlaySettings", 
+"IAgStkGraphicsSceneManager", "IAgStkGraphicsSceneManagerInitializer", "IAgStkGraphicsScreenOverlay", "IAgStkGraphicsScreenOverlayCollection", 
+"IAgStkGraphicsScreenOverlayCollectionBase", "IAgStkGraphicsScreenOverlayContainer", "IAgStkGraphicsScreenOverlayFactory", 
+"IAgStkGraphicsScreenOverlayManager", "IAgStkGraphicsScreenOverlayPickResult", "IAgStkGraphicsScreenOverlayPickResultCollection", 
+"IAgStkGraphicsSequenceFilter", "IAgStkGraphicsSequenceFilterFactory", "IAgStkGraphicsSharpenFilter", "IAgStkGraphicsSharpenFilterFactory", 
+"IAgStkGraphicsSolidPrimitive", "IAgStkGraphicsSolidPrimitiveFactory", "IAgStkGraphicsSolidTriangulatorResult", "IAgStkGraphicsStereoscopic", 
+"IAgStkGraphicsSurfaceExtentTriangulatorInitializer", "IAgStkGraphicsSurfaceMeshPrimitive", "IAgStkGraphicsSurfaceMeshPrimitiveFactory", 
+"IAgStkGraphicsSurfacePolygonTriangulatorInitializer", "IAgStkGraphicsSurfaceShapesInitializer", "IAgStkGraphicsSurfaceShapesResult", 
+"IAgStkGraphicsSurfaceTriangulatorResult", "IAgStkGraphicsTerrainCollection", "IAgStkGraphicsTerrainOverlay", "IAgStkGraphicsTerrainOverlayAddCompleteEventArgs", 
+"IAgStkGraphicsTerrainOverlayInitializer", "IAgStkGraphicsTextBatchPrimitive", "IAgStkGraphicsTextBatchPrimitiveFactory", 
+"IAgStkGraphicsTextBatchPrimitiveOptionalParameters", "IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory", "IAgStkGraphicsTextOverlay", 
+"IAgStkGraphicsTextOverlayFactory", "IAgStkGraphicsTexture2DFactory", "IAgStkGraphicsTextureFilter2D", "IAgStkGraphicsTextureFilter2DFactory", 
+"IAgStkGraphicsTextureMatrix", "IAgStkGraphicsTextureMatrixFactory", "IAgStkGraphicsTextureScreenOverlay", "IAgStkGraphicsTextureScreenOverlayFactory", 
+"IAgStkGraphicsTimeIntervalDisplayCondition", "IAgStkGraphicsTimeIntervalDisplayConditionFactory", "IAgStkGraphicsTriangleMeshPrimitive", 
+"IAgStkGraphicsTriangleMeshPrimitiveFactory", "IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters", "IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory", 
+"IAgStkGraphicsTriangulatorResult", "IAgStkGraphicsVectorPrimitive", "IAgStkGraphicsVectorPrimitiveFactory", "IAgStkGraphicsVideoStream", 
+"IAgStkGraphicsVideoStreamFactory", "IAgStkGraphicsVisualEffects"]
 
 import typing
 
@@ -49,7 +185,6 @@ class AgEStkGraphicsCylinderFill(IntFlag):
     eStkGraphicsCylinderFillAll = 7
 
 agcls.AgTypeNameMap["AgEStkGraphicsCylinderFill"] = AgEStkGraphicsCylinderFill
-__all__.append("AgEStkGraphicsCylinderFill")
 
 class AgEStkGraphicsWindingOrder(IntEnum):
     """Specifies the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
@@ -61,7 +196,6 @@ class AgEStkGraphicsWindingOrder(IntEnum):
     eStkGraphicsWindingOrderCompute = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsWindingOrder"] = AgEStkGraphicsWindingOrder
-__all__.append("AgEStkGraphicsWindingOrder")
 
 class AgEStkGraphicsCameraSnapshotFileFormat(IntEnum):
     """When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format."""
@@ -75,7 +209,6 @@ class AgEStkGraphicsCameraSnapshotFileFormat(IntEnum):
     eStkGraphicsCameraSnapshotFileFormatPng = 4
 
 agcls.AgTypeNameMap["AgEStkGraphicsCameraSnapshotFileFormat"] = AgEStkGraphicsCameraSnapshotFileFormat
-__all__.append("AgEStkGraphicsCameraSnapshotFileFormat")
 
 class AgEStkGraphicsCameraVideoFormat(IntEnum):
     """When using camera video recording to record a video, this specifies the file format."""
@@ -85,7 +218,6 @@ class AgEStkGraphicsCameraVideoFormat(IntEnum):
     eStkGraphicsCameraVideoFormatWMV = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsCameraVideoFormat"] = AgEStkGraphicsCameraVideoFormat
-__all__.append("AgEStkGraphicsCameraVideoFormat")
 
 class AgEStkGraphicsConstrainedUpAxis(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
@@ -105,7 +237,6 @@ class AgEStkGraphicsConstrainedUpAxis(IntEnum):
     eStkGraphicsConstrainedUpAxisNone = 6
 
 agcls.AgTypeNameMap["AgEStkGraphicsConstrainedUpAxis"] = AgEStkGraphicsConstrainedUpAxis
-__all__.append("AgEStkGraphicsConstrainedUpAxis")
 
 class AgEStkGraphicsGlobeOverlayRole(IntEnum):
     """The role of a globe overlay."""
@@ -121,7 +252,6 @@ class AgEStkGraphicsGlobeOverlayRole(IntEnum):
     eStkGraphicsGlobeOverlayRoleNone = 5
 
 agcls.AgTypeNameMap["AgEStkGraphicsGlobeOverlayRole"] = AgEStkGraphicsGlobeOverlayRole
-__all__.append("AgEStkGraphicsGlobeOverlayRole")
 
 class AgEStkGraphicsIndicesOrderHint(IntEnum):
     """An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance."""
@@ -131,7 +261,6 @@ class AgEStkGraphicsIndicesOrderHint(IntEnum):
     eStkGraphicsIndicesOrderHintSortedAscending = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsIndicesOrderHint"] = AgEStkGraphicsIndicesOrderHint
-__all__.append("AgEStkGraphicsIndicesOrderHint")
 
 class AgEStkGraphicsMaintainAspectRatio(IntEnum):
     """Specifies whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
@@ -143,7 +272,6 @@ class AgEStkGraphicsMaintainAspectRatio(IntEnum):
     eStkGraphicsMaintainAspectRatioHeight = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsMaintainAspectRatio"] = AgEStkGraphicsMaintainAspectRatio
-__all__.append("AgEStkGraphicsMaintainAspectRatio")
 
 class AgEStkGraphicsMapProjection(IntEnum):
     """The projection of the pixel data returned from a custom image globe overlay."""
@@ -153,7 +281,6 @@ class AgEStkGraphicsMapProjection(IntEnum):
     eStkGraphicsMapProjectionEquidistantCylindrical = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsMapProjection"] = AgEStkGraphicsMapProjection
-__all__.append("AgEStkGraphicsMapProjection")
 
 class AgEStkGraphicsMarkerBatchRenderingMethod(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
@@ -167,7 +294,6 @@ class AgEStkGraphicsMarkerBatchRenderingMethod(IntEnum):
     eStkGraphicsMarkerBatchRenderingMethodFixedFunction = 3
 
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchRenderingMethod"] = AgEStkGraphicsMarkerBatchRenderingMethod
-__all__.append("AgEStkGraphicsMarkerBatchRenderingMethod")
 
 class AgEStkGraphicsMarkerBatchRenderPass(IntEnum):
     """The pass during which the marker batch is rendered."""
@@ -179,7 +305,6 @@ class AgEStkGraphicsMarkerBatchRenderPass(IntEnum):
     eStkGraphicsMarkerBatchRenderPassBasedOnTranslucency = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchRenderPass"] = AgEStkGraphicsMarkerBatchRenderPass
-__all__.append("AgEStkGraphicsMarkerBatchRenderPass")
 
 class AgEStkGraphicsMarkerBatchSizeSource(IntEnum):
     """Determines which marker batch property is used to size each marker in a marker batch."""
@@ -189,7 +314,6 @@ class AgEStkGraphicsMarkerBatchSizeSource(IntEnum):
     eStkGraphicsMarkerBatchSizeSourceUserDefined = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchSizeSource"] = AgEStkGraphicsMarkerBatchSizeSource
-__all__.append("AgEStkGraphicsMarkerBatchSizeSource")
 
 class AgEStkGraphicsMarkerBatchSortOrder(IntEnum):
     """The order in which markers in a marker batch are sorted before rendering."""
@@ -201,7 +325,6 @@ class AgEStkGraphicsMarkerBatchSortOrder(IntEnum):
     eStkGraphicsMarkerBatchSortOrderByTexture = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchSortOrder"] = AgEStkGraphicsMarkerBatchSortOrder
-__all__.append("AgEStkGraphicsMarkerBatchSortOrder")
 
 class AgEStkGraphicsMarkerBatchUnit(IntEnum):
     """The unit for marker sizes in a marker batch."""
@@ -211,7 +334,6 @@ class AgEStkGraphicsMarkerBatchUnit(IntEnum):
     eStkGraphicsMarkerBatchUnitMeters = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchUnit"] = AgEStkGraphicsMarkerBatchUnit
-__all__.append("AgEStkGraphicsMarkerBatchUnit")
 
 class AgEStkGraphicsModelTransformationType(IntEnum):
     """Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with."""
@@ -263,7 +385,6 @@ class AgEStkGraphicsModelTransformationType(IntEnum):
     eStkGraphicsModelTransformationTypeTranslateBlue = 22
 
 agcls.AgTypeNameMap["AgEStkGraphicsModelTransformationType"] = AgEStkGraphicsModelTransformationType
-__all__.append("AgEStkGraphicsModelTransformationType")
 
 class AgEStkGraphicsOrigin(IntEnum):
     """Vertical and horizontal origin."""
@@ -287,7 +408,6 @@ class AgEStkGraphicsOrigin(IntEnum):
     eStkGraphicsOriginTopRight = 8
 
 agcls.AgTypeNameMap["AgEStkGraphicsOrigin"] = AgEStkGraphicsOrigin
-__all__.append("AgEStkGraphicsOrigin")
 
 class AgEStkGraphicsPathPrimitiveRemoveLocation(IntEnum):
     """Represents the location of a point to be removed."""
@@ -297,7 +417,6 @@ class AgEStkGraphicsPathPrimitiveRemoveLocation(IntEnum):
     eStkGraphicsRemoveLocationBack = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsPathPrimitiveRemoveLocation"] = AgEStkGraphicsPathPrimitiveRemoveLocation
-__all__.append("AgEStkGraphicsPathPrimitiveRemoveLocation")
 
 class AgEStkGraphicsPrimitivesSortOrder(IntEnum):
     """The order in which primitives are sorted before rendering."""
@@ -307,7 +426,6 @@ class AgEStkGraphicsPrimitivesSortOrder(IntEnum):
     eStkGraphicsPrimitivesSortOrderBackToFront = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsPrimitivesSortOrder"] = AgEStkGraphicsPrimitivesSortOrder
-__all__.append("AgEStkGraphicsPrimitivesSortOrder")
 
 class AgEStkGraphicsRefreshRate(IntEnum):
     """The rate at which animation frames will occur."""
@@ -317,7 +435,6 @@ class AgEStkGraphicsRefreshRate(IntEnum):
     eStkGraphicsRefreshRateTargetedFramesPerSecond = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsRefreshRate"] = AgEStkGraphicsRefreshRate
-__all__.append("AgEStkGraphicsRefreshRate")
 
 class AgEStkGraphicsRenderPass(IntFlag):
     """Describes when a primitive will be rendered. Some primitives need to be rendered during or at a certain time. For example, translucent primitives need to be rendered after opaque primitives to allow proper blending..."""
@@ -335,7 +452,6 @@ class AgEStkGraphicsRenderPass(IntFlag):
     eStkGraphicsRenderPassTerrain = 32
 
 agcls.AgTypeNameMap["AgEStkGraphicsRenderPass"] = AgEStkGraphicsRenderPass
-__all__.append("AgEStkGraphicsRenderPass")
 
 class AgEStkGraphicsRenderPassHint(IntEnum):
     """An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used."""
@@ -347,7 +463,6 @@ class AgEStkGraphicsRenderPassHint(IntEnum):
     eStkGraphicsRenderPassHintUnknown = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsRenderPassHint"] = AgEStkGraphicsRenderPassHint
-__all__.append("AgEStkGraphicsRenderPassHint")
 
 class AgEStkGraphicsScreenOverlayOrigin(IntEnum):
     """Specifies the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned."""
@@ -371,7 +486,6 @@ class AgEStkGraphicsScreenOverlayOrigin(IntEnum):
     eStkGraphicsScreenOverlayOriginTopRight = 8
 
 agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayOrigin"] = AgEStkGraphicsScreenOverlayOrigin
-__all__.append("AgEStkGraphicsScreenOverlayOrigin")
 
 class AgEStkGraphicsScreenOverlayPinningOrigin(IntEnum):
     """Specifies the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system."""
@@ -397,7 +511,6 @@ class AgEStkGraphicsScreenOverlayPinningOrigin(IntEnum):
     eStkGraphicsScreenOverlayPinningOriginAutomatic = 9
 
 agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayPinningOrigin"] = AgEStkGraphicsScreenOverlayPinningOrigin
-__all__.append("AgEStkGraphicsScreenOverlayPinningOrigin")
 
 class AgEStkGraphicsScreenOverlayUnit(IntEnum):
     """A unit specifying how a screen overlay is sized and positioned relative to its parent."""
@@ -407,7 +520,6 @@ class AgEStkGraphicsScreenOverlayUnit(IntEnum):
     eStkGraphicsScreenOverlayUnitFraction = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayUnit"] = AgEStkGraphicsScreenOverlayUnit
-__all__.append("AgEStkGraphicsScreenOverlayUnit")
 
 class AgEStkGraphicsSurfaceMeshRenderingMethod(IntEnum):
     """Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
@@ -419,7 +531,6 @@ class AgEStkGraphicsSurfaceMeshRenderingMethod(IntEnum):
     eStkGraphicsSurfaceMeshRenderingMethodAutomatic = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsSurfaceMeshRenderingMethod"] = AgEStkGraphicsSurfaceMeshRenderingMethod
-__all__.append("AgEStkGraphicsSurfaceMeshRenderingMethod")
 
 class AgEStkGraphicsVisibility(IntEnum):
     """Result of a visibility test, such as testing if a sphere intersects a frustum."""
@@ -431,7 +542,6 @@ class AgEStkGraphicsVisibility(IntEnum):
     eStkGraphicsVisibilityAll = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsVisibility"] = AgEStkGraphicsVisibility
-__all__.append("AgEStkGraphicsVisibility")
 
 class AgEStkGraphicsAntiAliasing(IntEnum):
     """The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
@@ -453,7 +563,6 @@ class AgEStkGraphicsAntiAliasing(IntEnum):
     eStkGraphicsAntiAliasingSixtyFourX = 64
 
 agcls.AgTypeNameMap["AgEStkGraphicsAntiAliasing"] = AgEStkGraphicsAntiAliasing
-__all__.append("AgEStkGraphicsAntiAliasing")
 
 class AgEStkGraphicsBinaryLogicOperation(IntEnum):
     """Binary logic operations that can be used by composite display condition."""
@@ -463,7 +572,6 @@ class AgEStkGraphicsBinaryLogicOperation(IntEnum):
     eStkGraphicsBinaryLogicOperationOr = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsBinaryLogicOperation"] = AgEStkGraphicsBinaryLogicOperation
-__all__.append("AgEStkGraphicsBinaryLogicOperation")
 
 class AgEStkGraphicsBlurMethod(IntEnum):
     """The method used to blur or smooth a raster."""
@@ -473,7 +581,6 @@ class AgEStkGraphicsBlurMethod(IntEnum):
     eStkGraphicsBlurMethodBasic = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsBlurMethod"] = AgEStkGraphicsBlurMethod
-__all__.append("AgEStkGraphicsBlurMethod")
 
 class AgEStkGraphicsEdgeDetectMethod(IntEnum):
     """The method used to detect edges in a raster."""
@@ -495,7 +602,6 @@ class AgEStkGraphicsEdgeDetectMethod(IntEnum):
     eStkGraphicsEdgeDetectMethodSobelHorizontal = 7
 
 agcls.AgTypeNameMap["AgEStkGraphicsEdgeDetectMethod"] = AgEStkGraphicsEdgeDetectMethod
-__all__.append("AgEStkGraphicsEdgeDetectMethod")
 
 class AgEStkGraphicsFlipAxis(IntEnum):
     """The axis on which a raster will be flipped."""
@@ -505,7 +611,6 @@ class AgEStkGraphicsFlipAxis(IntEnum):
     eStkGraphicsFlipAxisVertical = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsFlipAxis"] = AgEStkGraphicsFlipAxis
-__all__.append("AgEStkGraphicsFlipAxis")
 
 class AgEStkGraphicsGradientDetectMethod(IntEnum):
     """The method used to detect gradients in a raster. Gradient detection is commonly referred to as embossing."""
@@ -527,7 +632,6 @@ class AgEStkGraphicsGradientDetectMethod(IntEnum):
     eStkGraphicsGradientDetectMethodSouthWest = 7
 
 agcls.AgTypeNameMap["AgEStkGraphicsGradientDetectMethod"] = AgEStkGraphicsGradientDetectMethod
-__all__.append("AgEStkGraphicsGradientDetectMethod")
 
 class AgEStkGraphicsJpeg2000CompressionProfile(IntEnum):
     """Defines the profile used when encoding a JPEG 2000 file."""
@@ -539,7 +643,6 @@ class AgEStkGraphicsJpeg2000CompressionProfile(IntEnum):
     eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_EPJE = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsJpeg2000CompressionProfile"] = AgEStkGraphicsJpeg2000CompressionProfile
-__all__.append("AgEStkGraphicsJpeg2000CompressionProfile")
 
 class AgEStkGraphicsRasterBand(IntEnum):
     """Common band types that may be contained within a raster dataset. Each band can be thought of as a set of values, which are most commonly associated with colors when the raster represents an image..."""
@@ -555,7 +658,6 @@ class AgEStkGraphicsRasterBand(IntEnum):
     eStkGraphicsRasterBandLuminance = 4
 
 agcls.AgTypeNameMap["AgEStkGraphicsRasterBand"] = AgEStkGraphicsRasterBand
-__all__.append("AgEStkGraphicsRasterBand")
 
 class AgEStkGraphicsRasterFormat(IntEnum):
     """Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format."""
@@ -581,7 +683,6 @@ class AgEStkGraphicsRasterFormat(IntEnum):
     eStkGraphicsRasterFormatLuminanceAlpha = 9
 
 agcls.AgTypeNameMap["AgEStkGraphicsRasterFormat"] = AgEStkGraphicsRasterFormat
-__all__.append("AgEStkGraphicsRasterFormat")
 
 class AgEStkGraphicsRasterOrientation(IntEnum):
     """The vertical orientation of the raster."""
@@ -591,7 +692,6 @@ class AgEStkGraphicsRasterOrientation(IntEnum):
     eStkGraphicsRasterOrientationBottomToTop = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsRasterOrientation"] = AgEStkGraphicsRasterOrientation
-__all__.append("AgEStkGraphicsRasterOrientation")
 
 class AgEStkGraphicsRasterType(IntEnum):
     """The type of data contained within each band of a raster dataset."""
@@ -613,7 +713,6 @@ class AgEStkGraphicsRasterType(IntEnum):
     eStkGraphicsRasterTypeDouble = 7
 
 agcls.AgTypeNameMap["AgEStkGraphicsRasterType"] = AgEStkGraphicsRasterType
-__all__.append("AgEStkGraphicsRasterType")
 
 class AgEStkGraphicsSharpenMethod(IntEnum):
     """The method used to sharpen a raster."""
@@ -623,7 +722,6 @@ class AgEStkGraphicsSharpenMethod(IntEnum):
     eStkGraphicsSharpenMethodBasic = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsSharpenMethod"] = AgEStkGraphicsSharpenMethod
-__all__.append("AgEStkGraphicsSharpenMethod")
 
 class AgEStkGraphicsVideoPlayback(IntEnum):
     """Specifies how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
@@ -633,7 +731,6 @@ class AgEStkGraphicsVideoPlayback(IntEnum):
     eStkGraphicsVideoPlaybackTimeInterval = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsVideoPlayback"] = AgEStkGraphicsVideoPlayback
-__all__.append("AgEStkGraphicsVideoPlayback")
 
 class AgEStkGraphicsKmlNetworkLinkRefreshMode(IntEnum):
     """Defines the options available for a KmlNetworkLink's RefreshMode property."""
@@ -645,7 +742,6 @@ class AgEStkGraphicsKmlNetworkLinkRefreshMode(IntEnum):
     eStkGraphicsKmlNetworkLinkRefreshModeOnExpire = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsKmlNetworkLinkRefreshMode"] = AgEStkGraphicsKmlNetworkLinkRefreshMode
-__all__.append("AgEStkGraphicsKmlNetworkLinkRefreshMode")
 
 class AgEStkGraphicsKmlNetworkLinkViewRefreshMode(IntEnum):
     """Defines the options available for a KmlNetworkLink's ViewRefreshMode property."""
@@ -659,7 +755,6 @@ class AgEStkGraphicsKmlNetworkLinkViewRefreshMode(IntEnum):
     eStkGraphicsKmlNetworkLinkViewRefreshModeOnRegion = 3
 
 agcls.AgTypeNameMap["AgEStkGraphicsKmlNetworkLinkViewRefreshMode"] = AgEStkGraphicsKmlNetworkLinkViewRefreshMode
-__all__.append("AgEStkGraphicsKmlNetworkLinkViewRefreshMode")
 
 class AgEStkGraphicsModelUpAxis(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
@@ -677,7 +772,6 @@ class AgEStkGraphicsModelUpAxis(IntEnum):
     eStkGraphicsModelUpAxisNegativeZ = 5
 
 agcls.AgTypeNameMap["AgEStkGraphicsModelUpAxis"] = AgEStkGraphicsModelUpAxis
-__all__.append("AgEStkGraphicsModelUpAxis")
 
 class AgEStkGraphicsOutlineAppearance(IntEnum):
     """Possible appearances of an outline. Front lines are lines on front facing geometry and back lines are lines on back facing geometry."""
@@ -689,7 +783,6 @@ class AgEStkGraphicsOutlineAppearance(IntEnum):
     eStkGraphicsStylizeBackLines = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsOutlineAppearance"] = AgEStkGraphicsOutlineAppearance
-__all__.append("AgEStkGraphicsOutlineAppearance")
 
 class AgEStkGraphicsPolylineType(IntEnum):
     """Describes how to interpret positions defining a polyline."""
@@ -701,7 +794,6 @@ class AgEStkGraphicsPolylineType(IntEnum):
     eStkGraphicsPolylineTypePoints = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsPolylineType"] = AgEStkGraphicsPolylineType
-__all__.append("AgEStkGraphicsPolylineType")
 
 class AgEStkGraphicsCullFace(IntEnum):
     """Identifies whether front- and/or back-facing triangles are culled."""
@@ -715,7 +807,6 @@ class AgEStkGraphicsCullFace(IntEnum):
     eStkGraphicsECullFaceNeither = 3
 
 agcls.AgTypeNameMap["AgEStkGraphicsCullFace"] = AgEStkGraphicsCullFace
-__all__.append("AgEStkGraphicsCullFace")
 
 class AgEStkGraphicsInternalTextureFormat(IntEnum):
     """The format of individual texels in a texture."""
@@ -793,7 +884,6 @@ class AgEStkGraphicsInternalTextureFormat(IntEnum):
     eStkGraphicsInternalTextureFormatLuminance32Alpha32F = 35
 
 agcls.AgTypeNameMap["AgEStkGraphicsInternalTextureFormat"] = AgEStkGraphicsInternalTextureFormat
-__all__.append("AgEStkGraphicsInternalTextureFormat")
 
 class AgEStkGraphicsMagnificationFilter(IntEnum):
     """The filter used when the pixel being textured maps to an area less than or equal to one texel."""
@@ -803,7 +893,6 @@ class AgEStkGraphicsMagnificationFilter(IntEnum):
     eStkGraphicsMagnificationFilterLinear = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsMagnificationFilter"] = AgEStkGraphicsMagnificationFilter
-__all__.append("AgEStkGraphicsMagnificationFilter")
 
 class AgEStkGraphicsMinificationFilter(IntEnum):
     """The filter used when the pixel being textured maps to an area greater than one texel."""
@@ -821,7 +910,6 @@ class AgEStkGraphicsMinificationFilter(IntEnum):
     eStkGraphicsMinificationFilterLinearMipMapLinear = 5
 
 agcls.AgTypeNameMap["AgEStkGraphicsMinificationFilter"] = AgEStkGraphicsMinificationFilter
-__all__.append("AgEStkGraphicsMinificationFilter")
 
 class AgEStkGraphicsRendererShadeModel(IntEnum):
     """Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors."""
@@ -831,7 +919,6 @@ class AgEStkGraphicsRendererShadeModel(IntEnum):
     eStkGraphicsRendererShadeModelGouraud = 1
 
 agcls.AgTypeNameMap["AgEStkGraphicsRendererShadeModel"] = AgEStkGraphicsRendererShadeModel
-__all__.append("AgEStkGraphicsRendererShadeModel")
 
 class AgEStkGraphicsTextureWrap(IntEnum):
     """Determine how to handle textures coordinates that fall outside of the range [0, 1]."""
@@ -847,7 +934,6 @@ class AgEStkGraphicsTextureWrap(IntEnum):
     eStkGraphicsTextureWrapRepeat = 4
 
 agcls.AgTypeNameMap["AgEStkGraphicsTextureWrap"] = AgEStkGraphicsTextureWrap
-__all__.append("AgEStkGraphicsTextureWrap")
 
 class AgEStkGraphicsSetHint(IntEnum):
     """An optimization hint optionally provided to primitives to enhance performance for static or dynamic primitives. See the Set Hint Performance Overview for selecting an appropriate value."""
@@ -859,7 +945,6 @@ class AgEStkGraphicsSetHint(IntEnum):
     eStkGraphicsSetHintFrequent = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsSetHint"] = AgEStkGraphicsSetHint
-__all__.append("AgEStkGraphicsSetHint")
 
 class AgEStkGraphicsStereoProjectionMode(IntEnum):
     """The stereoscopic projection mode used for the left and right eye scenes."""
@@ -871,7 +956,6 @@ class AgEStkGraphicsStereoProjectionMode(IntEnum):
     eStkGraphicsStereoProjectionAutomatic = 2
 
 agcls.AgTypeNameMap["AgEStkGraphicsStereoProjectionMode"] = AgEStkGraphicsStereoProjectionMode
-__all__.append("AgEStkGraphicsStereoProjectionMode")
 
 class AgEStkGraphicsStereoscopicDisplayMode(IntEnum):
     """The stereoscopic display mode. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
@@ -889,7 +973,6 @@ class AgEStkGraphicsStereoscopicDisplayMode(IntEnum):
     eStkGraphicsStereoscopicDisplayModeSideBySide = 5
 
 agcls.AgTypeNameMap["AgEStkGraphicsStereoscopicDisplayMode"] = AgEStkGraphicsStereoscopicDisplayMode
-__all__.append("AgEStkGraphicsStereoscopicDisplayMode")
 
 class AgEStkGraphicsFontStyle(IntEnum):
     """Font styles."""
@@ -905,7 +988,6 @@ class AgEStkGraphicsFontStyle(IntEnum):
     eStkGraphicsFontStyleStrikeout = 0x8
 
 agcls.AgTypeNameMap["AgEStkGraphicsFontStyle"] = AgEStkGraphicsFontStyle
-__all__.append("AgEStkGraphicsFontStyle")
 
 
 class IAgStkGraphicsPathPoint(object):
@@ -1040,7 +1122,6 @@ class IAgStkGraphicsPathPoint(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9107fca2-51b8-4347-9391-9ee6c6b792e3}", IAgStkGraphicsPathPoint)
 agcls.AgTypeNameMap["IAgStkGraphicsPathPoint"] = IAgStkGraphicsPathPoint
-__all__.append("IAgStkGraphicsPathPoint")
 
 class IAgStkGraphicsPathPointFactory(object):
     """Creates Path Primitive's path points."""
@@ -1126,7 +1207,6 @@ class IAgStkGraphicsPathPointFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{efb486c4-09f0-4918-b051-7776acd13f66}", IAgStkGraphicsPathPointFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsPathPointFactory"] = IAgStkGraphicsPathPointFactory
-__all__.append("IAgStkGraphicsPathPointFactory")
 
 class IAgStkGraphicsBoundingSphere(object):
     """A sphere that encapsulates an object."""
@@ -1180,7 +1260,6 @@ class IAgStkGraphicsBoundingSphere(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{68e2776e-6e9a-449a-8146-99e67cf8d16c}", IAgStkGraphicsBoundingSphere)
 agcls.AgTypeNameMap["IAgStkGraphicsBoundingSphere"] = IAgStkGraphicsBoundingSphere
-__all__.append("IAgStkGraphicsBoundingSphere")
 
 class IAgStkGraphicsBoundingSphereFactory(object):
     """Creates instances of the bounding sphere type."""
@@ -1235,7 +1314,6 @@ class IAgStkGraphicsBoundingSphereFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{fdde5510-3231-4c01-9c23-8485643e47ff}", IAgStkGraphicsBoundingSphereFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsBoundingSphereFactory"] = IAgStkGraphicsBoundingSphereFactory
-__all__.append("IAgStkGraphicsBoundingSphereFactory")
 
 class IAgStkGraphicsTextureFilter2D(object):
     """A texture filter."""
@@ -1343,7 +1421,6 @@ class IAgStkGraphicsTextureFilter2D(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{c71ed80c-abbc-4ce5-bf56-a21ea03c4593}", IAgStkGraphicsTextureFilter2D)
 agcls.AgTypeNameMap["IAgStkGraphicsTextureFilter2D"] = IAgStkGraphicsTextureFilter2D
-__all__.append("IAgStkGraphicsTextureFilter2D")
 
 class IAgStkGraphicsTextureFilter2DFactory(object):
     """Creates texture filters."""
@@ -1447,7 +1524,6 @@ class IAgStkGraphicsTextureFilter2DFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8e616d0f-4cf9-4dfd-b7fd-1295dd9131e5}", IAgStkGraphicsTextureFilter2DFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTextureFilter2DFactory"] = IAgStkGraphicsTextureFilter2DFactory
-__all__.append("IAgStkGraphicsTextureFilter2DFactory")
 
 class IAgStkGraphicsRendererTexture2D(object):
     """A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory."""
@@ -1492,7 +1568,6 @@ class IAgStkGraphicsRendererTexture2D(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b207af7e-f2b5-4b2f-89f6-1fc3721102b3}", IAgStkGraphicsRendererTexture2D)
 agcls.AgTypeNameMap["IAgStkGraphicsRendererTexture2D"] = IAgStkGraphicsRendererTexture2D
-__all__.append("IAgStkGraphicsRendererTexture2D")
 
 class IAgStkGraphicsRendererTextureTemplate2D(object):
     """Template object containing attributes required to create a 2D texture."""
@@ -1555,7 +1630,6 @@ class IAgStkGraphicsRendererTextureTemplate2D(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{46fbfc4c-29b8-49c7-beb7-77bc5d836f10}", IAgStkGraphicsRendererTextureTemplate2D)
 agcls.AgTypeNameMap["IAgStkGraphicsRendererTextureTemplate2D"] = IAgStkGraphicsRendererTextureTemplate2D
-__all__.append("IAgStkGraphicsRendererTextureTemplate2D")
 
 class IAgStkGraphicsPathPointCollection(object):
     """A collection of path points."""
@@ -1632,7 +1706,6 @@ class IAgStkGraphicsPathPointCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9214e199-6476-4ef1-a741-13362718bdd5}", IAgStkGraphicsPathPointCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsPathPointCollection"] = IAgStkGraphicsPathPointCollection
-__all__.append("IAgStkGraphicsPathPointCollection")
 
 class IAgStkGraphicsObjectCollection(object):
     """A collection of objects."""
@@ -1709,7 +1782,6 @@ class IAgStkGraphicsObjectCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{feb3a8c8-dc5b-4246-a8ec-1d6154b4cf68}", IAgStkGraphicsObjectCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsObjectCollection"] = IAgStkGraphicsObjectCollection
-__all__.append("IAgStkGraphicsObjectCollection")
 
 class IAgStkGraphicsSceneCollection(object):
     """A collection of scenes."""
@@ -1786,7 +1858,6 @@ class IAgStkGraphicsSceneCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{aac03f9e-8c23-4a8d-ad88-455deb232f0b}", IAgStkGraphicsSceneCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsSceneCollection"] = IAgStkGraphicsSceneCollection
-__all__.append("IAgStkGraphicsSceneCollection")
 
 class IAgStkGraphicsScreenOverlayContainer(object):
     """The interface for screen overlays that contain a collection of other overlays. This interface is implemented by ScreenOverlayManager and ScreenOverlay."""
@@ -1863,7 +1934,6 @@ class IAgStkGraphicsScreenOverlayContainer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5e57d9b7-f014-46d7-8b6d-b38d47e7ce41}", IAgStkGraphicsScreenOverlayContainer)
 agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayContainer"] = IAgStkGraphicsScreenOverlayContainer
-__all__.append("IAgStkGraphicsScreenOverlayContainer")
 
 class IAgStkGraphicsScreenOverlayPickResultCollection(object):
     """A collection of pick results."""
@@ -1940,7 +2010,6 @@ class IAgStkGraphicsScreenOverlayPickResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6c1f8d2c-1b38-482c-b935-b174003284bb}", IAgStkGraphicsScreenOverlayPickResultCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayPickResultCollection"] = IAgStkGraphicsScreenOverlayPickResultCollection
-__all__.append("IAgStkGraphicsScreenOverlayPickResultCollection")
 
 class IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs(object):
     """The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync."""
@@ -1985,7 +2054,6 @@ class IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{bbe097c9-d64c-4474-ba9a-fb47c76388ba}", IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs)
 agcls.AgTypeNameMap["IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs"] = IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs
-__all__.append("IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs")
 
 class IAgStkGraphicsTerrainOverlayAddCompleteEventArgs(object):
     """The event is raised when the terrain overlay is displayed for the first time after having been added using AddAsync."""
@@ -2030,7 +2098,6 @@ class IAgStkGraphicsTerrainOverlayAddCompleteEventArgs(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{76a70982-21b5-427f-9db1-c0b92950b516}", IAgStkGraphicsTerrainOverlayAddCompleteEventArgs)
 agcls.AgTypeNameMap["IAgStkGraphicsTerrainOverlayAddCompleteEventArgs"] = IAgStkGraphicsTerrainOverlayAddCompleteEventArgs
-__all__.append("IAgStkGraphicsTerrainOverlayAddCompleteEventArgs")
 
 class IAgStkGraphicsPickResultCollection(object):
     """A collection of picked objects."""
@@ -2107,7 +2174,6 @@ class IAgStkGraphicsPickResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2d29d5b1-b160-49ad-8f58-cef696bc952a}", IAgStkGraphicsPickResultCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsPickResultCollection"] = IAgStkGraphicsPickResultCollection
-__all__.append("IAgStkGraphicsPickResultCollection")
 
 class IAgStkGraphicsRenderingEventArgs(object):
     """The event is raised when the scene is rendered."""
@@ -2161,7 +2227,6 @@ class IAgStkGraphicsRenderingEventArgs(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7c1eea22-fad1-437e-9282-f9202cd103bd}", IAgStkGraphicsRenderingEventArgs)
 agcls.AgTypeNameMap["IAgStkGraphicsRenderingEventArgs"] = IAgStkGraphicsRenderingEventArgs
-__all__.append("IAgStkGraphicsRenderingEventArgs")
 
 class IAgStkGraphicsBatchPrimitiveIndex(object):
     """Represents an individual item index that is associated with a batch primitive. Provides the Index of the individual item and the Primitive that contains that index..."""
@@ -2215,7 +2280,6 @@ class IAgStkGraphicsBatchPrimitiveIndex(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{15dae589-33b5-4629-a50f-485a49546ddf}", IAgStkGraphicsBatchPrimitiveIndex)
 agcls.AgTypeNameMap["IAgStkGraphicsBatchPrimitiveIndex"] = IAgStkGraphicsBatchPrimitiveIndex
-__all__.append("IAgStkGraphicsBatchPrimitiveIndex")
 
 class IAgStkGraphicsKmlDocumentCollection(object):
     """A collection of KML documents."""
@@ -2292,7 +2356,6 @@ class IAgStkGraphicsKmlDocumentCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8f385d51-5b9c-4f8d-8340-1e8f49b51a6a}", IAgStkGraphicsKmlDocumentCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlDocumentCollection"] = IAgStkGraphicsKmlDocumentCollection
-__all__.append("IAgStkGraphicsKmlDocumentCollection")
 
 class IAgStkGraphicsKmlFeatureCollection(object):
     """A collection of KML features."""
@@ -2369,7 +2432,6 @@ class IAgStkGraphicsKmlFeatureCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{e4f1dff5-fbb1-4951-bfc0-abfeec89acc8}", IAgStkGraphicsKmlFeatureCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlFeatureCollection"] = IAgStkGraphicsKmlFeatureCollection
-__all__.append("IAgStkGraphicsKmlFeatureCollection")
 
 class IAgStkGraphicsKmlDocumentLoadedEventArgs(object):
     """The event is raised when a KML document has been loaded."""
@@ -2423,7 +2485,6 @@ class IAgStkGraphicsKmlDocumentLoadedEventArgs(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{60d78883-928f-45f2-ab60-0becb167af3d}", IAgStkGraphicsKmlDocumentLoadedEventArgs)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlDocumentLoadedEventArgs"] = IAgStkGraphicsKmlDocumentLoadedEventArgs
-__all__.append("IAgStkGraphicsKmlDocumentLoadedEventArgs")
 
 class IAgStkGraphicsFactoryAndInitializers(object):
     """Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a..."""
@@ -3197,7 +3258,6 @@ class IAgStkGraphicsFactoryAndInitializers(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5ccf1ef3-48a0-4b22-9fcf-c32eae3f8d69}", IAgStkGraphicsFactoryAndInitializers)
 agcls.AgTypeNameMap["IAgStkGraphicsFactoryAndInitializers"] = IAgStkGraphicsFactoryAndInitializers
-__all__.append("IAgStkGraphicsFactoryAndInitializers")
 
 class IAgStkGraphicsExtrudedPolylineTriangulatorResult(object):
     """The result from extruded polyline triangulation: a triangle mesh defined using an indexed triangle list with top and bottom boundary positions. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
@@ -3260,7 +3320,6 @@ class IAgStkGraphicsExtrudedPolylineTriangulatorResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5d94d077-0a56-4d83-ac90-369344533684}", IAgStkGraphicsExtrudedPolylineTriangulatorResult)
 agcls.AgTypeNameMap["IAgStkGraphicsExtrudedPolylineTriangulatorResult"] = IAgStkGraphicsExtrudedPolylineTriangulatorResult
-__all__.append("IAgStkGraphicsExtrudedPolylineTriangulatorResult")
 
 class IAgStkGraphicsSolidTriangulatorResult(object):
     """The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive..."""
@@ -3332,7 +3391,6 @@ class IAgStkGraphicsSolidTriangulatorResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{a7ba0673-f944-4dc6-a450-5cb62915cb7b}", IAgStkGraphicsSolidTriangulatorResult)
 agcls.AgTypeNameMap["IAgStkGraphicsSolidTriangulatorResult"] = IAgStkGraphicsSolidTriangulatorResult
-__all__.append("IAgStkGraphicsSolidTriangulatorResult")
 
 class IAgStkGraphicsSurfaceShapesResult(object):
     """Represents the boundary positions of a shape on the surface computed from by a surface shapes method."""
@@ -3395,7 +3453,6 @@ class IAgStkGraphicsSurfaceShapesResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0efd15db-d9f7-4e1f-925b-ade0b0a22a21}", IAgStkGraphicsSurfaceShapesResult)
 agcls.AgTypeNameMap["IAgStkGraphicsSurfaceShapesResult"] = IAgStkGraphicsSurfaceShapesResult
-__all__.append("IAgStkGraphicsSurfaceShapesResult")
 
 class IAgStkGraphicsSurfaceTriangulatorResult(object):
     """The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh..."""
@@ -3476,7 +3533,6 @@ class IAgStkGraphicsSurfaceTriangulatorResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{27cedd3e-86cd-4d18-862f-eeb0e6de62aa}", IAgStkGraphicsSurfaceTriangulatorResult)
 agcls.AgTypeNameMap["IAgStkGraphicsSurfaceTriangulatorResult"] = IAgStkGraphicsSurfaceTriangulatorResult
-__all__.append("IAgStkGraphicsSurfaceTriangulatorResult")
 
 class IAgStkGraphicsTriangulatorResult(object):
     """The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive."""
@@ -3557,7 +3613,6 @@ class IAgStkGraphicsTriangulatorResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9dece859-d370-4674-8ffa-8caa98e60632}", IAgStkGraphicsTriangulatorResult)
 agcls.AgTypeNameMap["IAgStkGraphicsTriangulatorResult"] = IAgStkGraphicsTriangulatorResult
-__all__.append("IAgStkGraphicsTriangulatorResult")
 
 class IAgStkGraphicsAGICustomTerrainOverlay(object):
     """A terrain overlay for handling AGI Cesium Terrain."""
@@ -3593,7 +3648,6 @@ class IAgStkGraphicsAGICustomTerrainOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{59ef8436-aeec-4e60-8e3d-920e0f11feba}", IAgStkGraphicsAGICustomTerrainOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsAGICustomTerrainOverlay"] = IAgStkGraphicsAGICustomTerrainOverlay
-__all__.append("IAgStkGraphicsAGICustomTerrainOverlay")
 
 class IAgStkGraphicsAGIProcessedImageGlobeOverlay(object):
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
@@ -3629,7 +3683,6 @@ class IAgStkGraphicsAGIProcessedImageGlobeOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5c2d7cca-54f6-4b27-93d6-58bddac0befe}", IAgStkGraphicsAGIProcessedImageGlobeOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsAGIProcessedImageGlobeOverlay"] = IAgStkGraphicsAGIProcessedImageGlobeOverlay
-__all__.append("IAgStkGraphicsAGIProcessedImageGlobeOverlay")
 
 class IAgStkGraphicsAGIProcessedTerrainOverlay(object):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
@@ -3665,7 +3718,6 @@ class IAgStkGraphicsAGIProcessedTerrainOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{093a5b12-abdd-4029-adc5-2cbab7e4216d}", IAgStkGraphicsAGIProcessedTerrainOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsAGIProcessedTerrainOverlay"] = IAgStkGraphicsAGIProcessedTerrainOverlay
-__all__.append("IAgStkGraphicsAGIProcessedTerrainOverlay")
 
 class IAgStkGraphicsAGIRoamImageGlobeOverlay(object):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
@@ -3701,7 +3753,6 @@ class IAgStkGraphicsAGIRoamImageGlobeOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{d76d82b7-7a13-452d-b661-1d416fae732e}", IAgStkGraphicsAGIRoamImageGlobeOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsAGIRoamImageGlobeOverlay"] = IAgStkGraphicsAGIRoamImageGlobeOverlay
-__all__.append("IAgStkGraphicsAGIRoamImageGlobeOverlay")
 
 class IAgStkGraphicsCameraSnapshot(object):
     """Takes snapshots of the 3D window."""
@@ -3777,7 +3828,6 @@ class IAgStkGraphicsCameraSnapshot(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6b6a8d90-ff4d-49b2-9fb4-5bf459818cd1}", IAgStkGraphicsCameraSnapshot)
 agcls.AgTypeNameMap["IAgStkGraphicsCameraSnapshot"] = IAgStkGraphicsCameraSnapshot
-__all__.append("IAgStkGraphicsCameraSnapshot")
 
 class IAgStkGraphicsCameraVideoRecording(object):
     """Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered."""
@@ -3859,7 +3909,6 @@ class IAgStkGraphicsCameraVideoRecording(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{f519ee7a-e452-451a-839d-0eda6cf69c0a}", IAgStkGraphicsCameraVideoRecording)
 agcls.AgTypeNameMap["IAgStkGraphicsCameraVideoRecording"] = IAgStkGraphicsCameraVideoRecording
-__all__.append("IAgStkGraphicsCameraVideoRecording")
 
 class IAgStkGraphicsCentralBodyGraphicsIndexer(object):
     """An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body."""
@@ -3943,7 +3992,6 @@ class IAgStkGraphicsCentralBodyGraphicsIndexer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{fc4eafc1-217c-4a1b-9640-4a678d84813a}", IAgStkGraphicsCentralBodyGraphicsIndexer)
 agcls.AgTypeNameMap["IAgStkGraphicsCentralBodyGraphicsIndexer"] = IAgStkGraphicsCentralBodyGraphicsIndexer
-__all__.append("IAgStkGraphicsCentralBodyGraphicsIndexer")
 
 class IAgStkGraphicsCustomImageGlobeOverlay(object):
     """A globe image overlay that allows for a user defined image to be specified."""
@@ -4043,7 +4091,6 @@ class IAgStkGraphicsCustomImageGlobeOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{f8086ed2-4b18-4d6d-a39f-1ab5801cf886}", IAgStkGraphicsCustomImageGlobeOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsCustomImageGlobeOverlay"] = IAgStkGraphicsCustomImageGlobeOverlay
-__all__.append("IAgStkGraphicsCustomImageGlobeOverlay")
 
 class IAgStkGraphicsCustomImageGlobeOverlayPluginActivator(object):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
@@ -4096,7 +4143,6 @@ class IAgStkGraphicsCustomImageGlobeOverlayPluginActivator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{efb59b20-9f79-4043-a3bd-6cd1a3395738}", IAgStkGraphicsCustomImageGlobeOverlayPluginActivator)
 agcls.AgTypeNameMap["IAgStkGraphicsCustomImageGlobeOverlayPluginActivator"] = IAgStkGraphicsCustomImageGlobeOverlayPluginActivator
-__all__.append("IAgStkGraphicsCustomImageGlobeOverlayPluginActivator")
 
 class IAgStkGraphicsCustomImageGlobeOverlayPluginProxy(object):
     """A proxy class provides access to a custom image globe overlay implemented by a plugin. Proxies are instantiated using custom image globe overlay plugin activator."""
@@ -4159,7 +4205,6 @@ class IAgStkGraphicsCustomImageGlobeOverlayPluginProxy(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{197fbafd-0f9c-44d9-b2d0-14c8b30f312e}", IAgStkGraphicsCustomImageGlobeOverlayPluginProxy)
 agcls.AgTypeNameMap["IAgStkGraphicsCustomImageGlobeOverlayPluginProxy"] = IAgStkGraphicsCustomImageGlobeOverlayPluginProxy
-__all__.append("IAgStkGraphicsCustomImageGlobeOverlayPluginProxy")
 
 class IAgStkGraphicsGeospatialImageGlobeOverlay(object):
     """A globe image overlay for handling <a href='http://www.jpeg.org/jpeg2000/'>JPEG 2000</a> (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
@@ -4227,7 +4272,6 @@ class IAgStkGraphicsGeospatialImageGlobeOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{fd42a5ba-5049-4c58-bf40-61ca5943dccf}", IAgStkGraphicsGeospatialImageGlobeOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsGeospatialImageGlobeOverlay"] = IAgStkGraphicsGeospatialImageGlobeOverlay
-__all__.append("IAgStkGraphicsGeospatialImageGlobeOverlay")
 
 class IAgStkGraphicsGlobeOverlay(object):
     """The base class of all terrain overlay and globe image overlay objects."""
@@ -4324,7 +4368,6 @@ class IAgStkGraphicsGlobeOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{983949c2-68a3-46ee-9670-f174091286ad}", IAgStkGraphicsGlobeOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsGlobeOverlay"] = IAgStkGraphicsGlobeOverlay
-__all__.append("IAgStkGraphicsGlobeOverlay")
 
 class IAgStkGraphicsGlobeOverlaySettings(object):
     """Settings used by globe overlay objects. These setting affect all scenes."""
@@ -4408,7 +4451,6 @@ class IAgStkGraphicsGlobeOverlaySettings(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2864d6df-bbe2-42b7-9838-27d1f5ff5be6}", IAgStkGraphicsGlobeOverlaySettings)
 agcls.AgTypeNameMap["IAgStkGraphicsGlobeOverlaySettings"] = IAgStkGraphicsGlobeOverlaySettings
-__all__.append("IAgStkGraphicsGlobeOverlaySettings")
 
 class IAgStkGraphicsLighting(object):
     """Lighting in the 3D scene."""
@@ -4508,7 +4550,6 @@ class IAgStkGraphicsLighting(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{683cd020-54fc-48af-b7e4-0dbe06c9bf12}", IAgStkGraphicsLighting)
 agcls.AgTypeNameMap["IAgStkGraphicsLighting"] = IAgStkGraphicsLighting
-__all__.append("IAgStkGraphicsLighting")
 
 class IAgStkGraphicsPathPrimitiveUpdatePolicy(object):
     """A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method."""
@@ -4552,7 +4593,6 @@ class IAgStkGraphicsPathPrimitiveUpdatePolicy(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{71fe898e-dabb-4501-9c80-dcb1cde9c16b}", IAgStkGraphicsPathPrimitiveUpdatePolicy)
 agcls.AgTypeNameMap["IAgStkGraphicsPathPrimitiveUpdatePolicy"] = IAgStkGraphicsPathPrimitiveUpdatePolicy
-__all__.append("IAgStkGraphicsPathPrimitiveUpdatePolicy")
 
 class IAgStkGraphicsProjectedRasterOverlay(object):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
@@ -4878,7 +4918,6 @@ class IAgStkGraphicsProjectedRasterOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7cb212ed-4ef5-43c7-bbc3-f2ebd4dfd143}", IAgStkGraphicsProjectedRasterOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsProjectedRasterOverlay"] = IAgStkGraphicsProjectedRasterOverlay
-__all__.append("IAgStkGraphicsProjectedRasterOverlay")
 
 class IAgStkGraphicsProjection(object):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
@@ -5010,7 +5049,6 @@ class IAgStkGraphicsProjection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{152e3a02-23b0-4dc8-a7e5-9ee19619bcab}", IAgStkGraphicsProjection)
 agcls.AgTypeNameMap["IAgStkGraphicsProjection"] = IAgStkGraphicsProjection
-__all__.append("IAgStkGraphicsProjection")
 
 class IAgStkGraphicsProjectionStream(object):
     """A projection that is updated dynamically at the specified update delta. The class can be used to stream projection data to projection clients, like projected raster overlay..."""
@@ -5072,7 +5110,6 @@ class IAgStkGraphicsProjectionStream(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7af66bcf-c123-47b2-ac63-168bbdedec66}", IAgStkGraphicsProjectionStream)
 agcls.AgTypeNameMap["IAgStkGraphicsProjectionStream"] = IAgStkGraphicsProjectionStream
-__all__.append("IAgStkGraphicsProjectionStream")
 
 class IAgStkGraphicsSceneGlobeOverlaySettings(object):
     """Settings used by globe overlay objects. These settings only affect the scene."""
@@ -5172,7 +5209,6 @@ class IAgStkGraphicsSceneGlobeOverlaySettings(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6f2961c3-3fbe-4d5c-849b-d17be044dd71}", IAgStkGraphicsSceneGlobeOverlaySettings)
 agcls.AgTypeNameMap["IAgStkGraphicsSceneGlobeOverlaySettings"] = IAgStkGraphicsSceneGlobeOverlaySettings
-__all__.append("IAgStkGraphicsSceneGlobeOverlaySettings")
 
 class IAgStkGraphicsScreenOverlayCollectionBase(object):
     """The common base class for collections of overlays held by screen overlay and by screen overlay manager."""
@@ -5290,7 +5326,6 @@ class IAgStkGraphicsScreenOverlayCollectionBase(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{49ea6365-0b8d-4fc5-ad52-c1d16ac7568d}", IAgStkGraphicsScreenOverlayCollectionBase)
 agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayCollectionBase"] = IAgStkGraphicsScreenOverlayCollectionBase
-__all__.append("IAgStkGraphicsScreenOverlayCollectionBase")
 
 class IAgStkGraphicsTexture2DFactory(object):
     """A factory for creating texture 2d objects from various sources."""
@@ -5344,7 +5379,6 @@ class IAgStkGraphicsTexture2DFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{455fd9a8-e787-4459-a613-e3367dce25b8}", IAgStkGraphicsTexture2DFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTexture2DFactory"] = IAgStkGraphicsTexture2DFactory
-__all__.append("IAgStkGraphicsTexture2DFactory")
 
 class IAgStkGraphicsVisualEffects(object):
     """Controls various post processing effects that can be applied to the scene."""
@@ -5428,7 +5462,6 @@ class IAgStkGraphicsVisualEffects(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{a1b830ed-9742-4903-9773-1edbc40f0deb}", IAgStkGraphicsVisualEffects)
 agcls.AgTypeNameMap["IAgStkGraphicsVisualEffects"] = IAgStkGraphicsVisualEffects
-__all__.append("IAgStkGraphicsVisualEffects")
 
 class IAgStkGraphicsAltitudeDisplayCondition(object):
     """Defines an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
@@ -5512,7 +5545,6 @@ class IAgStkGraphicsAltitudeDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{a6225aa6-608d-4ad8-b5f6-2afdd29b96f9}", IAgStkGraphicsAltitudeDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsAltitudeDisplayCondition"] = IAgStkGraphicsAltitudeDisplayCondition
-__all__.append("IAgStkGraphicsAltitudeDisplayCondition")
 
 class IAgStkGraphicsAxesPrimitive(object):
     """Renders an axes in the 3D scene."""
@@ -5724,7 +5756,6 @@ class IAgStkGraphicsAxesPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8892fb91-4aa2-4663-9307-68a737163045}", IAgStkGraphicsAxesPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsAxesPrimitive"] = IAgStkGraphicsAxesPrimitive
-__all__.append("IAgStkGraphicsAxesPrimitive")
 
 class IAgStkGraphicsCamera(object):
     """Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene."""
@@ -6193,7 +6224,6 @@ class IAgStkGraphicsCamera(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{c9a35fc4-8868-4b28-8622-13cfa470c315}", IAgStkGraphicsCamera)
 agcls.AgTypeNameMap["IAgStkGraphicsCamera"] = IAgStkGraphicsCamera
-__all__.append("IAgStkGraphicsCamera")
 
 class IAgStkGraphicsCentralBodyGraphics(object):
     """The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property..."""
@@ -6416,7 +6446,6 @@ class IAgStkGraphicsCentralBodyGraphics(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{27f5d32b-5adf-4fc7-a8b8-83ada5ebc0ca}", IAgStkGraphicsCentralBodyGraphics)
 agcls.AgTypeNameMap["IAgStkGraphicsCentralBodyGraphics"] = IAgStkGraphicsCentralBodyGraphics
-__all__.append("IAgStkGraphicsCentralBodyGraphics")
 
 class IAgStkGraphicsClouds(object):
     """Load, show and hide clouds in the scene."""
@@ -6525,7 +6554,6 @@ class IAgStkGraphicsClouds(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0f5265b8-2d96-440a-9b86-522d90bf2bc3}", IAgStkGraphicsClouds)
 agcls.AgTypeNameMap["IAgStkGraphicsClouds"] = IAgStkGraphicsClouds
-__all__.append("IAgStkGraphicsClouds")
 
 class IAgStkGraphicsCompositeDisplayCondition(object):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
@@ -6721,7 +6749,6 @@ class IAgStkGraphicsCompositeDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{afe0e66f-0fc5-46ad-801f-22670cfe99a9}", IAgStkGraphicsCompositeDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsCompositeDisplayCondition"] = IAgStkGraphicsCompositeDisplayCondition
-__all__.append("IAgStkGraphicsCompositeDisplayCondition")
 
 class IAgStkGraphicsCompositePrimitive(object):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
@@ -6832,7 +6859,6 @@ class IAgStkGraphicsCompositePrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{c24448a9-4fe7-4905-86e0-70a71346fcf2}", IAgStkGraphicsCompositePrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsCompositePrimitive"] = IAgStkGraphicsCompositePrimitive
-__all__.append("IAgStkGraphicsCompositePrimitive")
 
 class IAgStkGraphicsConstantDisplayCondition(object):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
@@ -6884,7 +6910,6 @@ class IAgStkGraphicsConstantDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{efede07b-4d59-4622-ba51-0281a5108aab}", IAgStkGraphicsConstantDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsConstantDisplayCondition"] = IAgStkGraphicsConstantDisplayCondition
-__all__.append("IAgStkGraphicsConstantDisplayCondition")
 
 class IAgStkGraphicsDisplayCondition(object):
     """When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered."""
@@ -6920,7 +6945,6 @@ class IAgStkGraphicsDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5214ce90-6448-4cc7-bc5c-f06485ec5bb8}", IAgStkGraphicsDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsDisplayCondition"] = IAgStkGraphicsDisplayCondition
-__all__.append("IAgStkGraphicsDisplayCondition")
 
 class IAgStkGraphicsDistanceDisplayCondition(object):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
@@ -7006,7 +7030,6 @@ class IAgStkGraphicsDistanceDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b1b3130c-bebb-4a64-a5b7-2357384e2b8c}", IAgStkGraphicsDistanceDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsDistanceDisplayCondition"] = IAgStkGraphicsDistanceDisplayCondition
-__all__.append("IAgStkGraphicsDistanceDisplayCondition")
 
 class IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition(object):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
@@ -7108,7 +7131,6 @@ class IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{212b00ec-ff3a-4f1b-9fc3-5a900c6536dc}", IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition"] = IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition
-__all__.append("IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition")
 
 class IAgStkGraphicsDistanceToPositionDisplayCondition(object):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
@@ -7226,7 +7248,6 @@ class IAgStkGraphicsDistanceToPositionDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0110db74-d567-4804-9bec-d7cce8ed59d0}", IAgStkGraphicsDistanceToPositionDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsDistanceToPositionDisplayCondition"] = IAgStkGraphicsDistanceToPositionDisplayCondition
-__all__.append("IAgStkGraphicsDistanceToPositionDisplayCondition")
 
 class IAgStkGraphicsDistanceToPrimitiveDisplayCondition(object):
     """Defines an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
@@ -7328,7 +7349,6 @@ class IAgStkGraphicsDistanceToPrimitiveDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{bf9664c2-e8c4-471b-a071-865f1448a031}", IAgStkGraphicsDistanceToPrimitiveDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsDistanceToPrimitiveDisplayCondition"] = IAgStkGraphicsDistanceToPrimitiveDisplayCondition
-__all__.append("IAgStkGraphicsDistanceToPrimitiveDisplayCondition")
 
 class IAgStkGraphicsDurationPathPrimitiveUpdatePolicy(object):
     """path primitive update policy that removes points from remove location after a given duration."""
@@ -7396,7 +7416,6 @@ class IAgStkGraphicsDurationPathPrimitiveUpdatePolicy(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{23d3c9c4-b242-4a5a-89cf-58387bd9f935}", IAgStkGraphicsDurationPathPrimitiveUpdatePolicy)
 agcls.AgTypeNameMap["IAgStkGraphicsDurationPathPrimitiveUpdatePolicy"] = IAgStkGraphicsDurationPathPrimitiveUpdatePolicy
-__all__.append("IAgStkGraphicsDurationPathPrimitiveUpdatePolicy")
 
 class IAgStkGraphicsFrameRate(object):
     """Keeps track of how many times the scenes are rendered per second."""
@@ -7463,7 +7482,6 @@ class IAgStkGraphicsFrameRate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9bbe1077-fcb3-4d73-ae9e-727155e14288}", IAgStkGraphicsFrameRate)
 agcls.AgTypeNameMap["IAgStkGraphicsFrameRate"] = IAgStkGraphicsFrameRate
-__all__.append("IAgStkGraphicsFrameRate")
 
 class IAgStkGraphicsGlobeImageOverlay(object):
     """A globe overlay that shows an image."""
@@ -7604,7 +7622,6 @@ class IAgStkGraphicsGlobeImageOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ac17f1dd-17dc-41bd-8429-80f90234b53f}", IAgStkGraphicsGlobeImageOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsGlobeImageOverlay"] = IAgStkGraphicsGlobeImageOverlay
-__all__.append("IAgStkGraphicsGlobeImageOverlay")
 
 class IAgStkGraphicsGraphicsFont(object):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
@@ -7721,7 +7738,6 @@ class IAgStkGraphicsGraphicsFont(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{36a67d60-3f13-435b-92d8-b6a76ed1a74a}", IAgStkGraphicsGraphicsFont)
 agcls.AgTypeNameMap["IAgStkGraphicsGraphicsFont"] = IAgStkGraphicsGraphicsFont
-__all__.append("IAgStkGraphicsGraphicsFont")
 
 class IAgStkGraphicsGreatArcInterpolator(object):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
@@ -7789,7 +7805,6 @@ class IAgStkGraphicsGreatArcInterpolator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8de070c1-de8f-48ee-96ea-5dc046706d28}", IAgStkGraphicsGreatArcInterpolator)
 agcls.AgTypeNameMap["IAgStkGraphicsGreatArcInterpolator"] = IAgStkGraphicsGreatArcInterpolator
-__all__.append("IAgStkGraphicsGreatArcInterpolator")
 
 class IAgStkGraphicsImageCollection(object):
     """A collection of globe image overlay objects."""
@@ -8007,7 +8022,6 @@ class IAgStkGraphicsImageCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{797b7253-9205-47a1-b49b-edf6e06326c0}", IAgStkGraphicsImageCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsImageCollection"] = IAgStkGraphicsImageCollection
-__all__.append("IAgStkGraphicsImageCollection")
 
 class IAgStkGraphicsAlphaFromLuminanceFilter(object):
     """Adds an alpha band to the source raster derived from the luminance of the raster's color bands."""
@@ -8043,7 +8057,6 @@ class IAgStkGraphicsAlphaFromLuminanceFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9ee1933e-8f0d-4fca-8386-e03194e483da}", IAgStkGraphicsAlphaFromLuminanceFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsAlphaFromLuminanceFilter"] = IAgStkGraphicsAlphaFromLuminanceFilter
-__all__.append("IAgStkGraphicsAlphaFromLuminanceFilter")
 
 class IAgStkGraphicsAlphaFromPixelFilter(object):
     """Adds an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
@@ -8079,7 +8092,6 @@ class IAgStkGraphicsAlphaFromPixelFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{071460a3-f86a-4c28-b2bf-22946db06ac8}", IAgStkGraphicsAlphaFromPixelFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsAlphaFromPixelFilter"] = IAgStkGraphicsAlphaFromPixelFilter
-__all__.append("IAgStkGraphicsAlphaFromPixelFilter")
 
 class IAgStkGraphicsAlphaFromRasterFilter(object):
     """Adds an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
@@ -8131,7 +8143,6 @@ class IAgStkGraphicsAlphaFromRasterFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{77326f5e-c3f3-4660-8df4-6225cfdc0870}", IAgStkGraphicsAlphaFromRasterFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsAlphaFromRasterFilter"] = IAgStkGraphicsAlphaFromRasterFilter
-__all__.append("IAgStkGraphicsAlphaFromRasterFilter")
 
 class IAgStkGraphicsBandExtractFilter(object):
     """Extracts a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
@@ -8183,7 +8194,6 @@ class IAgStkGraphicsBandExtractFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{68723ebb-619a-4d11-bb5a-27200ef0e15c}", IAgStkGraphicsBandExtractFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsBandExtractFilter"] = IAgStkGraphicsBandExtractFilter
-__all__.append("IAgStkGraphicsBandExtractFilter")
 
 class IAgStkGraphicsBandOrderFilter(object):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
@@ -8251,7 +8261,6 @@ class IAgStkGraphicsBandOrderFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{a4a76805-e8e4-4bb6-878c-dcb0da6d84d3}", IAgStkGraphicsBandOrderFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsBandOrderFilter"] = IAgStkGraphicsBandOrderFilter
-__all__.append("IAgStkGraphicsBandOrderFilter")
 
 class IAgStkGraphicsBlurFilter(object):
     """Applies a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
@@ -8303,7 +8312,6 @@ class IAgStkGraphicsBlurFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{78e623b1-dc80-478d-acb8-a552fa136ccc}", IAgStkGraphicsBlurFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsBlurFilter"] = IAgStkGraphicsBlurFilter
-__all__.append("IAgStkGraphicsBlurFilter")
 
 class IAgStkGraphicsBrightnessFilter(object):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
@@ -8355,7 +8363,6 @@ class IAgStkGraphicsBrightnessFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{fd8324ea-dbc2-42a5-88ba-c2769fd4a28e}", IAgStkGraphicsBrightnessFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsBrightnessFilter"] = IAgStkGraphicsBrightnessFilter
-__all__.append("IAgStkGraphicsBrightnessFilter")
 
 class IAgStkGraphicsColorToLuminanceFilter(object):
     """Extracts a luminance band derived from the color bands of the source raster."""
@@ -8391,7 +8398,6 @@ class IAgStkGraphicsColorToLuminanceFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{bc1d198f-705b-452b-8e51-1c600c547594}", IAgStkGraphicsColorToLuminanceFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsColorToLuminanceFilter"] = IAgStkGraphicsColorToLuminanceFilter
-__all__.append("IAgStkGraphicsColorToLuminanceFilter")
 
 class IAgStkGraphicsContrastFilter(object):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
@@ -8443,7 +8449,6 @@ class IAgStkGraphicsContrastFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{47ea43c3-5ffd-4935-8569-bb19ee6b0799}", IAgStkGraphicsContrastFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsContrastFilter"] = IAgStkGraphicsContrastFilter
-__all__.append("IAgStkGraphicsContrastFilter")
 
 class IAgStkGraphicsConvolutionFilter(object):
     """Applies convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
@@ -8527,7 +8532,6 @@ class IAgStkGraphicsConvolutionFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{65e3646d-dfac-40af-b37f-15596ef13292}", IAgStkGraphicsConvolutionFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsConvolutionFilter"] = IAgStkGraphicsConvolutionFilter
-__all__.append("IAgStkGraphicsConvolutionFilter")
 
 class IAgStkGraphicsEdgeDetectFilter(object):
     """Applies a convolution filter to detect edges in the source raster."""
@@ -8579,7 +8583,6 @@ class IAgStkGraphicsEdgeDetectFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0919d5b6-9497-4027-9fa2-69afe60c5f02}", IAgStkGraphicsEdgeDetectFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsEdgeDetectFilter"] = IAgStkGraphicsEdgeDetectFilter
-__all__.append("IAgStkGraphicsEdgeDetectFilter")
 
 class IAgStkGraphicsFilteringRasterStream(object):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
@@ -8633,7 +8636,6 @@ class IAgStkGraphicsFilteringRasterStream(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{75917a6b-c2f9-4350-879a-248bcc239e6b}", IAgStkGraphicsFilteringRasterStream)
 agcls.AgTypeNameMap["IAgStkGraphicsFilteringRasterStream"] = IAgStkGraphicsFilteringRasterStream
-__all__.append("IAgStkGraphicsFilteringRasterStream")
 
 class IAgStkGraphicsFlipFilter(object):
     """Flips the source raster along the given flip axis."""
@@ -8685,7 +8687,6 @@ class IAgStkGraphicsFlipFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{478edb08-272a-42b6-b486-a81a5bcaf92b}", IAgStkGraphicsFlipFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsFlipFilter"] = IAgStkGraphicsFlipFilter
-__all__.append("IAgStkGraphicsFlipFilter")
 
 class IAgStkGraphicsGammaCorrectionFilter(object):
     """Applies gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
@@ -8737,7 +8738,6 @@ class IAgStkGraphicsGammaCorrectionFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{c4b3703d-c059-47c7-8b49-11bbedd7975a}", IAgStkGraphicsGammaCorrectionFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsGammaCorrectionFilter"] = IAgStkGraphicsGammaCorrectionFilter
-__all__.append("IAgStkGraphicsGammaCorrectionFilter")
 
 class IAgStkGraphicsGaussianBlurFilter(object):
     """Applies a convolution filter to blur the source raster using the Gaussian function."""
@@ -8773,7 +8773,6 @@ class IAgStkGraphicsGaussianBlurFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b5b0a55e-980a-453f-b7b4-7c7024f92ef4}", IAgStkGraphicsGaussianBlurFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsGaussianBlurFilter"] = IAgStkGraphicsGaussianBlurFilter
-__all__.append("IAgStkGraphicsGaussianBlurFilter")
 
 class IAgStkGraphicsGradientDetectFilter(object):
     """Applies a convolution filter to detect gradients in the source raster."""
@@ -8825,7 +8824,6 @@ class IAgStkGraphicsGradientDetectFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5a9e0d4c-4f36-47c8-8f81-ffdfe63cb112}", IAgStkGraphicsGradientDetectFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsGradientDetectFilter"] = IAgStkGraphicsGradientDetectFilter
-__all__.append("IAgStkGraphicsGradientDetectFilter")
 
 class IAgStkGraphicsLevelsFilter(object):
     """Adjusts the band levels of the source raster linearly."""
@@ -8875,7 +8873,6 @@ class IAgStkGraphicsLevelsFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{e0d6dad5-cfcb-476a-95fd-2cd486114a68}", IAgStkGraphicsLevelsFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsLevelsFilter"] = IAgStkGraphicsLevelsFilter
-__all__.append("IAgStkGraphicsLevelsFilter")
 
 class IAgStkGraphicsProjectionRasterStreamPluginActivator(object):
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
@@ -8928,7 +8925,6 @@ class IAgStkGraphicsProjectionRasterStreamPluginActivator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0c1e9236-42e6-4539-9003-06e06f906432}", IAgStkGraphicsProjectionRasterStreamPluginActivator)
 agcls.AgTypeNameMap["IAgStkGraphicsProjectionRasterStreamPluginActivator"] = IAgStkGraphicsProjectionRasterStreamPluginActivator
-__all__.append("IAgStkGraphicsProjectionRasterStreamPluginActivator")
 
 class IAgStkGraphicsProjectionRasterStreamPluginProxy(object):
     """A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator."""
@@ -9009,7 +9005,6 @@ class IAgStkGraphicsProjectionRasterStreamPluginProxy(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5a28d922-9211-4860-81ae-0d98d38ca6d7}", IAgStkGraphicsProjectionRasterStreamPluginProxy)
 agcls.AgTypeNameMap["IAgStkGraphicsProjectionRasterStreamPluginProxy"] = IAgStkGraphicsProjectionRasterStreamPluginProxy
-__all__.append("IAgStkGraphicsProjectionRasterStreamPluginProxy")
 
 class IAgStkGraphicsRaster(object):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
@@ -9127,7 +9122,6 @@ class IAgStkGraphicsRaster(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{e0113161-7dd5-4411-bca9-6175aad19b4e}", IAgStkGraphicsRaster)
 agcls.AgTypeNameMap["IAgStkGraphicsRaster"] = IAgStkGraphicsRaster
-__all__.append("IAgStkGraphicsRaster")
 
 class IAgStkGraphicsRasterAttributes(object):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
@@ -9262,7 +9256,6 @@ class IAgStkGraphicsRasterAttributes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{067e0cd7-c1c5-41b7-93a8-f9ae8b67df25}", IAgStkGraphicsRasterAttributes)
 agcls.AgTypeNameMap["IAgStkGraphicsRasterAttributes"] = IAgStkGraphicsRasterAttributes
-__all__.append("IAgStkGraphicsRasterAttributes")
 
 class IAgStkGraphicsRasterFilter(object):
     """A filter for processing raster datasets. RasterFilter is the base class for all raster filters..."""
@@ -9298,7 +9291,6 @@ class IAgStkGraphicsRasterFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1d21525d-4204-47cc-8457-996e1a6eab7e}", IAgStkGraphicsRasterFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsRasterFilter"] = IAgStkGraphicsRasterFilter
-__all__.append("IAgStkGraphicsRasterFilter")
 
 class IAgStkGraphicsRasterStream(object):
     """A raster, the data of which, is updated dynamically at the specified update delta. The class can be used to stream video and other dynamic raster data to textures and other raster clients..."""
@@ -9360,7 +9352,6 @@ class IAgStkGraphicsRasterStream(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{63f024ca-7113-4841-8d26-7a286458bd7c}", IAgStkGraphicsRasterStream)
 agcls.AgTypeNameMap["IAgStkGraphicsRasterStream"] = IAgStkGraphicsRasterStream
-__all__.append("IAgStkGraphicsRasterStream")
 
 class IAgStkGraphicsRotateFilter(object):
     """Rotates the source raster clockwise by the specified angle."""
@@ -9412,7 +9403,6 @@ class IAgStkGraphicsRotateFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4b6dc620-04e1-4956-be55-890fdb25bd40}", IAgStkGraphicsRotateFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsRotateFilter"] = IAgStkGraphicsRotateFilter
-__all__.append("IAgStkGraphicsRotateFilter")
 
 class IAgStkGraphicsSequenceFilter(object):
     """Applies a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
@@ -9502,7 +9492,6 @@ class IAgStkGraphicsSequenceFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{72e2b4cb-2be3-418e-b0c8-69f33164e475}", IAgStkGraphicsSequenceFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsSequenceFilter"] = IAgStkGraphicsSequenceFilter
-__all__.append("IAgStkGraphicsSequenceFilter")
 
 class IAgStkGraphicsSharpenFilter(object):
     """Applies a convolution filter to increase the sharpness of the source raster."""
@@ -9554,7 +9543,6 @@ class IAgStkGraphicsSharpenFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{927e244d-ace0-4387-8e3e-6f14bfe230eb}", IAgStkGraphicsSharpenFilter)
 agcls.AgTypeNameMap["IAgStkGraphicsSharpenFilter"] = IAgStkGraphicsSharpenFilter
-__all__.append("IAgStkGraphicsSharpenFilter")
 
 class IAgStkGraphicsVideoStream(object):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
@@ -9862,7 +9850,6 @@ class IAgStkGraphicsVideoStream(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{95fcc91e-a95a-48c4-a34f-9ed67f8e4f4a}", IAgStkGraphicsVideoStream)
 agcls.AgTypeNameMap["IAgStkGraphicsVideoStream"] = IAgStkGraphicsVideoStream
-__all__.append("IAgStkGraphicsVideoStream")
 
 class IAgStkGraphicsKmlContainer(object):
     """A KmlContainer contains a collection of children kml features."""
@@ -9907,7 +9894,6 @@ class IAgStkGraphicsKmlContainer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{32147ba1-8610-4270-9365-b8966730dd6f}", IAgStkGraphicsKmlContainer)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlContainer"] = IAgStkGraphicsKmlContainer
-__all__.append("IAgStkGraphicsKmlContainer")
 
 class IAgStkGraphicsKmlDocument(object):
     """A KML document."""
@@ -9952,7 +9938,6 @@ class IAgStkGraphicsKmlDocument(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2e284efe-3dda-4fac-91ab-7b8c84eb3ad2}", IAgStkGraphicsKmlDocument)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlDocument"] = IAgStkGraphicsKmlDocument
-__all__.append("IAgStkGraphicsKmlDocument")
 
 class IAgStkGraphicsKmlFeature(object):
     """A KML feature."""
@@ -10064,7 +10049,6 @@ class IAgStkGraphicsKmlFeature(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{bc7646ca-da52-4a62-8ef4-838382f21a08}", IAgStkGraphicsKmlFeature)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlFeature"] = IAgStkGraphicsKmlFeature
-__all__.append("IAgStkGraphicsKmlFeature")
 
 class IAgStkGraphicsKmlFolder(object):
     """A KML folder."""
@@ -10100,7 +10084,6 @@ class IAgStkGraphicsKmlFolder(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{28b2dfb1-4f4c-4697-a0f9-076ebd92eb1f}", IAgStkGraphicsKmlFolder)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlFolder"] = IAgStkGraphicsKmlFolder
-__all__.append("IAgStkGraphicsKmlFolder")
 
 class IAgStkGraphicsKmlGraphics(object):
     """Provides loading and unloading of kml documents for a particular central body."""
@@ -10208,7 +10191,6 @@ class IAgStkGraphicsKmlGraphics(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{056eb708-4504-4d62-b4d8-3ca00b0b91fa}", IAgStkGraphicsKmlGraphics)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlGraphics"] = IAgStkGraphicsKmlGraphics
-__all__.append("IAgStkGraphicsKmlGraphics")
 
 class IAgStkGraphicsKmlNetworkLink(object):
     """A KML network link."""
@@ -10384,7 +10366,6 @@ class IAgStkGraphicsKmlNetworkLink(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0b66ea82-dd0d-444f-b097-dda9427e1b87}", IAgStkGraphicsKmlNetworkLink)
 agcls.AgTypeNameMap["IAgStkGraphicsKmlNetworkLink"] = IAgStkGraphicsKmlNetworkLink
-__all__.append("IAgStkGraphicsKmlNetworkLink")
 
 class IAgStkGraphicsMarkerBatchPrimitive(object):
     """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
@@ -10871,7 +10852,6 @@ class IAgStkGraphicsMarkerBatchPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{235878c1-62d9-4ce6-85ff-9d82aff701e9}", IAgStkGraphicsMarkerBatchPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsMarkerBatchPrimitive"] = IAgStkGraphicsMarkerBatchPrimitive
-__all__.append("IAgStkGraphicsMarkerBatchPrimitive")
 
 class IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters(object):
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
@@ -10977,7 +10957,6 @@ class IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7303b63e-a1b7-445e-90e0-508a6937de86}", IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters)
 agcls.AgTypeNameMap["IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters"] = IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters
-__all__.append("IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters")
 
 class IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy(object):
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
@@ -11045,7 +11024,6 @@ class IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{fcacfb20-3ffb-46c4-9e07-495b1446c52b}", IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy)
 agcls.AgTypeNameMap["IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy"] = IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy
-__all__.append("IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy")
 
 class IAgStkGraphicsModelArticulation(object):
     """A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
@@ -11159,7 +11137,6 @@ class IAgStkGraphicsModelArticulation(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4554a375-123b-4a39-b727-3e9131879196}", IAgStkGraphicsModelArticulation)
 agcls.AgTypeNameMap["IAgStkGraphicsModelArticulation"] = IAgStkGraphicsModelArticulation
-__all__.append("IAgStkGraphicsModelArticulation")
 
 class IAgStkGraphicsModelArticulationCollection(object):
     """A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
@@ -11264,7 +11241,6 @@ class IAgStkGraphicsModelArticulationCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{cf6e3054-4d92-42f8-ac4d-e43bfd93d23d}", IAgStkGraphicsModelArticulationCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsModelArticulationCollection"] = IAgStkGraphicsModelArticulationCollection
-__all__.append("IAgStkGraphicsModelArticulationCollection")
 
 class IAgStkGraphicsModelPrimitive(object):
     """The model primitive loads and renders <a href='http://www.collada.org/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
@@ -11389,7 +11365,6 @@ class IAgStkGraphicsModelPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{67a2ad57-e9b2-4dc9-b509-62cbebc405ca}", IAgStkGraphicsModelPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsModelPrimitive"] = IAgStkGraphicsModelPrimitive
-__all__.append("IAgStkGraphicsModelPrimitive")
 
 class IAgStkGraphicsModelTransformation(object):
     """A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation..."""
@@ -11495,7 +11470,6 @@ class IAgStkGraphicsModelTransformation(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{c58f7fc4-2f63-494d-a461-2c385a53b9a2}", IAgStkGraphicsModelTransformation)
 agcls.AgTypeNameMap["IAgStkGraphicsModelTransformation"] = IAgStkGraphicsModelTransformation
-__all__.append("IAgStkGraphicsModelTransformation")
 
 class IAgStkGraphicsOverlay(object):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
@@ -12145,7 +12119,6 @@ class IAgStkGraphicsOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b7007235-5a52-450b-83af-1e8080d3b0be}", IAgStkGraphicsOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsOverlay"] = IAgStkGraphicsOverlay
-__all__.append("IAgStkGraphicsOverlay")
 
 class IAgStkGraphicsPathPrimitive(object):
     """Renders a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
@@ -12438,7 +12411,6 @@ class IAgStkGraphicsPathPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{264ef2e0-ae0d-412d-9d89-f5f17f095a52}", IAgStkGraphicsPathPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsPathPrimitive"] = IAgStkGraphicsPathPrimitive
-__all__.append("IAgStkGraphicsPathPrimitive")
 
 class IAgStkGraphicsPickResult(object):
     """A single result from Pick."""
@@ -12501,7 +12473,6 @@ class IAgStkGraphicsPickResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{55238a64-4c7f-4be7-abcb-1d2321f8f64a}", IAgStkGraphicsPickResult)
 agcls.AgTypeNameMap["IAgStkGraphicsPickResult"] = IAgStkGraphicsPickResult
-__all__.append("IAgStkGraphicsPickResult")
 
 class IAgStkGraphicsPixelSizeDisplayCondition(object):
     """Defines an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
@@ -12569,7 +12540,6 @@ class IAgStkGraphicsPixelSizeDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{e5ccd610-a3b3-4f0c-9d51-e367a9ea5abf}", IAgStkGraphicsPixelSizeDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsPixelSizeDisplayCondition"] = IAgStkGraphicsPixelSizeDisplayCondition
-__all__.append("IAgStkGraphicsPixelSizeDisplayCondition")
 
 class IAgStkGraphicsPointBatchPrimitive(object):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
@@ -12889,7 +12859,6 @@ class IAgStkGraphicsPointBatchPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ae6c6dca-3afe-4419-8aad-dd56bee51446}", IAgStkGraphicsPointBatchPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsPointBatchPrimitive"] = IAgStkGraphicsPointBatchPrimitive
-__all__.append("IAgStkGraphicsPointBatchPrimitive")
 
 class IAgStkGraphicsPolylinePrimitive(object):
     """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
@@ -13291,7 +13260,6 @@ class IAgStkGraphicsPolylinePrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0122dc2b-4232-443d-b8da-09b42967b841}", IAgStkGraphicsPolylinePrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsPolylinePrimitive"] = IAgStkGraphicsPolylinePrimitive
-__all__.append("IAgStkGraphicsPolylinePrimitive")
 
 class IAgStkGraphicsPolylinePrimitiveOptionalParameters(object):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
@@ -13334,7 +13302,6 @@ class IAgStkGraphicsPolylinePrimitiveOptionalParameters(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7ccefc1c-372f-43ff-91ca-fca3de401669}", IAgStkGraphicsPolylinePrimitiveOptionalParameters)
 agcls.AgTypeNameMap["IAgStkGraphicsPolylinePrimitiveOptionalParameters"] = IAgStkGraphicsPolylinePrimitiveOptionalParameters
-__all__.append("IAgStkGraphicsPolylinePrimitiveOptionalParameters")
 
 class IAgStkGraphicsPositionInterpolator(object):
     """Position interpolators compute positions based on a collection of input positions. Position interpolators are used in conjunction with the polyline primitive to render things such as great arcs and rhumb lines."""
@@ -13388,7 +13355,6 @@ class IAgStkGraphicsPositionInterpolator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{512c0d62-559e-42ce-98e2-218c02662290}", IAgStkGraphicsPositionInterpolator)
 agcls.AgTypeNameMap["IAgStkGraphicsPositionInterpolator"] = IAgStkGraphicsPositionInterpolator
-__all__.append("IAgStkGraphicsPositionInterpolator")
 
 class IAgStkGraphicsPrimitive(object):
     """Primitives represent objects rendered in the 3D scene."""
@@ -13552,7 +13518,6 @@ class IAgStkGraphicsPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b593dc7b-315a-4c37-9f3c-42dfbd996ac2}", IAgStkGraphicsPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsPrimitive"] = IAgStkGraphicsPrimitive
-__all__.append("IAgStkGraphicsPrimitive")
 
 class IAgStkGraphicsPrimitiveManager(object):
     """The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered."""
@@ -13679,7 +13644,6 @@ class IAgStkGraphicsPrimitiveManager(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{39006599-c2ac-4f46-a190-958d173714fc}", IAgStkGraphicsPrimitiveManager)
 agcls.AgTypeNameMap["IAgStkGraphicsPrimitiveManager"] = IAgStkGraphicsPrimitiveManager
-__all__.append("IAgStkGraphicsPrimitiveManager")
 
 class IAgStkGraphicsRasterImageGlobeOverlay(object):
     """A globe image overlay for handling rasters."""
@@ -13747,7 +13711,6 @@ class IAgStkGraphicsRasterImageGlobeOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{de016591-933e-4085-b6a4-401e117109e9}", IAgStkGraphicsRasterImageGlobeOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsRasterImageGlobeOverlay"] = IAgStkGraphicsRasterImageGlobeOverlay
-__all__.append("IAgStkGraphicsRasterImageGlobeOverlay")
 
 class IAgStkGraphicsRhumbLineInterpolator(object):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
@@ -13815,7 +13778,6 @@ class IAgStkGraphicsRhumbLineInterpolator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ccdec605-222e-4dea-a897-2632b43af87f}", IAgStkGraphicsRhumbLineInterpolator)
 agcls.AgTypeNameMap["IAgStkGraphicsRhumbLineInterpolator"] = IAgStkGraphicsRhumbLineInterpolator
-__all__.append("IAgStkGraphicsRhumbLineInterpolator")
 
 class IAgStkGraphicsScene(object):
     """A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property..."""
@@ -14050,7 +14012,6 @@ class IAgStkGraphicsScene(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2d15c682-efb5-499f-8851-a49599b2097d}", IAgStkGraphicsScene)
 agcls.AgTypeNameMap["IAgStkGraphicsScene"] = IAgStkGraphicsScene
-__all__.append("IAgStkGraphicsScene")
 
 class IAgStkGraphicsSceneDisplayCondition(object):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
@@ -14110,7 +14071,6 @@ class IAgStkGraphicsSceneDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{84cbf48f-1672-460e-86fd-9afda647bcca}", IAgStkGraphicsSceneDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsSceneDisplayCondition"] = IAgStkGraphicsSceneDisplayCondition
-__all__.append("IAgStkGraphicsSceneDisplayCondition")
 
 class IAgStkGraphicsSceneManager(object):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
@@ -14215,7 +14175,6 @@ class IAgStkGraphicsSceneManager(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{257b97ef-839b-4a17-a924-c40320174d13}", IAgStkGraphicsSceneManager)
 agcls.AgTypeNameMap["IAgStkGraphicsSceneManager"] = IAgStkGraphicsSceneManager
-__all__.append("IAgStkGraphicsSceneManager")
 
 class IAgStkGraphicsScreenOverlay(object):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
@@ -14251,7 +14210,6 @@ class IAgStkGraphicsScreenOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{e9bdc8ad-dc02-4b22-9513-eb0cdfa85cf3}", IAgStkGraphicsScreenOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlay"] = IAgStkGraphicsScreenOverlay
-__all__.append("IAgStkGraphicsScreenOverlay")
 
 class IAgStkGraphicsScreenOverlayCollection(object):
     """A collection of screen overlays."""
@@ -14287,7 +14245,6 @@ class IAgStkGraphicsScreenOverlayCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1bf5a224-26b7-4907-aa7d-fd6fc81a51f3}", IAgStkGraphicsScreenOverlayCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayCollection"] = IAgStkGraphicsScreenOverlayCollection
-__all__.append("IAgStkGraphicsScreenOverlayCollection")
 
 class IAgStkGraphicsScreenOverlayManager(object):
     """The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control."""
@@ -14373,7 +14330,6 @@ class IAgStkGraphicsScreenOverlayManager(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{25bf4e85-98ce-48e3-9c15-f517115bc794}", IAgStkGraphicsScreenOverlayManager)
 agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayManager"] = IAgStkGraphicsScreenOverlayManager
-__all__.append("IAgStkGraphicsScreenOverlayManager")
 
 class IAgStkGraphicsScreenOverlayPickResult(object):
     """Describes a picked screen overlay as a result of a call to pick screen overlays."""
@@ -14436,7 +14392,6 @@ class IAgStkGraphicsScreenOverlayPickResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4872a8d1-b96f-4713-96f8-5ed5e5d6b8b4}", IAgStkGraphicsScreenOverlayPickResult)
 agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayPickResult"] = IAgStkGraphicsScreenOverlayPickResult
-__all__.append("IAgStkGraphicsScreenOverlayPickResult")
 
 class IAgStkGraphicsSolidPrimitive(object):
     """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
@@ -14791,7 +14746,6 @@ class IAgStkGraphicsSolidPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{10ae68b3-ec89-4ced-9b4c-8aae9123eb24}", IAgStkGraphicsSolidPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsSolidPrimitive"] = IAgStkGraphicsSolidPrimitive
-__all__.append("IAgStkGraphicsSolidPrimitive")
 
 class IAgStkGraphicsStereoscopic(object):
     """Gets the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
@@ -14891,7 +14845,6 @@ class IAgStkGraphicsStereoscopic(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{41d0e11b-d00c-4255-b869-2fc8430f994e}", IAgStkGraphicsStereoscopic)
 agcls.AgTypeNameMap["IAgStkGraphicsStereoscopic"] = IAgStkGraphicsStereoscopic
-__all__.append("IAgStkGraphicsStereoscopic")
 
 class IAgStkGraphicsSurfaceMeshPrimitive(object):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
@@ -15065,7 +15018,6 @@ class IAgStkGraphicsSurfaceMeshPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9f13f05b-9c30-4118-8d6b-ab331881aba6}", IAgStkGraphicsSurfaceMeshPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsSurfaceMeshPrimitive"] = IAgStkGraphicsSurfaceMeshPrimitive
-__all__.append("IAgStkGraphicsSurfaceMeshPrimitive")
 
 class IAgStkGraphicsTerrainCollection(object):
     """A collection of terrain overlay objects."""
@@ -15283,7 +15235,6 @@ class IAgStkGraphicsTerrainCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6dbd63a6-624b-4318-8fec-daf384f070c4}", IAgStkGraphicsTerrainCollection)
 agcls.AgTypeNameMap["IAgStkGraphicsTerrainCollection"] = IAgStkGraphicsTerrainCollection
-__all__.append("IAgStkGraphicsTerrainCollection")
 
 class IAgStkGraphicsTerrainOverlay(object):
     """A globe overlay which shows terrain."""
@@ -15360,7 +15311,6 @@ class IAgStkGraphicsTerrainOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{dfe57e34-7b31-4360-a7a8-8db856882670}", IAgStkGraphicsTerrainOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsTerrainOverlay"] = IAgStkGraphicsTerrainOverlay
-__all__.append("IAgStkGraphicsTerrainOverlay")
 
 class IAgStkGraphicsTextBatchPrimitive(object):
     """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
@@ -15685,7 +15635,6 @@ class IAgStkGraphicsTextBatchPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{037722fb-c0e5-4052-b34d-60aa662b5d2b}", IAgStkGraphicsTextBatchPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsTextBatchPrimitive"] = IAgStkGraphicsTextBatchPrimitive
-__all__.append("IAgStkGraphicsTextBatchPrimitive")
 
 class IAgStkGraphicsTextBatchPrimitiveOptionalParameters(object):
     """Optional per-string and per-batch parameters for text batch primitive..."""
@@ -15829,7 +15778,6 @@ class IAgStkGraphicsTextBatchPrimitiveOptionalParameters(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{e18b012f-840d-4f32-8810-dd253c38ce7f}", IAgStkGraphicsTextBatchPrimitiveOptionalParameters)
 agcls.AgTypeNameMap["IAgStkGraphicsTextBatchPrimitiveOptionalParameters"] = IAgStkGraphicsTextBatchPrimitiveOptionalParameters
-__all__.append("IAgStkGraphicsTextBatchPrimitiveOptionalParameters")
 
 class IAgStkGraphicsTextOverlay(object):
     """A rectangular overlay that contains text."""
@@ -15913,7 +15861,6 @@ class IAgStkGraphicsTextOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7d847a28-dfe3-4f2c-923b-683f0250c491}", IAgStkGraphicsTextOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsTextOverlay"] = IAgStkGraphicsTextOverlay
-__all__.append("IAgStkGraphicsTextOverlay")
 
 class IAgStkGraphicsTextureMatrix(object):
     """A 4 by 4 matrix applied to a texture coordinate."""
@@ -16093,7 +16040,6 @@ class IAgStkGraphicsTextureMatrix(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0a4c4c8f-0131-466f-99a5-1f41f9db403b}", IAgStkGraphicsTextureMatrix)
 agcls.AgTypeNameMap["IAgStkGraphicsTextureMatrix"] = IAgStkGraphicsTextureMatrix
-__all__.append("IAgStkGraphicsTextureMatrix")
 
 class IAgStkGraphicsTextureScreenOverlay(object):
     """A rectangular overlay that can be assigned a texture."""
@@ -16177,7 +16123,6 @@ class IAgStkGraphicsTextureScreenOverlay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4d09eb77-14cf-40a7-b7bb-130f4ddd60c6}", IAgStkGraphicsTextureScreenOverlay)
 agcls.AgTypeNameMap["IAgStkGraphicsTextureScreenOverlay"] = IAgStkGraphicsTextureScreenOverlay
-__all__.append("IAgStkGraphicsTextureScreenOverlay")
 
 class IAgStkGraphicsTimeIntervalDisplayCondition(object):
     """Defines an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
@@ -16245,7 +16190,6 @@ class IAgStkGraphicsTimeIntervalDisplayCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2f0f3c32-c1d9-42a1-9422-8ecd2b9c1ad0}", IAgStkGraphicsTimeIntervalDisplayCondition)
 agcls.AgTypeNameMap["IAgStkGraphicsTimeIntervalDisplayCondition"] = IAgStkGraphicsTimeIntervalDisplayCondition
-__all__.append("IAgStkGraphicsTimeIntervalDisplayCondition")
 
 class IAgStkGraphicsTriangleMeshPrimitive(object):
     """Renders a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
@@ -16460,7 +16404,6 @@ class IAgStkGraphicsTriangleMeshPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b878e10c-0fc9-446e-88ba-1e1088970150}", IAgStkGraphicsTriangleMeshPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsTriangleMeshPrimitive"] = IAgStkGraphicsTriangleMeshPrimitive
-__all__.append("IAgStkGraphicsTriangleMeshPrimitive")
 
 class IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters(object):
     """Optional parameters for triangle mesh primitive..."""
@@ -16510,7 +16453,6 @@ class IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{881b260c-4a26-4fb7-9fec-779b3c540a94}", IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters)
 agcls.AgTypeNameMap["IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters"] = IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters
-__all__.append("IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters")
 
 class IAgStkGraphicsVectorPrimitive(object):
     """Renders a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
@@ -16770,7 +16712,6 @@ class IAgStkGraphicsVectorPrimitive(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8244e37a-140a-40a8-9554-37dc0be9bd1b}", IAgStkGraphicsVectorPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsVectorPrimitive"] = IAgStkGraphicsVectorPrimitive
-__all__.append("IAgStkGraphicsVectorPrimitive")
 
 class IAgStkGraphicsBoxTriangulatorInitializer(object):
     """Triangulates a box. It is recommended to visualize the box using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
@@ -16815,7 +16756,6 @@ class IAgStkGraphicsBoxTriangulatorInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3d49da39-dbe0-4ef9-b589-bc0cf5e78085}", IAgStkGraphicsBoxTriangulatorInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsBoxTriangulatorInitializer"] = IAgStkGraphicsBoxTriangulatorInitializer
-__all__.append("IAgStkGraphicsBoxTriangulatorInitializer")
 
 class IAgStkGraphicsCylinderTriangulatorInitializer(object):
     """Triangulates a cylinder. It is recommended to visualize the cylinder using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
@@ -16874,7 +16814,6 @@ class IAgStkGraphicsCylinderTriangulatorInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ee39d933-ce2c-4087-8c8a-f38ebe83842f}", IAgStkGraphicsCylinderTriangulatorInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsCylinderTriangulatorInitializer"] = IAgStkGraphicsCylinderTriangulatorInitializer
-__all__.append("IAgStkGraphicsCylinderTriangulatorInitializer")
 
 class IAgStkGraphicsEllipsoidTriangulatorInitializer(object):
     """Triangulates an ellipsoid. It is recommended to visualize the ellipsoid using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
@@ -16930,7 +16869,6 @@ class IAgStkGraphicsEllipsoidTriangulatorInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8c50173b-e1e0-4321-aeac-5c75e4ef323f}", IAgStkGraphicsEllipsoidTriangulatorInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsEllipsoidTriangulatorInitializer"] = IAgStkGraphicsEllipsoidTriangulatorInitializer
-__all__.append("IAgStkGraphicsEllipsoidTriangulatorInitializer")
 
 class IAgStkGraphicsExtrudedPolylineTriangulatorInitializer(object):
     """Triangulates a polyline into an extrusion with bottom and top boundaries."""
@@ -17108,7 +17046,6 @@ class IAgStkGraphicsExtrudedPolylineTriangulatorInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b6b79988-0b1f-4b6e-8970-ff86b6d94b36}", IAgStkGraphicsExtrudedPolylineTriangulatorInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsExtrudedPolylineTriangulatorInitializer"] = IAgStkGraphicsExtrudedPolylineTriangulatorInitializer
-__all__.append("IAgStkGraphicsExtrudedPolylineTriangulatorInitializer")
 
 class IAgStkGraphicsSurfaceExtentTriangulatorInitializer(object):
     """Triangulates an extent on a central body into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive. The boundary is commonly visualized with the polyline primitive."""
@@ -17166,7 +17103,6 @@ class IAgStkGraphicsSurfaceExtentTriangulatorInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{74b85e21-b114-46b6-820d-2be8adc7ea7a}", IAgStkGraphicsSurfaceExtentTriangulatorInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsSurfaceExtentTriangulatorInitializer"] = IAgStkGraphicsSurfaceExtentTriangulatorInitializer
-__all__.append("IAgStkGraphicsSurfaceExtentTriangulatorInitializer")
 
 class IAgStkGraphicsSurfacePolygonTriangulatorInitializer(object):
     """Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
@@ -17272,7 +17208,6 @@ class IAgStkGraphicsSurfacePolygonTriangulatorInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{52654c8a-3c27-415f-b346-c0e433241b49}", IAgStkGraphicsSurfacePolygonTriangulatorInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsSurfacePolygonTriangulatorInitializer"] = IAgStkGraphicsSurfacePolygonTriangulatorInitializer
-__all__.append("IAgStkGraphicsSurfacePolygonTriangulatorInitializer")
 
 class IAgStkGraphicsSurfaceShapesInitializer(object):
     """Computes boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
@@ -17466,7 +17401,6 @@ class IAgStkGraphicsSurfaceShapesInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8b711790-8bc2-4e20-8795-89a4863a0566}", IAgStkGraphicsSurfaceShapesInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsSurfaceShapesInitializer"] = IAgStkGraphicsSurfaceShapesInitializer
-__all__.append("IAgStkGraphicsSurfaceShapesInitializer")
 
 class IAgStkGraphicsAGICustomTerrainOverlayFactory(object):
     """A terrain overlay for handling AGI Cesium Terrain."""
@@ -17511,7 +17445,6 @@ class IAgStkGraphicsAGICustomTerrainOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1af28259-1c26-45f4-8156-079012d5bce3}", IAgStkGraphicsAGICustomTerrainOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAGICustomTerrainOverlayFactory"] = IAgStkGraphicsAGICustomTerrainOverlayFactory
-__all__.append("IAgStkGraphicsAGICustomTerrainOverlayFactory")
 
 class IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory(object):
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
@@ -17556,7 +17489,6 @@ class IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0d8e18a4-cda4-4b24-9ab0-2f25c83eb32e}", IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory"] = IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory
-__all__.append("IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory")
 
 class IAgStkGraphicsAGIProcessedTerrainOverlayFactory(object):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
@@ -17601,7 +17533,6 @@ class IAgStkGraphicsAGIProcessedTerrainOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{dfeee7d8-cd40-43a5-b168-843f26b027ea}", IAgStkGraphicsAGIProcessedTerrainOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAGIProcessedTerrainOverlayFactory"] = IAgStkGraphicsAGIProcessedTerrainOverlayFactory
-__all__.append("IAgStkGraphicsAGIProcessedTerrainOverlayFactory")
 
 class IAgStkGraphicsAGIRoamImageGlobeOverlayFactory(object):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
@@ -17646,7 +17577,6 @@ class IAgStkGraphicsAGIRoamImageGlobeOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{709d626f-1b45-448d-ad5c-1ff3cb17410e}", IAgStkGraphicsAGIRoamImageGlobeOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAGIRoamImageGlobeOverlayFactory"] = IAgStkGraphicsAGIRoamImageGlobeOverlayFactory
-__all__.append("IAgStkGraphicsAGIRoamImageGlobeOverlayFactory")
 
 class IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory(object):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
@@ -17690,7 +17620,6 @@ class IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{c80d1ae6-db35-4f55-a9a4-131260022535}", IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory"] = IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
-__all__.append("IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory")
 
 class IAgStkGraphicsGeospatialImageGlobeOverlayFactory(object):
     """A globe image overlay for handling <a href='http://www.jpeg.org/jpeg2000/'>JPEG 2000</a> (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
@@ -17735,7 +17664,6 @@ class IAgStkGraphicsGeospatialImageGlobeOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{77060b41-7b24-4118-ab48-22efb3007c76}", IAgStkGraphicsGeospatialImageGlobeOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsGeospatialImageGlobeOverlayFactory"] = IAgStkGraphicsGeospatialImageGlobeOverlayFactory
-__all__.append("IAgStkGraphicsGeospatialImageGlobeOverlayFactory")
 
 class IAgStkGraphicsProjectedRasterOverlayFactory(object):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
@@ -17790,7 +17718,6 @@ class IAgStkGraphicsProjectedRasterOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{616abf78-55f7-41a7-a6b7-2da4ae822856}", IAgStkGraphicsProjectedRasterOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsProjectedRasterOverlayFactory"] = IAgStkGraphicsProjectedRasterOverlayFactory
-__all__.append("IAgStkGraphicsProjectedRasterOverlayFactory")
 
 class IAgStkGraphicsProjectionFactory(object):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
@@ -17857,7 +17784,6 @@ class IAgStkGraphicsProjectionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{db047d3d-5afd-4b64-b396-034fd95ec57a}", IAgStkGraphicsProjectionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsProjectionFactory"] = IAgStkGraphicsProjectionFactory
-__all__.append("IAgStkGraphicsProjectionFactory")
 
 class IAgStkGraphicsAltitudeDisplayConditionFactory(object):
     """Defines an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
@@ -17922,7 +17848,6 @@ class IAgStkGraphicsAltitudeDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ee1efbf0-ddbf-41ff-9257-ff73e164d27a}", IAgStkGraphicsAltitudeDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAltitudeDisplayConditionFactory"] = IAgStkGraphicsAltitudeDisplayConditionFactory
-__all__.append("IAgStkGraphicsAltitudeDisplayConditionFactory")
 
 class IAgStkGraphicsAxesPrimitiveFactory(object):
     """Renders an axes in the 3D scene."""
@@ -17969,7 +17894,6 @@ class IAgStkGraphicsAxesPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ff0a767c-8a84-47f9-a108-32cc0bff8366}", IAgStkGraphicsAxesPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAxesPrimitiveFactory"] = IAgStkGraphicsAxesPrimitiveFactory
-__all__.append("IAgStkGraphicsAxesPrimitiveFactory")
 
 class IAgStkGraphicsCompositeDisplayConditionFactory(object):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
@@ -18013,7 +17937,6 @@ class IAgStkGraphicsCompositeDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{a2ca541e-a860-4e47-b0e9-f0e973733e67}", IAgStkGraphicsCompositeDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsCompositeDisplayConditionFactory"] = IAgStkGraphicsCompositeDisplayConditionFactory
-__all__.append("IAgStkGraphicsCompositeDisplayConditionFactory")
 
 class IAgStkGraphicsCompositePrimitiveFactory(object):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
@@ -18057,7 +17980,6 @@ class IAgStkGraphicsCompositePrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6828c6a1-7018-4b65-90af-8bb36f478a6d}", IAgStkGraphicsCompositePrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsCompositePrimitiveFactory"] = IAgStkGraphicsCompositePrimitiveFactory
-__all__.append("IAgStkGraphicsCompositePrimitiveFactory")
 
 class IAgStkGraphicsConstantDisplayConditionFactory(object):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
@@ -18110,7 +18032,6 @@ class IAgStkGraphicsConstantDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4c5226f9-a98e-4af0-a9a4-1e5926908d4c}", IAgStkGraphicsConstantDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsConstantDisplayConditionFactory"] = IAgStkGraphicsConstantDisplayConditionFactory
-__all__.append("IAgStkGraphicsConstantDisplayConditionFactory")
 
 class IAgStkGraphicsDistanceDisplayConditionFactory(object):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
@@ -18164,7 +18085,6 @@ class IAgStkGraphicsDistanceDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{d7dda546-31d2-4bbd-a44d-b9dc413a2412}", IAgStkGraphicsDistanceDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsDistanceDisplayConditionFactory"] = IAgStkGraphicsDistanceDisplayConditionFactory
-__all__.append("IAgStkGraphicsDistanceDisplayConditionFactory")
 
 class IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory(object):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
@@ -18219,7 +18139,6 @@ class IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{05bc2dbc-8533-467a-85d2-720c583f1c7e}", IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory"] = IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
-__all__.append("IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory")
 
 class IAgStkGraphicsDistanceToPositionDisplayConditionFactory(object):
     """Defines an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
@@ -18286,7 +18205,6 @@ class IAgStkGraphicsDistanceToPositionDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{913dd9f7-a91b-4346-b233-180126a8d1bd}", IAgStkGraphicsDistanceToPositionDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsDistanceToPositionDisplayConditionFactory"] = IAgStkGraphicsDistanceToPositionDisplayConditionFactory
-__all__.append("IAgStkGraphicsDistanceToPositionDisplayConditionFactory")
 
 class IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory(object):
     """Defines an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
@@ -18341,7 +18259,6 @@ class IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{f103b596-f16c-4ad6-8242-bef8ecb83383}", IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory"] = IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory
-__all__.append("IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory")
 
 class IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory(object):
     """path primitive update policy that removes points from remove location after a given duration."""
@@ -18395,7 +18312,6 @@ class IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4ea0bb3e-5620-4a74-b721-6b0000eafdc2}", IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory"] = IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory
-__all__.append("IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory")
 
 class IAgStkGraphicsGlobeImageOverlayInitializer(object):
     """A globe overlay that shows an image."""
@@ -18440,7 +18356,6 @@ class IAgStkGraphicsGlobeImageOverlayInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{cf06dc51-75ad-45a2-a1ff-9e3b550be24f}", IAgStkGraphicsGlobeImageOverlayInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsGlobeImageOverlayInitializer"] = IAgStkGraphicsGlobeImageOverlayInitializer
-__all__.append("IAgStkGraphicsGlobeImageOverlayInitializer")
 
 class IAgStkGraphicsGraphicsFontFactory(object):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
@@ -18498,7 +18413,6 @@ class IAgStkGraphicsGraphicsFontFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1a87aeee-c00b-462b-bf99-90cb94ae1eb7}", IAgStkGraphicsGraphicsFontFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsGraphicsFontFactory"] = IAgStkGraphicsGraphicsFontFactory
-__all__.append("IAgStkGraphicsGraphicsFontFactory")
 
 class IAgStkGraphicsGreatArcInterpolatorFactory(object):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
@@ -18561,7 +18475,6 @@ class IAgStkGraphicsGreatArcInterpolatorFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{35afb348-117f-4db0-87ec-643b4b0364dd}", IAgStkGraphicsGreatArcInterpolatorFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsGreatArcInterpolatorFactory"] = IAgStkGraphicsGreatArcInterpolatorFactory
-__all__.append("IAgStkGraphicsGreatArcInterpolatorFactory")
 
 class IAgStkGraphicsAlphaFromLuminanceFilterFactory(object):
     """Adds an alpha band to the source raster derived from the luminance of the raster's color bands."""
@@ -18605,7 +18518,6 @@ class IAgStkGraphicsAlphaFromLuminanceFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2317f609-231f-4266-b38c-f4fa812a0306}", IAgStkGraphicsAlphaFromLuminanceFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAlphaFromLuminanceFilterFactory"] = IAgStkGraphicsAlphaFromLuminanceFilterFactory
-__all__.append("IAgStkGraphicsAlphaFromLuminanceFilterFactory")
 
 class IAgStkGraphicsAlphaFromPixelFilterFactory(object):
     """Adds an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
@@ -18649,7 +18561,6 @@ class IAgStkGraphicsAlphaFromPixelFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{f9802000-aea6-453d-b797-d68fae4a491b}", IAgStkGraphicsAlphaFromPixelFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAlphaFromPixelFilterFactory"] = IAgStkGraphicsAlphaFromPixelFilterFactory
-__all__.append("IAgStkGraphicsAlphaFromPixelFilterFactory")
 
 class IAgStkGraphicsAlphaFromRasterFilterFactory(object):
     """Adds an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
@@ -18702,7 +18613,6 @@ class IAgStkGraphicsAlphaFromRasterFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{f7139fc1-f8f8-4bd2-a33f-9e06fdb4f63c}", IAgStkGraphicsAlphaFromRasterFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsAlphaFromRasterFilterFactory"] = IAgStkGraphicsAlphaFromRasterFilterFactory
-__all__.append("IAgStkGraphicsAlphaFromRasterFilterFactory")
 
 class IAgStkGraphicsBandExtractFilterFactory(object):
     """Extracts a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
@@ -18764,7 +18674,6 @@ class IAgStkGraphicsBandExtractFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{76a65e3a-1868-4312-8a66-8e16a525effd}", IAgStkGraphicsBandExtractFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsBandExtractFilterFactory"] = IAgStkGraphicsBandExtractFilterFactory
-__all__.append("IAgStkGraphicsBandExtractFilterFactory")
 
 class IAgStkGraphicsBandOrderFilterFactory(object):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
@@ -18827,7 +18736,6 @@ class IAgStkGraphicsBandOrderFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1bfcf1dd-1ada-47b7-829b-ea60fc04b61d}", IAgStkGraphicsBandOrderFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsBandOrderFilterFactory"] = IAgStkGraphicsBandOrderFilterFactory
-__all__.append("IAgStkGraphicsBandOrderFilterFactory")
 
 class IAgStkGraphicsBlurFilterFactory(object):
     """Applies a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
@@ -18880,7 +18788,6 @@ class IAgStkGraphicsBlurFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{99188b11-f0f6-4452-b2e9-c53472860aa1}", IAgStkGraphicsBlurFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsBlurFilterFactory"] = IAgStkGraphicsBlurFilterFactory
-__all__.append("IAgStkGraphicsBlurFilterFactory")
 
 class IAgStkGraphicsBrightnessFilterFactory(object):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
@@ -18933,7 +18840,6 @@ class IAgStkGraphicsBrightnessFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{85e2696a-638c-4151-8ba4-e1fdef462598}", IAgStkGraphicsBrightnessFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsBrightnessFilterFactory"] = IAgStkGraphicsBrightnessFilterFactory
-__all__.append("IAgStkGraphicsBrightnessFilterFactory")
 
 class IAgStkGraphicsColorToLuminanceFilterFactory(object):
     """Extracts a luminance band derived from the color bands of the source raster."""
@@ -18977,7 +18883,6 @@ class IAgStkGraphicsColorToLuminanceFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{361263b5-d7ef-468a-9804-c1c9342ffeb8}", IAgStkGraphicsColorToLuminanceFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsColorToLuminanceFilterFactory"] = IAgStkGraphicsColorToLuminanceFilterFactory
-__all__.append("IAgStkGraphicsColorToLuminanceFilterFactory")
 
 class IAgStkGraphicsContrastFilterFactory(object):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
@@ -19030,7 +18935,6 @@ class IAgStkGraphicsContrastFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{d78a7285-c3ff-47b5-b5af-ea67faffae92}", IAgStkGraphicsContrastFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsContrastFilterFactory"] = IAgStkGraphicsContrastFilterFactory
-__all__.append("IAgStkGraphicsContrastFilterFactory")
 
 class IAgStkGraphicsConvolutionFilterFactory(object):
     """Applies convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
@@ -19104,7 +19008,6 @@ class IAgStkGraphicsConvolutionFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{f262f8e7-74a5-440e-9754-d3c8a4196abf}", IAgStkGraphicsConvolutionFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsConvolutionFilterFactory"] = IAgStkGraphicsConvolutionFilterFactory
-__all__.append("IAgStkGraphicsConvolutionFilterFactory")
 
 class IAgStkGraphicsEdgeDetectFilterFactory(object):
     """Applies a convolution filter to detect edges in the source raster."""
@@ -19157,7 +19060,6 @@ class IAgStkGraphicsEdgeDetectFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{d471ae80-2bf6-40d7-9c5b-48c08d0e3819}", IAgStkGraphicsEdgeDetectFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsEdgeDetectFilterFactory"] = IAgStkGraphicsEdgeDetectFilterFactory
-__all__.append("IAgStkGraphicsEdgeDetectFilterFactory")
 
 class IAgStkGraphicsFilteringRasterStreamFactory(object):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
@@ -19203,7 +19105,6 @@ class IAgStkGraphicsFilteringRasterStreamFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3c0a84bb-9330-422b-808e-6f9cf0aa3055}", IAgStkGraphicsFilteringRasterStreamFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsFilteringRasterStreamFactory"] = IAgStkGraphicsFilteringRasterStreamFactory
-__all__.append("IAgStkGraphicsFilteringRasterStreamFactory")
 
 class IAgStkGraphicsFlipFilterFactory(object):
     """Flips the source raster along the given flip axis."""
@@ -19256,7 +19157,6 @@ class IAgStkGraphicsFlipFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0f7bc6a1-42ac-41f0-8f42-d915fba6b859}", IAgStkGraphicsFlipFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsFlipFilterFactory"] = IAgStkGraphicsFlipFilterFactory
-__all__.append("IAgStkGraphicsFlipFilterFactory")
 
 class IAgStkGraphicsGammaCorrectionFilterFactory(object):
     """Applies gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
@@ -19309,7 +19209,6 @@ class IAgStkGraphicsGammaCorrectionFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4e0be3d1-f9ca-47b6-bc7b-31fd98c824a6}", IAgStkGraphicsGammaCorrectionFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsGammaCorrectionFilterFactory"] = IAgStkGraphicsGammaCorrectionFilterFactory
-__all__.append("IAgStkGraphicsGammaCorrectionFilterFactory")
 
 class IAgStkGraphicsGaussianBlurFilterFactory(object):
     """Applies a convolution filter to blur the source raster using the Gaussian function."""
@@ -19353,7 +19252,6 @@ class IAgStkGraphicsGaussianBlurFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{c4f3b576-0d25-4b06-9a79-773821d5c97b}", IAgStkGraphicsGaussianBlurFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsGaussianBlurFilterFactory"] = IAgStkGraphicsGaussianBlurFilterFactory
-__all__.append("IAgStkGraphicsGaussianBlurFilterFactory")
 
 class IAgStkGraphicsGradientDetectFilterFactory(object):
     """Applies a convolution filter to detect gradients in the source raster."""
@@ -19406,7 +19304,6 @@ class IAgStkGraphicsGradientDetectFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ab421e7c-80f3-4503-a29c-5becb2178d44}", IAgStkGraphicsGradientDetectFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsGradientDetectFilterFactory"] = IAgStkGraphicsGradientDetectFilterFactory
-__all__.append("IAgStkGraphicsGradientDetectFilterFactory")
 
 class IAgStkGraphicsJpeg2000WriterInitializer(object):
     """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
@@ -19492,7 +19389,6 @@ class IAgStkGraphicsJpeg2000WriterInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{e2227905-c4e6-46ab-a89f-6d53e201e1a3}", IAgStkGraphicsJpeg2000WriterInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsJpeg2000WriterInitializer"] = IAgStkGraphicsJpeg2000WriterInitializer
-__all__.append("IAgStkGraphicsJpeg2000WriterInitializer")
 
 class IAgStkGraphicsLevelsFilterFactory(object):
     """Adjusts the band levels of the source raster linearly."""
@@ -19536,7 +19432,6 @@ class IAgStkGraphicsLevelsFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{30236afe-b593-4e6c-9e61-099216f14db1}", IAgStkGraphicsLevelsFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsLevelsFilterFactory"] = IAgStkGraphicsLevelsFilterFactory
-__all__.append("IAgStkGraphicsLevelsFilterFactory")
 
 class IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory(object):
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
@@ -19580,7 +19475,6 @@ class IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{d7df6203-7dc8-4f07-8211-78e6d3c268a1}", IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory"] = IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory
-__all__.append("IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory")
 
 class IAgStkGraphicsRasterFactory(object):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
@@ -19647,7 +19541,6 @@ class IAgStkGraphicsRasterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b4777c93-7685-452a-87df-8fd8bfd10e6f}", IAgStkGraphicsRasterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsRasterFactory"] = IAgStkGraphicsRasterFactory
-__all__.append("IAgStkGraphicsRasterFactory")
 
 class IAgStkGraphicsRasterAttributesFactory(object):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
@@ -19757,7 +19650,6 @@ class IAgStkGraphicsRasterAttributesFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5e2aeff9-22ff-4a0f-984d-dc0d92d738c9}", IAgStkGraphicsRasterAttributesFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsRasterAttributesFactory"] = IAgStkGraphicsRasterAttributesFactory
-__all__.append("IAgStkGraphicsRasterAttributesFactory")
 
 class IAgStkGraphicsRotateFilterFactory(object):
     """Rotates the source raster clockwise by the specified angle."""
@@ -19810,7 +19702,6 @@ class IAgStkGraphicsRotateFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{413b5f7f-9fa5-48ba-bb49-d57948acc6ed}", IAgStkGraphicsRotateFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsRotateFilterFactory"] = IAgStkGraphicsRotateFilterFactory
-__all__.append("IAgStkGraphicsRotateFilterFactory")
 
 class IAgStkGraphicsSequenceFilterFactory(object):
     """Applies a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
@@ -19854,7 +19745,6 @@ class IAgStkGraphicsSequenceFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b3f075e4-7de5-4d8c-adbe-89862537e530}", IAgStkGraphicsSequenceFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsSequenceFilterFactory"] = IAgStkGraphicsSequenceFilterFactory
-__all__.append("IAgStkGraphicsSequenceFilterFactory")
 
 class IAgStkGraphicsSharpenFilterFactory(object):
     """Applies a convolution filter to increase the sharpness of the source raster."""
@@ -19907,7 +19797,6 @@ class IAgStkGraphicsSharpenFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{953f907c-8223-40fa-9827-cb08278d5af4}", IAgStkGraphicsSharpenFilterFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsSharpenFilterFactory"] = IAgStkGraphicsSharpenFilterFactory
-__all__.append("IAgStkGraphicsSharpenFilterFactory")
 
 class IAgStkGraphicsVideoStreamFactory(object):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
@@ -19972,7 +19861,6 @@ class IAgStkGraphicsVideoStreamFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{fbde7847-ccff-4c4e-83cf-5f7b05468709}", IAgStkGraphicsVideoStreamFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsVideoStreamFactory"] = IAgStkGraphicsVideoStreamFactory
-__all__.append("IAgStkGraphicsVideoStreamFactory")
 
 class IAgStkGraphicsMarkerBatchPrimitiveFactory(object):
     """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
@@ -20076,7 +19964,6 @@ class IAgStkGraphicsMarkerBatchPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{02a33d9e-cfb3-41c8-be66-e452ae1b7ac3}", IAgStkGraphicsMarkerBatchPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsMarkerBatchPrimitiveFactory"] = IAgStkGraphicsMarkerBatchPrimitiveFactory
-__all__.append("IAgStkGraphicsMarkerBatchPrimitiveFactory")
 
 class IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory(object):
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
@@ -20120,7 +20007,6 @@ class IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9b29c9ab-8fd6-4f2b-8183-b504e319617e}", IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory"] = IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
-__all__.append("IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory")
 
 class IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory(object):
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
@@ -20174,7 +20060,6 @@ class IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{046383cc-b5b9-4ff5-b662-701e694170ba}", IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory"] = IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
-__all__.append("IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory")
 
 class IAgStkGraphicsModelPrimitiveFactory(object):
     """The model primitive loads and renders <a href='http://www.collada.org/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
@@ -20237,7 +20122,6 @@ class IAgStkGraphicsModelPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{93ea79ef-8da7-4992-b8fa-81d372d4258a}", IAgStkGraphicsModelPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsModelPrimitiveFactory"] = IAgStkGraphicsModelPrimitiveFactory
-__all__.append("IAgStkGraphicsModelPrimitiveFactory")
 
 class IAgStkGraphicsPathPrimitiveFactory(object):
     """Renders a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
@@ -20308,7 +20192,6 @@ class IAgStkGraphicsPathPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2b9b98c4-17d2-4b72-a6cf-c9bc87eb11e8}", IAgStkGraphicsPathPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsPathPrimitiveFactory"] = IAgStkGraphicsPathPrimitiveFactory
-__all__.append("IAgStkGraphicsPathPrimitiveFactory")
 
 class IAgStkGraphicsPixelSizeDisplayConditionFactory(object):
     """Defines an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
@@ -20362,7 +20245,6 @@ class IAgStkGraphicsPixelSizeDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2c7bb493-89f9-40f9-b562-feed771d08b7}", IAgStkGraphicsPixelSizeDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsPixelSizeDisplayConditionFactory"] = IAgStkGraphicsPixelSizeDisplayConditionFactory
-__all__.append("IAgStkGraphicsPixelSizeDisplayConditionFactory")
 
 class IAgStkGraphicsPointBatchPrimitiveFactory(object):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
@@ -20433,7 +20315,6 @@ class IAgStkGraphicsPointBatchPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5dd03481-3541-486c-973f-f079eb35973c}", IAgStkGraphicsPointBatchPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsPointBatchPrimitiveFactory"] = IAgStkGraphicsPointBatchPrimitiveFactory
-__all__.append("IAgStkGraphicsPointBatchPrimitiveFactory")
 
 class IAgStkGraphicsPolylinePrimitiveFactory(object):
     """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
@@ -20542,7 +20423,6 @@ class IAgStkGraphicsPolylinePrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{16a27023-42d5-4994-9ace-165e027e72d8}", IAgStkGraphicsPolylinePrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsPolylinePrimitiveFactory"] = IAgStkGraphicsPolylinePrimitiveFactory
-__all__.append("IAgStkGraphicsPolylinePrimitiveFactory")
 
 class IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory(object):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
@@ -20586,7 +20466,6 @@ class IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7f416edb-d9ac-41bd-8216-893ca9ccc16b}", IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory"] = IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory
-__all__.append("IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory")
 
 class IAgStkGraphicsRasterImageGlobeOverlayFactory(object):
     """A globe image overlay for handling rasters."""
@@ -20652,7 +20531,6 @@ class IAgStkGraphicsRasterImageGlobeOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{00a01c47-a9d0-4020-a469-fd874b219713}", IAgStkGraphicsRasterImageGlobeOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsRasterImageGlobeOverlayFactory"] = IAgStkGraphicsRasterImageGlobeOverlayFactory
-__all__.append("IAgStkGraphicsRasterImageGlobeOverlayFactory")
 
 class IAgStkGraphicsRhumbLineInterpolatorFactory(object):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
@@ -20715,7 +20593,6 @@ class IAgStkGraphicsRhumbLineInterpolatorFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1cf08578-668b-431a-9df2-8bb329e3fdf5}", IAgStkGraphicsRhumbLineInterpolatorFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsRhumbLineInterpolatorFactory"] = IAgStkGraphicsRhumbLineInterpolatorFactory
-__all__.append("IAgStkGraphicsRhumbLineInterpolatorFactory")
 
 class IAgStkGraphicsSceneDisplayConditionFactory(object):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
@@ -20759,7 +20636,6 @@ class IAgStkGraphicsSceneDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{930929f7-1d93-4575-a18f-b376e9a16cf7}", IAgStkGraphicsSceneDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsSceneDisplayConditionFactory"] = IAgStkGraphicsSceneDisplayConditionFactory
-__all__.append("IAgStkGraphicsSceneDisplayConditionFactory")
 
 class IAgStkGraphicsSceneManagerInitializer(object):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
@@ -20855,7 +20731,6 @@ class IAgStkGraphicsSceneManagerInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{dd3adf22-21f0-4220-8f3f-bda974157d48}", IAgStkGraphicsSceneManagerInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsSceneManagerInitializer"] = IAgStkGraphicsSceneManagerInitializer
-__all__.append("IAgStkGraphicsSceneManagerInitializer")
 
 class IAgStkGraphicsScreenOverlayFactory(object):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
@@ -20913,7 +20788,6 @@ class IAgStkGraphicsScreenOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{45754d2a-e83f-4c32-9792-c90d9620a83a}", IAgStkGraphicsScreenOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsScreenOverlayFactory"] = IAgStkGraphicsScreenOverlayFactory
-__all__.append("IAgStkGraphicsScreenOverlayFactory")
 
 class IAgStkGraphicsSolidPrimitiveFactory(object):
     """Renders filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
@@ -20984,7 +20858,6 @@ class IAgStkGraphicsSolidPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b76858bc-4b6c-41c0-928a-2ae8fe8d6e03}", IAgStkGraphicsSolidPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsSolidPrimitiveFactory"] = IAgStkGraphicsSolidPrimitiveFactory
-__all__.append("IAgStkGraphicsSolidPrimitiveFactory")
 
 class IAgStkGraphicsSurfaceMeshPrimitiveFactory(object):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
@@ -21064,7 +20937,6 @@ class IAgStkGraphicsSurfaceMeshPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{08c3d10b-0cf0-41e9-93d0-e73b9d25e329}", IAgStkGraphicsSurfaceMeshPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsSurfaceMeshPrimitiveFactory"] = IAgStkGraphicsSurfaceMeshPrimitiveFactory
-__all__.append("IAgStkGraphicsSurfaceMeshPrimitiveFactory")
 
 class IAgStkGraphicsTerrainOverlayInitializer(object):
     """A globe overlay which shows terrain."""
@@ -21109,7 +20981,6 @@ class IAgStkGraphicsTerrainOverlayInitializer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{74c0acde-8d75-49df-87c1-2c39e3240283}", IAgStkGraphicsTerrainOverlayInitializer)
 agcls.AgTypeNameMap["IAgStkGraphicsTerrainOverlayInitializer"] = IAgStkGraphicsTerrainOverlayInitializer
-__all__.append("IAgStkGraphicsTerrainOverlayInitializer")
 
 class IAgStkGraphicsTextBatchPrimitiveFactory(object):
     """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
@@ -21175,7 +21046,6 @@ class IAgStkGraphicsTextBatchPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{dfcc32bb-e95a-46c5-a1e4-ed3acf184d3a}", IAgStkGraphicsTextBatchPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTextBatchPrimitiveFactory"] = IAgStkGraphicsTextBatchPrimitiveFactory
-__all__.append("IAgStkGraphicsTextBatchPrimitiveFactory")
 
 class IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory(object):
     """Optional per-string and per-batch parameters for text batch primitive..."""
@@ -21219,7 +21089,6 @@ class IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{03511893-3980-4c0e-9b99-7f86398acadf}", IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory"] = IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory
-__all__.append("IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory")
 
 class IAgStkGraphicsTextOverlayFactory(object):
     """A rectangular overlay that contains text."""
@@ -21301,7 +21170,6 @@ class IAgStkGraphicsTextOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{183a48a5-a123-493a-9e6e-688775a7ca79}", IAgStkGraphicsTextOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTextOverlayFactory"] = IAgStkGraphicsTextOverlayFactory
-__all__.append("IAgStkGraphicsTextOverlayFactory")
 
 class IAgStkGraphicsTextureMatrixFactory(object):
     """A 4 by 4 matrix applied to a texture coordinate."""
@@ -21390,7 +21258,6 @@ class IAgStkGraphicsTextureMatrixFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{d4fcc6c9-d53a-4988-a09e-3edc080936d4}", IAgStkGraphicsTextureMatrixFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTextureMatrixFactory"] = IAgStkGraphicsTextureMatrixFactory
-__all__.append("IAgStkGraphicsTextureMatrixFactory")
 
 class IAgStkGraphicsTextureScreenOverlayFactory(object):
     """A rectangular overlay that can be assigned a texture."""
@@ -21477,7 +21344,6 @@ class IAgStkGraphicsTextureScreenOverlayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{d68b862b-50c5-4803-9a98-d404c0aa967a}", IAgStkGraphicsTextureScreenOverlayFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTextureScreenOverlayFactory"] = IAgStkGraphicsTextureScreenOverlayFactory
-__all__.append("IAgStkGraphicsTextureScreenOverlayFactory")
 
 class IAgStkGraphicsTimeIntervalDisplayConditionFactory(object):
     """Defines an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
@@ -21540,7 +21406,6 @@ class IAgStkGraphicsTimeIntervalDisplayConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{99ca1422-3ae0-4620-9046-d0bc4ca2bee5}", IAgStkGraphicsTimeIntervalDisplayConditionFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTimeIntervalDisplayConditionFactory"] = IAgStkGraphicsTimeIntervalDisplayConditionFactory
-__all__.append("IAgStkGraphicsTimeIntervalDisplayConditionFactory")
 
 class IAgStkGraphicsTriangleMeshPrimitiveFactory(object):
     """Renders a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
@@ -21593,7 +21458,6 @@ class IAgStkGraphicsTriangleMeshPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{efd9ac8c-e2f0-4a06-9e92-15ebe59d5c38}", IAgStkGraphicsTriangleMeshPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTriangleMeshPrimitiveFactory"] = IAgStkGraphicsTriangleMeshPrimitiveFactory
-__all__.append("IAgStkGraphicsTriangleMeshPrimitiveFactory")
 
 class IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory(object):
     """Optional parameters for triangle mesh primitive..."""
@@ -21637,7 +21501,6 @@ class IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{dab0d95c-d51e-4152-9f63-01441ca43ad9}", IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory"] = IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
-__all__.append("IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory")
 
 class IAgStkGraphicsVectorPrimitiveFactory(object):
     """Renders a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
@@ -21684,7 +21547,6 @@ class IAgStkGraphicsVectorPrimitiveFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{a7013a6a-64ea-43b6-807f-4f789df05438}", IAgStkGraphicsVectorPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsVectorPrimitiveFactory"] = IAgStkGraphicsVectorPrimitiveFactory
-__all__.append("IAgStkGraphicsVectorPrimitiveFactory")
 
 
 
@@ -21707,7 +21569,6 @@ class AgStkGraphicsPathPoint(IAgStkGraphicsPathPoint):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPathPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4C86EAB3-9C30-4D1B-9391-A27010590176}", AgStkGraphicsPathPoint)
-__all__.append("AgStkGraphicsPathPoint")
 
 
 class AgStkGraphicsPathPointFactory(IAgStkGraphicsPathPointFactory):
@@ -21729,7 +21590,6 @@ class AgStkGraphicsPathPointFactory(IAgStkGraphicsPathPointFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPathPointFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{997C56C5-C114-4C2E-A25A-4D4860FA913F}", AgStkGraphicsPathPointFactory)
-__all__.append("AgStkGraphicsPathPointFactory")
 
 
 class AgStkGraphicsBoundingSphere(IAgStkGraphicsBoundingSphere):
@@ -21751,7 +21611,6 @@ class AgStkGraphicsBoundingSphere(IAgStkGraphicsBoundingSphere):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBoundingSphere.")
         
 agcls.AgClassCatalog.add_catalog_entry("{40BA7967-5508-4D2C-9048-76EA16351F61}", AgStkGraphicsBoundingSphere)
-__all__.append("AgStkGraphicsBoundingSphere")
 
 
 class AgStkGraphicsBoundingSphereFactory(IAgStkGraphicsBoundingSphereFactory):
@@ -21773,7 +21632,6 @@ class AgStkGraphicsBoundingSphereFactory(IAgStkGraphicsBoundingSphereFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBoundingSphereFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4CAEE1FD-33BB-4928-8363-39237A62C150}", AgStkGraphicsBoundingSphereFactory)
-__all__.append("AgStkGraphicsBoundingSphereFactory")
 
 
 class AgStkGraphicsTextureFilter2D(IAgStkGraphicsTextureFilter2D):
@@ -21795,7 +21653,6 @@ class AgStkGraphicsTextureFilter2D(IAgStkGraphicsTextureFilter2D):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextureFilter2D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DAE13DA7-D678-4F1F-9F87-F584DF78B8FE}", AgStkGraphicsTextureFilter2D)
-__all__.append("AgStkGraphicsTextureFilter2D")
 
 
 class AgStkGraphicsTextureFilter2DFactory(IAgStkGraphicsTextureFilter2DFactory):
@@ -21817,7 +21674,6 @@ class AgStkGraphicsTextureFilter2DFactory(IAgStkGraphicsTextureFilter2DFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextureFilter2DFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C17EDE04-6594-4662-975E-795B7623414B}", AgStkGraphicsTextureFilter2DFactory)
-__all__.append("AgStkGraphicsTextureFilter2DFactory")
 
 
 class AgStkGraphicsRendererTexture2D(IAgStkGraphicsRendererTexture2D):
@@ -21839,7 +21695,6 @@ class AgStkGraphicsRendererTexture2D(IAgStkGraphicsRendererTexture2D):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRendererTexture2D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{295B9996-B4D8-4AAD-B612-CB0348444732}", AgStkGraphicsRendererTexture2D)
-__all__.append("AgStkGraphicsRendererTexture2D")
 
 
 class AgStkGraphicsRendererTextureTemplate2D(IAgStkGraphicsRendererTextureTemplate2D):
@@ -21861,7 +21716,6 @@ class AgStkGraphicsRendererTextureTemplate2D(IAgStkGraphicsRendererTextureTempla
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRendererTextureTemplate2D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0192E348-0FD1-440D-881D-EF3B882D7190}", AgStkGraphicsRendererTextureTemplate2D)
-__all__.append("AgStkGraphicsRendererTextureTemplate2D")
 
 
 class AgStkGraphicsPathPointCollection(IAgStkGraphicsPathPointCollection):
@@ -21883,7 +21737,6 @@ class AgStkGraphicsPathPointCollection(IAgStkGraphicsPathPointCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPathPointCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B1EBC1AA-0D8C-417B-BD4B-3A1489C8D39E}", AgStkGraphicsPathPointCollection)
-__all__.append("AgStkGraphicsPathPointCollection")
 
 
 class AgStkGraphicsObjectCollection(IAgStkGraphicsObjectCollection):
@@ -21905,7 +21758,6 @@ class AgStkGraphicsObjectCollection(IAgStkGraphicsObjectCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsObjectCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EEFF034B-5D72-4EF4-A76D-A25AEBD04B1E}", AgStkGraphicsObjectCollection)
-__all__.append("AgStkGraphicsObjectCollection")
 
 
 class AgStkGraphicsSceneCollection(IAgStkGraphicsSceneCollection):
@@ -21927,7 +21779,6 @@ class AgStkGraphicsSceneCollection(IAgStkGraphicsSceneCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSceneCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1F9129CC-D135-4993-8E14-0AA4B8402AC8}", AgStkGraphicsSceneCollection)
-__all__.append("AgStkGraphicsSceneCollection")
 
 
 class AgStkGraphicsScreenOverlayPickResultCollection(IAgStkGraphicsScreenOverlayPickResultCollection):
@@ -21949,7 +21800,6 @@ class AgStkGraphicsScreenOverlayPickResultCollection(IAgStkGraphicsScreenOverlay
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsScreenOverlayPickResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{566B0B55-437E-40E9-BB0C-1119BC58C3A4}", AgStkGraphicsScreenOverlayPickResultCollection)
-__all__.append("AgStkGraphicsScreenOverlayPickResultCollection")
 
 
 class AgStkGraphicsGlobeImageOverlayAddCompleteEventArgs(IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs):
@@ -21971,7 +21821,6 @@ class AgStkGraphicsGlobeImageOverlayAddCompleteEventArgs(IAgStkGraphicsGlobeImag
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGlobeImageOverlayAddCompleteEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{817BEFE9-18ED-489B-952E-8088AF90331D}", AgStkGraphicsGlobeImageOverlayAddCompleteEventArgs)
-__all__.append("AgStkGraphicsGlobeImageOverlayAddCompleteEventArgs")
 
 
 class AgStkGraphicsTerrainOverlayAddCompleteEventArgs(IAgStkGraphicsTerrainOverlayAddCompleteEventArgs):
@@ -21993,7 +21842,6 @@ class AgStkGraphicsTerrainOverlayAddCompleteEventArgs(IAgStkGraphicsTerrainOverl
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTerrainOverlayAddCompleteEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{589B5FC6-D8FE-4387-8E3E-188F6C6704C8}", AgStkGraphicsTerrainOverlayAddCompleteEventArgs)
-__all__.append("AgStkGraphicsTerrainOverlayAddCompleteEventArgs")
 
 
 class AgStkGraphicsPickResultCollection(IAgStkGraphicsPickResultCollection):
@@ -22015,7 +21863,6 @@ class AgStkGraphicsPickResultCollection(IAgStkGraphicsPickResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPickResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E6DDBF58-AB3C-4F46-AA2F-4D9A2E0884F8}", AgStkGraphicsPickResultCollection)
-__all__.append("AgStkGraphicsPickResultCollection")
 
 
 class AgStkGraphicsRenderingEventArgs(IAgStkGraphicsRenderingEventArgs):
@@ -22037,7 +21884,6 @@ class AgStkGraphicsRenderingEventArgs(IAgStkGraphicsRenderingEventArgs):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRenderingEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{46B2FD61-672F-4AD5-8588-F635D1EFB00C}", AgStkGraphicsRenderingEventArgs)
-__all__.append("AgStkGraphicsRenderingEventArgs")
 
 
 class AgStkGraphicsBatchPrimitiveIndex(IAgStkGraphicsBatchPrimitiveIndex):
@@ -22059,7 +21905,6 @@ class AgStkGraphicsBatchPrimitiveIndex(IAgStkGraphicsBatchPrimitiveIndex):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBatchPrimitiveIndex.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1AC81969-B283-482A-89A3-AE66819F864E}", AgStkGraphicsBatchPrimitiveIndex)
-__all__.append("AgStkGraphicsBatchPrimitiveIndex")
 
 
 class AgStkGraphicsKmlDocumentCollection(IAgStkGraphicsKmlDocumentCollection):
@@ -22081,7 +21926,6 @@ class AgStkGraphicsKmlDocumentCollection(IAgStkGraphicsKmlDocumentCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlDocumentCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2FB2F974-55DD-4862-B78F-8D9AA8B9167C}", AgStkGraphicsKmlDocumentCollection)
-__all__.append("AgStkGraphicsKmlDocumentCollection")
 
 
 class AgStkGraphicsKmlFeatureCollection(IAgStkGraphicsKmlFeatureCollection):
@@ -22103,7 +21947,6 @@ class AgStkGraphicsKmlFeatureCollection(IAgStkGraphicsKmlFeatureCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlFeatureCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{11C36E9E-AB1B-4F7A-B5CD-75B5E1F9DCA7}", AgStkGraphicsKmlFeatureCollection)
-__all__.append("AgStkGraphicsKmlFeatureCollection")
 
 
 class AgStkGraphicsKmlDocumentLoadedEventArgs(IAgStkGraphicsKmlDocumentLoadedEventArgs):
@@ -22125,7 +21968,6 @@ class AgStkGraphicsKmlDocumentLoadedEventArgs(IAgStkGraphicsKmlDocumentLoadedEve
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlDocumentLoadedEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{77E26868-F894-4E5D-AE27-3D259B9763E3}", AgStkGraphicsKmlDocumentLoadedEventArgs)
-__all__.append("AgStkGraphicsKmlDocumentLoadedEventArgs")
 
 
 class AgStkGraphicsFactoryAndInitializers(IAgStkGraphicsFactoryAndInitializers):
@@ -22147,7 +21989,6 @@ class AgStkGraphicsFactoryAndInitializers(IAgStkGraphicsFactoryAndInitializers):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsFactoryAndInitializers.")
         
 agcls.AgClassCatalog.add_catalog_entry("{06756FC9-1EF3-45CD-8A1F-CE6652BEA6C1}", AgStkGraphicsFactoryAndInitializers)
-__all__.append("AgStkGraphicsFactoryAndInitializers")
 
 
 class AgStkGraphicsExtrudedPolylineTriangulatorResult(IAgStkGraphicsExtrudedPolylineTriangulatorResult, IAgStkGraphicsTriangulatorResult):
@@ -22172,7 +22013,6 @@ class AgStkGraphicsExtrudedPolylineTriangulatorResult(IAgStkGraphicsExtrudedPoly
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsExtrudedPolylineTriangulatorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BD7096DB-7447-43A4-B1D7-7E831565C909}", AgStkGraphicsExtrudedPolylineTriangulatorResult)
-__all__.append("AgStkGraphicsExtrudedPolylineTriangulatorResult")
 
 
 class AgStkGraphicsSolidTriangulatorResult(IAgStkGraphicsSolidTriangulatorResult, IAgStkGraphicsTriangulatorResult):
@@ -22197,7 +22037,6 @@ class AgStkGraphicsSolidTriangulatorResult(IAgStkGraphicsSolidTriangulatorResult
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSolidTriangulatorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D97A5AF7-129F-4972-9DFB-B894D917B328}", AgStkGraphicsSolidTriangulatorResult)
-__all__.append("AgStkGraphicsSolidTriangulatorResult")
 
 
 class AgStkGraphicsSurfaceShapesResult(IAgStkGraphicsSurfaceShapesResult):
@@ -22219,7 +22058,6 @@ class AgStkGraphicsSurfaceShapesResult(IAgStkGraphicsSurfaceShapesResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSurfaceShapesResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{627EC36E-26FE-4D33-81B1-3A4CE5955DED}", AgStkGraphicsSurfaceShapesResult)
-__all__.append("AgStkGraphicsSurfaceShapesResult")
 
 
 class AgStkGraphicsSurfaceTriangulatorResult(IAgStkGraphicsSurfaceTriangulatorResult, IAgStkGraphicsTriangulatorResult):
@@ -22244,7 +22082,6 @@ class AgStkGraphicsSurfaceTriangulatorResult(IAgStkGraphicsSurfaceTriangulatorRe
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSurfaceTriangulatorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{484F03DF-F617-49CC-A3AD-6AB09C86C400}", AgStkGraphicsSurfaceTriangulatorResult)
-__all__.append("AgStkGraphicsSurfaceTriangulatorResult")
 
 
 class AgStkGraphicsTriangulatorResult(IAgStkGraphicsTriangulatorResult):
@@ -22266,7 +22103,6 @@ class AgStkGraphicsTriangulatorResult(IAgStkGraphicsTriangulatorResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTriangulatorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1981E859-F957-4752-9B11-76A77512222B}", AgStkGraphicsTriangulatorResult)
-__all__.append("AgStkGraphicsTriangulatorResult")
 
 
 class AgStkGraphicsAGICustomTerrainOverlay(IAgStkGraphicsAGICustomTerrainOverlay, IAgStkGraphicsTerrainOverlay, IAgStkGraphicsGlobeOverlay):
@@ -22294,7 +22130,6 @@ class AgStkGraphicsAGICustomTerrainOverlay(IAgStkGraphicsAGICustomTerrainOverlay
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAGICustomTerrainOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{474FD730-8942-48A2-B5C1-F84E6E5B112E}", AgStkGraphicsAGICustomTerrainOverlay)
-__all__.append("AgStkGraphicsAGICustomTerrainOverlay")
 
 
 class AgStkGraphicsAGIProcessedImageGlobeOverlay(IAgStkGraphicsAGIProcessedImageGlobeOverlay, IAgStkGraphicsGlobeImageOverlay, IAgStkGraphicsGlobeOverlay):
@@ -22322,7 +22157,6 @@ class AgStkGraphicsAGIProcessedImageGlobeOverlay(IAgStkGraphicsAGIProcessedImage
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAGIProcessedImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26895086-F748-4134-8B1E-E51EF358363D}", AgStkGraphicsAGIProcessedImageGlobeOverlay)
-__all__.append("AgStkGraphicsAGIProcessedImageGlobeOverlay")
 
 
 class AgStkGraphicsAGIProcessedTerrainOverlay(IAgStkGraphicsAGIProcessedTerrainOverlay, IAgStkGraphicsTerrainOverlay, IAgStkGraphicsGlobeOverlay):
@@ -22350,7 +22184,6 @@ class AgStkGraphicsAGIProcessedTerrainOverlay(IAgStkGraphicsAGIProcessedTerrainO
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAGIProcessedTerrainOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8B835120-12BD-4D18-AD78-2C507068F582}", AgStkGraphicsAGIProcessedTerrainOverlay)
-__all__.append("AgStkGraphicsAGIProcessedTerrainOverlay")
 
 
 class AgStkGraphicsAGIRoamImageGlobeOverlay(IAgStkGraphicsAGIRoamImageGlobeOverlay, IAgStkGraphicsGlobeImageOverlay, IAgStkGraphicsGlobeOverlay):
@@ -22378,7 +22211,6 @@ class AgStkGraphicsAGIRoamImageGlobeOverlay(IAgStkGraphicsAGIRoamImageGlobeOverl
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAGIRoamImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{278C21A7-3D85-48C1-B934-BE89B25019CE}", AgStkGraphicsAGIRoamImageGlobeOverlay)
-__all__.append("AgStkGraphicsAGIRoamImageGlobeOverlay")
 
 
 class AgStkGraphicsCameraSnapshot(IAgStkGraphicsCameraSnapshot):
@@ -22400,7 +22232,6 @@ class AgStkGraphicsCameraSnapshot(IAgStkGraphicsCameraSnapshot):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCameraSnapshot.")
         
 agcls.AgClassCatalog.add_catalog_entry("{27A8C9DC-6AF7-436A-80B0-7B426D85EAB1}", AgStkGraphicsCameraSnapshot)
-__all__.append("AgStkGraphicsCameraSnapshot")
 
 
 class AgStkGraphicsCameraVideoRecording(IAgStkGraphicsCameraVideoRecording):
@@ -22422,7 +22253,6 @@ class AgStkGraphicsCameraVideoRecording(IAgStkGraphicsCameraVideoRecording):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCameraVideoRecording.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BBACA9D4-20A3-44B1-BF0F-174652805D72}", AgStkGraphicsCameraVideoRecording)
-__all__.append("AgStkGraphicsCameraVideoRecording")
 
 
 class AgStkGraphicsCentralBodyGraphicsIndexer(IAgStkGraphicsCentralBodyGraphicsIndexer):
@@ -22444,7 +22274,6 @@ class AgStkGraphicsCentralBodyGraphicsIndexer(IAgStkGraphicsCentralBodyGraphicsI
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCentralBodyGraphicsIndexer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{55BA55ED-B236-40BB-9F77-F7C32F3679FD}", AgStkGraphicsCentralBodyGraphicsIndexer)
-__all__.append("AgStkGraphicsCentralBodyGraphicsIndexer")
 
 
 class AgStkGraphicsCustomImageGlobeOverlay(IAgStkGraphicsCustomImageGlobeOverlay, IAgStkGraphicsGlobeImageOverlay, IAgStkGraphicsGlobeOverlay):
@@ -22472,7 +22301,6 @@ class AgStkGraphicsCustomImageGlobeOverlay(IAgStkGraphicsCustomImageGlobeOverlay
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCustomImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FAFB3856-9989-4712-8355-8047D169B49F}", AgStkGraphicsCustomImageGlobeOverlay)
-__all__.append("AgStkGraphicsCustomImageGlobeOverlay")
 
 
 class AgStkGraphicsCustomImageGlobeOverlayPluginActivator(IAgStkGraphicsCustomImageGlobeOverlayPluginActivator):
@@ -22494,7 +22322,6 @@ class AgStkGraphicsCustomImageGlobeOverlayPluginActivator(IAgStkGraphicsCustomIm
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCustomImageGlobeOverlayPluginActivator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{06EE5B12-485C-4AFE-8D16-B1516F3D6BFE}", AgStkGraphicsCustomImageGlobeOverlayPluginActivator)
-__all__.append("AgStkGraphicsCustomImageGlobeOverlayPluginActivator")
 
 
 class AgStkGraphicsCustomImageGlobeOverlayPluginProxy(IAgStkGraphicsCustomImageGlobeOverlayPluginProxy):
@@ -22516,7 +22343,6 @@ class AgStkGraphicsCustomImageGlobeOverlayPluginProxy(IAgStkGraphicsCustomImageG
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCustomImageGlobeOverlayPluginProxy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1A2C5F92-FEFD-4961-B840-D940D30D3637}", AgStkGraphicsCustomImageGlobeOverlayPluginProxy)
-__all__.append("AgStkGraphicsCustomImageGlobeOverlayPluginProxy")
 
 
 class AgStkGraphicsGeospatialImageGlobeOverlay(IAgStkGraphicsGeospatialImageGlobeOverlay, IAgStkGraphicsGlobeImageOverlay, IAgStkGraphicsGlobeOverlay):
@@ -22544,7 +22370,6 @@ class AgStkGraphicsGeospatialImageGlobeOverlay(IAgStkGraphicsGeospatialImageGlob
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGeospatialImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2C72817-48CC-498A-BAF5-71CBDEEE4BD2}", AgStkGraphicsGeospatialImageGlobeOverlay)
-__all__.append("AgStkGraphicsGeospatialImageGlobeOverlay")
 
 
 class AgStkGraphicsGlobeOverlay(IAgStkGraphicsGlobeOverlay):
@@ -22566,7 +22391,6 @@ class AgStkGraphicsGlobeOverlay(IAgStkGraphicsGlobeOverlay):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4D2E94A8-DE1F-4382-AF9D-5664313F3E49}", AgStkGraphicsGlobeOverlay)
-__all__.append("AgStkGraphicsGlobeOverlay")
 
 
 class AgStkGraphicsGlobeOverlaySettings(IAgStkGraphicsGlobeOverlaySettings):
@@ -22588,7 +22412,6 @@ class AgStkGraphicsGlobeOverlaySettings(IAgStkGraphicsGlobeOverlaySettings):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGlobeOverlaySettings.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F326F62-7A92-46B9-8CD4-F73A14B32A42}", AgStkGraphicsGlobeOverlaySettings)
-__all__.append("AgStkGraphicsGlobeOverlaySettings")
 
 
 class AgStkGraphicsLighting(IAgStkGraphicsLighting):
@@ -22610,7 +22433,6 @@ class AgStkGraphicsLighting(IAgStkGraphicsLighting):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsLighting.")
         
 agcls.AgClassCatalog.add_catalog_entry("{29C20830-2D8B-4E6B-854A-FDE514F4396A}", AgStkGraphicsLighting)
-__all__.append("AgStkGraphicsLighting")
 
 
 class AgStkGraphicsPathPrimitiveUpdatePolicy(IAgStkGraphicsPathPrimitiveUpdatePolicy):
@@ -22632,7 +22454,6 @@ class AgStkGraphicsPathPrimitiveUpdatePolicy(IAgStkGraphicsPathPrimitiveUpdatePo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPathPrimitiveUpdatePolicy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1D3DA5F-ABD5-4C2D-891B-AB5A0FCE78A6}", AgStkGraphicsPathPrimitiveUpdatePolicy)
-__all__.append("AgStkGraphicsPathPrimitiveUpdatePolicy")
 
 
 class AgStkGraphicsProjectedRasterOverlay(IAgStkGraphicsProjectedRasterOverlay, IAgStkGraphicsGlobeImageOverlay, IAgStkGraphicsGlobeOverlay):
@@ -22660,7 +22481,6 @@ class AgStkGraphicsProjectedRasterOverlay(IAgStkGraphicsProjectedRasterOverlay, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsProjectedRasterOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ED508BB0-4EF1-412D-BEC2-46CF8F9BC5E2}", AgStkGraphicsProjectedRasterOverlay)
-__all__.append("AgStkGraphicsProjectedRasterOverlay")
 
 
 class AgStkGraphicsProjection(IAgStkGraphicsProjection):
@@ -22682,7 +22502,6 @@ class AgStkGraphicsProjection(IAgStkGraphicsProjection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsProjection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3C06C59D-E24C-4145-9634-15ABB16CF69F}", AgStkGraphicsProjection)
-__all__.append("AgStkGraphicsProjection")
 
 
 class AgStkGraphicsProjectionStream(IAgStkGraphicsProjectionStream, IAgStkGraphicsProjection):
@@ -22707,7 +22526,6 @@ class AgStkGraphicsProjectionStream(IAgStkGraphicsProjectionStream, IAgStkGraphi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsProjectionStream.")
         
 agcls.AgClassCatalog.add_catalog_entry("{02371735-0B2F-48AA-A51E-53DAEC21903D}", AgStkGraphicsProjectionStream)
-__all__.append("AgStkGraphicsProjectionStream")
 
 
 class AgStkGraphicsSceneGlobeOverlaySettings(IAgStkGraphicsSceneGlobeOverlaySettings):
@@ -22729,7 +22547,6 @@ class AgStkGraphicsSceneGlobeOverlaySettings(IAgStkGraphicsSceneGlobeOverlaySett
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSceneGlobeOverlaySettings.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AA19929F-DE78-4CDB-90C5-12D89532D4C4}", AgStkGraphicsSceneGlobeOverlaySettings)
-__all__.append("AgStkGraphicsSceneGlobeOverlaySettings")
 
 
 class AgStkGraphicsScreenOverlayCollectionBase(IAgStkGraphicsScreenOverlayCollectionBase):
@@ -22751,7 +22568,6 @@ class AgStkGraphicsScreenOverlayCollectionBase(IAgStkGraphicsScreenOverlayCollec
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsScreenOverlayCollectionBase.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B1764146-8986-45CB-A5B9-426988A9F289}", AgStkGraphicsScreenOverlayCollectionBase)
-__all__.append("AgStkGraphicsScreenOverlayCollectionBase")
 
 
 class AgStkGraphicsTexture2DFactory(IAgStkGraphicsTexture2DFactory):
@@ -22773,7 +22589,6 @@ class AgStkGraphicsTexture2DFactory(IAgStkGraphicsTexture2DFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTexture2DFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1BA44C8C-0CFB-4A7C-B687-788BD4D49AB2}", AgStkGraphicsTexture2DFactory)
-__all__.append("AgStkGraphicsTexture2DFactory")
 
 
 class AgStkGraphicsVisualEffects(IAgStkGraphicsVisualEffects):
@@ -22795,7 +22610,6 @@ class AgStkGraphicsVisualEffects(IAgStkGraphicsVisualEffects):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsVisualEffects.")
         
 agcls.AgClassCatalog.add_catalog_entry("{901f26d9-644b-4513-a3e9-d4d1f4c3df48}", AgStkGraphicsVisualEffects)
-__all__.append("AgStkGraphicsVisualEffects")
 
 
 class AgStkGraphicsAltitudeDisplayCondition(IAgStkGraphicsAltitudeDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -22820,7 +22634,6 @@ class AgStkGraphicsAltitudeDisplayCondition(IAgStkGraphicsAltitudeDisplayConditi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAltitudeDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E5AFCA9A-2850-44C4-BE11-930BB559872B}", AgStkGraphicsAltitudeDisplayCondition)
-__all__.append("AgStkGraphicsAltitudeDisplayCondition")
 
 
 class AgStkGraphicsAxesPrimitive(IAgStkGraphicsAxesPrimitive, IAgStkGraphicsPrimitive):
@@ -22845,7 +22658,6 @@ class AgStkGraphicsAxesPrimitive(IAgStkGraphicsAxesPrimitive, IAgStkGraphicsPrim
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAxesPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE8A4146-1A03-4D94-95E4-4D1C67D5501F}", AgStkGraphicsAxesPrimitive)
-__all__.append("AgStkGraphicsAxesPrimitive")
 
 
 class AgStkGraphicsCamera(IAgStkGraphicsCamera):
@@ -22867,7 +22679,6 @@ class AgStkGraphicsCamera(IAgStkGraphicsCamera):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCamera.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B11DEE46-76FD-46E6-9476-AEA896C1E2AF}", AgStkGraphicsCamera)
-__all__.append("AgStkGraphicsCamera")
 
 
 class AgStkGraphicsCentralBodyGraphics(IAgStkGraphicsCentralBodyGraphics):
@@ -22889,7 +22700,6 @@ class AgStkGraphicsCentralBodyGraphics(IAgStkGraphicsCentralBodyGraphics):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCentralBodyGraphics.")
         
 agcls.AgClassCatalog.add_catalog_entry("{47858749-2CF1-48AF-ADCA-426C6E87B7EB}", AgStkGraphicsCentralBodyGraphics)
-__all__.append("AgStkGraphicsCentralBodyGraphics")
 
 
 class AgStkGraphicsClouds(IAgStkGraphicsClouds):
@@ -22911,7 +22721,6 @@ class AgStkGraphicsClouds(IAgStkGraphicsClouds):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsClouds.")
         
 agcls.AgClassCatalog.add_catalog_entry("{a98d31c3-daf0-40dd-ba64-0ceb18f0e522}", AgStkGraphicsClouds)
-__all__.append("AgStkGraphicsClouds")
 
 
 class AgStkGraphicsCompositeDisplayCondition(IAgStkGraphicsCompositeDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -22936,7 +22745,6 @@ class AgStkGraphicsCompositeDisplayCondition(IAgStkGraphicsCompositeDisplayCondi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCompositeDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B59D2316-7712-462C-BB2F-3C882D18388E}", AgStkGraphicsCompositeDisplayCondition)
-__all__.append("AgStkGraphicsCompositeDisplayCondition")
 
 
 class AgStkGraphicsCompositePrimitive(IAgStkGraphicsCompositePrimitive, IAgStkGraphicsPrimitive):
@@ -22961,7 +22769,6 @@ class AgStkGraphicsCompositePrimitive(IAgStkGraphicsCompositePrimitive, IAgStkGr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCompositePrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8F6F69B8-80C9-40F2-BC5B-BCEE656C8917}", AgStkGraphicsCompositePrimitive)
-__all__.append("AgStkGraphicsCompositePrimitive")
 
 
 class AgStkGraphicsConstantDisplayCondition(IAgStkGraphicsConstantDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -22986,7 +22793,6 @@ class AgStkGraphicsConstantDisplayCondition(IAgStkGraphicsConstantDisplayConditi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsConstantDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C21814A8-7591-412D-9390-A6CE73468CA3}", AgStkGraphicsConstantDisplayCondition)
-__all__.append("AgStkGraphicsConstantDisplayCondition")
 
 
 class AgStkGraphicsDisplayCondition(IAgStkGraphicsDisplayCondition):
@@ -23008,7 +22814,6 @@ class AgStkGraphicsDisplayCondition(IAgStkGraphicsDisplayCondition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CEC5D5EB-5AF8-4CCD-BD3D-EFF95DC04F26}", AgStkGraphicsDisplayCondition)
-__all__.append("AgStkGraphicsDisplayCondition")
 
 
 class AgStkGraphicsDistanceDisplayCondition(IAgStkGraphicsDistanceDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -23033,7 +22838,6 @@ class AgStkGraphicsDistanceDisplayCondition(IAgStkGraphicsDistanceDisplayConditi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDistanceDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0B5589C8-51E7-4191-BD54-8326BFF56CE2}", AgStkGraphicsDistanceDisplayCondition)
-__all__.append("AgStkGraphicsDistanceDisplayCondition")
 
 
 class AgStkGraphicsDistanceToGlobeOverlayDisplayCondition(IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -23058,7 +22862,6 @@ class AgStkGraphicsDistanceToGlobeOverlayDisplayCondition(IAgStkGraphicsDistance
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDistanceToGlobeOverlayDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E9C27719-711F-4E36-9FF9-DEF15D35581E}", AgStkGraphicsDistanceToGlobeOverlayDisplayCondition)
-__all__.append("AgStkGraphicsDistanceToGlobeOverlayDisplayCondition")
 
 
 class AgStkGraphicsDistanceToPositionDisplayCondition(IAgStkGraphicsDistanceToPositionDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -23083,7 +22886,6 @@ class AgStkGraphicsDistanceToPositionDisplayCondition(IAgStkGraphicsDistanceToPo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDistanceToPositionDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ACD2A88B-E930-4994-AA0A-D37AEDB51182}", AgStkGraphicsDistanceToPositionDisplayCondition)
-__all__.append("AgStkGraphicsDistanceToPositionDisplayCondition")
 
 
 class AgStkGraphicsDistanceToPrimitiveDisplayCondition(IAgStkGraphicsDistanceToPrimitiveDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -23108,7 +22910,6 @@ class AgStkGraphicsDistanceToPrimitiveDisplayCondition(IAgStkGraphicsDistanceToP
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDistanceToPrimitiveDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{90A5B7AD-6FE1-4387-96B1-66A17A54FDA2}", AgStkGraphicsDistanceToPrimitiveDisplayCondition)
-__all__.append("AgStkGraphicsDistanceToPrimitiveDisplayCondition")
 
 
 class AgStkGraphicsDurationPathPrimitiveUpdatePolicy(IAgStkGraphicsDurationPathPrimitiveUpdatePolicy, IAgStkGraphicsPathPrimitiveUpdatePolicy):
@@ -23133,7 +22934,6 @@ class AgStkGraphicsDurationPathPrimitiveUpdatePolicy(IAgStkGraphicsDurationPathP
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDurationPathPrimitiveUpdatePolicy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8628CCF8-7803-4528-B013-66116C059454}", AgStkGraphicsDurationPathPrimitiveUpdatePolicy)
-__all__.append("AgStkGraphicsDurationPathPrimitiveUpdatePolicy")
 
 
 class AgStkGraphicsFrameRate(IAgStkGraphicsFrameRate):
@@ -23155,7 +22955,6 @@ class AgStkGraphicsFrameRate(IAgStkGraphicsFrameRate):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsFrameRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EB82B58B-6E32-4E91-92A8-E8008A5C4B77}", AgStkGraphicsFrameRate)
-__all__.append("AgStkGraphicsFrameRate")
 
 
 class AgStkGraphicsGlobeImageOverlay(IAgStkGraphicsGlobeImageOverlay, IAgStkGraphicsGlobeOverlay):
@@ -23180,7 +22979,6 @@ class AgStkGraphicsGlobeImageOverlay(IAgStkGraphicsGlobeImageOverlay, IAgStkGrap
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGlobeImageOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5316E632-3018-4625-866F-E56F29FFBC05}", AgStkGraphicsGlobeImageOverlay)
-__all__.append("AgStkGraphicsGlobeImageOverlay")
 
 
 class AgStkGraphicsGraphicsFont(IAgStkGraphicsGraphicsFont):
@@ -23202,7 +23000,6 @@ class AgStkGraphicsGraphicsFont(IAgStkGraphicsGraphicsFont):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGraphicsFont.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C48AD7DF-40C9-4A57-86CD-E7B0E4BFCF52}", AgStkGraphicsGraphicsFont)
-__all__.append("AgStkGraphicsGraphicsFont")
 
 
 class AgStkGraphicsGreatArcInterpolator(IAgStkGraphicsGreatArcInterpolator, IAgStkGraphicsPositionInterpolator):
@@ -23227,7 +23024,6 @@ class AgStkGraphicsGreatArcInterpolator(IAgStkGraphicsGreatArcInterpolator, IAgS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGreatArcInterpolator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A91AC76D-7326-4103-996E-DE20EB349A61}", AgStkGraphicsGreatArcInterpolator)
-__all__.append("AgStkGraphicsGreatArcInterpolator")
 
 
 class AgStkGraphicsImageCollection(IAgStkGraphicsImageCollection):
@@ -23249,7 +23045,6 @@ class AgStkGraphicsImageCollection(IAgStkGraphicsImageCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsImageCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26812ED6-0AB2-4554-A01F-A1E52687763D}", AgStkGraphicsImageCollection)
-__all__.append("AgStkGraphicsImageCollection")
 
 
 class AgStkGraphicsAlphaFromLuminanceFilter(IAgStkGraphicsAlphaFromLuminanceFilter, IAgStkGraphicsRasterFilter):
@@ -23274,7 +23069,6 @@ class AgStkGraphicsAlphaFromLuminanceFilter(IAgStkGraphicsAlphaFromLuminanceFilt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAlphaFromLuminanceFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7D660FC7-F1D2-4189-A5C7-B2BFD97E1B4E}", AgStkGraphicsAlphaFromLuminanceFilter)
-__all__.append("AgStkGraphicsAlphaFromLuminanceFilter")
 
 
 class AgStkGraphicsAlphaFromPixelFilter(IAgStkGraphicsAlphaFromPixelFilter, IAgStkGraphicsRasterFilter):
@@ -23299,7 +23093,6 @@ class AgStkGraphicsAlphaFromPixelFilter(IAgStkGraphicsAlphaFromPixelFilter, IAgS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAlphaFromPixelFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2D2B3A3-9FA8-4B58-9CA5-89705663DEDB}", AgStkGraphicsAlphaFromPixelFilter)
-__all__.append("AgStkGraphicsAlphaFromPixelFilter")
 
 
 class AgStkGraphicsAlphaFromRasterFilter(IAgStkGraphicsAlphaFromRasterFilter, IAgStkGraphicsRasterFilter):
@@ -23324,7 +23117,6 @@ class AgStkGraphicsAlphaFromRasterFilter(IAgStkGraphicsAlphaFromRasterFilter, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAlphaFromRasterFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5E83A2AD-0A40-4CFC-823A-311AC8B034B3}", AgStkGraphicsAlphaFromRasterFilter)
-__all__.append("AgStkGraphicsAlphaFromRasterFilter")
 
 
 class AgStkGraphicsBandExtractFilter(IAgStkGraphicsBandExtractFilter, IAgStkGraphicsRasterFilter):
@@ -23349,7 +23141,6 @@ class AgStkGraphicsBandExtractFilter(IAgStkGraphicsBandExtractFilter, IAgStkGrap
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBandExtractFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DC9176BE-3DBD-40D1-A0BC-CEDE39C747E2}", AgStkGraphicsBandExtractFilter)
-__all__.append("AgStkGraphicsBandExtractFilter")
 
 
 class AgStkGraphicsBandOrderFilter(IAgStkGraphicsBandOrderFilter, IAgStkGraphicsRasterFilter):
@@ -23374,7 +23165,6 @@ class AgStkGraphicsBandOrderFilter(IAgStkGraphicsBandOrderFilter, IAgStkGraphics
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBandOrderFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{91749CD4-8503-4C71-AD42-DB5AAF1BC240}", AgStkGraphicsBandOrderFilter)
-__all__.append("AgStkGraphicsBandOrderFilter")
 
 
 class AgStkGraphicsBlurFilter(IAgStkGraphicsBlurFilter, IAgStkGraphicsConvolutionFilter, IAgStkGraphicsRasterFilter):
@@ -23402,7 +23192,6 @@ class AgStkGraphicsBlurFilter(IAgStkGraphicsBlurFilter, IAgStkGraphicsConvolutio
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBlurFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A3E1128F-DE2D-4A57-AC68-C7C938480BF2}", AgStkGraphicsBlurFilter)
-__all__.append("AgStkGraphicsBlurFilter")
 
 
 class AgStkGraphicsBrightnessFilter(IAgStkGraphicsBrightnessFilter, IAgStkGraphicsRasterFilter):
@@ -23427,7 +23216,6 @@ class AgStkGraphicsBrightnessFilter(IAgStkGraphicsBrightnessFilter, IAgStkGraphi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBrightnessFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E6FF496E-64E8-41CA-BED7-8FEBDDB6B9C9}", AgStkGraphicsBrightnessFilter)
-__all__.append("AgStkGraphicsBrightnessFilter")
 
 
 class AgStkGraphicsColorToLuminanceFilter(IAgStkGraphicsColorToLuminanceFilter, IAgStkGraphicsRasterFilter):
@@ -23452,7 +23240,6 @@ class AgStkGraphicsColorToLuminanceFilter(IAgStkGraphicsColorToLuminanceFilter, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsColorToLuminanceFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BE472786-A17B-490A-8DE7-4831AC3FEEDE}", AgStkGraphicsColorToLuminanceFilter)
-__all__.append("AgStkGraphicsColorToLuminanceFilter")
 
 
 class AgStkGraphicsContrastFilter(IAgStkGraphicsContrastFilter, IAgStkGraphicsRasterFilter):
@@ -23477,7 +23264,6 @@ class AgStkGraphicsContrastFilter(IAgStkGraphicsContrastFilter, IAgStkGraphicsRa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsContrastFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{20FA2A78-30D4-4DDE-84D7-EBF001730166}", AgStkGraphicsContrastFilter)
-__all__.append("AgStkGraphicsContrastFilter")
 
 
 class AgStkGraphicsConvolutionFilter(IAgStkGraphicsConvolutionFilter, IAgStkGraphicsRasterFilter):
@@ -23502,7 +23288,6 @@ class AgStkGraphicsConvolutionFilter(IAgStkGraphicsConvolutionFilter, IAgStkGrap
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsConvolutionFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{113D939E-C5B0-49BD-A38B-53DD961CAC5B}", AgStkGraphicsConvolutionFilter)
-__all__.append("AgStkGraphicsConvolutionFilter")
 
 
 class AgStkGraphicsEdgeDetectFilter(IAgStkGraphicsEdgeDetectFilter, IAgStkGraphicsConvolutionFilter, IAgStkGraphicsRasterFilter):
@@ -23530,7 +23315,6 @@ class AgStkGraphicsEdgeDetectFilter(IAgStkGraphicsEdgeDetectFilter, IAgStkGraphi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsEdgeDetectFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{04E73117-38A1-4EE3-854D-253934DE9B54}", AgStkGraphicsEdgeDetectFilter)
-__all__.append("AgStkGraphicsEdgeDetectFilter")
 
 
 class AgStkGraphicsFilteringRasterStream(IAgStkGraphicsFilteringRasterStream, IAgStkGraphicsRasterStream, IAgStkGraphicsRaster):
@@ -23558,7 +23342,6 @@ class AgStkGraphicsFilteringRasterStream(IAgStkGraphicsFilteringRasterStream, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsFilteringRasterStream.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D59ED29-9EF8-4D85-BE0F-9E244736C814}", AgStkGraphicsFilteringRasterStream)
-__all__.append("AgStkGraphicsFilteringRasterStream")
 
 
 class AgStkGraphicsFlipFilter(IAgStkGraphicsFlipFilter, IAgStkGraphicsRasterFilter):
@@ -23583,7 +23366,6 @@ class AgStkGraphicsFlipFilter(IAgStkGraphicsFlipFilter, IAgStkGraphicsRasterFilt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsFlipFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{08E0C45D-A187-4B74-93AE-BF29B39D50C3}", AgStkGraphicsFlipFilter)
-__all__.append("AgStkGraphicsFlipFilter")
 
 
 class AgStkGraphicsGammaCorrectionFilter(IAgStkGraphicsGammaCorrectionFilter, IAgStkGraphicsRasterFilter):
@@ -23608,7 +23390,6 @@ class AgStkGraphicsGammaCorrectionFilter(IAgStkGraphicsGammaCorrectionFilter, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGammaCorrectionFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A560ACC2-4642-44FD-A5FC-BD3AB7A0FC2F}", AgStkGraphicsGammaCorrectionFilter)
-__all__.append("AgStkGraphicsGammaCorrectionFilter")
 
 
 class AgStkGraphicsGaussianBlurFilter(IAgStkGraphicsGaussianBlurFilter, IAgStkGraphicsConvolutionFilter, IAgStkGraphicsRasterFilter):
@@ -23636,7 +23417,6 @@ class AgStkGraphicsGaussianBlurFilter(IAgStkGraphicsGaussianBlurFilter, IAgStkGr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGaussianBlurFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BCEE5F1C-66D8-48C6-8485-8435260855DE}", AgStkGraphicsGaussianBlurFilter)
-__all__.append("AgStkGraphicsGaussianBlurFilter")
 
 
 class AgStkGraphicsGradientDetectFilter(IAgStkGraphicsGradientDetectFilter, IAgStkGraphicsConvolutionFilter, IAgStkGraphicsRasterFilter):
@@ -23664,7 +23444,6 @@ class AgStkGraphicsGradientDetectFilter(IAgStkGraphicsGradientDetectFilter, IAgS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGradientDetectFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7F410D2F-C209-4F22-A906-5F8BA0C8CA40}", AgStkGraphicsGradientDetectFilter)
-__all__.append("AgStkGraphicsGradientDetectFilter")
 
 
 class AgStkGraphicsLevelsFilter(IAgStkGraphicsLevelsFilter, IAgStkGraphicsRasterFilter):
@@ -23689,7 +23468,6 @@ class AgStkGraphicsLevelsFilter(IAgStkGraphicsLevelsFilter, IAgStkGraphicsRaster
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsLevelsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C21CE0FC-3E94-47C9-9E21-C8478A46E75C}", AgStkGraphicsLevelsFilter)
-__all__.append("AgStkGraphicsLevelsFilter")
 
 
 class AgStkGraphicsProjectionRasterStreamPluginActivator(IAgStkGraphicsProjectionRasterStreamPluginActivator):
@@ -23711,7 +23489,6 @@ class AgStkGraphicsProjectionRasterStreamPluginActivator(IAgStkGraphicsProjectio
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsProjectionRasterStreamPluginActivator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5365D424-8630-4D9D-B209-F946D5116080}", AgStkGraphicsProjectionRasterStreamPluginActivator)
-__all__.append("AgStkGraphicsProjectionRasterStreamPluginActivator")
 
 
 class AgStkGraphicsProjectionRasterStreamPluginProxy(IAgStkGraphicsProjectionRasterStreamPluginProxy):
@@ -23733,7 +23510,6 @@ class AgStkGraphicsProjectionRasterStreamPluginProxy(IAgStkGraphicsProjectionRas
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsProjectionRasterStreamPluginProxy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{82E6B1F4-DC2D-40C3-8251-8207F218B820}", AgStkGraphicsProjectionRasterStreamPluginProxy)
-__all__.append("AgStkGraphicsProjectionRasterStreamPluginProxy")
 
 
 class AgStkGraphicsRaster(IAgStkGraphicsRaster):
@@ -23755,7 +23531,6 @@ class AgStkGraphicsRaster(IAgStkGraphicsRaster):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRaster.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50AB6A3A-54CA-4619-9B99-FB7BD497EA92}", AgStkGraphicsRaster)
-__all__.append("AgStkGraphicsRaster")
 
 
 class AgStkGraphicsRasterAttributes(IAgStkGraphicsRasterAttributes):
@@ -23777,7 +23552,6 @@ class AgStkGraphicsRasterAttributes(IAgStkGraphicsRasterAttributes):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRasterAttributes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{32DEB10A-1039-43AF-AA36-BA94F8CC8531}", AgStkGraphicsRasterAttributes)
-__all__.append("AgStkGraphicsRasterAttributes")
 
 
 class AgStkGraphicsRasterFilter(IAgStkGraphicsRasterFilter):
@@ -23799,7 +23573,6 @@ class AgStkGraphicsRasterFilter(IAgStkGraphicsRasterFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRasterFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0345FD5E-C6A6-42D3-AEA9-57A7444BFF42}", AgStkGraphicsRasterFilter)
-__all__.append("AgStkGraphicsRasterFilter")
 
 
 class AgStkGraphicsRasterStream(IAgStkGraphicsRasterStream, IAgStkGraphicsRaster):
@@ -23824,7 +23597,6 @@ class AgStkGraphicsRasterStream(IAgStkGraphicsRasterStream, IAgStkGraphicsRaster
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRasterStream.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CAFADC5E-933C-46AC-BD09-18B089E86346}", AgStkGraphicsRasterStream)
-__all__.append("AgStkGraphicsRasterStream")
 
 
 class AgStkGraphicsRotateFilter(IAgStkGraphicsRotateFilter, IAgStkGraphicsRasterFilter):
@@ -23849,7 +23621,6 @@ class AgStkGraphicsRotateFilter(IAgStkGraphicsRotateFilter, IAgStkGraphicsRaster
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRotateFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AEDFA944-E740-4D19-9819-CB179C43E060}", AgStkGraphicsRotateFilter)
-__all__.append("AgStkGraphicsRotateFilter")
 
 
 class AgStkGraphicsSequenceFilter(IAgStkGraphicsSequenceFilter, IAgStkGraphicsRasterFilter):
@@ -23874,7 +23645,6 @@ class AgStkGraphicsSequenceFilter(IAgStkGraphicsSequenceFilter, IAgStkGraphicsRa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSequenceFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{37330024-90FE-47DD-9548-C13089A085FC}", AgStkGraphicsSequenceFilter)
-__all__.append("AgStkGraphicsSequenceFilter")
 
 
 class AgStkGraphicsSharpenFilter(IAgStkGraphicsSharpenFilter, IAgStkGraphicsConvolutionFilter, IAgStkGraphicsRasterFilter):
@@ -23902,7 +23672,6 @@ class AgStkGraphicsSharpenFilter(IAgStkGraphicsSharpenFilter, IAgStkGraphicsConv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSharpenFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F6FC309-D30E-41AD-A7B6-E70039313B6E}", AgStkGraphicsSharpenFilter)
-__all__.append("AgStkGraphicsSharpenFilter")
 
 
 class AgStkGraphicsVideoStream(IAgStkGraphicsVideoStream, IAgStkGraphicsRasterStream, IAgStkGraphicsRaster):
@@ -23930,7 +23699,6 @@ class AgStkGraphicsVideoStream(IAgStkGraphicsVideoStream, IAgStkGraphicsRasterSt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsVideoStream.")
         
 agcls.AgClassCatalog.add_catalog_entry("{80D82D96-D87B-4910-B8BB-1FBE9E121A4F}", AgStkGraphicsVideoStream)
-__all__.append("AgStkGraphicsVideoStream")
 
 
 class AgStkGraphicsKmlContainer(IAgStkGraphicsKmlContainer, IAgStkGraphicsKmlFeature):
@@ -23955,7 +23723,6 @@ class AgStkGraphicsKmlContainer(IAgStkGraphicsKmlContainer, IAgStkGraphicsKmlFea
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlContainer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{24AA1395-417E-4845-A9D2-61C4D59BCABF}", AgStkGraphicsKmlContainer)
-__all__.append("AgStkGraphicsKmlContainer")
 
 
 class AgStkGraphicsKmlDocument(IAgStkGraphicsKmlDocument, IAgStkGraphicsKmlContainer, IAgStkGraphicsKmlFeature):
@@ -23983,7 +23750,6 @@ class AgStkGraphicsKmlDocument(IAgStkGraphicsKmlDocument, IAgStkGraphicsKmlConta
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlDocument.")
         
 agcls.AgClassCatalog.add_catalog_entry("{130689C0-43C6-4C34-9AC7-252E155E9F66}", AgStkGraphicsKmlDocument)
-__all__.append("AgStkGraphicsKmlDocument")
 
 
 class AgStkGraphicsKmlFeature(IAgStkGraphicsKmlFeature):
@@ -24005,7 +23771,6 @@ class AgStkGraphicsKmlFeature(IAgStkGraphicsKmlFeature):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlFeature.")
         
 agcls.AgClassCatalog.add_catalog_entry("{20C290F8-9102-4960-AD19-F5EFC321F796}", AgStkGraphicsKmlFeature)
-__all__.append("AgStkGraphicsKmlFeature")
 
 
 class AgStkGraphicsKmlFolder(IAgStkGraphicsKmlFolder, IAgStkGraphicsKmlContainer, IAgStkGraphicsKmlFeature):
@@ -24033,7 +23798,6 @@ class AgStkGraphicsKmlFolder(IAgStkGraphicsKmlFolder, IAgStkGraphicsKmlContainer
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlFolder.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7BE1A8D-28BF-4298-AE7D-656B40FFB3D0}", AgStkGraphicsKmlFolder)
-__all__.append("AgStkGraphicsKmlFolder")
 
 
 class AgStkGraphicsKmlGraphics(IAgStkGraphicsKmlGraphics):
@@ -24055,7 +23819,6 @@ class AgStkGraphicsKmlGraphics(IAgStkGraphicsKmlGraphics):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlGraphics.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A094F5DE-8BF2-4079-8009-0450D2E4EF11}", AgStkGraphicsKmlGraphics)
-__all__.append("AgStkGraphicsKmlGraphics")
 
 
 class AgStkGraphicsKmlNetworkLink(IAgStkGraphicsKmlNetworkLink, IAgStkGraphicsKmlFeature):
@@ -24080,7 +23843,6 @@ class AgStkGraphicsKmlNetworkLink(IAgStkGraphicsKmlNetworkLink, IAgStkGraphicsKm
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsKmlNetworkLink.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BD2ECA7D-919B-4C64-8AA1-E503A80EF3EA}", AgStkGraphicsKmlNetworkLink)
-__all__.append("AgStkGraphicsKmlNetworkLink")
 
 
 class AgStkGraphicsMarkerBatchPrimitive(IAgStkGraphicsMarkerBatchPrimitive, IAgStkGraphicsPrimitive):
@@ -24105,7 +23867,6 @@ class AgStkGraphicsMarkerBatchPrimitive(IAgStkGraphicsMarkerBatchPrimitive, IAgS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsMarkerBatchPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7F4992D-BBE2-4C68-BB4E-51BB8CD2D124}", AgStkGraphicsMarkerBatchPrimitive)
-__all__.append("AgStkGraphicsMarkerBatchPrimitive")
 
 
 class AgStkGraphicsMarkerBatchPrimitiveOptionalParameters(IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters):
@@ -24127,7 +23888,6 @@ class AgStkGraphicsMarkerBatchPrimitiveOptionalParameters(IAgStkGraphicsMarkerBa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsMarkerBatchPrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{24750753-2036-4221-83F0-F9045DCA0A5D}", AgStkGraphicsMarkerBatchPrimitiveOptionalParameters)
-__all__.append("AgStkGraphicsMarkerBatchPrimitiveOptionalParameters")
 
 
 class AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy(IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy, IAgStkGraphicsPathPrimitiveUpdatePolicy):
@@ -24152,7 +23912,6 @@ class AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy(IAgStkGraphicsMaximumCo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4D41C220-2CE4-4CA1-942A-9AF4F7F34C4A}", AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy)
-__all__.append("AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy")
 
 
 class AgStkGraphicsModelArticulation(IAgStkGraphicsModelArticulation):
@@ -24174,7 +23933,6 @@ class AgStkGraphicsModelArticulation(IAgStkGraphicsModelArticulation):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsModelArticulation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A9E72E72-17D6-4D7C-A4EF-5A970232ED93}", AgStkGraphicsModelArticulation)
-__all__.append("AgStkGraphicsModelArticulation")
 
 
 class AgStkGraphicsModelArticulationCollection(IAgStkGraphicsModelArticulationCollection):
@@ -24196,7 +23954,6 @@ class AgStkGraphicsModelArticulationCollection(IAgStkGraphicsModelArticulationCo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsModelArticulationCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ACC4920A-6D6B-4374-937F-2469F439ABA8}", AgStkGraphicsModelArticulationCollection)
-__all__.append("AgStkGraphicsModelArticulationCollection")
 
 
 class AgStkGraphicsModelPrimitive(IAgStkGraphicsModelPrimitive, IAgStkGraphicsPrimitive):
@@ -24221,7 +23978,6 @@ class AgStkGraphicsModelPrimitive(IAgStkGraphicsModelPrimitive, IAgStkGraphicsPr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsModelPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD89B6D8-F106-4929-889A-3304A9CDBE97}", AgStkGraphicsModelPrimitive)
-__all__.append("AgStkGraphicsModelPrimitive")
 
 
 class AgStkGraphicsModelTransformation(IAgStkGraphicsModelTransformation):
@@ -24243,7 +23999,6 @@ class AgStkGraphicsModelTransformation(IAgStkGraphicsModelTransformation):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsModelTransformation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC56F0E9-D0F3-4C3E-9AAA-AB5AB255927C}", AgStkGraphicsModelTransformation)
-__all__.append("AgStkGraphicsModelTransformation")
 
 
 class AgStkGraphicsOverlay(IAgStkGraphicsOverlay, IAgStkGraphicsScreenOverlayContainer):
@@ -24268,7 +24023,6 @@ class AgStkGraphicsOverlay(IAgStkGraphicsOverlay, IAgStkGraphicsScreenOverlayCon
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6D9C8A3B-0EC8-428F-BC05-1F30315E92DC}", AgStkGraphicsOverlay)
-__all__.append("AgStkGraphicsOverlay")
 
 
 class AgStkGraphicsPathPrimitive(IAgStkGraphicsPathPrimitive, IAgStkGraphicsPrimitive):
@@ -24293,7 +24047,6 @@ class AgStkGraphicsPathPrimitive(IAgStkGraphicsPathPrimitive, IAgStkGraphicsPrim
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPathPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AFDCAA13-BE39-4E17-9AC5-06C08933A910}", AgStkGraphicsPathPrimitive)
-__all__.append("AgStkGraphicsPathPrimitive")
 
 
 class AgStkGraphicsPickResult(IAgStkGraphicsPickResult):
@@ -24315,7 +24068,6 @@ class AgStkGraphicsPickResult(IAgStkGraphicsPickResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPickResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E007C42E-13D7-4006-992A-B996CEA3BE49}", AgStkGraphicsPickResult)
-__all__.append("AgStkGraphicsPickResult")
 
 
 class AgStkGraphicsPixelSizeDisplayCondition(IAgStkGraphicsPixelSizeDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -24340,7 +24092,6 @@ class AgStkGraphicsPixelSizeDisplayCondition(IAgStkGraphicsPixelSizeDisplayCondi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPixelSizeDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26B1DA4F-DA20-4E44-A98D-D54CC67821B8}", AgStkGraphicsPixelSizeDisplayCondition)
-__all__.append("AgStkGraphicsPixelSizeDisplayCondition")
 
 
 class AgStkGraphicsPointBatchPrimitive(IAgStkGraphicsPointBatchPrimitive, IAgStkGraphicsPrimitive):
@@ -24365,7 +24116,6 @@ class AgStkGraphicsPointBatchPrimitive(IAgStkGraphicsPointBatchPrimitive, IAgStk
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPointBatchPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D8019323-F9C3-4238-BB4C-CD917C83E0F6}", AgStkGraphicsPointBatchPrimitive)
-__all__.append("AgStkGraphicsPointBatchPrimitive")
 
 
 class AgStkGraphicsPolylinePrimitive(IAgStkGraphicsPolylinePrimitive, IAgStkGraphicsPrimitive):
@@ -24390,7 +24140,6 @@ class AgStkGraphicsPolylinePrimitive(IAgStkGraphicsPolylinePrimitive, IAgStkGrap
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPolylinePrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F6E930C1-39F1-471B-A6F3-AFE651B00A95}", AgStkGraphicsPolylinePrimitive)
-__all__.append("AgStkGraphicsPolylinePrimitive")
 
 
 class AgStkGraphicsPolylinePrimitiveOptionalParameters(IAgStkGraphicsPolylinePrimitiveOptionalParameters):
@@ -24412,7 +24161,6 @@ class AgStkGraphicsPolylinePrimitiveOptionalParameters(IAgStkGraphicsPolylinePri
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPolylinePrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{eee51ba6-73ae-4626-9fac-62a0f82cb3d1}", AgStkGraphicsPolylinePrimitiveOptionalParameters)
-__all__.append("AgStkGraphicsPolylinePrimitiveOptionalParameters")
 
 
 class AgStkGraphicsPositionInterpolator(IAgStkGraphicsPositionInterpolator):
@@ -24434,7 +24182,6 @@ class AgStkGraphicsPositionInterpolator(IAgStkGraphicsPositionInterpolator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPositionInterpolator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3D14E044-4128-4F60-9F08-797AA09205B5}", AgStkGraphicsPositionInterpolator)
-__all__.append("AgStkGraphicsPositionInterpolator")
 
 
 class AgStkGraphicsPrimitive(IAgStkGraphicsPrimitive):
@@ -24456,7 +24203,6 @@ class AgStkGraphicsPrimitive(IAgStkGraphicsPrimitive):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0BE64D00-03FF-41C1-8F8E-DCDB5D260FCE}", AgStkGraphicsPrimitive)
-__all__.append("AgStkGraphicsPrimitive")
 
 
 class AgStkGraphicsPrimitiveManager(IAgStkGraphicsPrimitiveManager):
@@ -24478,7 +24224,6 @@ class AgStkGraphicsPrimitiveManager(IAgStkGraphicsPrimitiveManager):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPrimitiveManager.")
         
 agcls.AgClassCatalog.add_catalog_entry("{29884E1F-F498-4FED-9B83-AFC57A4BB09B}", AgStkGraphicsPrimitiveManager)
-__all__.append("AgStkGraphicsPrimitiveManager")
 
 
 class AgStkGraphicsRasterImageGlobeOverlay(IAgStkGraphicsRasterImageGlobeOverlay, IAgStkGraphicsGlobeImageOverlay, IAgStkGraphicsGlobeOverlay):
@@ -24506,7 +24251,6 @@ class AgStkGraphicsRasterImageGlobeOverlay(IAgStkGraphicsRasterImageGlobeOverlay
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRasterImageGlobeOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{49EC3E96-9494-4D95-A9C2-C722C46197FC}", AgStkGraphicsRasterImageGlobeOverlay)
-__all__.append("AgStkGraphicsRasterImageGlobeOverlay")
 
 
 class AgStkGraphicsRhumbLineInterpolator(IAgStkGraphicsRhumbLineInterpolator, IAgStkGraphicsPositionInterpolator):
@@ -24531,7 +24275,6 @@ class AgStkGraphicsRhumbLineInterpolator(IAgStkGraphicsRhumbLineInterpolator, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRhumbLineInterpolator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E791A602-85BA-4413-9C8D-479D1692254C}", AgStkGraphicsRhumbLineInterpolator)
-__all__.append("AgStkGraphicsRhumbLineInterpolator")
 
 
 class AgStkGraphicsScene(IAgStkGraphicsScene):
@@ -24553,7 +24296,6 @@ class AgStkGraphicsScene(IAgStkGraphicsScene):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsScene.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E664A9F1-8A89-4B4C-9AA2-E5BEB603AF3C}", AgStkGraphicsScene)
-__all__.append("AgStkGraphicsScene")
 
 
 class AgStkGraphicsSceneDisplayCondition(IAgStkGraphicsSceneDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -24578,7 +24320,6 @@ class AgStkGraphicsSceneDisplayCondition(IAgStkGraphicsSceneDisplayCondition, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSceneDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8074B463-1740-4C65-870C-E231589EE5CE}", AgStkGraphicsSceneDisplayCondition)
-__all__.append("AgStkGraphicsSceneDisplayCondition")
 
 
 class AgStkGraphicsSceneManager(IAgStkGraphicsSceneManager):
@@ -24600,7 +24341,6 @@ class AgStkGraphicsSceneManager(IAgStkGraphicsSceneManager):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSceneManager.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B671433F-CA75-4628-B84D-4878A247AFC3}", AgStkGraphicsSceneManager)
-__all__.append("AgStkGraphicsSceneManager")
 
 
 class AgStkGraphicsScreenOverlay(IAgStkGraphicsScreenOverlay, IAgStkGraphicsOverlay, IAgStkGraphicsScreenOverlayContainer):
@@ -24628,7 +24368,6 @@ class AgStkGraphicsScreenOverlay(IAgStkGraphicsScreenOverlay, IAgStkGraphicsOver
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsScreenOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B50A73BA-5299-4746-B30B-EEB80699546E}", AgStkGraphicsScreenOverlay)
-__all__.append("AgStkGraphicsScreenOverlay")
 
 
 class AgStkGraphicsScreenOverlayCollection(IAgStkGraphicsScreenOverlayCollection, IAgStkGraphicsScreenOverlayCollectionBase):
@@ -24653,7 +24392,6 @@ class AgStkGraphicsScreenOverlayCollection(IAgStkGraphicsScreenOverlayCollection
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsScreenOverlayCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F75B7693-A40E-4B54-AB6F-EE8F974D2E6C}", AgStkGraphicsScreenOverlayCollection)
-__all__.append("AgStkGraphicsScreenOverlayCollection")
 
 
 class AgStkGraphicsScreenOverlayManager(IAgStkGraphicsScreenOverlayManager, IAgStkGraphicsScreenOverlayCollectionBase, IAgStkGraphicsScreenOverlayContainer):
@@ -24681,7 +24419,6 @@ class AgStkGraphicsScreenOverlayManager(IAgStkGraphicsScreenOverlayManager, IAgS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsScreenOverlayManager.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9853EC1E-531C-4494-B308-BC6644CF672C}", AgStkGraphicsScreenOverlayManager)
-__all__.append("AgStkGraphicsScreenOverlayManager")
 
 
 class AgStkGraphicsScreenOverlayPickResult(IAgStkGraphicsScreenOverlayPickResult):
@@ -24703,7 +24440,6 @@ class AgStkGraphicsScreenOverlayPickResult(IAgStkGraphicsScreenOverlayPickResult
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsScreenOverlayPickResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6E7F318E-F7E5-4B19-A532-50EC60EF09FA}", AgStkGraphicsScreenOverlayPickResult)
-__all__.append("AgStkGraphicsScreenOverlayPickResult")
 
 
 class AgStkGraphicsSolidPrimitive(IAgStkGraphicsSolidPrimitive, IAgStkGraphicsPrimitive):
@@ -24728,7 +24464,6 @@ class AgStkGraphicsSolidPrimitive(IAgStkGraphicsSolidPrimitive, IAgStkGraphicsPr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSolidPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{12343DC0-99FF-48B6-9D93-9B7A2CE34DB9}", AgStkGraphicsSolidPrimitive)
-__all__.append("AgStkGraphicsSolidPrimitive")
 
 
 class AgStkGraphicsStereoscopic(IAgStkGraphicsStereoscopic):
@@ -24750,7 +24485,6 @@ class AgStkGraphicsStereoscopic(IAgStkGraphicsStereoscopic):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsStereoscopic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5FDA997C-0450-4574-BFD9-D803A3AA6167}", AgStkGraphicsStereoscopic)
-__all__.append("AgStkGraphicsStereoscopic")
 
 
 class AgStkGraphicsSurfaceMeshPrimitive(IAgStkGraphicsSurfaceMeshPrimitive, IAgStkGraphicsPrimitive):
@@ -24775,7 +24509,6 @@ class AgStkGraphicsSurfaceMeshPrimitive(IAgStkGraphicsSurfaceMeshPrimitive, IAgS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSurfaceMeshPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C4B2DB74-EBA8-4B18-8BE4-372FCA665F5D}", AgStkGraphicsSurfaceMeshPrimitive)
-__all__.append("AgStkGraphicsSurfaceMeshPrimitive")
 
 
 class AgStkGraphicsTerrainCollection(IAgStkGraphicsTerrainCollection):
@@ -24797,7 +24530,6 @@ class AgStkGraphicsTerrainCollection(IAgStkGraphicsTerrainCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTerrainCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{168D1247-7208-45C3-AF31-7E4009DE2EA7}", AgStkGraphicsTerrainCollection)
-__all__.append("AgStkGraphicsTerrainCollection")
 
 
 class AgStkGraphicsTerrainOverlay(IAgStkGraphicsTerrainOverlay, IAgStkGraphicsGlobeOverlay):
@@ -24822,7 +24554,6 @@ class AgStkGraphicsTerrainOverlay(IAgStkGraphicsTerrainOverlay, IAgStkGraphicsGl
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTerrainOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C1640FF1-07BB-4584-940C-50BDD48CFE14}", AgStkGraphicsTerrainOverlay)
-__all__.append("AgStkGraphicsTerrainOverlay")
 
 
 class AgStkGraphicsTextBatchPrimitive(IAgStkGraphicsTextBatchPrimitive, IAgStkGraphicsPrimitive):
@@ -24847,7 +24578,6 @@ class AgStkGraphicsTextBatchPrimitive(IAgStkGraphicsTextBatchPrimitive, IAgStkGr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextBatchPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EEE49615-F2F3-4810-B877-4C7729F56DD1}", AgStkGraphicsTextBatchPrimitive)
-__all__.append("AgStkGraphicsTextBatchPrimitive")
 
 
 class AgStkGraphicsTextBatchPrimitiveOptionalParameters(IAgStkGraphicsTextBatchPrimitiveOptionalParameters):
@@ -24869,7 +24599,6 @@ class AgStkGraphicsTextBatchPrimitiveOptionalParameters(IAgStkGraphicsTextBatchP
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextBatchPrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D68422E0-31FC-4E61-9A7C-6E4BCB261A9D}", AgStkGraphicsTextBatchPrimitiveOptionalParameters)
-__all__.append("AgStkGraphicsTextBatchPrimitiveOptionalParameters")
 
 
 class AgStkGraphicsTextOverlay(IAgStkGraphicsTextOverlay, IAgStkGraphicsScreenOverlay, IAgStkGraphicsOverlay, IAgStkGraphicsScreenOverlayContainer):
@@ -24900,7 +24629,6 @@ class AgStkGraphicsTextOverlay(IAgStkGraphicsTextOverlay, IAgStkGraphicsScreenOv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{46BE31F3-1A5B-4B51-AA77-27CCA844F5CD}", AgStkGraphicsTextOverlay)
-__all__.append("AgStkGraphicsTextOverlay")
 
 
 class AgStkGraphicsTextureMatrix(IAgStkGraphicsTextureMatrix):
@@ -24922,7 +24650,6 @@ class AgStkGraphicsTextureMatrix(IAgStkGraphicsTextureMatrix):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextureMatrix.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E05D3E06-18C5-49DE-B9AC-B2245C83E62B}", AgStkGraphicsTextureMatrix)
-__all__.append("AgStkGraphicsTextureMatrix")
 
 
 class AgStkGraphicsTextureScreenOverlay(IAgStkGraphicsTextureScreenOverlay, IAgStkGraphicsScreenOverlay, IAgStkGraphicsOverlay, IAgStkGraphicsScreenOverlayContainer):
@@ -24953,7 +24680,6 @@ class AgStkGraphicsTextureScreenOverlay(IAgStkGraphicsTextureScreenOverlay, IAgS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextureScreenOverlay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{51136098-508C-4DD3-B39C-D342235E58BD}", AgStkGraphicsTextureScreenOverlay)
-__all__.append("AgStkGraphicsTextureScreenOverlay")
 
 
 class AgStkGraphicsTimeIntervalDisplayCondition(IAgStkGraphicsTimeIntervalDisplayCondition, IAgStkGraphicsDisplayCondition):
@@ -24978,7 +24704,6 @@ class AgStkGraphicsTimeIntervalDisplayCondition(IAgStkGraphicsTimeIntervalDispla
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTimeIntervalDisplayCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{256AACC3-3E56-4BA6-80F9-15BD968C3863}", AgStkGraphicsTimeIntervalDisplayCondition)
-__all__.append("AgStkGraphicsTimeIntervalDisplayCondition")
 
 
 class AgStkGraphicsTriangleMeshPrimitive(IAgStkGraphicsTriangleMeshPrimitive, IAgStkGraphicsPrimitive):
@@ -25003,7 +24728,6 @@ class AgStkGraphicsTriangleMeshPrimitive(IAgStkGraphicsTriangleMeshPrimitive, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTriangleMeshPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA3D4743-D0D9-49B8-8037-3DDC3075170E}", AgStkGraphicsTriangleMeshPrimitive)
-__all__.append("AgStkGraphicsTriangleMeshPrimitive")
 
 
 class AgStkGraphicsTriangleMeshPrimitiveOptionalParameters(IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters):
@@ -25025,7 +24749,6 @@ class AgStkGraphicsTriangleMeshPrimitiveOptionalParameters(IAgStkGraphicsTriangl
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTriangleMeshPrimitiveOptionalParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{07985409-9BA1-406C-8A91-D4E99DDB406F}", AgStkGraphicsTriangleMeshPrimitiveOptionalParameters)
-__all__.append("AgStkGraphicsTriangleMeshPrimitiveOptionalParameters")
 
 
 class AgStkGraphicsVectorPrimitive(IAgStkGraphicsVectorPrimitive, IAgStkGraphicsPrimitive):
@@ -25050,7 +24773,6 @@ class AgStkGraphicsVectorPrimitive(IAgStkGraphicsVectorPrimitive, IAgStkGraphics
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsVectorPrimitive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8DE433D5-0E13-44ED-B3CF-DF380B8BEA7D}", AgStkGraphicsVectorPrimitive)
-__all__.append("AgStkGraphicsVectorPrimitive")
 
 
 class AgStkGraphicsBoxTriangulatorInitializer(IAgStkGraphicsBoxTriangulatorInitializer):
@@ -25072,7 +24794,6 @@ class AgStkGraphicsBoxTriangulatorInitializer(IAgStkGraphicsBoxTriangulatorIniti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBoxTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F5AA6E13-2989-46FD-8BA7-341870EE56CB}", AgStkGraphicsBoxTriangulatorInitializer)
-__all__.append("AgStkGraphicsBoxTriangulatorInitializer")
 
 
 class AgStkGraphicsCylinderTriangulatorInitializer(IAgStkGraphicsCylinderTriangulatorInitializer):
@@ -25094,7 +24815,6 @@ class AgStkGraphicsCylinderTriangulatorInitializer(IAgStkGraphicsCylinderTriangu
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCylinderTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{351F63E3-5430-4B7C-8811-1353D7FDBA79}", AgStkGraphicsCylinderTriangulatorInitializer)
-__all__.append("AgStkGraphicsCylinderTriangulatorInitializer")
 
 
 class AgStkGraphicsEllipsoidTriangulatorInitializer(IAgStkGraphicsEllipsoidTriangulatorInitializer):
@@ -25116,7 +24836,6 @@ class AgStkGraphicsEllipsoidTriangulatorInitializer(IAgStkGraphicsEllipsoidTrian
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsEllipsoidTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DEBC2954-C0E9-4562-8AD6-A93E7EDD3E82}", AgStkGraphicsEllipsoidTriangulatorInitializer)
-__all__.append("AgStkGraphicsEllipsoidTriangulatorInitializer")
 
 
 class AgStkGraphicsExtrudedPolylineTriangulatorInitializer(IAgStkGraphicsExtrudedPolylineTriangulatorInitializer):
@@ -25138,7 +24857,6 @@ class AgStkGraphicsExtrudedPolylineTriangulatorInitializer(IAgStkGraphicsExtrude
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsExtrudedPolylineTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9DD61791-420A-401D-8C10-251999CA274B}", AgStkGraphicsExtrudedPolylineTriangulatorInitializer)
-__all__.append("AgStkGraphicsExtrudedPolylineTriangulatorInitializer")
 
 
 class AgStkGraphicsSurfaceExtentTriangulatorInitializer(IAgStkGraphicsSurfaceExtentTriangulatorInitializer):
@@ -25160,7 +24878,6 @@ class AgStkGraphicsSurfaceExtentTriangulatorInitializer(IAgStkGraphicsSurfaceExt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSurfaceExtentTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F86CAF5F-4B95-4CD0-9E8A-7C04AF8B7E9B}", AgStkGraphicsSurfaceExtentTriangulatorInitializer)
-__all__.append("AgStkGraphicsSurfaceExtentTriangulatorInitializer")
 
 
 class AgStkGraphicsSurfacePolygonTriangulatorInitializer(IAgStkGraphicsSurfacePolygonTriangulatorInitializer):
@@ -25182,7 +24899,6 @@ class AgStkGraphicsSurfacePolygonTriangulatorInitializer(IAgStkGraphicsSurfacePo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSurfacePolygonTriangulatorInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FB4D2919-C9DB-4C93-A64B-35A9EB884E6B}", AgStkGraphicsSurfacePolygonTriangulatorInitializer)
-__all__.append("AgStkGraphicsSurfacePolygonTriangulatorInitializer")
 
 
 class AgStkGraphicsSurfaceShapesInitializer(IAgStkGraphicsSurfaceShapesInitializer):
@@ -25204,7 +24920,6 @@ class AgStkGraphicsSurfaceShapesInitializer(IAgStkGraphicsSurfaceShapesInitializ
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSurfaceShapesInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2B227F07-5BB0-43E5-9AE2-7288A73856BC}", AgStkGraphicsSurfaceShapesInitializer)
-__all__.append("AgStkGraphicsSurfaceShapesInitializer")
 
 
 class AgStkGraphicsAGICustomTerrainOverlayFactory(IAgStkGraphicsAGICustomTerrainOverlayFactory):
@@ -25226,7 +24941,6 @@ class AgStkGraphicsAGICustomTerrainOverlayFactory(IAgStkGraphicsAGICustomTerrain
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAGICustomTerrainOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B6233AF-5A82-45AB-8371-0C1430585060}", AgStkGraphicsAGICustomTerrainOverlayFactory)
-__all__.append("AgStkGraphicsAGICustomTerrainOverlayFactory")
 
 
 class AgStkGraphicsAGIProcessedImageGlobeOverlayFactory(IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory):
@@ -25248,7 +24962,6 @@ class AgStkGraphicsAGIProcessedImageGlobeOverlayFactory(IAgStkGraphicsAGIProcess
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAGIProcessedImageGlobeOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{668251C7-6113-4243-B563-8F58F25A9281}", AgStkGraphicsAGIProcessedImageGlobeOverlayFactory)
-__all__.append("AgStkGraphicsAGIProcessedImageGlobeOverlayFactory")
 
 
 class AgStkGraphicsAGIProcessedTerrainOverlayFactory(IAgStkGraphicsAGIProcessedTerrainOverlayFactory):
@@ -25270,7 +24983,6 @@ class AgStkGraphicsAGIProcessedTerrainOverlayFactory(IAgStkGraphicsAGIProcessedT
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAGIProcessedTerrainOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AD84EB3C-79EC-43F8-B042-0B9180B94D75}", AgStkGraphicsAGIProcessedTerrainOverlayFactory)
-__all__.append("AgStkGraphicsAGIProcessedTerrainOverlayFactory")
 
 
 class AgStkGraphicsAGIRoamImageGlobeOverlayFactory(IAgStkGraphicsAGIRoamImageGlobeOverlayFactory):
@@ -25292,7 +25004,6 @@ class AgStkGraphicsAGIRoamImageGlobeOverlayFactory(IAgStkGraphicsAGIRoamImageGlo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAGIRoamImageGlobeOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BB6E5A38-778A-4E22-91FB-7B4E63F40D6E}", AgStkGraphicsAGIRoamImageGlobeOverlayFactory)
-__all__.append("AgStkGraphicsAGIRoamImageGlobeOverlayFactory")
 
 
 class AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory(IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory):
@@ -25314,7 +25025,6 @@ class AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory(IAgStkGraphicsC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2B0D7F25-8A54-40C5-BD10-75EB00788704}", AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory)
-__all__.append("AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory")
 
 
 class AgStkGraphicsGeospatialImageGlobeOverlayFactory(IAgStkGraphicsGeospatialImageGlobeOverlayFactory):
@@ -25336,7 +25046,6 @@ class AgStkGraphicsGeospatialImageGlobeOverlayFactory(IAgStkGraphicsGeospatialIm
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGeospatialImageGlobeOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{636E2A9D-49B9-4673-8BD5-4DF7E06A696E}", AgStkGraphicsGeospatialImageGlobeOverlayFactory)
-__all__.append("AgStkGraphicsGeospatialImageGlobeOverlayFactory")
 
 
 class AgStkGraphicsProjectedRasterOverlayFactory(IAgStkGraphicsProjectedRasterOverlayFactory):
@@ -25358,7 +25067,6 @@ class AgStkGraphicsProjectedRasterOverlayFactory(IAgStkGraphicsProjectedRasterOv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsProjectedRasterOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FDAAFAF9-B61B-4DB8-8157-96EF4D476457}", AgStkGraphicsProjectedRasterOverlayFactory)
-__all__.append("AgStkGraphicsProjectedRasterOverlayFactory")
 
 
 class AgStkGraphicsProjectionFactory(IAgStkGraphicsProjectionFactory):
@@ -25380,7 +25088,6 @@ class AgStkGraphicsProjectionFactory(IAgStkGraphicsProjectionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsProjectionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C22AAF01-98CE-41E1-8A98-E164A61D40CC}", AgStkGraphicsProjectionFactory)
-__all__.append("AgStkGraphicsProjectionFactory")
 
 
 class AgStkGraphicsAltitudeDisplayConditionFactory(IAgStkGraphicsAltitudeDisplayConditionFactory):
@@ -25402,7 +25109,6 @@ class AgStkGraphicsAltitudeDisplayConditionFactory(IAgStkGraphicsAltitudeDisplay
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAltitudeDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75D5CF9A-FBCE-482C-9520-7811D9E71EC1}", AgStkGraphicsAltitudeDisplayConditionFactory)
-__all__.append("AgStkGraphicsAltitudeDisplayConditionFactory")
 
 
 class AgStkGraphicsAxesPrimitiveFactory(IAgStkGraphicsAxesPrimitiveFactory):
@@ -25424,7 +25130,6 @@ class AgStkGraphicsAxesPrimitiveFactory(IAgStkGraphicsAxesPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAxesPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{166D78CD-1000-4EDC-B031-AAB1B1B45E8D}", AgStkGraphicsAxesPrimitiveFactory)
-__all__.append("AgStkGraphicsAxesPrimitiveFactory")
 
 
 class AgStkGraphicsCompositeDisplayConditionFactory(IAgStkGraphicsCompositeDisplayConditionFactory):
@@ -25446,7 +25151,6 @@ class AgStkGraphicsCompositeDisplayConditionFactory(IAgStkGraphicsCompositeDispl
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCompositeDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{375A535B-557C-4E7B-A2AD-0905381BA46F}", AgStkGraphicsCompositeDisplayConditionFactory)
-__all__.append("AgStkGraphicsCompositeDisplayConditionFactory")
 
 
 class AgStkGraphicsCompositePrimitiveFactory(IAgStkGraphicsCompositePrimitiveFactory):
@@ -25468,7 +25172,6 @@ class AgStkGraphicsCompositePrimitiveFactory(IAgStkGraphicsCompositePrimitiveFac
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsCompositePrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7F9D1191-7973-4B59-B2E6-9A4D4F19A222}", AgStkGraphicsCompositePrimitiveFactory)
-__all__.append("AgStkGraphicsCompositePrimitiveFactory")
 
 
 class AgStkGraphicsConstantDisplayConditionFactory(IAgStkGraphicsConstantDisplayConditionFactory):
@@ -25490,7 +25193,6 @@ class AgStkGraphicsConstantDisplayConditionFactory(IAgStkGraphicsConstantDisplay
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsConstantDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84B6B505-833D-4A3B-BD6B-99266C8C5284}", AgStkGraphicsConstantDisplayConditionFactory)
-__all__.append("AgStkGraphicsConstantDisplayConditionFactory")
 
 
 class AgStkGraphicsDistanceDisplayConditionFactory(IAgStkGraphicsDistanceDisplayConditionFactory):
@@ -25512,7 +25214,6 @@ class AgStkGraphicsDistanceDisplayConditionFactory(IAgStkGraphicsDistanceDisplay
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDistanceDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F8A027DC-AE3B-464A-A5C4-39AA37368ED7}", AgStkGraphicsDistanceDisplayConditionFactory)
-__all__.append("AgStkGraphicsDistanceDisplayConditionFactory")
 
 
 class AgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory(IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory):
@@ -25534,7 +25235,6 @@ class AgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory(IAgStkGraphicsD
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0BF7DA00-8B06-41FA-A580-15D898A0837F}", AgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory)
-__all__.append("AgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory")
 
 
 class AgStkGraphicsDistanceToPositionDisplayConditionFactory(IAgStkGraphicsDistanceToPositionDisplayConditionFactory):
@@ -25556,7 +25256,6 @@ class AgStkGraphicsDistanceToPositionDisplayConditionFactory(IAgStkGraphicsDista
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDistanceToPositionDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F19A2CB9-BF83-4F3F-9B76-82794467A872}", AgStkGraphicsDistanceToPositionDisplayConditionFactory)
-__all__.append("AgStkGraphicsDistanceToPositionDisplayConditionFactory")
 
 
 class AgStkGraphicsDistanceToPrimitiveDisplayConditionFactory(IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory):
@@ -25578,7 +25277,6 @@ class AgStkGraphicsDistanceToPrimitiveDisplayConditionFactory(IAgStkGraphicsDist
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDistanceToPrimitiveDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8D977F6C-359B-4353-AD7A-B1317BE7136E}", AgStkGraphicsDistanceToPrimitiveDisplayConditionFactory)
-__all__.append("AgStkGraphicsDistanceToPrimitiveDisplayConditionFactory")
 
 
 class AgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory(IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory):
@@ -25600,7 +25298,6 @@ class AgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory(IAgStkGraphicsDurati
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D10A5794-C75B-43DA-8277-FAA18D9C988A}", AgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory)
-__all__.append("AgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory")
 
 
 class AgStkGraphicsGlobeImageOverlayInitializer(IAgStkGraphicsGlobeImageOverlayInitializer):
@@ -25622,7 +25319,6 @@ class AgStkGraphicsGlobeImageOverlayInitializer(IAgStkGraphicsGlobeImageOverlayI
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGlobeImageOverlayInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6CA56657-186B-4768-B747-AB0071E02C05}", AgStkGraphicsGlobeImageOverlayInitializer)
-__all__.append("AgStkGraphicsGlobeImageOverlayInitializer")
 
 
 class AgStkGraphicsGraphicsFontFactory(IAgStkGraphicsGraphicsFontFactory):
@@ -25644,7 +25340,6 @@ class AgStkGraphicsGraphicsFontFactory(IAgStkGraphicsGraphicsFontFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGraphicsFontFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4890C7DD-6EAC-4F44-94DB-A72E75BEDAF0}", AgStkGraphicsGraphicsFontFactory)
-__all__.append("AgStkGraphicsGraphicsFontFactory")
 
 
 class AgStkGraphicsGreatArcInterpolatorFactory(IAgStkGraphicsGreatArcInterpolatorFactory):
@@ -25666,7 +25361,6 @@ class AgStkGraphicsGreatArcInterpolatorFactory(IAgStkGraphicsGreatArcInterpolato
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGreatArcInterpolatorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6882FDC8-B958-498D-A274-46AE40AE78D5}", AgStkGraphicsGreatArcInterpolatorFactory)
-__all__.append("AgStkGraphicsGreatArcInterpolatorFactory")
 
 
 class AgStkGraphicsAlphaFromLuminanceFilterFactory(IAgStkGraphicsAlphaFromLuminanceFilterFactory):
@@ -25688,7 +25382,6 @@ class AgStkGraphicsAlphaFromLuminanceFilterFactory(IAgStkGraphicsAlphaFromLumina
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAlphaFromLuminanceFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1190FF7A-66F4-4B54-B35B-57BBBEDD35AA}", AgStkGraphicsAlphaFromLuminanceFilterFactory)
-__all__.append("AgStkGraphicsAlphaFromLuminanceFilterFactory")
 
 
 class AgStkGraphicsAlphaFromPixelFilterFactory(IAgStkGraphicsAlphaFromPixelFilterFactory):
@@ -25710,7 +25403,6 @@ class AgStkGraphicsAlphaFromPixelFilterFactory(IAgStkGraphicsAlphaFromPixelFilte
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAlphaFromPixelFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{72AEEA38-C86F-48DE-A8D7-F993011E6466}", AgStkGraphicsAlphaFromPixelFilterFactory)
-__all__.append("AgStkGraphicsAlphaFromPixelFilterFactory")
 
 
 class AgStkGraphicsAlphaFromRasterFilterFactory(IAgStkGraphicsAlphaFromRasterFilterFactory):
@@ -25732,7 +25424,6 @@ class AgStkGraphicsAlphaFromRasterFilterFactory(IAgStkGraphicsAlphaFromRasterFil
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsAlphaFromRasterFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F578725F-3B1F-4B45-AA36-FADF0AA5516F}", AgStkGraphicsAlphaFromRasterFilterFactory)
-__all__.append("AgStkGraphicsAlphaFromRasterFilterFactory")
 
 
 class AgStkGraphicsBandExtractFilterFactory(IAgStkGraphicsBandExtractFilterFactory):
@@ -25754,7 +25445,6 @@ class AgStkGraphicsBandExtractFilterFactory(IAgStkGraphicsBandExtractFilterFacto
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBandExtractFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{52C5D954-F113-46CA-BF7C-3BFCA6637B6D}", AgStkGraphicsBandExtractFilterFactory)
-__all__.append("AgStkGraphicsBandExtractFilterFactory")
 
 
 class AgStkGraphicsBandOrderFilterFactory(IAgStkGraphicsBandOrderFilterFactory):
@@ -25776,7 +25466,6 @@ class AgStkGraphicsBandOrderFilterFactory(IAgStkGraphicsBandOrderFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBandOrderFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F238EFB7-84AC-4648-AB58-42C01DADA9A9}", AgStkGraphicsBandOrderFilterFactory)
-__all__.append("AgStkGraphicsBandOrderFilterFactory")
 
 
 class AgStkGraphicsBlurFilterFactory(IAgStkGraphicsBlurFilterFactory):
@@ -25798,7 +25487,6 @@ class AgStkGraphicsBlurFilterFactory(IAgStkGraphicsBlurFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBlurFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8FE6B4C1-2607-4213-A2C6-EBD012D3A51F}", AgStkGraphicsBlurFilterFactory)
-__all__.append("AgStkGraphicsBlurFilterFactory")
 
 
 class AgStkGraphicsBrightnessFilterFactory(IAgStkGraphicsBrightnessFilterFactory):
@@ -25820,7 +25508,6 @@ class AgStkGraphicsBrightnessFilterFactory(IAgStkGraphicsBrightnessFilterFactory
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsBrightnessFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C03BF579-ED2C-480E-835C-A2F17B7B1E02}", AgStkGraphicsBrightnessFilterFactory)
-__all__.append("AgStkGraphicsBrightnessFilterFactory")
 
 
 class AgStkGraphicsColorToLuminanceFilterFactory(IAgStkGraphicsColorToLuminanceFilterFactory):
@@ -25842,7 +25529,6 @@ class AgStkGraphicsColorToLuminanceFilterFactory(IAgStkGraphicsColorToLuminanceF
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsColorToLuminanceFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7311B5AA-FC01-4B35-A1A3-76DE69555938}", AgStkGraphicsColorToLuminanceFilterFactory)
-__all__.append("AgStkGraphicsColorToLuminanceFilterFactory")
 
 
 class AgStkGraphicsContrastFilterFactory(IAgStkGraphicsContrastFilterFactory):
@@ -25864,7 +25550,6 @@ class AgStkGraphicsContrastFilterFactory(IAgStkGraphicsContrastFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsContrastFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B1023F6-67C4-4DC9-8EA1-9171564EFA42}", AgStkGraphicsContrastFilterFactory)
-__all__.append("AgStkGraphicsContrastFilterFactory")
 
 
 class AgStkGraphicsConvolutionFilterFactory(IAgStkGraphicsConvolutionFilterFactory):
@@ -25886,7 +25571,6 @@ class AgStkGraphicsConvolutionFilterFactory(IAgStkGraphicsConvolutionFilterFacto
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsConvolutionFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64B119DD-A78C-4815-A9DD-4D77B310D28D}", AgStkGraphicsConvolutionFilterFactory)
-__all__.append("AgStkGraphicsConvolutionFilterFactory")
 
 
 class AgStkGraphicsEdgeDetectFilterFactory(IAgStkGraphicsEdgeDetectFilterFactory):
@@ -25908,7 +25592,6 @@ class AgStkGraphicsEdgeDetectFilterFactory(IAgStkGraphicsEdgeDetectFilterFactory
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsEdgeDetectFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E14D1269-91FA-4A83-92A7-F5117E1E9DE9}", AgStkGraphicsEdgeDetectFilterFactory)
-__all__.append("AgStkGraphicsEdgeDetectFilterFactory")
 
 
 class AgStkGraphicsFilteringRasterStreamFactory(IAgStkGraphicsFilteringRasterStreamFactory):
@@ -25930,7 +25613,6 @@ class AgStkGraphicsFilteringRasterStreamFactory(IAgStkGraphicsFilteringRasterStr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsFilteringRasterStreamFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8B9D2671-491B-4D5B-8410-B8A8ED881970}", AgStkGraphicsFilteringRasterStreamFactory)
-__all__.append("AgStkGraphicsFilteringRasterStreamFactory")
 
 
 class AgStkGraphicsFlipFilterFactory(IAgStkGraphicsFlipFilterFactory):
@@ -25952,7 +25634,6 @@ class AgStkGraphicsFlipFilterFactory(IAgStkGraphicsFlipFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsFlipFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0C012B18-9467-42CE-8EC5-E7B70012BA73}", AgStkGraphicsFlipFilterFactory)
-__all__.append("AgStkGraphicsFlipFilterFactory")
 
 
 class AgStkGraphicsGammaCorrectionFilterFactory(IAgStkGraphicsGammaCorrectionFilterFactory):
@@ -25974,7 +25655,6 @@ class AgStkGraphicsGammaCorrectionFilterFactory(IAgStkGraphicsGammaCorrectionFil
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGammaCorrectionFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E09D6B71-6E82-45A1-A208-B761D82266E9}", AgStkGraphicsGammaCorrectionFilterFactory)
-__all__.append("AgStkGraphicsGammaCorrectionFilterFactory")
 
 
 class AgStkGraphicsGaussianBlurFilterFactory(IAgStkGraphicsGaussianBlurFilterFactory):
@@ -25996,7 +25676,6 @@ class AgStkGraphicsGaussianBlurFilterFactory(IAgStkGraphicsGaussianBlurFilterFac
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGaussianBlurFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B98AC54E-10BB-4E81-9766-806A2F0EA8C4}", AgStkGraphicsGaussianBlurFilterFactory)
-__all__.append("AgStkGraphicsGaussianBlurFilterFactory")
 
 
 class AgStkGraphicsGradientDetectFilterFactory(IAgStkGraphicsGradientDetectFilterFactory):
@@ -26018,7 +25697,6 @@ class AgStkGraphicsGradientDetectFilterFactory(IAgStkGraphicsGradientDetectFilte
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsGradientDetectFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B88D6D7C-4807-4905-B52F-DF054A4AD186}", AgStkGraphicsGradientDetectFilterFactory)
-__all__.append("AgStkGraphicsGradientDetectFilterFactory")
 
 
 class AgStkGraphicsJpeg2000WriterInitializer(IAgStkGraphicsJpeg2000WriterInitializer):
@@ -26040,7 +25718,6 @@ class AgStkGraphicsJpeg2000WriterInitializer(IAgStkGraphicsJpeg2000WriterInitial
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsJpeg2000WriterInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F29EA41-17E7-4252-B419-B2573C015DC6}", AgStkGraphicsJpeg2000WriterInitializer)
-__all__.append("AgStkGraphicsJpeg2000WriterInitializer")
 
 
 class AgStkGraphicsLevelsFilterFactory(IAgStkGraphicsLevelsFilterFactory):
@@ -26062,7 +25739,6 @@ class AgStkGraphicsLevelsFilterFactory(IAgStkGraphicsLevelsFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsLevelsFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{69CBD183-936F-480E-B0FF-4D140DDC9232}", AgStkGraphicsLevelsFilterFactory)
-__all__.append("AgStkGraphicsLevelsFilterFactory")
 
 
 class AgStkGraphicsProjectionRasterStreamPluginActivatorFactory(IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory):
@@ -26084,7 +25760,6 @@ class AgStkGraphicsProjectionRasterStreamPluginActivatorFactory(IAgStkGraphicsPr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsProjectionRasterStreamPluginActivatorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{51F36FBA-E366-4A66-A452-FEE99786ED2E}", AgStkGraphicsProjectionRasterStreamPluginActivatorFactory)
-__all__.append("AgStkGraphicsProjectionRasterStreamPluginActivatorFactory")
 
 
 class AgStkGraphicsRasterFactory(IAgStkGraphicsRasterFactory):
@@ -26106,7 +25781,6 @@ class AgStkGraphicsRasterFactory(IAgStkGraphicsRasterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRasterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{390E63D5-4C79-48B3-98CD-55B1983F859A}", AgStkGraphicsRasterFactory)
-__all__.append("AgStkGraphicsRasterFactory")
 
 
 class AgStkGraphicsRasterAttributesFactory(IAgStkGraphicsRasterAttributesFactory):
@@ -26128,7 +25802,6 @@ class AgStkGraphicsRasterAttributesFactory(IAgStkGraphicsRasterAttributesFactory
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRasterAttributesFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{94CA0CCD-4D74-47BD-8E5F-E2D96403DACF}", AgStkGraphicsRasterAttributesFactory)
-__all__.append("AgStkGraphicsRasterAttributesFactory")
 
 
 class AgStkGraphicsRotateFilterFactory(IAgStkGraphicsRotateFilterFactory):
@@ -26150,7 +25823,6 @@ class AgStkGraphicsRotateFilterFactory(IAgStkGraphicsRotateFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRotateFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{12C8E395-4E61-4484-A97D-33742C841A6D}", AgStkGraphicsRotateFilterFactory)
-__all__.append("AgStkGraphicsRotateFilterFactory")
 
 
 class AgStkGraphicsSequenceFilterFactory(IAgStkGraphicsSequenceFilterFactory):
@@ -26172,7 +25844,6 @@ class AgStkGraphicsSequenceFilterFactory(IAgStkGraphicsSequenceFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSequenceFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4CC16FDF-B6CE-4C06-B47F-AD7812566215}", AgStkGraphicsSequenceFilterFactory)
-__all__.append("AgStkGraphicsSequenceFilterFactory")
 
 
 class AgStkGraphicsSharpenFilterFactory(IAgStkGraphicsSharpenFilterFactory):
@@ -26194,7 +25865,6 @@ class AgStkGraphicsSharpenFilterFactory(IAgStkGraphicsSharpenFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSharpenFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{98011831-2D99-4FED-AC53-DFB4090D132C}", AgStkGraphicsSharpenFilterFactory)
-__all__.append("AgStkGraphicsSharpenFilterFactory")
 
 
 class AgStkGraphicsVideoStreamFactory(IAgStkGraphicsVideoStreamFactory):
@@ -26216,7 +25886,6 @@ class AgStkGraphicsVideoStreamFactory(IAgStkGraphicsVideoStreamFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsVideoStreamFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A977E2D9-785B-4AB0-B01F-927486E3170B}", AgStkGraphicsVideoStreamFactory)
-__all__.append("AgStkGraphicsVideoStreamFactory")
 
 
 class AgStkGraphicsMarkerBatchPrimitiveFactory(IAgStkGraphicsMarkerBatchPrimitiveFactory):
@@ -26238,7 +25907,6 @@ class AgStkGraphicsMarkerBatchPrimitiveFactory(IAgStkGraphicsMarkerBatchPrimitiv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsMarkerBatchPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E2AC5708-26C2-469F-AE1C-C48AED18565E}", AgStkGraphicsMarkerBatchPrimitiveFactory)
-__all__.append("AgStkGraphicsMarkerBatchPrimitiveFactory")
 
 
 class AgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory(IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory):
@@ -26260,7 +25928,6 @@ class AgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory(IAgStkGraphicsM
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{120D8907-DB34-481B-93B1-C61A4C5C61EF}", AgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory)
-__all__.append("AgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory")
 
 
 class AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory(IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory):
@@ -26282,7 +25949,6 @@ class AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory(IAgStkGraphicsMa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C3F59BCB-635A-4E50-B5AA-269CD0380069}", AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory)
-__all__.append("AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory")
 
 
 class AgStkGraphicsModelPrimitiveFactory(IAgStkGraphicsModelPrimitiveFactory):
@@ -26304,7 +25970,6 @@ class AgStkGraphicsModelPrimitiveFactory(IAgStkGraphicsModelPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsModelPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{90BABAB0-7D1E-420F-B91F-46E2E5B31763}", AgStkGraphicsModelPrimitiveFactory)
-__all__.append("AgStkGraphicsModelPrimitiveFactory")
 
 
 class AgStkGraphicsPathPrimitiveFactory(IAgStkGraphicsPathPrimitiveFactory):
@@ -26326,7 +25991,6 @@ class AgStkGraphicsPathPrimitiveFactory(IAgStkGraphicsPathPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPathPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1847AEAB-C6B6-4561-BBDB-D979A443CCF0}", AgStkGraphicsPathPrimitiveFactory)
-__all__.append("AgStkGraphicsPathPrimitiveFactory")
 
 
 class AgStkGraphicsPixelSizeDisplayConditionFactory(IAgStkGraphicsPixelSizeDisplayConditionFactory):
@@ -26348,7 +26012,6 @@ class AgStkGraphicsPixelSizeDisplayConditionFactory(IAgStkGraphicsPixelSizeDispl
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPixelSizeDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{52EC4EAD-B9A0-4940-BAE8-BD115805BB46}", AgStkGraphicsPixelSizeDisplayConditionFactory)
-__all__.append("AgStkGraphicsPixelSizeDisplayConditionFactory")
 
 
 class AgStkGraphicsPointBatchPrimitiveFactory(IAgStkGraphicsPointBatchPrimitiveFactory):
@@ -26370,7 +26033,6 @@ class AgStkGraphicsPointBatchPrimitiveFactory(IAgStkGraphicsPointBatchPrimitiveF
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPointBatchPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B497A3DE-DF9F-4EFD-8CB8-2767415F4889}", AgStkGraphicsPointBatchPrimitiveFactory)
-__all__.append("AgStkGraphicsPointBatchPrimitiveFactory")
 
 
 class AgStkGraphicsPolylinePrimitiveFactory(IAgStkGraphicsPolylinePrimitiveFactory):
@@ -26392,7 +26054,6 @@ class AgStkGraphicsPolylinePrimitiveFactory(IAgStkGraphicsPolylinePrimitiveFacto
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPolylinePrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{825E24B9-F4B9-4EF4-8F98-A8BD8F7A6C4B}", AgStkGraphicsPolylinePrimitiveFactory)
-__all__.append("AgStkGraphicsPolylinePrimitiveFactory")
 
 
 class AgStkGraphicsPolylinePrimitiveOptionalParametersFactory(IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory):
@@ -26414,7 +26075,6 @@ class AgStkGraphicsPolylinePrimitiveOptionalParametersFactory(IAgStkGraphicsPoly
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPolylinePrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2ff372bc-ad1c-4fa2-82e9-75c9b407f19c}", AgStkGraphicsPolylinePrimitiveOptionalParametersFactory)
-__all__.append("AgStkGraphicsPolylinePrimitiveOptionalParametersFactory")
 
 
 class AgStkGraphicsRasterImageGlobeOverlayFactory(IAgStkGraphicsRasterImageGlobeOverlayFactory):
@@ -26436,7 +26096,6 @@ class AgStkGraphicsRasterImageGlobeOverlayFactory(IAgStkGraphicsRasterImageGlobe
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRasterImageGlobeOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{73782D85-0307-4B70-B793-2930A8880AEE}", AgStkGraphicsRasterImageGlobeOverlayFactory)
-__all__.append("AgStkGraphicsRasterImageGlobeOverlayFactory")
 
 
 class AgStkGraphicsRhumbLineInterpolatorFactory(IAgStkGraphicsRhumbLineInterpolatorFactory):
@@ -26458,7 +26117,6 @@ class AgStkGraphicsRhumbLineInterpolatorFactory(IAgStkGraphicsRhumbLineInterpola
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsRhumbLineInterpolatorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0B6D54BD-A46B-4770-A936-23F247B6F038}", AgStkGraphicsRhumbLineInterpolatorFactory)
-__all__.append("AgStkGraphicsRhumbLineInterpolatorFactory")
 
 
 class AgStkGraphicsSceneDisplayConditionFactory(IAgStkGraphicsSceneDisplayConditionFactory):
@@ -26480,7 +26138,6 @@ class AgStkGraphicsSceneDisplayConditionFactory(IAgStkGraphicsSceneDisplayCondit
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSceneDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{19159366-8E64-467F-922B-739678DA01C2}", AgStkGraphicsSceneDisplayConditionFactory)
-__all__.append("AgStkGraphicsSceneDisplayConditionFactory")
 
 
 class AgStkGraphicsSceneManagerInitializer(IAgStkGraphicsSceneManagerInitializer):
@@ -26502,7 +26159,6 @@ class AgStkGraphicsSceneManagerInitializer(IAgStkGraphicsSceneManagerInitializer
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSceneManagerInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{956AD97D-96ED-4898-89BE-08AF68BF1EA6}", AgStkGraphicsSceneManagerInitializer)
-__all__.append("AgStkGraphicsSceneManagerInitializer")
 
 
 class AgStkGraphicsScreenOverlayFactory(IAgStkGraphicsScreenOverlayFactory):
@@ -26524,7 +26180,6 @@ class AgStkGraphicsScreenOverlayFactory(IAgStkGraphicsScreenOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsScreenOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C2F5A068-E483-4CCF-819D-FBB25DC85A71}", AgStkGraphicsScreenOverlayFactory)
-__all__.append("AgStkGraphicsScreenOverlayFactory")
 
 
 class AgStkGraphicsSolidPrimitiveFactory(IAgStkGraphicsSolidPrimitiveFactory):
@@ -26546,7 +26201,6 @@ class AgStkGraphicsSolidPrimitiveFactory(IAgStkGraphicsSolidPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSolidPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9F23AC4E-DCB0-45B1-BE07-E4BEBA9B4AFF}", AgStkGraphicsSolidPrimitiveFactory)
-__all__.append("AgStkGraphicsSolidPrimitiveFactory")
 
 
 class AgStkGraphicsSurfaceMeshPrimitiveFactory(IAgStkGraphicsSurfaceMeshPrimitiveFactory):
@@ -26568,7 +26222,6 @@ class AgStkGraphicsSurfaceMeshPrimitiveFactory(IAgStkGraphicsSurfaceMeshPrimitiv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsSurfaceMeshPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A9B40191-F8D7-46D8-B217-30C1C41E2369}", AgStkGraphicsSurfaceMeshPrimitiveFactory)
-__all__.append("AgStkGraphicsSurfaceMeshPrimitiveFactory")
 
 
 class AgStkGraphicsTerrainOverlayInitializer(IAgStkGraphicsTerrainOverlayInitializer):
@@ -26590,7 +26243,6 @@ class AgStkGraphicsTerrainOverlayInitializer(IAgStkGraphicsTerrainOverlayInitial
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTerrainOverlayInitializer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8D76F5E3-BACE-4CA4-9C4D-9F14464ACAFD}", AgStkGraphicsTerrainOverlayInitializer)
-__all__.append("AgStkGraphicsTerrainOverlayInitializer")
 
 
 class AgStkGraphicsTextBatchPrimitiveFactory(IAgStkGraphicsTextBatchPrimitiveFactory):
@@ -26612,7 +26264,6 @@ class AgStkGraphicsTextBatchPrimitiveFactory(IAgStkGraphicsTextBatchPrimitiveFac
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextBatchPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{246D4DAA-4CD0-4E10-98C7-791A17E5A736}", AgStkGraphicsTextBatchPrimitiveFactory)
-__all__.append("AgStkGraphicsTextBatchPrimitiveFactory")
 
 
 class AgStkGraphicsTextBatchPrimitiveOptionalParametersFactory(IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory):
@@ -26634,7 +26285,6 @@ class AgStkGraphicsTextBatchPrimitiveOptionalParametersFactory(IAgStkGraphicsTex
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextBatchPrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A3C12306-7202-468F-B0A5-306D98A7E2BC}", AgStkGraphicsTextBatchPrimitiveOptionalParametersFactory)
-__all__.append("AgStkGraphicsTextBatchPrimitiveOptionalParametersFactory")
 
 
 class AgStkGraphicsTextOverlayFactory(IAgStkGraphicsTextOverlayFactory):
@@ -26656,7 +26306,6 @@ class AgStkGraphicsTextOverlayFactory(IAgStkGraphicsTextOverlayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5DFA35A5-B53D-4B58-A32E-B2B2690D3104}", AgStkGraphicsTextOverlayFactory)
-__all__.append("AgStkGraphicsTextOverlayFactory")
 
 
 class AgStkGraphicsTextureMatrixFactory(IAgStkGraphicsTextureMatrixFactory):
@@ -26678,7 +26327,6 @@ class AgStkGraphicsTextureMatrixFactory(IAgStkGraphicsTextureMatrixFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextureMatrixFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0169DB20-811D-4DF6-8EDF-51C47B485D6B}", AgStkGraphicsTextureMatrixFactory)
-__all__.append("AgStkGraphicsTextureMatrixFactory")
 
 
 class AgStkGraphicsTextureScreenOverlayFactory(IAgStkGraphicsTextureScreenOverlayFactory):
@@ -26700,7 +26348,6 @@ class AgStkGraphicsTextureScreenOverlayFactory(IAgStkGraphicsTextureScreenOverla
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTextureScreenOverlayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C4060E65-DD40-40CE-B462-55E08E6D63AF}", AgStkGraphicsTextureScreenOverlayFactory)
-__all__.append("AgStkGraphicsTextureScreenOverlayFactory")
 
 
 class AgStkGraphicsTimeIntervalDisplayConditionFactory(IAgStkGraphicsTimeIntervalDisplayConditionFactory):
@@ -26722,7 +26369,6 @@ class AgStkGraphicsTimeIntervalDisplayConditionFactory(IAgStkGraphicsTimeInterva
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTimeIntervalDisplayConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{526637D4-DD61-4B7D-BAE9-6FEF3673BF5D}", AgStkGraphicsTimeIntervalDisplayConditionFactory)
-__all__.append("AgStkGraphicsTimeIntervalDisplayConditionFactory")
 
 
 class AgStkGraphicsTriangleMeshPrimitiveFactory(IAgStkGraphicsTriangleMeshPrimitiveFactory):
@@ -26744,7 +26390,6 @@ class AgStkGraphicsTriangleMeshPrimitiveFactory(IAgStkGraphicsTriangleMeshPrimit
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTriangleMeshPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D904C0D6-FEAE-4E13-9BBC-98F22CC2F0AF}", AgStkGraphicsTriangleMeshPrimitiveFactory)
-__all__.append("AgStkGraphicsTriangleMeshPrimitiveFactory")
 
 
 class AgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory(IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory):
@@ -26766,7 +26411,6 @@ class AgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory(IAgStkGraphics
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D9FB947-B9EB-4964-8FD8-6FF54D734BD8}", AgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory)
-__all__.append("AgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory")
 
 
 class AgStkGraphicsVectorPrimitiveFactory(IAgStkGraphicsVectorPrimitiveFactory):
@@ -26788,7 +26432,6 @@ class AgStkGraphicsVectorPrimitiveFactory(IAgStkGraphicsVectorPrimitiveFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsVectorPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{380CA28E-1D09-4F5B-9341-6E96BA4CACCE}", AgStkGraphicsVectorPrimitiveFactory)
-__all__.append("AgStkGraphicsVectorPrimitiveFactory")
 
 
 
