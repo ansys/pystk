@@ -2,7 +2,22 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgCROrientationAzEl", "AgCROrientationEulerAngles", "AgCROrientationOffsetCart", "AgCROrientationQuaternion", 
+"AgCROrientationYPRAngles", "AgCartesian", "AgCartesian2Vector", "AgCartesian3Vector", "AgConversionUtility", "AgCylindrical", 
+"AgDate", "AgDirection", "AgDirectionEuler", "AgDirectionPR", "AgDirectionRADec", "AgDirectionXYZ", "AgDoublesCollection", 
+"AgEAzElAboutBoresight", "AgECoordinateSystem", "AgEDirectionType", "AgEEulerDirectionSequence", "AgEEulerOrientationSequence", 
+"AgEExecMultiCmdResultAction", "AgEFillStyle", "AgELineStyle", "AgELogMsgDispID", "AgELogMsgType", "AgEOrbitStateType", 
+"AgEOrientationType", "AgEPRSequence", "AgEPositionType", "AgEPropertyInfoValueType", "AgEYPRAnglesSequence", "AgExecCmdResult", 
+"AgExecMultiCmdResult", "AgGeocentric", "AgGeodetic", "AgOrientation", "AgOrientationAzEl", "AgOrientationEulerAngles", 
+"AgOrientationQuaternion", "AgOrientationYPRAngles", "AgPlanetocentric", "AgPlanetodetic", "AgPosition", "AgPropertyInfo", 
+"AgPropertyInfoCollection", "AgQuantity", "AgRuntimeTypeInfo", "AgSpherical", "AgUnitPrefsDim", "AgUnitPrefsDimCollection", 
+"AgUnitPrefsUnit", "AgUnitPrefsUnitCollection", "IAgCartesian", "IAgCartesian2Vector", "IAgCartesian3Vector", "IAgConversionUtility", 
+"IAgCylindrical", "IAgDate", "IAgDirection", "IAgDirectionEuler", "IAgDirectionPR", "IAgDirectionRADec", "IAgDirectionXYZ", 
+"IAgDoublesCollection", "IAgExecCmdResult", "IAgExecMultiCmdResult", "IAgGeocentric", "IAgGeodetic", "IAgLocationData", 
+"IAgOrbitState", "IAgOrientation", "IAgOrientationAzEl", "IAgOrientationEulerAngles", "IAgOrientationPositionOffset", "IAgOrientationQuaternion", 
+"IAgOrientationYPRAngles", "IAgPlanetocentric", "IAgPlanetodetic", "IAgPosition", "IAgPropertyInfo", "IAgPropertyInfoCollection", 
+"IAgQuantity", "IAgRuntimeTypeInfo", "IAgRuntimeTypeInfoProvider", "IAgSpherical", "IAgUnitPrefsDim", "IAgUnitPrefsDimCollection", 
+"IAgUnitPrefsUnit", "IAgUnitPrefsUnitCollection"]
 
 import typing
 
@@ -52,7 +67,6 @@ class AgEPositionType(IntEnum):
     ePlanetodetic = 0x6
 
 agcls.AgTypeNameMap["AgEPositionType"] = AgEPositionType
-__all__.append("AgEPositionType")
 
 class AgEEulerDirectionSequence(IntEnum):
     """Euler direction sequences."""
@@ -66,7 +80,6 @@ class AgEEulerDirectionSequence(IntEnum):
     e32 = 3
 
 agcls.AgTypeNameMap["AgEEulerDirectionSequence"] = AgEEulerDirectionSequence
-__all__.append("AgEEulerDirectionSequence")
 
 class AgEDirectionType(IntEnum):
     """Direction options for aligned and constrained vectors."""
@@ -80,7 +93,6 @@ class AgEDirectionType(IntEnum):
     eDirXYZ = 3
 
 agcls.AgTypeNameMap["AgEDirectionType"] = AgEDirectionType
-__all__.append("AgEDirectionType")
 
 class AgEPRSequence(IntEnum):
     """Pitch-Roll (PR) direction sequences."""
@@ -88,7 +100,6 @@ class AgEPRSequence(IntEnum):
     ePR = 0
 
 agcls.AgTypeNameMap["AgEPRSequence"] = AgEPRSequence
-__all__.append("AgEPRSequence")
 
 class AgEOrientationType(IntEnum):
     """Orientation methods."""
@@ -102,7 +113,6 @@ class AgEOrientationType(IntEnum):
     eYPRAngles = 3
 
 agcls.AgTypeNameMap["AgEOrientationType"] = AgEOrientationType
-__all__.append("AgEOrientationType")
 
 class AgEAzElAboutBoresight(IntEnum):
     """About Boresight options for AzEl orientation method."""
@@ -112,7 +122,6 @@ class AgEAzElAboutBoresight(IntEnum):
     eAzElAboutBoresightRotate = 1
 
 agcls.AgTypeNameMap["AgEAzElAboutBoresight"] = AgEAzElAboutBoresight
-__all__.append("AgEAzElAboutBoresight")
 
 class AgEEulerOrientationSequence(IntEnum):
     """Euler rotation sequence options:"""
@@ -142,7 +151,6 @@ class AgEEulerOrientationSequence(IntEnum):
     e323 = 11
 
 agcls.AgTypeNameMap["AgEEulerOrientationSequence"] = AgEEulerOrientationSequence
-__all__.append("AgEEulerOrientationSequence")
 
 class AgEYPRAnglesSequence(IntEnum):
     """Yaw-Pitch-Roll (YPR) sequences."""
@@ -160,7 +168,6 @@ class AgEYPRAnglesSequence(IntEnum):
     eYRP = 5
 
 agcls.AgTypeNameMap["AgEYPRAnglesSequence"] = AgEYPRAnglesSequence
-__all__.append("AgEYPRAnglesSequence")
 
 class AgEOrbitStateType(IntEnum):
     """Coordinate types used in specifying orbit state."""
@@ -180,7 +187,6 @@ class AgEOrbitStateType(IntEnum):
     eOrbitStateGeodetic = 6
 
 agcls.AgTypeNameMap["AgEOrbitStateType"] = AgEOrbitStateType
-__all__.append("AgEOrbitStateType")
 
 class AgECoordinateSystem(IntEnum):
     """Earth-centered coordinate systems for defining certain propagators."""
@@ -234,7 +240,6 @@ class AgECoordinateSystem(IntEnum):
     eCoordinateSystemEclipticJ2000ICRF = 24
 
 agcls.AgTypeNameMap["AgECoordinateSystem"] = AgECoordinateSystem
-__all__.append("AgECoordinateSystem")
 
 class AgELogMsgType(IntEnum):
     """Log message types."""
@@ -250,7 +255,6 @@ class AgELogMsgType(IntEnum):
     eLogMsgAlarm = 4
 
 agcls.AgTypeNameMap["AgELogMsgType"] = AgELogMsgType
-__all__.append("AgELogMsgType")
 
 class AgELogMsgDispID(IntEnum):
     """Log message destination options."""
@@ -264,7 +268,6 @@ class AgELogMsgDispID(IntEnum):
     eLogMsgDispStatusBar = 2
 
 agcls.AgTypeNameMap["AgELogMsgDispID"] = AgELogMsgDispID
-__all__.append("AgELogMsgDispID")
 
 class AgELineStyle(IntEnum):
     """Line Style"""
@@ -306,7 +309,6 @@ class AgELineStyle(IntEnum):
     eSDash = 17
 
 agcls.AgTypeNameMap["AgELineStyle"] = AgELineStyle
-__all__.append("AgELineStyle")
 
 class AgEExecMultiCmdResultAction(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
@@ -320,7 +322,6 @@ class AgEExecMultiCmdResultAction(IntFlag):
     eIgnoreExecCmdResult = 0x8000
 
 agcls.AgTypeNameMap["AgEExecMultiCmdResultAction"] = AgEExecMultiCmdResultAction
-__all__.append("AgEExecMultiCmdResultAction")
 
 class AgEFillStyle(IntEnum):
     """Fill Style"""
@@ -342,7 +343,6 @@ class AgEFillStyle(IntEnum):
     eFillStyleVerticalStripe = 7
 
 agcls.AgTypeNameMap["AgEFillStyle"] = AgEFillStyle
-__all__.append("AgEFillStyle")
 
 class AgEPropertyInfoValueType(IntEnum):
     """The enumeration used to determine what type of property is being used."""
@@ -362,7 +362,6 @@ class AgEPropertyInfoValueType(IntEnum):
     ePropertyInfoValueTypeInterface = 6
 
 agcls.AgTypeNameMap["AgEPropertyInfoValueType"] = AgEPropertyInfoValueType
-__all__.append("AgEPropertyInfoValueType")
 
 
 class IAgLocationData(object):
@@ -399,7 +398,6 @@ class IAgLocationData(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C1E99EDA-C666-4971-AFD0-2259CB7E8452}", IAgLocationData)
 agcls.AgTypeNameMap["IAgLocationData"] = IAgLocationData
-__all__.append("IAgLocationData")
 
 class IAgPosition(object):
     """IAgPosition provides access to the position of the object"""
@@ -622,7 +620,6 @@ class IAgPosition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F25960CE-1D73-4BA0-A429-541DD6D808DE}", IAgPosition)
 agcls.AgTypeNameMap["IAgPosition"] = IAgPosition
-__all__.append("IAgPosition")
 
 class IAgPlanetocentric(IAgPosition):
     """Planetocentric Position Type."""
@@ -707,7 +704,6 @@ class IAgPlanetocentric(IAgPosition):
 
 agcls.AgClassCatalog.add_catalog_entry("{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}", IAgPlanetocentric)
 agcls.AgTypeNameMap["IAgPlanetocentric"] = IAgPlanetocentric
-__all__.append("IAgPlanetocentric")
 
 class IAgGeocentric(IAgPosition):
     """Geocentric Position Type."""
@@ -792,7 +788,6 @@ class IAgGeocentric(IAgPosition):
 
 agcls.AgClassCatalog.add_catalog_entry("{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}", IAgGeocentric)
 agcls.AgTypeNameMap["IAgGeocentric"] = IAgGeocentric
-__all__.append("IAgGeocentric")
 
 class IAgSpherical(IAgPosition):
     """Spherical Position Type."""
@@ -877,7 +872,6 @@ class IAgSpherical(IAgPosition):
 
 agcls.AgClassCatalog.add_catalog_entry("{62B93DF1-C615-4363-B4D9-DAA1ACE56204}", IAgSpherical)
 agcls.AgTypeNameMap["IAgSpherical"] = IAgSpherical
-__all__.append("IAgSpherical")
 
 class IAgCylindrical(IAgPosition):
     """Cylindrical Position Type."""
@@ -962,7 +956,6 @@ class IAgCylindrical(IAgPosition):
 
 agcls.AgClassCatalog.add_catalog_entry("{36F08499-F7C4-41DE-AB49-794EC65C5165}", IAgCylindrical)
 agcls.AgTypeNameMap["IAgCylindrical"] = IAgCylindrical
-__all__.append("IAgCylindrical")
 
 class IAgCartesian(IAgPosition):
     """IAgCartesian Interface used to access a position using Cartesian Coordinates"""
@@ -1047,7 +1040,6 @@ class IAgCartesian(IAgPosition):
 
 agcls.AgClassCatalog.add_catalog_entry("{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}", IAgCartesian)
 agcls.AgTypeNameMap["IAgCartesian"] = IAgCartesian
-__all__.append("IAgCartesian")
 
 class IAgGeodetic(IAgPosition):
     """IAgGeodetic sets the position using Geodetic properties."""
@@ -1132,7 +1124,6 @@ class IAgGeodetic(IAgPosition):
 
 agcls.AgClassCatalog.add_catalog_entry("{93D3322B-C842-48D2-AFCF-BC42B59DB28E}", IAgGeodetic)
 agcls.AgTypeNameMap["IAgGeodetic"] = IAgGeodetic
-__all__.append("IAgGeodetic")
 
 class IAgPlanetodetic(IAgPosition):
     """IAgPlanetodetic sets the position using Planetodetic properties."""
@@ -1217,7 +1208,6 @@ class IAgPlanetodetic(IAgPosition):
 
 agcls.AgClassCatalog.add_catalog_entry("{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}", IAgPlanetodetic)
 agcls.AgTypeNameMap["IAgPlanetodetic"] = IAgPlanetodetic
-__all__.append("IAgPlanetodetic")
 
 class IAgDirection(object):
     """Interface to set and retrieve direction options for aligned and constrained vectors."""
@@ -1385,7 +1375,6 @@ class IAgDirection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8304507A-4915-453D-8944-2080659C0257}", IAgDirection)
 agcls.AgTypeNameMap["IAgDirection"] = IAgDirection
-__all__.append("IAgDirection")
 
 class IAgDirectionEuler(IAgDirection):
     """Interface for Euler direction sequence."""
@@ -1470,7 +1459,6 @@ class IAgDirectionEuler(IAgDirection):
 
 agcls.AgClassCatalog.add_catalog_entry("{9CBDC138-72D1-4734-8F95-2140266D37B5}", IAgDirectionEuler)
 agcls.AgTypeNameMap["IAgDirectionEuler"] = IAgDirectionEuler
-__all__.append("IAgDirectionEuler")
 
 class IAgDirectionPR(IAgDirection):
     """Interface for Pitch-Roll (PR) direction sequence."""
@@ -1555,7 +1543,6 @@ class IAgDirectionPR(IAgDirection):
 
 agcls.AgClassCatalog.add_catalog_entry("{5AC01BF1-2B95-4C13-8B69-09FDC485330E}", IAgDirectionPR)
 agcls.AgTypeNameMap["IAgDirectionPR"] = IAgDirectionPR
-__all__.append("IAgDirectionPR")
 
 class IAgDirectionRADec(IAgDirection):
     """Interface for Spherical direction (Right Ascension and Declination)."""
@@ -1640,7 +1627,6 @@ class IAgDirectionRADec(IAgDirection):
 
 agcls.AgClassCatalog.add_catalog_entry("{A921E587-EC8A-4F1E-99BB-6E13B8E0D5E7}", IAgDirectionRADec)
 agcls.AgTypeNameMap["IAgDirectionRADec"] = IAgDirectionRADec
-__all__.append("IAgDirectionRADec")
 
 class IAgDirectionXYZ(IAgDirection):
     """Interface for Cartesian direction."""
@@ -1725,7 +1711,6 @@ class IAgDirectionXYZ(IAgDirection):
 
 agcls.AgClassCatalog.add_catalog_entry("{2B499A22-6662-4F20-8B82-AA7701CD87A4}", IAgDirectionXYZ)
 agcls.AgTypeNameMap["IAgDirectionXYZ"] = IAgDirectionXYZ
-__all__.append("IAgDirectionXYZ")
 
 class IAgCartesian3Vector(object):
     """Represents a cartesian 3-D vector."""
@@ -1836,7 +1821,6 @@ class IAgCartesian3Vector(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7B741836-71F9-4115-97F8-EAB30362E5C7}", IAgCartesian3Vector)
 agcls.AgTypeNameMap["IAgCartesian3Vector"] = IAgCartesian3Vector
-__all__.append("IAgCartesian3Vector")
 
 class IAgOrientation(object):
     """Interface to set and retrieve the orientation method."""
@@ -2013,7 +1997,6 @@ class IAgOrientation(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8467175F-1BD8-4498-90FD-08C67072D120}", IAgOrientation)
 agcls.AgTypeNameMap["IAgOrientation"] = IAgOrientation
-__all__.append("IAgOrientation")
 
 class IAgOrientationAzEl(IAgOrientation):
     """Interface for AzEl orientation method."""
@@ -2098,7 +2081,6 @@ class IAgOrientationAzEl(IAgOrientation):
 
 agcls.AgClassCatalog.add_catalog_entry("{6A6B1D7D-6A7F-48B3-98CA-019CA46499FE}", IAgOrientationAzEl)
 agcls.AgTypeNameMap["IAgOrientationAzEl"] = IAgOrientationAzEl
-__all__.append("IAgOrientationAzEl")
 
 class IAgOrientationEulerAngles(IAgOrientation):
     """Interface for Euler Angles orientation method."""
@@ -2199,7 +2181,6 @@ class IAgOrientationEulerAngles(IAgOrientation):
 
 agcls.AgClassCatalog.add_catalog_entry("{4204C7E1-EC21-40AD-A905-BB35A3FDF7BD}", IAgOrientationEulerAngles)
 agcls.AgTypeNameMap["IAgOrientationEulerAngles"] = IAgOrientationEulerAngles
-__all__.append("IAgOrientationEulerAngles")
 
 class IAgOrientationQuaternion(IAgOrientation):
     """Interface for Quaternion orientation method."""
@@ -2300,7 +2281,6 @@ class IAgOrientationQuaternion(IAgOrientation):
 
 agcls.AgClassCatalog.add_catalog_entry("{101FAC5C-8DDB-4D4F-9C73-58146CA8EB01}", IAgOrientationQuaternion)
 agcls.AgTypeNameMap["IAgOrientationQuaternion"] = IAgOrientationQuaternion
-__all__.append("IAgOrientationQuaternion")
 
 class IAgOrientationYPRAngles(IAgOrientation):
     """Interface for Yaw-Pitch Roll (YPR) Angles orientation system."""
@@ -2401,7 +2381,6 @@ class IAgOrientationYPRAngles(IAgOrientation):
 
 agcls.AgClassCatalog.add_catalog_entry("{97A9D45D-E718-41FC-ACD2-CEBBEFD2011B}", IAgOrientationYPRAngles)
 agcls.AgTypeNameMap["IAgOrientationYPRAngles"] = IAgOrientationYPRAngles
-__all__.append("IAgOrientationYPRAngles")
 
 class IAgOrientationPositionOffset(object):
     """Interface for defining the orientation origin position offset relative to the parent object."""
@@ -2446,7 +2425,6 @@ class IAgOrientationPositionOffset(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0DDA686C-559C-4BEA-969B-BF40708242B6}", IAgOrientationPositionOffset)
 agcls.AgTypeNameMap["IAgOrientationPositionOffset"] = IAgOrientationPositionOffset
-__all__.append("IAgOrientationPositionOffset")
 
 class IAgOrbitState(object):
     """Interface to set and retrieve the coordinate type used to specify the orbit state."""
@@ -2623,7 +2601,6 @@ class IAgOrbitState(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{42342AD2-F6C5-426B-AB2A-3688F05353C8}", IAgOrbitState)
 agcls.AgTypeNameMap["IAgOrbitState"] = IAgOrbitState
-__all__.append("IAgOrbitState")
 
 class IAgCartesian2Vector(object):
     """Represents a cartesian 2-D vector."""
@@ -2716,7 +2693,6 @@ class IAgCartesian2Vector(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DA459BD7-5810-4B30-8397-21EDA9E52D2B}", IAgCartesian2Vector)
 agcls.AgTypeNameMap["IAgCartesian2Vector"] = IAgCartesian2Vector
-__all__.append("IAgCartesian2Vector")
 
 class IAgUnitPrefsDim(object):
     """Provides info on a Dimension from the global unit table."""
@@ -2795,7 +2771,6 @@ class IAgUnitPrefsDim(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AA966FFD-1A99-45D8-9193-C519BBBA99FA}", IAgUnitPrefsDim)
 agcls.AgTypeNameMap["IAgUnitPrefsDim"] = IAgUnitPrefsDim
-__all__.append("IAgUnitPrefsDim")
 
 class IAgPropertyInfo(object):
     """Property information."""
@@ -2900,7 +2875,6 @@ class IAgPropertyInfo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{26A48B4B-BF6A-4F9D-9658-44A7A2DBBE2A}", IAgPropertyInfo)
 agcls.AgTypeNameMap["IAgPropertyInfo"] = IAgPropertyInfo
-__all__.append("IAgPropertyInfo")
 
 class IAgPropertyInfoCollection(object):
     """The collection of properties."""
@@ -2977,14 +2951,14 @@ class IAgPropertyInfoCollection(object):
             return arg_pVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgPropertyInfo":
-        """Retrieve a property from the collection by Index."""
+        """Retrieves a property from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgPropertyInfo":
-        """Retrieve a property from the collection by Name."""
+        """Retrieves a property from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
@@ -2996,7 +2970,6 @@ class IAgPropertyInfoCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{198E6280-1D5A-4AED-9DE3-ACE354B95287}", IAgPropertyInfoCollection)
 agcls.AgTypeNameMap["IAgPropertyInfoCollection"] = IAgPropertyInfoCollection
-__all__.append("IAgPropertyInfoCollection")
 
 class IAgRuntimeTypeInfo(object):
     """Interface used to retrieve the properties at runtime."""
@@ -3068,7 +3041,6 @@ class IAgRuntimeTypeInfo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{01F8872C-9586-4131-A724-F97C6ADD083F}", IAgRuntimeTypeInfo)
 agcls.AgTypeNameMap["IAgRuntimeTypeInfo"] = IAgRuntimeTypeInfo
-__all__.append("IAgRuntimeTypeInfo")
 
 class IAgRuntimeTypeInfoProvider(object):
     """Access point for IAgRuntimeTypeInfo."""
@@ -3113,7 +3085,6 @@ class IAgRuntimeTypeInfoProvider(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}", IAgRuntimeTypeInfoProvider)
 agcls.AgTypeNameMap["IAgRuntimeTypeInfoProvider"] = IAgRuntimeTypeInfoProvider
-__all__.append("IAgRuntimeTypeInfoProvider")
 
 class IAgExecCmdResult(object):
     """Collection of strings returned by the ExecuteCommand."""
@@ -3210,7 +3181,6 @@ class IAgExecCmdResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}", IAgExecCmdResult)
 agcls.AgTypeNameMap["IAgExecCmdResult"] = IAgExecCmdResult
-__all__.append("IAgExecCmdResult")
 
 class IAgExecMultiCmdResult(object):
     """Collection of objects returned by the ExecuteMultipleCommands."""
@@ -3288,7 +3258,6 @@ class IAgExecMultiCmdResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}", IAgExecMultiCmdResult)
 agcls.AgTypeNameMap["IAgExecMultiCmdResult"] = IAgExecMultiCmdResult
-__all__.append("IAgExecMultiCmdResult")
 
 class IAgUnitPrefsUnit(object):
     """Provides info about a unit."""
@@ -3360,7 +3329,6 @@ class IAgUnitPrefsUnit(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}", IAgUnitPrefsUnit)
 agcls.AgTypeNameMap["IAgUnitPrefsUnit"] = IAgUnitPrefsUnit
-__all__.append("IAgUnitPrefsUnit")
 
 class IAgUnitPrefsUnitCollection(object):
     """Provides access to the Unit collection."""
@@ -3437,14 +3405,14 @@ class IAgUnitPrefsUnitCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgUnitPrefsUnit":
-        """Returns the specific item in the collection given an index."""
+        """Retrieves a unit from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
     def GetItemByName(self, name:str) -> "IAgUnitPrefsUnit":
-        """Returns the specific item in the collection given a unit identifier."""
+        """Retrieves a unit from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
@@ -3456,7 +3424,6 @@ class IAgUnitPrefsUnitCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}", IAgUnitPrefsUnitCollection)
 agcls.AgTypeNameMap["IAgUnitPrefsUnitCollection"] = IAgUnitPrefsUnitCollection
-__all__.append("IAgUnitPrefsUnitCollection")
 
 class IAgUnitPrefsDimCollection(object):
     """Provides accesses to the global unit table."""
@@ -3588,14 +3555,14 @@ class IAgUnitPrefsDimCollection(object):
         agcls.evaluate_hresult(self.__dict__["_ResetUnits"]())
 
     def GetItemByIndex(self, index:int) -> "IAgUnitPrefsDim":
-        """Returns an IAgUnitPrefsDim given an index."""
+        """Retrieves a dimension from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
             return arg_ppAgUnitPrefsDim.python_val
 
     def GetItemByName(self, name:str) -> "IAgUnitPrefsDim":
-        """Returns an IAgUnitPrefsDim given a Dimension name ."""
+        """Retrieves a dimension from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
@@ -3607,7 +3574,6 @@ class IAgUnitPrefsDimCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}", IAgUnitPrefsDimCollection)
 agcls.AgTypeNameMap["IAgUnitPrefsDimCollection"] = IAgUnitPrefsDimCollection
-__all__.append("IAgUnitPrefsDimCollection")
 
 class IAgQuantity(object):
     """Provides helper methods for a quantity."""
@@ -3720,7 +3686,6 @@ class IAgQuantity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C0BBB39C-54E2-4344-B24E-58AA6AA4446B}", IAgQuantity)
 agcls.AgTypeNameMap["IAgQuantity"] = IAgQuantity
-__all__.append("IAgQuantity")
 
 class IAgDate(object):
     """Provides helper methods for a date."""
@@ -3882,7 +3847,6 @@ class IAgDate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BFC8EA09-19BD-432A-923D-C553E8E37993}", IAgDate)
 agcls.AgTypeNameMap["IAgDate"] = IAgDate
-__all__.append("IAgDate")
 
 class IAgConversionUtility(object):
     """Provides conversion utilities."""
@@ -4092,7 +4056,6 @@ class IAgConversionUtility(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2B04A4E2-C647-4920-88FF-DE0413252D1C}", IAgConversionUtility)
 agcls.AgTypeNameMap["IAgConversionUtility"] = IAgConversionUtility
-__all__.append("IAgConversionUtility")
 
 class IAgDoublesCollection(object):
     """Represents a collection of doubles."""
@@ -4206,7 +4169,6 @@ class IAgDoublesCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DEE2EB74-C19C-44C9-8825-09010A8F60BE}", IAgDoublesCollection)
 agcls.AgTypeNameMap["IAgDoublesCollection"] = IAgDoublesCollection
-__all__.append("IAgDoublesCollection")
 
 
 
@@ -4229,7 +4191,6 @@ class AgExecCmdResult(IAgExecCmdResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgExecCmdResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92FE4418-FBA3-4D69-8F6E-9F600A1BA5E0}", AgExecCmdResult)
-__all__.append("AgExecCmdResult")
 
 
 class AgExecMultiCmdResult(IAgExecMultiCmdResult):
@@ -4251,7 +4212,6 @@ class AgExecMultiCmdResult(IAgExecMultiCmdResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgExecMultiCmdResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4B262721-FD3F-4DAD-BF32-4280752B7FE6}", AgExecMultiCmdResult)
-__all__.append("AgExecMultiCmdResult")
 
 
 class AgUnitPrefsUnit(IAgUnitPrefsUnit):
@@ -4273,7 +4233,6 @@ class AgUnitPrefsUnit(IAgUnitPrefsUnit):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUnitPrefsUnit.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}", AgUnitPrefsUnit)
-__all__.append("AgUnitPrefsUnit")
 
 
 class AgUnitPrefsUnitCollection(IAgUnitPrefsUnitCollection):
@@ -4295,7 +4254,6 @@ class AgUnitPrefsUnitCollection(IAgUnitPrefsUnitCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUnitPrefsUnitCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{21AEACA4-B79D-455B-8DA4-89402A57A87B}", AgUnitPrefsUnitCollection)
-__all__.append("AgUnitPrefsUnitCollection")
 
 
 class AgUnitPrefsDim(IAgUnitPrefsDim):
@@ -4317,7 +4275,6 @@ class AgUnitPrefsDim(IAgUnitPrefsDim):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUnitPrefsDim.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5DB8F1AE-1240-4929-B7FD-75E0800970EB}", AgUnitPrefsDim)
-__all__.append("AgUnitPrefsDim")
 
 
 class AgUnitPrefsDimCollection(IAgUnitPrefsDimCollection):
@@ -4339,7 +4296,6 @@ class AgUnitPrefsDimCollection(IAgUnitPrefsDimCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUnitPrefsDimCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{58562305-1D39-4B56-9FA8-AB49FEB68A37}", AgUnitPrefsDimCollection)
-__all__.append("AgUnitPrefsDimCollection")
 
 
 class AgConversionUtility(IAgConversionUtility):
@@ -4361,7 +4317,6 @@ class AgConversionUtility(IAgConversionUtility):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgConversionUtility.")
         
 agcls.AgClassCatalog.add_catalog_entry("{89E0FDC5-4016-47E9-96ED-0C1B05FFDADA}", AgConversionUtility)
-__all__.append("AgConversionUtility")
 
 
 class AgQuantity(IAgQuantity):
@@ -4383,7 +4338,6 @@ class AgQuantity(IAgQuantity):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgQuantity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59806B16-8D20-4EC3-8913-9457846AC0E5}", AgQuantity)
-__all__.append("AgQuantity")
 
 
 class AgDate(IAgDate):
@@ -4405,7 +4359,6 @@ class AgDate(IAgDate):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CC2BA6FD-3A05-46D1-BAA0-68AC2D7896F1}", AgDate)
-__all__.append("AgDate")
 
 
 class AgPosition(IAgLocationData, IAgPosition):
@@ -4430,7 +4383,6 @@ class AgPosition(IAgLocationData, IAgPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgPosition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B3FE87C4-702C-4263-83D8-4E32C993E2D0}", AgPosition)
-__all__.append("AgPosition")
 
 
 class AgCartesian(IAgCartesian, IAgPosition):
@@ -4455,7 +4407,6 @@ class AgCartesian(IAgCartesian, IAgPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCartesian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{027F342E-5989-43D1-831B-BF2E313A1CBB}", AgCartesian)
-__all__.append("AgCartesian")
 
 
 class AgGeodetic(IAgGeodetic, IAgPosition):
@@ -4480,7 +4431,6 @@ class AgGeodetic(IAgGeodetic, IAgPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgGeodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F65DA479-6847-456B-8816-85FF3ECD4469}", AgGeodetic)
-__all__.append("AgGeodetic")
 
 
 class AgGeocentric(IAgGeocentric, IAgPosition):
@@ -4505,7 +4455,6 @@ class AgGeocentric(IAgGeocentric, IAgPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgGeocentric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1AC9E304-8DCE-4CD6-A5AA-B82738823556}", AgGeocentric)
-__all__.append("AgGeocentric")
 
 
 class AgPlanetodetic(IAgPlanetodetic, IAgPosition):
@@ -4530,7 +4479,6 @@ class AgPlanetodetic(IAgPlanetodetic, IAgPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgPlanetodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E06625DF-EEB4-4384-B142-C1C501F522F8}", AgPlanetodetic)
-__all__.append("AgPlanetodetic")
 
 
 class AgPlanetocentric(IAgPlanetocentric, IAgPosition):
@@ -4555,7 +4503,6 @@ class AgPlanetocentric(IAgPlanetocentric, IAgPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgPlanetocentric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DB009F3C-1FA7-4241-8A8D-D55E234CFF02}", AgPlanetocentric)
-__all__.append("AgPlanetocentric")
 
 
 class AgSpherical(IAgSpherical, IAgPosition):
@@ -4580,7 +4527,6 @@ class AgSpherical(IAgSpherical, IAgPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CD809FAC-48DF-46AB-A322-92947F84C7E6}", AgSpherical)
-__all__.append("AgSpherical")
 
 
 class AgCylindrical(IAgCylindrical, IAgPosition):
@@ -4605,7 +4551,6 @@ class AgCylindrical(IAgCylindrical, IAgPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCylindrical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FF1B8082-F06B-4F7B-94B2-6D3C4D9A7D51}", AgCylindrical)
-__all__.append("AgCylindrical")
 
 
 class AgDirection(IAgDirection):
@@ -4627,7 +4572,6 @@ class AgDirection(IAgDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDirection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9BC95D30-4E21-4502-ADE6-2AAE9ED89903}", AgDirection)
-__all__.append("AgDirection")
 
 
 class AgDirectionEuler(IAgDirectionEuler, IAgDirection):
@@ -4652,7 +4596,6 @@ class AgDirectionEuler(IAgDirectionEuler, IAgDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDirectionEuler.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A14FAC2D-C055-4FB4-9AAD-67314E647717}", AgDirectionEuler)
-__all__.append("AgDirectionEuler")
 
 
 class AgDirectionPR(IAgDirectionPR, IAgDirection):
@@ -4677,7 +4620,6 @@ class AgDirectionPR(IAgDirectionPR, IAgDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDirectionPR.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3EEEDD8D-FB4C-442D-8A1F-28C7A3C2C9A6}", AgDirectionPR)
-__all__.append("AgDirectionPR")
 
 
 class AgDirectionRADec(IAgDirectionRADec, IAgDirection):
@@ -4702,7 +4644,6 @@ class AgDirectionRADec(IAgDirectionRADec, IAgDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDirectionRADec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EB70218F-18C4-41FE-90AC-99AFEB243666}", AgDirectionRADec)
-__all__.append("AgDirectionRADec")
 
 
 class AgDirectionXYZ(IAgDirectionXYZ, IAgDirection):
@@ -4727,7 +4668,6 @@ class AgDirectionXYZ(IAgDirectionXYZ, IAgDirection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDirectionXYZ.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1AB8359-28B7-468F-BD92-378267CA0998}", AgDirectionXYZ)
-__all__.append("AgDirectionXYZ")
 
 
 class AgOrientation(IAgOrientation):
@@ -4749,7 +4689,6 @@ class AgOrientation(IAgOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{97DF3B0E-D8E0-46B1-88CB-DC7A0AF934AE}", AgOrientation)
-__all__.append("AgOrientation")
 
 
 class AgOrientationAzEl(IAgOrientationAzEl, IAgOrientation):
@@ -4774,7 +4713,6 @@ class AgOrientationAzEl(IAgOrientationAzEl, IAgOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientationAzEl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3CF365C4-9B79-4B72-A479-16EF921F791C}", AgOrientationAzEl)
-__all__.append("AgOrientationAzEl")
 
 
 class AgOrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation):
@@ -4799,7 +4737,6 @@ class AgOrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientationEulerAngles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C3DC0E0A-690B-4C20-9134-D6C57BE46D40}", AgOrientationEulerAngles)
-__all__.append("AgOrientationEulerAngles")
 
 
 class AgOrientationQuaternion(IAgOrientationQuaternion, IAgOrientation):
@@ -4824,7 +4761,6 @@ class AgOrientationQuaternion(IAgOrientationQuaternion, IAgOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientationQuaternion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8AC57BB2-C7A7-4C05-9E35-7246956759D9}", AgOrientationQuaternion)
-__all__.append("AgOrientationQuaternion")
 
 
 class AgOrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation):
@@ -4849,7 +4785,6 @@ class AgOrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientationYPRAngles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE398C98-2D0D-4863-8097-9F7648CABC21}", AgOrientationYPRAngles)
-__all__.append("AgOrientationYPRAngles")
 
 
 class AgDoublesCollection(IAgDoublesCollection):
@@ -4871,7 +4806,6 @@ class AgDoublesCollection(IAgDoublesCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDoublesCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ECD576C3-0440-44D9-9D16-B88873C3A816}", AgDoublesCollection)
-__all__.append("AgDoublesCollection")
 
 
 class AgCartesian3Vector(IAgCartesian3Vector):
@@ -4893,7 +4827,6 @@ class AgCartesian3Vector(IAgCartesian3Vector):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCartesian3Vector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A70BA75-BC1A-459D-9DAD-E174F3B94002}", AgCartesian3Vector)
-__all__.append("AgCartesian3Vector")
 
 
 class AgCartesian2Vector(IAgCartesian2Vector):
@@ -4915,7 +4848,6 @@ class AgCartesian2Vector(IAgCartesian2Vector):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCartesian2Vector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ECE2E7DF-CBF1-4124-AAAC-33700F16FAE2}", AgCartesian2Vector)
-__all__.append("AgCartesian2Vector")
 
 
 class AgPropertyInfo(IAgPropertyInfo):
@@ -4937,7 +4869,6 @@ class AgPropertyInfo(IAgPropertyInfo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgPropertyInfo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92498440-7C87-495C-A8BD-0A70F85D4DC8}", AgPropertyInfo)
-__all__.append("AgPropertyInfo")
 
 
 class AgPropertyInfoCollection(IAgPropertyInfoCollection):
@@ -4959,7 +4890,6 @@ class AgPropertyInfoCollection(IAgPropertyInfoCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgPropertyInfoCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{113B1CA1-4DD4-4915-8D7F-E1F96E18A985}", AgPropertyInfoCollection)
-__all__.append("AgPropertyInfoCollection")
 
 
 class AgRuntimeTypeInfo(IAgRuntimeTypeInfo):
@@ -4981,7 +4911,6 @@ class AgRuntimeTypeInfo(IAgRuntimeTypeInfo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgRuntimeTypeInfo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D80F3E93-932A-49B3-8661-1A1627DCBDD1}", AgRuntimeTypeInfo)
-__all__.append("AgRuntimeTypeInfo")
 
 
 class AgCROrientationAzEl(IAgOrientationAzEl, IAgOrientation, IAgOrientationPositionOffset):
@@ -5009,7 +4938,6 @@ class AgCROrientationAzEl(IAgOrientationAzEl, IAgOrientation, IAgOrientationPosi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationAzEl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1E11E3CE-BCAA-4E1F-BAF9-B6AD3650F9BA}", AgCROrientationAzEl)
-__all__.append("AgCROrientationAzEl")
 
 
 class AgCROrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation, IAgOrientationPositionOffset):
@@ -5037,7 +4965,6 @@ class AgCROrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation, IAgO
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationEulerAngles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D08A5BF9-5CBA-432D-8C48-3CD1CFC42636}", AgCROrientationEulerAngles)
-__all__.append("AgCROrientationEulerAngles")
 
 
 class AgCROrientationQuaternion(IAgOrientationQuaternion, IAgOrientation, IAgOrientationPositionOffset):
@@ -5065,7 +4992,6 @@ class AgCROrientationQuaternion(IAgOrientationQuaternion, IAgOrientation, IAgOri
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationQuaternion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D3BA3F8-B6F6-443B-A8AC-74C86A8B901A}", AgCROrientationQuaternion)
-__all__.append("AgCROrientationQuaternion")
 
 
 class AgCROrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation, IAgOrientationPositionOffset):
@@ -5093,7 +5019,6 @@ class AgCROrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation, IAgOrien
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationYPRAngles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1FB88B69-1844-4CD9-BD44-09A9FCC4E06F}", AgCROrientationYPRAngles)
-__all__.append("AgCROrientationYPRAngles")
 
 
 class AgCROrientationOffsetCart(IAgCartesian3Vector):
@@ -5115,7 +5040,6 @@ class AgCROrientationOffsetCart(IAgCartesian3Vector):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationOffsetCart.")
         
 agcls.AgClassCatalog.add_catalog_entry("{462F58AA-A74F-4E42-88B6-8F2790E85FEC}", AgCROrientationOffsetCart)
-__all__.append("AgCROrientationOffsetCart")
 
 
 

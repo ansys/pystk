@@ -2,7 +2,7 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgSTKXInitialize", "IAgSTKXInitialize"]
 
 import typing
 
@@ -97,7 +97,6 @@ class IAgSTKXInitialize(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EDC9E451-09B3-4D8B-9EC5-B75C6D95A52D}", IAgSTKXInitialize)
 agcls.AgTypeNameMap["IAgSTKXInitialize"] = IAgSTKXInitialize
-__all__.append("IAgSTKXInitialize")
 
 
 
@@ -120,7 +119,6 @@ class AgSTKXInitialize(IAgSTKXInitialize):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgSTKXInitialize.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B85901D-FC82-4733-97E6-5BB25CE69379}", AgSTKXInitialize)
-__all__.append("AgSTKXInitialize")
 
 
 

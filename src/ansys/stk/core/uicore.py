@@ -2,7 +2,9 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgEArrangeStyle", "AgEDockStyle", "AgEFloatState", "AgEWindowService", "AgEWindowState", "AgUiToolbar", "AgUiToolbarCollection", 
+"AgUiWindow", "AgUiWindowGlobeObject", "AgUiWindowMapObject", "AgUiWindowsCollection", "IAgUiToolbar", "IAgUiToolbarCollection", 
+"IAgUiWindow", "IAgUiWindowGlobeObject", "IAgUiWindowMapObject", "IAgUiWindowsCollection"]
 
 import typing
 
@@ -42,7 +44,6 @@ class AgEWindowService(IntEnum):
     eWindowService3DWindow = 2
 
 agcls.AgTypeNameMap["AgEWindowService"] = AgEWindowService
-__all__.append("AgEWindowService")
 
 class AgEWindowState(IntEnum):
     """Window states."""
@@ -54,7 +55,6 @@ class AgEWindowState(IntEnum):
     eWindowStateNormal = 3
 
 agcls.AgTypeNameMap["AgEWindowState"] = AgEWindowState
-__all__.append("AgEWindowState")
 
 class AgEArrangeStyle(IntEnum):
     """Window layout styles."""
@@ -66,7 +66,6 @@ class AgEArrangeStyle(IntEnum):
     eArrangeStyleTiledVertical = 3
 
 agcls.AgTypeNameMap["AgEArrangeStyle"] = AgEArrangeStyle
-__all__.append("AgEArrangeStyle")
 
 class AgEDockStyle(IntEnum):
     """Window docking styles."""
@@ -84,7 +83,6 @@ class AgEDockStyle(IntEnum):
     eDockStyleFloating = 6
 
 agcls.AgTypeNameMap["AgEDockStyle"] = AgEDockStyle
-__all__.append("AgEDockStyle")
 
 class AgEFloatState(IntEnum):
     """Floating state."""
@@ -94,7 +92,6 @@ class AgEFloatState(IntEnum):
     eFloatStateDocked = 2
 
 agcls.AgTypeNameMap["AgEFloatState"] = AgEFloatState
-__all__.append("AgEFloatState")
 
 
 class IAgUiToolbar(object):
@@ -181,7 +178,6 @@ class IAgUiToolbar(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{69C72C16-36F2-42d4-A183-6879BB5B8070}", IAgUiToolbar)
 agcls.AgTypeNameMap["IAgUiToolbar"] = IAgUiToolbar
-__all__.append("IAgUiToolbar")
 
 class IAgUiToolbarCollection(object):
     """Provides methods and properties to obtain a window's toolbars."""
@@ -286,7 +282,6 @@ class IAgUiToolbarCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{62AA135B-4F2F-45de-94A6-31BB0984AD28}", IAgUiToolbarCollection)
 agcls.AgTypeNameMap["IAgUiToolbarCollection"] = IAgUiToolbarCollection
-__all__.append("IAgUiToolbarCollection")
 
 class IAgUiWindow(object):
     """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
@@ -515,7 +510,6 @@ class IAgUiWindow(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{05F59555-F74C-48b2-AAB4-1E6C58D7AEB7}", IAgUiWindow)
 agcls.AgTypeNameMap["IAgUiWindow"] = IAgUiWindow
-__all__.append("IAgUiWindow")
 
 class IAgUiWindowsCollection(object):
     """Provides methods and properties to manage the application's windows."""
@@ -628,7 +622,6 @@ class IAgUiWindowsCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4DD6FB87-C329-41a5-A359-8A9C03569635}", IAgUiWindowsCollection)
 agcls.AgTypeNameMap["IAgUiWindowsCollection"] = IAgUiWindowsCollection
-__all__.append("IAgUiWindowsCollection")
 
 class IAgUiWindowMapObject(object):
     """Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties."""
@@ -673,7 +666,6 @@ class IAgUiWindowMapObject(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A94C0929-7448-4e9e-BEB8-8F7A8F252D0D}", IAgUiWindowMapObject)
 agcls.AgTypeNameMap["IAgUiWindowMapObject"] = IAgUiWindowMapObject
-__all__.append("IAgUiWindowMapObject")
 
 class IAgUiWindowGlobeObject(object):
     """Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties."""
@@ -718,7 +710,6 @@ class IAgUiWindowGlobeObject(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B958EDBD-0569-4596-A253-BD90328844D0}", IAgUiWindowGlobeObject)
 agcls.AgTypeNameMap["IAgUiWindowGlobeObject"] = IAgUiWindowGlobeObject
-__all__.append("IAgUiWindowGlobeObject")
 
 
 
@@ -741,7 +732,6 @@ class AgUiWindowsCollection(IAgUiWindowsCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiWindowsCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{82F7DB8A-A761-4C3E-95DF-37300A3738CB}", AgUiWindowsCollection)
-__all__.append("AgUiWindowsCollection")
 
 
 class AgUiWindow(IAgUiWindow):
@@ -763,7 +753,6 @@ class AgUiWindow(IAgUiWindow):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiWindow.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BD72ECC3-A4A2-42FB-95AC-AE25633BB9F6}", AgUiWindow)
-__all__.append("AgUiWindow")
 
 
 class AgUiToolbar(IAgUiToolbar):
@@ -785,7 +774,6 @@ class AgUiToolbar(IAgUiToolbar):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiToolbar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C20AB584-ABCC-4BF3-96D4-D2A4AA880FBB}", AgUiToolbar)
-__all__.append("AgUiToolbar")
 
 
 class AgUiToolbarCollection(IAgUiToolbarCollection):
@@ -807,7 +795,6 @@ class AgUiToolbarCollection(IAgUiToolbarCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiToolbarCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{28F000E7-D13E-485E-8484-0BCB359BBC55}", AgUiToolbarCollection)
-__all__.append("AgUiToolbarCollection")
 
 
 class AgUiWindowMapObject(IAgUiWindowMapObject):
@@ -829,7 +816,6 @@ class AgUiWindowMapObject(IAgUiWindowMapObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiWindowMapObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D20C704C-0763-4CC9-9485-A2EA23C84E6B}", AgUiWindowMapObject)
-__all__.append("AgUiWindowMapObject")
 
 
 class AgUiWindowGlobeObject(IAgUiWindowGlobeObject):
@@ -851,7 +837,6 @@ class AgUiWindowGlobeObject(IAgUiWindowGlobeObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiWindowGlobeObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4F69FA5F-30E8-4A07-9D8C-1AD163A3DE0D}", AgUiWindowGlobeObject)
-__all__.append("AgUiWindowGlobeObject")
 
 
 
