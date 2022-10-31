@@ -2,7 +2,146 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgCrdnAngle", "AgCrdnAngleBetweenPlanes", "AgCrdnAngleBetweenVectors", "AgCrdnAngleDihedral", "AgCrdnAngleFactory", 
+"AgCrdnAngleGroup", "AgCrdnAngleRefTo", "AgCrdnAngleRotation", "AgCrdnAngleToPlane", "AgCrdnAxes", "AgCrdnAxesAlignedAndConstrained", 
+"AgCrdnAxesAngularOffset", "AgCrdnAxesAtTimeInstant", "AgCrdnAxesAttitudeFile", "AgCrdnAxesBPlane", "AgCrdnAxesCommonTasks", 
+"AgCrdnAxesCustomScript", "AgCrdnAxesFactory", "AgCrdnAxesFixed", "AgCrdnAxesFixedAtEpoch", "AgCrdnAxesGroup", "AgCrdnAxesLabels", 
+"AgCrdnAxesLagrangeLibration", "AgCrdnAxesModelAttach", "AgCrdnAxesOnSurface", "AgCrdnAxesPlugin", "AgCrdnAxesRefTo", "AgCrdnAxesSamplingInterval", 
+"AgCrdnAxesSamplingIntervalCollection", "AgCrdnAxesSamplingResult", "AgCrdnAxesSpinning", "AgCrdnAxesTrajectory", "AgCrdnCalcScalar", 
+"AgCrdnCalcScalarAngle", "AgCrdnCalcScalarConstant", "AgCrdnCalcScalarCustom", "AgCrdnCalcScalarDataElement", "AgCrdnCalcScalarDerivative", 
+"AgCrdnCalcScalarDotProduct", "AgCrdnCalcScalarElapsedTime", "AgCrdnCalcScalarFactory", "AgCrdnCalcScalarFile", "AgCrdnCalcScalarFixedAtTimeInstant", 
+"AgCrdnCalcScalarFunction", "AgCrdnCalcScalarFunction2Var", "AgCrdnCalcScalarGroup", "AgCrdnCalcScalarIntegral", "AgCrdnCalcScalarPlugin", 
+"AgCrdnCalcScalarSurfaceDistanceBetweenPoints", "AgCrdnCalcScalarVectorComponent", "AgCrdnCalcScalarVectorMagnitude", "AgCrdnCentralBody", 
+"AgCrdnCentralBodyCollection", "AgCrdnCentralBodyRefTo", "AgCrdnCollection", "AgCrdnCondition", "AgCrdnConditionCombined", 
+"AgCrdnConditionFactory", "AgCrdnConditionGroup", "AgCrdnConditionPointInVolume", "AgCrdnConditionScalarBounds", "AgCrdnConditionSet", 
+"AgCrdnConditionSetEvaluateResult", "AgCrdnConditionSetEvaluateWithRateResult", "AgCrdnConditionSetFactory", "AgCrdnConditionSetGroup", 
+"AgCrdnConditionSetScalarThresholds", "AgCrdnConverge", "AgCrdnConvergeBasic", "AgCrdnDerivative", "AgCrdnDerivativeBasic", 
+"AgCrdnEvaluateResult", "AgCrdnEvaluateWithRateResult", "AgCrdnEvent", "AgCrdnEventArray", "AgCrdnEventArrayConditionCrossings", 
+"AgCrdnEventArrayExtrema", "AgCrdnEventArrayFactory", "AgCrdnEventArrayFiltered", "AgCrdnEventArrayFixedStep", "AgCrdnEventArrayFixedTimes", 
+"AgCrdnEventArrayGroup", "AgCrdnEventArrayMerged", "AgCrdnEventArraySignaled", "AgCrdnEventArrayStartStopTimes", "AgCrdnEventEpoch", 
+"AgCrdnEventExtremum", "AgCrdnEventFactory", "AgCrdnEventFindOccurrenceResult", "AgCrdnEventGroup", "AgCrdnEventInterval", 
+"AgCrdnEventIntervalBetweenTimeInstants", "AgCrdnEventIntervalCollection", "AgCrdnEventIntervalCollectionCondition", "AgCrdnEventIntervalCollectionFactory", 
+"AgCrdnEventIntervalCollectionGroup", "AgCrdnEventIntervalCollectionLighting", "AgCrdnEventIntervalCollectionOccurredResult", 
+"AgCrdnEventIntervalCollectionSignaled", "AgCrdnEventIntervalFactory", "AgCrdnEventIntervalFixed", "AgCrdnEventIntervalFixedDuration", 
+"AgCrdnEventIntervalFromIntervalList", "AgCrdnEventIntervalGroup", "AgCrdnEventIntervalList", "AgCrdnEventIntervalListCondition", 
+"AgCrdnEventIntervalListFactory", "AgCrdnEventIntervalListFile", "AgCrdnEventIntervalListFiltered", "AgCrdnEventIntervalListFixed", 
+"AgCrdnEventIntervalListGroup", "AgCrdnEventIntervalListMerged", "AgCrdnEventIntervalListScaled", "AgCrdnEventIntervalListSignaled", 
+"AgCrdnEventIntervalListTimeOffset", "AgCrdnEventIntervalResult", "AgCrdnEventIntervalScaled", "AgCrdnEventIntervalSignaled", 
+"AgCrdnEventIntervalSmartInterval", "AgCrdnEventIntervalTimeOffset", "AgCrdnEventSignaled", "AgCrdnEventSmartEpoch", "AgCrdnEventStartStopTime", 
+"AgCrdnEventTimeOffset", "AgCrdnFindTimesResult", "AgCrdnFirstIntervalsFilter", "AgCrdnGapsFilter", "AgCrdnGeneric", "AgCrdnGridCoordinateDefinition", 
+"AgCrdnGridValuesCustom", "AgCrdnGridValuesFixedNumberOfSteps", "AgCrdnGridValuesFixedStep", "AgCrdnGridValuesMethod", "AgCrdnInstance", 
+"AgCrdnIntegral", "AgCrdnIntegralBasic", "AgCrdnInterp", "AgCrdnInterpBasic", "AgCrdnInterval", "AgCrdnIntervalCollection", 
+"AgCrdnIntervalListResult", "AgCrdnIntervalVectorCollection", "AgCrdnIntervalsFilter", "AgCrdnIntervalsVectorResult", "AgCrdnLLAPosition", 
+"AgCrdnLastIntervalsFilter", "AgCrdnLightTimeDelay", "AgCrdnMethodCallResult", "AgCrdnParameterSet", "AgCrdnParameterSetAttitude", 
+"AgCrdnParameterSetFactory", "AgCrdnParameterSetGroundTrajectory", "AgCrdnParameterSetGroup", "AgCrdnParameterSetOrbit", 
+"AgCrdnParameterSetTrajectory", "AgCrdnParameterSetVector", "AgCrdnPlane", "AgCrdnPlaneFactory", "AgCrdnPlaneGroup", "AgCrdnPlaneLabels", 
+"AgCrdnPlaneNormal", "AgCrdnPlaneQuadrant", "AgCrdnPlaneRefTo", "AgCrdnPlaneTrajectory", "AgCrdnPlaneTriad", "AgCrdnPlaneTwoVector", 
+"AgCrdnPoint", "AgCrdnPointAtTimeInstant", "AgCrdnPointBPlane", "AgCrdnPointCBFixedOffset", "AgCrdnPointCentBodyIntersect", 
+"AgCrdnPointCommonTasks", "AgCrdnPointCovarianceGrazing", "AgCrdnPointFactory", "AgCrdnPointFile", "AgCrdnPointFixedInSystem", 
+"AgCrdnPointGlint", "AgCrdnPointGrazing", "AgCrdnPointGroup", "AgCrdnPointLagrangeLibration", "AgCrdnPointModelAttach", 
+"AgCrdnPointOnSurface", "AgCrdnPointPlaneIntersection", "AgCrdnPointPlaneProjection", "AgCrdnPointPlugin", "AgCrdnPointRefTo", 
+"AgCrdnPointSamplingInterval", "AgCrdnPointSamplingIntervalCollection", "AgCrdnPointSamplingResult", "AgCrdnPointSatelliteCollectionEntry", 
+"AgCrdnProvider", "AgCrdnPruneFilter", "AgCrdnPruneFilterFactory", "AgCrdnRelativeSatisfactionConditionFilter", "AgCrdnRoot", 
+"AgCrdnSampling", "AgCrdnSamplingBasic", "AgCrdnSamplingCurvatureTolerance", "AgCrdnSamplingFixedStep", "AgCrdnSamplingMethod", 
+"AgCrdnSamplingMethodFactory", "AgCrdnSamplingRelativeTolerance", "AgCrdnSatisfactionConditionFilter", "AgCrdnSignalDelay", 
+"AgCrdnSignalDelayBasic", "AgCrdnSystem", "AgCrdnSystemAssembled", "AgCrdnSystemCommonTasks", "AgCrdnSystemFactory", "AgCrdnSystemGroup", 
+"AgCrdnSystemOnSurface", "AgCrdnSystemRefTo", "AgCrdnTemplate", "AgCrdnTypeInfo", "AgCrdnVector", "AgCrdnVectorAngleRate", 
+"AgCrdnVectorAngularVelocity", "AgCrdnVectorApoapsis", "AgCrdnVectorConing", "AgCrdnVectorCross", "AgCrdnVectorCustomScript", 
+"AgCrdnVectorDerivative", "AgCrdnVectorDirectionToStar", "AgCrdnVectorDispSurface", "AgCrdnVectorDisplacement", "AgCrdnVectorEccentricity", 
+"AgCrdnVectorFactory", "AgCrdnVectorFixedAtEpoch", "AgCrdnVectorFixedAtTimeInstant", "AgCrdnVectorFixedInAxes", "AgCrdnVectorGroup", 
+"AgCrdnVectorLineOfNodes", "AgCrdnVectorLinearCombination", "AgCrdnVectorModelAttach", "AgCrdnVectorOrbitAngularMomentum", 
+"AgCrdnVectorOrbitNormal", "AgCrdnVectorPeriapsis", "AgCrdnVectorPlugin", "AgCrdnVectorProjectAlongVector", "AgCrdnVectorProjection", 
+"AgCrdnVectorRefTo", "AgCrdnVectorReflection", "AgCrdnVectorRotationVector", "AgCrdnVectorScalarLinearCombination", "AgCrdnVectorScalarScaled", 
+"AgCrdnVectorScaled", "AgCrdnVectorTwoPlanesIntersection", "AgCrdnVectorVelocityAcceleration", "AgCrdnVolume", "AgCrdnVolumeCalc", 
+"AgCrdnVolumeCalcAltitude", "AgCrdnVolumeCalcAngleOffVector", "AgCrdnVolumeCalcConditionSatMetric", "AgCrdnVolumeCalcDelayRange", 
+"AgCrdnVolumeCalcFactory", "AgCrdnVolumeCalcFile", "AgCrdnVolumeCalcFromScalar", "AgCrdnVolumeCalcGroup", "AgCrdnVolumeCalcRange", 
+"AgCrdnVolumeCalcSolarIntensity", "AgCrdnVolumeCombined", "AgCrdnVolumeFactory", "AgCrdnVolumeFromCalc", "AgCrdnVolumeFromCondition", 
+"AgCrdnVolumeFromGrid", "AgCrdnVolumeFromTimeSatisfaction", "AgCrdnVolumeGrid", "AgCrdnVolumeGridBearingAlt", "AgCrdnVolumeGridCartesian", 
+"AgCrdnVolumeGridConstrained", "AgCrdnVolumeGridCylindrical", "AgCrdnVolumeGridFactory", "AgCrdnVolumeGridGroup", "AgCrdnVolumeGridLatLonAlt", 
+"AgCrdnVolumeGridResult", "AgCrdnVolumeGridSpherical", "AgCrdnVolumeGroup", "AgCrdnVolumeInview", "AgCrdnVolumeLighting", 
+"AgCrdnVolumeOverTime", "AgCrdnWellKnownAxes", "AgCrdnWellKnownEarthAxes", "AgCrdnWellKnownEarthSystems", "AgCrdnWellKnownSunAxes", 
+"AgCrdnWellKnownSunSystems", "AgCrdnWellKnownSystems", "AgECrdnAngleType", "AgECrdnAxesType", "AgECrdnCalcScalarType", "AgECrdnConditionCombinedOperationType", 
+"AgECrdnConditionSetType", "AgECrdnConditionThresholdOption", "AgECrdnConditionType", "AgECrdnDimensionInheritance", "AgECrdnDirectionType", 
+"AgECrdnDisplayAxisSelector", "AgECrdnEventArrayFilterType", "AgECrdnEventArrayType", "AgECrdnEventIntervalCollectionType", 
+"AgECrdnEventIntervalListType", "AgECrdnEventIntervalType", "AgECrdnEventListMergeOperation", "AgECrdnEventType", "AgECrdnExtremumConstants", 
+"AgECrdnFileInterpolatorType", "AgECrdnIntegralType", "AgECrdnIntegrationWindowType", "AgECrdnInterpolatorType", "AgECrdnIntersectionSurface", 
+"AgECrdnIntervalDurationKind", "AgECrdnIntervalSelection", "AgECrdnKind", "AgECrdnLagrangeLibrationPointType", "AgECrdnMeanElementTheory", 
+"AgECrdnParameterSetType", "AgECrdnPlaneType", "AgECrdnPointBPlaneType", "AgECrdnPointType", "AgECrdnPruneFilter", "AgECrdnQuadrantType", 
+"AgECrdnReferenceShapeType", "AgECrdnSampledReferenceTime", "AgECrdnSamplingMethod", "AgECrdnSatisfactionCrossing", "AgECrdnSaveDataOption", 
+"AgECrdnSignalPathReferenceSystem", "AgECrdnSignalSense", "AgECrdnSignedAngleType", "AgECrdnSmartEpochState", "AgECrdnSmartIntervalState", 
+"AgECrdnSpeedOptions", "AgECrdnStartStopOption", "AgECrdnSurfaceType", "AgECrdnSweepMode", "AgECrdnSystemType", "AgECrdnThreshConvergeSense", 
+"AgECrdnTrajectoryAxesType", "AgECrdnVectorComponentType", "AgECrdnVectorScaledDimensionInheritance", "AgECrdnVectorType", 
+"AgECrdnVolumeAberrationType", "AgECrdnVolumeCalcAltitudeReferenceType", "AgECrdnVolumeCalcAngleOffVectorType", "AgECrdnVolumeCalcRangeDistanceType", 
+"AgECrdnVolumeCalcRangeSpeedType", "AgECrdnVolumeCalcType", "AgECrdnVolumeCalcVolumeSatisfactionAccumulationType", "AgECrdnVolumeCalcVolumeSatisfactionDurationType", 
+"AgECrdnVolumeCalcVolumeSatisfactionFilterType", "AgECrdnVolumeCalcVolumeSatisfactionMetricType", "AgECrdnVolumeClockHostType", 
+"AgECrdnVolumeCombinedOperationType", "AgECrdnVolumeFromGridEdgeType", "AgECrdnVolumeGridType", "AgECrdnVolumeLightingConditionsType", 
+"AgECrdnVolumeOverTimeDurationType", "AgECrdnVolumeResultVectorRequest", "AgECrdnVolumeTimeSenseType", "AgECrdnVolumeType", 
+"AgECrdnVolumetricGridValuesMethodType", "IAgCrdn", "IAgCrdnAngle", "IAgCrdnAngleBetweenPlanes", "IAgCrdnAngleBetweenVectors", 
+"IAgCrdnAngleDihedral", "IAgCrdnAngleFactory", "IAgCrdnAngleFindAngleResult", "IAgCrdnAngleFindAngleWithRateResult", "IAgCrdnAngleFindResult", 
+"IAgCrdnAngleFindWithRateResult", "IAgCrdnAngleGroup", "IAgCrdnAngleRefTo", "IAgCrdnAngleRotation", "IAgCrdnAngleToPlane", 
+"IAgCrdnAxes", "IAgCrdnAxesAlignedAndConstrained", "IAgCrdnAxesAngularOffset", "IAgCrdnAxesAtTimeInstant", "IAgCrdnAxesAttitudeFile", 
+"IAgCrdnAxesBPlane", "IAgCrdnAxesCommonTasks", "IAgCrdnAxesCustomScript", "IAgCrdnAxesFactory", "IAgCrdnAxesFindInAxesResult", 
+"IAgCrdnAxesFindInAxesWithRateResult", "IAgCrdnAxesFixed", "IAgCrdnAxesFixedAtEpoch", "IAgCrdnAxesGroup", "IAgCrdnAxesLabels", 
+"IAgCrdnAxesLagrangeLibration", "IAgCrdnAxesModelAttach", "IAgCrdnAxesOnSurface", "IAgCrdnAxesPlugin", "IAgCrdnAxesRefTo", 
+"IAgCrdnAxesSamplingInterval", "IAgCrdnAxesSamplingIntervalCollection", "IAgCrdnAxesSamplingResult", "IAgCrdnAxesSpinning", 
+"IAgCrdnAxesTrajectory", "IAgCrdnAxesTransformResult", "IAgCrdnAxesTransformWithRateResult", "IAgCrdnCalcScalar", "IAgCrdnCalcScalarAngle", 
+"IAgCrdnCalcScalarConstant", "IAgCrdnCalcScalarCustom", "IAgCrdnCalcScalarDataElement", "IAgCrdnCalcScalarDerivative", "IAgCrdnCalcScalarDotProduct", 
+"IAgCrdnCalcScalarElapsedTime", "IAgCrdnCalcScalarFactory", "IAgCrdnCalcScalarFile", "IAgCrdnCalcScalarFixedAtTimeInstant", 
+"IAgCrdnCalcScalarFunction", "IAgCrdnCalcScalarFunction2Var", "IAgCrdnCalcScalarGroup", "IAgCrdnCalcScalarIntegral", "IAgCrdnCalcScalarPlugin", 
+"IAgCrdnCalcScalarSurfaceDistanceBetweenPoints", "IAgCrdnCalcScalarVectorComponent", "IAgCrdnCalcScalarVectorMagnitude", 
+"IAgCrdnCentralBody", "IAgCrdnCentralBodyCollection", "IAgCrdnCentralBodyRefTo", "IAgCrdnCollection", "IAgCrdnCondition", 
+"IAgCrdnConditionCombined", "IAgCrdnConditionFactory", "IAgCrdnConditionGroup", "IAgCrdnConditionPointInVolume", "IAgCrdnConditionScalarBounds", 
+"IAgCrdnConditionSet", "IAgCrdnConditionSetEvaluateResult", "IAgCrdnConditionSetEvaluateWithRateResult", "IAgCrdnConditionSetFactory", 
+"IAgCrdnConditionSetGroup", "IAgCrdnConditionSetScalarThresholds", "IAgCrdnContext", "IAgCrdnConverge", "IAgCrdnConvergeBasic", 
+"IAgCrdnDerivative", "IAgCrdnDerivativeBasic", "IAgCrdnEvaluateResult", "IAgCrdnEvaluateWithRateResult", "IAgCrdnEvent", 
+"IAgCrdnEventArray", "IAgCrdnEventArrayConditionCrossings", "IAgCrdnEventArrayExtrema", "IAgCrdnEventArrayFactory", "IAgCrdnEventArrayFiltered", 
+"IAgCrdnEventArrayFixedStep", "IAgCrdnEventArrayFixedTimes", "IAgCrdnEventArrayGroup", "IAgCrdnEventArrayMerged", "IAgCrdnEventArraySignaled", 
+"IAgCrdnEventArrayStartStopTimes", "IAgCrdnEventEpoch", "IAgCrdnEventExtremum", "IAgCrdnEventFactory", "IAgCrdnEventFindOccurrenceResult", 
+"IAgCrdnEventGroup", "IAgCrdnEventInterval", "IAgCrdnEventIntervalBetweenTimeInstants", "IAgCrdnEventIntervalCollection", 
+"IAgCrdnEventIntervalCollectionCondition", "IAgCrdnEventIntervalCollectionFactory", "IAgCrdnEventIntervalCollectionGroup", 
+"IAgCrdnEventIntervalCollectionLighting", "IAgCrdnEventIntervalCollectionOccurredResult", "IAgCrdnEventIntervalCollectionSignaled", 
+"IAgCrdnEventIntervalFactory", "IAgCrdnEventIntervalFixed", "IAgCrdnEventIntervalFixedDuration", "IAgCrdnEventIntervalFromIntervalList", 
+"IAgCrdnEventIntervalGroup", "IAgCrdnEventIntervalList", "IAgCrdnEventIntervalListCondition", "IAgCrdnEventIntervalListFactory", 
+"IAgCrdnEventIntervalListFile", "IAgCrdnEventIntervalListFiltered", "IAgCrdnEventIntervalListFixed", "IAgCrdnEventIntervalListGroup", 
+"IAgCrdnEventIntervalListMerged", "IAgCrdnEventIntervalListScaled", "IAgCrdnEventIntervalListSignaled", "IAgCrdnEventIntervalListTimeOffset", 
+"IAgCrdnEventIntervalResult", "IAgCrdnEventIntervalScaled", "IAgCrdnEventIntervalSignaled", "IAgCrdnEventIntervalSmartInterval", 
+"IAgCrdnEventIntervalTimeOffset", "IAgCrdnEventSignaled", "IAgCrdnEventSmartEpoch", "IAgCrdnEventStartStopTime", "IAgCrdnEventTimeOffset", 
+"IAgCrdnFindTimesResult", "IAgCrdnFirstIntervalsFilter", "IAgCrdnGapsFilter", "IAgCrdnGridCoordinateDefinition", "IAgCrdnGridValuesCustom", 
+"IAgCrdnGridValuesFixedNumberOfSteps", "IAgCrdnGridValuesFixedStep", "IAgCrdnGridValuesMethod", "IAgCrdnInstance", "IAgCrdnIntegral", 
+"IAgCrdnIntegralBasic", "IAgCrdnInterp", "IAgCrdnInterpBasic", "IAgCrdnInterval", "IAgCrdnIntervalCollection", "IAgCrdnIntervalListResult", 
+"IAgCrdnIntervalVectorCollection", "IAgCrdnIntervalsFilter", "IAgCrdnIntervalsVectorResult", "IAgCrdnLLAPosition", "IAgCrdnLastIntervalsFilter", 
+"IAgCrdnLightTimeDelay", "IAgCrdnMethodCallResult", "IAgCrdnParameterSet", "IAgCrdnParameterSetAttitude", "IAgCrdnParameterSetFactory", 
+"IAgCrdnParameterSetGroundTrajectory", "IAgCrdnParameterSetGroup", "IAgCrdnParameterSetOrbit", "IAgCrdnParameterSetTrajectory", 
+"IAgCrdnParameterSetVector", "IAgCrdnPlane", "IAgCrdnPlaneFactory", "IAgCrdnPlaneFindInAxesResult", "IAgCrdnPlaneFindInAxesWithRateResult", 
+"IAgCrdnPlaneFindInSystemResult", "IAgCrdnPlaneFindInSystemWithRateResult", "IAgCrdnPlaneGroup", "IAgCrdnPlaneLabels", "IAgCrdnPlaneNormal", 
+"IAgCrdnPlaneQuadrant", "IAgCrdnPlaneRefTo", "IAgCrdnPlaneTrajectory", "IAgCrdnPlaneTriad", "IAgCrdnPlaneTwoVector", "IAgCrdnPoint", 
+"IAgCrdnPointAtTimeInstant", "IAgCrdnPointBPlane", "IAgCrdnPointCBFixedOffset", "IAgCrdnPointCentBodyIntersect", "IAgCrdnPointCommonTasks", 
+"IAgCrdnPointCovarianceGrazing", "IAgCrdnPointFactory", "IAgCrdnPointFile", "IAgCrdnPointFixedInSystem", "IAgCrdnPointGlint", 
+"IAgCrdnPointGrazing", "IAgCrdnPointGroup", "IAgCrdnPointLagrangeLibration", "IAgCrdnPointLocateInSystemResult", "IAgCrdnPointLocateInSystemWithRateResult", 
+"IAgCrdnPointModelAttach", "IAgCrdnPointOnSurface", "IAgCrdnPointPlaneIntersection", "IAgCrdnPointPlaneProjection", "IAgCrdnPointPlugin", 
+"IAgCrdnPointRefTo", "IAgCrdnPointSamplingInterval", "IAgCrdnPointSamplingIntervalCollection", "IAgCrdnPointSamplingResult", 
+"IAgCrdnPointSatelliteCollectionEntry", "IAgCrdnProvider", "IAgCrdnPruneFilter", "IAgCrdnPruneFilterFactory", "IAgCrdnRefTo", 
+"IAgCrdnRelativeSatisfactionConditionFilter", "IAgCrdnRoot", "IAgCrdnSampling", "IAgCrdnSamplingBasic", "IAgCrdnSamplingCurvatureTolerance", 
+"IAgCrdnSamplingFixedStep", "IAgCrdnSamplingMethod", "IAgCrdnSamplingMethodFactory", "IAgCrdnSamplingRelativeTolerance", 
+"IAgCrdnSatisfactionConditionFilter", "IAgCrdnSignalDelay", "IAgCrdnSignalDelayBasic", "IAgCrdnSystem", "IAgCrdnSystemAssembled", 
+"IAgCrdnSystemCommonTasks", "IAgCrdnSystemFactory", "IAgCrdnSystemFindInSystemResult", "IAgCrdnSystemGroup", "IAgCrdnSystemOnSurface", 
+"IAgCrdnSystemRefTo", "IAgCrdnSystemTransformResult", "IAgCrdnSystemTransformWithRateResult", "IAgCrdnTemplate", "IAgCrdnTimeProperties", 
+"IAgCrdnTypeInfo", "IAgCrdnVector", "IAgCrdnVectorAngleRate", "IAgCrdnVectorAngularVelocity", "IAgCrdnVectorApoapsis", "IAgCrdnVectorConing", 
+"IAgCrdnVectorCross", "IAgCrdnVectorCustomScript", "IAgCrdnVectorDerivative", "IAgCrdnVectorDirectionToStar", "IAgCrdnVectorDispSurface", 
+"IAgCrdnVectorDisplacement", "IAgCrdnVectorEccentricity", "IAgCrdnVectorFactory", "IAgCrdnVectorFindInAxesResult", "IAgCrdnVectorFindInAxesWithRateResult", 
+"IAgCrdnVectorFixedAtEpoch", "IAgCrdnVectorFixedAtTimeInstant", "IAgCrdnVectorFixedInAxes", "IAgCrdnVectorGroup", "IAgCrdnVectorLineOfNodes", 
+"IAgCrdnVectorLinearCombination", "IAgCrdnVectorModelAttach", "IAgCrdnVectorOrbitAngularMomentum", "IAgCrdnVectorOrbitNormal", 
+"IAgCrdnVectorPeriapsis", "IAgCrdnVectorPlugin", "IAgCrdnVectorProjectAlongVector", "IAgCrdnVectorProjection", "IAgCrdnVectorRefTo", 
+"IAgCrdnVectorReflection", "IAgCrdnVectorRotationVector", "IAgCrdnVectorScalarLinearCombination", "IAgCrdnVectorScalarScaled", 
+"IAgCrdnVectorScaled", "IAgCrdnVectorTwoPlanesIntersection", "IAgCrdnVectorVelocityAcceleration", "IAgCrdnVolume", "IAgCrdnVolumeCalc", 
+"IAgCrdnVolumeCalcAltitude", "IAgCrdnVolumeCalcAngleOffVector", "IAgCrdnVolumeCalcConditionSatMetric", "IAgCrdnVolumeCalcDelayRange", 
+"IAgCrdnVolumeCalcFactory", "IAgCrdnVolumeCalcFile", "IAgCrdnVolumeCalcFromScalar", "IAgCrdnVolumeCalcGroup", "IAgCrdnVolumeCalcRange", 
+"IAgCrdnVolumeCalcSolarIntensity", "IAgCrdnVolumeCombined", "IAgCrdnVolumeFactory", "IAgCrdnVolumeFromCalc", "IAgCrdnVolumeFromCondition", 
+"IAgCrdnVolumeFromGrid", "IAgCrdnVolumeFromTimeSatisfaction", "IAgCrdnVolumeGrid", "IAgCrdnVolumeGridBearingAlt", "IAgCrdnVolumeGridCartesian", 
+"IAgCrdnVolumeGridConstrained", "IAgCrdnVolumeGridCylindrical", "IAgCrdnVolumeGridFactory", "IAgCrdnVolumeGridGroup", "IAgCrdnVolumeGridLatLonAlt", 
+"IAgCrdnVolumeGridResult", "IAgCrdnVolumeGridSpherical", "IAgCrdnVolumeGroup", "IAgCrdnVolumeInview", "IAgCrdnVolumeLighting", 
+"IAgCrdnVolumeOverTime", "IAgCrdnWellKnownAxes", "IAgCrdnWellKnownEarthAxes", "IAgCrdnWellKnownEarthSystems", "IAgCrdnWellKnownSunAxes", 
+"IAgCrdnWellKnownSunSystems", "IAgCrdnWellKnownSystems"]
 
 import typing
 
@@ -74,7 +213,6 @@ class AgECrdnCalcScalarType(IntEnum):
     eCrdnCalcScalarTypeVectorComponent = 15
 
 agcls.AgTypeNameMap["AgECrdnCalcScalarType"] = AgECrdnCalcScalarType
-__all__.append("AgECrdnCalcScalarType")
 
 class AgECrdnConditionCombinedOperationType(IntEnum):
     """Defines scalar condition combined operation types."""
@@ -88,7 +226,6 @@ class AgECrdnConditionCombinedOperationType(IntEnum):
     eCrdnConditionCombinedOperationTypeMINUS = 4
 
 agcls.AgTypeNameMap["AgECrdnConditionCombinedOperationType"] = AgECrdnConditionCombinedOperationType
-__all__.append("AgECrdnConditionCombinedOperationType")
 
 class AgECrdnConditionSetType(IntEnum):
     """Defines available condition set types."""
@@ -98,7 +235,6 @@ class AgECrdnConditionSetType(IntEnum):
     eCrdnConditionSetTypeScalarThresholds = 0
 
 agcls.AgTypeNameMap["AgECrdnConditionSetType"] = AgECrdnConditionSetType
-__all__.append("AgECrdnConditionSetType")
 
 class AgECrdnConditionThresholdOption(IntEnum):
     """Operations for Scalar Bounds Condition"""
@@ -112,7 +248,6 @@ class AgECrdnConditionThresholdOption(IntEnum):
     eCrdnConditionThresholdOptionOutsideMinMax = 4
 
 agcls.AgTypeNameMap["AgECrdnConditionThresholdOption"] = AgECrdnConditionThresholdOption
-__all__.append("AgECrdnConditionThresholdOption")
 
 class AgECrdnConditionType(IntEnum):
     """Defines available condition types."""
@@ -126,7 +261,6 @@ class AgECrdnConditionType(IntEnum):
     eCrdnConditionTypePointInVolume = 2
 
 agcls.AgTypeNameMap["AgECrdnConditionType"] = AgECrdnConditionType
-__all__.append("AgECrdnConditionType")
 
 class AgECrdnDimensionInheritance(IntEnum):
     """Defines how dimension is inherited"""
@@ -138,7 +272,6 @@ class AgECrdnDimensionInheritance(IntEnum):
     eCrdnDimensionInheritanceFromY = 2
 
 agcls.AgTypeNameMap["AgECrdnDimensionInheritance"] = AgECrdnDimensionInheritance
-__all__.append("AgECrdnDimensionInheritance")
 
 class AgECrdnEventArrayFilterType(IntEnum):
     """Event array filter types."""
@@ -150,7 +283,6 @@ class AgECrdnEventArrayFilterType(IntEnum):
     eCrdnEventArrayFilterTypeIntervals = 2
 
 agcls.AgTypeNameMap["AgECrdnEventArrayFilterType"] = AgECrdnEventArrayFilterType
-__all__.append("AgECrdnEventArrayFilterType")
 
 class AgECrdnEventArrayType(IntEnum):
     """Defines available time array types."""
@@ -174,7 +306,6 @@ class AgECrdnEventArrayType(IntEnum):
     eCrdnEventArrayTypeFixedTimes = 7
 
 agcls.AgTypeNameMap["AgECrdnEventArrayType"] = AgECrdnEventArrayType
-__all__.append("AgECrdnEventArrayType")
 
 class AgECrdnEventIntervalCollectionType(IntEnum):
     """Defines available interval collection types."""
@@ -188,7 +319,6 @@ class AgECrdnEventIntervalCollectionType(IntEnum):
     eCrdnEventIntervalCollectionTypeCondition = 2
 
 agcls.AgTypeNameMap["AgECrdnEventIntervalCollectionType"] = AgECrdnEventIntervalCollectionType
-__all__.append("AgECrdnEventIntervalCollectionType")
 
 class AgECrdnEventIntervalListType(IntEnum):
     """Defines available interval list types."""
@@ -212,7 +342,6 @@ class AgECrdnEventIntervalListType(IntEnum):
     eCrdnEventIntervalListTypeFixed = 7
 
 agcls.AgTypeNameMap["AgECrdnEventIntervalListType"] = AgECrdnEventIntervalListType
-__all__.append("AgECrdnEventIntervalListType")
 
 class AgECrdnEventIntervalType(IntEnum):
     """Defines available interval types."""
@@ -236,7 +365,6 @@ class AgECrdnEventIntervalType(IntEnum):
     eCrdnEventIntervalTypeSmartInterval = 7
 
 agcls.AgTypeNameMap["AgECrdnEventIntervalType"] = AgECrdnEventIntervalType
-__all__.append("AgECrdnEventIntervalType")
 
 class AgECrdnEventListMergeOperation(IntEnum):
     """Defines merge operations for interval lists."""
@@ -250,7 +378,6 @@ class AgECrdnEventListMergeOperation(IntEnum):
     eCrdnEventListMergeOperationMINUS = 3
 
 agcls.AgTypeNameMap["AgECrdnEventListMergeOperation"] = AgECrdnEventListMergeOperation
-__all__.append("AgECrdnEventListMergeOperation")
 
 class AgECrdnEventType(IntEnum):
     """Defines available time instant types."""
@@ -270,7 +397,6 @@ class AgECrdnEventType(IntEnum):
     eCrdnEventTypeSmartEpoch = 5
 
 agcls.AgTypeNameMap["AgECrdnEventType"] = AgECrdnEventType
-__all__.append("AgECrdnEventType")
 
 class AgECrdnExtremumConstants(IntFlag):
     """These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing."""
@@ -280,7 +406,6 @@ class AgECrdnExtremumConstants(IntFlag):
     eCrdnExtremumMaximum = 2
 
 agcls.AgTypeNameMap["AgECrdnExtremumConstants"] = AgECrdnExtremumConstants
-__all__.append("AgECrdnExtremumConstants")
 
 class AgECrdnFileInterpolatorType(IntEnum):
     """Interpolator types."""
@@ -298,7 +423,6 @@ class AgECrdnFileInterpolatorType(IntEnum):
     eCrdnFileInterpolatorTypeHoldNearest = 5
 
 agcls.AgTypeNameMap["AgECrdnFileInterpolatorType"] = AgECrdnFileInterpolatorType
-__all__.append("AgECrdnFileInterpolatorType")
 
 class AgECrdnIntegralType(IntEnum):
     """Integral types."""
@@ -310,7 +434,6 @@ class AgECrdnIntegralType(IntEnum):
     eCrdnIntegralTypeAdaptiveStep = 3
 
 agcls.AgTypeNameMap["AgECrdnIntegralType"] = AgECrdnIntegralType
-__all__.append("AgECrdnIntegralType")
 
 class AgECrdnIntegrationWindowType(IntEnum):
     """Defines the interval of times during which an integral is evaluated."""
@@ -324,7 +447,6 @@ class AgECrdnIntegrationWindowType(IntEnum):
     eCrdnIntegrationWindowTypeSlidingWindow = 3
 
 agcls.AgTypeNameMap["AgECrdnIntegrationWindowType"] = AgECrdnIntegrationWindowType
-__all__.append("AgECrdnIntegrationWindowType")
 
 class AgECrdnInterpolatorType(IntEnum):
     """Interpolator types."""
@@ -336,7 +458,6 @@ class AgECrdnInterpolatorType(IntEnum):
     eCrdnInterpolatorTypeHermite = 2
 
 agcls.AgTypeNameMap["AgECrdnInterpolatorType"] = AgECrdnInterpolatorType
-__all__.append("AgECrdnInterpolatorType")
 
 class AgECrdnIntervalDurationKind(IntEnum):
     """Duration for filtering intervals or gaps from interval lists or time arrays"""
@@ -346,7 +467,6 @@ class AgECrdnIntervalDurationKind(IntEnum):
     eCrdnIntervalDurationKindAtMost = 1
 
 agcls.AgTypeNameMap["AgECrdnIntervalDurationKind"] = AgECrdnIntervalDurationKind
-__all__.append("AgECrdnIntervalDurationKind")
 
 class AgECrdnIntervalSelection(IntEnum):
     """Select the method to choose an interval from an interval list"""
@@ -366,7 +486,6 @@ class AgECrdnIntervalSelection(IntEnum):
     eCrdnIntervalSelectionSpan = 100
 
 agcls.AgTypeNameMap["AgECrdnIntervalSelection"] = AgECrdnIntervalSelection
-__all__.append("AgECrdnIntervalSelection")
 
 class AgECrdnParameterSetType(IntEnum):
     """Defines parameter set types."""
@@ -384,7 +503,6 @@ class AgECrdnParameterSetType(IntEnum):
     eCrdnParameterSetTypeVector = 4
 
 agcls.AgTypeNameMap["AgECrdnParameterSetType"] = AgECrdnParameterSetType
-__all__.append("AgECrdnParameterSetType")
 
 class AgECrdnPruneFilter(IntEnum):
     """Specify the filter for filtering interval lists or time arrays"""
@@ -404,7 +522,6 @@ class AgECrdnPruneFilter(IntEnum):
     eCrdnPruneFilterRelativeSatisfactionIntervals = 6
 
 agcls.AgTypeNameMap["AgECrdnPruneFilter"] = AgECrdnPruneFilter
-__all__.append("AgECrdnPruneFilter")
 
 class AgECrdnSampledReferenceTime(IntEnum):
     """Event array reference type."""
@@ -420,7 +537,6 @@ class AgECrdnSampledReferenceTime(IntEnum):
     eCrdnSampledReferenceTimeStopOfIntervalList = 4
 
 agcls.AgTypeNameMap["AgECrdnSampledReferenceTime"] = AgECrdnSampledReferenceTime
-__all__.append("AgECrdnSampledReferenceTime")
 
 class AgECrdnSamplingMethod(IntEnum):
     """Defines the Sampling Method"""
@@ -434,7 +550,6 @@ class AgECrdnSamplingMethod(IntEnum):
     eCrdnSamplingMethodCurvatureTolerance = 3
 
 agcls.AgTypeNameMap["AgECrdnSamplingMethod"] = AgECrdnSamplingMethod
-__all__.append("AgECrdnSamplingMethod")
 
 class AgECrdnSatisfactionCrossing(IntEnum):
     """Direction crossing flags."""
@@ -446,7 +561,6 @@ class AgECrdnSatisfactionCrossing(IntEnum):
     eCrdnSatisfactionCrossingOut = 2
 
 agcls.AgTypeNameMap["AgECrdnSatisfactionCrossing"] = AgECrdnSatisfactionCrossing
-__all__.append("AgECrdnSatisfactionCrossing")
 
 class AgECrdnSaveDataOption(IntEnum):
     """Method for saving computed data"""
@@ -458,7 +572,6 @@ class AgECrdnSaveDataOption(IntEnum):
     eCrdnSaveDataOptionNo = 10
 
 agcls.AgTypeNameMap["AgECrdnSaveDataOption"] = AgECrdnSaveDataOption
-__all__.append("AgECrdnSaveDataOption")
 
 class AgECrdnSignalPathReferenceSystem(IntEnum):
     """Signal path reference system types."""
@@ -472,7 +585,6 @@ class AgECrdnSignalPathReferenceSystem(IntEnum):
     eCrdnSignalPathReferenceSystemCustom = 2
 
 agcls.AgTypeNameMap["AgECrdnSignalPathReferenceSystem"] = AgECrdnSignalPathReferenceSystem
-__all__.append("AgECrdnSignalPathReferenceSystem")
 
 class AgECrdnSmartEpochState(IntEnum):
     """Smart epoch states."""
@@ -482,7 +594,6 @@ class AgECrdnSmartEpochState(IntEnum):
     eCrdnSmartEpochStateImplicit = 3
 
 agcls.AgTypeNameMap["AgECrdnSmartEpochState"] = AgECrdnSmartEpochState
-__all__.append("AgECrdnSmartEpochState")
 
 class AgECrdnSmartIntervalState(IntEnum):
     """Smart interval states."""
@@ -498,7 +609,6 @@ class AgECrdnSmartIntervalState(IntEnum):
     eCrdnSmartIntervalStateExplicitDuration = 3
 
 agcls.AgTypeNameMap["AgECrdnSmartIntervalState"] = AgECrdnSmartIntervalState
-__all__.append("AgECrdnSmartIntervalState")
 
 class AgECrdnSpeedOptions(IntEnum):
     """Defines various speed options."""
@@ -508,7 +618,6 @@ class AgECrdnSpeedOptions(IntEnum):
     eCrdnCustomTransmissionSpeed = 2
 
 agcls.AgTypeNameMap["AgECrdnSpeedOptions"] = AgECrdnSpeedOptions
-__all__.append("AgECrdnSpeedOptions")
 
 class AgECrdnStartStopOption(IntEnum):
     """Start/stop options."""
@@ -520,7 +629,6 @@ class AgECrdnStartStopOption(IntEnum):
     eCrdnStartStopOptionCountStartStop = 3
 
 agcls.AgTypeNameMap["AgECrdnStartStopOption"] = AgECrdnStartStopOption
-__all__.append("AgECrdnStartStopOption")
 
 class AgECrdnThreshConvergeSense(IntEnum):
     """Specifies the desired sense of the results from threshold crossing computations."""
@@ -532,7 +640,6 @@ class AgECrdnThreshConvergeSense(IntEnum):
     eCrdnThreshConvergeSenseBelow = 2
 
 agcls.AgTypeNameMap["AgECrdnThreshConvergeSense"] = AgECrdnThreshConvergeSense
-__all__.append("AgECrdnThreshConvergeSense")
 
 class AgECrdnVectorComponentType(IntEnum):
     """Defines component directions for a vector."""
@@ -550,7 +657,6 @@ class AgECrdnVectorComponentType(IntEnum):
     eCrdnVectorComponentMinusZ = 5
 
 agcls.AgTypeNameMap["AgECrdnVectorComponentType"] = AgECrdnVectorComponentType
-__all__.append("AgECrdnVectorComponentType")
 
 class AgECrdnVolumeCalcAltitudeReferenceType(IntEnum):
     """Defines volume calc altitude reference types."""
@@ -562,7 +668,6 @@ class AgECrdnVolumeCalcAltitudeReferenceType(IntEnum):
     eCrdnVolumeCalcAltitudeReferenceMSL = 2
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcAltitudeReferenceType"] = AgECrdnVolumeCalcAltitudeReferenceType
-__all__.append("AgECrdnVolumeCalcAltitudeReferenceType")
 
 class AgECrdnVolumeCalcAngleOffVectorType(IntEnum):
     """Defines volume calc angle off vector reference types."""
@@ -578,7 +683,6 @@ class AgECrdnVolumeCalcAngleOffVectorType(IntEnum):
     eCrdnVolumeCalcAngleOffVector = 16
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcAngleOffVectorType"] = AgECrdnVolumeCalcAngleOffVectorType
-__all__.append("AgECrdnVolumeCalcAngleOffVectorType")
 
 class AgECrdnVolumeCalcRangeDistanceType(IntEnum):
     """Defines volume calc range distance types."""
@@ -594,7 +698,6 @@ class AgECrdnVolumeCalcRangeDistanceType(IntEnum):
     eCrdnVolumeCalcRangeDistancePlaneUnsigned = 8
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcRangeDistanceType"] = AgECrdnVolumeCalcRangeDistanceType
-__all__.append("AgECrdnVolumeCalcRangeDistanceType")
 
 class AgECrdnVolumeCalcRangeSpeedType(IntEnum):
     """Defines volume calc range distance types."""
@@ -604,7 +707,6 @@ class AgECrdnVolumeCalcRangeSpeedType(IntEnum):
     eCrdnVolumeCalcRangeSpeedCustom = 2
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcRangeSpeedType"] = AgECrdnVolumeCalcRangeSpeedType
-__all__.append("AgECrdnVolumeCalcRangeSpeedType")
 
 class AgECrdnVolumeCalcType(IntEnum):
     """Defines volume calc types."""
@@ -628,7 +730,6 @@ class AgECrdnVolumeCalcType(IntEnum):
     eCrdnVolumeCalcTypeDelayRange = 7
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcType"] = AgECrdnVolumeCalcType
-__all__.append("AgECrdnVolumeCalcType")
 
 class AgECrdnVolumeCalcVolumeSatisfactionAccumulationType(IntEnum):
     """Defines volume calc spatial condition accumulation types."""
@@ -642,7 +743,6 @@ class AgECrdnVolumeCalcVolumeSatisfactionAccumulationType(IntEnum):
     eCrdnVolumeCalcVolumeSatisfactionAccumulationTotal = 10
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionAccumulationType"] = AgECrdnVolumeCalcVolumeSatisfactionAccumulationType
-__all__.append("AgECrdnVolumeCalcVolumeSatisfactionAccumulationType")
 
 class AgECrdnVolumeCalcVolumeSatisfactionDurationType(IntEnum):
     """Defines volume calc spatial condition duration types."""
@@ -654,7 +754,6 @@ class AgECrdnVolumeCalcVolumeSatisfactionDurationType(IntEnum):
     eCrdnVolumeCalcVolumeSatisfactionDurationMax = 1
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionDurationType"] = AgECrdnVolumeCalcVolumeSatisfactionDurationType
-__all__.append("AgECrdnVolumeCalcVolumeSatisfactionDurationType")
 
 class AgECrdnVolumeCalcVolumeSatisfactionFilterType(IntEnum):
     """Defines volume calc spatial condition filter types."""
@@ -670,7 +769,6 @@ class AgECrdnVolumeCalcVolumeSatisfactionFilterType(IntEnum):
     eCrdnVolumeCalcVolumeSatisfactionFilterIntervalDuration = 2
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionFilterType"] = AgECrdnVolumeCalcVolumeSatisfactionFilterType
-__all__.append("AgECrdnVolumeCalcVolumeSatisfactionFilterType")
 
 class AgECrdnVolumeCalcVolumeSatisfactionMetricType(IntEnum):
     """Defines volume calc spatial condition satisfaction metric types."""
@@ -688,7 +786,6 @@ class AgECrdnVolumeCalcVolumeSatisfactionMetricType(IntEnum):
     eCrdnVolumeCalcVolumeSatisfactionMetricGapDuration = 20
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionMetricType"] = AgECrdnVolumeCalcVolumeSatisfactionMetricType
-__all__.append("AgECrdnVolumeCalcVolumeSatisfactionMetricType")
 
 class AgECrdnVolumeGridType(IntEnum):
     """Defines volume grid types."""
@@ -708,7 +805,6 @@ class AgECrdnVolumeGridType(IntEnum):
     eCrdnVolumeGridTypeBearingAlt = 5
 
 agcls.AgTypeNameMap["AgECrdnVolumeGridType"] = AgECrdnVolumeGridType
-__all__.append("AgECrdnVolumeGridType")
 
 class AgECrdnVolumeResultVectorRequest(IntEnum):
     """Defines volume result vector request types."""
@@ -724,7 +820,6 @@ class AgECrdnVolumeResultVectorRequest(IntEnum):
     eCrdnVolumeResultVectorRequestGradient = 256
 
 agcls.AgTypeNameMap["AgECrdnVolumeResultVectorRequest"] = AgECrdnVolumeResultVectorRequest
-__all__.append("AgECrdnVolumeResultVectorRequest")
 
 class AgECrdnVolumeType(IntEnum):
     """Defines volume grid types."""
@@ -748,7 +843,6 @@ class AgECrdnVolumeType(IntEnum):
     eCrdnVolumeTypeInview = 7
 
 agcls.AgTypeNameMap["AgECrdnVolumeType"] = AgECrdnVolumeType
-__all__.append("AgECrdnVolumeType")
 
 class AgECrdnVolumeAberrationType(IntEnum):
     """Defines the model of aberration to use."""
@@ -762,7 +856,6 @@ class AgECrdnVolumeAberrationType(IntEnum):
     eCrdnVolumeAberrationNone = 2
 
 agcls.AgTypeNameMap["AgECrdnVolumeAberrationType"] = AgECrdnVolumeAberrationType
-__all__.append("AgECrdnVolumeAberrationType")
 
 class AgECrdnVolumeClockHostType(IntEnum):
     """Defines whether base or target of an Access instance holds the clock for Access times."""
@@ -774,7 +867,6 @@ class AgECrdnVolumeClockHostType(IntEnum):
     eCrdnVolumeClockHostTarget = 1
 
 agcls.AgTypeNameMap["AgECrdnVolumeClockHostType"] = AgECrdnVolumeClockHostType
-__all__.append("AgECrdnVolumeClockHostType")
 
 class AgECrdnVolumeCombinedOperationType(IntEnum):
     """Defines spatial condition combined operation types."""
@@ -788,7 +880,6 @@ class AgECrdnVolumeCombinedOperationType(IntEnum):
     eCrdnVolumeCombinedOperationTypeMINUS = 4
 
 agcls.AgTypeNameMap["AgECrdnVolumeCombinedOperationType"] = AgECrdnVolumeCombinedOperationType
-__all__.append("AgECrdnVolumeCombinedOperationType")
 
 class AgECrdnVolumeFromGridEdgeType(IntEnum):
     """Defines spatial condition from grid edge type."""
@@ -798,7 +889,6 @@ class AgECrdnVolumeFromGridEdgeType(IntEnum):
     eCrdnVolumeFromGridEdgeTypeMaskVoxels = 32
 
 agcls.AgTypeNameMap["AgECrdnVolumeFromGridEdgeType"] = AgECrdnVolumeFromGridEdgeType
-__all__.append("AgECrdnVolumeFromGridEdgeType")
 
 class AgECrdnVolumeLightingConditionsType(IntFlag):
     """Defines spatial condition lighting conditions types."""
@@ -812,7 +902,6 @@ class AgECrdnVolumeLightingConditionsType(IntFlag):
     eCrdnVolumeLightingConditionTypeUmbra = 4
 
 agcls.AgTypeNameMap["AgECrdnVolumeLightingConditionsType"] = AgECrdnVolumeLightingConditionsType
-__all__.append("AgECrdnVolumeLightingConditionsType")
 
 class AgECrdnVolumeOverTimeDurationType(IntEnum):
     """Defines spatial condition over time duration type."""
@@ -826,7 +915,6 @@ class AgECrdnVolumeOverTimeDurationType(IntEnum):
     eCrdnVolumeOverTimeDurationTypeSlidingWindow = 3
 
 agcls.AgTypeNameMap["AgECrdnVolumeOverTimeDurationType"] = AgECrdnVolumeOverTimeDurationType
-__all__.append("AgECrdnVolumeOverTimeDurationType")
 
 class AgECrdnVolumeTimeSenseType(IntEnum):
     """Defines whether object1 or object2 of an Access instance holds the clock for Access times."""
@@ -838,7 +926,6 @@ class AgECrdnVolumeTimeSenseType(IntEnum):
     eCrdnVolumeTimeSenseReceive = 1
 
 agcls.AgTypeNameMap["AgECrdnVolumeTimeSenseType"] = AgECrdnVolumeTimeSenseType
-__all__.append("AgECrdnVolumeTimeSenseType")
 
 class AgECrdnVolumetricGridValuesMethodType(IntEnum):
     """Defines volumetric grid values method types."""
@@ -852,7 +939,6 @@ class AgECrdnVolumetricGridValuesMethodType(IntEnum):
     eCrdnVolumetricGridValuesMethodMethodCustomValues = 2
 
 agcls.AgTypeNameMap["AgECrdnVolumetricGridValuesMethodType"] = AgECrdnVolumetricGridValuesMethodType
-__all__.append("AgECrdnVolumetricGridValuesMethodType")
 
 class AgECrdnKind(IntEnum):
     """Represents kinds of vectory geometry components."""
@@ -898,7 +984,6 @@ class AgECrdnKind(IntEnum):
     eCrdnKindVolumeCalc = 18
 
 agcls.AgTypeNameMap["AgECrdnKind"] = AgECrdnKind
-__all__.append("AgECrdnKind")
 
 class AgECrdnAngleType(IntEnum):
     """Represents angle types."""
@@ -918,7 +1003,6 @@ class AgECrdnAngleType(IntEnum):
     eCrdnAngleTypeTemplate = 5
 
 agcls.AgTypeNameMap["AgECrdnAngleType"] = AgECrdnAngleType
-__all__.append("AgECrdnAngleType")
 
 class AgECrdnAxesType(IntEnum):
     """Represents vector types."""
@@ -956,7 +1040,6 @@ class AgECrdnAxesType(IntEnum):
     eCrdnAxesTypeFile = 5
 
 agcls.AgTypeNameMap["AgECrdnAxesType"] = AgECrdnAxesType
-__all__.append("AgECrdnAxesType")
 
 class AgECrdnPlaneType(IntEnum):
     """Represents plane types."""
@@ -976,7 +1059,6 @@ class AgECrdnPlaneType(IntEnum):
     eCrdnPlaneTypeTwoVector = 5
 
 agcls.AgTypeNameMap["AgECrdnPlaneType"] = AgECrdnPlaneType
-__all__.append("AgECrdnPlaneType")
 
 class AgECrdnPointType(IntEnum):
     """Represents point types."""
@@ -1018,7 +1100,6 @@ class AgECrdnPointType(IntEnum):
     eCrdnPointTypeSatelliteCollectionEntry = 16
 
 agcls.AgTypeNameMap["AgECrdnPointType"] = AgECrdnPointType
-__all__.append("AgECrdnPointType")
 
 class AgECrdnSystemType(IntEnum):
     """Represents system types."""
@@ -1032,7 +1113,6 @@ class AgECrdnSystemType(IntEnum):
     eCrdnSystemTypeTemplate = 2
 
 agcls.AgTypeNameMap["AgECrdnSystemType"] = AgECrdnSystemType
-__all__.append("AgECrdnSystemType")
 
 class AgECrdnVectorType(IntEnum):
     """Represents vector types."""
@@ -1102,7 +1182,6 @@ class AgECrdnVectorType(IntEnum):
     eCrdnVectorTypeDisplacementOnSurface = 31
 
 agcls.AgTypeNameMap["AgECrdnVectorType"] = AgECrdnVectorType
-__all__.append("AgECrdnVectorType")
 
 class AgECrdnMeanElementTheory(IntEnum):
     """Mean element theory types for approximating motion."""
@@ -1116,7 +1195,6 @@ class AgECrdnMeanElementTheory(IntEnum):
     eCrdnMeanElementTheoryBrouwerLyddane_Short = 4
 
 agcls.AgTypeNameMap["AgECrdnMeanElementTheory"] = AgECrdnMeanElementTheory
-__all__.append("AgECrdnMeanElementTheory")
 
 class AgECrdnDirectionType(IntEnum):
     """Direction options."""
@@ -1126,7 +1204,6 @@ class AgECrdnDirectionType(IntEnum):
     eCrdnDirectionOutgoingAsymptote = 2
 
 agcls.AgTypeNameMap["AgECrdnDirectionType"] = AgECrdnDirectionType
-__all__.append("AgECrdnDirectionType")
 
 class AgECrdnLagrangeLibrationPointType(IntEnum):
     """Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other."""
@@ -1142,7 +1219,6 @@ class AgECrdnLagrangeLibrationPointType(IntEnum):
     eCrdnLagrangeLibrationPointTypeL5 = 5
 
 agcls.AgTypeNameMap["AgECrdnLagrangeLibrationPointType"] = AgECrdnLagrangeLibrationPointType
-__all__.append("AgECrdnLagrangeLibrationPointType")
 
 class AgECrdnQuadrantType(IntEnum):
     """Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY),"""
@@ -1160,7 +1236,6 @@ class AgECrdnQuadrantType(IntEnum):
     eCrdnQuadrantZY = 6
 
 agcls.AgTypeNameMap["AgECrdnQuadrantType"] = AgECrdnQuadrantType
-__all__.append("AgECrdnQuadrantType")
 
 class AgECrdnTrajectoryAxesType(IntEnum):
     """Trajectory axes coordinate types."""
@@ -1182,7 +1257,6 @@ class AgECrdnTrajectoryAxesType(IntEnum):
     eCrdnTrajectoryAxesNTC = 7
 
 agcls.AgTypeNameMap["AgECrdnTrajectoryAxesType"] = AgECrdnTrajectoryAxesType
-__all__.append("AgECrdnTrajectoryAxesType")
 
 class AgECrdnDisplayAxisSelector(IntEnum):
     """Rotation directions."""
@@ -1194,7 +1268,6 @@ class AgECrdnDisplayAxisSelector(IntEnum):
     eCrdnDisplayAxisZ = 2
 
 agcls.AgTypeNameMap["AgECrdnDisplayAxisSelector"] = AgECrdnDisplayAxisSelector
-__all__.append("AgECrdnDisplayAxisSelector")
 
 class AgECrdnSignedAngleType(IntEnum):
     """Defines options for computing an angle."""
@@ -1206,7 +1279,6 @@ class AgECrdnSignedAngleType(IntEnum):
     eCrdnSignedAngleNegative = 2
 
 agcls.AgTypeNameMap["AgECrdnSignedAngleType"] = AgECrdnSignedAngleType
-__all__.append("AgECrdnSignedAngleType")
 
 class AgECrdnPointBPlaneType(IntEnum):
     """B-Plane point types."""
@@ -1216,7 +1288,6 @@ class AgECrdnPointBPlaneType(IntEnum):
     eCrdnPointBPlaneATwoBody = 2
 
 agcls.AgTypeNameMap["AgECrdnPointBPlaneType"] = AgECrdnPointBPlaneType
-__all__.append("AgECrdnPointBPlaneType")
 
 class AgECrdnReferenceShapeType(IntEnum):
     """Surface shape types."""
@@ -1228,7 +1299,6 @@ class AgECrdnReferenceShapeType(IntEnum):
     eCrdnReferenceShapeMSL = 3
 
 agcls.AgTypeNameMap["AgECrdnReferenceShapeType"] = AgECrdnReferenceShapeType
-__all__.append("AgECrdnReferenceShapeType")
 
 class AgECrdnSurfaceType(IntEnum):
     """Surface types."""
@@ -1238,7 +1308,6 @@ class AgECrdnSurfaceType(IntEnum):
     eCrdnSurfaceCentric = 2
 
 agcls.AgTypeNameMap["AgECrdnSurfaceType"] = AgECrdnSurfaceType
-__all__.append("AgECrdnSurfaceType")
 
 class AgECrdnSweepMode(IntEnum):
     """The rotation sweeping modes."""
@@ -1248,7 +1317,6 @@ class AgECrdnSweepMode(IntEnum):
     eCrdnSweepModeUnidirectional = 2
 
 agcls.AgTypeNameMap["AgECrdnSweepMode"] = AgECrdnSweepMode
-__all__.append("AgECrdnSweepMode")
 
 class AgECrdnSignalSense(IntEnum):
     """Signal sense transmission options."""
@@ -1258,7 +1326,6 @@ class AgECrdnSignalSense(IntEnum):
     eCrdnSignalSenseTransmit = 2
 
 agcls.AgTypeNameMap["AgECrdnSignalSense"] = AgECrdnSignalSense
-__all__.append("AgECrdnSignalSense")
 
 class AgECrdnIntersectionSurface(IntEnum):
     """Intersection surface flags."""
@@ -1270,7 +1337,6 @@ class AgECrdnIntersectionSurface(IntEnum):
     eCrdnIntersectionSurfaceAtTerrain = 2
 
 agcls.AgTypeNameMap["AgECrdnIntersectionSurface"] = AgECrdnIntersectionSurface
-__all__.append("AgECrdnIntersectionSurface")
 
 class AgECrdnVectorScaledDimensionInheritance(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
@@ -1282,7 +1348,6 @@ class AgECrdnVectorScaledDimensionInheritance(IntEnum):
     eCrdnVectorScaledDimensionInheritanceFromVector = 2
 
 agcls.AgTypeNameMap["AgECrdnVectorScaledDimensionInheritance"] = AgECrdnVectorScaledDimensionInheritance
-__all__.append("AgECrdnVectorScaledDimensionInheritance")
 
 
 class IAgCrdnIntervalCollection(object):
@@ -1361,7 +1426,6 @@ class IAgCrdnIntervalCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DAE5D702-43F1-4544-8039-97E746D019AB}", IAgCrdnIntervalCollection)
 agcls.AgTypeNameMap["IAgCrdnIntervalCollection"] = IAgCrdnIntervalCollection
-__all__.append("IAgCrdnIntervalCollection")
 
 class IAgCrdnInterval(object):
     """The interface represents an interval."""
@@ -1415,7 +1479,6 @@ class IAgCrdnInterval(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4A5031BC-45C0-4E75-9190-31F1802C173D}", IAgCrdnInterval)
 agcls.AgTypeNameMap["IAgCrdnInterval"] = IAgCrdnInterval
-__all__.append("IAgCrdnInterval")
 
 class IAgCrdnPoint(object):
     """The interface defines methods and properties common to all points."""
@@ -1480,7 +1543,6 @@ class IAgCrdnPoint(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{086D1AA7-D85D-402D-9347-0B51EB552537}", IAgCrdnPoint)
 agcls.AgTypeNameMap["IAgCrdnPoint"] = IAgCrdnPoint
-__all__.append("IAgCrdnPoint")
 
 class IAgCrdnVector(object):
     """The interface defines methods and properties common to all vectors."""
@@ -1545,7 +1607,6 @@ class IAgCrdnVector(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{79DDC17E-EDA2-454F-96A4-B4CC8AADB470}", IAgCrdnVector)
 agcls.AgTypeNameMap["IAgCrdnVector"] = IAgCrdnVector
-__all__.append("IAgCrdnVector")
 
 class IAgCrdnSystem(object):
     """The interface contains methods and properties shared by all VGT systems."""
@@ -1623,7 +1684,6 @@ class IAgCrdnSystem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{14687421-5E90-4275-9DE5-21295EC14F65}", IAgCrdnSystem)
 agcls.AgTypeNameMap["IAgCrdnSystem"] = IAgCrdnSystem
-__all__.append("IAgCrdnSystem")
 
 class IAgCrdnAxes(object):
     """The interface defines methods and properties common to all axes."""
@@ -1747,7 +1807,6 @@ class IAgCrdnAxes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EE2FCF98-9315-406A-835C-40C56428C888}", IAgCrdnAxes)
 agcls.AgTypeNameMap["IAgCrdnAxes"] = IAgCrdnAxes
-__all__.append("IAgCrdnAxes")
 
 class IAgCrdnAngle(object):
     """The interface defines methods and properties common to all angles."""
@@ -1830,7 +1889,6 @@ class IAgCrdnAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C826DABC-B4B0-4D63-8DE4-E6EBB60A1D2D}", IAgCrdnAngle)
 agcls.AgTypeNameMap["IAgCrdnAngle"] = IAgCrdnAngle
-__all__.append("IAgCrdnAngle")
 
 class IAgCrdnPlane(object):
     """The interface defines methods and properties common to all VGT planes."""
@@ -1924,7 +1982,6 @@ class IAgCrdnPlane(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6AA11A5E-EBAC-4087-9362-1E4F2738B1CE}", IAgCrdnPlane)
 agcls.AgTypeNameMap["IAgCrdnPlane"] = IAgCrdnPlane
-__all__.append("IAgCrdnPlane")
 
 class IAgCrdnContext(object):
     """The interface represents a context associated with a VGT component. All VGT components are associated with a valid context. A context can represent a VGT instance or a VGT template."""
@@ -1969,7 +2026,6 @@ class IAgCrdnContext(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1003D700-A64E-438C-954A-AD3AA9EA9773}", IAgCrdnContext)
 agcls.AgTypeNameMap["IAgCrdnContext"] = IAgCrdnContext
-__all__.append("IAgCrdnContext")
 
 class IAgCrdn(object):
     """A base interface implemented by all VGT components. The methods and properties of the interface provide type information about the VGT component."""
@@ -2171,7 +2227,6 @@ class IAgCrdn(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5FBDAC10-66FA-4EA2-9F9E-B5D6C0BA3281}", IAgCrdn)
 agcls.AgTypeNameMap["IAgCrdn"] = IAgCrdn
-__all__.append("IAgCrdn")
 
 class IAgCrdnEvaluateResult(object):
     """Represents the results of evaluating a scalar component using IAgCrdnCalcScalar.Evaluate method."""
@@ -2225,7 +2280,6 @@ class IAgCrdnEvaluateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6021FC44-7BB4-4DE9-A8C4-1630AB2A7F52}", IAgCrdnEvaluateResult)
 agcls.AgTypeNameMap["IAgCrdnEvaluateResult"] = IAgCrdnEvaluateResult
-__all__.append("IAgCrdnEvaluateResult")
 
 class IAgCrdnEvaluateWithRateResult(object):
     """Represents the results of evaluating a scalar component using IAgCrdnCalcScalar.Evaluate method."""
@@ -2288,7 +2342,6 @@ class IAgCrdnEvaluateWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E9B2DA30-1317-43E2-8D47-9D675A28F748}", IAgCrdnEvaluateWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnEvaluateWithRateResult"] = IAgCrdnEvaluateWithRateResult
-__all__.append("IAgCrdnEvaluateWithRateResult")
 
 class IAgCrdnEventIntervalResult(object):
     """Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method."""
@@ -2342,7 +2395,6 @@ class IAgCrdnEventIntervalResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EB80DC8E-368B-41DE-B2B6-E37041B45AAF}", IAgCrdnEventIntervalResult)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalResult"] = IAgCrdnEventIntervalResult
-__all__.append("IAgCrdnEventIntervalResult")
 
 class IAgCrdnEventFindOccurrenceResult(object):
     """Contains the results returned with IAgCrdnEvent.FindOccurrence method."""
@@ -2396,7 +2448,6 @@ class IAgCrdnEventFindOccurrenceResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{20F964F0-8466-415E-9344-D6FBA53AF8B0}", IAgCrdnEventFindOccurrenceResult)
 agcls.AgTypeNameMap["IAgCrdnEventFindOccurrenceResult"] = IAgCrdnEventFindOccurrenceResult
-__all__.append("IAgCrdnEventFindOccurrenceResult")
 
 class IAgCrdnFindTimesResult(object):
     """Returns a collection of intervals and an array of times."""
@@ -2477,7 +2528,6 @@ class IAgCrdnFindTimesResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F7B644F0-0728-434D-8C86-C6267B625860}", IAgCrdnFindTimesResult)
 agcls.AgTypeNameMap["IAgCrdnFindTimesResult"] = IAgCrdnFindTimesResult
-__all__.append("IAgCrdnFindTimesResult")
 
 class IAgCrdnIntervalsVectorResult(object):
     """Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method."""
@@ -2531,7 +2581,6 @@ class IAgCrdnIntervalsVectorResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{87F76F41-61FB-4DFF-A76E-25270023BE34}", IAgCrdnIntervalsVectorResult)
 agcls.AgTypeNameMap["IAgCrdnIntervalsVectorResult"] = IAgCrdnIntervalsVectorResult
-__all__.append("IAgCrdnIntervalsVectorResult")
 
 class IAgCrdnEventIntervalCollectionOccurredResult(object):
     """Contains the results returned with IAgCrdnEventIntervalCollection.Occurred method."""
@@ -2585,7 +2634,6 @@ class IAgCrdnEventIntervalCollectionOccurredResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A829181E-A9CD-452D-AC81-19C2DA96C490}", IAgCrdnEventIntervalCollectionOccurredResult)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalCollectionOccurredResult"] = IAgCrdnEventIntervalCollectionOccurredResult
-__all__.append("IAgCrdnEventIntervalCollectionOccurredResult")
 
 class IAgCrdnIntervalListResult(object):
     """Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method."""
@@ -2639,7 +2687,6 @@ class IAgCrdnIntervalListResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D0FDA46F-8B86-4052-8EC7-1448284EABCF}", IAgCrdnIntervalListResult)
 agcls.AgTypeNameMap["IAgCrdnIntervalListResult"] = IAgCrdnIntervalListResult
-__all__.append("IAgCrdnIntervalListResult")
 
 class IAgCrdnIntervalVectorCollection(object):
     """A collection of interval collections."""
@@ -2717,12 +2764,11 @@ class IAgCrdnIntervalVectorCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A327DA61-FFA8-4D5E-AEC6-88231B093FF8}", IAgCrdnIntervalVectorCollection)
 agcls.AgTypeNameMap["IAgCrdnIntervalVectorCollection"] = IAgCrdnIntervalVectorCollection
-__all__.append("IAgCrdnIntervalVectorCollection")
 
 class IAgCrdnEventGroup(object):
     """Access or create VGT events associated with an object."""
     _uuid = "{3D5A156F-70B5-4FB4-A441-5B7E0BA6AEBD}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -2733,6 +2779,8 @@ class IAgCrdnEventGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnEventGroup._uuid))
             if pUnk is not None:
@@ -2752,6 +2800,8 @@ class IAgCrdnEventGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2823,18 +2873,31 @@ class IAgCrdnEventGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnEvent":
+        """Retrieves an event from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnEvent":
+        """Retrieves an event from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{3D5A156F-70B5-4FB4-A441-5B7E0BA6AEBD}", IAgCrdnEventGroup)
 agcls.AgTypeNameMap["IAgCrdnEventGroup"] = IAgCrdnEventGroup
-__all__.append("IAgCrdnEventGroup")
 
 class IAgCrdnEventIntervalGroup(object):
     """Access or create VGT event intervals associated with an object."""
     _uuid = "{61E294E9-54F9-475F-ADBB-5D3A0D4CCBA5}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -2845,6 +2908,8 @@ class IAgCrdnEventIntervalGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnEventIntervalGroup._uuid))
             if pUnk is not None:
@@ -2864,6 +2929,8 @@ class IAgCrdnEventIntervalGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2935,18 +3002,31 @@ class IAgCrdnEventIntervalGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnEventInterval":
+        """Retrieves an event interval from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnEventInterval":
+        """Retrieves an event interval from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{61E294E9-54F9-475F-ADBB-5D3A0D4CCBA5}", IAgCrdnEventIntervalGroup)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalGroup"] = IAgCrdnEventIntervalGroup
-__all__.append("IAgCrdnEventIntervalGroup")
 
 class IAgCrdnEventIntervalListGroup(object):
     """Access or create VGT event interval lists associated with an object."""
     _uuid = "{E5721039-AE57-448A-9891-048ECB8BDC63}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -2957,6 +3037,8 @@ class IAgCrdnEventIntervalListGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnEventIntervalListGroup._uuid))
             if pUnk is not None:
@@ -2976,6 +3058,8 @@ class IAgCrdnEventIntervalListGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3047,18 +3131,31 @@ class IAgCrdnEventIntervalListGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnEventIntervalList":
+        """Retrieves an event interval list from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnEventIntervalList":
+        """Retrieves an event interval list from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{E5721039-AE57-448A-9891-048ECB8BDC63}", IAgCrdnEventIntervalListGroup)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListGroup"] = IAgCrdnEventIntervalListGroup
-__all__.append("IAgCrdnEventIntervalListGroup")
 
 class IAgCrdnEventArrayGroup(object):
     """Access or create VGT event arrays associated with an object."""
     _uuid = "{37A14DB3-3A49-4A6B-B238-922B59737548}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3069,6 +3166,8 @@ class IAgCrdnEventArrayGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnEventArrayGroup._uuid))
             if pUnk is not None:
@@ -3088,6 +3187,8 @@ class IAgCrdnEventArrayGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventArrayGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventArrayGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventArrayGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventArrayGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventArrayGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3159,18 +3260,31 @@ class IAgCrdnEventArrayGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnEventArray":
+        """Retrieves an event array from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnEventArray":
+        """Retrieves an event array from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{37A14DB3-3A49-4A6B-B238-922B59737548}", IAgCrdnEventArrayGroup)
 agcls.AgTypeNameMap["IAgCrdnEventArrayGroup"] = IAgCrdnEventArrayGroup
-__all__.append("IAgCrdnEventArrayGroup")
 
 class IAgCrdnCalcScalarGroup(object):
     """Access or create VGT calculation scalars associated with an object or a central body."""
     _uuid = "{9A0EDFAF-E242-40AA-AC36-EA50449AD7B1}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3181,6 +3295,8 @@ class IAgCrdnCalcScalarGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnCalcScalarGroup._uuid))
             if pUnk is not None:
@@ -3200,6 +3316,8 @@ class IAgCrdnCalcScalarGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCalcScalarGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3271,18 +3389,31 @@ class IAgCrdnCalcScalarGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnCalcScalar":
+        """Retrieves an element from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnCalcScalar":
+        """Retrieves an element from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{9A0EDFAF-E242-40AA-AC36-EA50449AD7B1}", IAgCrdnCalcScalarGroup)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarGroup"] = IAgCrdnCalcScalarGroup
-__all__.append("IAgCrdnCalcScalarGroup")
 
 class IAgCrdnEventIntervalCollectionGroup(object):
     """Access or create VGT event interval collections associated with an object."""
     _uuid = "{0166467D-9328-4E1B-A982-D9B1396A025E}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3293,6 +3424,8 @@ class IAgCrdnEventIntervalCollectionGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnEventIntervalCollectionGroup._uuid))
             if pUnk is not None:
@@ -3312,6 +3445,8 @@ class IAgCrdnEventIntervalCollectionGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalCollectionGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalCollectionGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalCollectionGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalCollectionGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalCollectionGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3383,18 +3518,31 @@ class IAgCrdnEventIntervalCollectionGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnEventIntervalCollection":
+        """Retrieves an event interval from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnEventIntervalCollection":
+        """Retrieves an event interval from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{0166467D-9328-4E1B-A982-D9B1396A025E}", IAgCrdnEventIntervalCollectionGroup)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalCollectionGroup"] = IAgCrdnEventIntervalCollectionGroup
-__all__.append("IAgCrdnEventIntervalCollectionGroup")
 
 class IAgCrdnParameterSetGroup(object):
     """Access or create VGT parameter sets associated with an object or a central body."""
     _uuid = "{DCEC1D09-0F8F-4E12-95BB-EC2CD4FDD348}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3405,6 +3553,8 @@ class IAgCrdnParameterSetGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnParameterSetGroup._uuid))
             if pUnk is not None:
@@ -3424,6 +3574,8 @@ class IAgCrdnParameterSetGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnParameterSetGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnParameterSetGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnParameterSetGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnParameterSetGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnParameterSetGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3495,18 +3647,31 @@ class IAgCrdnParameterSetGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnParameterSet":
+        """Retrieves an item from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnParameterSet":
+        """Retrieves an item from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{DCEC1D09-0F8F-4E12-95BB-EC2CD4FDD348}", IAgCrdnParameterSetGroup)
 agcls.AgTypeNameMap["IAgCrdnParameterSetGroup"] = IAgCrdnParameterSetGroup
-__all__.append("IAgCrdnParameterSetGroup")
 
 class IAgCrdnConditionGroup(object):
     """Access or create VGT conditions associated with an object or a central body."""
     _uuid = "{2FDD4ECB-A5E0-4F7B-A16F-2DBDE7C9B3C0}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3517,6 +3682,8 @@ class IAgCrdnConditionGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnConditionGroup._uuid))
             if pUnk is not None:
@@ -3536,6 +3703,8 @@ class IAgCrdnConditionGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3607,18 +3776,31 @@ class IAgCrdnConditionGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnCondition":
+        """Retrieves a condition from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnCondition":
+        """Retrieves a condition from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{2FDD4ECB-A5E0-4F7B-A16F-2DBDE7C9B3C0}", IAgCrdnConditionGroup)
 agcls.AgTypeNameMap["IAgCrdnConditionGroup"] = IAgCrdnConditionGroup
-__all__.append("IAgCrdnConditionGroup")
 
 class IAgCrdnConditionSetGroup(object):
     """Allows accessing and creating condition set components."""
     _uuid = "{8E12C9C7-3649-4DE1-A981-5E09DE2F27E6}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3629,6 +3811,8 @@ class IAgCrdnConditionSetGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnConditionSetGroup._uuid))
             if pUnk is not None:
@@ -3648,6 +3832,8 @@ class IAgCrdnConditionSetGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionSetGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionSetGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionSetGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionSetGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnConditionSetGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3719,13 +3905,26 @@ class IAgCrdnConditionSetGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnConditionSet":
+        """Retrieves a condition set from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnConditionSet":
+        """Retrieves a condition set from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{8E12C9C7-3649-4DE1-A981-5E09DE2F27E6}", IAgCrdnConditionSetGroup)
 agcls.AgTypeNameMap["IAgCrdnConditionSetGroup"] = IAgCrdnConditionSetGroup
-__all__.append("IAgCrdnConditionSetGroup")
 
 class IAgCrdnConditionSetEvaluateResult(object):
     """Represents the results returned by ConditionSet.Evaluate."""
@@ -3779,7 +3978,6 @@ class IAgCrdnConditionSetEvaluateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{33AE2CD0-41E6-4B51-A19C-697AC96A5B32}", IAgCrdnConditionSetEvaluateResult)
 agcls.AgTypeNameMap["IAgCrdnConditionSetEvaluateResult"] = IAgCrdnConditionSetEvaluateResult
-__all__.append("IAgCrdnConditionSetEvaluateResult")
 
 class IAgCrdnConditionSetEvaluateWithRateResult(object):
     """Represents the results returned by ConditionSet.EvaluateWithRate."""
@@ -3842,12 +4040,11 @@ class IAgCrdnConditionSetEvaluateWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{39814D49-3CF5-42B0-A46C-766781F45AB7}", IAgCrdnConditionSetEvaluateWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnConditionSetEvaluateWithRateResult"] = IAgCrdnConditionSetEvaluateWithRateResult
-__all__.append("IAgCrdnConditionSetEvaluateWithRateResult")
 
 class IAgCrdnVolumeGridGroup(object):
     """Access or create VGT volume grids associated with an object or a central body."""
     _uuid = "{50F1EDD0-CB76-4E72-8AC3-6E79364D74D0}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3858,6 +4055,8 @@ class IAgCrdnVolumeGridGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnVolumeGridGroup._uuid))
             if pUnk is not None:
@@ -3877,6 +4076,8 @@ class IAgCrdnVolumeGridGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGridGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGridGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGridGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGridGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGridGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3948,18 +4149,31 @@ class IAgCrdnVolumeGridGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnVolumeGrid":
+        """Retrieves a volume grid from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppval:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppval.COM_val)))
+            return arg_ppval.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnVolumeGrid":
+        """Retrieves a volume grid from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{50F1EDD0-CB76-4E72-8AC3-6E79364D74D0}", IAgCrdnVolumeGridGroup)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridGroup"] = IAgCrdnVolumeGridGroup
-__all__.append("IAgCrdnVolumeGridGroup")
 
 class IAgCrdnVolumeGroup(object):
     """Access or create spatial conditions associated with a volume grid."""
     _uuid = "{FF32CF5A-A31E-46D8-AAEB-7A621A294E0C}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3970,6 +4184,8 @@ class IAgCrdnVolumeGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnVolumeGroup._uuid))
             if pUnk is not None:
@@ -3989,6 +4205,8 @@ class IAgCrdnVolumeGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -4060,18 +4278,31 @@ class IAgCrdnVolumeGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnVolume":
+        """Retrieves volume from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnVolume":
+        """Retrieves volume from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{FF32CF5A-A31E-46D8-AAEB-7A621A294E0C}", IAgCrdnVolumeGroup)
 agcls.AgTypeNameMap["IAgCrdnVolumeGroup"] = IAgCrdnVolumeGroup
-__all__.append("IAgCrdnVolumeGroup")
 
 class IAgCrdnVolumeCalcGroup(object):
     """Access or create VGT volume calcs associated with an object or a central body."""
     _uuid = "{02991465-35ec-486a-913d-bf204afc9fb6}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -4082,6 +4313,8 @@ class IAgCrdnVolumeCalcGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnVolumeCalcGroup._uuid))
             if pUnk is not None:
@@ -4101,6 +4334,8 @@ class IAgCrdnVolumeCalcGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeCalcGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeCalcGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeCalcGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeCalcGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVolumeCalcGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -4172,13 +4407,26 @@ class IAgCrdnVolumeCalcGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnVolumeCalc":
+        """Retrieves a volume calculation from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnVolumeCalc":
+        """Retrieves a volume calculation from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{02991465-35ec-486a-913d-bf204afc9fb6}", IAgCrdnVolumeCalcGroup)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcGroup"] = IAgCrdnVolumeCalcGroup
-__all__.append("IAgCrdnVolumeCalcGroup")
 
 class IAgCrdnCalcScalar(object):
     """Any scalar calculation that is not constant by construction."""
@@ -4312,7 +4560,6 @@ class IAgCrdnCalcScalar(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{55A75307-E283-4146-A456-732D08E47070}", IAgCrdnCalcScalar)
 agcls.AgTypeNameMap["IAgCrdnCalcScalar"] = IAgCrdnCalcScalar
-__all__.append("IAgCrdnCalcScalar")
 
 class IAgCrdnCalcScalarAngle(object):
     """Scalar equal to angular displacement obtained from any angle in VGT."""
@@ -4364,7 +4611,6 @@ class IAgCrdnCalcScalarAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{52FB9533-9332-44D2-92B2-8AA2D8633112}", IAgCrdnCalcScalarAngle)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarAngle"] = IAgCrdnCalcScalarAngle
-__all__.append("IAgCrdnCalcScalarAngle")
 
 class IAgCrdnCalcScalarConstant(object):
     """Constant scalar value of specified dimension."""
@@ -4432,7 +4678,6 @@ class IAgCrdnCalcScalarConstant(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{96A1ABA9-663C-4CCC-A066-0166E285C3C2}", IAgCrdnCalcScalarConstant)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarConstant"] = IAgCrdnCalcScalarConstant
-__all__.append("IAgCrdnCalcScalarConstant")
 
 class IAgCrdnCalcScalarCustom(object):
     """A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."""
@@ -4490,7 +4735,6 @@ class IAgCrdnCalcScalarCustom(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6267B685-4486-4B11-A2CA-056D6A9B558C}", IAgCrdnCalcScalarCustom)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarCustom"] = IAgCrdnCalcScalarCustom
-__all__.append("IAgCrdnCalcScalarCustom")
 
 class IAgCrdnCalcScalarDataElement(object):
     """Any time-dependent data element from STK data providers available for parent STK object."""
@@ -4650,7 +4894,6 @@ class IAgCrdnCalcScalarDataElement(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DC828DD6-378B-4EE2-BEFF-B7FA5BF610CE}", IAgCrdnCalcScalarDataElement)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarDataElement"] = IAgCrdnCalcScalarDataElement
-__all__.append("IAgCrdnCalcScalarDataElement")
 
 class IAgCrdnCalcScalarDerivative(object):
     """Derivative of an input scalar calculation."""
@@ -4734,7 +4977,6 @@ class IAgCrdnCalcScalarDerivative(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C50A8D6F-A8C1-4B7C-B2DB-26D538E68AE5}", IAgCrdnCalcScalarDerivative)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarDerivative"] = IAgCrdnCalcScalarDerivative
-__all__.append("IAgCrdnCalcScalarDerivative")
 
 class IAgCrdnCalcScalarDotProduct(object):
     """Dot product between two vectors."""
@@ -4850,7 +5092,6 @@ class IAgCrdnCalcScalarDotProduct(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ffb69fa2-d123-413e-bb34-db750b7775ea}", IAgCrdnCalcScalarDotProduct)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarDotProduct"] = IAgCrdnCalcScalarDotProduct
-__all__.append("IAgCrdnCalcScalarDotProduct")
 
 class IAgCrdnCalcScalarElapsedTime(object):
     """Time elapsed since the reference time instant. Negative if in the past."""
@@ -4902,7 +5143,6 @@ class IAgCrdnCalcScalarElapsedTime(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{81238610-6A1B-499A-8C43-12337F64BC42}", IAgCrdnCalcScalarElapsedTime)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarElapsedTime"] = IAgCrdnCalcScalarElapsedTime
-__all__.append("IAgCrdnCalcScalarElapsedTime")
 
 class IAgCrdnCalcScalarFactory(object):
     """The factory creates scalar calculation components."""
@@ -5145,7 +5385,6 @@ class IAgCrdnCalcScalarFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C8627C38-9FD6-4C51-A7EA-84C87BBCC662}", IAgCrdnCalcScalarFactory)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarFactory"] = IAgCrdnCalcScalarFactory
-__all__.append("IAgCrdnCalcScalarFactory")
 
 class IAgCrdnCalcScalarFile(object):
     """Tabulated scalar calculation data loaded from specified file - a file with .csc extension."""
@@ -5259,7 +5498,6 @@ class IAgCrdnCalcScalarFile(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{98BC97CE-DA0B-4783-BB98-A988CA16447A}", IAgCrdnCalcScalarFile)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarFile"] = IAgCrdnCalcScalarFile
-__all__.append("IAgCrdnCalcScalarFile")
 
 class IAgCrdnCalcScalarFixedAtTimeInstant(object):
     """Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined."""
@@ -5327,7 +5565,6 @@ class IAgCrdnCalcScalarFixedAtTimeInstant(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2ED6C69F-2AE0-4703-A99F-6931BC3B93C6}", IAgCrdnCalcScalarFixedAtTimeInstant)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarFixedAtTimeInstant"] = IAgCrdnCalcScalarFixedAtTimeInstant
-__all__.append("IAgCrdnCalcScalarFixedAtTimeInstant")
 
 class IAgCrdnCalcScalarFunction(object):
     """Defined by performing the specified function on the input scalar or time instant."""
@@ -5612,7 +5849,6 @@ class IAgCrdnCalcScalarFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7FA307A8-7A76-496A-B2D6-B341F4DE84F2}", IAgCrdnCalcScalarFunction)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarFunction"] = IAgCrdnCalcScalarFunction
-__all__.append("IAgCrdnCalcScalarFunction")
 
 class IAgCrdnCalcScalarFunction2Var(object):
     """Defined by performing a function(x,y) on two scalar arguments."""
@@ -5833,7 +6069,6 @@ class IAgCrdnCalcScalarFunction2Var(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E56D021E-AD96-4ABE-857E-708CDCC4FF14}", IAgCrdnCalcScalarFunction2Var)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarFunction2Var"] = IAgCrdnCalcScalarFunction2Var
-__all__.append("IAgCrdnCalcScalarFunction2Var")
 
 class IAgCrdnCalcScalarIntegral(object):
     """Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types."""
@@ -6069,7 +6304,6 @@ class IAgCrdnCalcScalarIntegral(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9D7AEB38-6E1E-462B-BC34-BC1EBB81CC1E}", IAgCrdnCalcScalarIntegral)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarIntegral"] = IAgCrdnCalcScalarIntegral
-__all__.append("IAgCrdnCalcScalarIntegral")
 
 class IAgCrdnCalcScalarPlugin(object):
     """Use a scalar calculation plugin."""
@@ -6155,7 +6389,6 @@ class IAgCrdnCalcScalarPlugin(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1459313C-59BD-42FF-9F0D-AF4604F13D4C}", IAgCrdnCalcScalarPlugin)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarPlugin"] = IAgCrdnCalcScalarPlugin
-__all__.append("IAgCrdnCalcScalarPlugin")
 
 class IAgCrdnCalcScalarSurfaceDistanceBetweenPoints(object):
     """Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."""
@@ -6255,7 +6488,6 @@ class IAgCrdnCalcScalarSurfaceDistanceBetweenPoints(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DC5C0166-111F-4E8A-9650-012CE6A57911}", IAgCrdnCalcScalarSurfaceDistanceBetweenPoints)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarSurfaceDistanceBetweenPoints"] = IAgCrdnCalcScalarSurfaceDistanceBetweenPoints
-__all__.append("IAgCrdnCalcScalarSurfaceDistanceBetweenPoints")
 
 class IAgCrdnCalcScalarVectorComponent(object):
     """The specified component of a vector when resolved in the specified axes."""
@@ -6339,7 +6571,6 @@ class IAgCrdnCalcScalarVectorComponent(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2adb8ac1-7836-45af-b7f1-77b13a9db586}", IAgCrdnCalcScalarVectorComponent)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarVectorComponent"] = IAgCrdnCalcScalarVectorComponent
-__all__.append("IAgCrdnCalcScalarVectorComponent")
 
 class IAgCrdnCalcScalarVectorMagnitude(object):
     """Scalar equal to the magnitude of a specified vector."""
@@ -6391,7 +6622,6 @@ class IAgCrdnCalcScalarVectorMagnitude(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{57FC76A1-A63F-4A25-A3A6-3953275A15E4}", IAgCrdnCalcScalarVectorMagnitude)
 agcls.AgTypeNameMap["IAgCrdnCalcScalarVectorMagnitude"] = IAgCrdnCalcScalarVectorMagnitude
-__all__.append("IAgCrdnCalcScalarVectorMagnitude")
 
 class IAgCrdnCondition(object):
     """Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings."""
@@ -6454,7 +6684,6 @@ class IAgCrdnCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8CA43B7E-6345-4F97-97B2-A4C4517739C8}", IAgCrdnCondition)
 agcls.AgTypeNameMap["IAgCrdnCondition"] = IAgCrdnCondition
-__all__.append("IAgCrdnCondition")
 
 class IAgCrdnConditionCombined(object):
     """Defines a condition which combines multiple conditions."""
@@ -6561,7 +6790,6 @@ class IAgCrdnConditionCombined(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EB19E942-0C28-4AB9-B2C0-D31693564C99}", IAgCrdnConditionCombined)
 agcls.AgTypeNameMap["IAgCrdnConditionCombined"] = IAgCrdnConditionCombined
-__all__.append("IAgCrdnConditionCombined")
 
 class IAgCrdnConditionFactory(object):
     """The factory creates condition components."""
@@ -6647,7 +6875,6 @@ class IAgCrdnConditionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F6A542D2-82B8-441D-8CA8-7823A01FF5BA}", IAgCrdnConditionFactory)
 agcls.AgTypeNameMap["IAgCrdnConditionFactory"] = IAgCrdnConditionFactory
-__all__.append("IAgCrdnConditionFactory")
 
 class IAgCrdnConditionPointInVolume(object):
     """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate"""
@@ -6715,7 +6942,6 @@ class IAgCrdnConditionPointInVolume(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3C354DF9-E914-4542-9E21-F70A637C4EA4}", IAgCrdnConditionPointInVolume)
 agcls.AgTypeNameMap["IAgCrdnConditionPointInVolume"] = IAgCrdnConditionPointInVolume
-__all__.append("IAgCrdnConditionPointInVolume")
 
 class IAgCrdnConditionScalarBounds(object):
     """Defined by determining if input scalar is within specified bounds; returns +1 if satisfied, -1 if not satisfied and 0 if on boundary."""
@@ -6859,7 +7085,6 @@ class IAgCrdnConditionScalarBounds(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FE3FB52B-9784-4707-8266-28F1E13B79D1}", IAgCrdnConditionScalarBounds)
 agcls.AgTypeNameMap["IAgCrdnConditionScalarBounds"] = IAgCrdnConditionScalarBounds
-__all__.append("IAgCrdnConditionScalarBounds")
 
 class IAgCrdnConditionSet(object):
     """Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for..."""
@@ -6922,7 +7147,6 @@ class IAgCrdnConditionSet(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C9F4C8FF-431E-409A-AF80-2DB4049E40CA}", IAgCrdnConditionSet)
 agcls.AgTypeNameMap["IAgCrdnConditionSet"] = IAgCrdnConditionSet
-__all__.append("IAgCrdnConditionSet")
 
 class IAgCrdnConditionSetFactory(object):
     """The factory creates condition set components."""
@@ -6988,7 +7212,6 @@ class IAgCrdnConditionSetFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{698D592C-B264-426D-8577-AC7087E3EE44}", IAgCrdnConditionSetFactory)
 agcls.AgTypeNameMap["IAgCrdnConditionSetFactory"] = IAgCrdnConditionSetFactory
-__all__.append("IAgCrdnConditionSetFactory")
 
 class IAgCrdnConditionSetScalarThresholds(object):
     """Condition set based on single scalar calculation compared to set of threshold values."""
@@ -7098,7 +7321,6 @@ class IAgCrdnConditionSetScalarThresholds(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{57392078-7821-4910-B734-76B5C70CB6D9}", IAgCrdnConditionSetScalarThresholds)
 agcls.AgTypeNameMap["IAgCrdnConditionSetScalarThresholds"] = IAgCrdnConditionSetScalarThresholds
-__all__.append("IAgCrdnConditionSetScalarThresholds")
 
 class IAgCrdnConverge(object):
     """Represents a base class for convergence definitions."""
@@ -7134,7 +7356,6 @@ class IAgCrdnConverge(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{28B17124-9BE6-4437-A7ED-0DDC24353430}", IAgCrdnConverge)
 agcls.AgTypeNameMap["IAgCrdnConverge"] = IAgCrdnConverge
-__all__.append("IAgCrdnConverge")
 
 class IAgCrdnConvergeBasic(object):
     """Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations."""
@@ -7234,7 +7455,6 @@ class IAgCrdnConvergeBasic(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{125C9FCD-9D41-4694-B299-5A9EAD8D1BC0}", IAgCrdnConvergeBasic)
 agcls.AgTypeNameMap["IAgCrdnConvergeBasic"] = IAgCrdnConvergeBasic
-__all__.append("IAgCrdnConvergeBasic")
 
 class IAgCrdnDerivative(object):
     """Represents a base class for derivative definitions."""
@@ -7270,7 +7490,6 @@ class IAgCrdnDerivative(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{737042BD-D873-4CF6-B5D5-6769849156FD}", IAgCrdnDerivative)
 agcls.AgTypeNameMap["IAgCrdnDerivative"] = IAgCrdnDerivative
-__all__.append("IAgCrdnDerivative")
 
 class IAgCrdnDerivativeBasic(object):
     """Derivative definition determines how numerical differencing is used to compute derivatives."""
@@ -7322,7 +7541,6 @@ class IAgCrdnDerivativeBasic(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CD450BBA-9F54-4F15-B067-C5A80C970FA9}", IAgCrdnDerivativeBasic)
 agcls.AgTypeNameMap["IAgCrdnDerivativeBasic"] = IAgCrdnDerivativeBasic
-__all__.append("IAgCrdnDerivativeBasic")
 
 class IAgCrdnEvent(object):
     """Defines an event (time instant)."""
@@ -7420,7 +7638,6 @@ class IAgCrdnEvent(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E9C2A250-1D43-461D-B3B4-FAA475AB8E20}", IAgCrdnEvent)
 agcls.AgTypeNameMap["IAgCrdnEvent"] = IAgCrdnEvent
-__all__.append("IAgCrdnEvent")
 
 class IAgCrdnEventArray(object):
     """An ordered array of times, which may or may not be evenly spaced."""
@@ -7473,7 +7690,6 @@ class IAgCrdnEventArray(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{902D7BD2-E6AF-4EC6-A689-2C1ED5C8EB8B}", IAgCrdnEventArray)
 agcls.AgTypeNameMap["IAgCrdnEventArray"] = IAgCrdnEventArray
-__all__.append("IAgCrdnEventArray")
 
 class IAgCrdnEventArrayConditionCrossings(object):
     """Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters."""
@@ -7621,7 +7837,6 @@ class IAgCrdnEventArrayConditionCrossings(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EB34F16B-8AAF-4DE8-B5FB-7468FD2881D5}", IAgCrdnEventArrayConditionCrossings)
 agcls.AgTypeNameMap["IAgCrdnEventArrayConditionCrossings"] = IAgCrdnEventArrayConditionCrossings
-__all__.append("IAgCrdnEventArrayConditionCrossings")
 
 class IAgCrdnEventArrayExtrema(object):
     """Determines times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
@@ -7785,7 +8000,6 @@ class IAgCrdnEventArrayExtrema(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{664C3048-BB87-4841-988A-0580F2976C0D}", IAgCrdnEventArrayExtrema)
 agcls.AgTypeNameMap["IAgCrdnEventArrayExtrema"] = IAgCrdnEventArrayExtrema
-__all__.append("IAgCrdnEventArrayExtrema")
 
 class IAgCrdnEventArrayFactory(object):
     """The factory creates event arrays."""
@@ -7921,7 +8135,6 @@ class IAgCrdnEventArrayFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CE43C07E-4626-4CEA-A625-C42052111CDE}", IAgCrdnEventArrayFactory)
 agcls.AgTypeNameMap["IAgCrdnEventArrayFactory"] = IAgCrdnEventArrayFactory
-__all__.append("IAgCrdnEventArrayFactory")
 
 class IAgCrdnEventArrayFiltered(object):
     """Defined by filtering times from original time array according to specified filtering method."""
@@ -8053,7 +8266,6 @@ class IAgCrdnEventArrayFiltered(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{059DDDC0-4E0C-42B8-A813-0D68124BD1C1}", IAgCrdnEventArrayFiltered)
 agcls.AgTypeNameMap["IAgCrdnEventArrayFiltered"] = IAgCrdnEventArrayFiltered
-__all__.append("IAgCrdnEventArrayFiltered")
 
 class IAgCrdnEventArrayFixedStep(object):
     """Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."""
@@ -8169,7 +8381,6 @@ class IAgCrdnEventArrayFixedStep(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{72E47D3D-D54C-4840-BA0C-D6DCB27D964F}", IAgCrdnEventArrayFixedStep)
 agcls.AgTypeNameMap["IAgCrdnEventArrayFixedStep"] = IAgCrdnEventArrayFixedStep
-__all__.append("IAgCrdnEventArrayFixedStep")
 
 class IAgCrdnEventArrayFixedTimes(object):
     """Array defined by time ordered instants each explicitly specified."""
@@ -8221,7 +8432,6 @@ class IAgCrdnEventArrayFixedTimes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7C4ADAD2-9E29-466B-96E8-F2322EDECCDE}", IAgCrdnEventArrayFixedTimes)
 agcls.AgTypeNameMap["IAgCrdnEventArrayFixedTimes"] = IAgCrdnEventArrayFixedTimes
-__all__.append("IAgCrdnEventArrayFixedTimes")
 
 class IAgCrdnEventArrayMerged(object):
     """Defined by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays. If some intervals overlap, then within overlap times from both arrays are merged together."""
@@ -8289,7 +8499,6 @@ class IAgCrdnEventArrayMerged(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{89FC5C8B-0A2A-4256-AA66-D6125A63D30A}", IAgCrdnEventArrayMerged)
 agcls.AgTypeNameMap["IAgCrdnEventArrayMerged"] = IAgCrdnEventArrayMerged
-__all__.append("IAgCrdnEventArrayMerged")
 
 class IAgCrdnEventArraySignaled(object):
     """Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
@@ -8405,7 +8614,6 @@ class IAgCrdnEventArraySignaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5E3991A8-CF15-4B73-982C-2EDF928B7BC8}", IAgCrdnEventArraySignaled)
 agcls.AgTypeNameMap["IAgCrdnEventArraySignaled"] = IAgCrdnEventArraySignaled
-__all__.append("IAgCrdnEventArraySignaled")
 
 class IAgCrdnEventArrayStartStopTimes(object):
     """Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list..."""
@@ -8473,7 +8681,6 @@ class IAgCrdnEventArrayStartStopTimes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1AB79442-7711-4342-B944-81C51D14FBE4}", IAgCrdnEventArrayStartStopTimes)
 agcls.AgTypeNameMap["IAgCrdnEventArrayStartStopTimes"] = IAgCrdnEventArrayStartStopTimes
-__all__.append("IAgCrdnEventArrayStartStopTimes")
 
 class IAgCrdnEventEpoch(object):
     """Event set at specified date/time."""
@@ -8525,7 +8732,6 @@ class IAgCrdnEventEpoch(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EB56DBC2-8BD6-4A66-A0EC-22BEB9853EA0}", IAgCrdnEventEpoch)
 agcls.AgTypeNameMap["IAgCrdnEventEpoch"] = IAgCrdnEventEpoch
-__all__.append("IAgCrdnEventEpoch")
 
 class IAgCrdnEventExtremum(object):
     """Determines time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
@@ -8673,7 +8879,6 @@ class IAgCrdnEventExtremum(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C588FDD4-2008-4C33-AA63-1C59565AE4F3}", IAgCrdnEventExtremum)
 agcls.AgTypeNameMap["IAgCrdnEventExtremum"] = IAgCrdnEventExtremum
-__all__.append("IAgCrdnEventExtremum")
 
 class IAgCrdnEventFactory(object):
     """The factory creates events."""
@@ -8815,7 +9020,6 @@ class IAgCrdnEventFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{803DD343-F271-47D9-8D71-2092DD2A3387}", IAgCrdnEventFactory)
 agcls.AgTypeNameMap["IAgCrdnEventFactory"] = IAgCrdnEventFactory
-__all__.append("IAgCrdnEventFactory")
 
 class IAgCrdnEventInterval(object):
     """A single time interval."""
@@ -8913,7 +9117,6 @@ class IAgCrdnEventInterval(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3CCAC5BD-7F97-4596-BD49-7E4A80A767A0}", IAgCrdnEventInterval)
 agcls.AgTypeNameMap["IAgCrdnEventInterval"] = IAgCrdnEventInterval
-__all__.append("IAgCrdnEventInterval")
 
 class IAgCrdnEventIntervalBetweenTimeInstants(object):
     """Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined."""
@@ -8981,7 +9184,6 @@ class IAgCrdnEventIntervalBetweenTimeInstants(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{18236EC1-B691-4FFD-995B-FB4896BAFD71}", IAgCrdnEventIntervalBetweenTimeInstants)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalBetweenTimeInstants"] = IAgCrdnEventIntervalBetweenTimeInstants
-__all__.append("IAgCrdnEventIntervalBetweenTimeInstants")
 
 class IAgCrdnEventIntervalCollection(object):
     """A collection of related interval lists."""
@@ -9052,7 +9254,6 @@ class IAgCrdnEventIntervalCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A23C49CC-2F4B-42A6-95B8-1FDD490F2E30}", IAgCrdnEventIntervalCollection)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalCollection"] = IAgCrdnEventIntervalCollection
-__all__.append("IAgCrdnEventIntervalCollection")
 
 class IAgCrdnEventIntervalCollectionCondition(object):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
@@ -9184,7 +9385,6 @@ class IAgCrdnEventIntervalCollectionCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0253FA16-73AA-4F0A-9904-0789EC873ECB}", IAgCrdnEventIntervalCollectionCondition)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalCollectionCondition"] = IAgCrdnEventIntervalCollectionCondition
-__all__.append("IAgCrdnEventIntervalCollectionCondition")
 
 class IAgCrdnEventIntervalCollectionFactory(object):
     """The factory creates collections of event interval lists."""
@@ -9270,7 +9470,6 @@ class IAgCrdnEventIntervalCollectionFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{15E2D2CF-61F9-4468-A5E1-770149F6B08C}", IAgCrdnEventIntervalCollectionFactory)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalCollectionFactory"] = IAgCrdnEventIntervalCollectionFactory
-__all__.append("IAgCrdnEventIntervalCollectionFactory")
 
 class IAgCrdnEventIntervalCollectionLighting(object):
     """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
@@ -9354,7 +9553,6 @@ class IAgCrdnEventIntervalCollectionLighting(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{18530BC5-1ED6-4A66-BBBE-8A8FB4644791}", IAgCrdnEventIntervalCollectionLighting)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalCollectionLighting"] = IAgCrdnEventIntervalCollectionLighting
-__all__.append("IAgCrdnEventIntervalCollectionLighting")
 
 class IAgCrdnEventIntervalCollectionSignaled(object):
     """Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
@@ -9470,7 +9668,6 @@ class IAgCrdnEventIntervalCollectionSignaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AE464683-EEEC-46CF-8886-91F7A30B7859}", IAgCrdnEventIntervalCollectionSignaled)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalCollectionSignaled"] = IAgCrdnEventIntervalCollectionSignaled
-__all__.append("IAgCrdnEventIntervalCollectionSignaled")
 
 class IAgCrdnEventIntervalFactory(object):
     """The factory creates event intervals."""
@@ -9596,7 +9793,6 @@ class IAgCrdnEventIntervalFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F87C00CA-725C-425C-941E-6987709D788F}", IAgCrdnEventIntervalFactory)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalFactory"] = IAgCrdnEventIntervalFactory
-__all__.append("IAgCrdnEventIntervalFactory")
 
 class IAgCrdnEventIntervalFixed(object):
     """Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start."""
@@ -9658,7 +9854,6 @@ class IAgCrdnEventIntervalFixed(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2DBC4523-FDD0-413B-B933-9F74B9B17BED}", IAgCrdnEventIntervalFixed)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalFixed"] = IAgCrdnEventIntervalFixed
-__all__.append("IAgCrdnEventIntervalFixed")
 
 class IAgCrdnEventIntervalFixedDuration(object):
     """Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."""
@@ -9742,7 +9937,6 @@ class IAgCrdnEventIntervalFixedDuration(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2A20830B-D576-4DF1-9C15-51EB59AEC23F}", IAgCrdnEventIntervalFixedDuration)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalFixedDuration"] = IAgCrdnEventIntervalFixedDuration
-__all__.append("IAgCrdnEventIntervalFixedDuration")
 
 class IAgCrdnEventIntervalFromIntervalList(object):
     """Interval created from specified interval list by using one of several selection methods."""
@@ -9826,7 +10020,6 @@ class IAgCrdnEventIntervalFromIntervalList(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DCF8AA30-67A3-4856-956D-C4952BF3818E}", IAgCrdnEventIntervalFromIntervalList)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalFromIntervalList"] = IAgCrdnEventIntervalFromIntervalList
-__all__.append("IAgCrdnEventIntervalFromIntervalList")
 
 class IAgCrdnEventIntervalList(object):
     """An ordered list of time intervals."""
@@ -9906,7 +10099,6 @@ class IAgCrdnEventIntervalList(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1FD46B70-FEBF-44E4-8336-B94D3FAC01EE}", IAgCrdnEventIntervalList)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalList"] = IAgCrdnEventIntervalList
-__all__.append("IAgCrdnEventIntervalList")
 
 class IAgCrdnEventIntervalListCondition(object):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
@@ -10038,7 +10230,6 @@ class IAgCrdnEventIntervalListCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D073568A-7398-45C2-998A-CD2EC12F06E0}", IAgCrdnEventIntervalListCondition)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListCondition"] = IAgCrdnEventIntervalListCondition
-__all__.append("IAgCrdnEventIntervalListCondition")
 
 class IAgCrdnEventIntervalListFactory(object):
     """The factory creates event interval lists."""
@@ -10175,7 +10366,6 @@ class IAgCrdnEventIntervalListFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EE3DB027-8A71-42DC-BA5C-A5F6D8B47BD7}", IAgCrdnEventIntervalListFactory)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListFactory"] = IAgCrdnEventIntervalListFactory
-__all__.append("IAgCrdnEventIntervalListFactory")
 
 class IAgCrdnEventIntervalListFile(object):
     """Interval list loaded from specified interval file - ASCII file with .int extension. See STK help."""
@@ -10241,7 +10431,6 @@ class IAgCrdnEventIntervalListFile(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A17588F4-C944-44F8-B8D8-275B13D27E3A}", IAgCrdnEventIntervalListFile)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListFile"] = IAgCrdnEventIntervalListFile
-__all__.append("IAgCrdnEventIntervalListFile")
 
 class IAgCrdnEventIntervalListFiltered(object):
     """Defined by filtering intervals from original interval list using specified filtering method."""
@@ -10318,7 +10507,6 @@ class IAgCrdnEventIntervalListFiltered(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D557D245-2747-4A6C-8A2D-D1A31A45EE5F}", IAgCrdnEventIntervalListFiltered)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListFiltered"] = IAgCrdnEventIntervalListFiltered
-__all__.append("IAgCrdnEventIntervalListFiltered")
 
 class IAgCrdnEventIntervalListFixed(object):
     """Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval."""
@@ -10369,7 +10557,6 @@ class IAgCrdnEventIntervalListFixed(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7C6059BB-3A9B-45E2-826A-8BCD6DFF343B}", IAgCrdnEventIntervalListFixed)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListFixed"] = IAgCrdnEventIntervalListFixed
-__all__.append("IAgCrdnEventIntervalListFixed")
 
 class IAgCrdnEventIntervalListMerged(object):
     """Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents."""
@@ -10467,7 +10654,6 @@ class IAgCrdnEventIntervalListMerged(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{78E1CE61-5B2E-4A10-894D-A006F35ACDE1}", IAgCrdnEventIntervalListMerged)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListMerged"] = IAgCrdnEventIntervalListMerged
-__all__.append("IAgCrdnEventIntervalListMerged")
 
 class IAgCrdnEventIntervalListScaled(object):
     """Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list..."""
@@ -10567,7 +10753,6 @@ class IAgCrdnEventIntervalListScaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7DDA88F8-A738-464E-9CDC-613E107F57D0}", IAgCrdnEventIntervalListScaled)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListScaled"] = IAgCrdnEventIntervalListScaled
-__all__.append("IAgCrdnEventIntervalListScaled")
 
 class IAgCrdnEventIntervalListSignaled(object):
     """Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
@@ -10683,7 +10868,6 @@ class IAgCrdnEventIntervalListSignaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C40EA24E-E258-4B0E-8A0F-89424F93F837}", IAgCrdnEventIntervalListSignaled)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListSignaled"] = IAgCrdnEventIntervalListSignaled
-__all__.append("IAgCrdnEventIntervalListSignaled")
 
 class IAgCrdnEventIntervalListTimeOffset(object):
     """Interval List defined by shifting the specified reference interval list by a fixed time offset."""
@@ -10751,7 +10935,6 @@ class IAgCrdnEventIntervalListTimeOffset(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EEA120D3-8E9F-419B-B11C-A034007EB2D0}", IAgCrdnEventIntervalListTimeOffset)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalListTimeOffset"] = IAgCrdnEventIntervalListTimeOffset
-__all__.append("IAgCrdnEventIntervalListTimeOffset")
 
 class IAgCrdnEventIntervalScaled(object):
     """Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined."""
@@ -10851,7 +11034,6 @@ class IAgCrdnEventIntervalScaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FA9613FB-7341-4785-AD95-51CFA2B605BC}", IAgCrdnEventIntervalScaled)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalScaled"] = IAgCrdnEventIntervalScaled
-__all__.append("IAgCrdnEventIntervalScaled")
 
 class IAgCrdnEventIntervalSignaled(object):
     """Determines what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
@@ -10967,7 +11149,6 @@ class IAgCrdnEventIntervalSignaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{51B9DE87-9220-40B2-AA57-01F7B17BD945}", IAgCrdnEventIntervalSignaled)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalSignaled"] = IAgCrdnEventIntervalSignaled
-__all__.append("IAgCrdnEventIntervalSignaled")
 
 class IAgCrdnEventIntervalSmartInterval(object):
     """A smart interval."""
@@ -11137,7 +11318,6 @@ class IAgCrdnEventIntervalSmartInterval(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B26EEDF4-757B-4031-AEDA-B04805DD1D3C}", IAgCrdnEventIntervalSmartInterval)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalSmartInterval"] = IAgCrdnEventIntervalSmartInterval
-__all__.append("IAgCrdnEventIntervalSmartInterval")
 
 class IAgCrdnEventIntervalTimeOffset(object):
     """Interval defined by shifting specified reference interval by fixed time offset."""
@@ -11205,7 +11385,6 @@ class IAgCrdnEventIntervalTimeOffset(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2AA1BEDD-DB08-4306-99D1-E77933DC7EFC}", IAgCrdnEventIntervalTimeOffset)
 agcls.AgTypeNameMap["IAgCrdnEventIntervalTimeOffset"] = IAgCrdnEventIntervalTimeOffset
-__all__.append("IAgCrdnEventIntervalTimeOffset")
 
 class IAgCrdnEventSignaled(object):
     """Event recorded on specified clock via signal transmission from original time instant recorded on different clock."""
@@ -11321,7 +11500,6 @@ class IAgCrdnEventSignaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1FC37CC0-BAF3-4663-9B9C-270D51C9413C}", IAgCrdnEventSignaled)
 agcls.AgTypeNameMap["IAgCrdnEventSignaled"] = IAgCrdnEventSignaled
-__all__.append("IAgCrdnEventSignaled")
 
 class IAgCrdnEventSmartEpoch(object):
     """A smart epoch."""
@@ -11405,7 +11583,6 @@ class IAgCrdnEventSmartEpoch(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4C5542F5-5B94-498B-90BC-CC7CB7C86629}", IAgCrdnEventSmartEpoch)
 agcls.AgTypeNameMap["IAgCrdnEventSmartEpoch"] = IAgCrdnEventSmartEpoch
-__all__.append("IAgCrdnEventSmartEpoch")
 
 class IAgCrdnEventStartStopTime(object):
     """Event is either start or stop time selected from a reference interval."""
@@ -11473,7 +11650,6 @@ class IAgCrdnEventStartStopTime(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EB96850C-18E7-4269-8D35-67FB7E55BD59}", IAgCrdnEventStartStopTime)
 agcls.AgTypeNameMap["IAgCrdnEventStartStopTime"] = IAgCrdnEventStartStopTime
-__all__.append("IAgCrdnEventStartStopTime")
 
 class IAgCrdnEventTimeOffset(object):
     """Event at fixed offset from specified reference event."""
@@ -11541,7 +11717,6 @@ class IAgCrdnEventTimeOffset(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EB95E24E-6BDF-434C-A278-BF64475E4EB5}", IAgCrdnEventTimeOffset)
 agcls.AgTypeNameMap["IAgCrdnEventTimeOffset"] = IAgCrdnEventTimeOffset
-__all__.append("IAgCrdnEventTimeOffset")
 
 class IAgCrdnFirstIntervalsFilter(object):
     """The filter selects a portion of first intervals."""
@@ -11593,7 +11768,6 @@ class IAgCrdnFirstIntervalsFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{032A1F18-16B1-48B3-BB59-AFE83A834880}", IAgCrdnFirstIntervalsFilter)
 agcls.AgTypeNameMap["IAgCrdnFirstIntervalsFilter"] = IAgCrdnFirstIntervalsFilter
-__all__.append("IAgCrdnFirstIntervalsFilter")
 
 class IAgCrdnGapsFilter(object):
     """The filter merges intervals unless they are separated by gaps of at least/most certain duration."""
@@ -11661,7 +11835,6 @@ class IAgCrdnGapsFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{97B393F6-5E70-4D67-80C1-F85080D818F3}", IAgCrdnGapsFilter)
 agcls.AgTypeNameMap["IAgCrdnGapsFilter"] = IAgCrdnGapsFilter
-__all__.append("IAgCrdnGapsFilter")
 
 class IAgCrdnIntegral(object):
     """Represents a base class for integral definitions."""
@@ -11697,7 +11870,6 @@ class IAgCrdnIntegral(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{61D34977-CC2E-43C1-9103-692FF9B3DEF0}", IAgCrdnIntegral)
 agcls.AgTypeNameMap["IAgCrdnIntegral"] = IAgCrdnIntegral
-__all__.append("IAgCrdnIntegral")
 
 class IAgCrdnIntegralBasic(object):
     """Integral definition determines how scalar calculation is numerically integrated."""
@@ -11781,7 +11953,6 @@ class IAgCrdnIntegralBasic(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{19DEEA25-F655-487B-86FF-429B55093F77}", IAgCrdnIntegralBasic)
 agcls.AgTypeNameMap["IAgCrdnIntegralBasic"] = IAgCrdnIntegralBasic
-__all__.append("IAgCrdnIntegralBasic")
 
 class IAgCrdnInterp(object):
     """Represents a base class for interpolation definitions."""
@@ -11817,7 +11988,6 @@ class IAgCrdnInterp(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C92AA400-6E5F-47D7-8DF4-41E65F4CABEE}", IAgCrdnInterp)
 agcls.AgTypeNameMap["IAgCrdnInterp"] = IAgCrdnInterp
-__all__.append("IAgCrdnInterp")
 
 class IAgCrdnInterpBasic(object):
     """Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details."""
@@ -11885,7 +12055,6 @@ class IAgCrdnInterpBasic(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9AD022AA-A66A-4DFC-8355-9783A9B71BE3}", IAgCrdnInterpBasic)
 agcls.AgTypeNameMap["IAgCrdnInterpBasic"] = IAgCrdnInterpBasic
-__all__.append("IAgCrdnInterpBasic")
 
 class IAgCrdnIntervalsFilter(object):
     """The filter selects intervals of at least/most certain duration."""
@@ -11953,7 +12122,6 @@ class IAgCrdnIntervalsFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4599D429-D3F6-4BA5-B959-AB62D9A67EE8}", IAgCrdnIntervalsFilter)
 agcls.AgTypeNameMap["IAgCrdnIntervalsFilter"] = IAgCrdnIntervalsFilter
-__all__.append("IAgCrdnIntervalsFilter")
 
 class IAgCrdnLastIntervalsFilter(object):
     """The filter selects a portion of last intervals."""
@@ -12005,7 +12173,6 @@ class IAgCrdnLastIntervalsFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{18DB1782-0DAC-4989-BB3F-D7B95E294B3A}", IAgCrdnLastIntervalsFilter)
 agcls.AgTypeNameMap["IAgCrdnLastIntervalsFilter"] = IAgCrdnLastIntervalsFilter
-__all__.append("IAgCrdnLastIntervalsFilter")
 
 class IAgCrdnParameterSet(object):
     """Parameter set contains various sets of scalar computations."""
@@ -12095,7 +12262,6 @@ class IAgCrdnParameterSet(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{285664E8-604B-4C0A-9ED0-5EE27CA1539D}", IAgCrdnParameterSet)
 agcls.AgTypeNameMap["IAgCrdnParameterSet"] = IAgCrdnParameterSet
-__all__.append("IAgCrdnParameterSet")
 
 class IAgCrdnParameterSetAttitude(object):
     """Attitude parameter set contains various representations of attitude of one set of axes relative to another."""
@@ -12163,7 +12329,6 @@ class IAgCrdnParameterSetAttitude(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8B7DCF32-3CA4-4794-8468-81A3627B4043}", IAgCrdnParameterSetAttitude)
 agcls.AgTypeNameMap["IAgCrdnParameterSetAttitude"] = IAgCrdnParameterSetAttitude
-__all__.append("IAgCrdnParameterSetAttitude")
 
 class IAgCrdnParameterSetFactory(object):
     """The factory is used to create instances of available parameter set types."""
@@ -12269,7 +12434,6 @@ class IAgCrdnParameterSetFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4D20E85F-1DEA-4963-9114-6B0407E53C5E}", IAgCrdnParameterSetFactory)
 agcls.AgTypeNameMap["IAgCrdnParameterSetFactory"] = IAgCrdnParameterSetFactory
-__all__.append("IAgCrdnParameterSetFactory")
 
 class IAgCrdnParameterSetGroundTrajectory(object):
     """Ground trajectory parameter set contains various representations of trajectory of a point relative to central body reference shape."""
@@ -12337,7 +12501,6 @@ class IAgCrdnParameterSetGroundTrajectory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{53ABEB95-F846-4574-BA87-C76220FDC19F}", IAgCrdnParameterSetGroundTrajectory)
 agcls.AgTypeNameMap["IAgCrdnParameterSetGroundTrajectory"] = IAgCrdnParameterSetGroundTrajectory
-__all__.append("IAgCrdnParameterSetGroundTrajectory")
 
 class IAgCrdnParameterSetOrbit(object):
     """Orbit parameter set contains various trajectory representations of an orbiting point."""
@@ -12469,7 +12632,6 @@ class IAgCrdnParameterSetOrbit(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{141AEAB7-C017-4044-BE2C-EFE4AD724022}", IAgCrdnParameterSetOrbit)
 agcls.AgTypeNameMap["IAgCrdnParameterSetOrbit"] = IAgCrdnParameterSetOrbit
-__all__.append("IAgCrdnParameterSetOrbit")
 
 class IAgCrdnParameterSetTrajectory(object):
     """Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system."""
@@ -12537,7 +12699,6 @@ class IAgCrdnParameterSetTrajectory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0FE9C601-61BB-4579-B91F-B1123A19AFB4}", IAgCrdnParameterSetTrajectory)
 agcls.AgTypeNameMap["IAgCrdnParameterSetTrajectory"] = IAgCrdnParameterSetTrajectory
-__all__.append("IAgCrdnParameterSetTrajectory")
 
 class IAgCrdnParameterSetVector(object):
     """Vector parameter set contains various representations of a vector in a reference set of axes."""
@@ -12605,7 +12766,6 @@ class IAgCrdnParameterSetVector(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5B99EEC1-21BD-48B5-96A0-0230894532F1}", IAgCrdnParameterSetVector)
 agcls.AgTypeNameMap["IAgCrdnParameterSetVector"] = IAgCrdnParameterSetVector
-__all__.append("IAgCrdnParameterSetVector")
 
 class IAgCrdnPruneFilter(object):
     """A filter used with event interval list pruned class to prune interval lists..."""
@@ -12650,7 +12810,6 @@ class IAgCrdnPruneFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{89E95CD7-CDB2-4B17-9E47-DE17F551F873}", IAgCrdnPruneFilter)
 agcls.AgTypeNameMap["IAgCrdnPruneFilter"] = IAgCrdnPruneFilter
-__all__.append("IAgCrdnPruneFilter")
 
 class IAgCrdnPruneFilterFactory(object):
     """The factory creates pruning filters."""
@@ -12695,7 +12854,6 @@ class IAgCrdnPruneFilterFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{77E7099E-9B41-45FA-B50F-F8DE5964FABD}", IAgCrdnPruneFilterFactory)
 agcls.AgTypeNameMap["IAgCrdnPruneFilterFactory"] = IAgCrdnPruneFilterFactory
-__all__.append("IAgCrdnPruneFilterFactory")
 
 class IAgCrdnRelativeSatisfactionConditionFilter(object):
     """The filter selects intervals if certain side condition is satisfied at least/most certain percentage of time."""
@@ -12779,7 +12937,6 @@ class IAgCrdnRelativeSatisfactionConditionFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5A8D2A73-C7D2-4158-8313-AA3EFEF14F75}", IAgCrdnRelativeSatisfactionConditionFilter)
 agcls.AgTypeNameMap["IAgCrdnRelativeSatisfactionConditionFilter"] = IAgCrdnRelativeSatisfactionConditionFilter
-__all__.append("IAgCrdnRelativeSatisfactionConditionFilter")
 
 class IAgCrdnSampling(object):
     """Base sampling interface."""
@@ -12815,7 +12972,6 @@ class IAgCrdnSampling(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{69CE7273-6FFF-4BB1-BE3C-36D7E4ECC758}", IAgCrdnSampling)
 agcls.AgTypeNameMap["IAgCrdnSampling"] = IAgCrdnSampling
-__all__.append("IAgCrdnSampling")
 
 class IAgCrdnSamplingBasic(object):
     """Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data."""
@@ -12876,7 +13032,6 @@ class IAgCrdnSamplingBasic(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{170B370D-D5EA-43B3-AECD-54ACD16E2AE6}", IAgCrdnSamplingBasic)
 agcls.AgTypeNameMap["IAgCrdnSamplingBasic"] = IAgCrdnSamplingBasic
-__all__.append("IAgCrdnSamplingBasic")
 
 class IAgCrdnSamplingCurvatureTolerance(object):
     """Curvature tolerance definition includes parameters that determine how scalar data should be sampled based on limits on slope changes between samples."""
@@ -13008,7 +13163,6 @@ class IAgCrdnSamplingCurvatureTolerance(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{618ADA55-9E3D-4CEC-815A-B028995774CB}", IAgCrdnSamplingCurvatureTolerance)
 agcls.AgTypeNameMap["IAgCrdnSamplingCurvatureTolerance"] = IAgCrdnSamplingCurvatureTolerance
-__all__.append("IAgCrdnSamplingCurvatureTolerance")
 
 class IAgCrdnSamplingFixedStep(object):
     """Fixed step definition includes parameters that determine how scalar data should be sampled based on fixed steps between samples."""
@@ -13060,7 +13214,6 @@ class IAgCrdnSamplingFixedStep(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{68784D1E-776C-4212-B35E-121FFE569627}", IAgCrdnSamplingFixedStep)
 agcls.AgTypeNameMap["IAgCrdnSamplingFixedStep"] = IAgCrdnSamplingFixedStep
-__all__.append("IAgCrdnSamplingFixedStep")
 
 class IAgCrdnSamplingMethod(object):
     """A sampling method."""
@@ -13105,7 +13258,6 @@ class IAgCrdnSamplingMethod(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1D14391E-F22F-42FF-B3FA-902F061A6F7B}", IAgCrdnSamplingMethod)
 agcls.AgTypeNameMap["IAgCrdnSamplingMethod"] = IAgCrdnSamplingMethod
-__all__.append("IAgCrdnSamplingMethod")
 
 class IAgCrdnSamplingMethodFactory(object):
     """The factory creates sampling method components."""
@@ -13168,7 +13320,6 @@ class IAgCrdnSamplingMethodFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C214929B-45FA-4023-9C40-6DCE747C151B}", IAgCrdnSamplingMethodFactory)
 agcls.AgTypeNameMap["IAgCrdnSamplingMethodFactory"] = IAgCrdnSamplingMethodFactory
-__all__.append("IAgCrdnSamplingMethodFactory")
 
 class IAgCrdnSamplingRelativeTolerance(object):
     """Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning."""
@@ -13284,7 +13435,6 @@ class IAgCrdnSamplingRelativeTolerance(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{32BB5026-A93C-41F7-ADE8-0A04A43627BC}", IAgCrdnSamplingRelativeTolerance)
 agcls.AgTypeNameMap["IAgCrdnSamplingRelativeTolerance"] = IAgCrdnSamplingRelativeTolerance
-__all__.append("IAgCrdnSamplingRelativeTolerance")
 
 class IAgCrdnSatisfactionConditionFilter(object):
     """The filter selects intervals if certain side condition is satisfied at least/most certain duration."""
@@ -13368,7 +13518,6 @@ class IAgCrdnSatisfactionConditionFilter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{84F129C1-1D47-4FE2-B87B-013BEF12269C}", IAgCrdnSatisfactionConditionFilter)
 agcls.AgTypeNameMap["IAgCrdnSatisfactionConditionFilter"] = IAgCrdnSatisfactionConditionFilter
-__all__.append("IAgCrdnSatisfactionConditionFilter")
 
 class IAgCrdnSignalDelay(object):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
@@ -13404,7 +13553,6 @@ class IAgCrdnSignalDelay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5ED53953-1C55-431D-88AF-1AF23B2FE424}", IAgCrdnSignalDelay)
 agcls.AgTypeNameMap["IAgCrdnSignalDelay"] = IAgCrdnSignalDelay
-__all__.append("IAgCrdnSignalDelay")
 
 class IAgCrdnSignalDelayBasic(object):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
@@ -13520,7 +13668,6 @@ class IAgCrdnSignalDelayBasic(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A5582117-B7C4-4F2D-8A78-23FDCDCB0CAC}", IAgCrdnSignalDelayBasic)
 agcls.AgTypeNameMap["IAgCrdnSignalDelayBasic"] = IAgCrdnSignalDelayBasic
-__all__.append("IAgCrdnSignalDelayBasic")
 
 class IAgCrdnVolumeCalcFactory(object):
     """The factory is used to create instances of volume calcs."""
@@ -13656,7 +13803,6 @@ class IAgCrdnVolumeCalcFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{42eb6d4a-5cff-471f-997d-3f624cb4a416}", IAgCrdnVolumeCalcFactory)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcFactory"] = IAgCrdnVolumeCalcFactory
-__all__.append("IAgCrdnVolumeCalcFactory")
 
 class IAgCrdnVolumeFactory(object):
     """The factory is used to create instances of volumes."""
@@ -13792,7 +13938,6 @@ class IAgCrdnVolumeFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FE97990E-A152-417C-883E-64C42AB9B913}", IAgCrdnVolumeFactory)
 agcls.AgTypeNameMap["IAgCrdnVolumeFactory"] = IAgCrdnVolumeFactory
-__all__.append("IAgCrdnVolumeFactory")
 
 class IAgCrdnVolumeGridFactory(object):
     """The factory is used to create instances of volume grids."""
@@ -13908,7 +14053,6 @@ class IAgCrdnVolumeGridFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4533DEA1-D754-4579-A79D-B5A639C2CD39}", IAgCrdnVolumeGridFactory)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridFactory"] = IAgCrdnVolumeGridFactory
-__all__.append("IAgCrdnVolumeGridFactory")
 
 class IAgCrdnGridCoordinateDefinition(object):
     """Defines a set of coordinate values."""
@@ -14006,7 +14150,6 @@ class IAgCrdnGridCoordinateDefinition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{96875D1C-9CBC-4732-A678-2CB17995C0E9}", IAgCrdnGridCoordinateDefinition)
 agcls.AgTypeNameMap["IAgCrdnGridCoordinateDefinition"] = IAgCrdnGridCoordinateDefinition
-__all__.append("IAgCrdnGridCoordinateDefinition")
 
 class IAgCrdnGridValuesCustom(object):
     """Fixed step grid values."""
@@ -14058,7 +14201,6 @@ class IAgCrdnGridValuesCustom(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CFD13837-AB7F-467F-8E15-9AFEA33CFD13}", IAgCrdnGridValuesCustom)
 agcls.AgTypeNameMap["IAgCrdnGridValuesCustom"] = IAgCrdnGridValuesCustom
-__all__.append("IAgCrdnGridValuesCustom")
 
 class IAgCrdnGridValuesFixedNumberOfSteps(object):
     """Fixed step grid values."""
@@ -14174,7 +14316,6 @@ class IAgCrdnGridValuesFixedNumberOfSteps(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{379ACEFA-1B1E-4753-BA9A-87939E5B8893}", IAgCrdnGridValuesFixedNumberOfSteps)
 agcls.AgTypeNameMap["IAgCrdnGridValuesFixedNumberOfSteps"] = IAgCrdnGridValuesFixedNumberOfSteps
-__all__.append("IAgCrdnGridValuesFixedNumberOfSteps")
 
 class IAgCrdnGridValuesFixedStep(object):
     """Fixed step grid values."""
@@ -14290,7 +14431,6 @@ class IAgCrdnGridValuesFixedStep(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7C18BF81-7E22-4A28-B462-37ED86EC3050}", IAgCrdnGridValuesFixedStep)
 agcls.AgTypeNameMap["IAgCrdnGridValuesFixedStep"] = IAgCrdnGridValuesFixedStep
-__all__.append("IAgCrdnGridValuesFixedStep")
 
 class IAgCrdnGridValuesMethod(object):
     """A grid values method."""
@@ -14335,7 +14475,6 @@ class IAgCrdnGridValuesMethod(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6B730A6A-86AD-41C4-A0C0-4DC72FD27D0A}", IAgCrdnGridValuesMethod)
 agcls.AgTypeNameMap["IAgCrdnGridValuesMethod"] = IAgCrdnGridValuesMethod
-__all__.append("IAgCrdnGridValuesMethod")
 
 class IAgCrdnLightTimeDelay(object):
     """Manage Light Time Delay options.."""
@@ -14451,7 +14590,6 @@ class IAgCrdnLightTimeDelay(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{82765B62-B9AB-4D52-900E-52ADAC0365D0}", IAgCrdnLightTimeDelay)
 agcls.AgTypeNameMap["IAgCrdnLightTimeDelay"] = IAgCrdnLightTimeDelay
-__all__.append("IAgCrdnLightTimeDelay")
 
 class IAgCrdnVolume(object):
     """A volume interface. The methods and properties of the interface provide Volume functions."""
@@ -14487,7 +14625,6 @@ class IAgCrdnVolume(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F85958EC-F470-432F-81B1-8517D3952F1E}", IAgCrdnVolume)
 agcls.AgTypeNameMap["IAgCrdnVolume"] = IAgCrdnVolume
-__all__.append("IAgCrdnVolume")
 
 class IAgCrdnVolumeCalc(object):
     """A volume calc interface. The methods and properties of the interface provide Volumetric calc functions."""
@@ -14523,7 +14660,6 @@ class IAgCrdnVolumeCalc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1de42e63-b555-4272-8b9b-d6cf0ee5d1cf}", IAgCrdnVolumeCalc)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalc"] = IAgCrdnVolumeCalc
-__all__.append("IAgCrdnVolumeCalc")
 
 class IAgCrdnVolumeCalcAltitude(object):
     """A volume calc altitude interface."""
@@ -14623,7 +14759,6 @@ class IAgCrdnVolumeCalcAltitude(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6039868a-acea-4918-966b-c6f952fd94d3}", IAgCrdnVolumeCalcAltitude)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcAltitude"] = IAgCrdnVolumeCalcAltitude
-__all__.append("IAgCrdnVolumeCalcAltitude")
 
 class IAgCrdnVolumeCalcAngleOffVector(object):
     """A volume calc angle off vector interface."""
@@ -14739,7 +14874,6 @@ class IAgCrdnVolumeCalcAngleOffVector(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ad6880b4-afc1-47ba-b964-f38916955c7b}", IAgCrdnVolumeCalcAngleOffVector)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcAngleOffVector"] = IAgCrdnVolumeCalcAngleOffVector
-__all__.append("IAgCrdnVolumeCalcAngleOffVector")
 
 class IAgCrdnVolumeCalcConditionSatMetric(object):
     """A volume calc condition satisfaction interface."""
@@ -14935,7 +15069,6 @@ class IAgCrdnVolumeCalcConditionSatMetric(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b0f59ef2-3895-4240-bf50-0d4b8eac74fa}", IAgCrdnVolumeCalcConditionSatMetric)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcConditionSatMetric"] = IAgCrdnVolumeCalcConditionSatMetric
-__all__.append("IAgCrdnVolumeCalcConditionSatMetric")
 
 class IAgCrdnVolumeCalcDelayRange(object):
     """A volume calc propagation delay to location interface."""
@@ -15067,7 +15200,6 @@ class IAgCrdnVolumeCalcDelayRange(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{874bf6c9-20d7-486c-918a-a0094093879a}", IAgCrdnVolumeCalcDelayRange)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcDelayRange"] = IAgCrdnVolumeCalcDelayRange
-__all__.append("IAgCrdnVolumeCalcDelayRange")
 
 class IAgCrdnVolumeCalcFile(object):
     """Volumetric data loaded from a specified file - A file with .h5 extension. See STK help."""
@@ -15125,7 +15257,6 @@ class IAgCrdnVolumeCalcFile(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{362b7405-edf6-486c-8fcf-1f9a93b75000}", IAgCrdnVolumeCalcFile)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcFile"] = IAgCrdnVolumeCalcFile
-__all__.append("IAgCrdnVolumeCalcFile")
 
 class IAgCrdnVolumeCalcFromScalar(object):
     """A volume calc scalar to location interface."""
@@ -15177,7 +15308,6 @@ class IAgCrdnVolumeCalcFromScalar(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6e537b27-ee55-44c5-89b2-f2c504a44bb6}", IAgCrdnVolumeCalcFromScalar)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcFromScalar"] = IAgCrdnVolumeCalcFromScalar
-__all__.append("IAgCrdnVolumeCalcFromScalar")
 
 class IAgCrdnVolumeCalcRange(object):
     """A volume calc distance to location interface."""
@@ -15277,7 +15407,6 @@ class IAgCrdnVolumeCalcRange(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3e52b4ce-9e1f-426a-b0a7-45e6bd9c9b85}", IAgCrdnVolumeCalcRange)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcRange"] = IAgCrdnVolumeCalcRange
-__all__.append("IAgCrdnVolumeCalcRange")
 
 class IAgCrdnVolumeCalcSolarIntensity(object):
     """A volume calc solar intensityn interface."""
@@ -15345,7 +15474,6 @@ class IAgCrdnVolumeCalcSolarIntensity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{40e35f2b-9a83-449a-9a4e-35bdee832061}", IAgCrdnVolumeCalcSolarIntensity)
 agcls.AgTypeNameMap["IAgCrdnVolumeCalcSolarIntensity"] = IAgCrdnVolumeCalcSolarIntensity
-__all__.append("IAgCrdnVolumeCalcSolarIntensity")
 
 class IAgCrdnVolumeCombined(object):
     """A combined volume interface."""
@@ -15445,7 +15573,6 @@ class IAgCrdnVolumeCombined(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{96684FB4-3839-44DB-AD80-B772BF58A39A}", IAgCrdnVolumeCombined)
 agcls.AgTypeNameMap["IAgCrdnVolumeCombined"] = IAgCrdnVolumeCombined
-__all__.append("IAgCrdnVolumeCombined")
 
 class IAgCrdnVolumeFromCalc(object):
     """An volume from calc volume interface."""
@@ -15551,7 +15678,6 @@ class IAgCrdnVolumeFromCalc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{018666E1-C0E6-46F6-A682-F91FBF3C74F3}", IAgCrdnVolumeFromCalc)
 agcls.AgTypeNameMap["IAgCrdnVolumeFromCalc"] = IAgCrdnVolumeFromCalc
-__all__.append("IAgCrdnVolumeFromCalc")
 
 class IAgCrdnVolumeFromCondition(object):
     """A volume from conditioninterface."""
@@ -15667,7 +15793,6 @@ class IAgCrdnVolumeFromCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4A572DE9-9173-4F9A-AE4A-53BCC1B74069}", IAgCrdnVolumeFromCondition)
 agcls.AgTypeNameMap["IAgCrdnVolumeFromCondition"] = IAgCrdnVolumeFromCondition
-__all__.append("IAgCrdnVolumeFromCondition")
 
 class IAgCrdnVolumeFromGrid(object):
     """An over time volume interface."""
@@ -15735,7 +15860,6 @@ class IAgCrdnVolumeFromGrid(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6DABC743-93D8-4E19-A0CC-03C469C5BE8D}", IAgCrdnVolumeFromGrid)
 agcls.AgTypeNameMap["IAgCrdnVolumeFromGrid"] = IAgCrdnVolumeFromGrid
-__all__.append("IAgCrdnVolumeFromGrid")
 
 class IAgCrdnVolumeFromTimeSatisfaction(object):
     """An volume from time satisfaction volume interface."""
@@ -15787,7 +15911,6 @@ class IAgCrdnVolumeFromTimeSatisfaction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1028DA18-F3B4-4064-83C8-45A5B2DDCC4B}", IAgCrdnVolumeFromTimeSatisfaction)
 agcls.AgTypeNameMap["IAgCrdnVolumeFromTimeSatisfaction"] = IAgCrdnVolumeFromTimeSatisfaction
-__all__.append("IAgCrdnVolumeFromTimeSatisfaction")
 
 class IAgCrdnVolumeGrid(object):
     """A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions."""
@@ -15823,7 +15946,6 @@ class IAgCrdnVolumeGrid(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{88BBE781-85C1-439D-A4F4-58006B9A35EC}", IAgCrdnVolumeGrid)
 agcls.AgTypeNameMap["IAgCrdnVolumeGrid"] = IAgCrdnVolumeGrid
-__all__.append("IAgCrdnVolumeGrid")
 
 class IAgCrdnVolumeGridBearingAlt(object):
     """A volume grid bearing alt (Surface Bearing) interface."""
@@ -15950,7 +16072,6 @@ class IAgCrdnVolumeGridBearingAlt(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2814A890-E858-41A6-B640-19F9D27E5ACB}", IAgCrdnVolumeGridBearingAlt)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridBearingAlt"] = IAgCrdnVolumeGridBearingAlt
-__all__.append("IAgCrdnVolumeGridBearingAlt")
 
 class IAgCrdnVolumeGridCartesian(object):
     """A volume grid Cartesian interface."""
@@ -16029,7 +16150,6 @@ class IAgCrdnVolumeGridCartesian(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E959F851-165E-4201-8C13-81FA4C2D3E2D}", IAgCrdnVolumeGridCartesian)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridCartesian"] = IAgCrdnVolumeGridCartesian
-__all__.append("IAgCrdnVolumeGridCartesian")
 
 class IAgCrdnVolumeGridConstrained(object):
     """A volume grid constrained interface."""
@@ -16097,7 +16217,6 @@ class IAgCrdnVolumeGridConstrained(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8631DE26-8FA9-43B9-8F17-D967DCDEBF42}", IAgCrdnVolumeGridConstrained)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridConstrained"] = IAgCrdnVolumeGridConstrained
-__all__.append("IAgCrdnVolumeGridConstrained")
 
 class IAgCrdnVolumeGridCylindrical(object):
     """A volume grid cylindrical interface."""
@@ -16176,7 +16295,6 @@ class IAgCrdnVolumeGridCylindrical(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0CF87427-CC2B-4282-9B41-0A2D86395AD4}", IAgCrdnVolumeGridCylindrical)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridCylindrical"] = IAgCrdnVolumeGridCylindrical
-__all__.append("IAgCrdnVolumeGridCylindrical")
 
 class IAgCrdnVolumeGridLatLonAlt(object):
     """A volume grid lat lon alt (Cartogrographic) interface."""
@@ -16271,7 +16389,6 @@ class IAgCrdnVolumeGridLatLonAlt(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8FE5F029-DBD1-4A12-BEB4-49D1616AE1E0}", IAgCrdnVolumeGridLatLonAlt)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridLatLonAlt"] = IAgCrdnVolumeGridLatLonAlt
-__all__.append("IAgCrdnVolumeGridLatLonAlt")
 
 class IAgCrdnVolumeGridResult(object):
     """An interface that generates Volume Grid results."""
@@ -16379,7 +16496,6 @@ class IAgCrdnVolumeGridResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1C3B106C-011E-4C51-B321-20389C8EAF76}", IAgCrdnVolumeGridResult)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridResult"] = IAgCrdnVolumeGridResult
-__all__.append("IAgCrdnVolumeGridResult")
 
 class IAgCrdnVolumeGridSpherical(object):
     """A volume grid spherical interface."""
@@ -16458,7 +16574,6 @@ class IAgCrdnVolumeGridSpherical(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{548EEB3E-CFF2-4E58-AAF2-6F66B0CCC7ED}", IAgCrdnVolumeGridSpherical)
 agcls.AgTypeNameMap["IAgCrdnVolumeGridSpherical"] = IAgCrdnVolumeGridSpherical
-__all__.append("IAgCrdnVolumeGridSpherical")
 
 class IAgCrdnVolumeInview(object):
     """An Inview volume interface."""
@@ -16519,7 +16634,6 @@ class IAgCrdnVolumeInview(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EF724630-CEB6-4818-A5BB-F74CF1B9D931}", IAgCrdnVolumeInview)
 agcls.AgTypeNameMap["IAgCrdnVolumeInview"] = IAgCrdnVolumeInview
-__all__.append("IAgCrdnVolumeInview")
 
 class IAgCrdnVolumeLighting(object):
     """A lighting volume interface."""
@@ -16603,7 +16717,6 @@ class IAgCrdnVolumeLighting(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CE134C08-274E-4E29-9337-03E9C73AA8F9}", IAgCrdnVolumeLighting)
 agcls.AgTypeNameMap["IAgCrdnVolumeLighting"] = IAgCrdnVolumeLighting
-__all__.append("IAgCrdnVolumeLighting")
 
 class IAgCrdnVolumeOverTime(object):
     """An over time volume interface."""
@@ -16719,7 +16832,6 @@ class IAgCrdnVolumeOverTime(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8CE9DE37-1A5E-43AD-B191-9D21722B64D8}", IAgCrdnVolumeOverTime)
 agcls.AgTypeNameMap["IAgCrdnVolumeOverTime"] = IAgCrdnVolumeOverTime
-__all__.append("IAgCrdnVolumeOverTime")
 
 class IAgCrdnTimeProperties(object):
     """Defines methods to compute time properties such as availability and special times."""
@@ -16763,7 +16875,6 @@ class IAgCrdnTimeProperties(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E95B72AA-F8DE-4122-AC60-54E46A208E19}", IAgCrdnTimeProperties)
 agcls.AgTypeNameMap["IAgCrdnTimeProperties"] = IAgCrdnTimeProperties
-__all__.append("IAgCrdnTimeProperties")
 
 class IAgCrdnTypeInfo(object):
     """Provides information about the type of VGT components."""
@@ -16826,7 +16937,6 @@ class IAgCrdnTypeInfo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{67E20A46-9550-4A68-9276-697DC821A23A}", IAgCrdnTypeInfo)
 agcls.AgTypeNameMap["IAgCrdnTypeInfo"] = IAgCrdnTypeInfo
-__all__.append("IAgCrdnTypeInfo")
 
 class IAgCrdnRefTo(object):
     """A base interface for all VGT component references."""
@@ -16871,7 +16981,6 @@ class IAgCrdnRefTo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2F3A17A6-4304-4565-BC1C-7A064DCFE310}", IAgCrdnRefTo)
 agcls.AgTypeNameMap["IAgCrdnRefTo"] = IAgCrdnRefTo
-__all__.append("IAgCrdnRefTo")
 
 class IAgCrdnTemplate(object):
     """The IAgCrdnTemplate interface enables to obtain information about the STK class that owns the VGT component."""
@@ -16916,7 +17025,6 @@ class IAgCrdnTemplate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{990635EA-63F9-4CA7-A5A8-DEDAA9C52100}", IAgCrdnTemplate)
 agcls.AgTypeNameMap["IAgCrdnTemplate"] = IAgCrdnTemplate
-__all__.append("IAgCrdnTemplate")
 
 class IAgCrdnInstance(object):
     """The IAgCrdnInstance interface enables to obtain information about the parent object that owns the VGT component."""
@@ -16970,7 +17078,6 @@ class IAgCrdnInstance(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{17633665-9601-4FFF-8227-4D5DF0AAEA06}", IAgCrdnInstance)
 agcls.AgTypeNameMap["IAgCrdnInstance"] = IAgCrdnInstance
-__all__.append("IAgCrdnInstance")
 
 class IAgCrdnPointRefTo(object):
     """Represents a reference to a VGT point."""
@@ -17037,7 +17144,6 @@ class IAgCrdnPointRefTo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B553DE32-05C9-4944-918A-90552E039DBE}", IAgCrdnPointRefTo)
 agcls.AgTypeNameMap["IAgCrdnPointRefTo"] = IAgCrdnPointRefTo
-__all__.append("IAgCrdnPointRefTo")
 
 class IAgCrdnVectorRefTo(object):
     """Represents a reference to a VGT vector."""
@@ -17104,7 +17210,6 @@ class IAgCrdnVectorRefTo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EDF2E070-340E-456C-BDA8-BE9B9B40E728}", IAgCrdnVectorRefTo)
 agcls.AgTypeNameMap["IAgCrdnVectorRefTo"] = IAgCrdnVectorRefTo
-__all__.append("IAgCrdnVectorRefTo")
 
 class IAgCrdnAxesRefTo(object):
     """Represents a reference to a VGT axes."""
@@ -17171,7 +17276,6 @@ class IAgCrdnAxesRefTo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{32701D6E-A7D0-4EDD-93B9-ADEA5D8BBF37}", IAgCrdnAxesRefTo)
 agcls.AgTypeNameMap["IAgCrdnAxesRefTo"] = IAgCrdnAxesRefTo
-__all__.append("IAgCrdnAxesRefTo")
 
 class IAgCrdnAngleRefTo(object):
     """Represents a reference to a VGT angle."""
@@ -17238,7 +17342,6 @@ class IAgCrdnAngleRefTo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7A9D809F-D819-4458-9855-2DA8507F6E57}", IAgCrdnAngleRefTo)
 agcls.AgTypeNameMap["IAgCrdnAngleRefTo"] = IAgCrdnAngleRefTo
-__all__.append("IAgCrdnAngleRefTo")
 
 class IAgCrdnSystemRefTo(object):
     """Represents a reference to a VGT system."""
@@ -17305,7 +17408,6 @@ class IAgCrdnSystemRefTo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1CB0AFC5-CB6B-40FD-9F26-9295E2BED854}", IAgCrdnSystemRefTo)
 agcls.AgTypeNameMap["IAgCrdnSystemRefTo"] = IAgCrdnSystemRefTo
-__all__.append("IAgCrdnSystemRefTo")
 
 class IAgCrdnPlaneRefTo(object):
     """Represents a reference to a VGT plane."""
@@ -17372,7 +17474,6 @@ class IAgCrdnPlaneRefTo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CE3D70F2-61E0-4A23-803F-A734005DC36D}", IAgCrdnPlaneRefTo)
 agcls.AgTypeNameMap["IAgCrdnPlaneRefTo"] = IAgCrdnPlaneRefTo
-__all__.append("IAgCrdnPlaneRefTo")
 
 class IAgCrdnAxesLabels(object):
     """Allows configuring the VGT axes labels."""
@@ -17456,7 +17557,6 @@ class IAgCrdnAxesLabels(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0CD79528-D932-4473-9CC4-0BF5C936A6CD}", IAgCrdnAxesLabels)
 agcls.AgTypeNameMap["IAgCrdnAxesLabels"] = IAgCrdnAxesLabels
-__all__.append("IAgCrdnAxesLabels")
 
 class IAgCrdnPlaneLabels(object):
     """Allows configuring the X and Y axes labels."""
@@ -17524,7 +17624,6 @@ class IAgCrdnPlaneLabels(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CBBA652F-D011-4B7E-8517-D1F27EFA35D3}", IAgCrdnPlaneLabels)
 agcls.AgTypeNameMap["IAgCrdnPlaneLabels"] = IAgCrdnPlaneLabels
-__all__.append("IAgCrdnPlaneLabels")
 
 class IAgCrdnAxesAlignedAndConstrained(object):
     """Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."""
@@ -17596,7 +17695,6 @@ class IAgCrdnAxesAlignedAndConstrained(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{19991E4F-F368-41CD-AE27-96CF11EC963F}", IAgCrdnAxesAlignedAndConstrained)
 agcls.AgTypeNameMap["IAgCrdnAxesAlignedAndConstrained"] = IAgCrdnAxesAlignedAndConstrained
-__all__.append("IAgCrdnAxesAlignedAndConstrained")
 
 class IAgCrdnAxesAngularOffset(object):
     """Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."""
@@ -17675,7 +17773,6 @@ class IAgCrdnAxesAngularOffset(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0096F935-281A-4EC9-92A4-7400BD2DEF60}", IAgCrdnAxesAngularOffset)
 agcls.AgTypeNameMap["IAgCrdnAxesAngularOffset"] = IAgCrdnAxesAngularOffset
-__all__.append("IAgCrdnAxesAngularOffset")
 
 class IAgCrdnAxesFixedAtEpoch(object):
     """Axes based on another set fixed at a specified epoch."""
@@ -17745,7 +17842,6 @@ class IAgCrdnAxesFixedAtEpoch(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CEB9E066-A9F8-4B74-AF7A-0301BF611843}", IAgCrdnAxesFixedAtEpoch)
 agcls.AgTypeNameMap["IAgCrdnAxesFixedAtEpoch"] = IAgCrdnAxesFixedAtEpoch
-__all__.append("IAgCrdnAxesFixedAtEpoch")
 
 class IAgCrdnAxesBPlane(object):
     """B-Plane axes using the selected target body and reference vector."""
@@ -17824,7 +17920,6 @@ class IAgCrdnAxesBPlane(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{72FD97D1-AE64-45D2-973E-E4F491B474AC}", IAgCrdnAxesBPlane)
 agcls.AgTypeNameMap["IAgCrdnAxesBPlane"] = IAgCrdnAxesBPlane
-__all__.append("IAgCrdnAxesBPlane")
 
 class IAgCrdnAxesCustomScript(object):
     """Customized axes offset with respect to a set of reference Axes."""
@@ -17885,7 +17980,6 @@ class IAgCrdnAxesCustomScript(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F5A690E6-0304-49E0-BAB5-229F848B0401}", IAgCrdnAxesCustomScript)
 agcls.AgTypeNameMap["IAgCrdnAxesCustomScript"] = IAgCrdnAxesCustomScript
-__all__.append("IAgCrdnAxesCustomScript")
 
 class IAgCrdnAxesAttitudeFile(object):
     """Axes specified by data from a file."""
@@ -17937,7 +18031,6 @@ class IAgCrdnAxesAttitudeFile(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E4A194BD-44ED-498F-ACB2-9911C19F52E8}", IAgCrdnAxesAttitudeFile)
 agcls.AgTypeNameMap["IAgCrdnAxesAttitudeFile"] = IAgCrdnAxesAttitudeFile
-__all__.append("IAgCrdnAxesAttitudeFile")
 
 class IAgCrdnAxesFixed(object):
     """Axes fixed in reference axes."""
@@ -17991,7 +18084,6 @@ class IAgCrdnAxesFixed(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AE9B0D51-E7DD-4B44-AB8C-A133177E4722}", IAgCrdnAxesFixed)
 agcls.AgTypeNameMap["IAgCrdnAxesFixed"] = IAgCrdnAxesFixed
-__all__.append("IAgCrdnAxesFixed")
 
 class IAgCrdnAxesModelAttach(object):
     """Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."""
@@ -18043,7 +18135,6 @@ class IAgCrdnAxesModelAttach(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3A20DEC4-2D89-416C-8B47-D76E859763B0}", IAgCrdnAxesModelAttach)
 agcls.AgTypeNameMap["IAgCrdnAxesModelAttach"] = IAgCrdnAxesModelAttach
-__all__.append("IAgCrdnAxesModelAttach")
 
 class IAgCrdnAxesSpinning(object):
     """Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."""
@@ -18145,7 +18236,6 @@ class IAgCrdnAxesSpinning(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ECB36015-B534-40C6-B50F-298217335C38}", IAgCrdnAxesSpinning)
 agcls.AgTypeNameMap["IAgCrdnAxesSpinning"] = IAgCrdnAxesSpinning
-__all__.append("IAgCrdnAxesSpinning")
 
 class IAgCrdnAxesOnSurface(object):
     """Topocentric axes located at the reference point's projection on the central body."""
@@ -18215,7 +18305,6 @@ class IAgCrdnAxesOnSurface(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4BA7B8F7-229B-47F8-8C6F-169F425B5BAA}", IAgCrdnAxesOnSurface)
 agcls.AgTypeNameMap["IAgCrdnAxesOnSurface"] = IAgCrdnAxesOnSurface
-__all__.append("IAgCrdnAxesOnSurface")
 
 class IAgCrdnAxesTrajectory(object):
     """Axes based on trajectory of the point relative to the reference coordinate system."""
@@ -18285,7 +18374,6 @@ class IAgCrdnAxesTrajectory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{012AC3CF-A84B-4E6D-8450-D0B09DE5873B}", IAgCrdnAxesTrajectory)
 agcls.AgTypeNameMap["IAgCrdnAxesTrajectory"] = IAgCrdnAxesTrajectory
-__all__.append("IAgCrdnAxesTrajectory")
 
 class IAgCrdnAxesLagrangeLibration(object):
     """Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."""
@@ -18355,7 +18443,6 @@ class IAgCrdnAxesLagrangeLibration(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B08F0A95-4B11-4586-81C4-4EFCA4DE27DB}", IAgCrdnAxesLagrangeLibration)
 agcls.AgTypeNameMap["IAgCrdnAxesLagrangeLibration"] = IAgCrdnAxesLagrangeLibration
-__all__.append("IAgCrdnAxesLagrangeLibration")
 
 class IAgCrdnAxesCommonTasks(object):
     """Provides methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
@@ -18440,7 +18527,6 @@ class IAgCrdnAxesCommonTasks(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4A6CA7E3-BAF0-4D5A-AF67-5D44515D869D}", IAgCrdnAxesCommonTasks)
 agcls.AgTypeNameMap["IAgCrdnAxesCommonTasks"] = IAgCrdnAxesCommonTasks
-__all__.append("IAgCrdnAxesCommonTasks")
 
 class IAgCrdnAxesAtTimeInstant(object):
     """Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."""
@@ -18524,7 +18610,6 @@ class IAgCrdnAxesAtTimeInstant(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{193F4A55-5E79-43A1-8A2C-3C001F7608A5}", IAgCrdnAxesAtTimeInstant)
 agcls.AgTypeNameMap["IAgCrdnAxesAtTimeInstant"] = IAgCrdnAxesAtTimeInstant
-__all__.append("IAgCrdnAxesAtTimeInstant")
 
 class IAgCrdnAxesPlugin(object):
     """A VGT axes plugin."""
@@ -18610,7 +18695,6 @@ class IAgCrdnAxesPlugin(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E63FD5E1-B844-4893-9E4C-3F02210AE74C}", IAgCrdnAxesPlugin)
 agcls.AgTypeNameMap["IAgCrdnAxesPlugin"] = IAgCrdnAxesPlugin
-__all__.append("IAgCrdnAxesPlugin")
 
 class IAgCrdnAngleBetweenVectors(object):
     """An angle between two vectors."""
@@ -18664,7 +18748,6 @@ class IAgCrdnAngleBetweenVectors(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B3986E8E-A8CB-414F-8214-71C53ED00740}", IAgCrdnAngleBetweenVectors)
 agcls.AgTypeNameMap["IAgCrdnAngleBetweenVectors"] = IAgCrdnAngleBetweenVectors
-__all__.append("IAgCrdnAngleBetweenVectors")
 
 class IAgCrdnAngleBetweenPlanes(object):
     """An angle between two planes."""
@@ -18718,7 +18801,6 @@ class IAgCrdnAngleBetweenPlanes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ACFE3BF5-C259-42DE-8EAE-D04FAD37C144}", IAgCrdnAngleBetweenPlanes)
 agcls.AgTypeNameMap["IAgCrdnAngleBetweenPlanes"] = IAgCrdnAngleBetweenPlanes
-__all__.append("IAgCrdnAngleBetweenPlanes")
 
 class IAgCrdnAngleDihedral(object):
     """An angle between two vectors about an axis."""
@@ -18813,7 +18895,6 @@ class IAgCrdnAngleDihedral(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{39CB2F20-653C-4ED2-8B6F-A05C88AA50D7}", IAgCrdnAngleDihedral)
 agcls.AgTypeNameMap["IAgCrdnAngleDihedral"] = IAgCrdnAngleDihedral
-__all__.append("IAgCrdnAngleDihedral")
 
 class IAgCrdnAngleRotation(object):
     """Angle of the shortest rotation between the specified FromAxes and ToAxes axes."""
@@ -18883,7 +18964,6 @@ class IAgCrdnAngleRotation(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9E842F77-B3A8-475C-96AA-E692B35E8E05}", IAgCrdnAngleRotation)
 agcls.AgTypeNameMap["IAgCrdnAngleRotation"] = IAgCrdnAngleRotation
-__all__.append("IAgCrdnAngleRotation")
 
 class IAgCrdnAngleToPlane(object):
     """An angle between a vector and a plane."""
@@ -18953,7 +19033,6 @@ class IAgCrdnAngleToPlane(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DDFA25AD-174D-407B-B90C-747B3E43F7C9}", IAgCrdnAngleToPlane)
 agcls.AgTypeNameMap["IAgCrdnAngleToPlane"] = IAgCrdnAngleToPlane
-__all__.append("IAgCrdnAngleToPlane")
 
 class IAgCrdnPlaneNormal(object):
     """A plane normal to a vector at a given point."""
@@ -19016,7 +19095,6 @@ class IAgCrdnPlaneNormal(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AAF66E5C-B310-4387-BDAE-D45F24F226BC}", IAgCrdnPlaneNormal)
 agcls.AgTypeNameMap["IAgCrdnPlaneNormal"] = IAgCrdnPlaneNormal
-__all__.append("IAgCrdnPlaneNormal")
 
 class IAgCrdnPlaneQuadrant(object):
     """A plane based on a selected Quadrant of a reference system."""
@@ -19077,7 +19155,6 @@ class IAgCrdnPlaneQuadrant(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5EDFD8B0-D7B0-4475-9A28-9C3898E60E7A}", IAgCrdnPlaneQuadrant)
 agcls.AgTypeNameMap["IAgCrdnPlaneQuadrant"] = IAgCrdnPlaneQuadrant
-__all__.append("IAgCrdnPlaneQuadrant")
 
 class IAgCrdnPlaneTrajectory(object):
     """The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem."""
@@ -19147,7 +19224,6 @@ class IAgCrdnPlaneTrajectory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{38B84821-37E5-4CBC-83F9-AB4D84E0DFBE}", IAgCrdnPlaneTrajectory)
 agcls.AgTypeNameMap["IAgCrdnPlaneTrajectory"] = IAgCrdnPlaneTrajectory
-__all__.append("IAgCrdnPlaneTrajectory")
 
 class IAgCrdnPlaneTriad(object):
     """A Plane containing points A, B and ReferencePont with the first axis aligned with the direction from the ReferencePoint to point A and the second axis toward the direction from the ReferencePoint to point B."""
@@ -19226,7 +19302,6 @@ class IAgCrdnPlaneTriad(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EEC540C3-22AA-4E68-818C-A8A02B9EF2DC}", IAgCrdnPlaneTriad)
 agcls.AgTypeNameMap["IAgCrdnPlaneTriad"] = IAgCrdnPlaneTriad
-__all__.append("IAgCrdnPlaneTriad")
 
 class IAgCrdnPlaneTwoVector(object):
     """A plane passing through point and containing two given vectors."""
@@ -19289,7 +19364,6 @@ class IAgCrdnPlaneTwoVector(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{345761f0-0ace-494c-8d9c-0f3e3af9c2da}", IAgCrdnPlaneTwoVector)
 agcls.AgTypeNameMap["IAgCrdnPlaneTwoVector"] = IAgCrdnPlaneTwoVector
-__all__.append("IAgCrdnPlaneTwoVector")
 
 class IAgCrdnPointBPlane(object):
     """B-Plane point using the selected target body."""
@@ -19375,7 +19449,6 @@ class IAgCrdnPointBPlane(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CC3B797F-5327-4D04-911D-8ED499E056AF}", IAgCrdnPointBPlane)
 agcls.AgTypeNameMap["IAgCrdnPointBPlane"] = IAgCrdnPointBPlane
-__all__.append("IAgCrdnPointBPlane")
 
 class IAgCrdnPointFile(object):
     """Point specified by data from a file."""
@@ -19427,7 +19500,6 @@ class IAgCrdnPointFile(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9612277C-2238-42BD-89D7-E54D7701D8F2}", IAgCrdnPointFile)
 agcls.AgTypeNameMap["IAgCrdnPointFile"] = IAgCrdnPointFile
-__all__.append("IAgCrdnPointFile")
 
 class IAgCrdnPointFixedInSystem(object):
     """Point fixed in a reference coordinate system using the selected coordinate type."""
@@ -19481,7 +19553,6 @@ class IAgCrdnPointFixedInSystem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EF7020AE-4103-4E9A-9EDB-A7EF7D8EDF74}", IAgCrdnPointFixedInSystem)
 agcls.AgTypeNameMap["IAgCrdnPointFixedInSystem"] = IAgCrdnPointFixedInSystem
-__all__.append("IAgCrdnPointFixedInSystem")
 
 class IAgCrdnPointGrazing(object):
     """The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."""
@@ -19560,7 +19631,6 @@ class IAgCrdnPointGrazing(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7FDF037E-1367-4590-A330-660EF3442DE1}", IAgCrdnPointGrazing)
 agcls.AgTypeNameMap["IAgCrdnPointGrazing"] = IAgCrdnPointGrazing
-__all__.append("IAgCrdnPointGrazing")
 
 class IAgCrdnPointGlint(object):
     """Point on central body surface that reflects from source to observer."""
@@ -19623,7 +19693,6 @@ class IAgCrdnPointGlint(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C4168949-A6F2-42B7-8019-671FF808836D}", IAgCrdnPointGlint)
 agcls.AgTypeNameMap["IAgCrdnPointGlint"] = IAgCrdnPointGlint
-__all__.append("IAgCrdnPointGlint")
 
 class IAgCrdnPointCovarianceGrazing(object):
     """The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."""
@@ -19757,7 +19826,6 @@ class IAgCrdnPointCovarianceGrazing(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CC9E8B92-77D8-46A9-BD52-3DABB173913D}", IAgCrdnPointCovarianceGrazing)
 agcls.AgTypeNameMap["IAgCrdnPointCovarianceGrazing"] = IAgCrdnPointCovarianceGrazing
-__all__.append("IAgCrdnPointCovarianceGrazing")
 
 class IAgCrdnPointPlaneIntersection(object):
     """Point on a plane located along a given direction looking from a given origin."""
@@ -19820,7 +19888,6 @@ class IAgCrdnPointPlaneIntersection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1823CE59-7F9D-43EC-9915-D6161FF3B6B3}", IAgCrdnPointPlaneIntersection)
 agcls.AgTypeNameMap["IAgCrdnPointPlaneIntersection"] = IAgCrdnPointPlaneIntersection
-__all__.append("IAgCrdnPointPlaneIntersection")
 
 class IAgCrdnPointOnSurface(object):
     """The detic subpoint of the reference point as projected onto the central body."""
@@ -19906,7 +19973,6 @@ class IAgCrdnPointOnSurface(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AED0D41F-BB69-4672-A513-17A43B12873D}", IAgCrdnPointOnSurface)
 agcls.AgTypeNameMap["IAgCrdnPointOnSurface"] = IAgCrdnPointOnSurface
-__all__.append("IAgCrdnPointOnSurface")
 
 class IAgCrdnPointModelAttach(object):
     """A point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."""
@@ -19974,7 +20040,6 @@ class IAgCrdnPointModelAttach(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CFEB5448-9053-44F6-BCB5-35280361131F}", IAgCrdnPointModelAttach)
 agcls.AgTypeNameMap["IAgCrdnPointModelAttach"] = IAgCrdnPointModelAttach
-__all__.append("IAgCrdnPointModelAttach")
 
 class IAgCrdnPointSatelliteCollectionEntry(object):
     """A point placed at the center of mass of a specified satellite of the satellite collection."""
@@ -20026,7 +20091,6 @@ class IAgCrdnPointSatelliteCollectionEntry(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{b87dd19b-9b0c-4e77-b1d4-937ab05e710a}", IAgCrdnPointSatelliteCollectionEntry)
 agcls.AgTypeNameMap["IAgCrdnPointSatelliteCollectionEntry"] = IAgCrdnPointSatelliteCollectionEntry
-__all__.append("IAgCrdnPointSatelliteCollectionEntry")
 
 class IAgCrdnPointPlaneProjection(object):
     """The projection of a point onto a reference plane. Specify the Source Point and Reference Plane."""
@@ -20080,7 +20144,6 @@ class IAgCrdnPointPlaneProjection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9DD5F6D2-C99A-4461-92AE-C795FE0971BE}", IAgCrdnPointPlaneProjection)
 agcls.AgTypeNameMap["IAgCrdnPointPlaneProjection"] = IAgCrdnPointPlaneProjection
-__all__.append("IAgCrdnPointPlaneProjection")
 
 class IAgCrdnPointLagrangeLibration(object):
     """Libration point using one primary and multiple secondary central bodies. Set the central body, secondary central bodies, and point type."""
@@ -20150,7 +20213,6 @@ class IAgCrdnPointLagrangeLibration(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A90D9C70-1E09-4F42-8E36-4EECD2CAD722}", IAgCrdnPointLagrangeLibration)
 agcls.AgTypeNameMap["IAgCrdnPointLagrangeLibration"] = IAgCrdnPointLagrangeLibration
-__all__.append("IAgCrdnPointLagrangeLibration")
 
 class IAgCrdnPointCommonTasks(object):
     """Provides methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
@@ -20224,12 +20286,11 @@ class IAgCrdnPointCommonTasks(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C357C0A5-3F2A-499C-83F3-6824532C969E}", IAgCrdnPointCommonTasks)
 agcls.AgTypeNameMap["IAgCrdnPointCommonTasks"] = IAgCrdnPointCommonTasks
-__all__.append("IAgCrdnPointCommonTasks")
 
 class IAgCrdnPointCentBodyIntersect(object):
     """Point on central body surface along direction vector originating at source point."""
     _uuid = "{C0F5946B-9467-44AC-B16A-9276CE4EA141}"
-    _num_methods = 21
+    _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -20254,6 +20315,8 @@ class IAgCrdnPointCentBodyIntersect(object):
         self.__dict__["_GetUseMaximumRange"] = _raise_uninitialized_error
         self.__dict__["_SetUseMaximumRange"] = _raise_uninitialized_error
         self.__dict__["_SetRange"] = _raise_uninitialized_error
+        self.__dict__["_GetAllowIntersectionFromBelow"] = _raise_uninitialized_error
+        self.__dict__["_SetAllowIntersectionFromBelow"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnPointCentBodyIntersect._uuid))
             if pUnk is not None:
@@ -20286,6 +20349,8 @@ class IAgCrdnPointCentBodyIntersect(object):
         self.__dict__["_GetUseMaximumRange"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointCentBodyIntersect, vtable_offset_local+19, POINTER(agcom.VARIANT_BOOL))
         self.__dict__["_SetUseMaximumRange"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointCentBodyIntersect, vtable_offset_local+20, agcom.VARIANT_BOOL)
         self.__dict__["_SetRange"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointCentBodyIntersect, vtable_offset_local+21, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_GetAllowIntersectionFromBelow"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointCentBodyIntersect, vtable_offset_local+22, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetAllowIntersectionFromBelow"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointCentBodyIntersect, vtable_offset_local+23, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -20425,10 +20490,21 @@ class IAgCrdnPointCentBodyIntersect(object):
              agmarshall.DOUBLE_arg(maximum) as arg_maximum:
             agcls.evaluate_hresult(self.__dict__["_SetRange"](arg_minimum.COM_val, arg_maximum.COM_val))
 
+    @property
+    def AllowIntersectionFromBelow(self) -> bool:
+        """Whether intersection is computed when reference point is inside the surface. Applicable when the surface is not defined by terrain."""
+        with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetAllowIntersectionFromBelow"](byref(arg_pRetVal.COM_val)))
+            return arg_pRetVal.python_val
+
+    @AllowIntersectionFromBelow.setter
+    def AllowIntersectionFromBelow(self, allowIntersectionFromBelow:bool) -> None:
+        with agmarshall.VARIANT_BOOL_arg(allowIntersectionFromBelow) as arg_allowIntersectionFromBelow:
+            agcls.evaluate_hresult(self.__dict__["_SetAllowIntersectionFromBelow"](arg_allowIntersectionFromBelow.COM_val))
+
 
 agcls.AgClassCatalog.add_catalog_entry("{C0F5946B-9467-44AC-B16A-9276CE4EA141}", IAgCrdnPointCentBodyIntersect)
 agcls.AgTypeNameMap["IAgCrdnPointCentBodyIntersect"] = IAgCrdnPointCentBodyIntersect
-__all__.append("IAgCrdnPointCentBodyIntersect")
 
 class IAgCrdnPointAtTimeInstant(object):
     """Point fixed relative to reference system based on another point evaluated at specified time instant."""
@@ -20512,7 +20588,6 @@ class IAgCrdnPointAtTimeInstant(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1EE173F1-C1BD-4120-95B4-46F67EDB67D9}", IAgCrdnPointAtTimeInstant)
 agcls.AgTypeNameMap["IAgCrdnPointAtTimeInstant"] = IAgCrdnPointAtTimeInstant
-__all__.append("IAgCrdnPointAtTimeInstant")
 
 class IAgCrdnPointPlugin(object):
     """A VGT point plugin."""
@@ -20598,7 +20673,6 @@ class IAgCrdnPointPlugin(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B4D91BB8-CC32-41BA-B1CF-DF73326EC72B}", IAgCrdnPointPlugin)
 agcls.AgTypeNameMap["IAgCrdnPointPlugin"] = IAgCrdnPointPlugin
-__all__.append("IAgCrdnPointPlugin")
 
 class IAgCrdnPointCBFixedOffset(object):
     """Point specified by fixed components with respect to central body."""
@@ -20675,7 +20749,6 @@ class IAgCrdnPointCBFixedOffset(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F78E4010-6C60-4000-9FD1-55BB76D7CDA5}", IAgCrdnPointCBFixedOffset)
 agcls.AgTypeNameMap["IAgCrdnPointCBFixedOffset"] = IAgCrdnPointCBFixedOffset
-__all__.append("IAgCrdnPointCBFixedOffset")
 
 class IAgCrdnSystemAssembled(object):
     """A system assembled from an origin point and a set of reference axes."""
@@ -20729,7 +20802,6 @@ class IAgCrdnSystemAssembled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5BAD4598-1CC2-45CD-8894-EEFCDBF55377}", IAgCrdnSystemAssembled)
 agcls.AgTypeNameMap["IAgCrdnSystemAssembled"] = IAgCrdnSystemAssembled
-__all__.append("IAgCrdnSystemAssembled")
 
 class IAgCrdnSystemOnSurface(object):
     """A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin."""
@@ -20815,7 +20887,6 @@ class IAgCrdnSystemOnSurface(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{15798E36-1EC0-4A73-A910-FC28CC404082}", IAgCrdnSystemOnSurface)
 agcls.AgTypeNameMap["IAgCrdnSystemOnSurface"] = IAgCrdnSystemOnSurface
-__all__.append("IAgCrdnSystemOnSurface")
 
 class IAgCrdnLLAPosition(object):
     """A position represented by the Latitude, longtitude and Latitude."""
@@ -20899,7 +20970,6 @@ class IAgCrdnLLAPosition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7D36B32A-FA96-4F7E-BA7C-99C2E90671C2}", IAgCrdnLLAPosition)
 agcls.AgTypeNameMap["IAgCrdnLLAPosition"] = IAgCrdnLLAPosition
-__all__.append("IAgCrdnLLAPosition")
 
 class IAgCrdnSystemCommonTasks(object):
     """Provides methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
@@ -20956,7 +21026,6 @@ class IAgCrdnSystemCommonTasks(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{28CDCE82-8B5C-4C73-AEFB-B4FADE8F8C82}", IAgCrdnSystemCommonTasks)
 agcls.AgTypeNameMap["IAgCrdnSystemCommonTasks"] = IAgCrdnSystemCommonTasks
-__all__.append("IAgCrdnSystemCommonTasks")
 
 class IAgCrdnVectorAngleRate(object):
     """Angle rate vector perpendicular to the plane in which the angle is defined."""
@@ -21017,7 +21086,6 @@ class IAgCrdnVectorAngleRate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CFC40EEB-A99F-4DAD-A366-1C7908C15128}", IAgCrdnVectorAngleRate)
 agcls.AgTypeNameMap["IAgCrdnVectorAngleRate"] = IAgCrdnVectorAngleRate
-__all__.append("IAgCrdnVectorAngleRate")
 
 class IAgCrdnVectorApoapsis(object):
     """Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."""
@@ -21087,7 +21155,6 @@ class IAgCrdnVectorApoapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A082FC52-1C33-4D63-B02E-1D163FC2F837}", IAgCrdnVectorApoapsis)
 agcls.AgTypeNameMap["IAgCrdnVectorApoapsis"] = IAgCrdnVectorApoapsis
-__all__.append("IAgCrdnVectorApoapsis")
 
 class IAgCrdnVectorFixedAtEpoch(object):
     """A vector based on another vector fixed at a specified epoch."""
@@ -21157,7 +21224,6 @@ class IAgCrdnVectorFixedAtEpoch(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7F816808-CF9D-434A-82CE-78F4A88BC75D}", IAgCrdnVectorFixedAtEpoch)
 agcls.AgTypeNameMap["IAgCrdnVectorFixedAtEpoch"] = IAgCrdnVectorFixedAtEpoch
-__all__.append("IAgCrdnVectorFixedAtEpoch")
 
 class IAgCrdnVectorAngularVelocity(object):
     """Angular velocity vector of one set of axes computed with respect to the reference set."""
@@ -21227,7 +21293,6 @@ class IAgCrdnVectorAngularVelocity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A4BB1049-215B-4FF3-B9FE-8F894D6CF9C9}", IAgCrdnVectorAngularVelocity)
 agcls.AgTypeNameMap["IAgCrdnVectorAngularVelocity"] = IAgCrdnVectorAngularVelocity
-__all__.append("IAgCrdnVectorAngularVelocity")
 
 class IAgCrdnVectorConing(object):
     """Vector created by revolving the Reference vector around the About vector with the specified rate."""
@@ -21361,7 +21426,6 @@ class IAgCrdnVectorConing(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3CA2F9EC-F108-4F3B-9E51-48B87685C3A4}", IAgCrdnVectorConing)
 agcls.AgTypeNameMap["IAgCrdnVectorConing"] = IAgCrdnVectorConing
-__all__.append("IAgCrdnVectorConing")
 
 class IAgCrdnVectorCross(object):
     """The vector cross product of two vectors."""
@@ -21447,7 +21511,6 @@ class IAgCrdnVectorCross(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F695FE24-7AE1-4935-837F-D7106A3C99A4}", IAgCrdnVectorCross)
 agcls.AgTypeNameMap["IAgCrdnVectorCross"] = IAgCrdnVectorCross
-__all__.append("IAgCrdnVectorCross")
 
 class IAgCrdnVectorCustomScript(object):
     """Customized vector components defined with respect to reference axes."""
@@ -21524,7 +21587,6 @@ class IAgCrdnVectorCustomScript(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{66756C64-795C-4E24-9D6A-E560851BBDE0}", IAgCrdnVectorCustomScript)
 agcls.AgTypeNameMap["IAgCrdnVectorCustomScript"] = IAgCrdnVectorCustomScript
-__all__.append("IAgCrdnVectorCustomScript")
 
 class IAgCrdnVectorDerivative(object):
     """A vector derivative of a vector computed with respect to specified axes."""
@@ -21610,7 +21672,6 @@ class IAgCrdnVectorDerivative(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4D7F4E0C-F02E-4CBF-B142-D88706C8D2C7}", IAgCrdnVectorDerivative)
 agcls.AgTypeNameMap["IAgCrdnVectorDerivative"] = IAgCrdnVectorDerivative
-__all__.append("IAgCrdnVectorDerivative")
 
 class IAgCrdnVectorDisplacement(object):
     """Vector defined by its start and end points."""
@@ -21721,7 +21782,6 @@ class IAgCrdnVectorDisplacement(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{457E8D69-0F1F-4C02-A9D6-F48F86F63853}", IAgCrdnVectorDisplacement)
 agcls.AgTypeNameMap["IAgCrdnVectorDisplacement"] = IAgCrdnVectorDisplacement
-__all__.append("IAgCrdnVectorDisplacement")
 
 class IAgCrdnVectorTwoPlanesIntersection(object):
     """Defined along the intersection of two planes."""
@@ -21775,7 +21835,6 @@ class IAgCrdnVectorTwoPlanesIntersection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2A58B245-6CF9-4788-9F4E-2E6F98F027F9}", IAgCrdnVectorTwoPlanesIntersection)
 agcls.AgTypeNameMap["IAgCrdnVectorTwoPlanesIntersection"] = IAgCrdnVectorTwoPlanesIntersection
-__all__.append("IAgCrdnVectorTwoPlanesIntersection")
 
 class IAgCrdnVectorModelAttach(object):
     """Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."""
@@ -21827,7 +21886,6 @@ class IAgCrdnVectorModelAttach(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C4CCEE5C-B053-413F-8456-6A43720BD314}", IAgCrdnVectorModelAttach)
 agcls.AgTypeNameMap["IAgCrdnVectorModelAttach"] = IAgCrdnVectorModelAttach
-__all__.append("IAgCrdnVectorModelAttach")
 
 class IAgCrdnVectorProjection(object):
     """A projection of a vector computed with respect to a reference plane."""
@@ -21881,7 +21939,6 @@ class IAgCrdnVectorProjection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2050D921-A98C-408C-8170-FDBB23FEA6E5}", IAgCrdnVectorProjection)
 agcls.AgTypeNameMap["IAgCrdnVectorProjection"] = IAgCrdnVectorProjection
-__all__.append("IAgCrdnVectorProjection")
 
 class IAgCrdnVectorScaled(object):
     """Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it."""
@@ -21958,7 +22015,6 @@ class IAgCrdnVectorScaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7D89412E-17A8-43D2-9153-58F45E7072F6}", IAgCrdnVectorScaled)
 agcls.AgTypeNameMap["IAgCrdnVectorScaled"] = IAgCrdnVectorScaled
-__all__.append("IAgCrdnVectorScaled")
 
 class IAgCrdnVectorEccentricity(object):
     """A vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."""
@@ -22028,7 +22084,6 @@ class IAgCrdnVectorEccentricity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4DD01FAD-E77E-45BE-9DDD-0468A3B45FB0}", IAgCrdnVectorEccentricity)
 agcls.AgTypeNameMap["IAgCrdnVectorEccentricity"] = IAgCrdnVectorEccentricity
-__all__.append("IAgCrdnVectorEccentricity")
 
 class IAgCrdnVectorFixedInAxes(object):
     """Vector fixed in the reference axes using the selected coordinate type."""
@@ -22082,7 +22137,6 @@ class IAgCrdnVectorFixedInAxes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{912ECDDB-B23C-4B7A-A173-AC22170DA343}", IAgCrdnVectorFixedInAxes)
 agcls.AgTypeNameMap["IAgCrdnVectorFixedInAxes"] = IAgCrdnVectorFixedInAxes
-__all__.append("IAgCrdnVectorFixedInAxes")
 
 class IAgCrdnVectorLineOfNodes(object):
     """Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."""
@@ -22136,7 +22190,6 @@ class IAgCrdnVectorLineOfNodes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DC23EB21-198C-4E01-9898-D565E937AFF1}", IAgCrdnVectorLineOfNodes)
 agcls.AgTypeNameMap["IAgCrdnVectorLineOfNodes"] = IAgCrdnVectorLineOfNodes
-__all__.append("IAgCrdnVectorLineOfNodes")
 
 class IAgCrdnVectorOrbitAngularMomentum(object):
     """Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
@@ -22206,7 +22259,6 @@ class IAgCrdnVectorOrbitAngularMomentum(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{22C8270A-7B36-40D7-9EC5-44FED3DEE541}", IAgCrdnVectorOrbitAngularMomentum)
 agcls.AgTypeNameMap["IAgCrdnVectorOrbitAngularMomentum"] = IAgCrdnVectorOrbitAngularMomentum
-__all__.append("IAgCrdnVectorOrbitAngularMomentum")
 
 class IAgCrdnVectorOrbitNormal(object):
     """Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
@@ -22276,7 +22328,6 @@ class IAgCrdnVectorOrbitNormal(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{296D4695-53FE-40B7-BA3E-41A3C04A805F}", IAgCrdnVectorOrbitNormal)
 agcls.AgTypeNameMap["IAgCrdnVectorOrbitNormal"] = IAgCrdnVectorOrbitNormal
-__all__.append("IAgCrdnVectorOrbitNormal")
 
 class IAgCrdnVectorPeriapsis(object):
     """Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."""
@@ -22346,7 +22397,6 @@ class IAgCrdnVectorPeriapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{83BA8CAD-1273-4B77-9EF2-9E049D9571D6}", IAgCrdnVectorPeriapsis)
 agcls.AgTypeNameMap["IAgCrdnVectorPeriapsis"] = IAgCrdnVectorPeriapsis
-__all__.append("IAgCrdnVectorPeriapsis")
 
 class IAgCrdnVectorReflection(object):
     """A vector (incident vector) reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."""
@@ -22448,7 +22498,6 @@ class IAgCrdnVectorReflection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AF054174-278A-41E6-B8FA-0FC48E19A8BC}", IAgCrdnVectorReflection)
 agcls.AgTypeNameMap["IAgCrdnVectorReflection"] = IAgCrdnVectorReflection
-__all__.append("IAgCrdnVectorReflection")
 
 class IAgCrdnVectorRotationVector(object):
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
@@ -22518,7 +22567,6 @@ class IAgCrdnVectorRotationVector(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2dc152fa-f029-4bc6-bc47-f27d92219a32}", IAgCrdnVectorRotationVector)
 agcls.AgTypeNameMap["IAgCrdnVectorRotationVector"] = IAgCrdnVectorRotationVector
-__all__.append("IAgCrdnVectorRotationVector")
 
 class IAgCrdnVectorDirectionToStar(object):
     """Defined with respect to a star object. For a star object to be available, you must first create one."""
@@ -22570,7 +22618,6 @@ class IAgCrdnVectorDirectionToStar(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5F3A0E54-65A6-42E5-85E2-6F1B19D2F4AC}", IAgCrdnVectorDirectionToStar)
 agcls.AgTypeNameMap["IAgCrdnVectorDirectionToStar"] = IAgCrdnVectorDirectionToStar
-__all__.append("IAgCrdnVectorDirectionToStar")
 
 class IAgCrdnVectorFixedAtTimeInstant(object):
     """Vector fixed relative to reference axes based on another vector evaluated at specified time instant."""
@@ -22654,7 +22701,6 @@ class IAgCrdnVectorFixedAtTimeInstant(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B35CE60F-7CC5-4289-9052-2203B609087E}", IAgCrdnVectorFixedAtTimeInstant)
 agcls.AgTypeNameMap["IAgCrdnVectorFixedAtTimeInstant"] = IAgCrdnVectorFixedAtTimeInstant
-__all__.append("IAgCrdnVectorFixedAtTimeInstant")
 
 class IAgCrdnVectorLinearCombination(object):
     """Linear combination of two input vectors."""
@@ -22818,7 +22864,6 @@ class IAgCrdnVectorLinearCombination(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3F42BCB8-0F59-41C8-9E8E-48E6C773A8DC}", IAgCrdnVectorLinearCombination)
 agcls.AgTypeNameMap["IAgCrdnVectorLinearCombination"] = IAgCrdnVectorLinearCombination
-__all__.append("IAgCrdnVectorLinearCombination")
 
 class IAgCrdnVectorProjectAlongVector(object):
     """A projection of a source vector in the direction of another vector."""
@@ -22886,7 +22931,6 @@ class IAgCrdnVectorProjectAlongVector(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9D0CA6C5-1A1F-4FDE-82EA-6948ADA3072F}", IAgCrdnVectorProjectAlongVector)
 agcls.AgTypeNameMap["IAgCrdnVectorProjectAlongVector"] = IAgCrdnVectorProjectAlongVector
-__all__.append("IAgCrdnVectorProjectAlongVector")
 
 class IAgCrdnVectorScalarLinearCombination(object):
     """Linear combination of two input vectors using scalars."""
@@ -23114,7 +23158,6 @@ class IAgCrdnVectorScalarLinearCombination(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0886A066-8650-4C8D-B234-14D28A175A78}", IAgCrdnVectorScalarLinearCombination)
 agcls.AgTypeNameMap["IAgCrdnVectorScalarLinearCombination"] = IAgCrdnVectorScalarLinearCombination
-__all__.append("IAgCrdnVectorScalarLinearCombination")
 
 class IAgCrdnVectorScalarScaled(object):
     """Scaled version of the input vector using scalar."""
@@ -23246,7 +23289,6 @@ class IAgCrdnVectorScalarScaled(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{306C3852-C3E9-43EB-9371-1B9540B52097}", IAgCrdnVectorScalarScaled)
 agcls.AgTypeNameMap["IAgCrdnVectorScalarScaled"] = IAgCrdnVectorScalarScaled
-__all__.append("IAgCrdnVectorScalarScaled")
 
 class IAgCrdnVectorVelocityAcceleration(object):
     """Velocity vector of a point in a coordinate system."""
@@ -23330,7 +23372,6 @@ class IAgCrdnVectorVelocityAcceleration(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{265D93E1-E454-4A9A-A7C3-FF1EEB0BD9F2}", IAgCrdnVectorVelocityAcceleration)
 agcls.AgTypeNameMap["IAgCrdnVectorVelocityAcceleration"] = IAgCrdnVectorVelocityAcceleration
-__all__.append("IAgCrdnVectorVelocityAcceleration")
 
 class IAgCrdnVectorPlugin(object):
     """A VGT vector plugin."""
@@ -23416,7 +23457,6 @@ class IAgCrdnVectorPlugin(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F889F617-059E-4BC9-9000-206091889FEB}", IAgCrdnVectorPlugin)
 agcls.AgTypeNameMap["IAgCrdnVectorPlugin"] = IAgCrdnVectorPlugin
-__all__.append("IAgCrdnVectorPlugin")
 
 class IAgCrdnVectorDispSurface(object):
     """Displacement between origin and destination points using surface distance and altitude difference."""
@@ -23516,7 +23556,6 @@ class IAgCrdnVectorDispSurface(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{68f34fc6-fbe1-41e8-84d9-b1b0c8338f2b}", IAgCrdnVectorDispSurface)
 agcls.AgTypeNameMap["IAgCrdnVectorDispSurface"] = IAgCrdnVectorDispSurface
-__all__.append("IAgCrdnVectorDispSurface")
 
 class IAgCrdnVectorFactory(object):
     """A Factory object to create vectors."""
@@ -23614,7 +23653,6 @@ class IAgCrdnVectorFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{09F7F253-392A-44D9-9701-51CC0110C033}", IAgCrdnVectorFactory)
 agcls.AgTypeNameMap["IAgCrdnVectorFactory"] = IAgCrdnVectorFactory
-__all__.append("IAgCrdnVectorFactory")
 
 class IAgCrdnAxesFactory(object):
     """A Factory object to create axes."""
@@ -23690,7 +23728,6 @@ class IAgCrdnAxesFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BDE82D7E-6D8B-4BD7-ADC7-441525EA888B}", IAgCrdnAxesFactory)
 agcls.AgTypeNameMap["IAgCrdnAxesFactory"] = IAgCrdnAxesFactory
-__all__.append("IAgCrdnAxesFactory")
 
 class IAgCrdnSystemFactory(object):
     """A Factory interface to create VGT systems."""
@@ -23746,7 +23783,6 @@ class IAgCrdnSystemFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C4D5ACA9-9F29-4AFF-A7BA-3CBA24BBC059}", IAgCrdnSystemFactory)
 agcls.AgTypeNameMap["IAgCrdnSystemFactory"] = IAgCrdnSystemFactory
-__all__.append("IAgCrdnSystemFactory")
 
 class IAgCrdnPointFactory(object):
     """A Factory object to create points."""
@@ -23836,7 +23872,6 @@ class IAgCrdnPointFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{18FA11DA-BC93-4467-B53F-4D894739C3A3}", IAgCrdnPointFactory)
 agcls.AgTypeNameMap["IAgCrdnPointFactory"] = IAgCrdnPointFactory
-__all__.append("IAgCrdnPointFactory")
 
 class IAgCrdnPlaneFactory(object):
     """A Factory object to create VGT planes."""
@@ -23892,7 +23927,6 @@ class IAgCrdnPlaneFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CFA2BE32-47F7-4C7D-87AA-44E95B0191EB}", IAgCrdnPlaneFactory)
 agcls.AgTypeNameMap["IAgCrdnPlaneFactory"] = IAgCrdnPlaneFactory
-__all__.append("IAgCrdnPlaneFactory")
 
 class IAgCrdnAngleFactory(object):
     """A Factory object to create angles."""
@@ -23948,12 +23982,11 @@ class IAgCrdnAngleFactory(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{703883F3-9716-4D37-8930-184BECDE1461}", IAgCrdnAngleFactory)
 agcls.AgTypeNameMap["IAgCrdnAngleFactory"] = IAgCrdnAngleFactory
-__all__.append("IAgCrdnAngleFactory")
 
 class IAgCrdnVectorGroup(object):
     """Access or create VGT vectors associated with an object or a central body."""
     _uuid = "{4412F0DD-2138-4653-8D20-9B4A0CA450D4}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -23964,6 +23997,8 @@ class IAgCrdnVectorGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnVectorGroup._uuid))
             if pUnk is not None:
@@ -23983,6 +24018,8 @@ class IAgCrdnVectorGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnVectorGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -24054,18 +24091,31 @@ class IAgCrdnVectorGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnVector":
+        """Retrieves a vector from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnVector":
+        """Retrieves a vector from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{4412F0DD-2138-4653-8D20-9B4A0CA450D4}", IAgCrdnVectorGroup)
 agcls.AgTypeNameMap["IAgCrdnVectorGroup"] = IAgCrdnVectorGroup
-__all__.append("IAgCrdnVectorGroup")
 
 class IAgCrdnPointGroup(object):
     """Access or create VGT points associated with an object or a central body."""
     _uuid = "{6FB1415A-EC77-476F-B650-CC6813BE740C}"
-    _num_methods = 8
+    _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -24077,6 +24127,8 @@ class IAgCrdnPointGroup(object):
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
         self.__dict__["_GetCommonTasks"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnPointGroup._uuid))
             if pUnk is not None:
@@ -24097,6 +24149,8 @@ class IAgCrdnPointGroup(object):
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
         self.__dict__["_GetCommonTasks"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointGroup, vtable_offset_local+8, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointGroup, vtable_offset_local+9, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPointGroup, vtable_offset_local+10, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -24175,18 +24229,31 @@ class IAgCrdnPointGroup(object):
             agcls.evaluate_hresult(self.__dict__["_GetCommonTasks"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnPoint":
+        """Retrieves a point from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnPoint":
+        """Retrieves a point from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{6FB1415A-EC77-476F-B650-CC6813BE740C}", IAgCrdnPointGroup)
 agcls.AgTypeNameMap["IAgCrdnPointGroup"] = IAgCrdnPointGroup
-__all__.append("IAgCrdnPointGroup")
 
 class IAgCrdnAngleGroup(object):
     """Access or create VGT angles associated with an object or a central body."""
     _uuid = "{C025A1BA-F856-4B26-9134-BBCC785B6C45}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -24197,6 +24264,8 @@ class IAgCrdnAngleGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnAngleGroup._uuid))
             if pUnk is not None:
@@ -24216,6 +24285,8 @@ class IAgCrdnAngleGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAngleGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAngleGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAngleGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAngleGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAngleGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -24287,18 +24358,31 @@ class IAgCrdnAngleGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnAngle":
+        """Retrieves an angle from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnAngle":
+        """Retrieves an angle from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{C025A1BA-F856-4B26-9134-BBCC785B6C45}", IAgCrdnAngleGroup)
 agcls.AgTypeNameMap["IAgCrdnAngleGroup"] = IAgCrdnAngleGroup
-__all__.append("IAgCrdnAngleGroup")
 
 class IAgCrdnAxesGroup(object):
     """Access or create VGT axes associated with an object or a central body."""
     _uuid = "{21C67E72-992F-481F-B77F-1DFC43B4B705}"
-    _num_methods = 8
+    _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -24310,6 +24394,8 @@ class IAgCrdnAxesGroup(object):
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
         self.__dict__["_GetCommonTasks"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnAxesGroup._uuid))
             if pUnk is not None:
@@ -24330,6 +24416,8 @@ class IAgCrdnAxesGroup(object):
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
         self.__dict__["_GetCommonTasks"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesGroup, vtable_offset_local+8, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesGroup, vtable_offset_local+9, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnAxesGroup, vtable_offset_local+10, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -24408,18 +24496,31 @@ class IAgCrdnAxesGroup(object):
             agcls.evaluate_hresult(self.__dict__["_GetCommonTasks"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnAxes":
+        """Retrieves an axes from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnAxes":
+        """Retrieves an axes from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{21C67E72-992F-481F-B77F-1DFC43B4B705}", IAgCrdnAxesGroup)
 agcls.AgTypeNameMap["IAgCrdnAxesGroup"] = IAgCrdnAxesGroup
-__all__.append("IAgCrdnAxesGroup")
 
 class IAgCrdnPlaneGroup(object):
     """Represents a single entry point to manipulate VGT Planes associated with an object."""
     _uuid = "{1F297A6D-4368-4650-9DA8-CDFD1438C6E2}"
-    _num_methods = 7
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -24430,6 +24531,8 @@ class IAgCrdnPlaneGroup(object):
         self.__dict__["_GetFactory"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnPlaneGroup._uuid))
             if pUnk is not None:
@@ -24449,6 +24552,8 @@ class IAgCrdnPlaneGroup(object):
         self.__dict__["_GetFactory"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPlaneGroup, vtable_offset_local+5, POINTER(agcom.PVOID))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPlaneGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPlaneGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPlaneGroup, vtable_offset_local+8, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnPlaneGroup, vtable_offset_local+9, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -24520,18 +24625,31 @@ class IAgCrdnPlaneGroup(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnPlane":
+        """Retrieves a plane from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnPlane":
+        """Retrieves a plane from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{1F297A6D-4368-4650-9DA8-CDFD1438C6E2}", IAgCrdnPlaneGroup)
 agcls.AgTypeNameMap["IAgCrdnPlaneGroup"] = IAgCrdnPlaneGroup
-__all__.append("IAgCrdnPlaneGroup")
 
 class IAgCrdnSystemGroup(object):
     """Access or create VGT systems associated with an object or a central body."""
     _uuid = "{05FF6322-1363-4B66-933E-03EA158B7523}"
-    _num_methods = 8
+    _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -24543,6 +24661,8 @@ class IAgCrdnSystemGroup(object):
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
         self.__dict__["_GetCommonTasks"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnSystemGroup._uuid))
             if pUnk is not None:
@@ -24563,6 +24683,8 @@ class IAgCrdnSystemGroup(object):
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnSystemGroup, vtable_offset_local+6, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnSystemGroup, vtable_offset_local+7, POINTER(agcom.PVOID))
         self.__dict__["_GetCommonTasks"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnSystemGroup, vtable_offset_local+8, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnSystemGroup, vtable_offset_local+9, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnSystemGroup, vtable_offset_local+10, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -24641,13 +24763,26 @@ class IAgCrdnSystemGroup(object):
             agcls.evaluate_hresult(self.__dict__["_GetCommonTasks"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdnSystem":
+        """Retrieve a system from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdnSystem":
+        """Retrieve a system from the collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{05FF6322-1363-4B66-933E-03EA158B7523}", IAgCrdnSystemGroup)
 agcls.AgTypeNameMap["IAgCrdnSystemGroup"] = IAgCrdnSystemGroup
-__all__.append("IAgCrdnSystemGroup")
 
 class IAgCrdnProvider(object):
     """Allows accessing existing Vector Geometry Tool components."""
@@ -24881,7 +25016,6 @@ class IAgCrdnProvider(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{48B9F0CD-DFBA-4A82-BB30-E9932E1E7266}", IAgCrdnProvider)
 agcls.AgTypeNameMap["IAgCrdnProvider"] = IAgCrdnProvider
-__all__.append("IAgCrdnProvider")
 
 class IAgCrdnRoot(object):
     """Represents a VGT root object."""
@@ -24953,7 +25087,6 @@ class IAgCrdnRoot(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FEF8B20D-5EEB-4299-8775-038EE30AA30B}", IAgCrdnRoot)
 agcls.AgTypeNameMap["IAgCrdnRoot"] = IAgCrdnRoot
-__all__.append("IAgCrdnRoot")
 
 class IAgCrdnWellKnownEarthSystems(object):
     """Well-known Earth's coordinate systems."""
@@ -25016,7 +25149,6 @@ class IAgCrdnWellKnownEarthSystems(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{230A8949-FB8F-415E-A786-5EED50AEB11B}", IAgCrdnWellKnownEarthSystems)
 agcls.AgTypeNameMap["IAgCrdnWellKnownEarthSystems"] = IAgCrdnWellKnownEarthSystems
-__all__.append("IAgCrdnWellKnownEarthSystems")
 
 class IAgCrdnWellKnownEarthAxes(object):
     """Well-known Earth's axes."""
@@ -25088,7 +25220,6 @@ class IAgCrdnWellKnownEarthAxes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BD3F561B-9118-4C17-A5A8-95DAD82CA2F0}", IAgCrdnWellKnownEarthAxes)
 agcls.AgTypeNameMap["IAgCrdnWellKnownEarthAxes"] = IAgCrdnWellKnownEarthAxes
-__all__.append("IAgCrdnWellKnownEarthAxes")
 
 class IAgCrdnWellKnownSunSystems(object):
     """The Sun's well-known coordinate reference systems."""
@@ -25169,7 +25300,6 @@ class IAgCrdnWellKnownSunSystems(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B3EE0E1F-5BB3-4387-962B-91C84C5C25B7}", IAgCrdnWellKnownSunSystems)
 agcls.AgTypeNameMap["IAgCrdnWellKnownSunSystems"] = IAgCrdnWellKnownSunSystems
-__all__.append("IAgCrdnWellKnownSunSystems")
 
 class IAgCrdnWellKnownSunAxes(object):
     """Well-known Sun's axes."""
@@ -25241,7 +25371,6 @@ class IAgCrdnWellKnownSunAxes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5ADEDD34-CCAA-40B8-87F2-DA20497670BA}", IAgCrdnWellKnownSunAxes)
 agcls.AgTypeNameMap["IAgCrdnWellKnownSunAxes"] = IAgCrdnWellKnownSunAxes
-__all__.append("IAgCrdnWellKnownSunAxes")
 
 class IAgCrdnWellKnownSystems(object):
     """Well-known coordinate reference systems."""
@@ -25295,7 +25424,6 @@ class IAgCrdnWellKnownSystems(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D93C6B6F-D457-4D20-BA7B-960773E3652B}", IAgCrdnWellKnownSystems)
 agcls.AgTypeNameMap["IAgCrdnWellKnownSystems"] = IAgCrdnWellKnownSystems
-__all__.append("IAgCrdnWellKnownSystems")
 
 class IAgCrdnWellKnownAxes(object):
     """Well-known Axes."""
@@ -25349,7 +25477,6 @@ class IAgCrdnWellKnownAxes(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B2546963-CC14-4F18-91DE-7091EBEA34C5}", IAgCrdnWellKnownAxes)
 agcls.AgTypeNameMap["IAgCrdnWellKnownAxes"] = IAgCrdnWellKnownAxes
-__all__.append("IAgCrdnWellKnownAxes")
 
 class IAgCrdnAngleFindAngleResult(object):
     """Contains the results returned with IAgCrdnAngle.FindAngle method."""
@@ -25403,7 +25530,6 @@ class IAgCrdnAngleFindAngleResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0D2774CC-8D38-4C1D-9BE4-A87BE67B58B4}", IAgCrdnAngleFindAngleResult)
 agcls.AgTypeNameMap["IAgCrdnAngleFindAngleResult"] = IAgCrdnAngleFindAngleResult
-__all__.append("IAgCrdnAngleFindAngleResult")
 
 class IAgCrdnAngleFindAngleWithRateResult(object):
     """Contains the results returned with IAgCrdnAngle.FindAngleWithRate method."""
@@ -25466,7 +25592,6 @@ class IAgCrdnAngleFindAngleWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E46570BA-661C-4974-A780-32DFEAFB9630}", IAgCrdnAngleFindAngleWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnAngleFindAngleWithRateResult"] = IAgCrdnAngleFindAngleWithRateResult
-__all__.append("IAgCrdnAngleFindAngleWithRateResult")
 
 class IAgCrdnAngleFindWithRateResult(object):
     """Contains the results returned with IAgCrdnAngle.FindCoordinatesWithRate method."""
@@ -25556,7 +25681,6 @@ class IAgCrdnAngleFindWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C4E80CE7-2E38-4364-96D5-004EE425471D}", IAgCrdnAngleFindWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnAngleFindWithRateResult"] = IAgCrdnAngleFindWithRateResult
-__all__.append("IAgCrdnAngleFindWithRateResult")
 
 class IAgCrdnAngleFindResult(object):
     """Contains the results returned with IAgCrdnAngle.FindCoordinates method."""
@@ -25637,7 +25761,6 @@ class IAgCrdnAngleFindResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{36DD880D-214E-4987-A70A-EA31E7E26B84}", IAgCrdnAngleFindResult)
 agcls.AgTypeNameMap["IAgCrdnAngleFindResult"] = IAgCrdnAngleFindResult
-__all__.append("IAgCrdnAngleFindResult")
 
 class IAgCrdnAxesTransformResult(object):
     """Contains the results returned with IAgCrdnAxes.TransformFrom method."""
@@ -25691,7 +25814,6 @@ class IAgCrdnAxesTransformResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D4EC98BE-0D20-4284-96D0-3C40A3100A06}", IAgCrdnAxesTransformResult)
 agcls.AgTypeNameMap["IAgCrdnAxesTransformResult"] = IAgCrdnAxesTransformResult
-__all__.append("IAgCrdnAxesTransformResult")
 
 class IAgCrdnAxesTransformWithRateResult(object):
     """Contains the results returned with IAgCrdnAxes.TransformFromWithRate method."""
@@ -25754,7 +25876,6 @@ class IAgCrdnAxesTransformWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6434061B-3584-49FF-99C5-2C2D6B385CF1}", IAgCrdnAxesTransformWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnAxesTransformWithRateResult"] = IAgCrdnAxesTransformWithRateResult
-__all__.append("IAgCrdnAxesTransformWithRateResult")
 
 class IAgCrdnPlaneFindInAxesResult(object):
     """Contains the results returned with IAgCrdnPlane.FindInAxes method."""
@@ -25817,7 +25938,6 @@ class IAgCrdnPlaneFindInAxesResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A5CD1D7F-224B-4B19-A149-DAFDA3FF1550}", IAgCrdnPlaneFindInAxesResult)
 agcls.AgTypeNameMap["IAgCrdnPlaneFindInAxesResult"] = IAgCrdnPlaneFindInAxesResult
-__all__.append("IAgCrdnPlaneFindInAxesResult")
 
 class IAgCrdnPlaneFindInAxesWithRateResult(object):
     """Contains the results returned with IAgCrdnPlane.FindInAxesWithRate method."""
@@ -25898,7 +26018,6 @@ class IAgCrdnPlaneFindInAxesWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CD4424A8-28CF-4AE5-8242-480B6625F0EB}", IAgCrdnPlaneFindInAxesWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnPlaneFindInAxesWithRateResult"] = IAgCrdnPlaneFindInAxesWithRateResult
-__all__.append("IAgCrdnPlaneFindInAxesWithRateResult")
 
 class IAgCrdnPlaneFindInSystemResult(object):
     """Contains the results returned with IAgCrdnPlane.FindInSystem method."""
@@ -25970,7 +26089,6 @@ class IAgCrdnPlaneFindInSystemResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{85D16885-3BEB-4590-963B-F1CC8D016097}", IAgCrdnPlaneFindInSystemResult)
 agcls.AgTypeNameMap["IAgCrdnPlaneFindInSystemResult"] = IAgCrdnPlaneFindInSystemResult
-__all__.append("IAgCrdnPlaneFindInSystemResult")
 
 class IAgCrdnPlaneFindInSystemWithRateResult(object):
     """Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method."""
@@ -26069,7 +26187,6 @@ class IAgCrdnPlaneFindInSystemWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{888499CB-4BF7-46A6-A11B-3FFC05EA6804}", IAgCrdnPlaneFindInSystemWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnPlaneFindInSystemWithRateResult"] = IAgCrdnPlaneFindInSystemWithRateResult
-__all__.append("IAgCrdnPlaneFindInSystemWithRateResult")
 
 class IAgCrdnAxesFindInAxesResult(object):
     """Contains the results returned with IAgCrdnAxes.FindInAxes method."""
@@ -26123,7 +26240,6 @@ class IAgCrdnAxesFindInAxesResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{654E97B2-DF6A-4CB1-8EFC-AE3E01F3005A}", IAgCrdnAxesFindInAxesResult)
 agcls.AgTypeNameMap["IAgCrdnAxesFindInAxesResult"] = IAgCrdnAxesFindInAxesResult
-__all__.append("IAgCrdnAxesFindInAxesResult")
 
 class IAgCrdnAxesFindInAxesWithRateResult(object):
     """Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method."""
@@ -26186,7 +26302,6 @@ class IAgCrdnAxesFindInAxesWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{72644DD0-D129-4D7A-8A81-586E86E639BD}", IAgCrdnAxesFindInAxesWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnAxesFindInAxesWithRateResult"] = IAgCrdnAxesFindInAxesWithRateResult
-__all__.append("IAgCrdnAxesFindInAxesWithRateResult")
 
 class IAgCrdnPointLocateInSystemResult(object):
     """Contains the results returned with IAgCrdnPoint.LocateInSystem method."""
@@ -26240,7 +26355,6 @@ class IAgCrdnPointLocateInSystemResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{84453DEC-5D01-4D47-A177-F8A737F0496D}", IAgCrdnPointLocateInSystemResult)
 agcls.AgTypeNameMap["IAgCrdnPointLocateInSystemResult"] = IAgCrdnPointLocateInSystemResult
-__all__.append("IAgCrdnPointLocateInSystemResult")
 
 class IAgCrdnPointLocateInSystemWithRateResult(object):
     """Contains the results returned with IAgCrdnPoint.LocateInSystemWithRate method."""
@@ -26303,7 +26417,6 @@ class IAgCrdnPointLocateInSystemWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6CB1D8DC-42CB-417B-9B80-B7320EEEFC9E}", IAgCrdnPointLocateInSystemWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnPointLocateInSystemWithRateResult"] = IAgCrdnPointLocateInSystemWithRateResult
-__all__.append("IAgCrdnPointLocateInSystemWithRateResult")
 
 class IAgCrdnSystemTransformResult(object):
     """Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods."""
@@ -26357,7 +26470,6 @@ class IAgCrdnSystemTransformResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FE5C3393-E2B9-4DC0-BFA9-0A1377E1692A}", IAgCrdnSystemTransformResult)
 agcls.AgTypeNameMap["IAgCrdnSystemTransformResult"] = IAgCrdnSystemTransformResult
-__all__.append("IAgCrdnSystemTransformResult")
 
 class IAgCrdnSystemTransformWithRateResult(object):
     """Contains the results returned with IAgCrdnSystem.TransformFromWithRate and IAgCrdnSystem.TransformToWithRate methods."""
@@ -26420,7 +26532,6 @@ class IAgCrdnSystemTransformWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A9E92350-230F-45C7-A617-DB684FF89C78}", IAgCrdnSystemTransformWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnSystemTransformWithRateResult"] = IAgCrdnSystemTransformWithRateResult
-__all__.append("IAgCrdnSystemTransformWithRateResult")
 
 class IAgCrdnSystemFindInSystemResult(object):
     """Contains the results returned with IAgCrdnSystem.FindInSystem method."""
@@ -26501,7 +26612,6 @@ class IAgCrdnSystemFindInSystemResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2A97D0CA-38C6-44D9-BCB1-16CCA1C1A25E}", IAgCrdnSystemFindInSystemResult)
 agcls.AgTypeNameMap["IAgCrdnSystemFindInSystemResult"] = IAgCrdnSystemFindInSystemResult
-__all__.append("IAgCrdnSystemFindInSystemResult")
 
 class IAgCrdnVectorFindInAxesResult(object):
     """Contains the results returned with IAgCrdnVector.FindInAxes method."""
@@ -26555,7 +26665,6 @@ class IAgCrdnVectorFindInAxesResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BBCEDAA0-AF02-47A9-A904-0E6B456A4D99}", IAgCrdnVectorFindInAxesResult)
 agcls.AgTypeNameMap["IAgCrdnVectorFindInAxesResult"] = IAgCrdnVectorFindInAxesResult
-__all__.append("IAgCrdnVectorFindInAxesResult")
 
 class IAgCrdnVectorFindInAxesWithRateResult(object):
     """Contains the results returned with IAgCrdnVector.FindInAxesWithRate method."""
@@ -26618,7 +26727,6 @@ class IAgCrdnVectorFindInAxesWithRateResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A5EB9B7C-559C-4ABB-839E-47109CDC8446}", IAgCrdnVectorFindInAxesWithRateResult)
 agcls.AgTypeNameMap["IAgCrdnVectorFindInAxesWithRateResult"] = IAgCrdnVectorFindInAxesWithRateResult
-__all__.append("IAgCrdnVectorFindInAxesWithRateResult")
 
 class IAgCrdnMethodCallResult(object):
     """Instances of the interface are used to return the result of a computation."""
@@ -26663,7 +26771,6 @@ class IAgCrdnMethodCallResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5B3BE0BF-AFA2-4077-954F-F11A5B43F086}", IAgCrdnMethodCallResult)
 agcls.AgTypeNameMap["IAgCrdnMethodCallResult"] = IAgCrdnMethodCallResult
-__all__.append("IAgCrdnMethodCallResult")
 
 class IAgCrdnCentralBody(object):
     """The interface represents a central body."""
@@ -26708,7 +26815,6 @@ class IAgCrdnCentralBody(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8742150E-1663-4DCC-A442-278479FF93DC}", IAgCrdnCentralBody)
 agcls.AgTypeNameMap["IAgCrdnCentralBody"] = IAgCrdnCentralBody
-__all__.append("IAgCrdnCentralBody")
 
 class IAgCrdnCentralBodyRefTo(object):
     """Represents a reference to a VGT CentralBody."""
@@ -26766,7 +26872,6 @@ class IAgCrdnCentralBodyRefTo(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{40596A74-4E5F-4406-85FF-70FA79893BFC}", IAgCrdnCentralBodyRefTo)
 agcls.AgTypeNameMap["IAgCrdnCentralBodyRefTo"] = IAgCrdnCentralBodyRefTo
-__all__.append("IAgCrdnCentralBodyRefTo")
 
 class IAgCrdnCentralBodyCollection(object):
     """A collection of central body names."""
@@ -26860,12 +26965,11 @@ class IAgCrdnCentralBodyCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FB32C9FA-327D-4AF9-9330-7DE8854F827E}", IAgCrdnCentralBodyCollection)
 agcls.AgTypeNameMap["IAgCrdnCentralBodyCollection"] = IAgCrdnCentralBodyCollection
-__all__.append("IAgCrdnCentralBodyCollection")
 
 class IAgCrdnCollection(object):
     """A collection of VGT objects."""
     _uuid = "{F4232BB4-7009-491A-9F2D-2B520B3A9BB3}"
-    _num_methods = 4
+    _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -26873,6 +26977,8 @@ class IAgCrdnCollection(object):
         self.__dict__["_GetCount"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnCollection._uuid))
             if pUnk is not None:
@@ -26889,6 +26995,8 @@ class IAgCrdnCollection(object):
         self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCollection, vtable_offset_local+2, POINTER(agcom.LONG))
         self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCollection, vtable_offset_local+3, agcom.VARIANT, POINTER(agcom.PVOID))
         self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCollection, vtable_offset_local+4, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCollection, vtable_offset_local+5, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnCollection, vtable_offset_local+6, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -26941,13 +27049,26 @@ class IAgCrdnCollection(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgCrdn":
+        """Retrieves an item from the crdn collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, name:str) -> "IAgCrdn":
+        """Retrieves an item from the crdn collection by name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{F4232BB4-7009-491A-9F2D-2B520B3A9BB3}", IAgCrdnCollection)
 agcls.AgTypeNameMap["IAgCrdnCollection"] = IAgCrdnCollection
-__all__.append("IAgCrdnCollection")
 
 class IAgCrdnPointSamplingResult(object):
     """Contains tabulated positions and velocities of a point created by Sample method."""
@@ -27001,7 +27122,6 @@ class IAgCrdnPointSamplingResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5131DB47-EFEA-4021-BEC5-DD13A73D9917}", IAgCrdnPointSamplingResult)
 agcls.AgTypeNameMap["IAgCrdnPointSamplingResult"] = IAgCrdnPointSamplingResult
-__all__.append("IAgCrdnPointSamplingResult")
 
 class IAgCrdnPointSamplingInterval(object):
     """The interface represents an interval with the time, position and velocity arrays."""
@@ -27082,7 +27202,6 @@ class IAgCrdnPointSamplingInterval(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8FDCDDF2-3B42-4D98-8A94-ACB3805F2632}", IAgCrdnPointSamplingInterval)
 agcls.AgTypeNameMap["IAgCrdnPointSamplingInterval"] = IAgCrdnPointSamplingInterval
-__all__.append("IAgCrdnPointSamplingInterval")
 
 class IAgCrdnPointSamplingIntervalCollection(object):
     """A collection of intervals where each interval contains the time, position and velocity arrays."""
@@ -27160,7 +27279,6 @@ class IAgCrdnPointSamplingIntervalCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B8A5C3E5-C76E-4CBF-BAFE-1582016C3908}", IAgCrdnPointSamplingIntervalCollection)
 agcls.AgTypeNameMap["IAgCrdnPointSamplingIntervalCollection"] = IAgCrdnPointSamplingIntervalCollection
-__all__.append("IAgCrdnPointSamplingIntervalCollection")
 
 class IAgCrdnAxesSamplingResult(object):
     """Contains tabulated orientations and angular velocities of axes created by Sample method."""
@@ -27214,7 +27332,6 @@ class IAgCrdnAxesSamplingResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F01C2A06-2998-406C-9898-CB60F5711EF1}", IAgCrdnAxesSamplingResult)
 agcls.AgTypeNameMap["IAgCrdnAxesSamplingResult"] = IAgCrdnAxesSamplingResult
-__all__.append("IAgCrdnAxesSamplingResult")
 
 class IAgCrdnAxesSamplingInterval(object):
     """The interface represents an interval with the time, orientation and velocity arrays."""
@@ -27295,7 +27412,6 @@ class IAgCrdnAxesSamplingInterval(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5BF49282-A56A-48F1-85C9-92CF71C803D0}", IAgCrdnAxesSamplingInterval)
 agcls.AgTypeNameMap["IAgCrdnAxesSamplingInterval"] = IAgCrdnAxesSamplingInterval
-__all__.append("IAgCrdnAxesSamplingInterval")
 
 class IAgCrdnAxesSamplingIntervalCollection(object):
     """A collection of intervals where each interval contains the time, orientation and velocity arrays."""
@@ -27373,7 +27489,6 @@ class IAgCrdnAxesSamplingIntervalCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F593657B-35A4-4F40-B697-4D14E66195AC}", IAgCrdnAxesSamplingIntervalCollection)
 agcls.AgTypeNameMap["IAgCrdnAxesSamplingIntervalCollection"] = IAgCrdnAxesSamplingIntervalCollection
-__all__.append("IAgCrdnAxesSamplingIntervalCollection")
 
 
 
@@ -27396,7 +27511,6 @@ class AgCrdnEvaluateResult(IAgCrdnEvaluateResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEvaluateResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{94FD0DFF-1DD0-4CA5-A7DB-1CB9CA3E3C93}", AgCrdnEvaluateResult)
-__all__.append("AgCrdnEvaluateResult")
 
 
 class AgCrdnEvaluateWithRateResult(IAgCrdnEvaluateWithRateResult):
@@ -27418,7 +27532,6 @@ class AgCrdnEvaluateWithRateResult(IAgCrdnEvaluateWithRateResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEvaluateWithRateResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{832CA139-8ECF-4E95-AB67-1BB7713CF9FC}", AgCrdnEvaluateWithRateResult)
-__all__.append("AgCrdnEvaluateWithRateResult")
 
 
 class AgCrdnEventIntervalResult(IAgCrdnEventIntervalResult):
@@ -27440,7 +27553,6 @@ class AgCrdnEventIntervalResult(IAgCrdnEventIntervalResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ACE6C28C-4664-4B7F-8736-91F55C7962A6}", AgCrdnEventIntervalResult)
-__all__.append("AgCrdnEventIntervalResult")
 
 
 class AgCrdnEventFindOccurrenceResult(IAgCrdnEventFindOccurrenceResult):
@@ -27462,7 +27574,6 @@ class AgCrdnEventFindOccurrenceResult(IAgCrdnEventFindOccurrenceResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventFindOccurrenceResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6A432F58-4CAB-4448-8540-CBBAA9C2B9F0}", AgCrdnEventFindOccurrenceResult)
-__all__.append("AgCrdnEventFindOccurrenceResult")
 
 
 class AgCrdnFindTimesResult(IAgCrdnFindTimesResult):
@@ -27484,7 +27595,6 @@ class AgCrdnFindTimesResult(IAgCrdnFindTimesResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnFindTimesResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AF246FCF-7FA3-4CD6-878B-E9AC267F017A}", AgCrdnFindTimesResult)
-__all__.append("AgCrdnFindTimesResult")
 
 
 class AgCrdnIntervalsVectorResult(IAgCrdnIntervalsVectorResult):
@@ -27506,7 +27616,6 @@ class AgCrdnIntervalsVectorResult(IAgCrdnIntervalsVectorResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnIntervalsVectorResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{233B8EB4-0B6A-485F-BACB-C678798FDA21}", AgCrdnIntervalsVectorResult)
-__all__.append("AgCrdnIntervalsVectorResult")
 
 
 class AgCrdnEventIntervalCollectionOccurredResult(IAgCrdnEventIntervalCollectionOccurredResult):
@@ -27528,7 +27637,6 @@ class AgCrdnEventIntervalCollectionOccurredResult(IAgCrdnEventIntervalCollection
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalCollectionOccurredResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D2BD8F6-406D-4BA0-B5CF-C81711C7C344}", AgCrdnEventIntervalCollectionOccurredResult)
-__all__.append("AgCrdnEventIntervalCollectionOccurredResult")
 
 
 class AgCrdnIntervalListResult(IAgCrdnIntervalListResult):
@@ -27550,7 +27658,6 @@ class AgCrdnIntervalListResult(IAgCrdnIntervalListResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnIntervalListResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C24C2EE4-3F75-41E8-BDC3-FE71E863921F}", AgCrdnIntervalListResult)
-__all__.append("AgCrdnIntervalListResult")
 
 
 class AgCrdnIntervalVectorCollection(IAgCrdnIntervalVectorCollection):
@@ -27572,7 +27679,6 @@ class AgCrdnIntervalVectorCollection(IAgCrdnIntervalVectorCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnIntervalVectorCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{99AAE1D2-3C5D-4836-A1BD-6EAD38FC9BC5}", AgCrdnIntervalVectorCollection)
-__all__.append("AgCrdnIntervalVectorCollection")
 
 
 class AgCrdnEventGroup(IAgCrdnEventGroup):
@@ -27594,7 +27700,6 @@ class AgCrdnEventGroup(IAgCrdnEventGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D5D83181-A954-4FA9-886E-A917F135C974}", AgCrdnEventGroup)
-__all__.append("AgCrdnEventGroup")
 
 
 class AgCrdnEventIntervalGroup(IAgCrdnEventIntervalGroup):
@@ -27616,7 +27721,6 @@ class AgCrdnEventIntervalGroup(IAgCrdnEventIntervalGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{48C9D4D2-2713-4063-8BB1-D6F2E72E1025}", AgCrdnEventIntervalGroup)
-__all__.append("AgCrdnEventIntervalGroup")
 
 
 class AgCrdnEventIntervalListGroup(IAgCrdnEventIntervalListGroup):
@@ -27638,7 +27742,6 @@ class AgCrdnEventIntervalListGroup(IAgCrdnEventIntervalListGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B2FDEBA-A2B9-4568-8F48-469F604DB966}", AgCrdnEventIntervalListGroup)
-__all__.append("AgCrdnEventIntervalListGroup")
 
 
 class AgCrdnEventArrayGroup(IAgCrdnEventArrayGroup):
@@ -27660,7 +27763,6 @@ class AgCrdnEventArrayGroup(IAgCrdnEventArrayGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{365C4A6E-9C2B-4883-96C6-CF689BCC2943}", AgCrdnEventArrayGroup)
-__all__.append("AgCrdnEventArrayGroup")
 
 
 class AgCrdnCalcScalarGroup(IAgCrdnCalcScalarGroup):
@@ -27682,7 +27784,6 @@ class AgCrdnCalcScalarGroup(IAgCrdnCalcScalarGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DFAD8468-4480-460F-993D-74FFADB567B3}", AgCrdnCalcScalarGroup)
-__all__.append("AgCrdnCalcScalarGroup")
 
 
 class AgCrdnEventIntervalCollectionGroup(IAgCrdnEventIntervalCollectionGroup):
@@ -27704,7 +27805,6 @@ class AgCrdnEventIntervalCollectionGroup(IAgCrdnEventIntervalCollectionGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalCollectionGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{16E277E2-E306-40E7-B698-B725BDED5739}", AgCrdnEventIntervalCollectionGroup)
-__all__.append("AgCrdnEventIntervalCollectionGroup")
 
 
 class AgCrdnParameterSetGroup(IAgCrdnParameterSetGroup):
@@ -27726,7 +27826,6 @@ class AgCrdnParameterSetGroup(IAgCrdnParameterSetGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnParameterSetGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4AF3C889-3805-40E2-94E2-3EA11AAFB0D7}", AgCrdnParameterSetGroup)
-__all__.append("AgCrdnParameterSetGroup")
 
 
 class AgCrdnConditionGroup(IAgCrdnConditionGroup):
@@ -27748,7 +27847,6 @@ class AgCrdnConditionGroup(IAgCrdnConditionGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{28BCB469-D32F-4FCE-9CC2-76216E3A37CA}", AgCrdnConditionGroup)
-__all__.append("AgCrdnConditionGroup")
 
 
 class AgCrdnConditionSetGroup(IAgCrdnConditionSetGroup):
@@ -27770,7 +27868,6 @@ class AgCrdnConditionSetGroup(IAgCrdnConditionSetGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionSetGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D82D5C71-102E-4154-9FF6-153C4EDB5A94}", AgCrdnConditionSetGroup)
-__all__.append("AgCrdnConditionSetGroup")
 
 
 class AgCrdnConditionSetEvaluateResult(IAgCrdnConditionSetEvaluateResult):
@@ -27792,7 +27889,6 @@ class AgCrdnConditionSetEvaluateResult(IAgCrdnConditionSetEvaluateResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionSetEvaluateResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{13F4EB53-F5AB-487A-BC09-AA186C884744}", AgCrdnConditionSetEvaluateResult)
-__all__.append("AgCrdnConditionSetEvaluateResult")
 
 
 class AgCrdnConditionSetEvaluateWithRateResult(IAgCrdnConditionSetEvaluateWithRateResult):
@@ -27814,7 +27910,6 @@ class AgCrdnConditionSetEvaluateWithRateResult(IAgCrdnConditionSetEvaluateWithRa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionSetEvaluateWithRateResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{53051D77-87D0-432C-9044-A2AB1E2104BA}", AgCrdnConditionSetEvaluateWithRateResult)
-__all__.append("AgCrdnConditionSetEvaluateWithRateResult")
 
 
 class AgCrdnVolumeGridGroup(IAgCrdnVolumeGridGroup):
@@ -27836,7 +27931,6 @@ class AgCrdnVolumeGridGroup(IAgCrdnVolumeGridGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5E471C90-D0F2-4B6B-88AE-D529E9D16D03}", AgCrdnVolumeGridGroup)
-__all__.append("AgCrdnVolumeGridGroup")
 
 
 class AgCrdnVolumeGroup(IAgCrdnVolumeGroup):
@@ -27858,7 +27952,6 @@ class AgCrdnVolumeGroup(IAgCrdnVolumeGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0055B726-654F-446B-82D7-BCDD744F1D8F}", AgCrdnVolumeGroup)
-__all__.append("AgCrdnVolumeGroup")
 
 
 class AgCrdnVolumeCalcGroup(IAgCrdnVolumeCalcGroup):
@@ -27880,7 +27973,6 @@ class AgCrdnVolumeCalcGroup(IAgCrdnVolumeCalcGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{b10331b7-f8c3-4a59-9e9b-b05dd6599167}", AgCrdnVolumeCalcGroup)
-__all__.append("AgCrdnVolumeCalcGroup")
 
 
 class AgCrdnCalcScalar(IAgCrdnCalcScalar, IAgCrdn):
@@ -27905,7 +27997,6 @@ class AgCrdnCalcScalar(IAgCrdnCalcScalar, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{440E178B-1B34-4896-A25F-2A4F3AD4848E}", AgCrdnCalcScalar)
-__all__.append("AgCrdnCalcScalar")
 
 
 class AgCrdnCalcScalarAngle(IAgCrdnCalcScalarAngle, IAgCrdnCalcScalar, IAgCrdn):
@@ -27933,7 +28024,6 @@ class AgCrdnCalcScalarAngle(IAgCrdnCalcScalarAngle, IAgCrdnCalcScalar, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2E2A940D-2656-4410-86B4-D7314B788E47}", AgCrdnCalcScalarAngle)
-__all__.append("AgCrdnCalcScalarAngle")
 
 
 class AgCrdnCalcScalarConstant(IAgCrdnCalcScalarConstant, IAgCrdnCalcScalar, IAgCrdn):
@@ -27961,7 +28051,6 @@ class AgCrdnCalcScalarConstant(IAgCrdnCalcScalarConstant, IAgCrdnCalcScalar, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarConstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0725A767-6788-4FF4-B848-EF3D526BD7B0}", AgCrdnCalcScalarConstant)
-__all__.append("AgCrdnCalcScalarConstant")
 
 
 class AgCrdnCalcScalarCustom(IAgCrdnCalcScalarCustom, IAgCrdnCalcScalar, IAgCrdn):
@@ -27989,7 +28078,6 @@ class AgCrdnCalcScalarCustom(IAgCrdnCalcScalarCustom, IAgCrdnCalcScalar, IAgCrdn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarCustom.")
         
 agcls.AgClassCatalog.add_catalog_entry("{80114DE9-EF5E-47DB-AC1B-91FD78FCA094}", AgCrdnCalcScalarCustom)
-__all__.append("AgCrdnCalcScalarCustom")
 
 
 class AgCrdnCalcScalarDataElement(IAgCrdnCalcScalarDataElement, IAgCrdnCalcScalar, IAgCrdn):
@@ -28017,7 +28105,6 @@ class AgCrdnCalcScalarDataElement(IAgCrdnCalcScalarDataElement, IAgCrdnCalcScala
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarDataElement.")
         
 agcls.AgClassCatalog.add_catalog_entry("{260D686F-07E2-49DB-8E88-467EF79EFA54}", AgCrdnCalcScalarDataElement)
-__all__.append("AgCrdnCalcScalarDataElement")
 
 
 class AgCrdnCalcScalarDerivative(IAgCrdnCalcScalarDerivative, IAgCrdnCalcScalar, IAgCrdn):
@@ -28045,7 +28132,6 @@ class AgCrdnCalcScalarDerivative(IAgCrdnCalcScalarDerivative, IAgCrdnCalcScalar,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarDerivative.")
         
 agcls.AgClassCatalog.add_catalog_entry("{865CE7A8-F7C3-4B25-AA1D-10CA305C7CF0}", AgCrdnCalcScalarDerivative)
-__all__.append("AgCrdnCalcScalarDerivative")
 
 
 class AgCrdnCalcScalarDotProduct(IAgCrdnCalcScalarDotProduct, IAgCrdnCalcScalar, IAgCrdn):
@@ -28073,7 +28159,6 @@ class AgCrdnCalcScalarDotProduct(IAgCrdnCalcScalarDotProduct, IAgCrdnCalcScalar,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarDotProduct.")
         
 agcls.AgClassCatalog.add_catalog_entry("{703f009e-faab-4281-8d07-733b1344d42b}", AgCrdnCalcScalarDotProduct)
-__all__.append("AgCrdnCalcScalarDotProduct")
 
 
 class AgCrdnCalcScalarElapsedTime(IAgCrdnCalcScalarElapsedTime, IAgCrdnCalcScalar, IAgCrdn):
@@ -28101,7 +28186,6 @@ class AgCrdnCalcScalarElapsedTime(IAgCrdnCalcScalarElapsedTime, IAgCrdnCalcScala
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarElapsedTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D9FAF22-291A-4348-9EAD-1C8DF06D9C1C}", AgCrdnCalcScalarElapsedTime)
-__all__.append("AgCrdnCalcScalarElapsedTime")
 
 
 class AgCrdnCalcScalarFactory(IAgCrdnCalcScalarFactory):
@@ -28123,7 +28207,6 @@ class AgCrdnCalcScalarFactory(IAgCrdnCalcScalarFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{47235112-821F-4DC2-9A70-57AB9F1F17E8}", AgCrdnCalcScalarFactory)
-__all__.append("AgCrdnCalcScalarFactory")
 
 
 class AgCrdnCalcScalarFile(IAgCrdnCalcScalarFile, IAgCrdnCalcScalar, IAgCrdn):
@@ -28151,7 +28234,6 @@ class AgCrdnCalcScalarFile(IAgCrdnCalcScalarFile, IAgCrdnCalcScalar, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75F0039F-B789-4771-BD50-9AEF30F6038E}", AgCrdnCalcScalarFile)
-__all__.append("AgCrdnCalcScalarFile")
 
 
 class AgCrdnCalcScalarFixedAtTimeInstant(IAgCrdnCalcScalarFixedAtTimeInstant, IAgCrdnCalcScalar, IAgCrdn):
@@ -28179,7 +28261,6 @@ class AgCrdnCalcScalarFixedAtTimeInstant(IAgCrdnCalcScalarFixedAtTimeInstant, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarFixedAtTimeInstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{83E8DC6B-7821-4474-AA5B-29646ECD1EC1}", AgCrdnCalcScalarFixedAtTimeInstant)
-__all__.append("AgCrdnCalcScalarFixedAtTimeInstant")
 
 
 class AgCrdnCalcScalarFunction(IAgCrdnCalcScalarFunction, IAgCrdnCalcScalar, IAgCrdn):
@@ -28207,7 +28288,6 @@ class AgCrdnCalcScalarFunction(IAgCrdnCalcScalarFunction, IAgCrdnCalcScalar, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{40158F99-3146-4167-8BB0-A0046BB08EEB}", AgCrdnCalcScalarFunction)
-__all__.append("AgCrdnCalcScalarFunction")
 
 
 class AgCrdnCalcScalarFunction2Var(IAgCrdnCalcScalarFunction2Var, IAgCrdnCalcScalar, IAgCrdn):
@@ -28235,7 +28315,6 @@ class AgCrdnCalcScalarFunction2Var(IAgCrdnCalcScalarFunction2Var, IAgCrdnCalcSca
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarFunction2Var.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05CA07A4-A36F-44EF-99C4-5E0999E79200}", AgCrdnCalcScalarFunction2Var)
-__all__.append("AgCrdnCalcScalarFunction2Var")
 
 
 class AgCrdnCalcScalarIntegral(IAgCrdnCalcScalarIntegral, IAgCrdnCalcScalar, IAgCrdn):
@@ -28263,7 +28342,6 @@ class AgCrdnCalcScalarIntegral(IAgCrdnCalcScalarIntegral, IAgCrdnCalcScalar, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarIntegral.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C87C787A-BEDA-4AEC-9F88-3D6EE0936A03}", AgCrdnCalcScalarIntegral)
-__all__.append("AgCrdnCalcScalarIntegral")
 
 
 class AgCrdnCalcScalarPlugin(IAgCrdnCalcScalarPlugin, IAgCrdnCalcScalar, IAgCrdn):
@@ -28291,7 +28369,6 @@ class AgCrdnCalcScalarPlugin(IAgCrdnCalcScalarPlugin, IAgCrdnCalcScalar, IAgCrdn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E435E30B-EA9B-4EFB-852A-C20427B71484}", AgCrdnCalcScalarPlugin)
-__all__.append("AgCrdnCalcScalarPlugin")
 
 
 class AgCrdnCalcScalarSurfaceDistanceBetweenPoints(IAgCrdnCalcScalarSurfaceDistanceBetweenPoints, IAgCrdnCalcScalar, IAgCrdn):
@@ -28319,7 +28396,6 @@ class AgCrdnCalcScalarSurfaceDistanceBetweenPoints(IAgCrdnCalcScalarSurfaceDista
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarSurfaceDistanceBetweenPoints.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DEDCB488-6C70-4BC0-A719-68832FB6D30E}", AgCrdnCalcScalarSurfaceDistanceBetweenPoints)
-__all__.append("AgCrdnCalcScalarSurfaceDistanceBetweenPoints")
 
 
 class AgCrdnCalcScalarVectorComponent(IAgCrdnCalcScalarVectorComponent, IAgCrdnCalcScalar, IAgCrdn):
@@ -28347,7 +28423,6 @@ class AgCrdnCalcScalarVectorComponent(IAgCrdnCalcScalarVectorComponent, IAgCrdnC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarVectorComponent.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0b8e5c9f-de1b-4b6b-9e38-87b16db7bb71}", AgCrdnCalcScalarVectorComponent)
-__all__.append("AgCrdnCalcScalarVectorComponent")
 
 
 class AgCrdnCalcScalarVectorMagnitude(IAgCrdnCalcScalarVectorMagnitude, IAgCrdnCalcScalar, IAgCrdn):
@@ -28375,7 +28450,6 @@ class AgCrdnCalcScalarVectorMagnitude(IAgCrdnCalcScalarVectorMagnitude, IAgCrdnC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCalcScalarVectorMagnitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7430CE8-D611-4F5C-B4B4-05531F1E0CC0}", AgCrdnCalcScalarVectorMagnitude)
-__all__.append("AgCrdnCalcScalarVectorMagnitude")
 
 
 class AgCrdnCondition(IAgCrdnCondition, IAgCrdn):
@@ -28400,7 +28474,6 @@ class AgCrdnCondition(IAgCrdnCondition, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D1BED244-FFB2-4038-AE76-A9B3194B2E49}", AgCrdnCondition)
-__all__.append("AgCrdnCondition")
 
 
 class AgCrdnConditionCombined(IAgCrdnConditionCombined, IAgCrdnCondition, IAgCrdn):
@@ -28428,7 +28501,6 @@ class AgCrdnConditionCombined(IAgCrdnConditionCombined, IAgCrdnCondition, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionCombined.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92F4488B-3543-4229-B1FB-447D282199B9}", AgCrdnConditionCombined)
-__all__.append("AgCrdnConditionCombined")
 
 
 class AgCrdnConditionFactory(IAgCrdnConditionFactory):
@@ -28450,7 +28522,6 @@ class AgCrdnConditionFactory(IAgCrdnConditionFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{06C627F8-87EA-4552-86E8-7E5049914CDE}", AgCrdnConditionFactory)
-__all__.append("AgCrdnConditionFactory")
 
 
 class AgCrdnConditionPointInVolume(IAgCrdnConditionPointInVolume, IAgCrdnCondition, IAgCrdn):
@@ -28478,7 +28549,6 @@ class AgCrdnConditionPointInVolume(IAgCrdnConditionPointInVolume, IAgCrdnConditi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionPointInVolume.")
         
 agcls.AgClassCatalog.add_catalog_entry("{41532AD9-B30C-44AE-8581-CE74C24846A8}", AgCrdnConditionPointInVolume)
-__all__.append("AgCrdnConditionPointInVolume")
 
 
 class AgCrdnConditionScalarBounds(IAgCrdnConditionScalarBounds, IAgCrdnCondition, IAgCrdn):
@@ -28506,7 +28576,6 @@ class AgCrdnConditionScalarBounds(IAgCrdnConditionScalarBounds, IAgCrdnCondition
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionScalarBounds.")
         
 agcls.AgClassCatalog.add_catalog_entry("{452E2178-AFB0-4E61-8187-9C6CB4A704A0}", AgCrdnConditionScalarBounds)
-__all__.append("AgCrdnConditionScalarBounds")
 
 
 class AgCrdnConditionSet(IAgCrdnConditionSet, IAgCrdn):
@@ -28531,7 +28600,6 @@ class AgCrdnConditionSet(IAgCrdnConditionSet, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionSet.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B6407B1B-6858-49FC-845A-F8A6239162C2}", AgCrdnConditionSet)
-__all__.append("AgCrdnConditionSet")
 
 
 class AgCrdnConditionSetFactory(IAgCrdnConditionSetFactory):
@@ -28553,7 +28621,6 @@ class AgCrdnConditionSetFactory(IAgCrdnConditionSetFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionSetFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D2445C98-9EA1-458F-9B6A-607249BF399A}", AgCrdnConditionSetFactory)
-__all__.append("AgCrdnConditionSetFactory")
 
 
 class AgCrdnConditionSetScalarThresholds(IAgCrdnConditionSetScalarThresholds, IAgCrdnConditionSet, IAgCrdn):
@@ -28581,7 +28648,6 @@ class AgCrdnConditionSetScalarThresholds(IAgCrdnConditionSetScalarThresholds, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConditionSetScalarThresholds.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EED0BF6B-4D96-4D55-B988-0B962DCDBB4E}", AgCrdnConditionSetScalarThresholds)
-__all__.append("AgCrdnConditionSetScalarThresholds")
 
 
 class AgCrdnConverge(IAgCrdnConverge, IAgCrdn):
@@ -28606,7 +28672,6 @@ class AgCrdnConverge(IAgCrdnConverge, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConverge.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6A13D679-1970-43C2-8D4F-174B08AB04DC}", AgCrdnConverge)
-__all__.append("AgCrdnConverge")
 
 
 class AgCrdnConvergeBasic(IAgCrdnConvergeBasic, IAgCrdnConverge, IAgCrdn):
@@ -28634,7 +28699,6 @@ class AgCrdnConvergeBasic(IAgCrdnConvergeBasic, IAgCrdnConverge, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnConvergeBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{808F19C3-0E31-4C89-94C8-BBE01E067DFF}", AgCrdnConvergeBasic)
-__all__.append("AgCrdnConvergeBasic")
 
 
 class AgCrdnDerivative(IAgCrdnDerivative, IAgCrdn):
@@ -28659,7 +28723,6 @@ class AgCrdnDerivative(IAgCrdnDerivative, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnDerivative.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2C7C1DA3-BD86-4D8B-9505-AC796FF1FD45}", AgCrdnDerivative)
-__all__.append("AgCrdnDerivative")
 
 
 class AgCrdnDerivativeBasic(IAgCrdnDerivativeBasic, IAgCrdnDerivative, IAgCrdn):
@@ -28687,7 +28750,6 @@ class AgCrdnDerivativeBasic(IAgCrdnDerivativeBasic, IAgCrdnDerivative, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnDerivativeBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3CD084C3-0045-4452-9793-AE8DF4073433}", AgCrdnDerivativeBasic)
-__all__.append("AgCrdnDerivativeBasic")
 
 
 class AgCrdnEvent(IAgCrdnEvent, IAgCrdn):
@@ -28712,7 +28774,6 @@ class AgCrdnEvent(IAgCrdnEvent, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEvent.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A4B75B25-5DAE-4AEC-86EF-512F5E031766}", AgCrdnEvent)
-__all__.append("AgCrdnEvent")
 
 
 class AgCrdnEventArray(IAgCrdnEventArray, IAgCrdn):
@@ -28737,7 +28798,6 @@ class AgCrdnEventArray(IAgCrdnEventArray, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArray.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F5C87B1A-D519-4A01-8649-AA7560CD503A}", AgCrdnEventArray)
-__all__.append("AgCrdnEventArray")
 
 
 class AgCrdnEventArrayConditionCrossings(IAgCrdnEventArrayConditionCrossings, IAgCrdnEventArray, IAgCrdn):
@@ -28765,7 +28825,6 @@ class AgCrdnEventArrayConditionCrossings(IAgCrdnEventArrayConditionCrossings, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayConditionCrossings.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B6FBC501-3521-4AE3-AFD8-4971F089D14F}", AgCrdnEventArrayConditionCrossings)
-__all__.append("AgCrdnEventArrayConditionCrossings")
 
 
 class AgCrdnEventArrayExtrema(IAgCrdnEventArrayExtrema, IAgCrdnEventArray, IAgCrdn):
@@ -28793,7 +28852,6 @@ class AgCrdnEventArrayExtrema(IAgCrdnEventArrayExtrema, IAgCrdnEventArray, IAgCr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayExtrema.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8FB3F78C-D9F6-43F0-BCAA-5A7DCD035592}", AgCrdnEventArrayExtrema)
-__all__.append("AgCrdnEventArrayExtrema")
 
 
 class AgCrdnEventArrayFactory(IAgCrdnEventArrayFactory):
@@ -28815,7 +28873,6 @@ class AgCrdnEventArrayFactory(IAgCrdnEventArrayFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A001EDFD-FAC8-4BBE-9FDC-0C7A5C4BB11C}", AgCrdnEventArrayFactory)
-__all__.append("AgCrdnEventArrayFactory")
 
 
 class AgCrdnEventArrayFiltered(IAgCrdnEventArrayFiltered, IAgCrdnEventArray, IAgCrdn):
@@ -28843,7 +28900,6 @@ class AgCrdnEventArrayFiltered(IAgCrdnEventArrayFiltered, IAgCrdnEventArray, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayFiltered.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CA0D9FE7-E921-406E-8A1A-EE448A46C03C}", AgCrdnEventArrayFiltered)
-__all__.append("AgCrdnEventArrayFiltered")
 
 
 class AgCrdnEventArrayFixedStep(IAgCrdnEventArrayFixedStep, IAgCrdnEventArray, IAgCrdn):
@@ -28871,7 +28927,6 @@ class AgCrdnEventArrayFixedStep(IAgCrdnEventArrayFixedStep, IAgCrdnEventArray, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayFixedStep.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CDA379CC-7511-496E-874E-14E10F3E2B1A}", AgCrdnEventArrayFixedStep)
-__all__.append("AgCrdnEventArrayFixedStep")
 
 
 class AgCrdnEventArrayFixedTimes(IAgCrdnEventArrayFixedTimes, IAgCrdnEventArray, IAgCrdn):
@@ -28899,7 +28954,6 @@ class AgCrdnEventArrayFixedTimes(IAgCrdnEventArrayFixedTimes, IAgCrdnEventArray,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayFixedTimes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EA73AECA-23AB-4DA1-B297-E80E19C55C15}", AgCrdnEventArrayFixedTimes)
-__all__.append("AgCrdnEventArrayFixedTimes")
 
 
 class AgCrdnEventArrayMerged(IAgCrdnEventArrayMerged, IAgCrdnEventArray, IAgCrdn):
@@ -28927,7 +28981,6 @@ class AgCrdnEventArrayMerged(IAgCrdnEventArrayMerged, IAgCrdnEventArray, IAgCrdn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayMerged.")
         
 agcls.AgClassCatalog.add_catalog_entry("{44FBC83E-D466-425F-ADF5-2003D754F935}", AgCrdnEventArrayMerged)
-__all__.append("AgCrdnEventArrayMerged")
 
 
 class AgCrdnEventArraySignaled(IAgCrdnEventArraySignaled, IAgCrdnEventArray, IAgCrdn):
@@ -28955,7 +29008,6 @@ class AgCrdnEventArraySignaled(IAgCrdnEventArraySignaled, IAgCrdnEventArray, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArraySignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50E37652-E4D1-4B6F-BA12-2D9B17E5F1AA}", AgCrdnEventArraySignaled)
-__all__.append("AgCrdnEventArraySignaled")
 
 
 class AgCrdnEventArrayStartStopTimes(IAgCrdnEventArrayStartStopTimes, IAgCrdnEventArray, IAgCrdn):
@@ -28983,7 +29035,6 @@ class AgCrdnEventArrayStartStopTimes(IAgCrdnEventArrayStartStopTimes, IAgCrdnEve
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventArrayStartStopTimes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1AF5E1AC-97CB-4375-B0AE-AE8B6684432B}", AgCrdnEventArrayStartStopTimes)
-__all__.append("AgCrdnEventArrayStartStopTimes")
 
 
 class AgCrdnEventEpoch(IAgCrdnEventEpoch, IAgCrdnEvent, IAgCrdn):
@@ -29011,7 +29062,6 @@ class AgCrdnEventEpoch(IAgCrdnEventEpoch, IAgCrdnEvent, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{230426D4-438A-4B6E-A9D2-5393F7F87238}", AgCrdnEventEpoch)
-__all__.append("AgCrdnEventEpoch")
 
 
 class AgCrdnEventExtremum(IAgCrdnEventExtremum, IAgCrdnEvent, IAgCrdn):
@@ -29039,7 +29089,6 @@ class AgCrdnEventExtremum(IAgCrdnEventExtremum, IAgCrdnEvent, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventExtremum.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7D4AD095-F1A4-4ACA-8788-50DEF2F4B604}", AgCrdnEventExtremum)
-__all__.append("AgCrdnEventExtremum")
 
 
 class AgCrdnEventFactory(IAgCrdnEventFactory):
@@ -29061,7 +29110,6 @@ class AgCrdnEventFactory(IAgCrdnEventFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9DEB7422-F9AA-492A-9269-3BDB7B0AF7E4}", AgCrdnEventFactory)
-__all__.append("AgCrdnEventFactory")
 
 
 class AgCrdnEventInterval(IAgCrdnEventInterval, IAgCrdn):
@@ -29086,7 +29134,6 @@ class AgCrdnEventInterval(IAgCrdnEventInterval, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2CDA6DDC-7412-441A-8F94-0671FD57D16A}", AgCrdnEventInterval)
-__all__.append("AgCrdnEventInterval")
 
 
 class AgCrdnEventIntervalBetweenTimeInstants(IAgCrdnEventIntervalBetweenTimeInstants, IAgCrdnEventInterval, IAgCrdn):
@@ -29114,7 +29161,6 @@ class AgCrdnEventIntervalBetweenTimeInstants(IAgCrdnEventIntervalBetweenTimeInst
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalBetweenTimeInstants.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E84D9CAE-E919-4B84-99D7-553CCB97739C}", AgCrdnEventIntervalBetweenTimeInstants)
-__all__.append("AgCrdnEventIntervalBetweenTimeInstants")
 
 
 class AgCrdnEventIntervalCollection(IAgCrdnEventIntervalCollection, IAgCrdn):
@@ -29139,7 +29185,6 @@ class AgCrdnEventIntervalCollection(IAgCrdnEventIntervalCollection, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{892BFFEB-D366-49D5-8220-50AC5E4529A1}", AgCrdnEventIntervalCollection)
-__all__.append("AgCrdnEventIntervalCollection")
 
 
 class AgCrdnEventIntervalCollectionCondition(IAgCrdnEventIntervalCollectionCondition, IAgCrdnEventIntervalCollection, IAgCrdn):
@@ -29167,7 +29212,6 @@ class AgCrdnEventIntervalCollectionCondition(IAgCrdnEventIntervalCollectionCondi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalCollectionCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05E4AFDD-2917-46BA-84C9-1EE7973F11D7}", AgCrdnEventIntervalCollectionCondition)
-__all__.append("AgCrdnEventIntervalCollectionCondition")
 
 
 class AgCrdnEventIntervalCollectionFactory(IAgCrdnEventIntervalCollectionFactory):
@@ -29189,7 +29233,6 @@ class AgCrdnEventIntervalCollectionFactory(IAgCrdnEventIntervalCollectionFactory
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalCollectionFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C76F8390-6619-47D5-9D33-DD1FBBF19B63}", AgCrdnEventIntervalCollectionFactory)
-__all__.append("AgCrdnEventIntervalCollectionFactory")
 
 
 class AgCrdnEventIntervalCollectionLighting(IAgCrdnEventIntervalCollectionLighting, IAgCrdnEventIntervalCollection, IAgCrdn):
@@ -29217,7 +29260,6 @@ class AgCrdnEventIntervalCollectionLighting(IAgCrdnEventIntervalCollectionLighti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalCollectionLighting.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5457BFBA-3076-4250-B0E0-81FA79D58F19}", AgCrdnEventIntervalCollectionLighting)
-__all__.append("AgCrdnEventIntervalCollectionLighting")
 
 
 class AgCrdnEventIntervalCollectionSignaled(IAgCrdnEventIntervalCollectionSignaled, IAgCrdnEventIntervalCollection, IAgCrdn):
@@ -29245,7 +29287,6 @@ class AgCrdnEventIntervalCollectionSignaled(IAgCrdnEventIntervalCollectionSignal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalCollectionSignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D1ED3869-B0E3-40F6-967A-C539C5D5D630}", AgCrdnEventIntervalCollectionSignaled)
-__all__.append("AgCrdnEventIntervalCollectionSignaled")
 
 
 class AgCrdnEventIntervalFactory(IAgCrdnEventIntervalFactory):
@@ -29267,7 +29308,6 @@ class AgCrdnEventIntervalFactory(IAgCrdnEventIntervalFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D5D195D8-DE6D-4926-B743-556B08A827C8}", AgCrdnEventIntervalFactory)
-__all__.append("AgCrdnEventIntervalFactory")
 
 
 class AgCrdnEventIntervalFixed(IAgCrdnEventIntervalFixed, IAgCrdnEventInterval, IAgCrdn):
@@ -29295,7 +29335,6 @@ class AgCrdnEventIntervalFixed(IAgCrdnEventIntervalFixed, IAgCrdnEventInterval, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalFixed.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4408570B-CE46-4B6A-9A50-F8F6D56D76F1}", AgCrdnEventIntervalFixed)
-__all__.append("AgCrdnEventIntervalFixed")
 
 
 class AgCrdnEventIntervalFixedDuration(IAgCrdnEventIntervalFixedDuration, IAgCrdnEventInterval, IAgCrdn):
@@ -29323,7 +29362,6 @@ class AgCrdnEventIntervalFixedDuration(IAgCrdnEventIntervalFixedDuration, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalFixedDuration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84316F31-A3DB-4DF3-B8E3-352673D4E251}", AgCrdnEventIntervalFixedDuration)
-__all__.append("AgCrdnEventIntervalFixedDuration")
 
 
 class AgCrdnEventIntervalFromIntervalList(IAgCrdnEventIntervalFromIntervalList, IAgCrdnEventInterval, IAgCrdn):
@@ -29351,7 +29389,6 @@ class AgCrdnEventIntervalFromIntervalList(IAgCrdnEventIntervalFromIntervalList, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalFromIntervalList.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0E3B57D7-B236-4DCA-82DA-6C4835A6D0F1}", AgCrdnEventIntervalFromIntervalList)
-__all__.append("AgCrdnEventIntervalFromIntervalList")
 
 
 class AgCrdnEventIntervalList(IAgCrdnEventIntervalList, IAgCrdn):
@@ -29376,7 +29413,6 @@ class AgCrdnEventIntervalList(IAgCrdnEventIntervalList, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalList.")
         
 agcls.AgClassCatalog.add_catalog_entry("{050E0A6D-9960-4470-9803-AF58B43FD747}", AgCrdnEventIntervalList)
-__all__.append("AgCrdnEventIntervalList")
 
 
 class AgCrdnEventIntervalListCondition(IAgCrdnEventIntervalListCondition, IAgCrdnEventIntervalList, IAgCrdn):
@@ -29404,7 +29440,6 @@ class AgCrdnEventIntervalListCondition(IAgCrdnEventIntervalListCondition, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4D1E24FE-BD49-4F09-9C30-523AFD58E02B}", AgCrdnEventIntervalListCondition)
-__all__.append("AgCrdnEventIntervalListCondition")
 
 
 class AgCrdnEventIntervalListFactory(IAgCrdnEventIntervalListFactory):
@@ -29426,7 +29461,6 @@ class AgCrdnEventIntervalListFactory(IAgCrdnEventIntervalListFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DC3FA659-172B-4C9D-9DCA-EF6AD6CC4A8A}", AgCrdnEventIntervalListFactory)
-__all__.append("AgCrdnEventIntervalListFactory")
 
 
 class AgCrdnEventIntervalListFile(IAgCrdnEventIntervalListFile, IAgCrdnEventIntervalList, IAgCrdn):
@@ -29454,7 +29488,6 @@ class AgCrdnEventIntervalListFile(IAgCrdnEventIntervalListFile, IAgCrdnEventInte
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5A3BC6C1-559F-448D-946E-3D608C0C59B4}", AgCrdnEventIntervalListFile)
-__all__.append("AgCrdnEventIntervalListFile")
 
 
 class AgCrdnEventIntervalListFiltered(IAgCrdnEventIntervalListFiltered, IAgCrdnEventIntervalList, IAgCrdn):
@@ -29482,7 +29515,6 @@ class AgCrdnEventIntervalListFiltered(IAgCrdnEventIntervalListFiltered, IAgCrdnE
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListFiltered.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7123DA29-BECE-4032-9A81-77CDA69C5B13}", AgCrdnEventIntervalListFiltered)
-__all__.append("AgCrdnEventIntervalListFiltered")
 
 
 class AgCrdnEventIntervalListFixed(IAgCrdnEventIntervalListFixed, IAgCrdnEventIntervalList, IAgCrdn):
@@ -29510,7 +29542,6 @@ class AgCrdnEventIntervalListFixed(IAgCrdnEventIntervalListFixed, IAgCrdnEventIn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListFixed.")
         
 agcls.AgClassCatalog.add_catalog_entry("{60EF79E3-069B-45E3-A5A6-B49F9F9D618E}", AgCrdnEventIntervalListFixed)
-__all__.append("AgCrdnEventIntervalListFixed")
 
 
 class AgCrdnEventIntervalListMerged(IAgCrdnEventIntervalListMerged, IAgCrdnEventIntervalList, IAgCrdn):
@@ -29538,7 +29569,6 @@ class AgCrdnEventIntervalListMerged(IAgCrdnEventIntervalListMerged, IAgCrdnEvent
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListMerged.")
         
 agcls.AgClassCatalog.add_catalog_entry("{115C7064-1624-4928-B401-2C2B8DA2A2DC}", AgCrdnEventIntervalListMerged)
-__all__.append("AgCrdnEventIntervalListMerged")
 
 
 class AgCrdnEventIntervalListScaled(IAgCrdnEventIntervalListScaled, IAgCrdnEventIntervalList, IAgCrdn):
@@ -29566,7 +29596,6 @@ class AgCrdnEventIntervalListScaled(IAgCrdnEventIntervalListScaled, IAgCrdnEvent
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListScaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3A5FDAFA-95C5-4743-A675-B9598AAAA1B9}", AgCrdnEventIntervalListScaled)
-__all__.append("AgCrdnEventIntervalListScaled")
 
 
 class AgCrdnEventIntervalListSignaled(IAgCrdnEventIntervalListSignaled, IAgCrdnEventIntervalList, IAgCrdn):
@@ -29594,7 +29623,6 @@ class AgCrdnEventIntervalListSignaled(IAgCrdnEventIntervalListSignaled, IAgCrdnE
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListSignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0C2159AF-FCE5-46AA-A06B-30E49A5B6704}", AgCrdnEventIntervalListSignaled)
-__all__.append("AgCrdnEventIntervalListSignaled")
 
 
 class AgCrdnEventIntervalListTimeOffset(IAgCrdnEventIntervalListTimeOffset, IAgCrdnEventIntervalList, IAgCrdn):
@@ -29622,7 +29650,6 @@ class AgCrdnEventIntervalListTimeOffset(IAgCrdnEventIntervalListTimeOffset, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalListTimeOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BA2C1495-B20E-477A-A995-8B5B879DE84C}", AgCrdnEventIntervalListTimeOffset)
-__all__.append("AgCrdnEventIntervalListTimeOffset")
 
 
 class AgCrdnEventIntervalScaled(IAgCrdnEventIntervalScaled, IAgCrdnEventInterval, IAgCrdn):
@@ -29650,7 +29677,6 @@ class AgCrdnEventIntervalScaled(IAgCrdnEventIntervalScaled, IAgCrdnEventInterval
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalScaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8BCF947C-8E52-4B0C-9416-520C7CCEAB3E}", AgCrdnEventIntervalScaled)
-__all__.append("AgCrdnEventIntervalScaled")
 
 
 class AgCrdnEventIntervalSignaled(IAgCrdnEventIntervalSignaled, IAgCrdnEventInterval, IAgCrdn):
@@ -29678,7 +29704,6 @@ class AgCrdnEventIntervalSignaled(IAgCrdnEventIntervalSignaled, IAgCrdnEventInte
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalSignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0E2D6BF4-81D9-476D-A4F2-F1882E24B56E}", AgCrdnEventIntervalSignaled)
-__all__.append("AgCrdnEventIntervalSignaled")
 
 
 class AgCrdnEventIntervalSmartInterval(IAgCrdnEventIntervalSmartInterval, IAgCrdnEventInterval, IAgCrdn):
@@ -29706,7 +29731,6 @@ class AgCrdnEventIntervalSmartInterval(IAgCrdnEventIntervalSmartInterval, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalSmartInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F3D4E2AC-3845-4719-AD57-EE0C715A584D}", AgCrdnEventIntervalSmartInterval)
-__all__.append("AgCrdnEventIntervalSmartInterval")
 
 
 class AgCrdnEventIntervalTimeOffset(IAgCrdnEventIntervalTimeOffset, IAgCrdnEventInterval, IAgCrdn):
@@ -29734,7 +29758,6 @@ class AgCrdnEventIntervalTimeOffset(IAgCrdnEventIntervalTimeOffset, IAgCrdnEvent
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventIntervalTimeOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DE89BB00-5A89-4DA4-8730-CA2C3495A867}", AgCrdnEventIntervalTimeOffset)
-__all__.append("AgCrdnEventIntervalTimeOffset")
 
 
 class AgCrdnEventSignaled(IAgCrdnEventSignaled, IAgCrdnEvent, IAgCrdn):
@@ -29762,7 +29785,6 @@ class AgCrdnEventSignaled(IAgCrdnEventSignaled, IAgCrdnEvent, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventSignaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3951EF3D-DAEA-4F04-B78C-22537BD84A2D}", AgCrdnEventSignaled)
-__all__.append("AgCrdnEventSignaled")
 
 
 class AgCrdnEventSmartEpoch(IAgCrdnEventSmartEpoch, IAgCrdnEvent, IAgCrdn):
@@ -29790,7 +29812,6 @@ class AgCrdnEventSmartEpoch(IAgCrdnEventSmartEpoch, IAgCrdnEvent, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventSmartEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F722C253-92DA-4956-983B-B80AB469F192}", AgCrdnEventSmartEpoch)
-__all__.append("AgCrdnEventSmartEpoch")
 
 
 class AgCrdnEventStartStopTime(IAgCrdnEventStartStopTime, IAgCrdnEvent, IAgCrdn):
@@ -29818,7 +29839,6 @@ class AgCrdnEventStartStopTime(IAgCrdnEventStartStopTime, IAgCrdnEvent, IAgCrdn)
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventStartStopTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F0429607-A51C-495C-9902-585429D40D10}", AgCrdnEventStartStopTime)
-__all__.append("AgCrdnEventStartStopTime")
 
 
 class AgCrdnEventTimeOffset(IAgCrdnEventTimeOffset, IAgCrdnEvent, IAgCrdn):
@@ -29846,7 +29866,6 @@ class AgCrdnEventTimeOffset(IAgCrdnEventTimeOffset, IAgCrdnEvent, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnEventTimeOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EE2C89C8-C148-4044-B0BE-BF137D4B876B}", AgCrdnEventTimeOffset)
-__all__.append("AgCrdnEventTimeOffset")
 
 
 class AgCrdnFirstIntervalsFilter(IAgCrdnFirstIntervalsFilter, IAgCrdnPruneFilter):
@@ -29871,7 +29890,6 @@ class AgCrdnFirstIntervalsFilter(IAgCrdnFirstIntervalsFilter, IAgCrdnPruneFilter
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnFirstIntervalsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9A044590-5063-4331-9FC2-621221CF7EA9}", AgCrdnFirstIntervalsFilter)
-__all__.append("AgCrdnFirstIntervalsFilter")
 
 
 class AgCrdnGapsFilter(IAgCrdnGapsFilter, IAgCrdnPruneFilter):
@@ -29896,7 +29914,6 @@ class AgCrdnGapsFilter(IAgCrdnGapsFilter, IAgCrdnPruneFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnGapsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C54D3817-6B48-4436-8E1D-323A38DC2BC0}", AgCrdnGapsFilter)
-__all__.append("AgCrdnGapsFilter")
 
 
 class AgCrdnIntegral(IAgCrdnIntegral, IAgCrdn):
@@ -29921,7 +29938,6 @@ class AgCrdnIntegral(IAgCrdnIntegral, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnIntegral.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9C6B1D39-FC48-475A-A888-DA9D459C1906}", AgCrdnIntegral)
-__all__.append("AgCrdnIntegral")
 
 
 class AgCrdnIntegralBasic(IAgCrdnIntegralBasic, IAgCrdnIntegral, IAgCrdn):
@@ -29949,7 +29965,6 @@ class AgCrdnIntegralBasic(IAgCrdnIntegralBasic, IAgCrdnIntegral, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnIntegralBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7FCEE0EE-218C-419E-B5DB-8381B18FAE8A}", AgCrdnIntegralBasic)
-__all__.append("AgCrdnIntegralBasic")
 
 
 class AgCrdnInterp(IAgCrdnInterp, IAgCrdn):
@@ -29974,7 +29989,6 @@ class AgCrdnInterp(IAgCrdnInterp, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnInterp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F73B3675-6FD4-4050-9566-797DCD695107}", AgCrdnInterp)
-__all__.append("AgCrdnInterp")
 
 
 class AgCrdnInterpBasic(IAgCrdnInterpBasic, IAgCrdnInterp, IAgCrdn):
@@ -30002,7 +30016,6 @@ class AgCrdnInterpBasic(IAgCrdnInterpBasic, IAgCrdnInterp, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnInterpBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AB05143F-6997-4F40-BE86-DCF4D723F31E}", AgCrdnInterpBasic)
-__all__.append("AgCrdnInterpBasic")
 
 
 class AgCrdnIntervalsFilter(IAgCrdnIntervalsFilter, IAgCrdnPruneFilter):
@@ -30027,7 +30040,6 @@ class AgCrdnIntervalsFilter(IAgCrdnIntervalsFilter, IAgCrdnPruneFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnIntervalsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA31C4A7-B07C-4DEC-B479-BBEB07234B44}", AgCrdnIntervalsFilter)
-__all__.append("AgCrdnIntervalsFilter")
 
 
 class AgCrdnLastIntervalsFilter(IAgCrdnLastIntervalsFilter, IAgCrdnPruneFilter):
@@ -30052,7 +30064,6 @@ class AgCrdnLastIntervalsFilter(IAgCrdnLastIntervalsFilter, IAgCrdnPruneFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnLastIntervalsFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1FAF4A1D-B0BA-4A86-A0AC-049670C66302}", AgCrdnLastIntervalsFilter)
-__all__.append("AgCrdnLastIntervalsFilter")
 
 
 class AgCrdnParameterSet(IAgCrdnParameterSet, IAgCrdn):
@@ -30077,7 +30088,6 @@ class AgCrdnParameterSet(IAgCrdnParameterSet, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnParameterSet.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CD1D82FC-08BF-4854-9295-F90AC87FAE68}", AgCrdnParameterSet)
-__all__.append("AgCrdnParameterSet")
 
 
 class AgCrdnParameterSetAttitude(IAgCrdnParameterSetAttitude, IAgCrdnParameterSet, IAgCrdn):
@@ -30105,7 +30115,6 @@ class AgCrdnParameterSetAttitude(IAgCrdnParameterSetAttitude, IAgCrdnParameterSe
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnParameterSetAttitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7082CB04-052B-46A2-A051-4FF52D0260B0}", AgCrdnParameterSetAttitude)
-__all__.append("AgCrdnParameterSetAttitude")
 
 
 class AgCrdnParameterSetFactory(IAgCrdnParameterSetFactory):
@@ -30127,7 +30136,6 @@ class AgCrdnParameterSetFactory(IAgCrdnParameterSetFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnParameterSetFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FF399336-197C-480B-98AC-3F07E76FF3BC}", AgCrdnParameterSetFactory)
-__all__.append("AgCrdnParameterSetFactory")
 
 
 class AgCrdnParameterSetGroundTrajectory(IAgCrdnParameterSetGroundTrajectory, IAgCrdnParameterSet, IAgCrdn):
@@ -30155,7 +30163,6 @@ class AgCrdnParameterSetGroundTrajectory(IAgCrdnParameterSetGroundTrajectory, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnParameterSetGroundTrajectory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B1972E17-F000-4BFF-80A3-216A91D0E2B1}", AgCrdnParameterSetGroundTrajectory)
-__all__.append("AgCrdnParameterSetGroundTrajectory")
 
 
 class AgCrdnParameterSetOrbit(IAgCrdnParameterSetOrbit, IAgCrdnParameterSet, IAgCrdn):
@@ -30183,7 +30190,6 @@ class AgCrdnParameterSetOrbit(IAgCrdnParameterSetOrbit, IAgCrdnParameterSet, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnParameterSetOrbit.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BF4A60A0-68E5-4000-8843-DD7FD76813A9}", AgCrdnParameterSetOrbit)
-__all__.append("AgCrdnParameterSetOrbit")
 
 
 class AgCrdnParameterSetTrajectory(IAgCrdnParameterSetTrajectory, IAgCrdnParameterSet, IAgCrdn):
@@ -30211,7 +30217,6 @@ class AgCrdnParameterSetTrajectory(IAgCrdnParameterSetTrajectory, IAgCrdnParamet
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnParameterSetTrajectory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{542072ED-4073-4F91-8EC8-45F7CC401ED7}", AgCrdnParameterSetTrajectory)
-__all__.append("AgCrdnParameterSetTrajectory")
 
 
 class AgCrdnParameterSetVector(IAgCrdnParameterSetVector, IAgCrdnParameterSet, IAgCrdn):
@@ -30239,7 +30244,6 @@ class AgCrdnParameterSetVector(IAgCrdnParameterSetVector, IAgCrdnParameterSet, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnParameterSetVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DC7B40D5-7091-4A24-A698-436D2A274DC8}", AgCrdnParameterSetVector)
-__all__.append("AgCrdnParameterSetVector")
 
 
 class AgCrdnPruneFilter(IAgCrdnPruneFilter):
@@ -30261,7 +30265,6 @@ class AgCrdnPruneFilter(IAgCrdnPruneFilter):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPruneFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E08D63E9-CC8E-41F8-B3C5-0D062425C025}", AgCrdnPruneFilter)
-__all__.append("AgCrdnPruneFilter")
 
 
 class AgCrdnPruneFilterFactory(IAgCrdnPruneFilterFactory):
@@ -30283,7 +30286,6 @@ class AgCrdnPruneFilterFactory(IAgCrdnPruneFilterFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPruneFilterFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{954284C2-3544-4888-9A56-759AA8C7E1F7}", AgCrdnPruneFilterFactory)
-__all__.append("AgCrdnPruneFilterFactory")
 
 
 class AgCrdnRelativeSatisfactionConditionFilter(IAgCrdnRelativeSatisfactionConditionFilter, IAgCrdnPruneFilter):
@@ -30308,7 +30310,6 @@ class AgCrdnRelativeSatisfactionConditionFilter(IAgCrdnRelativeSatisfactionCondi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnRelativeSatisfactionConditionFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{93A5C2C0-AABA-4DB3-9359-100604D0BA02}", AgCrdnRelativeSatisfactionConditionFilter)
-__all__.append("AgCrdnRelativeSatisfactionConditionFilter")
 
 
 class AgCrdnSampling(IAgCrdnSampling, IAgCrdn):
@@ -30333,7 +30334,6 @@ class AgCrdnSampling(IAgCrdnSampling, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSampling.")
         
 agcls.AgClassCatalog.add_catalog_entry("{17FC40E9-EF68-4FFD-8A16-071054486F6A}", AgCrdnSampling)
-__all__.append("AgCrdnSampling")
 
 
 class AgCrdnSamplingBasic(IAgCrdnSamplingBasic, IAgCrdnSampling, IAgCrdn):
@@ -30361,7 +30361,6 @@ class AgCrdnSamplingBasic(IAgCrdnSamplingBasic, IAgCrdnSampling, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSamplingBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CB786C50-8D9C-4333-A985-FFD2ADD20206}", AgCrdnSamplingBasic)
-__all__.append("AgCrdnSamplingBasic")
 
 
 class AgCrdnSamplingCurvatureTolerance(IAgCrdnSamplingCurvatureTolerance, IAgCrdnSamplingMethod):
@@ -30386,7 +30385,6 @@ class AgCrdnSamplingCurvatureTolerance(IAgCrdnSamplingCurvatureTolerance, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSamplingCurvatureTolerance.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EF49B404-27D2-4AC5-BB5E-EA223A237922}", AgCrdnSamplingCurvatureTolerance)
-__all__.append("AgCrdnSamplingCurvatureTolerance")
 
 
 class AgCrdnSamplingFixedStep(IAgCrdnSamplingFixedStep, IAgCrdnSamplingMethod):
@@ -30411,7 +30409,6 @@ class AgCrdnSamplingFixedStep(IAgCrdnSamplingFixedStep, IAgCrdnSamplingMethod):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSamplingFixedStep.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B7D520F-7835-4E84-BCA4-D748C73CB609}", AgCrdnSamplingFixedStep)
-__all__.append("AgCrdnSamplingFixedStep")
 
 
 class AgCrdnSamplingMethod(IAgCrdnSamplingMethod):
@@ -30433,7 +30430,6 @@ class AgCrdnSamplingMethod(IAgCrdnSamplingMethod):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSamplingMethod.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D77F1444-C9BC-4C9C-91A2-A5F9DE172AB8}", AgCrdnSamplingMethod)
-__all__.append("AgCrdnSamplingMethod")
 
 
 class AgCrdnSamplingMethodFactory(IAgCrdnSamplingMethodFactory):
@@ -30455,7 +30451,6 @@ class AgCrdnSamplingMethodFactory(IAgCrdnSamplingMethodFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSamplingMethodFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E55B6BC9-25B5-46E6-A29A-4E32F9EF3080}", AgCrdnSamplingMethodFactory)
-__all__.append("AgCrdnSamplingMethodFactory")
 
 
 class AgCrdnSamplingRelativeTolerance(IAgCrdnSamplingRelativeTolerance, IAgCrdnSamplingMethod):
@@ -30480,7 +30475,6 @@ class AgCrdnSamplingRelativeTolerance(IAgCrdnSamplingRelativeTolerance, IAgCrdnS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSamplingRelativeTolerance.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5FBC3E6B-8097-4482-A1BA-DAA0083FE904}", AgCrdnSamplingRelativeTolerance)
-__all__.append("AgCrdnSamplingRelativeTolerance")
 
 
 class AgCrdnSatisfactionConditionFilter(IAgCrdnSatisfactionConditionFilter, IAgCrdnPruneFilter):
@@ -30505,7 +30499,6 @@ class AgCrdnSatisfactionConditionFilter(IAgCrdnSatisfactionConditionFilter, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSatisfactionConditionFilter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3DD67B2F-2C0A-4355-A154-08E47A93AFCF}", AgCrdnSatisfactionConditionFilter)
-__all__.append("AgCrdnSatisfactionConditionFilter")
 
 
 class AgCrdnSignalDelay(IAgCrdnSignalDelay, IAgCrdn):
@@ -30530,7 +30523,6 @@ class AgCrdnSignalDelay(IAgCrdnSignalDelay, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSignalDelay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{71744841-D938-44BE-8336-2B54F06CF443}", AgCrdnSignalDelay)
-__all__.append("AgCrdnSignalDelay")
 
 
 class AgCrdnSignalDelayBasic(IAgCrdnSignalDelayBasic, IAgCrdnSignalDelay, IAgCrdn):
@@ -30558,7 +30550,6 @@ class AgCrdnSignalDelayBasic(IAgCrdnSignalDelayBasic, IAgCrdnSignalDelay, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSignalDelayBasic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0763A330-475A-4E4E-AB26-8943A8CC1C92}", AgCrdnSignalDelayBasic)
-__all__.append("AgCrdnSignalDelayBasic")
 
 
 class AgCrdnVolumeCalcFactory(IAgCrdnVolumeCalcFactory):
@@ -30580,7 +30571,6 @@ class AgCrdnVolumeCalcFactory(IAgCrdnVolumeCalcFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{80956ae5-fb8c-4ce4-930f-56b362d07cec}", AgCrdnVolumeCalcFactory)
-__all__.append("AgCrdnVolumeCalcFactory")
 
 
 class AgCrdnVolumeFactory(IAgCrdnVolumeFactory):
@@ -30602,7 +30592,6 @@ class AgCrdnVolumeFactory(IAgCrdnVolumeFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F9497BD8-A985-4054-8ADE-9042DE66125F}", AgCrdnVolumeFactory)
-__all__.append("AgCrdnVolumeFactory")
 
 
 class AgCrdnVolumeGridFactory(IAgCrdnVolumeGridFactory):
@@ -30624,7 +30613,6 @@ class AgCrdnVolumeGridFactory(IAgCrdnVolumeGridFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F6359611-FB48-4B00-9017-01A4BE2B76E5}", AgCrdnVolumeGridFactory)
-__all__.append("AgCrdnVolumeGridFactory")
 
 
 class AgCrdnGridCoordinateDefinition(IAgCrdnGridCoordinateDefinition):
@@ -30646,7 +30634,6 @@ class AgCrdnGridCoordinateDefinition(IAgCrdnGridCoordinateDefinition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnGridCoordinateDefinition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CCE5BC10-615F-441F-95AE-CB4CC0A7C62A}", AgCrdnGridCoordinateDefinition)
-__all__.append("AgCrdnGridCoordinateDefinition")
 
 
 class AgCrdnGridValuesCustom(IAgCrdnGridValuesCustom, IAgCrdnGridValuesMethod):
@@ -30671,7 +30658,6 @@ class AgCrdnGridValuesCustom(IAgCrdnGridValuesCustom, IAgCrdnGridValuesMethod):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnGridValuesCustom.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B50CCBA5-A969-40E1-86B3-96DAE5D2A3E3}", AgCrdnGridValuesCustom)
-__all__.append("AgCrdnGridValuesCustom")
 
 
 class AgCrdnGridValuesFixedNumberOfSteps(IAgCrdnGridValuesFixedNumberOfSteps, IAgCrdnGridValuesMethod):
@@ -30696,7 +30682,6 @@ class AgCrdnGridValuesFixedNumberOfSteps(IAgCrdnGridValuesFixedNumberOfSteps, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnGridValuesFixedNumberOfSteps.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DDD7F78E-13DC-4417-8AE5-B43BB1511AFC}", AgCrdnGridValuesFixedNumberOfSteps)
-__all__.append("AgCrdnGridValuesFixedNumberOfSteps")
 
 
 class AgCrdnGridValuesFixedStep(IAgCrdnGridValuesFixedStep, IAgCrdnGridValuesMethod):
@@ -30721,7 +30706,6 @@ class AgCrdnGridValuesFixedStep(IAgCrdnGridValuesFixedStep, IAgCrdnGridValuesMet
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnGridValuesFixedStep.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0942EA2D-33DE-41B5-98BE-E53E659EC81D}", AgCrdnGridValuesFixedStep)
-__all__.append("AgCrdnGridValuesFixedStep")
 
 
 class AgCrdnGridValuesMethod(IAgCrdnGridValuesMethod):
@@ -30743,7 +30727,6 @@ class AgCrdnGridValuesMethod(IAgCrdnGridValuesMethod):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnGridValuesMethod.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D1D242BF-73F3-443A-AB46-64EAA02C5F37}", AgCrdnGridValuesMethod)
-__all__.append("AgCrdnGridValuesMethod")
 
 
 class AgCrdnLightTimeDelay(IAgCrdnLightTimeDelay):
@@ -30765,7 +30748,6 @@ class AgCrdnLightTimeDelay(IAgCrdnLightTimeDelay):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnLightTimeDelay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{085E2242-4392-4F35-857E-A46A72EADE70}", AgCrdnLightTimeDelay)
-__all__.append("AgCrdnLightTimeDelay")
 
 
 class AgCrdnVolume(IAgCrdnVolume, IAgCrdn):
@@ -30790,7 +30772,6 @@ class AgCrdnVolume(IAgCrdnVolume, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolume.")
         
 agcls.AgClassCatalog.add_catalog_entry("{299D5D3F-7E12-4747-BFD3-2B5CADBAD8EE}", AgCrdnVolume)
-__all__.append("AgCrdnVolume")
 
 
 class AgCrdnVolumeCalc(IAgCrdnVolumeCalc, IAgCrdn):
@@ -30815,7 +30796,6 @@ class AgCrdnVolumeCalc(IAgCrdnVolumeCalc, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d014bfd1-130d-4dc4-a841-76c75bc08f9c}", AgCrdnVolumeCalc)
-__all__.append("AgCrdnVolumeCalc")
 
 
 class AgCrdnVolumeCalcAltitude(IAgCrdnVolumeCalcAltitude, IAgCrdnVolumeCalc, IAgCrdn):
@@ -30843,7 +30823,6 @@ class AgCrdnVolumeCalcAltitude(IAgCrdnVolumeCalcAltitude, IAgCrdnVolumeCalc, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcAltitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4e3c369c-c189-48ce-8e93-f0c6478f0abe}", AgCrdnVolumeCalcAltitude)
-__all__.append("AgCrdnVolumeCalcAltitude")
 
 
 class AgCrdnVolumeCalcAngleOffVector(IAgCrdnVolumeCalcAngleOffVector, IAgCrdnVolumeCalc, IAgCrdn):
@@ -30871,7 +30850,6 @@ class AgCrdnVolumeCalcAngleOffVector(IAgCrdnVolumeCalcAngleOffVector, IAgCrdnVol
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcAngleOffVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{e37c954b-d3d5-4d2e-91b6-0ae4f8380620}", AgCrdnVolumeCalcAngleOffVector)
-__all__.append("AgCrdnVolumeCalcAngleOffVector")
 
 
 class AgCrdnVolumeCalcConditionSatMetric(IAgCrdnVolumeCalcConditionSatMetric, IAgCrdnVolumeCalc, IAgCrdn):
@@ -30899,7 +30877,6 @@ class AgCrdnVolumeCalcConditionSatMetric(IAgCrdnVolumeCalcConditionSatMetric, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcConditionSatMetric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{589b39d3-7b75-4fe8-8fb2-1c7e5e247fea}", AgCrdnVolumeCalcConditionSatMetric)
-__all__.append("AgCrdnVolumeCalcConditionSatMetric")
 
 
 class AgCrdnVolumeCalcDelayRange(IAgCrdnVolumeCalcDelayRange, IAgCrdnVolumeCalc, IAgCrdn):
@@ -30927,7 +30904,6 @@ class AgCrdnVolumeCalcDelayRange(IAgCrdnVolumeCalcDelayRange, IAgCrdnVolumeCalc,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcDelayRange.")
         
 agcls.AgClassCatalog.add_catalog_entry("{bd9388e8-e5f8-4ba9-9371-4ff8fc1ed33c}", AgCrdnVolumeCalcDelayRange)
-__all__.append("AgCrdnVolumeCalcDelayRange")
 
 
 class AgCrdnVolumeCalcFile(IAgCrdnVolumeCalcFile, IAgCrdnVolumeCalc, IAgCrdn):
@@ -30955,7 +30931,6 @@ class AgCrdnVolumeCalcFile(IAgCrdnVolumeCalcFile, IAgCrdnVolumeCalc, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{188f96c6-9568-4609-9944-dfc5fb7247c5}", AgCrdnVolumeCalcFile)
-__all__.append("AgCrdnVolumeCalcFile")
 
 
 class AgCrdnVolumeCalcFromScalar(IAgCrdnVolumeCalcFromScalar, IAgCrdnVolumeCalc, IAgCrdn):
@@ -30983,7 +30958,6 @@ class AgCrdnVolumeCalcFromScalar(IAgCrdnVolumeCalcFromScalar, IAgCrdnVolumeCalc,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcFromScalar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{73219623-93c0-4c6e-961a-7fae5dfe9234}", AgCrdnVolumeCalcFromScalar)
-__all__.append("AgCrdnVolumeCalcFromScalar")
 
 
 class AgCrdnVolumeCalcRange(IAgCrdnVolumeCalcRange, IAgCrdnVolumeCalc, IAgCrdn):
@@ -31011,7 +30985,6 @@ class AgCrdnVolumeCalcRange(IAgCrdnVolumeCalcRange, IAgCrdnVolumeCalc, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcRange.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7f1aa95f-e8d6-4faf-925b-98785243ba67}", AgCrdnVolumeCalcRange)
-__all__.append("AgCrdnVolumeCalcRange")
 
 
 class AgCrdnVolumeCalcSolarIntensity(IAgCrdnVolumeCalcSolarIntensity, IAgCrdnVolumeCalc, IAgCrdn):
@@ -31039,7 +31012,6 @@ class AgCrdnVolumeCalcSolarIntensity(IAgCrdnVolumeCalcSolarIntensity, IAgCrdnVol
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCalcSolarIntensity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7796e871-d645-4f65-a3dc-de687b6fbcd5}", AgCrdnVolumeCalcSolarIntensity)
-__all__.append("AgCrdnVolumeCalcSolarIntensity")
 
 
 class AgCrdnVolumeCombined(IAgCrdnVolumeCombined, IAgCrdnVolume, IAgCrdn):
@@ -31067,7 +31039,6 @@ class AgCrdnVolumeCombined(IAgCrdnVolumeCombined, IAgCrdnVolume, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeCombined.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7ECD2E89-B432-47C3-A80F-AF6429E66746}", AgCrdnVolumeCombined)
-__all__.append("AgCrdnVolumeCombined")
 
 
 class AgCrdnVolumeFromCalc(IAgCrdnVolumeFromCalc, IAgCrdnVolume, IAgCrdn):
@@ -31095,7 +31066,6 @@ class AgCrdnVolumeFromCalc(IAgCrdnVolumeFromCalc, IAgCrdnVolume, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeFromCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F2AC0BF-4645-4C7F-9660-A894E267FD59}", AgCrdnVolumeFromCalc)
-__all__.append("AgCrdnVolumeFromCalc")
 
 
 class AgCrdnVolumeFromCondition(IAgCrdnVolumeFromCondition, IAgCrdnVolume, IAgCrdn):
@@ -31123,7 +31093,6 @@ class AgCrdnVolumeFromCondition(IAgCrdnVolumeFromCondition, IAgCrdnVolume, IAgCr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeFromCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A2546B12-78BF-4F8F-87C2-31BC73DA265B}", AgCrdnVolumeFromCondition)
-__all__.append("AgCrdnVolumeFromCondition")
 
 
 class AgCrdnVolumeFromGrid(IAgCrdnVolumeFromGrid, IAgCrdnVolume, IAgCrdn):
@@ -31151,7 +31120,6 @@ class AgCrdnVolumeFromGrid(IAgCrdnVolumeFromGrid, IAgCrdnVolume, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeFromGrid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D49FE282-4C05-4097-970C-1282997378E9}", AgCrdnVolumeFromGrid)
-__all__.append("AgCrdnVolumeFromGrid")
 
 
 class AgCrdnVolumeFromTimeSatisfaction(IAgCrdnVolumeFromTimeSatisfaction, IAgCrdnVolume, IAgCrdn):
@@ -31179,7 +31147,6 @@ class AgCrdnVolumeFromTimeSatisfaction(IAgCrdnVolumeFromTimeSatisfaction, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeFromTimeSatisfaction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{29ECFCF5-9E5E-4E17-99AA-0B312227CFBF}", AgCrdnVolumeFromTimeSatisfaction)
-__all__.append("AgCrdnVolumeFromTimeSatisfaction")
 
 
 class AgCrdnVolumeGrid(IAgCrdnVolumeGrid, IAgCrdn):
@@ -31204,7 +31171,6 @@ class AgCrdnVolumeGrid(IAgCrdnVolumeGrid, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGrid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B7068C38-74D7-4F22-B0C4-A0DBA06DF373}", AgCrdnVolumeGrid)
-__all__.append("AgCrdnVolumeGrid")
 
 
 class AgCrdnVolumeGridBearingAlt(IAgCrdnVolumeGridBearingAlt, IAgCrdnVolumeGrid, IAgCrdn):
@@ -31232,7 +31198,6 @@ class AgCrdnVolumeGridBearingAlt(IAgCrdnVolumeGridBearingAlt, IAgCrdnVolumeGrid,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridBearingAlt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ED60A16E-82F8-4E0A-9F07-CF8DF05C985A}", AgCrdnVolumeGridBearingAlt)
-__all__.append("AgCrdnVolumeGridBearingAlt")
 
 
 class AgCrdnVolumeGridCartesian(IAgCrdnVolumeGridCartesian, IAgCrdnVolumeGrid, IAgCrdn):
@@ -31260,7 +31225,6 @@ class AgCrdnVolumeGridCartesian(IAgCrdnVolumeGridCartesian, IAgCrdnVolumeGrid, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridCartesian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AF15D0A4-BB42-4762-A761-9BD11DC948D0}", AgCrdnVolumeGridCartesian)
-__all__.append("AgCrdnVolumeGridCartesian")
 
 
 class AgCrdnVolumeGridConstrained(IAgCrdnVolumeGridConstrained, IAgCrdnVolumeGrid, IAgCrdn):
@@ -31288,7 +31252,6 @@ class AgCrdnVolumeGridConstrained(IAgCrdnVolumeGridConstrained, IAgCrdnVolumeGri
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridConstrained.")
         
 agcls.AgClassCatalog.add_catalog_entry("{253FC52C-5554-4A53-AE3D-624316ECFFFD}", AgCrdnVolumeGridConstrained)
-__all__.append("AgCrdnVolumeGridConstrained")
 
 
 class AgCrdnVolumeGridCylindrical(IAgCrdnVolumeGridCylindrical, IAgCrdnVolumeGrid, IAgCrdn):
@@ -31316,7 +31279,6 @@ class AgCrdnVolumeGridCylindrical(IAgCrdnVolumeGridCylindrical, IAgCrdnVolumeGri
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridCylindrical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{55C6A7AA-5354-4DF1-9A0E-F62CB01115C8}", AgCrdnVolumeGridCylindrical)
-__all__.append("AgCrdnVolumeGridCylindrical")
 
 
 class AgCrdnVolumeGridLatLonAlt(IAgCrdnVolumeGridLatLonAlt, IAgCrdnVolumeGrid, IAgCrdn):
@@ -31344,7 +31306,6 @@ class AgCrdnVolumeGridLatLonAlt(IAgCrdnVolumeGridLatLonAlt, IAgCrdnVolumeGrid, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridLatLonAlt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{89C10FC4-4031-4B63-9C55-E092DDF3839D}", AgCrdnVolumeGridLatLonAlt)
-__all__.append("AgCrdnVolumeGridLatLonAlt")
 
 
 class AgCrdnVolumeGridResult(IAgCrdnVolumeGridResult):
@@ -31366,7 +31327,6 @@ class AgCrdnVolumeGridResult(IAgCrdnVolumeGridResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{43B95CA7-5CCA-4477-9F37-63A86CD9DEBB}", AgCrdnVolumeGridResult)
-__all__.append("AgCrdnVolumeGridResult")
 
 
 class AgCrdnVolumeGridSpherical(IAgCrdnVolumeGridSpherical, IAgCrdnVolumeGrid, IAgCrdn):
@@ -31394,7 +31354,6 @@ class AgCrdnVolumeGridSpherical(IAgCrdnVolumeGridSpherical, IAgCrdnVolumeGrid, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeGridSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0DFD2937-3181-4895-AB05-A45FFD744964}", AgCrdnVolumeGridSpherical)
-__all__.append("AgCrdnVolumeGridSpherical")
 
 
 class AgCrdnVolumeInview(IAgCrdnVolumeInview, IAgCrdnVolume, IAgCrdn):
@@ -31422,7 +31381,6 @@ class AgCrdnVolumeInview(IAgCrdnVolumeInview, IAgCrdnVolume, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeInview.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DC8CB747-2714-4F73-8BD6-ED974F0B03AB}", AgCrdnVolumeInview)
-__all__.append("AgCrdnVolumeInview")
 
 
 class AgCrdnVolumeLighting(IAgCrdnVolumeLighting, IAgCrdnVolume, IAgCrdn):
@@ -31450,7 +31408,6 @@ class AgCrdnVolumeLighting(IAgCrdnVolumeLighting, IAgCrdnVolume, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeLighting.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B9ACC019-A8DD-4342-ADE9-1335215F0FAF}", AgCrdnVolumeLighting)
-__all__.append("AgCrdnVolumeLighting")
 
 
 class AgCrdnVolumeOverTime(IAgCrdnVolumeOverTime, IAgCrdnVolume, IAgCrdn):
@@ -31478,7 +31435,6 @@ class AgCrdnVolumeOverTime(IAgCrdnVolumeOverTime, IAgCrdnVolume, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVolumeOverTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F5AB68EE-DCC1-435F-A0C3-133095B01D2D}", AgCrdnVolumeOverTime)
-__all__.append("AgCrdnVolumeOverTime")
 
 
 class AgCrdnGeneric(IAgCrdn):
@@ -31500,7 +31456,6 @@ class AgCrdnGeneric(IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnGeneric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2909EDFB-9BE2-4BD2-A678-186C9D136937}", AgCrdnGeneric)
-__all__.append("AgCrdnGeneric")
 
 
 class AgCrdnTypeInfo(IAgCrdnTypeInfo):
@@ -31522,7 +31477,6 @@ class AgCrdnTypeInfo(IAgCrdnTypeInfo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnTypeInfo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BA26887C-6DFE-4F18-96D8-5694296568D2}", AgCrdnTypeInfo)
-__all__.append("AgCrdnTypeInfo")
 
 
 class AgCrdnInstance(IAgCrdnContext, IAgCrdnInstance):
@@ -31547,7 +31501,6 @@ class AgCrdnInstance(IAgCrdnContext, IAgCrdnInstance):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnInstance.")
         
 agcls.AgClassCatalog.add_catalog_entry("{28241775-2044-4AD1-BC1D-D5B345437415}", AgCrdnInstance)
-__all__.append("AgCrdnInstance")
 
 
 class AgCrdnTemplate(IAgCrdnContext, IAgCrdnTemplate):
@@ -31572,7 +31525,6 @@ class AgCrdnTemplate(IAgCrdnContext, IAgCrdnTemplate):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnTemplate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DB2ABC0D-53EC-43C9-AB85-3ADBDC10CFE3}", AgCrdnTemplate)
-__all__.append("AgCrdnTemplate")
 
 
 class AgCrdnPointRefTo(IAgCrdnPointRefTo, IAgCrdnRefTo):
@@ -31597,7 +31549,6 @@ class AgCrdnPointRefTo(IAgCrdnPointRefTo, IAgCrdnRefTo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{33A043CD-6D36-414A-B73C-9DA3ABDE4C6F}", AgCrdnPointRefTo)
-__all__.append("AgCrdnPointRefTo")
 
 
 class AgCrdnVectorRefTo(IAgCrdnVectorRefTo, IAgCrdnRefTo):
@@ -31622,7 +31573,6 @@ class AgCrdnVectorRefTo(IAgCrdnVectorRefTo, IAgCrdnRefTo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{76ABF2B5-C60E-4B80-84BA-3F2345E357A6}", AgCrdnVectorRefTo)
-__all__.append("AgCrdnVectorRefTo")
 
 
 class AgCrdnAxesRefTo(IAgCrdnAxesRefTo, IAgCrdnRefTo):
@@ -31647,7 +31597,6 @@ class AgCrdnAxesRefTo(IAgCrdnAxesRefTo, IAgCrdnRefTo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ABAD0C95-5570-461A-9DA0-FD800B10DB20}", AgCrdnAxesRefTo)
-__all__.append("AgCrdnAxesRefTo")
 
 
 class AgCrdnAngleRefTo(IAgCrdnAngleRefTo, IAgCrdnRefTo):
@@ -31672,7 +31621,6 @@ class AgCrdnAngleRefTo(IAgCrdnAngleRefTo, IAgCrdnRefTo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngleRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1C8DFF6-65AA-4A6B-B160-7315BD795133}", AgCrdnAngleRefTo)
-__all__.append("AgCrdnAngleRefTo")
 
 
 class AgCrdnSystemRefTo(IAgCrdnSystemRefTo, IAgCrdnRefTo):
@@ -31697,7 +31645,6 @@ class AgCrdnSystemRefTo(IAgCrdnSystemRefTo, IAgCrdnRefTo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSystemRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4C6DEAA3-3DD0-439F-A58F-A2BC329384A8}", AgCrdnSystemRefTo)
-__all__.append("AgCrdnSystemRefTo")
 
 
 class AgCrdnPlaneRefTo(IAgCrdnPlaneRefTo, IAgCrdnRefTo):
@@ -31722,7 +31669,6 @@ class AgCrdnPlaneRefTo(IAgCrdnPlaneRefTo, IAgCrdnRefTo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C24A1C1D-EEF3-43DB-83BF-04F12E85B155}", AgCrdnPlaneRefTo)
-__all__.append("AgCrdnPlaneRefTo")
 
 
 class AgCrdnVector(IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -31750,7 +31696,6 @@ class AgCrdnVector(IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64392436-52D5-4274-9483-E10C56BBD037}", AgCrdnVector)
-__all__.append("AgCrdnVector")
 
 
 class AgCrdnAxesLabels(IAgCrdnAxesLabels):
@@ -31772,7 +31717,6 @@ class AgCrdnAxesLabels(IAgCrdnAxesLabels):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesLabels.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AC9F13AD-1E42-4695-AC74-6259D2013E4F}", AgCrdnAxesLabels)
-__all__.append("AgCrdnAxesLabels")
 
 
 class AgCrdnAxes(IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -31800,7 +31744,6 @@ class AgCrdnAxes(IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50F5DD10-4D83-4603-94ED-BF7514C26282}", AgCrdnAxes)
-__all__.append("AgCrdnAxes")
 
 
 class AgCrdnPoint(IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -31828,7 +31771,6 @@ class AgCrdnPoint(IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPoint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0092C129-467E-4B36-B971-C53F65481DA9}", AgCrdnPoint)
-__all__.append("AgCrdnPoint")
 
 
 class AgCrdnSystem(IAgCrdnSystem, IAgCrdnTimeProperties, IAgCrdn):
@@ -31856,7 +31798,6 @@ class AgCrdnSystem(IAgCrdnSystem, IAgCrdnTimeProperties, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSystem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{20F29E1B-F72A-4B9C-B13B-04E8F1CCAEA6}", AgCrdnSystem)
-__all__.append("AgCrdnSystem")
 
 
 class AgCrdnAngle(IAgCrdnAngle, IAgCrdnTimeProperties, IAgCrdn):
@@ -31884,7 +31825,6 @@ class AgCrdnAngle(IAgCrdnAngle, IAgCrdnTimeProperties, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C3F96DA3-00EC-4E20-A66C-B3506100496B}", AgCrdnAngle)
-__all__.append("AgCrdnAngle")
 
 
 class AgCrdnPlaneLabels(IAgCrdnPlaneLabels):
@@ -31906,7 +31846,6 @@ class AgCrdnPlaneLabels(IAgCrdnPlaneLabels):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneLabels.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E40312E9-2D04-4F38-8E35-0C1F5CC66B79}", AgCrdnPlaneLabels)
-__all__.append("AgCrdnPlaneLabels")
 
 
 class AgCrdnPlane(IAgCrdnPlane, IAgCrdnTimeProperties, IAgCrdn):
@@ -31934,7 +31873,6 @@ class AgCrdnPlane(IAgCrdnPlane, IAgCrdnTimeProperties, IAgCrdn):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2E6EAA85-8440-4C4E-97FE-76491E05098A}", AgCrdnPlane)
-__all__.append("AgCrdnPlane")
 
 
 class AgCrdnAxesAlignedAndConstrained(IAgCrdnAxesAlignedAndConstrained, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -31965,7 +31903,6 @@ class AgCrdnAxesAlignedAndConstrained(IAgCrdnAxesAlignedAndConstrained, IAgCrdnA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesAlignedAndConstrained.")
         
 agcls.AgClassCatalog.add_catalog_entry("{46BB7D5B-6593-434F-B288-BF1445920A2C}", AgCrdnAxesAlignedAndConstrained)
-__all__.append("AgCrdnAxesAlignedAndConstrained")
 
 
 class AgCrdnAxesAngularOffset(IAgCrdnAxesAngularOffset, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -31996,7 +31933,6 @@ class AgCrdnAxesAngularOffset(IAgCrdnAxesAngularOffset, IAgCrdnAxes, IAgCrdnTime
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesAngularOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64503F8B-96E7-455B-B589-2578ADE1214B}", AgCrdnAxesAngularOffset)
-__all__.append("AgCrdnAxesAngularOffset")
 
 
 class AgCrdnAxesFixedAtEpoch(IAgCrdnAxesFixedAtEpoch, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32027,7 +31963,6 @@ class AgCrdnAxesFixedAtEpoch(IAgCrdnAxesFixedAtEpoch, IAgCrdnAxes, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesFixedAtEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BEEE1271-F9F7-4C9E-A6C9-4337AA4F86AC}", AgCrdnAxesFixedAtEpoch)
-__all__.append("AgCrdnAxesFixedAtEpoch")
 
 
 class AgCrdnAxesBPlane(IAgCrdnAxesBPlane, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32058,7 +31993,6 @@ class AgCrdnAxesBPlane(IAgCrdnAxesBPlane, IAgCrdnAxes, IAgCrdnTimeProperties, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesBPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E0F714EA-31E4-4F92-876F-BDD3183C29B5}", AgCrdnAxesBPlane)
-__all__.append("AgCrdnAxesBPlane")
 
 
 class AgCrdnAxesCustomScript(IAgCrdnAxesCustomScript, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32089,7 +32023,6 @@ class AgCrdnAxesCustomScript(IAgCrdnAxesCustomScript, IAgCrdnAxes, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesCustomScript.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC7A87DC-118E-46ED-8657-90DF42B7B101}", AgCrdnAxesCustomScript)
-__all__.append("AgCrdnAxesCustomScript")
 
 
 class AgCrdnAxesAttitudeFile(IAgCrdnAxesAttitudeFile, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32120,7 +32053,6 @@ class AgCrdnAxesAttitudeFile(IAgCrdnAxesAttitudeFile, IAgCrdnAxes, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesAttitudeFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3505D063-9E1B-4964-9865-FFE41F64C8CF}", AgCrdnAxesAttitudeFile)
-__all__.append("AgCrdnAxesAttitudeFile")
 
 
 class AgCrdnAxesFixed(IAgCrdnAxesFixed, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32151,7 +32083,6 @@ class AgCrdnAxesFixed(IAgCrdnAxesFixed, IAgCrdnAxes, IAgCrdnTimeProperties, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesFixed.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4AE41C73-3C82-405B-B7D2-A6D1BE7EE2EE}", AgCrdnAxesFixed)
-__all__.append("AgCrdnAxesFixed")
 
 
 class AgCrdnAxesModelAttach(IAgCrdnAxesModelAttach, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32182,7 +32113,6 @@ class AgCrdnAxesModelAttach(IAgCrdnAxesModelAttach, IAgCrdnAxes, IAgCrdnTimeProp
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesModelAttach.")
         
 agcls.AgClassCatalog.add_catalog_entry("{816C612A-13DD-4812-BFDE-E3861F8C39FD}", AgCrdnAxesModelAttach)
-__all__.append("AgCrdnAxesModelAttach")
 
 
 class AgCrdnAxesSpinning(IAgCrdnAxesSpinning, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32213,7 +32143,6 @@ class AgCrdnAxesSpinning(IAgCrdnAxesSpinning, IAgCrdnAxes, IAgCrdnTimeProperties
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesSpinning.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C0FB8B6D-84CC-4553-ADA9-2F7D91A83AB6}", AgCrdnAxesSpinning)
-__all__.append("AgCrdnAxesSpinning")
 
 
 class AgCrdnAxesOnSurface(IAgCrdnAxesOnSurface, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32244,7 +32173,6 @@ class AgCrdnAxesOnSurface(IAgCrdnAxesOnSurface, IAgCrdnAxes, IAgCrdnTimeProperti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesOnSurface.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CE8C301A-A846-44FD-8871-5AB4CAACEF11}", AgCrdnAxesOnSurface)
-__all__.append("AgCrdnAxesOnSurface")
 
 
 class AgCrdnAxesTrajectory(IAgCrdnAxesTrajectory, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32275,7 +32203,6 @@ class AgCrdnAxesTrajectory(IAgCrdnAxesTrajectory, IAgCrdnAxes, IAgCrdnTimeProper
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesTrajectory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4038771E-73C1-4989-A9AB-4DC37025FACC}", AgCrdnAxesTrajectory)
-__all__.append("AgCrdnAxesTrajectory")
 
 
 class AgCrdnAxesLagrangeLibration(IAgCrdnAxesLagrangeLibration, IAgCrdnAxes, IAgCrdnTimeProperties, IAgCrdn):
@@ -32306,7 +32233,6 @@ class AgCrdnAxesLagrangeLibration(IAgCrdnAxesLagrangeLibration, IAgCrdnAxes, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesLagrangeLibration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{16315085-7C87-4A20-865C-0F419A5CDA2F}", AgCrdnAxesLagrangeLibration)
-__all__.append("AgCrdnAxesLagrangeLibration")
 
 
 class AgCrdnAxesCommonTasks(IAgCrdnAxesCommonTasks):
@@ -32328,7 +32254,6 @@ class AgCrdnAxesCommonTasks(IAgCrdnAxesCommonTasks):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesCommonTasks.")
         
 agcls.AgClassCatalog.add_catalog_entry("{07D4865C-78F1-4B3A-9756-D70050613D4A}", AgCrdnAxesCommonTasks)
-__all__.append("AgCrdnAxesCommonTasks")
 
 
 class AgCrdnAxesAtTimeInstant(IAgCrdnAxesAtTimeInstant, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnAxes):
@@ -32359,7 +32284,6 @@ class AgCrdnAxesAtTimeInstant(IAgCrdnAxesAtTimeInstant, IAgCrdn, IAgCrdnTimeProp
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesAtTimeInstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3845C20A-A6E2-45A0-A748-10E9B565C48D}", AgCrdnAxesAtTimeInstant)
-__all__.append("AgCrdnAxesAtTimeInstant")
 
 
 class AgCrdnAxesPlugin(IAgCrdnAxesPlugin, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnAxes):
@@ -32390,7 +32314,6 @@ class AgCrdnAxesPlugin(IAgCrdnAxesPlugin, IAgCrdn, IAgCrdnTimeProperties, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C494C46D-EBC6-45B9-B2E7-C9FF7E75467D}", AgCrdnAxesPlugin)
-__all__.append("AgCrdnAxesPlugin")
 
 
 class AgCrdnAngleBetweenVectors(IAgCrdnAngleBetweenVectors, IAgCrdnAngle, IAgCrdnTimeProperties, IAgCrdn):
@@ -32421,7 +32344,6 @@ class AgCrdnAngleBetweenVectors(IAgCrdnAngleBetweenVectors, IAgCrdnAngle, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngleBetweenVectors.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2F0AA430-85D0-4479-9540-B1B64EB3B530}", AgCrdnAngleBetweenVectors)
-__all__.append("AgCrdnAngleBetweenVectors")
 
 
 class AgCrdnAngleBetweenPlanes(IAgCrdnAngleBetweenPlanes, IAgCrdnAngle, IAgCrdnTimeProperties, IAgCrdn):
@@ -32452,7 +32374,6 @@ class AgCrdnAngleBetweenPlanes(IAgCrdnAngleBetweenPlanes, IAgCrdnAngle, IAgCrdnT
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngleBetweenPlanes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{30C2886F-8792-475D-9E42-975308B1B94E}", AgCrdnAngleBetweenPlanes)
-__all__.append("AgCrdnAngleBetweenPlanes")
 
 
 class AgCrdnAngleDihedral(IAgCrdnAngleDihedral, IAgCrdnAngle, IAgCrdnTimeProperties, IAgCrdn):
@@ -32483,7 +32404,6 @@ class AgCrdnAngleDihedral(IAgCrdnAngleDihedral, IAgCrdnAngle, IAgCrdnTimePropert
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngleDihedral.")
         
 agcls.AgClassCatalog.add_catalog_entry("{550855BB-E8F1-440B-BA5C-024ACE2E2A17}", AgCrdnAngleDihedral)
-__all__.append("AgCrdnAngleDihedral")
 
 
 class AgCrdnAngleRotation(IAgCrdnAngleRotation, IAgCrdnAngle, IAgCrdnTimeProperties, IAgCrdn):
@@ -32514,7 +32434,6 @@ class AgCrdnAngleRotation(IAgCrdnAngleRotation, IAgCrdnAngle, IAgCrdnTimePropert
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngleRotation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AD8B87A3-8407-42AB-B6CA-8E83450C32C1}", AgCrdnAngleRotation)
-__all__.append("AgCrdnAngleRotation")
 
 
 class AgCrdnAngleToPlane(IAgCrdnAngleToPlane, IAgCrdnAngle, IAgCrdnTimeProperties, IAgCrdn):
@@ -32545,7 +32464,6 @@ class AgCrdnAngleToPlane(IAgCrdnAngleToPlane, IAgCrdnAngle, IAgCrdnTimePropertie
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngleToPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8CE8877B-1078-41CD-AEE6-B9DDD92F8201}", AgCrdnAngleToPlane)
-__all__.append("AgCrdnAngleToPlane")
 
 
 class AgCrdnPlaneNormal(IAgCrdnPlaneNormal, IAgCrdnPlane, IAgCrdnTimeProperties, IAgCrdn):
@@ -32576,7 +32494,6 @@ class AgCrdnPlaneNormal(IAgCrdnPlaneNormal, IAgCrdnPlane, IAgCrdnTimeProperties,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneNormal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0AED319D-7B6C-462B-882B-D363F7A2A86C}", AgCrdnPlaneNormal)
-__all__.append("AgCrdnPlaneNormal")
 
 
 class AgCrdnPlaneQuadrant(IAgCrdnPlaneQuadrant, IAgCrdnPlane, IAgCrdnTimeProperties, IAgCrdn):
@@ -32607,7 +32524,6 @@ class AgCrdnPlaneQuadrant(IAgCrdnPlaneQuadrant, IAgCrdnPlane, IAgCrdnTimePropert
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneQuadrant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8330CE61-25F6-4F92-AE2E-BDB566BA42F3}", AgCrdnPlaneQuadrant)
-__all__.append("AgCrdnPlaneQuadrant")
 
 
 class AgCrdnPlaneTrajectory(IAgCrdnPlaneTrajectory, IAgCrdnPlane, IAgCrdnTimeProperties, IAgCrdn):
@@ -32638,7 +32554,6 @@ class AgCrdnPlaneTrajectory(IAgCrdnPlaneTrajectory, IAgCrdnPlane, IAgCrdnTimePro
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneTrajectory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7BD18F79-6788-48B1-AFB5-243D62C01177}", AgCrdnPlaneTrajectory)
-__all__.append("AgCrdnPlaneTrajectory")
 
 
 class AgCrdnPlaneTriad(IAgCrdnPlaneTriad, IAgCrdnPlane, IAgCrdnTimeProperties, IAgCrdn):
@@ -32669,7 +32584,6 @@ class AgCrdnPlaneTriad(IAgCrdnPlaneTriad, IAgCrdnPlane, IAgCrdnTimeProperties, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneTriad.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8A4D3940-BD08-4D5C-A171-E0AC90DEB5F4}", AgCrdnPlaneTriad)
-__all__.append("AgCrdnPlaneTriad")
 
 
 class AgCrdnPlaneTwoVector(IAgCrdnPlaneTwoVector, IAgCrdnPlane, IAgCrdnTimeProperties, IAgCrdn):
@@ -32700,7 +32614,6 @@ class AgCrdnPlaneTwoVector(IAgCrdnPlaneTwoVector, IAgCrdnPlane, IAgCrdnTimePrope
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneTwoVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{49a61e7a-baba-48fd-9d9d-61f91c520291}", AgCrdnPlaneTwoVector)
-__all__.append("AgCrdnPlaneTwoVector")
 
 
 class AgCrdnPointBPlane(IAgCrdnPointBPlane, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32731,7 +32644,6 @@ class AgCrdnPointBPlane(IAgCrdnPointBPlane, IAgCrdnPoint, IAgCrdnTimeProperties,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointBPlane.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E62329EB-83D1-47CE-8B5B-B795995A2270}", AgCrdnPointBPlane)
-__all__.append("AgCrdnPointBPlane")
 
 
 class AgCrdnPointFile(IAgCrdnPointFile, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32762,7 +32674,6 @@ class AgCrdnPointFile(IAgCrdnPointFile, IAgCrdnPoint, IAgCrdnTimeProperties, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0E71C927-09CA-4A90-95F0-CB87E244CE72}", AgCrdnPointFile)
-__all__.append("AgCrdnPointFile")
 
 
 class AgCrdnPointFixedInSystem(IAgCrdnPointFixedInSystem, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32793,7 +32704,6 @@ class AgCrdnPointFixedInSystem(IAgCrdnPointFixedInSystem, IAgCrdnPoint, IAgCrdnT
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointFixedInSystem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9FA10E06-094A-446C-BE9A-5BA397776778}", AgCrdnPointFixedInSystem)
-__all__.append("AgCrdnPointFixedInSystem")
 
 
 class AgCrdnPointGrazing(IAgCrdnPointGrazing, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32824,7 +32734,6 @@ class AgCrdnPointGrazing(IAgCrdnPointGrazing, IAgCrdnPoint, IAgCrdnTimePropertie
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointGrazing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7D8A954-B6ED-43A0-8B2C-C58B06DCDFF7}", AgCrdnPointGrazing)
-__all__.append("AgCrdnPointGrazing")
 
 
 class AgCrdnPointGlint(IAgCrdnPointGlint, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32855,7 +32764,6 @@ class AgCrdnPointGlint(IAgCrdnPointGlint, IAgCrdnPoint, IAgCrdnTimeProperties, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointGlint.")
         
 agcls.AgClassCatalog.add_catalog_entry("{68F85553-0FA2-459D-93AC-BD4D68A01F6F}", AgCrdnPointGlint)
-__all__.append("AgCrdnPointGlint")
 
 
 class AgCrdnPointCovarianceGrazing(IAgCrdnPointCovarianceGrazing, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32886,7 +32794,6 @@ class AgCrdnPointCovarianceGrazing(IAgCrdnPointCovarianceGrazing, IAgCrdnPoint, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointCovarianceGrazing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84D91807-716E-46F4-AB70-53C73FA21C20}", AgCrdnPointCovarianceGrazing)
-__all__.append("AgCrdnPointCovarianceGrazing")
 
 
 class AgCrdnPointPlaneIntersection(IAgCrdnPointPlaneIntersection, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32917,7 +32824,6 @@ class AgCrdnPointPlaneIntersection(IAgCrdnPointPlaneIntersection, IAgCrdnPoint, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointPlaneIntersection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{63F785C4-EC8E-4BCA-AF05-D57BD357D06C}", AgCrdnPointPlaneIntersection)
-__all__.append("AgCrdnPointPlaneIntersection")
 
 
 class AgCrdnPointOnSurface(IAgCrdnPointOnSurface, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32948,7 +32854,6 @@ class AgCrdnPointOnSurface(IAgCrdnPointOnSurface, IAgCrdnPoint, IAgCrdnTimePrope
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointOnSurface.")
         
 agcls.AgClassCatalog.add_catalog_entry("{03ECCFD1-B058-4817-826F-EDE2A6880757}", AgCrdnPointOnSurface)
-__all__.append("AgCrdnPointOnSurface")
 
 
 class AgCrdnPointModelAttach(IAgCrdnPointModelAttach, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -32979,7 +32884,6 @@ class AgCrdnPointModelAttach(IAgCrdnPointModelAttach, IAgCrdnPoint, IAgCrdnTimeP
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointModelAttach.")
         
 agcls.AgClassCatalog.add_catalog_entry("{15958616-F779-4772-9E54-9B134B69BE89}", AgCrdnPointModelAttach)
-__all__.append("AgCrdnPointModelAttach")
 
 
 class AgCrdnPointSatelliteCollectionEntry(IAgCrdnPointSatelliteCollectionEntry, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -33010,7 +32914,6 @@ class AgCrdnPointSatelliteCollectionEntry(IAgCrdnPointSatelliteCollectionEntry, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointSatelliteCollectionEntry.")
         
 agcls.AgClassCatalog.add_catalog_entry("{d0dacbed-0c16-4de5-b32a-9c7624297014}", AgCrdnPointSatelliteCollectionEntry)
-__all__.append("AgCrdnPointSatelliteCollectionEntry")
 
 
 class AgCrdnPointPlaneProjection(IAgCrdnPointPlaneProjection, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -33041,7 +32944,6 @@ class AgCrdnPointPlaneProjection(IAgCrdnPointPlaneProjection, IAgCrdnPoint, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointPlaneProjection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C750AD99-2498-42F6-BBBD-CEB1835E8F3A}", AgCrdnPointPlaneProjection)
-__all__.append("AgCrdnPointPlaneProjection")
 
 
 class AgCrdnPointLagrangeLibration(IAgCrdnPointLagrangeLibration, IAgCrdnPoint, IAgCrdnTimeProperties, IAgCrdn):
@@ -33072,7 +32974,6 @@ class AgCrdnPointLagrangeLibration(IAgCrdnPointLagrangeLibration, IAgCrdnPoint, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointLagrangeLibration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6BF6D976-775A-445D-AD2B-899892F3127E}", AgCrdnPointLagrangeLibration)
-__all__.append("AgCrdnPointLagrangeLibration")
 
 
 class AgCrdnPointCommonTasks(IAgCrdnPointCommonTasks):
@@ -33094,7 +32995,6 @@ class AgCrdnPointCommonTasks(IAgCrdnPointCommonTasks):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointCommonTasks.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9866644C-E731-465E-A7AA-3F4667C1729E}", AgCrdnPointCommonTasks)
-__all__.append("AgCrdnPointCommonTasks")
 
 
 class AgCrdnPointCentBodyIntersect(IAgCrdnPointCentBodyIntersect, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnPoint):
@@ -33125,7 +33025,6 @@ class AgCrdnPointCentBodyIntersect(IAgCrdnPointCentBodyIntersect, IAgCrdn, IAgCr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointCentBodyIntersect.")
         
 agcls.AgClassCatalog.add_catalog_entry("{882047E8-7CB3-489B-B029-33163CBBA583}", AgCrdnPointCentBodyIntersect)
-__all__.append("AgCrdnPointCentBodyIntersect")
 
 
 class AgCrdnPointAtTimeInstant(IAgCrdnPointAtTimeInstant, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnPoint):
@@ -33156,7 +33055,6 @@ class AgCrdnPointAtTimeInstant(IAgCrdnPointAtTimeInstant, IAgCrdn, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointAtTimeInstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8BFB46DF-C6BC-45DA-BAA7-9C996710CFDA}", AgCrdnPointAtTimeInstant)
-__all__.append("AgCrdnPointAtTimeInstant")
 
 
 class AgCrdnPointPlugin(IAgCrdnPointPlugin, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnPoint):
@@ -33187,7 +33085,6 @@ class AgCrdnPointPlugin(IAgCrdnPointPlugin, IAgCrdn, IAgCrdnTimeProperties, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8297DC34-1755-4FE7-BA23-2D9CDE487EF1}", AgCrdnPointPlugin)
-__all__.append("AgCrdnPointPlugin")
 
 
 class AgCrdnPointCBFixedOffset(IAgCrdnPointCBFixedOffset, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnPoint):
@@ -33218,7 +33115,6 @@ class AgCrdnPointCBFixedOffset(IAgCrdnPointCBFixedOffset, IAgCrdn, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointCBFixedOffset.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0C76BDAE-992E-4D61-8D09-E6B2B6923A5B}", AgCrdnPointCBFixedOffset)
-__all__.append("AgCrdnPointCBFixedOffset")
 
 
 class AgCrdnSystemAssembled(IAgCrdnSystemAssembled, IAgCrdnSystem, IAgCrdnTimeProperties, IAgCrdn):
@@ -33249,7 +33145,6 @@ class AgCrdnSystemAssembled(IAgCrdnSystemAssembled, IAgCrdnSystem, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSystemAssembled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CE4E84B1-8CCF-467A-A3ED-274D0943407F}", AgCrdnSystemAssembled)
-__all__.append("AgCrdnSystemAssembled")
 
 
 class AgCrdnSystemOnSurface(IAgCrdnSystemOnSurface, IAgCrdnSystem, IAgCrdnTimeProperties, IAgCrdn):
@@ -33280,7 +33175,6 @@ class AgCrdnSystemOnSurface(IAgCrdnSystemOnSurface, IAgCrdnSystem, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSystemOnSurface.")
         
 agcls.AgClassCatalog.add_catalog_entry("{073423F9-A59D-4313-B499-C86A45C63513}", AgCrdnSystemOnSurface)
-__all__.append("AgCrdnSystemOnSurface")
 
 
 class AgCrdnLLAPosition(IAgCrdnLLAPosition):
@@ -33302,7 +33196,6 @@ class AgCrdnLLAPosition(IAgCrdnLLAPosition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnLLAPosition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CB962F51-978A-43F9-A88B-AAB62117F93C}", AgCrdnLLAPosition)
-__all__.append("AgCrdnLLAPosition")
 
 
 class AgCrdnSystemCommonTasks(IAgCrdnSystemCommonTasks):
@@ -33324,7 +33217,6 @@ class AgCrdnSystemCommonTasks(IAgCrdnSystemCommonTasks):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSystemCommonTasks.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EBE7AF41-FC7E-4D82-B522-72B4AA551B41}", AgCrdnSystemCommonTasks)
-__all__.append("AgCrdnSystemCommonTasks")
 
 
 class AgCrdnVectorAngleRate(IAgCrdnVectorAngleRate, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33355,7 +33247,6 @@ class AgCrdnVectorAngleRate(IAgCrdnVectorAngleRate, IAgCrdnVector, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorAngleRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5769E079-8E9B-40B2-B2EF-14F202AF5666}", AgCrdnVectorAngleRate)
-__all__.append("AgCrdnVectorAngleRate")
 
 
 class AgCrdnVectorApoapsis(IAgCrdnVectorApoapsis, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33386,7 +33277,6 @@ class AgCrdnVectorApoapsis(IAgCrdnVectorApoapsis, IAgCrdnVector, IAgCrdnTimeProp
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorApoapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{22E4138C-29C6-4401-91E0-DF0C00422302}", AgCrdnVectorApoapsis)
-__all__.append("AgCrdnVectorApoapsis")
 
 
 class AgCrdnVectorFixedAtEpoch(IAgCrdnVectorFixedAtEpoch, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33417,7 +33307,6 @@ class AgCrdnVectorFixedAtEpoch(IAgCrdnVectorFixedAtEpoch, IAgCrdnVector, IAgCrdn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorFixedAtEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FA8DB5F5-1F28-40E6-9B86-489E06D61523}", AgCrdnVectorFixedAtEpoch)
-__all__.append("AgCrdnVectorFixedAtEpoch")
 
 
 class AgCrdnVectorAngularVelocity(IAgCrdnVectorAngularVelocity, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33448,7 +33337,6 @@ class AgCrdnVectorAngularVelocity(IAgCrdnVectorAngularVelocity, IAgCrdnVector, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorAngularVelocity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2ABC83DB-6F6C-4A91-8597-21BD2715D411}", AgCrdnVectorAngularVelocity)
-__all__.append("AgCrdnVectorAngularVelocity")
 
 
 class AgCrdnVectorConing(IAgCrdnVectorConing, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33479,7 +33367,6 @@ class AgCrdnVectorConing(IAgCrdnVectorConing, IAgCrdnVector, IAgCrdnTimeProperti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorConing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{74E6F986-E292-4115-84E4-9E9953C163B8}", AgCrdnVectorConing)
-__all__.append("AgCrdnVectorConing")
 
 
 class AgCrdnVectorCross(IAgCrdnVectorCross, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33510,7 +33397,6 @@ class AgCrdnVectorCross(IAgCrdnVectorCross, IAgCrdnVector, IAgCrdnTimeProperties
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorCross.")
         
 agcls.AgClassCatalog.add_catalog_entry("{88B6E3B7-51CD-45DE-97C0-DCFE834C0111}", AgCrdnVectorCross)
-__all__.append("AgCrdnVectorCross")
 
 
 class AgCrdnVectorCustomScript(IAgCrdnVectorCustomScript, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33541,7 +33427,6 @@ class AgCrdnVectorCustomScript(IAgCrdnVectorCustomScript, IAgCrdnVector, IAgCrdn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorCustomScript.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D65CDDC6-21DA-419F-BF72-79C2376648E8}", AgCrdnVectorCustomScript)
-__all__.append("AgCrdnVectorCustomScript")
 
 
 class AgCrdnVectorDerivative(IAgCrdnVectorDerivative, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33572,7 +33457,6 @@ class AgCrdnVectorDerivative(IAgCrdnVectorDerivative, IAgCrdnVector, IAgCrdnTime
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorDerivative.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B81ECB39-CF3E-49AE-8622-F454CD0EA7B2}", AgCrdnVectorDerivative)
-__all__.append("AgCrdnVectorDerivative")
 
 
 class AgCrdnVectorDisplacement(IAgCrdnVectorDisplacement, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33603,7 +33487,6 @@ class AgCrdnVectorDisplacement(IAgCrdnVectorDisplacement, IAgCrdnVector, IAgCrdn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorDisplacement.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6CAADA67-7238-4705-9F74-95596344DED0}", AgCrdnVectorDisplacement)
-__all__.append("AgCrdnVectorDisplacement")
 
 
 class AgCrdnVectorTwoPlanesIntersection(IAgCrdnVectorTwoPlanesIntersection, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33634,7 +33517,6 @@ class AgCrdnVectorTwoPlanesIntersection(IAgCrdnVectorTwoPlanesIntersection, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorTwoPlanesIntersection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B1145553-76CD-4C1E-AE08-E63E29CF4E46}", AgCrdnVectorTwoPlanesIntersection)
-__all__.append("AgCrdnVectorTwoPlanesIntersection")
 
 
 class AgCrdnVectorModelAttach(IAgCrdnVectorModelAttach, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33665,7 +33547,6 @@ class AgCrdnVectorModelAttach(IAgCrdnVectorModelAttach, IAgCrdnVector, IAgCrdnTi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorModelAttach.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E95BEEB8-C544-4852-9C82-20080343E585}", AgCrdnVectorModelAttach)
-__all__.append("AgCrdnVectorModelAttach")
 
 
 class AgCrdnVectorProjection(IAgCrdnVectorProjection, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33696,7 +33577,6 @@ class AgCrdnVectorProjection(IAgCrdnVectorProjection, IAgCrdnVector, IAgCrdnTime
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorProjection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7306544A-A8B0-477B-B89D-BA711C9ED600}", AgCrdnVectorProjection)
-__all__.append("AgCrdnVectorProjection")
 
 
 class AgCrdnVectorScaled(IAgCrdnVectorScaled, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33727,7 +33607,6 @@ class AgCrdnVectorScaled(IAgCrdnVectorScaled, IAgCrdnVector, IAgCrdnTimeProperti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorScaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92D80C29-251B-436B-9DA0-D5BA4B262185}", AgCrdnVectorScaled)
-__all__.append("AgCrdnVectorScaled")
 
 
 class AgCrdnVectorEccentricity(IAgCrdnVectorEccentricity, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33758,7 +33637,6 @@ class AgCrdnVectorEccentricity(IAgCrdnVectorEccentricity, IAgCrdnVector, IAgCrdn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorEccentricity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7F157D7-11EB-4779-955F-98530B9C2608}", AgCrdnVectorEccentricity)
-__all__.append("AgCrdnVectorEccentricity")
 
 
 class AgCrdnVectorFixedInAxes(IAgCrdnVectorFixedInAxes, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33789,7 +33667,6 @@ class AgCrdnVectorFixedInAxes(IAgCrdnVectorFixedInAxes, IAgCrdnVector, IAgCrdnTi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorFixedInAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{61E9F963-8CFC-4B24-B583-716A64BAE54C}", AgCrdnVectorFixedInAxes)
-__all__.append("AgCrdnVectorFixedInAxes")
 
 
 class AgCrdnVectorLineOfNodes(IAgCrdnVectorLineOfNodes, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33820,7 +33697,6 @@ class AgCrdnVectorLineOfNodes(IAgCrdnVectorLineOfNodes, IAgCrdnVector, IAgCrdnTi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorLineOfNodes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3D6B3FD1-93C2-4F11-AB10-B749DF633C29}", AgCrdnVectorLineOfNodes)
-__all__.append("AgCrdnVectorLineOfNodes")
 
 
 class AgCrdnVectorOrbitAngularMomentum(IAgCrdnVectorOrbitAngularMomentum, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33851,7 +33727,6 @@ class AgCrdnVectorOrbitAngularMomentum(IAgCrdnVectorOrbitAngularMomentum, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorOrbitAngularMomentum.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2B38A283-7EDA-43E2-9C04-E9964FCA7D91}", AgCrdnVectorOrbitAngularMomentum)
-__all__.append("AgCrdnVectorOrbitAngularMomentum")
 
 
 class AgCrdnVectorOrbitNormal(IAgCrdnVectorOrbitNormal, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33882,7 +33757,6 @@ class AgCrdnVectorOrbitNormal(IAgCrdnVectorOrbitNormal, IAgCrdnVector, IAgCrdnTi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorOrbitNormal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AFBAED88-891B-4EF7-98BD-DEBAF630C0E1}", AgCrdnVectorOrbitNormal)
-__all__.append("AgCrdnVectorOrbitNormal")
 
 
 class AgCrdnVectorPeriapsis(IAgCrdnVectorPeriapsis, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33913,7 +33787,6 @@ class AgCrdnVectorPeriapsis(IAgCrdnVectorPeriapsis, IAgCrdnVector, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA81B380-6D7C-48F4-8E7F-472035958B44}", AgCrdnVectorPeriapsis)
-__all__.append("AgCrdnVectorPeriapsis")
 
 
 class AgCrdnVectorReflection(IAgCrdnVectorReflection, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33944,7 +33817,6 @@ class AgCrdnVectorReflection(IAgCrdnVectorReflection, IAgCrdnVector, IAgCrdnTime
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorReflection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C35F8BF0-ED12-48BF-8770-EE63DAF4A9B1}", AgCrdnVectorReflection)
-__all__.append("AgCrdnVectorReflection")
 
 
 class AgCrdnVectorRotationVector(IAgCrdnVectorRotationVector, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -33975,7 +33847,6 @@ class AgCrdnVectorRotationVector(IAgCrdnVectorRotationVector, IAgCrdnVector, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorRotationVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c599beae-b6c1-495e-8957-a4b9ffc5cb8e}", AgCrdnVectorRotationVector)
-__all__.append("AgCrdnVectorRotationVector")
 
 
 class AgCrdnVectorDirectionToStar(IAgCrdnVectorDirectionToStar, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
@@ -34006,7 +33877,6 @@ class AgCrdnVectorDirectionToStar(IAgCrdnVectorDirectionToStar, IAgCrdnVector, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorDirectionToStar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{147FDFCC-767A-460C-9833-02A582AFCA9C}", AgCrdnVectorDirectionToStar)
-__all__.append("AgCrdnVectorDirectionToStar")
 
 
 class AgCrdnVectorFixedAtTimeInstant(IAgCrdnVectorFixedAtTimeInstant, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnVector):
@@ -34037,7 +33907,6 @@ class AgCrdnVectorFixedAtTimeInstant(IAgCrdnVectorFixedAtTimeInstant, IAgCrdn, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorFixedAtTimeInstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC8737B3-A94E-4B68-857F-81E780C874FD}", AgCrdnVectorFixedAtTimeInstant)
-__all__.append("AgCrdnVectorFixedAtTimeInstant")
 
 
 class AgCrdnVectorLinearCombination(IAgCrdnVectorLinearCombination, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnVector):
@@ -34068,7 +33937,6 @@ class AgCrdnVectorLinearCombination(IAgCrdnVectorLinearCombination, IAgCrdn, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorLinearCombination.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59E2764C-7920-4CDC-B5FF-2590154E1ABE}", AgCrdnVectorLinearCombination)
-__all__.append("AgCrdnVectorLinearCombination")
 
 
 class AgCrdnVectorProjectAlongVector(IAgCrdnVectorProjectAlongVector, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnVector):
@@ -34099,7 +33967,6 @@ class AgCrdnVectorProjectAlongVector(IAgCrdnVectorProjectAlongVector, IAgCrdn, I
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorProjectAlongVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7B76B999-135B-4AAF-ADEA-444FD759417D}", AgCrdnVectorProjectAlongVector)
-__all__.append("AgCrdnVectorProjectAlongVector")
 
 
 class AgCrdnVectorScalarLinearCombination(IAgCrdnVectorScalarLinearCombination, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnVector):
@@ -34130,7 +33997,6 @@ class AgCrdnVectorScalarLinearCombination(IAgCrdnVectorScalarLinearCombination, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorScalarLinearCombination.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0FB78FA5-9E5F-4A0F-AD73-FB89A0E523F8}", AgCrdnVectorScalarLinearCombination)
-__all__.append("AgCrdnVectorScalarLinearCombination")
 
 
 class AgCrdnVectorScalarScaled(IAgCrdnVectorScalarScaled, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnVector):
@@ -34161,7 +34027,6 @@ class AgCrdnVectorScalarScaled(IAgCrdnVectorScalarScaled, IAgCrdn, IAgCrdnTimePr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorScalarScaled.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9C93B992-687F-4311-B339-DE0DA38409AE}", AgCrdnVectorScalarScaled)
-__all__.append("AgCrdnVectorScalarScaled")
 
 
 class AgCrdnVectorVelocityAcceleration(IAgCrdnVectorVelocityAcceleration, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnVector):
@@ -34192,7 +34057,6 @@ class AgCrdnVectorVelocityAcceleration(IAgCrdnVectorVelocityAcceleration, IAgCrd
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorVelocityAcceleration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75A62225-C09F-4F08-B7FE-9216B02DECF2}", AgCrdnVectorVelocityAcceleration)
-__all__.append("AgCrdnVectorVelocityAcceleration")
 
 
 class AgCrdnVectorPlugin(IAgCrdnVectorPlugin, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnVector):
@@ -34223,7 +34087,6 @@ class AgCrdnVectorPlugin(IAgCrdnVectorPlugin, IAgCrdn, IAgCrdnTimeProperties, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E105429A-489E-47F6-B827-8E5819FCE917}", AgCrdnVectorPlugin)
-__all__.append("AgCrdnVectorPlugin")
 
 
 class AgCrdnVectorDispSurface(IAgCrdnVectorDispSurface, IAgCrdn, IAgCrdnTimeProperties, IAgCrdnVector):
@@ -34254,7 +34117,6 @@ class AgCrdnVectorDispSurface(IAgCrdnVectorDispSurface, IAgCrdn, IAgCrdnTimeProp
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorDispSurface.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ccd4af03-78af-47ae-902a-90860a17daa4}", AgCrdnVectorDispSurface)
-__all__.append("AgCrdnVectorDispSurface")
 
 
 class AgCrdnVectorFactory(IAgCrdnVectorFactory):
@@ -34276,7 +34138,6 @@ class AgCrdnVectorFactory(IAgCrdnVectorFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{084C11E1-D35D-4F42-83D6-3EF43FEC1E23}", AgCrdnVectorFactory)
-__all__.append("AgCrdnVectorFactory")
 
 
 class AgCrdnAxesFactory(IAgCrdnAxesFactory):
@@ -34298,7 +34159,6 @@ class AgCrdnAxesFactory(IAgCrdnAxesFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7B3E2402-1E15-43DC-BB48-6E98D377B107}", AgCrdnAxesFactory)
-__all__.append("AgCrdnAxesFactory")
 
 
 class AgCrdnSystemFactory(IAgCrdnSystemFactory):
@@ -34320,7 +34180,6 @@ class AgCrdnSystemFactory(IAgCrdnSystemFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSystemFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{01A37414-BA74-4DF3-A007-6A3395C8A859}", AgCrdnSystemFactory)
-__all__.append("AgCrdnSystemFactory")
 
 
 class AgCrdnPointFactory(IAgCrdnPointFactory):
@@ -34342,7 +34201,6 @@ class AgCrdnPointFactory(IAgCrdnPointFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6C79F3B2-8AE5-468A-940F-F0988752B309}", AgCrdnPointFactory)
-__all__.append("AgCrdnPointFactory")
 
 
 class AgCrdnPlaneFactory(IAgCrdnPlaneFactory):
@@ -34364,7 +34222,6 @@ class AgCrdnPlaneFactory(IAgCrdnPlaneFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6F83DB0C-0AFB-4831-BED0-63AE2F8FEFFB}", AgCrdnPlaneFactory)
-__all__.append("AgCrdnPlaneFactory")
 
 
 class AgCrdnAngleFactory(IAgCrdnAngleFactory):
@@ -34386,7 +34243,6 @@ class AgCrdnAngleFactory(IAgCrdnAngleFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngleFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0888F89F-9D77-4FCE-9A08-67FCBE870187}", AgCrdnAngleFactory)
-__all__.append("AgCrdnAngleFactory")
 
 
 class AgCrdnVectorGroup(IAgCrdnVectorGroup):
@@ -34408,7 +34264,6 @@ class AgCrdnVectorGroup(IAgCrdnVectorGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnVectorGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{69ABE9EE-BAA4-40A7-8097-06DBE70D71D5}", AgCrdnVectorGroup)
-__all__.append("AgCrdnVectorGroup")
 
 
 class AgCrdnPointGroup(IAgCrdnPointGroup):
@@ -34430,7 +34285,6 @@ class AgCrdnPointGroup(IAgCrdnPointGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0793BE73-C894-4AF7-BFDB-5D61F5C3B6FD}", AgCrdnPointGroup)
-__all__.append("AgCrdnPointGroup")
 
 
 class AgCrdnAngleGroup(IAgCrdnAngleGroup):
@@ -34452,7 +34306,6 @@ class AgCrdnAngleGroup(IAgCrdnAngleGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAngleGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CF6C41CC-A02E-424C-8E7E-B5BA05F1FAF3}", AgCrdnAngleGroup)
-__all__.append("AgCrdnAngleGroup")
 
 
 class AgCrdnAxesGroup(IAgCrdnAxesGroup):
@@ -34474,7 +34327,6 @@ class AgCrdnAxesGroup(IAgCrdnAxesGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2D792657-9D6E-4B1E-AEAB-B964839C6F94}", AgCrdnAxesGroup)
-__all__.append("AgCrdnAxesGroup")
 
 
 class AgCrdnPlaneGroup(IAgCrdnPlaneGroup):
@@ -34496,7 +34348,6 @@ class AgCrdnPlaneGroup(IAgCrdnPlaneGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPlaneGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{15117A82-3EE6-483E-A65E-2A44F60DB355}", AgCrdnPlaneGroup)
-__all__.append("AgCrdnPlaneGroup")
 
 
 class AgCrdnSystemGroup(IAgCrdnSystemGroup):
@@ -34518,7 +34369,6 @@ class AgCrdnSystemGroup(IAgCrdnSystemGroup):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnSystemGroup.")
         
 agcls.AgClassCatalog.add_catalog_entry("{65E8F1CC-E68C-4EF6-9A68-443DD01C55E2}", AgCrdnSystemGroup)
-__all__.append("AgCrdnSystemGroup")
 
 
 class AgCrdnProvider(IAgCrdnProvider):
@@ -34540,7 +34390,6 @@ class AgCrdnProvider(IAgCrdnProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnProvider.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D9031FE1-81E1-4818-944D-5F00FC3EC97D}", AgCrdnProvider)
-__all__.append("AgCrdnProvider")
 
 
 class AgCrdnRoot(IAgCrdnRoot):
@@ -34562,7 +34411,6 @@ class AgCrdnRoot(IAgCrdnRoot):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnRoot.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26E18B6F-19CA-4537-B6B3-D307DAADCDBB}", AgCrdnRoot)
-__all__.append("AgCrdnRoot")
 
 
 class AgCrdnWellKnownEarthSystems(IAgCrdnWellKnownEarthSystems):
@@ -34584,7 +34432,6 @@ class AgCrdnWellKnownEarthSystems(IAgCrdnWellKnownEarthSystems):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnWellKnownEarthSystems.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9CE3EA8C-78D7-4C9E-9D35-4E34DBA9FD19}", AgCrdnWellKnownEarthSystems)
-__all__.append("AgCrdnWellKnownEarthSystems")
 
 
 class AgCrdnWellKnownEarthAxes(IAgCrdnWellKnownEarthAxes):
@@ -34606,7 +34453,6 @@ class AgCrdnWellKnownEarthAxes(IAgCrdnWellKnownEarthAxes):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnWellKnownEarthAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B79CA8BC-D4BA-4F76-9278-AB7C9C537859}", AgCrdnWellKnownEarthAxes)
-__all__.append("AgCrdnWellKnownEarthAxes")
 
 
 class AgCrdnWellKnownSunSystems(IAgCrdnWellKnownSunSystems):
@@ -34628,7 +34474,6 @@ class AgCrdnWellKnownSunSystems(IAgCrdnWellKnownSunSystems):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnWellKnownSunSystems.")
         
 agcls.AgClassCatalog.add_catalog_entry("{855EB036-E71F-47F9-B27B-57247345282A}", AgCrdnWellKnownSunSystems)
-__all__.append("AgCrdnWellKnownSunSystems")
 
 
 class AgCrdnWellKnownSunAxes(IAgCrdnWellKnownSunAxes):
@@ -34650,7 +34495,6 @@ class AgCrdnWellKnownSunAxes(IAgCrdnWellKnownSunAxes):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnWellKnownSunAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7F786A33-8851-4FA4-A0CA-DC353170143E}", AgCrdnWellKnownSunAxes)
-__all__.append("AgCrdnWellKnownSunAxes")
 
 
 class AgCrdnWellKnownSystems(IAgCrdnWellKnownSystems):
@@ -34672,7 +34516,6 @@ class AgCrdnWellKnownSystems(IAgCrdnWellKnownSystems):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnWellKnownSystems.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8C5101B3-3FDD-443D-A59F-B1E801873E0A}", AgCrdnWellKnownSystems)
-__all__.append("AgCrdnWellKnownSystems")
 
 
 class AgCrdnWellKnownAxes(IAgCrdnWellKnownAxes):
@@ -34694,7 +34537,6 @@ class AgCrdnWellKnownAxes(IAgCrdnWellKnownAxes):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnWellKnownAxes.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5E24B44A-B46D-4B9B-A22C-615EFAA73A6C}", AgCrdnWellKnownAxes)
-__all__.append("AgCrdnWellKnownAxes")
 
 
 class AgCrdnMethodCallResult(IAgCrdnAngleFindResult, IAgCrdnAngleFindWithRateResult, IAgCrdnAxesTransformResult, IAgCrdnAxesTransformWithRateResult, IAgCrdnAxesFindInAxesResult, IAgCrdnAxesFindInAxesWithRateResult, IAgCrdnPlaneFindInAxesResult, IAgCrdnPlaneFindInAxesWithRateResult, IAgCrdnPlaneFindInSystemResult, IAgCrdnPlaneFindInSystemWithRateResult, IAgCrdnPointLocateInSystemResult, IAgCrdnPointLocateInSystemWithRateResult, IAgCrdnSystemTransformResult, IAgCrdnSystemTransformWithRateResult, IAgCrdnSystemFindInSystemResult, IAgCrdnVectorFindInAxesResult, IAgCrdnVectorFindInAxesWithRateResult, IAgCrdnAngleFindAngleWithRateResult, IAgCrdnAngleFindAngleResult, IAgCrdnMethodCallResult):
@@ -35002,7 +34844,6 @@ class AgCrdnMethodCallResult(IAgCrdnAngleFindResult, IAgCrdnAngleFindWithRateRes
             raise STKAttributeError(attrname + " is not a valid attribute in this instance of AgCrdnMethodCallResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{03665183-03A3-4ABE-9954-476CD71C8BB3}", AgCrdnMethodCallResult)
-__all__.append("AgCrdnMethodCallResult")
 
 
 class AgCrdnInterval(IAgCrdnInterval):
@@ -35024,7 +34865,6 @@ class AgCrdnInterval(IAgCrdnInterval):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7825007C-4D30-46EC-A047-EAF6683C4187}", AgCrdnInterval)
-__all__.append("AgCrdnInterval")
 
 
 class AgCrdnIntervalCollection(IAgCrdnIntervalCollection):
@@ -35046,7 +34886,6 @@ class AgCrdnIntervalCollection(IAgCrdnIntervalCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnIntervalCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{908714CE-1D69-4F68-875A-9B584CF8F2A7}", AgCrdnIntervalCollection)
-__all__.append("AgCrdnIntervalCollection")
 
 
 class AgCrdnCentralBody(IAgCrdnCentralBody):
@@ -35068,7 +34907,6 @@ class AgCrdnCentralBody(IAgCrdnCentralBody):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCentralBody.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9A0248DF-B126-4448-A653-CD5C28DC9229}", AgCrdnCentralBody)
-__all__.append("AgCrdnCentralBody")
 
 
 class AgCrdnCentralBodyRefTo(IAgCrdnCentralBodyRefTo, IAgCrdnRefTo):
@@ -35093,7 +34931,6 @@ class AgCrdnCentralBodyRefTo(IAgCrdnCentralBodyRefTo, IAgCrdnRefTo):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCentralBodyRefTo.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AFB22A58-DB60-4A1B-B0D4-44916CACC759}", AgCrdnCentralBodyRefTo)
-__all__.append("AgCrdnCentralBodyRefTo")
 
 
 class AgCrdnCentralBodyCollection(IAgCrdnCentralBodyCollection):
@@ -35115,7 +34952,6 @@ class AgCrdnCentralBodyCollection(IAgCrdnCentralBodyCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCentralBodyCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E8951B8F-E457-4289-9125-5381515552C4}", AgCrdnCentralBodyCollection)
-__all__.append("AgCrdnCentralBodyCollection")
 
 
 class AgCrdnCollection(IAgCrdnCollection):
@@ -35137,7 +34973,6 @@ class AgCrdnCollection(IAgCrdnCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{24B18D3A-675E-467D-A97C-5CD42EB6DC8D}", AgCrdnCollection)
-__all__.append("AgCrdnCollection")
 
 
 class AgCrdnPointSamplingResult(IAgCrdnPointSamplingResult):
@@ -35159,7 +34994,6 @@ class AgCrdnPointSamplingResult(IAgCrdnPointSamplingResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointSamplingResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A3132149-15ED-4D7E-85A6-FD1B2BB80B1E}", AgCrdnPointSamplingResult)
-__all__.append("AgCrdnPointSamplingResult")
 
 
 class AgCrdnPointSamplingInterval(IAgCrdnPointSamplingInterval):
@@ -35181,7 +35015,6 @@ class AgCrdnPointSamplingInterval(IAgCrdnPointSamplingInterval):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointSamplingInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8B7546E8-0228-4269-92D1-B3C186AF18EF}", AgCrdnPointSamplingInterval)
-__all__.append("AgCrdnPointSamplingInterval")
 
 
 class AgCrdnPointSamplingIntervalCollection(IAgCrdnPointSamplingIntervalCollection):
@@ -35203,7 +35036,6 @@ class AgCrdnPointSamplingIntervalCollection(IAgCrdnPointSamplingIntervalCollecti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnPointSamplingIntervalCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3F6CF6B1-7192-4960-927D-1FC328122E59}", AgCrdnPointSamplingIntervalCollection)
-__all__.append("AgCrdnPointSamplingIntervalCollection")
 
 
 class AgCrdnAxesSamplingResult(IAgCrdnAxesSamplingResult):
@@ -35225,7 +35057,6 @@ class AgCrdnAxesSamplingResult(IAgCrdnAxesSamplingResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesSamplingResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{54622168-5440-4C86-9539-A0CA336E554B}", AgCrdnAxesSamplingResult)
-__all__.append("AgCrdnAxesSamplingResult")
 
 
 class AgCrdnAxesSamplingInterval(IAgCrdnAxesSamplingInterval):
@@ -35247,7 +35078,6 @@ class AgCrdnAxesSamplingInterval(IAgCrdnAxesSamplingInterval):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesSamplingInterval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{069BCA07-B5AB-4A46-A508-AFE218E21B2F}", AgCrdnAxesSamplingInterval)
-__all__.append("AgCrdnAxesSamplingInterval")
 
 
 class AgCrdnAxesSamplingIntervalCollection(IAgCrdnAxesSamplingIntervalCollection):
@@ -35269,7 +35099,6 @@ class AgCrdnAxesSamplingIntervalCollection(IAgCrdnAxesSamplingIntervalCollection
             raise STKAttributeError(attrname + " is not a recognized attribute in AgCrdnAxesSamplingIntervalCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4AD4C296-E643-4CB6-A34A-D33748117EEF}", AgCrdnAxesSamplingIntervalCollection)
-__all__.append("AgCrdnAxesSamplingIntervalCollection")
 
 
 

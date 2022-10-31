@@ -33,12 +33,12 @@ else:
            self._pStream = PVOID()
            if not Succeeded(CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._pUnk.p, byref(self._pStream))):
                raise STKRuntimeError("ThreadMarshaller failed to initialize.")
-               
+           
         def __del__(self):
             if self._pStream is not None:
                 CoReleaseMarshalData(self._pStream)
             del(self._obj)
-           
+       
         def GetMarshalledToCurrentThread(self) -> typing.Any:
             """Returns an instance of the original stk_object that may be used on the current thread. May only be called once."""
             if self._pStream is None:
@@ -57,11 +57,11 @@ else:
             marshalled_obj._private_init(pUnk)
             del(pUnk)
             return marshalled_obj
-            
+        
         def InitializeThread(self) -> None:
             """Must be called on the destination thread prior to calling GetMarshalledToCurrentThread()."""
             CoInitializeEx(None, COINIT_APARTMENTTHREADED)
-            
+        
         def ReleaseThread(self) -> None:
             """Call in the destination thread after all calls to STK are finished."""
             CoUninitialize()
@@ -76,12 +76,12 @@ else:
             AgUiApplication.__init__(self)
             self.__dict__["_initialized"] = False
             self.__dict__["_root"] = None
-            
+        
         def _private_init(self, pUnk:IUnknown):
             self.__dict__["_pUnk"] = pUnk
             AgUiApplication._private_init(self, pUnk)
             self.__dict__["_initialized"] = True
-            
+        
         def __del__(self):
             if self.__dict__["_initialized"]:
                 CoInitializeManager.uninitialize()
@@ -96,7 +96,7 @@ else:
             if self.__dict__["_pUnk"] is not None:
                 self.__dict__["_root"] = self.Personality2
                 return self.__dict__["_root"]
-                
+            
         def ShutDown(self) -> None:
             """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
             if self.__dict__["_pUnk"] is not None:
@@ -105,7 +105,7 @@ else:
                 self.Quit()
                 self.__dict__["_root"] = None
                 self.__dict__["_pUnk"] = None
-                
+            
 
     class STKDesktop(object):
         """Create, initialize, and manage STK Desktop application instances."""
@@ -131,7 +131,7 @@ else:
                     app.UserControl = userControl
                     return app
             raise STKInitializationError("Failed to create STK Desktop application.  Check for successful install and registration.")
-            
+        
         @staticmethod
         def AttachToApplication(pid:int=None) -> STKDesktopApplication:
             """
@@ -167,12 +167,12 @@ else:
             """Releases all handles from Python to STK Desktop applications."""
             EventSubscriptionManager.UnsubscribeAll()
             ObjectLifetimeManager.ReleaseAll()
-            
+        
         @staticmethod
         def CreateThreadMarshaller(stk_object:typing.Any) -> ThreadMarshaller:
             """Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread."""
             return ThreadMarshaller(stk_object)
-       
+
 
 ################################################################################
 #          Copyright 2020-2020, Analytical Graphics, Inc.

@@ -2,7 +2,16 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgDataObject", "AgDataObjectFiles", "AgDraw2DElemCollection", "AgDraw2DElemRect", "AgDrawElemCollection", "AgDrawElemLine", 
+"AgDrawElemRect", "AgEButtonValues", "AgEExecMultiCmdResultAction", "AgEFeatureCodes", "AgEGfxAnalysisMode", "AgEGfxDrawCoords", 
+"AgELineStyle", "AgELogMsgDispID", "AgELogMsgType", "AgELoggingMode", "AgEMouseMode", "AgEOLEDropMode", "AgEProgressImageXOrigin", 
+"AgEProgressImageYOrigin", "AgEShiftValues", "AgEShowProgressImage", "AgExecCmdResult", "AgExecMultiCmdResult", "AgObjPathCollection", 
+"AgPickInfoData", "AgRubberBandPickInfoData", "AgSTKXApplication", "AgSTKXApplicationPartnerAccess", "AgSTKXConControlQuitReceivedEventArgs", 
+"AgSTKXSSLCertificateErrorEventArgs", "AgUiAx2DCntrl", "AgUiAxGfxAnalysisCntrl", "AgUiAxVOCntrl", "AgWinProjPos", "IAgDataObject", 
+"IAgDataObjectFiles", "IAgDrawElem", "IAgDrawElemCollection", "IAgDrawElemLine", "IAgDrawElemRect", "IAgExecCmdResult", 
+"IAgExecMultiCmdResult", "IAgObjPathCollection", "IAgPickInfoData", "IAgRubberBandPickInfoData", "IAgSTKXApplication", "IAgSTKXApplicationPartnerAccess", 
+"IAgSTKXConControlQuitReceivedEventArgs", "IAgSTKXSSLCertificateErrorEventArgs", "IAgUiAx2DCntrl", "IAgUiAxGfxAnalysisCntrl", 
+"IAgUiAxVOCntrl", "IAgWinProjPos"]
 
 import typing
 
@@ -50,7 +59,6 @@ class AgELogMsgType(IntEnum):
     eLogMsgAlarm = 4
 
 agcls.AgTypeNameMap["AgELogMsgType"] = AgELogMsgType
-__all__.append("AgELogMsgType")
 
 class AgELogMsgDispID(IntEnum):
     """Log message destination options."""
@@ -64,7 +72,6 @@ class AgELogMsgDispID(IntEnum):
     eLogMsgDispStatusBar = 2
 
 agcls.AgTypeNameMap["AgELogMsgDispID"] = AgELogMsgDispID
-__all__.append("AgELogMsgDispID")
 
 class AgELineStyle(IntEnum):
     """Line Style"""
@@ -106,7 +113,6 @@ class AgELineStyle(IntEnum):
     eSDash = 17
 
 agcls.AgTypeNameMap["AgELineStyle"] = AgELineStyle
-__all__.append("AgELineStyle")
 
 class AgEExecMultiCmdResultAction(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
@@ -120,7 +126,6 @@ class AgEExecMultiCmdResultAction(IntFlag):
     eIgnoreExecCmdResult = 0x8000
 
 agcls.AgTypeNameMap["AgEExecMultiCmdResultAction"] = AgEExecMultiCmdResultAction
-__all__.append("AgEExecMultiCmdResultAction")
 
 class AgEShiftValues(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
@@ -132,7 +137,6 @@ class AgEShiftValues(IntEnum):
     eAltPressed = 4
 
 agcls.AgTypeNameMap["AgEShiftValues"] = AgEShiftValues
-__all__.append("AgEShiftValues")
 
 class AgEButtonValues(IntEnum):
     """Numeric value of the mouse button pressed."""
@@ -144,7 +148,6 @@ class AgEButtonValues(IntEnum):
     eMiddlePressed = 4
 
 agcls.AgTypeNameMap["AgEButtonValues"] = AgEButtonValues
-__all__.append("AgEButtonValues")
 
 class AgEOLEDropMode(IntEnum):
     """Specifies how to handle OLE drop operations."""
@@ -156,7 +159,6 @@ class AgEOLEDropMode(IntEnum):
     eAutomatic = 2
 
 agcls.AgTypeNameMap["AgEOLEDropMode"] = AgEOLEDropMode
-__all__.append("AgEOLEDropMode")
 
 class AgEMouseMode(IntEnum):
     """Mouse modes."""
@@ -166,7 +168,6 @@ class AgEMouseMode(IntEnum):
     eMouseModeManual = 1
 
 agcls.AgTypeNameMap["AgEMouseMode"] = AgEMouseMode
-__all__.append("AgEMouseMode")
 
 class AgELoggingMode(IntEnum):
     """Specifies the state of the log file."""
@@ -178,7 +179,6 @@ class AgELoggingMode(IntEnum):
     eLogActiveKeepFile = 2
 
 agcls.AgTypeNameMap["AgELoggingMode"] = AgELoggingMode
-__all__.append("AgELoggingMode")
 
 class AgEGfxAnalysisMode(IntEnum):
     """Specifies the mode of Gfx Analysis Control."""
@@ -192,7 +192,6 @@ class AgEGfxAnalysisMode(IntEnum):
     eAzElMaskTool = 4
 
 agcls.AgTypeNameMap["AgEGfxAnalysisMode"] = AgEGfxAnalysisMode
-__all__.append("AgEGfxAnalysisMode")
 
 class AgEGfxDrawCoords(IntEnum):
     """Specifies the draw coordinates for Map Control."""
@@ -202,7 +201,6 @@ class AgEGfxDrawCoords(IntEnum):
     eScreenDrawCoords = 2
 
 agcls.AgTypeNameMap["AgEGfxDrawCoords"] = AgEGfxDrawCoords
-__all__.append("AgEGfxDrawCoords")
 
 class AgEShowProgressImage(IntEnum):
     """Specifies to show progress image."""
@@ -214,7 +212,6 @@ class AgEShowProgressImage(IntEnum):
     eShowProgressImageUser = 3
 
 agcls.AgTypeNameMap["AgEShowProgressImage"] = AgEShowProgressImage
-__all__.append("AgEShowProgressImage")
 
 class AgEFeatureCodes(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
@@ -224,7 +221,6 @@ class AgEFeatureCodes(IntEnum):
     eFeatureCodeGlobeControl = 2
 
 agcls.AgTypeNameMap["AgEFeatureCodes"] = AgEFeatureCodes
-__all__.append("AgEFeatureCodes")
 
 class AgEProgressImageXOrigin(IntEnum):
     """Specifies to align progress image X origin."""
@@ -236,7 +232,6 @@ class AgEProgressImageXOrigin(IntEnum):
     eProgressImageXCenter = 3
 
 agcls.AgTypeNameMap["AgEProgressImageXOrigin"] = AgEProgressImageXOrigin
-__all__.append("AgEProgressImageXOrigin")
 
 class AgEProgressImageYOrigin(IntEnum):
     """Specifies to align progress image Y origin."""
@@ -248,7 +243,6 @@ class AgEProgressImageYOrigin(IntEnum):
     eProgressImageYCenter = 3
 
 agcls.AgTypeNameMap["AgEProgressImageYOrigin"] = AgEProgressImageYOrigin
-__all__.append("AgEProgressImageYOrigin")
 
 
 class IAgSTKXSSLCertificateErrorEventArgs(object):
@@ -388,7 +382,6 @@ class IAgSTKXSSLCertificateErrorEventArgs(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D0C7ACBC-D1DD-45AE-9582-C7AE5C2E5BEF}", IAgSTKXSSLCertificateErrorEventArgs)
 agcls.AgTypeNameMap["IAgSTKXSSLCertificateErrorEventArgs"] = IAgSTKXSSLCertificateErrorEventArgs
-__all__.append("IAgSTKXSSLCertificateErrorEventArgs")
 
 class IAgSTKXConControlQuitReceivedEventArgs(object):
     """Arguments for the OnConControlQuitReceived event."""
@@ -441,7 +434,6 @@ class IAgSTKXConControlQuitReceivedEventArgs(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F8925F99-8841-4DF3-A6E4-CE63E298868C}", IAgSTKXConControlQuitReceivedEventArgs)
 agcls.AgTypeNameMap["IAgSTKXConControlQuitReceivedEventArgs"] = IAgSTKXConControlQuitReceivedEventArgs
-__all__.append("IAgSTKXConControlQuitReceivedEventArgs")
 
 class IAgPickInfoData(object):
     """Mouse pick details."""
@@ -531,7 +523,6 @@ class IAgPickInfoData(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C87F43DA-DD89-4F13-BCB6-D78D0FE8D7E4}", IAgPickInfoData)
 agcls.AgTypeNameMap["IAgPickInfoData"] = IAgPickInfoData
-__all__.append("IAgPickInfoData")
 
 class IAgRubberBandPickInfoData(object):
     """Rubber-band mouse pick result."""
@@ -576,7 +567,6 @@ class IAgRubberBandPickInfoData(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{54417F99-E500-4BD8-A762-DC3367C7624C}", IAgRubberBandPickInfoData)
 agcls.AgTypeNameMap["IAgRubberBandPickInfoData"] = IAgRubberBandPickInfoData
-__all__.append("IAgRubberBandPickInfoData")
 
 class IAgSTKXApplication(object):
     """STK X Application object."""
@@ -852,7 +842,6 @@ class IAgSTKXApplication(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A2BB8372-EA5F-4D9D-84C3-4D9E5B9A8840}", IAgSTKXApplication)
 agcls.AgTypeNameMap["IAgSTKXApplication"] = IAgSTKXApplication
-__all__.append("IAgSTKXApplication")
 
 class IAgDataObject(object):
     """IAgDataObject is used for OLE drag and drop operations"""
@@ -897,7 +886,6 @@ class IAgDataObject(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{557F091D-247F-4040-B1E9-10E5BCEDFFD5}", IAgDataObject)
 agcls.AgTypeNameMap["IAgDataObject"] = IAgDataObject
-__all__.append("IAgDataObject")
 
 class IAgObjPathCollection(object):
     """Collection of object paths."""
@@ -985,7 +973,6 @@ class IAgObjPathCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{831E53E8-4E79-4E2E-B289-A6AD76A76F3A}", IAgObjPathCollection)
 agcls.AgTypeNameMap["IAgObjPathCollection"] = IAgObjPathCollection
-__all__.append("IAgObjPathCollection")
 
 class IAgDrawElem(object):
     """Draw element."""
@@ -1037,7 +1024,6 @@ class IAgDrawElem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C661025D-FFB3-429A-A0B1-D8421DE76AC6}", IAgDrawElem)
 agcls.AgTypeNameMap["IAgDrawElem"] = IAgDrawElem
-__all__.append("IAgDrawElem")
 
 class IAgDrawElemRect(IAgDrawElem):
     """Defines a rectangle in control coordinates."""
@@ -1168,7 +1154,6 @@ class IAgDrawElemRect(IAgDrawElem):
 
 agcls.AgClassCatalog.add_catalog_entry("{B017EED9-DC32-4865-BDB9-6C586DC1818C}", IAgDrawElemRect)
 agcls.AgTypeNameMap["IAgDrawElemRect"] = IAgDrawElemRect
-__all__.append("IAgDrawElemRect")
 
 class IAgDrawElemCollection(object):
     """Collection of elements to draw on the control."""
@@ -1284,7 +1269,6 @@ class IAgDrawElemCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3D6D784D-7C84-4A30-95D8-7D57AF7C560E}", IAgDrawElemCollection)
 agcls.AgTypeNameMap["IAgDrawElemCollection"] = IAgDrawElemCollection
-__all__.append("IAgDrawElemCollection")
 
 class IAgWinProjPos(object):
     """Projected window position detail."""
@@ -1347,7 +1331,6 @@ class IAgWinProjPos(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{56FF29E4-6311-4E94-B91D-53C02288C55A}", IAgWinProjPos)
 agcls.AgTypeNameMap["IAgWinProjPos"] = IAgWinProjPos
-__all__.append("IAgWinProjPos")
 
 class IAgDrawElemLine(IAgDrawElem):
     """Defines a line in control coordinates."""
@@ -1478,7 +1461,6 @@ class IAgDrawElemLine(IAgDrawElem):
 
 agcls.AgClassCatalog.add_catalog_entry("{1A550DDC-7769-4A6C-9D0C-8E9D8C1757E2}", IAgDrawElemLine)
 agcls.AgTypeNameMap["IAgDrawElemLine"] = IAgDrawElemLine
-__all__.append("IAgDrawElemLine")
 
 class IAgExecCmdResult(object):
     """Collection of strings returned by the ExecuteCommand."""
@@ -1575,7 +1557,6 @@ class IAgExecCmdResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{90EF2D03-F064-4F54-9E02-6E34E3CF5D55}", IAgExecCmdResult)
 agcls.AgTypeNameMap["IAgExecCmdResult"] = IAgExecCmdResult
-__all__.append("IAgExecCmdResult")
 
 class IAgExecMultiCmdResult(object):
     """Collection of objects returned by the ExecuteMultipleCommands."""
@@ -1653,7 +1634,6 @@ class IAgExecMultiCmdResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0558BE8E-AF66-4F52-9C6D-76962FC52577}", IAgExecMultiCmdResult)
 agcls.AgTypeNameMap["IAgExecMultiCmdResult"] = IAgExecMultiCmdResult
-__all__.append("IAgExecMultiCmdResult")
 
 class IAgUiAxVOCntrl(object):
     """AGI Globe control."""
@@ -2074,7 +2054,6 @@ class IAgUiAxVOCntrl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0975BA23-E273-4B8F-BA8D-32ECB328C092}", IAgUiAxVOCntrl)
 agcls.AgTypeNameMap["IAgUiAxVOCntrl"] = IAgUiAxVOCntrl
-__all__.append("IAgUiAxVOCntrl")
 
 class IAgUiAx2DCntrl(object):
     """AGI Map control."""
@@ -2475,7 +2454,6 @@ class IAgUiAx2DCntrl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A5C18751-1656-4FB9-BA4E-D5746D509CFC}", IAgUiAx2DCntrl)
 agcls.AgTypeNameMap["IAgUiAx2DCntrl"] = IAgUiAx2DCntrl
-__all__.append("IAgUiAx2DCntrl")
 
 class IAgSTKXApplicationPartnerAccess(object):
     """Access to the application object model for business partners."""
@@ -2522,7 +2500,6 @@ class IAgSTKXApplicationPartnerAccess(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ABF4E08E-211F-40B6-A2F0-6938DAA560CE}", IAgSTKXApplicationPartnerAccess)
 agcls.AgTypeNameMap["IAgSTKXApplicationPartnerAccess"] = IAgSTKXApplicationPartnerAccess
-__all__.append("IAgSTKXApplicationPartnerAccess")
 
 class IAgDataObjectFiles(object):
     """Collection of file names."""
@@ -2600,7 +2577,6 @@ class IAgDataObjectFiles(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C4428821-C59F-45B1-9747-0AD1F988317E}", IAgDataObjectFiles)
 agcls.AgTypeNameMap["IAgDataObjectFiles"] = IAgDataObjectFiles
-__all__.append("IAgDataObjectFiles")
 
 class IAgUiAxGfxAnalysisCntrl(object):
     """AGI Gfx Analysis control."""
@@ -2773,7 +2749,6 @@ class IAgUiAxGfxAnalysisCntrl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5933D068-12E5-4B73-96A3-E06CC3ACC05A}", IAgUiAxGfxAnalysisCntrl)
 agcls.AgTypeNameMap["IAgUiAxGfxAnalysisCntrl"] = IAgUiAxGfxAnalysisCntrl
-__all__.append("IAgUiAxGfxAnalysisCntrl")
 
 
 
@@ -2796,7 +2771,6 @@ class AgExecCmdResult(IAgExecCmdResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgExecCmdResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}", AgExecCmdResult)
-__all__.append("AgExecCmdResult")
 
 
 class AgExecMultiCmdResult(IAgExecMultiCmdResult):
@@ -2818,7 +2792,6 @@ class AgExecMultiCmdResult(IAgExecMultiCmdResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgExecMultiCmdResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3849A604-DEB9-428C-8A72-D879719277E5}", AgExecMultiCmdResult)
-__all__.append("AgExecMultiCmdResult")
 
 
 class AgUiAxVOCntrl(IAgUiAxVOCntrl):
@@ -2840,7 +2813,6 @@ class AgUiAxVOCntrl(IAgUiAxVOCntrl):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiAxVOCntrl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0E939AC2-43D9-456E-9FE7-4C3C687BCDF2}", AgUiAxVOCntrl)
-__all__.append("AgUiAxVOCntrl")
 
 
 class AgUiAx2DCntrl(IAgUiAx2DCntrl):
@@ -2862,7 +2834,6 @@ class AgUiAx2DCntrl(IAgUiAx2DCntrl):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiAx2DCntrl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{33FBA419-2BD0-422D-81A7-C5B68A49FB01}", AgUiAx2DCntrl)
-__all__.append("AgUiAx2DCntrl")
 
 
 class AgPickInfoData(IAgPickInfoData):
@@ -2884,7 +2855,6 @@ class AgPickInfoData(IAgPickInfoData):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgPickInfoData.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B6FCD4D-91A0-4855-A113-F7CC8D774608}", AgPickInfoData)
-__all__.append("AgPickInfoData")
 
 
 class AgSTKXApplication(IAgSTKXApplication):
@@ -2906,7 +2876,6 @@ class AgSTKXApplication(IAgSTKXApplication):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgSTKXApplication.")
         
 agcls.AgClassCatalog.add_catalog_entry("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", AgSTKXApplication)
-__all__.append("AgSTKXApplication")
 
 
 class AgSTKXApplicationPartnerAccess(IAgSTKXApplicationPartnerAccess):
@@ -2928,7 +2897,6 @@ class AgSTKXApplicationPartnerAccess(IAgSTKXApplicationPartnerAccess):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgSTKXApplicationPartnerAccess.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3E8358E8-6042-4E4C-B89D-1F42164CDE3D}", AgSTKXApplicationPartnerAccess)
-__all__.append("AgSTKXApplicationPartnerAccess")
 
 
 class AgDataObject(IAgDataObject):
@@ -2950,7 +2918,6 @@ class AgDataObject(IAgDataObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDataObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C58BE31A-8063-46F9-9751-AF13C1101D75}", AgDataObject)
-__all__.append("AgDataObject")
 
 
 class AgDataObjectFiles(IAgDataObjectFiles):
@@ -2972,7 +2939,6 @@ class AgDataObjectFiles(IAgDataObjectFiles):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDataObjectFiles.")
         
 agcls.AgClassCatalog.add_catalog_entry("{83A2F2F3-3122-4317-8D59-2F43906E4168}", AgDataObjectFiles)
-__all__.append("AgDataObjectFiles")
 
 
 class AgRubberBandPickInfoData(IAgRubberBandPickInfoData):
@@ -2994,7 +2960,6 @@ class AgRubberBandPickInfoData(IAgRubberBandPickInfoData):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgRubberBandPickInfoData.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A7EB5C99-B818-4531-B598-368AA2DD3CF6}", AgRubberBandPickInfoData)
-__all__.append("AgRubberBandPickInfoData")
 
 
 class AgObjPathCollection(IAgObjPathCollection):
@@ -3016,7 +2981,6 @@ class AgObjPathCollection(IAgObjPathCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgObjPathCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0B3FFC58-8105-4BE4-9D60-254A142448D5}", AgObjPathCollection)
-__all__.append("AgObjPathCollection")
 
 
 class AgDrawElemRect(IAgDrawElemRect):
@@ -3038,7 +3002,6 @@ class AgDrawElemRect(IAgDrawElemRect):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDrawElemRect.")
         
 agcls.AgClassCatalog.add_catalog_entry("{55B0A7B5-2508-48BB-90D0-4B8B51DC9178}", AgDrawElemRect)
-__all__.append("AgDrawElemRect")
 
 
 class AgDrawElemCollection(IAgDrawElemCollection):
@@ -3060,7 +3023,6 @@ class AgDrawElemCollection(IAgDrawElemCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDrawElemCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{97A759F9-49E4-42DE-A8E3-7B670EB3BDAC}", AgDrawElemCollection)
-__all__.append("AgDrawElemCollection")
 
 
 class AgDraw2DElemRect(IAgDrawElemRect):
@@ -3082,7 +3044,6 @@ class AgDraw2DElemRect(IAgDrawElemRect):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDraw2DElemRect.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C26CEE82-EB4B-4D63-86B0-C5E2BB261E3F}", AgDraw2DElemRect)
-__all__.append("AgDraw2DElemRect")
 
 
 class AgDraw2DElemCollection(IAgDrawElemCollection):
@@ -3104,7 +3065,6 @@ class AgDraw2DElemCollection(IAgDrawElemCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDraw2DElemCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D6B1A826-3ABB-49FD-8C9F-F49ADBE6D2B8}", AgDraw2DElemCollection)
-__all__.append("AgDraw2DElemCollection")
 
 
 class AgUiAxGfxAnalysisCntrl(IAgUiAxGfxAnalysisCntrl):
@@ -3126,7 +3086,6 @@ class AgUiAxGfxAnalysisCntrl(IAgUiAxGfxAnalysisCntrl):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiAxGfxAnalysisCntrl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{600541C4-8B16-47AD-ABA4-EE8BC5E9FD5F}", AgUiAxGfxAnalysisCntrl)
-__all__.append("AgUiAxGfxAnalysisCntrl")
 
 
 class AgWinProjPos(IAgWinProjPos):
@@ -3148,7 +3107,6 @@ class AgWinProjPos(IAgWinProjPos):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgWinProjPos.")
         
 agcls.AgClassCatalog.add_catalog_entry("{21D08121-9F86-485E-B143-337DACCD5022}", AgWinProjPos)
-__all__.append("AgWinProjPos")
 
 
 class AgDrawElemLine(IAgDrawElemLine):
@@ -3170,7 +3128,6 @@ class AgDrawElemLine(IAgDrawElemLine):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgDrawElemLine.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A4C86FD0-95FA-4F15-BE04-1FDF0DD6B0B5}", AgDrawElemLine)
-__all__.append("AgDrawElemLine")
 
 
 class AgSTKXSSLCertificateErrorEventArgs(IAgSTKXSSLCertificateErrorEventArgs):
@@ -3192,7 +3149,6 @@ class AgSTKXSSLCertificateErrorEventArgs(IAgSTKXSSLCertificateErrorEventArgs):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgSTKXSSLCertificateErrorEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2BCBD8EC-2EA5-4D14-855D-BB85A201BCB4}", AgSTKXSSLCertificateErrorEventArgs)
-__all__.append("AgSTKXSSLCertificateErrorEventArgs")
 
 
 class AgSTKXConControlQuitReceivedEventArgs(IAgSTKXConControlQuitReceivedEventArgs):
@@ -3214,7 +3170,6 @@ class AgSTKXConControlQuitReceivedEventArgs(IAgSTKXConControlQuitReceivedEventAr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgSTKXConControlQuitReceivedEventArgs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CA9E9226-74BE-4733-B50A-D64703165F4E}", AgSTKXConControlQuitReceivedEventArgs)
-__all__.append("AgSTKXConControlQuitReceivedEventArgs")
 
 
 

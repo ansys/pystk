@@ -2,7 +2,9 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgEAppConstants", "AgEAppErrorCodes", "AgEOpenLogFileMode", "AgEUiLogMsgType", "AgMRUCollection", "AgUiApplication", 
+"AgUiFileOpenExt", "AgUiFileOpenExtCollection", "IAgMRUCollection", "IAgUiApplication", "IAgUiApplicationPartnerAccess", 
+"IAgUiFileOpenExt", "IAgUiFileOpenExtCollection"]
 
 import typing
 
@@ -44,7 +46,6 @@ class AgEOpenLogFileMode(IntEnum):
     eOpenLogFileForAppending = 8
 
 agcls.AgTypeNameMap["AgEOpenLogFileMode"] = AgEOpenLogFileMode
-__all__.append("AgEOpenLogFileMode")
 
 class AgEUiLogMsgType(IntEnum):
     """Log message types."""
@@ -60,7 +61,6 @@ class AgEUiLogMsgType(IntEnum):
     eUiLogMsgAlarm = 4
 
 agcls.AgTypeNameMap["AgEUiLogMsgType"] = AgEUiLogMsgType
-__all__.append("AgEUiLogMsgType")
 
 class AgEAppConstants(IntEnum):
     """AgEAppConstants contains base IDs for various structures."""
@@ -68,7 +68,6 @@ class AgEAppConstants(IntEnum):
     eAppErrorBase = 0x200
 
 agcls.AgTypeNameMap["AgEAppConstants"] = AgEAppConstants
-__all__.append("AgEAppConstants")
 
 class AgEAppErrorCodes(IntEnum):
     """App error codes."""
@@ -84,7 +83,6 @@ class AgEAppErrorCodes(IntEnum):
     eAppErrorNoLicenseError = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 5))
 
 agcls.AgTypeNameMap["AgEAppErrorCodes"] = AgEAppErrorCodes
-__all__.append("AgEAppErrorCodes")
 
 
 class IAgMRUCollection(object):
@@ -163,7 +161,6 @@ class IAgMRUCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{68FAF906-BAD0-4C7C-80D5-26E6765800F7}", IAgMRUCollection)
 agcls.AgTypeNameMap["IAgMRUCollection"] = IAgMRUCollection
-__all__.append("IAgMRUCollection")
 
 class IAgUiFileOpenExt(object):
     """Access to file open dialog that allows multiple file specifications."""
@@ -250,7 +247,6 @@ class IAgUiFileOpenExt(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{42DFA066-8474-4FAA-9F66-E4477DBD44E2}", IAgUiFileOpenExt)
 agcls.AgTypeNameMap["IAgUiFileOpenExt"] = IAgUiFileOpenExt
-__all__.append("IAgUiFileOpenExt")
 
 class IAgUiApplication(object):
     """IAgUiApplication represents a root of the Application Model."""
@@ -610,7 +606,6 @@ class IAgUiApplication(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{769EDAA1-8767-4781-BC43-D968B0D67C02}", IAgUiApplication)
 agcls.AgTypeNameMap["IAgUiApplication"] = IAgUiApplication
-__all__.append("IAgUiApplication")
 
 class IAgUiApplicationPartnerAccess(object):
     """Access to the application object model for business partners."""
@@ -657,7 +652,6 @@ class IAgUiApplicationPartnerAccess(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DFC7DB2A-FA00-47B7-95D8-0E1171705A0F}", IAgUiApplicationPartnerAccess)
 agcls.AgTypeNameMap["IAgUiApplicationPartnerAccess"] = IAgUiApplicationPartnerAccess
-__all__.append("IAgUiApplicationPartnerAccess")
 
 class IAgUiFileOpenExtCollection(object):
     """Multiple file open collection."""
@@ -735,7 +729,6 @@ class IAgUiFileOpenExtCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{564BF89D-F0F8-4E98-A5A4-033DB16FC659}", IAgUiFileOpenExtCollection)
 agcls.AgTypeNameMap["IAgUiFileOpenExtCollection"] = IAgUiFileOpenExtCollection
-__all__.append("IAgUiFileOpenExtCollection")
 
 
 
@@ -761,7 +754,6 @@ class AgUiApplication(IAgUiApplication, IAgUiApplicationPartnerAccess):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiApplication.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7ADA6C22-FA34-4578-8BE8-65405A55EE15}", AgUiApplication)
-__all__.append("AgUiApplication")
 
 
 class AgMRUCollection(IAgMRUCollection):
@@ -783,7 +775,6 @@ class AgMRUCollection(IAgMRUCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgMRUCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8033C4FF-4A7D-4416-9B07-6807EA9C794E}", AgMRUCollection)
-__all__.append("AgMRUCollection")
 
 
 class AgUiFileOpenExtCollection(IAgUiFileOpenExtCollection):
@@ -805,7 +796,6 @@ class AgUiFileOpenExtCollection(IAgUiFileOpenExtCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiFileOpenExtCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A733AF99-E82E-42D8-AD9A-29BB005B3703}", AgUiFileOpenExtCollection)
-__all__.append("AgUiFileOpenExtCollection")
 
 
 class AgUiFileOpenExt(IAgUiFileOpenExt):
@@ -827,7 +817,6 @@ class AgUiFileOpenExt(IAgUiFileOpenExt):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgUiFileOpenExt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26A2C933-DB59-434E-85FD-2D92A97AA8AD}", AgUiFileOpenExt)
-__all__.append("AgUiFileOpenExt")
 
 
 

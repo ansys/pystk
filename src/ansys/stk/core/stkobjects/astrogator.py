@@ -2,7 +2,194 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgEVAAccessCriterion", "AgEVAAscentType", "AgEVAAtmosDataSource", "AgEVAAttitudeControl", "AgEVAAttitudeUpdate", 
+"AgEVABaseSelection", "AgEVABodyAxis", "AgEVABurnoutOptions", "AgEVABurnoutType", "AgEVACalcObjectAngleSign", "AgEVACalcObjectCentralBodyReference", 
+"AgEVACalcObjectDirection", "AgEVACalcObjectElem", "AgEVACalcObjectLocationSource", "AgEVACalcObjectOrbitPlaneSource", "AgEVACalcObjectReference", 
+"AgEVACalcObjectReferenceDirection", "AgEVACalcObjectReferenceEllipse", "AgEVACalcObjectRelativePosition", "AgEVACalcObjectSunPosition", 
+"AgEVACbAttitude", "AgEVACbEphemeris", "AgEVACbGravityModel", "AgEVACbShape", "AgEVAClearEphemerisDirection", "AgEVACoeffRKV8th9th", 
+"AgEVAComplexNumber", "AgEVAConstraintSign", "AgEVAControlAdvanced", "AgEVAControlEngineConstAcc", "AgEVAControlEngineConstant", 
+"AgEVAControlEngineCustom", "AgEVAControlEngineIon", "AgEVAControlEngineModelPoly", "AgEVAControlEngineThrottleTable", "AgEVAControlFollow", 
+"AgEVAControlInitState", "AgEVAControlLaunch", "AgEVAControlManeuver", "AgEVAControlOrbitStateValue", "AgEVAControlPowerInternal", 
+"AgEVAControlPowerProcessed", "AgEVAControlPowerSolarArray", "AgEVAControlRepeatingGroundTrackErr", "AgEVAControlStoppingCondition", 
+"AgEVAControlThrusters", "AgEVAControlUpdate", "AgEVAConvergenceCriteria", "AgEVACriteria", "AgEVACriterion", "AgEVACustomFunction", 
+"AgEVADCScalingMethod", "AgEVADeriveCalcMethod", "AgEVADifferenceOrder", "AgEVADragModelType", "AgEVADrawPerturbation", 
+"AgEVAEclipsingBodiesSource", "AgEVAElement", "AgEVAElementType", "AgEVAEngineModelFunction", "AgEVAEphemSource", "AgEVAErrorControl", 
+"AgEVAFollowJoin", "AgEVAFollowSeparation", "AgEVAFollowSpacecraftAndFuelTank", "AgEVAFormulation", "AgEVAGeoMagneticFluxSource", 
+"AgEVAGeoMagneticFluxUpdateRate", "AgEVAGoldenSectionDesiredOperation", "AgEVAGraphOption", "AgEVAGravCoeffCoefficientType", 
+"AgEVAGravCoeffNormalizationType", "AgEVAGravParamSource", "AgEVAGravitationalParameterSource", "AgEVAGridSearchDesiredOperation", 
+"AgEVAIPOPTGoal", "AgEVAImpDeltaVRep", "AgEVALambertDirectionOfMotionType", "AgEVALambertOrbitalEnergyType", "AgEVALambertSolutionOptionType", 
+"AgEVALambertTargetCoordType", "AgEVALanguage", "AgEVALaunchDisplaySystem", "AgEVALightingCondition", "AgEVAManeuverType", 
+"AgEVAMarsGRAMDensityType", "AgEVANumericalIntegrator", "AgEVAOptimalFiniteDiscretizationStrategy", "AgEVAOptimalFiniteExportNodesFormat", 
+"AgEVAOptimalFiniteGuessMethod", "AgEVAOptimalFiniteRunMode", "AgEVAOptimalFiniteSNOPTObjective", "AgEVAOptimalFiniteSNOPTScaling", 
+"AgEVAOptimalFiniteScalingOptions", "AgEVAOptimalFiniteSeedMethod", "AgEVAOptimalFiniteWorkingVariables", "AgEVAPredictorCorrector", 
+"AgEVAPressureMode", "AgEVAProfile", "AgEVAProfileInsertDirection", "AgEVAProfileMode", "AgEVAProfilesFinish", "AgEVAPropulsionMethod", 
+"AgEVAReferenceRadiusSource", "AgEVAReturnControl", "AgEVARootFindingAlgorithm", "AgEVARunCode", "AgEVASNOPTGoal", "AgEVASTMEigenNumber", 
+"AgEVASTMPertVariables", "AgEVAScriptingParameterType", "AgEVASegmentDifferenceOrder", "AgEVASegmentState", "AgEVASegmentType", 
+"AgEVASequenceStateToPass", "AgEVAShadowModel", "AgEVASmartRunMode", "AgEVASolarForceMethod", "AgEVASquaredType", "AgEVAState", 
+"AgEVAStoppingCondition", "AgEVASunPosition", "AgEVATabVecInterpMethod", "AgEVATargetSeqAction", "AgEVAThirdBodyMode", "AgEVAThrottleTableOperationMode", 
+"AgEVAThrustType", "AgEVAThrusterDirection", "AgEVAUpdateAction", "AgEVAUpdateParam", "AgEVAVenusGRAMDensityType", "AgVAAccessStoppingCondition", 
+"AgVAAsTriggerCondition", "AgVAAttitudeControlFiniteAntiVelocityVector", "AgVAAttitudeControlFiniteAttitude", "AgVAAttitudeControlFiniteFile", 
+"AgVAAttitudeControlFinitePlugin", "AgVAAttitudeControlFiniteThrustVector", "AgVAAttitudeControlFiniteTimeVarying", "AgVAAttitudeControlFiniteVelocityVector", 
+"AgVAAttitudeControlImpulsiveAntiVelocityVector", "AgVAAttitudeControlImpulsiveAttitude", "AgVAAttitudeControlImpulsiveFile", 
+"AgVAAttitudeControlImpulsiveThrustVector", "AgVAAttitudeControlImpulsiveVelocityVector", "AgVAAttitudeControlOptimalFiniteLagrange", 
+"AgVAAutomaticSequence", "AgVAAutomaticSequenceCollection", "AgVABDotRCalc", "AgVABDotTCalc", "AgVABMagCalc", "AgVABPlaneCollection", 
+"AgVABThetaCalc", "AgVABlendedDensity", "AgVABulirschStoerIntegrator", "AgVABurnoutCBFCartesian", "AgVABurnoutGeocentric", 
+"AgVABurnoutGeodetic", "AgVABurnoutLaunchAzAlt", "AgVABurnoutLaunchAzRadius", "AgVABurnoutVelocity", "AgVACR3BPFunc", "AgVACalcObjectCollection", 
+"AgVACalculationGraphCollection", "AgVACbAttitudeIAU1994", "AgVACbAttitudeRotationCoefficientsFile", "AgVACbEphemerisAnalyticOrbit", 
+"AgVACbEphemerisFile", "AgVACbEphemerisJPLDE", "AgVACbEphemerisJPLSpice", "AgVACbEphemerisPlanetary", "AgVACbGravityModel", 
+"AgVACbShapeOblateSpheroid", "AgVACbShapeSphere", "AgVACbShapeTriaxialEllipsoid", "AgVACentralBody", "AgVACentralBodyCollection", 
+"AgVACira72Function", "AgVAConstraintCollection", "AgVACustomFunctionScriptEngine", "AgVADCControl", "AgVADCControlCollection", 
+"AgVADCResult", "AgVADCResultCollection", "AgVADTM2012", "AgVADTM2020", "AgVADensityModelPlugin", "AgVADisplaySystemGeocentric", 
+"AgVADisplaySystemGeodetic", "AgVADragModelPlugin", "AgVADriverMCS", "AgVAEOMFuncPluginFunction", "AgVAElementCartesian", 
+"AgVAElementDelaunay", "AgVAElementEquinoctial", "AgVAElementGeodetic", "AgVAElementKeplerian", "AgVAElementMixedSpherical", 
+"AgVAElementSpherical", "AgVAElementTargetVectorIncomingAsymptote", "AgVAElementTargetVectorOutgoingAsymptote", "AgVAEngineConstAcc", 
+"AgVAEngineConstant", "AgVAEngineCustom", "AgVAEngineDefinition", "AgVAEngineIon", "AgVAEngineModelIspCoefficients", "AgVAEngineModelPoly", 
+"AgVAEngineModelThrustCoefficients", "AgVAEnginePlugin", "AgVAEngineThrottleTable", "AgVAExponential", "AgVAFuelTank", "AgVAGaussJacksonIntegrator", 
+"AgVAGeneralRelativityFunction", "AgVAGoldenSectionControl", "AgVAGoldenSectionControlCollection", "AgVAGoldenSectionResult", 
+"AgVAGoldenSectionResultCollection", "AgVAGravityFieldFunction", "AgVAGridSearchControl", "AgVAGridSearchControlCollection", 
+"AgVAGridSearchResult", "AgVAGridSearchResultCollection", "AgVAHPOPPluginFunction", "AgVAHarrisPriester", "AgVAIPOPTControl", 
+"AgVAIPOPTControlCollection", "AgVAIPOPTResult", "AgVAIPOPTResultCollection", "AgVAJacchiaBowman2008", "AgVAJacchiaRoberts", 
+"AgVAJacchia_1960", "AgVAJacchia_1970", "AgVAJacchia_1971", "AgVALightingStoppingCondition", "AgVAMCSBackwardSequence", 
+"AgVAMCSEnd", "AgVAMCSFollow", "AgVAMCSHold", "AgVAMCSInitialState", "AgVAMCSLaunch", "AgVAMCSManeuver", "AgVAMCSOptions", 
+"AgVAMCSPropagate", "AgVAMCSReturn", "AgVAMCSSegmentCollection", "AgVAMCSSegmentProperties", "AgVAMCSSequence", "AgVAMCSStop", 
+"AgVAMCSTargetSequence", "AgVAMCSUpdate", "AgVAMSISE_1990", "AgVAMSIS_1986", "AgVAManeuverFinite", "AgVAManeuverFinitePropagator", 
+"AgVAManeuverImpulsive", "AgVAManeuverOptimalFinite", "AgVAManeuverOptimalFiniteBounds", "AgVAManeuverOptimalFiniteFinalBoundaryConditions", 
+"AgVAManeuverOptimalFiniteInitialBoundaryConditions", "AgVAManeuverOptimalFinitePathBoundaryConditions", "AgVAManeuverOptimalFiniteSNOPTOptimizer", 
+"AgVAManeuverOptimalFiniteSteeringNodeCollection", "AgVAManeuverOptimalFiniteSteeringNodeElement", "AgVAMarsGRAM2000", "AgVAMarsGRAM2001", 
+"AgVAMarsGRAM2005", "AgVAMarsGRAM2010", "AgVAMarsGRAM37", "AgVANRLMSISE_2000", "AgVANumericalPropagatorWrapper", "AgVANumericalPropagatorWrapperCR3BP", 
+"AgVAPluginProperties", "AgVAPointMassFunction", "AgVAPowerInternal", "AgVAPowerProcessed", "AgVAPowerSolarArray", "AgVAProfileChangeManeuverType", 
+"AgVAProfileChangePropagator", "AgVAProfileChangeReturnSegment", "AgVAProfileChangeStopSegment", "AgVAProfileChangeStoppingConditionState", 
+"AgVAProfileCollection", "AgVAProfileDifferentialCorrector", "AgVAProfileGoldenSection", "AgVAProfileGridSearch", "AgVAProfileIPOPTOptimizer", 
+"AgVAProfileLambertProfile", "AgVAProfileLambertSearchProfile", "AgVAProfileRunOnce", "AgVAProfileSNOPTOptimizer", "AgVAProfileScriptingTool", 
+"AgVAProfileSearchPlugin", "AgVAProfileSeedFiniteManeuver", "AgVAPropagatorFunctionCollection", "AgVARK2nd3rd", "AgVARK4th", 
+"AgVARK4th5th", "AgVARK4thAdapt", "AgVARKF7th8th", "AgVARKV8th9th", "AgVARadiationPressureFunction", "AgVASNOPTControl", 
+"AgVASNOPTControlCollection", "AgVASNOPTResult", "AgVASNOPTResultCollection", "AgVASRPAeroT20", "AgVASRPAeroT30", "AgVASRPGSPM04aIIA", 
+"AgVASRPGSPM04aIIR", "AgVASRPGSPM04aeIIA", "AgVASRPGSPM04aeIIR", "AgVASRPNPlate", "AgVASRPReflectionPlugin", "AgVASRPSpherical", 
+"AgVASRPTabAreaVec", "AgVASRPVariableArea", "AgVAScriptingCalcObject", "AgVAScriptingCalcObjectCollection", "AgVAScriptingParameter", 
+"AgVAScriptingParameterCollection", "AgVAScriptingParameterEnumerationChoice", "AgVAScriptingParameterEnumerationChoiceCollection", 
+"AgVAScriptingSegment", "AgVAScriptingSegmentCollection", "AgVAScriptingTool", "AgVASearchPluginControl", "AgVASearchPluginControlCollection", 
+"AgVASearchPluginResult", "AgVASearchPluginResultCollection", "AgVASpacecraftParameters", "AgVAState", "AgVAStateCalcAbsoluteValue", 
+"AgVAStateCalcAltOfApoapsis", "AgVAStateCalcAltOfPeriapsis", "AgVAStateCalcAngle", "AgVAStateCalcApparentSolarTime", "AgVAStateCalcArgOfLat", 
+"AgVAStateCalcArgOfPeriapsis", "AgVAStateCalcBetaAngle", "AgVAStateCalcC3Energy", "AgVAStateCalcCartSTMElem", "AgVAStateCalcCartesianElem", 
+"AgVAStateCalcCd", "AgVAStateCalcCloseApproachBearing", "AgVAStateCalcCloseApproachCosBearing", "AgVAStateCalcCloseApproachMag", 
+"AgVAStateCalcCloseApproachTheta", "AgVAStateCalcCloseApproachX", "AgVAStateCalcCloseApproachY", "AgVAStateCalcCosOfVerticalFPA", 
+"AgVAStateCalcCr", "AgVAStateCalcCrdnAngle", "AgVAStateCalcCurvilinearRelMotion", "AgVAStateCalcCustomFunction", "AgVAStateCalcDamageFlux", 
+"AgVAStateCalcDamageMassFlux", "AgVAStateCalcDec", "AgVAStateCalcDecRate", "AgVAStateCalcDeltaDec", "AgVAStateCalcDeltaFromMaster", 
+"AgVAStateCalcDeltaRA", "AgVAStateCalcDeltaV", "AgVAStateCalcDeltaVSquared", "AgVAStateCalcDensity", "AgVAStateCalcDifference", 
+"AgVAStateCalcDifferenceAcrossSegmentsOtherSat", "AgVAStateCalcDifferenceOtherSegment", "AgVAStateCalcDotProduct", "AgVAStateCalcDragArea", 
+"AgVAStateCalcDuration", "AgVAStateCalcEarthMeanLocTimeAN", "AgVAStateCalcEarthMeanSolarTime", "AgVAStateCalcEccAnomaly", 
+"AgVAStateCalcEccentricity", "AgVAStateCalcEnvironment", "AgVAStateCalcEpoch", "AgVAStateCalcEquinoctialElem", "AgVAStateCalcFPA", 
+"AgVAStateCalcFuelMass", "AgVAStateCalcGeodeticElem", "AgVAStateCalcGravCoeff", "AgVAStateCalcGravitationalParameter", "AgVAStateCalcHeightAboveTerrain", 
+"AgVAStateCalcImpactFlux", "AgVAStateCalcImpactMassFlux", "AgVAStateCalcInAsympDec", "AgVAStateCalcInAsympRA", "AgVAStateCalcInVelAzAtPeriapsis", 
+"AgVAStateCalcInclination", "AgVAStateCalcInertialDeltaVMag", "AgVAStateCalcInertialDeltaVx", "AgVAStateCalcInertialDeltaVy", 
+"AgVAStateCalcInertialDeltaVz", "AgVAStateCalcJacobiConstant", "AgVAStateCalcLocalApparentSolarLon", "AgVAStateCalcLonDriftRate", 
+"AgVAStateCalcLonOfAscNode", "AgVAStateCalcLonOfPeriapsis", "AgVAStateCalcMCSDeltaV", "AgVAStateCalcMCSDeltaVSquared", "AgVAStateCalcMagFieldDipoleL", 
+"AgVAStateCalcManeuverSpecificImpulse", "AgVAStateCalcManeuverTotalMassFlowRate", "AgVAStateCalcMass", "AgVAStateCalcMaxValue", 
+"AgVAStateCalcMeanAnomaly", "AgVAStateCalcMeanEarthLon", "AgVAStateCalcMeanMotion", "AgVAStateCalcMeanValue", "AgVAStateCalcMedianValue", 
+"AgVAStateCalcMinValue", "AgVAStateCalcNegative", "AgVAStateCalcNumRevs", "AgVAStateCalcOnePtAccess", "AgVAStateCalcOrbitDelaunayG", 
+"AgVAStateCalcOrbitDelaunayH", "AgVAStateCalcOrbitDelaunayL", "AgVAStateCalcOrbitPeriod", "AgVAStateCalcOrbitSemiLatusRectum", 
+"AgVAStateCalcOrbitStateValue", "AgVAStateCalcOutAsympDec", "AgVAStateCalcOutAsympRA", "AgVAStateCalcOutVelAzAtPeriapsis", 
+"AgVAStateCalcPi", "AgVAStateCalcPosDifferenceOtherSegment", "AgVAStateCalcPosVelDifferenceOtherSegment", "AgVAStateCalcPower", 
+"AgVAStateCalcPressure", "AgVAStateCalcRA", "AgVAStateCalcRAAN", "AgVAStateCalcRARate", "AgVAStateCalcRMag", "AgVAStateCalcRadOfApoapsis", 
+"AgVAStateCalcRadOfPeriapsis", "AgVAStateCalcRadiationPressureArea", "AgVAStateCalcRadiationPressureCoefficient", "AgVAStateCalcRectifiedLon", 
+"AgVAStateCalcReferenceRadius", "AgVAStateCalcRelAtAOLMaster", "AgVAStateCalcRelGroundTrackError", "AgVAStateCalcRelMotion", 
+"AgVAStateCalcRelPosDecAngle", "AgVAStateCalcRelPosInPlaneAngle", "AgVAStateCalcRelativeInclination", "AgVAStateCalcRepeatingGroundTrackErr", 
+"AgVAStateCalcSEETMagFieldFieldLineSepAngle", "AgVAStateCalcSEETSAAFlux", "AgVAStateCalcSEETVehTemp", "AgVAStateCalcSRPArea", 
+"AgVAStateCalcSTMEigenval", "AgVAStateCalcSTMEigenvecElem", "AgVAStateCalcScalar", "AgVAStateCalcScript", "AgVAStateCalcSemiMajorAxis", 
+"AgVAStateCalcSequenceDeltaV", "AgVAStateCalcSequenceDeltaVSquared", "AgVAStateCalcSignedEccentricity", "AgVAStateCalcSolarBetaAngle", 
+"AgVAStateCalcSolarInPlaneAngle", "AgVAStateCalcSpeedOfLight", "AgVAStateCalcStandardDeviation", "AgVAStateCalcTemperature", 
+"AgVAStateCalcTimePastAscNode", "AgVAStateCalcTimePastPeriapsis", "AgVAStateCalcTrueAnomaly", "AgVAStateCalcTrueLon", "AgVAStateCalcUserValue", 
+"AgVAStateCalcVMag", "AgVAStateCalcValueAtSegment", "AgVAStateCalcValueAtSegmentOtherSat", "AgVAStateCalcVectorDec", "AgVAStateCalcVectorMag", 
+"AgVAStateCalcVectorRA", "AgVAStateCalcVectorX", "AgVAStateCalcVectorY", "AgVAStateCalcVectorZ", "AgVAStateCalcVelAz", "AgVAStateCalcVelDifferenceOtherSegment", 
+"AgVAStateTransFunction", "AgVAStoppingCondition", "AgVAStoppingConditionCollection", "AgVAStoppingConditionElement", "AgVATargeterGraph", 
+"AgVATargeterGraphActiveControl", "AgVATargeterGraphActiveControlCollection", "AgVATargeterGraphCollection", "AgVATargeterGraphResult", 
+"AgVATargeterGraphResultCollection", "AgVAThirdBodyFunction", "AgVAThruster", "AgVAThrusterSet", "AgVAThrusterSetCollection", 
+"AgVATwoBodyFunction", "AgVAUS_Standard_Atmosphere", "AgVAUserVariable", "AgVAUserVariableCollection", "AgVAUserVariableDefinition", 
+"AgVAUserVariableDefinitionCollection", "AgVAUserVariableUpdate", "AgVAUserVariableUpdateCollection", "AgVAVenusGRAM2005", 
+"AgVAYarkovskyFunc", "IAgVAAccessStoppingCondition", "IAgVAAsTriggerCondition", "IAgVAAttitudeControl", "IAgVAAttitudeControlFinite", 
+"IAgVAAttitudeControlFiniteAntiVelocityVector", "IAgVAAttitudeControlFiniteAttitude", "IAgVAAttitudeControlFiniteFile", 
+"IAgVAAttitudeControlFinitePlugin", "IAgVAAttitudeControlFiniteThrustVector", "IAgVAAttitudeControlFiniteTimeVarying", "IAgVAAttitudeControlFiniteVelocityVector", 
+"IAgVAAttitudeControlImpulsive", "IAgVAAttitudeControlImpulsiveAntiVelocityVector", "IAgVAAttitudeControlImpulsiveAttitude", 
+"IAgVAAttitudeControlImpulsiveFile", "IAgVAAttitudeControlImpulsiveThrustVector", "IAgVAAttitudeControlImpulsiveVelocityVector", 
+"IAgVAAttitudeControlOptimalFinite", "IAgVAAttitudeControlOptimalFiniteLagrange", "IAgVAAutomaticSequence", "IAgVAAutomaticSequenceCollection", 
+"IAgVABDotRCalc", "IAgVABDotTCalc", "IAgVABMagCalc", "IAgVABPlaneCollection", "IAgVABThetaCalc", "IAgVABlendedDensity", 
+"IAgVABulirschStoerIntegrator", "IAgVABurnout", "IAgVABurnoutCBFCartesian", "IAgVABurnoutGeocentric", "IAgVABurnoutGeodetic", 
+"IAgVABurnoutLaunchAzAlt", "IAgVABurnoutLaunchAzRadius", "IAgVABurnoutVelocity", "IAgVACR3BPFunc", "IAgVACalcObjectCollection", 
+"IAgVACalculationGraphCollection", "IAgVACbAttitude", "IAgVACbAttitudeIAU1994", "IAgVACbAttitudeRotationCoefficientsFile", 
+"IAgVACbEphemeris", "IAgVACbEphemerisAnalyticOrbit", "IAgVACbEphemerisFile", "IAgVACbEphemerisJPLDE", "IAgVACbEphemerisJPLSpice", 
+"IAgVACbEphemerisPlanetary", "IAgVACbGravityModel", "IAgVACbShape", "IAgVACbShapeOblateSpheroid", "IAgVACbShapeSphere", 
+"IAgVACbShapeTriaxialEllipsoid", "IAgVACentralBody", "IAgVACentralBodyCollection", "IAgVACira72Function", "IAgVAConstraintCollection", 
+"IAgVACustomFunctionScriptEngine", "IAgVADCControl", "IAgVADCControlCollection", "IAgVADCResult", "IAgVADCResultCollection", 
+"IAgVADTM2012", "IAgVADTM2020", "IAgVADensityModelPlugin", "IAgVADisplaySystem", "IAgVADisplaySystemGeocentric", "IAgVADisplaySystemGeodetic", 
+"IAgVADragModelPlugin", "IAgVADriverMCS", "IAgVAEOMFuncPluginFunction", "IAgVAElement", "IAgVAElementCartesian", "IAgVAElementDelaunay", 
+"IAgVAElementEquinoctial", "IAgVAElementGeodetic", "IAgVAElementKeplerian", "IAgVAElementMixedSpherical", "IAgVAElementSpherical", 
+"IAgVAElementTargetVectorIncomingAsymptote", "IAgVAElementTargetVectorOutgoingAsymptote", "IAgVAEngineConstAcc", "IAgVAEngineConstant", 
+"IAgVAEngineCustom", "IAgVAEngineDefinition", "IAgVAEngineIon", "IAgVAEngineModelIspCoefficients", "IAgVAEngineModelPoly", 
+"IAgVAEngineModelThrustCoefficients", "IAgVAEnginePlugin", "IAgVAEngineThrottleTable", "IAgVAExponential", "IAgVAFuelTank", 
+"IAgVAGaussJacksonIntegrator", "IAgVAGeneralRelativityFunction", "IAgVAGoldenSectionControl", "IAgVAGoldenSectionControlCollection", 
+"IAgVAGoldenSectionResult", "IAgVAGoldenSectionResultCollection", "IAgVAGravityFieldFunction", "IAgVAGridSearchControl", 
+"IAgVAGridSearchControlCollection", "IAgVAGridSearchResult", "IAgVAGridSearchResultCollection", "IAgVAHPOPPluginFunction", 
+"IAgVAHarrisPriester", "IAgVAIPOPTControl", "IAgVAIPOPTControlCollection", "IAgVAIPOPTResult", "IAgVAIPOPTResultCollection", 
+"IAgVAJacchiaBowman2008", "IAgVAJacchiaRoberts", "IAgVAJacchia_1960", "IAgVAJacchia_1970", "IAgVAJacchia_1971", "IAgVALightingStoppingCondition", 
+"IAgVAMCSBackwardSequence", "IAgVAMCSEnd", "IAgVAMCSFollow", "IAgVAMCSHold", "IAgVAMCSInitialState", "IAgVAMCSLaunch", "IAgVAMCSManeuver", 
+"IAgVAMCSOptions", "IAgVAMCSPropagate", "IAgVAMCSReturn", "IAgVAMCSSegment", "IAgVAMCSSegmentCollection", "IAgVAMCSSegmentProperties", 
+"IAgVAMCSSequence", "IAgVAMCSStop", "IAgVAMCSTargetSequence", "IAgVAMCSUpdate", "IAgVAMSISE_1990", "IAgVAMSIS_1986", "IAgVAManeuver", 
+"IAgVAManeuverFinite", "IAgVAManeuverFinitePropagator", "IAgVAManeuverImpulsive", "IAgVAManeuverOptimalFinite", "IAgVAManeuverOptimalFiniteBounds", 
+"IAgVAManeuverOptimalFiniteFinalBoundaryConditions", "IAgVAManeuverOptimalFiniteInitialBoundaryConditions", "IAgVAManeuverOptimalFinitePathBoundaryConditions", 
+"IAgVAManeuverOptimalFiniteSNOPTOptimizer", "IAgVAManeuverOptimalFiniteSteeringNodeCollection", "IAgVAManeuverOptimalFiniteSteeringNodeElement", 
+"IAgVAMarsGRAM2000", "IAgVAMarsGRAM2001", "IAgVAMarsGRAM2005", "IAgVAMarsGRAM2010", "IAgVAMarsGRAM37", "IAgVANRLMSISE_2000", 
+"IAgVANumericalIntegrator", "IAgVANumericalPropagatorWrapper", "IAgVANumericalPropagatorWrapperCR3BP", "IAgVAPluginProperties", 
+"IAgVAPointMassFunction", "IAgVAPowerInternal", "IAgVAPowerProcessed", "IAgVAPowerSolarArray", "IAgVAProfile", "IAgVAProfileChangeManeuverType", 
+"IAgVAProfileChangePropagator", "IAgVAProfileChangeReturnSegment", "IAgVAProfileChangeStopSegment", "IAgVAProfileChangeStoppingConditionState", 
+"IAgVAProfileCollection", "IAgVAProfileDifferentialCorrector", "IAgVAProfileGoldenSection", "IAgVAProfileGridSearch", "IAgVAProfileIPOPTOptimizer", 
+"IAgVAProfileLambertProfile", "IAgVAProfileLambertSearchProfile", "IAgVAProfileRunOnce", "IAgVAProfileSNOPTOptimizer", "IAgVAProfileScriptingTool", 
+"IAgVAProfileSearchPlugin", "IAgVAProfileSeedFiniteManeuver", "IAgVAPropagatorFunctionCollection", "IAgVARK2nd3rd", "IAgVARK4th", 
+"IAgVARK4th5th", "IAgVARK4thAdapt", "IAgVARKF7th8th", "IAgVARKV8th9th", "IAgVARadiationPressureFunction", "IAgVASNOPTControl", 
+"IAgVASNOPTControlCollection", "IAgVASNOPTResult", "IAgVASNOPTResultCollection", "IAgVASRPAeroT20", "IAgVASRPAeroT30", "IAgVASRPGSPM04aIIA", 
+"IAgVASRPGSPM04aIIR", "IAgVASRPGSPM04aeIIA", "IAgVASRPGSPM04aeIIR", "IAgVASRPNPlate", "IAgVASRPReflectionPlugin", "IAgVASRPSpherical", 
+"IAgVASRPTabAreaVec", "IAgVASRPVariableArea", "IAgVAScriptingCalcObject", "IAgVAScriptingCalcObjectCollection", "IAgVAScriptingParameter", 
+"IAgVAScriptingParameterCollection", "IAgVAScriptingParameterEnumerationChoice", "IAgVAScriptingParameterEnumerationChoiceCollection", 
+"IAgVAScriptingSegment", "IAgVAScriptingSegmentCollection", "IAgVAScriptingTool", "IAgVASearchPluginControl", "IAgVASearchPluginControlCollection", 
+"IAgVASearchPluginResult", "IAgVASearchPluginResultCollection", "IAgVASpacecraftParameters", "IAgVAState", "IAgVAStateCalcAbsoluteValue", 
+"IAgVAStateCalcAltOfApoapsis", "IAgVAStateCalcAltOfPeriapsis", "IAgVAStateCalcAngle", "IAgVAStateCalcApparentSolarTime", 
+"IAgVAStateCalcArgOfLat", "IAgVAStateCalcArgOfPeriapsis", "IAgVAStateCalcBetaAngle", "IAgVAStateCalcC3Energy", "IAgVAStateCalcCartSTMElem", 
+"IAgVAStateCalcCartesianElem", "IAgVAStateCalcCd", "IAgVAStateCalcCloseApproachBearing", "IAgVAStateCalcCloseApproachCosBearing", 
+"IAgVAStateCalcCloseApproachMag", "IAgVAStateCalcCloseApproachTheta", "IAgVAStateCalcCloseApproachX", "IAgVAStateCalcCloseApproachY", 
+"IAgVAStateCalcCosOfVerticalFPA", "IAgVAStateCalcCr", "IAgVAStateCalcCrdnAngle", "IAgVAStateCalcCurvilinearRelMotion", "IAgVAStateCalcCustomFunction", 
+"IAgVAStateCalcDamageFlux", "IAgVAStateCalcDamageMassFlux", "IAgVAStateCalcDec", "IAgVAStateCalcDecRate", "IAgVAStateCalcDeltaDec", 
+"IAgVAStateCalcDeltaFromMaster", "IAgVAStateCalcDeltaRA", "IAgVAStateCalcDeltaV", "IAgVAStateCalcDeltaVSquared", "IAgVAStateCalcDensity", 
+"IAgVAStateCalcDifference", "IAgVAStateCalcDifferenceAcrossSegmentsOtherSat", "IAgVAStateCalcDifferenceOtherSegment", "IAgVAStateCalcDotProduct", 
+"IAgVAStateCalcDragArea", "IAgVAStateCalcDuration", "IAgVAStateCalcEarthMeanLocTimeAN", "IAgVAStateCalcEarthMeanSolarTime", 
+"IAgVAStateCalcEccAnomaly", "IAgVAStateCalcEccentricity", "IAgVAStateCalcEnvironment", "IAgVAStateCalcEpoch", "IAgVAStateCalcEquinoctialElem", 
+"IAgVAStateCalcFPA", "IAgVAStateCalcFuelMass", "IAgVAStateCalcGeodeticElem", "IAgVAStateCalcGravCoeff", "IAgVAStateCalcGravitationalParameter", 
+"IAgVAStateCalcHeightAboveTerrain", "IAgVAStateCalcImpactFlux", "IAgVAStateCalcImpactMassFlux", "IAgVAStateCalcInAsympDec", 
+"IAgVAStateCalcInAsympRA", "IAgVAStateCalcInVelAzAtPeriapsis", "IAgVAStateCalcInclination", "IAgVAStateCalcInertialDeltaVMag", 
+"IAgVAStateCalcInertialDeltaVx", "IAgVAStateCalcInertialDeltaVy", "IAgVAStateCalcInertialDeltaVz", "IAgVAStateCalcJacobiConstant", 
+"IAgVAStateCalcLocalApparentSolarLon", "IAgVAStateCalcLonDriftRate", "IAgVAStateCalcLonOfAscNode", "IAgVAStateCalcLonOfPeriapsis", 
+"IAgVAStateCalcMCSDeltaV", "IAgVAStateCalcMCSDeltaVSquared", "IAgVAStateCalcMagFieldDipoleL", "IAgVAStateCalcManeuverSpecificImpulse", 
+"IAgVAStateCalcManeuverTotalMassFlowRate", "IAgVAStateCalcMass", "IAgVAStateCalcMaxValue", "IAgVAStateCalcMeanAnomaly", 
+"IAgVAStateCalcMeanEarthLon", "IAgVAStateCalcMeanMotion", "IAgVAStateCalcMeanValue", "IAgVAStateCalcMedianValue", "IAgVAStateCalcMinValue", 
+"IAgVAStateCalcNegative", "IAgVAStateCalcNumRevs", "IAgVAStateCalcOnePtAccess", "IAgVAStateCalcOrbitDelaunayG", "IAgVAStateCalcOrbitDelaunayH", 
+"IAgVAStateCalcOrbitDelaunayL", "IAgVAStateCalcOrbitPeriod", "IAgVAStateCalcOrbitSemiLatusRectum", "IAgVAStateCalcOrbitStateValue", 
+"IAgVAStateCalcOutAsympDec", "IAgVAStateCalcOutAsympRA", "IAgVAStateCalcOutVelAzAtPeriapsis", "IAgVAStateCalcPi", "IAgVAStateCalcPosDifferenceOtherSegment", 
+"IAgVAStateCalcPosVelDifferenceOtherSegment", "IAgVAStateCalcPower", "IAgVAStateCalcPressure", "IAgVAStateCalcRA", "IAgVAStateCalcRAAN", 
+"IAgVAStateCalcRARate", "IAgVAStateCalcRMag", "IAgVAStateCalcRadOfApoapsis", "IAgVAStateCalcRadOfPeriapsis", "IAgVAStateCalcRadiationPressureArea", 
+"IAgVAStateCalcRadiationPressureCoefficient", "IAgVAStateCalcRectifiedLon", "IAgVAStateCalcReferenceRadius", "IAgVAStateCalcRelAtAOLMaster", 
+"IAgVAStateCalcRelGroundTrackError", "IAgVAStateCalcRelMotion", "IAgVAStateCalcRelPosDecAngle", "IAgVAStateCalcRelPosInPlaneAngle", 
+"IAgVAStateCalcRelativeInclination", "IAgVAStateCalcRepeatingGroundTrackErr", "IAgVAStateCalcSEETMagFieldFieldLineSepAngle", 
+"IAgVAStateCalcSEETSAAFlux", "IAgVAStateCalcSEETVehTemp", "IAgVAStateCalcSRPArea", "IAgVAStateCalcSTMEigenval", "IAgVAStateCalcSTMEigenvecElem", 
+"IAgVAStateCalcScalar", "IAgVAStateCalcScript", "IAgVAStateCalcSemiMajorAxis", "IAgVAStateCalcSequenceDeltaV", "IAgVAStateCalcSequenceDeltaVSquared", 
+"IAgVAStateCalcSignedEccentricity", "IAgVAStateCalcSolarBetaAngle", "IAgVAStateCalcSolarInPlaneAngle", "IAgVAStateCalcSpeedOfLight", 
+"IAgVAStateCalcStandardDeviation", "IAgVAStateCalcTemperature", "IAgVAStateCalcTimePastAscNode", "IAgVAStateCalcTimePastPeriapsis", 
+"IAgVAStateCalcTrueAnomaly", "IAgVAStateCalcTrueLon", "IAgVAStateCalcUserValue", "IAgVAStateCalcVMag", "IAgVAStateCalcValueAtSegment", 
+"IAgVAStateCalcValueAtSegmentOtherSat", "IAgVAStateCalcVectorDec", "IAgVAStateCalcVectorMag", "IAgVAStateCalcVectorRA", 
+"IAgVAStateCalcVectorX", "IAgVAStateCalcVectorY", "IAgVAStateCalcVectorZ", "IAgVAStateCalcVelAz", "IAgVAStateCalcVelDifferenceOtherSegment", 
+"IAgVAStateTransFunction", "IAgVAStoppingCondition", "IAgVAStoppingConditionCollection", "IAgVAStoppingConditionComponent", 
+"IAgVAStoppingConditionElement", "IAgVATargeterGraph", "IAgVATargeterGraphActiveControl", "IAgVATargeterGraphActiveControlCollection", 
+"IAgVATargeterGraphCollection", "IAgVATargeterGraphResult", "IAgVATargeterGraphResultCollection", "IAgVAThirdBodyFunction", 
+"IAgVAThruster", "IAgVAThrusterSet", "IAgVAThrusterSetCollection", "IAgVATwoBodyFunction", "IAgVAUS_Standard_Atmosphere", 
+"IAgVAUserVariable", "IAgVAUserVariableCollection", "IAgVAUserVariableDefinition", "IAgVAUserVariableDefinitionCollection", 
+"IAgVAUserVariableUpdate", "IAgVAUserVariableUpdateCollection", "IAgVAVenusGRAM2005", "IAgVAYarkovskyFunc"]
 
 import typing
 
@@ -47,7 +234,6 @@ class AgEVAGraphOption(IntEnum):
     eVAGraphOptionGraphValue = 2
 
 agcls.AgTypeNameMap["AgEVAGraphOption"] = AgEVAGraphOption
-__all__.append("AgEVAGraphOption")
 
 class AgEVASmartRunMode(IntEnum):
     """Mode that the mcs will run in."""
@@ -57,7 +243,6 @@ class AgEVASmartRunMode(IntEnum):
     eVASmartRunModeOnlyChanged = 1
 
 agcls.AgTypeNameMap["AgEVASmartRunMode"] = AgEVASmartRunMode
-__all__.append("AgEVASmartRunMode")
 
 class AgEVAFormulation(IntEnum):
     """Equinoctial Formulation."""
@@ -67,7 +252,6 @@ class AgEVAFormulation(IntEnum):
     eVAFormulationRetrograde = 1
 
 agcls.AgTypeNameMap["AgEVAFormulation"] = AgEVAFormulation
-__all__.append("AgEVAFormulation")
 
 class AgEVALightingCondition(IntEnum):
     """The criteria of a Lighting stopping condition."""
@@ -81,7 +265,6 @@ class AgEVALightingCondition(IntEnum):
     eVALightingCriterionExitUmbra = 3
 
 agcls.AgTypeNameMap["AgEVALightingCondition"] = AgEVALightingCondition
-__all__.append("AgEVALightingCondition")
 
 class AgEVAProfile(IntEnum):
     """Type of profile."""
@@ -119,7 +302,6 @@ class AgEVAProfile(IntEnum):
     eVAProfileGridSearch = 16
 
 agcls.AgTypeNameMap["AgEVAProfile"] = AgEVAProfile
-__all__.append("AgEVAProfile")
 
 class AgEVAAccessCriterion(IntEnum):
     """The criteria of an Access stopping condition."""
@@ -131,7 +313,6 @@ class AgEVAAccessCriterion(IntEnum):
     eVAAccessCriterionEither = 2
 
 agcls.AgTypeNameMap["AgEVAAccessCriterion"] = AgEVAAccessCriterion
-__all__.append("AgEVAAccessCriterion")
 
 class AgEVAEclipsingBodiesSource(IntEnum):
     """The source types of the eclipsing bodies list."""
@@ -145,7 +326,6 @@ class AgEVAEclipsingBodiesSource(IntEnum):
     eVAEclipsingBodiesVehicleUserDefined = 3
 
 agcls.AgTypeNameMap["AgEVAEclipsingBodiesSource"] = AgEVAEclipsingBodiesSource
-__all__.append("AgEVAEclipsingBodiesSource")
 
 class AgEVACriterion(IntEnum):
     """The stopping condition criterion types."""
@@ -157,7 +337,6 @@ class AgEVACriterion(IntEnum):
     eVACriterionCrossIncreasing = 2
 
 agcls.AgTypeNameMap["AgEVACriterion"] = AgEVACriterion
-__all__.append("AgEVACriterion")
 
 class AgEVACalcObjectReference(IntEnum):
     """The calculation object Reference Selection types."""
@@ -167,7 +346,6 @@ class AgEVACalcObjectReference(IntEnum):
     eVACalcObjectReferenceSpecified = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectReference"] = AgEVACalcObjectReference
-__all__.append("AgEVACalcObjectReference")
 
 class AgEVACalcObjectCentralBodyReference(IntEnum):
     """The calculation object Central Body Reference Selection types."""
@@ -177,7 +355,6 @@ class AgEVACalcObjectCentralBodyReference(IntEnum):
     eVACalcObjectCentralBodyReferenceParent = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectCentralBodyReference"] = AgEVACalcObjectCentralBodyReference
-__all__.append("AgEVACalcObjectCentralBodyReference")
 
 class AgEVACalcObjectElem(IntEnum):
     """The calculation object Element Types."""
@@ -191,7 +368,6 @@ class AgEVACalcObjectElem(IntEnum):
     eVACalcObjectElemOsculating = 3
 
 agcls.AgTypeNameMap["AgEVACalcObjectElem"] = AgEVACalcObjectElem
-__all__.append("AgEVACalcObjectElem")
 
 class AgEVAProfileMode(IntEnum):
     """The Target Sequence profile modes."""
@@ -205,7 +381,6 @@ class AgEVAProfileMode(IntEnum):
     eVAProfileModeActive = 3
 
 agcls.AgTypeNameMap["AgEVAProfileMode"] = AgEVAProfileMode
-__all__.append("AgEVAProfileMode")
 
 class AgEVAControlStoppingCondition(IntEnum):
     """The stopping condition control types."""
@@ -213,7 +388,6 @@ class AgEVAControlStoppingCondition(IntEnum):
     eVAControlStoppingConditionTripValue = 0
 
 agcls.AgTypeNameMap["AgEVAControlStoppingCondition"] = AgEVAControlStoppingCondition
-__all__.append("AgEVAControlStoppingCondition")
 
 class AgEVAState(IntEnum):
     """The Stop segment state types."""
@@ -223,7 +397,6 @@ class AgEVAState(IntEnum):
     eVAStateDisabled = 1
 
 agcls.AgTypeNameMap["AgEVAState"] = AgEVAState
-__all__.append("AgEVAState")
 
 class AgEVAReturnControl(IntEnum):
     """The Return segment control types"""
@@ -235,7 +408,6 @@ class AgEVAReturnControl(IntEnum):
     eVAReturnControlEnableExceptProfilesBypass = 2
 
 agcls.AgTypeNameMap["AgEVAReturnControl"] = AgEVAReturnControl
-__all__.append("AgEVAReturnControl")
 
 class AgEVADrawPerturbation(IntEnum):
     """The Draw Perturbation types for a Differential Corrector profile."""
@@ -247,7 +419,6 @@ class AgEVADrawPerturbation(IntEnum):
     eVADrawPerturbationTargeterColor = 2
 
 agcls.AgTypeNameMap["AgEVADrawPerturbation"] = AgEVADrawPerturbation
-__all__.append("AgEVADrawPerturbation")
 
 class AgEVADeriveCalcMethod(IntEnum):
     """The Derivative Calculation method types for a Differential Corrector profile."""
@@ -259,7 +430,6 @@ class AgEVADeriveCalcMethod(IntEnum):
     eVADeriveCalcMethodSigned = 2
 
 agcls.AgTypeNameMap["AgEVADeriveCalcMethod"] = AgEVADeriveCalcMethod
-__all__.append("AgEVADeriveCalcMethod")
 
 class AgEVAConvergenceCriteria(IntEnum):
     """The Convergence Criteria types for a Differential Corrector profile."""
@@ -269,7 +439,6 @@ class AgEVAConvergenceCriteria(IntEnum):
     eVAConvervenceCriteriaEitherEqualityConstraintsOrControlParams = 1
 
 agcls.AgTypeNameMap["AgEVAConvergenceCriteria"] = AgEVAConvergenceCriteria
-__all__.append("AgEVAConvergenceCriteria")
 
 class AgEVADCScalingMethod(IntEnum):
     """The Scaling Method types for a Differential Corrector profile."""
@@ -283,7 +452,6 @@ class AgEVADCScalingMethod(IntEnum):
     eVADCScalingMethodTolerance = 3
 
 agcls.AgTypeNameMap["AgEVADCScalingMethod"] = AgEVADCScalingMethod
-__all__.append("AgEVADCScalingMethod")
 
 class AgEVAControlUpdate(IntEnum):
     """Update segment properties that can be selected as control parameters for a Target Sequence."""
@@ -311,7 +479,6 @@ class AgEVAControlUpdate(IntEnum):
     eVAControlUpdateTankTempVal = 110
 
 agcls.AgTypeNameMap["AgEVAControlUpdate"] = AgEVAControlUpdate
-__all__.append("AgEVAControlUpdate")
 
 class AgEVAControlFollow(IntEnum):
     """Follow segment properties that can be selected as control parameters for a Target Sequence."""
@@ -353,7 +520,6 @@ class AgEVAControlFollow(IntEnum):
     eVAControlFollowZOffset = 217
 
 agcls.AgTypeNameMap["AgEVAControlFollow"] = AgEVAControlFollow
-__all__.append("AgEVAControlFollow")
 
 class AgEVAControlInitState(IntEnum):
     """Initial State segment properties that can be selected as control parameters for a Target Sequence."""
@@ -531,7 +697,6 @@ class AgEVAControlInitState(IntEnum):
     eVAControlInitStateKeplerianTimePastPeriapsis = 391
 
 agcls.AgTypeNameMap["AgEVAControlInitState"] = AgEVAControlInitState
-__all__.append("AgEVAControlInitState")
 
 class AgEVAControlManeuver(IntEnum):
     """Maneuver segment properties that can be selected as control parameters for a Target Sequence."""
@@ -607,7 +772,6 @@ class AgEVAControlManeuver(IntEnum):
     eVAControlManeuverFiniteElP = 434
 
 agcls.AgTypeNameMap["AgEVAControlManeuver"] = AgEVAControlManeuver
-__all__.append("AgEVAControlManeuver")
 
 class AgEVAControlLaunch(IntEnum):
     """Launch segment properties that can be selected as control parameters for a Target Sequence."""
@@ -691,7 +855,6 @@ class AgEVAControlLaunch(IntEnum):
     eVAControlLaunchMaxFuelMass = 538
 
 agcls.AgTypeNameMap["AgEVAControlLaunch"] = AgEVAControlLaunch
-__all__.append("AgEVAControlLaunch")
 
 class AgEVAControlAdvanced(IntEnum):
     """Propagate segment properties that can be selected as control parameters for a Target Sequence."""
@@ -701,7 +864,6 @@ class AgEVAControlAdvanced(IntEnum):
     eVAControlPropagateMinPropTime = 601
 
 agcls.AgTypeNameMap["AgEVAControlAdvanced"] = AgEVAControlAdvanced
-__all__.append("AgEVAControlAdvanced")
 
 class AgEVATargetSeqAction(IntEnum):
     """Action options for Target Sequence profiles."""
@@ -713,7 +875,6 @@ class AgEVATargetSeqAction(IntEnum):
     eVATargetSeqActionRunActiveProfilesOnce = 2
 
 agcls.AgTypeNameMap["AgEVATargetSeqAction"] = AgEVATargetSeqAction
-__all__.append("AgEVATargetSeqAction")
 
 class AgEVAProfilesFinish(IntEnum):
     """Action options for Target Sequence profiles convergence."""
@@ -725,7 +886,6 @@ class AgEVAProfilesFinish(IntEnum):
     eVAProfilesFinishStop = 2
 
 agcls.AgTypeNameMap["AgEVAProfilesFinish"] = AgEVAProfilesFinish
-__all__.append("AgEVAProfilesFinish")
 
 class AgEVAUpdateParam(IntEnum):
     """Spacecraft parameters that can be modified by an Update segment."""
@@ -753,7 +913,6 @@ class AgEVAUpdateParam(IntEnum):
     eVAUpdateParamRadiationPressureArea = 10
 
 agcls.AgTypeNameMap["AgEVAUpdateParam"] = AgEVAUpdateParam
-__all__.append("AgEVAUpdateParam")
 
 class AgEVAUpdateAction(IntEnum):
     """Actions for the Update segment."""
@@ -767,7 +926,6 @@ class AgEVAUpdateAction(IntEnum):
     eVAUpdateActionSetToNewValue = 3
 
 agcls.AgTypeNameMap["AgEVAUpdateAction"] = AgEVAUpdateAction
-__all__.append("AgEVAUpdateAction")
 
 class AgEVAPressureMode(IntEnum):
     """Pressure Mode options."""
@@ -777,7 +935,6 @@ class AgEVAPressureMode(IntEnum):
     eVAPressureModePressureRegulated = 1
 
 agcls.AgTypeNameMap["AgEVAPressureMode"] = AgEVAPressureMode
-__all__.append("AgEVAPressureMode")
 
 class AgEVAThrustType(IntEnum):
     """Thrust options."""
@@ -787,7 +944,6 @@ class AgEVAThrustType(IntEnum):
     eVAThrustTypeAffectsAccelOnly = 1
 
 agcls.AgTypeNameMap["AgEVAThrustType"] = AgEVAThrustType
-__all__.append("AgEVAThrustType")
 
 class AgEVAAttitudeUpdate(IntEnum):
     """Attitude Update."""
@@ -799,7 +955,6 @@ class AgEVAAttitudeUpdate(IntEnum):
     eVAAttitudeUpdateInertialAtStart = 2
 
 agcls.AgTypeNameMap["AgEVAAttitudeUpdate"] = AgEVAAttitudeUpdate
-__all__.append("AgEVAAttitudeUpdate")
 
 class AgEVAPropulsionMethod(IntEnum):
     """Propulsion method options."""
@@ -809,7 +964,6 @@ class AgEVAPropulsionMethod(IntEnum):
     eVAPropulsionMethodThrusterSet = 1
 
 agcls.AgTypeNameMap["AgEVAPropulsionMethod"] = AgEVAPropulsionMethod
-__all__.append("AgEVAPropulsionMethod")
 
 class AgEVACustomFunction(IntEnum):
     """Attitude definition options for other STK functions."""
@@ -819,7 +973,6 @@ class AgEVACustomFunction(IntEnum):
     eVAEnableManeuverAttitude = 1
 
 agcls.AgTypeNameMap["AgEVACustomFunction"] = AgEVACustomFunction
-__all__.append("AgEVACustomFunction")
 
 class AgEVABodyAxis(IntEnum):
     """Attitude body axis options."""
@@ -837,7 +990,6 @@ class AgEVABodyAxis(IntEnum):
     eVABodyAxisMinusZ = 5
 
 agcls.AgTypeNameMap["AgEVABodyAxis"] = AgEVABodyAxis
-__all__.append("AgEVABodyAxis")
 
 class AgEVAConstraintSign(IntEnum):
     """Constraint vector sign options."""
@@ -847,7 +999,6 @@ class AgEVAConstraintSign(IntEnum):
     eVAConstraintSignMinus = 1
 
 agcls.AgTypeNameMap["AgEVAConstraintSign"] = AgEVAConstraintSign
-__all__.append("AgEVAConstraintSign")
 
 class AgEVAAttitudeControl(IntEnum):
     """Attitude Control options."""
@@ -869,7 +1020,6 @@ class AgEVAAttitudeControl(IntEnum):
     eVAAttitudeControlLagrangeInterpolation = 7
 
 agcls.AgTypeNameMap["AgEVAAttitudeControl"] = AgEVAAttitudeControl
-__all__.append("AgEVAAttitudeControl")
 
 class AgEVAFollowJoin(IntEnum):
     """Joining options for the Follow segment."""
@@ -883,7 +1033,6 @@ class AgEVAFollowJoin(IntEnum):
     eVAFollowJoinAtFinalEpochOfPreviousSeg = 3
 
 agcls.AgTypeNameMap["AgEVAFollowJoin"] = AgEVAFollowJoin
-__all__.append("AgEVAFollowJoin")
 
 class AgEVAFollowSeparation(IntEnum):
     """Separation options for the Follow segment."""
@@ -893,7 +1042,6 @@ class AgEVAFollowSeparation(IntEnum):
     eVAFollowSeparationAtEndOfLeadersEphem = 1
 
 agcls.AgTypeNameMap["AgEVAFollowSeparation"] = AgEVAFollowSeparation
-__all__.append("AgEVAFollowSeparation")
 
 class AgEVAFollowSpacecraftAndFuelTank(IntEnum):
     """Spacecraft parameter options for the Follow segment."""
@@ -905,7 +1053,6 @@ class AgEVAFollowSpacecraftAndFuelTank(IntEnum):
     eVAFollowSpacecraftAndFuelTankLeader = 2
 
 agcls.AgTypeNameMap["AgEVAFollowSpacecraftAndFuelTank"] = AgEVAFollowSpacecraftAndFuelTank
-__all__.append("AgEVAFollowSpacecraftAndFuelTank")
 
 class AgEVABurnoutOptions(IntEnum):
     """Burnout options for the Launch segment."""
@@ -915,7 +1062,6 @@ class AgEVABurnoutOptions(IntEnum):
     eVABurnoutOptionsInertialVelocity = 1
 
 agcls.AgTypeNameMap["AgEVABurnoutOptions"] = AgEVABurnoutOptions
-__all__.append("AgEVABurnoutOptions")
 
 class AgEVABurnoutType(IntEnum):
     """Burnout point definition types for the Launch segment."""
@@ -931,7 +1077,6 @@ class AgEVABurnoutType(IntEnum):
     eVABurnoutTypeCBFCartesian = 4
 
 agcls.AgTypeNameMap["AgEVABurnoutType"] = AgEVABurnoutType
-__all__.append("AgEVABurnoutType")
 
 class AgEVAAscentType(IntEnum):
     """Ascent types for the Launch segment."""
@@ -941,7 +1086,6 @@ class AgEVAAscentType(IntEnum):
     eVAAscentTypeEllipseQuarticMotion = 1
 
 agcls.AgTypeNameMap["AgEVAAscentType"] = AgEVAAscentType
-__all__.append("AgEVAAscentType")
 
 class AgEVALaunchDisplaySystem(IntEnum):
     """Launch location coordinate types for the Launch segment."""
@@ -951,7 +1095,6 @@ class AgEVALaunchDisplaySystem(IntEnum):
     eVADisplaySystemGeocentric = 1
 
 agcls.AgTypeNameMap["AgEVALaunchDisplaySystem"] = AgEVALaunchDisplaySystem
-__all__.append("AgEVALaunchDisplaySystem")
 
 class AgEVARunCode(IntEnum):
     """The run code returned after the MCS is run."""
@@ -971,7 +1114,6 @@ class AgEVARunCode(IntEnum):
     eVARunCodeHitGlobalStop = 6
 
 agcls.AgTypeNameMap["AgEVARunCode"] = AgEVARunCode
-__all__.append("AgEVARunCode")
 
 class AgEVASequenceStateToPass(IntEnum):
     """State To Pass options for the Sequence segment."""
@@ -981,7 +1123,6 @@ class AgEVASequenceStateToPass(IntEnum):
     eVASequenceStateToPassFinal = 1
 
 agcls.AgTypeNameMap["AgEVASequenceStateToPass"] = AgEVASequenceStateToPass
-__all__.append("AgEVASequenceStateToPass")
 
 class AgEVAManeuverType(IntEnum):
     """Maneuver types for the maneuver segment."""
@@ -993,7 +1134,6 @@ class AgEVAManeuverType(IntEnum):
     eVAManeuverTypeOptimalFinite = 2
 
 agcls.AgTypeNameMap["AgEVAManeuverType"] = AgEVAManeuverType
-__all__.append("AgEVAManeuverType")
 
 class AgEVASegmentType(IntEnum):
     """Segment types."""
@@ -1025,7 +1165,6 @@ class AgEVASegmentType(IntEnum):
     eVASegmentTypeEnd = 12
 
 agcls.AgTypeNameMap["AgEVASegmentType"] = AgEVASegmentType
-__all__.append("AgEVASegmentType")
 
 class AgEVAElementType(IntEnum):
     """Types of orbit element sets."""
@@ -1049,7 +1188,6 @@ class AgEVAElementType(IntEnum):
     eVAElementTypeGeodetic = 9
 
 agcls.AgTypeNameMap["AgEVAElementType"] = AgEVAElementType
-__all__.append("AgEVAElementType")
 
 class AgEVALanguage(IntEnum):
     """Scripting language types for the Scripting Tool."""
@@ -1061,7 +1199,6 @@ class AgEVALanguage(IntEnum):
     eVALanguageMATLAB = 2
 
 agcls.AgTypeNameMap["AgEVALanguage"] = AgEVALanguage
-__all__.append("AgEVALanguage")
 
 class AgEVAStoppingCondition(IntEnum):
     """Type of stopping condition."""
@@ -1075,7 +1212,6 @@ class AgEVAStoppingCondition(IntEnum):
     eVAStoppingConditionLighting = 3
 
 agcls.AgTypeNameMap["AgEVAStoppingCondition"] = AgEVAStoppingCondition
-__all__.append("AgEVAStoppingCondition")
 
 class AgEVAClearEphemerisDirection(IntEnum):
     """Direction in which to clear ephemeris."""
@@ -1087,7 +1223,6 @@ class AgEVAClearEphemerisDirection(IntEnum):
     eVAClearEphemerisAfter = 1
 
 agcls.AgTypeNameMap["AgEVAClearEphemerisDirection"] = AgEVAClearEphemerisDirection
-__all__.append("AgEVAClearEphemerisDirection")
 
 class AgEVAProfileInsertDirection(IntEnum):
     """Direction to insert profile."""
@@ -1097,7 +1232,6 @@ class AgEVAProfileInsertDirection(IntEnum):
     eVAProfileInsertAfter = 1
 
 agcls.AgTypeNameMap["AgEVAProfileInsertDirection"] = AgEVAProfileInsertDirection
-__all__.append("AgEVAProfileInsertDirection")
 
 class AgEVARootFindingAlgorithm(IntEnum):
     """Root-finding algorithms."""
@@ -1107,7 +1241,6 @@ class AgEVARootFindingAlgorithm(IntEnum):
     eVANewtonRaphsonMethod = 1
 
 agcls.AgTypeNameMap["AgEVARootFindingAlgorithm"] = AgEVARootFindingAlgorithm
-__all__.append("AgEVARootFindingAlgorithm")
 
 class AgEVAScriptingParameterType(IntEnum):
     """Scripting Tool parameter type."""
@@ -1127,7 +1260,6 @@ class AgEVAScriptingParameterType(IntEnum):
     eVAScriptingParameterTypeEnumeration = 6
 
 agcls.AgTypeNameMap["AgEVAScriptingParameterType"] = AgEVAScriptingParameterType
-__all__.append("AgEVAScriptingParameterType")
 
 class AgEVASNOPTGoal(IntEnum):
     """The Goal types for a SNOPT profile."""
@@ -1137,7 +1269,6 @@ class AgEVASNOPTGoal(IntEnum):
     eVASNOPTGoalBound = 1
 
 agcls.AgTypeNameMap["AgEVASNOPTGoal"] = AgEVASNOPTGoal
-__all__.append("AgEVASNOPTGoal")
 
 class AgEVAIPOPTGoal(IntEnum):
     """The Goal types for a IPOPT profile."""
@@ -1147,7 +1278,6 @@ class AgEVAIPOPTGoal(IntEnum):
     eVAIPOPTGoalBound = 1
 
 agcls.AgTypeNameMap["AgEVAIPOPTGoal"] = AgEVAIPOPTGoal
-__all__.append("AgEVAIPOPTGoal")
 
 class AgEVAOptimalFiniteSeedMethod(IntEnum):
     """Seed methods."""
@@ -1157,7 +1287,6 @@ class AgEVAOptimalFiniteSeedMethod(IntEnum):
     eVAOptimalFiniteSeedMethodFiniteManeuver = 1
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteSeedMethod"] = AgEVAOptimalFiniteSeedMethod
-__all__.append("AgEVAOptimalFiniteSeedMethod")
 
 class AgEVAOptimalFiniteRunMode(IntEnum):
     """Run modes."""
@@ -1167,7 +1296,6 @@ class AgEVAOptimalFiniteRunMode(IntEnum):
     eVAOptimalFiniteRunModeOptimizeViaDirectTranscription = 1
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteRunMode"] = AgEVAOptimalFiniteRunMode
-__all__.append("AgEVAOptimalFiniteRunMode")
 
 class AgEVAOptimalFiniteDiscretizationStrategy(IntEnum):
     """Discretization Strategy."""
@@ -1177,7 +1305,6 @@ class AgEVAOptimalFiniteDiscretizationStrategy(IntEnum):
     eVAOptimalFiniteDiscretizationStrategyLegendreGaussRadau = 1
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteDiscretizationStrategy"] = AgEVAOptimalFiniteDiscretizationStrategy
-__all__.append("AgEVAOptimalFiniteDiscretizationStrategy")
 
 class AgEVAOptimalFiniteWorkingVariables(IntEnum):
     """Working Variables."""
@@ -1187,7 +1314,6 @@ class AgEVAOptimalFiniteWorkingVariables(IntEnum):
     eVAOptimalFiniteWorkingVariablesModifiedEquinoctial = 1
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteWorkingVariables"] = AgEVAOptimalFiniteWorkingVariables
-__all__.append("AgEVAOptimalFiniteWorkingVariables")
 
 class AgEVAOptimalFiniteScalingOptions(IntEnum):
     """Scaling Options."""
@@ -1199,7 +1325,6 @@ class AgEVAOptimalFiniteScalingOptions(IntEnum):
     eVAOptimalFiniteScalingOptionsInitialStateBased = 2
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteScalingOptions"] = AgEVAOptimalFiniteScalingOptions
-__all__.append("AgEVAOptimalFiniteScalingOptions")
 
 class AgEVAOptimalFiniteSNOPTObjective(IntEnum):
     """Optimal Finite SNOPT objective."""
@@ -1211,7 +1336,6 @@ class AgEVAOptimalFiniteSNOPTObjective(IntEnum):
     eVAOptimalFiniteSNOPTObjectiveMinimizePropellantUse = 2
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteSNOPTObjective"] = AgEVAOptimalFiniteSNOPTObjective
-__all__.append("AgEVAOptimalFiniteSNOPTObjective")
 
 class AgEVAOptimalFiniteSNOPTScaling(IntEnum):
     """Optimal Finite SNOPT scaling option."""
@@ -1223,7 +1347,6 @@ class AgEVAOptimalFiniteSNOPTScaling(IntEnum):
     eVAOptimalFiniteSNOPTScalingAll = 2
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteSNOPTScaling"] = AgEVAOptimalFiniteSNOPTScaling
-__all__.append("AgEVAOptimalFiniteSNOPTScaling")
 
 class AgEVAOptimalFiniteExportNodesFormat(IntEnum):
     """Steering nodes export format."""
@@ -1233,7 +1356,6 @@ class AgEVAOptimalFiniteExportNodesFormat(IntEnum):
     eVAOptimalFiniteExportNodesFormatUnitVector = 1
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteExportNodesFormat"] = AgEVAOptimalFiniteExportNodesFormat
-__all__.append("AgEVAOptimalFiniteExportNodesFormat")
 
 class AgEVAOptimalFiniteGuessMethod(IntEnum):
     """Guess interpolation method."""
@@ -1243,7 +1365,6 @@ class AgEVAOptimalFiniteGuessMethod(IntEnum):
     eVAOptimalFiniteGuessMethodPiecewiseLinear = 1
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteGuessMethod"] = AgEVAOptimalFiniteGuessMethod
-__all__.append("AgEVAOptimalFiniteGuessMethod")
 
 class AgEVAImpDeltaVRep(IntEnum):
     """Vector representations for impulsive DeltaV specification"""
@@ -1253,7 +1374,6 @@ class AgEVAImpDeltaVRep(IntEnum):
     eVASphericalImpDeltaV = 1
 
 agcls.AgTypeNameMap["AgEVAImpDeltaVRep"] = AgEVAImpDeltaVRep
-__all__.append("AgEVAImpDeltaVRep")
 
 class AgEVALambertTargetCoordType(IntEnum):
     """Lambert Target CoordType."""
@@ -1263,7 +1383,6 @@ class AgEVALambertTargetCoordType(IntEnum):
     eVALambertTargetCoordTypeKeplerian = 1
 
 agcls.AgTypeNameMap["AgEVALambertTargetCoordType"] = AgEVALambertTargetCoordType
-__all__.append("AgEVALambertTargetCoordType")
 
 class AgEVALambertSolutionOptionType(IntEnum):
     """Lambert Solution Option Type."""
@@ -1275,7 +1394,6 @@ class AgEVALambertSolutionOptionType(IntEnum):
     eAgEVALambertSolutionOptionMinEnergy = 2
 
 agcls.AgTypeNameMap["AgEVALambertSolutionOptionType"] = AgEVALambertSolutionOptionType
-__all__.append("AgEVALambertSolutionOptionType")
 
 class AgEVALambertOrbitalEnergyType(IntEnum):
     """Lambert Orbital Energy Type."""
@@ -1285,7 +1403,6 @@ class AgEVALambertOrbitalEnergyType(IntEnum):
     eAgEVALambertOrbitalEnergyHigh = 1
 
 agcls.AgTypeNameMap["AgEVALambertOrbitalEnergyType"] = AgEVALambertOrbitalEnergyType
-__all__.append("AgEVALambertOrbitalEnergyType")
 
 class AgEVALambertDirectionOfMotionType(IntEnum):
     """Lambert Direction Of Motion Type."""
@@ -1295,7 +1412,6 @@ class AgEVALambertDirectionOfMotionType(IntEnum):
     eAgEVALambertDirectionOfMotionLong = 1
 
 agcls.AgTypeNameMap["AgEVALambertDirectionOfMotionType"] = AgEVALambertDirectionOfMotionType
-__all__.append("AgEVALambertDirectionOfMotionType")
 
 class AgEVAGoldenSectionDesiredOperation(IntEnum):
     """The types for Desired Operation/Objective of golden section profile."""
@@ -1305,7 +1421,6 @@ class AgEVAGoldenSectionDesiredOperation(IntEnum):
     eVAGoldenSectionDesiredOpMaximizeValue = 1
 
 agcls.AgTypeNameMap["AgEVAGoldenSectionDesiredOperation"] = AgEVAGoldenSectionDesiredOperation
-__all__.append("AgEVAGoldenSectionDesiredOperation")
 
 class AgEVAGridSearchDesiredOperation(IntEnum):
     """The types for Desired Operation/Objective of Grid Search profile."""
@@ -1315,7 +1430,6 @@ class AgEVAGridSearchDesiredOperation(IntEnum):
     eVAGridSearchDesiredOpMaximizeValue = 1
 
 agcls.AgTypeNameMap["AgEVAGridSearchDesiredOperation"] = AgEVAGridSearchDesiredOperation
-__all__.append("AgEVAGridSearchDesiredOperation")
 
 class AgEVAElement(IntEnum):
     """Which type of elements (osculating or mean)"""
@@ -1329,7 +1443,6 @@ class AgEVAElement(IntEnum):
     eVAElementBrouwerLyddaneMeanShort = 3
 
 agcls.AgTypeNameMap["AgEVAElement"] = AgEVAElement
-__all__.append("AgEVAElement")
 
 class AgEVABaseSelection(IntEnum):
     """Access base object selections types."""
@@ -1339,7 +1452,6 @@ class AgEVABaseSelection(IntEnum):
     eVABaseSelectionCurrentSatellite = 1
 
 agcls.AgTypeNameMap["AgEVABaseSelection"] = AgEVABaseSelection
-__all__.append("AgEVABaseSelection")
 
 class AgEVAControlOrbitStateValue(IntEnum):
     """Orbit State Value properties that can be selected as control parameters for a Target Sequence."""
@@ -1357,7 +1469,6 @@ class AgEVAControlOrbitStateValue(IntEnum):
     eVAControlOrbitStateValueZ = 5
 
 agcls.AgTypeNameMap["AgEVAControlOrbitStateValue"] = AgEVAControlOrbitStateValue
-__all__.append("AgEVAControlOrbitStateValue")
 
 class AgEVASegmentState(IntEnum):
     """Segment state to use types."""
@@ -1367,7 +1478,6 @@ class AgEVASegmentState(IntEnum):
     eVASegmentStateFinal = 1
 
 agcls.AgTypeNameMap["AgEVASegmentState"] = AgEVASegmentState
-__all__.append("AgEVASegmentState")
 
 class AgEVADifferenceOrder(IntEnum):
     """The Difference order types."""
@@ -1377,7 +1487,6 @@ class AgEVADifferenceOrder(IntEnum):
     eVADifferenceOrderCurrentMinusInitial = 1
 
 agcls.AgTypeNameMap["AgEVADifferenceOrder"] = AgEVADifferenceOrder
-__all__.append("AgEVADifferenceOrder")
 
 class AgEVASegmentDifferenceOrder(IntEnum):
     """The Difference Across Segments order types."""
@@ -1387,7 +1496,6 @@ class AgEVASegmentDifferenceOrder(IntEnum):
     eVASegmentDifferenceOrderSegmentMinusCurrent = 1
 
 agcls.AgTypeNameMap["AgEVASegmentDifferenceOrder"] = AgEVASegmentDifferenceOrder
-__all__.append("AgEVASegmentDifferenceOrder")
 
 class AgEVAControlRepeatingGroundTrackErr(IntEnum):
     """Repeating Ground Track Equator Error properties that can be selected as control parameters for a Target Sequence."""
@@ -1397,7 +1505,6 @@ class AgEVAControlRepeatingGroundTrackErr(IntEnum):
     eVAControlRepeatingGroundTrackErrRepeatCount = 1
 
 agcls.AgTypeNameMap["AgEVAControlRepeatingGroundTrackErr"] = AgEVAControlRepeatingGroundTrackErr
-__all__.append("AgEVAControlRepeatingGroundTrackErr")
 
 class AgEVACalcObjectDirection(IntEnum):
     """The direction to search for a desired value."""
@@ -1407,7 +1514,6 @@ class AgEVACalcObjectDirection(IntEnum):
     eVACalcObjectDirectionPrevious = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectDirection"] = AgEVACalcObjectDirection
-__all__.append("AgEVACalcObjectDirection")
 
 class AgEVACalcObjectOrbitPlaneSource(IntEnum):
     """The calculation object orbit plane source Types."""
@@ -1417,7 +1523,6 @@ class AgEVACalcObjectOrbitPlaneSource(IntEnum):
     eAgEVACalcObjectOrbitPlaneSourceSatellite = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectOrbitPlaneSource"] = AgEVACalcObjectOrbitPlaneSource
-__all__.append("AgEVACalcObjectOrbitPlaneSource")
 
 class AgEVACalcObjectSunPosition(IntEnum):
     """The calculation object sun location Types."""
@@ -1431,7 +1536,6 @@ class AgEVACalcObjectSunPosition(IntEnum):
     eAgEVACalcObjectSunPositionTrueFromRefSatellite = 3
 
 agcls.AgTypeNameMap["AgEVACalcObjectSunPosition"] = AgEVACalcObjectSunPosition
-__all__.append("AgEVACalcObjectSunPosition")
 
 class AgEVACalcObjectAngleSign(IntEnum):
     """The sign of the angle when the relative position has a component along the orbit normal."""
@@ -1441,7 +1545,6 @@ class AgEVACalcObjectAngleSign(IntEnum):
     eAgEVACalcObjectAngleSignNegative = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectAngleSign"] = AgEVACalcObjectAngleSign
-__all__.append("AgEVACalcObjectAngleSign")
 
 class AgEVACalcObjectReferenceDirection(IntEnum):
     """Direction that establishes the zero value when projected into the orbit plane."""
@@ -1455,7 +1558,6 @@ class AgEVACalcObjectReferenceDirection(IntEnum):
     eAgEVACalcObjectReferenceDirectionSatelliteNadir = 3
 
 agcls.AgTypeNameMap["AgEVACalcObjectReferenceDirection"] = AgEVACalcObjectReferenceDirection
-__all__.append("AgEVACalcObjectReferenceDirection")
 
 class AgEVACalcObjectRelativePosition(IntEnum):
     """The calculation object relative position Types."""
@@ -1465,7 +1567,6 @@ class AgEVACalcObjectRelativePosition(IntEnum):
     eAgEVACalcObjectRelativePositionRefSatelliteToSatellite = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectRelativePosition"] = AgEVACalcObjectRelativePosition
-__all__.append("AgEVACalcObjectRelativePosition")
 
 class AgEVACalcObjectReferenceEllipse(IntEnum):
     """The calculation object reference ellipse Types."""
@@ -1475,7 +1576,6 @@ class AgEVACalcObjectReferenceEllipse(IntEnum):
     eAgEVACalcObjectReferenceEllipseSatelliteOrbit = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectReferenceEllipse"] = AgEVACalcObjectReferenceEllipse
-__all__.append("AgEVACalcObjectReferenceEllipse")
 
 class AgEVACalcObjectLocationSource(IntEnum):
     """The calculation object location source Types."""
@@ -1485,7 +1585,6 @@ class AgEVACalcObjectLocationSource(IntEnum):
     eAgEVACalcObjectLocationSourceSatellite = 1
 
 agcls.AgTypeNameMap["AgEVACalcObjectLocationSource"] = AgEVACalcObjectLocationSource
-__all__.append("AgEVACalcObjectLocationSource")
 
 class AgEVAGravitationalParameterSource(IntEnum):
     """The source of the gravitational parameter for a CAgVAStateCalcGravitationalParameter calculation object."""
@@ -1499,7 +1598,6 @@ class AgEVAGravitationalParameterSource(IntEnum):
     eVAGravitationalParameterSourceGravityFile = 3
 
 agcls.AgTypeNameMap["AgEVAGravitationalParameterSource"] = AgEVAGravitationalParameterSource
-__all__.append("AgEVAGravitationalParameterSource")
 
 class AgEVAReferenceRadiusSource(IntEnum):
     """The source of the reference radius for a CAgVAStateCalcReferenceRadius calculation object."""
@@ -1509,7 +1607,6 @@ class AgEVAReferenceRadiusSource(IntEnum):
     eVAReferenceRadiusSourceGravityFile = 1
 
 agcls.AgTypeNameMap["AgEVAReferenceRadiusSource"] = AgEVAReferenceRadiusSource
-__all__.append("AgEVAReferenceRadiusSource")
 
 class AgEVAGravCoeffNormalizationType(IntEnum):
     """The normalization type for the CAgVAStateCalcGravCoeff calculation object."""
@@ -1519,7 +1616,6 @@ class AgEVAGravCoeffNormalizationType(IntEnum):
     eVAGravCoeffUnnormalized = 1
 
 agcls.AgTypeNameMap["AgEVAGravCoeffNormalizationType"] = AgEVAGravCoeffNormalizationType
-__all__.append("AgEVAGravCoeffNormalizationType")
 
 class AgEVAGravCoeffCoefficientType(IntEnum):
     """The coefficient type for the CAgVAStateCalcGravCoeff calculation object."""
@@ -1531,7 +1627,6 @@ class AgEVAGravCoeffCoefficientType(IntEnum):
     eVAGravCoeffCoefficientTypeSine = 2
 
 agcls.AgTypeNameMap["AgEVAGravCoeffCoefficientType"] = AgEVAGravCoeffCoefficientType
-__all__.append("AgEVAGravCoeffCoefficientType")
 
 class AgEVASTMPertVariables(IntEnum):
     """The initial and final Cartesian variational variables that describe an STM element."""
@@ -1549,7 +1644,6 @@ class AgEVASTMPertVariables(IntEnum):
     eVASTMPertVariableVelZ = 5
 
 agcls.AgTypeNameMap["AgEVASTMPertVariables"] = AgEVASTMPertVariables
-__all__.append("AgEVASTMPertVariables")
 
 class AgEVASTMEigenNumber(IntEnum):
     """The number that describes one of the 6 STM Eigenvalues or Eigenvectors."""
@@ -1567,7 +1661,6 @@ class AgEVASTMEigenNumber(IntEnum):
     eVASTMEigenNumber6 = 5
 
 agcls.AgTypeNameMap["AgEVASTMEigenNumber"] = AgEVASTMEigenNumber
-__all__.append("AgEVASTMEigenNumber")
 
 class AgEVAComplexNumber(IntEnum):
     """Whether a value represents the real or imaginary portion of a number."""
@@ -1577,7 +1670,6 @@ class AgEVAComplexNumber(IntEnum):
     eVAComplexNumberImaginary = 1
 
 agcls.AgTypeNameMap["AgEVAComplexNumber"] = AgEVAComplexNumber
-__all__.append("AgEVAComplexNumber")
 
 class AgEVASquaredType(IntEnum):
     """Whether to calculate the value as the square of the sum of each component or the sum of the squares."""
@@ -1587,7 +1679,6 @@ class AgEVASquaredType(IntEnum):
     eVASquareOfSum = 1
 
 agcls.AgTypeNameMap["AgEVASquaredType"] = AgEVASquaredType
-__all__.append("AgEVASquaredType")
 
 class AgEVACbGravityModel(IntEnum):
     """The gravity model."""
@@ -1653,7 +1744,6 @@ class AgEVACbGravityModel(IntEnum):
     eVACbGravityModelLP75G = 29
 
 agcls.AgTypeNameMap["AgEVACbGravityModel"] = AgEVACbGravityModel
-__all__.append("AgEVACbGravityModel")
 
 class AgEVACbShape(IntEnum):
     """The central body shape types."""
@@ -1665,7 +1755,6 @@ class AgEVACbShape(IntEnum):
     eVACbShapeSphere = 2
 
 agcls.AgTypeNameMap["AgEVACbShape"] = AgEVACbShape
-__all__.append("AgEVACbShape")
 
 class AgEVACbAttitude(IntEnum):
     """The central body attitude types."""
@@ -1675,7 +1764,6 @@ class AgEVACbAttitude(IntEnum):
     eVACbAttitudeRotationCoefficientsFile = 1
 
 agcls.AgTypeNameMap["AgEVACbAttitude"] = AgEVACbAttitude
-__all__.append("AgEVACbAttitude")
 
 class AgEVACbEphemeris(IntEnum):
     """The central body ephemeris types."""
@@ -1691,7 +1779,6 @@ class AgEVACbEphemeris(IntEnum):
     eVACbEphemerisPlanetary = 4
 
 agcls.AgTypeNameMap["AgEVACbEphemeris"] = AgEVACbEphemeris
-__all__.append("AgEVACbEphemeris")
 
 class AgEVAControlPowerInternal(IntEnum):
     """Internal Power properties that can be selected as control parameters for a Target Sequence."""
@@ -1703,7 +1790,6 @@ class AgEVAControlPowerInternal(IntEnum):
     eVAControlPowerInternalEpoch = 2
 
 agcls.AgTypeNameMap["AgEVAControlPowerInternal"] = AgEVAControlPowerInternal
-__all__.append("AgEVAControlPowerInternal")
 
 class AgEVAControlPowerProcessed(IntEnum):
     """Processed Power properties that can be selected as control parameters for a Target Sequence."""
@@ -1713,7 +1799,6 @@ class AgEVAControlPowerProcessed(IntEnum):
     eVAControlPowerProcessedLoad = 1
 
 agcls.AgTypeNameMap["AgEVAControlPowerProcessed"] = AgEVAControlPowerProcessed
-__all__.append("AgEVAControlPowerProcessed")
 
 class AgEVAControlPowerSolarArray(IntEnum):
     """Solar Array Power properties that can be selected as control parameters for a Target Sequence."""
@@ -1743,7 +1828,6 @@ class AgEVAControlPowerSolarArray(IntEnum):
     eVAControlPowerSolarArrayEpoch = 11
 
 agcls.AgTypeNameMap["AgEVAControlPowerSolarArray"] = AgEVAControlPowerSolarArray
-__all__.append("AgEVAControlPowerSolarArray")
 
 class AgEVAThirdBodyMode(IntEnum):
     """The third body gravity mode."""
@@ -1753,7 +1837,6 @@ class AgEVAThirdBodyMode(IntEnum):
     eVAThirdBodyModePointMass = 1
 
 agcls.AgTypeNameMap["AgEVAThirdBodyMode"] = AgEVAThirdBodyMode
-__all__.append("AgEVAThirdBodyMode")
 
 class AgEVAGravParamSource(IntEnum):
     """The gravity parameter source."""
@@ -1767,7 +1850,6 @@ class AgEVAGravParamSource(IntEnum):
     eVAGravParamSourceCbFileSystem = 3
 
 agcls.AgTypeNameMap["AgEVAGravParamSource"] = AgEVAGravParamSource
-__all__.append("AgEVAGravParamSource")
 
 class AgEVAEphemSource(IntEnum):
     """The ephemeris source type."""
@@ -1781,7 +1863,6 @@ class AgEVAEphemSource(IntEnum):
     eVAEphemSourceSPICEBody = 3
 
 agcls.AgTypeNameMap["AgEVAEphemSource"] = AgEVAEphemSource
-__all__.append("AgEVAEphemSource")
 
 class AgEVASolarForceMethod(IntEnum):
     """The solar force method type for a spherical or N-plate SRP model."""
@@ -1791,7 +1872,6 @@ class AgEVASolarForceMethod(IntEnum):
     eVASolarForceMethodMeanFlux = 1
 
 agcls.AgTypeNameMap["AgEVASolarForceMethod"] = AgEVASolarForceMethod
-__all__.append("AgEVASolarForceMethod")
 
 class AgEVAShadowModel(IntEnum):
     """The shadow model type."""
@@ -1803,7 +1883,6 @@ class AgEVAShadowModel(IntEnum):
     eVAShadowModelNone = 2
 
 agcls.AgTypeNameMap["AgEVAShadowModel"] = AgEVAShadowModel
-__all__.append("AgEVAShadowModel")
 
 class AgEVASunPosition(IntEnum):
     """The sun position type."""
@@ -1815,7 +1894,6 @@ class AgEVASunPosition(IntEnum):
     eVASunPositionTrue = 2
 
 agcls.AgTypeNameMap["AgEVASunPosition"] = AgEVASunPosition
-__all__.append("AgEVASunPosition")
 
 class AgEVAAtmosDataSource(IntEnum):
     """The Atmospheric data source type."""
@@ -1825,7 +1903,6 @@ class AgEVAAtmosDataSource(IntEnum):
     eVAAtmosDataSourceFile = 1
 
 agcls.AgTypeNameMap["AgEVAAtmosDataSource"] = AgEVAAtmosDataSource
-__all__.append("AgEVAAtmosDataSource")
 
 class AgEVAGeoMagneticFluxSource(IntEnum):
     """Whether to use Kp or Ap data from the flux file."""
@@ -1835,7 +1912,6 @@ class AgEVAGeoMagneticFluxSource(IntEnum):
     eVAGeoMagneticFluxSourceKp = 1
 
 agcls.AgTypeNameMap["AgEVAGeoMagneticFluxSource"] = AgEVAGeoMagneticFluxSource
-__all__.append("AgEVAGeoMagneticFluxSource")
 
 class AgEVAGeoMagneticFluxUpdateRate(IntEnum):
     """Method for using geomagnetic flux values from the flux file."""
@@ -1849,7 +1925,6 @@ class AgEVAGeoMagneticFluxUpdateRate(IntEnum):
     eVAGeoMagneticFluxUpdateRateDaily = 3
 
 agcls.AgTypeNameMap["AgEVAGeoMagneticFluxUpdateRate"] = AgEVAGeoMagneticFluxUpdateRate
-__all__.append("AgEVAGeoMagneticFluxUpdateRate")
 
 class AgEVADragModelType(IntEnum):
     """Type of Drag Model."""
@@ -1863,7 +1938,6 @@ class AgEVADragModelType(IntEnum):
     eVADragModelTypeNPlate = 3
 
 agcls.AgTypeNameMap["AgEVADragModelType"] = AgEVADragModelType
-__all__.append("AgEVADragModelType")
 
 class AgEVAMarsGRAMDensityType(IntEnum):
     """Density Type for MarsGRAM Density Models"""
@@ -1877,7 +1951,6 @@ class AgEVAMarsGRAMDensityType(IntEnum):
     eVAMarsGRAMDensityTypeRandomlyPerturbed = 3
 
 agcls.AgTypeNameMap["AgEVAMarsGRAMDensityType"] = AgEVAMarsGRAMDensityType
-__all__.append("AgEVAMarsGRAMDensityType")
 
 class AgEVAVenusGRAMDensityType(IntEnum):
     """Density Type for VenusGRAM Density Models"""
@@ -1891,7 +1964,6 @@ class AgEVAVenusGRAMDensityType(IntEnum):
     eVAVenusGRAMDensityTypeRandomlyPerturbed = 3
 
 agcls.AgTypeNameMap["AgEVAVenusGRAMDensityType"] = AgEVAVenusGRAMDensityType
-__all__.append("AgEVAVenusGRAMDensityType")
 
 class AgEVATabVecInterpMethod(IntEnum):
     """The interpolation method for tabulated area vector file."""
@@ -1901,7 +1973,6 @@ class AgEVATabVecInterpMethod(IntEnum):
     eVATabVecMagDirInterpolation = 1
 
 agcls.AgTypeNameMap["AgEVATabVecInterpMethod"] = AgEVATabVecInterpMethod
-__all__.append("AgEVATabVecInterpMethod")
 
 class AgEVAControlEngineConstAcc(IntEnum):
     """Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
@@ -1913,7 +1984,6 @@ class AgEVAControlEngineConstAcc(IntEnum):
     eVAControlEngineConstAccIsp = 2
 
 agcls.AgTypeNameMap["AgEVAControlEngineConstAcc"] = AgEVAControlEngineConstAcc
-__all__.append("AgEVAControlEngineConstAcc")
 
 class AgEVAControlEngineConstant(IntEnum):
     """Constant Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
@@ -1925,7 +1995,6 @@ class AgEVAControlEngineConstant(IntEnum):
     eVAControlEngineConstantIsp = 2
 
 agcls.AgTypeNameMap["AgEVAControlEngineConstant"] = AgEVAControlEngineConstant
-__all__.append("AgEVAControlEngineConstant")
 
 class AgEVAControlEngineCustom(IntEnum):
     """Custom engine model properties that can be selected as control parameters for a Target Sequence."""
@@ -1933,7 +2002,6 @@ class AgEVAControlEngineCustom(IntEnum):
     eVAControlEngineCustomGrav = 0
 
 agcls.AgTypeNameMap["AgEVAControlEngineCustom"] = AgEVAControlEngineCustom
-__all__.append("AgEVAControlEngineCustom")
 
 class AgEVAControlEngineThrottleTable(IntEnum):
     """Throttle table engine model properties that can be selected as control parameters for a Target Sequence."""
@@ -1945,7 +2013,6 @@ class AgEVAControlEngineThrottleTable(IntEnum):
     eVAControlEngineThrottleTableReferenceEpoch = 2
 
 agcls.AgTypeNameMap["AgEVAControlEngineThrottleTable"] = AgEVAControlEngineThrottleTable
-__all__.append("AgEVAControlEngineThrottleTable")
 
 class AgEVAControlEngineIon(IntEnum):
     """Ion engine model properties that can be selected as control parameters for a Target Sequence."""
@@ -1995,7 +2062,6 @@ class AgEVAControlEngineIon(IntEnum):
     eVAControlEngineIonReferenceEpoch = 21
 
 agcls.AgTypeNameMap["AgEVAControlEngineIon"] = AgEVAControlEngineIon
-__all__.append("AgEVAControlEngineIon")
 
 class AgEVAControlEngineModelPoly(IntEnum):
     """Polynomial Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
@@ -2067,7 +2133,6 @@ class AgEVAControlEngineModelPoly(IntEnum):
     eVAControlEngineModelPolyGrav = 32
 
 agcls.AgTypeNameMap["AgEVAControlEngineModelPoly"] = AgEVAControlEngineModelPoly
-__all__.append("AgEVAControlEngineModelPoly")
 
 class AgEVAEngineModelFunction(IntEnum):
     """The engine model function types."""
@@ -2079,7 +2144,6 @@ class AgEVAEngineModelFunction(IntEnum):
     eVAEngineModelFunctionIspAndPower = 2
 
 agcls.AgTypeNameMap["AgEVAEngineModelFunction"] = AgEVAEngineModelFunction
-__all__.append("AgEVAEngineModelFunction")
 
 class AgEVAThrottleTableOperationMode(IntEnum):
     """Engine operation mode."""
@@ -2091,7 +2155,6 @@ class AgEVAThrottleTableOperationMode(IntEnum):
     eVAEngineOperationDiscrete = 2
 
 agcls.AgTypeNameMap["AgEVAThrottleTableOperationMode"] = AgEVAThrottleTableOperationMode
-__all__.append("AgEVAThrottleTableOperationMode")
 
 class AgEVAControlThrusters(IntEnum):
     """Thruster properties that can be selected as control parameters for a Target Sequence."""
@@ -2111,7 +2174,6 @@ class AgEVAControlThrusters(IntEnum):
     eVAControlThrustersCartesianZ = 6
 
 agcls.AgTypeNameMap["AgEVAControlThrusters"] = AgEVAControlThrusters
-__all__.append("AgEVAControlThrusters")
 
 class AgEVAThrusterDirection(IntEnum):
     """The thruster direction type."""
@@ -2121,7 +2183,6 @@ class AgEVAThrusterDirection(IntEnum):
     eVAThrusterDirectionExhaust = 1
 
 agcls.AgTypeNameMap["AgEVAThrusterDirection"] = AgEVAThrusterDirection
-__all__.append("AgEVAThrusterDirection")
 
 class AgEVACriteria(IntEnum):
     """The criteria type."""
@@ -2139,7 +2200,6 @@ class AgEVACriteria(IntEnum):
     eVACriteriaNotEqualTo = 5
 
 agcls.AgTypeNameMap["AgEVACriteria"] = AgEVACriteria
-__all__.append("AgEVACriteria")
 
 class AgEVAErrorControl(IntEnum):
     """Error Control for the numerical integrator."""
@@ -2153,7 +2213,6 @@ class AgEVAErrorControl(IntEnum):
     eVAErrorControlRelativeToStep = 3
 
 agcls.AgTypeNameMap["AgEVAErrorControl"] = AgEVAErrorControl
-__all__.append("AgEVAErrorControl")
 
 class AgEVAPredictorCorrector(IntEnum):
     """Predictor corrector scheme for the numerical integrator."""
@@ -2163,7 +2222,6 @@ class AgEVAPredictorCorrector(IntEnum):
     eVAPredictorCorrectorPseudo = 1
 
 agcls.AgTypeNameMap["AgEVAPredictorCorrector"] = AgEVAPredictorCorrector
-__all__.append("AgEVAPredictorCorrector")
 
 class AgEVANumericalIntegrator(IntEnum):
     """Numerical integrator type."""
@@ -2185,7 +2243,6 @@ class AgEVANumericalIntegrator(IntEnum):
     eVANumericalIntegratorRK4th = 7
 
 agcls.AgTypeNameMap["AgEVANumericalIntegrator"] = AgEVANumericalIntegrator
-__all__.append("AgEVANumericalIntegrator")
 
 class AgEVACoeffRKV8th9th(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
@@ -2195,7 +2252,6 @@ class AgEVACoeffRKV8th9th(IntEnum):
     eVACoeffRKV8th9thEfficient = 1
 
 agcls.AgTypeNameMap["AgEVACoeffRKV8th9th"] = AgEVACoeffRKV8th9th
-__all__.append("AgEVACoeffRKV8th9th")
 
 
 class IAgVAUserVariableDefinitionCollection(object):
@@ -2295,14 +2351,14 @@ class IAgVAUserVariableDefinitionCollection(object):
             return arg_pVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAUserVariableDefinition":
-        """Allows you to retrieve an element in the collection by index."""
+        """Retrieves a user variable definition in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableDefinition:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAUserVariableDefinition.COM_val)))
             return arg_ppVAUserVariableDefinition.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAUserVariableDefinition":
-        """Allows you to retrieve an element in the collection by name."""
+        """Retrieves a user variable definition in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableDefinition:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAUserVariableDefinition.COM_val)))
@@ -2314,7 +2370,6 @@ class IAgVAUserVariableDefinitionCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4D460A14-D8C8-4BEB-A4D0-D387079AF0BC}", IAgVAUserVariableDefinitionCollection)
 agcls.AgTypeNameMap["IAgVAUserVariableDefinitionCollection"] = IAgVAUserVariableDefinitionCollection
-__all__.append("IAgVAUserVariableDefinitionCollection")
 
 class IAgVAUserVariableCollection(object):
     """The list of User Variables accessed through a segment that sets initial conditions."""
@@ -2391,14 +2446,14 @@ class IAgVAUserVariableCollection(object):
             return arg_pVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAUserVariable":
-        """Allows you to retrieve an element in the collection by index."""
+        """Retrieves a user variable in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariable:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAUserVariable.COM_val)))
             return arg_ppVAUserVariable.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAUserVariable":
-        """Allows you to retrieve an element in the collection by name."""
+        """Retrieves a user variable in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariable:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAUserVariable.COM_val)))
@@ -2410,7 +2465,6 @@ class IAgVAUserVariableCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1BB5F3BC-51E2-4F2D-93E2-61322E3F65BE}", IAgVAUserVariableCollection)
 agcls.AgTypeNameMap["IAgVAUserVariableCollection"] = IAgVAUserVariableCollection
-__all__.append("IAgVAUserVariableCollection")
 
 class IAgVAUserVariableUpdateCollection(object):
     """The list of User Variables accessed through an Update segment"""
@@ -2487,14 +2541,14 @@ class IAgVAUserVariableUpdateCollection(object):
             return arg_pVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAUserVariableUpdate":
-        """Allows you to retrieve an element in the collection by index."""
+        """Retrieves a user variable update in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableUpdate:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAUserVariableUpdate.COM_val)))
             return arg_ppVAUserVariableUpdate.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAUserVariableUpdate":
-        """Allows you to retrieve an element in the collection by name."""
+        """Retrieves a user variable update in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAUserVariableUpdate:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAUserVariableUpdate.COM_val)))
@@ -2506,7 +2560,6 @@ class IAgVAUserVariableUpdateCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7DC1728B-C032-4810-BE7B-7801C5CF906C}", IAgVAUserVariableUpdateCollection)
 agcls.AgTypeNameMap["IAgVAUserVariableUpdateCollection"] = IAgVAUserVariableUpdateCollection
-__all__.append("IAgVAUserVariableUpdateCollection")
 
 class IAgVACalculationGraphCollection(object):
     """The list of Calculations Graphs to display."""
@@ -2604,7 +2657,6 @@ class IAgVACalculationGraphCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{77FD67C8-A85F-42F8-8546-9E1B944FF7F9}", IAgVACalculationGraphCollection)
 agcls.AgTypeNameMap["IAgVACalculationGraphCollection"] = IAgVACalculationGraphCollection
-__all__.append("IAgVACalculationGraphCollection")
 
 class IAgVAConstraintCollection(object):
     """The list of constraints assigned to a stopping condition."""
@@ -2721,14 +2773,14 @@ class IAgVAConstraintCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAAsTriggerCondition":
-        """Retrieve an item from the collection by index."""
+        """Retrieves a constraint from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppComponent.COM_val)))
             return arg_ppComponent.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAAsTriggerCondition":
-        """Retrieve an item from the collection by name."""
+        """Retrieves a constraint from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppComponent.COM_val)))
@@ -2740,7 +2792,6 @@ class IAgVAConstraintCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{055FF747-D60B-4AE2-82CE-B1FA61F85A3E}", IAgVAConstraintCollection)
 agcls.AgTypeNameMap["IAgVAConstraintCollection"] = IAgVAConstraintCollection
-__all__.append("IAgVAConstraintCollection")
 
 class IAgVAPluginProperties(object):
     """Properties of a plugin attitude control."""
@@ -2802,7 +2853,6 @@ class IAgVAPluginProperties(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E4AEB83C-8A8A-48F2-8DB8-BA2F4299CC97}", IAgVAPluginProperties)
 agcls.AgTypeNameMap["IAgVAPluginProperties"] = IAgVAPluginProperties
-__all__.append("IAgVAPluginProperties")
 
 class IAgVASNOPTControlCollection(object):
     """Properties for the list of SNOPT control parameters."""
@@ -2890,7 +2940,6 @@ class IAgVASNOPTControlCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2E9D2998-066F-4DC6-9672-8EDF9F604351}", IAgVASNOPTControlCollection)
 agcls.AgTypeNameMap["IAgVASNOPTControlCollection"] = IAgVASNOPTControlCollection
-__all__.append("IAgVASNOPTControlCollection")
 
 class IAgVASNOPTResultCollection(object):
     """SNOPT result collection."""
@@ -2978,7 +3027,6 @@ class IAgVASNOPTResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{53F7183C-7957-4C6F-8987-399A3F4C2A26}", IAgVASNOPTResultCollection)
 agcls.AgTypeNameMap["IAgVASNOPTResultCollection"] = IAgVASNOPTResultCollection
-__all__.append("IAgVASNOPTResultCollection")
 
 class IAgVAIPOPTControlCollection(object):
     """Properties for the list of IPOPT control parameters."""
@@ -3066,7 +3114,6 @@ class IAgVAIPOPTControlCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CAF26432-D3B9-4A8B-A9A2-9147DD520BBB}", IAgVAIPOPTControlCollection)
 agcls.AgTypeNameMap["IAgVAIPOPTControlCollection"] = IAgVAIPOPTControlCollection
-__all__.append("IAgVAIPOPTControlCollection")
 
 class IAgVAIPOPTResultCollection(object):
     """IPOPT result collection."""
@@ -3154,7 +3201,6 @@ class IAgVAIPOPTResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DC5D0BFD-1459-4DAA-81B9-06790B157ED2}", IAgVAIPOPTResultCollection)
 agcls.AgTypeNameMap["IAgVAIPOPTResultCollection"] = IAgVAIPOPTResultCollection
-__all__.append("IAgVAIPOPTResultCollection")
 
 class IAgVAManeuverOptimalFiniteSNOPTOptimizer(object):
     """Properties of SNOPT Optimizer options for optimal finite maneuver."""
@@ -3359,7 +3405,6 @@ class IAgVAManeuverOptimalFiniteSNOPTOptimizer(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{176AB7BE-90C8-4558-8E24-9E9862CE18FD}", IAgVAManeuverOptimalFiniteSNOPTOptimizer)
 agcls.AgTypeNameMap["IAgVAManeuverOptimalFiniteSNOPTOptimizer"] = IAgVAManeuverOptimalFiniteSNOPTOptimizer
-__all__.append("IAgVAManeuverOptimalFiniteSNOPTOptimizer")
 
 class IAgVAManeuverOptimalFiniteInitialBoundaryConditions(object):
     """Properties of initial boundary conditions for optimal finite maneuver."""
@@ -3475,7 +3520,6 @@ class IAgVAManeuverOptimalFiniteInitialBoundaryConditions(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{872A109F-710B-49D4-9A7D-544E7044530B}", IAgVAManeuverOptimalFiniteInitialBoundaryConditions)
 agcls.AgTypeNameMap["IAgVAManeuverOptimalFiniteInitialBoundaryConditions"] = IAgVAManeuverOptimalFiniteInitialBoundaryConditions
-__all__.append("IAgVAManeuverOptimalFiniteInitialBoundaryConditions")
 
 class IAgVAManeuverOptimalFiniteFinalBoundaryConditions(object):
     """Properties of final boundary conditions for optimal finite maneuver."""
@@ -3622,7 +3666,6 @@ class IAgVAManeuverOptimalFiniteFinalBoundaryConditions(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{476E5210-09E8-4DD7-ABCC-AF09E67DB21D}", IAgVAManeuverOptimalFiniteFinalBoundaryConditions)
 agcls.AgTypeNameMap["IAgVAManeuverOptimalFiniteFinalBoundaryConditions"] = IAgVAManeuverOptimalFiniteFinalBoundaryConditions
-__all__.append("IAgVAManeuverOptimalFiniteFinalBoundaryConditions")
 
 class IAgVAManeuverOptimalFinitePathBoundaryConditions(object):
     """Properties of path boundary conditions for optimal finite maneuver."""
@@ -3801,7 +3844,6 @@ class IAgVAManeuverOptimalFinitePathBoundaryConditions(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BF41B9E6-80DE-4E15-8E36-00D735E7B40D}", IAgVAManeuverOptimalFinitePathBoundaryConditions)
 agcls.AgTypeNameMap["IAgVAManeuverOptimalFinitePathBoundaryConditions"] = IAgVAManeuverOptimalFinitePathBoundaryConditions
-__all__.append("IAgVAManeuverOptimalFinitePathBoundaryConditions")
 
 class IAgVAManeuverOptimalFiniteSteeringNodeCollection(object):
     """Steering/nodes collection."""
@@ -3879,7 +3921,6 @@ class IAgVAManeuverOptimalFiniteSteeringNodeCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1808D2D6-FAB4-4750-AE06-B37D95779815}", IAgVAManeuverOptimalFiniteSteeringNodeCollection)
 agcls.AgTypeNameMap["IAgVAManeuverOptimalFiniteSteeringNodeCollection"] = IAgVAManeuverOptimalFiniteSteeringNodeCollection
-__all__.append("IAgVAManeuverOptimalFiniteSteeringNodeCollection")
 
 class IAgVAManeuverOptimalFiniteBounds(object):
     """The bounds for boundary interfaces."""
@@ -3947,7 +3988,6 @@ class IAgVAManeuverOptimalFiniteBounds(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E2B960BB-5091-43DE-91DD-53D6E0EFA61D}", IAgVAManeuverOptimalFiniteBounds)
 agcls.AgTypeNameMap["IAgVAManeuverOptimalFiniteBounds"] = IAgVAManeuverOptimalFiniteBounds
-__all__.append("IAgVAManeuverOptimalFiniteBounds")
 
 class IAgVAGoldenSectionControlCollection(object):
     """Properties for the list of Golden Section control parameters."""
@@ -4035,7 +4075,6 @@ class IAgVAGoldenSectionControlCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1E3A8FAA-05F5-4519-A63A-C793CCE4C27A}", IAgVAGoldenSectionControlCollection)
 agcls.AgTypeNameMap["IAgVAGoldenSectionControlCollection"] = IAgVAGoldenSectionControlCollection
-__all__.append("IAgVAGoldenSectionControlCollection")
 
 class IAgVAGoldenSectionControl(object):
     """Properties for control parameters of a Golden Section profile."""
@@ -4194,7 +4233,6 @@ class IAgVAGoldenSectionControl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{91407E31-8792-460C-AE98-32CF4690D53F}", IAgVAGoldenSectionControl)
 agcls.AgTypeNameMap["IAgVAGoldenSectionControl"] = IAgVAGoldenSectionControl
-__all__.append("IAgVAGoldenSectionControl")
 
 class IAgVAGoldenSectionResultCollection(object):
     """Properties for the list of Golden Section result parameters."""
@@ -4282,7 +4320,6 @@ class IAgVAGoldenSectionResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{50AD7420-2926-4B14-8C99-88E1942EF754}", IAgVAGoldenSectionResultCollection)
 agcls.AgTypeNameMap["IAgVAGoldenSectionResultCollection"] = IAgVAGoldenSectionResultCollection
-__all__.append("IAgVAGoldenSectionResultCollection")
 
 class IAgVAGoldenSectionResult(object):
     """Properties for result parameters of a Golden Section profile."""
@@ -4409,7 +4446,6 @@ class IAgVAGoldenSectionResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{67461697-37E6-4342-978D-9C6143528607}", IAgVAGoldenSectionResult)
 agcls.AgTypeNameMap["IAgVAGoldenSectionResult"] = IAgVAGoldenSectionResult
-__all__.append("IAgVAGoldenSectionResult")
 
 class IAgVAGridSearchControlCollection(object):
     """Properties for the list of Grid Search control parameters."""
@@ -4497,7 +4533,6 @@ class IAgVAGridSearchControlCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BD562D00-ABDC-411B-813D-84C1E3597CEF}", IAgVAGridSearchControlCollection)
 agcls.AgTypeNameMap["IAgVAGridSearchControlCollection"] = IAgVAGridSearchControlCollection
-__all__.append("IAgVAGridSearchControlCollection")
 
 class IAgVAGridSearchControl(object):
     """Properties for control parameters of a Grid Search profile."""
@@ -4656,7 +4691,6 @@ class IAgVAGridSearchControl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7E71EB52-998F-49E7-80BA-1B11574D59DF}", IAgVAGridSearchControl)
 agcls.AgTypeNameMap["IAgVAGridSearchControl"] = IAgVAGridSearchControl
-__all__.append("IAgVAGridSearchControl")
 
 class IAgVAGridSearchResultCollection(object):
     """Properties for the list of Grid Search result parameters."""
@@ -4744,7 +4778,6 @@ class IAgVAGridSearchResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BCA009A8-29CD-420A-955E-DC95A251CD9E}", IAgVAGridSearchResultCollection)
 agcls.AgTypeNameMap["IAgVAGridSearchResultCollection"] = IAgVAGridSearchResultCollection
-__all__.append("IAgVAGridSearchResultCollection")
 
 class IAgVAGridSearchResult(object):
     """Properties for result parameters of a Grid Search profile."""
@@ -4871,7 +4904,6 @@ class IAgVAGridSearchResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{36F26633-D0C4-4692-A6D2-4D98451AB3A7}", IAgVAGridSearchResult)
 agcls.AgTypeNameMap["IAgVAGridSearchResult"] = IAgVAGridSearchResult
-__all__.append("IAgVAGridSearchResult")
 
 class IAgVAStoppingConditionElement(object):
     """The status of a stopping condition."""
@@ -4964,7 +4996,6 @@ class IAgVAStoppingConditionElement(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7508042C-1986-42AB-9B83-DE0AAA5626A0}", IAgVAStoppingConditionElement)
 agcls.AgTypeNameMap["IAgVAStoppingConditionElement"] = IAgVAStoppingConditionElement
-__all__.append("IAgVAStoppingConditionElement")
 
 class IAgVAStoppingConditionCollection(object):
     """The list of Stopping Conditions."""
@@ -5081,14 +5112,14 @@ class IAgVAStoppingConditionCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAStoppingConditionElement":
-        """Retrieves an item in the collection by index."""
+        """Retrieves a stopping condition in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAStoppingCondition:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAStoppingCondition.COM_val)))
             return arg_ppVAStoppingCondition.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAStoppingConditionElement":
-        """Retrieves an item in the collection by name."""
+        """Retrieves a stopping condition in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAStoppingCondition:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAStoppingCondition.COM_val)))
@@ -5100,7 +5131,6 @@ class IAgVAStoppingConditionCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{47FEE61C-D8B9-4E24-8417-6A9D1DF966A9}", IAgVAStoppingConditionCollection)
 agcls.AgTypeNameMap["IAgVAStoppingConditionCollection"] = IAgVAStoppingConditionCollection
-__all__.append("IAgVAStoppingConditionCollection")
 
 class IAgVAMCSSegmentCollection(object):
     """Properties for a collection of segments."""
@@ -5246,14 +5276,14 @@ class IAgVAMCSSegmentCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAMCSSegment":
-        """Returns the specified segment(using segment index number)."""
+        """Retrieves the specified segment(using segment index number)."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAMCSSegment:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAMCSSegment.COM_val)))
             return arg_ppVAMCSSegment.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAMCSSegment":
-        """Returns the specified segment(using segment name)."""
+        """Retrieves the specified segment(using segment name)."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAMCSSegment:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAMCSSegment.COM_val)))
@@ -5265,7 +5295,6 @@ class IAgVAMCSSegmentCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{550AD0AB-FAB1-4632-895D-774CA07B120E}", IAgVAMCSSegmentCollection)
 agcls.AgTypeNameMap["IAgVAMCSSegmentCollection"] = IAgVAMCSSegmentCollection
-__all__.append("IAgVAMCSSegmentCollection")
 
 class IAgVAState(object):
     """Spacecraft Parameters properties for the spacecraft configuration."""
@@ -5568,7 +5597,6 @@ class IAgVAState(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{44DC2BBF-BC83-42AE-80A1-C1C4B399637F}", IAgVAState)
 agcls.AgTypeNameMap["IAgVAState"] = IAgVAState
-__all__.append("IAgVAState")
 
 class IAgVAStoppingConditionComponent(object):
     """Properties for a stopping condition."""
@@ -5613,7 +5641,6 @@ class IAgVAStoppingConditionComponent(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BB400CAB-0917-4921-BD15-73F6039F3AF2}", IAgVAStoppingConditionComponent)
 agcls.AgTypeNameMap["IAgVAStoppingConditionComponent"] = IAgVAStoppingConditionComponent
-__all__.append("IAgVAStoppingConditionComponent")
 
 class IAgVAAutomaticSequence(object):
     """Properties for automatic sequences."""
@@ -5699,7 +5726,6 @@ class IAgVAAutomaticSequence(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B38BC6BA-95F1-4F88-A09D-5657DB8A31AC}", IAgVAAutomaticSequence)
 agcls.AgTypeNameMap["IAgVAAutomaticSequence"] = IAgVAAutomaticSequence
-__all__.append("IAgVAAutomaticSequence")
 
 class IAgVAAutomaticSequenceCollection(object):
     """Properties for the Automatic Sequence Browser."""
@@ -5792,14 +5818,14 @@ class IAgVAAutomaticSequenceCollection(object):
             return arg_pVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAAutomaticSequence":
-        """Returns the given automatic sequence found by the index."""
+        """Retrieves the given automatic sequence found by the index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAAutomaticSequence:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAAutomaticSequence.COM_val)))
             return arg_ppVAAutomaticSequence.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAAutomaticSequence":
-        """Returns the given automatic sequence found by the name."""
+        """Retrieves the given automatic sequence found by the name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAAutomaticSequence:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAAutomaticSequence.COM_val)))
@@ -5811,7 +5837,6 @@ class IAgVAAutomaticSequenceCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E71D785F-1A4C-4E98-BDC1-4EE7055D1FDC}", IAgVAAutomaticSequenceCollection)
 agcls.AgTypeNameMap["IAgVAAutomaticSequenceCollection"] = IAgVAAutomaticSequenceCollection
-__all__.append("IAgVAAutomaticSequenceCollection")
 
 class IAgVABPlaneCollection(object):
     """Properties for the collection of B-Planes."""
@@ -5909,7 +5934,6 @@ class IAgVABPlaneCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{64D1804F-3A12-4DA5-AF4F-79C6AE3B39BC}", IAgVABPlaneCollection)
 agcls.AgTypeNameMap["IAgVABPlaneCollection"] = IAgVABPlaneCollection
-__all__.append("IAgVABPlaneCollection")
 
 class IAgVACalcObjectCollection(object):
     """Collection of calculation objects."""
@@ -6026,14 +6050,14 @@ class IAgVACalcObjectCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgComponentInfo":
-        """Returns a calc object found by the index."""
+        """Retrieves a calc object found by the index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppComponent.COM_val)))
             return arg_ppComponent.python_val
 
     def GetItemByName(self, name:str) -> "IAgComponentInfo":
-        """Returns a calc object found by the name."""
+        """Retrieves a calc object found by the name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppComponent.COM_val)))
@@ -6045,7 +6069,6 @@ class IAgVACalcObjectCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ECCA3BE7-235C-439B-8DE8-8A5010C4A484}", IAgVACalcObjectCollection)
 agcls.AgTypeNameMap["IAgVACalcObjectCollection"] = IAgVACalcObjectCollection
-__all__.append("IAgVACalcObjectCollection")
 
 class IAgVAManeuverFinitePropagator(object):
     """Properties for the propagation of a Finite Maneuver."""
@@ -6250,7 +6273,6 @@ class IAgVAManeuverFinitePropagator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6F8D5070-D155-4D40-A682-46EF2B69F1A3}", IAgVAManeuverFinitePropagator)
 agcls.AgTypeNameMap["IAgVAManeuverFinitePropagator"] = IAgVAManeuverFinitePropagator
-__all__.append("IAgVAManeuverFinitePropagator")
 
 class IAgVABurnoutVelocity(object):
     """Properties for the burnout velocity of a Launch segment."""
@@ -6366,7 +6388,6 @@ class IAgVABurnoutVelocity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A1EA8DE5-41D0-4419-988E-98EEACEECAE9}", IAgVABurnoutVelocity)
 agcls.AgTypeNameMap["IAgVABurnoutVelocity"] = IAgVABurnoutVelocity
-__all__.append("IAgVABurnoutVelocity")
 
 class IAgVAAttitudeControl(object):
     """Properties for attitude options for a maneuver segment."""
@@ -6498,7 +6519,6 @@ class IAgVAAttitudeControl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FC43EF22-B727-4538-9E97-B3CD445436CD}", IAgVAAttitudeControl)
 agcls.AgTypeNameMap["IAgVAAttitudeControl"] = IAgVAAttitudeControl
-__all__.append("IAgVAAttitudeControl")
 
 class IAgVAAttitudeControlFinite(IAgVAAttitudeControl):
     """The attitude control of a finite maneuver"""
@@ -6535,7 +6555,6 @@ class IAgVAAttitudeControlFinite(IAgVAAttitudeControl):
 
 agcls.AgClassCatalog.add_catalog_entry("{827F3B46-D066-462B-A3DB-1DCD56A816BA}", IAgVAAttitudeControlFinite)
 agcls.AgTypeNameMap["IAgVAAttitudeControlFinite"] = IAgVAAttitudeControlFinite
-__all__.append("IAgVAAttitudeControlFinite")
 
 class IAgVAAttitudeControlImpulsive(IAgVAAttitudeControl):
     """The attitude control of an impulsive maneuver."""
@@ -6572,7 +6591,6 @@ class IAgVAAttitudeControlImpulsive(IAgVAAttitudeControl):
 
 agcls.AgClassCatalog.add_catalog_entry("{0BD5E890-FBD8-415E-9E29-38731985F366}", IAgVAAttitudeControlImpulsive)
 agcls.AgTypeNameMap["IAgVAAttitudeControlImpulsive"] = IAgVAAttitudeControlImpulsive
-__all__.append("IAgVAAttitudeControlImpulsive")
 
 class IAgVAAttitudeControlOptimalFinite(IAgVAAttitudeControl):
     """The attitude control of a optimal finite maneuver"""
@@ -6609,7 +6627,6 @@ class IAgVAAttitudeControlOptimalFinite(IAgVAAttitudeControl):
 
 agcls.AgClassCatalog.add_catalog_entry("{EF8743CB-4A4F-4B89-AB50-D76843E4D618}", IAgVAAttitudeControlOptimalFinite)
 agcls.AgTypeNameMap["IAgVAAttitudeControlOptimalFinite"] = IAgVAAttitudeControlOptimalFinite
-__all__.append("IAgVAAttitudeControlOptimalFinite")
 
 class IAgVAManeuver(object):
     """Properties of an Impulsive Maneuver Segment."""
@@ -6696,7 +6713,6 @@ class IAgVAManeuver(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C70B417E-D1C4-40E8-8CDC-67EDED0B56AE}", IAgVAManeuver)
 agcls.AgTypeNameMap["IAgVAManeuver"] = IAgVAManeuver
-__all__.append("IAgVAManeuver")
 
 class IAgVADisplaySystem(object):
     """The launch coordinate system."""
@@ -6732,7 +6748,6 @@ class IAgVADisplaySystem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{90BFC47C-35B5-4169-9543-36C65DFABB6A}", IAgVADisplaySystem)
 agcls.AgTypeNameMap["IAgVADisplaySystem"] = IAgVADisplaySystem
-__all__.append("IAgVADisplaySystem")
 
 class IAgVABurnout(object):
     """The burnout point reference frame."""
@@ -6768,7 +6783,6 @@ class IAgVABurnout(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0BEFC7BA-14CF-422D-BD67-352572ABB55F}", IAgVABurnout)
 agcls.AgTypeNameMap["IAgVABurnout"] = IAgVABurnout
-__all__.append("IAgVABurnout")
 
 class IAgVAScriptingSegment(object):
     """Object properties for scripting options."""
@@ -6902,7 +6916,6 @@ class IAgVAScriptingSegment(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{08B0F341-8A54-43B8-A0B9-50A462E70C71}", IAgVAScriptingSegment)
 agcls.AgTypeNameMap["IAgVAScriptingSegment"] = IAgVAScriptingSegment
-__all__.append("IAgVAScriptingSegment")
 
 class IAgVAScriptingSegmentCollection(object):
     """The list of object properties that the script can interact with."""
@@ -7034,14 +7047,14 @@ class IAgVAScriptingSegmentCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAScriptingSegment":
-        """Allows you to retrieve an element in the collection by index."""
+        """Retrieves a scripting segment in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingSegment:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAScriptingSegment.COM_val)))
             return arg_ppVAScriptingSegment.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAScriptingSegment":
-        """Allows you to retrieve an element in the collection by name."""
+        """Retrieves a scripting segment in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingSegment:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAScriptingSegment.COM_val)))
@@ -7053,7 +7066,6 @@ class IAgVAScriptingSegmentCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{07549510-B2B9-4AA0-A9AA-E2FDFBC9BBEE}", IAgVAScriptingSegmentCollection)
 agcls.AgTypeNameMap["IAgVAScriptingSegmentCollection"] = IAgVAScriptingSegmentCollection
-__all__.append("IAgVAScriptingSegmentCollection")
 
 class IAgVAScriptingParameterEnumerationChoice(object):
     """Enumeration choice."""
@@ -7121,7 +7133,6 @@ class IAgVAScriptingParameterEnumerationChoice(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DED30CDF-730F-4125-AEB8-6A668248B484}", IAgVAScriptingParameterEnumerationChoice)
 agcls.AgTypeNameMap["IAgVAScriptingParameterEnumerationChoice"] = IAgVAScriptingParameterEnumerationChoice
-__all__.append("IAgVAScriptingParameterEnumerationChoice")
 
 class IAgVAScriptingParameterEnumerationChoiceCollection(object):
     """The list of enumeration choices available when parameter type is Enumeration."""
@@ -7247,14 +7258,14 @@ class IAgVAScriptingParameterEnumerationChoiceCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAScriptingParameterEnumerationChoice":
-        """Allows you to retrieve an element in the collection by index."""
+        """Retrieves a scripting parameter enumeration choice in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppChoice:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppChoice.COM_val)))
             return arg_ppChoice.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAScriptingParameterEnumerationChoice":
-        """Allows you to retrieve an element in the collection by name."""
+        """Retrieves a scripting parameter enumeration choice in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppChoice:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppChoice.COM_val)))
@@ -7266,7 +7277,6 @@ class IAgVAScriptingParameterEnumerationChoiceCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FF132A94-418D-41DB-8AA2-9DA77625A1A0}", IAgVAScriptingParameterEnumerationChoiceCollection)
 agcls.AgTypeNameMap["IAgVAScriptingParameterEnumerationChoiceCollection"] = IAgVAScriptingParameterEnumerationChoiceCollection
-__all__.append("IAgVAScriptingParameterEnumerationChoiceCollection")
 
 class IAgVAScriptingParameter(object):
     """Parameter properties for scripting options."""
@@ -7487,7 +7497,6 @@ class IAgVAScriptingParameter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9E855CDD-3359-4D5D-AE7D-5C260E0EE4B3}", IAgVAScriptingParameter)
 agcls.AgTypeNameMap["IAgVAScriptingParameter"] = IAgVAScriptingParameter
-__all__.append("IAgVAScriptingParameter")
 
 class IAgVAScriptingParameterCollection(object):
     """The list of parameters that the script can interact with."""
@@ -7619,14 +7628,14 @@ class IAgVAScriptingParameterCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAScriptingParameter":
-        """Allows you to retrieve an element in the collection by index."""
+        """Retrieves a scripting parameter in the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingParameter:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAScriptingParameter.COM_val)))
             return arg_ppVAScriptingParameter.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAScriptingParameter":
-        """Allows you to retrieve an element in the collection by name."""
+        """Retrieves a scripting parameter in the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAScriptingParameter:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAScriptingParameter.COM_val)))
@@ -7638,7 +7647,6 @@ class IAgVAScriptingParameterCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{57FC26AA-550D-4408-844E-24F983C94671}", IAgVAScriptingParameterCollection)
 agcls.AgTypeNameMap["IAgVAScriptingParameterCollection"] = IAgVAScriptingParameterCollection
-__all__.append("IAgVAScriptingParameterCollection")
 
 class IAgVAScriptingCalcObject(object):
     """Calc Object properties for scripting options."""
@@ -7750,12 +7758,11 @@ class IAgVAScriptingCalcObject(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6DDE7375-1872-436C-B2BE-ADBF1881FFF0}", IAgVAScriptingCalcObject)
 agcls.AgTypeNameMap["IAgVAScriptingCalcObject"] = IAgVAScriptingCalcObject
-__all__.append("IAgVAScriptingCalcObject")
 
 class IAgVAScriptingCalcObjectCollection(object):
     """The list of calc objects that the script can interact with."""
     _uuid = "{C7742744-0197-46E3-AE3F-E6F60357FACD}"
-    _num_methods = 9
+    _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -7768,6 +7775,8 @@ class IAgVAScriptingCalcObjectCollection(object):
         self.__dict__["_Cut"] = _raise_uninitialized_error
         self.__dict__["_Paste"] = _raise_uninitialized_error
         self.__dict__["_InsertCopy"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgVAScriptingCalcObjectCollection._uuid))
             if pUnk is not None:
@@ -7789,6 +7798,8 @@ class IAgVAScriptingCalcObjectCollection(object):
         self.__dict__["_Cut"] = IAGFUNCTYPE(pUnk, IID_IAgVAScriptingCalcObjectCollection, vtable_offset_local+7, agcom.VARIANT)
         self.__dict__["_Paste"] = IAGFUNCTYPE(pUnk, IID_IAgVAScriptingCalcObjectCollection, vtable_offset_local+8, POINTER(agcom.PVOID))
         self.__dict__["_InsertCopy"] = IAGFUNCTYPE(pUnk, IID_IAgVAScriptingCalcObjectCollection, vtable_offset_local+9, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgVAScriptingCalcObjectCollection, vtable_offset_local+10, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgVAScriptingCalcObjectCollection, vtable_offset_local+11, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -7868,13 +7879,26 @@ class IAgVAScriptingCalcObjectCollection(object):
             agcls.evaluate_hresult(self.__dict__["_InsertCopy"](arg_calcObj.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
+    def GetItemByIndex(self, index:int) -> "IAgVAScriptingCalcObject":
+        """Retrieves a scripting calc object from the collection by index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByName(self, componentName:str) -> "IAgVAScriptingCalcObject":
+        """Retrieves a scripting calc object from the collection by name."""
+        with agmarshall.BSTR_arg(componentName) as arg_componentName, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_componentName.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
     __getitem__ = Item
 
 
 
 agcls.AgClassCatalog.add_catalog_entry("{C7742744-0197-46E3-AE3F-E6F60357FACD}", IAgVAScriptingCalcObjectCollection)
 agcls.AgTypeNameMap["IAgVAScriptingCalcObjectCollection"] = IAgVAScriptingCalcObjectCollection
-__all__.append("IAgVAScriptingCalcObjectCollection")
 
 class IAgVAScriptingTool(object):
     """Properties for the Scripting Tool."""
@@ -8004,7 +8028,6 @@ class IAgVAScriptingTool(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BA2389F3-C687-40B6-B4FC-F61F2BF80E6E}", IAgVAScriptingTool)
 agcls.AgTypeNameMap["IAgVAScriptingTool"] = IAgVAScriptingTool
-__all__.append("IAgVAScriptingTool")
 
 class IAgVAElement(object):
     """The elements of the selected coordinate type."""
@@ -8040,7 +8063,6 @@ class IAgVAElement(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D1D2C328-052A-4C2A-BC2F-739B55556384}", IAgVAElement)
 agcls.AgTypeNameMap["IAgVAElement"] = IAgVAElement
-__all__.append("IAgVAElement")
 
 class IAgVASpacecraftParameters(object):
     """Properties for spacecraft configuration."""
@@ -8220,7 +8242,6 @@ class IAgVASpacecraftParameters(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6642A93A-65F8-4D50-A3E8-51B17A9AE3CF}", IAgVASpacecraftParameters)
 agcls.AgTypeNameMap["IAgVASpacecraftParameters"] = IAgVASpacecraftParameters
-__all__.append("IAgVASpacecraftParameters")
 
 class IAgVAFuelTank(object):
     """Properties for fuel tank configuration."""
@@ -8352,7 +8373,6 @@ class IAgVAFuelTank(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6CB64830-3EDB-4E0E-A55B-DAC26DCCCA47}", IAgVAFuelTank)
 agcls.AgTypeNameMap["IAgVAFuelTank"] = IAgVAFuelTank
-__all__.append("IAgVAFuelTank")
 
 class IAgVAMCSSegmentProperties(object):
     """The segment properties."""
@@ -8460,7 +8480,6 @@ class IAgVAMCSSegmentProperties(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B8C99C10-CB59-4C72-A97C-CBF561C41D4D}", IAgVAMCSSegmentProperties)
 agcls.AgTypeNameMap["IAgVAMCSSegmentProperties"] = IAgVAMCSSegmentProperties
-__all__.append("IAgVAMCSSegmentProperties")
 
 class IAgVAMCSEnd(object):
     """Properties for an End segment."""
@@ -8496,7 +8515,6 @@ class IAgVAMCSEnd(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7AE91388-7900-4AA0-BF30-546957ACFE94}", IAgVAMCSEnd)
 agcls.AgTypeNameMap["IAgVAMCSEnd"] = IAgVAMCSEnd
-__all__.append("IAgVAMCSEnd")
 
 class IAgVAMCSInitialState(object):
     """Properties for an Initial State segment."""
@@ -8648,7 +8666,6 @@ class IAgVAMCSInitialState(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D7458E20-A5E4-45C8-81A1-38A29F4131FD}", IAgVAMCSInitialState)
 agcls.AgTypeNameMap["IAgVAMCSInitialState"] = IAgVAMCSInitialState
-__all__.append("IAgVAMCSInitialState")
 
 class IAgVAMCSSegment(object):
     """General properties for segments."""
@@ -8755,7 +8772,6 @@ class IAgVAMCSSegment(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{46F093C1-5138-4A6F-A79C-7F4DB8E7BCB4}", IAgVAMCSSegment)
 agcls.AgTypeNameMap["IAgVAMCSSegment"] = IAgVAMCSSegment
-__all__.append("IAgVAMCSSegment")
 
 class IAgVAMCSOptions(object):
     """Properties for the MCS Options."""
@@ -9089,7 +9105,6 @@ class IAgVAMCSOptions(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{81715712-591E-4553-9DC7-A1266F82E7D9}", IAgVAMCSOptions)
 agcls.AgTypeNameMap["IAgVAMCSOptions"] = IAgVAMCSOptions
-__all__.append("IAgVAMCSOptions")
 
 class IAgVADriverMCS(object):
     """Properties for the Mission Control Sequence."""
@@ -9227,7 +9242,6 @@ class IAgVADriverMCS(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{109E17B9-8E27-4B6B-A8BE-33DFF19A2C89}", IAgVADriverMCS)
 agcls.AgTypeNameMap["IAgVADriverMCS"] = IAgVADriverMCS
-__all__.append("IAgVADriverMCS")
 
 class IAgVAElementCartesian(IAgVAElement):
     """Properties for Cartesian elements."""
@@ -9360,7 +9374,6 @@ class IAgVAElementCartesian(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{63C45864-E165-498E-A88E-8104FABF50B9}", IAgVAElementCartesian)
 agcls.AgTypeNameMap["IAgVAElementCartesian"] = IAgVAElementCartesian
-__all__.append("IAgVAElementCartesian")
 
 class IAgVAElementKeplerian(IAgVAElement):
     """Properties for Keplerian elements"""
@@ -9767,7 +9780,6 @@ class IAgVAElementKeplerian(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{3550E5F6-FDEF-4325-BDBA-2BA984208ECB}", IAgVAElementKeplerian)
 agcls.AgTypeNameMap["IAgVAElementKeplerian"] = IAgVAElementKeplerian
-__all__.append("IAgVAElementKeplerian")
 
 class IAgVAElementDelaunay(IAgVAElement):
     """Properties for Delaunay elements"""
@@ -9948,7 +9960,6 @@ class IAgVAElementDelaunay(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{2D09DD04-C97C-43DB-B01A-D78DDD52FE1F}", IAgVAElementDelaunay)
 agcls.AgTypeNameMap["IAgVAElementDelaunay"] = IAgVAElementDelaunay
-__all__.append("IAgVAElementDelaunay")
 
 class IAgVAElementEquinoctial(IAgVAElement):
     """Properties for Equinoctial elements"""
@@ -10113,7 +10124,6 @@ class IAgVAElementEquinoctial(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{90FA8C03-AA29-446A-A23A-085B71502DAA}", IAgVAElementEquinoctial)
 agcls.AgTypeNameMap["IAgVAElementEquinoctial"] = IAgVAElementEquinoctial
-__all__.append("IAgVAElementEquinoctial")
 
 class IAgVAElementMixedSpherical(IAgVAElement):
     """Properties for Mixed Spherical elements"""
@@ -10262,7 +10272,6 @@ class IAgVAElementMixedSpherical(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{8A1D2A11-5A9D-49D8-9CE6-6435B1173292}", IAgVAElementMixedSpherical)
 agcls.AgTypeNameMap["IAgVAElementMixedSpherical"] = IAgVAElementMixedSpherical
-__all__.append("IAgVAElementMixedSpherical")
 
 class IAgVAElementSpherical(IAgVAElement):
     """Properties for Spherical elements"""
@@ -10411,7 +10420,6 @@ class IAgVAElementSpherical(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{C2B6D754-C55A-4FE1-88AE-976A54FD0C75}", IAgVAElementSpherical)
 agcls.AgTypeNameMap["IAgVAElementSpherical"] = IAgVAElementSpherical
-__all__.append("IAgVAElementSpherical")
 
 class IAgVAElementTargetVectorIncomingAsymptote(IAgVAElement):
     """Properties for Target Vector Incoming Asymptote elements."""
@@ -10544,7 +10552,6 @@ class IAgVAElementTargetVectorIncomingAsymptote(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{B7EA61B2-6910-43E7-B4F7-CBA647EC19A3}", IAgVAElementTargetVectorIncomingAsymptote)
 agcls.AgTypeNameMap["IAgVAElementTargetVectorIncomingAsymptote"] = IAgVAElementTargetVectorIncomingAsymptote
-__all__.append("IAgVAElementTargetVectorIncomingAsymptote")
 
 class IAgVAElementTargetVectorOutgoingAsymptote(IAgVAElement):
     """Properties for Target Vector Outgoing Asymptote elements."""
@@ -10677,7 +10684,6 @@ class IAgVAElementTargetVectorOutgoingAsymptote(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{BE7E87B6-AC1F-4A19-A1C8-15272B707777}", IAgVAElementTargetVectorOutgoingAsymptote)
 agcls.AgTypeNameMap["IAgVAElementTargetVectorOutgoingAsymptote"] = IAgVAElementTargetVectorOutgoingAsymptote
-__all__.append("IAgVAElementTargetVectorOutgoingAsymptote")
 
 class IAgVAElementGeodetic(IAgVAElement):
     """Properties for Geodetic elements"""
@@ -10842,7 +10848,6 @@ class IAgVAElementGeodetic(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{091F376E-6C32-4567-BE00-D1CE1857B50F}", IAgVAElementGeodetic)
 agcls.AgTypeNameMap["IAgVAElementGeodetic"] = IAgVAElementGeodetic
-__all__.append("IAgVAElementGeodetic")
 
 class IAgVAStoppingCondition(IAgVAStoppingConditionComponent):
     """Basic properties for a stopping condition."""
@@ -11111,7 +11116,6 @@ class IAgVAStoppingCondition(IAgVAStoppingConditionComponent):
 
 agcls.AgClassCatalog.add_catalog_entry("{7B18D549-E67A-4532-9767-ECC78418475D}", IAgVAStoppingCondition)
 agcls.AgTypeNameMap["IAgVAStoppingCondition"] = IAgVAStoppingCondition
-__all__.append("IAgVAStoppingCondition")
 
 class IAgVALightingStoppingCondition(IAgVAStoppingConditionComponent):
     """Properties for a lighting stopping condition."""
@@ -11294,7 +11298,6 @@ class IAgVALightingStoppingCondition(IAgVAStoppingConditionComponent):
 
 agcls.AgClassCatalog.add_catalog_entry("{05642E87-6580-4E1F-82EF-BA6406DBAC65}", IAgVALightingStoppingCondition)
 agcls.AgTypeNameMap["IAgVALightingStoppingCondition"] = IAgVALightingStoppingCondition
-__all__.append("IAgVALightingStoppingCondition")
 
 class IAgVAAccessStoppingCondition(IAgVAStoppingConditionComponent):
     """Properties for an access stopping condition."""
@@ -11559,7 +11562,6 @@ class IAgVAAccessStoppingCondition(IAgVAStoppingConditionComponent):
 
 agcls.AgClassCatalog.add_catalog_entry("{2A2D2F12-9F9B-43F6-B6B0-00088C006504}", IAgVAAccessStoppingCondition)
 agcls.AgTypeNameMap["IAgVAAccessStoppingCondition"] = IAgVAAccessStoppingCondition
-__all__.append("IAgVAAccessStoppingCondition")
 
 class IAgVAMCSPropagate(object):
     """Properties for a Propagate segment."""
@@ -11764,7 +11766,6 @@ class IAgVAMCSPropagate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{41E66E06-FD6A-4523-8956-B0DF0BE5479E}", IAgVAMCSPropagate)
 agcls.AgTypeNameMap["IAgVAMCSPropagate"] = IAgVAMCSPropagate
-__all__.append("IAgVAMCSPropagate")
 
 class IAgVAMCSSequence(object):
     """Properties for a Sequence segment."""
@@ -11872,7 +11873,6 @@ class IAgVAMCSSequence(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0FE48F27-40D3-4D78-9B87-6539D1977696}", IAgVAMCSSequence)
 agcls.AgTypeNameMap["IAgVAMCSSequence"] = IAgVAMCSSequence
-__all__.append("IAgVAMCSSequence")
 
 class IAgVAMCSBackwardSequence(IAgVAMCSSequence):
     """Properties for a Backward Sequence segment."""
@@ -11909,7 +11909,6 @@ class IAgVAMCSBackwardSequence(IAgVAMCSSequence):
 
 agcls.AgClassCatalog.add_catalog_entry("{F9AF6E49-B8E0-4E5E-91CC-04E622CBC9EF}", IAgVAMCSBackwardSequence)
 agcls.AgTypeNameMap["IAgVAMCSBackwardSequence"] = IAgVAMCSBackwardSequence
-__all__.append("IAgVAMCSBackwardSequence")
 
 class IAgVAMCSLaunch(object):
     """Properties for a Launch segment."""
@@ -12207,7 +12206,6 @@ class IAgVAMCSLaunch(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C342C18C-80EF-4E1F-8363-90181B755E66}", IAgVAMCSLaunch)
 agcls.AgTypeNameMap["IAgVAMCSLaunch"] = IAgVAMCSLaunch
-__all__.append("IAgVAMCSLaunch")
 
 class IAgVADisplaySystemGeodetic(IAgVADisplaySystem):
     """Properties for a geodetic launch coordinate system."""
@@ -12292,7 +12290,6 @@ class IAgVADisplaySystemGeodetic(IAgVADisplaySystem):
 
 agcls.AgClassCatalog.add_catalog_entry("{3A9597F2-E224-44C9-801F-60CA7A1CB2A1}", IAgVADisplaySystemGeodetic)
 agcls.AgTypeNameMap["IAgVADisplaySystemGeodetic"] = IAgVADisplaySystemGeodetic
-__all__.append("IAgVADisplaySystemGeodetic")
 
 class IAgVADisplaySystemGeocentric(IAgVADisplaySystem):
     """Properties for a geocentric launch coordinate system."""
@@ -12377,7 +12374,6 @@ class IAgVADisplaySystemGeocentric(IAgVADisplaySystem):
 
 agcls.AgClassCatalog.add_catalog_entry("{FD9BAAFA-0CDC-481C-A76C-9F25698C468A}", IAgVADisplaySystemGeocentric)
 agcls.AgTypeNameMap["IAgVADisplaySystemGeocentric"] = IAgVADisplaySystemGeocentric
-__all__.append("IAgVADisplaySystemGeocentric")
 
 class IAgVABurnoutCBFCartesian(IAgVABurnout):
     """Properties for a Cartesian CBF burnout state definition."""
@@ -12510,7 +12506,6 @@ class IAgVABurnoutCBFCartesian(IAgVABurnout):
 
 agcls.AgClassCatalog.add_catalog_entry("{A45DD94F-A384-4CCB-B803-F29F2DA41A39}", IAgVABurnoutCBFCartesian)
 agcls.AgTypeNameMap["IAgVABurnoutCBFCartesian"] = IAgVABurnoutCBFCartesian
-__all__.append("IAgVABurnoutCBFCartesian")
 
 class IAgVABurnoutGeodetic(IAgVABurnout):
     """Properties for a geodetic burnout point definition."""
@@ -12595,7 +12590,6 @@ class IAgVABurnoutGeodetic(IAgVABurnout):
 
 agcls.AgClassCatalog.add_catalog_entry("{CA74E0CB-01D7-4D65-BC0D-82A469B5E320}", IAgVABurnoutGeodetic)
 agcls.AgTypeNameMap["IAgVABurnoutGeodetic"] = IAgVABurnoutGeodetic
-__all__.append("IAgVABurnoutGeodetic")
 
 class IAgVABurnoutGeocentric(IAgVABurnout):
     """{Properties for a geocentric burnout point definition."""
@@ -12680,7 +12674,6 @@ class IAgVABurnoutGeocentric(IAgVABurnout):
 
 agcls.AgClassCatalog.add_catalog_entry("{BFFA4B30-4A19-4FF9-849D-E6DD6534116D}", IAgVABurnoutGeocentric)
 agcls.AgTypeNameMap["IAgVABurnoutGeocentric"] = IAgVABurnoutGeocentric
-__all__.append("IAgVABurnoutGeocentric")
 
 class IAgVABurnoutLaunchAzAlt(IAgVABurnout):
     """Properties for a launch azimuth / altitude burnout point definition."""
@@ -12765,7 +12758,6 @@ class IAgVABurnoutLaunchAzAlt(IAgVABurnout):
 
 agcls.AgClassCatalog.add_catalog_entry("{FCE8CBAF-46BE-4F76-AB1A-E2116127A402}", IAgVABurnoutLaunchAzAlt)
 agcls.AgTypeNameMap["IAgVABurnoutLaunchAzAlt"] = IAgVABurnoutLaunchAzAlt
-__all__.append("IAgVABurnoutLaunchAzAlt")
 
 class IAgVABurnoutLaunchAzRadius(IAgVABurnout):
     """Properties for a launch azimuth / radius burnout point definition."""
@@ -12850,7 +12842,6 @@ class IAgVABurnoutLaunchAzRadius(IAgVABurnout):
 
 agcls.AgClassCatalog.add_catalog_entry("{623DDE08-539E-4BAD-A63D-FCC195094F14}", IAgVABurnoutLaunchAzRadius)
 agcls.AgTypeNameMap["IAgVABurnoutLaunchAzRadius"] = IAgVABurnoutLaunchAzRadius
-__all__.append("IAgVABurnoutLaunchAzRadius")
 
 class IAgVAMCSFollow(object):
     """Properties for a Follow segment."""
@@ -13068,7 +13059,6 @@ class IAgVAMCSFollow(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{88C0BA74-B2B8-4B69-85B5-94B6CC7DEACE}", IAgVAMCSFollow)
 agcls.AgTypeNameMap["IAgVAMCSFollow"] = IAgVAMCSFollow
-__all__.append("IAgVAMCSFollow")
 
 class IAgVAMCSManeuver(object):
     """General properties for a Maneuver segment."""
@@ -13161,7 +13151,6 @@ class IAgVAMCSManeuver(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B640A28E-36A1-4934-ABC6-1A74C1A1B9E5}", IAgVAMCSManeuver)
 agcls.AgTypeNameMap["IAgVAMCSManeuver"] = IAgVAMCSManeuver
-__all__.append("IAgVAMCSManeuver")
 
 class IAgVAManeuverFinite(IAgVAManeuver):
     """Engine properties for a Finite Maneuver."""
@@ -13255,7 +13244,6 @@ class IAgVAManeuverFinite(IAgVAManeuver):
 
 agcls.AgClassCatalog.add_catalog_entry("{2BE095B5-A674-4868-9178-6ADB00753CBF}", IAgVAManeuverFinite)
 agcls.AgTypeNameMap["IAgVAManeuverFinite"] = IAgVAManeuverFinite
-__all__.append("IAgVAManeuverFinite")
 
 class IAgVAManeuverImpulsive(IAgVAManeuver):
     """Properties for an Impulsive Maneuver."""
@@ -13308,7 +13296,6 @@ class IAgVAManeuverImpulsive(IAgVAManeuver):
 
 agcls.AgClassCatalog.add_catalog_entry("{41595314-A798-41ED-80DD-0DA873CCF8A0}", IAgVAManeuverImpulsive)
 agcls.AgTypeNameMap["IAgVAManeuverImpulsive"] = IAgVAManeuverImpulsive
-__all__.append("IAgVAManeuverImpulsive")
 
 class IAgVAAttitudeControlImpulsiveVelocityVector(IAgVAAttitudeControlImpulsive):
     """Properties for the Velocity Vector attitude control for an Impulsive Maneuver."""
@@ -13370,7 +13357,6 @@ class IAgVAAttitudeControlImpulsiveVelocityVector(IAgVAAttitudeControlImpulsive)
 
 agcls.AgClassCatalog.add_catalog_entry("{EF098B53-D99D-4AB6-A227-DED98E48B4DB}", IAgVAAttitudeControlImpulsiveVelocityVector)
 agcls.AgTypeNameMap["IAgVAAttitudeControlImpulsiveVelocityVector"] = IAgVAAttitudeControlImpulsiveVelocityVector
-__all__.append("IAgVAAttitudeControlImpulsiveVelocityVector")
 
 class IAgVAAttitudeControlImpulsiveAntiVelocityVector(IAgVAAttitudeControlImpulsive):
     """Properties for the Anti-Velocity Vector attitude control for an Impulsive Maneuver."""
@@ -13432,7 +13418,6 @@ class IAgVAAttitudeControlImpulsiveAntiVelocityVector(IAgVAAttitudeControlImpuls
 
 agcls.AgClassCatalog.add_catalog_entry("{711B2692-73A2-4C08-9AF3-CC1F93317DF2}", IAgVAAttitudeControlImpulsiveAntiVelocityVector)
 agcls.AgTypeNameMap["IAgVAAttitudeControlImpulsiveAntiVelocityVector"] = IAgVAAttitudeControlImpulsiveAntiVelocityVector
-__all__.append("IAgVAAttitudeControlImpulsiveAntiVelocityVector")
 
 class IAgVAAttitudeControlImpulsiveAttitude(IAgVAAttitudeControlImpulsive):
     """Properties for the Attitude attitude control for an Impulsive Maneuver."""
@@ -13510,7 +13495,6 @@ class IAgVAAttitudeControlImpulsiveAttitude(IAgVAAttitudeControlImpulsive):
 
 agcls.AgClassCatalog.add_catalog_entry("{D9334B8B-9016-4F73-A134-0C61C91060E1}", IAgVAAttitudeControlImpulsiveAttitude)
 agcls.AgTypeNameMap["IAgVAAttitudeControlImpulsiveAttitude"] = IAgVAAttitudeControlImpulsiveAttitude
-__all__.append("IAgVAAttitudeControlImpulsiveAttitude")
 
 class IAgVAAttitudeControlImpulsiveFile(IAgVAAttitudeControlImpulsive):
     """Properties for the File attitude control for an Impulsive Maneuver."""
@@ -13604,7 +13588,6 @@ class IAgVAAttitudeControlImpulsiveFile(IAgVAAttitudeControlImpulsive):
 
 agcls.AgClassCatalog.add_catalog_entry("{24B73A06-3F9E-4409-AE5E-00504C6A2AD7}", IAgVAAttitudeControlImpulsiveFile)
 agcls.AgTypeNameMap["IAgVAAttitudeControlImpulsiveFile"] = IAgVAAttitudeControlImpulsiveFile
-__all__.append("IAgVAAttitudeControlImpulsiveFile")
 
 class IAgVAAttitudeControlImpulsiveThrustVector(IAgVAAttitudeControlImpulsive):
     """Properties for the Thrust Vector attitude control for an Impulsive Maneuver."""
@@ -13828,7 +13811,6 @@ class IAgVAAttitudeControlImpulsiveThrustVector(IAgVAAttitudeControlImpulsive):
 
 agcls.AgClassCatalog.add_catalog_entry("{3C985D0B-4049-4C5E-81BC-E394CCE17787}", IAgVAAttitudeControlImpulsiveThrustVector)
 agcls.AgTypeNameMap["IAgVAAttitudeControlImpulsiveThrustVector"] = IAgVAAttitudeControlImpulsiveThrustVector
-__all__.append("IAgVAAttitudeControlImpulsiveThrustVector")
 
 class IAgVAAttitudeControlFiniteAntiVelocityVector(IAgVAAttitudeControlFinite):
     """Properties for the Anti-Velocity Vector attitude control for a Finite Maneuver."""
@@ -13890,7 +13872,6 @@ class IAgVAAttitudeControlFiniteAntiVelocityVector(IAgVAAttitudeControlFinite):
 
 agcls.AgClassCatalog.add_catalog_entry("{DB9276FA-2033-425D-9453-A0862C3DC715}", IAgVAAttitudeControlFiniteAntiVelocityVector)
 agcls.AgTypeNameMap["IAgVAAttitudeControlFiniteAntiVelocityVector"] = IAgVAAttitudeControlFiniteAntiVelocityVector
-__all__.append("IAgVAAttitudeControlFiniteAntiVelocityVector")
 
 class IAgVAAttitudeControlFiniteAttitude(IAgVAAttitudeControlFinite):
     """Properties for the Attitude attitude control for a Finite Maneuver."""
@@ -13968,7 +13949,6 @@ class IAgVAAttitudeControlFiniteAttitude(IAgVAAttitudeControlFinite):
 
 agcls.AgClassCatalog.add_catalog_entry("{BE7E2121-2A2E-4045-BE6F-E75256FDD287}", IAgVAAttitudeControlFiniteAttitude)
 agcls.AgTypeNameMap["IAgVAAttitudeControlFiniteAttitude"] = IAgVAAttitudeControlFiniteAttitude
-__all__.append("IAgVAAttitudeControlFiniteAttitude")
 
 class IAgVAAttitudeControlFiniteFile(IAgVAAttitudeControlFinite):
     """Properties for the File attitude control for a Finite Maneuver."""
@@ -14046,7 +14026,6 @@ class IAgVAAttitudeControlFiniteFile(IAgVAAttitudeControlFinite):
 
 agcls.AgClassCatalog.add_catalog_entry("{B2B44C74-C8D0-4AE0-A259-F73CD60AEC97}", IAgVAAttitudeControlFiniteFile)
 agcls.AgTypeNameMap["IAgVAAttitudeControlFiniteFile"] = IAgVAAttitudeControlFiniteFile
-__all__.append("IAgVAAttitudeControlFiniteFile")
 
 class IAgVAAttitudeControlFiniteThrustVector(IAgVAAttitudeControlFinite):
     """Properties for the Thrust Vector attitude control for a Finite Maneuver."""
@@ -14133,7 +14112,6 @@ class IAgVAAttitudeControlFiniteThrustVector(IAgVAAttitudeControlFinite):
 
 agcls.AgClassCatalog.add_catalog_entry("{5928D05A-399E-4773-A934-23E9B9EEF39E}", IAgVAAttitudeControlFiniteThrustVector)
 agcls.AgTypeNameMap["IAgVAAttitudeControlFiniteThrustVector"] = IAgVAAttitudeControlFiniteThrustVector
-__all__.append("IAgVAAttitudeControlFiniteThrustVector")
 
 class IAgVAAttitudeControlFiniteTimeVarying(IAgVAAttitudeControlFinite):
     """Properties for the Time Varying attitude control for a Finite Maneuver."""
@@ -14451,7 +14429,6 @@ class IAgVAAttitudeControlFiniteTimeVarying(IAgVAAttitudeControlFinite):
 
 agcls.AgClassCatalog.add_catalog_entry("{52E48F6D-0FD1-4E30-9398-DCCA988454CE}", IAgVAAttitudeControlFiniteTimeVarying)
 agcls.AgTypeNameMap["IAgVAAttitudeControlFiniteTimeVarying"] = IAgVAAttitudeControlFiniteTimeVarying
-__all__.append("IAgVAAttitudeControlFiniteTimeVarying")
 
 class IAgVAAttitudeControlFiniteVelocityVector(IAgVAAttitudeControlFinite):
     """Properties for the Velocity Vector attitude control for a Finite Maneuver."""
@@ -14513,7 +14490,6 @@ class IAgVAAttitudeControlFiniteVelocityVector(IAgVAAttitudeControlFinite):
 
 agcls.AgClassCatalog.add_catalog_entry("{0AD7345F-8B3C-474A-A1FC-AF0BA8BE4F38}", IAgVAAttitudeControlFiniteVelocityVector)
 agcls.AgTypeNameMap["IAgVAAttitudeControlFiniteVelocityVector"] = IAgVAAttitudeControlFiniteVelocityVector
-__all__.append("IAgVAAttitudeControlFiniteVelocityVector")
 
 class IAgVAAttitudeControlFinitePlugin(IAgVAAttitudeControlFinite):
     """Properties for the Plugin attitude control for a Finite Maneuver."""
@@ -14575,7 +14551,6 @@ class IAgVAAttitudeControlFinitePlugin(IAgVAAttitudeControlFinite):
 
 agcls.AgClassCatalog.add_catalog_entry("{97762200-0ECD-423E-83FA-128D9DBC9C59}", IAgVAAttitudeControlFinitePlugin)
 agcls.AgTypeNameMap["IAgVAAttitudeControlFinitePlugin"] = IAgVAAttitudeControlFinitePlugin
-__all__.append("IAgVAAttitudeControlFinitePlugin")
 
 class IAgVAAttitudeControlOptimalFiniteLagrange(IAgVAAttitudeControlOptimalFinite):
     """Properties for the Lagrange Interpolation attitude control for a Optimal Finite Maneuver."""
@@ -14621,7 +14596,6 @@ class IAgVAAttitudeControlOptimalFiniteLagrange(IAgVAAttitudeControlOptimalFinit
 
 agcls.AgClassCatalog.add_catalog_entry("{5E65B4C8-BFDB-4812-BE54-FF94FEDFDB12}", IAgVAAttitudeControlOptimalFiniteLagrange)
 agcls.AgTypeNameMap["IAgVAAttitudeControlOptimalFiniteLagrange"] = IAgVAAttitudeControlOptimalFiniteLagrange
-__all__.append("IAgVAAttitudeControlOptimalFiniteLagrange")
 
 class IAgVAMCSHold(object):
     """Properties for a Hold segment."""
@@ -14842,7 +14816,6 @@ class IAgVAMCSHold(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E53CB41B-2AFA-40B5-97AE-079CA69F0779}", IAgVAMCSHold)
 agcls.AgTypeNameMap["IAgVAMCSHold"] = IAgVAMCSHold
-__all__.append("IAgVAMCSHold")
 
 class IAgVAMCSUpdate(object):
     """Properties for an Update segment."""
@@ -14962,7 +14935,6 @@ class IAgVAMCSUpdate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{070D13DE-2D3C-4002-8D20-A8483EA1F8E3}", IAgVAMCSUpdate)
 agcls.AgTypeNameMap["IAgVAMCSUpdate"] = IAgVAMCSUpdate
-__all__.append("IAgVAMCSUpdate")
 
 class IAgVAMCSReturn(object):
     """Properties for a Return segment."""
@@ -15014,7 +14986,6 @@ class IAgVAMCSReturn(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9C9AB217-64E6-4697-98F8-3B4BCB34AD62}", IAgVAMCSReturn)
 agcls.AgTypeNameMap["IAgVAMCSReturn"] = IAgVAMCSReturn
-__all__.append("IAgVAMCSReturn")
 
 class IAgVAMCSStop(object):
     """Properties for a Stop segment."""
@@ -15066,7 +15037,6 @@ class IAgVAMCSStop(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E6CFAA75-3E0C-4B68-9897-66B5556DCD5B}", IAgVAMCSStop)
 agcls.AgTypeNameMap["IAgVAMCSStop"] = IAgVAMCSStop
-__all__.append("IAgVAMCSStop")
 
 class IAgVAProfile(object):
     """General properties for target sequence profiles."""
@@ -15176,7 +15146,6 @@ class IAgVAProfile(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CA331A4E-223E-410B-987C-9BE49AEC33A2}", IAgVAProfile)
 agcls.AgTypeNameMap["IAgVAProfile"] = IAgVAProfile
-__all__.append("IAgVAProfile")
 
 class IAgVAProfileCollection(object):
     """Properties for a list of target sequence profiles."""
@@ -15332,14 +15301,14 @@ class IAgVAProfileCollection(object):
             return arg_ppVAProfile.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAProfile":
-        """Allows you to retrieve an item from the collection by index."""
+        """Retrieves a profile from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVAProfile:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAProfile.COM_val)))
             return arg_ppVAProfile.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAProfile":
-        """Allows you to retrieve an item from the collection by name."""
+        """Retrieves a profile from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVAProfile:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAProfile.COM_val)))
@@ -15351,7 +15320,6 @@ class IAgVAProfileCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BA4A3DD4-79DF-4E22-A71B-A0F0A484CA5A}", IAgVAProfileCollection)
 agcls.AgTypeNameMap["IAgVAProfileCollection"] = IAgVAProfileCollection
-__all__.append("IAgVAProfileCollection")
 
 class IAgVAMCSTargetSequence(object):
     """General properties of a TargetSequence segment."""
@@ -15509,7 +15477,6 @@ class IAgVAMCSTargetSequence(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{703A8064-AB76-41FC-AADA-5134C30DB1C9}", IAgVAMCSTargetSequence)
 agcls.AgTypeNameMap["IAgVAMCSTargetSequence"] = IAgVAMCSTargetSequence
-__all__.append("IAgVAMCSTargetSequence")
 
 class IAgVADCControl(object):
     """Properties for control parameters of a differential corrector profile."""
@@ -15752,7 +15719,6 @@ class IAgVADCControl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5F55DF8A-688A-48E6-A084-48E270AB766E}", IAgVADCControl)
 agcls.AgTypeNameMap["IAgVADCControl"] = IAgVADCControl
-__all__.append("IAgVADCControl")
 
 class IAgVADCResult(object):
     """Properties for equality constraints of a differential corrector profile."""
@@ -15970,7 +15936,6 @@ class IAgVADCResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F55E0916-7FAE-469B-AB4F-9D09C26BB554}", IAgVADCResult)
 agcls.AgTypeNameMap["IAgVADCResult"] = IAgVADCResult
-__all__.append("IAgVADCResult")
 
 class IAgVASearchPluginControl(object):
     """Properties of search plugin control parameters."""
@@ -16117,7 +16082,6 @@ class IAgVASearchPluginControl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{71AB197F-79CB-438C-8F0A-A48FA0069865}", IAgVASearchPluginControl)
 agcls.AgTypeNameMap["IAgVASearchPluginControl"] = IAgVASearchPluginControl
-__all__.append("IAgVASearchPluginControl")
 
 class IAgVASearchPluginResult(object):
     """Properties of search plugin equality constraints."""
@@ -16248,7 +16212,6 @@ class IAgVASearchPluginResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7881FB30-0FB9-43EF-98A1-9CF84D69A23F}", IAgVASearchPluginResult)
 agcls.AgTypeNameMap["IAgVASearchPluginResult"] = IAgVASearchPluginResult
-__all__.append("IAgVASearchPluginResult")
 
 class IAgVASearchPluginResultCollection(object):
     """Properties for the list of search plugin equality constraints."""
@@ -16336,7 +16299,6 @@ class IAgVASearchPluginResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{48F5FEA5-9306-4115-B120-E479FD31A601}", IAgVASearchPluginResultCollection)
 agcls.AgTypeNameMap["IAgVASearchPluginResultCollection"] = IAgVASearchPluginResultCollection
-__all__.append("IAgVASearchPluginResultCollection")
 
 class IAgVASearchPluginControlCollection(object):
     """Properties for the list of search plugin control parameters."""
@@ -16424,7 +16386,6 @@ class IAgVASearchPluginControlCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6DAD8352-416A-402F-BD38-40CEF9E0CE4C}", IAgVASearchPluginControlCollection)
 agcls.AgTypeNameMap["IAgVASearchPluginControlCollection"] = IAgVASearchPluginControlCollection
-__all__.append("IAgVASearchPluginControlCollection")
 
 class IAgVADCControlCollection(object):
     """Properties for the list of control parameters for a differential corrector profile."""
@@ -16521,7 +16482,6 @@ class IAgVADCControlCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{271A0046-EC08-49FC-A75A-4D49B6E7AD3A}", IAgVADCControlCollection)
 agcls.AgTypeNameMap["IAgVADCControlCollection"] = IAgVADCControlCollection
-__all__.append("IAgVADCControlCollection")
 
 class IAgVADCResultCollection(object):
     """Differential Corrector result collection."""
@@ -16618,7 +16578,6 @@ class IAgVADCResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1AB78F87-F0BC-42DF-80C9-AAACF11FE5D4}", IAgVADCResultCollection)
 agcls.AgTypeNameMap["IAgVADCResultCollection"] = IAgVADCResultCollection
-__all__.append("IAgVADCResultCollection")
 
 class IAgVATargeterGraphActiveControl(object):
     """Properties for targeter graph active control."""
@@ -16740,7 +16699,6 @@ class IAgVATargeterGraphActiveControl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{341791C5-446F-4812-BDE8-702EE9D3D980}", IAgVATargeterGraphActiveControl)
 agcls.AgTypeNameMap["IAgVATargeterGraphActiveControl"] = IAgVATargeterGraphActiveControl
-__all__.append("IAgVATargeterGraphActiveControl")
 
 class IAgVATargeterGraphResult(object):
     """Properties for targeter graph result."""
@@ -16896,7 +16854,6 @@ class IAgVATargeterGraphResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{16985A6D-61AE-467F-9A66-255556F9C8E1}", IAgVATargeterGraphResult)
 agcls.AgTypeNameMap["IAgVATargeterGraphResult"] = IAgVATargeterGraphResult
-__all__.append("IAgVATargeterGraphResult")
 
 class IAgVATargeterGraphActiveControlCollection(object):
     """Targeter graph active controls."""
@@ -16983,7 +16940,6 @@ class IAgVATargeterGraphActiveControlCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{57FE9616-8C44-4F5B-8B31-F005C0B678A2}", IAgVATargeterGraphActiveControlCollection)
 agcls.AgTypeNameMap["IAgVATargeterGraphActiveControlCollection"] = IAgVATargeterGraphActiveControlCollection
-__all__.append("IAgVATargeterGraphActiveControlCollection")
 
 class IAgVATargeterGraphResultCollection(object):
     """Targeter graph results."""
@@ -17070,7 +17026,6 @@ class IAgVATargeterGraphResultCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{00E250BC-BA84-4ED7-A6A8-43FA17EF2731}", IAgVATargeterGraphResultCollection)
 agcls.AgTypeNameMap["IAgVATargeterGraphResultCollection"] = IAgVATargeterGraphResultCollection
-__all__.append("IAgVATargeterGraphResultCollection")
 
 class IAgVATargeterGraph(object):
     """Properties for a Targeter Graph."""
@@ -17243,7 +17198,6 @@ class IAgVATargeterGraph(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{418A2587-7803-4746-9A49-1B1A87BB906A}", IAgVATargeterGraph)
 agcls.AgTypeNameMap["IAgVATargeterGraph"] = IAgVATargeterGraph
-__all__.append("IAgVATargeterGraph")
 
 class IAgVATargeterGraphCollection(object):
     """The list of User Variables accessed through the Driver."""
@@ -17368,14 +17322,14 @@ class IAgVATargeterGraphCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVATargeterGraph":
-        """Allows you to retrieve an item from the collection by index."""
+        """Retrieves a targeter graph from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppTargeterGraph:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppTargeterGraph.COM_val)))
             return arg_ppTargeterGraph.python_val
 
     def GetItemByName(self, name:str) -> "IAgVATargeterGraph":
-        """Allows you to retrieve an item from the collection by name."""
+        """Retrieves a targeter graph from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppTargeterGraph:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppTargeterGraph.COM_val)))
@@ -17387,7 +17341,6 @@ class IAgVATargeterGraphCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{10EA0426-F62C-40C1-B1C6-A5B5E0BD0414}", IAgVATargeterGraphCollection)
 agcls.AgTypeNameMap["IAgVATargeterGraphCollection"] = IAgVATargeterGraphCollection
-__all__.append("IAgVATargeterGraphCollection")
 
 class IAgVAProfileSearchPlugin(IAgVAProfile):
     """Properties of a plugin search profile."""
@@ -17494,7 +17447,6 @@ class IAgVAProfileSearchPlugin(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{9380509D-A189-453D-B1EF-D1D8E34420FF}", IAgVAProfileSearchPlugin)
 agcls.AgTypeNameMap["IAgVAProfileSearchPlugin"] = IAgVAProfileSearchPlugin
-__all__.append("IAgVAProfileSearchPlugin")
 
 class IAgVAProfileDifferentialCorrector(IAgVAProfile):
     """Properties for a Differential Corrector profile."""
@@ -17848,7 +17800,6 @@ class IAgVAProfileDifferentialCorrector(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{E131F674-A7BA-408C-9109-BF50D16BE4F0}", IAgVAProfileDifferentialCorrector)
 agcls.AgTypeNameMap["IAgVAProfileDifferentialCorrector"] = IAgVAProfileDifferentialCorrector
-__all__.append("IAgVAProfileDifferentialCorrector")
 
 class IAgVAProfileChangeManeuverType(IAgVAProfile):
     """Properties for a Change Maneuver Type profile."""
@@ -17917,7 +17868,6 @@ class IAgVAProfileChangeManeuverType(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{17F50A61-1E84-4060-A86A-93434A5522D5}", IAgVAProfileChangeManeuverType)
 agcls.AgTypeNameMap["IAgVAProfileChangeManeuverType"] = IAgVAProfileChangeManeuverType
-__all__.append("IAgVAProfileChangeManeuverType")
 
 class IAgVAProfileScriptingTool(IAgVAProfile):
     """Properties for a Scripting Tool profile."""
@@ -18032,7 +17982,6 @@ class IAgVAProfileScriptingTool(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{8D1192C7-8230-4475-BAFF-A135F9EE0ABD}", IAgVAProfileScriptingTool)
 agcls.AgTypeNameMap["IAgVAProfileScriptingTool"] = IAgVAProfileScriptingTool
-__all__.append("IAgVAProfileScriptingTool")
 
 class IAgVAProfileChangeReturnSegment(IAgVAProfile):
     """Properties for a Change Return Segment profile."""
@@ -18108,7 +18057,6 @@ class IAgVAProfileChangeReturnSegment(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{B65E05D2-1B1C-414C-A57E-A93333A5D57C}", IAgVAProfileChangeReturnSegment)
 agcls.AgTypeNameMap["IAgVAProfileChangeReturnSegment"] = IAgVAProfileChangeReturnSegment
-__all__.append("IAgVAProfileChangeReturnSegment")
 
 class IAgVAProfileChangePropagator(IAgVAProfile):
     """Properties for a Change Propagator profile."""
@@ -18184,7 +18132,6 @@ class IAgVAProfileChangePropagator(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{FB6704EC-C787-4051-BE39-1584C5CAD0F6}", IAgVAProfileChangePropagator)
 agcls.AgTypeNameMap["IAgVAProfileChangePropagator"] = IAgVAProfileChangePropagator
-__all__.append("IAgVAProfileChangePropagator")
 
 class IAgVAProfileChangeStopSegment(IAgVAProfile):
     """Properties for a Change Stop Segment profile."""
@@ -18260,7 +18207,6 @@ class IAgVAProfileChangeStopSegment(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{1B9A0E28-8C19-448D-9CD1-AB10B492C767}", IAgVAProfileChangeStopSegment)
 agcls.AgTypeNameMap["IAgVAProfileChangeStopSegment"] = IAgVAProfileChangeStopSegment
-__all__.append("IAgVAProfileChangeStopSegment")
 
 class IAgVAProfileChangeStoppingConditionState(IAgVAProfile):
     """Properties for a Change Stopping Condition State profile."""
@@ -18359,7 +18305,6 @@ class IAgVAProfileChangeStoppingConditionState(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{977C9F84-852A-4B5D-861B-8F9E3809CE7D}", IAgVAProfileChangeStoppingConditionState)
 agcls.AgTypeNameMap["IAgVAProfileChangeStoppingConditionState"] = IAgVAProfileChangeStoppingConditionState
-__all__.append("IAgVAProfileChangeStoppingConditionState")
 
 class IAgVAProfileSeedFiniteManeuver(IAgVAProfile):
     """Properties for a Seed Finite Maneuver segment."""
@@ -18435,7 +18380,6 @@ class IAgVAProfileSeedFiniteManeuver(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{C56665D5-CEF3-47A1-854E-64CB0A8CA9CA}", IAgVAProfileSeedFiniteManeuver)
 agcls.AgTypeNameMap["IAgVAProfileSeedFiniteManeuver"] = IAgVAProfileSeedFiniteManeuver
-__all__.append("IAgVAProfileSeedFiniteManeuver")
 
 class IAgVAProfileRunOnce(IAgVAProfile):
     """Properties for a Run Once profile."""
@@ -18472,7 +18416,6 @@ class IAgVAProfileRunOnce(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{75574EA3-277E-4A6D-9529-3342088679DB}", IAgVAProfileRunOnce)
 agcls.AgTypeNameMap["IAgVAProfileRunOnce"] = IAgVAProfileRunOnce
-__all__.append("IAgVAProfileRunOnce")
 
 class IAgVAUserVariableDefinition(object):
     """Properties for a User Variable definition."""
@@ -18542,7 +18485,6 @@ class IAgVAUserVariableDefinition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{25F2A622-8F6A-4CBB-91C6-ED5AD9C24028}", IAgVAUserVariableDefinition)
 agcls.AgTypeNameMap["IAgVAUserVariableDefinition"] = IAgVAUserVariableDefinition
-__all__.append("IAgVAUserVariableDefinition")
 
 class IAgVAUserVariable(object):
     """The properties for a User Variable initial value."""
@@ -18642,7 +18584,6 @@ class IAgVAUserVariable(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{31B617D6-AE6D-46CE-845D-90FFCD7A5B13}", IAgVAUserVariable)
 agcls.AgTypeNameMap["IAgVAUserVariable"] = IAgVAUserVariable
-__all__.append("IAgVAUserVariable")
 
 class IAgVAUserVariableUpdate(object):
     """Properties for a User Variable update."""
@@ -18757,7 +18698,6 @@ class IAgVAUserVariableUpdate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{14F87E74-D85B-40D1-86FF-97E7F514FCF7}", IAgVAUserVariableUpdate)
 agcls.AgTypeNameMap["IAgVAUserVariableUpdate"] = IAgVAUserVariableUpdate
-__all__.append("IAgVAUserVariableUpdate")
 
 class IAgVAProfileSNOPTOptimizer(IAgVAProfile):
     """Properties of SNOPT Optimizer profile."""
@@ -18974,7 +18914,6 @@ class IAgVAProfileSNOPTOptimizer(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{6BE54C72-2B85-4925-B969-5602527616A1}", IAgVAProfileSNOPTOptimizer)
 agcls.AgTypeNameMap["IAgVAProfileSNOPTOptimizer"] = IAgVAProfileSNOPTOptimizer
-__all__.append("IAgVAProfileSNOPTOptimizer")
 
 class IAgVASNOPTControl(object):
     """Properties for control parameters of a SNOPT profile."""
@@ -19149,7 +19088,6 @@ class IAgVASNOPTControl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4C637192-8687-4218-9BD6-A7B7C7B6E720}", IAgVASNOPTControl)
 agcls.AgTypeNameMap["IAgVASNOPTControl"] = IAgVASNOPTControl
-__all__.append("IAgVASNOPTControl")
 
 class IAgVASNOPTResult(object):
     """Properties for objecvtive and constraints of a SNOPT profile."""
@@ -19340,7 +19278,6 @@ class IAgVASNOPTResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{79392E1D-E3C7-4403-9D4C-1C13AB8368A9}", IAgVASNOPTResult)
 agcls.AgTypeNameMap["IAgVASNOPTResult"] = IAgVASNOPTResult
-__all__.append("IAgVASNOPTResult")
 
 class IAgVAProfileIPOPTOptimizer(IAgVAProfile):
     """Properties of IPOPT Optimizer profile."""
@@ -19525,7 +19462,6 @@ class IAgVAProfileIPOPTOptimizer(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{23DCC03E-E187-41EF-85C8-FC3DCA09E7A8}", IAgVAProfileIPOPTOptimizer)
 agcls.AgTypeNameMap["IAgVAProfileIPOPTOptimizer"] = IAgVAProfileIPOPTOptimizer
-__all__.append("IAgVAProfileIPOPTOptimizer")
 
 class IAgVAIPOPTControl(object):
     """Properties for control parameters of a IPOPT profile."""
@@ -19700,7 +19636,6 @@ class IAgVAIPOPTControl(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EBDE767F-00E7-4779-ABB9-23DB3B87FE54}", IAgVAIPOPTControl)
 agcls.AgTypeNameMap["IAgVAIPOPTControl"] = IAgVAIPOPTControl
-__all__.append("IAgVAIPOPTControl")
 
 class IAgVAIPOPTResult(object):
     """Properties for objecvtive and constraints of a IPOPT profile."""
@@ -19891,7 +19826,6 @@ class IAgVAIPOPTResult(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CBBEA11D-662A-4218-A9DC-84A16ABAE3D4}", IAgVAIPOPTResult)
 agcls.AgTypeNameMap["IAgVAIPOPTResult"] = IAgVAIPOPTResult
-__all__.append("IAgVAIPOPTResult")
 
 class IAgVAManeuverOptimalFinite(IAgVAManeuver):
     """Engine properties for a Optimal Finite Maneuver."""
@@ -20254,7 +20188,6 @@ class IAgVAManeuverOptimalFinite(IAgVAManeuver):
 
 agcls.AgClassCatalog.add_catalog_entry("{FDEE9E11-C6ED-495E-9DC3-F3674F0D4813}", IAgVAManeuverOptimalFinite)
 agcls.AgTypeNameMap["IAgVAManeuverOptimalFinite"] = IAgVAManeuverOptimalFinite
-__all__.append("IAgVAManeuverOptimalFinite")
 
 class IAgVAManeuverOptimalFiniteSteeringNodeElement(object):
     """The elements of the steering node."""
@@ -20416,7 +20349,6 @@ class IAgVAManeuverOptimalFiniteSteeringNodeElement(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{428CDEC6-6E07-4EDA-B656-AF669F95BB8E}", IAgVAManeuverOptimalFiniteSteeringNodeElement)
 agcls.AgTypeNameMap["IAgVAManeuverOptimalFiniteSteeringNodeElement"] = IAgVAManeuverOptimalFiniteSteeringNodeElement
-__all__.append("IAgVAManeuverOptimalFiniteSteeringNodeElement")
 
 class IAgVAProfileLambertProfile(IAgVAProfile):
     """Properties for a Lambert profile."""
@@ -20901,7 +20833,6 @@ class IAgVAProfileLambertProfile(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{6F736B1F-850D-4736-9106-8BDC4FE52A30}", IAgVAProfileLambertProfile)
 agcls.AgTypeNameMap["IAgVAProfileLambertProfile"] = IAgVAProfileLambertProfile
-__all__.append("IAgVAProfileLambertProfile")
 
 class IAgVAProfileLambertSearchProfile(IAgVAProfile):
     """Properties for a Lambert Search Profile."""
@@ -21450,7 +21381,6 @@ class IAgVAProfileLambertSearchProfile(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{22C5891F-AD49-40BE-9C99-58E23CCFD106}", IAgVAProfileLambertSearchProfile)
 agcls.AgTypeNameMap["IAgVAProfileLambertSearchProfile"] = IAgVAProfileLambertSearchProfile
-__all__.append("IAgVAProfileLambertSearchProfile")
 
 class IAgVAProfileGoldenSection(IAgVAProfile):
     """Properties for a Golden Section profile."""
@@ -21564,7 +21494,6 @@ class IAgVAProfileGoldenSection(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{505EC87D-BE26-4477-B7E8-6586731428D0}", IAgVAProfileGoldenSection)
 agcls.AgTypeNameMap["IAgVAProfileGoldenSection"] = IAgVAProfileGoldenSection
-__all__.append("IAgVAProfileGoldenSection")
 
 class IAgVAProfileGridSearch(IAgVAProfile):
     """Properties for a Grid Search profile."""
@@ -21678,7 +21607,6 @@ class IAgVAProfileGridSearch(IAgVAProfile):
 
 agcls.AgClassCatalog.add_catalog_entry("{EDE96C58-0563-4B05-A7B6-735C3699FE87}", IAgVAProfileGridSearch)
 agcls.AgTypeNameMap["IAgVAProfileGridSearch"] = IAgVAProfileGridSearch
-__all__.append("IAgVAProfileGridSearch")
 
 class IAgVAStateCalcHeightAboveTerrain(object):
     """Interface for StateCalcHeightAboveTerrain"""
@@ -21731,7 +21659,6 @@ class IAgVAStateCalcHeightAboveTerrain(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{30A4FAC3-1250-456A-BB29-689AA50F8D75}", IAgVAStateCalcHeightAboveTerrain)
 agcls.AgTypeNameMap["IAgVAStateCalcHeightAboveTerrain"] = IAgVAStateCalcHeightAboveTerrain
-__all__.append("IAgVAStateCalcHeightAboveTerrain")
 
 class IAgVAStateCalcEpoch(object):
     """Properties for an Epoch calculation object."""
@@ -21767,7 +21694,6 @@ class IAgVAStateCalcEpoch(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F23ADE47-91EF-41B9-9606-DA034C50F69D}", IAgVAStateCalcEpoch)
 agcls.AgTypeNameMap["IAgVAStateCalcEpoch"] = IAgVAStateCalcEpoch
-__all__.append("IAgVAStateCalcEpoch")
 
 class IAgVAStateCalcOrbitDelaunayG(object):
     """Interface for AsStateCalcOrbitDelaunayG"""
@@ -21837,7 +21763,6 @@ class IAgVAStateCalcOrbitDelaunayG(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8527A30E-E743-4040-8B0D-7AE1EB237279}", IAgVAStateCalcOrbitDelaunayG)
 agcls.AgTypeNameMap["IAgVAStateCalcOrbitDelaunayG"] = IAgVAStateCalcOrbitDelaunayG
-__all__.append("IAgVAStateCalcOrbitDelaunayG")
 
 class IAgVAStateCalcOrbitDelaunayH(object):
     """Interface for AsStateCalcOrbitDelaunayH"""
@@ -21907,7 +21832,6 @@ class IAgVAStateCalcOrbitDelaunayH(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{01E122E4-2B6D-4301-81D2-B83B6C169CB5}", IAgVAStateCalcOrbitDelaunayH)
 agcls.AgTypeNameMap["IAgVAStateCalcOrbitDelaunayH"] = IAgVAStateCalcOrbitDelaunayH
-__all__.append("IAgVAStateCalcOrbitDelaunayH")
 
 class IAgVAStateCalcOrbitDelaunayL(object):
     """Interface for AsStateCalcOrbitDelaunayL"""
@@ -21977,7 +21901,6 @@ class IAgVAStateCalcOrbitDelaunayL(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{10C517CA-1CF0-45FF-B36E-3E3181269745}", IAgVAStateCalcOrbitDelaunayL)
 agcls.AgTypeNameMap["IAgVAStateCalcOrbitDelaunayL"] = IAgVAStateCalcOrbitDelaunayL
-__all__.append("IAgVAStateCalcOrbitDelaunayL")
 
 class IAgVAStateCalcOrbitSemiLatusRectum(object):
     """Interface for AsStateCalcOrbitSemiLatusRectum"""
@@ -22047,7 +21970,6 @@ class IAgVAStateCalcOrbitSemiLatusRectum(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{06396376-8F96-419A-86D4-32298E6A6087}", IAgVAStateCalcOrbitSemiLatusRectum)
 agcls.AgTypeNameMap["IAgVAStateCalcOrbitSemiLatusRectum"] = IAgVAStateCalcOrbitSemiLatusRectum
-__all__.append("IAgVAStateCalcOrbitSemiLatusRectum")
 
 class IAgVAStateCalcJacobiConstant(object):
     """Properties for a Jacobi Constant calculation object."""
@@ -22083,7 +22005,6 @@ class IAgVAStateCalcJacobiConstant(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{12857E60-E0BF-49BE-84EA-F9A0C73DB557}", IAgVAStateCalcJacobiConstant)
 agcls.AgTypeNameMap["IAgVAStateCalcJacobiConstant"] = IAgVAStateCalcJacobiConstant
-__all__.append("IAgVAStateCalcJacobiConstant")
 
 class IAgVAStateCalcCartesianElem(object):
     """Properties for a Cartesian Element calculation object."""
@@ -22135,7 +22056,6 @@ class IAgVAStateCalcCartesianElem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{43611884-2507-4D9B-AFF2-9BC5AA0786BD}", IAgVAStateCalcCartesianElem)
 agcls.AgTypeNameMap["IAgVAStateCalcCartesianElem"] = IAgVAStateCalcCartesianElem
-__all__.append("IAgVAStateCalcCartesianElem")
 
 class IAgVAStateCalcCartSTMElem(object):
     """Properties for a Cartesian STM Element calculation object."""
@@ -22219,7 +22139,6 @@ class IAgVAStateCalcCartSTMElem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{72B246C3-618A-40B7-8501-C39BF07E4B95}", IAgVAStateCalcCartSTMElem)
 agcls.AgTypeNameMap["IAgVAStateCalcCartSTMElem"] = IAgVAStateCalcCartSTMElem
-__all__.append("IAgVAStateCalcCartSTMElem")
 
 class IAgVAStateCalcSTMEigenval(object):
     """Properties for an STM Eigenvalue calculation object."""
@@ -22303,7 +22222,6 @@ class IAgVAStateCalcSTMEigenval(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{24838E22-D7CE-40FF-8268-9E72AE39467B}", IAgVAStateCalcSTMEigenval)
 agcls.AgTypeNameMap["IAgVAStateCalcSTMEigenval"] = IAgVAStateCalcSTMEigenval
-__all__.append("IAgVAStateCalcSTMEigenval")
 
 class IAgVAStateCalcSTMEigenvecElem(object):
     """Properties for an STM Eigenvector element calculation object."""
@@ -22403,7 +22321,6 @@ class IAgVAStateCalcSTMEigenvecElem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7D28974A-19AF-4E80-889E-5CDA7E9DACEB}", IAgVAStateCalcSTMEigenvecElem)
 agcls.AgTypeNameMap["IAgVAStateCalcSTMEigenvecElem"] = IAgVAStateCalcSTMEigenvecElem
-__all__.append("IAgVAStateCalcSTMEigenvecElem")
 
 class IAgVAStateCalcEnvironment(object):
     """Properties for an Environment calculation object."""
@@ -22471,7 +22388,6 @@ class IAgVAStateCalcEnvironment(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BB89B6D8-34A3-42F2-B7B3-CFDAAA9BE00C}", IAgVAStateCalcEnvironment)
 agcls.AgTypeNameMap["IAgVAStateCalcEnvironment"] = IAgVAStateCalcEnvironment
-__all__.append("IAgVAStateCalcEnvironment")
 
 class IAgVAStateCalcEquinoctialElem(object):
     """Properties for an Equinoctial Element calculation object."""
@@ -22539,7 +22455,6 @@ class IAgVAStateCalcEquinoctialElem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A63BA51C-CE64-410D-832F-7BDCE13E5069}", IAgVAStateCalcEquinoctialElem)
 agcls.AgTypeNameMap["IAgVAStateCalcEquinoctialElem"] = IAgVAStateCalcEquinoctialElem
-__all__.append("IAgVAStateCalcEquinoctialElem")
 
 class IAgVAStateCalcDamageFlux(object):
     """Interface for AgAsStateCalcDamageFlux"""
@@ -22575,7 +22490,6 @@ class IAgVAStateCalcDamageFlux(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5E7EBA7C-121F-4649-8599-A222F65BA10B}", IAgVAStateCalcDamageFlux)
 agcls.AgTypeNameMap["IAgVAStateCalcDamageFlux"] = IAgVAStateCalcDamageFlux
-__all__.append("IAgVAStateCalcDamageFlux")
 
 class IAgVAStateCalcDamageMassFlux(object):
     """Interface for AgAsStateCalcDamageMassFlux"""
@@ -22611,7 +22525,6 @@ class IAgVAStateCalcDamageMassFlux(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CDA309A6-91BD-49DF-BE71-E3F194AB73AE}", IAgVAStateCalcDamageMassFlux)
 agcls.AgTypeNameMap["IAgVAStateCalcDamageMassFlux"] = IAgVAStateCalcDamageMassFlux
-__all__.append("IAgVAStateCalcDamageMassFlux")
 
 class IAgVAStateCalcMagFieldDipoleL(object):
     """Interface for AgAsStateCalcMagFieldDipoleL"""
@@ -22647,7 +22560,6 @@ class IAgVAStateCalcMagFieldDipoleL(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{46E20C5A-4030-4D57-AAA7-38CFFD65D91D}", IAgVAStateCalcMagFieldDipoleL)
 agcls.AgTypeNameMap["IAgVAStateCalcMagFieldDipoleL"] = IAgVAStateCalcMagFieldDipoleL
-__all__.append("IAgVAStateCalcMagFieldDipoleL")
 
 class IAgVAStateCalcSEETMagFieldFieldLineSepAngle(object):
     """Properties for a SEETMagFieldFieldLineSepAngle calculation object."""
@@ -22692,7 +22604,6 @@ class IAgVAStateCalcSEETMagFieldFieldLineSepAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FFCDD5EA-7808-4A0C-BDA5-5E4BC504F968}", IAgVAStateCalcSEETMagFieldFieldLineSepAngle)
 agcls.AgTypeNameMap["IAgVAStateCalcSEETMagFieldFieldLineSepAngle"] = IAgVAStateCalcSEETMagFieldFieldLineSepAngle
-__all__.append("IAgVAStateCalcSEETMagFieldFieldLineSepAngle")
 
 class IAgVAStateCalcImpactFlux(object):
     """Interface for AgAsStateCalcImpactFlux"""
@@ -22728,7 +22639,6 @@ class IAgVAStateCalcImpactFlux(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{70F6FCD6-139C-4166-B242-61652F690A89}", IAgVAStateCalcImpactFlux)
 agcls.AgTypeNameMap["IAgVAStateCalcImpactFlux"] = IAgVAStateCalcImpactFlux
-__all__.append("IAgVAStateCalcImpactFlux")
 
 class IAgVAStateCalcImpactMassFlux(object):
     """Interface for AgAsStateCalcImpactMassFlux"""
@@ -22764,7 +22674,6 @@ class IAgVAStateCalcImpactMassFlux(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{67D77299-1936-4E9A-A44F-C155686E4DB2}", IAgVAStateCalcImpactMassFlux)
 agcls.AgTypeNameMap["IAgVAStateCalcImpactMassFlux"] = IAgVAStateCalcImpactMassFlux
-__all__.append("IAgVAStateCalcImpactMassFlux")
 
 class IAgVAStateCalcSEETSAAFlux(object):
     """Interface for AgAsStateCalcSEETSAAFlux"""
@@ -22800,7 +22709,6 @@ class IAgVAStateCalcSEETSAAFlux(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3C633703-2759-4894-96EA-F6E3C2F98AA1}", IAgVAStateCalcSEETSAAFlux)
 agcls.AgTypeNameMap["IAgVAStateCalcSEETSAAFlux"] = IAgVAStateCalcSEETSAAFlux
-__all__.append("IAgVAStateCalcSEETSAAFlux")
 
 class IAgVAStateCalcSEETVehTemp(object):
     """Interface for AgAsStateCalcSEETVehTemp"""
@@ -22836,7 +22744,6 @@ class IAgVAStateCalcSEETVehTemp(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4B70C4FB-3403-4F3F-9F3F-B2C0CF8DB393}", IAgVAStateCalcSEETVehTemp)
 agcls.AgTypeNameMap["IAgVAStateCalcSEETVehTemp"] = IAgVAStateCalcSEETVehTemp
-__all__.append("IAgVAStateCalcSEETVehTemp")
 
 class IAgVAStateCalcCloseApproachBearing(object):
     """Properties for a CloseApproachBearing calculation object."""
@@ -22913,7 +22820,6 @@ class IAgVAStateCalcCloseApproachBearing(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E7717197-6955-4ECB-BF98-DA50AD7547F3}", IAgVAStateCalcCloseApproachBearing)
 agcls.AgTypeNameMap["IAgVAStateCalcCloseApproachBearing"] = IAgVAStateCalcCloseApproachBearing
-__all__.append("IAgVAStateCalcCloseApproachBearing")
 
 class IAgVAStateCalcCloseApproachMag(object):
     """Properties for a CloseApproachMagnitude calculation object."""
@@ -22990,7 +22896,6 @@ class IAgVAStateCalcCloseApproachMag(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DDACF6D7-29C0-46BB-A21A-123580E25161}", IAgVAStateCalcCloseApproachMag)
 agcls.AgTypeNameMap["IAgVAStateCalcCloseApproachMag"] = IAgVAStateCalcCloseApproachMag
-__all__.append("IAgVAStateCalcCloseApproachMag")
 
 class IAgVAStateCalcCloseApproachTheta(object):
     """Properties for a CloseApproachTheta calculation object."""
@@ -23067,7 +22972,6 @@ class IAgVAStateCalcCloseApproachTheta(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2F89E7F5-154B-4CED-807A-040A064F1A14}", IAgVAStateCalcCloseApproachTheta)
 agcls.AgTypeNameMap["IAgVAStateCalcCloseApproachTheta"] = IAgVAStateCalcCloseApproachTheta
-__all__.append("IAgVAStateCalcCloseApproachTheta")
 
 class IAgVAStateCalcCloseApproachX(object):
     """Properties for a CloseApproachX calculation object."""
@@ -23144,7 +23048,6 @@ class IAgVAStateCalcCloseApproachX(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B57EFFE4-9742-4F26-989C-A8D64549F8ED}", IAgVAStateCalcCloseApproachX)
 agcls.AgTypeNameMap["IAgVAStateCalcCloseApproachX"] = IAgVAStateCalcCloseApproachX
-__all__.append("IAgVAStateCalcCloseApproachX")
 
 class IAgVAStateCalcCloseApproachY(object):
     """Properties for a CloseApproachY calculation object."""
@@ -23221,7 +23124,6 @@ class IAgVAStateCalcCloseApproachY(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7C03BAD0-6CF8-4A20-ABA9-B16006A4016E}", IAgVAStateCalcCloseApproachY)
 agcls.AgTypeNameMap["IAgVAStateCalcCloseApproachY"] = IAgVAStateCalcCloseApproachY
-__all__.append("IAgVAStateCalcCloseApproachY")
 
 class IAgVAStateCalcCloseApproachCosBearing(object):
     """Properties for a CosineOfCloseApproachBearing calculation object."""
@@ -23298,7 +23200,6 @@ class IAgVAStateCalcCloseApproachCosBearing(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ED9F8425-E6C7-49D0-842F-84FE096E6C27}", IAgVAStateCalcCloseApproachCosBearing)
 agcls.AgTypeNameMap["IAgVAStateCalcCloseApproachCosBearing"] = IAgVAStateCalcCloseApproachCosBearing
-__all__.append("IAgVAStateCalcCloseApproachCosBearing")
 
 class IAgVAStateCalcRelGroundTrackError(object):
     """Properties for a RelGroundTrackError calculation object."""
@@ -23407,7 +23308,6 @@ class IAgVAStateCalcRelGroundTrackError(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F9BD881C-FBBF-4B59-AA64-8D303DBBCC44}", IAgVAStateCalcRelGroundTrackError)
 agcls.AgTypeNameMap["IAgVAStateCalcRelGroundTrackError"] = IAgVAStateCalcRelGroundTrackError
-__all__.append("IAgVAStateCalcRelGroundTrackError")
 
 class IAgVAStateCalcRelAtAOLMaster(object):
     """Properties for a RelativeAtAOL calculation object."""
@@ -23516,7 +23416,6 @@ class IAgVAStateCalcRelAtAOLMaster(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8864FF20-53E7-4609-86A7-C9F7B113B651}", IAgVAStateCalcRelAtAOLMaster)
 agcls.AgTypeNameMap["IAgVAStateCalcRelAtAOLMaster"] = IAgVAStateCalcRelAtAOLMaster
-__all__.append("IAgVAStateCalcRelAtAOLMaster")
 
 class IAgVAStateCalcDeltaFromMaster(object):
     """Properties for a Rel Mean Mean Anomaly calculation object."""
@@ -23593,7 +23492,6 @@ class IAgVAStateCalcDeltaFromMaster(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6203B45E-E2E8-42D1-BB22-9BBF57CC1FDE}", IAgVAStateCalcDeltaFromMaster)
 agcls.AgTypeNameMap["IAgVAStateCalcDeltaFromMaster"] = IAgVAStateCalcDeltaFromMaster
-__all__.append("IAgVAStateCalcDeltaFromMaster")
 
 class IAgVAStateCalcLonDriftRate(object):
     """Properties for a Longitude Drift Rate calculation object."""
@@ -23661,7 +23559,6 @@ class IAgVAStateCalcLonDriftRate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D464DED3-3358-452D-B55C-2B017D04C8F9}", IAgVAStateCalcLonDriftRate)
 agcls.AgTypeNameMap["IAgVAStateCalcLonDriftRate"] = IAgVAStateCalcLonDriftRate
-__all__.append("IAgVAStateCalcLonDriftRate")
 
 class IAgVAStateCalcMeanEarthLon(object):
     """Properties for a Mean Earth Longitude calculation object."""
@@ -23713,7 +23610,6 @@ class IAgVAStateCalcMeanEarthLon(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{49D6969B-42BD-4E55-9016-0F951FF34DEE}", IAgVAStateCalcMeanEarthLon)
 agcls.AgTypeNameMap["IAgVAStateCalcMeanEarthLon"] = IAgVAStateCalcMeanEarthLon
-__all__.append("IAgVAStateCalcMeanEarthLon")
 
 class IAgVAStateCalcRectifiedLon(object):
     """Properties for a RectifiedLon calculation object."""
@@ -23765,7 +23661,6 @@ class IAgVAStateCalcRectifiedLon(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FD75BCCA-8F5C-49BA-AADE-040E1186385D}", IAgVAStateCalcRectifiedLon)
 agcls.AgTypeNameMap["IAgVAStateCalcRectifiedLon"] = IAgVAStateCalcRectifiedLon
-__all__.append("IAgVAStateCalcRectifiedLon")
 
 class IAgVAStateCalcGeodeticElem(object):
     """Properties for a Geodetic Element calculation object."""
@@ -23817,7 +23712,6 @@ class IAgVAStateCalcGeodeticElem(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D827128C-F7C1-40CE-AE27-DDF0AAEBB150}", IAgVAStateCalcGeodeticElem)
 agcls.AgTypeNameMap["IAgVAStateCalcGeodeticElem"] = IAgVAStateCalcGeodeticElem
-__all__.append("IAgVAStateCalcGeodeticElem")
 
 class IAgVAStateCalcRepeatingGroundTrackErr(object):
     """Properties for a RepeatingGroundTrackEquatorError calculation object."""
@@ -23933,7 +23827,6 @@ class IAgVAStateCalcRepeatingGroundTrackErr(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{53C25A30-1C1E-42F0-AEA5-D67EF1037A18}", IAgVAStateCalcRepeatingGroundTrackErr)
 agcls.AgTypeNameMap["IAgVAStateCalcRepeatingGroundTrackErr"] = IAgVAStateCalcRepeatingGroundTrackErr
-__all__.append("IAgVAStateCalcRepeatingGroundTrackErr")
 
 class IAgVAStateCalcAltOfApoapsis(object):
     """Properties for an Altitude of Apoapsis calculation object."""
@@ -24001,7 +23894,6 @@ class IAgVAStateCalcAltOfApoapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{891F3D94-A765-42AE-9459-7575CD33E62E}", IAgVAStateCalcAltOfApoapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcAltOfApoapsis"] = IAgVAStateCalcAltOfApoapsis
-__all__.append("IAgVAStateCalcAltOfApoapsis")
 
 class IAgVAStateCalcAltOfPeriapsis(object):
     """Properties for an Altitude Of Periapsis calculation object."""
@@ -24069,7 +23961,6 @@ class IAgVAStateCalcAltOfPeriapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3A81E388-64C2-41BD-88FC-19E318F08D5C}", IAgVAStateCalcAltOfPeriapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcAltOfPeriapsis"] = IAgVAStateCalcAltOfPeriapsis
-__all__.append("IAgVAStateCalcAltOfPeriapsis")
 
 class IAgVAStateCalcArgOfLat(object):
     """Properties for an Argument of Latitude calculation object."""
@@ -24137,7 +24028,6 @@ class IAgVAStateCalcArgOfLat(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C5B93283-1CEB-407C-837F-21BB7C8227BD}", IAgVAStateCalcArgOfLat)
 agcls.AgTypeNameMap["IAgVAStateCalcArgOfLat"] = IAgVAStateCalcArgOfLat
-__all__.append("IAgVAStateCalcArgOfLat")
 
 class IAgVAStateCalcArgOfPeriapsis(object):
     """Properties for an Argument of Periapsis calculation object."""
@@ -24205,7 +24095,6 @@ class IAgVAStateCalcArgOfPeriapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{30364B7E-BBCE-4FCF-BC76-7330A97ECE0F}", IAgVAStateCalcArgOfPeriapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcArgOfPeriapsis"] = IAgVAStateCalcArgOfPeriapsis
-__all__.append("IAgVAStateCalcArgOfPeriapsis")
 
 class IAgVAStateCalcEccAnomaly(object):
     """Properties for an Eccentric Anomaly calculation object."""
@@ -24273,7 +24162,6 @@ class IAgVAStateCalcEccAnomaly(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9655A1AA-233C-4E4C-9A2E-93B91A439947}", IAgVAStateCalcEccAnomaly)
 agcls.AgTypeNameMap["IAgVAStateCalcEccAnomaly"] = IAgVAStateCalcEccAnomaly
-__all__.append("IAgVAStateCalcEccAnomaly")
 
 class IAgVAStateCalcEccentricity(object):
     """Properties for an Eccentricity calculation object."""
@@ -24341,7 +24229,6 @@ class IAgVAStateCalcEccentricity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3AE52837-A597-473A-83A2-9DC9B2271101}", IAgVAStateCalcEccentricity)
 agcls.AgTypeNameMap["IAgVAStateCalcEccentricity"] = IAgVAStateCalcEccentricity
-__all__.append("IAgVAStateCalcEccentricity")
 
 class IAgVAStateCalcInclination(object):
     """Properties for an Inclination calculation object."""
@@ -24409,7 +24296,6 @@ class IAgVAStateCalcInclination(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{477CF8AA-81BE-4C13-8F6D-7157268869A3}", IAgVAStateCalcInclination)
 agcls.AgTypeNameMap["IAgVAStateCalcInclination"] = IAgVAStateCalcInclination
-__all__.append("IAgVAStateCalcInclination")
 
 class IAgVAStateCalcLonOfAscNode(object):
     """Properties for a Longitude of Ascending Node calculation object."""
@@ -24477,7 +24363,6 @@ class IAgVAStateCalcLonOfAscNode(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9A4EED12-F650-449B-B3C0-2278D58A8D92}", IAgVAStateCalcLonOfAscNode)
 agcls.AgTypeNameMap["IAgVAStateCalcLonOfAscNode"] = IAgVAStateCalcLonOfAscNode
-__all__.append("IAgVAStateCalcLonOfAscNode")
 
 class IAgVAStateCalcMeanAnomaly(object):
     """Properties for a MeanAnomaly calculation object."""
@@ -24545,7 +24430,6 @@ class IAgVAStateCalcMeanAnomaly(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2E620A15-C918-467A-A8C3-817BF13FC602}", IAgVAStateCalcMeanAnomaly)
 agcls.AgTypeNameMap["IAgVAStateCalcMeanAnomaly"] = IAgVAStateCalcMeanAnomaly
-__all__.append("IAgVAStateCalcMeanAnomaly")
 
 class IAgVAStateCalcMeanMotion(object):
     """Properties for a Mean Motion calculation object."""
@@ -24613,7 +24497,6 @@ class IAgVAStateCalcMeanMotion(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3CF417E4-9A1B-492B-BEA8-A019896B26E9}", IAgVAStateCalcMeanMotion)
 agcls.AgTypeNameMap["IAgVAStateCalcMeanMotion"] = IAgVAStateCalcMeanMotion
-__all__.append("IAgVAStateCalcMeanMotion")
 
 class IAgVAStateCalcOrbitPeriod(object):
     """Properties for an Orbit Period calculation object."""
@@ -24681,7 +24564,6 @@ class IAgVAStateCalcOrbitPeriod(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C108486C-571C-4007-9EFD-70CD8745C3D5}", IAgVAStateCalcOrbitPeriod)
 agcls.AgTypeNameMap["IAgVAStateCalcOrbitPeriod"] = IAgVAStateCalcOrbitPeriod
-__all__.append("IAgVAStateCalcOrbitPeriod")
 
 class IAgVAStateCalcNumRevs(object):
     """Properties for a Number of Revolutions calculation object."""
@@ -24749,7 +24631,6 @@ class IAgVAStateCalcNumRevs(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A9FF9984-5A98-44F1-A231-10C3F26A1082}", IAgVAStateCalcNumRevs)
 agcls.AgTypeNameMap["IAgVAStateCalcNumRevs"] = IAgVAStateCalcNumRevs
-__all__.append("IAgVAStateCalcNumRevs")
 
 class IAgVAStateCalcRAAN(object):
     """Properties for a RAAN calculation object."""
@@ -24817,7 +24698,6 @@ class IAgVAStateCalcRAAN(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B2456E5C-7305-4AAD-8318-7A65D65C328A}", IAgVAStateCalcRAAN)
 agcls.AgTypeNameMap["IAgVAStateCalcRAAN"] = IAgVAStateCalcRAAN
-__all__.append("IAgVAStateCalcRAAN")
 
 class IAgVAStateCalcRadOfApoapsis(object):
     """Properties for a Radius Of Apoapsis calculation object."""
@@ -24885,7 +24765,6 @@ class IAgVAStateCalcRadOfApoapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2B481148-138F-44EA-9EE2-03FC7FA82CEC}", IAgVAStateCalcRadOfApoapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcRadOfApoapsis"] = IAgVAStateCalcRadOfApoapsis
-__all__.append("IAgVAStateCalcRadOfApoapsis")
 
 class IAgVAStateCalcRadOfPeriapsis(object):
     """Properties for a Radius Of Periapsis calculation object."""
@@ -24953,7 +24832,6 @@ class IAgVAStateCalcRadOfPeriapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8AF6B875-ED5E-4734-B98B-17B03203FFE8}", IAgVAStateCalcRadOfPeriapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcRadOfPeriapsis"] = IAgVAStateCalcRadOfPeriapsis
-__all__.append("IAgVAStateCalcRadOfPeriapsis")
 
 class IAgVAStateCalcSemiMajorAxis(object):
     """Properties for a Semimajor Axis calculation object."""
@@ -25021,7 +24899,6 @@ class IAgVAStateCalcSemiMajorAxis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0DC03521-C37A-4D96-A820-E0D19835C7DF}", IAgVAStateCalcSemiMajorAxis)
 agcls.AgTypeNameMap["IAgVAStateCalcSemiMajorAxis"] = IAgVAStateCalcSemiMajorAxis
-__all__.append("IAgVAStateCalcSemiMajorAxis")
 
 class IAgVAStateCalcTimePastAscNode(object):
     """Properties for a Time Past Ascending Node calculation object."""
@@ -25089,7 +24966,6 @@ class IAgVAStateCalcTimePastAscNode(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4ED0F733-4995-4D32-8533-D7A1801C4FBB}", IAgVAStateCalcTimePastAscNode)
 agcls.AgTypeNameMap["IAgVAStateCalcTimePastAscNode"] = IAgVAStateCalcTimePastAscNode
-__all__.append("IAgVAStateCalcTimePastAscNode")
 
 class IAgVAStateCalcTimePastPeriapsis(object):
     """Properties for a Time Past Periapsis calculation object."""
@@ -25157,7 +25033,6 @@ class IAgVAStateCalcTimePastPeriapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{30BCAEF0-2921-4EE5-B047-79CA370F9C83}", IAgVAStateCalcTimePastPeriapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcTimePastPeriapsis"] = IAgVAStateCalcTimePastPeriapsis
-__all__.append("IAgVAStateCalcTimePastPeriapsis")
 
 class IAgVAStateCalcDeltaV(object):
     """Properties for a DeltaV calculation object."""
@@ -25193,7 +25068,6 @@ class IAgVAStateCalcDeltaV(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F6E77B5A-1A44-4CD0-A0BF-2991C1A33EBA}", IAgVAStateCalcDeltaV)
 agcls.AgTypeNameMap["IAgVAStateCalcDeltaV"] = IAgVAStateCalcDeltaV
-__all__.append("IAgVAStateCalcDeltaV")
 
 class IAgVAStateCalcDeltaVSquared(object):
     """Properties for a DeltaV Squared calculation object."""
@@ -25229,7 +25103,6 @@ class IAgVAStateCalcDeltaVSquared(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{52506197-B072-4F2A-A1E6-10728D969E2A}", IAgVAStateCalcDeltaVSquared)
 agcls.AgTypeNameMap["IAgVAStateCalcDeltaVSquared"] = IAgVAStateCalcDeltaVSquared
-__all__.append("IAgVAStateCalcDeltaVSquared")
 
 class IAgVAStateCalcMCSDeltaV(object):
     """Properties for a MCS DeltaV calculation object."""
@@ -25265,7 +25138,6 @@ class IAgVAStateCalcMCSDeltaV(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6411CC14-1207-49C7-ACEF-31EC24908D59}", IAgVAStateCalcMCSDeltaV)
 agcls.AgTypeNameMap["IAgVAStateCalcMCSDeltaV"] = IAgVAStateCalcMCSDeltaV
-__all__.append("IAgVAStateCalcMCSDeltaV")
 
 class IAgVAStateCalcMCSDeltaVSquared(object):
     """Properties for a MCS DeltaV Squared calculation object."""
@@ -25318,7 +25190,6 @@ class IAgVAStateCalcMCSDeltaVSquared(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{17C279CA-79C4-4076-AF85-6018DA3FAB83}", IAgVAStateCalcMCSDeltaVSquared)
 agcls.AgTypeNameMap["IAgVAStateCalcMCSDeltaVSquared"] = IAgVAStateCalcMCSDeltaVSquared
-__all__.append("IAgVAStateCalcMCSDeltaVSquared")
 
 class IAgVAStateCalcSequenceDeltaV(object):
     """Properties for a Sequence DeltaV calculation object."""
@@ -25370,7 +25241,6 @@ class IAgVAStateCalcSequenceDeltaV(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0F7BEE65-4F80-404D-AA99-1F92F88E2525}", IAgVAStateCalcSequenceDeltaV)
 agcls.AgTypeNameMap["IAgVAStateCalcSequenceDeltaV"] = IAgVAStateCalcSequenceDeltaV
-__all__.append("IAgVAStateCalcSequenceDeltaV")
 
 class IAgVAStateCalcSequenceDeltaVSquared(object):
     """Properties for a Sequence DeltaV Squared calculation object."""
@@ -25439,7 +25309,6 @@ class IAgVAStateCalcSequenceDeltaVSquared(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D6D37B91-EDAE-4E35-865F-538C2155A239}", IAgVAStateCalcSequenceDeltaVSquared)
 agcls.AgTypeNameMap["IAgVAStateCalcSequenceDeltaVSquared"] = IAgVAStateCalcSequenceDeltaVSquared
-__all__.append("IAgVAStateCalcSequenceDeltaVSquared")
 
 class IAgVAStateCalcFuelMass(object):
     """Properties for a FuelMass calculation object."""
@@ -25475,7 +25344,6 @@ class IAgVAStateCalcFuelMass(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2707D8D8-8D1E-477D-B246-0568788FE867}", IAgVAStateCalcFuelMass)
 agcls.AgTypeNameMap["IAgVAStateCalcFuelMass"] = IAgVAStateCalcFuelMass
-__all__.append("IAgVAStateCalcFuelMass")
 
 class IAgVAStateCalcDensity(object):
     """Properties for a Fuel Density calculation object."""
@@ -25511,7 +25379,6 @@ class IAgVAStateCalcDensity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9AE849EC-D75D-45A2-A23A-404C041BDB7B}", IAgVAStateCalcDensity)
 agcls.AgTypeNameMap["IAgVAStateCalcDensity"] = IAgVAStateCalcDensity
-__all__.append("IAgVAStateCalcDensity")
 
 class IAgVAStateCalcInertialDeltaVMag(object):
     """Properties for an Inertial DeltaV Magnitude calculation object."""
@@ -25547,7 +25414,6 @@ class IAgVAStateCalcInertialDeltaVMag(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{206A8426-8860-4E7B-A0A1-0C1A8D4A79C5}", IAgVAStateCalcInertialDeltaVMag)
 agcls.AgTypeNameMap["IAgVAStateCalcInertialDeltaVMag"] = IAgVAStateCalcInertialDeltaVMag
-__all__.append("IAgVAStateCalcInertialDeltaVMag")
 
 class IAgVAStateCalcInertialDeltaVx(object):
     """Properties for an Inertial DeltaVx calculation object."""
@@ -25599,7 +25465,6 @@ class IAgVAStateCalcInertialDeltaVx(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D18A9666-512E-476E-89C0-FF6B2D3C2428}", IAgVAStateCalcInertialDeltaVx)
 agcls.AgTypeNameMap["IAgVAStateCalcInertialDeltaVx"] = IAgVAStateCalcInertialDeltaVx
-__all__.append("IAgVAStateCalcInertialDeltaVx")
 
 class IAgVAStateCalcInertialDeltaVy(object):
     """Properties for an Inertial DeltaVy calculation object."""
@@ -25651,7 +25516,6 @@ class IAgVAStateCalcInertialDeltaVy(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4A5489A4-1EDC-4CD1-BF9F-EAF779ECFFD3}", IAgVAStateCalcInertialDeltaVy)
 agcls.AgTypeNameMap["IAgVAStateCalcInertialDeltaVy"] = IAgVAStateCalcInertialDeltaVy
-__all__.append("IAgVAStateCalcInertialDeltaVy")
 
 class IAgVAStateCalcInertialDeltaVz(object):
     """Properties for an Inertial DeltaVz calculation object."""
@@ -25703,7 +25567,6 @@ class IAgVAStateCalcInertialDeltaVz(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4301E169-DEE2-411A-9DBD-06DEC30F9EBD}", IAgVAStateCalcInertialDeltaVz)
 agcls.AgTypeNameMap["IAgVAStateCalcInertialDeltaVz"] = IAgVAStateCalcInertialDeltaVz
-__all__.append("IAgVAStateCalcInertialDeltaVz")
 
 class IAgVAStateCalcManeuverSpecificImpulse(object):
     """Properties for a Specific Impulse calculation object."""
@@ -25739,7 +25602,6 @@ class IAgVAStateCalcManeuverSpecificImpulse(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4EA5927D-76E7-405C-AA5A-903C19B576DC}", IAgVAStateCalcManeuverSpecificImpulse)
 agcls.AgTypeNameMap["IAgVAStateCalcManeuverSpecificImpulse"] = IAgVAStateCalcManeuverSpecificImpulse
-__all__.append("IAgVAStateCalcManeuverSpecificImpulse")
 
 class IAgVAStateCalcPressure(object):
     """Properties for a Tank Pressure calculation object."""
@@ -25775,7 +25637,6 @@ class IAgVAStateCalcPressure(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C37E82D4-7AA9-4BA0-92DA-1372268F63D6}", IAgVAStateCalcPressure)
 agcls.AgTypeNameMap["IAgVAStateCalcPressure"] = IAgVAStateCalcPressure
-__all__.append("IAgVAStateCalcPressure")
 
 class IAgVAStateCalcTemperature(object):
     """Properties for a Tank Temperature calculation object."""
@@ -25811,7 +25672,6 @@ class IAgVAStateCalcTemperature(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E0EC7C19-B337-4BFD-9A8B-30A88784D697}", IAgVAStateCalcTemperature)
 agcls.AgTypeNameMap["IAgVAStateCalcTemperature"] = IAgVAStateCalcTemperature
-__all__.append("IAgVAStateCalcTemperature")
 
 class IAgVAStateCalcVectorX(object):
     """Properties for a Vector X calculation object."""
@@ -25911,7 +25771,6 @@ class IAgVAStateCalcVectorX(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{ADD32358-B55C-4758-BBB9-391728F24BB8}", IAgVAStateCalcVectorX)
 agcls.AgTypeNameMap["IAgVAStateCalcVectorX"] = IAgVAStateCalcVectorX
-__all__.append("IAgVAStateCalcVectorX")
 
 class IAgVAStateCalcVectorY(object):
     """Properties for a Vector Y calculation object."""
@@ -26011,7 +25870,6 @@ class IAgVAStateCalcVectorY(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BCF6F352-A2ED-491B-9961-5A164D6B5388}", IAgVAStateCalcVectorY)
 agcls.AgTypeNameMap["IAgVAStateCalcVectorY"] = IAgVAStateCalcVectorY
-__all__.append("IAgVAStateCalcVectorY")
 
 class IAgVAStateCalcVectorZ(object):
     """Properties for a Vector Z calculation object."""
@@ -26111,7 +25969,6 @@ class IAgVAStateCalcVectorZ(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7F7E2A8A-7A33-48E3-A622-1A23E2672102}", IAgVAStateCalcVectorZ)
 agcls.AgTypeNameMap["IAgVAStateCalcVectorZ"] = IAgVAStateCalcVectorZ
-__all__.append("IAgVAStateCalcVectorZ")
 
 class IAgVAStateCalcMass(object):
     """Properties for a Total Mass calculation object."""
@@ -26147,7 +26004,6 @@ class IAgVAStateCalcMass(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1C324BE8-C857-42F2-AFA9-88AD686E53CE}", IAgVAStateCalcMass)
 agcls.AgTypeNameMap["IAgVAStateCalcMass"] = IAgVAStateCalcMass
-__all__.append("IAgVAStateCalcMass")
 
 class IAgVAStateCalcManeuverTotalMassFlowRate(object):
     """Properties for a Total Mass Flow Rate calculation object."""
@@ -26183,7 +26039,6 @@ class IAgVAStateCalcManeuverTotalMassFlowRate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DFD18CDB-7478-4CB0-86B3-46870753D290}", IAgVAStateCalcManeuverTotalMassFlowRate)
 agcls.AgTypeNameMap["IAgVAStateCalcManeuverTotalMassFlowRate"] = IAgVAStateCalcManeuverTotalMassFlowRate
-__all__.append("IAgVAStateCalcManeuverTotalMassFlowRate")
 
 class IAgVAStateCalcAbsoluteValue(object):
     """Properties for an Absolute Value calculation object."""
@@ -26235,7 +26090,6 @@ class IAgVAStateCalcAbsoluteValue(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{214DD350-1B42-48C1-9720-66D109A5376B}", IAgVAStateCalcAbsoluteValue)
 agcls.AgTypeNameMap["IAgVAStateCalcAbsoluteValue"] = IAgVAStateCalcAbsoluteValue
-__all__.append("IAgVAStateCalcAbsoluteValue")
 
 class IAgVAStateCalcDifference(object):
     """Properties for a Difference calculation object."""
@@ -26303,7 +26157,6 @@ class IAgVAStateCalcDifference(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4236F99F-8B4C-495E-BC83-41C4B0F1630E}", IAgVAStateCalcDifference)
 agcls.AgTypeNameMap["IAgVAStateCalcDifference"] = IAgVAStateCalcDifference
-__all__.append("IAgVAStateCalcDifference")
 
 class IAgVAStateCalcDifferenceOtherSegment(object):
     """Properties for a Difference Across Segments calculation object."""
@@ -26403,7 +26256,6 @@ class IAgVAStateCalcDifferenceOtherSegment(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E5A6D40B-34F4-4325-AC8F-EE183AC7BA96}", IAgVAStateCalcDifferenceOtherSegment)
 agcls.AgTypeNameMap["IAgVAStateCalcDifferenceOtherSegment"] = IAgVAStateCalcDifferenceOtherSegment
-__all__.append("IAgVAStateCalcDifferenceOtherSegment")
 
 class IAgVAStateCalcPosDifferenceOtherSegment(object):
     """Properties for a Position Difference Across Segments calculation object."""
@@ -26471,7 +26323,6 @@ class IAgVAStateCalcPosDifferenceOtherSegment(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{168CD10A-F726-450F-A63F-E00A85FDEF87}", IAgVAStateCalcPosDifferenceOtherSegment)
 agcls.AgTypeNameMap["IAgVAStateCalcPosDifferenceOtherSegment"] = IAgVAStateCalcPosDifferenceOtherSegment
-__all__.append("IAgVAStateCalcPosDifferenceOtherSegment")
 
 class IAgVAStateCalcVelDifferenceOtherSegment(object):
     """Properties for a Velocity Difference Across Segments calculation object."""
@@ -26539,7 +26390,6 @@ class IAgVAStateCalcVelDifferenceOtherSegment(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9BE8161D-7D1A-4FF6-8B63-C160E22844D1}", IAgVAStateCalcVelDifferenceOtherSegment)
 agcls.AgTypeNameMap["IAgVAStateCalcVelDifferenceOtherSegment"] = IAgVAStateCalcVelDifferenceOtherSegment
-__all__.append("IAgVAStateCalcVelDifferenceOtherSegment")
 
 class IAgVAStateCalcPosVelDifferenceOtherSegment(object):
     """Properties for a Position and Velocity Difference Across Segments calculation object."""
@@ -26607,7 +26457,6 @@ class IAgVAStateCalcPosVelDifferenceOtherSegment(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{58BA297D-0E89-46C4-9C9B-E8E7EA2B23AC}", IAgVAStateCalcPosVelDifferenceOtherSegment)
 agcls.AgTypeNameMap["IAgVAStateCalcPosVelDifferenceOtherSegment"] = IAgVAStateCalcPosVelDifferenceOtherSegment
-__all__.append("IAgVAStateCalcPosVelDifferenceOtherSegment")
 
 class IAgVAStateCalcValueAtSegment(object):
     """Properties for a Value At Segment calculation object."""
@@ -26691,7 +26540,6 @@ class IAgVAStateCalcValueAtSegment(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{950DEE79-D37E-4EE5-AB69-6E145AAFB9AC}", IAgVAStateCalcValueAtSegment)
 agcls.AgTypeNameMap["IAgVAStateCalcValueAtSegment"] = IAgVAStateCalcValueAtSegment
-__all__.append("IAgVAStateCalcValueAtSegment")
 
 class IAgVAStateCalcMaxValue(object):
     """Properties for a Maximum Value calculation object."""
@@ -26743,7 +26591,6 @@ class IAgVAStateCalcMaxValue(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A7B9EBBB-D87A-4F04-8DE3-E7812F322B66}", IAgVAStateCalcMaxValue)
 agcls.AgTypeNameMap["IAgVAStateCalcMaxValue"] = IAgVAStateCalcMaxValue
-__all__.append("IAgVAStateCalcMaxValue")
 
 class IAgVAStateCalcMinValue(object):
     """Properties for a Minimum Value calculation object."""
@@ -26795,7 +26642,6 @@ class IAgVAStateCalcMinValue(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{22B15669-D363-4C73-87AE-424E1DF37ABA}", IAgVAStateCalcMinValue)
 agcls.AgTypeNameMap["IAgVAStateCalcMinValue"] = IAgVAStateCalcMinValue
-__all__.append("IAgVAStateCalcMinValue")
 
 class IAgVAStateCalcMeanValue(object):
     """Properties for a Mean Value calculation object."""
@@ -26847,7 +26693,6 @@ class IAgVAStateCalcMeanValue(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7523BA0F-0B19-4660-8785-D9C23F29CB1C}", IAgVAStateCalcMeanValue)
 agcls.AgTypeNameMap["IAgVAStateCalcMeanValue"] = IAgVAStateCalcMeanValue
-__all__.append("IAgVAStateCalcMeanValue")
 
 class IAgVAStateCalcMedianValue(object):
     """Properties for a Median Value calculation object."""
@@ -26899,7 +26744,6 @@ class IAgVAStateCalcMedianValue(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3B7D51C9-5395-4AAA-828D-2AFF5CAB5676}", IAgVAStateCalcMedianValue)
 agcls.AgTypeNameMap["IAgVAStateCalcMedianValue"] = IAgVAStateCalcMedianValue
-__all__.append("IAgVAStateCalcMedianValue")
 
 class IAgVAStateCalcStandardDeviation(object):
     """Properties for a Standard Deviation calculation object."""
@@ -26951,7 +26795,6 @@ class IAgVAStateCalcStandardDeviation(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{41847821-7A1E-46E9-AC78-B50A3D1D1500}", IAgVAStateCalcStandardDeviation)
 agcls.AgTypeNameMap["IAgVAStateCalcStandardDeviation"] = IAgVAStateCalcStandardDeviation
-__all__.append("IAgVAStateCalcStandardDeviation")
 
 class IAgVAStateCalcNegative(object):
     """Properties for a Negative calculation object."""
@@ -27003,7 +26846,6 @@ class IAgVAStateCalcNegative(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AE894289-670C-4C3F-8EAB-ABD6056919F2}", IAgVAStateCalcNegative)
 agcls.AgTypeNameMap["IAgVAStateCalcNegative"] = IAgVAStateCalcNegative
-__all__.append("IAgVAStateCalcNegative")
 
 class IAgVAStateCalcTrueAnomaly(object):
     """Properties for a Mean True Anomaly calculation object."""
@@ -27071,7 +26913,6 @@ class IAgVAStateCalcTrueAnomaly(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{639BD92E-793C-49C3-A72C-3456824F43EE}", IAgVAStateCalcTrueAnomaly)
 agcls.AgTypeNameMap["IAgVAStateCalcTrueAnomaly"] = IAgVAStateCalcTrueAnomaly
-__all__.append("IAgVAStateCalcTrueAnomaly")
 
 class IAgVABDotRCalc(object):
     """Properties for a BDotR calculation object."""
@@ -27139,7 +26980,6 @@ class IAgVABDotRCalc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BE67DDCF-6371-4275-996C-5DDB200E3B3F}", IAgVABDotRCalc)
 agcls.AgTypeNameMap["IAgVABDotRCalc"] = IAgVABDotRCalc
-__all__.append("IAgVABDotRCalc")
 
 class IAgVABDotTCalc(object):
     """Properties for a BDotT calculation object."""
@@ -27207,7 +27047,6 @@ class IAgVABDotTCalc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E9BE921C-D864-4019-A3E7-A54DA59502FD}", IAgVABDotTCalc)
 agcls.AgTypeNameMap["IAgVABDotTCalc"] = IAgVABDotTCalc
-__all__.append("IAgVABDotTCalc")
 
 class IAgVABMagCalc(object):
     """Properties for a BMagnitude calculation object."""
@@ -27259,7 +27098,6 @@ class IAgVABMagCalc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7D570198-8048-407E-B532-B7B2B86860C1}", IAgVABMagCalc)
 agcls.AgTypeNameMap["IAgVABMagCalc"] = IAgVABMagCalc
-__all__.append("IAgVABMagCalc")
 
 class IAgVABThetaCalc(object):
     """Properties for a BTheta calculation object."""
@@ -27327,7 +27165,6 @@ class IAgVABThetaCalc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F478A128-3084-457F-B098-09114FF32DB8}", IAgVABThetaCalc)
 agcls.AgTypeNameMap["IAgVABThetaCalc"] = IAgVABThetaCalc
-__all__.append("IAgVABThetaCalc")
 
 class IAgVAStateCalcDeltaDec(object):
     """Properties for a Delta Declination calculation object."""
@@ -27411,7 +27248,6 @@ class IAgVAStateCalcDeltaDec(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2C14B234-E769-4969-BFA3-54A5AB2C6F89}", IAgVAStateCalcDeltaDec)
 agcls.AgTypeNameMap["IAgVAStateCalcDeltaDec"] = IAgVAStateCalcDeltaDec
-__all__.append("IAgVAStateCalcDeltaDec")
 
 class IAgVAStateCalcDeltaRA(object):
     """Properties for a Delta Right Asc calculation object."""
@@ -27495,7 +27331,6 @@ class IAgVAStateCalcDeltaRA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{42FFF17F-F89E-438E-B5C9-0206AD20D09E}", IAgVAStateCalcDeltaRA)
 agcls.AgTypeNameMap["IAgVAStateCalcDeltaRA"] = IAgVAStateCalcDeltaRA
-__all__.append("IAgVAStateCalcDeltaRA")
 
 class IAgVAStateCalcBetaAngle(object):
     """Properties for a Beta Angle calculation object."""
@@ -27547,7 +27382,6 @@ class IAgVAStateCalcBetaAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6D251D91-4555-4C35-B56C-04832CF014E2}", IAgVAStateCalcBetaAngle)
 agcls.AgTypeNameMap["IAgVAStateCalcBetaAngle"] = IAgVAStateCalcBetaAngle
-__all__.append("IAgVAStateCalcBetaAngle")
 
 class IAgVAStateCalcLocalApparentSolarLon(object):
     """Properties for a Local Apparent Solar Longitude calculation object."""
@@ -27599,7 +27433,6 @@ class IAgVAStateCalcLocalApparentSolarLon(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{619668AB-B09E-4160-9ED3-1365F3678C60}", IAgVAStateCalcLocalApparentSolarLon)
 agcls.AgTypeNameMap["IAgVAStateCalcLocalApparentSolarLon"] = IAgVAStateCalcLocalApparentSolarLon
-__all__.append("IAgVAStateCalcLocalApparentSolarLon")
 
 class IAgVAStateCalcLonOfPeriapsis(object):
     """Properties for a Longitude of Periapsis calculation object."""
@@ -27667,7 +27500,6 @@ class IAgVAStateCalcLonOfPeriapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1F8ECEB0-EFBE-4A23-8781-9BDEFF119DF0}", IAgVAStateCalcLonOfPeriapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcLonOfPeriapsis"] = IAgVAStateCalcLonOfPeriapsis
-__all__.append("IAgVAStateCalcLonOfPeriapsis")
 
 class IAgVAStateCalcOrbitStateValue(object):
     """Properties for an Orbit State Value calculation object."""
@@ -27863,7 +27695,6 @@ class IAgVAStateCalcOrbitStateValue(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BE928A27-517C-4D52-A681-DA6CFC89E59F}", IAgVAStateCalcOrbitStateValue)
 agcls.AgTypeNameMap["IAgVAStateCalcOrbitStateValue"] = IAgVAStateCalcOrbitStateValue
-__all__.append("IAgVAStateCalcOrbitStateValue")
 
 class IAgVAStateCalcSignedEccentricity(object):
     """Properties for a SignedEccentricity calculation object."""
@@ -27931,7 +27762,6 @@ class IAgVAStateCalcSignedEccentricity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CCBD1A51-0C24-4FEA-936D-F8E173931C30}", IAgVAStateCalcSignedEccentricity)
 agcls.AgTypeNameMap["IAgVAStateCalcSignedEccentricity"] = IAgVAStateCalcSignedEccentricity
-__all__.append("IAgVAStateCalcSignedEccentricity")
 
 class IAgVAStateCalcTrueLon(object):
     """Properties for a True Longitude calculation object."""
@@ -27999,7 +27829,6 @@ class IAgVAStateCalcTrueLon(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E7F127C5-C675-4952-A10C-17AFCBB90F1B}", IAgVAStateCalcTrueLon)
 agcls.AgTypeNameMap["IAgVAStateCalcTrueLon"] = IAgVAStateCalcTrueLon
-__all__.append("IAgVAStateCalcTrueLon")
 
 class IAgVAStateCalcPower(object):
     """Properties for a Power calculation object."""
@@ -28051,7 +27880,6 @@ class IAgVAStateCalcPower(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{748E8F67-4505-4DE7-8206-4752EF3A9158}", IAgVAStateCalcPower)
 agcls.AgTypeNameMap["IAgVAStateCalcPower"] = IAgVAStateCalcPower
-__all__.append("IAgVAStateCalcPower")
 
 class IAgVAStateCalcRelMotion(object):
     """Properties for a Relative Motion calculation object."""
@@ -28144,7 +27972,6 @@ class IAgVAStateCalcRelMotion(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9B36C269-5E68-456B-A2BD-B9BEA9B131DB}", IAgVAStateCalcRelMotion)
 agcls.AgTypeNameMap["IAgVAStateCalcRelMotion"] = IAgVAStateCalcRelMotion
-__all__.append("IAgVAStateCalcRelMotion")
 
 class IAgVAStateCalcSolarBetaAngle(object):
     """Properties for a Solar Beta Angle calculation object."""
@@ -28285,7 +28112,6 @@ class IAgVAStateCalcSolarBetaAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1CBEFF7B-1B28-4AEB-A8BD-B329419FC824}", IAgVAStateCalcSolarBetaAngle)
 agcls.AgTypeNameMap["IAgVAStateCalcSolarBetaAngle"] = IAgVAStateCalcSolarBetaAngle
-__all__.append("IAgVAStateCalcSolarBetaAngle")
 
 class IAgVAStateCalcSolarInPlaneAngle(object):
     """Properties for a Solar In Plane Angle calculation object."""
@@ -28442,7 +28268,6 @@ class IAgVAStateCalcSolarInPlaneAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{08345343-C64C-4CAF-B1C4-EE76DC4917B5}", IAgVAStateCalcSolarInPlaneAngle)
 agcls.AgTypeNameMap["IAgVAStateCalcSolarInPlaneAngle"] = IAgVAStateCalcSolarInPlaneAngle
-__all__.append("IAgVAStateCalcSolarInPlaneAngle")
 
 class IAgVAStateCalcRelPosDecAngle(object):
     """Properties for a Relative Position Declination Angle calculation object."""
@@ -28583,7 +28408,6 @@ class IAgVAStateCalcRelPosDecAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{259D6521-23C1-48B4-A718-27AB113952E9}", IAgVAStateCalcRelPosDecAngle)
 agcls.AgTypeNameMap["IAgVAStateCalcRelPosDecAngle"] = IAgVAStateCalcRelPosDecAngle
-__all__.append("IAgVAStateCalcRelPosDecAngle")
 
 class IAgVAStateCalcRelPosInPlaneAngle(object):
     """Properties for a Relative Position In Plane Angle calculation object."""
@@ -28740,7 +28564,6 @@ class IAgVAStateCalcRelPosInPlaneAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E00BF049-7F38-4938-986F-8AB987CE84D2}", IAgVAStateCalcRelPosInPlaneAngle)
 agcls.AgTypeNameMap["IAgVAStateCalcRelPosInPlaneAngle"] = IAgVAStateCalcRelPosInPlaneAngle
-__all__.append("IAgVAStateCalcRelPosInPlaneAngle")
 
 class IAgVAStateCalcRelativeInclination(object):
     """Properties for a Relative Inclination Angle calculation object."""
@@ -28849,7 +28672,6 @@ class IAgVAStateCalcRelativeInclination(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D0299E22-99A9-4FEF-82B3-A1A7E9B9C3C1}", IAgVAStateCalcRelativeInclination)
 agcls.AgTypeNameMap["IAgVAStateCalcRelativeInclination"] = IAgVAStateCalcRelativeInclination
-__all__.append("IAgVAStateCalcRelativeInclination")
 
 class IAgVAStateCalcCurvilinearRelMotion(object):
     """Properties for Curvilinear Relative Motion  calculation object."""
@@ -28990,7 +28812,6 @@ class IAgVAStateCalcCurvilinearRelMotion(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5658DCFF-6F7B-4935-BA41-135F502DDC07}", IAgVAStateCalcCurvilinearRelMotion)
 agcls.AgTypeNameMap["IAgVAStateCalcCurvilinearRelMotion"] = IAgVAStateCalcCurvilinearRelMotion
-__all__.append("IAgVAStateCalcCurvilinearRelMotion")
 
 class IAgVAStateCalcCustomFunction(object):
     """Properties for a Custom Function calculation object."""
@@ -29074,7 +28895,6 @@ class IAgVAStateCalcCustomFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0943C88D-EE8E-48B1-8C5B-79A4748452C8}", IAgVAStateCalcCustomFunction)
 agcls.AgTypeNameMap["IAgVAStateCalcCustomFunction"] = IAgVAStateCalcCustomFunction
-__all__.append("IAgVAStateCalcCustomFunction")
 
 class IAgVAStateCalcScript(object):
     """Properties for a Script calculation object."""
@@ -29151,7 +28971,6 @@ class IAgVAStateCalcScript(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{42A2EAD1-9982-4895-9637-4C83524F2A02}", IAgVAStateCalcScript)
 agcls.AgTypeNameMap["IAgVAStateCalcScript"] = IAgVAStateCalcScript
-__all__.append("IAgVAStateCalcScript")
 
 class IAgVAStateCalcCd(object):
     """Properties for a Cd calculation object."""
@@ -29187,7 +29006,6 @@ class IAgVAStateCalcCd(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{18430B84-59EA-4D47-84B4-E7D5589F1931}", IAgVAStateCalcCd)
 agcls.AgTypeNameMap["IAgVAStateCalcCd"] = IAgVAStateCalcCd
-__all__.append("IAgVAStateCalcCd")
 
 class IAgVAStateCalcCr(object):
     """Properties for a Cr calculation object."""
@@ -29223,7 +29041,6 @@ class IAgVAStateCalcCr(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BC4AD651-BFCA-4E69-8409-54BB0880F9E6}", IAgVAStateCalcCr)
 agcls.AgTypeNameMap["IAgVAStateCalcCr"] = IAgVAStateCalcCr
-__all__.append("IAgVAStateCalcCr")
 
 class IAgVAStateCalcDragArea(object):
     """Properties for a DragArea calculation object. CAgAsStateCalcDragArea"""
@@ -29259,7 +29076,6 @@ class IAgVAStateCalcDragArea(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0D264D3F-4409-4CF7-95AD-0129F85F2A72}", IAgVAStateCalcDragArea)
 agcls.AgTypeNameMap["IAgVAStateCalcDragArea"] = IAgVAStateCalcDragArea
-__all__.append("IAgVAStateCalcDragArea")
 
 class IAgVAStateCalcRadiationPressureArea(object):
     """Properties for a RadPressureArea calculation object."""
@@ -29295,7 +29111,6 @@ class IAgVAStateCalcRadiationPressureArea(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F6C33B19-2B4F-4DBB-8CA0-B3E8B971BC49}", IAgVAStateCalcRadiationPressureArea)
 agcls.AgTypeNameMap["IAgVAStateCalcRadiationPressureArea"] = IAgVAStateCalcRadiationPressureArea
-__all__.append("IAgVAStateCalcRadiationPressureArea")
 
 class IAgVAStateCalcRadiationPressureCoefficient(object):
     """Properties for a RadiationPressureCoefficient calculation object."""
@@ -29331,7 +29146,6 @@ class IAgVAStateCalcRadiationPressureCoefficient(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9AE54040-18D2-46FC-A12C-C03BDA65FE22}", IAgVAStateCalcRadiationPressureCoefficient)
 agcls.AgTypeNameMap["IAgVAStateCalcRadiationPressureCoefficient"] = IAgVAStateCalcRadiationPressureCoefficient
-__all__.append("IAgVAStateCalcRadiationPressureCoefficient")
 
 class IAgVAStateCalcSRPArea(object):
     """Properties for an SRPArea calculation object."""
@@ -29367,7 +29181,6 @@ class IAgVAStateCalcSRPArea(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{776A4C17-4D73-4ED0-A564-E9BD0D1788EC}", IAgVAStateCalcSRPArea)
 agcls.AgTypeNameMap["IAgVAStateCalcSRPArea"] = IAgVAStateCalcSRPArea
-__all__.append("IAgVAStateCalcSRPArea")
 
 class IAgVAStateCalcCosOfVerticalFPA(object):
     """Properties for a Cosine of Vertical FPA calculation object."""
@@ -29419,7 +29232,6 @@ class IAgVAStateCalcCosOfVerticalFPA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D2C32FFB-6C5C-46E8-B386-2E69262118C8}", IAgVAStateCalcCosOfVerticalFPA)
 agcls.AgTypeNameMap["IAgVAStateCalcCosOfVerticalFPA"] = IAgVAStateCalcCosOfVerticalFPA
-__all__.append("IAgVAStateCalcCosOfVerticalFPA")
 
 class IAgVAStateCalcDec(object):
     """Properties for a Declination calculation object."""
@@ -29471,7 +29283,6 @@ class IAgVAStateCalcDec(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B3277FB5-1B7A-4A02-91B1-F6682F29CB87}", IAgVAStateCalcDec)
 agcls.AgTypeNameMap["IAgVAStateCalcDec"] = IAgVAStateCalcDec
-__all__.append("IAgVAStateCalcDec")
 
 class IAgVAStateCalcFPA(object):
     """Properties for a Flight Path Angle calculation object."""
@@ -29523,7 +29334,6 @@ class IAgVAStateCalcFPA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0A7406E7-049A-4054-A1FE-3E86D1998733}", IAgVAStateCalcFPA)
 agcls.AgTypeNameMap["IAgVAStateCalcFPA"] = IAgVAStateCalcFPA
-__all__.append("IAgVAStateCalcFPA")
 
 class IAgVAStateCalcRMag(object):
     """Properties for an R Mag calculation object. AsStateCalcRMag"""
@@ -29575,7 +29385,6 @@ class IAgVAStateCalcRMag(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3E6FAE70-AA94-4036-9FBA-75954E96D759}", IAgVAStateCalcRMag)
 agcls.AgTypeNameMap["IAgVAStateCalcRMag"] = IAgVAStateCalcRMag
-__all__.append("IAgVAStateCalcRMag")
 
 class IAgVAStateCalcRA(object):
     """Properties for a Right Asc calculation object."""
@@ -29627,7 +29436,6 @@ class IAgVAStateCalcRA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3D404DD1-E609-4CA0-87BE-3D9EDD9A7BCE}", IAgVAStateCalcRA)
 agcls.AgTypeNameMap["IAgVAStateCalcRA"] = IAgVAStateCalcRA
-__all__.append("IAgVAStateCalcRA")
 
 class IAgVAStateCalcVMag(object):
     """Properties for a V Mag calculation object."""
@@ -29679,7 +29487,6 @@ class IAgVAStateCalcVMag(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6795C6E5-3D87-42A9-A40F-DAFEDA08235B}", IAgVAStateCalcVMag)
 agcls.AgTypeNameMap["IAgVAStateCalcVMag"] = IAgVAStateCalcVMag
-__all__.append("IAgVAStateCalcVMag")
 
 class IAgVAStateCalcVelAz(object):
     """Properties for a Velocity Azimuth calculation object."""
@@ -29731,7 +29538,6 @@ class IAgVAStateCalcVelAz(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5B86F143-59CB-4014-A920-7F46613F2FB5}", IAgVAStateCalcVelAz)
 agcls.AgTypeNameMap["IAgVAStateCalcVelAz"] = IAgVAStateCalcVelAz
-__all__.append("IAgVAStateCalcVelAz")
 
 class IAgVAStateCalcC3Energy(object):
     """Properties for a C3 Energy calculation object."""
@@ -29799,7 +29605,6 @@ class IAgVAStateCalcC3Energy(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{23937635-E460-428B-90CC-2EAA1C51870B}", IAgVAStateCalcC3Energy)
 agcls.AgTypeNameMap["IAgVAStateCalcC3Energy"] = IAgVAStateCalcC3Energy
-__all__.append("IAgVAStateCalcC3Energy")
 
 class IAgVAStateCalcInAsympDec(object):
     """Properties for an Incoming Asymptote Dec calculation object."""
@@ -29851,7 +29656,6 @@ class IAgVAStateCalcInAsympDec(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BE07A06D-B79A-45C7-A460-A2D22467F1CF}", IAgVAStateCalcInAsympDec)
 agcls.AgTypeNameMap["IAgVAStateCalcInAsympDec"] = IAgVAStateCalcInAsympDec
-__all__.append("IAgVAStateCalcInAsympDec")
 
 class IAgVAStateCalcInAsympRA(object):
     """Properties for a Incoming Asymptote RA calculation object."""
@@ -29903,7 +29707,6 @@ class IAgVAStateCalcInAsympRA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{732CE68C-1443-4C38-A037-BD228DD1DD50}", IAgVAStateCalcInAsympRA)
 agcls.AgTypeNameMap["IAgVAStateCalcInAsympRA"] = IAgVAStateCalcInAsympRA
-__all__.append("IAgVAStateCalcInAsympRA")
 
 class IAgVAStateCalcInVelAzAtPeriapsis(object):
     """Properties for an Incoming Vel Az at Periapsis calculation object."""
@@ -29955,7 +29758,6 @@ class IAgVAStateCalcInVelAzAtPeriapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{10C8047E-4366-4951-A479-BEB44FE74322}", IAgVAStateCalcInVelAzAtPeriapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcInVelAzAtPeriapsis"] = IAgVAStateCalcInVelAzAtPeriapsis
-__all__.append("IAgVAStateCalcInVelAzAtPeriapsis")
 
 class IAgVAStateCalcOutAsympDec(object):
     """Properties for a Outgoing Asymptote Dec calculation object."""
@@ -30007,7 +29809,6 @@ class IAgVAStateCalcOutAsympDec(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{0DB1FF5A-2DA1-4472-A3DF-52B52989E27B}", IAgVAStateCalcOutAsympDec)
 agcls.AgTypeNameMap["IAgVAStateCalcOutAsympDec"] = IAgVAStateCalcOutAsympDec
-__all__.append("IAgVAStateCalcOutAsympDec")
 
 class IAgVAStateCalcOutAsympRA(object):
     """Properties for a Outgoing Asymptote RA calculation object."""
@@ -30059,7 +29860,6 @@ class IAgVAStateCalcOutAsympRA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F2386148-5F54-40D2-91DD-322B912712B3}", IAgVAStateCalcOutAsympRA)
 agcls.AgTypeNameMap["IAgVAStateCalcOutAsympRA"] = IAgVAStateCalcOutAsympRA
-__all__.append("IAgVAStateCalcOutAsympRA")
 
 class IAgVAStateCalcOutVelAzAtPeriapsis(object):
     """Properties for a Outgoing Vel Az at Periapsis calculation object."""
@@ -30111,7 +29911,6 @@ class IAgVAStateCalcOutVelAzAtPeriapsis(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F908643D-9C89-4EDF-B45F-948B9303F260}", IAgVAStateCalcOutVelAzAtPeriapsis)
 agcls.AgTypeNameMap["IAgVAStateCalcOutVelAzAtPeriapsis"] = IAgVAStateCalcOutVelAzAtPeriapsis
-__all__.append("IAgVAStateCalcOutVelAzAtPeriapsis")
 
 class IAgVAStateCalcDuration(object):
     """Properties for a Duration calculation object."""
@@ -30147,7 +29946,6 @@ class IAgVAStateCalcDuration(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{429E860D-8706-4C30-9F40-B0113E00BAF8}", IAgVAStateCalcDuration)
 agcls.AgTypeNameMap["IAgVAStateCalcDuration"] = IAgVAStateCalcDuration
-__all__.append("IAgVAStateCalcDuration")
 
 class IAgVAStateCalcUserValue(object):
     """Interface for CAgAsStateCalcUserValue"""
@@ -30200,7 +29998,6 @@ class IAgVAStateCalcUserValue(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{BB517244-9226-45E2-9048-9D4E289BA920}", IAgVAStateCalcUserValue)
 agcls.AgTypeNameMap["IAgVAStateCalcUserValue"] = IAgVAStateCalcUserValue
-__all__.append("IAgVAStateCalcUserValue")
 
 class IAgVAStateCalcCrdnAngle(object):
     """Properties for an Vector Geometry Tool Angle calculation object."""
@@ -30252,7 +30049,6 @@ class IAgVAStateCalcCrdnAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7EC926A3-7ED6-4091-9E74-EBA5700075A5}", IAgVAStateCalcCrdnAngle)
 agcls.AgTypeNameMap["IAgVAStateCalcCrdnAngle"] = IAgVAStateCalcCrdnAngle
-__all__.append("IAgVAStateCalcCrdnAngle")
 
 class IAgVAStateCalcAngle(object):
     """Properties for an Angle Between Vectors calculation object."""
@@ -30320,7 +30116,6 @@ class IAgVAStateCalcAngle(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E703F5BA-3C07-407B-8BE6-5361172E97FF}", IAgVAStateCalcAngle)
 agcls.AgTypeNameMap["IAgVAStateCalcAngle"] = IAgVAStateCalcAngle
-__all__.append("IAgVAStateCalcAngle")
 
 class IAgVAStateCalcDotProduct(object):
     """Properties for a Dot Product calculation object."""
@@ -30388,7 +30183,6 @@ class IAgVAStateCalcDotProduct(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8B3C8283-79EC-48D1-BFBD-66775AA10803}", IAgVAStateCalcDotProduct)
 agcls.AgTypeNameMap["IAgVAStateCalcDotProduct"] = IAgVAStateCalcDotProduct
-__all__.append("IAgVAStateCalcDotProduct")
 
 class IAgVAStateCalcVectorDec(object):
     """Properties for a Vector Dec calculation object."""
@@ -30456,7 +30250,6 @@ class IAgVAStateCalcVectorDec(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5709E392-CEF3-4D83-BC2C-FD3F67EE363F}", IAgVAStateCalcVectorDec)
 agcls.AgTypeNameMap["IAgVAStateCalcVectorDec"] = IAgVAStateCalcVectorDec
-__all__.append("IAgVAStateCalcVectorDec")
 
 class IAgVAStateCalcVectorMag(object):
     """Properties for a Vector Mag calculation object."""
@@ -30524,7 +30317,6 @@ class IAgVAStateCalcVectorMag(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{522AF5A3-02FE-49E3-931A-3E8234EF896F}", IAgVAStateCalcVectorMag)
 agcls.AgTypeNameMap["IAgVAStateCalcVectorMag"] = IAgVAStateCalcVectorMag
-__all__.append("IAgVAStateCalcVectorMag")
 
 class IAgVAStateCalcVectorRA(object):
     """Properties for a Vector RA calculation object."""
@@ -30592,7 +30384,6 @@ class IAgVAStateCalcVectorRA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E6AF6E11-F9BC-46E0-83C0-ACD79B45B4AD}", IAgVAStateCalcVectorRA)
 agcls.AgTypeNameMap["IAgVAStateCalcVectorRA"] = IAgVAStateCalcVectorRA
-__all__.append("IAgVAStateCalcVectorRA")
 
 class IAgVAStateCalcOnePtAccess(object):
     """Properties for an Access calculation object."""
@@ -30742,7 +30533,6 @@ class IAgVAStateCalcOnePtAccess(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EE091E20-3104-48F9-8163-29272A8B81C8}", IAgVAStateCalcOnePtAccess)
 agcls.AgTypeNameMap["IAgVAStateCalcOnePtAccess"] = IAgVAStateCalcOnePtAccess
-__all__.append("IAgVAStateCalcOnePtAccess")
 
 class IAgVAStateCalcDifferenceAcrossSegmentsOtherSat(object):
     """Properties for a Difference Across Segments Across Satellites calculation object."""
@@ -30851,7 +30641,6 @@ class IAgVAStateCalcDifferenceAcrossSegmentsOtherSat(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C5C0E056-EC28-4D88-A55F-6BA6D2F2976E}", IAgVAStateCalcDifferenceAcrossSegmentsOtherSat)
 agcls.AgTypeNameMap["IAgVAStateCalcDifferenceAcrossSegmentsOtherSat"] = IAgVAStateCalcDifferenceAcrossSegmentsOtherSat
-__all__.append("IAgVAStateCalcDifferenceAcrossSegmentsOtherSat")
 
 class IAgVAStateCalcValueAtSegmentOtherSat(object):
     """Properties for a Value At Segment Across Satellites calculation object."""
@@ -30944,7 +30733,6 @@ class IAgVAStateCalcValueAtSegmentOtherSat(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1F7F3653-10FD-4377-B8FB-8C42DABDACC3}", IAgVAStateCalcValueAtSegmentOtherSat)
 agcls.AgTypeNameMap["IAgVAStateCalcValueAtSegmentOtherSat"] = IAgVAStateCalcValueAtSegmentOtherSat
-__all__.append("IAgVAStateCalcValueAtSegmentOtherSat")
 
 class IAgVAStateCalcRARate(object):
     """Properties for a Right Ascension Rate calculation object"""
@@ -30996,7 +30784,6 @@ class IAgVAStateCalcRARate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{69DDD91C-168B-47BD-9977-EB8431B4C112}", IAgVAStateCalcRARate)
 agcls.AgTypeNameMap["IAgVAStateCalcRARate"] = IAgVAStateCalcRARate
-__all__.append("IAgVAStateCalcRARate")
 
 class IAgVAStateCalcDecRate(object):
     """Properties for a Declination Rate calculation object"""
@@ -31048,7 +30835,6 @@ class IAgVAStateCalcDecRate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EE447FA6-4B21-4823-8811-E0E3C38A29E2}", IAgVAStateCalcDecRate)
 agcls.AgTypeNameMap["IAgVAStateCalcDecRate"] = IAgVAStateCalcDecRate
-__all__.append("IAgVAStateCalcDecRate")
 
 class IAgVAStateCalcGravitationalParameter(object):
     """Properties for a Gravitational Parameter calculation object."""
@@ -31132,7 +30918,6 @@ class IAgVAStateCalcGravitationalParameter(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1FE2F1B7-9FE8-409E-AAD8-92CC002CDED0}", IAgVAStateCalcGravitationalParameter)
 agcls.AgTypeNameMap["IAgVAStateCalcGravitationalParameter"] = IAgVAStateCalcGravitationalParameter
-__all__.append("IAgVAStateCalcGravitationalParameter")
 
 class IAgVAStateCalcReferenceRadius(object):
     """Properties for a Reference Radius calculation object."""
@@ -31216,7 +31001,6 @@ class IAgVAStateCalcReferenceRadius(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E736A217-0B66-48F6-99FA-D338835B4D40}", IAgVAStateCalcReferenceRadius)
 agcls.AgTypeNameMap["IAgVAStateCalcReferenceRadius"] = IAgVAStateCalcReferenceRadius
-__all__.append("IAgVAStateCalcReferenceRadius")
 
 class IAgVAStateCalcGravCoeff(object):
     """Properties for a gravity coefficient calculation object."""
@@ -31348,7 +31132,6 @@ class IAgVAStateCalcGravCoeff(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{057976B1-EBDA-4674-9FC0-556D7BD87599}", IAgVAStateCalcGravCoeff)
 agcls.AgTypeNameMap["IAgVAStateCalcGravCoeff"] = IAgVAStateCalcGravCoeff
-__all__.append("IAgVAStateCalcGravCoeff")
 
 class IAgVAStateCalcSpeedOfLight(object):
     """Properties for a Speed of Light calculation object."""
@@ -31384,7 +31167,6 @@ class IAgVAStateCalcSpeedOfLight(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6B7D157C-43CA-4ED4-9C3C-DF8E4ABAE4E0}", IAgVAStateCalcSpeedOfLight)
 agcls.AgTypeNameMap["IAgVAStateCalcSpeedOfLight"] = IAgVAStateCalcSpeedOfLight
-__all__.append("IAgVAStateCalcSpeedOfLight")
 
 class IAgVAStateCalcPi(object):
     """Properties for a Pi calculation object."""
@@ -31420,7 +31202,6 @@ class IAgVAStateCalcPi(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DDE94FB4-1751-4F38-9304-5ACC35CDC811}", IAgVAStateCalcPi)
 agcls.AgTypeNameMap["IAgVAStateCalcPi"] = IAgVAStateCalcPi
-__all__.append("IAgVAStateCalcPi")
 
 class IAgVAStateCalcScalar(object):
     """Properties for a Scalar calculation object."""
@@ -31488,7 +31269,6 @@ class IAgVAStateCalcScalar(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D792B480-CCC7-4040-BD41-A26E56DE6CA8}", IAgVAStateCalcScalar)
 agcls.AgTypeNameMap["IAgVAStateCalcScalar"] = IAgVAStateCalcScalar
-__all__.append("IAgVAStateCalcScalar")
 
 class IAgVAStateCalcApparentSolarTime(object):
     """Properties for an Apparent Solar Time calculation object."""
@@ -31540,7 +31320,6 @@ class IAgVAStateCalcApparentSolarTime(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{439AD289-B0FE-4596-A6AC-A29B6F98C313}", IAgVAStateCalcApparentSolarTime)
 agcls.AgTypeNameMap["IAgVAStateCalcApparentSolarTime"] = IAgVAStateCalcApparentSolarTime
-__all__.append("IAgVAStateCalcApparentSolarTime")
 
 class IAgVAStateCalcEarthMeanSolarTime(object):
     """Properties for an Earth Mean Solar Time calculation object."""
@@ -31592,7 +31371,6 @@ class IAgVAStateCalcEarthMeanSolarTime(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{45C37D81-A752-4AA8-AC7D-7FAD78AA7763}", IAgVAStateCalcEarthMeanSolarTime)
 agcls.AgTypeNameMap["IAgVAStateCalcEarthMeanSolarTime"] = IAgVAStateCalcEarthMeanSolarTime
-__all__.append("IAgVAStateCalcEarthMeanSolarTime")
 
 class IAgVAStateCalcEarthMeanLocTimeAN(object):
     """Properties for an Earth Mean Local Time of Ascending Node calculation object."""
@@ -31644,7 +31422,6 @@ class IAgVAStateCalcEarthMeanLocTimeAN(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{325E3769-FB5E-4B6B-AC89-48CD5A09C528}", IAgVAStateCalcEarthMeanLocTimeAN)
 agcls.AgTypeNameMap["IAgVAStateCalcEarthMeanLocTimeAN"] = IAgVAStateCalcEarthMeanLocTimeAN
-__all__.append("IAgVAStateCalcEarthMeanLocTimeAN")
 
 class IAgVACentralBodyCollection(object):
     """The list of central bodies."""
@@ -31741,14 +31518,14 @@ class IAgVACentralBodyCollection(object):
         agcls.evaluate_hresult(self.__dict__["_RemoveAll"]())
 
     def GetItemByIndex(self, index:int) -> "IAgVACentralBody":
-        """Retrieve an item from the collection by index."""
+        """Retrieves a central body from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppCentralBody:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppCentralBody.COM_val)))
             return arg_ppCentralBody.python_val
 
     def GetItemByName(self, cbName:str) -> "IAgVACentralBody":
-        """Retrieve an item from the collection by name."""
+        """Retrieves a central body from the collection by name."""
         with agmarshall.BSTR_arg(cbName) as arg_cbName, \
              agmarshall.AgInterface_out_arg() as arg_ppCentralBody:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_cbName.COM_val, byref(arg_ppCentralBody.COM_val)))
@@ -31760,7 +31537,6 @@ class IAgVACentralBodyCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{6A2BFAF1-F26A-439B-AF23-AD83B82A0D4A}", IAgVACentralBodyCollection)
 agcls.AgTypeNameMap["IAgVACentralBodyCollection"] = IAgVACentralBodyCollection
-__all__.append("IAgVACentralBodyCollection")
 
 class IAgVACbEphemeris(object):
     """The central body ephemeris source."""
@@ -31796,7 +31572,6 @@ class IAgVACbEphemeris(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AE91748E-8A2D-4D9D-9C39-88017D0CB591}", IAgVACbEphemeris)
 agcls.AgTypeNameMap["IAgVACbEphemeris"] = IAgVACbEphemeris
-__all__.append("IAgVACbEphemeris")
 
 class IAgVACbGravityModel(object):
     """Properties for a central body gravity model."""
@@ -31912,7 +31687,6 @@ class IAgVACbGravityModel(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B20E4246-ED81-4131-82AF-C76FAD7C57A8}", IAgVACbGravityModel)
 agcls.AgTypeNameMap["IAgVACbGravityModel"] = IAgVACbGravityModel
-__all__.append("IAgVACbGravityModel")
 
 class IAgVACbShape(object):
     """The central body shape."""
@@ -31948,7 +31722,6 @@ class IAgVACbShape(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4DD8FE3F-7B64-4477-9D9E-97226A04584D}", IAgVACbShape)
 agcls.AgTypeNameMap["IAgVACbShape"] = IAgVACbShape
-__all__.append("IAgVACbShape")
 
 class IAgVACbShapeSphere(IAgVACbShape):
     """Properties for the central body sphere shape."""
@@ -32001,7 +31774,6 @@ class IAgVACbShapeSphere(IAgVACbShape):
 
 agcls.AgClassCatalog.add_catalog_entry("{BF7B6D1A-62E6-4897-8861-233465975488}", IAgVACbShapeSphere)
 agcls.AgTypeNameMap["IAgVACbShapeSphere"] = IAgVACbShapeSphere
-__all__.append("IAgVACbShapeSphere")
 
 class IAgVACbShapeOblateSpheroid(IAgVACbShape):
     """Properties for the central body oblate spheroid shape."""
@@ -32079,7 +31851,6 @@ class IAgVACbShapeOblateSpheroid(IAgVACbShape):
 
 agcls.AgClassCatalog.add_catalog_entry("{583AE2E3-8639-4C1F-B188-3C6AF867F0CD}", IAgVACbShapeOblateSpheroid)
 agcls.AgTypeNameMap["IAgVACbShapeOblateSpheroid"] = IAgVACbShapeOblateSpheroid
-__all__.append("IAgVACbShapeOblateSpheroid")
 
 class IAgVACbShapeTriaxialEllipsoid(IAgVACbShape):
     """Properties for the central body triaxial ellipsoid shape."""
@@ -32164,7 +31935,6 @@ class IAgVACbShapeTriaxialEllipsoid(IAgVACbShape):
 
 agcls.AgClassCatalog.add_catalog_entry("{E446F44B-EDEB-4643-BEDA-6EA807C27882}", IAgVACbShapeTriaxialEllipsoid)
 agcls.AgTypeNameMap["IAgVACbShapeTriaxialEllipsoid"] = IAgVACbShapeTriaxialEllipsoid
-__all__.append("IAgVACbShapeTriaxialEllipsoid")
 
 class IAgVACbAttitude(object):
     """The central body attitude."""
@@ -32200,7 +31970,6 @@ class IAgVACbAttitude(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DF0EB27A-4546-4A2C-B154-49E86527784D}", IAgVACbAttitude)
 agcls.AgTypeNameMap["IAgVACbAttitude"] = IAgVACbAttitude
-__all__.append("IAgVACbAttitude")
 
 class IAgVACbAttitudeRotationCoefficientsFile(IAgVACbAttitude):
     """Properties for a rotation coefficients file attitude definition."""
@@ -32253,7 +32022,6 @@ class IAgVACbAttitudeRotationCoefficientsFile(IAgVACbAttitude):
 
 agcls.AgClassCatalog.add_catalog_entry("{E0F3153F-7F2D-46B7-B317-99EDABD12360}", IAgVACbAttitudeRotationCoefficientsFile)
 agcls.AgTypeNameMap["IAgVACbAttitudeRotationCoefficientsFile"] = IAgVACbAttitudeRotationCoefficientsFile
-__all__.append("IAgVACbAttitudeRotationCoefficientsFile")
 
 class IAgVACbAttitudeIAU1994(IAgVACbAttitude):
     """Properties for an IAU1994 attitude definition."""
@@ -32386,7 +32154,6 @@ class IAgVACbAttitudeIAU1994(IAgVACbAttitude):
 
 agcls.AgClassCatalog.add_catalog_entry("{7F28E973-1139-4D02-8F8C-C0F68E3035A9}", IAgVACbAttitudeIAU1994)
 agcls.AgTypeNameMap["IAgVACbAttitudeIAU1994"] = IAgVACbAttitudeIAU1994
-__all__.append("IAgVACbAttitudeIAU1994")
 
 class IAgVACbEphemerisAnalyticOrbit(IAgVACbEphemeris):
     """Properties for the Analytic Orbit ephemeris source."""
@@ -32631,7 +32398,6 @@ class IAgVACbEphemerisAnalyticOrbit(IAgVACbEphemeris):
 
 agcls.AgClassCatalog.add_catalog_entry("{662F2BBE-2CFB-41F7-A928-26A4909C31AB}", IAgVACbEphemerisAnalyticOrbit)
 agcls.AgTypeNameMap["IAgVACbEphemerisAnalyticOrbit"] = IAgVACbEphemerisAnalyticOrbit
-__all__.append("IAgVACbEphemerisAnalyticOrbit")
 
 class IAgVACbEphemerisJPLSpice(IAgVACbEphemeris):
     """Properties for the JPL SPICE ephemeris source."""
@@ -32684,7 +32450,6 @@ class IAgVACbEphemerisJPLSpice(IAgVACbEphemeris):
 
 agcls.AgClassCatalog.add_catalog_entry("{B6A4A547-92B1-4584-B8E9-D3C12ED6CC9C}", IAgVACbEphemerisJPLSpice)
 agcls.AgTypeNameMap["IAgVACbEphemerisJPLSpice"] = IAgVACbEphemerisJPLSpice
-__all__.append("IAgVACbEphemerisJPLSpice")
 
 class IAgVACbEphemerisFile(IAgVACbEphemeris):
     """Properties for the Ephemeris File ephemeris source."""
@@ -32737,7 +32502,6 @@ class IAgVACbEphemerisFile(IAgVACbEphemeris):
 
 agcls.AgClassCatalog.add_catalog_entry("{8B38CE6C-B8E1-489F-8ED1-B3703A13D986}", IAgVACbEphemerisFile)
 agcls.AgTypeNameMap["IAgVACbEphemerisFile"] = IAgVACbEphemerisFile
-__all__.append("IAgVACbEphemerisFile")
 
 class IAgVACbEphemerisJPLDE(IAgVACbEphemeris):
     """Properties for the JPL DE ephemeris source."""
@@ -32790,7 +32554,6 @@ class IAgVACbEphemerisJPLDE(IAgVACbEphemeris):
 
 agcls.AgClassCatalog.add_catalog_entry("{FCD86AB9-0919-46BC-BF99-287F49837BD5}", IAgVACbEphemerisJPLDE)
 agcls.AgTypeNameMap["IAgVACbEphemerisJPLDE"] = IAgVACbEphemerisJPLDE
-__all__.append("IAgVACbEphemerisJPLDE")
 
 class IAgVACbEphemerisPlanetary(IAgVACbEphemeris):
     """Properties for the Planetary Ephemeris file ephemeris source."""
@@ -32843,7 +32606,6 @@ class IAgVACbEphemerisPlanetary(IAgVACbEphemeris):
 
 agcls.AgClassCatalog.add_catalog_entry("{471AE49F-1C98-4572-9EDD-16060AFA9208}", IAgVACbEphemerisPlanetary)
 agcls.AgTypeNameMap["IAgVACbEphemerisPlanetary"] = IAgVACbEphemerisPlanetary
-__all__.append("IAgVACbEphemerisPlanetary")
 
 class IAgVACentralBody(object):
     """General properties for a central body."""
@@ -33212,7 +32974,6 @@ class IAgVACentralBody(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5AA2ACF6-1764-4E46-BA4F-4619640CBC83}", IAgVACentralBody)
 agcls.AgTypeNameMap["IAgVACentralBody"] = IAgVACentralBody
-__all__.append("IAgVACentralBody")
 
 class IAgVAPowerInternal(object):
     """Properties for the Internal Power power source component."""
@@ -33328,7 +33089,6 @@ class IAgVAPowerInternal(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8ACB8A4A-52E8-4E71-8FD1-37B53E392858}", IAgVAPowerInternal)
 agcls.AgTypeNameMap["IAgVAPowerInternal"] = IAgVAPowerInternal
-__all__.append("IAgVAPowerInternal")
 
 class IAgVAPowerProcessed(object):
     """Properties for the Processed Power power source component."""
@@ -33444,7 +33204,6 @@ class IAgVAPowerProcessed(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D3C19CA2-B73F-48BB-9B24-A7860136AE03}", IAgVAPowerProcessed)
 agcls.AgTypeNameMap["IAgVAPowerProcessed"] = IAgVAPowerProcessed
-__all__.append("IAgVAPowerProcessed")
 
 class IAgVAPowerSolarArray(object):
     """Properties for the Solar Array Power power source component."""
@@ -33713,7 +33472,6 @@ class IAgVAPowerSolarArray(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E8776401-2DE0-49E8-8080-FD0442E57701}", IAgVAPowerSolarArray)
 agcls.AgTypeNameMap["IAgVAPowerSolarArray"] = IAgVAPowerSolarArray
-__all__.append("IAgVAPowerSolarArray")
 
 class IAgVAGeneralRelativityFunction(object):
     """Properties for the General Relativity propagator function."""
@@ -33749,7 +33507,6 @@ class IAgVAGeneralRelativityFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{020E7294-1784-40AA-95C2-153F87CB086F}", IAgVAGeneralRelativityFunction)
 agcls.AgTypeNameMap["IAgVAGeneralRelativityFunction"] = IAgVAGeneralRelativityFunction
-__all__.append("IAgVAGeneralRelativityFunction")
 
 class IAgVAStateTransFunction(object):
     """Properties for the State Transition propagator function."""
@@ -33785,7 +33542,6 @@ class IAgVAStateTransFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{67F8B465-6BC4-4736-8A83-EC7E55D45177}", IAgVAStateTransFunction)
 agcls.AgTypeNameMap["IAgVAStateTransFunction"] = IAgVAStateTransFunction
-__all__.append("IAgVAStateTransFunction")
 
 class IAgVACR3BPFunc(object):
     """Properties for the CR3BP propagator function."""
@@ -33837,7 +33593,6 @@ class IAgVACR3BPFunc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1A2E3655-CF88-4272-8B52-257397D913BF}", IAgVACR3BPFunc)
 agcls.AgTypeNameMap["IAgVACR3BPFunc"] = IAgVACR3BPFunc
-__all__.append("IAgVACR3BPFunc")
 
 class IAgVARadiationPressureFunction(object):
     """Properties for the Radiation Pressure propagator function."""
@@ -33978,7 +33733,6 @@ class IAgVARadiationPressureFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{CED70D8F-A1BF-402D-A767-E7A6E857507C}", IAgVARadiationPressureFunction)
 agcls.AgTypeNameMap["IAgVARadiationPressureFunction"] = IAgVARadiationPressureFunction
-__all__.append("IAgVARadiationPressureFunction")
 
 class IAgVAYarkovskyFunc(object):
     """Properties for the Yarkovsky Effect propagator function."""
@@ -34142,7 +33896,6 @@ class IAgVAYarkovskyFunc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AA6781B4-EACD-4100-8E23-C2771351BD7A}", IAgVAYarkovskyFunc)
 agcls.AgTypeNameMap["IAgVAYarkovskyFunc"] = IAgVAYarkovskyFunc
-__all__.append("IAgVAYarkovskyFunc")
 
 class IAgVABlendedDensity(object):
     """Properties for the blended atmospheric density propagator function."""
@@ -34252,7 +34005,6 @@ class IAgVABlendedDensity(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E1951825-092B-48C8-88AE-7C878FBF40C3}", IAgVABlendedDensity)
 agcls.AgTypeNameMap["IAgVABlendedDensity"] = IAgVABlendedDensity
-__all__.append("IAgVABlendedDensity")
 
 class IAgVADragModelPlugin(object):
     """Properties for the Drag Model plugin."""
@@ -34313,7 +34065,6 @@ class IAgVADragModelPlugin(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{00D06156-07AD-4321-9741-9722A3D7BF85}", IAgVADragModelPlugin)
 agcls.AgTypeNameMap["IAgVADragModelPlugin"] = IAgVADragModelPlugin
-__all__.append("IAgVADragModelPlugin")
 
 class IAgVACira72Function(object):
     """Properties for the CIRA 72 atmospheric model."""
@@ -34584,7 +34335,6 @@ class IAgVACira72Function(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{9FFC517F-7B30-4780-8028-A3E309E5BAE4}", IAgVACira72Function)
 agcls.AgTypeNameMap["IAgVACira72Function"] = IAgVACira72Function
-__all__.append("IAgVACira72Function")
 
 class IAgVAExponential(object):
     """Properties for the Exponential atmospheric model - a model that calculates atmospheric density using an equation involving a reference density, reference altitude, and scale altitude."""
@@ -34757,7 +34507,6 @@ class IAgVAExponential(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{987B718C-47F4-4638-900E-B87B0AAFEFBA}", IAgVAExponential)
 agcls.AgTypeNameMap["IAgVAExponential"] = IAgVAExponential
-__all__.append("IAgVAExponential")
 
 class IAgVAHarrisPriester(object):
     """Properties for the Harris-Priester atmospheric model - a model that takes into account a 10.7 cm solar flux level and diurnal bulge."""
@@ -34964,7 +34713,6 @@ class IAgVAHarrisPriester(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4481139D-2D5D-48F0-9372-2385F8F95658}", IAgVAHarrisPriester)
 agcls.AgTypeNameMap["IAgVAHarrisPriester"] = IAgVAHarrisPriester
-__all__.append("IAgVAHarrisPriester")
 
 class IAgVADensityModelPlugin(object):
     """Properties for the plugin atmospheric density model."""
@@ -35413,7 +35161,6 @@ class IAgVADensityModelPlugin(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{FCE828BB-B2CE-4F2C-91EC-42ED00564FF4}", IAgVADensityModelPlugin)
 agcls.AgTypeNameMap["IAgVADensityModelPlugin"] = IAgVADensityModelPlugin
-__all__.append("IAgVADensityModelPlugin")
 
 class IAgVAJacchiaRoberts(object):
     """Properties for the Jacchia-Roberts atmospheric model - a model that is similar to Jacchia 1971 but uses analytical methods to improve performance."""
@@ -35684,7 +35431,6 @@ class IAgVAJacchiaRoberts(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{EEC62B17-9E4D-4527-AC53-B8A7180A4A65}", IAgVAJacchiaRoberts)
 agcls.AgTypeNameMap["IAgVAJacchiaRoberts"] = IAgVAJacchiaRoberts
-__all__.append("IAgVAJacchiaRoberts")
 
 class IAgVAJacchiaBowman2008(object):
     """Properties for the Jacchia Bowman 2008 atmospheric density model."""
@@ -36017,7 +35763,6 @@ class IAgVAJacchiaBowman2008(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{49B828F8-A541-4E9E-99DD-DF3708B3559F}", IAgVAJacchiaBowman2008)
 agcls.AgTypeNameMap["IAgVAJacchiaBowman2008"] = IAgVAJacchiaBowman2008
-__all__.append("IAgVAJacchiaBowman2008")
 
 class IAgVAJacchia_1960(object):
     """Properties for the Jacchia 1960 atmospheric model - an outdated atmospheric model provided for making comparisons with other software."""
@@ -36176,7 +35921,6 @@ class IAgVAJacchia_1960(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B32376D4-28EE-4D16-820F-A3A553103168}", IAgVAJacchia_1960)
 agcls.AgTypeNameMap["IAgVAJacchia_1960"] = IAgVAJacchia_1960
-__all__.append("IAgVAJacchia_1960")
 
 class IAgVAJacchia_1970(object):
     """Properties for the Jacchia 1970 atmospheric model - a model that computes atmospheric density based on the composition of the atmosphere, which depends on altitude as well as seasonal variation. Valid range is 100-2500 km."""
@@ -36447,7 +36191,6 @@ class IAgVAJacchia_1970(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{7308B6EE-F3DF-4B83-A9FB-F750AAE436F5}", IAgVAJacchia_1970)
 agcls.AgTypeNameMap["IAgVAJacchia_1970"] = IAgVAJacchia_1970
-__all__.append("IAgVAJacchia_1970")
 
 class IAgVAJacchia_1971(object):
     """Properties for the Jacchia 1971 atmospheric model - a model that is similar to Jacchia 1970, with improved treatment of certain solar effects."""
@@ -36718,7 +36461,6 @@ class IAgVAJacchia_1971(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{36089BD6-3BB0-4B0F-B8D8-81F6492E3309}", IAgVAJacchia_1971)
 agcls.AgTypeNameMap["IAgVAJacchia_1971"] = IAgVAJacchia_1971
-__all__.append("IAgVAJacchia_1971")
 
 class IAgVAMSISE_1990(object):
     """Properties for the MSISE 1990 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1990 version, valid range of 0-1000 km."""
@@ -36989,7 +36731,6 @@ class IAgVAMSISE_1990(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C6AE62A3-103D-4E39-9F25-6AD5CCFF9530}", IAgVAMSISE_1990)
 agcls.AgTypeNameMap["IAgVAMSISE_1990"] = IAgVAMSISE_1990
-__all__.append("IAgVAMSISE_1990")
 
 class IAgVAMSIS_1986(object):
     """Properties for the MSIS 1986 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1986 version, valid range of 90-1000 km."""
@@ -37260,7 +37001,6 @@ class IAgVAMSIS_1986(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F7608E83-8539-4B2E-B0DB-F4F1010DDDED}", IAgVAMSIS_1986)
 agcls.AgTypeNameMap["IAgVAMSIS_1986"] = IAgVAMSIS_1986
-__all__.append("IAgVAMSIS_1986")
 
 class IAgVANRLMSISE_2000(object):
     """Properties for the NRLMSISE 2000 atmospheric model."""
@@ -37531,7 +37271,6 @@ class IAgVANRLMSISE_2000(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{A2CAC8B0-74EF-4067-9B76-9B2D6938303D}", IAgVANRLMSISE_2000)
 agcls.AgTypeNameMap["IAgVANRLMSISE_2000"] = IAgVANRLMSISE_2000
-__all__.append("IAgVANRLMSISE_2000")
 
 class IAgVAUS_Standard_Atmosphere(object):
     """Properties for the US Standard Atmosphere atmospheric model."""
@@ -37674,7 +37413,6 @@ class IAgVAUS_Standard_Atmosphere(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C1E85F74-4770-4D1F-B2D9-0AE42AC245EA}", IAgVAUS_Standard_Atmosphere)
 agcls.AgTypeNameMap["IAgVAUS_Standard_Atmosphere"] = IAgVAUS_Standard_Atmosphere
-__all__.append("IAgVAUS_Standard_Atmosphere")
 
 class IAgVAMarsGRAM37(object):
     """Properties for the Mars-GRAM 3.7 atmospheric model."""
@@ -37929,7 +37667,6 @@ class IAgVAMarsGRAM37(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2855777F-3062-4699-AB5D-2FE73D161472}", IAgVAMarsGRAM37)
 agcls.AgTypeNameMap["IAgVAMarsGRAM37"] = IAgVAMarsGRAM37
-__all__.append("IAgVAMarsGRAM37")
 
 class IAgVAMarsGRAM2005(object):
     """Properties for the Mars-GRAM 2005 atmospheric model."""
@@ -38184,7 +37921,6 @@ class IAgVAMarsGRAM2005(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E8649FED-5172-444A-9FC2-3B69586A8B91}", IAgVAMarsGRAM2005)
 agcls.AgTypeNameMap["IAgVAMarsGRAM2005"] = IAgVAMarsGRAM2005
-__all__.append("IAgVAMarsGRAM2005")
 
 class IAgVAVenusGRAM2005(object):
     """Properties for the Venus-GRAM 2005 atmospheric model."""
@@ -38375,7 +38111,6 @@ class IAgVAVenusGRAM2005(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{270C541C-FF9B-4E56-81B0-36CF43D3BE54}", IAgVAVenusGRAM2005)
 agcls.AgTypeNameMap["IAgVAVenusGRAM2005"] = IAgVAVenusGRAM2005
-__all__.append("IAgVAVenusGRAM2005")
 
 class IAgVAMarsGRAM2010(object):
     """Properties for the Mars-GRAM 2010 atmospheric model."""
@@ -38630,7 +38365,6 @@ class IAgVAMarsGRAM2010(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C9E4AA59-8B84-4AC1-938E-E5E92A12EC4F}", IAgVAMarsGRAM2010)
 agcls.AgTypeNameMap["IAgVAMarsGRAM2010"] = IAgVAMarsGRAM2010
-__all__.append("IAgVAMarsGRAM2010")
 
 class IAgVAMarsGRAM2001(object):
     """Properties for the Mars-GRAM 2001 atmospheric model."""
@@ -38885,7 +38619,6 @@ class IAgVAMarsGRAM2001(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D9213F74-E8C9-4251-9BD6-FA0C0138AFCD}", IAgVAMarsGRAM2001)
 agcls.AgTypeNameMap["IAgVAMarsGRAM2001"] = IAgVAMarsGRAM2001
-__all__.append("IAgVAMarsGRAM2001")
 
 class IAgVAMarsGRAM2000(object):
     """Properties for the Mars-GRAM 2000 atmospheric model."""
@@ -39140,7 +38873,6 @@ class IAgVAMarsGRAM2000(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E3458F58-63AD-4974-9EDA-524E9418A1DF}", IAgVAMarsGRAM2000)
 agcls.AgTypeNameMap["IAgVAMarsGRAM2000"] = IAgVAMarsGRAM2000
-__all__.append("IAgVAMarsGRAM2000")
 
 class IAgVADTM2012(object):
     """Properties for the DTM 2012 atmospheric model."""
@@ -39411,7 +39143,6 @@ class IAgVADTM2012(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4840E65F-6197-4A64-A80A-E0DF1E1048E0}", IAgVADTM2012)
 agcls.AgTypeNameMap["IAgVADTM2012"] = IAgVADTM2012
-__all__.append("IAgVADTM2012")
 
 class IAgVADTM2020(object):
     """Properties for the DTM 2020 atmospheric model."""
@@ -39682,7 +39413,6 @@ class IAgVADTM2020(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{50AA8B32-1905-416D-B45E-631E78F5F174}", IAgVADTM2020)
 agcls.AgTypeNameMap["IAgVADTM2020"] = IAgVADTM2020
-__all__.append("IAgVADTM2020")
 
 class IAgVAGravityFieldFunction(object):
     """Properties for the Gravitational Force gravity model - a complex gravitational force calculation, optionally including solid and ocean tide effects."""
@@ -40003,7 +39733,6 @@ class IAgVAGravityFieldFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B199E3B6-9964-4CAA-A824-1F106886E0DE}", IAgVAGravityFieldFunction)
 agcls.AgTypeNameMap["IAgVAGravityFieldFunction"] = IAgVAGravityFieldFunction
-__all__.append("IAgVAGravityFieldFunction")
 
 class IAgVAPointMassFunction(object):
     """Properties for the Point Mass Function."""
@@ -40071,7 +39800,6 @@ class IAgVAPointMassFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{DF0A48DA-12AA-4BCF-A9E1-CDE80A2C89A3}", IAgVAPointMassFunction)
 agcls.AgTypeNameMap["IAgVAPointMassFunction"] = IAgVAPointMassFunction
-__all__.append("IAgVAPointMassFunction")
 
 class IAgVATwoBodyFunction(object):
     """Properties for the Two Body gravity model - a standard point mass model."""
@@ -40155,7 +39883,6 @@ class IAgVATwoBodyFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{827AF54A-9389-4151-8193-7B3FAE64E66D}", IAgVATwoBodyFunction)
 agcls.AgTypeNameMap["IAgVATwoBodyFunction"] = IAgVATwoBodyFunction
-__all__.append("IAgVATwoBodyFunction")
 
 class IAgVAHPOPPluginFunction(object):
     """Properties for the HPOP Plugin propagator function."""
@@ -40216,7 +39943,6 @@ class IAgVAHPOPPluginFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{53854E6C-8125-44F8-B0B3-8CB5175C8AE9}", IAgVAHPOPPluginFunction)
 agcls.AgTypeNameMap["IAgVAHPOPPluginFunction"] = IAgVAHPOPPluginFunction
-__all__.append("IAgVAHPOPPluginFunction")
 
 class IAgVAEOMFuncPluginFunction(object):
     """Properties for the EOM Function Plugin propagator function."""
@@ -40277,7 +40003,6 @@ class IAgVAEOMFuncPluginFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{D652969D-D848-4AF2-91C9-8BD479D0F681}", IAgVAEOMFuncPluginFunction)
 agcls.AgTypeNameMap["IAgVAEOMFuncPluginFunction"] = IAgVAEOMFuncPluginFunction
-__all__.append("IAgVAEOMFuncPluginFunction")
 
 class IAgVASRPAeroT20(object):
     """Properties for the Aerospace T20 solar radiation pressure model for GPS block IIA."""
@@ -40418,7 +40143,6 @@ class IAgVASRPAeroT20(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1B712154-4552-4453-B784-5C773A9F88C0}", IAgVASRPAeroT20)
 agcls.AgTypeNameMap["IAgVASRPAeroT20"] = IAgVASRPAeroT20
-__all__.append("IAgVASRPAeroT20")
 
 class IAgVASRPAeroT30(object):
     """Properties for the Aerospace T30 solar radiation pressure model for GPS block IIR."""
@@ -40559,7 +40283,6 @@ class IAgVASRPAeroT30(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E29DBFD3-883F-465C-A4D4-D090A83F5EBC}", IAgVASRPAeroT30)
 agcls.AgTypeNameMap["IAgVASRPAeroT30"] = IAgVASRPAeroT30
-__all__.append("IAgVASRPAeroT30")
 
 class IAgVASRPGSPM04aIIA(object):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04a for block IIA."""
@@ -40700,7 +40423,6 @@ class IAgVASRPGSPM04aIIA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{73504326-18B8-40FB-A466-DB8908769B9D}", IAgVASRPGSPM04aIIA)
 agcls.AgTypeNameMap["IAgVASRPGSPM04aIIA"] = IAgVASRPGSPM04aIIA
-__all__.append("IAgVASRPGSPM04aIIA")
 
 class IAgVASRPGSPM04aIIR(object):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04a for block IIR."""
@@ -40841,7 +40563,6 @@ class IAgVASRPGSPM04aIIR(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{79FEA80C-9B5F-4FDE-9661-286B1DAFF645}", IAgVASRPGSPM04aIIR)
 agcls.AgTypeNameMap["IAgVASRPGSPM04aIIR"] = IAgVASRPGSPM04aIIR
-__all__.append("IAgVASRPGSPM04aIIR")
 
 class IAgVASRPGSPM04aeIIA(object):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04ae for block IIA."""
@@ -40982,7 +40703,6 @@ class IAgVASRPGSPM04aeIIA(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3F99DF3B-1BC5-40F2-826D-751DCE4BB77C}", IAgVASRPGSPM04aeIIA)
 agcls.AgTypeNameMap["IAgVASRPGSPM04aeIIA"] = IAgVASRPGSPM04aeIIA
-__all__.append("IAgVASRPGSPM04aeIIA")
 
 class IAgVASRPGSPM04aeIIR(object):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04ae for block IIR."""
@@ -41123,7 +40843,6 @@ class IAgVASRPGSPM04aeIIR(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{8A1CAF39-9680-4405-942D-A86D279EAE24}", IAgVASRPGSPM04aeIIR)
 agcls.AgTypeNameMap["IAgVASRPGSPM04aeIIR"] = IAgVASRPGSPM04aeIIR
-__all__.append("IAgVASRPGSPM04aeIIR")
 
 class IAgVASRPSpherical(object):
     """Properties for the Spherical SRP model; assumes a spherical spacecraft. The equation used by STK is described in the Solar Radiation technical note."""
@@ -41312,7 +41031,6 @@ class IAgVASRPSpherical(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B8F7E804-16B0-447F-A75A-B75DF05287B0}", IAgVASRPSpherical)
 agcls.AgTypeNameMap["IAgVASRPSpherical"] = IAgVASRPSpherical
-__all__.append("IAgVASRPSpherical")
 
 class IAgVASRPNPlate(object):
     """Properties for the N-plate SRP model."""
@@ -41517,7 +41235,6 @@ class IAgVASRPNPlate(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5DE80C27-861E-4596-9461-414741A793D1}", IAgVASRPNPlate)
 agcls.AgTypeNameMap["IAgVASRPNPlate"] = IAgVASRPNPlate
-__all__.append("IAgVASRPNPlate")
 
 class IAgVASRPTabAreaVec(object):
     """Properties for the tabulated area vector SRP model."""
@@ -41738,7 +41455,6 @@ class IAgVASRPTabAreaVec(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{796EAE38-5298-4315-AA74-29C810F2E3FE}", IAgVASRPTabAreaVec)
 agcls.AgTypeNameMap["IAgVASRPTabAreaVec"] = IAgVASRPTabAreaVec
-__all__.append("IAgVASRPTabAreaVec")
 
 class IAgVASRPVariableArea(object):
     """Properties for the Variable Area SRP model."""
@@ -41943,7 +41659,6 @@ class IAgVASRPVariableArea(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4124EBC1-ABC6-4933-84D2-0F1232D8B630}", IAgVASRPVariableArea)
 agcls.AgTypeNameMap["IAgVASRPVariableArea"] = IAgVASRPVariableArea
-__all__.append("IAgVASRPVariableArea")
 
 class IAgVAThirdBodyFunction(object):
     """Properties for a Third Body propagator function. The IAgComponentInfo object returned by the mode property can be cast to IAgVAGravityFieldFunction or IAgVAPointMassFunction depending on the selected ModeType."""
@@ -42045,7 +41760,6 @@ class IAgVAThirdBodyFunction(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{86FDAC1D-8E57-4915-AA9B-E6C35E06C9BC}", IAgVAThirdBodyFunction)
 agcls.AgTypeNameMap["IAgVAThirdBodyFunction"] = IAgVAThirdBodyFunction
-__all__.append("IAgVAThirdBodyFunction")
 
 class IAgVASRPReflectionPlugin(object):
     """Properties for the plugin SRP Refelction."""
@@ -42211,7 +41925,6 @@ class IAgVASRPReflectionPlugin(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2DF13668-98B3-4E69-89CA-C8136EAE49D9}", IAgVASRPReflectionPlugin)
 agcls.AgTypeNameMap["IAgVASRPReflectionPlugin"] = IAgVASRPReflectionPlugin
-__all__.append("IAgVASRPReflectionPlugin")
 
 class IAgVAEngineModelThrustCoefficients(object):
     """Thrust coefficient properties for engine definition."""
@@ -42503,7 +42216,6 @@ class IAgVAEngineModelThrustCoefficients(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2F905CDC-4D91-497F-85E2-AE1E2F3A4FA3}", IAgVAEngineModelThrustCoefficients)
 agcls.AgTypeNameMap["IAgVAEngineModelThrustCoefficients"] = IAgVAEngineModelThrustCoefficients
-__all__.append("IAgVAEngineModelThrustCoefficients")
 
 class IAgVAEngineModelIspCoefficients(object):
     """Isp coefficient properties for engine definition."""
@@ -42795,7 +42507,6 @@ class IAgVAEngineModelIspCoefficients(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{3D092FFB-ED99-4F4A-94E5-8BFA7CEF328C}", IAgVAEngineModelIspCoefficients)
 agcls.AgTypeNameMap["IAgVAEngineModelIspCoefficients"] = IAgVAEngineModelIspCoefficients
-__all__.append("IAgVAEngineModelIspCoefficients")
 
 class IAgVAEngineConstAcc(object):
     """Properties for a Constant Acceleration and Isp engine model."""
@@ -42911,7 +42622,6 @@ class IAgVAEngineConstAcc(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{32A0554F-7D4A-4A7E-80B7-5B57ED17B9D2}", IAgVAEngineConstAcc)
 agcls.AgTypeNameMap["IAgVAEngineConstAcc"] = IAgVAEngineConstAcc
-__all__.append("IAgVAEngineConstAcc")
 
 class IAgVAEngineConstant(object):
     """Properties for a Constant Thrust and Isp engine model."""
@@ -43027,7 +42737,6 @@ class IAgVAEngineConstant(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1BA84003-AFE1-4AD5-B36B-967D7B9FF8B0}", IAgVAEngineConstant)
 agcls.AgTypeNameMap["IAgVAEngineConstant"] = IAgVAEngineConstant
-__all__.append("IAgVAEngineConstant")
 
 class IAgVAEngineDefinition(object):
     """Properties for engine definition for an Ion engine model."""
@@ -43403,7 +43112,6 @@ class IAgVAEngineDefinition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{74BF5209-9E9B-45E3-8AE0-E68971558447}", IAgVAEngineDefinition)
 agcls.AgTypeNameMap["IAgVAEngineDefinition"] = IAgVAEngineDefinition
-__all__.append("IAgVAEngineDefinition")
 
 class IAgVAEngineThrottleTable(object):
     """Properties for engine parameters for a Throttle Table engine model"""
@@ -43583,7 +43291,6 @@ class IAgVAEngineThrottleTable(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{74EFDF26-3F92-4664-8CA1-47E86FCAB002}", IAgVAEngineThrottleTable)
 agcls.AgTypeNameMap["IAgVAEngineThrottleTable"] = IAgVAEngineThrottleTable
-__all__.append("IAgVAEngineThrottleTable")
 
 class IAgVAEngineIon(object):
     """Properties for engine parameters for an Ion engine model"""
@@ -43772,7 +43479,6 @@ class IAgVAEngineIon(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{1A331BF6-2901-41F4-8A68-23DD4628A68D}", IAgVAEngineIon)
 agcls.AgTypeNameMap["IAgVAEngineIon"] = IAgVAEngineIon
-__all__.append("IAgVAEngineIon")
 
 class IAgVAEngineCustom(object):
     """Properties for a Custom engine model."""
@@ -43936,7 +43642,6 @@ class IAgVAEngineCustom(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E17088BF-A34C-4C6B-8BF2-CEA2D489B428}", IAgVAEngineCustom)
 agcls.AgTypeNameMap["IAgVAEngineCustom"] = IAgVAEngineCustom
-__all__.append("IAgVAEngineCustom")
 
 class IAgVAEnginePlugin(object):
     """Properties for a Plugin engine model."""
@@ -44013,7 +43718,6 @@ class IAgVAEnginePlugin(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{68ED720F-ABB6-4891-A1B9-973719400161}", IAgVAEnginePlugin)
 agcls.AgTypeNameMap["IAgVAEnginePlugin"] = IAgVAEnginePlugin
-__all__.append("IAgVAEnginePlugin")
 
 class IAgVAEngineModelPoly(object):
     """Properties for a Polynomial Thrust and Isp engine model."""
@@ -44115,7 +43819,6 @@ class IAgVAEngineModelPoly(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{4AC9E570-FB42-4636-B6DA-F9FEF353165B}", IAgVAEngineModelPoly)
 agcls.AgTypeNameMap["IAgVAEngineModelPoly"] = IAgVAEngineModelPoly
-__all__.append("IAgVAEngineModelPoly")
 
 class IAgVAThruster(object):
     """Properties for individual thrusters."""
@@ -44280,7 +43983,6 @@ class IAgVAThruster(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{61A386B1-675B-4DB6-85B9-078760AB8339}", IAgVAThruster)
 agcls.AgTypeNameMap["IAgVAThruster"] = IAgVAThruster
-__all__.append("IAgVAThruster")
 
 class IAgVAThrusterSetCollection(object):
     """The list of thrusters in a thruster set."""
@@ -44403,18 +44105,18 @@ class IAgVAThrusterSetCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgVAThruster":
-        """Retrieve an item from the collection by index."""
+        """Retrieves a thruster from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppComponent:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppComponent.COM_val)))
-            return arg_ppComponent.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppVAThruster:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVAThruster.COM_val)))
+            return arg_ppVAThruster.python_val
 
     def GetItemByName(self, name:str) -> "IAgVAThruster":
-        """Retrieve an item from the collection by name."""
+        """Retrieves a thruster from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppComponent:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppComponent.COM_val)))
-            return arg_ppComponent.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppVAThruster:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVAThruster.COM_val)))
+            return arg_ppVAThruster.python_val
 
     __getitem__ = Item
 
@@ -44422,7 +44124,6 @@ class IAgVAThrusterSetCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C60E997C-7AF3-477B-8B8A-8E1CA0D55681}", IAgVAThrusterSetCollection)
 agcls.AgTypeNameMap["IAgVAThrusterSetCollection"] = IAgVAThrusterSetCollection
-__all__.append("IAgVAThrusterSetCollection")
 
 class IAgVAThrusterSet(object):
     """The properties of a thruster set."""
@@ -44483,7 +44184,6 @@ class IAgVAThrusterSet(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AA4BEFC3-C3E6-4888-B920-109F57621589}", IAgVAThrusterSet)
 agcls.AgTypeNameMap["IAgVAThrusterSet"] = IAgVAThrusterSet
-__all__.append("IAgVAThrusterSet")
 
 class IAgVAAsTriggerCondition(object):
     """Properties for a constraint - an additional condition to be met to satisfy a stopping condition."""
@@ -44627,7 +44327,6 @@ class IAgVAAsTriggerCondition(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5670AC34-2864-42ED-B32A-5572363C0CE7}", IAgVAAsTriggerCondition)
 agcls.AgTypeNameMap["IAgVAAsTriggerCondition"] = IAgVAAsTriggerCondition
-__all__.append("IAgVAAsTriggerCondition")
 
 class IAgVACustomFunctionScriptEngine(object):
     """Properties for custom functions."""
@@ -44695,7 +44394,6 @@ class IAgVACustomFunctionScriptEngine(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{02AA62BC-AA81-400C-83A0-961729880708}", IAgVACustomFunctionScriptEngine)
 agcls.AgTypeNameMap["IAgVACustomFunctionScriptEngine"] = IAgVACustomFunctionScriptEngine
-__all__.append("IAgVACustomFunctionScriptEngine")
 
 class IAgVANumericalIntegrator(object):
     """The type of numerical integrator to be used by the propagator."""
@@ -44731,7 +44429,6 @@ class IAgVANumericalIntegrator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5E802B1E-D8EF-4190-B238-7E0F4AFCA355}", IAgVANumericalIntegrator)
 agcls.AgTypeNameMap["IAgVANumericalIntegrator"] = IAgVANumericalIntegrator
-__all__.append("IAgVANumericalIntegrator")
 
 class IAgVAPropagatorFunctionCollection(object):
     """The list of propagator functions - affecting forces that you want to model for orbit propagation."""
@@ -44854,14 +44551,14 @@ class IAgVAPropagatorFunctionCollection(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgComponentInfo":
-        """Retrieve an item from the collection by index."""
+        """Retrieves a propagator function from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppComponent.COM_val)))
             return arg_ppComponent.python_val
 
     def GetItemByName(self, name:str) -> "IAgComponentInfo":
-        """Retrieve an item from the collection by name."""
+        """Retrieves a propagator function from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppComponent.COM_val)))
@@ -44873,7 +44570,6 @@ class IAgVAPropagatorFunctionCollection(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{373180B3-D083-4CB1-ACC8-9D6C738F19E6}", IAgVAPropagatorFunctionCollection)
 agcls.AgTypeNameMap["IAgVAPropagatorFunctionCollection"] = IAgVAPropagatorFunctionCollection
-__all__.append("IAgVAPropagatorFunctionCollection")
 
 class IAgVANumericalPropagatorWrapper(object):
     """General properties for propagators."""
@@ -45023,7 +44719,6 @@ class IAgVANumericalPropagatorWrapper(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{5E7589D9-478E-4C8F-A856-2E548833C9C5}", IAgVANumericalPropagatorWrapper)
 agcls.AgTypeNameMap["IAgVANumericalPropagatorWrapper"] = IAgVANumericalPropagatorWrapper
-__all__.append("IAgVANumericalPropagatorWrapper")
 
 class IAgVANumericalPropagatorWrapperCR3BP(object):
     """General properties for three-body problem propagators."""
@@ -45109,7 +44804,6 @@ class IAgVANumericalPropagatorWrapperCR3BP(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C0662E79-7987-4363-B97D-2277A12A7B5B}", IAgVANumericalPropagatorWrapperCR3BP)
 agcls.AgTypeNameMap["IAgVANumericalPropagatorWrapperCR3BP"] = IAgVANumericalPropagatorWrapperCR3BP
-__all__.append("IAgVANumericalPropagatorWrapperCR3BP")
 
 class IAgVABulirschStoerIntegrator(object):
     """Properties for the Bulirsch-Stoer numerical integrator."""
@@ -45337,7 +45031,6 @@ class IAgVABulirschStoerIntegrator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2A307A62-0365-405B-B493-5F11810DF50C}", IAgVABulirschStoerIntegrator)
 agcls.AgTypeNameMap["IAgVABulirschStoerIntegrator"] = IAgVABulirschStoerIntegrator
-__all__.append("IAgVABulirschStoerIntegrator")
 
 class IAgVAGaussJacksonIntegrator(object):
     """Properties for the Gauss-Jackson numerical integrator."""
@@ -45462,7 +45155,6 @@ class IAgVAGaussJacksonIntegrator(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{C68E6FDF-DA4F-4FA6-A313-3CA4EF865E0C}", IAgVAGaussJacksonIntegrator)
 agcls.AgTypeNameMap["IAgVAGaussJacksonIntegrator"] = IAgVAGaussJacksonIntegrator
-__all__.append("IAgVAGaussJacksonIntegrator")
 
 class IAgVARK2nd3rd(object):
     """Properties for the RK2nd3rd numerical integrator."""
@@ -45690,7 +45382,6 @@ class IAgVARK2nd3rd(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{B45A629D-EAD2-45CB-9757-0AF4BBC0967A}", IAgVARK2nd3rd)
 agcls.AgTypeNameMap["IAgVARK2nd3rd"] = IAgVARK2nd3rd
-__all__.append("IAgVARK2nd3rd")
 
 class IAgVARK4th(object):
     """Properties for the RK4th numerical integrator."""
@@ -45742,7 +45433,6 @@ class IAgVARK4th(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{AC6ACE9D-D174-4A09-9E10-7EE104ED8E9C}", IAgVARK4th)
 agcls.AgTypeNameMap["IAgVARK4th"] = IAgVARK4th
-__all__.append("IAgVARK4th")
 
 class IAgVARK4th5th(object):
     """Properties for the RK4th5th numerical integrator."""
@@ -45970,7 +45660,6 @@ class IAgVARK4th5th(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{F71F9E83-14BD-4BA3-BB99-AD7CDA3FCA40}", IAgVARK4th5th)
 agcls.AgTypeNameMap["IAgVARK4th5th"] = IAgVARK4th5th
-__all__.append("IAgVARK4th5th")
 
 class IAgVARK4thAdapt(object):
     """Properties for the RK4thAdapt numerical integrator."""
@@ -46198,7 +45887,6 @@ class IAgVARK4thAdapt(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{2FD2C00D-0DB5-4933-99A1-759E7D0F6A85}", IAgVARK4thAdapt)
 agcls.AgTypeNameMap["IAgVARK4thAdapt"] = IAgVARK4thAdapt
-__all__.append("IAgVARK4thAdapt")
 
 class IAgVARKF7th8th(object):
     """Properties for the RK7th8th numerical integrator."""
@@ -46426,7 +46114,6 @@ class IAgVARKF7th8th(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{05ADCD42-57F9-456E-B29A-AB3AADD9DB1C}", IAgVARKF7th8th)
 agcls.AgTypeNameMap["IAgVARKF7th8th"] = IAgVARKF7th8th
-__all__.append("IAgVARKF7th8th")
 
 class IAgVARKV8th9th(object):
     """Properties for the RK8th9th numerical integrator."""
@@ -46670,7 +46357,6 @@ class IAgVARKV8th9th(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{E4CEAA67-BE78-472F-B746-52878835E818}", IAgVARKV8th9th)
 agcls.AgTypeNameMap["IAgVARKV8th9th"] = IAgVARKV8th9th
-__all__.append("IAgVARKV8th9th")
 
 
 
@@ -46696,7 +46382,6 @@ class AgVADriverMCS(IAgVADriverMCS, IAgVePropagator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADriverMCS.")
         
 agcls.AgClassCatalog.add_catalog_entry("{56D84C70-9D0D-4ACA-8CE5-C41E951E024C}", AgVADriverMCS)
-__all__.append("AgVADriverMCS")
 
 
 class AgVAMCSSegmentCollection(IAgVAMCSSegmentCollection, IAgRuntimeTypeInfoProvider):
@@ -46721,7 +46406,6 @@ class AgVAMCSSegmentCollection(IAgVAMCSSegmentCollection, IAgRuntimeTypeInfoProv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSSegmentCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2F91182-1E74-4422-A660-6250A42732C3}", AgVAMCSSegmentCollection)
-__all__.append("AgVAMCSSegmentCollection")
 
 
 class AgVAMCSEnd(IAgVAMCSEnd, IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgComponentInfo):
@@ -46752,7 +46436,6 @@ class AgVAMCSEnd(IAgVAMCSEnd, IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgCo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSEnd.")
         
 agcls.AgClassCatalog.add_catalog_entry("{048FE652-88E7-4000-B371-A2D708599F34}", AgVAMCSEnd)
-__all__.append("AgVAMCSEnd")
 
 
 class AgVAMCSInitialState(IAgVAMCSInitialState, IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgComponentInfo, IAgCloneable):
@@ -46786,7 +46469,6 @@ class AgVAMCSInitialState(IAgVAMCSInitialState, IAgVAMCSSegment, IAgRuntimeTypeI
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSInitialState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E3010ADE-CB96-470C-B380-3C58B23173AC}", AgVAMCSInitialState)
-__all__.append("AgVAMCSInitialState")
 
 
 class AgVASpacecraftParameters(IAgVASpacecraftParameters, IAgRuntimeTypeInfoProvider):
@@ -46811,7 +46493,6 @@ class AgVASpacecraftParameters(IAgVASpacecraftParameters, IAgRuntimeTypeInfoProv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASpacecraftParameters.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75F1E929-B0B9-4AE8-8C84-7273B9211771}", AgVASpacecraftParameters)
-__all__.append("AgVASpacecraftParameters")
 
 
 class AgVAFuelTank(IAgVAFuelTank, IAgRuntimeTypeInfoProvider):
@@ -46836,7 +46517,6 @@ class AgVAFuelTank(IAgVAFuelTank, IAgRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAFuelTank.")
         
 agcls.AgClassCatalog.add_catalog_entry("{03CC0FE4-A9E2-4F80-8AC8-C510F9691D3B}", AgVAFuelTank)
-__all__.append("AgVAFuelTank")
 
 
 class AgVAElementCartesian(IAgVAElementCartesian, IAgVAElement, IAgRuntimeTypeInfoProvider):
@@ -46864,7 +46544,6 @@ class AgVAElementCartesian(IAgVAElementCartesian, IAgVAElement, IAgRuntimeTypeIn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementCartesian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8C98158E-6B98-4C50-8500-7ABCE96A049E}", AgVAElementCartesian)
-__all__.append("AgVAElementCartesian")
 
 
 class AgVAElementKeplerian(IAgVAElementKeplerian, IAgVAElement):
@@ -46889,7 +46568,6 @@ class AgVAElementKeplerian(IAgVAElementKeplerian, IAgVAElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementKeplerian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F34624C5-E351-4321-B16E-04DB098F9E29}", AgVAElementKeplerian)
-__all__.append("AgVAElementKeplerian")
 
 
 class AgVAElementEquinoctial(IAgVAElementEquinoctial, IAgVAElement):
@@ -46914,7 +46592,6 @@ class AgVAElementEquinoctial(IAgVAElementEquinoctial, IAgVAElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementEquinoctial.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5588137F-A05E-4011-A219-925F175F1447}", AgVAElementEquinoctial)
-__all__.append("AgVAElementEquinoctial")
 
 
 class AgVAElementDelaunay(IAgVAElementDelaunay, IAgVAElement):
@@ -46939,7 +46616,6 @@ class AgVAElementDelaunay(IAgVAElementDelaunay, IAgVAElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementDelaunay.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FDE891B2-2C91-48A8-B4C0-956BD55B8496}", AgVAElementDelaunay)
-__all__.append("AgVAElementDelaunay")
 
 
 class AgVAElementMixedSpherical(IAgVAElementMixedSpherical, IAgVAElement):
@@ -46964,7 +46640,6 @@ class AgVAElementMixedSpherical(IAgVAElementMixedSpherical, IAgVAElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementMixedSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C6E11D55-8708-4667-AC84-8FC413A32FF0}", AgVAElementMixedSpherical)
-__all__.append("AgVAElementMixedSpherical")
 
 
 class AgVAElementSpherical(IAgVAElementSpherical, IAgVAElement):
@@ -46989,7 +46664,6 @@ class AgVAElementSpherical(IAgVAElementSpherical, IAgVAElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ECF59D66-A748-47DD-BD0E-C8FD0CD78D05}", AgVAElementSpherical)
-__all__.append("AgVAElementSpherical")
 
 
 class AgVAElementTargetVectorIncomingAsymptote(IAgVAElementTargetVectorIncomingAsymptote, IAgVAElement):
@@ -47014,7 +46688,6 @@ class AgVAElementTargetVectorIncomingAsymptote(IAgVAElementTargetVectorIncomingA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementTargetVectorIncomingAsymptote.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E05BEA68-902F-427F-9E65-A33FBE044A75}", AgVAElementTargetVectorIncomingAsymptote)
-__all__.append("AgVAElementTargetVectorIncomingAsymptote")
 
 
 class AgVAElementTargetVectorOutgoingAsymptote(IAgVAElementTargetVectorOutgoingAsymptote, IAgVAElement):
@@ -47039,7 +46712,6 @@ class AgVAElementTargetVectorOutgoingAsymptote(IAgVAElementTargetVectorOutgoingA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementTargetVectorOutgoingAsymptote.")
         
 agcls.AgClassCatalog.add_catalog_entry("{95B24C8E-7781-4FA6-8A70-49443C5FFCF9}", AgVAElementTargetVectorOutgoingAsymptote)
-__all__.append("AgVAElementTargetVectorOutgoingAsymptote")
 
 
 class AgVAElementGeodetic(IAgVAElementGeodetic, IAgVAElement):
@@ -47064,7 +46736,6 @@ class AgVAElementGeodetic(IAgVAElementGeodetic, IAgVAElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementGeodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6E74D006-FB3C-4085-810E-9B1E5AE73905}", AgVAElementGeodetic)
-__all__.append("AgVAElementGeodetic")
 
 
 class AgVAMCSPropagate(IAgVAMCSSegment, IAgVAMCSPropagate, IAgComponentInfo, IAgCloneable, IAgRuntimeTypeInfoProvider):
@@ -47098,7 +46769,6 @@ class AgVAMCSPropagate(IAgVAMCSSegment, IAgVAMCSPropagate, IAgComponentInfo, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSPropagate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{172B88CD-3CDC-4818-A03E-6538C4FD3B8D}", AgVAMCSPropagate)
-__all__.append("AgVAMCSPropagate")
 
 
 class AgVAState(IAgVAState, IAgRuntimeTypeInfoProvider):
@@ -47123,7 +46793,6 @@ class AgVAState(IAgVAState, IAgRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D09183D5-B72C-428B-B586-CD67D09B7BC1}", AgVAState)
-__all__.append("AgVAState")
 
 
 class AgVAStoppingConditionCollection(IAgVAStoppingConditionCollection, IAgRuntimeTypeInfoProvider):
@@ -47148,7 +46817,6 @@ class AgVAStoppingConditionCollection(IAgVAStoppingConditionCollection, IAgRunti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStoppingConditionCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9301C787-450F-49B9-B5BD-E263F5DEF4AF}", AgVAStoppingConditionCollection)
-__all__.append("AgVAStoppingConditionCollection")
 
 
 class AgVAAccessStoppingCondition(IAgComponentInfo, IAgCloneable, IAgVAAccessStoppingCondition, IAgVAStoppingConditionComponent, IAgRuntimeTypeInfoProvider):
@@ -47182,7 +46850,6 @@ class AgVAAccessStoppingCondition(IAgComponentInfo, IAgCloneable, IAgVAAccessSto
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAccessStoppingCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7526A10E-68CF-42C7-A1B6-DC58E4C83F8B}", AgVAAccessStoppingCondition)
-__all__.append("AgVAAccessStoppingCondition")
 
 
 class AgVALightingStoppingCondition(IAgComponentInfo, IAgCloneable, IAgVALightingStoppingCondition, IAgVAStoppingConditionComponent, IAgRuntimeTypeInfoProvider):
@@ -47216,7 +46883,6 @@ class AgVALightingStoppingCondition(IAgComponentInfo, IAgCloneable, IAgVALightin
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVALightingStoppingCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9AE4C815-0880-4912-A024-7A326AF7F9BB}", AgVALightingStoppingCondition)
-__all__.append("AgVALightingStoppingCondition")
 
 
 class AgVAStoppingCondition(IAgVAStoppingCondition, IAgComponentInfo, IAgCloneable, IAgVAStoppingConditionComponent, IAgRuntimeTypeInfoProvider):
@@ -47250,7 +46916,6 @@ class AgVAStoppingCondition(IAgVAStoppingCondition, IAgComponentInfo, IAgCloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStoppingCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{87FDFED8-E83F-4963-92BD-4F151BE3E5CA}", AgVAStoppingCondition)
-__all__.append("AgVAStoppingCondition")
 
 
 class AgVAStoppingConditionElement(IAgVAStoppingConditionElement, IAgComponentInfo, IAgRuntimeTypeInfoProvider):
@@ -47278,7 +46943,6 @@ class AgVAStoppingConditionElement(IAgVAStoppingConditionElement, IAgComponentIn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStoppingConditionElement.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EBE02320-241C-462D-93F5-1BE2B72C8FB5}", AgVAStoppingConditionElement)
-__all__.append("AgVAStoppingConditionElement")
 
 
 class AgVAMCSSequence(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSSequence, IAgComponentInfo, IAgCloneable):
@@ -47312,7 +46976,6 @@ class AgVAMCSSequence(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSSeque
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D98B9CE-047C-419E-9A58-5939ECD853EF}", AgVAMCSSequence)
-__all__.append("AgVAMCSSequence")
 
 
 class AgVAMCSBackwardSequence(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSBackwardSequence, IAgVAMCSSequence, IAgComponentInfo, IAgCloneable):
@@ -47349,7 +47012,6 @@ class AgVAMCSBackwardSequence(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSBackwardSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EDA33DE4-2AE3-4C19-87A4-2A3215ADB6FE}", AgVAMCSBackwardSequence)
-__all__.append("AgVAMCSBackwardSequence")
 
 
 class AgVAMCSLaunch(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSLaunch, IAgComponentInfo, IAgCloneable):
@@ -47383,7 +47045,6 @@ class AgVAMCSLaunch(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSLaunch,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSLaunch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1540C136-4AA5-449B-A845-A822E99422E2}", AgVAMCSLaunch)
-__all__.append("AgVAMCSLaunch")
 
 
 class AgVADisplaySystemGeodetic(IAgVADisplaySystemGeodetic, IAgVADisplaySystem):
@@ -47408,7 +47069,6 @@ class AgVADisplaySystemGeodetic(IAgVADisplaySystemGeodetic, IAgVADisplaySystem):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADisplaySystemGeodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{792B26D7-7643-47F5-8BBD-B4FE0708F3AB}", AgVADisplaySystemGeodetic)
-__all__.append("AgVADisplaySystemGeodetic")
 
 
 class AgVADisplaySystemGeocentric(IAgVADisplaySystemGeocentric, IAgVADisplaySystem):
@@ -47433,7 +47093,6 @@ class AgVADisplaySystemGeocentric(IAgVADisplaySystemGeocentric, IAgVADisplaySyst
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADisplaySystemGeocentric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{32F981ED-81EA-4C65-87DF-DC725A979056}", AgVADisplaySystemGeocentric)
-__all__.append("AgVADisplaySystemGeocentric")
 
 
 class AgVABurnoutGeodetic(IAgVABurnoutGeodetic, IAgVABurnout):
@@ -47458,7 +47117,6 @@ class AgVABurnoutGeodetic(IAgVABurnoutGeodetic, IAgVABurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABurnoutGeodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{011100E5-8DE0-4CE1-BC6D-F66B77814B78}", AgVABurnoutGeodetic)
-__all__.append("AgVABurnoutGeodetic")
 
 
 class AgVABurnoutCBFCartesian(IAgVABurnoutCBFCartesian, IAgVABurnout):
@@ -47483,7 +47141,6 @@ class AgVABurnoutCBFCartesian(IAgVABurnoutCBFCartesian, IAgVABurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABurnoutCBFCartesian.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3EE3ED29-6154-49CA-93C4-8623E801B58F}", AgVABurnoutCBFCartesian)
-__all__.append("AgVABurnoutCBFCartesian")
 
 
 class AgVABurnoutGeocentric(IAgVABurnoutGeocentric, IAgVABurnout):
@@ -47508,7 +47165,6 @@ class AgVABurnoutGeocentric(IAgVABurnoutGeocentric, IAgVABurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABurnoutGeocentric.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B7BD1F63-9D91-4DA5-9099-D6BE607F2702}", AgVABurnoutGeocentric)
-__all__.append("AgVABurnoutGeocentric")
 
 
 class AgVABurnoutLaunchAzAlt(IAgVABurnoutLaunchAzAlt, IAgVABurnout):
@@ -47533,7 +47189,6 @@ class AgVABurnoutLaunchAzAlt(IAgVABurnoutLaunchAzAlt, IAgVABurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABurnoutLaunchAzAlt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E5A780AE-0173-4FF8-AD0F-43886E1FAE85}", AgVABurnoutLaunchAzAlt)
-__all__.append("AgVABurnoutLaunchAzAlt")
 
 
 class AgVABurnoutLaunchAzRadius(IAgVABurnoutLaunchAzRadius, IAgVABurnout):
@@ -47558,7 +47213,6 @@ class AgVABurnoutLaunchAzRadius(IAgVABurnoutLaunchAzRadius, IAgVABurnout):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABurnoutLaunchAzRadius.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ABC361CE-B104-427C-BDDB-CF77EBDC9B8E}", AgVABurnoutLaunchAzRadius)
-__all__.append("AgVABurnoutLaunchAzRadius")
 
 
 class AgVABurnoutVelocity(IAgVABurnoutVelocity):
@@ -47580,7 +47234,6 @@ class AgVABurnoutVelocity(IAgVABurnoutVelocity):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABurnoutVelocity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DFD439A9-42BD-4A59-9681-A70BBC94E083}", AgVABurnoutVelocity)
-__all__.append("AgVABurnoutVelocity")
 
 
 class AgVAMCSFollow(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSFollow, IAgComponentInfo, IAgCloneable):
@@ -47614,7 +47267,6 @@ class AgVAMCSFollow(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSFollow,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSFollow.")
         
 agcls.AgClassCatalog.add_catalog_entry("{322FC7F6-FCDF-408B-A31C-F25A1F5456EB}", AgVAMCSFollow)
-__all__.append("AgVAMCSFollow")
 
 
 class AgVAMCSManeuver(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSManeuver, IAgComponentInfo, IAgCloneable):
@@ -47648,7 +47300,6 @@ class AgVAMCSManeuver(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSManeu
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSManeuver.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1EE05100-A5B8-4820-9C6D-F4AE0639E1EE}", AgVAMCSManeuver)
-__all__.append("AgVAMCSManeuver")
 
 
 class AgVAManeuverFinite(IAgVAManeuverFinite, IAgVAManeuver, IAgRuntimeTypeInfoProvider):
@@ -47676,7 +47327,6 @@ class AgVAManeuverFinite(IAgVAManeuverFinite, IAgVAManeuver, IAgRuntimeTypeInfoP
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverFinite.")
         
 agcls.AgClassCatalog.add_catalog_entry("{22EAD08A-6355-48BA-96EC-5DD996A5D926}", AgVAManeuverFinite)
-__all__.append("AgVAManeuverFinite")
 
 
 class AgVAManeuverImpulsive(IAgVAManeuverImpulsive, IAgVAManeuver, IAgRuntimeTypeInfoProvider):
@@ -47704,7 +47354,6 @@ class AgVAManeuverImpulsive(IAgVAManeuverImpulsive, IAgVAManeuver, IAgRuntimeTyp
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverImpulsive.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E4DCF8C5-987F-4739-9592-E4C49B9A827E}", AgVAManeuverImpulsive)
-__all__.append("AgVAManeuverImpulsive")
 
 
 class AgVAAttitudeControlImpulsiveVelocityVector(IAgVAAttitudeControlImpulsiveVelocityVector, IAgVAAttitudeControlImpulsive, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47735,7 +47384,6 @@ class AgVAAttitudeControlImpulsiveVelocityVector(IAgVAAttitudeControlImpulsiveVe
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlImpulsiveVelocityVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C466E73A-E301-43C8-8402-700D0CE8DE41}", AgVAAttitudeControlImpulsiveVelocityVector)
-__all__.append("AgVAAttitudeControlImpulsiveVelocityVector")
 
 
 class AgVAAttitudeControlImpulsiveAntiVelocityVector(IAgVAAttitudeControlImpulsiveAntiVelocityVector, IAgVAAttitudeControlImpulsive, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47766,7 +47414,6 @@ class AgVAAttitudeControlImpulsiveAntiVelocityVector(IAgVAAttitudeControlImpulsi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlImpulsiveAntiVelocityVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B51D8BDC-E2A5-484C-8CB8-88E4D1BBC5A1}", AgVAAttitudeControlImpulsiveAntiVelocityVector)
-__all__.append("AgVAAttitudeControlImpulsiveAntiVelocityVector")
 
 
 class AgVAAttitudeControlImpulsiveAttitude(IAgVAAttitudeControlImpulsiveAttitude, IAgVAAttitudeControlImpulsive, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47797,7 +47444,6 @@ class AgVAAttitudeControlImpulsiveAttitude(IAgVAAttitudeControlImpulsiveAttitude
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlImpulsiveAttitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8854FD36-7CEA-4FBC-B699-E47007BA7825}", AgVAAttitudeControlImpulsiveAttitude)
-__all__.append("AgVAAttitudeControlImpulsiveAttitude")
 
 
 class AgVAAttitudeControlImpulsiveFile(IAgVAAttitudeControlImpulsiveFile, IAgVAAttitudeControlImpulsive, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47828,7 +47474,6 @@ class AgVAAttitudeControlImpulsiveFile(IAgVAAttitudeControlImpulsiveFile, IAgVAA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlImpulsiveFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{18E769AB-177B-4575-A9E0-BBB5BEEA78AE}", AgVAAttitudeControlImpulsiveFile)
-__all__.append("AgVAAttitudeControlImpulsiveFile")
 
 
 class AgVAAttitudeControlImpulsiveThrustVector(IAgVAAttitudeControlImpulsiveThrustVector, IAgVAAttitudeControlImpulsive, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47859,7 +47504,6 @@ class AgVAAttitudeControlImpulsiveThrustVector(IAgVAAttitudeControlImpulsiveThru
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlImpulsiveThrustVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B17F3D0C-2021-4D60-80B7-1F55934FACAF}", AgVAAttitudeControlImpulsiveThrustVector)
-__all__.append("AgVAAttitudeControlImpulsiveThrustVector")
 
 
 class AgVAAttitudeControlFiniteAntiVelocityVector(IAgVAAttitudeControlFiniteAntiVelocityVector, IAgVAAttitudeControlFinite, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47890,7 +47534,6 @@ class AgVAAttitudeControlFiniteAntiVelocityVector(IAgVAAttitudeControlFiniteAnti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlFiniteAntiVelocityVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2C11B410-A573-446A-9637-A472B987A987}", AgVAAttitudeControlFiniteAntiVelocityVector)
-__all__.append("AgVAAttitudeControlFiniteAntiVelocityVector")
 
 
 class AgVAAttitudeControlFiniteAttitude(IAgVAAttitudeControlFiniteAttitude, IAgVAAttitudeControlFinite, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47921,7 +47564,6 @@ class AgVAAttitudeControlFiniteAttitude(IAgVAAttitudeControlFiniteAttitude, IAgV
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlFiniteAttitude.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EA2C6994-7191-4CEF-9C8D-3BE0AA6BB756}", AgVAAttitudeControlFiniteAttitude)
-__all__.append("AgVAAttitudeControlFiniteAttitude")
 
 
 class AgVAAttitudeControlFiniteFile(IAgVAAttitudeControlFiniteFile, IAgVAAttitudeControlFinite, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47952,7 +47594,6 @@ class AgVAAttitudeControlFiniteFile(IAgVAAttitudeControlFiniteFile, IAgVAAttitud
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlFiniteFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7F2333DC-4E2B-499C-9F14-A4F1932F9C62}", AgVAAttitudeControlFiniteFile)
-__all__.append("AgVAAttitudeControlFiniteFile")
 
 
 class AgVAAttitudeControlFiniteThrustVector(IAgVAAttitudeControlFiniteThrustVector, IAgVAAttitudeControlFinite, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -47983,7 +47624,6 @@ class AgVAAttitudeControlFiniteThrustVector(IAgVAAttitudeControlFiniteThrustVect
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlFiniteThrustVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B31C16F-C862-498D-ADFB-5C4F50D45DF1}", AgVAAttitudeControlFiniteThrustVector)
-__all__.append("AgVAAttitudeControlFiniteThrustVector")
 
 
 class AgVAAttitudeControlFiniteTimeVarying(IAgVAAttitudeControlFiniteTimeVarying, IAgVAAttitudeControlFinite, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -48014,7 +47654,6 @@ class AgVAAttitudeControlFiniteTimeVarying(IAgVAAttitudeControlFiniteTimeVarying
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlFiniteTimeVarying.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F28DCCA6-0AFE-4142-BDB1-0957F1B3CB6F}", AgVAAttitudeControlFiniteTimeVarying)
-__all__.append("AgVAAttitudeControlFiniteTimeVarying")
 
 
 class AgVAAttitudeControlFiniteVelocityVector(IAgVAAttitudeControlFiniteVelocityVector, IAgVAAttitudeControlFinite, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -48045,7 +47684,6 @@ class AgVAAttitudeControlFiniteVelocityVector(IAgVAAttitudeControlFiniteVelocity
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlFiniteVelocityVector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{90EE5B69-A270-4A1D-862F-C7A9A532F33F}", AgVAAttitudeControlFiniteVelocityVector)
-__all__.append("AgVAAttitudeControlFiniteVelocityVector")
 
 
 class AgVAAttitudeControlFinitePlugin(IAgVAAttitudeControlFinitePlugin, IAgVAAttitudeControlFinite, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -48076,7 +47714,6 @@ class AgVAAttitudeControlFinitePlugin(IAgVAAttitudeControlFinitePlugin, IAgVAAtt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlFinitePlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{41C29436-C581-4FD2-BFFB-090FCDA9C090}", AgVAAttitudeControlFinitePlugin)
-__all__.append("AgVAAttitudeControlFinitePlugin")
 
 
 class AgVAAttitudeControlOptimalFiniteLagrange(IAgVAAttitudeControlOptimalFiniteLagrange, IAgVAAttitudeControlOptimalFinite, IAgVAAttitudeControl, IAgRuntimeTypeInfoProvider):
@@ -48107,7 +47744,6 @@ class AgVAAttitudeControlOptimalFiniteLagrange(IAgVAAttitudeControlOptimalFinite
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAttitudeControlOptimalFiniteLagrange.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE88E914-B911-41DB-9811-37CFBC7DAECC}", AgVAAttitudeControlOptimalFiniteLagrange)
-__all__.append("AgVAAttitudeControlOptimalFiniteLagrange")
 
 
 class AgVAManeuverFinitePropagator(IAgVAManeuverFinitePropagator, IAgRuntimeTypeInfoProvider):
@@ -48132,7 +47768,6 @@ class AgVAManeuverFinitePropagator(IAgVAManeuverFinitePropagator, IAgRuntimeType
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverFinitePropagator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4F2C7CA9-D775-4CE0-8297-A8806F56F094}", AgVAManeuverFinitePropagator)
-__all__.append("AgVAManeuverFinitePropagator")
 
 
 class AgVAMCSHold(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSHold, IAgComponentInfo, IAgCloneable):
@@ -48166,7 +47801,6 @@ class AgVAMCSHold(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSHold, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSHold.")
         
 agcls.AgClassCatalog.add_catalog_entry("{51159257-B7FD-45E5-AB02-7FEB20D924E5}", AgVAMCSHold)
-__all__.append("AgVAMCSHold")
 
 
 class AgVAMCSUpdate(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSUpdate, IAgComponentInfo, IAgCloneable):
@@ -48200,7 +47834,6 @@ class AgVAMCSUpdate(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSUpdate,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSUpdate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3A975A07-EB14-4231-B8E7-C977B091D8B0}", AgVAMCSUpdate)
-__all__.append("AgVAMCSUpdate")
 
 
 class AgVAMCSReturn(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSReturn, IAgComponentInfo, IAgCloneable):
@@ -48234,7 +47867,6 @@ class AgVAMCSReturn(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSReturn,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSReturn.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0D4E769A-CBA7-4A17-89BA-F61B59F15D09}", AgVAMCSReturn)
-__all__.append("AgVAMCSReturn")
 
 
 class AgVAMCSStop(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSStop, IAgComponentInfo, IAgCloneable):
@@ -48268,7 +47900,6 @@ class AgVAMCSStop(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSStop, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSStop.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59CF0A59-0E77-4D5F-BE88-E151D8899331}", AgVAMCSStop)
-__all__.append("AgVAMCSStop")
 
 
 class AgVAMCSTargetSequence(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMCSTargetSequence, IAgComponentInfo, IAgCloneable):
@@ -48302,7 +47933,6 @@ class AgVAMCSTargetSequence(IAgVAMCSSegment, IAgRuntimeTypeInfoProvider, IAgVAMC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSTargetSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DF528E2E-3CFD-4935-9A24-B9C9D8C0E727}", AgVAMCSTargetSequence)
-__all__.append("AgVAMCSTargetSequence")
 
 
 class AgVAProfileCollection(IAgVAProfileCollection, IAgRuntimeTypeInfoProvider):
@@ -48327,7 +47957,6 @@ class AgVAProfileCollection(IAgVAProfileCollection, IAgRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{37B58077-200F-4763-8ED2-C4B5AFA97B2E}", AgVAProfileCollection)
-__all__.append("AgVAProfileCollection")
 
 
 class AgVAMCSOptions(IAgVAMCSOptions):
@@ -48349,7 +47978,6 @@ class AgVAMCSOptions(IAgVAMCSOptions):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSOptions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0A469F1B-225A-48E3-9B89-0EC63C95D705}", AgVAMCSOptions)
-__all__.append("AgVAMCSOptions")
 
 
 class AgVACalcObjectCollection(IAgVACalcObjectCollection):
@@ -48371,7 +47999,6 @@ class AgVACalcObjectCollection(IAgVACalcObjectCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACalcObjectCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9C6165FC-8537-4B53-AC20-66F2C670A7A9}", AgVACalcObjectCollection)
-__all__.append("AgVACalcObjectCollection")
 
 
 class AgVAConstraintCollection(IAgVAConstraintCollection):
@@ -48393,7 +48020,6 @@ class AgVAConstraintCollection(IAgVAConstraintCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAConstraintCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D992E5D5-AE65-4041-B3A8-DF2244DE2068}", AgVAConstraintCollection)
-__all__.append("AgVAConstraintCollection")
 
 
 class AgVAPluginProperties(IAgVAPluginProperties):
@@ -48415,7 +48041,6 @@ class AgVAPluginProperties(IAgVAPluginProperties):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAPluginProperties.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A115E060-4BB8-430F-AB23-2BBE3C0C2087}", AgVAPluginProperties)
-__all__.append("AgVAPluginProperties")
 
 
 class AgVAProfileSearchPlugin(IAgVAProfileSearchPlugin, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -48443,7 +48068,6 @@ class AgVAProfileSearchPlugin(IAgVAProfileSearchPlugin, IAgVAProfile, IAgRuntime
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileSearchPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{25E94763-B5B1-4964-B563-9AEED96D9D54}", AgVAProfileSearchPlugin)
-__all__.append("AgVAProfileSearchPlugin")
 
 
 class AgVATargeterGraph(IAgVATargeterGraph, IAgRuntimeTypeInfoProvider):
@@ -48468,7 +48092,6 @@ class AgVATargeterGraph(IAgVATargeterGraph, IAgRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVATargeterGraph.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BF6E6956-1E2A-42E5-A56C-1BEF9EFB8A29}", AgVATargeterGraph)
-__all__.append("AgVATargeterGraph")
 
 
 class AgVATargeterGraphCollection(IAgVATargeterGraphCollection, IAgRuntimeTypeInfoProvider):
@@ -48493,7 +48116,6 @@ class AgVATargeterGraphCollection(IAgVATargeterGraphCollection, IAgRuntimeTypeIn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVATargeterGraphCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{322FC0D0-8F69-4F4B-9247-2558D6AFF63F}", AgVATargeterGraphCollection)
-__all__.append("AgVATargeterGraphCollection")
 
 
 class AgVATargeterGraphResultCollection(IAgVATargeterGraphResultCollection, IAgRuntimeTypeInfoProvider):
@@ -48518,7 +48140,6 @@ class AgVATargeterGraphResultCollection(IAgVATargeterGraphResultCollection, IAgR
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVATargeterGraphResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{87090DB9-4866-40E4-BA58-BDF7C8EACCEB}", AgVATargeterGraphResultCollection)
-__all__.append("AgVATargeterGraphResultCollection")
 
 
 class AgVATargeterGraphActiveControlCollection(IAgVATargeterGraphActiveControlCollection, IAgRuntimeTypeInfoProvider):
@@ -48543,7 +48164,6 @@ class AgVATargeterGraphActiveControlCollection(IAgVATargeterGraphActiveControlCo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVATargeterGraphActiveControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7FB70374-2313-463C-A69E-C5111C4BC1E4}", AgVATargeterGraphActiveControlCollection)
-__all__.append("AgVATargeterGraphActiveControlCollection")
 
 
 class AgVATargeterGraphActiveControl(IAgVATargeterGraphActiveControl, IAgRuntimeTypeInfoProvider):
@@ -48568,7 +48188,6 @@ class AgVATargeterGraphActiveControl(IAgVATargeterGraphActiveControl, IAgRuntime
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVATargeterGraphActiveControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E6457FA2-28BF-471B-9DCF-575B27BF588B}", AgVATargeterGraphActiveControl)
-__all__.append("AgVATargeterGraphActiveControl")
 
 
 class AgVATargeterGraphResult(IAgVATargeterGraphResult, IAgRuntimeTypeInfoProvider):
@@ -48593,7 +48212,6 @@ class AgVATargeterGraphResult(IAgVATargeterGraphResult, IAgRuntimeTypeInfoProvid
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVATargeterGraphResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AB6CA723-1634-4A90-AD8C-4DB34D7A2925}", AgVATargeterGraphResult)
-__all__.append("AgVATargeterGraphResult")
 
 
 class AgVAProfileDifferentialCorrector(IAgVAProfileDifferentialCorrector, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -48621,7 +48239,6 @@ class AgVAProfileDifferentialCorrector(IAgVAProfileDifferentialCorrector, IAgVAP
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileDifferentialCorrector.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4446E46E-A169-4F12-AE14-562D35A6BC60}", AgVAProfileDifferentialCorrector)
-__all__.append("AgVAProfileDifferentialCorrector")
 
 
 class AgVAProfileScriptingTool(IAgVAProfileScriptingTool, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -48649,7 +48266,6 @@ class AgVAProfileScriptingTool(IAgVAProfileScriptingTool, IAgVAProfile, IAgRunti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileScriptingTool.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EC9D1E6F-4155-4685-AFE9-785DE109564A}", AgVAProfileScriptingTool)
-__all__.append("AgVAProfileScriptingTool")
 
 
 class AgVADCControl(IAgVADCControl, IAgRuntimeTypeInfoProvider):
@@ -48674,7 +48290,6 @@ class AgVADCControl(IAgVADCControl, IAgRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADCControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5D59626C-A2D6-4D23-91C8-43D3764115C9}", AgVADCControl)
-__all__.append("AgVADCControl")
 
 
 class AgVADCResult(IAgVADCResult, IAgRuntimeTypeInfoProvider):
@@ -48699,7 +48314,6 @@ class AgVADCResult(IAgVADCResult, IAgRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADCResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1F4606B6-6EB5-4349-90AD-E607DBBC6AB5}", AgVADCResult)
-__all__.append("AgVADCResult")
 
 
 class AgVADCControlCollection(IAgVADCControlCollection, IAgRuntimeTypeInfoProvider):
@@ -48724,7 +48338,6 @@ class AgVADCControlCollection(IAgVADCControlCollection, IAgRuntimeTypeInfoProvid
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADCControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{61729FE0-729A-461C-8C94-6816EC0F88E8}", AgVADCControlCollection)
-__all__.append("AgVADCControlCollection")
 
 
 class AgVADCResultCollection(IAgVADCResultCollection, IAgRuntimeTypeInfoProvider):
@@ -48749,7 +48362,6 @@ class AgVADCResultCollection(IAgVADCResultCollection, IAgRuntimeTypeInfoProvider
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADCResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{703FFB61-063E-4B38-AC0A-968903E6E929}", AgVADCResultCollection)
-__all__.append("AgVADCResultCollection")
 
 
 class AgVASearchPluginControl(IAgVASearchPluginControl):
@@ -48771,7 +48383,6 @@ class AgVASearchPluginControl(IAgVASearchPluginControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASearchPluginControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C127E67D-2078-4605-BB16-BF4049CBDEF0}", AgVASearchPluginControl)
-__all__.append("AgVASearchPluginControl")
 
 
 class AgVASearchPluginControlCollection(IAgVASearchPluginControlCollection):
@@ -48793,7 +48404,6 @@ class AgVASearchPluginControlCollection(IAgVASearchPluginControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASearchPluginControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{78A7975A-C0F5-434A-9902-411C3E975F7E}", AgVASearchPluginControlCollection)
-__all__.append("AgVASearchPluginControlCollection")
 
 
 class AgVASearchPluginResult(IAgVASearchPluginResult):
@@ -48815,7 +48425,6 @@ class AgVASearchPluginResult(IAgVASearchPluginResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASearchPluginResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7A3345FE-C088-4CFA-84BE-5E997BB15CF8}", AgVASearchPluginResult)
-__all__.append("AgVASearchPluginResult")
 
 
 class AgVASearchPluginResultCollection(IAgVASearchPluginResultCollection):
@@ -48837,7 +48446,6 @@ class AgVASearchPluginResultCollection(IAgVASearchPluginResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASearchPluginResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8D37CDE6-2358-4419-9297-0032314ACB35}", AgVASearchPluginResultCollection)
-__all__.append("AgVASearchPluginResultCollection")
 
 
 class AgVAProfileChangeManeuverType(IAgVAProfileChangeManeuverType, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -48865,7 +48473,6 @@ class AgVAProfileChangeManeuverType(IAgVAProfileChangeManeuverType, IAgVAProfile
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileChangeManeuverType.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8FCD3010-988A-4C88-A3E8-FB0D991B1DA3}", AgVAProfileChangeManeuverType)
-__all__.append("AgVAProfileChangeManeuverType")
 
 
 class AgVAProfileChangeReturnSegment(IAgVAProfileChangeReturnSegment, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -48893,7 +48500,6 @@ class AgVAProfileChangeReturnSegment(IAgVAProfileChangeReturnSegment, IAgVAProfi
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileChangeReturnSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D7436885-84AD-41DE-9D0F-7A6F001A863B}", AgVAProfileChangeReturnSegment)
-__all__.append("AgVAProfileChangeReturnSegment")
 
 
 class AgVAProfileChangePropagator(IAgVAProfileChangePropagator, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -48921,7 +48527,6 @@ class AgVAProfileChangePropagator(IAgVAProfileChangePropagator, IAgVAProfile, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileChangePropagator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3EB69307-370B-443E-AB4F-1463A80142CD}", AgVAProfileChangePropagator)
-__all__.append("AgVAProfileChangePropagator")
 
 
 class AgVAProfileChangeStopSegment(IAgVAProfileChangeStopSegment, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -48949,7 +48554,6 @@ class AgVAProfileChangeStopSegment(IAgVAProfileChangeStopSegment, IAgVAProfile, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileChangeStopSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{73CD0F57-2A67-47D7-BFAD-4E07D5045AB1}", AgVAProfileChangeStopSegment)
-__all__.append("AgVAProfileChangeStopSegment")
 
 
 class AgVAProfileChangeStoppingConditionState(IAgVAProfileChangeStoppingConditionState, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -48977,7 +48581,6 @@ class AgVAProfileChangeStoppingConditionState(IAgVAProfileChangeStoppingConditio
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileChangeStoppingConditionState.")
         
 agcls.AgClassCatalog.add_catalog_entry("{593BF97D-DA25-40EC-832A-2514939CCCCB}", AgVAProfileChangeStoppingConditionState)
-__all__.append("AgVAProfileChangeStoppingConditionState")
 
 
 class AgVAProfileSeedFiniteManeuver(IAgVAProfileSeedFiniteManeuver, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -49005,7 +48608,6 @@ class AgVAProfileSeedFiniteManeuver(IAgVAProfileSeedFiniteManeuver, IAgVAProfile
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileSeedFiniteManeuver.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4524367A-A29D-401A-8B98-82FB06E4D2B3}", AgVAProfileSeedFiniteManeuver)
-__all__.append("AgVAProfileSeedFiniteManeuver")
 
 
 class AgVAProfileRunOnce(IAgVAProfileRunOnce, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -49033,7 +48635,6 @@ class AgVAProfileRunOnce(IAgVAProfileRunOnce, IAgVAProfile, IAgRuntimeTypeInfoPr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileRunOnce.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6B7DC440-DAE4-4F68-BD3A-D431EF7460B4}", AgVAProfileRunOnce)
-__all__.append("AgVAProfileRunOnce")
 
 
 class AgVABPlaneCollection(IAgVABPlaneCollection):
@@ -49055,7 +48656,6 @@ class AgVABPlaneCollection(IAgVABPlaneCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABPlaneCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A33E12D-FC24-46EB-8AD4-752E5534168D}", AgVABPlaneCollection)
-__all__.append("AgVABPlaneCollection")
 
 
 class AgVAStateCalcDamageFlux(IAgVAStateCalcDamageFlux, IAgComponentInfo, IAgCloneable):
@@ -49083,7 +48683,6 @@ class AgVAStateCalcDamageFlux(IAgVAStateCalcDamageFlux, IAgComponentInfo, IAgClo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDamageFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EFD8FBFA-6ACF-463D-9857-7C272440314F}", AgVAStateCalcDamageFlux)
-__all__.append("AgVAStateCalcDamageFlux")
 
 
 class AgVAStateCalcDamageMassFlux(IAgVAStateCalcDamageMassFlux, IAgComponentInfo, IAgCloneable):
@@ -49111,7 +48710,6 @@ class AgVAStateCalcDamageMassFlux(IAgVAStateCalcDamageMassFlux, IAgComponentInfo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDamageMassFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05A46EDD-2B3D-4505-BD42-DB7516899060}", AgVAStateCalcDamageMassFlux)
-__all__.append("AgVAStateCalcDamageMassFlux")
 
 
 class AgVAStateCalcMagFieldDipoleL(IAgVAStateCalcMagFieldDipoleL, IAgComponentInfo, IAgCloneable):
@@ -49139,7 +48737,6 @@ class AgVAStateCalcMagFieldDipoleL(IAgVAStateCalcMagFieldDipoleL, IAgComponentIn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMagFieldDipoleL.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C1FD9D99-42EF-40F2-9E53-AEBAEC1A5573}", AgVAStateCalcMagFieldDipoleL)
-__all__.append("AgVAStateCalcMagFieldDipoleL")
 
 
 class AgVAStateCalcSEETMagFieldFieldLineSepAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSEETMagFieldFieldLineSepAngle):
@@ -49167,7 +48764,6 @@ class AgVAStateCalcSEETMagFieldFieldLineSepAngle(IAgComponentInfo, IAgCloneable,
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSEETMagFieldFieldLineSepAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{585BF1E2-E8E0-4D8B-9101-7BDC793D6E68}", AgVAStateCalcSEETMagFieldFieldLineSepAngle)
-__all__.append("AgVAStateCalcSEETMagFieldFieldLineSepAngle")
 
 
 class AgVAStateCalcImpactFlux(IAgVAStateCalcImpactFlux, IAgComponentInfo, IAgCloneable):
@@ -49195,7 +48791,6 @@ class AgVAStateCalcImpactFlux(IAgVAStateCalcImpactFlux, IAgComponentInfo, IAgClo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcImpactFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2F537C47-80E4-483C-9C6F-A82F91EC5F24}", AgVAStateCalcImpactFlux)
-__all__.append("AgVAStateCalcImpactFlux")
 
 
 class AgVAStateCalcImpactMassFlux(IAgVAStateCalcImpactMassFlux, IAgComponentInfo, IAgCloneable):
@@ -49223,7 +48818,6 @@ class AgVAStateCalcImpactMassFlux(IAgVAStateCalcImpactMassFlux, IAgComponentInfo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcImpactMassFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9D64EF8C-63C9-4924-BE13-8176E3DAB180}", AgVAStateCalcImpactMassFlux)
-__all__.append("AgVAStateCalcImpactMassFlux")
 
 
 class AgVAStateCalcSEETSAAFlux(IAgVAStateCalcSEETSAAFlux, IAgComponentInfo, IAgCloneable):
@@ -49251,7 +48845,6 @@ class AgVAStateCalcSEETSAAFlux(IAgVAStateCalcSEETSAAFlux, IAgComponentInfo, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSEETSAAFlux.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3C766F5E-9727-4ACD-9E5D-D08684116A79}", AgVAStateCalcSEETSAAFlux)
-__all__.append("AgVAStateCalcSEETSAAFlux")
 
 
 class AgVAStateCalcSEETVehTemp(IAgVAStateCalcSEETVehTemp, IAgComponentInfo, IAgCloneable):
@@ -49279,7 +48872,6 @@ class AgVAStateCalcSEETVehTemp(IAgVAStateCalcSEETVehTemp, IAgComponentInfo, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSEETVehTemp.")
         
 agcls.AgClassCatalog.add_catalog_entry("{082CAA56-3DB0-4BA5-BE14-B84D93A32504}", AgVAStateCalcSEETVehTemp)
-__all__.append("AgVAStateCalcSEETVehTemp")
 
 
 class AgVAStateCalcEpoch(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEpoch):
@@ -49307,7 +48899,6 @@ class AgVAStateCalcEpoch(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEpoch):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcEpoch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CC140708-1576-4CFA-9A28-BC454B33DE02}", AgVAStateCalcEpoch)
-__all__.append("AgVAStateCalcEpoch")
 
 
 class AgVAStateCalcJacobiConstant(IAgComponentInfo, IAgCloneable, IAgVAStateCalcJacobiConstant):
@@ -49335,7 +48926,6 @@ class AgVAStateCalcJacobiConstant(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcJacobiConstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FFF1FA69-1E24-445E-A239-41E2AB0D373B}", AgVAStateCalcJacobiConstant)
-__all__.append("AgVAStateCalcJacobiConstant")
 
 
 class AgVAStateCalcCartesianElem(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCartesianElem):
@@ -49363,7 +48953,6 @@ class AgVAStateCalcCartesianElem(IAgComponentInfo, IAgCloneable, IAgVAStateCalcC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCartesianElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AECA6CA7-7D04-4EB5-95D9-216BBCCD0EC1}", AgVAStateCalcCartesianElem)
-__all__.append("AgVAStateCalcCartesianElem")
 
 
 class AgVAStateCalcCartSTMElem(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCartSTMElem):
@@ -49391,7 +48980,6 @@ class AgVAStateCalcCartSTMElem(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCar
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCartSTMElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{84EAF6DB-A535-421E-8CCF-95A142E3B2FE}", AgVAStateCalcCartSTMElem)
-__all__.append("AgVAStateCalcCartSTMElem")
 
 
 class AgVAStateCalcSTMEigenval(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSTMEigenval):
@@ -49419,7 +49007,6 @@ class AgVAStateCalcSTMEigenval(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSTM
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSTMEigenval.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F3AC2C6F-7A0A-40CA-A7EC-230D9EC2D75E}", AgVAStateCalcSTMEigenval)
-__all__.append("AgVAStateCalcSTMEigenval")
 
 
 class AgVAStateCalcSTMEigenvecElem(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSTMEigenvecElem):
@@ -49447,7 +49034,6 @@ class AgVAStateCalcSTMEigenvecElem(IAgComponentInfo, IAgCloneable, IAgVAStateCal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSTMEigenvecElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{53BF2ADA-8B4D-4E64-BC61-AFA201DAB3C7}", AgVAStateCalcSTMEigenvecElem)
-__all__.append("AgVAStateCalcSTMEigenvecElem")
 
 
 class AgVAStateCalcEnvironment(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEnvironment):
@@ -49475,7 +49061,6 @@ class AgVAStateCalcEnvironment(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEnv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcEnvironment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A8319DEC-F018-4890-AC98-9F7B2AF96DF6}", AgVAStateCalcEnvironment)
-__all__.append("AgVAStateCalcEnvironment")
 
 
 class AgVAStateCalcOrbitDelaunayG(IAgVAStateCalcOrbitDelaunayG, IAgComponentInfo, IAgCloneable):
@@ -49503,7 +49088,6 @@ class AgVAStateCalcOrbitDelaunayG(IAgVAStateCalcOrbitDelaunayG, IAgComponentInfo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOrbitDelaunayG.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5DE99D8D-DB40-4107-9D79-03D51AEAA4E8}", AgVAStateCalcOrbitDelaunayG)
-__all__.append("AgVAStateCalcOrbitDelaunayG")
 
 
 class AgVAStateCalcOrbitDelaunayH(IAgVAStateCalcOrbitDelaunayH, IAgComponentInfo, IAgCloneable):
@@ -49531,7 +49115,6 @@ class AgVAStateCalcOrbitDelaunayH(IAgVAStateCalcOrbitDelaunayH, IAgComponentInfo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOrbitDelaunayH.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4C7CDC1F-79EA-412B-A1E3-7E519CCAA4F0}", AgVAStateCalcOrbitDelaunayH)
-__all__.append("AgVAStateCalcOrbitDelaunayH")
 
 
 class AgVAStateCalcOrbitDelaunayL(IAgVAStateCalcOrbitDelaunayL, IAgComponentInfo, IAgCloneable):
@@ -49559,7 +49142,6 @@ class AgVAStateCalcOrbitDelaunayL(IAgVAStateCalcOrbitDelaunayL, IAgComponentInfo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOrbitDelaunayL.")
         
 agcls.AgClassCatalog.add_catalog_entry("{299A4FF6-0636-4A25-AC74-4FF7D0A33F30}", AgVAStateCalcOrbitDelaunayL)
-__all__.append("AgVAStateCalcOrbitDelaunayL")
 
 
 class AgVAStateCalcOrbitSemiLatusRectum(IAgVAStateCalcOrbitSemiLatusRectum, IAgComponentInfo, IAgCloneable):
@@ -49587,7 +49169,6 @@ class AgVAStateCalcOrbitSemiLatusRectum(IAgVAStateCalcOrbitSemiLatusRectum, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOrbitSemiLatusRectum.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9A0EF481-BE9B-47B7-81D5-CAFF636B8E31}", AgVAStateCalcOrbitSemiLatusRectum)
-__all__.append("AgVAStateCalcOrbitSemiLatusRectum")
 
 
 class AgVAStateCalcEquinoctialElem(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEquinoctialElem):
@@ -49615,7 +49196,6 @@ class AgVAStateCalcEquinoctialElem(IAgComponentInfo, IAgCloneable, IAgVAStateCal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcEquinoctialElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5C90B745-3002-4AEC-9613-0FE8168F2903}", AgVAStateCalcEquinoctialElem)
-__all__.append("AgVAStateCalcEquinoctialElem")
 
 
 class AgVAStateCalcCloseApproachBearing(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCloseApproachBearing):
@@ -49643,7 +49223,6 @@ class AgVAStateCalcCloseApproachBearing(IAgComponentInfo, IAgCloneable, IAgVASta
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCloseApproachBearing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E0AD9FFF-8F9D-4EBD-A41D-2982A60968AB}", AgVAStateCalcCloseApproachBearing)
-__all__.append("AgVAStateCalcCloseApproachBearing")
 
 
 class AgVAStateCalcCloseApproachMag(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCloseApproachMag):
@@ -49671,7 +49250,6 @@ class AgVAStateCalcCloseApproachMag(IAgComponentInfo, IAgCloneable, IAgVAStateCa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCloseApproachMag.")
         
 agcls.AgClassCatalog.add_catalog_entry("{70461F34-33C2-42B4-9591-5A2F2C5EB8D2}", AgVAStateCalcCloseApproachMag)
-__all__.append("AgVAStateCalcCloseApproachMag")
 
 
 class AgVAStateCalcCloseApproachTheta(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCloseApproachTheta):
@@ -49699,7 +49277,6 @@ class AgVAStateCalcCloseApproachTheta(IAgComponentInfo, IAgCloneable, IAgVAState
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCloseApproachTheta.")
         
 agcls.AgClassCatalog.add_catalog_entry("{950DA5FA-29AA-4422-B760-AD23CB6A33FB}", AgVAStateCalcCloseApproachTheta)
-__all__.append("AgVAStateCalcCloseApproachTheta")
 
 
 class AgVAStateCalcCloseApproachX(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCloseApproachX):
@@ -49727,7 +49304,6 @@ class AgVAStateCalcCloseApproachX(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCloseApproachX.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD980AD5-6212-4A4A-AC05-4453F9015301}", AgVAStateCalcCloseApproachX)
-__all__.append("AgVAStateCalcCloseApproachX")
 
 
 class AgVAStateCalcCloseApproachY(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCloseApproachY):
@@ -49755,7 +49331,6 @@ class AgVAStateCalcCloseApproachY(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCloseApproachY.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D04565A4-C1F2-4A3D-A304-FB3CB2887087}", AgVAStateCalcCloseApproachY)
-__all__.append("AgVAStateCalcCloseApproachY")
 
 
 class AgVAStateCalcCloseApproachCosBearing(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCloseApproachCosBearing):
@@ -49783,7 +49358,6 @@ class AgVAStateCalcCloseApproachCosBearing(IAgComponentInfo, IAgCloneable, IAgVA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCloseApproachCosBearing.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EDAFFF24-75C9-4C68-9E4B-00DEFD89DAE1}", AgVAStateCalcCloseApproachCosBearing)
-__all__.append("AgVAStateCalcCloseApproachCosBearing")
 
 
 class AgVAStateCalcRelGroundTrackError(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRelGroundTrackError):
@@ -49811,7 +49385,6 @@ class AgVAStateCalcRelGroundTrackError(IAgComponentInfo, IAgCloneable, IAgVAStat
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRelGroundTrackError.")
         
 agcls.AgClassCatalog.add_catalog_entry("{42632E47-2FF5-4183-BB7F-9A3CDAB5E80D}", AgVAStateCalcRelGroundTrackError)
-__all__.append("AgVAStateCalcRelGroundTrackError")
 
 
 class AgVAStateCalcRelAtAOLMaster(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRelAtAOLMaster):
@@ -49839,7 +49412,6 @@ class AgVAStateCalcRelAtAOLMaster(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRelAtAOLMaster.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4ADF0E11-ECD1-434B-AD01-57FD9F0A692A}", AgVAStateCalcRelAtAOLMaster)
-__all__.append("AgVAStateCalcRelAtAOLMaster")
 
 
 class AgVAStateCalcDeltaFromMaster(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDeltaFromMaster):
@@ -49867,7 +49439,6 @@ class AgVAStateCalcDeltaFromMaster(IAgComponentInfo, IAgCloneable, IAgVAStateCal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDeltaFromMaster.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F88A3044-F12D-4147-8609-B71F3AD972F4}", AgVAStateCalcDeltaFromMaster)
-__all__.append("AgVAStateCalcDeltaFromMaster")
 
 
 class AgVAStateCalcLonDriftRate(IAgComponentInfo, IAgCloneable, IAgVAStateCalcLonDriftRate):
@@ -49895,7 +49466,6 @@ class AgVAStateCalcLonDriftRate(IAgComponentInfo, IAgCloneable, IAgVAStateCalcLo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcLonDriftRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{87C78155-DC4F-42C1-B2A6-D48E10F79594}", AgVAStateCalcLonDriftRate)
-__all__.append("AgVAStateCalcLonDriftRate")
 
 
 class AgVAStateCalcMeanEarthLon(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMeanEarthLon):
@@ -49923,7 +49493,6 @@ class AgVAStateCalcMeanEarthLon(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMe
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMeanEarthLon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0D4E3AF8-45A3-4000-BB8A-B6D8323627AD}", AgVAStateCalcMeanEarthLon)
-__all__.append("AgVAStateCalcMeanEarthLon")
 
 
 class AgVAStateCalcRectifiedLon(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRectifiedLon):
@@ -49951,7 +49520,6 @@ class AgVAStateCalcRectifiedLon(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRe
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRectifiedLon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{ED61CCC5-71C7-4D2D-BB7D-BF177E6B9D7A}", AgVAStateCalcRectifiedLon)
-__all__.append("AgVAStateCalcRectifiedLon")
 
 
 class AgVAStateCalcHeightAboveTerrain(IAgVAStateCalcHeightAboveTerrain, IAgComponentInfo, IAgCloneable):
@@ -49979,7 +49547,6 @@ class AgVAStateCalcHeightAboveTerrain(IAgVAStateCalcHeightAboveTerrain, IAgCompo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcHeightAboveTerrain.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3212361D-8A8B-4ED0-94C8-2D6F69BC3A12}", AgVAStateCalcHeightAboveTerrain)
-__all__.append("AgVAStateCalcHeightAboveTerrain")
 
 
 class AgVAStateCalcGeodeticElem(IAgComponentInfo, IAgCloneable, IAgVAStateCalcGeodeticElem):
@@ -50007,7 +49574,6 @@ class AgVAStateCalcGeodeticElem(IAgComponentInfo, IAgCloneable, IAgVAStateCalcGe
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcGeodeticElem.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C22E7F23-171B-4A81-AF2B-6A3747D92FDA}", AgVAStateCalcGeodeticElem)
-__all__.append("AgVAStateCalcGeodeticElem")
 
 
 class AgVAStateCalcRepeatingGroundTrackErr(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRepeatingGroundTrackErr):
@@ -50035,7 +49601,6 @@ class AgVAStateCalcRepeatingGroundTrackErr(IAgComponentInfo, IAgCloneable, IAgVA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRepeatingGroundTrackErr.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2D4ADF81-8403-42A7-9CD8-969B9C5FEF33}", AgVAStateCalcRepeatingGroundTrackErr)
-__all__.append("AgVAStateCalcRepeatingGroundTrackErr")
 
 
 class AgVAStateCalcAltOfApoapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcAltOfApoapsis):
@@ -50063,7 +49628,6 @@ class AgVAStateCalcAltOfApoapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcAltOfApoapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A9398A62-DC62-40F2-8C71-C4D10D180C28}", AgVAStateCalcAltOfApoapsis)
-__all__.append("AgVAStateCalcAltOfApoapsis")
 
 
 class AgVAStateCalcAltOfPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcAltOfPeriapsis):
@@ -50091,7 +49655,6 @@ class AgVAStateCalcAltOfPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcAltOfPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{700481E3-804B-4F43-B0AB-D58472F26302}", AgVAStateCalcAltOfPeriapsis)
-__all__.append("AgVAStateCalcAltOfPeriapsis")
 
 
 class AgVAStateCalcArgOfLat(IAgComponentInfo, IAgCloneable, IAgVAStateCalcArgOfLat):
@@ -50119,7 +49682,6 @@ class AgVAStateCalcArgOfLat(IAgComponentInfo, IAgCloneable, IAgVAStateCalcArgOfL
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcArgOfLat.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E3D0D3CF-1181-4F67-98D9-2CA6A5530372}", AgVAStateCalcArgOfLat)
-__all__.append("AgVAStateCalcArgOfLat")
 
 
 class AgVAStateCalcArgOfPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcArgOfPeriapsis):
@@ -50147,7 +49709,6 @@ class AgVAStateCalcArgOfPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcArgOfPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{64C0F0D2-889C-4EE2-BD26-B32BC6880733}", AgVAStateCalcArgOfPeriapsis)
-__all__.append("AgVAStateCalcArgOfPeriapsis")
 
 
 class AgVAStateCalcEccAnomaly(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEccAnomaly):
@@ -50175,7 +49736,6 @@ class AgVAStateCalcEccAnomaly(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEccA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcEccAnomaly.")
         
 agcls.AgClassCatalog.add_catalog_entry("{56C8EC47-95B0-4BF3-8D07-1F51630C285B}", AgVAStateCalcEccAnomaly)
-__all__.append("AgVAStateCalcEccAnomaly")
 
 
 class AgVAStateCalcLonOfAscNode(IAgComponentInfo, IAgCloneable, IAgVAStateCalcLonOfAscNode):
@@ -50203,7 +49763,6 @@ class AgVAStateCalcLonOfAscNode(IAgComponentInfo, IAgCloneable, IAgVAStateCalcLo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcLonOfAscNode.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2B606060-6816-4394-B4C5-C527490F9329}", AgVAStateCalcLonOfAscNode)
-__all__.append("AgVAStateCalcLonOfAscNode")
 
 
 class AgVAStateCalcMeanMotion(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMeanMotion):
@@ -50231,7 +49790,6 @@ class AgVAStateCalcMeanMotion(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMean
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMeanMotion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B18119FD-D9C9-41E2-A7EB-46ACDA5CA8D5}", AgVAStateCalcMeanMotion)
-__all__.append("AgVAStateCalcMeanMotion")
 
 
 class AgVAStateCalcOrbitPeriod(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOrbitPeriod):
@@ -50259,7 +49817,6 @@ class AgVAStateCalcOrbitPeriod(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOrb
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOrbitPeriod.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D7563267-B5E5-43C5-8062-E07CCA0F2B84}", AgVAStateCalcOrbitPeriod)
-__all__.append("AgVAStateCalcOrbitPeriod")
 
 
 class AgVAStateCalcNumRevs(IAgComponentInfo, IAgCloneable, IAgVAStateCalcNumRevs):
@@ -50287,7 +49844,6 @@ class AgVAStateCalcNumRevs(IAgComponentInfo, IAgCloneable, IAgVAStateCalcNumRevs
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcNumRevs.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D0585F2A-3F22-472C-B134-5A6DE1873010}", AgVAStateCalcNumRevs)
-__all__.append("AgVAStateCalcNumRevs")
 
 
 class AgVAStateCalcRadOfApoapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRadOfApoapsis):
@@ -50315,7 +49871,6 @@ class AgVAStateCalcRadOfApoapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcR
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRadOfApoapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C0BE1DA2-4518-4DDC-9E9F-C270EECC9CD9}", AgVAStateCalcRadOfApoapsis)
-__all__.append("AgVAStateCalcRadOfApoapsis")
 
 
 class AgVAStateCalcRadOfPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRadOfPeriapsis):
@@ -50343,7 +49898,6 @@ class AgVAStateCalcRadOfPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRadOfPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3992203A-6D30-4430-AB47-184058ADB753}", AgVAStateCalcRadOfPeriapsis)
-__all__.append("AgVAStateCalcRadOfPeriapsis")
 
 
 class AgVAStateCalcSemiMajorAxis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSemiMajorAxis):
@@ -50371,7 +49925,6 @@ class AgVAStateCalcSemiMajorAxis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSemiMajorAxis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2E89613E-B6BE-4708-9642-8C1A7734E695}", AgVAStateCalcSemiMajorAxis)
-__all__.append("AgVAStateCalcSemiMajorAxis")
 
 
 class AgVAStateCalcTimePastAscNode(IAgComponentInfo, IAgCloneable, IAgVAStateCalcTimePastAscNode):
@@ -50399,7 +49952,6 @@ class AgVAStateCalcTimePastAscNode(IAgComponentInfo, IAgCloneable, IAgVAStateCal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcTimePastAscNode.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0D19A235-5062-4D39-9D24-5BE1951E8982}", AgVAStateCalcTimePastAscNode)
-__all__.append("AgVAStateCalcTimePastAscNode")
 
 
 class AgVAStateCalcTimePastPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcTimePastPeriapsis):
@@ -50427,7 +49979,6 @@ class AgVAStateCalcTimePastPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcTimePastPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{98C81CE6-0D11-4B0B-A6E6-3BD36BBCB98E}", AgVAStateCalcTimePastPeriapsis)
-__all__.append("AgVAStateCalcTimePastPeriapsis")
 
 
 class AgVAStateCalcTrueAnomaly(IAgComponentInfo, IAgCloneable, IAgVAStateCalcTrueAnomaly):
@@ -50455,7 +50006,6 @@ class AgVAStateCalcTrueAnomaly(IAgComponentInfo, IAgCloneable, IAgVAStateCalcTru
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcTrueAnomaly.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4F084E44-4214-46EF-B67C-0A0B160F6475}", AgVAStateCalcTrueAnomaly)
-__all__.append("AgVAStateCalcTrueAnomaly")
 
 
 class AgVAStateCalcDeltaV(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDeltaV):
@@ -50483,7 +50033,6 @@ class AgVAStateCalcDeltaV(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDeltaV):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDeltaV.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1609A9CD-8AA8-4F97-A00F-35F014FCCE44}", AgVAStateCalcDeltaV)
-__all__.append("AgVAStateCalcDeltaV")
 
 
 class AgVAStateCalcDeltaVSquared(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDeltaVSquared):
@@ -50511,7 +50060,6 @@ class AgVAStateCalcDeltaVSquared(IAgComponentInfo, IAgCloneable, IAgVAStateCalcD
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDeltaVSquared.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CF7792EC-113B-45A7-AD9E-ECC908EBE1FD}", AgVAStateCalcDeltaVSquared)
-__all__.append("AgVAStateCalcDeltaVSquared")
 
 
 class AgVAStateCalcMCSDeltaV(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMCSDeltaV):
@@ -50539,7 +50087,6 @@ class AgVAStateCalcMCSDeltaV(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMCSDe
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMCSDeltaV.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8E6614E7-7F46-4A9C-B155-FD8ED6C08D94}", AgVAStateCalcMCSDeltaV)
-__all__.append("AgVAStateCalcMCSDeltaV")
 
 
 class AgVAStateCalcMCSDeltaVSquared(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMCSDeltaVSquared):
@@ -50567,7 +50114,6 @@ class AgVAStateCalcMCSDeltaVSquared(IAgComponentInfo, IAgCloneable, IAgVAStateCa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMCSDeltaVSquared.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA10B4C1-62C7-4E1C-8B86-A355667DF9AE}", AgVAStateCalcMCSDeltaVSquared)
-__all__.append("AgVAStateCalcMCSDeltaVSquared")
 
 
 class AgVAStateCalcSequenceDeltaV(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSequenceDeltaV):
@@ -50595,7 +50141,6 @@ class AgVAStateCalcSequenceDeltaV(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSequenceDeltaV.")
         
 agcls.AgClassCatalog.add_catalog_entry("{138B7BC6-2338-46BE-83E9-5099C4D45811}", AgVAStateCalcSequenceDeltaV)
-__all__.append("AgVAStateCalcSequenceDeltaV")
 
 
 class AgVAStateCalcSequenceDeltaVSquared(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSequenceDeltaVSquared):
@@ -50623,7 +50168,6 @@ class AgVAStateCalcSequenceDeltaVSquared(IAgComponentInfo, IAgCloneable, IAgVASt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSequenceDeltaVSquared.")
         
 agcls.AgClassCatalog.add_catalog_entry("{27E104DF-B5FF-4E24-B397-06D264C0EADA}", AgVAStateCalcSequenceDeltaVSquared)
-__all__.append("AgVAStateCalcSequenceDeltaVSquared")
 
 
 class AgVAStateCalcFuelMass(IAgComponentInfo, IAgCloneable, IAgVAStateCalcFuelMass):
@@ -50651,7 +50195,6 @@ class AgVAStateCalcFuelMass(IAgComponentInfo, IAgCloneable, IAgVAStateCalcFuelMa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcFuelMass.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3C37AFCA-696D-4A00-9E7B-7DCE928F0E7E}", AgVAStateCalcFuelMass)
-__all__.append("AgVAStateCalcFuelMass")
 
 
 class AgVAStateCalcDensity(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDensity):
@@ -50679,7 +50222,6 @@ class AgVAStateCalcDensity(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDensity
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDensity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{61D869F6-7B1C-4B5D-A046-AE495AE0FA7E}", AgVAStateCalcDensity)
-__all__.append("AgVAStateCalcDensity")
 
 
 class AgVAStateCalcInertialDeltaVMag(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInertialDeltaVMag):
@@ -50707,7 +50249,6 @@ class AgVAStateCalcInertialDeltaVMag(IAgComponentInfo, IAgCloneable, IAgVAStateC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcInertialDeltaVMag.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E12A8E9C-C11A-43D1-AE06-C659B87574D3}", AgVAStateCalcInertialDeltaVMag)
-__all__.append("AgVAStateCalcInertialDeltaVMag")
 
 
 class AgVAStateCalcInertialDeltaVx(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInertialDeltaVx):
@@ -50735,7 +50276,6 @@ class AgVAStateCalcInertialDeltaVx(IAgComponentInfo, IAgCloneable, IAgVAStateCal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcInertialDeltaVx.")
         
 agcls.AgClassCatalog.add_catalog_entry("{43875512-BFCF-42E9-ACC8-BA7AE9E498A9}", AgVAStateCalcInertialDeltaVx)
-__all__.append("AgVAStateCalcInertialDeltaVx")
 
 
 class AgVAStateCalcInertialDeltaVy(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInertialDeltaVy):
@@ -50763,7 +50303,6 @@ class AgVAStateCalcInertialDeltaVy(IAgComponentInfo, IAgCloneable, IAgVAStateCal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcInertialDeltaVy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{04689A0A-12D1-4362-B5C8-497CF2E4D72E}", AgVAStateCalcInertialDeltaVy)
-__all__.append("AgVAStateCalcInertialDeltaVy")
 
 
 class AgVAStateCalcInertialDeltaVz(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInertialDeltaVz):
@@ -50791,7 +50330,6 @@ class AgVAStateCalcInertialDeltaVz(IAgComponentInfo, IAgCloneable, IAgVAStateCal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcInertialDeltaVz.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A160495-31AE-42EE-8D2D-B945D10E86B8}", AgVAStateCalcInertialDeltaVz)
-__all__.append("AgVAStateCalcInertialDeltaVz")
 
 
 class AgVAStateCalcManeuverSpecificImpulse(IAgComponentInfo, IAgCloneable, IAgVAStateCalcManeuverSpecificImpulse):
@@ -50819,7 +50357,6 @@ class AgVAStateCalcManeuverSpecificImpulse(IAgComponentInfo, IAgCloneable, IAgVA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcManeuverSpecificImpulse.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8FEFF2C1-6E15-4026-95B3-1985DB40C154}", AgVAStateCalcManeuverSpecificImpulse)
-__all__.append("AgVAStateCalcManeuverSpecificImpulse")
 
 
 class AgVAStateCalcPressure(IAgComponentInfo, IAgCloneable, IAgVAStateCalcPressure):
@@ -50847,7 +50384,6 @@ class AgVAStateCalcPressure(IAgComponentInfo, IAgCloneable, IAgVAStateCalcPressu
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcPressure.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B12DCC30-F655-428A-BDE1-6D46900A7152}", AgVAStateCalcPressure)
-__all__.append("AgVAStateCalcPressure")
 
 
 class AgVAStateCalcTemperature(IAgComponentInfo, IAgCloneable, IAgVAStateCalcTemperature):
@@ -50875,7 +50411,6 @@ class AgVAStateCalcTemperature(IAgComponentInfo, IAgCloneable, IAgVAStateCalcTem
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcTemperature.")
         
 agcls.AgClassCatalog.add_catalog_entry("{130771EF-F7FE-4CD3-B547-DE13FDF54E94}", AgVAStateCalcTemperature)
-__all__.append("AgVAStateCalcTemperature")
 
 
 class AgVAStateCalcVectorY(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorY):
@@ -50903,7 +50438,6 @@ class AgVAStateCalcVectorY(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorY
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVectorY.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7DC4C32E-1F4B-4B3E-A11C-7ECACCC602F8}", AgVAStateCalcVectorY)
-__all__.append("AgVAStateCalcVectorY")
 
 
 class AgVAStateCalcVectorZ(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorZ):
@@ -50931,7 +50465,6 @@ class AgVAStateCalcVectorZ(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorZ
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVectorZ.")
         
 agcls.AgClassCatalog.add_catalog_entry("{32E8F7E7-ECDE-4864-B380-D5A293458898}", AgVAStateCalcVectorZ)
-__all__.append("AgVAStateCalcVectorZ")
 
 
 class AgVAStateCalcMass(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMass):
@@ -50959,7 +50492,6 @@ class AgVAStateCalcMass(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMass):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMass.")
         
 agcls.AgClassCatalog.add_catalog_entry("{99DD4422-3EB6-455B-9FE8-459FD65D2431}", AgVAStateCalcMass)
-__all__.append("AgVAStateCalcMass")
 
 
 class AgVAStateCalcManeuverTotalMassFlowRate(IAgComponentInfo, IAgCloneable, IAgVAStateCalcManeuverTotalMassFlowRate):
@@ -50987,7 +50519,6 @@ class AgVAStateCalcManeuverTotalMassFlowRate(IAgComponentInfo, IAgCloneable, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcManeuverTotalMassFlowRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{049DA4A7-E8EB-4C62-AF0F-FFF566CB662F}", AgVAStateCalcManeuverTotalMassFlowRate)
-__all__.append("AgVAStateCalcManeuverTotalMassFlowRate")
 
 
 class AgVAStateCalcAbsoluteValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcAbsoluteValue):
@@ -51015,7 +50546,6 @@ class AgVAStateCalcAbsoluteValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcAbsoluteValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9CA8D97F-2F2D-4E66-B141-D5F8E3524B56}", AgVAStateCalcAbsoluteValue)
-__all__.append("AgVAStateCalcAbsoluteValue")
 
 
 class AgVAStateCalcDifference(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDifference):
@@ -51043,7 +50573,6 @@ class AgVAStateCalcDifference(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDiff
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDifference.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8D579CBD-FB96-4CA1-9276-0ECF1E8A2854}", AgVAStateCalcDifference)
-__all__.append("AgVAStateCalcDifference")
 
 
 class AgVAStateCalcDifferenceOtherSegment(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDifferenceOtherSegment):
@@ -51071,7 +50600,6 @@ class AgVAStateCalcDifferenceOtherSegment(IAgComponentInfo, IAgCloneable, IAgVAS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDifferenceOtherSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{36A3C1BA-F2AB-4F4C-887C-CF81C4E2BE52}", AgVAStateCalcDifferenceOtherSegment)
-__all__.append("AgVAStateCalcDifferenceOtherSegment")
 
 
 class AgVAStateCalcPosDifferenceOtherSegment(IAgComponentInfo, IAgCloneable, IAgVAStateCalcPosDifferenceOtherSegment):
@@ -51099,7 +50627,6 @@ class AgVAStateCalcPosDifferenceOtherSegment(IAgComponentInfo, IAgCloneable, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcPosDifferenceOtherSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9C09C061-9C4A-4B14-A9DC-C802A44A8AF1}", AgVAStateCalcPosDifferenceOtherSegment)
-__all__.append("AgVAStateCalcPosDifferenceOtherSegment")
 
 
 class AgVAStateCalcVelDifferenceOtherSegment(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVelDifferenceOtherSegment):
@@ -51127,7 +50654,6 @@ class AgVAStateCalcVelDifferenceOtherSegment(IAgComponentInfo, IAgCloneable, IAg
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVelDifferenceOtherSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C884D996-39EF-413B-9CF7-A8C927291B66}", AgVAStateCalcVelDifferenceOtherSegment)
-__all__.append("AgVAStateCalcVelDifferenceOtherSegment")
 
 
 class AgVAStateCalcPosVelDifferenceOtherSegment(IAgComponentInfo, IAgCloneable, IAgVAStateCalcPosVelDifferenceOtherSegment):
@@ -51155,7 +50681,6 @@ class AgVAStateCalcPosVelDifferenceOtherSegment(IAgComponentInfo, IAgCloneable, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcPosVelDifferenceOtherSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7AFF6F3-C2C7-4132-BEB5-9A714E763A11}", AgVAStateCalcPosVelDifferenceOtherSegment)
-__all__.append("AgVAStateCalcPosVelDifferenceOtherSegment")
 
 
 class AgVAStateCalcValueAtSegment(IAgComponentInfo, IAgCloneable, IAgVAStateCalcValueAtSegment):
@@ -51183,7 +50708,6 @@ class AgVAStateCalcValueAtSegment(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcValueAtSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{80E8AAA2-2782-4176-9656-61AC3485096B}", AgVAStateCalcValueAtSegment)
-__all__.append("AgVAStateCalcValueAtSegment")
 
 
 class AgVAStateCalcMaxValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMaxValue):
@@ -51211,7 +50735,6 @@ class AgVAStateCalcMaxValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMaxVal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMaxValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CC82EA8F-373C-4A0D-A753-96CFD4AE73CF}", AgVAStateCalcMaxValue)
-__all__.append("AgVAStateCalcMaxValue")
 
 
 class AgVAStateCalcMinValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMinValue):
@@ -51239,7 +50762,6 @@ class AgVAStateCalcMinValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMinVal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMinValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F9C57411-482D-49E9-BE13-CC93E34FB0D4}", AgVAStateCalcMinValue)
-__all__.append("AgVAStateCalcMinValue")
 
 
 class AgVAStateCalcMeanValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMeanValue):
@@ -51267,7 +50789,6 @@ class AgVAStateCalcMeanValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMeanV
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMeanValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9B5472A7-799A-43E6-BDE7-99CB2C8C6E0C}", AgVAStateCalcMeanValue)
-__all__.append("AgVAStateCalcMeanValue")
 
 
 class AgVAStateCalcMedianValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMedianValue):
@@ -51295,7 +50816,6 @@ class AgVAStateCalcMedianValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMed
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMedianValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CE3A18D7-5A69-45A1-AA76-AD7C2CF5259A}", AgVAStateCalcMedianValue)
-__all__.append("AgVAStateCalcMedianValue")
 
 
 class AgVAStateCalcStandardDeviation(IAgComponentInfo, IAgCloneable, IAgVAStateCalcStandardDeviation):
@@ -51323,7 +50843,6 @@ class AgVAStateCalcStandardDeviation(IAgComponentInfo, IAgCloneable, IAgVAStateC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcStandardDeviation.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B33D3070-060B-4F32-AF2A-1F9BDD57F365}", AgVAStateCalcStandardDeviation)
-__all__.append("AgVAStateCalcStandardDeviation")
 
 
 class AgVAStateCalcNegative(IAgComponentInfo, IAgCloneable, IAgVAStateCalcNegative):
@@ -51351,7 +50870,6 @@ class AgVAStateCalcNegative(IAgComponentInfo, IAgCloneable, IAgVAStateCalcNegati
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcNegative.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3E13FEC3-D60F-4203-86F2-42BCBC8EAFDF}", AgVAStateCalcNegative)
-__all__.append("AgVAStateCalcNegative")
 
 
 class AgVAStateCalcEccentricity(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEccentricity):
@@ -51379,7 +50897,6 @@ class AgVAStateCalcEccentricity(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcEccentricity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A9D98D60-E73E-4C59-9328-DFC5A12EF52B}", AgVAStateCalcEccentricity)
-__all__.append("AgVAStateCalcEccentricity")
 
 
 class AgVAStateCalcMeanAnomaly(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMeanAnomaly):
@@ -51407,7 +50924,6 @@ class AgVAStateCalcMeanAnomaly(IAgComponentInfo, IAgCloneable, IAgVAStateCalcMea
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcMeanAnomaly.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8787D9AA-FBE1-43E4-932F-CB7B98D23D5B}", AgVAStateCalcMeanAnomaly)
-__all__.append("AgVAStateCalcMeanAnomaly")
 
 
 class AgVAStateCalcRAAN(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRAAN):
@@ -51435,7 +50951,6 @@ class AgVAStateCalcRAAN(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRAAN):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRAAN.")
         
 agcls.AgClassCatalog.add_catalog_entry("{05B5185A-C8F3-4B02-AE8B-B5D58744323C}", AgVAStateCalcRAAN)
-__all__.append("AgVAStateCalcRAAN")
 
 
 class AgVABDotRCalc(IAgComponentInfo, IAgCloneable, IAgVABDotRCalc):
@@ -51463,7 +50978,6 @@ class AgVABDotRCalc(IAgComponentInfo, IAgCloneable, IAgVABDotRCalc):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABDotRCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{18A16428-2959-4220-A4A2-571D1F5A67FC}", AgVABDotRCalc)
-__all__.append("AgVABDotRCalc")
 
 
 class AgVABDotTCalc(IAgComponentInfo, IAgCloneable, IAgVABDotTCalc):
@@ -51491,7 +51005,6 @@ class AgVABDotTCalc(IAgComponentInfo, IAgCloneable, IAgVABDotTCalc):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABDotTCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59ACA04A-9B85-43DF-82FF-B58CFD985158}", AgVABDotTCalc)
-__all__.append("AgVABDotTCalc")
 
 
 class AgVABMagCalc(IAgComponentInfo, IAgCloneable, IAgVABMagCalc):
@@ -51519,7 +51032,6 @@ class AgVABMagCalc(IAgComponentInfo, IAgCloneable, IAgVABMagCalc):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABMagCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{87EF9CCA-2D0E-4742-8354-79E977FFD067}", AgVABMagCalc)
-__all__.append("AgVABMagCalc")
 
 
 class AgVABThetaCalc(IAgComponentInfo, IAgCloneable, IAgVABThetaCalc):
@@ -51547,7 +51059,6 @@ class AgVABThetaCalc(IAgComponentInfo, IAgCloneable, IAgVABThetaCalc):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABThetaCalc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C5C6EC0C-6F2D-4DAB-9DCD-2A8FD810C642}", AgVABThetaCalc)
-__all__.append("AgVABThetaCalc")
 
 
 class AgVAStateCalcDeltaDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDeltaDec):
@@ -51575,7 +51086,6 @@ class AgVAStateCalcDeltaDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDeltaD
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDeltaDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4EA9E58A-9900-41CF-BFA8-8BF7849C9187}", AgVAStateCalcDeltaDec)
-__all__.append("AgVAStateCalcDeltaDec")
 
 
 class AgVAStateCalcDeltaRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDeltaRA):
@@ -51603,7 +51113,6 @@ class AgVAStateCalcDeltaRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDeltaRA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDeltaRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B1EAA2E-8FA2-4EF2-B7AB-377157AD0505}", AgVAStateCalcDeltaRA)
-__all__.append("AgVAStateCalcDeltaRA")
 
 
 class AgVAStateCalcBetaAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcBetaAngle):
@@ -51631,7 +51140,6 @@ class AgVAStateCalcBetaAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcBetaA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcBetaAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B51815A6-AEDE-468C-B282-EEA255DAF822}", AgVAStateCalcBetaAngle)
-__all__.append("AgVAStateCalcBetaAngle")
 
 
 class AgVAStateCalcLocalApparentSolarLon(IAgComponentInfo, IAgCloneable, IAgVAStateCalcLocalApparentSolarLon):
@@ -51659,7 +51167,6 @@ class AgVAStateCalcLocalApparentSolarLon(IAgComponentInfo, IAgCloneable, IAgVASt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcLocalApparentSolarLon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E7AC3C2D-5E4C-447F-8A56-C9CFCDBB2143}", AgVAStateCalcLocalApparentSolarLon)
-__all__.append("AgVAStateCalcLocalApparentSolarLon")
 
 
 class AgVAStateCalcLonOfPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcLonOfPeriapsis):
@@ -51687,7 +51194,6 @@ class AgVAStateCalcLonOfPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcLonOfPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3DBA2AA2-6A87-4ACE-9F8D-C03001E1DBD1}", AgVAStateCalcLonOfPeriapsis)
-__all__.append("AgVAStateCalcLonOfPeriapsis")
 
 
 class AgVAStateCalcOrbitStateValue(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOrbitStateValue):
@@ -51715,7 +51221,6 @@ class AgVAStateCalcOrbitStateValue(IAgComponentInfo, IAgCloneable, IAgVAStateCal
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOrbitStateValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{10879C56-0D1C-4E8E-B7CA-F059FB935366}", AgVAStateCalcOrbitStateValue)
-__all__.append("AgVAStateCalcOrbitStateValue")
 
 
 class AgVAStateCalcSignedEccentricity(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSignedEccentricity):
@@ -51743,7 +51248,6 @@ class AgVAStateCalcSignedEccentricity(IAgComponentInfo, IAgCloneable, IAgVAState
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSignedEccentricity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{469C3DB7-C322-480A-82E2-4763AD59E470}", AgVAStateCalcSignedEccentricity)
-__all__.append("AgVAStateCalcSignedEccentricity")
 
 
 class AgVAStateCalcInclination(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInclination):
@@ -51771,7 +51275,6 @@ class AgVAStateCalcInclination(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcInclination.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1B8A0935-D9A7-4710-8C02-8A827F7D85DF}", AgVAStateCalcInclination)
-__all__.append("AgVAStateCalcInclination")
 
 
 class AgVAStateCalcTrueLon(IAgComponentInfo, IAgCloneable, IAgVAStateCalcTrueLon):
@@ -51799,7 +51302,6 @@ class AgVAStateCalcTrueLon(IAgComponentInfo, IAgCloneable, IAgVAStateCalcTrueLon
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcTrueLon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1D740A4-341A-40AA-83E8-4456207A0D98}", AgVAStateCalcTrueLon)
-__all__.append("AgVAStateCalcTrueLon")
 
 
 class AgVAStateCalcPower(IAgComponentInfo, IAgCloneable, IAgVAStateCalcPower):
@@ -51827,7 +51329,6 @@ class AgVAStateCalcPower(IAgComponentInfo, IAgCloneable, IAgVAStateCalcPower):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcPower.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE828349-BB26-44C8-9603-ED89F108DF82}", AgVAStateCalcPower)
-__all__.append("AgVAStateCalcPower")
 
 
 class AgVAStateCalcRelMotion(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRelMotion):
@@ -51855,7 +51356,6 @@ class AgVAStateCalcRelMotion(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRelMo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRelMotion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1BE88040-9A43-40B0-9A3F-28C1AE4FCC33}", AgVAStateCalcRelMotion)
-__all__.append("AgVAStateCalcRelMotion")
 
 
 class AgVAStateCalcSolarBetaAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSolarBetaAngle):
@@ -51883,7 +51383,6 @@ class AgVAStateCalcSolarBetaAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSolarBetaAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A2AFBF81-9B6D-4675-B8A3-2995530B257F}", AgVAStateCalcSolarBetaAngle)
-__all__.append("AgVAStateCalcSolarBetaAngle")
 
 
 class AgVAStateCalcSolarInPlaneAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSolarInPlaneAngle):
@@ -51911,7 +51410,6 @@ class AgVAStateCalcSolarInPlaneAngle(IAgComponentInfo, IAgCloneable, IAgVAStateC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSolarInPlaneAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AF76B597-61AE-41E7-B7F9-47AB9FA06A23}", AgVAStateCalcSolarInPlaneAngle)
-__all__.append("AgVAStateCalcSolarInPlaneAngle")
 
 
 class AgVAStateCalcRelPosDecAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRelPosDecAngle):
@@ -51939,7 +51437,6 @@ class AgVAStateCalcRelPosDecAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRelPosDecAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{75D53DB6-15AE-43CE-8ABC-5B8568CEE035}", AgVAStateCalcRelPosDecAngle)
-__all__.append("AgVAStateCalcRelPosDecAngle")
 
 
 class AgVAStateCalcRelPosInPlaneAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRelPosInPlaneAngle):
@@ -51967,7 +51464,6 @@ class AgVAStateCalcRelPosInPlaneAngle(IAgComponentInfo, IAgCloneable, IAgVAState
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRelPosInPlaneAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4F7C4C55-BAB3-484D-B110-4A34A6F1A006}", AgVAStateCalcRelPosInPlaneAngle)
-__all__.append("AgVAStateCalcRelPosInPlaneAngle")
 
 
 class AgVAStateCalcRelativeInclination(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRelativeInclination):
@@ -51995,7 +51491,6 @@ class AgVAStateCalcRelativeInclination(IAgComponentInfo, IAgCloneable, IAgVAStat
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRelativeInclination.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2BAF85F-8B05-4261-8E40-428FD9F6A237}", AgVAStateCalcRelativeInclination)
-__all__.append("AgVAStateCalcRelativeInclination")
 
 
 class AgVAStateCalcCurvilinearRelMotion(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCurvilinearRelMotion):
@@ -52023,7 +51518,6 @@ class AgVAStateCalcCurvilinearRelMotion(IAgComponentInfo, IAgCloneable, IAgVASta
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCurvilinearRelMotion.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1FBB6D32-A2AD-4914-940D-30E548147C35}", AgVAStateCalcCurvilinearRelMotion)
-__all__.append("AgVAStateCalcCurvilinearRelMotion")
 
 
 class AgVAStateCalcCustomFunction(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCustomFunction):
@@ -52051,7 +51545,6 @@ class AgVAStateCalcCustomFunction(IAgComponentInfo, IAgCloneable, IAgVAStateCalc
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCustomFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{85022653-0E1C-4116-AC71-AE8AE17AD8AB}", AgVAStateCalcCustomFunction)
-__all__.append("AgVAStateCalcCustomFunction")
 
 
 class AgVAStateCalcScript(IAgComponentInfo, IAgCloneable, IAgVAStateCalcScript):
@@ -52079,7 +51572,6 @@ class AgVAStateCalcScript(IAgComponentInfo, IAgCloneable, IAgVAStateCalcScript):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcScript.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5D44239C-5296-4B55-B0A6-810D2A709B20}", AgVAStateCalcScript)
-__all__.append("AgVAStateCalcScript")
 
 
 class AgVAStateCalcCd(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCd):
@@ -52107,7 +51599,6 @@ class AgVAStateCalcCd(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCd):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCd.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9672871F-3A83-41E8-851E-509DD513C3E3}", AgVAStateCalcCd)
-__all__.append("AgVAStateCalcCd")
 
 
 class AgVAStateCalcCr(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCr):
@@ -52135,7 +51626,6 @@ class AgVAStateCalcCr(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCr):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCr.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1AAFF1B0-616E-4A1C-9CE0-075D24C3B170}", AgVAStateCalcCr)
-__all__.append("AgVAStateCalcCr")
 
 
 class AgVAStateCalcDragArea(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDragArea):
@@ -52163,7 +51653,6 @@ class AgVAStateCalcDragArea(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDragAr
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDragArea.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3ED247EF-6E67-4883-A2FE-B2A7BF19E14E}", AgVAStateCalcDragArea)
-__all__.append("AgVAStateCalcDragArea")
 
 
 class AgVAStateCalcRadiationPressureArea(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRadiationPressureArea):
@@ -52191,7 +51680,6 @@ class AgVAStateCalcRadiationPressureArea(IAgComponentInfo, IAgCloneable, IAgVASt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRadiationPressureArea.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C7973875-9EFC-41FC-98CF-CCB7AE0C611F}", AgVAStateCalcRadiationPressureArea)
-__all__.append("AgVAStateCalcRadiationPressureArea")
 
 
 class AgVAStateCalcRadiationPressureCoefficient(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRadiationPressureCoefficient):
@@ -52219,7 +51707,6 @@ class AgVAStateCalcRadiationPressureCoefficient(IAgComponentInfo, IAgCloneable, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRadiationPressureCoefficient.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7FDC4AD9-E570-4820-BFB3-939EA5FF7D82}", AgVAStateCalcRadiationPressureCoefficient)
-__all__.append("AgVAStateCalcRadiationPressureCoefficient")
 
 
 class AgVAStateCalcSRPArea(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSRPArea):
@@ -52247,7 +51734,6 @@ class AgVAStateCalcSRPArea(IAgComponentInfo, IAgCloneable, IAgVAStateCalcSRPArea
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSRPArea.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6A0BF963-BD8C-46F9-8C87-F6E0FF16D057}", AgVAStateCalcSRPArea)
-__all__.append("AgVAStateCalcSRPArea")
 
 
 class AgVAStateCalcCosOfVerticalFPA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCosOfVerticalFPA):
@@ -52275,7 +51761,6 @@ class AgVAStateCalcCosOfVerticalFPA(IAgComponentInfo, IAgCloneable, IAgVAStateCa
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCosOfVerticalFPA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{779C8E84-1667-442C-BFD9-F20271803FE5}", AgVAStateCalcCosOfVerticalFPA)
-__all__.append("AgVAStateCalcCosOfVerticalFPA")
 
 
 class AgVAStateCalcDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDec):
@@ -52303,7 +51788,6 @@ class AgVAStateCalcDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDec):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3F821D80-1156-46EB-950F-FF965EB54C3C}", AgVAStateCalcDec)
-__all__.append("AgVAStateCalcDec")
 
 
 class AgVAStateCalcFPA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcFPA):
@@ -52331,7 +51815,6 @@ class AgVAStateCalcFPA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcFPA):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcFPA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BAB717ED-41A9-4D2A-ADB3-F2D0F5BD67D6}", AgVAStateCalcFPA)
-__all__.append("AgVAStateCalcFPA")
 
 
 class AgVAStateCalcRMag(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRMag):
@@ -52359,7 +51842,6 @@ class AgVAStateCalcRMag(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRMag):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRMag.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4EED7719-E95B-4482-936C-9940FF6EE774}", AgVAStateCalcRMag)
-__all__.append("AgVAStateCalcRMag")
 
 
 class AgVAStateCalcRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRA):
@@ -52387,7 +51869,6 @@ class AgVAStateCalcRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcRA):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2482280B-347A-49C7-BEEB-044CD8F8C899}", AgVAStateCalcRA)
-__all__.append("AgVAStateCalcRA")
 
 
 class AgVAStateCalcVMag(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVMag):
@@ -52415,7 +51896,6 @@ class AgVAStateCalcVMag(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVMag):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVMag.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B2DD548E-6DD5-4C33-9EDC-8275A4711B70}", AgVAStateCalcVMag)
-__all__.append("AgVAStateCalcVMag")
 
 
 class AgVAStateCalcVelAz(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVelAz):
@@ -52443,7 +51923,6 @@ class AgVAStateCalcVelAz(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVelAz):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVelAz.")
         
 agcls.AgClassCatalog.add_catalog_entry("{51BBAEBF-08A7-47B0-82A2-49DD3B47C0DA}", AgVAStateCalcVelAz)
-__all__.append("AgVAStateCalcVelAz")
 
 
 class AgVAStateCalcC3Energy(IAgComponentInfo, IAgCloneable, IAgVAStateCalcC3Energy):
@@ -52471,7 +51950,6 @@ class AgVAStateCalcC3Energy(IAgComponentInfo, IAgCloneable, IAgVAStateCalcC3Ener
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcC3Energy.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3F05AC7C-3565-44C8-BD75-A9F26F5DEBE7}", AgVAStateCalcC3Energy)
-__all__.append("AgVAStateCalcC3Energy")
 
 
 class AgVAStateCalcInAsympDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInAsympDec):
@@ -52499,7 +51977,6 @@ class AgVAStateCalcInAsympDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInAs
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcInAsympDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{74C3D08C-5CBE-4182-9C50-5607CFAE3C29}", AgVAStateCalcInAsympDec)
-__all__.append("AgVAStateCalcInAsympDec")
 
 
 class AgVAStateCalcInAsympRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInAsympRA):
@@ -52527,7 +52004,6 @@ class AgVAStateCalcInAsympRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInAsy
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcInAsympRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FA6F2B49-B25B-4726-A72B-EB01DA9A40FA}", AgVAStateCalcInAsympRA)
-__all__.append("AgVAStateCalcInAsympRA")
 
 
 class AgVAStateCalcInVelAzAtPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcInVelAzAtPeriapsis):
@@ -52555,7 +52031,6 @@ class AgVAStateCalcInVelAzAtPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAState
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcInVelAzAtPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F425CF2E-5BD8-47E0-86FB-8E6911450DC2}", AgVAStateCalcInVelAzAtPeriapsis)
-__all__.append("AgVAStateCalcInVelAzAtPeriapsis")
 
 
 class AgVAStateCalcOutAsympDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOutAsympDec):
@@ -52583,7 +52058,6 @@ class AgVAStateCalcOutAsympDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOut
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOutAsympDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E6479974-FCA0-4BB3-9218-5EA7FBC6B309}", AgVAStateCalcOutAsympDec)
-__all__.append("AgVAStateCalcOutAsympDec")
 
 
 class AgVAStateCalcOutAsympRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOutAsympRA):
@@ -52611,7 +52085,6 @@ class AgVAStateCalcOutAsympRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOutA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOutAsympRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5FD80B29-8811-4669-9830-E00AC6A65B7A}", AgVAStateCalcOutAsympRA)
-__all__.append("AgVAStateCalcOutAsympRA")
 
 
 class AgVAStateCalcOutVelAzAtPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOutVelAzAtPeriapsis):
@@ -52639,7 +52112,6 @@ class AgVAStateCalcOutVelAzAtPeriapsis(IAgComponentInfo, IAgCloneable, IAgVAStat
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOutVelAzAtPeriapsis.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6FACAD87-7615-433A-BED5-B79F771BF045}", AgVAStateCalcOutVelAzAtPeriapsis)
-__all__.append("AgVAStateCalcOutVelAzAtPeriapsis")
 
 
 class AgVAStateCalcDuration(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDuration):
@@ -52667,7 +52139,6 @@ class AgVAStateCalcDuration(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDurati
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDuration.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8A31F99F-B1EA-4818-B3F7-6485F142BEDA}", AgVAStateCalcDuration)
-__all__.append("AgVAStateCalcDuration")
 
 
 class AgVAStateCalcUserValue(IAgVAStateCalcUserValue, IAgComponentInfo, IAgCloneable):
@@ -52695,7 +52166,6 @@ class AgVAStateCalcUserValue(IAgVAStateCalcUserValue, IAgComponentInfo, IAgClone
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcUserValue.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DF6CDC8E-3271-4671-851E-6D8916364D04}", AgVAStateCalcUserValue)
-__all__.append("AgVAStateCalcUserValue")
 
 
 class AgVAStateCalcCrdnAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCrdnAngle):
@@ -52723,7 +52193,6 @@ class AgVAStateCalcCrdnAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcCrdnA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcCrdnAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{382A3B1B-6CB2-4E54-A066-C0B62EF241C8}", AgVAStateCalcCrdnAngle)
-__all__.append("AgVAStateCalcCrdnAngle")
 
 
 class AgVAStateCalcAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcAngle):
@@ -52751,7 +52220,6 @@ class AgVAStateCalcAngle(IAgComponentInfo, IAgCloneable, IAgVAStateCalcAngle):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcAngle.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C19A5EF8-79AF-48F2-9D09-86AE97CC689A}", AgVAStateCalcAngle)
-__all__.append("AgVAStateCalcAngle")
 
 
 class AgVAStateCalcDotProduct(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDotProduct):
@@ -52779,7 +52247,6 @@ class AgVAStateCalcDotProduct(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDotP
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDotProduct.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B8E6B301-8959-44D9-B9EC-70FEA1B5B12D}", AgVAStateCalcDotProduct)
-__all__.append("AgVAStateCalcDotProduct")
 
 
 class AgVAStateCalcVectorDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorDec):
@@ -52807,7 +52274,6 @@ class AgVAStateCalcVectorDec(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVecto
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVectorDec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F5F90539-F030-4840-A78F-7BFE9FE6852F}", AgVAStateCalcVectorDec)
-__all__.append("AgVAStateCalcVectorDec")
 
 
 class AgVAStateCalcVectorMag(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorMag):
@@ -52835,7 +52301,6 @@ class AgVAStateCalcVectorMag(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVecto
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVectorMag.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE89CDB6-F735-4DAB-88D3-7F2DD834C1E4}", AgVAStateCalcVectorMag)
-__all__.append("AgVAStateCalcVectorMag")
 
 
 class AgVAStateCalcVectorRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorRA):
@@ -52863,7 +52328,6 @@ class AgVAStateCalcVectorRA(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVector
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVectorRA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CE22AAAD-F51C-4E90-8E74-5DCEE756020C}", AgVAStateCalcVectorRA)
-__all__.append("AgVAStateCalcVectorRA")
 
 
 class AgVAStateCalcVectorX(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorX):
@@ -52891,7 +52355,6 @@ class AgVAStateCalcVectorX(IAgComponentInfo, IAgCloneable, IAgVAStateCalcVectorX
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcVectorX.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9CC56135-C9E6-4A99-B0E2-70EA81E9AB08}", AgVAStateCalcVectorX)
-__all__.append("AgVAStateCalcVectorX")
 
 
 class AgVAStateCalcOnePtAccess(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOnePtAccess):
@@ -52919,7 +52382,6 @@ class AgVAStateCalcOnePtAccess(IAgComponentInfo, IAgCloneable, IAgVAStateCalcOne
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcOnePtAccess.")
         
 agcls.AgClassCatalog.add_catalog_entry("{19CBB92F-B6BE-4F6B-A2F9-056AD2EF7940}", AgVAStateCalcOnePtAccess)
-__all__.append("AgVAStateCalcOnePtAccess")
 
 
 class AgVAStateCalcDifferenceAcrossSegmentsOtherSat(IAgComponentInfo, IAgCloneable, IAgVAStateCalcDifferenceAcrossSegmentsOtherSat):
@@ -52947,7 +52409,6 @@ class AgVAStateCalcDifferenceAcrossSegmentsOtherSat(IAgComponentInfo, IAgCloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDifferenceAcrossSegmentsOtherSat.")
         
 agcls.AgClassCatalog.add_catalog_entry("{83FAC79B-477F-4CD0-83AD-A0A2A9ECA782}", AgVAStateCalcDifferenceAcrossSegmentsOtherSat)
-__all__.append("AgVAStateCalcDifferenceAcrossSegmentsOtherSat")
 
 
 class AgVAStateCalcValueAtSegmentOtherSat(IAgComponentInfo, IAgCloneable, IAgVAStateCalcValueAtSegmentOtherSat):
@@ -52975,7 +52436,6 @@ class AgVAStateCalcValueAtSegmentOtherSat(IAgComponentInfo, IAgCloneable, IAgVAS
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcValueAtSegmentOtherSat.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5F9F3194-5AC1-46C9-8FB9-F076747180E7}", AgVAStateCalcValueAtSegmentOtherSat)
-__all__.append("AgVAStateCalcValueAtSegmentOtherSat")
 
 
 class AgVAStateCalcRARate(IAgVAStateCalcRARate, IAgComponentInfo, IAgCloneable):
@@ -53003,7 +52463,6 @@ class AgVAStateCalcRARate(IAgVAStateCalcRARate, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcRARate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3B9AD865-10A2-4B52-BDC7-7BE11A2CD36D}", AgVAStateCalcRARate)
-__all__.append("AgVAStateCalcRARate")
 
 
 class AgVAStateCalcDecRate(IAgVAStateCalcDecRate, IAgComponentInfo, IAgCloneable):
@@ -53031,7 +52490,6 @@ class AgVAStateCalcDecRate(IAgVAStateCalcDecRate, IAgComponentInfo, IAgCloneable
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcDecRate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{CCE41365-840A-4B9A-967F-A7D1E761B2DF}", AgVAStateCalcDecRate)
-__all__.append("AgVAStateCalcDecRate")
 
 
 class AgVAStateCalcGravitationalParameter(IAgVAStateCalcGravitationalParameter, IAgComponentInfo, IAgCloneable):
@@ -53059,7 +52517,6 @@ class AgVAStateCalcGravitationalParameter(IAgVAStateCalcGravitationalParameter, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcGravitationalParameter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0B3B8CA7-E0BC-4A0E-A0BE-026946EBF0A6}", AgVAStateCalcGravitationalParameter)
-__all__.append("AgVAStateCalcGravitationalParameter")
 
 
 class AgVAStateCalcReferenceRadius(IAgVAStateCalcReferenceRadius, IAgComponentInfo, IAgCloneable):
@@ -53087,7 +52544,6 @@ class AgVAStateCalcReferenceRadius(IAgVAStateCalcReferenceRadius, IAgComponentIn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcReferenceRadius.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C90B0911-1B88-4809-A9AD-B1F083E18808}", AgVAStateCalcReferenceRadius)
-__all__.append("AgVAStateCalcReferenceRadius")
 
 
 class AgVAStateCalcGravCoeff(IAgVAStateCalcGravCoeff, IAgComponentInfo, IAgCloneable):
@@ -53115,7 +52571,6 @@ class AgVAStateCalcGravCoeff(IAgVAStateCalcGravCoeff, IAgComponentInfo, IAgClone
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcGravCoeff.")
         
 agcls.AgClassCatalog.add_catalog_entry("{30223DC9-7946-4480-8E8A-DB3393DFEFC8}", AgVAStateCalcGravCoeff)
-__all__.append("AgVAStateCalcGravCoeff")
 
 
 class AgVAStateCalcSpeedOfLight(IAgVAStateCalcSpeedOfLight, IAgComponentInfo, IAgCloneable):
@@ -53143,7 +52598,6 @@ class AgVAStateCalcSpeedOfLight(IAgVAStateCalcSpeedOfLight, IAgComponentInfo, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcSpeedOfLight.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BB3D0551-655B-43D3-89BE-59816A9B2DF4}", AgVAStateCalcSpeedOfLight)
-__all__.append("AgVAStateCalcSpeedOfLight")
 
 
 class AgVAStateCalcPi(IAgVAStateCalcPi, IAgComponentInfo, IAgCloneable):
@@ -53171,7 +52625,6 @@ class AgVAStateCalcPi(IAgVAStateCalcPi, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcPi.")
         
 agcls.AgClassCatalog.add_catalog_entry("{81779742-2FD6-4E22-81C5-05F1D271944F}", AgVAStateCalcPi)
-__all__.append("AgVAStateCalcPi")
 
 
 class AgVAStateCalcScalar(IAgVAStateCalcScalar, IAgComponentInfo, IAgCloneable):
@@ -53199,7 +52652,6 @@ class AgVAStateCalcScalar(IAgVAStateCalcScalar, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcScalar.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C6136D77-3185-4A4C-83AA-90CC6713A07A}", AgVAStateCalcScalar)
-__all__.append("AgVAStateCalcScalar")
 
 
 class AgVAStateCalcApparentSolarTime(IAgComponentInfo, IAgCloneable, IAgVAStateCalcApparentSolarTime):
@@ -53227,7 +52679,6 @@ class AgVAStateCalcApparentSolarTime(IAgComponentInfo, IAgCloneable, IAgVAStateC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcApparentSolarTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EF933369-A9DC-4A8C-B361-615A7A8B852D}", AgVAStateCalcApparentSolarTime)
-__all__.append("AgVAStateCalcApparentSolarTime")
 
 
 class AgVAStateCalcEarthMeanSolarTime(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEarthMeanSolarTime):
@@ -53255,7 +52706,6 @@ class AgVAStateCalcEarthMeanSolarTime(IAgComponentInfo, IAgCloneable, IAgVAState
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcEarthMeanSolarTime.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A36F3E6D-DD64-4089-A0B9-CDDECA9F31BF}", AgVAStateCalcEarthMeanSolarTime)
-__all__.append("AgVAStateCalcEarthMeanSolarTime")
 
 
 class AgVAStateCalcEarthMeanLocTimeAN(IAgComponentInfo, IAgCloneable, IAgVAStateCalcEarthMeanLocTimeAN):
@@ -53283,7 +52733,6 @@ class AgVAStateCalcEarthMeanLocTimeAN(IAgComponentInfo, IAgCloneable, IAgVAState
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateCalcEarthMeanLocTimeAN.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8B52530C-09B1-48BB-A644-2564B3F9A23F}", AgVAStateCalcEarthMeanLocTimeAN)
-__all__.append("AgVAStateCalcEarthMeanLocTimeAN")
 
 
 class AgVAAutomaticSequenceCollection(IAgVAAutomaticSequenceCollection):
@@ -53305,7 +52754,6 @@ class AgVAAutomaticSequenceCollection(IAgVAAutomaticSequenceCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAutomaticSequenceCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{364BDB62-ECD6-4661-A8EB-D6943F5BD5BF}", AgVAAutomaticSequenceCollection)
-__all__.append("AgVAAutomaticSequenceCollection")
 
 
 class AgVAAutomaticSequence(IAgVAAutomaticSequence):
@@ -53327,7 +52775,6 @@ class AgVAAutomaticSequence(IAgVAAutomaticSequence):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAutomaticSequence.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8755DF12-EDDB-468E-92AF-D98C5C1B1534}", AgVAAutomaticSequence)
-__all__.append("AgVAAutomaticSequence")
 
 
 class AgVACentralBodyCollection(IAgVACentralBodyCollection):
@@ -53349,7 +52796,6 @@ class AgVACentralBodyCollection(IAgVACentralBodyCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACentralBodyCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{393D9C77-A9A2-4E5A-B285-9292EAF77559}", AgVACentralBodyCollection)
-__all__.append("AgVACentralBodyCollection")
 
 
 class AgVACentralBody(IAgVACentralBody, IAgComponentInfo, IAgCloneable):
@@ -53377,7 +52823,6 @@ class AgVACentralBody(IAgVACentralBody, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACentralBody.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BB18EA4F-DF6E-44A3-B547-CD21EC10120C}", AgVACentralBody)
-__all__.append("AgVACentralBody")
 
 
 class AgVACbGravityModel(IAgVACbGravityModel):
@@ -53399,7 +52844,6 @@ class AgVACbGravityModel(IAgVACbGravityModel):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbGravityModel.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B235689A-958C-42EA-BACA-DF03ED880C5B}", AgVACbGravityModel)
-__all__.append("AgVACbGravityModel")
 
 
 class AgVACbShapeSphere(IAgVACbShapeSphere, IAgVACbShape):
@@ -53424,7 +52868,6 @@ class AgVACbShapeSphere(IAgVACbShapeSphere, IAgVACbShape):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbShapeSphere.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0AC87F61-8DFA-48FF-A1D2-D7DCD7133900}", AgVACbShapeSphere)
-__all__.append("AgVACbShapeSphere")
 
 
 class AgVACbShapeOblateSpheroid(IAgVACbShapeOblateSpheroid, IAgVACbShape):
@@ -53449,7 +52892,6 @@ class AgVACbShapeOblateSpheroid(IAgVACbShapeOblateSpheroid, IAgVACbShape):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbShapeOblateSpheroid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1C606CEB-7C36-486E-A123-42AF0BCB2C8F}", AgVACbShapeOblateSpheroid)
-__all__.append("AgVACbShapeOblateSpheroid")
 
 
 class AgVACbShapeTriaxialEllipsoid(IAgVACbShapeTriaxialEllipsoid, IAgVACbShape):
@@ -53474,7 +52916,6 @@ class AgVACbShapeTriaxialEllipsoid(IAgVACbShapeTriaxialEllipsoid, IAgVACbShape):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbShapeTriaxialEllipsoid.")
         
 agcls.AgClassCatalog.add_catalog_entry("{286452CC-4917-4618-B2B7-D4C4B226AEAE}", AgVACbShapeTriaxialEllipsoid)
-__all__.append("AgVACbShapeTriaxialEllipsoid")
 
 
 class AgVACbAttitudeRotationCoefficientsFile(IAgVACbAttitudeRotationCoefficientsFile, IAgVACbAttitude):
@@ -53499,7 +52940,6 @@ class AgVACbAttitudeRotationCoefficientsFile(IAgVACbAttitudeRotationCoefficients
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbAttitudeRotationCoefficientsFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC7D0575-6607-4103-8957-0B791534526D}", AgVACbAttitudeRotationCoefficientsFile)
-__all__.append("AgVACbAttitudeRotationCoefficientsFile")
 
 
 class AgVACbAttitudeIAU1994(IAgVACbAttitudeIAU1994, IAgVACbAttitude):
@@ -53524,7 +52964,6 @@ class AgVACbAttitudeIAU1994(IAgVACbAttitudeIAU1994, IAgVACbAttitude):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbAttitudeIAU1994.")
         
 agcls.AgClassCatalog.add_catalog_entry("{147ABE46-6F5E-45D9-8279-5D01B0D78B88}", AgVACbAttitudeIAU1994)
-__all__.append("AgVACbAttitudeIAU1994")
 
 
 class AgVACbEphemerisAnalyticOrbit(IAgVACbEphemerisAnalyticOrbit, IAgVACbEphemeris):
@@ -53549,7 +52988,6 @@ class AgVACbEphemerisAnalyticOrbit(IAgVACbEphemerisAnalyticOrbit, IAgVACbEphemer
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbEphemerisAnalyticOrbit.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D2E09031-DB7F-480B-A361-73713F45EB70}", AgVACbEphemerisAnalyticOrbit)
-__all__.append("AgVACbEphemerisAnalyticOrbit")
 
 
 class AgVACbEphemerisJPLSpice(IAgVACbEphemerisJPLSpice, IAgVACbEphemeris):
@@ -53574,7 +53012,6 @@ class AgVACbEphemerisJPLSpice(IAgVACbEphemerisJPLSpice, IAgVACbEphemeris):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbEphemerisJPLSpice.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A75A2A9B-F225-43D5-A259-30C9B0488EB8}", AgVACbEphemerisJPLSpice)
-__all__.append("AgVACbEphemerisJPLSpice")
 
 
 class AgVACbEphemerisFile(IAgVACbEphemerisFile, IAgVACbEphemeris):
@@ -53599,7 +53036,6 @@ class AgVACbEphemerisFile(IAgVACbEphemerisFile, IAgVACbEphemeris):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbEphemerisFile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{063BA11E-7F73-40FA-B691-B12EC38DE29B}", AgVACbEphemerisFile)
-__all__.append("AgVACbEphemerisFile")
 
 
 class AgVACbEphemerisJPLDE(IAgVACbEphemerisJPLDE, IAgVACbEphemeris):
@@ -53624,7 +53060,6 @@ class AgVACbEphemerisJPLDE(IAgVACbEphemerisJPLDE, IAgVACbEphemeris):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbEphemerisJPLDE.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6426E9EA-5ED2-46C9-95BB-447955306CA7}", AgVACbEphemerisJPLDE)
-__all__.append("AgVACbEphemerisJPLDE")
 
 
 class AgVACbEphemerisPlanetary(IAgVACbEphemerisPlanetary, IAgVACbEphemeris):
@@ -53649,7 +53084,6 @@ class AgVACbEphemerisPlanetary(IAgVACbEphemerisPlanetary, IAgVACbEphemeris):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACbEphemerisPlanetary.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B3946E55-049C-4314-B6E1-1B3E4BD4F660}", AgVACbEphemerisPlanetary)
-__all__.append("AgVACbEphemerisPlanetary")
 
 
 class AgVAMCSSegmentProperties(IAgVAMCSSegmentProperties, IAgRuntimeTypeInfoProvider):
@@ -53674,7 +53108,6 @@ class AgVAMCSSegmentProperties(IAgVAMCSSegmentProperties, IAgRuntimeTypeInfoProv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMCSSegmentProperties.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9740187E-A60E-4440-952F-46FCEF10879C}", AgVAMCSSegmentProperties)
-__all__.append("AgVAMCSSegmentProperties")
 
 
 class AgVAPowerInternal(IAgVAPowerInternal, IAgComponentInfo, IAgCloneable):
@@ -53702,7 +53135,6 @@ class AgVAPowerInternal(IAgVAPowerInternal, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAPowerInternal.")
         
 agcls.AgClassCatalog.add_catalog_entry("{269F510C-DE85-4BD7-B09C-15B573F83F31}", AgVAPowerInternal)
-__all__.append("AgVAPowerInternal")
 
 
 class AgVAPowerProcessed(IAgVAPowerProcessed, IAgComponentInfo, IAgCloneable):
@@ -53730,7 +53162,6 @@ class AgVAPowerProcessed(IAgVAPowerProcessed, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAPowerProcessed.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F9B2570A-E760-4C58-B95A-6654FA264F43}", AgVAPowerProcessed)
-__all__.append("AgVAPowerProcessed")
 
 
 class AgVAPowerSolarArray(IAgVAPowerSolarArray, IAgComponentInfo, IAgCloneable):
@@ -53758,7 +53189,6 @@ class AgVAPowerSolarArray(IAgVAPowerSolarArray, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAPowerSolarArray.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EFF8A0BD-0BEA-4A4C-B486-3BC0DDA2B96E}", AgVAPowerSolarArray)
-__all__.append("AgVAPowerSolarArray")
 
 
 class AgVAGeneralRelativityFunction(IAgVAGeneralRelativityFunction, IAgComponentInfo, IAgCloneable):
@@ -53786,7 +53216,6 @@ class AgVAGeneralRelativityFunction(IAgVAGeneralRelativityFunction, IAgComponent
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGeneralRelativityFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2388EABA-68BE-4071-A6FC-5DF5E6913E09}", AgVAGeneralRelativityFunction)
-__all__.append("AgVAGeneralRelativityFunction")
 
 
 class AgVAStateTransFunction(IAgVAStateTransFunction, IAgComponentInfo, IAgCloneable):
@@ -53814,7 +53243,6 @@ class AgVAStateTransFunction(IAgVAStateTransFunction, IAgComponentInfo, IAgClone
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAStateTransFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{BC9BCE93-D459-43A4-B996-0710520ECD35}", AgVAStateTransFunction)
-__all__.append("AgVAStateTransFunction")
 
 
 class AgVACR3BPFunc(IAgVACR3BPFunc, IAgComponentInfo, IAgCloneable):
@@ -53842,7 +53270,6 @@ class AgVACR3BPFunc(IAgVACR3BPFunc, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACR3BPFunc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0CB5F652-0A94-4493-8397-78E8B147A600}", AgVACR3BPFunc)
-__all__.append("AgVACR3BPFunc")
 
 
 class AgVARadiationPressureFunction(IAgVARadiationPressureFunction, IAgComponentInfo, IAgCloneable):
@@ -53870,7 +53297,6 @@ class AgVARadiationPressureFunction(IAgVARadiationPressureFunction, IAgComponent
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVARadiationPressureFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{129DFCA0-E241-4BF5-947C-34D311459876}", AgVARadiationPressureFunction)
-__all__.append("AgVARadiationPressureFunction")
 
 
 class AgVAYarkovskyFunc(IAgVAYarkovskyFunc, IAgComponentInfo, IAgCloneable):
@@ -53898,7 +53324,6 @@ class AgVAYarkovskyFunc(IAgVAYarkovskyFunc, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAYarkovskyFunc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{991BA5B1-ED2F-4633-8493-5AD584CBD4FC}", AgVAYarkovskyFunc)
-__all__.append("AgVAYarkovskyFunc")
 
 
 class AgVABlendedDensity(IAgVABlendedDensity, IAgComponentInfo, IAgCloneable):
@@ -53926,7 +53351,6 @@ class AgVABlendedDensity(IAgVABlendedDensity, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABlendedDensity.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8262277E-56CE-4780-8EF3-08324A1A06FD}", AgVABlendedDensity)
-__all__.append("AgVABlendedDensity")
 
 
 class AgVACira72Function(IAgVACira72Function, IAgComponentInfo, IAgCloneable):
@@ -53954,7 +53378,6 @@ class AgVACira72Function(IAgVACira72Function, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACira72Function.")
         
 agcls.AgClassCatalog.add_catalog_entry("{995263CD-4163-4EDA-8012-310821C8A332}", AgVACira72Function)
-__all__.append("AgVACira72Function")
 
 
 class AgVAExponential(IAgVAExponential, IAgComponentInfo, IAgCloneable):
@@ -53982,7 +53405,6 @@ class AgVAExponential(IAgVAExponential, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAExponential.")
         
 agcls.AgClassCatalog.add_catalog_entry("{701C6D24-1D0E-4D08-9A3B-61566AABDE02}", AgVAExponential)
-__all__.append("AgVAExponential")
 
 
 class AgVAHarrisPriester(IAgVAHarrisPriester, IAgComponentInfo, IAgCloneable):
@@ -54010,7 +53432,6 @@ class AgVAHarrisPriester(IAgVAHarrisPriester, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAHarrisPriester.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2C45FE9A-0EE9-46B0-B0A5-79A052FDE189}", AgVAHarrisPriester)
-__all__.append("AgVAHarrisPriester")
 
 
 class AgVADensityModelPlugin(IAgVADensityModelPlugin, IAgComponentInfo, IAgCloneable):
@@ -54038,7 +53459,6 @@ class AgVADensityModelPlugin(IAgVADensityModelPlugin, IAgComponentInfo, IAgClone
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADensityModelPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5331D02B-13E5-4609-BFE6-9BF842E6096F}", AgVADensityModelPlugin)
-__all__.append("AgVADensityModelPlugin")
 
 
 class AgVAJacchiaRoberts(IAgVAJacchiaRoberts, IAgComponentInfo, IAgCloneable):
@@ -54066,7 +53486,6 @@ class AgVAJacchiaRoberts(IAgVAJacchiaRoberts, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAJacchiaRoberts.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6227B561-C892-4BB5-A835-9619EB144173}", AgVAJacchiaRoberts)
-__all__.append("AgVAJacchiaRoberts")
 
 
 class AgVAJacchiaBowman2008(IAgVAJacchiaBowman2008, IAgComponentInfo, IAgCloneable):
@@ -54094,7 +53513,6 @@ class AgVAJacchiaBowman2008(IAgVAJacchiaBowman2008, IAgComponentInfo, IAgCloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAJacchiaBowman2008.")
         
 agcls.AgClassCatalog.add_catalog_entry("{19461979-5C67-4840-8DB9-902EC47E6105}", AgVAJacchiaBowman2008)
-__all__.append("AgVAJacchiaBowman2008")
 
 
 class AgVAJacchia_1960(IAgVAJacchia_1960, IAgComponentInfo, IAgCloneable):
@@ -54122,7 +53540,6 @@ class AgVAJacchia_1960(IAgVAJacchia_1960, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAJacchia_1960.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E803E9D5-31AB-4D5C-B93E-AB9975E2402B}", AgVAJacchia_1960)
-__all__.append("AgVAJacchia_1960")
 
 
 class AgVAJacchia_1970(IAgVAJacchia_1970, IAgComponentInfo, IAgCloneable):
@@ -54150,7 +53567,6 @@ class AgVAJacchia_1970(IAgVAJacchia_1970, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAJacchia_1970.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9E716F44-73D2-4A22-97C9-04C20386D575}", AgVAJacchia_1970)
-__all__.append("AgVAJacchia_1970")
 
 
 class AgVAJacchia_1971(IAgVAJacchia_1971, IAgComponentInfo, IAgCloneable):
@@ -54178,7 +53594,6 @@ class AgVAJacchia_1971(IAgVAJacchia_1971, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAJacchia_1971.")
         
 agcls.AgClassCatalog.add_catalog_entry("{50FFBB4C-124F-4DC6-BEED-F2EC4930B4E7}", AgVAJacchia_1971)
-__all__.append("AgVAJacchia_1971")
 
 
 class AgVAMSISE_1990(IAgVAMSISE_1990, IAgComponentInfo, IAgCloneable):
@@ -54206,7 +53621,6 @@ class AgVAMSISE_1990(IAgVAMSISE_1990, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMSISE_1990.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A46341F0-9384-4A1D-970A-77B1B683359D}", AgVAMSISE_1990)
-__all__.append("AgVAMSISE_1990")
 
 
 class AgVAMSIS_1986(IAgVAMSIS_1986, IAgComponentInfo, IAgCloneable):
@@ -54234,7 +53648,6 @@ class AgVAMSIS_1986(IAgVAMSIS_1986, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMSIS_1986.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AFAC9D69-5B78-48BA-8CFA-5D6A30BBF371}", AgVAMSIS_1986)
-__all__.append("AgVAMSIS_1986")
 
 
 class AgVANRLMSISE_2000(IAgVANRLMSISE_2000, IAgComponentInfo, IAgCloneable):
@@ -54262,7 +53675,6 @@ class AgVANRLMSISE_2000(IAgVANRLMSISE_2000, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVANRLMSISE_2000.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2EEE9C88-FF61-497A-AD40-2429DBA0A581}", AgVANRLMSISE_2000)
-__all__.append("AgVANRLMSISE_2000")
 
 
 class AgVAUS_Standard_Atmosphere(IAgVAUS_Standard_Atmosphere, IAgComponentInfo, IAgCloneable):
@@ -54290,7 +53702,6 @@ class AgVAUS_Standard_Atmosphere(IAgVAUS_Standard_Atmosphere, IAgComponentInfo, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAUS_Standard_Atmosphere.")
         
 agcls.AgClassCatalog.add_catalog_entry("{14714C17-B360-42E1-86EE-99EB95C71B69}", AgVAUS_Standard_Atmosphere)
-__all__.append("AgVAUS_Standard_Atmosphere")
 
 
 class AgVAMarsGRAM37(IAgVAMarsGRAM37, IAgComponentInfo, IAgCloneable):
@@ -54318,7 +53729,6 @@ class AgVAMarsGRAM37(IAgVAMarsGRAM37, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMarsGRAM37.")
         
 agcls.AgClassCatalog.add_catalog_entry("{69A9AE89-0133-4410-A486-1ADEFBE56F49}", AgVAMarsGRAM37)
-__all__.append("AgVAMarsGRAM37")
 
 
 class AgVAMarsGRAM2000(IAgVAMarsGRAM2000, IAgComponentInfo, IAgCloneable):
@@ -54346,7 +53756,6 @@ class AgVAMarsGRAM2000(IAgVAMarsGRAM2000, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMarsGRAM2000.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FB31A16E-8E6F-4F8F-8D2D-0E3D0C0020FC}", AgVAMarsGRAM2000)
-__all__.append("AgVAMarsGRAM2000")
 
 
 class AgVAMarsGRAM2001(IAgVAMarsGRAM2001, IAgComponentInfo, IAgCloneable):
@@ -54374,7 +53783,6 @@ class AgVAMarsGRAM2001(IAgVAMarsGRAM2001, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMarsGRAM2001.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F7A3F4ED-100F-463F-A9F5-177F49E44BA9}", AgVAMarsGRAM2001)
-__all__.append("AgVAMarsGRAM2001")
 
 
 class AgVAMarsGRAM2005(IAgVAMarsGRAM2005, IAgComponentInfo, IAgCloneable):
@@ -54402,7 +53810,6 @@ class AgVAMarsGRAM2005(IAgVAMarsGRAM2005, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMarsGRAM2005.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD314E36-8513-484A-B46A-FC8794E939AC}", AgVAMarsGRAM2005)
-__all__.append("AgVAMarsGRAM2005")
 
 
 class AgVAMarsGRAM2010(IAgVAMarsGRAM2010, IAgComponentInfo, IAgCloneable):
@@ -54430,7 +53837,6 @@ class AgVAMarsGRAM2010(IAgVAMarsGRAM2010, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAMarsGRAM2010.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EE0F710B-25B2-4423-86BE-892E0F221376}", AgVAMarsGRAM2010)
-__all__.append("AgVAMarsGRAM2010")
 
 
 class AgVAVenusGRAM2005(IAgVAVenusGRAM2005, IAgComponentInfo, IAgCloneable):
@@ -54458,7 +53864,6 @@ class AgVAVenusGRAM2005(IAgVAVenusGRAM2005, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAVenusGRAM2005.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2360812C-F645-4237-889F-EF487FFC20D7}", AgVAVenusGRAM2005)
-__all__.append("AgVAVenusGRAM2005")
 
 
 class AgVADTM2012(IAgVADTM2012, IAgComponentInfo, IAgCloneable):
@@ -54486,7 +53891,6 @@ class AgVADTM2012(IAgVADTM2012, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADTM2012.")
         
 agcls.AgClassCatalog.add_catalog_entry("{131D3F3F-8444-4017-B12F-D57DF1262F58}", AgVADTM2012)
-__all__.append("AgVADTM2012")
 
 
 class AgVADTM2020(IAgVADTM2020, IAgComponentInfo, IAgCloneable):
@@ -54514,7 +53918,6 @@ class AgVADTM2020(IAgVADTM2020, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADTM2020.")
         
 agcls.AgClassCatalog.add_catalog_entry("{68457876-1EF6-4DD4-9295-E72570C4F97B}", AgVADTM2020)
-__all__.append("AgVADTM2020")
 
 
 class AgVAGravityFieldFunction(IAgVAGravityFieldFunction, IAgComponentInfo, IAgCloneable):
@@ -54542,7 +53945,6 @@ class AgVAGravityFieldFunction(IAgVAGravityFieldFunction, IAgComponentInfo, IAgC
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGravityFieldFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C2C24055-1B50-4BD9-A7F7-0AA5FCE8969E}", AgVAGravityFieldFunction)
-__all__.append("AgVAGravityFieldFunction")
 
 
 class AgVAPointMassFunction(IAgVAPointMassFunction, IAgComponentInfo, IAgCloneable):
@@ -54570,7 +53972,6 @@ class AgVAPointMassFunction(IAgVAPointMassFunction, IAgComponentInfo, IAgCloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAPointMassFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E0A1592D-68C0-43DB-A338-DE22A591872A}", AgVAPointMassFunction)
-__all__.append("AgVAPointMassFunction")
 
 
 class AgVATwoBodyFunction(IAgVATwoBodyFunction, IAgComponentInfo, IAgCloneable):
@@ -54598,7 +53999,6 @@ class AgVATwoBodyFunction(IAgVATwoBodyFunction, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVATwoBodyFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5C71D8C2-4A14-4D93-A8E5-5384AAB05E92}", AgVATwoBodyFunction)
-__all__.append("AgVATwoBodyFunction")
 
 
 class AgVAHPOPPluginFunction(IAgVAHPOPPluginFunction, IAgComponentInfo, IAgCloneable):
@@ -54626,7 +54026,6 @@ class AgVAHPOPPluginFunction(IAgVAHPOPPluginFunction, IAgComponentInfo, IAgClone
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAHPOPPluginFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{01BF5EA2-376F-49B2-B6DF-3017F30D8205}", AgVAHPOPPluginFunction)
-__all__.append("AgVAHPOPPluginFunction")
 
 
 class AgVAEOMFuncPluginFunction(IAgVAEOMFuncPluginFunction, IAgComponentInfo, IAgCloneable):
@@ -54654,7 +54053,6 @@ class AgVAEOMFuncPluginFunction(IAgVAEOMFuncPluginFunction, IAgComponentInfo, IA
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEOMFuncPluginFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6FCCD724-B386-487C-A2AD-6153FF4756FF}", AgVAEOMFuncPluginFunction)
-__all__.append("AgVAEOMFuncPluginFunction")
 
 
 class AgVASRPAeroT20(IAgVASRPAeroT20, IAgComponentInfo, IAgCloneable):
@@ -54682,7 +54080,6 @@ class AgVASRPAeroT20(IAgVASRPAeroT20, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPAeroT20.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6DB3E760-F774-45F3-A6E5-EA2A7E34416F}", AgVASRPAeroT20)
-__all__.append("AgVASRPAeroT20")
 
 
 class AgVASRPAeroT30(IAgVASRPAeroT30, IAgComponentInfo, IAgCloneable):
@@ -54710,7 +54107,6 @@ class AgVASRPAeroT30(IAgVASRPAeroT30, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPAeroT30.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E4DF0601-9442-4649-AE24-516F20E819EF}", AgVASRPAeroT30)
-__all__.append("AgVASRPAeroT30")
 
 
 class AgVASRPGSPM04aIIA(IAgVASRPGSPM04aIIA, IAgComponentInfo, IAgCloneable):
@@ -54738,7 +54134,6 @@ class AgVASRPGSPM04aIIA(IAgVASRPGSPM04aIIA, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPGSPM04aIIA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F6767C08-2100-464C-B18A-0528243E37DC}", AgVASRPGSPM04aIIA)
-__all__.append("AgVASRPGSPM04aIIA")
 
 
 class AgVASRPGSPM04aIIR(IAgVASRPGSPM04aIIR, IAgComponentInfo, IAgCloneable):
@@ -54766,7 +54161,6 @@ class AgVASRPGSPM04aIIR(IAgVASRPGSPM04aIIR, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPGSPM04aIIR.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FFF24BB0-8E3E-479A-957A-06719DF68A56}", AgVASRPGSPM04aIIR)
-__all__.append("AgVASRPGSPM04aIIR")
 
 
 class AgVASRPGSPM04aeIIA(IAgVASRPGSPM04aeIIA, IAgComponentInfo, IAgCloneable):
@@ -54794,7 +54188,6 @@ class AgVASRPGSPM04aeIIA(IAgVASRPGSPM04aeIIA, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPGSPM04aeIIA.")
         
 agcls.AgClassCatalog.add_catalog_entry("{82530B89-B383-4148-8606-BBA0EBA825CE}", AgVASRPGSPM04aeIIA)
-__all__.append("AgVASRPGSPM04aeIIA")
 
 
 class AgVASRPGSPM04aeIIR(IAgVASRPGSPM04aeIIR, IAgComponentInfo, IAgCloneable):
@@ -54822,7 +54215,6 @@ class AgVASRPGSPM04aeIIR(IAgVASRPGSPM04aeIIR, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPGSPM04aeIIR.")
         
 agcls.AgClassCatalog.add_catalog_entry("{17C9AD04-9981-4541-9515-59A597003348}", AgVASRPGSPM04aeIIR)
-__all__.append("AgVASRPGSPM04aeIIR")
 
 
 class AgVASRPSpherical(IAgVASRPSpherical, IAgComponentInfo, IAgCloneable):
@@ -54850,7 +54242,6 @@ class AgVASRPSpherical(IAgVASRPSpherical, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPSpherical.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4318B037-C619-4722-A0F5-4FFDFA7D9474}", AgVASRPSpherical)
-__all__.append("AgVASRPSpherical")
 
 
 class AgVASRPNPlate(IAgVASRPNPlate, IAgComponentInfo, IAgCloneable):
@@ -54878,7 +54269,6 @@ class AgVASRPNPlate(IAgVASRPNPlate, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPNPlate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{81962DC5-1A26-4077-AC39-E8E75145858A}", AgVASRPNPlate)
-__all__.append("AgVASRPNPlate")
 
 
 class AgVASRPTabAreaVec(IAgVASRPTabAreaVec, IAgComponentInfo, IAgCloneable):
@@ -54906,7 +54296,6 @@ class AgVASRPTabAreaVec(IAgVASRPTabAreaVec, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPTabAreaVec.")
         
 agcls.AgClassCatalog.add_catalog_entry("{77FAE0BD-36AF-4140-B62E-7B2865841152}", AgVASRPTabAreaVec)
-__all__.append("AgVASRPTabAreaVec")
 
 
 class AgVASRPVariableArea(IAgVASRPVariableArea, IAgComponentInfo, IAgCloneable):
@@ -54934,7 +54323,6 @@ class AgVASRPVariableArea(IAgVASRPVariableArea, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPVariableArea.")
         
 agcls.AgClassCatalog.add_catalog_entry("{193838B2-807F-4E24-A05D-2E0BAB03B497}", AgVASRPVariableArea)
-__all__.append("AgVASRPVariableArea")
 
 
 class AgVAThirdBodyFunction(IAgVAThirdBodyFunction, IAgComponentInfo, IAgCloneable):
@@ -54962,7 +54350,6 @@ class AgVAThirdBodyFunction(IAgVAThirdBodyFunction, IAgComponentInfo, IAgCloneab
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAThirdBodyFunction.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7E7DF54F-A10B-4B57-9919-ACD123F69001}", AgVAThirdBodyFunction)
-__all__.append("AgVAThirdBodyFunction")
 
 
 class AgVADragModelPlugin(IAgVADragModelPlugin, IAgComponentInfo, IAgCloneable):
@@ -54990,7 +54377,6 @@ class AgVADragModelPlugin(IAgVADragModelPlugin, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVADragModelPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C48CB2A8-A6E1-4E7B-ABB2-179D1E06D541}", AgVADragModelPlugin)
-__all__.append("AgVADragModelPlugin")
 
 
 class AgVASRPReflectionPlugin(IAgVASRPReflectionPlugin, IAgComponentInfo, IAgCloneable):
@@ -55018,7 +54404,6 @@ class AgVASRPReflectionPlugin(IAgVASRPReflectionPlugin, IAgComponentInfo, IAgClo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASRPReflectionPlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{926296A2-EA6B-4FC8-A75C-15B9F24B85E5}", AgVASRPReflectionPlugin)
-__all__.append("AgVASRPReflectionPlugin")
 
 
 class AgVAEngineConstAcc(IAgVAEngineConstAcc, IAgComponentInfo, IAgCloneable):
@@ -55046,7 +54431,6 @@ class AgVAEngineConstAcc(IAgVAEngineConstAcc, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineConstAcc.")
         
 agcls.AgClassCatalog.add_catalog_entry("{359488A0-BCA3-4739-8614-E99B675553AF}", AgVAEngineConstAcc)
-__all__.append("AgVAEngineConstAcc")
 
 
 class AgVAEngineConstant(IAgVAEngineConstant, IAgComponentInfo, IAgCloneable):
@@ -55074,7 +54458,6 @@ class AgVAEngineConstant(IAgVAEngineConstant, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineConstant.")
         
 agcls.AgClassCatalog.add_catalog_entry("{31105070-4B5A-4870-A45B-6F6CF13042DD}", AgVAEngineConstant)
-__all__.append("AgVAEngineConstant")
 
 
 class AgVAEngineIon(IAgVAEngineIon, IAgComponentInfo, IAgCloneable):
@@ -55102,7 +54485,6 @@ class AgVAEngineIon(IAgVAEngineIon, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineIon.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6AD7EC4F-2E59-4D7B-9FC2-9022CB8540B6}", AgVAEngineIon)
-__all__.append("AgVAEngineIon")
 
 
 class AgVAEngineThrottleTable(IAgVAEngineThrottleTable, IAgComponentInfo, IAgCloneable):
@@ -55130,7 +54512,6 @@ class AgVAEngineThrottleTable(IAgVAEngineThrottleTable, IAgComponentInfo, IAgClo
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineThrottleTable.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FB947497-4C0D-4F39-9942-31A9A0D3025F}", AgVAEngineThrottleTable)
-__all__.append("AgVAEngineThrottleTable")
 
 
 class AgVAEngineCustom(IAgVAEngineCustom, IAgComponentInfo, IAgCloneable):
@@ -55158,7 +54539,6 @@ class AgVAEngineCustom(IAgVAEngineCustom, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineCustom.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5C0367CE-254E-4BDB-8056-ED27D584258E}", AgVAEngineCustom)
-__all__.append("AgVAEngineCustom")
 
 
 class AgVAEnginePlugin(IAgVAEnginePlugin, IAgComponentInfo, IAgCloneable):
@@ -55186,7 +54566,6 @@ class AgVAEnginePlugin(IAgVAEnginePlugin, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEnginePlugin.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D7755FC3-1A9F-4DB5-B735-030256F4AE24}", AgVAEnginePlugin)
-__all__.append("AgVAEnginePlugin")
 
 
 class AgVAEngineModelPoly(IAgVAEngineModelPoly, IAgComponentInfo, IAgCloneable):
@@ -55214,7 +54593,6 @@ class AgVAEngineModelPoly(IAgVAEngineModelPoly, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineModelPoly.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0D23F634-A8B8-4376-99AE-F8287C267EDC}", AgVAEngineModelPoly)
-__all__.append("AgVAEngineModelPoly")
 
 
 class AgVAEngineModelThrustCoefficients(IAgVAEngineModelThrustCoefficients):
@@ -55236,7 +54614,6 @@ class AgVAEngineModelThrustCoefficients(IAgVAEngineModelThrustCoefficients):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineModelThrustCoefficients.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1B8E6E69-F100-4A4B-A24A-FFC3C8B0AF70}", AgVAEngineModelThrustCoefficients)
-__all__.append("AgVAEngineModelThrustCoefficients")
 
 
 class AgVAEngineModelIspCoefficients(IAgVAEngineModelIspCoefficients):
@@ -55258,7 +54635,6 @@ class AgVAEngineModelIspCoefficients(IAgVAEngineModelIspCoefficients):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineModelIspCoefficients.")
         
 agcls.AgClassCatalog.add_catalog_entry("{279B11AE-A5F8-4548-9401-95981B21C61C}", AgVAEngineModelIspCoefficients)
-__all__.append("AgVAEngineModelIspCoefficients")
 
 
 class AgVAEngineDefinition(IAgVAEngineDefinition):
@@ -55280,7 +54656,6 @@ class AgVAEngineDefinition(IAgVAEngineDefinition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAEngineDefinition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F87429C7-51DC-4AD8-8481-468C14F38AB4}", AgVAEngineDefinition)
-__all__.append("AgVAEngineDefinition")
 
 
 class AgVAThruster(IAgVAThruster):
@@ -55302,7 +54677,6 @@ class AgVAThruster(IAgVAThruster):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAThruster.")
         
 agcls.AgClassCatalog.add_catalog_entry("{749FEA15-5BD9-4466-BADF-E917D640E6D8}", AgVAThruster)
-__all__.append("AgVAThruster")
 
 
 class AgVAThrusterSetCollection(IAgVAThrusterSetCollection):
@@ -55324,7 +54698,6 @@ class AgVAThrusterSetCollection(IAgVAThrusterSetCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAThrusterSetCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8C1B379E-8092-48BE-A401-651464239B27}", AgVAThrusterSetCollection)
-__all__.append("AgVAThrusterSetCollection")
 
 
 class AgVAThrusterSet(IAgVAThrusterSet, IAgComponentInfo, IAgCloneable):
@@ -55352,7 +54725,6 @@ class AgVAThrusterSet(IAgVAThrusterSet, IAgComponentInfo, IAgCloneable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAThrusterSet.")
         
 agcls.AgClassCatalog.add_catalog_entry("{00FB61C4-5A63-439B-A030-171588D7CFED}", AgVAThrusterSet)
-__all__.append("AgVAThrusterSet")
 
 
 class AgVAAsTriggerCondition(IAgVAAsTriggerCondition, IAgComponentInfo, IAgCloneable):
@@ -55380,7 +54752,6 @@ class AgVAAsTriggerCondition(IAgVAAsTriggerCondition, IAgComponentInfo, IAgClone
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAAsTriggerCondition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{32E146B0-C168-4BD3-A2D9-ECF7096687E5}", AgVAAsTriggerCondition)
-__all__.append("AgVAAsTriggerCondition")
 
 
 class AgVACustomFunctionScriptEngine(IAgVACustomFunctionScriptEngine, IAgComponentInfo, IAgCloneable):
@@ -55408,7 +54779,6 @@ class AgVACustomFunctionScriptEngine(IAgVACustomFunctionScriptEngine, IAgCompone
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACustomFunctionScriptEngine.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F4CD79CC-CFAA-4EEE-A01A-0F846D6F6674}", AgVACustomFunctionScriptEngine)
-__all__.append("AgVACustomFunctionScriptEngine")
 
 
 class AgVANumericalPropagatorWrapper(IAgVANumericalPropagatorWrapper, IAgComponentInfo, IAgCloneable):
@@ -55436,7 +54806,6 @@ class AgVANumericalPropagatorWrapper(IAgVANumericalPropagatorWrapper, IAgCompone
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVANumericalPropagatorWrapper.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6F733B37-D5A3-4D83-844B-34A35BA937CC}", AgVANumericalPropagatorWrapper)
-__all__.append("AgVANumericalPropagatorWrapper")
 
 
 class AgVANumericalPropagatorWrapperCR3BP(IAgVANumericalPropagatorWrapperCR3BP, IAgComponentInfo, IAgCloneable):
@@ -55464,7 +54833,6 @@ class AgVANumericalPropagatorWrapperCR3BP(IAgVANumericalPropagatorWrapperCR3BP, 
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVANumericalPropagatorWrapperCR3BP.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C4823BEE-E898-47D3-8C29-9CCE6DB490FE}", AgVANumericalPropagatorWrapperCR3BP)
-__all__.append("AgVANumericalPropagatorWrapperCR3BP")
 
 
 class AgVAPropagatorFunctionCollection(IAgVAPropagatorFunctionCollection):
@@ -55486,7 +54854,6 @@ class AgVAPropagatorFunctionCollection(IAgVAPropagatorFunctionCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAPropagatorFunctionCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{41440862-0DA5-41B0-9A84-073FBC64D47A}", AgVAPropagatorFunctionCollection)
-__all__.append("AgVAPropagatorFunctionCollection")
 
 
 class AgVABulirschStoerIntegrator(IAgVABulirschStoerIntegrator, IAgVANumericalIntegrator):
@@ -55511,7 +54878,6 @@ class AgVABulirschStoerIntegrator(IAgVABulirschStoerIntegrator, IAgVANumericalIn
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVABulirschStoerIntegrator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B98456C5-48DE-41AB-867B-FD713A325418}", AgVABulirschStoerIntegrator)
-__all__.append("AgVABulirschStoerIntegrator")
 
 
 class AgVAGaussJacksonIntegrator(IAgVAGaussJacksonIntegrator, IAgVANumericalIntegrator):
@@ -55536,7 +54902,6 @@ class AgVAGaussJacksonIntegrator(IAgVAGaussJacksonIntegrator, IAgVANumericalInte
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGaussJacksonIntegrator.")
         
 agcls.AgClassCatalog.add_catalog_entry("{034F55EC-4D6E-4C22-9811-C3DEBC83ABD9}", AgVAGaussJacksonIntegrator)
-__all__.append("AgVAGaussJacksonIntegrator")
 
 
 class AgVARK2nd3rd(IAgVARK2nd3rd, IAgVANumericalIntegrator):
@@ -55561,7 +54926,6 @@ class AgVARK2nd3rd(IAgVARK2nd3rd, IAgVANumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVARK2nd3rd.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F3511C10-B4F1-4592-81AC-41D387A9589B}", AgVARK2nd3rd)
-__all__.append("AgVARK2nd3rd")
 
 
 class AgVARK4th(IAgVARK4th, IAgVANumericalIntegrator):
@@ -55586,7 +54950,6 @@ class AgVARK4th(IAgVARK4th, IAgVANumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVARK4th.")
         
 agcls.AgClassCatalog.add_catalog_entry("{019C798B-5AB2-42F1-847E-AC64438C8341}", AgVARK4th)
-__all__.append("AgVARK4th")
 
 
 class AgVARK4th5th(IAgVARK4th5th, IAgVANumericalIntegrator):
@@ -55611,7 +54974,6 @@ class AgVARK4th5th(IAgVARK4th5th, IAgVANumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVARK4th5th.")
         
 agcls.AgClassCatalog.add_catalog_entry("{25B6537D-FF33-45E7-A314-F6E4EFA34CD5}", AgVARK4th5th)
-__all__.append("AgVARK4th5th")
 
 
 class AgVARK4thAdapt(IAgVARK4thAdapt, IAgVANumericalIntegrator):
@@ -55636,7 +54998,6 @@ class AgVARK4thAdapt(IAgVARK4thAdapt, IAgVANumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVARK4thAdapt.")
         
 agcls.AgClassCatalog.add_catalog_entry("{03F69912-84E6-4209-8AF5-FD2C4B009C44}", AgVARK4thAdapt)
-__all__.append("AgVARK4thAdapt")
 
 
 class AgVARKF7th8th(IAgVARKF7th8th, IAgVANumericalIntegrator):
@@ -55661,7 +55022,6 @@ class AgVARKF7th8th(IAgVARKF7th8th, IAgVANumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVARKF7th8th.")
         
 agcls.AgClassCatalog.add_catalog_entry("{78A98F0E-B687-4D64-B0F6-5608105504CC}", AgVARKF7th8th)
-__all__.append("AgVARKF7th8th")
 
 
 class AgVARKV8th9th(IAgVARKV8th9th, IAgVANumericalIntegrator):
@@ -55686,7 +55046,6 @@ class AgVARKV8th9th(IAgVARKV8th9th, IAgVANumericalIntegrator):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVARKV8th9th.")
         
 agcls.AgClassCatalog.add_catalog_entry("{26857B4B-40C9-4EC2-B5F7-AFEB6103128D}", AgVARKV8th9th)
-__all__.append("AgVARKV8th9th")
 
 
 class AgVAScriptingTool(IAgVAScriptingTool, IAgRuntimeTypeInfoProvider):
@@ -55711,7 +55070,6 @@ class AgVAScriptingTool(IAgVAScriptingTool, IAgRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingTool.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1FB508B7-F4D9-4ABF-8EA8-B44AECAEE9C0}", AgVAScriptingTool)
-__all__.append("AgVAScriptingTool")
 
 
 class AgVAScriptingSegmentCollection(IAgVAScriptingSegmentCollection, IAgRuntimeTypeInfoProvider):
@@ -55736,7 +55094,6 @@ class AgVAScriptingSegmentCollection(IAgVAScriptingSegmentCollection, IAgRuntime
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingSegmentCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{2D397364-3CD3-4FC2-8B11-D74D7A348687}", AgVAScriptingSegmentCollection)
-__all__.append("AgVAScriptingSegmentCollection")
 
 
 class AgVAScriptingSegment(IAgVAScriptingSegment, IAgRuntimeTypeInfoProvider):
@@ -55761,7 +55118,6 @@ class AgVAScriptingSegment(IAgVAScriptingSegment, IAgRuntimeTypeInfoProvider):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingSegment.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD68184D-BA0A-41EC-B03E-E63514058625}", AgVAScriptingSegment)
-__all__.append("AgVAScriptingSegment")
 
 
 class AgVAScriptingParameterCollection(IAgVAScriptingParameterCollection, IAgRuntimeTypeInfoProvider):
@@ -55786,7 +55142,6 @@ class AgVAScriptingParameterCollection(IAgVAScriptingParameterCollection, IAgRun
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingParameterCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F7B45439-8E25-43DE-882F-844F8645F015}", AgVAScriptingParameterCollection)
-__all__.append("AgVAScriptingParameterCollection")
 
 
 class AgVAScriptingParameter(IAgVAScriptingParameter, IAgRuntimeTypeInfoProvider):
@@ -55811,7 +55166,6 @@ class AgVAScriptingParameter(IAgVAScriptingParameter, IAgRuntimeTypeInfoProvider
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingParameter.")
         
 agcls.AgClassCatalog.add_catalog_entry("{92BFA902-938E-48E0-B402-C6DEE9169BEE}", AgVAScriptingParameter)
-__all__.append("AgVAScriptingParameter")
 
 
 class AgVAScriptingCalcObject(IAgVAScriptingCalcObject):
@@ -55833,7 +55187,6 @@ class AgVAScriptingCalcObject(IAgVAScriptingCalcObject):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingCalcObject.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D9895635-D8A5-497F-9C4D-E0A18AF49983}", AgVAScriptingCalcObject)
-__all__.append("AgVAScriptingCalcObject")
 
 
 class AgVAScriptingCalcObjectCollection(IAgVAScriptingCalcObjectCollection):
@@ -55855,7 +55208,6 @@ class AgVAScriptingCalcObjectCollection(IAgVAScriptingCalcObjectCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingCalcObjectCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9FC08736-F254-451E-9292-C003D5601780}", AgVAScriptingCalcObjectCollection)
-__all__.append("AgVAScriptingCalcObjectCollection")
 
 
 class AgVAUserVariableDefinition(IAgVAUserVariableDefinition):
@@ -55877,7 +55229,6 @@ class AgVAUserVariableDefinition(IAgVAUserVariableDefinition):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAUserVariableDefinition.")
         
 agcls.AgClassCatalog.add_catalog_entry("{659E4C4D-E224-47D7-A899-C9B5DCF7241F}", AgVAUserVariableDefinition)
-__all__.append("AgVAUserVariableDefinition")
 
 
 class AgVAUserVariable(IAgVAUserVariable):
@@ -55899,7 +55250,6 @@ class AgVAUserVariable(IAgVAUserVariable):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAUserVariable.")
         
 agcls.AgClassCatalog.add_catalog_entry("{437599F8-0E00-4984-81CA-B450200257BC}", AgVAUserVariable)
-__all__.append("AgVAUserVariable")
 
 
 class AgVAUserVariableUpdate(IAgVAUserVariableUpdate):
@@ -55921,7 +55271,6 @@ class AgVAUserVariableUpdate(IAgVAUserVariableUpdate):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAUserVariableUpdate.")
         
 agcls.AgClassCatalog.add_catalog_entry("{EB1FC76A-82D7-43C1-919B-05F53CEFC2ED}", AgVAUserVariableUpdate)
-__all__.append("AgVAUserVariableUpdate")
 
 
 class AgVAUserVariableDefinitionCollection(IAgVAUserVariableDefinitionCollection):
@@ -55943,7 +55292,6 @@ class AgVAUserVariableDefinitionCollection(IAgVAUserVariableDefinitionCollection
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAUserVariableDefinitionCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E1D09185-E7EC-4E3F-BFEF-52AC92FEEC75}", AgVAUserVariableDefinitionCollection)
-__all__.append("AgVAUserVariableDefinitionCollection")
 
 
 class AgVAUserVariableCollection(IAgVAUserVariableCollection):
@@ -55965,7 +55313,6 @@ class AgVAUserVariableCollection(IAgVAUserVariableCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAUserVariableCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{801C61FA-C0FE-4BFD-8001-3335211F7328}", AgVAUserVariableCollection)
-__all__.append("AgVAUserVariableCollection")
 
 
 class AgVAUserVariableUpdateCollection(IAgVAUserVariableUpdateCollection):
@@ -55987,7 +55334,6 @@ class AgVAUserVariableUpdateCollection(IAgVAUserVariableUpdateCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAUserVariableUpdateCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FD7D6D39-4E5B-41E1-84E2-CBCAE8ECCF41}", AgVAUserVariableUpdateCollection)
-__all__.append("AgVAUserVariableUpdateCollection")
 
 
 class AgVACalculationGraphCollection(IAgVACalculationGraphCollection):
@@ -56009,7 +55355,6 @@ class AgVACalculationGraphCollection(IAgVACalculationGraphCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVACalculationGraphCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{40E20BE7-7961-468B-B396-8F6E980BE49E}", AgVACalculationGraphCollection)
-__all__.append("AgVACalculationGraphCollection")
 
 
 class AgVAScriptingParameterEnumerationChoice(IAgVAScriptingParameterEnumerationChoice, IAgRuntimeTypeInfoProvider):
@@ -56034,7 +55379,6 @@ class AgVAScriptingParameterEnumerationChoice(IAgVAScriptingParameterEnumeration
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingParameterEnumerationChoice.")
         
 agcls.AgClassCatalog.add_catalog_entry("{82A982C2-A2AD-4FD8-AB46-A54866F56AEA}", AgVAScriptingParameterEnumerationChoice)
-__all__.append("AgVAScriptingParameterEnumerationChoice")
 
 
 class AgVAScriptingParameterEnumerationChoiceCollection(IAgVAScriptingParameterEnumerationChoiceCollection, IAgRuntimeTypeInfoProvider):
@@ -56059,7 +55403,6 @@ class AgVAScriptingParameterEnumerationChoiceCollection(IAgVAScriptingParameterE
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAScriptingParameterEnumerationChoiceCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E4F13182-12CE-420B-AC3A-8530CC46BE35}", AgVAScriptingParameterEnumerationChoiceCollection)
-__all__.append("AgVAScriptingParameterEnumerationChoiceCollection")
 
 
 class AgVAProfileSNOPTOptimizer(IAgVAProfileSNOPTOptimizer, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -56087,7 +55430,6 @@ class AgVAProfileSNOPTOptimizer(IAgVAProfileSNOPTOptimizer, IAgVAProfile, IAgRun
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileSNOPTOptimizer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6F7AFA8D-FC45-4955-BEFB-BDE94553C02E}", AgVAProfileSNOPTOptimizer)
-__all__.append("AgVAProfileSNOPTOptimizer")
 
 
 class AgVASNOPTControl(IAgVASNOPTControl):
@@ -56109,7 +55451,6 @@ class AgVASNOPTControl(IAgVASNOPTControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASNOPTControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5CD8E3EB-8BCA-4D53-A361-484285E62C96}", AgVASNOPTControl)
-__all__.append("AgVASNOPTControl")
 
 
 class AgVASNOPTResult(IAgVASNOPTResult):
@@ -56131,7 +55472,6 @@ class AgVASNOPTResult(IAgVASNOPTResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASNOPTResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F739575C-EF90-4B58-917A-BD0C12C95055}", AgVASNOPTResult)
-__all__.append("AgVASNOPTResult")
 
 
 class AgVASNOPTControlCollection(IAgVASNOPTControlCollection):
@@ -56153,7 +55493,6 @@ class AgVASNOPTControlCollection(IAgVASNOPTControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASNOPTControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{99EECA52-DE6C-4E2C-805E-725A3A009E4B}", AgVASNOPTControlCollection)
-__all__.append("AgVASNOPTControlCollection")
 
 
 class AgVASNOPTResultCollection(IAgVASNOPTResultCollection):
@@ -56175,7 +55514,6 @@ class AgVASNOPTResultCollection(IAgVASNOPTResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVASNOPTResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{D27CBF33-3EC4-40A0-A138-5F41720B0B08}", AgVASNOPTResultCollection)
-__all__.append("AgVASNOPTResultCollection")
 
 
 class AgVAProfileIPOPTOptimizer(IAgVAProfileIPOPTOptimizer, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -56203,7 +55541,6 @@ class AgVAProfileIPOPTOptimizer(IAgVAProfileIPOPTOptimizer, IAgVAProfile, IAgRun
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileIPOPTOptimizer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{59AB8108-2D2E-4D46-8B96-F1F43175CC77}", AgVAProfileIPOPTOptimizer)
-__all__.append("AgVAProfileIPOPTOptimizer")
 
 
 class AgVAIPOPTControl(IAgVAIPOPTControl):
@@ -56225,7 +55562,6 @@ class AgVAIPOPTControl(IAgVAIPOPTControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAIPOPTControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{F7FF56DA-D284-4B28-88EC-BEE49D7E0CFD}", AgVAIPOPTControl)
-__all__.append("AgVAIPOPTControl")
 
 
 class AgVAIPOPTResult(IAgVAIPOPTResult):
@@ -56247,7 +55583,6 @@ class AgVAIPOPTResult(IAgVAIPOPTResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAIPOPTResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DCFD15D6-9ACF-4FCB-B968-CB74B5E95B33}", AgVAIPOPTResult)
-__all__.append("AgVAIPOPTResult")
 
 
 class AgVAIPOPTControlCollection(IAgVAIPOPTControlCollection):
@@ -56269,7 +55604,6 @@ class AgVAIPOPTControlCollection(IAgVAIPOPTControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAIPOPTControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{522C81BC-6FFF-40FE-90C7-E4368FD1548D}", AgVAIPOPTControlCollection)
-__all__.append("AgVAIPOPTControlCollection")
 
 
 class AgVAIPOPTResultCollection(IAgVAIPOPTResultCollection):
@@ -56291,7 +55625,6 @@ class AgVAIPOPTResultCollection(IAgVAIPOPTResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAIPOPTResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4A10E1B9-87A1-4370-AAD8-F7856B099B5C}", AgVAIPOPTResultCollection)
-__all__.append("AgVAIPOPTResultCollection")
 
 
 class AgVAManeuverOptimalFinite(IAgVAManeuverOptimalFinite, IAgVAManeuver, IAgRuntimeTypeInfoProvider):
@@ -56319,7 +55652,6 @@ class AgVAManeuverOptimalFinite(IAgVAManeuverOptimalFinite, IAgVAManeuver, IAgRu
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverOptimalFinite.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6666593F-246D-4263-A0E4-78EFD0C04C7B}", AgVAManeuverOptimalFinite)
-__all__.append("AgVAManeuverOptimalFinite")
 
 
 class AgVAManeuverOptimalFiniteSNOPTOptimizer(IAgVAManeuverOptimalFiniteSNOPTOptimizer):
@@ -56341,7 +55673,6 @@ class AgVAManeuverOptimalFiniteSNOPTOptimizer(IAgVAManeuverOptimalFiniteSNOPTOpt
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverOptimalFiniteSNOPTOptimizer.")
         
 agcls.AgClassCatalog.add_catalog_entry("{54E41ADE-C090-4C19-8B09-94F5030260C6}", AgVAManeuverOptimalFiniteSNOPTOptimizer)
-__all__.append("AgVAManeuverOptimalFiniteSNOPTOptimizer")
 
 
 class AgVAManeuverOptimalFiniteInitialBoundaryConditions(IAgVAManeuverOptimalFiniteInitialBoundaryConditions):
@@ -56363,7 +55694,6 @@ class AgVAManeuverOptimalFiniteInitialBoundaryConditions(IAgVAManeuverOptimalFin
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverOptimalFiniteInitialBoundaryConditions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3A8835CC-D4EF-4AFE-B198-FC4992E17D6B}", AgVAManeuverOptimalFiniteInitialBoundaryConditions)
-__all__.append("AgVAManeuverOptimalFiniteInitialBoundaryConditions")
 
 
 class AgVAManeuverOptimalFiniteFinalBoundaryConditions(IAgVAManeuverOptimalFiniteFinalBoundaryConditions):
@@ -56385,7 +55715,6 @@ class AgVAManeuverOptimalFiniteFinalBoundaryConditions(IAgVAManeuverOptimalFinit
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverOptimalFiniteFinalBoundaryConditions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{FF880BEA-2B6E-40ED-B7BC-85ED2367FC9C}", AgVAManeuverOptimalFiniteFinalBoundaryConditions)
-__all__.append("AgVAManeuverOptimalFiniteFinalBoundaryConditions")
 
 
 class AgVAManeuverOptimalFinitePathBoundaryConditions(IAgVAManeuverOptimalFinitePathBoundaryConditions):
@@ -56407,7 +55736,6 @@ class AgVAManeuverOptimalFinitePathBoundaryConditions(IAgVAManeuverOptimalFinite
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverOptimalFinitePathBoundaryConditions.")
         
 agcls.AgClassCatalog.add_catalog_entry("{C8E16C04-1A5A-43F9-B770-A67666512F8A}", AgVAManeuverOptimalFinitePathBoundaryConditions)
-__all__.append("AgVAManeuverOptimalFinitePathBoundaryConditions")
 
 
 class AgVAManeuverOptimalFiniteSteeringNodeElement(IAgVAManeuverOptimalFiniteSteeringNodeElement):
@@ -56429,7 +55757,6 @@ class AgVAManeuverOptimalFiniteSteeringNodeElement(IAgVAManeuverOptimalFiniteSte
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverOptimalFiniteSteeringNodeElement.")
         
 agcls.AgClassCatalog.add_catalog_entry("{AE276E86-B321-4F0D-B657-852143B3F3EE}", AgVAManeuverOptimalFiniteSteeringNodeElement)
-__all__.append("AgVAManeuverOptimalFiniteSteeringNodeElement")
 
 
 class AgVAManeuverOptimalFiniteSteeringNodeCollection(IAgVAManeuverOptimalFiniteSteeringNodeCollection):
@@ -56451,7 +55778,6 @@ class AgVAManeuverOptimalFiniteSteeringNodeCollection(IAgVAManeuverOptimalFinite
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverOptimalFiniteSteeringNodeCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{23249624-8EFC-4AD8-9E67-A564A49D2D67}", AgVAManeuverOptimalFiniteSteeringNodeCollection)
-__all__.append("AgVAManeuverOptimalFiniteSteeringNodeCollection")
 
 
 class AgVAManeuverOptimalFiniteBounds(IAgVAManeuverOptimalFiniteBounds):
@@ -56473,7 +55799,6 @@ class AgVAManeuverOptimalFiniteBounds(IAgVAManeuverOptimalFiniteBounds):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAManeuverOptimalFiniteBounds.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0F56E447-2391-476B-863C-8B8596486F03}", AgVAManeuverOptimalFiniteBounds)
-__all__.append("AgVAManeuverOptimalFiniteBounds")
 
 
 class AgVAProfileLambertProfile(IAgVAProfileLambertProfile, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -56501,7 +55826,6 @@ class AgVAProfileLambertProfile(IAgVAProfileLambertProfile, IAgVAProfile, IAgRun
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileLambertProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{3FA3162E-C38E-46D8-8F7C-B8421110EEB2}", AgVAProfileLambertProfile)
-__all__.append("AgVAProfileLambertProfile")
 
 
 class AgVAProfileLambertSearchProfile(IAgVAProfileLambertSearchProfile, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -56529,7 +55853,6 @@ class AgVAProfileLambertSearchProfile(IAgVAProfileLambertSearchProfile, IAgVAPro
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileLambertSearchProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{9E98EFA2-5913-4BFA-8293-C294B80DFD4E}", AgVAProfileLambertSearchProfile)
-__all__.append("AgVAProfileLambertSearchProfile")
 
 
 class AgVAProfileGoldenSection(IAgVAProfileGoldenSection, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -56557,7 +55880,6 @@ class AgVAProfileGoldenSection(IAgVAProfileGoldenSection, IAgVAProfile, IAgRunti
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileGoldenSection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{8A0E8056-D72B-4C82-85F0-945A96AC4E2E}", AgVAProfileGoldenSection)
-__all__.append("AgVAProfileGoldenSection")
 
 
 class AgVAGoldenSectionControlCollection(IAgVAGoldenSectionControlCollection):
@@ -56579,7 +55901,6 @@ class AgVAGoldenSectionControlCollection(IAgVAGoldenSectionControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGoldenSectionControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{5E3FCD6D-E592-4610-9831-87D9ABD81889}", AgVAGoldenSectionControlCollection)
-__all__.append("AgVAGoldenSectionControlCollection")
 
 
 class AgVAGoldenSectionControl(IAgVAGoldenSectionControl):
@@ -56601,7 +55922,6 @@ class AgVAGoldenSectionControl(IAgVAGoldenSectionControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGoldenSectionControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{00EBADDE-16F1-4FAC-8014-6952CBF0832E}", AgVAGoldenSectionControl)
-__all__.append("AgVAGoldenSectionControl")
 
 
 class AgVAGoldenSectionResultCollection(IAgVAGoldenSectionResultCollection):
@@ -56623,7 +55943,6 @@ class AgVAGoldenSectionResultCollection(IAgVAGoldenSectionResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGoldenSectionResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{72ADF8B9-9BE8-4112-B295-30B86DAF11F3}", AgVAGoldenSectionResultCollection)
-__all__.append("AgVAGoldenSectionResultCollection")
 
 
 class AgVAGoldenSectionResult(IAgVAGoldenSectionResult):
@@ -56645,7 +55964,6 @@ class AgVAGoldenSectionResult(IAgVAGoldenSectionResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGoldenSectionResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{A6F34FB1-1740-4EBB-B4FB-E6BB0B9EE427}", AgVAGoldenSectionResult)
-__all__.append("AgVAGoldenSectionResult")
 
 
 class AgVAProfileGridSearch(IAgVAProfileGridSearch, IAgVAProfile, IAgRuntimeTypeInfoProvider):
@@ -56673,7 +55991,6 @@ class AgVAProfileGridSearch(IAgVAProfileGridSearch, IAgVAProfile, IAgRuntimeType
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAProfileGridSearch.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7C28EA98-702E-4CA9-8DE6-C49CEC2932E0}", AgVAProfileGridSearch)
-__all__.append("AgVAProfileGridSearch")
 
 
 class AgVAGridSearchControlCollection(IAgVAGridSearchControlCollection):
@@ -56695,7 +56012,6 @@ class AgVAGridSearchControlCollection(IAgVAGridSearchControlCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGridSearchControlCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{0A1300B1-D35A-46C5-BE62-3AFB811157C5}", AgVAGridSearchControlCollection)
-__all__.append("AgVAGridSearchControlCollection")
 
 
 class AgVAGridSearchControl(IAgVAGridSearchControl):
@@ -56717,7 +56033,6 @@ class AgVAGridSearchControl(IAgVAGridSearchControl):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGridSearchControl.")
         
 agcls.AgClassCatalog.add_catalog_entry("{DA10881F-2D20-41DF-88DD-F49F9A41BA76}", AgVAGridSearchControl)
-__all__.append("AgVAGridSearchControl")
 
 
 class AgVAGridSearchResultCollection(IAgVAGridSearchResultCollection):
@@ -56739,7 +56054,6 @@ class AgVAGridSearchResultCollection(IAgVAGridSearchResultCollection):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGridSearchResultCollection.")
         
 agcls.AgClassCatalog.add_catalog_entry("{E189AD76-0BE9-4922-8D76-3E28FAE74507}", AgVAGridSearchResultCollection)
-__all__.append("AgVAGridSearchResultCollection")
 
 
 class AgVAGridSearchResult(IAgVAGridSearchResult):
@@ -56761,7 +56075,6 @@ class AgVAGridSearchResult(IAgVAGridSearchResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGridSearchResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B37527F8-1781-4484-985E-4F2BE2E8810A}", AgVAGridSearchResult)
-__all__.append("AgVAGridSearchResult")
 
 
 

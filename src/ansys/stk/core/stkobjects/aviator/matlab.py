@@ -2,7 +2,9 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = []
+__all__ = ["AgAvtrBasicManeuverMATLABFactory", "AgAvtrStrategyMATLAB3DGuidance", "AgAvtrStrategyMATLABFull3D", "AgAvtrStrategyMATLABNav", 
+"AgAvtrStrategyMATLABProfile", "IAgAvtrStrategyMATLAB3DGuidance", "IAgAvtrStrategyMATLABFull3D", "IAgAvtrStrategyMATLABNav", 
+"IAgAvtrStrategyMATLABProfile"]
 
 import typing
 
@@ -129,7 +131,6 @@ class IAgAvtrStrategyMATLABNav(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{e53fcce4-1a17-488d-9053-c236d27b8b6e}", IAgAvtrStrategyMATLABNav)
 agcls.AgTypeNameMap["IAgAvtrStrategyMATLABNav"] = IAgAvtrStrategyMATLABNav
-__all__.append("IAgAvtrStrategyMATLABNav")
 
 class IAgAvtrStrategyMATLABProfile(object):
     """Interface used to access options for a MATLAB - Vertical Plane Strategy of a Basic Maneuver Procedure."""
@@ -224,7 +225,6 @@ class IAgAvtrStrategyMATLABProfile(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{c5c0a490-9e7d-4ff9-95e9-9c10ed89500b}", IAgAvtrStrategyMATLABProfile)
 agcls.AgTypeNameMap["IAgAvtrStrategyMATLABProfile"] = IAgAvtrStrategyMATLABProfile
-__all__.append("IAgAvtrStrategyMATLABProfile")
 
 class IAgAvtrStrategyMATLABFull3D(object):
     """Interface used to access options for a MATLAB - Full 3D Strategy of a Basic Maneuver Procedure."""
@@ -319,7 +319,6 @@ class IAgAvtrStrategyMATLABFull3D(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{eb6b432e-50fc-4546-9d4b-a4285ae96a9d}", IAgAvtrStrategyMATLABFull3D)
 agcls.AgTypeNameMap["IAgAvtrStrategyMATLABFull3D"] = IAgAvtrStrategyMATLABFull3D
-__all__.append("IAgAvtrStrategyMATLABFull3D")
 
 class IAgAvtrStrategyMATLAB3DGuidance(object):
     """Interface used to access options for a MATLAB - 3D Guidance Strategy of a Basic Maneuver Procedure."""
@@ -586,7 +585,6 @@ class IAgAvtrStrategyMATLAB3DGuidance(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{fa4719ee-da5b-4845-af69-09ce61f4109e}", IAgAvtrStrategyMATLAB3DGuidance)
 agcls.AgTypeNameMap["IAgAvtrStrategyMATLAB3DGuidance"] = IAgAvtrStrategyMATLAB3DGuidance
-__all__.append("IAgAvtrStrategyMATLAB3DGuidance")
 
 
 
@@ -612,7 +610,6 @@ class AgAvtrStrategyMATLABNav(IAgAvtrStrategyMATLABNav, IAgAvtrBasicManeuverStra
             raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrStrategyMATLABNav.")
         
 agcls.AgClassCatalog.add_catalog_entry("{4447B282-8834-4451-8CD8-0A3168015B45}", AgAvtrStrategyMATLABNav)
-__all__.append("AgAvtrStrategyMATLABNav")
 
 
 class AgAvtrStrategyMATLABProfile(IAgAvtrStrategyMATLABProfile, IAgAvtrBasicManeuverStrategy):
@@ -637,7 +634,6 @@ class AgAvtrStrategyMATLABProfile(IAgAvtrStrategyMATLABProfile, IAgAvtrBasicMane
             raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrStrategyMATLABProfile.")
         
 agcls.AgClassCatalog.add_catalog_entry("{1bf89982-311b-4b61-ba17-00881de09863}", AgAvtrStrategyMATLABProfile)
-__all__.append("AgAvtrStrategyMATLABProfile")
 
 
 class AgAvtrStrategyMATLABFull3D(IAgAvtrStrategyMATLABFull3D, IAgAvtrBasicManeuverStrategy):
@@ -662,7 +658,6 @@ class AgAvtrStrategyMATLABFull3D(IAgAvtrStrategyMATLABFull3D, IAgAvtrBasicManeuv
             raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrStrategyMATLABFull3D.")
         
 agcls.AgClassCatalog.add_catalog_entry("{7fdf8025-0f64-4f1a-9c12-8275051354d4}", AgAvtrStrategyMATLABFull3D)
-__all__.append("AgAvtrStrategyMATLABFull3D")
 
 
 class AgAvtrStrategyMATLAB3DGuidance(IAgAvtrStrategyMATLAB3DGuidance, IAgAvtrBasicManeuverStrategy):
@@ -687,7 +682,6 @@ class AgAvtrStrategyMATLAB3DGuidance(IAgAvtrStrategyMATLAB3DGuidance, IAgAvtrBas
             raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrStrategyMATLAB3DGuidance.")
         
 agcls.AgClassCatalog.add_catalog_entry("{c90db66d-a2fa-4474-9c21-2e8f61b93fad}", AgAvtrStrategyMATLAB3DGuidance)
-__all__.append("AgAvtrStrategyMATLAB3DGuidance")
 
 
 class AgAvtrBasicManeuverMATLABFactory(IAgAvtrAutomationStrategyFactory):
@@ -709,7 +703,6 @@ class AgAvtrBasicManeuverMATLABFactory(IAgAvtrAutomationStrategyFactory):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrBasicManeuverMATLABFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{29352A63-3095-4D7E-A056-189D672BF458}", AgAvtrBasicManeuverMATLABFactory)
-__all__.append("AgAvtrBasicManeuverMATLABFactory")
 
 
 
