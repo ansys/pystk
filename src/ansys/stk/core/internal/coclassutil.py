@@ -5,14 +5,8 @@ import typing
 
 from ctypes import byref, cast, pointer, POINTER, Structure
 
-if os.name == "nt":
-    from ctypes import WINFUNCTYPE
-else:
-    from ctypes import CFUNCTYPE
-    WINFUNCTYPE = CFUNCTYPE
-
 from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, LPVOID, PVOID, ULONG, S_OK
-from .comutil import CLSIDFromString, CoTaskMemFree, IAGFUNCTYPE, IUnknown, GetErrorInfo, ole32lib, Succeeded, StringFromCLSID, SysFreeString
+from .comutil import CLSIDFromString, CoTaskMemFree, IAGFUNCTYPE, IUnknown, GetErrorInfo, ole32lib, Succeeded, StringFromCLSID, SysFreeString, WINFUNCTYPE
 from ..utilities.comobject  import COMObject
 from ..utilities.exceptions import *
 

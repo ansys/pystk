@@ -236,13 +236,19 @@ class EXCEPINFO(Structure):
 ###############################################################################
 #   COM Methods
 ###############################################################################
+
 if os.name == "nt":
-    from ctypes import WINFUNCTYPE, windll
+    from ctypes import WINFUNCTYPE
+else:
+    from ctypes import CFUNCTYPE
+    WINFUNCTYPE = CFUNCTYPE
+
+if os.name == "nt":
+    from ctypes import windll
     ole32lib = windll.ole32
     oleaut32lib = windll.OleAut32
 else:
-    from ctypes import CFUNCTYPE, cdll
-    WINFUNCTYPE=CFUNCTYPE
+    from ctypes import cdll
     ole32lib = cdll.LoadLibrary("libagxcom.so")
     oleaut32lib = cdll.LoadLibrary("libagxcom.so")
 
