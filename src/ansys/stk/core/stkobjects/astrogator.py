@@ -9887,7 +9887,7 @@ class IAgVAElementDelaunay(IAgVAElement):
 
     @property
     def DelaunayL(self) -> float:
-        """Related to the two-body orbital energy. Defined as sqrt(GM * a).   Uses AreaRate Dimension."""
+        """Related to the two-body orbital energy. Defined as sqrt(GM \\* a).   Uses AreaRate Dimension."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetDelaunayL"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -9911,7 +9911,7 @@ class IAgVAElementDelaunay(IAgVAElement):
 
     @property
     def DelaunayG(self) -> float:
-        """The magnitude of the orbital angular momentum. Defined as sqrt(GM * p). Uses AreaRate Dimension."""
+        """The magnitude of the orbital angular momentum. Defined as sqrt(GM \\* p). Uses AreaRate Dimension."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetDelaunayG"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val

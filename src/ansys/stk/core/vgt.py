@@ -17967,7 +17967,7 @@ class IAgCrdnAxesCustomScript(object):
 
     @property
     def Filename(self) -> str:
-        """Can be MATLAB (*.m or *.dll), VB Script (*.vbs) or Perl (*.pl) script file."""
+        """Can be MATLAB (\\*.m or \\*.dll), VB Script (\\*.vbs) or Perl (\\*.pl) script file."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetFilename"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -22500,7 +22500,7 @@ agcls.AgClassCatalog.add_catalog_entry("{AF054174-278A-41E6-B8FA-0FC48E19A8BC}",
 agcls.AgTypeNameMap["IAgCrdnVectorReflection"] = IAgCrdnVectorReflection
 
 class IAgCrdnVectorRotationVector(object):
-    """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
+    """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle\\*rotationAxis."""
     _uuid = "{2dc152fa-f029-4bc6-bc47-f27d92219a32}"
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -33820,7 +33820,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C35F8BF0-ED12-48BF-8770-EE63DAF4A9B1}",
 
 
 class AgCrdnVectorRotationVector(IAgCrdnVectorRotationVector, IAgCrdnVector, IAgCrdnTimeProperties, IAgCrdn):
-    """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
+    """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle\\*rotationAxis."""
     def __init__(self, sourceObject=None):
         IAgCrdnVectorRotationVector.__init__(self, sourceObject)
         IAgCrdnVector.__init__(self, sourceObject)
