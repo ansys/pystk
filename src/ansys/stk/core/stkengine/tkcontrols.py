@@ -9,12 +9,10 @@ from tkinter                    import Frame
 from ctypes                     import *
 
 from ..stkx             import IAgUiAxVOCntrl, IAgUiAx2DCntrl, IAgUiAxGfxAnalysisCntrl
-from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL
+from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL, WINFUNCTYPE
 from ..stkengine        import *
 
 if os.name != "nt":
-    from ctypes import CFUNCTYPE
-    WINFUNCTYPE=CFUNCTYPE
     from ctypes.util import find_library
 
 class NativeContainerMethods:
