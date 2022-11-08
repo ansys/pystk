@@ -1769,13 +1769,13 @@ class AgEVACbEphemeris(IntEnum):
     """The central body ephemeris types."""
     # Specified values and rates of change for the classical orbital elements.
     eVACbEphemerisAnalyticOrbit = 0,
-    # An external ephemeris (*.e) file.
+    # An external ephemeris (.e) file.
     eVACbEphemerisFile = 1,
     # Ephemerides from the Jet Propulsion Laboratory's JPL DE set are used.
     eVACbEphemerisJPLDE = 2,
     # The SPICE propagator reads ephemeris from binary files that are in a standard format produced by the Jet Propulsion Laboratory for ephemeris for celestial bodies but can be used for spacecraft.
     eVACbEphemerisJPLSPICE = 3,
-    # A planetary ephemeris (*.pe) file.
+    # A planetary ephemeris (.pe) file.
     eVACbEphemerisPlanetary = 4
 
 agcls.AgTypeNameMap["AgEVACbEphemeris"] = AgEVACbEphemeris
@@ -9887,7 +9887,7 @@ class IAgVAElementDelaunay(IAgVAElement):
 
     @property
     def DelaunayL(self) -> float:
-        """Related to the two-body orbital energy. Defined as sqrt(GM \\* a).   Uses AreaRate Dimension."""
+        """Related to the two-body orbital energy. Defined as sqrt(GM * a).   Uses AreaRate Dimension."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetDelaunayL"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -9911,7 +9911,7 @@ class IAgVAElementDelaunay(IAgVAElement):
 
     @property
     def DelaunayG(self) -> float:
-        """The magnitude of the orbital angular momentum. Defined as sqrt(GM \\* p). Uses AreaRate Dimension."""
+        """The magnitude of the orbital angular momentum. Defined as sqrt(GM * p). Uses AreaRate Dimension."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetDelaunayG"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
