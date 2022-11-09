@@ -433,4 +433,8 @@ if os.name=="nt":
             del(runningObjectTable)
         else:
             raise RuntimeError("Failed to retrieve the Running Object Table.")
-        
+else:
+    def attach_to_stk_by_pid(pid:int) -> IUnknown:
+        if os.name != "nt":
+            raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
+
