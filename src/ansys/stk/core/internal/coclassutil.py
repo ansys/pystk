@@ -288,149 +288,161 @@ def IUnknown_from_IDispatch(pdisp:PVOID) -> IUnknown:
 ###############################################################################
 #   attach_to_stk_by_pid (Windows-only)
 ###############################################################################
-if os.name=="nt":
+
+class _ole32lib:
     CreateClassMoniker    = WINFUNCTYPE(HRESULT, GUID, POINTER(LPVOID))(("CreateClassMoniker", ole32lib), ((1, "rclsid"), (1, "ppmk")))
     GetRunningObjectTable = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetRunningObjectTable", ole32lib), ((1, "dwReserved"), (1, "pprot")))
     CreateBindCtx         = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CreateBindCtx", ole32lib), ((1, "dwReserved"), (1, "ppbc")))
     CoGetMalloc           = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CoGetMalloc", ole32lib), ((1, "dwMemContext"), (1, "ppMalloc")))
             
-    class _IRunningObjectTable(object):
-        guid = "{00000010-0000-0000-C000-000000000046}"
-        def __init__(self, pUnk):
-            self.gettingAnApplication = True
-            IID__IRunningObjectTable = GUID(_IRunningObjectTable.guid)
-            vtable_offset = IUnknown._num_methods - 1
-            #RegisterIndex              = 1 (skipping Register as it is not needed)
-            #RevokeIndex                = 2 (skipping Revoke as it is not needed)
-            #IsRunningIndex             = 3 (skipping IsRunning as it is not needed)
-            GetObjectIndex              = 4 
-            #NoteChangeTimeIndex        = 5 (skipping NoteChangeTime as it is not needed)
-            #GetTimeOfLastChangeIndex   = 6 (skipping GetTimeOfLastChange as it is not needed)
-            EnumRunningIndex            = 7 
-            self._GetObject   = IAGFUNCTYPE(pUnk, IID__IRunningObjectTable, vtable_offset + GetObjectIndex, PVOID, POINTER(PVOID))
-            self._EnumRunning = IAGFUNCTYPE(pUnk, IID__IRunningObjectTable, vtable_offset + EnumRunningIndex, POINTER(PVOID))
-        def GetObject(self, pmkObjectName:"IMoniker") -> "IUnknown":
-            ppunkObject = IUnknown()
-            self._GetObject(pmkObjectName.pUnk.p, byref(ppunkObject.p))
-            ppunkObject.TakeOwnership(isApplication=self.gettingAnApplication) 
-            return ppunkObject
-        def EnumRunning(self) -> "_IEnumMoniker":
-            ppenumMoniker = IUnknown()
-            self._EnumRunning(byref(ppenumMoniker.p))
-            ppenumMoniker.TakeOwnership()
-            iEnumMon = _IEnumMoniker(ppenumMoniker)
-            del(ppenumMoniker)
-            return iEnumMon
-        
-    class _IEnumMoniker(object):
-        guid = "{00000102-0000-0000-C000-000000000046}"
-        def __init__(self, pUnk):
-            IID__IEnumMoniker = GUID(_IEnumMoniker.guid)
-            vtable_offset = IUnknown._num_methods - 1
-            NextIndex   = 1 
-            #SkipIndex  = 2 (skipping Skip as it is not needed)
-            ResetIndex  = 3
-            #CloneIndex = 4 (skipping Clone as it is not needed)
-            self._Next   = IAGFUNCTYPE(pUnk, IID__IEnumMoniker, vtable_offset + NextIndex, ULONG, POINTER(PVOID), POINTER(ULONG))
-            self._Reset  = IAGFUNCTYPE(pUnk, IID__IEnumMoniker, vtable_offset + ResetIndex)
-        def Next(self) -> "_IMoniker":
-            one_obj = ULONG(1)
-            num_fetched = ULONG(0)
-            pUnk = IUnknown()
-            CLSID_AgUiApplication = GUID()
-            CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
-            CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
-            pUnk.TakeOwnership()
-            self._Next(one_obj, byref(pUnk.p), byref(num_fetched))
-            if num_fetched.value == 1:
-                iMon = _IMoniker(pUnk)
-                del(pUnk)
-                return iMon
-        def Reset(self):
-            self._Reset()
-        
-    class _IMalloc(object):
-        guid = "{00000002-0000-0000-C000-000000000046}"
-        def __init__(self, pUnk):
-            IID__IMalloc = GUID(_IMalloc.guid)
-            vtable_offset = IUnknown._num_methods - 1
-            #AllocIndex          = 1 (skipping Alloc as it is not needed)
-            #ReallocIndex        = 2 (skipping Realloc as it is not needed)
-            FreeIndex            = 3 
-            #GetSizeIndex        = 4 (skipping GetSize as it is not needed)
-            #DidAllocIndex       = 5 (skipping DidAlloc as it is not needed)
-            #HeapMinimizeIndex   = 6 (skipping HeapMinimize as it is not needed)
-            self._Free = IAGFUNCTYPE(pUnk, IID__IMalloc, vtable_offset + FreeIndex, PVOID)
-        def Free(self, pv):
-            self._Free(pv)
+class _IRunningObjectTable(object):
+    guid = "{00000010-0000-0000-C000-000000000046}"
+    def __init__(self, pUnk):
+        if os.name != "nt":
+            raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
+        self.gettingAnApplication = True
+        IID__IRunningObjectTable = GUID(_IRunningObjectTable.guid)
+        vtable_offset = IUnknown._num_methods - 1
+        #RegisterIndex              = 1 (skipping Register as it is not needed)
+        #RevokeIndex                = 2 (skipping Revoke as it is not needed)
+        #IsRunningIndex             = 3 (skipping IsRunning as it is not needed)
+        GetObjectIndex              = 4 
+        #NoteChangeTimeIndex        = 5 (skipping NoteChangeTime as it is not needed)
+        #GetTimeOfLastChangeIndex   = 6 (skipping GetTimeOfLastChange as it is not needed)
+        EnumRunningIndex            = 7 
+        self._GetObject   = IAGFUNCTYPE(pUnk, IID__IRunningObjectTable, vtable_offset + GetObjectIndex, PVOID, POINTER(PVOID))
+        self._EnumRunning = IAGFUNCTYPE(pUnk, IID__IRunningObjectTable, vtable_offset + EnumRunningIndex, POINTER(PVOID))
+    def GetObject(self, pmkObjectName: "_IMoniker") -> "IUnknown":
+        ppunkObject = IUnknown()
+        self._GetObject(pmkObjectName.pUnk.p, byref(ppunkObject.p))
+        ppunkObject.TakeOwnership(isApplication=self.gettingAnApplication) 
+        return ppunkObject
+    def EnumRunning(self) -> "_IEnumMoniker":
+        ppenumMoniker = IUnknown()
+        self._EnumRunning(byref(ppenumMoniker.p))
+        ppenumMoniker.TakeOwnership()
+        iEnumMon = _IEnumMoniker(ppenumMoniker)
+        del(ppenumMoniker)
+        return iEnumMon
+    
+class _IEnumMoniker(object):
+    guid = "{00000102-0000-0000-C000-000000000046}"
+    def __init__(self, pUnk):
+        if os.name != "nt":
+            raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
+        IID__IEnumMoniker = GUID(_IEnumMoniker.guid)
+        vtable_offset = IUnknown._num_methods - 1
+        NextIndex   = 1 
+        #SkipIndex  = 2 (skipping Skip as it is not needed)
+        ResetIndex  = 3
+        #CloneIndex = 4 (skipping Clone as it is not needed)
+        self._Next   = IAGFUNCTYPE(pUnk, IID__IEnumMoniker, vtable_offset + NextIndex, ULONG, POINTER(PVOID), POINTER(ULONG))
+        self._Reset  = IAGFUNCTYPE(pUnk, IID__IEnumMoniker, vtable_offset + ResetIndex)
+    def Next(self) -> "_IMoniker":
+        one_obj = ULONG(1)
+        num_fetched = ULONG(0)
+        pUnk = IUnknown()
+        CLSID_AgUiApplication = GUID()
+        CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
+        _ole32lib.CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
+        pUnk.TakeOwnership()
+        self._Next(one_obj, byref(pUnk.p), byref(num_fetched))
+        if num_fetched.value == 1:
+            iMon = _IMoniker(pUnk)
+            del(pUnk)
+            return iMon
+    def Reset(self):
+        self._Reset()
+    
+class _IMalloc(object):
+    guid = "{00000002-0000-0000-C000-000000000046}"
+    def __init__(self, pUnk):
+        if os.name != "nt":
+            raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
+        IID__IMalloc = GUID(_IMalloc.guid)
+        vtable_offset = IUnknown._num_methods - 1
+        #AllocIndex          = 1 (skipping Alloc as it is not needed)
+        #ReallocIndex        = 2 (skipping Realloc as it is not needed)
+        FreeIndex            = 3 
+        #GetSizeIndex        = 4 (skipping GetSize as it is not needed)
+        #DidAllocIndex       = 5 (skipping DidAlloc as it is not needed)
+        #HeapMinimizeIndex   = 6 (skipping HeapMinimize as it is not needed)
+        self._Free = IAGFUNCTYPE(pUnk, IID__IMalloc, vtable_offset + FreeIndex, PVOID)
+    def Free(self, pv):
+        self._Free(pv)
+    
+class _IMoniker(object):
+    guid = "{0000000f-0000-0000-C000-000000000046}"
+    def __init__(self, pUnk):
+        if os.name != "nt":
+            raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
+        self.pUnk = pUnk
+        IID__IMoniker = GUID(_IMoniker.guid)
+        IPersist_num_methods = 1
+        IPersistStream_num_methods = 4
+        vtable_offset = IUnknown._num_methods + IPersist_num_methods + IPersistStream_num_methods - 1
+        #BindToObjectIndex           = 1  (skipping BindToObject as it is not needed)
+        #BindToStorageIndex          = 2  (skipping BindToStorage as it is not needed)
+        #ReduceIndex                 = 3  (skipping Reduce as it is not needed)
+        #ComposeWithIndex            = 4  (skipping ComposeWith as it is not needed)
+        #EnumIndex                   = 5  (skipping Enum as it is not needed)
+        #IsEqualIndex                = 6  (skipping IsEqual as it is not needed)
+        #HashIndex                   = 7  (skipping Hash as it is not needed)
+        #IsRunningIndex              = 8  (skipping IsRunning as it is not needed)
+        #GetTimeOfLastChangeIndex    = 9  (skipping GetTimeOfLastChange as it is not needed)
+        #InverseIndex                = 10 (skipping Inverse as it is not needed)
+        #CommonPrefixWithIndex       = 11 (skipping CommonPrefixWith as it is not needed)
+        #RelativePathToIndex         = 12 (skipping RelativePathTo as it is not needed)
+        GetDisplayNameIndex          = 13 
+        #ParseDisplayNameIndex       = 14 (skipping ParseDisplayName as it is not needed)
+        #IsSystemMonikerIndex        = 15 (skipping IsSystemMoniker as it is not needed)
+        self._GetDisplayName = IAGFUNCTYPE(pUnk, IID__IMoniker, vtable_offset + GetDisplayNameIndex, PVOID, PVOID, POINTER(BSTR))
+    def _FreeDisplayName(self, ppszDisplayName):
+        pMalloc = IUnknown()
+        _ole32lib.CoGetMalloc(DWORD(1), byref(pMalloc.p))
+        pMalloc.TakeOwnership()
+        iMalloc = _IMalloc(pMalloc)
+        iMalloc.Free(ppszDisplayName)
+        del(iMalloc)
+        del(pMalloc)
+    def GetDisplayName(self) -> str:
+        pbc = IUnknown()
+        pmkToLeft = IUnknown()
+        _ole32lib.CreateBindCtx(DWORD(0), byref(pbc.p))
+        pbc.TakeOwnership()
+        ppszDisplayName = BSTR()
+        self._GetDisplayName(pbc.p, pmkToLeft.p, byref(ppszDisplayName))
+        display_name = ppszDisplayName.value
+        self._FreeDisplayName(ppszDisplayName)
+        del(pmkToLeft)
+        del(pbc)
+        return display_name
+    
+def attach_to_stk_by_pid(pid:int) -> IUnknown:
+    if os.name != "nt":
+        raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
+    runningObjectTable = IUnknown()
+    str_prog_id = "!STK.Application:" + str(pid)
+    if Succeeded(_ole32lib.GetRunningObjectTable(DWORD(0), byref(runningObjectTable.p))):
+        runningObjectTable.TakeOwnership()
+        runningObjectTable = _IRunningObjectTable(runningObjectTable)
+        enumMoniker = runningObjectTable.EnumRunning()
+        enumMoniker.Reset()
+        moniker = enumMoniker.Next()
+        while moniker is not None:
+            instanceName = moniker.GetDisplayName()
+            if instanceName == str_prog_id:
+                ret = runningObjectTable.GetObject(moniker)
+                del(moniker)
+                del(enumMoniker)
+                del(runningObjectTable)
+                return ret
+            else:
+                moniker = enumMoniker.Next()
+        del(moniker)
+        del(enumMoniker)
+        del(runningObjectTable)
+    else:
+        raise RuntimeError("Failed to retrieve the Running Object Table.")
        
-    class _IMoniker(object):
-        guid = "{0000000f-0000-0000-C000-000000000046}"
-        def __init__(self, pUnk):
-            self.pUnk = pUnk
-            IID__IMoniker = GUID(_IMoniker.guid)
-            IPersist_num_methods = 1
-            IPersistStream_num_methods = 4
-            vtable_offset = IUnknown._num_methods + IPersist_num_methods + IPersistStream_num_methods - 1
-            #BindToObjectIndex           = 1  (skipping BindToObject as it is not needed)
-            #BindToStorageIndex          = 2  (skipping BindToStorage as it is not needed)
-            #ReduceIndex                 = 3  (skipping Reduce as it is not needed)
-            #ComposeWithIndex            = 4  (skipping ComposeWith as it is not needed)
-            #EnumIndex                   = 5  (skipping Enum as it is not needed)
-            #IsEqualIndex                = 6  (skipping IsEqual as it is not needed)
-            #HashIndex                   = 7  (skipping Hash as it is not needed)
-            #IsRunningIndex              = 8  (skipping IsRunning as it is not needed)
-            #GetTimeOfLastChangeIndex    = 9  (skipping GetTimeOfLastChange as it is not needed)
-            #InverseIndex                = 10 (skipping Inverse as it is not needed)
-            #CommonPrefixWithIndex       = 11 (skipping CommonPrefixWith as it is not needed)
-            #RelativePathToIndex         = 12 (skipping RelativePathTo as it is not needed)
-            GetDisplayNameIndex          = 13 
-            #ParseDisplayNameIndex       = 14 (skipping ParseDisplayName as it is not needed)
-            #IsSystemMonikerIndex        = 15 (skipping IsSystemMoniker as it is not needed)
-            self._GetDisplayName = IAGFUNCTYPE(pUnk, IID__IMoniker, vtable_offset + GetDisplayNameIndex, PVOID, PVOID, POINTER(BSTR))
-        def _FreeDisplayName(self, ppszDisplayName):
-            pMalloc = IUnknown()
-            CoGetMalloc(DWORD(1), byref(pMalloc.p))
-            pMalloc.TakeOwnership()
-            iMalloc = _IMalloc(pMalloc)
-            iMalloc.Free(ppszDisplayName)
-            del(iMalloc)
-            del(pMalloc)
-        def GetDisplayName(self) -> str:
-            pbc = IUnknown()
-            pmkToLeft = IUnknown()
-            CreateBindCtx(DWORD(0), byref(pbc.p))
-            pbc.TakeOwnership()
-            ppszDisplayName = BSTR()
-            self._GetDisplayName(pbc.p, pmkToLeft.p, byref(ppszDisplayName))
-            display_name = ppszDisplayName.value
-            self._FreeDisplayName(ppszDisplayName)
-            del(pmkToLeft)
-            del(pbc)
-            return display_name
-        
-    def attach_to_stk_by_pid(pid:int) -> IUnknown:
-        runningObjectTable = IUnknown()
-        str_prog_id = "!STK.Application:" + str(pid)
-        if Succeeded(GetRunningObjectTable(DWORD(0), byref(runningObjectTable.p))):
-            runningObjectTable.TakeOwnership()
-            runningObjectTable = _IRunningObjectTable(runningObjectTable)
-            enumMoniker = runningObjectTable.EnumRunning()
-            enumMoniker.Reset()
-            moniker = enumMoniker.Next()
-            while moniker is not None:
-                instanceName = moniker.GetDisplayName()
-                if instanceName == str_prog_id:
-                    ret = runningObjectTable.GetObject(moniker)
-                    del(moniker)
-                    del(enumMoniker)
-                    del(runningObjectTable)
-                    return ret
-                else:
-                    moniker = enumMoniker.Next()
-            del(moniker)
-            del(enumMoniker)
-            del(runningObjectTable)
-        else:
-            raise RuntimeError("Failed to retrieve the Running Object Table.")
-        
+ 

@@ -10558,14 +10558,14 @@ class IAgAvtrMissileRocketProp(object):
 
     @property
     def PropellantCharacteristicVelocity(self) -> float:
-        """The propellant's characteristic velocity (Chamber Pressure \\* Throat Area / Mass Flow Rate of the engine)."""
+        """The propellant's characteristic velocity (Chamber Pressure * Throat Area / Mass Flow Rate of the engine)."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetPropellantCharacteristicVelocity"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @PropellantCharacteristicVelocity.setter
     def PropellantCharacteristicVelocity(self, newVal:float) -> None:
-        """The propellant's characteristic velocity (Chamber Pressure \\* Throat Area / Mass Flow Rate of the engine)."""
+        """The propellant's characteristic velocity (Chamber Pressure * Throat Area / Mass Flow Rate of the engine)."""
         with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetPropellantCharacteristicVelocity"](arg_newVal.COM_val))
 
