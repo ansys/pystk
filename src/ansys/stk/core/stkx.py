@@ -48,13 +48,13 @@ def _raise_uninitialized_error(*args):
 class AgELogMsgType(IntEnum):
     """Log message types."""
     # Debugging message.
-    eLogMsgDebug = 0,
+    eLogMsgDebug = 0
     # Informational message.
-    eLogMsgInfo = 1,
+    eLogMsgInfo = 1
     # Informational message.
-    eLogMsgForceInfo = 2,
+    eLogMsgForceInfo = 2
     # Warning message.
-    eLogMsgWarning = 3,
+    eLogMsgWarning = 3
     # Alarm message.
     eLogMsgAlarm = 4
 
@@ -63,11 +63,11 @@ agcls.AgTypeNameMap["AgELogMsgType"] = AgELogMsgType
 class AgELogMsgDispID(IntEnum):
     """Log message destination options."""
     # STK displays the message in all the log destination.
-    eLogMsgDispAll = -1,
+    eLogMsgDispAll = -1
     # STK displays the message in the default log destination.
-    eLogMsgDispDefault = 0,
+    eLogMsgDispDefault = 0
     # STK displays the message in the message window.
-    eLogMsgDispMsgWin = 1,
+    eLogMsgDispMsgWin = 1
     # STK displays the message in the status bar.
     eLogMsgDispStatusBar = 2
 
@@ -76,39 +76,39 @@ agcls.AgTypeNameMap["AgELogMsgDispID"] = AgELogMsgDispID
 class AgELineStyle(IntEnum):
     """Line Style"""
     # Specifies a solid line.
-    eSolid = 0,
+    eSolid = 0
     # Specifies a dashed line.
-    eDashed = 1,
+    eDashed = 1
     # Specifies a dotted line.
-    eDotted = 2,
+    eDotted = 2
     # Dot-dashed line.
-    eDotDashed = 3,
+    eDotDashed = 3
     # Specifies a long dashed line.
-    eLongDashed = 4,
+    eLongDashed = 4
     # Specifies an alternating dash-dot-dot line.
-    eDashDotDotted = 5,
+    eDashDotDotted = 5
     # Specifies a user configurable medium dashed line.
-    eMDash = 6,
+    eMDash = 6
     # Specifies a user configurable long dashed line.
-    eLDash = 7,
+    eLDash = 7
     # Specifies a user configurable small dash-dotted line.
-    eSDashDot = 8,
+    eSDashDot = 8
     # Specifies a user configurable medium dash-dotted line.
-    eMDashDot = 9,
+    eMDashDot = 9
     # Specifies a user configurable long dash-dotted line.
-    eLDashDot = 10,
+    eLDashDot = 10
     # Specifies a user configurable medium followed by small dashed line.
-    eMSDash = 11,
+    eMSDash = 11
     # Specifies a user configurable long followed by small dashed line.
-    eLSDash = 12,
+    eLSDash = 12
     # Specifies a user configurable long followed by medium dashed line.
-    eLMDash = 13,
+    eLMDash = 13
     # Specifies a user configurable medium followed by small dashed line.
-    eLMSDash = 14,
+    eLMSDash = 14
     # Specifies a dotted line.
-    eDot = 15,
+    eDot = 15
     # Specifies a long dashed line.
-    eLongDash = 16,
+    eLongDash = 16
     # Specifies an alternating dash-dot line.
     eSDash = 17
 
@@ -117,11 +117,11 @@ agcls.AgTypeNameMap["AgELineStyle"] = AgELineStyle
 class AgEExecMultiCmdResultAction(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
     # Continue executing the remaining commands in the command batch.
-    eContinueOnError = 0,
+    eContinueOnError = 0
     # Terminate the execution of the command batch but do not throw an exception.
-    eStopOnError = 1,
+    eStopOnError = 1
     # Terminate the execution of the command batch and throw an exception.
-    eExceptionOnError = 2,
+    eExceptionOnError = 2
     # Ignore results returned by individual commands. The option must be used in combination with other flags.
     eIgnoreExecCmdResult = 0x8000
 
@@ -130,9 +130,9 @@ agcls.AgTypeNameMap["AgEExecMultiCmdResultAction"] = AgEExecMultiCmdResultAction
 class AgEShiftValues(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
     # The Shift key was pressed.
-    eShiftPressed = 1,
+    eShiftPressed = 1
     # The Ctrl key was pressed.
-    eCtrlPressed = 2,
+    eCtrlPressed = 2
     # The ALT key was pressed.
     eAltPressed = 4
 
@@ -141,9 +141,9 @@ agcls.AgTypeNameMap["AgEShiftValues"] = AgEShiftValues
 class AgEButtonValues(IntEnum):
     """Numeric value of the mouse button pressed."""
     # The left button is pressed.
-    eLeftPressed = 1,
+    eLeftPressed = 1
     # The right button is pressed.
-    eRightPressed = 2,
+    eRightPressed = 2
     # The middle button is pressed.
     eMiddlePressed = 4
 
@@ -152,9 +152,9 @@ agcls.AgTypeNameMap["AgEButtonValues"] = AgEButtonValues
 class AgEOLEDropMode(IntEnum):
     """Specifies how to handle OLE drop operations."""
     # None. The control does not accept OLE drops and displays the No Drop cursor.
-    eNone = 0,
+    eNone = 0
     # Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code.
-    eManual = 1,
+    eManual = 1
     # Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic.
     eAutomatic = 2
 
@@ -163,7 +163,7 @@ agcls.AgTypeNameMap["AgEOLEDropMode"] = AgEOLEDropMode
 class AgEMouseMode(IntEnum):
     """Mouse modes."""
     # Automatic. The control handles the mouse events and then fires the events to the container for additional processing.
-    eMouseModeAutomatic = 0,
+    eMouseModeAutomatic = 0
     # None. No default action happens on mouse events. Events are fired to the container.
     eMouseModeManual = 1
 
@@ -172,9 +172,9 @@ agcls.AgTypeNameMap["AgEMouseMode"] = AgEMouseMode
 class AgELoggingMode(IntEnum):
     """Specifies the state of the log file."""
     # The log file is not created.
-    eLogInactive = 0,
+    eLogInactive = 0
     # The log file is created but deleted upon application termination.
-    eLogActive = 1,
+    eLogActive = 1
     # The log file is created and kept even after application is terminated.
     eLogActiveKeepFile = 2
 
@@ -183,11 +183,11 @@ agcls.AgTypeNameMap["AgELoggingMode"] = AgELoggingMode
 class AgEGfxAnalysisMode(IntEnum):
     """Specifies the mode of Gfx Analysis Control."""
     # The Solar Panel Tool mode.
-    eSolarPanelTool = 1,
+    eSolarPanelTool = 1
     # The Area Tool mode.
-    eAreaTool = 2,
+    eAreaTool = 2
     # The Obscuration Tool mode.
-    eObscurationTool = 3,
+    eObscurationTool = 3
     # The AzElMask Tool mode.
     eAzElMaskTool = 4
 
@@ -196,7 +196,7 @@ agcls.AgTypeNameMap["AgEGfxAnalysisMode"] = AgEGfxAnalysisMode
 class AgEGfxDrawCoords(IntEnum):
     """Specifies the draw coordinates for Map Control."""
     # The draw coordinates values in pixels.
-    ePixelDrawCoords = 1,
+    ePixelDrawCoords = 1
     # The draw coordinates values in screen coordinates.
     eScreenDrawCoords = 2
 
@@ -205,9 +205,9 @@ agcls.AgTypeNameMap["AgEGfxDrawCoords"] = AgEGfxDrawCoords
 class AgEShowProgressImage(IntEnum):
     """Specifies to show progress image."""
     # Do not show any progress Image.
-    eShowProgressImageNone = 1,
+    eShowProgressImageNone = 1
     # Show the default progress image.
-    eShowProgressImageDefault = 2,
+    eShowProgressImageDefault = 2
     # Show the user specified progress image.
     eShowProgressImageUser = 3
 
@@ -216,7 +216,7 @@ agcls.AgTypeNameMap["AgEShowProgressImage"] = AgEShowProgressImage
 class AgEFeatureCodes(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
     # The enumeration is used to check whether the engine runtime is available.
-    eFeatureCodeEngineRuntime = 1,
+    eFeatureCodeEngineRuntime = 1
     # The enumeration is used to check whether the globe is available.
     eFeatureCodeGlobeControl = 2
 
@@ -225,9 +225,9 @@ agcls.AgTypeNameMap["AgEFeatureCodes"] = AgEFeatureCodes
 class AgEProgressImageXOrigin(IntEnum):
     """Specifies to align progress image X origin."""
     # Align progress Image from X left.
-    eProgressImageXLeft = 1,
+    eProgressImageXLeft = 1
     # Align progress Image from X right.
-    eProgressImageXRight = 2,
+    eProgressImageXRight = 2
     # Align progress Image from X center.
     eProgressImageXCenter = 3
 
@@ -236,9 +236,9 @@ agcls.AgTypeNameMap["AgEProgressImageXOrigin"] = AgEProgressImageXOrigin
 class AgEProgressImageYOrigin(IntEnum):
     """Specifies to align progress image Y origin."""
     # Align progress Image from Y top.
-    eProgressImageYTop = 1,
+    eProgressImageYTop = 1
     # Align progress Image from Y bottom.
-    eProgressImageYBottom = 2,
+    eProgressImageYBottom = 2
     # Align progress Image from Y center.
     eProgressImageYCenter = 3
 

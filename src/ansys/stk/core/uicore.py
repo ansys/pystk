@@ -39,7 +39,7 @@ def _raise_uninitialized_error(*args):
 class AgEWindowService(IntEnum):
     """Well-known types of services."""
     # A 2D window.
-    eWindowService2DWindow = 1,
+    eWindowService2DWindow = 1
     # A 3D window.
     eWindowService3DWindow = 2
 
@@ -48,9 +48,9 @@ agcls.AgTypeNameMap["AgEWindowService"] = AgEWindowService
 class AgEWindowState(IntEnum):
     """Window states."""
     # Window is maximized.
-    eWindowStateMaximized = 1,
+    eWindowStateMaximized = 1
     # Window is minimized.
-    eWindowStateMinimized = 2,
+    eWindowStateMinimized = 2
     # Normal window state.
     eWindowStateNormal = 3
 
@@ -59,9 +59,9 @@ agcls.AgTypeNameMap["AgEWindowState"] = AgEWindowState
 class AgEArrangeStyle(IntEnum):
     """Window layout styles."""
     # Child windows are cascaded within the main window.
-    eArrangeStyleCascade = 1,
+    eArrangeStyleCascade = 1
     # Child windows are tiled horizontally within the main window.
-    eArrangeStyleTiledHorizontal = 2,
+    eArrangeStyleTiledHorizontal = 2
     # Child windows are tiled vertically within the main window.
     eArrangeStyleTiledVertical = 3
 
@@ -70,15 +70,15 @@ agcls.AgTypeNameMap["AgEArrangeStyle"] = AgEArrangeStyle
 class AgEDockStyle(IntEnum):
     """Window docking styles."""
     # Child window is integrated into the main window.
-    eDockStyleIntegrated = 1,
+    eDockStyleIntegrated = 1
     # Child window is docked to the left side of the within the main window.
-    eDockStyleDockedLeft = 2,
+    eDockStyleDockedLeft = 2
     # Child window is docked to the right side of the main window.
-    eDockStyleDockedRight = 3,
+    eDockStyleDockedRight = 3
     # Child window is docked to the top of the main window.
-    eDockStyleDockedTop = 4,
+    eDockStyleDockedTop = 4
     # Child window is docked to the bottom of the main window.
-    eDockStyleDockedBottom = 5,
+    eDockStyleDockedBottom = 5
     # Child window is not docked or integrated.
     eDockStyleFloating = 6
 
@@ -87,7 +87,7 @@ agcls.AgTypeNameMap["AgEDockStyle"] = AgEDockStyle
 class AgEFloatState(IntEnum):
     """Floating state."""
     # The UI element is floated.
-    eFloatStateFloated = 1,
+    eFloatStateFloated = 1
     # The UI element is docked.
     eFloatStateDocked = 2
 

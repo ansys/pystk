@@ -178,37 +178,37 @@ def _raise_uninitialized_error(*args):
 class AgECrdnCalcScalarType(IntEnum):
     """Defines available calculation scalar types."""
     # Unknown or unsupported calculation scalar types
-    eCrdnCalcScalarTypeUnknown = -1,
+    eCrdnCalcScalarTypeUnknown = -1
     # Scalar equal to angular displacement obtained from any angle in VGT.
-    eCrdnCalcScalarTypeAngle = 0,
+    eCrdnCalcScalarTypeAngle = 0
     # Constant scalar created by evaluating input scalar calculation at specified reference time instant.
-    eCrdnCalcScalarTypeFixedAtTimeInstant = 1,
+    eCrdnCalcScalarTypeFixedAtTimeInstant = 1
     # Constant scalar value of specified dimension.
-    eCrdnCalcScalarTypeConstant = 2,
+    eCrdnCalcScalarTypeConstant = 2
     # Any time-dependent data element from STK data providers available for parent STK object.
-    eCrdnCalcScalarTypeDataElement = 3,
+    eCrdnCalcScalarTypeDataElement = 3
     # Derivative of input scalar calculation.
-    eCrdnCalcScalarTypeDerivative = 4,
+    eCrdnCalcScalarTypeDerivative = 4
     # Time elapsed since reference time instant.
-    eCrdnCalcScalarTypeElapsedTime = 5,
+    eCrdnCalcScalarTypeElapsedTime = 5
     # Tabulated scalar calculation data loaded from specified file.
-    eCrdnCalcScalarTypeFile = 6,
+    eCrdnCalcScalarTypeFile = 6
     # Defined by performing one of specified functions on input scalar.
-    eCrdnCalcScalarTypeFunction = 7,
+    eCrdnCalcScalarTypeFunction = 7
     # Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types.
-    eCrdnCalcScalarTypeIntegral = 8,
+    eCrdnCalcScalarTypeIntegral = 8
     # Defined by performing one of specified binary operations on two scalar arguments.
-    eCrdnCalcScalarTypeFunction2Var = 9,
+    eCrdnCalcScalarTypeFunction2Var = 9
     # Scalar equal to magnitude of specified vector.
-    eCrdnCalcScalarTypeVectorMagnitude = 10,
+    eCrdnCalcScalarTypeVectorMagnitude = 10
     # A calc scalar plugin based on a COM object.
-    eCrdnCalcScalarTypePlugin = 11,
+    eCrdnCalcScalarTypePlugin = 11
     # A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
-    eCrdnCalcScalarTypeCustomScript = 12,
+    eCrdnCalcScalarTypeCustomScript = 12
     # Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude).
-    eCrdnCalcScalarTypeSurfaceDistanceBetweenPoints = 13,
+    eCrdnCalcScalarTypeSurfaceDistanceBetweenPoints = 13
     # Scalar equal to the dot product between two vectors.
-    eCrdnCalcScalarTypeDotProduct = 14,
+    eCrdnCalcScalarTypeDotProduct = 14
     # Scalar equal to the specified component of a vector when resolved in the specified axes.
     eCrdnCalcScalarTypeVectorComponent = 15
 
@@ -217,11 +217,11 @@ agcls.AgTypeNameMap["AgECrdnCalcScalarType"] = AgECrdnCalcScalarType
 class AgECrdnConditionCombinedOperationType(IntEnum):
     """Defines scalar condition combined operation types."""
     # Scalar condition combined AND operation.
-    eCrdnConditionCombinedOperationTypeAND = 1,
+    eCrdnConditionCombinedOperationTypeAND = 1
     # Scalar condition combined OR operation.
-    eCrdnConditionCombinedOperationTypeOR = 2,
+    eCrdnConditionCombinedOperationTypeOR = 2
     # Scalar condition combined XOR operation.
-    eCrdnConditionCombinedOperationTypeXOR = 3,
+    eCrdnConditionCombinedOperationTypeXOR = 3
     # Scalar condition combined MINUS operation.
     eCrdnConditionCombinedOperationTypeMINUS = 4
 
@@ -230,7 +230,7 @@ agcls.AgTypeNameMap["AgECrdnConditionCombinedOperationType"] = AgECrdnConditionC
 class AgECrdnConditionSetType(IntEnum):
     """Defines available condition set types."""
     # Unknown or unsupported condition set types.
-    eCrdnConditionSetTypeUnknown = -1,
+    eCrdnConditionSetTypeUnknown = -1
     # Condition set placing multiple thresholds on specified scalar.
     eCrdnConditionSetTypeScalarThresholds = 0
 
@@ -239,11 +239,11 @@ agcls.AgTypeNameMap["AgECrdnConditionSetType"] = AgECrdnConditionSetType
 class AgECrdnConditionThresholdOption(IntEnum):
     """Operations for Scalar Bounds Condition"""
     # Bound is above a minimum value
-    eCrdnConditionThresholdOptionAboveMin = 1,
+    eCrdnConditionThresholdOptionAboveMin = 1
     # Bound is below a maximum value
-    eCrdnConditionThresholdOptionBelowMax = 2,
+    eCrdnConditionThresholdOptionBelowMax = 2
     # Bound is between a minimum and maximum value
-    eCrdnConditionThresholdOptionInsideMinMax = 3,
+    eCrdnConditionThresholdOptionInsideMinMax = 3
     # Bound is outside a minimum and maximum value
     eCrdnConditionThresholdOptionOutsideMinMax = 4
 
@@ -252,11 +252,11 @@ agcls.AgTypeNameMap["AgECrdnConditionThresholdOption"] = AgECrdnConditionThresho
 class AgECrdnConditionType(IntEnum):
     """Defines available condition types."""
     # Unknown or unsupported condition type
-    eCrdnConditionTypeUnknown = -1,
+    eCrdnConditionTypeUnknown = -1
     # Condition placing bounds on specified scalar.
-    eCrdnConditionTypeScalarBounds = 0,
+    eCrdnConditionTypeScalarBounds = 0
     # Multiple conditiones on specified scalar.
-    eCrdnConditionTypeCombined = 1,
+    eCrdnConditionTypeCombined = 1
     # Condition placing point in volume.
     eCrdnConditionTypePointInVolume = 2
 
@@ -265,9 +265,9 @@ agcls.AgTypeNameMap["AgECrdnConditionType"] = AgECrdnConditionType
 class AgECrdnDimensionInheritance(IntEnum):
     """Defines how dimension is inherited"""
     # Do not inherit dimension.
-    eCrdnDimensionInheritanceNone = 0,
+    eCrdnDimensionInheritanceNone = 0
     # Inherit dimension from X scalar.
-    eCrdnDimensionInheritanceFromX = 1,
+    eCrdnDimensionInheritanceFromX = 1
     # Inherit dimension from Y scalar.
     eCrdnDimensionInheritanceFromY = 2
 
@@ -276,9 +276,9 @@ agcls.AgTypeNameMap["AgECrdnDimensionInheritance"] = AgECrdnDimensionInheritance
 class AgECrdnEventArrayFilterType(IntEnum):
     """Event array filter types."""
     # Skip time step
-    eCrdnEventArrayFilterTypeSkipTimeStep = 0,
+    eCrdnEventArrayFilterTypeSkipTimeStep = 0
     # Skip count
-    eCrdnEventArrayFilterTypeSkipCount = 1,
+    eCrdnEventArrayFilterTypeSkipCount = 1
     # Intervals
     eCrdnEventArrayFilterTypeIntervals = 2
 
@@ -287,21 +287,21 @@ agcls.AgTypeNameMap["AgECrdnEventArrayFilterType"] = AgECrdnEventArrayFilterType
 class AgECrdnEventArrayType(IntEnum):
     """Defines available time array types."""
     # Unknown or unsupported time array types
-    eCrdnEventArrayTypeUnknown = -1,
+    eCrdnEventArrayTypeUnknown = -1
     # Determines time of local minimum and/or maximum of specified scalar calculation.
-    eCrdnEventArrayTypeExtrema = 0,
+    eCrdnEventArrayTypeExtrema = 0
     # Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array.
-    eCrdnEventArrayTypeStartStopTimes = 1,
+    eCrdnEventArrayTypeStartStopTimes = 1
     # Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays.
-    eCrdnEventArrayTypeMerged = 2,
+    eCrdnEventArrayTypeMerged = 2
     # Defined by filtering times from original time array according to specified filtering method.
-    eCrdnEventArrayTypeFiltered = 3,
+    eCrdnEventArrayTypeFiltered = 3
     # Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list.
-    eCrdnEventArrayTypeFixedStep = 4,
+    eCrdnEventArrayTypeFixedStep = 4
     # Time array containing times at which specified condition changes its satisfaction status.
-    eCrdnEventArrayTypeConditionCrossings = 5,
+    eCrdnEventArrayTypeConditionCrossings = 5
     # Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations.
-    eCrdnEventArrayTypeSignaled = 6,
+    eCrdnEventArrayTypeSignaled = 6
     # Time array containing specific times.
     eCrdnEventArrayTypeFixedTimes = 7
 
@@ -310,11 +310,11 @@ agcls.AgTypeNameMap["AgECrdnEventArrayType"] = AgECrdnEventArrayType
 class AgECrdnEventIntervalCollectionType(IntEnum):
     """Defines available interval collection types."""
     # Unknown or unsupported interval collection types
-    eCrdnEventIntervalCollectionTypeUnknown = -1,
+    eCrdnEventIntervalCollectionTypeUnknown = -1
     # Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
-    eCrdnEventIntervalCollectionTypeLighting = 0,
+    eCrdnEventIntervalCollectionTypeLighting = 0
     # Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations.
-    eCrdnEventIntervalCollectionTypeSignaled = 1,
+    eCrdnEventIntervalCollectionTypeSignaled = 1
     # Interval collection containing intervals during which condition set is satisfied.
     eCrdnEventIntervalCollectionTypeCondition = 2
 
@@ -323,21 +323,21 @@ agcls.AgTypeNameMap["AgECrdnEventIntervalCollectionType"] = AgECrdnEventInterval
 class AgECrdnEventIntervalListType(IntEnum):
     """Defines available interval list types."""
     # Unknown or unsupported interval list types
-    eCrdnEventIntervalListTypeUnknown = -1,
+    eCrdnEventIntervalListTypeUnknown = -1
     # Interval list created by merging two constituent interval lists using specified logical operation.
-    eCrdnEventIntervalListTypeMerged = 1,
+    eCrdnEventIntervalListTypeMerged = 1
     # Defined by filtering intervals from original interval list using specified filtering method.
-    eCrdnEventIntervalListTypeFiltered = 2,
+    eCrdnEventIntervalListTypeFiltered = 2
     # Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction).
-    eCrdnEventIntervalListTypeCondition = 3,
+    eCrdnEventIntervalListTypeCondition = 3
     # Interval List defined by scaling every interval in original interval list using either absolute or relative scale.
-    eCrdnEventIntervalListTypeScaled = 4,
+    eCrdnEventIntervalListTypeScaled = 4
     # Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations.
-    eCrdnEventIntervalListTypeSignaled = 5,
+    eCrdnEventIntervalListTypeSignaled = 5
     # Interval List defined by shifting specified reference interval list by fixed time offset.
-    eCrdnEventIntervalListTypeTimeOffset = 6,
+    eCrdnEventIntervalListTypeTimeOffset = 6
     # Interval list loaded from specified interval file
-    eCrdnEventIntervalListTypeFile = 0,
+    eCrdnEventIntervalListTypeFile = 0
     # Interval list with individual intervals defined between explicitly specified start and stop times.
     eCrdnEventIntervalListTypeFixed = 7
 
@@ -346,21 +346,21 @@ agcls.AgTypeNameMap["AgECrdnEventIntervalListType"] = AgECrdnEventIntervalListTy
 class AgECrdnEventIntervalType(IntEnum):
     """Defines available interval types."""
     # Unknown or unsupported interval types
-    eCrdnEventIntervalTypeUnknown = -1,
+    eCrdnEventIntervalTypeUnknown = -1
     # Interval defined between two explicitly specified start and stop times.
-    eCrdnEventIntervalTypeFixed = 0,
+    eCrdnEventIntervalTypeFixed = 0
     # Interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
-    eCrdnEventIntervalTypeFixedDuration = 1,
+    eCrdnEventIntervalTypeFixedDuration = 1
     # Interval between specified start and stop time instants.
-    eCrdnEventIntervalTypeBetweenTimeInstants = 2,
+    eCrdnEventIntervalTypeBetweenTimeInstants = 2
     # Interval created from specified interval list by using one of several selection methods.
-    eCrdnEventIntervalTypeFromIntervalList = 3,
+    eCrdnEventIntervalTypeFromIntervalList = 3
     # Interval defined by scaling original interval using either absolute or relative scale.
-    eCrdnEventIntervalTypeScaled = 4,
+    eCrdnEventIntervalTypeScaled = 4
     # Determines an interval recorded at a target clock location by performing signal transmission.
-    eCrdnEventIntervalTypeSignaled = 5,
+    eCrdnEventIntervalTypeSignaled = 5
     # Interval defined by shifting specified reference interval by fixed time offset.
-    eCrdnEventIntervalTypeTimeOffset = 6,
+    eCrdnEventIntervalTypeTimeOffset = 6
     # A smart interval.
     eCrdnEventIntervalTypeSmartInterval = 7
 
@@ -369,11 +369,11 @@ agcls.AgTypeNameMap["AgECrdnEventIntervalType"] = AgECrdnEventIntervalType
 class AgECrdnEventListMergeOperation(IntEnum):
     """Defines merge operations for interval lists."""
     # Intervals both in A and B
-    eCrdnEventListMergeOperationAND = 0,
+    eCrdnEventListMergeOperationAND = 0
     # Intervals in A or B
-    eCrdnEventListMergeOperationOR = 1,
+    eCrdnEventListMergeOperationOR = 1
     # Intervals in A or B but not in both
-    eCrdnEventListMergeOperationXOR = 2,
+    eCrdnEventListMergeOperationXOR = 2
     # Intervals in A and not in B
     eCrdnEventListMergeOperationMINUS = 3
 
@@ -382,17 +382,17 @@ agcls.AgTypeNameMap["AgECrdnEventListMergeOperation"] = AgECrdnEventListMergeOpe
 class AgECrdnEventType(IntEnum):
     """Defines available time instant types."""
     # Unknown or unsupported time instant types
-    eCrdnEventTypeUnknown = -1,
+    eCrdnEventTypeUnknown = -1
     # Time instant set at specified date/time
-    eCrdnEventTypeEpoch = 0,
+    eCrdnEventTypeEpoch = 0
     # Determines time of global minimum or maximum of specified scalar calculation.
-    eCrdnEventTypeExtremum = 1,
+    eCrdnEventTypeExtremum = 1
     # Start or stop time of selected reference interval
-    eCrdnEventTypeFromInterval = 2,
+    eCrdnEventTypeFromInterval = 2
     # Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations.
-    eCrdnEventTypeSignaled = 3,
+    eCrdnEventTypeSignaled = 3
     # Time instant at fixed offset from specified reference time instant
-    eCrdnEventTypeTimeOffset = 4,
+    eCrdnEventTypeTimeOffset = 4
     # A smart epoch.
     eCrdnEventTypeSmartEpoch = 5
 
@@ -401,7 +401,7 @@ agcls.AgTypeNameMap["AgECrdnEventType"] = AgECrdnEventType
 class AgECrdnExtremumConstants(IntFlag):
     """These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing."""
     # Find the minimum value
-    eCrdnExtremumMinimum = 1,
+    eCrdnExtremumMinimum = 1
     # Find the maximum value
     eCrdnExtremumMaximum = 2
 
@@ -410,15 +410,15 @@ agcls.AgTypeNameMap["AgECrdnExtremumConstants"] = AgECrdnExtremumConstants
 class AgECrdnFileInterpolatorType(IntEnum):
     """Interpolator types."""
     # Unknown or invalid interpolator.
-    eCrdnFileInterpolatorInvalid = -1,
+    eCrdnFileInterpolatorInvalid = -1
     # Lagrange interpolation.
-    eCrdnFileInterpolatorTypeLagrange = 1,
+    eCrdnFileInterpolatorTypeLagrange = 1
     # Hermite interpolation.
-    eCrdnFileInterpolatorTypeHermite = 2,
+    eCrdnFileInterpolatorTypeHermite = 2
     # Holds the value at the closest previous sample time to any requested time.
-    eCrdnFileInterpolatorTypeHoldPrevious = 3,
+    eCrdnFileInterpolatorTypeHoldPrevious = 3
     # Holds the value at the closest next sample time to any requested time.
-    eCrdnFileInterpolatorTypeHoldNext = 4,
+    eCrdnFileInterpolatorTypeHoldNext = 4
     # Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time.
     eCrdnFileInterpolatorTypeHoldNearest = 5
 
@@ -427,9 +427,9 @@ agcls.AgTypeNameMap["AgECrdnFileInterpolatorType"] = AgECrdnFileInterpolatorType
 class AgECrdnIntegralType(IntEnum):
     """Integral types."""
     # Simpson integral method
-    eCrdnIntegralTypeFixedStepSimpson = 2,
+    eCrdnIntegralTypeFixedStepSimpson = 2
     # Trapezoidal integral method
-    eCrdnIntegralTypeFixedStepTrapz = 1,
+    eCrdnIntegralTypeFixedStepTrapz = 1
     # Adaptive Lobatto integral method
     eCrdnIntegralTypeAdaptiveStep = 3
 
@@ -438,11 +438,11 @@ agcls.AgTypeNameMap["AgECrdnIntegralType"] = AgECrdnIntegralType
 class AgECrdnIntegrationWindowType(IntEnum):
     """Defines the interval of times during which an integral is evaluated."""
     # Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant.
-    eCrdnIntegrationWindowTypeTotal = 0,
+    eCrdnIntegrationWindowTypeTotal = 0
     # Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time.
-    eCrdnIntegrationWindowTypeCumulativeToCurrent = 1,
+    eCrdnIntegrationWindowTypeCumulativeToCurrent = 1
     # Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time.
-    eCrdnIntegrationWindowTypeCumulativeFromCurrent = 2,
+    eCrdnIntegrationWindowTypeCumulativeFromCurrent = 2
     # Defines the integral's window as the interval of times centered around the current time with the specified front and back durations.
     eCrdnIntegrationWindowTypeSlidingWindow = 3
 
@@ -451,9 +451,9 @@ agcls.AgTypeNameMap["AgECrdnIntegrationWindowType"] = AgECrdnIntegrationWindowTy
 class AgECrdnInterpolatorType(IntEnum):
     """Interpolator types."""
     # Unknown or invalid interpolator.
-    eCrdnInterpolatorInvalid = -1,
+    eCrdnInterpolatorInvalid = -1
     # Lagrange interpolation.
-    eCrdnInterpolatorTypeLagrange = 1,
+    eCrdnInterpolatorTypeLagrange = 1
     # Hermite interpolation.
     eCrdnInterpolatorTypeHermite = 2
 
@@ -462,7 +462,7 @@ agcls.AgTypeNameMap["AgECrdnInterpolatorType"] = AgECrdnInterpolatorType
 class AgECrdnIntervalDurationKind(IntEnum):
     """Duration for filtering intervals or gaps from interval lists or time arrays"""
     # Filter by at least a specified number of seconds
-    eCrdnIntervalDurationKindAtLeast = 0,
+    eCrdnIntervalDurationKindAtLeast = 0
     # Filter by at most a specified number of seconds
     eCrdnIntervalDurationKindAtMost = 1
 
@@ -471,17 +471,17 @@ agcls.AgTypeNameMap["AgECrdnIntervalDurationKind"] = AgECrdnIntervalDurationKind
 class AgECrdnIntervalSelection(IntEnum):
     """Select the method to choose an interval from an interval list"""
     # Select an interval by counting a specified number from the first interval
-    eCrdnIntervalSelectionFromStart = 1,
+    eCrdnIntervalSelectionFromStart = 1
     # Select an interval by counting a specified number back from the last interval
-    eCrdnIntervalSelectionFromEnd = 2,
+    eCrdnIntervalSelectionFromEnd = 2
     # Select the interval with the largest duration
-    eCrdnIntervalSelectionMaxDuration = 4,
+    eCrdnIntervalSelectionMaxDuration = 4
     # Select the interval with the smallest duration
-    eCrdnIntervalSelectionMinDuration = 5,
+    eCrdnIntervalSelectionMinDuration = 5
     # Select the largest gap between intervals
-    eCrdnIntervalSelectionMaxGap = 9,
+    eCrdnIntervalSelectionMaxGap = 9
     # Select the largest gap between intervals
-    eCrdnIntervalSelectionMinGap = 10,
+    eCrdnIntervalSelectionMinGap = 10
     # Select the interval that is the span of the interval list
     eCrdnIntervalSelectionSpan = 100
 
@@ -490,15 +490,15 @@ agcls.AgTypeNameMap["AgECrdnIntervalSelection"] = AgECrdnIntervalSelection
 class AgECrdnParameterSetType(IntEnum):
     """Defines parameter set types."""
     # Unknown or unsupported parameter set
-    eCrdnParameterSetTypeUnknown = -1,
+    eCrdnParameterSetTypeUnknown = -1
     # A parameter set type is defined by identifying one set of axes in reference to another.
-    eCrdnParameterSetTypeAttitude = 0,
+    eCrdnParameterSetTypeAttitude = 0
     # A parameter set type is defined by identifying location in reference central body.
-    eCrdnParameterSetTypeGroundTrajectory = 1,
+    eCrdnParameterSetTypeGroundTrajectory = 1
     # A parameter set type is defined by identifying location in reference coordinate system.
-    eCrdnParameterSetTypeTrajectory = 2,
+    eCrdnParameterSetTypeTrajectory = 2
     # A parameter set type is defined by identifying orbiting point and its central body.
-    eCrdnParameterSetTypeOrbit = 3,
+    eCrdnParameterSetTypeOrbit = 3
     # A parameter set type is defined by identifying vector in reference axes.
     eCrdnParameterSetTypeVector = 4
 
@@ -507,17 +507,17 @@ agcls.AgTypeNameMap["AgECrdnParameterSetType"] = AgECrdnParameterSetType
 class AgECrdnPruneFilter(IntEnum):
     """Specify the filter for filtering interval lists or time arrays"""
     # Unknown or unsupported prune filter
-    eCrdnPruneFilterUnknown = 0,
+    eCrdnPruneFilterUnknown = 0
     # Selects specified number of first intervals from original list
-    eCrdnPruneFilterFirstIntervals = 1,
+    eCrdnPruneFilterFirstIntervals = 1
     # Selects specified number of last intervals from original list
-    eCrdnPruneFilterLastIntervals = 2,
+    eCrdnPruneFilterLastIntervals = 2
     # Selects intervals which satisfy additional duration condition.
-    eCrdnPruneFilterIntervals = 3,
+    eCrdnPruneFilterIntervals = 3
     # Selects gaps between intervals which satisfy additional duration condition.
-    eCrdnPruneFilterGaps = 4,
+    eCrdnPruneFilterGaps = 4
     # Satisfaction Intervals selects intervals which satisfy additional condition and duration.
-    eCrdnPruneFilterSatisfactionIntervals = 5,
+    eCrdnPruneFilterSatisfactionIntervals = 5
     # Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration.
     eCrdnPruneFilterRelativeSatisfactionIntervals = 6
 
@@ -526,13 +526,13 @@ agcls.AgTypeNameMap["AgECrdnPruneFilter"] = AgECrdnPruneFilter
 class AgECrdnSampledReferenceTime(IntEnum):
     """Event array reference type."""
     # Use a Time Instant as the reference time
-    eCrdnSampledReferenceTimeReferenceEvent = 0,
+    eCrdnSampledReferenceTimeReferenceEvent = 0
     # Use the start of each interval as the reference time
-    eCrdnSampledReferenceTimeStartOfEachInterval = 1,
+    eCrdnSampledReferenceTimeStartOfEachInterval = 1
     # Use the stop of each interval as the reference time
-    eCrdnSampledReferenceTimeStopOfEachInterval = 2,
+    eCrdnSampledReferenceTimeStopOfEachInterval = 2
     # Use the start of each interval list as the reference time
-    eCrdnSampledReferenceTimeStartOfIntervalList = 3,
+    eCrdnSampledReferenceTimeStartOfIntervalList = 3
     # Use the stop of each interval list as the reference time
     eCrdnSampledReferenceTimeStopOfIntervalList = 4
 
@@ -541,11 +541,11 @@ agcls.AgTypeNameMap["AgECrdnSampledReferenceTime"] = AgECrdnSampledReferenceTime
 class AgECrdnSamplingMethod(IntEnum):
     """Defines the Sampling Method"""
     # Unknown or unsupported sampling method
-    eCrdnSamplingMethodUnknown = 0,
+    eCrdnSamplingMethodUnknown = 0
     # Fixed step sampling method
-    eCrdnSamplingMethodFixedStep = 1,
+    eCrdnSamplingMethodFixedStep = 1
     # Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples.
-    eCrdnSamplingMethodRelativeTolerance = 2,
+    eCrdnSamplingMethodRelativeTolerance = 2
     # Curvature tolerance also uses changes in slope between samples
     eCrdnSamplingMethodCurvatureTolerance = 3
 
@@ -554,9 +554,9 @@ agcls.AgTypeNameMap["AgECrdnSamplingMethod"] = AgECrdnSamplingMethod
 class AgECrdnSatisfactionCrossing(IntEnum):
     """Direction crossing flags."""
     # Use either off-to-on or on-to-off condition to determine satisfaction
-    eCrdnSatisfactionCrossingNone = 0,
+    eCrdnSatisfactionCrossingNone = 0
     # Satisfaction occurs when crossing from off to on condition
-    eCrdnSatisfactionCrossingIn = 1,
+    eCrdnSatisfactionCrossingIn = 1
     # Satisfaction occurs when crossing from on to off condition
     eCrdnSatisfactionCrossingOut = 2
 
@@ -565,9 +565,9 @@ agcls.AgTypeNameMap["AgECrdnSatisfactionCrossing"] = AgECrdnSatisfactionCrossing
 class AgECrdnSaveDataOption(IntEnum):
     """Method for saving computed data"""
     # Use the application setting to determine whether computed data should be saved/loaded.
-    eCrdnSaveDataOptionApplicationSettings = -1,
+    eCrdnSaveDataOptionApplicationSettings = -1
     # Save/load computed data.
-    eCrdnSaveDataOptionYes = 100,
+    eCrdnSaveDataOptionYes = 100
     # Don't save computed data, recompute data on load.
     eCrdnSaveDataOptionNo = 10
 
@@ -576,11 +576,11 @@ agcls.AgTypeNameMap["AgECrdnSaveDataOption"] = AgECrdnSaveDataOption
 class AgECrdnSignalPathReferenceSystem(IntEnum):
     """Signal path reference system types."""
     # Use Access default system
-    eCrdnSignalPathReferenceSystemUseAccessDefault = -1,
+    eCrdnSignalPathReferenceSystemUseAccessDefault = -1
     # Use central body inertial system
-    eCrdnSignalPathReferenceSystemCentralBodyInertial = 0,
+    eCrdnSignalPathReferenceSystemCentralBodyInertial = 0
     # Use solar system barycenter system
-    eCrdnSignalPathReferenceSystemSolarSystemBarycenter = 1,
+    eCrdnSignalPathReferenceSystemSolarSystemBarycenter = 1
     # User will specify a system
     eCrdnSignalPathReferenceSystemCustom = 2
 
@@ -589,7 +589,7 @@ agcls.AgTypeNameMap["AgECrdnSignalPathReferenceSystem"] = AgECrdnSignalPathRefer
 class AgECrdnSmartEpochState(IntEnum):
     """Smart epoch states."""
     # Smart epoch is specified explicitly using a time.
-    eCrdnSmartEpochStateExplicit = 0,
+    eCrdnSmartEpochStateExplicit = 0
     # Smart epoch is specified implicitly.
     eCrdnSmartEpochStateImplicit = 3
 
@@ -598,13 +598,13 @@ agcls.AgTypeNameMap["AgECrdnSmartEpochState"] = AgECrdnSmartEpochState
 class AgECrdnSmartIntervalState(IntEnum):
     """Smart interval states."""
     # Smart interval is specified explicitly using start/stop times.
-    eCrdnSmartIntervalStateExplicit = 0,
+    eCrdnSmartIntervalStateExplicit = 0
     # Smart interval is specified implicitly using start/stop times.
-    eCrdnSmartIntervalStateImplicit = 1,
+    eCrdnSmartIntervalStateImplicit = 1
     # Smart interval is specified using smart epochs.
-    eCrdnSmartIntervalStateStartStop = 2,
+    eCrdnSmartIntervalStateStartStop = 2
     # Smart interval is specified using a start epoch and duration.
-    eCrdnSmartIntervalStateStartDuration = 4,
+    eCrdnSmartIntervalStateStartDuration = 4
     # Smart interval is specified using a start time and explicit duration.
     eCrdnSmartIntervalStateExplicitDuration = 3
 
@@ -613,7 +613,7 @@ agcls.AgTypeNameMap["AgECrdnSmartIntervalState"] = AgECrdnSmartIntervalState
 class AgECrdnSpeedOptions(IntEnum):
     """Defines various speed options."""
     # Light transmission speed.
-    eCrdnLightTransmissionSpeed = 1,
+    eCrdnLightTransmissionSpeed = 1
     # Custom transmission speed.
     eCrdnCustomTransmissionSpeed = 2
 
@@ -622,9 +622,9 @@ agcls.AgTypeNameMap["AgECrdnSpeedOptions"] = AgECrdnSpeedOptions
 class AgECrdnStartStopOption(IntEnum):
     """Start/stop options."""
     # Use the start time of the interval
-    eCrdnStartStopOptionCountStartOnly = 1,
+    eCrdnStartStopOptionCountStartOnly = 1
     # Use the stop time of the interval
-    eCrdnStartStopOptionCountStopOnly = 2,
+    eCrdnStartStopOptionCountStopOnly = 2
     # Use the start time and stop time of the interval
     eCrdnStartStopOptionCountStartStop = 3
 
@@ -633,9 +633,9 @@ agcls.AgTypeNameMap["AgECrdnStartStopOption"] = AgECrdnStartStopOption
 class AgECrdnThreshConvergeSense(IntEnum):
     """Specifies the desired sense of the results from threshold crossing computations."""
     # Just converge within tolerance.
-    eCrdnThreshConvergeSenseSimple = 0,
+    eCrdnThreshConvergeSenseSimple = 0
     # Result above or at threshold.
-    eCrdnThreshConvergeSenseAbove = 1,
+    eCrdnThreshConvergeSenseAbove = 1
     # Result below or at threshold.
     eCrdnThreshConvergeSenseBelow = 2
 
@@ -644,15 +644,15 @@ agcls.AgTypeNameMap["AgECrdnThreshConvergeSense"] = AgECrdnThreshConvergeSense
 class AgECrdnVectorComponentType(IntEnum):
     """Defines component directions for a vector."""
     # X component.
-    eCrdnVectorComponentX = 0,
+    eCrdnVectorComponentX = 0
     # Y component.
-    eCrdnVectorComponentY = 1,
+    eCrdnVectorComponentY = 1
     # Z component.
-    eCrdnVectorComponentZ = 2,
+    eCrdnVectorComponentZ = 2
     # -X component.
-    eCrdnVectorComponentMinusX = 3,
+    eCrdnVectorComponentMinusX = 3
     # -Y component.
-    eCrdnVectorComponentMinusY = 4,
+    eCrdnVectorComponentMinusY = 4
     # -Z component.
     eCrdnVectorComponentMinusZ = 5
 
@@ -661,9 +661,9 @@ agcls.AgTypeNameMap["AgECrdnVectorComponentType"] = AgECrdnVectorComponentType
 class AgECrdnVolumeCalcAltitudeReferenceType(IntEnum):
     """Defines volume calc altitude reference types."""
     # Volume calc altitude above reference ellipsoid.
-    eCrdnVolumeCalcAltitudeReferenceEllipsoid = 0,
+    eCrdnVolumeCalcAltitudeReferenceEllipsoid = 0
     # Volume calc altitude reference above terrain.
-    eCrdnVolumeCalcAltitudeReferenceTerrain = 1,
+    eCrdnVolumeCalcAltitudeReferenceTerrain = 1
     # Volume calc altitude reference above mean sea level.
     eCrdnVolumeCalcAltitudeReferenceMSL = 2
 
@@ -672,13 +672,13 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcAltitudeReferenceType"] = AgECrdnVolumeCal
 class AgECrdnVolumeCalcAngleOffVectorType(IntEnum):
     """Defines volume calc angle off vector reference types."""
     # Volume calc angle off plane signed.
-    eCrdnVolumeCalcAngleOffPlaneSigned = 1,
+    eCrdnVolumeCalcAngleOffPlaneSigned = 1
     # Volume calc angle off plane unsigned.
-    eCrdnVolumeCalcAngleOffPlaneUnsigned = 2,
+    eCrdnVolumeCalcAngleOffPlaneUnsigned = 2
     # Volume calc angle about vector signed.
-    eCrdnVolumeCalcAngleAboutVectorSigned = 4,
+    eCrdnVolumeCalcAngleAboutVectorSigned = 4
     # Volume calc angle about vector unsigned.
-    eCrdnVolumeCalcAngleAboutVectorUnsigned = 8,
+    eCrdnVolumeCalcAngleAboutVectorUnsigned = 8
     # Volume calc angle off vector.
     eCrdnVolumeCalcAngleOffVector = 16
 
@@ -687,13 +687,13 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcAngleOffVectorType"] = AgECrdnVolumeCalcAn
 class AgECrdnVolumeCalcRangeDistanceType(IntEnum):
     """Defines volume calc range distance types."""
     # Volume calc range distance type from point.
-    eCrdnVolumeCalcRangeDistanceFromPoint = 0,
+    eCrdnVolumeCalcRangeDistanceFromPoint = 0
     # Volume calc range distance type from point.
-    eCrdnVolumeCalcRangeDistanceAlongVectorSigned = 1,
+    eCrdnVolumeCalcRangeDistanceAlongVectorSigned = 1
     # Volume calc range distance type along vector unsigned
-    eCrdnVolumeCalcRangeDistanceAlongVectorUnsigned = 2,
+    eCrdnVolumeCalcRangeDistanceAlongVectorUnsigned = 2
     # Volume calc range distance type plane signed
-    eCrdnVolumeCalcRangeDistancePlaneSigned = 4,
+    eCrdnVolumeCalcRangeDistancePlaneSigned = 4
     # Volume calc range distance type plane signed
     eCrdnVolumeCalcRangeDistancePlaneUnsigned = 8
 
@@ -702,7 +702,7 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcRangeDistanceType"] = AgECrdnVolumeCalcRan
 class AgECrdnVolumeCalcRangeSpeedType(IntEnum):
     """Defines volume calc range distance types."""
     # Volume calc range distance type from point.
-    eCrdnVolumeCalcRangeSpeedLight = 1,
+    eCrdnVolumeCalcRangeSpeedLight = 1
     # Volume calc range distance type from point.
     eCrdnVolumeCalcRangeSpeedCustom = 2
 
@@ -711,21 +711,21 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcRangeSpeedType"] = AgECrdnVolumeCalcRangeS
 class AgECrdnVolumeCalcType(IntEnum):
     """Defines volume calc types."""
     # Unknown or unsupported volume calc.
-    eCrdnVolumeCalcTypeUnknown = -1,
+    eCrdnVolumeCalcTypeUnknown = -1
     # volume calc type altitude to location.
-    eCrdnVolumeCalcTypeAltitude = 0,
+    eCrdnVolumeCalcTypeAltitude = 0
     # volume calc type angle to location.
-    eCrdnVolumeCalcTypeAngleOffVector = 1,
+    eCrdnVolumeCalcTypeAngleOffVector = 1
     # volume calc type File.
-    eCrdnVolumeCalcTypeFile = 2,
+    eCrdnVolumeCalcTypeFile = 2
     # volume calc type scalar at location.
-    eCrdnVolumeCalcTypeFromScalar = 3,
+    eCrdnVolumeCalcTypeFromScalar = 3
     # volume calc type Solar Intensity.
-    eCrdnVolumeCalcTypeSolarIntensity = 4,
+    eCrdnVolumeCalcTypeSolarIntensity = 4
     # volume calc type Spatial Condition Satisfaction Metric.
-    eCrdnVolumeCalcTypeVolumeSatisfactionMetric = 5,
+    eCrdnVolumeCalcTypeVolumeSatisfactionMetric = 5
     # volume calc type Distance to Location.
-    eCrdnVolumeCalcTypeRange = 6,
+    eCrdnVolumeCalcTypeRange = 6
     # volume calc type Propagation Delay to Location.
     eCrdnVolumeCalcTypeDelayRange = 7
 
@@ -734,11 +734,11 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcType"] = AgECrdnVolumeCalcType
 class AgECrdnVolumeCalcVolumeSatisfactionAccumulationType(IntEnum):
     """Defines volume calc spatial condition accumulation types."""
     # Volume calc spatial condition satisfaction accumulation type up to current time.
-    eCrdnVolumeCalcVolumeSatisfactionAccumulationUpToCurrentTime = -1,
+    eCrdnVolumeCalcVolumeSatisfactionAccumulationUpToCurrentTime = -1
     # Volume calc spatial condition satisfaction accumulation type current time.
-    eCrdnVolumeCalcVolumeSatisfactionAccumulationCurrentTime = 0,
+    eCrdnVolumeCalcVolumeSatisfactionAccumulationCurrentTime = 0
     # Volume calc spatial condition satisfaction accumulation type from current time.
-    eCrdnVolumeCalcVolumeSatisfactionAccumulationFromCurrentTime = 1,
+    eCrdnVolumeCalcVolumeSatisfactionAccumulationFromCurrentTime = 1
     # Volume calc spatial condition satisfaction accumulation type total.
     eCrdnVolumeCalcVolumeSatisfactionAccumulationTotal = 10
 
@@ -747,9 +747,9 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionAccumulationType"] = AgE
 class AgECrdnVolumeCalcVolumeSatisfactionDurationType(IntEnum):
     """Defines volume calc spatial condition duration types."""
     # Volume calc spatial condition satisfaction duration type minimum.
-    eCrdnVolumeCalcVolumeSatisfactionDurationMin = -1,
+    eCrdnVolumeCalcVolumeSatisfactionDurationMin = -1
     # Volume calc spatial condition satisfaction duration type sum.
-    eCrdnVolumeCalcVolumeSatisfactionDurationSum = 0,
+    eCrdnVolumeCalcVolumeSatisfactionDurationSum = 0
     # Volume calc spatial condition satisfaction duration type maximum.
     eCrdnVolumeCalcVolumeSatisfactionDurationMax = 1
 
@@ -758,13 +758,13 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionDurationType"] = AgECrdn
 class AgECrdnVolumeCalcVolumeSatisfactionFilterType(IntEnum):
     """Defines volume calc spatial condition filter types."""
     # Volume calc spatial condition satisfaction filter type first intervals.
-    eCrdnVolumeCalcVolumeSatisfactionFilterFirstIntervals = -10,
+    eCrdnVolumeCalcVolumeSatisfactionFilterFirstIntervals = -10
     # Volume calc spatial condition satisfaction filter type last intervals.
-    eCrdnVolumeCalcVolumeSatisfactionFilterLastIntervals = -20,
+    eCrdnVolumeCalcVolumeSatisfactionFilterLastIntervals = -20
     # Volume calc spatial condition satisfaction filter type none.
-    eCrdnVolumeCalcVolumeSatisfactionFilterNone = 0,
+    eCrdnVolumeCalcVolumeSatisfactionFilterNone = 0
     # Volume calc spatial condition satisfaction filter type gap duration.
-    eCrdnVolumeCalcVolumeSatisfactionFilterGapDuration = 1,
+    eCrdnVolumeCalcVolumeSatisfactionFilterGapDuration = 1
     # Volume calc spatial condition satisfaction filter type interval duration.
     eCrdnVolumeCalcVolumeSatisfactionFilterIntervalDuration = 2
 
@@ -773,15 +773,15 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionFilterType"] = AgECrdnVo
 class AgECrdnVolumeCalcVolumeSatisfactionMetricType(IntEnum):
     """Defines volume calc spatial condition satisfaction metric types."""
     # Volume calc spatial condition satisfaction metric type number of gaps.
-    eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfGaps = -2,
+    eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfGaps = -2
     # Volume calc spatial condition satisfaction metric type number of intervals.
-    eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfIntervals = -1,
+    eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfIntervals = -1
     # Volume calc spatial condition satisfaction metric type time since last satisfaction.
-    eCrdnVolumeCalcVolumeSatisfactionMetricTimeSinceLastSatisfaction = 1,
+    eCrdnVolumeCalcVolumeSatisfactionMetricTimeSinceLastSatisfaction = 1
     # Volume calc spatial condition satisfaction metric type time until next satisfaction.
-    eCrdnVolumeCalcVolumeSatisfactionMetricTimeUntilNextSatisfaction = 2,
+    eCrdnVolumeCalcVolumeSatisfactionMetricTimeUntilNextSatisfaction = 2
     # Volume calc spatial condition satisfaction metric type interbnal duration.
-    eCrdnVolumeCalcVolumeSatisfactionMetricIntervalDuration = 10,
+    eCrdnVolumeCalcVolumeSatisfactionMetricIntervalDuration = 10
     # Volume calc spatial condition satisfaction metric type gap duration.
     eCrdnVolumeCalcVolumeSatisfactionMetricGapDuration = 20
 
@@ -790,17 +790,17 @@ agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionMetricType"] = AgECrdnVo
 class AgECrdnVolumeGridType(IntEnum):
     """Defines volume grid types."""
     # Unknown or unsupported volume grid.
-    eCrdnVolumeGridTypeUnknown = -1,
+    eCrdnVolumeGridTypeUnknown = -1
     # volume grid type cartesian.
-    eCrdnVolumeGridTypeCartesian = 0,
+    eCrdnVolumeGridTypeCartesian = 0
     # volume grid type Cylindrical.
-    eCrdnVolumeGridTypeCylindrical = 1,
+    eCrdnVolumeGridTypeCylindrical = 1
     # volume grid type Spherical.
-    eCrdnVolumeGridTypeSpherical = 2,
+    eCrdnVolumeGridTypeSpherical = 2
     # volume grid type Constrained.
-    eCrdnVolumeGridTypeConstrained = 3,
+    eCrdnVolumeGridTypeConstrained = 3
     # volume grid type LatLonAlt (Cartographic).
-    eCrdnVolumeGridTypeLatLonAlt = 4,
+    eCrdnVolumeGridTypeLatLonAlt = 4
     # volume grid type BearingAlt (Surface Bearing).
     eCrdnVolumeGridTypeBearingAlt = 5
 
@@ -809,13 +809,13 @@ agcls.AgTypeNameMap["AgECrdnVolumeGridType"] = AgECrdnVolumeGridType
 class AgECrdnVolumeResultVectorRequest(IntEnum):
     """Defines volume result vector request types."""
     # volume result vector request pos type
-    eCrdnVolumeResultVectorRequestPos = 1,
+    eCrdnVolumeResultVectorRequestPos = 1
     # volume result vector request native pos type
-    eCrdnVolumeResultVectorRequestNativePos = 2,
+    eCrdnVolumeResultVectorRequestNativePos = 2
     # volume result vector request metric type
-    eCrdnVolumeResultVectorRequestMetric = 16,
+    eCrdnVolumeResultVectorRequestMetric = 16
     # volume result vector request satisfaction type
-    eCrdnVolumeResultVectorRequestSatisfaction = 32,
+    eCrdnVolumeResultVectorRequestSatisfaction = 32
     # volume result vector request gradient type
     eCrdnVolumeResultVectorRequestGradient = 256
 
@@ -824,21 +824,21 @@ agcls.AgTypeNameMap["AgECrdnVolumeResultVectorRequest"] = AgECrdnVolumeResultVec
 class AgECrdnVolumeType(IntEnum):
     """Defines volume grid types."""
     # Unknown or unsupported volume.
-    eCrdnVolumeTypeUnknown = -1,
+    eCrdnVolumeTypeUnknown = -1
     # volume type combined.
-    eCrdnVolumeTypeCombined = 0,
+    eCrdnVolumeTypeCombined = 0
     # volume type lighting.
-    eCrdnVolumeTypeLighting = 1,
+    eCrdnVolumeTypeLighting = 1
     # volume type over time.
-    eCrdnVolumeTypeOverTime = 2,
+    eCrdnVolumeTypeOverTime = 2
     # volume type from grid (Grid Bounding Volume).
-    eCrdnVolumeTypeFromGrid = 3,
+    eCrdnVolumeTypeFromGrid = 3
     # volume type from calc (Spatial Calculation Bounds).
-    eCrdnVolumeTypeFromCalc = 4,
+    eCrdnVolumeTypeFromCalc = 4
     # volume type from time satisfaction (Valid Time At Location).
-    eCrdnVolumeTypeFromTimeSatisfaction = 5,
+    eCrdnVolumeTypeFromTimeSatisfaction = 5
     # volume type from condition (Condition At Location).
-    eCrdnVolumeTypeFromCondition = 6,
+    eCrdnVolumeTypeFromCondition = 6
     # volume type Inview (Access To Location).
     eCrdnVolumeTypeInview = 7
 
@@ -847,11 +847,11 @@ agcls.AgTypeNameMap["AgECrdnVolumeType"] = AgECrdnVolumeType
 class AgECrdnVolumeAberrationType(IntEnum):
     """Defines the model of aberration to use."""
     # Aberration type unknown.
-    eCrdnVolumeAberrationUnknown = -1,
+    eCrdnVolumeAberrationUnknown = -1
     # Aberration type total.
-    eCrdnVolumeAberrationTotal = 0,
+    eCrdnVolumeAberrationTotal = 0
     # SAberration type annual.
-    eCrdnVolumeAberrationAnnual = 1,
+    eCrdnVolumeAberrationAnnual = 1
     # Aberration type none.
     eCrdnVolumeAberrationNone = 2
 
@@ -860,9 +860,9 @@ agcls.AgTypeNameMap["AgECrdnVolumeAberrationType"] = AgECrdnVolumeAberrationType
 class AgECrdnVolumeClockHostType(IntEnum):
     """Defines whether base or target of an Access instance holds the clock for Access times."""
     # Unknown
-    eCrdnVolumeClockHostUnknown = -1,
+    eCrdnVolumeClockHostUnknown = -1
     # Base object holds time instance.
-    eCrdnVolumeClockHostBase = 0,
+    eCrdnVolumeClockHostBase = 0
     # Target object holds time instance.
     eCrdnVolumeClockHostTarget = 1
 
@@ -871,11 +871,11 @@ agcls.AgTypeNameMap["AgECrdnVolumeClockHostType"] = AgECrdnVolumeClockHostType
 class AgECrdnVolumeCombinedOperationType(IntEnum):
     """Defines spatial condition combined operation types."""
     # Spatial condition combined AND operation.
-    eCrdnVolumeCombinedOperationTypeAND = 1,
+    eCrdnVolumeCombinedOperationTypeAND = 1
     # Spatial condition combined OR operation.
-    eCrdnVolumeCombinedOperationTypeOR = 2,
+    eCrdnVolumeCombinedOperationTypeOR = 2
     # Spatial condition combined XOR operation.
-    eCrdnVolumeCombinedOperationTypeXOR = 3,
+    eCrdnVolumeCombinedOperationTypeXOR = 3
     # Spatial condition combined MINUS operation.
     eCrdnVolumeCombinedOperationTypeMINUS = 4
 
@@ -884,7 +884,7 @@ agcls.AgTypeNameMap["AgECrdnVolumeCombinedOperationType"] = AgECrdnVolumeCombine
 class AgECrdnVolumeFromGridEdgeType(IntEnum):
     """Defines spatial condition from grid edge type."""
     # Spatial condition over time from grid edge type mask points.
-    eCrdnVolumeFromGridEdgeTypeMaskPoints = 16,
+    eCrdnVolumeFromGridEdgeTypeMaskPoints = 16
     # Spatial condition over time from grid edge type mask voxels.
     eCrdnVolumeFromGridEdgeTypeMaskVoxels = 32
 
@@ -893,11 +893,11 @@ agcls.AgTypeNameMap["AgECrdnVolumeFromGridEdgeType"] = AgECrdnVolumeFromGridEdge
 class AgECrdnVolumeLightingConditionsType(IntFlag):
     """Defines spatial condition lighting conditions types."""
     # Spatial condition lighting undefined.
-    eCrdnVolumeLightingConditionTypeUndefined = 0,
+    eCrdnVolumeLightingConditionTypeUndefined = 0
     # Spatial condition lighting sun light.
-    eCrdnVolumeLightingConditionTypeSunlight = 1,
+    eCrdnVolumeLightingConditionTypeSunlight = 1
     # Spatial condition lighting penumbra.
-    eCrdnVolumeLightingConditionTypePenumbra = 2,
+    eCrdnVolumeLightingConditionTypePenumbra = 2
     # Spatial condition lighting umbra.
     eCrdnVolumeLightingConditionTypeUmbra = 4
 
@@ -906,11 +906,11 @@ agcls.AgTypeNameMap["AgECrdnVolumeLightingConditionsType"] = AgECrdnVolumeLighti
 class AgECrdnVolumeOverTimeDurationType(IntEnum):
     """Defines spatial condition over time duration type."""
     # Spatial condition over time duration type Static.
-    eCrdnVolumeOverTimeDurationTypeStatic = 0,
+    eCrdnVolumeOverTimeDurationTypeStatic = 0
     # Spatial condition over time duration type CumulativeToCurrent.
-    eCrdnVolumeOverTimeDurationTypeCumulativeToCurrent = 1,
+    eCrdnVolumeOverTimeDurationTypeCumulativeToCurrent = 1
     # Spatial condition over time duration type CumulativeFromCurrent.
-    eCrdnVolumeOverTimeDurationTypeCumulativeFromCurrent = 2,
+    eCrdnVolumeOverTimeDurationTypeCumulativeFromCurrent = 2
     # Spatial condition over time duration type SlidingWindow.
     eCrdnVolumeOverTimeDurationTypeSlidingWindow = 3
 
@@ -919,9 +919,9 @@ agcls.AgTypeNameMap["AgECrdnVolumeOverTimeDurationType"] = AgECrdnVolumeOverTime
 class AgECrdnVolumeTimeSenseType(IntEnum):
     """Defines whether object1 or object2 of an Access instance holds the clock for Access times."""
     # Unklnown
-    eCrdnVolumeTimeSenseUnknown = -1,
+    eCrdnVolumeTimeSenseUnknown = -1
     # Position is computed in Time Sense
-    eCrdnVolumeTimeSenseTransmit = 0,
+    eCrdnVolumeTimeSenseTransmit = 0
     # Position is computed in Receive Sense
     eCrdnVolumeTimeSenseReceive = 1
 
@@ -930,11 +930,11 @@ agcls.AgTypeNameMap["AgECrdnVolumeTimeSenseType"] = AgECrdnVolumeTimeSenseType
 class AgECrdnVolumetricGridValuesMethodType(IntEnum):
     """Defines volumetric grid values method types."""
     # Unknown or unsupportedgrid values method.
-    eCrdnVolumetricGridValuesMethodMethodUnknown = -1,
+    eCrdnVolumetricGridValuesMethodMethodUnknown = -1
     # Fixed number steps grid values method for volumetric grid.
-    eCrdnVolumetricGridValuesMethodMethodFixedNumSteps = 0,
+    eCrdnVolumetricGridValuesMethodMethodFixedNumSteps = 0
     # Fixed step size grid values method for volumetric grid.
-    eCrdnVolumetricGridValuesMethodMethodFixedStepSize = 1,
+    eCrdnVolumetricGridValuesMethodMethodFixedStepSize = 1
     # Custom grid values method for volumetric grid.
     eCrdnVolumetricGridValuesMethodMethodCustomValues = 2
 
@@ -943,43 +943,43 @@ agcls.AgTypeNameMap["AgECrdnVolumetricGridValuesMethodType"] = AgECrdnVolumetric
 class AgECrdnKind(IntEnum):
     """Represents kinds of vectory geometry components."""
     # Unsupported component kind.
-    eCrdnKindUnknown = -1,
+    eCrdnKindUnknown = -1
     # Invalid component.
-    eCrdnKindInvalid = 0,
+    eCrdnKindInvalid = 0
     # Axes component.
-    eCrdnKindAxes = 1,
+    eCrdnKindAxes = 1
     # Angle component.
-    eCrdnKindAngle = 2,
+    eCrdnKindAngle = 2
     # Vector component.
-    eCrdnKindVector = 3,
+    eCrdnKindVector = 3
     # Point component.
-    eCrdnKindPoint = 4,
+    eCrdnKindPoint = 4
     # Plane component.
-    eCrdnKindPlane = 5,
+    eCrdnKindPlane = 5
     # System component.
-    eCrdnKindSystem = 6,
+    eCrdnKindSystem = 6
     # An event.
-    eCrdnKindEvent = 7,
+    eCrdnKindEvent = 7
     # An event array.
-    eCrdnKindEventArray = 8,
+    eCrdnKindEventArray = 8
     # An event interval.
-    eCrdnKindEventInterval = 9,
+    eCrdnKindEventInterval = 9
     # An event interval collection.
-    eCrdnKindEventIntervalCollection = 10,
+    eCrdnKindEventIntervalCollection = 10
     # A list of event intervals.
-    eCrdnKindEventIntervalList = 11,
+    eCrdnKindEventIntervalList = 11
     # A parameter set.
-    eCrdnKindParameterSet = 12,
+    eCrdnKindParameterSet = 12
     # A scalar.
-    eCrdnKindCalcScalar = 13,
+    eCrdnKindCalcScalar = 13
     # A condition.
-    eCrdnKindCondition = 14,
+    eCrdnKindCondition = 14
     # A condition set.
-    eCrdnKindConditionSet = 15,
+    eCrdnKindConditionSet = 15
     # A volume grid.
-    eCrdnKindVolumeGrid = 16,
+    eCrdnKindVolumeGrid = 16
     # A volume.
-    eCrdnKindVolume = 17,
+    eCrdnKindVolume = 17
     # A volume calc.
     eCrdnKindVolumeCalc = 18
 
@@ -988,17 +988,17 @@ agcls.AgTypeNameMap["AgECrdnKind"] = AgECrdnKind
 class AgECrdnAngleType(IntEnum):
     """Represents angle types."""
     # Unknown or unsupported type.
-    eCrdnAngleTypeUnknown = -1,
+    eCrdnAngleTypeUnknown = -1
     # An angle between two vectors.
-    eCrdnAngleTypeBetweenVectors = 0,
+    eCrdnAngleTypeBetweenVectors = 0
     # An angle between two planes.
-    eCrdnAngleTypeBetweenPlanes = 1,
+    eCrdnAngleTypeBetweenPlanes = 1
     # An angle between two vectors about an axis.
-    eCrdnAngleTypeDihedralAngle = 2,
+    eCrdnAngleTypeDihedralAngle = 2
     # Angle of the shortest rotation between the two specified axes.
-    eCrdnAngleTypeRotation = 3,
+    eCrdnAngleTypeRotation = 3
     # An angle between a vector and a plane.
-    eCrdnAngleTypeToPlane = 4,
+    eCrdnAngleTypeToPlane = 4
     # Represents a VGT angle created from a template. This type of angle is not creatable.
     eCrdnAngleTypeTemplate = 5
 
@@ -1007,35 +1007,35 @@ agcls.AgTypeNameMap["AgECrdnAngleType"] = AgECrdnAngleType
 class AgECrdnAxesType(IntEnum):
     """Represents vector types."""
     # Unknown or unsupported type.
-    eCrdnAxesTypeUnknown = -1,
+    eCrdnAxesTypeUnknown = -1
     # Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type.
-    eCrdnAxesTypeLagrangeLibration = 0,
+    eCrdnAxesTypeLagrangeLibration = 0
     # Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset.
-    eCrdnAxesTypeAngularOffset = 1,
+    eCrdnAxesTypeAngularOffset = 1
     # Axes based on another set fixed at a specified epoch.
-    eCrdnAxesTypeFixedAtEpoch = 2,
+    eCrdnAxesTypeFixedAtEpoch = 2
     # B-Plane axes using the selected target body and reference vector.
-    eCrdnAxesTypeBPlane = 3,
+    eCrdnAxesTypeBPlane = 3
     # Customized axes offset with respect to a set of reference Axes.
-    eCrdnAxesTypeCustomScript = 4,
+    eCrdnAxesTypeCustomScript = 4
     # Axes fixed in reference axes.
-    eCrdnAxesTypeFixed = 6,
+    eCrdnAxesTypeFixed = 6
     # Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference.
-    eCrdnAxesTypeAlignedAndConstrained = 7,
+    eCrdnAxesTypeAlignedAndConstrained = 7
     # Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element.
-    eCrdnAxesTypeModelAttachment = 8,
+    eCrdnAxesTypeModelAttachment = 8
     # Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset.
-    eCrdnAxesTypeSpinning = 9,
+    eCrdnAxesTypeSpinning = 9
     # Projection of the reference point onto the central body.
-    eCrdnAxesTypeOnSurface = 10,
+    eCrdnAxesTypeOnSurface = 10
     # Axes based on trajectory of the point relative to the reference coordinate system.
-    eCrdnAxesTypeTrajectory = 11,
+    eCrdnAxesTypeTrajectory = 11
     # Represents a VGT axes created from a template. This type of axes is not creatable.
-    eCrdnAxesTypeTemplate = 12,
+    eCrdnAxesTypeTemplate = 12
     # Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant.
-    eCrdnAxesTypeAtTimeInstant = 13,
+    eCrdnAxesTypeAtTimeInstant = 13
     # An axes plugin point.
-    eCrdnAxesTypePlugin = 14,
+    eCrdnAxesTypePlugin = 14
     # Axes specified by data from a file.
     eCrdnAxesTypeFile = 5
 
@@ -1044,17 +1044,17 @@ agcls.AgTypeNameMap["AgECrdnAxesType"] = AgECrdnAxesType
 class AgECrdnPlaneType(IntEnum):
     """Represents plane types."""
     # Unknown or unsupported type.
-    eCrdnPlaneTypeUnknown = -1,
+    eCrdnPlaneTypeUnknown = -1
     # A plane normal to a vector at a given point.
-    eCrdnPlaneTypeNormal = 0,
+    eCrdnPlaneTypeNormal = 0
     # A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system.
-    eCrdnPlaneTypeQuadrant = 1,
+    eCrdnPlaneTypeQuadrant = 1
     # A plane is defined on the basis of a trajectory of a selected point with respect to a reference point.
-    eCrdnPlaneTypeTrajectory = 2,
+    eCrdnPlaneTypeTrajectory = 2
     # A plane is defined by the three points.
-    eCrdnPlaneTypeTriad = 3,
+    eCrdnPlaneTypeTriad = 3
     # Represents a VGT plane created from a template. This type of plane is not creatable.
-    eCrdnPlaneTypeTemplate = 4,
+    eCrdnPlaneTypeTemplate = 4
     # A plane passing through point and containing two given vectors.
     eCrdnPlaneTypeTwoVector = 5
 
@@ -1063,39 +1063,39 @@ agcls.AgTypeNameMap["AgECrdnPlaneType"] = AgECrdnPlaneType
 class AgECrdnPointType(IntEnum):
     """Represents point types."""
     # Unknown or unsupported type.
-    eCrdnPointTypeUnknown = -1,
+    eCrdnPointTypeUnknown = -1
     # B-Plane point using the selected target body.
-    eCrdnPointTypeBPlane = 0,
+    eCrdnPointTypeBPlane = 0
     # The grazing point is the point of closest approach to the surface of the selected central body along a defined direction.
-    eCrdnPointTypeGrazing = 1,
+    eCrdnPointTypeGrazing = 1
     # The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option.
-    eCrdnPointTypeCovarianceGrazing = 2,
+    eCrdnPointTypeCovarianceGrazing = 2
     # Point fixed in a reference coordinate system.
-    eCrdnPointTypeFixedInSystem = 4,
+    eCrdnPointTypeFixedInSystem = 4
     # Point on central body surface that reflects from source to observer.
-    eCrdnPointTypeGlint = 5,
+    eCrdnPointTypeGlint = 5
     # Point on a plane located along a given direction looking from a given origin.
-    eCrdnPointTypePlaneIntersection = 6,
+    eCrdnPointTypePlaneIntersection = 6
     # Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point.
-    eCrdnPointTypeModelAttachment = 7,
+    eCrdnPointTypeModelAttachment = 7
     # The projection of a point onto a reference plane.
-    eCrdnPointTypePlaneProjection = 8,
+    eCrdnPointTypePlaneProjection = 8
     # The detic subpoint of the reference point as projected onto the central body.
-    eCrdnPointTypeOnSurface = 9,
+    eCrdnPointTypeOnSurface = 9
     # Libration point using one primary and multiple secondary central bodies.
-    eCrdnPointTypeLagrangeLibration = 10,
+    eCrdnPointTypeLagrangeLibration = 10
     # Represents a VGT point created from a template. This type of point is not creatable.
-    eCrdnPointTypeTemplate = 11,
+    eCrdnPointTypeTemplate = 11
     # Point on central body surface along direction vector originating at source point.
-    eCrdnPointTypeCentralBodyIntersect = 12,
+    eCrdnPointTypeCentralBodyIntersect = 12
     # Point fixed relative to reference system based on another point evaluated at specified time instant.
-    eCrdnPointTypeAtTimeInstant = 13,
+    eCrdnPointTypeAtTimeInstant = 13
     # A point plugin point.
-    eCrdnPointTypePlugin = 14,
+    eCrdnPointTypePlugin = 14
     # Point specified by data from a file.
-    eCrdnPointTypeFile = 3,
+    eCrdnPointTypeFile = 3
     # Point fixed on a central body.
-    eCrdnPointTypeFixedOnCentralBody = 15,
+    eCrdnPointTypeFixedOnCentralBody = 15
     # A point placed at the center of mass of a specified satellite of the satellite collection.
     eCrdnPointTypeSatelliteCollectionEntry = 16
 
@@ -1104,11 +1104,11 @@ agcls.AgTypeNameMap["AgECrdnPointType"] = AgECrdnPointType
 class AgECrdnSystemType(IntEnum):
     """Represents system types."""
     # Unknown or unsupported system type.
-    eCrdnSystemTypeUnknown = -1,
+    eCrdnSystemTypeUnknown = -1
     # A system assembled from an origin point and a set of reference axes.
-    eCrdnSystemTypeAssembled = 0,
+    eCrdnSystemTypeAssembled = 0
     # A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle.
-    eCrdnSystemTypeOnSurface = 1,
+    eCrdnSystemTypeOnSurface = 1
     # Represents a VGT system created from a template. This type of system is not creatable.
     eCrdnSystemTypeTemplate = 2
 
@@ -1117,67 +1117,67 @@ agcls.AgTypeNameMap["AgECrdnSystemType"] = AgECrdnSystemType
 class AgECrdnVectorType(IntEnum):
     """Represents vector types."""
     # Unknown or unsupported vector type.
-    eCrdnVectorTypeUnknown = -1,
+    eCrdnVectorTypeUnknown = -1
     # Vector defined by its start and end points.
-    eCrdnVectorTypeDisplacement = 0,
+    eCrdnVectorTypeDisplacement = 0
     # Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point.
-    eCrdnVectorTypeApoapsis = 1,
+    eCrdnVectorTypeApoapsis = 1
     # Based on another vector fixed at a specified epoch.
-    eCrdnVectorTypeFixedAtEpoch = 2,
+    eCrdnVectorTypeFixedAtEpoch = 2
     # Angular velocity vector of one set of axes computed with respect to the reference set.
-    eCrdnVectorTypeAngularVelocity = 3,
+    eCrdnVectorTypeAngularVelocity = 3
     # Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode.
-    eCrdnVectorTypeConing = 4,
+    eCrdnVectorTypeConing = 4
     # The vector cross product of two vectors.
-    eCrdnVectorTypeCrossProduct = 5,
+    eCrdnVectorTypeCrossProduct = 5
     # Customized vector components defined with respect to reference axes.
-    eCrdnVectorTypeCustomScript = 6,
+    eCrdnVectorTypeCustomScript = 6
     # Derivative of a vector computed with respect to specified axes.
-    eCrdnVectorTypeDerivative = 7,
+    eCrdnVectorTypeDerivative = 7
     # Angle rate vector perpendicular to the plane in which the angle is defined.
-    eCrdnVectorTypeAngleRate = 8,
+    eCrdnVectorTypeAngleRate = 8
     # Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point.
-    eCrdnVectorTypeEccentricity = 9,
+    eCrdnVectorTypeEccentricity = 9
     # Vector fixed in reference axes.
-    eCrdnVectorTypeFixedInAxes = 10,
+    eCrdnVectorTypeFixedInAxes = 10
     # Defined along the intersection of two planes.
-    eCrdnVectorTypeTwoPlanesIntersection = 12,
+    eCrdnVectorTypeTwoPlanesIntersection = 12
     # Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body.
-    eCrdnVectorTypeLineOfNodes = 13,
+    eCrdnVectorTypeLineOfNodes = 13
     # Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element.
-    eCrdnVectorTypeModelAttachment = 14,
+    eCrdnVectorTypeModelAttachment = 14
     # Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body.
-    eCrdnVectorTypeOrbitAngularMomentum = 15,
+    eCrdnVectorTypeOrbitAngularMomentum = 15
     # Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body.
-    eCrdnVectorTypeOrbitNormal = 16,
+    eCrdnVectorTypeOrbitNormal = 16
     # Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point.
-    eCrdnVectorTypePeriapsis = 17,
+    eCrdnVectorTypePeriapsis = 17
     # A projection of a vector computed with respect to a reference plane.
-    eCrdnVectorTypeProjection = 18,
+    eCrdnVectorTypeProjection = 18
     # Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane.
-    eCrdnVectorTypeReflection = 19,
+    eCrdnVectorTypeReflection = 19
     # Scaled version of the input vector.
-    eCrdnVectorTypeScaled = 20,
+    eCrdnVectorTypeScaled = 20
     # Defined with respect to a star object.
-    eCrdnVectorTypeDirectionToStar = 21,
+    eCrdnVectorTypeDirectionToStar = 21
     # Represents a VGT vector created from a template. This type of vector is not creatable.
-    eCrdnVectorTypeTemplate = 22,
+    eCrdnVectorTypeTemplate = 22
     # Vector fixed relative to reference axes based on another vector evaluated at specified time instant.
-    eCrdnVectorTypeAtTimeInstant = 23,
+    eCrdnVectorTypeAtTimeInstant = 23
     # Linear combination of two input vectors.
-    eCrdnVectorTypeLinearCombination = 24,
+    eCrdnVectorTypeLinearCombination = 24
     # A projection of a source vector in the direction of another vector.
-    eCrdnVectorTypeProjectAlong = 25,
+    eCrdnVectorTypeProjectAlong = 25
     # Linear combination of two input vectors using scalars.
-    eCrdnVectorTypeScalarLinearCombination = 26,
+    eCrdnVectorTypeScalarLinearCombination = 26
     # Scaled version of the input vector using scalar.
-    eCrdnVectorTypeScalarScaled = 27,
+    eCrdnVectorTypeScalarScaled = 27
     # Velocity vector of a point in a coordinate system.
-    eCrdnVectorTypeVelocity = 28,
+    eCrdnVectorTypeVelocity = 28
     # A vector plugin point.
-    eCrdnVectorTypePlugin = 29,
+    eCrdnVectorTypePlugin = 29
     # Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis.
-    eCrdnVectorTypeRotationVector = 30,
+    eCrdnVectorTypeRotationVector = 30
     # Displacement between origin and destination points using surface distance and altitude difference.
     eCrdnVectorTypeDisplacementOnSurface = 31
 
@@ -1186,11 +1186,11 @@ agcls.AgTypeNameMap["AgECrdnVectorType"] = AgECrdnVectorType
 class AgECrdnMeanElementTheory(IntEnum):
     """Mean element theory types for approximating motion."""
     # Osculating elements (six standard Keplerian orbital elements).
-    eCrdnMeanElementTheoryOsculating = 1,
+    eCrdnMeanElementTheoryOsculating = 1
     # The Kozai-Iszak (KI) mean elements are based upon the paper \"The Motion of a Close earth satellite,\" Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377.
-    eCrdnMeanElementTheoryKozai = 2,
+    eCrdnMeanElementTheoryKozai = 2
     # Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2.
-    eCrdnMeanElementTheoryBrouwerLyddane_Long = 3,
+    eCrdnMeanElementTheoryBrouwerLyddane_Long = 3
     # Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term.
     eCrdnMeanElementTheoryBrouwerLyddane_Short = 4
 
@@ -1199,7 +1199,7 @@ agcls.AgTypeNameMap["AgECrdnMeanElementTheory"] = AgECrdnMeanElementTheory
 class AgECrdnDirectionType(IntEnum):
     """Direction options."""
     # Incoming direction.
-    eCrdnDirectionIncomingAsymptote = 1,
+    eCrdnDirectionIncomingAsymptote = 1
     # Outgoing direction.
     eCrdnDirectionOutgoingAsymptote = 2
 
@@ -1208,13 +1208,13 @@ agcls.AgTypeNameMap["AgECrdnDirectionType"] = AgECrdnDirectionType
 class AgECrdnLagrangeLibrationPointType(IntEnum):
     """Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other."""
     # A point between the Sun and Earth.
-    eCrdnLagrangeLibrationPointTypeL1 = 1,
+    eCrdnLagrangeLibrationPointTypeL1 = 1
     # Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth.
-    eCrdnLagrangeLibrationPointTypeL2 = 2,
+    eCrdnLagrangeLibrationPointTypeL2 = 2
     # L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times.
-    eCrdnLagrangeLibrationPointTypeL3 = 3,
+    eCrdnLagrangeLibrationPointTypeL3 = 3
     # The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points.
-    eCrdnLagrangeLibrationPointTypeL4 = 4,
+    eCrdnLagrangeLibrationPointTypeL4 = 4
     # The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points.
     eCrdnLagrangeLibrationPointTypeL5 = 5
 
@@ -1223,15 +1223,15 @@ agcls.AgTypeNameMap["AgECrdnLagrangeLibrationPointType"] = AgECrdnLagrangeLibrat
 class AgECrdnQuadrantType(IntEnum):
     """Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY),"""
     # XY quadrant.
-    eCrdnQuadrantXY = 1,
+    eCrdnQuadrantXY = 1
     # YX quadrant.
-    eCrdnQuadrantYX = 2,
+    eCrdnQuadrantYX = 2
     # XZ quadrant.
-    eCrdnQuadrantXZ = 3,
+    eCrdnQuadrantXZ = 3
     # ZX quadrant.
-    eCrdnQuadrantZX = 4,
+    eCrdnQuadrantZX = 4
     # YZ quadrant.
-    eCrdnQuadrantYZ = 5,
+    eCrdnQuadrantYZ = 5
     # ZY quadrant.
     eCrdnQuadrantZY = 6
 
@@ -1240,19 +1240,19 @@ agcls.AgTypeNameMap["AgECrdnQuadrantType"] = AgECrdnQuadrantType
 class AgECrdnTrajectoryAxesType(IntEnum):
     """Trajectory axes coordinate types."""
     # Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack).
-    eCrdnTrajectoryAxesICR = 0,
+    eCrdnTrajectoryAxesICR = 0
     # Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal).
-    eCrdnTrajectoryAxesVNC = 1,
+    eCrdnTrajectoryAxesVNC = 1
     # Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack).
-    eCrdnTrajectoryAxesRIC = 2,
+    eCrdnTrajectoryAxesRIC = 2
     # Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal).
-    eCrdnTrajectoryAxesLVLH = 3,
+    eCrdnTrajectoryAxesLVLH = 3
     # Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity).
-    eCrdnTrajectoryAxesVVLH = 4,
+    eCrdnTrajectoryAxesVVLH = 4
     # Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X.
-    eCrdnTrajectoryAxesBBR = 5,
+    eCrdnTrajectoryAxesBBR = 5
     # Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X.
-    eCrdnTrajectoryAxesEquinoctial = 6,
+    eCrdnTrajectoryAxesEquinoctial = 6
     # Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal).
     eCrdnTrajectoryAxesNTC = 7
 
@@ -1261,9 +1261,9 @@ agcls.AgTypeNameMap["AgECrdnTrajectoryAxesType"] = AgECrdnTrajectoryAxesType
 class AgECrdnDisplayAxisSelector(IntEnum):
     """Rotation directions."""
     # Rotate about Axis X.
-    eCrdnDisplayAxisX = 0,
+    eCrdnDisplayAxisX = 0
     # Rotate about Axis Y.
-    eCrdnDisplayAxisY = 1,
+    eCrdnDisplayAxisY = 1
     # Rotate about Axis Z.
     eCrdnDisplayAxisZ = 2
 
@@ -1272,9 +1272,9 @@ agcls.AgTypeNameMap["AgECrdnDisplayAxisSelector"] = AgECrdnDisplayAxisSelector
 class AgECrdnSignedAngleType(IntEnum):
     """Defines options for computing an angle."""
     # Choose the option to use unsigned angle.
-    eCrdnSignedAngleNone = 0,
+    eCrdnSignedAngleNone = 0
     # Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal.
-    eCrdnSignedAnglePositive = 1,
+    eCrdnSignedAnglePositive = 1
     # Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal.
     eCrdnSignedAngleNegative = 2
 
@@ -1283,7 +1283,7 @@ agcls.AgTypeNameMap["AgECrdnSignedAngleType"] = AgECrdnSignedAngleType
 class AgECrdnPointBPlaneType(IntEnum):
     """B-Plane point types."""
     # Asymptote.
-    eCrdnPointBPlaneAsymptote = 1,
+    eCrdnPointBPlaneAsymptote = 1
     # Two body.
     eCrdnPointBPlaneATwoBody = 2
 
@@ -1292,9 +1292,9 @@ agcls.AgTypeNameMap["AgECrdnPointBPlaneType"] = AgECrdnPointBPlaneType
 class AgECrdnReferenceShapeType(IntEnum):
     """Surface shape types."""
     # An ellipsoid reference shape as defined by the central body (by default, it is WSG84).
-    eCrdnReferenceShapeEllipsoid = 1,
+    eCrdnReferenceShapeEllipsoid = 1
     # Terrain as the terrain reference.
-    eCrdnReferenceShapeTerrain = 2,
+    eCrdnReferenceShapeTerrain = 2
     # Mean Sea Level as the terrain reference.
     eCrdnReferenceShapeMSL = 3
 
@@ -1303,7 +1303,7 @@ agcls.AgTypeNameMap["AgECrdnReferenceShapeType"] = AgECrdnReferenceShapeType
 class AgECrdnSurfaceType(IntEnum):
     """Surface types."""
     # Detic surface model.
-    eCrdnSurfaceDetic = 1,
+    eCrdnSurfaceDetic = 1
     # Centric surface model.
     eCrdnSurfaceCentric = 2
 
@@ -1312,7 +1312,7 @@ agcls.AgTypeNameMap["AgECrdnSurfaceType"] = AgECrdnSurfaceType
 class AgECrdnSweepMode(IntEnum):
     """The rotation sweeping modes."""
     # Bidirectional sweeping mode.
-    eCrdnSweepModeBidirectional = 1,
+    eCrdnSweepModeBidirectional = 1
     # Unidirectional sweeping mode.
     eCrdnSweepModeUnidirectional = 2
 
@@ -1321,7 +1321,7 @@ agcls.AgTypeNameMap["AgECrdnSweepMode"] = AgECrdnSweepMode
 class AgECrdnSignalSense(IntEnum):
     """Signal sense transmission options."""
     # Signal receive.
-    eCrdnSignalSenseReceive = 1,
+    eCrdnSignalSenseReceive = 1
     # Signal transmit.
     eCrdnSignalSenseTransmit = 2
 
@@ -1330,9 +1330,9 @@ agcls.AgTypeNameMap["AgECrdnSignalSense"] = AgECrdnSignalSense
 class AgECrdnIntersectionSurface(IntEnum):
     """Intersection surface flags."""
     # Intersection with central body ellipsoid.
-    eCrdnIntersectionSurfaceAtCentralBodyEllipsoid = 0,
+    eCrdnIntersectionSurfaceAtCentralBodyEllipsoid = 0
     # Intersection at altitude.
-    eCrdnIntersectionSurfaceAtAltitudeAboveEllipsoid = 1,
+    eCrdnIntersectionSurfaceAtAltitudeAboveEllipsoid = 1
     # Use terrain as intersection surface.
     eCrdnIntersectionSurfaceAtTerrain = 2
 
@@ -1341,9 +1341,9 @@ agcls.AgTypeNameMap["AgECrdnIntersectionSurface"] = AgECrdnIntersectionSurface
 class AgECrdnVectorScaledDimensionInheritance(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
     # Do not inherit dimension.
-    eCrdnVectorScaledDimensionInheritanceNone = 0,
+    eCrdnVectorScaledDimensionInheritanceNone = 0
     # Inherit dimension from scalar.
-    eCrdnVectorScaledDimensionInheritanceFromScalar = 1,
+    eCrdnVectorScaledDimensionInheritanceFromScalar = 1
     # Inherit dimension from vector.
     eCrdnVectorScaledDimensionInheritanceFromVector = 2
 

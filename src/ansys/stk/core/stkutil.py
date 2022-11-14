@@ -52,17 +52,17 @@ def _raise_uninitialized_error(*args):
 class AgEPositionType(IntEnum):
     """Facility/place/target position types."""
     # Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude.
-    eCartesian = 0x0,
+    eCartesian = 0x0
     # Cylindrical: position specified in terms of radius (polar), longitude (measured in degrees from -360.0 degrees to +360.0 degrees), and the Z component of the object's position vector.
-    eCylindrical = 0x1,
+    eCylindrical = 0x1
     # Geocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude.
-    eGeocentric = 0x2,
+    eGeocentric = 0x2
     # Geodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude.
-    eGeodetic = 0x3,
+    eGeodetic = 0x3
     # Spherical: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and radius (distance of the object from the center of the Earth).
-    eSpherical = 0x4,
+    eSpherical = 0x4
     # Planetocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude.
-    ePlanetocentric = 0x5,
+    ePlanetocentric = 0x5
     # Planetodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude.
     ePlanetodetic = 0x6
 
@@ -71,11 +71,11 @@ agcls.AgTypeNameMap["AgEPositionType"] = AgEPositionType
 class AgEEulerDirectionSequence(IntEnum):
     """Euler direction sequences."""
     # 12 sequence.
-    e12 = 0,
+    e12 = 0
     # 21 sequence.
-    e21 = 1,
+    e21 = 1
     # 31 sequence.
-    e31 = 2,
+    e31 = 2
     # 32 sequence.
     e32 = 3
 
@@ -84,11 +84,11 @@ agcls.AgTypeNameMap["AgEEulerDirectionSequence"] = AgEEulerDirectionSequence
 class AgEDirectionType(IntEnum):
     """Direction options for aligned and constrained vectors."""
     # Euler B and C angles.
-    eDirEuler = 0,
+    eDirEuler = 0
     # Pitch and Roll angles.
-    eDirPR = 1,
+    eDirPR = 1
     # Spherical elements: Right Ascension and Declination.
-    eDirRADec = 2,
+    eDirRADec = 2
     # Cartesian elements.
     eDirXYZ = 3
 
@@ -104,11 +104,11 @@ agcls.AgTypeNameMap["AgEPRSequence"] = AgEPRSequence
 class AgEOrientationType(IntEnum):
     """Orientation methods."""
     # AzEl (azimuth-elevation) method.
-    eAzEl = 0,
+    eAzEl = 0
     # Euler angles method.
-    eEulerAngles = 1,
+    eEulerAngles = 1
     # Quaternion method.
-    eQuaternion = 2,
+    eQuaternion = 2
     # YPR (yaw-pitch-roll) method.
     eYPRAngles = 3
 
@@ -117,7 +117,7 @@ agcls.AgTypeNameMap["AgEOrientationType"] = AgEOrientationType
 class AgEAzElAboutBoresight(IntEnum):
     """About Boresight options for AzEl orientation method."""
     # Hold: rotation about the Y axis followed by rotation about the new X-axis.
-    eAzElAboutBoresightHold = 0,
+    eAzElAboutBoresightHold = 0
     # Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle.
     eAzElAboutBoresightRotate = 1
 
@@ -126,27 +126,27 @@ agcls.AgTypeNameMap["AgEAzElAboutBoresight"] = AgEAzElAboutBoresight
 class AgEEulerOrientationSequence(IntEnum):
     """Euler rotation sequence options:"""
     # 121 rotation.
-    e121 = 0,
+    e121 = 0
     # 123 rotation.
-    e123 = 1,
+    e123 = 1
     # 131 rotation.
-    e131 = 2,
+    e131 = 2
     # 132 rotation.
-    e132 = 3,
+    e132 = 3
     # 212 rotation.
-    e212 = 4,
+    e212 = 4
     # 213 rotation.
-    e213 = 5,
+    e213 = 5
     # 231 rotation.
-    e231 = 6,
+    e231 = 6
     # 232 rotation.
-    e232 = 7,
+    e232 = 7
     # 312 rotation.
-    e312 = 8,
+    e312 = 8
     # 313 rotation.
-    e313 = 9,
+    e313 = 9
     # 321 rotation.
-    e321 = 10,
+    e321 = 10
     # 323 rotation.
     e323 = 11
 
@@ -155,15 +155,15 @@ agcls.AgTypeNameMap["AgEEulerOrientationSequence"] = AgEEulerOrientationSequence
 class AgEYPRAnglesSequence(IntEnum):
     """Yaw-Pitch-Roll (YPR) sequences."""
     # PRY sequence.
-    ePRY = 0,
+    ePRY = 0
     # PYR sequence.
-    ePYR = 1,
+    ePYR = 1
     # RPY sequence.
-    eRPY = 2,
+    eRPY = 2
     # RYP sequence.
-    eRYP = 3,
+    eRYP = 3
     # YPR sequence.
-    eYPR = 4,
+    eYPR = 4
     # YRP sequence.
     eYRP = 5
 
@@ -172,17 +172,17 @@ agcls.AgTypeNameMap["AgEYPRAnglesSequence"] = AgEYPRAnglesSequence
 class AgEOrbitStateType(IntEnum):
     """Coordinate types used in specifying orbit state."""
     # Cartesian coordinate type.
-    eOrbitStateCartesian = 0,
+    eOrbitStateCartesian = 0
     # Classical (Keplerian) coordinate type.
-    eOrbitStateClassical = 1,
+    eOrbitStateClassical = 1
     # Equinoctial coordinate type.
-    eOrbitStateEquinoctial = 2,
+    eOrbitStateEquinoctial = 2
     # Delaunay variables coordinate type.
-    eOrbitStateDelaunay = 3,
+    eOrbitStateDelaunay = 3
     # Spherical coordinate type.
-    eOrbitStateSpherical = 4,
+    eOrbitStateSpherical = 4
     # Mixed spherical coordinate type.
-    eOrbitStateMixedSpherical = 5,
+    eOrbitStateMixedSpherical = 5
     # Geodetic coordinate type.
     eOrbitStateGeodetic = 6
 
@@ -191,51 +191,51 @@ agcls.AgTypeNameMap["AgEOrbitStateType"] = AgEOrbitStateType
 class AgECoordinateSystem(IntEnum):
     """Earth-centered coordinate systems for defining certain propagators."""
     # Represents coordinate system not supported by the Object Model
-    eCoordinateSystemUnknown = -1,
+    eCoordinateSystemUnknown = -1
     # Alignment at Epoch: an inertial system coincident with ECF at the Coord Epoch. Often used to specify launch trajectories.
-    eCoordinateSystemAlignmentAtEpoch = 0,
+    eCoordinateSystemAlignmentAtEpoch = 0
     # B1950: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the beginning of the Besselian year 1950 and corresponds to 31 December 1949 22:09:07.2 or JD 2433282.423.
-    eCoordinateSystemB1950 = 1,
+    eCoordinateSystemB1950 = 1
     # Fixed: X is fixed at 0 deg longitude, Y is fixed at 90 deg longitude, and Z is directed toward the north pole.
-    eCoordinateSystemFixed = 2,
+    eCoordinateSystemFixed = 2
     # J2000: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth on 1 Jan 2000 at 12:00:00.00 TDB, which corresponds to JD 2451545.0 TDB.
-    eCoordinateSystemJ2000 = 3,
+    eCoordinateSystemJ2000 = 3
     # Mean of Date: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Orbit Epoch.
-    eCoordinateSystemMeanOfDate = 4,
+    eCoordinateSystemMeanOfDate = 4
     # Mean of Epoch: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Coord Epoch.
-    eCoordinateSystemMeanOfEpoch = 5,
+    eCoordinateSystemMeanOfEpoch = 5
     # TEME of Date: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch.
-    eCoordinateSystemTEMEOfDate = 6,
+    eCoordinateSystemTEMEOfDate = 6
     # TEME of Epoch: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch.
-    eCoordinateSystemTEMEOfEpoch = 7,
+    eCoordinateSystemTEMEOfEpoch = 7
     # True of Date: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch.
-    eCoordinateSystemTrueOfDate = 8,
+    eCoordinateSystemTrueOfDate = 8
     # True of Epoch: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch.
-    eCoordinateSystemTrueOfEpoch = 9,
+    eCoordinateSystemTrueOfEpoch = 9
     # True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties.
-    eCoordinateSystemTrueOfRefDate = 10,
+    eCoordinateSystemTrueOfRefDate = 10
     # ICRF: International Celestial Reference Frame.
-    eCoordinateSystemICRF = 11,
+    eCoordinateSystemICRF = 11
     # Mean Earth
-    eCoordinateSystemMeanEarth = 13,
+    eCoordinateSystemMeanEarth = 13
     # uses an analytic formula not modeling lunar libration
-    eCoordinateSystemFixedNoLibration = 14,
+    eCoordinateSystemFixedNoLibration = 14
     # Fixed_IAU2003
-    eCoordinateSystemFixedIAU2003 = 15,
+    eCoordinateSystemFixedIAU2003 = 15
     # PrincipalAxes_421
-    eCoordinateSystemPrincipalAxes421 = 16,
+    eCoordinateSystemPrincipalAxes421 = 16
     # PrincipalAxes_403
-    eCoordinateSystemPrincipalAxes403 = 17,
+    eCoordinateSystemPrincipalAxes403 = 17
     # Inertial
-    eCoordinateSystemInertial = 18,
+    eCoordinateSystemInertial = 18
     # The mean ecliptic system evaluated at the J2000 epoch. The mean ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the mean obliquity defined using FK5 IAU76 theory.
-    eCoordinateSystemJ2000Ecliptic = 19,
+    eCoordinateSystemJ2000Ecliptic = 19
     # The true ecliptic system, evaluated at each given time. The true ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the true obliquity defined using FK5 IAU76 theory.
-    eCoordinateSystemTrueEclipticOfDate = 21,
+    eCoordinateSystemTrueEclipticOfDate = 21
     # PrincipalAxes_430
-    eCoordinateSystemPrincipalAxes430 = 22,
+    eCoordinateSystemPrincipalAxes430 = 22
     # TrueOfDateRotating: Like the Fixed system, but ignores pole wander. The XY plane is the same as the XY plane of the TrueOfDate system, and the system rotates about the TrueOfDate Z-axis.
-    eCoordinateSystemTrueOfDateRotating = 23,
+    eCoordinateSystemTrueOfDateRotating = 23
     # EclipticJ2000ICRF: An ecliptic system that is a fixed offset of the ICRF system, found by rotating the ICRF system about its X-axis by the mean obliquity at the J2000 epoch (i.e., 84381.448 arcSecs). The ecliptic plane is the XY-plane of this system.
     eCoordinateSystemEclipticJ2000ICRF = 24
 
@@ -244,13 +244,13 @@ agcls.AgTypeNameMap["AgECoordinateSystem"] = AgECoordinateSystem
 class AgELogMsgType(IntEnum):
     """Log message types."""
     # Debugging message.
-    eLogMsgDebug = 0,
+    eLogMsgDebug = 0
     # Informational message.
-    eLogMsgInfo = 1,
+    eLogMsgInfo = 1
     # Informational message.
-    eLogMsgForceInfo = 2,
+    eLogMsgForceInfo = 2
     # Warning message.
-    eLogMsgWarning = 3,
+    eLogMsgWarning = 3
     # Alarm message.
     eLogMsgAlarm = 4
 
@@ -259,11 +259,11 @@ agcls.AgTypeNameMap["AgELogMsgType"] = AgELogMsgType
 class AgELogMsgDispID(IntEnum):
     """Log message destination options."""
     # STK displays the message in all the log destination.
-    eLogMsgDispAll = -1,
+    eLogMsgDispAll = -1
     # STK displays the message in the default log destination.
-    eLogMsgDispDefault = 0,
+    eLogMsgDispDefault = 0
     # STK displays the message in the message window.
-    eLogMsgDispMsgWin = 1,
+    eLogMsgDispMsgWin = 1
     # STK displays the message in the status bar.
     eLogMsgDispStatusBar = 2
 
@@ -272,39 +272,39 @@ agcls.AgTypeNameMap["AgELogMsgDispID"] = AgELogMsgDispID
 class AgELineStyle(IntEnum):
     """Line Style"""
     # Specifies a solid line.
-    eSolid = 0,
+    eSolid = 0
     # Specifies a dashed line.
-    eDashed = 1,
+    eDashed = 1
     # Specifies a dotted line.
-    eDotted = 2,
+    eDotted = 2
     # Dot-dashed line.
-    eDotDashed = 3,
+    eDotDashed = 3
     # Specifies a long dashed line.
-    eLongDashed = 4,
+    eLongDashed = 4
     # Specifies an alternating dash-dot-dot line.
-    eDashDotDotted = 5,
+    eDashDotDotted = 5
     # Specifies a user configurable medium dashed line.
-    eMDash = 6,
+    eMDash = 6
     # Specifies a user configurable long dashed line.
-    eLDash = 7,
+    eLDash = 7
     # Specifies a user configurable small dash-dotted line.
-    eSDashDot = 8,
+    eSDashDot = 8
     # Specifies a user configurable medium dash-dotted line.
-    eMDashDot = 9,
+    eMDashDot = 9
     # Specifies a user configurable long dash-dotted line.
-    eLDashDot = 10,
+    eLDashDot = 10
     # Specifies a user configurable medium followed by small dashed line.
-    eMSDash = 11,
+    eMSDash = 11
     # Specifies a user configurable long followed by small dashed line.
-    eLSDash = 12,
+    eLSDash = 12
     # Specifies a user configurable long followed by medium dashed line.
-    eLMDash = 13,
+    eLMDash = 13
     # Specifies a user configurable medium followed by small dashed line.
-    eLMSDash = 14,
+    eLMSDash = 14
     # Specifies a dotted line.
-    eDot = 15,
+    eDot = 15
     # Specifies a long dashed line.
-    eLongDash = 16,
+    eLongDash = 16
     # Specifies an alternating dash-dot line.
     eSDash = 17
 
@@ -313,11 +313,11 @@ agcls.AgTypeNameMap["AgELineStyle"] = AgELineStyle
 class AgEExecMultiCmdResultAction(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
     # Continue executing the remaining commands in the command batch.
-    eContinueOnError = 0,
+    eContinueOnError = 0
     # Terminate the execution of the command batch but do not throw an exception.
-    eStopOnError = 1,
+    eStopOnError = 1
     # Terminate the execution of the command batch and throw an exception.
-    eExceptionOnError = 2,
+    eExceptionOnError = 2
     # Ignore results returned by individual commands. The option must be used in combination with other flags.
     eIgnoreExecCmdResult = 0x8000
 
@@ -326,19 +326,19 @@ agcls.AgTypeNameMap["AgEExecMultiCmdResultAction"] = AgEExecMultiCmdResultAction
 class AgEFillStyle(IntEnum):
     """Fill Style"""
     # Specifies a solid fill style.
-    eFillStyleSolid = 0,
+    eFillStyleSolid = 0
     # Specifies a horizontally striped fill style.
-    eFillStyleHorizontalStripe = 1,
+    eFillStyleHorizontalStripe = 1
     # Specifies a diagonally striped fill style.
-    eFillStyleDiagonalStripe1 = 2,
+    eFillStyleDiagonalStripe1 = 2
     # Specifies a diagonally striped fill style.
-    eFillStyleDiagonalStripe2 = 3,
+    eFillStyleDiagonalStripe2 = 3
     # Specifies a hatched fill style.
-    eFillStyleHatch = 4,
+    eFillStyleHatch = 4
     # Specifies a diagonally hatched fill style.
-    eFillStyleDiagonalHatch = 5,
+    eFillStyleDiagonalHatch = 5
     # Specifies a special fill style where every other pixel is drawn.
-    eFillStyleScreen = 6,
+    eFillStyleScreen = 6
     # Specifies a vertically striped fill style.
     eFillStyleVerticalStripe = 7
 
@@ -347,17 +347,17 @@ agcls.AgTypeNameMap["AgEFillStyle"] = AgEFillStyle
 class AgEPropertyInfoValueType(IntEnum):
     """The enumeration used to determine what type of property is being used."""
     # Property is of type int.
-    ePropertyInfoValueTypeInt = 0,
+    ePropertyInfoValueTypeInt = 0
     # Property is of type real.
-    ePropertyInfoValueTypeReal = 1,
+    ePropertyInfoValueTypeReal = 1
     # Property is of type IAgQuantity.
-    ePropertyInfoValueTypeQuantity = 2,
+    ePropertyInfoValueTypeQuantity = 2
     # Property is of type IAgDate.
-    ePropertyInfoValueTypeDate = 3,
+    ePropertyInfoValueTypeDate = 3
     # Property is of type string.
-    ePropertyInfoValueTypeString = 4,
+    ePropertyInfoValueTypeString = 4
     # Property is of type bool.
-    ePropertyInfoValueTypeBool = 5,
+    ePropertyInfoValueTypeBool = 5
     # Property is an interface.
     ePropertyInfoValueTypeInterface = 6
 

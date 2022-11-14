@@ -445,4 +445,3 @@ def attach_to_stk_by_pid(pid:int) -> IUnknown:
     else:
         raise RuntimeError("Failed to retrieve the Running Object Table.")
        
- 

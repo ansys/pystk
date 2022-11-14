@@ -227,9 +227,9 @@ def _raise_uninitialized_error(*args):
 class AgEVAGraphOption(IntEnum):
     """Mode that the mcs will run in."""
     # Don't graph.
-    eVAGraphOptionNoGraph = 0,
+    eVAGraphOptionNoGraph = 0
     # Graph the difference.
-    eVAGraphOptionGraphDifference = 1,
+    eVAGraphOptionGraphDifference = 1
     # Graph the value.
     eVAGraphOptionGraphValue = 2
 
@@ -238,7 +238,7 @@ agcls.AgTypeNameMap["AgEVAGraphOption"] = AgEVAGraphOption
 class AgEVASmartRunMode(IntEnum):
     """Mode that the mcs will run in."""
     # Run Entire Mission Control Sequence
-    eVASmartRunModeEntireMCS = 0,
+    eVASmartRunModeEntireMCS = 0
     # Run Only Changed Segments
     eVASmartRunModeOnlyChanged = 1
 
@@ -247,7 +247,7 @@ agcls.AgTypeNameMap["AgEVASmartRunMode"] = AgEVASmartRunMode
 class AgEVAFormulation(IntEnum):
     """Equinoctial Formulation."""
     # Posigrade.
-    eVAFormulationPosigrade = 0,
+    eVAFormulationPosigrade = 0
     # Retrograde.
     eVAFormulationRetrograde = 1
 
@@ -256,11 +256,11 @@ agcls.AgTypeNameMap["AgEVAFormulation"] = AgEVAFormulation
 class AgEVALightingCondition(IntEnum):
     """The criteria of a Lighting stopping condition."""
     # The Enter Direct Sun criterion.
-    eVALightingCriterionEnterDirectSun = 0,
+    eVALightingCriterionEnterDirectSun = 0
     # The Exit Direct Sun criterion.
-    eVALightingCriterionExitDirectSun = 1,
+    eVALightingCriterionExitDirectSun = 1
     # The Enter Umbra criterion.
-    eVALightingCriterionEnterUmbra = 2,
+    eVALightingCriterionEnterUmbra = 2
     # The Exit Umbra criterion.
     eVALightingCriterionExitUmbra = 3
 
@@ -269,35 +269,35 @@ agcls.AgTypeNameMap["AgEVALightingCondition"] = AgEVALightingCondition
 class AgEVAProfile(IntEnum):
     """Type of profile."""
     # Plugin search profile.
-    eVAProfileSearchPlugin = 0,
+    eVAProfileSearchPlugin = 0
     # Differential corrector profile.
-    eVAProfileDifferentialCorrector = 2,
+    eVAProfileDifferentialCorrector = 2
     # Change maneuver type profile.
-    eVAProfileChangeManeuverType = 3,
+    eVAProfileChangeManeuverType = 3
     # Scripting tool profile.
-    eVAProfileScriptingTool = 4,
+    eVAProfileScriptingTool = 4
     # Change return segment profile.
-    eVAProfileChangeReturnSegment = 5,
+    eVAProfileChangeReturnSegment = 5
     # Change propagator profile.
-    eVAProfileChangePropagator = 6,
+    eVAProfileChangePropagator = 6
     # Change stop segment profile.
-    eVAProfileChangeStopSegment = 7,
+    eVAProfileChangeStopSegment = 7
     # Change stopping condition state profile.
-    eVAProfileChangeStoppingConditionState = 8,
+    eVAProfileChangeStoppingConditionState = 8
     # Change seed finite maneuver profile.
-    eVAProfileSeedFiniteManeuver = 9,
+    eVAProfileSeedFiniteManeuver = 9
     # Run once profile.
-    eVAProfileRunOnce = 10,
+    eVAProfileRunOnce = 10
     # SNOPT Optimizer profile.
-    eVAProfileSNOPTOptimizer = 11,
+    eVAProfileSNOPTOptimizer = 11
     # IPOPT Optimizer profile.
-    eVAProfileIPOPTOptimizer = 12,
+    eVAProfileIPOPTOptimizer = 12
     # Lambert profile.
-    eVAProfileLambertProfile = 13,
+    eVAProfileLambertProfile = 13
     # Lambert Search profile.
-    eVAProfileLambertSearchProfile = 14,
+    eVAProfileLambertSearchProfile = 14
     # Golden Section profile.
-    eVAProfileGoldenSection = 15,
+    eVAProfileGoldenSection = 15
     # grid Search profile.
     eVAProfileGridSearch = 16
 
@@ -306,9 +306,9 @@ agcls.AgTypeNameMap["AgEVAProfile"] = AgEVAProfile
 class AgEVAAccessCriterion(IntEnum):
     """The criteria of an Access stopping condition."""
     # The Gain Access criterion.
-    eVAAccessCriterionGain = 0,
+    eVAAccessCriterionGain = 0
     # The Lose Access criterion.
-    eVAAccessCriterionLose = 1,
+    eVAAccessCriterionLose = 1
     # The Either criterion.
     eVAAccessCriterionEither = 2
 
@@ -317,11 +317,11 @@ agcls.AgTypeNameMap["AgEVAAccessCriterion"] = AgEVAAccessCriterion
 class AgEVAEclipsingBodiesSource(IntEnum):
     """The source types of the eclipsing bodies list."""
     # The eclipsing bodies list of the propagator's central body.
-    eVAEclipsingBodiesPropagatorCb = 0,
+    eVAEclipsingBodiesPropagatorCb = 0
     # A user-defined eclipsing bodies list related to the propagator's central body.
-    eVAEclipsingBodiesUserDefined = 1,
+    eVAEclipsingBodiesUserDefined = 1
     # The eclipsing bodies list of the vehicle's central body.
-    eVAEclipsingBodiesVehicleCb = 2,
+    eVAEclipsingBodiesVehicleCb = 2
     # A list of eclipsing bodies from the vehicle's Basic Properties->Eclipse Bodies list.
     eVAEclipsingBodiesVehicleUserDefined = 3
 
@@ -330,9 +330,9 @@ agcls.AgTypeNameMap["AgEVAEclipsingBodiesSource"] = AgEVAEclipsingBodiesSource
 class AgEVACriterion(IntEnum):
     """The stopping condition criterion types."""
     # The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing.
-    eVACriterionCrossDecreasing = 0,
+    eVACriterionCrossDecreasing = 0
     # The Cross Either criterion - the stopping condition is satisfied when either of the above situations occurs.
-    eVACriterionCrossEither = 1,
+    eVACriterionCrossEither = 1
     # The Cross Increasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while increasing.
     eVACriterionCrossIncreasing = 2
 
@@ -341,7 +341,7 @@ agcls.AgTypeNameMap["AgEVACriterion"] = AgEVACriterion
 class AgEVACalcObjectReference(IntEnum):
     """The calculation object Reference Selection types."""
     # The Use Basic Reference type - uses the current satellite as the reference vehicle.
-    eVACalcObjectReferenceBasic = 0,
+    eVACalcObjectReferenceBasic = 0
     # The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle.
     eVACalcObjectReferenceSpecified = 1
 
@@ -350,7 +350,7 @@ agcls.AgTypeNameMap["AgEVACalcObjectReference"] = AgEVACalcObjectReference
 class AgEVACalcObjectCentralBodyReference(IntEnum):
     """The calculation object Central Body Reference Selection types."""
     # The Use Basic Reference type - uses the current satellite as the reference vehicle.
-    eVACalcObjectCentralBodyReferenceSpecified = 0,
+    eVACalcObjectCentralBodyReferenceSpecified = 0
     # The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle.
     eVACalcObjectCentralBodyReferenceParent = 1
 
@@ -359,11 +359,11 @@ agcls.AgTypeNameMap["AgEVACalcObjectCentralBodyReference"] = AgEVACalcObjectCent
 class AgEVACalcObjectElem(IntEnum):
     """The calculation object Element Types."""
     # Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2.
-    eVACalcObjectElemBrouwerLyddaneMeanLong = 0,
+    eVACalcObjectElemBrouwerLyddaneMeanLong = 0
     # Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term.
-    eVACalcObjectElemBrouwerLyddaneMeanShort = 1,
+    eVACalcObjectElemBrouwerLyddaneMeanShort = 1
     # Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term.
-    eVACalcObjectElemKozaiIzsakMean = 2,
+    eVACalcObjectElemKozaiIzsakMean = 2
     # Osculating.
     eVACalcObjectElemOsculating = 3
 
@@ -372,11 +372,11 @@ agcls.AgTypeNameMap["AgEVACalcObjectElem"] = AgEVACalcObjectElem
 class AgEVAProfileMode(IntEnum):
     """The Target Sequence profile modes."""
     # Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution.
-    eVAProfileModeIterate = 0,
+    eVAProfileModeIterate = 0
     # Not Active - the Target Sequence will ignore the profile when running.
-    eVAProfileModeNotActive = 1,
+    eVAProfileModeNotActive = 1
     # Run Once - the Target Sequence will run the profile once according to its current configuration.
-    eVAProfileModeRunOnce = 2,
+    eVAProfileModeRunOnce = 2
     # Active - the Target Sequence will apply the change that the profile passes when running.
     eVAProfileModeActive = 3
 
@@ -392,7 +392,7 @@ agcls.AgTypeNameMap["AgEVAControlStoppingCondition"] = AgEVAControlStoppingCondi
 class AgEVAState(IntEnum):
     """The Stop segment state types."""
     # Enabled - the segment stops the run of the MCS.
-    eVAStateEnabled = 0,
+    eVAStateEnabled = 0
     # Disabled - the MCS ignores this segment and continues to run.
     eVAStateDisabled = 1
 
@@ -401,9 +401,9 @@ agcls.AgTypeNameMap["AgEVAState"] = AgEVAState
 class AgEVAReturnControl(IntEnum):
     """The Return segment control types"""
     # Enable - returns control of the MCS run to the parent segment.
-    eVAReturnControlEnable = 0,
+    eVAReturnControlEnable = 0
     # Disable - the MCS ignores this segment and continues to run.
-    eVAReturnControlDisable = 1,
+    eVAReturnControlDisable = 1
     # Enable (except Profiles bypass)- functions as enabled except when run from a Target Sequence profile (e.g., a differential corrector), which will ignore it.
     eVAReturnControlEnableExceptProfilesBypass = 2
 
@@ -412,9 +412,9 @@ agcls.AgTypeNameMap["AgEVAReturnControl"] = AgEVAReturnControl
 class AgEVADrawPerturbation(IntEnum):
     """The Draw Perturbation types for a Differential Corrector profile."""
     # Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence.
-    eVADrawPerturbationSegmentColor = 0,
+    eVADrawPerturbationSegmentColor = 0
     # Don't Draw - perturbations will not be drawn, which may decrease the run time of the target sequence.
-    eVADrawPerturbationDontDraw = 1,
+    eVADrawPerturbationDontDraw = 1
     # Targeter Color - perturbations will be displayed in the trajectory color defined for the target sequence.
     eVADrawPerturbationTargeterColor = 2
 
@@ -423,9 +423,9 @@ agcls.AgTypeNameMap["AgEVADrawPerturbation"] = AgEVADrawPerturbation
 class AgEVADeriveCalcMethod(IntEnum):
     """The Derivative Calculation method types for a Differential Corrector profile."""
     # Forward Difference - (f(x + delta) - f(x))/ delta
-    eVADeriveCalcMethodForward = 0,
+    eVADeriveCalcMethodForward = 0
     # Central Difference - (f(x + delta) - f(x - delta)) / 2delta
-    eVADeriveCalcMethodCentral = 1,
+    eVADeriveCalcMethodCentral = 1
     # Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference.
     eVADeriveCalcMethodSigned = 2
 
@@ -434,7 +434,7 @@ agcls.AgTypeNameMap["AgEVADeriveCalcMethod"] = AgEVADeriveCalcMethod
 class AgEVAConvergenceCriteria(IntEnum):
     """The Convergence Criteria types for a Differential Corrector profile."""
     # Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence.
-    eVAConvergenceCriteriaEqualityConstraintWithinTolerance = 0,
+    eVAConvergenceCriteriaEqualityConstraintWithinTolerance = 0
     # Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence.
     eVAConvervenceCriteriaEitherEqualityConstraintsOrControlParams = 1
 
@@ -443,11 +443,11 @@ agcls.AgTypeNameMap["AgEVAConvergenceCriteria"] = AgEVAConvergenceCriteria
 class AgEVADCScalingMethod(IntEnum):
     """The Scaling Method types for a Differential Corrector profile."""
     # By initial value.
-    eVADCScalingMethodInitialValue = 0,
+    eVADCScalingMethodInitialValue = 0
     # By one (no scaling).
-    eVADCScalingMethodOneNoScaling = 1,
+    eVADCScalingMethodOneNoScaling = 1
     # By specified value.
-    eVADCScalingMethodSpecifiedValue = 2,
+    eVADCScalingMethodSpecifiedValue = 2
     # By tolerance.
     eVADCScalingMethodTolerance = 3
 
@@ -456,25 +456,25 @@ agcls.AgTypeNameMap["AgEVADCScalingMethod"] = AgEVADCScalingMethod
 class AgEVAControlUpdate(IntEnum):
     """Update segment properties that can be selected as control parameters for a Target Sequence."""
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAControlUpdateCdVal = 100,
+    eVAControlUpdateCdVal = 100
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlUpdateCrVal = 101,
+    eVAControlUpdateCrVal = 101
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
-    eVAControlUpdateDragAreaVal = 102,
+    eVAControlUpdateDragAreaVal = 102
     # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlUpdateDryMassVal = 103,
+    eVAControlUpdateDryMassVal = 103
     # Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3).
-    eVAControlUpdateFuelDensityVal = 104,
+    eVAControlUpdateFuelDensityVal = 104
     # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlUpdateFuelMassVal = 105,
+    eVAControlUpdateFuelMassVal = 105
     # The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared.
-    eVAControlUpdateRadiationPressureAreaVal = 106,
+    eVAControlUpdateRadiationPressureAreaVal = 106
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlUpdateRadiationPressureCoefficientVal = 107,
+    eVAControlUpdateRadiationPressureCoefficientVal = 107
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared.
-    eVAControlUpdateSRPAreaVal = 108,
+    eVAControlUpdateSRPAreaVal = 108
     # Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa).
-    eVAControlUpdateTankPressureVal = 109,
+    eVAControlUpdateTankPressureVal = 109
     # Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
     eVAControlUpdateTankTempVal = 110
 
@@ -483,39 +483,39 @@ agcls.AgTypeNameMap["AgEVAControlUpdate"] = AgEVAControlUpdate
 class AgEVAControlFollow(IntEnum):
     """Follow segment properties that can be selected as control parameters for a Target Sequence."""
     # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlFollowFuelMass = 200,
+    eVAControlFollowFuelMass = 200
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAControlFollowCd = 201,
+    eVAControlFollowCd = 201
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlFollowCr = 202,
+    eVAControlFollowCr = 202
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
-    eVAControlFollowDragArea = 203,
+    eVAControlFollowDragArea = 203
     # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlFollowDryMass = 204,
+    eVAControlFollowDryMass = 204
     # Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3).
-    eVAControlFollowFuelDensity = 205,
+    eVAControlFollowFuelDensity = 205
     # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
-    eVAControlFollowK1 = 206,
+    eVAControlFollowK1 = 206
     # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value.
-    eVAControlFollowK2 = 207,
+    eVAControlFollowK2 = 207
     # The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared.
-    eVAControlFollowRadiationPressureArea = 208,
+    eVAControlFollowRadiationPressureArea = 208
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlFollowCk = 209,
+    eVAControlFollowCk = 209
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared.
-    eVAControlFollowSRPArea = 210,
+    eVAControlFollowSRPArea = 210
     # Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa).
-    eVAControlFollowTankPressure = 211,
+    eVAControlFollowTankPressure = 211
     # Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
-    eVAControlFollowTankTemp = 212,
+    eVAControlFollowTankTemp = 212
     # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlFollowMaxFuelMass = 213,
+    eVAControlFollowMaxFuelMass = 213
     # Tank Volume - the volume of the fuel tank. Enter a value in the selected distance unit cubed (e.g. m^3). The minimum value is 1e-019 m^3.
-    eVAControlFollowTankVolume = 214,
+    eVAControlFollowTankVolume = 214
     # X Offset - the distance that the spacecraft will be offset from the leader's body frame along the X axis.
-    eVAControlFollowXOffset = 215,
+    eVAControlFollowXOffset = 215
     # Y Offset - the distance that the spacecraft will be offset from the leader's body frame along the Y axis.
-    eVAControlFollowYOffset = 216,
+    eVAControlFollowYOffset = 216
     # Z Offset - the distance that the spacecraft will be offset from the leader's body frame along the Z axis.
     eVAControlFollowZOffset = 217
 
@@ -524,175 +524,175 @@ agcls.AgTypeNameMap["AgEVAControlFollow"] = AgEVAControlFollow
 class AgEVAControlInitState(IntEnum):
     """Initial State segment properties that can be selected as control parameters for a Target Sequence."""
     # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlInitStateFuelMass = 300,
+    eVAControlInitStateFuelMass = 300
     # Vx Component - the X component of the spacecraft velocity vector.
-    eVAControlInitStateCartesianVx = 301,
+    eVAControlInitStateCartesianVx = 301
     # Vy Component - the Y component of the spacecraft velocity vector.
-    eVAControlInitStateCartesianVy = 302,
+    eVAControlInitStateCartesianVy = 302
     # Vz Component - the Z component of the spacecraft velocity vector.
-    eVAControlInitStateCartesianVz = 303,
+    eVAControlInitStateCartesianVz = 303
     # X Component - the X component of the spacecraft position vector.
-    eVAControlInitStateCartesianX = 304,
+    eVAControlInitStateCartesianX = 304
     # Y Component - the Y component of the spacecraft position vector.
-    eVAControlInitStateCartesianY = 305,
+    eVAControlInitStateCartesianY = 305
     # Z Component - the Z component of the spacecraft position vector.
-    eVAControlInitStateCartesianZ = 306,
+    eVAControlInitStateCartesianZ = 306
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAControlInitStateCd = 307,
+    eVAControlInitStateCd = 307
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlInitStateCr = 308,
+    eVAControlInitStateCr = 308
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
-    eVAControlInitStateDragArea = 309,
+    eVAControlInitStateDragArea = 309
     # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlInitStateDryMass = 310,
+    eVAControlInitStateDryMass = 310
     # Epoch - the orbit epoch.
-    eVAControlInitStateEpoch = 311,
+    eVAControlInitStateEpoch = 311
     # Fuel Density - the density of the fuel tank.
-    eVAControlInitStateFuelDensity = 312,
+    eVAControlInitStateFuelDensity = 312
     # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
-    eVAControlInitStateK1 = 313,
+    eVAControlInitStateK1 = 313
     # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value.
-    eVAControlInitStateK2 = 314,
+    eVAControlInitStateK2 = 314
     # Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless.
-    eVAControlInitStateKeplerianEcc = 315,
+    eVAControlInitStateKeplerianEcc = 315
     # Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit.
-    eVAControlInitStateKeplerianInc = 316,
+    eVAControlInitStateKeplerianInc = 316
     # Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction.
-    eVAControlInitStateKeplerianRAAN = 317,
+    eVAControlInitStateKeplerianRAAN = 317
     # Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse.
-    eVAControlInitStateKeplerianSMA = 318,
+    eVAControlInitStateKeplerianSMA = 318
     # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
-    eVAControlInitStateKeplerianTA = 319,
+    eVAControlInitStateKeplerianTA = 319
     # Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit.
-    eVAControlInitStateKeplerianW = 320,
+    eVAControlInitStateKeplerianW = 320
     # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
-    eVAControlInitStateRadiationPressureArea = 327,
+    eVAControlInitStateRadiationPressureArea = 327
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlInitStateCk = 328,
+    eVAControlInitStateCk = 328
     # Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north.
-    eVAControlInitStateSphericalAz = 329,
+    eVAControlInitStateSphericalAz = 329
     # Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector.
-    eVAControlInitStateSphericalDec = 330,
+    eVAControlInitStateSphericalDec = 330
     # Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle).
-    eVAControlInitStateSphericalHorizFPA = 331,
+    eVAControlInitStateSphericalHorizFPA = 331
     # Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector.
-    eVAControlInitStateSphericalRA = 332,
+    eVAControlInitStateSphericalRA = 332
     # Radius Magnitude - the magnitude of the spacecraft position vector.
-    eVAControlInitStateSphericalRMag = 333,
+    eVAControlInitStateSphericalRMag = 333
     # Velocity Magnitude - the magnitude of the spacecraft velocity vector.
-    eVAControlInitStateSphericalVMag = 334,
+    eVAControlInitStateSphericalVMag = 334
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
-    eVAControlInitStateSRPArea = 335,
+    eVAControlInitStateSRPArea = 335
     # Tank Pressure - the fuel tank pressure.
-    eVAControlInitStateTankPressure = 336,
+    eVAControlInitStateTankPressure = 336
     # Tank Temperature - the temperature of the fuel tank.
-    eVAControlInitStateTankTemp = 337,
+    eVAControlInitStateTankTemp = 337
     # Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system.
-    eVAControlInitStateTargetVecInAsympDec = 338,
+    eVAControlInitStateTargetVecInAsympDec = 338
     # Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system.
-    eVAControlInitStateTargetVecInAsympRA = 339,
+    eVAControlInitStateTargetVecInAsympRA = 339
     # Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis.
-    eVAControlInitStateTargetVecInVelAzAtPeriapsis = 340,
+    eVAControlInitStateTargetVecInVelAzAtPeriapsis = 340
     # C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis.
-    eVAControlInitStateTargetVecInC3 = 341,
+    eVAControlInitStateTargetVecInC3 = 341
     # Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit.
-    eVAControlInitStateTargetVecInRadOfPeriapsis = 342,
+    eVAControlInitStateTargetVecInRadOfPeriapsis = 342
     # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
-    eVAControlInitStateTargetVecInTrueAnomaly = 343,
+    eVAControlInitStateTargetVecInTrueAnomaly = 343
     # Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system.
-    eVAControlInitStateTargetVecOutAsympDec = 344,
+    eVAControlInitStateTargetVecOutAsympDec = 344
     # Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system.
-    eVAControlInitStateTargetVecOutAsympRA = 345,
+    eVAControlInitStateTargetVecOutAsympRA = 345
     # Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis.
-    eVAControlInitStateTargetVecOutVelAzAtPeriapsis = 346,
+    eVAControlInitStateTargetVecOutVelAzAtPeriapsis = 346
     # C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis.
-    eVAControlInitStateTargetVecOutC3 = 347,
+    eVAControlInitStateTargetVecOutC3 = 347
     # Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit.
-    eVAControlInitStateTargetVecOutRadOfPeriapsis = 348,
+    eVAControlInitStateTargetVecOutRadOfPeriapsis = 348
     # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
-    eVAControlInitStateTargetVecOutTrueAnomaly = 349,
+    eVAControlInitStateTargetVecOutTrueAnomaly = 349
     # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences.
-    eVAControlInitStateMaxFuelMass = 350,
+    eVAControlInitStateMaxFuelMass = 350
     # Tank Volume - the volume of the fuel tank.
-    eVAControlInitStateTankVolume = 351,
+    eVAControlInitStateTankVolume = 351
     # G - Magnitude of orbital angular momentum, sqrt(GM * p).
-    eVAControlInitStateDelaunayG = 352,
+    eVAControlInitStateDelaunayG = 352
     # H - Z component of orbital angular momentum, G cos(inc).
-    eVAControlInitStateDelaunayH = 353,
+    eVAControlInitStateDelaunayH = 353
     # Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis.
-    eVAControlInitStateDelaunayInc = 354,
+    eVAControlInitStateDelaunayInc = 354
     # L - Related to two-body orbital energy, sqrt(GM * a)
-    eVAControlInitStateDelaunayL = 355,
+    eVAControlInitStateDelaunayL = 355
     # Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate.
-    eVAControlInitStateDelaunayMeanAnomaly = 356,
+    eVAControlInitStateDelaunayMeanAnomaly = 356
     # Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane.
-    eVAControlInitStateDelaunayRAAN = 357,
+    eVAControlInitStateDelaunayRAAN = 357
     # Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees
-    eVAControlInitStateDelaunaySemiLatusRectum = 358,
+    eVAControlInitStateDelaunaySemiLatusRectum = 358
     # Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse.
-    eVAControlInitStateDelaunaySMA = 359,
+    eVAControlInitStateDelaunaySMA = 359
     # Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane.
-    eVAControlInitStateDelaunayW = 360,
+    eVAControlInitStateDelaunayW = 360
     # H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)
-    eVAControlInitStateEquinoctialH = 361,
+    eVAControlInitStateEquinoctialH = 361
     # K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)
-    eVAControlInitStateEquinoctialK = 362,
+    eVAControlInitStateEquinoctialK = 362
     # Mean Longitude - RAAN + w + M
-    eVAControlInitStateEquinoctialMeanLongitude = 363,
+    eVAControlInitStateEquinoctialMeanLongitude = 363
     # Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion.
-    eVAControlInitStateEquinoctialMeanMotion = 364,
+    eVAControlInitStateEquinoctialMeanMotion = 364
     # P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)
-    eVAControlInitStateEquinoctialP = 365,
+    eVAControlInitStateEquinoctialP = 365
     # Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)
-    eVAControlInitStateEquinoctialQ = 366,
+    eVAControlInitStateEquinoctialQ = 366
     # Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse.
-    eVAControlInitStateEquinoctialSMA = 367,
+    eVAControlInitStateEquinoctialSMA = 367
     # Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid.
-    eVAControlInitStateMixedSphericalAltitude = 368,
+    eVAControlInitStateMixedSphericalAltitude = 368
     # Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction.
-    eVAControlInitStateMixedSphericalAzimuth = 369,
+    eVAControlInitStateMixedSphericalAzimuth = 369
     # Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector.
-    eVAControlInitStateMixedSphericalHorizFPA = 370,
+    eVAControlInitStateMixedSphericalHorizFPA = 370
     # Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane.
-    eVAControlInitStateMixedSphericalLatitude = 371,
+    eVAControlInitStateMixedSphericalLatitude = 371
     # Longitude
-    eVAControlInitStateMixedSphericalLongitude = 372,
+    eVAControlInitStateMixedSphericalLongitude = 372
     # Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector.
-    eVAControlInitStateMixedSphericalVerticalFPA = 373,
+    eVAControlInitStateMixedSphericalVerticalFPA = 373
     # Velocity Magnitude - The magnitude of the inertial velocity vector.
-    eVAControlInitStateMixedSphericalVMag = 374,
+    eVAControlInitStateMixedSphericalVMag = 374
     # Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector.
-    eVAControlInitStateSphericalVerticalFPA = 375,
+    eVAControlInitStateSphericalVerticalFPA = 375
     # Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit.
-    eVAControlInitStateKeplerianApoapsisAltShape = 376,
+    eVAControlInitStateKeplerianApoapsisAltShape = 376
     # Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit.
-    eVAControlInitStateKeplerianApoapsisAltSize = 377,
+    eVAControlInitStateKeplerianApoapsisAltSize = 377
     # Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit.
-    eVAControlInitStateKeplerianApoapsisRadShape = 378,
+    eVAControlInitStateKeplerianApoapsisRadShape = 378
     # Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit.
-    eVAControlInitStateKeplerianApoapsisRadSize = 379,
+    eVAControlInitStateKeplerianApoapsisRadSize = 379
     # Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee.
-    eVAControlInitStateKeplerianArgLat = 380,
+    eVAControlInitStateKeplerianArgLat = 380
     # Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse.
-    eVAControlInitStateKeplerianEccAnomaly = 381,
+    eVAControlInitStateKeplerianEccAnomaly = 381
     # Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion.
-    eVAControlInitStateKeplerianLAN = 382,
+    eVAControlInitStateKeplerianLAN = 382
     # Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate.
-    eVAControlInitStateKeplerianMeanAnomaly = 383,
+    eVAControlInitStateKeplerianMeanAnomaly = 383
     # Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion.
-    eVAControlInitStateKeplerianMeanMotion = 384,
+    eVAControlInitStateKeplerianMeanMotion = 384
     # Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
-    eVAControlInitStateKeplerianPeriapsisAltShape = 385,
+    eVAControlInitStateKeplerianPeriapsisAltShape = 385
     # Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
-    eVAControlInitStateKeplerianPeriapsisAltSize = 386,
+    eVAControlInitStateKeplerianPeriapsisAltSize = 386
     # Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit.
-    eVAControlInitStateKeplerianPeriapsisRadShape = 387,
+    eVAControlInitStateKeplerianPeriapsisRadShape = 387
     # Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
-    eVAControlInitStateKeplerianPeriapsisRadSize = 388,
+    eVAControlInitStateKeplerianPeriapsisRadSize = 388
     # Period - The duration of one orbit, based on assumed two-body motion.
-    eVAControlInitStateKeplerianPeriod = 389,
+    eVAControlInitStateKeplerianPeriod = 389
     # Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion.
-    eVAControlInitStateKeplerianTimePastAN = 390,
+    eVAControlInitStateKeplerianTimePastAN = 390
     # Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion.
     eVAControlInitStateKeplerianTimePastPeriapsis = 391
 
@@ -701,73 +701,73 @@ agcls.AgTypeNameMap["AgEVAControlInitState"] = AgEVAControlInitState
 class AgEVAControlManeuver(IntEnum):
     """Maneuver segment properties that can be selected as control parameters for a Target Sequence."""
     # The Cartesian X component of the thrust vector.
-    eVAControlManeuverFiniteCartesianX = 400,
+    eVAControlManeuverFiniteCartesianX = 400
     # The Cartesian Y component of the thrust vector.
-    eVAControlManeuverFiniteCartesianY = 401,
+    eVAControlManeuverFiniteCartesianY = 401
     # The Cartesian Z component of the thrust vector.
-    eVAControlManeuverFiniteCartesianZ = 402,
+    eVAControlManeuverFiniteCartesianZ = 402
     # The Euler A (Phi) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverFiniteEulerAngles1 = 403,
+    eVAControlManeuverFiniteEulerAngles1 = 403
     # The Euler B (Theta) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverFiniteEulerAngles2 = 404,
+    eVAControlManeuverFiniteEulerAngles2 = 404
     # The Euler C (Psi) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverFiniteEulerAngles3 = 405,
+    eVAControlManeuverFiniteEulerAngles3 = 405
     # The spherical azimuth component of the thrust vector.
-    eVAControlManeuverFiniteSphericalAz = 406,
+    eVAControlManeuverFiniteSphericalAz = 406
     # The spherical elevation component of the thrust vector.
-    eVAControlManeuverFiniteSphericalElev = 407,
+    eVAControlManeuverFiniteSphericalElev = 407
     # The Cartesian X component of the thrust vector.
-    eVAControlManeuverImpulsiveCartesianX = 408,
+    eVAControlManeuverImpulsiveCartesianX = 408
     # The Cartesian Y component of the thrust vector.
-    eVAControlManeuverImpulsiveCartesianY = 409,
+    eVAControlManeuverImpulsiveCartesianY = 409
     # The Cartesian Z component of the thrust vector.
-    eVAControlManeuverImpulsiveCartesianZ = 410,
+    eVAControlManeuverImpulsiveCartesianZ = 410
     # The Euler A (Phi) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverImpulsiveEulerAngles1 = 411,
+    eVAControlManeuverImpulsiveEulerAngles1 = 411
     # The Euler B (Theta) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverImpulsiveEulerAngles2 = 412,
+    eVAControlManeuverImpulsiveEulerAngles2 = 412
     # The Euler C (Psi) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverImpulsiveEulerAngles3 = 413,
+    eVAControlManeuverImpulsiveEulerAngles3 = 413
     # The spherical azimuth component of the thrust vector.
-    eVAControlManeuverImpulsiveSphericalAz = 414,
+    eVAControlManeuverImpulsiveSphericalAz = 414
     # The spherical elevation component of the thrust vector.
-    eVAControlManeuverImpulsiveSphericalElev = 415,
+    eVAControlManeuverImpulsiveSphericalElev = 415
     # The spherical magnitude component of the thrust vector.
-    eVAControlManeuverImpulsiveSphericalMag = 416,
+    eVAControlManeuverImpulsiveSphericalMag = 416
     # The burn center bias of the thrust.
-    eVAControlManeuverFiniteBurnCenterBias = 417,
+    eVAControlManeuverFiniteBurnCenterBias = 417
     # The thrust efficiency value.
-    eVAControlManeuverFiniteThrustEfficiency = 418,
+    eVAControlManeuverFiniteThrustEfficiency = 418
     # The time varying azimuth polynomial constant term.
-    eVAControlManeuverFiniteAz0 = 419,
+    eVAControlManeuverFiniteAz0 = 419
     # The time varying azimuth polynomial linear term.
-    eVAControlManeuverFiniteAz1 = 420,
+    eVAControlManeuverFiniteAz1 = 420
     # The time varying azimuth polynomial quadratic term.
-    eVAControlManeuverFiniteAz2 = 421,
+    eVAControlManeuverFiniteAz2 = 421
     # The time varying azimuth polynomial cubic term.
-    eVAControlManeuverFiniteAz3 = 422,
+    eVAControlManeuverFiniteAz3 = 422
     # The time varying azimuth polynomial quartic term.
-    eVAControlManeuverFiniteAz4 = 423,
+    eVAControlManeuverFiniteAz4 = 423
     # The time varying azimuth sine amplitude term.
-    eVAControlManeuverFiniteAzA = 424,
+    eVAControlManeuverFiniteAzA = 424
     # The time varying azimuth sine frequency term.
-    eVAControlManeuverFiniteAzF = 425,
+    eVAControlManeuverFiniteAzF = 425
     # The time varying azimuth sine phase term.
-    eVAControlManeuverFiniteAzP = 426,
+    eVAControlManeuverFiniteAzP = 426
     # The time varying elevation polynomial constant term.
-    eVAControlManeuverFiniteEl0 = 427,
+    eVAControlManeuverFiniteEl0 = 427
     # The time varying elevation polynomial linear term.
-    eVAControlManeuverFiniteEl1 = 428,
+    eVAControlManeuverFiniteEl1 = 428
     # The time varying elevation polynomial quadratic term.
-    eVAControlManeuverFiniteEl2 = 429,
+    eVAControlManeuverFiniteEl2 = 429
     # The time varying elevation polynomial cubic term.
-    eVAControlManeuverFiniteEl3 = 430,
+    eVAControlManeuverFiniteEl3 = 430
     # The time varying elevation polynomial quartic term.
-    eVAControlManeuverFiniteEl4 = 431,
+    eVAControlManeuverFiniteEl4 = 431
     # The time varying elevation sine amplitude term.
-    eVAControlManeuverFiniteElA = 432,
+    eVAControlManeuverFiniteElA = 432
     # The time varying elevation sine frequency term.
-    eVAControlManeuverFiniteElF = 433,
+    eVAControlManeuverFiniteElF = 433
     # The time varying elevation sine phase term.
     eVAControlManeuverFiniteElP = 434
 
@@ -776,81 +776,81 @@ agcls.AgTypeNameMap["AgEVAControlManeuver"] = AgEVAControlManeuver
 class AgEVAControlLaunch(IntEnum):
     """Launch segment properties that can be selected as control parameters for a Target Sequence."""
     # The date and time of the launch.
-    eVAControlLaunchEpoch = 500,
+    eVAControlLaunchEpoch = 500
     # The geodetic latitude of the launch location.
-    eVAControlLaunchGeodeticLat = 501,
+    eVAControlLaunchGeodeticLat = 501
     # The geodetic longitude of the launch location.
-    eVAControlLaunchGeodeticLon = 502,
+    eVAControlLaunchGeodeticLon = 502
     # The geodetic altitude of the launch location.
-    eVAControlLaunchGeodeticAlt = 503,
+    eVAControlLaunchGeodeticAlt = 503
     # The geocentric latitude of the launch location.
-    eVAControlLaunchGeocentricLat = 504,
+    eVAControlLaunchGeocentricLat = 504
     # The geocentric longitude of the launch location.
-    eVAControlLaunchGeocentricLon = 505,
+    eVAControlLaunchGeocentricLon = 505
     # The geocentric radius of the launch location.
-    eVAControlLaunchGeocentricRad = 506,
+    eVAControlLaunchGeocentricRad = 506
     # The time of flight, from launch until burnout.
-    eVAControlLaunchTimeOfFlight = 507,
+    eVAControlLaunchTimeOfFlight = 507
     # The geocentric latitude of the burnout point.
-    eVAControlLaunchBurnoutGeocentricLat = 508,
+    eVAControlLaunchBurnoutGeocentricLat = 508
     # The geocentric longitude of the burnout point.
-    eVAControlLaunchBurnoutGeocentricLon = 509,
+    eVAControlLaunchBurnoutGeocentricLon = 509
     # The geocentric radius of the burnout point.
-    eVAControlLaunchBurnoutGeocentricRad = 510,
+    eVAControlLaunchBurnoutGeocentricRad = 510
     # The geodetic latitude of the burnout point.
-    eVAControlLaunchBurnoutGeodeticLat = 511,
+    eVAControlLaunchBurnoutGeodeticLat = 511
     # The geodetic longitude of the burnout point.
-    eVAControlLaunchBurnoutGeodeticLon = 512,
+    eVAControlLaunchBurnoutGeodeticLon = 512
     # The geodetic altitude of the burnout point.
-    eVAControlLaunchBurnoutGeodeticAlt = 513,
+    eVAControlLaunchBurnoutGeodeticAlt = 513
     # The geodetic azimuth of the launch trajectory.
-    eVAControlLaunchBurnoutAzAltAz = 514,
+    eVAControlLaunchBurnoutAzAltAz = 514
     # The geodetic downrange distance of the burnout point.
-    eVAControlLaunchBurnoutAzAltDownrangeDist = 515,
+    eVAControlLaunchBurnoutAzAltDownrangeDist = 515
     # The geodetic altitude of the burnout point.
-    eVAControlLaunchBurnoutAzAltAlt = 516,
+    eVAControlLaunchBurnoutAzAltAlt = 516
     # The geocentric azimuth of the launch trajectory.
-    eVAControlLaunchBurnoutAzRadAz = 517,
+    eVAControlLaunchBurnoutAzRadAz = 517
     # The geocentric downrange distance of the burnout point.
-    eVAControlLaunchBurnoutAzRadDownrangeDist = 518,
+    eVAControlLaunchBurnoutAzRadDownrangeDist = 518
     # The geocentric radius of the burnout point.
-    eVAControlLaunchBurnoutAzRadRad = 519,
+    eVAControlLaunchBurnoutAzRadRad = 519
     # The burnout velocity in the fixed frame.
-    eVAControlLaunchBurnoutFixedVelocity = 520,
+    eVAControlLaunchBurnoutFixedVelocity = 520
     # The burnout velocity in the inertial frame.
-    eVAControlLaunchBurnoutInertialVelocity = 521,
+    eVAControlLaunchBurnoutInertialVelocity = 521
     # Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed.
-    eVAControlLaunchBurnoutInertialVelocityAzimuth = 522,
+    eVAControlLaunchBurnoutInertialVelocityAzimuth = 522
     # Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle.
-    eVAControlLaunchBurnoutInertialHorizontalFPA = 523,
+    eVAControlLaunchBurnoutInertialHorizontalFPA = 523
     # Dry Mass - the mass of the spacecraft exclusive of propellant.
-    eVAControlLaunchDryMass = 524,
+    eVAControlLaunchDryMass = 524
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAControlLaunchCd = 525,
+    eVAControlLaunchCd = 525
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations.
-    eVAControlLaunchDragArea = 526,
+    eVAControlLaunchDragArea = 526
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlLaunchCr = 527,
+    eVAControlLaunchCr = 527
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
-    eVAControlLaunchSRPArea = 528,
+    eVAControlLaunchSRPArea = 528
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlLaunchCk = 529,
+    eVAControlLaunchCk = 529
     # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
-    eVAControlLaunchRadiationPressureArea = 530,
+    eVAControlLaunchRadiationPressureArea = 530
     # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
-    eVAControlLaunchK1 = 531,
+    eVAControlLaunchK1 = 531
     # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (scale) value.
-    eVAControlLaunchK2 = 532,
+    eVAControlLaunchK2 = 532
     # The fuel tank pressure.
-    eVAControlLaunchTankPressure = 533,
+    eVAControlLaunchTankPressure = 533
     # The volume of the fuel tank.
-    eVAControlLaunchTankVolume = 534,
+    eVAControlLaunchTankVolume = 534
     # The fuel tank temperature.
-    eVAControlLaunchTankTemp = 535,
+    eVAControlLaunchTankTemp = 535
     # The density of the fuel tank.
-    eVAControlLaunchFuelDensity = 536,
+    eVAControlLaunchFuelDensity = 536
     # The mass of the spacecraft propellant.
-    eVAControlLaunchFuelMass = 537,
+    eVAControlLaunchFuelMass = 537
     # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences.
     eVAControlLaunchMaxFuelMass = 538
 
@@ -859,7 +859,7 @@ agcls.AgTypeNameMap["AgEVAControlLaunch"] = AgEVAControlLaunch
 class AgEVAControlAdvanced(IntEnum):
     """Propagate segment properties that can be selected as control parameters for a Target Sequence."""
     # The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied.
-    eVAControlPropagateMaxPropTime = 600,
+    eVAControlPropagateMaxPropTime = 600
     # The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction.
     eVAControlPropagateMinPropTime = 601
 
@@ -868,9 +868,9 @@ agcls.AgTypeNameMap["AgEVAControlAdvanced"] = AgEVAControlAdvanced
 class AgEVATargetSeqAction(IntEnum):
     """Action options for Target Sequence profiles."""
     # Run Nominal Sequence - runs the mission control sequence.
-    eVATargetSeqActionRunNominalSeq = 0,
+    eVATargetSeqActionRunNominalSeq = 0
     # Run Active Profiles - runs the mission control sequence allowing the active profiles to operate.
-    eVATargetSeqActionRunActiveProfiles = 1,
+    eVATargetSeqActionRunActiveProfiles = 1
     # Run Active Profiles Once - runs the profile with corrections applied to control parameters.
     eVATargetSeqActionRunActiveProfilesOnce = 2
 
@@ -879,9 +879,9 @@ agcls.AgTypeNameMap["AgEVATargetSeqAction"] = AgEVATargetSeqAction
 class AgEVAProfilesFinish(IntEnum):
     """Action options for Target Sequence profiles convergence."""
     # Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence.
-    eVAProfilesFinishRunToReturnAndContinue = 0,
+    eVAProfilesFinishRunToReturnAndContinue = 0
     # Run To Return And Stop - run the target sequence to the first Return segment, and then stop running the MCS altogether.
-    eVAProfilesFinishRunToReturnAndStop = 1,
+    eVAProfilesFinishRunToReturnAndStop = 1
     # Stop - stop the MCS as soon as the target sequence has converged.
     eVAProfilesFinishStop = 2
 
@@ -890,25 +890,25 @@ agcls.AgTypeNameMap["AgEVAProfilesFinish"] = AgEVAProfilesFinish
 class AgEVAUpdateParam(IntEnum):
     """Spacecraft parameters that can be modified by an Update segment."""
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations.
-    eVAUpdateParamDragArea = 0,
+    eVAUpdateParamDragArea = 0
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
-    eVAUpdateParamSRPArea = 1,
+    eVAUpdateParamSRPArea = 1
     # Dry Mass - the mass of the spacecraft exclusive of propellant.
-    eVAUpdateParamDryMass = 2,
+    eVAUpdateParamDryMass = 2
     # The mass of the spacecraft propellant.
-    eVAUpdateParamFuelMass = 3,
+    eVAUpdateParamFuelMass = 3
     # The density of the fuel tank.
-    eVAUpdateParamFuelDensity = 4,
+    eVAUpdateParamFuelDensity = 4
     # The fuel tank pressure.
-    eVAUpdateParamTankPressure = 5,
+    eVAUpdateParamTankPressure = 5
     # The temperature of the fuel tank.
-    eVAUpdateParamTankTemp = 6,
+    eVAUpdateParamTankTemp = 6
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAUpdateParamCr = 7,
+    eVAUpdateParamCr = 7
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAUpdateParamCd = 8,
+    eVAUpdateParamCd = 8
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAUpdateParamCk = 9,
+    eVAUpdateParamCk = 9
     # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
     eVAUpdateParamRadiationPressureArea = 10
 
@@ -917,11 +917,11 @@ agcls.AgTypeNameMap["AgEVAUpdateParam"] = AgEVAUpdateParam
 class AgEVAUpdateAction(IntEnum):
     """Actions for the Update segment."""
     # No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column).
-    eVAUpdateActionNoChange = 0,
+    eVAUpdateActionNoChange = 0
     # Add value - add the quantity entered in the Value column to the current value for this parameter.
-    eVAUpdateActionAddValue = 1,
+    eVAUpdateActionAddValue = 1
     # Subtract value - subtract the quantity entered in the Value column from the current value for this parameter.
-    eVAUpdateActionSubtractValue = 2,
+    eVAUpdateActionSubtractValue = 2
     # Set to new value - replace the current value for this parameter with the quantity entered in the Value column.
     eVAUpdateActionSetToNewValue = 3
 
@@ -930,7 +930,7 @@ agcls.AgTypeNameMap["AgEVAUpdateAction"] = AgEVAUpdateAction
 class AgEVAPressureMode(IntEnum):
     """Pressure Mode options."""
     # Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law.
-    eVAPressureModeBlowDown = 0,
+    eVAPressureModeBlowDown = 0
     # Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases.
     eVAPressureModePressureRegulated = 1
 
@@ -939,7 +939,7 @@ agcls.AgTypeNameMap["AgEVAPressureMode"] = AgEVAPressureMode
 class AgEVAThrustType(IntEnum):
     """Thrust options."""
     # Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines.
-    eVAThrustTypeAffectsAccelAndMassFlow = 0,
+    eVAThrustTypeAffectsAccelAndMassFlow = 0
     # Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber.
     eVAThrustTypeAffectsAccelOnly = 1
 
@@ -948,9 +948,9 @@ agcls.AgTypeNameMap["AgEVAThrustType"] = AgEVAThrustType
 class AgEVAAttitudeUpdate(IntEnum):
     """Attitude Update."""
     # Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn.
-    eVAAttitudeUpdateDuringBurn = 0,
+    eVAAttitudeUpdateDuringBurn = 0
     # Inertial at ignition - specified by Attitude Control at ignition and remains the same throughout the maneuver. This fixes the thrust direction in the inertial direction calculated at the beginning of the burn and is used for inertially fixed spacecraft.
-    eVAAttitudeUpdateInertialAtIgnition = 1,
+    eVAAttitudeUpdateInertialAtIgnition = 1
     # Inertial at start - specified by Attitude Control at the beginning of the maneuver segment and remains the same throughout the maneuver.
     eVAAttitudeUpdateInertialAtStart = 2
 
@@ -959,7 +959,7 @@ agcls.AgTypeNameMap["AgEVAAttitudeUpdate"] = AgEVAAttitudeUpdate
 class AgEVAPropulsionMethod(IntEnum):
     """Propulsion method options."""
     # Engine Model - can be used to quickly model the firing of a single engine.
-    eVAPropulsionMethodEngineModel = 0,
+    eVAPropulsionMethodEngineModel = 0
     # Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing.
     eVAPropulsionMethodThrusterSet = 1
 
@@ -968,7 +968,7 @@ agcls.AgTypeNameMap["AgEVAPropulsionMethod"] = AgEVAPropulsionMethod
 class AgEVACustomFunction(IntEnum):
     """Attitude definition options for other STK functions."""
     # Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK.
-    eVAEnablePageDefinition = 0,
+    eVAEnablePageDefinition = 0
     # Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window.
     eVAEnableManeuverAttitude = 1
 
@@ -977,15 +977,15 @@ agcls.AgTypeNameMap["AgEVACustomFunction"] = AgEVACustomFunction
 class AgEVABodyAxis(IntEnum):
     """Attitude body axis options."""
     # The positive X engine acceleration direction.
-    eVABodyAxisPlusX = 0,
+    eVABodyAxisPlusX = 0
     # The positive Y engine acceleration direction.
-    eVABodyAxisPlusY = 1,
+    eVABodyAxisPlusY = 1
     # The positive Z engine acceleration direction.
-    eVABodyAxisPlusZ = 2,
+    eVABodyAxisPlusZ = 2
     # The negative X engine acceleration direction.
-    eVABodyAxisMinusX = 3,
+    eVABodyAxisMinusX = 3
     # The negative Y engine acceleration direction.
-    eVABodyAxisMinusY = 4,
+    eVABodyAxisMinusY = 4
     # The negative Z engine acceleration direction.
     eVABodyAxisMinusZ = 5
 
@@ -994,7 +994,7 @@ agcls.AgTypeNameMap["AgEVABodyAxis"] = AgEVABodyAxis
 class AgEVAConstraintSign(IntEnum):
     """Constraint vector sign options."""
     # Positive.
-    eVAConstraintSignPlus = 0,
+    eVAConstraintSignPlus = 0
     # Negative.
     eVAConstraintSignMinus = 1
 
@@ -1003,19 +1003,19 @@ agcls.AgTypeNameMap["AgEVAConstraintSign"] = AgEVAConstraintSign
 class AgEVAAttitudeControl(IntEnum):
     """Attitude Control options."""
     # Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector.
-    eVAAttitudeControlVelocityVector = 0,
+    eVAAttitudeControlVelocityVector = 0
     # Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector.
-    eVAAttitudeControlAntiVelocityVector = 1,
+    eVAAttitudeControlAntiVelocityVector = 1
     # Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. 
-    eVAAttitudeControlAttitude = 2,
+    eVAAttitudeControlAttitude = 2
     # File (impulsive/finite) - uses an attitude file to set the thrust vector direction.
-    eVAAttitudeControlFile = 3,
+    eVAAttitudeControlFile = 3
     # Thrust Vector (impulsive/finite) - the total thrust vector is explicitly specified in Cartesian or spherical form with respect to the thrust axes.
-    eVAAttitudeControlThrustVector = 4,
+    eVAAttitudeControlThrustVector = 4
     # Plugin (finite) - thrust vector direction is defined using a COM plugin.
-    eVAAttitudeControlPlugin = 5,
+    eVAAttitudeControlPlugin = 5
     # Time Varying (finite) - polynomial and sine representations for the azimuth and elevation of the thrust vector.
-    eVAAttitudeControlTimeVarying = 6,
+    eVAAttitudeControlTimeVarying = 6
     # Lagrange Interpolation (optimal finite, always set) - supports the 'Run current nodes' execution mode of the Optimal Finite Maneuver.
     eVAAttitudeControlLagrangeInterpolation = 7
 
@@ -1024,11 +1024,11 @@ agcls.AgTypeNameMap["AgEVAAttitudeControl"] = AgEVAAttitudeControl
 class AgEVAFollowJoin(IntEnum):
     """Joining options for the Follow segment."""
     # Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining.
-    eVAFollowJoinSpecify = 0,
+    eVAFollowJoinSpecify = 0
     # Join at Beginning of Leader's Ephemeris - the spacecraft will follow the leader from the beginning of the leader's ephemeris.
-    eVAFollowJoinAtBeginning = 1,
+    eVAFollowJoinAtBeginning = 1
     # Join at End of Leader's Ephemeris - the spacecraft will use the leader's final ephemeris point as the initial and final state of the Follow segment; the separation parameter will automatically be set to 'Separate at End of Leader's Ephemeris'.
-    eVAFollowJoinAtEnd = 2,
+    eVAFollowJoinAtEnd = 2
     # Join at Final Epoch of Previous Segment - the spacecraft will follow the leader from the final epoch at the end of the previous segment.
     eVAFollowJoinAtFinalEpochOfPreviousSeg = 3
 
@@ -1037,7 +1037,7 @@ agcls.AgTypeNameMap["AgEVAFollowJoin"] = AgEVAFollowJoin
 class AgEVAFollowSeparation(IntEnum):
     """Separation options for the Follow segment."""
     # Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation.
-    eVAFollowSeparationSpecify = 0,
+    eVAFollowSeparationSpecify = 0
     # Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate.
     eVAFollowSeparationAtEndOfLeadersEphem = 1
 
@@ -1046,9 +1046,9 @@ agcls.AgTypeNameMap["AgEVAFollowSeparation"] = AgEVAFollowSeparation
 class AgEVAFollowSpacecraftAndFuelTank(IntEnum):
     """Spacecraft parameter options for the Follow segment."""
     # Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank.
-    eVAFollowSpacecraftAndFuelTankSpecify = 0,
+    eVAFollowSpacecraftAndFuelTankSpecify = 0
     # Inherit Spacecraft Configuration From Previous Segment - the spacecraft will be defined by its configuration at the end of the previous segment. The configuration will not be changed by the Follow segment.
-    eVAFollowSpacecraftAndFuelTankInherit = 1,
+    eVAFollowSpacecraftAndFuelTankInherit = 1
     # Inherit Spacecraft Configuration From Leader - if leader is an Astrogator satellite, configuration will be defined by the leader's configuration.
     eVAFollowSpacecraftAndFuelTankLeader = 2
 
@@ -1057,7 +1057,7 @@ agcls.AgTypeNameMap["AgEVAFollowSpacecraftAndFuelTank"] = AgEVAFollowSpacecraftA
 class AgEVABurnoutOptions(IntEnum):
     """Burnout options for the Launch segment."""
     # Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero.
-    eVABurnoutOptionsFixedVelocity = 0,
+    eVABurnoutOptionsFixedVelocity = 0
     # Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity.
     eVABurnoutOptionsInertialVelocity = 1
 
@@ -1066,13 +1066,13 @@ agcls.AgTypeNameMap["AgEVABurnoutOptions"] = AgEVABurnoutOptions
 class AgEVABurnoutType(IntEnum):
     """Burnout point definition types for the Launch segment."""
     # Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body.
-    eVABurnoutTypeGeocentric = 0,
+    eVABurnoutTypeGeocentric = 0
     # Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body).
-    eVABurnoutTypeGeodetic = 1,
+    eVABurnoutTypeGeodetic = 1
     # Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body.
-    eVABurnoutTypeLaunchAzRad = 2,
+    eVABurnoutTypeLaunchAzRad = 2
     # Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body.
-    eVABurnoutTypeLaunchAzAlt = 3,
+    eVABurnoutTypeLaunchAzAlt = 3
     # Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system.
     eVABurnoutTypeCBFCartesian = 4
 
@@ -1081,7 +1081,7 @@ agcls.AgTypeNameMap["AgEVABurnoutType"] = AgEVABurnoutType
 class AgEVAAscentType(IntEnum):
     """Ascent types for the Launch segment."""
     # Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities.
-    eVAAscentTypeEllipseCubicMotion = 0,
+    eVAAscentTypeEllipseCubicMotion = 0
     # Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration.
     eVAAscentTypeEllipseQuarticMotion = 1
 
@@ -1090,7 +1090,7 @@ agcls.AgTypeNameMap["AgEVAAscentType"] = AgEVAAscentType
 class AgEVALaunchDisplaySystem(IntEnum):
     """Launch location coordinate types for the Launch segment."""
     # Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body.
-    eVADisplaySystemGeodetic = 0,
+    eVADisplaySystemGeodetic = 0
     # Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body).
     eVADisplaySystemGeocentric = 1
 
@@ -1099,17 +1099,17 @@ agcls.AgTypeNameMap["AgEVALaunchDisplaySystem"] = AgEVALaunchDisplaySystem
 class AgEVARunCode(IntEnum):
     """The run code returned after the MCS is run."""
     # Marching - a segment has run successfully.
-    eVARunCodeMarching = 0,
+    eVARunCodeMarching = 0
     # Profile Failure - a search profile failed to converge.
-    eVARunCodeProfileFailure = 1,
+    eVARunCodeProfileFailure = 1
     # Error - encountered an error.
-    eVARunCodeError = 2,
+    eVARunCodeError = 2
     # Stopped - encountered a stop segment.
-    eVARunCodeStopped = 3,
+    eVARunCodeStopped = 3
     # Returned - encountered a return segment.
-    eVARunCodeReturned = 4,
+    eVARunCodeReturned = 4
     # Cancelled - cancelled by user.
-    eVARunCodeCancelled = 5,
+    eVARunCodeCancelled = 5
     # Global Stop - hit a global stopping condition.
     eVARunCodeHitGlobalStop = 6
 
@@ -1118,7 +1118,7 @@ agcls.AgTypeNameMap["AgEVARunCode"] = AgEVARunCode
 class AgEVASequenceStateToPass(IntEnum):
     """State To Pass options for the Sequence segment."""
     # The initial state of the sequence.
-    eVASequenceStateToPassInitial = 0,
+    eVASequenceStateToPassInitial = 0
     # The final state of the sequence.
     eVASequenceStateToPassFinal = 1
 
@@ -1127,9 +1127,9 @@ agcls.AgTypeNameMap["AgEVASequenceStateToPass"] = AgEVASequenceStateToPass
 class AgEVAManeuverType(IntEnum):
     """Maneuver types for the maneuver segment."""
     # Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment.
-    eVAManeuverTypeImpulsive = 0,
+    eVAManeuverTypeImpulsive = 0
     # Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met.
-    eVAManeuverTypeFinite = 1,
+    eVAManeuverTypeFinite = 1
     # Optimal Finite
     eVAManeuverTypeOptimalFinite = 2
 
@@ -1138,29 +1138,29 @@ agcls.AgTypeNameMap["AgEVAManeuverType"] = AgEVAManeuverType
 class AgEVASegmentType(IntEnum):
     """Segment types."""
     # Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS.
-    eVASegmentTypeInitialState = 0,
+    eVASegmentTypeInitialState = 0
     # Launch - can be used to model a simple spacecraft launch from Earth or another central body.
-    eVASegmentTypeLaunch = 1,
+    eVASegmentTypeLaunch = 1
     # Maneuver - can be used to model a spacecraft maneuver.
-    eVASegmentTypeManeuver = 2,
+    eVASegmentTypeManeuver = 2
     # Follow - can be used to set the spacecraft to follow another vehicle (Satellite, Launch Vehicle, Missile, Aircraft, Ship, or Ground Vehicle) at a specified offset, and to separate from that vehicle upon meeting specified conditions.
-    eVASegmentTypeFollow = 3,
+    eVASegmentTypeFollow = 3
     # Hold - can be used to model landing or rendezvous operations by setting the spacecraft to maintain a fixed position in reference to another object or body, until meeting specified conditions.
-    eVASegmentTypeHold = 4,
+    eVASegmentTypeHold = 4
     # Propagate - can be used to model the movement of the spacecraft along its current trajectory until meeting specified stopping conditions.
-    eVASegmentTypePropagate = 5,
+    eVASegmentTypePropagate = 5
     # Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS.
-    eVASegmentTypeSequence = 6,
+    eVASegmentTypeSequence = 6
     # Return - can be used to control the execution of the Mission Control Sequence by returning control to its parent segment.
-    eVASegmentTypeReturn = 7,
+    eVASegmentTypeReturn = 7
     # Target Sequence - can be used to define maneuvers and propagations in terms of the goals they are intended to achieve.
-    eVASegmentTypeTargetSequence = 8,
+    eVASegmentTypeTargetSequence = 8
     # Stop - can be used to control the execution of the Mission Control Sequence by halting execution of the MCS.
-    eVASegmentTypeStop = 9,
+    eVASegmentTypeStop = 9
     # Update - can be used to modify some of the satellite properties to reflect changes that occur during the mission.
-    eVASegmentTypeUpdate = 10,
+    eVASegmentTypeUpdate = 10
     # Backward Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS.
-    eVASegmentTypeBackwardSequence = 11,
+    eVASegmentTypeBackwardSequence = 11
     # End - The End segment is a default segment of the MCS that functions similarly to a Return segment; it returns control to the beginning of the MCS. The End segment cannot be disabled or deleted, nor can any segments be inserted into the MCS after it.
     eVASegmentTypeEnd = 12
 
@@ -1169,21 +1169,21 @@ agcls.AgTypeNameMap["AgEVASegmentType"] = AgEVASegmentType
 class AgEVAElementType(IntEnum):
     """Types of orbit element sets."""
     # Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system.
-    eVAElementTypeCartesian = 0,
+    eVAElementTypeCartesian = 0
     # Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space.
-    eVAElementTypeKeplerian = 1,
+    eVAElementTypeKeplerian = 1
     # Spherical - a system in which positions are specified as a radial distance from the origin and two angles relative to a fundamental plane.
-    eVAElementTypeSpherical = 3,
+    eVAElementTypeSpherical = 3
     # Target Vector Incoming Asymptote - used for hyperbolic arrival trajectories.
-    eVAElementTypeTargetVectorIncomingAsymptote = 4,
+    eVAElementTypeTargetVectorIncomingAsymptote = 4
     # Target Vector Outgoing Asymptote - used for hyperbolic departure trajectories.
-    eVAElementTypeTargetVectorOutgoingAsymptote = 5,
+    eVAElementTypeTargetVectorOutgoingAsymptote = 5
     # Mixed Spherical.
-    eVAElementTypeMixedSpherical = 6,
+    eVAElementTypeMixedSpherical = 6
     # Delaunay.
-    eVAElementTypeDelaunay = 7,
+    eVAElementTypeDelaunay = 7
     # Equinoctial.
-    eVAElementTypeEquinoctial = 8,
+    eVAElementTypeEquinoctial = 8
     # Geodetic.
     eVAElementTypeGeodetic = 9
 
@@ -1192,9 +1192,9 @@ agcls.AgTypeNameMap["AgEVAElementType"] = AgEVAElementType
 class AgEVALanguage(IntEnum):
     """Scripting language types for the Scripting Tool."""
     # VBScript.
-    eVALanguageVBScript = 0,
+    eVALanguageVBScript = 0
     # JScript.
-    eVALanguageJScript = 1,
+    eVALanguageJScript = 1
     # MATLAB.
     eVALanguageMATLAB = 2
 
@@ -1203,11 +1203,11 @@ agcls.AgTypeNameMap["AgEVALanguage"] = AgEVALanguage
 class AgEVAStoppingCondition(IntEnum):
     """Type of stopping condition."""
     # Basic Stopping Condition.
-    eVAStoppingConditionBasic = 0,
+    eVAStoppingConditionBasic = 0
     # Before Stopping Condition.
-    eVAStoppingConditionBefore = 1,
+    eVAStoppingConditionBefore = 1
     # One Point Access Stopping Condition.
-    eVAStoppingConditionOnePtAccess = 2,
+    eVAStoppingConditionOnePtAccess = 2
     # Lighting Stopping Condition.
     eVAStoppingConditionLighting = 3
 
@@ -1216,9 +1216,9 @@ agcls.AgTypeNameMap["AgEVAStoppingCondition"] = AgEVAStoppingCondition
 class AgEVAClearEphemerisDirection(IntEnum):
     """Direction in which to clear ephemeris."""
     # Clear ephemeris before selected time or state.
-    eVAClearEphemerisBefore = -1,
+    eVAClearEphemerisBefore = -1
     # Do not clear ephemeris.
-    eVAClearEphemerisNoClear = 0,
+    eVAClearEphemerisNoClear = 0
     # Clear ephemeris after selected time or state.
     eVAClearEphemerisAfter = 1
 
@@ -1227,7 +1227,7 @@ agcls.AgTypeNameMap["AgEVAClearEphemerisDirection"] = AgEVAClearEphemerisDirecti
 class AgEVAProfileInsertDirection(IntEnum):
     """Direction to insert profile."""
     # Insert profile before reference profile.
-    eVAProfileInsertBefore = 0,
+    eVAProfileInsertBefore = 0
     # Insert profile after reference profile.
     eVAProfileInsertAfter = 1
 
@@ -1236,7 +1236,7 @@ agcls.AgTypeNameMap["AgEVAProfileInsertDirection"] = AgEVAProfileInsertDirection
 class AgEVARootFindingAlgorithm(IntEnum):
     """Root-finding algorithms."""
     # Secant method.
-    eVASecantMethod = 0,
+    eVASecantMethod = 0
     # Newton-Raphson method.
     eVANewtonRaphsonMethod = 1
 
@@ -1245,17 +1245,17 @@ agcls.AgTypeNameMap["AgEVARootFindingAlgorithm"] = AgEVARootFindingAlgorithm
 class AgEVAScriptingParameterType(IntEnum):
     """Scripting Tool parameter type."""
     # Double.
-    eVAScriptingParameterTypeDouble = 0,
+    eVAScriptingParameterTypeDouble = 0
     # Quantity.
-    eVAScriptingParameterTypeQuantity = 1,
+    eVAScriptingParameterTypeQuantity = 1
     # Date.
-    eVAScriptingParameterTypeDate = 2,
+    eVAScriptingParameterTypeDate = 2
     # String.
-    eVAScriptingParameterTypeString = 3,
+    eVAScriptingParameterTypeString = 3
     # Boolean.
-    eVAScriptingParameterTypeBoolean = 4,
+    eVAScriptingParameterTypeBoolean = 4
     # Integer.
-    eVAScriptingParameterTypeInteger = 5,
+    eVAScriptingParameterTypeInteger = 5
     # Enumeration.
     eVAScriptingParameterTypeEnumeration = 6
 
@@ -1264,7 +1264,7 @@ agcls.AgTypeNameMap["AgEVAScriptingParameterType"] = AgEVAScriptingParameterType
 class AgEVASNOPTGoal(IntEnum):
     """The Goal types for a SNOPT profile."""
     # Minimize
-    eVASNOPTGoalMinimize = 0,
+    eVASNOPTGoalMinimize = 0
     # Bound
     eVASNOPTGoalBound = 1
 
@@ -1273,7 +1273,7 @@ agcls.AgTypeNameMap["AgEVASNOPTGoal"] = AgEVASNOPTGoal
 class AgEVAIPOPTGoal(IntEnum):
     """The Goal types for a IPOPT profile."""
     # Minimize
-    eVAIPOPTGoalMinimize = 0,
+    eVAIPOPTGoalMinimize = 0
     # Bound
     eVAIPOPTGoalBound = 1
 
@@ -1282,7 +1282,7 @@ agcls.AgTypeNameMap["AgEVAIPOPTGoal"] = AgEVAIPOPTGoal
 class AgEVAOptimalFiniteSeedMethod(IntEnum):
     """Seed methods."""
     # Seed initial guess from file.
-    eVAOptimalFiniteSeedMethodInitialGuessFile = 0,
+    eVAOptimalFiniteSeedMethodInitialGuessFile = 0
     # Seed initial guess from finite maneuver.
     eVAOptimalFiniteSeedMethodFiniteManeuver = 1
 
@@ -1291,7 +1291,7 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteSeedMethod"] = AgEVAOptimalFiniteSeedMeth
 class AgEVAOptimalFiniteRunMode(IntEnum):
     """Run modes."""
     # Run current nodes.
-    eVAOptimalFiniteRunModeRunCurrentNodes = 0,
+    eVAOptimalFiniteRunModeRunCurrentNodes = 0
     # Optimize via direct transcription.
     eVAOptimalFiniteRunModeOptimizeViaDirectTranscription = 1
 
@@ -1300,7 +1300,7 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteRunMode"] = AgEVAOptimalFiniteRunMode
 class AgEVAOptimalFiniteDiscretizationStrategy(IntEnum):
     """Discretization Strategy."""
     # The Legendre-Gauss-Lobatto quadrature rule
-    eVAOptimalFiniteDiscretizationStrategyLegendreGaussLobatto = 0,
+    eVAOptimalFiniteDiscretizationStrategyLegendreGaussLobatto = 0
     # The Legendre-Gauss-Radau quadrature rule.
     eVAOptimalFiniteDiscretizationStrategyLegendreGaussRadau = 1
 
@@ -1309,7 +1309,7 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteDiscretizationStrategy"] = AgEVAOptimalFi
 class AgEVAOptimalFiniteWorkingVariables(IntEnum):
     """Working Variables."""
     # Standard inertial equinoctial coordinates.
-    eVAOptimalFiniteWorkingVariablesEquinoctial = 0,
+    eVAOptimalFiniteWorkingVariablesEquinoctial = 0
     # Use semi-latus rectum instead of SMA and true longitude instead of mean longitude.
     eVAOptimalFiniteWorkingVariablesModifiedEquinoctial = 1
 
@@ -1318,9 +1318,9 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteWorkingVariables"] = AgEVAOptimalFiniteWo
 class AgEVAOptimalFiniteScalingOptions(IntEnum):
     """Scaling Options."""
     # No scaling.
-    eVAOptimalFiniteScalingOptionsNoScaling = 0,
+    eVAOptimalFiniteScalingOptionsNoScaling = 0
     # Scale based on canonical units.
-    eVAOptimalFiniteScalingOptionsCanonicalUnits = 1,
+    eVAOptimalFiniteScalingOptionsCanonicalUnits = 1
     # Scale based on the initial state.
     eVAOptimalFiniteScalingOptionsInitialStateBased = 2
 
@@ -1329,9 +1329,9 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteScalingOptions"] = AgEVAOptimalFiniteScal
 class AgEVAOptimalFiniteSNOPTObjective(IntEnum):
     """Optimal Finite SNOPT objective."""
     # Minimize the total TOF along the collocation arc.
-    eVAOptimalFiniteSNOPTObjectiveMinimizeTOF = 0,
+    eVAOptimalFiniteSNOPTObjectiveMinimizeTOF = 0
     # Minimize the total calculated DeltaV along the collocation arc.
-    eVAOptimalFiniteSNOPTObjectiveMaximizeFinalRad = 1,
+    eVAOptimalFiniteSNOPTObjectiveMaximizeFinalRad = 1
     # Maximize the final mass after the collocation arc.
     eVAOptimalFiniteSNOPTObjectiveMinimizePropellantUse = 2
 
@@ -1340,9 +1340,9 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteSNOPTObjective"] = AgEVAOptimalFiniteSNOP
 class AgEVAOptimalFiniteSNOPTScaling(IntEnum):
     """Optimal Finite SNOPT scaling option."""
     # No scaling.
-    eVAOptimalFiniteSNOPTScalingNone = 0,
+    eVAOptimalFiniteSNOPTScalingNone = 0
     # Scale linear constraints and variables.
-    eVAOptimalFiniteSNOPTScalingLinear = 1,
+    eVAOptimalFiniteSNOPTScalingLinear = 1
     # Scale all constraints and variables.
     eVAOptimalFiniteSNOPTScalingAll = 2
 
@@ -1351,7 +1351,7 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteSNOPTScaling"] = AgEVAOptimalFiniteSNOPTS
 class AgEVAOptimalFiniteExportNodesFormat(IntEnum):
     """Steering nodes export format."""
     # Export controls as Az/El = Ra/Dec angles.
-    eVAOptimalFiniteExportNodesFormatAzimuthElevation = 0,
+    eVAOptimalFiniteExportNodesFormatAzimuthElevation = 0
     # Export controls as unit vectors = direction cosines.
     eVAOptimalFiniteExportNodesFormatUnitVector = 1
 
@@ -1360,7 +1360,7 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteExportNodesFormat"] = AgEVAOptimalFiniteE
 class AgEVAOptimalFiniteGuessMethod(IntEnum):
     """Guess interpolation method."""
     # Lagrange polynomial method.
-    eVAOptimalFiniteGuessMethodLagrangePolynomial = 0,
+    eVAOptimalFiniteGuessMethodLagrangePolynomial = 0
     # Piecewise linear method.
     eVAOptimalFiniteGuessMethodPiecewiseLinear = 1
 
@@ -1369,7 +1369,7 @@ agcls.AgTypeNameMap["AgEVAOptimalFiniteGuessMethod"] = AgEVAOptimalFiniteGuessMe
 class AgEVAImpDeltaVRep(IntEnum):
     """Vector representations for impulsive DeltaV specification"""
     # Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z).
-    eVACartesianImpDeltaV = 0,
+    eVACartesianImpDeltaV = 0
     # Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude).
     eVASphericalImpDeltaV = 1
 
@@ -1378,7 +1378,7 @@ agcls.AgTypeNameMap["AgEVAImpDeltaVRep"] = AgEVAImpDeltaVRep
 class AgEVALambertTargetCoordType(IntEnum):
     """Lambert Target CoordType."""
     # Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system.
-    eVALambertTargetCoordTypeCartesian = 0,
+    eVALambertTargetCoordTypeCartesian = 0
     # Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space.
     eVALambertTargetCoordTypeKeplerian = 1
 
@@ -1387,9 +1387,9 @@ agcls.AgTypeNameMap["AgEVALambertTargetCoordType"] = AgEVALambertTargetCoordType
 class AgEVALambertSolutionOptionType(IntEnum):
     """Lambert Solution Option Type."""
     # Fixed time - The type of Lambert solution to calculate.
-    eAgEVALambertSolutionOptionFixedTime = 0,
+    eAgEVALambertSolutionOptionFixedTime = 0
     # Minimum Eccentricity - The type of Lambert solution to calculate.
-    eAgEVALambertSolutionOptionMinEccentricity = 1,
+    eAgEVALambertSolutionOptionMinEccentricity = 1
     # Minimum Energy - The type of Lambert solution to calculate.
     eAgEVALambertSolutionOptionMinEnergy = 2
 
@@ -1398,7 +1398,7 @@ agcls.AgTypeNameMap["AgEVALambertSolutionOptionType"] = AgEVALambertSolutionOpti
 class AgEVALambertOrbitalEnergyType(IntEnum):
     """Lambert Orbital Energy Type."""
     # Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution.
-    eAgEVALambertOrbitalEnergyLow = 0,
+    eAgEVALambertOrbitalEnergyLow = 0
     # High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution.
     eAgEVALambertOrbitalEnergyHigh = 1
 
@@ -1407,7 +1407,7 @@ agcls.AgTypeNameMap["AgEVALambertOrbitalEnergyType"] = AgEVALambertOrbitalEnergy
 class AgEVALambertDirectionOfMotionType(IntEnum):
     """Lambert Direction Of Motion Type."""
     # The short direction of motion for the Lambert solution.
-    eAgEVALambertDirectionOfMotionShort = 0,
+    eAgEVALambertDirectionOfMotionShort = 0
     # The long direction of motion for the Lambert solution.
     eAgEVALambertDirectionOfMotionLong = 1
 
@@ -1416,7 +1416,7 @@ agcls.AgTypeNameMap["AgEVALambertDirectionOfMotionType"] = AgEVALambertDirection
 class AgEVAGoldenSectionDesiredOperation(IntEnum):
     """The types for Desired Operation/Objective of golden section profile."""
     # Minimize value
-    eVAGoldenSectionDesiredOpMinimizeValue = 0,
+    eVAGoldenSectionDesiredOpMinimizeValue = 0
     # Maximize value
     eVAGoldenSectionDesiredOpMaximizeValue = 1
 
@@ -1425,7 +1425,7 @@ agcls.AgTypeNameMap["AgEVAGoldenSectionDesiredOperation"] = AgEVAGoldenSectionDe
 class AgEVAGridSearchDesiredOperation(IntEnum):
     """The types for Desired Operation/Objective of Grid Search profile."""
     # Minimize value
-    eVAGridSearchDesiredOpMinimizeValue = 0,
+    eVAGridSearchDesiredOpMinimizeValue = 0
     # Maximize value
     eVAGridSearchDesiredOpMaximizeValue = 1
 
@@ -1434,11 +1434,11 @@ agcls.AgTypeNameMap["AgEVAGridSearchDesiredOperation"] = AgEVAGridSearchDesiredO
 class AgEVAElement(IntEnum):
     """Which type of elements (osculating or mean)"""
     # Osculating.
-    eVAElementOsculating = 0,
+    eVAElementOsculating = 0
     # Kozai-Izsak Mean.
-    eVAElementKozaiIzsakMean = 1,
+    eVAElementKozaiIzsakMean = 1
     # Brouwer-Lyddane Mean Long.
-    eVAElementBrouwerLyddaneMeanLong = 2,
+    eVAElementBrouwerLyddaneMeanLong = 2
     # Brouwer-Lyddane Mean Short.
     eVAElementBrouwerLyddaneMeanShort = 3
 
@@ -1447,7 +1447,7 @@ agcls.AgTypeNameMap["AgEVAElement"] = AgEVAElement
 class AgEVABaseSelection(IntEnum):
     """Access base object selections types."""
     # An object in the current scenario.
-    eVABaseSelectionSpecify = 0,
+    eVABaseSelectionSpecify = 0
     # The current satellite.
     eVABaseSelectionCurrentSatellite = 1
 
@@ -1456,15 +1456,15 @@ agcls.AgTypeNameMap["AgEVABaseSelection"] = AgEVABaseSelection
 class AgEVAControlOrbitStateValue(IntEnum):
     """Orbit State Value properties that can be selected as control parameters for a Target Sequence."""
     # The Vx velocity component of the orbit state.
-    eVAControlOrbitStateValueVx = 0,
+    eVAControlOrbitStateValueVx = 0
     # The Vy velocity component of the orbit state.
-    eVAControlOrbitStateValueVy = 1,
+    eVAControlOrbitStateValueVy = 1
     # The Vz velocity component of the orbit state.
-    eVAControlOrbitStateValueVz = 2,
+    eVAControlOrbitStateValueVz = 2
     # The x position component of the orbit state.
-    eVAControlOrbitStateValueX = 3,
+    eVAControlOrbitStateValueX = 3
     # The y position component of the orbit state.
-    eVAControlOrbitStateValueY = 4,
+    eVAControlOrbitStateValueY = 4
     # The z position component of the orbit state.
     eVAControlOrbitStateValueZ = 5
 
@@ -1473,7 +1473,7 @@ agcls.AgTypeNameMap["AgEVAControlOrbitStateValue"] = AgEVAControlOrbitStateValue
 class AgEVASegmentState(IntEnum):
     """Segment state to use types."""
     # The segment initial state.
-    eVASegmentStateInitial = 0,
+    eVASegmentStateInitial = 0
     # The segment final state.
     eVASegmentStateFinal = 1
 
@@ -1482,7 +1482,7 @@ agcls.AgTypeNameMap["AgEVASegmentState"] = AgEVASegmentState
 class AgEVADifferenceOrder(IntEnum):
     """The Difference order types."""
     # The initial minus current difference.
-    eVADifferenceOrderInitialMinusCurrent = 0,
+    eVADifferenceOrderInitialMinusCurrent = 0
     # The current minus initial difference.
     eVADifferenceOrderCurrentMinusInitial = 1
 
@@ -1491,7 +1491,7 @@ agcls.AgTypeNameMap["AgEVADifferenceOrder"] = AgEVADifferenceOrder
 class AgEVASegmentDifferenceOrder(IntEnum):
     """The Difference Across Segments order types."""
     # The current minus segment difference.
-    eVASegmentDifferenceOrderCurrentMinusSegment = 0,
+    eVASegmentDifferenceOrderCurrentMinusSegment = 0
     # The segment minus current difference.
     eVASegmentDifferenceOrderSegmentMinusCurrent = 1
 
@@ -1500,7 +1500,7 @@ agcls.AgTypeNameMap["AgEVASegmentDifferenceOrder"] = AgEVASegmentDifferenceOrder
 class AgEVAControlRepeatingGroundTrackErr(IntEnum):
     """Repeating Ground Track Equator Error properties that can be selected as control parameters for a Target Sequence."""
     # The reference longitude.
-    eVAControlRepeatingGroundTrackErrRefLon = 0,
+    eVAControlRepeatingGroundTrackErrRefLon = 0
     # The repeat count.
     eVAControlRepeatingGroundTrackErrRepeatCount = 1
 
@@ -1509,7 +1509,7 @@ agcls.AgTypeNameMap["AgEVAControlRepeatingGroundTrackErr"] = AgEVAControlRepeati
 class AgEVACalcObjectDirection(IntEnum):
     """The direction to search for a desired value."""
     # Search in the direction of the next calculation object.
-    eVACalcObjectDirectionNext = 0,
+    eVACalcObjectDirectionNext = 0
     # Search in the direction of the previous calculation object.
     eVACalcObjectDirectionPrevious = 1
 
@@ -1518,7 +1518,7 @@ agcls.AgTypeNameMap["AgEVACalcObjectDirection"] = AgEVACalcObjectDirection
 class AgEVACalcObjectOrbitPlaneSource(IntEnum):
     """The calculation object orbit plane source Types."""
     # Use the reference satellite to generate the orbit plane.
-    eAgEVACalcObjectOrbitPlaneSourceReferenceSatellite = 0,
+    eAgEVACalcObjectOrbitPlaneSourceReferenceSatellite = 0
     # Use the satellite to generate the orbit plane.
     eAgEVACalcObjectOrbitPlaneSourceSatellite = 1
 
@@ -1527,11 +1527,11 @@ agcls.AgTypeNameMap["AgEVACalcObjectOrbitPlaneSource"] = AgEVACalcObjectOrbitPla
 class AgEVACalcObjectSunPosition(IntEnum):
     """The calculation object sun location Types."""
     # Use the sun location apparent from satellite.
-    eAgEVACalcObjectSunPositionApparentFromSatellite = 0,
+    eAgEVACalcObjectSunPositionApparentFromSatellite = 0
     # Use the sun location apparent from reference satellite.
-    eAgEVACalcObjectSunPositionApparentFromRefSatellite = 1,
+    eAgEVACalcObjectSunPositionApparentFromRefSatellite = 1
     # Use the sun location true from satellite.
-    eAgEVACalcObjectSunPositionTrueFromSatellite = 2,
+    eAgEVACalcObjectSunPositionTrueFromSatellite = 2
     # Use the sun location true from reference satellite.
     eAgEVACalcObjectSunPositionTrueFromRefSatellite = 3
 
@@ -1540,7 +1540,7 @@ agcls.AgTypeNameMap["AgEVACalcObjectSunPosition"] = AgEVACalcObjectSunPosition
 class AgEVACalcObjectAngleSign(IntEnum):
     """The sign of the angle when the relative position has a component along the orbit normal."""
     # Use the positive sign for the angle when the relative position has a positive component along the orbit normal.
-    eAgEVACalcObjectAngleSignPositive = 0,
+    eAgEVACalcObjectAngleSignPositive = 0
     # Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal.
     eAgEVACalcObjectAngleSignNegative = 1
 
@@ -1549,11 +1549,11 @@ agcls.AgTypeNameMap["AgEVACalcObjectAngleSign"] = AgEVACalcObjectAngleSign
 class AgEVACalcObjectReferenceDirection(IntEnum):
     """Direction that establishes the zero value when projected into the orbit plane."""
     # Use the reference satellite position when projected into the orbit plane.
-    eAgEVACalcObjectReferenceDirectionReferenceSatellitePosition = 0,
+    eAgEVACalcObjectReferenceDirectionReferenceSatellitePosition = 0
     # Use the satellite position when projected into the orbit plane.
-    eAgEVACalcObjectReferenceDirectionSatellitePosition = 1,
+    eAgEVACalcObjectReferenceDirectionSatellitePosition = 1
     # Use the reference satellite nadir (centric) when projected into the orbit plane.
-    eAgEVACalcObjectReferenceDirectionReferenceSatelliteNadir = 2,
+    eAgEVACalcObjectReferenceDirectionReferenceSatelliteNadir = 2
     # Use the satellite nadir (centric) position when projected into the orbit plane.
     eAgEVACalcObjectReferenceDirectionSatelliteNadir = 3
 
@@ -1562,7 +1562,7 @@ agcls.AgTypeNameMap["AgEVACalcObjectReferenceDirection"] = AgEVACalcObjectRefere
 class AgEVACalcObjectRelativePosition(IntEnum):
     """The calculation object relative position Types."""
     # Use the relative position satellite to reference satellite.
-    eAgEVACalcObjectRelativePositionSatelliteToRefSatellite = 0,
+    eAgEVACalcObjectRelativePositionSatelliteToRefSatellite = 0
     # Use the relative position reference satellite to satellite.
     eAgEVACalcObjectRelativePositionRefSatelliteToSatellite = 1
 
@@ -1571,7 +1571,7 @@ agcls.AgTypeNameMap["AgEVACalcObjectRelativePosition"] = AgEVACalcObjectRelative
 class AgEVACalcObjectReferenceEllipse(IntEnum):
     """The calculation object reference ellipse Types."""
     # Use the reference satellite orbit.
-    eAgEVACalcObjectReferenceEllipseRefSatOrbit = 0,
+    eAgEVACalcObjectReferenceEllipseRefSatOrbit = 0
     # Use the satellite orbit.
     eAgEVACalcObjectReferenceEllipseSatelliteOrbit = 1
 
@@ -1580,7 +1580,7 @@ agcls.AgTypeNameMap["AgEVACalcObjectReferenceEllipse"] = AgEVACalcObjectReferenc
 class AgEVACalcObjectLocationSource(IntEnum):
     """The calculation object location source Types."""
     # Use the reference satellite.
-    eAgEVACalcObjectLocationSourceRefSat = 0,
+    eAgEVACalcObjectLocationSourceRefSat = 0
     # Use the satellite.
     eAgEVACalcObjectLocationSourceSatellite = 1
 
@@ -1589,11 +1589,11 @@ agcls.AgTypeNameMap["AgEVACalcObjectLocationSource"] = AgEVACalcObjectLocationSo
 class AgEVAGravitationalParameterSource(IntEnum):
     """The source of the gravitational parameter for a CAgVAStateCalcGravitationalParameter calculation object."""
     # Cb File.
-    eVAGravitationalParameterSourceCbFile = 0,
+    eVAGravitationalParameterSourceCbFile = 0
     # Cb File -  System.
-    eVAGravitationalParameterSourceCbFileSystem = 1,
+    eVAGravitationalParameterSourceCbFileSystem = 1
     # DE File.
-    eVAGravitationalParameterSourceDEFile = 2,
+    eVAGravitationalParameterSourceDEFile = 2
     # Gravity File.
     eVAGravitationalParameterSourceGravityFile = 3
 
@@ -1602,7 +1602,7 @@ agcls.AgTypeNameMap["AgEVAGravitationalParameterSource"] = AgEVAGravitationalPar
 class AgEVAReferenceRadiusSource(IntEnum):
     """The source of the reference radius for a CAgVAStateCalcReferenceRadius calculation object."""
     # Cb File.
-    eVAReferenceRadiusSourceCbFile = 0,
+    eVAReferenceRadiusSourceCbFile = 0
     # Gravity File.
     eVAReferenceRadiusSourceGravityFile = 1
 
@@ -1611,7 +1611,7 @@ agcls.AgTypeNameMap["AgEVAReferenceRadiusSource"] = AgEVAReferenceRadiusSource
 class AgEVAGravCoeffNormalizationType(IntEnum):
     """The normalization type for the CAgVAStateCalcGravCoeff calculation object."""
     # Normalized.
-    eVAGravCoeffNormalized = 0,
+    eVAGravCoeffNormalized = 0
     # Unnormalized.
     eVAGravCoeffUnnormalized = 1
 
@@ -1620,9 +1620,9 @@ agcls.AgTypeNameMap["AgEVAGravCoeffNormalizationType"] = AgEVAGravCoeffNormaliza
 class AgEVAGravCoeffCoefficientType(IntEnum):
     """The coefficient type for the CAgVAStateCalcGravCoeff calculation object."""
     # Zonal.
-    eVAGravCoeffCoefficientTypeZonal = 0,
+    eVAGravCoeffCoefficientTypeZonal = 0
     # Cosine.
-    eVAGravCoeffCoefficientTypeCosine = 1,
+    eVAGravCoeffCoefficientTypeCosine = 1
     # Sine.
     eVAGravCoeffCoefficientTypeSine = 2
 
@@ -1631,15 +1631,15 @@ agcls.AgTypeNameMap["AgEVAGravCoeffCoefficientType"] = AgEVAGravCoeffCoefficient
 class AgEVASTMPertVariables(IntEnum):
     """The initial and final Cartesian variational variables that describe an STM element."""
     # Designates the initial or final variation in the 'x' component of position.
-    eVASTMPertVariablePosX = 0,
+    eVASTMPertVariablePosX = 0
     # Designates the initial or final variation in the 'y' component of position.
-    eVASTMPertVariablePosY = 1,
+    eVASTMPertVariablePosY = 1
     # Designates the initial or final variation in the 'z' component of position.
-    eVASTMPertVariablePosZ = 2,
+    eVASTMPertVariablePosZ = 2
     # Designates the initial or final variation in the 'x' component of velocity.
-    eVASTMPertVariableVelX = 3,
+    eVASTMPertVariableVelX = 3
     # Designates the initial or final variation in the 'y' component of velocity.
-    eVASTMPertVariableVelY = 4,
+    eVASTMPertVariableVelY = 4
     # Designates the initial or final variation in the 'z' component of velocity.
     eVASTMPertVariableVelZ = 5
 
@@ -1648,15 +1648,15 @@ agcls.AgTypeNameMap["AgEVASTMPertVariables"] = AgEVASTMPertVariables
 class AgEVASTMEigenNumber(IntEnum):
     """The number that describes one of the 6 STM Eigenvalues or Eigenvectors."""
     # Designates the first Eigenvalue or Eigenvector.
-    eVASTMEigenNumber1 = 0,
+    eVASTMEigenNumber1 = 0
     # Designates the second Eigenvalue or Eigenvector.
-    eVASTMEigenNumber2 = 1,
+    eVASTMEigenNumber2 = 1
     # Designates the third Eigenvalue or Eigenvector.
-    eVASTMEigenNumber3 = 2,
+    eVASTMEigenNumber3 = 2
     # Designates the fourth Eigenvalue or Eigenvector.
-    eVASTMEigenNumber4 = 3,
+    eVASTMEigenNumber4 = 3
     # Designates the fifth Eigenvalue or Eigenvector.
-    eVASTMEigenNumber5 = 4,
+    eVASTMEigenNumber5 = 4
     # Designates the sixth Eigenvalue or Eigenvector.
     eVASTMEigenNumber6 = 5
 
@@ -1665,7 +1665,7 @@ agcls.AgTypeNameMap["AgEVASTMEigenNumber"] = AgEVASTMEigenNumber
 class AgEVAComplexNumber(IntEnum):
     """Whether a value represents the real or imaginary portion of a number."""
     # Designates the value as the real part.
-    eVAComplexNumberReal = 0,
+    eVAComplexNumberReal = 0
     # Designates the value as the imaginary part.
     eVAComplexNumberImaginary = 1
 
@@ -1674,7 +1674,7 @@ agcls.AgTypeNameMap["AgEVAComplexNumber"] = AgEVAComplexNumber
 class AgEVASquaredType(IntEnum):
     """Whether to calculate the value as the square of the sum of each component or the sum of the squares."""
     # Designates the calculation to be the sum of the squares.
-    eVASumOfSquares = 0,
+    eVASumOfSquares = 0
     # Designates the calculation to be the square of the sum.
     eVASquareOfSum = 1
 
@@ -1683,63 +1683,63 @@ agcls.AgTypeNameMap["AgEVASquaredType"] = AgEVASquaredType
 class AgEVACbGravityModel(IntEnum):
     """The gravity model."""
     # ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon.
-    eVACbGravityModelZonalsToJ4 = 0,
+    eVACbGravityModelZonalsToJ4 = 0
     # Earth Simple gravity model.
-    eVACbGravityModelEarthSimple = 1,
+    eVACbGravityModelEarthSimple = 1
     # WGS84 - (Earth) World Geodetic System 1984; WGS 84 was created by the Defense Mapping Agency (DMA).
-    eVACbGravityModelWGS84 = 2,
+    eVACbGravityModelWGS84 = 2
     # EGM96 - (Earth) Earth Gravity Model 1996, a geopotential model of the Earth consisting of spherical harmonic coefficients complete to degree and order 360. Developed jointly by NGA (formerly known as NIMA), NASA Goddard and Ohio State University.
-    eVACbGravityModelEGM96 = 3,
+    eVACbGravityModelEGM96 = 3
     # GEMT1 - (Earth) Goddard Earth Model T1.
-    eVACbGravityModelGEMT1 = 4,
+    eVACbGravityModelGEMT1 = 4
     # JGM2 - (Earth) Joint Gravity Model version 2, a model that describes the Earth gravity field up to degree and order 70, developed by NASA/GSFC Space Geodesy Branch, the University of Texas Center for Space Research and CNES.
-    eVACbGravityModelJGM2 = 5,
+    eVACbGravityModelJGM2 = 5
     # JGM3 - (Earth) Joint Gravity Model version 3, a model that describes the Earth gravity field up to degree and order 70, developed by the University of Texas and NASA/GSFC.
-    eVACbGravityModelJGM3 = 6,
+    eVACbGravityModelJGM3 = 6
     # WGS84 EGM96 - (Earth) Uses the coefficients from EGM96 with the shape model of WGS84. This model is the recommended gravity model of the WGS84 definition document: NIMA TR8350.2, Third Edition, 4 July 1997.
-    eVACbGravityModelWSG84EGM96 = 7,
+    eVACbGravityModelWSG84EGM96 = 7
     # WGS84 old - (Earth) Old version of WGS84.
-    eVACbGravityModelWGS84Old = 8,
+    eVACbGravityModelWGS84Old = 8
     # GLGM2 - (Moon) GM = 4.9028029535968e+12, reference distance = 1,738,000 m.
-    eVACbGravityModelGLGM2 = 9,
+    eVACbGravityModelGLGM2 = 9
     # LP165P - (Moon) GM = 4.902801056E+12, reference distance = 1,738,000.0 m.
-    eVACbGravityModelLP165P = 10,
+    eVACbGravityModelLP165P = 10
     # Icarus1987 - (Mercury) GM = 2.203209e+013, reference distance = 2,439,000 m. Reference: Anderson, J. J., Colombo, G., Esposito, P. B., Lau E. L., and Trager, G. B. 'The Mass, Gravity Field, and Ephemeris of Mercury', Icarus 71, 337-349, 1987.
-    eVACbGravityModelIcarus1987 = 11,
+    eVACbGravityModelIcarus1987 = 11
     # MGNP180U - (Venus) GM = 3.248585920790000E+14, reference distance = 6,051,000.0 m.
-    eVACbGravityModelMGNP180U = 12,
+    eVACbGravityModelMGNP180U = 12
     # GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m.
-    eVACbGravityModelGMM1 = 13,
+    eVACbGravityModelGMM1 = 13
     # GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at http://bowie.gsfc.nasa.gov/926/MARS/GMM2B.html and submitted to Journal of Geophysics Research, November 2000.
-    eVACbGravityModelGMM2B = 14,
+    eVACbGravityModelGMM2B = 14
     # Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m.
-    eVACbGravityModelMars50c = 15,
+    eVACbGravityModelMars50c = 15
     # JUP230 - (Jupiter) GM = 1.26686535e+017, reference distance = 71,492,000 m. Reference: Jacobson, R. A. The JUP230 orbit solution, 2003.
-    eVACbGravityModelJUP230 = 16,
+    eVACbGravityModelJUP230 = 16
     # Astron2004 - (Saturn) GM = 3.7931284e+016, reference distance = 60,330,000 m.
-    eVACbGravityModelAstron2004 = 17,
+    eVACbGravityModelAstron2004 = 17
     # AstronAstro1991 - (Neptune) GM = 6.835107e+015, reference distance = 25,225,000 m.
-    eVACbGravityModelAstronAstro1991 = 18,
+    eVACbGravityModelAstronAstro1991 = 18
     # Icarus2001 - (Callisto) GM = 7.179292e+12, reference distance = 2,410,300 m.
-    eVACbGravityModelIcarus2001 = 19,
+    eVACbGravityModelIcarus2001 = 19
     # Science1998 - (Europa) GM =3.20272e+012, reference distance = 1,565,000 m.
-    eVACbGravityModelScience1998 = 20,
+    eVACbGravityModelScience1998 = 20
     # Nature1996 - (Ganymede) GM = 9.8866e+12, reference distance = 2,634,000 m.
-    eVACbGravityModelNature1996 = 21,
+    eVACbGravityModelNature1996 = 21
     # JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m.
-    eVACbGravityModelJGeoRes2001 = 22,
+    eVACbGravityModelJGeoRes2001 = 22
     # GGM01C - (Earth)
-    eVACbGravityModelGGM01C = 23,
+    eVACbGravityModelGGM01C = 23
     # GGM02C - (Earth)
-    eVACbGravityModelGGM02C = 24,
+    eVACbGravityModelGGM02C = 24
     # WGS72 ZonalsToJ4 - (Earth)
-    eVACbGravityModelWGS72ZonalsToJ4 = 25,
+    eVACbGravityModelWGS72ZonalsToJ4 = 25
     # LP100J - (Moon)
-    eVACbGravityModelLP100J = 26,
+    eVACbGravityModelLP100J = 26
     # LP100K - (Moon)
-    eVACbGravityModelLP100K = 27,
+    eVACbGravityModelLP100K = 27
     # LP150Q - (Moon)
-    eVACbGravityModelLP150Q = 28,
+    eVACbGravityModelLP150Q = 28
     # LP75G - (Moon)
     eVACbGravityModelLP75G = 29
 
@@ -1748,9 +1748,9 @@ agcls.AgTypeNameMap["AgEVACbGravityModel"] = AgEVACbGravityModel
 class AgEVACbShape(IntEnum):
     """The central body shape types."""
     # A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis.
-    eVACbShapeTriaxialEllipsoid = 0,
+    eVACbShapeTriaxialEllipsoid = 0
     # An oblate spheroid defined by a minimum and maximum radii, and a derived flattening coefficient.
-    eVACbShapeOblateSpheroid = 1,
+    eVACbShapeOblateSpheroid = 1
     # A sphere defined by a radius.
     eVACbShapeSphere = 2
 
@@ -1759,7 +1759,7 @@ agcls.AgTypeNameMap["AgEVACbShape"] = AgEVACbShape
 class AgEVACbAttitude(IntEnum):
     """The central body attitude types."""
     # An IAU 1994 attitude definition.
-    eVACbAttitudeIAU1994 = 0,
+    eVACbAttitudeIAU1994 = 0
     # A rotation coefficient file.
     eVACbAttitudeRotationCoefficientsFile = 1
 
@@ -1768,13 +1768,13 @@ agcls.AgTypeNameMap["AgEVACbAttitude"] = AgEVACbAttitude
 class AgEVACbEphemeris(IntEnum):
     """The central body ephemeris types."""
     # Specified values and rates of change for the classical orbital elements.
-    eVACbEphemerisAnalyticOrbit = 0,
+    eVACbEphemerisAnalyticOrbit = 0
     # An external ephemeris (.e) file.
-    eVACbEphemerisFile = 1,
+    eVACbEphemerisFile = 1
     # Ephemerides from the Jet Propulsion Laboratory's JPL DE set are used.
-    eVACbEphemerisJPLDE = 2,
+    eVACbEphemerisJPLDE = 2
     # The SPICE propagator reads ephemeris from binary files that are in a standard format produced by the Jet Propulsion Laboratory for ephemeris for celestial bodies but can be used for spacecraft.
-    eVACbEphemerisJPLSPICE = 3,
+    eVACbEphemerisJPLSPICE = 3
     # A planetary ephemeris (.pe) file.
     eVACbEphemerisPlanetary = 4
 
@@ -1783,9 +1783,9 @@ agcls.AgTypeNameMap["AgEVACbEphemeris"] = AgEVACbEphemeris
 class AgEVAControlPowerInternal(IntEnum):
     """Internal Power properties that can be selected as control parameters for a Target Sequence."""
     # The power generated by the spacecraft from internal sources.
-    eVAControlPowerInternalGeneratedPower = 0,
+    eVAControlPowerInternalGeneratedPower = 0
     # The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch.
-    eVAControlPowerInternalPercentDegradation = 1,
+    eVAControlPowerInternalPercentDegradation = 1
     # The date and time used as a reference epoch for degradation.
     eVAControlPowerInternalEpoch = 2
 
@@ -1794,7 +1794,7 @@ agcls.AgTypeNameMap["AgEVAControlPowerInternal"] = AgEVAControlPowerInternal
 class AgEVAControlPowerProcessed(IntEnum):
     """Processed Power properties that can be selected as control parameters for a Target Sequence."""
     # The efficiency of the power processing unit(PPU).
-    eVAControlPowerProcessedEfficiency = 0,
+    eVAControlPowerProcessedEfficiency = 0
     # The power diverted from the power source and unavailable to the power processing unit(PPU).
     eVAControlPowerProcessedLoad = 1
 
@@ -1803,27 +1803,27 @@ agcls.AgTypeNameMap["AgEVAControlPowerProcessed"] = AgEVAControlPowerProcessed
 class AgEVAControlPowerSolarArray(IntEnum):
     """Solar Array Power properties that can be selected as control parameters for a Target Sequence."""
     # The ThermalModel.C0 coefficient.
-    eVAControlPowerSolarArrayC0 = 0,
+    eVAControlPowerSolarArrayC0 = 0
     # The ThermalModel.C1 coefficient.
-    eVAControlPowerSolarArrayC1 = 1,
+    eVAControlPowerSolarArrayC1 = 1
     # The ThermalModel.C2 coefficient.
-    eVAControlPowerSolarArrayC2 = 2,
+    eVAControlPowerSolarArrayC2 = 2
     # The ThermalModel.C3 coefficient.
-    eVAControlPowerSolarArrayC3 = 3,
+    eVAControlPowerSolarArrayC3 = 3
     # The ThermalModel.C4 coefficient.
-    eVAControlPowerSolarArrayC4 = 4,
+    eVAControlPowerSolarArrayC4 = 4
     # The solar array panel area.
-    eVAControlPowerSolarArrayArea = 5,
+    eVAControlPowerSolarArrayArea = 5
     # The array efficiency in producing output power from a collection of cells.
-    eVAControlPowerSolarArrayEfficiency = 6,
+    eVAControlPowerSolarArrayEfficiency = 6
     # The cell efficiency in producing output power from incident sunlight.
-    eVAControlPowerSolarArrayCellEfficiency = 7,
+    eVAControlPowerSolarArrayCellEfficiency = 7
     # The solar array concentration factor.
-    eVAControlPowerSolarArrayConcentration = 8,
+    eVAControlPowerSolarArrayConcentration = 8
     # The angle from the panel normal vector to the apparent sun line.
-    eVAControlPowerSolarArrayInclinationToSunLine = 9,
+    eVAControlPowerSolarArrayInclinationToSunLine = 9
     # The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch.
-    eVAControlPowerSolarArrayPercentDegradation = 10,
+    eVAControlPowerSolarArrayPercentDegradation = 10
     # The date and time used as a reference epoch for degradation.
     eVAControlPowerSolarArrayEpoch = 11
 
@@ -1832,7 +1832,7 @@ agcls.AgTypeNameMap["AgEVAControlPowerSolarArray"] = AgEVAControlPowerSolarArray
 class AgEVAThirdBodyMode(IntEnum):
     """The third body gravity mode."""
     # Defines the gravitational effect as a full Gravitational Force model
-    eVAThirdBodyModeGravityField = 0,
+    eVAThirdBodyModeGravityField = 0
     # Defines the gravitational effect as a third body point mass effect.
     eVAThirdBodyModePointMass = 1
 
@@ -1841,11 +1841,11 @@ agcls.AgTypeNameMap["AgEVAThirdBodyMode"] = AgEVAThirdBodyMode
 class AgEVAGravParamSource(IntEnum):
     """The gravity parameter source."""
     # The Cb file provided with STK; uses the default, body centered gravity source for the central body.
-    eVAGravParamSourceCbFile = 0,
+    eVAGravParamSourceCbFile = 0
     # A DE file; body centered for the inner planets and barycentered for the outer planets.
-    eVAGravParamSourceDEFile = 1,
+    eVAGravParamSourceDEFile = 1
     # User defined; requires you to specify the mu value of the Gravitational Parameter.
-    eVAGravParamSourceUser = 2,
+    eVAGravParamSourceUser = 2
     # The Cb file provided with STK; uses the default, barycentered gravity source for the central body.
     eVAGravParamSourceCbFileSystem = 3
 
@@ -1854,11 +1854,11 @@ agcls.AgTypeNameMap["AgEVAGravParamSource"] = AgEVAGravParamSource
 class AgEVAEphemSource(IntEnum):
     """The ephemeris source type."""
     # The Cb file provided with STK; uses the default ephemeris source for that central body.
-    eVAEphemSourceCbFile = 0,
+    eVAEphemSourceCbFile = 0
     # A DE file; body centered for the inner planets and barycentered for the outer planets.
-    eVAEphemSourceDEFile = 1,
+    eVAEphemSourceDEFile = 1
     # A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass.
-    eVAEphemSourceSPICEBary = 2,
+    eVAEphemSourceSPICEBary = 2
     # A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass.
     eVAEphemSourceSPICEBody = 3
 
@@ -1867,7 +1867,7 @@ agcls.AgTypeNameMap["AgEVAEphemSource"] = AgEVAEphemSource
 class AgEVASolarForceMethod(IntEnum):
     """The solar force method type for a spherical or N-plate SRP model."""
     # Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation.
-    eVASolarForceMethodLuminosity = 0,
+    eVASolarForceMethodLuminosity = 0
     # Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation.
     eVASolarForceMethodMeanFlux = 1
 
@@ -1876,9 +1876,9 @@ agcls.AgTypeNameMap["AgEVASolarForceMethod"] = AgEVASolarForceMethod
 class AgEVAShadowModel(IntEnum):
     """The shadow model type."""
     # Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector.
-    eVAShadowModelCylindrical = 0,
+    eVAShadowModelCylindrical = 0
     # Dual Cone - uses the actual size and distance of the Sun to model regions of full, partial (penumbra) and zero (umbra) sunlight. The visible fraction of the solar disk is used to compute the acceleration during penumbra.
-    eVAShadowModelDualCone = 1,
+    eVAShadowModelDualCone = 1
     # None - turns off all shadowing of the satellite.
     eVAShadowModelNone = 2
 
@@ -1887,9 +1887,9 @@ agcls.AgTypeNameMap["AgEVAShadowModel"] = AgEVAShadowModel
 class AgEVASunPosition(IntEnum):
     """The sun position type."""
     # Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft.
-    eVASunPositionApparent = 0,
+    eVASunPositionApparent = 0
     # Apparent Sun to True Cb - takes into account the time required for light to travel from the sun to the central body.
-    eVASunPositionApparentToTrueCb = 1,
+    eVASunPositionApparentToTrueCb = 1
     # True - assumes that light from the sun reaches the spacecraft instantaneously.
     eVASunPositionTrue = 2
 
@@ -1898,7 +1898,7 @@ agcls.AgTypeNameMap["AgEVASunPosition"] = AgEVASunPosition
 class AgEVAAtmosDataSource(IntEnum):
     """The Atmospheric data source type."""
     # Constant Atmospheric data source.
-    eVAAtmosDataSourceConstant = 0,
+    eVAAtmosDataSourceConstant = 0
     # Atmopsheric data source from file.
     eVAAtmosDataSourceFile = 1
 
@@ -1907,7 +1907,7 @@ agcls.AgTypeNameMap["AgEVAAtmosDataSource"] = AgEVAAtmosDataSource
 class AgEVAGeoMagneticFluxSource(IntEnum):
     """Whether to use Kp or Ap data from the flux file."""
     # Read Ap from file.
-    eVAGeoMagneticFluxSourceAp = 0,
+    eVAGeoMagneticFluxSourceAp = 0
     # Read Kp from file.
     eVAGeoMagneticFluxSourceKp = 1
 
@@ -1916,11 +1916,11 @@ agcls.AgTypeNameMap["AgEVAGeoMagneticFluxSource"] = AgEVAGeoMagneticFluxSource
 class AgEVAGeoMagneticFluxUpdateRate(IntEnum):
     """Method for using geomagnetic flux values from the flux file."""
     # Three hourly
-    eVAGeoMagneticFluxUpdateRate3Hourly = 0,
+    eVAGeoMagneticFluxUpdateRate3Hourly = 0
     # Three hourly cubic spline
-    eVAGeoMagneticFluxUpdateRate3HourlyCubicSpline = 1,
+    eVAGeoMagneticFluxUpdateRate3HourlyCubicSpline = 1
     # Three hourly interpolated
-    eVAGeoMagneticFluxUpdateRate3HourlyInterpolated = 2,
+    eVAGeoMagneticFluxUpdateRate3HourlyInterpolated = 2
     # Daily
     eVAGeoMagneticFluxUpdateRateDaily = 3
 
@@ -1929,11 +1929,11 @@ agcls.AgTypeNameMap["AgEVAGeoMagneticFluxUpdateRate"] = AgEVAGeoMagneticFluxUpda
 class AgEVADragModelType(IntEnum):
     """Type of Drag Model."""
     # Spherical
-    eVADragModelTypeSpherical = 0,
+    eVADragModelTypeSpherical = 0
     # Plugin
-    eVADragModelTypePlugin = 1,
+    eVADragModelTypePlugin = 1
     # Variable Area
-    eVADragModelTypeVariableArea = 2,
+    eVADragModelTypeVariableArea = 2
     # N-Plate
     eVADragModelTypeNPlate = 3
 
@@ -1942,11 +1942,11 @@ agcls.AgTypeNameMap["AgEVADragModelType"] = AgEVADragModelType
 class AgEVAMarsGRAMDensityType(IntEnum):
     """Density Type for MarsGRAM Density Models"""
     # Low density
-    eVAMarsGRAMDensityTypeLow = 0,
+    eVAMarsGRAMDensityTypeLow = 0
     # Mean density
-    eVAMarsGRAMDensityTypeMean = 1,
+    eVAMarsGRAMDensityTypeMean = 1
     # High density
-    eVAMarsGRAMDensityTypeHigh = 2,
+    eVAMarsGRAMDensityTypeHigh = 2
     # Randomly perturbed density
     eVAMarsGRAMDensityTypeRandomlyPerturbed = 3
 
@@ -1955,11 +1955,11 @@ agcls.AgTypeNameMap["AgEVAMarsGRAMDensityType"] = AgEVAMarsGRAMDensityType
 class AgEVAVenusGRAMDensityType(IntEnum):
     """Density Type for VenusGRAM Density Models"""
     # Low density
-    eVAVenusGRAMDensityTypeLow = 0,
+    eVAVenusGRAMDensityTypeLow = 0
     # Mean density
-    eVAVenusGRAMDensityTypeMean = 1,
+    eVAVenusGRAMDensityTypeMean = 1
     # High density
-    eVAVenusGRAMDensityTypeHigh = 2,
+    eVAVenusGRAMDensityTypeHigh = 2
     # Randomly perturbed density
     eVAVenusGRAMDensityTypeRandomlyPerturbed = 3
 
@@ -1968,7 +1968,7 @@ agcls.AgTypeNameMap["AgEVAVenusGRAMDensityType"] = AgEVAVenusGRAMDensityType
 class AgEVATabVecInterpMethod(IntEnum):
     """The interpolation method for tabulated area vector file."""
     # Bilinear interpolation on the Cartesian grid.
-    eVATabVecCartesianInterpolation = 0,
+    eVATabVecCartesianInterpolation = 0
     # Bilinear interpolation in magnitude and direction space.
     eVATabVecMagDirInterpolation = 1
 
@@ -1977,9 +1977,9 @@ agcls.AgTypeNameMap["AgEVATabVecInterpMethod"] = AgEVATabVecInterpMethod
 class AgEVAControlEngineConstAcc(IntEnum):
     """Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
     # The gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineConstAccGrav = 0,
+    eVAControlEngineConstAccGrav = 0
     # The acceleration for the engine.
-    eVAControlEngineConstAccAcceleration = 1,
+    eVAControlEngineConstAccAcceleration = 1
     # The specific impulse for the engine.
     eVAControlEngineConstAccIsp = 2
 
@@ -1988,9 +1988,9 @@ agcls.AgTypeNameMap["AgEVAControlEngineConstAcc"] = AgEVAControlEngineConstAcc
 class AgEVAControlEngineConstant(IntEnum):
     """Constant Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
     # The gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineConstantGrav = 0,
+    eVAControlEngineConstantGrav = 0
     # The thrust for the engine.
-    eVAControlEngineConstantThrust = 1,
+    eVAControlEngineConstantThrust = 1
     # The specific impulse for the engine.
     eVAControlEngineConstantIsp = 2
 
@@ -2006,9 +2006,9 @@ agcls.AgTypeNameMap["AgEVAControlEngineCustom"] = AgEVAControlEngineCustom
 class AgEVAControlEngineThrottleTable(IntEnum):
     """Throttle table engine model properties that can be selected as control parameters for a Target Sequence."""
     # Gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineThrottleTableGrav = 0,
+    eVAControlEngineThrottleTableGrav = 0
     # The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year.
-    eVAControlEngineThrottleTablePercentDegradationPerYear = 1,
+    eVAControlEngineThrottleTablePercentDegradationPerYear = 1
     # The date and time used as a reference epoch for degradation.
     eVAControlEngineThrottleTableReferenceEpoch = 2
 
@@ -2017,47 +2017,47 @@ agcls.AgTypeNameMap["AgEVAControlEngineThrottleTable"] = AgEVAControlEngineThrot
 class AgEVAControlEngineIon(IntEnum):
     """Ion engine model properties that can be selected as control parameters for a Target Sequence."""
     # FlowRateModel.C0 - the constant coefficient.
-    eVAControlEngineIonFlowRateC0 = 0,
+    eVAControlEngineIonFlowRateC0 = 0
     # FlowRateModel.C1 - the linear coefficient.
-    eVAControlEngineIonFlowRateC1 = 1,
+    eVAControlEngineIonFlowRateC1 = 1
     # FlowRateModel.C2 - the quadratic coefficient.
-    eVAControlEngineIonFlowRateC2 = 2,
+    eVAControlEngineIonFlowRateC2 = 2
     # FlowRateModel.C3 - the cubic coefficient.
-    eVAControlEngineIonFlowRateC3 = 3,
+    eVAControlEngineIonFlowRateC3 = 3
     # Gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineIonGrav = 4,
+    eVAControlEngineIonGrav = 4
     # IspModel.C0 - the constant coefficient.
-    eVAControlEngineIonIspC0 = 5,
+    eVAControlEngineIonIspC0 = 5
     # IspModel.C1 - the linear coefficient.
-    eVAControlEngineIonIspC1 = 6,
+    eVAControlEngineIonIspC1 = 6
     # IspModel.C2 - the quadratic coefficient.
-    eVAControlEngineIonIspC2 = 7,
+    eVAControlEngineIonIspC2 = 7
     # IspModel.C3 - the cubic coefficient.
-    eVAControlEngineIonIspC3 = 8,
+    eVAControlEngineIonIspC3 = 8
     # MassFlowEfficiencyModel.C0 - the constant coefficient.
-    eVAControlEngineIonMassFlowEfficiencyC0 = 9,
+    eVAControlEngineIonMassFlowEfficiencyC0 = 9
     # MassFlowEfficiencyModel.C1 - the linear coefficient.
-    eVAControlEngineIonMassFlowEfficiencyC1 = 10,
+    eVAControlEngineIonMassFlowEfficiencyC1 = 10
     # MassFlowEfficiencyModel.C2 - the quadratic coefficient.
-    eVAControlEngineIonMassFlowEfficiencyC2 = 11,
+    eVAControlEngineIonMassFlowEfficiencyC2 = 11
     # MassFlowEfficiencyModel.C3 - the cubic coefficient.
-    eVAControlEngineIonMassFlowEfficiencyC3 = 12,
+    eVAControlEngineIonMassFlowEfficiencyC3 = 12
     # Minimum power required for the engine to produce thrust. 
-    eVAControlEngineIonMaxInputPower = 13,
+    eVAControlEngineIonMaxInputPower = 13
     # Maximum power that can be used by the engine to produce thrust.
-    eVAControlEngineIonMinRequiredPower = 14,
+    eVAControlEngineIonMinRequiredPower = 14
     # The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year.
-    eVAControlEngineIonPercentDegradationPerYear = 15,
+    eVAControlEngineIonPercentDegradationPerYear = 15
     # Percentage of available thrust to use (100 is full on, 0 is off).
-    eVAControlEngineIonPercentThrottle = 16,
+    eVAControlEngineIonPercentThrottle = 16
     # PowerEfficiencyModel.C0 - the constant coefficient.
-    eVAControlEngineIonPowerEfficiencyC0 = 17,
+    eVAControlEngineIonPowerEfficiencyC0 = 17
     # PowerEfficiencyModel.C1 - the linear coefficient.
-    eVAControlEngineIonPowerEfficiencyC1 = 18,
+    eVAControlEngineIonPowerEfficiencyC1 = 18
     # PowerEfficiencyModel.C2 - the quadratic coefficient.
-    eVAControlEngineIonPowerEfficiencyC2 = 19,
+    eVAControlEngineIonPowerEfficiencyC2 = 19
     # PowerEfficiencyModel.C3 - the cubic coefficient.
-    eVAControlEngineIonPowerEfficiencyC3 = 20,
+    eVAControlEngineIonPowerEfficiencyC3 = 20
     # The date and time used as a reference epoch for degradation.
     eVAControlEngineIonReferenceEpoch = 21
 
@@ -2066,69 +2066,69 @@ agcls.AgTypeNameMap["AgEVAControlEngineIon"] = AgEVAControlEngineIon
 class AgEVAControlEngineModelPoly(IntEnum):
     """Polynomial Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
     # The thrust C0 coefficient.
-    eVAControlEngineModelPolyThrustC0 = 0,
+    eVAControlEngineModelPolyThrustC0 = 0
     # The thrust C1 coefficient.
-    eVAControlEngineModelPolyThrustC1 = 1,
+    eVAControlEngineModelPolyThrustC1 = 1
     # The thrust C2 coefficient.
-    eVAControlEngineModelPolyThrustC2 = 2,
+    eVAControlEngineModelPolyThrustC2 = 2
     # The thrust C3 coefficient.
-    eVAControlEngineModelPolyThrustC3 = 3,
+    eVAControlEngineModelPolyThrustC3 = 3
     # The thrust C4 coefficient.
-    eVAControlEngineModelPolyThrustC4 = 4,
+    eVAControlEngineModelPolyThrustC4 = 4
     # The thrust C5 coefficient.
-    eVAControlEngineModelPolyThrustC5 = 5,
+    eVAControlEngineModelPolyThrustC5 = 5
     # The thrust C6 coefficient.
-    eVAControlEngineModelPolyThrustC6 = 6,
+    eVAControlEngineModelPolyThrustC6 = 6
     # The thrust C7 coefficient.
-    eVAControlEngineModelPolyThrustC7 = 7,
+    eVAControlEngineModelPolyThrustC7 = 7
     # The thrust B7 coefficient.
-    eVAControlEngineModelPolyThrustB7 = 8,
+    eVAControlEngineModelPolyThrustB7 = 8
     # The thrust E4 coefficient.
-    eVAControlEngineModelPolyThrustE4 = 9,
+    eVAControlEngineModelPolyThrustE4 = 9
     # The thrust E5 coefficient.
-    eVAControlEngineModelPolyThrustE5 = 10,
+    eVAControlEngineModelPolyThrustE5 = 10
     # The thrust E6 coefficient.
-    eVAControlEngineModelPolyThrustE6 = 11,
+    eVAControlEngineModelPolyThrustE6 = 11
     # The thrust E7 coefficient.
-    eVAControlEngineModelPolyThrustE7 = 12,
+    eVAControlEngineModelPolyThrustE7 = 12
     # The thrust K0 coefficient.
-    eVAControlEngineModelPolyThrustK0 = 13,
+    eVAControlEngineModelPolyThrustK0 = 13
     # The thrust K1 coefficient.
-    eVAControlEngineModelPolyThrustK1 = 14,
+    eVAControlEngineModelPolyThrustK1 = 14
     # The thrust reference temperature, Tr.
-    eVAControlEngineModelPolyThrustReferenceTemp = 15,
+    eVAControlEngineModelPolyThrustReferenceTemp = 15
     # The specific impulse C0 coefficient.
-    eVAControlEngineModelPolyIspC0 = 16,
+    eVAControlEngineModelPolyIspC0 = 16
     # The specific impulse C1 coefficient.
-    eVAControlEngineModelPolyIspC1 = 17,
+    eVAControlEngineModelPolyIspC1 = 17
     # The specific impulse C2 coefficient.
-    eVAControlEngineModelPolyIspC2 = 18,
+    eVAControlEngineModelPolyIspC2 = 18
     # The specific impulse C3 coefficient.
-    eVAControlEngineModelPolyIspC3 = 19,
+    eVAControlEngineModelPolyIspC3 = 19
     # The specific impulse C4 coefficient.
-    eVAControlEngineModelPolyIspC4 = 20,
+    eVAControlEngineModelPolyIspC4 = 20
     # The specific impulse C5 coefficient.
-    eVAControlEngineModelPolyIspC5 = 21,
+    eVAControlEngineModelPolyIspC5 = 21
     # The specific impulse C6 coefficient.
-    eVAControlEngineModelPolyIspC6 = 22,
+    eVAControlEngineModelPolyIspC6 = 22
     # The specific impulse C7 coefficient.
-    eVAControlEngineModelPolyIspC7 = 23,
+    eVAControlEngineModelPolyIspC7 = 23
     # The specific impulse B7 coefficient.
-    eVAControlEngineModelPolyIspB7 = 24,
+    eVAControlEngineModelPolyIspB7 = 24
     # The specific impulse E4 coefficient.
-    eVAControlEngineModelPolyIspE4 = 25,
+    eVAControlEngineModelPolyIspE4 = 25
     # The specific impulse E5 coefficient.
-    eVAControlEngineModelPolyIspE5 = 26,
+    eVAControlEngineModelPolyIspE5 = 26
     # The specific impulse E6 coefficient.
-    eVAControlEngineModelPolyIspE6 = 27,
+    eVAControlEngineModelPolyIspE6 = 27
     # The specific impulse E7 coefficient.
-    eVAControlEngineModelPolyIspE7 = 28,
+    eVAControlEngineModelPolyIspE7 = 28
     # The specific impulse K0 coefficient.
-    eVAControlEngineModelPolyIspK0 = 29,
+    eVAControlEngineModelPolyIspK0 = 29
     # The specific impulse K1 coefficient.
-    eVAControlEngineModelPolyIspK1 = 30,
+    eVAControlEngineModelPolyIspK1 = 30
     # The specific impulse reference temperature, Tr.
-    eVAControlEngineModelPolyIspReferenceTemp = 31,
+    eVAControlEngineModelPolyIspReferenceTemp = 31
     # The gravitational acceleration constant at sea level on the Earth.
     eVAControlEngineModelPolyGrav = 32
 
@@ -2137,9 +2137,9 @@ agcls.AgTypeNameMap["AgEVAControlEngineModelPoly"] = AgEVAControlEngineModelPoly
 class AgEVAEngineModelFunction(IntEnum):
     """The engine model function types."""
     # Isp as an independent variable of an equation.
-    eVAEngineModelFunctionIsp = 0,
+    eVAEngineModelFunctionIsp = 0
     # Power as an independent variable of an equation.
-    eVAEngineModelFunctionPower = 1,
+    eVAEngineModelFunctionPower = 1
     # Isp and Power as independent variables of an equation.
     eVAEngineModelFunctionIspAndPower = 2
 
@@ -2148,9 +2148,9 @@ agcls.AgTypeNameMap["AgEVAEngineModelFunction"] = AgEVAEngineModelFunction
 class AgEVAThrottleTableOperationMode(IntEnum):
     """Engine operation mode."""
     # Interpolation of engine performance data based on a regression polynomial model.
-    eVAEngineOperationRegPoly = 0,
+    eVAEngineOperationRegPoly = 0
     # Interpolation of engine performance data based on a piecewise linear model.
-    eVAEngineOperationPiecewiseLinear = 1,
+    eVAEngineOperationPiecewiseLinear = 1
     # Discrete engine operation: piecewise constant engine performance as a function of available power.
     eVAEngineOperationDiscrete = 2
 
@@ -2159,17 +2159,17 @@ agcls.AgTypeNameMap["AgEVAThrottleTableOperationMode"] = AgEVAThrottleTableOpera
 class AgEVAControlThrusters(IntEnum):
     """Thruster properties that can be selected as control parameters for a Target Sequence."""
     # The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced.
-    eVAControlThrustersEquivOnTime = 0,
+    eVAControlThrustersEquivOnTime = 0
     # The thruster efficiency.
-    eVAControlThrustersThrustEfficiency = 1,
+    eVAControlThrustersThrustEfficiency = 1
     # Thruster direction defined as a vector in the body frame. Spherical azimuth value.
-    eVAControlThrustersSphericalAzimuth = 2,
+    eVAControlThrustersSphericalAzimuth = 2
     # Thruster direction defined as a vector in the body frame. Spherical elevation value.
-    eVAControlThrustersSphericalElevation = 3,
+    eVAControlThrustersSphericalElevation = 3
     # Thruster direction defined as a vector in the body frame. Cartesian X value.
-    eVAControlThrustersCartesianX = 4,
+    eVAControlThrustersCartesianX = 4
     # Thruster direction defined as a vector in the body frame. Cartesian Y value.
-    eVAControlThrustersCartesianY = 5,
+    eVAControlThrustersCartesianY = 5
     # Thruster direction defined as a vector in the body frame. Cartesian Z value.
     eVAControlThrustersCartesianZ = 6
 
@@ -2178,7 +2178,7 @@ agcls.AgTypeNameMap["AgEVAControlThrusters"] = AgEVAControlThrusters
 class AgEVAThrusterDirection(IntEnum):
     """The thruster direction type."""
     # The direction that is opposite the direction of the exhaust.
-    eVAThrusterDirectionAcceleration = 0,
+    eVAThrusterDirectionAcceleration = 0
     # The direction of engine exhaust.
     eVAThrusterDirectionExhaust = 1
 
@@ -2187,15 +2187,15 @@ agcls.AgTypeNameMap["AgEVAThrusterDirection"] = AgEVAThrusterDirection
 class AgEVACriteria(IntEnum):
     """The criteria type."""
     # The test parameter must be equal (within the specified tolerance) to the specified value.
-    eVACriteriaEquals = 0,
+    eVACriteriaEquals = 0
     # The test parameter must be greater than the specified value.
-    eVACriteriaGreaterThan = 1,
+    eVACriteriaGreaterThan = 1
     # The current value for the calculation object is greater by the specified tolerance than the minimum reached by that object during the segment.
-    eVACriteriaGreaterThanMinimum = 2,
+    eVACriteriaGreaterThanMinimum = 2
     # The test parameter must be less than the specified value.
-    eVACriteriaLessThan = 3,
+    eVACriteriaLessThan = 3
     # The current value for the calculation object is less by the specified tolerance than the maximum reached by that object during the segment.
-    eVACriteriaLessThanMaximum = 4,
+    eVACriteriaLessThanMaximum = 4
     # The test parameter must be not equal (within the specified tolerance) to the specified value.
     eVACriteriaNotEqualTo = 5
 
@@ -2204,11 +2204,11 @@ agcls.AgTypeNameMap["AgEVACriteria"] = AgEVACriteria
 class AgEVAErrorControl(IntEnum):
     """Error Control for the numerical integrator."""
     # The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc.
-    eVAErrorControlAbsolute = 0,
+    eVAErrorControlAbsolute = 0
     # The error estimate of each element being integrated relative to the element's value at the start of the step is compared to the relative error tolerance, and the absolute error estimate of each element is compared to the absolute error tolerance.
-    eVAErrorControlRelativeByComponent = 1,
+    eVAErrorControlRelativeByComponent = 1
     # Relative to State error control.
-    eVAErrorControlRelativeToState = 2,
+    eVAErrorControlRelativeToState = 2
     # Error estimate of each integrated component relative to the element's change in value over the step is compared to the relative error tolerance, and the absolute error estimate of each integrated component is compared to the absolute error tolerance.
     eVAErrorControlRelativeToStep = 3
 
@@ -2217,7 +2217,7 @@ agcls.AgTypeNameMap["AgEVAErrorControl"] = AgEVAErrorControl
 class AgEVAPredictorCorrector(IntEnum):
     """Predictor corrector scheme for the numerical integrator."""
     # All force models are re-evaluated at each corrector step.
-    eVAPredictorCorrectorFull = 0,
+    eVAPredictorCorrectorFull = 0
     # Only the two-body acceleration is re-evaluated at each corrector step.
     eVAPredictorCorrectorPseudo = 1
 
@@ -2226,19 +2226,19 @@ agcls.AgTypeNameMap["AgEVAPredictorCorrector"] = AgEVAPredictorCorrector
 class AgEVANumericalIntegrator(IntEnum):
     """Numerical integrator type."""
     # A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison.
-    eVANumericalIntegratorRK4thAdapt = 0,
+    eVANumericalIntegratorRK4thAdapt = 0
     # A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator.
-    eVANumericalIntegratorRKF7th8th = 1,
+    eVANumericalIntegratorRKF7th8th = 1
     # A 9th order Runge-Kutta-Verner integrator with 8th order error control.
-    eVANumericalIntegratorRKV8th9th = 2,
+    eVANumericalIntegratorRKV8th9th = 2
     # An integrator based on Richardson extrapolation with automatic step size control.
-    eVANumericalIntegratorBulirschStoer = 3,
+    eVANumericalIntegratorBulirschStoer = 3
     # A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used.
-    eVANumericalIntegratorGaussJackson = 4,
+    eVANumericalIntegratorGaussJackson = 4
     # A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients.
-    eVANumericalIntegratorRK2nd3rd = 5,
+    eVANumericalIntegratorRK2nd3rd = 5
     # A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients.
-    eVANumericalIntegratorRK4th5th = 6,
+    eVANumericalIntegratorRK4th5th = 6
     # A 4th order Runge-Kutta integrator that does not employ error control.
     eVANumericalIntegratorRK4th = 7
 
@@ -2247,7 +2247,7 @@ agcls.AgTypeNameMap["AgEVANumericalIntegrator"] = AgEVANumericalIntegrator
 class AgEVACoeffRKV8th9th(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
     # SIAM 1978.
-    eVACoeffRKV8th9th1978 = 0,
+    eVACoeffRKV8th9th1978 = 0
     # Efficient.
     eVACoeffRKV8th9thEfficient = 1
 

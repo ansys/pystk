@@ -177,47 +177,47 @@ def _raise_uninitialized_error(*args):
 class AgEAvtrErrorCodes(IntEnum):
     """Error Codes."""
     # Object not found.
-    eAvtrErrorObjectNotFound = (((1 << 31) | (4 << 16)) | (0x200 + 1)),
+    eAvtrErrorObjectNotFound = (((1 << 31) | (4 << 16)) | (0x200 + 1))
     # Index out of range.
-    eAvtrErrorIndexOutOfRange = (((1 << 31) | (4 << 16)) | (0x200 + 2)),
+    eAvtrErrorIndexOutOfRange = (((1 << 31) | (4 << 16)) | (0x200 + 2))
     # The attribute is invalid.
-    eAvtrErrorInvalidAttribute = (((1 << 31) | (4 << 16)) | (0x200 + 3)),
+    eAvtrErrorInvalidAttribute = (((1 << 31) | (4 << 16)) | (0x200 + 3))
     # The command failed.
-    eAvtrErrorCommandFailed = (((1 << 31) | (4 << 16)) | (0x200 + 4)),
+    eAvtrErrorCommandFailed = (((1 << 31) | (4 << 16)) | (0x200 + 4))
     # Invalid argument.
-    eAvtrAvtrErrorInvalidArg = (((1 << 31) | (4 << 16)) | (0x200 + 5)),
+    eAvtrAvtrErrorInvalidArg = (((1 << 31) | (4 << 16)) | (0x200 + 5))
     # Empty argument.
-    eAvtrErrorEmptyArg = (((1 << 31) | (4 << 16)) | (0x200 + 6)),
+    eAvtrErrorEmptyArg = (((1 << 31) | (4 << 16)) | (0x200 + 6))
     # Object was not removed.
-    eAvtrErrorObjectNotRemoved = (((1 << 31) | (4 << 16)) | (0x200 + 7)),
+    eAvtrErrorObjectNotRemoved = (((1 << 31) | (4 << 16)) | (0x200 + 7))
     # Error renaming object.
-    eAvtrErrorFailedToRenameObject = (((1 << 31) | (4 << 16)) | (0x200 + 8)),
+    eAvtrErrorFailedToRenameObject = (((1 << 31) | (4 << 16)) | (0x200 + 8))
     # Unknown class type.
-    eAvtrErrorUnknownClassType = (((1 << 31) | (4 << 16)) | (0x200 + 9)),
+    eAvtrErrorUnknownClassType = (((1 << 31) | (4 << 16)) | (0x200 + 9))
     # Failed to create the object.
-    eAvtrErrorFailedToCreateObject = (((1 << 31) | (4 << 16)) | (0x200 + 10)),
+    eAvtrErrorFailedToCreateObject = (((1 << 31) | (4 << 16)) | (0x200 + 10))
     # Invalid choice for object link.
-    eAvtrErrorObjectLinkInvalidChoice = (((1 << 31) | (4 << 16)) | (0x200 + 11)),
+    eAvtrErrorObjectLinkInvalidChoice = (((1 << 31) | (4 << 16)) | (0x200 + 11))
     # No choices available.
-    eAvtrErrorObjectLinkNoChoices = (((1 << 31) | (4 << 16)) | (0x200 + 12)),
+    eAvtrErrorObjectLinkNoChoices = (((1 << 31) | (4 << 16)) | (0x200 + 12))
     # Read only attribute.
-    eAvtrErrorReadOnlyAttribute = (((1 << 31) | (4 << 16)) | (0x200 + 13)),
+    eAvtrErrorReadOnlyAttribute = (((1 << 31) | (4 << 16)) | (0x200 + 13))
     # Invalid constraint list.
-    eAvtrErrorCstrInvalidCstrList = (((1 << 31) | (4 << 16)) | (0x200 + 14)),
+    eAvtrErrorCstrInvalidCstrList = (((1 << 31) | (4 << 16)) | (0x200 + 14))
     # InvalidConstraint.
-    eAvtrErrorCstrInvalidConstraint = (((1 << 31) | (4 << 16)) | (0x200 + 15)),
+    eAvtrErrorCstrInvalidConstraint = (((1 << 31) | (4 << 16)) | (0x200 + 15))
     # List if read only.
-    eAvtrErrorListReadOnly = (((1 << 31) | (4 << 16)) | (0x200 + 16)),
+    eAvtrErrorListReadOnly = (((1 << 31) | (4 << 16)) | (0x200 + 16))
     # Failed to insert the item into the list.
-    eAvtrErrorListInsertFailed = (((1 << 31) | (4 << 16)) | (0x200 + 17)),
+    eAvtrErrorListInsertFailed = (((1 << 31) | (4 << 16)) | (0x200 + 17))
     # Length is invalid.
-    eAvtrErrorInvalidLength = (((1 << 31) | (4 << 16)) | (0x200 + 18)),
+    eAvtrErrorInvalidLength = (((1 << 31) | (4 << 16)) | (0x200 + 18))
     # Error loading a file.
-    eAvtrErrorFailedToLoadFile = (((1 << 31) | (4 << 16)) | (0x200 + 19)),
+    eAvtrErrorFailedToLoadFile = (((1 << 31) | (4 << 16)) | (0x200 + 19))
     # Invalid operation.
-    eAvtrErrorInvalidOperation = (((1 << 31) | (4 << 16)) | (0x200 + 20)),
+    eAvtrErrorInvalidOperation = (((1 << 31) | (4 << 16)) | (0x200 + 20))
     # Method failed.
-    eAvtrErrorMethodInvokeFailed = (((1 << 31) | (4 << 16)) | (0x200 + 21)),
+    eAvtrErrorMethodInvokeFailed = (((1 << 31) | (4 << 16)) | (0x200 + 21))
     # Deprecated property or method.
     eAvtrErrorDeprecated = (((1 << 31) | (4 << 16)) | (0x200 + 22))
 
@@ -226,9 +226,9 @@ agcls.AgTypeNameMap["AgEAvtrErrorCodes"] = AgEAvtrErrorCodes
 class AgEAvtrClosureValue(IntEnum):
     """The closure value."""
     # The closure mode
-    eClosureMode = 0,
+    eClosureMode = 0
     # The HOBS max angle offset
-    eMaxAngle = 1,
+    eMaxAngle = 1
     # The HOBS angle tolerance
     eAngleTol = 2
 
@@ -237,65 +237,65 @@ agcls.AgTypeNameMap["AgEAvtrClosureValue"] = AgEAvtrClosureValue
 class AgEAvtrProcedureType(IntEnum):
     """Aviator procedure types."""
     # Airway procedure.
-    eProcAirway = 0,
+    eProcAirway = 0
     # Airway Router procedure.
-    eProcAirwayRouter = 1,
+    eProcAirwayRouter = 1
     # ArcEnroute procedure.
-    eProcArcEnroute = 2,
+    eProcArcEnroute = 2
     # ArcPointToPoint procedure.
-    eProcArcPointToPoint = 3,
+    eProcArcPointToPoint = 3
     # Area Target Search procedure.
-    eProcAreaTargetSearch = 4,
+    eProcAreaTargetSearch = 4
     # Basic Maneuver procedure.
-    eProcBasicManeuver = 5,
+    eProcBasicManeuver = 5
     # Basic Point to Point procedure.
-    eProcBasicPointToPoint = 6,
+    eProcBasicPointToPoint = 6
     # Delay procedure.
-    eProcDelay = 7,
+    eProcDelay = 7
     # Enroute procedure.
-    eProcEnroute = 8,
+    eProcEnroute = 8
     # Flight Line procedure.
-    eProcFlightLine = 9,
+    eProcFlightLine = 9
     # Formation Recover procedure.
-    eProcFormationRecover = 10,
+    eProcFormationRecover = 10
     # Holding Circular procedure.
-    eProcHoldingCircular = 11,
+    eProcHoldingCircular = 11
     # Holding Figure 8 procedure.
-    eProcHoldingFigure8 = 12,
+    eProcHoldingFigure8 = 12
     # Holding Racetrack procedure.
-    eProcHoldingRacetrack = 13,
+    eProcHoldingRacetrack = 13
     # Hover procedure.
-    eProcHover = 14,
+    eProcHover = 14
     # Hover Translate procedure.
-    eProcHoverTranslate = 15,
+    eProcHoverTranslate = 15
     # In Formation procedure.
-    eProcInFormation = 16,
+    eProcInFormation = 16
     # Landing procedure.
-    eProcLanding = 17,
+    eProcLanding = 17
     # Launch procedure.
-    eProcLaunch = 18,
+    eProcLaunch = 18
     # Parallel Flight Line procedure.
-    eProcParallelFlightLine = 19,
+    eProcParallelFlightLine = 19
     # Reference State procedure.
-    eProcReferenceState = 20,
+    eProcReferenceState = 20
     # Super Procedure procedure.
-    eProcSuperProcedure = 21,
+    eProcSuperProcedure = 21
     # Takeoff procedure.
-    eProcTakeoff = 22,
+    eProcTakeoff = 22
     # Terrain Following procedure.
-    eProcTerrainFollowing = 23,
+    eProcTerrainFollowing = 23
     # Transition to Forward Flight procedure.
-    eProcTransitionToForwardFlight = 24,
+    eProcTransitionToForwardFlight = 24
     # Transition To Hover procedure.
-    eProcTransitionToHover = 25,
+    eProcTransitionToHover = 25
     # Vertical Landing procedure.
-    eProcVerticalLanding = 26,
+    eProcVerticalLanding = 26
     # Vertical Takeoff procedure.
-    eProcVerticalTakeoff = 27,
+    eProcVerticalTakeoff = 27
     # VGT Point procedure.
-    eProcVGTPoint = 28,
+    eProcVGTPoint = 28
     # LaunchDynState procedure.
-    eProcLaunchDynState = 29,
+    eProcLaunchDynState = 29
     # LaunchWaypoint procedure.
     eProcLaunchWaypoint = 30
 
@@ -304,39 +304,39 @@ agcls.AgTypeNameMap["AgEAvtrProcedureType"] = AgEAvtrProcedureType
 class AgEAvtrSiteType(IntEnum):
     """Aviator site types."""
     # Airport from Catalog site.
-    eSiteAirportFromCatalog = 0,
+    eSiteAirportFromCatalog = 0
     # End of Previous Procedure site.
-    eSiteEndOfPrevProcedure = 1,
+    eSiteEndOfPrevProcedure = 1
     # Navaid from Catalog site.
-    eSiteNavaidFromCatalog = 2,
+    eSiteNavaidFromCatalog = 2
     # Reference State site.
-    eSiteReferenceState = 3,
+    eSiteReferenceState = 3
     # Relative to Previous Procedure site.
-    eSiteRelativeToPrevProcedure = 4,
+    eSiteRelativeToPrevProcedure = 4
     # Relative to Stationary STK Object site.
-    eSiteRelativeToStationarySTKObject = 5,
+    eSiteRelativeToStationarySTKObject = 5
     # Runway site.
-    eSiteRunway = 6,
+    eSiteRunway = 6
     # Runway from Catalog site.
-    eSiteRunwayFromCatalog = 7,
+    eSiteRunwayFromCatalog = 7
     # STK Area Target site.
-    eSiteSTKAreaTarget = 8,
+    eSiteSTKAreaTarget = 8
     # STK Object Waypoint site.
-    eSiteSTKObjectWaypoint = 9,
+    eSiteSTKObjectWaypoint = 9
     # STK STatic Object site.
-    eSiteSTKStaticObject = 10,
+    eSiteSTKStaticObject = 10
     # STK Vehicle site.
-    eSiteSTKVehicle = 11,
+    eSiteSTKVehicle = 11
     # Super Procedure site.
-    eSiteSuperProcedure = 12,
+    eSiteSuperProcedure = 12
     # VTOL Point site.
-    eSiteVTOLPoint = 13,
+    eSiteVTOLPoint = 13
     # VTOL Point from Catalog site.
-    eSiteVTOLPointFromCatalog = 14,
+    eSiteVTOLPointFromCatalog = 14
     # Waypoint site.
-    eSiteWaypoint = 15,
+    eSiteWaypoint = 15
     # Waypoint from Catalog site.
-    eSiteWaypointFromCatalog = 16,
+    eSiteWaypointFromCatalog = 16
     # DynState site.
     eSiteDynState = 17
 
@@ -345,7 +345,7 @@ agcls.AgTypeNameMap["AgEAvtrSiteType"] = AgEAvtrSiteType
 class AgEAvtrBasicManeuverStrategy(IntEnum):
     """Basic maneuver strategy types."""
     # Straight Ahead strategy.
-    eStraightAhead = 0,
+    eStraightAhead = 0
     # Weave strategy.
     eWeave = 1
 
@@ -354,11 +354,11 @@ agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategy"] = AgEAvtrBasicManeuverStrate
 class AgEAvtrStraightAheadRefFrame(IntEnum):
     """Straight Ahead basic maneuver Reference Frame."""
     # Maintain Course.
-    eMaintainCourse = 0,
+    eMaintainCourse = 0
     # Maintain Heading.
-    eMaintainHeading = 1,
+    eMaintainHeading = 1
     # No Lateral Accelerations.
-    eNoLateralAcc = 2,
+    eNoLateralAcc = 2
     # Compensate For Coriolis
     eCompensateCoriolis = 3
 
@@ -367,11 +367,11 @@ agcls.AgTypeNameMap["AgEAvtrStraightAheadRefFrame"] = AgEAvtrStraightAheadRefFra
 class AgEAvtrAirspeedType(IntEnum):
     """Airspeed types."""
     # Mach number.
-    eMach = 0,
+    eMach = 0
     # Equivalent airspeed.
-    eEAS = 1,
+    eEAS = 1
     # Calibrated airspeed.
-    eCAS = 2,
+    eCAS = 2
     # True airspeed.
     eTAS = 3
 
@@ -380,7 +380,7 @@ agcls.AgTypeNameMap["AgEAvtrAirspeedType"] = AgEAvtrAirspeedType
 class AgEAvtrAeroPropSimpleMode(IntEnum):
     """Aircraft operating mode for basic acceleration models with aerodynamics set to Simple."""
     # Fixed wing operatiog mode.
-    eFixedWing = 0,
+    eFixedWing = 0
     # Helicopter operating mode.
     eHelicopter = 1
 
@@ -389,13 +389,13 @@ agcls.AgTypeNameMap["AgEAvtrAeroPropSimpleMode"] = AgEAvtrAeroPropSimpleMode
 class AgEAvtrAeroPropFlightMode(IntEnum):
     """Flight mode for the Aero/Prop maneuver mode helper in aircraft acceleration models."""
     # Forward Flight mode.
-    eFlightPerfForwardFlight = 0,
+    eFlightPerfForwardFlight = 0
     # Hover mode.
-    eFlightPerfHover = 1,
+    eFlightPerfHover = 1
     # Takeoff mode.
-    eFlightPerfTakeoff = 2,
+    eFlightPerfTakeoff = 2
     # Landing mode.
-    eFlightPerfLanding = 3,
+    eFlightPerfLanding = 3
     # Weight on wheels mode.
     eFlightPerfWeightOnWheels = 4
 
@@ -404,15 +404,15 @@ agcls.AgTypeNameMap["AgEAvtrAeroPropFlightMode"] = AgEAvtrAeroPropFlightMode
 class AgEAvtrPhaseOfFlight(IntEnum):
     """Flight mode for basic maneuver procedures."""
     # Takeoff flight mode.
-    eFlightPhaseTakeoff = 1,
+    eFlightPhaseTakeoff = 1
     # Forward flight climb flight mode.
-    eFlightPhaseClimb = 2,
+    eFlightPhaseClimb = 2
     # Forward flight - cruise flight mode.
-    eFlightPhaseCruise = 3,
+    eFlightPhaseCruise = 3
     # Forward flight descend flight mode.
-    eFlightPhaseDescend = 4,
+    eFlightPhaseDescend = 4
     # Landing flight mode.
-    eFlightPhaseLanding = 5,
+    eFlightPhaseLanding = 5
     # Rotary wing / hover flight mode
     eFlightPhaseVTOL = 6
 
@@ -421,15 +421,15 @@ agcls.AgTypeNameMap["AgEAvtrPhaseOfFlight"] = AgEAvtrPhaseOfFlight
 class AgEAvtrCruiseSpeed(IntEnum):
     """Cruise airspeed type for the procedure."""
     # Minimum airspeed.
-    eMinAirspeed = 0,
+    eMinAirspeed = 0
     # Maximum endurance airspeed.
-    eMaxEnduranceAirspeed = 1,
+    eMaxEnduranceAirspeed = 1
     # Maximum range airspeed.
-    eMaxRangeAirspeed = 2,
+    eMaxRangeAirspeed = 2
     # Other airspeed.
-    eOtherAirspeed = 3,
+    eOtherAirspeed = 3
     # Maximum airspeed.
-    eMaxAirspeed = 4,
+    eMaxAirspeed = 4
     # Maximum performance airspeed.
     eMaxPerfAirspeed = 6
 
@@ -438,9 +438,9 @@ agcls.AgTypeNameMap["AgEAvtrCruiseSpeed"] = AgEAvtrCruiseSpeed
 class AgEAvtrTakeoffMode(IntEnum):
     """Takeoff procedure mode."""
     # Normal takeoff mode.
-    eTakeoffNormal = 0,
+    eTakeoffNormal = 0
     # Fly to departure point takeoff mode.
-    eTakeoffFlyToDeparturePoint = 1,
+    eTakeoffFlyToDeparturePoint = 1
     # Low transition takeoff.
     eTakeoffLowTransition = 2
 
@@ -449,9 +449,9 @@ agcls.AgTypeNameMap["AgEAvtrTakeoffMode"] = AgEAvtrTakeoffMode
 class AgEAvtrApproachMode(IntEnum):
     """Landing procedure approach mode."""
     # Standard instrument approach mode.
-    eStandardInstrumentApproach = 0,
+    eStandardInstrumentApproach = 0
     # Intercept Glideslope approach mode.
-    eInterceptGlideslope = 1,
+    eInterceptGlideslope = 1
     # Enter downwind pattern approach mode.
     eEnterDownwindPattern = 2
 
@@ -460,9 +460,9 @@ agcls.AgTypeNameMap["AgEAvtrApproachMode"] = AgEAvtrApproachMode
 class AgEAvtrNavigatorTurnDir(IntEnum):
     """Turn mode for procedures with Enroute Turn Direction options."""
     # Automatic turn. Aviator will determine the direction of the turn.
-    eNavigatorTurnAuto = 0,
+    eNavigatorTurnAuto = 0
     # Left turn.
-    eNavigatorTurnLeft = 1,
+    eNavigatorTurnLeft = 1
     # Right turn.
     eNavigatorTurnRight = 2
 
@@ -471,17 +471,17 @@ agcls.AgTypeNameMap["AgEAvtrNavigatorTurnDir"] = AgEAvtrNavigatorTurnDir
 class AgEAvtrBasicManeuverFuelFlowType(IntEnum):
     """Fuel flow type for basic maneuver procedures."""
     # Fuel flow defined for the current Takeoff performance model.
-    eBasicManeuverFuelFlowTakeoff = 0,
+    eBasicManeuverFuelFlowTakeoff = 0
     # Fuel flow defined for the current Cruise performance model.
-    eBasicManeuverFuelFlowCruise = 1,
+    eBasicManeuverFuelFlowCruise = 1
     # Fuel flow defined for the current Landing performance model.
-    eBasicManeuverFuelFlowLanding = 2,
+    eBasicManeuverFuelFlowLanding = 2
     # Fuel flow defined for the current VTOL performance model.
-    eBasicManeuverFuelFlowVTOL = 3,
+    eBasicManeuverFuelFlowVTOL = 3
     # Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model.
-    eBasicManeuverFuelFlowAeroProp = 4,
+    eBasicManeuverFuelFlowAeroProp = 4
     # Fuel flow defined manually.
-    eBasicManeuverFuelFlowOverride = 5,
+    eBasicManeuverFuelFlowOverride = 5
     # Fuel flow defined using the thrust model for this maneuver.
     eBasicManeuverFuelFlowThrustModel = 6
 
@@ -490,9 +490,9 @@ agcls.AgTypeNameMap["AgEAvtrBasicManeuverFuelFlowType"] = AgEAvtrBasicManeuverFu
 class AgEAvtrBasicManeuverAltitudeLimit(IntEnum):
     """The type of response Aviator will have if the maneuver attempts to exceed the altitude limit."""
     # Error when altitude limit exceeded.
-    eBasicManeuverAltLimitError = 0,
+    eBasicManeuverAltLimitError = 0
     # Stop when altitude limit exceeded.
-    eBasicManeuverAltLimitStop = 1,
+    eBasicManeuverAltLimitStop = 1
     # Continue when altitude limit exceeded.
     eBasicManeuverAltLimitContinue = 2
 
@@ -501,9 +501,9 @@ agcls.AgTypeNameMap["AgEAvtrBasicManeuverAltitudeLimit"] = AgEAvtrBasicManeuverA
 class AgEAvtrRunwayHighLowEnd(IntEnum):
     """Runway heading that the aircraft will use."""
     # High end.
-    eHighEnd = 0,
+    eHighEnd = 0
     # Low end.
-    eLowEnd = 1,
+    eLowEnd = 1
     # Headwind.
     eHeadwind = 2
 
@@ -512,7 +512,7 @@ agcls.AgTypeNameMap["AgEAvtrRunwayHighLowEnd"] = AgEAvtrRunwayHighLowEnd
 class AgEAvtrBasicManeuverRefFrame(IntEnum):
     """Reference frame for the basic maneuver strategy."""
     # Earth frame.
-    eEarthFrame = 0,
+    eEarthFrame = 0
     # Wind frame.
     eWindFrame = 1
 
@@ -521,11 +521,11 @@ agcls.AgTypeNameMap["AgEAvtrBasicManeuverRefFrame"] = AgEAvtrBasicManeuverRefFra
 class AgEAvtrBasicManeuverStrategyNavControlLimit(IntEnum):
     """Method to define the control limits for the aircraft during the maneuver."""
     # Use Accel Perf Model.
-    eNavUseAccelPerfModel = 0,
+    eNavUseAccelPerfModel = 0
     # Specify min turn radius.
-    eNavMinTurnRadius = 1,
+    eNavMinTurnRadius = 1
     # Specify max turn rate.
-    eNavMaxTurnRate = 2,
+    eNavMaxTurnRate = 2
     # Specify max horiz accel.
     eNavMaxHorizAccel = 3
 
@@ -534,9 +534,9 @@ agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategyNavControlLimit"] = AgEAvtrBasi
 class AgEAvtrAccelManeuverMode(IntEnum):
     """The mode that the aircraft will adhere to the specified acceleration parameters."""
     # Constant value (default).
-    eAccelManeuverModeNormal = 0,
+    eAccelManeuverModeNormal = 0
     # Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius.
-    eAccelManeuverModeDensityScale = 1,
+    eAccelManeuverModeDensityScale = 1
     # Aero/Prop maneuver mode.
     eAccelManeuverModeAeroProp = 2
 
@@ -545,11 +545,11 @@ agcls.AgTypeNameMap["AgEAvtrAccelManeuverMode"] = AgEAvtrAccelManeuverMode
 class AgEAvtrAircraftAeroStrategy(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
     # Simple aerodynamics.
-    eAircraftAeroSimple = 0,
+    eAircraftAeroSimple = 0
     # External file aerodynamics.
-    eAircraftAeroExternalFile = 1,
+    eAircraftAeroExternalFile = 1
     # Basic fixed wing aerodynamics.
-    eAircraftAeroBasicFixedWing = 2,
+    eAircraftAeroBasicFixedWing = 2
     # Advanced missile aerodynamics.
     eAircraftAeroAdvancedMissile = 3
 
@@ -558,15 +558,15 @@ agcls.AgTypeNameMap["AgEAvtrAircraftAeroStrategy"] = AgEAvtrAircraftAeroStrategy
 class AgEAvtrAircraftPropStrategy(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
     # Simple propulsion.
-    eAircraftPropSimple = 0,
+    eAircraftPropSimple = 0
     # External file propulsion.
-    eAircraftPropExternalFile = 1,
+    eAircraftPropExternalFile = 1
     # Basic fixed wing propulsion.
-    eAircraftPropBasicFixedWing = 2,
+    eAircraftPropBasicFixedWing = 2
     # Missile - Ramjet propulsion.
-    eAircraftPropMissileRamjet = 3,
+    eAircraftPropMissileRamjet = 3
     # Missile - Rocket propulsion.
-    eAircraftPropMissileRocket = 4,
+    eAircraftPropMissileRocket = 4
     # Missile - Turbojet propulsion.
     eAircraftPropMissileTurbojet = 5
 
@@ -575,7 +575,7 @@ agcls.AgTypeNameMap["AgEAvtrAircraftPropStrategy"] = AgEAvtrAircraftPropStrategy
 class AgEAvtrAGLMSL(IntEnum):
     """The altitude mode."""
     # AGl altitude. ALtitude above local terrain
-    eAltAGL = 0,
+    eAltAGL = 0
     # MSL altitude. Altitude above sea level.
     eAltMSL = 1
 
@@ -584,7 +584,7 @@ agcls.AgTypeNameMap["AgEAvtrAGLMSL"] = AgEAvtrAGLMSL
 class AgEAvtrLandingApproachFixRangeMode(IntEnum):
     """The reference point on the runway for the Approach Fix Range."""
     # Runway center.
-    eRelToRunwayCenter = 0,
+    eRelToRunwayCenter = 0
     # Runway end.
     eRelToRunwayEnd = 1
 
@@ -593,7 +593,7 @@ agcls.AgTypeNameMap["AgEAvtrLandingApproachFixRangeMode"] = AgEAvtrLandingApproa
 class AgEAvtrAccelerationAdvAccelMode(IntEnum):
     """Acceleration mode for aircraft advanced acceleration models."""
     # Max acceleration.
-    eAccelModeMaxAccel = 0,
+    eAccelModeMaxAccel = 0
     # Manually override the acceleration.
     eAccelModeOverrideAccel = 1
 
@@ -602,7 +602,7 @@ agcls.AgTypeNameMap["AgEAvtrAccelerationAdvAccelMode"] = AgEAvtrAccelerationAdvA
 class AgEAvtrAccelManeuverAeroPropMode(IntEnum):
     """The mode used for the Aero/Prop maneuver mode helper for aircraft basic acceleration models."""
     # Use Thrust and Lift Coefficient
-    eUseThrustAndLiftCoefficient = 0,
+    eUseThrustAndLiftCoefficient = 0
     # Use Lift Coefficient only.
     eUseLiftCoefficientOnly = 1
 
@@ -611,11 +611,11 @@ agcls.AgTypeNameMap["AgEAvtrAccelManeuverAeroPropMode"] = AgEAvtrAccelManeuverAe
 class AgEAvtrBasicManeuverStrategyAirspeedPerfLimits(IntEnum):
     """The type of response Aviator will have if the basic maneuver attempts to exceed the airspeed limit."""
     # Constrain the aircraft to not exceed the airspeed limit.
-    eConstrainIfViolated = 0,
+    eConstrainIfViolated = 0
     # Stop when airspeed limit exceeded..
-    eStopIfViolated = 1,
+    eStopIfViolated = 1
     # Error when airspeed limit exceeded.
-    eErrorIfViolated = 2,
+    eErrorIfViolated = 2
     # Ignore when airspeed limit exceeded.
     eIgnoreIfViolated = 3
 
@@ -624,13 +624,13 @@ agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategyAirspeedPerfLimits"] = AgEAvtrB
 class AgEAvtrTurnMode(IntEnum):
     """The mode to specify an aircraft's level turn performance for acceleration performance models."""
     # Turn G. The standard G force of the aircraft in a turn.
-    eTurnModeTurnG = 0,
+    eTurnModeTurnG = 0
     # Bank angle.
-    eTurnModeBankAngle = 1,
+    eTurnModeBankAngle = 1
     # Turn acceleration.
-    eTurnModeAccel = 2,
+    eTurnModeAccel = 2
     # Turn radius.
-    eTurnModeRadius = 3,
+    eTurnModeRadius = 3
     # Turn rate.
     eTurnModeRate = 4
 
@@ -639,13 +639,13 @@ agcls.AgTypeNameMap["AgEAvtrTurnMode"] = AgEAvtrTurnMode
 class AgEAvtrPointToPointMode(IntEnum):
     """The heading or course of the aircraft at the beginning of the procedure."""
     # Fly direct.
-    eFlyDirect = 0,
+    eFlyDirect = 0
     # Arrive on course for next procedure.
-    eArriveOnCourseForNext = 1,
+    eArriveOnCourseForNext = 1
     # Arrive on course.
-    eArriveOnCourse = 2,
+    eArriveOnCourse = 2
     # Inscribed turn.
-    eInscribedTurn = 3,
+    eInscribedTurn = 3
     # Arrive on heading into wind.
     eArriveOnHdgIntoWind = 4
 
@@ -654,11 +654,11 @@ agcls.AgTypeNameMap["AgEAvtrPointToPointMode"] = AgEAvtrPointToPointMode
 class AgEAvtrAltitudeConstraintManeuverMode(IntEnum):
     """Turn mode for procedures that may require a level off maneuver."""
     # Automatic turn.Aviator will determine the direction of the turn.
-    eLevelOffAutomaticManeuver = 0,
+    eLevelOffAutomaticManeuver = 0
     # Left turn.
-    eLevelOffLeftTurnManeuver = 1,
+    eLevelOffLeftTurnManeuver = 1
     # Right turn.
-    eLevelOffRightTurnManeuver = 2,
+    eLevelOffRightTurnManeuver = 2
     # No turn. A level off maneuver will not be performed.
     eLevelOffNoManeuver = 3
 
@@ -667,9 +667,9 @@ agcls.AgTypeNameMap["AgEAvtrAltitudeConstraintManeuverMode"] = AgEAvtrAltitudeCo
 class AgEAvtrWindModelType(IntEnum):
     """The wind model type."""
     # Constant Wind/Speed.
-    eConstantWind = 0,
+    eConstantWind = 0
     # NOAA ADDS Service.
-    eADDS = 1,
+    eADDS = 1
     # Disabled wind model.
     eDisabled = 2
 
@@ -678,9 +678,9 @@ agcls.AgTypeNameMap["AgEAvtrWindModelType"] = AgEAvtrWindModelType
 class AgEAvtrWindAtmosModelSource(IntEnum):
     """The source for the wind or atmosphere model."""
     # Scenario Model.
-    eScenarioModel = 0,
+    eScenarioModel = 0
     # Mission Model.
-    eMissionModel = 1,
+    eMissionModel = 1
     # Procedure Model.
     eProcedureModel = 2
 
@@ -689,7 +689,7 @@ agcls.AgTypeNameMap["AgEAvtrWindAtmosModelSource"] = AgEAvtrWindAtmosModelSource
 class AgEAvtrADDSMsgInterpType(IntEnum):
     """The interpolation method for the wind conditions."""
     # One Point Interpolation.
-    eInterpOnePoint = 0,
+    eInterpOnePoint = 0
     # Two Point Interpolation.
     eInterpTwoPoint = 1
 
@@ -698,7 +698,7 @@ agcls.AgTypeNameMap["AgEAvtrADDSMsgInterpType"] = AgEAvtrADDSMsgInterpType
 class AgEAvtrADDSMissingMsgType(IntEnum):
     """The wind effect to apply if there is an interval gap between messages."""
     # Zero Wind.
-    eMissingMsgZeroWind = 0,
+    eMissingMsgZeroWind = 0
     # Interpolate End Points.
     eMissingMsgInterpEndPoints = 1
 
@@ -707,7 +707,7 @@ agcls.AgTypeNameMap["AgEAvtrADDSMissingMsgType"] = AgEAvtrADDSMissingMsgType
 class AgEAvtrADDSMsgExtrapType(IntEnum):
     """The wind effect to apply if the procedure(s) extend beyond the intervals of any available messages."""
     # Zero Wind.
-    eExtrapMsgZeroWind = 0,
+    eExtrapMsgZeroWind = 0
     # Hold End Point Wind.
     eExtrapMsgHoldEndPoints = 1
 
@@ -716,9 +716,9 @@ agcls.AgTypeNameMap["AgEAvtrADDSMsgExtrapType"] = AgEAvtrADDSMsgExtrapType
 class AgEAvtrADDSForecastType(IntEnum):
     """The forecast type for the NOAA ADDS message."""
     # 6 hour forecast
-    e6Hour = 0,
+    e6Hour = 0
     # 12 hour forecast
-    e12Hour = 1,
+    e12Hour = 1
     # 24 hour forecast
     e24Hour = 2
 
@@ -727,15 +727,15 @@ agcls.AgTypeNameMap["AgEAvtrADDSForecastType"] = AgEAvtrADDSForecastType
 class AgEAvtrAtmosphereModel(IntEnum):
     """The basic atmosphere model type."""
     # 1976 U.S. Standard Atmosphere
-    eStandard1976 = 0,
+    eStandard1976 = 0
     # U.S. MIL HDBK 310 - Hot
-    eMILHot = 1,
+    eMILHot = 1
     # U.S. MIL HDBK 310 - Cold
-    eMILCold = 2,
+    eMILCold = 2
     # U.S. MIL HDBK 310 - Low Density
-    eMILLowDensity = 3,
+    eMILLowDensity = 3
     # U.S. MIL HDBK 310 - High Density
-    eMILHighDensity = 4,
+    eMILHighDensity = 4
     # Interpolate MIL HDBK 310 Data
     eMILInterpolate = 5
 
@@ -744,7 +744,7 @@ agcls.AgTypeNameMap["AgEAvtrAtmosphereModel"] = AgEAvtrAtmosphereModel
 class AgEAvtrSmoothTurnMode(IntEnum):
     """The basic maneuver smooth turn mode."""
     # Specify the load factor of the smooth turn
-    eSmoothTurnLoadFactor = 0,
+    eSmoothTurnLoadFactor = 0
     # Specify the roll angle of the smooth turn
     eSmoothTurnRollAngle = 1
 
@@ -753,7 +753,7 @@ agcls.AgTypeNameMap["AgEAvtrSmoothTurnMode"] = AgEAvtrSmoothTurnMode
 class AgEAvtrPerfModelOverride(IntEnum):
     """The performance model override mode."""
     # Use the performance model value
-    ePerfModelValue = 0,
+    ePerfModelValue = 0
     # Override the performance model value
     eOverride = 1
 
@@ -762,29 +762,29 @@ agcls.AgTypeNameMap["AgEAvtrPerfModelOverride"] = AgEAvtrPerfModelOverride
 class AgEAvtrBasicManeuverAirspeedMode(IntEnum):
     """The basic maneuver airspeed mode."""
     # Maintain the current airspeed
-    eMaintainCurrentAirspeed = 0,
+    eMaintainCurrentAirspeed = 0
     # Maintain the specified airspeed
-    eMaintainSpecifiedAirspeed = 1,
+    eMaintainSpecifiedAirspeed = 1
     # Maintain the minimum airspeed for the aircraft
-    eMaintainMinAirspeed = 2,
+    eMaintainMinAirspeed = 2
     # Maintain the maximum endurance airspeed for the aircraft
-    eMaintainMaxEnduranceAirspeed = 3,
+    eMaintainMaxEnduranceAirspeed = 3
     # Maintain the maximum range airspeed for the aircraft
-    eMaintainMaxRangeAirspeed = 4,
+    eMaintainMaxRangeAirspeed = 4
     # Maintain the maximum airspeed for the aircraft
-    eMaintainMaxAirspeed = 5,
+    eMaintainMaxAirspeed = 5
     # Maintain the maximum performance airspeed for the aircraft
-    eMaintainMaxPerformanceAirspeed = 6,
+    eMaintainMaxPerformanceAirspeed = 6
     # Accelerate at the specified rate
-    eAccelAtG = 7,
+    eAccelAtG = 7
     # Decelerate at the specified rate
-    eDecelAtG = 8,
+    eDecelAtG = 8
     # Accel/Decel at the force of gravity (no drag, no thrust)
-    eAccelDecelUnderGravity = 9,
+    eAccelDecelUnderGravity = 9
     # Accel/Decel using Aero/Propulsion with throttle setting
-    eAccelDecelAeroProp = 10,
+    eAccelDecelAeroProp = 10
     # Specify thrust (using drag from Aerodynamics model)
-    eThrust = 11,
+    eThrust = 11
     # Interpolate Accelerate/Decelerate over interval
     eInterpolateAccelDecel = 12
 
@@ -793,7 +793,7 @@ agcls.AgTypeNameMap["AgEAvtrBasicManeuverAirspeedMode"] = AgEAvtrBasicManeuverAi
 class AgEAvtrAileronRollFlightPath(IntEnum):
     """The flight path option for an aileron roll strategy for a basic maneuver procedure."""
     # Fly a straight line flight path
-    eStraightLineFlightPath = 0,
+    eStraightLineFlightPath = 0
     # Fly a zero G flight path
     eZeroGFlightPath = 1
 
@@ -802,7 +802,7 @@ agcls.AgTypeNameMap["AgEAvtrAileronRollFlightPath"] = AgEAvtrAileronRollFlightPa
 class AgEAvtrRollLeftRight(IntEnum):
     """The roll direction for an aileron roll strategy for a basic maneuver procedure."""
     # Roll left
-    eRollLeft = 0,
+    eRollLeft = 0
     # Roll right
     eRollRight = 1
 
@@ -811,7 +811,7 @@ agcls.AgTypeNameMap["AgEAvtrRollLeftRight"] = AgEAvtrRollLeftRight
 class AgEAvtrRollUprightInverted(IntEnum):
     """The orientation for an aileron roll strategy for a basic maneuver procedure."""
     # Upright roll
-    eRollUpright = 0,
+    eRollUpright = 0
     # Inverted roll
     eRollInverted = 1
 
@@ -820,7 +820,7 @@ agcls.AgTypeNameMap["AgEAvtrRollUprightInverted"] = AgEAvtrRollUprightInverted
 class AgEAvtrAileronRollMode(IntEnum):
     """The roll mode aileron roll strategy for a basic maneuver procedure."""
     # Specify the angle to roll
-    eRollToAngle = 0,
+    eRollToAngle = 0
     # Specify the orientation to roll to
     eRollToOrientation = 1
 
@@ -829,9 +829,9 @@ agcls.AgTypeNameMap["AgEAvtrAileronRollMode"] = AgEAvtrAileronRollMode
 class AgEAvtrFlyAOALeftRight(IntEnum):
     """The roll direction for a Fly AOA strategy for a basic maneuver procedure."""
     # Roll left
-    eFlyAOALeft = 0,
+    eFlyAOALeft = 0
     # Roll right
-    eFlyAOARight = 1,
+    eFlyAOARight = 1
     # No roll
     eFlyAOANoRoll = 2
 
@@ -840,9 +840,9 @@ agcls.AgTypeNameMap["AgEAvtrFlyAOALeftRight"] = AgEAvtrFlyAOALeftRight
 class AgEAvtrSmoothAccelLeftRight(IntEnum):
     """The roll direction for a smooth acceleration strategy for a basic maneuver procedure."""
     # Roll left
-    eSmoothAccelLeft = 0,
+    eSmoothAccelLeft = 0
     # Roll right
-    eSmoothAccelRight = 1,
+    eSmoothAccelRight = 1
     # No roll
     eSmoothAccelNoRoll = 2
 
@@ -851,7 +851,7 @@ agcls.AgTypeNameMap["AgEAvtrSmoothAccelLeftRight"] = AgEAvtrSmoothAccelLeftRight
 class AgEAvtrPullMode(IntEnum):
     """The pull mode for a pull strategy of a basic maneuver procedure."""
     # Pull to the specified angle
-    ePullToAngle = 0,
+    ePullToAngle = 0
     # Pull to the horizon plus the additional angle
     ePullToHorizon = 1
 
@@ -860,11 +860,11 @@ agcls.AgTypeNameMap["AgEAvtrPullMode"] = AgEAvtrPullMode
 class AgEAvtrRollingPullMode(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
     # Roll to the specified angle
-    eRollToAngleMode = 0,
+    eRollToAngleMode = 0
     # Roll to the specified orientaiton plus additional angle
-    eRollToOrientationMode = 1,
+    eRollToOrientationMode = 1
     # Pull to the specified angle
-    ePullToAngleMode = 2,
+    ePullToAngleMode = 2
     # Pull to the horizon plus the additional angle
     ePullToHorizonMode = 3
 
@@ -873,9 +873,9 @@ agcls.AgTypeNameMap["AgEAvtrRollingPullMode"] = AgEAvtrRollingPullMode
 class AgEAvtrSmoothAccelStopConditions(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
     # Roll rate and load factor rate achieved
-    eRollRateANDLoadFactor = 0,
+    eRollRateANDLoadFactor = 0
     # Roll rate or load factor rate achieved
-    eRollRateORLoadFactor = 1,
+    eRollRateORLoadFactor = 1
     # Basic stop conditions
     eSmoothAccelNormalStopConditions = 2
 
@@ -884,15 +884,15 @@ agcls.AgTypeNameMap["AgEAvtrSmoothAccelStopConditions"] = AgEAvtrSmoothAccelStop
 class AgEAvtrAutopilotHorizPlaneMode(IntEnum):
     """The autopilot mode for an autopilot - horizontal plane strategy of a basic maneuver procedure."""
     # The absolute heading mode
-    eAutopilotAbsoluteHeading = 0,
+    eAutopilotAbsoluteHeading = 0
     # The absolute course mode
-    eAutopilotAbsoluteCourse = 1,
+    eAutopilotAbsoluteCourse = 1
     # The relative heading change mode
-    eAutopilotRelativeHeading = 2,
+    eAutopilotRelativeHeading = 2
     # The relative course change mode
-    eAutopilotRelativeCourse = 3,
+    eAutopilotRelativeCourse = 3
     # The set heading rate mode
-    eAutopilotHeadingRate = 4,
+    eAutopilotHeadingRate = 4
     # The set heading rate  mode
     eAutopilotCourseRate = 5
 
@@ -901,7 +901,7 @@ agcls.AgTypeNameMap["AgEAvtrAutopilotHorizPlaneMode"] = AgEAvtrAutopilotHorizPla
 class AgEAvtrAngleMode(IntEnum):
     """The angle mode for a barrel roll strategy of a basic maneuver procedure."""
     # The absolute angle option
-    eRelativeAngle = 0,
+    eRelativeAngle = 0
     # The relative angle option
     eAbsoluteAngle = 1
 
@@ -910,15 +910,15 @@ agcls.AgTypeNameMap["AgEAvtrAngleMode"] = AgEAvtrAngleMode
 class AgEAvtrHoverAltitudeMode(IntEnum):
     """The altitude mode for the lighter than air hover strategy of a basic maneuver procedure."""
     # The hold initial altitude mode
-    eHoverHoldInitAltitude = 0,
+    eHoverHoldInitAltitude = 0
     # The specify altitude mode
-    eHoverSpecifyAltitude = 1,
+    eHoverSpecifyAltitude = 1
     # The specify altitude change mode
-    eHoverSpecifyAltitudeChange = 2,
+    eHoverSpecifyAltitudeChange = 2
     # The specify altitude rate mode
-    eHoverSpecifyAltitudeRate = 3,
+    eHoverSpecifyAltitudeRate = 3
     # The hold initial altitude rate mode
-    eHoverHoldInitAltitudeRate = 4,
+    eHoverHoldInitAltitudeRate = 4
     # The parachute mode
     eHoverParachute = 5
 
@@ -927,11 +927,11 @@ agcls.AgTypeNameMap["AgEAvtrHoverAltitudeMode"] = AgEAvtrHoverAltitudeMode
 class AgEAvtrHoverHeadingMode(IntEnum):
     """The heading mode for the lighter than air hover strategy of a basic maneuver procedure."""
     # The relative to start heading mode
-    eHoverRelative = 0,
+    eHoverRelative = 0
     # The absolute heading mode
-    eHoverAbsolute = 1,
+    eHoverAbsolute = 1
     # The align into wind heading mode
-    eHoverIntoWind = 2,
+    eHoverIntoWind = 2
     # The align opposite wind heading mode
     eHoverOppositeWind = 3
 
@@ -940,19 +940,19 @@ agcls.AgTypeNameMap["AgEAvtrHoverHeadingMode"] = AgEAvtrHoverHeadingMode
 class AgEAvtrAutopilotAltitudeMode(IntEnum):
     """The altitude mode for the autopilot - vertical plane strategy of a basic maneuver procedure."""
     # The hold initial altitude mode
-    eAutopilotHoldInitAltitude = 0,
+    eAutopilotHoldInitAltitude = 0
     # The specify altitude mode
-    eAutopilotSpecifyAltitude = 1,
+    eAutopilotSpecifyAltitude = 1
     # The specify altitude change mode
-    eAutopilotSpecifyAltitudeChange = 2,
+    eAutopilotSpecifyAltitudeChange = 2
     # The specify altitude rate mode
-    eAutopilotSpecifyAltitudeRate = 3,
+    eAutopilotSpecifyAltitudeRate = 3
     # The hold initial altitude rate mode
-    eAutopilotHoldInitAltitudeRate = 4,
+    eAutopilotHoldInitAltitudeRate = 4
     # The specify wind fram eflight path angle mode
-    eAutopilotSpecifyFPA = 5,
+    eAutopilotSpecifyFPA = 5
     # The hold initial wind frame flight path angle mode
-    eAutopilotHoldInitFPA = 6,
+    eAutopilotHoldInitFPA = 6
     # The ballistic flight path mode
     eAutopilotBallistic = 7
 
@@ -961,9 +961,9 @@ agcls.AgTypeNameMap["AgEAvtrAutopilotAltitudeMode"] = AgEAvtrAutopilotAltitudeMo
 class AgEAvtrAutopilotAltitudeControlMode(IntEnum):
     """The altitude control mode for the autopilot - vertical plane strategy of a basic maneuver procedure."""
     # The control altitude rate mode
-    eAutopilotAltitudeRate = 0,
+    eAutopilotAltitudeRate = 0
     # The control flight path angle mode
-    eAutopilotFPA = 1,
+    eAutopilotFPA = 1
     # The climb/descent performance models mode
     eAutopilotPerfModels = 2
 
@@ -972,9 +972,9 @@ agcls.AgTypeNameMap["AgEAvtrAutopilotAltitudeControlMode"] = AgEAvtrAutopilotAlt
 class AgEAvtrClosureMode(IntEnum):
     """The closure mode for guidance strategies of the basic maneuver procedure."""
     # The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target
-    eClosureNotSet = 0,
+    eClosureNotSet = 0
     # The closure is required
-    eClosureRequired = 1,
+    eClosureRequired = 1
     # The high off boresight mode
     eHOBS = 2
 
@@ -983,7 +983,7 @@ agcls.AgTypeNameMap["AgEAvtrClosureMode"] = AgEAvtrClosureMode
 class AgEAvtrInterceptMode(IntEnum):
     """The intercept mode for the intercept strategy of the basic maneuver procedure."""
     # The target aspect mode. The aircraft will maintain an approach angle with the target.
-    eTargetAspect = 0,
+    eTargetAspect = 0
     # The lateral separation mode. The aircraft will guide to a specific distance from the target
     eLateralSeparation = 1
 
@@ -992,13 +992,13 @@ agcls.AgTypeNameMap["AgEAvtrInterceptMode"] = AgEAvtrInterceptMode
 class AgEAvtrRendezvousStopCondition(IntEnum):
     """The stop condition options for a rendezvous formation strategy of the basic maneuver procedure."""
     # The basic stopping conditions will be used.
-    eStopNormal = 0,
+    eStopNormal = 0
     # Stop after the target completes the current procedure.
-    eStopAfterTargetCurrentProcedure = 1,
+    eStopAfterTargetCurrentProcedure = 1
     # Stop after the target completes the current phase.
-    eStopAfterTargetCurrentPhase = 2,
+    eStopAfterTargetCurrentPhase = 2
     # Stop when the target enters a new mode of flight.
-    eStopWhenTargetPerfModeChanges = 3,
+    eStopWhenTargetPerfModeChanges = 3
     # Stop when the target enters a new performance phase.
     eStopWhenTargetPhaseOfFlightChanges = 4
 
@@ -1007,9 +1007,9 @@ agcls.AgTypeNameMap["AgEAvtrRendezvousStopCondition"] = AgEAvtrRendezvousStopCon
 class AgEAvtrAccelPerfModelOverride(IntEnum):
     """The acceleration performance model override mode."""
     # Use the acceleration performanc model value.
-    eAccelPerfModelValue = 0,
+    eAccelPerfModelValue = 0
     # Override the performanc model value.
-    eAccelOverride = 1,
+    eAccelOverride = 1
     # Set no limit on the acceleration.
     eAccelNoLimit = 2
 
@@ -1018,11 +1018,11 @@ agcls.AgTypeNameMap["AgEAvtrAccelPerfModelOverride"] = AgEAvtrAccelPerfModelOver
 class AgEAvtrStationkeepingStopCondition(IntEnum):
     """The stop condition options for a stationkeeping strategy."""
     # The basic stopping conditions will be used.
-    eStopConditionNotSet = 0,
+    eStopConditionNotSet = 0
     # Stop after a specified number of turns.
-    eStopAfterTurnCount = 1,
+    eStopAfterTurnCount = 1
     # Stop after a specified duration.
-    eStopAfterDuration = 2,
+    eStopAfterDuration = 2
     # Stop at the specified time.
     eStopAfterTime = 3
 
@@ -1031,7 +1031,7 @@ agcls.AgTypeNameMap["AgEAvtrStationkeepingStopCondition"] = AgEAvtrStationkeepin
 class AgEAvtrTurnDirection(IntEnum):
     """The roll direction for an aileron roll strategy for a basic maneuver procedure."""
     # Turn left
-    eTurnLeft = 0,
+    eTurnLeft = 0
     # Turn right
     eTurnRight = 2
 
@@ -1040,7 +1040,7 @@ agcls.AgTypeNameMap["AgEAvtrTurnDirection"] = AgEAvtrTurnDirection
 class AgEAvtrProfileControlLimit(IntEnum):
     """Method to define the control limits for a profile strategy of a basic maneuver procedure."""
     # Use Accel Perf Model
-    eProfileAccelPerfModel = 0,
+    eProfileAccelPerfModel = 0
     # Specify the pitch rate
     eProfilePitchRate = 1
 
@@ -1049,17 +1049,17 @@ agcls.AgTypeNameMap["AgEAvtrProfileControlLimit"] = AgEAvtrProfileControlLimit
 class AgEAvtrRelSpeedAltStopCondition(IntEnum):
     """The stop condition options for a relative speed/altitude strategy."""
     # The basic stopping conditions will be used.
-    eRelSpeedAltStopNormal = 0,
+    eRelSpeedAltStopNormal = 0
     # Stop when the aircraft achieves the range for equal speed.
-    eRelSpeedAltStopMinRangeForEqualSpeed = 1,
+    eRelSpeedAltStopMinRangeForEqualSpeed = 1
     # Stop when the aircraft achieves the range to transition speed.
-    eRelSpeedAltStopTransitionSpeedRange = 2,
+    eRelSpeedAltStopTransitionSpeedRange = 2
     # Stop after the target completes the current procedure.
-    eRelSpeedAltStopAfterTargetCurrentProcedure = 3,
+    eRelSpeedAltStopAfterTargetCurrentProcedure = 3
     # Stop after the target completes the current phase.
-    eRelSpeedAltStopAfterTargetCurrentPhase = 4,
+    eRelSpeedAltStopAfterTargetCurrentPhase = 4
     # Stop when the target enters a new mode of flight.
-    eRelSpeedAltStopWhenTargetPerfModeChanges = 5,
+    eRelSpeedAltStopWhenTargetPerfModeChanges = 5
     # Stop when the target enters a new performance phase.
     eRelSpeedAltStopWhenTargetPhaseOfFlightChanges = 6
 
@@ -1068,11 +1068,11 @@ agcls.AgTypeNameMap["AgEAvtrRelSpeedAltStopCondition"] = AgEAvtrRelSpeedAltStopC
 class AgEAvtrRelativeAltitudeMode(IntEnum):
     """The relative altitude mode for a relative speed/altitude strategy."""
     # Maintain the specified altitude offset from the target.
-    eHoldOffsetAlt = 0,
+    eHoldOffsetAlt = 0
     # Maintain the altitude offset at the beginning of the maneuver.
-    eHoldInitAltOffset = 1,
+    eHoldInitAltOffset = 1
     # Maintain the specified elevation angle from the target.
-    eHoldElevationAngle = 2,
+    eHoldElevationAngle = 2
     # Maintain the elevation angle at the beginning of the maneuver.
     eHoldInitElevationAngle = 3
 
@@ -1081,7 +1081,7 @@ agcls.AgTypeNameMap["AgEAvtrRelativeAltitudeMode"] = AgEAvtrRelativeAltitudeMode
 class AgEAvtrFlyToFlightPathAngleMode(IntEnum):
     """The flight path angle mode mode for a bezier profile strategy."""
     # Fly to a specified altitude rate.
-    eFlyToAltRate = 0,
+    eFlyToAltRate = 0
     # Fly to a specified flight path angle.
     eFlyToFlightPathAngle = 1
 
@@ -1090,7 +1090,7 @@ agcls.AgTypeNameMap["AgEAvtrFlyToFlightPathAngleMode"] = AgEAvtrFlyToFlightPathA
 class AgEAvtrPushPull(IntEnum):
     """The option to pull up or push over for a push/pull profile strategy."""
     # Pull up.
-    ePullUp = 0,
+    ePullUp = 0
     # Push over.
     ePushOver = 1
 
@@ -1099,9 +1099,9 @@ agcls.AgTypeNameMap["AgEAvtrPushPull"] = AgEAvtrPushPull
 class AgEAvtrAccelMode(IntEnum):
     """The acceleration/decelation option for a push/pull profile strategy."""
     # Accelerate at specified G.
-    eAccel = 0,
+    eAccel = 0
     # Decelerate at specified G.
-    eDecel = 1,
+    eDecel = 1
     # Maintain the initial airspeed.
     eMaintainSpeed = 2
 
@@ -1110,9 +1110,9 @@ agcls.AgTypeNameMap["AgEAvtrAccelMode"] = AgEAvtrAccelMode
 class AgEAvtrDelayAltMode(IntEnum):
     """The altitude options for a delay procedure."""
     # Use a level off maneuver to fly to the default altitude.
-    eDelayLevelOff = 0,
+    eDelayLevelOff = 0
     # The default cruise altitude.
-    eDelayDefaultCruiseAlt = 1,
+    eDelayDefaultCruiseAlt = 1
     # Override the default altitude.
     eDelayOverride = 2
 
@@ -1121,9 +1121,9 @@ agcls.AgTypeNameMap["AgEAvtrDelayAltMode"] = AgEAvtrDelayAltMode
 class AgEAvtrJoinExitArcMethod(IntEnum):
     """The options to join or exit an arc."""
     # The aircraft begins/ends the procedure on a course away from the site.
-    eJoinExitOutbound = 0,
+    eJoinExitOutbound = 0
     # The aircraft begins/ends the procedure at the start bearing.
-    eJoinExitOn = 1,
+    eJoinExitOn = 1
     # The aircraft begins/ends on a course towards the site.
     eJoinExitInbound = 2
 
@@ -1132,9 +1132,9 @@ agcls.AgTypeNameMap["AgEAvtrJoinExitArcMethod"] = AgEAvtrJoinExitArcMethod
 class AgEAvtrFlightLineProcType(IntEnum):
     """The procedure methodology used to calculate the flight line."""
     # An enroute procedure type.
-    eProcTypeEnroute = 0,
+    eProcTypeEnroute = 0
     # A basic point to point procedure type.
-    eProcTypeBasicPointToPoint = 1,
+    eProcTypeBasicPointToPoint = 1
     # A terrain follow procedure type.
     eProcTypeTerrainFollow = 2
 
@@ -1143,9 +1143,9 @@ agcls.AgTypeNameMap["AgEAvtrFlightLineProcType"] = AgEAvtrFlightLineProcType
 class AgEAvtrTransitionToHoverMode(IntEnum):
     """The type of hover to transition to."""
     # Transition to a full stop hover.
-    eFullStop = 0,
+    eFullStop = 0
     # Transition to a hover with a constant translation rate.
-    eTranslationOnly = 1,
+    eTranslationOnly = 1
     # Transition to a hover with a constant translation and altitude rate.
     eTranslationAndAltitude = 2
 
@@ -1154,7 +1154,7 @@ agcls.AgTypeNameMap["AgEAvtrTransitionToHoverMode"] = AgEAvtrTransitionToHoverMo
 class AgEAvtrVTOLRateMode(IntEnum):
     """The rate mode for the VTOL procedure."""
     # The rate during the procedure will be maintained.
-    eHaltAutomatic = 0,
+    eHaltAutomatic = 0
     # The rate will be set to zero.
     eAlwaysStop = 1
 
@@ -1163,9 +1163,9 @@ agcls.AgTypeNameMap["AgEAvtrVTOLRateMode"] = AgEAvtrVTOLRateMode
 class AgEAvtrHoldingProfileMode(IntEnum):
     """How the aircraft will perform during the holding pattern with respect to airspeed and altitude."""
     # The aircraft will fly the pattern at the speed at which it arrived at the entry point.
-    eSTK8Compatible = 0,
+    eSTK8Compatible = 0
     # The aircraft will level off and fly at the cruise speed
-    eLevelOffCruiseSpeed = 1,
+    eLevelOffCruiseSpeed = 1
     # The aircraft will climb or descend to the specified altitude.
     eClimbDescentOnStation = 2
 
@@ -1174,11 +1174,11 @@ agcls.AgTypeNameMap["AgEAvtrHoldingProfileMode"] = AgEAvtrHoldingProfileMode
 class AgEAvtrHoldingDirection(IntEnum):
     """The turn direction for the aircraft to enter the holding pattern."""
     # Turn left on the way inbound to the site.
-    eInboundLeftTurn = 0,
+    eInboundLeftTurn = 0
     # Turn right on the way inbound to the site.
-    eInboundRightTurn = 1,
+    eInboundRightTurn = 1
     # Turn left on the way outbound from the site.
-    eOutboundLeftTurn = 2,
+    eOutboundLeftTurn = 2
     # Turn right on the way outbound from the site.
     eOutboundRightTurn = 3
 
@@ -1187,9 +1187,9 @@ agcls.AgTypeNameMap["AgEAvtrHoldingDirection"] = AgEAvtrHoldingDirection
 class AgEAvtrHoldRefuelDumpMode(IntEnum):
     """Defines when the aircraft will leave the holding pattern after it has completed refueling or dumping fuel."""
     # Turn left on the way inbound to the site.
-    eFullNumerOfTurns = 0,
+    eFullNumerOfTurns = 0
     # Turn right on the way inbound to the site.
-    eExitAtEndOfTurn = 1,
+    eExitAtEndOfTurn = 1
     # Turn left on the way outbound from the site.
     eImmediateExit = 2
 
@@ -1198,9 +1198,9 @@ agcls.AgTypeNameMap["AgEAvtrHoldRefuelDumpMode"] = AgEAvtrHoldRefuelDumpMode
 class AgEAvtrHoldingEntryManeuver(IntEnum):
     """Defines how the aircraft will enter the holding pattern."""
     # The aircraft will enter the holding pattern at the normal holding point.
-    eHoldEntryNoManeuver = 0,
+    eHoldEntryNoManeuver = 0
     # The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook
-    eUseStandardEntryTurns = 1,
+    eUseStandardEntryTurns = 1
     # The aircraft will enter the holding pattern at an alternate entry point.
     eUseAlternateEntryPoints = 2
 
@@ -1209,9 +1209,9 @@ agcls.AgTypeNameMap["AgEAvtrHoldingEntryManeuver"] = AgEAvtrHoldingEntryManeuver
 class AgEAvtrVTOLTransitionMode(IntEnum):
     """The mode to specify the course of the transition maneuver."""
     # Specify a heading relative to the previous procedure.
-    eTransitionRelativeHdg = 0,
+    eTransitionRelativeHdg = 0
     # Specify an absolute heading.
-    eTransitionAbsoluteHdg = 1,
+    eTransitionAbsoluteHdg = 1
     # Transition into the wind direction.
     eTransitionIntoWind = 2
 
@@ -1220,9 +1220,9 @@ agcls.AgTypeNameMap["AgEAvtrVTOLTransitionMode"] = AgEAvtrVTOLTransitionMode
 class AgEAvtrVTOLFinalHeadingMode(IntEnum):
     """The mode to specify the heading at the end of the maneuver."""
     # Specify a heading relative to the previous procedure.
-    eFinalHeadingRelative = 0,
+    eFinalHeadingRelative = 0
     # Specify an absolute heading.
-    eFinalHeadingAbsolute = 1,
+    eFinalHeadingAbsolute = 1
     # The aircraft have the same heading as the translation bearing.
     eFinalHeadingTranslationCourse = 2
 
@@ -1231,9 +1231,9 @@ agcls.AgTypeNameMap["AgEAvtrVTOLFinalHeadingMode"] = AgEAvtrVTOLFinalHeadingMode
 class AgEAvtrVTOLTranslationMode(IntEnum):
     """The mode to specify the translation of the VTOL maneuver."""
     # The aircraft will translate on a specific bearing and range.
-    eSetBearingAndRange = 0,
+    eSetBearingAndRange = 0
     # The aircraft will come to a complete stop.
-    eComeToStop = 1,
+    eComeToStop = 1
     # The aircraft will continue to translate with the same rate and direction as it began the procedure.
     eMaintainRate = 2
 
@@ -1242,9 +1242,9 @@ agcls.AgTypeNameMap["AgEAvtrVTOLTranslationMode"] = AgEAvtrVTOLTranslationMode
 class AgEAvtrVTOLTranslationFinalCourseMode(IntEnum):
     """The mode to specify the final course of the VTOL maneuver."""
     # The aircraft will translate directly along the specified bearing and range.
-    eTranslateDirect = 0,
+    eTranslateDirect = 0
     # The aircraft will translate along a bisecting line between the inbound and outbound course.
-    eBisectInboundOutbound = 1,
+    eBisectInboundOutbound = 1
     # The aircraft will evaluate the procedure ahead to determine the translation bearing and rate.
     eAnticipateNextTranslation = 2
 
@@ -1253,7 +1253,7 @@ agcls.AgTypeNameMap["AgEAvtrVTOLTranslationFinalCourseMode"] = AgEAvtrVTOLTransl
 class AgEAvtrHoverMode(IntEnum):
     """The hover mode."""
     # Hover in place for a fixed time.
-    eHoverModeFixedTime = 0,
+    eHoverModeFixedTime = 0
     # Perform a hovering maneuver.
     eHoverModeManeuver = 1
 
@@ -1262,9 +1262,9 @@ agcls.AgTypeNameMap["AgEAvtrHoverMode"] = AgEAvtrHoverMode
 class AgEAvtrVTOLHeadingMode(IntEnum):
     """The heading mode for the hover maneuver."""
     # The aircraft's heading is independent of its translation.
-    eHeadingIndependent = 0,
+    eHeadingIndependent = 0
     # The aircraft will align its heading with the translation course.
-    eHeadingAlignTranslationCourse = 1,
+    eHeadingAlignTranslationCourse = 1
     # The aircraft will set its heading into the wind.
     eHeadingIntoWind = 2
 
@@ -1273,11 +1273,11 @@ agcls.AgTypeNameMap["AgEAvtrVTOLHeadingMode"] = AgEAvtrVTOLHeadingMode
 class AgEAvtrVertLandingMode(IntEnum):
     """The heading mode for a vertical landing maneuver."""
     # The aircraft's heading is independent of its translation.
-    eVertLandingIndependent = 0,
+    eVertLandingIndependent = 0
     # The aircraft will align its heading with the translation course.
-    eVertLandingAlignTranslationCourse = 1,
+    eVertLandingAlignTranslationCourse = 1
     # The aircraft will set its heading into the wind.
-    eVertLandingIntoWind = 2,
+    eVertLandingIntoWind = 2
     # The aircraft will align its heading with the translation course  will achieve the specified heading upon arriving.
     eVertLandingAlignTranslationCourseOverride = 3
 
@@ -1286,9 +1286,9 @@ agcls.AgTypeNameMap["AgEAvtrVertLandingMode"] = AgEAvtrVertLandingMode
 class AgEAvtrLaunchAttitudeMode(IntEnum):
     """The attitude mode for the launch procedure."""
     # The aircraft's attitude is aligned with the specified direction vector.
-    eLaunchAlignDirectionVector = 0,
+    eLaunchAlignDirectionVector = 0
     # The aircraft will maintain the parent vehicle's attiude at the time of launch.
-    eLaunchHoldParentAttitude = 1,
+    eLaunchHoldParentAttitude = 1
     # The aircraft launches in level flight
     eLaunchVTOL = 2
 
@@ -1297,15 +1297,15 @@ agcls.AgTypeNameMap["AgEAvtrLaunchAttitudeMode"] = AgEAvtrLaunchAttitudeMode
 class AgEAvtrFuelFlowType(IntEnum):
     """The fuel flow type to use for the procedure."""
     # Fuel flow defined for the current Takeoff performance model.
-    eFuelFlowTakeoff = 0,
+    eFuelFlowTakeoff = 0
     # Fuel flow defined for the current Cruise performance model.
-    eFuelFlowCruise = 1,
+    eFuelFlowCruise = 1
     # Fuel flow defined for the current Landing performance model.
-    eFuelFlowLanding = 2,
+    eFuelFlowLanding = 2
     # Fuel flow defined for the current VTOL performance model.
-    eFuelFlowVTOL = 3,
+    eFuelFlowVTOL = 3
     # Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model.
-    eFuelFlowAeroProp = 4,
+    eFuelFlowAeroProp = 4
     # Fuel flow defined manually.
     eFuelFlowOverride = 5
 
@@ -1314,7 +1314,7 @@ agcls.AgTypeNameMap["AgEAvtrFuelFlowType"] = AgEAvtrFuelFlowType
 class AgEAvtrLineOrientation(IntEnum):
     """The orientation for a parallel flight line procedure."""
     # Left of the previous flight line.
-    eFlightLineToLeft = 0,
+    eFlightLineToLeft = 0
     # Right of the previous flight line.
     eFlightLineToRight = 1
 
@@ -1323,9 +1323,9 @@ agcls.AgTypeNameMap["AgEAvtrLineOrientation"] = AgEAvtrLineOrientation
 class AgEAvtrRelAbsBearing(IntEnum):
     """The options for a bearing that can be relative or absolute."""
     # A bearing relative to the previous course.
-    eRelativeBearing = 0,
+    eRelativeBearing = 0
     # A bearing using true north.
-    eTrueBearing = 1,
+    eTrueBearing = 1
     # A bearing using magnetic north.
     eMagneticBearing = 2
 
@@ -1334,7 +1334,7 @@ agcls.AgTypeNameMap["AgEAvtrRelAbsBearing"] = AgEAvtrRelAbsBearing
 class AgEAvtrBasicFixedWingPropMode(IntEnum):
     """The option to specify the thrust (jet engines) or power (propellers)."""
     # Jet - Specify net thrust.
-    eSpecifyThrust = 0,
+    eSpecifyThrust = 0
     # Propeller - Specify net power.
     eSpecifyPower = 1
 
@@ -1343,11 +1343,11 @@ agcls.AgTypeNameMap["AgEAvtrBasicFixedWingPropMode"] = AgEAvtrBasicFixedWingProp
 class AgEAvtrClimbSpeedType(IntEnum):
     """The mode to calculate the aircraft's airspeed while climbing for an advanced climb performance model."""
     # The speed at which the aircraft's rate of climb is maximized.
-    eClimbSpeedBestRate = 0,
+    eClimbSpeedBestRate = 0
     # The speed at which the aircraft will gain the most altitude over downrange distance.
-    eClimbSpeedBestAngle = 1,
+    eClimbSpeedBestAngle = 1
     # The speed at which the aircraft's fuel consumption is minimized.
-    eClimbSpeedMinFuel = 2,
+    eClimbSpeedMinFuel = 2
     # Manually specify the speed.
     eClimbSpeedOverride = 3
 
@@ -1356,13 +1356,13 @@ agcls.AgTypeNameMap["AgEAvtrClimbSpeedType"] = AgEAvtrClimbSpeedType
 class AgEAvtrCruiseMaxPerfSpeedType(IntEnum):
     """The method for defining the maximum performance airspeed of the aircraft for an advanced cruise model."""
     # The lowest speed at which the aircraft can generate lift while pulling maximum Gs.
-    eCornerSpeed = 0,
+    eCornerSpeed = 0
     # The maximum specific excess power without afterburning.
-    eMaxPsDryThrust = 1,
+    eMaxPsDryThrust = 1
     # The maximum specific excess power while afterburning.
-    eMaxPsAfterburner = 2,
+    eMaxPsAfterburner = 2
     # The maximum speed without afterburning.
-    eMaxSpeedDryThrust = 3,
+    eMaxSpeedDryThrust = 3
     # The speed which maximizes the aircraft range while afterburning.
     eMaxRangeAfterburner = 4
 
@@ -1371,13 +1371,13 @@ agcls.AgTypeNameMap["AgEAvtrCruiseMaxPerfSpeedType"] = AgEAvtrCruiseMaxPerfSpeed
 class AgEAvtrDescentSpeedType(IntEnum):
     """The method for calculating the aircraft's airspeed while descending."""
     # A variable airspeed that maximizes the distance that the aircraft can fly.
-    eDescentMaxRangeCruise = 0,
+    eDescentMaxRangeCruise = 0
     # The speed at which the aircraft's glide ratio is maximized.
-    eDescentMaxGlideRatio = 1,
+    eDescentMaxGlideRatio = 1
     # The speed at which the aircraft's rate of descent is minimized.
-    eDescentMinSinkRate = 2,
+    eDescentMinSinkRate = 2
     # A speed relative to the aircraft's stall speed..
-    eDescentStallSpeedRatio = 3,
+    eDescentStallSpeedRatio = 3
     # Manually define the airspeed.
     eDescentSpeedOverride = 4
 
@@ -1386,7 +1386,7 @@ agcls.AgTypeNameMap["AgEAvtrDescentSpeedType"] = AgEAvtrDescentSpeedType
 class AgEAvtrTakeoffLandingSpeedMode(IntEnum):
     """The method for calculating the aircraft's speed upon leaving the ground or at wheels down."""
     # A multiple of the aircraft's stall speed.
-    eTakeoffLandingStallSpeedRatio = 0,
+    eTakeoffLandingStallSpeedRatio = 0
     # The speed needed to achieve lift at the specified Angle of Attack.
     eTakeoffLandingAngleOfAttack = 1
 
@@ -1395,9 +1395,9 @@ agcls.AgTypeNameMap["AgEAvtrTakeoffLandingSpeedMode"] = AgEAvtrTakeoffLandingSpe
 class AgEAvtrDepartureSpeedMode(IntEnum):
     """The method for calculating the aircraft's airspeed upon leaving the ground."""
     # The aircraft will fly at the max climb angle.
-    eMaxClimbAngle = 0,
+    eMaxClimbAngle = 0
     # The aircraft will fly at the max climb rate.
-    eMaxClimbRate = 1,
+    eMaxClimbRate = 1
     # The aircraft will fly at the airspeed defined in the Climb performance model.
     eUseClimbModel = 2
 
@@ -1406,11 +1406,11 @@ agcls.AgTypeNameMap["AgEAvtrDepartureSpeedMode"] = AgEAvtrDepartureSpeedMode
 class AgEAvtrAdvFixedWingAeroStrategy(IntEnum):
     """The aerodynamic strategy for the Advanced Fixed Wing Tool."""
     # Define the aerodynamics using an external .aero file.
-    eExternalAeroFile = 0,
+    eExternalAeroFile = 0
     # Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft.
-    eSubSuperHyperAero = 1,
+    eSubSuperHyperAero = 1
     # Define the aerodynamics for an aircraft that generally travels at subsonic speeds.
-    eSubsonicAero = 2,
+    eSubsonicAero = 2
     # Define the aerodynamics for an aircraft that generally travels at supersonic speeds.
     eSupersonicAero = 3
 
@@ -1419,7 +1419,7 @@ agcls.AgTypeNameMap["AgEAvtrAdvFixedWingAeroStrategy"] = AgEAvtrAdvFixedWingAero
 class AgEAvtrAdvFixedWingGeometry(IntEnum):
     """The method to define the wing geometry of an aircraft in the Advanced Fixed Wing Tool."""
     # Define the static properties of an immovable wing.
-    eBasicGeometry = 0,
+    eBasicGeometry = 0
     # Define the minimum and maximum properties of an adjustable wing.
     eVariableGeometry = 1
 
@@ -1428,27 +1428,27 @@ agcls.AgTypeNameMap["AgEAvtrAdvFixedWingGeometry"] = AgEAvtrAdvFixedWingGeometry
 class AgEAvtrAdvFixedWingPowerplantStrategy(IntEnum):
     """The powerplant strategy for the Advanced Fixed Wing Tool."""
     # An electric engine.
-    eElectricPowerplant = 0,
+    eElectricPowerplant = 0
     # Define the powerplant using an external .prop file.
-    eExternalPropFile = 1,
+    eExternalPropFile = 1
     # A piston, or reciprocating, engine.
-    ePistonPowerplant = 2,
+    ePistonPowerplant = 2
     # A thermodynamic model that includes turbine, ramjet, and scramjet performance modes.
-    eSubSuperHyperPowerplant = 3,
+    eSubSuperHyperPowerplant = 3
     # A thermodynamic model of a dual-spool turbofan engine that has an afterburner.
-    eTurbofanBasicAB = 4,
+    eTurbofanBasicAB = 4
     # An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust.
-    eTurbofanHighBypass = 5,
+    eTurbofanHighBypass = 5
     # An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust.
-    eTurbofanLowBypass = 6,
+    eTurbofanLowBypass = 6
     # An empirical model for a turbofan engine that has an afterburner and produces significantly more jet thrust than fan thrust.
-    eTurbofanLowBypassAfterburning = 7,
+    eTurbofanLowBypassAfterburning = 7
     # An empirical model that models a turbojet engine that has an afterburner.
-    eTurbojetAfterburning = 8,
+    eTurbojetAfterburning = 8
     # An empirical model that models a turbojet engine.
-    eTurbojetBasicAB = 9,
+    eTurbojetBasicAB = 9
     # An empirical model that models a turbojet engine.
-    eTurbojet = 10,
+    eTurbojet = 10
     # An empirical model that models a turboprop engine.
     eTurboprop = 11
 
@@ -1457,9 +1457,9 @@ agcls.AgTypeNameMap["AgEAvtrAdvFixedWingPowerplantStrategy"] = AgEAvtrAdvFixedWi
 class AgEAvtrMissileAeroStrategy(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
     # Simple aerodynamics.
-    eMissileAeroSimple = 0,
+    eMissileAeroSimple = 0
     # External file aerodynamics.
-    eMissileAeroExternalFile = 1,
+    eMissileAeroExternalFile = 1
     # Advanced missile aerodynamics.
     eMissileAeroAdvanced = 2
 
@@ -1468,13 +1468,13 @@ agcls.AgTypeNameMap["AgEAvtrMissileAeroStrategy"] = AgEAvtrMissileAeroStrategy
 class AgEAvtrMissilePropStrategy(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
     # Simple propulsion.
-    eMissilePropSimple = 0,
+    eMissilePropSimple = 0
     # External file propulsion.
-    eMissilePropExternalFile = 1,
+    eMissilePropExternalFile = 1
     # Ramjet propulsion.
-    eMissilePropRamjet = 2,
+    eMissilePropRamjet = 2
     # Rocket propulsion.
-    eMissilePropRocket = 3,
+    eMissilePropRocket = 3
     # Turbojet propulsion.
     eMissilePropTurbojet = 4
 
@@ -1483,9 +1483,9 @@ agcls.AgTypeNameMap["AgEAvtrMissilePropStrategy"] = AgEAvtrMissilePropStrategy
 class AgEAvtrRotorcraftPowerplantType(IntEnum):
     """The powerplant type for a rotorcraft."""
     # Electric propulsion.
-    eRotorcraftElectric = 0,
+    eRotorcraftElectric = 0
     # Turboshaft propulsion.
-    eRotorcraftTurboshaft = 1,
+    eRotorcraftTurboshaft = 1
     # Piston propulsion.
     eRotorcraftPiston = 2
 
@@ -1494,9 +1494,9 @@ agcls.AgTypeNameMap["AgEAvtrRotorcraftPowerplantType"] = AgEAvtrRotorcraftPowerp
 class AgEAvtrMinimizeSiteProcTimeDiff(IntEnum):
     """Options for minimizing the time difference between the procedure and site times."""
     # Do not converge the procedure and site times.
-    eMinimizeTimeDifferenceOff = 0,
+    eMinimizeTimeDifferenceOff = 0
     # Always recalculate.
-    eMinimizeTimeDifferenceAlways = 1,
+    eMinimizeTimeDifferenceAlways = 1
     # Only recalculate when updated.
     eMinimizeTimeDifferenceNextUpdate = 2
 
@@ -1505,11 +1505,11 @@ agcls.AgTypeNameMap["AgEAvtrMinimizeSiteProcTimeDiff"] = AgEAvtrMinimizeSiteProc
 class AgEAvtrSTKObjectWaypointOffsetMode(IntEnum):
     """The options to offset the site location relative to the STK Object."""
     # No offset.
-    eOffsetNone = 0,
+    eOffsetNone = 0
     # Bearing/Range (relative to North).
-    eOffsetBearingRange = 1,
+    eOffsetBearingRange = 1
     # VGT Point.
-    eOffsetVGTPoint = 2,
+    eOffsetVGTPoint = 2
     # Bearing/Reange relative to Vehicle course.
     eOffsetRelativeBearingRange = 3
 
@@ -1518,9 +1518,9 @@ agcls.AgTypeNameMap["AgEAvtrSTKObjectWaypointOffsetMode"] = AgEAvtrSTKObjectWayp
 class AgEAvtrSearchPatternCourseMode(IntEnum):
     """The mode to determine the course of the search pattern."""
     # Automatically begin the search pattern within 0 - 180 degrees.
-    eCourseModeLow = 0,
+    eCourseModeLow = 0
     # Automatically begin the search pattern within 180 - 360 degrees.
-    eCourseModeHigh = 1,
+    eCourseModeHigh = 1
     # Manually define the course of the search pattern.
     eCourseModeOverride = 2
 
@@ -1529,9 +1529,9 @@ agcls.AgTypeNameMap["AgEAvtrSearchPatternCourseMode"] = AgEAvtrSearchPatternCour
 class AgEAvtrDelayTurnDir(IntEnum):
     """Turn mode for procedures with Delay options."""
     # Automatic turn. Aviator will determine the direction of the turn.
-    eDelayTurnAuto = 0,
+    eDelayTurnAuto = 0
     # Left turn.
-    eDelayTurnLeft = 1,
+    eDelayTurnLeft = 1
     # Right turn.
     eDelayTurnRight = 2
 
@@ -1540,15 +1540,15 @@ agcls.AgTypeNameMap["AgEAvtrDelayTurnDir"] = AgEAvtrDelayTurnDir
 class AgEAvtrTrajectoryBlendMode(IntEnum):
     """The interpolation mode to determine the aircraft's position and velocity."""
     # Quadratic interpolation using the body frame.
-    eBlendBodyQuadratic = 0,
+    eBlendBodyQuadratic = 0
     # Cubic interpolation using the body frame.
-    eBlendBodyCubic = 1,
+    eBlendBodyCubic = 1
     # Quadratic interpolation using the local horizontal frame.
-    eBlendLHQuadratic = 2,
+    eBlendLHQuadratic = 2
     # Cubic interpolation using the local horizontal frame.
-    eBlendLHCubic = 3,
+    eBlendLHCubic = 3
     # Quadratic interpolation using the Earth-Centered Fixed frame.
-    eBlendECFQuadratic = 4,
+    eBlendECFQuadratic = 4
     # Cubic interpolation using the Earth-Centered Fixed frame.
     eBlendECFCubic = 5
 
@@ -1557,19 +1557,19 @@ agcls.AgTypeNameMap["AgEAvtrTrajectoryBlendMode"] = AgEAvtrTrajectoryBlendMode
 class AgEAvtrRefStatePerfMode(IntEnum):
     """The type of motion the aircraft is engaged in at the reference state."""
     # Forward Flight - Climb performance mode.
-    eRefStateClimb = 0,
+    eRefStateClimb = 0
     # Forward Flight - Cruise performance mode.
-    eRefStateCruise = 1,
+    eRefStateCruise = 1
     # Forward Flight - Descend performance mode.
-    eRefStateDescend = 2,
+    eRefStateDescend = 2
     # Hover performance mode.
-    eRefStateHover = 3,
+    eRefStateHover = 3
     # Landing performance mode.
-    eRefStateLanding = 4,
+    eRefStateLanding = 4
     # Takeoff performance mode.
-    eRefStateTakeoff = 5,
+    eRefStateTakeoff = 5
     # Weight On Wheels - Landing Rollout performance mode
-    eRefStateLandingRollout = 6,
+    eRefStateLandingRollout = 6
     # Weight On Wheels - Takeoff Run performance mode
     eRefStateTakeoffRun = 7
 
@@ -1578,7 +1578,7 @@ agcls.AgTypeNameMap["AgEAvtrRefStatePerfMode"] = AgEAvtrRefStatePerfMode
 class AgEAvtrRefStateLongitudinalAccelMode(IntEnum):
     """The mode to specify the longitudinal acceleration of the aircraft."""
     # Specify the true airspeed acceleration.
-    eSpecifyTASDot = 0,
+    eSpecifyTASDot = 0
     # Specify the groundspeed acceleration.
     eSpecifyGroundSpeedDot = 1
 
@@ -1587,7 +1587,7 @@ agcls.AgTypeNameMap["AgEAvtrRefStateLongitudinalAccelMode"] = AgEAvtrRefStateLon
 class AgEAvtrRefStateLateralAccelMode(IntEnum):
     """The mode to specify the lateral acceleration of the aircraft."""
     # Specify the heading rate of change.
-    eSpecifyHeadingDot = 0,
+    eSpecifyHeadingDot = 0
     # Specify the course rate of change.
     eSpecifyCourseDot = 1
 
@@ -1596,7 +1596,7 @@ agcls.AgTypeNameMap["AgEAvtrRefStateLateralAccelMode"] = AgEAvtrRefStateLateralA
 class AgEAvtrRefStateAttitudeMode(IntEnum):
     """The mode to specify the attitude rate of change."""
     # Specify the push/pull G.
-    eSpecifyPushPullG = 0,
+    eSpecifyPushPullG = 0
     # Specify the pitch rate of change.
     eSpecifyPitchRate = 1
 
@@ -1605,7 +1605,7 @@ agcls.AgTypeNameMap["AgEAvtrRefStateAttitudeMode"] = AgEAvtrRefStateAttitudeMode
 class AgEAvtrAndOr(IntEnum):
     """The option to specify AND or OR."""
     # And option.
-    eAvtrAND = 0,
+    eAvtrAND = 0
     # Or option.
     eAvtrOR = 1
 
@@ -1614,15 +1614,15 @@ agcls.AgTypeNameMap["AgEAvtrAndOr"] = AgEAvtrAndOr
 class AgEAvtrJetEngineTechnologyLevel(IntEnum):
     """The technology level of the jet engine."""
     # Ideal (perfect efficiencies).
-    eIdeal = 0,
+    eIdeal = 0
     # Level 1 (1945-1965).
-    eLevel1 = 1,
+    eLevel1 = 1
     # Level 2 (1965-1985).
-    eLevel2 = 2,
+    eLevel2 = 2
     # Level 3 (1985-2005).
-    eLevel3 = 3,
+    eLevel3 = 3
     # Level 4 (2005-2025).
-    eLevel4 = 4,
+    eLevel4 = 4
     # Level 5 (2025-2045).
     eLevel5 = 5
 
@@ -1631,9 +1631,9 @@ agcls.AgTypeNameMap["AgEAvtrJetEngineTechnologyLevel"] = AgEAvtrJetEngineTechnol
 class AgEAvtrJetEngineIntakeType(IntEnum):
     """The intake type of the jet engine."""
     # Subsonic nacelles.
-    eSubsonicNacelles = 0,
+    eSubsonicNacelles = 0
     # Subsonic embedded.
-    eSubsonicEmbedded = 1,
+    eSubsonicEmbedded = 1
     # Supersonic embedded.
     eSupersonicEmbedded = 2
 
@@ -1642,7 +1642,7 @@ agcls.AgTypeNameMap["AgEAvtrJetEngineIntakeType"] = AgEAvtrJetEngineIntakeType
 class AgEAvtrJetEngineTurbineType(IntEnum):
     """The turbine type of the jet engine."""
     # Uncooled turbine.
-    eUncooled = 0,
+    eUncooled = 0
     # Cooled turbine.
     eCooled = 1
 
@@ -1651,9 +1651,9 @@ agcls.AgTypeNameMap["AgEAvtrJetEngineTurbineType"] = AgEAvtrJetEngineTurbineType
 class AgEAvtrJetEngineExhaustNozzleType(IntEnum):
     """The exhaust nozzle type of the jet engine."""
     # Fixed Area Convergent.
-    eFixedAreaConvergent = 0,
+    eFixedAreaConvergent = 0
     # Variable Area Convergent.
-    eVariableAreaConvergent = 1,
+    eVariableAreaConvergent = 1
     # Variable Area Convergent - Divergent.
     eVariableAreaConvergentDivergent = 2
 
@@ -1662,9 +1662,9 @@ agcls.AgTypeNameMap["AgEAvtrJetEngineExhaustNozzleType"] = AgEAvtrJetEngineExhau
 class AgEAvtrJetFuelType(IntEnum):
     """The jet fuel type."""
     # A kerosene fuel model based on AFPROP.
-    eKeroseneAFPROP = 0,
+    eKeroseneAFPROP = 0
     # A kerosene fuel model based on NASA CEA.
-    eKeroseneCEA = 1,
+    eKeroseneCEA = 1
     # A hydrogen fuel model based on NASA CEA.
     eHydrogen = 2
 
@@ -1673,13 +1673,13 @@ agcls.AgTypeNameMap["AgEAvtrJetFuelType"] = AgEAvtrJetFuelType
 class AgEAvtrAFPROPFuelType(IntEnum):
     """The AFPROP fuel type."""
     # Override the specific energy.
-    eAFPROPOverride = 0,
+    eAFPROPOverride = 0
     # Jet A fuel model based on AFPROP.
-    eAFPROPJetA = 1,
+    eAFPROPJetA = 1
     # Jet A-1 fuel model based on AFPROP.
-    eAFPROPJetA1 = 2,
+    eAFPROPJetA1 = 2
     # JP-5 fuel model based on AFPROP.
-    eAFPROPJP5 = 3,
+    eAFPROPJP5 = 3
     # JP-7 fuel model based on AFPROP.
     eAFPROPJP7 = 4
 
@@ -1688,13 +1688,13 @@ agcls.AgTypeNameMap["AgEAvtrAFPROPFuelType"] = AgEAvtrAFPROPFuelType
 class AgEAvtrCEAFuelType(IntEnum):
     """The CEA fuel type."""
     # Override the specific energy.
-    eCEAOverride = 0,
+    eCEAOverride = 0
     # Jet A fuel model based on NASA CEA.
-    eCEAJetA = 1,
+    eCEAJetA = 1
     # Jet A-1 fuel model based on NASA CEA.
-    eCEAJetA1 = 2,
+    eCEAJetA1 = 2
     # JP-5 fuel model based on NASA CEA.
-    eCEAJP5 = 3,
+    eCEAJP5 = 3
     # JP-7 fuel model based on NASA CEA.
     eCEAJP7 = 4
 
@@ -1703,9 +1703,9 @@ agcls.AgTypeNameMap["AgEAvtrCEAFuelType"] = AgEAvtrCEAFuelType
 class AgEAvtrTurbineMode(IntEnum):
     """The turbine mode for a Sub/Super/Hypersonic powerplant."""
     # Disabled turbine mode.
-    eTurbineModeDisabled = 0,
+    eTurbineModeDisabled = 0
     # Turbojet - Basic w/AB (Thermodynamic model).
-    eTurbineModeTurbojetBasicAB = 1,
+    eTurbineModeTurbojetBasicAB = 1
     # Turbofan - Basic w/AB (Thermodynamic model).
     eTurbineModeTurbofanBasicAB = 2
 
@@ -1714,7 +1714,7 @@ agcls.AgTypeNameMap["AgEAvtrTurbineMode"] = AgEAvtrTurbineMode
 class AgEAvtrRamjetMode(IntEnum):
     """The ramjet mode for a Sub/Super/Hypersonic powerplant."""
     # Disabled ramjet mode.
-    eRamjetModeDisabled = 0,
+    eRamjetModeDisabled = 0
     # Ramjet - Basic mode.
     eRamjetModeBasic = 1
 
@@ -1723,7 +1723,7 @@ agcls.AgTypeNameMap["AgEAvtrRamjetMode"] = AgEAvtrRamjetMode
 class AgEAvtrScramjetMode(IntEnum):
     """The scramjet mode for a Sub/Super/Hypersonic powerplant."""
     # Disabled scramjet mode.
-    eScramjetModeDisabled = 0,
+    eScramjetModeDisabled = 0
     # Scramjet - Basic mode.
     eScramjetModeBasic = 1
 
@@ -1732,7 +1732,7 @@ agcls.AgTypeNameMap["AgEAvtrScramjetMode"] = AgEAvtrScramjetMode
 class AgEAvtrNumericalIntegrator(IntEnum):
     """The numerical integrator to be used for the procedure."""
     # Runge-Kutta 4th Order Fixed Time Step Integrator
-    eRK4 = 0,
+    eRK4 = 0
     # Runge-Kutta 4th Order Adpative Time Step Integrator.
     eRK45 = 1
 
@@ -1741,9 +1741,9 @@ agcls.AgTypeNameMap["AgEAvtrNumericalIntegrator"] = AgEAvtrNumericalIntegrator
 class AgEAvtrBallistic3DControlMode(IntEnum):
     """The control mode used to define the ballistic 3D strategy of the basic maneuver procedure."""
     # The vehicle will compensate for the wind along its ballistic trajectory.
-    eBallistic3DCompensateForWind = 0,
+    eBallistic3DCompensateForWind = 0
     # Allow the wind to affect the ballistic trajectory.
-    eBallistic3DWindPushesVehicle = 1,
+    eBallistic3DWindPushesVehicle = 1
     # Model the vehicle as a parachute.
     eBallistic3DParachuteMode = 2
 
@@ -1752,7 +1752,7 @@ agcls.AgTypeNameMap["AgEAvtrBallistic3DControlMode"] = AgEAvtrBallistic3DControl
 class AgEAvtrLaunchDynStateCoordFrame(IntEnum):
     """The coordinate frame used for a LaunchDynState procedure."""
     # The object's body frame.
-    eLaunchDynStateCoordFrameBody = 0,
+    eLaunchDynStateCoordFrameBody = 0
     # The object's local horizontal frame.
     eLaunchDynStateCoordFrameLocalHorizontal = 1
 
@@ -1761,9 +1761,9 @@ agcls.AgTypeNameMap["AgEAvtrLaunchDynStateCoordFrame"] = AgEAvtrLaunchDynStateCo
 class AgEAvtrLaunchDynStateBearingRef(IntEnum):
     """The vector used as a bearing reference for a LaunchDynState procedure."""
     # The object's velocity vector.
-    eLaunchDynStateBearingRefVelocity = 0,
+    eLaunchDynStateBearingRefVelocity = 0
     # The X vector of the object's coordinate frame.
-    eLaunchDynStateBearingRefCoordFrameX = 1,
+    eLaunchDynStateBearingRefCoordFrameX = 1
     # The object's vector to North.
     eLaunchDynStateBearingRefNorth = 2
 
@@ -1772,9 +1772,9 @@ agcls.AgTypeNameMap["AgEAvtrLaunchDynStateBearingRef"] = AgEAvtrLaunchDynStateBe
 class AgEAvtrAltitudeRef(IntEnum):
     """The altitude reference."""
     # Altitude above WGS84 ground reference.
-    eAltitudeRefWGS84 = 0,
+    eAltitudeRefWGS84 = 0
     # Altitude above Mean Sea Level (MSL).
-    eAltitudeRefMSL = 1,
+    eAltitudeRefMSL = 1
     # ALtitude above terrain.
     eAltitudeRefTerrain = 2
 
@@ -1783,7 +1783,7 @@ agcls.AgTypeNameMap["AgEAvtrAltitudeRef"] = AgEAvtrAltitudeRef
 class AgEAvtrSmoothTurnFPAMode(IntEnum):
     """The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure."""
     # Hold the initial flight path angle.
-    eSmoothTurnFPAHoldInitial = 0,
+    eSmoothTurnFPAHoldInitial = 0
     # Levell off the flight path angle.
     eSmoothTurnFPALevelOff = 1
 
@@ -1792,7 +1792,7 @@ agcls.AgTypeNameMap["AgEAvtrSmoothTurnFPAMode"] = AgEAvtrSmoothTurnFPAMode
 class AgEAvtrPitch3DControlMode(IntEnum):
     """The control mode used to define the pitch 3D strategy of the basic maneuver procedure."""
     # The vehicle will compensate for the wind along its trajectory.
-    ePitch3DCompensateForWind = 0,
+    ePitch3DCompensateForWind = 0
     # Allow the wind to affect the trajectory.
     ePitch3DWindPushesVehicle = 1
 
@@ -1801,19 +1801,19 @@ agcls.AgTypeNameMap["AgEAvtrPitch3DControlMode"] = AgEAvtrPitch3DControlMode
 class AgEAvtrRefuelDumpMode(IntEnum):
     """The modes used to define procedure refuel/dump modes."""
     # Enumeration AgEAvtrRefuelDumpMode:eRefuelDumpDisabled.
-    eRefuelDumpDisabled = 0,
+    eRefuelDumpDisabled = 0
     # Enumeration AgEAvtrRefuelDumpMode:eRefuelTopOff.
-    eRefuelTopOff = 1,
+    eRefuelTopOff = 1
     # Enumeration AgEAvtrRefuelDumpMode:eRefuelToFuelState.
-    eRefuelToFuelState = 2,
+    eRefuelToFuelState = 2
     # Enumeration AgEAvtrRefuelDumpMode:eRefuelToWeight.
-    eRefuelToWeight = 3,
+    eRefuelToWeight = 3
     # Enumeration AgEAvtrRefuelDumpMode:eRefuelQuantity.
-    eRefuelQuantity = 4,
+    eRefuelQuantity = 4
     # Enumeration AgEAvtrRefuelDumpMode:eDumpToFuelState.
-    eDumpToFuelState = 5,
+    eDumpToFuelState = 5
     # Enumeration AgEAvtrRefuelDumpMode:eDumpToWeight.
-    eDumpToWeight = 6,
+    eDumpToWeight = 6
     # Enumeration AgEAvtrRefuelDumpMode:eDumpQuantity.
     eDumpQuantity = 7
 
