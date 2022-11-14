@@ -184,6 +184,11 @@ class AgEStkGraphicsCylinderFill(IntFlag):
     # Completely fill the cylinder, including its wall, bottom, and top cap.
     eStkGraphicsCylinderFillAll = 7
 
+AgEStkGraphicsCylinderFill.eStkGraphicsCylinderFillWall.__doc__ = "Fill the cylinder's wall."
+AgEStkGraphicsCylinderFill.eStkGraphicsCylinderFillBottomCap.__doc__ = "Fill the cylinder's bottom cap."
+AgEStkGraphicsCylinderFill.eStkGraphicsCylinderFillTopCap.__doc__ = "Fill the cylinder's top cap."
+AgEStkGraphicsCylinderFill.eStkGraphicsCylinderFillAll.__doc__ = "Completely fill the cylinder, including its wall, bottom, and top cap."
+
 agcls.AgTypeNameMap["AgEStkGraphicsCylinderFill"] = AgEStkGraphicsCylinderFill
 
 class AgEStkGraphicsWindingOrder(IntEnum):
@@ -194,6 +199,10 @@ class AgEStkGraphicsWindingOrder(IntEnum):
     eStkGraphicsWindingOrderClockwise = 1
     # The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order.
     eStkGraphicsWindingOrderCompute = 2
+
+AgEStkGraphicsWindingOrder.eStkGraphicsWindingOrderCounterClockwise.__doc__ = "Positions or triangles are defined in counter-clockwise order."
+AgEStkGraphicsWindingOrder.eStkGraphicsWindingOrderClockwise.__doc__ = "Positions or triangles are defined in clockwise order."
+AgEStkGraphicsWindingOrder.eStkGraphicsWindingOrderCompute.__doc__ = "The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order."
 
 agcls.AgTypeNameMap["AgEStkGraphicsWindingOrder"] = AgEStkGraphicsWindingOrder
 
@@ -208,6 +217,11 @@ class AgEStkGraphicsCameraSnapshotFileFormat(IntEnum):
     # PNG file format
     eStkGraphicsCameraSnapshotFileFormatPng = 4
 
+AgEStkGraphicsCameraSnapshotFileFormat.eStkGraphicsCameraSnapshotFileFormatBmp.__doc__ = "BMP file format"
+AgEStkGraphicsCameraSnapshotFileFormat.eStkGraphicsCameraSnapshotFileFormatTiff.__doc__ = "TIFF file format"
+AgEStkGraphicsCameraSnapshotFileFormat.eStkGraphicsCameraSnapshotFileFormatJpeg.__doc__ = "JPEG file format"
+AgEStkGraphicsCameraSnapshotFileFormat.eStkGraphicsCameraSnapshotFileFormatPng.__doc__ = "PNG file format"
+
 agcls.AgTypeNameMap["AgEStkGraphicsCameraSnapshotFileFormat"] = AgEStkGraphicsCameraSnapshotFileFormat
 
 class AgEStkGraphicsCameraVideoFormat(IntEnum):
@@ -216,6 +230,9 @@ class AgEStkGraphicsCameraVideoFormat(IntEnum):
     eStkGraphicsCameraVideoFormatH264 = 0
     # Windows Media Video (WMV) file format
     eStkGraphicsCameraVideoFormatWMV = 1
+
+AgEStkGraphicsCameraVideoFormat.eStkGraphicsCameraVideoFormatH264.__doc__ = "H.264 file format"
+AgEStkGraphicsCameraVideoFormat.eStkGraphicsCameraVideoFormatWMV.__doc__ = "Windows Media Video (WMV) file format"
 
 agcls.AgTypeNameMap["AgEStkGraphicsCameraVideoFormat"] = AgEStkGraphicsCameraVideoFormat
 
@@ -236,6 +253,14 @@ class AgEStkGraphicsConstrainedUpAxis(IntEnum):
     # No axis is contained.
     eStkGraphicsConstrainedUpAxisNone = 6
 
+AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisX.__doc__ = "The X axis is constrained."
+AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisY.__doc__ = "The Y axis is constrained."
+AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisZ.__doc__ = "The Z axis is constrained."
+AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisNegativeX.__doc__ = "The negative X axis is constrained."
+AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisNegativeY.__doc__ = "The negative Y axis is constrained."
+AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisNegativeZ.__doc__ = "The negative Z axis is constrained."
+AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisNone.__doc__ = "No axis is contained."
+
 agcls.AgTypeNameMap["AgEStkGraphicsConstrainedUpAxis"] = AgEStkGraphicsConstrainedUpAxis
 
 class AgEStkGraphicsGlobeOverlayRole(IntEnum):
@@ -251,6 +276,12 @@ class AgEStkGraphicsGlobeOverlayRole(IntEnum):
     # The role of the globe overlay isn't set.
     eStkGraphicsGlobeOverlayRoleNone = 5
 
+AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleBase.__doc__ = "The globe overlay is a base image."
+AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleNight.__doc__ = "The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."
+AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleSpecular.__doc__ = "The globe overlay is a base image that shows the glint of the sun on the central body."
+AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleNormal.__doc__ = "The globe overlay is a normal overlay without a special role."
+AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleNone.__doc__ = "The role of the globe overlay isn't set."
+
 agcls.AgTypeNameMap["AgEStkGraphicsGlobeOverlayRole"] = AgEStkGraphicsGlobeOverlayRole
 
 class AgEStkGraphicsIndicesOrderHint(IntEnum):
@@ -259,6 +290,9 @@ class AgEStkGraphicsIndicesOrderHint(IntEnum):
     eStkGraphicsIndicesOrderHintNotSorted = 0
     # The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order...
     eStkGraphicsIndicesOrderHintSortedAscending = 1
+
+AgEStkGraphicsIndicesOrderHint.eStkGraphicsIndicesOrderHintNotSorted.__doc__ = "The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."
+AgEStkGraphicsIndicesOrderHint.eStkGraphicsIndicesOrderHintSortedAscending.__doc__ = "The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."
 
 agcls.AgTypeNameMap["AgEStkGraphicsIndicesOrderHint"] = AgEStkGraphicsIndicesOrderHint
 
@@ -271,6 +305,10 @@ class AgEStkGraphicsMaintainAspectRatio(IntEnum):
     # The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property.
     eStkGraphicsMaintainAspectRatioHeight = 2
 
+AgEStkGraphicsMaintainAspectRatio.eStkGraphicsMaintainAspectRatioNone.__doc__ = "The aspect ratio of the texture is not maintained during sizing of the screen overlay."
+AgEStkGraphicsMaintainAspectRatio.eStkGraphicsMaintainAspectRatioWidth.__doc__ = "The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."
+AgEStkGraphicsMaintainAspectRatio.eStkGraphicsMaintainAspectRatioHeight.__doc__ = "The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."
+
 agcls.AgTypeNameMap["AgEStkGraphicsMaintainAspectRatio"] = AgEStkGraphicsMaintainAspectRatio
 
 class AgEStkGraphicsMapProjection(IntEnum):
@@ -279,6 +317,9 @@ class AgEStkGraphicsMapProjection(IntEnum):
     eStkGraphicsMapProjectionMercator = 0
     # Equidistant Cylindrical projection
     eStkGraphicsMapProjectionEquidistantCylindrical = 1
+
+AgEStkGraphicsMapProjection.eStkGraphicsMapProjectionMercator.__doc__ = "Mercator projection"
+AgEStkGraphicsMapProjection.eStkGraphicsMapProjectionEquidistantCylindrical.__doc__ = "Equidistant Cylindrical projection"
 
 agcls.AgTypeNameMap["AgEStkGraphicsMapProjection"] = AgEStkGraphicsMapProjection
 
@@ -293,6 +334,11 @@ class AgEStkGraphicsMarkerBatchRenderingMethod(IntEnum):
     # Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards.
     eStkGraphicsMarkerBatchRenderingMethodFixedFunction = 3
 
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodGeometryShader.__doc__ = "Render the marker batch using a geometry shader. Requires <a href='http://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt'>ARB_geometry_shader4</a> extension."
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodVertexShader.__doc__ = "Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='http://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='http://www.opengl.org/registry/specs/ARB/vertex_shader..."
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodAutomatic.__doc__ = "Render the marker batch using an automatically selected method based on the capabilities of the video card."
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodFixedFunction.__doc__ = "Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."
+
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchRenderingMethod"] = AgEStkGraphicsMarkerBatchRenderingMethod
 
 class AgEStkGraphicsMarkerBatchRenderPass(IntEnum):
@@ -304,6 +350,10 @@ class AgEStkGraphicsMarkerBatchRenderPass(IntEnum):
     # The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used.
     eStkGraphicsMarkerBatchRenderPassBasedOnTranslucency = 2
 
+AgEStkGraphicsMarkerBatchRenderPass.eStkGraphicsMarkerBatchRenderPassOpaque.__doc__ = "The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."
+AgEStkGraphicsMarkerBatchRenderPass.eStkGraphicsMarkerBatchRenderPassTranslucent.__doc__ = "The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front."
+AgEStkGraphicsMarkerBatchRenderPass.eStkGraphicsMarkerBatchRenderPassBasedOnTranslucency.__doc__ = "The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used."
+
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchRenderPass"] = AgEStkGraphicsMarkerBatchRenderPass
 
 class AgEStkGraphicsMarkerBatchSizeSource(IntEnum):
@@ -312,6 +362,9 @@ class AgEStkGraphicsMarkerBatchSizeSource(IntEnum):
     eStkGraphicsMarkerBatchSizeSourceFromTexture = 0
     # The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes).
     eStkGraphicsMarkerBatchSizeSourceUserDefined = 1
+
+AgEStkGraphicsMarkerBatchSizeSource.eStkGraphicsMarkerBatchSizeSourceFromTexture.__doc__ = "The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."
+AgEStkGraphicsMarkerBatchSizeSource.eStkGraphicsMarkerBatchSizeSourceUserDefined.__doc__ = "The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes)."
 
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchSizeSource"] = AgEStkGraphicsMarkerBatchSizeSource
 
@@ -324,6 +377,10 @@ class AgEStkGraphicsMarkerBatchSortOrder(IntEnum):
     # The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position.
     eStkGraphicsMarkerBatchSortOrderByTexture = 2
 
+AgEStkGraphicsMarkerBatchSortOrder.eStkGraphicsMarkerBatchSortOrderBackToFront.__doc__ = "The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."
+AgEStkGraphicsMarkerBatchSortOrder.eStkGraphicsMarkerBatchSortOrderFrontToBack.__doc__ = "The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers..."
+AgEStkGraphicsMarkerBatchSortOrder.eStkGraphicsMarkerBatchSortOrderByTexture.__doc__ = "The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position."
+
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchSortOrder"] = AgEStkGraphicsMarkerBatchSortOrder
 
 class AgEStkGraphicsMarkerBatchUnit(IntEnum):
@@ -332,6 +389,9 @@ class AgEStkGraphicsMarkerBatchUnit(IntEnum):
     eStkGraphicsMarkerBatchUnitPixels = 0
     # The size of a marker is defined in meters.
     eStkGraphicsMarkerBatchUnitMeters = 1
+
+AgEStkGraphicsMarkerBatchUnit.eStkGraphicsMarkerBatchUnitPixels.__doc__ = "The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."
+AgEStkGraphicsMarkerBatchUnit.eStkGraphicsMarkerBatchUnitMeters.__doc__ = "The size of a marker is defined in meters."
 
 agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchUnit"] = AgEStkGraphicsMarkerBatchUnit
 
@@ -384,6 +444,30 @@ class AgEStkGraphicsModelTransformationType(IntEnum):
     # Translates the blue band of color associated with the geometry.
     eStkGraphicsModelTransformationTypeTranslateBlue = 22
 
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateX.__doc__ = "Translates the geometry along the X axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateY.__doc__ = "Translates the geometry along the Y axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateZ.__doc__ = "Translates the geometry along the Z axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeRotateX.__doc__ = "Rotates the geometry about the X axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeRotateY.__doc__ = "Rotates the geometry about the Y axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeRotateZ.__doc__ = "Rotates the geometry about the Z axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeScaleX.__doc__ = "Scales the geometry along the X axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeScaleY.__doc__ = "Scales the geometry along the Y axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeScaleZ.__doc__ = "Scales the geometry along the Z axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeScaleUniform.__doc__ = "Scales the geometry uniformly along the X, Y, and Z axes."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureTranslateX.__doc__ = "Translates the texture associated with the geometry along the X axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureTranslateY.__doc__ = "Translates the texture associated with the geometry along the Y axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureTranslateZ.__doc__ = "Translates the texture associated with the geometry along the Z axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureRotateX.__doc__ = "Rotates the texture associated with the geometry about the X axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureRotateY.__doc__ = "Rotates the texture associated with the geometry about the Y axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureRotateZ.__doc__ = "Rotates the texture associated with the geometry about the Z axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureScaleX.__doc__ = "Scales the texture associated with the geometry along the X axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureScaleY.__doc__ = "Scales the texture associated with the geometry along the Y axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureScaleZ.__doc__ = "Scales the texture associated with the geometry along the Z axis."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureScaleUniform.__doc__ = "Scales the texture associated with the geometry uniformly along the X, Y, and Z axes."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateRed.__doc__ = "Translates the red band of color associated with the geometry."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateGreen.__doc__ = "Translates the green band of color associated with the geometry."
+AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateBlue.__doc__ = "Translates the blue band of color associated with the geometry."
+
 agcls.AgTypeNameMap["AgEStkGraphicsModelTransformationType"] = AgEStkGraphicsModelTransformationType
 
 class AgEStkGraphicsOrigin(IntEnum):
@@ -407,6 +491,16 @@ class AgEStkGraphicsOrigin(IntEnum):
     # The object's origin is its top, right corner.
     eStkGraphicsOriginTopRight = 8
 
+AgEStkGraphicsOrigin.eStkGraphicsOriginBottomLeft.__doc__ = "The object's origin is its bottom, left corner."
+AgEStkGraphicsOrigin.eStkGraphicsOriginBottomCenter.__doc__ = "The object's origin is its bottom, center point."
+AgEStkGraphicsOrigin.eStkGraphicsOriginBottomRight.__doc__ = "The object's origin is its bottom, right corner."
+AgEStkGraphicsOrigin.eStkGraphicsOriginCenterLeft.__doc__ = "The object's origin is its center, left point."
+AgEStkGraphicsOrigin.eStkGraphicsOriginCenter.__doc__ = "The object's origin is its center."
+AgEStkGraphicsOrigin.eStkGraphicsOriginCenterRight.__doc__ = "The object's origin is its center, right point."
+AgEStkGraphicsOrigin.eStkGraphicsOriginTopLeft.__doc__ = "The object's origin is its top, left corner."
+AgEStkGraphicsOrigin.eStkGraphicsOriginTopCenter.__doc__ = "The object's origin is its top, center point."
+AgEStkGraphicsOrigin.eStkGraphicsOriginTopRight.__doc__ = "The object's origin is its top, right corner."
+
 agcls.AgTypeNameMap["AgEStkGraphicsOrigin"] = AgEStkGraphicsOrigin
 
 class AgEStkGraphicsPathPrimitiveRemoveLocation(IntEnum):
@@ -415,6 +509,9 @@ class AgEStkGraphicsPathPrimitiveRemoveLocation(IntEnum):
     eStkGraphicsRemoveLocationFront = 0
     # Remove from the back of the line.
     eStkGraphicsRemoveLocationBack = 1
+
+AgEStkGraphicsPathPrimitiveRemoveLocation.eStkGraphicsRemoveLocationFront.__doc__ = "Remove from the front of the line."
+AgEStkGraphicsPathPrimitiveRemoveLocation.eStkGraphicsRemoveLocationBack.__doc__ = "Remove from the back of the line."
 
 agcls.AgTypeNameMap["AgEStkGraphicsPathPrimitiveRemoveLocation"] = AgEStkGraphicsPathPrimitiveRemoveLocation
 
@@ -425,6 +522,9 @@ class AgEStkGraphicsPrimitivesSortOrder(IntEnum):
     # Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering.
     eStkGraphicsPrimitivesSortOrderBackToFront = 1
 
+AgEStkGraphicsPrimitivesSortOrder.eStkGraphicsPrimitivesSortOrderByState.__doc__ = "Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."
+AgEStkGraphicsPrimitivesSortOrder.eStkGraphicsPrimitivesSortOrderBackToFront.__doc__ = "Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering."
+
 agcls.AgTypeNameMap["AgEStkGraphicsPrimitivesSortOrder"] = AgEStkGraphicsPrimitivesSortOrder
 
 class AgEStkGraphicsRefreshRate(IntEnum):
@@ -433,6 +533,9 @@ class AgEStkGraphicsRefreshRate(IntEnum):
     eStkGraphicsRefreshRateFastest = 0
     # The animation will target a specified frame rate.
     eStkGraphicsRefreshRateTargetedFramesPerSecond = 1
+
+AgEStkGraphicsRefreshRate.eStkGraphicsRefreshRateFastest.__doc__ = "The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."
+AgEStkGraphicsRefreshRate.eStkGraphicsRefreshRateTargetedFramesPerSecond.__doc__ = "The animation will target a specified frame rate."
 
 agcls.AgTypeNameMap["AgEStkGraphicsRefreshRate"] = AgEStkGraphicsRefreshRate
 
@@ -451,6 +554,13 @@ class AgEStkGraphicsRenderPass(IntFlag):
     # Render after the terrain is rendered.
     eStkGraphicsRenderPassTerrain = 32
 
+AgEStkGraphicsRenderPass.eStkGraphicsRenderPassOpaque.__doc__ = "Render during the opaque rendering pass."
+AgEStkGraphicsRenderPass.eStkGraphicsRenderPassTranslucent.__doc__ = "Render during the translucent rendering pass."
+AgEStkGraphicsRenderPass.eStkGraphicsRenderPassCentralBodyClipped.__doc__ = "Render before the central body is rendered."
+AgEStkGraphicsRenderPass.eStkGraphicsRenderPassOrderedCompositeCentralBodyClipped.__doc__ = "Rendered in an ordered composite before all other primitives and before the central body is rendered."
+AgEStkGraphicsRenderPass.eStkGraphicsRenderPassOrderedComposite.__doc__ = "Rendered in an ordered composite before all primitives but after the central body is rendered."
+AgEStkGraphicsRenderPass.eStkGraphicsRenderPassTerrain.__doc__ = "Render after the terrain is rendered."
+
 agcls.AgTypeNameMap["AgEStkGraphicsRenderPass"] = AgEStkGraphicsRenderPass
 
 class AgEStkGraphicsRenderPassHint(IntEnum):
@@ -461,6 +571,10 @@ class AgEStkGraphicsRenderPassHint(IntEnum):
     eStkGraphicsRenderPassHintTranslucent = 1
     # It is unknown if the collection of colors contains opaque or translucent colors.
     eStkGraphicsRenderPassHintUnknown = 2
+
+AgEStkGraphicsRenderPassHint.eStkGraphicsRenderPassHintOpaque.__doc__ = "The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."
+AgEStkGraphicsRenderPassHint.eStkGraphicsRenderPassHintTranslucent.__doc__ = "The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255."
+AgEStkGraphicsRenderPassHint.eStkGraphicsRenderPassHintUnknown.__doc__ = "It is unknown if the collection of colors contains opaque or translucent colors."
 
 agcls.AgTypeNameMap["AgEStkGraphicsRenderPassHint"] = AgEStkGraphicsRenderPassHint
 
@@ -484,6 +598,16 @@ class AgEStkGraphicsScreenOverlayOrigin(IntEnum):
     eStkGraphicsScreenOverlayOriginTopCenter = 7
     # When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down.
     eStkGraphicsScreenOverlayOriginTopRight = 8
+
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginBottomLeft.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginBottomCenter.__doc__ = "When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent..."
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginBottomRight.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, right corner of the overlay in its parent's bottom, right corner. Increasing X values move the overlay to the left and increasing Y values move it up."
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginCenterLeft.__doc__ = "When the X and Y position are both set to 0, this value places the left edge of the overlay at its parent's left edge and the center of the overlay is vertically centered within its parent..."
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginCenter.__doc__ = "When the X and Y position are both set to 0, this value places the center of the overlay at its parent's center. Increasing X values move the overlay to the right and increasing Y values move it up."
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginCenterRight.__doc__ = "When the X and Y position are both set to 0, this value places the right edge of the overlay at its parent's right edge and the center of the overlay is vertically centered within its parent..."
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginTopLeft.__doc__ = "When the X and Y position are both set to 0, this value places the top, left corner of the overlay in its parent's top, left corner. Increasing X values move the overlay to the right and increasing Y values move it down."
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginTopCenter.__doc__ = "When the X and Y position are both set to 0, this value places the top edge of the overlay at its parent's top edge and the center of the overlay is horizontally centered within its parent..."
+AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginTopRight.__doc__ = "When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down."
 
 agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayOrigin"] = AgEStkGraphicsScreenOverlayOrigin
 
@@ -510,6 +634,17 @@ class AgEStkGraphicsScreenOverlayPinningOrigin(IntEnum):
     # The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft.
     eStkGraphicsScreenOverlayPinningOriginAutomatic = 9
 
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginBottomLeft.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginBottomCenter.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay..."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginBottomRight.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's bottom, right corner. Increasing X values move the pinning position to the left and increasing Y values move it up."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginCenterLeft.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's left edge and the pinning position is vertically centered within its overlay..."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginCenter.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's center. Increasing X values move the pinning position to the right and increasing Y values move it up."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginCenterRight.__doc__ = "When the X and Y pinning pinning position are both set to 0, this value places the pinning position at its overlay's right edge and the pinning position is vertically centered within its overlay..."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginTopLeft.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, left corner. Increasing X values move the pinning position to the right and increasing Y values move it down."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginTopCenter.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlays's top edge and the pinning position is horizontally centered within its overlay..."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginTopRight.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, right corner. Increasing X values move the pinning position to the left and increasing Y values move it down."
+AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginAutomatic.__doc__ = "The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft."
+
 agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayPinningOrigin"] = AgEStkGraphicsScreenOverlayPinningOrigin
 
 class AgEStkGraphicsScreenOverlayUnit(IntEnum):
@@ -518,6 +653,9 @@ class AgEStkGraphicsScreenOverlayUnit(IntEnum):
     eStkGraphicsScreenOverlayUnitPixels = 0
     # The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%.
     eStkGraphicsScreenOverlayUnitFraction = 1
+
+AgEStkGraphicsScreenOverlayUnit.eStkGraphicsScreenOverlayUnitPixels.__doc__ = "The value is specified in pixels."
+AgEStkGraphicsScreenOverlayUnit.eStkGraphicsScreenOverlayUnitFraction.__doc__ = "The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."
 
 agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayUnit"] = AgEStkGraphicsScreenOverlayUnit
 
@@ -530,6 +668,10 @@ class AgEStkGraphicsSurfaceMeshRenderingMethod(IntEnum):
     # Render the surface mesh using an automatically selected method based on the capabilities of the video card.
     eStkGraphicsSurfaceMeshRenderingMethodAutomatic = 2
 
+AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodGeometryShader.__doc__ = "Render the surface mesh using a geometry shader. Requires <a href='http://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt'>ARB_geometry_shader4</a> extension."
+AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodVertexShader.__doc__ = "Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='http://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='http://www.opengl.org/registry/specs/ARB/vertex_shader..."
+AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodAutomatic.__doc__ = "Render the surface mesh using an automatically selected method based on the capabilities of the video card."
+
 agcls.AgTypeNameMap["AgEStkGraphicsSurfaceMeshRenderingMethod"] = AgEStkGraphicsSurfaceMeshRenderingMethod
 
 class AgEStkGraphicsVisibility(IntEnum):
@@ -540,6 +682,10 @@ class AgEStkGraphicsVisibility(IntEnum):
     eStkGraphicsVisibilityPartial = 1
     # The object is completely visible.
     eStkGraphicsVisibilityAll = 2
+
+AgEStkGraphicsVisibility.eStkGraphicsVisibilityNone.__doc__ = "The object is not visible."
+AgEStkGraphicsVisibility.eStkGraphicsVisibilityPartial.__doc__ = "The object is partially visible."
+AgEStkGraphicsVisibility.eStkGraphicsVisibilityAll.__doc__ = "The object is completely visible."
 
 agcls.AgTypeNameMap["AgEStkGraphicsVisibility"] = AgEStkGraphicsVisibility
 
@@ -562,6 +708,15 @@ class AgEStkGraphicsAntiAliasing(IntEnum):
     # Anti-aliasing at 64x
     eStkGraphicsAntiAliasingSixtyFourX = 64
 
+AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingOff.__doc__ = "No anti-aliasing"
+AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingFXAA.__doc__ = "Fast Approximate Anti aliasing"
+AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingTwoX.__doc__ = "Anti-aliasing at 2x"
+AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingFourX.__doc__ = "Anti-aliasing at 4x"
+AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingEightX.__doc__ = "Anti-aliasing at 8x"
+AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingSixteenX.__doc__ = "Anti-aliasing at 16x"
+AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingThirtyTwoX.__doc__ = "Anti-aliasing at 32x"
+AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingSixtyFourX.__doc__ = "Anti-aliasing at 64x"
+
 agcls.AgTypeNameMap["AgEStkGraphicsAntiAliasing"] = AgEStkGraphicsAntiAliasing
 
 class AgEStkGraphicsBinaryLogicOperation(IntEnum):
@@ -571,6 +726,9 @@ class AgEStkGraphicsBinaryLogicOperation(IntEnum):
     # Logically or together display conditions in the composite.
     eStkGraphicsBinaryLogicOperationOr = 1
 
+AgEStkGraphicsBinaryLogicOperation.eStkGraphicsBinaryLogicOperationAnd.__doc__ = "Logically and together display conditions in the composite."
+AgEStkGraphicsBinaryLogicOperation.eStkGraphicsBinaryLogicOperationOr.__doc__ = "Logically or together display conditions in the composite."
+
 agcls.AgTypeNameMap["AgEStkGraphicsBinaryLogicOperation"] = AgEStkGraphicsBinaryLogicOperation
 
 class AgEStkGraphicsBlurMethod(IntEnum):
@@ -579,6 +737,9 @@ class AgEStkGraphicsBlurMethod(IntEnum):
     eStkGraphicsBlurMethodMean = 0
     # Provides basic blurring.
     eStkGraphicsBlurMethodBasic = 1
+
+AgEStkGraphicsBlurMethod.eStkGraphicsBlurMethodMean.__doc__ = "Provides smoothing and noise reduction through mean filtering."
+AgEStkGraphicsBlurMethod.eStkGraphicsBlurMethodBasic.__doc__ = "Provides basic blurring."
 
 agcls.AgTypeNameMap["AgEStkGraphicsBlurMethod"] = AgEStkGraphicsBlurMethod
 
@@ -601,6 +762,15 @@ class AgEStkGraphicsEdgeDetectMethod(IntEnum):
     # Detects horizontal edges using the Sobel method.
     eStkGraphicsEdgeDetectMethodSobelHorizontal = 7
 
+AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodVertical.__doc__ = "Detects vertical edges."
+AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodHorizontal.__doc__ = "Detects horizontal edges."
+AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodLeftDiagonal.__doc__ = "Detects left diagonal edges."
+AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodRightDiagonal.__doc__ = "Detects right diagonal edges."
+AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodLaplacian.__doc__ = "Detects edges using the Laplacian method."
+AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodPrewittLaplacian.__doc__ = "Detects edges using the Prewitt-Laplacian method."
+AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodSobelVertical.__doc__ = "Detects vertical edges using the Sobel method."
+AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodSobelHorizontal.__doc__ = "Detects horizontal edges using the Sobel method."
+
 agcls.AgTypeNameMap["AgEStkGraphicsEdgeDetectMethod"] = AgEStkGraphicsEdgeDetectMethod
 
 class AgEStkGraphicsFlipAxis(IntEnum):
@@ -609,6 +779,9 @@ class AgEStkGraphicsFlipAxis(IntEnum):
     eStkGraphicsFlipAxisHorizontal = 0
     # The vertical axis.
     eStkGraphicsFlipAxisVertical = 1
+
+AgEStkGraphicsFlipAxis.eStkGraphicsFlipAxisHorizontal.__doc__ = "The horizontal axis."
+AgEStkGraphicsFlipAxis.eStkGraphicsFlipAxisVertical.__doc__ = "The vertical axis."
 
 agcls.AgTypeNameMap["AgEStkGraphicsFlipAxis"] = AgEStkGraphicsFlipAxis
 
@@ -631,6 +804,15 @@ class AgEStkGraphicsGradientDetectMethod(IntEnum):
     # Detects south west gradients.
     eStkGraphicsGradientDetectMethodSouthWest = 7
 
+AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodEast.__doc__ = "Detects east gradients."
+AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodNorth.__doc__ = "Detects north gradients."
+AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodWest.__doc__ = "Detects west gradients."
+AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodSouth.__doc__ = "Detects south gradients."
+AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodNorthEast.__doc__ = "Detects north east gradients."
+AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodNorthWest.__doc__ = "Detects north west gradients."
+AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodSouthEast.__doc__ = "Detects south east gradients."
+AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodSouthWest.__doc__ = "Detects south west gradients."
+
 agcls.AgTypeNameMap["AgEStkGraphicsGradientDetectMethod"] = AgEStkGraphicsGradientDetectMethod
 
 class AgEStkGraphicsJpeg2000CompressionProfile(IntEnum):
@@ -641,6 +823,10 @@ class AgEStkGraphicsJpeg2000CompressionProfile(IntEnum):
     eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_NPJE = 1
     # This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE.
     eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_EPJE = 2
+
+AgEStkGraphicsJpeg2000CompressionProfile.eStkGraphicsJpeg2000CompressionProfileDefault.__doc__ = "This is the default profile, which is recommended for those unfamiliar with the others."
+AgEStkGraphicsJpeg2000CompressionProfile.eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_NPJE.__doc__ = "This profile is designed for U.S. and NATO military applications."
+AgEStkGraphicsJpeg2000CompressionProfile.eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_EPJE.__doc__ = "This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."
 
 agcls.AgTypeNameMap["AgEStkGraphicsJpeg2000CompressionProfile"] = AgEStkGraphicsJpeg2000CompressionProfile
 
@@ -656,6 +842,12 @@ class AgEStkGraphicsRasterBand(IntEnum):
     eStkGraphicsRasterBandAlpha = 3
     # A band containing luminance values.
     eStkGraphicsRasterBandLuminance = 4
+
+AgEStkGraphicsRasterBand.eStkGraphicsRasterBandRed.__doc__ = "A band containing red values."
+AgEStkGraphicsRasterBand.eStkGraphicsRasterBandGreen.__doc__ = "A band containing green values."
+AgEStkGraphicsRasterBand.eStkGraphicsRasterBandBlue.__doc__ = "A band containing blue values."
+AgEStkGraphicsRasterBand.eStkGraphicsRasterBandAlpha.__doc__ = "A band containing alpha values."
+AgEStkGraphicsRasterBand.eStkGraphicsRasterBandLuminance.__doc__ = "A band containing luminance values."
 
 agcls.AgTypeNameMap["AgEStkGraphicsRasterBand"] = AgEStkGraphicsRasterBand
 
@@ -682,6 +874,17 @@ class AgEStkGraphicsRasterFormat(IntEnum):
     # The format of the raster is two bands consisting of luminance and alpha values.
     eStkGraphicsRasterFormatLuminanceAlpha = 9
 
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatRed.__doc__ = "The format of the raster is a single band consisting of red values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatGreen.__doc__ = "The format of the raster is a single band consisting of green values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatBlue.__doc__ = "The format of the raster is a single band consisting of blue values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatAlpha.__doc__ = "The format of the raster is a single band consisting of alpha values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatRgb.__doc__ = "The format of the raster is three bands consisting of red, green, and blue values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatBgr.__doc__ = "The format of the raster is three bands consisting of blue, green, and red values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatRgba.__doc__ = "The format of the raster is four bands consisting of red, green, blue, and alpha values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatBgra.__doc__ = "The format of the raster is four bands consisting of blue, green, red, and alpha values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatLuminance.__doc__ = "The format of the raster is a single band consisting of luminance values."
+AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatLuminanceAlpha.__doc__ = "The format of the raster is two bands consisting of luminance and alpha values."
+
 agcls.AgTypeNameMap["AgEStkGraphicsRasterFormat"] = AgEStkGraphicsRasterFormat
 
 class AgEStkGraphicsRasterOrientation(IntEnum):
@@ -690,6 +893,9 @@ class AgEStkGraphicsRasterOrientation(IntEnum):
     eStkGraphicsRasterOrientationTopToBottom = 0
     # The raster has a bottom to top orientation.
     eStkGraphicsRasterOrientationBottomToTop = 1
+
+AgEStkGraphicsRasterOrientation.eStkGraphicsRasterOrientationTopToBottom.__doc__ = "The raster has a top to bottom orientation."
+AgEStkGraphicsRasterOrientation.eStkGraphicsRasterOrientationBottomToTop.__doc__ = "The raster has a bottom to top orientation."
 
 agcls.AgTypeNameMap["AgEStkGraphicsRasterOrientation"] = AgEStkGraphicsRasterOrientation
 
@@ -712,6 +918,15 @@ class AgEStkGraphicsRasterType(IntEnum):
     # Each value contained within a band can be represented with a double.
     eStkGraphicsRasterTypeDouble = 7
 
+AgEStkGraphicsRasterType.eStkGraphicsRasterTypeUnsignedByte.__doc__ = "Each value contained within a band can be represented with an unsigned byte."
+AgEStkGraphicsRasterType.eStkGraphicsRasterTypeByte.__doc__ = "Each value contained within a band can be represented with a byte."
+AgEStkGraphicsRasterType.eStkGraphicsRasterTypeUnsignedShort.__doc__ = "Each value contained within a band can be represented with an unsigned short."
+AgEStkGraphicsRasterType.eStkGraphicsRasterTypeShort.__doc__ = "Each value contained within a band can be represented with a short."
+AgEStkGraphicsRasterType.eStkGraphicsRasterTypeUnsignedInt.__doc__ = "Each value contained within a band can be represented with an unsigned int."
+AgEStkGraphicsRasterType.eStkGraphicsRasterTypeInt.__doc__ = "Each value contained within a band can be represented with an int."
+AgEStkGraphicsRasterType.eStkGraphicsRasterTypeFloat.__doc__ = "Each value contained within a band can be represented with a float."
+AgEStkGraphicsRasterType.eStkGraphicsRasterTypeDouble.__doc__ = "Each value contained within a band can be represented with a double."
+
 agcls.AgTypeNameMap["AgEStkGraphicsRasterType"] = AgEStkGraphicsRasterType
 
 class AgEStkGraphicsSharpenMethod(IntEnum):
@@ -721,6 +936,9 @@ class AgEStkGraphicsSharpenMethod(IntEnum):
     # Provides basic sharpening.
     eStkGraphicsSharpenMethodBasic = 1
 
+AgEStkGraphicsSharpenMethod.eStkGraphicsSharpenMethodMeanRemoval.__doc__ = "Provides sharpening through mean removal."
+AgEStkGraphicsSharpenMethod.eStkGraphicsSharpenMethodBasic.__doc__ = "Provides basic sharpening."
+
 agcls.AgTypeNameMap["AgEStkGraphicsSharpenMethod"] = AgEStkGraphicsSharpenMethod
 
 class AgEStkGraphicsVideoPlayback(IntEnum):
@@ -729,6 +947,9 @@ class AgEStkGraphicsVideoPlayback(IntEnum):
     eStkGraphicsVideoPlaybackRealTime = 0
     # The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time.
     eStkGraphicsVideoPlaybackTimeInterval = 1
+
+AgEStkGraphicsVideoPlayback.eStkGraphicsVideoPlaybackRealTime.__doc__ = "The video will playback in realtime."
+AgEStkGraphicsVideoPlayback.eStkGraphicsVideoPlaybackTimeInterval.__doc__ = "The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."
 
 agcls.AgTypeNameMap["AgEStkGraphicsVideoPlayback"] = AgEStkGraphicsVideoPlayback
 
@@ -740,6 +961,10 @@ class AgEStkGraphicsKmlNetworkLinkRefreshMode(IntEnum):
     eStkGraphicsKmlNetworkLinkRefreshModeOnInterval = 1
     # Refresh the network link when the expiration time is reached.
     eStkGraphicsKmlNetworkLinkRefreshModeOnExpire = 2
+
+AgEStkGraphicsKmlNetworkLinkRefreshMode.eStkGraphicsKmlNetworkLinkRefreshModeOnChange.__doc__ = "Refresh when the document is loaded and whenever the Link parameters change (the default)."
+AgEStkGraphicsKmlNetworkLinkRefreshMode.eStkGraphicsKmlNetworkLinkRefreshModeOnInterval.__doc__ = "Refresh the network link at the duration specified by refresh interval."
+AgEStkGraphicsKmlNetworkLinkRefreshMode.eStkGraphicsKmlNetworkLinkRefreshModeOnExpire.__doc__ = "Refresh the network link when the expiration time is reached."
 
 agcls.AgTypeNameMap["AgEStkGraphicsKmlNetworkLinkRefreshMode"] = AgEStkGraphicsKmlNetworkLinkRefreshMode
 
@@ -753,6 +978,11 @@ class AgEStkGraphicsKmlNetworkLinkViewRefreshMode(IntEnum):
     eStkGraphicsKmlNetworkLinkViewRefreshModeOnStop = 2
     # Refreshes the network link when the region associated with this link becomes active.
     eStkGraphicsKmlNetworkLinkViewRefreshModeOnRegion = 3
+
+AgEStkGraphicsKmlNetworkLinkViewRefreshMode.eStkGraphicsKmlNetworkLinkViewRefreshModeNever.__doc__ = "Do not refresh the network link when the camera's view changes."
+AgEStkGraphicsKmlNetworkLinkViewRefreshMode.eStkGraphicsKmlNetworkLinkViewRefreshModeOnRequest.__doc__ = "Only refresh the network link when it is explicitly refreshed by calling the refresh method."
+AgEStkGraphicsKmlNetworkLinkViewRefreshMode.eStkGraphicsKmlNetworkLinkViewRefreshModeOnStop.__doc__ = "Refresh the network link after camera view movement stops for the duration specified by view refresh time."
+AgEStkGraphicsKmlNetworkLinkViewRefreshMode.eStkGraphicsKmlNetworkLinkViewRefreshModeOnRegion.__doc__ = "Refreshes the network link when the region associated with this link becomes active."
 
 agcls.AgTypeNameMap["AgEStkGraphicsKmlNetworkLinkViewRefreshMode"] = AgEStkGraphicsKmlNetworkLinkViewRefreshMode
 
@@ -771,6 +1001,13 @@ class AgEStkGraphicsModelUpAxis(IntEnum):
     # The negative Z axis.
     eStkGraphicsModelUpAxisNegativeZ = 5
 
+AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisX.__doc__ = "The positive X axis."
+AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisY.__doc__ = "The positive Y axis."
+AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisZ.__doc__ = "The positive Z axis."
+AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisNegativeX.__doc__ = "The negative X axis."
+AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisNegativeY.__doc__ = "The negative Y axis."
+AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisNegativeZ.__doc__ = "The negative Z axis."
+
 agcls.AgTypeNameMap["AgEStkGraphicsModelUpAxis"] = AgEStkGraphicsModelUpAxis
 
 class AgEStkGraphicsOutlineAppearance(IntEnum):
@@ -782,6 +1019,10 @@ class AgEStkGraphicsOutlineAppearance(IntEnum):
     # Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry.
     eStkGraphicsStylizeBackLines = 2
 
+AgEStkGraphicsOutlineAppearance.eStkGraphicsFrontAndBackLines.__doc__ = "Both the front and back lines are displayed."
+AgEStkGraphicsOutlineAppearance.eStkGraphicsFrontLinesOnly.__doc__ = "Only the front lines are displayed. This can be used to declutter the outline."
+AgEStkGraphicsOutlineAppearance.eStkGraphicsStylizeBackLines.__doc__ = "Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry."
+
 agcls.AgTypeNameMap["AgEStkGraphicsOutlineAppearance"] = AgEStkGraphicsOutlineAppearance
 
 class AgEStkGraphicsPolylineType(IntEnum):
@@ -792,6 +1033,10 @@ class AgEStkGraphicsPolylineType(IntEnum):
     eStkGraphicsPolylineTypeLineStrip = 1
     # Lines are drawn as points.
     eStkGraphicsPolylineTypePoints = 2
+
+AgEStkGraphicsPolylineType.eStkGraphicsPolylineTypeLines.__doc__ = "Every two positions define a line segment. Line segments are not required to be connected to each other."
+AgEStkGraphicsPolylineType.eStkGraphicsPolylineTypeLineStrip.__doc__ = "After the first position, each additional position defines a line segment from the previous position to the current position."
+AgEStkGraphicsPolylineType.eStkGraphicsPolylineTypePoints.__doc__ = "Lines are drawn as points."
 
 agcls.AgTypeNameMap["AgEStkGraphicsPolylineType"] = AgEStkGraphicsPolylineType
 
@@ -805,6 +1050,11 @@ class AgEStkGraphicsCullFace(IntEnum):
     eStkGraphicsECullFaceFrontAndBack = 2
     # No triangles are culled.
     eStkGraphicsECullFaceNeither = 3
+
+AgEStkGraphicsCullFace.eStkGraphicsECullFaceFront.__doc__ = "Front-facing triangles are culled."
+AgEStkGraphicsCullFace.eStkGraphicsECullFaceBack.__doc__ = "Back-facing triangles are culled."
+AgEStkGraphicsCullFace.eStkGraphicsECullFaceFrontAndBack.__doc__ = "Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."
+AgEStkGraphicsCullFace.eStkGraphicsECullFaceNeither.__doc__ = "No triangles are culled."
 
 agcls.AgTypeNameMap["AgEStkGraphicsCullFace"] = AgEStkGraphicsCullFace
 
@@ -883,6 +1133,43 @@ class AgEStkGraphicsInternalTextureFormat(IntEnum):
     # Each texel contains an 32-bit luminance and 32-bit alpha floating point component.
     eStkGraphicsInternalTextureFormatLuminance32Alpha32F = 35
 
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatAlpha4.__doc__ = "Each texel is an 4-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatAlpha8.__doc__ = "Each texel is an 8-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatAlpha12.__doc__ = "Each texel is an 12-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatAlpha16.__doc__ = "Each texel is an 16-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatR3G3B2.__doc__ = "Each texel contains 3-bit red and green components and 2-bit blue component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb4.__doc__ = "Each texel contains 4-bit red, green, and blue components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb5.__doc__ = "Each texel contains 5-bit red, green, and blue components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb8.__doc__ = "Each texel contains 8-bit red, green, and blue components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb10.__doc__ = "Each texel contains 10-bit red, green, and blue components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb12.__doc__ = "Each texel contains 12-bit red, green, and blue components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb16.__doc__ = "Each texel contains 16-bit red, green, and blue components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb16F.__doc__ = "Each texel contains 16-bit red, green, and blue floating point components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb32F.__doc__ = "Each texel contains 32-bit red, green, and blue floating point components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba2.__doc__ = "Each texel contains 2-bit red, green, blue, and alpha components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba4.__doc__ = "Each texel contains 4-bit red, green, blue, and alpha components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb5A1.__doc__ = "Each texel contains 5-bit red, green, blue components and 1-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba8.__doc__ = "Each texel contains 8-bit red, green, blue, and alpha components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb10A2.__doc__ = "Each texel contains 10-bit red, green, blue components and 2-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba12.__doc__ = "Each texel contains 12-bit red, green, blue, and alpha components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba16.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba16F.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha floating point components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba32F.__doc__ = "Each texel contains 32-bit red, green, blue, and alpha floating point components."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance4.__doc__ = "Each texel is an 4-bit luminance, e.g. intensity, component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance8.__doc__ = "Each texel is an 8-bit luminance, e.g. intensity, component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance12.__doc__ = "Each texel is an 12-bit luminance, e.g. intensity, component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance16.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance16F.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, floating point component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance32F.__doc__ = "Each texel is an 32-bit luminance, e.g. intensity, floating point component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance4Alpha4.__doc__ = "Each texel contains an 4-bit luminance and 4-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance6Alpha2.__doc__ = "Each texel contains an 6-bit luminance and 2-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance8Alpha8.__doc__ = "Each texel contains an 8-bit luminance and 8-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance12Alpha4.__doc__ = "Each texel contains an 12-bit luminance and 4-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance12Alpha12.__doc__ = "Each texel contains an 12-bit luminance and 12-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance16Alpha16.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance16Alpha16F.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha floating point component."
+AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance32Alpha32F.__doc__ = "Each texel contains an 32-bit luminance and 32-bit alpha floating point component."
+
 agcls.AgTypeNameMap["AgEStkGraphicsInternalTextureFormat"] = AgEStkGraphicsInternalTextureFormat
 
 class AgEStkGraphicsMagnificationFilter(IntEnum):
@@ -891,6 +1178,9 @@ class AgEStkGraphicsMagnificationFilter(IntEnum):
     eStkGraphicsMagnificationFilterNearest = 0
     # Use the weighted average of the four texels that are closest to the center of the pixel being textured.
     eStkGraphicsMagnificationFilterLinear = 1
+
+AgEStkGraphicsMagnificationFilter.eStkGraphicsMagnificationFilterNearest.__doc__ = "Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."
+AgEStkGraphicsMagnificationFilter.eStkGraphicsMagnificationFilterLinear.__doc__ = "Use the weighted average of the four texels that are closest to the center of the pixel being textured."
 
 agcls.AgTypeNameMap["AgEStkGraphicsMagnificationFilter"] = AgEStkGraphicsMagnificationFilter
 
@@ -909,6 +1199,13 @@ class AgEStkGraphicsMinificationFilter(IntEnum):
     # Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap...
     eStkGraphicsMinificationFilterLinearMipMapLinear = 5
 
+AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterNearest.__doc__ = "Use the texel that is closest to the center of the pixel being textured."
+AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterLinear.__doc__ = "Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured."
+AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterNearestMipMapNearest.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the texel from that mipmap that is closest to the center of the pixel being textured."
+AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterLinearMipMapNearest.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the weighted average of the four (for 2D textures, two for 1D textures) texels from that mipmap that are closest to the center of the pixel being textured."
+AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterNearestMipMapLinear.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the texel that is closest to the center of the pixel being textured in each mipmap. The final texture value is a weighted average of these two texels."
+AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterLinearMipMapLinear.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap..."
+
 agcls.AgTypeNameMap["AgEStkGraphicsMinificationFilter"] = AgEStkGraphicsMinificationFilter
 
 class AgEStkGraphicsRendererShadeModel(IntEnum):
@@ -917,6 +1214,9 @@ class AgEStkGraphicsRendererShadeModel(IntEnum):
     eStkGraphicsRendererShadeModelFlat = 0
     # Gouraud shading renders the primitive by interpolating the color between the vertices.
     eStkGraphicsRendererShadeModelGouraud = 1
+
+AgEStkGraphicsRendererShadeModel.eStkGraphicsRendererShadeModelFlat.__doc__ = "Flat shading renders the primitive with one color across all of the vertices."
+AgEStkGraphicsRendererShadeModel.eStkGraphicsRendererShadeModelGouraud.__doc__ = "Gouraud shading renders the primitive by interpolating the color between the vertices."
 
 agcls.AgTypeNameMap["AgEStkGraphicsRendererShadeModel"] = AgEStkGraphicsRendererShadeModel
 
@@ -933,6 +1233,12 @@ class AgEStkGraphicsTextureWrap(IntEnum):
     # Ignore the integer part of the texture coordinate.
     eStkGraphicsTextureWrapRepeat = 4
 
+AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapClamp.__doc__ = "Clamp the texture coordinate to the range [0, 1]."
+AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapClampToBorder.__doc__ = "Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping."
+AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapClampToEdge.__doc__ = "Clamp the texture coordinate to the range [1/2N, 1 - 1/2N], where N is the size the texture in the direction of clamping."
+AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapMirroredRepeat.__doc__ = "If the integer part of the texture coordinate is even, use the fractional part of the texture coordinate. Otherwise, use one minus the fractional part of the texture coordinate."
+AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapRepeat.__doc__ = "Ignore the integer part of the texture coordinate."
+
 agcls.AgTypeNameMap["AgEStkGraphicsTextureWrap"] = AgEStkGraphicsTextureWrap
 
 class AgEStkGraphicsSetHint(IntEnum):
@@ -944,6 +1250,10 @@ class AgEStkGraphicsSetHint(IntEnum):
     # Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail.
     eStkGraphicsSetHintFrequent = 2
 
+AgEStkGraphicsSetHint.eStkGraphicsSetHintInfrequent.__doc__ = "Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."
+AgEStkGraphicsSetHint.eStkGraphicsSetHintPartial.__doc__ = "Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not."
+AgEStkGraphicsSetHint.eStkGraphicsSetHintFrequent.__doc__ = "Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail."
+
 agcls.AgTypeNameMap["AgEStkGraphicsSetHint"] = AgEStkGraphicsSetHint
 
 class AgEStkGraphicsStereoProjectionMode(IntEnum):
@@ -954,6 +1264,10 @@ class AgEStkGraphicsStereoProjectionMode(IntEnum):
     eStkGraphicsStereoProjectionFixedDistance = 1
     # Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene.
     eStkGraphicsStereoProjectionAutomatic = 2
+
+AgEStkGraphicsStereoProjectionMode.eStkGraphicsStereoProjectionParallel.__doc__ = "Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."
+AgEStkGraphicsStereoProjectionMode.eStkGraphicsStereoProjectionFixedDistance.__doc__ = "Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen."
+AgEStkGraphicsStereoProjectionMode.eStkGraphicsStereoProjectionAutomatic.__doc__ = "Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene."
 
 agcls.AgTypeNameMap["AgEStkGraphicsStereoProjectionMode"] = AgEStkGraphicsStereoProjectionMode
 
@@ -972,6 +1286,13 @@ class AgEStkGraphicsStereoscopicDisplayMode(IntEnum):
     # Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window.
     eStkGraphicsStereoscopicDisplayModeSideBySide = 5
 
+AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeOff.__doc__ = "No stereoscopic"
+AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeQuadBuffer.__doc__ = "OpenGL Quad-buffer stereoscopic"
+AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeAnaglyph.__doc__ = "Anaglyph or two-color stereoscopic"
+AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeLeftEye.__doc__ = "Left eye view of the stereoscopic scene"
+AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeRightEye.__doc__ = "Right eye view of the stereoscopic scene"
+AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeSideBySide.__doc__ = "Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."
+
 agcls.AgTypeNameMap["AgEStkGraphicsStereoscopicDisplayMode"] = AgEStkGraphicsStereoscopicDisplayMode
 
 class AgEStkGraphicsFontStyle(IntEnum):
@@ -986,6 +1307,12 @@ class AgEStkGraphicsFontStyle(IntEnum):
     eStkGraphicsFontStyleUnderline = 0x4
     # Strike-out style.
     eStkGraphicsFontStyleStrikeout = 0x8
+
+AgEStkGraphicsFontStyle.eStkGraphicsFontStyleRegular.__doc__ = "Regular font."
+AgEStkGraphicsFontStyle.eStkGraphicsFontStyleBold.__doc__ = "Bold font."
+AgEStkGraphicsFontStyle.eStkGraphicsFontStyleItalic.__doc__ = "Italic font."
+AgEStkGraphicsFontStyle.eStkGraphicsFontStyleUnderline.__doc__ = "Underlined font."
+AgEStkGraphicsFontStyle.eStkGraphicsFontStyleStrikeout.__doc__ = "Strike-out style."
 
 agcls.AgTypeNameMap["AgEStkGraphicsFontStyle"] = AgEStkGraphicsFontStyle
 

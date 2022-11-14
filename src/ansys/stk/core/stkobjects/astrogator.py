@@ -233,6 +233,10 @@ class AgEVAGraphOption(IntEnum):
     # Graph the value.
     eVAGraphOptionGraphValue = 2
 
+AgEVAGraphOption.eVAGraphOptionNoGraph.__doc__ = "Don't graph."
+AgEVAGraphOption.eVAGraphOptionGraphDifference.__doc__ = "Graph the difference."
+AgEVAGraphOption.eVAGraphOptionGraphValue.__doc__ = "Graph the value."
+
 agcls.AgTypeNameMap["AgEVAGraphOption"] = AgEVAGraphOption
 
 class AgEVASmartRunMode(IntEnum):
@@ -242,6 +246,9 @@ class AgEVASmartRunMode(IntEnum):
     # Run Only Changed Segments
     eVASmartRunModeOnlyChanged = 1
 
+AgEVASmartRunMode.eVASmartRunModeEntireMCS.__doc__ = "Run Entire Mission Control Sequence"
+AgEVASmartRunMode.eVASmartRunModeOnlyChanged.__doc__ = "Run Only Changed Segments"
+
 agcls.AgTypeNameMap["AgEVASmartRunMode"] = AgEVASmartRunMode
 
 class AgEVAFormulation(IntEnum):
@@ -250,6 +257,9 @@ class AgEVAFormulation(IntEnum):
     eVAFormulationPosigrade = 0
     # Retrograde.
     eVAFormulationRetrograde = 1
+
+AgEVAFormulation.eVAFormulationPosigrade.__doc__ = "Posigrade."
+AgEVAFormulation.eVAFormulationRetrograde.__doc__ = "Retrograde."
 
 agcls.AgTypeNameMap["AgEVAFormulation"] = AgEVAFormulation
 
@@ -263,6 +273,11 @@ class AgEVALightingCondition(IntEnum):
     eVALightingCriterionEnterUmbra = 2
     # The Exit Umbra criterion.
     eVALightingCriterionExitUmbra = 3
+
+AgEVALightingCondition.eVALightingCriterionEnterDirectSun.__doc__ = "The Enter Direct Sun criterion."
+AgEVALightingCondition.eVALightingCriterionExitDirectSun.__doc__ = "The Exit Direct Sun criterion."
+AgEVALightingCondition.eVALightingCriterionEnterUmbra.__doc__ = "The Enter Umbra criterion."
+AgEVALightingCondition.eVALightingCriterionExitUmbra.__doc__ = "The Exit Umbra criterion."
 
 agcls.AgTypeNameMap["AgEVALightingCondition"] = AgEVALightingCondition
 
@@ -301,6 +316,23 @@ class AgEVAProfile(IntEnum):
     # grid Search profile.
     eVAProfileGridSearch = 16
 
+AgEVAProfile.eVAProfileSearchPlugin.__doc__ = "Plugin search profile."
+AgEVAProfile.eVAProfileDifferentialCorrector.__doc__ = "Differential corrector profile."
+AgEVAProfile.eVAProfileChangeManeuverType.__doc__ = "Change maneuver type profile."
+AgEVAProfile.eVAProfileScriptingTool.__doc__ = "Scripting tool profile."
+AgEVAProfile.eVAProfileChangeReturnSegment.__doc__ = "Change return segment profile."
+AgEVAProfile.eVAProfileChangePropagator.__doc__ = "Change propagator profile."
+AgEVAProfile.eVAProfileChangeStopSegment.__doc__ = "Change stop segment profile."
+AgEVAProfile.eVAProfileChangeStoppingConditionState.__doc__ = "Change stopping condition state profile."
+AgEVAProfile.eVAProfileSeedFiniteManeuver.__doc__ = "Change seed finite maneuver profile."
+AgEVAProfile.eVAProfileRunOnce.__doc__ = "Run once profile."
+AgEVAProfile.eVAProfileSNOPTOptimizer.__doc__ = "SNOPT Optimizer profile."
+AgEVAProfile.eVAProfileIPOPTOptimizer.__doc__ = "IPOPT Optimizer profile."
+AgEVAProfile.eVAProfileLambertProfile.__doc__ = "Lambert profile."
+AgEVAProfile.eVAProfileLambertSearchProfile.__doc__ = "Lambert Search profile."
+AgEVAProfile.eVAProfileGoldenSection.__doc__ = "Golden Section profile."
+AgEVAProfile.eVAProfileGridSearch.__doc__ = "grid Search profile."
+
 agcls.AgTypeNameMap["AgEVAProfile"] = AgEVAProfile
 
 class AgEVAAccessCriterion(IntEnum):
@@ -311,6 +343,10 @@ class AgEVAAccessCriterion(IntEnum):
     eVAAccessCriterionLose = 1
     # The Either criterion.
     eVAAccessCriterionEither = 2
+
+AgEVAAccessCriterion.eVAAccessCriterionGain.__doc__ = "The Gain Access criterion."
+AgEVAAccessCriterion.eVAAccessCriterionLose.__doc__ = "The Lose Access criterion."
+AgEVAAccessCriterion.eVAAccessCriterionEither.__doc__ = "The Either criterion."
 
 agcls.AgTypeNameMap["AgEVAAccessCriterion"] = AgEVAAccessCriterion
 
@@ -325,6 +361,11 @@ class AgEVAEclipsingBodiesSource(IntEnum):
     # A list of eclipsing bodies from the vehicle's Basic Properties->Eclipse Bodies list.
     eVAEclipsingBodiesVehicleUserDefined = 3
 
+AgEVAEclipsingBodiesSource.eVAEclipsingBodiesPropagatorCb.__doc__ = "The eclipsing bodies list of the propagator's central body."
+AgEVAEclipsingBodiesSource.eVAEclipsingBodiesUserDefined.__doc__ = "A user-defined eclipsing bodies list related to the propagator's central body."
+AgEVAEclipsingBodiesSource.eVAEclipsingBodiesVehicleCb.__doc__ = "The eclipsing bodies list of the vehicle's central body."
+AgEVAEclipsingBodiesSource.eVAEclipsingBodiesVehicleUserDefined.__doc__ = "A list of eclipsing bodies from the vehicle's Basic Properties->Eclipse Bodies list."
+
 agcls.AgTypeNameMap["AgEVAEclipsingBodiesSource"] = AgEVAEclipsingBodiesSource
 
 class AgEVACriterion(IntEnum):
@@ -336,6 +377,10 @@ class AgEVACriterion(IntEnum):
     # The Cross Increasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while increasing.
     eVACriterionCrossIncreasing = 2
 
+AgEVACriterion.eVACriterionCrossDecreasing.__doc__ = "The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing."
+AgEVACriterion.eVACriterionCrossEither.__doc__ = "The Cross Either criterion - the stopping condition is satisfied when either of the above situations occurs."
+AgEVACriterion.eVACriterionCrossIncreasing.__doc__ = "The Cross Increasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while increasing."
+
 agcls.AgTypeNameMap["AgEVACriterion"] = AgEVACriterion
 
 class AgEVACalcObjectReference(IntEnum):
@@ -345,6 +390,9 @@ class AgEVACalcObjectReference(IntEnum):
     # The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle.
     eVACalcObjectReferenceSpecified = 1
 
+AgEVACalcObjectReference.eVACalcObjectReferenceBasic.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
+AgEVACalcObjectReference.eVACalcObjectReferenceSpecified.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
+
 agcls.AgTypeNameMap["AgEVACalcObjectReference"] = AgEVACalcObjectReference
 
 class AgEVACalcObjectCentralBodyReference(IntEnum):
@@ -353,6 +401,9 @@ class AgEVACalcObjectCentralBodyReference(IntEnum):
     eVACalcObjectCentralBodyReferenceSpecified = 0
     # The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle.
     eVACalcObjectCentralBodyReferenceParent = 1
+
+AgEVACalcObjectCentralBodyReference.eVACalcObjectCentralBodyReferenceSpecified.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
+AgEVACalcObjectCentralBodyReference.eVACalcObjectCentralBodyReferenceParent.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
 
 agcls.AgTypeNameMap["AgEVACalcObjectCentralBodyReference"] = AgEVACalcObjectCentralBodyReference
 
@@ -367,6 +418,11 @@ class AgEVACalcObjectElem(IntEnum):
     # Osculating.
     eVACalcObjectElemOsculating = 3
 
+AgEVACalcObjectElem.eVACalcObjectElemBrouwerLyddaneMeanLong.__doc__ = "Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
+AgEVACalcObjectElem.eVACalcObjectElemBrouwerLyddaneMeanShort.__doc__ = "Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
+AgEVACalcObjectElem.eVACalcObjectElemKozaiIzsakMean.__doc__ = "Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term."
+AgEVACalcObjectElem.eVACalcObjectElemOsculating.__doc__ = "Osculating."
+
 agcls.AgTypeNameMap["AgEVACalcObjectElem"] = AgEVACalcObjectElem
 
 class AgEVAProfileMode(IntEnum):
@@ -380,12 +436,19 @@ class AgEVAProfileMode(IntEnum):
     # Active - the Target Sequence will apply the change that the profile passes when running.
     eVAProfileModeActive = 3
 
+AgEVAProfileMode.eVAProfileModeIterate.__doc__ = "Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."
+AgEVAProfileMode.eVAProfileModeNotActive.__doc__ = "Not Active - the Target Sequence will ignore the profile when running."
+AgEVAProfileMode.eVAProfileModeRunOnce.__doc__ = "Run Once - the Target Sequence will run the profile once according to its current configuration."
+AgEVAProfileMode.eVAProfileModeActive.__doc__ = "Active - the Target Sequence will apply the change that the profile passes when running."
+
 agcls.AgTypeNameMap["AgEVAProfileMode"] = AgEVAProfileMode
 
 class AgEVAControlStoppingCondition(IntEnum):
     """The stopping condition control types."""
     # Trip - the value at which the stopping condition will be satisfied.
     eVAControlStoppingConditionTripValue = 0
+
+AgEVAControlStoppingCondition.eVAControlStoppingConditionTripValue.__doc__ = "Trip - the value at which the stopping condition will be satisfied."
 
 agcls.AgTypeNameMap["AgEVAControlStoppingCondition"] = AgEVAControlStoppingCondition
 
@@ -395,6 +458,9 @@ class AgEVAState(IntEnum):
     eVAStateEnabled = 0
     # Disabled - the MCS ignores this segment and continues to run.
     eVAStateDisabled = 1
+
+AgEVAState.eVAStateEnabled.__doc__ = "Enabled - the segment stops the run of the MCS."
+AgEVAState.eVAStateDisabled.__doc__ = "Disabled - the MCS ignores this segment and continues to run."
 
 agcls.AgTypeNameMap["AgEVAState"] = AgEVAState
 
@@ -407,6 +473,10 @@ class AgEVAReturnControl(IntEnum):
     # Enable (except Profiles bypass)- functions as enabled except when run from a Target Sequence profile (e.g., a differential corrector), which will ignore it.
     eVAReturnControlEnableExceptProfilesBypass = 2
 
+AgEVAReturnControl.eVAReturnControlEnable.__doc__ = "Enable - returns control of the MCS run to the parent segment."
+AgEVAReturnControl.eVAReturnControlDisable.__doc__ = "Disable - the MCS ignores this segment and continues to run."
+AgEVAReturnControl.eVAReturnControlEnableExceptProfilesBypass.__doc__ = "Enable (except Profiles bypass)- functions as enabled except when run from a Target Sequence profile (e.g., a differential corrector), which will ignore it."
+
 agcls.AgTypeNameMap["AgEVAReturnControl"] = AgEVAReturnControl
 
 class AgEVADrawPerturbation(IntEnum):
@@ -417,6 +487,10 @@ class AgEVADrawPerturbation(IntEnum):
     eVADrawPerturbationDontDraw = 1
     # Targeter Color - perturbations will be displayed in the trajectory color defined for the target sequence.
     eVADrawPerturbationTargeterColor = 2
+
+AgEVADrawPerturbation.eVADrawPerturbationSegmentColor.__doc__ = "Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence."
+AgEVADrawPerturbation.eVADrawPerturbationDontDraw.__doc__ = "Don't Draw - perturbations will not be drawn, which may decrease the run time of the target sequence."
+AgEVADrawPerturbation.eVADrawPerturbationTargeterColor.__doc__ = "Targeter Color - perturbations will be displayed in the trajectory color defined for the target sequence."
 
 agcls.AgTypeNameMap["AgEVADrawPerturbation"] = AgEVADrawPerturbation
 
@@ -429,6 +503,10 @@ class AgEVADeriveCalcMethod(IntEnum):
     # Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference.
     eVADeriveCalcMethodSigned = 2
 
+AgEVADeriveCalcMethod.eVADeriveCalcMethodForward.__doc__ = "Forward Difference - (f(x + delta) - f(x))/ delta"
+AgEVADeriveCalcMethod.eVADeriveCalcMethodCentral.__doc__ = "Central Difference - (f(x + delta) - f(x - delta)) / 2delta"
+AgEVADeriveCalcMethod.eVADeriveCalcMethodSigned.__doc__ = "Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."
+
 agcls.AgTypeNameMap["AgEVADeriveCalcMethod"] = AgEVADeriveCalcMethod
 
 class AgEVAConvergenceCriteria(IntEnum):
@@ -437,6 +515,9 @@ class AgEVAConvergenceCriteria(IntEnum):
     eVAConvergenceCriteriaEqualityConstraintWithinTolerance = 0
     # Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence.
     eVAConvervenceCriteriaEitherEqualityConstraintsOrControlParams = 1
+
+AgEVAConvergenceCriteria.eVAConvergenceCriteriaEqualityConstraintWithinTolerance.__doc__ = "Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."
+AgEVAConvergenceCriteria.eVAConvervenceCriteriaEitherEqualityConstraintsOrControlParams.__doc__ = "Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence."
 
 agcls.AgTypeNameMap["AgEVAConvergenceCriteria"] = AgEVAConvergenceCriteria
 
@@ -450,6 +531,11 @@ class AgEVADCScalingMethod(IntEnum):
     eVADCScalingMethodSpecifiedValue = 2
     # By tolerance.
     eVADCScalingMethodTolerance = 3
+
+AgEVADCScalingMethod.eVADCScalingMethodInitialValue.__doc__ = "By initial value."
+AgEVADCScalingMethod.eVADCScalingMethodOneNoScaling.__doc__ = "By one (no scaling)."
+AgEVADCScalingMethod.eVADCScalingMethodSpecifiedValue.__doc__ = "By specified value."
+AgEVADCScalingMethod.eVADCScalingMethodTolerance.__doc__ = "By tolerance."
 
 agcls.AgTypeNameMap["AgEVADCScalingMethod"] = AgEVADCScalingMethod
 
@@ -477,6 +563,18 @@ class AgEVAControlUpdate(IntEnum):
     eVAControlUpdateTankPressureVal = 109
     # Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
     eVAControlUpdateTankTempVal = 110
+
+AgEVAControlUpdate.eVAControlUpdateCdVal.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+AgEVAControlUpdate.eVAControlUpdateCrVal.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAControlUpdate.eVAControlUpdateDragAreaVal.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
+AgEVAControlUpdate.eVAControlUpdateDryMassVal.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
+AgEVAControlUpdate.eVAControlUpdateFuelDensityVal.__doc__ = "Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."
+AgEVAControlUpdate.eVAControlUpdateFuelMassVal.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
+AgEVAControlUpdate.eVAControlUpdateRadiationPressureAreaVal.__doc__ = "The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."
+AgEVAControlUpdate.eVAControlUpdateRadiationPressureCoefficientVal.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAControlUpdate.eVAControlUpdateSRPAreaVal.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
+AgEVAControlUpdate.eVAControlUpdateTankPressureVal.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
+AgEVAControlUpdate.eVAControlUpdateTankTempVal.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
 
 agcls.AgTypeNameMap["AgEVAControlUpdate"] = AgEVAControlUpdate
 
@@ -518,6 +616,25 @@ class AgEVAControlFollow(IntEnum):
     eVAControlFollowYOffset = 216
     # Z Offset - the distance that the spacecraft will be offset from the leader's body frame along the Z axis.
     eVAControlFollowZOffset = 217
+
+AgEVAControlFollow.eVAControlFollowFuelMass.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
+AgEVAControlFollow.eVAControlFollowCd.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+AgEVAControlFollow.eVAControlFollowCr.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAControlFollow.eVAControlFollowDragArea.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
+AgEVAControlFollow.eVAControlFollowDryMass.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
+AgEVAControlFollow.eVAControlFollowFuelDensity.__doc__ = "Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."
+AgEVAControlFollow.eVAControlFollowK1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
+AgEVAControlFollow.eVAControlFollowK2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."
+AgEVAControlFollow.eVAControlFollowRadiationPressureArea.__doc__ = "The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."
+AgEVAControlFollow.eVAControlFollowCk.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAControlFollow.eVAControlFollowSRPArea.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
+AgEVAControlFollow.eVAControlFollowTankPressure.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
+AgEVAControlFollow.eVAControlFollowTankTemp.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
+AgEVAControlFollow.eVAControlFollowMaxFuelMass.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg)."
+AgEVAControlFollow.eVAControlFollowTankVolume.__doc__ = "Tank Volume - the volume of the fuel tank. Enter a value in the selected distance unit cubed (e.g. m^3). The minimum value is 1e-019 m^3."
+AgEVAControlFollow.eVAControlFollowXOffset.__doc__ = "X Offset - the distance that the spacecraft will be offset from the leader's body frame along the X axis."
+AgEVAControlFollow.eVAControlFollowYOffset.__doc__ = "Y Offset - the distance that the spacecraft will be offset from the leader's body frame along the Y axis."
+AgEVAControlFollow.eVAControlFollowZOffset.__doc__ = "Z Offset - the distance that the spacecraft will be offset from the leader's body frame along the Z axis."
 
 agcls.AgTypeNameMap["AgEVAControlFollow"] = AgEVAControlFollow
 
@@ -696,6 +813,93 @@ class AgEVAControlInitState(IntEnum):
     # Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion.
     eVAControlInitStateKeplerianTimePastPeriapsis = 391
 
+AgEVAControlInitState.eVAControlInitStateFuelMass.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
+AgEVAControlInitState.eVAControlInitStateCartesianVx.__doc__ = "Vx Component - the X component of the spacecraft velocity vector."
+AgEVAControlInitState.eVAControlInitStateCartesianVy.__doc__ = "Vy Component - the Y component of the spacecraft velocity vector."
+AgEVAControlInitState.eVAControlInitStateCartesianVz.__doc__ = "Vz Component - the Z component of the spacecraft velocity vector."
+AgEVAControlInitState.eVAControlInitStateCartesianX.__doc__ = "X Component - the X component of the spacecraft position vector."
+AgEVAControlInitState.eVAControlInitStateCartesianY.__doc__ = "Y Component - the Y component of the spacecraft position vector."
+AgEVAControlInitState.eVAControlInitStateCartesianZ.__doc__ = "Z Component - the Z component of the spacecraft position vector."
+AgEVAControlInitState.eVAControlInitStateCd.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+AgEVAControlInitState.eVAControlInitStateCr.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAControlInitState.eVAControlInitStateDragArea.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
+AgEVAControlInitState.eVAControlInitStateDryMass.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
+AgEVAControlInitState.eVAControlInitStateEpoch.__doc__ = "Epoch - the orbit epoch."
+AgEVAControlInitState.eVAControlInitStateFuelDensity.__doc__ = "Fuel Density - the density of the fuel tank."
+AgEVAControlInitState.eVAControlInitStateK1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
+AgEVAControlInitState.eVAControlInitStateK2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."
+AgEVAControlInitState.eVAControlInitStateKeplerianEcc.__doc__ = "Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless."
+AgEVAControlInitState.eVAControlInitStateKeplerianInc.__doc__ = "Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianRAAN.__doc__ = "Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction."
+AgEVAControlInitState.eVAControlInitStateKeplerianSMA.__doc__ = "Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse."
+AgEVAControlInitState.eVAControlInitStateKeplerianTA.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+AgEVAControlInitState.eVAControlInitStateKeplerianW.__doc__ = "Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit."
+AgEVAControlInitState.eVAControlInitStateRadiationPressureArea.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
+AgEVAControlInitState.eVAControlInitStateCk.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAControlInitState.eVAControlInitStateSphericalAz.__doc__ = "Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north."
+AgEVAControlInitState.eVAControlInitStateSphericalDec.__doc__ = "Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."
+AgEVAControlInitState.eVAControlInitStateSphericalHorizFPA.__doc__ = "Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle)."
+AgEVAControlInitState.eVAControlInitStateSphericalRA.__doc__ = "Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."
+AgEVAControlInitState.eVAControlInitStateSphericalRMag.__doc__ = "Radius Magnitude - the magnitude of the spacecraft position vector."
+AgEVAControlInitState.eVAControlInitStateSphericalVMag.__doc__ = "Velocity Magnitude - the magnitude of the spacecraft velocity vector."
+AgEVAControlInitState.eVAControlInitStateSRPArea.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
+AgEVAControlInitState.eVAControlInitStateTankPressure.__doc__ = "Tank Pressure - the fuel tank pressure."
+AgEVAControlInitState.eVAControlInitStateTankTemp.__doc__ = "Tank Temperature - the temperature of the fuel tank."
+AgEVAControlInitState.eVAControlInitStateTargetVecInAsympDec.__doc__ = "Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system."
+AgEVAControlInitState.eVAControlInitStateTargetVecInAsympRA.__doc__ = "Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system."
+AgEVAControlInitState.eVAControlInitStateTargetVecInVelAzAtPeriapsis.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
+AgEVAControlInitState.eVAControlInitStateTargetVecInC3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
+AgEVAControlInitState.eVAControlInitStateTargetVecInRadOfPeriapsis.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
+AgEVAControlInitState.eVAControlInitStateTargetVecInTrueAnomaly.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+AgEVAControlInitState.eVAControlInitStateTargetVecOutAsympDec.__doc__ = "Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system."
+AgEVAControlInitState.eVAControlInitStateTargetVecOutAsympRA.__doc__ = "Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system."
+AgEVAControlInitState.eVAControlInitStateTargetVecOutVelAzAtPeriapsis.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
+AgEVAControlInitState.eVAControlInitStateTargetVecOutC3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
+AgEVAControlInitState.eVAControlInitStateTargetVecOutRadOfPeriapsis.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
+AgEVAControlInitState.eVAControlInitStateTargetVecOutTrueAnomaly.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+AgEVAControlInitState.eVAControlInitStateMaxFuelMass.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."
+AgEVAControlInitState.eVAControlInitStateTankVolume.__doc__ = "Tank Volume - the volume of the fuel tank."
+AgEVAControlInitState.eVAControlInitStateDelaunayG.__doc__ = "G - Magnitude of orbital angular momentum, sqrt(GM * p)."
+AgEVAControlInitState.eVAControlInitStateDelaunayH.__doc__ = "H - Z component of orbital angular momentum, G cos(inc)."
+AgEVAControlInitState.eVAControlInitStateDelaunayInc.__doc__ = "Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."
+AgEVAControlInitState.eVAControlInitStateDelaunayL.__doc__ = "L - Related to two-body orbital energy, sqrt(GM * a)"
+AgEVAControlInitState.eVAControlInitStateDelaunayMeanAnomaly.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
+AgEVAControlInitState.eVAControlInitStateDelaunayRAAN.__doc__ = "Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane."
+AgEVAControlInitState.eVAControlInitStateDelaunaySemiLatusRectum.__doc__ = "Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees"
+AgEVAControlInitState.eVAControlInitStateDelaunaySMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
+AgEVAControlInitState.eVAControlInitStateDelaunayW.__doc__ = "Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane."
+AgEVAControlInitState.eVAControlInitStateEquinoctialH.__doc__ = "H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)"
+AgEVAControlInitState.eVAControlInitStateEquinoctialK.__doc__ = "K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)"
+AgEVAControlInitState.eVAControlInitStateEquinoctialMeanLongitude.__doc__ = "Mean Longitude - RAAN + w + M"
+AgEVAControlInitState.eVAControlInitStateEquinoctialMeanMotion.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
+AgEVAControlInitState.eVAControlInitStateEquinoctialP.__doc__ = "P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)"
+AgEVAControlInitState.eVAControlInitStateEquinoctialQ.__doc__ = "Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)"
+AgEVAControlInitState.eVAControlInitStateEquinoctialSMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
+AgEVAControlInitState.eVAControlInitStateMixedSphericalAltitude.__doc__ = "Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid."
+AgEVAControlInitState.eVAControlInitStateMixedSphericalAzimuth.__doc__ = "Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction."
+AgEVAControlInitState.eVAControlInitStateMixedSphericalHorizFPA.__doc__ = "Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector."
+AgEVAControlInitState.eVAControlInitStateMixedSphericalLatitude.__doc__ = "Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane."
+AgEVAControlInitState.eVAControlInitStateMixedSphericalLongitude.__doc__ = "Longitude"
+AgEVAControlInitState.eVAControlInitStateMixedSphericalVerticalFPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
+AgEVAControlInitState.eVAControlInitStateMixedSphericalVMag.__doc__ = "Velocity Magnitude - The magnitude of the inertial velocity vector."
+AgEVAControlInitState.eVAControlInitStateSphericalVerticalFPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
+AgEVAControlInitState.eVAControlInitStateKeplerianApoapsisAltShape.__doc__ = "Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianApoapsisAltSize.__doc__ = "Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianApoapsisRadShape.__doc__ = "Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianApoapsisRadSize.__doc__ = "Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianArgLat.__doc__ = "Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee."
+AgEVAControlInitState.eVAControlInitStateKeplerianEccAnomaly.__doc__ = "Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse."
+AgEVAControlInitState.eVAControlInitStateKeplerianLAN.__doc__ = "Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion."
+AgEVAControlInitState.eVAControlInitStateKeplerianMeanAnomaly.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
+AgEVAControlInitState.eVAControlInitStateKeplerianMeanMotion.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
+AgEVAControlInitState.eVAControlInitStateKeplerianPeriapsisAltShape.__doc__ = "Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianPeriapsisAltSize.__doc__ = "Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianPeriapsisRadShape.__doc__ = "Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianPeriapsisRadSize.__doc__ = "Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
+AgEVAControlInitState.eVAControlInitStateKeplerianPeriod.__doc__ = "Period - The duration of one orbit, based on assumed two-body motion."
+AgEVAControlInitState.eVAControlInitStateKeplerianTimePastAN.__doc__ = "Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion."
+AgEVAControlInitState.eVAControlInitStateKeplerianTimePastPeriapsis.__doc__ = "Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion."
+
 agcls.AgTypeNameMap["AgEVAControlInitState"] = AgEVAControlInitState
 
 class AgEVAControlManeuver(IntEnum):
@@ -770,6 +974,42 @@ class AgEVAControlManeuver(IntEnum):
     eVAControlManeuverFiniteElF = 433
     # The time varying elevation sine phase term.
     eVAControlManeuverFiniteElP = 434
+
+AgEVAControlManeuver.eVAControlManeuverFiniteCartesianX.__doc__ = "The Cartesian X component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverFiniteCartesianY.__doc__ = "The Cartesian Y component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverFiniteCartesianZ.__doc__ = "The Cartesian Z component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverFiniteEulerAngles1.__doc__ = "The Euler A (Phi) component of the rotation from the reference axes to the body frame."
+AgEVAControlManeuver.eVAControlManeuverFiniteEulerAngles2.__doc__ = "The Euler B (Theta) component of the rotation from the reference axes to the body frame."
+AgEVAControlManeuver.eVAControlManeuverFiniteEulerAngles3.__doc__ = "The Euler C (Psi) component of the rotation from the reference axes to the body frame."
+AgEVAControlManeuver.eVAControlManeuverFiniteSphericalAz.__doc__ = "The spherical azimuth component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverFiniteSphericalElev.__doc__ = "The spherical elevation component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveCartesianX.__doc__ = "The Cartesian X component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveCartesianY.__doc__ = "The Cartesian Y component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveCartesianZ.__doc__ = "The Cartesian Z component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveEulerAngles1.__doc__ = "The Euler A (Phi) component of the rotation from the reference axes to the body frame."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveEulerAngles2.__doc__ = "The Euler B (Theta) component of the rotation from the reference axes to the body frame."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveEulerAngles3.__doc__ = "The Euler C (Psi) component of the rotation from the reference axes to the body frame."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveSphericalAz.__doc__ = "The spherical azimuth component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveSphericalElev.__doc__ = "The spherical elevation component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverImpulsiveSphericalMag.__doc__ = "The spherical magnitude component of the thrust vector."
+AgEVAControlManeuver.eVAControlManeuverFiniteBurnCenterBias.__doc__ = "The burn center bias of the thrust."
+AgEVAControlManeuver.eVAControlManeuverFiniteThrustEfficiency.__doc__ = "The thrust efficiency value."
+AgEVAControlManeuver.eVAControlManeuverFiniteAz0.__doc__ = "The time varying azimuth polynomial constant term."
+AgEVAControlManeuver.eVAControlManeuverFiniteAz1.__doc__ = "The time varying azimuth polynomial linear term."
+AgEVAControlManeuver.eVAControlManeuverFiniteAz2.__doc__ = "The time varying azimuth polynomial quadratic term."
+AgEVAControlManeuver.eVAControlManeuverFiniteAz3.__doc__ = "The time varying azimuth polynomial cubic term."
+AgEVAControlManeuver.eVAControlManeuverFiniteAz4.__doc__ = "The time varying azimuth polynomial quartic term."
+AgEVAControlManeuver.eVAControlManeuverFiniteAzA.__doc__ = "The time varying azimuth sine amplitude term."
+AgEVAControlManeuver.eVAControlManeuverFiniteAzF.__doc__ = "The time varying azimuth sine frequency term."
+AgEVAControlManeuver.eVAControlManeuverFiniteAzP.__doc__ = "The time varying azimuth sine phase term."
+AgEVAControlManeuver.eVAControlManeuverFiniteEl0.__doc__ = "The time varying elevation polynomial constant term."
+AgEVAControlManeuver.eVAControlManeuverFiniteEl1.__doc__ = "The time varying elevation polynomial linear term."
+AgEVAControlManeuver.eVAControlManeuverFiniteEl2.__doc__ = "The time varying elevation polynomial quadratic term."
+AgEVAControlManeuver.eVAControlManeuverFiniteEl3.__doc__ = "The time varying elevation polynomial cubic term."
+AgEVAControlManeuver.eVAControlManeuverFiniteEl4.__doc__ = "The time varying elevation polynomial quartic term."
+AgEVAControlManeuver.eVAControlManeuverFiniteElA.__doc__ = "The time varying elevation sine amplitude term."
+AgEVAControlManeuver.eVAControlManeuverFiniteElF.__doc__ = "The time varying elevation sine frequency term."
+AgEVAControlManeuver.eVAControlManeuverFiniteElP.__doc__ = "The time varying elevation sine phase term."
 
 agcls.AgTypeNameMap["AgEVAControlManeuver"] = AgEVAControlManeuver
 
@@ -854,6 +1094,46 @@ class AgEVAControlLaunch(IntEnum):
     # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences.
     eVAControlLaunchMaxFuelMass = 538
 
+AgEVAControlLaunch.eVAControlLaunchEpoch.__doc__ = "The date and time of the launch."
+AgEVAControlLaunch.eVAControlLaunchGeodeticLat.__doc__ = "The geodetic latitude of the launch location."
+AgEVAControlLaunch.eVAControlLaunchGeodeticLon.__doc__ = "The geodetic longitude of the launch location."
+AgEVAControlLaunch.eVAControlLaunchGeodeticAlt.__doc__ = "The geodetic altitude of the launch location."
+AgEVAControlLaunch.eVAControlLaunchGeocentricLat.__doc__ = "The geocentric latitude of the launch location."
+AgEVAControlLaunch.eVAControlLaunchGeocentricLon.__doc__ = "The geocentric longitude of the launch location."
+AgEVAControlLaunch.eVAControlLaunchGeocentricRad.__doc__ = "The geocentric radius of the launch location."
+AgEVAControlLaunch.eVAControlLaunchTimeOfFlight.__doc__ = "The time of flight, from launch until burnout."
+AgEVAControlLaunch.eVAControlLaunchBurnoutGeocentricLat.__doc__ = "The geocentric latitude of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutGeocentricLon.__doc__ = "The geocentric longitude of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutGeocentricRad.__doc__ = "The geocentric radius of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutGeodeticLat.__doc__ = "The geodetic latitude of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutGeodeticLon.__doc__ = "The geodetic longitude of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutGeodeticAlt.__doc__ = "The geodetic altitude of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutAzAltAz.__doc__ = "The geodetic azimuth of the launch trajectory."
+AgEVAControlLaunch.eVAControlLaunchBurnoutAzAltDownrangeDist.__doc__ = "The geodetic downrange distance of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutAzAltAlt.__doc__ = "The geodetic altitude of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutAzRadAz.__doc__ = "The geocentric azimuth of the launch trajectory."
+AgEVAControlLaunch.eVAControlLaunchBurnoutAzRadDownrangeDist.__doc__ = "The geocentric downrange distance of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutAzRadRad.__doc__ = "The geocentric radius of the burnout point."
+AgEVAControlLaunch.eVAControlLaunchBurnoutFixedVelocity.__doc__ = "The burnout velocity in the fixed frame."
+AgEVAControlLaunch.eVAControlLaunchBurnoutInertialVelocity.__doc__ = "The burnout velocity in the inertial frame."
+AgEVAControlLaunch.eVAControlLaunchBurnoutInertialVelocityAzimuth.__doc__ = "Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed."
+AgEVAControlLaunch.eVAControlLaunchBurnoutInertialHorizontalFPA.__doc__ = "Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle."
+AgEVAControlLaunch.eVAControlLaunchDryMass.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
+AgEVAControlLaunch.eVAControlLaunchCd.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+AgEVAControlLaunch.eVAControlLaunchDragArea.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
+AgEVAControlLaunch.eVAControlLaunchCr.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAControlLaunch.eVAControlLaunchSRPArea.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
+AgEVAControlLaunch.eVAControlLaunchCk.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAControlLaunch.eVAControlLaunchRadiationPressureArea.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
+AgEVAControlLaunch.eVAControlLaunchK1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
+AgEVAControlLaunch.eVAControlLaunchK2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (scale) value."
+AgEVAControlLaunch.eVAControlLaunchTankPressure.__doc__ = "The fuel tank pressure."
+AgEVAControlLaunch.eVAControlLaunchTankVolume.__doc__ = "The volume of the fuel tank."
+AgEVAControlLaunch.eVAControlLaunchTankTemp.__doc__ = "The fuel tank temperature."
+AgEVAControlLaunch.eVAControlLaunchFuelDensity.__doc__ = "The density of the fuel tank."
+AgEVAControlLaunch.eVAControlLaunchFuelMass.__doc__ = "The mass of the spacecraft propellant."
+AgEVAControlLaunch.eVAControlLaunchMaxFuelMass.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."
+
 agcls.AgTypeNameMap["AgEVAControlLaunch"] = AgEVAControlLaunch
 
 class AgEVAControlAdvanced(IntEnum):
@@ -862,6 +1142,9 @@ class AgEVAControlAdvanced(IntEnum):
     eVAControlPropagateMaxPropTime = 600
     # The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction.
     eVAControlPropagateMinPropTime = 601
+
+AgEVAControlAdvanced.eVAControlPropagateMaxPropTime.__doc__ = "The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."
+AgEVAControlAdvanced.eVAControlPropagateMinPropTime.__doc__ = "The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."
 
 agcls.AgTypeNameMap["AgEVAControlAdvanced"] = AgEVAControlAdvanced
 
@@ -874,6 +1157,10 @@ class AgEVATargetSeqAction(IntEnum):
     # Run Active Profiles Once - runs the profile with corrections applied to control parameters.
     eVATargetSeqActionRunActiveProfilesOnce = 2
 
+AgEVATargetSeqAction.eVATargetSeqActionRunNominalSeq.__doc__ = "Run Nominal Sequence - runs the mission control sequence."
+AgEVATargetSeqAction.eVATargetSeqActionRunActiveProfiles.__doc__ = "Run Active Profiles - runs the mission control sequence allowing the active profiles to operate."
+AgEVATargetSeqAction.eVATargetSeqActionRunActiveProfilesOnce.__doc__ = "Run Active Profiles Once - runs the profile with corrections applied to control parameters."
+
 agcls.AgTypeNameMap["AgEVATargetSeqAction"] = AgEVATargetSeqAction
 
 class AgEVAProfilesFinish(IntEnum):
@@ -884,6 +1171,10 @@ class AgEVAProfilesFinish(IntEnum):
     eVAProfilesFinishRunToReturnAndStop = 1
     # Stop - stop the MCS as soon as the target sequence has converged.
     eVAProfilesFinishStop = 2
+
+AgEVAProfilesFinish.eVAProfilesFinishRunToReturnAndContinue.__doc__ = "Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence."
+AgEVAProfilesFinish.eVAProfilesFinishRunToReturnAndStop.__doc__ = "Run To Return And Stop - run the target sequence to the first Return segment, and then stop running the MCS altogether."
+AgEVAProfilesFinish.eVAProfilesFinishStop.__doc__ = "Stop - stop the MCS as soon as the target sequence has converged."
 
 agcls.AgTypeNameMap["AgEVAProfilesFinish"] = AgEVAProfilesFinish
 
@@ -912,6 +1203,18 @@ class AgEVAUpdateParam(IntEnum):
     # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
     eVAUpdateParamRadiationPressureArea = 10
 
+AgEVAUpdateParam.eVAUpdateParamDragArea.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
+AgEVAUpdateParam.eVAUpdateParamSRPArea.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
+AgEVAUpdateParam.eVAUpdateParamDryMass.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
+AgEVAUpdateParam.eVAUpdateParamFuelMass.__doc__ = "The mass of the spacecraft propellant."
+AgEVAUpdateParam.eVAUpdateParamFuelDensity.__doc__ = "The density of the fuel tank."
+AgEVAUpdateParam.eVAUpdateParamTankPressure.__doc__ = "The fuel tank pressure."
+AgEVAUpdateParam.eVAUpdateParamTankTemp.__doc__ = "The temperature of the fuel tank."
+AgEVAUpdateParam.eVAUpdateParamCr.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAUpdateParam.eVAUpdateParamCd.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+AgEVAUpdateParam.eVAUpdateParamCk.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+AgEVAUpdateParam.eVAUpdateParamRadiationPressureArea.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
+
 agcls.AgTypeNameMap["AgEVAUpdateParam"] = AgEVAUpdateParam
 
 class AgEVAUpdateAction(IntEnum):
@@ -925,6 +1228,11 @@ class AgEVAUpdateAction(IntEnum):
     # Set to new value - replace the current value for this parameter with the quantity entered in the Value column.
     eVAUpdateActionSetToNewValue = 3
 
+AgEVAUpdateAction.eVAUpdateActionNoChange.__doc__ = "No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column)."
+AgEVAUpdateAction.eVAUpdateActionAddValue.__doc__ = "Add value - add the quantity entered in the Value column to the current value for this parameter."
+AgEVAUpdateAction.eVAUpdateActionSubtractValue.__doc__ = "Subtract value - subtract the quantity entered in the Value column from the current value for this parameter."
+AgEVAUpdateAction.eVAUpdateActionSetToNewValue.__doc__ = "Set to new value - replace the current value for this parameter with the quantity entered in the Value column."
+
 agcls.AgTypeNameMap["AgEVAUpdateAction"] = AgEVAUpdateAction
 
 class AgEVAPressureMode(IntEnum):
@@ -934,6 +1242,9 @@ class AgEVAPressureMode(IntEnum):
     # Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases.
     eVAPressureModePressureRegulated = 1
 
+AgEVAPressureMode.eVAPressureModeBlowDown.__doc__ = "Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law."
+AgEVAPressureMode.eVAPressureModePressureRegulated.__doc__ = "Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases."
+
 agcls.AgTypeNameMap["AgEVAPressureMode"] = AgEVAPressureMode
 
 class AgEVAThrustType(IntEnum):
@@ -942,6 +1253,9 @@ class AgEVAThrustType(IntEnum):
     eVAThrustTypeAffectsAccelAndMassFlow = 0
     # Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber.
     eVAThrustTypeAffectsAccelOnly = 1
+
+AgEVAThrustType.eVAThrustTypeAffectsAccelAndMassFlow.__doc__ = "Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."
+AgEVAThrustType.eVAThrustTypeAffectsAccelOnly.__doc__ = "Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber."
 
 agcls.AgTypeNameMap["AgEVAThrustType"] = AgEVAThrustType
 
@@ -954,6 +1268,10 @@ class AgEVAAttitudeUpdate(IntEnum):
     # Inertial at start - specified by Attitude Control at the beginning of the maneuver segment and remains the same throughout the maneuver.
     eVAAttitudeUpdateInertialAtStart = 2
 
+AgEVAAttitudeUpdate.eVAAttitudeUpdateDuringBurn.__doc__ = "Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn."
+AgEVAAttitudeUpdate.eVAAttitudeUpdateInertialAtIgnition.__doc__ = "Inertial at ignition - specified by Attitude Control at ignition and remains the same throughout the maneuver. This fixes the thrust direction in the inertial direction calculated at the beginning of the burn and is used for inertially fixed spacecraft."
+AgEVAAttitudeUpdate.eVAAttitudeUpdateInertialAtStart.__doc__ = "Inertial at start - specified by Attitude Control at the beginning of the maneuver segment and remains the same throughout the maneuver."
+
 agcls.AgTypeNameMap["AgEVAAttitudeUpdate"] = AgEVAAttitudeUpdate
 
 class AgEVAPropulsionMethod(IntEnum):
@@ -963,6 +1281,9 @@ class AgEVAPropulsionMethod(IntEnum):
     # Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing.
     eVAPropulsionMethodThrusterSet = 1
 
+AgEVAPropulsionMethod.eVAPropulsionMethodEngineModel.__doc__ = "Engine Model - can be used to quickly model the firing of a single engine."
+AgEVAPropulsionMethod.eVAPropulsionMethodThrusterSet.__doc__ = "Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing."
+
 agcls.AgTypeNameMap["AgEVAPropulsionMethod"] = AgEVAPropulsionMethod
 
 class AgEVACustomFunction(IntEnum):
@@ -971,6 +1292,9 @@ class AgEVACustomFunction(IntEnum):
     eVAEnablePageDefinition = 0
     # Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window.
     eVAEnableManeuverAttitude = 1
+
+AgEVACustomFunction.eVAEnablePageDefinition.__doc__ = "Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK."
+AgEVACustomFunction.eVAEnableManeuverAttitude.__doc__ = "Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window."
 
 agcls.AgTypeNameMap["AgEVACustomFunction"] = AgEVACustomFunction
 
@@ -989,6 +1313,13 @@ class AgEVABodyAxis(IntEnum):
     # The negative Z engine acceleration direction.
     eVABodyAxisMinusZ = 5
 
+AgEVABodyAxis.eVABodyAxisPlusX.__doc__ = "The positive X engine acceleration direction."
+AgEVABodyAxis.eVABodyAxisPlusY.__doc__ = "The positive Y engine acceleration direction."
+AgEVABodyAxis.eVABodyAxisPlusZ.__doc__ = "The positive Z engine acceleration direction."
+AgEVABodyAxis.eVABodyAxisMinusX.__doc__ = "The negative X engine acceleration direction."
+AgEVABodyAxis.eVABodyAxisMinusY.__doc__ = "The negative Y engine acceleration direction."
+AgEVABodyAxis.eVABodyAxisMinusZ.__doc__ = "The negative Z engine acceleration direction."
+
 agcls.AgTypeNameMap["AgEVABodyAxis"] = AgEVABodyAxis
 
 class AgEVAConstraintSign(IntEnum):
@@ -997,6 +1328,9 @@ class AgEVAConstraintSign(IntEnum):
     eVAConstraintSignPlus = 0
     # Negative.
     eVAConstraintSignMinus = 1
+
+AgEVAConstraintSign.eVAConstraintSignPlus.__doc__ = "Positive."
+AgEVAConstraintSign.eVAConstraintSignMinus.__doc__ = "Negative."
 
 agcls.AgTypeNameMap["AgEVAConstraintSign"] = AgEVAConstraintSign
 
@@ -1019,6 +1353,15 @@ class AgEVAAttitudeControl(IntEnum):
     # Lagrange Interpolation (optimal finite, always set) - supports the 'Run current nodes' execution mode of the Optimal Finite Maneuver.
     eVAAttitudeControlLagrangeInterpolation = 7
 
+AgEVAAttitudeControl.eVAAttitudeControlVelocityVector.__doc__ = "Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector."
+AgEVAAttitudeControl.eVAAttitudeControlAntiVelocityVector.__doc__ = "Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector."
+AgEVAAttitudeControl.eVAAttitudeControlAttitude.__doc__ = "Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. "
+AgEVAAttitudeControl.eVAAttitudeControlFile.__doc__ = "File (impulsive/finite) - uses an attitude file to set the thrust vector direction."
+AgEVAAttitudeControl.eVAAttitudeControlThrustVector.__doc__ = "Thrust Vector (impulsive/finite) - the total thrust vector is explicitly specified in Cartesian or spherical form with respect to the thrust axes."
+AgEVAAttitudeControl.eVAAttitudeControlPlugin.__doc__ = "Plugin (finite) - thrust vector direction is defined using a COM plugin."
+AgEVAAttitudeControl.eVAAttitudeControlTimeVarying.__doc__ = "Time Varying (finite) - polynomial and sine representations for the azimuth and elevation of the thrust vector."
+AgEVAAttitudeControl.eVAAttitudeControlLagrangeInterpolation.__doc__ = "Lagrange Interpolation (optimal finite, always set) - supports the 'Run current nodes' execution mode of the Optimal Finite Maneuver."
+
 agcls.AgTypeNameMap["AgEVAAttitudeControl"] = AgEVAAttitudeControl
 
 class AgEVAFollowJoin(IntEnum):
@@ -1032,6 +1375,11 @@ class AgEVAFollowJoin(IntEnum):
     # Join at Final Epoch of Previous Segment - the spacecraft will follow the leader from the final epoch at the end of the previous segment.
     eVAFollowJoinAtFinalEpochOfPreviousSeg = 3
 
+AgEVAFollowJoin.eVAFollowJoinSpecify.__doc__ = "Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining."
+AgEVAFollowJoin.eVAFollowJoinAtBeginning.__doc__ = "Join at Beginning of Leader's Ephemeris - the spacecraft will follow the leader from the beginning of the leader's ephemeris."
+AgEVAFollowJoin.eVAFollowJoinAtEnd.__doc__ = "Join at End of Leader's Ephemeris - the spacecraft will use the leader's final ephemeris point as the initial and final state of the Follow segment; the separation parameter will automatically be set to 'Separate at End of Leader's Ephemeris'."
+AgEVAFollowJoin.eVAFollowJoinAtFinalEpochOfPreviousSeg.__doc__ = "Join at Final Epoch of Previous Segment - the spacecraft will follow the leader from the final epoch at the end of the previous segment."
+
 agcls.AgTypeNameMap["AgEVAFollowJoin"] = AgEVAFollowJoin
 
 class AgEVAFollowSeparation(IntEnum):
@@ -1040,6 +1388,9 @@ class AgEVAFollowSeparation(IntEnum):
     eVAFollowSeparationSpecify = 0
     # Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate.
     eVAFollowSeparationAtEndOfLeadersEphem = 1
+
+AgEVAFollowSeparation.eVAFollowSeparationSpecify.__doc__ = "Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."
+AgEVAFollowSeparation.eVAFollowSeparationAtEndOfLeadersEphem.__doc__ = "Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate."
 
 agcls.AgTypeNameMap["AgEVAFollowSeparation"] = AgEVAFollowSeparation
 
@@ -1052,6 +1403,10 @@ class AgEVAFollowSpacecraftAndFuelTank(IntEnum):
     # Inherit Spacecraft Configuration From Leader - if leader is an Astrogator satellite, configuration will be defined by the leader's configuration.
     eVAFollowSpacecraftAndFuelTankLeader = 2
 
+AgEVAFollowSpacecraftAndFuelTank.eVAFollowSpacecraftAndFuelTankSpecify.__doc__ = "Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank."
+AgEVAFollowSpacecraftAndFuelTank.eVAFollowSpacecraftAndFuelTankInherit.__doc__ = "Inherit Spacecraft Configuration From Previous Segment - the spacecraft will be defined by its configuration at the end of the previous segment. The configuration will not be changed by the Follow segment."
+AgEVAFollowSpacecraftAndFuelTank.eVAFollowSpacecraftAndFuelTankLeader.__doc__ = "Inherit Spacecraft Configuration From Leader - if leader is an Astrogator satellite, configuration will be defined by the leader's configuration."
+
 agcls.AgTypeNameMap["AgEVAFollowSpacecraftAndFuelTank"] = AgEVAFollowSpacecraftAndFuelTank
 
 class AgEVABurnoutOptions(IntEnum):
@@ -1060,6 +1415,9 @@ class AgEVABurnoutOptions(IntEnum):
     eVABurnoutOptionsFixedVelocity = 0
     # Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity.
     eVABurnoutOptionsInertialVelocity = 1
+
+AgEVABurnoutOptions.eVABurnoutOptionsFixedVelocity.__doc__ = "Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero."
+AgEVABurnoutOptions.eVABurnoutOptionsInertialVelocity.__doc__ = "Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity."
 
 agcls.AgTypeNameMap["AgEVABurnoutOptions"] = AgEVABurnoutOptions
 
@@ -1076,6 +1434,12 @@ class AgEVABurnoutType(IntEnum):
     # Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system.
     eVABurnoutTypeCBFCartesian = 4
 
+AgEVABurnoutType.eVABurnoutTypeGeocentric.__doc__ = "Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."
+AgEVABurnoutType.eVABurnoutTypeGeodetic.__doc__ = "Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
+AgEVABurnoutType.eVABurnoutTypeLaunchAzRad.__doc__ = "Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body."
+AgEVABurnoutType.eVABurnoutTypeLaunchAzAlt.__doc__ = "Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body."
+AgEVABurnoutType.eVABurnoutTypeCBFCartesian.__doc__ = "Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system."
+
 agcls.AgTypeNameMap["AgEVABurnoutType"] = AgEVABurnoutType
 
 class AgEVAAscentType(IntEnum):
@@ -1085,6 +1449,9 @@ class AgEVAAscentType(IntEnum):
     # Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration.
     eVAAscentTypeEllipseQuarticMotion = 1
 
+AgEVAAscentType.eVAAscentTypeEllipseCubicMotion.__doc__ = "Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities."
+AgEVAAscentType.eVAAscentTypeEllipseQuarticMotion.__doc__ = "Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration."
+
 agcls.AgTypeNameMap["AgEVAAscentType"] = AgEVAAscentType
 
 class AgEVALaunchDisplaySystem(IntEnum):
@@ -1093,6 +1460,9 @@ class AgEVALaunchDisplaySystem(IntEnum):
     eVADisplaySystemGeodetic = 0
     # Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body).
     eVADisplaySystemGeocentric = 1
+
+AgEVALaunchDisplaySystem.eVADisplaySystemGeodetic.__doc__ = "Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body."
+AgEVALaunchDisplaySystem.eVADisplaySystemGeocentric.__doc__ = "Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
 
 agcls.AgTypeNameMap["AgEVALaunchDisplaySystem"] = AgEVALaunchDisplaySystem
 
@@ -1113,6 +1483,14 @@ class AgEVARunCode(IntEnum):
     # Global Stop - hit a global stopping condition.
     eVARunCodeHitGlobalStop = 6
 
+AgEVARunCode.eVARunCodeMarching.__doc__ = "Marching - a segment has run successfully."
+AgEVARunCode.eVARunCodeProfileFailure.__doc__ = "Profile Failure - a search profile failed to converge."
+AgEVARunCode.eVARunCodeError.__doc__ = "Error - encountered an error."
+AgEVARunCode.eVARunCodeStopped.__doc__ = "Stopped - encountered a stop segment."
+AgEVARunCode.eVARunCodeReturned.__doc__ = "Returned - encountered a return segment."
+AgEVARunCode.eVARunCodeCancelled.__doc__ = "Cancelled - cancelled by user."
+AgEVARunCode.eVARunCodeHitGlobalStop.__doc__ = "Global Stop - hit a global stopping condition."
+
 agcls.AgTypeNameMap["AgEVARunCode"] = AgEVARunCode
 
 class AgEVASequenceStateToPass(IntEnum):
@@ -1121,6 +1499,9 @@ class AgEVASequenceStateToPass(IntEnum):
     eVASequenceStateToPassInitial = 0
     # The final state of the sequence.
     eVASequenceStateToPassFinal = 1
+
+AgEVASequenceStateToPass.eVASequenceStateToPassInitial.__doc__ = "The initial state of the sequence."
+AgEVASequenceStateToPass.eVASequenceStateToPassFinal.__doc__ = "The final state of the sequence."
 
 agcls.AgTypeNameMap["AgEVASequenceStateToPass"] = AgEVASequenceStateToPass
 
@@ -1132,6 +1513,10 @@ class AgEVAManeuverType(IntEnum):
     eVAManeuverTypeFinite = 1
     # Optimal Finite
     eVAManeuverTypeOptimalFinite = 2
+
+AgEVAManeuverType.eVAManeuverTypeImpulsive.__doc__ = "Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment."
+AgEVAManeuverType.eVAManeuverTypeFinite.__doc__ = "Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met."
+AgEVAManeuverType.eVAManeuverTypeOptimalFinite.__doc__ = "Optimal Finite"
 
 agcls.AgTypeNameMap["AgEVAManeuverType"] = AgEVAManeuverType
 
@@ -1164,6 +1549,20 @@ class AgEVASegmentType(IntEnum):
     # End - The End segment is a default segment of the MCS that functions similarly to a Return segment; it returns control to the beginning of the MCS. The End segment cannot be disabled or deleted, nor can any segments be inserted into the MCS after it.
     eVASegmentTypeEnd = 12
 
+AgEVASegmentType.eVASegmentTypeInitialState.__doc__ = "Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS."
+AgEVASegmentType.eVASegmentTypeLaunch.__doc__ = "Launch - can be used to model a simple spacecraft launch from Earth or another central body."
+AgEVASegmentType.eVASegmentTypeManeuver.__doc__ = "Maneuver - can be used to model a spacecraft maneuver."
+AgEVASegmentType.eVASegmentTypeFollow.__doc__ = "Follow - can be used to set the spacecraft to follow another vehicle (Satellite, Launch Vehicle, Missile, Aircraft, Ship, or Ground Vehicle) at a specified offset, and to separate from that vehicle upon meeting specified conditions."
+AgEVASegmentType.eVASegmentTypeHold.__doc__ = "Hold - can be used to model landing or rendezvous operations by setting the spacecraft to maintain a fixed position in reference to another object or body, until meeting specified conditions."
+AgEVASegmentType.eVASegmentTypePropagate.__doc__ = "Propagate - can be used to model the movement of the spacecraft along its current trajectory until meeting specified stopping conditions."
+AgEVASegmentType.eVASegmentTypeSequence.__doc__ = "Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS."
+AgEVASegmentType.eVASegmentTypeReturn.__doc__ = "Return - can be used to control the execution of the Mission Control Sequence by returning control to its parent segment."
+AgEVASegmentType.eVASegmentTypeTargetSequence.__doc__ = "Target Sequence - can be used to define maneuvers and propagations in terms of the goals they are intended to achieve."
+AgEVASegmentType.eVASegmentTypeStop.__doc__ = "Stop - can be used to control the execution of the Mission Control Sequence by halting execution of the MCS."
+AgEVASegmentType.eVASegmentTypeUpdate.__doc__ = "Update - can be used to modify some of the satellite properties to reflect changes that occur during the mission."
+AgEVASegmentType.eVASegmentTypeBackwardSequence.__doc__ = "Backward Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS."
+AgEVASegmentType.eVASegmentTypeEnd.__doc__ = "End - The End segment is a default segment of the MCS that functions similarly to a Return segment; it returns control to the beginning of the MCS. The End segment cannot be disabled or deleted, nor can any segments be inserted into the MCS after it."
+
 agcls.AgTypeNameMap["AgEVASegmentType"] = AgEVASegmentType
 
 class AgEVAElementType(IntEnum):
@@ -1187,6 +1586,16 @@ class AgEVAElementType(IntEnum):
     # Geodetic.
     eVAElementTypeGeodetic = 9
 
+AgEVAElementType.eVAElementTypeCartesian.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
+AgEVAElementType.eVAElementTypeKeplerian.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
+AgEVAElementType.eVAElementTypeSpherical.__doc__ = "Spherical - a system in which positions are specified as a radial distance from the origin and two angles relative to a fundamental plane."
+AgEVAElementType.eVAElementTypeTargetVectorIncomingAsymptote.__doc__ = "Target Vector Incoming Asymptote - used for hyperbolic arrival trajectories."
+AgEVAElementType.eVAElementTypeTargetVectorOutgoingAsymptote.__doc__ = "Target Vector Outgoing Asymptote - used for hyperbolic departure trajectories."
+AgEVAElementType.eVAElementTypeMixedSpherical.__doc__ = "Mixed Spherical."
+AgEVAElementType.eVAElementTypeDelaunay.__doc__ = "Delaunay."
+AgEVAElementType.eVAElementTypeEquinoctial.__doc__ = "Equinoctial."
+AgEVAElementType.eVAElementTypeGeodetic.__doc__ = "Geodetic."
+
 agcls.AgTypeNameMap["AgEVAElementType"] = AgEVAElementType
 
 class AgEVALanguage(IntEnum):
@@ -1197,6 +1606,10 @@ class AgEVALanguage(IntEnum):
     eVALanguageJScript = 1
     # MATLAB.
     eVALanguageMATLAB = 2
+
+AgEVALanguage.eVALanguageVBScript.__doc__ = "VBScript."
+AgEVALanguage.eVALanguageJScript.__doc__ = "JScript."
+AgEVALanguage.eVALanguageMATLAB.__doc__ = "MATLAB."
 
 agcls.AgTypeNameMap["AgEVALanguage"] = AgEVALanguage
 
@@ -1211,6 +1624,11 @@ class AgEVAStoppingCondition(IntEnum):
     # Lighting Stopping Condition.
     eVAStoppingConditionLighting = 3
 
+AgEVAStoppingCondition.eVAStoppingConditionBasic.__doc__ = "Basic Stopping Condition."
+AgEVAStoppingCondition.eVAStoppingConditionBefore.__doc__ = "Before Stopping Condition."
+AgEVAStoppingCondition.eVAStoppingConditionOnePtAccess.__doc__ = "One Point Access Stopping Condition."
+AgEVAStoppingCondition.eVAStoppingConditionLighting.__doc__ = "Lighting Stopping Condition."
+
 agcls.AgTypeNameMap["AgEVAStoppingCondition"] = AgEVAStoppingCondition
 
 class AgEVAClearEphemerisDirection(IntEnum):
@@ -1222,6 +1640,10 @@ class AgEVAClearEphemerisDirection(IntEnum):
     # Clear ephemeris after selected time or state.
     eVAClearEphemerisAfter = 1
 
+AgEVAClearEphemerisDirection.eVAClearEphemerisBefore.__doc__ = "Clear ephemeris before selected time or state."
+AgEVAClearEphemerisDirection.eVAClearEphemerisNoClear.__doc__ = "Do not clear ephemeris."
+AgEVAClearEphemerisDirection.eVAClearEphemerisAfter.__doc__ = "Clear ephemeris after selected time or state."
+
 agcls.AgTypeNameMap["AgEVAClearEphemerisDirection"] = AgEVAClearEphemerisDirection
 
 class AgEVAProfileInsertDirection(IntEnum):
@@ -1231,6 +1653,9 @@ class AgEVAProfileInsertDirection(IntEnum):
     # Insert profile after reference profile.
     eVAProfileInsertAfter = 1
 
+AgEVAProfileInsertDirection.eVAProfileInsertBefore.__doc__ = "Insert profile before reference profile."
+AgEVAProfileInsertDirection.eVAProfileInsertAfter.__doc__ = "Insert profile after reference profile."
+
 agcls.AgTypeNameMap["AgEVAProfileInsertDirection"] = AgEVAProfileInsertDirection
 
 class AgEVARootFindingAlgorithm(IntEnum):
@@ -1239,6 +1664,9 @@ class AgEVARootFindingAlgorithm(IntEnum):
     eVASecantMethod = 0
     # Newton-Raphson method.
     eVANewtonRaphsonMethod = 1
+
+AgEVARootFindingAlgorithm.eVASecantMethod.__doc__ = "Secant method."
+AgEVARootFindingAlgorithm.eVANewtonRaphsonMethod.__doc__ = "Newton-Raphson method."
 
 agcls.AgTypeNameMap["AgEVARootFindingAlgorithm"] = AgEVARootFindingAlgorithm
 
@@ -1259,6 +1687,14 @@ class AgEVAScriptingParameterType(IntEnum):
     # Enumeration.
     eVAScriptingParameterTypeEnumeration = 6
 
+AgEVAScriptingParameterType.eVAScriptingParameterTypeDouble.__doc__ = "Double."
+AgEVAScriptingParameterType.eVAScriptingParameterTypeQuantity.__doc__ = "Quantity."
+AgEVAScriptingParameterType.eVAScriptingParameterTypeDate.__doc__ = "Date."
+AgEVAScriptingParameterType.eVAScriptingParameterTypeString.__doc__ = "String."
+AgEVAScriptingParameterType.eVAScriptingParameterTypeBoolean.__doc__ = "Boolean."
+AgEVAScriptingParameterType.eVAScriptingParameterTypeInteger.__doc__ = "Integer."
+AgEVAScriptingParameterType.eVAScriptingParameterTypeEnumeration.__doc__ = "Enumeration."
+
 agcls.AgTypeNameMap["AgEVAScriptingParameterType"] = AgEVAScriptingParameterType
 
 class AgEVASNOPTGoal(IntEnum):
@@ -1267,6 +1703,9 @@ class AgEVASNOPTGoal(IntEnum):
     eVASNOPTGoalMinimize = 0
     # Bound
     eVASNOPTGoalBound = 1
+
+AgEVASNOPTGoal.eVASNOPTGoalMinimize.__doc__ = "Minimize"
+AgEVASNOPTGoal.eVASNOPTGoalBound.__doc__ = "Bound"
 
 agcls.AgTypeNameMap["AgEVASNOPTGoal"] = AgEVASNOPTGoal
 
@@ -1277,6 +1716,9 @@ class AgEVAIPOPTGoal(IntEnum):
     # Bound
     eVAIPOPTGoalBound = 1
 
+AgEVAIPOPTGoal.eVAIPOPTGoalMinimize.__doc__ = "Minimize"
+AgEVAIPOPTGoal.eVAIPOPTGoalBound.__doc__ = "Bound"
+
 agcls.AgTypeNameMap["AgEVAIPOPTGoal"] = AgEVAIPOPTGoal
 
 class AgEVAOptimalFiniteSeedMethod(IntEnum):
@@ -1285,6 +1727,9 @@ class AgEVAOptimalFiniteSeedMethod(IntEnum):
     eVAOptimalFiniteSeedMethodInitialGuessFile = 0
     # Seed initial guess from finite maneuver.
     eVAOptimalFiniteSeedMethodFiniteManeuver = 1
+
+AgEVAOptimalFiniteSeedMethod.eVAOptimalFiniteSeedMethodInitialGuessFile.__doc__ = "Seed initial guess from file."
+AgEVAOptimalFiniteSeedMethod.eVAOptimalFiniteSeedMethodFiniteManeuver.__doc__ = "Seed initial guess from finite maneuver."
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteSeedMethod"] = AgEVAOptimalFiniteSeedMethod
 
@@ -1295,6 +1740,9 @@ class AgEVAOptimalFiniteRunMode(IntEnum):
     # Optimize via direct transcription.
     eVAOptimalFiniteRunModeOptimizeViaDirectTranscription = 1
 
+AgEVAOptimalFiniteRunMode.eVAOptimalFiniteRunModeRunCurrentNodes.__doc__ = "Run current nodes."
+AgEVAOptimalFiniteRunMode.eVAOptimalFiniteRunModeOptimizeViaDirectTranscription.__doc__ = "Optimize via direct transcription."
+
 agcls.AgTypeNameMap["AgEVAOptimalFiniteRunMode"] = AgEVAOptimalFiniteRunMode
 
 class AgEVAOptimalFiniteDiscretizationStrategy(IntEnum):
@@ -1304,6 +1752,9 @@ class AgEVAOptimalFiniteDiscretizationStrategy(IntEnum):
     # The Legendre-Gauss-Radau quadrature rule.
     eVAOptimalFiniteDiscretizationStrategyLegendreGaussRadau = 1
 
+AgEVAOptimalFiniteDiscretizationStrategy.eVAOptimalFiniteDiscretizationStrategyLegendreGaussLobatto.__doc__ = "The Legendre-Gauss-Lobatto quadrature rule"
+AgEVAOptimalFiniteDiscretizationStrategy.eVAOptimalFiniteDiscretizationStrategyLegendreGaussRadau.__doc__ = "The Legendre-Gauss-Radau quadrature rule."
+
 agcls.AgTypeNameMap["AgEVAOptimalFiniteDiscretizationStrategy"] = AgEVAOptimalFiniteDiscretizationStrategy
 
 class AgEVAOptimalFiniteWorkingVariables(IntEnum):
@@ -1312,6 +1763,9 @@ class AgEVAOptimalFiniteWorkingVariables(IntEnum):
     eVAOptimalFiniteWorkingVariablesEquinoctial = 0
     # Use semi-latus rectum instead of SMA and true longitude instead of mean longitude.
     eVAOptimalFiniteWorkingVariablesModifiedEquinoctial = 1
+
+AgEVAOptimalFiniteWorkingVariables.eVAOptimalFiniteWorkingVariablesEquinoctial.__doc__ = "Standard inertial equinoctial coordinates."
+AgEVAOptimalFiniteWorkingVariables.eVAOptimalFiniteWorkingVariablesModifiedEquinoctial.__doc__ = "Use semi-latus rectum instead of SMA and true longitude instead of mean longitude."
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteWorkingVariables"] = AgEVAOptimalFiniteWorkingVariables
 
@@ -1324,6 +1778,10 @@ class AgEVAOptimalFiniteScalingOptions(IntEnum):
     # Scale based on the initial state.
     eVAOptimalFiniteScalingOptionsInitialStateBased = 2
 
+AgEVAOptimalFiniteScalingOptions.eVAOptimalFiniteScalingOptionsNoScaling.__doc__ = "No scaling."
+AgEVAOptimalFiniteScalingOptions.eVAOptimalFiniteScalingOptionsCanonicalUnits.__doc__ = "Scale based on canonical units."
+AgEVAOptimalFiniteScalingOptions.eVAOptimalFiniteScalingOptionsInitialStateBased.__doc__ = "Scale based on the initial state."
+
 agcls.AgTypeNameMap["AgEVAOptimalFiniteScalingOptions"] = AgEVAOptimalFiniteScalingOptions
 
 class AgEVAOptimalFiniteSNOPTObjective(IntEnum):
@@ -1334,6 +1792,10 @@ class AgEVAOptimalFiniteSNOPTObjective(IntEnum):
     eVAOptimalFiniteSNOPTObjectiveMaximizeFinalRad = 1
     # Maximize the final mass after the collocation arc.
     eVAOptimalFiniteSNOPTObjectiveMinimizePropellantUse = 2
+
+AgEVAOptimalFiniteSNOPTObjective.eVAOptimalFiniteSNOPTObjectiveMinimizeTOF.__doc__ = "Minimize the total TOF along the collocation arc."
+AgEVAOptimalFiniteSNOPTObjective.eVAOptimalFiniteSNOPTObjectiveMaximizeFinalRad.__doc__ = "Minimize the total calculated DeltaV along the collocation arc."
+AgEVAOptimalFiniteSNOPTObjective.eVAOptimalFiniteSNOPTObjectiveMinimizePropellantUse.__doc__ = "Maximize the final mass after the collocation arc."
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteSNOPTObjective"] = AgEVAOptimalFiniteSNOPTObjective
 
@@ -1346,6 +1808,10 @@ class AgEVAOptimalFiniteSNOPTScaling(IntEnum):
     # Scale all constraints and variables.
     eVAOptimalFiniteSNOPTScalingAll = 2
 
+AgEVAOptimalFiniteSNOPTScaling.eVAOptimalFiniteSNOPTScalingNone.__doc__ = "No scaling."
+AgEVAOptimalFiniteSNOPTScaling.eVAOptimalFiniteSNOPTScalingLinear.__doc__ = "Scale linear constraints and variables."
+AgEVAOptimalFiniteSNOPTScaling.eVAOptimalFiniteSNOPTScalingAll.__doc__ = "Scale all constraints and variables."
+
 agcls.AgTypeNameMap["AgEVAOptimalFiniteSNOPTScaling"] = AgEVAOptimalFiniteSNOPTScaling
 
 class AgEVAOptimalFiniteExportNodesFormat(IntEnum):
@@ -1354,6 +1820,9 @@ class AgEVAOptimalFiniteExportNodesFormat(IntEnum):
     eVAOptimalFiniteExportNodesFormatAzimuthElevation = 0
     # Export controls as unit vectors = direction cosines.
     eVAOptimalFiniteExportNodesFormatUnitVector = 1
+
+AgEVAOptimalFiniteExportNodesFormat.eVAOptimalFiniteExportNodesFormatAzimuthElevation.__doc__ = "Export controls as Az/El = Ra/Dec angles."
+AgEVAOptimalFiniteExportNodesFormat.eVAOptimalFiniteExportNodesFormatUnitVector.__doc__ = "Export controls as unit vectors = direction cosines."
 
 agcls.AgTypeNameMap["AgEVAOptimalFiniteExportNodesFormat"] = AgEVAOptimalFiniteExportNodesFormat
 
@@ -1364,6 +1833,9 @@ class AgEVAOptimalFiniteGuessMethod(IntEnum):
     # Piecewise linear method.
     eVAOptimalFiniteGuessMethodPiecewiseLinear = 1
 
+AgEVAOptimalFiniteGuessMethod.eVAOptimalFiniteGuessMethodLagrangePolynomial.__doc__ = "Lagrange polynomial method."
+AgEVAOptimalFiniteGuessMethod.eVAOptimalFiniteGuessMethodPiecewiseLinear.__doc__ = "Piecewise linear method."
+
 agcls.AgTypeNameMap["AgEVAOptimalFiniteGuessMethod"] = AgEVAOptimalFiniteGuessMethod
 
 class AgEVAImpDeltaVRep(IntEnum):
@@ -1373,6 +1845,9 @@ class AgEVAImpDeltaVRep(IntEnum):
     # Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude).
     eVASphericalImpDeltaV = 1
 
+AgEVAImpDeltaVRep.eVACartesianImpDeltaV.__doc__ = "Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."
+AgEVAImpDeltaVRep.eVASphericalImpDeltaV.__doc__ = "Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude)."
+
 agcls.AgTypeNameMap["AgEVAImpDeltaVRep"] = AgEVAImpDeltaVRep
 
 class AgEVALambertTargetCoordType(IntEnum):
@@ -1381,6 +1856,9 @@ class AgEVALambertTargetCoordType(IntEnum):
     eVALambertTargetCoordTypeCartesian = 0
     # Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space.
     eVALambertTargetCoordTypeKeplerian = 1
+
+AgEVALambertTargetCoordType.eVALambertTargetCoordTypeCartesian.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
+AgEVALambertTargetCoordType.eVALambertTargetCoordTypeKeplerian.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
 
 agcls.AgTypeNameMap["AgEVALambertTargetCoordType"] = AgEVALambertTargetCoordType
 
@@ -1393,6 +1871,10 @@ class AgEVALambertSolutionOptionType(IntEnum):
     # Minimum Energy - The type of Lambert solution to calculate.
     eAgEVALambertSolutionOptionMinEnergy = 2
 
+AgEVALambertSolutionOptionType.eAgEVALambertSolutionOptionFixedTime.__doc__ = "Fixed time - The type of Lambert solution to calculate."
+AgEVALambertSolutionOptionType.eAgEVALambertSolutionOptionMinEccentricity.__doc__ = "Minimum Eccentricity - The type of Lambert solution to calculate."
+AgEVALambertSolutionOptionType.eAgEVALambertSolutionOptionMinEnergy.__doc__ = "Minimum Energy - The type of Lambert solution to calculate."
+
 agcls.AgTypeNameMap["AgEVALambertSolutionOptionType"] = AgEVALambertSolutionOptionType
 
 class AgEVALambertOrbitalEnergyType(IntEnum):
@@ -1401,6 +1883,9 @@ class AgEVALambertOrbitalEnergyType(IntEnum):
     eAgEVALambertOrbitalEnergyLow = 0
     # High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution.
     eAgEVALambertOrbitalEnergyHigh = 1
+
+AgEVALambertOrbitalEnergyType.eAgEVALambertOrbitalEnergyLow.__doc__ = "Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution."
+AgEVALambertOrbitalEnergyType.eAgEVALambertOrbitalEnergyHigh.__doc__ = "High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution."
 
 agcls.AgTypeNameMap["AgEVALambertOrbitalEnergyType"] = AgEVALambertOrbitalEnergyType
 
@@ -1411,6 +1896,9 @@ class AgEVALambertDirectionOfMotionType(IntEnum):
     # The long direction of motion for the Lambert solution.
     eAgEVALambertDirectionOfMotionLong = 1
 
+AgEVALambertDirectionOfMotionType.eAgEVALambertDirectionOfMotionShort.__doc__ = "The short direction of motion for the Lambert solution."
+AgEVALambertDirectionOfMotionType.eAgEVALambertDirectionOfMotionLong.__doc__ = "The long direction of motion for the Lambert solution."
+
 agcls.AgTypeNameMap["AgEVALambertDirectionOfMotionType"] = AgEVALambertDirectionOfMotionType
 
 class AgEVAGoldenSectionDesiredOperation(IntEnum):
@@ -1420,6 +1908,9 @@ class AgEVAGoldenSectionDesiredOperation(IntEnum):
     # Maximize value
     eVAGoldenSectionDesiredOpMaximizeValue = 1
 
+AgEVAGoldenSectionDesiredOperation.eVAGoldenSectionDesiredOpMinimizeValue.__doc__ = "Minimize value"
+AgEVAGoldenSectionDesiredOperation.eVAGoldenSectionDesiredOpMaximizeValue.__doc__ = "Maximize value"
+
 agcls.AgTypeNameMap["AgEVAGoldenSectionDesiredOperation"] = AgEVAGoldenSectionDesiredOperation
 
 class AgEVAGridSearchDesiredOperation(IntEnum):
@@ -1428,6 +1919,9 @@ class AgEVAGridSearchDesiredOperation(IntEnum):
     eVAGridSearchDesiredOpMinimizeValue = 0
     # Maximize value
     eVAGridSearchDesiredOpMaximizeValue = 1
+
+AgEVAGridSearchDesiredOperation.eVAGridSearchDesiredOpMinimizeValue.__doc__ = "Minimize value"
+AgEVAGridSearchDesiredOperation.eVAGridSearchDesiredOpMaximizeValue.__doc__ = "Maximize value"
 
 agcls.AgTypeNameMap["AgEVAGridSearchDesiredOperation"] = AgEVAGridSearchDesiredOperation
 
@@ -1442,6 +1936,11 @@ class AgEVAElement(IntEnum):
     # Brouwer-Lyddane Mean Short.
     eVAElementBrouwerLyddaneMeanShort = 3
 
+AgEVAElement.eVAElementOsculating.__doc__ = "Osculating."
+AgEVAElement.eVAElementKozaiIzsakMean.__doc__ = "Kozai-Izsak Mean."
+AgEVAElement.eVAElementBrouwerLyddaneMeanLong.__doc__ = "Brouwer-Lyddane Mean Long."
+AgEVAElement.eVAElementBrouwerLyddaneMeanShort.__doc__ = "Brouwer-Lyddane Mean Short."
+
 agcls.AgTypeNameMap["AgEVAElement"] = AgEVAElement
 
 class AgEVABaseSelection(IntEnum):
@@ -1450,6 +1949,9 @@ class AgEVABaseSelection(IntEnum):
     eVABaseSelectionSpecify = 0
     # The current satellite.
     eVABaseSelectionCurrentSatellite = 1
+
+AgEVABaseSelection.eVABaseSelectionSpecify.__doc__ = "An object in the current scenario."
+AgEVABaseSelection.eVABaseSelectionCurrentSatellite.__doc__ = "The current satellite."
 
 agcls.AgTypeNameMap["AgEVABaseSelection"] = AgEVABaseSelection
 
@@ -1468,6 +1970,13 @@ class AgEVAControlOrbitStateValue(IntEnum):
     # The z position component of the orbit state.
     eVAControlOrbitStateValueZ = 5
 
+AgEVAControlOrbitStateValue.eVAControlOrbitStateValueVx.__doc__ = "The Vx velocity component of the orbit state."
+AgEVAControlOrbitStateValue.eVAControlOrbitStateValueVy.__doc__ = "The Vy velocity component of the orbit state."
+AgEVAControlOrbitStateValue.eVAControlOrbitStateValueVz.__doc__ = "The Vz velocity component of the orbit state."
+AgEVAControlOrbitStateValue.eVAControlOrbitStateValueX.__doc__ = "The x position component of the orbit state."
+AgEVAControlOrbitStateValue.eVAControlOrbitStateValueY.__doc__ = "The y position component of the orbit state."
+AgEVAControlOrbitStateValue.eVAControlOrbitStateValueZ.__doc__ = "The z position component of the orbit state."
+
 agcls.AgTypeNameMap["AgEVAControlOrbitStateValue"] = AgEVAControlOrbitStateValue
 
 class AgEVASegmentState(IntEnum):
@@ -1476,6 +1985,9 @@ class AgEVASegmentState(IntEnum):
     eVASegmentStateInitial = 0
     # The segment final state.
     eVASegmentStateFinal = 1
+
+AgEVASegmentState.eVASegmentStateInitial.__doc__ = "The segment initial state."
+AgEVASegmentState.eVASegmentStateFinal.__doc__ = "The segment final state."
 
 agcls.AgTypeNameMap["AgEVASegmentState"] = AgEVASegmentState
 
@@ -1486,6 +1998,9 @@ class AgEVADifferenceOrder(IntEnum):
     # The current minus initial difference.
     eVADifferenceOrderCurrentMinusInitial = 1
 
+AgEVADifferenceOrder.eVADifferenceOrderInitialMinusCurrent.__doc__ = "The initial minus current difference."
+AgEVADifferenceOrder.eVADifferenceOrderCurrentMinusInitial.__doc__ = "The current minus initial difference."
+
 agcls.AgTypeNameMap["AgEVADifferenceOrder"] = AgEVADifferenceOrder
 
 class AgEVASegmentDifferenceOrder(IntEnum):
@@ -1494,6 +2009,9 @@ class AgEVASegmentDifferenceOrder(IntEnum):
     eVASegmentDifferenceOrderCurrentMinusSegment = 0
     # The segment minus current difference.
     eVASegmentDifferenceOrderSegmentMinusCurrent = 1
+
+AgEVASegmentDifferenceOrder.eVASegmentDifferenceOrderCurrentMinusSegment.__doc__ = "The current minus segment difference."
+AgEVASegmentDifferenceOrder.eVASegmentDifferenceOrderSegmentMinusCurrent.__doc__ = "The segment minus current difference."
 
 agcls.AgTypeNameMap["AgEVASegmentDifferenceOrder"] = AgEVASegmentDifferenceOrder
 
@@ -1504,6 +2022,9 @@ class AgEVAControlRepeatingGroundTrackErr(IntEnum):
     # The repeat count.
     eVAControlRepeatingGroundTrackErrRepeatCount = 1
 
+AgEVAControlRepeatingGroundTrackErr.eVAControlRepeatingGroundTrackErrRefLon.__doc__ = "The reference longitude."
+AgEVAControlRepeatingGroundTrackErr.eVAControlRepeatingGroundTrackErrRepeatCount.__doc__ = "The repeat count."
+
 agcls.AgTypeNameMap["AgEVAControlRepeatingGroundTrackErr"] = AgEVAControlRepeatingGroundTrackErr
 
 class AgEVACalcObjectDirection(IntEnum):
@@ -1513,6 +2034,9 @@ class AgEVACalcObjectDirection(IntEnum):
     # Search in the direction of the previous calculation object.
     eVACalcObjectDirectionPrevious = 1
 
+AgEVACalcObjectDirection.eVACalcObjectDirectionNext.__doc__ = "Search in the direction of the next calculation object."
+AgEVACalcObjectDirection.eVACalcObjectDirectionPrevious.__doc__ = "Search in the direction of the previous calculation object."
+
 agcls.AgTypeNameMap["AgEVACalcObjectDirection"] = AgEVACalcObjectDirection
 
 class AgEVACalcObjectOrbitPlaneSource(IntEnum):
@@ -1521,6 +2045,9 @@ class AgEVACalcObjectOrbitPlaneSource(IntEnum):
     eAgEVACalcObjectOrbitPlaneSourceReferenceSatellite = 0
     # Use the satellite to generate the orbit plane.
     eAgEVACalcObjectOrbitPlaneSourceSatellite = 1
+
+AgEVACalcObjectOrbitPlaneSource.eAgEVACalcObjectOrbitPlaneSourceReferenceSatellite.__doc__ = "Use the reference satellite to generate the orbit plane."
+AgEVACalcObjectOrbitPlaneSource.eAgEVACalcObjectOrbitPlaneSourceSatellite.__doc__ = "Use the satellite to generate the orbit plane."
 
 agcls.AgTypeNameMap["AgEVACalcObjectOrbitPlaneSource"] = AgEVACalcObjectOrbitPlaneSource
 
@@ -1535,6 +2062,11 @@ class AgEVACalcObjectSunPosition(IntEnum):
     # Use the sun location true from reference satellite.
     eAgEVACalcObjectSunPositionTrueFromRefSatellite = 3
 
+AgEVACalcObjectSunPosition.eAgEVACalcObjectSunPositionApparentFromSatellite.__doc__ = "Use the sun location apparent from satellite."
+AgEVACalcObjectSunPosition.eAgEVACalcObjectSunPositionApparentFromRefSatellite.__doc__ = "Use the sun location apparent from reference satellite."
+AgEVACalcObjectSunPosition.eAgEVACalcObjectSunPositionTrueFromSatellite.__doc__ = "Use the sun location true from satellite."
+AgEVACalcObjectSunPosition.eAgEVACalcObjectSunPositionTrueFromRefSatellite.__doc__ = "Use the sun location true from reference satellite."
+
 agcls.AgTypeNameMap["AgEVACalcObjectSunPosition"] = AgEVACalcObjectSunPosition
 
 class AgEVACalcObjectAngleSign(IntEnum):
@@ -1543,6 +2075,9 @@ class AgEVACalcObjectAngleSign(IntEnum):
     eAgEVACalcObjectAngleSignPositive = 0
     # Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal.
     eAgEVACalcObjectAngleSignNegative = 1
+
+AgEVACalcObjectAngleSign.eAgEVACalcObjectAngleSignPositive.__doc__ = "Use the positive sign for the angle when the relative position has a positive component along the orbit normal."
+AgEVACalcObjectAngleSign.eAgEVACalcObjectAngleSignNegative.__doc__ = "Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal."
 
 agcls.AgTypeNameMap["AgEVACalcObjectAngleSign"] = AgEVACalcObjectAngleSign
 
@@ -1557,6 +2092,11 @@ class AgEVACalcObjectReferenceDirection(IntEnum):
     # Use the satellite nadir (centric) position when projected into the orbit plane.
     eAgEVACalcObjectReferenceDirectionSatelliteNadir = 3
 
+AgEVACalcObjectReferenceDirection.eAgEVACalcObjectReferenceDirectionReferenceSatellitePosition.__doc__ = "Use the reference satellite position when projected into the orbit plane."
+AgEVACalcObjectReferenceDirection.eAgEVACalcObjectReferenceDirectionSatellitePosition.__doc__ = "Use the satellite position when projected into the orbit plane."
+AgEVACalcObjectReferenceDirection.eAgEVACalcObjectReferenceDirectionReferenceSatelliteNadir.__doc__ = "Use the reference satellite nadir (centric) when projected into the orbit plane."
+AgEVACalcObjectReferenceDirection.eAgEVACalcObjectReferenceDirectionSatelliteNadir.__doc__ = "Use the satellite nadir (centric) position when projected into the orbit plane."
+
 agcls.AgTypeNameMap["AgEVACalcObjectReferenceDirection"] = AgEVACalcObjectReferenceDirection
 
 class AgEVACalcObjectRelativePosition(IntEnum):
@@ -1565,6 +2105,9 @@ class AgEVACalcObjectRelativePosition(IntEnum):
     eAgEVACalcObjectRelativePositionSatelliteToRefSatellite = 0
     # Use the relative position reference satellite to satellite.
     eAgEVACalcObjectRelativePositionRefSatelliteToSatellite = 1
+
+AgEVACalcObjectRelativePosition.eAgEVACalcObjectRelativePositionSatelliteToRefSatellite.__doc__ = "Use the relative position satellite to reference satellite."
+AgEVACalcObjectRelativePosition.eAgEVACalcObjectRelativePositionRefSatelliteToSatellite.__doc__ = "Use the relative position reference satellite to satellite."
 
 agcls.AgTypeNameMap["AgEVACalcObjectRelativePosition"] = AgEVACalcObjectRelativePosition
 
@@ -1575,6 +2118,9 @@ class AgEVACalcObjectReferenceEllipse(IntEnum):
     # Use the satellite orbit.
     eAgEVACalcObjectReferenceEllipseSatelliteOrbit = 1
 
+AgEVACalcObjectReferenceEllipse.eAgEVACalcObjectReferenceEllipseRefSatOrbit.__doc__ = "Use the reference satellite orbit."
+AgEVACalcObjectReferenceEllipse.eAgEVACalcObjectReferenceEllipseSatelliteOrbit.__doc__ = "Use the satellite orbit."
+
 agcls.AgTypeNameMap["AgEVACalcObjectReferenceEllipse"] = AgEVACalcObjectReferenceEllipse
 
 class AgEVACalcObjectLocationSource(IntEnum):
@@ -1583,6 +2129,9 @@ class AgEVACalcObjectLocationSource(IntEnum):
     eAgEVACalcObjectLocationSourceRefSat = 0
     # Use the satellite.
     eAgEVACalcObjectLocationSourceSatellite = 1
+
+AgEVACalcObjectLocationSource.eAgEVACalcObjectLocationSourceRefSat.__doc__ = "Use the reference satellite."
+AgEVACalcObjectLocationSource.eAgEVACalcObjectLocationSourceSatellite.__doc__ = "Use the satellite."
 
 agcls.AgTypeNameMap["AgEVACalcObjectLocationSource"] = AgEVACalcObjectLocationSource
 
@@ -1597,6 +2146,11 @@ class AgEVAGravitationalParameterSource(IntEnum):
     # Gravity File.
     eVAGravitationalParameterSourceGravityFile = 3
 
+AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceCbFile.__doc__ = "Cb File."
+AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceCbFileSystem.__doc__ = "Cb File -  System."
+AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceDEFile.__doc__ = "DE File."
+AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceGravityFile.__doc__ = "Gravity File."
+
 agcls.AgTypeNameMap["AgEVAGravitationalParameterSource"] = AgEVAGravitationalParameterSource
 
 class AgEVAReferenceRadiusSource(IntEnum):
@@ -1606,6 +2160,9 @@ class AgEVAReferenceRadiusSource(IntEnum):
     # Gravity File.
     eVAReferenceRadiusSourceGravityFile = 1
 
+AgEVAReferenceRadiusSource.eVAReferenceRadiusSourceCbFile.__doc__ = "Cb File."
+AgEVAReferenceRadiusSource.eVAReferenceRadiusSourceGravityFile.__doc__ = "Gravity File."
+
 agcls.AgTypeNameMap["AgEVAReferenceRadiusSource"] = AgEVAReferenceRadiusSource
 
 class AgEVAGravCoeffNormalizationType(IntEnum):
@@ -1614,6 +2171,9 @@ class AgEVAGravCoeffNormalizationType(IntEnum):
     eVAGravCoeffNormalized = 0
     # Unnormalized.
     eVAGravCoeffUnnormalized = 1
+
+AgEVAGravCoeffNormalizationType.eVAGravCoeffNormalized.__doc__ = "Normalized."
+AgEVAGravCoeffNormalizationType.eVAGravCoeffUnnormalized.__doc__ = "Unnormalized."
 
 agcls.AgTypeNameMap["AgEVAGravCoeffNormalizationType"] = AgEVAGravCoeffNormalizationType
 
@@ -1625,6 +2185,10 @@ class AgEVAGravCoeffCoefficientType(IntEnum):
     eVAGravCoeffCoefficientTypeCosine = 1
     # Sine.
     eVAGravCoeffCoefficientTypeSine = 2
+
+AgEVAGravCoeffCoefficientType.eVAGravCoeffCoefficientTypeZonal.__doc__ = "Zonal."
+AgEVAGravCoeffCoefficientType.eVAGravCoeffCoefficientTypeCosine.__doc__ = "Cosine."
+AgEVAGravCoeffCoefficientType.eVAGravCoeffCoefficientTypeSine.__doc__ = "Sine."
 
 agcls.AgTypeNameMap["AgEVAGravCoeffCoefficientType"] = AgEVAGravCoeffCoefficientType
 
@@ -1643,6 +2207,13 @@ class AgEVASTMPertVariables(IntEnum):
     # Designates the initial or final variation in the 'z' component of velocity.
     eVASTMPertVariableVelZ = 5
 
+AgEVASTMPertVariables.eVASTMPertVariablePosX.__doc__ = "Designates the initial or final variation in the 'x' component of position."
+AgEVASTMPertVariables.eVASTMPertVariablePosY.__doc__ = "Designates the initial or final variation in the 'y' component of position."
+AgEVASTMPertVariables.eVASTMPertVariablePosZ.__doc__ = "Designates the initial or final variation in the 'z' component of position."
+AgEVASTMPertVariables.eVASTMPertVariableVelX.__doc__ = "Designates the initial or final variation in the 'x' component of velocity."
+AgEVASTMPertVariables.eVASTMPertVariableVelY.__doc__ = "Designates the initial or final variation in the 'y' component of velocity."
+AgEVASTMPertVariables.eVASTMPertVariableVelZ.__doc__ = "Designates the initial or final variation in the 'z' component of velocity."
+
 agcls.AgTypeNameMap["AgEVASTMPertVariables"] = AgEVASTMPertVariables
 
 class AgEVASTMEigenNumber(IntEnum):
@@ -1660,6 +2231,13 @@ class AgEVASTMEigenNumber(IntEnum):
     # Designates the sixth Eigenvalue or Eigenvector.
     eVASTMEigenNumber6 = 5
 
+AgEVASTMEigenNumber.eVASTMEigenNumber1.__doc__ = "Designates the first Eigenvalue or Eigenvector."
+AgEVASTMEigenNumber.eVASTMEigenNumber2.__doc__ = "Designates the second Eigenvalue or Eigenvector."
+AgEVASTMEigenNumber.eVASTMEigenNumber3.__doc__ = "Designates the third Eigenvalue or Eigenvector."
+AgEVASTMEigenNumber.eVASTMEigenNumber4.__doc__ = "Designates the fourth Eigenvalue or Eigenvector."
+AgEVASTMEigenNumber.eVASTMEigenNumber5.__doc__ = "Designates the fifth Eigenvalue or Eigenvector."
+AgEVASTMEigenNumber.eVASTMEigenNumber6.__doc__ = "Designates the sixth Eigenvalue or Eigenvector."
+
 agcls.AgTypeNameMap["AgEVASTMEigenNumber"] = AgEVASTMEigenNumber
 
 class AgEVAComplexNumber(IntEnum):
@@ -1669,6 +2247,9 @@ class AgEVAComplexNumber(IntEnum):
     # Designates the value as the imaginary part.
     eVAComplexNumberImaginary = 1
 
+AgEVAComplexNumber.eVAComplexNumberReal.__doc__ = "Designates the value as the real part."
+AgEVAComplexNumber.eVAComplexNumberImaginary.__doc__ = "Designates the value as the imaginary part."
+
 agcls.AgTypeNameMap["AgEVAComplexNumber"] = AgEVAComplexNumber
 
 class AgEVASquaredType(IntEnum):
@@ -1677,6 +2258,9 @@ class AgEVASquaredType(IntEnum):
     eVASumOfSquares = 0
     # Designates the calculation to be the square of the sum.
     eVASquareOfSum = 1
+
+AgEVASquaredType.eVASumOfSquares.__doc__ = "Designates the calculation to be the sum of the squares."
+AgEVASquaredType.eVASquareOfSum.__doc__ = "Designates the calculation to be the square of the sum."
 
 agcls.AgTypeNameMap["AgEVASquaredType"] = AgEVASquaredType
 
@@ -1743,6 +2327,37 @@ class AgEVACbGravityModel(IntEnum):
     # LP75G - (Moon)
     eVACbGravityModelLP75G = 29
 
+AgEVACbGravityModel.eVACbGravityModelZonalsToJ4.__doc__ = "ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon."
+AgEVACbGravityModel.eVACbGravityModelEarthSimple.__doc__ = "Earth Simple gravity model."
+AgEVACbGravityModel.eVACbGravityModelWGS84.__doc__ = "WGS84 - (Earth) World Geodetic System 1984; WGS 84 was created by the Defense Mapping Agency (DMA)."
+AgEVACbGravityModel.eVACbGravityModelEGM96.__doc__ = "EGM96 - (Earth) Earth Gravity Model 1996, a geopotential model of the Earth consisting of spherical harmonic coefficients complete to degree and order 360. Developed jointly by NGA (formerly known as NIMA), NASA Goddard and Ohio State University."
+AgEVACbGravityModel.eVACbGravityModelGEMT1.__doc__ = "GEMT1 - (Earth) Goddard Earth Model T1."
+AgEVACbGravityModel.eVACbGravityModelJGM2.__doc__ = "JGM2 - (Earth) Joint Gravity Model version 2, a model that describes the Earth gravity field up to degree and order 70, developed by NASA/GSFC Space Geodesy Branch, the University of Texas Center for Space Research and CNES."
+AgEVACbGravityModel.eVACbGravityModelJGM3.__doc__ = "JGM3 - (Earth) Joint Gravity Model version 3, a model that describes the Earth gravity field up to degree and order 70, developed by the University of Texas and NASA/GSFC."
+AgEVACbGravityModel.eVACbGravityModelWSG84EGM96.__doc__ = "WGS84 EGM96 - (Earth) Uses the coefficients from EGM96 with the shape model of WGS84. This model is the recommended gravity model of the WGS84 definition document: NIMA TR8350.2, Third Edition, 4 July 1997."
+AgEVACbGravityModel.eVACbGravityModelWGS84Old.__doc__ = "WGS84 old - (Earth) Old version of WGS84."
+AgEVACbGravityModel.eVACbGravityModelGLGM2.__doc__ = "GLGM2 - (Moon) GM = 4.9028029535968e+12, reference distance = 1,738,000 m."
+AgEVACbGravityModel.eVACbGravityModelLP165P.__doc__ = "LP165P - (Moon) GM = 4.902801056E+12, reference distance = 1,738,000.0 m."
+AgEVACbGravityModel.eVACbGravityModelIcarus1987.__doc__ = "Icarus1987 - (Mercury) GM = 2.203209e+013, reference distance = 2,439,000 m. Reference: Anderson, J. J., Colombo, G., Esposito, P. B., Lau E. L., and Trager, G. B. 'The Mass, Gravity Field, and Ephemeris of Mercury', Icarus 71, 337-349, 1987."
+AgEVACbGravityModel.eVACbGravityModelMGNP180U.__doc__ = "MGNP180U - (Venus) GM = 3.248585920790000E+14, reference distance = 6,051,000.0 m."
+AgEVACbGravityModel.eVACbGravityModelGMM1.__doc__ = "GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m."
+AgEVACbGravityModel.eVACbGravityModelGMM2B.__doc__ = "GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at http://bowie.gsfc.nasa.gov/926/MARS/GMM2B.html and submitted to Journal of Geophysics Research, November 2000."
+AgEVACbGravityModel.eVACbGravityModelMars50c.__doc__ = "Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m."
+AgEVACbGravityModel.eVACbGravityModelJUP230.__doc__ = "JUP230 - (Jupiter) GM = 1.26686535e+017, reference distance = 71,492,000 m. Reference: Jacobson, R. A. The JUP230 orbit solution, 2003."
+AgEVACbGravityModel.eVACbGravityModelAstron2004.__doc__ = "Astron2004 - (Saturn) GM = 3.7931284e+016, reference distance = 60,330,000 m."
+AgEVACbGravityModel.eVACbGravityModelAstronAstro1991.__doc__ = "AstronAstro1991 - (Neptune) GM = 6.835107e+015, reference distance = 25,225,000 m."
+AgEVACbGravityModel.eVACbGravityModelIcarus2001.__doc__ = "Icarus2001 - (Callisto) GM = 7.179292e+12, reference distance = 2,410,300 m."
+AgEVACbGravityModel.eVACbGravityModelScience1998.__doc__ = "Science1998 - (Europa) GM =3.20272e+012, reference distance = 1,565,000 m."
+AgEVACbGravityModel.eVACbGravityModelNature1996.__doc__ = "Nature1996 - (Ganymede) GM = 9.8866e+12, reference distance = 2,634,000 m."
+AgEVACbGravityModel.eVACbGravityModelJGeoRes2001.__doc__ = "JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m."
+AgEVACbGravityModel.eVACbGravityModelGGM01C.__doc__ = "GGM01C - (Earth)"
+AgEVACbGravityModel.eVACbGravityModelGGM02C.__doc__ = "GGM02C - (Earth)"
+AgEVACbGravityModel.eVACbGravityModelWGS72ZonalsToJ4.__doc__ = "WGS72 ZonalsToJ4 - (Earth)"
+AgEVACbGravityModel.eVACbGravityModelLP100J.__doc__ = "LP100J - (Moon)"
+AgEVACbGravityModel.eVACbGravityModelLP100K.__doc__ = "LP100K - (Moon)"
+AgEVACbGravityModel.eVACbGravityModelLP150Q.__doc__ = "LP150Q - (Moon)"
+AgEVACbGravityModel.eVACbGravityModelLP75G.__doc__ = "LP75G - (Moon)"
+
 agcls.AgTypeNameMap["AgEVACbGravityModel"] = AgEVACbGravityModel
 
 class AgEVACbShape(IntEnum):
@@ -1754,6 +2369,10 @@ class AgEVACbShape(IntEnum):
     # A sphere defined by a radius.
     eVACbShapeSphere = 2
 
+AgEVACbShape.eVACbShapeTriaxialEllipsoid.__doc__ = "A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis."
+AgEVACbShape.eVACbShapeOblateSpheroid.__doc__ = "An oblate spheroid defined by a minimum and maximum radii, and a derived flattening coefficient."
+AgEVACbShape.eVACbShapeSphere.__doc__ = "A sphere defined by a radius."
+
 agcls.AgTypeNameMap["AgEVACbShape"] = AgEVACbShape
 
 class AgEVACbAttitude(IntEnum):
@@ -1762,6 +2381,9 @@ class AgEVACbAttitude(IntEnum):
     eVACbAttitudeIAU1994 = 0
     # A rotation coefficient file.
     eVACbAttitudeRotationCoefficientsFile = 1
+
+AgEVACbAttitude.eVACbAttitudeIAU1994.__doc__ = "An IAU 1994 attitude definition."
+AgEVACbAttitude.eVACbAttitudeRotationCoefficientsFile.__doc__ = "A rotation coefficient file."
 
 agcls.AgTypeNameMap["AgEVACbAttitude"] = AgEVACbAttitude
 
@@ -1778,6 +2400,12 @@ class AgEVACbEphemeris(IntEnum):
     # A planetary ephemeris (.pe) file.
     eVACbEphemerisPlanetary = 4
 
+AgEVACbEphemeris.eVACbEphemerisAnalyticOrbit.__doc__ = "Specified values and rates of change for the classical orbital elements."
+AgEVACbEphemeris.eVACbEphemerisFile.__doc__ = "An external ephemeris (.e) file."
+AgEVACbEphemeris.eVACbEphemerisJPLDE.__doc__ = "Ephemerides from the Jet Propulsion Laboratory's JPL DE set are used."
+AgEVACbEphemeris.eVACbEphemerisJPLSPICE.__doc__ = "The SPICE propagator reads ephemeris from binary files that are in a standard format produced by the Jet Propulsion Laboratory for ephemeris for celestial bodies but can be used for spacecraft."
+AgEVACbEphemeris.eVACbEphemerisPlanetary.__doc__ = "A planetary ephemeris (.pe) file."
+
 agcls.AgTypeNameMap["AgEVACbEphemeris"] = AgEVACbEphemeris
 
 class AgEVAControlPowerInternal(IntEnum):
@@ -1789,6 +2417,10 @@ class AgEVAControlPowerInternal(IntEnum):
     # The date and time used as a reference epoch for degradation.
     eVAControlPowerInternalEpoch = 2
 
+AgEVAControlPowerInternal.eVAControlPowerInternalGeneratedPower.__doc__ = "The power generated by the spacecraft from internal sources."
+AgEVAControlPowerInternal.eVAControlPowerInternalPercentDegradation.__doc__ = "The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."
+AgEVAControlPowerInternal.eVAControlPowerInternalEpoch.__doc__ = "The date and time used as a reference epoch for degradation."
+
 agcls.AgTypeNameMap["AgEVAControlPowerInternal"] = AgEVAControlPowerInternal
 
 class AgEVAControlPowerProcessed(IntEnum):
@@ -1797,6 +2429,9 @@ class AgEVAControlPowerProcessed(IntEnum):
     eVAControlPowerProcessedEfficiency = 0
     # The power diverted from the power source and unavailable to the power processing unit(PPU).
     eVAControlPowerProcessedLoad = 1
+
+AgEVAControlPowerProcessed.eVAControlPowerProcessedEfficiency.__doc__ = "The efficiency of the power processing unit(PPU)."
+AgEVAControlPowerProcessed.eVAControlPowerProcessedLoad.__doc__ = "The power diverted from the power source and unavailable to the power processing unit(PPU)."
 
 agcls.AgTypeNameMap["AgEVAControlPowerProcessed"] = AgEVAControlPowerProcessed
 
@@ -1827,6 +2462,19 @@ class AgEVAControlPowerSolarArray(IntEnum):
     # The date and time used as a reference epoch for degradation.
     eVAControlPowerSolarArrayEpoch = 11
 
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC0.__doc__ = "The ThermalModel.C0 coefficient."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC1.__doc__ = "The ThermalModel.C1 coefficient."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC2.__doc__ = "The ThermalModel.C2 coefficient."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC3.__doc__ = "The ThermalModel.C3 coefficient."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC4.__doc__ = "The ThermalModel.C4 coefficient."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayArea.__doc__ = "The solar array panel area."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayEfficiency.__doc__ = "The array efficiency in producing output power from a collection of cells."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayCellEfficiency.__doc__ = "The cell efficiency in producing output power from incident sunlight."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayConcentration.__doc__ = "The solar array concentration factor."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayInclinationToSunLine.__doc__ = "The angle from the panel normal vector to the apparent sun line."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayPercentDegradation.__doc__ = "The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."
+AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayEpoch.__doc__ = "The date and time used as a reference epoch for degradation."
+
 agcls.AgTypeNameMap["AgEVAControlPowerSolarArray"] = AgEVAControlPowerSolarArray
 
 class AgEVAThirdBodyMode(IntEnum):
@@ -1835,6 +2483,9 @@ class AgEVAThirdBodyMode(IntEnum):
     eVAThirdBodyModeGravityField = 0
     # Defines the gravitational effect as a third body point mass effect.
     eVAThirdBodyModePointMass = 1
+
+AgEVAThirdBodyMode.eVAThirdBodyModeGravityField.__doc__ = "Defines the gravitational effect as a full Gravitational Force model"
+AgEVAThirdBodyMode.eVAThirdBodyModePointMass.__doc__ = "Defines the gravitational effect as a third body point mass effect."
 
 agcls.AgTypeNameMap["AgEVAThirdBodyMode"] = AgEVAThirdBodyMode
 
@@ -1849,6 +2500,11 @@ class AgEVAGravParamSource(IntEnum):
     # The Cb file provided with STK; uses the default, barycentered gravity source for the central body.
     eVAGravParamSourceCbFileSystem = 3
 
+AgEVAGravParamSource.eVAGravParamSourceCbFile.__doc__ = "The Cb file provided with STK; uses the default, body centered gravity source for the central body."
+AgEVAGravParamSource.eVAGravParamSourceDEFile.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
+AgEVAGravParamSource.eVAGravParamSourceUser.__doc__ = "User defined; requires you to specify the mu value of the Gravitational Parameter."
+AgEVAGravParamSource.eVAGravParamSourceCbFileSystem.__doc__ = "The Cb file provided with STK; uses the default, barycentered gravity source for the central body."
+
 agcls.AgTypeNameMap["AgEVAGravParamSource"] = AgEVAGravParamSource
 
 class AgEVAEphemSource(IntEnum):
@@ -1862,6 +2518,11 @@ class AgEVAEphemSource(IntEnum):
     # A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass.
     eVAEphemSourceSPICEBody = 3
 
+AgEVAEphemSource.eVAEphemSourceCbFile.__doc__ = "The Cb file provided with STK; uses the default ephemeris source for that central body."
+AgEVAEphemSource.eVAEphemSourceDEFile.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
+AgEVAEphemSource.eVAEphemSourceSPICEBary.__doc__ = "A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass."
+AgEVAEphemSource.eVAEphemSourceSPICEBody.__doc__ = "A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass."
+
 agcls.AgTypeNameMap["AgEVAEphemSource"] = AgEVAEphemSource
 
 class AgEVASolarForceMethod(IntEnum):
@@ -1870,6 +2531,9 @@ class AgEVASolarForceMethod(IntEnum):
     eVASolarForceMethodLuminosity = 0
     # Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation.
     eVASolarForceMethodMeanFlux = 1
+
+AgEVASolarForceMethod.eVASolarForceMethodLuminosity.__doc__ = "Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation."
+AgEVASolarForceMethod.eVASolarForceMethodMeanFlux.__doc__ = "Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation."
 
 agcls.AgTypeNameMap["AgEVASolarForceMethod"] = AgEVASolarForceMethod
 
@@ -1882,6 +2546,10 @@ class AgEVAShadowModel(IntEnum):
     # None - turns off all shadowing of the satellite.
     eVAShadowModelNone = 2
 
+AgEVAShadowModel.eVAShadowModelCylindrical.__doc__ = "Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector."
+AgEVAShadowModel.eVAShadowModelDualCone.__doc__ = "Dual Cone - uses the actual size and distance of the Sun to model regions of full, partial (penumbra) and zero (umbra) sunlight. The visible fraction of the solar disk is used to compute the acceleration during penumbra."
+AgEVAShadowModel.eVAShadowModelNone.__doc__ = "None - turns off all shadowing of the satellite."
+
 agcls.AgTypeNameMap["AgEVAShadowModel"] = AgEVAShadowModel
 
 class AgEVASunPosition(IntEnum):
@@ -1893,6 +2561,10 @@ class AgEVASunPosition(IntEnum):
     # True - assumes that light from the sun reaches the spacecraft instantaneously.
     eVASunPositionTrue = 2
 
+AgEVASunPosition.eVASunPositionApparent.__doc__ = "Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft."
+AgEVASunPosition.eVASunPositionApparentToTrueCb.__doc__ = "Apparent Sun to True Cb - takes into account the time required for light to travel from the sun to the central body."
+AgEVASunPosition.eVASunPositionTrue.__doc__ = "True - assumes that light from the sun reaches the spacecraft instantaneously."
+
 agcls.AgTypeNameMap["AgEVASunPosition"] = AgEVASunPosition
 
 class AgEVAAtmosDataSource(IntEnum):
@@ -1902,6 +2574,9 @@ class AgEVAAtmosDataSource(IntEnum):
     # Atmopsheric data source from file.
     eVAAtmosDataSourceFile = 1
 
+AgEVAAtmosDataSource.eVAAtmosDataSourceConstant.__doc__ = "Constant Atmospheric data source."
+AgEVAAtmosDataSource.eVAAtmosDataSourceFile.__doc__ = "Atmopsheric data source from file."
+
 agcls.AgTypeNameMap["AgEVAAtmosDataSource"] = AgEVAAtmosDataSource
 
 class AgEVAGeoMagneticFluxSource(IntEnum):
@@ -1910,6 +2585,9 @@ class AgEVAGeoMagneticFluxSource(IntEnum):
     eVAGeoMagneticFluxSourceAp = 0
     # Read Kp from file.
     eVAGeoMagneticFluxSourceKp = 1
+
+AgEVAGeoMagneticFluxSource.eVAGeoMagneticFluxSourceAp.__doc__ = "Read Ap from file."
+AgEVAGeoMagneticFluxSource.eVAGeoMagneticFluxSourceKp.__doc__ = "Read Kp from file."
 
 agcls.AgTypeNameMap["AgEVAGeoMagneticFluxSource"] = AgEVAGeoMagneticFluxSource
 
@@ -1924,6 +2602,11 @@ class AgEVAGeoMagneticFluxUpdateRate(IntEnum):
     # Daily
     eVAGeoMagneticFluxUpdateRateDaily = 3
 
+AgEVAGeoMagneticFluxUpdateRate.eVAGeoMagneticFluxUpdateRate3Hourly.__doc__ = "Three hourly"
+AgEVAGeoMagneticFluxUpdateRate.eVAGeoMagneticFluxUpdateRate3HourlyCubicSpline.__doc__ = "Three hourly cubic spline"
+AgEVAGeoMagneticFluxUpdateRate.eVAGeoMagneticFluxUpdateRate3HourlyInterpolated.__doc__ = "Three hourly interpolated"
+AgEVAGeoMagneticFluxUpdateRate.eVAGeoMagneticFluxUpdateRateDaily.__doc__ = "Daily"
+
 agcls.AgTypeNameMap["AgEVAGeoMagneticFluxUpdateRate"] = AgEVAGeoMagneticFluxUpdateRate
 
 class AgEVADragModelType(IntEnum):
@@ -1936,6 +2619,11 @@ class AgEVADragModelType(IntEnum):
     eVADragModelTypeVariableArea = 2
     # N-Plate
     eVADragModelTypeNPlate = 3
+
+AgEVADragModelType.eVADragModelTypeSpherical.__doc__ = "Spherical"
+AgEVADragModelType.eVADragModelTypePlugin.__doc__ = "Plugin"
+AgEVADragModelType.eVADragModelTypeVariableArea.__doc__ = "Variable Area"
+AgEVADragModelType.eVADragModelTypeNPlate.__doc__ = "N-Plate"
 
 agcls.AgTypeNameMap["AgEVADragModelType"] = AgEVADragModelType
 
@@ -1950,6 +2638,11 @@ class AgEVAMarsGRAMDensityType(IntEnum):
     # Randomly perturbed density
     eVAMarsGRAMDensityTypeRandomlyPerturbed = 3
 
+AgEVAMarsGRAMDensityType.eVAMarsGRAMDensityTypeLow.__doc__ = "Low density"
+AgEVAMarsGRAMDensityType.eVAMarsGRAMDensityTypeMean.__doc__ = "Mean density"
+AgEVAMarsGRAMDensityType.eVAMarsGRAMDensityTypeHigh.__doc__ = "High density"
+AgEVAMarsGRAMDensityType.eVAMarsGRAMDensityTypeRandomlyPerturbed.__doc__ = "Randomly perturbed density"
+
 agcls.AgTypeNameMap["AgEVAMarsGRAMDensityType"] = AgEVAMarsGRAMDensityType
 
 class AgEVAVenusGRAMDensityType(IntEnum):
@@ -1963,6 +2656,11 @@ class AgEVAVenusGRAMDensityType(IntEnum):
     # Randomly perturbed density
     eVAVenusGRAMDensityTypeRandomlyPerturbed = 3
 
+AgEVAVenusGRAMDensityType.eVAVenusGRAMDensityTypeLow.__doc__ = "Low density"
+AgEVAVenusGRAMDensityType.eVAVenusGRAMDensityTypeMean.__doc__ = "Mean density"
+AgEVAVenusGRAMDensityType.eVAVenusGRAMDensityTypeHigh.__doc__ = "High density"
+AgEVAVenusGRAMDensityType.eVAVenusGRAMDensityTypeRandomlyPerturbed.__doc__ = "Randomly perturbed density"
+
 agcls.AgTypeNameMap["AgEVAVenusGRAMDensityType"] = AgEVAVenusGRAMDensityType
 
 class AgEVATabVecInterpMethod(IntEnum):
@@ -1971,6 +2669,9 @@ class AgEVATabVecInterpMethod(IntEnum):
     eVATabVecCartesianInterpolation = 0
     # Bilinear interpolation in magnitude and direction space.
     eVATabVecMagDirInterpolation = 1
+
+AgEVATabVecInterpMethod.eVATabVecCartesianInterpolation.__doc__ = "Bilinear interpolation on the Cartesian grid."
+AgEVATabVecInterpMethod.eVATabVecMagDirInterpolation.__doc__ = "Bilinear interpolation in magnitude and direction space."
 
 agcls.AgTypeNameMap["AgEVATabVecInterpMethod"] = AgEVATabVecInterpMethod
 
@@ -1983,6 +2684,10 @@ class AgEVAControlEngineConstAcc(IntEnum):
     # The specific impulse for the engine.
     eVAControlEngineConstAccIsp = 2
 
+AgEVAControlEngineConstAcc.eVAControlEngineConstAccGrav.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
+AgEVAControlEngineConstAcc.eVAControlEngineConstAccAcceleration.__doc__ = "The acceleration for the engine."
+AgEVAControlEngineConstAcc.eVAControlEngineConstAccIsp.__doc__ = "The specific impulse for the engine."
+
 agcls.AgTypeNameMap["AgEVAControlEngineConstAcc"] = AgEVAControlEngineConstAcc
 
 class AgEVAControlEngineConstant(IntEnum):
@@ -1994,12 +2699,18 @@ class AgEVAControlEngineConstant(IntEnum):
     # The specific impulse for the engine.
     eVAControlEngineConstantIsp = 2
 
+AgEVAControlEngineConstant.eVAControlEngineConstantGrav.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
+AgEVAControlEngineConstant.eVAControlEngineConstantThrust.__doc__ = "The thrust for the engine."
+AgEVAControlEngineConstant.eVAControlEngineConstantIsp.__doc__ = "The specific impulse for the engine."
+
 agcls.AgTypeNameMap["AgEVAControlEngineConstant"] = AgEVAControlEngineConstant
 
 class AgEVAControlEngineCustom(IntEnum):
     """Custom engine model properties that can be selected as control parameters for a Target Sequence."""
     # Earth surface gravity acceleration for Isp conversions.
     eVAControlEngineCustomGrav = 0
+
+AgEVAControlEngineCustom.eVAControlEngineCustomGrav.__doc__ = "Earth surface gravity acceleration for Isp conversions."
 
 agcls.AgTypeNameMap["AgEVAControlEngineCustom"] = AgEVAControlEngineCustom
 
@@ -2011,6 +2722,10 @@ class AgEVAControlEngineThrottleTable(IntEnum):
     eVAControlEngineThrottleTablePercentDegradationPerYear = 1
     # The date and time used as a reference epoch for degradation.
     eVAControlEngineThrottleTableReferenceEpoch = 2
+
+AgEVAControlEngineThrottleTable.eVAControlEngineThrottleTableGrav.__doc__ = "Gravitational acceleration constant at sea level on the Earth."
+AgEVAControlEngineThrottleTable.eVAControlEngineThrottleTablePercentDegradationPerYear.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
+AgEVAControlEngineThrottleTable.eVAControlEngineThrottleTableReferenceEpoch.__doc__ = "The date and time used as a reference epoch for degradation."
 
 agcls.AgTypeNameMap["AgEVAControlEngineThrottleTable"] = AgEVAControlEngineThrottleTable
 
@@ -2060,6 +2775,29 @@ class AgEVAControlEngineIon(IntEnum):
     eVAControlEngineIonPowerEfficiencyC3 = 20
     # The date and time used as a reference epoch for degradation.
     eVAControlEngineIonReferenceEpoch = 21
+
+AgEVAControlEngineIon.eVAControlEngineIonFlowRateC0.__doc__ = "FlowRateModel.C0 - the constant coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonFlowRateC1.__doc__ = "FlowRateModel.C1 - the linear coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonFlowRateC2.__doc__ = "FlowRateModel.C2 - the quadratic coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonFlowRateC3.__doc__ = "FlowRateModel.C3 - the cubic coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonGrav.__doc__ = "Gravitational acceleration constant at sea level on the Earth."
+AgEVAControlEngineIon.eVAControlEngineIonIspC0.__doc__ = "IspModel.C0 - the constant coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonIspC1.__doc__ = "IspModel.C1 - the linear coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonIspC2.__doc__ = "IspModel.C2 - the quadratic coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonIspC3.__doc__ = "IspModel.C3 - the cubic coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonMassFlowEfficiencyC0.__doc__ = "MassFlowEfficiencyModel.C0 - the constant coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonMassFlowEfficiencyC1.__doc__ = "MassFlowEfficiencyModel.C1 - the linear coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonMassFlowEfficiencyC2.__doc__ = "MassFlowEfficiencyModel.C2 - the quadratic coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonMassFlowEfficiencyC3.__doc__ = "MassFlowEfficiencyModel.C3 - the cubic coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonMaxInputPower.__doc__ = "Minimum power required for the engine to produce thrust. "
+AgEVAControlEngineIon.eVAControlEngineIonMinRequiredPower.__doc__ = "Maximum power that can be used by the engine to produce thrust."
+AgEVAControlEngineIon.eVAControlEngineIonPercentDegradationPerYear.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
+AgEVAControlEngineIon.eVAControlEngineIonPercentThrottle.__doc__ = "Percentage of available thrust to use (100 is full on, 0 is off)."
+AgEVAControlEngineIon.eVAControlEngineIonPowerEfficiencyC0.__doc__ = "PowerEfficiencyModel.C0 - the constant coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonPowerEfficiencyC1.__doc__ = "PowerEfficiencyModel.C1 - the linear coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonPowerEfficiencyC2.__doc__ = "PowerEfficiencyModel.C2 - the quadratic coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonPowerEfficiencyC3.__doc__ = "PowerEfficiencyModel.C3 - the cubic coefficient."
+AgEVAControlEngineIon.eVAControlEngineIonReferenceEpoch.__doc__ = "The date and time used as a reference epoch for degradation."
 
 agcls.AgTypeNameMap["AgEVAControlEngineIon"] = AgEVAControlEngineIon
 
@@ -2132,6 +2870,40 @@ class AgEVAControlEngineModelPoly(IntEnum):
     # The gravitational acceleration constant at sea level on the Earth.
     eVAControlEngineModelPolyGrav = 32
 
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC0.__doc__ = "The thrust C0 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC1.__doc__ = "The thrust C1 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC2.__doc__ = "The thrust C2 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC3.__doc__ = "The thrust C3 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC4.__doc__ = "The thrust C4 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC5.__doc__ = "The thrust C5 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC6.__doc__ = "The thrust C6 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC7.__doc__ = "The thrust C7 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustB7.__doc__ = "The thrust B7 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustE4.__doc__ = "The thrust E4 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustE5.__doc__ = "The thrust E5 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustE6.__doc__ = "The thrust E6 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustE7.__doc__ = "The thrust E7 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustK0.__doc__ = "The thrust K0 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustK1.__doc__ = "The thrust K1 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustReferenceTemp.__doc__ = "The thrust reference temperature, Tr."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC0.__doc__ = "The specific impulse C0 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC1.__doc__ = "The specific impulse C1 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC2.__doc__ = "The specific impulse C2 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC3.__doc__ = "The specific impulse C3 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC4.__doc__ = "The specific impulse C4 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC5.__doc__ = "The specific impulse C5 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC6.__doc__ = "The specific impulse C6 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC7.__doc__ = "The specific impulse C7 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspB7.__doc__ = "The specific impulse B7 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspE4.__doc__ = "The specific impulse E4 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspE5.__doc__ = "The specific impulse E5 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspE6.__doc__ = "The specific impulse E6 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspE7.__doc__ = "The specific impulse E7 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspK0.__doc__ = "The specific impulse K0 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspK1.__doc__ = "The specific impulse K1 coefficient."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspReferenceTemp.__doc__ = "The specific impulse reference temperature, Tr."
+AgEVAControlEngineModelPoly.eVAControlEngineModelPolyGrav.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
+
 agcls.AgTypeNameMap["AgEVAControlEngineModelPoly"] = AgEVAControlEngineModelPoly
 
 class AgEVAEngineModelFunction(IntEnum):
@@ -2143,6 +2915,10 @@ class AgEVAEngineModelFunction(IntEnum):
     # Isp and Power as independent variables of an equation.
     eVAEngineModelFunctionIspAndPower = 2
 
+AgEVAEngineModelFunction.eVAEngineModelFunctionIsp.__doc__ = "Isp as an independent variable of an equation."
+AgEVAEngineModelFunction.eVAEngineModelFunctionPower.__doc__ = "Power as an independent variable of an equation."
+AgEVAEngineModelFunction.eVAEngineModelFunctionIspAndPower.__doc__ = "Isp and Power as independent variables of an equation."
+
 agcls.AgTypeNameMap["AgEVAEngineModelFunction"] = AgEVAEngineModelFunction
 
 class AgEVAThrottleTableOperationMode(IntEnum):
@@ -2153,6 +2929,10 @@ class AgEVAThrottleTableOperationMode(IntEnum):
     eVAEngineOperationPiecewiseLinear = 1
     # Discrete engine operation: piecewise constant engine performance as a function of available power.
     eVAEngineOperationDiscrete = 2
+
+AgEVAThrottleTableOperationMode.eVAEngineOperationRegPoly.__doc__ = "Interpolation of engine performance data based on a regression polynomial model."
+AgEVAThrottleTableOperationMode.eVAEngineOperationPiecewiseLinear.__doc__ = "Interpolation of engine performance data based on a piecewise linear model."
+AgEVAThrottleTableOperationMode.eVAEngineOperationDiscrete.__doc__ = "Discrete engine operation: piecewise constant engine performance as a function of available power."
 
 agcls.AgTypeNameMap["AgEVAThrottleTableOperationMode"] = AgEVAThrottleTableOperationMode
 
@@ -2173,6 +2953,14 @@ class AgEVAControlThrusters(IntEnum):
     # Thruster direction defined as a vector in the body frame. Cartesian Z value.
     eVAControlThrustersCartesianZ = 6
 
+AgEVAControlThrusters.eVAControlThrustersEquivOnTime.__doc__ = "The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."
+AgEVAControlThrusters.eVAControlThrustersThrustEfficiency.__doc__ = "The thruster efficiency."
+AgEVAControlThrusters.eVAControlThrustersSphericalAzimuth.__doc__ = "Thruster direction defined as a vector in the body frame. Spherical azimuth value."
+AgEVAControlThrusters.eVAControlThrustersSphericalElevation.__doc__ = "Thruster direction defined as a vector in the body frame. Spherical elevation value."
+AgEVAControlThrusters.eVAControlThrustersCartesianX.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian X value."
+AgEVAControlThrusters.eVAControlThrustersCartesianY.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian Y value."
+AgEVAControlThrusters.eVAControlThrustersCartesianZ.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian Z value."
+
 agcls.AgTypeNameMap["AgEVAControlThrusters"] = AgEVAControlThrusters
 
 class AgEVAThrusterDirection(IntEnum):
@@ -2181,6 +2969,9 @@ class AgEVAThrusterDirection(IntEnum):
     eVAThrusterDirectionAcceleration = 0
     # The direction of engine exhaust.
     eVAThrusterDirectionExhaust = 1
+
+AgEVAThrusterDirection.eVAThrusterDirectionAcceleration.__doc__ = "The direction that is opposite the direction of the exhaust."
+AgEVAThrusterDirection.eVAThrusterDirectionExhaust.__doc__ = "The direction of engine exhaust."
 
 agcls.AgTypeNameMap["AgEVAThrusterDirection"] = AgEVAThrusterDirection
 
@@ -2199,6 +2990,13 @@ class AgEVACriteria(IntEnum):
     # The test parameter must be not equal (within the specified tolerance) to the specified value.
     eVACriteriaNotEqualTo = 5
 
+AgEVACriteria.eVACriteriaEquals.__doc__ = "The test parameter must be equal (within the specified tolerance) to the specified value."
+AgEVACriteria.eVACriteriaGreaterThan.__doc__ = "The test parameter must be greater than the specified value."
+AgEVACriteria.eVACriteriaGreaterThanMinimum.__doc__ = "The current value for the calculation object is greater by the specified tolerance than the minimum reached by that object during the segment."
+AgEVACriteria.eVACriteriaLessThan.__doc__ = "The test parameter must be less than the specified value."
+AgEVACriteria.eVACriteriaLessThanMaximum.__doc__ = "The current value for the calculation object is less by the specified tolerance than the maximum reached by that object during the segment."
+AgEVACriteria.eVACriteriaNotEqualTo.__doc__ = "The test parameter must be not equal (within the specified tolerance) to the specified value."
+
 agcls.AgTypeNameMap["AgEVACriteria"] = AgEVACriteria
 
 class AgEVAErrorControl(IntEnum):
@@ -2212,6 +3010,11 @@ class AgEVAErrorControl(IntEnum):
     # Error estimate of each integrated component relative to the element's change in value over the step is compared to the relative error tolerance, and the absolute error estimate of each integrated component is compared to the absolute error tolerance.
     eVAErrorControlRelativeToStep = 3
 
+AgEVAErrorControl.eVAErrorControlAbsolute.__doc__ = "The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc."
+AgEVAErrorControl.eVAErrorControlRelativeByComponent.__doc__ = "The error estimate of each element being integrated relative to the element's value at the start of the step is compared to the relative error tolerance, and the absolute error estimate of each element is compared to the absolute error tolerance."
+AgEVAErrorControl.eVAErrorControlRelativeToState.__doc__ = "Relative to State error control."
+AgEVAErrorControl.eVAErrorControlRelativeToStep.__doc__ = "Error estimate of each integrated component relative to the element's change in value over the step is compared to the relative error tolerance, and the absolute error estimate of each integrated component is compared to the absolute error tolerance."
+
 agcls.AgTypeNameMap["AgEVAErrorControl"] = AgEVAErrorControl
 
 class AgEVAPredictorCorrector(IntEnum):
@@ -2220,6 +3023,9 @@ class AgEVAPredictorCorrector(IntEnum):
     eVAPredictorCorrectorFull = 0
     # Only the two-body acceleration is re-evaluated at each corrector step.
     eVAPredictorCorrectorPseudo = 1
+
+AgEVAPredictorCorrector.eVAPredictorCorrectorFull.__doc__ = "All force models are re-evaluated at each corrector step."
+AgEVAPredictorCorrector.eVAPredictorCorrectorPseudo.__doc__ = "Only the two-body acceleration is re-evaluated at each corrector step."
 
 agcls.AgTypeNameMap["AgEVAPredictorCorrector"] = AgEVAPredictorCorrector
 
@@ -2242,6 +3048,15 @@ class AgEVANumericalIntegrator(IntEnum):
     # A 4th order Runge-Kutta integrator that does not employ error control.
     eVANumericalIntegratorRK4th = 7
 
+AgEVANumericalIntegrator.eVANumericalIntegratorRK4thAdapt.__doc__ = "A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."
+AgEVANumericalIntegrator.eVANumericalIntegratorRKF7th8th.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
+AgEVANumericalIntegrator.eVANumericalIntegratorRKV8th9th.__doc__ = "A 9th order Runge-Kutta-Verner integrator with 8th order error control."
+AgEVANumericalIntegrator.eVANumericalIntegratorBulirschStoer.__doc__ = "An integrator based on Richardson extrapolation with automatic step size control."
+AgEVANumericalIntegrator.eVANumericalIntegratorGaussJackson.__doc__ = "A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."
+AgEVANumericalIntegrator.eVANumericalIntegratorRK2nd3rd.__doc__ = "A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."
+AgEVANumericalIntegrator.eVANumericalIntegratorRK4th5th.__doc__ = "A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."
+AgEVANumericalIntegrator.eVANumericalIntegratorRK4th.__doc__ = "A 4th order Runge-Kutta integrator that does not employ error control."
+
 agcls.AgTypeNameMap["AgEVANumericalIntegrator"] = AgEVANumericalIntegrator
 
 class AgEVACoeffRKV8th9th(IntEnum):
@@ -2250,6 +3065,9 @@ class AgEVACoeffRKV8th9th(IntEnum):
     eVACoeffRKV8th9th1978 = 0
     # Efficient.
     eVACoeffRKV8th9thEfficient = 1
+
+AgEVACoeffRKV8th9th.eVACoeffRKV8th9th1978.__doc__ = "SIAM 1978."
+AgEVACoeffRKV8th9th.eVACoeffRKV8th9thEfficient.__doc__ = "Efficient."
 
 agcls.AgTypeNameMap["AgEVACoeffRKV8th9th"] = AgEVACoeffRKV8th9th
 

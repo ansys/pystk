@@ -212,6 +212,24 @@ class AgECrdnCalcScalarType(IntEnum):
     # Scalar equal to the specified component of a vector when resolved in the specified axes.
     eCrdnCalcScalarTypeVectorComponent = 15
 
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeUnknown.__doc__ = "Unknown or unsupported calculation scalar types"
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeAngle.__doc__ = "Scalar equal to angular displacement obtained from any angle in VGT."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeFixedAtTimeInstant.__doc__ = "Constant scalar created by evaluating input scalar calculation at specified reference time instant."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeConstant.__doc__ = "Constant scalar value of specified dimension."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeDataElement.__doc__ = "Any time-dependent data element from STK data providers available for parent STK object."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeDerivative.__doc__ = "Derivative of input scalar calculation."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeElapsedTime.__doc__ = "Time elapsed since reference time instant."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeFile.__doc__ = "Tabulated scalar calculation data loaded from specified file."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeFunction.__doc__ = "Defined by performing one of specified functions on input scalar."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeIntegral.__doc__ = "Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeFunction2Var.__doc__ = "Defined by performing one of specified binary operations on two scalar arguments."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeVectorMagnitude.__doc__ = "Scalar equal to magnitude of specified vector."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypePlugin.__doc__ = "A calc scalar plugin based on a COM object."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeCustomScript.__doc__ = "A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeSurfaceDistanceBetweenPoints.__doc__ = "Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeDotProduct.__doc__ = "Scalar equal to the dot product between two vectors."
+AgECrdnCalcScalarType.eCrdnCalcScalarTypeVectorComponent.__doc__ = "Scalar equal to the specified component of a vector when resolved in the specified axes."
+
 agcls.AgTypeNameMap["AgECrdnCalcScalarType"] = AgECrdnCalcScalarType
 
 class AgECrdnConditionCombinedOperationType(IntEnum):
@@ -225,6 +243,11 @@ class AgECrdnConditionCombinedOperationType(IntEnum):
     # Scalar condition combined MINUS operation.
     eCrdnConditionCombinedOperationTypeMINUS = 4
 
+AgECrdnConditionCombinedOperationType.eCrdnConditionCombinedOperationTypeAND.__doc__ = "Scalar condition combined AND operation."
+AgECrdnConditionCombinedOperationType.eCrdnConditionCombinedOperationTypeOR.__doc__ = "Scalar condition combined OR operation."
+AgECrdnConditionCombinedOperationType.eCrdnConditionCombinedOperationTypeXOR.__doc__ = "Scalar condition combined XOR operation."
+AgECrdnConditionCombinedOperationType.eCrdnConditionCombinedOperationTypeMINUS.__doc__ = "Scalar condition combined MINUS operation."
+
 agcls.AgTypeNameMap["AgECrdnConditionCombinedOperationType"] = AgECrdnConditionCombinedOperationType
 
 class AgECrdnConditionSetType(IntEnum):
@@ -233,6 +256,9 @@ class AgECrdnConditionSetType(IntEnum):
     eCrdnConditionSetTypeUnknown = -1
     # Condition set placing multiple thresholds on specified scalar.
     eCrdnConditionSetTypeScalarThresholds = 0
+
+AgECrdnConditionSetType.eCrdnConditionSetTypeUnknown.__doc__ = "Unknown or unsupported condition set types."
+AgECrdnConditionSetType.eCrdnConditionSetTypeScalarThresholds.__doc__ = "Condition set placing multiple thresholds on specified scalar."
 
 agcls.AgTypeNameMap["AgECrdnConditionSetType"] = AgECrdnConditionSetType
 
@@ -247,6 +273,11 @@ class AgECrdnConditionThresholdOption(IntEnum):
     # Bound is outside a minimum and maximum value
     eCrdnConditionThresholdOptionOutsideMinMax = 4
 
+AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionAboveMin.__doc__ = "Bound is above a minimum value"
+AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionBelowMax.__doc__ = "Bound is below a maximum value"
+AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionInsideMinMax.__doc__ = "Bound is between a minimum and maximum value"
+AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionOutsideMinMax.__doc__ = "Bound is outside a minimum and maximum value"
+
 agcls.AgTypeNameMap["AgECrdnConditionThresholdOption"] = AgECrdnConditionThresholdOption
 
 class AgECrdnConditionType(IntEnum):
@@ -260,6 +291,11 @@ class AgECrdnConditionType(IntEnum):
     # Condition placing point in volume.
     eCrdnConditionTypePointInVolume = 2
 
+AgECrdnConditionType.eCrdnConditionTypeUnknown.__doc__ = "Unknown or unsupported condition type"
+AgECrdnConditionType.eCrdnConditionTypeScalarBounds.__doc__ = "Condition placing bounds on specified scalar."
+AgECrdnConditionType.eCrdnConditionTypeCombined.__doc__ = "Multiple conditiones on specified scalar."
+AgECrdnConditionType.eCrdnConditionTypePointInVolume.__doc__ = "Condition placing point in volume."
+
 agcls.AgTypeNameMap["AgECrdnConditionType"] = AgECrdnConditionType
 
 class AgECrdnDimensionInheritance(IntEnum):
@@ -271,6 +307,10 @@ class AgECrdnDimensionInheritance(IntEnum):
     # Inherit dimension from Y scalar.
     eCrdnDimensionInheritanceFromY = 2
 
+AgECrdnDimensionInheritance.eCrdnDimensionInheritanceNone.__doc__ = "Do not inherit dimension."
+AgECrdnDimensionInheritance.eCrdnDimensionInheritanceFromX.__doc__ = "Inherit dimension from X scalar."
+AgECrdnDimensionInheritance.eCrdnDimensionInheritanceFromY.__doc__ = "Inherit dimension from Y scalar."
+
 agcls.AgTypeNameMap["AgECrdnDimensionInheritance"] = AgECrdnDimensionInheritance
 
 class AgECrdnEventArrayFilterType(IntEnum):
@@ -281,6 +321,10 @@ class AgECrdnEventArrayFilterType(IntEnum):
     eCrdnEventArrayFilterTypeSkipCount = 1
     # Intervals
     eCrdnEventArrayFilterTypeIntervals = 2
+
+AgECrdnEventArrayFilterType.eCrdnEventArrayFilterTypeSkipTimeStep.__doc__ = "Skip time step"
+AgECrdnEventArrayFilterType.eCrdnEventArrayFilterTypeSkipCount.__doc__ = "Skip count"
+AgECrdnEventArrayFilterType.eCrdnEventArrayFilterTypeIntervals.__doc__ = "Intervals"
 
 agcls.AgTypeNameMap["AgECrdnEventArrayFilterType"] = AgECrdnEventArrayFilterType
 
@@ -305,6 +349,16 @@ class AgECrdnEventArrayType(IntEnum):
     # Time array containing specific times.
     eCrdnEventArrayTypeFixedTimes = 7
 
+AgECrdnEventArrayType.eCrdnEventArrayTypeUnknown.__doc__ = "Unknown or unsupported time array types"
+AgECrdnEventArrayType.eCrdnEventArrayTypeExtrema.__doc__ = "Determines time of local minimum and/or maximum of specified scalar calculation."
+AgECrdnEventArrayType.eCrdnEventArrayTypeStartStopTimes.__doc__ = "Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."
+AgECrdnEventArrayType.eCrdnEventArrayTypeMerged.__doc__ = "Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays."
+AgECrdnEventArrayType.eCrdnEventArrayTypeFiltered.__doc__ = "Defined by filtering times from original time array according to specified filtering method."
+AgECrdnEventArrayType.eCrdnEventArrayTypeFixedStep.__doc__ = "Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."
+AgECrdnEventArrayType.eCrdnEventArrayTypeConditionCrossings.__doc__ = "Time array containing times at which specified condition changes its satisfaction status."
+AgECrdnEventArrayType.eCrdnEventArrayTypeSignaled.__doc__ = "Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."
+AgECrdnEventArrayType.eCrdnEventArrayTypeFixedTimes.__doc__ = "Time array containing specific times."
+
 agcls.AgTypeNameMap["AgECrdnEventArrayType"] = AgECrdnEventArrayType
 
 class AgECrdnEventIntervalCollectionType(IntEnum):
@@ -317,6 +371,11 @@ class AgECrdnEventIntervalCollectionType(IntEnum):
     eCrdnEventIntervalCollectionTypeSignaled = 1
     # Interval collection containing intervals during which condition set is satisfied.
     eCrdnEventIntervalCollectionTypeCondition = 2
+
+AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeUnknown.__doc__ = "Unknown or unsupported interval collection types"
+AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeLighting.__doc__ = "Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."
+AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeSignaled.__doc__ = "Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."
+AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeCondition.__doc__ = "Interval collection containing intervals during which condition set is satisfied."
 
 agcls.AgTypeNameMap["AgECrdnEventIntervalCollectionType"] = AgECrdnEventIntervalCollectionType
 
@@ -341,6 +400,16 @@ class AgECrdnEventIntervalListType(IntEnum):
     # Interval list with individual intervals defined between explicitly specified start and stop times.
     eCrdnEventIntervalListTypeFixed = 7
 
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeUnknown.__doc__ = "Unknown or unsupported interval list types"
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeMerged.__doc__ = "Interval list created by merging two constituent interval lists using specified logical operation."
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeFiltered.__doc__ = "Defined by filtering intervals from original interval list using specified filtering method."
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeCondition.__doc__ = "Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction)."
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeScaled.__doc__ = "Interval List defined by scaling every interval in original interval list using either absolute or relative scale."
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeSignaled.__doc__ = "Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeTimeOffset.__doc__ = "Interval List defined by shifting specified reference interval list by fixed time offset."
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeFile.__doc__ = "Interval list loaded from specified interval file"
+AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeFixed.__doc__ = "Interval list with individual intervals defined between explicitly specified start and stop times."
+
 agcls.AgTypeNameMap["AgECrdnEventIntervalListType"] = AgECrdnEventIntervalListType
 
 class AgECrdnEventIntervalType(IntEnum):
@@ -364,6 +433,16 @@ class AgECrdnEventIntervalType(IntEnum):
     # A smart interval.
     eCrdnEventIntervalTypeSmartInterval = 7
 
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeUnknown.__doc__ = "Unknown or unsupported interval types"
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeFixed.__doc__ = "Interval defined between two explicitly specified start and stop times."
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeFixedDuration.__doc__ = "Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeBetweenTimeInstants.__doc__ = "Interval between specified start and stop time instants."
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeFromIntervalList.__doc__ = "Interval created from specified interval list by using one of several selection methods."
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeScaled.__doc__ = "Interval defined by scaling original interval using either absolute or relative scale."
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeSignaled.__doc__ = "Determines an interval recorded at a target clock location by performing signal transmission."
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeTimeOffset.__doc__ = "Interval defined by shifting specified reference interval by fixed time offset."
+AgECrdnEventIntervalType.eCrdnEventIntervalTypeSmartInterval.__doc__ = "A smart interval."
+
 agcls.AgTypeNameMap["AgECrdnEventIntervalType"] = AgECrdnEventIntervalType
 
 class AgECrdnEventListMergeOperation(IntEnum):
@@ -376,6 +455,11 @@ class AgECrdnEventListMergeOperation(IntEnum):
     eCrdnEventListMergeOperationXOR = 2
     # Intervals in A and not in B
     eCrdnEventListMergeOperationMINUS = 3
+
+AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationAND.__doc__ = "Intervals both in A and B"
+AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationOR.__doc__ = "Intervals in A or B"
+AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationXOR.__doc__ = "Intervals in A or B but not in both"
+AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationMINUS.__doc__ = "Intervals in A and not in B"
 
 agcls.AgTypeNameMap["AgECrdnEventListMergeOperation"] = AgECrdnEventListMergeOperation
 
@@ -396,6 +480,14 @@ class AgECrdnEventType(IntEnum):
     # A smart epoch.
     eCrdnEventTypeSmartEpoch = 5
 
+AgECrdnEventType.eCrdnEventTypeUnknown.__doc__ = "Unknown or unsupported time instant types"
+AgECrdnEventType.eCrdnEventTypeEpoch.__doc__ = "Time instant set at specified date/time"
+AgECrdnEventType.eCrdnEventTypeExtremum.__doc__ = "Determines time of global minimum or maximum of specified scalar calculation."
+AgECrdnEventType.eCrdnEventTypeFromInterval.__doc__ = "Start or stop time of selected reference interval"
+AgECrdnEventType.eCrdnEventTypeSignaled.__doc__ = "Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."
+AgECrdnEventType.eCrdnEventTypeTimeOffset.__doc__ = "Time instant at fixed offset from specified reference time instant"
+AgECrdnEventType.eCrdnEventTypeSmartEpoch.__doc__ = "A smart epoch."
+
 agcls.AgTypeNameMap["AgECrdnEventType"] = AgECrdnEventType
 
 class AgECrdnExtremumConstants(IntFlag):
@@ -404,6 +496,9 @@ class AgECrdnExtremumConstants(IntFlag):
     eCrdnExtremumMinimum = 1
     # Find the maximum value
     eCrdnExtremumMaximum = 2
+
+AgECrdnExtremumConstants.eCrdnExtremumMinimum.__doc__ = "Find the minimum value"
+AgECrdnExtremumConstants.eCrdnExtremumMaximum.__doc__ = "Find the maximum value"
 
 agcls.AgTypeNameMap["AgECrdnExtremumConstants"] = AgECrdnExtremumConstants
 
@@ -422,6 +517,13 @@ class AgECrdnFileInterpolatorType(IntEnum):
     # Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time.
     eCrdnFileInterpolatorTypeHoldNearest = 5
 
+AgECrdnFileInterpolatorType.eCrdnFileInterpolatorInvalid.__doc__ = "Unknown or invalid interpolator."
+AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeLagrange.__doc__ = "Lagrange interpolation."
+AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeHermite.__doc__ = "Hermite interpolation."
+AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeHoldPrevious.__doc__ = "Holds the value at the closest previous sample time to any requested time."
+AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeHoldNext.__doc__ = "Holds the value at the closest next sample time to any requested time."
+AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeHoldNearest.__doc__ = "Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time."
+
 agcls.AgTypeNameMap["AgECrdnFileInterpolatorType"] = AgECrdnFileInterpolatorType
 
 class AgECrdnIntegralType(IntEnum):
@@ -432,6 +534,10 @@ class AgECrdnIntegralType(IntEnum):
     eCrdnIntegralTypeFixedStepTrapz = 1
     # Adaptive Lobatto integral method
     eCrdnIntegralTypeAdaptiveStep = 3
+
+AgECrdnIntegralType.eCrdnIntegralTypeFixedStepSimpson.__doc__ = "Simpson integral method"
+AgECrdnIntegralType.eCrdnIntegralTypeFixedStepTrapz.__doc__ = "Trapezoidal integral method"
+AgECrdnIntegralType.eCrdnIntegralTypeAdaptiveStep.__doc__ = "Adaptive Lobatto integral method"
 
 agcls.AgTypeNameMap["AgECrdnIntegralType"] = AgECrdnIntegralType
 
@@ -446,6 +552,11 @@ class AgECrdnIntegrationWindowType(IntEnum):
     # Defines the integral's window as the interval of times centered around the current time with the specified front and back durations.
     eCrdnIntegrationWindowTypeSlidingWindow = 3
 
+AgECrdnIntegrationWindowType.eCrdnIntegrationWindowTypeTotal.__doc__ = "Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant."
+AgECrdnIntegrationWindowType.eCrdnIntegrationWindowTypeCumulativeToCurrent.__doc__ = "Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."
+AgECrdnIntegrationWindowType.eCrdnIntegrationWindowTypeCumulativeFromCurrent.__doc__ = "Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."
+AgECrdnIntegrationWindowType.eCrdnIntegrationWindowTypeSlidingWindow.__doc__ = "Defines the integral's window as the interval of times centered around the current time with the specified front and back durations."
+
 agcls.AgTypeNameMap["AgECrdnIntegrationWindowType"] = AgECrdnIntegrationWindowType
 
 class AgECrdnInterpolatorType(IntEnum):
@@ -457,6 +568,10 @@ class AgECrdnInterpolatorType(IntEnum):
     # Hermite interpolation.
     eCrdnInterpolatorTypeHermite = 2
 
+AgECrdnInterpolatorType.eCrdnInterpolatorInvalid.__doc__ = "Unknown or invalid interpolator."
+AgECrdnInterpolatorType.eCrdnInterpolatorTypeLagrange.__doc__ = "Lagrange interpolation."
+AgECrdnInterpolatorType.eCrdnInterpolatorTypeHermite.__doc__ = "Hermite interpolation."
+
 agcls.AgTypeNameMap["AgECrdnInterpolatorType"] = AgECrdnInterpolatorType
 
 class AgECrdnIntervalDurationKind(IntEnum):
@@ -465,6 +580,9 @@ class AgECrdnIntervalDurationKind(IntEnum):
     eCrdnIntervalDurationKindAtLeast = 0
     # Filter by at most a specified number of seconds
     eCrdnIntervalDurationKindAtMost = 1
+
+AgECrdnIntervalDurationKind.eCrdnIntervalDurationKindAtLeast.__doc__ = "Filter by at least a specified number of seconds"
+AgECrdnIntervalDurationKind.eCrdnIntervalDurationKindAtMost.__doc__ = "Filter by at most a specified number of seconds"
 
 agcls.AgTypeNameMap["AgECrdnIntervalDurationKind"] = AgECrdnIntervalDurationKind
 
@@ -485,6 +603,14 @@ class AgECrdnIntervalSelection(IntEnum):
     # Select the interval that is the span of the interval list
     eCrdnIntervalSelectionSpan = 100
 
+AgECrdnIntervalSelection.eCrdnIntervalSelectionFromStart.__doc__ = "Select an interval by counting a specified number from the first interval"
+AgECrdnIntervalSelection.eCrdnIntervalSelectionFromEnd.__doc__ = "Select an interval by counting a specified number back from the last interval"
+AgECrdnIntervalSelection.eCrdnIntervalSelectionMaxDuration.__doc__ = "Select the interval with the largest duration"
+AgECrdnIntervalSelection.eCrdnIntervalSelectionMinDuration.__doc__ = "Select the interval with the smallest duration"
+AgECrdnIntervalSelection.eCrdnIntervalSelectionMaxGap.__doc__ = "Select the largest gap between intervals"
+AgECrdnIntervalSelection.eCrdnIntervalSelectionMinGap.__doc__ = "Select the largest gap between intervals"
+AgECrdnIntervalSelection.eCrdnIntervalSelectionSpan.__doc__ = "Select the interval that is the span of the interval list"
+
 agcls.AgTypeNameMap["AgECrdnIntervalSelection"] = AgECrdnIntervalSelection
 
 class AgECrdnParameterSetType(IntEnum):
@@ -501,6 +627,13 @@ class AgECrdnParameterSetType(IntEnum):
     eCrdnParameterSetTypeOrbit = 3
     # A parameter set type is defined by identifying vector in reference axes.
     eCrdnParameterSetTypeVector = 4
+
+AgECrdnParameterSetType.eCrdnParameterSetTypeUnknown.__doc__ = "Unknown or unsupported parameter set"
+AgECrdnParameterSetType.eCrdnParameterSetTypeAttitude.__doc__ = "A parameter set type is defined by identifying one set of axes in reference to another."
+AgECrdnParameterSetType.eCrdnParameterSetTypeGroundTrajectory.__doc__ = "A parameter set type is defined by identifying location in reference central body."
+AgECrdnParameterSetType.eCrdnParameterSetTypeTrajectory.__doc__ = "A parameter set type is defined by identifying location in reference coordinate system."
+AgECrdnParameterSetType.eCrdnParameterSetTypeOrbit.__doc__ = "A parameter set type is defined by identifying orbiting point and its central body."
+AgECrdnParameterSetType.eCrdnParameterSetTypeVector.__doc__ = "A parameter set type is defined by identifying vector in reference axes."
 
 agcls.AgTypeNameMap["AgECrdnParameterSetType"] = AgECrdnParameterSetType
 
@@ -521,6 +654,14 @@ class AgECrdnPruneFilter(IntEnum):
     # Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration.
     eCrdnPruneFilterRelativeSatisfactionIntervals = 6
 
+AgECrdnPruneFilter.eCrdnPruneFilterUnknown.__doc__ = "Unknown or unsupported prune filter"
+AgECrdnPruneFilter.eCrdnPruneFilterFirstIntervals.__doc__ = "Selects specified number of first intervals from original list"
+AgECrdnPruneFilter.eCrdnPruneFilterLastIntervals.__doc__ = "Selects specified number of last intervals from original list"
+AgECrdnPruneFilter.eCrdnPruneFilterIntervals.__doc__ = "Selects intervals which satisfy additional duration condition."
+AgECrdnPruneFilter.eCrdnPruneFilterGaps.__doc__ = "Selects gaps between intervals which satisfy additional duration condition."
+AgECrdnPruneFilter.eCrdnPruneFilterSatisfactionIntervals.__doc__ = "Satisfaction Intervals selects intervals which satisfy additional condition and duration."
+AgECrdnPruneFilter.eCrdnPruneFilterRelativeSatisfactionIntervals.__doc__ = "Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."
+
 agcls.AgTypeNameMap["AgECrdnPruneFilter"] = AgECrdnPruneFilter
 
 class AgECrdnSampledReferenceTime(IntEnum):
@@ -536,6 +677,12 @@ class AgECrdnSampledReferenceTime(IntEnum):
     # Use the stop of each interval list as the reference time
     eCrdnSampledReferenceTimeStopOfIntervalList = 4
 
+AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeReferenceEvent.__doc__ = "Use a Time Instant as the reference time"
+AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStartOfEachInterval.__doc__ = "Use the start of each interval as the reference time"
+AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStopOfEachInterval.__doc__ = "Use the stop of each interval as the reference time"
+AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStartOfIntervalList.__doc__ = "Use the start of each interval list as the reference time"
+AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStopOfIntervalList.__doc__ = "Use the stop of each interval list as the reference time"
+
 agcls.AgTypeNameMap["AgECrdnSampledReferenceTime"] = AgECrdnSampledReferenceTime
 
 class AgECrdnSamplingMethod(IntEnum):
@@ -549,6 +696,11 @@ class AgECrdnSamplingMethod(IntEnum):
     # Curvature tolerance also uses changes in slope between samples
     eCrdnSamplingMethodCurvatureTolerance = 3
 
+AgECrdnSamplingMethod.eCrdnSamplingMethodUnknown.__doc__ = "Unknown or unsupported sampling method"
+AgECrdnSamplingMethod.eCrdnSamplingMethodFixedStep.__doc__ = "Fixed step sampling method"
+AgECrdnSamplingMethod.eCrdnSamplingMethodRelativeTolerance.__doc__ = "Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples."
+AgECrdnSamplingMethod.eCrdnSamplingMethodCurvatureTolerance.__doc__ = "Curvature tolerance also uses changes in slope between samples"
+
 agcls.AgTypeNameMap["AgECrdnSamplingMethod"] = AgECrdnSamplingMethod
 
 class AgECrdnSatisfactionCrossing(IntEnum):
@@ -560,6 +712,10 @@ class AgECrdnSatisfactionCrossing(IntEnum):
     # Satisfaction occurs when crossing from on to off condition
     eCrdnSatisfactionCrossingOut = 2
 
+AgECrdnSatisfactionCrossing.eCrdnSatisfactionCrossingNone.__doc__ = "Use either off-to-on or on-to-off condition to determine satisfaction"
+AgECrdnSatisfactionCrossing.eCrdnSatisfactionCrossingIn.__doc__ = "Satisfaction occurs when crossing from off to on condition"
+AgECrdnSatisfactionCrossing.eCrdnSatisfactionCrossingOut.__doc__ = "Satisfaction occurs when crossing from on to off condition"
+
 agcls.AgTypeNameMap["AgECrdnSatisfactionCrossing"] = AgECrdnSatisfactionCrossing
 
 class AgECrdnSaveDataOption(IntEnum):
@@ -570,6 +726,10 @@ class AgECrdnSaveDataOption(IntEnum):
     eCrdnSaveDataOptionYes = 100
     # Don't save computed data, recompute data on load.
     eCrdnSaveDataOptionNo = 10
+
+AgECrdnSaveDataOption.eCrdnSaveDataOptionApplicationSettings.__doc__ = "Use the application setting to determine whether computed data should be saved/loaded."
+AgECrdnSaveDataOption.eCrdnSaveDataOptionYes.__doc__ = "Save/load computed data."
+AgECrdnSaveDataOption.eCrdnSaveDataOptionNo.__doc__ = "Don't save computed data, recompute data on load."
 
 agcls.AgTypeNameMap["AgECrdnSaveDataOption"] = AgECrdnSaveDataOption
 
@@ -584,6 +744,11 @@ class AgECrdnSignalPathReferenceSystem(IntEnum):
     # User will specify a system
     eCrdnSignalPathReferenceSystemCustom = 2
 
+AgECrdnSignalPathReferenceSystem.eCrdnSignalPathReferenceSystemUseAccessDefault.__doc__ = "Use Access default system"
+AgECrdnSignalPathReferenceSystem.eCrdnSignalPathReferenceSystemCentralBodyInertial.__doc__ = "Use central body inertial system"
+AgECrdnSignalPathReferenceSystem.eCrdnSignalPathReferenceSystemSolarSystemBarycenter.__doc__ = "Use solar system barycenter system"
+AgECrdnSignalPathReferenceSystem.eCrdnSignalPathReferenceSystemCustom.__doc__ = "User will specify a system"
+
 agcls.AgTypeNameMap["AgECrdnSignalPathReferenceSystem"] = AgECrdnSignalPathReferenceSystem
 
 class AgECrdnSmartEpochState(IntEnum):
@@ -592,6 +757,9 @@ class AgECrdnSmartEpochState(IntEnum):
     eCrdnSmartEpochStateExplicit = 0
     # Smart epoch is specified implicitly.
     eCrdnSmartEpochStateImplicit = 3
+
+AgECrdnSmartEpochState.eCrdnSmartEpochStateExplicit.__doc__ = "Smart epoch is specified explicitly using a time."
+AgECrdnSmartEpochState.eCrdnSmartEpochStateImplicit.__doc__ = "Smart epoch is specified implicitly."
 
 agcls.AgTypeNameMap["AgECrdnSmartEpochState"] = AgECrdnSmartEpochState
 
@@ -608,6 +776,12 @@ class AgECrdnSmartIntervalState(IntEnum):
     # Smart interval is specified using a start time and explicit duration.
     eCrdnSmartIntervalStateExplicitDuration = 3
 
+AgECrdnSmartIntervalState.eCrdnSmartIntervalStateExplicit.__doc__ = "Smart interval is specified explicitly using start/stop times."
+AgECrdnSmartIntervalState.eCrdnSmartIntervalStateImplicit.__doc__ = "Smart interval is specified implicitly using start/stop times."
+AgECrdnSmartIntervalState.eCrdnSmartIntervalStateStartStop.__doc__ = "Smart interval is specified using smart epochs."
+AgECrdnSmartIntervalState.eCrdnSmartIntervalStateStartDuration.__doc__ = "Smart interval is specified using a start epoch and duration."
+AgECrdnSmartIntervalState.eCrdnSmartIntervalStateExplicitDuration.__doc__ = "Smart interval is specified using a start time and explicit duration."
+
 agcls.AgTypeNameMap["AgECrdnSmartIntervalState"] = AgECrdnSmartIntervalState
 
 class AgECrdnSpeedOptions(IntEnum):
@@ -616,6 +790,9 @@ class AgECrdnSpeedOptions(IntEnum):
     eCrdnLightTransmissionSpeed = 1
     # Custom transmission speed.
     eCrdnCustomTransmissionSpeed = 2
+
+AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed.__doc__ = "Light transmission speed."
+AgECrdnSpeedOptions.eCrdnCustomTransmissionSpeed.__doc__ = "Custom transmission speed."
 
 agcls.AgTypeNameMap["AgECrdnSpeedOptions"] = AgECrdnSpeedOptions
 
@@ -628,6 +805,10 @@ class AgECrdnStartStopOption(IntEnum):
     # Use the start time and stop time of the interval
     eCrdnStartStopOptionCountStartStop = 3
 
+AgECrdnStartStopOption.eCrdnStartStopOptionCountStartOnly.__doc__ = "Use the start time of the interval"
+AgECrdnStartStopOption.eCrdnStartStopOptionCountStopOnly.__doc__ = "Use the stop time of the interval"
+AgECrdnStartStopOption.eCrdnStartStopOptionCountStartStop.__doc__ = "Use the start time and stop time of the interval"
+
 agcls.AgTypeNameMap["AgECrdnStartStopOption"] = AgECrdnStartStopOption
 
 class AgECrdnThreshConvergeSense(IntEnum):
@@ -638,6 +819,10 @@ class AgECrdnThreshConvergeSense(IntEnum):
     eCrdnThreshConvergeSenseAbove = 1
     # Result below or at threshold.
     eCrdnThreshConvergeSenseBelow = 2
+
+AgECrdnThreshConvergeSense.eCrdnThreshConvergeSenseSimple.__doc__ = "Just converge within tolerance."
+AgECrdnThreshConvergeSense.eCrdnThreshConvergeSenseAbove.__doc__ = "Result above or at threshold."
+AgECrdnThreshConvergeSense.eCrdnThreshConvergeSenseBelow.__doc__ = "Result below or at threshold."
 
 agcls.AgTypeNameMap["AgECrdnThreshConvergeSense"] = AgECrdnThreshConvergeSense
 
@@ -656,6 +841,13 @@ class AgECrdnVectorComponentType(IntEnum):
     # -Z component.
     eCrdnVectorComponentMinusZ = 5
 
+AgECrdnVectorComponentType.eCrdnVectorComponentX.__doc__ = "X component."
+AgECrdnVectorComponentType.eCrdnVectorComponentY.__doc__ = "Y component."
+AgECrdnVectorComponentType.eCrdnVectorComponentZ.__doc__ = "Z component."
+AgECrdnVectorComponentType.eCrdnVectorComponentMinusX.__doc__ = "-X component."
+AgECrdnVectorComponentType.eCrdnVectorComponentMinusY.__doc__ = "-Y component."
+AgECrdnVectorComponentType.eCrdnVectorComponentMinusZ.__doc__ = "-Z component."
+
 agcls.AgTypeNameMap["AgECrdnVectorComponentType"] = AgECrdnVectorComponentType
 
 class AgECrdnVolumeCalcAltitudeReferenceType(IntEnum):
@@ -666,6 +858,10 @@ class AgECrdnVolumeCalcAltitudeReferenceType(IntEnum):
     eCrdnVolumeCalcAltitudeReferenceTerrain = 1
     # Volume calc altitude reference above mean sea level.
     eCrdnVolumeCalcAltitudeReferenceMSL = 2
+
+AgECrdnVolumeCalcAltitudeReferenceType.eCrdnVolumeCalcAltitudeReferenceEllipsoid.__doc__ = "Volume calc altitude above reference ellipsoid."
+AgECrdnVolumeCalcAltitudeReferenceType.eCrdnVolumeCalcAltitudeReferenceTerrain.__doc__ = "Volume calc altitude reference above terrain."
+AgECrdnVolumeCalcAltitudeReferenceType.eCrdnVolumeCalcAltitudeReferenceMSL.__doc__ = "Volume calc altitude reference above mean sea level."
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcAltitudeReferenceType"] = AgECrdnVolumeCalcAltitudeReferenceType
 
@@ -682,6 +878,12 @@ class AgECrdnVolumeCalcAngleOffVectorType(IntEnum):
     # Volume calc angle off vector.
     eCrdnVolumeCalcAngleOffVector = 16
 
+AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleOffPlaneSigned.__doc__ = "Volume calc angle off plane signed."
+AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleOffPlaneUnsigned.__doc__ = "Volume calc angle off plane unsigned."
+AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleAboutVectorSigned.__doc__ = "Volume calc angle about vector signed."
+AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleAboutVectorUnsigned.__doc__ = "Volume calc angle about vector unsigned."
+AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleOffVector.__doc__ = "Volume calc angle off vector."
+
 agcls.AgTypeNameMap["AgECrdnVolumeCalcAngleOffVectorType"] = AgECrdnVolumeCalcAngleOffVectorType
 
 class AgECrdnVolumeCalcRangeDistanceType(IntEnum):
@@ -697,6 +899,12 @@ class AgECrdnVolumeCalcRangeDistanceType(IntEnum):
     # Volume calc range distance type plane signed
     eCrdnVolumeCalcRangeDistancePlaneUnsigned = 8
 
+AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistanceFromPoint.__doc__ = "Volume calc range distance type from point."
+AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistanceAlongVectorSigned.__doc__ = "Volume calc range distance type from point."
+AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistanceAlongVectorUnsigned.__doc__ = "Volume calc range distance type along vector unsigned"
+AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistancePlaneSigned.__doc__ = "Volume calc range distance type plane signed"
+AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistancePlaneUnsigned.__doc__ = "Volume calc range distance type plane signed"
+
 agcls.AgTypeNameMap["AgECrdnVolumeCalcRangeDistanceType"] = AgECrdnVolumeCalcRangeDistanceType
 
 class AgECrdnVolumeCalcRangeSpeedType(IntEnum):
@@ -705,6 +913,9 @@ class AgECrdnVolumeCalcRangeSpeedType(IntEnum):
     eCrdnVolumeCalcRangeSpeedLight = 1
     # Volume calc range distance type from point.
     eCrdnVolumeCalcRangeSpeedCustom = 2
+
+AgECrdnVolumeCalcRangeSpeedType.eCrdnVolumeCalcRangeSpeedLight.__doc__ = "Volume calc range distance type from point."
+AgECrdnVolumeCalcRangeSpeedType.eCrdnVolumeCalcRangeSpeedCustom.__doc__ = "Volume calc range distance type from point."
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcRangeSpeedType"] = AgECrdnVolumeCalcRangeSpeedType
 
@@ -729,6 +940,16 @@ class AgECrdnVolumeCalcType(IntEnum):
     # volume calc type Propagation Delay to Location.
     eCrdnVolumeCalcTypeDelayRange = 7
 
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeUnknown.__doc__ = "Unknown or unsupported volume calc."
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeAltitude.__doc__ = "volume calc type altitude to location."
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeAngleOffVector.__doc__ = "volume calc type angle to location."
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeFile.__doc__ = "volume calc type File."
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeFromScalar.__doc__ = "volume calc type scalar at location."
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeSolarIntensity.__doc__ = "volume calc type Solar Intensity."
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeVolumeSatisfactionMetric.__doc__ = "volume calc type Spatial Condition Satisfaction Metric."
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeRange.__doc__ = "volume calc type Distance to Location."
+AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeDelayRange.__doc__ = "volume calc type Propagation Delay to Location."
+
 agcls.AgTypeNameMap["AgECrdnVolumeCalcType"] = AgECrdnVolumeCalcType
 
 class AgECrdnVolumeCalcVolumeSatisfactionAccumulationType(IntEnum):
@@ -742,6 +963,11 @@ class AgECrdnVolumeCalcVolumeSatisfactionAccumulationType(IntEnum):
     # Volume calc spatial condition satisfaction accumulation type total.
     eCrdnVolumeCalcVolumeSatisfactionAccumulationTotal = 10
 
+AgECrdnVolumeCalcVolumeSatisfactionAccumulationType.eCrdnVolumeCalcVolumeSatisfactionAccumulationUpToCurrentTime.__doc__ = "Volume calc spatial condition satisfaction accumulation type up to current time."
+AgECrdnVolumeCalcVolumeSatisfactionAccumulationType.eCrdnVolumeCalcVolumeSatisfactionAccumulationCurrentTime.__doc__ = "Volume calc spatial condition satisfaction accumulation type current time."
+AgECrdnVolumeCalcVolumeSatisfactionAccumulationType.eCrdnVolumeCalcVolumeSatisfactionAccumulationFromCurrentTime.__doc__ = "Volume calc spatial condition satisfaction accumulation type from current time."
+AgECrdnVolumeCalcVolumeSatisfactionAccumulationType.eCrdnVolumeCalcVolumeSatisfactionAccumulationTotal.__doc__ = "Volume calc spatial condition satisfaction accumulation type total."
+
 agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionAccumulationType"] = AgECrdnVolumeCalcVolumeSatisfactionAccumulationType
 
 class AgECrdnVolumeCalcVolumeSatisfactionDurationType(IntEnum):
@@ -752,6 +978,10 @@ class AgECrdnVolumeCalcVolumeSatisfactionDurationType(IntEnum):
     eCrdnVolumeCalcVolumeSatisfactionDurationSum = 0
     # Volume calc spatial condition satisfaction duration type maximum.
     eCrdnVolumeCalcVolumeSatisfactionDurationMax = 1
+
+AgECrdnVolumeCalcVolumeSatisfactionDurationType.eCrdnVolumeCalcVolumeSatisfactionDurationMin.__doc__ = "Volume calc spatial condition satisfaction duration type minimum."
+AgECrdnVolumeCalcVolumeSatisfactionDurationType.eCrdnVolumeCalcVolumeSatisfactionDurationSum.__doc__ = "Volume calc spatial condition satisfaction duration type sum."
+AgECrdnVolumeCalcVolumeSatisfactionDurationType.eCrdnVolumeCalcVolumeSatisfactionDurationMax.__doc__ = "Volume calc spatial condition satisfaction duration type maximum."
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionDurationType"] = AgECrdnVolumeCalcVolumeSatisfactionDurationType
 
@@ -767,6 +997,12 @@ class AgECrdnVolumeCalcVolumeSatisfactionFilterType(IntEnum):
     eCrdnVolumeCalcVolumeSatisfactionFilterGapDuration = 1
     # Volume calc spatial condition satisfaction filter type interval duration.
     eCrdnVolumeCalcVolumeSatisfactionFilterIntervalDuration = 2
+
+AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterFirstIntervals.__doc__ = "Volume calc spatial condition satisfaction filter type first intervals."
+AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterLastIntervals.__doc__ = "Volume calc spatial condition satisfaction filter type last intervals."
+AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterNone.__doc__ = "Volume calc spatial condition satisfaction filter type none."
+AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterGapDuration.__doc__ = "Volume calc spatial condition satisfaction filter type gap duration."
+AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterIntervalDuration.__doc__ = "Volume calc spatial condition satisfaction filter type interval duration."
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionFilterType"] = AgECrdnVolumeCalcVolumeSatisfactionFilterType
 
@@ -784,6 +1020,13 @@ class AgECrdnVolumeCalcVolumeSatisfactionMetricType(IntEnum):
     eCrdnVolumeCalcVolumeSatisfactionMetricIntervalDuration = 10
     # Volume calc spatial condition satisfaction metric type gap duration.
     eCrdnVolumeCalcVolumeSatisfactionMetricGapDuration = 20
+
+AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfGaps.__doc__ = "Volume calc spatial condition satisfaction metric type number of gaps."
+AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfIntervals.__doc__ = "Volume calc spatial condition satisfaction metric type number of intervals."
+AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricTimeSinceLastSatisfaction.__doc__ = "Volume calc spatial condition satisfaction metric type time since last satisfaction."
+AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricTimeUntilNextSatisfaction.__doc__ = "Volume calc spatial condition satisfaction metric type time until next satisfaction."
+AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricIntervalDuration.__doc__ = "Volume calc spatial condition satisfaction metric type interbnal duration."
+AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricGapDuration.__doc__ = "Volume calc spatial condition satisfaction metric type gap duration."
 
 agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionMetricType"] = AgECrdnVolumeCalcVolumeSatisfactionMetricType
 
@@ -804,6 +1047,14 @@ class AgECrdnVolumeGridType(IntEnum):
     # volume grid type BearingAlt (Surface Bearing).
     eCrdnVolumeGridTypeBearingAlt = 5
 
+AgECrdnVolumeGridType.eCrdnVolumeGridTypeUnknown.__doc__ = "Unknown or unsupported volume grid."
+AgECrdnVolumeGridType.eCrdnVolumeGridTypeCartesian.__doc__ = "volume grid type cartesian."
+AgECrdnVolumeGridType.eCrdnVolumeGridTypeCylindrical.__doc__ = "volume grid type Cylindrical."
+AgECrdnVolumeGridType.eCrdnVolumeGridTypeSpherical.__doc__ = "volume grid type Spherical."
+AgECrdnVolumeGridType.eCrdnVolumeGridTypeConstrained.__doc__ = "volume grid type Constrained."
+AgECrdnVolumeGridType.eCrdnVolumeGridTypeLatLonAlt.__doc__ = "volume grid type LatLonAlt (Cartographic)."
+AgECrdnVolumeGridType.eCrdnVolumeGridTypeBearingAlt.__doc__ = "volume grid type BearingAlt (Surface Bearing)."
+
 agcls.AgTypeNameMap["AgECrdnVolumeGridType"] = AgECrdnVolumeGridType
 
 class AgECrdnVolumeResultVectorRequest(IntEnum):
@@ -818,6 +1069,12 @@ class AgECrdnVolumeResultVectorRequest(IntEnum):
     eCrdnVolumeResultVectorRequestSatisfaction = 32
     # volume result vector request gradient type
     eCrdnVolumeResultVectorRequestGradient = 256
+
+AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestPos.__doc__ = "volume result vector request pos type"
+AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestNativePos.__doc__ = "volume result vector request native pos type"
+AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestMetric.__doc__ = "volume result vector request metric type"
+AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestSatisfaction.__doc__ = "volume result vector request satisfaction type"
+AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestGradient.__doc__ = "volume result vector request gradient type"
 
 agcls.AgTypeNameMap["AgECrdnVolumeResultVectorRequest"] = AgECrdnVolumeResultVectorRequest
 
@@ -842,6 +1099,16 @@ class AgECrdnVolumeType(IntEnum):
     # volume type Inview (Access To Location).
     eCrdnVolumeTypeInview = 7
 
+AgECrdnVolumeType.eCrdnVolumeTypeUnknown.__doc__ = "Unknown or unsupported volume."
+AgECrdnVolumeType.eCrdnVolumeTypeCombined.__doc__ = "volume type combined."
+AgECrdnVolumeType.eCrdnVolumeTypeLighting.__doc__ = "volume type lighting."
+AgECrdnVolumeType.eCrdnVolumeTypeOverTime.__doc__ = "volume type over time."
+AgECrdnVolumeType.eCrdnVolumeTypeFromGrid.__doc__ = "volume type from grid (Grid Bounding Volume)."
+AgECrdnVolumeType.eCrdnVolumeTypeFromCalc.__doc__ = "volume type from calc (Spatial Calculation Bounds)."
+AgECrdnVolumeType.eCrdnVolumeTypeFromTimeSatisfaction.__doc__ = "volume type from time satisfaction (Valid Time At Location)."
+AgECrdnVolumeType.eCrdnVolumeTypeFromCondition.__doc__ = "volume type from condition (Condition At Location)."
+AgECrdnVolumeType.eCrdnVolumeTypeInview.__doc__ = "volume type Inview (Access To Location)."
+
 agcls.AgTypeNameMap["AgECrdnVolumeType"] = AgECrdnVolumeType
 
 class AgECrdnVolumeAberrationType(IntEnum):
@@ -855,6 +1122,11 @@ class AgECrdnVolumeAberrationType(IntEnum):
     # Aberration type none.
     eCrdnVolumeAberrationNone = 2
 
+AgECrdnVolumeAberrationType.eCrdnVolumeAberrationUnknown.__doc__ = "Aberration type unknown."
+AgECrdnVolumeAberrationType.eCrdnVolumeAberrationTotal.__doc__ = "Aberration type total."
+AgECrdnVolumeAberrationType.eCrdnVolumeAberrationAnnual.__doc__ = "SAberration type annual."
+AgECrdnVolumeAberrationType.eCrdnVolumeAberrationNone.__doc__ = "Aberration type none."
+
 agcls.AgTypeNameMap["AgECrdnVolumeAberrationType"] = AgECrdnVolumeAberrationType
 
 class AgECrdnVolumeClockHostType(IntEnum):
@@ -865,6 +1137,10 @@ class AgECrdnVolumeClockHostType(IntEnum):
     eCrdnVolumeClockHostBase = 0
     # Target object holds time instance.
     eCrdnVolumeClockHostTarget = 1
+
+AgECrdnVolumeClockHostType.eCrdnVolumeClockHostUnknown.__doc__ = "Unknown"
+AgECrdnVolumeClockHostType.eCrdnVolumeClockHostBase.__doc__ = "Base object holds time instance."
+AgECrdnVolumeClockHostType.eCrdnVolumeClockHostTarget.__doc__ = "Target object holds time instance."
 
 agcls.AgTypeNameMap["AgECrdnVolumeClockHostType"] = AgECrdnVolumeClockHostType
 
@@ -879,6 +1155,11 @@ class AgECrdnVolumeCombinedOperationType(IntEnum):
     # Spatial condition combined MINUS operation.
     eCrdnVolumeCombinedOperationTypeMINUS = 4
 
+AgECrdnVolumeCombinedOperationType.eCrdnVolumeCombinedOperationTypeAND.__doc__ = "Spatial condition combined AND operation."
+AgECrdnVolumeCombinedOperationType.eCrdnVolumeCombinedOperationTypeOR.__doc__ = "Spatial condition combined OR operation."
+AgECrdnVolumeCombinedOperationType.eCrdnVolumeCombinedOperationTypeXOR.__doc__ = "Spatial condition combined XOR operation."
+AgECrdnVolumeCombinedOperationType.eCrdnVolumeCombinedOperationTypeMINUS.__doc__ = "Spatial condition combined MINUS operation."
+
 agcls.AgTypeNameMap["AgECrdnVolumeCombinedOperationType"] = AgECrdnVolumeCombinedOperationType
 
 class AgECrdnVolumeFromGridEdgeType(IntEnum):
@@ -887,6 +1168,9 @@ class AgECrdnVolumeFromGridEdgeType(IntEnum):
     eCrdnVolumeFromGridEdgeTypeMaskPoints = 16
     # Spatial condition over time from grid edge type mask voxels.
     eCrdnVolumeFromGridEdgeTypeMaskVoxels = 32
+
+AgECrdnVolumeFromGridEdgeType.eCrdnVolumeFromGridEdgeTypeMaskPoints.__doc__ = "Spatial condition over time from grid edge type mask points."
+AgECrdnVolumeFromGridEdgeType.eCrdnVolumeFromGridEdgeTypeMaskVoxels.__doc__ = "Spatial condition over time from grid edge type mask voxels."
 
 agcls.AgTypeNameMap["AgECrdnVolumeFromGridEdgeType"] = AgECrdnVolumeFromGridEdgeType
 
@@ -901,6 +1185,11 @@ class AgECrdnVolumeLightingConditionsType(IntFlag):
     # Spatial condition lighting umbra.
     eCrdnVolumeLightingConditionTypeUmbra = 4
 
+AgECrdnVolumeLightingConditionsType.eCrdnVolumeLightingConditionTypeUndefined.__doc__ = "Spatial condition lighting undefined."
+AgECrdnVolumeLightingConditionsType.eCrdnVolumeLightingConditionTypeSunlight.__doc__ = "Spatial condition lighting sun light."
+AgECrdnVolumeLightingConditionsType.eCrdnVolumeLightingConditionTypePenumbra.__doc__ = "Spatial condition lighting penumbra."
+AgECrdnVolumeLightingConditionsType.eCrdnVolumeLightingConditionTypeUmbra.__doc__ = "Spatial condition lighting umbra."
+
 agcls.AgTypeNameMap["AgECrdnVolumeLightingConditionsType"] = AgECrdnVolumeLightingConditionsType
 
 class AgECrdnVolumeOverTimeDurationType(IntEnum):
@@ -914,6 +1203,11 @@ class AgECrdnVolumeOverTimeDurationType(IntEnum):
     # Spatial condition over time duration type SlidingWindow.
     eCrdnVolumeOverTimeDurationTypeSlidingWindow = 3
 
+AgECrdnVolumeOverTimeDurationType.eCrdnVolumeOverTimeDurationTypeStatic.__doc__ = "Spatial condition over time duration type Static."
+AgECrdnVolumeOverTimeDurationType.eCrdnVolumeOverTimeDurationTypeCumulativeToCurrent.__doc__ = "Spatial condition over time duration type CumulativeToCurrent."
+AgECrdnVolumeOverTimeDurationType.eCrdnVolumeOverTimeDurationTypeCumulativeFromCurrent.__doc__ = "Spatial condition over time duration type CumulativeFromCurrent."
+AgECrdnVolumeOverTimeDurationType.eCrdnVolumeOverTimeDurationTypeSlidingWindow.__doc__ = "Spatial condition over time duration type SlidingWindow."
+
 agcls.AgTypeNameMap["AgECrdnVolumeOverTimeDurationType"] = AgECrdnVolumeOverTimeDurationType
 
 class AgECrdnVolumeTimeSenseType(IntEnum):
@@ -924,6 +1218,10 @@ class AgECrdnVolumeTimeSenseType(IntEnum):
     eCrdnVolumeTimeSenseTransmit = 0
     # Position is computed in Receive Sense
     eCrdnVolumeTimeSenseReceive = 1
+
+AgECrdnVolumeTimeSenseType.eCrdnVolumeTimeSenseUnknown.__doc__ = "Unklnown"
+AgECrdnVolumeTimeSenseType.eCrdnVolumeTimeSenseTransmit.__doc__ = "Position is computed in Time Sense"
+AgECrdnVolumeTimeSenseType.eCrdnVolumeTimeSenseReceive.__doc__ = "Position is computed in Receive Sense"
 
 agcls.AgTypeNameMap["AgECrdnVolumeTimeSenseType"] = AgECrdnVolumeTimeSenseType
 
@@ -937,6 +1235,11 @@ class AgECrdnVolumetricGridValuesMethodType(IntEnum):
     eCrdnVolumetricGridValuesMethodMethodFixedStepSize = 1
     # Custom grid values method for volumetric grid.
     eCrdnVolumetricGridValuesMethodMethodCustomValues = 2
+
+AgECrdnVolumetricGridValuesMethodType.eCrdnVolumetricGridValuesMethodMethodUnknown.__doc__ = "Unknown or unsupportedgrid values method."
+AgECrdnVolumetricGridValuesMethodType.eCrdnVolumetricGridValuesMethodMethodFixedNumSteps.__doc__ = "Fixed number steps grid values method for volumetric grid."
+AgECrdnVolumetricGridValuesMethodType.eCrdnVolumetricGridValuesMethodMethodFixedStepSize.__doc__ = "Fixed step size grid values method for volumetric grid."
+AgECrdnVolumetricGridValuesMethodType.eCrdnVolumetricGridValuesMethodMethodCustomValues.__doc__ = "Custom grid values method for volumetric grid."
 
 agcls.AgTypeNameMap["AgECrdnVolumetricGridValuesMethodType"] = AgECrdnVolumetricGridValuesMethodType
 
@@ -983,6 +1286,27 @@ class AgECrdnKind(IntEnum):
     # A volume calc.
     eCrdnKindVolumeCalc = 18
 
+AgECrdnKind.eCrdnKindUnknown.__doc__ = "Unsupported component kind."
+AgECrdnKind.eCrdnKindInvalid.__doc__ = "Invalid component."
+AgECrdnKind.eCrdnKindAxes.__doc__ = "Axes component."
+AgECrdnKind.eCrdnKindAngle.__doc__ = "Angle component."
+AgECrdnKind.eCrdnKindVector.__doc__ = "Vector component."
+AgECrdnKind.eCrdnKindPoint.__doc__ = "Point component."
+AgECrdnKind.eCrdnKindPlane.__doc__ = "Plane component."
+AgECrdnKind.eCrdnKindSystem.__doc__ = "System component."
+AgECrdnKind.eCrdnKindEvent.__doc__ = "An event."
+AgECrdnKind.eCrdnKindEventArray.__doc__ = "An event array."
+AgECrdnKind.eCrdnKindEventInterval.__doc__ = "An event interval."
+AgECrdnKind.eCrdnKindEventIntervalCollection.__doc__ = "An event interval collection."
+AgECrdnKind.eCrdnKindEventIntervalList.__doc__ = "A list of event intervals."
+AgECrdnKind.eCrdnKindParameterSet.__doc__ = "A parameter set."
+AgECrdnKind.eCrdnKindCalcScalar.__doc__ = "A scalar."
+AgECrdnKind.eCrdnKindCondition.__doc__ = "A condition."
+AgECrdnKind.eCrdnKindConditionSet.__doc__ = "A condition set."
+AgECrdnKind.eCrdnKindVolumeGrid.__doc__ = "A volume grid."
+AgECrdnKind.eCrdnKindVolume.__doc__ = "A volume."
+AgECrdnKind.eCrdnKindVolumeCalc.__doc__ = "A volume calc."
+
 agcls.AgTypeNameMap["AgECrdnKind"] = AgECrdnKind
 
 class AgECrdnAngleType(IntEnum):
@@ -1001,6 +1325,14 @@ class AgECrdnAngleType(IntEnum):
     eCrdnAngleTypeToPlane = 4
     # Represents a VGT angle created from a template. This type of angle is not creatable.
     eCrdnAngleTypeTemplate = 5
+
+AgECrdnAngleType.eCrdnAngleTypeUnknown.__doc__ = "Unknown or unsupported type."
+AgECrdnAngleType.eCrdnAngleTypeBetweenVectors.__doc__ = "An angle between two vectors."
+AgECrdnAngleType.eCrdnAngleTypeBetweenPlanes.__doc__ = "An angle between two planes."
+AgECrdnAngleType.eCrdnAngleTypeDihedralAngle.__doc__ = "An angle between two vectors about an axis."
+AgECrdnAngleType.eCrdnAngleTypeRotation.__doc__ = "Angle of the shortest rotation between the two specified axes."
+AgECrdnAngleType.eCrdnAngleTypeToPlane.__doc__ = "An angle between a vector and a plane."
+AgECrdnAngleType.eCrdnAngleTypeTemplate.__doc__ = "Represents a VGT angle created from a template. This type of angle is not creatable."
 
 agcls.AgTypeNameMap["AgECrdnAngleType"] = AgECrdnAngleType
 
@@ -1039,6 +1371,23 @@ class AgECrdnAxesType(IntEnum):
     # Axes specified by data from a file.
     eCrdnAxesTypeFile = 5
 
+AgECrdnAxesType.eCrdnAxesTypeUnknown.__doc__ = "Unknown or unsupported type."
+AgECrdnAxesType.eCrdnAxesTypeLagrangeLibration.__doc__ = "Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."
+AgECrdnAxesType.eCrdnAxesTypeAngularOffset.__doc__ = "Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."
+AgECrdnAxesType.eCrdnAxesTypeFixedAtEpoch.__doc__ = "Axes based on another set fixed at a specified epoch."
+AgECrdnAxesType.eCrdnAxesTypeBPlane.__doc__ = "B-Plane axes using the selected target body and reference vector."
+AgECrdnAxesType.eCrdnAxesTypeCustomScript.__doc__ = "Customized axes offset with respect to a set of reference Axes."
+AgECrdnAxesType.eCrdnAxesTypeFixed.__doc__ = "Axes fixed in reference axes."
+AgECrdnAxesType.eCrdnAxesTypeAlignedAndConstrained.__doc__ = "Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."
+AgECrdnAxesType.eCrdnAxesTypeModelAttachment.__doc__ = "Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."
+AgECrdnAxesType.eCrdnAxesTypeSpinning.__doc__ = "Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."
+AgECrdnAxesType.eCrdnAxesTypeOnSurface.__doc__ = "Projection of the reference point onto the central body."
+AgECrdnAxesType.eCrdnAxesTypeTrajectory.__doc__ = "Axes based on trajectory of the point relative to the reference coordinate system."
+AgECrdnAxesType.eCrdnAxesTypeTemplate.__doc__ = "Represents a VGT axes created from a template. This type of axes is not creatable."
+AgECrdnAxesType.eCrdnAxesTypeAtTimeInstant.__doc__ = "Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."
+AgECrdnAxesType.eCrdnAxesTypePlugin.__doc__ = "An axes plugin point."
+AgECrdnAxesType.eCrdnAxesTypeFile.__doc__ = "Axes specified by data from a file."
+
 agcls.AgTypeNameMap["AgECrdnAxesType"] = AgECrdnAxesType
 
 class AgECrdnPlaneType(IntEnum):
@@ -1057,6 +1406,14 @@ class AgECrdnPlaneType(IntEnum):
     eCrdnPlaneTypeTemplate = 4
     # A plane passing through point and containing two given vectors.
     eCrdnPlaneTypeTwoVector = 5
+
+AgECrdnPlaneType.eCrdnPlaneTypeUnknown.__doc__ = "Unknown or unsupported type."
+AgECrdnPlaneType.eCrdnPlaneTypeNormal.__doc__ = "A plane normal to a vector at a given point."
+AgECrdnPlaneType.eCrdnPlaneTypeQuadrant.__doc__ = "A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system."
+AgECrdnPlaneType.eCrdnPlaneTypeTrajectory.__doc__ = "A plane is defined on the basis of a trajectory of a selected point with respect to a reference point."
+AgECrdnPlaneType.eCrdnPlaneTypeTriad.__doc__ = "A plane is defined by the three points."
+AgECrdnPlaneType.eCrdnPlaneTypeTemplate.__doc__ = "Represents a VGT plane created from a template. This type of plane is not creatable."
+AgECrdnPlaneType.eCrdnPlaneTypeTwoVector.__doc__ = "A plane passing through point and containing two given vectors."
 
 agcls.AgTypeNameMap["AgECrdnPlaneType"] = AgECrdnPlaneType
 
@@ -1099,6 +1456,25 @@ class AgECrdnPointType(IntEnum):
     # A point placed at the center of mass of a specified satellite of the satellite collection.
     eCrdnPointTypeSatelliteCollectionEntry = 16
 
+AgECrdnPointType.eCrdnPointTypeUnknown.__doc__ = "Unknown or unsupported type."
+AgECrdnPointType.eCrdnPointTypeBPlane.__doc__ = "B-Plane point using the selected target body."
+AgECrdnPointType.eCrdnPointTypeGrazing.__doc__ = "The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."
+AgECrdnPointType.eCrdnPointTypeCovarianceGrazing.__doc__ = "The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."
+AgECrdnPointType.eCrdnPointTypeFixedInSystem.__doc__ = "Point fixed in a reference coordinate system."
+AgECrdnPointType.eCrdnPointTypeGlint.__doc__ = "Point on central body surface that reflects from source to observer."
+AgECrdnPointType.eCrdnPointTypePlaneIntersection.__doc__ = "Point on a plane located along a given direction looking from a given origin."
+AgECrdnPointType.eCrdnPointTypeModelAttachment.__doc__ = "Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."
+AgECrdnPointType.eCrdnPointTypePlaneProjection.__doc__ = "The projection of a point onto a reference plane."
+AgECrdnPointType.eCrdnPointTypeOnSurface.__doc__ = "The detic subpoint of the reference point as projected onto the central body."
+AgECrdnPointType.eCrdnPointTypeLagrangeLibration.__doc__ = "Libration point using one primary and multiple secondary central bodies."
+AgECrdnPointType.eCrdnPointTypeTemplate.__doc__ = "Represents a VGT point created from a template. This type of point is not creatable."
+AgECrdnPointType.eCrdnPointTypeCentralBodyIntersect.__doc__ = "Point on central body surface along direction vector originating at source point."
+AgECrdnPointType.eCrdnPointTypeAtTimeInstant.__doc__ = "Point fixed relative to reference system based on another point evaluated at specified time instant."
+AgECrdnPointType.eCrdnPointTypePlugin.__doc__ = "A point plugin point."
+AgECrdnPointType.eCrdnPointTypeFile.__doc__ = "Point specified by data from a file."
+AgECrdnPointType.eCrdnPointTypeFixedOnCentralBody.__doc__ = "Point fixed on a central body."
+AgECrdnPointType.eCrdnPointTypeSatelliteCollectionEntry.__doc__ = "A point placed at the center of mass of a specified satellite of the satellite collection."
+
 agcls.AgTypeNameMap["AgECrdnPointType"] = AgECrdnPointType
 
 class AgECrdnSystemType(IntEnum):
@@ -1111,6 +1487,11 @@ class AgECrdnSystemType(IntEnum):
     eCrdnSystemTypeOnSurface = 1
     # Represents a VGT system created from a template. This type of system is not creatable.
     eCrdnSystemTypeTemplate = 2
+
+AgECrdnSystemType.eCrdnSystemTypeUnknown.__doc__ = "Unknown or unsupported system type."
+AgECrdnSystemType.eCrdnSystemTypeAssembled.__doc__ = "A system assembled from an origin point and a set of reference axes."
+AgECrdnSystemType.eCrdnSystemTypeOnSurface.__doc__ = "A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle."
+AgECrdnSystemType.eCrdnSystemTypeTemplate.__doc__ = "Represents a VGT system created from a template. This type of system is not creatable."
 
 agcls.AgTypeNameMap["AgECrdnSystemType"] = AgECrdnSystemType
 
@@ -1181,6 +1562,39 @@ class AgECrdnVectorType(IntEnum):
     # Displacement between origin and destination points using surface distance and altitude difference.
     eCrdnVectorTypeDisplacementOnSurface = 31
 
+AgECrdnVectorType.eCrdnVectorTypeUnknown.__doc__ = "Unknown or unsupported vector type."
+AgECrdnVectorType.eCrdnVectorTypeDisplacement.__doc__ = "Vector defined by its start and end points."
+AgECrdnVectorType.eCrdnVectorTypeApoapsis.__doc__ = "Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."
+AgECrdnVectorType.eCrdnVectorTypeFixedAtEpoch.__doc__ = "Based on another vector fixed at a specified epoch."
+AgECrdnVectorType.eCrdnVectorTypeAngularVelocity.__doc__ = "Angular velocity vector of one set of axes computed with respect to the reference set."
+AgECrdnVectorType.eCrdnVectorTypeConing.__doc__ = "Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode."
+AgECrdnVectorType.eCrdnVectorTypeCrossProduct.__doc__ = "The vector cross product of two vectors."
+AgECrdnVectorType.eCrdnVectorTypeCustomScript.__doc__ = "Customized vector components defined with respect to reference axes."
+AgECrdnVectorType.eCrdnVectorTypeDerivative.__doc__ = "Derivative of a vector computed with respect to specified axes."
+AgECrdnVectorType.eCrdnVectorTypeAngleRate.__doc__ = "Angle rate vector perpendicular to the plane in which the angle is defined."
+AgECrdnVectorType.eCrdnVectorTypeEccentricity.__doc__ = "Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."
+AgECrdnVectorType.eCrdnVectorTypeFixedInAxes.__doc__ = "Vector fixed in reference axes."
+AgECrdnVectorType.eCrdnVectorTypeTwoPlanesIntersection.__doc__ = "Defined along the intersection of two planes."
+AgECrdnVectorType.eCrdnVectorTypeLineOfNodes.__doc__ = "Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."
+AgECrdnVectorType.eCrdnVectorTypeModelAttachment.__doc__ = "Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."
+AgECrdnVectorType.eCrdnVectorTypeOrbitAngularMomentum.__doc__ = "Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
+AgECrdnVectorType.eCrdnVectorTypeOrbitNormal.__doc__ = "Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
+AgECrdnVectorType.eCrdnVectorTypePeriapsis.__doc__ = "Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."
+AgECrdnVectorType.eCrdnVectorTypeProjection.__doc__ = "A projection of a vector computed with respect to a reference plane."
+AgECrdnVectorType.eCrdnVectorTypeReflection.__doc__ = "Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."
+AgECrdnVectorType.eCrdnVectorTypeScaled.__doc__ = "Scaled version of the input vector."
+AgECrdnVectorType.eCrdnVectorTypeDirectionToStar.__doc__ = "Defined with respect to a star object."
+AgECrdnVectorType.eCrdnVectorTypeTemplate.__doc__ = "Represents a VGT vector created from a template. This type of vector is not creatable."
+AgECrdnVectorType.eCrdnVectorTypeAtTimeInstant.__doc__ = "Vector fixed relative to reference axes based on another vector evaluated at specified time instant."
+AgECrdnVectorType.eCrdnVectorTypeLinearCombination.__doc__ = "Linear combination of two input vectors."
+AgECrdnVectorType.eCrdnVectorTypeProjectAlong.__doc__ = "A projection of a source vector in the direction of another vector."
+AgECrdnVectorType.eCrdnVectorTypeScalarLinearCombination.__doc__ = "Linear combination of two input vectors using scalars."
+AgECrdnVectorType.eCrdnVectorTypeScalarScaled.__doc__ = "Scaled version of the input vector using scalar."
+AgECrdnVectorType.eCrdnVectorTypeVelocity.__doc__ = "Velocity vector of a point in a coordinate system."
+AgECrdnVectorType.eCrdnVectorTypePlugin.__doc__ = "A vector plugin point."
+AgECrdnVectorType.eCrdnVectorTypeRotationVector.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
+AgECrdnVectorType.eCrdnVectorTypeDisplacementOnSurface.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
+
 agcls.AgTypeNameMap["AgECrdnVectorType"] = AgECrdnVectorType
 
 class AgECrdnMeanElementTheory(IntEnum):
@@ -1194,6 +1608,11 @@ class AgECrdnMeanElementTheory(IntEnum):
     # Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term.
     eCrdnMeanElementTheoryBrouwerLyddane_Short = 4
 
+AgECrdnMeanElementTheory.eCrdnMeanElementTheoryOsculating.__doc__ = "Osculating elements (six standard Keplerian orbital elements)."
+AgECrdnMeanElementTheory.eCrdnMeanElementTheoryKozai.__doc__ = "The Kozai-Iszak (KI) mean elements are based upon the paper \"The Motion of a Close earth satellite,\" Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."
+AgECrdnMeanElementTheory.eCrdnMeanElementTheoryBrouwerLyddane_Long.__doc__ = "Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
+AgECrdnMeanElementTheory.eCrdnMeanElementTheoryBrouwerLyddane_Short.__doc__ = "Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
+
 agcls.AgTypeNameMap["AgECrdnMeanElementTheory"] = AgECrdnMeanElementTheory
 
 class AgECrdnDirectionType(IntEnum):
@@ -1202,6 +1621,9 @@ class AgECrdnDirectionType(IntEnum):
     eCrdnDirectionIncomingAsymptote = 1
     # Outgoing direction.
     eCrdnDirectionOutgoingAsymptote = 2
+
+AgECrdnDirectionType.eCrdnDirectionIncomingAsymptote.__doc__ = "Incoming direction."
+AgECrdnDirectionType.eCrdnDirectionOutgoingAsymptote.__doc__ = "Outgoing direction."
 
 agcls.AgTypeNameMap["AgECrdnDirectionType"] = AgECrdnDirectionType
 
@@ -1217,6 +1639,12 @@ class AgECrdnLagrangeLibrationPointType(IntEnum):
     eCrdnLagrangeLibrationPointTypeL4 = 4
     # The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points.
     eCrdnLagrangeLibrationPointTypeL5 = 5
+
+AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL1.__doc__ = "A point between the Sun and Earth."
+AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL2.__doc__ = "Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth."
+AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL3.__doc__ = "L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times."
+AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL4.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points."
+AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL5.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points."
 
 agcls.AgTypeNameMap["AgECrdnLagrangeLibrationPointType"] = AgECrdnLagrangeLibrationPointType
 
@@ -1234,6 +1662,13 @@ class AgECrdnQuadrantType(IntEnum):
     eCrdnQuadrantYZ = 5
     # ZY quadrant.
     eCrdnQuadrantZY = 6
+
+AgECrdnQuadrantType.eCrdnQuadrantXY.__doc__ = "XY quadrant."
+AgECrdnQuadrantType.eCrdnQuadrantYX.__doc__ = "YX quadrant."
+AgECrdnQuadrantType.eCrdnQuadrantXZ.__doc__ = "XZ quadrant."
+AgECrdnQuadrantType.eCrdnQuadrantZX.__doc__ = "ZX quadrant."
+AgECrdnQuadrantType.eCrdnQuadrantYZ.__doc__ = "YZ quadrant."
+AgECrdnQuadrantType.eCrdnQuadrantZY.__doc__ = "ZY quadrant."
 
 agcls.AgTypeNameMap["AgECrdnQuadrantType"] = AgECrdnQuadrantType
 
@@ -1256,6 +1691,15 @@ class AgECrdnTrajectoryAxesType(IntEnum):
     # Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal).
     eCrdnTrajectoryAxesNTC = 7
 
+AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesICR.__doc__ = "Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."
+AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesVNC.__doc__ = "Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal)."
+AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesRIC.__doc__ = "Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack)."
+AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesLVLH.__doc__ = "Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal)."
+AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesVVLH.__doc__ = "Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity)."
+AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesBBR.__doc__ = "Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X."
+AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesEquinoctial.__doc__ = "Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X."
+AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesNTC.__doc__ = "Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal)."
+
 agcls.AgTypeNameMap["AgECrdnTrajectoryAxesType"] = AgECrdnTrajectoryAxesType
 
 class AgECrdnDisplayAxisSelector(IntEnum):
@@ -1266,6 +1710,10 @@ class AgECrdnDisplayAxisSelector(IntEnum):
     eCrdnDisplayAxisY = 1
     # Rotate about Axis Z.
     eCrdnDisplayAxisZ = 2
+
+AgECrdnDisplayAxisSelector.eCrdnDisplayAxisX.__doc__ = "Rotate about Axis X."
+AgECrdnDisplayAxisSelector.eCrdnDisplayAxisY.__doc__ = "Rotate about Axis Y."
+AgECrdnDisplayAxisSelector.eCrdnDisplayAxisZ.__doc__ = "Rotate about Axis Z."
 
 agcls.AgTypeNameMap["AgECrdnDisplayAxisSelector"] = AgECrdnDisplayAxisSelector
 
@@ -1278,6 +1726,10 @@ class AgECrdnSignedAngleType(IntEnum):
     # Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal.
     eCrdnSignedAngleNegative = 2
 
+AgECrdnSignedAngleType.eCrdnSignedAngleNone.__doc__ = "Choose the option to use unsigned angle."
+AgECrdnSignedAngleType.eCrdnSignedAnglePositive.__doc__ = "Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal."
+AgECrdnSignedAngleType.eCrdnSignedAngleNegative.__doc__ = "Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal."
+
 agcls.AgTypeNameMap["AgECrdnSignedAngleType"] = AgECrdnSignedAngleType
 
 class AgECrdnPointBPlaneType(IntEnum):
@@ -1286,6 +1738,9 @@ class AgECrdnPointBPlaneType(IntEnum):
     eCrdnPointBPlaneAsymptote = 1
     # Two body.
     eCrdnPointBPlaneATwoBody = 2
+
+AgECrdnPointBPlaneType.eCrdnPointBPlaneAsymptote.__doc__ = "Asymptote."
+AgECrdnPointBPlaneType.eCrdnPointBPlaneATwoBody.__doc__ = "Two body."
 
 agcls.AgTypeNameMap["AgECrdnPointBPlaneType"] = AgECrdnPointBPlaneType
 
@@ -1298,6 +1753,10 @@ class AgECrdnReferenceShapeType(IntEnum):
     # Mean Sea Level as the terrain reference.
     eCrdnReferenceShapeMSL = 3
 
+AgECrdnReferenceShapeType.eCrdnReferenceShapeEllipsoid.__doc__ = "An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."
+AgECrdnReferenceShapeType.eCrdnReferenceShapeTerrain.__doc__ = "Terrain as the terrain reference."
+AgECrdnReferenceShapeType.eCrdnReferenceShapeMSL.__doc__ = "Mean Sea Level as the terrain reference."
+
 agcls.AgTypeNameMap["AgECrdnReferenceShapeType"] = AgECrdnReferenceShapeType
 
 class AgECrdnSurfaceType(IntEnum):
@@ -1306,6 +1765,9 @@ class AgECrdnSurfaceType(IntEnum):
     eCrdnSurfaceDetic = 1
     # Centric surface model.
     eCrdnSurfaceCentric = 2
+
+AgECrdnSurfaceType.eCrdnSurfaceDetic.__doc__ = "Detic surface model."
+AgECrdnSurfaceType.eCrdnSurfaceCentric.__doc__ = "Centric surface model."
 
 agcls.AgTypeNameMap["AgECrdnSurfaceType"] = AgECrdnSurfaceType
 
@@ -1316,6 +1778,9 @@ class AgECrdnSweepMode(IntEnum):
     # Unidirectional sweeping mode.
     eCrdnSweepModeUnidirectional = 2
 
+AgECrdnSweepMode.eCrdnSweepModeBidirectional.__doc__ = "Bidirectional sweeping mode."
+AgECrdnSweepMode.eCrdnSweepModeUnidirectional.__doc__ = "Unidirectional sweeping mode."
+
 agcls.AgTypeNameMap["AgECrdnSweepMode"] = AgECrdnSweepMode
 
 class AgECrdnSignalSense(IntEnum):
@@ -1324,6 +1789,9 @@ class AgECrdnSignalSense(IntEnum):
     eCrdnSignalSenseReceive = 1
     # Signal transmit.
     eCrdnSignalSenseTransmit = 2
+
+AgECrdnSignalSense.eCrdnSignalSenseReceive.__doc__ = "Signal receive."
+AgECrdnSignalSense.eCrdnSignalSenseTransmit.__doc__ = "Signal transmit."
 
 agcls.AgTypeNameMap["AgECrdnSignalSense"] = AgECrdnSignalSense
 
@@ -1336,6 +1804,10 @@ class AgECrdnIntersectionSurface(IntEnum):
     # Use terrain as intersection surface.
     eCrdnIntersectionSurfaceAtTerrain = 2
 
+AgECrdnIntersectionSurface.eCrdnIntersectionSurfaceAtCentralBodyEllipsoid.__doc__ = "Intersection with central body ellipsoid."
+AgECrdnIntersectionSurface.eCrdnIntersectionSurfaceAtAltitudeAboveEllipsoid.__doc__ = "Intersection at altitude."
+AgECrdnIntersectionSurface.eCrdnIntersectionSurfaceAtTerrain.__doc__ = "Use terrain as intersection surface."
+
 agcls.AgTypeNameMap["AgECrdnIntersectionSurface"] = AgECrdnIntersectionSurface
 
 class AgECrdnVectorScaledDimensionInheritance(IntEnum):
@@ -1346,6 +1818,10 @@ class AgECrdnVectorScaledDimensionInheritance(IntEnum):
     eCrdnVectorScaledDimensionInheritanceFromScalar = 1
     # Inherit dimension from vector.
     eCrdnVectorScaledDimensionInheritanceFromVector = 2
+
+AgECrdnVectorScaledDimensionInheritance.eCrdnVectorScaledDimensionInheritanceNone.__doc__ = "Do not inherit dimension."
+AgECrdnVectorScaledDimensionInheritance.eCrdnVectorScaledDimensionInheritanceFromScalar.__doc__ = "Inherit dimension from scalar."
+AgECrdnVectorScaledDimensionInheritance.eCrdnVectorScaledDimensionInheritanceFromVector.__doc__ = "Inherit dimension from vector."
 
 agcls.AgTypeNameMap["AgECrdnVectorScaledDimensionInheritance"] = AgECrdnVectorScaledDimensionInheritance
 

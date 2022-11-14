@@ -45,6 +45,9 @@ class AgEOpenLogFileMode(IntEnum):
     # Open log file in append file mode.
     eOpenLogFileForAppending = 8
 
+AgEOpenLogFileMode.eOpenLogFileForWriting.__doc__ = "Open log file in write file mode."
+AgEOpenLogFileMode.eOpenLogFileForAppending.__doc__ = "Open log file in append file mode."
+
 agcls.AgTypeNameMap["AgEOpenLogFileMode"] = AgEOpenLogFileMode
 
 class AgEUiLogMsgType(IntEnum):
@@ -60,12 +63,20 @@ class AgEUiLogMsgType(IntEnum):
     # Log messages that provide alarm text.
     eUiLogMsgAlarm = 4
 
+AgEUiLogMsgType.eUiLogMsgDebug.__doc__ = "Log messages that provide Debug text."
+AgEUiLogMsgType.eUiLogMsgInfo.__doc__ = "Log messages that provide information text."
+AgEUiLogMsgType.eUiLogMsgForceInfo.__doc__ = "Log messages that provide forceful information text."
+AgEUiLogMsgType.eUiLogMsgWarning.__doc__ = "Log messages that provide warning text."
+AgEUiLogMsgType.eUiLogMsgAlarm.__doc__ = "Log messages that provide alarm text."
+
 agcls.AgTypeNameMap["AgEUiLogMsgType"] = AgEUiLogMsgType
 
 class AgEAppConstants(IntEnum):
     """AgEAppConstants contains base IDs for various structures."""
     # Error base.
     eAppErrorBase = 0x200
+
+AgEAppConstants.eAppErrorBase.__doc__ = "Error base."
 
 agcls.AgTypeNameMap["AgEAppConstants"] = AgEAppConstants
 
@@ -81,6 +92,12 @@ class AgEAppErrorCodes(IntEnum):
     eAppErrorPersLicenseError = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 4))
     # No license could be found.
     eAppErrorNoLicenseError = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 5))
+
+AgEAppErrorCodes.eAppErrorPersLoadFail.__doc__ = "Failed to load personality."
+AgEAppErrorCodes.eAppErrorAlreadyLoadFail.__doc__ = "Personality already loaded."
+AgEAppErrorCodes.eAppErrorPersLoadFirst.__doc__ = "No personality is loaded."
+AgEAppErrorCodes.eAppErrorPersLicenseError.__doc__ = "You do not have the required license to connect externally to the application."
+AgEAppErrorCodes.eAppErrorNoLicenseError.__doc__ = "No license could be found."
 
 agcls.AgTypeNameMap["AgEAppErrorCodes"] = AgEAppErrorCodes
 

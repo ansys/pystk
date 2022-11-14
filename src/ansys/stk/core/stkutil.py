@@ -66,6 +66,14 @@ class AgEPositionType(IntEnum):
     # Planetodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude.
     ePlanetodetic = 0x6
 
+AgEPositionType.eCartesian.__doc__ = "Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude."
+AgEPositionType.eCylindrical.__doc__ = "Cylindrical: position specified in terms of radius (polar), longitude (measured in degrees from -360.0 degrees to +360.0 degrees), and the Z component of the object's position vector."
+AgEPositionType.eGeocentric.__doc__ = "Geocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude."
+AgEPositionType.eGeodetic.__doc__ = "Geodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."
+AgEPositionType.eSpherical.__doc__ = "Spherical: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and radius (distance of the object from the center of the Earth)."
+AgEPositionType.ePlanetocentric.__doc__ = "Planetocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude."
+AgEPositionType.ePlanetodetic.__doc__ = "Planetodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."
+
 agcls.AgTypeNameMap["AgEPositionType"] = AgEPositionType
 
 class AgEEulerDirectionSequence(IntEnum):
@@ -78,6 +86,11 @@ class AgEEulerDirectionSequence(IntEnum):
     e31 = 2
     # 32 sequence.
     e32 = 3
+
+AgEEulerDirectionSequence.e12.__doc__ = "12 sequence."
+AgEEulerDirectionSequence.e21.__doc__ = "21 sequence."
+AgEEulerDirectionSequence.e31.__doc__ = "31 sequence."
+AgEEulerDirectionSequence.e32.__doc__ = "32 sequence."
 
 agcls.AgTypeNameMap["AgEEulerDirectionSequence"] = AgEEulerDirectionSequence
 
@@ -92,12 +105,19 @@ class AgEDirectionType(IntEnum):
     # Cartesian elements.
     eDirXYZ = 3
 
+AgEDirectionType.eDirEuler.__doc__ = "Euler B and C angles."
+AgEDirectionType.eDirPR.__doc__ = "Pitch and Roll angles."
+AgEDirectionType.eDirRADec.__doc__ = "Spherical elements: Right Ascension and Declination."
+AgEDirectionType.eDirXYZ.__doc__ = "Cartesian elements."
+
 agcls.AgTypeNameMap["AgEDirectionType"] = AgEDirectionType
 
 class AgEPRSequence(IntEnum):
     """Pitch-Roll (PR) direction sequences."""
     # PR sequence.
     ePR = 0
+
+AgEPRSequence.ePR.__doc__ = "PR sequence."
 
 agcls.AgTypeNameMap["AgEPRSequence"] = AgEPRSequence
 
@@ -112,6 +132,11 @@ class AgEOrientationType(IntEnum):
     # YPR (yaw-pitch-roll) method.
     eYPRAngles = 3
 
+AgEOrientationType.eAzEl.__doc__ = "AzEl (azimuth-elevation) method."
+AgEOrientationType.eEulerAngles.__doc__ = "Euler angles method."
+AgEOrientationType.eQuaternion.__doc__ = "Quaternion method."
+AgEOrientationType.eYPRAngles.__doc__ = "YPR (yaw-pitch-roll) method."
+
 agcls.AgTypeNameMap["AgEOrientationType"] = AgEOrientationType
 
 class AgEAzElAboutBoresight(IntEnum):
@@ -120,6 +145,9 @@ class AgEAzElAboutBoresight(IntEnum):
     eAzElAboutBoresightHold = 0
     # Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle.
     eAzElAboutBoresightRotate = 1
+
+AgEAzElAboutBoresight.eAzElAboutBoresightHold.__doc__ = "Hold: rotation about the Y axis followed by rotation about the new X-axis."
+AgEAzElAboutBoresight.eAzElAboutBoresightRotate.__doc__ = "Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle."
 
 agcls.AgTypeNameMap["AgEAzElAboutBoresight"] = AgEAzElAboutBoresight
 
@@ -150,6 +178,19 @@ class AgEEulerOrientationSequence(IntEnum):
     # 323 rotation.
     e323 = 11
 
+AgEEulerOrientationSequence.e121.__doc__ = "121 rotation."
+AgEEulerOrientationSequence.e123.__doc__ = "123 rotation."
+AgEEulerOrientationSequence.e131.__doc__ = "131 rotation."
+AgEEulerOrientationSequence.e132.__doc__ = "132 rotation."
+AgEEulerOrientationSequence.e212.__doc__ = "212 rotation."
+AgEEulerOrientationSequence.e213.__doc__ = "213 rotation."
+AgEEulerOrientationSequence.e231.__doc__ = "231 rotation."
+AgEEulerOrientationSequence.e232.__doc__ = "232 rotation."
+AgEEulerOrientationSequence.e312.__doc__ = "312 rotation."
+AgEEulerOrientationSequence.e313.__doc__ = "313 rotation."
+AgEEulerOrientationSequence.e321.__doc__ = "321 rotation."
+AgEEulerOrientationSequence.e323.__doc__ = "323 rotation."
+
 agcls.AgTypeNameMap["AgEEulerOrientationSequence"] = AgEEulerOrientationSequence
 
 class AgEYPRAnglesSequence(IntEnum):
@@ -166,6 +207,13 @@ class AgEYPRAnglesSequence(IntEnum):
     eYPR = 4
     # YRP sequence.
     eYRP = 5
+
+AgEYPRAnglesSequence.ePRY.__doc__ = "PRY sequence."
+AgEYPRAnglesSequence.ePYR.__doc__ = "PYR sequence."
+AgEYPRAnglesSequence.eRPY.__doc__ = "RPY sequence."
+AgEYPRAnglesSequence.eRYP.__doc__ = "RYP sequence."
+AgEYPRAnglesSequence.eYPR.__doc__ = "YPR sequence."
+AgEYPRAnglesSequence.eYRP.__doc__ = "YRP sequence."
 
 agcls.AgTypeNameMap["AgEYPRAnglesSequence"] = AgEYPRAnglesSequence
 
@@ -185,6 +233,14 @@ class AgEOrbitStateType(IntEnum):
     eOrbitStateMixedSpherical = 5
     # Geodetic coordinate type.
     eOrbitStateGeodetic = 6
+
+AgEOrbitStateType.eOrbitStateCartesian.__doc__ = "Cartesian coordinate type."
+AgEOrbitStateType.eOrbitStateClassical.__doc__ = "Classical (Keplerian) coordinate type."
+AgEOrbitStateType.eOrbitStateEquinoctial.__doc__ = "Equinoctial coordinate type."
+AgEOrbitStateType.eOrbitStateDelaunay.__doc__ = "Delaunay variables coordinate type."
+AgEOrbitStateType.eOrbitStateSpherical.__doc__ = "Spherical coordinate type."
+AgEOrbitStateType.eOrbitStateMixedSpherical.__doc__ = "Mixed spherical coordinate type."
+AgEOrbitStateType.eOrbitStateGeodetic.__doc__ = "Geodetic coordinate type."
 
 agcls.AgTypeNameMap["AgEOrbitStateType"] = AgEOrbitStateType
 
@@ -239,6 +295,31 @@ class AgECoordinateSystem(IntEnum):
     # EclipticJ2000ICRF: An ecliptic system that is a fixed offset of the ICRF system, found by rotating the ICRF system about its X-axis by the mean obliquity at the J2000 epoch (i.e., 84381.448 arcSecs). The ecliptic plane is the XY-plane of this system.
     eCoordinateSystemEclipticJ2000ICRF = 24
 
+AgECoordinateSystem.eCoordinateSystemUnknown.__doc__ = "Represents coordinate system not supported by the Object Model"
+AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch.__doc__ = "Alignment at Epoch: an inertial system coincident with ECF at the Coord Epoch. Often used to specify launch trajectories."
+AgECoordinateSystem.eCoordinateSystemB1950.__doc__ = "B1950: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the beginning of the Besselian year 1950 and corresponds to 31 December 1949 22:09:07.2 or JD 2433282.423."
+AgECoordinateSystem.eCoordinateSystemFixed.__doc__ = "Fixed: X is fixed at 0 deg longitude, Y is fixed at 90 deg longitude, and Z is directed toward the north pole."
+AgECoordinateSystem.eCoordinateSystemJ2000.__doc__ = "J2000: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth on 1 Jan 2000 at 12:00:00.00 TDB, which corresponds to JD 2451545.0 TDB."
+AgECoordinateSystem.eCoordinateSystemMeanOfDate.__doc__ = "Mean of Date: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Orbit Epoch."
+AgECoordinateSystem.eCoordinateSystemMeanOfEpoch.__doc__ = "Mean of Epoch: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Coord Epoch."
+AgECoordinateSystem.eCoordinateSystemTEMEOfDate.__doc__ = "TEME of Date: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."
+AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch.__doc__ = "TEME of Epoch: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."
+AgECoordinateSystem.eCoordinateSystemTrueOfDate.__doc__ = "True of Date: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."
+AgECoordinateSystem.eCoordinateSystemTrueOfEpoch.__doc__ = "True of Epoch: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."
+AgECoordinateSystem.eCoordinateSystemTrueOfRefDate.__doc__ = "True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties."
+AgECoordinateSystem.eCoordinateSystemICRF.__doc__ = "ICRF: International Celestial Reference Frame."
+AgECoordinateSystem.eCoordinateSystemMeanEarth.__doc__ = "Mean Earth"
+AgECoordinateSystem.eCoordinateSystemFixedNoLibration.__doc__ = "uses an analytic formula not modeling lunar libration"
+AgECoordinateSystem.eCoordinateSystemFixedIAU2003.__doc__ = "Fixed_IAU2003"
+AgECoordinateSystem.eCoordinateSystemPrincipalAxes421.__doc__ = "PrincipalAxes_421"
+AgECoordinateSystem.eCoordinateSystemPrincipalAxes403.__doc__ = "PrincipalAxes_403"
+AgECoordinateSystem.eCoordinateSystemInertial.__doc__ = "Inertial"
+AgECoordinateSystem.eCoordinateSystemJ2000Ecliptic.__doc__ = "The mean ecliptic system evaluated at the J2000 epoch. The mean ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the mean obliquity defined using FK5 IAU76 theory."
+AgECoordinateSystem.eCoordinateSystemTrueEclipticOfDate.__doc__ = "The true ecliptic system, evaluated at each given time. The true ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the true obliquity defined using FK5 IAU76 theory."
+AgECoordinateSystem.eCoordinateSystemPrincipalAxes430.__doc__ = "PrincipalAxes_430"
+AgECoordinateSystem.eCoordinateSystemTrueOfDateRotating.__doc__ = "TrueOfDateRotating: Like the Fixed system, but ignores pole wander. The XY plane is the same as the XY plane of the TrueOfDate system, and the system rotates about the TrueOfDate Z-axis."
+AgECoordinateSystem.eCoordinateSystemEclipticJ2000ICRF.__doc__ = "EclipticJ2000ICRF: An ecliptic system that is a fixed offset of the ICRF system, found by rotating the ICRF system about its X-axis by the mean obliquity at the J2000 epoch (i.e., 84381.448 arcSecs). The ecliptic plane is the XY-plane of this system."
+
 agcls.AgTypeNameMap["AgECoordinateSystem"] = AgECoordinateSystem
 
 class AgELogMsgType(IntEnum):
@@ -254,6 +335,12 @@ class AgELogMsgType(IntEnum):
     # Alarm message.
     eLogMsgAlarm = 4
 
+AgELogMsgType.eLogMsgDebug.__doc__ = "Debugging message."
+AgELogMsgType.eLogMsgInfo.__doc__ = "Informational message."
+AgELogMsgType.eLogMsgForceInfo.__doc__ = "Informational message."
+AgELogMsgType.eLogMsgWarning.__doc__ = "Warning message."
+AgELogMsgType.eLogMsgAlarm.__doc__ = "Alarm message."
+
 agcls.AgTypeNameMap["AgELogMsgType"] = AgELogMsgType
 
 class AgELogMsgDispID(IntEnum):
@@ -266,6 +353,11 @@ class AgELogMsgDispID(IntEnum):
     eLogMsgDispMsgWin = 1
     # STK displays the message in the status bar.
     eLogMsgDispStatusBar = 2
+
+AgELogMsgDispID.eLogMsgDispAll.__doc__ = "STK displays the message in all the log destination."
+AgELogMsgDispID.eLogMsgDispDefault.__doc__ = "STK displays the message in the default log destination."
+AgELogMsgDispID.eLogMsgDispMsgWin.__doc__ = "STK displays the message in the message window."
+AgELogMsgDispID.eLogMsgDispStatusBar.__doc__ = "STK displays the message in the status bar."
 
 agcls.AgTypeNameMap["AgELogMsgDispID"] = AgELogMsgDispID
 
@@ -308,6 +400,25 @@ class AgELineStyle(IntEnum):
     # Specifies an alternating dash-dot line.
     eSDash = 17
 
+AgELineStyle.eSolid.__doc__ = "Specifies a solid line."
+AgELineStyle.eDashed.__doc__ = "Specifies a dashed line."
+AgELineStyle.eDotted.__doc__ = "Specifies a dotted line."
+AgELineStyle.eDotDashed.__doc__ = "Dot-dashed line."
+AgELineStyle.eLongDashed.__doc__ = "Specifies a long dashed line."
+AgELineStyle.eDashDotDotted.__doc__ = "Specifies an alternating dash-dot-dot line."
+AgELineStyle.eMDash.__doc__ = "Specifies a user configurable medium dashed line."
+AgELineStyle.eLDash.__doc__ = "Specifies a user configurable long dashed line."
+AgELineStyle.eSDashDot.__doc__ = "Specifies a user configurable small dash-dotted line."
+AgELineStyle.eMDashDot.__doc__ = "Specifies a user configurable medium dash-dotted line."
+AgELineStyle.eLDashDot.__doc__ = "Specifies a user configurable long dash-dotted line."
+AgELineStyle.eMSDash.__doc__ = "Specifies a user configurable medium followed by small dashed line."
+AgELineStyle.eLSDash.__doc__ = "Specifies a user configurable long followed by small dashed line."
+AgELineStyle.eLMDash.__doc__ = "Specifies a user configurable long followed by medium dashed line."
+AgELineStyle.eLMSDash.__doc__ = "Specifies a user configurable medium followed by small dashed line."
+AgELineStyle.eDot.__doc__ = "Specifies a dotted line."
+AgELineStyle.eLongDash.__doc__ = "Specifies a long dashed line."
+AgELineStyle.eSDash.__doc__ = "Specifies an alternating dash-dot line."
+
 agcls.AgTypeNameMap["AgELineStyle"] = AgELineStyle
 
 class AgEExecMultiCmdResultAction(IntFlag):
@@ -320,6 +431,11 @@ class AgEExecMultiCmdResultAction(IntFlag):
     eExceptionOnError = 2
     # Ignore results returned by individual commands. The option must be used in combination with other flags.
     eIgnoreExecCmdResult = 0x8000
+
+AgEExecMultiCmdResultAction.eContinueOnError.__doc__ = "Continue executing the remaining commands in the command batch."
+AgEExecMultiCmdResultAction.eStopOnError.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
+AgEExecMultiCmdResultAction.eExceptionOnError.__doc__ = "Terminate the execution of the command batch and throw an exception."
+AgEExecMultiCmdResultAction.eIgnoreExecCmdResult.__doc__ = "Ignore results returned by individual commands. The option must be used in combination with other flags."
 
 agcls.AgTypeNameMap["AgEExecMultiCmdResultAction"] = AgEExecMultiCmdResultAction
 
@@ -342,6 +458,15 @@ class AgEFillStyle(IntEnum):
     # Specifies a vertically striped fill style.
     eFillStyleVerticalStripe = 7
 
+AgEFillStyle.eFillStyleSolid.__doc__ = "Specifies a solid fill style."
+AgEFillStyle.eFillStyleHorizontalStripe.__doc__ = "Specifies a horizontally striped fill style."
+AgEFillStyle.eFillStyleDiagonalStripe1.__doc__ = "Specifies a diagonally striped fill style."
+AgEFillStyle.eFillStyleDiagonalStripe2.__doc__ = "Specifies a diagonally striped fill style."
+AgEFillStyle.eFillStyleHatch.__doc__ = "Specifies a hatched fill style."
+AgEFillStyle.eFillStyleDiagonalHatch.__doc__ = "Specifies a diagonally hatched fill style."
+AgEFillStyle.eFillStyleScreen.__doc__ = "Specifies a special fill style where every other pixel is drawn."
+AgEFillStyle.eFillStyleVerticalStripe.__doc__ = "Specifies a vertically striped fill style."
+
 agcls.AgTypeNameMap["AgEFillStyle"] = AgEFillStyle
 
 class AgEPropertyInfoValueType(IntEnum):
@@ -360,6 +485,14 @@ class AgEPropertyInfoValueType(IntEnum):
     ePropertyInfoValueTypeBool = 5
     # Property is an interface.
     ePropertyInfoValueTypeInterface = 6
+
+AgEPropertyInfoValueType.ePropertyInfoValueTypeInt.__doc__ = "Property is of type int."
+AgEPropertyInfoValueType.ePropertyInfoValueTypeReal.__doc__ = "Property is of type real."
+AgEPropertyInfoValueType.ePropertyInfoValueTypeQuantity.__doc__ = "Property is of type IAgQuantity."
+AgEPropertyInfoValueType.ePropertyInfoValueTypeDate.__doc__ = "Property is of type IAgDate."
+AgEPropertyInfoValueType.ePropertyInfoValueTypeString.__doc__ = "Property is of type string."
+AgEPropertyInfoValueType.ePropertyInfoValueTypeBool.__doc__ = "Property is of type bool."
+AgEPropertyInfoValueType.ePropertyInfoValueTypeInterface.__doc__ = "Property is an interface."
 
 agcls.AgTypeNameMap["AgEPropertyInfoValueType"] = AgEPropertyInfoValueType
 

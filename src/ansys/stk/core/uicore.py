@@ -43,6 +43,9 @@ class AgEWindowService(IntEnum):
     # A 3D window.
     eWindowService3DWindow = 2
 
+AgEWindowService.eWindowService2DWindow.__doc__ = "A 2D window."
+AgEWindowService.eWindowService3DWindow.__doc__ = "A 3D window."
+
 agcls.AgTypeNameMap["AgEWindowService"] = AgEWindowService
 
 class AgEWindowState(IntEnum):
@@ -54,6 +57,10 @@ class AgEWindowState(IntEnum):
     # Normal window state.
     eWindowStateNormal = 3
 
+AgEWindowState.eWindowStateMaximized.__doc__ = "Window is maximized."
+AgEWindowState.eWindowStateMinimized.__doc__ = "Window is minimized."
+AgEWindowState.eWindowStateNormal.__doc__ = "Normal window state."
+
 agcls.AgTypeNameMap["AgEWindowState"] = AgEWindowState
 
 class AgEArrangeStyle(IntEnum):
@@ -64,6 +71,10 @@ class AgEArrangeStyle(IntEnum):
     eArrangeStyleTiledHorizontal = 2
     # Child windows are tiled vertically within the main window.
     eArrangeStyleTiledVertical = 3
+
+AgEArrangeStyle.eArrangeStyleCascade.__doc__ = "Child windows are cascaded within the main window."
+AgEArrangeStyle.eArrangeStyleTiledHorizontal.__doc__ = "Child windows are tiled horizontally within the main window."
+AgEArrangeStyle.eArrangeStyleTiledVertical.__doc__ = "Child windows are tiled vertically within the main window."
 
 agcls.AgTypeNameMap["AgEArrangeStyle"] = AgEArrangeStyle
 
@@ -82,6 +93,13 @@ class AgEDockStyle(IntEnum):
     # Child window is not docked or integrated.
     eDockStyleFloating = 6
 
+AgEDockStyle.eDockStyleIntegrated.__doc__ = "Child window is integrated into the main window."
+AgEDockStyle.eDockStyleDockedLeft.__doc__ = "Child window is docked to the left side of the within the main window."
+AgEDockStyle.eDockStyleDockedRight.__doc__ = "Child window is docked to the right side of the main window."
+AgEDockStyle.eDockStyleDockedTop.__doc__ = "Child window is docked to the top of the main window."
+AgEDockStyle.eDockStyleDockedBottom.__doc__ = "Child window is docked to the bottom of the main window."
+AgEDockStyle.eDockStyleFloating.__doc__ = "Child window is not docked or integrated."
+
 agcls.AgTypeNameMap["AgEDockStyle"] = AgEDockStyle
 
 class AgEFloatState(IntEnum):
@@ -90,6 +108,9 @@ class AgEFloatState(IntEnum):
     eFloatStateFloated = 1
     # The UI element is docked.
     eFloatStateDocked = 2
+
+AgEFloatState.eFloatStateFloated.__doc__ = "The UI element is floated."
+AgEFloatState.eFloatStateDocked.__doc__ = "The UI element is docked."
 
 agcls.AgTypeNameMap["AgEFloatState"] = AgEFloatState
 
