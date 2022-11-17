@@ -6,7 +6,7 @@ import typing
 from ctypes import byref, cast, pointer, POINTER, Structure
 
 from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, LPVOID, PVOID, ULONG, S_OK
-from .comutil import CLSIDFromString, CoTaskMemFree, IAGFUNCTYPE, IUnknown, GetErrorInfo, ole32lib, Succeeded, StringFromCLSID, SysFreeString, WINFUNCTYPE
+from .comutil import ole32lib, oleaut32lib, IAGFUNCTYPE, IUnknown, Succeeded, WINFUNCTYPE
 from ..utilities.comobject  import COMObject
 from ..utilities.exceptions import *
 
@@ -62,7 +62,7 @@ class _IErrorInfo(object):
         hr = self._GetDescription(byref(p))
         if Succeeded(hr):
             desc = p.value
-            SysFreeString(p)
+            oleaut32lib.SysFreeString(p)
             return desc
             
 def evaluate_hresult(hr:HRESULT) -> None:
@@ -70,7 +70,7 @@ def evaluate_hresult(hr:HRESULT) -> None:
     if not Succeeded(hr):
         punk = IUnknown()
         msg = None
-        if GetErrorInfo(DWORD(), byref(punk.p)) == S_OK:
+        if oleaut32lib.GetErrorInfo(DWORD(), byref(punk.p)) == S_OK:
             punk.TakeOwnership()
             ierrorinfo = _IErrorInfo(punk)
             msg = ierrorinfo.GetDescription()
@@ -201,11 +201,11 @@ def get_concrete_class(punk:IUnknown) -> typing.Any:
                 my_clsid = provideClassInfo.GetClassInfo()
         if my_clsid is not None:
             p = BSTR()
-            if Succeeded(StringFromCLSID(byref(my_clsid), byref(p))):
+            if Succeeded(ole32lib.StringFromCLSID(byref(my_clsid), byref(p))):
                 if AgClassCatalog.check_clsid_available(p.value):
                     coclass = AgClassCatalog.get_class(p.value)()
                     coclass._private_init(punk)
-                CoTaskMemFree(p)
+                ole32lib.CoTaskMemFree(p)
     return coclass
     
 def compare_com_objects(first, second) -> bool:
@@ -289,12 +289,6 @@ def IUnknown_from_IDispatch(pdisp:PVOID) -> IUnknown:
 #   attach_to_stk_by_pid (Windows-only)
 ###############################################################################
 
-class _ole32lib:
-    CreateClassMoniker    = WINFUNCTYPE(HRESULT, GUID, POINTER(LPVOID))(("CreateClassMoniker", ole32lib), ((1, "rclsid"), (1, "ppmk")))
-    GetRunningObjectTable = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetRunningObjectTable", ole32lib), ((1, "dwReserved"), (1, "pprot")))
-    CreateBindCtx         = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CreateBindCtx", ole32lib), ((1, "dwReserved"), (1, "ppbc")))
-    CoGetMalloc           = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CoGetMalloc", ole32lib), ((1, "dwMemContext"), (1, "ppMalloc")))
-            
 class _IRunningObjectTable(object):
     guid = "{00000010-0000-0000-C000-000000000046}"
     def __init__(self, pUnk):
@@ -343,8 +337,8 @@ class _IEnumMoniker(object):
         num_fetched = ULONG(0)
         pUnk = IUnknown()
         CLSID_AgUiApplication = GUID()
-        CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
-        _ole32lib.CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
+        ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
+        ole32lib.CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
         pUnk.TakeOwnership()
         self._Next(one_obj, byref(pUnk.p), byref(num_fetched))
         if num_fetched.value == 1:
@@ -399,7 +393,7 @@ class _IMoniker(object):
         self._GetDisplayName = IAGFUNCTYPE(pUnk, IID__IMoniker, vtable_offset + GetDisplayNameIndex, PVOID, PVOID, POINTER(BSTR))
     def _FreeDisplayName(self, ppszDisplayName):
         pMalloc = IUnknown()
-        _ole32lib.CoGetMalloc(DWORD(1), byref(pMalloc.p))
+        ole32lib.CoGetMalloc(DWORD(1), byref(pMalloc.p))
         pMalloc.TakeOwnership()
         iMalloc = _IMalloc(pMalloc)
         iMalloc.Free(ppszDisplayName)
@@ -408,7 +402,7 @@ class _IMoniker(object):
     def GetDisplayName(self) -> str:
         pbc = IUnknown()
         pmkToLeft = IUnknown()
-        _ole32lib.CreateBindCtx(DWORD(0), byref(pbc.p))
+        ole32lib.CreateBindCtx(DWORD(0), byref(pbc.p))
         pbc.TakeOwnership()
         ppszDisplayName = BSTR()
         self._GetDisplayName(pbc.p, pmkToLeft.p, byref(ppszDisplayName))
@@ -423,7 +417,7 @@ def attach_to_stk_by_pid(pid:int) -> IUnknown:
         raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
     runningObjectTable = IUnknown()
     str_prog_id = "!STK.Application:" + str(pid)
-    if Succeeded(_ole32lib.GetRunningObjectTable(DWORD(0), byref(runningObjectTable.p))):
+    if Succeeded(ole32lib.GetRunningObjectTable(DWORD(0), byref(runningObjectTable.p))):
         runningObjectTable.TakeOwnership()
         runningObjectTable = _IRunningObjectTable(runningObjectTable)
         enumMoniker = runningObjectTable.EnumRunning()
