@@ -1,27 +1,49 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
+import os
 
-from ansys_sphinx_theme import pyansys_logo_black as logo
+from ansys_sphinx_theme import ansys_favicon, pyansys_logo_black
+
+from ansys.stk.core import __version__
 
 # Project information
 project = "ansys-stk-core"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
-release = version = "0.1.dev0"
+release = version = __version__
+cname = os.getenv("DOCUMENTATION_CNAME", "stk.docs.pyansys.com")
 
-# Select desired logo, theme, and declare the html title
-html_logo = logo
+
+def get_version_match(semver):
+    """Evaluate the version match for the multi-documentation."""
+    if semver.endswith("dev0"):
+        return "dev"
+    major, minor, _ = semver.split(".")
+    return ".".join([major, minor])
+
+
+# Configure the HTML theme
+html_logo = pyansys_logo_black
 html_theme = "ansys_sphinx_theme"
-html_short_title = html_title = "pystk-core"
-
-# specify the location of your github repo
+html_short_title = html_title = "PySTK"
+html_context = {
+    "github_user": "pyansys",
+    "github_repo": "pystk",
+    "github_version": "main",
+    "doc_path": "doc/source",
+}
 html_theme_options = {
-    "github_url": "https://github.com/pyansys/pystk-core",
+    "github_url": "https://github.com/pyansys/pystk",
     "show_prev_next": False,
     "show_breadcrumbs": True,
     "additional_breadcrumbs": [
         ("PyAnsys", "https://docs.pyansys.com/"),
     ],
+    "switcher": {
+        "json_url": f"https://{cname}/release/versions.json",
+        "version_match": get_version_match(__version__),
+    },
+    "navbar_end": ["version-switcher", "theme-switcher", "navbar-icon-links"],
 }
 
 # Sphinx extensions
