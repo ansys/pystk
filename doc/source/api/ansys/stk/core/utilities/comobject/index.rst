@@ -6,7 +6,7 @@
    This module contains a wrapper for a raw COM object that is not part of the STK Object Model.
 
 
-Module Contents
+Module contents
 ---------------
 
 Overview

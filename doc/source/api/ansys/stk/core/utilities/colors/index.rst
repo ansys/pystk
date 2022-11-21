@@ -6,7 +6,7 @@
    This module is used to communicate color information between Python and STK.
    Color is the color object type and Colors is the factory for creating Color objects.
 
-Module Contents
+Module contents
 ---------------
 
 Overview

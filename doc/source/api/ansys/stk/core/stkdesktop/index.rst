@@ -4,7 +4,7 @@
 .. py:module:: ansys.stk.core.stkdesktop
 
 
-Module Contents
+Module contents
 ---------------
 
 Overview

@@ -124,6 +124,7 @@ class GUID(Structure):
             if ole32lib.CLSIDFromString is None:
                 ole32lib._initialize()
             ole32lib.CLSIDFromString(str(name), byref(self))
+
     @staticmethod
     def from_registry_format(data: str) -> "GUID":
         if len(data) != 38 or data[0] != "{" or data[-1] != "}":
@@ -144,6 +145,7 @@ class GUID(Structure):
         guid.Data4 = (BYTE * 8).from_buffer_copy(data_bytes[8:16])
 
         return guid
+
     def __eq__(self, other):
         are_equal = True
         if self.Data1[0] != other.Data1[0]: are_equal = False
@@ -163,6 +165,7 @@ class GUID(Structure):
         if self.Data4[6] != other.Data4[6]: are_equal = False
         if self.Data4[7] != other.Data4[7]: are_equal = False
         return are_equal
+
     def __str__(self):
         return "{{{:02X}{:02X}{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}-{:02X}{:02X}{:02X}{:02X}{:02X}{:02X}}}".format(
             self.Data1[3],

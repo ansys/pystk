@@ -36,11 +36,8 @@ Submodules
    vgt/index.rst
 
 
-Package Contents
+Package contents
 ----------------
 
 .. py:data:: __version__
-   
-
-   
 

@@ -6,7 +6,7 @@
    This module contains specific exceptions that may be raised from the STK API.
 
 
-Module Contents
+Module contents
 ---------------
 
 Overview

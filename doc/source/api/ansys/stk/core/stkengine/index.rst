@@ -13,7 +13,7 @@ Submodules
    tkcontrols/index.rst
 
 
-Module Contents
+Module contents
 ---------------
 
 Overview

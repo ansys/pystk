@@ -4,7 +4,7 @@
 .. py:module:: ansys.stk.core.stkengine.tkcontrols
 
 
-Module Contents
+Module contents
 ---------------
 
 Overview

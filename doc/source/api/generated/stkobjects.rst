@@ -1,4 +1,4 @@
-Module Contents
+Module contents
 ---------------
 
 Overview
