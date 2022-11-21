@@ -17,12 +17,21 @@ INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)
 DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
 
 if os.name != "nt":
-    agutillib = cdll.LoadLibrary("libagutil.so")
-    AgUtSetTimerCallbacks = CFUNCTYPE(None, INSTALLTIMER, DELETETIMER, c_void_p)(("AgUtSetTimerCallbacks", agutillib), ((1, "pInstallTimer"), (1, "pDeleteTimer"), (1, "pCallbackData")))
-    AgUtInitializeLibrtTimers = CFUNCTYPE(None, c_int)(("AgUtInitializeLibrtTimers", agutillib), ((1, "signo"),))
-    AgUtUninitializeLibrtTimers = CFUNCTYPE(None)(("AgUtUninitializeLibrtTimers", agutillib))
-    AgUtFireLibrtTimerCallbacks = CFUNCTYPE(None)(("AgUtFireLibrtTimerCallbacks", agutillib))
-    
+    class agutillib:
+        _handle = None
+        AgUtSetTimerCallbacks = None
+        AgUtInitializeLibrtTimers = None
+        AgUtUninitializeLibrtTimers = None
+        AgUtFireLibrtTimerCallbacks = None
+
+        def initialize():
+            if agutillib._handle is None:
+                agutillib._handle = cdll.LoadLibrary("libagutil.so")
+                agutillib.AgUtSetTimerCallbacks = CFUNCTYPE(None, INSTALLTIMER, DELETETIMER, c_void_p)(("AgUtSetTimerCallbacks", agutillib._handle), ((1, "pInstallTimer"), (1, "pDeleteTimer"), (1, "pCallbackData")))
+                agutillib.AgUtInitializeLibrtTimers = CFUNCTYPE(None, c_int)(("AgUtInitializeLibrtTimers", agutillib._handle), ((1, "signo"),))
+                agutillib.AgUtUninitializeLibrtTimers = CFUNCTYPE(None)(("AgUtUninitializeLibrtTimers", agutillib._handle))
+                agutillib.AgUtFireLibrtTimerCallbacks = CFUNCTYPE(None)(("AgUtFireLibrtTimerCallbacks", agutillib._handle))
+
 class _ClockTimer(object):
     def __init__(self, id, milliseconds, TIMERPROC, callbackData):
         self.id = id
@@ -59,7 +68,8 @@ class NullTimer(object):
         if os.name != "nt":
             self._install_timer_cfunc = INSTALLTIMER(self.__InstallTimer)
             self._delete_timer_cfunc = DELETETIMER(self.__DeleteTimer)
-            AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
+            agutillib.initialize()
+            agutillib.AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
         else:
             pass
         
@@ -86,7 +96,8 @@ if os.name != "nt":
             self._timers = dict()
             self._install_timer_cfunc = INSTALLTIMER(self.__InstallTimer)
             self._delete_timer_cfunc = DELETETIMER(self.__DeleteTimer)
-            AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
+            agutillib.initialize()
+            agutillib.AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
             self._tcl = Tcl()
             self._tcl.after(self._NextTimerProc(), self._LoopTimers)
             
@@ -123,7 +134,8 @@ if os.name != "nt":
             self._timers = dict()
             self._install_timer_cfunc = INSTALLTIMER(self.__InstallTimer)
             self._delete_timer_cfunc = DELETETIMER(self.__DeleteTimer)
-            AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
+            agutillib.initialize()
+            agutillib.AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
             self.previous_sighandler = signal.signal(signal.SIGALRM, self._FireTimers)
         
         def Terminate(self):
@@ -166,17 +178,18 @@ if os.name != "nt":
             self._timers = dict()
             self._signo = signo
             self.previous_sighandler = signal.signal(self._signo, self._FireTimers)
-            AgUtInitializeLibrtTimers(self._signo)
+            agutillib.initialize()
+            agutillib.AgUtInitializeLibrtTimers(self._signo)
             
         def Terminate(self):
-            AgUtUninitializeLibrtTimers()
+            agutillib.AgUtUninitializeLibrtTimers()
             try:
                 signal.signal(self._signo, self.previous_sighandler)
             except:
                 pass
             
         def _FireTimers(self, signo, frame):
-            AgUtFireLibrtTimerCallbacks()
+            agutillib.AgUtFireLibrtTimerCallbacks()
 
     
 

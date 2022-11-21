@@ -14,7 +14,7 @@ if os.name != "nt":
     from ctypes.util                  import find_library
 
 from ..internal.comutil            import CLSCTX_INPROC_SERVER, COINIT_APARTMENTTHREADED, GUID
-from ..internal.comutil            import CLSIDFromString, CoCreateInstance, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
+from ..internal.comutil            import ole32lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
 from ..internal.eventutil          import EventSubscriptionManager
 from ..internal.stkxinitialization import *
 from ..utilities.exceptions        import *
@@ -59,10 +59,10 @@ class STKEngineApplication(AgSTKXApplication):
         if os.name=="nt":
             return
         CLSID_AgSTKXInitialize = GUID()
-        if Succeeded(CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", CLSID_AgSTKXInitialize)):
+        if Succeeded(ole32lib.CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", CLSID_AgSTKXInitialize)):
             IID_IUnknown = GUID(IUnknown._guid)
             stkxinit_unk = IUnknown()
-            if Succeeded(CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
+            if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
                 stkxinit_unk.TakeOwnership()
                 pInit = IAgSTKXInitialize()
                 pInit._private_init(stkxinit_unk)
@@ -117,10 +117,10 @@ class STKEngineApplication(AgSTKXApplication):
         if not self.__dict__["_initialized"]:
             raise RuntimeError("STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.")
         CLSID_AgStkObjectRoot = GUID()
-        if Succeeded(CLSIDFromString("{96C1CE4E-C61D-4657-99CB-8581E12693FE}", CLSID_AgStkObjectRoot)):
+        if Succeeded(ole32lib.CLSIDFromString("{96C1CE4E-C61D-4657-99CB-8581E12693FE}", CLSID_AgStkObjectRoot)):
             IID_IUnknown = GUID(IUnknown._guid)
             root_unk = IUnknown()
-            CoCreateInstance(byref(CLSID_AgStkObjectRoot), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(root_unk.p))
+            ole32lib.CoCreateInstance(byref(CLSID_AgStkObjectRoot), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(root_unk.p))
             root_unk.TakeOwnership()
             root = AgStkObjectRoot()
             root._private_init(root_unk)
@@ -165,10 +165,10 @@ class STKEngine(object):
             raise RuntimeError("Only one STKEngine instance is allowed per Python process.")
         CoInitializeManager.initialize()
         CLSID_AgSTKXApplication = GUID()
-        if Succeeded(CLSIDFromString("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", CLSID_AgSTKXApplication)):
+        if Succeeded(ole32lib.CLSIDFromString("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", CLSID_AgSTKXApplication)):
             pUnk = IUnknown()
             IID_IUnknown = GUID(IUnknown._guid)
-            if Succeeded(CoCreateInstance(byref(CLSID_AgSTKXApplication), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
+            if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgSTKXApplication), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
                 pUnk.TakeOwnership(isApplication=True)
                 STKEngine._is_engine_running = True
                 STKEngine._initX11(noGraphics)

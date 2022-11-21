@@ -82,8 +82,8 @@ class STKEventSubscriber(object):
             self.__dict__["_connection_id"] = None
     
 class STKEventHandlerBase(object):
-    _IID_IUnknown  = GUID(IUnknown._guid)
-    _IID_IDispatch = GUID("{00020400-0000-0000-C000-000000000046}")
+    _IID_IUnknown  = GUID.from_registry_format(IUnknown._guid)
+    _IID_IDispatch = GUID.from_registry_format(IDispatch._guid)
     
     def _AddRef(self, pThis:PVOID) -> int:
         return 1
@@ -171,9 +171,9 @@ class _AgStkObjectRootRawEvents2UnkSink(Structure):
                  ("OnStkObjectPaste",           c_void_p) ]
         
 class IAgStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
-    _IID_IAgStkObjectRootEvents     = GUID("{4A25888C-BF0A-4B79-816B-2623D16042B0}")
-    _IID_IAgStkObjectRootRawEvents  = GUID("{A381FC71-ACBF-4034-B732-2A36B0CFA2E4}")
-    _IID_IAgStkObjectRootRawEvents2 = GUID("{F607E46E-A49F-4B9B-BE24-F29F63709FB0}")
+    _IID_IAgStkObjectRootEvents     = GUID.from_registry_format("{4A25888C-BF0A-4B79-816B-2623D16042B0}")
+    _IID_IAgStkObjectRootRawEvents  = GUID.from_registry_format("{A381FC71-ACBF-4034-B732-2A36B0CFA2E4}")
+    _IID_IAgStkObjectRootRawEvents2 = GUID.from_registry_format("{F607E46E-A49F-4B9B-BE24-F29F63709FB0}")
 
     def __init__(self, pUnk):
         STKEventHandlerBase.__init__(self)
@@ -745,8 +745,8 @@ class _AgSTKXApplicationEventsUnkSink(Structure):
                  ("OnConControlQuitReceived",    c_void_p) ]
         
 class IAgSTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
-    _IID_IAgSTKXApplicationRawEvents = GUID("{78C74BAF-7845-40BA-9EBE-C10FD081BC60}")
-    _IID_IAgSTKXApplicationEvents    = GUID("{3787DAB9-9A91-414B-B4EF-2339E0FBA96C}")
+    _IID_IAgSTKXApplicationRawEvents = GUID.from_registry_format("{78C74BAF-7845-40BA-9EBE-C10FD081BC60}")
+    _IID_IAgSTKXApplicationEvents    = GUID.from_registry_format("{3787DAB9-9A91-414B-B4EF-2339E0FBA96C}")
 
     def __init__(self, pUnk):
         STKEventHandlerBase.__init__(self)
@@ -1058,7 +1058,7 @@ class _AgUiAxVOCntrlEventsUnkSink(Structure):
                  ("OnObjectEditingStop",   c_void_p)]
                  
 class IAgUiAxStockEventHandler(STKEventHandlerBase):
-    _IID_IAgUiAxStockRawEvents   = GUID("{32A1F220-C90C-4FC6-B2BF-DF06DB89B72E}")
+    _IID_IAgUiAxStockRawEvents   = GUID.from_registry_format("{32A1F220-C90C-4FC6-B2BF-DF06DB89B72E}")
 
     def __init__(self):
         STKEventHandlerBase.__init__(self)
@@ -1232,7 +1232,7 @@ class IAgUiAxStockEventHandler(STKEventHandlerBase):
         
         
 class IAgUiAx2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
-    _IID_IAgUiAx2DCntrlEvents    = GUID("{DA0E1628-101E-4A18-B922-B4189E31AD7E}")
+    _IID_IAgUiAx2DCntrlEvents    = GUID.from_registry_format("{DA0E1628-101E-4A18-B922-B4189E31AD7E}")
 
     def __init__(self, pUnk):
         IAgUiAxStockEventHandler.__init__(self)
@@ -1294,8 +1294,8 @@ class IAgUiAx2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
             
             
 class IAgUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
-    _IID_IAgUiAxVOCntrlRawEvents = GUID("{1ADE7AE0-B431-4ED4-8494-335EBB14007C}")
-    _IID_IAgUiAxVOCntrlEvents    = GUID("{C46F1BA0-22E4-432B-9259-C6DEF33FE2B2}")
+    _IID_IAgUiAxVOCntrlRawEvents = GUID.from_registry_format("{1ADE7AE0-B431-4ED4-8494-335EBB14007C}")
+    _IID_IAgUiAxVOCntrlEvents    = GUID.from_registry_format("{C46F1BA0-22E4-432B-9259-C6DEF33FE2B2}")
 
     def __init__(self, pUnk):
         IAgUiAxStockEventHandler.__init__(self)
@@ -1441,7 +1441,7 @@ class _AgStkGraphicsSceneEventsUnkSink(Structure):
                  ("Rendering",        c_void_p)]
                  
 class IAgStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
-    _IID_IAgStkGraphicsSceneEvents = GUID("{FACA0112-848C-415D-B38C-0ED3F121D906}")
+    _IID_IAgStkGraphicsSceneEvents = GUID.from_registry_format("{FACA0112-848C-415D-B38C-0ED3F121D906}")
     _DISPID_Rendering = 13901
 
     def __init__(self, pUnk):
@@ -1539,7 +1539,7 @@ class _AgStkGraphicsKmlGraphicsEventsUnkSink(Structure):
                  ("DocumentLoaded",   c_void_p)]
                  
 class IAgStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBase):
-    _IID_IAgStkGraphicsKmlGraphicsEvents = GUID("{0B64622D-307A-4549-9692-7F15F4D9AC94}")
+    _IID_IAgStkGraphicsKmlGraphicsEvents = GUID.from_registry_format("{0B64622D-307A-4549-9692-7F15F4D9AC94}")
     _DISPID_DocumentLoaded = 27101
 
     def __init__(self, pUnk):
@@ -1637,7 +1637,7 @@ class _AgStkGraphicsImageCollectionEventsUnkSink(Structure):
                  ("AddComplete",      c_void_p)]
                  
 class IAgStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
-    _IID_IAgStkGraphicsImageCollectionEvents = GUID("{150DFFDA-DD8C-4227-9B7D-F813277BCB8E}")
+    _IID_IAgStkGraphicsImageCollectionEvents = GUID.from_registry_format("{150DFFDA-DD8C-4227-9B7D-F813277BCB8E}")
     _DISPID_AddComplete = 13301
 
     def __init__(self, pUnk):
@@ -1735,7 +1735,7 @@ class _AgStkGraphicsTerrainCollectionEventsUnkSink(Structure):
                  ("AddComplete",      c_void_p)]
                  
 class IAgStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
-    _IID_IAgStkGraphicsTerrainCollectionEvents = GUID("{0744D80B-C88B-4F1D-BF3F-78A5C3AB69BA}")
+    _IID_IAgStkGraphicsTerrainCollectionEvents = GUID.from_registry_format("{0744D80B-C88B-4F1D-BF3F-78A5C3AB69BA}")
     _DISPID_AddComplete = 13401
 
     def __init__(self, pUnk):

@@ -26,12 +26,12 @@ html_theme_options = {
 
 # Sphinx extensions
 extensions = [
-    "autoapi.extension",
-    "numpydoc",
+    "enum_tools.autoenum",
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
+    "numpydoc",
 ]
 
 # Intersphinx mapping
@@ -53,14 +53,13 @@ numpydoc_validation_checks = {
     "GL09",  # Deprecation warning should precede extended summary
     "GL10",  # reST directives {directives} must be followed by two colons
     "SS01",  # No summary found
-    "SS02",  # Summary does not start with a capital letter
+    # "SS02",  # Summary does not start with a capital letter
     # "SS03", # Summary does not end with a period
-    "SS04",  # Summary contains heading whitespaces
+    # "SS04",  # Summary contains heading whitespaces
     # "SS05", # Summary must start with infinitive verb, not third person
     "RT02",  # The first line of the Returns section should contain only the
     # type, unless multiple values are being returned"
 }
-
 
 # Path to static files
 html_static_path = ["_static"]
@@ -68,22 +67,23 @@ html_static_path = ["_static"]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
+# Directories excluded when looking for source files
+exclude_patterns = ['api/generated/*.rst']
+
 # The suffix(es) of source filenames.
 source_suffix = ".rst"
 
 # The master toctree document.
 master_doc = "index"
 
-# Configuration for Sphinx autoapi
-autoapi_type = "python"
-autoapi_dirs = ["../../src/ansys"]
-autoapi_options = [
-    "members",
-    "undoc-members",
-    "show-inheritance",
-    "show-module-summary",
-    "special-members",
-]
-autoapi_template_dir = "_autoapi_templates"
-exclude_patterns = ["_autoapi_templates/index.rst"]
-autoapi_python_use_implicit_namespaces = True
+# autodoc configuration
+autodoc_default_options = {
+    #'members': 'var1, var2',
+    'member-order': 'alphabetical',
+    #'special-members': '__init__',
+    "show-inheritance": True,
+    'undoc-members': True,
+    #'exclude-members': '__weakref__'
+}
+autodoc_class_signature = "separated"
+autodoc_mock_imports = ["tkinter"]

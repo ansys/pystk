@@ -5,9 +5,11 @@
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
 import os
+import typing
 from ctypes import byref
 
-from .internal.comutil       import *
+from .internal.comutil       import (ole32lib, oleaut32lib, GUID, IUnknown, CoInitializeManager, Succeeded,
+                                 CLSCTX_LOCAL_SERVER, ObjectLifetimeManager, PVOID, COINIT_APARTMENTTHREADED)
 from .internal.coclassutil   import attach_to_stk_by_pid
 from .internal.eventutil     import EventSubscriptionManager
 from .utilities.exceptions   import *
@@ -21,7 +23,7 @@ from .uicore                 import *
 from .vgt                    import *
 
 class ThreadMarshaller(object):
-    _iid_IUnknown = GUID(IUnknown._guid)
+    _iid_IUnknown = GUID.from_registry_format(IUnknown._guid)
     def __init__(self, obj):
         if os.name != "nt":
             raise RuntimeError("ThreadMarshaller is only available on Windows.")
@@ -30,12 +32,12 @@ class ThreadMarshaller(object):
         self._obj = obj
         self._obj_type = type(obj)
         self._pStream = PVOID()
-        if not Succeeded(CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._pUnk.p, byref(self._pStream))):
+        if not Succeeded(ole32lib.CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._pUnk.p, byref(self._pStream))):
             raise STKRuntimeError("ThreadMarshaller failed to initialize.")
            
     def __del__(self):
         if self._pStream is not None:
-            CoReleaseMarshalData(self._pStream)
+            ole32lib.CoReleaseMarshalData(self._pStream)
         del(self._obj)
        
     def GetMarshalledToCurrentThread(self) -> typing.Any:
@@ -43,7 +45,7 @@ class ThreadMarshaller(object):
         if self._pStream is None:
             raise STKRuntimeError(f"{self._obj_type} object has already been marshalled to a thread.")
         pUnk_raw = PVOID()
-        hr = CoGetInterfaceAndReleaseStream(self._pStream, byref(ThreadMarshaller._iid_IUnknown), byref(pUnk_raw))
+        hr = ole32lib.CoGetInterfaceAndReleaseStream(self._pStream, byref(ThreadMarshaller._iid_IUnknown), byref(pUnk_raw))
         self._pStream = None
         if not Succeeded(hr):
             if hr == CO_E_NOTINITIALIZED:
@@ -59,11 +61,11 @@ class ThreadMarshaller(object):
         
     def InitializeThread(self) -> None:
         """Must be called on the destination thread prior to calling GetMarshalledToCurrentThread()."""
-        CoInitializeEx(None, COINIT_APARTMENTTHREADED)
+        ole32lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
         
     def ReleaseThread(self) -> None:
         """Call in the destination thread after all calls to STK are finished."""
-        CoUninitialize()
+        ole32lib.CoUninitialize()
 
 class STKDesktopApplication(AgUiApplication):
     """
@@ -126,10 +128,10 @@ class STKDesktop(object):
 
         CoInitializeManager.initialize()
         CLSID_AgUiApplication = GUID()
-        if Succeeded(CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
+        if Succeeded(ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
             pUnk = IUnknown()
             IID_IUnknown = GUID(IUnknown._guid)
-            if Succeeded(CoCreateInstance(byref(CLSID_AgUiApplication), None, CLSCTX_LOCAL_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
+            if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgUiApplication), None, CLSCTX_LOCAL_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
                 pUnk.TakeOwnership(isApplication=True)
                 app = STKDesktopApplication()
                 app._private_init(pUnk)
@@ -154,10 +156,10 @@ class STKDesktop(object):
         CoInitializeManager.initialize()
         if pid is None:
             CLSID_AgUiApplication = GUID()
-            if Succeeded(CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
+            if Succeeded(ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
                 pUnk = IUnknown()
                 IID_IUnknown = GUID(IUnknown._guid)
-                if Succeeded(GetActiveObject(byref(CLSID_AgUiApplication), None, byref(pUnk.p))):
+                if Succeeded(oleaut32lib.GetActiveObject(byref(CLSID_AgUiApplication), None, byref(pUnk.p))):
                     pUnk.TakeOwnership(isApplication=True)
                     app = STKDesktopApplication()
                     app._private_init(pUnk)

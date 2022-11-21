@@ -85,7 +85,7 @@ def VARIANT_from_python_data(data:typing.Any) -> agcom.VARIANT:
         if var.vt == agcom.VT_BOOL:
             union_val.boolVal = agcom.VARIANT_TRUE if data else agcom.VARIANT_FALSE
         elif var.vt == agcom.VT_BSTR:
-            union_val.bstrVal = agcom.BSTR(agcom.SysAllocString(data))
+            union_val.bstrVal = agcom.BSTR(agcom.oleaut32lib.SysAllocString(data))
         elif var.vt == agcom.VT_I4:
             union_val.lVal = agcom.LONG(data)
         elif var.vt == agcom.VT_I8:
@@ -271,7 +271,7 @@ def _create_SAFEARRAY(vt:int, dim:int, num_elems_dim1:int, num_elems_dim2:int = 
     for i in range(dim):
         rgsabound[i].lLbound = agcom.LONG(0)
         rgsabound[i].cElements = agcom.ULONG(num_elems[i])
-    sa = agcom.SAFEARRAY(agcom.SafeArrayCreate(vt, agcom.UINT(dim), cast(pointer(rgsabound), POINTER(agcom.SAFEARRAYBOUND))))
+    sa = agcom.SAFEARRAY(agcom.oleaut32lib.SafeArrayCreate(vt, agcom.UINT(dim), cast(pointer(rgsabound), POINTER(agcom.SAFEARRAYBOUND))))
     return sa
 
 def SAFEARRAY_from_list(data:list, as_VARIANT:bool=True) -> agcom.SAFEARRAY:
@@ -289,7 +289,7 @@ def SAFEARRAY_from_list(data:list, as_VARIANT:bool=True) -> agcom.SAFEARRAY:
                 indices[0] = agcom.LONG(i)
                 indices[1] = agcom.LONG(j)
                 elem = SAFEARRAY_elem_from_python_elem(data[i][j])
-                agcoclass.evaluate_hresult(agcom.SafeArrayPutElement(sa, pIndx, byref(elem)))
+                agcoclass.evaluate_hresult(agcom.oleaut32lib.SafeArrayPutElement(sa, pIndx, byref(elem)))
         return sa
     else:
         # 1-D Vector
@@ -301,9 +301,9 @@ def SAFEARRAY_from_list(data:list, as_VARIANT:bool=True) -> agcom.SAFEARRAY:
             index = agcom.LONG(i)
             elem = SAFEARRAY_elem_from_python_elem(data[i], as_VARIANT)
             if vt == agcom.VT_BSTR:
-                agcom.SafeArrayPutElement(sa, byref(index), elem)
+                agcom.oleaut32lib.SafeArrayPutElement(sa, byref(index), elem)
             else:
-                agcom.SafeArrayPutElement(sa, byref(index), byref(elem))
+                agcom.oleaut32lib.SafeArrayPutElement(sa, byref(index), byref(elem))
         return sa
 
 def _vartype_to_ctypes_type(vt:agcom.INT) -> typing.Any:
@@ -389,39 +389,39 @@ def _single_dimension_list_from_SAFEARRAY(sa:agcom.SAFEARRAY, index:int, from_2d
     vt = agcom.VARTYPE()
     lb = agcom.LONG()
     ub = agcom.LONG()
-    agcom.SafeArrayGetVartype(sa, byref(vt))
+    agcom.oleaut32lib.SafeArrayGetVartype(sa, byref(vt))
     indices = (agcom.LONG*2)()
     if not from_2d_array:
-        agcom.SafeArrayGetLBound(sa, agcom.UINT(1), byref(lb))
-        agcom.SafeArrayGetUBound(sa, agcom.UINT(1), byref(ub))
+        agcom.oleaut32lib.SafeArrayGetLBound(sa, agcom.UINT(1), byref(lb))
+        agcom.oleaut32lib.SafeArrayGetUBound(sa, agcom.UINT(1), byref(ub))
         indices[0] = 0
         indices[1] = agcom.LONG(index)
     else:
-        agcom.SafeArrayGetLBound(sa, agcom.UINT(2), byref(lb))
-        agcom.SafeArrayGetUBound(sa, agcom.UINT(2), byref(ub))
+        agcom.oleaut32lib.SafeArrayGetLBound(sa, agcom.UINT(2), byref(lb))
+        agcom.oleaut32lib.SafeArrayGetUBound(sa, agcom.UINT(2), byref(ub))
         indices[0] = agcom.LONG(index)
         indices[1] = 0
     pIndx = cast(pointer(indices), POINTER(agcom.LONG))
     for i in range(int(lb.value), int(ub.value)+1):
         pElem = _vartype_to_ctypes_type(vt.value)()
         if vt.value == agcom.VT_VARIANT:
-            agcom.VariantInit(pElem)
+            agcom.oleaut32lib.VariantInit(pElem)
         indices[0 if not from_2d_array else 1] = agcom.LONG(i)
-        hr = agcom.SafeArrayGetElement(sa, pIndx, byref(pElem))
+        hr = agcom.oleaut32lib.SafeArrayGetElement(sa, pIndx, byref(pElem))
         python_elem = python_val_from_ctypes_val(pElem, vt.value)
         if vt.value == agcom.VT_VARIANT:
-            hr = agcom.VariantClear(pElem)
+            hr = agcom.oleaut32lib.VariantClear(pElem)
         elif vt.value == agcom.VT_BSTR:
-            agcom.SysFreeString(pElem)
+            agcom.oleaut32lib.SysFreeString(pElem)
         elif vt.value == agcom.VT_ARRAY:
-            agcom.SafeArrayDestroy(pElem)
+            agcom.oleaut32lib.SafeArrayDestroy(pElem)
         elif vt.value == agcom.VT_UNKNOWN or vt.value == agcom.VT_DISPATCH or vt.value & agcom.VT_BYREF:
             raise RuntimeError(f"Unsupported SAFEARRAY type detected: vt = {vt.value}.")
         python_array.append(python_elem)
     return python_array
 
 def list_from_SAFEARRAY(sa:agcom.SAFEARRAY) -> list:
-    dim = agcom.SafeArrayGetDim(sa)
+    dim = agcom.oleaut32lib.SafeArrayGetDim(sa)
     if dim == 0:
         return list()
     elif dim == 1:
@@ -429,8 +429,8 @@ def list_from_SAFEARRAY(sa:agcom.SAFEARRAY) -> list:
     elif dim == 2:
         lb = agcom.LONG()
         ub = agcom.LONG()
-        agcom.SafeArrayGetLBound(sa, agcom.UINT(1), byref(lb))
-        agcom.SafeArrayGetUBound(sa, agcom.UINT(1), byref(ub))
+        agcom.oleaut32lib.SafeArrayGetLBound(sa, agcom.UINT(1), byref(lb))
+        agcom.oleaut32lib.SafeArrayGetUBound(sa, agcom.UINT(1), byref(ub))
         ret = []
         for i in range(int(lb.value), int(ub.value)+1):
             ret.append(_single_dimension_list_from_SAFEARRAY(sa, i, True))
@@ -672,11 +672,11 @@ class BSTR_arg(object):
         if val is None:
             self.bstr = agcom.BSTR()
         else:
-            self.bstr = agcom.BSTR(agcom.SysAllocString(val))
+            self.bstr = agcom.BSTR(agcom.oleaut32lib.SysAllocString(val))
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        agcom.SysFreeString(self.bstr)
+        agcom.oleaut32lib.SysFreeString(self.bstr)
         return False
     @property
     def COM_val(self) -> agcom.BSTR:
@@ -734,13 +734,13 @@ class VARIANT_arg(object):
     def __init__(self, val: typing.Any = None):
         if val is not None and type(val)==agcom.VARIANT:
             self.var = agcom.VARIANT()
-            agcom.VariantCopy(byref(self.var), byref(val))
+            agcom.oleaut32lib.VariantCopy(byref(self.var), byref(val))
         else:
             self.var = VARIANT_from_python_data(val)
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        agcom.VariantClear(self.var)
+        agcom.oleaut32lib.VariantClear(self.var)
         return False
     @property
     def COM_val(self) -> agcom.VARIANT:
@@ -880,7 +880,7 @@ class SAFEARRAY_arg(object):
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        agcom.SafeArrayDestroy(self.sa)
+        agcom.oleaut32lib.SafeArrayDestroy(self.sa)
         return False
     @property
     def COM_val(self) -> agcom.SAFEARRAY:

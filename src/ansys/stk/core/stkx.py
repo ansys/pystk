@@ -48,199 +48,276 @@ def _raise_uninitialized_error(*args):
 class AgELogMsgType(IntEnum):
     """Log message types."""
     # Debugging message.
-    eLogMsgDebug = 0,
+    eLogMsgDebug = 0
     # Informational message.
-    eLogMsgInfo = 1,
+    eLogMsgInfo = 1
     # Informational message.
-    eLogMsgForceInfo = 2,
+    eLogMsgForceInfo = 2
     # Warning message.
-    eLogMsgWarning = 3,
+    eLogMsgWarning = 3
     # Alarm message.
     eLogMsgAlarm = 4
+
+AgELogMsgType.eLogMsgDebug.__doc__ = "Debugging message."
+AgELogMsgType.eLogMsgInfo.__doc__ = "Informational message."
+AgELogMsgType.eLogMsgForceInfo.__doc__ = "Informational message."
+AgELogMsgType.eLogMsgWarning.__doc__ = "Warning message."
+AgELogMsgType.eLogMsgAlarm.__doc__ = "Alarm message."
 
 agcls.AgTypeNameMap["AgELogMsgType"] = AgELogMsgType
 
 class AgELogMsgDispID(IntEnum):
     """Log message destination options."""
     # STK displays the message in all the log destination.
-    eLogMsgDispAll = -1,
+    eLogMsgDispAll = -1
     # STK displays the message in the default log destination.
-    eLogMsgDispDefault = 0,
+    eLogMsgDispDefault = 0
     # STK displays the message in the message window.
-    eLogMsgDispMsgWin = 1,
+    eLogMsgDispMsgWin = 1
     # STK displays the message in the status bar.
     eLogMsgDispStatusBar = 2
+
+AgELogMsgDispID.eLogMsgDispAll.__doc__ = "STK displays the message in all the log destination."
+AgELogMsgDispID.eLogMsgDispDefault.__doc__ = "STK displays the message in the default log destination."
+AgELogMsgDispID.eLogMsgDispMsgWin.__doc__ = "STK displays the message in the message window."
+AgELogMsgDispID.eLogMsgDispStatusBar.__doc__ = "STK displays the message in the status bar."
 
 agcls.AgTypeNameMap["AgELogMsgDispID"] = AgELogMsgDispID
 
 class AgELineStyle(IntEnum):
     """Line Style"""
     # Specifies a solid line.
-    eSolid = 0,
+    eSolid = 0
     # Specifies a dashed line.
-    eDashed = 1,
+    eDashed = 1
     # Specifies a dotted line.
-    eDotted = 2,
+    eDotted = 2
     # Dot-dashed line.
-    eDotDashed = 3,
+    eDotDashed = 3
     # Specifies a long dashed line.
-    eLongDashed = 4,
+    eLongDashed = 4
     # Specifies an alternating dash-dot-dot line.
-    eDashDotDotted = 5,
+    eDashDotDotted = 5
     # Specifies a user configurable medium dashed line.
-    eMDash = 6,
+    eMDash = 6
     # Specifies a user configurable long dashed line.
-    eLDash = 7,
+    eLDash = 7
     # Specifies a user configurable small dash-dotted line.
-    eSDashDot = 8,
+    eSDashDot = 8
     # Specifies a user configurable medium dash-dotted line.
-    eMDashDot = 9,
+    eMDashDot = 9
     # Specifies a user configurable long dash-dotted line.
-    eLDashDot = 10,
+    eLDashDot = 10
     # Specifies a user configurable medium followed by small dashed line.
-    eMSDash = 11,
+    eMSDash = 11
     # Specifies a user configurable long followed by small dashed line.
-    eLSDash = 12,
+    eLSDash = 12
     # Specifies a user configurable long followed by medium dashed line.
-    eLMDash = 13,
+    eLMDash = 13
     # Specifies a user configurable medium followed by small dashed line.
-    eLMSDash = 14,
+    eLMSDash = 14
     # Specifies a dotted line.
-    eDot = 15,
+    eDot = 15
     # Specifies a long dashed line.
-    eLongDash = 16,
+    eLongDash = 16
     # Specifies an alternating dash-dot line.
     eSDash = 17
+
+AgELineStyle.eSolid.__doc__ = "Specifies a solid line."
+AgELineStyle.eDashed.__doc__ = "Specifies a dashed line."
+AgELineStyle.eDotted.__doc__ = "Specifies a dotted line."
+AgELineStyle.eDotDashed.__doc__ = "Dot-dashed line."
+AgELineStyle.eLongDashed.__doc__ = "Specifies a long dashed line."
+AgELineStyle.eDashDotDotted.__doc__ = "Specifies an alternating dash-dot-dot line."
+AgELineStyle.eMDash.__doc__ = "Specifies a user configurable medium dashed line."
+AgELineStyle.eLDash.__doc__ = "Specifies a user configurable long dashed line."
+AgELineStyle.eSDashDot.__doc__ = "Specifies a user configurable small dash-dotted line."
+AgELineStyle.eMDashDot.__doc__ = "Specifies a user configurable medium dash-dotted line."
+AgELineStyle.eLDashDot.__doc__ = "Specifies a user configurable long dash-dotted line."
+AgELineStyle.eMSDash.__doc__ = "Specifies a user configurable medium followed by small dashed line."
+AgELineStyle.eLSDash.__doc__ = "Specifies a user configurable long followed by small dashed line."
+AgELineStyle.eLMDash.__doc__ = "Specifies a user configurable long followed by medium dashed line."
+AgELineStyle.eLMSDash.__doc__ = "Specifies a user configurable medium followed by small dashed line."
+AgELineStyle.eDot.__doc__ = "Specifies a dotted line."
+AgELineStyle.eLongDash.__doc__ = "Specifies a long dashed line."
+AgELineStyle.eSDash.__doc__ = "Specifies an alternating dash-dot line."
 
 agcls.AgTypeNameMap["AgELineStyle"] = AgELineStyle
 
 class AgEExecMultiCmdResultAction(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
     # Continue executing the remaining commands in the command batch.
-    eContinueOnError = 0,
+    eContinueOnError = 0
     # Terminate the execution of the command batch but do not throw an exception.
-    eStopOnError = 1,
+    eStopOnError = 1
     # Terminate the execution of the command batch and throw an exception.
-    eExceptionOnError = 2,
+    eExceptionOnError = 2
     # Ignore results returned by individual commands. The option must be used in combination with other flags.
     eIgnoreExecCmdResult = 0x8000
+
+AgEExecMultiCmdResultAction.eContinueOnError.__doc__ = "Continue executing the remaining commands in the command batch."
+AgEExecMultiCmdResultAction.eStopOnError.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
+AgEExecMultiCmdResultAction.eExceptionOnError.__doc__ = "Terminate the execution of the command batch and throw an exception."
+AgEExecMultiCmdResultAction.eIgnoreExecCmdResult.__doc__ = "Ignore results returned by individual commands. The option must be used in combination with other flags."
 
 agcls.AgTypeNameMap["AgEExecMultiCmdResultAction"] = AgEExecMultiCmdResultAction
 
 class AgEShiftValues(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
     # The Shift key was pressed.
-    eShiftPressed = 1,
+    eShiftPressed = 1
     # The Ctrl key was pressed.
-    eCtrlPressed = 2,
+    eCtrlPressed = 2
     # The ALT key was pressed.
     eAltPressed = 4
+
+AgEShiftValues.eShiftPressed.__doc__ = "The Shift key was pressed."
+AgEShiftValues.eCtrlPressed.__doc__ = "The Ctrl key was pressed."
+AgEShiftValues.eAltPressed.__doc__ = "The ALT key was pressed."
 
 agcls.AgTypeNameMap["AgEShiftValues"] = AgEShiftValues
 
 class AgEButtonValues(IntEnum):
     """Numeric value of the mouse button pressed."""
     # The left button is pressed.
-    eLeftPressed = 1,
+    eLeftPressed = 1
     # The right button is pressed.
-    eRightPressed = 2,
+    eRightPressed = 2
     # The middle button is pressed.
     eMiddlePressed = 4
+
+AgEButtonValues.eLeftPressed.__doc__ = "The left button is pressed."
+AgEButtonValues.eRightPressed.__doc__ = "The right button is pressed."
+AgEButtonValues.eMiddlePressed.__doc__ = "The middle button is pressed."
 
 agcls.AgTypeNameMap["AgEButtonValues"] = AgEButtonValues
 
 class AgEOLEDropMode(IntEnum):
     """Specifies how to handle OLE drop operations."""
     # None. The control does not accept OLE drops and displays the No Drop cursor.
-    eNone = 0,
+    eNone = 0
     # Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code.
-    eManual = 1,
+    eManual = 1
     # Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic.
     eAutomatic = 2
+
+AgEOLEDropMode.eNone.__doc__ = "None. The control does not accept OLE drops and displays the No Drop cursor."
+AgEOLEDropMode.eManual.__doc__ = "Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."
+AgEOLEDropMode.eAutomatic.__doc__ = "Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."
 
 agcls.AgTypeNameMap["AgEOLEDropMode"] = AgEOLEDropMode
 
 class AgEMouseMode(IntEnum):
     """Mouse modes."""
     # Automatic. The control handles the mouse events and then fires the events to the container for additional processing.
-    eMouseModeAutomatic = 0,
+    eMouseModeAutomatic = 0
     # None. No default action happens on mouse events. Events are fired to the container.
     eMouseModeManual = 1
+
+AgEMouseMode.eMouseModeAutomatic.__doc__ = "Automatic. The control handles the mouse events and then fires the events to the container for additional processing."
+AgEMouseMode.eMouseModeManual.__doc__ = "None. No default action happens on mouse events. Events are fired to the container."
 
 agcls.AgTypeNameMap["AgEMouseMode"] = AgEMouseMode
 
 class AgELoggingMode(IntEnum):
     """Specifies the state of the log file."""
     # The log file is not created.
-    eLogInactive = 0,
+    eLogInactive = 0
     # The log file is created but deleted upon application termination.
-    eLogActive = 1,
+    eLogActive = 1
     # The log file is created and kept even after application is terminated.
     eLogActiveKeepFile = 2
+
+AgELoggingMode.eLogInactive.__doc__ = "The log file is not created."
+AgELoggingMode.eLogActive.__doc__ = "The log file is created but deleted upon application termination."
+AgELoggingMode.eLogActiveKeepFile.__doc__ = "The log file is created and kept even after application is terminated."
 
 agcls.AgTypeNameMap["AgELoggingMode"] = AgELoggingMode
 
 class AgEGfxAnalysisMode(IntEnum):
     """Specifies the mode of Gfx Analysis Control."""
     # The Solar Panel Tool mode.
-    eSolarPanelTool = 1,
+    eSolarPanelTool = 1
     # The Area Tool mode.
-    eAreaTool = 2,
+    eAreaTool = 2
     # The Obscuration Tool mode.
-    eObscurationTool = 3,
+    eObscurationTool = 3
     # The AzElMask Tool mode.
     eAzElMaskTool = 4
+
+AgEGfxAnalysisMode.eSolarPanelTool.__doc__ = "The Solar Panel Tool mode."
+AgEGfxAnalysisMode.eAreaTool.__doc__ = "The Area Tool mode."
+AgEGfxAnalysisMode.eObscurationTool.__doc__ = "The Obscuration Tool mode."
+AgEGfxAnalysisMode.eAzElMaskTool.__doc__ = "The AzElMask Tool mode."
 
 agcls.AgTypeNameMap["AgEGfxAnalysisMode"] = AgEGfxAnalysisMode
 
 class AgEGfxDrawCoords(IntEnum):
     """Specifies the draw coordinates for Map Control."""
     # The draw coordinates values in pixels.
-    ePixelDrawCoords = 1,
+    ePixelDrawCoords = 1
     # The draw coordinates values in screen coordinates.
     eScreenDrawCoords = 2
+
+AgEGfxDrawCoords.ePixelDrawCoords.__doc__ = "The draw coordinates values in pixels."
+AgEGfxDrawCoords.eScreenDrawCoords.__doc__ = "The draw coordinates values in screen coordinates."
 
 agcls.AgTypeNameMap["AgEGfxDrawCoords"] = AgEGfxDrawCoords
 
 class AgEShowProgressImage(IntEnum):
     """Specifies to show progress image."""
     # Do not show any progress Image.
-    eShowProgressImageNone = 1,
+    eShowProgressImageNone = 1
     # Show the default progress image.
-    eShowProgressImageDefault = 2,
+    eShowProgressImageDefault = 2
     # Show the user specified progress image.
     eShowProgressImageUser = 3
+
+AgEShowProgressImage.eShowProgressImageNone.__doc__ = "Do not show any progress Image."
+AgEShowProgressImage.eShowProgressImageDefault.__doc__ = "Show the default progress image."
+AgEShowProgressImage.eShowProgressImageUser.__doc__ = "Show the user specified progress image."
 
 agcls.AgTypeNameMap["AgEShowProgressImage"] = AgEShowProgressImage
 
 class AgEFeatureCodes(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
     # The enumeration is used to check whether the engine runtime is available.
-    eFeatureCodeEngineRuntime = 1,
+    eFeatureCodeEngineRuntime = 1
     # The enumeration is used to check whether the globe is available.
     eFeatureCodeGlobeControl = 2
+
+AgEFeatureCodes.eFeatureCodeEngineRuntime.__doc__ = "The enumeration is used to check whether the engine runtime is available."
+AgEFeatureCodes.eFeatureCodeGlobeControl.__doc__ = "The enumeration is used to check whether the globe is available."
 
 agcls.AgTypeNameMap["AgEFeatureCodes"] = AgEFeatureCodes
 
 class AgEProgressImageXOrigin(IntEnum):
     """Specifies to align progress image X origin."""
     # Align progress Image from X left.
-    eProgressImageXLeft = 1,
+    eProgressImageXLeft = 1
     # Align progress Image from X right.
-    eProgressImageXRight = 2,
+    eProgressImageXRight = 2
     # Align progress Image from X center.
     eProgressImageXCenter = 3
+
+AgEProgressImageXOrigin.eProgressImageXLeft.__doc__ = "Align progress Image from X left."
+AgEProgressImageXOrigin.eProgressImageXRight.__doc__ = "Align progress Image from X right."
+AgEProgressImageXOrigin.eProgressImageXCenter.__doc__ = "Align progress Image from X center."
 
 agcls.AgTypeNameMap["AgEProgressImageXOrigin"] = AgEProgressImageXOrigin
 
 class AgEProgressImageYOrigin(IntEnum):
     """Specifies to align progress image Y origin."""
     # Align progress Image from Y top.
-    eProgressImageYTop = 1,
+    eProgressImageYTop = 1
     # Align progress Image from Y bottom.
-    eProgressImageYBottom = 2,
+    eProgressImageYBottom = 2
     # Align progress Image from Y center.
     eProgressImageYCenter = 3
+
+AgEProgressImageYOrigin.eProgressImageYTop.__doc__ = "Align progress Image from Y top."
+AgEProgressImageYOrigin.eProgressImageYBottom.__doc__ = "Align progress Image from Y bottom."
+AgEProgressImageYOrigin.eProgressImageYCenter.__doc__ = "Align progress Image from Y center."
 
 agcls.AgTypeNameMap["AgEProgressImageYOrigin"] = AgEProgressImageYOrigin
 

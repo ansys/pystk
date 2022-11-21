@@ -41,24 +41,33 @@ def _raise_uninitialized_error(*args):
 class AgEOpenLogFileMode(IntEnum):
     """Log file open modes."""
     # Open log file in write file mode.
-    eOpenLogFileForWriting = 2,
+    eOpenLogFileForWriting = 2
     # Open log file in append file mode.
     eOpenLogFileForAppending = 8
+
+AgEOpenLogFileMode.eOpenLogFileForWriting.__doc__ = "Open log file in write file mode."
+AgEOpenLogFileMode.eOpenLogFileForAppending.__doc__ = "Open log file in append file mode."
 
 agcls.AgTypeNameMap["AgEOpenLogFileMode"] = AgEOpenLogFileMode
 
 class AgEUiLogMsgType(IntEnum):
     """Log message types."""
     # Log messages that provide Debug text.
-    eUiLogMsgDebug = 0,
+    eUiLogMsgDebug = 0
     # Log messages that provide information text.
-    eUiLogMsgInfo = 1,
+    eUiLogMsgInfo = 1
     # Log messages that provide forceful information text.
-    eUiLogMsgForceInfo = 2,
+    eUiLogMsgForceInfo = 2
     # Log messages that provide warning text.
-    eUiLogMsgWarning = 3,
+    eUiLogMsgWarning = 3
     # Log messages that provide alarm text.
     eUiLogMsgAlarm = 4
+
+AgEUiLogMsgType.eUiLogMsgDebug.__doc__ = "Log messages that provide Debug text."
+AgEUiLogMsgType.eUiLogMsgInfo.__doc__ = "Log messages that provide information text."
+AgEUiLogMsgType.eUiLogMsgForceInfo.__doc__ = "Log messages that provide forceful information text."
+AgEUiLogMsgType.eUiLogMsgWarning.__doc__ = "Log messages that provide warning text."
+AgEUiLogMsgType.eUiLogMsgAlarm.__doc__ = "Log messages that provide alarm text."
 
 agcls.AgTypeNameMap["AgEUiLogMsgType"] = AgEUiLogMsgType
 
@@ -67,20 +76,28 @@ class AgEAppConstants(IntEnum):
     # Error base.
     eAppErrorBase = 0x200
 
+AgEAppConstants.eAppErrorBase.__doc__ = "Error base."
+
 agcls.AgTypeNameMap["AgEAppConstants"] = AgEAppConstants
 
 class AgEAppErrorCodes(IntEnum):
     """App error codes."""
     # Failed to load personality.
-    eAppErrorPersLoadFail = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 1)),
+    eAppErrorPersLoadFail = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 1))
     # Personality already loaded.
-    eAppErrorAlreadyLoadFail = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 2)),
+    eAppErrorAlreadyLoadFail = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 2))
     # No personality is loaded.
-    eAppErrorPersLoadFirst = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 3)),
+    eAppErrorPersLoadFirst = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 3))
     # You do not have the required license to connect externally to the application.
-    eAppErrorPersLicenseError = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 4)),
+    eAppErrorPersLicenseError = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 4))
     # No license could be found.
     eAppErrorNoLicenseError = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 5))
+
+AgEAppErrorCodes.eAppErrorPersLoadFail.__doc__ = "Failed to load personality."
+AgEAppErrorCodes.eAppErrorAlreadyLoadFail.__doc__ = "Personality already loaded."
+AgEAppErrorCodes.eAppErrorPersLoadFirst.__doc__ = "No personality is loaded."
+AgEAppErrorCodes.eAppErrorPersLicenseError.__doc__ = "You do not have the required license to connect externally to the application."
+AgEAppErrorCodes.eAppErrorNoLicenseError.__doc__ = "No license could be found."
 
 agcls.AgTypeNameMap["AgEAppErrorCodes"] = AgEAppErrorCodes
 

@@ -18,7 +18,7 @@ Install PySTK by running:
    getting_started
    user_guide
    examples
-   autoapi/index
+   api/index
 
 
 .. LINKS AND REFERENCES
