@@ -8,7 +8,7 @@ on:
       - main
 
 env:
-  MAIN_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.8'
   PACKAGE_NAME: 'ansys-stk-core'
   IMPORT_NAME: 'ansys.stk.core'
 
