@@ -2,7 +2,11 @@
 from datetime import datetime
 import os
 
-from ansys_sphinx_theme import ansys_favicon, pyansys_logo_black
+from ansys_sphinx_theme import (
+    ansys_favicon,
+    get_version_match,
+    pyansys_logo_black,
+)
 
 from ansys.stk.core import __version__
 
@@ -13,17 +17,9 @@ author = "ANSYS, Inc."
 release = version = __version__
 cname = os.getenv("DOCUMENTATION_CNAME", "stk.docs.pyansys.com")
 
-
-def get_version_match(semver):
-    """Evaluate the version match for the multi-documentation."""
-    if semver.endswith("dev0"):
-        return "dev"
-    major, minor, _ = semver.split(".")
-    return ".".join([major, minor])
-
-
 # Configure the HTML theme
 html_logo = pyansys_logo_black
+html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
 html_context = {
@@ -34,7 +30,7 @@ html_context = {
 }
 html_theme_options = {
     "github_url": "https://github.com/pyansys/pystk",
-    "show_prev_next": False,
+    "show_prev_next": True,
     "show_breadcrumbs": True,
     "additional_breadcrumbs": [
         ("PyAnsys", "https://docs.pyansys.com/"),
@@ -68,8 +64,10 @@ numpydoc_xref_param_type = True
 # Consider enabling numpydoc validation. See:
 # https://numpydoc.readthedocs.io/en/latest/validation.html#
 numpydoc_validate = True
-numpydoc_validation_checks = set() # numpydoc validation is turned off due to performance (see PR#44)
-#numpydoc_validation_checks = {
+numpydoc_validation_checks = (
+    set()
+)  # numpydoc validation is turned off due to performance (see PR#44)
+# numpydoc_validation_checks = {
 #    "GL06",  # Found unknown section
 #    "GL07",  # Sections are in the wrong order.
 #    # "GL08",  # The object does not have a docstring
@@ -82,7 +80,7 @@ numpydoc_validation_checks = set() # numpydoc validation is turned off due to pe
 #    # "SS05", # Summary must start with infinitive verb, not third person
 #    "RT02",  # The first line of the Returns section should contain only the
 #    # type, unless multiple values are being returned"
-#}
+# }
 
 # Path to static files
 html_static_path = ["_static"]
@@ -91,7 +89,7 @@ html_static_path = ["_static"]
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_patterns = ['api/generated/*.rst']
+exclude_patterns = ["api/generated/*.rst"]
 
 # The suffix(es) of source filenames.
 source_suffix = ".rst"
@@ -102,10 +100,10 @@ master_doc = "index"
 # autodoc configuration
 autodoc_default_options = {
     #'members': 'var1, var2',
-    'member-order': 'alphabetical',
+    "member-order": "alphabetical",
     #'special-members': '__init__',
     "show-inheritance": True,
-    'undoc-members': True,
+    "undoc-members": True,
     #'exclude-members': '__weakref__'
 }
 autodoc_class_signature = "separated"
