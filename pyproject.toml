@@ -32,11 +32,11 @@ tests = [
     "pytest-cov==4.0.0",
 ]
 doc = [
-    "ansys-sphinx-theme==0.7.1",
-    "enum-tools[sphinx]==0.9.0.post1",
+    "ansys-sphinx-theme==0.7.2",
     "numpydoc==1.5.0",
     "sphinx==5.3.0",
     "sphinx-copybutton==0.5.1",
+    "enum-tools[sphinx]==0.9.0.post1",
 ]
 
 [tool.flit.module]
