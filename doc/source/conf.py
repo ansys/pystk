@@ -1,27 +1,45 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
+import os
 
-from ansys_sphinx_theme import pyansys_logo_black as logo
+from ansys_sphinx_theme import (
+    ansys_favicon,
+    get_version_match,
+    pyansys_logo_black,
+)
+
+from ansys.stk.core import __version__
 
 # Project information
 project = "ansys-stk-core"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
-release = version = "0.1.dev0"
+release = version = __version__
+cname = os.getenv("DOCUMENTATION_CNAME", "stk.docs.pyansys.com")
 
-# Select desired logo, theme, and declare the html title
-html_logo = logo
+# Configure the HTML theme
+html_logo = pyansys_logo_black
+html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
-html_short_title = html_title = "pystk-core"
-
-# specify the location of your github repo
+html_short_title = html_title = "PySTK"
+html_context = {
+    "github_user": "pyansys",
+    "github_repo": "pystk",
+    "github_version": "main",
+    "doc_path": "doc/source",
+}
 html_theme_options = {
-    "github_url": "https://github.com/pyansys/pystk-core",
-    "show_prev_next": False,
+    "github_url": "https://github.com/pyansys/pystk",
+    "show_prev_next": True,
     "show_breadcrumbs": True,
     "additional_breadcrumbs": [
         ("PyAnsys", "https://docs.pyansys.com/"),
     ],
+    "switcher": {
+        "json_url": f"https://{cname}/release/versions.json",
+        "version_match": get_version_match(__version__),
+    },
+    "navbar_end": ["version-switcher", "theme-switcher", "navbar-icon-links"],
 }
 
 # Sphinx extensions
@@ -46,8 +64,10 @@ numpydoc_xref_param_type = True
 # Consider enabling numpydoc validation. See:
 # https://numpydoc.readthedocs.io/en/latest/validation.html#
 numpydoc_validate = True
-numpydoc_validation_checks = set() # numpydoc validation is turned off due to performance (see PR#44)
-#numpydoc_validation_checks = {
+numpydoc_validation_checks = (
+    set()
+)  # numpydoc validation is turned off due to performance (see PR#44)
+# numpydoc_validation_checks = {
 #    "GL06",  # Found unknown section
 #    "GL07",  # Sections are in the wrong order.
 #    # "GL08",  # The object does not have a docstring
@@ -60,7 +80,7 @@ numpydoc_validation_checks = set() # numpydoc validation is turned off due to pe
 #    # "SS05", # Summary must start with infinitive verb, not third person
 #    "RT02",  # The first line of the Returns section should contain only the
 #    # type, unless multiple values are being returned"
-#}
+# }
 
 # Path to static files
 html_static_path = ["_static"]
@@ -69,7 +89,7 @@ html_static_path = ["_static"]
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_patterns = ['api/generated/*.rst']
+exclude_patterns = ["api/generated/*.rst"]
 
 # The suffix(es) of source filenames.
 source_suffix = ".rst"
@@ -80,10 +100,10 @@ master_doc = "index"
 # autodoc configuration
 autodoc_default_options = {
     #'members': 'var1, var2',
-    'member-order': 'alphabetical',
+    "member-order": "alphabetical",
     #'special-members': '__init__',
     "show-inheritance": True,
-    'undoc-members': True,
+    "undoc-members": True,
     #'exclude-members': '__weakref__'
 }
 autodoc_class_signature = "separated"
