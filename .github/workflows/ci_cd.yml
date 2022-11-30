@@ -73,30 +73,34 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   tests:
-    name: "Code tests and coverage"
+    name: "Test Python ${{ matrix.cfg.python-version }} in ${{ matrix.os }} "
     runs-on: ${{ matrix.os }}
     needs: code-style
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest]
-        python-version: ['3.7', '3.8', '3.9', '3.10']
+        cfg:
+          - {python-version: '3.7', extra-args: ''}
+          - {python-version: '3.8', extra-args: ''}
+          - {python-version: '3.9', extra-args: ''}
+          - {python-version: '3.10', extra-args: '--cov=ansys.stk --cov-report=term --cov-report=html:.cov/html'}
+
       fail-fast: false
     steps:
-      - name: "Generate pytest arguments according to environment"
-        run: echo "PYTEST_EXTRA_ARGS=$(if [ "$matrix.python-version" == "$env.MAIN_PYTHON_VERSION" ]; then echo '--cov=ansys.stk --cov-report=term --cov-report=xml:.cov/coverage.xml --cov-report=html:.cov/html'; else echo '')" >> $GITHUB_ENV
 
       - name: "Run test suite with pytest"
         uses: pyansys/actions/tests-pytest@v1
         with:
-          python-version: ${{ matrix.python-version }}
-          pytest-extra-args: ${{ env.PYTEST_EXTRA_ARGS }}
+          python-version: ${{ matrix.cfg.python-version }}
+          pytest-extra-args: ${{ matrix.cfg.extra-args }}
 
-      # - name: "Upload coverage results"
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: coverage-html
-      #     path: .cov/html
-      #     retention-days: 7
+      - name: "Upload coverage results"
+        uses: actions/upload-artifact@v3
+        if: matrix.cfg.python-version == env.MAIN_PYTHON_VERSION && matrix.os == 'ubuntu-latest'
+        with:
+          name: coverage-html
+          path: .cov/html
+          retention-days: 7
 
   build-library:
     name: "Build library artifacts"
