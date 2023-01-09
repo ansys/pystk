@@ -31,7 +31,7 @@ if os.name != "nt":
                 agutillib.AgUtInitializeLibrtTimers = CFUNCTYPE(None, c_int)(("AgUtInitializeLibrtTimers", agutillib._handle), ((1, "signo"),))
                 agutillib.AgUtUninitializeLibrtTimers = CFUNCTYPE(None)(("AgUtUninitializeLibrtTimers", agutillib._handle))
                 agutillib.AgUtFireLibrtTimerCallbacks = CFUNCTYPE(None)(("AgUtFireLibrtTimerCallbacks", agutillib._handle))
-
+    
 class _ClockTimer(object):
     def __init__(self, id, milliseconds, TIMERPROC, callbackData):
         self.id = id

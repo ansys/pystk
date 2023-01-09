@@ -35,18 +35,18 @@ __all__ = ["AgEVAAccessCriterion", "AgEVAAscentType", "AgEVAAtmosDataSource", "A
 "AgVAAutomaticSequence", "AgVAAutomaticSequenceCollection", "AgVABDotRCalc", "AgVABDotTCalc", "AgVABMagCalc", "AgVABPlaneCollection", 
 "AgVABThetaCalc", "AgVABlendedDensity", "AgVABulirschStoerIntegrator", "AgVABurnoutCBFCartesian", "AgVABurnoutGeocentric", 
 "AgVABurnoutGeodetic", "AgVABurnoutLaunchAzAlt", "AgVABurnoutLaunchAzRadius", "AgVABurnoutVelocity", "AgVACR3BPFunc", "AgVACalcObjectCollection", 
-"AgVACalculationGraphCollection", "AgVACbAttitudeIAU1994", "AgVACbAttitudeRotationCoefficientsFile", "AgVACbEphemerisAnalyticOrbit", 
-"AgVACbEphemerisFile", "AgVACbEphemerisJPLDE", "AgVACbEphemerisJPLSpice", "AgVACbEphemerisPlanetary", "AgVACbGravityModel", 
-"AgVACbShapeOblateSpheroid", "AgVACbShapeSphere", "AgVACbShapeTriaxialEllipsoid", "AgVACentralBody", "AgVACentralBodyCollection", 
-"AgVACira72Function", "AgVAConstraintCollection", "AgVACustomFunctionScriptEngine", "AgVADCControl", "AgVADCControlCollection", 
-"AgVADCResult", "AgVADCResultCollection", "AgVADTM2012", "AgVADTM2020", "AgVADensityModelPlugin", "AgVADisplaySystemGeocentric", 
-"AgVADisplaySystemGeodetic", "AgVADragModelPlugin", "AgVADriverMCS", "AgVAEOMFuncPluginFunction", "AgVAElementCartesian", 
-"AgVAElementDelaunay", "AgVAElementEquinoctial", "AgVAElementGeodetic", "AgVAElementKeplerian", "AgVAElementMixedSpherical", 
-"AgVAElementSpherical", "AgVAElementTargetVectorIncomingAsymptote", "AgVAElementTargetVectorOutgoingAsymptote", "AgVAEngineConstAcc", 
-"AgVAEngineConstant", "AgVAEngineCustom", "AgVAEngineDefinition", "AgVAEngineIon", "AgVAEngineModelIspCoefficients", "AgVAEngineModelPoly", 
-"AgVAEngineModelThrustCoefficients", "AgVAEnginePlugin", "AgVAEngineThrottleTable", "AgVAExponential", "AgVAFuelTank", "AgVAGaussJacksonIntegrator", 
-"AgVAGeneralRelativityFunction", "AgVAGoldenSectionControl", "AgVAGoldenSectionControlCollection", "AgVAGoldenSectionResult", 
-"AgVAGoldenSectionResultCollection", "AgVAGravityFieldFunction", "AgVAGridSearchControl", "AgVAGridSearchControlCollection", 
+"AgVACalcObjectLinkEmbedControlCollection", "AgVACalculationGraphCollection", "AgVACbAttitudeIAU1994", "AgVACbAttitudeRotationCoefficientsFile", 
+"AgVACbEphemerisAnalyticOrbit", "AgVACbEphemerisFile", "AgVACbEphemerisJPLDE", "AgVACbEphemerisJPLSpice", "AgVACbEphemerisPlanetary", 
+"AgVACbGravityModel", "AgVACbShapeOblateSpheroid", "AgVACbShapeSphere", "AgVACbShapeTriaxialEllipsoid", "AgVACentralBody", 
+"AgVACentralBodyCollection", "AgVACira72Function", "AgVAConstraintCollection", "AgVACustomFunctionScriptEngine", "AgVADCControl", 
+"AgVADCControlCollection", "AgVADCResult", "AgVADCResultCollection", "AgVADTM2012", "AgVADTM2020", "AgVADensityModelPlugin", 
+"AgVADisplaySystemGeocentric", "AgVADisplaySystemGeodetic", "AgVADragModelPlugin", "AgVADriverMCS", "AgVAEOMFuncPluginFunction", 
+"AgVAElementCartesian", "AgVAElementDelaunay", "AgVAElementEquinoctial", "AgVAElementGeodetic", "AgVAElementKeplerian", 
+"AgVAElementMixedSpherical", "AgVAElementSpherical", "AgVAElementTargetVectorIncomingAsymptote", "AgVAElementTargetVectorOutgoingAsymptote", 
+"AgVAEngineConstAcc", "AgVAEngineConstant", "AgVAEngineCustom", "AgVAEngineDefinition", "AgVAEngineIon", "AgVAEngineModelIspCoefficients", 
+"AgVAEngineModelPoly", "AgVAEngineModelThrustCoefficients", "AgVAEnginePlugin", "AgVAEngineThrottleTable", "AgVAExponential", 
+"AgVAFuelTank", "AgVAGaussJacksonIntegrator", "AgVAGeneralRelativityFunction", "AgVAGoldenSectionControl", "AgVAGoldenSectionControlCollection", 
+"AgVAGoldenSectionResult", "AgVAGoldenSectionResultCollection", "AgVAGravityFieldFunction", "AgVAGridSearchControl", "AgVAGridSearchControlCollection", 
 "AgVAGridSearchResult", "AgVAGridSearchResultCollection", "AgVAHPOPPluginFunction", "AgVAHarrisPriester", "AgVAIPOPTControl", 
 "AgVAIPOPTControlCollection", "AgVAIPOPTResult", "AgVAIPOPTResultCollection", "AgVAJacchiaBowman2008", "AgVAJacchiaRoberts", 
 "AgVAJacchia_1960", "AgVAJacchia_1970", "AgVAJacchia_1971", "AgVALightingStoppingCondition", "AgVAMCSBackwardSequence", 
@@ -115,18 +115,18 @@ __all__ = ["AgEVAAccessCriterion", "AgEVAAscentType", "AgEVAAtmosDataSource", "A
 "IAgVABDotRCalc", "IAgVABDotTCalc", "IAgVABMagCalc", "IAgVABPlaneCollection", "IAgVABThetaCalc", "IAgVABlendedDensity", 
 "IAgVABulirschStoerIntegrator", "IAgVABurnout", "IAgVABurnoutCBFCartesian", "IAgVABurnoutGeocentric", "IAgVABurnoutGeodetic", 
 "IAgVABurnoutLaunchAzAlt", "IAgVABurnoutLaunchAzRadius", "IAgVABurnoutVelocity", "IAgVACR3BPFunc", "IAgVACalcObjectCollection", 
-"IAgVACalculationGraphCollection", "IAgVACbAttitude", "IAgVACbAttitudeIAU1994", "IAgVACbAttitudeRotationCoefficientsFile", 
-"IAgVACbEphemeris", "IAgVACbEphemerisAnalyticOrbit", "IAgVACbEphemerisFile", "IAgVACbEphemerisJPLDE", "IAgVACbEphemerisJPLSpice", 
-"IAgVACbEphemerisPlanetary", "IAgVACbGravityModel", "IAgVACbShape", "IAgVACbShapeOblateSpheroid", "IAgVACbShapeSphere", 
-"IAgVACbShapeTriaxialEllipsoid", "IAgVACentralBody", "IAgVACentralBodyCollection", "IAgVACira72Function", "IAgVAConstraintCollection", 
-"IAgVACustomFunctionScriptEngine", "IAgVADCControl", "IAgVADCControlCollection", "IAgVADCResult", "IAgVADCResultCollection", 
-"IAgVADTM2012", "IAgVADTM2020", "IAgVADensityModelPlugin", "IAgVADisplaySystem", "IAgVADisplaySystemGeocentric", "IAgVADisplaySystemGeodetic", 
-"IAgVADragModelPlugin", "IAgVADriverMCS", "IAgVAEOMFuncPluginFunction", "IAgVAElement", "IAgVAElementCartesian", "IAgVAElementDelaunay", 
-"IAgVAElementEquinoctial", "IAgVAElementGeodetic", "IAgVAElementKeplerian", "IAgVAElementMixedSpherical", "IAgVAElementSpherical", 
-"IAgVAElementTargetVectorIncomingAsymptote", "IAgVAElementTargetVectorOutgoingAsymptote", "IAgVAEngineConstAcc", "IAgVAEngineConstant", 
-"IAgVAEngineCustom", "IAgVAEngineDefinition", "IAgVAEngineIon", "IAgVAEngineModelIspCoefficients", "IAgVAEngineModelPoly", 
-"IAgVAEngineModelThrustCoefficients", "IAgVAEnginePlugin", "IAgVAEngineThrottleTable", "IAgVAExponential", "IAgVAFuelTank", 
-"IAgVAGaussJacksonIntegrator", "IAgVAGeneralRelativityFunction", "IAgVAGoldenSectionControl", "IAgVAGoldenSectionControlCollection", 
+"IAgVACalcObjectLinkEmbedControlCollection", "IAgVACalculationGraphCollection", "IAgVACbAttitude", "IAgVACbAttitudeIAU1994", 
+"IAgVACbAttitudeRotationCoefficientsFile", "IAgVACbEphemeris", "IAgVACbEphemerisAnalyticOrbit", "IAgVACbEphemerisFile", 
+"IAgVACbEphemerisJPLDE", "IAgVACbEphemerisJPLSpice", "IAgVACbEphemerisPlanetary", "IAgVACbGravityModel", "IAgVACbShape", 
+"IAgVACbShapeOblateSpheroid", "IAgVACbShapeSphere", "IAgVACbShapeTriaxialEllipsoid", "IAgVACentralBody", "IAgVACentralBodyCollection", 
+"IAgVACira72Function", "IAgVAConstraintCollection", "IAgVACustomFunctionScriptEngine", "IAgVADCControl", "IAgVADCControlCollection", 
+"IAgVADCResult", "IAgVADCResultCollection", "IAgVADTM2012", "IAgVADTM2020", "IAgVADensityModelPlugin", "IAgVADisplaySystem", 
+"IAgVADisplaySystemGeocentric", "IAgVADisplaySystemGeodetic", "IAgVADragModelPlugin", "IAgVADriverMCS", "IAgVAEOMFuncPluginFunction", 
+"IAgVAElement", "IAgVAElementCartesian", "IAgVAElementDelaunay", "IAgVAElementEquinoctial", "IAgVAElementGeodetic", "IAgVAElementKeplerian", 
+"IAgVAElementMixedSpherical", "IAgVAElementSpherical", "IAgVAElementTargetVectorIncomingAsymptote", "IAgVAElementTargetVectorOutgoingAsymptote", 
+"IAgVAEngineConstAcc", "IAgVAEngineConstant", "IAgVAEngineCustom", "IAgVAEngineDefinition", "IAgVAEngineIon", "IAgVAEngineModelIspCoefficients", 
+"IAgVAEngineModelPoly", "IAgVAEngineModelThrustCoefficients", "IAgVAEnginePlugin", "IAgVAEngineThrottleTable", "IAgVAExponential", 
+"IAgVAFuelTank", "IAgVAGaussJacksonIntegrator", "IAgVAGeneralRelativityFunction", "IAgVAGoldenSectionControl", "IAgVAGoldenSectionControlCollection", 
 "IAgVAGoldenSectionResult", "IAgVAGoldenSectionResultCollection", "IAgVAGravityFieldFunction", "IAgVAGridSearchControl", 
 "IAgVAGridSearchControlCollection", "IAgVAGridSearchResult", "IAgVAGridSearchResultCollection", "IAgVAHPOPPluginFunction", 
 "IAgVAHarrisPriester", "IAgVAIPOPTControl", "IAgVAIPOPTControlCollection", "IAgVAIPOPTResult", "IAgVAIPOPTResultCollection", 
@@ -215,7 +215,6 @@ from ..utilities import colors           as agcolor
 from ..internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTYPE, IEnumVARIANT
 from ..internal.eventutil   import *
 from ..utilities.exceptions import *
-
 
 from ..stkutil import *
 from ..stkobjects import *
@@ -11670,7 +11669,7 @@ agcls.AgTypeNameMap["IAgVAElementGeodetic"] = IAgVAElementGeodetic
 class IAgVAStoppingCondition(IAgVAStoppingConditionComponent):
     """Basic properties for a stopping condition."""
     _uuid = "{7B18D549-E67A-4532-9767-ECC78418475D}"
-    _num_methods = 29
+    _num_methods = 30
     _vtable_offset = IAgVAStoppingConditionComponent._vtable_offset + IAgVAStoppingConditionComponent._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -11703,6 +11702,7 @@ class IAgVAStoppingCondition(IAgVAStoppingConditionComponent):
         self.__dict__["_SetReferencePoint"] = _raise_uninitialized_error
         self.__dict__["_CopyUserCalcObjectToClipboard"] = _raise_uninitialized_error
         self.__dict__["_PasteUserCalcObjectFromClipboard"] = _raise_uninitialized_error
+        self.__dict__["_GetUserCalcObjectLinkEmbedControl"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgVAStoppingCondition._uuid))
             if pUnk is not None:
@@ -11744,6 +11744,7 @@ class IAgVAStoppingCondition(IAgVAStoppingConditionComponent):
         self.__dict__["_SetReferencePoint"] = IAGFUNCTYPE(pUnk, IID_IAgVAStoppingCondition, vtable_offset_local+27, agcom.BSTR)
         self.__dict__["_CopyUserCalcObjectToClipboard"] = IAGFUNCTYPE(pUnk, IID_IAgVAStoppingCondition, vtable_offset_local+28, )
         self.__dict__["_PasteUserCalcObjectFromClipboard"] = IAGFUNCTYPE(pUnk, IID_IAgVAStoppingCondition, vtable_offset_local+29, )
+        self.__dict__["_GetUserCalcObjectLinkEmbedControl"] = IAGFUNCTYPE(pUnk, IID_IAgVAStoppingCondition, vtable_offset_local+30, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -11930,6 +11931,13 @@ class IAgVAStoppingCondition(IAgVAStoppingConditionComponent):
     def PasteUserCalcObjectFromClipboard(self) -> None:
         """Replaces the user-defined stopping condition calc object with the calc object in the clipboard."""
         agcls.evaluate_hresult(self.__dict__["_PasteUserCalcObjectFromClipboard"]())
+
+    @property
+    def UserCalcObjectLinkEmbedControl(self) -> "IAgComponentLinkEmbedControl":
+        """Gets the link / embed controller for managing the user calc. object."""
+        with agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetUserCalcObjectLinkEmbedControl"](byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
 
 
 agcls.AgClassCatalog.add_catalog_entry("{7B18D549-E67A-4532-9767-ECC78418475D}", IAgVAStoppingCondition)
@@ -22426,6 +22434,142 @@ class IAgVAProfileGridSearch(IAgVAProfile):
 agcls.AgClassCatalog.add_catalog_entry("{EDE96C58-0563-4B05-A7B6-735C3699FE87}", IAgVAProfileGridSearch)
 agcls.AgTypeNameMap["IAgVAProfileGridSearch"] = IAgVAProfileGridSearch
 
+class IAgVACalcObjectLinkEmbedControlCollection(object):
+    """Collection of link/embed calculation objects."""
+    _uuid = "{4294354A-2EF8-4D34-8FC9-DD360DFCF3EF}"
+    _num_methods = 10
+    _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    def __init__(self, sourceObject=None):
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_Add"] = _raise_uninitialized_error
+        self.__dict__["_Item"] = _raise_uninitialized_error
+        self.__dict__["_Remove"] = _raise_uninitialized_error
+        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_GetCount"] = _raise_uninitialized_error
+        self.__dict__["_Cut"] = _raise_uninitialized_error
+        self.__dict__["_Paste"] = _raise_uninitialized_error
+        self.__dict__["_InsertCopy"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
+        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgVACalcObjectLinkEmbedControlCollection._uuid))
+            if pUnk is not None:
+                self._private_init(pUnk)
+                del(pUnk)
+            else:
+                raise STKInvalidCastError("Failed to create IAgVACalcObjectLinkEmbedControlCollection from source object.")
+        self.__dict__["enumerator"] = None
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IID_IAgVACalcObjectLinkEmbedControlCollection = agcom.GUID(IAgVACalcObjectLinkEmbedControlCollection._uuid)
+        vtable_offset_local = IAgVACalcObjectLinkEmbedControlCollection._vtable_offset - 1
+        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+1, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+2, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_Remove"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+3, agcom.VARIANT)
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+4, POINTER(agcom.PVOID))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_Cut"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_Paste"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_InsertCopy"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+8, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+9, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgVACalcObjectLinkEmbedControlCollection, vtable_offset_local+10, agcom.BSTR, POINTER(agcom.PVOID))
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        if attrname in IAgVACalcObjectLinkEmbedControlCollection.__dict__ and type(IAgVACalcObjectLinkEmbedControlCollection.__dict__[attrname]) == property:
+            return IAgVACalcObjectLinkEmbedControlCollection.__dict__[attrname]
+        return None
+    def __setattr__(self, attrname, value):
+        if self._get_property(attrname) is not None:
+            self._get_property(attrname).__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAgVACalcObjectLinkEmbedControlCollection.")
+    def __iter__(self):
+        self.__dict__["enumerator"] = self._NewEnum
+        self.__dict__["enumerator"].Reset()
+        return self
+    def __next__(self) -> "IAgComponentLinkEmbedControl":
+        if self.__dict__["enumerator"] is None:
+            raise StopIteration
+        nextval = self.__dict__["enumerator"].Next()
+        if nextval is None:
+            raise StopIteration
+        return agmarshall.python_val_from_VARIANT(nextval)
+    
+    def Add(self, name:str, refType:"AgEComponentLinkEmbedControlReferenceType") -> "IAgComponentLinkEmbedControl":
+        """Adds a link/embed calc object to the collection."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgEnum_arg(AgEComponentLinkEmbedControlReferenceType, refType) as arg_refType, \
+             agmarshall.AgInterface_out_arg() as arg_ppComponentLinkEmbedControl:
+            agcls.evaluate_hresult(self.__dict__["_Add"](arg_name.COM_val, arg_refType.COM_val, byref(arg_ppComponentLinkEmbedControl.COM_val)))
+            return arg_ppComponentLinkEmbedControl.python_val
+
+    def Item(self, indexOrName:typing.Any) -> "IAgComponentLinkEmbedControl":
+        """Returns a link/embed calc object."""
+        with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
+             agmarshall.AgInterface_out_arg() as arg_ppComponentLinkEmbedControl:
+            agcls.evaluate_hresult(self.__dict__["_Item"](arg_indexOrName.COM_val, byref(arg_ppComponentLinkEmbedControl.COM_val)))
+            return arg_ppComponentLinkEmbedControl.python_val
+
+    def Remove(self, indexOrName:typing.Any) -> None:
+        """Removes a link/embed calc object from the collection."""
+        with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
+            agcls.evaluate_hresult(self.__dict__["_Remove"](arg_indexOrName.COM_val))
+
+    @property
+    def _NewEnum(self) -> IEnumVARIANT:
+        """Allows you to enumerate through the collection."""
+        with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    @property
+    def Count(self) -> int:
+        """Returns the size of the collection."""
+        with agmarshall.LONG_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    def Cut(self, indexOrName:typing.Any) -> None:
+        """Copies a link/embed calc object to the clipboard and removes the calc object from the list."""
+        with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
+            agcls.evaluate_hresult(self.__dict__["_Cut"](arg_indexOrName.COM_val))
+
+    def Paste(self) -> "IAgComponentLinkEmbedControl":
+        """Pastes a link/embed calc object from the clipboard into the list."""
+        with agmarshall.AgInterface_out_arg() as arg_ppCalcObj:
+            agcls.evaluate_hresult(self.__dict__["_Paste"](byref(arg_ppCalcObj.COM_val)))
+            return arg_ppCalcObj.python_val
+
+    def InsertCopy(self, calcObj:"IAgComponentLinkEmbedControl") -> "IAgComponentLinkEmbedControl":
+        """Copies a link/embed calc object and inserts the copy into the list."""
+        with agmarshall.AgInterface_in_arg(calcObj, IAgComponentLinkEmbedControl) as arg_calcObj, \
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_InsertCopy"](arg_calcObj.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    def GetItemByIndex(self, index:int) -> "IAgComponentLinkEmbedControl":
+        """Retrieves a link/embed calc object found by the index."""
+        with agmarshall.INT_arg(index) as arg_index, \
+             agmarshall.AgInterface_out_arg() as arg_ppComponent:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppComponent.COM_val)))
+            return arg_ppComponent.python_val
+
+    def GetItemByName(self, name:str) -> "IAgComponentLinkEmbedControl":
+        """Retrieves a link/embed calc object found by the name."""
+        with agmarshall.BSTR_arg(name) as arg_name, \
+             agmarshall.AgInterface_out_arg() as arg_ppComponent:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppComponent.COM_val)))
+            return arg_ppComponent.python_val
+
+    __getitem__ = Item
+
+
+
+agcls.AgClassCatalog.add_catalog_entry("{4294354A-2EF8-4D34-8FC9-DD360DFCF3EF}", IAgVACalcObjectLinkEmbedControlCollection)
+agcls.AgTypeNameMap["IAgVACalcObjectLinkEmbedControlCollection"] = IAgVACalcObjectLinkEmbedControlCollection
+
 class IAgVAStateCalcHeightAboveTerrain(object):
     """Interface for StateCalcHeightAboveTerrain"""
     _uuid = "{30A4FAC3-1250-456A-BB29-689AA50F8D75}"
@@ -29717,7 +29861,7 @@ agcls.AgTypeNameMap["IAgVAStateCalcCustomFunction"] = IAgVAStateCalcCustomFuncti
 class IAgVAStateCalcScript(object):
     """Properties for a Script calculation object."""
     _uuid = "{42A2EAD1-9982-4895-9637-4C83524F2A02}"
-    _num_methods = 5
+    _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -29726,6 +29870,7 @@ class IAgVAStateCalcScript(object):
         self.__dict__["_SetInlineFunc"] = _raise_uninitialized_error
         self.__dict__["_GetUnitDimension"] = _raise_uninitialized_error
         self.__dict__["_SetUnitDimension"] = _raise_uninitialized_error
+        self.__dict__["_GetCalcArgumentsLinkEmbed"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgVAStateCalcScript._uuid))
             if pUnk is not None:
@@ -29742,6 +29887,7 @@ class IAgVAStateCalcScript(object):
         self.__dict__["_SetInlineFunc"] = IAGFUNCTYPE(pUnk, IID_IAgVAStateCalcScript, vtable_offset_local+3, agcom.BSTR)
         self.__dict__["_GetUnitDimension"] = IAGFUNCTYPE(pUnk, IID_IAgVAStateCalcScript, vtable_offset_local+4, POINTER(agcom.BSTR))
         self.__dict__["_SetUnitDimension"] = IAGFUNCTYPE(pUnk, IID_IAgVAStateCalcScript, vtable_offset_local+5, agcom.BSTR)
+        self.__dict__["_GetCalcArgumentsLinkEmbed"] = IAGFUNCTYPE(pUnk, IID_IAgVAStateCalcScript, vtable_offset_local+6, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -29785,6 +29931,13 @@ class IAgVAStateCalcScript(object):
     def UnitDimension(self, inVal:str) -> None:
         with agmarshall.BSTR_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_SetUnitDimension"](arg_inVal.COM_val))
+
+    @property
+    def CalcArgumentsLinkEmbed(self) -> "IAgVACalcObjectLinkEmbedControlCollection":
+        """The arguments to be applied to the function."""
+        with agmarshall.AgInterface_out_arg() as arg_ppVACalcObjectLinkEmbedControlCollection:
+            agcls.evaluate_hresult(self.__dict__["_GetCalcArgumentsLinkEmbed"](byref(arg_ppVACalcObjectLinkEmbedControlCollection.COM_val)))
+            return arg_ppVACalcObjectLinkEmbedControlCollection.python_val
 
 
 agcls.AgClassCatalog.add_catalog_entry("{42A2EAD1-9982-4895-9637-4C83524F2A02}", IAgVAStateCalcScript)
@@ -56893,6 +57046,27 @@ class AgVAGridSearchResult(IAgVAGridSearchResult):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAGridSearchResult.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B37527F8-1781-4484-985E-4F2BE2E8810A}", AgVAGridSearchResult)
+
+
+class AgVACalcObjectLinkEmbedControlCollection(IAgVACalcObjectLinkEmbedControlCollection):
+    """The Calculation Object link/embed component folder."""
+    def __init__(self, sourceObject=None):
+        IAgVACalcObjectLinkEmbedControlCollection.__init__(self, sourceObject)
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IAgVACalcObjectLinkEmbedControlCollection._private_init(self, pUnk)
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        found_prop = None
+        if IAgVACalcObjectLinkEmbedControlCollection._get_property(self, attrname) is not None: found_prop = IAgVACalcObjectLinkEmbedControlCollection._get_property(self, attrname)
+        if found_prop is not None:
+            found_prop.__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in AgVACalcObjectLinkEmbedControlCollection.")
+        
+agcls.AgClassCatalog.add_catalog_entry("{8EFFF2BC-B4AA-4F5E-BDF2-7218EBBE10FF}", AgVACalcObjectLinkEmbedControlCollection)
 
 
 
