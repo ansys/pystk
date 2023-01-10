@@ -155,6 +155,7 @@ Interfaces
     IAgVAProfileLambertSearchProfile
     IAgVAProfileGoldenSection
     IAgVAProfileGridSearch
+    IAgVACalcObjectLinkEmbedControlCollection
     IAgVAStateCalcHeightAboveTerrain
     IAgVAStateCalcEpoch
     IAgVAStateCalcOrbitDelaunayG
@@ -915,6 +916,7 @@ Classes
     AgVAGridSearchControl
     AgVAGridSearchResultCollection
     AgVAGridSearchResult
+    AgVACalcObjectLinkEmbedControlCollection
 
 
 Reference
@@ -1359,6 +1361,9 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IAgVAProfileGridSearch
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgVACalcObjectLinkEmbedControlCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IAgVAStateCalcHeightAboveTerrain
@@ -3476,6 +3481,9 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: AgVAGridSearchResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgVACalcObjectLinkEmbedControlCollection
     :members:
     :exclude-members: __init__
 

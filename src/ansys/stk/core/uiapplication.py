@@ -31,7 +31,6 @@ from .internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTYPE
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 
-
 from .uicore import *
 
 

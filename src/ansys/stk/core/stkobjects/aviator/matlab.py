@@ -31,7 +31,6 @@ from ...internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTY
 from ...internal.eventutil   import *
 from ...utilities.exceptions import *
 
-
 from ...stkobjects.aviator import *
 
 
