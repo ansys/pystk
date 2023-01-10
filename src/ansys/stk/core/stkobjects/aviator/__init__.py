@@ -166,10 +166,6 @@ from ...internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTY
 from ...internal.eventutil   import *
 from ...utilities.exceptions import *
 
-# Tweak package name by removing last level, for instance:
-# agi.stk12.stkobjects.aviator.aviator -> agi.stk12.stkobjects.aviator
-__name__ = __name__.rsplit('.', 1)[0]
-
 
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")

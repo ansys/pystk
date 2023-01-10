@@ -165,7 +165,6 @@ from .internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTYPE
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 
-
 from .stkutil import *
 from .vgt import *
 
@@ -6046,7 +6045,7 @@ class IAgStkGraphicsAxesPrimitive(object):
 
     @property
     def PersistenceDuration(self) -> float:
-        """Gets or Sets the maximum length (in seconds) of the persistence path."""
+        """Gets or Sets the maximum duration of the persistence path."""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetPersistenceDuration"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -16990,7 +16989,7 @@ class IAgStkGraphicsVectorPrimitive(object):
 
     @property
     def PersistenceDuration(self) -> float:
-        """Gets or Sets the maximum length (in seconds) of the persistence path."""
+        """Gets or Sets the maximum duration of the persistence path."""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetPersistenceDuration"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
