@@ -30,7 +30,6 @@ from ..internal.eventutil   import *
 from ..utilities.exceptions import *
 
 
-
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 

@@ -168,7 +168,6 @@ from .internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTYPE
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 
-
 from .stkutil import *
 
 
@@ -3610,16 +3609,16 @@ class IAgCrdnEventIntervalListGroup(object):
     def GetItemByIndex(self, index:int) -> "IAgCrdnEventIntervalList":
         """Retrieves an event interval list from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnEventIntervalList":
         """Retrieves an event interval list from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -3739,16 +3738,16 @@ class IAgCrdnEventArrayGroup(object):
     def GetItemByIndex(self, index:int) -> "IAgCrdnEventArray":
         """Retrieves an event array from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnEventArray":
         """Retrieves an event array from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -3997,16 +3996,16 @@ class IAgCrdnEventIntervalCollectionGroup(object):
     def GetItemByIndex(self, index:int) -> "IAgCrdnEventIntervalCollection":
         """Retrieves an event interval from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnEventIntervalCollection":
         """Retrieves an event interval from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -4124,18 +4123,18 @@ class IAgCrdnParameterSetGroup(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgCrdnParameterSet":
-        """Retrieves an item from the collection by index."""
+        """Retrieves an element from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnParameterSet":
-        """Retrieves an item from the collection by name."""
+        """Retrieves an element from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -4255,16 +4254,16 @@ class IAgCrdnConditionGroup(object):
     def GetItemByIndex(self, index:int) -> "IAgCrdnCondition":
         """Retrieves a condition from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnCondition":
         """Retrieves a condition from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -4384,16 +4383,16 @@ class IAgCrdnConditionSetGroup(object):
     def GetItemByIndex(self, index:int) -> "IAgCrdnConditionSet":
         """Retrieves a condition set from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnConditionSet":
         """Retrieves a condition set from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -4628,16 +4627,16 @@ class IAgCrdnVolumeGridGroup(object):
     def GetItemByIndex(self, index:int) -> "IAgCrdnVolumeGrid":
         """Retrieves a volume grid from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppval:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppval.COM_val)))
-            return arg_ppval.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnVolumeGrid":
         """Retrieves a volume grid from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -4755,18 +4754,18 @@ class IAgCrdnVolumeGroup(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgCrdnVolume":
-        """Retrieves volume from the collection by index."""
+        """Retrieves an volume from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnVolume":
         """Retrieves volume from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -4886,16 +4885,16 @@ class IAgCrdnVolumeCalcGroup(object):
     def GetItemByIndex(self, index:int) -> "IAgCrdnVolumeCalc":
         """Retrieves a volume calculation from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnVolumeCalc":
         """Retrieves a volume calculation from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -11037,7 +11036,7 @@ agcls.AgTypeNameMap["IAgCrdnEventIntervalListFixed"] = IAgCrdnEventIntervalListF
 class IAgCrdnEventIntervalListMerged(object):
     """Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents."""
     _uuid = "{78E1CE61-5B2E-4A10-894D-A006F35ACDE1}"
-    _num_methods = 8
+    _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -11049,6 +11048,13 @@ class IAgCrdnEventIntervalListMerged(object):
         self.__dict__["_SetIntervalA"] = _raise_uninitialized_error
         self.__dict__["_SetIntervalListB"] = _raise_uninitialized_error
         self.__dict__["_SetIntervalB"] = _raise_uninitialized_error
+        self.__dict__["_AddInterval"] = _raise_uninitialized_error
+        self.__dict__["_AddIntervalList"] = _raise_uninitialized_error
+        self.__dict__["_SetInterval"] = _raise_uninitialized_error
+        self.__dict__["_SetIntervalList"] = _raise_uninitialized_error
+        self.__dict__["_GetTimeComponent"] = _raise_uninitialized_error
+        self.__dict__["_GetTimeComponentSize"] = _raise_uninitialized_error
+        self.__dict__["_RemoveTimeComponent"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCrdnEventIntervalListMerged._uuid))
             if pUnk is not None:
@@ -11068,6 +11074,13 @@ class IAgCrdnEventIntervalListMerged(object):
         self.__dict__["_SetIntervalA"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+6, agcom.PVOID)
         self.__dict__["_SetIntervalListB"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+7, agcom.PVOID)
         self.__dict__["_SetIntervalB"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+8, agcom.PVOID)
+        self.__dict__["_AddInterval"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+9, agcom.PVOID)
+        self.__dict__["_AddIntervalList"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+10, agcom.PVOID)
+        self.__dict__["_SetInterval"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+11, agcom.PVOID, agcom.INT)
+        self.__dict__["_SetIntervalList"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+12, agcom.PVOID, agcom.INT)
+        self.__dict__["_GetTimeComponent"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+13, agcom.INT, POINTER(agcom.BSTR))
+        self.__dict__["_GetTimeComponentSize"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+14, POINTER(agcom.INT))
+        self.__dict__["_RemoveTimeComponent"] = IAGFUNCTYPE(pUnk, IID_IAgCrdnEventIntervalListMerged, vtable_offset_local+15, agcom.INT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -11126,6 +11139,46 @@ class IAgCrdnEventIntervalListMerged(object):
         """Sets the interval B."""
         with agmarshall.AgInterface_in_arg(refIntervals, IAgCrdnEventInterval) as arg_refIntervals:
             agcls.evaluate_hresult(self.__dict__["_SetIntervalB"](arg_refIntervals.COM_val))
+
+    def AddInterval(self, refIntervals:"IAgCrdnEventInterval") -> None:
+        """Add interval."""
+        with agmarshall.AgInterface_in_arg(refIntervals, IAgCrdnEventInterval) as arg_refIntervals:
+            agcls.evaluate_hresult(self.__dict__["_AddInterval"](arg_refIntervals.COM_val))
+
+    def AddIntervalList(self, refIntervals:"IAgCrdnEventIntervalList") -> None:
+        """Add interval list."""
+        with agmarshall.AgInterface_in_arg(refIntervals, IAgCrdnEventIntervalList) as arg_refIntervals:
+            agcls.evaluate_hresult(self.__dict__["_AddIntervalList"](arg_refIntervals.COM_val))
+
+    def SetInterval(self, refIntervals:"IAgCrdnEventInterval", pos:int) -> None:
+        """Sets the interval at given index."""
+        with agmarshall.AgInterface_in_arg(refIntervals, IAgCrdnEventInterval) as arg_refIntervals, \
+             agmarshall.INT_arg(pos) as arg_pos:
+            agcls.evaluate_hresult(self.__dict__["_SetInterval"](arg_refIntervals.COM_val, arg_pos.COM_val))
+
+    def SetIntervalList(self, refIntervals:"IAgCrdnEventIntervalList", pos:int) -> None:
+        """Sets the interval list at given index."""
+        with agmarshall.AgInterface_in_arg(refIntervals, IAgCrdnEventIntervalList) as arg_refIntervals, \
+             agmarshall.INT_arg(pos) as arg_pos:
+            agcls.evaluate_hresult(self.__dict__["_SetIntervalList"](arg_refIntervals.COM_val, arg_pos.COM_val))
+
+    def GetTimeComponent(self, pos:int) -> str:
+        """Gets time component at given position."""
+        with agmarshall.INT_arg(pos) as arg_pos, \
+             agmarshall.BSTR_arg() as arg_pRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetTimeComponent"](arg_pos.COM_val, byref(arg_pRetVal.COM_val)))
+            return arg_pRetVal.python_val
+
+    def GetTimeComponentSize(self) -> int:
+        """Gets time component list size."""
+        with agmarshall.INT_arg() as arg_pRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetTimeComponentSize"](byref(arg_pRetVal.COM_val)))
+            return arg_pRetVal.python_val
+
+    def RemoveTimeComponent(self, pos:int) -> None:
+        """Remove time component at given position."""
+        with agmarshall.INT_arg(pos) as arg_pos:
+            agcls.evaluate_hresult(self.__dict__["_RemoveTimeComponent"](arg_pos.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{78E1CE61-5B2E-4A10-894D-A006F35ACDE1}", IAgCrdnEventIntervalListMerged)
@@ -15436,7 +15489,7 @@ class IAgCrdnVolumeCalcConditionSatMetric(object):
 
     @property
     def SatisfactionMetric(self) -> "AgECrdnVolumeCalcVolumeSatisfactionMetricType":
-        """Sspatial condition satisfaction metric types."""
+        """Spatial condition satisfaction metric types."""
         with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionMetricType) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetSatisfactionMetric"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24837,16 +24890,16 @@ class IAgCrdnAngleGroup(object):
     def GetItemByIndex(self, index:int) -> "IAgCrdnAngle":
         """Retrieves an angle from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnAngle":
         """Retrieves an angle from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
-            return arg_ppVal.python_val
+             agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
 
     __getitem__ = Item
 
@@ -25240,14 +25293,14 @@ class IAgCrdnSystemGroup(object):
             return arg_ppRetVal.python_val
 
     def GetItemByIndex(self, index:int) -> "IAgCrdnSystem":
-        """Retrieve a system from the collection by index."""
+        """Retrieves a system from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def GetItemByName(self, name:str) -> "IAgCrdnSystem":
-        """Retrieve a system from the collection by name."""
+        """Retrieves a system from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))

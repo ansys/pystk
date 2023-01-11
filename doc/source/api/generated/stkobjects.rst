@@ -1148,6 +1148,14 @@ Interfaces
     IAgVmVOSpatialCalculationLevel
     IAgSatelliteCollection
     IAgSubset
+    IAgAdvCATAvailableObjectCollection
+    IAgAdvCATChosenObjectCollection
+    IAgAdvCATPreFilters
+    IAgAdvCATAdvEllipsoid
+    IAgAdvCATAdvanced
+    IAgAdvCATVO
+    IAgAdvCAT
+    IAgAdvCATChosenObject
     IAgStkObjectChangedEventArgs
     IAgScenarioBeforeSaveEventArgs
     IAgPctCmpltEventArgs
@@ -1392,6 +1400,9 @@ Enumerations
     AgELOPAtmosphericDensityModel
     AgELowAltAtmosphericDensityModel
     AgEEphemExportToolFileFormat
+    AgEAdvCATEllipsoidClass
+    AgEAdvCATConjunctionType
+    AgEAdvCATSecondaryEllipsoidsVisibilityType
     AgEComponentLinkEmbedControlReferenceType
     AgESwathComputationalMethod
     AgEClassicalLocation
@@ -2640,6 +2651,14 @@ Classes
     AgStkObjectCutCopyPasteEventArgs
     AgStkPreferencesPythonPlugins
     AgPathCollection
+    AgAdvCAT
+    AgAdvCATAvailableObjectCollection
+    AgAdvCATChosenObject
+    AgAdvCATChosenObjectCollection
+    AgAdvCATPreFilters
+    AgAdvCATAdvEllipsoid
+    AgAdvCATAdvanced
+    AgAdvCATVO
 
 
 Reference
@@ -6065,6 +6084,30 @@ Interfaces
 .. autoclass:: IAgSubset
     :members:
     :exclude-members: __init__
+.. autoclass:: IAgAdvCATAvailableObjectCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgAdvCATChosenObjectCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgAdvCATPreFilters
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgAdvCATAdvEllipsoid
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgAdvCATAdvanced
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgAdvCATVO
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgAdvCAT
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgAdvCATChosenObject
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IAgStkObjectChangedEventArgs
     :members:
     :exclude-members: __init__
@@ -6548,6 +6591,12 @@ Enumerations
 .. autoenum:: AgELowAltAtmosphericDensityModel
     :members:
 .. autoenum:: AgEEphemExportToolFileFormat
+    :members:
+.. autoenum:: AgEAdvCATEllipsoidClass
+    :members:
+.. autoenum:: AgEAdvCATConjunctionType
+    :members:
+.. autoenum:: AgEAdvCATSecondaryEllipsoidsVisibilityType
     :members:
 .. autoenum:: AgEComponentLinkEmbedControlReferenceType
     :members:
@@ -10162,6 +10211,30 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: AgPathCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgAdvCAT
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgAdvCATAvailableObjectCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgAdvCATChosenObject
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgAdvCATChosenObjectCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgAdvCATPreFilters
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgAdvCATAdvEllipsoid
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgAdvCATAdvanced
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgAdvCATVO
     :members:
     :exclude-members: __init__
 
