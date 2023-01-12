@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "ansys-stk-core"
-version = "0.1.dev0"
+dynamic = ["version"]
 description = "A Python API for STK"
 readme = "README.rst"
 requires-python = ">=3.6"
@@ -23,7 +23,6 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "importlib-metadata >=4.0",
 ]
 
 [project.optional-dependencies]
