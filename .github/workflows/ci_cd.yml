@@ -51,11 +51,11 @@ jobs:
   doc-deploy-dev:
     name: "Deploy developers documentation"
     runs-on: ubuntu-latest
-    # if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
+    if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
     needs: doc-build
     steps:
       - name: "Deploy development documentation"
-        uses: pyansys/actions/doc-deploy-dev@v3
+        uses: pyansys/actions/doc-deploy-dev@v2.0.7
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
