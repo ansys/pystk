@@ -51,7 +51,7 @@ jobs:
   doc-deploy-dev:
     name: "Deploy developers documentation"
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
+    # if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
     needs: doc-build
     steps:
       - name: "Deploy development documentation"
