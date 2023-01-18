@@ -55,7 +55,7 @@ jobs:
     needs: doc-build
     steps:
       - name: "Deploy development documentation"
-        uses: pyansys/actions/doc-deploy-dev@v3
+        uses: pyansys/actions/doc-deploy-dev@v2.0.7
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
