@@ -12,7 +12,7 @@ env:
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
-
+  STK_DOCKER_IMAGE_NAME: 'ansys/stk/stk-python'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -73,18 +73,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   tests:
-    name: "Test Python ${{ matrix.cfg.python-version }} in ${{ matrix.os }} "
-    runs-on: ${{ matrix.os }}
-    needs: code-style
+    name: "Test using Python ${{ matrix.python }}"
+    runs-on: [self-hosted, pystk]
+    #needs: code-style
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
-        cfg:
-          - {python-version: '3.7', extra-args: ''}
-          - {python-version: '3.8', extra-args: ''}
-          - {python-version: '3.9', extra-args: ''}
-          - {python-version: '3.10', extra-args: '--cov=ansys.stk --cov-report=term --cov-report=html:.cov/html'}
-
+        python: ['3.7', '3.8', '3.9', '3.10']
       fail-fast: false
     steps:
 
@@ -94,13 +88,21 @@ jobs:
           python-version: ${{ matrix.cfg.python-version }}
           pytest-extra-args: ${{ matrix.cfg.extra-args }}
 
-      - name: "Upload coverage results"
-        uses: actions/upload-artifact@v3
-        if: matrix.cfg.python-version == env.MAIN_PYTHON_VERSION && matrix.os == 'ubuntu-latest'
-        with:
-          name: coverage-html
-          path: .cov/html
-          retention-days: 7
+      - name: "Show the project structure"
+        run: |
+          ls -R
+
+      - name: "Start the STK container with Python ${{ matrix.python }}"
+        run: |
+            echo "${{ env.STK_DOCKER_IMAGE_NAME }}-${{ matrix.python }}"
+
+      # - name: "Upload coverage results"
+      #   uses: actions/upload-artifact@v3
+      #   if: matrix.python == env.MAIN_PYTHON_VERSION
+      #   with:
+      #     name: coverage-html
+      #     path: .cov/html
+      #     retention-days: 7
 
   build-library:
     name: "Build library artifacts"
