@@ -61,10 +61,9 @@ select = [
     "I"   # isort, see 
 ]
 ignore = [
-    "E501",  # Line too long
-    "D204"  # One blank line required after class docstring
+    "E501",  # Line too long. Ignoring this so "black" manages line length.
+    "D204"  # One blank line required after class docstring.
 ]
-line-length = 120
 exclude = [
     ".git",
     ".tox",
