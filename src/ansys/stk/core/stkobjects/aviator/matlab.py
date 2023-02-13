@@ -2,9 +2,8 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgAvtrBasicManeuverMATLABFactory", "AgAvtrStrategyMATLAB3DGuidance", "AgAvtrStrategyMATLABFull3D", "AgAvtrStrategyMATLABNav", 
-"AgAvtrStrategyMATLABProfile", "IAgAvtrStrategyMATLAB3DGuidance", "IAgAvtrStrategyMATLABFull3D", "IAgAvtrStrategyMATLABNav", 
-"IAgAvtrStrategyMATLABProfile"]
+__all__ = ["AvtrBasicManeuverMATLABFactory", "AvtrStrategyMATLAB3DGuidance", "AvtrStrategyMATLABFull3D", "AvtrStrategyMATLABNav", 
+"AvtrStrategyMATLABProfile", "IAvtrStrategyMATLAB3DGuidance", "IAvtrStrategyMATLABFull3D", "IAvtrStrategyMATLABNav", "IAvtrStrategyMATLABProfile"]
 
 import typing
 
@@ -37,7 +36,7 @@ from ...stkobjects.aviator import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class IAgAvtrStrategyMATLABNav(object):
+class IAvtrStrategyMATLABNav(object):
     """Interface used to access options for a MATLAB - Horizontal Plane Strategy of a Basic Maneuver Procedure."""
     _uuid = "{e53fcce4-1a17-488d-9053-c236d27b8b6e}"
     _num_methods = 7
@@ -52,35 +51,35 @@ class IAgAvtrStrategyMATLABNav(object):
         self.__dict__["_GetDisplayOutput"] = _raise_uninitialized_error
         self.__dict__["_SetDisplayOutput"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgAvtrStrategyMATLABNav._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAvtrStrategyMATLABNav._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgAvtrStrategyMATLABNav from source object.")
+                raise STKInvalidCastError("Failed to create IAvtrStrategyMATLABNav from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgAvtrStrategyMATLABNav = agcom.GUID(IAgAvtrStrategyMATLABNav._uuid)
-        vtable_offset_local = IAgAvtrStrategyMATLABNav._vtable_offset - 1
-        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+5, agcom.VARIANT_BOOL)
-        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABNav, vtable_offset_local+7, agcom.VARIANT_BOOL)
+        IID_IAvtrStrategyMATLABNav = agcom.GUID(IAvtrStrategyMATLABNav._uuid)
+        vtable_offset_local = IAvtrStrategyMATLABNav._vtable_offset - 1
+        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABNav, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABNav, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABNav, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABNav, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABNav, vtable_offset_local+5, agcom.VARIANT_BOOL)
+        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABNav, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABNav, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgAvtrStrategyMATLABNav.__dict__ and type(IAgAvtrStrategyMATLABNav.__dict__[attrname]) == property:
-            return IAgAvtrStrategyMATLABNav.__dict__[attrname]
+        if attrname in IAvtrStrategyMATLABNav.__dict__ and type(IAvtrStrategyMATLABNav.__dict__[attrname]) == property:
+            return IAvtrStrategyMATLABNav.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgAvtrStrategyMATLABNav.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAvtrStrategyMATLABNav.")
     
     @property
     def FunctionName(self) -> str:
@@ -128,10 +127,10 @@ class IAgAvtrStrategyMATLABNav(object):
             agcls.evaluate_hresult(self.__dict__["_SetDisplayOutput"](arg_newVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{e53fcce4-1a17-488d-9053-c236d27b8b6e}", IAgAvtrStrategyMATLABNav)
-agcls.AgTypeNameMap["IAgAvtrStrategyMATLABNav"] = IAgAvtrStrategyMATLABNav
+agcls.AgClassCatalog.add_catalog_entry("{e53fcce4-1a17-488d-9053-c236d27b8b6e}", IAvtrStrategyMATLABNav)
+agcls.AgTypeNameMap["IAvtrStrategyMATLABNav"] = IAvtrStrategyMATLABNav
 
-class IAgAvtrStrategyMATLABProfile(object):
+class IAvtrStrategyMATLABProfile(object):
     """Interface used to access options for a MATLAB - Vertical Plane Strategy of a Basic Maneuver Procedure."""
     _uuid = "{c5c0a490-9e7d-4ff9-95e9-9c10ed89500b}"
     _num_methods = 7
@@ -146,35 +145,35 @@ class IAgAvtrStrategyMATLABProfile(object):
         self.__dict__["_GetDisplayOutput"] = _raise_uninitialized_error
         self.__dict__["_SetDisplayOutput"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgAvtrStrategyMATLABProfile._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAvtrStrategyMATLABProfile._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgAvtrStrategyMATLABProfile from source object.")
+                raise STKInvalidCastError("Failed to create IAvtrStrategyMATLABProfile from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgAvtrStrategyMATLABProfile = agcom.GUID(IAgAvtrStrategyMATLABProfile._uuid)
-        vtable_offset_local = IAgAvtrStrategyMATLABProfile._vtable_offset - 1
-        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+5, agcom.VARIANT_BOOL)
-        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABProfile, vtable_offset_local+7, agcom.VARIANT_BOOL)
+        IID_IAvtrStrategyMATLABProfile = agcom.GUID(IAvtrStrategyMATLABProfile._uuid)
+        vtable_offset_local = IAvtrStrategyMATLABProfile._vtable_offset - 1
+        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABProfile, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABProfile, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABProfile, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABProfile, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABProfile, vtable_offset_local+5, agcom.VARIANT_BOOL)
+        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABProfile, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABProfile, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgAvtrStrategyMATLABProfile.__dict__ and type(IAgAvtrStrategyMATLABProfile.__dict__[attrname]) == property:
-            return IAgAvtrStrategyMATLABProfile.__dict__[attrname]
+        if attrname in IAvtrStrategyMATLABProfile.__dict__ and type(IAvtrStrategyMATLABProfile.__dict__[attrname]) == property:
+            return IAvtrStrategyMATLABProfile.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgAvtrStrategyMATLABProfile.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAvtrStrategyMATLABProfile.")
     
     @property
     def FunctionName(self) -> str:
@@ -222,10 +221,10 @@ class IAgAvtrStrategyMATLABProfile(object):
             agcls.evaluate_hresult(self.__dict__["_SetDisplayOutput"](arg_newVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{c5c0a490-9e7d-4ff9-95e9-9c10ed89500b}", IAgAvtrStrategyMATLABProfile)
-agcls.AgTypeNameMap["IAgAvtrStrategyMATLABProfile"] = IAgAvtrStrategyMATLABProfile
+agcls.AgClassCatalog.add_catalog_entry("{c5c0a490-9e7d-4ff9-95e9-9c10ed89500b}", IAvtrStrategyMATLABProfile)
+agcls.AgTypeNameMap["IAvtrStrategyMATLABProfile"] = IAvtrStrategyMATLABProfile
 
-class IAgAvtrStrategyMATLABFull3D(object):
+class IAvtrStrategyMATLABFull3D(object):
     """Interface used to access options for a MATLAB - Full 3D Strategy of a Basic Maneuver Procedure."""
     _uuid = "{eb6b432e-50fc-4546-9d4b-a4285ae96a9d}"
     _num_methods = 7
@@ -240,35 +239,35 @@ class IAgAvtrStrategyMATLABFull3D(object):
         self.__dict__["_GetDisplayOutput"] = _raise_uninitialized_error
         self.__dict__["_SetDisplayOutput"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgAvtrStrategyMATLABFull3D._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAvtrStrategyMATLABFull3D._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgAvtrStrategyMATLABFull3D from source object.")
+                raise STKInvalidCastError("Failed to create IAvtrStrategyMATLABFull3D from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgAvtrStrategyMATLABFull3D = agcom.GUID(IAgAvtrStrategyMATLABFull3D._uuid)
-        vtable_offset_local = IAgAvtrStrategyMATLABFull3D._vtable_offset - 1
-        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+5, agcom.VARIANT_BOOL)
-        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLABFull3D, vtable_offset_local+7, agcom.VARIANT_BOOL)
+        IID_IAvtrStrategyMATLABFull3D = agcom.GUID(IAvtrStrategyMATLABFull3D._uuid)
+        vtable_offset_local = IAvtrStrategyMATLABFull3D._vtable_offset - 1
+        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABFull3D, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABFull3D, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABFull3D, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABFull3D, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABFull3D, vtable_offset_local+5, agcom.VARIANT_BOOL)
+        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABFull3D, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLABFull3D, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgAvtrStrategyMATLABFull3D.__dict__ and type(IAgAvtrStrategyMATLABFull3D.__dict__[attrname]) == property:
-            return IAgAvtrStrategyMATLABFull3D.__dict__[attrname]
+        if attrname in IAvtrStrategyMATLABFull3D.__dict__ and type(IAvtrStrategyMATLABFull3D.__dict__[attrname]) == property:
+            return IAvtrStrategyMATLABFull3D.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgAvtrStrategyMATLABFull3D.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAvtrStrategyMATLABFull3D.")
     
     @property
     def FunctionName(self) -> str:
@@ -316,10 +315,10 @@ class IAgAvtrStrategyMATLABFull3D(object):
             agcls.evaluate_hresult(self.__dict__["_SetDisplayOutput"](arg_newVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{eb6b432e-50fc-4546-9d4b-a4285ae96a9d}", IAgAvtrStrategyMATLABFull3D)
-agcls.AgTypeNameMap["IAgAvtrStrategyMATLABFull3D"] = IAgAvtrStrategyMATLABFull3D
+agcls.AgClassCatalog.add_catalog_entry("{eb6b432e-50fc-4546-9d4b-a4285ae96a9d}", IAvtrStrategyMATLABFull3D)
+agcls.AgTypeNameMap["IAvtrStrategyMATLABFull3D"] = IAvtrStrategyMATLABFull3D
 
-class IAgAvtrStrategyMATLAB3DGuidance(object):
+class IAvtrStrategyMATLAB3DGuidance(object):
     """Interface used to access options for a MATLAB - 3D Guidance Strategy of a Basic Maneuver Procedure."""
     _uuid = "{fa4719ee-da5b-4845-af69-09ce61f4109e}"
     _num_methods = 27
@@ -354,55 +353,55 @@ class IAgAvtrStrategyMATLAB3DGuidance(object):
         self.__dict__["_SetComputeTASDot"] = _raise_uninitialized_error
         self.__dict__["_GetAirspeedOptions"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgAvtrStrategyMATLAB3DGuidance._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAvtrStrategyMATLAB3DGuidance._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgAvtrStrategyMATLAB3DGuidance from source object.")
+                raise STKInvalidCastError("Failed to create IAvtrStrategyMATLAB3DGuidance from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgAvtrStrategyMATLAB3DGuidance = agcom.GUID(IAgAvtrStrategyMATLAB3DGuidance._uuid)
-        vtable_offset_local = IAgAvtrStrategyMATLAB3DGuidance._vtable_offset - 1
-        self.__dict__["_GetTargetName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetTargetName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_GetValidTargetNames"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+3, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_GetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+5, agcom.DOUBLE)
-        self.__dict__["_GetUseStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+8, agcom.VARIANT_BOOL, agcom.DOUBLE)
-        self.__dict__["_GetUseStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+9, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+10, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+11, agcom.VARIANT_BOOL, agcom.DOUBLE)
-        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+12, POINTER(agcom.BSTR))
-        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+13, agcom.BSTR)
-        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+14, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+15, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+16, agcom.VARIANT_BOOL)
-        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+18, agcom.VARIANT_BOOL)
-        self.__dict__["_GetClosureMode"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+19, POINTER(agcom.LONG))
-        self.__dict__["_SetClosureMode"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+20, agcom.LONG)
-        self.__dict__["_GetHOBSMaxAngle"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+21, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHOBSMaxAngle"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+22, agcom.VARIANT)
-        self.__dict__["_GetHOBSAngleTol"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+23, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHOBSAngleTol"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+24, agcom.VARIANT)
-        self.__dict__["_GetComputeTASDot"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+25, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetComputeTASDot"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+26, agcom.VARIANT_BOOL)
-        self.__dict__["_GetAirspeedOptions"] = IAGFUNCTYPE(pUnk, IID_IAgAvtrStrategyMATLAB3DGuidance, vtable_offset_local+27, POINTER(agcom.PVOID))
+        IID_IAvtrStrategyMATLAB3DGuidance = agcom.GUID(IAvtrStrategyMATLAB3DGuidance._uuid)
+        vtable_offset_local = IAvtrStrategyMATLAB3DGuidance._vtable_offset - 1
+        self.__dict__["_GetTargetName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_SetTargetName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_GetValidTargetNames"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+3, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_GetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+5, agcom.DOUBLE)
+        self.__dict__["_GetUseStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+8, agcom.VARIANT_BOOL, agcom.DOUBLE)
+        self.__dict__["_GetUseStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+9, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+10, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+11, agcom.VARIANT_BOOL, agcom.DOUBLE)
+        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+12, POINTER(agcom.BSTR))
+        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+13, agcom.BSTR)
+        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+14, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+15, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+16, agcom.VARIANT_BOOL)
+        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+18, agcom.VARIANT_BOOL)
+        self.__dict__["_GetClosureMode"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+19, POINTER(agcom.LONG))
+        self.__dict__["_SetClosureMode"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+20, agcom.LONG)
+        self.__dict__["_GetHOBSMaxAngle"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+21, POINTER(agcom.VARIANT))
+        self.__dict__["_SetHOBSMaxAngle"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+22, agcom.VARIANT)
+        self.__dict__["_GetHOBSAngleTol"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+23, POINTER(agcom.VARIANT))
+        self.__dict__["_SetHOBSAngleTol"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+24, agcom.VARIANT)
+        self.__dict__["_GetComputeTASDot"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+25, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetComputeTASDot"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+26, agcom.VARIANT_BOOL)
+        self.__dict__["_GetAirspeedOptions"] = IAGFUNCTYPE(pUnk, IID_IAvtrStrategyMATLAB3DGuidance, vtable_offset_local+27, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgAvtrStrategyMATLAB3DGuidance.__dict__ and type(IAgAvtrStrategyMATLAB3DGuidance.__dict__[attrname]) == property:
-            return IAgAvtrStrategyMATLAB3DGuidance.__dict__[attrname]
+        if attrname in IAvtrStrategyMATLAB3DGuidance.__dict__ and type(IAvtrStrategyMATLAB3DGuidance.__dict__[attrname]) == property:
+            return IAvtrStrategyMATLAB3DGuidance.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgAvtrStrategyMATLAB3DGuidance.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAvtrStrategyMATLAB3DGuidance.")
     
     @property
     def TargetName(self) -> str:
@@ -575,133 +574,133 @@ class IAgAvtrStrategyMATLAB3DGuidance(object):
             agcls.evaluate_hresult(self.__dict__["_SetComputeTASDot"](arg_newVal.COM_val))
 
     @property
-    def AirspeedOptions(self) -> "IAgAvtrBasicManeuverAirspeedOptions":
+    def AirspeedOptions(self) -> "IAvtrBasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAirspeedOptions"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{fa4719ee-da5b-4845-af69-09ce61f4109e}", IAgAvtrStrategyMATLAB3DGuidance)
-agcls.AgTypeNameMap["IAgAvtrStrategyMATLAB3DGuidance"] = IAgAvtrStrategyMATLAB3DGuidance
+agcls.AgClassCatalog.add_catalog_entry("{fa4719ee-da5b-4845-af69-09ce61f4109e}", IAvtrStrategyMATLAB3DGuidance)
+agcls.AgTypeNameMap["IAvtrStrategyMATLAB3DGuidance"] = IAvtrStrategyMATLAB3DGuidance
 
 
 
-class AgAvtrStrategyMATLABNav(IAgAvtrStrategyMATLABNav, IAgAvtrBasicManeuverStrategy):
+class AvtrStrategyMATLABNav(IAvtrStrategyMATLABNav, IAvtrBasicManeuverStrategy):
     """Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
-        IAgAvtrStrategyMATLABNav.__init__(self, sourceObject)
-        IAgAvtrBasicManeuverStrategy.__init__(self, sourceObject)
+        IAvtrStrategyMATLABNav.__init__(self, sourceObject)
+        IAvtrBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgAvtrStrategyMATLABNav._private_init(self, pUnk)
-        IAgAvtrBasicManeuverStrategy._private_init(self, pUnk)
+        IAvtrStrategyMATLABNav._private_init(self, pUnk)
+        IAvtrBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgAvtrStrategyMATLABNav._get_property(self, attrname) is not None: found_prop = IAgAvtrStrategyMATLABNav._get_property(self, attrname)
-        if IAgAvtrBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IAgAvtrBasicManeuverStrategy._get_property(self, attrname)
+        if IAvtrStrategyMATLABNav._get_property(self, attrname) is not None: found_prop = IAvtrStrategyMATLABNav._get_property(self, attrname)
+        if IAvtrBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IAvtrBasicManeuverStrategy._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrStrategyMATLABNav.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in AvtrStrategyMATLABNav.")
         
-agcls.AgClassCatalog.add_catalog_entry("{4447B282-8834-4451-8CD8-0A3168015B45}", AgAvtrStrategyMATLABNav)
+agcls.AgClassCatalog.add_catalog_entry("{4447B282-8834-4451-8CD8-0A3168015B45}", AvtrStrategyMATLABNav)
 
 
-class AgAvtrStrategyMATLABProfile(IAgAvtrStrategyMATLABProfile, IAgAvtrBasicManeuverStrategy):
+class AvtrStrategyMATLABProfile(IAvtrStrategyMATLABProfile, IAvtrBasicManeuverStrategy):
     """Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
-        IAgAvtrStrategyMATLABProfile.__init__(self, sourceObject)
-        IAgAvtrBasicManeuverStrategy.__init__(self, sourceObject)
+        IAvtrStrategyMATLABProfile.__init__(self, sourceObject)
+        IAvtrBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgAvtrStrategyMATLABProfile._private_init(self, pUnk)
-        IAgAvtrBasicManeuverStrategy._private_init(self, pUnk)
+        IAvtrStrategyMATLABProfile._private_init(self, pUnk)
+        IAvtrBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgAvtrStrategyMATLABProfile._get_property(self, attrname) is not None: found_prop = IAgAvtrStrategyMATLABProfile._get_property(self, attrname)
-        if IAgAvtrBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IAgAvtrBasicManeuverStrategy._get_property(self, attrname)
+        if IAvtrStrategyMATLABProfile._get_property(self, attrname) is not None: found_prop = IAvtrStrategyMATLABProfile._get_property(self, attrname)
+        if IAvtrBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IAvtrBasicManeuverStrategy._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrStrategyMATLABProfile.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in AvtrStrategyMATLABProfile.")
         
-agcls.AgClassCatalog.add_catalog_entry("{1bf89982-311b-4b61-ba17-00881de09863}", AgAvtrStrategyMATLABProfile)
+agcls.AgClassCatalog.add_catalog_entry("{1bf89982-311b-4b61-ba17-00881de09863}", AvtrStrategyMATLABProfile)
 
 
-class AgAvtrStrategyMATLABFull3D(IAgAvtrStrategyMATLABFull3D, IAgAvtrBasicManeuverStrategy):
+class AvtrStrategyMATLABFull3D(IAvtrStrategyMATLABFull3D, IAvtrBasicManeuverStrategy):
     """Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
-        IAgAvtrStrategyMATLABFull3D.__init__(self, sourceObject)
-        IAgAvtrBasicManeuverStrategy.__init__(self, sourceObject)
+        IAvtrStrategyMATLABFull3D.__init__(self, sourceObject)
+        IAvtrBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgAvtrStrategyMATLABFull3D._private_init(self, pUnk)
-        IAgAvtrBasicManeuverStrategy._private_init(self, pUnk)
+        IAvtrStrategyMATLABFull3D._private_init(self, pUnk)
+        IAvtrBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgAvtrStrategyMATLABFull3D._get_property(self, attrname) is not None: found_prop = IAgAvtrStrategyMATLABFull3D._get_property(self, attrname)
-        if IAgAvtrBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IAgAvtrBasicManeuverStrategy._get_property(self, attrname)
+        if IAvtrStrategyMATLABFull3D._get_property(self, attrname) is not None: found_prop = IAvtrStrategyMATLABFull3D._get_property(self, attrname)
+        if IAvtrBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IAvtrBasicManeuverStrategy._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrStrategyMATLABFull3D.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in AvtrStrategyMATLABFull3D.")
         
-agcls.AgClassCatalog.add_catalog_entry("{7fdf8025-0f64-4f1a-9c12-8275051354d4}", AgAvtrStrategyMATLABFull3D)
+agcls.AgClassCatalog.add_catalog_entry("{7fdf8025-0f64-4f1a-9c12-8275051354d4}", AvtrStrategyMATLABFull3D)
 
 
-class AgAvtrStrategyMATLAB3DGuidance(IAgAvtrStrategyMATLAB3DGuidance, IAgAvtrBasicManeuverStrategy):
+class AvtrStrategyMATLAB3DGuidance(IAvtrStrategyMATLAB3DGuidance, IAvtrBasicManeuverStrategy):
     """Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
-        IAgAvtrStrategyMATLAB3DGuidance.__init__(self, sourceObject)
-        IAgAvtrBasicManeuverStrategy.__init__(self, sourceObject)
+        IAvtrStrategyMATLAB3DGuidance.__init__(self, sourceObject)
+        IAvtrBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgAvtrStrategyMATLAB3DGuidance._private_init(self, pUnk)
-        IAgAvtrBasicManeuverStrategy._private_init(self, pUnk)
+        IAvtrStrategyMATLAB3DGuidance._private_init(self, pUnk)
+        IAvtrBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgAvtrStrategyMATLAB3DGuidance._get_property(self, attrname) is not None: found_prop = IAgAvtrStrategyMATLAB3DGuidance._get_property(self, attrname)
-        if IAgAvtrBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IAgAvtrBasicManeuverStrategy._get_property(self, attrname)
+        if IAvtrStrategyMATLAB3DGuidance._get_property(self, attrname) is not None: found_prop = IAvtrStrategyMATLAB3DGuidance._get_property(self, attrname)
+        if IAvtrBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IAvtrBasicManeuverStrategy._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrStrategyMATLAB3DGuidance.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in AvtrStrategyMATLAB3DGuidance.")
         
-agcls.AgClassCatalog.add_catalog_entry("{c90db66d-a2fa-4474-9c21-2e8f61b93fad}", AgAvtrStrategyMATLAB3DGuidance)
+agcls.AgClassCatalog.add_catalog_entry("{c90db66d-a2fa-4474-9c21-2e8f61b93fad}", AvtrStrategyMATLAB3DGuidance)
 
 
-class AgAvtrBasicManeuverMATLABFactory(IAgAvtrAutomationStrategyFactory):
+class AvtrBasicManeuverMATLABFactory(IAvtrAutomationStrategyFactory):
     """Class defining the factory to create the basic maneuver PropNav strategies."""
     def __init__(self, sourceObject=None):
-        IAgAvtrAutomationStrategyFactory.__init__(self, sourceObject)
+        IAvtrAutomationStrategyFactory.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgAvtrAutomationStrategyFactory._private_init(self, pUnk)
+        IAvtrAutomationStrategyFactory._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgAvtrAutomationStrategyFactory._get_property(self, attrname) is not None: found_prop = IAgAvtrAutomationStrategyFactory._get_property(self, attrname)
+        if IAvtrAutomationStrategyFactory._get_property(self, attrname) is not None: found_prop = IAvtrAutomationStrategyFactory._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgAvtrBasicManeuverMATLABFactory.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in AvtrBasicManeuverMATLABFactory.")
         
-agcls.AgClassCatalog.add_catalog_entry("{29352A63-3095-4D7E-A056-189D672BF458}", AgAvtrBasicManeuverMATLABFactory)
+agcls.AgClassCatalog.add_catalog_entry("{29352A63-3095-4D7E-A056-189D672BF458}", AvtrBasicManeuverMATLABFactory)
 
 
 

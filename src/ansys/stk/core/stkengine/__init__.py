@@ -33,19 +33,19 @@ class STKEngineTimerType(IntEnum):
     SigAlarm          = 4
     SigRt             = 5
 
-class STKEngineApplication(AgSTKXApplication):
+class STKEngineApplication(STKXApplication):
     """
     Interact with STK Engine.
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
     def __init__(self):
-        AgSTKXApplication.__init__(self)
+        STKXApplication.__init__(self)
         self.__dict__["_stk_install_dir"] = None
         self.__dict__["_stk_config_dir"] = None
         self.__dict__["_initialized"] = False
 
     def _private_init(self, pUnk:IUnknown, stk_install_dir, stk_config_dir, noGraphics):
-        AgSTKXApplication._private_init(self, pUnk)
+        STKXApplication._private_init(self, pUnk)
         self.__dict__["_stk_install_dir"] = stk_install_dir
         self.__dict__["_stk_config_dir"] = stk_config_dir
         self._STKXInitialize()
@@ -64,7 +64,7 @@ class STKEngineApplication(AgSTKXApplication):
             stkxinit_unk = IUnknown()
             if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
                 stkxinit_unk.TakeOwnership()
-                pInit = IAgSTKXInitialize()
+                pInit = ISTKXInitialize()
                 pInit._private_init(stkxinit_unk)
                 install_dir = self.__dict__["_stk_install_dir"] if self.__dict__["_stk_install_dir"] is not None else os.getenv("STK_INSTALL_DIR")
                 if install_dir is None:
@@ -112,7 +112,7 @@ class STKEngineApplication(AgSTKXApplication):
             else:
                 self.__dict__["_timer_impl"] = TclTimer()
         
-    def NewObjectRoot(self) -> AgStkObjectRoot:
+    def NewObjectRoot(self) -> StkObjectRoot:
         """Create a new object model root for the STK Engine application."""
         if not self.__dict__["_initialized"]:
             raise RuntimeError("STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.")
@@ -122,11 +122,11 @@ class STKEngineApplication(AgSTKXApplication):
             root_unk = IUnknown()
             ole32lib.CoCreateInstance(byref(CLSID_AgStkObjectRoot), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(root_unk.p))
             root_unk.TakeOwnership()
-            root = AgStkObjectRoot()
+            root = StkObjectRoot()
             root._private_init(root_unk)
             return root
 
-    def NewObjectModelContext(self) -> AgStkObjectModelContext:
+    def NewObjectModelContext(self) -> StkObjectModelContext:
         """Create a new object model context for the STK Engine application."""
         if not self.__dict__['_initialized']:
             raise RuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
@@ -136,7 +136,7 @@ class STKEngineApplication(AgSTKXApplication):
             context_unk = IUnknown()
             ole32lib.CoCreateInstance(byref(CLSID_AgStkObjectModelContext), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(context_unk.p))
             context_unk.TakeOwnership()
-            context = AgStkObjectModelContext()
+            context = StkObjectModelContext()
             context._private_init(context_unk)
             return context
 

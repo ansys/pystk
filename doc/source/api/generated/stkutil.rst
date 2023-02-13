@@ -9,43 +9,43 @@ Interfaces
 
 .. autosummary::
 
-    IAgLocationData
-    IAgPosition
-    IAgPlanetocentric
-    IAgGeocentric
-    IAgSpherical
-    IAgCylindrical
-    IAgCartesian
-    IAgGeodetic
-    IAgPlanetodetic
-    IAgDirection
-    IAgDirectionEuler
-    IAgDirectionPR
-    IAgDirectionRADec
-    IAgDirectionXYZ
-    IAgCartesian3Vector
-    IAgOrientation
-    IAgOrientationAzEl
-    IAgOrientationEulerAngles
-    IAgOrientationQuaternion
-    IAgOrientationYPRAngles
-    IAgOrientationPositionOffset
-    IAgOrbitState
-    IAgCartesian2Vector
-    IAgUnitPrefsDim
-    IAgPropertyInfo
-    IAgPropertyInfoCollection
-    IAgRuntimeTypeInfo
-    IAgRuntimeTypeInfoProvider
-    IAgExecCmdResult
-    IAgExecMultiCmdResult
-    IAgUnitPrefsUnit
-    IAgUnitPrefsUnitCollection
-    IAgUnitPrefsDimCollection
-    IAgQuantity
-    IAgDate
-    IAgConversionUtility
-    IAgDoublesCollection
+    ILocationData
+    IPosition
+    IPlanetocentric
+    IGeocentric
+    ISpherical
+    ICylindrical
+    ICartesian
+    IGeodetic
+    IPlanetodetic
+    IDirection
+    IDirectionEuler
+    IDirectionPR
+    IDirectionRADec
+    IDirectionXYZ
+    ICartesian3Vector
+    IOrientation
+    IOrientationAzEl
+    IOrientationEulerAngles
+    IOrientationQuaternion
+    IOrientationYPRAngles
+    IOrientationPositionOffset
+    IOrbitState
+    ICartesian2Vector
+    IUnitPrefsDim
+    IPropertyInfo
+    IPropertyInfoCollection
+    IRuntimeTypeInfo
+    IRuntimeTypeInfoProvider
+    IExecCmdResult
+    IExecMultiCmdResult
+    IUnitPrefsUnit
+    IUnitPrefsUnitCollection
+    IUnitPrefsDimCollection
+    IQuantity
+    IDate
+    IConversionUtility
+    IDoublesCollection
 
 
 Enumerations
@@ -78,42 +78,42 @@ Classes
 
     AgExecCmdResult
     AgExecMultiCmdResult
-    AgUnitPrefsUnit
-    AgUnitPrefsUnitCollection
-    AgUnitPrefsDim
-    AgUnitPrefsDimCollection
-    AgConversionUtility
-    AgQuantity
-    AgDate
-    AgPosition
-    AgCartesian
-    AgGeodetic
-    AgGeocentric
-    AgPlanetodetic
-    AgPlanetocentric
-    AgSpherical
-    AgCylindrical
-    AgDirection
-    AgDirectionEuler
-    AgDirectionPR
-    AgDirectionRADec
-    AgDirectionXYZ
-    AgOrientation
-    AgOrientationAzEl
-    AgOrientationEulerAngles
-    AgOrientationQuaternion
-    AgOrientationYPRAngles
-    AgDoublesCollection
-    AgCartesian3Vector
-    AgCartesian2Vector
-    AgPropertyInfo
-    AgPropertyInfoCollection
-    AgRuntimeTypeInfo
-    AgCROrientationAzEl
-    AgCROrientationEulerAngles
-    AgCROrientationQuaternion
-    AgCROrientationYPRAngles
-    AgCROrientationOffsetCart
+    UnitPrefsUnit
+    UnitPrefsUnitCollection
+    UnitPrefsDim
+    UnitPrefsDimCollection
+    ConversionUtility
+    Quantity
+    Date
+    Position
+    Cartesian
+    Geodetic
+    Geocentric
+    Planetodetic
+    Planetocentric
+    Spherical
+    Cylindrical
+    Direction
+    DirectionEuler
+    DirectionPR
+    DirectionRADec
+    DirectionXYZ
+    Orientation
+    OrientationAzEl
+    OrientationEulerAngles
+    OrientationQuaternion
+    OrientationYPRAngles
+    DoublesCollection
+    Cartesian3Vector
+    Cartesian2Vector
+    PropertyInfo
+    PropertyInfoCollection
+    RuntimeTypeInfo
+    CROrientationAzEl
+    CROrientationEulerAngles
+    CROrientationQuaternion
+    CROrientationYPRAngles
+    CROrientationOffsetCart
 
 
 Reference
@@ -122,115 +122,115 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IAgLocationData
+.. autoclass:: ILocationData
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgPosition
+.. autoclass:: IPosition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgPlanetocentric
+.. autoclass:: IPlanetocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgGeocentric
+.. autoclass:: IGeocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgSpherical
+.. autoclass:: ISpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCylindrical
+.. autoclass:: ICylindrical
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCartesian
+.. autoclass:: ICartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgGeodetic
+.. autoclass:: IGeodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgPlanetodetic
+.. autoclass:: IPlanetodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDirection
+.. autoclass:: IDirection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDirectionEuler
+.. autoclass:: IDirectionEuler
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDirectionPR
+.. autoclass:: IDirectionPR
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDirectionRADec
+.. autoclass:: IDirectionRADec
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDirectionXYZ
+.. autoclass:: IDirectionXYZ
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCartesian3Vector
+.. autoclass:: ICartesian3Vector
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgOrientation
+.. autoclass:: IOrientation
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgOrientationAzEl
+.. autoclass:: IOrientationAzEl
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgOrientationEulerAngles
+.. autoclass:: IOrientationEulerAngles
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgOrientationQuaternion
+.. autoclass:: IOrientationQuaternion
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgOrientationYPRAngles
+.. autoclass:: IOrientationYPRAngles
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgOrientationPositionOffset
+.. autoclass:: IOrientationPositionOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgOrbitState
+.. autoclass:: IOrbitState
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCartesian2Vector
+.. autoclass:: ICartesian2Vector
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUnitPrefsDim
+.. autoclass:: IUnitPrefsDim
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgPropertyInfo
+.. autoclass:: IPropertyInfo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgPropertyInfoCollection
+.. autoclass:: IPropertyInfoCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgRuntimeTypeInfo
+.. autoclass:: IRuntimeTypeInfo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgRuntimeTypeInfoProvider
+.. autoclass:: IRuntimeTypeInfoProvider
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgExecCmdResult
+.. autoclass:: IExecCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgExecMultiCmdResult
+.. autoclass:: IExecMultiCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUnitPrefsUnit
+.. autoclass:: IUnitPrefsUnit
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUnitPrefsUnitCollection
+.. autoclass:: IUnitPrefsUnitCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUnitPrefsDimCollection
+.. autoclass:: IUnitPrefsDimCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgQuantity
+.. autoclass:: IQuantity
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDate
+.. autoclass:: IDate
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgConversionUtility
+.. autoclass:: IConversionUtility
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDoublesCollection
+.. autoclass:: IDoublesCollection
     :members:
     :exclude-members: __init__
 
@@ -281,112 +281,112 @@ Classes
 .. autoclass:: AgExecMultiCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUnitPrefsUnit
+.. autoclass:: UnitPrefsUnit
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUnitPrefsUnitCollection
+.. autoclass:: UnitPrefsUnitCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUnitPrefsDim
+.. autoclass:: UnitPrefsDim
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUnitPrefsDimCollection
+.. autoclass:: UnitPrefsDimCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgConversionUtility
+.. autoclass:: ConversionUtility
     :members:
     :exclude-members: __init__
-.. autoclass:: AgQuantity
+.. autoclass:: Quantity
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDate
+.. autoclass:: Date
     :members:
     :exclude-members: __init__
-.. autoclass:: AgPosition
+.. autoclass:: Position
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCartesian
+.. autoclass:: Cartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: AgGeodetic
+.. autoclass:: Geodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgGeocentric
+.. autoclass:: Geocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: AgPlanetodetic
+.. autoclass:: Planetodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgPlanetocentric
+.. autoclass:: Planetocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: AgSpherical
+.. autoclass:: Spherical
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCylindrical
+.. autoclass:: Cylindrical
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDirection
+.. autoclass:: Direction
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDirectionEuler
+.. autoclass:: DirectionEuler
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDirectionPR
+.. autoclass:: DirectionPR
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDirectionRADec
+.. autoclass:: DirectionRADec
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDirectionXYZ
+.. autoclass:: DirectionXYZ
     :members:
     :exclude-members: __init__
-.. autoclass:: AgOrientation
+.. autoclass:: Orientation
     :members:
     :exclude-members: __init__
-.. autoclass:: AgOrientationAzEl
+.. autoclass:: OrientationAzEl
     :members:
     :exclude-members: __init__
-.. autoclass:: AgOrientationEulerAngles
+.. autoclass:: OrientationEulerAngles
     :members:
     :exclude-members: __init__
-.. autoclass:: AgOrientationQuaternion
+.. autoclass:: OrientationQuaternion
     :members:
     :exclude-members: __init__
-.. autoclass:: AgOrientationYPRAngles
+.. autoclass:: OrientationYPRAngles
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDoublesCollection
+.. autoclass:: DoublesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCartesian3Vector
+.. autoclass:: Cartesian3Vector
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCartesian2Vector
+.. autoclass:: Cartesian2Vector
     :members:
     :exclude-members: __init__
-.. autoclass:: AgPropertyInfo
+.. autoclass:: PropertyInfo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgPropertyInfoCollection
+.. autoclass:: PropertyInfoCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgRuntimeTypeInfo
+.. autoclass:: RuntimeTypeInfo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCROrientationAzEl
+.. autoclass:: CROrientationAzEl
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCROrientationEulerAngles
+.. autoclass:: CROrientationEulerAngles
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCROrientationQuaternion
+.. autoclass:: CROrientationQuaternion
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCROrientationYPRAngles
+.. autoclass:: CROrientationYPRAngles
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCROrientationOffsetCart
+.. autoclass:: CROrientationOffsetCart
     :members:
     :exclude-members: __init__
 

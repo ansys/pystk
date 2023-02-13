@@ -9,247 +9,247 @@ Interfaces
 
 .. autosummary::
 
-    IAgAvtrSite
-    IAgAvtrWindModel
-    IAgAvtrADDSMessage
-    IAgAvtrFuelTankInternal
-    IAgAvtrFuelTankExternal
-    IAgAvtrPayloadStation
-    IAgAvtrAircraft
-    IAgAvtrAircraftSimpleAero
-    IAgAvtrLevelTurns
-    IAgAvtrAttitudeTransitions
-    IAgAvtrClimbAndDescentTransitions
-    IAgAvtrCatalogItem
-    IAgAvtrAircraftBasicClimbModel
-    IAgAvtrAircraftBasicAccelerationModel
-    IAgAvtrAircraftCategory
-    IAgAvtrRunwayCategory
-    IAgAvtrBasicManeuverStrategy
-    IAgAvtrAircraftVTOL
-    IAgAvtrAircraftExternalAero
-    IAgAvtrAircraftSimpleProp
-    IAgAvtrAircraftExternalProp
-    IAgAvtrAircraftBasicFixedWingProp
-    IAgAvtrAircraftAdvClimbModel
-    IAgAvtrAircraftBasicCruiseModel
-    IAgAvtrAircraftAdvCruiseModel
-    IAgAvtrAircraftBasicDescentModel
-    IAgAvtrAircraftAdvDescentModel
-    IAgAvtrAircraftBasicLandingModel
-    IAgAvtrAircraftAdvLandingModel
-    IAgAvtrAircraftBasicTakeoffModel
-    IAgAvtrAircraftAdvTakeoffModel
-    IAgAvtrAircraftVTOLModel
-    IAgAvtrAircraftTerrainFollow
-    IAgAvtrPerformanceModelOptions
-    IAgAvtrAdvFixedWingTool
-    IAgAvtrAdvFixedWingExternalAero
-    IAgAvtrAdvFixedWingSubsonicAero
-    IAgAvtrAdvFixedWingSubSuperHypersonicAero
-    IAgAvtrAdvFixedWingSubSuperHypersonicProp
-    IAgAvtrAdvFixedWingSupersonicAero
-    IAgAvtrAdvFixedWingGeometryBasic
-    IAgAvtrAdvFixedWingGeometryVariable
-    IAgAvtrAdvFixedWingElectricPowerplant
-    IAgAvtrAdvFixedWingExternalProp
-    IAgAvtrAdvFixedWingPistonPowerplant
-    IAgAvtrAdvFixedWingTurbopropPowerplant
-    IAgAvtrAdvFixedWingEmpiricalJetEngine
-    IAgAvtrAdvFixedWingTurbojetBasicABProp
-    IAgAvtrAdvFixedWingTurbofanBasicABProp
-    IAgAvtrVehicle
-    IAgAvtrMissile
-    IAgAvtrMissileAero
-    IAgAvtrMissileProp
-    IAgAvtrMissileSimpleAero
-    IAgAvtrMissileSimpleProp
-    IAgAvtrMissileExternalAero
-    IAgAvtrMissileExternalProp
-    IAgAvtrMissileAdvancedAero
-    IAgAvtrMissileRamjetProp
-    IAgAvtrMissileRocketProp
-    IAgAvtrMissileTurbojetProp
-    IAgAvtrRotorcraft
-    IAgAvtrRotorcraftAero
-    IAgAvtrRotorcraftProp
-    IAgAvtrUserRunwaySource
-    IAgAvtrUserRunway
-    IAgAvtrARINC424Item
-    IAgAvtrARINC424Source
-    IAgAvtrDAFIFSource
-    IAgAvtrUserVTOLPoint
-    IAgAvtrUserVTOLPointSource
-    IAgAvtrUserWaypoint
-    IAgAvtrUserWaypointSource
-    IAgAvtrPropulsionEfficiencies
-    IAgAvtrFuelModelKeroseneAFPROP
-    IAgAvtrFuelModelKeroseneCEA
-    IAgAvtrAdvFixedWingRamjetBasic
-    IAgAvtrAdvFixedWingScramjetBasic
-    IAgAvtrRefuelDumpProperties
-    IAgAvtrProcedureFastTimeOptions
-    IAgAvtrAtmosphereModelBasic
-    IAgAvtrAtmosphereModel
-    IAgAvtrADDSMessageCollection
-    IAgAvtrWindModelADDS
-    IAgAvtrWindModelConstant
-    IAgAvtrStation
-    IAgAvtrStationCollection
-    IAgAvtrConfiguration
-    IAgAvtrCatalogSource
-    IAgAvtrAircraftModels
-    IAgAvtrMissileModels
-    IAgAvtrRotorcraftModels
-    IAgAvtrBasicFixedWingLiftHelper
-    IAgAvtrAircraftBasicFixedWingAero
-    IAgAvtrAircraftAero
-    IAgAvtrAircraftProp
-    IAgAvtrAircraftAccelerationMode
-    IAgAvtrAircraftAdvAccelerationModel
-    IAgAvtrAeroPropManeuverModeHelper
-    IAgAvtrCatalogRunway
-    IAgAvtrCatalogAirport
-    IAgAvtrCatalogNavaid
-    IAgAvtrCatalogVTOLPoint
-    IAgAvtrCatalogWaypoint
-    IAgAvtrARINC424Airport
-    IAgAvtrDAFIFItem
-    IAgAvtrARINC424Runway
-    IAgAvtrAirportCategory
-    IAgAvtrNavaidCategory
-    IAgAvtrVTOLPointCategory
-    IAgAvtrWaypointCategory
-    IAgAvtrAircraftClimb
-    IAgAvtrAircraftCruise
-    IAgAvtrAircraftDescent
-    IAgAvtrAircraftLanding
-    IAgAvtrAircraftTakeoff
-    IAgAvtrAircraftAcceleration
-    IAgAvtrCatalog
-    IAgAvtrProcedureTimeOptions
-    IAgAvtrCalculationOptions
-    IAgAvtrNavigationOptions
-    IAgAvtrAltitudeMSLAndLevelOffOptions
-    IAgAvtrAltitudeMSLOptions
-    IAgAvtrAltitudeOptions
-    IAgAvtrHoverAltitudeOptions
-    IAgAvtrArcAltitudeOptions
-    IAgAvtrArcAltitudeAndDelayOptions
-    IAgAvtrArcOptions
-    IAgAvtrVerticalPlaneOptions
-    IAgAvtrVerticalPlaneAndFlightPathOptions
-    IAgAvtrArcVerticalPlaneOptions
-    IAgAvtrEnrouteOptions
-    IAgAvtrEnrouteAndDelayOptions
-    IAgAvtrEnrouteTurnDirectionOptions
-    IAgAvtrCruiseAirspeedOptions
-    IAgAvtrCruiseAirspeedProfile
-    IAgAvtrCruiseAirspeedAndProfileOptions
-    IAgAvtrAutomationStrategyFactory
-    IAgAvtrConnect
-    IAgAvtrRunwayHeadingOptions
-    IAgAvtrProcedure
-    IAgAvtrProcedureCollection
-    IAgAvtrPhase
-    IAgAvtrPhaseCollection
-    IAgAvtrMission
-    IAgAvtrPropagator
-    IAgAvtrPerformanceModel
-    IAgAvtrAdvFixedWingGeometry
-    IAgAvtrAdvFixedWingTurbofanBasicABPowerplant
-    IAgAvtrAdvFixedWingTurbojetBasicABPowerplant
-    IAgAvtrAdvFixedWingPowerplant
-    IAgAvtrSiteUnknown
-    IAgAvtrAircraftTerrainFollowModel
-    IAgAvtrPropulsionThrust
-    IAgAvtrBasicManeuverAirspeedOptions
-    IAgAvtrBasicManeuverStrategyAileronRoll
-    IAgAvtrBasicManeuverStrategyAutopilotNav
-    IAgAvtrBasicManeuverStrategyAutopilotProf
-    IAgAvtrBasicManeuverStrategyBarrelRoll
-    IAgAvtrBasicManeuverStrategyLoop
-    IAgAvtrBasicManeuverStrategyLTAHover
-    IAgAvtrBasicManeuverStrategyFlyAOA
-    IAgAvtrBasicManeuverStrategyPull
-    IAgAvtrBasicManeuverStrategyRollingPull
-    IAgAvtrBasicManeuverStrategySmoothAccel
-    IAgAvtrBasicManeuverStrategySmoothTurn
-    IAgAvtrBasicManeuverStrategySimpleTurn
-    IAgAvtrBasicManeuverStrategyIntercept
-    IAgAvtrBasicManeuverStrategyRelativeBearing
-    IAgAvtrBasicManeuverStrategyRelativeCourse
-    IAgAvtrBasicManeuverStrategyRendezvous
-    IAgAvtrBasicManeuverStrategyStationkeeping
-    IAgAvtrBasicManeuverStrategyRelativeFPA
-    IAgAvtrBasicManeuverStrategyRelSpeedAlt
-    IAgAvtrBasicManeuverStrategyBezier
-    IAgAvtrBasicManeuverStrategyPushPull
-    IAgAvtrBasicManeuverStrategyGlideProfile
-    IAgAvtrBasicManeuverStrategyCruiseProfile
-    IAgAvtrBasicManeuverStrategyStraightAhead
-    IAgAvtrBasicManeuverStrategyWeave
-    IAgAvtrBasicManeuverStrategyBallistic3D
-    IAgAvtrBasicManeuverStrategyPitch3D
-    IAgAvtrTakeoffNormal
-    IAgAvtrTakeoffDeparturePoint
-    IAgAvtrTakeoffLowTransition
-    IAgAvtrRefStateForwardFlightOptions
-    IAgAvtrRefStateHoverOptions
-    IAgAvtrRefStateWeightOnWheelsOptions
-    IAgAvtrRefStateTakeoffLandingOptions
-    IAgAvtrLandingEnterDownwindPattern
-    IAgAvtrLandingInterceptGlideslope
-    IAgAvtrLandingStandardInstrumentApproach
-    IAgAvtrProcedureBasicManeuver
-    IAgAvtrSiteWaypoint
-    IAgAvtrSiteEndOfPrevProcedure
-    IAgAvtrSiteVTOLPoint
-    IAgAvtrSiteSTKVehicle
-    IAgAvtrSiteReferenceState
-    IAgAvtrSiteSuperProcedure
-    IAgAvtrSiteRelToPrevProcedure
-    IAgAvtrSiteSTKObjectWaypoint
-    IAgAvtrSiteSTKStaticObject
-    IAgAvtrSiteRelToSTKObject
-    IAgAvtrSiteSTKAreaTarget
-    IAgAvtrSiteRunway
-    IAgAvtrProcedureLanding
-    IAgAvtrProcedureEnroute
-    IAgAvtrProcedureBasicPointToPoint
-    IAgAvtrProcedureDelay
-    IAgAvtrProcedureTakeoff
-    IAgAvtrProcedureArcEnroute
-    IAgAvtrProcedureArcPointToPoint
-    IAgAvtrProcedureFlightLine
-    IAgAvtrProcedureHoldingCircular
-    IAgAvtrProcedureHoldingFigure8
-    IAgAvtrProcedureHoldingRacetrack
-    IAgAvtrProcedureTransitionToHover
-    IAgAvtrProcedureTerrainFollow
-    IAgAvtrProcedureHover
-    IAgAvtrProcedureHoverTranslate
-    IAgAvtrProcedureTransitionToForwardFlight
-    IAgAvtrProcedureVerticalTakeoff
-    IAgAvtrProcedureVerticalLanding
-    IAgAvtrProcedureReferenceState
-    IAgAvtrProcedureSuperProcedure
-    IAgAvtrProcedureLaunch
-    IAgAvtrProcedureAirway
-    IAgAvtrProcedureAirwayRouter
-    IAgAvtrProcedureAreaTargetSearch
-    IAgAvtrProcedureFormationRecover
-    IAgAvtrProcedureInFormation
-    IAgAvtrProcedureParallelFlightLine
-    IAgAvtrProcedureVGTPoint
-    IAgAvtrSiteRunwayFromCatalog
-    IAgAvtrSiteAirportFromCatalog
-    IAgAvtrSiteNavaidFromCatalog
-    IAgAvtrSiteVTOLPointFromCatalog
-    IAgAvtrSiteWaypointFromCatalog
-    IAgAvtrProcedureLaunchDynState
-    IAgAvtrProcedureLaunchWaypoint
-    IAgAvtrSiteDynState
+    IAvtrSite
+    IAvtrWindModel
+    IAvtrADDSMessage
+    IAvtrFuelTankInternal
+    IAvtrFuelTankExternal
+    IAvtrPayloadStation
+    IAvtrAircraft
+    IAvtrAircraftSimpleAero
+    IAvtrLevelTurns
+    IAvtrAttitudeTransitions
+    IAvtrClimbAndDescentTransitions
+    IAvtrCatalogItem
+    IAvtrAircraftBasicClimbModel
+    IAvtrAircraftBasicAccelerationModel
+    IAvtrAircraftCategory
+    IAvtrRunwayCategory
+    IAvtrBasicManeuverStrategy
+    IAvtrAircraftVTOL
+    IAvtrAircraftExternalAero
+    IAvtrAircraftSimpleProp
+    IAvtrAircraftExternalProp
+    IAvtrAircraftBasicFixedWingProp
+    IAvtrAircraftAdvClimbModel
+    IAvtrAircraftBasicCruiseModel
+    IAvtrAircraftAdvCruiseModel
+    IAvtrAircraftBasicDescentModel
+    IAvtrAircraftAdvDescentModel
+    IAvtrAircraftBasicLandingModel
+    IAvtrAircraftAdvLandingModel
+    IAvtrAircraftBasicTakeoffModel
+    IAvtrAircraftAdvTakeoffModel
+    IAvtrAircraftVTOLModel
+    IAvtrAircraftTerrainFollow
+    IAvtrPerformanceModelOptions
+    IAvtrAdvFixedWingTool
+    IAvtrAdvFixedWingExternalAero
+    IAvtrAdvFixedWingSubsonicAero
+    IAvtrAdvFixedWingSubSuperHypersonicAero
+    IAvtrAdvFixedWingSubSuperHypersonicProp
+    IAvtrAdvFixedWingSupersonicAero
+    IAvtrAdvFixedWingGeometryBasic
+    IAvtrAdvFixedWingGeometryVariable
+    IAvtrAdvFixedWingElectricPowerplant
+    IAvtrAdvFixedWingExternalProp
+    IAvtrAdvFixedWingPistonPowerplant
+    IAvtrAdvFixedWingTurbopropPowerplant
+    IAvtrAdvFixedWingEmpiricalJetEngine
+    IAvtrAdvFixedWingTurbojetBasicABProp
+    IAvtrAdvFixedWingTurbofanBasicABProp
+    IAvtrVehicle
+    IAvtrMissile
+    IAvtrMissileAero
+    IAvtrMissileProp
+    IAvtrMissileSimpleAero
+    IAvtrMissileSimpleProp
+    IAvtrMissileExternalAero
+    IAvtrMissileExternalProp
+    IAvtrMissileAdvancedAero
+    IAvtrMissileRamjetProp
+    IAvtrMissileRocketProp
+    IAvtrMissileTurbojetProp
+    IAvtrRotorcraft
+    IAvtrRotorcraftAero
+    IAvtrRotorcraftProp
+    IAvtrUserRunwaySource
+    IAvtrUserRunway
+    IAvtrARINC424Item
+    IAvtrARINC424Source
+    IAvtrDAFIFSource
+    IAvtrUserVTOLPoint
+    IAvtrUserVTOLPointSource
+    IAvtrUserWaypoint
+    IAvtrUserWaypointSource
+    IAvtrPropulsionEfficiencies
+    IAvtrFuelModelKeroseneAFPROP
+    IAvtrFuelModelKeroseneCEA
+    IAvtrAdvFixedWingRamjetBasic
+    IAvtrAdvFixedWingScramjetBasic
+    IAvtrRefuelDumpProperties
+    IAvtrProcedureFastTimeOptions
+    IAvtrAtmosphereModelBasic
+    IAvtrAtmosphereModel
+    IAvtrADDSMessageCollection
+    IAvtrWindModelADDS
+    IAvtrWindModelConstant
+    IAvtrStation
+    IAvtrStationCollection
+    IAvtrConfiguration
+    IAvtrCatalogSource
+    IAvtrAircraftModels
+    IAvtrMissileModels
+    IAvtrRotorcraftModels
+    IAvtrBasicFixedWingLiftHelper
+    IAvtrAircraftBasicFixedWingAero
+    IAvtrAircraftAero
+    IAvtrAircraftProp
+    IAvtrAircraftAccelerationMode
+    IAvtrAircraftAdvAccelerationModel
+    IAvtrAeroPropManeuverModeHelper
+    IAvtrCatalogRunway
+    IAvtrCatalogAirport
+    IAvtrCatalogNavaid
+    IAvtrCatalogVTOLPoint
+    IAvtrCatalogWaypoint
+    IAvtrARINC424Airport
+    IAvtrDAFIFItem
+    IAvtrARINC424Runway
+    IAvtrAirportCategory
+    IAvtrNavaidCategory
+    IAvtrVTOLPointCategory
+    IAvtrWaypointCategory
+    IAvtrAircraftClimb
+    IAvtrAircraftCruise
+    IAvtrAircraftDescent
+    IAvtrAircraftLanding
+    IAvtrAircraftTakeoff
+    IAvtrAircraftAcceleration
+    IAvtrCatalog
+    IAvtrProcedureTimeOptions
+    IAvtrCalculationOptions
+    IAvtrNavigationOptions
+    IAvtrAltitudeMSLAndLevelOffOptions
+    IAvtrAltitudeMSLOptions
+    IAvtrAltitudeOptions
+    IAvtrHoverAltitudeOptions
+    IAvtrArcAltitudeOptions
+    IAvtrArcAltitudeAndDelayOptions
+    IAvtrArcOptions
+    IAvtrVerticalPlaneOptions
+    IAvtrVerticalPlaneAndFlightPathOptions
+    IAvtrArcVerticalPlaneOptions
+    IAvtrEnrouteOptions
+    IAvtrEnrouteAndDelayOptions
+    IAvtrEnrouteTurnDirectionOptions
+    IAvtrCruiseAirspeedOptions
+    IAvtrCruiseAirspeedProfile
+    IAvtrCruiseAirspeedAndProfileOptions
+    IAvtrAutomationStrategyFactory
+    IAvtrConnect
+    IAvtrRunwayHeadingOptions
+    IAvtrProcedure
+    IAvtrProcedureCollection
+    IAvtrPhase
+    IAvtrPhaseCollection
+    IAvtrMission
+    IAvtrPropagator
+    IAvtrPerformanceModel
+    IAvtrAdvFixedWingGeometry
+    IAvtrAdvFixedWingTurbofanBasicABPowerplant
+    IAvtrAdvFixedWingTurbojetBasicABPowerplant
+    IAvtrAdvFixedWingPowerplant
+    IAvtrSiteUnknown
+    IAvtrAircraftTerrainFollowModel
+    IAvtrPropulsionThrust
+    IAvtrBasicManeuverAirspeedOptions
+    IAvtrBasicManeuverStrategyAileronRoll
+    IAvtrBasicManeuverStrategyAutopilotNav
+    IAvtrBasicManeuverStrategyAutopilotProf
+    IAvtrBasicManeuverStrategyBarrelRoll
+    IAvtrBasicManeuverStrategyLoop
+    IAvtrBasicManeuverStrategyLTAHover
+    IAvtrBasicManeuverStrategyFlyAOA
+    IAvtrBasicManeuverStrategyPull
+    IAvtrBasicManeuverStrategyRollingPull
+    IAvtrBasicManeuverStrategySmoothAccel
+    IAvtrBasicManeuverStrategySmoothTurn
+    IAvtrBasicManeuverStrategySimpleTurn
+    IAvtrBasicManeuverStrategyIntercept
+    IAvtrBasicManeuverStrategyRelativeBearing
+    IAvtrBasicManeuverStrategyRelativeCourse
+    IAvtrBasicManeuverStrategyRendezvous
+    IAvtrBasicManeuverStrategyStationkeeping
+    IAvtrBasicManeuverStrategyRelativeFPA
+    IAvtrBasicManeuverStrategyRelSpeedAlt
+    IAvtrBasicManeuverStrategyBezier
+    IAvtrBasicManeuverStrategyPushPull
+    IAvtrBasicManeuverStrategyGlideProfile
+    IAvtrBasicManeuverStrategyCruiseProfile
+    IAvtrBasicManeuverStrategyStraightAhead
+    IAvtrBasicManeuverStrategyWeave
+    IAvtrBasicManeuverStrategyBallistic3D
+    IAvtrBasicManeuverStrategyPitch3D
+    IAvtrTakeoffNormal
+    IAvtrTakeoffDeparturePoint
+    IAvtrTakeoffLowTransition
+    IAvtrRefStateForwardFlightOptions
+    IAvtrRefStateHoverOptions
+    IAvtrRefStateWeightOnWheelsOptions
+    IAvtrRefStateTakeoffLandingOptions
+    IAvtrLandingEnterDownwindPattern
+    IAvtrLandingInterceptGlideslope
+    IAvtrLandingStandardInstrumentApproach
+    IAvtrProcedureBasicManeuver
+    IAvtrSiteWaypoint
+    IAvtrSiteEndOfPrevProcedure
+    IAvtrSiteVTOLPoint
+    IAvtrSiteSTKVehicle
+    IAvtrSiteReferenceState
+    IAvtrSiteSuperProcedure
+    IAvtrSiteRelToPrevProcedure
+    IAvtrSiteSTKObjectWaypoint
+    IAvtrSiteSTKStaticObject
+    IAvtrSiteRelToSTKObject
+    IAvtrSiteSTKAreaTarget
+    IAvtrSiteRunway
+    IAvtrProcedureLanding
+    IAvtrProcedureEnroute
+    IAvtrProcedureBasicPointToPoint
+    IAvtrProcedureDelay
+    IAvtrProcedureTakeoff
+    IAvtrProcedureArcEnroute
+    IAvtrProcedureArcPointToPoint
+    IAvtrProcedureFlightLine
+    IAvtrProcedureHoldingCircular
+    IAvtrProcedureHoldingFigure8
+    IAvtrProcedureHoldingRacetrack
+    IAvtrProcedureTransitionToHover
+    IAvtrProcedureTerrainFollow
+    IAvtrProcedureHover
+    IAvtrProcedureHoverTranslate
+    IAvtrProcedureTransitionToForwardFlight
+    IAvtrProcedureVerticalTakeoff
+    IAvtrProcedureVerticalLanding
+    IAvtrProcedureReferenceState
+    IAvtrProcedureSuperProcedure
+    IAvtrProcedureLaunch
+    IAvtrProcedureAirway
+    IAvtrProcedureAirwayRouter
+    IAvtrProcedureAreaTargetSearch
+    IAvtrProcedureFormationRecover
+    IAvtrProcedureInFormation
+    IAvtrProcedureParallelFlightLine
+    IAvtrProcedureVGTPoint
+    IAvtrSiteRunwayFromCatalog
+    IAvtrSiteAirportFromCatalog
+    IAvtrSiteNavaidFromCatalog
+    IAvtrSiteVTOLPointFromCatalog
+    IAvtrSiteWaypointFromCatalog
+    IAvtrProcedureLaunchDynState
+    IAvtrProcedureLaunchWaypoint
+    IAvtrSiteDynState
 
 
 Enumerations
@@ -391,239 +391,239 @@ Classes
 
 .. autosummary::
 
-    AgAvtrSiteWaypoint
-    AgAvtrSiteEndOfPrevProcedure
-    AgAvtrSiteVTOLPoint
-    AgAvtrSiteReferenceState
-    AgAvtrSiteSTKVehicle
-    AgAvtrSiteSuperProcedure
-    AgAvtrSiteRelToPrevProcedure
-    AgAvtrSiteSTKObjectWaypoint
-    AgAvtrSiteSTKStaticObject
-    AgAvtrSiteRelToSTKObject
-    AgAvtrSiteSTKAreaTarget
-    AgAvtrSiteRunway
-    AgAvtrSite
-    AgAvtrProcedureLanding
-    AgAvtrProcedureEnroute
-    AgAvtrProcedureBasicPointToPoint
-    AgAvtrProcedureArcEnroute
-    AgAvtrProcedureArcPointToPoint
-    AgAvtrProcedureFlightLine
-    AgAvtrProcedureDelay
-    AgAvtrProcedureTakeoff
-    AgAvtrProcedureCollection
-    AgAvtrPhase
-    AgAvtrPhaseCollection
-    AgAvtrMission
-    AgAvtrPropagator
-    AgAvtrProcedureBasicManeuver
-    AgAvtrBasicManeuverStrategyWeave
-    AgAvtrProcedureTimeOptions
-    AgAvtrCalculationOptions
-    AgAvtrAircraftCategory
-    AgAvtrCatalog
-    AgAvtrAircraft
-    AgAvtrMissile
-    AgAvtrRotorcraft
-    AgAvtrRotorcraftAero
-    AgAvtrRotorcraftProp
-    AgAvtrAircraftAcceleration
-    AgAvtrAircraftBasicAccelerationModel
-    AgAvtrAircraftClimb
-    AgAvtrAircraftCruise
-    AgAvtrAircraftDescent
-    AgAvtrAircraftLanding
-    AgAvtrAircraftTakeoff
-    AgAvtrAircraftBasicClimbModel
-    AgAvtrAircraftAdvClimbModel
-    AgAvtrAircraftBasicCruiseModel
-    AgAvtrAircraftAdvCruiseModel
-    AgAvtrAircraftBasicDescentModel
-    AgAvtrAircraftAdvDescentModel
-    AgAvtrAircraftBasicTakeoffModel
-    AgAvtrAircraftAdvTakeoffModel
-    AgAvtrAircraftBasicLandingModel
-    AgAvtrAircraftAdvLandingModel
-    AgAvtrAirportCategory
-    AgAvtrARINC424Airport
-    AgAvtrARINC424Runway
-    AgAvtrDAFIFRunway
-    AgAvtrDAFIFHelipad
-    AgAvtrDAFIFWaypoint
-    AgAvtrRunwayCategory
-    AgAvtrUserRunwaySource
-    AgAvtrUserRunway
-    AgAvtrAltitudeMSLOptions
-    AgAvtrAltitudeOptions
-    AgAvtrArcAltitudeOptions
-    AgAvtrArcAltitudeAndDelayOptions
-    AgAvtrArcOptions
-    AgAvtrAltitudeMSLAndLevelOffOptions
-    AgAvtrCruiseAirspeedOptions
-    AgAvtrCruiseAirspeedProfile
-    AgAvtrCruiseAirspeedAndProfileOptions
-    AgAvtrLandingCruiseAirspeedAndProfileOptions
-    AgAvtrEnrouteOptions
-    AgAvtrEnrouteAndDelayOptions
-    AgAvtrLandingEnrouteOptions
-    AgAvtrEnrouteTurnDirectionOptions
-    AgAvtrNavigationOptions
-    AgAvtrVerticalPlaneOptions
-    AgAvtrArcVerticalPlaneOptions
-    AgAvtrVerticalPlaneAndFlightPathOptions
-    AgAvtrLandingVerticalPlaneOptions
-    AgAvtrRunwayHeadingOptions
-    AgAvtrLandingEnterDownwindPattern
-    AgAvtrLandingInterceptGlideslope
-    AgAvtrLandingStandardInstrumentApproach
-    AgAvtrTakeoffDeparturePoint
-    AgAvtrTakeoffLowTransition
-    AgAvtrTakeoffNormal
-    AgAvtrLevelTurns
-    AgAvtrAttitudeTransitions
-    AgAvtrClimbAndDescentTransitions
-    AgAvtrAeroPropManeuverModeHelper
-    AgAvtrAircraftAdvAccelerationModel
-    AgAvtrAircraftAccelerationMode
-    AgAvtrAircraftSimpleAero
-    AgAvtrAircraftExternalAero
-    AgAvtrAircraftAero
-    AgAvtrAircraftBasicFixedWingAero
-    AgAvtrAircraftProp
-    AgAvtrAircraftSimpleProp
-    AgAvtrAircraftExternalProp
-    AgAvtrAircraftBasicFixedWingProp
-    AgAvtrARINC424Source
-    AgAvtrDAFIFSource
-    AgAvtrBasicFixedWingFwdFlightLiftHelper
-    AgAvtrBasicManeuverStrategyStraightAhead
-    AgAvtrBasicManeuverStrategyCruiseProfile
-    AgAvtrBasicManeuverStrategyGlideProfile
-    AgAvtrAircraftModels
-    AgAvtrMissileModels
-    AgAvtrRotorcraftModels
-    AgAvtrConfiguration
-    AgAvtrFuelTankInternal
-    AgAvtrFuelTankExternal
-    AgAvtrPayloadStation
-    AgAvtrStationCollection
-    AgAvtrWindModel
-    AgAvtrWindModelConstant
-    AgAvtrWindModelADDS
-    AgAvtrADDSMessage
-    AgAvtrADDSMessageCollection
-    AgAvtrProcedure
-    AgAvtrAtmosphereModel
-    AgAvtrAtmosphereModelBasic
-    AgAvtrBasicManeuverStrategySimpleTurn
-    AgAvtrBasicManeuverStrategyAileronRoll
-    AgAvtrBasicManeuverStrategyFlyAOA
-    AgAvtrBasicManeuverStrategyPull
-    AgAvtrBasicManeuverStrategyRollingPull
-    AgAvtrBasicManeuverStrategySmoothAccel
-    AgAvtrBasicManeuverStrategySmoothTurn
-    AgAvtrBasicManeuverAirspeedOptions
-    AgAvtrPropulsionThrust
-    AgAvtrBasicManeuverStrategyAutopilotNav
-    AgAvtrBasicManeuverStrategyAutopilotProf
-    AgAvtrBasicManeuverStrategyBarrelRoll
-    AgAvtrBasicManeuverStrategyLoop
-    AgAvtrBasicManeuverStrategyLTAHover
-    AgAvtrBasicManeuverStrategyIntercept
-    AgAvtrBasicManeuverStrategyRelativeBearing
-    AgAvtrBasicManeuverStrategyRelativeCourse
-    AgAvtrBasicManeuverStrategyRendezvous
-    AgAvtrBasicManeuverStrategyStationkeeping
-    AgAvtrBasicManeuverStrategyRelativeFPA
-    AgAvtrBasicManeuverStrategyRelSpeedAlt
-    AgAvtrBasicManeuverStrategyBezier
-    AgAvtrBasicManeuverStrategyPushPull
-    AgAvtrProcedureHoldingCircular
-    AgAvtrProcedureHoldingFigure8
-    AgAvtrProcedureHoldingRacetrack
-    AgAvtrProcedureTransitionToHover
-    AgAvtrProcedureTerrainFollow
-    AgAvtrProcedureHover
-    AgAvtrProcedureHoverTranslate
-    AgAvtrProcedureTransitionToForwardFlight
-    AgAvtrHoverAltitudeOptions
-    AgAvtrProcedureVerticalTakeoff
-    AgAvtrProcedureVerticalLanding
-    AgAvtrProcedureReferenceState
-    AgAvtrProcedureSuperProcedure
-    AgAvtrProcedureLaunch
-    AgAvtrProcedureAirway
-    AgAvtrProcedureAirwayRouter
-    AgAvtrProcedureAreaTargetSearch
-    AgAvtrProcedureFormationRecover
-    AgAvtrProcedureInFormation
-    AgAvtrProcedureParallelFlightLine
-    AgAvtrProcedureVGTPoint
-    AgAvtrPerformanceModelOptions
-    AgAvtrAdvFixedWingTool
-    AgAvtrAdvFixedWingExternalAero
-    AgAvtrAdvFixedWingSubsonicAero
-    AgAvtrAdvFixedWingSubSuperHypersonicAero
-    AgAvtrAdvFixedWingSupersonicAero
-    AgAvtrPerformanceModel
-    AgAvtrAdvFixedWingGeometryBasic
-    AgAvtrAdvFixedWingGeometryVariable
-    AgAvtrAdvFixedWingElectricPowerplant
-    AgAvtrAdvFixedWingExternalProp
-    AgAvtrAdvFixedWingSubSuperHypersonicProp
-    AgAvtrAdvFixedWingPistonPowerplant
-    AgAvtrAdvFixedWingEmpiricalJetEngine
-    AgAvtrAdvFixedWingTurbofanBasicABPowerplant
-    AgAvtrAdvFixedWingTurbojetBasicABPowerplant
-    AgAvtrAdvFixedWingTurbofanBasicABProp
-    AgAvtrAdvFixedWingTurbojetBasicABProp
-    AgAvtrAdvFixedWingTurbopropPowerplant
-    AgAvtrMissileSimpleAero
-    AgAvtrMissileExternalAero
-    AgAvtrMissileAdvancedAero
-    AgAvtrMissileAero
-    AgAvtrMissileProp
-    AgAvtrMissileSimpleProp
-    AgAvtrMissileExternalProp
-    AgAvtrMissileRamjetProp
-    AgAvtrMissileRocketProp
-    AgAvtrMissileTurbojetProp
-    AgAvtrRefStateForwardFlightOptions
-    AgAvtrRefStateTakeoffLandingOptions
-    AgAvtrRefStateHoverOptions
-    AgAvtrRefStateWeightOnWheelsOptions
-    AgAvtrSiteRunwayFromCatalog
-    AgAvtrSiteAirportFromCatalog
-    AgAvtrSiteNavaidFromCatalog
-    AgAvtrSiteVTOLPointFromCatalog
-    AgAvtrSiteWaypointFromCatalog
-    AgAvtrNavaidCategory
-    AgAvtrVTOLPointCategory
-    AgAvtrWaypointCategory
-    AgAvtrARINC424Navaid
-    AgAvtrARINC424Helipad
-    AgAvtrARINC424Waypoint
-    AgAvtrUserVTOLPointSource
-    AgAvtrUserVTOLPoint
-    AgAvtrUserWaypointSource
-    AgAvtrUserWaypoint
-    AgAvtrPropulsionEfficiencies
-    AgAvtrFuelModelKeroseneAFPROP
-    AgAvtrFuelModelKeroseneCEA
-    AgAvtrAdvFixedWingRamjetBasic
-    AgAvtrAdvFixedWingScramjetBasic
-    AgAvtrAircraftVTOLModel
-    AgAvtrAircraftVTOL
-    AgAvtrAircraftTerrainFollowModel
-    AgAvtrAircraftTerrainFollow
-    AgAvtrBasicManeuverStrategyBallistic3D
-    AgAvtrProcedureLaunchDynState
-    AgAvtrProcedureLaunchWaypoint
-    AgAvtrSiteDynState
-    AgAvtrBasicManeuverStrategyPitch3D
-    AgAvtrRefuelDumpProperties
-    AgAvtrProcedureFastTimeOptions
+    AvtrSiteWaypoint
+    AvtrSiteEndOfPrevProcedure
+    AvtrSiteVTOLPoint
+    AvtrSiteReferenceState
+    AvtrSiteSTKVehicle
+    AvtrSiteSuperProcedure
+    AvtrSiteRelToPrevProcedure
+    AvtrSiteSTKObjectWaypoint
+    AvtrSiteSTKStaticObject
+    AvtrSiteRelToSTKObject
+    AvtrSiteSTKAreaTarget
+    AvtrSiteRunway
+    AvtrSite
+    AvtrProcedureLanding
+    AvtrProcedureEnroute
+    AvtrProcedureBasicPointToPoint
+    AvtrProcedureArcEnroute
+    AvtrProcedureArcPointToPoint
+    AvtrProcedureFlightLine
+    AvtrProcedureDelay
+    AvtrProcedureTakeoff
+    AvtrProcedureCollection
+    AvtrPhase
+    AvtrPhaseCollection
+    AvtrMission
+    AvtrPropagator
+    AvtrProcedureBasicManeuver
+    AvtrBasicManeuverStrategyWeave
+    AvtrProcedureTimeOptions
+    AvtrCalculationOptions
+    AvtrAircraftCategory
+    AvtrCatalog
+    AvtrAircraft
+    AvtrMissile
+    AvtrRotorcraft
+    AvtrRotorcraftAero
+    AvtrRotorcraftProp
+    AvtrAircraftAcceleration
+    AvtrAircraftBasicAccelerationModel
+    AvtrAircraftClimb
+    AvtrAircraftCruise
+    AvtrAircraftDescent
+    AvtrAircraftLanding
+    AvtrAircraftTakeoff
+    AvtrAircraftBasicClimbModel
+    AvtrAircraftAdvClimbModel
+    AvtrAircraftBasicCruiseModel
+    AvtrAircraftAdvCruiseModel
+    AvtrAircraftBasicDescentModel
+    AvtrAircraftAdvDescentModel
+    AvtrAircraftBasicTakeoffModel
+    AvtrAircraftAdvTakeoffModel
+    AvtrAircraftBasicLandingModel
+    AvtrAircraftAdvLandingModel
+    AvtrAirportCategory
+    AvtrARINC424Airport
+    AvtrARINC424Runway
+    AvtrDAFIFRunway
+    AvtrDAFIFHelipad
+    AvtrDAFIFWaypoint
+    AvtrRunwayCategory
+    AvtrUserRunwaySource
+    AvtrUserRunway
+    AvtrAltitudeMSLOptions
+    AvtrAltitudeOptions
+    AvtrArcAltitudeOptions
+    AvtrArcAltitudeAndDelayOptions
+    AvtrArcOptions
+    AvtrAltitudeMSLAndLevelOffOptions
+    AvtrCruiseAirspeedOptions
+    AvtrCruiseAirspeedProfile
+    AvtrCruiseAirspeedAndProfileOptions
+    AvtrLandingCruiseAirspeedAndProfileOptions
+    AvtrEnrouteOptions
+    AvtrEnrouteAndDelayOptions
+    AvtrLandingEnrouteOptions
+    AvtrEnrouteTurnDirectionOptions
+    AvtrNavigationOptions
+    AvtrVerticalPlaneOptions
+    AvtrArcVerticalPlaneOptions
+    AvtrVerticalPlaneAndFlightPathOptions
+    AvtrLandingVerticalPlaneOptions
+    AvtrRunwayHeadingOptions
+    AvtrLandingEnterDownwindPattern
+    AvtrLandingInterceptGlideslope
+    AvtrLandingStandardInstrumentApproach
+    AvtrTakeoffDeparturePoint
+    AvtrTakeoffLowTransition
+    AvtrTakeoffNormal
+    AvtrLevelTurns
+    AvtrAttitudeTransitions
+    AvtrClimbAndDescentTransitions
+    AvtrAeroPropManeuverModeHelper
+    AvtrAircraftAdvAccelerationModel
+    AvtrAircraftAccelerationMode
+    AvtrAircraftSimpleAero
+    AvtrAircraftExternalAero
+    AvtrAircraftAero
+    AvtrAircraftBasicFixedWingAero
+    AvtrAircraftProp
+    AvtrAircraftSimpleProp
+    AvtrAircraftExternalProp
+    AvtrAircraftBasicFixedWingProp
+    AvtrARINC424Source
+    AvtrDAFIFSource
+    AvtrBasicFixedWingFwdFlightLiftHelper
+    AvtrBasicManeuverStrategyStraightAhead
+    AvtrBasicManeuverStrategyCruiseProfile
+    AvtrBasicManeuverStrategyGlideProfile
+    AvtrAircraftModels
+    AvtrMissileModels
+    AvtrRotorcraftModels
+    AvtrConfiguration
+    AvtrFuelTankInternal
+    AvtrFuelTankExternal
+    AvtrPayloadStation
+    AvtrStationCollection
+    AvtrWindModel
+    AvtrWindModelConstant
+    AvtrWindModelADDS
+    AvtrADDSMessage
+    AvtrADDSMessageCollection
+    AvtrProcedure
+    AvtrAtmosphereModel
+    AvtrAtmosphereModelBasic
+    AvtrBasicManeuverStrategySimpleTurn
+    AvtrBasicManeuverStrategyAileronRoll
+    AvtrBasicManeuverStrategyFlyAOA
+    AvtrBasicManeuverStrategyPull
+    AvtrBasicManeuverStrategyRollingPull
+    AvtrBasicManeuverStrategySmoothAccel
+    AvtrBasicManeuverStrategySmoothTurn
+    AvtrBasicManeuverAirspeedOptions
+    AvtrPropulsionThrust
+    AvtrBasicManeuverStrategyAutopilotNav
+    AvtrBasicManeuverStrategyAutopilotProf
+    AvtrBasicManeuverStrategyBarrelRoll
+    AvtrBasicManeuverStrategyLoop
+    AvtrBasicManeuverStrategyLTAHover
+    AvtrBasicManeuverStrategyIntercept
+    AvtrBasicManeuverStrategyRelativeBearing
+    AvtrBasicManeuverStrategyRelativeCourse
+    AvtrBasicManeuverStrategyRendezvous
+    AvtrBasicManeuverStrategyStationkeeping
+    AvtrBasicManeuverStrategyRelativeFPA
+    AvtrBasicManeuverStrategyRelSpeedAlt
+    AvtrBasicManeuverStrategyBezier
+    AvtrBasicManeuverStrategyPushPull
+    AvtrProcedureHoldingCircular
+    AvtrProcedureHoldingFigure8
+    AvtrProcedureHoldingRacetrack
+    AvtrProcedureTransitionToHover
+    AvtrProcedureTerrainFollow
+    AvtrProcedureHover
+    AvtrProcedureHoverTranslate
+    AvtrProcedureTransitionToForwardFlight
+    AvtrHoverAltitudeOptions
+    AvtrProcedureVerticalTakeoff
+    AvtrProcedureVerticalLanding
+    AvtrProcedureReferenceState
+    AvtrProcedureSuperProcedure
+    AvtrProcedureLaunch
+    AvtrProcedureAirway
+    AvtrProcedureAirwayRouter
+    AvtrProcedureAreaTargetSearch
+    AvtrProcedureFormationRecover
+    AvtrProcedureInFormation
+    AvtrProcedureParallelFlightLine
+    AvtrProcedureVGTPoint
+    AvtrPerformanceModelOptions
+    AvtrAdvFixedWingTool
+    AvtrAdvFixedWingExternalAero
+    AvtrAdvFixedWingSubsonicAero
+    AvtrAdvFixedWingSubSuperHypersonicAero
+    AvtrAdvFixedWingSupersonicAero
+    AvtrPerformanceModel
+    AvtrAdvFixedWingGeometryBasic
+    AvtrAdvFixedWingGeometryVariable
+    AvtrAdvFixedWingElectricPowerplant
+    AvtrAdvFixedWingExternalProp
+    AvtrAdvFixedWingSubSuperHypersonicProp
+    AvtrAdvFixedWingPistonPowerplant
+    AvtrAdvFixedWingEmpiricalJetEngine
+    AvtrAdvFixedWingTurbofanBasicABPowerplant
+    AvtrAdvFixedWingTurbojetBasicABPowerplant
+    AvtrAdvFixedWingTurbofanBasicABProp
+    AvtrAdvFixedWingTurbojetBasicABProp
+    AvtrAdvFixedWingTurbopropPowerplant
+    AvtrMissileSimpleAero
+    AvtrMissileExternalAero
+    AvtrMissileAdvancedAero
+    AvtrMissileAero
+    AvtrMissileProp
+    AvtrMissileSimpleProp
+    AvtrMissileExternalProp
+    AvtrMissileRamjetProp
+    AvtrMissileRocketProp
+    AvtrMissileTurbojetProp
+    AvtrRefStateForwardFlightOptions
+    AvtrRefStateTakeoffLandingOptions
+    AvtrRefStateHoverOptions
+    AvtrRefStateWeightOnWheelsOptions
+    AvtrSiteRunwayFromCatalog
+    AvtrSiteAirportFromCatalog
+    AvtrSiteNavaidFromCatalog
+    AvtrSiteVTOLPointFromCatalog
+    AvtrSiteWaypointFromCatalog
+    AvtrNavaidCategory
+    AvtrVTOLPointCategory
+    AvtrWaypointCategory
+    AvtrARINC424Navaid
+    AvtrARINC424Helipad
+    AvtrARINC424Waypoint
+    AvtrUserVTOLPointSource
+    AvtrUserVTOLPoint
+    AvtrUserWaypointSource
+    AvtrUserWaypoint
+    AvtrPropulsionEfficiencies
+    AvtrFuelModelKeroseneAFPROP
+    AvtrFuelModelKeroseneCEA
+    AvtrAdvFixedWingRamjetBasic
+    AvtrAdvFixedWingScramjetBasic
+    AvtrAircraftVTOLModel
+    AvtrAircraftVTOL
+    AvtrAircraftTerrainFollowModel
+    AvtrAircraftTerrainFollow
+    AvtrBasicManeuverStrategyBallistic3D
+    AvtrProcedureLaunchDynState
+    AvtrProcedureLaunchWaypoint
+    AvtrSiteDynState
+    AvtrBasicManeuverStrategyPitch3D
+    AvtrRefuelDumpProperties
+    AvtrProcedureFastTimeOptions
 
 
 Reference
@@ -632,727 +632,727 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IAgAvtrSite
+.. autoclass:: IAvtrSite
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrWindModel
+.. autoclass:: IAvtrWindModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrADDSMessage
+.. autoclass:: IAvtrADDSMessage
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrFuelTankInternal
+.. autoclass:: IAvtrFuelTankInternal
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrFuelTankExternal
+.. autoclass:: IAvtrFuelTankExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrPayloadStation
+.. autoclass:: IAvtrPayloadStation
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraft
+.. autoclass:: IAvtrAircraft
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftSimpleAero
+.. autoclass:: IAvtrAircraftSimpleAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrLevelTurns
+.. autoclass:: IAvtrLevelTurns
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAttitudeTransitions
+.. autoclass:: IAvtrAttitudeTransitions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrClimbAndDescentTransitions
+.. autoclass:: IAvtrClimbAndDescentTransitions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCatalogItem
+.. autoclass:: IAvtrCatalogItem
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftBasicClimbModel
+.. autoclass:: IAvtrAircraftBasicClimbModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftBasicAccelerationModel
+.. autoclass:: IAvtrAircraftBasicAccelerationModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftCategory
+.. autoclass:: IAvtrAircraftCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRunwayCategory
+.. autoclass:: IAvtrRunwayCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategy
+.. autoclass:: IAvtrBasicManeuverStrategy
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftVTOL
+.. autoclass:: IAvtrAircraftVTOL
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftExternalAero
+.. autoclass:: IAvtrAircraftExternalAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftSimpleProp
+.. autoclass:: IAvtrAircraftSimpleProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftExternalProp
+.. autoclass:: IAvtrAircraftExternalProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftBasicFixedWingProp
+.. autoclass:: IAvtrAircraftBasicFixedWingProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAdvClimbModel
+.. autoclass:: IAvtrAircraftAdvClimbModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftBasicCruiseModel
+.. autoclass:: IAvtrAircraftBasicCruiseModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAdvCruiseModel
+.. autoclass:: IAvtrAircraftAdvCruiseModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftBasicDescentModel
+.. autoclass:: IAvtrAircraftBasicDescentModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAdvDescentModel
+.. autoclass:: IAvtrAircraftAdvDescentModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftBasicLandingModel
+.. autoclass:: IAvtrAircraftBasicLandingModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAdvLandingModel
+.. autoclass:: IAvtrAircraftAdvLandingModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftBasicTakeoffModel
+.. autoclass:: IAvtrAircraftBasicTakeoffModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAdvTakeoffModel
+.. autoclass:: IAvtrAircraftAdvTakeoffModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftVTOLModel
+.. autoclass:: IAvtrAircraftVTOLModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftTerrainFollow
+.. autoclass:: IAvtrAircraftTerrainFollow
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrPerformanceModelOptions
+.. autoclass:: IAvtrPerformanceModelOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingTool
+.. autoclass:: IAvtrAdvFixedWingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingExternalAero
+.. autoclass:: IAvtrAdvFixedWingExternalAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingSubsonicAero
+.. autoclass:: IAvtrAdvFixedWingSubsonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingSubSuperHypersonicAero
+.. autoclass:: IAvtrAdvFixedWingSubSuperHypersonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingSubSuperHypersonicProp
+.. autoclass:: IAvtrAdvFixedWingSubSuperHypersonicProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingSupersonicAero
+.. autoclass:: IAvtrAdvFixedWingSupersonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingGeometryBasic
+.. autoclass:: IAvtrAdvFixedWingGeometryBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingGeometryVariable
+.. autoclass:: IAvtrAdvFixedWingGeometryVariable
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingElectricPowerplant
+.. autoclass:: IAvtrAdvFixedWingElectricPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingExternalProp
+.. autoclass:: IAvtrAdvFixedWingExternalProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingPistonPowerplant
+.. autoclass:: IAvtrAdvFixedWingPistonPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingTurbopropPowerplant
+.. autoclass:: IAvtrAdvFixedWingTurbopropPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingEmpiricalJetEngine
+.. autoclass:: IAvtrAdvFixedWingEmpiricalJetEngine
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingTurbojetBasicABProp
+.. autoclass:: IAvtrAdvFixedWingTurbojetBasicABProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingTurbofanBasicABProp
+.. autoclass:: IAvtrAdvFixedWingTurbofanBasicABProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrVehicle
+.. autoclass:: IAvtrVehicle
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissile
+.. autoclass:: IAvtrMissile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileAero
+.. autoclass:: IAvtrMissileAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileProp
+.. autoclass:: IAvtrMissileProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileSimpleAero
+.. autoclass:: IAvtrMissileSimpleAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileSimpleProp
+.. autoclass:: IAvtrMissileSimpleProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileExternalAero
+.. autoclass:: IAvtrMissileExternalAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileExternalProp
+.. autoclass:: IAvtrMissileExternalProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileAdvancedAero
+.. autoclass:: IAvtrMissileAdvancedAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileRamjetProp
+.. autoclass:: IAvtrMissileRamjetProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileRocketProp
+.. autoclass:: IAvtrMissileRocketProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileTurbojetProp
+.. autoclass:: IAvtrMissileTurbojetProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRotorcraft
+.. autoclass:: IAvtrRotorcraft
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRotorcraftAero
+.. autoclass:: IAvtrRotorcraftAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRotorcraftProp
+.. autoclass:: IAvtrRotorcraftProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrUserRunwaySource
+.. autoclass:: IAvtrUserRunwaySource
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrUserRunway
+.. autoclass:: IAvtrUserRunway
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrARINC424Item
+.. autoclass:: IAvtrARINC424Item
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrARINC424Source
+.. autoclass:: IAvtrARINC424Source
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrDAFIFSource
+.. autoclass:: IAvtrDAFIFSource
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrUserVTOLPoint
+.. autoclass:: IAvtrUserVTOLPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrUserVTOLPointSource
+.. autoclass:: IAvtrUserVTOLPointSource
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrUserWaypoint
+.. autoclass:: IAvtrUserWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrUserWaypointSource
+.. autoclass:: IAvtrUserWaypointSource
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrPropulsionEfficiencies
+.. autoclass:: IAvtrPropulsionEfficiencies
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrFuelModelKeroseneAFPROP
+.. autoclass:: IAvtrFuelModelKeroseneAFPROP
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrFuelModelKeroseneCEA
+.. autoclass:: IAvtrFuelModelKeroseneCEA
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingRamjetBasic
+.. autoclass:: IAvtrAdvFixedWingRamjetBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingScramjetBasic
+.. autoclass:: IAvtrAdvFixedWingScramjetBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRefuelDumpProperties
+.. autoclass:: IAvtrRefuelDumpProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureFastTimeOptions
+.. autoclass:: IAvtrProcedureFastTimeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAtmosphereModelBasic
+.. autoclass:: IAvtrAtmosphereModelBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAtmosphereModel
+.. autoclass:: IAvtrAtmosphereModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrADDSMessageCollection
+.. autoclass:: IAvtrADDSMessageCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrWindModelADDS
+.. autoclass:: IAvtrWindModelADDS
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrWindModelConstant
+.. autoclass:: IAvtrWindModelConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrStation
+.. autoclass:: IAvtrStation
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrStationCollection
+.. autoclass:: IAvtrStationCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrConfiguration
+.. autoclass:: IAvtrConfiguration
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCatalogSource
+.. autoclass:: IAvtrCatalogSource
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftModels
+.. autoclass:: IAvtrAircraftModels
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMissileModels
+.. autoclass:: IAvtrMissileModels
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRotorcraftModels
+.. autoclass:: IAvtrRotorcraftModels
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicFixedWingLiftHelper
+.. autoclass:: IAvtrBasicFixedWingLiftHelper
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftBasicFixedWingAero
+.. autoclass:: IAvtrAircraftBasicFixedWingAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAero
+.. autoclass:: IAvtrAircraftAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftProp
+.. autoclass:: IAvtrAircraftProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAccelerationMode
+.. autoclass:: IAvtrAircraftAccelerationMode
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAdvAccelerationModel
+.. autoclass:: IAvtrAircraftAdvAccelerationModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAeroPropManeuverModeHelper
+.. autoclass:: IAvtrAeroPropManeuverModeHelper
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCatalogRunway
+.. autoclass:: IAvtrCatalogRunway
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCatalogAirport
+.. autoclass:: IAvtrCatalogAirport
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCatalogNavaid
+.. autoclass:: IAvtrCatalogNavaid
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCatalogVTOLPoint
+.. autoclass:: IAvtrCatalogVTOLPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCatalogWaypoint
+.. autoclass:: IAvtrCatalogWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrARINC424Airport
+.. autoclass:: IAvtrARINC424Airport
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrDAFIFItem
+.. autoclass:: IAvtrDAFIFItem
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrARINC424Runway
+.. autoclass:: IAvtrARINC424Runway
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAirportCategory
+.. autoclass:: IAvtrAirportCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrNavaidCategory
+.. autoclass:: IAvtrNavaidCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrVTOLPointCategory
+.. autoclass:: IAvtrVTOLPointCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrWaypointCategory
+.. autoclass:: IAvtrWaypointCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftClimb
+.. autoclass:: IAvtrAircraftClimb
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftCruise
+.. autoclass:: IAvtrAircraftCruise
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftDescent
+.. autoclass:: IAvtrAircraftDescent
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftLanding
+.. autoclass:: IAvtrAircraftLanding
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftTakeoff
+.. autoclass:: IAvtrAircraftTakeoff
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftAcceleration
+.. autoclass:: IAvtrAircraftAcceleration
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCatalog
+.. autoclass:: IAvtrCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureTimeOptions
+.. autoclass:: IAvtrProcedureTimeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCalculationOptions
+.. autoclass:: IAvtrCalculationOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrNavigationOptions
+.. autoclass:: IAvtrNavigationOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAltitudeMSLAndLevelOffOptions
+.. autoclass:: IAvtrAltitudeMSLAndLevelOffOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAltitudeMSLOptions
+.. autoclass:: IAvtrAltitudeMSLOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAltitudeOptions
+.. autoclass:: IAvtrAltitudeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrHoverAltitudeOptions
+.. autoclass:: IAvtrHoverAltitudeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrArcAltitudeOptions
+.. autoclass:: IAvtrArcAltitudeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrArcAltitudeAndDelayOptions
+.. autoclass:: IAvtrArcAltitudeAndDelayOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrArcOptions
+.. autoclass:: IAvtrArcOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrVerticalPlaneOptions
+.. autoclass:: IAvtrVerticalPlaneOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrVerticalPlaneAndFlightPathOptions
+.. autoclass:: IAvtrVerticalPlaneAndFlightPathOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrArcVerticalPlaneOptions
+.. autoclass:: IAvtrArcVerticalPlaneOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrEnrouteOptions
+.. autoclass:: IAvtrEnrouteOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrEnrouteAndDelayOptions
+.. autoclass:: IAvtrEnrouteAndDelayOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrEnrouteTurnDirectionOptions
+.. autoclass:: IAvtrEnrouteTurnDirectionOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCruiseAirspeedOptions
+.. autoclass:: IAvtrCruiseAirspeedOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCruiseAirspeedProfile
+.. autoclass:: IAvtrCruiseAirspeedProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrCruiseAirspeedAndProfileOptions
+.. autoclass:: IAvtrCruiseAirspeedAndProfileOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAutomationStrategyFactory
+.. autoclass:: IAvtrAutomationStrategyFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrConnect
+.. autoclass:: IAvtrConnect
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRunwayHeadingOptions
+.. autoclass:: IAvtrRunwayHeadingOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedure
+.. autoclass:: IAvtrProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureCollection
+.. autoclass:: IAvtrProcedureCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrPhase
+.. autoclass:: IAvtrPhase
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrPhaseCollection
+.. autoclass:: IAvtrPhaseCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrMission
+.. autoclass:: IAvtrMission
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrPropagator
+.. autoclass:: IAvtrPropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrPerformanceModel
+.. autoclass:: IAvtrPerformanceModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingGeometry
+.. autoclass:: IAvtrAdvFixedWingGeometry
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingTurbofanBasicABPowerplant
+.. autoclass:: IAvtrAdvFixedWingTurbofanBasicABPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingTurbojetBasicABPowerplant
+.. autoclass:: IAvtrAdvFixedWingTurbojetBasicABPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAdvFixedWingPowerplant
+.. autoclass:: IAvtrAdvFixedWingPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteUnknown
+.. autoclass:: IAvtrSiteUnknown
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrAircraftTerrainFollowModel
+.. autoclass:: IAvtrAircraftTerrainFollowModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrPropulsionThrust
+.. autoclass:: IAvtrPropulsionThrust
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverAirspeedOptions
+.. autoclass:: IAvtrBasicManeuverAirspeedOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyAileronRoll
+.. autoclass:: IAvtrBasicManeuverStrategyAileronRoll
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyAutopilotNav
+.. autoclass:: IAvtrBasicManeuverStrategyAutopilotNav
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyAutopilotProf
+.. autoclass:: IAvtrBasicManeuverStrategyAutopilotProf
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyBarrelRoll
+.. autoclass:: IAvtrBasicManeuverStrategyBarrelRoll
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyLoop
+.. autoclass:: IAvtrBasicManeuverStrategyLoop
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyLTAHover
+.. autoclass:: IAvtrBasicManeuverStrategyLTAHover
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyFlyAOA
+.. autoclass:: IAvtrBasicManeuverStrategyFlyAOA
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyPull
+.. autoclass:: IAvtrBasicManeuverStrategyPull
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyRollingPull
+.. autoclass:: IAvtrBasicManeuverStrategyRollingPull
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategySmoothAccel
+.. autoclass:: IAvtrBasicManeuverStrategySmoothAccel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategySmoothTurn
+.. autoclass:: IAvtrBasicManeuverStrategySmoothTurn
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategySimpleTurn
+.. autoclass:: IAvtrBasicManeuverStrategySimpleTurn
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyIntercept
+.. autoclass:: IAvtrBasicManeuverStrategyIntercept
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyRelativeBearing
+.. autoclass:: IAvtrBasicManeuverStrategyRelativeBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyRelativeCourse
+.. autoclass:: IAvtrBasicManeuverStrategyRelativeCourse
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyRendezvous
+.. autoclass:: IAvtrBasicManeuverStrategyRendezvous
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyStationkeeping
+.. autoclass:: IAvtrBasicManeuverStrategyStationkeeping
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyRelativeFPA
+.. autoclass:: IAvtrBasicManeuverStrategyRelativeFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyRelSpeedAlt
+.. autoclass:: IAvtrBasicManeuverStrategyRelSpeedAlt
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyBezier
+.. autoclass:: IAvtrBasicManeuverStrategyBezier
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyPushPull
+.. autoclass:: IAvtrBasicManeuverStrategyPushPull
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyGlideProfile
+.. autoclass:: IAvtrBasicManeuverStrategyGlideProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyCruiseProfile
+.. autoclass:: IAvtrBasicManeuverStrategyCruiseProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyStraightAhead
+.. autoclass:: IAvtrBasicManeuverStrategyStraightAhead
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyWeave
+.. autoclass:: IAvtrBasicManeuverStrategyWeave
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyBallistic3D
+.. autoclass:: IAvtrBasicManeuverStrategyBallistic3D
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrBasicManeuverStrategyPitch3D
+.. autoclass:: IAvtrBasicManeuverStrategyPitch3D
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrTakeoffNormal
+.. autoclass:: IAvtrTakeoffNormal
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrTakeoffDeparturePoint
+.. autoclass:: IAvtrTakeoffDeparturePoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrTakeoffLowTransition
+.. autoclass:: IAvtrTakeoffLowTransition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRefStateForwardFlightOptions
+.. autoclass:: IAvtrRefStateForwardFlightOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRefStateHoverOptions
+.. autoclass:: IAvtrRefStateHoverOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRefStateWeightOnWheelsOptions
+.. autoclass:: IAvtrRefStateWeightOnWheelsOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrRefStateTakeoffLandingOptions
+.. autoclass:: IAvtrRefStateTakeoffLandingOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrLandingEnterDownwindPattern
+.. autoclass:: IAvtrLandingEnterDownwindPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrLandingInterceptGlideslope
+.. autoclass:: IAvtrLandingInterceptGlideslope
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrLandingStandardInstrumentApproach
+.. autoclass:: IAvtrLandingStandardInstrumentApproach
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureBasicManeuver
+.. autoclass:: IAvtrProcedureBasicManeuver
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteWaypoint
+.. autoclass:: IAvtrSiteWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteEndOfPrevProcedure
+.. autoclass:: IAvtrSiteEndOfPrevProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteVTOLPoint
+.. autoclass:: IAvtrSiteVTOLPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteSTKVehicle
+.. autoclass:: IAvtrSiteSTKVehicle
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteReferenceState
+.. autoclass:: IAvtrSiteReferenceState
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteSuperProcedure
+.. autoclass:: IAvtrSiteSuperProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteRelToPrevProcedure
+.. autoclass:: IAvtrSiteRelToPrevProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteSTKObjectWaypoint
+.. autoclass:: IAvtrSiteSTKObjectWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteSTKStaticObject
+.. autoclass:: IAvtrSiteSTKStaticObject
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteRelToSTKObject
+.. autoclass:: IAvtrSiteRelToSTKObject
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteSTKAreaTarget
+.. autoclass:: IAvtrSiteSTKAreaTarget
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteRunway
+.. autoclass:: IAvtrSiteRunway
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureLanding
+.. autoclass:: IAvtrProcedureLanding
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureEnroute
+.. autoclass:: IAvtrProcedureEnroute
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureBasicPointToPoint
+.. autoclass:: IAvtrProcedureBasicPointToPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureDelay
+.. autoclass:: IAvtrProcedureDelay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureTakeoff
+.. autoclass:: IAvtrProcedureTakeoff
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureArcEnroute
+.. autoclass:: IAvtrProcedureArcEnroute
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureArcPointToPoint
+.. autoclass:: IAvtrProcedureArcPointToPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureFlightLine
+.. autoclass:: IAvtrProcedureFlightLine
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureHoldingCircular
+.. autoclass:: IAvtrProcedureHoldingCircular
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureHoldingFigure8
+.. autoclass:: IAvtrProcedureHoldingFigure8
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureHoldingRacetrack
+.. autoclass:: IAvtrProcedureHoldingRacetrack
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureTransitionToHover
+.. autoclass:: IAvtrProcedureTransitionToHover
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureTerrainFollow
+.. autoclass:: IAvtrProcedureTerrainFollow
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureHover
+.. autoclass:: IAvtrProcedureHover
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureHoverTranslate
+.. autoclass:: IAvtrProcedureHoverTranslate
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureTransitionToForwardFlight
+.. autoclass:: IAvtrProcedureTransitionToForwardFlight
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureVerticalTakeoff
+.. autoclass:: IAvtrProcedureVerticalTakeoff
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureVerticalLanding
+.. autoclass:: IAvtrProcedureVerticalLanding
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureReferenceState
+.. autoclass:: IAvtrProcedureReferenceState
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureSuperProcedure
+.. autoclass:: IAvtrProcedureSuperProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureLaunch
+.. autoclass:: IAvtrProcedureLaunch
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureAirway
+.. autoclass:: IAvtrProcedureAirway
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureAirwayRouter
+.. autoclass:: IAvtrProcedureAirwayRouter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureAreaTargetSearch
+.. autoclass:: IAvtrProcedureAreaTargetSearch
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureFormationRecover
+.. autoclass:: IAvtrProcedureFormationRecover
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureInFormation
+.. autoclass:: IAvtrProcedureInFormation
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureParallelFlightLine
+.. autoclass:: IAvtrProcedureParallelFlightLine
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureVGTPoint
+.. autoclass:: IAvtrProcedureVGTPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteRunwayFromCatalog
+.. autoclass:: IAvtrSiteRunwayFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteAirportFromCatalog
+.. autoclass:: IAvtrSiteAirportFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteNavaidFromCatalog
+.. autoclass:: IAvtrSiteNavaidFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteVTOLPointFromCatalog
+.. autoclass:: IAvtrSiteVTOLPointFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteWaypointFromCatalog
+.. autoclass:: IAvtrSiteWaypointFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureLaunchDynState
+.. autoclass:: IAvtrProcedureLaunchDynState
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrProcedureLaunchWaypoint
+.. autoclass:: IAvtrProcedureLaunchWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrSiteDynState
+.. autoclass:: IAvtrSiteDynState
     :members:
     :exclude-members: __init__
 
@@ -1619,703 +1619,703 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: AgAvtrSiteWaypoint
+.. autoclass:: AvtrSiteWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteEndOfPrevProcedure
+.. autoclass:: AvtrSiteEndOfPrevProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteVTOLPoint
+.. autoclass:: AvtrSiteVTOLPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteReferenceState
+.. autoclass:: AvtrSiteReferenceState
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteSTKVehicle
+.. autoclass:: AvtrSiteSTKVehicle
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteSuperProcedure
+.. autoclass:: AvtrSiteSuperProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteRelToPrevProcedure
+.. autoclass:: AvtrSiteRelToPrevProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteSTKObjectWaypoint
+.. autoclass:: AvtrSiteSTKObjectWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteSTKStaticObject
+.. autoclass:: AvtrSiteSTKStaticObject
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteRelToSTKObject
+.. autoclass:: AvtrSiteRelToSTKObject
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteSTKAreaTarget
+.. autoclass:: AvtrSiteSTKAreaTarget
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteRunway
+.. autoclass:: AvtrSiteRunway
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSite
+.. autoclass:: AvtrSite
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureLanding
+.. autoclass:: AvtrProcedureLanding
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureEnroute
+.. autoclass:: AvtrProcedureEnroute
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureBasicPointToPoint
+.. autoclass:: AvtrProcedureBasicPointToPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureArcEnroute
+.. autoclass:: AvtrProcedureArcEnroute
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureArcPointToPoint
+.. autoclass:: AvtrProcedureArcPointToPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureFlightLine
+.. autoclass:: AvtrProcedureFlightLine
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureDelay
+.. autoclass:: AvtrProcedureDelay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureTakeoff
+.. autoclass:: AvtrProcedureTakeoff
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureCollection
+.. autoclass:: AvtrProcedureCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrPhase
+.. autoclass:: AvtrPhase
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrPhaseCollection
+.. autoclass:: AvtrPhaseCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMission
+.. autoclass:: AvtrMission
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrPropagator
+.. autoclass:: AvtrPropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureBasicManeuver
+.. autoclass:: AvtrProcedureBasicManeuver
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyWeave
+.. autoclass:: AvtrBasicManeuverStrategyWeave
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureTimeOptions
+.. autoclass:: AvtrProcedureTimeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrCalculationOptions
+.. autoclass:: AvtrCalculationOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftCategory
+.. autoclass:: AvtrAircraftCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrCatalog
+.. autoclass:: AvtrCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraft
+.. autoclass:: AvtrAircraft
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissile
+.. autoclass:: AvtrMissile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRotorcraft
+.. autoclass:: AvtrRotorcraft
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRotorcraftAero
+.. autoclass:: AvtrRotorcraftAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRotorcraftProp
+.. autoclass:: AvtrRotorcraftProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAcceleration
+.. autoclass:: AvtrAircraftAcceleration
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftBasicAccelerationModel
+.. autoclass:: AvtrAircraftBasicAccelerationModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftClimb
+.. autoclass:: AvtrAircraftClimb
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftCruise
+.. autoclass:: AvtrAircraftCruise
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftDescent
+.. autoclass:: AvtrAircraftDescent
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftLanding
+.. autoclass:: AvtrAircraftLanding
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftTakeoff
+.. autoclass:: AvtrAircraftTakeoff
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftBasicClimbModel
+.. autoclass:: AvtrAircraftBasicClimbModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAdvClimbModel
+.. autoclass:: AvtrAircraftAdvClimbModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftBasicCruiseModel
+.. autoclass:: AvtrAircraftBasicCruiseModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAdvCruiseModel
+.. autoclass:: AvtrAircraftAdvCruiseModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftBasicDescentModel
+.. autoclass:: AvtrAircraftBasicDescentModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAdvDescentModel
+.. autoclass:: AvtrAircraftAdvDescentModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftBasicTakeoffModel
+.. autoclass:: AvtrAircraftBasicTakeoffModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAdvTakeoffModel
+.. autoclass:: AvtrAircraftAdvTakeoffModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftBasicLandingModel
+.. autoclass:: AvtrAircraftBasicLandingModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAdvLandingModel
+.. autoclass:: AvtrAircraftAdvLandingModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAirportCategory
+.. autoclass:: AvtrAirportCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrARINC424Airport
+.. autoclass:: AvtrARINC424Airport
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrARINC424Runway
+.. autoclass:: AvtrARINC424Runway
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrDAFIFRunway
+.. autoclass:: AvtrDAFIFRunway
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrDAFIFHelipad
+.. autoclass:: AvtrDAFIFHelipad
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrDAFIFWaypoint
+.. autoclass:: AvtrDAFIFWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRunwayCategory
+.. autoclass:: AvtrRunwayCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrUserRunwaySource
+.. autoclass:: AvtrUserRunwaySource
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrUserRunway
+.. autoclass:: AvtrUserRunway
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAltitudeMSLOptions
+.. autoclass:: AvtrAltitudeMSLOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAltitudeOptions
+.. autoclass:: AvtrAltitudeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrArcAltitudeOptions
+.. autoclass:: AvtrArcAltitudeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrArcAltitudeAndDelayOptions
+.. autoclass:: AvtrArcAltitudeAndDelayOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrArcOptions
+.. autoclass:: AvtrArcOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAltitudeMSLAndLevelOffOptions
+.. autoclass:: AvtrAltitudeMSLAndLevelOffOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrCruiseAirspeedOptions
+.. autoclass:: AvtrCruiseAirspeedOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrCruiseAirspeedProfile
+.. autoclass:: AvtrCruiseAirspeedProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrCruiseAirspeedAndProfileOptions
+.. autoclass:: AvtrCruiseAirspeedAndProfileOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrLandingCruiseAirspeedAndProfileOptions
+.. autoclass:: AvtrLandingCruiseAirspeedAndProfileOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrEnrouteOptions
+.. autoclass:: AvtrEnrouteOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrEnrouteAndDelayOptions
+.. autoclass:: AvtrEnrouteAndDelayOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrLandingEnrouteOptions
+.. autoclass:: AvtrLandingEnrouteOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrEnrouteTurnDirectionOptions
+.. autoclass:: AvtrEnrouteTurnDirectionOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrNavigationOptions
+.. autoclass:: AvtrNavigationOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrVerticalPlaneOptions
+.. autoclass:: AvtrVerticalPlaneOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrArcVerticalPlaneOptions
+.. autoclass:: AvtrArcVerticalPlaneOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrVerticalPlaneAndFlightPathOptions
+.. autoclass:: AvtrVerticalPlaneAndFlightPathOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrLandingVerticalPlaneOptions
+.. autoclass:: AvtrLandingVerticalPlaneOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRunwayHeadingOptions
+.. autoclass:: AvtrRunwayHeadingOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrLandingEnterDownwindPattern
+.. autoclass:: AvtrLandingEnterDownwindPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrLandingInterceptGlideslope
+.. autoclass:: AvtrLandingInterceptGlideslope
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrLandingStandardInstrumentApproach
+.. autoclass:: AvtrLandingStandardInstrumentApproach
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrTakeoffDeparturePoint
+.. autoclass:: AvtrTakeoffDeparturePoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrTakeoffLowTransition
+.. autoclass:: AvtrTakeoffLowTransition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrTakeoffNormal
+.. autoclass:: AvtrTakeoffNormal
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrLevelTurns
+.. autoclass:: AvtrLevelTurns
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAttitudeTransitions
+.. autoclass:: AvtrAttitudeTransitions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrClimbAndDescentTransitions
+.. autoclass:: AvtrClimbAndDescentTransitions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAeroPropManeuverModeHelper
+.. autoclass:: AvtrAeroPropManeuverModeHelper
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAdvAccelerationModel
+.. autoclass:: AvtrAircraftAdvAccelerationModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAccelerationMode
+.. autoclass:: AvtrAircraftAccelerationMode
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftSimpleAero
+.. autoclass:: AvtrAircraftSimpleAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftExternalAero
+.. autoclass:: AvtrAircraftExternalAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftAero
+.. autoclass:: AvtrAircraftAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftBasicFixedWingAero
+.. autoclass:: AvtrAircraftBasicFixedWingAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftProp
+.. autoclass:: AvtrAircraftProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftSimpleProp
+.. autoclass:: AvtrAircraftSimpleProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftExternalProp
+.. autoclass:: AvtrAircraftExternalProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftBasicFixedWingProp
+.. autoclass:: AvtrAircraftBasicFixedWingProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrARINC424Source
+.. autoclass:: AvtrARINC424Source
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrDAFIFSource
+.. autoclass:: AvtrDAFIFSource
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicFixedWingFwdFlightLiftHelper
+.. autoclass:: AvtrBasicFixedWingFwdFlightLiftHelper
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyStraightAhead
+.. autoclass:: AvtrBasicManeuverStrategyStraightAhead
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyCruiseProfile
+.. autoclass:: AvtrBasicManeuverStrategyCruiseProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyGlideProfile
+.. autoclass:: AvtrBasicManeuverStrategyGlideProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftModels
+.. autoclass:: AvtrAircraftModels
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileModels
+.. autoclass:: AvtrMissileModels
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRotorcraftModels
+.. autoclass:: AvtrRotorcraftModels
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrConfiguration
+.. autoclass:: AvtrConfiguration
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrFuelTankInternal
+.. autoclass:: AvtrFuelTankInternal
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrFuelTankExternal
+.. autoclass:: AvtrFuelTankExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrPayloadStation
+.. autoclass:: AvtrPayloadStation
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrStationCollection
+.. autoclass:: AvtrStationCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrWindModel
+.. autoclass:: AvtrWindModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrWindModelConstant
+.. autoclass:: AvtrWindModelConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrWindModelADDS
+.. autoclass:: AvtrWindModelADDS
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrADDSMessage
+.. autoclass:: AvtrADDSMessage
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrADDSMessageCollection
+.. autoclass:: AvtrADDSMessageCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedure
+.. autoclass:: AvtrProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAtmosphereModel
+.. autoclass:: AvtrAtmosphereModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAtmosphereModelBasic
+.. autoclass:: AvtrAtmosphereModelBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategySimpleTurn
+.. autoclass:: AvtrBasicManeuverStrategySimpleTurn
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyAileronRoll
+.. autoclass:: AvtrBasicManeuverStrategyAileronRoll
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyFlyAOA
+.. autoclass:: AvtrBasicManeuverStrategyFlyAOA
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyPull
+.. autoclass:: AvtrBasicManeuverStrategyPull
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyRollingPull
+.. autoclass:: AvtrBasicManeuverStrategyRollingPull
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategySmoothAccel
+.. autoclass:: AvtrBasicManeuverStrategySmoothAccel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategySmoothTurn
+.. autoclass:: AvtrBasicManeuverStrategySmoothTurn
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverAirspeedOptions
+.. autoclass:: AvtrBasicManeuverAirspeedOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrPropulsionThrust
+.. autoclass:: AvtrPropulsionThrust
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyAutopilotNav
+.. autoclass:: AvtrBasicManeuverStrategyAutopilotNav
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyAutopilotProf
+.. autoclass:: AvtrBasicManeuverStrategyAutopilotProf
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyBarrelRoll
+.. autoclass:: AvtrBasicManeuverStrategyBarrelRoll
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyLoop
+.. autoclass:: AvtrBasicManeuverStrategyLoop
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyLTAHover
+.. autoclass:: AvtrBasicManeuverStrategyLTAHover
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyIntercept
+.. autoclass:: AvtrBasicManeuverStrategyIntercept
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyRelativeBearing
+.. autoclass:: AvtrBasicManeuverStrategyRelativeBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyRelativeCourse
+.. autoclass:: AvtrBasicManeuverStrategyRelativeCourse
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyRendezvous
+.. autoclass:: AvtrBasicManeuverStrategyRendezvous
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyStationkeeping
+.. autoclass:: AvtrBasicManeuverStrategyStationkeeping
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyRelativeFPA
+.. autoclass:: AvtrBasicManeuverStrategyRelativeFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyRelSpeedAlt
+.. autoclass:: AvtrBasicManeuverStrategyRelSpeedAlt
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyBezier
+.. autoclass:: AvtrBasicManeuverStrategyBezier
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyPushPull
+.. autoclass:: AvtrBasicManeuverStrategyPushPull
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureHoldingCircular
+.. autoclass:: AvtrProcedureHoldingCircular
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureHoldingFigure8
+.. autoclass:: AvtrProcedureHoldingFigure8
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureHoldingRacetrack
+.. autoclass:: AvtrProcedureHoldingRacetrack
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureTransitionToHover
+.. autoclass:: AvtrProcedureTransitionToHover
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureTerrainFollow
+.. autoclass:: AvtrProcedureTerrainFollow
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureHover
+.. autoclass:: AvtrProcedureHover
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureHoverTranslate
+.. autoclass:: AvtrProcedureHoverTranslate
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureTransitionToForwardFlight
+.. autoclass:: AvtrProcedureTransitionToForwardFlight
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrHoverAltitudeOptions
+.. autoclass:: AvtrHoverAltitudeOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureVerticalTakeoff
+.. autoclass:: AvtrProcedureVerticalTakeoff
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureVerticalLanding
+.. autoclass:: AvtrProcedureVerticalLanding
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureReferenceState
+.. autoclass:: AvtrProcedureReferenceState
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureSuperProcedure
+.. autoclass:: AvtrProcedureSuperProcedure
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureLaunch
+.. autoclass:: AvtrProcedureLaunch
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureAirway
+.. autoclass:: AvtrProcedureAirway
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureAirwayRouter
+.. autoclass:: AvtrProcedureAirwayRouter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureAreaTargetSearch
+.. autoclass:: AvtrProcedureAreaTargetSearch
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureFormationRecover
+.. autoclass:: AvtrProcedureFormationRecover
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureInFormation
+.. autoclass:: AvtrProcedureInFormation
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureParallelFlightLine
+.. autoclass:: AvtrProcedureParallelFlightLine
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureVGTPoint
+.. autoclass:: AvtrProcedureVGTPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrPerformanceModelOptions
+.. autoclass:: AvtrPerformanceModelOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingTool
+.. autoclass:: AvtrAdvFixedWingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingExternalAero
+.. autoclass:: AvtrAdvFixedWingExternalAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingSubsonicAero
+.. autoclass:: AvtrAdvFixedWingSubsonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingSubSuperHypersonicAero
+.. autoclass:: AvtrAdvFixedWingSubSuperHypersonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingSupersonicAero
+.. autoclass:: AvtrAdvFixedWingSupersonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrPerformanceModel
+.. autoclass:: AvtrPerformanceModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingGeometryBasic
+.. autoclass:: AvtrAdvFixedWingGeometryBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingGeometryVariable
+.. autoclass:: AvtrAdvFixedWingGeometryVariable
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingElectricPowerplant
+.. autoclass:: AvtrAdvFixedWingElectricPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingExternalProp
+.. autoclass:: AvtrAdvFixedWingExternalProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingSubSuperHypersonicProp
+.. autoclass:: AvtrAdvFixedWingSubSuperHypersonicProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingPistonPowerplant
+.. autoclass:: AvtrAdvFixedWingPistonPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingEmpiricalJetEngine
+.. autoclass:: AvtrAdvFixedWingEmpiricalJetEngine
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingTurbofanBasicABPowerplant
+.. autoclass:: AvtrAdvFixedWingTurbofanBasicABPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingTurbojetBasicABPowerplant
+.. autoclass:: AvtrAdvFixedWingTurbojetBasicABPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingTurbofanBasicABProp
+.. autoclass:: AvtrAdvFixedWingTurbofanBasicABProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingTurbojetBasicABProp
+.. autoclass:: AvtrAdvFixedWingTurbojetBasicABProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingTurbopropPowerplant
+.. autoclass:: AvtrAdvFixedWingTurbopropPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileSimpleAero
+.. autoclass:: AvtrMissileSimpleAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileExternalAero
+.. autoclass:: AvtrMissileExternalAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileAdvancedAero
+.. autoclass:: AvtrMissileAdvancedAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileAero
+.. autoclass:: AvtrMissileAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileProp
+.. autoclass:: AvtrMissileProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileSimpleProp
+.. autoclass:: AvtrMissileSimpleProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileExternalProp
+.. autoclass:: AvtrMissileExternalProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileRamjetProp
+.. autoclass:: AvtrMissileRamjetProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileRocketProp
+.. autoclass:: AvtrMissileRocketProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrMissileTurbojetProp
+.. autoclass:: AvtrMissileTurbojetProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRefStateForwardFlightOptions
+.. autoclass:: AvtrRefStateForwardFlightOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRefStateTakeoffLandingOptions
+.. autoclass:: AvtrRefStateTakeoffLandingOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRefStateHoverOptions
+.. autoclass:: AvtrRefStateHoverOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRefStateWeightOnWheelsOptions
+.. autoclass:: AvtrRefStateWeightOnWheelsOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteRunwayFromCatalog
+.. autoclass:: AvtrSiteRunwayFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteAirportFromCatalog
+.. autoclass:: AvtrSiteAirportFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteNavaidFromCatalog
+.. autoclass:: AvtrSiteNavaidFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteVTOLPointFromCatalog
+.. autoclass:: AvtrSiteVTOLPointFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteWaypointFromCatalog
+.. autoclass:: AvtrSiteWaypointFromCatalog
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrNavaidCategory
+.. autoclass:: AvtrNavaidCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrVTOLPointCategory
+.. autoclass:: AvtrVTOLPointCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrWaypointCategory
+.. autoclass:: AvtrWaypointCategory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrARINC424Navaid
+.. autoclass:: AvtrARINC424Navaid
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrARINC424Helipad
+.. autoclass:: AvtrARINC424Helipad
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrARINC424Waypoint
+.. autoclass:: AvtrARINC424Waypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrUserVTOLPointSource
+.. autoclass:: AvtrUserVTOLPointSource
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrUserVTOLPoint
+.. autoclass:: AvtrUserVTOLPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrUserWaypointSource
+.. autoclass:: AvtrUserWaypointSource
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrUserWaypoint
+.. autoclass:: AvtrUserWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrPropulsionEfficiencies
+.. autoclass:: AvtrPropulsionEfficiencies
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrFuelModelKeroseneAFPROP
+.. autoclass:: AvtrFuelModelKeroseneAFPROP
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrFuelModelKeroseneCEA
+.. autoclass:: AvtrFuelModelKeroseneCEA
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingRamjetBasic
+.. autoclass:: AvtrAdvFixedWingRamjetBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAdvFixedWingScramjetBasic
+.. autoclass:: AvtrAdvFixedWingScramjetBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftVTOLModel
+.. autoclass:: AvtrAircraftVTOLModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftVTOL
+.. autoclass:: AvtrAircraftVTOL
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftTerrainFollowModel
+.. autoclass:: AvtrAircraftTerrainFollowModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrAircraftTerrainFollow
+.. autoclass:: AvtrAircraftTerrainFollow
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyBallistic3D
+.. autoclass:: AvtrBasicManeuverStrategyBallistic3D
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureLaunchDynState
+.. autoclass:: AvtrProcedureLaunchDynState
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureLaunchWaypoint
+.. autoclass:: AvtrProcedureLaunchWaypoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrSiteDynState
+.. autoclass:: AvtrSiteDynState
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverStrategyPitch3D
+.. autoclass:: AvtrBasicManeuverStrategyPitch3D
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrRefuelDumpProperties
+.. autoclass:: AvtrRefuelDumpProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrProcedureFastTimeOptions
+.. autoclass:: AvtrProcedureFastTimeOptions
     :members:
     :exclude-members: __init__
 

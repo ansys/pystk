@@ -9,25 +9,25 @@ Interfaces
 
 .. autosummary::
 
-    IAgSTKXSSLCertificateErrorEventArgs
-    IAgSTKXConControlQuitReceivedEventArgs
-    IAgPickInfoData
-    IAgRubberBandPickInfoData
-    IAgSTKXApplication
-    IAgDataObject
-    IAgObjPathCollection
-    IAgDrawElem
-    IAgDrawElemRect
-    IAgDrawElemCollection
-    IAgWinProjPos
-    IAgDrawElemLine
-    IAgExecCmdResult
-    IAgExecMultiCmdResult
-    IAgUiAxVOCntrl
-    IAgUiAx2DCntrl
-    IAgSTKXApplicationPartnerAccess
-    IAgDataObjectFiles
-    IAgUiAxGfxAnalysisCntrl
+    ISTKXSSLCertificateErrorEventArgs
+    ISTKXConControlQuitReceivedEventArgs
+    IPickInfoData
+    IRubberBandPickInfoData
+    ISTKXApplication
+    IDataObject
+    IObjPathCollection
+    IDrawElem
+    IDrawElemRect
+    IDrawElemCollection
+    IWinProjPos
+    IDrawElemLine
+    IExecCmdResult
+    IExecMultiCmdResult
+    IUiAxVOCntrl
+    IUiAx2DCntrl
+    ISTKXApplicationPartnerAccess
+    IDataObjectFiles
+    IUiAxGfxAnalysisCntrl
 
 
 Enumerations
@@ -59,24 +59,24 @@ Classes
 
     AgExecCmdResult
     AgExecMultiCmdResult
-    AgUiAxVOCntrl
-    AgUiAx2DCntrl
-    AgPickInfoData
-    AgSTKXApplication
-    AgSTKXApplicationPartnerAccess
-    AgDataObject
-    AgDataObjectFiles
-    AgRubberBandPickInfoData
-    AgObjPathCollection
-    AgDrawElemRect
-    AgDrawElemCollection
-    AgDraw2DElemRect
-    AgDraw2DElemCollection
-    AgUiAxGfxAnalysisCntrl
-    AgWinProjPos
-    AgDrawElemLine
-    AgSTKXSSLCertificateErrorEventArgs
-    AgSTKXConControlQuitReceivedEventArgs
+    UiAxVOCntrl
+    UiAx2DCntrl
+    PickInfoData
+    STKXApplication
+    STKXApplicationPartnerAccess
+    DataObject
+    DataObjectFiles
+    RubberBandPickInfoData
+    ObjPathCollection
+    DrawElemRect
+    DrawElemCollection
+    Draw2DElemRect
+    Draw2DElemCollection
+    UiAxGfxAnalysisCntrl
+    WinProjPos
+    DrawElemLine
+    STKXSSLCertificateErrorEventArgs
+    STKXConControlQuitReceivedEventArgs
 
 
 Reference
@@ -85,61 +85,61 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IAgSTKXSSLCertificateErrorEventArgs
+.. autoclass:: ISTKXSSLCertificateErrorEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgSTKXConControlQuitReceivedEventArgs
+.. autoclass:: ISTKXConControlQuitReceivedEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgPickInfoData
+.. autoclass:: IPickInfoData
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgRubberBandPickInfoData
+.. autoclass:: IRubberBandPickInfoData
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgSTKXApplication
+.. autoclass:: ISTKXApplication
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDataObject
+.. autoclass:: IDataObject
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgObjPathCollection
+.. autoclass:: IObjPathCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDrawElem
+.. autoclass:: IDrawElem
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDrawElemRect
+.. autoclass:: IDrawElemRect
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDrawElemCollection
+.. autoclass:: IDrawElemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgWinProjPos
+.. autoclass:: IWinProjPos
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDrawElemLine
+.. autoclass:: IDrawElemLine
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgExecCmdResult
+.. autoclass:: IExecCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgExecMultiCmdResult
+.. autoclass:: IExecMultiCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiAxVOCntrl
+.. autoclass:: IUiAxVOCntrl
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiAx2DCntrl
+.. autoclass:: IUiAx2DCntrl
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgSTKXApplicationPartnerAccess
+.. autoclass:: ISTKXApplicationPartnerAccess
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgDataObjectFiles
+.. autoclass:: IDataObjectFiles
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiAxGfxAnalysisCntrl
+.. autoclass:: IUiAxGfxAnalysisCntrl
     :members:
     :exclude-members: __init__
 
@@ -188,58 +188,58 @@ Classes
 .. autoclass:: AgExecMultiCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiAxVOCntrl
+.. autoclass:: UiAxVOCntrl
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiAx2DCntrl
+.. autoclass:: UiAx2DCntrl
     :members:
     :exclude-members: __init__
-.. autoclass:: AgPickInfoData
+.. autoclass:: PickInfoData
     :members:
     :exclude-members: __init__
-.. autoclass:: AgSTKXApplication
+.. autoclass:: STKXApplication
     :members:
     :exclude-members: __init__
-.. autoclass:: AgSTKXApplicationPartnerAccess
+.. autoclass:: STKXApplicationPartnerAccess
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDataObject
+.. autoclass:: DataObject
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDataObjectFiles
+.. autoclass:: DataObjectFiles
     :members:
     :exclude-members: __init__
-.. autoclass:: AgRubberBandPickInfoData
+.. autoclass:: RubberBandPickInfoData
     :members:
     :exclude-members: __init__
-.. autoclass:: AgObjPathCollection
+.. autoclass:: ObjPathCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDrawElemRect
+.. autoclass:: DrawElemRect
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDrawElemCollection
+.. autoclass:: DrawElemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDraw2DElemRect
+.. autoclass:: Draw2DElemRect
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDraw2DElemCollection
+.. autoclass:: Draw2DElemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiAxGfxAnalysisCntrl
+.. autoclass:: UiAxGfxAnalysisCntrl
     :members:
     :exclude-members: __init__
-.. autoclass:: AgWinProjPos
+.. autoclass:: WinProjPos
     :members:
     :exclude-members: __init__
-.. autoclass:: AgDrawElemLine
+.. autoclass:: DrawElemLine
     :members:
     :exclude-members: __init__
-.. autoclass:: AgSTKXSSLCertificateErrorEventArgs
+.. autoclass:: STKXSSLCertificateErrorEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: AgSTKXConControlQuitReceivedEventArgs
+.. autoclass:: STKXConControlQuitReceivedEventArgs
     :members:
     :exclude-members: __init__
 

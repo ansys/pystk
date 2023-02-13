@@ -9,12 +9,12 @@ Interfaces
 
 .. autosummary::
 
-    IAgUiToolbar
-    IAgUiToolbarCollection
-    IAgUiWindow
-    IAgUiWindowsCollection
-    IAgUiWindowMapObject
-    IAgUiWindowGlobeObject
+    IUiToolbar
+    IUiToolbarCollection
+    IUiWindow
+    IUiWindowsCollection
+    IUiWindowMapObject
+    IUiWindowGlobeObject
 
 
 Enumerations
@@ -34,12 +34,12 @@ Classes
 
 .. autosummary::
 
-    AgUiWindowsCollection
-    AgUiWindow
-    AgUiToolbar
-    AgUiToolbarCollection
-    AgUiWindowMapObject
-    AgUiWindowGlobeObject
+    UiWindowsCollection
+    UiWindow
+    UiToolbar
+    UiToolbarCollection
+    UiWindowMapObject
+    UiWindowGlobeObject
 
 
 Reference
@@ -48,22 +48,22 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IAgUiToolbar
+.. autoclass:: IUiToolbar
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiToolbarCollection
+.. autoclass:: IUiToolbarCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiWindow
+.. autoclass:: IUiWindow
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiWindowsCollection
+.. autoclass:: IUiWindowsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiWindowMapObject
+.. autoclass:: IUiWindowMapObject
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiWindowGlobeObject
+.. autoclass:: IUiWindowGlobeObject
     :members:
     :exclude-members: __init__
 
@@ -86,22 +86,22 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: AgUiWindowsCollection
+.. autoclass:: UiWindowsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiWindow
+.. autoclass:: UiWindow
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiToolbar
+.. autoclass:: UiToolbar
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiToolbarCollection
+.. autoclass:: UiToolbarCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiWindowMapObject
+.. autoclass:: UiWindowMapObject
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiWindowGlobeObject
+.. autoclass:: UiWindowGlobeObject
     :members:
     :exclude-members: __init__
 

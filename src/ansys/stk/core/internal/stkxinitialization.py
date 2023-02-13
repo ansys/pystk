@@ -2,7 +2,7 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgSTKXInitialize", "IAgSTKXInitialize"]
+__all__ = ["ISTKXInitialize", "STKXInitialize"]
 
 import typing
 
@@ -33,7 +33,7 @@ from ..utilities.exceptions import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class IAgSTKXInitialize(object):
+class ISTKXInitialize(object):
     """STK X Advanced Initialization Options."""
     _uuid = "{EDC9E451-09B3-4D8B-9EC5-B75C6D95A52D}"
     _num_methods = 3
@@ -44,31 +44,31 @@ class IAgSTKXInitialize(object):
         self.__dict__["_InitializeData"] = _raise_uninitialized_error
         self.__dict__["_InitializeDataEx"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgSTKXInitialize._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISTKXInitialize._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgSTKXInitialize from source object.")
+                raise STKInvalidCastError("Failed to create ISTKXInitialize from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgSTKXInitialize = agcom.GUID(IAgSTKXInitialize._uuid)
-        vtable_offset_local = IAgSTKXInitialize._vtable_offset - 1
-        self.__dict__["_InitializeActivationContext"] = IAGFUNCTYPE(pUnk, IID_IAgSTKXInitialize, vtable_offset_local+1, )
-        self.__dict__["_InitializeData"] = IAGFUNCTYPE(pUnk, IID_IAgSTKXInitialize, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
-        self.__dict__["_InitializeDataEx"] = IAGFUNCTYPE(pUnk, IID_IAgSTKXInitialize, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL)
+        IID_ISTKXInitialize = agcom.GUID(ISTKXInitialize._uuid)
+        vtable_offset_local = ISTKXInitialize._vtable_offset - 1
+        self.__dict__["_InitializeActivationContext"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+1, )
+        self.__dict__["_InitializeData"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
+        self.__dict__["_InitializeDataEx"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgSTKXInitialize.__dict__ and type(IAgSTKXInitialize.__dict__[attrname]) == property:
-            return IAgSTKXInitialize.__dict__[attrname]
+        if attrname in ISTKXInitialize.__dict__ and type(ISTKXInitialize.__dict__[attrname]) == property:
+            return ISTKXInitialize.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgSTKXInitialize.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXInitialize.")
     
     def InitializeActivationContext(self) -> None:
         """Initialize the activation context to be used by STK Engine based on the current activation context."""
@@ -94,30 +94,30 @@ class IAgSTKXInitialize(object):
             agcls.evaluate_hresult(self.__dict__["_InitializeDataEx"](arg_installHome.COM_val, arg_configDirectory.COM_val, arg_bDefaults.COM_val, arg_bStyles.COM_val, arg_bVGT.COM_val, arg_bAMM.COM_val, arg_bGator.COM_val, arg_bOnlineData.COM_val, arg_bOnlineSGP4.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{EDC9E451-09B3-4D8B-9EC5-B75C6D95A52D}", IAgSTKXInitialize)
-agcls.AgTypeNameMap["IAgSTKXInitialize"] = IAgSTKXInitialize
+agcls.AgClassCatalog.add_catalog_entry("{EDC9E451-09B3-4D8B-9EC5-B75C6D95A52D}", ISTKXInitialize)
+agcls.AgTypeNameMap["ISTKXInitialize"] = ISTKXInitialize
 
 
 
-class AgSTKXInitialize(IAgSTKXInitialize):
+class STKXInitialize(ISTKXInitialize):
     """STK X Initialize object."""
     def __init__(self, sourceObject=None):
-        IAgSTKXInitialize.__init__(self, sourceObject)
+        ISTKXInitialize.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgSTKXInitialize._private_init(self, pUnk)
+        ISTKXInitialize._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgSTKXInitialize._get_property(self, attrname) is not None: found_prop = IAgSTKXInitialize._get_property(self, attrname)
+        if ISTKXInitialize._get_property(self, attrname) is not None: found_prop = ISTKXInitialize._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgSTKXInitialize.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in STKXInitialize.")
         
-agcls.AgClassCatalog.add_catalog_entry("{3B85901D-FC82-4733-97E6-5BB25CE69379}", AgSTKXInitialize)
+agcls.AgClassCatalog.add_catalog_entry("{3B85901D-FC82-4733-97E6-5BB25CE69379}", STKXInitialize)
 
 
 

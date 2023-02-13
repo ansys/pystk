@@ -9,10 +9,10 @@ Interfaces
 
 .. autosummary::
 
-    IAgAvtrStrategyMATLABNav
-    IAgAvtrStrategyMATLABProfile
-    IAgAvtrStrategyMATLABFull3D
-    IAgAvtrStrategyMATLAB3DGuidance
+    IAvtrStrategyMATLABNav
+    IAvtrStrategyMATLABProfile
+    IAvtrStrategyMATLABFull3D
+    IAvtrStrategyMATLAB3DGuidance
 
 
 Enumerations
@@ -26,11 +26,11 @@ Classes
 
 .. autosummary::
 
-    AgAvtrStrategyMATLABNav
-    AgAvtrStrategyMATLABProfile
-    AgAvtrStrategyMATLABFull3D
-    AgAvtrStrategyMATLAB3DGuidance
-    AgAvtrBasicManeuverMATLABFactory
+    AvtrStrategyMATLABNav
+    AvtrStrategyMATLABProfile
+    AvtrStrategyMATLABFull3D
+    AvtrStrategyMATLAB3DGuidance
+    AvtrBasicManeuverMATLABFactory
 
 
 Reference
@@ -39,16 +39,16 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IAgAvtrStrategyMATLABNav
+.. autoclass:: IAvtrStrategyMATLABNav
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrStrategyMATLABProfile
+.. autoclass:: IAvtrStrategyMATLABProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrStrategyMATLABFull3D
+.. autoclass:: IAvtrStrategyMATLABFull3D
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgAvtrStrategyMATLAB3DGuidance
+.. autoclass:: IAvtrStrategyMATLAB3DGuidance
     :members:
     :exclude-members: __init__
 
@@ -60,19 +60,19 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: AgAvtrStrategyMATLABNav
+.. autoclass:: AvtrStrategyMATLABNav
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrStrategyMATLABProfile
+.. autoclass:: AvtrStrategyMATLABProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrStrategyMATLABFull3D
+.. autoclass:: AvtrStrategyMATLABFull3D
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrStrategyMATLAB3DGuidance
+.. autoclass:: AvtrStrategyMATLAB3DGuidance
     :members:
     :exclude-members: __init__
-.. autoclass:: AgAvtrBasicManeuverMATLABFactory
+.. autoclass:: AvtrBasicManeuverMATLABFactory
     :members:
     :exclude-members: __init__
 

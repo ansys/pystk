@@ -2,22 +2,20 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgCROrientationAzEl", "AgCROrientationEulerAngles", "AgCROrientationOffsetCart", "AgCROrientationQuaternion", 
-"AgCROrientationYPRAngles", "AgCartesian", "AgCartesian2Vector", "AgCartesian3Vector", "AgConversionUtility", "AgCylindrical", 
-"AgDate", "AgDirection", "AgDirectionEuler", "AgDirectionPR", "AgDirectionRADec", "AgDirectionXYZ", "AgDoublesCollection", 
-"AgEAzElAboutBoresight", "AgECoordinateSystem", "AgEDirectionType", "AgEEulerDirectionSequence", "AgEEulerOrientationSequence", 
+__all__ = ["AgEAzElAboutBoresight", "AgECoordinateSystem", "AgEDirectionType", "AgEEulerDirectionSequence", "AgEEulerOrientationSequence", 
 "AgEExecMultiCmdResultAction", "AgEFillStyle", "AgELineStyle", "AgELogMsgDispID", "AgELogMsgType", "AgEOrbitStateType", 
 "AgEOrientationType", "AgEPRSequence", "AgEPositionType", "AgEPropertyInfoValueType", "AgEYPRAnglesSequence", "AgExecCmdResult", 
-"AgExecMultiCmdResult", "AgGeocentric", "AgGeodetic", "AgOrientation", "AgOrientationAzEl", "AgOrientationEulerAngles", 
-"AgOrientationQuaternion", "AgOrientationYPRAngles", "AgPlanetocentric", "AgPlanetodetic", "AgPosition", "AgPropertyInfo", 
-"AgPropertyInfoCollection", "AgQuantity", "AgRuntimeTypeInfo", "AgSpherical", "AgUnitPrefsDim", "AgUnitPrefsDimCollection", 
-"AgUnitPrefsUnit", "AgUnitPrefsUnitCollection", "IAgCartesian", "IAgCartesian2Vector", "IAgCartesian3Vector", "IAgConversionUtility", 
-"IAgCylindrical", "IAgDate", "IAgDirection", "IAgDirectionEuler", "IAgDirectionPR", "IAgDirectionRADec", "IAgDirectionXYZ", 
-"IAgDoublesCollection", "IAgExecCmdResult", "IAgExecMultiCmdResult", "IAgGeocentric", "IAgGeodetic", "IAgLocationData", 
-"IAgOrbitState", "IAgOrientation", "IAgOrientationAzEl", "IAgOrientationEulerAngles", "IAgOrientationPositionOffset", "IAgOrientationQuaternion", 
-"IAgOrientationYPRAngles", "IAgPlanetocentric", "IAgPlanetodetic", "IAgPosition", "IAgPropertyInfo", "IAgPropertyInfoCollection", 
-"IAgQuantity", "IAgRuntimeTypeInfo", "IAgRuntimeTypeInfoProvider", "IAgSpherical", "IAgUnitPrefsDim", "IAgUnitPrefsDimCollection", 
-"IAgUnitPrefsUnit", "IAgUnitPrefsUnitCollection"]
+"AgExecMultiCmdResult", "CROrientationAzEl", "CROrientationEulerAngles", "CROrientationOffsetCart", "CROrientationQuaternion", 
+"CROrientationYPRAngles", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", "Cylindrical", "Date", 
+"Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionXYZ", "DoublesCollection", "Geocentric", "Geodetic", 
+"ICartesian", "ICartesian2Vector", "ICartesian3Vector", "IConversionUtility", "ICylindrical", "IDate", "IDirection", "IDirectionEuler", 
+"IDirectionPR", "IDirectionRADec", "IDirectionXYZ", "IDoublesCollection", "IExecCmdResult", "IExecMultiCmdResult", "IGeocentric", 
+"IGeodetic", "ILocationData", "IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", 
+"IOrientationQuaternion", "IOrientationYPRAngles", "IPlanetocentric", "IPlanetodetic", "IPosition", "IPropertyInfo", "IPropertyInfoCollection", 
+"IQuantity", "IRuntimeTypeInfo", "IRuntimeTypeInfoProvider", "ISpherical", "IUnitPrefsDim", "IUnitPrefsDimCollection", "IUnitPrefsUnit", 
+"IUnitPrefsUnitCollection", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationYPRAngles", 
+"Planetocentric", "Planetodetic", "Position", "PropertyInfo", "PropertyInfoCollection", "Quantity", "RuntimeTypeInfo", "Spherical", 
+"UnitPrefsDim", "UnitPrefsDimCollection", "UnitPrefsUnit", "UnitPrefsUnitCollection"]
 
 import typing
 
@@ -496,7 +494,7 @@ AgEPropertyInfoValueType.ePropertyInfoValueTypeInterface.__doc__ = "Property is 
 agcls.AgTypeNameMap["AgEPropertyInfoValueType"] = AgEPropertyInfoValueType
 
 
-class IAgLocationData(object):
+class ILocationData(object):
     """Base interface IAgLocationData. IAgPosition derives from this interface."""
     _uuid = "{C1E99EDA-C666-4971-AFD0-2259CB7E8452}"
     _num_methods = 0
@@ -504,34 +502,34 @@ class IAgLocationData(object):
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgLocationData._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ILocationData._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgLocationData from source object.")
+                raise STKInvalidCastError("Failed to create ILocationData from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgLocationData = agcom.GUID(IAgLocationData._uuid)
-        vtable_offset_local = IAgLocationData._vtable_offset - 1
+        IID_ILocationData = agcom.GUID(ILocationData._uuid)
+        vtable_offset_local = ILocationData._vtable_offset - 1
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgLocationData.__dict__ and type(IAgLocationData.__dict__[attrname]) == property:
-            return IAgLocationData.__dict__[attrname]
+        if attrname in ILocationData.__dict__ and type(ILocationData.__dict__[attrname]) == property:
+            return ILocationData.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgLocationData.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ILocationData.")
     
 
-agcls.AgClassCatalog.add_catalog_entry("{C1E99EDA-C666-4971-AFD0-2259CB7E8452}", IAgLocationData)
-agcls.AgTypeNameMap["IAgLocationData"] = IAgLocationData
+agcls.AgClassCatalog.add_catalog_entry("{C1E99EDA-C666-4971-AFD0-2259CB7E8452}", ILocationData)
+agcls.AgTypeNameMap["ILocationData"] = ILocationData
 
-class IAgPosition(object):
+class IPosition(object):
     """IAgPosition provides access to the position of the object"""
     _uuid = "{F25960CE-1D73-4BA0-A429-541DD6D808DE}"
     _num_methods = 21
@@ -560,51 +558,51 @@ class IAgPosition(object):
         self.__dict__["_QueryCylindricalArray"] = _raise_uninitialized_error
         self.__dict__["_QueryCartesianArray"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgPosition._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPosition._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgPosition from source object.")
+                raise STKInvalidCastError("Failed to create IPosition from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgPosition = agcom.GUID(IAgPosition._uuid)
-        vtable_offset_local = IAgPosition._vtable_offset - 1
-        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetPosType"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+3, agcom.PVOID)
-        self.__dict__["_AssignGeocentric"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_AssignGeodetic"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_AssignSpherical"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+6, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_AssignCylindrical"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+7, agcom.DOUBLE, agcom.DOUBLE, agcom.VARIANT)
-        self.__dict__["_AssignCartesian"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignPlanetocentric"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+9, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_AssignPlanetodetic"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+10, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_QueryPlanetocentric"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+11, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryPlanetodetic"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+12, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
-        self.__dict__["_QuerySpherical"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+13, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryCylindrical"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+14, POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryCartesian"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+15, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_GetCentralBodyName"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+16, POINTER(agcom.BSTR))
-        self.__dict__["_QueryPlanetocentricArray"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+17, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryPlanetodeticArray"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+18, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QuerySphericalArray"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+19, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryCylindricalArray"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+20, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryCartesianArray"] = IAGFUNCTYPE(pUnk, IID_IAgPosition, vtable_offset_local+21, POINTER(agcom.SAFEARRAY))
+        IID_IPosition = agcom.GUID(IPosition._uuid)
+        vtable_offset_local = IPosition._vtable_offset - 1
+        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_GetPosType"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+3, agcom.PVOID)
+        self.__dict__["_AssignGeocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_AssignGeodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_AssignSpherical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+6, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_AssignCylindrical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+7, agcom.DOUBLE, agcom.DOUBLE, agcom.VARIANT)
+        self.__dict__["_AssignCartesian"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_AssignPlanetocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+9, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_AssignPlanetodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+10, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_QueryPlanetocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+11, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
+        self.__dict__["_QueryPlanetodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+12, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
+        self.__dict__["_QuerySpherical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+13, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
+        self.__dict__["_QueryCylindrical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+14, POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
+        self.__dict__["_QueryCartesian"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+15, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_GetCentralBodyName"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+16, POINTER(agcom.BSTR))
+        self.__dict__["_QueryPlanetocentricArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+17, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryPlanetodeticArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+18, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QuerySphericalArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+19, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryCylindricalArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+20, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryCartesianArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+21, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgPosition.__dict__ and type(IAgPosition.__dict__[attrname]) == property:
-            return IAgPosition.__dict__[attrname]
+        if attrname in IPosition.__dict__ and type(IPosition.__dict__[attrname]) == property:
+            return IPosition.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgPosition.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IPosition.")
     
-    def ConvertTo(self, type:"AgEPositionType") -> "IAgPosition":
+    def ConvertTo(self, type:"AgEPositionType") -> "IPosition":
         """Changes the position coordinates to type specified."""
         with agmarshall.AgEnum_arg(AgEPositionType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgPosition:
@@ -618,9 +616,9 @@ class IAgPosition(object):
             agcls.evaluate_hresult(self.__dict__["_GetPosType"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
-    def Assign(self, pPosition:"IAgPosition") -> None:
+    def Assign(self, pPosition:"IPosition") -> None:
         """This assigns the coordinates into the system."""
-        with agmarshall.AgInterface_in_arg(pPosition, IAgPosition) as arg_pPosition:
+        with agmarshall.AgInterface_in_arg(pPosition, IPosition) as arg_pPosition:
             agcls.evaluate_hresult(self.__dict__["_Assign"](arg_pPosition.COM_val))
 
     def AssignGeocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
@@ -750,14 +748,14 @@ class IAgPosition(object):
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{F25960CE-1D73-4BA0-A429-541DD6D808DE}", IAgPosition)
-agcls.AgTypeNameMap["IAgPosition"] = IAgPosition
+agcls.AgClassCatalog.add_catalog_entry("{F25960CE-1D73-4BA0-A429-541DD6D808DE}", IPosition)
+agcls.AgTypeNameMap["IPosition"] = IPosition
 
-class IAgPlanetocentric(IAgPosition):
+class IPlanetocentric(IPosition):
     """Planetocentric Position Type."""
     _uuid = "{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}"
     _num_methods = 6
-    _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
+    _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetLat"] = _raise_uninitialized_error
@@ -767,35 +765,35 @@ class IAgPlanetocentric(IAgPosition):
         self.__dict__["_GetAlt"] = _raise_uninitialized_error
         self.__dict__["_SetAlt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgPlanetocentric._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPlanetocentric._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgPlanetocentric from source object.")
+                raise STKInvalidCastError("Failed to create IPlanetocentric from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPosition._private_init(self, pUnk)
-        IID_IAgPlanetocentric = agcom.GUID(IAgPlanetocentric._uuid)
-        vtable_offset_local = IAgPlanetocentric._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetocentric, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetocentric, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetocentric, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetocentric, vtable_offset_local+6, agcom.DOUBLE)
+        IPosition._private_init(self, pUnk)
+        IID_IPlanetocentric = agcom.GUID(IPlanetocentric._uuid)
+        vtable_offset_local = IPlanetocentric._vtable_offset - 1
+        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgPlanetocentric.__dict__ and type(IAgPlanetocentric.__dict__[attrname]) == property:
-            return IAgPlanetocentric.__dict__[attrname]
+        if attrname in IPlanetocentric.__dict__ and type(IPlanetocentric.__dict__[attrname]) == property:
+            return IPlanetocentric.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgPosition.__setattr__(self, attrname, value)
+            IPosition.__setattr__(self, attrname, value)
     
     @property
     def Lat(self) -> typing.Any:
@@ -834,14 +832,14 @@ class IAgPlanetocentric(IAgPosition):
             agcls.evaluate_hresult(self.__dict__["_SetAlt"](arg_pVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}", IAgPlanetocentric)
-agcls.AgTypeNameMap["IAgPlanetocentric"] = IAgPlanetocentric
+agcls.AgClassCatalog.add_catalog_entry("{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}", IPlanetocentric)
+agcls.AgTypeNameMap["IPlanetocentric"] = IPlanetocentric
 
-class IAgGeocentric(IAgPosition):
+class IGeocentric(IPosition):
     """Geocentric Position Type."""
     _uuid = "{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}"
     _num_methods = 6
-    _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
+    _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetLat"] = _raise_uninitialized_error
@@ -851,35 +849,35 @@ class IAgGeocentric(IAgPosition):
         self.__dict__["_GetAlt"] = _raise_uninitialized_error
         self.__dict__["_SetAlt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgGeocentric._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IGeocentric._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgGeocentric from source object.")
+                raise STKInvalidCastError("Failed to create IGeocentric from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPosition._private_init(self, pUnk)
-        IID_IAgGeocentric = agcom.GUID(IAgGeocentric._uuid)
-        vtable_offset_local = IAgGeocentric._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IAgGeocentric, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IAgGeocentric, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IAgGeocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IAgGeocentric, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IAgGeocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IAgGeocentric, vtable_offset_local+6, agcom.DOUBLE)
+        IPosition._private_init(self, pUnk)
+        IID_IGeocentric = agcom.GUID(IGeocentric._uuid)
+        vtable_offset_local = IGeocentric._vtable_offset - 1
+        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgGeocentric.__dict__ and type(IAgGeocentric.__dict__[attrname]) == property:
-            return IAgGeocentric.__dict__[attrname]
+        if attrname in IGeocentric.__dict__ and type(IGeocentric.__dict__[attrname]) == property:
+            return IGeocentric.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgPosition.__setattr__(self, attrname, value)
+            IPosition.__setattr__(self, attrname, value)
     
     @property
     def Lat(self) -> typing.Any:
@@ -918,14 +916,14 @@ class IAgGeocentric(IAgPosition):
             agcls.evaluate_hresult(self.__dict__["_SetAlt"](arg_pVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}", IAgGeocentric)
-agcls.AgTypeNameMap["IAgGeocentric"] = IAgGeocentric
+agcls.AgClassCatalog.add_catalog_entry("{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}", IGeocentric)
+agcls.AgTypeNameMap["IGeocentric"] = IGeocentric
 
-class IAgSpherical(IAgPosition):
+class ISpherical(IPosition):
     """Spherical Position Type."""
     _uuid = "{62B93DF1-C615-4363-B4D9-DAA1ACE56204}"
     _num_methods = 6
-    _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
+    _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetLat"] = _raise_uninitialized_error
@@ -935,35 +933,35 @@ class IAgSpherical(IAgPosition):
         self.__dict__["_GetRadius"] = _raise_uninitialized_error
         self.__dict__["_SetRadius"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgSpherical._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISpherical._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgSpherical from source object.")
+                raise STKInvalidCastError("Failed to create ISpherical from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPosition._private_init(self, pUnk)
-        IID_IAgSpherical = agcom.GUID(IAgSpherical._uuid)
-        vtable_offset_local = IAgSpherical._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IAgSpherical, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IAgSpherical, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IAgSpherical, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IAgSpherical, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetRadius"] = IAGFUNCTYPE(pUnk, IID_IAgSpherical, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetRadius"] = IAGFUNCTYPE(pUnk, IID_IAgSpherical, vtable_offset_local+6, agcom.DOUBLE)
+        IPosition._private_init(self, pUnk)
+        IID_ISpherical = agcom.GUID(ISpherical._uuid)
+        vtable_offset_local = ISpherical._vtable_offset - 1
+        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetRadius"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetRadius"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgSpherical.__dict__ and type(IAgSpherical.__dict__[attrname]) == property:
-            return IAgSpherical.__dict__[attrname]
+        if attrname in ISpherical.__dict__ and type(ISpherical.__dict__[attrname]) == property:
+            return ISpherical.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgPosition.__setattr__(self, attrname, value)
+            IPosition.__setattr__(self, attrname, value)
     
     @property
     def Lat(self) -> typing.Any:
@@ -1002,14 +1000,14 @@ class IAgSpherical(IAgPosition):
             agcls.evaluate_hresult(self.__dict__["_SetRadius"](arg_pVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{62B93DF1-C615-4363-B4D9-DAA1ACE56204}", IAgSpherical)
-agcls.AgTypeNameMap["IAgSpherical"] = IAgSpherical
+agcls.AgClassCatalog.add_catalog_entry("{62B93DF1-C615-4363-B4D9-DAA1ACE56204}", ISpherical)
+agcls.AgTypeNameMap["ISpherical"] = ISpherical
 
-class IAgCylindrical(IAgPosition):
+class ICylindrical(IPosition):
     """Cylindrical Position Type."""
     _uuid = "{36F08499-F7C4-41DE-AB49-794EC65C5165}"
     _num_methods = 6
-    _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
+    _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetRadius"] = _raise_uninitialized_error
@@ -1019,35 +1017,35 @@ class IAgCylindrical(IAgPosition):
         self.__dict__["_GetLon"] = _raise_uninitialized_error
         self.__dict__["_SetLon"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCylindrical._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICylindrical._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgCylindrical from source object.")
+                raise STKInvalidCastError("Failed to create ICylindrical from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPosition._private_init(self, pUnk)
-        IID_IAgCylindrical = agcom.GUID(IAgCylindrical._uuid)
-        vtable_offset_local = IAgCylindrical._vtable_offset - 1
-        self.__dict__["_GetRadius"] = IAGFUNCTYPE(pUnk, IID_IAgCylindrical, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetRadius"] = IAGFUNCTYPE(pUnk, IID_IAgCylindrical, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_IAgCylindrical, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_IAgCylindrical, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IAgCylindrical, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IAgCylindrical, vtable_offset_local+6, agcom.VARIANT)
+        IPosition._private_init(self, pUnk)
+        IID_ICylindrical = agcom.GUID(ICylindrical._uuid)
+        vtable_offset_local = ICylindrical._vtable_offset - 1
+        self.__dict__["_GetRadius"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetRadius"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+6, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgCylindrical.__dict__ and type(IAgCylindrical.__dict__[attrname]) == property:
-            return IAgCylindrical.__dict__[attrname]
+        if attrname in ICylindrical.__dict__ and type(ICylindrical.__dict__[attrname]) == property:
+            return ICylindrical.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgPosition.__setattr__(self, attrname, value)
+            IPosition.__setattr__(self, attrname, value)
     
     @property
     def Radius(self) -> float:
@@ -1086,14 +1084,14 @@ class IAgCylindrical(IAgPosition):
             agcls.evaluate_hresult(self.__dict__["_SetLon"](arg_pVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{36F08499-F7C4-41DE-AB49-794EC65C5165}", IAgCylindrical)
-agcls.AgTypeNameMap["IAgCylindrical"] = IAgCylindrical
+agcls.AgClassCatalog.add_catalog_entry("{36F08499-F7C4-41DE-AB49-794EC65C5165}", ICylindrical)
+agcls.AgTypeNameMap["ICylindrical"] = ICylindrical
 
-class IAgCartesian(IAgPosition):
+class ICartesian(IPosition):
     """IAgCartesian Interface used to access a position using Cartesian Coordinates"""
     _uuid = "{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}"
     _num_methods = 6
-    _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
+    _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetX"] = _raise_uninitialized_error
@@ -1103,35 +1101,35 @@ class IAgCartesian(IAgPosition):
         self.__dict__["_GetZ"] = _raise_uninitialized_error
         self.__dict__["_SetZ"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCartesian._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICartesian._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgCartesian from source object.")
+                raise STKInvalidCastError("Failed to create ICartesian from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPosition._private_init(self, pUnk)
-        IID_IAgCartesian = agcom.GUID(IAgCartesian._uuid)
-        vtable_offset_local = IAgCartesian._vtable_offset - 1
-        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian, vtable_offset_local+6, agcom.DOUBLE)
+        IPosition._private_init(self, pUnk)
+        IID_ICartesian = agcom.GUID(ICartesian._uuid)
+        vtable_offset_local = ICartesian._vtable_offset - 1
+        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgCartesian.__dict__ and type(IAgCartesian.__dict__[attrname]) == property:
-            return IAgCartesian.__dict__[attrname]
+        if attrname in ICartesian.__dict__ and type(ICartesian.__dict__[attrname]) == property:
+            return ICartesian.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgPosition.__setattr__(self, attrname, value)
+            IPosition.__setattr__(self, attrname, value)
     
     @property
     def X(self) -> float:
@@ -1170,14 +1168,14 @@ class IAgCartesian(IAgPosition):
             agcls.evaluate_hresult(self.__dict__["_SetZ"](arg_pVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}", IAgCartesian)
-agcls.AgTypeNameMap["IAgCartesian"] = IAgCartesian
+agcls.AgClassCatalog.add_catalog_entry("{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}", ICartesian)
+agcls.AgTypeNameMap["ICartesian"] = ICartesian
 
-class IAgGeodetic(IAgPosition):
+class IGeodetic(IPosition):
     """IAgGeodetic sets the position using Geodetic properties."""
     _uuid = "{93D3322B-C842-48D2-AFCF-BC42B59DB28E}"
     _num_methods = 6
-    _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
+    _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetLat"] = _raise_uninitialized_error
@@ -1187,35 +1185,35 @@ class IAgGeodetic(IAgPosition):
         self.__dict__["_GetAlt"] = _raise_uninitialized_error
         self.__dict__["_SetAlt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgGeodetic._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IGeodetic._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgGeodetic from source object.")
+                raise STKInvalidCastError("Failed to create IGeodetic from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPosition._private_init(self, pUnk)
-        IID_IAgGeodetic = agcom.GUID(IAgGeodetic._uuid)
-        vtable_offset_local = IAgGeodetic._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IAgGeodetic, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IAgGeodetic, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IAgGeodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IAgGeodetic, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IAgGeodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IAgGeodetic, vtable_offset_local+6, agcom.DOUBLE)
+        IPosition._private_init(self, pUnk)
+        IID_IGeodetic = agcom.GUID(IGeodetic._uuid)
+        vtable_offset_local = IGeodetic._vtable_offset - 1
+        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgGeodetic.__dict__ and type(IAgGeodetic.__dict__[attrname]) == property:
-            return IAgGeodetic.__dict__[attrname]
+        if attrname in IGeodetic.__dict__ and type(IGeodetic.__dict__[attrname]) == property:
+            return IGeodetic.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgPosition.__setattr__(self, attrname, value)
+            IPosition.__setattr__(self, attrname, value)
     
     @property
     def Lat(self) -> typing.Any:
@@ -1254,14 +1252,14 @@ class IAgGeodetic(IAgPosition):
             agcls.evaluate_hresult(self.__dict__["_SetAlt"](arg_pAlt.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{93D3322B-C842-48D2-AFCF-BC42B59DB28E}", IAgGeodetic)
-agcls.AgTypeNameMap["IAgGeodetic"] = IAgGeodetic
+agcls.AgClassCatalog.add_catalog_entry("{93D3322B-C842-48D2-AFCF-BC42B59DB28E}", IGeodetic)
+agcls.AgTypeNameMap["IGeodetic"] = IGeodetic
 
-class IAgPlanetodetic(IAgPosition):
+class IPlanetodetic(IPosition):
     """IAgPlanetodetic sets the position using Planetodetic properties."""
     _uuid = "{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}"
     _num_methods = 6
-    _vtable_offset = IAgPosition._vtable_offset + IAgPosition._num_methods
+    _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetLat"] = _raise_uninitialized_error
@@ -1271,35 +1269,35 @@ class IAgPlanetodetic(IAgPosition):
         self.__dict__["_GetAlt"] = _raise_uninitialized_error
         self.__dict__["_SetAlt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgPlanetodetic._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPlanetodetic._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgPlanetodetic from source object.")
+                raise STKInvalidCastError("Failed to create IPlanetodetic from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPosition._private_init(self, pUnk)
-        IID_IAgPlanetodetic = agcom.GUID(IAgPlanetodetic._uuid)
-        vtable_offset_local = IAgPlanetodetic._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetodetic, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetodetic, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetodetic, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IAgPlanetodetic, vtable_offset_local+6, agcom.DOUBLE)
+        IPosition._private_init(self, pUnk)
+        IID_IPlanetodetic = agcom.GUID(IPlanetodetic._uuid)
+        vtable_offset_local = IPlanetodetic._vtable_offset - 1
+        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgPlanetodetic.__dict__ and type(IAgPlanetodetic.__dict__[attrname]) == property:
-            return IAgPlanetodetic.__dict__[attrname]
+        if attrname in IPlanetodetic.__dict__ and type(IPlanetodetic.__dict__[attrname]) == property:
+            return IPlanetodetic.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgPosition.__setattr__(self, attrname, value)
+            IPosition.__setattr__(self, attrname, value)
     
     @property
     def Lat(self) -> typing.Any:
@@ -1338,10 +1336,10 @@ class IAgPlanetodetic(IAgPosition):
             agcls.evaluate_hresult(self.__dict__["_SetAlt"](arg_pAlt.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}", IAgPlanetodetic)
-agcls.AgTypeNameMap["IAgPlanetodetic"] = IAgPlanetodetic
+agcls.AgClassCatalog.add_catalog_entry("{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}", IPlanetodetic)
+agcls.AgTypeNameMap["IPlanetodetic"] = IPlanetodetic
 
-class IAgDirection(object):
+class IDirection(object):
     """Interface to set and retrieve direction options for aligned and constrained vectors."""
     _uuid = "{8304507A-4915-453D-8944-2080659C0257}"
     _num_methods = 15
@@ -1364,45 +1362,45 @@ class IAgDirection(object):
         self.__dict__["_QueryRADecArray"] = _raise_uninitialized_error
         self.__dict__["_QueryXYZArray"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgDirection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgDirection from source object.")
+                raise STKInvalidCastError("Failed to create IDirection from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgDirection = agcom.GUID(IAgDirection._uuid)
-        vtable_offset_local = IAgDirection._vtable_offset - 1
-        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetDirectionType"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+3, agcom.PVOID)
-        self.__dict__["_AssignEuler"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.LONG)
-        self.__dict__["_AssignPR"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT)
-        self.__dict__["_AssignRADec"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+6, agcom.VARIANT, agcom.VARIANT)
-        self.__dict__["_AssignXYZ"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+7, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_QueryEuler"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+8, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryPR"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+9, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryRADec"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+10, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryXYZ"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+11, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryEulerArray"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+12, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryPRArray"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryRADecArray"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryXYZArray"] = IAGFUNCTYPE(pUnk, IID_IAgDirection, vtable_offset_local+15, POINTER(agcom.SAFEARRAY))
+        IID_IDirection = agcom.GUID(IDirection._uuid)
+        vtable_offset_local = IDirection._vtable_offset - 1
+        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_GetDirectionType"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+3, agcom.PVOID)
+        self.__dict__["_AssignEuler"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.LONG)
+        self.__dict__["_AssignPR"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT)
+        self.__dict__["_AssignRADec"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+6, agcom.VARIANT, agcom.VARIANT)
+        self.__dict__["_AssignXYZ"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+7, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_QueryEuler"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+8, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_QueryPR"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+9, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_QueryRADec"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+10, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_QueryXYZ"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+11, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_QueryEulerArray"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+12, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryPRArray"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryRADecArray"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryXYZArray"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+15, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgDirection.__dict__ and type(IAgDirection.__dict__[attrname]) == property:
-            return IAgDirection.__dict__[attrname]
+        if attrname in IDirection.__dict__ and type(IDirection.__dict__[attrname]) == property:
+            return IDirection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgDirection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IDirection.")
     
-    def ConvertTo(self, type:"AgEDirectionType") -> "IAgDirection":
+    def ConvertTo(self, type:"AgEDirectionType") -> "IDirection":
         """Method to changes the direction to the type specified."""
         with agmarshall.AgEnum_arg(AgEDirectionType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgDirection:
@@ -1416,9 +1414,9 @@ class IAgDirection(object):
             agcls.evaluate_hresult(self.__dict__["_GetDirectionType"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
-    def Assign(self, pDirection:"IAgDirection") -> None:
+    def Assign(self, pDirection:"IDirection") -> None:
         """Assign a new direction."""
-        with agmarshall.AgInterface_in_arg(pDirection, IAgDirection) as arg_pDirection:
+        with agmarshall.AgInterface_in_arg(pDirection, IDirection) as arg_pDirection:
             agcls.evaluate_hresult(self.__dict__["_Assign"](arg_pDirection.COM_val))
 
     def AssignEuler(self, b:typing.Any, c:typing.Any, sequence:"AgEEulerDirectionSequence") -> None:
@@ -1505,14 +1503,14 @@ class IAgDirection(object):
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{8304507A-4915-453D-8944-2080659C0257}", IAgDirection)
-agcls.AgTypeNameMap["IAgDirection"] = IAgDirection
+agcls.AgClassCatalog.add_catalog_entry("{8304507A-4915-453D-8944-2080659C0257}", IDirection)
+agcls.AgTypeNameMap["IDirection"] = IDirection
 
-class IAgDirectionEuler(IAgDirection):
+class IDirectionEuler(IDirection):
     """Interface for Euler direction sequence."""
     _uuid = "{9CBDC138-72D1-4734-8F95-2140266D37B5}"
     _num_methods = 6
-    _vtable_offset = IAgDirection._vtable_offset + IAgDirection._num_methods
+    _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetB"] = _raise_uninitialized_error
@@ -1522,35 +1520,35 @@ class IAgDirectionEuler(IAgDirection):
         self.__dict__["_GetSequence"] = _raise_uninitialized_error
         self.__dict__["_SetSequence"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgDirectionEuler._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirectionEuler._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgDirectionEuler from source object.")
+                raise STKInvalidCastError("Failed to create IDirectionEuler from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirection._private_init(self, pUnk)
-        IID_IAgDirectionEuler = agcom.GUID(IAgDirectionEuler._uuid)
-        vtable_offset_local = IAgDirectionEuler._vtable_offset - 1
-        self.__dict__["_GetB"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionEuler, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetB"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionEuler, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetC"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionEuler, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetC"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionEuler, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionEuler, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionEuler, vtable_offset_local+6, agcom.LONG)
+        IDirection._private_init(self, pUnk)
+        IID_IDirectionEuler = agcom.GUID(IDirectionEuler._uuid)
+        vtable_offset_local = IDirectionEuler._vtable_offset - 1
+        self.__dict__["_GetB"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetB"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetC"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetC"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgDirectionEuler.__dict__ and type(IAgDirectionEuler.__dict__[attrname]) == property:
-            return IAgDirectionEuler.__dict__[attrname]
+        if attrname in IDirectionEuler.__dict__ and type(IDirectionEuler.__dict__[attrname]) == property:
+            return IDirectionEuler.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgDirection.__setattr__(self, attrname, value)
+            IDirection.__setattr__(self, attrname, value)
     
     @property
     def B(self) -> typing.Any:
@@ -1589,14 +1587,14 @@ class IAgDirectionEuler(IAgDirection):
             agcls.evaluate_hresult(self.__dict__["_SetSequence"](arg_sequence.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{9CBDC138-72D1-4734-8F95-2140266D37B5}", IAgDirectionEuler)
-agcls.AgTypeNameMap["IAgDirectionEuler"] = IAgDirectionEuler
+agcls.AgClassCatalog.add_catalog_entry("{9CBDC138-72D1-4734-8F95-2140266D37B5}", IDirectionEuler)
+agcls.AgTypeNameMap["IDirectionEuler"] = IDirectionEuler
 
-class IAgDirectionPR(IAgDirection):
+class IDirectionPR(IDirection):
     """Interface for Pitch-Roll (PR) direction sequence."""
     _uuid = "{5AC01BF1-2B95-4C13-8B69-09FDC485330E}"
     _num_methods = 6
-    _vtable_offset = IAgDirection._vtable_offset + IAgDirection._num_methods
+    _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetPitch"] = _raise_uninitialized_error
@@ -1606,35 +1604,35 @@ class IAgDirectionPR(IAgDirection):
         self.__dict__["_GetSequence"] = _raise_uninitialized_error
         self.__dict__["_SetSequence"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgDirectionPR._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirectionPR._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgDirectionPR from source object.")
+                raise STKInvalidCastError("Failed to create IDirectionPR from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirection._private_init(self, pUnk)
-        IID_IAgDirectionPR = agcom.GUID(IAgDirectionPR._uuid)
-        vtable_offset_local = IAgDirectionPR._vtable_offset - 1
-        self.__dict__["_GetPitch"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionPR, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetPitch"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionPR, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetRoll"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionPR, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRoll"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionPR, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionPR, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionPR, vtable_offset_local+6, agcom.LONG)
+        IDirection._private_init(self, pUnk)
+        IID_IDirectionPR = agcom.GUID(IDirectionPR._uuid)
+        vtable_offset_local = IDirectionPR._vtable_offset - 1
+        self.__dict__["_GetPitch"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetPitch"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetRoll"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetRoll"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgDirectionPR.__dict__ and type(IAgDirectionPR.__dict__[attrname]) == property:
-            return IAgDirectionPR.__dict__[attrname]
+        if attrname in IDirectionPR.__dict__ and type(IDirectionPR.__dict__[attrname]) == property:
+            return IDirectionPR.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgDirection.__setattr__(self, attrname, value)
+            IDirection.__setattr__(self, attrname, value)
     
     @property
     def Pitch(self) -> typing.Any:
@@ -1673,14 +1671,14 @@ class IAgDirectionPR(IAgDirection):
             agcls.evaluate_hresult(self.__dict__["_SetSequence"](arg_sequence.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{5AC01BF1-2B95-4C13-8B69-09FDC485330E}", IAgDirectionPR)
-agcls.AgTypeNameMap["IAgDirectionPR"] = IAgDirectionPR
+agcls.AgClassCatalog.add_catalog_entry("{5AC01BF1-2B95-4C13-8B69-09FDC485330E}", IDirectionPR)
+agcls.AgTypeNameMap["IDirectionPR"] = IDirectionPR
 
-class IAgDirectionRADec(IAgDirection):
+class IDirectionRADec(IDirection):
     """Interface for Spherical direction (Right Ascension and Declination)."""
     _uuid = "{A921E587-EC8A-4F1E-99BB-6E13B8E0D5E7}"
     _num_methods = 6
-    _vtable_offset = IAgDirection._vtable_offset + IAgDirection._num_methods
+    _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetDec"] = _raise_uninitialized_error
@@ -1690,35 +1688,35 @@ class IAgDirectionRADec(IAgDirection):
         self.__dict__["_GetMagnitude"] = _raise_uninitialized_error
         self.__dict__["_SetMagnitude"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgDirectionRADec._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirectionRADec._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgDirectionRADec from source object.")
+                raise STKInvalidCastError("Failed to create IDirectionRADec from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirection._private_init(self, pUnk)
-        IID_IAgDirectionRADec = agcom.GUID(IAgDirectionRADec._uuid)
-        vtable_offset_local = IAgDirectionRADec._vtable_offset - 1
-        self.__dict__["_GetDec"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionRADec, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetDec"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionRADec, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetRA"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionRADec, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRA"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionRADec, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetMagnitude"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionRADec, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetMagnitude"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionRADec, vtable_offset_local+6, agcom.DOUBLE)
+        IDirection._private_init(self, pUnk)
+        IID_IDirectionRADec = agcom.GUID(IDirectionRADec._uuid)
+        vtable_offset_local = IDirectionRADec._vtable_offset - 1
+        self.__dict__["_GetDec"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetDec"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetRA"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetRA"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetMagnitude"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetMagnitude"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgDirectionRADec.__dict__ and type(IAgDirectionRADec.__dict__[attrname]) == property:
-            return IAgDirectionRADec.__dict__[attrname]
+        if attrname in IDirectionRADec.__dict__ and type(IDirectionRADec.__dict__[attrname]) == property:
+            return IDirectionRADec.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgDirection.__setattr__(self, attrname, value)
+            IDirection.__setattr__(self, attrname, value)
     
     @property
     def Dec(self) -> typing.Any:
@@ -1757,14 +1755,14 @@ class IAgDirectionRADec(IAgDirection):
             agcls.evaluate_hresult(self.__dict__["_SetMagnitude"](arg_magnitude.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{A921E587-EC8A-4F1E-99BB-6E13B8E0D5E7}", IAgDirectionRADec)
-agcls.AgTypeNameMap["IAgDirectionRADec"] = IAgDirectionRADec
+agcls.AgClassCatalog.add_catalog_entry("{A921E587-EC8A-4F1E-99BB-6E13B8E0D5E7}", IDirectionRADec)
+agcls.AgTypeNameMap["IDirectionRADec"] = IDirectionRADec
 
-class IAgDirectionXYZ(IAgDirection):
+class IDirectionXYZ(IDirection):
     """Interface for Cartesian direction."""
     _uuid = "{2B499A22-6662-4F20-8B82-AA7701CD87A4}"
     _num_methods = 6
-    _vtable_offset = IAgDirection._vtable_offset + IAgDirection._num_methods
+    _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetX"] = _raise_uninitialized_error
@@ -1774,35 +1772,35 @@ class IAgDirectionXYZ(IAgDirection):
         self.__dict__["_GetZ"] = _raise_uninitialized_error
         self.__dict__["_SetZ"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgDirectionXYZ._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirectionXYZ._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgDirectionXYZ from source object.")
+                raise STKInvalidCastError("Failed to create IDirectionXYZ from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirection._private_init(self, pUnk)
-        IID_IAgDirectionXYZ = agcom.GUID(IAgDirectionXYZ._uuid)
-        vtable_offset_local = IAgDirectionXYZ._vtable_offset - 1
-        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionXYZ, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionXYZ, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionXYZ, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionXYZ, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionXYZ, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_IAgDirectionXYZ, vtable_offset_local+6, agcom.DOUBLE)
+        IDirection._private_init(self, pUnk)
+        IID_IDirectionXYZ = agcom.GUID(IDirectionXYZ._uuid)
+        vtable_offset_local = IDirectionXYZ._vtable_offset - 1
+        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgDirectionXYZ.__dict__ and type(IAgDirectionXYZ.__dict__[attrname]) == property:
-            return IAgDirectionXYZ.__dict__[attrname]
+        if attrname in IDirectionXYZ.__dict__ and type(IDirectionXYZ.__dict__[attrname]) == property:
+            return IDirectionXYZ.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgDirection.__setattr__(self, attrname, value)
+            IDirection.__setattr__(self, attrname, value)
     
     @property
     def X(self) -> float:
@@ -1841,10 +1839,10 @@ class IAgDirectionXYZ(IAgDirection):
             agcls.evaluate_hresult(self.__dict__["_SetZ"](arg_vz.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{2B499A22-6662-4F20-8B82-AA7701CD87A4}", IAgDirectionXYZ)
-agcls.AgTypeNameMap["IAgDirectionXYZ"] = IAgDirectionXYZ
+agcls.AgClassCatalog.add_catalog_entry("{2B499A22-6662-4F20-8B82-AA7701CD87A4}", IDirectionXYZ)
+agcls.AgTypeNameMap["IDirectionXYZ"] = IDirectionXYZ
 
-class IAgCartesian3Vector(object):
+class ICartesian3Vector(object):
     """Represents a cartesian 3-D vector."""
     _uuid = "{7B741836-71F9-4115-97F8-EAB30362E5C7}"
     _num_methods = 9
@@ -1861,37 +1859,37 @@ class IAgCartesian3Vector(object):
         self.__dict__["_Set"] = _raise_uninitialized_error
         self.__dict__["_ToArray"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCartesian3Vector._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICartesian3Vector._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgCartesian3Vector from source object.")
+                raise STKInvalidCastError("Failed to create ICartesian3Vector from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgCartesian3Vector = agcom.GUID(IAgCartesian3Vector._uuid)
-        vtable_offset_local = IAgCartesian3Vector._vtable_offset - 1
-        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+6, agcom.DOUBLE)
-        self.__dict__["_Get"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+7, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_Set"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian3Vector, vtable_offset_local+9, POINTER(agcom.SAFEARRAY))
+        IID_ICartesian3Vector = agcom.GUID(ICartesian3Vector._uuid)
+        vtable_offset_local = ICartesian3Vector._vtable_offset - 1
+        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_Get"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+7, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_Set"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+9, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgCartesian3Vector.__dict__ and type(IAgCartesian3Vector.__dict__[attrname]) == property:
-            return IAgCartesian3Vector.__dict__[attrname]
+        if attrname in ICartesian3Vector.__dict__ and type(ICartesian3Vector.__dict__[attrname]) == property:
+            return ICartesian3Vector.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgCartesian3Vector.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ICartesian3Vector.")
     
     @property
     def X(self) -> float:
@@ -1951,10 +1949,10 @@ class IAgCartesian3Vector(object):
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{7B741836-71F9-4115-97F8-EAB30362E5C7}", IAgCartesian3Vector)
-agcls.AgTypeNameMap["IAgCartesian3Vector"] = IAgCartesian3Vector
+agcls.AgClassCatalog.add_catalog_entry("{7B741836-71F9-4115-97F8-EAB30362E5C7}", ICartesian3Vector)
+agcls.AgTypeNameMap["ICartesian3Vector"] = ICartesian3Vector
 
-class IAgOrientation(object):
+class IOrientation(object):
     """Interface to set and retrieve the orientation method."""
     _uuid = "{8467175F-1BD8-4498-90FD-08C67072D120}"
     _num_methods = 15
@@ -1977,45 +1975,45 @@ class IAgOrientation(object):
         self.__dict__["_QueryQuaternionArray"] = _raise_uninitialized_error
         self.__dict__["_QueryYPRAnglesArray"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgOrientation._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientation._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgOrientation from source object.")
+                raise STKInvalidCastError("Failed to create IOrientation from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgOrientation = agcom.GUID(IAgOrientation._uuid)
-        vtable_offset_local = IAgOrientation._vtable_offset - 1
-        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetOrientationType"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+3, agcom.PVOID)
-        self.__dict__["_AssignAzEl"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.LONG)
-        self.__dict__["_AssignEulerAngles"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+5, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT)
-        self.__dict__["_AssignQuaternion"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignYPRAngles"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+7, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT)
-        self.__dict__["_QueryAzEl"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+8, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.LONG))
-        self.__dict__["_QueryEulerAngles"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+9, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryQuaternion"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+10, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryYPRAngles"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+11, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryAzElArray"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+12, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryEulerAnglesArray"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryQuaternionArray"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryYPRAnglesArray"] = IAGFUNCTYPE(pUnk, IID_IAgOrientation, vtable_offset_local+15, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        IID_IOrientation = agcom.GUID(IOrientation._uuid)
+        vtable_offset_local = IOrientation._vtable_offset - 1
+        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_GetOrientationType"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+3, agcom.PVOID)
+        self.__dict__["_AssignAzEl"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.LONG)
+        self.__dict__["_AssignEulerAngles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+5, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT)
+        self.__dict__["_AssignQuaternion"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_AssignYPRAngles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+7, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT)
+        self.__dict__["_QueryAzEl"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+8, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.LONG))
+        self.__dict__["_QueryEulerAngles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+9, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_QueryQuaternion"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+10, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_QueryYPRAngles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+11, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_QueryAzElArray"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+12, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryEulerAnglesArray"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryQuaternionArray"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_QueryYPRAnglesArray"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+15, agcom.LONG, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgOrientation.__dict__ and type(IAgOrientation.__dict__[attrname]) == property:
-            return IAgOrientation.__dict__[attrname]
+        if attrname in IOrientation.__dict__ and type(IOrientation.__dict__[attrname]) == property:
+            return IOrientation.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgOrientation.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IOrientation.")
     
-    def ConvertTo(self, type:"AgEOrientationType") -> "IAgOrientation":
+    def ConvertTo(self, type:"AgEOrientationType") -> "IOrientation":
         """Method to change the orientation method to the type specified."""
         with agmarshall.AgEnum_arg(AgEOrientationType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgOrientation:
@@ -2029,9 +2027,9 @@ class IAgOrientation(object):
             agcls.evaluate_hresult(self.__dict__["_GetOrientationType"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
-    def Assign(self, pOrientation:"IAgOrientation") -> None:
+    def Assign(self, pOrientation:"IOrientation") -> None:
         """Assign a new orientation method."""
-        with agmarshall.AgInterface_in_arg(pOrientation, IAgOrientation) as arg_pOrientation:
+        with agmarshall.AgInterface_in_arg(pOrientation, IOrientation) as arg_pOrientation:
             agcls.evaluate_hresult(self.__dict__["_Assign"](arg_pOrientation.COM_val))
 
     def AssignAzEl(self, azimuth:typing.Any, elevation:typing.Any, aboutBoresight:"AgEAzElAboutBoresight") -> None:
@@ -2127,14 +2125,14 @@ class IAgOrientation(object):
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{8467175F-1BD8-4498-90FD-08C67072D120}", IAgOrientation)
-agcls.AgTypeNameMap["IAgOrientation"] = IAgOrientation
+agcls.AgClassCatalog.add_catalog_entry("{8467175F-1BD8-4498-90FD-08C67072D120}", IOrientation)
+agcls.AgTypeNameMap["IOrientation"] = IOrientation
 
-class IAgOrientationAzEl(IAgOrientation):
+class IOrientationAzEl(IOrientation):
     """Interface for AzEl orientation method."""
     _uuid = "{6A6B1D7D-6A7F-48B3-98CA-019CA46499FE}"
     _num_methods = 6
-    _vtable_offset = IAgOrientation._vtable_offset + IAgOrientation._num_methods
+    _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetAzimuth"] = _raise_uninitialized_error
@@ -2144,35 +2142,35 @@ class IAgOrientationAzEl(IAgOrientation):
         self.__dict__["_GetAboutBoresight"] = _raise_uninitialized_error
         self.__dict__["_SetAboutBoresight"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgOrientationAzEl._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationAzEl._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgOrientationAzEl from source object.")
+                raise STKInvalidCastError("Failed to create IOrientationAzEl from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientation._private_init(self, pUnk)
-        IID_IAgOrientationAzEl = agcom.GUID(IAgOrientationAzEl._uuid)
-        vtable_offset_local = IAgOrientationAzEl._vtable_offset - 1
-        self.__dict__["_GetAzimuth"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationAzEl, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetAzimuth"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationAzEl, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetElevation"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationAzEl, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetElevation"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationAzEl, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAboutBoresight"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationAzEl, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetAboutBoresight"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationAzEl, vtable_offset_local+6, agcom.LONG)
+        IOrientation._private_init(self, pUnk)
+        IID_IOrientationAzEl = agcom.GUID(IOrientationAzEl._uuid)
+        vtable_offset_local = IOrientationAzEl._vtable_offset - 1
+        self.__dict__["_GetAzimuth"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_SetAzimuth"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_GetElevation"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetElevation"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetAboutBoresight"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_SetAboutBoresight"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgOrientationAzEl.__dict__ and type(IAgOrientationAzEl.__dict__[attrname]) == property:
-            return IAgOrientationAzEl.__dict__[attrname]
+        if attrname in IOrientationAzEl.__dict__ and type(IOrientationAzEl.__dict__[attrname]) == property:
+            return IOrientationAzEl.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgOrientation.__setattr__(self, attrname, value)
+            IOrientation.__setattr__(self, attrname, value)
     
     @property
     def Azimuth(self) -> typing.Any:
@@ -2211,14 +2209,14 @@ class IAgOrientationAzEl(IAgOrientation):
             agcls.evaluate_hresult(self.__dict__["_SetAboutBoresight"](arg_aboutBoresight.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{6A6B1D7D-6A7F-48B3-98CA-019CA46499FE}", IAgOrientationAzEl)
-agcls.AgTypeNameMap["IAgOrientationAzEl"] = IAgOrientationAzEl
+agcls.AgClassCatalog.add_catalog_entry("{6A6B1D7D-6A7F-48B3-98CA-019CA46499FE}", IOrientationAzEl)
+agcls.AgTypeNameMap["IOrientationAzEl"] = IOrientationAzEl
 
-class IAgOrientationEulerAngles(IAgOrientation):
+class IOrientationEulerAngles(IOrientation):
     """Interface for Euler Angles orientation method."""
     _uuid = "{4204C7E1-EC21-40AD-A905-BB35A3FDF7BD}"
     _num_methods = 8
-    _vtable_offset = IAgOrientation._vtable_offset + IAgOrientation._num_methods
+    _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetSequence"] = _raise_uninitialized_error
@@ -2230,37 +2228,37 @@ class IAgOrientationEulerAngles(IAgOrientation):
         self.__dict__["_GetC"] = _raise_uninitialized_error
         self.__dict__["_SetC"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgOrientationEulerAngles._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationEulerAngles._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgOrientationEulerAngles from source object.")
+                raise STKInvalidCastError("Failed to create IOrientationEulerAngles from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientation._private_init(self, pUnk)
-        IID_IAgOrientationEulerAngles = agcom.GUID(IAgOrientationEulerAngles._uuid)
-        vtable_offset_local = IAgOrientationEulerAngles._vtable_offset - 1
-        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+2, agcom.LONG)
-        self.__dict__["_GetA"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetA"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetB"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetB"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+6, agcom.VARIANT)
-        self.__dict__["_GetC"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
-        self.__dict__["_SetC"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationEulerAngles, vtable_offset_local+8, agcom.VARIANT)
+        IOrientation._private_init(self, pUnk)
+        IID_IOrientationEulerAngles = agcom.GUID(IOrientationEulerAngles._uuid)
+        vtable_offset_local = IOrientationEulerAngles._vtable_offset - 1
+        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+2, agcom.LONG)
+        self.__dict__["_GetA"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetA"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetB"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_SetB"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_GetC"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
+        self.__dict__["_SetC"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+8, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgOrientationEulerAngles.__dict__ and type(IAgOrientationEulerAngles.__dict__[attrname]) == property:
-            return IAgOrientationEulerAngles.__dict__[attrname]
+        if attrname in IOrientationEulerAngles.__dict__ and type(IOrientationEulerAngles.__dict__[attrname]) == property:
+            return IOrientationEulerAngles.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgOrientation.__setattr__(self, attrname, value)
+            IOrientation.__setattr__(self, attrname, value)
     
     @property
     def Sequence(self) -> "AgEEulerOrientationSequence":
@@ -2311,14 +2309,14 @@ class IAgOrientationEulerAngles(IAgOrientation):
             agcls.evaluate_hresult(self.__dict__["_SetC"](arg_vc.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{4204C7E1-EC21-40AD-A905-BB35A3FDF7BD}", IAgOrientationEulerAngles)
-agcls.AgTypeNameMap["IAgOrientationEulerAngles"] = IAgOrientationEulerAngles
+agcls.AgClassCatalog.add_catalog_entry("{4204C7E1-EC21-40AD-A905-BB35A3FDF7BD}", IOrientationEulerAngles)
+agcls.AgTypeNameMap["IOrientationEulerAngles"] = IOrientationEulerAngles
 
-class IAgOrientationQuaternion(IAgOrientation):
+class IOrientationQuaternion(IOrientation):
     """Interface for Quaternion orientation method."""
     _uuid = "{101FAC5C-8DDB-4D4F-9C73-58146CA8EB01}"
     _num_methods = 8
-    _vtable_offset = IAgOrientation._vtable_offset + IAgOrientation._num_methods
+    _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetQX"] = _raise_uninitialized_error
@@ -2330,37 +2328,37 @@ class IAgOrientationQuaternion(IAgOrientation):
         self.__dict__["_GetQS"] = _raise_uninitialized_error
         self.__dict__["_SetQS"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgOrientationQuaternion._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationQuaternion._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgOrientationQuaternion from source object.")
+                raise STKInvalidCastError("Failed to create IOrientationQuaternion from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientation._private_init(self, pUnk)
-        IID_IAgOrientationQuaternion = agcom.GUID(IAgOrientationQuaternion._uuid)
-        vtable_offset_local = IAgOrientationQuaternion._vtable_offset - 1
-        self.__dict__["_GetQX"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetQX"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetQY"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetQY"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetQZ"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetQZ"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+6, agcom.DOUBLE)
-        self.__dict__["_GetQS"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetQS"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationQuaternion, vtable_offset_local+8, agcom.DOUBLE)
+        IOrientation._private_init(self, pUnk)
+        IID_IOrientationQuaternion = agcom.GUID(IOrientationQuaternion._uuid)
+        vtable_offset_local = IOrientationQuaternion._vtable_offset - 1
+        self.__dict__["_GetQX"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetQX"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetQY"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetQY"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_GetQZ"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetQZ"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_GetQS"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetQS"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+8, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgOrientationQuaternion.__dict__ and type(IAgOrientationQuaternion.__dict__[attrname]) == property:
-            return IAgOrientationQuaternion.__dict__[attrname]
+        if attrname in IOrientationQuaternion.__dict__ and type(IOrientationQuaternion.__dict__[attrname]) == property:
+            return IOrientationQuaternion.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgOrientation.__setattr__(self, attrname, value)
+            IOrientation.__setattr__(self, attrname, value)
     
     @property
     def QX(self) -> float:
@@ -2411,14 +2409,14 @@ class IAgOrientationQuaternion(IAgOrientation):
             agcls.evaluate_hresult(self.__dict__["_SetQS"](arg_vQS.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{101FAC5C-8DDB-4D4F-9C73-58146CA8EB01}", IAgOrientationQuaternion)
-agcls.AgTypeNameMap["IAgOrientationQuaternion"] = IAgOrientationQuaternion
+agcls.AgClassCatalog.add_catalog_entry("{101FAC5C-8DDB-4D4F-9C73-58146CA8EB01}", IOrientationQuaternion)
+agcls.AgTypeNameMap["IOrientationQuaternion"] = IOrientationQuaternion
 
-class IAgOrientationYPRAngles(IAgOrientation):
+class IOrientationYPRAngles(IOrientation):
     """Interface for Yaw-Pitch Roll (YPR) Angles orientation system."""
     _uuid = "{97A9D45D-E718-41FC-ACD2-CEBBEFD2011B}"
     _num_methods = 8
-    _vtable_offset = IAgOrientation._vtable_offset + IAgOrientation._num_methods
+    _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetSequence"] = _raise_uninitialized_error
@@ -2430,37 +2428,37 @@ class IAgOrientationYPRAngles(IAgOrientation):
         self.__dict__["_GetRoll"] = _raise_uninitialized_error
         self.__dict__["_SetRoll"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgOrientationYPRAngles._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationYPRAngles._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgOrientationYPRAngles from source object.")
+                raise STKInvalidCastError("Failed to create IOrientationYPRAngles from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientation._private_init(self, pUnk)
-        IID_IAgOrientationYPRAngles = agcom.GUID(IAgOrientationYPRAngles._uuid)
-        vtable_offset_local = IAgOrientationYPRAngles._vtable_offset - 1
-        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+2, agcom.LONG)
-        self.__dict__["_GetYaw"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetYaw"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetPitch"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetPitch"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+6, agcom.VARIANT)
-        self.__dict__["_GetRoll"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRoll"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationYPRAngles, vtable_offset_local+8, agcom.VARIANT)
+        IOrientation._private_init(self, pUnk)
+        IID_IOrientationYPRAngles = agcom.GUID(IOrientationYPRAngles._uuid)
+        vtable_offset_local = IOrientationYPRAngles._vtable_offset - 1
+        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+2, agcom.LONG)
+        self.__dict__["_GetYaw"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetYaw"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetPitch"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_SetPitch"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_GetRoll"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
+        self.__dict__["_SetRoll"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+8, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgOrientationYPRAngles.__dict__ and type(IAgOrientationYPRAngles.__dict__[attrname]) == property:
-            return IAgOrientationYPRAngles.__dict__[attrname]
+        if attrname in IOrientationYPRAngles.__dict__ and type(IOrientationYPRAngles.__dict__[attrname]) == property:
+            return IOrientationYPRAngles.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            IAgOrientation.__setattr__(self, attrname, value)
+            IOrientation.__setattr__(self, attrname, value)
     
     @property
     def Sequence(self) -> "AgEYPRAnglesSequence":
@@ -2511,10 +2509,10 @@ class IAgOrientationYPRAngles(IAgOrientation):
             agcls.evaluate_hresult(self.__dict__["_SetRoll"](arg_vRoll.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{97A9D45D-E718-41FC-ACD2-CEBBEFD2011B}", IAgOrientationYPRAngles)
-agcls.AgTypeNameMap["IAgOrientationYPRAngles"] = IAgOrientationYPRAngles
+agcls.AgClassCatalog.add_catalog_entry("{97A9D45D-E718-41FC-ACD2-CEBBEFD2011B}", IOrientationYPRAngles)
+agcls.AgTypeNameMap["IOrientationYPRAngles"] = IOrientationYPRAngles
 
-class IAgOrientationPositionOffset(object):
+class IOrientationPositionOffset(object):
     """Interface for defining the orientation origin position offset relative to the parent object."""
     _uuid = "{0DDA686C-559C-4BEA-969B-BF40708242B6}"
     _num_methods = 1
@@ -2523,42 +2521,42 @@ class IAgOrientationPositionOffset(object):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetPositionOffset"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgOrientationPositionOffset._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationPositionOffset._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgOrientationPositionOffset from source object.")
+                raise STKInvalidCastError("Failed to create IOrientationPositionOffset from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgOrientationPositionOffset = agcom.GUID(IAgOrientationPositionOffset._uuid)
-        vtable_offset_local = IAgOrientationPositionOffset._vtable_offset - 1
-        self.__dict__["_GetPositionOffset"] = IAGFUNCTYPE(pUnk, IID_IAgOrientationPositionOffset, vtable_offset_local+1, POINTER(agcom.PVOID))
+        IID_IOrientationPositionOffset = agcom.GUID(IOrientationPositionOffset._uuid)
+        vtable_offset_local = IOrientationPositionOffset._vtable_offset - 1
+        self.__dict__["_GetPositionOffset"] = IAGFUNCTYPE(pUnk, IID_IOrientationPositionOffset, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgOrientationPositionOffset.__dict__ and type(IAgOrientationPositionOffset.__dict__[attrname]) == property:
-            return IAgOrientationPositionOffset.__dict__[attrname]
+        if attrname in IOrientationPositionOffset.__dict__ and type(IOrientationPositionOffset.__dict__[attrname]) == property:
+            return IOrientationPositionOffset.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgOrientationPositionOffset.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IOrientationPositionOffset.")
     
     @property
-    def PositionOffset(self) -> "IAgCartesian3Vector":
+    def PositionOffset(self) -> "ICartesian3Vector":
         """Gets or sets the position offset cartesian vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetPositionOffset"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{0DDA686C-559C-4BEA-969B-BF40708242B6}", IAgOrientationPositionOffset)
-agcls.AgTypeNameMap["IAgOrientationPositionOffset"] = IAgOrientationPositionOffset
+agcls.AgClassCatalog.add_catalog_entry("{0DDA686C-559C-4BEA-969B-BF40708242B6}", IOrientationPositionOffset)
+agcls.AgTypeNameMap["IOrientationPositionOffset"] = IOrientationPositionOffset
 
-class IAgOrbitState(object):
+class IOrbitState(object):
     """Interface to set and retrieve the coordinate type used to specify the orbit state."""
     _uuid = "{42342AD2-F6C5-426B-AB2A-3688F05353C8}"
     _num_methods = 13
@@ -2579,43 +2577,43 @@ class IAgOrbitState(object):
         self.__dict__["_GetEpoch"] = _raise_uninitialized_error
         self.__dict__["_SetEpoch"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgOrbitState._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrbitState._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgOrbitState from source object.")
+                raise STKInvalidCastError("Failed to create IOrbitState from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgOrbitState = agcom.GUID(IAgOrbitState._uuid)
-        vtable_offset_local = IAgOrbitState._vtable_offset - 1
-        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetOrbitStateType"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+3, agcom.PVOID)
-        self.__dict__["_AssignClassical"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+4, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignCartesian"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+5, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignGeodetic"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+6, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignEquinoctialPosigrade"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+7, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignEquinoctialRetrograde"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignMixedSpherical"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+9, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignSpherical"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+10, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_GetCentralBodyName"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+11, POINTER(agcom.BSTR))
-        self.__dict__["_GetEpoch"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+12, POINTER(agcom.VARIANT))
-        self.__dict__["_SetEpoch"] = IAGFUNCTYPE(pUnk, IID_IAgOrbitState, vtable_offset_local+13, agcom.VARIANT)
+        IID_IOrbitState = agcom.GUID(IOrbitState._uuid)
+        vtable_offset_local = IOrbitState._vtable_offset - 1
+        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_GetOrbitStateType"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+3, agcom.PVOID)
+        self.__dict__["_AssignClassical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+4, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_AssignCartesian"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+5, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_AssignGeodetic"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+6, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_AssignEquinoctialPosigrade"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+7, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_AssignEquinoctialRetrograde"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_AssignMixedSpherical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+9, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_AssignSpherical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+10, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_GetCentralBodyName"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+11, POINTER(agcom.BSTR))
+        self.__dict__["_GetEpoch"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+12, POINTER(agcom.VARIANT))
+        self.__dict__["_SetEpoch"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+13, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgOrbitState.__dict__ and type(IAgOrbitState.__dict__[attrname]) == property:
-            return IAgOrbitState.__dict__[attrname]
+        if attrname in IOrbitState.__dict__ and type(IOrbitState.__dict__[attrname]) == property:
+            return IOrbitState.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgOrbitState.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IOrbitState.")
     
-    def ConvertTo(self, type:"AgEOrbitStateType") -> "IAgOrbitState":
+    def ConvertTo(self, type:"AgEOrbitStateType") -> "IOrbitState":
         """Method to changes the coordinate type to the type specified."""
         with agmarshall.AgEnum_arg(AgEOrbitStateType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgOrbitState:
@@ -2629,9 +2627,9 @@ class IAgOrbitState(object):
             agcls.evaluate_hresult(self.__dict__["_GetOrbitStateType"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
-    def Assign(self, pOrbitState:"IAgOrbitState") -> None:
+    def Assign(self, pOrbitState:"IOrbitState") -> None:
         """Assign a new coordinate type."""
-        with agmarshall.AgInterface_in_arg(pOrbitState, IAgOrbitState) as arg_pOrbitState:
+        with agmarshall.AgInterface_in_arg(pOrbitState, IOrbitState) as arg_pOrbitState:
             agcls.evaluate_hresult(self.__dict__["_Assign"](arg_pOrbitState.COM_val))
 
     def AssignClassical(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, eccentricity:float, inclination:float, argOfPerigee:float, rAAN:float, meanAnomaly:float) -> None:
@@ -2731,10 +2729,10 @@ class IAgOrbitState(object):
             agcls.evaluate_hresult(self.__dict__["_SetEpoch"](arg_epoch.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{42342AD2-F6C5-426B-AB2A-3688F05353C8}", IAgOrbitState)
-agcls.AgTypeNameMap["IAgOrbitState"] = IAgOrbitState
+agcls.AgClassCatalog.add_catalog_entry("{42342AD2-F6C5-426B-AB2A-3688F05353C8}", IOrbitState)
+agcls.AgTypeNameMap["IOrbitState"] = IOrbitState
 
-class IAgCartesian2Vector(object):
+class ICartesian2Vector(object):
     """Represents a cartesian 2-D vector."""
     _uuid = "{DA459BD7-5810-4B30-8397-21EDA9E52D2B}"
     _num_methods = 7
@@ -2749,35 +2747,35 @@ class IAgCartesian2Vector(object):
         self.__dict__["_Set"] = _raise_uninitialized_error
         self.__dict__["_ToArray"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgCartesian2Vector._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICartesian2Vector._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgCartesian2Vector from source object.")
+                raise STKInvalidCastError("Failed to create ICartesian2Vector from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgCartesian2Vector = agcom.GUID(IAgCartesian2Vector._uuid)
-        vtable_offset_local = IAgCartesian2Vector._vtable_offset - 1
-        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_Get"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+5, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_Set"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_IAgCartesian2Vector, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
+        IID_ICartesian2Vector = agcom.GUID(ICartesian2Vector._uuid)
+        vtable_offset_local = ICartesian2Vector._vtable_offset - 1
+        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_Get"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+5, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_Set"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgCartesian2Vector.__dict__ and type(IAgCartesian2Vector.__dict__[attrname]) == property:
-            return IAgCartesian2Vector.__dict__[attrname]
+        if attrname in ICartesian2Vector.__dict__ and type(ICartesian2Vector.__dict__[attrname]) == property:
+            return ICartesian2Vector.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgCartesian2Vector.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ICartesian2Vector.")
     
     @property
     def X(self) -> float:
@@ -2823,10 +2821,10 @@ class IAgCartesian2Vector(object):
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{DA459BD7-5810-4B30-8397-21EDA9E52D2B}", IAgCartesian2Vector)
-agcls.AgTypeNameMap["IAgCartesian2Vector"] = IAgCartesian2Vector
+agcls.AgClassCatalog.add_catalog_entry("{DA459BD7-5810-4B30-8397-21EDA9E52D2B}", ICartesian2Vector)
+agcls.AgTypeNameMap["ICartesian2Vector"] = ICartesian2Vector
 
-class IAgUnitPrefsDim(object):
+class IUnitPrefsDim(object):
     """Provides info on a Dimension from the global unit table."""
     _uuid = "{AA966FFD-1A99-45D8-9193-C519BBBA99FA}"
     _num_methods = 5
@@ -2839,33 +2837,33 @@ class IAgUnitPrefsDim(object):
         self.__dict__["_GetCurrentUnit"] = _raise_uninitialized_error
         self.__dict__["_SetCurrentUnit"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUnitPrefsDim._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPrefsDim._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgUnitPrefsDim from source object.")
+                raise STKInvalidCastError("Failed to create IUnitPrefsDim from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgUnitPrefsDim = agcom.GUID(IAgUnitPrefsDim._uuid)
-        vtable_offset_local = IAgUnitPrefsDim._vtable_offset - 1
-        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDim, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_GetName"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDim, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_GetAvailableUnits"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDim, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_GetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDim, vtable_offset_local+4, POINTER(agcom.PVOID))
-        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDim, vtable_offset_local+5, agcom.BSTR)
+        IID_IUnitPrefsDim = agcom.GUID(IUnitPrefsDim._uuid)
+        vtable_offset_local = IUnitPrefsDim._vtable_offset - 1
+        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_GetName"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_GetAvailableUnits"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_GetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+4, POINTER(agcom.PVOID))
+        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+5, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgUnitPrefsDim.__dict__ and type(IAgUnitPrefsDim.__dict__[attrname]) == property:
-            return IAgUnitPrefsDim.__dict__[attrname]
+        if attrname in IUnitPrefsDim.__dict__ and type(IUnitPrefsDim.__dict__[attrname]) == property:
+            return IUnitPrefsDim.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUnitPrefsDim.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPrefsDim.")
     
     @property
     def Id(self) -> int:
@@ -2882,14 +2880,14 @@ class IAgUnitPrefsDim(object):
             return arg_pName.python_val
 
     @property
-    def AvailableUnits(self) -> "IAgUnitPrefsUnitCollection":
+    def AvailableUnits(self) -> "IUnitPrefsUnitCollection":
         """Returns collection of Units."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnitCollection:
             agcls.evaluate_hresult(self.__dict__["_GetAvailableUnits"](byref(arg_ppUnitPrefsUnitCollection.COM_val)))
             return arg_ppUnitPrefsUnitCollection.python_val
 
     @property
-    def CurrentUnit(self) -> "IAgUnitPrefsUnit":
+    def CurrentUnit(self) -> "IUnitPrefsUnit":
         """Returns the current unit for this dimension."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__["_GetCurrentUnit"](byref(arg_ppUnitPrefsUnit.COM_val)))
@@ -2901,10 +2899,10 @@ class IAgUnitPrefsDim(object):
             agcls.evaluate_hresult(self.__dict__["_SetCurrentUnit"](arg_unitAbbrv.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{AA966FFD-1A99-45D8-9193-C519BBBA99FA}", IAgUnitPrefsDim)
-agcls.AgTypeNameMap["IAgUnitPrefsDim"] = IAgUnitPrefsDim
+agcls.AgClassCatalog.add_catalog_entry("{AA966FFD-1A99-45D8-9193-C519BBBA99FA}", IUnitPrefsDim)
+agcls.AgTypeNameMap["IUnitPrefsDim"] = IUnitPrefsDim
 
-class IAgPropertyInfo(object):
+class IPropertyInfo(object):
     """Property information."""
     _uuid = "{26A48B4B-BF6A-4F9D-9658-44A7A2DBBE2A}"
     _num_methods = 8
@@ -2920,36 +2918,36 @@ class IAgPropertyInfo(object):
         self.__dict__["_GetMin"] = _raise_uninitialized_error
         self.__dict__["_GetMax"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgPropertyInfo._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPropertyInfo._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgPropertyInfo from source object.")
+                raise STKInvalidCastError("Failed to create IPropertyInfo from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgPropertyInfo = agcom.GUID(IAgPropertyInfo._uuid)
-        vtable_offset_local = IAgPropertyInfo._vtable_offset - 1
-        self.__dict__["_GetName"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_GetPropertyType"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_GetValue"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetValue"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetHasMin"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetHasMax"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetMin"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+7, POINTER(agcom.VARIANT))
-        self.__dict__["_GetMax"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfo, vtable_offset_local+8, POINTER(agcom.VARIANT))
+        IID_IPropertyInfo = agcom.GUID(IPropertyInfo._uuid)
+        vtable_offset_local = IPropertyInfo._vtable_offset - 1
+        self.__dict__["_GetName"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_GetPropertyType"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_GetValue"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_SetValue"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_GetHasMin"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetHasMax"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetMin"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+7, POINTER(agcom.VARIANT))
+        self.__dict__["_GetMax"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+8, POINTER(agcom.VARIANT))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgPropertyInfo.__dict__ and type(IAgPropertyInfo.__dict__[attrname]) == property:
-            return IAgPropertyInfo.__dict__[attrname]
+        if attrname in IPropertyInfo.__dict__ and type(IPropertyInfo.__dict__[attrname]) == property:
+            return IPropertyInfo.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgPropertyInfo.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IPropertyInfo.")
     
     @property
     def Name(self) -> str:
@@ -3005,10 +3003,10 @@ class IAgPropertyInfo(object):
             return arg_pVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{26A48B4B-BF6A-4F9D-9658-44A7A2DBBE2A}", IAgPropertyInfo)
-agcls.AgTypeNameMap["IAgPropertyInfo"] = IAgPropertyInfo
+agcls.AgClassCatalog.add_catalog_entry("{26A48B4B-BF6A-4F9D-9658-44A7A2DBBE2A}", IPropertyInfo)
+agcls.AgTypeNameMap["IPropertyInfo"] = IPropertyInfo
 
-class IAgPropertyInfoCollection(object):
+class IPropertyInfoCollection(object):
     """The collection of properties."""
     _uuid = "{198E6280-1D5A-4AED-9DE3-ACE354B95287}"
     _num_methods = 5
@@ -3021,39 +3019,39 @@ class IAgPropertyInfoCollection(object):
         self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
         self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgPropertyInfoCollection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPropertyInfoCollection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgPropertyInfoCollection from source object.")
+                raise STKInvalidCastError("Failed to create IPropertyInfoCollection from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgPropertyInfoCollection = agcom.GUID(IAgPropertyInfoCollection._uuid)
-        vtable_offset_local = IAgPropertyInfoCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfoCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfoCollection, vtable_offset_local+2, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfoCollection, vtable_offset_local+3, POINTER(agcom.LONG))
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfoCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgPropertyInfoCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
+        IID_IPropertyInfoCollection = agcom.GUID(IPropertyInfoCollection._uuid)
+        vtable_offset_local = IPropertyInfoCollection._vtable_offset - 1
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+2, POINTER(agcom.PVOID))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+3, POINTER(agcom.LONG))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgPropertyInfoCollection.__dict__ and type(IAgPropertyInfoCollection.__dict__[attrname]) == property:
-            return IAgPropertyInfoCollection.__dict__[attrname]
+        if attrname in IPropertyInfoCollection.__dict__ and type(IPropertyInfoCollection.__dict__[attrname]) == property:
+            return IPropertyInfoCollection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgPropertyInfoCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IPropertyInfoCollection.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
         return self
-    def __next__(self) -> "IAgPropertyInfo":
+    def __next__(self) -> "IPropertyInfo":
         if self.__dict__["enumerator"] is None:
             raise StopIteration
         nextval = self.__dict__["enumerator"].Next()
@@ -3061,7 +3059,7 @@ class IAgPropertyInfoCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, indexOrName:typing.Any) -> "IAgPropertyInfo":
+    def Item(self, indexOrName:typing.Any) -> "IPropertyInfo":
         """Allows the user to iterate through the properties."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
@@ -3082,14 +3080,14 @@ class IAgPropertyInfoCollection(object):
             agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def GetItemByIndex(self, index:int) -> "IAgPropertyInfo":
+    def GetItemByIndex(self, index:int) -> "IPropertyInfo":
         """Retrieves a property from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def GetItemByName(self, name:str) -> "IAgPropertyInfo":
+    def GetItemByName(self, name:str) -> "IPropertyInfo":
         """Retrieves a property from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
@@ -3100,10 +3098,10 @@ class IAgPropertyInfoCollection(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{198E6280-1D5A-4AED-9DE3-ACE354B95287}", IAgPropertyInfoCollection)
-agcls.AgTypeNameMap["IAgPropertyInfoCollection"] = IAgPropertyInfoCollection
+agcls.AgClassCatalog.add_catalog_entry("{198E6280-1D5A-4AED-9DE3-ACE354B95287}", IPropertyInfoCollection)
+agcls.AgTypeNameMap["IPropertyInfoCollection"] = IPropertyInfoCollection
 
-class IAgRuntimeTypeInfo(object):
+class IRuntimeTypeInfo(object):
     """Interface used to retrieve the properties at runtime."""
     _uuid = "{01F8872C-9586-4131-A724-F97C6ADD083F}"
     _num_methods = 4
@@ -3115,35 +3113,35 @@ class IAgRuntimeTypeInfo(object):
         self.__dict__["_GetCount"] = _raise_uninitialized_error
         self.__dict__["_GetItem"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgRuntimeTypeInfo._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRuntimeTypeInfo._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgRuntimeTypeInfo from source object.")
+                raise STKInvalidCastError("Failed to create IRuntimeTypeInfo from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgRuntimeTypeInfo = agcom.GUID(IAgRuntimeTypeInfo._uuid)
-        vtable_offset_local = IAgRuntimeTypeInfo._vtable_offset - 1
-        self.__dict__["_GetProperties"] = IAGFUNCTYPE(pUnk, IID_IAgRuntimeTypeInfo, vtable_offset_local+1, POINTER(agcom.PVOID))
-        self.__dict__["_GetIsCollection"] = IAGFUNCTYPE(pUnk, IID_IAgRuntimeTypeInfo, vtable_offset_local+2, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgRuntimeTypeInfo, vtable_offset_local+3, POINTER(agcom.LONG))
-        self.__dict__["_GetItem"] = IAGFUNCTYPE(pUnk, IID_IAgRuntimeTypeInfo, vtable_offset_local+4, agcom.LONG, POINTER(agcom.PVOID))
+        IID_IRuntimeTypeInfo = agcom.GUID(IRuntimeTypeInfo._uuid)
+        vtable_offset_local = IRuntimeTypeInfo._vtable_offset - 1
+        self.__dict__["_GetProperties"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+1, POINTER(agcom.PVOID))
+        self.__dict__["_GetIsCollection"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+2, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+3, POINTER(agcom.LONG))
+        self.__dict__["_GetItem"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+4, agcom.LONG, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgRuntimeTypeInfo.__dict__ and type(IAgRuntimeTypeInfo.__dict__[attrname]) == property:
-            return IAgRuntimeTypeInfo.__dict__[attrname]
+        if attrname in IRuntimeTypeInfo.__dict__ and type(IRuntimeTypeInfo.__dict__[attrname]) == property:
+            return IRuntimeTypeInfo.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgRuntimeTypeInfo.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IRuntimeTypeInfo.")
     
     @property
-    def Properties(self) -> "IAgPropertyInfoCollection":
+    def Properties(self) -> "IPropertyInfoCollection":
         """The collection of properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProperties"](byref(arg_ppRetVal.COM_val)))
@@ -3163,7 +3161,7 @@ class IAgRuntimeTypeInfo(object):
             agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def GetItem(self, index:int) -> "IAgPropertyInfo":
+    def GetItem(self, index:int) -> "IPropertyInfo":
         """Returns the property of the collection at the given index."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
@@ -3171,10 +3169,10 @@ class IAgRuntimeTypeInfo(object):
             return arg_ppVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{01F8872C-9586-4131-A724-F97C6ADD083F}", IAgRuntimeTypeInfo)
-agcls.AgTypeNameMap["IAgRuntimeTypeInfo"] = IAgRuntimeTypeInfo
+agcls.AgClassCatalog.add_catalog_entry("{01F8872C-9586-4131-A724-F97C6ADD083F}", IRuntimeTypeInfo)
+agcls.AgTypeNameMap["IRuntimeTypeInfo"] = IRuntimeTypeInfo
 
-class IAgRuntimeTypeInfoProvider(object):
+class IRuntimeTypeInfoProvider(object):
     """Access point for IAgRuntimeTypeInfo."""
     _uuid = "{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}"
     _num_methods = 1
@@ -3183,42 +3181,42 @@ class IAgRuntimeTypeInfoProvider(object):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetProvideRuntimeTypeInfo"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgRuntimeTypeInfoProvider._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRuntimeTypeInfoProvider._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgRuntimeTypeInfoProvider from source object.")
+                raise STKInvalidCastError("Failed to create IRuntimeTypeInfoProvider from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgRuntimeTypeInfoProvider = agcom.GUID(IAgRuntimeTypeInfoProvider._uuid)
-        vtable_offset_local = IAgRuntimeTypeInfoProvider._vtable_offset - 1
-        self.__dict__["_GetProvideRuntimeTypeInfo"] = IAGFUNCTYPE(pUnk, IID_IAgRuntimeTypeInfoProvider, vtable_offset_local+1, POINTER(agcom.PVOID))
+        IID_IRuntimeTypeInfoProvider = agcom.GUID(IRuntimeTypeInfoProvider._uuid)
+        vtable_offset_local = IRuntimeTypeInfoProvider._vtable_offset - 1
+        self.__dict__["_GetProvideRuntimeTypeInfo"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfoProvider, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgRuntimeTypeInfoProvider.__dict__ and type(IAgRuntimeTypeInfoProvider.__dict__[attrname]) == property:
-            return IAgRuntimeTypeInfoProvider.__dict__[attrname]
+        if attrname in IRuntimeTypeInfoProvider.__dict__ and type(IRuntimeTypeInfoProvider.__dict__[attrname]) == property:
+            return IRuntimeTypeInfoProvider.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgRuntimeTypeInfoProvider.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IRuntimeTypeInfoProvider.")
     
     @property
-    def ProvideRuntimeTypeInfo(self) -> "IAgRuntimeTypeInfo":
+    def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
         """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}", IAgRuntimeTypeInfoProvider)
-agcls.AgTypeNameMap["IAgRuntimeTypeInfoProvider"] = IAgRuntimeTypeInfoProvider
+agcls.AgClassCatalog.add_catalog_entry("{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}", IRuntimeTypeInfoProvider)
+agcls.AgTypeNameMap["IRuntimeTypeInfoProvider"] = IRuntimeTypeInfoProvider
 
-class IAgExecCmdResult(object):
+class IExecCmdResult(object):
     """Collection of strings returned by the ExecuteCommand."""
     _uuid = "{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}"
     _num_methods = 5
@@ -3231,34 +3229,34 @@ class IAgExecCmdResult(object):
         self.__dict__["_Range"] = _raise_uninitialized_error
         self.__dict__["_GetIsSucceeded"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgExecCmdResult._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IExecCmdResult._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgExecCmdResult from source object.")
+                raise STKInvalidCastError("Failed to create IExecCmdResult from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgExecCmdResult = agcom.GUID(IAgExecCmdResult._uuid)
-        vtable_offset_local = IAgExecCmdResult._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_Range"] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_GetIsSucceeded"] = IAGFUNCTYPE(pUnk, IID_IAgExecCmdResult, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
+        IID_IExecCmdResult = agcom.GUID(IExecCmdResult._uuid)
+        vtable_offset_local = IExecCmdResult._vtable_offset - 1
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_Range"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_GetIsSucceeded"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgExecCmdResult.__dict__ and type(IAgExecCmdResult.__dict__[attrname]) == property:
-            return IAgExecCmdResult.__dict__[attrname]
+        if attrname in IExecCmdResult.__dict__ and type(IExecCmdResult.__dict__[attrname]) == property:
+            return IExecCmdResult.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgExecCmdResult.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IExecCmdResult.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
@@ -3311,10 +3309,10 @@ class IAgExecCmdResult(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}", IAgExecCmdResult)
-agcls.AgTypeNameMap["IAgExecCmdResult"] = IAgExecCmdResult
+agcls.AgClassCatalog.add_catalog_entry("{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}", IExecCmdResult)
+agcls.AgTypeNameMap["IExecCmdResult"] = IExecCmdResult
 
-class IAgExecMultiCmdResult(object):
+class IExecMultiCmdResult(object):
     """Collection of objects returned by the ExecuteMultipleCommands."""
     _uuid = "{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}"
     _num_methods = 3
@@ -3325,37 +3323,37 @@ class IAgExecMultiCmdResult(object):
         self.__dict__["_Item"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgExecMultiCmdResult._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IExecMultiCmdResult._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgExecMultiCmdResult from source object.")
+                raise STKInvalidCastError("Failed to create IExecMultiCmdResult from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgExecMultiCmdResult = agcom.GUID(IAgExecMultiCmdResult._uuid)
-        vtable_offset_local = IAgExecMultiCmdResult._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgExecMultiCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgExecMultiCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgExecMultiCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
+        IID_IExecMultiCmdResult = agcom.GUID(IExecMultiCmdResult._uuid)
+        vtable_offset_local = IExecMultiCmdResult._vtable_offset - 1
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgExecMultiCmdResult.__dict__ and type(IAgExecMultiCmdResult.__dict__[attrname]) == property:
-            return IAgExecMultiCmdResult.__dict__[attrname]
+        if attrname in IExecMultiCmdResult.__dict__ and type(IExecMultiCmdResult.__dict__[attrname]) == property:
+            return IExecMultiCmdResult.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgExecMultiCmdResult.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IExecMultiCmdResult.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
         return self
-    def __next__(self) -> "IAgExecCmdResult":
+    def __next__(self) -> "IExecCmdResult":
         if self.__dict__["enumerator"] is None:
             raise StopIteration
         nextval = self.__dict__["enumerator"].Next()
@@ -3370,7 +3368,7 @@ class IAgExecMultiCmdResult(object):
             agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
-    def Item(self, index:int) -> "IAgExecCmdResult":
+    def Item(self, index:int) -> "IExecCmdResult":
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pRetVal:
@@ -3388,10 +3386,10 @@ class IAgExecMultiCmdResult(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}", IAgExecMultiCmdResult)
-agcls.AgTypeNameMap["IAgExecMultiCmdResult"] = IAgExecMultiCmdResult
+agcls.AgClassCatalog.add_catalog_entry("{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}", IExecMultiCmdResult)
+agcls.AgTypeNameMap["IExecMultiCmdResult"] = IExecMultiCmdResult
 
-class IAgUnitPrefsUnit(object):
+class IUnitPrefsUnit(object):
     """Provides info about a unit."""
     _uuid = "{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}"
     _num_methods = 4
@@ -3403,32 +3401,32 @@ class IAgUnitPrefsUnit(object):
         self.__dict__["_GetId"] = _raise_uninitialized_error
         self.__dict__["_GetDimension"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUnitPrefsUnit._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPrefsUnit._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgUnitPrefsUnit from source object.")
+                raise STKInvalidCastError("Failed to create IUnitPrefsUnit from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgUnitPrefsUnit = agcom.GUID(IAgUnitPrefsUnit._uuid)
-        vtable_offset_local = IAgUnitPrefsUnit._vtable_offset - 1
-        self.__dict__["_GetFullName"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnit, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_GetAbbrv"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnit, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnit, vtable_offset_local+3, POINTER(agcom.LONG))
-        self.__dict__["_GetDimension"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnit, vtable_offset_local+4, POINTER(agcom.PVOID))
+        IID_IUnitPrefsUnit = agcom.GUID(IUnitPrefsUnit._uuid)
+        vtable_offset_local = IUnitPrefsUnit._vtable_offset - 1
+        self.__dict__["_GetFullName"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnit, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_GetAbbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnit, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnit, vtable_offset_local+3, POINTER(agcom.LONG))
+        self.__dict__["_GetDimension"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnit, vtable_offset_local+4, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgUnitPrefsUnit.__dict__ and type(IAgUnitPrefsUnit.__dict__[attrname]) == property:
-            return IAgUnitPrefsUnit.__dict__[attrname]
+        if attrname in IUnitPrefsUnit.__dict__ and type(IUnitPrefsUnit.__dict__[attrname]) == property:
+            return IUnitPrefsUnit.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUnitPrefsUnit.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPrefsUnit.")
     
     @property
     def FullName(self) -> str:
@@ -3452,17 +3450,17 @@ class IAgUnitPrefsUnit(object):
             return arg_pId.python_val
 
     @property
-    def Dimension(self) -> "IAgUnitPrefsDim":
+    def Dimension(self) -> "IUnitPrefsDim":
         """Returns the Dimension for this unit."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_GetDimension"](byref(arg_ppUnitPrefsDim.COM_val)))
             return arg_ppUnitPrefsDim.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}", IAgUnitPrefsUnit)
-agcls.AgTypeNameMap["IAgUnitPrefsUnit"] = IAgUnitPrefsUnit
+agcls.AgClassCatalog.add_catalog_entry("{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}", IUnitPrefsUnit)
+agcls.AgTypeNameMap["IUnitPrefsUnit"] = IUnitPrefsUnit
 
-class IAgUnitPrefsUnitCollection(object):
+class IUnitPrefsUnitCollection(object):
     """Provides access to the Unit collection."""
     _uuid = "{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}"
     _num_methods = 5
@@ -3475,39 +3473,39 @@ class IAgUnitPrefsUnitCollection(object):
         self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
         self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUnitPrefsUnitCollection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPrefsUnitCollection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgUnitPrefsUnitCollection from source object.")
+                raise STKInvalidCastError("Failed to create IUnitPrefsUnitCollection from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgUnitPrefsUnitCollection = agcom.GUID(IAgUnitPrefsUnitCollection._uuid)
-        vtable_offset_local = IAgUnitPrefsUnitCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnitCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnitCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnitCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnitCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsUnitCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
+        IID_IUnitPrefsUnitCollection = agcom.GUID(IUnitPrefsUnitCollection._uuid)
+        vtable_offset_local = IUnitPrefsUnitCollection._vtable_offset - 1
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgUnitPrefsUnitCollection.__dict__ and type(IAgUnitPrefsUnitCollection.__dict__[attrname]) == property:
-            return IAgUnitPrefsUnitCollection.__dict__[attrname]
+        if attrname in IUnitPrefsUnitCollection.__dict__ and type(IUnitPrefsUnitCollection.__dict__[attrname]) == property:
+            return IUnitPrefsUnitCollection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUnitPrefsUnitCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPrefsUnitCollection.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
         return self
-    def __next__(self) -> "IAgUnitPrefsUnit":
+    def __next__(self) -> "IUnitPrefsUnit":
         if self.__dict__["enumerator"] is None:
             raise StopIteration
         nextval = self.__dict__["enumerator"].Next()
@@ -3515,7 +3513,7 @@ class IAgUnitPrefsUnitCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, indexOrName:typing.Any) -> "IAgUnitPrefsUnit":
+    def Item(self, indexOrName:typing.Any) -> "IUnitPrefsUnit":
         """Returns the specific item in the collection given a unit identifier or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
@@ -3536,14 +3534,14 @@ class IAgUnitPrefsUnitCollection(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def GetItemByIndex(self, index:int) -> "IAgUnitPrefsUnit":
+    def GetItemByIndex(self, index:int) -> "IUnitPrefsUnit":
         """Retrieves a unit from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
-    def GetItemByName(self, name:str) -> "IAgUnitPrefsUnit":
+    def GetItemByName(self, name:str) -> "IUnitPrefsUnit":
         """Retrieves a unit from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
@@ -3554,10 +3552,10 @@ class IAgUnitPrefsUnitCollection(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}", IAgUnitPrefsUnitCollection)
-agcls.AgTypeNameMap["IAgUnitPrefsUnitCollection"] = IAgUnitPrefsUnitCollection
+agcls.AgClassCatalog.add_catalog_entry("{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}", IUnitPrefsUnitCollection)
+agcls.AgTypeNameMap["IUnitPrefsUnitCollection"] = IUnitPrefsUnitCollection
 
-class IAgUnitPrefsDimCollection(object):
+class IUnitPrefsDimCollection(object):
     """Provides accesses to the global unit table."""
     _uuid = "{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}"
     _num_methods = 12
@@ -3577,46 +3575,46 @@ class IAgUnitPrefsDimCollection(object):
         self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
         self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUnitPrefsDimCollection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPrefsDimCollection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgUnitPrefsDimCollection from source object.")
+                raise STKInvalidCastError("Failed to create IUnitPrefsDimCollection from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgUnitPrefsDimCollection = agcom.GUID(IAgUnitPrefsDimCollection._uuid)
-        vtable_offset_local = IAgUnitPrefsDimCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+3, agcom.BSTR, agcom.BSTR)
-        self.__dict__["_GetCurrentUnitAbbrv"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+4, agcom.VARIANT, POINTER(agcom.BSTR))
-        self.__dict__["_GetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+6, agcom.VARIANT)
-        self.__dict__["_GetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+8, agcom.DOUBLE)
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+9, POINTER(agcom.PVOID))
-        self.__dict__["_ResetUnits"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+10, )
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+11, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IAgUnitPrefsDimCollection, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
+        IID_IUnitPrefsDimCollection = agcom.GUID(IUnitPrefsDimCollection._uuid)
+        vtable_offset_local = IUnitPrefsDimCollection._vtable_offset - 1
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+3, agcom.BSTR, agcom.BSTR)
+        self.__dict__["_GetCurrentUnitAbbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+4, agcom.VARIANT, POINTER(agcom.BSTR))
+        self.__dict__["_GetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_SetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_GetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+9, POINTER(agcom.PVOID))
+        self.__dict__["_ResetUnits"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+10, )
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+11, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgUnitPrefsDimCollection.__dict__ and type(IAgUnitPrefsDimCollection.__dict__[attrname]) == property:
-            return IAgUnitPrefsDimCollection.__dict__[attrname]
+        if attrname in IUnitPrefsDimCollection.__dict__ and type(IUnitPrefsDimCollection.__dict__[attrname]) == property:
+            return IUnitPrefsDimCollection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUnitPrefsDimCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPrefsDimCollection.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
         return self
-    def __next__(self) -> "IAgUnitPrefsDim":
+    def __next__(self) -> "IUnitPrefsDim":
         if self.__dict__["enumerator"] is None:
             raise StopIteration
         nextval = self.__dict__["enumerator"].Next()
@@ -3624,7 +3622,7 @@ class IAgUnitPrefsDimCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, indexOrName:typing.Any) -> "IAgUnitPrefsDim":
+    def Item(self, indexOrName:typing.Any) -> "IUnitPrefsDim":
         """Returns an IAgUnitPrefsDim given a Dimension name or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
@@ -3686,14 +3684,14 @@ class IAgUnitPrefsDimCollection(object):
         """Resets the unitpreferences to the Default units"""
         agcls.evaluate_hresult(self.__dict__["_ResetUnits"]())
 
-    def GetItemByIndex(self, index:int) -> "IAgUnitPrefsDim":
+    def GetItemByIndex(self, index:int) -> "IUnitPrefsDim":
         """Retrieves a dimension from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
             return arg_ppAgUnitPrefsDim.python_val
 
-    def GetItemByName(self, name:str) -> "IAgUnitPrefsDim":
+    def GetItemByName(self, name:str) -> "IUnitPrefsDim":
         """Retrieves a dimension from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
@@ -3704,10 +3702,10 @@ class IAgUnitPrefsDimCollection(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}", IAgUnitPrefsDimCollection)
-agcls.AgTypeNameMap["IAgUnitPrefsDimCollection"] = IAgUnitPrefsDimCollection
+agcls.AgClassCatalog.add_catalog_entry("{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}", IUnitPrefsDimCollection)
+agcls.AgTypeNameMap["IUnitPrefsDimCollection"] = IUnitPrefsDimCollection
 
-class IAgQuantity(object):
+class IQuantity(object):
     """Provides helper methods for a quantity."""
     _uuid = "{C0BBB39C-54E2-4344-B24E-58AA6AA4446B}"
     _num_methods = 9
@@ -3724,37 +3722,37 @@ class IAgQuantity(object):
         self.__dict__["_MultiplyQty"] = _raise_uninitialized_error
         self.__dict__["_DivideQty"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgQuantity._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IQuantity._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgQuantity from source object.")
+                raise STKInvalidCastError("Failed to create IQuantity from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgQuantity = agcom.GUID(IAgQuantity._uuid)
-        vtable_offset_local = IAgQuantity._vtable_offset - 1
-        self.__dict__["_GetDimension"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_GetUnit"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_ConvertToUnit"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+3, agcom.BSTR)
-        self.__dict__["_GetValue"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetValue"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+5, agcom.DOUBLE)
-        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.PVOID))
-        self.__dict__["_Subtract"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+7, agcom.PVOID, POINTER(agcom.PVOID))
-        self.__dict__["_MultiplyQty"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+8, agcom.PVOID, POINTER(agcom.PVOID))
-        self.__dict__["_DivideQty"] = IAGFUNCTYPE(pUnk, IID_IAgQuantity, vtable_offset_local+9, agcom.PVOID, POINTER(agcom.PVOID))
+        IID_IQuantity = agcom.GUID(IQuantity._uuid)
+        vtable_offset_local = IQuantity._vtable_offset - 1
+        self.__dict__["_GetDimension"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_GetUnit"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_ConvertToUnit"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+3, agcom.BSTR)
+        self.__dict__["_GetValue"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetValue"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+5, agcom.DOUBLE)
+        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_Subtract"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+7, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_MultiplyQty"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+8, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_DivideQty"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+9, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgQuantity.__dict__ and type(IAgQuantity.__dict__[attrname]) == property:
-            return IAgQuantity.__dict__[attrname]
+        if attrname in IQuantity.__dict__ and type(IQuantity.__dict__[attrname]) == property:
+            return IQuantity.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgQuantity.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IQuantity.")
     
     @property
     def Dimension(self) -> str:
@@ -3787,39 +3785,39 @@ class IAgQuantity(object):
         with agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_SetValue"](arg_value.COM_val))
 
-    def Add(self, quantity:"IAgQuantity") -> "IAgQuantity":
+    def Add(self, quantity:"IQuantity") -> "IQuantity":
         """Adds the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
-        with agmarshall.AgInterface_in_arg(quantity, IAgQuantity) as arg_quantity, \
+        with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_Add"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def Subtract(self, quantity:"IAgQuantity") -> "IAgQuantity":
+    def Subtract(self, quantity:"IQuantity") -> "IQuantity":
         """Subtracts the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
-        with agmarshall.AgInterface_in_arg(quantity, IAgQuantity) as arg_quantity, \
+        with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_Subtract"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def MultiplyQty(self, quantity:"IAgQuantity") -> "IAgQuantity":
+    def MultiplyQty(self, quantity:"IQuantity") -> "IQuantity":
         """Multiplies the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
-        with agmarshall.AgInterface_in_arg(quantity, IAgQuantity) as arg_quantity, \
+        with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_MultiplyQty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def DivideQty(self, quantity:"IAgQuantity") -> "IAgQuantity":
+    def DivideQty(self, quantity:"IQuantity") -> "IQuantity":
         """Divides the value from the IAgQuantity interface to this interface. The dimensions must be similar."""
-        with agmarshall.AgInterface_in_arg(quantity, IAgQuantity) as arg_quantity, \
+        with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_DivideQty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{C0BBB39C-54E2-4344-B24E-58AA6AA4446B}", IAgQuantity)
-agcls.AgTypeNameMap["IAgQuantity"] = IAgQuantity
+agcls.AgClassCatalog.add_catalog_entry("{C0BBB39C-54E2-4344-B24E-58AA6AA4446B}", IQuantity)
+agcls.AgTypeNameMap["IQuantity"] = IQuantity
 
-class IAgDate(object):
+class IDate(object):
     """Provides helper methods for a date."""
     _uuid = "{BFC8EA09-19BD-432A-923D-C553E8E37993}"
     _num_methods = 15
@@ -3842,43 +3840,43 @@ class IAgDate(object):
         self.__dict__["_Subtract"] = _raise_uninitialized_error
         self.__dict__["_Span"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgDate._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDate._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgDate from source object.")
+                raise STKInvalidCastError("Failed to create IDate from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgDate = agcom.GUID(IAgDate._uuid)
-        vtable_offset_local = IAgDate._vtable_offset - 1
-        self.__dict__["_Format"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+1, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_SetDate"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
-        self.__dict__["_GetOLEDate"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+3, POINTER(agcom.DATE))
-        self.__dict__["_SetOLEDate"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+4, agcom.DATE)
-        self.__dict__["_GetWholeDays"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetWholeDays"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+6, agcom.LONG)
-        self.__dict__["_GetSecIntoDay"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetSecIntoDay"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+8, agcom.DOUBLE)
-        self.__dict__["_GetWholeDaysUTC"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+9, POINTER(agcom.LONG))
-        self.__dict__["_SetWholeDaysUTC"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+10, agcom.LONG)
-        self.__dict__["_GetSecIntoDayUTC"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+11, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetSecIntoDayUTC"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+12, agcom.DOUBLE)
-        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+13, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
-        self.__dict__["_Subtract"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+14, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
-        self.__dict__["_Span"] = IAGFUNCTYPE(pUnk, IID_IAgDate, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.PVOID))
+        IID_IDate = agcom.GUID(IDate._uuid)
+        vtable_offset_local = IDate._vtable_offset - 1
+        self.__dict__["_Format"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+1, agcom.BSTR, POINTER(agcom.BSTR))
+        self.__dict__["_SetDate"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
+        self.__dict__["_GetOLEDate"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+3, POINTER(agcom.DATE))
+        self.__dict__["_SetOLEDate"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+4, agcom.DATE)
+        self.__dict__["_GetWholeDays"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_SetWholeDays"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+6, agcom.LONG)
+        self.__dict__["_GetSecIntoDay"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetSecIntoDay"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_GetWholeDaysUTC"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+9, POINTER(agcom.LONG))
+        self.__dict__["_SetWholeDaysUTC"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+10, agcom.LONG)
+        self.__dict__["_GetSecIntoDayUTC"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+11, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetSecIntoDayUTC"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+12, agcom.DOUBLE)
+        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+13, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
+        self.__dict__["_Subtract"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+14, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
+        self.__dict__["_Span"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgDate.__dict__ and type(IAgDate.__dict__[attrname]) == property:
-            return IAgDate.__dict__[attrname]
+        if attrname in IDate.__dict__ and type(IDate.__dict__[attrname]) == property:
+            return IDate.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgDate.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IDate.")
     
     def Format(self, unit:str) -> str:
         """Returns the value of the date given the unit."""
@@ -3953,7 +3951,7 @@ class IAgDate(object):
         with agmarshall.DOUBLE_arg(secIntoDay) as arg_secIntoDay:
             agcls.evaluate_hresult(self.__dict__["_SetSecIntoDayUTC"](arg_secIntoDay.COM_val))
 
-    def Add(self, unit:str, value:float) -> "IAgDate":
+    def Add(self, unit:str, value:float) -> "IDate":
         """Adds the value in the given unit and returns a new date interface."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
@@ -3961,7 +3959,7 @@ class IAgDate(object):
             agcls.evaluate_hresult(self.__dict__["_Add"](arg_unit.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
             return arg_ppDate.python_val
 
-    def Subtract(self, unit:str, value:float) -> "IAgDate":
+    def Subtract(self, unit:str, value:float) -> "IDate":
         """Subtracts the value in the given unit and returns a new date interface."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
@@ -3969,18 +3967,18 @@ class IAgDate(object):
             agcls.evaluate_hresult(self.__dict__["_Subtract"](arg_unit.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
             return arg_ppDate.python_val
 
-    def Span(self, date:"IAgDate") -> "IAgQuantity":
+    def Span(self, date:"IDate") -> "IQuantity":
         """Subtracts the value from the IAgDate interface and returns an IAgQuantity."""
-        with agmarshall.AgInterface_in_arg(date, IAgDate) as arg_date, \
+        with agmarshall.AgInterface_in_arg(date, IDate) as arg_date, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_Span"](arg_date.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{BFC8EA09-19BD-432A-923D-C553E8E37993}", IAgDate)
-agcls.AgTypeNameMap["IAgDate"] = IAgDate
+agcls.AgClassCatalog.add_catalog_entry("{BFC8EA09-19BD-432A-923D-C553E8E37993}", IDate)
+agcls.AgTypeNameMap["IDate"] = IDate
 
-class IAgConversionUtility(object):
+class IConversionUtility(object):
     """Provides conversion utilities."""
     _uuid = "{2B04A4E2-C647-4920-88FF-DE0413252D1C}"
     _num_methods = 18
@@ -4006,46 +4004,46 @@ class IAgConversionUtility(object):
         self.__dict__["_NewCartesian3VectorFromDirection"] = _raise_uninitialized_error
         self.__dict__["_NewCartesian3VectorFromPosition"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgConversionUtility._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IConversionUtility._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgConversionUtility from source object.")
+                raise STKInvalidCastError("Failed to create IConversionUtility from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgConversionUtility = agcom.GUID(IAgConversionUtility._uuid)
-        vtable_offset_local = IAgConversionUtility._vtable_offset - 1
-        self.__dict__["_ConvertQuantity"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.DOUBLE))
-        self.__dict__["_ConvertDate"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+2, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_ConvertQuantityArray"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY))
-        self.__dict__["_ConvertDateArray"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+4, agcom.BSTR, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY))
-        self.__dict__["_NewQuantity"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+5, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
-        self.__dict__["_NewDate"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+6, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_NewPositionOnEarth"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+7, POINTER(agcom.PVOID))
-        self.__dict__["_ConvertPositionArray"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+8, agcom.LONG, POINTER(agcom.SAFEARRAY), agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_NewDirection"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+9, POINTER(agcom.PVOID))
-        self.__dict__["_NewOrientation"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+10, POINTER(agcom.PVOID))
-        self.__dict__["_NewOrbitStateOnEarth"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+11, POINTER(agcom.PVOID))
-        self.__dict__["_NewPositionOnCB"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_NewOrbitStateOnCB"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+13, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_QueryDirectionCosineMatrix"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+14, agcom.PVOID, POINTER(agcom.PVOID), POINTER(agcom.PVOID), POINTER(agcom.PVOID))
-        self.__dict__["_QueryDirectionCosineMatrixArray"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_NewCartesian3Vector"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+16, POINTER(agcom.PVOID))
-        self.__dict__["_NewCartesian3VectorFromDirection"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+17, agcom.PVOID, POINTER(agcom.PVOID))
-        self.__dict__["_NewCartesian3VectorFromPosition"] = IAGFUNCTYPE(pUnk, IID_IAgConversionUtility, vtable_offset_local+18, agcom.PVOID, POINTER(agcom.PVOID))
+        IID_IConversionUtility = agcom.GUID(IConversionUtility._uuid)
+        vtable_offset_local = IConversionUtility._vtable_offset - 1
+        self.__dict__["_ConvertQuantity"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.DOUBLE))
+        self.__dict__["_ConvertDate"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+2, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
+        self.__dict__["_ConvertQuantityArray"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY))
+        self.__dict__["_ConvertDateArray"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+4, agcom.BSTR, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY))
+        self.__dict__["_NewQuantity"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+5, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
+        self.__dict__["_NewDate"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+6, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_NewPositionOnEarth"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_ConvertPositionArray"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+8, agcom.LONG, POINTER(agcom.SAFEARRAY), agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_NewDirection"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+9, POINTER(agcom.PVOID))
+        self.__dict__["_NewOrientation"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+10, POINTER(agcom.PVOID))
+        self.__dict__["_NewOrbitStateOnEarth"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+11, POINTER(agcom.PVOID))
+        self.__dict__["_NewPositionOnCB"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_NewOrbitStateOnCB"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+13, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_QueryDirectionCosineMatrix"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+14, agcom.PVOID, POINTER(agcom.PVOID), POINTER(agcom.PVOID), POINTER(agcom.PVOID))
+        self.__dict__["_QueryDirectionCosineMatrixArray"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_NewCartesian3Vector"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+16, POINTER(agcom.PVOID))
+        self.__dict__["_NewCartesian3VectorFromDirection"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+17, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_NewCartesian3VectorFromPosition"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+18, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgConversionUtility.__dict__ and type(IAgConversionUtility.__dict__[attrname]) == property:
-            return IAgConversionUtility.__dict__[attrname]
+        if attrname in IConversionUtility.__dict__ and type(IConversionUtility.__dict__[attrname]) == property:
+            return IConversionUtility.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgConversionUtility.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IConversionUtility.")
     
     def ConvertQuantity(self, dimensionName:str, fromUnit:str, toUnit:str, fromValue:float) -> float:
         """Converts the specified quantity value from a given unit to another unit."""
@@ -4085,7 +4083,7 @@ class IAgConversionUtility(object):
             agcls.evaluate_hresult(self.__dict__["_ConvertDateArray"](arg_fromUnit.COM_val, arg_toUnit.COM_val, byref(arg_fromValues.COM_val), byref(arg_ppConvertedDateValues.COM_val)))
             return arg_ppConvertedDateValues.python_val
 
-    def NewQuantity(self, dimension:str, unitAbbrv:str, value:float) -> "IAgQuantity":
+    def NewQuantity(self, dimension:str, unitAbbrv:str, value:float) -> "IQuantity":
         """Creates an IAgQuantity interface with the given dimension, unit and value"""
         with agmarshall.BSTR_arg(dimension) as arg_dimension, \
              agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
@@ -4094,7 +4092,7 @@ class IAgConversionUtility(object):
             agcls.evaluate_hresult(self.__dict__["_NewQuantity"](arg_dimension.COM_val, arg_unitAbbrv.COM_val, arg_value.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def NewDate(self, unitAbbrv:str, value:str) -> "IAgDate":
+    def NewDate(self, unitAbbrv:str, value:str) -> "IDate":
         """Creates an IAgDate interface with the given unit and value"""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.BSTR_arg(value) as arg_value, \
@@ -4102,7 +4100,7 @@ class IAgConversionUtility(object):
             agcls.evaluate_hresult(self.__dict__["_NewDate"](arg_unitAbbrv.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
             return arg_ppDate.python_val
 
-    def NewPositionOnEarth(self) -> "IAgPosition":
+    def NewPositionOnEarth(self) -> "IPosition":
         """Creates an IAgPosition interface with earth as its central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewPositionOnEarth"](byref(arg_ppRetVal.COM_val)))
@@ -4117,79 +4115,79 @@ class IAgConversionUtility(object):
             agcls.evaluate_hresult(self.__dict__["_ConvertPositionArray"](arg_positionType.COM_val, byref(arg_positionArray.COM_val), arg_convertTo.COM_val, byref(arg_ppOutVal.COM_val)))
             return arg_ppOutVal.python_val
 
-    def NewDirection(self) -> "IAgDirection":
+    def NewDirection(self) -> "IDirection":
         """Creates an IAgDirection interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewDirection"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewOrientation(self) -> "IAgOrientation":
+    def NewOrientation(self) -> "IOrientation":
         """Creates an IAgOrientation interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewOrientation"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewOrbitStateOnEarth(self) -> "IAgOrbitState":
+    def NewOrbitStateOnEarth(self) -> "IOrbitState":
         """Creates an IAgOrbitState interface with earth as its central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewOrbitStateOnEarth"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewPositionOnCB(self, centralBodyName:str) -> "IAgPosition":
+    def NewPositionOnCB(self, centralBodyName:str) -> "IPosition":
         """Creates an IAgPosition interface using the supplied central body."""
         with agmarshall.BSTR_arg(centralBodyName) as arg_centralBodyName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewPositionOnCB"](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewOrbitStateOnCB(self, centralBodyName:str) -> "IAgOrbitState":
+    def NewOrbitStateOnCB(self, centralBodyName:str) -> "IOrbitState":
         """Creates an IAgOrbitState interface using the supplied central body."""
         with agmarshall.BSTR_arg(centralBodyName) as arg_centralBodyName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewOrbitStateOnCB"](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryDirectionCosineMatrix(self, inputOrientation:"IAgOrientation") -> typing.Tuple[IAgCartesian3Vector, IAgCartesian3Vector, IAgCartesian3Vector]:
+    def QueryDirectionCosineMatrix(self, inputOrientation:"IOrientation") -> typing.Tuple[ICartesian3Vector, ICartesian3Vector, ICartesian3Vector]:
         """Returns a Direction Cosine Matrix (DCM)."""
-        with agmarshall.AgInterface_in_arg(inputOrientation, IAgOrientation) as arg_inputOrientation, \
+        with agmarshall.AgInterface_in_arg(inputOrientation, IOrientation) as arg_inputOrientation, \
              agmarshall.AgInterface_out_arg() as arg_px, \
              agmarshall.AgInterface_out_arg() as arg_py, \
              agmarshall.AgInterface_out_arg() as arg_pz:
             agcls.evaluate_hresult(self.__dict__["_QueryDirectionCosineMatrix"](arg_inputOrientation.COM_val, byref(arg_px.COM_val), byref(arg_py.COM_val), byref(arg_pz.COM_val)))
             return arg_px.python_val, arg_py.python_val, arg_pz.python_val
 
-    def QueryDirectionCosineMatrixArray(self, inputOrientation:"IAgOrientation") -> list:
+    def QueryDirectionCosineMatrixArray(self, inputOrientation:"IOrientation") -> list:
         """Returns a Direction Cosine Matrix (DCM) as an array."""
-        with agmarshall.AgInterface_in_arg(inputOrientation, IAgOrientation) as arg_inputOrientation, \
+        with agmarshall.AgInterface_in_arg(inputOrientation, IOrientation) as arg_inputOrientation, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_QueryDirectionCosineMatrixArray"](arg_inputOrientation.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewCartesian3Vector(self) -> "IAgCartesian3Vector":
+    def NewCartesian3Vector(self) -> "ICartesian3Vector":
         """Creates a cartesian vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewCartesian3Vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewCartesian3VectorFromDirection(self, inputDirection:"IAgDirection") -> "IAgCartesian3Vector":
+    def NewCartesian3VectorFromDirection(self, inputDirection:"IDirection") -> "ICartesian3Vector":
         """Converts the direction to cartesian vector."""
-        with agmarshall.AgInterface_in_arg(inputDirection, IAgDirection) as arg_inputDirection, \
+        with agmarshall.AgInterface_in_arg(inputDirection, IDirection) as arg_inputDirection, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewCartesian3VectorFromDirection"](arg_inputDirection.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewCartesian3VectorFromPosition(self, inputPosition:"IAgPosition") -> "IAgCartesian3Vector":
+    def NewCartesian3VectorFromPosition(self, inputPosition:"IPosition") -> "ICartesian3Vector":
         """Converts the position to cartesian vector."""
-        with agmarshall.AgInterface_in_arg(inputPosition, IAgPosition) as arg_inputPosition, \
+        with agmarshall.AgInterface_in_arg(inputPosition, IPosition) as arg_inputPosition, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewCartesian3VectorFromPosition"](arg_inputPosition.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{2B04A4E2-C647-4920-88FF-DE0413252D1C}", IAgConversionUtility)
-agcls.AgTypeNameMap["IAgConversionUtility"] = IAgConversionUtility
+agcls.AgClassCatalog.add_catalog_entry("{2B04A4E2-C647-4920-88FF-DE0413252D1C}", IConversionUtility)
+agcls.AgTypeNameMap["IConversionUtility"] = IConversionUtility
 
-class IAgDoublesCollection(object):
+class IDoublesCollection(object):
     """Represents a collection of doubles."""
     _uuid = "{DEE2EB74-C19C-44C9-8825-09010A8F60BE}"
     _num_methods = 8
@@ -4205,37 +4203,37 @@ class IAgDoublesCollection(object):
         self.__dict__["_ToArray"] = _raise_uninitialized_error
         self.__dict__["_SetAt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgDoublesCollection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDoublesCollection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgDoublesCollection from source object.")
+                raise STKInvalidCastError("Failed to create IDoublesCollection from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgDoublesCollection = agcom.GUID(IAgDoublesCollection._uuid)
-        vtable_offset_local = IAgDoublesCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+1, agcom.LONG, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_RemoveAt"] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+5, agcom.LONG)
-        self.__dict__["_RemoveAll"] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+6, )
-        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_SetAt"] = IAGFUNCTYPE(pUnk, IID_IAgDoublesCollection, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE)
+        IID_IDoublesCollection = agcom.GUID(IDoublesCollection._uuid)
+        vtable_offset_local = IDoublesCollection._vtable_offset - 1
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+1, agcom.LONG, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_RemoveAt"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+5, agcom.LONG)
+        self.__dict__["_RemoveAll"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+6, )
+        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_SetAt"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgDoublesCollection.__dict__ and type(IAgDoublesCollection.__dict__[attrname]) == property:
-            return IAgDoublesCollection.__dict__[attrname]
+        if attrname in IDoublesCollection.__dict__ and type(IDoublesCollection.__dict__[attrname]) == property:
+            return IDoublesCollection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgDoublesCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IDoublesCollection.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
@@ -4299,24 +4297,24 @@ class IAgDoublesCollection(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{DEE2EB74-C19C-44C9-8825-09010A8F60BE}", IAgDoublesCollection)
-agcls.AgTypeNameMap["IAgDoublesCollection"] = IAgDoublesCollection
+agcls.AgClassCatalog.add_catalog_entry("{DEE2EB74-C19C-44C9-8825-09010A8F60BE}", IDoublesCollection)
+agcls.AgTypeNameMap["IDoublesCollection"] = IDoublesCollection
 
 
 
-class AgExecCmdResult(IAgExecCmdResult):
+class AgExecCmdResult(IExecCmdResult):
     """Collection of strings returned by the ExecuteCommand."""
     def __init__(self, sourceObject=None):
-        IAgExecCmdResult.__init__(self, sourceObject)
+        IExecCmdResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgExecCmdResult._private_init(self, pUnk)
+        IExecCmdResult._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgExecCmdResult._get_property(self, attrname) is not None: found_prop = IAgExecCmdResult._get_property(self, attrname)
+        if IExecCmdResult._get_property(self, attrname) is not None: found_prop = IExecCmdResult._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
@@ -4325,19 +4323,19 @@ class AgExecCmdResult(IAgExecCmdResult):
 agcls.AgClassCatalog.add_catalog_entry("{92FE4418-FBA3-4D69-8F6E-9F600A1BA5E0}", AgExecCmdResult)
 
 
-class AgExecMultiCmdResult(IAgExecMultiCmdResult):
+class AgExecMultiCmdResult(IExecMultiCmdResult):
     """Collection of objects returned by the ExecuteMultipleCommands."""
     def __init__(self, sourceObject=None):
-        IAgExecMultiCmdResult.__init__(self, sourceObject)
+        IExecMultiCmdResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgExecMultiCmdResult._private_init(self, pUnk)
+        IExecMultiCmdResult._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgExecMultiCmdResult._get_property(self, attrname) is not None: found_prop = IAgExecMultiCmdResult._get_property(self, attrname)
+        if IExecMultiCmdResult._get_property(self, attrname) is not None: found_prop = IExecMultiCmdResult._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
@@ -4346,832 +4344,832 @@ class AgExecMultiCmdResult(IAgExecMultiCmdResult):
 agcls.AgClassCatalog.add_catalog_entry("{4B262721-FD3F-4DAD-BF32-4280752B7FE6}", AgExecMultiCmdResult)
 
 
-class AgUnitPrefsUnit(IAgUnitPrefsUnit):
+class UnitPrefsUnit(IUnitPrefsUnit):
     """Object that contains info on the unit."""
     def __init__(self, sourceObject=None):
-        IAgUnitPrefsUnit.__init__(self, sourceObject)
+        IUnitPrefsUnit.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgUnitPrefsUnit._private_init(self, pUnk)
+        IUnitPrefsUnit._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgUnitPrefsUnit._get_property(self, attrname) is not None: found_prop = IAgUnitPrefsUnit._get_property(self, attrname)
+        if IUnitPrefsUnit._get_property(self, attrname) is not None: found_prop = IUnitPrefsUnit._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgUnitPrefsUnit.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPrefsUnit.")
         
-agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}", AgUnitPrefsUnit)
+agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}", UnitPrefsUnit)
 
 
-class AgUnitPrefsUnitCollection(IAgUnitPrefsUnitCollection):
+class UnitPrefsUnitCollection(IUnitPrefsUnitCollection):
     """Object that contains a collection of IAgUnitPrefsUnit."""
     def __init__(self, sourceObject=None):
-        IAgUnitPrefsUnitCollection.__init__(self, sourceObject)
+        IUnitPrefsUnitCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgUnitPrefsUnitCollection._private_init(self, pUnk)
+        IUnitPrefsUnitCollection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgUnitPrefsUnitCollection._get_property(self, attrname) is not None: found_prop = IAgUnitPrefsUnitCollection._get_property(self, attrname)
+        if IUnitPrefsUnitCollection._get_property(self, attrname) is not None: found_prop = IUnitPrefsUnitCollection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgUnitPrefsUnitCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPrefsUnitCollection.")
         
-agcls.AgClassCatalog.add_catalog_entry("{21AEACA4-B79D-455B-8DA4-89402A57A87B}", AgUnitPrefsUnitCollection)
+agcls.AgClassCatalog.add_catalog_entry("{21AEACA4-B79D-455B-8DA4-89402A57A87B}", UnitPrefsUnitCollection)
 
 
-class AgUnitPrefsDim(IAgUnitPrefsDim):
+class UnitPrefsDim(IUnitPrefsDim):
     """Object that contains info on the Dimension."""
     def __init__(self, sourceObject=None):
-        IAgUnitPrefsDim.__init__(self, sourceObject)
+        IUnitPrefsDim.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgUnitPrefsDim._private_init(self, pUnk)
+        IUnitPrefsDim._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgUnitPrefsDim._get_property(self, attrname) is not None: found_prop = IAgUnitPrefsDim._get_property(self, attrname)
+        if IUnitPrefsDim._get_property(self, attrname) is not None: found_prop = IUnitPrefsDim._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgUnitPrefsDim.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPrefsDim.")
         
-agcls.AgClassCatalog.add_catalog_entry("{5DB8F1AE-1240-4929-B7FD-75E0800970EB}", AgUnitPrefsDim)
+agcls.AgClassCatalog.add_catalog_entry("{5DB8F1AE-1240-4929-B7FD-75E0800970EB}", UnitPrefsDim)
 
 
-class AgUnitPrefsDimCollection(IAgUnitPrefsDimCollection):
+class UnitPrefsDimCollection(IUnitPrefsDimCollection):
     """Object that contains a collection of dimensions."""
     def __init__(self, sourceObject=None):
-        IAgUnitPrefsDimCollection.__init__(self, sourceObject)
+        IUnitPrefsDimCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgUnitPrefsDimCollection._private_init(self, pUnk)
+        IUnitPrefsDimCollection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgUnitPrefsDimCollection._get_property(self, attrname) is not None: found_prop = IAgUnitPrefsDimCollection._get_property(self, attrname)
+        if IUnitPrefsDimCollection._get_property(self, attrname) is not None: found_prop = IUnitPrefsDimCollection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgUnitPrefsDimCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPrefsDimCollection.")
         
-agcls.AgClassCatalog.add_catalog_entry("{58562305-1D39-4B56-9FA8-AB49FEB68A37}", AgUnitPrefsDimCollection)
+agcls.AgClassCatalog.add_catalog_entry("{58562305-1D39-4B56-9FA8-AB49FEB68A37}", UnitPrefsDimCollection)
 
 
-class AgConversionUtility(IAgConversionUtility):
+class ConversionUtility(IConversionUtility):
     """Object that contains a unit conversion utility."""
     def __init__(self, sourceObject=None):
-        IAgConversionUtility.__init__(self, sourceObject)
+        IConversionUtility.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgConversionUtility._private_init(self, pUnk)
+        IConversionUtility._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgConversionUtility._get_property(self, attrname) is not None: found_prop = IAgConversionUtility._get_property(self, attrname)
+        if IConversionUtility._get_property(self, attrname) is not None: found_prop = IConversionUtility._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgConversionUtility.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ConversionUtility.")
         
-agcls.AgClassCatalog.add_catalog_entry("{89E0FDC5-4016-47E9-96ED-0C1B05FFDADA}", AgConversionUtility)
+agcls.AgClassCatalog.add_catalog_entry("{89E0FDC5-4016-47E9-96ED-0C1B05FFDADA}", ConversionUtility)
 
 
-class AgQuantity(IAgQuantity):
+class Quantity(IQuantity):
     """Object that contains a quantity."""
     def __init__(self, sourceObject=None):
-        IAgQuantity.__init__(self, sourceObject)
+        IQuantity.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgQuantity._private_init(self, pUnk)
+        IQuantity._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgQuantity._get_property(self, attrname) is not None: found_prop = IAgQuantity._get_property(self, attrname)
+        if IQuantity._get_property(self, attrname) is not None: found_prop = IQuantity._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgQuantity.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Quantity.")
         
-agcls.AgClassCatalog.add_catalog_entry("{59806B16-8D20-4EC3-8913-9457846AC0E5}", AgQuantity)
+agcls.AgClassCatalog.add_catalog_entry("{59806B16-8D20-4EC3-8913-9457846AC0E5}", Quantity)
 
 
-class AgDate(IAgDate):
+class Date(IDate):
     """Object that contains a date."""
     def __init__(self, sourceObject=None):
-        IAgDate.__init__(self, sourceObject)
+        IDate.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDate._private_init(self, pUnk)
+        IDate._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgDate._get_property(self, attrname) is not None: found_prop = IAgDate._get_property(self, attrname)
+        if IDate._get_property(self, attrname) is not None: found_prop = IDate._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgDate.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Date.")
         
-agcls.AgClassCatalog.add_catalog_entry("{CC2BA6FD-3A05-46D1-BAA0-68AC2D7896F1}", AgDate)
+agcls.AgClassCatalog.add_catalog_entry("{CC2BA6FD-3A05-46D1-BAA0-68AC2D7896F1}", Date)
 
 
-class AgPosition(IAgLocationData, IAgPosition):
+class Position(ILocationData, IPosition):
     """The Position class."""
     def __init__(self, sourceObject=None):
-        IAgLocationData.__init__(self, sourceObject)
-        IAgPosition.__init__(self, sourceObject)
+        ILocationData.__init__(self, sourceObject)
+        IPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgLocationData._private_init(self, pUnk)
-        IAgPosition._private_init(self, pUnk)
+        ILocationData._private_init(self, pUnk)
+        IPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgLocationData._get_property(self, attrname) is not None: found_prop = IAgLocationData._get_property(self, attrname)
-        if IAgPosition._get_property(self, attrname) is not None: found_prop = IAgPosition._get_property(self, attrname)
+        if ILocationData._get_property(self, attrname) is not None: found_prop = ILocationData._get_property(self, attrname)
+        if IPosition._get_property(self, attrname) is not None: found_prop = IPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgPosition.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Position.")
         
-agcls.AgClassCatalog.add_catalog_entry("{B3FE87C4-702C-4263-83D8-4E32C993E2D0}", AgPosition)
+agcls.AgClassCatalog.add_catalog_entry("{B3FE87C4-702C-4263-83D8-4E32C993E2D0}", Position)
 
 
-class AgCartesian(IAgCartesian, IAgPosition):
+class Cartesian(ICartesian, IPosition):
     """Class used to access a position using Cartesian Coordinates."""
     def __init__(self, sourceObject=None):
-        IAgCartesian.__init__(self, sourceObject)
-        IAgPosition.__init__(self, sourceObject)
+        ICartesian.__init__(self, sourceObject)
+        IPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgCartesian._private_init(self, pUnk)
-        IAgPosition._private_init(self, pUnk)
+        ICartesian._private_init(self, pUnk)
+        IPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgCartesian._get_property(self, attrname) is not None: found_prop = IAgCartesian._get_property(self, attrname)
-        if IAgPosition._get_property(self, attrname) is not None: found_prop = IAgPosition._get_property(self, attrname)
+        if ICartesian._get_property(self, attrname) is not None: found_prop = ICartesian._get_property(self, attrname)
+        if IPosition._get_property(self, attrname) is not None: found_prop = IPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCartesian.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Cartesian.")
         
-agcls.AgClassCatalog.add_catalog_entry("{027F342E-5989-43D1-831B-BF2E313A1CBB}", AgCartesian)
+agcls.AgClassCatalog.add_catalog_entry("{027F342E-5989-43D1-831B-BF2E313A1CBB}", Cartesian)
 
 
-class AgGeodetic(IAgGeodetic, IAgPosition):
+class Geodetic(IGeodetic, IPosition):
     """Class defining Geodetic position."""
     def __init__(self, sourceObject=None):
-        IAgGeodetic.__init__(self, sourceObject)
-        IAgPosition.__init__(self, sourceObject)
+        IGeodetic.__init__(self, sourceObject)
+        IPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgGeodetic._private_init(self, pUnk)
-        IAgPosition._private_init(self, pUnk)
+        IGeodetic._private_init(self, pUnk)
+        IPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgGeodetic._get_property(self, attrname) is not None: found_prop = IAgGeodetic._get_property(self, attrname)
-        if IAgPosition._get_property(self, attrname) is not None: found_prop = IAgPosition._get_property(self, attrname)
+        if IGeodetic._get_property(self, attrname) is not None: found_prop = IGeodetic._get_property(self, attrname)
+        if IPosition._get_property(self, attrname) is not None: found_prop = IPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgGeodetic.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Geodetic.")
         
-agcls.AgClassCatalog.add_catalog_entry("{F65DA479-6847-456B-8816-85FF3ECD4469}", AgGeodetic)
+agcls.AgClassCatalog.add_catalog_entry("{F65DA479-6847-456B-8816-85FF3ECD4469}", Geodetic)
 
 
-class AgGeocentric(IAgGeocentric, IAgPosition):
+class Geocentric(IGeocentric, IPosition):
     """Class defining Geocentric position."""
     def __init__(self, sourceObject=None):
-        IAgGeocentric.__init__(self, sourceObject)
-        IAgPosition.__init__(self, sourceObject)
+        IGeocentric.__init__(self, sourceObject)
+        IPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgGeocentric._private_init(self, pUnk)
-        IAgPosition._private_init(self, pUnk)
+        IGeocentric._private_init(self, pUnk)
+        IPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgGeocentric._get_property(self, attrname) is not None: found_prop = IAgGeocentric._get_property(self, attrname)
-        if IAgPosition._get_property(self, attrname) is not None: found_prop = IAgPosition._get_property(self, attrname)
+        if IGeocentric._get_property(self, attrname) is not None: found_prop = IGeocentric._get_property(self, attrname)
+        if IPosition._get_property(self, attrname) is not None: found_prop = IPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgGeocentric.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Geocentric.")
         
-agcls.AgClassCatalog.add_catalog_entry("{1AC9E304-8DCE-4CD6-A5AA-B82738823556}", AgGeocentric)
+agcls.AgClassCatalog.add_catalog_entry("{1AC9E304-8DCE-4CD6-A5AA-B82738823556}", Geocentric)
 
 
-class AgPlanetodetic(IAgPlanetodetic, IAgPosition):
+class Planetodetic(IPlanetodetic, IPosition):
     """Class defining Planetodetic position."""
     def __init__(self, sourceObject=None):
-        IAgPlanetodetic.__init__(self, sourceObject)
-        IAgPosition.__init__(self, sourceObject)
+        IPlanetodetic.__init__(self, sourceObject)
+        IPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPlanetodetic._private_init(self, pUnk)
-        IAgPosition._private_init(self, pUnk)
+        IPlanetodetic._private_init(self, pUnk)
+        IPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgPlanetodetic._get_property(self, attrname) is not None: found_prop = IAgPlanetodetic._get_property(self, attrname)
-        if IAgPosition._get_property(self, attrname) is not None: found_prop = IAgPosition._get_property(self, attrname)
+        if IPlanetodetic._get_property(self, attrname) is not None: found_prop = IPlanetodetic._get_property(self, attrname)
+        if IPosition._get_property(self, attrname) is not None: found_prop = IPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgPlanetodetic.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Planetodetic.")
         
-agcls.AgClassCatalog.add_catalog_entry("{E06625DF-EEB4-4384-B142-C1C501F522F8}", AgPlanetodetic)
+agcls.AgClassCatalog.add_catalog_entry("{E06625DF-EEB4-4384-B142-C1C501F522F8}", Planetodetic)
 
 
-class AgPlanetocentric(IAgPlanetocentric, IAgPosition):
+class Planetocentric(IPlanetocentric, IPosition):
     """Class defining Planetocentric position."""
     def __init__(self, sourceObject=None):
-        IAgPlanetocentric.__init__(self, sourceObject)
-        IAgPosition.__init__(self, sourceObject)
+        IPlanetocentric.__init__(self, sourceObject)
+        IPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPlanetocentric._private_init(self, pUnk)
-        IAgPosition._private_init(self, pUnk)
+        IPlanetocentric._private_init(self, pUnk)
+        IPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgPlanetocentric._get_property(self, attrname) is not None: found_prop = IAgPlanetocentric._get_property(self, attrname)
-        if IAgPosition._get_property(self, attrname) is not None: found_prop = IAgPosition._get_property(self, attrname)
+        if IPlanetocentric._get_property(self, attrname) is not None: found_prop = IPlanetocentric._get_property(self, attrname)
+        if IPosition._get_property(self, attrname) is not None: found_prop = IPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgPlanetocentric.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Planetocentric.")
         
-agcls.AgClassCatalog.add_catalog_entry("{DB009F3C-1FA7-4241-8A8D-D55E234CFF02}", AgPlanetocentric)
+agcls.AgClassCatalog.add_catalog_entry("{DB009F3C-1FA7-4241-8A8D-D55E234CFF02}", Planetocentric)
 
 
-class AgSpherical(IAgSpherical, IAgPosition):
+class Spherical(ISpherical, IPosition):
     """Class defining spherical position."""
     def __init__(self, sourceObject=None):
-        IAgSpherical.__init__(self, sourceObject)
-        IAgPosition.__init__(self, sourceObject)
+        ISpherical.__init__(self, sourceObject)
+        IPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgSpherical._private_init(self, pUnk)
-        IAgPosition._private_init(self, pUnk)
+        ISpherical._private_init(self, pUnk)
+        IPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgSpherical._get_property(self, attrname) is not None: found_prop = IAgSpherical._get_property(self, attrname)
-        if IAgPosition._get_property(self, attrname) is not None: found_prop = IAgPosition._get_property(self, attrname)
+        if ISpherical._get_property(self, attrname) is not None: found_prop = ISpherical._get_property(self, attrname)
+        if IPosition._get_property(self, attrname) is not None: found_prop = IPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgSpherical.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Spherical.")
         
-agcls.AgClassCatalog.add_catalog_entry("{CD809FAC-48DF-46AB-A322-92947F84C7E6}", AgSpherical)
+agcls.AgClassCatalog.add_catalog_entry("{CD809FAC-48DF-46AB-A322-92947F84C7E6}", Spherical)
 
 
-class AgCylindrical(IAgCylindrical, IAgPosition):
+class Cylindrical(ICylindrical, IPosition):
     """Class defining cylindrical position."""
     def __init__(self, sourceObject=None):
-        IAgCylindrical.__init__(self, sourceObject)
-        IAgPosition.__init__(self, sourceObject)
+        ICylindrical.__init__(self, sourceObject)
+        IPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgCylindrical._private_init(self, pUnk)
-        IAgPosition._private_init(self, pUnk)
+        ICylindrical._private_init(self, pUnk)
+        IPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgCylindrical._get_property(self, attrname) is not None: found_prop = IAgCylindrical._get_property(self, attrname)
-        if IAgPosition._get_property(self, attrname) is not None: found_prop = IAgPosition._get_property(self, attrname)
+        if ICylindrical._get_property(self, attrname) is not None: found_prop = ICylindrical._get_property(self, attrname)
+        if IPosition._get_property(self, attrname) is not None: found_prop = IPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCylindrical.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Cylindrical.")
         
-agcls.AgClassCatalog.add_catalog_entry("{FF1B8082-F06B-4F7B-94B2-6D3C4D9A7D51}", AgCylindrical)
+agcls.AgClassCatalog.add_catalog_entry("{FF1B8082-F06B-4F7B-94B2-6D3C4D9A7D51}", Cylindrical)
 
 
-class AgDirection(IAgDirection):
+class Direction(IDirection):
     """Class defining direction options for aligned and constrained vectors."""
     def __init__(self, sourceObject=None):
-        IAgDirection.__init__(self, sourceObject)
+        IDirection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirection._private_init(self, pUnk)
+        IDirection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgDirection._get_property(self, attrname) is not None: found_prop = IAgDirection._get_property(self, attrname)
+        if IDirection._get_property(self, attrname) is not None: found_prop = IDirection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgDirection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Direction.")
         
-agcls.AgClassCatalog.add_catalog_entry("{9BC95D30-4E21-4502-ADE6-2AAE9ED89903}", AgDirection)
+agcls.AgClassCatalog.add_catalog_entry("{9BC95D30-4E21-4502-ADE6-2AAE9ED89903}", Direction)
 
 
-class AgDirectionEuler(IAgDirectionEuler, IAgDirection):
+class DirectionEuler(IDirectionEuler, IDirection):
     """Euler direction sequence."""
     def __init__(self, sourceObject=None):
-        IAgDirectionEuler.__init__(self, sourceObject)
-        IAgDirection.__init__(self, sourceObject)
+        IDirectionEuler.__init__(self, sourceObject)
+        IDirection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirectionEuler._private_init(self, pUnk)
-        IAgDirection._private_init(self, pUnk)
+        IDirectionEuler._private_init(self, pUnk)
+        IDirection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgDirectionEuler._get_property(self, attrname) is not None: found_prop = IAgDirectionEuler._get_property(self, attrname)
-        if IAgDirection._get_property(self, attrname) is not None: found_prop = IAgDirection._get_property(self, attrname)
+        if IDirectionEuler._get_property(self, attrname) is not None: found_prop = IDirectionEuler._get_property(self, attrname)
+        if IDirection._get_property(self, attrname) is not None: found_prop = IDirection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgDirectionEuler.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in DirectionEuler.")
         
-agcls.AgClassCatalog.add_catalog_entry("{A14FAC2D-C055-4FB4-9AAD-67314E647717}", AgDirectionEuler)
+agcls.AgClassCatalog.add_catalog_entry("{A14FAC2D-C055-4FB4-9AAD-67314E647717}", DirectionEuler)
 
 
-class AgDirectionPR(IAgDirectionPR, IAgDirection):
+class DirectionPR(IDirectionPR, IDirection):
     """Pitch-Roll (PR) direction sequence."""
     def __init__(self, sourceObject=None):
-        IAgDirectionPR.__init__(self, sourceObject)
-        IAgDirection.__init__(self, sourceObject)
+        IDirectionPR.__init__(self, sourceObject)
+        IDirection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirectionPR._private_init(self, pUnk)
-        IAgDirection._private_init(self, pUnk)
+        IDirectionPR._private_init(self, pUnk)
+        IDirection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgDirectionPR._get_property(self, attrname) is not None: found_prop = IAgDirectionPR._get_property(self, attrname)
-        if IAgDirection._get_property(self, attrname) is not None: found_prop = IAgDirection._get_property(self, attrname)
+        if IDirectionPR._get_property(self, attrname) is not None: found_prop = IDirectionPR._get_property(self, attrname)
+        if IDirection._get_property(self, attrname) is not None: found_prop = IDirection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgDirectionPR.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in DirectionPR.")
         
-agcls.AgClassCatalog.add_catalog_entry("{3EEEDD8D-FB4C-442D-8A1F-28C7A3C2C9A6}", AgDirectionPR)
+agcls.AgClassCatalog.add_catalog_entry("{3EEEDD8D-FB4C-442D-8A1F-28C7A3C2C9A6}", DirectionPR)
 
 
-class AgDirectionRADec(IAgDirectionRADec, IAgDirection):
+class DirectionRADec(IDirectionRADec, IDirection):
     """Spherical direction (Right Ascension and Declination)."""
     def __init__(self, sourceObject=None):
-        IAgDirectionRADec.__init__(self, sourceObject)
-        IAgDirection.__init__(self, sourceObject)
+        IDirectionRADec.__init__(self, sourceObject)
+        IDirection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirectionRADec._private_init(self, pUnk)
-        IAgDirection._private_init(self, pUnk)
+        IDirectionRADec._private_init(self, pUnk)
+        IDirection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgDirectionRADec._get_property(self, attrname) is not None: found_prop = IAgDirectionRADec._get_property(self, attrname)
-        if IAgDirection._get_property(self, attrname) is not None: found_prop = IAgDirection._get_property(self, attrname)
+        if IDirectionRADec._get_property(self, attrname) is not None: found_prop = IDirectionRADec._get_property(self, attrname)
+        if IDirection._get_property(self, attrname) is not None: found_prop = IDirection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgDirectionRADec.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in DirectionRADec.")
         
-agcls.AgClassCatalog.add_catalog_entry("{EB70218F-18C4-41FE-90AC-99AFEB243666}", AgDirectionRADec)
+agcls.AgClassCatalog.add_catalog_entry("{EB70218F-18C4-41FE-90AC-99AFEB243666}", DirectionRADec)
 
 
-class AgDirectionXYZ(IAgDirectionXYZ, IAgDirection):
+class DirectionXYZ(IDirectionXYZ, IDirection):
     """Cartesian direction."""
     def __init__(self, sourceObject=None):
-        IAgDirectionXYZ.__init__(self, sourceObject)
-        IAgDirection.__init__(self, sourceObject)
+        IDirectionXYZ.__init__(self, sourceObject)
+        IDirection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDirectionXYZ._private_init(self, pUnk)
-        IAgDirection._private_init(self, pUnk)
+        IDirectionXYZ._private_init(self, pUnk)
+        IDirection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgDirectionXYZ._get_property(self, attrname) is not None: found_prop = IAgDirectionXYZ._get_property(self, attrname)
-        if IAgDirection._get_property(self, attrname) is not None: found_prop = IAgDirection._get_property(self, attrname)
+        if IDirectionXYZ._get_property(self, attrname) is not None: found_prop = IDirectionXYZ._get_property(self, attrname)
+        if IDirection._get_property(self, attrname) is not None: found_prop = IDirection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgDirectionXYZ.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in DirectionXYZ.")
         
-agcls.AgClassCatalog.add_catalog_entry("{E1AB8359-28B7-468F-BD92-378267CA0998}", AgDirectionXYZ)
+agcls.AgClassCatalog.add_catalog_entry("{E1AB8359-28B7-468F-BD92-378267CA0998}", DirectionXYZ)
 
 
-class AgOrientation(IAgOrientation):
+class Orientation(IOrientation):
     """Class defining the orientation of an orbit."""
     def __init__(self, sourceObject=None):
-        IAgOrientation.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientation._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientation.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Orientation.")
         
-agcls.AgClassCatalog.add_catalog_entry("{97DF3B0E-D8E0-46B1-88CB-DC7A0AF934AE}", AgOrientation)
+agcls.AgClassCatalog.add_catalog_entry("{97DF3B0E-D8E0-46B1-88CB-DC7A0AF934AE}", Orientation)
 
 
-class AgOrientationAzEl(IAgOrientationAzEl, IAgOrientation):
+class OrientationAzEl(IOrientationAzEl, IOrientation):
     """AzEl orientation method."""
     def __init__(self, sourceObject=None):
-        IAgOrientationAzEl.__init__(self, sourceObject)
-        IAgOrientation.__init__(self, sourceObject)
+        IOrientationAzEl.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientationAzEl._private_init(self, pUnk)
-        IAgOrientation._private_init(self, pUnk)
+        IOrientationAzEl._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientationAzEl._get_property(self, attrname) is not None: found_prop = IAgOrientationAzEl._get_property(self, attrname)
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
+        if IOrientationAzEl._get_property(self, attrname) is not None: found_prop = IOrientationAzEl._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientationAzEl.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in OrientationAzEl.")
         
-agcls.AgClassCatalog.add_catalog_entry("{3CF365C4-9B79-4B72-A479-16EF921F791C}", AgOrientationAzEl)
+agcls.AgClassCatalog.add_catalog_entry("{3CF365C4-9B79-4B72-A479-16EF921F791C}", OrientationAzEl)
 
 
-class AgOrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation):
+class OrientationEulerAngles(IOrientationEulerAngles, IOrientation):
     """Euler Angles orientation method."""
     def __init__(self, sourceObject=None):
-        IAgOrientationEulerAngles.__init__(self, sourceObject)
-        IAgOrientation.__init__(self, sourceObject)
+        IOrientationEulerAngles.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientationEulerAngles._private_init(self, pUnk)
-        IAgOrientation._private_init(self, pUnk)
+        IOrientationEulerAngles._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientationEulerAngles._get_property(self, attrname) is not None: found_prop = IAgOrientationEulerAngles._get_property(self, attrname)
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
+        if IOrientationEulerAngles._get_property(self, attrname) is not None: found_prop = IOrientationEulerAngles._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientationEulerAngles.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in OrientationEulerAngles.")
         
-agcls.AgClassCatalog.add_catalog_entry("{C3DC0E0A-690B-4C20-9134-D6C57BE46D40}", AgOrientationEulerAngles)
+agcls.AgClassCatalog.add_catalog_entry("{C3DC0E0A-690B-4C20-9134-D6C57BE46D40}", OrientationEulerAngles)
 
 
-class AgOrientationQuaternion(IAgOrientationQuaternion, IAgOrientation):
+class OrientationQuaternion(IOrientationQuaternion, IOrientation):
     """Quaternion orientation method."""
     def __init__(self, sourceObject=None):
-        IAgOrientationQuaternion.__init__(self, sourceObject)
-        IAgOrientation.__init__(self, sourceObject)
+        IOrientationQuaternion.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientationQuaternion._private_init(self, pUnk)
-        IAgOrientation._private_init(self, pUnk)
+        IOrientationQuaternion._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientationQuaternion._get_property(self, attrname) is not None: found_prop = IAgOrientationQuaternion._get_property(self, attrname)
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
+        if IOrientationQuaternion._get_property(self, attrname) is not None: found_prop = IOrientationQuaternion._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientationQuaternion.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in OrientationQuaternion.")
         
-agcls.AgClassCatalog.add_catalog_entry("{8AC57BB2-C7A7-4C05-9E35-7246956759D9}", AgOrientationQuaternion)
+agcls.AgClassCatalog.add_catalog_entry("{8AC57BB2-C7A7-4C05-9E35-7246956759D9}", OrientationQuaternion)
 
 
-class AgOrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation):
+class OrientationYPRAngles(IOrientationYPRAngles, IOrientation):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
     def __init__(self, sourceObject=None):
-        IAgOrientationYPRAngles.__init__(self, sourceObject)
-        IAgOrientation.__init__(self, sourceObject)
+        IOrientationYPRAngles.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientationYPRAngles._private_init(self, pUnk)
-        IAgOrientation._private_init(self, pUnk)
+        IOrientationYPRAngles._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientationYPRAngles._get_property(self, attrname) is not None: found_prop = IAgOrientationYPRAngles._get_property(self, attrname)
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
+        if IOrientationYPRAngles._get_property(self, attrname) is not None: found_prop = IOrientationYPRAngles._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgOrientationYPRAngles.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in OrientationYPRAngles.")
         
-agcls.AgClassCatalog.add_catalog_entry("{AE398C98-2D0D-4863-8097-9F7648CABC21}", AgOrientationYPRAngles)
+agcls.AgClassCatalog.add_catalog_entry("{AE398C98-2D0D-4863-8097-9F7648CABC21}", OrientationYPRAngles)
 
 
-class AgDoublesCollection(IAgDoublesCollection):
+class DoublesCollection(IDoublesCollection):
     """A collection of doubles."""
     def __init__(self, sourceObject=None):
-        IAgDoublesCollection.__init__(self, sourceObject)
+        IDoublesCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgDoublesCollection._private_init(self, pUnk)
+        IDoublesCollection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgDoublesCollection._get_property(self, attrname) is not None: found_prop = IAgDoublesCollection._get_property(self, attrname)
+        if IDoublesCollection._get_property(self, attrname) is not None: found_prop = IDoublesCollection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgDoublesCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in DoublesCollection.")
         
-agcls.AgClassCatalog.add_catalog_entry("{ECD576C3-0440-44D9-9D16-B88873C3A816}", AgDoublesCollection)
+agcls.AgClassCatalog.add_catalog_entry("{ECD576C3-0440-44D9-9D16-B88873C3A816}", DoublesCollection)
 
 
-class AgCartesian3Vector(IAgCartesian3Vector):
+class Cartesian3Vector(ICartesian3Vector):
     """A 3-D cartesian vector."""
     def __init__(self, sourceObject=None):
-        IAgCartesian3Vector.__init__(self, sourceObject)
+        ICartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgCartesian3Vector._private_init(self, pUnk)
+        ICartesian3Vector._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgCartesian3Vector._get_property(self, attrname) is not None: found_prop = IAgCartesian3Vector._get_property(self, attrname)
+        if ICartesian3Vector._get_property(self, attrname) is not None: found_prop = ICartesian3Vector._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCartesian3Vector.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Cartesian3Vector.")
         
-agcls.AgClassCatalog.add_catalog_entry("{4A70BA75-BC1A-459D-9DAD-E174F3B94002}", AgCartesian3Vector)
+agcls.AgClassCatalog.add_catalog_entry("{4A70BA75-BC1A-459D-9DAD-E174F3B94002}", Cartesian3Vector)
 
 
-class AgCartesian2Vector(IAgCartesian2Vector):
+class Cartesian2Vector(ICartesian2Vector):
     """A 2-D cartesian vector."""
     def __init__(self, sourceObject=None):
-        IAgCartesian2Vector.__init__(self, sourceObject)
+        ICartesian2Vector.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgCartesian2Vector._private_init(self, pUnk)
+        ICartesian2Vector._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgCartesian2Vector._get_property(self, attrname) is not None: found_prop = IAgCartesian2Vector._get_property(self, attrname)
+        if ICartesian2Vector._get_property(self, attrname) is not None: found_prop = ICartesian2Vector._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCartesian2Vector.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in Cartesian2Vector.")
         
-agcls.AgClassCatalog.add_catalog_entry("{ECE2E7DF-CBF1-4124-AAAC-33700F16FAE2}", AgCartesian2Vector)
+agcls.AgClassCatalog.add_catalog_entry("{ECE2E7DF-CBF1-4124-AAAC-33700F16FAE2}", Cartesian2Vector)
 
 
-class AgPropertyInfo(IAgPropertyInfo):
+class PropertyInfo(IPropertyInfo):
     """Property Information coclass."""
     def __init__(self, sourceObject=None):
-        IAgPropertyInfo.__init__(self, sourceObject)
+        IPropertyInfo.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPropertyInfo._private_init(self, pUnk)
+        IPropertyInfo._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgPropertyInfo._get_property(self, attrname) is not None: found_prop = IAgPropertyInfo._get_property(self, attrname)
+        if IPropertyInfo._get_property(self, attrname) is not None: found_prop = IPropertyInfo._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgPropertyInfo.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in PropertyInfo.")
         
-agcls.AgClassCatalog.add_catalog_entry("{92498440-7C87-495C-A8BD-0A70F85D4DC8}", AgPropertyInfo)
+agcls.AgClassCatalog.add_catalog_entry("{92498440-7C87-495C-A8BD-0A70F85D4DC8}", PropertyInfo)
 
 
-class AgPropertyInfoCollection(IAgPropertyInfoCollection):
+class PropertyInfoCollection(IPropertyInfoCollection):
     """Property Information Collection coclass."""
     def __init__(self, sourceObject=None):
-        IAgPropertyInfoCollection.__init__(self, sourceObject)
+        IPropertyInfoCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgPropertyInfoCollection._private_init(self, pUnk)
+        IPropertyInfoCollection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgPropertyInfoCollection._get_property(self, attrname) is not None: found_prop = IAgPropertyInfoCollection._get_property(self, attrname)
+        if IPropertyInfoCollection._get_property(self, attrname) is not None: found_prop = IPropertyInfoCollection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgPropertyInfoCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in PropertyInfoCollection.")
         
-agcls.AgClassCatalog.add_catalog_entry("{113B1CA1-4DD4-4915-8D7F-E1F96E18A985}", AgPropertyInfoCollection)
+agcls.AgClassCatalog.add_catalog_entry("{113B1CA1-4DD4-4915-8D7F-E1F96E18A985}", PropertyInfoCollection)
 
 
-class AgRuntimeTypeInfo(IAgRuntimeTypeInfo):
+class RuntimeTypeInfo(IRuntimeTypeInfo):
     """Runtime Type info coclass."""
     def __init__(self, sourceObject=None):
-        IAgRuntimeTypeInfo.__init__(self, sourceObject)
+        IRuntimeTypeInfo.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgRuntimeTypeInfo._private_init(self, pUnk)
+        IRuntimeTypeInfo._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgRuntimeTypeInfo._get_property(self, attrname) is not None: found_prop = IAgRuntimeTypeInfo._get_property(self, attrname)
+        if IRuntimeTypeInfo._get_property(self, attrname) is not None: found_prop = IRuntimeTypeInfo._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgRuntimeTypeInfo.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in RuntimeTypeInfo.")
         
-agcls.AgClassCatalog.add_catalog_entry("{D80F3E93-932A-49B3-8661-1A1627DCBDD1}", AgRuntimeTypeInfo)
+agcls.AgClassCatalog.add_catalog_entry("{D80F3E93-932A-49B3-8661-1A1627DCBDD1}", RuntimeTypeInfo)
 
 
-class AgCROrientationAzEl(IAgOrientationAzEl, IAgOrientation, IAgOrientationPositionOffset):
+class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset):
     """AzEl orientation method."""
     def __init__(self, sourceObject=None):
-        IAgOrientationAzEl.__init__(self, sourceObject)
-        IAgOrientation.__init__(self, sourceObject)
-        IAgOrientationPositionOffset.__init__(self, sourceObject)
+        IOrientationAzEl.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
+        IOrientationPositionOffset.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientationAzEl._private_init(self, pUnk)
-        IAgOrientation._private_init(self, pUnk)
-        IAgOrientationPositionOffset._private_init(self, pUnk)
+        IOrientationAzEl._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
+        IOrientationPositionOffset._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientationAzEl._get_property(self, attrname) is not None: found_prop = IAgOrientationAzEl._get_property(self, attrname)
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
-        if IAgOrientationPositionOffset._get_property(self, attrname) is not None: found_prop = IAgOrientationPositionOffset._get_property(self, attrname)
+        if IOrientationAzEl._get_property(self, attrname) is not None: found_prop = IOrientationAzEl._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
+        if IOrientationPositionOffset._get_property(self, attrname) is not None: found_prop = IOrientationPositionOffset._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationAzEl.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationAzEl.")
         
-agcls.AgClassCatalog.add_catalog_entry("{1E11E3CE-BCAA-4E1F-BAF9-B6AD3650F9BA}", AgCROrientationAzEl)
+agcls.AgClassCatalog.add_catalog_entry("{1E11E3CE-BCAA-4E1F-BAF9-B6AD3650F9BA}", CROrientationAzEl)
 
 
-class AgCROrientationEulerAngles(IAgOrientationEulerAngles, IAgOrientation, IAgOrientationPositionOffset):
+class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset):
     """Euler Angles orientation method."""
     def __init__(self, sourceObject=None):
-        IAgOrientationEulerAngles.__init__(self, sourceObject)
-        IAgOrientation.__init__(self, sourceObject)
-        IAgOrientationPositionOffset.__init__(self, sourceObject)
+        IOrientationEulerAngles.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
+        IOrientationPositionOffset.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientationEulerAngles._private_init(self, pUnk)
-        IAgOrientation._private_init(self, pUnk)
-        IAgOrientationPositionOffset._private_init(self, pUnk)
+        IOrientationEulerAngles._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
+        IOrientationPositionOffset._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientationEulerAngles._get_property(self, attrname) is not None: found_prop = IAgOrientationEulerAngles._get_property(self, attrname)
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
-        if IAgOrientationPositionOffset._get_property(self, attrname) is not None: found_prop = IAgOrientationPositionOffset._get_property(self, attrname)
+        if IOrientationEulerAngles._get_property(self, attrname) is not None: found_prop = IOrientationEulerAngles._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
+        if IOrientationPositionOffset._get_property(self, attrname) is not None: found_prop = IOrientationPositionOffset._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationEulerAngles.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationEulerAngles.")
         
-agcls.AgClassCatalog.add_catalog_entry("{D08A5BF9-5CBA-432D-8C48-3CD1CFC42636}", AgCROrientationEulerAngles)
+agcls.AgClassCatalog.add_catalog_entry("{D08A5BF9-5CBA-432D-8C48-3CD1CFC42636}", CROrientationEulerAngles)
 
 
-class AgCROrientationQuaternion(IAgOrientationQuaternion, IAgOrientation, IAgOrientationPositionOffset):
+class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset):
     """Quaternion orientation method."""
     def __init__(self, sourceObject=None):
-        IAgOrientationQuaternion.__init__(self, sourceObject)
-        IAgOrientation.__init__(self, sourceObject)
-        IAgOrientationPositionOffset.__init__(self, sourceObject)
+        IOrientationQuaternion.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
+        IOrientationPositionOffset.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientationQuaternion._private_init(self, pUnk)
-        IAgOrientation._private_init(self, pUnk)
-        IAgOrientationPositionOffset._private_init(self, pUnk)
+        IOrientationQuaternion._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
+        IOrientationPositionOffset._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientationQuaternion._get_property(self, attrname) is not None: found_prop = IAgOrientationQuaternion._get_property(self, attrname)
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
-        if IAgOrientationPositionOffset._get_property(self, attrname) is not None: found_prop = IAgOrientationPositionOffset._get_property(self, attrname)
+        if IOrientationQuaternion._get_property(self, attrname) is not None: found_prop = IOrientationQuaternion._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
+        if IOrientationPositionOffset._get_property(self, attrname) is not None: found_prop = IOrientationPositionOffset._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationQuaternion.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationQuaternion.")
         
-agcls.AgClassCatalog.add_catalog_entry("{9D3BA3F8-B6F6-443B-A8AC-74C86A8B901A}", AgCROrientationQuaternion)
+agcls.AgClassCatalog.add_catalog_entry("{9D3BA3F8-B6F6-443B-A8AC-74C86A8B901A}", CROrientationQuaternion)
 
 
-class AgCROrientationYPRAngles(IAgOrientationYPRAngles, IAgOrientation, IAgOrientationPositionOffset):
+class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
     def __init__(self, sourceObject=None):
-        IAgOrientationYPRAngles.__init__(self, sourceObject)
-        IAgOrientation.__init__(self, sourceObject)
-        IAgOrientationPositionOffset.__init__(self, sourceObject)
+        IOrientationYPRAngles.__init__(self, sourceObject)
+        IOrientation.__init__(self, sourceObject)
+        IOrientationPositionOffset.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgOrientationYPRAngles._private_init(self, pUnk)
-        IAgOrientation._private_init(self, pUnk)
-        IAgOrientationPositionOffset._private_init(self, pUnk)
+        IOrientationYPRAngles._private_init(self, pUnk)
+        IOrientation._private_init(self, pUnk)
+        IOrientationPositionOffset._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgOrientationYPRAngles._get_property(self, attrname) is not None: found_prop = IAgOrientationYPRAngles._get_property(self, attrname)
-        if IAgOrientation._get_property(self, attrname) is not None: found_prop = IAgOrientation._get_property(self, attrname)
-        if IAgOrientationPositionOffset._get_property(self, attrname) is not None: found_prop = IAgOrientationPositionOffset._get_property(self, attrname)
+        if IOrientationYPRAngles._get_property(self, attrname) is not None: found_prop = IOrientationYPRAngles._get_property(self, attrname)
+        if IOrientation._get_property(self, attrname) is not None: found_prop = IOrientation._get_property(self, attrname)
+        if IOrientationPositionOffset._get_property(self, attrname) is not None: found_prop = IOrientationPositionOffset._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationYPRAngles.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationYPRAngles.")
         
-agcls.AgClassCatalog.add_catalog_entry("{1FB88B69-1844-4CD9-BD44-09A9FCC4E06F}", AgCROrientationYPRAngles)
+agcls.AgClassCatalog.add_catalog_entry("{1FB88B69-1844-4CD9-BD44-09A9FCC4E06F}", CROrientationYPRAngles)
 
 
-class AgCROrientationOffsetCart(IAgCartesian3Vector):
+class CROrientationOffsetCart(ICartesian3Vector):
     """Orientation offset cartesian."""
     def __init__(self, sourceObject=None):
-        IAgCartesian3Vector.__init__(self, sourceObject)
+        ICartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgCartesian3Vector._private_init(self, pUnk)
+        ICartesian3Vector._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgCartesian3Vector._get_property(self, attrname) is not None: found_prop = IAgCartesian3Vector._get_property(self, attrname)
+        if ICartesian3Vector._get_property(self, attrname) is not None: found_prop = ICartesian3Vector._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgCROrientationOffsetCart.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in CROrientationOffsetCart.")
         
-agcls.AgClassCatalog.add_catalog_entry("{462F58AA-A74F-4E42-88B6-8F2790E85FEC}", AgCROrientationOffsetCart)
+agcls.AgClassCatalog.add_catalog_entry("{462F58AA-A74F-4E42-88B6-8F2790E85FEC}", CROrientationOffsetCart)
 
 
 

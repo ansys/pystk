@@ -8,7 +8,7 @@ import os
 from tkinter                    import Frame
 from ctypes                     import *
 
-from ..stkx             import IAgUiAxVOCntrl, IAgUiAx2DCntrl, IAgUiAxGfxAnalysisCntrl
+from ..stkx             import IUiAxVOCntrl, IUiAx2DCntrl, IUiAxGfxAnalysisCntrl
 from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL, WINFUNCTYPE
 from ..stkengine        import *
 
@@ -182,10 +182,10 @@ class ControlBase(Frame):
             """Occurs when key is released."""
             self._nativeContainerMethods.KeyReleased(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
-class GlobeControl(IAgUiAxVOCntrl, ControlBase):
+class GlobeControl(IUiAxVOCntrl, ControlBase):
     """The 3D Globe control for Tkinter."""
     _progid = "STKX12.VOControl.1"
-    _interface = IAgUiAxVOCntrl
+    _interface = IUiAxVOCntrl
 
     def __init__(self, parent, *args, **kwargs):
         ControlBase.__init__(self, parent, *args, **kwargs)
@@ -193,10 +193,10 @@ class GlobeControl(IAgUiAxVOCntrl, ControlBase):
     def __setattr__(self, attrname, value):
         ControlBase.__setattr__(self, attrname, value)
 
-class MapControl(IAgUiAx2DCntrl, ControlBase):
+class MapControl(IUiAx2DCntrl, ControlBase):
     """The 2D Map control for Tkinter."""
     _progid = "STKX12.2DControl.1"
-    _interface = IAgUiAx2DCntrl
+    _interface = IUiAx2DCntrl
 
     def __init__(self, parent, *args, **kwargs):
         ControlBase.__init__(self, parent, *args, **kwargs)
@@ -204,10 +204,10 @@ class MapControl(IAgUiAx2DCntrl, ControlBase):
     def __setattr__(self, attrname, value):
         ControlBase.__setattr__(self, attrname, value)
 
-class GfxAnalysisControl(IAgUiAxGfxAnalysisCntrl, ControlBase):
+class GfxAnalysisControl(IUiAxGfxAnalysisCntrl, ControlBase):
     """The Graphics Analysis control for Tkinter."""
     _progid = "STKX12.GfxAnalysisControl.1"
-    _interface = IAgUiAxGfxAnalysisCntrl
+    _interface = IUiAxGfxAnalysisCntrl
 
     def __init__(self, parent, *args, **kwargs):
         ControlBase.__init__(self, parent, *args, **kwargs)

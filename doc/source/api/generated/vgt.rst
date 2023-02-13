@@ -9,314 +9,314 @@ Interfaces
 
 .. autosummary::
 
-    IAgCrdnIntervalCollection
-    IAgCrdnInterval
-    IAgCrdnPoint
-    IAgCrdnVector
-    IAgCrdnSystem
-    IAgCrdnAxes
-    IAgCrdnAngle
-    IAgCrdnPlane
-    IAgCrdnContext
-    IAgCrdn
-    IAgCrdnEvaluateResult
-    IAgCrdnEvaluateWithRateResult
-    IAgCrdnEventIntervalResult
-    IAgCrdnEventFindOccurrenceResult
-    IAgCrdnFindTimesResult
-    IAgCrdnIntervalsVectorResult
-    IAgCrdnEventIntervalCollectionOccurredResult
-    IAgCrdnIntervalListResult
-    IAgCrdnIntervalVectorCollection
-    IAgCrdnEventGroup
-    IAgCrdnEventIntervalGroup
-    IAgCrdnEventIntervalListGroup
-    IAgCrdnEventArrayGroup
-    IAgCrdnCalcScalarGroup
-    IAgCrdnEventIntervalCollectionGroup
-    IAgCrdnParameterSetGroup
-    IAgCrdnConditionGroup
-    IAgCrdnConditionSetGroup
-    IAgCrdnConditionSetEvaluateResult
-    IAgCrdnConditionSetEvaluateWithRateResult
-    IAgCrdnVolumeGridGroup
-    IAgCrdnVolumeGroup
-    IAgCrdnVolumeCalcGroup
-    IAgCrdnCalcScalar
-    IAgCrdnCalcScalarAngle
-    IAgCrdnCalcScalarConstant
-    IAgCrdnCalcScalarCustom
-    IAgCrdnCalcScalarDataElement
-    IAgCrdnCalcScalarDerivative
-    IAgCrdnCalcScalarDotProduct
-    IAgCrdnCalcScalarElapsedTime
-    IAgCrdnCalcScalarFactory
-    IAgCrdnCalcScalarFile
-    IAgCrdnCalcScalarFixedAtTimeInstant
-    IAgCrdnCalcScalarFunction
-    IAgCrdnCalcScalarFunction2Var
-    IAgCrdnCalcScalarIntegral
-    IAgCrdnCalcScalarPlugin
-    IAgCrdnCalcScalarSurfaceDistanceBetweenPoints
-    IAgCrdnCalcScalarVectorComponent
-    IAgCrdnCalcScalarVectorMagnitude
-    IAgCrdnCondition
-    IAgCrdnConditionCombined
-    IAgCrdnConditionFactory
-    IAgCrdnConditionPointInVolume
-    IAgCrdnConditionScalarBounds
-    IAgCrdnConditionSet
-    IAgCrdnConditionSetFactory
-    IAgCrdnConditionSetScalarThresholds
-    IAgCrdnConverge
-    IAgCrdnConvergeBasic
-    IAgCrdnDerivative
-    IAgCrdnDerivativeBasic
-    IAgCrdnEvent
-    IAgCrdnEventArray
-    IAgCrdnEventArrayConditionCrossings
-    IAgCrdnEventArrayExtrema
-    IAgCrdnEventArrayFactory
-    IAgCrdnEventArrayFiltered
-    IAgCrdnEventArrayFixedStep
-    IAgCrdnEventArrayFixedTimes
-    IAgCrdnEventArrayMerged
-    IAgCrdnEventArraySignaled
-    IAgCrdnEventArrayStartStopTimes
-    IAgCrdnEventEpoch
-    IAgCrdnEventExtremum
-    IAgCrdnEventFactory
-    IAgCrdnEventInterval
-    IAgCrdnEventIntervalBetweenTimeInstants
-    IAgCrdnEventIntervalCollection
-    IAgCrdnEventIntervalCollectionCondition
-    IAgCrdnEventIntervalCollectionFactory
-    IAgCrdnEventIntervalCollectionLighting
-    IAgCrdnEventIntervalCollectionSignaled
-    IAgCrdnEventIntervalFactory
-    IAgCrdnEventIntervalFixed
-    IAgCrdnEventIntervalFixedDuration
-    IAgCrdnEventIntervalFromIntervalList
-    IAgCrdnEventIntervalList
-    IAgCrdnEventIntervalListCondition
-    IAgCrdnEventIntervalListFactory
-    IAgCrdnEventIntervalListFile
-    IAgCrdnEventIntervalListFiltered
-    IAgCrdnEventIntervalListFixed
-    IAgCrdnEventIntervalListMerged
-    IAgCrdnEventIntervalListScaled
-    IAgCrdnEventIntervalListSignaled
-    IAgCrdnEventIntervalListTimeOffset
-    IAgCrdnEventIntervalScaled
-    IAgCrdnEventIntervalSignaled
-    IAgCrdnEventIntervalSmartInterval
-    IAgCrdnEventIntervalTimeOffset
-    IAgCrdnEventSignaled
-    IAgCrdnEventSmartEpoch
-    IAgCrdnEventStartStopTime
-    IAgCrdnEventTimeOffset
-    IAgCrdnFirstIntervalsFilter
-    IAgCrdnGapsFilter
-    IAgCrdnIntegral
-    IAgCrdnIntegralBasic
-    IAgCrdnInterp
-    IAgCrdnInterpBasic
-    IAgCrdnIntervalsFilter
-    IAgCrdnLastIntervalsFilter
-    IAgCrdnParameterSet
-    IAgCrdnParameterSetAttitude
-    IAgCrdnParameterSetFactory
-    IAgCrdnParameterSetGroundTrajectory
-    IAgCrdnParameterSetOrbit
-    IAgCrdnParameterSetTrajectory
-    IAgCrdnParameterSetVector
-    IAgCrdnPruneFilter
-    IAgCrdnPruneFilterFactory
-    IAgCrdnRelativeSatisfactionConditionFilter
-    IAgCrdnSampling
-    IAgCrdnSamplingBasic
-    IAgCrdnSamplingCurvatureTolerance
-    IAgCrdnSamplingFixedStep
-    IAgCrdnSamplingMethod
-    IAgCrdnSamplingMethodFactory
-    IAgCrdnSamplingRelativeTolerance
-    IAgCrdnSatisfactionConditionFilter
-    IAgCrdnSignalDelay
-    IAgCrdnSignalDelayBasic
-    IAgCrdnVolumeCalcFactory
-    IAgCrdnVolumeFactory
-    IAgCrdnVolumeGridFactory
-    IAgCrdnGridCoordinateDefinition
-    IAgCrdnGridValuesCustom
-    IAgCrdnGridValuesFixedNumberOfSteps
-    IAgCrdnGridValuesFixedStep
-    IAgCrdnGridValuesMethod
-    IAgCrdnLightTimeDelay
-    IAgCrdnVolume
-    IAgCrdnVolumeCalc
-    IAgCrdnVolumeCalcAltitude
-    IAgCrdnVolumeCalcAngleOffVector
-    IAgCrdnVolumeCalcConditionSatMetric
-    IAgCrdnVolumeCalcDelayRange
-    IAgCrdnVolumeCalcFile
-    IAgCrdnVolumeCalcFromScalar
-    IAgCrdnVolumeCalcRange
-    IAgCrdnVolumeCalcSolarIntensity
-    IAgCrdnVolumeCombined
-    IAgCrdnVolumeFromCalc
-    IAgCrdnVolumeFromCondition
-    IAgCrdnVolumeFromGrid
-    IAgCrdnVolumeFromTimeSatisfaction
-    IAgCrdnVolumeGrid
-    IAgCrdnVolumeGridBearingAlt
-    IAgCrdnVolumeGridCartesian
-    IAgCrdnVolumeGridConstrained
-    IAgCrdnVolumeGridCylindrical
-    IAgCrdnVolumeGridLatLonAlt
-    IAgCrdnVolumeGridResult
-    IAgCrdnVolumeGridSpherical
-    IAgCrdnVolumeInview
-    IAgCrdnVolumeLighting
-    IAgCrdnVolumeOverTime
-    IAgCrdnTimeProperties
-    IAgCrdnTypeInfo
-    IAgCrdnRefTo
-    IAgCrdnTemplate
-    IAgCrdnInstance
-    IAgCrdnPointRefTo
-    IAgCrdnVectorRefTo
-    IAgCrdnAxesRefTo
-    IAgCrdnAngleRefTo
-    IAgCrdnSystemRefTo
-    IAgCrdnPlaneRefTo
-    IAgCrdnAxesLabels
-    IAgCrdnPlaneLabels
-    IAgCrdnAxesAlignedAndConstrained
-    IAgCrdnAxesAngularOffset
-    IAgCrdnAxesFixedAtEpoch
-    IAgCrdnAxesBPlane
-    IAgCrdnAxesCustomScript
-    IAgCrdnAxesAttitudeFile
-    IAgCrdnAxesFixed
-    IAgCrdnAxesModelAttach
-    IAgCrdnAxesSpinning
-    IAgCrdnAxesOnSurface
-    IAgCrdnAxesTrajectory
-    IAgCrdnAxesLagrangeLibration
-    IAgCrdnAxesCommonTasks
-    IAgCrdnAxesAtTimeInstant
-    IAgCrdnAxesPlugin
-    IAgCrdnAngleBetweenVectors
-    IAgCrdnAngleBetweenPlanes
-    IAgCrdnAngleDihedral
-    IAgCrdnAngleRotation
-    IAgCrdnAngleToPlane
-    IAgCrdnPlaneNormal
-    IAgCrdnPlaneQuadrant
-    IAgCrdnPlaneTrajectory
-    IAgCrdnPlaneTriad
-    IAgCrdnPlaneTwoVector
-    IAgCrdnPointBPlane
-    IAgCrdnPointFile
-    IAgCrdnPointFixedInSystem
-    IAgCrdnPointGrazing
-    IAgCrdnPointGlint
-    IAgCrdnPointCovarianceGrazing
-    IAgCrdnPointPlaneIntersection
-    IAgCrdnPointOnSurface
-    IAgCrdnPointModelAttach
-    IAgCrdnPointSatelliteCollectionEntry
-    IAgCrdnPointPlaneProjection
-    IAgCrdnPointLagrangeLibration
-    IAgCrdnPointCommonTasks
-    IAgCrdnPointCentBodyIntersect
-    IAgCrdnPointAtTimeInstant
-    IAgCrdnPointPlugin
-    IAgCrdnPointCBFixedOffset
-    IAgCrdnSystemAssembled
-    IAgCrdnSystemOnSurface
-    IAgCrdnLLAPosition
-    IAgCrdnSystemCommonTasks
-    IAgCrdnVectorAngleRate
-    IAgCrdnVectorApoapsis
-    IAgCrdnVectorFixedAtEpoch
-    IAgCrdnVectorAngularVelocity
-    IAgCrdnVectorConing
-    IAgCrdnVectorCross
-    IAgCrdnVectorCustomScript
-    IAgCrdnVectorDerivative
-    IAgCrdnVectorDisplacement
-    IAgCrdnVectorTwoPlanesIntersection
-    IAgCrdnVectorModelAttach
-    IAgCrdnVectorProjection
-    IAgCrdnVectorScaled
-    IAgCrdnVectorEccentricity
-    IAgCrdnVectorFixedInAxes
-    IAgCrdnVectorLineOfNodes
-    IAgCrdnVectorOrbitAngularMomentum
-    IAgCrdnVectorOrbitNormal
-    IAgCrdnVectorPeriapsis
-    IAgCrdnVectorReflection
-    IAgCrdnVectorRotationVector
-    IAgCrdnVectorDirectionToStar
-    IAgCrdnVectorFixedAtTimeInstant
-    IAgCrdnVectorLinearCombination
-    IAgCrdnVectorProjectAlongVector
-    IAgCrdnVectorScalarLinearCombination
-    IAgCrdnVectorScalarScaled
-    IAgCrdnVectorVelocityAcceleration
-    IAgCrdnVectorPlugin
-    IAgCrdnVectorDispSurface
-    IAgCrdnVectorFactory
-    IAgCrdnAxesFactory
-    IAgCrdnSystemFactory
-    IAgCrdnPointFactory
-    IAgCrdnPlaneFactory
-    IAgCrdnAngleFactory
-    IAgCrdnVectorGroup
-    IAgCrdnPointGroup
-    IAgCrdnAngleGroup
-    IAgCrdnAxesGroup
-    IAgCrdnPlaneGroup
-    IAgCrdnSystemGroup
-    IAgCrdnProvider
-    IAgCrdnRoot
-    IAgCrdnWellKnownEarthSystems
-    IAgCrdnWellKnownEarthAxes
-    IAgCrdnWellKnownSunSystems
-    IAgCrdnWellKnownSunAxes
-    IAgCrdnWellKnownSystems
-    IAgCrdnWellKnownAxes
-    IAgCrdnAngleFindAngleResult
-    IAgCrdnAngleFindAngleWithRateResult
-    IAgCrdnAngleFindWithRateResult
-    IAgCrdnAngleFindResult
-    IAgCrdnAxesTransformResult
-    IAgCrdnAxesTransformWithRateResult
-    IAgCrdnPlaneFindInAxesResult
-    IAgCrdnPlaneFindInAxesWithRateResult
-    IAgCrdnPlaneFindInSystemResult
-    IAgCrdnPlaneFindInSystemWithRateResult
-    IAgCrdnAxesFindInAxesResult
-    IAgCrdnAxesFindInAxesWithRateResult
-    IAgCrdnPointLocateInSystemResult
-    IAgCrdnPointLocateInSystemWithRateResult
-    IAgCrdnSystemTransformResult
-    IAgCrdnSystemTransformWithRateResult
-    IAgCrdnSystemFindInSystemResult
-    IAgCrdnVectorFindInAxesResult
-    IAgCrdnVectorFindInAxesWithRateResult
-    IAgCrdnMethodCallResult
-    IAgCrdnCentralBody
-    IAgCrdnCentralBodyRefTo
-    IAgCrdnCentralBodyCollection
-    IAgCrdnCollection
-    IAgCrdnPointSamplingResult
-    IAgCrdnPointSamplingInterval
-    IAgCrdnPointSamplingIntervalCollection
-    IAgCrdnAxesSamplingResult
-    IAgCrdnAxesSamplingInterval
-    IAgCrdnAxesSamplingIntervalCollection
+    ICrdnIntervalCollection
+    ICrdnInterval
+    ICrdnPoint
+    ICrdnVector
+    ICrdnSystem
+    ICrdnAxes
+    ICrdnAngle
+    ICrdnPlane
+    ICrdnContext
+    ICrdn
+    ICrdnEvaluateResult
+    ICrdnEvaluateWithRateResult
+    ICrdnEventIntervalResult
+    ICrdnEventFindOccurrenceResult
+    ICrdnFindTimesResult
+    ICrdnIntervalsVectorResult
+    ICrdnEventIntervalCollectionOccurredResult
+    ICrdnIntervalListResult
+    ICrdnIntervalVectorCollection
+    ICrdnEventGroup
+    ICrdnEventIntervalGroup
+    ICrdnEventIntervalListGroup
+    ICrdnEventArrayGroup
+    ICrdnCalcScalarGroup
+    ICrdnEventIntervalCollectionGroup
+    ICrdnParameterSetGroup
+    ICrdnConditionGroup
+    ICrdnConditionSetGroup
+    ICrdnConditionSetEvaluateResult
+    ICrdnConditionSetEvaluateWithRateResult
+    ICrdnVolumeGridGroup
+    ICrdnVolumeGroup
+    ICrdnVolumeCalcGroup
+    ICrdnCalcScalar
+    ICrdnCalcScalarAngle
+    ICrdnCalcScalarConstant
+    ICrdnCalcScalarCustom
+    ICrdnCalcScalarDataElement
+    ICrdnCalcScalarDerivative
+    ICrdnCalcScalarDotProduct
+    ICrdnCalcScalarElapsedTime
+    ICrdnCalcScalarFactory
+    ICrdnCalcScalarFile
+    ICrdnCalcScalarFixedAtTimeInstant
+    ICrdnCalcScalarFunction
+    ICrdnCalcScalarFunction2Var
+    ICrdnCalcScalarIntegral
+    ICrdnCalcScalarPlugin
+    ICrdnCalcScalarSurfaceDistanceBetweenPoints
+    ICrdnCalcScalarVectorComponent
+    ICrdnCalcScalarVectorMagnitude
+    ICrdnCondition
+    ICrdnConditionCombined
+    ICrdnConditionFactory
+    ICrdnConditionPointInVolume
+    ICrdnConditionScalarBounds
+    ICrdnConditionSet
+    ICrdnConditionSetFactory
+    ICrdnConditionSetScalarThresholds
+    ICrdnConverge
+    ICrdnConvergeBasic
+    ICrdnDerivative
+    ICrdnDerivativeBasic
+    ICrdnEvent
+    ICrdnEventArray
+    ICrdnEventArrayConditionCrossings
+    ICrdnEventArrayExtrema
+    ICrdnEventArrayFactory
+    ICrdnEventArrayFiltered
+    ICrdnEventArrayFixedStep
+    ICrdnEventArrayFixedTimes
+    ICrdnEventArrayMerged
+    ICrdnEventArraySignaled
+    ICrdnEventArrayStartStopTimes
+    ICrdnEventEpoch
+    ICrdnEventExtremum
+    ICrdnEventFactory
+    ICrdnEventInterval
+    ICrdnEventIntervalBetweenTimeInstants
+    ICrdnEventIntervalCollection
+    ICrdnEventIntervalCollectionCondition
+    ICrdnEventIntervalCollectionFactory
+    ICrdnEventIntervalCollectionLighting
+    ICrdnEventIntervalCollectionSignaled
+    ICrdnEventIntervalFactory
+    ICrdnEventIntervalFixed
+    ICrdnEventIntervalFixedDuration
+    ICrdnEventIntervalFromIntervalList
+    ICrdnEventIntervalList
+    ICrdnEventIntervalListCondition
+    ICrdnEventIntervalListFactory
+    ICrdnEventIntervalListFile
+    ICrdnEventIntervalListFiltered
+    ICrdnEventIntervalListFixed
+    ICrdnEventIntervalListMerged
+    ICrdnEventIntervalListScaled
+    ICrdnEventIntervalListSignaled
+    ICrdnEventIntervalListTimeOffset
+    ICrdnEventIntervalScaled
+    ICrdnEventIntervalSignaled
+    ICrdnEventIntervalSmartInterval
+    ICrdnEventIntervalTimeOffset
+    ICrdnEventSignaled
+    ICrdnEventSmartEpoch
+    ICrdnEventStartStopTime
+    ICrdnEventTimeOffset
+    ICrdnFirstIntervalsFilter
+    ICrdnGapsFilter
+    ICrdnIntegral
+    ICrdnIntegralBasic
+    ICrdnInterp
+    ICrdnInterpBasic
+    ICrdnIntervalsFilter
+    ICrdnLastIntervalsFilter
+    ICrdnParameterSet
+    ICrdnParameterSetAttitude
+    ICrdnParameterSetFactory
+    ICrdnParameterSetGroundTrajectory
+    ICrdnParameterSetOrbit
+    ICrdnParameterSetTrajectory
+    ICrdnParameterSetVector
+    ICrdnPruneFilter
+    ICrdnPruneFilterFactory
+    ICrdnRelativeSatisfactionConditionFilter
+    ICrdnSampling
+    ICrdnSamplingBasic
+    ICrdnSamplingCurvatureTolerance
+    ICrdnSamplingFixedStep
+    ICrdnSamplingMethod
+    ICrdnSamplingMethodFactory
+    ICrdnSamplingRelativeTolerance
+    ICrdnSatisfactionConditionFilter
+    ICrdnSignalDelay
+    ICrdnSignalDelayBasic
+    ICrdnVolumeCalcFactory
+    ICrdnVolumeFactory
+    ICrdnVolumeGridFactory
+    ICrdnGridCoordinateDefinition
+    ICrdnGridValuesCustom
+    ICrdnGridValuesFixedNumberOfSteps
+    ICrdnGridValuesFixedStep
+    ICrdnGridValuesMethod
+    ICrdnLightTimeDelay
+    ICrdnVolume
+    ICrdnVolumeCalc
+    ICrdnVolumeCalcAltitude
+    ICrdnVolumeCalcAngleOffVector
+    ICrdnVolumeCalcConditionSatMetric
+    ICrdnVolumeCalcDelayRange
+    ICrdnVolumeCalcFile
+    ICrdnVolumeCalcFromScalar
+    ICrdnVolumeCalcRange
+    ICrdnVolumeCalcSolarIntensity
+    ICrdnVolumeCombined
+    ICrdnVolumeFromCalc
+    ICrdnVolumeFromCondition
+    ICrdnVolumeFromGrid
+    ICrdnVolumeFromTimeSatisfaction
+    ICrdnVolumeGrid
+    ICrdnVolumeGridBearingAlt
+    ICrdnVolumeGridCartesian
+    ICrdnVolumeGridConstrained
+    ICrdnVolumeGridCylindrical
+    ICrdnVolumeGridLatLonAlt
+    ICrdnVolumeGridResult
+    ICrdnVolumeGridSpherical
+    ICrdnVolumeInview
+    ICrdnVolumeLighting
+    ICrdnVolumeOverTime
+    ICrdnTimeProperties
+    ICrdnTypeInfo
+    ICrdnRefTo
+    ICrdnTemplate
+    ICrdnInstance
+    ICrdnPointRefTo
+    ICrdnVectorRefTo
+    ICrdnAxesRefTo
+    ICrdnAngleRefTo
+    ICrdnSystemRefTo
+    ICrdnPlaneRefTo
+    ICrdnAxesLabels
+    ICrdnPlaneLabels
+    ICrdnAxesAlignedAndConstrained
+    ICrdnAxesAngularOffset
+    ICrdnAxesFixedAtEpoch
+    ICrdnAxesBPlane
+    ICrdnAxesCustomScript
+    ICrdnAxesAttitudeFile
+    ICrdnAxesFixed
+    ICrdnAxesModelAttach
+    ICrdnAxesSpinning
+    ICrdnAxesOnSurface
+    ICrdnAxesTrajectory
+    ICrdnAxesLagrangeLibration
+    ICrdnAxesCommonTasks
+    ICrdnAxesAtTimeInstant
+    ICrdnAxesPlugin
+    ICrdnAngleBetweenVectors
+    ICrdnAngleBetweenPlanes
+    ICrdnAngleDihedral
+    ICrdnAngleRotation
+    ICrdnAngleToPlane
+    ICrdnPlaneNormal
+    ICrdnPlaneQuadrant
+    ICrdnPlaneTrajectory
+    ICrdnPlaneTriad
+    ICrdnPlaneTwoVector
+    ICrdnPointBPlane
+    ICrdnPointFile
+    ICrdnPointFixedInSystem
+    ICrdnPointGrazing
+    ICrdnPointGlint
+    ICrdnPointCovarianceGrazing
+    ICrdnPointPlaneIntersection
+    ICrdnPointOnSurface
+    ICrdnPointModelAttach
+    ICrdnPointSatelliteCollectionEntry
+    ICrdnPointPlaneProjection
+    ICrdnPointLagrangeLibration
+    ICrdnPointCommonTasks
+    ICrdnPointCentBodyIntersect
+    ICrdnPointAtTimeInstant
+    ICrdnPointPlugin
+    ICrdnPointCBFixedOffset
+    ICrdnSystemAssembled
+    ICrdnSystemOnSurface
+    ICrdnLLAPosition
+    ICrdnSystemCommonTasks
+    ICrdnVectorAngleRate
+    ICrdnVectorApoapsis
+    ICrdnVectorFixedAtEpoch
+    ICrdnVectorAngularVelocity
+    ICrdnVectorConing
+    ICrdnVectorCross
+    ICrdnVectorCustomScript
+    ICrdnVectorDerivative
+    ICrdnVectorDisplacement
+    ICrdnVectorTwoPlanesIntersection
+    ICrdnVectorModelAttach
+    ICrdnVectorProjection
+    ICrdnVectorScaled
+    ICrdnVectorEccentricity
+    ICrdnVectorFixedInAxes
+    ICrdnVectorLineOfNodes
+    ICrdnVectorOrbitAngularMomentum
+    ICrdnVectorOrbitNormal
+    ICrdnVectorPeriapsis
+    ICrdnVectorReflection
+    ICrdnVectorRotationVector
+    ICrdnVectorDirectionToStar
+    ICrdnVectorFixedAtTimeInstant
+    ICrdnVectorLinearCombination
+    ICrdnVectorProjectAlongVector
+    ICrdnVectorScalarLinearCombination
+    ICrdnVectorScalarScaled
+    ICrdnVectorVelocityAcceleration
+    ICrdnVectorPlugin
+    ICrdnVectorDispSurface
+    ICrdnVectorFactory
+    ICrdnAxesFactory
+    ICrdnSystemFactory
+    ICrdnPointFactory
+    ICrdnPlaneFactory
+    ICrdnAngleFactory
+    ICrdnVectorGroup
+    ICrdnPointGroup
+    ICrdnAngleGroup
+    ICrdnAxesGroup
+    ICrdnPlaneGroup
+    ICrdnSystemGroup
+    ICrdnProvider
+    ICrdnRoot
+    ICrdnWellKnownEarthSystems
+    ICrdnWellKnownEarthAxes
+    ICrdnWellKnownSunSystems
+    ICrdnWellKnownSunAxes
+    ICrdnWellKnownSystems
+    ICrdnWellKnownAxes
+    ICrdnAngleFindAngleResult
+    ICrdnAngleFindAngleWithRateResult
+    ICrdnAngleFindWithRateResult
+    ICrdnAngleFindResult
+    ICrdnAxesTransformResult
+    ICrdnAxesTransformWithRateResult
+    ICrdnPlaneFindInAxesResult
+    ICrdnPlaneFindInAxesWithRateResult
+    ICrdnPlaneFindInSystemResult
+    ICrdnPlaneFindInSystemWithRateResult
+    ICrdnAxesFindInAxesResult
+    ICrdnAxesFindInAxesWithRateResult
+    ICrdnPointLocateInSystemResult
+    ICrdnPointLocateInSystemWithRateResult
+    ICrdnSystemTransformResult
+    ICrdnSystemTransformWithRateResult
+    ICrdnSystemFindInSystemResult
+    ICrdnVectorFindInAxesResult
+    ICrdnVectorFindInAxesWithRateResult
+    ICrdnMethodCallResult
+    ICrdnCentralBody
+    ICrdnCentralBodyRefTo
+    ICrdnCentralBodyCollection
+    ICrdnCollection
+    ICrdnPointSamplingResult
+    ICrdnPointSamplingInterval
+    ICrdnPointSamplingIntervalCollection
+    ICrdnAxesSamplingResult
+    ICrdnAxesSamplingInterval
+    ICrdnAxesSamplingIntervalCollection
 
 
 Enumerations
@@ -405,292 +405,292 @@ Classes
 
 .. autosummary::
 
-    AgCrdnEvaluateResult
-    AgCrdnEvaluateWithRateResult
-    AgCrdnEventIntervalResult
-    AgCrdnEventFindOccurrenceResult
-    AgCrdnFindTimesResult
-    AgCrdnIntervalsVectorResult
-    AgCrdnEventIntervalCollectionOccurredResult
-    AgCrdnIntervalListResult
-    AgCrdnIntervalVectorCollection
-    AgCrdnEventGroup
-    AgCrdnEventIntervalGroup
-    AgCrdnEventIntervalListGroup
-    AgCrdnEventArrayGroup
-    AgCrdnCalcScalarGroup
-    AgCrdnEventIntervalCollectionGroup
-    AgCrdnParameterSetGroup
-    AgCrdnConditionGroup
-    AgCrdnConditionSetGroup
-    AgCrdnConditionSetEvaluateResult
-    AgCrdnConditionSetEvaluateWithRateResult
-    AgCrdnVolumeGridGroup
-    AgCrdnVolumeGroup
-    AgCrdnVolumeCalcGroup
-    AgCrdnCalcScalar
-    AgCrdnCalcScalarAngle
-    AgCrdnCalcScalarConstant
-    AgCrdnCalcScalarCustom
-    AgCrdnCalcScalarDataElement
-    AgCrdnCalcScalarDerivative
-    AgCrdnCalcScalarDotProduct
-    AgCrdnCalcScalarElapsedTime
-    AgCrdnCalcScalarFactory
-    AgCrdnCalcScalarFile
-    AgCrdnCalcScalarFixedAtTimeInstant
-    AgCrdnCalcScalarFunction
-    AgCrdnCalcScalarFunction2Var
-    AgCrdnCalcScalarIntegral
-    AgCrdnCalcScalarPlugin
-    AgCrdnCalcScalarSurfaceDistanceBetweenPoints
-    AgCrdnCalcScalarVectorComponent
-    AgCrdnCalcScalarVectorMagnitude
-    AgCrdnCondition
-    AgCrdnConditionCombined
-    AgCrdnConditionFactory
-    AgCrdnConditionPointInVolume
-    AgCrdnConditionScalarBounds
-    AgCrdnConditionSet
-    AgCrdnConditionSetFactory
-    AgCrdnConditionSetScalarThresholds
-    AgCrdnConverge
-    AgCrdnConvergeBasic
-    AgCrdnDerivative
-    AgCrdnDerivativeBasic
-    AgCrdnEvent
-    AgCrdnEventArray
-    AgCrdnEventArrayConditionCrossings
-    AgCrdnEventArrayExtrema
-    AgCrdnEventArrayFactory
-    AgCrdnEventArrayFiltered
-    AgCrdnEventArrayFixedStep
-    AgCrdnEventArrayFixedTimes
-    AgCrdnEventArrayMerged
-    AgCrdnEventArraySignaled
-    AgCrdnEventArrayStartStopTimes
-    AgCrdnEventEpoch
-    AgCrdnEventExtremum
-    AgCrdnEventFactory
-    AgCrdnEventInterval
-    AgCrdnEventIntervalBetweenTimeInstants
-    AgCrdnEventIntervalCollection
-    AgCrdnEventIntervalCollectionCondition
-    AgCrdnEventIntervalCollectionFactory
-    AgCrdnEventIntervalCollectionLighting
-    AgCrdnEventIntervalCollectionSignaled
-    AgCrdnEventIntervalFactory
-    AgCrdnEventIntervalFixed
-    AgCrdnEventIntervalFixedDuration
-    AgCrdnEventIntervalFromIntervalList
-    AgCrdnEventIntervalList
-    AgCrdnEventIntervalListCondition
-    AgCrdnEventIntervalListFactory
-    AgCrdnEventIntervalListFile
-    AgCrdnEventIntervalListFiltered
-    AgCrdnEventIntervalListFixed
-    AgCrdnEventIntervalListMerged
-    AgCrdnEventIntervalListScaled
-    AgCrdnEventIntervalListSignaled
-    AgCrdnEventIntervalListTimeOffset
-    AgCrdnEventIntervalScaled
-    AgCrdnEventIntervalSignaled
-    AgCrdnEventIntervalSmartInterval
-    AgCrdnEventIntervalTimeOffset
-    AgCrdnEventSignaled
-    AgCrdnEventSmartEpoch
-    AgCrdnEventStartStopTime
-    AgCrdnEventTimeOffset
-    AgCrdnFirstIntervalsFilter
-    AgCrdnGapsFilter
-    AgCrdnIntegral
-    AgCrdnIntegralBasic
-    AgCrdnInterp
-    AgCrdnInterpBasic
-    AgCrdnIntervalsFilter
-    AgCrdnLastIntervalsFilter
-    AgCrdnParameterSet
-    AgCrdnParameterSetAttitude
-    AgCrdnParameterSetFactory
-    AgCrdnParameterSetGroundTrajectory
-    AgCrdnParameterSetOrbit
-    AgCrdnParameterSetTrajectory
-    AgCrdnParameterSetVector
-    AgCrdnPruneFilter
-    AgCrdnPruneFilterFactory
-    AgCrdnRelativeSatisfactionConditionFilter
-    AgCrdnSampling
-    AgCrdnSamplingBasic
-    AgCrdnSamplingCurvatureTolerance
-    AgCrdnSamplingFixedStep
-    AgCrdnSamplingMethod
-    AgCrdnSamplingMethodFactory
-    AgCrdnSamplingRelativeTolerance
-    AgCrdnSatisfactionConditionFilter
-    AgCrdnSignalDelay
-    AgCrdnSignalDelayBasic
-    AgCrdnVolumeCalcFactory
-    AgCrdnVolumeFactory
-    AgCrdnVolumeGridFactory
-    AgCrdnGridCoordinateDefinition
-    AgCrdnGridValuesCustom
-    AgCrdnGridValuesFixedNumberOfSteps
-    AgCrdnGridValuesFixedStep
-    AgCrdnGridValuesMethod
-    AgCrdnLightTimeDelay
-    AgCrdnVolume
-    AgCrdnVolumeCalc
-    AgCrdnVolumeCalcAltitude
-    AgCrdnVolumeCalcAngleOffVector
-    AgCrdnVolumeCalcConditionSatMetric
-    AgCrdnVolumeCalcDelayRange
-    AgCrdnVolumeCalcFile
-    AgCrdnVolumeCalcFromScalar
-    AgCrdnVolumeCalcRange
-    AgCrdnVolumeCalcSolarIntensity
-    AgCrdnVolumeCombined
-    AgCrdnVolumeFromCalc
-    AgCrdnVolumeFromCondition
-    AgCrdnVolumeFromGrid
-    AgCrdnVolumeFromTimeSatisfaction
-    AgCrdnVolumeGrid
-    AgCrdnVolumeGridBearingAlt
-    AgCrdnVolumeGridCartesian
-    AgCrdnVolumeGridConstrained
-    AgCrdnVolumeGridCylindrical
-    AgCrdnVolumeGridLatLonAlt
-    AgCrdnVolumeGridResult
-    AgCrdnVolumeGridSpherical
-    AgCrdnVolumeInview
-    AgCrdnVolumeLighting
-    AgCrdnVolumeOverTime
-    AgCrdnGeneric
-    AgCrdnTypeInfo
-    AgCrdnInstance
-    AgCrdnTemplate
-    AgCrdnPointRefTo
-    AgCrdnVectorRefTo
-    AgCrdnAxesRefTo
-    AgCrdnAngleRefTo
-    AgCrdnSystemRefTo
-    AgCrdnPlaneRefTo
-    AgCrdnVector
-    AgCrdnAxesLabels
-    AgCrdnAxes
-    AgCrdnPoint
-    AgCrdnSystem
-    AgCrdnAngle
-    AgCrdnPlaneLabels
-    AgCrdnPlane
-    AgCrdnAxesAlignedAndConstrained
-    AgCrdnAxesAngularOffset
-    AgCrdnAxesFixedAtEpoch
-    AgCrdnAxesBPlane
-    AgCrdnAxesCustomScript
-    AgCrdnAxesAttitudeFile
-    AgCrdnAxesFixed
-    AgCrdnAxesModelAttach
-    AgCrdnAxesSpinning
-    AgCrdnAxesOnSurface
-    AgCrdnAxesTrajectory
-    AgCrdnAxesLagrangeLibration
-    AgCrdnAxesCommonTasks
-    AgCrdnAxesAtTimeInstant
-    AgCrdnAxesPlugin
-    AgCrdnAngleBetweenVectors
-    AgCrdnAngleBetweenPlanes
-    AgCrdnAngleDihedral
-    AgCrdnAngleRotation
-    AgCrdnAngleToPlane
-    AgCrdnPlaneNormal
-    AgCrdnPlaneQuadrant
-    AgCrdnPlaneTrajectory
-    AgCrdnPlaneTriad
-    AgCrdnPlaneTwoVector
-    AgCrdnPointBPlane
-    AgCrdnPointFile
-    AgCrdnPointFixedInSystem
-    AgCrdnPointGrazing
-    AgCrdnPointGlint
-    AgCrdnPointCovarianceGrazing
-    AgCrdnPointPlaneIntersection
-    AgCrdnPointOnSurface
-    AgCrdnPointModelAttach
-    AgCrdnPointSatelliteCollectionEntry
-    AgCrdnPointPlaneProjection
-    AgCrdnPointLagrangeLibration
-    AgCrdnPointCommonTasks
-    AgCrdnPointCentBodyIntersect
-    AgCrdnPointAtTimeInstant
-    AgCrdnPointPlugin
-    AgCrdnPointCBFixedOffset
-    AgCrdnSystemAssembled
-    AgCrdnSystemOnSurface
-    AgCrdnLLAPosition
-    AgCrdnSystemCommonTasks
-    AgCrdnVectorAngleRate
-    AgCrdnVectorApoapsis
-    AgCrdnVectorFixedAtEpoch
-    AgCrdnVectorAngularVelocity
-    AgCrdnVectorConing
-    AgCrdnVectorCross
-    AgCrdnVectorCustomScript
-    AgCrdnVectorDerivative
-    AgCrdnVectorDisplacement
-    AgCrdnVectorTwoPlanesIntersection
-    AgCrdnVectorModelAttach
-    AgCrdnVectorProjection
-    AgCrdnVectorScaled
-    AgCrdnVectorEccentricity
-    AgCrdnVectorFixedInAxes
-    AgCrdnVectorLineOfNodes
-    AgCrdnVectorOrbitAngularMomentum
-    AgCrdnVectorOrbitNormal
-    AgCrdnVectorPeriapsis
-    AgCrdnVectorReflection
-    AgCrdnVectorRotationVector
-    AgCrdnVectorDirectionToStar
-    AgCrdnVectorFixedAtTimeInstant
-    AgCrdnVectorLinearCombination
-    AgCrdnVectorProjectAlongVector
-    AgCrdnVectorScalarLinearCombination
-    AgCrdnVectorScalarScaled
-    AgCrdnVectorVelocityAcceleration
-    AgCrdnVectorPlugin
-    AgCrdnVectorDispSurface
-    AgCrdnVectorFactory
-    AgCrdnAxesFactory
-    AgCrdnSystemFactory
-    AgCrdnPointFactory
-    AgCrdnPlaneFactory
-    AgCrdnAngleFactory
-    AgCrdnVectorGroup
-    AgCrdnPointGroup
-    AgCrdnAngleGroup
-    AgCrdnAxesGroup
-    AgCrdnPlaneGroup
-    AgCrdnSystemGroup
-    AgCrdnProvider
-    AgCrdnRoot
-    AgCrdnWellKnownEarthSystems
-    AgCrdnWellKnownEarthAxes
-    AgCrdnWellKnownSunSystems
-    AgCrdnWellKnownSunAxes
-    AgCrdnWellKnownSystems
-    AgCrdnWellKnownAxes
-    AgCrdnMethodCallResult
-    AgCrdnInterval
-    AgCrdnIntervalCollection
-    AgCrdnCentralBody
-    AgCrdnCentralBodyRefTo
-    AgCrdnCentralBodyCollection
-    AgCrdnCollection
-    AgCrdnPointSamplingResult
-    AgCrdnPointSamplingInterval
-    AgCrdnPointSamplingIntervalCollection
-    AgCrdnAxesSamplingResult
-    AgCrdnAxesSamplingInterval
-    AgCrdnAxesSamplingIntervalCollection
+    CrdnEvaluateResult
+    CrdnEvaluateWithRateResult
+    CrdnEventIntervalResult
+    CrdnEventFindOccurrenceResult
+    CrdnFindTimesResult
+    CrdnIntervalsVectorResult
+    CrdnEventIntervalCollectionOccurredResult
+    CrdnIntervalListResult
+    CrdnIntervalVectorCollection
+    CrdnEventGroup
+    CrdnEventIntervalGroup
+    CrdnEventIntervalListGroup
+    CrdnEventArrayGroup
+    CrdnCalcScalarGroup
+    CrdnEventIntervalCollectionGroup
+    CrdnParameterSetGroup
+    CrdnConditionGroup
+    CrdnConditionSetGroup
+    CrdnConditionSetEvaluateResult
+    CrdnConditionSetEvaluateWithRateResult
+    CrdnVolumeGridGroup
+    CrdnVolumeGroup
+    CrdnVolumeCalcGroup
+    CrdnCalcScalar
+    CrdnCalcScalarAngle
+    CrdnCalcScalarConstant
+    CrdnCalcScalarCustom
+    CrdnCalcScalarDataElement
+    CrdnCalcScalarDerivative
+    CrdnCalcScalarDotProduct
+    CrdnCalcScalarElapsedTime
+    CrdnCalcScalarFactory
+    CrdnCalcScalarFile
+    CrdnCalcScalarFixedAtTimeInstant
+    CrdnCalcScalarFunction
+    CrdnCalcScalarFunction2Var
+    CrdnCalcScalarIntegral
+    CrdnCalcScalarPlugin
+    CrdnCalcScalarSurfaceDistanceBetweenPoints
+    CrdnCalcScalarVectorComponent
+    CrdnCalcScalarVectorMagnitude
+    CrdnCondition
+    CrdnConditionCombined
+    CrdnConditionFactory
+    CrdnConditionPointInVolume
+    CrdnConditionScalarBounds
+    CrdnConditionSet
+    CrdnConditionSetFactory
+    CrdnConditionSetScalarThresholds
+    CrdnConverge
+    CrdnConvergeBasic
+    CrdnDerivative
+    CrdnDerivativeBasic
+    CrdnEvent
+    CrdnEventArray
+    CrdnEventArrayConditionCrossings
+    CrdnEventArrayExtrema
+    CrdnEventArrayFactory
+    CrdnEventArrayFiltered
+    CrdnEventArrayFixedStep
+    CrdnEventArrayFixedTimes
+    CrdnEventArrayMerged
+    CrdnEventArraySignaled
+    CrdnEventArrayStartStopTimes
+    CrdnEventEpoch
+    CrdnEventExtremum
+    CrdnEventFactory
+    CrdnEventInterval
+    CrdnEventIntervalBetweenTimeInstants
+    CrdnEventIntervalCollection
+    CrdnEventIntervalCollectionCondition
+    CrdnEventIntervalCollectionFactory
+    CrdnEventIntervalCollectionLighting
+    CrdnEventIntervalCollectionSignaled
+    CrdnEventIntervalFactory
+    CrdnEventIntervalFixed
+    CrdnEventIntervalFixedDuration
+    CrdnEventIntervalFromIntervalList
+    CrdnEventIntervalList
+    CrdnEventIntervalListCondition
+    CrdnEventIntervalListFactory
+    CrdnEventIntervalListFile
+    CrdnEventIntervalListFiltered
+    CrdnEventIntervalListFixed
+    CrdnEventIntervalListMerged
+    CrdnEventIntervalListScaled
+    CrdnEventIntervalListSignaled
+    CrdnEventIntervalListTimeOffset
+    CrdnEventIntervalScaled
+    CrdnEventIntervalSignaled
+    CrdnEventIntervalSmartInterval
+    CrdnEventIntervalTimeOffset
+    CrdnEventSignaled
+    CrdnEventSmartEpoch
+    CrdnEventStartStopTime
+    CrdnEventTimeOffset
+    CrdnFirstIntervalsFilter
+    CrdnGapsFilter
+    CrdnIntegral
+    CrdnIntegralBasic
+    CrdnInterp
+    CrdnInterpBasic
+    CrdnIntervalsFilter
+    CrdnLastIntervalsFilter
+    CrdnParameterSet
+    CrdnParameterSetAttitude
+    CrdnParameterSetFactory
+    CrdnParameterSetGroundTrajectory
+    CrdnParameterSetOrbit
+    CrdnParameterSetTrajectory
+    CrdnParameterSetVector
+    CrdnPruneFilter
+    CrdnPruneFilterFactory
+    CrdnRelativeSatisfactionConditionFilter
+    CrdnSampling
+    CrdnSamplingBasic
+    CrdnSamplingCurvatureTolerance
+    CrdnSamplingFixedStep
+    CrdnSamplingMethod
+    CrdnSamplingMethodFactory
+    CrdnSamplingRelativeTolerance
+    CrdnSatisfactionConditionFilter
+    CrdnSignalDelay
+    CrdnSignalDelayBasic
+    CrdnVolumeCalcFactory
+    CrdnVolumeFactory
+    CrdnVolumeGridFactory
+    CrdnGridCoordinateDefinition
+    CrdnGridValuesCustom
+    CrdnGridValuesFixedNumberOfSteps
+    CrdnGridValuesFixedStep
+    CrdnGridValuesMethod
+    CrdnLightTimeDelay
+    CrdnVolume
+    CrdnVolumeCalc
+    CrdnVolumeCalcAltitude
+    CrdnVolumeCalcAngleOffVector
+    CrdnVolumeCalcConditionSatMetric
+    CrdnVolumeCalcDelayRange
+    CrdnVolumeCalcFile
+    CrdnVolumeCalcFromScalar
+    CrdnVolumeCalcRange
+    CrdnVolumeCalcSolarIntensity
+    CrdnVolumeCombined
+    CrdnVolumeFromCalc
+    CrdnVolumeFromCondition
+    CrdnVolumeFromGrid
+    CrdnVolumeFromTimeSatisfaction
+    CrdnVolumeGrid
+    CrdnVolumeGridBearingAlt
+    CrdnVolumeGridCartesian
+    CrdnVolumeGridConstrained
+    CrdnVolumeGridCylindrical
+    CrdnVolumeGridLatLonAlt
+    CrdnVolumeGridResult
+    CrdnVolumeGridSpherical
+    CrdnVolumeInview
+    CrdnVolumeLighting
+    CrdnVolumeOverTime
+    CrdnGeneric
+    CrdnTypeInfo
+    CrdnInstance
+    CrdnTemplate
+    CrdnPointRefTo
+    CrdnVectorRefTo
+    CrdnAxesRefTo
+    CrdnAngleRefTo
+    CrdnSystemRefTo
+    CrdnPlaneRefTo
+    CrdnVector
+    CrdnAxesLabels
+    CrdnAxes
+    CrdnPoint
+    CrdnSystem
+    CrdnAngle
+    CrdnPlaneLabels
+    CrdnPlane
+    CrdnAxesAlignedAndConstrained
+    CrdnAxesAngularOffset
+    CrdnAxesFixedAtEpoch
+    CrdnAxesBPlane
+    CrdnAxesCustomScript
+    CrdnAxesAttitudeFile
+    CrdnAxesFixed
+    CrdnAxesModelAttach
+    CrdnAxesSpinning
+    CrdnAxesOnSurface
+    CrdnAxesTrajectory
+    CrdnAxesLagrangeLibration
+    CrdnAxesCommonTasks
+    CrdnAxesAtTimeInstant
+    CrdnAxesPlugin
+    CrdnAngleBetweenVectors
+    CrdnAngleBetweenPlanes
+    CrdnAngleDihedral
+    CrdnAngleRotation
+    CrdnAngleToPlane
+    CrdnPlaneNormal
+    CrdnPlaneQuadrant
+    CrdnPlaneTrajectory
+    CrdnPlaneTriad
+    CrdnPlaneTwoVector
+    CrdnPointBPlane
+    CrdnPointFile
+    CrdnPointFixedInSystem
+    CrdnPointGrazing
+    CrdnPointGlint
+    CrdnPointCovarianceGrazing
+    CrdnPointPlaneIntersection
+    CrdnPointOnSurface
+    CrdnPointModelAttach
+    CrdnPointSatelliteCollectionEntry
+    CrdnPointPlaneProjection
+    CrdnPointLagrangeLibration
+    CrdnPointCommonTasks
+    CrdnPointCentBodyIntersect
+    CrdnPointAtTimeInstant
+    CrdnPointPlugin
+    CrdnPointCBFixedOffset
+    CrdnSystemAssembled
+    CrdnSystemOnSurface
+    CrdnLLAPosition
+    CrdnSystemCommonTasks
+    CrdnVectorAngleRate
+    CrdnVectorApoapsis
+    CrdnVectorFixedAtEpoch
+    CrdnVectorAngularVelocity
+    CrdnVectorConing
+    CrdnVectorCross
+    CrdnVectorCustomScript
+    CrdnVectorDerivative
+    CrdnVectorDisplacement
+    CrdnVectorTwoPlanesIntersection
+    CrdnVectorModelAttach
+    CrdnVectorProjection
+    CrdnVectorScaled
+    CrdnVectorEccentricity
+    CrdnVectorFixedInAxes
+    CrdnVectorLineOfNodes
+    CrdnVectorOrbitAngularMomentum
+    CrdnVectorOrbitNormal
+    CrdnVectorPeriapsis
+    CrdnVectorReflection
+    CrdnVectorRotationVector
+    CrdnVectorDirectionToStar
+    CrdnVectorFixedAtTimeInstant
+    CrdnVectorLinearCombination
+    CrdnVectorProjectAlongVector
+    CrdnVectorScalarLinearCombination
+    CrdnVectorScalarScaled
+    CrdnVectorVelocityAcceleration
+    CrdnVectorPlugin
+    CrdnVectorDispSurface
+    CrdnVectorFactory
+    CrdnAxesFactory
+    CrdnSystemFactory
+    CrdnPointFactory
+    CrdnPlaneFactory
+    CrdnAngleFactory
+    CrdnVectorGroup
+    CrdnPointGroup
+    CrdnAngleGroup
+    CrdnAxesGroup
+    CrdnPlaneGroup
+    CrdnSystemGroup
+    CrdnProvider
+    CrdnRoot
+    CrdnWellKnownEarthSystems
+    CrdnWellKnownEarthAxes
+    CrdnWellKnownSunSystems
+    CrdnWellKnownSunAxes
+    CrdnWellKnownSystems
+    CrdnWellKnownAxes
+    CrdnMethodCallResult
+    CrdnInterval
+    CrdnIntervalCollection
+    CrdnCentralBody
+    CrdnCentralBodyRefTo
+    CrdnCentralBodyCollection
+    CrdnCollection
+    CrdnPointSamplingResult
+    CrdnPointSamplingInterval
+    CrdnPointSamplingIntervalCollection
+    CrdnAxesSamplingResult
+    CrdnAxesSamplingInterval
+    CrdnAxesSamplingIntervalCollection
 
 
 Reference
@@ -699,928 +699,928 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IAgCrdnIntervalCollection
+.. autoclass:: ICrdnIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnInterval
+.. autoclass:: ICrdnInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPoint
+.. autoclass:: ICrdnPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVector
+.. autoclass:: ICrdnVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystem
+.. autoclass:: ICrdnSystem
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxes
+.. autoclass:: ICrdnAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngle
+.. autoclass:: ICrdnAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlane
+.. autoclass:: ICrdnPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnContext
+.. autoclass:: ICrdnContext
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdn
+.. autoclass:: ICrdn
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEvaluateResult
+.. autoclass:: ICrdnEvaluateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEvaluateWithRateResult
+.. autoclass:: ICrdnEvaluateWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalResult
+.. autoclass:: ICrdnEventIntervalResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventFindOccurrenceResult
+.. autoclass:: ICrdnEventFindOccurrenceResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnFindTimesResult
+.. autoclass:: ICrdnFindTimesResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnIntervalsVectorResult
+.. autoclass:: ICrdnIntervalsVectorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalCollectionOccurredResult
+.. autoclass:: ICrdnEventIntervalCollectionOccurredResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnIntervalListResult
+.. autoclass:: ICrdnIntervalListResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnIntervalVectorCollection
+.. autoclass:: ICrdnIntervalVectorCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventGroup
+.. autoclass:: ICrdnEventGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalGroup
+.. autoclass:: ICrdnEventIntervalGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListGroup
+.. autoclass:: ICrdnEventIntervalListGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayGroup
+.. autoclass:: ICrdnEventArrayGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarGroup
+.. autoclass:: ICrdnCalcScalarGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalCollectionGroup
+.. autoclass:: ICrdnEventIntervalCollectionGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnParameterSetGroup
+.. autoclass:: ICrdnParameterSetGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionGroup
+.. autoclass:: ICrdnConditionGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionSetGroup
+.. autoclass:: ICrdnConditionSetGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionSetEvaluateResult
+.. autoclass:: ICrdnConditionSetEvaluateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionSetEvaluateWithRateResult
+.. autoclass:: ICrdnConditionSetEvaluateWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridGroup
+.. autoclass:: ICrdnVolumeGridGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGroup
+.. autoclass:: ICrdnVolumeGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcGroup
+.. autoclass:: ICrdnVolumeCalcGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalar
+.. autoclass:: ICrdnCalcScalar
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarAngle
+.. autoclass:: ICrdnCalcScalarAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarConstant
+.. autoclass:: ICrdnCalcScalarConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarCustom
+.. autoclass:: ICrdnCalcScalarCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarDataElement
+.. autoclass:: ICrdnCalcScalarDataElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarDerivative
+.. autoclass:: ICrdnCalcScalarDerivative
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarDotProduct
+.. autoclass:: ICrdnCalcScalarDotProduct
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarElapsedTime
+.. autoclass:: ICrdnCalcScalarElapsedTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarFactory
+.. autoclass:: ICrdnCalcScalarFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarFile
+.. autoclass:: ICrdnCalcScalarFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarFixedAtTimeInstant
+.. autoclass:: ICrdnCalcScalarFixedAtTimeInstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarFunction
+.. autoclass:: ICrdnCalcScalarFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarFunction2Var
+.. autoclass:: ICrdnCalcScalarFunction2Var
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarIntegral
+.. autoclass:: ICrdnCalcScalarIntegral
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarPlugin
+.. autoclass:: ICrdnCalcScalarPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarSurfaceDistanceBetweenPoints
+.. autoclass:: ICrdnCalcScalarSurfaceDistanceBetweenPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarVectorComponent
+.. autoclass:: ICrdnCalcScalarVectorComponent
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCalcScalarVectorMagnitude
+.. autoclass:: ICrdnCalcScalarVectorMagnitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCondition
+.. autoclass:: ICrdnCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionCombined
+.. autoclass:: ICrdnConditionCombined
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionFactory
+.. autoclass:: ICrdnConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionPointInVolume
+.. autoclass:: ICrdnConditionPointInVolume
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionScalarBounds
+.. autoclass:: ICrdnConditionScalarBounds
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionSet
+.. autoclass:: ICrdnConditionSet
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionSetFactory
+.. autoclass:: ICrdnConditionSetFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConditionSetScalarThresholds
+.. autoclass:: ICrdnConditionSetScalarThresholds
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConverge
+.. autoclass:: ICrdnConverge
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnConvergeBasic
+.. autoclass:: ICrdnConvergeBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnDerivative
+.. autoclass:: ICrdnDerivative
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnDerivativeBasic
+.. autoclass:: ICrdnDerivativeBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEvent
+.. autoclass:: ICrdnEvent
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArray
+.. autoclass:: ICrdnEventArray
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayConditionCrossings
+.. autoclass:: ICrdnEventArrayConditionCrossings
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayExtrema
+.. autoclass:: ICrdnEventArrayExtrema
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayFactory
+.. autoclass:: ICrdnEventArrayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayFiltered
+.. autoclass:: ICrdnEventArrayFiltered
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayFixedStep
+.. autoclass:: ICrdnEventArrayFixedStep
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayFixedTimes
+.. autoclass:: ICrdnEventArrayFixedTimes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayMerged
+.. autoclass:: ICrdnEventArrayMerged
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArraySignaled
+.. autoclass:: ICrdnEventArraySignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventArrayStartStopTimes
+.. autoclass:: ICrdnEventArrayStartStopTimes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventEpoch
+.. autoclass:: ICrdnEventEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventExtremum
+.. autoclass:: ICrdnEventExtremum
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventFactory
+.. autoclass:: ICrdnEventFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventInterval
+.. autoclass:: ICrdnEventInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalBetweenTimeInstants
+.. autoclass:: ICrdnEventIntervalBetweenTimeInstants
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalCollection
+.. autoclass:: ICrdnEventIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalCollectionCondition
+.. autoclass:: ICrdnEventIntervalCollectionCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalCollectionFactory
+.. autoclass:: ICrdnEventIntervalCollectionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalCollectionLighting
+.. autoclass:: ICrdnEventIntervalCollectionLighting
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalCollectionSignaled
+.. autoclass:: ICrdnEventIntervalCollectionSignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalFactory
+.. autoclass:: ICrdnEventIntervalFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalFixed
+.. autoclass:: ICrdnEventIntervalFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalFixedDuration
+.. autoclass:: ICrdnEventIntervalFixedDuration
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalFromIntervalList
+.. autoclass:: ICrdnEventIntervalFromIntervalList
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalList
+.. autoclass:: ICrdnEventIntervalList
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListCondition
+.. autoclass:: ICrdnEventIntervalListCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListFactory
+.. autoclass:: ICrdnEventIntervalListFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListFile
+.. autoclass:: ICrdnEventIntervalListFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListFiltered
+.. autoclass:: ICrdnEventIntervalListFiltered
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListFixed
+.. autoclass:: ICrdnEventIntervalListFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListMerged
+.. autoclass:: ICrdnEventIntervalListMerged
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListScaled
+.. autoclass:: ICrdnEventIntervalListScaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListSignaled
+.. autoclass:: ICrdnEventIntervalListSignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalListTimeOffset
+.. autoclass:: ICrdnEventIntervalListTimeOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalScaled
+.. autoclass:: ICrdnEventIntervalScaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalSignaled
+.. autoclass:: ICrdnEventIntervalSignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalSmartInterval
+.. autoclass:: ICrdnEventIntervalSmartInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventIntervalTimeOffset
+.. autoclass:: ICrdnEventIntervalTimeOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventSignaled
+.. autoclass:: ICrdnEventSignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventSmartEpoch
+.. autoclass:: ICrdnEventSmartEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventStartStopTime
+.. autoclass:: ICrdnEventStartStopTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnEventTimeOffset
+.. autoclass:: ICrdnEventTimeOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnFirstIntervalsFilter
+.. autoclass:: ICrdnFirstIntervalsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnGapsFilter
+.. autoclass:: ICrdnGapsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnIntegral
+.. autoclass:: ICrdnIntegral
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnIntegralBasic
+.. autoclass:: ICrdnIntegralBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnInterp
+.. autoclass:: ICrdnInterp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnInterpBasic
+.. autoclass:: ICrdnInterpBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnIntervalsFilter
+.. autoclass:: ICrdnIntervalsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnLastIntervalsFilter
+.. autoclass:: ICrdnLastIntervalsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnParameterSet
+.. autoclass:: ICrdnParameterSet
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnParameterSetAttitude
+.. autoclass:: ICrdnParameterSetAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnParameterSetFactory
+.. autoclass:: ICrdnParameterSetFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnParameterSetGroundTrajectory
+.. autoclass:: ICrdnParameterSetGroundTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnParameterSetOrbit
+.. autoclass:: ICrdnParameterSetOrbit
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnParameterSetTrajectory
+.. autoclass:: ICrdnParameterSetTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnParameterSetVector
+.. autoclass:: ICrdnParameterSetVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPruneFilter
+.. autoclass:: ICrdnPruneFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPruneFilterFactory
+.. autoclass:: ICrdnPruneFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnRelativeSatisfactionConditionFilter
+.. autoclass:: ICrdnRelativeSatisfactionConditionFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSampling
+.. autoclass:: ICrdnSampling
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSamplingBasic
+.. autoclass:: ICrdnSamplingBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSamplingCurvatureTolerance
+.. autoclass:: ICrdnSamplingCurvatureTolerance
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSamplingFixedStep
+.. autoclass:: ICrdnSamplingFixedStep
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSamplingMethod
+.. autoclass:: ICrdnSamplingMethod
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSamplingMethodFactory
+.. autoclass:: ICrdnSamplingMethodFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSamplingRelativeTolerance
+.. autoclass:: ICrdnSamplingRelativeTolerance
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSatisfactionConditionFilter
+.. autoclass:: ICrdnSatisfactionConditionFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSignalDelay
+.. autoclass:: ICrdnSignalDelay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSignalDelayBasic
+.. autoclass:: ICrdnSignalDelayBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcFactory
+.. autoclass:: ICrdnVolumeCalcFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeFactory
+.. autoclass:: ICrdnVolumeFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridFactory
+.. autoclass:: ICrdnVolumeGridFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnGridCoordinateDefinition
+.. autoclass:: ICrdnGridCoordinateDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnGridValuesCustom
+.. autoclass:: ICrdnGridValuesCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnGridValuesFixedNumberOfSteps
+.. autoclass:: ICrdnGridValuesFixedNumberOfSteps
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnGridValuesFixedStep
+.. autoclass:: ICrdnGridValuesFixedStep
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnGridValuesMethod
+.. autoclass:: ICrdnGridValuesMethod
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnLightTimeDelay
+.. autoclass:: ICrdnLightTimeDelay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolume
+.. autoclass:: ICrdnVolume
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalc
+.. autoclass:: ICrdnVolumeCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcAltitude
+.. autoclass:: ICrdnVolumeCalcAltitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcAngleOffVector
+.. autoclass:: ICrdnVolumeCalcAngleOffVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcConditionSatMetric
+.. autoclass:: ICrdnVolumeCalcConditionSatMetric
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcDelayRange
+.. autoclass:: ICrdnVolumeCalcDelayRange
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcFile
+.. autoclass:: ICrdnVolumeCalcFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcFromScalar
+.. autoclass:: ICrdnVolumeCalcFromScalar
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcRange
+.. autoclass:: ICrdnVolumeCalcRange
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCalcSolarIntensity
+.. autoclass:: ICrdnVolumeCalcSolarIntensity
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeCombined
+.. autoclass:: ICrdnVolumeCombined
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeFromCalc
+.. autoclass:: ICrdnVolumeFromCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeFromCondition
+.. autoclass:: ICrdnVolumeFromCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeFromGrid
+.. autoclass:: ICrdnVolumeFromGrid
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeFromTimeSatisfaction
+.. autoclass:: ICrdnVolumeFromTimeSatisfaction
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGrid
+.. autoclass:: ICrdnVolumeGrid
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridBearingAlt
+.. autoclass:: ICrdnVolumeGridBearingAlt
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridCartesian
+.. autoclass:: ICrdnVolumeGridCartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridConstrained
+.. autoclass:: ICrdnVolumeGridConstrained
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridCylindrical
+.. autoclass:: ICrdnVolumeGridCylindrical
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridLatLonAlt
+.. autoclass:: ICrdnVolumeGridLatLonAlt
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridResult
+.. autoclass:: ICrdnVolumeGridResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeGridSpherical
+.. autoclass:: ICrdnVolumeGridSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeInview
+.. autoclass:: ICrdnVolumeInview
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeLighting
+.. autoclass:: ICrdnVolumeLighting
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVolumeOverTime
+.. autoclass:: ICrdnVolumeOverTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnTimeProperties
+.. autoclass:: ICrdnTimeProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnTypeInfo
+.. autoclass:: ICrdnTypeInfo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnRefTo
+.. autoclass:: ICrdnRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnTemplate
+.. autoclass:: ICrdnTemplate
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnInstance
+.. autoclass:: ICrdnInstance
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointRefTo
+.. autoclass:: ICrdnPointRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorRefTo
+.. autoclass:: ICrdnVectorRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesRefTo
+.. autoclass:: ICrdnAxesRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleRefTo
+.. autoclass:: ICrdnAngleRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemRefTo
+.. autoclass:: ICrdnSystemRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneRefTo
+.. autoclass:: ICrdnPlaneRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesLabels
+.. autoclass:: ICrdnAxesLabels
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneLabels
+.. autoclass:: ICrdnPlaneLabels
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesAlignedAndConstrained
+.. autoclass:: ICrdnAxesAlignedAndConstrained
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesAngularOffset
+.. autoclass:: ICrdnAxesAngularOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesFixedAtEpoch
+.. autoclass:: ICrdnAxesFixedAtEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesBPlane
+.. autoclass:: ICrdnAxesBPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesCustomScript
+.. autoclass:: ICrdnAxesCustomScript
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesAttitudeFile
+.. autoclass:: ICrdnAxesAttitudeFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesFixed
+.. autoclass:: ICrdnAxesFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesModelAttach
+.. autoclass:: ICrdnAxesModelAttach
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesSpinning
+.. autoclass:: ICrdnAxesSpinning
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesOnSurface
+.. autoclass:: ICrdnAxesOnSurface
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesTrajectory
+.. autoclass:: ICrdnAxesTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesLagrangeLibration
+.. autoclass:: ICrdnAxesLagrangeLibration
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesCommonTasks
+.. autoclass:: ICrdnAxesCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesAtTimeInstant
+.. autoclass:: ICrdnAxesAtTimeInstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesPlugin
+.. autoclass:: ICrdnAxesPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleBetweenVectors
+.. autoclass:: ICrdnAngleBetweenVectors
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleBetweenPlanes
+.. autoclass:: ICrdnAngleBetweenPlanes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleDihedral
+.. autoclass:: ICrdnAngleDihedral
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleRotation
+.. autoclass:: ICrdnAngleRotation
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleToPlane
+.. autoclass:: ICrdnAngleToPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneNormal
+.. autoclass:: ICrdnPlaneNormal
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneQuadrant
+.. autoclass:: ICrdnPlaneQuadrant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneTrajectory
+.. autoclass:: ICrdnPlaneTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneTriad
+.. autoclass:: ICrdnPlaneTriad
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneTwoVector
+.. autoclass:: ICrdnPlaneTwoVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointBPlane
+.. autoclass:: ICrdnPointBPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointFile
+.. autoclass:: ICrdnPointFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointFixedInSystem
+.. autoclass:: ICrdnPointFixedInSystem
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointGrazing
+.. autoclass:: ICrdnPointGrazing
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointGlint
+.. autoclass:: ICrdnPointGlint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointCovarianceGrazing
+.. autoclass:: ICrdnPointCovarianceGrazing
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointPlaneIntersection
+.. autoclass:: ICrdnPointPlaneIntersection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointOnSurface
+.. autoclass:: ICrdnPointOnSurface
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointModelAttach
+.. autoclass:: ICrdnPointModelAttach
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointSatelliteCollectionEntry
+.. autoclass:: ICrdnPointSatelliteCollectionEntry
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointPlaneProjection
+.. autoclass:: ICrdnPointPlaneProjection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointLagrangeLibration
+.. autoclass:: ICrdnPointLagrangeLibration
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointCommonTasks
+.. autoclass:: ICrdnPointCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointCentBodyIntersect
+.. autoclass:: ICrdnPointCentBodyIntersect
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointAtTimeInstant
+.. autoclass:: ICrdnPointAtTimeInstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointPlugin
+.. autoclass:: ICrdnPointPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointCBFixedOffset
+.. autoclass:: ICrdnPointCBFixedOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemAssembled
+.. autoclass:: ICrdnSystemAssembled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemOnSurface
+.. autoclass:: ICrdnSystemOnSurface
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnLLAPosition
+.. autoclass:: ICrdnLLAPosition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemCommonTasks
+.. autoclass:: ICrdnSystemCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorAngleRate
+.. autoclass:: ICrdnVectorAngleRate
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorApoapsis
+.. autoclass:: ICrdnVectorApoapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorFixedAtEpoch
+.. autoclass:: ICrdnVectorFixedAtEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorAngularVelocity
+.. autoclass:: ICrdnVectorAngularVelocity
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorConing
+.. autoclass:: ICrdnVectorConing
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorCross
+.. autoclass:: ICrdnVectorCross
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorCustomScript
+.. autoclass:: ICrdnVectorCustomScript
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorDerivative
+.. autoclass:: ICrdnVectorDerivative
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorDisplacement
+.. autoclass:: ICrdnVectorDisplacement
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorTwoPlanesIntersection
+.. autoclass:: ICrdnVectorTwoPlanesIntersection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorModelAttach
+.. autoclass:: ICrdnVectorModelAttach
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorProjection
+.. autoclass:: ICrdnVectorProjection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorScaled
+.. autoclass:: ICrdnVectorScaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorEccentricity
+.. autoclass:: ICrdnVectorEccentricity
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorFixedInAxes
+.. autoclass:: ICrdnVectorFixedInAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorLineOfNodes
+.. autoclass:: ICrdnVectorLineOfNodes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorOrbitAngularMomentum
+.. autoclass:: ICrdnVectorOrbitAngularMomentum
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorOrbitNormal
+.. autoclass:: ICrdnVectorOrbitNormal
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorPeriapsis
+.. autoclass:: ICrdnVectorPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorReflection
+.. autoclass:: ICrdnVectorReflection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorRotationVector
+.. autoclass:: ICrdnVectorRotationVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorDirectionToStar
+.. autoclass:: ICrdnVectorDirectionToStar
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorFixedAtTimeInstant
+.. autoclass:: ICrdnVectorFixedAtTimeInstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorLinearCombination
+.. autoclass:: ICrdnVectorLinearCombination
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorProjectAlongVector
+.. autoclass:: ICrdnVectorProjectAlongVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorScalarLinearCombination
+.. autoclass:: ICrdnVectorScalarLinearCombination
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorScalarScaled
+.. autoclass:: ICrdnVectorScalarScaled
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorVelocityAcceleration
+.. autoclass:: ICrdnVectorVelocityAcceleration
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorPlugin
+.. autoclass:: ICrdnVectorPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorDispSurface
+.. autoclass:: ICrdnVectorDispSurface
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorFactory
+.. autoclass:: ICrdnVectorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesFactory
+.. autoclass:: ICrdnAxesFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemFactory
+.. autoclass:: ICrdnSystemFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointFactory
+.. autoclass:: ICrdnPointFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneFactory
+.. autoclass:: ICrdnPlaneFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleFactory
+.. autoclass:: ICrdnAngleFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorGroup
+.. autoclass:: ICrdnVectorGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointGroup
+.. autoclass:: ICrdnPointGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleGroup
+.. autoclass:: ICrdnAngleGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesGroup
+.. autoclass:: ICrdnAxesGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneGroup
+.. autoclass:: ICrdnPlaneGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemGroup
+.. autoclass:: ICrdnSystemGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnProvider
+.. autoclass:: ICrdnProvider
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnRoot
+.. autoclass:: ICrdnRoot
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnWellKnownEarthSystems
+.. autoclass:: ICrdnWellKnownEarthSystems
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnWellKnownEarthAxes
+.. autoclass:: ICrdnWellKnownEarthAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnWellKnownSunSystems
+.. autoclass:: ICrdnWellKnownSunSystems
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnWellKnownSunAxes
+.. autoclass:: ICrdnWellKnownSunAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnWellKnownSystems
+.. autoclass:: ICrdnWellKnownSystems
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnWellKnownAxes
+.. autoclass:: ICrdnWellKnownAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleFindAngleResult
+.. autoclass:: ICrdnAngleFindAngleResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleFindAngleWithRateResult
+.. autoclass:: ICrdnAngleFindAngleWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleFindWithRateResult
+.. autoclass:: ICrdnAngleFindWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAngleFindResult
+.. autoclass:: ICrdnAngleFindResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesTransformResult
+.. autoclass:: ICrdnAxesTransformResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesTransformWithRateResult
+.. autoclass:: ICrdnAxesTransformWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneFindInAxesResult
+.. autoclass:: ICrdnPlaneFindInAxesResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneFindInAxesWithRateResult
+.. autoclass:: ICrdnPlaneFindInAxesWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneFindInSystemResult
+.. autoclass:: ICrdnPlaneFindInSystemResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPlaneFindInSystemWithRateResult
+.. autoclass:: ICrdnPlaneFindInSystemWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesFindInAxesResult
+.. autoclass:: ICrdnAxesFindInAxesResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesFindInAxesWithRateResult
+.. autoclass:: ICrdnAxesFindInAxesWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointLocateInSystemResult
+.. autoclass:: ICrdnPointLocateInSystemResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointLocateInSystemWithRateResult
+.. autoclass:: ICrdnPointLocateInSystemWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemTransformResult
+.. autoclass:: ICrdnSystemTransformResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemTransformWithRateResult
+.. autoclass:: ICrdnSystemTransformWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnSystemFindInSystemResult
+.. autoclass:: ICrdnSystemFindInSystemResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorFindInAxesResult
+.. autoclass:: ICrdnVectorFindInAxesResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnVectorFindInAxesWithRateResult
+.. autoclass:: ICrdnVectorFindInAxesWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnMethodCallResult
+.. autoclass:: ICrdnMethodCallResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCentralBody
+.. autoclass:: ICrdnCentralBody
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCentralBodyRefTo
+.. autoclass:: ICrdnCentralBodyRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCentralBodyCollection
+.. autoclass:: ICrdnCentralBodyCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnCollection
+.. autoclass:: ICrdnCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointSamplingResult
+.. autoclass:: ICrdnPointSamplingResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointSamplingInterval
+.. autoclass:: ICrdnPointSamplingInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnPointSamplingIntervalCollection
+.. autoclass:: ICrdnPointSamplingIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesSamplingResult
+.. autoclass:: ICrdnAxesSamplingResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesSamplingInterval
+.. autoclass:: ICrdnAxesSamplingInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgCrdnAxesSamplingIntervalCollection
+.. autoclass:: ICrdnAxesSamplingIntervalCollection
     :members:
     :exclude-members: __init__
 
@@ -1781,862 +1781,862 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: AgCrdnEvaluateResult
+.. autoclass:: CrdnEvaluateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEvaluateWithRateResult
+.. autoclass:: CrdnEvaluateWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalResult
+.. autoclass:: CrdnEventIntervalResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventFindOccurrenceResult
+.. autoclass:: CrdnEventFindOccurrenceResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnFindTimesResult
+.. autoclass:: CrdnFindTimesResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnIntervalsVectorResult
+.. autoclass:: CrdnIntervalsVectorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalCollectionOccurredResult
+.. autoclass:: CrdnEventIntervalCollectionOccurredResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnIntervalListResult
+.. autoclass:: CrdnIntervalListResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnIntervalVectorCollection
+.. autoclass:: CrdnIntervalVectorCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventGroup
+.. autoclass:: CrdnEventGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalGroup
+.. autoclass:: CrdnEventIntervalGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListGroup
+.. autoclass:: CrdnEventIntervalListGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayGroup
+.. autoclass:: CrdnEventArrayGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarGroup
+.. autoclass:: CrdnCalcScalarGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalCollectionGroup
+.. autoclass:: CrdnEventIntervalCollectionGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnParameterSetGroup
+.. autoclass:: CrdnParameterSetGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionGroup
+.. autoclass:: CrdnConditionGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionSetGroup
+.. autoclass:: CrdnConditionSetGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionSetEvaluateResult
+.. autoclass:: CrdnConditionSetEvaluateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionSetEvaluateWithRateResult
+.. autoclass:: CrdnConditionSetEvaluateWithRateResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridGroup
+.. autoclass:: CrdnVolumeGridGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGroup
+.. autoclass:: CrdnVolumeGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcGroup
+.. autoclass:: CrdnVolumeCalcGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalar
+.. autoclass:: CrdnCalcScalar
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarAngle
+.. autoclass:: CrdnCalcScalarAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarConstant
+.. autoclass:: CrdnCalcScalarConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarCustom
+.. autoclass:: CrdnCalcScalarCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarDataElement
+.. autoclass:: CrdnCalcScalarDataElement
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarDerivative
+.. autoclass:: CrdnCalcScalarDerivative
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarDotProduct
+.. autoclass:: CrdnCalcScalarDotProduct
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarElapsedTime
+.. autoclass:: CrdnCalcScalarElapsedTime
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarFactory
+.. autoclass:: CrdnCalcScalarFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarFile
+.. autoclass:: CrdnCalcScalarFile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarFixedAtTimeInstant
+.. autoclass:: CrdnCalcScalarFixedAtTimeInstant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarFunction
+.. autoclass:: CrdnCalcScalarFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarFunction2Var
+.. autoclass:: CrdnCalcScalarFunction2Var
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarIntegral
+.. autoclass:: CrdnCalcScalarIntegral
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarPlugin
+.. autoclass:: CrdnCalcScalarPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarSurfaceDistanceBetweenPoints
+.. autoclass:: CrdnCalcScalarSurfaceDistanceBetweenPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarVectorComponent
+.. autoclass:: CrdnCalcScalarVectorComponent
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCalcScalarVectorMagnitude
+.. autoclass:: CrdnCalcScalarVectorMagnitude
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCondition
+.. autoclass:: CrdnCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionCombined
+.. autoclass:: CrdnConditionCombined
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionFactory
+.. autoclass:: CrdnConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionPointInVolume
+.. autoclass:: CrdnConditionPointInVolume
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionScalarBounds
+.. autoclass:: CrdnConditionScalarBounds
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionSet
+.. autoclass:: CrdnConditionSet
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionSetFactory
+.. autoclass:: CrdnConditionSetFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConditionSetScalarThresholds
+.. autoclass:: CrdnConditionSetScalarThresholds
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConverge
+.. autoclass:: CrdnConverge
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnConvergeBasic
+.. autoclass:: CrdnConvergeBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnDerivative
+.. autoclass:: CrdnDerivative
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnDerivativeBasic
+.. autoclass:: CrdnDerivativeBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEvent
+.. autoclass:: CrdnEvent
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArray
+.. autoclass:: CrdnEventArray
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayConditionCrossings
+.. autoclass:: CrdnEventArrayConditionCrossings
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayExtrema
+.. autoclass:: CrdnEventArrayExtrema
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayFactory
+.. autoclass:: CrdnEventArrayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayFiltered
+.. autoclass:: CrdnEventArrayFiltered
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayFixedStep
+.. autoclass:: CrdnEventArrayFixedStep
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayFixedTimes
+.. autoclass:: CrdnEventArrayFixedTimes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayMerged
+.. autoclass:: CrdnEventArrayMerged
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArraySignaled
+.. autoclass:: CrdnEventArraySignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventArrayStartStopTimes
+.. autoclass:: CrdnEventArrayStartStopTimes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventEpoch
+.. autoclass:: CrdnEventEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventExtremum
+.. autoclass:: CrdnEventExtremum
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventFactory
+.. autoclass:: CrdnEventFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventInterval
+.. autoclass:: CrdnEventInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalBetweenTimeInstants
+.. autoclass:: CrdnEventIntervalBetweenTimeInstants
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalCollection
+.. autoclass:: CrdnEventIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalCollectionCondition
+.. autoclass:: CrdnEventIntervalCollectionCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalCollectionFactory
+.. autoclass:: CrdnEventIntervalCollectionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalCollectionLighting
+.. autoclass:: CrdnEventIntervalCollectionLighting
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalCollectionSignaled
+.. autoclass:: CrdnEventIntervalCollectionSignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalFactory
+.. autoclass:: CrdnEventIntervalFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalFixed
+.. autoclass:: CrdnEventIntervalFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalFixedDuration
+.. autoclass:: CrdnEventIntervalFixedDuration
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalFromIntervalList
+.. autoclass:: CrdnEventIntervalFromIntervalList
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalList
+.. autoclass:: CrdnEventIntervalList
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListCondition
+.. autoclass:: CrdnEventIntervalListCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListFactory
+.. autoclass:: CrdnEventIntervalListFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListFile
+.. autoclass:: CrdnEventIntervalListFile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListFiltered
+.. autoclass:: CrdnEventIntervalListFiltered
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListFixed
+.. autoclass:: CrdnEventIntervalListFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListMerged
+.. autoclass:: CrdnEventIntervalListMerged
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListScaled
+.. autoclass:: CrdnEventIntervalListScaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListSignaled
+.. autoclass:: CrdnEventIntervalListSignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalListTimeOffset
+.. autoclass:: CrdnEventIntervalListTimeOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalScaled
+.. autoclass:: CrdnEventIntervalScaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalSignaled
+.. autoclass:: CrdnEventIntervalSignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalSmartInterval
+.. autoclass:: CrdnEventIntervalSmartInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventIntervalTimeOffset
+.. autoclass:: CrdnEventIntervalTimeOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventSignaled
+.. autoclass:: CrdnEventSignaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventSmartEpoch
+.. autoclass:: CrdnEventSmartEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventStartStopTime
+.. autoclass:: CrdnEventStartStopTime
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnEventTimeOffset
+.. autoclass:: CrdnEventTimeOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnFirstIntervalsFilter
+.. autoclass:: CrdnFirstIntervalsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnGapsFilter
+.. autoclass:: CrdnGapsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnIntegral
+.. autoclass:: CrdnIntegral
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnIntegralBasic
+.. autoclass:: CrdnIntegralBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnInterp
+.. autoclass:: CrdnInterp
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnInterpBasic
+.. autoclass:: CrdnInterpBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnIntervalsFilter
+.. autoclass:: CrdnIntervalsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnLastIntervalsFilter
+.. autoclass:: CrdnLastIntervalsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnParameterSet
+.. autoclass:: CrdnParameterSet
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnParameterSetAttitude
+.. autoclass:: CrdnParameterSetAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnParameterSetFactory
+.. autoclass:: CrdnParameterSetFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnParameterSetGroundTrajectory
+.. autoclass:: CrdnParameterSetGroundTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnParameterSetOrbit
+.. autoclass:: CrdnParameterSetOrbit
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnParameterSetTrajectory
+.. autoclass:: CrdnParameterSetTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnParameterSetVector
+.. autoclass:: CrdnParameterSetVector
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPruneFilter
+.. autoclass:: CrdnPruneFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPruneFilterFactory
+.. autoclass:: CrdnPruneFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnRelativeSatisfactionConditionFilter
+.. autoclass:: CrdnRelativeSatisfactionConditionFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSampling
+.. autoclass:: CrdnSampling
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSamplingBasic
+.. autoclass:: CrdnSamplingBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSamplingCurvatureTolerance
+.. autoclass:: CrdnSamplingCurvatureTolerance
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSamplingFixedStep
+.. autoclass:: CrdnSamplingFixedStep
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSamplingMethod
+.. autoclass:: CrdnSamplingMethod
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSamplingMethodFactory
+.. autoclass:: CrdnSamplingMethodFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSamplingRelativeTolerance
+.. autoclass:: CrdnSamplingRelativeTolerance
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSatisfactionConditionFilter
+.. autoclass:: CrdnSatisfactionConditionFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSignalDelay
+.. autoclass:: CrdnSignalDelay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSignalDelayBasic
+.. autoclass:: CrdnSignalDelayBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcFactory
+.. autoclass:: CrdnVolumeCalcFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeFactory
+.. autoclass:: CrdnVolumeFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridFactory
+.. autoclass:: CrdnVolumeGridFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnGridCoordinateDefinition
+.. autoclass:: CrdnGridCoordinateDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnGridValuesCustom
+.. autoclass:: CrdnGridValuesCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnGridValuesFixedNumberOfSteps
+.. autoclass:: CrdnGridValuesFixedNumberOfSteps
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnGridValuesFixedStep
+.. autoclass:: CrdnGridValuesFixedStep
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnGridValuesMethod
+.. autoclass:: CrdnGridValuesMethod
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnLightTimeDelay
+.. autoclass:: CrdnLightTimeDelay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolume
+.. autoclass:: CrdnVolume
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalc
+.. autoclass:: CrdnVolumeCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcAltitude
+.. autoclass:: CrdnVolumeCalcAltitude
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcAngleOffVector
+.. autoclass:: CrdnVolumeCalcAngleOffVector
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcConditionSatMetric
+.. autoclass:: CrdnVolumeCalcConditionSatMetric
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcDelayRange
+.. autoclass:: CrdnVolumeCalcDelayRange
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcFile
+.. autoclass:: CrdnVolumeCalcFile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcFromScalar
+.. autoclass:: CrdnVolumeCalcFromScalar
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcRange
+.. autoclass:: CrdnVolumeCalcRange
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCalcSolarIntensity
+.. autoclass:: CrdnVolumeCalcSolarIntensity
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeCombined
+.. autoclass:: CrdnVolumeCombined
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeFromCalc
+.. autoclass:: CrdnVolumeFromCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeFromCondition
+.. autoclass:: CrdnVolumeFromCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeFromGrid
+.. autoclass:: CrdnVolumeFromGrid
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeFromTimeSatisfaction
+.. autoclass:: CrdnVolumeFromTimeSatisfaction
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGrid
+.. autoclass:: CrdnVolumeGrid
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridBearingAlt
+.. autoclass:: CrdnVolumeGridBearingAlt
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridCartesian
+.. autoclass:: CrdnVolumeGridCartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridConstrained
+.. autoclass:: CrdnVolumeGridConstrained
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridCylindrical
+.. autoclass:: CrdnVolumeGridCylindrical
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridLatLonAlt
+.. autoclass:: CrdnVolumeGridLatLonAlt
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridResult
+.. autoclass:: CrdnVolumeGridResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeGridSpherical
+.. autoclass:: CrdnVolumeGridSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeInview
+.. autoclass:: CrdnVolumeInview
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeLighting
+.. autoclass:: CrdnVolumeLighting
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVolumeOverTime
+.. autoclass:: CrdnVolumeOverTime
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnGeneric
+.. autoclass:: CrdnGeneric
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnTypeInfo
+.. autoclass:: CrdnTypeInfo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnInstance
+.. autoclass:: CrdnInstance
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnTemplate
+.. autoclass:: CrdnTemplate
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointRefTo
+.. autoclass:: CrdnPointRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorRefTo
+.. autoclass:: CrdnVectorRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesRefTo
+.. autoclass:: CrdnAxesRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngleRefTo
+.. autoclass:: CrdnAngleRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSystemRefTo
+.. autoclass:: CrdnSystemRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneRefTo
+.. autoclass:: CrdnPlaneRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVector
+.. autoclass:: CrdnVector
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesLabels
+.. autoclass:: CrdnAxesLabels
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxes
+.. autoclass:: CrdnAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPoint
+.. autoclass:: CrdnPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSystem
+.. autoclass:: CrdnSystem
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngle
+.. autoclass:: CrdnAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneLabels
+.. autoclass:: CrdnPlaneLabels
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlane
+.. autoclass:: CrdnPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesAlignedAndConstrained
+.. autoclass:: CrdnAxesAlignedAndConstrained
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesAngularOffset
+.. autoclass:: CrdnAxesAngularOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesFixedAtEpoch
+.. autoclass:: CrdnAxesFixedAtEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesBPlane
+.. autoclass:: CrdnAxesBPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesCustomScript
+.. autoclass:: CrdnAxesCustomScript
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesAttitudeFile
+.. autoclass:: CrdnAxesAttitudeFile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesFixed
+.. autoclass:: CrdnAxesFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesModelAttach
+.. autoclass:: CrdnAxesModelAttach
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesSpinning
+.. autoclass:: CrdnAxesSpinning
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesOnSurface
+.. autoclass:: CrdnAxesOnSurface
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesTrajectory
+.. autoclass:: CrdnAxesTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesLagrangeLibration
+.. autoclass:: CrdnAxesLagrangeLibration
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesCommonTasks
+.. autoclass:: CrdnAxesCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesAtTimeInstant
+.. autoclass:: CrdnAxesAtTimeInstant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesPlugin
+.. autoclass:: CrdnAxesPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngleBetweenVectors
+.. autoclass:: CrdnAngleBetweenVectors
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngleBetweenPlanes
+.. autoclass:: CrdnAngleBetweenPlanes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngleDihedral
+.. autoclass:: CrdnAngleDihedral
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngleRotation
+.. autoclass:: CrdnAngleRotation
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngleToPlane
+.. autoclass:: CrdnAngleToPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneNormal
+.. autoclass:: CrdnPlaneNormal
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneQuadrant
+.. autoclass:: CrdnPlaneQuadrant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneTrajectory
+.. autoclass:: CrdnPlaneTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneTriad
+.. autoclass:: CrdnPlaneTriad
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneTwoVector
+.. autoclass:: CrdnPlaneTwoVector
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointBPlane
+.. autoclass:: CrdnPointBPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointFile
+.. autoclass:: CrdnPointFile
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointFixedInSystem
+.. autoclass:: CrdnPointFixedInSystem
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointGrazing
+.. autoclass:: CrdnPointGrazing
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointGlint
+.. autoclass:: CrdnPointGlint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointCovarianceGrazing
+.. autoclass:: CrdnPointCovarianceGrazing
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointPlaneIntersection
+.. autoclass:: CrdnPointPlaneIntersection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointOnSurface
+.. autoclass:: CrdnPointOnSurface
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointModelAttach
+.. autoclass:: CrdnPointModelAttach
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointSatelliteCollectionEntry
+.. autoclass:: CrdnPointSatelliteCollectionEntry
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointPlaneProjection
+.. autoclass:: CrdnPointPlaneProjection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointLagrangeLibration
+.. autoclass:: CrdnPointLagrangeLibration
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointCommonTasks
+.. autoclass:: CrdnPointCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointCentBodyIntersect
+.. autoclass:: CrdnPointCentBodyIntersect
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointAtTimeInstant
+.. autoclass:: CrdnPointAtTimeInstant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointPlugin
+.. autoclass:: CrdnPointPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointCBFixedOffset
+.. autoclass:: CrdnPointCBFixedOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSystemAssembled
+.. autoclass:: CrdnSystemAssembled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSystemOnSurface
+.. autoclass:: CrdnSystemOnSurface
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnLLAPosition
+.. autoclass:: CrdnLLAPosition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSystemCommonTasks
+.. autoclass:: CrdnSystemCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorAngleRate
+.. autoclass:: CrdnVectorAngleRate
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorApoapsis
+.. autoclass:: CrdnVectorApoapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorFixedAtEpoch
+.. autoclass:: CrdnVectorFixedAtEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorAngularVelocity
+.. autoclass:: CrdnVectorAngularVelocity
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorConing
+.. autoclass:: CrdnVectorConing
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorCross
+.. autoclass:: CrdnVectorCross
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorCustomScript
+.. autoclass:: CrdnVectorCustomScript
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorDerivative
+.. autoclass:: CrdnVectorDerivative
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorDisplacement
+.. autoclass:: CrdnVectorDisplacement
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorTwoPlanesIntersection
+.. autoclass:: CrdnVectorTwoPlanesIntersection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorModelAttach
+.. autoclass:: CrdnVectorModelAttach
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorProjection
+.. autoclass:: CrdnVectorProjection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorScaled
+.. autoclass:: CrdnVectorScaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorEccentricity
+.. autoclass:: CrdnVectorEccentricity
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorFixedInAxes
+.. autoclass:: CrdnVectorFixedInAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorLineOfNodes
+.. autoclass:: CrdnVectorLineOfNodes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorOrbitAngularMomentum
+.. autoclass:: CrdnVectorOrbitAngularMomentum
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorOrbitNormal
+.. autoclass:: CrdnVectorOrbitNormal
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorPeriapsis
+.. autoclass:: CrdnVectorPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorReflection
+.. autoclass:: CrdnVectorReflection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorRotationVector
+.. autoclass:: CrdnVectorRotationVector
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorDirectionToStar
+.. autoclass:: CrdnVectorDirectionToStar
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorFixedAtTimeInstant
+.. autoclass:: CrdnVectorFixedAtTimeInstant
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorLinearCombination
+.. autoclass:: CrdnVectorLinearCombination
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorProjectAlongVector
+.. autoclass:: CrdnVectorProjectAlongVector
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorScalarLinearCombination
+.. autoclass:: CrdnVectorScalarLinearCombination
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorScalarScaled
+.. autoclass:: CrdnVectorScalarScaled
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorVelocityAcceleration
+.. autoclass:: CrdnVectorVelocityAcceleration
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorPlugin
+.. autoclass:: CrdnVectorPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorDispSurface
+.. autoclass:: CrdnVectorDispSurface
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorFactory
+.. autoclass:: CrdnVectorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesFactory
+.. autoclass:: CrdnAxesFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSystemFactory
+.. autoclass:: CrdnSystemFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointFactory
+.. autoclass:: CrdnPointFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneFactory
+.. autoclass:: CrdnPlaneFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngleFactory
+.. autoclass:: CrdnAngleFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnVectorGroup
+.. autoclass:: CrdnVectorGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointGroup
+.. autoclass:: CrdnPointGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAngleGroup
+.. autoclass:: CrdnAngleGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesGroup
+.. autoclass:: CrdnAxesGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPlaneGroup
+.. autoclass:: CrdnPlaneGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnSystemGroup
+.. autoclass:: CrdnSystemGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnProvider
+.. autoclass:: CrdnProvider
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnRoot
+.. autoclass:: CrdnRoot
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnWellKnownEarthSystems
+.. autoclass:: CrdnWellKnownEarthSystems
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnWellKnownEarthAxes
+.. autoclass:: CrdnWellKnownEarthAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnWellKnownSunSystems
+.. autoclass:: CrdnWellKnownSunSystems
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnWellKnownSunAxes
+.. autoclass:: CrdnWellKnownSunAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnWellKnownSystems
+.. autoclass:: CrdnWellKnownSystems
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnWellKnownAxes
+.. autoclass:: CrdnWellKnownAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnMethodCallResult
+.. autoclass:: CrdnMethodCallResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnInterval
+.. autoclass:: CrdnInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnIntervalCollection
+.. autoclass:: CrdnIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCentralBody
+.. autoclass:: CrdnCentralBody
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCentralBodyRefTo
+.. autoclass:: CrdnCentralBodyRefTo
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCentralBodyCollection
+.. autoclass:: CrdnCentralBodyCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnCollection
+.. autoclass:: CrdnCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointSamplingResult
+.. autoclass:: CrdnPointSamplingResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointSamplingInterval
+.. autoclass:: CrdnPointSamplingInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnPointSamplingIntervalCollection
+.. autoclass:: CrdnPointSamplingIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesSamplingResult
+.. autoclass:: CrdnAxesSamplingResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesSamplingInterval
+.. autoclass:: CrdnAxesSamplingInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: AgCrdnAxesSamplingIntervalCollection
+.. autoclass:: CrdnAxesSamplingIntervalCollection
     :members:
     :exclude-members: __init__
 
