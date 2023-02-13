@@ -41,7 +41,7 @@ __all__ = ["AgEVAAccessCriterion", "AgEVAAscentType", "AgEVAAtmosDataSource", "A
 "AgVACentralBodyCollection", "AgVACira72Function", "AgVAConstraintCollection", "AgVACustomFunctionScriptEngine", "AgVADCControl", 
 "AgVADCControlCollection", "AgVADCResult", "AgVADCResultCollection", "AgVADTM2012", "AgVADTM2020", "AgVADensityModelPlugin", 
 "AgVADisplaySystemGeocentric", "AgVADisplaySystemGeodetic", "AgVADragModelPlugin", "AgVADriverMCS", "AgVAEOMFuncPluginFunction", 
-"AgVAElementCartesian", "AgVAElementDelaunay", "AgVAElementEquinoctial", "AgVAElementGeodetic", "AgVAElementKeplerian", 
+"AgVAElementBPlane", "AgVAElementCartesian", "AgVAElementDelaunay", "AgVAElementEquinoctial", "AgVAElementGeodetic", "AgVAElementKeplerian", 
 "AgVAElementMixedSpherical", "AgVAElementSpherical", "AgVAElementTargetVectorIncomingAsymptote", "AgVAElementTargetVectorOutgoingAsymptote", 
 "AgVAEngineConstAcc", "AgVAEngineConstant", "AgVAEngineCustom", "AgVAEngineDefinition", "AgVAEngineIon", "AgVAEngineModelIspCoefficients", 
 "AgVAEngineModelPoly", "AgVAEngineModelThrustCoefficients", "AgVAEnginePlugin", "AgVAEngineThrottleTable", "AgVAExponential", 
@@ -122,26 +122,27 @@ __all__ = ["AgEVAAccessCriterion", "AgEVAAscentType", "AgEVAAtmosDataSource", "A
 "IAgVACira72Function", "IAgVAConstraintCollection", "IAgVACustomFunctionScriptEngine", "IAgVADCControl", "IAgVADCControlCollection", 
 "IAgVADCResult", "IAgVADCResultCollection", "IAgVADTM2012", "IAgVADTM2020", "IAgVADensityModelPlugin", "IAgVADisplaySystem", 
 "IAgVADisplaySystemGeocentric", "IAgVADisplaySystemGeodetic", "IAgVADragModelPlugin", "IAgVADriverMCS", "IAgVAEOMFuncPluginFunction", 
-"IAgVAElement", "IAgVAElementCartesian", "IAgVAElementDelaunay", "IAgVAElementEquinoctial", "IAgVAElementGeodetic", "IAgVAElementKeplerian", 
-"IAgVAElementMixedSpherical", "IAgVAElementSpherical", "IAgVAElementTargetVectorIncomingAsymptote", "IAgVAElementTargetVectorOutgoingAsymptote", 
-"IAgVAEngineConstAcc", "IAgVAEngineConstant", "IAgVAEngineCustom", "IAgVAEngineDefinition", "IAgVAEngineIon", "IAgVAEngineModelIspCoefficients", 
-"IAgVAEngineModelPoly", "IAgVAEngineModelThrustCoefficients", "IAgVAEnginePlugin", "IAgVAEngineThrottleTable", "IAgVAExponential", 
-"IAgVAFuelTank", "IAgVAGaussJacksonIntegrator", "IAgVAGeneralRelativityFunction", "IAgVAGoldenSectionControl", "IAgVAGoldenSectionControlCollection", 
-"IAgVAGoldenSectionResult", "IAgVAGoldenSectionResultCollection", "IAgVAGravityFieldFunction", "IAgVAGridSearchControl", 
-"IAgVAGridSearchControlCollection", "IAgVAGridSearchResult", "IAgVAGridSearchResultCollection", "IAgVAHPOPPluginFunction", 
-"IAgVAHarrisPriester", "IAgVAIPOPTControl", "IAgVAIPOPTControlCollection", "IAgVAIPOPTResult", "IAgVAIPOPTResultCollection", 
-"IAgVAJacchiaBowman2008", "IAgVAJacchiaRoberts", "IAgVAJacchia_1960", "IAgVAJacchia_1970", "IAgVAJacchia_1971", "IAgVALightingStoppingCondition", 
-"IAgVAMCSBackwardSequence", "IAgVAMCSEnd", "IAgVAMCSFollow", "IAgVAMCSHold", "IAgVAMCSInitialState", "IAgVAMCSLaunch", "IAgVAMCSManeuver", 
-"IAgVAMCSOptions", "IAgVAMCSPropagate", "IAgVAMCSReturn", "IAgVAMCSSegment", "IAgVAMCSSegmentCollection", "IAgVAMCSSegmentProperties", 
-"IAgVAMCSSequence", "IAgVAMCSStop", "IAgVAMCSTargetSequence", "IAgVAMCSUpdate", "IAgVAMSISE_1990", "IAgVAMSIS_1986", "IAgVAManeuver", 
-"IAgVAManeuverFinite", "IAgVAManeuverFinitePropagator", "IAgVAManeuverImpulsive", "IAgVAManeuverOptimalFinite", "IAgVAManeuverOptimalFiniteBounds", 
-"IAgVAManeuverOptimalFiniteFinalBoundaryConditions", "IAgVAManeuverOptimalFiniteInitialBoundaryConditions", "IAgVAManeuverOptimalFinitePathBoundaryConditions", 
-"IAgVAManeuverOptimalFiniteSNOPTOptimizer", "IAgVAManeuverOptimalFiniteSteeringNodeCollection", "IAgVAManeuverOptimalFiniteSteeringNodeElement", 
-"IAgVAMarsGRAM2000", "IAgVAMarsGRAM2001", "IAgVAMarsGRAM2005", "IAgVAMarsGRAM2010", "IAgVAMarsGRAM37", "IAgVANRLMSISE_2000", 
-"IAgVANumericalIntegrator", "IAgVANumericalPropagatorWrapper", "IAgVANumericalPropagatorWrapperCR3BP", "IAgVAPluginProperties", 
-"IAgVAPointMassFunction", "IAgVAPowerInternal", "IAgVAPowerProcessed", "IAgVAPowerSolarArray", "IAgVAProfile", "IAgVAProfileChangeManeuverType", 
-"IAgVAProfileChangePropagator", "IAgVAProfileChangeReturnSegment", "IAgVAProfileChangeStopSegment", "IAgVAProfileChangeStoppingConditionState", 
-"IAgVAProfileCollection", "IAgVAProfileDifferentialCorrector", "IAgVAProfileGoldenSection", "IAgVAProfileGridSearch", "IAgVAProfileIPOPTOptimizer", 
+"IAgVAElement", "IAgVAElementBPlane", "IAgVAElementCartesian", "IAgVAElementDelaunay", "IAgVAElementEquinoctial", "IAgVAElementGeodetic", 
+"IAgVAElementKeplerian", "IAgVAElementMixedSpherical", "IAgVAElementSpherical", "IAgVAElementTargetVectorIncomingAsymptote", 
+"IAgVAElementTargetVectorOutgoingAsymptote", "IAgVAEngineConstAcc", "IAgVAEngineConstant", "IAgVAEngineCustom", "IAgVAEngineDefinition", 
+"IAgVAEngineIon", "IAgVAEngineModelIspCoefficients", "IAgVAEngineModelPoly", "IAgVAEngineModelThrustCoefficients", "IAgVAEnginePlugin", 
+"IAgVAEngineThrottleTable", "IAgVAExponential", "IAgVAFuelTank", "IAgVAGaussJacksonIntegrator", "IAgVAGeneralRelativityFunction", 
+"IAgVAGoldenSectionControl", "IAgVAGoldenSectionControlCollection", "IAgVAGoldenSectionResult", "IAgVAGoldenSectionResultCollection", 
+"IAgVAGravityFieldFunction", "IAgVAGridSearchControl", "IAgVAGridSearchControlCollection", "IAgVAGridSearchResult", "IAgVAGridSearchResultCollection", 
+"IAgVAHPOPPluginFunction", "IAgVAHarrisPriester", "IAgVAIPOPTControl", "IAgVAIPOPTControlCollection", "IAgVAIPOPTResult", 
+"IAgVAIPOPTResultCollection", "IAgVAJacchiaBowman2008", "IAgVAJacchiaRoberts", "IAgVAJacchia_1960", "IAgVAJacchia_1970", 
+"IAgVAJacchia_1971", "IAgVALightingStoppingCondition", "IAgVAMCSBackwardSequence", "IAgVAMCSEnd", "IAgVAMCSFollow", "IAgVAMCSHold", 
+"IAgVAMCSInitialState", "IAgVAMCSLaunch", "IAgVAMCSManeuver", "IAgVAMCSOptions", "IAgVAMCSPropagate", "IAgVAMCSReturn", 
+"IAgVAMCSSegment", "IAgVAMCSSegmentCollection", "IAgVAMCSSegmentProperties", "IAgVAMCSSequence", "IAgVAMCSStop", "IAgVAMCSTargetSequence", 
+"IAgVAMCSUpdate", "IAgVAMSISE_1990", "IAgVAMSIS_1986", "IAgVAManeuver", "IAgVAManeuverFinite", "IAgVAManeuverFinitePropagator", 
+"IAgVAManeuverImpulsive", "IAgVAManeuverOptimalFinite", "IAgVAManeuverOptimalFiniteBounds", "IAgVAManeuverOptimalFiniteFinalBoundaryConditions", 
+"IAgVAManeuverOptimalFiniteInitialBoundaryConditions", "IAgVAManeuverOptimalFinitePathBoundaryConditions", "IAgVAManeuverOptimalFiniteSNOPTOptimizer", 
+"IAgVAManeuverOptimalFiniteSteeringNodeCollection", "IAgVAManeuverOptimalFiniteSteeringNodeElement", "IAgVAMarsGRAM2000", 
+"IAgVAMarsGRAM2001", "IAgVAMarsGRAM2005", "IAgVAMarsGRAM2010", "IAgVAMarsGRAM37", "IAgVANRLMSISE_2000", "IAgVANumericalIntegrator", 
+"IAgVANumericalPropagatorWrapper", "IAgVANumericalPropagatorWrapperCR3BP", "IAgVAPluginProperties", "IAgVAPointMassFunction", 
+"IAgVAPowerInternal", "IAgVAPowerProcessed", "IAgVAPowerSolarArray", "IAgVAProfile", "IAgVAProfileChangeManeuverType", "IAgVAProfileChangePropagator", 
+"IAgVAProfileChangeReturnSegment", "IAgVAProfileChangeStopSegment", "IAgVAProfileChangeStoppingConditionState", "IAgVAProfileCollection", 
+"IAgVAProfileDifferentialCorrector", "IAgVAProfileGoldenSection", "IAgVAProfileGridSearch", "IAgVAProfileIPOPTOptimizer", 
 "IAgVAProfileLambertProfile", "IAgVAProfileLambertSearchProfile", "IAgVAProfileRunOnce", "IAgVAProfileSNOPTOptimizer", "IAgVAProfileScriptingTool", 
 "IAgVAProfileSearchPlugin", "IAgVAProfileSeedFiniteManeuver", "IAgVAPropagatorFunctionCollection", "IAgVARK2nd3rd", "IAgVARK4th", 
 "IAgVARK4th5th", "IAgVARK4thAdapt", "IAgVARKF7th8th", "IAgVARKV8th9th", "IAgVARadiationPressureFunction", "IAgVASNOPTControl", 
@@ -1584,6 +1585,8 @@ class AgEVAElementType(IntEnum):
     eVAElementTypeEquinoctial = 8
     # Geodetic.
     eVAElementTypeGeodetic = 9
+    # BPlane.
+    eVAElementTypeBPlane = 10
 
 AgEVAElementType.eVAElementTypeCartesian.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
 AgEVAElementType.eVAElementTypeKeplerian.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
@@ -1594,6 +1597,7 @@ AgEVAElementType.eVAElementTypeMixedSpherical.__doc__ = "Mixed Spherical."
 AgEVAElementType.eVAElementTypeDelaunay.__doc__ = "Delaunay."
 AgEVAElementType.eVAElementTypeEquinoctial.__doc__ = "Equinoctial."
 AgEVAElementType.eVAElementTypeGeodetic.__doc__ = "Geodetic."
+AgEVAElementType.eVAElementTypeBPlane.__doc__ = "BPlane."
 
 agcls.AgTypeNameMap["AgEVAElementType"] = AgEVAElementType
 
@@ -11665,6 +11669,250 @@ class IAgVAElementGeodetic(IAgVAElement):
 
 agcls.AgClassCatalog.add_catalog_entry("{091F376E-6C32-4567-BE00-D1CE1857B50F}", IAgVAElementGeodetic)
 agcls.AgTypeNameMap["IAgVAElementGeodetic"] = IAgVAElementGeodetic
+
+class IAgVAElementBPlane(IAgVAElement):
+    """Properties for BPlane elements"""
+    _uuid = "{83490C08-4958-4B0E-8AE9-E6795F70211A}"
+    _num_methods = 26
+    _vtable_offset = IAgVAElement._vtable_offset + IAgVAElement._num_methods
+    def __init__(self, sourceObject=None):
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_GetRightAscensionOfBPlane"] = _raise_uninitialized_error
+        self.__dict__["_SetRightAscensionOfBPlane"] = _raise_uninitialized_error
+        self.__dict__["_GetDeclinationOfBPlane"] = _raise_uninitialized_error
+        self.__dict__["_SetDeclinationOfBPlane"] = _raise_uninitialized_error
+        self.__dict__["_GetBDotRFirstBVector"] = _raise_uninitialized_error
+        self.__dict__["_SetBDotRFirstBVector"] = _raise_uninitialized_error
+        self.__dict__["_GetBDotTSecondBVector"] = _raise_uninitialized_error
+        self.__dict__["_SetBDotTSecondBVector"] = _raise_uninitialized_error
+        self.__dict__["_GetHyperbolicTurningAngle"] = _raise_uninitialized_error
+        self.__dict__["_SetHyperbolicTurningAngle"] = _raise_uninitialized_error
+        self.__dict__["_GetOrbitalC3Energy"] = _raise_uninitialized_error
+        self.__dict__["_SetOrbitalC3Energy"] = _raise_uninitialized_error
+        self.__dict__["_GetHyperbolicVInfinity"] = _raise_uninitialized_error
+        self.__dict__["_SetHyperbolicVInfinity"] = _raise_uninitialized_error
+        self.__dict__["_GetSemiMajorAxis"] = _raise_uninitialized_error
+        self.__dict__["_SetSemiMajorAxis"] = _raise_uninitialized_error
+        self.__dict__["_GetBDotTFirstBVector"] = _raise_uninitialized_error
+        self.__dict__["_SetBDotTFirstBVector"] = _raise_uninitialized_error
+        self.__dict__["_GetBThetaFirstBVector"] = _raise_uninitialized_error
+        self.__dict__["_SetBThetaFirstBVector"] = _raise_uninitialized_error
+        self.__dict__["_GetBDotRSecondBVector"] = _raise_uninitialized_error
+        self.__dict__["_SetBDotRSecondBVector"] = _raise_uninitialized_error
+        self.__dict__["_GetBMagSecondBVector"] = _raise_uninitialized_error
+        self.__dict__["_SetBMagSecondBVector"] = _raise_uninitialized_error
+        self.__dict__["_GetTrueAnomaly"] = _raise_uninitialized_error
+        self.__dict__["_SetTrueAnomaly"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgVAElementBPlane._uuid))
+            if pUnk is not None:
+                self._private_init(pUnk)
+                del(pUnk)
+            else:
+                raise STKInvalidCastError("Failed to create IAgVAElementBPlane from source object.")
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IAgVAElement._private_init(self, pUnk)
+        IID_IAgVAElementBPlane = agcom.GUID(IAgVAElementBPlane._uuid)
+        vtable_offset_local = IAgVAElementBPlane._vtable_offset - 1
+        self.__dict__["_GetRightAscensionOfBPlane"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetRightAscensionOfBPlane"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetDeclinationOfBPlane"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetDeclinationOfBPlane"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_GetBDotRFirstBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetBDotRFirstBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_GetBDotTSecondBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetBDotTSecondBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_GetHyperbolicTurningAngle"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+9, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetHyperbolicTurningAngle"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+10, agcom.DOUBLE)
+        self.__dict__["_GetOrbitalC3Energy"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+11, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetOrbitalC3Energy"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+12, agcom.DOUBLE)
+        self.__dict__["_GetHyperbolicVInfinity"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+13, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetHyperbolicVInfinity"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+14, agcom.DOUBLE)
+        self.__dict__["_GetSemiMajorAxis"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+15, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetSemiMajorAxis"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+16, agcom.DOUBLE)
+        self.__dict__["_GetBDotTFirstBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+17, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetBDotTFirstBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+18, agcom.DOUBLE)
+        self.__dict__["_GetBThetaFirstBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+19, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetBThetaFirstBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+20, agcom.DOUBLE)
+        self.__dict__["_GetBDotRSecondBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+21, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetBDotRSecondBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+22, agcom.DOUBLE)
+        self.__dict__["_GetBMagSecondBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+23, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetBMagSecondBVector"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+24, agcom.DOUBLE)
+        self.__dict__["_GetTrueAnomaly"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+25, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetTrueAnomaly"] = IAGFUNCTYPE(pUnk, IID_IAgVAElementBPlane, vtable_offset_local+26, agcom.DOUBLE)
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        if attrname in IAgVAElementBPlane.__dict__ and type(IAgVAElementBPlane.__dict__[attrname]) == property:
+            return IAgVAElementBPlane.__dict__[attrname]
+        return None
+    def __setattr__(self, attrname, value):
+        if self._get_property(attrname) is not None:
+            self._get_property(attrname).__set__(self, value)
+        else:
+            IAgVAElement.__setattr__(self, attrname, value)
+    
+    @property
+    def RightAscensionOfBPlane(self) -> float:
+        """Right Ascension of the B-Plane Normal."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetRightAscensionOfBPlane"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @RightAscensionOfBPlane.setter
+    def RightAscensionOfBPlane(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetRightAscensionOfBPlane"](arg_newVal.COM_val))
+
+    @property
+    def DeclinationOfBPlane(self) -> float:
+        """Declination of the B-Plane Normal."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetDeclinationOfBPlane"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @DeclinationOfBPlane.setter
+    def DeclinationOfBPlane(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetDeclinationOfBPlane"](arg_newVal.COM_val))
+
+    @property
+    def BDotRFirstBVector(self) -> float:
+        """B vector dotted with R vector."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetBDotRFirstBVector"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @BDotRFirstBVector.setter
+    def BDotRFirstBVector(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetBDotRFirstBVector"](arg_newVal.COM_val))
+
+    @property
+    def BDotTSecondBVector(self) -> float:
+        """B vector dotted with T vector."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetBDotTSecondBVector"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @BDotTSecondBVector.setter
+    def BDotTSecondBVector(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetBDotTSecondBVector"](arg_newVal.COM_val))
+
+    @property
+    def HyperbolicTurningAngle(self) -> float:
+        """Hyperbolic turning angle."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetHyperbolicTurningAngle"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @HyperbolicTurningAngle.setter
+    def HyperbolicTurningAngle(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetHyperbolicTurningAngle"](arg_newVal.COM_val))
+
+    @property
+    def OrbitalC3Energy(self) -> float:
+        """Orbital C3 Energy."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetOrbitalC3Energy"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @OrbitalC3Energy.setter
+    def OrbitalC3Energy(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetOrbitalC3Energy"](arg_newVal.COM_val))
+
+    @property
+    def HyperbolicVInfinity(self) -> float:
+        """Hyperbolic V infinity."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetHyperbolicVInfinity"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @HyperbolicVInfinity.setter
+    def HyperbolicVInfinity(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetHyperbolicVInfinity"](arg_newVal.COM_val))
+
+    @property
+    def SemiMajorAxis(self) -> float:
+        """Semi-major axis."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetSemiMajorAxis"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @SemiMajorAxis.setter
+    def SemiMajorAxis(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetSemiMajorAxis"](arg_newVal.COM_val))
+
+    @property
+    def BDotTFirstBVector(self) -> float:
+        """B vector dotted with T vector used as the first quantity to define the B vector."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetBDotTFirstBVector"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @BDotTFirstBVector.setter
+    def BDotTFirstBVector(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetBDotTFirstBVector"](arg_newVal.COM_val))
+
+    @property
+    def BThetaFirstBVector(self) -> float:
+        """Angle between the B vector and T vector used as the first quantity to define the B vector."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetBThetaFirstBVector"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @BThetaFirstBVector.setter
+    def BThetaFirstBVector(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetBThetaFirstBVector"](arg_newVal.COM_val))
+
+    @property
+    def BDotRSecondBVector(self) -> float:
+        """B vector dotted with T vector used as the second quantity to define the B vector."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetBDotRSecondBVector"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @BDotRSecondBVector.setter
+    def BDotRSecondBVector(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetBDotRSecondBVector"](arg_newVal.COM_val))
+
+    @property
+    def BMagSecondBVector(self) -> float:
+        """Magnitude of the B vector used as the second quantity to define the B vector."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetBMagSecondBVector"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @BMagSecondBVector.setter
+    def BMagSecondBVector(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetBMagSecondBVector"](arg_newVal.COM_val))
+
+    @property
+    def TrueAnomaly(self) -> float:
+        """True Anomaly."""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetTrueAnomaly"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @TrueAnomaly.setter
+    def TrueAnomaly(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetTrueAnomaly"](arg_newVal.COM_val))
+
+
+agcls.AgClassCatalog.add_catalog_entry("{83490C08-4958-4B0E-8AE9-E6795F70211A}", IAgVAElementBPlane)
+agcls.AgTypeNameMap["IAgVAElementBPlane"] = IAgVAElementBPlane
 
 class IAgVAStoppingCondition(IAgVAStoppingConditionComponent):
     """Basic properties for a stopping condition."""
@@ -47707,6 +47955,30 @@ class AgVAElementGeodetic(IAgVAElementGeodetic, IAgVAElement):
             raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementGeodetic.")
         
 agcls.AgClassCatalog.add_catalog_entry("{6E74D006-FB3C-4085-810E-9B1E5AE73905}", AgVAElementGeodetic)
+
+
+class AgVAElementBPlane(IAgVAElementBPlane, IAgVAElement):
+    """Bplane elements."""
+    def __init__(self, sourceObject=None):
+        IAgVAElementBPlane.__init__(self, sourceObject)
+        IAgVAElement.__init__(self, sourceObject)
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IAgVAElementBPlane._private_init(self, pUnk)
+        IAgVAElement._private_init(self, pUnk)
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        found_prop = None
+        if IAgVAElementBPlane._get_property(self, attrname) is not None: found_prop = IAgVAElementBPlane._get_property(self, attrname)
+        if IAgVAElement._get_property(self, attrname) is not None: found_prop = IAgVAElement._get_property(self, attrname)
+        if found_prop is not None:
+            found_prop.__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in AgVAElementBPlane.")
+        
+agcls.AgClassCatalog.add_catalog_entry("{3F43BB61-B15A-479A-AE38-567C7FEE6A7B}", AgVAElementBPlane)
 
 
 class AgVAMCSPropagate(IAgVAMCSSegment, IAgVAMCSPropagate, IAgComponentInfo, IAgCloneable, IAgRuntimeTypeInfoProvider):

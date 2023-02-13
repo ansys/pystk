@@ -1780,8 +1780,8 @@ class IAgUiAxVOCntrl(object):
         self.__dict__["_GetBackColor"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
         self.__dict__["_SetBackColor"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
         self.__dict__["_GetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+4, POINTER(agcom.PVOID))
-        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+5, POINTER(agcom.PVOID))
+        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+5, agcom.PVOID)
         self.__dict__["_PickInfo"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+6, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
         self.__dict__["_GetWinID"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+7, POINTER(agcom.LONG))
         self.__dict__["_SetWinID"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxVOCntrl, vtable_offset_local+8, agcom.LONG)
@@ -1853,20 +1853,20 @@ class IAgUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_SetBackColor"](arg_clr.COM_val))
 
     @property
-    def Picture(self) -> IPictureDisp:
+    def Picture(self) -> "IPictureDisp":
         """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
             agcls.evaluate_hresult(self.__dict__["_GetPicture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def PicturePutRef(self, pPicture:IPictureDisp) -> None:
-        with agmarshall.PVOID_arg(pPicture) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](byref(arg_pPicture.COM_val)))
+    def PicturePutRef(self, pPicture:"IPictureDisp") -> None:
+        with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
+            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](arg_pPicture.COM_val))
 
     @Picture.setter
-    def Picture(self, pPicture:IPictureDisp) -> None:
-        with agmarshall.PVOID_arg(pPicture) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_SetPicture"](byref(arg_pPicture.COM_val)))
+    def Picture(self, pPicture:"IPictureDisp") -> None:
+        with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
+            agcls.evaluate_hresult(self.__dict__["_SetPicture"](arg_pPicture.COM_val))
 
     def PickInfo(self, x:int, y:int) -> "IAgPickInfoData":
         """Get detailed information about a mouse pick."""
@@ -2197,8 +2197,8 @@ class IAgUiAx2DCntrl(object):
         self.__dict__["_GetBackColor"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
         self.__dict__["_SetBackColor"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
         self.__dict__["_GetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+4, POINTER(agcom.PVOID))
-        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+5, POINTER(agcom.PVOID))
+        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+5, agcom.PVOID)
         self.__dict__["_GetWinID"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+6, POINTER(agcom.LONG))
         self.__dict__["_SetWinID"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+7, agcom.LONG)
         self.__dict__["_ZoomIn"] = IAGFUNCTYPE(pUnk, IID_IAgUiAx2DCntrl, vtable_offset_local+8, )
@@ -2267,20 +2267,20 @@ class IAgUiAx2DCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_SetBackColor"](arg_clr.COM_val))
 
     @property
-    def Picture(self) -> IPictureDisp:
+    def Picture(self) -> "IPictureDisp":
         """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
             agcls.evaluate_hresult(self.__dict__["_GetPicture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def PicturePutRef(self, pPicture:IPictureDisp) -> None:
-        with agmarshall.PVOID_arg(pPicture) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](byref(arg_pPicture.COM_val)))
+    def PicturePutRef(self, pPicture:"IPictureDisp") -> None:
+        with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
+            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](arg_pPicture.COM_val))
 
     @Picture.setter
-    def Picture(self, pPicture:IPictureDisp) -> None:
-        with agmarshall.PVOID_arg(pPicture) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_SetPicture"](byref(arg_pPicture.COM_val)))
+    def Picture(self, pPicture:"IPictureDisp") -> None:
+        with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
+            agcls.evaluate_hresult(self.__dict__["_SetPicture"](arg_pPicture.COM_val))
 
     @property
     def WinID(self) -> int:
@@ -2692,8 +2692,8 @@ class IAgUiAxGfxAnalysisCntrl(object):
         self.__dict__["_GetBackColor"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
         self.__dict__["_SetBackColor"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
         self.__dict__["_GetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+4, POINTER(agcom.PVOID))
-        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+5, POINTER(agcom.PVOID))
+        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+5, agcom.PVOID)
         self.__dict__["_GetNoLogo"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
         self.__dict__["_SetNoLogo"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+7, agcom.VARIANT_BOOL)
         self.__dict__["_GetVendorID"] = IAGFUNCTYPE(pUnk, IID_IAgUiAxGfxAnalysisCntrl, vtable_offset_local+8, POINTER(agcom.BSTR))
@@ -2732,20 +2732,20 @@ class IAgUiAxGfxAnalysisCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_SetBackColor"](arg_clr.COM_val))
 
     @property
-    def Picture(self) -> IPictureDisp:
+    def Picture(self) -> "IPictureDisp":
         """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
             agcls.evaluate_hresult(self.__dict__["_GetPicture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def PicturePutRef(self, pPicture:IPictureDisp) -> None:
-        with agmarshall.PVOID_arg(pPicture) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](byref(arg_pPicture.COM_val)))
+    def PicturePutRef(self, pPicture:"IPictureDisp") -> None:
+        with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
+            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](arg_pPicture.COM_val))
 
     @Picture.setter
-    def Picture(self, pPicture:IPictureDisp) -> None:
-        with agmarshall.PVOID_arg(pPicture) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_SetPicture"](byref(arg_pPicture.COM_val)))
+    def Picture(self, pPicture:"IPictureDisp") -> None:
+        with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
+            agcls.evaluate_hresult(self.__dict__["_SetPicture"](arg_pPicture.COM_val))
 
     @property
     def NoLogo(self) -> bool:

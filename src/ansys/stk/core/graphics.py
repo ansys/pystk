@@ -52,7 +52,8 @@ __all__ = ["AgEStkGraphicsAntiAliasing", "AgEStkGraphicsBinaryLogicOperation", "
 "AgStkGraphicsModelTransformation", "AgStkGraphicsObjectCollection", "AgStkGraphicsOverlay", "AgStkGraphicsPathPoint", "AgStkGraphicsPathPointCollection", 
 "AgStkGraphicsPathPointFactory", "AgStkGraphicsPathPrimitive", "AgStkGraphicsPathPrimitiveFactory", "AgStkGraphicsPathPrimitiveUpdatePolicy", 
 "AgStkGraphicsPickResult", "AgStkGraphicsPickResultCollection", "AgStkGraphicsPixelSizeDisplayCondition", "AgStkGraphicsPixelSizeDisplayConditionFactory", 
-"AgStkGraphicsPointBatchPrimitive", "AgStkGraphicsPointBatchPrimitiveFactory", "AgStkGraphicsPolylinePrimitive", "AgStkGraphicsPolylinePrimitiveFactory", 
+"AgStkGraphicsPointBatchPrimitive", "AgStkGraphicsPointBatchPrimitiveFactory", "AgStkGraphicsPointBatchPrimitiveOptionalParameters", 
+"AgStkGraphicsPointBatchPrimitiveOptionalParametersFactory", "AgStkGraphicsPolylinePrimitive", "AgStkGraphicsPolylinePrimitiveFactory", 
 "AgStkGraphicsPolylinePrimitiveOptionalParameters", "AgStkGraphicsPolylinePrimitiveOptionalParametersFactory", "AgStkGraphicsPositionInterpolator", 
 "AgStkGraphicsPrimitive", "AgStkGraphicsPrimitiveManager", "AgStkGraphicsProjectedRasterOverlay", "AgStkGraphicsProjectedRasterOverlayFactory", 
 "AgStkGraphicsProjection", "AgStkGraphicsProjectionFactory", "AgStkGraphicsProjectionRasterStreamPluginActivator", "AgStkGraphicsProjectionRasterStreamPluginActivatorFactory", 
@@ -113,16 +114,16 @@ __all__ = ["AgEStkGraphicsAntiAliasing", "AgEStkGraphicsBinaryLogicOperation", "
 "IAgStkGraphicsPathPointCollection", "IAgStkGraphicsPathPointFactory", "IAgStkGraphicsPathPrimitive", "IAgStkGraphicsPathPrimitiveFactory", 
 "IAgStkGraphicsPathPrimitiveUpdatePolicy", "IAgStkGraphicsPickResult", "IAgStkGraphicsPickResultCollection", "IAgStkGraphicsPixelSizeDisplayCondition", 
 "IAgStkGraphicsPixelSizeDisplayConditionFactory", "IAgStkGraphicsPointBatchPrimitive", "IAgStkGraphicsPointBatchPrimitiveFactory", 
-"IAgStkGraphicsPolylinePrimitive", "IAgStkGraphicsPolylinePrimitiveFactory", "IAgStkGraphicsPolylinePrimitiveOptionalParameters", 
-"IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory", "IAgStkGraphicsPositionInterpolator", "IAgStkGraphicsPrimitive", 
-"IAgStkGraphicsPrimitiveManager", "IAgStkGraphicsProjectedRasterOverlay", "IAgStkGraphicsProjectedRasterOverlayFactory", 
-"IAgStkGraphicsProjection", "IAgStkGraphicsProjectionFactory", "IAgStkGraphicsProjectionRasterStreamPluginActivator", "IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory", 
-"IAgStkGraphicsProjectionRasterStreamPluginProxy", "IAgStkGraphicsProjectionStream", "IAgStkGraphicsRaster", "IAgStkGraphicsRasterAttributes", 
-"IAgStkGraphicsRasterAttributesFactory", "IAgStkGraphicsRasterFactory", "IAgStkGraphicsRasterFilter", "IAgStkGraphicsRasterImageGlobeOverlay", 
-"IAgStkGraphicsRasterImageGlobeOverlayFactory", "IAgStkGraphicsRasterStream", "IAgStkGraphicsRendererTexture2D", "IAgStkGraphicsRendererTextureTemplate2D", 
-"IAgStkGraphicsRenderingEventArgs", "IAgStkGraphicsRhumbLineInterpolator", "IAgStkGraphicsRhumbLineInterpolatorFactory", 
-"IAgStkGraphicsRotateFilter", "IAgStkGraphicsRotateFilterFactory", "IAgStkGraphicsScene", "IAgStkGraphicsSceneCollection", 
-"IAgStkGraphicsSceneDisplayCondition", "IAgStkGraphicsSceneDisplayConditionFactory", "IAgStkGraphicsSceneGlobeOverlaySettings", 
+"IAgStkGraphicsPointBatchPrimitiveOptionalParameters", "IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory", "IAgStkGraphicsPolylinePrimitive", 
+"IAgStkGraphicsPolylinePrimitiveFactory", "IAgStkGraphicsPolylinePrimitiveOptionalParameters", "IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory", 
+"IAgStkGraphicsPositionInterpolator", "IAgStkGraphicsPrimitive", "IAgStkGraphicsPrimitiveManager", "IAgStkGraphicsProjectedRasterOverlay", 
+"IAgStkGraphicsProjectedRasterOverlayFactory", "IAgStkGraphicsProjection", "IAgStkGraphicsProjectionFactory", "IAgStkGraphicsProjectionRasterStreamPluginActivator", 
+"IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory", "IAgStkGraphicsProjectionRasterStreamPluginProxy", "IAgStkGraphicsProjectionStream", 
+"IAgStkGraphicsRaster", "IAgStkGraphicsRasterAttributes", "IAgStkGraphicsRasterAttributesFactory", "IAgStkGraphicsRasterFactory", 
+"IAgStkGraphicsRasterFilter", "IAgStkGraphicsRasterImageGlobeOverlay", "IAgStkGraphicsRasterImageGlobeOverlayFactory", "IAgStkGraphicsRasterStream", 
+"IAgStkGraphicsRendererTexture2D", "IAgStkGraphicsRendererTextureTemplate2D", "IAgStkGraphicsRenderingEventArgs", "IAgStkGraphicsRhumbLineInterpolator", 
+"IAgStkGraphicsRhumbLineInterpolatorFactory", "IAgStkGraphicsRotateFilter", "IAgStkGraphicsRotateFilterFactory", "IAgStkGraphicsScene", 
+"IAgStkGraphicsSceneCollection", "IAgStkGraphicsSceneDisplayCondition", "IAgStkGraphicsSceneDisplayConditionFactory", "IAgStkGraphicsSceneGlobeOverlaySettings", 
 "IAgStkGraphicsSceneManager", "IAgStkGraphicsSceneManagerInitializer", "IAgStkGraphicsScreenOverlay", "IAgStkGraphicsScreenOverlayCollection", 
 "IAgStkGraphicsScreenOverlayCollectionBase", "IAgStkGraphicsScreenOverlayContainer", "IAgStkGraphicsScreenOverlayFactory", 
 "IAgStkGraphicsScreenOverlayManager", "IAgStkGraphicsScreenOverlayPickResult", "IAgStkGraphicsScreenOverlayPickResultCollection", 
@@ -2815,7 +2816,7 @@ agcls.AgTypeNameMap["IAgStkGraphicsKmlDocumentLoadedEventArgs"] = IAgStkGraphics
 class IAgStkGraphicsFactoryAndInitializers(object):
     """Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a..."""
     _uuid = "{5ccf1ef3-48a0-4b22-9fcf-c32eae3f8d69}"
-    _num_methods = 82
+    _num_methods = 83
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -2901,6 +2902,7 @@ class IAgStkGraphicsFactoryAndInitializers(object):
         self.__dict__["_GetAxesPrimitive"] = _raise_uninitialized_error
         self.__dict__["_GetVectorPrimitive"] = _raise_uninitialized_error
         self.__dict__["_GetPolylinePrimitiveOptionalParameters"] = _raise_uninitialized_error
+        self.__dict__["_GetPointBatchPrimitiveOptionalParameters"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgStkGraphicsFactoryAndInitializers._uuid))
             if pUnk is not None:
@@ -2994,6 +2996,7 @@ class IAgStkGraphicsFactoryAndInitializers(object):
         self.__dict__["_GetAxesPrimitive"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsFactoryAndInitializers, vtable_offset_local+80, POINTER(agcom.PVOID))
         self.__dict__["_GetVectorPrimitive"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsFactoryAndInitializers, vtable_offset_local+81, POINTER(agcom.PVOID))
         self.__dict__["_GetPolylinePrimitiveOptionalParameters"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsFactoryAndInitializers, vtable_offset_local+82, POINTER(agcom.PVOID))
+        self.__dict__["_GetPointBatchPrimitiveOptionalParameters"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsFactoryAndInitializers, vtable_offset_local+83, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3579,6 +3582,13 @@ class IAgStkGraphicsFactoryAndInitializers(object):
         """Access global methods and properties of PolylinePrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetPolylinePrimitiveOptionalParameters"](byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+    @property
+    def PointBatchPrimitiveOptionalParameters(self) -> "IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory":
+        """Access global methods and properties of PointBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetPointBatchPrimitiveOptionalParameters"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -4352,7 +4362,7 @@ class IAgStkGraphicsCustomImageGlobeOverlay(object):
         self.__dict__["_ShutDown"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsCustomImageGlobeOverlay, vtable_offset_local+5, agcom.PVOID)
         self.__dict__["_ClearCache"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsCustomImageGlobeOverlay, vtable_offset_local+6, )
         self.__dict__["_Reload"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsCustomImageGlobeOverlay, vtable_offset_local+7, )
-        self.__dict__["_Read"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsCustomImageGlobeOverlay, vtable_offset_local+8, POINTER(agcom.SAFEARRAY), agcom.VARIANT, POINTER(agcom.PVOID), POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_Read"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsCustomImageGlobeOverlay, vtable_offset_local+8, POINTER(agcom.SAFEARRAY), agcom.VARIANT, agcom.PVOID, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -4405,13 +4415,13 @@ class IAgStkGraphicsCustomImageGlobeOverlay(object):
         """Reloads the image data associated with this instance. Preserves the current image data until new image data replaces it."""
         agcls.evaluate_hresult(self.__dict__["_Reload"]())
 
-    def Read(self, extent:list, userTileData:typing.Any, image:IPictureDisp) -> bool:
+    def Read(self, extent:list, userTileData:typing.Any, image:"IPictureDisp") -> bool:
         """Reads a tile from the specified extent, scales it to and stores the result in image."""
         with agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
              agmarshall.VARIANT_arg(userTileData) as arg_userTileData, \
-             agmarshall.PVOID_arg(image) as arg_image, \
+             agmarshall.PVOID_arg(image, IPictureDisp) as arg_image, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_Read"](byref(arg_extent.COM_val), arg_userTileData.COM_val, byref(arg_image.COM_val), byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_Read"](byref(arg_extent.COM_val), arg_userTileData.COM_val, arg_image.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
 
@@ -12870,7 +12880,7 @@ agcls.AgTypeNameMap["IAgStkGraphicsPixelSizeDisplayCondition"] = IAgStkGraphicsP
 class IAgStkGraphicsPointBatchPrimitive(object):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
     _uuid = "{ae6c6dca-3afe-4419-8aad-dd56bee51446}"
-    _num_methods = 33
+    _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -12907,6 +12917,7 @@ class IAgStkGraphicsPointBatchPrimitive(object):
         self.__dict__["_SetPartialCartographicWithColorsIndicesOrderAndRenderPass"] = _raise_uninitialized_error
         self.__dict__["_GetCentralBodyClipped"] = _raise_uninitialized_error
         self.__dict__["_SetCentralBodyClipped"] = _raise_uninitialized_error
+        self.__dict__["_SetWithOptionalParameters"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgStkGraphicsPointBatchPrimitive._uuid))
             if pUnk is not None:
@@ -12951,6 +12962,7 @@ class IAgStkGraphicsPointBatchPrimitive(object):
         self.__dict__["_SetPartialCartographicWithColorsIndicesOrderAndRenderPass"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsPointBatchPrimitive, vtable_offset_local+31, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY), agcom.LONG, agcom.LONG)
         self.__dict__["_GetCentralBodyClipped"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsPointBatchPrimitive, vtable_offset_local+32, POINTER(agcom.VARIANT_BOOL))
         self.__dict__["_SetCentralBodyClipped"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsPointBatchPrimitive, vtable_offset_local+33, agcom.VARIANT_BOOL)
+        self.__dict__["_SetWithOptionalParameters"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsPointBatchPrimitive, vtable_offset_local+34, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY), agcom.PVOID, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -13182,9 +13194,59 @@ class IAgStkGraphicsPointBatchPrimitive(object):
         with agmarshall.VARIANT_BOOL_arg(centralBodyClipped) as arg_centralBodyClipped:
             agcls.evaluate_hresult(self.__dict__["_SetCentralBodyClipped"](arg_centralBodyClipped.COM_val))
 
+    def SetWithOptionalParameters(self, positions:list, colors:list, optionalParameters:"IAgStkGraphicsPointBatchPrimitiveOptionalParameters", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+        """Defines the positions, colors, and optional parameters of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
+        with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
+             agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
+             agmarshall.AgInterface_in_arg(optionalParameters, IAgStkGraphicsPointBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
+             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+            agcls.evaluate_hresult(self.__dict__["_SetWithOptionalParameters"](byref(arg_positions.COM_val), byref(arg_colors.COM_val), arg_optionalParameters.COM_val, arg_renderPassHint.COM_val))
+
 
 agcls.AgClassCatalog.add_catalog_entry("{ae6c6dca-3afe-4419-8aad-dd56bee51446}", IAgStkGraphicsPointBatchPrimitive)
 agcls.AgTypeNameMap["IAgStkGraphicsPointBatchPrimitive"] = IAgStkGraphicsPointBatchPrimitive
+
+class IAgStkGraphicsPointBatchPrimitiveOptionalParameters(object):
+    """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
+    _uuid = "{e8b88732-1377-483c-bf19-ffafeb1d8d52}"
+    _num_methods = 1
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    def __init__(self, sourceObject=None):
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_SetPixelSizes"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgStkGraphicsPointBatchPrimitiveOptionalParameters._uuid))
+            if pUnk is not None:
+                self._private_init(pUnk)
+                del(pUnk)
+            else:
+                raise STKInvalidCastError("Failed to create IAgStkGraphicsPointBatchPrimitiveOptionalParameters from source object.")
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IID_IAgStkGraphicsPointBatchPrimitiveOptionalParameters = agcom.GUID(IAgStkGraphicsPointBatchPrimitiveOptionalParameters._uuid)
+        vtable_offset_local = IAgStkGraphicsPointBatchPrimitiveOptionalParameters._vtable_offset - 1
+        self.__dict__["_SetPixelSizes"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsPointBatchPrimitiveOptionalParameters, vtable_offset_local+1, POINTER(agcom.SAFEARRAY))
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        if attrname in IAgStkGraphicsPointBatchPrimitiveOptionalParameters.__dict__ and type(IAgStkGraphicsPointBatchPrimitiveOptionalParameters.__dict__[attrname]) == property:
+            return IAgStkGraphicsPointBatchPrimitiveOptionalParameters.__dict__[attrname]
+        return None
+    def __setattr__(self, attrname, value):
+        if self._get_property(attrname) is not None:
+            self._get_property(attrname).__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAgStkGraphicsPointBatchPrimitiveOptionalParameters.")
+    
+    def SetPixelSizes(self, pixelSizes:list) -> None:
+        """Defines a collection of pixel sizes, one for each point in the point batch."""
+        with agmarshall.SAFEARRAY_arg(pixelSizes) as arg_pixelSizes:
+            agcls.evaluate_hresult(self.__dict__["_SetPixelSizes"](byref(arg_pixelSizes.COM_val)))
+
+
+agcls.AgClassCatalog.add_catalog_entry("{e8b88732-1377-483c-bf19-ffafeb1d8d52}", IAgStkGraphicsPointBatchPrimitiveOptionalParameters)
+agcls.AgTypeNameMap["IAgStkGraphicsPointBatchPrimitiveOptionalParameters"] = IAgStkGraphicsPointBatchPrimitiveOptionalParameters
 
 class IAgStkGraphicsPolylinePrimitive(object):
     """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
@@ -20642,6 +20704,49 @@ class IAgStkGraphicsPointBatchPrimitiveFactory(object):
 agcls.AgClassCatalog.add_catalog_entry("{5dd03481-3541-486c-973f-f079eb35973c}", IAgStkGraphicsPointBatchPrimitiveFactory)
 agcls.AgTypeNameMap["IAgStkGraphicsPointBatchPrimitiveFactory"] = IAgStkGraphicsPointBatchPrimitiveFactory
 
+class IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory(object):
+    """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
+    _uuid = "{b108564a-969c-43cb-97ce-e96dc0c7001c}"
+    _num_methods = 1
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    def __init__(self, sourceObject=None):
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_Initialize"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory._uuid))
+            if pUnk is not None:
+                self._private_init(pUnk)
+                del(pUnk)
+            else:
+                raise STKInvalidCastError("Failed to create IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory from source object.")
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IID_IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory = agcom.GUID(IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory._uuid)
+        vtable_offset_local = IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory._vtable_offset - 1
+        self.__dict__["_Initialize"] = IAGFUNCTYPE(pUnk, IID_IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory, vtable_offset_local+1, POINTER(agcom.PVOID))
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        if attrname in IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory.__dict__ and type(IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory.__dict__[attrname]) == property:
+            return IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory.__dict__[attrname]
+        return None
+    def __setattr__(self, attrname, value):
+        if self._get_property(attrname) is not None:
+            self._get_property(attrname).__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory.")
+    
+    def Initialize(self) -> "IAgStkGraphicsPointBatchPrimitiveOptionalParameters":
+        """Initializes a default point batch primitive optional parameters object."""
+        with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
+            agcls.evaluate_hresult(self.__dict__["_Initialize"](byref(arg_ppRetVal.COM_val)))
+            return arg_ppRetVal.python_val
+
+
+agcls.AgClassCatalog.add_catalog_entry("{b108564a-969c-43cb-97ce-e96dc0c7001c}", IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory)
+agcls.AgTypeNameMap["IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory"] = IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory
+
 class IAgStkGraphicsPolylinePrimitiveFactory(object):
     """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
     _uuid = "{16a27023-42d5-4994-9ace-165e027e72d8}"
@@ -24444,6 +24549,27 @@ class AgStkGraphicsPointBatchPrimitive(IAgStkGraphicsPointBatchPrimitive, IAgStk
 agcls.AgClassCatalog.add_catalog_entry("{D8019323-F9C3-4238-BB4C-CD917C83E0F6}", AgStkGraphicsPointBatchPrimitive)
 
 
+class AgStkGraphicsPointBatchPrimitiveOptionalParameters(IAgStkGraphicsPointBatchPrimitiveOptionalParameters):
+    """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
+    def __init__(self, sourceObject=None):
+        IAgStkGraphicsPointBatchPrimitiveOptionalParameters.__init__(self, sourceObject)
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IAgStkGraphicsPointBatchPrimitiveOptionalParameters._private_init(self, pUnk)
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        found_prop = None
+        if IAgStkGraphicsPointBatchPrimitiveOptionalParameters._get_property(self, attrname) is not None: found_prop = IAgStkGraphicsPointBatchPrimitiveOptionalParameters._get_property(self, attrname)
+        if found_prop is not None:
+            found_prop.__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPointBatchPrimitiveOptionalParameters.")
+        
+agcls.AgClassCatalog.add_catalog_entry("{944f2ade-d0e5-4896-a1e2-28b1c9e74f08}", AgStkGraphicsPointBatchPrimitiveOptionalParameters)
+
+
 class AgStkGraphicsPolylinePrimitive(IAgStkGraphicsPolylinePrimitive, IAgStkGraphicsPrimitive):
     """Renders a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
     def __init__(self, sourceObject=None):
@@ -26359,6 +26485,27 @@ class AgStkGraphicsPointBatchPrimitiveFactory(IAgStkGraphicsPointBatchPrimitiveF
             raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPointBatchPrimitiveFactory.")
         
 agcls.AgClassCatalog.add_catalog_entry("{B497A3DE-DF9F-4EFD-8CB8-2767415F4889}", AgStkGraphicsPointBatchPrimitiveFactory)
+
+
+class AgStkGraphicsPointBatchPrimitiveOptionalParametersFactory(IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory):
+    """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
+    def __init__(self, sourceObject=None):
+        IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory._private_init(self, pUnk)
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        found_prop = None
+        if IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory._get_property(self, attrname) is not None: found_prop = IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory._get_property(self, attrname)
+        if found_prop is not None:
+            found_prop.__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in AgStkGraphicsPointBatchPrimitiveOptionalParametersFactory.")
+        
+agcls.AgClassCatalog.add_catalog_entry("{aa54a6e1-f927-48b6-8a29-7b718bb0cb7b}", AgStkGraphicsPointBatchPrimitiveOptionalParametersFactory)
 
 
 class AgStkGraphicsPolylinePrimitiveFactory(IAgStkGraphicsPolylinePrimitiveFactory):

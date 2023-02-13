@@ -126,6 +126,20 @@ class STKEngineApplication(AgSTKXApplication):
             root._private_init(root_unk)
             return root
 
+    def NewObjectModelContext(self) -> AgStkObjectModelContext:
+        """Create a new object model context for the STK Engine application."""
+        if not self.__dict__['_initialized']:
+            raise RuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
+        CLSID_AgStkObjectModelContext = GUID()
+        if Succeeded(ole32lib.CLSIDFromString('{7A12879C-5018-4433-8415-5DB250AFBAF9}', CLSID_AgStkObjectModelContext)):
+            IID_IUnknown = GUID(IUnknown._guid)
+            context_unk = IUnknown()
+            ole32lib.CoCreateInstance(byref(CLSID_AgStkObjectModelContext), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(context_unk.p))
+            context_unk.TakeOwnership()
+            context = AgStkObjectModelContext()
+            context._private_init(context_unk)
+            return context
+
     def ShutDown(self) -> None:
         """Shut down the STK Engine application."""
         if self._initialized:

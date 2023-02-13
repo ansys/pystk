@@ -122,6 +122,7 @@ Interfaces
     IAgStkGraphicsPickResult
     IAgStkGraphicsPixelSizeDisplayCondition
     IAgStkGraphicsPointBatchPrimitive
+    IAgStkGraphicsPointBatchPrimitiveOptionalParameters
     IAgStkGraphicsPolylinePrimitive
     IAgStkGraphicsPolylinePrimitiveOptionalParameters
     IAgStkGraphicsPositionInterpolator
@@ -210,6 +211,7 @@ Interfaces
     IAgStkGraphicsPathPrimitiveFactory
     IAgStkGraphicsPixelSizeDisplayConditionFactory
     IAgStkGraphicsPointBatchPrimitiveFactory
+    IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory
     IAgStkGraphicsPolylinePrimitiveFactory
     IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory
     IAgStkGraphicsRasterImageGlobeOverlayFactory
@@ -409,6 +411,7 @@ Classes
     AgStkGraphicsPickResult
     AgStkGraphicsPixelSizeDisplayCondition
     AgStkGraphicsPointBatchPrimitive
+    AgStkGraphicsPointBatchPrimitiveOptionalParameters
     AgStkGraphicsPolylinePrimitive
     AgStkGraphicsPolylinePrimitiveOptionalParameters
     AgStkGraphicsPositionInterpolator
@@ -497,6 +500,7 @@ Classes
     AgStkGraphicsPathPrimitiveFactory
     AgStkGraphicsPixelSizeDisplayConditionFactory
     AgStkGraphicsPointBatchPrimitiveFactory
+    AgStkGraphicsPointBatchPrimitiveOptionalParametersFactory
     AgStkGraphicsPolylinePrimitiveFactory
     AgStkGraphicsPolylinePrimitiveOptionalParametersFactory
     AgStkGraphicsRasterImageGlobeOverlayFactory
@@ -863,6 +867,9 @@ Interfaces
 .. autoclass:: IAgStkGraphicsPointBatchPrimitive
     :members:
     :exclude-members: __init__
+.. autoclass:: IAgStkGraphicsPointBatchPrimitiveOptionalParameters
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IAgStkGraphicsPolylinePrimitive
     :members:
     :exclude-members: __init__
@@ -1125,6 +1132,9 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IAgStkGraphicsPointBatchPrimitiveFactory
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgStkGraphicsPointBatchPrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
 .. autoclass:: IAgStkGraphicsPolylinePrimitiveFactory
@@ -1638,6 +1648,9 @@ Classes
 .. autoclass:: AgStkGraphicsPointBatchPrimitive
     :members:
     :exclude-members: __init__
+.. autoclass:: AgStkGraphicsPointBatchPrimitiveOptionalParameters
+    :members:
+    :exclude-members: __init__
 .. autoclass:: AgStkGraphicsPolylinePrimitive
     :members:
     :exclude-members: __init__
@@ -1900,6 +1913,9 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: AgStkGraphicsPointBatchPrimitiveFactory
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgStkGraphicsPointBatchPrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
 .. autoclass:: AgStkGraphicsPolylinePrimitiveFactory

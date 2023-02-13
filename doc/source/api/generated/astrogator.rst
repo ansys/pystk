@@ -78,6 +78,7 @@ Interfaces
     IAgVAElementTargetVectorIncomingAsymptote
     IAgVAElementTargetVectorOutgoingAsymptote
     IAgVAElementGeodetic
+    IAgVAElementBPlane
     IAgVAStoppingCondition
     IAgVALightingStoppingCondition
     IAgVAAccessStoppingCondition
@@ -558,6 +559,7 @@ Classes
     AgVAElementTargetVectorIncomingAsymptote
     AgVAElementTargetVectorOutgoingAsymptote
     AgVAElementGeodetic
+    AgVAElementBPlane
     AgVAMCSPropagate
     AgVAState
     AgVAStoppingConditionCollection
@@ -1130,6 +1132,9 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IAgVAElementGeodetic
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAgVAElementBPlane
     :members:
     :exclude-members: __init__
 .. autoclass:: IAgVAStoppingCondition
@@ -2407,6 +2412,9 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: AgVAElementGeodetic
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgVAElementBPlane
     :members:
     :exclude-members: __init__
 .. autoclass:: AgVAMCSPropagate

@@ -100,6 +100,12 @@ class STKDesktopApplication(AgUiApplication):
             self.__dict__["_root"] = self.Personality2
             return self.__dict__["_root"]
             
+    def NewObjectModelContext(self) -> AgStkObjectModelContext:
+        '''
+        Create a new object model context for the STK Desktop application.
+        '''
+        return self.CreateObject("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
+    
     def ShutDown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
         if self.__dict__["_pUnk"] is not None:
