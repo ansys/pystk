@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "ansys-stk-core"
-version = "0.1.dev0"
+dynamic = ["version"]
 description = "A Python API for STK"
 readme = "README.rst"
 requires-python = ">=3.6"
@@ -23,18 +23,17 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "importlib-metadata >=4.0",
 ]
 
 [project.optional-dependencies]
 tests = [
-    "pytest==7.2.0",
+    "pytest==7.2.1",
     "pytest-cov==4.0.0",
 ]
 doc = [
-    "ansys-sphinx-theme==0.8.0",
+    "ansys-sphinx-theme==0.8.2",
     "numpydoc==1.5.0",
-    "sphinx==6.1.1",
+    "sphinx==5.3.0",
     "sphinx-copybutton==0.5.1",
     "enum-tools[sphinx]==0.9.0.post1",
 ]
