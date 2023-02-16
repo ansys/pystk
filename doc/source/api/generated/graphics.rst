@@ -9,226 +9,228 @@ Interfaces
 
 .. autosummary::
 
-    IAgStkGraphicsPathPoint
-    IAgStkGraphicsPathPointFactory
-    IAgStkGraphicsBoundingSphere
-    IAgStkGraphicsBoundingSphereFactory
-    IAgStkGraphicsTextureFilter2D
-    IAgStkGraphicsTextureFilter2DFactory
-    IAgStkGraphicsRendererTexture2D
-    IAgStkGraphicsRendererTextureTemplate2D
-    IAgStkGraphicsPathPointCollection
-    IAgStkGraphicsObjectCollection
-    IAgStkGraphicsSceneCollection
-    IAgStkGraphicsScreenOverlayContainer
-    IAgStkGraphicsScreenOverlayPickResultCollection
-    IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs
-    IAgStkGraphicsTerrainOverlayAddCompleteEventArgs
-    IAgStkGraphicsPickResultCollection
-    IAgStkGraphicsRenderingEventArgs
-    IAgStkGraphicsBatchPrimitiveIndex
-    IAgStkGraphicsKmlDocumentCollection
-    IAgStkGraphicsKmlFeatureCollection
-    IAgStkGraphicsKmlDocumentLoadedEventArgs
-    IAgStkGraphicsFactoryAndInitializers
-    IAgStkGraphicsExtrudedPolylineTriangulatorResult
-    IAgStkGraphicsSolidTriangulatorResult
-    IAgStkGraphicsSurfaceShapesResult
-    IAgStkGraphicsSurfaceTriangulatorResult
-    IAgStkGraphicsTriangulatorResult
-    IAgStkGraphicsAGICustomTerrainOverlay
-    IAgStkGraphicsAGIProcessedImageGlobeOverlay
-    IAgStkGraphicsAGIProcessedTerrainOverlay
-    IAgStkGraphicsAGIRoamImageGlobeOverlay
-    IAgStkGraphicsCameraSnapshot
-    IAgStkGraphicsCameraVideoRecording
-    IAgStkGraphicsCentralBodyGraphicsIndexer
-    IAgStkGraphicsCustomImageGlobeOverlay
-    IAgStkGraphicsCustomImageGlobeOverlayPluginActivator
-    IAgStkGraphicsCustomImageGlobeOverlayPluginProxy
-    IAgStkGraphicsGeospatialImageGlobeOverlay
-    IAgStkGraphicsGlobeOverlay
-    IAgStkGraphicsGlobeOverlaySettings
-    IAgStkGraphicsLighting
-    IAgStkGraphicsPathPrimitiveUpdatePolicy
-    IAgStkGraphicsProjectedRasterOverlay
-    IAgStkGraphicsProjection
-    IAgStkGraphicsProjectionStream
-    IAgStkGraphicsSceneGlobeOverlaySettings
-    IAgStkGraphicsScreenOverlayCollectionBase
-    IAgStkGraphicsTexture2DFactory
-    IAgStkGraphicsVisualEffects
-    IAgStkGraphicsAltitudeDisplayCondition
-    IAgStkGraphicsAxesPrimitive
-    IAgStkGraphicsCamera
-    IAgStkGraphicsCentralBodyGraphics
-    IAgStkGraphicsClouds
-    IAgStkGraphicsCompositeDisplayCondition
-    IAgStkGraphicsCompositePrimitive
-    IAgStkGraphicsConstantDisplayCondition
-    IAgStkGraphicsDisplayCondition
-    IAgStkGraphicsDistanceDisplayCondition
-    IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition
-    IAgStkGraphicsDistanceToPositionDisplayCondition
-    IAgStkGraphicsDistanceToPrimitiveDisplayCondition
-    IAgStkGraphicsDurationPathPrimitiveUpdatePolicy
-    IAgStkGraphicsFrameRate
-    IAgStkGraphicsGlobeImageOverlay
-    IAgStkGraphicsGraphicsFont
-    IAgStkGraphicsGreatArcInterpolator
-    IAgStkGraphicsImageCollection
-    IAgStkGraphicsAlphaFromLuminanceFilter
-    IAgStkGraphicsAlphaFromPixelFilter
-    IAgStkGraphicsAlphaFromRasterFilter
-    IAgStkGraphicsBandExtractFilter
-    IAgStkGraphicsBandOrderFilter
-    IAgStkGraphicsBlurFilter
-    IAgStkGraphicsBrightnessFilter
-    IAgStkGraphicsColorToLuminanceFilter
-    IAgStkGraphicsContrastFilter
-    IAgStkGraphicsConvolutionFilter
-    IAgStkGraphicsEdgeDetectFilter
-    IAgStkGraphicsFilteringRasterStream
-    IAgStkGraphicsFlipFilter
-    IAgStkGraphicsGammaCorrectionFilter
-    IAgStkGraphicsGaussianBlurFilter
-    IAgStkGraphicsGradientDetectFilter
-    IAgStkGraphicsLevelsFilter
-    IAgStkGraphicsProjectionRasterStreamPluginActivator
-    IAgStkGraphicsProjectionRasterStreamPluginProxy
-    IAgStkGraphicsRaster
-    IAgStkGraphicsRasterAttributes
-    IAgStkGraphicsRasterFilter
-    IAgStkGraphicsRasterStream
-    IAgStkGraphicsRotateFilter
-    IAgStkGraphicsSequenceFilter
-    IAgStkGraphicsSharpenFilter
-    IAgStkGraphicsVideoStream
-    IAgStkGraphicsKmlContainer
-    IAgStkGraphicsKmlDocument
-    IAgStkGraphicsKmlFeature
-    IAgStkGraphicsKmlFolder
-    IAgStkGraphicsKmlGraphics
-    IAgStkGraphicsKmlNetworkLink
-    IAgStkGraphicsMarkerBatchPrimitive
-    IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters
-    IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy
-    IAgStkGraphicsModelArticulation
-    IAgStkGraphicsModelArticulationCollection
-    IAgStkGraphicsModelPrimitive
-    IAgStkGraphicsModelTransformation
-    IAgStkGraphicsOverlay
-    IAgStkGraphicsPathPrimitive
-    IAgStkGraphicsPickResult
-    IAgStkGraphicsPixelSizeDisplayCondition
-    IAgStkGraphicsPointBatchPrimitive
-    IAgStkGraphicsPolylinePrimitive
-    IAgStkGraphicsPolylinePrimitiveOptionalParameters
-    IAgStkGraphicsPositionInterpolator
-    IAgStkGraphicsPrimitive
-    IAgStkGraphicsPrimitiveManager
-    IAgStkGraphicsRasterImageGlobeOverlay
-    IAgStkGraphicsRhumbLineInterpolator
-    IAgStkGraphicsScene
-    IAgStkGraphicsSceneDisplayCondition
-    IAgStkGraphicsSceneManager
-    IAgStkGraphicsScreenOverlay
-    IAgStkGraphicsScreenOverlayCollection
-    IAgStkGraphicsScreenOverlayManager
-    IAgStkGraphicsScreenOverlayPickResult
-    IAgStkGraphicsSolidPrimitive
-    IAgStkGraphicsStereoscopic
-    IAgStkGraphicsSurfaceMeshPrimitive
-    IAgStkGraphicsTerrainCollection
-    IAgStkGraphicsTerrainOverlay
-    IAgStkGraphicsTextBatchPrimitive
-    IAgStkGraphicsTextBatchPrimitiveOptionalParameters
-    IAgStkGraphicsTextOverlay
-    IAgStkGraphicsTextureMatrix
-    IAgStkGraphicsTextureScreenOverlay
-    IAgStkGraphicsTimeIntervalDisplayCondition
-    IAgStkGraphicsTriangleMeshPrimitive
-    IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters
-    IAgStkGraphicsVectorPrimitive
-    IAgStkGraphicsBoxTriangulatorInitializer
-    IAgStkGraphicsCylinderTriangulatorInitializer
-    IAgStkGraphicsEllipsoidTriangulatorInitializer
-    IAgStkGraphicsExtrudedPolylineTriangulatorInitializer
-    IAgStkGraphicsSurfaceExtentTriangulatorInitializer
-    IAgStkGraphicsSurfacePolygonTriangulatorInitializer
-    IAgStkGraphicsSurfaceShapesInitializer
-    IAgStkGraphicsAGICustomTerrainOverlayFactory
-    IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory
-    IAgStkGraphicsAGIProcessedTerrainOverlayFactory
-    IAgStkGraphicsAGIRoamImageGlobeOverlayFactory
-    IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
-    IAgStkGraphicsGeospatialImageGlobeOverlayFactory
-    IAgStkGraphicsProjectedRasterOverlayFactory
-    IAgStkGraphicsProjectionFactory
-    IAgStkGraphicsAltitudeDisplayConditionFactory
-    IAgStkGraphicsAxesPrimitiveFactory
-    IAgStkGraphicsCompositeDisplayConditionFactory
-    IAgStkGraphicsCompositePrimitiveFactory
-    IAgStkGraphicsConstantDisplayConditionFactory
-    IAgStkGraphicsDistanceDisplayConditionFactory
-    IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
-    IAgStkGraphicsDistanceToPositionDisplayConditionFactory
-    IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory
-    IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory
-    IAgStkGraphicsGlobeImageOverlayInitializer
-    IAgStkGraphicsGraphicsFontFactory
-    IAgStkGraphicsGreatArcInterpolatorFactory
-    IAgStkGraphicsAlphaFromLuminanceFilterFactory
-    IAgStkGraphicsAlphaFromPixelFilterFactory
-    IAgStkGraphicsAlphaFromRasterFilterFactory
-    IAgStkGraphicsBandExtractFilterFactory
-    IAgStkGraphicsBandOrderFilterFactory
-    IAgStkGraphicsBlurFilterFactory
-    IAgStkGraphicsBrightnessFilterFactory
-    IAgStkGraphicsColorToLuminanceFilterFactory
-    IAgStkGraphicsContrastFilterFactory
-    IAgStkGraphicsConvolutionFilterFactory
-    IAgStkGraphicsEdgeDetectFilterFactory
-    IAgStkGraphicsFilteringRasterStreamFactory
-    IAgStkGraphicsFlipFilterFactory
-    IAgStkGraphicsGammaCorrectionFilterFactory
-    IAgStkGraphicsGaussianBlurFilterFactory
-    IAgStkGraphicsGradientDetectFilterFactory
-    IAgStkGraphicsJpeg2000WriterInitializer
-    IAgStkGraphicsLevelsFilterFactory
-    IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory
-    IAgStkGraphicsRasterFactory
-    IAgStkGraphicsRasterAttributesFactory
-    IAgStkGraphicsRotateFilterFactory
-    IAgStkGraphicsSequenceFilterFactory
-    IAgStkGraphicsSharpenFilterFactory
-    IAgStkGraphicsVideoStreamFactory
-    IAgStkGraphicsMarkerBatchPrimitiveFactory
-    IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
-    IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
-    IAgStkGraphicsModelPrimitiveFactory
-    IAgStkGraphicsPathPrimitiveFactory
-    IAgStkGraphicsPixelSizeDisplayConditionFactory
-    IAgStkGraphicsPointBatchPrimitiveFactory
-    IAgStkGraphicsPolylinePrimitiveFactory
-    IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory
-    IAgStkGraphicsRasterImageGlobeOverlayFactory
-    IAgStkGraphicsRhumbLineInterpolatorFactory
-    IAgStkGraphicsSceneDisplayConditionFactory
-    IAgStkGraphicsSceneManagerInitializer
-    IAgStkGraphicsScreenOverlayFactory
-    IAgStkGraphicsSolidPrimitiveFactory
-    IAgStkGraphicsSurfaceMeshPrimitiveFactory
-    IAgStkGraphicsTerrainOverlayInitializer
-    IAgStkGraphicsTextBatchPrimitiveFactory
-    IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory
-    IAgStkGraphicsTextOverlayFactory
-    IAgStkGraphicsTextureMatrixFactory
-    IAgStkGraphicsTextureScreenOverlayFactory
-    IAgStkGraphicsTimeIntervalDisplayConditionFactory
-    IAgStkGraphicsTriangleMeshPrimitiveFactory
-    IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
-    IAgStkGraphicsVectorPrimitiveFactory
+    IStkGraphicsPathPoint
+    IStkGraphicsPathPointFactory
+    IStkGraphicsBoundingSphere
+    IStkGraphicsBoundingSphereFactory
+    IStkGraphicsTextureFilter2D
+    IStkGraphicsTextureFilter2DFactory
+    IStkGraphicsRendererTexture2D
+    IStkGraphicsRendererTextureTemplate2D
+    IStkGraphicsPathPointCollection
+    IStkGraphicsObjectCollection
+    IStkGraphicsSceneCollection
+    IStkGraphicsScreenOverlayContainer
+    IStkGraphicsScreenOverlayPickResultCollection
+    IStkGraphicsGlobeImageOverlayAddCompleteEventArgs
+    IStkGraphicsTerrainOverlayAddCompleteEventArgs
+    IStkGraphicsPickResultCollection
+    IStkGraphicsRenderingEventArgs
+    IStkGraphicsBatchPrimitiveIndex
+    IStkGraphicsKmlDocumentCollection
+    IStkGraphicsKmlFeatureCollection
+    IStkGraphicsKmlDocumentLoadedEventArgs
+    IStkGraphicsFactoryAndInitializers
+    IStkGraphicsExtrudedPolylineTriangulatorResult
+    IStkGraphicsSolidTriangulatorResult
+    IStkGraphicsSurfaceShapesResult
+    IStkGraphicsSurfaceTriangulatorResult
+    IStkGraphicsTriangulatorResult
+    IStkGraphicsAGICustomTerrainOverlay
+    IStkGraphicsAGIProcessedImageGlobeOverlay
+    IStkGraphicsAGIProcessedTerrainOverlay
+    IStkGraphicsAGIRoamImageGlobeOverlay
+    IStkGraphicsCameraSnapshot
+    IStkGraphicsCameraVideoRecording
+    IStkGraphicsCentralBodyGraphicsIndexer
+    IStkGraphicsCustomImageGlobeOverlay
+    IStkGraphicsCustomImageGlobeOverlayPluginActivator
+    IStkGraphicsCustomImageGlobeOverlayPluginProxy
+    IStkGraphicsGeospatialImageGlobeOverlay
+    IStkGraphicsGlobeOverlay
+    IStkGraphicsGlobeOverlaySettings
+    IStkGraphicsLighting
+    IStkGraphicsPathPrimitiveUpdatePolicy
+    IStkGraphicsProjectedRasterOverlay
+    IStkGraphicsProjection
+    IStkGraphicsProjectionStream
+    IStkGraphicsSceneGlobeOverlaySettings
+    IStkGraphicsScreenOverlayCollectionBase
+    IStkGraphicsTexture2DFactory
+    IStkGraphicsVisualEffects
+    IStkGraphicsAltitudeDisplayCondition
+    IStkGraphicsAxesPrimitive
+    IStkGraphicsCamera
+    IStkGraphicsCentralBodyGraphics
+    IStkGraphicsClouds
+    IStkGraphicsCompositeDisplayCondition
+    IStkGraphicsCompositePrimitive
+    IStkGraphicsConstantDisplayCondition
+    IStkGraphicsDisplayCondition
+    IStkGraphicsDistanceDisplayCondition
+    IStkGraphicsDistanceToGlobeOverlayDisplayCondition
+    IStkGraphicsDistanceToPositionDisplayCondition
+    IStkGraphicsDistanceToPrimitiveDisplayCondition
+    IStkGraphicsDurationPathPrimitiveUpdatePolicy
+    IStkGraphicsFrameRate
+    IStkGraphicsGlobeImageOverlay
+    IStkGraphicsGraphicsFont
+    IStkGraphicsGreatArcInterpolator
+    IStkGraphicsImageCollection
+    IStkGraphicsAlphaFromLuminanceFilter
+    IStkGraphicsAlphaFromPixelFilter
+    IStkGraphicsAlphaFromRasterFilter
+    IStkGraphicsBandExtractFilter
+    IStkGraphicsBandOrderFilter
+    IStkGraphicsBlurFilter
+    IStkGraphicsBrightnessFilter
+    IStkGraphicsColorToLuminanceFilter
+    IStkGraphicsContrastFilter
+    IStkGraphicsConvolutionFilter
+    IStkGraphicsEdgeDetectFilter
+    IStkGraphicsFilteringRasterStream
+    IStkGraphicsFlipFilter
+    IStkGraphicsGammaCorrectionFilter
+    IStkGraphicsGaussianBlurFilter
+    IStkGraphicsGradientDetectFilter
+    IStkGraphicsLevelsFilter
+    IStkGraphicsProjectionRasterStreamPluginActivator
+    IStkGraphicsProjectionRasterStreamPluginProxy
+    IStkGraphicsRaster
+    IStkGraphicsRasterAttributes
+    IStkGraphicsRasterFilter
+    IStkGraphicsRasterStream
+    IStkGraphicsRotateFilter
+    IStkGraphicsSequenceFilter
+    IStkGraphicsSharpenFilter
+    IStkGraphicsVideoStream
+    IStkGraphicsKmlContainer
+    IStkGraphicsKmlDocument
+    IStkGraphicsKmlFeature
+    IStkGraphicsKmlFolder
+    IStkGraphicsKmlGraphics
+    IStkGraphicsKmlNetworkLink
+    IStkGraphicsMarkerBatchPrimitive
+    IStkGraphicsMarkerBatchPrimitiveOptionalParameters
+    IStkGraphicsMaximumCountPathPrimitiveUpdatePolicy
+    IStkGraphicsModelArticulation
+    IStkGraphicsModelArticulationCollection
+    IStkGraphicsModelPrimitive
+    IStkGraphicsModelTransformation
+    IStkGraphicsOverlay
+    IStkGraphicsPathPrimitive
+    IStkGraphicsPickResult
+    IStkGraphicsPixelSizeDisplayCondition
+    IStkGraphicsPointBatchPrimitive
+    IStkGraphicsPointBatchPrimitiveOptionalParameters
+    IStkGraphicsPolylinePrimitive
+    IStkGraphicsPolylinePrimitiveOptionalParameters
+    IStkGraphicsPositionInterpolator
+    IStkGraphicsPrimitive
+    IStkGraphicsPrimitiveManager
+    IStkGraphicsRasterImageGlobeOverlay
+    IStkGraphicsRhumbLineInterpolator
+    IStkGraphicsScene
+    IStkGraphicsSceneDisplayCondition
+    IStkGraphicsSceneManager
+    IStkGraphicsScreenOverlay
+    IStkGraphicsScreenOverlayCollection
+    IStkGraphicsScreenOverlayManager
+    IStkGraphicsScreenOverlayPickResult
+    IStkGraphicsSolidPrimitive
+    IStkGraphicsStereoscopic
+    IStkGraphicsSurfaceMeshPrimitive
+    IStkGraphicsTerrainCollection
+    IStkGraphicsTerrainOverlay
+    IStkGraphicsTextBatchPrimitive
+    IStkGraphicsTextBatchPrimitiveOptionalParameters
+    IStkGraphicsTextOverlay
+    IStkGraphicsTextureMatrix
+    IStkGraphicsTextureScreenOverlay
+    IStkGraphicsTimeIntervalDisplayCondition
+    IStkGraphicsTriangleMeshPrimitive
+    IStkGraphicsTriangleMeshPrimitiveOptionalParameters
+    IStkGraphicsVectorPrimitive
+    IStkGraphicsBoxTriangulatorInitializer
+    IStkGraphicsCylinderTriangulatorInitializer
+    IStkGraphicsEllipsoidTriangulatorInitializer
+    IStkGraphicsExtrudedPolylineTriangulatorInitializer
+    IStkGraphicsSurfaceExtentTriangulatorInitializer
+    IStkGraphicsSurfacePolygonTriangulatorInitializer
+    IStkGraphicsSurfaceShapesInitializer
+    IStkGraphicsAGICustomTerrainOverlayFactory
+    IStkGraphicsAGIProcessedImageGlobeOverlayFactory
+    IStkGraphicsAGIProcessedTerrainOverlayFactory
+    IStkGraphicsAGIRoamImageGlobeOverlayFactory
+    IStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
+    IStkGraphicsGeospatialImageGlobeOverlayFactory
+    IStkGraphicsProjectedRasterOverlayFactory
+    IStkGraphicsProjectionFactory
+    IStkGraphicsAltitudeDisplayConditionFactory
+    IStkGraphicsAxesPrimitiveFactory
+    IStkGraphicsCompositeDisplayConditionFactory
+    IStkGraphicsCompositePrimitiveFactory
+    IStkGraphicsConstantDisplayConditionFactory
+    IStkGraphicsDistanceDisplayConditionFactory
+    IStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
+    IStkGraphicsDistanceToPositionDisplayConditionFactory
+    IStkGraphicsDistanceToPrimitiveDisplayConditionFactory
+    IStkGraphicsDurationPathPrimitiveUpdatePolicyFactory
+    IStkGraphicsGlobeImageOverlayInitializer
+    IStkGraphicsGraphicsFontFactory
+    IStkGraphicsGreatArcInterpolatorFactory
+    IStkGraphicsAlphaFromLuminanceFilterFactory
+    IStkGraphicsAlphaFromPixelFilterFactory
+    IStkGraphicsAlphaFromRasterFilterFactory
+    IStkGraphicsBandExtractFilterFactory
+    IStkGraphicsBandOrderFilterFactory
+    IStkGraphicsBlurFilterFactory
+    IStkGraphicsBrightnessFilterFactory
+    IStkGraphicsColorToLuminanceFilterFactory
+    IStkGraphicsContrastFilterFactory
+    IStkGraphicsConvolutionFilterFactory
+    IStkGraphicsEdgeDetectFilterFactory
+    IStkGraphicsFilteringRasterStreamFactory
+    IStkGraphicsFlipFilterFactory
+    IStkGraphicsGammaCorrectionFilterFactory
+    IStkGraphicsGaussianBlurFilterFactory
+    IStkGraphicsGradientDetectFilterFactory
+    IStkGraphicsJpeg2000WriterInitializer
+    IStkGraphicsLevelsFilterFactory
+    IStkGraphicsProjectionRasterStreamPluginActivatorFactory
+    IStkGraphicsRasterFactory
+    IStkGraphicsRasterAttributesFactory
+    IStkGraphicsRotateFilterFactory
+    IStkGraphicsSequenceFilterFactory
+    IStkGraphicsSharpenFilterFactory
+    IStkGraphicsVideoStreamFactory
+    IStkGraphicsMarkerBatchPrimitiveFactory
+    IStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
+    IStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
+    IStkGraphicsModelPrimitiveFactory
+    IStkGraphicsPathPrimitiveFactory
+    IStkGraphicsPixelSizeDisplayConditionFactory
+    IStkGraphicsPointBatchPrimitiveFactory
+    IStkGraphicsPointBatchPrimitiveOptionalParametersFactory
+    IStkGraphicsPolylinePrimitiveFactory
+    IStkGraphicsPolylinePrimitiveOptionalParametersFactory
+    IStkGraphicsRasterImageGlobeOverlayFactory
+    IStkGraphicsRhumbLineInterpolatorFactory
+    IStkGraphicsSceneDisplayConditionFactory
+    IStkGraphicsSceneManagerInitializer
+    IStkGraphicsScreenOverlayFactory
+    IStkGraphicsSolidPrimitiveFactory
+    IStkGraphicsSurfaceMeshPrimitiveFactory
+    IStkGraphicsTerrainOverlayInitializer
+    IStkGraphicsTextBatchPrimitiveFactory
+    IStkGraphicsTextBatchPrimitiveOptionalParametersFactory
+    IStkGraphicsTextOverlayFactory
+    IStkGraphicsTextureMatrixFactory
+    IStkGraphicsTextureScreenOverlayFactory
+    IStkGraphicsTimeIntervalDisplayConditionFactory
+    IStkGraphicsTriangleMeshPrimitiveFactory
+    IStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
+    IStkGraphicsVectorPrimitiveFactory
 
 
 Enumerations
@@ -297,225 +299,227 @@ Classes
 
 .. autosummary::
 
-    AgStkGraphicsPathPoint
-    AgStkGraphicsPathPointFactory
-    AgStkGraphicsBoundingSphere
-    AgStkGraphicsBoundingSphereFactory
-    AgStkGraphicsTextureFilter2D
-    AgStkGraphicsTextureFilter2DFactory
-    AgStkGraphicsRendererTexture2D
-    AgStkGraphicsRendererTextureTemplate2D
-    AgStkGraphicsPathPointCollection
-    AgStkGraphicsObjectCollection
-    AgStkGraphicsSceneCollection
-    AgStkGraphicsScreenOverlayPickResultCollection
-    AgStkGraphicsGlobeImageOverlayAddCompleteEventArgs
-    AgStkGraphicsTerrainOverlayAddCompleteEventArgs
-    AgStkGraphicsPickResultCollection
-    AgStkGraphicsRenderingEventArgs
-    AgStkGraphicsBatchPrimitiveIndex
-    AgStkGraphicsKmlDocumentCollection
-    AgStkGraphicsKmlFeatureCollection
-    AgStkGraphicsKmlDocumentLoadedEventArgs
-    AgStkGraphicsFactoryAndInitializers
-    AgStkGraphicsExtrudedPolylineTriangulatorResult
-    AgStkGraphicsSolidTriangulatorResult
-    AgStkGraphicsSurfaceShapesResult
-    AgStkGraphicsSurfaceTriangulatorResult
-    AgStkGraphicsTriangulatorResult
-    AgStkGraphicsAGICustomTerrainOverlay
-    AgStkGraphicsAGIProcessedImageGlobeOverlay
-    AgStkGraphicsAGIProcessedTerrainOverlay
-    AgStkGraphicsAGIRoamImageGlobeOverlay
-    AgStkGraphicsCameraSnapshot
-    AgStkGraphicsCameraVideoRecording
-    AgStkGraphicsCentralBodyGraphicsIndexer
-    AgStkGraphicsCustomImageGlobeOverlay
-    AgStkGraphicsCustomImageGlobeOverlayPluginActivator
-    AgStkGraphicsCustomImageGlobeOverlayPluginProxy
-    AgStkGraphicsGeospatialImageGlobeOverlay
-    AgStkGraphicsGlobeOverlay
-    AgStkGraphicsGlobeOverlaySettings
-    AgStkGraphicsLighting
-    AgStkGraphicsPathPrimitiveUpdatePolicy
-    AgStkGraphicsProjectedRasterOverlay
-    AgStkGraphicsProjection
-    AgStkGraphicsProjectionStream
-    AgStkGraphicsSceneGlobeOverlaySettings
-    AgStkGraphicsScreenOverlayCollectionBase
-    AgStkGraphicsTexture2DFactory
-    AgStkGraphicsVisualEffects
-    AgStkGraphicsAltitudeDisplayCondition
-    AgStkGraphicsAxesPrimitive
-    AgStkGraphicsCamera
-    AgStkGraphicsCentralBodyGraphics
-    AgStkGraphicsClouds
-    AgStkGraphicsCompositeDisplayCondition
-    AgStkGraphicsCompositePrimitive
-    AgStkGraphicsConstantDisplayCondition
-    AgStkGraphicsDisplayCondition
-    AgStkGraphicsDistanceDisplayCondition
-    AgStkGraphicsDistanceToGlobeOverlayDisplayCondition
-    AgStkGraphicsDistanceToPositionDisplayCondition
-    AgStkGraphicsDistanceToPrimitiveDisplayCondition
-    AgStkGraphicsDurationPathPrimitiveUpdatePolicy
-    AgStkGraphicsFrameRate
-    AgStkGraphicsGlobeImageOverlay
-    AgStkGraphicsGraphicsFont
-    AgStkGraphicsGreatArcInterpolator
-    AgStkGraphicsImageCollection
-    AgStkGraphicsAlphaFromLuminanceFilter
-    AgStkGraphicsAlphaFromPixelFilter
-    AgStkGraphicsAlphaFromRasterFilter
-    AgStkGraphicsBandExtractFilter
-    AgStkGraphicsBandOrderFilter
-    AgStkGraphicsBlurFilter
-    AgStkGraphicsBrightnessFilter
-    AgStkGraphicsColorToLuminanceFilter
-    AgStkGraphicsContrastFilter
-    AgStkGraphicsConvolutionFilter
-    AgStkGraphicsEdgeDetectFilter
-    AgStkGraphicsFilteringRasterStream
-    AgStkGraphicsFlipFilter
-    AgStkGraphicsGammaCorrectionFilter
-    AgStkGraphicsGaussianBlurFilter
-    AgStkGraphicsGradientDetectFilter
-    AgStkGraphicsLevelsFilter
-    AgStkGraphicsProjectionRasterStreamPluginActivator
-    AgStkGraphicsProjectionRasterStreamPluginProxy
-    AgStkGraphicsRaster
-    AgStkGraphicsRasterAttributes
-    AgStkGraphicsRasterFilter
-    AgStkGraphicsRasterStream
-    AgStkGraphicsRotateFilter
-    AgStkGraphicsSequenceFilter
-    AgStkGraphicsSharpenFilter
-    AgStkGraphicsVideoStream
-    AgStkGraphicsKmlContainer
-    AgStkGraphicsKmlDocument
-    AgStkGraphicsKmlFeature
-    AgStkGraphicsKmlFolder
-    AgStkGraphicsKmlGraphics
-    AgStkGraphicsKmlNetworkLink
-    AgStkGraphicsMarkerBatchPrimitive
-    AgStkGraphicsMarkerBatchPrimitiveOptionalParameters
-    AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy
-    AgStkGraphicsModelArticulation
-    AgStkGraphicsModelArticulationCollection
-    AgStkGraphicsModelPrimitive
-    AgStkGraphicsModelTransformation
-    AgStkGraphicsOverlay
-    AgStkGraphicsPathPrimitive
-    AgStkGraphicsPickResult
-    AgStkGraphicsPixelSizeDisplayCondition
-    AgStkGraphicsPointBatchPrimitive
-    AgStkGraphicsPolylinePrimitive
-    AgStkGraphicsPolylinePrimitiveOptionalParameters
-    AgStkGraphicsPositionInterpolator
-    AgStkGraphicsPrimitive
-    AgStkGraphicsPrimitiveManager
-    AgStkGraphicsRasterImageGlobeOverlay
-    AgStkGraphicsRhumbLineInterpolator
-    AgStkGraphicsScene
-    AgStkGraphicsSceneDisplayCondition
-    AgStkGraphicsSceneManager
-    AgStkGraphicsScreenOverlay
-    AgStkGraphicsScreenOverlayCollection
-    AgStkGraphicsScreenOverlayManager
-    AgStkGraphicsScreenOverlayPickResult
-    AgStkGraphicsSolidPrimitive
-    AgStkGraphicsStereoscopic
-    AgStkGraphicsSurfaceMeshPrimitive
-    AgStkGraphicsTerrainCollection
-    AgStkGraphicsTerrainOverlay
-    AgStkGraphicsTextBatchPrimitive
-    AgStkGraphicsTextBatchPrimitiveOptionalParameters
-    AgStkGraphicsTextOverlay
-    AgStkGraphicsTextureMatrix
-    AgStkGraphicsTextureScreenOverlay
-    AgStkGraphicsTimeIntervalDisplayCondition
-    AgStkGraphicsTriangleMeshPrimitive
-    AgStkGraphicsTriangleMeshPrimitiveOptionalParameters
-    AgStkGraphicsVectorPrimitive
-    AgStkGraphicsBoxTriangulatorInitializer
-    AgStkGraphicsCylinderTriangulatorInitializer
-    AgStkGraphicsEllipsoidTriangulatorInitializer
-    AgStkGraphicsExtrudedPolylineTriangulatorInitializer
-    AgStkGraphicsSurfaceExtentTriangulatorInitializer
-    AgStkGraphicsSurfacePolygonTriangulatorInitializer
-    AgStkGraphicsSurfaceShapesInitializer
-    AgStkGraphicsAGICustomTerrainOverlayFactory
-    AgStkGraphicsAGIProcessedImageGlobeOverlayFactory
-    AgStkGraphicsAGIProcessedTerrainOverlayFactory
-    AgStkGraphicsAGIRoamImageGlobeOverlayFactory
-    AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
-    AgStkGraphicsGeospatialImageGlobeOverlayFactory
-    AgStkGraphicsProjectedRasterOverlayFactory
-    AgStkGraphicsProjectionFactory
-    AgStkGraphicsAltitudeDisplayConditionFactory
-    AgStkGraphicsAxesPrimitiveFactory
-    AgStkGraphicsCompositeDisplayConditionFactory
-    AgStkGraphicsCompositePrimitiveFactory
-    AgStkGraphicsConstantDisplayConditionFactory
-    AgStkGraphicsDistanceDisplayConditionFactory
-    AgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
-    AgStkGraphicsDistanceToPositionDisplayConditionFactory
-    AgStkGraphicsDistanceToPrimitiveDisplayConditionFactory
-    AgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory
-    AgStkGraphicsGlobeImageOverlayInitializer
-    AgStkGraphicsGraphicsFontFactory
-    AgStkGraphicsGreatArcInterpolatorFactory
-    AgStkGraphicsAlphaFromLuminanceFilterFactory
-    AgStkGraphicsAlphaFromPixelFilterFactory
-    AgStkGraphicsAlphaFromRasterFilterFactory
-    AgStkGraphicsBandExtractFilterFactory
-    AgStkGraphicsBandOrderFilterFactory
-    AgStkGraphicsBlurFilterFactory
-    AgStkGraphicsBrightnessFilterFactory
-    AgStkGraphicsColorToLuminanceFilterFactory
-    AgStkGraphicsContrastFilterFactory
-    AgStkGraphicsConvolutionFilterFactory
-    AgStkGraphicsEdgeDetectFilterFactory
-    AgStkGraphicsFilteringRasterStreamFactory
-    AgStkGraphicsFlipFilterFactory
-    AgStkGraphicsGammaCorrectionFilterFactory
-    AgStkGraphicsGaussianBlurFilterFactory
-    AgStkGraphicsGradientDetectFilterFactory
-    AgStkGraphicsJpeg2000WriterInitializer
-    AgStkGraphicsLevelsFilterFactory
-    AgStkGraphicsProjectionRasterStreamPluginActivatorFactory
-    AgStkGraphicsRasterFactory
-    AgStkGraphicsRasterAttributesFactory
-    AgStkGraphicsRotateFilterFactory
-    AgStkGraphicsSequenceFilterFactory
-    AgStkGraphicsSharpenFilterFactory
-    AgStkGraphicsVideoStreamFactory
-    AgStkGraphicsMarkerBatchPrimitiveFactory
-    AgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
-    AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
-    AgStkGraphicsModelPrimitiveFactory
-    AgStkGraphicsPathPrimitiveFactory
-    AgStkGraphicsPixelSizeDisplayConditionFactory
-    AgStkGraphicsPointBatchPrimitiveFactory
-    AgStkGraphicsPolylinePrimitiveFactory
-    AgStkGraphicsPolylinePrimitiveOptionalParametersFactory
-    AgStkGraphicsRasterImageGlobeOverlayFactory
-    AgStkGraphicsRhumbLineInterpolatorFactory
-    AgStkGraphicsSceneDisplayConditionFactory
-    AgStkGraphicsSceneManagerInitializer
-    AgStkGraphicsScreenOverlayFactory
-    AgStkGraphicsSolidPrimitiveFactory
-    AgStkGraphicsSurfaceMeshPrimitiveFactory
-    AgStkGraphicsTerrainOverlayInitializer
-    AgStkGraphicsTextBatchPrimitiveFactory
-    AgStkGraphicsTextBatchPrimitiveOptionalParametersFactory
-    AgStkGraphicsTextOverlayFactory
-    AgStkGraphicsTextureMatrixFactory
-    AgStkGraphicsTextureScreenOverlayFactory
-    AgStkGraphicsTimeIntervalDisplayConditionFactory
-    AgStkGraphicsTriangleMeshPrimitiveFactory
-    AgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
-    AgStkGraphicsVectorPrimitiveFactory
+    StkGraphicsPathPoint
+    StkGraphicsPathPointFactory
+    StkGraphicsBoundingSphere
+    StkGraphicsBoundingSphereFactory
+    StkGraphicsTextureFilter2D
+    StkGraphicsTextureFilter2DFactory
+    StkGraphicsRendererTexture2D
+    StkGraphicsRendererTextureTemplate2D
+    StkGraphicsPathPointCollection
+    StkGraphicsObjectCollection
+    StkGraphicsSceneCollection
+    StkGraphicsScreenOverlayPickResultCollection
+    StkGraphicsGlobeImageOverlayAddCompleteEventArgs
+    StkGraphicsTerrainOverlayAddCompleteEventArgs
+    StkGraphicsPickResultCollection
+    StkGraphicsRenderingEventArgs
+    StkGraphicsBatchPrimitiveIndex
+    StkGraphicsKmlDocumentCollection
+    StkGraphicsKmlFeatureCollection
+    StkGraphicsKmlDocumentLoadedEventArgs
+    StkGraphicsFactoryAndInitializers
+    StkGraphicsExtrudedPolylineTriangulatorResult
+    StkGraphicsSolidTriangulatorResult
+    StkGraphicsSurfaceShapesResult
+    StkGraphicsSurfaceTriangulatorResult
+    StkGraphicsTriangulatorResult
+    StkGraphicsAGICustomTerrainOverlay
+    StkGraphicsAGIProcessedImageGlobeOverlay
+    StkGraphicsAGIProcessedTerrainOverlay
+    StkGraphicsAGIRoamImageGlobeOverlay
+    StkGraphicsCameraSnapshot
+    StkGraphicsCameraVideoRecording
+    StkGraphicsCentralBodyGraphicsIndexer
+    StkGraphicsCustomImageGlobeOverlay
+    StkGraphicsCustomImageGlobeOverlayPluginActivator
+    StkGraphicsCustomImageGlobeOverlayPluginProxy
+    StkGraphicsGeospatialImageGlobeOverlay
+    StkGraphicsGlobeOverlay
+    StkGraphicsGlobeOverlaySettings
+    StkGraphicsLighting
+    StkGraphicsPathPrimitiveUpdatePolicy
+    StkGraphicsProjectedRasterOverlay
+    StkGraphicsProjection
+    StkGraphicsProjectionStream
+    StkGraphicsSceneGlobeOverlaySettings
+    StkGraphicsScreenOverlayCollectionBase
+    StkGraphicsTexture2DFactory
+    StkGraphicsVisualEffects
+    StkGraphicsAltitudeDisplayCondition
+    StkGraphicsAxesPrimitive
+    StkGraphicsCamera
+    StkGraphicsCentralBodyGraphics
+    StkGraphicsClouds
+    StkGraphicsCompositeDisplayCondition
+    StkGraphicsCompositePrimitive
+    StkGraphicsConstantDisplayCondition
+    StkGraphicsDisplayCondition
+    StkGraphicsDistanceDisplayCondition
+    StkGraphicsDistanceToGlobeOverlayDisplayCondition
+    StkGraphicsDistanceToPositionDisplayCondition
+    StkGraphicsDistanceToPrimitiveDisplayCondition
+    StkGraphicsDurationPathPrimitiveUpdatePolicy
+    StkGraphicsFrameRate
+    StkGraphicsGlobeImageOverlay
+    StkGraphicsGraphicsFont
+    StkGraphicsGreatArcInterpolator
+    StkGraphicsImageCollection
+    StkGraphicsAlphaFromLuminanceFilter
+    StkGraphicsAlphaFromPixelFilter
+    StkGraphicsAlphaFromRasterFilter
+    StkGraphicsBandExtractFilter
+    StkGraphicsBandOrderFilter
+    StkGraphicsBlurFilter
+    StkGraphicsBrightnessFilter
+    StkGraphicsColorToLuminanceFilter
+    StkGraphicsContrastFilter
+    StkGraphicsConvolutionFilter
+    StkGraphicsEdgeDetectFilter
+    StkGraphicsFilteringRasterStream
+    StkGraphicsFlipFilter
+    StkGraphicsGammaCorrectionFilter
+    StkGraphicsGaussianBlurFilter
+    StkGraphicsGradientDetectFilter
+    StkGraphicsLevelsFilter
+    StkGraphicsProjectionRasterStreamPluginActivator
+    StkGraphicsProjectionRasterStreamPluginProxy
+    StkGraphicsRaster
+    StkGraphicsRasterAttributes
+    StkGraphicsRasterFilter
+    StkGraphicsRasterStream
+    StkGraphicsRotateFilter
+    StkGraphicsSequenceFilter
+    StkGraphicsSharpenFilter
+    StkGraphicsVideoStream
+    StkGraphicsKmlContainer
+    StkGraphicsKmlDocument
+    StkGraphicsKmlFeature
+    StkGraphicsKmlFolder
+    StkGraphicsKmlGraphics
+    StkGraphicsKmlNetworkLink
+    StkGraphicsMarkerBatchPrimitive
+    StkGraphicsMarkerBatchPrimitiveOptionalParameters
+    StkGraphicsMaximumCountPathPrimitiveUpdatePolicy
+    StkGraphicsModelArticulation
+    StkGraphicsModelArticulationCollection
+    StkGraphicsModelPrimitive
+    StkGraphicsModelTransformation
+    StkGraphicsOverlay
+    StkGraphicsPathPrimitive
+    StkGraphicsPickResult
+    StkGraphicsPixelSizeDisplayCondition
+    StkGraphicsPointBatchPrimitive
+    StkGraphicsPointBatchPrimitiveOptionalParameters
+    StkGraphicsPolylinePrimitive
+    StkGraphicsPolylinePrimitiveOptionalParameters
+    StkGraphicsPositionInterpolator
+    StkGraphicsPrimitive
+    StkGraphicsPrimitiveManager
+    StkGraphicsRasterImageGlobeOverlay
+    StkGraphicsRhumbLineInterpolator
+    StkGraphicsScene
+    StkGraphicsSceneDisplayCondition
+    StkGraphicsSceneManager
+    StkGraphicsScreenOverlay
+    StkGraphicsScreenOverlayCollection
+    StkGraphicsScreenOverlayManager
+    StkGraphicsScreenOverlayPickResult
+    StkGraphicsSolidPrimitive
+    StkGraphicsStereoscopic
+    StkGraphicsSurfaceMeshPrimitive
+    StkGraphicsTerrainCollection
+    StkGraphicsTerrainOverlay
+    StkGraphicsTextBatchPrimitive
+    StkGraphicsTextBatchPrimitiveOptionalParameters
+    StkGraphicsTextOverlay
+    StkGraphicsTextureMatrix
+    StkGraphicsTextureScreenOverlay
+    StkGraphicsTimeIntervalDisplayCondition
+    StkGraphicsTriangleMeshPrimitive
+    StkGraphicsTriangleMeshPrimitiveOptionalParameters
+    StkGraphicsVectorPrimitive
+    StkGraphicsBoxTriangulatorInitializer
+    StkGraphicsCylinderTriangulatorInitializer
+    StkGraphicsEllipsoidTriangulatorInitializer
+    StkGraphicsExtrudedPolylineTriangulatorInitializer
+    StkGraphicsSurfaceExtentTriangulatorInitializer
+    StkGraphicsSurfacePolygonTriangulatorInitializer
+    StkGraphicsSurfaceShapesInitializer
+    StkGraphicsAGICustomTerrainOverlayFactory
+    StkGraphicsAGIProcessedImageGlobeOverlayFactory
+    StkGraphicsAGIProcessedTerrainOverlayFactory
+    StkGraphicsAGIRoamImageGlobeOverlayFactory
+    StkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
+    StkGraphicsGeospatialImageGlobeOverlayFactory
+    StkGraphicsProjectedRasterOverlayFactory
+    StkGraphicsProjectionFactory
+    StkGraphicsAltitudeDisplayConditionFactory
+    StkGraphicsAxesPrimitiveFactory
+    StkGraphicsCompositeDisplayConditionFactory
+    StkGraphicsCompositePrimitiveFactory
+    StkGraphicsConstantDisplayConditionFactory
+    StkGraphicsDistanceDisplayConditionFactory
+    StkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
+    StkGraphicsDistanceToPositionDisplayConditionFactory
+    StkGraphicsDistanceToPrimitiveDisplayConditionFactory
+    StkGraphicsDurationPathPrimitiveUpdatePolicyFactory
+    StkGraphicsGlobeImageOverlayInitializer
+    StkGraphicsGraphicsFontFactory
+    StkGraphicsGreatArcInterpolatorFactory
+    StkGraphicsAlphaFromLuminanceFilterFactory
+    StkGraphicsAlphaFromPixelFilterFactory
+    StkGraphicsAlphaFromRasterFilterFactory
+    StkGraphicsBandExtractFilterFactory
+    StkGraphicsBandOrderFilterFactory
+    StkGraphicsBlurFilterFactory
+    StkGraphicsBrightnessFilterFactory
+    StkGraphicsColorToLuminanceFilterFactory
+    StkGraphicsContrastFilterFactory
+    StkGraphicsConvolutionFilterFactory
+    StkGraphicsEdgeDetectFilterFactory
+    StkGraphicsFilteringRasterStreamFactory
+    StkGraphicsFlipFilterFactory
+    StkGraphicsGammaCorrectionFilterFactory
+    StkGraphicsGaussianBlurFilterFactory
+    StkGraphicsGradientDetectFilterFactory
+    StkGraphicsJpeg2000WriterInitializer
+    StkGraphicsLevelsFilterFactory
+    StkGraphicsProjectionRasterStreamPluginActivatorFactory
+    StkGraphicsRasterFactory
+    StkGraphicsRasterAttributesFactory
+    StkGraphicsRotateFilterFactory
+    StkGraphicsSequenceFilterFactory
+    StkGraphicsSharpenFilterFactory
+    StkGraphicsVideoStreamFactory
+    StkGraphicsMarkerBatchPrimitiveFactory
+    StkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
+    StkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
+    StkGraphicsModelPrimitiveFactory
+    StkGraphicsPathPrimitiveFactory
+    StkGraphicsPixelSizeDisplayConditionFactory
+    StkGraphicsPointBatchPrimitiveFactory
+    StkGraphicsPointBatchPrimitiveOptionalParametersFactory
+    StkGraphicsPolylinePrimitiveFactory
+    StkGraphicsPolylinePrimitiveOptionalParametersFactory
+    StkGraphicsRasterImageGlobeOverlayFactory
+    StkGraphicsRhumbLineInterpolatorFactory
+    StkGraphicsSceneDisplayConditionFactory
+    StkGraphicsSceneManagerInitializer
+    StkGraphicsScreenOverlayFactory
+    StkGraphicsSolidPrimitiveFactory
+    StkGraphicsSurfaceMeshPrimitiveFactory
+    StkGraphicsTerrainOverlayInitializer
+    StkGraphicsTextBatchPrimitiveFactory
+    StkGraphicsTextBatchPrimitiveOptionalParametersFactory
+    StkGraphicsTextOverlayFactory
+    StkGraphicsTextureMatrixFactory
+    StkGraphicsTextureScreenOverlayFactory
+    StkGraphicsTimeIntervalDisplayConditionFactory
+    StkGraphicsTriangleMeshPrimitiveFactory
+    StkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
+    StkGraphicsVectorPrimitiveFactory
 
 
 Reference
@@ -524,664 +528,670 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IAgStkGraphicsPathPoint
+.. autoclass:: IStkGraphicsPathPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPathPointFactory
+.. autoclass:: IStkGraphicsPathPointFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBoundingSphere
+.. autoclass:: IStkGraphicsBoundingSphere
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBoundingSphereFactory
+.. autoclass:: IStkGraphicsBoundingSphereFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextureFilter2D
+.. autoclass:: IStkGraphicsTextureFilter2D
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextureFilter2DFactory
+.. autoclass:: IStkGraphicsTextureFilter2DFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRendererTexture2D
+.. autoclass:: IStkGraphicsRendererTexture2D
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRendererTextureTemplate2D
+.. autoclass:: IStkGraphicsRendererTextureTemplate2D
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPathPointCollection
+.. autoclass:: IStkGraphicsPathPointCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsObjectCollection
+.. autoclass:: IStkGraphicsObjectCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSceneCollection
+.. autoclass:: IStkGraphicsSceneCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScreenOverlayContainer
+.. autoclass:: IStkGraphicsScreenOverlayContainer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScreenOverlayPickResultCollection
+.. autoclass:: IStkGraphicsScreenOverlayPickResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGlobeImageOverlayAddCompleteEventArgs
+.. autoclass:: IStkGraphicsGlobeImageOverlayAddCompleteEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTerrainOverlayAddCompleteEventArgs
+.. autoclass:: IStkGraphicsTerrainOverlayAddCompleteEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPickResultCollection
+.. autoclass:: IStkGraphicsPickResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRenderingEventArgs
+.. autoclass:: IStkGraphicsRenderingEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBatchPrimitiveIndex
+.. autoclass:: IStkGraphicsBatchPrimitiveIndex
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlDocumentCollection
+.. autoclass:: IStkGraphicsKmlDocumentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlFeatureCollection
+.. autoclass:: IStkGraphicsKmlFeatureCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlDocumentLoadedEventArgs
+.. autoclass:: IStkGraphicsKmlDocumentLoadedEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsFactoryAndInitializers
+.. autoclass:: IStkGraphicsFactoryAndInitializers
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsExtrudedPolylineTriangulatorResult
+.. autoclass:: IStkGraphicsExtrudedPolylineTriangulatorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSolidTriangulatorResult
+.. autoclass:: IStkGraphicsSolidTriangulatorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSurfaceShapesResult
+.. autoclass:: IStkGraphicsSurfaceShapesResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSurfaceTriangulatorResult
+.. autoclass:: IStkGraphicsSurfaceTriangulatorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTriangulatorResult
+.. autoclass:: IStkGraphicsTriangulatorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAGICustomTerrainOverlay
+.. autoclass:: IStkGraphicsAGICustomTerrainOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAGIProcessedImageGlobeOverlay
+.. autoclass:: IStkGraphicsAGIProcessedImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAGIProcessedTerrainOverlay
+.. autoclass:: IStkGraphicsAGIProcessedTerrainOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAGIRoamImageGlobeOverlay
+.. autoclass:: IStkGraphicsAGIRoamImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCameraSnapshot
+.. autoclass:: IStkGraphicsCameraSnapshot
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCameraVideoRecording
+.. autoclass:: IStkGraphicsCameraVideoRecording
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCentralBodyGraphicsIndexer
+.. autoclass:: IStkGraphicsCentralBodyGraphicsIndexer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCustomImageGlobeOverlay
+.. autoclass:: IStkGraphicsCustomImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCustomImageGlobeOverlayPluginActivator
+.. autoclass:: IStkGraphicsCustomImageGlobeOverlayPluginActivator
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCustomImageGlobeOverlayPluginProxy
+.. autoclass:: IStkGraphicsCustomImageGlobeOverlayPluginProxy
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGeospatialImageGlobeOverlay
+.. autoclass:: IStkGraphicsGeospatialImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGlobeOverlay
+.. autoclass:: IStkGraphicsGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGlobeOverlaySettings
+.. autoclass:: IStkGraphicsGlobeOverlaySettings
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsLighting
+.. autoclass:: IStkGraphicsLighting
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPathPrimitiveUpdatePolicy
+.. autoclass:: IStkGraphicsPathPrimitiveUpdatePolicy
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsProjectedRasterOverlay
+.. autoclass:: IStkGraphicsProjectedRasterOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsProjection
+.. autoclass:: IStkGraphicsProjection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsProjectionStream
+.. autoclass:: IStkGraphicsProjectionStream
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSceneGlobeOverlaySettings
+.. autoclass:: IStkGraphicsSceneGlobeOverlaySettings
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScreenOverlayCollectionBase
+.. autoclass:: IStkGraphicsScreenOverlayCollectionBase
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTexture2DFactory
+.. autoclass:: IStkGraphicsTexture2DFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsVisualEffects
+.. autoclass:: IStkGraphicsVisualEffects
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAltitudeDisplayCondition
+.. autoclass:: IStkGraphicsAltitudeDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAxesPrimitive
+.. autoclass:: IStkGraphicsAxesPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCamera
+.. autoclass:: IStkGraphicsCamera
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCentralBodyGraphics
+.. autoclass:: IStkGraphicsCentralBodyGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsClouds
+.. autoclass:: IStkGraphicsClouds
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCompositeDisplayCondition
+.. autoclass:: IStkGraphicsCompositeDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCompositePrimitive
+.. autoclass:: IStkGraphicsCompositePrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsConstantDisplayCondition
+.. autoclass:: IStkGraphicsConstantDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDisplayCondition
+.. autoclass:: IStkGraphicsDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDistanceDisplayCondition
+.. autoclass:: IStkGraphicsDistanceDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDistanceToGlobeOverlayDisplayCondition
+.. autoclass:: IStkGraphicsDistanceToGlobeOverlayDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDistanceToPositionDisplayCondition
+.. autoclass:: IStkGraphicsDistanceToPositionDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDistanceToPrimitiveDisplayCondition
+.. autoclass:: IStkGraphicsDistanceToPrimitiveDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDurationPathPrimitiveUpdatePolicy
+.. autoclass:: IStkGraphicsDurationPathPrimitiveUpdatePolicy
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsFrameRate
+.. autoclass:: IStkGraphicsFrameRate
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGlobeImageOverlay
+.. autoclass:: IStkGraphicsGlobeImageOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGraphicsFont
+.. autoclass:: IStkGraphicsGraphicsFont
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGreatArcInterpolator
+.. autoclass:: IStkGraphicsGreatArcInterpolator
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsImageCollection
+.. autoclass:: IStkGraphicsImageCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAlphaFromLuminanceFilter
+.. autoclass:: IStkGraphicsAlphaFromLuminanceFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAlphaFromPixelFilter
+.. autoclass:: IStkGraphicsAlphaFromPixelFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAlphaFromRasterFilter
+.. autoclass:: IStkGraphicsAlphaFromRasterFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBandExtractFilter
+.. autoclass:: IStkGraphicsBandExtractFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBandOrderFilter
+.. autoclass:: IStkGraphicsBandOrderFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBlurFilter
+.. autoclass:: IStkGraphicsBlurFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBrightnessFilter
+.. autoclass:: IStkGraphicsBrightnessFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsColorToLuminanceFilter
+.. autoclass:: IStkGraphicsColorToLuminanceFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsContrastFilter
+.. autoclass:: IStkGraphicsContrastFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsConvolutionFilter
+.. autoclass:: IStkGraphicsConvolutionFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsEdgeDetectFilter
+.. autoclass:: IStkGraphicsEdgeDetectFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsFilteringRasterStream
+.. autoclass:: IStkGraphicsFilteringRasterStream
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsFlipFilter
+.. autoclass:: IStkGraphicsFlipFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGammaCorrectionFilter
+.. autoclass:: IStkGraphicsGammaCorrectionFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGaussianBlurFilter
+.. autoclass:: IStkGraphicsGaussianBlurFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGradientDetectFilter
+.. autoclass:: IStkGraphicsGradientDetectFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsLevelsFilter
+.. autoclass:: IStkGraphicsLevelsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsProjectionRasterStreamPluginActivator
+.. autoclass:: IStkGraphicsProjectionRasterStreamPluginActivator
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsProjectionRasterStreamPluginProxy
+.. autoclass:: IStkGraphicsProjectionRasterStreamPluginProxy
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRaster
+.. autoclass:: IStkGraphicsRaster
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRasterAttributes
+.. autoclass:: IStkGraphicsRasterAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRasterFilter
+.. autoclass:: IStkGraphicsRasterFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRasterStream
+.. autoclass:: IStkGraphicsRasterStream
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRotateFilter
+.. autoclass:: IStkGraphicsRotateFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSequenceFilter
+.. autoclass:: IStkGraphicsSequenceFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSharpenFilter
+.. autoclass:: IStkGraphicsSharpenFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsVideoStream
+.. autoclass:: IStkGraphicsVideoStream
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlContainer
+.. autoclass:: IStkGraphicsKmlContainer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlDocument
+.. autoclass:: IStkGraphicsKmlDocument
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlFeature
+.. autoclass:: IStkGraphicsKmlFeature
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlFolder
+.. autoclass:: IStkGraphicsKmlFolder
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlGraphics
+.. autoclass:: IStkGraphicsKmlGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsKmlNetworkLink
+.. autoclass:: IStkGraphicsKmlNetworkLink
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsMarkerBatchPrimitive
+.. autoclass:: IStkGraphicsMarkerBatchPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsMarkerBatchPrimitiveOptionalParameters
+.. autoclass:: IStkGraphicsMarkerBatchPrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy
+.. autoclass:: IStkGraphicsMaximumCountPathPrimitiveUpdatePolicy
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsModelArticulation
+.. autoclass:: IStkGraphicsModelArticulation
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsModelArticulationCollection
+.. autoclass:: IStkGraphicsModelArticulationCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsModelPrimitive
+.. autoclass:: IStkGraphicsModelPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsModelTransformation
+.. autoclass:: IStkGraphicsModelTransformation
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsOverlay
+.. autoclass:: IStkGraphicsOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPathPrimitive
+.. autoclass:: IStkGraphicsPathPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPickResult
+.. autoclass:: IStkGraphicsPickResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPixelSizeDisplayCondition
+.. autoclass:: IStkGraphicsPixelSizeDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPointBatchPrimitive
+.. autoclass:: IStkGraphicsPointBatchPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPolylinePrimitive
+.. autoclass:: IStkGraphicsPointBatchPrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPolylinePrimitiveOptionalParameters
+.. autoclass:: IStkGraphicsPolylinePrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPositionInterpolator
+.. autoclass:: IStkGraphicsPolylinePrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPrimitive
+.. autoclass:: IStkGraphicsPositionInterpolator
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPrimitiveManager
+.. autoclass:: IStkGraphicsPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRasterImageGlobeOverlay
+.. autoclass:: IStkGraphicsPrimitiveManager
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRhumbLineInterpolator
+.. autoclass:: IStkGraphicsRasterImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScene
+.. autoclass:: IStkGraphicsRhumbLineInterpolator
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSceneDisplayCondition
+.. autoclass:: IStkGraphicsScene
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSceneManager
+.. autoclass:: IStkGraphicsSceneDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScreenOverlay
+.. autoclass:: IStkGraphicsSceneManager
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScreenOverlayCollection
+.. autoclass:: IStkGraphicsScreenOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScreenOverlayManager
+.. autoclass:: IStkGraphicsScreenOverlayCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScreenOverlayPickResult
+.. autoclass:: IStkGraphicsScreenOverlayManager
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSolidPrimitive
+.. autoclass:: IStkGraphicsScreenOverlayPickResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsStereoscopic
+.. autoclass:: IStkGraphicsSolidPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSurfaceMeshPrimitive
+.. autoclass:: IStkGraphicsStereoscopic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTerrainCollection
+.. autoclass:: IStkGraphicsSurfaceMeshPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTerrainOverlay
+.. autoclass:: IStkGraphicsTerrainCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextBatchPrimitive
+.. autoclass:: IStkGraphicsTerrainOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextBatchPrimitiveOptionalParameters
+.. autoclass:: IStkGraphicsTextBatchPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextOverlay
+.. autoclass:: IStkGraphicsTextBatchPrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextureMatrix
+.. autoclass:: IStkGraphicsTextOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextureScreenOverlay
+.. autoclass:: IStkGraphicsTextureMatrix
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTimeIntervalDisplayCondition
+.. autoclass:: IStkGraphicsTextureScreenOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTriangleMeshPrimitive
+.. autoclass:: IStkGraphicsTimeIntervalDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTriangleMeshPrimitiveOptionalParameters
+.. autoclass:: IStkGraphicsTriangleMeshPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsVectorPrimitive
+.. autoclass:: IStkGraphicsTriangleMeshPrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBoxTriangulatorInitializer
+.. autoclass:: IStkGraphicsVectorPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCylinderTriangulatorInitializer
+.. autoclass:: IStkGraphicsBoxTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsEllipsoidTriangulatorInitializer
+.. autoclass:: IStkGraphicsCylinderTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsExtrudedPolylineTriangulatorInitializer
+.. autoclass:: IStkGraphicsEllipsoidTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSurfaceExtentTriangulatorInitializer
+.. autoclass:: IStkGraphicsExtrudedPolylineTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSurfacePolygonTriangulatorInitializer
+.. autoclass:: IStkGraphicsSurfaceExtentTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSurfaceShapesInitializer
+.. autoclass:: IStkGraphicsSurfacePolygonTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAGICustomTerrainOverlayFactory
+.. autoclass:: IStkGraphicsSurfaceShapesInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAGIProcessedImageGlobeOverlayFactory
+.. autoclass:: IStkGraphicsAGICustomTerrainOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAGIProcessedTerrainOverlayFactory
+.. autoclass:: IStkGraphicsAGIProcessedImageGlobeOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAGIRoamImageGlobeOverlayFactory
+.. autoclass:: IStkGraphicsAGIProcessedTerrainOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
+.. autoclass:: IStkGraphicsAGIRoamImageGlobeOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGeospatialImageGlobeOverlayFactory
+.. autoclass:: IStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsProjectedRasterOverlayFactory
+.. autoclass:: IStkGraphicsGeospatialImageGlobeOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsProjectionFactory
+.. autoclass:: IStkGraphicsProjectedRasterOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAltitudeDisplayConditionFactory
+.. autoclass:: IStkGraphicsProjectionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAxesPrimitiveFactory
+.. autoclass:: IStkGraphicsAltitudeDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCompositeDisplayConditionFactory
+.. autoclass:: IStkGraphicsAxesPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsCompositePrimitiveFactory
+.. autoclass:: IStkGraphicsCompositeDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsConstantDisplayConditionFactory
+.. autoclass:: IStkGraphicsCompositePrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDistanceDisplayConditionFactory
+.. autoclass:: IStkGraphicsConstantDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
+.. autoclass:: IStkGraphicsDistanceDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDistanceToPositionDisplayConditionFactory
+.. autoclass:: IStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDistanceToPrimitiveDisplayConditionFactory
+.. autoclass:: IStkGraphicsDistanceToPositionDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory
+.. autoclass:: IStkGraphicsDistanceToPrimitiveDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGlobeImageOverlayInitializer
+.. autoclass:: IStkGraphicsDurationPathPrimitiveUpdatePolicyFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGraphicsFontFactory
+.. autoclass:: IStkGraphicsGlobeImageOverlayInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGreatArcInterpolatorFactory
+.. autoclass:: IStkGraphicsGraphicsFontFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAlphaFromLuminanceFilterFactory
+.. autoclass:: IStkGraphicsGreatArcInterpolatorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAlphaFromPixelFilterFactory
+.. autoclass:: IStkGraphicsAlphaFromLuminanceFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsAlphaFromRasterFilterFactory
+.. autoclass:: IStkGraphicsAlphaFromPixelFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBandExtractFilterFactory
+.. autoclass:: IStkGraphicsAlphaFromRasterFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBandOrderFilterFactory
+.. autoclass:: IStkGraphicsBandExtractFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBlurFilterFactory
+.. autoclass:: IStkGraphicsBandOrderFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsBrightnessFilterFactory
+.. autoclass:: IStkGraphicsBlurFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsColorToLuminanceFilterFactory
+.. autoclass:: IStkGraphicsBrightnessFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsContrastFilterFactory
+.. autoclass:: IStkGraphicsColorToLuminanceFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsConvolutionFilterFactory
+.. autoclass:: IStkGraphicsContrastFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsEdgeDetectFilterFactory
+.. autoclass:: IStkGraphicsConvolutionFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsFilteringRasterStreamFactory
+.. autoclass:: IStkGraphicsEdgeDetectFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsFlipFilterFactory
+.. autoclass:: IStkGraphicsFilteringRasterStreamFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGammaCorrectionFilterFactory
+.. autoclass:: IStkGraphicsFlipFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGaussianBlurFilterFactory
+.. autoclass:: IStkGraphicsGammaCorrectionFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsGradientDetectFilterFactory
+.. autoclass:: IStkGraphicsGaussianBlurFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsJpeg2000WriterInitializer
+.. autoclass:: IStkGraphicsGradientDetectFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsLevelsFilterFactory
+.. autoclass:: IStkGraphicsJpeg2000WriterInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory
+.. autoclass:: IStkGraphicsLevelsFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRasterFactory
+.. autoclass:: IStkGraphicsProjectionRasterStreamPluginActivatorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRasterAttributesFactory
+.. autoclass:: IStkGraphicsRasterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRotateFilterFactory
+.. autoclass:: IStkGraphicsRasterAttributesFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSequenceFilterFactory
+.. autoclass:: IStkGraphicsRotateFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSharpenFilterFactory
+.. autoclass:: IStkGraphicsSequenceFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsVideoStreamFactory
+.. autoclass:: IStkGraphicsSharpenFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsMarkerBatchPrimitiveFactory
+.. autoclass:: IStkGraphicsVideoStreamFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
+.. autoclass:: IStkGraphicsMarkerBatchPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
+.. autoclass:: IStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsModelPrimitiveFactory
+.. autoclass:: IStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPathPrimitiveFactory
+.. autoclass:: IStkGraphicsModelPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPixelSizeDisplayConditionFactory
+.. autoclass:: IStkGraphicsPathPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPointBatchPrimitiveFactory
+.. autoclass:: IStkGraphicsPixelSizeDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPolylinePrimitiveFactory
+.. autoclass:: IStkGraphicsPointBatchPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsPolylinePrimitiveOptionalParametersFactory
+.. autoclass:: IStkGraphicsPointBatchPrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRasterImageGlobeOverlayFactory
+.. autoclass:: IStkGraphicsPolylinePrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsRhumbLineInterpolatorFactory
+.. autoclass:: IStkGraphicsPolylinePrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSceneDisplayConditionFactory
+.. autoclass:: IStkGraphicsRasterImageGlobeOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSceneManagerInitializer
+.. autoclass:: IStkGraphicsRhumbLineInterpolatorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsScreenOverlayFactory
+.. autoclass:: IStkGraphicsSceneDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSolidPrimitiveFactory
+.. autoclass:: IStkGraphicsSceneManagerInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsSurfaceMeshPrimitiveFactory
+.. autoclass:: IStkGraphicsScreenOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTerrainOverlayInitializer
+.. autoclass:: IStkGraphicsSolidPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextBatchPrimitiveFactory
+.. autoclass:: IStkGraphicsSurfaceMeshPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextBatchPrimitiveOptionalParametersFactory
+.. autoclass:: IStkGraphicsTerrainOverlayInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextOverlayFactory
+.. autoclass:: IStkGraphicsTextBatchPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextureMatrixFactory
+.. autoclass:: IStkGraphicsTextBatchPrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTextureScreenOverlayFactory
+.. autoclass:: IStkGraphicsTextOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTimeIntervalDisplayConditionFactory
+.. autoclass:: IStkGraphicsTextureMatrixFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTriangleMeshPrimitiveFactory
+.. autoclass:: IStkGraphicsTextureScreenOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
+.. autoclass:: IStkGraphicsTimeIntervalDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgStkGraphicsVectorPrimitiveFactory
+.. autoclass:: IStkGraphicsTriangleMeshPrimitiveFactory
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStkGraphicsVectorPrimitiveFactory
     :members:
     :exclude-members: __init__
 
@@ -1302,661 +1312,667 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: AgStkGraphicsPathPoint
+.. autoclass:: StkGraphicsPathPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPathPointFactory
+.. autoclass:: StkGraphicsPathPointFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBoundingSphere
+.. autoclass:: StkGraphicsBoundingSphere
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBoundingSphereFactory
+.. autoclass:: StkGraphicsBoundingSphereFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextureFilter2D
+.. autoclass:: StkGraphicsTextureFilter2D
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextureFilter2DFactory
+.. autoclass:: StkGraphicsTextureFilter2DFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRendererTexture2D
+.. autoclass:: StkGraphicsRendererTexture2D
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRendererTextureTemplate2D
+.. autoclass:: StkGraphicsRendererTextureTemplate2D
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPathPointCollection
+.. autoclass:: StkGraphicsPathPointCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsObjectCollection
+.. autoclass:: StkGraphicsObjectCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSceneCollection
+.. autoclass:: StkGraphicsSceneCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsScreenOverlayPickResultCollection
+.. autoclass:: StkGraphicsScreenOverlayPickResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGlobeImageOverlayAddCompleteEventArgs
+.. autoclass:: StkGraphicsGlobeImageOverlayAddCompleteEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTerrainOverlayAddCompleteEventArgs
+.. autoclass:: StkGraphicsTerrainOverlayAddCompleteEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPickResultCollection
+.. autoclass:: StkGraphicsPickResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRenderingEventArgs
+.. autoclass:: StkGraphicsRenderingEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBatchPrimitiveIndex
+.. autoclass:: StkGraphicsBatchPrimitiveIndex
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlDocumentCollection
+.. autoclass:: StkGraphicsKmlDocumentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlFeatureCollection
+.. autoclass:: StkGraphicsKmlFeatureCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlDocumentLoadedEventArgs
+.. autoclass:: StkGraphicsKmlDocumentLoadedEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsFactoryAndInitializers
+.. autoclass:: StkGraphicsFactoryAndInitializers
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsExtrudedPolylineTriangulatorResult
+.. autoclass:: StkGraphicsExtrudedPolylineTriangulatorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSolidTriangulatorResult
+.. autoclass:: StkGraphicsSolidTriangulatorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSurfaceShapesResult
+.. autoclass:: StkGraphicsSurfaceShapesResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSurfaceTriangulatorResult
+.. autoclass:: StkGraphicsSurfaceTriangulatorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTriangulatorResult
+.. autoclass:: StkGraphicsTriangulatorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAGICustomTerrainOverlay
+.. autoclass:: StkGraphicsAGICustomTerrainOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAGIProcessedImageGlobeOverlay
+.. autoclass:: StkGraphicsAGIProcessedImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAGIProcessedTerrainOverlay
+.. autoclass:: StkGraphicsAGIProcessedTerrainOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAGIRoamImageGlobeOverlay
+.. autoclass:: StkGraphicsAGIRoamImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCameraSnapshot
+.. autoclass:: StkGraphicsCameraSnapshot
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCameraVideoRecording
+.. autoclass:: StkGraphicsCameraVideoRecording
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCentralBodyGraphicsIndexer
+.. autoclass:: StkGraphicsCentralBodyGraphicsIndexer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCustomImageGlobeOverlay
+.. autoclass:: StkGraphicsCustomImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCustomImageGlobeOverlayPluginActivator
+.. autoclass:: StkGraphicsCustomImageGlobeOverlayPluginActivator
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCustomImageGlobeOverlayPluginProxy
+.. autoclass:: StkGraphicsCustomImageGlobeOverlayPluginProxy
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGeospatialImageGlobeOverlay
+.. autoclass:: StkGraphicsGeospatialImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGlobeOverlay
+.. autoclass:: StkGraphicsGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGlobeOverlaySettings
+.. autoclass:: StkGraphicsGlobeOverlaySettings
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsLighting
+.. autoclass:: StkGraphicsLighting
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPathPrimitiveUpdatePolicy
+.. autoclass:: StkGraphicsPathPrimitiveUpdatePolicy
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsProjectedRasterOverlay
+.. autoclass:: StkGraphicsProjectedRasterOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsProjection
+.. autoclass:: StkGraphicsProjection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsProjectionStream
+.. autoclass:: StkGraphicsProjectionStream
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSceneGlobeOverlaySettings
+.. autoclass:: StkGraphicsSceneGlobeOverlaySettings
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsScreenOverlayCollectionBase
+.. autoclass:: StkGraphicsScreenOverlayCollectionBase
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTexture2DFactory
+.. autoclass:: StkGraphicsTexture2DFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsVisualEffects
+.. autoclass:: StkGraphicsVisualEffects
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAltitudeDisplayCondition
+.. autoclass:: StkGraphicsAltitudeDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAxesPrimitive
+.. autoclass:: StkGraphicsAxesPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCamera
+.. autoclass:: StkGraphicsCamera
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCentralBodyGraphics
+.. autoclass:: StkGraphicsCentralBodyGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsClouds
+.. autoclass:: StkGraphicsClouds
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCompositeDisplayCondition
+.. autoclass:: StkGraphicsCompositeDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCompositePrimitive
+.. autoclass:: StkGraphicsCompositePrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsConstantDisplayCondition
+.. autoclass:: StkGraphicsConstantDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDisplayCondition
+.. autoclass:: StkGraphicsDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDistanceDisplayCondition
+.. autoclass:: StkGraphicsDistanceDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDistanceToGlobeOverlayDisplayCondition
+.. autoclass:: StkGraphicsDistanceToGlobeOverlayDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDistanceToPositionDisplayCondition
+.. autoclass:: StkGraphicsDistanceToPositionDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDistanceToPrimitiveDisplayCondition
+.. autoclass:: StkGraphicsDistanceToPrimitiveDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDurationPathPrimitiveUpdatePolicy
+.. autoclass:: StkGraphicsDurationPathPrimitiveUpdatePolicy
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsFrameRate
+.. autoclass:: StkGraphicsFrameRate
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGlobeImageOverlay
+.. autoclass:: StkGraphicsGlobeImageOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGraphicsFont
+.. autoclass:: StkGraphicsGraphicsFont
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGreatArcInterpolator
+.. autoclass:: StkGraphicsGreatArcInterpolator
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsImageCollection
+.. autoclass:: StkGraphicsImageCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAlphaFromLuminanceFilter
+.. autoclass:: StkGraphicsAlphaFromLuminanceFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAlphaFromPixelFilter
+.. autoclass:: StkGraphicsAlphaFromPixelFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAlphaFromRasterFilter
+.. autoclass:: StkGraphicsAlphaFromRasterFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBandExtractFilter
+.. autoclass:: StkGraphicsBandExtractFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBandOrderFilter
+.. autoclass:: StkGraphicsBandOrderFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBlurFilter
+.. autoclass:: StkGraphicsBlurFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBrightnessFilter
+.. autoclass:: StkGraphicsBrightnessFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsColorToLuminanceFilter
+.. autoclass:: StkGraphicsColorToLuminanceFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsContrastFilter
+.. autoclass:: StkGraphicsContrastFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsConvolutionFilter
+.. autoclass:: StkGraphicsConvolutionFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsEdgeDetectFilter
+.. autoclass:: StkGraphicsEdgeDetectFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsFilteringRasterStream
+.. autoclass:: StkGraphicsFilteringRasterStream
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsFlipFilter
+.. autoclass:: StkGraphicsFlipFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGammaCorrectionFilter
+.. autoclass:: StkGraphicsGammaCorrectionFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGaussianBlurFilter
+.. autoclass:: StkGraphicsGaussianBlurFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGradientDetectFilter
+.. autoclass:: StkGraphicsGradientDetectFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsLevelsFilter
+.. autoclass:: StkGraphicsLevelsFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsProjectionRasterStreamPluginActivator
+.. autoclass:: StkGraphicsProjectionRasterStreamPluginActivator
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsProjectionRasterStreamPluginProxy
+.. autoclass:: StkGraphicsProjectionRasterStreamPluginProxy
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRaster
+.. autoclass:: StkGraphicsRaster
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRasterAttributes
+.. autoclass:: StkGraphicsRasterAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRasterFilter
+.. autoclass:: StkGraphicsRasterFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRasterStream
+.. autoclass:: StkGraphicsRasterStream
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRotateFilter
+.. autoclass:: StkGraphicsRotateFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSequenceFilter
+.. autoclass:: StkGraphicsSequenceFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSharpenFilter
+.. autoclass:: StkGraphicsSharpenFilter
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsVideoStream
+.. autoclass:: StkGraphicsVideoStream
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlContainer
+.. autoclass:: StkGraphicsKmlContainer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlDocument
+.. autoclass:: StkGraphicsKmlDocument
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlFeature
+.. autoclass:: StkGraphicsKmlFeature
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlFolder
+.. autoclass:: StkGraphicsKmlFolder
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlGraphics
+.. autoclass:: StkGraphicsKmlGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsKmlNetworkLink
+.. autoclass:: StkGraphicsKmlNetworkLink
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsMarkerBatchPrimitive
+.. autoclass:: StkGraphicsMarkerBatchPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsMarkerBatchPrimitiveOptionalParameters
+.. autoclass:: StkGraphicsMarkerBatchPrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicy
+.. autoclass:: StkGraphicsMaximumCountPathPrimitiveUpdatePolicy
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsModelArticulation
+.. autoclass:: StkGraphicsModelArticulation
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsModelArticulationCollection
+.. autoclass:: StkGraphicsModelArticulationCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsModelPrimitive
+.. autoclass:: StkGraphicsModelPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsModelTransformation
+.. autoclass:: StkGraphicsModelTransformation
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsOverlay
+.. autoclass:: StkGraphicsOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPathPrimitive
+.. autoclass:: StkGraphicsPathPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPickResult
+.. autoclass:: StkGraphicsPickResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPixelSizeDisplayCondition
+.. autoclass:: StkGraphicsPixelSizeDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPointBatchPrimitive
+.. autoclass:: StkGraphicsPointBatchPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPolylinePrimitive
+.. autoclass:: StkGraphicsPointBatchPrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPolylinePrimitiveOptionalParameters
+.. autoclass:: StkGraphicsPolylinePrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPositionInterpolator
+.. autoclass:: StkGraphicsPolylinePrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPrimitive
+.. autoclass:: StkGraphicsPositionInterpolator
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPrimitiveManager
+.. autoclass:: StkGraphicsPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRasterImageGlobeOverlay
+.. autoclass:: StkGraphicsPrimitiveManager
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRhumbLineInterpolator
+.. autoclass:: StkGraphicsRasterImageGlobeOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsScene
+.. autoclass:: StkGraphicsRhumbLineInterpolator
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSceneDisplayCondition
+.. autoclass:: StkGraphicsScene
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSceneManager
+.. autoclass:: StkGraphicsSceneDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsScreenOverlay
+.. autoclass:: StkGraphicsSceneManager
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsScreenOverlayCollection
+.. autoclass:: StkGraphicsScreenOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsScreenOverlayManager
+.. autoclass:: StkGraphicsScreenOverlayCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsScreenOverlayPickResult
+.. autoclass:: StkGraphicsScreenOverlayManager
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSolidPrimitive
+.. autoclass:: StkGraphicsScreenOverlayPickResult
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsStereoscopic
+.. autoclass:: StkGraphicsSolidPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSurfaceMeshPrimitive
+.. autoclass:: StkGraphicsStereoscopic
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTerrainCollection
+.. autoclass:: StkGraphicsSurfaceMeshPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTerrainOverlay
+.. autoclass:: StkGraphicsTerrainCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextBatchPrimitive
+.. autoclass:: StkGraphicsTerrainOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextBatchPrimitiveOptionalParameters
+.. autoclass:: StkGraphicsTextBatchPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextOverlay
+.. autoclass:: StkGraphicsTextBatchPrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextureMatrix
+.. autoclass:: StkGraphicsTextOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextureScreenOverlay
+.. autoclass:: StkGraphicsTextureMatrix
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTimeIntervalDisplayCondition
+.. autoclass:: StkGraphicsTextureScreenOverlay
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTriangleMeshPrimitive
+.. autoclass:: StkGraphicsTimeIntervalDisplayCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTriangleMeshPrimitiveOptionalParameters
+.. autoclass:: StkGraphicsTriangleMeshPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsVectorPrimitive
+.. autoclass:: StkGraphicsTriangleMeshPrimitiveOptionalParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBoxTriangulatorInitializer
+.. autoclass:: StkGraphicsVectorPrimitive
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCylinderTriangulatorInitializer
+.. autoclass:: StkGraphicsBoxTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsEllipsoidTriangulatorInitializer
+.. autoclass:: StkGraphicsCylinderTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsExtrudedPolylineTriangulatorInitializer
+.. autoclass:: StkGraphicsEllipsoidTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSurfaceExtentTriangulatorInitializer
+.. autoclass:: StkGraphicsExtrudedPolylineTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSurfacePolygonTriangulatorInitializer
+.. autoclass:: StkGraphicsSurfaceExtentTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSurfaceShapesInitializer
+.. autoclass:: StkGraphicsSurfacePolygonTriangulatorInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAGICustomTerrainOverlayFactory
+.. autoclass:: StkGraphicsSurfaceShapesInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAGIProcessedImageGlobeOverlayFactory
+.. autoclass:: StkGraphicsAGICustomTerrainOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAGIProcessedTerrainOverlayFactory
+.. autoclass:: StkGraphicsAGIProcessedImageGlobeOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAGIRoamImageGlobeOverlayFactory
+.. autoclass:: StkGraphicsAGIProcessedTerrainOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
+.. autoclass:: StkGraphicsAGIRoamImageGlobeOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGeospatialImageGlobeOverlayFactory
+.. autoclass:: StkGraphicsCustomImageGlobeOverlayPluginActivatorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsProjectedRasterOverlayFactory
+.. autoclass:: StkGraphicsGeospatialImageGlobeOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsProjectionFactory
+.. autoclass:: StkGraphicsProjectedRasterOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAltitudeDisplayConditionFactory
+.. autoclass:: StkGraphicsProjectionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAxesPrimitiveFactory
+.. autoclass:: StkGraphicsAltitudeDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCompositeDisplayConditionFactory
+.. autoclass:: StkGraphicsAxesPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsCompositePrimitiveFactory
+.. autoclass:: StkGraphicsCompositeDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsConstantDisplayConditionFactory
+.. autoclass:: StkGraphicsCompositePrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDistanceDisplayConditionFactory
+.. autoclass:: StkGraphicsConstantDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
+.. autoclass:: StkGraphicsDistanceDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDistanceToPositionDisplayConditionFactory
+.. autoclass:: StkGraphicsDistanceToGlobeOverlayDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDistanceToPrimitiveDisplayConditionFactory
+.. autoclass:: StkGraphicsDistanceToPositionDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsDurationPathPrimitiveUpdatePolicyFactory
+.. autoclass:: StkGraphicsDistanceToPrimitiveDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGlobeImageOverlayInitializer
+.. autoclass:: StkGraphicsDurationPathPrimitiveUpdatePolicyFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGraphicsFontFactory
+.. autoclass:: StkGraphicsGlobeImageOverlayInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGreatArcInterpolatorFactory
+.. autoclass:: StkGraphicsGraphicsFontFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAlphaFromLuminanceFilterFactory
+.. autoclass:: StkGraphicsGreatArcInterpolatorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAlphaFromPixelFilterFactory
+.. autoclass:: StkGraphicsAlphaFromLuminanceFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsAlphaFromRasterFilterFactory
+.. autoclass:: StkGraphicsAlphaFromPixelFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBandExtractFilterFactory
+.. autoclass:: StkGraphicsAlphaFromRasterFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBandOrderFilterFactory
+.. autoclass:: StkGraphicsBandExtractFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBlurFilterFactory
+.. autoclass:: StkGraphicsBandOrderFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsBrightnessFilterFactory
+.. autoclass:: StkGraphicsBlurFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsColorToLuminanceFilterFactory
+.. autoclass:: StkGraphicsBrightnessFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsContrastFilterFactory
+.. autoclass:: StkGraphicsColorToLuminanceFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsConvolutionFilterFactory
+.. autoclass:: StkGraphicsContrastFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsEdgeDetectFilterFactory
+.. autoclass:: StkGraphicsConvolutionFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsFilteringRasterStreamFactory
+.. autoclass:: StkGraphicsEdgeDetectFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsFlipFilterFactory
+.. autoclass:: StkGraphicsFilteringRasterStreamFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGammaCorrectionFilterFactory
+.. autoclass:: StkGraphicsFlipFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGaussianBlurFilterFactory
+.. autoclass:: StkGraphicsGammaCorrectionFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsGradientDetectFilterFactory
+.. autoclass:: StkGraphicsGaussianBlurFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsJpeg2000WriterInitializer
+.. autoclass:: StkGraphicsGradientDetectFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsLevelsFilterFactory
+.. autoclass:: StkGraphicsJpeg2000WriterInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsProjectionRasterStreamPluginActivatorFactory
+.. autoclass:: StkGraphicsLevelsFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRasterFactory
+.. autoclass:: StkGraphicsProjectionRasterStreamPluginActivatorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRasterAttributesFactory
+.. autoclass:: StkGraphicsRasterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRotateFilterFactory
+.. autoclass:: StkGraphicsRasterAttributesFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSequenceFilterFactory
+.. autoclass:: StkGraphicsRotateFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSharpenFilterFactory
+.. autoclass:: StkGraphicsSequenceFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsVideoStreamFactory
+.. autoclass:: StkGraphicsSharpenFilterFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsMarkerBatchPrimitiveFactory
+.. autoclass:: StkGraphicsVideoStreamFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
+.. autoclass:: StkGraphicsMarkerBatchPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
+.. autoclass:: StkGraphicsMarkerBatchPrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsModelPrimitiveFactory
+.. autoclass:: StkGraphicsMaximumCountPathPrimitiveUpdatePolicyFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPathPrimitiveFactory
+.. autoclass:: StkGraphicsModelPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPixelSizeDisplayConditionFactory
+.. autoclass:: StkGraphicsPathPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPointBatchPrimitiveFactory
+.. autoclass:: StkGraphicsPixelSizeDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPolylinePrimitiveFactory
+.. autoclass:: StkGraphicsPointBatchPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsPolylinePrimitiveOptionalParametersFactory
+.. autoclass:: StkGraphicsPointBatchPrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRasterImageGlobeOverlayFactory
+.. autoclass:: StkGraphicsPolylinePrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsRhumbLineInterpolatorFactory
+.. autoclass:: StkGraphicsPolylinePrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSceneDisplayConditionFactory
+.. autoclass:: StkGraphicsRasterImageGlobeOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSceneManagerInitializer
+.. autoclass:: StkGraphicsRhumbLineInterpolatorFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsScreenOverlayFactory
+.. autoclass:: StkGraphicsSceneDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSolidPrimitiveFactory
+.. autoclass:: StkGraphicsSceneManagerInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsSurfaceMeshPrimitiveFactory
+.. autoclass:: StkGraphicsScreenOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTerrainOverlayInitializer
+.. autoclass:: StkGraphicsSolidPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextBatchPrimitiveFactory
+.. autoclass:: StkGraphicsSurfaceMeshPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextBatchPrimitiveOptionalParametersFactory
+.. autoclass:: StkGraphicsTerrainOverlayInitializer
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextOverlayFactory
+.. autoclass:: StkGraphicsTextBatchPrimitiveFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextureMatrixFactory
+.. autoclass:: StkGraphicsTextBatchPrimitiveOptionalParametersFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTextureScreenOverlayFactory
+.. autoclass:: StkGraphicsTextOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTimeIntervalDisplayConditionFactory
+.. autoclass:: StkGraphicsTextureMatrixFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTriangleMeshPrimitiveFactory
+.. autoclass:: StkGraphicsTextureScreenOverlayFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
+.. autoclass:: StkGraphicsTimeIntervalDisplayConditionFactory
     :members:
     :exclude-members: __init__
-.. autoclass:: AgStkGraphicsVectorPrimitiveFactory
+.. autoclass:: StkGraphicsTriangleMeshPrimitiveFactory
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StkGraphicsTriangleMeshPrimitiveOptionalParametersFactory
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StkGraphicsVectorPrimitiveFactory
     :members:
     :exclude-members: __init__
 

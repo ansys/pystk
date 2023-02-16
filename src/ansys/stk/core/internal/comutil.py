@@ -468,6 +468,11 @@ class _CreateCoInitializeManager(object):
             
 CoInitializeManager = _CreateCoInitializeManager()
 
+def _initialize_embedded():
+    """Called by STK during plugin initialization."""
+    ole32lib._initialize()
+    oleaut32lib._initialize()
+
 ###############################################################################
 #   Interfaces
 ###############################################################################

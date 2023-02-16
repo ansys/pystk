@@ -67,7 +67,7 @@ class ThreadMarshaller(object):
         """Call in the destination thread after all calls to STK are finished."""
         ole32lib.CoUninitialize()
 
-class STKDesktopApplication(AgUiApplication):
+class STKDesktopApplication(UiApplication):
     """
     Interact with an STK Desktop application.  Use STKDesktop.StartApplication() or 
     STKDesktop.AttachToApplication() to obtain an initialized STKDesktopApplication object.
@@ -76,13 +76,13 @@ class STKDesktopApplication(AgUiApplication):
         if os.name != "nt":
             raise RuntimeError("STKDesktopApplication is only available on Windows. Use STKEngine.")
         self.__dict__["_pUnk"] = None
-        AgUiApplication.__init__(self)
+        UiApplication.__init__(self)
         self.__dict__["_initialized"] = False
         self.__dict__["_root"] = None
         
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        AgUiApplication._private_init(self, pUnk)
+        UiApplication._private_init(self, pUnk)
         self.__dict__["_initialized"] = True
         
     def __del__(self):
@@ -90,7 +90,7 @@ class STKDesktopApplication(AgUiApplication):
             CoInitializeManager.uninitialize()
 
     @property
-    def Root(self) -> AgStkObjectRoot:
+    def Root(self) -> StkObjectRoot:
         """Get the object model root associated with this instance of STK Desktop application."""
         if not self.__dict__["_initialized"]:
             raise RuntimeError("STKDesktopApplication has not been properly initialized.  Use StartApplication() or AttachToApplication() to obtain the STKDesktopApplication object.")
@@ -100,6 +100,12 @@ class STKDesktopApplication(AgUiApplication):
             self.__dict__["_root"] = self.Personality2
             return self.__dict__["_root"]
             
+    def NewObjectModelContext(self) -> StkObjectModelContext:
+        '''
+        Create a new object model context for the STK Desktop application.
+        '''
+        return self.CreateObject("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
+    
     def ShutDown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
         if self.__dict__["_pUnk"] is not None:

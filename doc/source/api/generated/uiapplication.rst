@@ -9,11 +9,11 @@ Interfaces
 
 .. autosummary::
 
-    IAgMRUCollection
-    IAgUiFileOpenExt
-    IAgUiApplication
-    IAgUiApplicationPartnerAccess
-    IAgUiFileOpenExtCollection
+    IMRUCollection
+    IUiFileOpenExt
+    IUiApplication
+    IUiApplicationPartnerAccess
+    IUiFileOpenExtCollection
 
 
 Enumerations
@@ -32,10 +32,10 @@ Classes
 
 .. autosummary::
 
-    AgUiApplication
-    AgMRUCollection
-    AgUiFileOpenExtCollection
-    AgUiFileOpenExt
+    UiApplication
+    MRUCollection
+    UiFileOpenExtCollection
+    UiFileOpenExt
 
 
 Reference
@@ -44,19 +44,19 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IAgMRUCollection
+.. autoclass:: IMRUCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiFileOpenExt
+.. autoclass:: IUiFileOpenExt
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiApplication
+.. autoclass:: IUiApplication
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiApplicationPartnerAccess
+.. autoclass:: IUiApplicationPartnerAccess
     :members:
     :exclude-members: __init__
-.. autoclass:: IAgUiFileOpenExtCollection
+.. autoclass:: IUiFileOpenExtCollection
     :members:
     :exclude-members: __init__
 
@@ -77,16 +77,16 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: AgUiApplication
+.. autoclass:: UiApplication
     :members:
     :exclude-members: __init__
-.. autoclass:: AgMRUCollection
+.. autoclass:: MRUCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiFileOpenExtCollection
+.. autoclass:: UiFileOpenExtCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AgUiFileOpenExt
+.. autoclass:: UiFileOpenExt
     :members:
     :exclude-members: __init__
 

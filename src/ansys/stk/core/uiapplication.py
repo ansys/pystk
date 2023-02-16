@@ -2,9 +2,9 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgEAppConstants", "AgEAppErrorCodes", "AgEOpenLogFileMode", "AgEUiLogMsgType", "AgMRUCollection", "AgUiApplication", 
-"AgUiFileOpenExt", "AgUiFileOpenExtCollection", "IAgMRUCollection", "IAgUiApplication", "IAgUiApplicationPartnerAccess", 
-"IAgUiFileOpenExt", "IAgUiFileOpenExtCollection"]
+__all__ = ["AgEAppConstants", "AgEAppErrorCodes", "AgEOpenLogFileMode", "AgEUiLogMsgType", "IMRUCollection", "IUiApplication", 
+"IUiApplicationPartnerAccess", "IUiFileOpenExt", "IUiFileOpenExtCollection", "MRUCollection", "UiApplication", "UiFileOpenExt", 
+"UiFileOpenExtCollection"]
 
 import typing
 
@@ -101,7 +101,7 @@ AgEAppErrorCodes.eAppErrorNoLicenseError.__doc__ = "No license could be found."
 agcls.AgTypeNameMap["AgEAppErrorCodes"] = AgEAppErrorCodes
 
 
-class IAgMRUCollection(object):
+class IMRUCollection(object):
     """Provides information about most recently used (MRU) list."""
     _uuid = "{68FAF906-BAD0-4C7C-80D5-26E6765800F7}"
     _num_methods = 3
@@ -112,32 +112,32 @@ class IAgMRUCollection(object):
         self.__dict__["_GetCount"] = _raise_uninitialized_error
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgMRUCollection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IMRUCollection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgMRUCollection from source object.")
+                raise STKInvalidCastError("Failed to create IMRUCollection from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgMRUCollection = agcom.GUID(IAgMRUCollection._uuid)
-        vtable_offset_local = IAgMRUCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgMRUCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.BSTR))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgMRUCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgMRUCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        IID_IMRUCollection = agcom.GUID(IMRUCollection._uuid)
+        vtable_offset_local = IMRUCollection._vtable_offset - 1
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IMRUCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.BSTR))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IMRUCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IMRUCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgMRUCollection.__dict__ and type(IAgMRUCollection.__dict__[attrname]) == property:
-            return IAgMRUCollection.__dict__[attrname]
+        if attrname in IMRUCollection.__dict__ and type(IMRUCollection.__dict__[attrname]) == property:
+            return IMRUCollection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgMRUCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IMRUCollection.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
@@ -175,10 +175,10 @@ class IAgMRUCollection(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{68FAF906-BAD0-4C7C-80D5-26E6765800F7}", IAgMRUCollection)
-agcls.AgTypeNameMap["IAgMRUCollection"] = IAgMRUCollection
+agcls.AgClassCatalog.add_catalog_entry("{68FAF906-BAD0-4C7C-80D5-26E6765800F7}", IMRUCollection)
+agcls.AgTypeNameMap["IMRUCollection"] = IMRUCollection
 
-class IAgUiFileOpenExt(object):
+class IUiFileOpenExt(object):
     """Access to file open dialog that allows multiple file specifications."""
     _uuid = "{42DFA066-8474-4FAA-9F66-E4477DBD44E2}"
     _num_methods = 6
@@ -192,46 +192,46 @@ class IAgUiFileOpenExt(object):
         self.__dict__["_GetFilterPattern"] = _raise_uninitialized_error
         self.__dict__["_SetFilterPattern"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUiFileOpenExt._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiFileOpenExt._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgUiFileOpenExt from source object.")
+                raise STKInvalidCastError("Failed to create IUiFileOpenExt from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgUiFileOpenExt = agcom.GUID(IAgUiFileOpenExt._uuid)
-        vtable_offset_local = IAgUiFileOpenExt._vtable_offset - 1
-        self.__dict__["_GetFileName"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExt, vtable_offset_local+1, POINTER(agcom.PVOID))
-        self.__dict__["_SetFileName"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExt, vtable_offset_local+2, agcom.PVOID)
-        self.__dict__["_GetFilterDescription"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExt, vtable_offset_local+3, POINTER(agcom.BSTR))
-        self.__dict__["_SetFilterDescription"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExt, vtable_offset_local+4, agcom.BSTR)
-        self.__dict__["_GetFilterPattern"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExt, vtable_offset_local+5, POINTER(agcom.BSTR))
-        self.__dict__["_SetFilterPattern"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExt, vtable_offset_local+6, agcom.BSTR)
+        IID_IUiFileOpenExt = agcom.GUID(IUiFileOpenExt._uuid)
+        vtable_offset_local = IUiFileOpenExt._vtable_offset - 1
+        self.__dict__["_GetFileName"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+1, POINTER(agcom.PVOID))
+        self.__dict__["_SetFileName"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+2, agcom.PVOID)
+        self.__dict__["_GetFilterDescription"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+3, POINTER(agcom.BSTR))
+        self.__dict__["_SetFilterDescription"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+4, agcom.BSTR)
+        self.__dict__["_GetFilterPattern"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+5, POINTER(agcom.BSTR))
+        self.__dict__["_SetFilterPattern"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExt, vtable_offset_local+6, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgUiFileOpenExt.__dict__ and type(IAgUiFileOpenExt.__dict__[attrname]) == property:
-            return IAgUiFileOpenExt.__dict__[attrname]
+        if attrname in IUiFileOpenExt.__dict__ and type(IUiFileOpenExt.__dict__[attrname]) == property:
+            return IUiFileOpenExt.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUiFileOpenExt.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUiFileOpenExt.")
     
     @property
-    def FileName(self) -> "IAgUiFileOpenExtCollection":
+    def FileName(self) -> "IUiFileOpenExtCollection":
         """Gets/sets the multiple file open collection."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetFileName"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @FileName.setter
-    def FileName(self, newVal:"IAgUiFileOpenExtCollection") -> None:
+    def FileName(self, newVal:"IUiFileOpenExtCollection") -> None:
         """Gets/sets the multiple file open collection."""
-        with agmarshall.AgInterface_in_arg(newVal, IAgUiFileOpenExtCollection) as arg_newVal:
+        with agmarshall.AgInterface_in_arg(newVal, IUiFileOpenExtCollection) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetFileName"](arg_newVal.COM_val))
 
     @property
@@ -261,10 +261,10 @@ class IAgUiFileOpenExt(object):
             agcls.evaluate_hresult(self.__dict__["_SetFilterPattern"](arg_newVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{42DFA066-8474-4FAA-9F66-E4477DBD44E2}", IAgUiFileOpenExt)
-agcls.AgTypeNameMap["IAgUiFileOpenExt"] = IAgUiFileOpenExt
+agcls.AgClassCatalog.add_catalog_entry("{42DFA066-8474-4FAA-9F66-E4477DBD44E2}", IUiFileOpenExt)
+agcls.AgTypeNameMap["IUiFileOpenExt"] = IUiFileOpenExt
 
-class IAgUiApplication(object):
+class IUiApplication(object):
     """IAgUiApplication represents a root of the Application Model."""
     _uuid = "{769EDAA1-8767-4781-BC43-D968B0D67C02}"
     _num_methods = 37
@@ -309,65 +309,65 @@ class IAgUiApplication(object):
         self.__dict__["_CreateApplication"] = _raise_uninitialized_error
         self.__dict__["_GetProcessID"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUiApplication._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiApplication._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgUiApplication from source object.")
+                raise STKInvalidCastError("Failed to create IUiApplication from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgUiApplication = agcom.GUID(IAgUiApplication._uuid)
-        vtable_offset_local = IAgUiApplication._vtable_offset - 1
-        self.__dict__["_LoadPersonality"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+1, agcom.BSTR)
-        self.__dict__["_GetPersonality"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+2, POINTER(agcom.PVOID))
-        self.__dict__["_GetVisible"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetVisible"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+4, agcom.VARIANT_BOOL)
-        self.__dict__["_GetUserControl"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetUserControl"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+6, agcom.VARIANT_BOOL)
-        self.__dict__["_GetWindows"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+7, POINTER(agcom.PVOID))
-        self.__dict__["_GetHeight"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+8, POINTER(agcom.LONG))
-        self.__dict__["_SetHeight"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+9, agcom.LONG)
-        self.__dict__["_GetWidth"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+10, POINTER(agcom.LONG))
-        self.__dict__["_SetWidth"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+11, agcom.LONG)
-        self.__dict__["_GetLeft"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+12, POINTER(agcom.LONG))
-        self.__dict__["_SetLeft"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+13, agcom.LONG)
-        self.__dict__["_GetTop"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+14, POINTER(agcom.LONG))
-        self.__dict__["_SetTop"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+15, agcom.LONG)
-        self.__dict__["_GetWindowState"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+16, POINTER(agcom.LONG))
-        self.__dict__["_SetWindowState"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+17, agcom.LONG)
-        self.__dict__["_Activate"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+18, )
-        self.__dict__["_GetMRUList"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+19, POINTER(agcom.PVOID))
-        self.__dict__["_FileOpenDialog"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+20, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_GetPath"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+21, POINTER(agcom.BSTR))
-        self.__dict__["_CreateObject"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+22, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_FileSaveAsDialog"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+23, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_Quit"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+24, )
-        self.__dict__["_FileOpenDialogExt"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+25, agcom.VARIANT_BOOL, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_GetHWND"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+26, POINTER(agcom.LONG))
-        self.__dict__["_DirectoryPickerDialog"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+27, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_GetMessagePendingDelay"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+28, POINTER(agcom.LONG))
-        self.__dict__["_SetMessagePendingDelay"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+29, agcom.LONG)
-        self.__dict__["_GetPersonality2"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+30, POINTER(agcom.PVOID))
-        self.__dict__["_OpenLogFile"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+31, agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_LogMsg"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+32, agcom.LONG, agcom.BSTR)
-        self.__dict__["_GetLogFile"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+33, POINTER(agcom.BSTR))
-        self.__dict__["_GetDisplayAlerts"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+34, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayAlerts"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+35, agcom.VARIANT_BOOL)
-        self.__dict__["_CreateApplication"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+36, POINTER(agcom.PVOID))
-        self.__dict__["_GetProcessID"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplication, vtable_offset_local+37, POINTER(agcom.LONG))
+        IID_IUiApplication = agcom.GUID(IUiApplication._uuid)
+        vtable_offset_local = IUiApplication._vtable_offset - 1
+        self.__dict__["_LoadPersonality"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+1, agcom.BSTR)
+        self.__dict__["_GetPersonality"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+2, POINTER(agcom.PVOID))
+        self.__dict__["_GetVisible"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetVisible"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+4, agcom.VARIANT_BOOL)
+        self.__dict__["_GetUserControl"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetUserControl"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+6, agcom.VARIANT_BOOL)
+        self.__dict__["_GetWindows"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_GetHeight"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+8, POINTER(agcom.LONG))
+        self.__dict__["_SetHeight"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+9, agcom.LONG)
+        self.__dict__["_GetWidth"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+10, POINTER(agcom.LONG))
+        self.__dict__["_SetWidth"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+11, agcom.LONG)
+        self.__dict__["_GetLeft"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+12, POINTER(agcom.LONG))
+        self.__dict__["_SetLeft"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+13, agcom.LONG)
+        self.__dict__["_GetTop"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+14, POINTER(agcom.LONG))
+        self.__dict__["_SetTop"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+15, agcom.LONG)
+        self.__dict__["_GetWindowState"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+16, POINTER(agcom.LONG))
+        self.__dict__["_SetWindowState"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+17, agcom.LONG)
+        self.__dict__["_Activate"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+18, )
+        self.__dict__["_GetMRUList"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+19, POINTER(agcom.PVOID))
+        self.__dict__["_FileOpenDialog"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+20, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
+        self.__dict__["_GetPath"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+21, POINTER(agcom.BSTR))
+        self.__dict__["_CreateObject"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+22, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_FileSaveAsDialog"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+23, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
+        self.__dict__["_Quit"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+24, )
+        self.__dict__["_FileOpenDialogExt"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+25, agcom.VARIANT_BOOL, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_GetHWND"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+26, POINTER(agcom.LONG))
+        self.__dict__["_DirectoryPickerDialog"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+27, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
+        self.__dict__["_GetMessagePendingDelay"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+28, POINTER(agcom.LONG))
+        self.__dict__["_SetMessagePendingDelay"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+29, agcom.LONG)
+        self.__dict__["_GetPersonality2"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+30, POINTER(agcom.PVOID))
+        self.__dict__["_OpenLogFile"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+31, agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_LogMsg"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+32, agcom.LONG, agcom.BSTR)
+        self.__dict__["_GetLogFile"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+33, POINTER(agcom.BSTR))
+        self.__dict__["_GetDisplayAlerts"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+34, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetDisplayAlerts"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+35, agcom.VARIANT_BOOL)
+        self.__dict__["_CreateApplication"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+36, POINTER(agcom.PVOID))
+        self.__dict__["_GetProcessID"] = IAGFUNCTYPE(pUnk, IID_IUiApplication, vtable_offset_local+37, POINTER(agcom.LONG))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgUiApplication.__dict__ and type(IAgUiApplication.__dict__[attrname]) == property:
-            return IAgUiApplication.__dict__[attrname]
+        if attrname in IUiApplication.__dict__ and type(IUiApplication.__dict__[attrname]) == property:
+            return IUiApplication.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUiApplication.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUiApplication.")
     
     def LoadPersonality(self, persName:str) -> None:
         """Loads a personality by its name."""
@@ -408,7 +408,7 @@ class IAgUiApplication(object):
             agcls.evaluate_hresult(self.__dict__["_SetUserControl"](arg_newVal.COM_val))
 
     @property
-    def Windows(self) -> "IAgUiWindowsCollection":
+    def Windows(self) -> "IUiWindowsCollection":
         """Returns a collection of windows."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetWindows"](byref(arg_pVal.COM_val)))
@@ -484,7 +484,7 @@ class IAgUiApplication(object):
         agcls.evaluate_hresult(self.__dict__["_Activate"]())
 
     @property
-    def MRUList(self) -> "IAgMRUCollection":
+    def MRUList(self) -> "IMRUCollection":
         """Returns a collection most recently used files."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_GetMRUList"](byref(arg_ppVal.COM_val)))
@@ -527,7 +527,7 @@ class IAgUiApplication(object):
         """Shuts down the application."""
         agcls.evaluate_hresult(self.__dict__["_Quit"]())
 
-    def FileOpenDialogExt(self, allowMultiSelect:bool, defaultExt:str, filter:str, initialDir:str) -> "IAgUiFileOpenExt":
+    def FileOpenDialogExt(self, allowMultiSelect:bool, defaultExt:str, filter:str, initialDir:str) -> "IUiFileOpenExt":
         """Brings up a standard File Open Dialog and returns an object representing the selected file."""
         with agmarshall.VARIANT_BOOL_arg(allowMultiSelect) as arg_allowMultiSelect, \
              agmarshall.BSTR_arg(defaultExt) as arg_defaultExt, \
@@ -606,7 +606,7 @@ class IAgUiApplication(object):
         with agmarshall.VARIANT_BOOL_arg(displayAlerts) as arg_displayAlerts:
             agcls.evaluate_hresult(self.__dict__["_SetDisplayAlerts"](arg_displayAlerts.COM_val))
 
-    def CreateApplication(self) -> "IAgUiApplication":
+    def CreateApplication(self) -> "IUiApplication":
         """Create a new instance of the application model root object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_CreateApplication"](byref(arg_ppRetVal.COM_val)))
@@ -620,10 +620,10 @@ class IAgUiApplication(object):
             return arg_pVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{769EDAA1-8767-4781-BC43-D968B0D67C02}", IAgUiApplication)
-agcls.AgTypeNameMap["IAgUiApplication"] = IAgUiApplication
+agcls.AgClassCatalog.add_catalog_entry("{769EDAA1-8767-4781-BC43-D968B0D67C02}", IUiApplication)
+agcls.AgTypeNameMap["IUiApplication"] = IUiApplication
 
-class IAgUiApplicationPartnerAccess(object):
+class IUiApplicationPartnerAccess(object):
     """Access to the application object model for business partners."""
     _uuid = "{DFC7DB2A-FA00-47B7-95D8-0E1171705A0F}"
     _num_methods = 1
@@ -632,29 +632,29 @@ class IAgUiApplicationPartnerAccess(object):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GrantPartnerAccess"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUiApplicationPartnerAccess._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiApplicationPartnerAccess._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgUiApplicationPartnerAccess from source object.")
+                raise STKInvalidCastError("Failed to create IUiApplicationPartnerAccess from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgUiApplicationPartnerAccess = agcom.GUID(IAgUiApplicationPartnerAccess._uuid)
-        vtable_offset_local = IAgUiApplicationPartnerAccess._vtable_offset - 1
-        self.__dict__["_GrantPartnerAccess"] = IAGFUNCTYPE(pUnk, IID_IAgUiApplicationPartnerAccess, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        IID_IUiApplicationPartnerAccess = agcom.GUID(IUiApplicationPartnerAccess._uuid)
+        vtable_offset_local = IUiApplicationPartnerAccess._vtable_offset - 1
+        self.__dict__["_GrantPartnerAccess"] = IAGFUNCTYPE(pUnk, IID_IUiApplicationPartnerAccess, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgUiApplicationPartnerAccess.__dict__ and type(IAgUiApplicationPartnerAccess.__dict__[attrname]) == property:
-            return IAgUiApplicationPartnerAccess.__dict__[attrname]
+        if attrname in IUiApplicationPartnerAccess.__dict__ and type(IUiApplicationPartnerAccess.__dict__[attrname]) == property:
+            return IUiApplicationPartnerAccess.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUiApplicationPartnerAccess.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUiApplicationPartnerAccess.")
     
     def GrantPartnerAccess(self, vendor:str, product:str, key:str) -> typing.Any:
         """Provide object model root for authorized business partners."""
@@ -666,10 +666,10 @@ class IAgUiApplicationPartnerAccess(object):
             return arg_ppRetVal.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{DFC7DB2A-FA00-47B7-95D8-0E1171705A0F}", IAgUiApplicationPartnerAccess)
-agcls.AgTypeNameMap["IAgUiApplicationPartnerAccess"] = IAgUiApplicationPartnerAccess
+agcls.AgClassCatalog.add_catalog_entry("{DFC7DB2A-FA00-47B7-95D8-0E1171705A0F}", IUiApplicationPartnerAccess)
+agcls.AgTypeNameMap["IUiApplicationPartnerAccess"] = IUiApplicationPartnerAccess
 
-class IAgUiFileOpenExtCollection(object):
+class IUiFileOpenExtCollection(object):
     """Multiple file open collection."""
     _uuid = "{564BF89D-F0F8-4E98-A5A4-033DB16FC659}"
     _num_methods = 3
@@ -680,32 +680,32 @@ class IAgUiFileOpenExtCollection(object):
         self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
         self.__dict__["_Item"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IAgUiFileOpenExtCollection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiFileOpenExtCollection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IAgUiFileOpenExtCollection from source object.")
+                raise STKInvalidCastError("Failed to create IUiFileOpenExtCollection from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IAgUiFileOpenExtCollection = agcom.GUID(IAgUiFileOpenExtCollection._uuid)
-        vtable_offset_local = IAgUiFileOpenExtCollection._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExtCollection, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExtCollection, vtable_offset_local+2, POINTER(agcom.PVOID))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IAgUiFileOpenExtCollection, vtable_offset_local+3, agcom.LONG, POINTER(agcom.BSTR))
+        IID_IUiFileOpenExtCollection = agcom.GUID(IUiFileOpenExtCollection._uuid)
+        vtable_offset_local = IUiFileOpenExtCollection._vtable_offset - 1
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExtCollection, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExtCollection, vtable_offset_local+2, POINTER(agcom.PVOID))
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUiFileOpenExtCollection, vtable_offset_local+3, agcom.LONG, POINTER(agcom.BSTR))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IAgUiFileOpenExtCollection.__dict__ and type(IAgUiFileOpenExtCollection.__dict__[attrname]) == property:
-            return IAgUiFileOpenExtCollection.__dict__[attrname]
+        if attrname in IUiFileOpenExtCollection.__dict__ and type(IUiFileOpenExtCollection.__dict__[attrname]) == property:
+            return IUiFileOpenExtCollection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IAgUiFileOpenExtCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUiFileOpenExtCollection.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
@@ -743,96 +743,96 @@ class IAgUiFileOpenExtCollection(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{564BF89D-F0F8-4E98-A5A4-033DB16FC659}", IAgUiFileOpenExtCollection)
-agcls.AgTypeNameMap["IAgUiFileOpenExtCollection"] = IAgUiFileOpenExtCollection
+agcls.AgClassCatalog.add_catalog_entry("{564BF89D-F0F8-4E98-A5A4-033DB16FC659}", IUiFileOpenExtCollection)
+agcls.AgTypeNameMap["IUiFileOpenExtCollection"] = IUiFileOpenExtCollection
 
 
 
-class AgUiApplication(IAgUiApplication, IAgUiApplicationPartnerAccess):
+class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
     """A root object of the Application Model."""
     def __init__(self, sourceObject=None):
-        IAgUiApplication.__init__(self, sourceObject)
-        IAgUiApplicationPartnerAccess.__init__(self, sourceObject)
+        IUiApplication.__init__(self, sourceObject)
+        IUiApplicationPartnerAccess.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgUiApplication._private_init(self, pUnk)
-        IAgUiApplicationPartnerAccess._private_init(self, pUnk)
+        IUiApplication._private_init(self, pUnk)
+        IUiApplicationPartnerAccess._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgUiApplication._get_property(self, attrname) is not None: found_prop = IAgUiApplication._get_property(self, attrname)
-        if IAgUiApplicationPartnerAccess._get_property(self, attrname) is not None: found_prop = IAgUiApplicationPartnerAccess._get_property(self, attrname)
+        if IUiApplication._get_property(self, attrname) is not None: found_prop = IUiApplication._get_property(self, attrname)
+        if IUiApplicationPartnerAccess._get_property(self, attrname) is not None: found_prop = IUiApplicationPartnerAccess._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgUiApplication.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UiApplication.")
         
-agcls.AgClassCatalog.add_catalog_entry("{7ADA6C22-FA34-4578-8BE8-65405A55EE15}", AgUiApplication)
+agcls.AgClassCatalog.add_catalog_entry("{7ADA6C22-FA34-4578-8BE8-65405A55EE15}", UiApplication)
 
 
-class AgMRUCollection(IAgMRUCollection):
+class MRUCollection(IMRUCollection):
     """Provides information about most recently used (MRU) list."""
     def __init__(self, sourceObject=None):
-        IAgMRUCollection.__init__(self, sourceObject)
+        IMRUCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgMRUCollection._private_init(self, pUnk)
+        IMRUCollection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgMRUCollection._get_property(self, attrname) is not None: found_prop = IAgMRUCollection._get_property(self, attrname)
+        if IMRUCollection._get_property(self, attrname) is not None: found_prop = IMRUCollection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgMRUCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in MRUCollection.")
         
-agcls.AgClassCatalog.add_catalog_entry("{8033C4FF-4A7D-4416-9B07-6807EA9C794E}", AgMRUCollection)
+agcls.AgClassCatalog.add_catalog_entry("{8033C4FF-4A7D-4416-9B07-6807EA9C794E}", MRUCollection)
 
 
-class AgUiFileOpenExtCollection(IAgUiFileOpenExtCollection):
+class UiFileOpenExtCollection(IUiFileOpenExtCollection):
     """Multiple file open collection."""
     def __init__(self, sourceObject=None):
-        IAgUiFileOpenExtCollection.__init__(self, sourceObject)
+        IUiFileOpenExtCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgUiFileOpenExtCollection._private_init(self, pUnk)
+        IUiFileOpenExtCollection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgUiFileOpenExtCollection._get_property(self, attrname) is not None: found_prop = IAgUiFileOpenExtCollection._get_property(self, attrname)
+        if IUiFileOpenExtCollection._get_property(self, attrname) is not None: found_prop = IUiFileOpenExtCollection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgUiFileOpenExtCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UiFileOpenExtCollection.")
         
-agcls.AgClassCatalog.add_catalog_entry("{A733AF99-E82E-42D8-AD9A-29BB005B3703}", AgUiFileOpenExtCollection)
+agcls.AgClassCatalog.add_catalog_entry("{A733AF99-E82E-42D8-AD9A-29BB005B3703}", UiFileOpenExtCollection)
 
 
-class AgUiFileOpenExt(IAgUiFileOpenExt):
+class UiFileOpenExt(IUiFileOpenExt):
     """Access to file open dialog that allows multiple file specifications."""
     def __init__(self, sourceObject=None):
-        IAgUiFileOpenExt.__init__(self, sourceObject)
+        IUiFileOpenExt.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IAgUiFileOpenExt._private_init(self, pUnk)
+        IUiFileOpenExt._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IAgUiFileOpenExt._get_property(self, attrname) is not None: found_prop = IAgUiFileOpenExt._get_property(self, attrname)
+        if IUiFileOpenExt._get_property(self, attrname) is not None: found_prop = IUiFileOpenExt._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in AgUiFileOpenExt.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UiFileOpenExt.")
         
-agcls.AgClassCatalog.add_catalog_entry("{26A2C933-DB59-434E-85FD-2D92A97AA8AD}", AgUiFileOpenExt)
+agcls.AgClassCatalog.add_catalog_entry("{26A2C933-DB59-434E-85FD-2D92A97AA8AD}", UiFileOpenExt)
 
 
 
