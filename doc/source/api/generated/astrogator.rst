@@ -9,396 +9,396 @@ Interfaces
 
 .. autosummary::
 
-    IVAUserVariableDefinitionCollection
-    IVAUserVariableCollection
-    IVAUserVariableUpdateCollection
-    IVACalculationGraphCollection
-    IVAConstraintCollection
-    IVAPluginProperties
-    IVASNOPTControlCollection
-    IVASNOPTResultCollection
-    IVAIPOPTControlCollection
-    IVAIPOPTResultCollection
-    IVAManeuverOptimalFiniteSNOPTOptimizer
-    IVAManeuverOptimalFiniteInitialBoundaryConditions
-    IVAManeuverOptimalFiniteFinalBoundaryConditions
-    IVAManeuverOptimalFinitePathBoundaryConditions
-    IVAManeuverOptimalFiniteSteeringNodeCollection
-    IVAManeuverOptimalFiniteBounds
-    IVAGoldenSectionControlCollection
-    IVAGoldenSectionControl
-    IVAGoldenSectionResultCollection
-    IVAGoldenSectionResult
-    IVAGridSearchControlCollection
-    IVAGridSearchControl
-    IVAGridSearchResultCollection
-    IVAGridSearchResult
-    IVAStoppingConditionElement
-    IVAStoppingConditionCollection
-    IVAMCSSegmentCollection
-    IVAState
-    IVAStoppingConditionComponent
-    IVAAutomaticSequence
-    IVAAutomaticSequenceCollection
-    IVABPlaneCollection
-    IVACalcObjectCollection
-    IVAManeuverFinitePropagator
-    IVABurnoutVelocity
-    IVAAttitudeControl
-    IVAAttitudeControlFinite
-    IVAAttitudeControlImpulsive
-    IVAAttitudeControlOptimalFinite
-    IVAManeuver
-    IVADisplaySystem
-    IVABurnout
-    IVAScriptingSegment
-    IVAScriptingSegmentCollection
-    IVAScriptingParameterEnumerationChoice
-    IVAScriptingParameterEnumerationChoiceCollection
-    IVAScriptingParameter
-    IVAScriptingParameterCollection
-    IVAScriptingCalcObject
-    IVAScriptingCalcObjectCollection
-    IVAScriptingTool
-    IVAElement
-    IVASpacecraftParameters
-    IVAFuelTank
-    IVAMCSSegmentProperties
-    IVAMCSEnd
-    IVAMCSInitialState
-    IVAMCSSegment
-    IVAMCSOptions
-    IVADriverMCS
-    IVAElementCartesian
-    IVAElementKeplerian
-    IVAElementDelaunay
-    IVAElementEquinoctial
-    IVAElementMixedSpherical
-    IVAElementSpherical
-    IVAElementTargetVectorIncomingAsymptote
-    IVAElementTargetVectorOutgoingAsymptote
-    IVAElementGeodetic
-    IVAElementBPlane
-    IVAStoppingCondition
-    IVALightingStoppingCondition
-    IVAAccessStoppingCondition
-    IVAMCSPropagate
-    IVAMCSSequence
-    IVAMCSBackwardSequence
-    IVAMCSLaunch
-    IVADisplaySystemGeodetic
-    IVADisplaySystemGeocentric
-    IVABurnoutCBFCartesian
-    IVABurnoutGeodetic
-    IVABurnoutGeocentric
-    IVABurnoutLaunchAzAlt
-    IVABurnoutLaunchAzRadius
-    IVAMCSFollow
-    IVAMCSManeuver
-    IVAManeuverFinite
-    IVAManeuverImpulsive
-    IVAAttitudeControlImpulsiveVelocityVector
-    IVAAttitudeControlImpulsiveAntiVelocityVector
-    IVAAttitudeControlImpulsiveAttitude
-    IVAAttitudeControlImpulsiveFile
-    IVAAttitudeControlImpulsiveThrustVector
-    IVAAttitudeControlFiniteAntiVelocityVector
-    IVAAttitudeControlFiniteAttitude
-    IVAAttitudeControlFiniteFile
-    IVAAttitudeControlFiniteThrustVector
-    IVAAttitudeControlFiniteTimeVarying
-    IVAAttitudeControlFiniteVelocityVector
-    IVAAttitudeControlFinitePlugin
-    IVAAttitudeControlOptimalFiniteLagrange
-    IVAMCSHold
-    IVAMCSUpdate
-    IVAMCSReturn
-    IVAMCSStop
-    IVAProfile
-    IVAProfileCollection
-    IVAMCSTargetSequence
-    IVADCControl
-    IVADCResult
-    IVASearchPluginControl
-    IVASearchPluginResult
-    IVASearchPluginResultCollection
-    IVASearchPluginControlCollection
-    IVADCControlCollection
-    IVADCResultCollection
-    IVATargeterGraphActiveControl
-    IVATargeterGraphResult
-    IVATargeterGraphActiveControlCollection
-    IVATargeterGraphResultCollection
-    IVATargeterGraph
-    IVATargeterGraphCollection
-    IVAProfileSearchPlugin
-    IVAProfileDifferentialCorrector
-    IVAProfileChangeManeuverType
-    IVAProfileScriptingTool
-    IVAProfileChangeReturnSegment
-    IVAProfileChangePropagator
-    IVAProfileChangeStopSegment
-    IVAProfileChangeStoppingConditionState
-    IVAProfileSeedFiniteManeuver
-    IVAProfileRunOnce
-    IVAUserVariableDefinition
-    IVAUserVariable
-    IVAUserVariableUpdate
-    IVAProfileSNOPTOptimizer
-    IVASNOPTControl
-    IVASNOPTResult
-    IVAProfileIPOPTOptimizer
-    IVAIPOPTControl
-    IVAIPOPTResult
-    IVAManeuverOptimalFinite
-    IVAManeuverOptimalFiniteSteeringNodeElement
-    IVAProfileLambertProfile
-    IVAProfileLambertSearchProfile
-    IVAProfileGoldenSection
-    IVAProfileGridSearch
-    IVACalcObjectLinkEmbedControlCollection
-    IVAStateCalcHeightAboveTerrain
-    IVAStateCalcEpoch
-    IVAStateCalcOrbitDelaunayG
-    IVAStateCalcOrbitDelaunayH
-    IVAStateCalcOrbitDelaunayL
-    IVAStateCalcOrbitSemiLatusRectum
-    IVAStateCalcJacobiConstant
-    IVAStateCalcCartesianElem
-    IVAStateCalcCartSTMElem
-    IVAStateCalcSTMEigenval
-    IVAStateCalcSTMEigenvecElem
-    IVAStateCalcEnvironment
-    IVAStateCalcEquinoctialElem
-    IVAStateCalcDamageFlux
-    IVAStateCalcDamageMassFlux
-    IVAStateCalcMagFieldDipoleL
-    IVAStateCalcSEETMagFieldFieldLineSepAngle
-    IVAStateCalcImpactFlux
-    IVAStateCalcImpactMassFlux
-    IVAStateCalcSEETSAAFlux
-    IVAStateCalcSEETVehTemp
-    IVAStateCalcCloseApproachBearing
-    IVAStateCalcCloseApproachMag
-    IVAStateCalcCloseApproachTheta
-    IVAStateCalcCloseApproachX
-    IVAStateCalcCloseApproachY
-    IVAStateCalcCloseApproachCosBearing
-    IVAStateCalcRelGroundTrackError
-    IVAStateCalcRelAtAOLMaster
-    IVAStateCalcDeltaFromMaster
-    IVAStateCalcLonDriftRate
-    IVAStateCalcMeanEarthLon
-    IVAStateCalcRectifiedLon
-    IVAStateCalcGeodeticElem
-    IVAStateCalcRepeatingGroundTrackErr
-    IVAStateCalcAltOfApoapsis
-    IVAStateCalcAltOfPeriapsis
-    IVAStateCalcArgOfLat
-    IVAStateCalcArgOfPeriapsis
-    IVAStateCalcEccAnomaly
-    IVAStateCalcEccentricity
-    IVAStateCalcInclination
-    IVAStateCalcLonOfAscNode
-    IVAStateCalcMeanAnomaly
-    IVAStateCalcMeanMotion
-    IVAStateCalcOrbitPeriod
-    IVAStateCalcNumRevs
-    IVAStateCalcRAAN
-    IVAStateCalcRadOfApoapsis
-    IVAStateCalcRadOfPeriapsis
-    IVAStateCalcSemiMajorAxis
-    IVAStateCalcTimePastAscNode
-    IVAStateCalcTimePastPeriapsis
-    IVAStateCalcDeltaV
-    IVAStateCalcDeltaVSquared
-    IVAStateCalcMCSDeltaV
-    IVAStateCalcMCSDeltaVSquared
-    IVAStateCalcSequenceDeltaV
-    IVAStateCalcSequenceDeltaVSquared
-    IVAStateCalcFuelMass
-    IVAStateCalcDensity
-    IVAStateCalcInertialDeltaVMag
-    IVAStateCalcInertialDeltaVx
-    IVAStateCalcInertialDeltaVy
-    IVAStateCalcInertialDeltaVz
-    IVAStateCalcManeuverSpecificImpulse
-    IVAStateCalcPressure
-    IVAStateCalcTemperature
-    IVAStateCalcVectorX
-    IVAStateCalcVectorY
-    IVAStateCalcVectorZ
-    IVAStateCalcMass
-    IVAStateCalcManeuverTotalMassFlowRate
-    IVAStateCalcAbsoluteValue
-    IVAStateCalcDifference
-    IVAStateCalcDifferenceOtherSegment
-    IVAStateCalcPosDifferenceOtherSegment
-    IVAStateCalcVelDifferenceOtherSegment
-    IVAStateCalcPosVelDifferenceOtherSegment
-    IVAStateCalcValueAtSegment
-    IVAStateCalcMaxValue
-    IVAStateCalcMinValue
-    IVAStateCalcMeanValue
-    IVAStateCalcMedianValue
-    IVAStateCalcStandardDeviation
-    IVAStateCalcNegative
-    IVAStateCalcTrueAnomaly
-    IVABDotRCalc
-    IVABDotTCalc
-    IVABMagCalc
-    IVABThetaCalc
-    IVAStateCalcDeltaDec
-    IVAStateCalcDeltaRA
-    IVAStateCalcBetaAngle
-    IVAStateCalcLocalApparentSolarLon
-    IVAStateCalcLonOfPeriapsis
-    IVAStateCalcOrbitStateValue
-    IVAStateCalcSignedEccentricity
-    IVAStateCalcTrueLon
-    IVAStateCalcPower
-    IVAStateCalcRelMotion
-    IVAStateCalcSolarBetaAngle
-    IVAStateCalcSolarInPlaneAngle
-    IVAStateCalcRelPosDecAngle
-    IVAStateCalcRelPosInPlaneAngle
-    IVAStateCalcRelativeInclination
-    IVAStateCalcCurvilinearRelMotion
-    IVAStateCalcCustomFunction
-    IVAStateCalcScript
-    IVAStateCalcCd
-    IVAStateCalcCr
-    IVAStateCalcDragArea
-    IVAStateCalcRadiationPressureArea
-    IVAStateCalcRadiationPressureCoefficient
-    IVAStateCalcSRPArea
-    IVAStateCalcCosOfVerticalFPA
-    IVAStateCalcDec
-    IVAStateCalcFPA
-    IVAStateCalcRMag
-    IVAStateCalcRA
-    IVAStateCalcVMag
-    IVAStateCalcVelAz
-    IVAStateCalcC3Energy
-    IVAStateCalcInAsympDec
-    IVAStateCalcInAsympRA
-    IVAStateCalcInVelAzAtPeriapsis
-    IVAStateCalcOutAsympDec
-    IVAStateCalcOutAsympRA
-    IVAStateCalcOutVelAzAtPeriapsis
-    IVAStateCalcDuration
-    IVAStateCalcUserValue
-    IVAStateCalcCrdnAngle
-    IVAStateCalcAngle
-    IVAStateCalcDotProduct
-    IVAStateCalcVectorDec
-    IVAStateCalcVectorMag
-    IVAStateCalcVectorRA
-    IVAStateCalcOnePtAccess
-    IVAStateCalcDifferenceAcrossSegmentsOtherSat
-    IVAStateCalcValueAtSegmentOtherSat
-    IVAStateCalcRARate
-    IVAStateCalcDecRate
-    IVAStateCalcGravitationalParameter
-    IVAStateCalcReferenceRadius
-    IVAStateCalcGravCoeff
-    IVAStateCalcSpeedOfLight
-    IVAStateCalcPi
-    IVAStateCalcScalar
-    IVAStateCalcApparentSolarTime
-    IVAStateCalcEarthMeanSolarTime
-    IVAStateCalcEarthMeanLocTimeAN
-    IVACentralBodyCollection
-    IVACbEphemeris
-    IVACbGravityModel
-    IVACbShape
-    IVACbShapeSphere
-    IVACbShapeOblateSpheroid
-    IVACbShapeTriaxialEllipsoid
-    IVACbAttitude
-    IVACbAttitudeRotationCoefficientsFile
-    IVACbAttitudeIAU1994
-    IVACbEphemerisAnalyticOrbit
-    IVACbEphemerisJPLSpice
-    IVACbEphemerisFile
-    IVACbEphemerisJPLDE
-    IVACbEphemerisPlanetary
-    IVACentralBody
-    IVAPowerInternal
-    IVAPowerProcessed
-    IVAPowerSolarArray
-    IVAGeneralRelativityFunction
-    IVAStateTransFunction
-    IVACR3BPFunc
-    IVARadiationPressureFunction
-    IVAYarkovskyFunc
-    IVABlendedDensity
-    IVADragModelPlugin
-    IVACira72Function
-    IVAExponential
-    IVAHarrisPriester
-    IVADensityModelPlugin
-    IVAJacchiaRoberts
-    IVAJacchiaBowman2008
-    IVAJacchia_1960
-    IVAJacchia_1970
-    IVAJacchia_1971
-    IVAMSISE_1990
-    IVAMSIS_1986
-    IVANRLMSISE_2000
-    IVAUS_Standard_Atmosphere
-    IVAMarsGRAM37
-    IVAMarsGRAM2005
-    IVAVenusGRAM2005
-    IVAMarsGRAM2010
-    IVAMarsGRAM2001
-    IVAMarsGRAM2000
-    IVADTM2012
-    IVADTM2020
-    IVAGravityFieldFunction
-    IVAPointMassFunction
-    IVATwoBodyFunction
-    IVAHPOPPluginFunction
-    IVAEOMFuncPluginFunction
-    IVASRPAeroT20
-    IVASRPAeroT30
-    IVASRPGSPM04aIIA
-    IVASRPGSPM04aIIR
-    IVASRPGSPM04aeIIA
-    IVASRPGSPM04aeIIR
-    IVASRPSpherical
-    IVASRPNPlate
-    IVASRPTabAreaVec
-    IVASRPVariableArea
-    IVAThirdBodyFunction
-    IVASRPReflectionPlugin
-    IVAEngineModelThrustCoefficients
-    IVAEngineModelIspCoefficients
-    IVAEngineConstAcc
-    IVAEngineConstant
-    IVAEngineDefinition
-    IVAEngineThrottleTable
-    IVAEngineIon
-    IVAEngineCustom
-    IVAEnginePlugin
-    IVAEngineModelPoly
-    IVAThruster
-    IVAThrusterSetCollection
-    IVAThrusterSet
-    IVAAsTriggerCondition
-    IVACustomFunctionScriptEngine
-    IVANumericalIntegrator
-    IVAPropagatorFunctionCollection
-    IVANumericalPropagatorWrapper
-    IVANumericalPropagatorWrapperCR3BP
-    IVABulirschStoerIntegrator
-    IVAGaussJacksonIntegrator
-    IVARK2nd3rd
-    IVARK4th
-    IVARK4th5th
-    IVARK4thAdapt
-    IVARKF7th8th
-    IVARKV8th9th
+    IUserVariableDefinitionCollection
+    IUserVariableCollection
+    IUserVariableUpdateCollection
+    ICalculationGraphCollection
+    IConstraintCollection
+    IPluginProperties
+    ISNOPTControlCollection
+    ISNOPTResultCollection
+    IIPOPTControlCollection
+    IIPOPTResultCollection
+    IManeuverOptimalFiniteSNOPTOptimizer
+    IManeuverOptimalFiniteInitialBoundaryConditions
+    IManeuverOptimalFiniteFinalBoundaryConditions
+    IManeuverOptimalFinitePathBoundaryConditions
+    IManeuverOptimalFiniteSteeringNodeCollection
+    IManeuverOptimalFiniteBounds
+    IGoldenSectionControlCollection
+    IGoldenSectionControl
+    IGoldenSectionResultCollection
+    IGoldenSectionResult
+    IGridSearchControlCollection
+    IGridSearchControl
+    IGridSearchResultCollection
+    IGridSearchResult
+    IStoppingConditionElement
+    IStoppingConditionCollection
+    IMCSSegmentCollection
+    IState
+    IStoppingConditionComponent
+    IAutomaticSequence
+    IAutomaticSequenceCollection
+    IBPlaneCollection
+    ICalcObjectCollection
+    IManeuverFinitePropagator
+    IBurnoutVelocity
+    IAttitudeControl
+    IAttitudeControlFinite
+    IAttitudeControlImpulsive
+    IAttitudeControlOptimalFinite
+    IManeuver
+    IDisplaySystem
+    IBurnout
+    IScriptingSegment
+    IScriptingSegmentCollection
+    IScriptingParameterEnumerationChoice
+    IScriptingParameterEnumerationChoiceCollection
+    IScriptingParameter
+    IScriptingParameterCollection
+    IScriptingCalcObject
+    IScriptingCalcObjectCollection
+    IScriptingTool
+    IElement
+    ISpacecraftParameters
+    IFuelTank
+    IMCSSegmentProperties
+    IMCSEnd
+    IMCSInitialState
+    IMCSSegment
+    IMCSOptions
+    IDriverMCS
+    IElementCartesian
+    IElementKeplerian
+    IElementDelaunay
+    IElementEquinoctial
+    IElementMixedSpherical
+    IElementSpherical
+    IElementTargetVectorIncomingAsymptote
+    IElementTargetVectorOutgoingAsymptote
+    IElementGeodetic
+    IElementBPlane
+    IStoppingCondition
+    ILightingStoppingCondition
+    IAccessStoppingCondition
+    IMCSPropagate
+    IMCSSequence
+    IMCSBackwardSequence
+    IMCSLaunch
+    IDisplaySystemGeodetic
+    IDisplaySystemGeocentric
+    IBurnoutCBFCartesian
+    IBurnoutGeodetic
+    IBurnoutGeocentric
+    IBurnoutLaunchAzAlt
+    IBurnoutLaunchAzRadius
+    IMCSFollow
+    IMCSManeuver
+    IManeuverFinite
+    IManeuverImpulsive
+    IAttitudeControlImpulsiveVelocityVector
+    IAttitudeControlImpulsiveAntiVelocityVector
+    IAttitudeControlImpulsiveAttitude
+    IAttitudeControlImpulsiveFile
+    IAttitudeControlImpulsiveThrustVector
+    IAttitudeControlFiniteAntiVelocityVector
+    IAttitudeControlFiniteAttitude
+    IAttitudeControlFiniteFile
+    IAttitudeControlFiniteThrustVector
+    IAttitudeControlFiniteTimeVarying
+    IAttitudeControlFiniteVelocityVector
+    IAttitudeControlFinitePlugin
+    IAttitudeControlOptimalFiniteLagrange
+    IMCSHold
+    IMCSUpdate
+    IMCSReturn
+    IMCSStop
+    IProfile
+    IProfileCollection
+    IMCSTargetSequence
+    IDCControl
+    IDCResult
+    ISearchPluginControl
+    ISearchPluginResult
+    ISearchPluginResultCollection
+    ISearchPluginControlCollection
+    IDCControlCollection
+    IDCResultCollection
+    ITargeterGraphActiveControl
+    ITargeterGraphResult
+    ITargeterGraphActiveControlCollection
+    ITargeterGraphResultCollection
+    ITargeterGraph
+    ITargeterGraphCollection
+    IProfileSearchPlugin
+    IProfileDifferentialCorrector
+    IProfileChangeManeuverType
+    IProfileScriptingTool
+    IProfileChangeReturnSegment
+    IProfileChangePropagator
+    IProfileChangeStopSegment
+    IProfileChangeStoppingConditionState
+    IProfileSeedFiniteManeuver
+    IProfileRunOnce
+    IUserVariableDefinition
+    IUserVariable
+    IUserVariableUpdate
+    IProfileSNOPTOptimizer
+    ISNOPTControl
+    ISNOPTResult
+    IProfileIPOPTOptimizer
+    IIPOPTControl
+    IIPOPTResult
+    IManeuverOptimalFinite
+    IManeuverOptimalFiniteSteeringNodeElement
+    IProfileLambertProfile
+    IProfileLambertSearchProfile
+    IProfileGoldenSection
+    IProfileGridSearch
+    ICalcObjectLinkEmbedControlCollection
+    IStateCalcHeightAboveTerrain
+    IStateCalcEpoch
+    IStateCalcOrbitDelaunayG
+    IStateCalcOrbitDelaunayH
+    IStateCalcOrbitDelaunayL
+    IStateCalcOrbitSemiLatusRectum
+    IStateCalcJacobiConstant
+    IStateCalcCartesianElem
+    IStateCalcCartSTMElem
+    IStateCalcSTMEigenval
+    IStateCalcSTMEigenvecElem
+    IStateCalcEnvironment
+    IStateCalcEquinoctialElem
+    IStateCalcDamageFlux
+    IStateCalcDamageMassFlux
+    IStateCalcMagFieldDipoleL
+    IStateCalcSEETMagFieldFieldLineSepAngle
+    IStateCalcImpactFlux
+    IStateCalcImpactMassFlux
+    IStateCalcSEETSAAFlux
+    IStateCalcSEETVehTemp
+    IStateCalcCloseApproachBearing
+    IStateCalcCloseApproachMag
+    IStateCalcCloseApproachTheta
+    IStateCalcCloseApproachX
+    IStateCalcCloseApproachY
+    IStateCalcCloseApproachCosBearing
+    IStateCalcRelGroundTrackError
+    IStateCalcRelAtAOLMaster
+    IStateCalcDeltaFromMaster
+    IStateCalcLonDriftRate
+    IStateCalcMeanEarthLon
+    IStateCalcRectifiedLon
+    IStateCalcGeodeticElem
+    IStateCalcRepeatingGroundTrackErr
+    IStateCalcAltOfApoapsis
+    IStateCalcAltOfPeriapsis
+    IStateCalcArgOfLat
+    IStateCalcArgOfPeriapsis
+    IStateCalcEccAnomaly
+    IStateCalcEccentricity
+    IStateCalcInclination
+    IStateCalcLonOfAscNode
+    IStateCalcMeanAnomaly
+    IStateCalcMeanMotion
+    IStateCalcOrbitPeriod
+    IStateCalcNumRevs
+    IStateCalcRAAN
+    IStateCalcRadOfApoapsis
+    IStateCalcRadOfPeriapsis
+    IStateCalcSemiMajorAxis
+    IStateCalcTimePastAscNode
+    IStateCalcTimePastPeriapsis
+    IStateCalcDeltaV
+    IStateCalcDeltaVSquared
+    IStateCalcMCSDeltaV
+    IStateCalcMCSDeltaVSquared
+    IStateCalcSequenceDeltaV
+    IStateCalcSequenceDeltaVSquared
+    IStateCalcFuelMass
+    IStateCalcDensity
+    IStateCalcInertialDeltaVMag
+    IStateCalcInertialDeltaVx
+    IStateCalcInertialDeltaVy
+    IStateCalcInertialDeltaVz
+    IStateCalcManeuverSpecificImpulse
+    IStateCalcPressure
+    IStateCalcTemperature
+    IStateCalcVectorX
+    IStateCalcVectorY
+    IStateCalcVectorZ
+    IStateCalcMass
+    IStateCalcManeuverTotalMassFlowRate
+    IStateCalcAbsoluteValue
+    IStateCalcDifference
+    IStateCalcDifferenceOtherSegment
+    IStateCalcPosDifferenceOtherSegment
+    IStateCalcVelDifferenceOtherSegment
+    IStateCalcPosVelDifferenceOtherSegment
+    IStateCalcValueAtSegment
+    IStateCalcMaxValue
+    IStateCalcMinValue
+    IStateCalcMeanValue
+    IStateCalcMedianValue
+    IStateCalcStandardDeviation
+    IStateCalcNegative
+    IStateCalcTrueAnomaly
+    IBDotRCalc
+    IBDotTCalc
+    IBMagCalc
+    IBThetaCalc
+    IStateCalcDeltaDec
+    IStateCalcDeltaRA
+    IStateCalcBetaAngle
+    IStateCalcLocalApparentSolarLon
+    IStateCalcLonOfPeriapsis
+    IStateCalcOrbitStateValue
+    IStateCalcSignedEccentricity
+    IStateCalcTrueLon
+    IStateCalcPower
+    IStateCalcRelMotion
+    IStateCalcSolarBetaAngle
+    IStateCalcSolarInPlaneAngle
+    IStateCalcRelPosDecAngle
+    IStateCalcRelPosInPlaneAngle
+    IStateCalcRelativeInclination
+    IStateCalcCurvilinearRelMotion
+    IStateCalcCustomFunction
+    IStateCalcScript
+    IStateCalcCd
+    IStateCalcCr
+    IStateCalcDragArea
+    IStateCalcRadiationPressureArea
+    IStateCalcRadiationPressureCoefficient
+    IStateCalcSRPArea
+    IStateCalcCosOfVerticalFPA
+    IStateCalcDec
+    IStateCalcFPA
+    IStateCalcRMag
+    IStateCalcRA
+    IStateCalcVMag
+    IStateCalcVelAz
+    IStateCalcC3Energy
+    IStateCalcInAsympDec
+    IStateCalcInAsympRA
+    IStateCalcInVelAzAtPeriapsis
+    IStateCalcOutAsympDec
+    IStateCalcOutAsympRA
+    IStateCalcOutVelAzAtPeriapsis
+    IStateCalcDuration
+    IStateCalcUserValue
+    IStateCalcCrdnAngle
+    IStateCalcAngle
+    IStateCalcDotProduct
+    IStateCalcVectorDec
+    IStateCalcVectorMag
+    IStateCalcVectorRA
+    IStateCalcOnePtAccess
+    IStateCalcDifferenceAcrossSegmentsOtherSat
+    IStateCalcValueAtSegmentOtherSat
+    IStateCalcRARate
+    IStateCalcDecRate
+    IStateCalcGravitationalParameter
+    IStateCalcReferenceRadius
+    IStateCalcGravCoeff
+    IStateCalcSpeedOfLight
+    IStateCalcPi
+    IStateCalcScalar
+    IStateCalcApparentSolarTime
+    IStateCalcEarthMeanSolarTime
+    IStateCalcEarthMeanLocTimeAN
+    ICentralBodyCollection
+    ICbEphemeris
+    ICbGravityModel
+    ICbShape
+    ICbShapeSphere
+    ICbShapeOblateSpheroid
+    ICbShapeTriaxialEllipsoid
+    ICbAttitude
+    ICbAttitudeRotationCoefficientsFile
+    ICbAttitudeIAU1994
+    ICbEphemerisAnalyticOrbit
+    ICbEphemerisJPLSpice
+    ICbEphemerisFile
+    ICbEphemerisJPLDE
+    ICbEphemerisPlanetary
+    IAstrogatorCentralBody
+    IPowerInternal
+    IPowerProcessed
+    IPowerSolarArray
+    IGeneralRelativityFunction
+    IStateTransFunction
+    ICR3BPFunc
+    IRadiationPressureFunction
+    IYarkovskyFunc
+    IBlendedDensity
+    IDragModelPlugin
+    ICira72Function
+    IExponential
+    IHarrisPriester
+    IDensityModelPlugin
+    IJacchiaRoberts
+    IJacchiaBowman2008
+    IJacchia_1960
+    IJacchia_1970
+    IJacchia_1971
+    IMSISE_1990
+    IMSIS_1986
+    INRLMSISE_2000
+    IUS_Standard_Atmosphere
+    IMarsGRAM37
+    IMarsGRAM2005
+    IVenusGRAM2005
+    IMarsGRAM2010
+    IMarsGRAM2001
+    IMarsGRAM2000
+    IDTM2012
+    IDTM2020
+    IGravityFieldFunction
+    IPointMassFunction
+    ITwoBodyFunction
+    IHPOPPluginFunction
+    IEOMFuncPluginFunction
+    ISRPAeroT20
+    ISRPAeroT30
+    ISRPGSPM04aIIA
+    ISRPGSPM04aIIR
+    ISRPGSPM04aeIIA
+    ISRPGSPM04aeIIR
+    ISRPSpherical
+    ISRPNPlate
+    ISRPTabAreaVec
+    ISRPVariableArea
+    IThirdBodyFunction
+    ISRPReflectionPlugin
+    IEngineModelThrustCoefficients
+    IEngineModelIspCoefficients
+    IEngineConstAcc
+    IEngineConstant
+    IEngineDefinition
+    IEngineThrottleTable
+    IEngineIon
+    IEngineCustom
+    IEnginePlugin
+    IEngineModelPoly
+    IThruster
+    IThrusterSetCollection
+    IThrusterSet
+    IAsTriggerCondition
+    ICustomFunctionScriptEngine
+    INumericalIntegrator
+    IPropagatorFunctionCollection
+    INumericalPropagatorWrapper
+    INumericalPropagatorWrapperCR3BP
+    IBulirschStoerIntegrator
+    IGaussJacksonIntegrator
+    IRK2nd3rd
+    IRK4th
+    IRK4th5th
+    IRK4thAdapt
+    IRKF7th8th
+    IRKV8th9th
 
 
 Enumerations
@@ -544,381 +544,381 @@ Classes
 
 .. autosummary::
 
-    VADriverMCS
-    VAMCSSegmentCollection
-    VAMCSEnd
-    VAMCSInitialState
-    VASpacecraftParameters
-    VAFuelTank
-    VAElementCartesian
-    VAElementKeplerian
-    VAElementEquinoctial
-    VAElementDelaunay
-    VAElementMixedSpherical
-    VAElementSpherical
-    VAElementTargetVectorIncomingAsymptote
-    VAElementTargetVectorOutgoingAsymptote
-    VAElementGeodetic
-    VAElementBPlane
-    VAMCSPropagate
-    VAState
-    VAStoppingConditionCollection
-    VAAccessStoppingCondition
-    VALightingStoppingCondition
-    VAStoppingCondition
-    VAStoppingConditionElement
-    VAMCSSequence
-    VAMCSBackwardSequence
-    VAMCSLaunch
-    VADisplaySystemGeodetic
-    VADisplaySystemGeocentric
-    VABurnoutGeodetic
-    VABurnoutCBFCartesian
-    VABurnoutGeocentric
-    VABurnoutLaunchAzAlt
-    VABurnoutLaunchAzRadius
-    VABurnoutVelocity
-    VAMCSFollow
-    VAMCSManeuver
-    VAManeuverFinite
-    VAManeuverImpulsive
-    VAAttitudeControlImpulsiveVelocityVector
-    VAAttitudeControlImpulsiveAntiVelocityVector
-    VAAttitudeControlImpulsiveAttitude
-    VAAttitudeControlImpulsiveFile
-    VAAttitudeControlImpulsiveThrustVector
-    VAAttitudeControlFiniteAntiVelocityVector
-    VAAttitudeControlFiniteAttitude
-    VAAttitudeControlFiniteFile
-    VAAttitudeControlFiniteThrustVector
-    VAAttitudeControlFiniteTimeVarying
-    VAAttitudeControlFiniteVelocityVector
-    VAAttitudeControlFinitePlugin
-    VAAttitudeControlOptimalFiniteLagrange
-    VAManeuverFinitePropagator
-    VAMCSHold
-    VAMCSUpdate
-    VAMCSReturn
-    VAMCSStop
-    VAMCSTargetSequence
-    VAProfileCollection
-    VAMCSOptions
-    VACalcObjectCollection
-    VAConstraintCollection
-    VAPluginProperties
-    VAProfileSearchPlugin
-    VATargeterGraph
-    VATargeterGraphCollection
-    VATargeterGraphResultCollection
-    VATargeterGraphActiveControlCollection
-    VATargeterGraphActiveControl
-    VATargeterGraphResult
-    VAProfileDifferentialCorrector
-    VAProfileScriptingTool
-    VADCControl
-    VADCResult
-    VADCControlCollection
-    VADCResultCollection
-    VASearchPluginControl
-    VASearchPluginControlCollection
-    VASearchPluginResult
-    VASearchPluginResultCollection
-    VAProfileChangeManeuverType
-    VAProfileChangeReturnSegment
-    VAProfileChangePropagator
-    VAProfileChangeStopSegment
-    VAProfileChangeStoppingConditionState
-    VAProfileSeedFiniteManeuver
-    VAProfileRunOnce
-    VABPlaneCollection
-    VAStateCalcDamageFlux
-    VAStateCalcDamageMassFlux
-    VAStateCalcMagFieldDipoleL
-    VAStateCalcSEETMagFieldFieldLineSepAngle
-    VAStateCalcImpactFlux
-    VAStateCalcImpactMassFlux
-    VAStateCalcSEETSAAFlux
-    VAStateCalcSEETVehTemp
-    VAStateCalcEpoch
-    VAStateCalcJacobiConstant
-    VAStateCalcCartesianElem
-    VAStateCalcCartSTMElem
-    VAStateCalcSTMEigenval
-    VAStateCalcSTMEigenvecElem
-    VAStateCalcEnvironment
-    VAStateCalcOrbitDelaunayG
-    VAStateCalcOrbitDelaunayH
-    VAStateCalcOrbitDelaunayL
-    VAStateCalcOrbitSemiLatusRectum
-    VAStateCalcEquinoctialElem
-    VAStateCalcCloseApproachBearing
-    VAStateCalcCloseApproachMag
-    VAStateCalcCloseApproachTheta
-    VAStateCalcCloseApproachX
-    VAStateCalcCloseApproachY
-    VAStateCalcCloseApproachCosBearing
-    VAStateCalcRelGroundTrackError
-    VAStateCalcRelAtAOLMaster
-    VAStateCalcDeltaFromMaster
-    VAStateCalcLonDriftRate
-    VAStateCalcMeanEarthLon
-    VAStateCalcRectifiedLon
-    VAStateCalcHeightAboveTerrain
-    VAStateCalcGeodeticElem
-    VAStateCalcRepeatingGroundTrackErr
-    VAStateCalcAltOfApoapsis
-    VAStateCalcAltOfPeriapsis
-    VAStateCalcArgOfLat
-    VAStateCalcArgOfPeriapsis
-    VAStateCalcEccAnomaly
-    VAStateCalcLonOfAscNode
-    VAStateCalcMeanMotion
-    VAStateCalcOrbitPeriod
-    VAStateCalcNumRevs
-    VAStateCalcRadOfApoapsis
-    VAStateCalcRadOfPeriapsis
-    VAStateCalcSemiMajorAxis
-    VAStateCalcTimePastAscNode
-    VAStateCalcTimePastPeriapsis
-    VAStateCalcTrueAnomaly
-    VAStateCalcDeltaV
-    VAStateCalcDeltaVSquared
-    VAStateCalcMCSDeltaV
-    VAStateCalcMCSDeltaVSquared
-    VAStateCalcSequenceDeltaV
-    VAStateCalcSequenceDeltaVSquared
-    VAStateCalcFuelMass
-    VAStateCalcDensity
-    VAStateCalcInertialDeltaVMag
-    VAStateCalcInertialDeltaVx
-    VAStateCalcInertialDeltaVy
-    VAStateCalcInertialDeltaVz
-    VAStateCalcManeuverSpecificImpulse
-    VAStateCalcPressure
-    VAStateCalcTemperature
-    VAStateCalcVectorY
-    VAStateCalcVectorZ
-    VAStateCalcMass
-    VAStateCalcManeuverTotalMassFlowRate
-    VAStateCalcAbsoluteValue
-    VAStateCalcDifference
-    VAStateCalcDifferenceOtherSegment
-    VAStateCalcPosDifferenceOtherSegment
-    VAStateCalcVelDifferenceOtherSegment
-    VAStateCalcPosVelDifferenceOtherSegment
-    VAStateCalcValueAtSegment
-    VAStateCalcMaxValue
-    VAStateCalcMinValue
-    VAStateCalcMeanValue
-    VAStateCalcMedianValue
-    VAStateCalcStandardDeviation
-    VAStateCalcNegative
-    VAStateCalcEccentricity
-    VAStateCalcMeanAnomaly
-    VAStateCalcRAAN
-    VABDotRCalc
-    VABDotTCalc
-    VABMagCalc
-    VABThetaCalc
-    VAStateCalcDeltaDec
-    VAStateCalcDeltaRA
-    VAStateCalcBetaAngle
-    VAStateCalcLocalApparentSolarLon
-    VAStateCalcLonOfPeriapsis
-    VAStateCalcOrbitStateValue
-    VAStateCalcSignedEccentricity
-    VAStateCalcInclination
-    VAStateCalcTrueLon
-    VAStateCalcPower
-    VAStateCalcRelMotion
-    VAStateCalcSolarBetaAngle
-    VAStateCalcSolarInPlaneAngle
-    VAStateCalcRelPosDecAngle
-    VAStateCalcRelPosInPlaneAngle
-    VAStateCalcRelativeInclination
-    VAStateCalcCurvilinearRelMotion
-    VAStateCalcCustomFunction
-    VAStateCalcScript
-    VAStateCalcCd
-    VAStateCalcCr
-    VAStateCalcDragArea
-    VAStateCalcRadiationPressureArea
-    VAStateCalcRadiationPressureCoefficient
-    VAStateCalcSRPArea
-    VAStateCalcCosOfVerticalFPA
-    VAStateCalcDec
-    VAStateCalcFPA
-    VAStateCalcRMag
-    VAStateCalcRA
-    VAStateCalcVMag
-    VAStateCalcVelAz
-    VAStateCalcC3Energy
-    VAStateCalcInAsympDec
-    VAStateCalcInAsympRA
-    VAStateCalcInVelAzAtPeriapsis
-    VAStateCalcOutAsympDec
-    VAStateCalcOutAsympRA
-    VAStateCalcOutVelAzAtPeriapsis
-    VAStateCalcDuration
-    VAStateCalcUserValue
-    VAStateCalcCrdnAngle
-    VAStateCalcAngle
-    VAStateCalcDotProduct
-    VAStateCalcVectorDec
-    VAStateCalcVectorMag
-    VAStateCalcVectorRA
-    VAStateCalcVectorX
-    VAStateCalcOnePtAccess
-    VAStateCalcDifferenceAcrossSegmentsOtherSat
-    VAStateCalcValueAtSegmentOtherSat
-    VAStateCalcRARate
-    VAStateCalcDecRate
-    VAStateCalcGravitationalParameter
-    VAStateCalcReferenceRadius
-    VAStateCalcGravCoeff
-    VAStateCalcSpeedOfLight
-    VAStateCalcPi
-    VAStateCalcScalar
-    VAStateCalcApparentSolarTime
-    VAStateCalcEarthMeanSolarTime
-    VAStateCalcEarthMeanLocTimeAN
-    VAAutomaticSequenceCollection
-    VAAutomaticSequence
-    VACentralBodyCollection
-    VACentralBody
-    VACbGravityModel
-    VACbShapeSphere
-    VACbShapeOblateSpheroid
-    VACbShapeTriaxialEllipsoid
-    VACbAttitudeRotationCoefficientsFile
-    VACbAttitudeIAU1994
-    VACbEphemerisAnalyticOrbit
-    VACbEphemerisJPLSpice
-    VACbEphemerisFile
-    VACbEphemerisJPLDE
-    VACbEphemerisPlanetary
-    VAMCSSegmentProperties
-    VAPowerInternal
-    VAPowerProcessed
-    VAPowerSolarArray
-    VAGeneralRelativityFunction
-    VAStateTransFunction
-    VACR3BPFunc
-    VARadiationPressureFunction
-    VAYarkovskyFunc
-    VABlendedDensity
-    VACira72Function
-    VAExponential
-    VAHarrisPriester
-    VADensityModelPlugin
-    VAJacchiaRoberts
-    VAJacchiaBowman2008
-    VAJacchia_1960
-    VAJacchia_1970
-    VAJacchia_1971
-    VAMSISE_1990
-    VAMSIS_1986
-    VANRLMSISE_2000
-    VAUS_Standard_Atmosphere
-    VAMarsGRAM37
-    VAMarsGRAM2000
-    VAMarsGRAM2001
-    VAMarsGRAM2005
-    VAMarsGRAM2010
-    VAVenusGRAM2005
-    VADTM2012
-    VADTM2020
-    VAGravityFieldFunction
-    VAPointMassFunction
-    VATwoBodyFunction
-    VAHPOPPluginFunction
-    VAEOMFuncPluginFunction
-    VASRPAeroT20
-    VASRPAeroT30
-    VASRPGSPM04aIIA
-    VASRPGSPM04aIIR
-    VASRPGSPM04aeIIA
-    VASRPGSPM04aeIIR
-    VASRPSpherical
-    VASRPNPlate
-    VASRPTabAreaVec
-    VASRPVariableArea
-    VAThirdBodyFunction
-    VADragModelPlugin
-    VASRPReflectionPlugin
-    VAEngineConstAcc
-    VAEngineConstant
-    VAEngineIon
-    VAEngineThrottleTable
-    VAEngineCustom
-    VAEnginePlugin
-    VAEngineModelPoly
-    VAEngineModelThrustCoefficients
-    VAEngineModelIspCoefficients
-    VAEngineDefinition
-    VAThruster
-    VAThrusterSetCollection
-    VAThrusterSet
-    VAAsTriggerCondition
-    VACustomFunctionScriptEngine
-    VANumericalPropagatorWrapper
-    VANumericalPropagatorWrapperCR3BP
-    VAPropagatorFunctionCollection
-    VABulirschStoerIntegrator
-    VAGaussJacksonIntegrator
-    VARK2nd3rd
-    VARK4th
-    VARK4th5th
-    VARK4thAdapt
-    VARKF7th8th
-    VARKV8th9th
-    VAScriptingTool
-    VAScriptingSegmentCollection
-    VAScriptingSegment
-    VAScriptingParameterCollection
-    VAScriptingParameter
-    VAScriptingCalcObject
-    VAScriptingCalcObjectCollection
-    VAUserVariableDefinition
-    VAUserVariable
-    VAUserVariableUpdate
-    VAUserVariableDefinitionCollection
-    VAUserVariableCollection
-    VAUserVariableUpdateCollection
-    VACalculationGraphCollection
-    VAScriptingParameterEnumerationChoice
-    VAScriptingParameterEnumerationChoiceCollection
-    VAProfileSNOPTOptimizer
-    VASNOPTControl
-    VASNOPTResult
-    VASNOPTControlCollection
-    VASNOPTResultCollection
-    VAProfileIPOPTOptimizer
-    VAIPOPTControl
-    VAIPOPTResult
-    VAIPOPTControlCollection
-    VAIPOPTResultCollection
-    VAManeuverOptimalFinite
-    VAManeuverOptimalFiniteSNOPTOptimizer
-    VAManeuverOptimalFiniteInitialBoundaryConditions
-    VAManeuverOptimalFiniteFinalBoundaryConditions
-    VAManeuverOptimalFinitePathBoundaryConditions
-    VAManeuverOptimalFiniteSteeringNodeElement
-    VAManeuverOptimalFiniteSteeringNodeCollection
-    VAManeuverOptimalFiniteBounds
-    VAProfileLambertProfile
-    VAProfileLambertSearchProfile
-    VAProfileGoldenSection
-    VAGoldenSectionControlCollection
-    VAGoldenSectionControl
-    VAGoldenSectionResultCollection
-    VAGoldenSectionResult
-    VAProfileGridSearch
-    VAGridSearchControlCollection
-    VAGridSearchControl
-    VAGridSearchResultCollection
-    VAGridSearchResult
-    VACalcObjectLinkEmbedControlCollection
+    DriverMCS
+    MCSSegmentCollection
+    MCSEnd
+    MCSInitialState
+    SpacecraftParameters
+    FuelTank
+    ElementCartesian
+    ElementKeplerian
+    ElementEquinoctial
+    ElementDelaunay
+    ElementMixedSpherical
+    ElementSpherical
+    ElementTargetVectorIncomingAsymptote
+    ElementTargetVectorOutgoingAsymptote
+    ElementGeodetic
+    ElementBPlane
+    MCSPropagate
+    State
+    StoppingConditionCollection
+    AccessStoppingCondition
+    LightingStoppingCondition
+    StoppingCondition
+    StoppingConditionElement
+    MCSSequence
+    MCSBackwardSequence
+    MCSLaunch
+    DisplaySystemGeodetic
+    DisplaySystemGeocentric
+    BurnoutGeodetic
+    BurnoutCBFCartesian
+    BurnoutGeocentric
+    BurnoutLaunchAzAlt
+    BurnoutLaunchAzRadius
+    BurnoutVelocity
+    MCSFollow
+    MCSManeuver
+    ManeuverFinite
+    ManeuverImpulsive
+    AttitudeControlImpulsiveVelocityVector
+    AttitudeControlImpulsiveAntiVelocityVector
+    AttitudeControlImpulsiveAttitude
+    AttitudeControlImpulsiveFile
+    AttitudeControlImpulsiveThrustVector
+    AttitudeControlFiniteAntiVelocityVector
+    AttitudeControlFiniteAttitude
+    AttitudeControlFiniteFile
+    AttitudeControlFiniteThrustVector
+    AttitudeControlFiniteTimeVarying
+    AttitudeControlFiniteVelocityVector
+    AttitudeControlFinitePlugin
+    AttitudeControlOptimalFiniteLagrange
+    ManeuverFinitePropagator
+    MCSHold
+    MCSUpdate
+    MCSReturn
+    MCSStop
+    MCSTargetSequence
+    ProfileCollection
+    MCSOptions
+    CalcObjectCollection
+    ConstraintCollection
+    PluginProperties
+    ProfileSearchPlugin
+    TargeterGraph
+    TargeterGraphCollection
+    TargeterGraphResultCollection
+    TargeterGraphActiveControlCollection
+    TargeterGraphActiveControl
+    TargeterGraphResult
+    ProfileDifferentialCorrector
+    ProfileScriptingTool
+    DCControl
+    DCResult
+    DCControlCollection
+    DCResultCollection
+    SearchPluginControl
+    SearchPluginControlCollection
+    SearchPluginResult
+    SearchPluginResultCollection
+    ProfileChangeManeuverType
+    ProfileChangeReturnSegment
+    ProfileChangePropagator
+    ProfileChangeStopSegment
+    ProfileChangeStoppingConditionState
+    ProfileSeedFiniteManeuver
+    ProfileRunOnce
+    BPlaneCollection
+    StateCalcDamageFlux
+    StateCalcDamageMassFlux
+    StateCalcMagFieldDipoleL
+    StateCalcSEETMagFieldFieldLineSepAngle
+    StateCalcImpactFlux
+    StateCalcImpactMassFlux
+    StateCalcSEETSAAFlux
+    StateCalcSEETVehTemp
+    StateCalcEpoch
+    StateCalcJacobiConstant
+    StateCalcCartesianElem
+    StateCalcCartSTMElem
+    StateCalcSTMEigenval
+    StateCalcSTMEigenvecElem
+    StateCalcEnvironment
+    StateCalcOrbitDelaunayG
+    StateCalcOrbitDelaunayH
+    StateCalcOrbitDelaunayL
+    StateCalcOrbitSemiLatusRectum
+    StateCalcEquinoctialElem
+    StateCalcCloseApproachBearing
+    StateCalcCloseApproachMag
+    StateCalcCloseApproachTheta
+    StateCalcCloseApproachX
+    StateCalcCloseApproachY
+    StateCalcCloseApproachCosBearing
+    StateCalcRelGroundTrackError
+    StateCalcRelAtAOLMaster
+    StateCalcDeltaFromMaster
+    StateCalcLonDriftRate
+    StateCalcMeanEarthLon
+    StateCalcRectifiedLon
+    StateCalcHeightAboveTerrain
+    StateCalcGeodeticElem
+    StateCalcRepeatingGroundTrackErr
+    StateCalcAltOfApoapsis
+    StateCalcAltOfPeriapsis
+    StateCalcArgOfLat
+    StateCalcArgOfPeriapsis
+    StateCalcEccAnomaly
+    StateCalcLonOfAscNode
+    StateCalcMeanMotion
+    StateCalcOrbitPeriod
+    StateCalcNumRevs
+    StateCalcRadOfApoapsis
+    StateCalcRadOfPeriapsis
+    StateCalcSemiMajorAxis
+    StateCalcTimePastAscNode
+    StateCalcTimePastPeriapsis
+    StateCalcTrueAnomaly
+    StateCalcDeltaV
+    StateCalcDeltaVSquared
+    StateCalcMCSDeltaV
+    StateCalcMCSDeltaVSquared
+    StateCalcSequenceDeltaV
+    StateCalcSequenceDeltaVSquared
+    StateCalcFuelMass
+    StateCalcDensity
+    StateCalcInertialDeltaVMag
+    StateCalcInertialDeltaVx
+    StateCalcInertialDeltaVy
+    StateCalcInertialDeltaVz
+    StateCalcManeuverSpecificImpulse
+    StateCalcPressure
+    StateCalcTemperature
+    StateCalcVectorY
+    StateCalcVectorZ
+    StateCalcMass
+    StateCalcManeuverTotalMassFlowRate
+    StateCalcAbsoluteValue
+    StateCalcDifference
+    StateCalcDifferenceOtherSegment
+    StateCalcPosDifferenceOtherSegment
+    StateCalcVelDifferenceOtherSegment
+    StateCalcPosVelDifferenceOtherSegment
+    StateCalcValueAtSegment
+    StateCalcMaxValue
+    StateCalcMinValue
+    StateCalcMeanValue
+    StateCalcMedianValue
+    StateCalcStandardDeviation
+    StateCalcNegative
+    StateCalcEccentricity
+    StateCalcMeanAnomaly
+    StateCalcRAAN
+    BDotRCalc
+    BDotTCalc
+    BMagCalc
+    BThetaCalc
+    StateCalcDeltaDec
+    StateCalcDeltaRA
+    StateCalcBetaAngle
+    StateCalcLocalApparentSolarLon
+    StateCalcLonOfPeriapsis
+    StateCalcOrbitStateValue
+    StateCalcSignedEccentricity
+    StateCalcInclination
+    StateCalcTrueLon
+    StateCalcPower
+    StateCalcRelMotion
+    StateCalcSolarBetaAngle
+    StateCalcSolarInPlaneAngle
+    StateCalcRelPosDecAngle
+    StateCalcRelPosInPlaneAngle
+    StateCalcRelativeInclination
+    StateCalcCurvilinearRelMotion
+    StateCalcCustomFunction
+    StateCalcScript
+    StateCalcCd
+    StateCalcCr
+    StateCalcDragArea
+    StateCalcRadiationPressureArea
+    StateCalcRadiationPressureCoefficient
+    StateCalcSRPArea
+    StateCalcCosOfVerticalFPA
+    StateCalcDec
+    StateCalcFPA
+    StateCalcRMag
+    StateCalcRA
+    StateCalcVMag
+    StateCalcVelAz
+    StateCalcC3Energy
+    StateCalcInAsympDec
+    StateCalcInAsympRA
+    StateCalcInVelAzAtPeriapsis
+    StateCalcOutAsympDec
+    StateCalcOutAsympRA
+    StateCalcOutVelAzAtPeriapsis
+    StateCalcDuration
+    StateCalcUserValue
+    StateCalcCrdnAngle
+    StateCalcAngle
+    StateCalcDotProduct
+    StateCalcVectorDec
+    StateCalcVectorMag
+    StateCalcVectorRA
+    StateCalcVectorX
+    StateCalcOnePtAccess
+    StateCalcDifferenceAcrossSegmentsOtherSat
+    StateCalcValueAtSegmentOtherSat
+    StateCalcRARate
+    StateCalcDecRate
+    StateCalcGravitationalParameter
+    StateCalcReferenceRadius
+    StateCalcGravCoeff
+    StateCalcSpeedOfLight
+    StateCalcPi
+    StateCalcScalar
+    StateCalcApparentSolarTime
+    StateCalcEarthMeanSolarTime
+    StateCalcEarthMeanLocTimeAN
+    AutomaticSequenceCollection
+    AutomaticSequence
+    CentralBodyCollection
+    AstrogatorCentralBody
+    CbGravityModel
+    CbShapeSphere
+    CbShapeOblateSpheroid
+    CbShapeTriaxialEllipsoid
+    CbAttitudeRotationCoefficientsFile
+    CbAttitudeIAU1994
+    CbEphemerisAnalyticOrbit
+    CbEphemerisJPLSpice
+    CbEphemerisFile
+    CbEphemerisJPLDE
+    CbEphemerisPlanetary
+    MCSSegmentProperties
+    PowerInternal
+    PowerProcessed
+    PowerSolarArray
+    GeneralRelativityFunction
+    StateTransFunction
+    CR3BPFunc
+    RadiationPressureFunction
+    YarkovskyFunc
+    BlendedDensity
+    Cira72Function
+    Exponential
+    HarrisPriester
+    DensityModelPlugin
+    JacchiaRoberts
+    JacchiaBowman2008
+    Jacchia_1960
+    Jacchia_1970
+    Jacchia_1971
+    MSISE_1990
+    MSIS_1986
+    NRLMSISE_2000
+    US_Standard_Atmosphere
+    MarsGRAM37
+    MarsGRAM2000
+    MarsGRAM2001
+    MarsGRAM2005
+    MarsGRAM2010
+    VenusGRAM2005
+    DTM2012
+    DTM2020
+    GravityFieldFunction
+    PointMassFunction
+    TwoBodyFunction
+    HPOPPluginFunction
+    EOMFuncPluginFunction
+    SRPAeroT20
+    SRPAeroT30
+    SRPGSPM04aIIA
+    SRPGSPM04aIIR
+    SRPGSPM04aeIIA
+    SRPGSPM04aeIIR
+    SRPSpherical
+    SRPNPlate
+    SRPTabAreaVec
+    SRPVariableArea
+    ThirdBodyFunction
+    DragModelPlugin
+    SRPReflectionPlugin
+    EngineConstAcc
+    EngineConstant
+    EngineIon
+    EngineThrottleTable
+    EngineCustom
+    EnginePlugin
+    EngineModelPoly
+    EngineModelThrustCoefficients
+    EngineModelIspCoefficients
+    EngineDefinition
+    Thruster
+    ThrusterSetCollection
+    ThrusterSet
+    AsTriggerCondition
+    CustomFunctionScriptEngine
+    NumericalPropagatorWrapper
+    NumericalPropagatorWrapperCR3BP
+    PropagatorFunctionCollection
+    BulirschStoerIntegrator
+    GaussJacksonIntegrator
+    RK2nd3rd
+    RK4th
+    RK4th5th
+    RK4thAdapt
+    RKF7th8th
+    RKV8th9th
+    ScriptingTool
+    ScriptingSegmentCollection
+    ScriptingSegment
+    ScriptingParameterCollection
+    ScriptingParameter
+    ScriptingCalcObject
+    ScriptingCalcObjectCollection
+    UserVariableDefinition
+    UserVariable
+    UserVariableUpdate
+    UserVariableDefinitionCollection
+    UserVariableCollection
+    UserVariableUpdateCollection
+    CalculationGraphCollection
+    ScriptingParameterEnumerationChoice
+    ScriptingParameterEnumerationChoiceCollection
+    ProfileSNOPTOptimizer
+    SNOPTControl
+    SNOPTResult
+    SNOPTControlCollection
+    SNOPTResultCollection
+    ProfileIPOPTOptimizer
+    IPOPTControl
+    IPOPTResult
+    IPOPTControlCollection
+    IPOPTResultCollection
+    ManeuverOptimalFinite
+    ManeuverOptimalFiniteSNOPTOptimizer
+    ManeuverOptimalFiniteInitialBoundaryConditions
+    ManeuverOptimalFiniteFinalBoundaryConditions
+    ManeuverOptimalFinitePathBoundaryConditions
+    ManeuverOptimalFiniteSteeringNodeElement
+    ManeuverOptimalFiniteSteeringNodeCollection
+    ManeuverOptimalFiniteBounds
+    ProfileLambertProfile
+    ProfileLambertSearchProfile
+    ProfileGoldenSection
+    GoldenSectionControlCollection
+    GoldenSectionControl
+    GoldenSectionResultCollection
+    GoldenSectionResult
+    ProfileGridSearch
+    GridSearchControlCollection
+    GridSearchControl
+    GridSearchResultCollection
+    GridSearchResult
+    CalcObjectLinkEmbedControlCollection
 
 
 Reference
@@ -927,1174 +927,1174 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IVAUserVariableDefinitionCollection
+.. autoclass:: IUserVariableDefinitionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAUserVariableCollection
+.. autoclass:: IUserVariableCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAUserVariableUpdateCollection
+.. autoclass:: IUserVariableUpdateCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACalculationGraphCollection
+.. autoclass:: ICalculationGraphCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAConstraintCollection
+.. autoclass:: IConstraintCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAPluginProperties
+.. autoclass:: IPluginProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASNOPTControlCollection
+.. autoclass:: ISNOPTControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASNOPTResultCollection
+.. autoclass:: ISNOPTResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAIPOPTControlCollection
+.. autoclass:: IIPOPTControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAIPOPTResultCollection
+.. autoclass:: IIPOPTResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverOptimalFiniteSNOPTOptimizer
+.. autoclass:: IManeuverOptimalFiniteSNOPTOptimizer
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverOptimalFiniteInitialBoundaryConditions
+.. autoclass:: IManeuverOptimalFiniteInitialBoundaryConditions
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverOptimalFiniteFinalBoundaryConditions
+.. autoclass:: IManeuverOptimalFiniteFinalBoundaryConditions
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverOptimalFinitePathBoundaryConditions
+.. autoclass:: IManeuverOptimalFinitePathBoundaryConditions
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverOptimalFiniteSteeringNodeCollection
+.. autoclass:: IManeuverOptimalFiniteSteeringNodeCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverOptimalFiniteBounds
+.. autoclass:: IManeuverOptimalFiniteBounds
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGoldenSectionControlCollection
+.. autoclass:: IGoldenSectionControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGoldenSectionControl
+.. autoclass:: IGoldenSectionControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGoldenSectionResultCollection
+.. autoclass:: IGoldenSectionResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGoldenSectionResult
+.. autoclass:: IGoldenSectionResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGridSearchControlCollection
+.. autoclass:: IGridSearchControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGridSearchControl
+.. autoclass:: IGridSearchControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGridSearchResultCollection
+.. autoclass:: IGridSearchResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGridSearchResult
+.. autoclass:: IGridSearchResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStoppingConditionElement
+.. autoclass:: IStoppingConditionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStoppingConditionCollection
+.. autoclass:: IStoppingConditionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSSegmentCollection
+.. autoclass:: IMCSSegmentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAState
+.. autoclass:: IState
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStoppingConditionComponent
+.. autoclass:: IStoppingConditionComponent
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAutomaticSequence
+.. autoclass:: IAutomaticSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAutomaticSequenceCollection
+.. autoclass:: IAutomaticSequenceCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABPlaneCollection
+.. autoclass:: IBPlaneCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACalcObjectCollection
+.. autoclass:: ICalcObjectCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverFinitePropagator
+.. autoclass:: IManeuverFinitePropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABurnoutVelocity
+.. autoclass:: IBurnoutVelocity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControl
+.. autoclass:: IAttitudeControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlFinite
+.. autoclass:: IAttitudeControlFinite
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlImpulsive
+.. autoclass:: IAttitudeControlImpulsive
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlOptimalFinite
+.. autoclass:: IAttitudeControlOptimalFinite
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuver
+.. autoclass:: IManeuver
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADisplaySystem
+.. autoclass:: IDisplaySystem
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABurnout
+.. autoclass:: IBurnout
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingSegment
+.. autoclass:: IScriptingSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingSegmentCollection
+.. autoclass:: IScriptingSegmentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingParameterEnumerationChoice
+.. autoclass:: IScriptingParameterEnumerationChoice
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingParameterEnumerationChoiceCollection
+.. autoclass:: IScriptingParameterEnumerationChoiceCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingParameter
+.. autoclass:: IScriptingParameter
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingParameterCollection
+.. autoclass:: IScriptingParameterCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingCalcObject
+.. autoclass:: IScriptingCalcObject
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingCalcObjectCollection
+.. autoclass:: IScriptingCalcObjectCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAScriptingTool
+.. autoclass:: IScriptingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElement
+.. autoclass:: IElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASpacecraftParameters
+.. autoclass:: ISpacecraftParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAFuelTank
+.. autoclass:: IFuelTank
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSSegmentProperties
+.. autoclass:: IMCSSegmentProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSEnd
+.. autoclass:: IMCSEnd
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSInitialState
+.. autoclass:: IMCSInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSSegment
+.. autoclass:: IMCSSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSOptions
+.. autoclass:: IMCSOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADriverMCS
+.. autoclass:: IDriverMCS
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementCartesian
+.. autoclass:: IElementCartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementKeplerian
+.. autoclass:: IElementKeplerian
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementDelaunay
+.. autoclass:: IElementDelaunay
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementEquinoctial
+.. autoclass:: IElementEquinoctial
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementMixedSpherical
+.. autoclass:: IElementMixedSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementSpherical
+.. autoclass:: IElementSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementTargetVectorIncomingAsymptote
+.. autoclass:: IElementTargetVectorIncomingAsymptote
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementTargetVectorOutgoingAsymptote
+.. autoclass:: IElementTargetVectorOutgoingAsymptote
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementGeodetic
+.. autoclass:: IElementGeodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAElementBPlane
+.. autoclass:: IElementBPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStoppingCondition
+.. autoclass:: IStoppingCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IVALightingStoppingCondition
+.. autoclass:: ILightingStoppingCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAccessStoppingCondition
+.. autoclass:: IAccessStoppingCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSPropagate
+.. autoclass:: IMCSPropagate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSSequence
+.. autoclass:: IMCSSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSBackwardSequence
+.. autoclass:: IMCSBackwardSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSLaunch
+.. autoclass:: IMCSLaunch
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADisplaySystemGeodetic
+.. autoclass:: IDisplaySystemGeodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADisplaySystemGeocentric
+.. autoclass:: IDisplaySystemGeocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABurnoutCBFCartesian
+.. autoclass:: IBurnoutCBFCartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABurnoutGeodetic
+.. autoclass:: IBurnoutGeodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABurnoutGeocentric
+.. autoclass:: IBurnoutGeocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABurnoutLaunchAzAlt
+.. autoclass:: IBurnoutLaunchAzAlt
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABurnoutLaunchAzRadius
+.. autoclass:: IBurnoutLaunchAzRadius
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSFollow
+.. autoclass:: IMCSFollow
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSManeuver
+.. autoclass:: IMCSManeuver
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverFinite
+.. autoclass:: IManeuverFinite
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverImpulsive
+.. autoclass:: IManeuverImpulsive
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlImpulsiveVelocityVector
+.. autoclass:: IAttitudeControlImpulsiveVelocityVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlImpulsiveAntiVelocityVector
+.. autoclass:: IAttitudeControlImpulsiveAntiVelocityVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlImpulsiveAttitude
+.. autoclass:: IAttitudeControlImpulsiveAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlImpulsiveFile
+.. autoclass:: IAttitudeControlImpulsiveFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlImpulsiveThrustVector
+.. autoclass:: IAttitudeControlImpulsiveThrustVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlFiniteAntiVelocityVector
+.. autoclass:: IAttitudeControlFiniteAntiVelocityVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlFiniteAttitude
+.. autoclass:: IAttitudeControlFiniteAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlFiniteFile
+.. autoclass:: IAttitudeControlFiniteFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlFiniteThrustVector
+.. autoclass:: IAttitudeControlFiniteThrustVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlFiniteTimeVarying
+.. autoclass:: IAttitudeControlFiniteTimeVarying
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlFiniteVelocityVector
+.. autoclass:: IAttitudeControlFiniteVelocityVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlFinitePlugin
+.. autoclass:: IAttitudeControlFinitePlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAttitudeControlOptimalFiniteLagrange
+.. autoclass:: IAttitudeControlOptimalFiniteLagrange
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSHold
+.. autoclass:: IMCSHold
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSUpdate
+.. autoclass:: IMCSUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSReturn
+.. autoclass:: IMCSReturn
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSStop
+.. autoclass:: IMCSStop
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfile
+.. autoclass:: IProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileCollection
+.. autoclass:: IProfileCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMCSTargetSequence
+.. autoclass:: IMCSTargetSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADCControl
+.. autoclass:: IDCControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADCResult
+.. autoclass:: IDCResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASearchPluginControl
+.. autoclass:: ISearchPluginControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASearchPluginResult
+.. autoclass:: ISearchPluginResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASearchPluginResultCollection
+.. autoclass:: ISearchPluginResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASearchPluginControlCollection
+.. autoclass:: ISearchPluginControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADCControlCollection
+.. autoclass:: IDCControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADCResultCollection
+.. autoclass:: IDCResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVATargeterGraphActiveControl
+.. autoclass:: ITargeterGraphActiveControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVATargeterGraphResult
+.. autoclass:: ITargeterGraphResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IVATargeterGraphActiveControlCollection
+.. autoclass:: ITargeterGraphActiveControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVATargeterGraphResultCollection
+.. autoclass:: ITargeterGraphResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVATargeterGraph
+.. autoclass:: ITargeterGraph
     :members:
     :exclude-members: __init__
-.. autoclass:: IVATargeterGraphCollection
+.. autoclass:: ITargeterGraphCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileSearchPlugin
+.. autoclass:: IProfileSearchPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileDifferentialCorrector
+.. autoclass:: IProfileDifferentialCorrector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileChangeManeuverType
+.. autoclass:: IProfileChangeManeuverType
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileScriptingTool
+.. autoclass:: IProfileScriptingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileChangeReturnSegment
+.. autoclass:: IProfileChangeReturnSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileChangePropagator
+.. autoclass:: IProfileChangePropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileChangeStopSegment
+.. autoclass:: IProfileChangeStopSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileChangeStoppingConditionState
+.. autoclass:: IProfileChangeStoppingConditionState
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileSeedFiniteManeuver
+.. autoclass:: IProfileSeedFiniteManeuver
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileRunOnce
+.. autoclass:: IProfileRunOnce
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAUserVariableDefinition
+.. autoclass:: IUserVariableDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAUserVariable
+.. autoclass:: IUserVariable
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAUserVariableUpdate
+.. autoclass:: IUserVariableUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileSNOPTOptimizer
+.. autoclass:: IProfileSNOPTOptimizer
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASNOPTControl
+.. autoclass:: ISNOPTControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASNOPTResult
+.. autoclass:: ISNOPTResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileIPOPTOptimizer
+.. autoclass:: IProfileIPOPTOptimizer
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAIPOPTControl
+.. autoclass:: IIPOPTControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAIPOPTResult
+.. autoclass:: IIPOPTResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverOptimalFinite
+.. autoclass:: IManeuverOptimalFinite
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAManeuverOptimalFiniteSteeringNodeElement
+.. autoclass:: IManeuverOptimalFiniteSteeringNodeElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileLambertProfile
+.. autoclass:: IProfileLambertProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileLambertSearchProfile
+.. autoclass:: IProfileLambertSearchProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileGoldenSection
+.. autoclass:: IProfileGoldenSection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAProfileGridSearch
+.. autoclass:: IProfileGridSearch
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACalcObjectLinkEmbedControlCollection
+.. autoclass:: ICalcObjectLinkEmbedControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcHeightAboveTerrain
+.. autoclass:: IStateCalcHeightAboveTerrain
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcEpoch
+.. autoclass:: IStateCalcEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOrbitDelaunayG
+.. autoclass:: IStateCalcOrbitDelaunayG
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOrbitDelaunayH
+.. autoclass:: IStateCalcOrbitDelaunayH
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOrbitDelaunayL
+.. autoclass:: IStateCalcOrbitDelaunayL
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOrbitSemiLatusRectum
+.. autoclass:: IStateCalcOrbitSemiLatusRectum
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcJacobiConstant
+.. autoclass:: IStateCalcJacobiConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCartesianElem
+.. autoclass:: IStateCalcCartesianElem
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCartSTMElem
+.. autoclass:: IStateCalcCartSTMElem
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSTMEigenval
+.. autoclass:: IStateCalcSTMEigenval
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSTMEigenvecElem
+.. autoclass:: IStateCalcSTMEigenvecElem
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcEnvironment
+.. autoclass:: IStateCalcEnvironment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcEquinoctialElem
+.. autoclass:: IStateCalcEquinoctialElem
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDamageFlux
+.. autoclass:: IStateCalcDamageFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDamageMassFlux
+.. autoclass:: IStateCalcDamageMassFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMagFieldDipoleL
+.. autoclass:: IStateCalcMagFieldDipoleL
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSEETMagFieldFieldLineSepAngle
+.. autoclass:: IStateCalcSEETMagFieldFieldLineSepAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcImpactFlux
+.. autoclass:: IStateCalcImpactFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcImpactMassFlux
+.. autoclass:: IStateCalcImpactMassFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSEETSAAFlux
+.. autoclass:: IStateCalcSEETSAAFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSEETVehTemp
+.. autoclass:: IStateCalcSEETVehTemp
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCloseApproachBearing
+.. autoclass:: IStateCalcCloseApproachBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCloseApproachMag
+.. autoclass:: IStateCalcCloseApproachMag
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCloseApproachTheta
+.. autoclass:: IStateCalcCloseApproachTheta
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCloseApproachX
+.. autoclass:: IStateCalcCloseApproachX
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCloseApproachY
+.. autoclass:: IStateCalcCloseApproachY
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCloseApproachCosBearing
+.. autoclass:: IStateCalcCloseApproachCosBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRelGroundTrackError
+.. autoclass:: IStateCalcRelGroundTrackError
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRelAtAOLMaster
+.. autoclass:: IStateCalcRelAtAOLMaster
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDeltaFromMaster
+.. autoclass:: IStateCalcDeltaFromMaster
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcLonDriftRate
+.. autoclass:: IStateCalcLonDriftRate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMeanEarthLon
+.. autoclass:: IStateCalcMeanEarthLon
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRectifiedLon
+.. autoclass:: IStateCalcRectifiedLon
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcGeodeticElem
+.. autoclass:: IStateCalcGeodeticElem
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRepeatingGroundTrackErr
+.. autoclass:: IStateCalcRepeatingGroundTrackErr
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcAltOfApoapsis
+.. autoclass:: IStateCalcAltOfApoapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcAltOfPeriapsis
+.. autoclass:: IStateCalcAltOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcArgOfLat
+.. autoclass:: IStateCalcArgOfLat
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcArgOfPeriapsis
+.. autoclass:: IStateCalcArgOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcEccAnomaly
+.. autoclass:: IStateCalcEccAnomaly
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcEccentricity
+.. autoclass:: IStateCalcEccentricity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcInclination
+.. autoclass:: IStateCalcInclination
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcLonOfAscNode
+.. autoclass:: IStateCalcLonOfAscNode
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMeanAnomaly
+.. autoclass:: IStateCalcMeanAnomaly
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMeanMotion
+.. autoclass:: IStateCalcMeanMotion
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOrbitPeriod
+.. autoclass:: IStateCalcOrbitPeriod
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcNumRevs
+.. autoclass:: IStateCalcNumRevs
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRAAN
+.. autoclass:: IStateCalcRAAN
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRadOfApoapsis
+.. autoclass:: IStateCalcRadOfApoapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRadOfPeriapsis
+.. autoclass:: IStateCalcRadOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSemiMajorAxis
+.. autoclass:: IStateCalcSemiMajorAxis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcTimePastAscNode
+.. autoclass:: IStateCalcTimePastAscNode
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcTimePastPeriapsis
+.. autoclass:: IStateCalcTimePastPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDeltaV
+.. autoclass:: IStateCalcDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDeltaVSquared
+.. autoclass:: IStateCalcDeltaVSquared
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMCSDeltaV
+.. autoclass:: IStateCalcMCSDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMCSDeltaVSquared
+.. autoclass:: IStateCalcMCSDeltaVSquared
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSequenceDeltaV
+.. autoclass:: IStateCalcSequenceDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSequenceDeltaVSquared
+.. autoclass:: IStateCalcSequenceDeltaVSquared
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcFuelMass
+.. autoclass:: IStateCalcFuelMass
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDensity
+.. autoclass:: IStateCalcDensity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcInertialDeltaVMag
+.. autoclass:: IStateCalcInertialDeltaVMag
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcInertialDeltaVx
+.. autoclass:: IStateCalcInertialDeltaVx
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcInertialDeltaVy
+.. autoclass:: IStateCalcInertialDeltaVy
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcInertialDeltaVz
+.. autoclass:: IStateCalcInertialDeltaVz
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcManeuverSpecificImpulse
+.. autoclass:: IStateCalcManeuverSpecificImpulse
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcPressure
+.. autoclass:: IStateCalcPressure
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcTemperature
+.. autoclass:: IStateCalcTemperature
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVectorX
+.. autoclass:: IStateCalcVectorX
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVectorY
+.. autoclass:: IStateCalcVectorY
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVectorZ
+.. autoclass:: IStateCalcVectorZ
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMass
+.. autoclass:: IStateCalcMass
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcManeuverTotalMassFlowRate
+.. autoclass:: IStateCalcManeuverTotalMassFlowRate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcAbsoluteValue
+.. autoclass:: IStateCalcAbsoluteValue
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDifference
+.. autoclass:: IStateCalcDifference
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDifferenceOtherSegment
+.. autoclass:: IStateCalcDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcPosDifferenceOtherSegment
+.. autoclass:: IStateCalcPosDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVelDifferenceOtherSegment
+.. autoclass:: IStateCalcVelDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcPosVelDifferenceOtherSegment
+.. autoclass:: IStateCalcPosVelDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcValueAtSegment
+.. autoclass:: IStateCalcValueAtSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMaxValue
+.. autoclass:: IStateCalcMaxValue
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMinValue
+.. autoclass:: IStateCalcMinValue
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMeanValue
+.. autoclass:: IStateCalcMeanValue
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcMedianValue
+.. autoclass:: IStateCalcMedianValue
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcStandardDeviation
+.. autoclass:: IStateCalcStandardDeviation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcNegative
+.. autoclass:: IStateCalcNegative
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcTrueAnomaly
+.. autoclass:: IStateCalcTrueAnomaly
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABDotRCalc
+.. autoclass:: IBDotRCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABDotTCalc
+.. autoclass:: IBDotTCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABMagCalc
+.. autoclass:: IBMagCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABThetaCalc
+.. autoclass:: IBThetaCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDeltaDec
+.. autoclass:: IStateCalcDeltaDec
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDeltaRA
+.. autoclass:: IStateCalcDeltaRA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcBetaAngle
+.. autoclass:: IStateCalcBetaAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcLocalApparentSolarLon
+.. autoclass:: IStateCalcLocalApparentSolarLon
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcLonOfPeriapsis
+.. autoclass:: IStateCalcLonOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOrbitStateValue
+.. autoclass:: IStateCalcOrbitStateValue
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSignedEccentricity
+.. autoclass:: IStateCalcSignedEccentricity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcTrueLon
+.. autoclass:: IStateCalcTrueLon
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcPower
+.. autoclass:: IStateCalcPower
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRelMotion
+.. autoclass:: IStateCalcRelMotion
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSolarBetaAngle
+.. autoclass:: IStateCalcSolarBetaAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSolarInPlaneAngle
+.. autoclass:: IStateCalcSolarInPlaneAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRelPosDecAngle
+.. autoclass:: IStateCalcRelPosDecAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRelPosInPlaneAngle
+.. autoclass:: IStateCalcRelPosInPlaneAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRelativeInclination
+.. autoclass:: IStateCalcRelativeInclination
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCurvilinearRelMotion
+.. autoclass:: IStateCalcCurvilinearRelMotion
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCustomFunction
+.. autoclass:: IStateCalcCustomFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcScript
+.. autoclass:: IStateCalcScript
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCd
+.. autoclass:: IStateCalcCd
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCr
+.. autoclass:: IStateCalcCr
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDragArea
+.. autoclass:: IStateCalcDragArea
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRadiationPressureArea
+.. autoclass:: IStateCalcRadiationPressureArea
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRadiationPressureCoefficient
+.. autoclass:: IStateCalcRadiationPressureCoefficient
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSRPArea
+.. autoclass:: IStateCalcSRPArea
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCosOfVerticalFPA
+.. autoclass:: IStateCalcCosOfVerticalFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDec
+.. autoclass:: IStateCalcDec
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcFPA
+.. autoclass:: IStateCalcFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRMag
+.. autoclass:: IStateCalcRMag
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRA
+.. autoclass:: IStateCalcRA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVMag
+.. autoclass:: IStateCalcVMag
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVelAz
+.. autoclass:: IStateCalcVelAz
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcC3Energy
+.. autoclass:: IStateCalcC3Energy
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcInAsympDec
+.. autoclass:: IStateCalcInAsympDec
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcInAsympRA
+.. autoclass:: IStateCalcInAsympRA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcInVelAzAtPeriapsis
+.. autoclass:: IStateCalcInVelAzAtPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOutAsympDec
+.. autoclass:: IStateCalcOutAsympDec
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOutAsympRA
+.. autoclass:: IStateCalcOutAsympRA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOutVelAzAtPeriapsis
+.. autoclass:: IStateCalcOutVelAzAtPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDuration
+.. autoclass:: IStateCalcDuration
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcUserValue
+.. autoclass:: IStateCalcUserValue
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcCrdnAngle
+.. autoclass:: IStateCalcCrdnAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcAngle
+.. autoclass:: IStateCalcAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDotProduct
+.. autoclass:: IStateCalcDotProduct
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVectorDec
+.. autoclass:: IStateCalcVectorDec
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVectorMag
+.. autoclass:: IStateCalcVectorMag
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcVectorRA
+.. autoclass:: IStateCalcVectorRA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcOnePtAccess
+.. autoclass:: IStateCalcOnePtAccess
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDifferenceAcrossSegmentsOtherSat
+.. autoclass:: IStateCalcDifferenceAcrossSegmentsOtherSat
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcValueAtSegmentOtherSat
+.. autoclass:: IStateCalcValueAtSegmentOtherSat
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcRARate
+.. autoclass:: IStateCalcRARate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcDecRate
+.. autoclass:: IStateCalcDecRate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcGravitationalParameter
+.. autoclass:: IStateCalcGravitationalParameter
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcReferenceRadius
+.. autoclass:: IStateCalcReferenceRadius
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcGravCoeff
+.. autoclass:: IStateCalcGravCoeff
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcSpeedOfLight
+.. autoclass:: IStateCalcSpeedOfLight
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcPi
+.. autoclass:: IStateCalcPi
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcScalar
+.. autoclass:: IStateCalcScalar
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcApparentSolarTime
+.. autoclass:: IStateCalcApparentSolarTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcEarthMeanSolarTime
+.. autoclass:: IStateCalcEarthMeanSolarTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateCalcEarthMeanLocTimeAN
+.. autoclass:: IStateCalcEarthMeanLocTimeAN
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACentralBodyCollection
+.. autoclass:: ICentralBodyCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbEphemeris
+.. autoclass:: ICbEphemeris
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbGravityModel
+.. autoclass:: ICbGravityModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbShape
+.. autoclass:: ICbShape
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbShapeSphere
+.. autoclass:: ICbShapeSphere
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbShapeOblateSpheroid
+.. autoclass:: ICbShapeOblateSpheroid
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbShapeTriaxialEllipsoid
+.. autoclass:: ICbShapeTriaxialEllipsoid
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbAttitude
+.. autoclass:: ICbAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbAttitudeRotationCoefficientsFile
+.. autoclass:: ICbAttitudeRotationCoefficientsFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbAttitudeIAU1994
+.. autoclass:: ICbAttitudeIAU1994
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbEphemerisAnalyticOrbit
+.. autoclass:: ICbEphemerisAnalyticOrbit
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbEphemerisJPLSpice
+.. autoclass:: ICbEphemerisJPLSpice
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbEphemerisFile
+.. autoclass:: ICbEphemerisFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbEphemerisJPLDE
+.. autoclass:: ICbEphemerisJPLDE
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACbEphemerisPlanetary
+.. autoclass:: ICbEphemerisPlanetary
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACentralBody
+.. autoclass:: IAstrogatorCentralBody
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAPowerInternal
+.. autoclass:: IPowerInternal
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAPowerProcessed
+.. autoclass:: IPowerProcessed
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAPowerSolarArray
+.. autoclass:: IPowerSolarArray
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGeneralRelativityFunction
+.. autoclass:: IGeneralRelativityFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAStateTransFunction
+.. autoclass:: IStateTransFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACR3BPFunc
+.. autoclass:: ICR3BPFunc
     :members:
     :exclude-members: __init__
-.. autoclass:: IVARadiationPressureFunction
+.. autoclass:: IRadiationPressureFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAYarkovskyFunc
+.. autoclass:: IYarkovskyFunc
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABlendedDensity
+.. autoclass:: IBlendedDensity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADragModelPlugin
+.. autoclass:: IDragModelPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACira72Function
+.. autoclass:: ICira72Function
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAExponential
+.. autoclass:: IExponential
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAHarrisPriester
+.. autoclass:: IHarrisPriester
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADensityModelPlugin
+.. autoclass:: IDensityModelPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAJacchiaRoberts
+.. autoclass:: IJacchiaRoberts
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAJacchiaBowman2008
+.. autoclass:: IJacchiaBowman2008
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAJacchia_1960
+.. autoclass:: IJacchia_1960
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAJacchia_1970
+.. autoclass:: IJacchia_1970
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAJacchia_1971
+.. autoclass:: IJacchia_1971
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMSISE_1990
+.. autoclass:: IMSISE_1990
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMSIS_1986
+.. autoclass:: IMSIS_1986
     :members:
     :exclude-members: __init__
-.. autoclass:: IVANRLMSISE_2000
+.. autoclass:: INRLMSISE_2000
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAUS_Standard_Atmosphere
+.. autoclass:: IUS_Standard_Atmosphere
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMarsGRAM37
+.. autoclass:: IMarsGRAM37
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMarsGRAM2005
+.. autoclass:: IMarsGRAM2005
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAVenusGRAM2005
+.. autoclass:: IVenusGRAM2005
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMarsGRAM2010
+.. autoclass:: IMarsGRAM2010
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMarsGRAM2001
+.. autoclass:: IMarsGRAM2001
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAMarsGRAM2000
+.. autoclass:: IMarsGRAM2000
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADTM2012
+.. autoclass:: IDTM2012
     :members:
     :exclude-members: __init__
-.. autoclass:: IVADTM2020
+.. autoclass:: IDTM2020
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGravityFieldFunction
+.. autoclass:: IGravityFieldFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAPointMassFunction
+.. autoclass:: IPointMassFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVATwoBodyFunction
+.. autoclass:: ITwoBodyFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAHPOPPluginFunction
+.. autoclass:: IHPOPPluginFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEOMFuncPluginFunction
+.. autoclass:: IEOMFuncPluginFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPAeroT20
+.. autoclass:: ISRPAeroT20
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPAeroT30
+.. autoclass:: ISRPAeroT30
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPGSPM04aIIA
+.. autoclass:: ISRPGSPM04aIIA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPGSPM04aIIR
+.. autoclass:: ISRPGSPM04aIIR
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPGSPM04aeIIA
+.. autoclass:: ISRPGSPM04aeIIA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPGSPM04aeIIR
+.. autoclass:: ISRPGSPM04aeIIR
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPSpherical
+.. autoclass:: ISRPSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPNPlate
+.. autoclass:: ISRPNPlate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPTabAreaVec
+.. autoclass:: ISRPTabAreaVec
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPVariableArea
+.. autoclass:: ISRPVariableArea
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAThirdBodyFunction
+.. autoclass:: IThirdBodyFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVASRPReflectionPlugin
+.. autoclass:: ISRPReflectionPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineModelThrustCoefficients
+.. autoclass:: IEngineModelThrustCoefficients
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineModelIspCoefficients
+.. autoclass:: IEngineModelIspCoefficients
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineConstAcc
+.. autoclass:: IEngineConstAcc
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineConstant
+.. autoclass:: IEngineConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineDefinition
+.. autoclass:: IEngineDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineThrottleTable
+.. autoclass:: IEngineThrottleTable
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineIon
+.. autoclass:: IEngineIon
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineCustom
+.. autoclass:: IEngineCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEnginePlugin
+.. autoclass:: IEnginePlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAEngineModelPoly
+.. autoclass:: IEngineModelPoly
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAThruster
+.. autoclass:: IThruster
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAThrusterSetCollection
+.. autoclass:: IThrusterSetCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAThrusterSet
+.. autoclass:: IThrusterSet
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAAsTriggerCondition
+.. autoclass:: IAsTriggerCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IVACustomFunctionScriptEngine
+.. autoclass:: ICustomFunctionScriptEngine
     :members:
     :exclude-members: __init__
-.. autoclass:: IVANumericalIntegrator
+.. autoclass:: INumericalIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAPropagatorFunctionCollection
+.. autoclass:: IPropagatorFunctionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVANumericalPropagatorWrapper
+.. autoclass:: INumericalPropagatorWrapper
     :members:
     :exclude-members: __init__
-.. autoclass:: IVANumericalPropagatorWrapperCR3BP
+.. autoclass:: INumericalPropagatorWrapperCR3BP
     :members:
     :exclude-members: __init__
-.. autoclass:: IVABulirschStoerIntegrator
+.. autoclass:: IBulirschStoerIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVAGaussJacksonIntegrator
+.. autoclass:: IGaussJacksonIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVARK2nd3rd
+.. autoclass:: IRK2nd3rd
     :members:
     :exclude-members: __init__
-.. autoclass:: IVARK4th
+.. autoclass:: IRK4th
     :members:
     :exclude-members: __init__
-.. autoclass:: IVARK4th5th
+.. autoclass:: IRK4th5th
     :members:
     :exclude-members: __init__
-.. autoclass:: IVARK4thAdapt
+.. autoclass:: IRK4thAdapt
     :members:
     :exclude-members: __init__
-.. autoclass:: IVARKF7th8th
+.. autoclass:: IRKF7th8th
     :members:
     :exclude-members: __init__
-.. autoclass:: IVARKV8th9th
+.. autoclass:: IRKV8th9th
     :members:
     :exclude-members: __init__
 
@@ -2369,1129 +2369,1129 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: VADriverMCS
+.. autoclass:: DriverMCS
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSSegmentCollection
+.. autoclass:: MCSSegmentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSEnd
+.. autoclass:: MCSEnd
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSInitialState
+.. autoclass:: MCSInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: VASpacecraftParameters
+.. autoclass:: SpacecraftParameters
     :members:
     :exclude-members: __init__
-.. autoclass:: VAFuelTank
+.. autoclass:: FuelTank
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementCartesian
+.. autoclass:: ElementCartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementKeplerian
+.. autoclass:: ElementKeplerian
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementEquinoctial
+.. autoclass:: ElementEquinoctial
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementDelaunay
+.. autoclass:: ElementDelaunay
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementMixedSpherical
+.. autoclass:: ElementMixedSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementSpherical
+.. autoclass:: ElementSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementTargetVectorIncomingAsymptote
+.. autoclass:: ElementTargetVectorIncomingAsymptote
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementTargetVectorOutgoingAsymptote
+.. autoclass:: ElementTargetVectorOutgoingAsymptote
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementGeodetic
+.. autoclass:: ElementGeodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: VAElementBPlane
+.. autoclass:: ElementBPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSPropagate
+.. autoclass:: MCSPropagate
     :members:
     :exclude-members: __init__
-.. autoclass:: VAState
+.. autoclass:: State
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStoppingConditionCollection
+.. autoclass:: StoppingConditionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAccessStoppingCondition
+.. autoclass:: AccessStoppingCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: VALightingStoppingCondition
+.. autoclass:: LightingStoppingCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStoppingCondition
+.. autoclass:: StoppingCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStoppingConditionElement
+.. autoclass:: StoppingConditionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSSequence
+.. autoclass:: MCSSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSBackwardSequence
+.. autoclass:: MCSBackwardSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSLaunch
+.. autoclass:: MCSLaunch
     :members:
     :exclude-members: __init__
-.. autoclass:: VADisplaySystemGeodetic
+.. autoclass:: DisplaySystemGeodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: VADisplaySystemGeocentric
+.. autoclass:: DisplaySystemGeocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: VABurnoutGeodetic
+.. autoclass:: BurnoutGeodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: VABurnoutCBFCartesian
+.. autoclass:: BurnoutCBFCartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: VABurnoutGeocentric
+.. autoclass:: BurnoutGeocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: VABurnoutLaunchAzAlt
+.. autoclass:: BurnoutLaunchAzAlt
     :members:
     :exclude-members: __init__
-.. autoclass:: VABurnoutLaunchAzRadius
+.. autoclass:: BurnoutLaunchAzRadius
     :members:
     :exclude-members: __init__
-.. autoclass:: VABurnoutVelocity
+.. autoclass:: BurnoutVelocity
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSFollow
+.. autoclass:: MCSFollow
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSManeuver
+.. autoclass:: MCSManeuver
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverFinite
+.. autoclass:: ManeuverFinite
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverImpulsive
+.. autoclass:: ManeuverImpulsive
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlImpulsiveVelocityVector
+.. autoclass:: AttitudeControlImpulsiveVelocityVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlImpulsiveAntiVelocityVector
+.. autoclass:: AttitudeControlImpulsiveAntiVelocityVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlImpulsiveAttitude
+.. autoclass:: AttitudeControlImpulsiveAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlImpulsiveFile
+.. autoclass:: AttitudeControlImpulsiveFile
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlImpulsiveThrustVector
+.. autoclass:: AttitudeControlImpulsiveThrustVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlFiniteAntiVelocityVector
+.. autoclass:: AttitudeControlFiniteAntiVelocityVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlFiniteAttitude
+.. autoclass:: AttitudeControlFiniteAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlFiniteFile
+.. autoclass:: AttitudeControlFiniteFile
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlFiniteThrustVector
+.. autoclass:: AttitudeControlFiniteThrustVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlFiniteTimeVarying
+.. autoclass:: AttitudeControlFiniteTimeVarying
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlFiniteVelocityVector
+.. autoclass:: AttitudeControlFiniteVelocityVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlFinitePlugin
+.. autoclass:: AttitudeControlFinitePlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAttitudeControlOptimalFiniteLagrange
+.. autoclass:: AttitudeControlOptimalFiniteLagrange
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverFinitePropagator
+.. autoclass:: ManeuverFinitePropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSHold
+.. autoclass:: MCSHold
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSUpdate
+.. autoclass:: MCSUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSReturn
+.. autoclass:: MCSReturn
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSStop
+.. autoclass:: MCSStop
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSTargetSequence
+.. autoclass:: MCSTargetSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileCollection
+.. autoclass:: ProfileCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSOptions
+.. autoclass:: MCSOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: VACalcObjectCollection
+.. autoclass:: CalcObjectCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAConstraintCollection
+.. autoclass:: ConstraintCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAPluginProperties
+.. autoclass:: PluginProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileSearchPlugin
+.. autoclass:: ProfileSearchPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: VATargeterGraph
+.. autoclass:: TargeterGraph
     :members:
     :exclude-members: __init__
-.. autoclass:: VATargeterGraphCollection
+.. autoclass:: TargeterGraphCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VATargeterGraphResultCollection
+.. autoclass:: TargeterGraphResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VATargeterGraphActiveControlCollection
+.. autoclass:: TargeterGraphActiveControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VATargeterGraphActiveControl
+.. autoclass:: TargeterGraphActiveControl
     :members:
     :exclude-members: __init__
-.. autoclass:: VATargeterGraphResult
+.. autoclass:: TargeterGraphResult
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileDifferentialCorrector
+.. autoclass:: ProfileDifferentialCorrector
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileScriptingTool
+.. autoclass:: ProfileScriptingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: VADCControl
+.. autoclass:: DCControl
     :members:
     :exclude-members: __init__
-.. autoclass:: VADCResult
+.. autoclass:: DCResult
     :members:
     :exclude-members: __init__
-.. autoclass:: VADCControlCollection
+.. autoclass:: DCControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VADCResultCollection
+.. autoclass:: DCResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VASearchPluginControl
+.. autoclass:: SearchPluginControl
     :members:
     :exclude-members: __init__
-.. autoclass:: VASearchPluginControlCollection
+.. autoclass:: SearchPluginControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VASearchPluginResult
+.. autoclass:: SearchPluginResult
     :members:
     :exclude-members: __init__
-.. autoclass:: VASearchPluginResultCollection
+.. autoclass:: SearchPluginResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileChangeManeuverType
+.. autoclass:: ProfileChangeManeuverType
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileChangeReturnSegment
+.. autoclass:: ProfileChangeReturnSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileChangePropagator
+.. autoclass:: ProfileChangePropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileChangeStopSegment
+.. autoclass:: ProfileChangeStopSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileChangeStoppingConditionState
+.. autoclass:: ProfileChangeStoppingConditionState
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileSeedFiniteManeuver
+.. autoclass:: ProfileSeedFiniteManeuver
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileRunOnce
+.. autoclass:: ProfileRunOnce
     :members:
     :exclude-members: __init__
-.. autoclass:: VABPlaneCollection
+.. autoclass:: BPlaneCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDamageFlux
+.. autoclass:: StateCalcDamageFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDamageMassFlux
+.. autoclass:: StateCalcDamageMassFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMagFieldDipoleL
+.. autoclass:: StateCalcMagFieldDipoleL
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSEETMagFieldFieldLineSepAngle
+.. autoclass:: StateCalcSEETMagFieldFieldLineSepAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcImpactFlux
+.. autoclass:: StateCalcImpactFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcImpactMassFlux
+.. autoclass:: StateCalcImpactMassFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSEETSAAFlux
+.. autoclass:: StateCalcSEETSAAFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSEETVehTemp
+.. autoclass:: StateCalcSEETVehTemp
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcEpoch
+.. autoclass:: StateCalcEpoch
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcJacobiConstant
+.. autoclass:: StateCalcJacobiConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCartesianElem
+.. autoclass:: StateCalcCartesianElem
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCartSTMElem
+.. autoclass:: StateCalcCartSTMElem
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSTMEigenval
+.. autoclass:: StateCalcSTMEigenval
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSTMEigenvecElem
+.. autoclass:: StateCalcSTMEigenvecElem
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcEnvironment
+.. autoclass:: StateCalcEnvironment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOrbitDelaunayG
+.. autoclass:: StateCalcOrbitDelaunayG
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOrbitDelaunayH
+.. autoclass:: StateCalcOrbitDelaunayH
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOrbitDelaunayL
+.. autoclass:: StateCalcOrbitDelaunayL
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOrbitSemiLatusRectum
+.. autoclass:: StateCalcOrbitSemiLatusRectum
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcEquinoctialElem
+.. autoclass:: StateCalcEquinoctialElem
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCloseApproachBearing
+.. autoclass:: StateCalcCloseApproachBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCloseApproachMag
+.. autoclass:: StateCalcCloseApproachMag
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCloseApproachTheta
+.. autoclass:: StateCalcCloseApproachTheta
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCloseApproachX
+.. autoclass:: StateCalcCloseApproachX
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCloseApproachY
+.. autoclass:: StateCalcCloseApproachY
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCloseApproachCosBearing
+.. autoclass:: StateCalcCloseApproachCosBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRelGroundTrackError
+.. autoclass:: StateCalcRelGroundTrackError
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRelAtAOLMaster
+.. autoclass:: StateCalcRelAtAOLMaster
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDeltaFromMaster
+.. autoclass:: StateCalcDeltaFromMaster
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcLonDriftRate
+.. autoclass:: StateCalcLonDriftRate
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMeanEarthLon
+.. autoclass:: StateCalcMeanEarthLon
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRectifiedLon
+.. autoclass:: StateCalcRectifiedLon
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcHeightAboveTerrain
+.. autoclass:: StateCalcHeightAboveTerrain
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcGeodeticElem
+.. autoclass:: StateCalcGeodeticElem
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRepeatingGroundTrackErr
+.. autoclass:: StateCalcRepeatingGroundTrackErr
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcAltOfApoapsis
+.. autoclass:: StateCalcAltOfApoapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcAltOfPeriapsis
+.. autoclass:: StateCalcAltOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcArgOfLat
+.. autoclass:: StateCalcArgOfLat
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcArgOfPeriapsis
+.. autoclass:: StateCalcArgOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcEccAnomaly
+.. autoclass:: StateCalcEccAnomaly
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcLonOfAscNode
+.. autoclass:: StateCalcLonOfAscNode
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMeanMotion
+.. autoclass:: StateCalcMeanMotion
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOrbitPeriod
+.. autoclass:: StateCalcOrbitPeriod
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcNumRevs
+.. autoclass:: StateCalcNumRevs
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRadOfApoapsis
+.. autoclass:: StateCalcRadOfApoapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRadOfPeriapsis
+.. autoclass:: StateCalcRadOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSemiMajorAxis
+.. autoclass:: StateCalcSemiMajorAxis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcTimePastAscNode
+.. autoclass:: StateCalcTimePastAscNode
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcTimePastPeriapsis
+.. autoclass:: StateCalcTimePastPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcTrueAnomaly
+.. autoclass:: StateCalcTrueAnomaly
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDeltaV
+.. autoclass:: StateCalcDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDeltaVSquared
+.. autoclass:: StateCalcDeltaVSquared
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMCSDeltaV
+.. autoclass:: StateCalcMCSDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMCSDeltaVSquared
+.. autoclass:: StateCalcMCSDeltaVSquared
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSequenceDeltaV
+.. autoclass:: StateCalcSequenceDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSequenceDeltaVSquared
+.. autoclass:: StateCalcSequenceDeltaVSquared
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcFuelMass
+.. autoclass:: StateCalcFuelMass
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDensity
+.. autoclass:: StateCalcDensity
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcInertialDeltaVMag
+.. autoclass:: StateCalcInertialDeltaVMag
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcInertialDeltaVx
+.. autoclass:: StateCalcInertialDeltaVx
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcInertialDeltaVy
+.. autoclass:: StateCalcInertialDeltaVy
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcInertialDeltaVz
+.. autoclass:: StateCalcInertialDeltaVz
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcManeuverSpecificImpulse
+.. autoclass:: StateCalcManeuverSpecificImpulse
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcPressure
+.. autoclass:: StateCalcPressure
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcTemperature
+.. autoclass:: StateCalcTemperature
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVectorY
+.. autoclass:: StateCalcVectorY
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVectorZ
+.. autoclass:: StateCalcVectorZ
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMass
+.. autoclass:: StateCalcMass
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcManeuverTotalMassFlowRate
+.. autoclass:: StateCalcManeuverTotalMassFlowRate
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcAbsoluteValue
+.. autoclass:: StateCalcAbsoluteValue
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDifference
+.. autoclass:: StateCalcDifference
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDifferenceOtherSegment
+.. autoclass:: StateCalcDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcPosDifferenceOtherSegment
+.. autoclass:: StateCalcPosDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVelDifferenceOtherSegment
+.. autoclass:: StateCalcVelDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcPosVelDifferenceOtherSegment
+.. autoclass:: StateCalcPosVelDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcValueAtSegment
+.. autoclass:: StateCalcValueAtSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMaxValue
+.. autoclass:: StateCalcMaxValue
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMinValue
+.. autoclass:: StateCalcMinValue
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMeanValue
+.. autoclass:: StateCalcMeanValue
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMedianValue
+.. autoclass:: StateCalcMedianValue
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcStandardDeviation
+.. autoclass:: StateCalcStandardDeviation
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcNegative
+.. autoclass:: StateCalcNegative
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcEccentricity
+.. autoclass:: StateCalcEccentricity
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcMeanAnomaly
+.. autoclass:: StateCalcMeanAnomaly
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRAAN
+.. autoclass:: StateCalcRAAN
     :members:
     :exclude-members: __init__
-.. autoclass:: VABDotRCalc
+.. autoclass:: BDotRCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: VABDotTCalc
+.. autoclass:: BDotTCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: VABMagCalc
+.. autoclass:: BMagCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: VABThetaCalc
+.. autoclass:: BThetaCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDeltaDec
+.. autoclass:: StateCalcDeltaDec
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDeltaRA
+.. autoclass:: StateCalcDeltaRA
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcBetaAngle
+.. autoclass:: StateCalcBetaAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcLocalApparentSolarLon
+.. autoclass:: StateCalcLocalApparentSolarLon
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcLonOfPeriapsis
+.. autoclass:: StateCalcLonOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOrbitStateValue
+.. autoclass:: StateCalcOrbitStateValue
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSignedEccentricity
+.. autoclass:: StateCalcSignedEccentricity
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcInclination
+.. autoclass:: StateCalcInclination
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcTrueLon
+.. autoclass:: StateCalcTrueLon
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcPower
+.. autoclass:: StateCalcPower
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRelMotion
+.. autoclass:: StateCalcRelMotion
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSolarBetaAngle
+.. autoclass:: StateCalcSolarBetaAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSolarInPlaneAngle
+.. autoclass:: StateCalcSolarInPlaneAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRelPosDecAngle
+.. autoclass:: StateCalcRelPosDecAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRelPosInPlaneAngle
+.. autoclass:: StateCalcRelPosInPlaneAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRelativeInclination
+.. autoclass:: StateCalcRelativeInclination
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCurvilinearRelMotion
+.. autoclass:: StateCalcCurvilinearRelMotion
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCustomFunction
+.. autoclass:: StateCalcCustomFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcScript
+.. autoclass:: StateCalcScript
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCd
+.. autoclass:: StateCalcCd
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCr
+.. autoclass:: StateCalcCr
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDragArea
+.. autoclass:: StateCalcDragArea
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRadiationPressureArea
+.. autoclass:: StateCalcRadiationPressureArea
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRadiationPressureCoefficient
+.. autoclass:: StateCalcRadiationPressureCoefficient
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSRPArea
+.. autoclass:: StateCalcSRPArea
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCosOfVerticalFPA
+.. autoclass:: StateCalcCosOfVerticalFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDec
+.. autoclass:: StateCalcDec
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcFPA
+.. autoclass:: StateCalcFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRMag
+.. autoclass:: StateCalcRMag
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRA
+.. autoclass:: StateCalcRA
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVMag
+.. autoclass:: StateCalcVMag
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVelAz
+.. autoclass:: StateCalcVelAz
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcC3Energy
+.. autoclass:: StateCalcC3Energy
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcInAsympDec
+.. autoclass:: StateCalcInAsympDec
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcInAsympRA
+.. autoclass:: StateCalcInAsympRA
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcInVelAzAtPeriapsis
+.. autoclass:: StateCalcInVelAzAtPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOutAsympDec
+.. autoclass:: StateCalcOutAsympDec
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOutAsympRA
+.. autoclass:: StateCalcOutAsympRA
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOutVelAzAtPeriapsis
+.. autoclass:: StateCalcOutVelAzAtPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDuration
+.. autoclass:: StateCalcDuration
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcUserValue
+.. autoclass:: StateCalcUserValue
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcCrdnAngle
+.. autoclass:: StateCalcCrdnAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcAngle
+.. autoclass:: StateCalcAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDotProduct
+.. autoclass:: StateCalcDotProduct
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVectorDec
+.. autoclass:: StateCalcVectorDec
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVectorMag
+.. autoclass:: StateCalcVectorMag
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVectorRA
+.. autoclass:: StateCalcVectorRA
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcVectorX
+.. autoclass:: StateCalcVectorX
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcOnePtAccess
+.. autoclass:: StateCalcOnePtAccess
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDifferenceAcrossSegmentsOtherSat
+.. autoclass:: StateCalcDifferenceAcrossSegmentsOtherSat
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcValueAtSegmentOtherSat
+.. autoclass:: StateCalcValueAtSegmentOtherSat
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcRARate
+.. autoclass:: StateCalcRARate
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcDecRate
+.. autoclass:: StateCalcDecRate
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcGravitationalParameter
+.. autoclass:: StateCalcGravitationalParameter
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcReferenceRadius
+.. autoclass:: StateCalcReferenceRadius
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcGravCoeff
+.. autoclass:: StateCalcGravCoeff
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcSpeedOfLight
+.. autoclass:: StateCalcSpeedOfLight
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcPi
+.. autoclass:: StateCalcPi
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcScalar
+.. autoclass:: StateCalcScalar
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcApparentSolarTime
+.. autoclass:: StateCalcApparentSolarTime
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcEarthMeanSolarTime
+.. autoclass:: StateCalcEarthMeanSolarTime
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateCalcEarthMeanLocTimeAN
+.. autoclass:: StateCalcEarthMeanLocTimeAN
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAutomaticSequenceCollection
+.. autoclass:: AutomaticSequenceCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAutomaticSequence
+.. autoclass:: AutomaticSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: VACentralBodyCollection
+.. autoclass:: CentralBodyCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VACentralBody
+.. autoclass:: AstrogatorCentralBody
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbGravityModel
+.. autoclass:: CbGravityModel
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbShapeSphere
+.. autoclass:: CbShapeSphere
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbShapeOblateSpheroid
+.. autoclass:: CbShapeOblateSpheroid
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbShapeTriaxialEllipsoid
+.. autoclass:: CbShapeTriaxialEllipsoid
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbAttitudeRotationCoefficientsFile
+.. autoclass:: CbAttitudeRotationCoefficientsFile
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbAttitudeIAU1994
+.. autoclass:: CbAttitudeIAU1994
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbEphemerisAnalyticOrbit
+.. autoclass:: CbEphemerisAnalyticOrbit
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbEphemerisJPLSpice
+.. autoclass:: CbEphemerisJPLSpice
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbEphemerisFile
+.. autoclass:: CbEphemerisFile
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbEphemerisJPLDE
+.. autoclass:: CbEphemerisJPLDE
     :members:
     :exclude-members: __init__
-.. autoclass:: VACbEphemerisPlanetary
+.. autoclass:: CbEphemerisPlanetary
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMCSSegmentProperties
+.. autoclass:: MCSSegmentProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: VAPowerInternal
+.. autoclass:: PowerInternal
     :members:
     :exclude-members: __init__
-.. autoclass:: VAPowerProcessed
+.. autoclass:: PowerProcessed
     :members:
     :exclude-members: __init__
-.. autoclass:: VAPowerSolarArray
+.. autoclass:: PowerSolarArray
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGeneralRelativityFunction
+.. autoclass:: GeneralRelativityFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VAStateTransFunction
+.. autoclass:: StateTransFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VACR3BPFunc
+.. autoclass:: CR3BPFunc
     :members:
     :exclude-members: __init__
-.. autoclass:: VARadiationPressureFunction
+.. autoclass:: RadiationPressureFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VAYarkovskyFunc
+.. autoclass:: YarkovskyFunc
     :members:
     :exclude-members: __init__
-.. autoclass:: VABlendedDensity
+.. autoclass:: BlendedDensity
     :members:
     :exclude-members: __init__
-.. autoclass:: VACira72Function
+.. autoclass:: Cira72Function
     :members:
     :exclude-members: __init__
-.. autoclass:: VAExponential
+.. autoclass:: Exponential
     :members:
     :exclude-members: __init__
-.. autoclass:: VAHarrisPriester
+.. autoclass:: HarrisPriester
     :members:
     :exclude-members: __init__
-.. autoclass:: VADensityModelPlugin
+.. autoclass:: DensityModelPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: VAJacchiaRoberts
+.. autoclass:: JacchiaRoberts
     :members:
     :exclude-members: __init__
-.. autoclass:: VAJacchiaBowman2008
+.. autoclass:: JacchiaBowman2008
     :members:
     :exclude-members: __init__
-.. autoclass:: VAJacchia_1960
+.. autoclass:: Jacchia_1960
     :members:
     :exclude-members: __init__
-.. autoclass:: VAJacchia_1970
+.. autoclass:: Jacchia_1970
     :members:
     :exclude-members: __init__
-.. autoclass:: VAJacchia_1971
+.. autoclass:: Jacchia_1971
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMSISE_1990
+.. autoclass:: MSISE_1990
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMSIS_1986
+.. autoclass:: MSIS_1986
     :members:
     :exclude-members: __init__
-.. autoclass:: VANRLMSISE_2000
+.. autoclass:: NRLMSISE_2000
     :members:
     :exclude-members: __init__
-.. autoclass:: VAUS_Standard_Atmosphere
+.. autoclass:: US_Standard_Atmosphere
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMarsGRAM37
+.. autoclass:: MarsGRAM37
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMarsGRAM2000
+.. autoclass:: MarsGRAM2000
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMarsGRAM2001
+.. autoclass:: MarsGRAM2001
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMarsGRAM2005
+.. autoclass:: MarsGRAM2005
     :members:
     :exclude-members: __init__
-.. autoclass:: VAMarsGRAM2010
+.. autoclass:: MarsGRAM2010
     :members:
     :exclude-members: __init__
-.. autoclass:: VAVenusGRAM2005
+.. autoclass:: VenusGRAM2005
     :members:
     :exclude-members: __init__
-.. autoclass:: VADTM2012
+.. autoclass:: DTM2012
     :members:
     :exclude-members: __init__
-.. autoclass:: VADTM2020
+.. autoclass:: DTM2020
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGravityFieldFunction
+.. autoclass:: GravityFieldFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VAPointMassFunction
+.. autoclass:: PointMassFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VATwoBodyFunction
+.. autoclass:: TwoBodyFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VAHPOPPluginFunction
+.. autoclass:: HPOPPluginFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEOMFuncPluginFunction
+.. autoclass:: EOMFuncPluginFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPAeroT20
+.. autoclass:: SRPAeroT20
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPAeroT30
+.. autoclass:: SRPAeroT30
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPGSPM04aIIA
+.. autoclass:: SRPGSPM04aIIA
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPGSPM04aIIR
+.. autoclass:: SRPGSPM04aIIR
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPGSPM04aeIIA
+.. autoclass:: SRPGSPM04aeIIA
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPGSPM04aeIIR
+.. autoclass:: SRPGSPM04aeIIR
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPSpherical
+.. autoclass:: SRPSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPNPlate
+.. autoclass:: SRPNPlate
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPTabAreaVec
+.. autoclass:: SRPTabAreaVec
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPVariableArea
+.. autoclass:: SRPVariableArea
     :members:
     :exclude-members: __init__
-.. autoclass:: VAThirdBodyFunction
+.. autoclass:: ThirdBodyFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: VADragModelPlugin
+.. autoclass:: DragModelPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: VASRPReflectionPlugin
+.. autoclass:: SRPReflectionPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineConstAcc
+.. autoclass:: EngineConstAcc
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineConstant
+.. autoclass:: EngineConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineIon
+.. autoclass:: EngineIon
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineThrottleTable
+.. autoclass:: EngineThrottleTable
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineCustom
+.. autoclass:: EngineCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEnginePlugin
+.. autoclass:: EnginePlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineModelPoly
+.. autoclass:: EngineModelPoly
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineModelThrustCoefficients
+.. autoclass:: EngineModelThrustCoefficients
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineModelIspCoefficients
+.. autoclass:: EngineModelIspCoefficients
     :members:
     :exclude-members: __init__
-.. autoclass:: VAEngineDefinition
+.. autoclass:: EngineDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: VAThruster
+.. autoclass:: Thruster
     :members:
     :exclude-members: __init__
-.. autoclass:: VAThrusterSetCollection
+.. autoclass:: ThrusterSetCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAThrusterSet
+.. autoclass:: ThrusterSet
     :members:
     :exclude-members: __init__
-.. autoclass:: VAAsTriggerCondition
+.. autoclass:: AsTriggerCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: VACustomFunctionScriptEngine
+.. autoclass:: CustomFunctionScriptEngine
     :members:
     :exclude-members: __init__
-.. autoclass:: VANumericalPropagatorWrapper
+.. autoclass:: NumericalPropagatorWrapper
     :members:
     :exclude-members: __init__
-.. autoclass:: VANumericalPropagatorWrapperCR3BP
+.. autoclass:: NumericalPropagatorWrapperCR3BP
     :members:
     :exclude-members: __init__
-.. autoclass:: VAPropagatorFunctionCollection
+.. autoclass:: PropagatorFunctionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VABulirschStoerIntegrator
+.. autoclass:: BulirschStoerIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGaussJacksonIntegrator
+.. autoclass:: GaussJacksonIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: VARK2nd3rd
+.. autoclass:: RK2nd3rd
     :members:
     :exclude-members: __init__
-.. autoclass:: VARK4th
+.. autoclass:: RK4th
     :members:
     :exclude-members: __init__
-.. autoclass:: VARK4th5th
+.. autoclass:: RK4th5th
     :members:
     :exclude-members: __init__
-.. autoclass:: VARK4thAdapt
+.. autoclass:: RK4thAdapt
     :members:
     :exclude-members: __init__
-.. autoclass:: VARKF7th8th
+.. autoclass:: RKF7th8th
     :members:
     :exclude-members: __init__
-.. autoclass:: VARKV8th9th
+.. autoclass:: RKV8th9th
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingTool
+.. autoclass:: ScriptingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingSegmentCollection
+.. autoclass:: ScriptingSegmentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingSegment
+.. autoclass:: ScriptingSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingParameterCollection
+.. autoclass:: ScriptingParameterCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingParameter
+.. autoclass:: ScriptingParameter
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingCalcObject
+.. autoclass:: ScriptingCalcObject
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingCalcObjectCollection
+.. autoclass:: ScriptingCalcObjectCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAUserVariableDefinition
+.. autoclass:: UserVariableDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: VAUserVariable
+.. autoclass:: UserVariable
     :members:
     :exclude-members: __init__
-.. autoclass:: VAUserVariableUpdate
+.. autoclass:: UserVariableUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: VAUserVariableDefinitionCollection
+.. autoclass:: UserVariableDefinitionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAUserVariableCollection
+.. autoclass:: UserVariableCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAUserVariableUpdateCollection
+.. autoclass:: UserVariableUpdateCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VACalculationGraphCollection
+.. autoclass:: CalculationGraphCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingParameterEnumerationChoice
+.. autoclass:: ScriptingParameterEnumerationChoice
     :members:
     :exclude-members: __init__
-.. autoclass:: VAScriptingParameterEnumerationChoiceCollection
+.. autoclass:: ScriptingParameterEnumerationChoiceCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileSNOPTOptimizer
+.. autoclass:: ProfileSNOPTOptimizer
     :members:
     :exclude-members: __init__
-.. autoclass:: VASNOPTControl
+.. autoclass:: SNOPTControl
     :members:
     :exclude-members: __init__
-.. autoclass:: VASNOPTResult
+.. autoclass:: SNOPTResult
     :members:
     :exclude-members: __init__
-.. autoclass:: VASNOPTControlCollection
+.. autoclass:: SNOPTControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VASNOPTResultCollection
+.. autoclass:: SNOPTResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileIPOPTOptimizer
+.. autoclass:: ProfileIPOPTOptimizer
     :members:
     :exclude-members: __init__
-.. autoclass:: VAIPOPTControl
+.. autoclass:: IPOPTControl
     :members:
     :exclude-members: __init__
-.. autoclass:: VAIPOPTResult
+.. autoclass:: IPOPTResult
     :members:
     :exclude-members: __init__
-.. autoclass:: VAIPOPTControlCollection
+.. autoclass:: IPOPTControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAIPOPTResultCollection
+.. autoclass:: IPOPTResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverOptimalFinite
+.. autoclass:: ManeuverOptimalFinite
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverOptimalFiniteSNOPTOptimizer
+.. autoclass:: ManeuverOptimalFiniteSNOPTOptimizer
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverOptimalFiniteInitialBoundaryConditions
+.. autoclass:: ManeuverOptimalFiniteInitialBoundaryConditions
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverOptimalFiniteFinalBoundaryConditions
+.. autoclass:: ManeuverOptimalFiniteFinalBoundaryConditions
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverOptimalFinitePathBoundaryConditions
+.. autoclass:: ManeuverOptimalFinitePathBoundaryConditions
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverOptimalFiniteSteeringNodeElement
+.. autoclass:: ManeuverOptimalFiniteSteeringNodeElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverOptimalFiniteSteeringNodeCollection
+.. autoclass:: ManeuverOptimalFiniteSteeringNodeCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAManeuverOptimalFiniteBounds
+.. autoclass:: ManeuverOptimalFiniteBounds
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileLambertProfile
+.. autoclass:: ProfileLambertProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileLambertSearchProfile
+.. autoclass:: ProfileLambertSearchProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileGoldenSection
+.. autoclass:: ProfileGoldenSection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGoldenSectionControlCollection
+.. autoclass:: GoldenSectionControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGoldenSectionControl
+.. autoclass:: GoldenSectionControl
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGoldenSectionResultCollection
+.. autoclass:: GoldenSectionResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGoldenSectionResult
+.. autoclass:: GoldenSectionResult
     :members:
     :exclude-members: __init__
-.. autoclass:: VAProfileGridSearch
+.. autoclass:: ProfileGridSearch
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGridSearchControlCollection
+.. autoclass:: GridSearchControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGridSearchControl
+.. autoclass:: GridSearchControl
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGridSearchResultCollection
+.. autoclass:: GridSearchResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VAGridSearchResult
+.. autoclass:: GridSearchResult
     :members:
     :exclude-members: __init__
-.. autoclass:: VACalcObjectLinkEmbedControlCollection
+.. autoclass:: CalcObjectLinkEmbedControlCollection
     :members:
     :exclude-members: __init__
 
