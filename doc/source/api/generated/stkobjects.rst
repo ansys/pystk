@@ -214,8 +214,8 @@ Interfaces
     ITerrainCollection
     ICentralBodyTerrainCollectionElement
     ICentralBodyTerrainCollection
-    I3DTileset
-    I3DTilesetCollection
+    ITileset3D
+    ITilesetCollection3D
     IScGenDb
     IScGenDbCollection
     ISc3dFont
@@ -3282,10 +3282,10 @@ Interfaces
 .. autoclass:: ICentralBodyTerrainCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: I3DTileset
+.. autoclass:: ITileset3D
     :members:
     :exclude-members: __init__
-.. autoclass:: I3DTilesetCollection
+.. autoclass:: ITilesetCollection3D
     :members:
     :exclude-members: __init__
 .. autoclass:: IScGenDb
