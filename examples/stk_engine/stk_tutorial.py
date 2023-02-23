@@ -189,7 +189,8 @@ class STKTutorial:
             fill=tk.BOTH, expand=tk.YES, side=tk.LEFT, padx=10
         )
 
-    def _run(self):
+    def run(self):
+        """Run the application."""
         self.window.mainloop()
 
     def _exit(self):
@@ -210,8 +211,8 @@ class STKTutorial:
         scenario = self.root.CurrentScenario
 
         scenario.SetTimePeriod(
-            "1 Jul 2023 00:00:00.00",
-            "1 Jul 2023 04:00:00.00")
+            "1 Jul 2023 00:00:00.00", "1 Jul 2023 04:00:00.00"
+        )
         scenario.Epoch = "1 Jul 2023 00:00:00.00"
 
     def _configure_units(self):
@@ -565,7 +566,7 @@ class STKTutorial:
         print("Access intervals:")
         for interval in result.Intervals:
             print(f"{interval.StartTime} {interval.StopTime}")
-            
+
         self.accessBtn["state"] = "disabled"
         self.removeAccessBtn["state"] = "normal"
 
@@ -722,4 +723,4 @@ class STKTutorial:
 
 if __name__ == "__main__":
     stk_tutorial = STKTutorial()
-    stk_tutorial._run()
+    stk_tutorial.run()
