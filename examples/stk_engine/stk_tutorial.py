@@ -218,7 +218,6 @@ class STKTutorial:
         dimensions = self.root.UnitPreferences
         dimensions.ResetUnits()
         dimensions.SetCurrentUnit("DateFormat", "UTCG")
-
         dimensions.SetCurrentUnit("DistanceUnit", "km")
         dimensions.SetCurrentUnit("TimeUnit", "sec")
         dimensions.SetCurrentUnit("AngleUnit", "deg")
