@@ -6282,15 +6282,15 @@ class IStkGraphicsCamera(object):
             agcls.evaluate_hresult(self.__dict__["_SetDistance"](arg_distance.COM_val))
 
     @property
-    def Axes(self) -> "ICrdnAxes":
+    def Axes(self) -> "IAxes":
         """Gets or sets camera's axes of rotation."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAxes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @Axes.setter
-    def Axes(self, axes:"ICrdnAxes") -> None:
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes:
+    def Axes(self, axes:"IAxes") -> None:
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes:
             agcls.evaluate_hresult(self.__dict__["_SetAxes"](arg_axes.COM_val))
 
     @property
@@ -6420,22 +6420,22 @@ class IStkGraphicsCamera(object):
             return arg_pRetVal.python_val
 
     @property
-    def PositionReferenceFrame(self) -> "ICrdnSystem":
+    def PositionReferenceFrame(self) -> "ISystem":
         """Gets the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetPositionReferenceFrame"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def ReferencePointReferenceFrame(self) -> "ICrdnSystem":
+    def ReferencePointReferenceFrame(self) -> "ISystem":
         """Gets the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetReferencePointReferenceFrame"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def VisibilityTest(self, referenceFrame:"ICrdnSystem", sphere:"IStkGraphicsBoundingSphere") -> "AgEStkGraphicsVisibility":
+    def VisibilityTest(self, referenceFrame:"ISystem", sphere:"IStkGraphicsBoundingSphere") -> "AgEStkGraphicsVisibility":
         """Gets the visibility of a sphere against the view frustum and any occluding central bodies."""
-        with agmarshall.AgInterface_in_arg(referenceFrame, ICrdnSystem) as arg_referenceFrame, \
+        with agmarshall.AgInterface_in_arg(referenceFrame, ISystem) as arg_referenceFrame, \
              agmarshall.AgInterface_in_arg(sphere, IStkGraphicsBoundingSphere) as arg_sphere, \
              agmarshall.AgEnum_arg(AgEStkGraphicsVisibility) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_VisibilityTest"](arg_referenceFrame.COM_val, arg_sphere.COM_val, byref(arg_pRetVal.COM_val)))
@@ -6473,10 +6473,10 @@ class IStkGraphicsCamera(object):
             agcls.evaluate_hresult(self.__dict__["_TryWindowToCartographic"](arg_centralBody.COM_val, byref(arg_position.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def ViewCentralBody(self, centralBody:str, axes:"ICrdnAxes") -> None:
+    def ViewCentralBody(self, centralBody:str, axes:"IAxes") -> None:
         """Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body and the camera's position is set so the entire central body is visible."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
-             agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes:
+             agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes:
             agcls.evaluate_hresult(self.__dict__["_ViewCentralBody"](arg_centralBody.COM_val, arg_axes.COM_val))
 
     def ViewExtent(self, centralBody:str, extent:list) -> None:
@@ -6494,64 +6494,64 @@ class IStkGraphicsCamera(object):
              agmarshall.DOUBLE_arg(north) as arg_north:
             agcls.evaluate_hresult(self.__dict__["_ViewRectangularExtent"](arg_centralBody.COM_val, arg_west.COM_val, arg_south.COM_val, arg_east.COM_val, arg_north.COM_val))
 
-    def ViewWithUpAxis(self, axes:"ICrdnAxes", cameraPosition:"ICrdnPoint", referencePoint:"ICrdnPoint", upAxis:list) -> None:
+    def ViewWithUpAxis(self, axes:"IAxes", cameraPosition:"IPoint", referencePoint:"IPoint", upAxis:list) -> None:
         """Views from a point to a point. Sets the camera's position and the reference point the camera is looking at."""
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
-             agmarshall.AgInterface_in_arg(cameraPosition, ICrdnPoint) as arg_cameraPosition, \
-             agmarshall.AgInterface_in_arg(referencePoint, ICrdnPoint) as arg_referencePoint, \
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
+             agmarshall.AgInterface_in_arg(cameraPosition, IPoint) as arg_cameraPosition, \
+             agmarshall.AgInterface_in_arg(referencePoint, IPoint) as arg_referencePoint, \
              agmarshall.SAFEARRAY_arg(upAxis) as arg_upAxis:
             agcls.evaluate_hresult(self.__dict__["_ViewWithUpAxis"](arg_axes.COM_val, arg_cameraPosition.COM_val, arg_referencePoint.COM_val, byref(arg_upAxis.COM_val)))
 
-    def View(self, axes:"ICrdnAxes", cameraPosition:"ICrdnPoint", referencePoint:"ICrdnPoint") -> None:
+    def View(self, axes:"IAxes", cameraPosition:"IPoint", referencePoint:"IPoint") -> None:
         """Views from a point to a point. Sets the camera's position and the reference point the camera is looking at."""
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
-             agmarshall.AgInterface_in_arg(cameraPosition, ICrdnPoint) as arg_cameraPosition, \
-             agmarshall.AgInterface_in_arg(referencePoint, ICrdnPoint) as arg_referencePoint:
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
+             agmarshall.AgInterface_in_arg(cameraPosition, IPoint) as arg_cameraPosition, \
+             agmarshall.AgInterface_in_arg(referencePoint, IPoint) as arg_referencePoint:
             agcls.evaluate_hresult(self.__dict__["_View"](arg_axes.COM_val, arg_cameraPosition.COM_val, arg_referencePoint.COM_val))
 
-    def ViewDirectionWithUpAxis(self, axes:"ICrdnAxes", cameraPosition:"ICrdnPoint", direction:"ICrdnVector", upAxis:list) -> None:
+    def ViewDirectionWithUpAxis(self, axes:"IAxes", cameraPosition:"IPoint", direction:"IVector", upAxis:list) -> None:
         """Views from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking."""
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
-             agmarshall.AgInterface_in_arg(cameraPosition, ICrdnPoint) as arg_cameraPosition, \
-             agmarshall.AgInterface_in_arg(direction, ICrdnVector) as arg_direction, \
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
+             agmarshall.AgInterface_in_arg(cameraPosition, IPoint) as arg_cameraPosition, \
+             agmarshall.AgInterface_in_arg(direction, IVector) as arg_direction, \
              agmarshall.SAFEARRAY_arg(upAxis) as arg_upAxis:
             agcls.evaluate_hresult(self.__dict__["_ViewDirectionWithUpAxis"](arg_axes.COM_val, arg_cameraPosition.COM_val, arg_direction.COM_val, byref(arg_upAxis.COM_val)))
 
-    def ViewDirection(self, axes:"ICrdnAxes", cameraPosition:"ICrdnPoint", direction:"ICrdnVector") -> None:
+    def ViewDirection(self, axes:"IAxes", cameraPosition:"IPoint", direction:"IVector") -> None:
         """Views from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking."""
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
-             agmarshall.AgInterface_in_arg(cameraPosition, ICrdnPoint) as arg_cameraPosition, \
-             agmarshall.AgInterface_in_arg(direction, ICrdnVector) as arg_direction:
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
+             agmarshall.AgInterface_in_arg(cameraPosition, IPoint) as arg_cameraPosition, \
+             agmarshall.AgInterface_in_arg(direction, IVector) as arg_direction:
             agcls.evaluate_hresult(self.__dict__["_ViewDirection"](arg_axes.COM_val, arg_cameraPosition.COM_val, arg_direction.COM_val))
 
-    def ViewOffsetWithUpAxis(self, axes:"ICrdnAxes", referencePoint:"ICrdnPoint", offset:list, upAxis:list) -> None:
+    def ViewOffsetWithUpAxis(self, axes:"IAxes", referencePoint:"IPoint", offset:list, upAxis:list) -> None:
         """Sets the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset."""
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
-             agmarshall.AgInterface_in_arg(referencePoint, ICrdnPoint) as arg_referencePoint, \
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
+             agmarshall.AgInterface_in_arg(referencePoint, IPoint) as arg_referencePoint, \
              agmarshall.SAFEARRAY_arg(offset) as arg_offset, \
              agmarshall.SAFEARRAY_arg(upAxis) as arg_upAxis:
             agcls.evaluate_hresult(self.__dict__["_ViewOffsetWithUpAxis"](arg_axes.COM_val, arg_referencePoint.COM_val, byref(arg_offset.COM_val), byref(arg_upAxis.COM_val)))
 
-    def ViewOffset(self, axes:"ICrdnAxes", referencePoint:"ICrdnPoint", offset:list) -> None:
+    def ViewOffset(self, axes:"IAxes", referencePoint:"IPoint", offset:list) -> None:
         """Sets the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset."""
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
-             agmarshall.AgInterface_in_arg(referencePoint, ICrdnPoint) as arg_referencePoint, \
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
+             agmarshall.AgInterface_in_arg(referencePoint, IPoint) as arg_referencePoint, \
              agmarshall.SAFEARRAY_arg(offset) as arg_offset:
             agcls.evaluate_hresult(self.__dict__["_ViewOffset"](arg_axes.COM_val, arg_referencePoint.COM_val, byref(arg_offset.COM_val)))
 
-    def ViewOffsetDirectionWithUpAxis(self, axes:"ICrdnAxes", referencePoint:"ICrdnPoint", direction:"ICrdnVector", upAxis:list) -> None:
+    def ViewOffsetDirectionWithUpAxis(self, axes:"IAxes", referencePoint:"IPoint", direction:"IVector", upAxis:list) -> None:
         """Sets the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector."""
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
-             agmarshall.AgInterface_in_arg(referencePoint, ICrdnPoint) as arg_referencePoint, \
-             agmarshall.AgInterface_in_arg(direction, ICrdnVector) as arg_direction, \
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
+             agmarshall.AgInterface_in_arg(referencePoint, IPoint) as arg_referencePoint, \
+             agmarshall.AgInterface_in_arg(direction, IVector) as arg_direction, \
              agmarshall.SAFEARRAY_arg(upAxis) as arg_upAxis:
             agcls.evaluate_hresult(self.__dict__["_ViewOffsetDirectionWithUpAxis"](arg_axes.COM_val, arg_referencePoint.COM_val, arg_direction.COM_val, byref(arg_upAxis.COM_val)))
 
-    def ViewOffsetDirection(self, axes:"ICrdnAxes", referencePoint:"ICrdnPoint", direction:"ICrdnVector") -> None:
+    def ViewOffsetDirection(self, axes:"IAxes", referencePoint:"IPoint", direction:"IVector") -> None:
         """Sets the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector."""
-        with agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
-             agmarshall.AgInterface_in_arg(referencePoint, ICrdnPoint) as arg_referencePoint, \
-             agmarshall.AgInterface_in_arg(direction, ICrdnVector) as arg_direction:
+        with agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
+             agmarshall.AgInterface_in_arg(referencePoint, IPoint) as arg_referencePoint, \
+             agmarshall.AgInterface_in_arg(direction, IVector) as arg_direction:
             agcls.evaluate_hresult(self.__dict__["_ViewOffsetDirection"](arg_axes.COM_val, arg_referencePoint.COM_val, arg_direction.COM_val))
 
 
@@ -7567,15 +7567,15 @@ class IStkGraphicsDistanceToPositionDisplayCondition(object):
             agcls.evaluate_hresult(self.__dict__["_SetPosition"](arg_position.COM_val))
 
     @property
-    def ReferenceFrame(self) -> "ICrdnSystem":
+    def ReferenceFrame(self) -> "ISystem":
         """Gets or sets the reference frame that position is defined in."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetReferenceFrame"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @ReferenceFrame.setter
-    def ReferenceFrame(self, referenceFrame:"ICrdnSystem") -> None:
-        with agmarshall.AgInterface_in_arg(referenceFrame, ICrdnSystem) as arg_referenceFrame:
+    def ReferenceFrame(self, referenceFrame:"ISystem") -> None:
+        with agmarshall.AgInterface_in_arg(referenceFrame, ISystem) as arg_referenceFrame:
             agcls.evaluate_hresult(self.__dict__["_SetReferenceFrame"](arg_referenceFrame.COM_val))
 
 
@@ -13805,15 +13805,15 @@ class IStkGraphicsPrimitive(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStkGraphicsPrimitive.")
     
     @property
-    def ReferenceFrame(self) -> "ICrdnSystem":
+    def ReferenceFrame(self) -> "ISystem":
         """Gets or sets the reference frame this primitive is defined and rendered in."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetReferenceFrame"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @ReferenceFrame.setter
-    def ReferenceFrame(self, referenceFrame:"ICrdnSystem") -> None:
-        with agmarshall.AgInterface_in_arg(referenceFrame, ICrdnSystem) as arg_referenceFrame:
+    def ReferenceFrame(self, referenceFrame:"ISystem") -> None:
+        with agmarshall.AgInterface_in_arg(referenceFrame, ISystem) as arg_referenceFrame:
             agcls.evaluate_hresult(self.__dict__["_SetReferenceFrame"](arg_referenceFrame.COM_val))
 
     @property
@@ -18267,10 +18267,10 @@ class IStkGraphicsAxesPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IStkGraphicsAxesPrimitiveFactory.")
     
-    def InitializeWithDirection(self, sys:"ICrdnSystem", axes:"ICrdnAxes", font:"IStkGraphicsGraphicsFont") -> "IStkGraphicsAxesPrimitive":
+    def InitializeWithDirection(self, sys:"ISystem", axes:"IAxes", font:"IStkGraphicsGraphicsFont") -> "IStkGraphicsAxesPrimitive":
         """Initializes an axes primitive with the specified ISystem sys as its source."""
-        with agmarshall.AgInterface_in_arg(sys, ICrdnSystem) as arg_sys, \
-             agmarshall.AgInterface_in_arg(axes, ICrdnAxes) as arg_axes, \
+        with agmarshall.AgInterface_in_arg(sys, ISystem) as arg_sys, \
+             agmarshall.AgInterface_in_arg(axes, IAxes) as arg_axes, \
              agmarshall.AgInterface_in_arg(font, IStkGraphicsGraphicsFont) as arg_font, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_InitializeWithDirection"](arg_sys.COM_val, arg_axes.COM_val, arg_font.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -18577,9 +18577,9 @@ class IStkGraphicsDistanceToPositionDisplayConditionFactory(object):
             agcls.evaluate_hresult(self.__dict__["_InitializeWithDistances"](byref(arg_position.COM_val), arg_minimumDistance.COM_val, arg_maximumDistance.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def InitializeWithReferenceFrameAndDistances(self, referenceFrame:"ICrdnSystem", position:list, minimumDistance:float, maximumDistance:float) -> "IStkGraphicsDistanceToPositionDisplayCondition":
+    def InitializeWithReferenceFrameAndDistances(self, referenceFrame:"ISystem", position:list, minimumDistance:float, maximumDistance:float) -> "IStkGraphicsDistanceToPositionDisplayCondition":
         """Initializes a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]..."""
-        with agmarshall.AgInterface_in_arg(referenceFrame, ICrdnSystem) as arg_referenceFrame, \
+        with agmarshall.AgInterface_in_arg(referenceFrame, ISystem) as arg_referenceFrame, \
              agmarshall.SAFEARRAY_arg(position) as arg_position, \
              agmarshall.DOUBLE_arg(minimumDistance) as arg_minimumDistance, \
              agmarshall.DOUBLE_arg(maximumDistance) as arg_maximumDistance, \
@@ -21963,10 +21963,10 @@ class IStkGraphicsVectorPrimitiveFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IStkGraphicsVectorPrimitiveFactory.")
     
-    def InitializeWithDirection(self, sys:"ICrdnSystem", dir:"ICrdnVector", font:"IStkGraphicsGraphicsFont") -> "IStkGraphicsVectorPrimitive":
+    def InitializeWithDirection(self, sys:"ISystem", dir:"IVector", font:"IStkGraphicsGraphicsFont") -> "IStkGraphicsVectorPrimitive":
         """Initializes a vector primitive with the specified ISystem sys as its source and pointing in direction dir."""
-        with agmarshall.AgInterface_in_arg(sys, ICrdnSystem) as arg_sys, \
-             agmarshall.AgInterface_in_arg(dir, ICrdnVector) as arg_dir, \
+        with agmarshall.AgInterface_in_arg(sys, ISystem) as arg_sys, \
+             agmarshall.AgInterface_in_arg(dir, IVector) as arg_dir, \
              agmarshall.AgInterface_in_arg(font, IStkGraphicsGraphicsFont) as arg_font, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_InitializeWithDirection"](arg_sys.COM_val, arg_dir.COM_val, arg_font.COM_val, byref(arg_ppRetVal.COM_val)))
