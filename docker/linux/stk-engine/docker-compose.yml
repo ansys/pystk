@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  stk:
+    image: ansys/stk:latest-centos7
+    build: 
+      context: .
+      args:
+        baseImage: centos:7
+    environment:
+      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
