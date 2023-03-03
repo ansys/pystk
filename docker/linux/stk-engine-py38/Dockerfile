@@ -6,7 +6,6 @@ FROM ${baseImage}
 USER root
 RUN set -e; \
     yum -y install wget make gcc openssl-devel bzip2-devel libffi-devel tk-devel; \
-    yum -y install python3 python3-tkinter python3.8-tkinter; \
     yum clean all; \
     rm -rf /var/cache/yum
 
