@@ -11,7 +11,7 @@ RUN set -e; \
     yum -y install gcc make tar wget; \
 
     # Install OpenSSL 1.1 (required for Python >= 3.10) dependencies
-    yum -y perl-core pcre-devel; \
+    yum -y install perl-core pcre-devel; \
 
     # Install required dependencies for Python 3.X
     yum -y install bzip2-devel libffi-devel tk-devel; \
