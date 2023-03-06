@@ -6,20 +6,24 @@ FROM ${baseImage}
 USER root
 RUN set -e; \
 
-    # Install basic system utilities
-    yum -y install make gcc perl-core pcre-devel wget zlib-devel; \
+    # Install basic development utilities
+    yum groupinstall -y development; \
+    yum -y install gcc make tar wget; \
+
+    # Install OpenSSL 1.1 (required for Python >= 3.10) dependencies
+    yum -y perl-core pcre-devel; \
 
     # Install required dependencies for Python 3.X
-    yum -y install libffi-devel zlib-devel bzip2-devel ncurses-devel sqlite-devel; \
-    yum -y install readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel; \
-    # yum -y install python3-tkinter python3.10-tkinter; \
-    yum -y install epel-release openssl11 openssl11-libs openssl11-devel; \
+    yum -y install bzip2-devel libffi-devel tk-devel; \
+    yum -y install libffi-devel zlib-devel ncurses-devel sqlite-devel; \
+    yum -y install readline-devel gdbm-devel db4-devel libpcap-devel xz-devel; \
+
+    # Clean all unnecessary files
     yum clean all; \
     rm -rf /var/cache/yum
 
-# Install OpenSSL 1.1
+# Install OpenSSL 1.1 (required by Python >= 3.10)
 RUN set -e; \
-   yum install -y make gcc perl-core pcre-devel wget zlib-devel; \
    wget --no-check-certificate https://ftp.openssl.org/source/openssl-1.1.1k.tar.gz; \
    tar -xzvf openssl-1.1.1k.tar.gz; \
    cd openssl-1.1.1k; \
@@ -29,7 +33,8 @@ RUN set -e; \
    echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" >> .bashrc
 
 
-# Install Python 3.11 and generate alias to it
+# Install Python 3.11 and create a symbolic link named "python".
+# This overrides the default Python 2.7 in CentOS7.
 RUN cd /tmp && \
     wget https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz && \
     tar xzf Python-3.11.2.tgz && \

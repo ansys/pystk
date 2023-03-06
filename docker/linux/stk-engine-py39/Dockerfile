@@ -5,12 +5,22 @@ FROM ${baseImage}
 # Install Python
 USER root
 RUN set -e; \
-    yum -y install wget make gcc openssl-devel bzip2-devel libffi-devel tk-devel; \
-    yum -y install python3 python3-tkinter python3.9-tkinter; \
+
+    # Install basic development utilities
+    yum groupinstall -y development; \
+    yum -y install gcc make tar wget; \
+
+    # Install required dependencies for Python 3.X
+    yum -y install openssl-devel bzip2-devel libffi-devel tk-devel; \
+    yum -y install libffi-devel zlib-devel ncurses-devel sqlite-devel; \
+    yum -y install readline-devel gdbm-devel db4-devel libpcap-devel xz-devel; \
+
+    # Clean all unnecessary files
     yum clean all; \
     rm -rf /var/cache/yum
 
-# Install Python 3.9 and generate alias to it
+# Install Python 3.9 and create a symbolic link named "python".
+# This overrides the default Python 2.7 in CentOS7.
 RUN cd /tmp && \
     wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tgz && \
     tar xzf Python-3.9.16.tgz && \
