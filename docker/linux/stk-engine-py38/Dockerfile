@@ -12,7 +12,7 @@ RUN set -e; \
 
     # Install required dependencies for Python 3.X
     yum -y install openssl-devel bzip2-devel libffi-devel tk-devel; \
-    yum -y install libffi-devel zlib-devel ncurses-devel sqlite-devel; \
+    yum -y install zlib-devel ncurses-devel sqlite-devel; \
     yum -y install readline-devel gdbm-devel db4-devel libpcap-devel xz-devel; \
 
     # Clean all unnecessary files
