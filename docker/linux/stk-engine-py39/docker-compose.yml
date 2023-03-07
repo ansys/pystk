@@ -2,6 +2,7 @@ version: '3.8'
 services:
   stk-python3.9:
     image: ansys/stk:latest-centos7-python3.9
+    container_name: stk-python3.9
     build: 
       context: .
       args:
