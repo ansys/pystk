@@ -1,6 +1,10 @@
-# By default, start from the base STK Engine image
-ARG baseImage=ansys/stk:latest-centos7
-FROM ${baseImage}
+# By default, start from the base STK Engine Python image
+ARG baseImage=ansys/stk:latest-centos7-pybase
+FROM ${baseImage} as builder
+
+##############################################
+# 1) Build Python into its own builder stage
+##############################################
 
 # Install Python 3.9 and create a symbolic link named "python".
 # This overrides the default Python 2.7 in CentOS7.
@@ -10,8 +14,20 @@ RUN cd /tmp && \
     tar xzf Python-3.9.16.tgz && \
     cd Python-3.9.16 && \
     ./configure --enable-optimizations && \
-    make altinstall && \
-    ln -sfn /usr/local/bin/python3.9 /usr/bin/python && \
+    make altinstall
+
+#############################################################
+# 2) Copy the Python build to the system in the second stage
+#############################################################
+
+# Switch back to non-root user
+ARG baseImage=ansys/stk:latest-centos7
+FROM ${baseImage}
+
+COPY --from=builder /usr/local/bin/python3.9 /usr/local/bin/python3.9 
+COPY --from=builder /usr/local/bin/pip3.9 /usr/local/bin/pip3.9 
+
+RUN ln -sfn /usr/local/bin/python3.9 /usr/bin/python && \
     ln -sfn /usr/local/bin/pip3.9 /usr/bin/pip
 
 # Switch back to non-root user
