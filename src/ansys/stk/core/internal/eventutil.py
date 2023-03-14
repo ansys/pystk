@@ -1457,7 +1457,7 @@ class IStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
         if attrname in IStkGraphicsSceneEventHandler.__dict__ and type(IStkGraphicsSceneEventHandler.__dict__[attrname]) == property:
             IStkGraphicsSceneEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in IStkGraphicsSceneEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in ISceneEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1510,7 +1510,7 @@ class IStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
           
     @property
     def Rendering(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [Rendering(Sender:typing.Any, Args:"IStkGraphicsRenderingEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [Rendering(Sender:typing.Any, Args:"IRenderingEventArgs") -> None]"""
         return self._RenderingEvent
         
     @Rendering.setter
@@ -1520,7 +1520,7 @@ class IStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
     def _Rendering(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
         for callback in self._RenderingEvent._callbacks:
             with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IStkGraphicsRenderingEventArgs"]) as arg_Args:
+                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IRenderingEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
                 
                 
@@ -1555,7 +1555,7 @@ class IStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBas
         if attrname in IStkGraphicsKmlGraphicsEventHandler.__dict__ and type(IStkGraphicsKmlGraphicsEventHandler.__dict__[attrname]) == property:
             IStkGraphicsKmlGraphicsEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in IStkGraphicsKmlGraphicsEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in IKmlGraphicsEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1608,7 +1608,7 @@ class IStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBas
 
     @property
     def DocumentLoaded(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [DocumentLoaded(Sender:typing.Any, Args:"IStkGraphicsKmlDocumentLoadedEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [DocumentLoaded(Sender:typing.Any, Args:"IKmlDocumentLoadedEventArgs") -> None]"""
         return self._DocumentLoadedEvent
         
     @DocumentLoaded.setter
@@ -1618,7 +1618,7 @@ class IStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBas
     def _DocumentLoaded(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
         for callback in self._DocumentLoadedEvent._callbacks:
             with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IStkGraphicsKmlDocumentLoadedEventArgs"]) as arg_Args:
+                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IKmlDocumentLoadedEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
                 
                 
@@ -1653,7 +1653,7 @@ class IStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHandle
         if attrname in IStkGraphicsImageCollectionEventHandler.__dict__ and type(IStkGraphicsImageCollectionEventHandler.__dict__[attrname]) == property:
             IStkGraphicsImageCollectionEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in IStkGraphicsImageCollectionEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in IImageCollectionEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1706,7 +1706,7 @@ class IStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHandle
 
     @property
     def AddComplete(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"IStkGraphicsGlobeImageOverlayAddCompleteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"IGlobeImageOverlayAddCompleteEventArgs") -> None]"""
         return self._AddCompleteEvent
         
     @AddComplete.setter
@@ -1716,7 +1716,7 @@ class IStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHandle
     def _AddComplete(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
         for callback in self._AddCompleteEvent._callbacks:
             with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IStkGraphicsGlobeImageOverlayAddCompleteEventArgs"]) as arg_Args:
+                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IGlobeImageOverlayAddCompleteEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
                 
                 
@@ -1751,7 +1751,7 @@ class IStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHand
         if attrname in IStkGraphicsTerrainCollectionEventHandler.__dict__ and type(IStkGraphicsTerrainCollectionEventHandler.__dict__[attrname]) == property:
             IStkGraphicsTerrainCollectionEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in IStkGraphicsTerrainCollectionEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in ITerrainOverlayCollectionEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":
@@ -1804,7 +1804,7 @@ class IStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHand
 
     @property
     def AddComplete(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"IStkGraphicsTerrainOverlayAddCompleteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [AddComplete(Sender:typing.Any, Args:"ITerrainOverlayAddCompleteEventArgs") -> None]"""
         return self._AddCompleteEvent
         
     @AddComplete.setter
@@ -1814,7 +1814,7 @@ class IStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHand
     def _AddComplete(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
         for callback in self._AddCompleteEvent._callbacks:
             with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["IStkGraphicsTerrainOverlayAddCompleteEventArgs"]) as arg_Args:
+                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["ITerrainOverlayAddCompleteEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
 
 ################################################################################
