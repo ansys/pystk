@@ -12,7 +12,8 @@ env:
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
-
+  STK_DOCKER_IMAGE: 'ansys/stk:latest-centos7'
+  LICENSE_SERVER_PORT: '1055'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -30,7 +31,7 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
   doc-style:
-    name: "Documentation style checks"
+    name: "Doc style checks"
     runs-on: ubuntu-latest
     steps:
       - name: "Run code style checks"
@@ -39,7 +40,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   doc-build:
-    name: "Build project documentation"
+    name: "Doc build"
     runs-on: ubuntu-latest
     needs: doc-style
     steps:
@@ -48,92 +49,68 @@ jobs:
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-  doc-deploy-dev:
-    name: "Deploy developers documentation"
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
-    needs: doc-build
-    steps:
-      - name: "Deploy development documentation"
-        uses: pyansys/actions/doc-deploy-dev@v4
-        with:
-          cname: ${{ env.DOCUMENTATION_CNAME }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-  doc-deploy-stable:
-    name: "Deploy stable documentation"
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
-    needs: doc-deploy-dev
-    steps:
-      - name: "Deploy stable documentation"
-        uses: pyansys/actions/doc-deploy-stable@v4
-        with:
-          cname: ${{ env.DOCUMENTATION_CNAME }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-
   tests:
-    name: "Test Python ${{ matrix.cfg.python-version }} in ${{ matrix.os }} "
-    runs-on: ${{ matrix.os }}
-    needs: code-style
+    name: "Tests Python ${{ matrix.python }}"
+    runs-on: [self-hosted, pystk]
+    # needs: code-style
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
-        cfg:
-          - {python-version: '3.7', extra-args: ''}
-          - {python-version: '3.8', extra-args: ''}
-          - {python-version: '3.9', extra-args: ''}
-          - {python-version: '3.10', extra-args: '--cov=ansys.stk --cov-report=term --cov-report=html:.cov/html'}
-
+        python: ["3.8", "3.9", "3.10"]
       fail-fast: false
     steps:
 
-      - name: "Run test suite with pytest"
-        uses: pyansys/actions/tests-pytest@v4
-        with:
-          python-version: ${{ matrix.cfg.python-version }}
-          pytest-extra-args: ${{ matrix.cfg.extra-args }}
+      - name: "Checkout the project"
+        uses: actions/checkout@v3
 
-      - name: "Upload coverage results"
-        uses: actions/upload-artifact@v3
-        if: matrix.cfg.python-version == env.MAIN_PYTHON_VERSION && matrix.os == 'ubuntu-latest'
-        with:
-          name: coverage-html
-          path: .cov/html
-          retention-days: 7
+      - name: "Generate the name of the docker image and the container"
+        run: |
+          python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ matrix.python }}
+          container_name=stk-python${{ matrix.python }}
+          echo "STK_PYTHON_IMAGE=$python_image_name" >> $GITHUB_ENV
+          echo "STK_CONTAINER=$container_name" >> $GITHUB_ENV
+
+      - name: "Start the container from the desired image"
+        run: |
+          docker run \
+            --detach -it \
+            --name ${{ env.STK_CONTAINER }} \
+            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+            --volume ${PWD}:/home/stk/pystk \
+            ${{ env.STK_PYTHON_IMAGE }}
+
+      - name: "Install the project"
+        run: |
+          docker exec ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "python -m pip install /home/stk/pystk"
+
+      - name: "Show the version of the engine"
+        run: |
+          docker exec ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "python -c 'from ansys.stk.core.stkengine import STKEngine; print(STKEngine.StartApplication().Version)'"
+
+      - name: "Stop the container"
+        if: always()
+        run: |
+          docker stop ${{ env.STK_CONTAINER }}
+          docker logs ${{ env.STK_CONTAINER }}
+          docker rm ${{ env.STK_CONTAINER }}
 
   build-library:
-    name: "Build library artifacts"
+    name: "Build library"
     runs-on: ubuntu-latest
-    needs: [doc-deploy-stable, tests]
+    needs: [doc-build, tests]
     steps:
-      - name: "Build library source and wheel artifacts"
-        uses: pyansys/actions/build-library@v4
+      - uses: pyansys/actions/build-library@v4
         with:
           library-name: ${{ env.LIBRARY_NAME }}
 
-  # release:
-  #   name: "Release to private and public PyPI and to GitHub"
-  #   if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
-  #   runs-on: ubuntu-latest
-  #   needs: [build-library]
-  #   steps:
-
-  #     - name: "Release to the private PyPI repository"
-  #       uses: pyansys/actions/release-pypi-private@v1
-  #       with:
-  #         library-name: ${{ env.LIBRARY_NAME }}
-  #         twine-username: "__token__"
-  #         twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
-
-  #     - name: "Release to the public PyPI repository"
-  #       uses: pyansys/actions/release-pypi-public@main
-  #       with:
-  #         library-name: ${{ env.LIBRARY_NAME }}
-  #         twine-username: "__token__"
-  #         twine-token: ${{ secrets.PYPI_TOKEN }}
-
-  #     - name: "Release to GitHub"
-  #       uses: pyansys/actions/release-github@main
-  #       with:
-  #         library-name: ${{ env.LIBRARY_NAME }}
+  doc-deploy-dev:
+    name: "Deploy dev docs"
+    runs-on: ubuntu-latest
+    needs: build-library
+    if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
+    steps:
+      - uses: pyansys/actions/doc-deploy-dev@v4
+        with:
+          cname: ${{ env.DOCUMENTATION_CNAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
