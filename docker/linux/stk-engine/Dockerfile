@@ -23,7 +23,7 @@ RUN set -e; \
 # Set the base image for the next stage
 FROM ${baseImage}
 
-LABEL ANSYSLMD_LICENSE_FILE='Specifies the location of the Ansys Licensing Server. The format should be PORT@FQDN. If using a triad of license server, list all servers in the same format separated by semicolons.  Required.'
+LABEL ANSYSLMD_LICENSE_FILE='Specifies the location of the Ansys Licensing Server. The format should be PORT@FQDN. If using a triad of license servers, list all servers in the same format separated by semicolons.  Required.'
 
 # Define STK user home directory
 ENV STK_USER_HOME=/home/stk
