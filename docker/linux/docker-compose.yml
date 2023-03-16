@@ -31,7 +31,8 @@ services:
     build: 
       context: ./stk-engine-py38
       args:
-        baseImage: ansys/stk:latest-centos7-pybase
+        baseImage: ansys/stk:latest-centos7
+        basePythonImage: ansys/stk:latest-centos7-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -43,7 +44,8 @@ services:
     build: 
       context: ./stk-engine-py39
       args:
-        baseImage: ansys/stk:latest-centos7-pybase
+        baseImage: ansys/stk:latest-centos7
+        basePythonImage: ansys/stk:latest-centos7-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -55,6 +57,7 @@ services:
     build: 
       context: ./stk-engine-py310
       args:
-        baseImage: ansys/stk:latest-centos7-pybase
+        baseImage: ansys/stk:latest-centos7
+        basePythonImage: ansys/stk:latest-centos7-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE

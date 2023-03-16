@@ -1,6 +1,7 @@
 # By default, start from the base STK Engine Python image
-ARG baseImage=ansys/stk:latest-centos7-pybase
-FROM ${baseImage} as builder
+ARG baseImage=ansys/stk:latest-centos7
+ARG basePythonImage=ansys/stk:latest-centos7-pybase
+FROM ${basePythonImage} as builder
 
 ##############################################
 # 1) Build Python into its own builder stage
@@ -21,10 +22,12 @@ RUN cd /tmp && \
 #############################################################
 
 # Switch back to non-root user
-ARG baseImage=ansys/stk:latest-centos7
 FROM ${baseImage}
+USER root
 
+# Copy the Python interpreter, the standard library and pip to the final image
 COPY --from=builder /usr/local/bin/python3.10 /usr/local/bin/python3.10 
+COPY --from=builder /usr/local/lib/python3.10 /usr/local/lib/python3.10 
 COPY --from=builder /usr/local/bin/pip3.10 /usr/local/bin/pip3.10 
 
 RUN ln -sfn /usr/local/bin/python3.10 /usr/bin/python && \
