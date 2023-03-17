@@ -6,10 +6,10 @@ __all__ = [ "IStkObjectRootEventHandler",
             "ISTKXApplicationEventHandler", 
             "IUiAx2DCntrlEventHandler", 
             "IUiAxVOCntrlEventHandler",
-            "IStkGraphicsSceneEventHandler",
-            "IStkGraphicsKmlGraphicsEventHandler",
-            "IStkGraphicsImageCollectionEventHandler",
-            "IStkGraphicsTerrainCollectionEventHandler"]
+            "ISceneEventHandler",
+            "IKmlGraphicsEventHandler",
+            "IImageCollectionEventHandler",
+            "ITerrainOverlayCollectionEventHandler"]
 
 import os
 import typing
@@ -1440,7 +1440,7 @@ class _AgStkGraphicsSceneEventsUnkSink(Structure):
                  ("Invoke",           c_void_p),
                  ("Rendering",        c_void_p)]
                  
-class IStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
+class ISceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
     _IID_IAgStkGraphicsSceneEvents = GUID.from_registry_format("{FACA0112-848C-415D-B38C-0ED3F121D906}")
     _DISPID_Rendering = 13901
 
@@ -1448,14 +1448,14 @@ class IStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
         STKEventHandlerBase.__init__(self)
         self._init_vtable()
         self.__dict__["_RenderingEvent"] = _STKEvent()
-        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IStkGraphicsSceneEventHandler._IID_IAgStkGraphicsSceneEvents)
+        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, ISceneEventHandler._IID_IAgStkGraphicsSceneEvents)
         
     def __del__(self):
         STKEventSubscriber.__del__(self)
         
     def __setattr__(self, attrname, value):
-        if attrname in IStkGraphicsSceneEventHandler.__dict__ and type(IStkGraphicsSceneEventHandler.__dict__[attrname]) == property:
-            IStkGraphicsSceneEventHandler.__dict__[attrname].__set__(self, value)
+        if attrname in ISceneEventHandler.__dict__ and type(ISceneEventHandler.__dict__[attrname]) == property:
+            ISceneEventHandler.__dict__[attrname].__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized event in ISceneEvents.")
         
@@ -1492,7 +1492,7 @@ class IStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
         if iid == STKEventHandlerBase._IID_IDispatch:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IStkGraphicsSceneEventHandler._IID_IAgStkGraphicsSceneEvents:
+        elif iid == ISceneEventHandler._IID_IAgStkGraphicsSceneEvents:
             ppvObject[0] = pThis
             return S_OK
         else:
@@ -1500,7 +1500,7 @@ class IStkGraphicsSceneEventHandler(STKEventSubscriber, STKEventHandlerBase):
             return E_NOINTERFACE
             
     def _Invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DISPPARAMS), pVarResult:POINTER(VARIANT), pExcepInfo:POINTER(EXCEPINFO), puArgErr:POINTER(UINT)) -> int:
-        if dispIdMember == IStkGraphicsSceneEventHandler._DISPID_Rendering:
+        if dispIdMember == ISceneEventHandler._DISPID_Rendering:
             variant_Sender = pDispParams.contents.rgvarg[1]
             pArgs = agmarshall.ctype_val_from_VARIANT(pDispParams.contents.rgvarg[0])
             self._Rendering(pThis, variant_Sender, pArgs)
@@ -1538,7 +1538,7 @@ class _AgStkGraphicsKmlGraphicsEventsUnkSink(Structure):
                  ("Invoke",           c_void_p),
                  ("DocumentLoaded",   c_void_p)]
                  
-class IStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBase):
+class IKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBase):
     _IID_IAgStkGraphicsKmlGraphicsEvents = GUID.from_registry_format("{0B64622D-307A-4549-9692-7F15F4D9AC94}")
     _DISPID_DocumentLoaded = 27101
 
@@ -1546,14 +1546,14 @@ class IStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBas
         STKEventHandlerBase.__init__(self)
         self._init_vtable()
         self.__dict__["_DocumentLoadedEvent"] = _STKEvent()
-        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IStkGraphicsKmlGraphicsEventHandler._IID_IAgStkGraphicsKmlGraphicsEvents)
+        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IKmlGraphicsEventHandler._IID_IAgStkGraphicsKmlGraphicsEvents)
         
     def __del__(self):
         STKEventSubscriber.__del__(self)
         
     def __setattr__(self, attrname, value):
-        if attrname in IStkGraphicsKmlGraphicsEventHandler.__dict__ and type(IStkGraphicsKmlGraphicsEventHandler.__dict__[attrname]) == property:
-            IStkGraphicsKmlGraphicsEventHandler.__dict__[attrname].__set__(self, value)
+        if attrname in IKmlGraphicsEventHandler.__dict__ and type(IKmlGraphicsEventHandler.__dict__[attrname]) == property:
+            IKmlGraphicsEventHandler.__dict__[attrname].__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized event in IKmlGraphicsEvents.")
         
@@ -1590,7 +1590,7 @@ class IStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBas
         if iid == STKEventHandlerBase._IID_IDispatch:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IStkGraphicsKmlGraphicsEventHandler._IID_IAgStkGraphicsKmlGraphicsEvents:
+        elif iid == IKmlGraphicsEventHandler._IID_IAgStkGraphicsKmlGraphicsEvents:
             ppvObject[0] = pThis
             return S_OK
         else:
@@ -1598,7 +1598,7 @@ class IStkGraphicsKmlGraphicsEventHandler(STKEventSubscriber, STKEventHandlerBas
             return E_NOINTERFACE
             
     def _Invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DISPPARAMS), pVarResult:POINTER(VARIANT), pExcepInfo:POINTER(EXCEPINFO), puArgErr:POINTER(UINT)) -> int:
-        if dispIdMember == IStkGraphicsKmlGraphicsEventHandler._DISPID_DocumentLoaded:
+        if dispIdMember == IKmlGraphicsEventHandler._DISPID_DocumentLoaded:
             variant_Sender = pDispParams.contents.rgvarg[1]
             pArgs = agmarshall.ctype_val_from_VARIANT(pDispParams.contents.rgvarg[0])
             self._DocumentLoaded(pThis, variant_Sender, pArgs)
@@ -1636,7 +1636,7 @@ class _AgStkGraphicsImageCollectionEventsUnkSink(Structure):
                  ("Invoke",           c_void_p),
                  ("AddComplete",      c_void_p)]
                  
-class IStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
+class IImageCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
     _IID_IAgStkGraphicsImageCollectionEvents = GUID.from_registry_format("{150DFFDA-DD8C-4227-9B7D-F813277BCB8E}")
     _DISPID_AddComplete = 13301
 
@@ -1644,14 +1644,14 @@ class IStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHandle
         STKEventHandlerBase.__init__(self)
         self._init_vtable()
         self.__dict__["_AddCompleteEvent"] = _STKEvent()
-        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IStkGraphicsImageCollectionEventHandler._IID_IAgStkGraphicsImageCollectionEvents)
+        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IImageCollectionEventHandler._IID_IAgStkGraphicsImageCollectionEvents)
         
     def __del__(self):
         STKEventSubscriber.__del__(self)
         
     def __setattr__(self, attrname, value):
-        if attrname in IStkGraphicsImageCollectionEventHandler.__dict__ and type(IStkGraphicsImageCollectionEventHandler.__dict__[attrname]) == property:
-            IStkGraphicsImageCollectionEventHandler.__dict__[attrname].__set__(self, value)
+        if attrname in IImageCollectionEventHandler.__dict__ and type(IImageCollectionEventHandler.__dict__[attrname]) == property:
+            IImageCollectionEventHandler.__dict__[attrname].__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized event in IImageCollectionEvents.")
         
@@ -1688,7 +1688,7 @@ class IStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHandle
         if iid == STKEventHandlerBase._IID_IDispatch:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IStkGraphicsImageCollectionEventHandler._IID_IAgStkGraphicsImageCollectionEvents:
+        elif iid == IImageCollectionEventHandler._IID_IAgStkGraphicsImageCollectionEvents:
             ppvObject[0] = pThis
             return S_OK
         else:
@@ -1696,7 +1696,7 @@ class IStkGraphicsImageCollectionEventHandler(STKEventSubscriber, STKEventHandle
             return E_NOINTERFACE
             
     def _Invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DISPPARAMS), pVarResult:POINTER(VARIANT), pExcepInfo:POINTER(EXCEPINFO), puArgErr:POINTER(UINT)) -> int:
-        if dispIdMember == IStkGraphicsImageCollectionEventHandler._DISPID_AddComplete:
+        if dispIdMember == IImageCollectionEventHandler._DISPID_AddComplete:
             variant_Sender = pDispParams.contents.rgvarg[1]
             pArgs = agmarshall.ctype_val_from_VARIANT(pDispParams.contents.rgvarg[0])
             self._AddComplete(pThis, variant_Sender, pArgs)
@@ -1734,7 +1734,7 @@ class _AgStkGraphicsTerrainCollectionEventsUnkSink(Structure):
                  ("Invoke",           c_void_p),
                  ("AddComplete",      c_void_p)]
                  
-class IStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
+class ITerrainOverlayCollectionEventHandler(STKEventSubscriber, STKEventHandlerBase):
     _IID_IAgStkGraphicsTerrainCollectionEvents = GUID.from_registry_format("{0744D80B-C88B-4F1D-BF3F-78A5C3AB69BA}")
     _DISPID_AddComplete = 13401
 
@@ -1742,14 +1742,14 @@ class IStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHand
         STKEventHandlerBase.__init__(self)
         self._init_vtable()
         self.__dict__["_AddCompleteEvent"] = _STKEvent()
-        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, IStkGraphicsTerrainCollectionEventHandler._IID_IAgStkGraphicsTerrainCollectionEvents)
+        STKEventSubscriber.__init__(self, pUnk, self._pUnkSink, ITerrainOverlayCollectionEventHandler._IID_IAgStkGraphicsTerrainCollectionEvents)
         
     def __del__(self):
         STKEventSubscriber.__del__(self)
         
     def __setattr__(self, attrname, value):
-        if attrname in IStkGraphicsTerrainCollectionEventHandler.__dict__ and type(IStkGraphicsTerrainCollectionEventHandler.__dict__[attrname]) == property:
-            IStkGraphicsTerrainCollectionEventHandler.__dict__[attrname].__set__(self, value)
+        if attrname in ITerrainOverlayCollectionEventHandler.__dict__ and type(ITerrainOverlayCollectionEventHandler.__dict__[attrname]) == property:
+            ITerrainOverlayCollectionEventHandler.__dict__[attrname].__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized event in ITerrainOverlayCollectionEvents.")
         
@@ -1786,7 +1786,7 @@ class IStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHand
         if iid == STKEventHandlerBase._IID_IDispatch:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IStkGraphicsTerrainCollectionEventHandler._IID_IAgStkGraphicsTerrainCollectionEvents:
+        elif iid == ITerrainOverlayCollectionEventHandler._IID_IAgStkGraphicsTerrainCollectionEvents:
             ppvObject[0] = pThis
             return S_OK
         else:
@@ -1794,7 +1794,7 @@ class IStkGraphicsTerrainCollectionEventHandler(STKEventSubscriber, STKEventHand
             return E_NOINTERFACE
             
     def _Invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DISPPARAMS), pVarResult:POINTER(VARIANT), pExcepInfo:POINTER(EXCEPINFO), puArgErr:POINTER(UINT)) -> int:
-        if dispIdMember == IStkGraphicsTerrainCollectionEventHandler._DISPID_AddComplete:
+        if dispIdMember == ITerrainOverlayCollectionEventHandler._DISPID_AddComplete:
             variant_Sender = pDispParams.contents.rgvarg[1]
             pArgs = agmarshall.ctype_val_from_VARIANT(pDispParams.contents.rgvarg[0])
             self._AddComplete(pThis, variant_Sender, pArgs)

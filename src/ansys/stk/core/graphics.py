@@ -15456,9 +15456,9 @@ class ITerrainOverlayCollection(object):
         if nextval is None:
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
-    def Subscribe(self) -> ITerrainCollectionEventHandler:
-        """Returns an ITerrainCollectionEventHandler that is subscribed to handle events associated with this instance of ITerrainOverlayCollection."""
-        return ITerrainCollectionEventHandler(self._pUnk)    
+    def Subscribe(self) -> ITerrainOverlayCollectionEventHandler:
+        """Returns an ITerrainOverlayCollectionEventHandler that is subscribed to handle events associated with this instance of ITerrainOverlayCollection."""
+        return ITerrainOverlayCollectionEventHandler(self._pUnk)    
     @property
     def Count(self) -> int:
         """Gets the number of terrain overlay objects in the collection."""
