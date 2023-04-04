@@ -6,7 +6,7 @@ To run PySTK, you must have a licensed copy of `STK`_.
 
 .. grid:: 2
 
-    .. grid-item-card:: Building STK Docker images :fab:`docker`
+    .. grid-item-card:: Building STK images :fab:`docker`
         :link: building_stk_images
         :link-type: doc
 

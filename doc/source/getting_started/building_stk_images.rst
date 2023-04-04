@@ -1,5 +1,5 @@
-Building an STK image from a Dockerfile
-#######################################
+Building STK images
+###################
 
 PySTK provides various `Dockerfiles`_ to build `Docker images`_ that
 containerize STK and can include some additional utilities such us `Python`_ and
@@ -24,8 +24,8 @@ either Windows or Linux.
         Include support only for STKEngine
 
 
-Windows and Linux images
-========================
+Architecture of Windows and Linux images
+========================================
 
 There are some minor differences between Windows and Linux images for
 containerizing STK.
@@ -41,10 +41,12 @@ the relation between the different Docker images:
 .. tab-set::
 
     .. tab-item:: STK images for Windows
+        :sync: windows
 
         .. figure:: https://help.agi.com/stkdevkit/Content/automationTree/images/Windows_Container_Heirarchy.png
 
     .. tab-item:: STK images for Linux
+        :sync: linux
 
         .. figure:: https://help.agi.com/stkdevkit/Content/automationTree/images/ContainerizationDiagram.png
 
@@ -52,20 +54,34 @@ the relation between the different Docker images:
 Building an image
 =================
 
-All the images in the `docker/ directory` include:
+All the images in the `docker/ directory`_ of the repository include:
 
-* A `Dockerfile`_ for building the image
-* A `docker-compose.yml`_ for orchestrating the building
-* A `README.rst` file providing some guidance and instructions
+* ``Dockerfile`` for building the image
+* ``docker-compose.yml`` for orchestrating the building
+* ``README.rst`` file providing some guidance and instructions
+
+.. tab-set::
+
+    .. tab-item:: Windows
+        :sync: windows
+
+        #. Clone the repository by running ``git clone https://github.com/pyansys/pystk``
+        #. Navigate to the ``docker/windows/`` directory
+        #. Create a directory named ``distributions/`` inside the ``stk-engine/`` directory
+        #. Place the STK artifacts inside the ``stk-engine/distributions/`` folder
+        #. Run ``docker-compose build`` to build all the images
+
+    .. tab-item:: Linux
+        :sync: linux
+
+        #. Clone the repository by running ``git clone https://github.com/pyansys/pystk``
+        #. Navigate to the ``docker/linux/`` directory
+        #. Create a directory named ``distributions/`` inside the ``stk-engine/`` directory
+        #. Place the STK artifacts inside the ``stk-engine/distributions/`` folder
+        #. Run ``docker-compose build`` to build all the images
 
 
-.. dropdown:: Requirements for building an STK image
-    :animate: fade-in-slide-down
+Running an image
+================
 
-    * `Docker Engine`_
-    * `Docker Compose`_
-    * `STK distribution artifacts`_
-
-Make sure you have installed 
-
-To simplify the 
+TODO...
