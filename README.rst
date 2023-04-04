@@ -1,5 +1,6 @@
 PySTK
 =====
+
 |pyansys| |python| |pypi| |GH-CI| |codecov| |MIT| |Twitter| |YouTube| |LinkedIn| |black|
 
 .. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?labelColor=black&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
@@ -28,7 +29,7 @@ PySTK
 
 .. |Twitter| image:: https://img.shields.io/badge/Twitter-blue.svg?logo=twitter&logoColor=white
    :target: https://twitter.com/agitweets
-   :atl: Twitter
+   :alt: Twitter
 
 .. |LinkedIn| image:: https://img.shields.io/badge/LinkedIn-blue.svg?logo=linkedin&logoColor=white
    :target: https://www.linkedin.com/company/agi?trk=company_logo
@@ -43,7 +44,7 @@ PySTK
    :alt: Black
 
 
-A Python API for `Ansys Systems Tool Kit (STK)`_.
+A Python API for `Ansys Systems Tool Kit`_ (STK).
 
 
 How to install
@@ -184,7 +185,7 @@ the building requirements and then executing the build module:
 
 
 .. LINKS AND REFERENCES
-.. _Ansys Systems Tool Kit (STK): https://www.ansys.com/products/missions/ansys-stk
+.. _Ansys Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
 .. _black: https://github.com/psf/black
 .. _flake8: https://flake8.pycqa.org/en/latest/
 .. _isort: https://github.com/PyCQA/isort
