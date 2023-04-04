@@ -1,6 +1,7 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
 import os
+import pathlib
 
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -41,6 +42,10 @@ html_theme_options = {
     },
     "check_switcher": False,
 }
+html_static_path = ["_static"]
+html_css_files = [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+]
 
 # Sphinx extensions
 extensions = [
@@ -49,6 +54,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
+    "sphinx_design",
     "numpydoc",
 ]
 
@@ -82,14 +88,12 @@ numpydoc_validation_checks = (
 #    # type, unless multiple values are being returned"
 # }
 
-# Path to static files
-html_static_path = ["_static"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_patterns = ["api/generated/*.rst"]
+exclude_patterns = ["api/generated/*.rst", "links.rst"]
 
 # The suffix(es) of source filenames.
 source_suffix = ".rst"
@@ -108,3 +112,9 @@ autodoc_default_options = {
 }
 autodoc_class_signature = "separated"
 autodoc_mock_imports = ["tkinter"]
+
+# Common content for every RST file such us links
+rst_epilog = ""
+links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
+with open(links_filepath) as links_file:
+    rst_epilog += links_file.read()
