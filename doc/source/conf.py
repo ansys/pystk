@@ -55,6 +55,7 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
     "sphinx_design",
+    "sphinx_jinja",
     "numpydoc",
 ]
 
@@ -118,3 +119,34 @@ rst_epilog = ""
 links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
 with open(links_filepath) as links_file:
     rst_epilog += links_file.read()
+
+
+# Read available Docker images for Windows and Linux
+DOCKER_DIR = pathlib.Path(__file__).parent.parent.parent.absolute() / "docker"
+WINDOWS_IMAGES, LINUX_IMAGES = [
+    DOCKER_DIR / path for path in ["windows", "linux"]
+]
+
+
+def get_images_directories_from_path(path):
+    """Get all the Docker images present in the retrieved Path."""
+    images = [
+        folder.name
+        for folder in path.glob("**/*")
+        if folder.name != path.name and (folder / "Dockerfile").exists()
+    ] or ["No images available."]
+    images.sort()
+    return images
+
+
+print(get_images_directories_from_path(LINUX_IMAGES))
+
+jinja_contexts = {
+    "docker_images": {
+        "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
+        "linux_images": get_images_directories_from_path(LINUX_IMAGES),
+    },
+    "install_guide": {
+        "version": version if not version.endswith("dev0") else "main",
+    },
+}

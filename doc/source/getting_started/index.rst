@@ -13,7 +13,7 @@ To run PySTK, you must have a licensed copy of `STK`_.
         Step by step guidelines on how to build your own Docker image for STK.
 
     .. grid-item-card:: Installing PySTK :fab:`python`
-        :link: user_guide/index
+        :link: installing_pystk
         :link-type: doc
 
         Learn how to download and install PySTK in your development environment
@@ -26,4 +26,5 @@ To run PySTK, you must have a licensed copy of `STK`_.
    :hidden:
 
    building_stk_images 
+   installing_pystk
 

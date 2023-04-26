@@ -2,8 +2,8 @@ Building STK images
 ###################
 
 PySTK provides various `Dockerfiles`_ to build `Docker images`_ that
-containerize STK and can include some additional utilities such us `Python`_ and
-`Jupyter Lab`_.
+containerize STK. Some of these files include additional utilities such us
+`Python`_.
 
 All the Dockerfiles are collected in the `docker/ directory`_ of the `PySTK
 repository`_. These files are organized according to the operating system,
@@ -22,6 +22,13 @@ either Windows or Linux.
         
 
         Include support only for STKEngine
+
+
+.. info:: 
+
+    PySTK can also attach to a running instance of STK in the host machine.
+    However, this feature is only supported when the host machine uses Windows.
+    For machines using 
 
 
 Architecture of Windows and Linux images
@@ -60,6 +67,30 @@ All the images in the `docker/ directory`_ of the repository include:
 * ``docker-compose.yml`` for orchestrating the building
 * ``README.rst`` file providing some guidance and instructions
 
+
+The available images are:
+
+.. jinja:: docker_images
+
+    .. tab-set:: 
+
+        .. tab-item:: Windows
+            :sync: windows
+
+            {% for image in windows_images %}
+            * {{ image }}
+            {% endfor %}
+
+        .. tab-item:: Linux
+            :sync: linux
+
+            {% for image in linux_images %}
+            * {{ image }}
+            {% endfor %}
+
+End of the tab
+
+
 .. tab-set::
 
     .. tab-item:: Windows
@@ -70,6 +101,7 @@ All the images in the `docker/ directory`_ of the repository include:
         #. Create a directory named ``distributions/`` inside the ``stk-engine/`` directory
         #. Place the STK artifacts inside the ``stk-engine/distributions/`` folder
         #. Run ``docker-compose build`` to build all the images
+        #. To build a single image, run ``docker-compose build <image-name>``
 
     .. tab-item:: Linux
         :sync: linux
@@ -79,9 +111,10 @@ All the images in the `docker/ directory`_ of the repository include:
         #. Create a directory named ``distributions/`` inside the ``stk-engine/`` directory
         #. Place the STK artifacts inside the ``stk-engine/distributions/`` folder
         #. Run ``docker-compose build`` to build all the images
+        #. To build a single image, run ``docker-compose build <image-name>``
 
 
 Running an image
 ================
 
-TODO...
+
