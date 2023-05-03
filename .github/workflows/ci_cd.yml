@@ -79,15 +79,15 @@ jobs:
             --volume ${PWD}:/home/stk/pystk \
             ${{ env.STK_PYTHON_IMAGE }}
 
-      - name: "Install the project"
+      - name: "Install the project with the testing dependencies"
         run: |
           docker exec ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install /home/stk/pystk"
+            "python -m pip install pystk/[tests]"
 
       - name: "Show the version of the engine"
         run: |
           docker exec ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -c 'from ansys.stk.core.stkengine import STKEngine; print(STKEngine.StartApplication().Version)'"
+            "pytest pystk/tests/generated/aviator_tests --exclude ExcludeOnLinux"
 
       - name: "Stop the container"
         if: always()
