@@ -84,7 +84,7 @@ jobs:
           docker exec ${{ env.STK_CONTAINER }} /bin/bash -c \
             "python -m pip install pystk/[tests]"
 
-      - name: "Show the version of the engine"
+      - name: "Run the aviator tests"
         run: |
           docker exec ${{ env.STK_CONTAINER }} /bin/bash -c \
             "pytest pystk/tests/generated/aviator_tests --exclude ExcludeOnLinux"
