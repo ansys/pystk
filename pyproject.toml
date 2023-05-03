@@ -17,6 +17,8 @@ maintainers = [
 ]
 
 classifiers = [
+    # TODO: remove all 'Private' classifiers prior to the public release
+    "Private :: Do Not Upload",
     "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
