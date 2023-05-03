@@ -73,6 +73,7 @@ jobs:
         run: |
           docker run \
             --detach -it \
+            --network="host" \
             --name ${{ env.STK_CONTAINER }} \
             --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
             --volume ${PWD}:/home/stk/pystk \
