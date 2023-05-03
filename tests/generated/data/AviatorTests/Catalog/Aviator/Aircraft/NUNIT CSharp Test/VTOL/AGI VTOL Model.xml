@@ -1,0 +1,24 @@
+<?xml version = "1.0" standalone = "yes"?>
+<AgXMLPropertyBagData version = "1.0">
+    <Object clsid = "{E207BC6A-130D-42F8-976D-167D893FCEB7}">
+        <DisplayName Value = "AGI VTOL Model" VarType = "VT_BSTR" />
+        <MaxHoverAltitude Value = "4.5720000000000000e+03" VarType = "VT_R8" />
+        <VerticalRate Value = "5.0800000000000001e+00" VarType = "VT_R8" />
+        <VerticalTransitionTime Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+        <TranslationRate Value = "5.0800000000000001e+00" VarType = "VT_R8" />
+        <TranslationTransitionTime Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+        <ForwardFlightAirspeed Value = "2.5722222222222225e+01" VarType = "VT_R8" />
+        <ForwardFlightAirspeedType Value = "1" VarType = "VT_I4" />
+        <ForwardFlightTransitionTime Value = "5.0000000000000000e+00" VarType = "VT_R8" />
+        <HeadingRate Value = "1.7453292519943295e-01" VarType = "VT_R8" />
+        <HeadingRateTransitionTime Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+        <HoverFuelFlow Value = "1.2599788055555555e-01" VarType = "VT_R8" />
+        <UseAeroPropFuel Value = "0" VarType = "VT_I1" />
+        <ScaleFuelByDensity Value = "1" VarType = "VT_I1" />
+        <UserProperties VarType = "VT_UNKNOWN">
+            <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                <PropertyCount Value = "0" VarType = "VT_I4" />
+            </Object>
+        </UserProperties>
+    </Object>
+</AgXMLPropertyBagData>
