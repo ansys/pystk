@@ -1,0 +1,234 @@
+<?xml version = "1.0" standalone = "yes"?>
+<AgXMLPropertyBagData version = "1.0">
+    <Object clsid = "{D90CCC89-BE3E-4AC2-A8FF-09BE38631C44}">
+        <Aircraft VarType = "VT_UNKNOWN">
+            <Object clsid = "{8D417B57-6B39-4467-B8A4-8911F412ABBB}">
+                <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+            </Object>
+        </Aircraft>
+        <PhaseCollection VarType = "VT_UNKNOWN">
+            <Object clsid = "{C70470C8-CE7E-4C85-AC93-6EE6B319836A}">
+                <GUID Value = "{2A50ECFE-B64A-44CD-9D40-9C0B4FD01553}" VarType = "VT_BSTR" />
+                <PhaseVec VarType = "VT_ARRAY">
+                    <Dimension>
+                        <ArrayData VarType = "VT_UNKNOWN">
+                            <Object clsid = "{46314489-746A-40A2-A63E-C2C4B8B2A8FF}">
+                                <GUID Value = "{98149657-E36D-469A-A871-5F3DAE12CCC1}" VarType = "VT_BSTR" />
+                                <DisplayName Value = "Phase 1" VarType = "VT_BSTR" />
+                                <ProcedureCollection VarType = "VT_UNKNOWN">
+                                    <Object clsid = "{F0BA2E47-4AF3-4804-A190-DEC8B7FE3859}">
+                                        <GUID Value = "{1ED53AE2-3A5F-4FA6-B0E0-A72FEEC2A4B7}" VarType = "VT_BSTR" />
+                                        <ProcedureVec VarType = "VT_ARRAY" />
+                                        <UserProperties VarType = "VT_UNKNOWN">
+                                            <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                                                <PropertyCount Value = "0" VarType = "VT_I4" />
+                                            </Object>
+                                        </UserProperties>
+                                    </Object>
+                                </ProcedureCollection>
+                                <AircraftProps VarType = "VT_UNKNOWN">
+                                    <Object clsid = "{5CA806E7-DD13-46B1-A1B8-C4F7B21725E6}">
+                                        <PerfModelData VarType = "VT_ARRAY">
+                                            <Dimension>
+                                                <ArrayData VarType = "VT_UNKNOWN">
+                                                    <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
+                                                        <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
+                                                        <PerfModelType Value = "Acceleration" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                        <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                                        <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
+                                                    </Object>
+                                                </ArrayData>
+                                            </Dimension>
+                                            <Dimension>
+                                                <ArrayData VarType = "VT_UNKNOWN">
+                                                    <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
+                                                        <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
+                                                        <PerfModelType Value = "Climb" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                        <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                                        <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
+                                                    </Object>
+                                                </ArrayData>
+                                            </Dimension>
+                                            <Dimension>
+                                                <ArrayData VarType = "VT_UNKNOWN">
+                                                    <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
+                                                        <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
+                                                        <PerfModelType Value = "Cruise" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                        <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                                        <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
+                                                    </Object>
+                                                </ArrayData>
+                                            </Dimension>
+                                            <Dimension>
+                                                <ArrayData VarType = "VT_UNKNOWN">
+                                                    <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
+                                                        <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
+                                                        <PerfModelType Value = "Descent" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                        <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                                        <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
+                                                    </Object>
+                                                </ArrayData>
+                                            </Dimension>
+                                            <Dimension>
+                                                <ArrayData VarType = "VT_UNKNOWN">
+                                                    <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
+                                                        <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
+                                                        <PerfModelType Value = "Landing" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                        <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                                        <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
+                                                    </Object>
+                                                </ArrayData>
+                                            </Dimension>
+                                            <Dimension>
+                                                <ArrayData VarType = "VT_UNKNOWN">
+                                                    <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
+                                                        <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
+                                                        <PerfModelType Value = "Takeoff" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                        <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                                        <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
+                                                    </Object>
+                                                </ArrayData>
+                                            </Dimension>
+                                            <Dimension>
+                                                <ArrayData VarType = "VT_UNKNOWN">
+                                                    <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
+                                                        <PerfModelName Value = "AGI TerrainFollow Model" VarType = "VT_BSTR" />
+                                                        <PerfModelType Value = "TerrainFollow" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                        <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                                        <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
+                                                    </Object>
+                                                </ArrayData>
+                                            </Dimension>
+                                            <Dimension>
+                                                <ArrayData VarType = "VT_UNKNOWN">
+                                                    <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
+                                                        <PerfModelName Value = "AGI VTOL Model" VarType = "VT_BSTR" />
+                                                        <PerfModelType Value = "VTOL" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                        <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                                        <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
+                                                    </Object>
+                                                </ArrayData>
+                                            </Dimension>
+                                        </PerfModelData>
+                                        <Aircraft VarType = "VT_UNKNOWN">
+                                            <Object clsid = "{8D417B57-6B39-4467-B8A4-8911F412ABBB}">
+                                                <AircraftName Value = "NUNIT VBS Test" VarType = "VT_BSTR" />
+                                                <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
+                                            </Object>
+                                        </Aircraft>
+                                        <UserProperties VarType = "VT_UNKNOWN">
+                                            <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                                                <PropertyCount Value = "0" VarType = "VT_I4" />
+                                            </Object>
+                                        </UserProperties>
+                                    </Object>
+                                </AircraftProps>
+                                <UserProperties VarType = "VT_UNKNOWN">
+                                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                                        <PropertyCount Value = "0" VarType = "VT_I4" />
+                                    </Object>
+                                </UserProperties>
+                                <SuspendNtfUpdate Value = "0" VarType = "VT_I2" />
+                            </Object>
+                        </ArrayData>
+                    </Dimension>
+                </PhaseVec>
+            </Object>
+        </PhaseCollection>
+        <DisplayName Value = "NUNIT_VBS_Test" VarType = "VT_BSTR" />
+        <XAxisMode Value = "1" VarType = "VT_I4" />
+        <XAxisOverrideCount Value = "300" VarType = "VT_I4" />
+        <XAxisResample Value = "1" VarType = "VT_I1" />
+        <AxisDisplayX Value = "1" VarType = "VT_I4" />
+        <AxisDisplayY1 Value = "3" VarType = "VT_I4" />
+        <AxisDisplayY2 Value = "0" VarType = "VT_I4" />
+        <Version VarType = "VT_UNKNOWN">
+            <Object clsid = "{BFCB0B13-B1EB-4212-8097-3D5CCFCEB50B}">
+                <Major Value = "12" VarType = "VT_I4" />
+                <Minor Value = "0" VarType = "VT_I4" />
+                <Rev Value = "0" VarType = "VT_I4" />
+            </Object>
+        </Version>
+        <Configuration VarType = "VT_UNKNOWN">
+            <Object clsid = "{961ED659-F7CD-43CD-8042-13754AEE715D}">
+                <GUID Value = "{9F85B2E7-5EE6-41F3-9875-2A32E0F05C7F}" VarType = "VT_BSTR" />
+                <DisplayName Value = "Default Configuration" VarType = "VT_BSTR" />
+                <EmptyWeight Value = "4.5359237000000003e+03" VarType = "VT_R8" />
+                <BaseDrag Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                <EmptyCG VarType = "VT_UNKNOWN">
+                    <Object clsid = "{D4B5BDAA-A8E1-4f6c-BBCF-9AD487693A2C}">
+                        <X Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                        <Y Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                        <Z Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                    </Object>
+                </EmptyCG>
+                <PayloadStations VarType = "VT_ARRAY" />
+                <Systems VarType = "VT_ARRAY" />
+                <MaxLandingWeight Value = "6.8038855500000000e+03" VarType = "VT_R8" />
+                <UserProperties VarType = "VT_UNKNOWN">
+                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                        <PropertyCount Value = "0" VarType = "VT_I4" />
+                    </Object>
+                </UserProperties>
+            </Object>
+        </Configuration>
+        <SavedEpoch VarType = "VT_UNKNOWN">
+            <Object clsid = "{03DB6C88-1A23-4843-9317-01D69333DDBF}">
+                <UTC Value = "1" VarType = "VT_I1" />
+                <WholeDays Value = "2451361" VarType = "VT_I4" />
+                <SecIntoDay Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+            </Object>
+        </SavedEpoch>
+        <GUID Value = "{905FF80E-7688-4723-9E86-60F6A6343CAF}" VarType = "VT_BSTR" />
+        <TerrainSet VarType = "VT_UNKNOWN">
+            <Object clsid = "{3CD176DA-A749-4029-A000-D9352FFC07F1}">
+                <DisplayName Value = "New Terrain Set" VarType = "VT_BSTR" />
+                <Items VarType = "VT_ARRAY" />
+                <UserProperties VarType = "VT_UNKNOWN">
+                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                        <PropertyCount Value = "0" VarType = "VT_I4" />
+                    </Object>
+                </UserProperties>
+            </Object>
+        </TerrainSet>
+        <WindModelSource Value = "1" VarType = "VT_I4" />
+        <WindModel VarType = "VT_UNKNOWN">
+            <Object clsid = "{45C4D7DC-47D3-4bd3-BD95-BC3CF102C837}">
+                <GUID Value = "{A248F06C-B66E-42FE-AA93-BD70AF0DD0F1}" VarType = "VT_BSTR" />
+                <DisplayName Value = "Constant Wind" VarType = "VT_BSTR" />
+                <BlendTime Value = "5.0000000000000000e+00" VarType = "VT_R8" />
+                <WindSpeed Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                <WindBearing Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                <UserProperties VarType = "VT_UNKNOWN">
+                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                        <PropertyCount Value = "0" VarType = "VT_I4" />
+                    </Object>
+                </UserProperties>
+            </Object>
+        </WindModel>
+        <AtmosCalcDataSource Value = "1" VarType = "VT_I4" />
+        <AtmosCalcData VarType = "VT_UNKNOWN">
+            <Object clsid = "{C3DD1F28-B738-4354-A098-D42F97C1A878}">
+                <DisplayName Value = "Basic Atmosphere" VarType = "VT_BSTR" />
+                <AtmosphereModel Value = "0" VarType = "VT_I4" />
+                <UseNonStandardAtmosphere Value = "0" VarType = "VT_I1" />
+                <DeltaSLTemp Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                <DeltaSLPressure Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+            </Object>
+        </AtmosCalcData>
+        <UserProperties VarType = "VT_UNKNOWN">
+            <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                <PropertyCount Value = "0" VarType = "VT_I4" />
+            </Object>
+        </UserProperties>
+    </Object>
+</AgXMLPropertyBagData>
