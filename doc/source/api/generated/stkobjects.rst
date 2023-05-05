@@ -9,28 +9,28 @@ Interfaces
 
 .. autosummary::
 
-    IDrResult
-    IDataPrvTimeVar
-    IDataPrvInterval
-    IDataPrvFixed
-    IDrStatistics
+    IDataProviderResult
+    IDataProviderTimeVarying
+    IDataProviderInterval
+    IDataProviderFixed
+    IDataProviderResultStatistics
     IDataProviderInfo
     IDataProviderCollection
-    IDrDataSet
-    IDrDataSetCollection
-    IDrInterval
-    IDrIntervalCollection
-    IDrSubSection
-    IDrSubSectionCollection
-    IDrTextMessage
-    IDataPrvElement
-    IDataPrvElements
-    IDrTimeArrayElements
+    IDataProviderResultDataSet
+    IDataProviderResultDataSetCollection
+    IDataProviderResultInterval
+    IDataProviderResultIntervalCollection
+    IDataProviderResultSubSection
+    IDataProviderResultSubSectionCollection
+    IDataProviderResultTextMessage
+    IDataProviderElement
+    IDataProviderElements
+    IDataProviderResultTimeArrayElements
     IDataProvider
     IDataProviders
     IDataProviderGroup
-    IDrStatisticResult
-    IDrTimeVarExtremumResult
+    IDataProviderResultStatisticResult
+    IDataProviderResultTimeVaryingExtremumResult
     IVODataDisplayCollection
     IIntervalCollection
     ITimePeriodValue
@@ -43,25 +43,25 @@ Interfaces
     IStkAccess
     IAccessConstraintCollection
     IImmutableIntervalCollection
-    IFmDefinition
-    IFmDefCompute
-    IFmDefAccessConstraint
-    IFmGraphics
-    ICvAssetListCollection
+    IFigureOfMeritDefinition
+    IFigureOfMeritDefinitionCompute
+    IFigureOfMeritDefinitionAccessConstraint
+    IFigureOfMeritGraphics
+    ICoverageAssetListCollection
     IAvailableFeatures
     IStkCentralBodyCollection
     IStkPreferences
-    IOnePtAccessConstraint
-    IOnePtAccessConstraintCollection
-    IOnePtAccessResult
-    IOnePtAccessResultCollection
-    IOnePtAccess
+    IOnePointAccessConstraint
+    IOnePointAccessConstraintCollection
+    IOnePointAccessResult
+    IOnePointAccessResultCollection
+    IOnePointAccess
     IKeyValueCollection
     IStkObjectElementCollection
     IStkObjectCollection
-    IObjectCoverageFOM
+    IObjectCoverageFigureOfMerit
     IStkObjectCoverage
-    IStdMil2525bSymbols
+    IStdMilitary2525bSymbols
     IStkObjectRoot
     IObjectLink
     ILinkToObject
@@ -75,7 +75,7 @@ Interfaces
     IComponentLinkEmbedControl
     ISwath
     IDisplayTimesData
-    IDisplayTm
+    IDisplayTime
     IBasicAzElMask
     ILabelNote
     ILabelNoteCollection
@@ -86,38 +86,38 @@ Interfaces
     IAccessTimeCollection
     ITerrainNormData
     ILifetimeInformation
-    IVeLeadTrailData
-    IVeLeadTrailDataFraction
-    IVeLeadTrailDataTime
+    IVehicleLeadTrailData
+    IVehicleLeadTrailDataFraction
+    IVehicleLeadTrailDataTime
     IStkCentralBodyEllipsoid
     IStkCentralBody
     IAccessConstraint
-    IAccessCnstrTimeSlipRange
-    IAccessCnstrZone
-    IAccessCnstrExclZonesCollection
-    IAccessCnstrThirdBody
-    IAccessCnstrIntervals
-    IAccessCnstrObjExAngle
-    IAccessCnstrCondition
-    IAccessCnstrCbObstruction
-    IAccessCnstrAngle
-    IAccessCnstrMinMax
-    IAccessCnstrPluginMinMax
-    IAccessCnstrCrdnCn
-    IAccessCnstrBackground
-    IAccessCnstrGroundTrack
-    IAccessCnstrAWB
-    IAccessCnstrAWBCollection
+    IAccessConstraintTimeSlipRange
+    IAccessConstraintZone
+    IAccessConstraintExclZonesCollection
+    IAccessConstraintThirdBody
+    IAccessConstraintIntervals
+    IAccessConstraintObjExAngle
+    IAccessConstraintCondition
+    IAccessConstraintCentralBodyObstruction
+    IAccessConstraintAngle
+    IAccessConstraintMinMax
+    IAccessConstraintPluginMinMax
+    IAccessConstraintCrdnConstellation
+    IAccessConstraintBackground
+    IAccessConstraintGroundTrack
+    IAccessConstraintAnalysisWorkbench
+    IAccessConstraintAnalysisWorkbenchCollection
     ILevelAttribute
     ILevelAttributeCollection
     IGfxRangeContours
     IVOModelFile
     IVOArticulationFile
     IVOModelGltfImageBased
-    IVeEllipseDataElement
-    IVeEllipseDataCollection
-    IVeGroundEllipseElement
-    IVeGroundEllipsesCollection
+    IVehicleEllipseDataElement
+    IVehicleEllipseDataCollection
+    IVehicleGroundEllipseElement
+    IVehicleGroundEllipsesCollection
     IVODataDisplayElement
     IVOPointableElementsElement
     IVOPointableElementsCollection
@@ -128,29 +128,29 @@ Interfaces
     IVORangeContours
     IVOOffsetLabel
     IVOOffsetRotate
-    IVOOffsetTrans
+    IVOOffsetTransformation
     IVOOffsetAttach
     IVOOffset
     IVOMarkerData
     IVOMarkerShape
     IVOMarkerFile
     IVOMarker
-    IVOModelTrans
-    IVOModelTransCollection
+    IVOModelTransformation
+    IVOModelTransformationCollection
     IVOModelArtic
     IVODetailThreshold
     IVOModelItem
     IVOModelCollection
     IVOModelData
     IVOModel
-    IPtTargetVOModel
-    IVORefCrdn
-    IVORefCrdnVector
-    IVORefCrdnAxes
-    IVORefCrdnAngle
-    IVORefCrdnPoint
-    IVORefCrdnPlane
-    IVORefCrdnCollection
+    IPointTargetVOModel
+    IVOReferenceCrdn
+    IVOReferenceCrdnVector
+    IVOReferenceCrdnAxes
+    IVOReferenceCrdnAngle
+    IVOReferenceCrdnPoint
+    IVOReferenceCrdnPlane
+    IVOReferenceCrdnCollection
     IVOVector
     IVOVaporTrail
     ILLAPosition
@@ -199,85 +199,85 @@ Interfaces
     ISphericalFPAVertical
     IOrbitStateSpherical
     ISpatialState
-    IVeSpatialInfo
+    IVehicleSpatialInfo
     IProvideSpatialInfo
-    ISpEnvScenSpaceEnvironment
+    IScenSpaceEnvironment
     IRadarClutterMap
     IRadarCrossSection
     IRFEnvironment
     ILaserEnvironment
-    IScGraphics
-    IScEarthData
-    IScAnimationTimePeriod
-    IScAnimation
+    IScenarioGraphics
+    IScenarioEarthData
+    IScenarioAnimationTimePeriod
+    IScenarioAnimation
     ITerrain
     ITerrainCollection
     ICentralBodyTerrainCollectionElement
     ICentralBodyTerrainCollection
     ITileset3D
     ITilesetCollection3D
-    IScGenDb
-    IScGenDbCollection
-    ISc3dFont
-    IScVO
+    IScenarioGenDatabase
+    IScenarioGenDatabaseCollection
+    IScenario3dFont
+    IScenarioVO
     ITimePeriod
     IScenario
     ICelestialBodyInfo
     ICelestialBodyCollection
     IAccessAdvanced
-    ISnAccessAdvanced
-    IRfCoefficients
-    IRfModelBase
-    IRfModelEffectiveRadiusMethod
-    IRfModelITURP8344
-    IRfModelSCFMethod
+    ISensorAccessAdvanced
+    IRefractionCoefficients
+    IRefractionModelBase
+    IRefractionModelEffectiveRadiusMethod
+    IRefractionModelITURP8344
+    IRefractionModelSCFMethod
     IScheduleTime
     IScheduleTimeCollection
     IDisplayDistance
-    ISnProjDisplayDistance
-    ISnProjection
-    ISnGraphics
-    ISnVOPulse
-    ISnVOOffset
-    ISnVOProjectionElement
-    ISnVOSpaceProjectionCollection
-    ISnVOTargetProjectionCollection
-    ISnVO
-    ISnPattern
-    ISnSimpleConicPattern
-    ISnSARPattern
-    ISnRectangularPattern
-    ISnHalfPowerPattern
-    ISnCustomPattern
-    ISnComplexConicPattern
-    ISnEOIRRadiometricPair
-    ISnEOIRSensitivityCollection
-    ISnEOIRSaturationCollection
-    ISnEOIRBand
-    ISnEOIRBandCollection
-    ISnEOIRPattern
-    ISnPtTrgtBsight
-    ISnPtTrgtBsightTrack
-    ISnPtTrgtBsightFixed
-    ISnTarget
-    ISnTargetCollection
-    ISnPointing
-    ISnPtTargeted
-    ISnPtSpinning
-    ISnPtGrazingAlt
-    ISnPtFixedAxes
-    ISnPtFixed
-    ISnPtExternal
-    ISnPt3DModel
-    ISnPtAlongVector
-    ISnPtSchedule
+    ISensorProjectionDisplayDistance
+    ISensorProjection
+    ISensorGraphics
+    ISensorVOPulse
+    ISensorVOOffset
+    ISensorVOProjectionElement
+    ISensorVOSpaceProjectionCollection
+    ISensorVOTargetProjectionCollection
+    ISensorVO
+    ISensorPattern
+    ISensorSimpleConicPattern
+    ISensorSARPattern
+    ISensorRectangularPattern
+    ISensorHalfPowerPattern
+    ISensorCustomPattern
+    ISensorComplexConicPattern
+    ISensorEOIRRadiometricPair
+    ISensorEOIRSensitivityCollection
+    ISensorEOIRSaturationCollection
+    ISensorEOIRBand
+    ISensorEOIRBandCollection
+    ISensorEOIRPattern
+    ISensorPointingTargetedBoresight
+    ISensorPointingTargetedBoresightTrack
+    ISensorPointingTargetedBoresightFixed
+    ISensorTarget
+    ISensorTargetCollection
+    ISensorPointing
+    ISensorPointingTargeted
+    ISensorPointingSpinning
+    ISensorPointingGrazingAltitude
+    ISensorPointingFixedAxes
+    ISensorPointingFixed
+    ISensorPointingExternal
+    ISensorPointing3DModel
+    ISensorPointingAlongVector
+    ISensorPointingSchedule
     IAzElMaskData
-    ISnAzElMaskFile
-    ISnCommonTasks
+    ISensorAzElMaskFile
+    ISensorCommonTasks
     ILocationCrdnPoint
     ISensor
-    ISnProjConstantAlt
-    ISnProjObjectAlt
+    ISensorProjectionConstantAltitude
+    ISensorProjectionObjectAltitude
     IAtmosphere
     IRadarClutterMapInheritable
     IRadarCrossSectionInheritable
@@ -290,26 +290,26 @@ Interfaces
     ITarget
     IAreaTypeEllipse
     IAreaTypePatternCollection
-    IATCommonTasks
+    IAreaTargetCommonTasks
     IAreaTypeData
-    IATGraphics
-    IATVO
+    IAreaTargetGraphics
+    IAreaTargetVO
     IAreaTarget
     IAreaTypePattern
-    IPlPosFile
-    IPlPosCentralBody
-    IPlCommonTasks
+    IPlanetPositionFile
+    IPlanetPositionCentralBody
+    IPlanetCommonTasks
     IPositionSourceData
     IOrbitDisplayData
-    IPlOrbitDisplayTime
-    IPlGraphics
-    IPlVO
+    IPlanetOrbitDisplayTime
+    IPlanetGraphics
+    IPlanetVO
     IPlanet
-    IStGraphics
-    IStVO
+    IStarGraphics
+    IStarVO
     IStar
-    IFaGraphics
-    IFaVO
+    IFacilityGraphics
+    IFacilityVO
     IFacility
     IPlaceGraphics
     IPlaceVO
@@ -646,332 +646,332 @@ Interfaces
     ISRPModelGPS
     ISRPModelSpherical
     ISRPModelPlugin
-    IVeHPOPDragModelPluginSettings
-    IVeHPOPDragModel
-    IVeHPOPDragModelSpherical
-    IVeHPOPDragModelPlugin
-    IVeDuration
-    IVeRealtimeCartesianPoints
-    IVeRealtimeLLAHPSPoints
-    IVeRealtimeLLAPoints
-    IVeRealtimeUTMPoints
-    IVeGPSElement
-    IVeGPSElementCollection
-    IVeHPOPSRPModel
-    IVeThirdBodyGravityElement
-    IVeThirdBodyGravityCollection
-    IVeSGP4LoadData
-    IVeSGP4OnlineLoad
-    IVeSGP4OnlineAutoLoad
-    IVeSGP4LoadFile
-    IVeSGP4Segment
-    IVePropagatorSGP4CommonTasks
-    IVeSGP4AutoUpdateProperties
-    IVeSGP4AutoUpdateFileSource
-    IVeSGP4AutoUpdateOnlineSource
-    IVeSGP4AutoUpdate
-    IVeSGP4PropagatorSettings
-    IVeSGP4SegmentCollection
-    IVeInitialState
-    IVeHPOPCentralBodyGravity
-    IVeRadiationPressure
-    IVeHPOPSolarRadiationPressure
-    IVeSolarFluxGeoMagEnterManually
-    IVeSolarFluxGeoMagUseFile
-    IVeSolarFluxGeoMag
-    IVeHPOPForceModelDrag
-    IVeHPOPForceModelDragOptions
-    IVeHPOPSolarRadiationPressureOptions
-    IVeStatic
-    IVeSolidTides
-    IVeOceanTides
-    IVePluginSettings
-    IVePluginPropagator
-    IVeHPOPForceModelMoreOptions
-    IVeEclipsingBodies
-    IVeHPOPForceModel
-    IVeStepSizeControl
-    IVeTimeRegularization
-    IVeInterpolation
-    IVeIntegrator
-    IVeGravity
-    IVePositionVelocityElement
-    IVePositionVelocityCollection
-    IVeCorrelationListElement
-    IVeCorrelationListCollection
-    IVeConsiderAnalysisCollectionElement
-    IVeConsiderAnalysisCollection
-    IVeCovariance
-    IVeJxInitialState
-    IVeLOPCentralBodyGravity
-    IVeThirdBodyGravity
-    IVeExpDensModelParams
-    IVeAdvanced
-    IVeLOPForceModelDrag
-    IVeLOPSolarRadiationPressure
-    IVePhysicalData
-    IVeLOPForceModel
-    IVeSPICESegment
-    IVeSegmentsCollection
-    IVePropagator
-    IVePropagatorHPOP
-    IVePropagatorJ2Perturbation
-    IVePropagatorJ4Perturbation
-    IVePropagatorLOP
-    IVePropagatorSGP4
-    IVePropagatorSPICE
-    IVePropagatorStkExternal
-    IVePropagatorTwoBody
-    IVePropagatorUserExternal
-    IVeLvInitialState
-    IVePropagatorSimpleAscent
-    IVeWayPtAltitudeRef
-    IVeWayPtAltitudeRefTerrain
-    IVeWaypointsElement
-    IVeWaypointsCollection
-    IVePropagatorGreatArc
-    IVePropagatorAviator
-    IVeLaunchLLA
-    IVeLaunchLLR
-    IVeImpactLLA
-    IVeImpactLLR
-    IVeLaunchControlFixedApogeeAlt
-    IVeLaunchControlFixedDeltaV
-    IVeLaunchControlFixedDeltaVMinEcc
-    IVeLaunchControlFixedTimeOfFlight
-    IVeImpactLocationLaunchAzEl
-    IVeImpact
-    IVeLaunchControl
-    IVeImpactLocationPoint
-    IVeLaunch
-    IVeImpactLocation
-    IVePropagatorBallistic
-    IVeRealtimePointBuilder
-    IVePropagatorRealtime
-    IVeGPSAlmanacProperties
-    IVeGPSAlmanacPropertiesYUMA
-    IVeGPSAlmanacPropertiesSEM
-    IVeGPSAlmanacPropertiesSP3
-    IVeGPSSpecifyAlmanac
-    IVeGPSAutoUpdateProperties
-    IVeGPSAutoUpdateFileSource
-    IVeGPSAutoUpdateOnlineSource
-    IVeGPSAutoUpdate
-    IVePropagatorGPS
-    IVePropagator11ParamDescriptor
-    IVePropagator11ParamDescriptorCollection
-    IVePropagator11Param
-    IVePropagatorSP3File
-    IVePropagatorSP3FileCollection
-    IVePropagatorSP3
-    IVeTargetPointingElement
-    IVeAccessAdvanced
-    IVeAttTargetSlew
-    IVeTorque
-    IVeIntegratedAttitude
-    IVeVector
-    IVeRateOffset
-    IVeAttProfile
-    IVeProfileAlignedAndConstrained
-    IVeProfileInertial
-    IVeProfileYawToNadir
-    IVeProfileConstraintOffset
-    IVeProfileAlignmentOffset
-    IVeProfileFixedInAxes
-    IVeProfilePrecessingSpin
-    IVeProfileSpinAboutXXX
-    IVeProfileSpinning
-    IVeProfileCoordinatedTurn
-    IVeScheduleTimesElement
-    IVeScheduleTimesCollection
-    IVeTargetTimes
-    IVeTargetPointingIntervalCollection
-    IVeTargetPointingCollection
-    IVePointing
-    IVeAttPointing
-    IVeStandardBasic
-    IVeAttExternal
-    IVeAttitude
-    IVeAttitudeRealTimeDataReference
-    IVeAttitudeRealTime
-    IVeAttitudeStandard
-    IVeTrajectoryAttitudeStandard
-    IVeOrbitAttitudeStandard
-    IVeRouteAttitudeStandard
-    IVeProfileGPS
-    IVeAttTrendControlAviator
-    IVeProfileAviator
-    IVeGfxIntervalsCollection
-    IVeGfxWaypointMarkersElement
-    IVeGfxWaypointMarkersCollection
-    IVeGfxWaypointMarker
-    IVeGfxPassResolution
-    IVeGfxRouteResolution
-    IVeGfxTrajectoryResolution
-    IVeGfxElevationsElement
-    IVeGfxElevationsCollection
-    IVeGfxElevContours
-    IVeGfxSAA
-    IVeGfxPassShowPasses
-    IVeGfxPass
-    IVeGfxPasses
-    IVeGfxTimeEventTypeLine
-    IVeGfxTimeEventTypeMarker
-    IVeGfxTimeEventTypeText
-    IVeGfxTimeEventType
-    IVeGfxTimeEventsElement
-    IVeGfxTimeEventsCollection
-    IVeGfxGroundEllipsesElement
-    IVeGfxGroundEllipsesCollection
-    IVeGfxLeadTrailData
-    IVeGfxTrajectoryPassData
-    IVeGfxOrbitPassData
-    IVeGfxRoutePassData
-    IVeGfxLightingElement
-    IVeGfxLighting
-    IVeGfxLine
-    IVeGfxAttributes
-    IVeGfxAttributesBasic
-    IVeGfxAttributesDisplayState
-    IVeGfxAttributesAccess
-    IVeGfxAttributesTrajectory
-    IVeGfxAttributesOrbit
-    IVeGfxAttributesRoute
-    IVeGfxAttributesRealtime
-    IVeGfxElevationGroundElevation
-    IVeGfxElevationSwathHalfWidth
-    IVeGfxElevationVehicleHalfAngle
-    IVeGfxElevation
-    IVeGfxSwath
-    IVeGfxInterval
-    IVeGfxAttributesCustom
-    IVeGfxTimeComponentsElement
-    IVeGfxTimeComponentsEventElement
-    IVeGfxTimeComponentsEventCollectionElement
-    IVeGfxTimeComponentsCollection
-    IVeGfxAttributesTimeComponents
-    IVeTrajectoryVOModel
-    IVeRouteVOModel
-    IVeVOLeadTrailData
-    IVeVOSystemsElementBase
-    IVeVOSystemsElement
-    IVeVOSystemsSpecialElement
-    IVeVOSystemsCollection
-    IVeVODropLinePosItem
-    IVeVODropLinePosItemCollection
-    IVeVODropLinePathItem
-    IVeVODropLinePathItemCollection
-    IVeVOOrbitDropLines
-    IVeVORouteDropLines
-    IVeVOTrajectoryDropLines
-    IVeVOProximityAreaObject
-    IVeVOEllipsoid
-    IVeVOControlBox
-    IVeVOBearingBox
-    IVeVOBearingEllipse
-    IVeVOLineOfBearing
-    IVeVOGeoBox
-    IVeVOProximity
-    IVeVORouteProximity
-    IVeVOOrbitProximity
-    IVeVOTrajectoryProximity
-    IVeVOElevContours
-    IVeVOSAA
-    IVeVOSigmaScaleProbability
-    IVeVOSigmaScaleScale
-    IVeVODefaultAttributes
-    IVeVOIntervalsElement
-    IVeVOIntervalsCollection
-    IVeVOAttributesBasic
-    IVeVOAttributesIntervals
-    IVeVOSize
-    IVeVOSigmaScale
-    IVeVOAttributes
-    IVeVOCovariancePointingContour
-    IVeVOOrbitPassData
-    IVeVOTrajectoryPassData
-    IVeVOOrbitTrackData
-    IVeVOTrajectoryTrackData
-    IVeVOTickData
-    IVeVOPathTickMarks
-    IVeVOTrajectoryTickMarks
-    IVeVOTrajectory
-    IVeVOTickDataLine
-    IVeVOTickDataPoint
-    IVeVOOrbitTickMarks
-    IVeVOPass
-    IVeVOCovariance
-    IVeVOVelCovariance
-    IVeVOWaypointMarkersElement
-    IVeVOWaypointMarkersCollection
-    IVeVORoute
-    IVeEclipseBodies
+    IVehicleHPOPDragModelPluginSettings
+    IVehicleHPOPDragModel
+    IVehicleHPOPDragModelSpherical
+    IVehicleHPOPDragModelPlugin
+    IVehicleDuration
+    IVehicleRealtimeCartesianPoints
+    IVehicleRealtimeLLAHPSPoints
+    IVehicleRealtimeLLAPoints
+    IVehicleRealtimeUTMPoints
+    IVehicleGPSElement
+    IVehicleGPSElementCollection
+    IVehicleHPOPSRPModel
+    IVehicleThirdBodyGravityElement
+    IVehicleThirdBodyGravityCollection
+    IVehicleSGP4LoadData
+    IVehicleSGP4OnlineLoad
+    IVehicleSGP4OnlineAutoLoad
+    IVehicleSGP4LoadFile
+    IVehicleSGP4Segment
+    IVehiclePropagatorSGP4CommonTasks
+    IVehicleSGP4AutoUpdateProperties
+    IVehicleSGP4AutoUpdateFileSource
+    IVehicleSGP4AutoUpdateOnlineSource
+    IVehicleSGP4AutoUpdate
+    IVehicleSGP4PropagatorSettings
+    IVehicleSGP4SegmentCollection
+    IVehicleInitialState
+    IVehicleHPOPCentralBodyGravity
+    IVehicleRadiationPressure
+    IVehicleHPOPSolarRadiationPressure
+    IVehicleSolarFluxGeoMagnitudeEnterManually
+    IVehicleSolarFluxGeoMagnitudeUseFile
+    IVehicleSolarFluxGeoMagnitude
+    IVehicleHPOPForceModelDrag
+    IVehicleHPOPForceModelDragOptions
+    IVehicleHPOPSolarRadiationPressureOptions
+    IVehicleStatic
+    IVehicleSolidTides
+    IVehicleOceanTides
+    IVehiclePluginSettings
+    IVehiclePluginPropagator
+    IVehicleHPOPForceModelMoreOptions
+    IVehicleEclipsingBodies
+    IVehicleHPOPForceModel
+    IVehicleStepSizeControl
+    IVehicleTimeRegularization
+    IVehicleInterpolation
+    IVehicleIntegrator
+    IVehicleGravity
+    IVehiclePositionVelocityElement
+    IVehiclePositionVelocityCollection
+    IVehicleCorrelationListElement
+    IVehicleCorrelationListCollection
+    IVehicleConsiderAnalysisCollectionElement
+    IVehicleConsiderAnalysisCollection
+    IVehicleCovariance
+    IVehicleJxInitialState
+    IVehicleLOPCentralBodyGravity
+    IVehicleThirdBodyGravity
+    IVehicleExpDensModelParams
+    IVehicleAdvanced
+    IVehicleLOPForceModelDrag
+    IVehicleLOPSolarRadiationPressure
+    IVehiclePhysicalData
+    IVehicleLOPForceModel
+    IVehicleSPICESegment
+    IVehicleSegmentsCollection
+    IVehiclePropagator
+    IVehiclePropagatorHPOP
+    IVehiclePropagatorJ2Perturbation
+    IVehiclePropagatorJ4Perturbation
+    IVehiclePropagatorLOP
+    IVehiclePropagatorSGP4
+    IVehiclePropagatorSPICE
+    IVehiclePropagatorStkExternal
+    IVehiclePropagatorTwoBody
+    IVehiclePropagatorUserExternal
+    IVehicleLaunchVehicleInitialState
+    IVehiclePropagatorSimpleAscent
+    IVehicleWaypointAltitudeReference
+    IVehicleWaypointAltitudeReferenceTerrain
+    IVehicleWaypointsElement
+    IVehicleWaypointsCollection
+    IVehiclePropagatorGreatArc
+    IVehiclePropagatorAviator
+    IVehicleLaunchLLA
+    IVehicleLaunchLLR
+    IVehicleImpactLLA
+    IVehicleImpactLLR
+    IVehicleLaunchControlFixedApogeeAltitude
+    IVehicleLaunchControlFixedDeltaV
+    IVehicleLaunchControlFixedDeltaVMinEccentricity
+    IVehicleLaunchControlFixedTimeOfFlight
+    IVehicleImpactLocationLaunchAzEl
+    IVehicleImpact
+    IVehicleLaunchControl
+    IVehicleImpactLocationPoint
+    IVehicleLaunch
+    IVehicleImpactLocation
+    IVehiclePropagatorBallistic
+    IVehicleRealtimePointBuilder
+    IVehiclePropagatorRealtime
+    IVehicleGPSAlmanacProperties
+    IVehicleGPSAlmanacPropertiesYUMA
+    IVehicleGPSAlmanacPropertiesSEM
+    IVehicleGPSAlmanacPropertiesSP3
+    IVehicleGPSSpecifyAlmanac
+    IVehicleGPSAutoUpdateProperties
+    IVehicleGPSAutoUpdateFileSource
+    IVehicleGPSAutoUpdateOnlineSource
+    IVehicleGPSAutoUpdate
+    IVehiclePropagatorGPS
+    IVehiclePropagator11ParamDescriptor
+    IVehiclePropagator11ParamDescriptorCollection
+    IVehiclePropagator11Param
+    IVehiclePropagatorSP3File
+    IVehiclePropagatorSP3FileCollection
+    IVehiclePropagatorSP3
+    IVehicleTargetPointingElement
+    IVehicleAccessAdvanced
+    IVehicleAttitudeTargetSlew
+    IVehicleTorque
+    IVehicleIntegratedAttitude
+    IVehicleVector
+    IVehicleRateOffset
+    IVehicleAttitudeProfile
+    IVehicleProfileAlignedAndConstrained
+    IVehicleProfileInertial
+    IVehicleProfileYawToNadir
+    IVehicleProfileConstraintOffset
+    IVehicleProfileAlignmentOffset
+    IVehicleProfileFixedInAxes
+    IVehicleProfilePrecessingSpin
+    IVehicleProfileSpinAboutXXX
+    IVehicleProfileSpinning
+    IVehicleProfileCoordinatedTurn
+    IVehicleScheduleTimesElement
+    IVehicleScheduleTimesCollection
+    IVehicleTargetTimes
+    IVehicleTargetPointingIntervalCollection
+    IVehicleTargetPointingCollection
+    IVehiclePointing
+    IVehicleAttitudePointing
+    IVehicleStandardBasic
+    IVehicleAttitudeExternal
+    IVehicleAttitude
+    IVehicleAttitudeRealTimeDataReference
+    IVehicleAttitudeRealTime
+    IVehicleAttitudeStandard
+    IVehicleTrajectoryAttitudeStandard
+    IVehicleOrbitAttitudeStandard
+    IVehicleRouteAttitudeStandard
+    IVehicleProfileGPS
+    IVehicleAttitudeTrendControlAviator
+    IVehicleProfileAviator
+    IVehicleGfxIntervalsCollection
+    IVehicleGfxWaypointMarkersElement
+    IVehicleGfxWaypointMarkersCollection
+    IVehicleGfxWaypointMarker
+    IVehicleGfxPassResolution
+    IVehicleGfxRouteResolution
+    IVehicleGfxTrajectoryResolution
+    IVehicleGfxElevationsElement
+    IVehicleGfxElevationsCollection
+    IVehicleGfxElevContours
+    IVehicleGfxSAA
+    IVehicleGfxPassShowPasses
+    IVehicleGfxPass
+    IVehicleGfxPasses
+    IVehicleGfxTimeEventTypeLine
+    IVehicleGfxTimeEventTypeMarker
+    IVehicleGfxTimeEventTypeText
+    IVehicleGfxTimeEventType
+    IVehicleGfxTimeEventsElement
+    IVehicleGfxTimeEventsCollection
+    IVehicleGfxGroundEllipsesElement
+    IVehicleGfxGroundEllipsesCollection
+    IVehicleGfxLeadTrailData
+    IVehicleGfxTrajectoryPassData
+    IVehicleGfxOrbitPassData
+    IVehicleGfxRoutePassData
+    IVehicleGfxLightingElement
+    IVehicleGfxLighting
+    IVehicleGfxLine
+    IVehicleGfxAttributes
+    IVehicleGfxAttributesBasic
+    IVehicleGfxAttributesDisplayState
+    IVehicleGfxAttributesAccess
+    IVehicleGfxAttributesTrajectory
+    IVehicleGfxAttributesOrbit
+    IVehicleGfxAttributesRoute
+    IVehicleGfxAttributesRealtime
+    IVehicleGfxElevationGroundElevation
+    IVehicleGfxElevationSwathHalfWidth
+    IVehicleGfxElevationVehicleHalfAngle
+    IVehicleGfxElevation
+    IVehicleGfxSwath
+    IVehicleGfxInterval
+    IVehicleGfxAttributesCustom
+    IVehicleGfxTimeComponentsElement
+    IVehicleGfxTimeComponentsEventElement
+    IVehicleGfxTimeComponentsEventCollectionElement
+    IVehicleGfxTimeComponentsCollection
+    IVehicleGfxAttributesTimeComponents
+    IVehicleTrajectoryVOModel
+    IVehicleRouteVOModel
+    IVehicleVOLeadTrailData
+    IVehicleVOSystemsElementBase
+    IVehicleVOSystemsElement
+    IVehicleVOSystemsSpecialElement
+    IVehicleVOSystemsCollection
+    IVehicleVODropLinePositionItem
+    IVehicleVODropLinePositionItemCollection
+    IVehicleVODropLinePathItem
+    IVehicleVODropLinePathItemCollection
+    IVehicleVOOrbitDropLines
+    IVehicleVORouteDropLines
+    IVehicleVOTrajectoryDropLines
+    IVehicleVOProximityAreaObject
+    IVehicleVOEllipsoid
+    IVehicleVOControlBox
+    IVehicleVOBearingBox
+    IVehicleVOBearingEllipse
+    IVehicleVOLineOfBearing
+    IVehicleVOGeoBox
+    IVehicleVOProximity
+    IVehicleVORouteProximity
+    IVehicleVOOrbitProximity
+    IVehicleVOTrajectoryProximity
+    IVehicleVOElevContours
+    IVehicleVOSAA
+    IVehicleVOSigmaScaleProbability
+    IVehicleVOSigmaScaleScale
+    IVehicleVODefaultAttributes
+    IVehicleVOIntervalsElement
+    IVehicleVOIntervalsCollection
+    IVehicleVOAttributesBasic
+    IVehicleVOAttributesIntervals
+    IVehicleVOSize
+    IVehicleVOSigmaScale
+    IVehicleVOAttributes
+    IVehicleVOCovariancePointingContour
+    IVehicleVOOrbitPassData
+    IVehicleVOTrajectoryPassData
+    IVehicleVOOrbitTrackData
+    IVehicleVOTrajectoryTrackData
+    IVehicleVOTickData
+    IVehicleVOPathTickMarks
+    IVehicleVOTrajectoryTickMarks
+    IVehicleVOTrajectory
+    IVehicleVOTickDataLine
+    IVehicleVOTickDataPoint
+    IVehicleVOOrbitTickMarks
+    IVehicleVOPass
+    IVehicleVOCovariance
+    IVehicleVOVelCovariance
+    IVehicleVOWaypointMarkersElement
+    IVehicleVOWaypointMarkersCollection
+    IVehicleVORoute
+    IVehicleEclipseBodies
     IGreatArcGraphics
     IGreatArcVO
     IGreatArcVehicle
-    IVeVOBPlaneTemplateDisplayElement
-    IVeVOBPlaneTemplateDisplayCollection
-    IVeVOBPlaneTemplate
-    IVeVOBPlaneTemplatesCollection
-    IVeVOBPlaneEvent
-    IVeVOBPlanePoint
-    IVeVOBPlaneTargetPointPosition
-    IVeVOBPlaneTargetPointPositionCartesian
-    IVeVOBPlaneTargetPointPositionPolar
-    IVeVOBPlaneTargetPoint
-    IVeVOBPlanePointCollection
-    IVeVOBPlaneInstance
-    IVeVOBPlaneInstancesCollection
-    IVeVOBPlanes
-    IVeSpEnvSpaceEnvironment
-    ISaVOModel
-    ISaVO
-    IVeCentralBodies
-    ISaGraphics
-    IVeRepeatGroundTrackNumbering
-    IVeBreakAngle
-    IVeBreakAngleBreakByLatitude
-    IVeBreakAngleBreakByLongitude
-    IVeDefinition
-    IVePassNumbering
-    IVePassNumberingDateOfFirstPass
-    IVePassNumberingFirstPassNum
-    IVePassBreak
-    IVeInertia
-    IVeMassProperties
+    IVehicleVOBPlaneTemplateDisplayElement
+    IVehicleVOBPlaneTemplateDisplayCollection
+    IVehicleVOBPlaneTemplate
+    IVehicleVOBPlaneTemplatesCollection
+    IVehicleVOBPlaneEvent
+    IVehicleVOBPlanePoint
+    IVehicleVOBPlaneTargetPointPosition
+    IVehicleVOBPlaneTargetPointPositionCartesian
+    IVehicleVOBPlaneTargetPointPositionPolar
+    IVehicleVOBPlaneTargetPoint
+    IVehicleVOBPlanePointCollection
+    IVehicleVOBPlaneInstance
+    IVehicleVOBPlaneInstancesCollection
+    IVehicleVOBPlanes
+    IVehicleSpaceEnvironment
+    ISatelliteVOModel
+    ISatelliteVO
+    IVehicleCentralBodies
+    ISatelliteGraphics
+    IVehicleRepeatGroundTrackNumbering
+    IVehicleBreakAngle
+    IVehicleBreakAngleBreakByLatitude
+    IVehicleBreakAngleBreakByLongitude
+    IVehicleDefinition
+    IVehiclePassNumbering
+    IVehiclePassNumberingDateOfFirstPass
+    IVehiclePassNumberingFirstPassNum
+    IVehiclePassBreak
+    IVehicleInertia
+    IVehicleMassProperties
     IExportToolTimePeriod
     IExportToolStepSize
-    IVeEphemerisCode500ExportTool
-    IVeEphemerisCCSDSExportTool
-    IVeEphemerisStkExportTool
-    IVeCoordinateAxes
-    IVeCoordinateAxesCustom
-    IVeAttitudeExportTool
-    IVeEphemerisSpiceExportTool
-    IVePropDefExportTool
-    IVeEphemerisStkBinaryExportTool
-    IVeEphemerisCCSDSv2ExportTool
-    ISaExportTools
+    IVehicleEphemerisCode500ExportTool
+    IVehicleEphemerisCCSDSExportTool
+    IVehicleEphemerisStkExportTool
+    IVehicleCoordinateAxes
+    IVehicleCoordinateAxesCustom
+    IVehicleAttitudeExportTool
+    IVehicleEphemerisSpiceExportTool
+    IVehiclePropDefinitionExportTool
+    IVehicleEphemerisStkBinaryExportTool
+    IVehicleEphemerisCCSDSv2ExportTool
+    ISatelliteExportTools
     ISatellite
-    ILvGraphics
-    ILvVO
-    ILvExportTools
+    ILaunchVehicleGraphics
+    ILaunchVehicleVO
+    ILaunchVehicleExportTools
     ILaunchVehicle
-    IGvGraphics
-    IGvVO
-    IGvExportTools
+    IGroundVehicleGraphics
+    IGroundVehicleVO
+    IGroundVehicleExportTools
     IGroundVehicle
-    IMsGraphics
-    IMsVO
-    IMsExportTools
+    IMissileGraphics
+    IMissileVO
+    IMissileExportTools
     IMissile
-    IAcGraphics
-    IAcVO
-    IAcExportTools
+    IAircraftGraphics
+    IAircraftVO
+    IAircraftExportTools
     IAircraft
-    IShGraphics
-    IShVO
-    IShExportTools
+    IShipGraphics
+    IShipVO
+    IShipExportTools
     IShip
     IMtoGfxMarker
     IMtoGfxLine
@@ -1005,98 +1005,98 @@ Interfaces
     IMtoAnalysisRange
     IMtoAnalysis
     IMto
-    ILtGraphics
-    ILtVO
-    ILtPoint
-    ILtPointCollection
+    ILineTargetGraphics
+    ILineTargetVO
+    ILineTargetPoint
+    ILineTargetPointCollection
     ILineTarget
-    IChGfxStatic
-    IChGfxAnimation
-    IChGraphics
-    IChVO
+    IChainGfxStatic
+    IChainGfxAnimation
+    IChainGraphics
+    IChainVO
     IAccessEventDetection
     IAccessSampling
-    IChTimePeriodBase
-    IChUserSpecifiedTimePeriod
-    IChConstraints
+    IChainTimePeriodBase
+    IChainUserSpecifiedTimePeriod
+    IChainConstraints
     IChain
-    ICvGfxStatic
-    ICvGfxAnimation
-    ICvGfxProgress
-    ICvGraphics
-    ICvVOAttributes
-    ICvVO
-    ICvSelectedGridPoint
-    ICvGridPointSelection
-    ICvGridInspector
-    ICvRegionFilesCollection
-    ICvAreaTargetsCollection
-    ICvPointFileListCollection
-    ICvBounds
-    ICvBoundsCustomBoundary
-    ICvBoundsCustomRegions
-    ICvBoundsGlobal
-    ICvBoundsLat
-    ICvBoundsLatLine
-    ICvBoundsLonLine
-    ICvBoundsLatLonRegion
-    ICvResolution
-    ICvResolutionArea
-    ICvResolutionDistance
-    ICvResolutionLatLon
-    ICvGrid
-    ICvPointDefinition
-    ICvAssetListElement
-    ICvAdvanced
-    ICvInterval
+    ICoverageGfxStatic
+    ICoverageGfxAnimation
+    ICoverageGfxProgress
+    ICoverageGraphics
+    ICoverageVOAttributes
+    ICoverageVO
+    ICoverageSelectedGridPoint
+    ICoverageGridPointSelection
+    ICoverageGridInspector
+    ICoverageRegionFilesCollection
+    ICoverageAreaTargetsCollection
+    ICoveragePointFileListCollection
+    ICoverageBounds
+    ICoverageBoundsCustomBoundary
+    ICoverageBoundsCustomRegions
+    ICoverageBoundsGlobal
+    ICoverageBoundsLat
+    ICoverageBoundsLatLine
+    ICoverageBoundsLonLine
+    ICoverageBoundsLatLonRegion
+    ICoverageResolution
+    ICoverageResolutionArea
+    ICoverageResolutionDistance
+    ICoverageResolutionLatLon
+    ICoverageGrid
+    ICoveragePointDefinition
+    ICoverageAssetListElement
+    ICoverageAdvanced
+    ICoverageInterval
     ICoverageDefinition
-    IFmVOLegendWindow
-    IFmGfxRampColor
-    IFmGfxLevelAttributesElement
-    IFmGfxLevelAttributesCollection
-    IFmGfxPositionOnMap
-    IFmGfxLegendWindow
-    IFmGfxColorOptions
-    IFmGfxTextOptions
-    IFmGfxRangeColorOptions
-    IFmGfxLegend
-    IFmGfxContours
-    IFmGfxAttributes
-    IFmGfxContoursAnimation
-    IFmGfxAttributesAnimation
-    IFmVOAttributes
-    IFmVO
-    IFmDefScalarCalculation
-    IFmGridInspector
-    IFmNAMethod
-    IFmNAMethodElevationAngle
-    IFmNAMethodConstant
-    IFmAssetListElement
-    IFmAssetListCollection
-    IFmUncertainties
-    IFmSatisfaction
-    IFmDefinitionData
-    IFmDefDataMinMax
-    IFmDefDataPercentLevel
-    IFmDefDataMinAssets
-    IFmDefDataBestN
-    IFmDefDataBest4
-    IFmDefResponseTime
-    IFmDefRevisitTime
-    IFmDefSimpleCoverage
-    IFmDefTimeAverageGap
-    IFmDefDilutionOfPrecision
-    IFmDefNavigationAccuracy
-    IFmDefAccessSeparation
+    IFigureOfMeritVOLegendWindow
+    IFigureOfMeritGfxRampColor
+    IFigureOfMeritGfxLevelAttributesElement
+    IFigureOfMeritGfxLevelAttributesCollection
+    IFigureOfMeritGfxPositionOnMap
+    IFigureOfMeritGfxLegendWindow
+    IFigureOfMeritGfxColorOptions
+    IFigureOfMeritGfxTextOptions
+    IFigureOfMeritGfxRangeColorOptions
+    IFigureOfMeritGfxLegend
+    IFigureOfMeritGfxContours
+    IFigureOfMeritGfxAttributes
+    IFigureOfMeritGfxContoursAnimation
+    IFigureOfMeritGfxAttributesAnimation
+    IFigureOfMeritVOAttributes
+    IFigureOfMeritVO
+    IFigureOfMeritDefinitionScalarCalculation
+    IFigureOfMeritGridInspector
+    IFigureOfMeritNavigationAccuracyMethod
+    IFigureOfMeritNavigationAccuracyMethodElevationAngle
+    IFigureOfMeritNavigationAccuracyMethodConstant
+    IFigureOfMeritAssetListElement
+    IFigureOfMeritAssetListCollection
+    IFigureOfMeritUncertainties
+    IFigureOfMeritSatisfaction
+    IFigureOfMeritDefinitionData
+    IFigureOfMeritDefinitionDataMinMax
+    IFigureOfMeritDefinitionDataPercentLevel
+    IFigureOfMeritDefinitionDataMinAssets
+    IFigureOfMeritDefinitionDataBestN
+    IFigureOfMeritDefinitionDataBest4
+    IFigureOfMeritDefinitionResponseTime
+    IFigureOfMeritDefinitionRevisitTime
+    IFigureOfMeritDefinitionSimpleCoverage
+    IFigureOfMeritDefinitionTimeAverageGap
+    IFigureOfMeritDefinitionDilutionOfPrecision
+    IFigureOfMeritDefinitionNavigationAccuracy
+    IFigureOfMeritDefinitionAccessSeparation
     IFigureOfMerit
-    IFmDefSystemResponseTime
-    IFmDefAgeOfData
-    IFmDefSystemAgeOfData
-    ICnCnstrRestriction
-    ICnCnstrObjectRestriction
-    ICnConstraints
-    ICnGraphics
-    ICnRouting
+    IFigureOfMeritDefinitionSystemResponseTime
+    IFigureOfMeritDefinitionAgeOfData
+    IFigureOfMeritDefinitionSystemAgeOfData
+    IConstellationConstraintRestriction
+    IConstellationConstraintObjectRestriction
+    IConstellationConstraints
+    IConstellationGraphics
+    IConstellationRouting
     IConstellation
     IEventDetectionStrategy
     IEventDetectionNoSubSampling
@@ -1104,30 +1104,30 @@ Interfaces
     ISamplingMethodStrategy
     ISamplingMethodAdaptive
     ISamplingMethodFixedStep
-    ISpEnvRadEnergyMethodSpecify
-    ISpEnvRadEnergyValues
-    ISpEnvRadiationEnvironment
-    ISpEnvMagFieldGfx
-    ISpEnvScenExtVO
-    ISpEnvSAAContour
-    IVeSpEnvMagneticField
-    IVeSpEnvVehTemperature
-    IVeSpEnvParticleFlux
-    IVeSpEnvRadDoseRateElement
-    IVeSpEnvRadDoseRateCollection
-    IVeSpEnvRadiation
-    IVeSpEnvMagFieldLine
-    IVeSpEnvGraphics
+    ISpaceEnvironmentRadEnergyMethodSpecify
+    ISpaceEnvironmentRadEnergyValues
+    ISpaceEnvironmentRadiationEnvironment
+    ISpaceEnvironmentMagnitudeFieldGfx
+    ISpaceEnvironmentScenarioExtVO
+    ISpaceEnvironmentSAAContour
+    IVehicleSpaceEnvironmentMagneticField
+    IVehicleSpaceEnvironmentVehTemperature
+    IVehicleSpaceEnvironmentParticleFlux
+    IVehicleSpaceEnvironmentRadDoseRateElement
+    IVehicleSpaceEnvironmentRadDoseRateCollection
+    IVehicleSpaceEnvironmentRadiation
+    IVehicleSpaceEnvironmentMagnitudeFieldLine
+    IVehicleSpaceEnvironmentGraphics
     IStkPreferencesVDF
     IStkPreferencesConnect
     IStkPreferencesPythonPlugins
     IPathCollection
-    IVeAttMaximumSlewRate
-    IVeAttMaximumSlewAcceleration
-    IVeAttSlewBase
-    IVeAttSlewConstrained
-    IVeAttSlewFixedRate
-    IVeAttSlewFixedTime
+    IVehicleAttitudeMaximumSlewRate
+    IVehicleAttitudeMaximumSlewAcceleration
+    IVehicleAttitudeSlewBase
+    IVehicleAttitudeSlewConstrained
+    IVehicleAttitudeSlewFixedRate
+    IVehicleAttitudeSlewFixedTime
     IVmGridDefinition
     IVmAnalysisInterval
     IVmAdvanced
@@ -1528,14 +1528,14 @@ Classes
     LevelAttribute
     LevelAttributeCollection
     BasicAzElMask
-    FaGraphics
+    FacilityGraphics
     PlaceGraphics
     GfxRangeContours
     AccessConstraint
     AccessConstraintCollection
     VORangeContours
     VOOffsetRotate
-    VOOffsetTrans
+    VOOffsetTransformation
     VOOffsetAttach
     VOOffsetLabel
     VOOffset
@@ -1548,116 +1548,116 @@ Classes
     LabelNote
     LabelNoteCollection
     VOVector
-    FaVO
+    FacilityVO
     PlaceVO
     TerrainNormSlopeAzimuth
     IntervalCollection
     ImmutableIntervalCollection
     DuringAccess
     DisplayTimesTimeComponent
-    StVO
-    StGraphics
-    PlVO
-    PlGraphics
+    StarVO
+    StarGraphics
+    PlanetVO
+    PlanetGraphics
     AreaTypePattern
     AreaTypePatternCollection
     AreaTypeEllipse
-    ATVO
-    ATGraphics
+    AreaTargetVO
+    AreaTargetGraphics
     VOAzElMask
     VOModelArtic
-    VOModelTransCollection
-    VOModelTrans
+    VOModelTransformationCollection
+    VOModelTransformation
     VOModelFile
-    PlPosFile
-    PlPosCentralBody
-    PlOrbitDisplayTime
+    PlanetPositionFile
+    PlanetPositionCentralBody
+    PlanetOrbitDisplayTime
     Scenario
-    ScAnimation
-    ScEarthData
-    ScGraphics
+    ScenarioAnimation
+    ScenarioEarthData
+    ScenarioGraphics
     TerrainCollection
     Terrain
     TilesetCollection3D
     Tileset3D
-    ScGenDbCollection
-    ScGenDb
-    ScVO
-    SnComplexConicPattern
-    SnEOIRPattern
-    SnUnknownPattern
-    SnEOIRBandCollection
-    SnEOIRBand
-    SnEOIRRadiometricPair
-    SnEOIRSensitivityCollection
-    SnEOIRSaturationCollection
-    SnCustomPattern
-    SnHalfPowerPattern
-    SnRectangularPattern
-    SnSARPattern
-    SnSimpleConicPattern
-    SnPtFixed
-    SnPtFixedAxes
-    SnPt3DModel
-    SnPtSpinning
-    SnPtTargeted
-    SnPtExternal
-    SnPtTrgtBsightTrack
-    SnPtTrgtBsightFixed
-    SnTargetCollection
-    SnTarget
+    ScenarioGenDatabaseCollection
+    ScenarioGenDatabase
+    ScenarioVO
+    SensorComplexConicPattern
+    SensorEOIRPattern
+    SensorUnknownPattern
+    SensorEOIRBandCollection
+    SensorEOIRBand
+    SensorEOIRRadiometricPair
+    SensorEOIRSensitivityCollection
+    SensorEOIRSaturationCollection
+    SensorCustomPattern
+    SensorHalfPowerPattern
+    SensorRectangularPattern
+    SensorSARPattern
+    SensorSimpleConicPattern
+    SensorPointingFixed
+    SensorPointingFixedAxes
+    SensorPointing3DModel
+    SensorPointingSpinning
+    SensorPointingTargeted
+    SensorPointingExternal
+    SensorPointingTargetedBoresightTrack
+    SensorPointingTargetedBoresightFixed
+    SensorTargetCollection
+    SensorTarget
     AccessTime
     ScheduleTime
-    SnAzElMaskFile
-    SnGraphics
-    SnProjection
-    SnProjDisplayDistance
-    SnVO
-    SnVOPulse
-    SnVOOffset
-    AccessCnstrTimeSlipRange
-    AccessCnstrBackground
-    AccessCnstrGroundTrack
-    AccessCnstrMinMax
-    AccessCnstrCrdnCn
-    AccessCnstrCbObstruction
-    AccessCnstrAngle
-    AccessCnstrCondition
+    SensorAzElMaskFile
+    SensorGraphics
+    SensorProjection
+    SensorProjectionDisplayDistance
+    SensorVO
+    SensorVOPulse
+    SensorVOOffset
+    AccessConstraintTimeSlipRange
+    AccessConstraintBackground
+    AccessConstraintGroundTrack
+    AccessConstraintMinMax
+    AccessConstraintCrdnConstellation
+    AccessConstraintCentralBodyObstruction
+    AccessConstraintAngle
+    AccessConstraintCondition
     AccessTimeCollection
     ScheduleTimeCollection
-    AccessCnstrIntervals
-    AccessCnstrObjExAngle
-    AccessCnstrZone
-    AccessCnstrThirdBody
-    AccessCnstrExclZonesCollection
-    SnPtGrazingAlt
+    AccessConstraintIntervals
+    AccessConstraintObjExAngle
+    AccessConstraintZone
+    AccessConstraintThirdBody
+    AccessConstraintExclZonesCollection
+    SensorPointingGrazingAltitude
     AreaTarget
     Facility
     Target
     Place
     Planet
     Sensor
-    SnCommonTasks
-    ATCommonTasks
-    PlCommonTasks
+    SensorCommonTasks
+    AreaTargetCommonTasks
+    PlanetCommonTasks
     Swath
     Star
     DataProviderCollection
-    DrTimeArrayElements
-    DrResult
-    DrSubSectionCollection
-    DrSubSection
-    DrIntervalCollection
-    DrInterval
-    DrDataSetCollection
-    DrDataSet
-    DataPrvFixed
-    DataPrvTimeVar
-    DataPrvInterval
-    DrTextMessage
+    DataProviderResultTimeArrayElements
+    DataProviderResult
+    DataProviderResultSubSectionCollection
+    DataProviderResultSubSection
+    DataProviderResultIntervalCollection
+    DataProviderResultInterval
+    DataProviderResultDataSetCollection
+    DataProviderResultDataSet
+    DataProviderFixed
+    DataProviderTimeVarying
+    DataProviderInterval
+    DataProviderResultTextMessage
     DataProviderGroup
-    DataPrvElements
-    DataPrvElement
+    DataProviderElements
+    DataProviderElement
     DataProviders
     StkAccess
     StkAccessGraphics
@@ -1665,270 +1665,270 @@ Classes
     AccessTimePeriod
     AccessTimeEventIntervals
     StkObjectCoverage
-    ObjectCoverageFOM
-    Sc3dFont
+    ObjectCoverageFigureOfMerit
+    Scenario3dFont
     VOBorderWall
-    VORefCrdnCollection
-    VORefCrdnVector
-    VORefCrdnAxes
-    VORefCrdnAngle
-    VORefCrdnPlane
-    VORefCrdnPoint
+    VOReferenceCrdnCollection
+    VOReferenceCrdnVector
+    VOReferenceCrdnAxes
+    VOReferenceCrdnAngle
+    VOReferenceCrdnPlane
+    VOReferenceCrdnPoint
     TargetGraphics
     TargetVO
-    PtTargetVOModel
+    PointTargetVOModel
     ObjectLinkCollection
     ObjectLink
     LinkToObject
     LLAPosition
     VODataDisplayElement
     VODataDisplayCollection
-    VeInitialState
-    VeHPOPCentralBodyGravity
-    VeRadiationPressure
-    VeHPOPSolarRadiationPressure
-    VeSolarFluxGeoMagEnterManually
-    VeSolarFluxGeoMagUseFile
-    VeHPOPForceModelDrag
-    VeHPOPForceModelDragOptions
-    VeHPOPSolarRadiationPressureOptions
-    VeStatic
-    VeSolidTides
-    VeOceanTides
-    VePluginSettings
-    VePluginPropagator
-    VeHPOPForceModelMoreOptions
-    VeHPOPForceModel
-    VeStepSizeControl
-    VeTimeRegularization
-    VeInterpolation
-    VeIntegrator
-    VeGravity
-    VePositionVelocityElement
-    VePositionVelocityCollection
-    VeCorrelationListCollection
-    VeCorrelationListElement
-    VeCovariance
-    VeJxInitialState
-    VeLOPCentralBodyGravity
-    VeThirdBodyGravityElement
-    VeThirdBodyGravityCollection
-    VeExpDensModelParams
-    VeAdvanced
-    VeLOPForceModelDrag
-    VeLOPSolarRadiationPressure
-    VePhysicalData
-    VeLOPForceModel
-    VeSegmentsCollection
-    VePropagatorHPOP
-    VePropagatorJ2Perturbation
-    VePropagatorJ4Perturbation
-    VePropagatorLOP
-    VePropagatorSGP4
-    VePropagatorSPICE
-    VePropagatorStkExternal
-    VePropagatorTwoBody
-    VePropagatorUserExternal
-    VeLvInitialState
-    VePropagatorSimpleAscent
-    VeWaypointsElement
-    VeWaypointsCollection
-    VeLaunchLLA
-    VeLaunchLLR
-    VeImpactLLA
-    VeImpactLLR
-    VeLaunchControlFixedApogeeAlt
-    VeLaunchControlFixedDeltaV
-    VeLaunchControlFixedDeltaVMinEcc
-    VeLaunchControlFixedTimeOfFlight
-    VeImpactLocationLaunchAzEl
-    VeImpactLocationPoint
-    VePropagatorBallistic
-    VePropagatorGreatArc
-    VeSGP4SegmentCollection
-    VeSGP4Segment
-    VeThirdBodyGravity
-    VeConsiderAnalysisCollectionElement
-    VeConsiderAnalysisCollection
-    VeSPICESegment
-    VeWayPtAltitudeRefTerrain
-    VeWayPtAltitudeRef
-    VeSGP4LoadFile
-    VeSGP4OnlineLoad
-    VeSGP4OnlineAutoLoad
-    VeGroundEllipsesCollection
+    VehicleInitialState
+    VehicleHPOPCentralBodyGravity
+    VehicleRadiationPressure
+    VehicleHPOPSolarRadiationPressure
+    VehicleSolarFluxGeoMagnitudeEnterManually
+    VehicleSolarFluxGeoMagnitudeUseFile
+    VehicleHPOPForceModelDrag
+    VehicleHPOPForceModelDragOptions
+    VehicleHPOPSolarRadiationPressureOptions
+    VehicleStatic
+    VehicleSolidTides
+    VehicleOceanTides
+    VehiclePluginSettings
+    VehiclePluginPropagator
+    VehicleHPOPForceModelMoreOptions
+    VehicleHPOPForceModel
+    VehicleStepSizeControl
+    VehicleTimeRegularization
+    VehicleInterpolation
+    VehicleIntegrator
+    VehicleGravity
+    VehiclePositionVelocityElement
+    VehiclePositionVelocityCollection
+    VehicleCorrelationListCollection
+    VehicleCorrelationListElement
+    VehicleCovariance
+    VehicleJxInitialState
+    VehicleLOPCentralBodyGravity
+    VehicleThirdBodyGravityElement
+    VehicleThirdBodyGravityCollection
+    VehicleExpDensModelParams
+    VehicleAdvanced
+    VehicleLOPForceModelDrag
+    VehicleLOPSolarRadiationPressure
+    VehiclePhysicalData
+    VehicleLOPForceModel
+    VehicleSegmentsCollection
+    VehiclePropagatorHPOP
+    VehiclePropagatorJ2Perturbation
+    VehiclePropagatorJ4Perturbation
+    VehiclePropagatorLOP
+    VehiclePropagatorSGP4
+    VehiclePropagatorSPICE
+    VehiclePropagatorStkExternal
+    VehiclePropagatorTwoBody
+    VehiclePropagatorUserExternal
+    VehicleLaunchVehicleInitialState
+    VehiclePropagatorSimpleAscent
+    VehicleWaypointsElement
+    VehicleWaypointsCollection
+    VehicleLaunchLLA
+    VehicleLaunchLLR
+    VehicleImpactLLA
+    VehicleImpactLLR
+    VehicleLaunchControlFixedApogeeAltitude
+    VehicleLaunchControlFixedDeltaV
+    VehicleLaunchControlFixedDeltaVMinEccentricity
+    VehicleLaunchControlFixedTimeOfFlight
+    VehicleImpactLocationLaunchAzEl
+    VehicleImpactLocationPoint
+    VehiclePropagatorBallistic
+    VehiclePropagatorGreatArc
+    VehicleSGP4SegmentCollection
+    VehicleSGP4Segment
+    VehicleThirdBodyGravity
+    VehicleConsiderAnalysisCollectionElement
+    VehicleConsiderAnalysisCollection
+    VehicleSPICESegment
+    VehicleWaypointAltitudeReferenceTerrain
+    VehicleWaypointAltitudeReference
+    VehicleSGP4LoadFile
+    VehicleSGP4OnlineLoad
+    VehicleSGP4OnlineAutoLoad
+    VehicleGroundEllipsesCollection
     Satellite
-    VeInertia
-    VeMassProperties
-    VeBreakAngleBreakByLatitude
-    VeBreakAngleBreakByLongitude
-    VeDefinition
-    VeRepeatGroundTrackNumbering
-    VePassNumberingDateOfFirstPass
-    VePassNumberingFirstPassNum
-    VePassBreak
-    VeCentralBodies
-    SaGraphics
-    SaVO
-    VeEllipseDataElement
-    VeEllipseDataCollection
-    VeGroundEllipseElement
-    SaVOModel
-    VeEclipseBodies
-    VeVector
-    VeRateOffset
-    VeProfileAlignedAndConstrained
-    VeProfileInertial
-    VeProfileConstraintOffset
-    VeProfileFixedInAxes
-    VeProfilePrecessingSpin
-    VeProfileSpinAboutXXX
-    VeProfileSpinning
-    VeProfileAlignmentOffset
-    VeScheduleTimesCollection
-    VeTargetTimes
-    VeAttPointing
-    VeDuration
-    VeStandardBasic
-    VeAttExternal
-    VeAttitudeRealTime
-    VeProfileCoordinatedTurn
-    VeProfileYawToNadir
-    VeAttTrendControlAviator
-    VeProfileAviator
-    VeTargetPointingElement
-    VeTargetPointingCollection
-    VeTorque
-    VeIntegratedAttitude
-    VeScheduleTimesElement
-    VeTrajectoryAttitudeStandard
-    VeOrbitAttitudeStandard
-    VeRouteAttitudeStandard
-    VeGfxLine
-    VeGfxIntervalsCollection
-    VeGfxAttributesAccess
-    VeGfxAttributesCustom
-    VeGfxAttributesRealtime
-    VeGfxLightingElement
-    VeGfxLighting
-    VeGfxElevationGroundElevation
-    VeGfxElevationSwathHalfWidth
-    VeGfxElevationVehicleHalfAngle
-    VeGfxSwath
-    VeGfxLeadDataFraction
-    VeGfxLeadDataTime
-    VeGfxTrailDataFraction
-    VeGfxTrailDataTime
-    VeGfxRoutePassData
-    VeGfxLeadTrailData
-    VeGfxOrbitPassData
-    VeGfxTrajectoryPassData
-    VeGfxTrajectoryResolution
-    VeGfxGroundEllipsesCollection
-    VeGfxTimeEventTypeLine
-    VeGfxTimeEventTypeMarker
-    VeGfxTimeEventTypeText
-    VeGfxTimeEventsElement
-    VeGfxTimeEventsCollection
-    VeGfxPassShowPasses
-    VeGfxPasses
-    VeGfxSAA
-    VeGfxElevationsElement
-    VeGfxElevationsCollection
-    VeGfxElevContours
-    VeGfxRouteResolution
-    VeGfxWaypointMarkersElement
-    VeGfxWaypointMarkersCollection
-    VeGfxWaypointMarker
-    VeGfxInterval
-    VeGfxPassResolution
-    VeGfxGroundEllipsesElement
-    VeGfxAttributesRoute
-    VeGfxAttributesTrajectory
-    VeGfxAttributesOrbit
+    VehicleInertia
+    VehicleMassProperties
+    VehicleBreakAngleBreakByLatitude
+    VehicleBreakAngleBreakByLongitude
+    VehicleDefinition
+    VehicleRepeatGroundTrackNumbering
+    VehiclePassNumberingDateOfFirstPass
+    VehiclePassNumberingFirstPassNum
+    VehiclePassBreak
+    VehicleCentralBodies
+    SatelliteGraphics
+    SatelliteVO
+    VehicleEllipseDataElement
+    VehicleEllipseDataCollection
+    VehicleGroundEllipseElement
+    SatelliteVOModel
+    VehicleEclipseBodies
+    VehicleVector
+    VehicleRateOffset
+    VehicleProfileAlignedAndConstrained
+    VehicleProfileInertial
+    VehicleProfileConstraintOffset
+    VehicleProfileFixedInAxes
+    VehicleProfilePrecessingSpin
+    VehicleProfileSpinAboutXXX
+    VehicleProfileSpinning
+    VehicleProfileAlignmentOffset
+    VehicleScheduleTimesCollection
+    VehicleTargetTimes
+    VehicleAttitudePointing
+    VehicleDuration
+    VehicleStandardBasic
+    VehicleAttitudeExternal
+    VehicleAttitudeRealTime
+    VehicleProfileCoordinatedTurn
+    VehicleProfileYawToNadir
+    VehicleAttitudeTrendControlAviator
+    VehicleProfileAviator
+    VehicleTargetPointingElement
+    VehicleTargetPointingCollection
+    VehicleTorque
+    VehicleIntegratedAttitude
+    VehicleScheduleTimesElement
+    VehicleTrajectoryAttitudeStandard
+    VehicleOrbitAttitudeStandard
+    VehicleRouteAttitudeStandard
+    VehicleGfxLine
+    VehicleGfxIntervalsCollection
+    VehicleGfxAttributesAccess
+    VehicleGfxAttributesCustom
+    VehicleGfxAttributesRealtime
+    VehicleGfxLightingElement
+    VehicleGfxLighting
+    VehicleGfxElevationGroundElevation
+    VehicleGfxElevationSwathHalfWidth
+    VehicleGfxElevationVehicleHalfAngle
+    VehicleGfxSwath
+    VehicleGfxLeadDataFraction
+    VehicleGfxLeadDataTime
+    VehicleGfxTrailDataFraction
+    VehicleGfxTrailDataTime
+    VehicleGfxRoutePassData
+    VehicleGfxLeadTrailData
+    VehicleGfxOrbitPassData
+    VehicleGfxTrajectoryPassData
+    VehicleGfxTrajectoryResolution
+    VehicleGfxGroundEllipsesCollection
+    VehicleGfxTimeEventTypeLine
+    VehicleGfxTimeEventTypeMarker
+    VehicleGfxTimeEventTypeText
+    VehicleGfxTimeEventsElement
+    VehicleGfxTimeEventsCollection
+    VehicleGfxPassShowPasses
+    VehicleGfxPasses
+    VehicleGfxSAA
+    VehicleGfxElevationsElement
+    VehicleGfxElevationsCollection
+    VehicleGfxElevContours
+    VehicleGfxRouteResolution
+    VehicleGfxWaypointMarkersElement
+    VehicleGfxWaypointMarkersCollection
+    VehicleGfxWaypointMarker
+    VehicleGfxInterval
+    VehicleGfxPassResolution
+    VehicleGfxGroundEllipsesElement
+    VehicleGfxAttributesRoute
+    VehicleGfxAttributesTrajectory
+    VehicleGfxAttributesOrbit
     VOPointableElementsElement
     VOPointableElementsCollection
-    VeVOSystemsElement
-    VeVOSystemsSpecialElement
-    VeVOSystemsCollection
-    VeVOEllipsoid
-    VeVOControlBox
-    VeVOBearingBox
-    VeVOBearingEllipse
-    VeVOLineOfBearing
-    VeVOGeoBox
-    VeVORouteProximity
-    VeVOOrbitProximity
-    VeVOElevContours
-    VeVOSAA
-    VeVOSigmaScaleProbability
-    VeVOSigmaScaleScale
-    VeVODefaultAttributes
-    VeVOIntervalsElement
-    VeVOIntervalsCollection
-    VeVOAttributesBasic
-    VeVOAttributesIntervals
-    VeVOSize
-    VeVOCovariancePointingContour
-    VeVODataFraction
-    VeVODataTime
-    VeVOOrbitPassData
-    VeVOOrbitTrackData
-    VeVOTickDataLine
-    VeVOTickDataPoint
-    VeVOOrbitTickMarks
-    VeVOPass
-    VeVOCovariance
-    VeVOVelCovariance
-    VeVOTrajectoryProximity
-    VeVOTrajectory
-    VeVOTrajectoryTrackData
-    VeVOTrajectoryPassData
-    VeVOLeadTrailData
-    VeVOTrajectoryTickMarks
-    VeVOPathTickMarks
-    VeVOWaypointMarkersElement
-    VeVOWaypointMarkersCollection
-    VeVORoute
+    VehicleVOSystemsElement
+    VehicleVOSystemsSpecialElement
+    VehicleVOSystemsCollection
+    VehicleVOEllipsoid
+    VehicleVOControlBox
+    VehicleVOBearingBox
+    VehicleVOBearingEllipse
+    VehicleVOLineOfBearing
+    VehicleVOGeoBox
+    VehicleVORouteProximity
+    VehicleVOOrbitProximity
+    VehicleVOElevContours
+    VehicleVOSAA
+    VehicleVOSigmaScaleProbability
+    VehicleVOSigmaScaleScale
+    VehicleVODefaultAttributes
+    VehicleVOIntervalsElement
+    VehicleVOIntervalsCollection
+    VehicleVOAttributesBasic
+    VehicleVOAttributesIntervals
+    VehicleVOSize
+    VehicleVOCovariancePointingContour
+    VehicleVODataFraction
+    VehicleVODataTime
+    VehicleVOOrbitPassData
+    VehicleVOOrbitTrackData
+    VehicleVOTickDataLine
+    VehicleVOTickDataPoint
+    VehicleVOOrbitTickMarks
+    VehicleVOPass
+    VehicleVOCovariance
+    VehicleVOVelCovariance
+    VehicleVOTrajectoryProximity
+    VehicleVOTrajectory
+    VehicleVOTrajectoryTrackData
+    VehicleVOTrajectoryPassData
+    VehicleVOLeadTrailData
+    VehicleVOTrajectoryTickMarks
+    VehicleVOPathTickMarks
+    VehicleVOWaypointMarkersElement
+    VehicleVOWaypointMarkersCollection
+    VehicleVORoute
     VOModelPointing
     VOLabelSwapDistance
-    VeVODropLinePosItem
-    VeVODropLinePosItemCollection
-    VeVODropLinePathItem
-    VeVODropLinePathItemCollection
-    VeVOOrbitDropLines
-    VeVORouteDropLines
-    VeVOTrajectoryDropLines
-    VeTrajectoryVOModel
-    VeRouteVOModel
-    VeVOBPlaneTemplateDisplayElement
-    VeVOBPlaneTemplateDisplayCollection
-    VeVOBPlaneTemplate
-    VeVOBPlaneTemplatesCollection
-    VeVOBPlaneEvent
-    VeVOBPlanePoint
-    VeVOBPlaneTargetPointPositionCartesian
-    VeVOBPlaneTargetPointPositionPolar
-    VeVOBPlaneTargetPoint
-    VeVOBPlaneInstance
-    VeVOBPlaneInstancesCollection
-    VeVOBPlanePointCollection
-    VeVOBPlanes
+    VehicleVODropLinePositionItem
+    VehicleVODropLinePositionItemCollection
+    VehicleVODropLinePathItem
+    VehicleVODropLinePathItemCollection
+    VehicleVOOrbitDropLines
+    VehicleVORouteDropLines
+    VehicleVOTrajectoryDropLines
+    VehicleTrajectoryVOModel
+    VehicleRouteVOModel
+    VehicleVOBPlaneTemplateDisplayElement
+    VehicleVOBPlaneTemplateDisplayCollection
+    VehicleVOBPlaneTemplate
+    VehicleVOBPlaneTemplatesCollection
+    VehicleVOBPlaneEvent
+    VehicleVOBPlanePoint
+    VehicleVOBPlaneTargetPointPositionCartesian
+    VehicleVOBPlaneTargetPointPositionPolar
+    VehicleVOBPlaneTargetPoint
+    VehicleVOBPlaneInstance
+    VehicleVOBPlaneInstancesCollection
+    VehicleVOBPlanePointCollection
+    VehicleVOBPlanes
     LaunchVehicle
-    LvGraphics
-    LvVO
+    LaunchVehicleGraphics
+    LaunchVehicleVO
     GroundVehicle
-    GvGraphics
-    GvVO
+    GroundVehicleGraphics
+    GroundVehicleVO
     Missile
-    MsGraphics
-    MsVO
+    MissileGraphics
+    MissileVO
     Aircraft
-    AcGraphics
-    AcVO
+    AircraftGraphics
+    AircraftVO
     Ship
-    ShGraphics
-    ShVO
+    ShipGraphics
+    ShipVO
     MtoTrackPoint
     MtoTrackPointCollection
     MtoTrack
@@ -1957,221 +1957,221 @@ Classes
     MtoVO
     LLAGeocentric
     LLAGeodetic
-    LtPoint
-    LtPointCollection
+    LineTargetPoint
+    LineTargetPointCollection
     LineTarget
-    LtGraphics
-    LtVO
+    LineTargetGraphics
+    LineTargetVO
     CoverageDefinition
-    CvBoundsCustomRegions
-    CvBoundsCustomBoundary
-    CvBoundsGlobal
-    CvBoundsLat
-    CvBoundsLatLine
-    CvBoundsLonLine
-    CvBoundsLatLonRegion
-    CvGrid
-    CvAssetListElement
-    CvAssetListCollection
-    CvRegionFilesCollection
-    CvAreaTargetsCollection
-    CvPointDefinition
-    CvPointFileListCollection
-    CvAdvanced
-    CvInterval
-    CvResolutionArea
-    CvResolutionDistance
-    CvResolutionLatLon
-    CvGfxStatic
-    CvGfxAnimation
-    CvGfxProgress
-    CvGraphics
-    CvVO
-    CvVOAttributes
-    ChTimePeriodBase
-    ChUserSpecifiedTimePeriod
-    ChConstraints
+    CoverageBoundsCustomRegions
+    CoverageBoundsCustomBoundary
+    CoverageBoundsGlobal
+    CoverageBoundsLat
+    CoverageBoundsLatLine
+    CoverageBoundsLonLine
+    CoverageBoundsLatLonRegion
+    CoverageGrid
+    CoverageAssetListElement
+    CoverageAssetListCollection
+    CoverageRegionFilesCollection
+    CoverageAreaTargetsCollection
+    CoveragePointDefinition
+    CoveragePointFileListCollection
+    CoverageAdvanced
+    CoverageInterval
+    CoverageResolutionArea
+    CoverageResolutionDistance
+    CoverageResolutionLatLon
+    CoverageGfxStatic
+    CoverageGfxAnimation
+    CoverageGfxProgress
+    CoverageGraphics
+    CoverageVO
+    CoverageVOAttributes
+    ChainTimePeriodBase
+    ChainUserSpecifiedTimePeriod
+    ChainConstraints
     Chain
-    ChGfxStatic
-    ChGfxAnimation
-    ChGraphics
-    ChVO
-    RfCoefficients
-    RfModelEffectiveRadiusMethod
-    RfModelITURP8344
-    RfModelSCFMethod
-    FmDefCompute
-    FmDefDataMinMax
-    FmDefDataMinAssets
-    FmDefDataPercentLevel
-    FmDefDataBestN
-    FmDefDataBest4
-    FmDefAccessConstraint
-    FmSatisfaction
+    ChainGfxStatic
+    ChainGfxAnimation
+    ChainGraphics
+    ChainVO
+    RefractionCoefficients
+    RefractionModelEffectiveRadiusMethod
+    RefractionModelITURP8344
+    RefractionModelSCFMethod
+    FigureOfMeritDefinitionCompute
+    FigureOfMeritDefinitionDataMinMax
+    FigureOfMeritDefinitionDataMinAssets
+    FigureOfMeritDefinitionDataPercentLevel
+    FigureOfMeritDefinitionDataBestN
+    FigureOfMeritDefinitionDataBest4
+    FigureOfMeritDefinitionAccessConstraint
+    FigureOfMeritSatisfaction
     FigureOfMerit
-    FmDefAccessSeparation
-    FmDefDilutionOfPrecision
-    FmDefNavigationAccuracy
-    FmAssetListElement
-    FmAssetListCollection
-    FmUncertainties
-    FmDefResponseTime
-    FmDefRevisitTime
-    FmDefSimpleCoverage
-    FmDefTimeAverageGap
-    FmDefSystemAgeOfData
-    FmGfxContours
-    FmGfxAttributes
-    FmGfxContoursAnimation
-    FmGfxAttributesAnimation
-    FmGraphics
-    FmGfxRampColor
-    FmGfxLevelAttributesElement
-    FmGfxLevelAttributesCollection
-    FmGfxPositionOnMap
-    FmGfxColorOptions
-    FmGfxLegendWindow
-    FmVOLegendWindow
-    FmGfxTextOptions
-    FmGfxRangeColorOptions
-    FmGfxLegend
-    FmNAMethodElevationAngle
-    FmNAMethodConstant
-    FmVOAttributes
-    FmVO
-    VeProfileGPS
+    FigureOfMeritDefinitionAccessSeparation
+    FigureOfMeritDefinitionDilutionOfPrecision
+    FigureOfMeritDefinitionNavigationAccuracy
+    FigureOfMeritAssetListElement
+    FigureOfMeritAssetListCollection
+    FigureOfMeritUncertainties
+    FigureOfMeritDefinitionResponseTime
+    FigureOfMeritDefinitionRevisitTime
+    FigureOfMeritDefinitionSimpleCoverage
+    FigureOfMeritDefinitionTimeAverageGap
+    FigureOfMeritDefinitionSystemAgeOfData
+    FigureOfMeritGfxContours
+    FigureOfMeritGfxAttributes
+    FigureOfMeritGfxContoursAnimation
+    FigureOfMeritGfxAttributesAnimation
+    FigureOfMeritGraphics
+    FigureOfMeritGfxRampColor
+    FigureOfMeritGfxLevelAttributesElement
+    FigureOfMeritGfxLevelAttributesCollection
+    FigureOfMeritGfxPositionOnMap
+    FigureOfMeritGfxColorOptions
+    FigureOfMeritGfxLegendWindow
+    FigureOfMeritVOLegendWindow
+    FigureOfMeritGfxTextOptions
+    FigureOfMeritGfxRangeColorOptions
+    FigureOfMeritGfxLegend
+    FigureOfMeritNavigationAccuracyMethodElevationAngle
+    FigureOfMeritNavigationAccuracyMethodConstant
+    FigureOfMeritVOAttributes
+    FigureOfMeritVO
+    VehicleProfileGPS
     StkObjectModelContext
-    StdMil2525bSymbols
-    CvGridInspector
-    FmGridInspector
+    StdMilitary2525bSymbols
+    CoverageGridInspector
+    FigureOfMeritGridInspector
     VOVaporTrail
-    VeTargetPointingIntervalCollection
-    AccessCnstrPluginMinMax
-    CnConstraints
-    CnCnstrObjectRestriction
-    CnCnstrRestriction
+    VehicleTargetPointingIntervalCollection
+    AccessConstraintPluginMinMax
+    ConstellationConstraints
+    ConstellationConstraintObjectRestriction
+    ConstellationConstraintRestriction
     Constellation
-    CnGraphics
-    CnRouting
+    ConstellationGraphics
+    ConstellationRouting
     AgEventDetectionNoSubSampling
     AgEventDetectionSubSampling
     SamplingMethodAdaptive
     SamplingMethodFixedStep
-    SnAccessAdvanced
-    VeAccessAdvanced
+    SensorAccessAdvanced
+    VehicleAccessAdvanced
     AccessSampling
     AccessEventDetection
-    SnVOProjectionElement
-    SnVOSpaceProjectionCollection
-    SnVOTargetProjectionCollection
+    SensorVOProjectionElement
+    SensorVOSpaceProjectionCollection
+    SensorVOTargetProjectionCollection
     CentralBodyTerrainCollectionElement
     CentralBodyTerrainCollection
-    SaExportTools
-    LvExportTools
-    GvExportTools
-    MsExportTools
-    AcExportTools
-    ShExportTools
-    VeEphemerisCode500ExportTool
-    VeEphemerisCCSDSExportTool
-    VeEphemerisStkExportTool
-    VeEphemerisSpiceExportTool
+    SatelliteExportTools
+    LaunchVehicleExportTools
+    GroundVehicleExportTools
+    MissileExportTools
+    AircraftExportTools
+    ShipExportTools
+    VehicleEphemerisCode500ExportTool
+    VehicleEphemerisCCSDSExportTool
+    VehicleEphemerisStkExportTool
+    VehicleEphemerisSpiceExportTool
     AgExportToolTimePeriod
-    VeAttitudeExportTool
-    VePropDefExportTool
-    VeCoordinateAxesCustom
+    VehicleAttitudeExportTool
+    VehiclePropDefinitionExportTool
+    VehicleCoordinateAxesCustom
     AgExportToolStepSize
     PctCmpltEventArgs
     StkObjectChangedEventArgs
-    VeEclipsingBodies
+    VehicleEclipsingBodies
     LocationCrdnPoint
     TimePeriod
     TimePeriodValue
     SpatialState
-    VeSpatialInfo
-    OnePtAccess
-    OnePtAccessResultCollection
-    OnePtAccessResult
-    OnePtAccessConstraintCollection
-    OnePtAccessConstraint
-    VePropagatorRealtime
-    VeRealtimePointBuilder
-    VeRealtimeCartesianPoints
-    VeRealtimeLLAHPSPoints
-    VeRealtimeLLAPoints
-    VeRealtimeUTMPoints
+    VehicleSpatialInfo
+    OnePointAccess
+    OnePointAccessResultCollection
+    OnePointAccessResult
+    OnePointAccessConstraintCollection
+    OnePointAccessConstraint
+    VehiclePropagatorRealtime
+    VehicleRealtimePointBuilder
+    VehicleRealtimeCartesianPoints
+    VehicleRealtimeLLAHPSPoints
+    VehicleRealtimeLLAPoints
+    VehicleRealtimeUTMPoints
     SRPModelGPS
     SRPModelSpherical
     SRPModelPlugin
     SRPModelPluginSettings
-    VeHPOPSRPModel
-    VeHPOPDragModelSpherical
-    VeHPOPDragModelPlugin
-    VeHPOPDragModelPluginSettings
-    VeHPOPDragModel
-    ScAnimationTimePeriod
-    SnProjConstantAlt
-    SnProjObjectAlt
-    VeAttitudeRealTimeDataReference
+    VehicleHPOPSRPModel
+    VehicleHPOPDragModelSpherical
+    VehicleHPOPDragModelPlugin
+    VehicleHPOPDragModelPluginSettings
+    VehicleHPOPDragModel
+    ScenarioAnimationTimePeriod
+    SensorProjectionConstantAltitude
+    SensorProjectionObjectAltitude
+    VehicleAttitudeRealTimeDataReference
     MtoAnalysis
     MtoAnalysisPosition
     MtoAnalysisRange
     MtoAnalysisFieldOfView
     MtoAnalysisVisibility
-    VePropagatorGPS
+    VehiclePropagatorGPS
     AvailableFeatures
     ScenarioBeforeSaveEventArgs
     StkObjectPreDeleteEventArgs
-    VePropagatorSGP4CommonTasks
-    VeSGP4AutoUpdateProperties
-    VeSGP4AutoUpdateFileSource
-    VeSGP4AutoUpdateOnlineSource
-    VeSGP4AutoUpdate
-    VeSGP4PropagatorSettings
-    VeGPSAutoUpdateProperties
-    VeGPSAutoUpdateFileSource
-    VeGPSAutoUpdateOnlineSource
-    VeGPSAutoUpdate
-    VeGPSSpecifyAlmanac
-    VeGPSAlmanacProperties
-    VeGPSAlmanacPropertiesSEM
-    VeGPSAlmanacPropertiesYUMA
-    VeGPSAlmanacPropertiesSP3
-    VeGPSElementCollection
-    VeGPSElement
-    SpEnvRadEnergyMethodSpecify
-    SpEnvRadEnergyValues
-    SpEnvRadiationEnvironment
-    SpEnvMagFieldGfx
-    SpEnvScenExtVO
-    SpEnvScenSpaceEnvironment
-    VeSpEnvRadDoseRateElement
-    VeSpEnvRadDoseRateCollection
-    SpEnvSAAContour
-    VeSpEnvVehTemperature
-    VeSpEnvParticleFlux
-    VeSpEnvMagneticField
-    VeSpEnvRadiation
-    VeSpEnvMagFieldLine
-    VeSpEnvGraphics
-    VeSpEnvSpaceEnvironment
-    CvSelectedGridPoint
-    CvGridPointSelection
+    VehiclePropagatorSGP4CommonTasks
+    VehicleSGP4AutoUpdateProperties
+    VehicleSGP4AutoUpdateFileSource
+    VehicleSGP4AutoUpdateOnlineSource
+    VehicleSGP4AutoUpdate
+    VehicleSGP4PropagatorSettings
+    VehicleGPSAutoUpdateProperties
+    VehicleGPSAutoUpdateFileSource
+    VehicleGPSAutoUpdateOnlineSource
+    VehicleGPSAutoUpdate
+    VehicleGPSSpecifyAlmanac
+    VehicleGPSAlmanacProperties
+    VehicleGPSAlmanacPropertiesSEM
+    VehicleGPSAlmanacPropertiesYUMA
+    VehicleGPSAlmanacPropertiesSP3
+    VehicleGPSElementCollection
+    VehicleGPSElement
+    SpaceEnvironmentRadEnergyMethodSpecify
+    SpaceEnvironmentRadEnergyValues
+    SpaceEnvironmentRadiationEnvironment
+    SpaceEnvironmentMagnitudeFieldGfx
+    SpaceEnvironmentScenarioExtVO
+    ScenSpaceEnvironment
+    VehicleSpaceEnvironmentRadDoseRateElement
+    VehicleSpaceEnvironmentRadDoseRateCollection
+    SpaceEnvironmentSAAContour
+    VehicleSpaceEnvironmentVehTemperature
+    VehicleSpaceEnvironmentParticleFlux
+    VehicleSpaceEnvironmentMagneticField
+    VehicleSpaceEnvironmentRadiation
+    VehicleSpaceEnvironmentMagnitudeFieldLine
+    VehicleSpaceEnvironmentGraphics
+    VehicleSpaceEnvironment
+    CoverageSelectedGridPoint
+    CoverageGridPointSelection
     CelestialBodyCollection
     CelestialBodyInfo
     StkCentralBodyEllipsoid
     StkCentralBody
     StkCentralBodyCollection
-    FmDefSystemResponseTime
-    FmDefAgeOfData
-    FmDefScalarCalculation
-    VePropagator11ParamDescriptor
-    VePropagator11ParamDescriptorCollection
-    VePropagator11Param
-    VePropagatorSP3File
-    VePropagatorSP3FileCollection
-    VePropagatorSP3
-    VeEphemerisStkBinaryExportTool
+    FigureOfMeritDefinitionSystemResponseTime
+    FigureOfMeritDefinitionAgeOfData
+    FigureOfMeritDefinitionScalarCalculation
+    VehiclePropagator11ParamDescriptor
+    VehiclePropagator11ParamDescriptorCollection
+    VehiclePropagator11Param
+    VehiclePropagatorSP3File
+    VehiclePropagatorSP3FileCollection
+    VehiclePropagatorSP3
+    VehicleEphemerisStkBinaryExportTool
     OrbitState
     OrbitStateCoordinateSystem
     OrbitStateCartesian
@@ -2209,21 +2209,21 @@ Classes
     SphericalFPAHorizontal
     SphericalFPAVertical
     OrbitStateSpherical
-    VeGfxTimeComponentsEventElement
-    VeGfxTimeComponentsEventCollectionElement
-    VeGfxTimeComponentsCollection
-    VeGfxAttributesTimeComponents
+    VehicleGfxTimeComponentsEventElement
+    VehicleGfxTimeComponentsEventCollectionElement
+    VehicleGfxTimeComponentsCollection
+    VehicleGfxAttributesTimeComponents
     StkPreferences
     StkPreferencesVDF
-    VeAttMaximumSlewRate
-    VeAttMaximumSlewAcceleration
-    VeAttSlewConstrained
-    VeAttSlewFixedRate
-    VeAttSlewFixedTime
-    VeAttTargetSlew
+    VehicleAttitudeMaximumSlewRate
+    VehicleAttitudeMaximumSlewAcceleration
+    VehicleAttitudeSlewConstrained
+    VehicleAttitudeSlewFixedRate
+    VehicleAttitudeSlewFixedTime
+    VehicleAttitudeTargetSlew
     MtoVOModelArtic
-    VePropagatorAviator
-    VeEphemerisCCSDSv2ExportTool
+    VehiclePropagatorAviator
+    VehicleEphemerisCCSDSv2ExportTool
     StkPreferencesConnect
     Antenna
     AntennaModel
@@ -2639,14 +2639,14 @@ Classes
     RadarStcAttenuationMapAzimuthRange
     RadarStcAttenuationMapElevationRange
     RadarStcAttenuationPlugin
-    SnPtAlongVector
-    SnPtSchedule
-    AccessCnstrAWBCollection
-    AccessCnstrAWB
+    SensorPointingAlongVector
+    SensorPointingSchedule
+    AccessConstraintAnalysisWorkbenchCollection
+    AccessConstraintAnalysisWorkbench
     VOArticulationFile
-    DrStatisticResult
-    DrTimeVarExtremumResult
-    DrStatistics
+    DataProviderResultStatisticResult
+    DataProviderResultTimeVaryingExtremumResult
+    DataProviderResultStatistics
     VOModelGltfImageBased
     StkObjectCutCopyPasteEventArgs
     StkPreferencesPythonPlugins
@@ -2667,19 +2667,19 @@ Reference
 Interfaces
 ~~~~~~~~~~
 
-.. autoclass:: IDrResult
+.. autoclass:: IDataProviderResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IDataPrvTimeVar
+.. autoclass:: IDataProviderTimeVarying
     :members:
     :exclude-members: __init__
-.. autoclass:: IDataPrvInterval
+.. autoclass:: IDataProviderInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: IDataPrvFixed
+.. autoclass:: IDataProviderFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrStatistics
+.. autoclass:: IDataProviderResultStatistics
     :members:
     :exclude-members: __init__
 .. autoclass:: IDataProviderInfo
@@ -2688,34 +2688,34 @@ Interfaces
 .. autoclass:: IDataProviderCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrDataSet
+.. autoclass:: IDataProviderResultDataSet
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrDataSetCollection
+.. autoclass:: IDataProviderResultDataSetCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrInterval
+.. autoclass:: IDataProviderResultInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrIntervalCollection
+.. autoclass:: IDataProviderResultIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrSubSection
+.. autoclass:: IDataProviderResultSubSection
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrSubSectionCollection
+.. autoclass:: IDataProviderResultSubSectionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrTextMessage
+.. autoclass:: IDataProviderResultTextMessage
     :members:
     :exclude-members: __init__
-.. autoclass:: IDataPrvElement
+.. autoclass:: IDataProviderElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IDataPrvElements
+.. autoclass:: IDataProviderElements
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrTimeArrayElements
+.. autoclass:: IDataProviderResultTimeArrayElements
     :members:
     :exclude-members: __init__
 .. autoclass:: IDataProvider
@@ -2727,10 +2727,10 @@ Interfaces
 .. autoclass:: IDataProviderGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrStatisticResult
+.. autoclass:: IDataProviderResultStatisticResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IDrTimeVarExtremumResult
+.. autoclass:: IDataProviderResultTimeVaryingExtremumResult
     :members:
     :exclude-members: __init__
 .. autoclass:: IVODataDisplayCollection
@@ -2769,19 +2769,19 @@ Interfaces
 .. autoclass:: IImmutableIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefinition
+.. autoclass:: IFigureOfMeritDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefCompute
+.. autoclass:: IFigureOfMeritDefinitionCompute
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefAccessConstraint
+.. autoclass:: IFigureOfMeritDefinitionAccessConstraint
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGraphics
+.. autoclass:: IFigureOfMeritGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvAssetListCollection
+.. autoclass:: ICoverageAssetListCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IAvailableFeatures
@@ -2793,19 +2793,19 @@ Interfaces
 .. autoclass:: IStkPreferences
     :members:
     :exclude-members: __init__
-.. autoclass:: IOnePtAccessConstraint
+.. autoclass:: IOnePointAccessConstraint
     :members:
     :exclude-members: __init__
-.. autoclass:: IOnePtAccessConstraintCollection
+.. autoclass:: IOnePointAccessConstraintCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IOnePtAccessResult
+.. autoclass:: IOnePointAccessResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IOnePtAccessResultCollection
+.. autoclass:: IOnePointAccessResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IOnePtAccess
+.. autoclass:: IOnePointAccess
     :members:
     :exclude-members: __init__
 .. autoclass:: IKeyValueCollection
@@ -2817,13 +2817,13 @@ Interfaces
 .. autoclass:: IStkObjectCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IObjectCoverageFOM
+.. autoclass:: IObjectCoverageFigureOfMerit
     :members:
     :exclude-members: __init__
 .. autoclass:: IStkObjectCoverage
     :members:
     :exclude-members: __init__
-.. autoclass:: IStdMil2525bSymbols
+.. autoclass:: IStdMilitary2525bSymbols
     :members:
     :exclude-members: __init__
 .. autoclass:: IStkObjectRoot
@@ -2865,7 +2865,7 @@ Interfaces
 .. autoclass:: IDisplayTimesData
     :members:
     :exclude-members: __init__
-.. autoclass:: IDisplayTm
+.. autoclass:: IDisplayTime
     :members:
     :exclude-members: __init__
 .. autoclass:: IBasicAzElMask
@@ -2898,13 +2898,13 @@ Interfaces
 .. autoclass:: ILifetimeInformation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLeadTrailData
+.. autoclass:: IVehicleLeadTrailData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLeadTrailDataFraction
+.. autoclass:: IVehicleLeadTrailDataFraction
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLeadTrailDataTime
+.. autoclass:: IVehicleLeadTrailDataTime
     :members:
     :exclude-members: __init__
 .. autoclass:: IStkCentralBodyEllipsoid
@@ -2916,52 +2916,52 @@ Interfaces
 .. autoclass:: IAccessConstraint
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrTimeSlipRange
+.. autoclass:: IAccessConstraintTimeSlipRange
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrZone
+.. autoclass:: IAccessConstraintZone
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrExclZonesCollection
+.. autoclass:: IAccessConstraintExclZonesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrThirdBody
+.. autoclass:: IAccessConstraintThirdBody
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrIntervals
+.. autoclass:: IAccessConstraintIntervals
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrObjExAngle
+.. autoclass:: IAccessConstraintObjExAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrCondition
+.. autoclass:: IAccessConstraintCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrCbObstruction
+.. autoclass:: IAccessConstraintCentralBodyObstruction
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrAngle
+.. autoclass:: IAccessConstraintAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrMinMax
+.. autoclass:: IAccessConstraintMinMax
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrPluginMinMax
+.. autoclass:: IAccessConstraintPluginMinMax
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrCrdnCn
+.. autoclass:: IAccessConstraintCrdnConstellation
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrBackground
+.. autoclass:: IAccessConstraintBackground
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrGroundTrack
+.. autoclass:: IAccessConstraintGroundTrack
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrAWB
+.. autoclass:: IAccessConstraintAnalysisWorkbench
     :members:
     :exclude-members: __init__
-.. autoclass:: IAccessCnstrAWBCollection
+.. autoclass:: IAccessConstraintAnalysisWorkbenchCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: ILevelAttribute
@@ -2982,16 +2982,16 @@ Interfaces
 .. autoclass:: IVOModelGltfImageBased
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEllipseDataElement
+.. autoclass:: IVehicleEllipseDataElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEllipseDataCollection
+.. autoclass:: IVehicleEllipseDataCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGroundEllipseElement
+.. autoclass:: IVehicleGroundEllipseElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGroundEllipsesCollection
+.. autoclass:: IVehicleGroundEllipsesCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IVODataDisplayElement
@@ -3024,7 +3024,7 @@ Interfaces
 .. autoclass:: IVOOffsetRotate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOOffsetTrans
+.. autoclass:: IVOOffsetTransformation
     :members:
     :exclude-members: __init__
 .. autoclass:: IVOOffsetAttach
@@ -3045,10 +3045,10 @@ Interfaces
 .. autoclass:: IVOMarker
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOModelTrans
+.. autoclass:: IVOModelTransformation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOModelTransCollection
+.. autoclass:: IVOModelTransformationCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IVOModelArtic
@@ -3069,28 +3069,28 @@ Interfaces
 .. autoclass:: IVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IPtTargetVOModel
+.. autoclass:: IPointTargetVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVORefCrdn
+.. autoclass:: IVOReferenceCrdn
     :members:
     :exclude-members: __init__
-.. autoclass:: IVORefCrdnVector
+.. autoclass:: IVOReferenceCrdnVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVORefCrdnAxes
+.. autoclass:: IVOReferenceCrdnAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVORefCrdnAngle
+.. autoclass:: IVOReferenceCrdnAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVORefCrdnPoint
+.. autoclass:: IVOReferenceCrdnPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IVORefCrdnPlane
+.. autoclass:: IVOReferenceCrdnPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: IVORefCrdnCollection
+.. autoclass:: IVOReferenceCrdnCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IVOVector
@@ -3237,13 +3237,13 @@ Interfaces
 .. autoclass:: ISpatialState
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpatialInfo
+.. autoclass:: IVehicleSpatialInfo
     :members:
     :exclude-members: __init__
 .. autoclass:: IProvideSpatialInfo
     :members:
     :exclude-members: __init__
-.. autoclass:: ISpEnvScenSpaceEnvironment
+.. autoclass:: IScenSpaceEnvironment
     :members:
     :exclude-members: __init__
 .. autoclass:: IRadarClutterMap
@@ -3258,16 +3258,16 @@ Interfaces
 .. autoclass:: ILaserEnvironment
     :members:
     :exclude-members: __init__
-.. autoclass:: IScGraphics
+.. autoclass:: IScenarioGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IScEarthData
+.. autoclass:: IScenarioEarthData
     :members:
     :exclude-members: __init__
-.. autoclass:: IScAnimationTimePeriod
+.. autoclass:: IScenarioAnimationTimePeriod
     :members:
     :exclude-members: __init__
-.. autoclass:: IScAnimation
+.. autoclass:: IScenarioAnimation
     :members:
     :exclude-members: __init__
 .. autoclass:: ITerrain
@@ -3288,16 +3288,16 @@ Interfaces
 .. autoclass:: ITilesetCollection3D
     :members:
     :exclude-members: __init__
-.. autoclass:: IScGenDb
+.. autoclass:: IScenarioGenDatabase
     :members:
     :exclude-members: __init__
-.. autoclass:: IScGenDbCollection
+.. autoclass:: IScenarioGenDatabaseCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ISc3dFont
+.. autoclass:: IScenario3dFont
     :members:
     :exclude-members: __init__
-.. autoclass:: IScVO
+.. autoclass:: IScenarioVO
     :members:
     :exclude-members: __init__
 .. autoclass:: ITimePeriod
@@ -3315,22 +3315,22 @@ Interfaces
 .. autoclass:: IAccessAdvanced
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnAccessAdvanced
+.. autoclass:: ISensorAccessAdvanced
     :members:
     :exclude-members: __init__
-.. autoclass:: IRfCoefficients
+.. autoclass:: IRefractionCoefficients
     :members:
     :exclude-members: __init__
-.. autoclass:: IRfModelBase
+.. autoclass:: IRefractionModelBase
     :members:
     :exclude-members: __init__
-.. autoclass:: IRfModelEffectiveRadiusMethod
+.. autoclass:: IRefractionModelEffectiveRadiusMethod
     :members:
     :exclude-members: __init__
-.. autoclass:: IRfModelITURP8344
+.. autoclass:: IRefractionModelITURP8344
     :members:
     :exclude-members: __init__
-.. autoclass:: IRfModelSCFMethod
+.. autoclass:: IRefractionModelSCFMethod
     :members:
     :exclude-members: __init__
 .. autoclass:: IScheduleTime
@@ -3342,124 +3342,124 @@ Interfaces
 .. autoclass:: IDisplayDistance
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnProjDisplayDistance
+.. autoclass:: ISensorProjectionDisplayDistance
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnProjection
+.. autoclass:: ISensorProjection
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnGraphics
+.. autoclass:: ISensorGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnVOPulse
+.. autoclass:: ISensorVOPulse
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnVOOffset
+.. autoclass:: ISensorVOOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnVOProjectionElement
+.. autoclass:: ISensorVOProjectionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnVOSpaceProjectionCollection
+.. autoclass:: ISensorVOSpaceProjectionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnVOTargetProjectionCollection
+.. autoclass:: ISensorVOTargetProjectionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnVO
+.. autoclass:: ISensorVO
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPattern
+.. autoclass:: ISensorPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnSimpleConicPattern
+.. autoclass:: ISensorSimpleConicPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnSARPattern
+.. autoclass:: ISensorSARPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnRectangularPattern
+.. autoclass:: ISensorRectangularPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnHalfPowerPattern
+.. autoclass:: ISensorHalfPowerPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnCustomPattern
+.. autoclass:: ISensorCustomPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnComplexConicPattern
+.. autoclass:: ISensorComplexConicPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnEOIRRadiometricPair
+.. autoclass:: ISensorEOIRRadiometricPair
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnEOIRSensitivityCollection
+.. autoclass:: ISensorEOIRSensitivityCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnEOIRSaturationCollection
+.. autoclass:: ISensorEOIRSaturationCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnEOIRBand
+.. autoclass:: ISensorEOIRBand
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnEOIRBandCollection
+.. autoclass:: ISensorEOIRBandCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnEOIRPattern
+.. autoclass:: ISensorEOIRPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtTrgtBsight
+.. autoclass:: ISensorPointingTargetedBoresight
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtTrgtBsightTrack
+.. autoclass:: ISensorPointingTargetedBoresightTrack
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtTrgtBsightFixed
+.. autoclass:: ISensorPointingTargetedBoresightFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnTarget
+.. autoclass:: ISensorTarget
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnTargetCollection
+.. autoclass:: ISensorTargetCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPointing
+.. autoclass:: ISensorPointing
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtTargeted
+.. autoclass:: ISensorPointingTargeted
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtSpinning
+.. autoclass:: ISensorPointingSpinning
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtGrazingAlt
+.. autoclass:: ISensorPointingGrazingAltitude
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtFixedAxes
+.. autoclass:: ISensorPointingFixedAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtFixed
+.. autoclass:: ISensorPointingFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtExternal
+.. autoclass:: ISensorPointingExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPt3DModel
+.. autoclass:: ISensorPointing3DModel
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtAlongVector
+.. autoclass:: ISensorPointingAlongVector
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnPtSchedule
+.. autoclass:: ISensorPointingSchedule
     :members:
     :exclude-members: __init__
 .. autoclass:: IAzElMaskData
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnAzElMaskFile
+.. autoclass:: ISensorAzElMaskFile
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnCommonTasks
+.. autoclass:: ISensorCommonTasks
     :members:
     :exclude-members: __init__
 .. autoclass:: ILocationCrdnPoint
@@ -3468,10 +3468,10 @@ Interfaces
 .. autoclass:: ISensor
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnProjConstantAlt
+.. autoclass:: ISensorProjectionConstantAltitude
     :members:
     :exclude-members: __init__
-.. autoclass:: ISnProjObjectAlt
+.. autoclass:: ISensorProjectionObjectAltitude
     :members:
     :exclude-members: __init__
 .. autoclass:: IAtmosphere
@@ -3510,16 +3510,16 @@ Interfaces
 .. autoclass:: IAreaTypePatternCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IATCommonTasks
+.. autoclass:: IAreaTargetCommonTasks
     :members:
     :exclude-members: __init__
 .. autoclass:: IAreaTypeData
     :members:
     :exclude-members: __init__
-.. autoclass:: IATGraphics
+.. autoclass:: IAreaTargetGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IATVO
+.. autoclass:: IAreaTargetVO
     :members:
     :exclude-members: __init__
 .. autoclass:: IAreaTarget
@@ -3528,13 +3528,13 @@ Interfaces
 .. autoclass:: IAreaTypePattern
     :members:
     :exclude-members: __init__
-.. autoclass:: IPlPosFile
+.. autoclass:: IPlanetPositionFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IPlPosCentralBody
+.. autoclass:: IPlanetPositionCentralBody
     :members:
     :exclude-members: __init__
-.. autoclass:: IPlCommonTasks
+.. autoclass:: IPlanetCommonTasks
     :members:
     :exclude-members: __init__
 .. autoclass:: IPositionSourceData
@@ -3543,31 +3543,31 @@ Interfaces
 .. autoclass:: IOrbitDisplayData
     :members:
     :exclude-members: __init__
-.. autoclass:: IPlOrbitDisplayTime
+.. autoclass:: IPlanetOrbitDisplayTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IPlGraphics
+.. autoclass:: IPlanetGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IPlVO
+.. autoclass:: IPlanetVO
     :members:
     :exclude-members: __init__
 .. autoclass:: IPlanet
     :members:
     :exclude-members: __init__
-.. autoclass:: IStGraphics
+.. autoclass:: IStarGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IStVO
+.. autoclass:: IStarVO
     :members:
     :exclude-members: __init__
 .. autoclass:: IStar
     :members:
     :exclude-members: __init__
-.. autoclass:: IFaGraphics
+.. autoclass:: IFacilityGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IFaVO
+.. autoclass:: IFacilityVO
     :members:
     :exclude-members: __init__
 .. autoclass:: IFacility
@@ -4578,784 +4578,784 @@ Interfaces
 .. autoclass:: ISRPModelPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPDragModelPluginSettings
+.. autoclass:: IVehicleHPOPDragModelPluginSettings
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPDragModel
+.. autoclass:: IVehicleHPOPDragModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPDragModelSpherical
+.. autoclass:: IVehicleHPOPDragModelSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPDragModelPlugin
+.. autoclass:: IVehicleHPOPDragModelPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeDuration
+.. autoclass:: IVehicleDuration
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRealtimeCartesianPoints
+.. autoclass:: IVehicleRealtimeCartesianPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRealtimeLLAHPSPoints
+.. autoclass:: IVehicleRealtimeLLAHPSPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRealtimeLLAPoints
+.. autoclass:: IVehicleRealtimeLLAPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRealtimeUTMPoints
+.. autoclass:: IVehicleRealtimeUTMPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSElement
+.. autoclass:: IVehicleGPSElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSElementCollection
+.. autoclass:: IVehicleGPSElementCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPSRPModel
+.. autoclass:: IVehicleHPOPSRPModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeThirdBodyGravityElement
+.. autoclass:: IVehicleThirdBodyGravityElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeThirdBodyGravityCollection
+.. autoclass:: IVehicleThirdBodyGravityCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4LoadData
+.. autoclass:: IVehicleSGP4LoadData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4OnlineLoad
+.. autoclass:: IVehicleSGP4OnlineLoad
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4OnlineAutoLoad
+.. autoclass:: IVehicleSGP4OnlineAutoLoad
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4LoadFile
+.. autoclass:: IVehicleSGP4LoadFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4Segment
+.. autoclass:: IVehicleSGP4Segment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorSGP4CommonTasks
+.. autoclass:: IVehiclePropagatorSGP4CommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4AutoUpdateProperties
+.. autoclass:: IVehicleSGP4AutoUpdateProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4AutoUpdateFileSource
+.. autoclass:: IVehicleSGP4AutoUpdateFileSource
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4AutoUpdateOnlineSource
+.. autoclass:: IVehicleSGP4AutoUpdateOnlineSource
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4AutoUpdate
+.. autoclass:: IVehicleSGP4AutoUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4PropagatorSettings
+.. autoclass:: IVehicleSGP4PropagatorSettings
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSGP4SegmentCollection
+.. autoclass:: IVehicleSGP4SegmentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeInitialState
+.. autoclass:: IVehicleInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPCentralBodyGravity
+.. autoclass:: IVehicleHPOPCentralBodyGravity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRadiationPressure
+.. autoclass:: IVehicleRadiationPressure
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPSolarRadiationPressure
+.. autoclass:: IVehicleHPOPSolarRadiationPressure
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSolarFluxGeoMagEnterManually
+.. autoclass:: IVehicleSolarFluxGeoMagnitudeEnterManually
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSolarFluxGeoMagUseFile
+.. autoclass:: IVehicleSolarFluxGeoMagnitudeUseFile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSolarFluxGeoMag
+.. autoclass:: IVehicleSolarFluxGeoMagnitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPForceModelDrag
+.. autoclass:: IVehicleHPOPForceModelDrag
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPForceModelDragOptions
+.. autoclass:: IVehicleHPOPForceModelDragOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPSolarRadiationPressureOptions
+.. autoclass:: IVehicleHPOPSolarRadiationPressureOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeStatic
+.. autoclass:: IVehicleStatic
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSolidTides
+.. autoclass:: IVehicleSolidTides
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeOceanTides
+.. autoclass:: IVehicleOceanTides
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePluginSettings
+.. autoclass:: IVehiclePluginSettings
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePluginPropagator
+.. autoclass:: IVehiclePluginPropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPForceModelMoreOptions
+.. autoclass:: IVehicleHPOPForceModelMoreOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEclipsingBodies
+.. autoclass:: IVehicleEclipsingBodies
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeHPOPForceModel
+.. autoclass:: IVehicleHPOPForceModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeStepSizeControl
+.. autoclass:: IVehicleStepSizeControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeTimeRegularization
+.. autoclass:: IVehicleTimeRegularization
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeInterpolation
+.. autoclass:: IVehicleInterpolation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeIntegrator
+.. autoclass:: IVehicleIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGravity
+.. autoclass:: IVehicleGravity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePositionVelocityElement
+.. autoclass:: IVehiclePositionVelocityElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePositionVelocityCollection
+.. autoclass:: IVehiclePositionVelocityCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeCorrelationListElement
+.. autoclass:: IVehicleCorrelationListElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeCorrelationListCollection
+.. autoclass:: IVehicleCorrelationListCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeConsiderAnalysisCollectionElement
+.. autoclass:: IVehicleConsiderAnalysisCollectionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeConsiderAnalysisCollection
+.. autoclass:: IVehicleConsiderAnalysisCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeCovariance
+.. autoclass:: IVehicleCovariance
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeJxInitialState
+.. autoclass:: IVehicleJxInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLOPCentralBodyGravity
+.. autoclass:: IVehicleLOPCentralBodyGravity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeThirdBodyGravity
+.. autoclass:: IVehicleThirdBodyGravity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeExpDensModelParams
+.. autoclass:: IVehicleExpDensModelParams
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAdvanced
+.. autoclass:: IVehicleAdvanced
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLOPForceModelDrag
+.. autoclass:: IVehicleLOPForceModelDrag
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLOPSolarRadiationPressure
+.. autoclass:: IVehicleLOPSolarRadiationPressure
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePhysicalData
+.. autoclass:: IVehiclePhysicalData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLOPForceModel
+.. autoclass:: IVehicleLOPForceModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSPICESegment
+.. autoclass:: IVehicleSPICESegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSegmentsCollection
+.. autoclass:: IVehicleSegmentsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagator
+.. autoclass:: IVehiclePropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorHPOP
+.. autoclass:: IVehiclePropagatorHPOP
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorJ2Perturbation
+.. autoclass:: IVehiclePropagatorJ2Perturbation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorJ4Perturbation
+.. autoclass:: IVehiclePropagatorJ4Perturbation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorLOP
+.. autoclass:: IVehiclePropagatorLOP
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorSGP4
+.. autoclass:: IVehiclePropagatorSGP4
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorSPICE
+.. autoclass:: IVehiclePropagatorSPICE
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorStkExternal
+.. autoclass:: IVehiclePropagatorStkExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorTwoBody
+.. autoclass:: IVehiclePropagatorTwoBody
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorUserExternal
+.. autoclass:: IVehiclePropagatorUserExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLvInitialState
+.. autoclass:: IVehicleLaunchVehicleInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorSimpleAscent
+.. autoclass:: IVehiclePropagatorSimpleAscent
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeWayPtAltitudeRef
+.. autoclass:: IVehicleWaypointAltitudeReference
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeWayPtAltitudeRefTerrain
+.. autoclass:: IVehicleWaypointAltitudeReferenceTerrain
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeWaypointsElement
+.. autoclass:: IVehicleWaypointsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeWaypointsCollection
+.. autoclass:: IVehicleWaypointsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorGreatArc
+.. autoclass:: IVehiclePropagatorGreatArc
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorAviator
+.. autoclass:: IVehiclePropagatorAviator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLaunchLLA
+.. autoclass:: IVehicleLaunchLLA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLaunchLLR
+.. autoclass:: IVehicleLaunchLLR
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeImpactLLA
+.. autoclass:: IVehicleImpactLLA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeImpactLLR
+.. autoclass:: IVehicleImpactLLR
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLaunchControlFixedApogeeAlt
+.. autoclass:: IVehicleLaunchControlFixedApogeeAltitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLaunchControlFixedDeltaV
+.. autoclass:: IVehicleLaunchControlFixedDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLaunchControlFixedDeltaVMinEcc
+.. autoclass:: IVehicleLaunchControlFixedDeltaVMinEccentricity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLaunchControlFixedTimeOfFlight
+.. autoclass:: IVehicleLaunchControlFixedTimeOfFlight
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeImpactLocationLaunchAzEl
+.. autoclass:: IVehicleImpactLocationLaunchAzEl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeImpact
+.. autoclass:: IVehicleImpact
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLaunchControl
+.. autoclass:: IVehicleLaunchControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeImpactLocationPoint
+.. autoclass:: IVehicleImpactLocationPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeLaunch
+.. autoclass:: IVehicleLaunch
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeImpactLocation
+.. autoclass:: IVehicleImpactLocation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorBallistic
+.. autoclass:: IVehiclePropagatorBallistic
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRealtimePointBuilder
+.. autoclass:: IVehicleRealtimePointBuilder
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorRealtime
+.. autoclass:: IVehiclePropagatorRealtime
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSAlmanacProperties
+.. autoclass:: IVehicleGPSAlmanacProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSAlmanacPropertiesYUMA
+.. autoclass:: IVehicleGPSAlmanacPropertiesYUMA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSAlmanacPropertiesSEM
+.. autoclass:: IVehicleGPSAlmanacPropertiesSEM
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSAlmanacPropertiesSP3
+.. autoclass:: IVehicleGPSAlmanacPropertiesSP3
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSSpecifyAlmanac
+.. autoclass:: IVehicleGPSSpecifyAlmanac
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSAutoUpdateProperties
+.. autoclass:: IVehicleGPSAutoUpdateProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSAutoUpdateFileSource
+.. autoclass:: IVehicleGPSAutoUpdateFileSource
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSAutoUpdateOnlineSource
+.. autoclass:: IVehicleGPSAutoUpdateOnlineSource
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGPSAutoUpdate
+.. autoclass:: IVehicleGPSAutoUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorGPS
+.. autoclass:: IVehiclePropagatorGPS
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagator11ParamDescriptor
+.. autoclass:: IVehiclePropagator11ParamDescriptor
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagator11ParamDescriptorCollection
+.. autoclass:: IVehiclePropagator11ParamDescriptorCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagator11Param
+.. autoclass:: IVehiclePropagator11Param
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorSP3File
+.. autoclass:: IVehiclePropagatorSP3File
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorSP3FileCollection
+.. autoclass:: IVehiclePropagatorSP3FileCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropagatorSP3
+.. autoclass:: IVehiclePropagatorSP3
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeTargetPointingElement
+.. autoclass:: IVehicleTargetPointingElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAccessAdvanced
+.. autoclass:: IVehicleAccessAdvanced
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttTargetSlew
+.. autoclass:: IVehicleAttitudeTargetSlew
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeTorque
+.. autoclass:: IVehicleTorque
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeIntegratedAttitude
+.. autoclass:: IVehicleIntegratedAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVector
+.. autoclass:: IVehicleVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRateOffset
+.. autoclass:: IVehicleRateOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttProfile
+.. autoclass:: IVehicleAttitudeProfile
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileAlignedAndConstrained
+.. autoclass:: IVehicleProfileAlignedAndConstrained
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileInertial
+.. autoclass:: IVehicleProfileInertial
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileYawToNadir
+.. autoclass:: IVehicleProfileYawToNadir
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileConstraintOffset
+.. autoclass:: IVehicleProfileConstraintOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileAlignmentOffset
+.. autoclass:: IVehicleProfileAlignmentOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileFixedInAxes
+.. autoclass:: IVehicleProfileFixedInAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfilePrecessingSpin
+.. autoclass:: IVehicleProfilePrecessingSpin
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileSpinAboutXXX
+.. autoclass:: IVehicleProfileSpinAboutXXX
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileSpinning
+.. autoclass:: IVehicleProfileSpinning
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileCoordinatedTurn
+.. autoclass:: IVehicleProfileCoordinatedTurn
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeScheduleTimesElement
+.. autoclass:: IVehicleScheduleTimesElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeScheduleTimesCollection
+.. autoclass:: IVehicleScheduleTimesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeTargetTimes
+.. autoclass:: IVehicleTargetTimes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeTargetPointingIntervalCollection
+.. autoclass:: IVehicleTargetPointingIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeTargetPointingCollection
+.. autoclass:: IVehicleTargetPointingCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePointing
+.. autoclass:: IVehiclePointing
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttPointing
+.. autoclass:: IVehicleAttitudePointing
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeStandardBasic
+.. autoclass:: IVehicleStandardBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttExternal
+.. autoclass:: IVehicleAttitudeExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttitude
+.. autoclass:: IVehicleAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttitudeRealTimeDataReference
+.. autoclass:: IVehicleAttitudeRealTimeDataReference
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttitudeRealTime
+.. autoclass:: IVehicleAttitudeRealTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttitudeStandard
+.. autoclass:: IVehicleAttitudeStandard
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeTrajectoryAttitudeStandard
+.. autoclass:: IVehicleTrajectoryAttitudeStandard
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeOrbitAttitudeStandard
+.. autoclass:: IVehicleOrbitAttitudeStandard
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRouteAttitudeStandard
+.. autoclass:: IVehicleRouteAttitudeStandard
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileGPS
+.. autoclass:: IVehicleProfileGPS
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttTrendControlAviator
+.. autoclass:: IVehicleAttitudeTrendControlAviator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeProfileAviator
+.. autoclass:: IVehicleProfileAviator
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxIntervalsCollection
+.. autoclass:: IVehicleGfxIntervalsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxWaypointMarkersElement
+.. autoclass:: IVehicleGfxWaypointMarkersElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxWaypointMarkersCollection
+.. autoclass:: IVehicleGfxWaypointMarkersCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxWaypointMarker
+.. autoclass:: IVehicleGfxWaypointMarker
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxPassResolution
+.. autoclass:: IVehicleGfxPassResolution
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxRouteResolution
+.. autoclass:: IVehicleGfxRouteResolution
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTrajectoryResolution
+.. autoclass:: IVehicleGfxTrajectoryResolution
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxElevationsElement
+.. autoclass:: IVehicleGfxElevationsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxElevationsCollection
+.. autoclass:: IVehicleGfxElevationsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxElevContours
+.. autoclass:: IVehicleGfxElevContours
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxSAA
+.. autoclass:: IVehicleGfxSAA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxPassShowPasses
+.. autoclass:: IVehicleGfxPassShowPasses
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxPass
+.. autoclass:: IVehicleGfxPass
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxPasses
+.. autoclass:: IVehicleGfxPasses
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeEventTypeLine
+.. autoclass:: IVehicleGfxTimeEventTypeLine
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeEventTypeMarker
+.. autoclass:: IVehicleGfxTimeEventTypeMarker
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeEventTypeText
+.. autoclass:: IVehicleGfxTimeEventTypeText
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeEventType
+.. autoclass:: IVehicleGfxTimeEventType
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeEventsElement
+.. autoclass:: IVehicleGfxTimeEventsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeEventsCollection
+.. autoclass:: IVehicleGfxTimeEventsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxGroundEllipsesElement
+.. autoclass:: IVehicleGfxGroundEllipsesElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxGroundEllipsesCollection
+.. autoclass:: IVehicleGfxGroundEllipsesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxLeadTrailData
+.. autoclass:: IVehicleGfxLeadTrailData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTrajectoryPassData
+.. autoclass:: IVehicleGfxTrajectoryPassData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxOrbitPassData
+.. autoclass:: IVehicleGfxOrbitPassData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxRoutePassData
+.. autoclass:: IVehicleGfxRoutePassData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxLightingElement
+.. autoclass:: IVehicleGfxLightingElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxLighting
+.. autoclass:: IVehicleGfxLighting
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxLine
+.. autoclass:: IVehicleGfxLine
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributes
+.. autoclass:: IVehicleGfxAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesBasic
+.. autoclass:: IVehicleGfxAttributesBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesDisplayState
+.. autoclass:: IVehicleGfxAttributesDisplayState
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesAccess
+.. autoclass:: IVehicleGfxAttributesAccess
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesTrajectory
+.. autoclass:: IVehicleGfxAttributesTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesOrbit
+.. autoclass:: IVehicleGfxAttributesOrbit
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesRoute
+.. autoclass:: IVehicleGfxAttributesRoute
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesRealtime
+.. autoclass:: IVehicleGfxAttributesRealtime
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxElevationGroundElevation
+.. autoclass:: IVehicleGfxElevationGroundElevation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxElevationSwathHalfWidth
+.. autoclass:: IVehicleGfxElevationSwathHalfWidth
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxElevationVehicleHalfAngle
+.. autoclass:: IVehicleGfxElevationVehicleHalfAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxElevation
+.. autoclass:: IVehicleGfxElevation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxSwath
+.. autoclass:: IVehicleGfxSwath
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxInterval
+.. autoclass:: IVehicleGfxInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesCustom
+.. autoclass:: IVehicleGfxAttributesCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeComponentsElement
+.. autoclass:: IVehicleGfxTimeComponentsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeComponentsEventElement
+.. autoclass:: IVehicleGfxTimeComponentsEventElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeComponentsEventCollectionElement
+.. autoclass:: IVehicleGfxTimeComponentsEventCollectionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxTimeComponentsCollection
+.. autoclass:: IVehicleGfxTimeComponentsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeGfxAttributesTimeComponents
+.. autoclass:: IVehicleGfxAttributesTimeComponents
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeTrajectoryVOModel
+.. autoclass:: IVehicleTrajectoryVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRouteVOModel
+.. autoclass:: IVehicleRouteVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOLeadTrailData
+.. autoclass:: IVehicleVOLeadTrailData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSystemsElementBase
+.. autoclass:: IVehicleVOSystemsElementBase
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSystemsElement
+.. autoclass:: IVehicleVOSystemsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSystemsSpecialElement
+.. autoclass:: IVehicleVOSystemsSpecialElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSystemsCollection
+.. autoclass:: IVehicleVOSystemsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVODropLinePosItem
+.. autoclass:: IVehicleVODropLinePositionItem
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVODropLinePosItemCollection
+.. autoclass:: IVehicleVODropLinePositionItemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVODropLinePathItem
+.. autoclass:: IVehicleVODropLinePathItem
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVODropLinePathItemCollection
+.. autoclass:: IVehicleVODropLinePathItemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOOrbitDropLines
+.. autoclass:: IVehicleVOOrbitDropLines
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVORouteDropLines
+.. autoclass:: IVehicleVORouteDropLines
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTrajectoryDropLines
+.. autoclass:: IVehicleVOTrajectoryDropLines
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOProximityAreaObject
+.. autoclass:: IVehicleVOProximityAreaObject
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOEllipsoid
+.. autoclass:: IVehicleVOEllipsoid
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOControlBox
+.. autoclass:: IVehicleVOControlBox
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBearingBox
+.. autoclass:: IVehicleVOBearingBox
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBearingEllipse
+.. autoclass:: IVehicleVOBearingEllipse
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOLineOfBearing
+.. autoclass:: IVehicleVOLineOfBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOGeoBox
+.. autoclass:: IVehicleVOGeoBox
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOProximity
+.. autoclass:: IVehicleVOProximity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVORouteProximity
+.. autoclass:: IVehicleVORouteProximity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOOrbitProximity
+.. autoclass:: IVehicleVOOrbitProximity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTrajectoryProximity
+.. autoclass:: IVehicleVOTrajectoryProximity
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOElevContours
+.. autoclass:: IVehicleVOElevContours
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSAA
+.. autoclass:: IVehicleVOSAA
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSigmaScaleProbability
+.. autoclass:: IVehicleVOSigmaScaleProbability
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSigmaScaleScale
+.. autoclass:: IVehicleVOSigmaScaleScale
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVODefaultAttributes
+.. autoclass:: IVehicleVODefaultAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOIntervalsElement
+.. autoclass:: IVehicleVOIntervalsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOIntervalsCollection
+.. autoclass:: IVehicleVOIntervalsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOAttributesBasic
+.. autoclass:: IVehicleVOAttributesBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOAttributesIntervals
+.. autoclass:: IVehicleVOAttributesIntervals
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSize
+.. autoclass:: IVehicleVOSize
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOSigmaScale
+.. autoclass:: IVehicleVOSigmaScale
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOAttributes
+.. autoclass:: IVehicleVOAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOCovariancePointingContour
+.. autoclass:: IVehicleVOCovariancePointingContour
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOOrbitPassData
+.. autoclass:: IVehicleVOOrbitPassData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTrajectoryPassData
+.. autoclass:: IVehicleVOTrajectoryPassData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOOrbitTrackData
+.. autoclass:: IVehicleVOOrbitTrackData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTrajectoryTrackData
+.. autoclass:: IVehicleVOTrajectoryTrackData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTickData
+.. autoclass:: IVehicleVOTickData
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOPathTickMarks
+.. autoclass:: IVehicleVOPathTickMarks
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTrajectoryTickMarks
+.. autoclass:: IVehicleVOTrajectoryTickMarks
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTrajectory
+.. autoclass:: IVehicleVOTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTickDataLine
+.. autoclass:: IVehicleVOTickDataLine
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOTickDataPoint
+.. autoclass:: IVehicleVOTickDataPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOOrbitTickMarks
+.. autoclass:: IVehicleVOOrbitTickMarks
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOPass
+.. autoclass:: IVehicleVOPass
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOCovariance
+.. autoclass:: IVehicleVOCovariance
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOVelCovariance
+.. autoclass:: IVehicleVOVelCovariance
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOWaypointMarkersElement
+.. autoclass:: IVehicleVOWaypointMarkersElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOWaypointMarkersCollection
+.. autoclass:: IVehicleVOWaypointMarkersCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVORoute
+.. autoclass:: IVehicleVORoute
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEclipseBodies
+.. autoclass:: IVehicleEclipseBodies
     :members:
     :exclude-members: __init__
 .. autoclass:: IGreatArcGraphics
@@ -5367,94 +5367,94 @@ Interfaces
 .. autoclass:: IGreatArcVehicle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneTemplateDisplayElement
+.. autoclass:: IVehicleVOBPlaneTemplateDisplayElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneTemplateDisplayCollection
+.. autoclass:: IVehicleVOBPlaneTemplateDisplayCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneTemplate
+.. autoclass:: IVehicleVOBPlaneTemplate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneTemplatesCollection
+.. autoclass:: IVehicleVOBPlaneTemplatesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneEvent
+.. autoclass:: IVehicleVOBPlaneEvent
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlanePoint
+.. autoclass:: IVehicleVOBPlanePoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneTargetPointPosition
+.. autoclass:: IVehicleVOBPlaneTargetPointPosition
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneTargetPointPositionCartesian
+.. autoclass:: IVehicleVOBPlaneTargetPointPositionCartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneTargetPointPositionPolar
+.. autoclass:: IVehicleVOBPlaneTargetPointPositionPolar
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneTargetPoint
+.. autoclass:: IVehicleVOBPlaneTargetPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlanePointCollection
+.. autoclass:: IVehicleVOBPlanePointCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneInstance
+.. autoclass:: IVehicleVOBPlaneInstance
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlaneInstancesCollection
+.. autoclass:: IVehicleVOBPlaneInstancesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeVOBPlanes
+.. autoclass:: IVehicleVOBPlanes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvSpaceEnvironment
+.. autoclass:: IVehicleSpaceEnvironment
     :members:
     :exclude-members: __init__
-.. autoclass:: ISaVOModel
+.. autoclass:: ISatelliteVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: ISaVO
+.. autoclass:: ISatelliteVO
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeCentralBodies
+.. autoclass:: IVehicleCentralBodies
     :members:
     :exclude-members: __init__
-.. autoclass:: ISaGraphics
+.. autoclass:: ISatelliteGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeRepeatGroundTrackNumbering
+.. autoclass:: IVehicleRepeatGroundTrackNumbering
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeBreakAngle
+.. autoclass:: IVehicleBreakAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeBreakAngleBreakByLatitude
+.. autoclass:: IVehicleBreakAngleBreakByLatitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeBreakAngleBreakByLongitude
+.. autoclass:: IVehicleBreakAngleBreakByLongitude
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeDefinition
+.. autoclass:: IVehicleDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePassNumbering
+.. autoclass:: IVehiclePassNumbering
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePassNumberingDateOfFirstPass
+.. autoclass:: IVehiclePassNumberingDateOfFirstPass
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePassNumberingFirstPassNum
+.. autoclass:: IVehiclePassNumberingFirstPassNum
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePassBreak
+.. autoclass:: IVehiclePassBreak
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeInertia
+.. autoclass:: IVehicleInertia
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeMassProperties
+.. autoclass:: IVehicleMassProperties
     :members:
     :exclude-members: __init__
 .. autoclass:: IExportToolTimePeriod
@@ -5463,97 +5463,97 @@ Interfaces
 .. autoclass:: IExportToolStepSize
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEphemerisCode500ExportTool
+.. autoclass:: IVehicleEphemerisCode500ExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEphemerisCCSDSExportTool
+.. autoclass:: IVehicleEphemerisCCSDSExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEphemerisStkExportTool
+.. autoclass:: IVehicleEphemerisStkExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeCoordinateAxes
+.. autoclass:: IVehicleCoordinateAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeCoordinateAxesCustom
+.. autoclass:: IVehicleCoordinateAxesCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttitudeExportTool
+.. autoclass:: IVehicleAttitudeExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEphemerisSpiceExportTool
+.. autoclass:: IVehicleEphemerisSpiceExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVePropDefExportTool
+.. autoclass:: IVehiclePropDefinitionExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEphemerisStkBinaryExportTool
+.. autoclass:: IVehicleEphemerisStkBinaryExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeEphemerisCCSDSv2ExportTool
+.. autoclass:: IVehicleEphemerisCCSDSv2ExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: ISaExportTools
+.. autoclass:: ISatelliteExportTools
     :members:
     :exclude-members: __init__
 .. autoclass:: ISatellite
     :members:
     :exclude-members: __init__
-.. autoclass:: ILvGraphics
+.. autoclass:: ILaunchVehicleGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: ILvVO
+.. autoclass:: ILaunchVehicleVO
     :members:
     :exclude-members: __init__
-.. autoclass:: ILvExportTools
+.. autoclass:: ILaunchVehicleExportTools
     :members:
     :exclude-members: __init__
 .. autoclass:: ILaunchVehicle
     :members:
     :exclude-members: __init__
-.. autoclass:: IGvGraphics
+.. autoclass:: IGroundVehicleGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IGvVO
+.. autoclass:: IGroundVehicleVO
     :members:
     :exclude-members: __init__
-.. autoclass:: IGvExportTools
+.. autoclass:: IGroundVehicleExportTools
     :members:
     :exclude-members: __init__
 .. autoclass:: IGroundVehicle
     :members:
     :exclude-members: __init__
-.. autoclass:: IMsGraphics
+.. autoclass:: IMissileGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IMsVO
+.. autoclass:: IMissileVO
     :members:
     :exclude-members: __init__
-.. autoclass:: IMsExportTools
+.. autoclass:: IMissileExportTools
     :members:
     :exclude-members: __init__
 .. autoclass:: IMissile
     :members:
     :exclude-members: __init__
-.. autoclass:: IAcGraphics
+.. autoclass:: IAircraftGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IAcVO
+.. autoclass:: IAircraftVO
     :members:
     :exclude-members: __init__
-.. autoclass:: IAcExportTools
+.. autoclass:: IAircraftExportTools
     :members:
     :exclude-members: __init__
 .. autoclass:: IAircraft
     :members:
     :exclude-members: __init__
-.. autoclass:: IShGraphics
+.. autoclass:: IShipGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IShVO
+.. autoclass:: IShipVO
     :members:
     :exclude-members: __init__
-.. autoclass:: IShExportTools
+.. autoclass:: IShipExportTools
     :members:
     :exclude-members: __init__
 .. autoclass:: IShip
@@ -5655,31 +5655,31 @@ Interfaces
 .. autoclass:: IMto
     :members:
     :exclude-members: __init__
-.. autoclass:: ILtGraphics
+.. autoclass:: ILineTargetGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: ILtVO
+.. autoclass:: ILineTargetVO
     :members:
     :exclude-members: __init__
-.. autoclass:: ILtPoint
+.. autoclass:: ILineTargetPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: ILtPointCollection
+.. autoclass:: ILineTargetPointCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: ILineTarget
     :members:
     :exclude-members: __init__
-.. autoclass:: IChGfxStatic
+.. autoclass:: IChainGfxStatic
     :members:
     :exclude-members: __init__
-.. autoclass:: IChGfxAnimation
+.. autoclass:: IChainGfxAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: IChGraphics
+.. autoclass:: IChainGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: IChVO
+.. autoclass:: IChainVO
     :members:
     :exclude-members: __init__
 .. autoclass:: IAccessEventDetection
@@ -5688,247 +5688,247 @@ Interfaces
 .. autoclass:: IAccessSampling
     :members:
     :exclude-members: __init__
-.. autoclass:: IChTimePeriodBase
+.. autoclass:: IChainTimePeriodBase
     :members:
     :exclude-members: __init__
-.. autoclass:: IChUserSpecifiedTimePeriod
+.. autoclass:: IChainUserSpecifiedTimePeriod
     :members:
     :exclude-members: __init__
-.. autoclass:: IChConstraints
+.. autoclass:: IChainConstraints
     :members:
     :exclude-members: __init__
 .. autoclass:: IChain
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvGfxStatic
+.. autoclass:: ICoverageGfxStatic
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvGfxAnimation
+.. autoclass:: ICoverageGfxAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvGfxProgress
+.. autoclass:: ICoverageGfxProgress
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvGraphics
+.. autoclass:: ICoverageGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvVOAttributes
+.. autoclass:: ICoverageVOAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvVO
+.. autoclass:: ICoverageVO
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvSelectedGridPoint
+.. autoclass:: ICoverageSelectedGridPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvGridPointSelection
+.. autoclass:: ICoverageGridPointSelection
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvGridInspector
+.. autoclass:: ICoverageGridInspector
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvRegionFilesCollection
+.. autoclass:: ICoverageRegionFilesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvAreaTargetsCollection
+.. autoclass:: ICoverageAreaTargetsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvPointFileListCollection
+.. autoclass:: ICoveragePointFileListCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvBounds
+.. autoclass:: ICoverageBounds
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvBoundsCustomBoundary
+.. autoclass:: ICoverageBoundsCustomBoundary
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvBoundsCustomRegions
+.. autoclass:: ICoverageBoundsCustomRegions
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvBoundsGlobal
+.. autoclass:: ICoverageBoundsGlobal
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvBoundsLat
+.. autoclass:: ICoverageBoundsLat
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvBoundsLatLine
+.. autoclass:: ICoverageBoundsLatLine
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvBoundsLonLine
+.. autoclass:: ICoverageBoundsLonLine
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvBoundsLatLonRegion
+.. autoclass:: ICoverageBoundsLatLonRegion
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvResolution
+.. autoclass:: ICoverageResolution
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvResolutionArea
+.. autoclass:: ICoverageResolutionArea
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvResolutionDistance
+.. autoclass:: ICoverageResolutionDistance
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvResolutionLatLon
+.. autoclass:: ICoverageResolutionLatLon
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvGrid
+.. autoclass:: ICoverageGrid
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvPointDefinition
+.. autoclass:: ICoveragePointDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvAssetListElement
+.. autoclass:: ICoverageAssetListElement
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvAdvanced
+.. autoclass:: ICoverageAdvanced
     :members:
     :exclude-members: __init__
-.. autoclass:: ICvInterval
+.. autoclass:: ICoverageInterval
     :members:
     :exclude-members: __init__
 .. autoclass:: ICoverageDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmVOLegendWindow
+.. autoclass:: IFigureOfMeritVOLegendWindow
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxRampColor
+.. autoclass:: IFigureOfMeritGfxRampColor
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxLevelAttributesElement
+.. autoclass:: IFigureOfMeritGfxLevelAttributesElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxLevelAttributesCollection
+.. autoclass:: IFigureOfMeritGfxLevelAttributesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxPositionOnMap
+.. autoclass:: IFigureOfMeritGfxPositionOnMap
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxLegendWindow
+.. autoclass:: IFigureOfMeritGfxLegendWindow
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxColorOptions
+.. autoclass:: IFigureOfMeritGfxColorOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxTextOptions
+.. autoclass:: IFigureOfMeritGfxTextOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxRangeColorOptions
+.. autoclass:: IFigureOfMeritGfxRangeColorOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxLegend
+.. autoclass:: IFigureOfMeritGfxLegend
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxContours
+.. autoclass:: IFigureOfMeritGfxContours
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxAttributes
+.. autoclass:: IFigureOfMeritGfxAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxContoursAnimation
+.. autoclass:: IFigureOfMeritGfxContoursAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGfxAttributesAnimation
+.. autoclass:: IFigureOfMeritGfxAttributesAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmVOAttributes
+.. autoclass:: IFigureOfMeritVOAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmVO
+.. autoclass:: IFigureOfMeritVO
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefScalarCalculation
+.. autoclass:: IFigureOfMeritDefinitionScalarCalculation
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmGridInspector
+.. autoclass:: IFigureOfMeritGridInspector
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmNAMethod
+.. autoclass:: IFigureOfMeritNavigationAccuracyMethod
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmNAMethodElevationAngle
+.. autoclass:: IFigureOfMeritNavigationAccuracyMethodElevationAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmNAMethodConstant
+.. autoclass:: IFigureOfMeritNavigationAccuracyMethodConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmAssetListElement
+.. autoclass:: IFigureOfMeritAssetListElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmAssetListCollection
+.. autoclass:: IFigureOfMeritAssetListCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmUncertainties
+.. autoclass:: IFigureOfMeritUncertainties
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmSatisfaction
+.. autoclass:: IFigureOfMeritSatisfaction
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefinitionData
+.. autoclass:: IFigureOfMeritDefinitionData
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefDataMinMax
+.. autoclass:: IFigureOfMeritDefinitionDataMinMax
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefDataPercentLevel
+.. autoclass:: IFigureOfMeritDefinitionDataPercentLevel
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefDataMinAssets
+.. autoclass:: IFigureOfMeritDefinitionDataMinAssets
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefDataBestN
+.. autoclass:: IFigureOfMeritDefinitionDataBestN
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefDataBest4
+.. autoclass:: IFigureOfMeritDefinitionDataBest4
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefResponseTime
+.. autoclass:: IFigureOfMeritDefinitionResponseTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefRevisitTime
+.. autoclass:: IFigureOfMeritDefinitionRevisitTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefSimpleCoverage
+.. autoclass:: IFigureOfMeritDefinitionSimpleCoverage
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefTimeAverageGap
+.. autoclass:: IFigureOfMeritDefinitionTimeAverageGap
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefDilutionOfPrecision
+.. autoclass:: IFigureOfMeritDefinitionDilutionOfPrecision
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefNavigationAccuracy
+.. autoclass:: IFigureOfMeritDefinitionNavigationAccuracy
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefAccessSeparation
+.. autoclass:: IFigureOfMeritDefinitionAccessSeparation
     :members:
     :exclude-members: __init__
 .. autoclass:: IFigureOfMerit
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefSystemResponseTime
+.. autoclass:: IFigureOfMeritDefinitionSystemResponseTime
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefAgeOfData
+.. autoclass:: IFigureOfMeritDefinitionAgeOfData
     :members:
     :exclude-members: __init__
-.. autoclass:: IFmDefSystemAgeOfData
+.. autoclass:: IFigureOfMeritDefinitionSystemAgeOfData
     :members:
     :exclude-members: __init__
-.. autoclass:: ICnCnstrRestriction
+.. autoclass:: IConstellationConstraintRestriction
     :members:
     :exclude-members: __init__
-.. autoclass:: ICnCnstrObjectRestriction
+.. autoclass:: IConstellationConstraintObjectRestriction
     :members:
     :exclude-members: __init__
-.. autoclass:: ICnConstraints
+.. autoclass:: IConstellationConstraints
     :members:
     :exclude-members: __init__
-.. autoclass:: ICnGraphics
+.. autoclass:: IConstellationGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: ICnRouting
+.. autoclass:: IConstellationRouting
     :members:
     :exclude-members: __init__
 .. autoclass:: IConstellation
@@ -5952,46 +5952,46 @@ Interfaces
 .. autoclass:: ISamplingMethodFixedStep
     :members:
     :exclude-members: __init__
-.. autoclass:: ISpEnvRadEnergyMethodSpecify
+.. autoclass:: ISpaceEnvironmentRadEnergyMethodSpecify
     :members:
     :exclude-members: __init__
-.. autoclass:: ISpEnvRadEnergyValues
+.. autoclass:: ISpaceEnvironmentRadEnergyValues
     :members:
     :exclude-members: __init__
-.. autoclass:: ISpEnvRadiationEnvironment
+.. autoclass:: ISpaceEnvironmentRadiationEnvironment
     :members:
     :exclude-members: __init__
-.. autoclass:: ISpEnvMagFieldGfx
+.. autoclass:: ISpaceEnvironmentMagnitudeFieldGfx
     :members:
     :exclude-members: __init__
-.. autoclass:: ISpEnvScenExtVO
+.. autoclass:: ISpaceEnvironmentScenarioExtVO
     :members:
     :exclude-members: __init__
-.. autoclass:: ISpEnvSAAContour
+.. autoclass:: ISpaceEnvironmentSAAContour
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvMagneticField
+.. autoclass:: IVehicleSpaceEnvironmentMagneticField
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvVehTemperature
+.. autoclass:: IVehicleSpaceEnvironmentVehTemperature
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvParticleFlux
+.. autoclass:: IVehicleSpaceEnvironmentParticleFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvRadDoseRateElement
+.. autoclass:: IVehicleSpaceEnvironmentRadDoseRateElement
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvRadDoseRateCollection
+.. autoclass:: IVehicleSpaceEnvironmentRadDoseRateCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvRadiation
+.. autoclass:: IVehicleSpaceEnvironmentRadiation
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvMagFieldLine
+.. autoclass:: IVehicleSpaceEnvironmentMagnitudeFieldLine
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeSpEnvGraphics
+.. autoclass:: IVehicleSpaceEnvironmentGraphics
     :members:
     :exclude-members: __init__
 .. autoclass:: IStkPreferencesVDF
@@ -6006,22 +6006,22 @@ Interfaces
 .. autoclass:: IPathCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttMaximumSlewRate
+.. autoclass:: IVehicleAttitudeMaximumSlewRate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttMaximumSlewAcceleration
+.. autoclass:: IVehicleAttitudeMaximumSlewAcceleration
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttSlewBase
+.. autoclass:: IVehicleAttitudeSlewBase
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttSlewConstrained
+.. autoclass:: IVehicleAttitudeSlewConstrained
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttSlewFixedRate
+.. autoclass:: IVehicleAttitudeSlewFixedRate
     :members:
     :exclude-members: __init__
-.. autoclass:: IVeAttSlewFixedTime
+.. autoclass:: IVehicleAttitudeSlewFixedTime
     :members:
     :exclude-members: __init__
 .. autoclass:: IVmGridDefinition
@@ -6844,7 +6844,7 @@ Classes
 .. autoclass:: BasicAzElMask
     :members:
     :exclude-members: __init__
-.. autoclass:: FaGraphics
+.. autoclass:: FacilityGraphics
     :members:
     :exclude-members: __init__
 .. autoclass:: PlaceGraphics
@@ -6865,7 +6865,7 @@ Classes
 .. autoclass:: VOOffsetRotate
     :members:
     :exclude-members: __init__
-.. autoclass:: VOOffsetTrans
+.. autoclass:: VOOffsetTransformation
     :members:
     :exclude-members: __init__
 .. autoclass:: VOOffsetAttach
@@ -6904,7 +6904,7 @@ Classes
 .. autoclass:: VOVector
     :members:
     :exclude-members: __init__
-.. autoclass:: FaVO
+.. autoclass:: FacilityVO
     :members:
     :exclude-members: __init__
 .. autoclass:: PlaceVO
@@ -6925,16 +6925,16 @@ Classes
 .. autoclass:: DisplayTimesTimeComponent
     :members:
     :exclude-members: __init__
-.. autoclass:: StVO
+.. autoclass:: StarVO
     :members:
     :exclude-members: __init__
-.. autoclass:: StGraphics
+.. autoclass:: StarGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: PlVO
+.. autoclass:: PlanetVO
     :members:
     :exclude-members: __init__
-.. autoclass:: PlGraphics
+.. autoclass:: PlanetGraphics
     :members:
     :exclude-members: __init__
 .. autoclass:: AreaTypePattern
@@ -6946,10 +6946,10 @@ Classes
 .. autoclass:: AreaTypeEllipse
     :members:
     :exclude-members: __init__
-.. autoclass:: ATVO
+.. autoclass:: AreaTargetVO
     :members:
     :exclude-members: __init__
-.. autoclass:: ATGraphics
+.. autoclass:: AreaTargetGraphics
     :members:
     :exclude-members: __init__
 .. autoclass:: VOAzElMask
@@ -6958,34 +6958,34 @@ Classes
 .. autoclass:: VOModelArtic
     :members:
     :exclude-members: __init__
-.. autoclass:: VOModelTransCollection
+.. autoclass:: VOModelTransformationCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VOModelTrans
+.. autoclass:: VOModelTransformation
     :members:
     :exclude-members: __init__
 .. autoclass:: VOModelFile
     :members:
     :exclude-members: __init__
-.. autoclass:: PlPosFile
+.. autoclass:: PlanetPositionFile
     :members:
     :exclude-members: __init__
-.. autoclass:: PlPosCentralBody
+.. autoclass:: PlanetPositionCentralBody
     :members:
     :exclude-members: __init__
-.. autoclass:: PlOrbitDisplayTime
+.. autoclass:: PlanetOrbitDisplayTime
     :members:
     :exclude-members: __init__
 .. autoclass:: Scenario
     :members:
     :exclude-members: __init__
-.. autoclass:: ScAnimation
+.. autoclass:: ScenarioAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: ScEarthData
+.. autoclass:: ScenarioEarthData
     :members:
     :exclude-members: __init__
-.. autoclass:: ScGraphics
+.. autoclass:: ScenarioGraphics
     :members:
     :exclude-members: __init__
 .. autoclass:: TerrainCollection
@@ -7000,82 +7000,82 @@ Classes
 .. autoclass:: Tileset3D
     :members:
     :exclude-members: __init__
-.. autoclass:: ScGenDbCollection
+.. autoclass:: ScenarioGenDatabaseCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ScGenDb
+.. autoclass:: ScenarioGenDatabase
     :members:
     :exclude-members: __init__
-.. autoclass:: ScVO
+.. autoclass:: ScenarioVO
     :members:
     :exclude-members: __init__
-.. autoclass:: SnComplexConicPattern
+.. autoclass:: SensorComplexConicPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: SnEOIRPattern
+.. autoclass:: SensorEOIRPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: SnUnknownPattern
+.. autoclass:: SensorUnknownPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: SnEOIRBandCollection
+.. autoclass:: SensorEOIRBandCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: SnEOIRBand
+.. autoclass:: SensorEOIRBand
     :members:
     :exclude-members: __init__
-.. autoclass:: SnEOIRRadiometricPair
+.. autoclass:: SensorEOIRRadiometricPair
     :members:
     :exclude-members: __init__
-.. autoclass:: SnEOIRSensitivityCollection
+.. autoclass:: SensorEOIRSensitivityCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: SnEOIRSaturationCollection
+.. autoclass:: SensorEOIRSaturationCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: SnCustomPattern
+.. autoclass:: SensorCustomPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: SnHalfPowerPattern
+.. autoclass:: SensorHalfPowerPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: SnRectangularPattern
+.. autoclass:: SensorRectangularPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: SnSARPattern
+.. autoclass:: SensorSARPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: SnSimpleConicPattern
+.. autoclass:: SensorSimpleConicPattern
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtFixed
+.. autoclass:: SensorPointingFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtFixedAxes
+.. autoclass:: SensorPointingFixedAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPt3DModel
+.. autoclass:: SensorPointing3DModel
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtSpinning
+.. autoclass:: SensorPointingSpinning
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtTargeted
+.. autoclass:: SensorPointingTargeted
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtExternal
+.. autoclass:: SensorPointingExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtTrgtBsightTrack
+.. autoclass:: SensorPointingTargetedBoresightTrack
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtTrgtBsightFixed
+.. autoclass:: SensorPointingTargetedBoresightFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: SnTargetCollection
+.. autoclass:: SensorTargetCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: SnTarget
+.. autoclass:: SensorTarget
     :members:
     :exclude-members: __init__
 .. autoclass:: AccessTime
@@ -7084,49 +7084,49 @@ Classes
 .. autoclass:: ScheduleTime
     :members:
     :exclude-members: __init__
-.. autoclass:: SnAzElMaskFile
+.. autoclass:: SensorAzElMaskFile
     :members:
     :exclude-members: __init__
-.. autoclass:: SnGraphics
+.. autoclass:: SensorGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: SnProjection
+.. autoclass:: SensorProjection
     :members:
     :exclude-members: __init__
-.. autoclass:: SnProjDisplayDistance
+.. autoclass:: SensorProjectionDisplayDistance
     :members:
     :exclude-members: __init__
-.. autoclass:: SnVO
+.. autoclass:: SensorVO
     :members:
     :exclude-members: __init__
-.. autoclass:: SnVOPulse
+.. autoclass:: SensorVOPulse
     :members:
     :exclude-members: __init__
-.. autoclass:: SnVOOffset
+.. autoclass:: SensorVOOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrTimeSlipRange
+.. autoclass:: AccessConstraintTimeSlipRange
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrBackground
+.. autoclass:: AccessConstraintBackground
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrGroundTrack
+.. autoclass:: AccessConstraintGroundTrack
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrMinMax
+.. autoclass:: AccessConstraintMinMax
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrCrdnCn
+.. autoclass:: AccessConstraintCrdnConstellation
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrCbObstruction
+.. autoclass:: AccessConstraintCentralBodyObstruction
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrAngle
+.. autoclass:: AccessConstraintAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrCondition
+.. autoclass:: AccessConstraintCondition
     :members:
     :exclude-members: __init__
 .. autoclass:: AccessTimeCollection
@@ -7135,22 +7135,22 @@ Classes
 .. autoclass:: ScheduleTimeCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrIntervals
+.. autoclass:: AccessConstraintIntervals
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrObjExAngle
+.. autoclass:: AccessConstraintObjExAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrZone
+.. autoclass:: AccessConstraintZone
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrThirdBody
+.. autoclass:: AccessConstraintThirdBody
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrExclZonesCollection
+.. autoclass:: AccessConstraintExclZonesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtGrazingAlt
+.. autoclass:: SensorPointingGrazingAltitude
     :members:
     :exclude-members: __init__
 .. autoclass:: AreaTarget
@@ -7171,13 +7171,13 @@ Classes
 .. autoclass:: Sensor
     :members:
     :exclude-members: __init__
-.. autoclass:: SnCommonTasks
+.. autoclass:: SensorCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: ATCommonTasks
+.. autoclass:: AreaTargetCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: PlCommonTasks
+.. autoclass:: PlanetCommonTasks
     :members:
     :exclude-members: __init__
 .. autoclass:: Swath
@@ -7189,49 +7189,49 @@ Classes
 .. autoclass:: DataProviderCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: DrTimeArrayElements
+.. autoclass:: DataProviderResultTimeArrayElements
     :members:
     :exclude-members: __init__
-.. autoclass:: DrResult
+.. autoclass:: DataProviderResult
     :members:
     :exclude-members: __init__
-.. autoclass:: DrSubSectionCollection
+.. autoclass:: DataProviderResultSubSectionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: DrSubSection
+.. autoclass:: DataProviderResultSubSection
     :members:
     :exclude-members: __init__
-.. autoclass:: DrIntervalCollection
+.. autoclass:: DataProviderResultIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: DrInterval
+.. autoclass:: DataProviderResultInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: DrDataSetCollection
+.. autoclass:: DataProviderResultDataSetCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: DrDataSet
+.. autoclass:: DataProviderResultDataSet
     :members:
     :exclude-members: __init__
-.. autoclass:: DataPrvFixed
+.. autoclass:: DataProviderFixed
     :members:
     :exclude-members: __init__
-.. autoclass:: DataPrvTimeVar
+.. autoclass:: DataProviderTimeVarying
     :members:
     :exclude-members: __init__
-.. autoclass:: DataPrvInterval
+.. autoclass:: DataProviderInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: DrTextMessage
+.. autoclass:: DataProviderResultTextMessage
     :members:
     :exclude-members: __init__
 .. autoclass:: DataProviderGroup
     :members:
     :exclude-members: __init__
-.. autoclass:: DataPrvElements
+.. autoclass:: DataProviderElements
     :members:
     :exclude-members: __init__
-.. autoclass:: DataPrvElement
+.. autoclass:: DataProviderElement
     :members:
     :exclude-members: __init__
 .. autoclass:: DataProviders
@@ -7255,31 +7255,31 @@ Classes
 .. autoclass:: StkObjectCoverage
     :members:
     :exclude-members: __init__
-.. autoclass:: ObjectCoverageFOM
+.. autoclass:: ObjectCoverageFigureOfMerit
     :members:
     :exclude-members: __init__
-.. autoclass:: Sc3dFont
+.. autoclass:: Scenario3dFont
     :members:
     :exclude-members: __init__
 .. autoclass:: VOBorderWall
     :members:
     :exclude-members: __init__
-.. autoclass:: VORefCrdnCollection
+.. autoclass:: VOReferenceCrdnCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VORefCrdnVector
+.. autoclass:: VOReferenceCrdnVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VORefCrdnAxes
+.. autoclass:: VOReferenceCrdnAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: VORefCrdnAngle
+.. autoclass:: VOReferenceCrdnAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VORefCrdnPlane
+.. autoclass:: VOReferenceCrdnPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: VORefCrdnPoint
+.. autoclass:: VOReferenceCrdnPoint
     :members:
     :exclude-members: __init__
 .. autoclass:: TargetGraphics
@@ -7288,7 +7288,7 @@ Classes
 .. autoclass:: TargetVO
     :members:
     :exclude-members: __init__
-.. autoclass:: PtTargetVOModel
+.. autoclass:: PointTargetVOModel
     :members:
     :exclude-members: __init__
 .. autoclass:: ObjectLinkCollection
@@ -7309,493 +7309,493 @@ Classes
 .. autoclass:: VODataDisplayCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeInitialState
+.. autoclass:: VehicleInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPCentralBodyGravity
+.. autoclass:: VehicleHPOPCentralBodyGravity
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRadiationPressure
+.. autoclass:: VehicleRadiationPressure
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPSolarRadiationPressure
+.. autoclass:: VehicleHPOPSolarRadiationPressure
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSolarFluxGeoMagEnterManually
+.. autoclass:: VehicleSolarFluxGeoMagnitudeEnterManually
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSolarFluxGeoMagUseFile
+.. autoclass:: VehicleSolarFluxGeoMagnitudeUseFile
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPForceModelDrag
+.. autoclass:: VehicleHPOPForceModelDrag
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPForceModelDragOptions
+.. autoclass:: VehicleHPOPForceModelDragOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPSolarRadiationPressureOptions
+.. autoclass:: VehicleHPOPSolarRadiationPressureOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: VeStatic
+.. autoclass:: VehicleStatic
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSolidTides
+.. autoclass:: VehicleSolidTides
     :members:
     :exclude-members: __init__
-.. autoclass:: VeOceanTides
+.. autoclass:: VehicleOceanTides
     :members:
     :exclude-members: __init__
-.. autoclass:: VePluginSettings
+.. autoclass:: VehiclePluginSettings
     :members:
     :exclude-members: __init__
-.. autoclass:: VePluginPropagator
+.. autoclass:: VehiclePluginPropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPForceModelMoreOptions
+.. autoclass:: VehicleHPOPForceModelMoreOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPForceModel
+.. autoclass:: VehicleHPOPForceModel
     :members:
     :exclude-members: __init__
-.. autoclass:: VeStepSizeControl
+.. autoclass:: VehicleStepSizeControl
     :members:
     :exclude-members: __init__
-.. autoclass:: VeTimeRegularization
+.. autoclass:: VehicleTimeRegularization
     :members:
     :exclude-members: __init__
-.. autoclass:: VeInterpolation
+.. autoclass:: VehicleInterpolation
     :members:
     :exclude-members: __init__
-.. autoclass:: VeIntegrator
+.. autoclass:: VehicleIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGravity
+.. autoclass:: VehicleGravity
     :members:
     :exclude-members: __init__
-.. autoclass:: VePositionVelocityElement
+.. autoclass:: VehiclePositionVelocityElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VePositionVelocityCollection
+.. autoclass:: VehiclePositionVelocityCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeCorrelationListCollection
+.. autoclass:: VehicleCorrelationListCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeCorrelationListElement
+.. autoclass:: VehicleCorrelationListElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeCovariance
+.. autoclass:: VehicleCovariance
     :members:
     :exclude-members: __init__
-.. autoclass:: VeJxInitialState
+.. autoclass:: VehicleJxInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLOPCentralBodyGravity
+.. autoclass:: VehicleLOPCentralBodyGravity
     :members:
     :exclude-members: __init__
-.. autoclass:: VeThirdBodyGravityElement
+.. autoclass:: VehicleThirdBodyGravityElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeThirdBodyGravityCollection
+.. autoclass:: VehicleThirdBodyGravityCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeExpDensModelParams
+.. autoclass:: VehicleExpDensModelParams
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAdvanced
+.. autoclass:: VehicleAdvanced
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLOPForceModelDrag
+.. autoclass:: VehicleLOPForceModelDrag
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLOPSolarRadiationPressure
+.. autoclass:: VehicleLOPSolarRadiationPressure
     :members:
     :exclude-members: __init__
-.. autoclass:: VePhysicalData
+.. autoclass:: VehiclePhysicalData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLOPForceModel
+.. autoclass:: VehicleLOPForceModel
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSegmentsCollection
+.. autoclass:: VehicleSegmentsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorHPOP
+.. autoclass:: VehiclePropagatorHPOP
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorJ2Perturbation
+.. autoclass:: VehiclePropagatorJ2Perturbation
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorJ4Perturbation
+.. autoclass:: VehiclePropagatorJ4Perturbation
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorLOP
+.. autoclass:: VehiclePropagatorLOP
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorSGP4
+.. autoclass:: VehiclePropagatorSGP4
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorSPICE
+.. autoclass:: VehiclePropagatorSPICE
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorStkExternal
+.. autoclass:: VehiclePropagatorStkExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorTwoBody
+.. autoclass:: VehiclePropagatorTwoBody
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorUserExternal
+.. autoclass:: VehiclePropagatorUserExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLvInitialState
+.. autoclass:: VehicleLaunchVehicleInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorSimpleAscent
+.. autoclass:: VehiclePropagatorSimpleAscent
     :members:
     :exclude-members: __init__
-.. autoclass:: VeWaypointsElement
+.. autoclass:: VehicleWaypointsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeWaypointsCollection
+.. autoclass:: VehicleWaypointsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLaunchLLA
+.. autoclass:: VehicleLaunchLLA
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLaunchLLR
+.. autoclass:: VehicleLaunchLLR
     :members:
     :exclude-members: __init__
-.. autoclass:: VeImpactLLA
+.. autoclass:: VehicleImpactLLA
     :members:
     :exclude-members: __init__
-.. autoclass:: VeImpactLLR
+.. autoclass:: VehicleImpactLLR
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLaunchControlFixedApogeeAlt
+.. autoclass:: VehicleLaunchControlFixedApogeeAltitude
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLaunchControlFixedDeltaV
+.. autoclass:: VehicleLaunchControlFixedDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLaunchControlFixedDeltaVMinEcc
+.. autoclass:: VehicleLaunchControlFixedDeltaVMinEccentricity
     :members:
     :exclude-members: __init__
-.. autoclass:: VeLaunchControlFixedTimeOfFlight
+.. autoclass:: VehicleLaunchControlFixedTimeOfFlight
     :members:
     :exclude-members: __init__
-.. autoclass:: VeImpactLocationLaunchAzEl
+.. autoclass:: VehicleImpactLocationLaunchAzEl
     :members:
     :exclude-members: __init__
-.. autoclass:: VeImpactLocationPoint
+.. autoclass:: VehicleImpactLocationPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorBallistic
+.. autoclass:: VehiclePropagatorBallistic
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorGreatArc
+.. autoclass:: VehiclePropagatorGreatArc
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4SegmentCollection
+.. autoclass:: VehicleSGP4SegmentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4Segment
+.. autoclass:: VehicleSGP4Segment
     :members:
     :exclude-members: __init__
-.. autoclass:: VeThirdBodyGravity
+.. autoclass:: VehicleThirdBodyGravity
     :members:
     :exclude-members: __init__
-.. autoclass:: VeConsiderAnalysisCollectionElement
+.. autoclass:: VehicleConsiderAnalysisCollectionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeConsiderAnalysisCollection
+.. autoclass:: VehicleConsiderAnalysisCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSPICESegment
+.. autoclass:: VehicleSPICESegment
     :members:
     :exclude-members: __init__
-.. autoclass:: VeWayPtAltitudeRefTerrain
+.. autoclass:: VehicleWaypointAltitudeReferenceTerrain
     :members:
     :exclude-members: __init__
-.. autoclass:: VeWayPtAltitudeRef
+.. autoclass:: VehicleWaypointAltitudeReference
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4LoadFile
+.. autoclass:: VehicleSGP4LoadFile
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4OnlineLoad
+.. autoclass:: VehicleSGP4OnlineLoad
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4OnlineAutoLoad
+.. autoclass:: VehicleSGP4OnlineAutoLoad
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGroundEllipsesCollection
+.. autoclass:: VehicleGroundEllipsesCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: Satellite
     :members:
     :exclude-members: __init__
-.. autoclass:: VeInertia
+.. autoclass:: VehicleInertia
     :members:
     :exclude-members: __init__
-.. autoclass:: VeMassProperties
+.. autoclass:: VehicleMassProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: VeBreakAngleBreakByLatitude
+.. autoclass:: VehicleBreakAngleBreakByLatitude
     :members:
     :exclude-members: __init__
-.. autoclass:: VeBreakAngleBreakByLongitude
+.. autoclass:: VehicleBreakAngleBreakByLongitude
     :members:
     :exclude-members: __init__
-.. autoclass:: VeDefinition
+.. autoclass:: VehicleDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRepeatGroundTrackNumbering
+.. autoclass:: VehicleRepeatGroundTrackNumbering
     :members:
     :exclude-members: __init__
-.. autoclass:: VePassNumberingDateOfFirstPass
+.. autoclass:: VehiclePassNumberingDateOfFirstPass
     :members:
     :exclude-members: __init__
-.. autoclass:: VePassNumberingFirstPassNum
+.. autoclass:: VehiclePassNumberingFirstPassNum
     :members:
     :exclude-members: __init__
-.. autoclass:: VePassBreak
+.. autoclass:: VehiclePassBreak
     :members:
     :exclude-members: __init__
-.. autoclass:: VeCentralBodies
+.. autoclass:: VehicleCentralBodies
     :members:
     :exclude-members: __init__
-.. autoclass:: SaGraphics
+.. autoclass:: SatelliteGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: SaVO
+.. autoclass:: SatelliteVO
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEllipseDataElement
+.. autoclass:: VehicleEllipseDataElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEllipseDataCollection
+.. autoclass:: VehicleEllipseDataCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGroundEllipseElement
+.. autoclass:: VehicleGroundEllipseElement
     :members:
     :exclude-members: __init__
-.. autoclass:: SaVOModel
+.. autoclass:: SatelliteVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEclipseBodies
+.. autoclass:: VehicleEclipseBodies
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVector
+.. autoclass:: VehicleVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRateOffset
+.. autoclass:: VehicleRateOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileAlignedAndConstrained
+.. autoclass:: VehicleProfileAlignedAndConstrained
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileInertial
+.. autoclass:: VehicleProfileInertial
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileConstraintOffset
+.. autoclass:: VehicleProfileConstraintOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileFixedInAxes
+.. autoclass:: VehicleProfileFixedInAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfilePrecessingSpin
+.. autoclass:: VehicleProfilePrecessingSpin
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileSpinAboutXXX
+.. autoclass:: VehicleProfileSpinAboutXXX
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileSpinning
+.. autoclass:: VehicleProfileSpinning
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileAlignmentOffset
+.. autoclass:: VehicleProfileAlignmentOffset
     :members:
     :exclude-members: __init__
-.. autoclass:: VeScheduleTimesCollection
+.. autoclass:: VehicleScheduleTimesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeTargetTimes
+.. autoclass:: VehicleTargetTimes
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttPointing
+.. autoclass:: VehicleAttitudePointing
     :members:
     :exclude-members: __init__
-.. autoclass:: VeDuration
+.. autoclass:: VehicleDuration
     :members:
     :exclude-members: __init__
-.. autoclass:: VeStandardBasic
+.. autoclass:: VehicleStandardBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttExternal
+.. autoclass:: VehicleAttitudeExternal
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttitudeRealTime
+.. autoclass:: VehicleAttitudeRealTime
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileCoordinatedTurn
+.. autoclass:: VehicleProfileCoordinatedTurn
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileYawToNadir
+.. autoclass:: VehicleProfileYawToNadir
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttTrendControlAviator
+.. autoclass:: VehicleAttitudeTrendControlAviator
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileAviator
+.. autoclass:: VehicleProfileAviator
     :members:
     :exclude-members: __init__
-.. autoclass:: VeTargetPointingElement
+.. autoclass:: VehicleTargetPointingElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeTargetPointingCollection
+.. autoclass:: VehicleTargetPointingCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeTorque
+.. autoclass:: VehicleTorque
     :members:
     :exclude-members: __init__
-.. autoclass:: VeIntegratedAttitude
+.. autoclass:: VehicleIntegratedAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: VeScheduleTimesElement
+.. autoclass:: VehicleScheduleTimesElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeTrajectoryAttitudeStandard
+.. autoclass:: VehicleTrajectoryAttitudeStandard
     :members:
     :exclude-members: __init__
-.. autoclass:: VeOrbitAttitudeStandard
+.. autoclass:: VehicleOrbitAttitudeStandard
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRouteAttitudeStandard
+.. autoclass:: VehicleRouteAttitudeStandard
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxLine
+.. autoclass:: VehicleGfxLine
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxIntervalsCollection
+.. autoclass:: VehicleGfxIntervalsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxAttributesAccess
+.. autoclass:: VehicleGfxAttributesAccess
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxAttributesCustom
+.. autoclass:: VehicleGfxAttributesCustom
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxAttributesRealtime
+.. autoclass:: VehicleGfxAttributesRealtime
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxLightingElement
+.. autoclass:: VehicleGfxLightingElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxLighting
+.. autoclass:: VehicleGfxLighting
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxElevationGroundElevation
+.. autoclass:: VehicleGfxElevationGroundElevation
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxElevationSwathHalfWidth
+.. autoclass:: VehicleGfxElevationSwathHalfWidth
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxElevationVehicleHalfAngle
+.. autoclass:: VehicleGfxElevationVehicleHalfAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxSwath
+.. autoclass:: VehicleGfxSwath
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxLeadDataFraction
+.. autoclass:: VehicleGfxLeadDataFraction
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxLeadDataTime
+.. autoclass:: VehicleGfxLeadDataTime
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTrailDataFraction
+.. autoclass:: VehicleGfxTrailDataFraction
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTrailDataTime
+.. autoclass:: VehicleGfxTrailDataTime
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxRoutePassData
+.. autoclass:: VehicleGfxRoutePassData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxLeadTrailData
+.. autoclass:: VehicleGfxLeadTrailData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxOrbitPassData
+.. autoclass:: VehicleGfxOrbitPassData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTrajectoryPassData
+.. autoclass:: VehicleGfxTrajectoryPassData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTrajectoryResolution
+.. autoclass:: VehicleGfxTrajectoryResolution
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxGroundEllipsesCollection
+.. autoclass:: VehicleGfxGroundEllipsesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTimeEventTypeLine
+.. autoclass:: VehicleGfxTimeEventTypeLine
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTimeEventTypeMarker
+.. autoclass:: VehicleGfxTimeEventTypeMarker
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTimeEventTypeText
+.. autoclass:: VehicleGfxTimeEventTypeText
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTimeEventsElement
+.. autoclass:: VehicleGfxTimeEventsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTimeEventsCollection
+.. autoclass:: VehicleGfxTimeEventsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxPassShowPasses
+.. autoclass:: VehicleGfxPassShowPasses
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxPasses
+.. autoclass:: VehicleGfxPasses
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxSAA
+.. autoclass:: VehicleGfxSAA
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxElevationsElement
+.. autoclass:: VehicleGfxElevationsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxElevationsCollection
+.. autoclass:: VehicleGfxElevationsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxElevContours
+.. autoclass:: VehicleGfxElevContours
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxRouteResolution
+.. autoclass:: VehicleGfxRouteResolution
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxWaypointMarkersElement
+.. autoclass:: VehicleGfxWaypointMarkersElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxWaypointMarkersCollection
+.. autoclass:: VehicleGfxWaypointMarkersCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxWaypointMarker
+.. autoclass:: VehicleGfxWaypointMarker
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxInterval
+.. autoclass:: VehicleGfxInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxPassResolution
+.. autoclass:: VehicleGfxPassResolution
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxGroundEllipsesElement
+.. autoclass:: VehicleGfxGroundEllipsesElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxAttributesRoute
+.. autoclass:: VehicleGfxAttributesRoute
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxAttributesTrajectory
+.. autoclass:: VehicleGfxAttributesTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxAttributesOrbit
+.. autoclass:: VehicleGfxAttributesOrbit
     :members:
     :exclude-members: __init__
 .. autoclass:: VOPointableElementsElement
@@ -7804,130 +7804,130 @@ Classes
 .. autoclass:: VOPointableElementsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOSystemsElement
+.. autoclass:: VehicleVOSystemsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOSystemsSpecialElement
+.. autoclass:: VehicleVOSystemsSpecialElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOSystemsCollection
+.. autoclass:: VehicleVOSystemsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOEllipsoid
+.. autoclass:: VehicleVOEllipsoid
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOControlBox
+.. autoclass:: VehicleVOControlBox
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBearingBox
+.. autoclass:: VehicleVOBearingBox
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBearingEllipse
+.. autoclass:: VehicleVOBearingEllipse
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOLineOfBearing
+.. autoclass:: VehicleVOLineOfBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOGeoBox
+.. autoclass:: VehicleVOGeoBox
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVORouteProximity
+.. autoclass:: VehicleVORouteProximity
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOOrbitProximity
+.. autoclass:: VehicleVOOrbitProximity
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOElevContours
+.. autoclass:: VehicleVOElevContours
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOSAA
+.. autoclass:: VehicleVOSAA
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOSigmaScaleProbability
+.. autoclass:: VehicleVOSigmaScaleProbability
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOSigmaScaleScale
+.. autoclass:: VehicleVOSigmaScaleScale
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVODefaultAttributes
+.. autoclass:: VehicleVODefaultAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOIntervalsElement
+.. autoclass:: VehicleVOIntervalsElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOIntervalsCollection
+.. autoclass:: VehicleVOIntervalsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOAttributesBasic
+.. autoclass:: VehicleVOAttributesBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOAttributesIntervals
+.. autoclass:: VehicleVOAttributesIntervals
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOSize
+.. autoclass:: VehicleVOSize
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOCovariancePointingContour
+.. autoclass:: VehicleVOCovariancePointingContour
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVODataFraction
+.. autoclass:: VehicleVODataFraction
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVODataTime
+.. autoclass:: VehicleVODataTime
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOOrbitPassData
+.. autoclass:: VehicleVOOrbitPassData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOOrbitTrackData
+.. autoclass:: VehicleVOOrbitTrackData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOTickDataLine
+.. autoclass:: VehicleVOTickDataLine
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOTickDataPoint
+.. autoclass:: VehicleVOTickDataPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOOrbitTickMarks
+.. autoclass:: VehicleVOOrbitTickMarks
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOPass
+.. autoclass:: VehicleVOPass
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOCovariance
+.. autoclass:: VehicleVOCovariance
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOVelCovariance
+.. autoclass:: VehicleVOVelCovariance
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOTrajectoryProximity
+.. autoclass:: VehicleVOTrajectoryProximity
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOTrajectory
+.. autoclass:: VehicleVOTrajectory
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOTrajectoryTrackData
+.. autoclass:: VehicleVOTrajectoryTrackData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOTrajectoryPassData
+.. autoclass:: VehicleVOTrajectoryPassData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOLeadTrailData
+.. autoclass:: VehicleVOLeadTrailData
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOTrajectoryTickMarks
+.. autoclass:: VehicleVOTrajectoryTickMarks
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOPathTickMarks
+.. autoclass:: VehicleVOPathTickMarks
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOWaypointMarkersElement
+.. autoclass:: VehicleVOWaypointMarkersElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOWaypointMarkersCollection
+.. autoclass:: VehicleVOWaypointMarkersCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVORoute
+.. autoclass:: VehicleVORoute
     :members:
     :exclude-members: __init__
 .. autoclass:: VOModelPointing
@@ -7936,115 +7936,115 @@ Classes
 .. autoclass:: VOLabelSwapDistance
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVODropLinePosItem
+.. autoclass:: VehicleVODropLinePositionItem
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVODropLinePosItemCollection
+.. autoclass:: VehicleVODropLinePositionItemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVODropLinePathItem
+.. autoclass:: VehicleVODropLinePathItem
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVODropLinePathItemCollection
+.. autoclass:: VehicleVODropLinePathItemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOOrbitDropLines
+.. autoclass:: VehicleVOOrbitDropLines
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVORouteDropLines
+.. autoclass:: VehicleVORouteDropLines
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOTrajectoryDropLines
+.. autoclass:: VehicleVOTrajectoryDropLines
     :members:
     :exclude-members: __init__
-.. autoclass:: VeTrajectoryVOModel
+.. autoclass:: VehicleTrajectoryVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRouteVOModel
+.. autoclass:: VehicleRouteVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneTemplateDisplayElement
+.. autoclass:: VehicleVOBPlaneTemplateDisplayElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneTemplateDisplayCollection
+.. autoclass:: VehicleVOBPlaneTemplateDisplayCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneTemplate
+.. autoclass:: VehicleVOBPlaneTemplate
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneTemplatesCollection
+.. autoclass:: VehicleVOBPlaneTemplatesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneEvent
+.. autoclass:: VehicleVOBPlaneEvent
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlanePoint
+.. autoclass:: VehicleVOBPlanePoint
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneTargetPointPositionCartesian
+.. autoclass:: VehicleVOBPlaneTargetPointPositionCartesian
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneTargetPointPositionPolar
+.. autoclass:: VehicleVOBPlaneTargetPointPositionPolar
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneTargetPoint
+.. autoclass:: VehicleVOBPlaneTargetPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneInstance
+.. autoclass:: VehicleVOBPlaneInstance
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlaneInstancesCollection
+.. autoclass:: VehicleVOBPlaneInstancesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlanePointCollection
+.. autoclass:: VehicleVOBPlanePointCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeVOBPlanes
+.. autoclass:: VehicleVOBPlanes
     :members:
     :exclude-members: __init__
 .. autoclass:: LaunchVehicle
     :members:
     :exclude-members: __init__
-.. autoclass:: LvGraphics
+.. autoclass:: LaunchVehicleGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: LvVO
+.. autoclass:: LaunchVehicleVO
     :members:
     :exclude-members: __init__
 .. autoclass:: GroundVehicle
     :members:
     :exclude-members: __init__
-.. autoclass:: GvGraphics
+.. autoclass:: GroundVehicleGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: GvVO
+.. autoclass:: GroundVehicleVO
     :members:
     :exclude-members: __init__
 .. autoclass:: Missile
     :members:
     :exclude-members: __init__
-.. autoclass:: MsGraphics
+.. autoclass:: MissileGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: MsVO
+.. autoclass:: MissileVO
     :members:
     :exclude-members: __init__
 .. autoclass:: Aircraft
     :members:
     :exclude-members: __init__
-.. autoclass:: AcGraphics
+.. autoclass:: AircraftGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: AcVO
+.. autoclass:: AircraftVO
     :members:
     :exclude-members: __init__
 .. autoclass:: Ship
     :members:
     :exclude-members: __init__
-.. autoclass:: ShGraphics
+.. autoclass:: ShipGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: ShVO
+.. autoclass:: ShipVO
     :members:
     :exclude-members: __init__
 .. autoclass:: MtoTrackPoint
@@ -8131,292 +8131,292 @@ Classes
 .. autoclass:: LLAGeodetic
     :members:
     :exclude-members: __init__
-.. autoclass:: LtPoint
+.. autoclass:: LineTargetPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: LtPointCollection
+.. autoclass:: LineTargetPointCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: LineTarget
     :members:
     :exclude-members: __init__
-.. autoclass:: LtGraphics
+.. autoclass:: LineTargetGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: LtVO
+.. autoclass:: LineTargetVO
     :members:
     :exclude-members: __init__
 .. autoclass:: CoverageDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: CvBoundsCustomRegions
+.. autoclass:: CoverageBoundsCustomRegions
     :members:
     :exclude-members: __init__
-.. autoclass:: CvBoundsCustomBoundary
+.. autoclass:: CoverageBoundsCustomBoundary
     :members:
     :exclude-members: __init__
-.. autoclass:: CvBoundsGlobal
+.. autoclass:: CoverageBoundsGlobal
     :members:
     :exclude-members: __init__
-.. autoclass:: CvBoundsLat
+.. autoclass:: CoverageBoundsLat
     :members:
     :exclude-members: __init__
-.. autoclass:: CvBoundsLatLine
+.. autoclass:: CoverageBoundsLatLine
     :members:
     :exclude-members: __init__
-.. autoclass:: CvBoundsLonLine
+.. autoclass:: CoverageBoundsLonLine
     :members:
     :exclude-members: __init__
-.. autoclass:: CvBoundsLatLonRegion
+.. autoclass:: CoverageBoundsLatLonRegion
     :members:
     :exclude-members: __init__
-.. autoclass:: CvGrid
+.. autoclass:: CoverageGrid
     :members:
     :exclude-members: __init__
-.. autoclass:: CvAssetListElement
+.. autoclass:: CoverageAssetListElement
     :members:
     :exclude-members: __init__
-.. autoclass:: CvAssetListCollection
+.. autoclass:: CoverageAssetListCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: CvRegionFilesCollection
+.. autoclass:: CoverageRegionFilesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: CvAreaTargetsCollection
+.. autoclass:: CoverageAreaTargetsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: CvPointDefinition
+.. autoclass:: CoveragePointDefinition
     :members:
     :exclude-members: __init__
-.. autoclass:: CvPointFileListCollection
+.. autoclass:: CoveragePointFileListCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: CvAdvanced
+.. autoclass:: CoverageAdvanced
     :members:
     :exclude-members: __init__
-.. autoclass:: CvInterval
+.. autoclass:: CoverageInterval
     :members:
     :exclude-members: __init__
-.. autoclass:: CvResolutionArea
+.. autoclass:: CoverageResolutionArea
     :members:
     :exclude-members: __init__
-.. autoclass:: CvResolutionDistance
+.. autoclass:: CoverageResolutionDistance
     :members:
     :exclude-members: __init__
-.. autoclass:: CvResolutionLatLon
+.. autoclass:: CoverageResolutionLatLon
     :members:
     :exclude-members: __init__
-.. autoclass:: CvGfxStatic
+.. autoclass:: CoverageGfxStatic
     :members:
     :exclude-members: __init__
-.. autoclass:: CvGfxAnimation
+.. autoclass:: CoverageGfxAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: CvGfxProgress
+.. autoclass:: CoverageGfxProgress
     :members:
     :exclude-members: __init__
-.. autoclass:: CvGraphics
+.. autoclass:: CoverageGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: CvVO
+.. autoclass:: CoverageVO
     :members:
     :exclude-members: __init__
-.. autoclass:: CvVOAttributes
+.. autoclass:: CoverageVOAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: ChTimePeriodBase
+.. autoclass:: ChainTimePeriodBase
     :members:
     :exclude-members: __init__
-.. autoclass:: ChUserSpecifiedTimePeriod
+.. autoclass:: ChainUserSpecifiedTimePeriod
     :members:
     :exclude-members: __init__
-.. autoclass:: ChConstraints
+.. autoclass:: ChainConstraints
     :members:
     :exclude-members: __init__
 .. autoclass:: Chain
     :members:
     :exclude-members: __init__
-.. autoclass:: ChGfxStatic
+.. autoclass:: ChainGfxStatic
     :members:
     :exclude-members: __init__
-.. autoclass:: ChGfxAnimation
+.. autoclass:: ChainGfxAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: ChGraphics
+.. autoclass:: ChainGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: ChVO
+.. autoclass:: ChainVO
     :members:
     :exclude-members: __init__
-.. autoclass:: RfCoefficients
+.. autoclass:: RefractionCoefficients
     :members:
     :exclude-members: __init__
-.. autoclass:: RfModelEffectiveRadiusMethod
+.. autoclass:: RefractionModelEffectiveRadiusMethod
     :members:
     :exclude-members: __init__
-.. autoclass:: RfModelITURP8344
+.. autoclass:: RefractionModelITURP8344
     :members:
     :exclude-members: __init__
-.. autoclass:: RfModelSCFMethod
+.. autoclass:: RefractionModelSCFMethod
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefCompute
+.. autoclass:: FigureOfMeritDefinitionCompute
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefDataMinMax
+.. autoclass:: FigureOfMeritDefinitionDataMinMax
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefDataMinAssets
+.. autoclass:: FigureOfMeritDefinitionDataMinAssets
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefDataPercentLevel
+.. autoclass:: FigureOfMeritDefinitionDataPercentLevel
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefDataBestN
+.. autoclass:: FigureOfMeritDefinitionDataBestN
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefDataBest4
+.. autoclass:: FigureOfMeritDefinitionDataBest4
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefAccessConstraint
+.. autoclass:: FigureOfMeritDefinitionAccessConstraint
     :members:
     :exclude-members: __init__
-.. autoclass:: FmSatisfaction
+.. autoclass:: FigureOfMeritSatisfaction
     :members:
     :exclude-members: __init__
 .. autoclass:: FigureOfMerit
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefAccessSeparation
+.. autoclass:: FigureOfMeritDefinitionAccessSeparation
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefDilutionOfPrecision
+.. autoclass:: FigureOfMeritDefinitionDilutionOfPrecision
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefNavigationAccuracy
+.. autoclass:: FigureOfMeritDefinitionNavigationAccuracy
     :members:
     :exclude-members: __init__
-.. autoclass:: FmAssetListElement
+.. autoclass:: FigureOfMeritAssetListElement
     :members:
     :exclude-members: __init__
-.. autoclass:: FmAssetListCollection
+.. autoclass:: FigureOfMeritAssetListCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: FmUncertainties
+.. autoclass:: FigureOfMeritUncertainties
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefResponseTime
+.. autoclass:: FigureOfMeritDefinitionResponseTime
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefRevisitTime
+.. autoclass:: FigureOfMeritDefinitionRevisitTime
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefSimpleCoverage
+.. autoclass:: FigureOfMeritDefinitionSimpleCoverage
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefTimeAverageGap
+.. autoclass:: FigureOfMeritDefinitionTimeAverageGap
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefSystemAgeOfData
+.. autoclass:: FigureOfMeritDefinitionSystemAgeOfData
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxContours
+.. autoclass:: FigureOfMeritGfxContours
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxAttributes
+.. autoclass:: FigureOfMeritGfxAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxContoursAnimation
+.. autoclass:: FigureOfMeritGfxContoursAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxAttributesAnimation
+.. autoclass:: FigureOfMeritGfxAttributesAnimation
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGraphics
+.. autoclass:: FigureOfMeritGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxRampColor
+.. autoclass:: FigureOfMeritGfxRampColor
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxLevelAttributesElement
+.. autoclass:: FigureOfMeritGfxLevelAttributesElement
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxLevelAttributesCollection
+.. autoclass:: FigureOfMeritGfxLevelAttributesCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxPositionOnMap
+.. autoclass:: FigureOfMeritGfxPositionOnMap
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxColorOptions
+.. autoclass:: FigureOfMeritGfxColorOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxLegendWindow
+.. autoclass:: FigureOfMeritGfxLegendWindow
     :members:
     :exclude-members: __init__
-.. autoclass:: FmVOLegendWindow
+.. autoclass:: FigureOfMeritVOLegendWindow
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxTextOptions
+.. autoclass:: FigureOfMeritGfxTextOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxRangeColorOptions
+.. autoclass:: FigureOfMeritGfxRangeColorOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGfxLegend
+.. autoclass:: FigureOfMeritGfxLegend
     :members:
     :exclude-members: __init__
-.. autoclass:: FmNAMethodElevationAngle
+.. autoclass:: FigureOfMeritNavigationAccuracyMethodElevationAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: FmNAMethodConstant
+.. autoclass:: FigureOfMeritNavigationAccuracyMethodConstant
     :members:
     :exclude-members: __init__
-.. autoclass:: FmVOAttributes
+.. autoclass:: FigureOfMeritVOAttributes
     :members:
     :exclude-members: __init__
-.. autoclass:: FmVO
+.. autoclass:: FigureOfMeritVO
     :members:
     :exclude-members: __init__
-.. autoclass:: VeProfileGPS
+.. autoclass:: VehicleProfileGPS
     :members:
     :exclude-members: __init__
 .. autoclass:: StkObjectModelContext
     :members:
     :exclude-members: __init__
-.. autoclass:: StdMil2525bSymbols
+.. autoclass:: StdMilitary2525bSymbols
     :members:
     :exclude-members: __init__
-.. autoclass:: CvGridInspector
+.. autoclass:: CoverageGridInspector
     :members:
     :exclude-members: __init__
-.. autoclass:: FmGridInspector
+.. autoclass:: FigureOfMeritGridInspector
     :members:
     :exclude-members: __init__
 .. autoclass:: VOVaporTrail
     :members:
     :exclude-members: __init__
-.. autoclass:: VeTargetPointingIntervalCollection
+.. autoclass:: VehicleTargetPointingIntervalCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrPluginMinMax
+.. autoclass:: AccessConstraintPluginMinMax
     :members:
     :exclude-members: __init__
-.. autoclass:: CnConstraints
+.. autoclass:: ConstellationConstraints
     :members:
     :exclude-members: __init__
-.. autoclass:: CnCnstrObjectRestriction
+.. autoclass:: ConstellationConstraintObjectRestriction
     :members:
     :exclude-members: __init__
-.. autoclass:: CnCnstrRestriction
+.. autoclass:: ConstellationConstraintRestriction
     :members:
     :exclude-members: __init__
 .. autoclass:: Constellation
     :members:
     :exclude-members: __init__
-.. autoclass:: CnGraphics
+.. autoclass:: ConstellationGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: CnRouting
+.. autoclass:: ConstellationRouting
     :members:
     :exclude-members: __init__
 .. autoclass:: AgEventDetectionNoSubSampling
@@ -8431,10 +8431,10 @@ Classes
 .. autoclass:: SamplingMethodFixedStep
     :members:
     :exclude-members: __init__
-.. autoclass:: SnAccessAdvanced
+.. autoclass:: SensorAccessAdvanced
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAccessAdvanced
+.. autoclass:: VehicleAccessAdvanced
     :members:
     :exclude-members: __init__
 .. autoclass:: AccessSampling
@@ -8443,13 +8443,13 @@ Classes
 .. autoclass:: AccessEventDetection
     :members:
     :exclude-members: __init__
-.. autoclass:: SnVOProjectionElement
+.. autoclass:: SensorVOProjectionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: SnVOSpaceProjectionCollection
+.. autoclass:: SensorVOSpaceProjectionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: SnVOTargetProjectionCollection
+.. autoclass:: SensorVOTargetProjectionCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: CentralBodyTerrainCollectionElement
@@ -8458,46 +8458,46 @@ Classes
 .. autoclass:: CentralBodyTerrainCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: SaExportTools
+.. autoclass:: SatelliteExportTools
     :members:
     :exclude-members: __init__
-.. autoclass:: LvExportTools
+.. autoclass:: LaunchVehicleExportTools
     :members:
     :exclude-members: __init__
-.. autoclass:: GvExportTools
+.. autoclass:: GroundVehicleExportTools
     :members:
     :exclude-members: __init__
-.. autoclass:: MsExportTools
+.. autoclass:: MissileExportTools
     :members:
     :exclude-members: __init__
-.. autoclass:: AcExportTools
+.. autoclass:: AircraftExportTools
     :members:
     :exclude-members: __init__
-.. autoclass:: ShExportTools
+.. autoclass:: ShipExportTools
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEphemerisCode500ExportTool
+.. autoclass:: VehicleEphemerisCode500ExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEphemerisCCSDSExportTool
+.. autoclass:: VehicleEphemerisCCSDSExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEphemerisStkExportTool
+.. autoclass:: VehicleEphemerisStkExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEphemerisSpiceExportTool
+.. autoclass:: VehicleEphemerisSpiceExportTool
     :members:
     :exclude-members: __init__
 .. autoclass:: AgExportToolTimePeriod
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttitudeExportTool
+.. autoclass:: VehicleAttitudeExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropDefExportTool
+.. autoclass:: VehiclePropDefinitionExportTool
     :members:
     :exclude-members: __init__
-.. autoclass:: VeCoordinateAxesCustom
+.. autoclass:: VehicleCoordinateAxesCustom
     :members:
     :exclude-members: __init__
 .. autoclass:: AgExportToolStepSize
@@ -8509,7 +8509,7 @@ Classes
 .. autoclass:: StkObjectChangedEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEclipsingBodies
+.. autoclass:: VehicleEclipsingBodies
     :members:
     :exclude-members: __init__
 .. autoclass:: LocationCrdnPoint
@@ -8524,40 +8524,40 @@ Classes
 .. autoclass:: SpatialState
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpatialInfo
+.. autoclass:: VehicleSpatialInfo
     :members:
     :exclude-members: __init__
-.. autoclass:: OnePtAccess
+.. autoclass:: OnePointAccess
     :members:
     :exclude-members: __init__
-.. autoclass:: OnePtAccessResultCollection
+.. autoclass:: OnePointAccessResultCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: OnePtAccessResult
+.. autoclass:: OnePointAccessResult
     :members:
     :exclude-members: __init__
-.. autoclass:: OnePtAccessConstraintCollection
+.. autoclass:: OnePointAccessConstraintCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: OnePtAccessConstraint
+.. autoclass:: OnePointAccessConstraint
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorRealtime
+.. autoclass:: VehiclePropagatorRealtime
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRealtimePointBuilder
+.. autoclass:: VehicleRealtimePointBuilder
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRealtimeCartesianPoints
+.. autoclass:: VehicleRealtimeCartesianPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRealtimeLLAHPSPoints
+.. autoclass:: VehicleRealtimeLLAHPSPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRealtimeLLAPoints
+.. autoclass:: VehicleRealtimeLLAPoints
     :members:
     :exclude-members: __init__
-.. autoclass:: VeRealtimeUTMPoints
+.. autoclass:: VehicleRealtimeUTMPoints
     :members:
     :exclude-members: __init__
 .. autoclass:: SRPModelGPS
@@ -8572,31 +8572,31 @@ Classes
 .. autoclass:: SRPModelPluginSettings
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPSRPModel
+.. autoclass:: VehicleHPOPSRPModel
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPDragModelSpherical
+.. autoclass:: VehicleHPOPDragModelSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPDragModelPlugin
+.. autoclass:: VehicleHPOPDragModelPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPDragModelPluginSettings
+.. autoclass:: VehicleHPOPDragModelPluginSettings
     :members:
     :exclude-members: __init__
-.. autoclass:: VeHPOPDragModel
+.. autoclass:: VehicleHPOPDragModel
     :members:
     :exclude-members: __init__
-.. autoclass:: ScAnimationTimePeriod
+.. autoclass:: ScenarioAnimationTimePeriod
     :members:
     :exclude-members: __init__
-.. autoclass:: SnProjConstantAlt
+.. autoclass:: SensorProjectionConstantAltitude
     :members:
     :exclude-members: __init__
-.. autoclass:: SnProjObjectAlt
+.. autoclass:: SensorProjectionObjectAltitude
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttitudeRealTimeDataReference
+.. autoclass:: VehicleAttitudeRealTimeDataReference
     :members:
     :exclude-members: __init__
 .. autoclass:: MtoAnalysis
@@ -8614,7 +8614,7 @@ Classes
 .. autoclass:: MtoAnalysisVisibility
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorGPS
+.. autoclass:: VehiclePropagatorGPS
     :members:
     :exclude-members: __init__
 .. autoclass:: AvailableFeatures
@@ -8626,109 +8626,109 @@ Classes
 .. autoclass:: StkObjectPreDeleteEventArgs
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorSGP4CommonTasks
+.. autoclass:: VehiclePropagatorSGP4CommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4AutoUpdateProperties
+.. autoclass:: VehicleSGP4AutoUpdateProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4AutoUpdateFileSource
+.. autoclass:: VehicleSGP4AutoUpdateFileSource
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4AutoUpdateOnlineSource
+.. autoclass:: VehicleSGP4AutoUpdateOnlineSource
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4AutoUpdate
+.. autoclass:: VehicleSGP4AutoUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSGP4PropagatorSettings
+.. autoclass:: VehicleSGP4PropagatorSettings
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSAutoUpdateProperties
+.. autoclass:: VehicleGPSAutoUpdateProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSAutoUpdateFileSource
+.. autoclass:: VehicleGPSAutoUpdateFileSource
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSAutoUpdateOnlineSource
+.. autoclass:: VehicleGPSAutoUpdateOnlineSource
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSAutoUpdate
+.. autoclass:: VehicleGPSAutoUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSSpecifyAlmanac
+.. autoclass:: VehicleGPSSpecifyAlmanac
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSAlmanacProperties
+.. autoclass:: VehicleGPSAlmanacProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSAlmanacPropertiesSEM
+.. autoclass:: VehicleGPSAlmanacPropertiesSEM
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSAlmanacPropertiesYUMA
+.. autoclass:: VehicleGPSAlmanacPropertiesYUMA
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSAlmanacPropertiesSP3
+.. autoclass:: VehicleGPSAlmanacPropertiesSP3
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSElementCollection
+.. autoclass:: VehicleGPSElementCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGPSElement
+.. autoclass:: VehicleGPSElement
     :members:
     :exclude-members: __init__
-.. autoclass:: SpEnvRadEnergyMethodSpecify
+.. autoclass:: SpaceEnvironmentRadEnergyMethodSpecify
     :members:
     :exclude-members: __init__
-.. autoclass:: SpEnvRadEnergyValues
+.. autoclass:: SpaceEnvironmentRadEnergyValues
     :members:
     :exclude-members: __init__
-.. autoclass:: SpEnvRadiationEnvironment
+.. autoclass:: SpaceEnvironmentRadiationEnvironment
     :members:
     :exclude-members: __init__
-.. autoclass:: SpEnvMagFieldGfx
+.. autoclass:: SpaceEnvironmentMagnitudeFieldGfx
     :members:
     :exclude-members: __init__
-.. autoclass:: SpEnvScenExtVO
+.. autoclass:: SpaceEnvironmentScenarioExtVO
     :members:
     :exclude-members: __init__
-.. autoclass:: SpEnvScenSpaceEnvironment
+.. autoclass:: ScenSpaceEnvironment
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvRadDoseRateElement
+.. autoclass:: VehicleSpaceEnvironmentRadDoseRateElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvRadDoseRateCollection
+.. autoclass:: VehicleSpaceEnvironmentRadDoseRateCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: SpEnvSAAContour
+.. autoclass:: SpaceEnvironmentSAAContour
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvVehTemperature
+.. autoclass:: VehicleSpaceEnvironmentVehTemperature
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvParticleFlux
+.. autoclass:: VehicleSpaceEnvironmentParticleFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvMagneticField
+.. autoclass:: VehicleSpaceEnvironmentMagneticField
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvRadiation
+.. autoclass:: VehicleSpaceEnvironmentRadiation
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvMagFieldLine
+.. autoclass:: VehicleSpaceEnvironmentMagnitudeFieldLine
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvGraphics
+.. autoclass:: VehicleSpaceEnvironmentGraphics
     :members:
     :exclude-members: __init__
-.. autoclass:: VeSpEnvSpaceEnvironment
+.. autoclass:: VehicleSpaceEnvironment
     :members:
     :exclude-members: __init__
-.. autoclass:: CvSelectedGridPoint
+.. autoclass:: CoverageSelectedGridPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: CvGridPointSelection
+.. autoclass:: CoverageGridPointSelection
     :members:
     :exclude-members: __init__
 .. autoclass:: CelestialBodyCollection
@@ -8746,34 +8746,34 @@ Classes
 .. autoclass:: StkCentralBodyCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefSystemResponseTime
+.. autoclass:: FigureOfMeritDefinitionSystemResponseTime
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefAgeOfData
+.. autoclass:: FigureOfMeritDefinitionAgeOfData
     :members:
     :exclude-members: __init__
-.. autoclass:: FmDefScalarCalculation
+.. autoclass:: FigureOfMeritDefinitionScalarCalculation
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagator11ParamDescriptor
+.. autoclass:: VehiclePropagator11ParamDescriptor
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagator11ParamDescriptorCollection
+.. autoclass:: VehiclePropagator11ParamDescriptorCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagator11Param
+.. autoclass:: VehiclePropagator11Param
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorSP3File
+.. autoclass:: VehiclePropagatorSP3File
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorSP3FileCollection
+.. autoclass:: VehiclePropagatorSP3FileCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorSP3
+.. autoclass:: VehiclePropagatorSP3
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEphemerisStkBinaryExportTool
+.. autoclass:: VehicleEphemerisStkBinaryExportTool
     :members:
     :exclude-members: __init__
 .. autoclass:: OrbitState
@@ -8887,16 +8887,16 @@ Classes
 .. autoclass:: OrbitStateSpherical
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTimeComponentsEventElement
+.. autoclass:: VehicleGfxTimeComponentsEventElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTimeComponentsEventCollectionElement
+.. autoclass:: VehicleGfxTimeComponentsEventCollectionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxTimeComponentsCollection
+.. autoclass:: VehicleGfxTimeComponentsCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VeGfxAttributesTimeComponents
+.. autoclass:: VehicleGfxAttributesTimeComponents
     :members:
     :exclude-members: __init__
 .. autoclass:: StkPreferences
@@ -8905,31 +8905,31 @@ Classes
 .. autoclass:: StkPreferencesVDF
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttMaximumSlewRate
+.. autoclass:: VehicleAttitudeMaximumSlewRate
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttMaximumSlewAcceleration
+.. autoclass:: VehicleAttitudeMaximumSlewAcceleration
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttSlewConstrained
+.. autoclass:: VehicleAttitudeSlewConstrained
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttSlewFixedRate
+.. autoclass:: VehicleAttitudeSlewFixedRate
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttSlewFixedTime
+.. autoclass:: VehicleAttitudeSlewFixedTime
     :members:
     :exclude-members: __init__
-.. autoclass:: VeAttTargetSlew
+.. autoclass:: VehicleAttitudeTargetSlew
     :members:
     :exclude-members: __init__
 .. autoclass:: MtoVOModelArtic
     :members:
     :exclude-members: __init__
-.. autoclass:: VePropagatorAviator
+.. autoclass:: VehiclePropagatorAviator
     :members:
     :exclude-members: __init__
-.. autoclass:: VeEphemerisCCSDSv2ExportTool
+.. autoclass:: VehicleEphemerisCCSDSv2ExportTool
     :members:
     :exclude-members: __init__
 .. autoclass:: StkPreferencesConnect
@@ -10177,28 +10177,28 @@ Classes
 .. autoclass:: RadarStcAttenuationPlugin
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtAlongVector
+.. autoclass:: SensorPointingAlongVector
     :members:
     :exclude-members: __init__
-.. autoclass:: SnPtSchedule
+.. autoclass:: SensorPointingSchedule
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrAWBCollection
+.. autoclass:: AccessConstraintAnalysisWorkbenchCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: AccessCnstrAWB
+.. autoclass:: AccessConstraintAnalysisWorkbench
     :members:
     :exclude-members: __init__
 .. autoclass:: VOArticulationFile
     :members:
     :exclude-members: __init__
-.. autoclass:: DrStatisticResult
+.. autoclass:: DataProviderResultStatisticResult
     :members:
     :exclude-members: __init__
-.. autoclass:: DrTimeVarExtremumResult
+.. autoclass:: DataProviderResultTimeVaryingExtremumResult
     :members:
     :exclude-members: __init__
-.. autoclass:: DrStatistics
+.. autoclass:: DataProviderResultStatistics
     :members:
     :exclude-members: __init__
 .. autoclass:: VOModelGltfImageBased

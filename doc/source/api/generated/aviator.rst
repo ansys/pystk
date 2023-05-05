@@ -182,7 +182,7 @@ Interfaces
     IBasicManeuverStrategyRendezvous
     IBasicManeuverStrategyStationkeeping
     IBasicManeuverStrategyRelativeFPA
-    IBasicManeuverStrategyRelSpeedAlt
+    IBasicManeuverStrategyRelSpeedAltitude
     IBasicManeuverStrategyBezier
     IBasicManeuverStrategyPushPull
     IBasicManeuverStrategyGlideProfile
@@ -194,10 +194,10 @@ Interfaces
     ITakeoffNormal
     ITakeoffDeparturePoint
     ITakeoffLowTransition
-    IRefStateForwardFlightOptions
-    IRefStateHoverOptions
-    IRefStateWeightOnWheelsOptions
-    IRefStateTakeoffLandingOptions
+    IReferenceStateForwardFlightOptions
+    IReferenceStateHoverOptions
+    IReferenceStateWeightOnWheelsOptions
+    IReferenceStateTakeoffLandingOptions
     ILandingEnterDownwindPattern
     ILandingInterceptGlideslope
     ILandingStandardInstrumentApproach
@@ -536,7 +536,7 @@ Classes
     BasicManeuverStrategyRendezvous
     BasicManeuverStrategyStationkeeping
     BasicManeuverStrategyRelativeFPA
-    BasicManeuverStrategyRelSpeedAlt
+    BasicManeuverStrategyRelSpeedAltitude
     BasicManeuverStrategyBezier
     BasicManeuverStrategyPushPull
     ProcedureHoldingCircular
@@ -589,10 +589,10 @@ Classes
     MissileRamjetProp
     MissileRocketProp
     MissileTurbojetProp
-    RefStateForwardFlightOptions
-    RefStateTakeoffLandingOptions
-    RefStateHoverOptions
-    RefStateWeightOnWheelsOptions
+    ReferenceStateForwardFlightOptions
+    ReferenceStateTakeoffLandingOptions
+    ReferenceStateHoverOptions
+    ReferenceStateWeightOnWheelsOptions
     SiteRunwayFromCatalog
     SiteAirportFromCatalog
     SiteNavaidFromCatalog
@@ -1151,7 +1151,7 @@ Interfaces
 .. autoclass:: IBasicManeuverStrategyRelativeFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: IBasicManeuverStrategyRelSpeedAlt
+.. autoclass:: IBasicManeuverStrategyRelSpeedAltitude
     :members:
     :exclude-members: __init__
 .. autoclass:: IBasicManeuverStrategyBezier
@@ -1187,16 +1187,16 @@ Interfaces
 .. autoclass:: ITakeoffLowTransition
     :members:
     :exclude-members: __init__
-.. autoclass:: IRefStateForwardFlightOptions
+.. autoclass:: IReferenceStateForwardFlightOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IRefStateHoverOptions
+.. autoclass:: IReferenceStateHoverOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IRefStateWeightOnWheelsOptions
+.. autoclass:: IReferenceStateWeightOnWheelsOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IRefStateTakeoffLandingOptions
+.. autoclass:: IReferenceStateTakeoffLandingOptions
     :members:
     :exclude-members: __init__
 .. autoclass:: ILandingEnterDownwindPattern
@@ -2054,7 +2054,7 @@ Classes
 .. autoclass:: BasicManeuverStrategyRelativeFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: BasicManeuverStrategyRelSpeedAlt
+.. autoclass:: BasicManeuverStrategyRelSpeedAltitude
     :members:
     :exclude-members: __init__
 .. autoclass:: BasicManeuverStrategyBezier
@@ -2213,16 +2213,16 @@ Classes
 .. autoclass:: MissileTurbojetProp
     :members:
     :exclude-members: __init__
-.. autoclass:: RefStateForwardFlightOptions
+.. autoclass:: ReferenceStateForwardFlightOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: RefStateTakeoffLandingOptions
+.. autoclass:: ReferenceStateTakeoffLandingOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: RefStateHoverOptions
+.. autoclass:: ReferenceStateHoverOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: RefStateWeightOnWheelsOptions
+.. autoclass:: ReferenceStateWeightOnWheelsOptions
     :members:
     :exclude-members: __init__
 .. autoclass:: SiteRunwayFromCatalog
