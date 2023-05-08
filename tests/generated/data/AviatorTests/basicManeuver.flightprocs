@@ -1,0 +1,133 @@
+<?xml version = "1.0" standalone = "yes"?>
+<AgXMLPropertyBagData version = "1.0">
+    <Object clsid = "{F0BA2E47-4AF3-4804-A190-DEC8B7FE3859}">
+        <GUID Value = "{B0069D57-8F09-40BA-AF25-3818575AB9A5}" VarType = "VT_BSTR" />
+        <ProcedureVec VarType = "VT_ARRAY">
+            <Dimension>
+                <ArrayData VarType = "VT_UNKNOWN">
+                    <Object clsid = "{D36066E8-B327-4659-A930-AC980797391C}">
+                        <DisplayName Value = "Basic Maneuver" VarType = "VT_BSTR" />
+                        <Site VarType = "VT_UNKNOWN">
+                            <Object clsid = "{725372A8-07A4-4821-BF83-7A35FED6CBC3}">
+                                <DisplayName Value = "End of Previous Procedure" VarType = "VT_BSTR" />
+                                <UserProperties VarType = "VT_UNKNOWN">
+                                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                                        <PropertyCount Value = "0" VarType = "VT_I4" />
+                                    </Object>
+                                </UserProperties>
+                                <_BSTRUniqueID Value = "{3A98374C-F87E-407E-9D02-6B8BECF89469}" VarType = "VT_BSTR" />
+                            </Object>
+                        </Site>
+                        <RefuelDumpHelper VarType = "VT_UNKNOWN">
+                            <Object clsid = "{BF008410-5F70-48ee-A9B7-0D50F7E3AEAA}">
+                                <DisplayName Value = "RefuelDumpHelper" VarType = "VT_BSTR" />
+                                <RefuelDumpMode Value = "0" VarType = "VT_I4" />
+                                <RefuelDumpModeValue Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                                <RefuelDumpStartTimeOffset Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                                <RefuelDumpRate Value = "3.7799364166666667e+00" VarType = "VT_R8" />
+                                <CanUseEndOfEnrouteSegmentAsEpoch Value = "0" VarType = "VT_I1" />
+                                <UseEndOfEnrouteSegmentAsEpoch Value = "0" VarType = "VT_I1" />
+                                <UserProperties VarType = "VT_UNKNOWN">
+                                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                                        <PropertyCount Value = "0" VarType = "VT_I4" />
+                                    </Object>
+                                </UserProperties>
+                            </Object>
+                        </RefuelDumpHelper>
+                        <WindModelSource Value = "1" VarType = "VT_I4" />
+                        <AtmosCalcDataSource Value = "1" VarType = "VT_I4" />
+                        <UserProperties VarType = "VT_UNKNOWN">
+                            <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                                <PropertyCount Value = "0" VarType = "VT_I4" />
+                            </Object>
+                        </UserProperties>
+                        <NavStrategy VarType = "VT_UNKNOWN">
+                            <Object clsid = "{CAE1614C-73C8-422E-A4A7-B70E10B8BC9D}">
+                                <UserProperties VarType = "VT_UNKNOWN">
+                                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                                        <PropertyCount Value = "0" VarType = "VT_I4" />
+                                    </Object>
+                                </UserProperties>
+                                <ReferenceFrame Value = "1" VarType = "VT_I4" />
+                                <CompensateForCoriolis Value = "0" VarType = "VT_I1" />
+                            </Object>
+                        </NavStrategy>
+                        <ProfileStrategy VarType = "VT_UNKNOWN">
+                            <Object clsid = "{6DB3EA49-A405-43ae-A00B-9F03EBB7ED80}">
+                                <AltMode Value = "0" VarType = "VT_I4" />
+                                <SpecAbsAltitude Value = "3.0480000000000000e+03" VarType = "VT_R8" />
+                                <SpecRelAltitudeChange Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                                <SpecAltitudeRate Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                                <SpecFPA Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                                <AltRateControl Value = "1.0160000000000000e+01" VarType = "VT_R8" />
+                                <FPARateControl Value = "1.7453292519943295e-01" VarType = "VT_R8" />
+                                <VertRateControlMode Value = "0" VarType = "VT_I4" />
+                                <ControlLimitMode Value = "1" VarType = "VT_I4" />
+                                <ControlLimitPitchRate Value = "1.7453292519943295e-01" VarType = "VT_R8" />
+                                <DampingRatio Value = "2.0000000000000000e+00" VarType = "VT_R8" />
+                                <FlyBallisticWhenInsufficientPerformance Value = "0" VarType = "VT_I1" />
+                                <UsingNewSecondOrderLogic Value = "1" VarType = "VT_I1" />
+                                <CompensateForCoriolis Value = "0" VarType = "VT_I1" />
+                                <UserProperties VarType = "VT_UNKNOWN">
+                                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                                        <PropertyCount Value = "0" VarType = "VT_I4" />
+                                    </Object>
+                                </UserProperties>
+                                <AirspeedMode Value = "0" VarType = "VT_I4" />
+                                <AirspeedMaintainType Value = "3" VarType = "VT_I4" />
+                                <SpecifiedAirspeed Value = "1.2861111111111111e+02" VarType = "VT_R8" />
+                                <SpecifiedAirspeedType Value = "3" VarType = "VT_I4" />
+                                <SpecifiedAccelDecelMode Value = "0" VarType = "VT_I4" />
+                                <SpecifiedAccelDecelG Value = "2.5000000000000000e-01" VarType = "VT_R8" />
+                                <AirspeedAccelMode Value = "0" VarType = "VT_I4" />
+                                <AirspeedAccelG Value = "2.5000000000000000e-01" VarType = "VT_R8" />
+                                <AirspeedDecelMode Value = "0" VarType = "VT_I4" />
+                                <AirspeedDecelG Value = "2.5000000000000000e-01" VarType = "VT_R8" />
+                                <AirspeedAccelDecelThrottle Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+                                <EnforcePerfModelLimitsMinSpeed Value = "0" VarType = "VT_I4" />
+                                <EnforcePerfModelLimitsMaxSpeed Value = "0" VarType = "VT_I4" />
+                                <InitAccelDecelG Value = "2.5000000000000000e-01" VarType = "VT_R8" />
+                                <EndAccelDecelG Value = "5.0000000000000000e-01" VarType = "VT_R8" />
+                                <EndAccelDecelElapsedTime Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+                                <StopAtAccelDecelEndTime Value = "1" VarType = "VT_I1" />
+                            </Object>
+                        </ProfileStrategy>
+                        <FuelFlowType Value = "1" VarType = "VT_I4" />
+                        <OverrideFuelFlow Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                        <UseStopFuelState Value = "0" VarType = "VT_I1" />
+                        <StopFuelState Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                        <UseMaxTimeOfFlight Value = "0" VarType = "VT_I1" />
+                        <MaxTimeOfFlight Value = "6.0000000000000000e+01" VarType = "VT_R8" />
+                        <UseMaxDownrange Value = "1" VarType = "VT_I1" />
+                        <MaxDownrange Value = "1.8520000000000000e+04" VarType = "VT_R8" />
+                        <AltLimitMode Value = "0" VarType = "VT_I4" />
+                        <TerrainImpactMode Value = "2" VarType = "VT_I4" />
+                        <TerrainImpactTimeOffset Value = "3.0000000000000000e+01" VarType = "VT_R8" />
+                        <PerfMode Value = "0" VarType = "VT_I4" />
+                        <PhaseOfFlight Value = "3" VarType = "VT_I4" />
+                        <AttitudeBlendTime Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+                        <StateCacheTimeInterval Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+                        <MaxRelMotionFactor Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+                        <ConvergeTimeTolerance Value = "1.0000000000000000e-03" VarType = "VT_R8" />
+                        <MaxCalcIterations Value = "50" VarType = "VT_I4" />
+                        <MaxCalcBadSteps Value = "3" VarType = "VT_I4" />
+                        <ScaleFuelByDensity Value = "0" VarType = "VT_I1" />
+                        <ControlTimeConstant Value = "1.0000000000000000e+00" VarType = "VT_R8" />
+                        <FreezeNextHoverAlt Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                        <FreezeNextHoverTranslationTrueBearing Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                        <FreezeNextHoverTranslationDistance Value = "0.0000000000000000e+00" VarType = "VT_R8" />
+                        <DebugMode_Propagate Value = "0" VarType = "VT_I1" />
+                        <DebugMode_PostPropagate Value = "0" VarType = "VT_I1" />
+                        <DebugMode_RefQuatFrame Value = "0" VarType = "VT_I1" />
+                        <_BSTRUniqueID Value = "{3FC0DA04-4E91-4623-9AC2-0D151DFEB9A7}" VarType = "VT_BSTR" />
+                    </Object>
+                </ArrayData>
+            </Dimension>
+        </ProcedureVec>
+        <UserProperties VarType = "VT_UNKNOWN">
+            <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                <PropertyCount Value = "0" VarType = "VT_I4" />
+            </Object>
+        </UserProperties>
+    </Object>
+</AgXMLPropertyBagData>

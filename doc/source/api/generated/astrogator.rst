@@ -35,7 +35,7 @@ Interfaces
     IGridSearchResult
     IStoppingConditionElement
     IStoppingConditionCollection
-    IMCSSegmentCollection
+    IMissionControlSequenceSegmentCollection
     IState
     IStoppingConditionComponent
     IAutomaticSequence
@@ -63,12 +63,12 @@ Interfaces
     IElement
     ISpacecraftParameters
     IFuelTank
-    IMCSSegmentProperties
-    IMCSEnd
-    IMCSInitialState
-    IMCSSegment
-    IMCSOptions
-    IDriverMCS
+    IMissionControlSequenceSegmentProperties
+    IMissionControlSequenceEnd
+    IMissionControlSequenceInitialState
+    IMissionControlSequenceSegment
+    IMissionControlSequenceOptions
+    IDriverMissionControlSequence
     IElementCartesian
     IElementKeplerian
     IElementDelaunay
@@ -82,19 +82,19 @@ Interfaces
     IStoppingCondition
     ILightingStoppingCondition
     IAccessStoppingCondition
-    IMCSPropagate
-    IMCSSequence
-    IMCSBackwardSequence
-    IMCSLaunch
+    IMissionControlSequencePropagate
+    IMissionControlSequenceSequence
+    IMissionControlSequenceBackwardSequence
+    IMissionControlSequenceLaunch
     IDisplaySystemGeodetic
     IDisplaySystemGeocentric
     IBurnoutCBFCartesian
     IBurnoutGeodetic
     IBurnoutGeocentric
-    IBurnoutLaunchAzAlt
+    IBurnoutLaunchAzAltitude
     IBurnoutLaunchAzRadius
-    IMCSFollow
-    IMCSManeuver
+    IMissionControlSequenceFollow
+    IMissionControlSequenceManeuver
     IManeuverFinite
     IManeuverImpulsive
     IAttitudeControlImpulsiveVelocityVector
@@ -110,21 +110,21 @@ Interfaces
     IAttitudeControlFiniteVelocityVector
     IAttitudeControlFinitePlugin
     IAttitudeControlOptimalFiniteLagrange
-    IMCSHold
-    IMCSUpdate
-    IMCSReturn
-    IMCSStop
+    IMissionControlSequenceHold
+    IMissionControlSequenceUpdate
+    IMissionControlSequenceReturn
+    IMissionControlSequenceStop
     IProfile
     IProfileCollection
-    IMCSTargetSequence
-    IDCControl
-    IDCResult
+    IMissionControlSequenceTargetSequence
+    IDifferentialCorrectorControl
+    IDifferentialCorrectorResult
     ISearchPluginControl
     ISearchPluginResult
     ISearchPluginResultCollection
     ISearchPluginControlCollection
-    IDCControlCollection
-    IDCResultCollection
+    IDifferentialCorrectorControlCollection
+    IDifferentialCorrectorResultCollection
     ITargeterGraphActiveControl
     ITargeterGraphResult
     ITargeterGraphActiveControlCollection
@@ -172,14 +172,14 @@ Interfaces
     IStateCalcEquinoctialElem
     IStateCalcDamageFlux
     IStateCalcDamageMassFlux
-    IStateCalcMagFieldDipoleL
-    IStateCalcSEETMagFieldFieldLineSepAngle
+    IStateCalcMagnitudeFieldDipoleL
+    IStateCalcSEETMagnitudeFieldFieldLineSepAngle
     IStateCalcImpactFlux
     IStateCalcImpactMassFlux
     IStateCalcSEETSAAFlux
     IStateCalcSEETVehTemp
     IStateCalcCloseApproachBearing
-    IStateCalcCloseApproachMag
+    IStateCalcCloseApproachMagnitude
     IStateCalcCloseApproachTheta
     IStateCalcCloseApproachX
     IStateCalcCloseApproachY
@@ -192,11 +192,11 @@ Interfaces
     IStateCalcRectifiedLon
     IStateCalcGeodeticElem
     IStateCalcRepeatingGroundTrackErr
-    IStateCalcAltOfApoapsis
-    IStateCalcAltOfPeriapsis
+    IStateCalcAltitudeOfApoapsis
+    IStateCalcAltitudeOfPeriapsis
     IStateCalcArgOfLat
     IStateCalcArgOfPeriapsis
-    IStateCalcEccAnomaly
+    IStateCalcEccentricityAnomaly
     IStateCalcEccentricity
     IStateCalcInclination
     IStateCalcLonOfAscNode
@@ -212,13 +212,13 @@ Interfaces
     IStateCalcTimePastPeriapsis
     IStateCalcDeltaV
     IStateCalcDeltaVSquared
-    IStateCalcMCSDeltaV
-    IStateCalcMCSDeltaVSquared
+    IStateCalcMissionControlSequenceDeltaV
+    IStateCalcMissionControlSequenceDeltaVSquared
     IStateCalcSequenceDeltaV
     IStateCalcSequenceDeltaVSquared
     IStateCalcFuelMass
     IStateCalcDensity
-    IStateCalcInertialDeltaVMag
+    IStateCalcInertialDeltaVMagnitude
     IStateCalcInertialDeltaVx
     IStateCalcInertialDeltaVy
     IStateCalcInertialDeltaVz
@@ -233,9 +233,9 @@ Interfaces
     IStateCalcAbsoluteValue
     IStateCalcDifference
     IStateCalcDifferenceOtherSegment
-    IStateCalcPosDifferenceOtherSegment
+    IStateCalcPositionDifferenceOtherSegment
     IStateCalcVelDifferenceOtherSegment
-    IStateCalcPosVelDifferenceOtherSegment
+    IStateCalcPositionVelDifferenceOtherSegment
     IStateCalcValueAtSegment
     IStateCalcMaxValue
     IStateCalcMinValue
@@ -246,7 +246,7 @@ Interfaces
     IStateCalcTrueAnomaly
     IBDotRCalc
     IBDotTCalc
-    IBMagCalc
+    IBMagnitudeCalc
     IBThetaCalc
     IStateCalcDeltaDec
     IStateCalcDeltaRA
@@ -260,8 +260,8 @@ Interfaces
     IStateCalcRelMotion
     IStateCalcSolarBetaAngle
     IStateCalcSolarInPlaneAngle
-    IStateCalcRelPosDecAngle
-    IStateCalcRelPosInPlaneAngle
+    IStateCalcRelPositionDecAngle
+    IStateCalcRelPositionInPlaneAngle
     IStateCalcRelativeInclination
     IStateCalcCurvilinearRelMotion
     IStateCalcCustomFunction
@@ -275,9 +275,9 @@ Interfaces
     IStateCalcCosOfVerticalFPA
     IStateCalcDec
     IStateCalcFPA
-    IStateCalcRMag
+    IStateCalcRMagnitude
     IStateCalcRA
-    IStateCalcVMag
+    IStateCalcVMagnitude
     IStateCalcVelAz
     IStateCalcC3Energy
     IStateCalcInAsympDec
@@ -292,9 +292,9 @@ Interfaces
     IStateCalcAngle
     IStateCalcDotProduct
     IStateCalcVectorDec
-    IStateCalcVectorMag
+    IStateCalcVectorMagnitude
     IStateCalcVectorRA
-    IStateCalcOnePtAccess
+    IStateCalcOnePointAccess
     IStateCalcDifferenceAcrossSegmentsOtherSat
     IStateCalcValueAtSegmentOtherSat
     IStateCalcRARate
@@ -309,26 +309,26 @@ Interfaces
     IStateCalcEarthMeanSolarTime
     IStateCalcEarthMeanLocTimeAN
     ICentralBodyCollection
-    ICbEphemeris
-    ICbGravityModel
-    ICbShape
-    ICbShapeSphere
-    ICbShapeOblateSpheroid
-    ICbShapeTriaxialEllipsoid
-    ICbAttitude
-    ICbAttitudeRotationCoefficientsFile
-    ICbAttitudeIAU1994
-    ICbEphemerisAnalyticOrbit
-    ICbEphemerisJPLSpice
-    ICbEphemerisFile
-    ICbEphemerisJPLDE
-    ICbEphemerisPlanetary
+    ICentralBodyEphemeris
+    ICentralBodyGravityModel
+    ICentralBodyShape
+    ICentralBodyShapeSphere
+    ICentralBodyShapeOblateSpheroid
+    ICentralBodyShapeTriaxialEllipsoid
+    ICentralBodyAttitude
+    ICentralBodyAttitudeRotationCoefficientsFile
+    ICentralBodyAttitudeIAU1994
+    ICentralBodyEphemerisAnalyticOrbit
+    ICentralBodyEphemerisJPLSpice
+    ICentralBodyEphemerisFile
+    ICentralBodyEphemerisJPLDesignExplorerOptimizer
+    ICentralBodyEphemerisPlanetary
     IAstrogatorCentralBody
     IPowerInternal
     IPowerProcessed
     IPowerSolarArray
     IGeneralRelativityFunction
-    IStateTransFunction
+    IStateTransformationFunction
     ICR3BPFunc
     IRadiationPressureFunction
     IYarkovskyFunc
@@ -393,12 +393,12 @@ Interfaces
     INumericalPropagatorWrapperCR3BP
     IBulirschStoerIntegrator
     IGaussJacksonIntegrator
-    IRK2nd3rd
-    IRK4th
-    IRK4th5th
-    IRK4thAdapt
-    IRKF7th8th
-    IRKV8th9th
+    IRungeKutta2nd3rd
+    IRungeKutta4th
+    IRungeKutta4th5th
+    IRungeKutta4thAdapt
+    IRungeKuttaF7th8th
+    IRungeKuttaV8th9th
 
 
 Enumerations
@@ -544,10 +544,10 @@ Classes
 
 .. autosummary::
 
-    DriverMCS
-    MCSSegmentCollection
-    MCSEnd
-    MCSInitialState
+    DriverMissionControlSequence
+    MissionControlSequenceSegmentCollection
+    MissionControlSequenceEnd
+    MissionControlSequenceInitialState
     SpacecraftParameters
     FuelTank
     ElementCartesian
@@ -560,26 +560,26 @@ Classes
     ElementTargetVectorOutgoingAsymptote
     ElementGeodetic
     ElementBPlane
-    MCSPropagate
+    MissionControlSequencePropagate
     State
     StoppingConditionCollection
     AccessStoppingCondition
     LightingStoppingCondition
     StoppingCondition
     StoppingConditionElement
-    MCSSequence
-    MCSBackwardSequence
-    MCSLaunch
+    MissionControlSequenceSequence
+    MissionControlSequenceBackwardSequence
+    MissionControlSequenceLaunch
     DisplaySystemGeodetic
     DisplaySystemGeocentric
     BurnoutGeodetic
     BurnoutCBFCartesian
     BurnoutGeocentric
-    BurnoutLaunchAzAlt
+    BurnoutLaunchAzAltitude
     BurnoutLaunchAzRadius
     BurnoutVelocity
-    MCSFollow
-    MCSManeuver
+    MissionControlSequenceFollow
+    MissionControlSequenceManeuver
     ManeuverFinite
     ManeuverImpulsive
     AttitudeControlImpulsiveVelocityVector
@@ -596,13 +596,13 @@ Classes
     AttitudeControlFinitePlugin
     AttitudeControlOptimalFiniteLagrange
     ManeuverFinitePropagator
-    MCSHold
-    MCSUpdate
-    MCSReturn
-    MCSStop
-    MCSTargetSequence
+    MissionControlSequenceHold
+    MissionControlSequenceUpdate
+    MissionControlSequenceReturn
+    MissionControlSequenceStop
+    MissionControlSequenceTargetSequence
     ProfileCollection
-    MCSOptions
+    MissionControlSequenceOptions
     CalcObjectCollection
     ConstraintCollection
     PluginProperties
@@ -615,10 +615,10 @@ Classes
     TargeterGraphResult
     ProfileDifferentialCorrector
     ProfileScriptingTool
-    DCControl
-    DCResult
-    DCControlCollection
-    DCResultCollection
+    DifferentialCorrectorControl
+    DifferentialCorrectorResult
+    DifferentialCorrectorControlCollection
+    DifferentialCorrectorResultCollection
     SearchPluginControl
     SearchPluginControlCollection
     SearchPluginResult
@@ -633,8 +633,8 @@ Classes
     BPlaneCollection
     StateCalcDamageFlux
     StateCalcDamageMassFlux
-    StateCalcMagFieldDipoleL
-    StateCalcSEETMagFieldFieldLineSepAngle
+    StateCalcMagnitudeFieldDipoleL
+    StateCalcSEETMagnitudeFieldFieldLineSepAngle
     StateCalcImpactFlux
     StateCalcImpactMassFlux
     StateCalcSEETSAAFlux
@@ -652,7 +652,7 @@ Classes
     StateCalcOrbitSemiLatusRectum
     StateCalcEquinoctialElem
     StateCalcCloseApproachBearing
-    StateCalcCloseApproachMag
+    StateCalcCloseApproachMagnitude
     StateCalcCloseApproachTheta
     StateCalcCloseApproachX
     StateCalcCloseApproachY
@@ -666,11 +666,11 @@ Classes
     StateCalcHeightAboveTerrain
     StateCalcGeodeticElem
     StateCalcRepeatingGroundTrackErr
-    StateCalcAltOfApoapsis
-    StateCalcAltOfPeriapsis
+    StateCalcAltitudeOfApoapsis
+    StateCalcAltitudeOfPeriapsis
     StateCalcArgOfLat
     StateCalcArgOfPeriapsis
-    StateCalcEccAnomaly
+    StateCalcEccentricityAnomaly
     StateCalcLonOfAscNode
     StateCalcMeanMotion
     StateCalcOrbitPeriod
@@ -683,13 +683,13 @@ Classes
     StateCalcTrueAnomaly
     StateCalcDeltaV
     StateCalcDeltaVSquared
-    StateCalcMCSDeltaV
-    StateCalcMCSDeltaVSquared
+    StateCalcMissionControlSequenceDeltaV
+    StateCalcMissionControlSequenceDeltaVSquared
     StateCalcSequenceDeltaV
     StateCalcSequenceDeltaVSquared
     StateCalcFuelMass
     StateCalcDensity
-    StateCalcInertialDeltaVMag
+    StateCalcInertialDeltaVMagnitude
     StateCalcInertialDeltaVx
     StateCalcInertialDeltaVy
     StateCalcInertialDeltaVz
@@ -703,9 +703,9 @@ Classes
     StateCalcAbsoluteValue
     StateCalcDifference
     StateCalcDifferenceOtherSegment
-    StateCalcPosDifferenceOtherSegment
+    StateCalcPositionDifferenceOtherSegment
     StateCalcVelDifferenceOtherSegment
-    StateCalcPosVelDifferenceOtherSegment
+    StateCalcPositionVelDifferenceOtherSegment
     StateCalcValueAtSegment
     StateCalcMaxValue
     StateCalcMinValue
@@ -718,7 +718,7 @@ Classes
     StateCalcRAAN
     BDotRCalc
     BDotTCalc
-    BMagCalc
+    BMagnitudeCalc
     BThetaCalc
     StateCalcDeltaDec
     StateCalcDeltaRA
@@ -733,8 +733,8 @@ Classes
     StateCalcRelMotion
     StateCalcSolarBetaAngle
     StateCalcSolarInPlaneAngle
-    StateCalcRelPosDecAngle
-    StateCalcRelPosInPlaneAngle
+    StateCalcRelPositionDecAngle
+    StateCalcRelPositionInPlaneAngle
     StateCalcRelativeInclination
     StateCalcCurvilinearRelMotion
     StateCalcCustomFunction
@@ -748,9 +748,9 @@ Classes
     StateCalcCosOfVerticalFPA
     StateCalcDec
     StateCalcFPA
-    StateCalcRMag
+    StateCalcRMagnitude
     StateCalcRA
-    StateCalcVMag
+    StateCalcVMagnitude
     StateCalcVelAz
     StateCalcC3Energy
     StateCalcInAsympDec
@@ -765,10 +765,10 @@ Classes
     StateCalcAngle
     StateCalcDotProduct
     StateCalcVectorDec
-    StateCalcVectorMag
+    StateCalcVectorMagnitude
     StateCalcVectorRA
     StateCalcVectorX
-    StateCalcOnePtAccess
+    StateCalcOnePointAccess
     StateCalcDifferenceAcrossSegmentsOtherSat
     StateCalcValueAtSegmentOtherSat
     StateCalcRARate
@@ -786,23 +786,23 @@ Classes
     AutomaticSequence
     CentralBodyCollection
     AstrogatorCentralBody
-    CbGravityModel
-    CbShapeSphere
-    CbShapeOblateSpheroid
-    CbShapeTriaxialEllipsoid
-    CbAttitudeRotationCoefficientsFile
-    CbAttitudeIAU1994
-    CbEphemerisAnalyticOrbit
-    CbEphemerisJPLSpice
-    CbEphemerisFile
-    CbEphemerisJPLDE
-    CbEphemerisPlanetary
-    MCSSegmentProperties
+    CentralBodyGravityModel
+    CentralBodyShapeSphere
+    CentralBodyShapeOblateSpheroid
+    CentralBodyShapeTriaxialEllipsoid
+    CentralBodyAttitudeRotationCoefficientsFile
+    CentralBodyAttitudeIAU1994
+    CentralBodyEphemerisAnalyticOrbit
+    CentralBodyEphemerisJPLSpice
+    CentralBodyEphemerisFile
+    CentralBodyEphemerisJPLDesignExplorerOptimizer
+    CentralBodyEphemerisPlanetary
+    MissionControlSequenceSegmentProperties
     PowerInternal
     PowerProcessed
     PowerSolarArray
     GeneralRelativityFunction
-    StateTransFunction
+    StateTransformationFunction
     CR3BPFunc
     RadiationPressureFunction
     YarkovskyFunc
@@ -866,12 +866,12 @@ Classes
     PropagatorFunctionCollection
     BulirschStoerIntegrator
     GaussJacksonIntegrator
-    RK2nd3rd
-    RK4th
-    RK4th5th
-    RK4thAdapt
-    RKF7th8th
-    RKV8th9th
+    RungeKutta2nd3rd
+    RungeKutta4th
+    RungeKutta4th5th
+    RungeKutta4thAdapt
+    RungeKuttaF7th8th
+    RungeKuttaV8th9th
     ScriptingTool
     ScriptingSegmentCollection
     ScriptingSegment
@@ -1005,7 +1005,7 @@ Interfaces
 .. autoclass:: IStoppingConditionCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSSegmentCollection
+.. autoclass:: IMissionControlSequenceSegmentCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IState
@@ -1089,22 +1089,22 @@ Interfaces
 .. autoclass:: IFuelTank
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSSegmentProperties
+.. autoclass:: IMissionControlSequenceSegmentProperties
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSEnd
+.. autoclass:: IMissionControlSequenceEnd
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSInitialState
+.. autoclass:: IMissionControlSequenceInitialState
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSSegment
+.. autoclass:: IMissionControlSequenceSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSOptions
+.. autoclass:: IMissionControlSequenceOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IDriverMCS
+.. autoclass:: IDriverMissionControlSequence
     :members:
     :exclude-members: __init__
 .. autoclass:: IElementCartesian
@@ -1146,16 +1146,16 @@ Interfaces
 .. autoclass:: IAccessStoppingCondition
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSPropagate
+.. autoclass:: IMissionControlSequencePropagate
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSSequence
+.. autoclass:: IMissionControlSequenceSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSBackwardSequence
+.. autoclass:: IMissionControlSequenceBackwardSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSLaunch
+.. autoclass:: IMissionControlSequenceLaunch
     :members:
     :exclude-members: __init__
 .. autoclass:: IDisplaySystemGeodetic
@@ -1173,16 +1173,16 @@ Interfaces
 .. autoclass:: IBurnoutGeocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: IBurnoutLaunchAzAlt
+.. autoclass:: IBurnoutLaunchAzAltitude
     :members:
     :exclude-members: __init__
 .. autoclass:: IBurnoutLaunchAzRadius
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSFollow
+.. autoclass:: IMissionControlSequenceFollow
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSManeuver
+.. autoclass:: IMissionControlSequenceManeuver
     :members:
     :exclude-members: __init__
 .. autoclass:: IManeuverFinite
@@ -1230,16 +1230,16 @@ Interfaces
 .. autoclass:: IAttitudeControlOptimalFiniteLagrange
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSHold
+.. autoclass:: IMissionControlSequenceHold
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSUpdate
+.. autoclass:: IMissionControlSequenceUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSReturn
+.. autoclass:: IMissionControlSequenceReturn
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSStop
+.. autoclass:: IMissionControlSequenceStop
     :members:
     :exclude-members: __init__
 .. autoclass:: IProfile
@@ -1248,13 +1248,13 @@ Interfaces
 .. autoclass:: IProfileCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IMCSTargetSequence
+.. autoclass:: IMissionControlSequenceTargetSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: IDCControl
+.. autoclass:: IDifferentialCorrectorControl
     :members:
     :exclude-members: __init__
-.. autoclass:: IDCResult
+.. autoclass:: IDifferentialCorrectorResult
     :members:
     :exclude-members: __init__
 .. autoclass:: ISearchPluginControl
@@ -1269,10 +1269,10 @@ Interfaces
 .. autoclass:: ISearchPluginControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IDCControlCollection
+.. autoclass:: IDifferentialCorrectorControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IDCResultCollection
+.. autoclass:: IDifferentialCorrectorResultCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: ITargeterGraphActiveControl
@@ -1416,10 +1416,10 @@ Interfaces
 .. autoclass:: IStateCalcDamageMassFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcMagFieldDipoleL
+.. autoclass:: IStateCalcMagnitudeFieldDipoleL
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcSEETMagFieldFieldLineSepAngle
+.. autoclass:: IStateCalcSEETMagnitudeFieldFieldLineSepAngle
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcImpactFlux
@@ -1437,7 +1437,7 @@ Interfaces
 .. autoclass:: IStateCalcCloseApproachBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcCloseApproachMag
+.. autoclass:: IStateCalcCloseApproachMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcCloseApproachTheta
@@ -1476,10 +1476,10 @@ Interfaces
 .. autoclass:: IStateCalcRepeatingGroundTrackErr
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcAltOfApoapsis
+.. autoclass:: IStateCalcAltitudeOfApoapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcAltOfPeriapsis
+.. autoclass:: IStateCalcAltitudeOfPeriapsis
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcArgOfLat
@@ -1488,7 +1488,7 @@ Interfaces
 .. autoclass:: IStateCalcArgOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcEccAnomaly
+.. autoclass:: IStateCalcEccentricityAnomaly
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcEccentricity
@@ -1536,10 +1536,10 @@ Interfaces
 .. autoclass:: IStateCalcDeltaVSquared
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcMCSDeltaV
+.. autoclass:: IStateCalcMissionControlSequenceDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcMCSDeltaVSquared
+.. autoclass:: IStateCalcMissionControlSequenceDeltaVSquared
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcSequenceDeltaV
@@ -1554,7 +1554,7 @@ Interfaces
 .. autoclass:: IStateCalcDensity
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcInertialDeltaVMag
+.. autoclass:: IStateCalcInertialDeltaVMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcInertialDeltaVx
@@ -1599,13 +1599,13 @@ Interfaces
 .. autoclass:: IStateCalcDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcPosDifferenceOtherSegment
+.. autoclass:: IStateCalcPositionDifferenceOtherSegment
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcVelDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcPosVelDifferenceOtherSegment
+.. autoclass:: IStateCalcPositionVelDifferenceOtherSegment
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcValueAtSegment
@@ -1638,7 +1638,7 @@ Interfaces
 .. autoclass:: IBDotTCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: IBMagCalc
+.. autoclass:: IBMagnitudeCalc
     :members:
     :exclude-members: __init__
 .. autoclass:: IBThetaCalc
@@ -1680,10 +1680,10 @@ Interfaces
 .. autoclass:: IStateCalcSolarInPlaneAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcRelPosDecAngle
+.. autoclass:: IStateCalcRelPositionDecAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcRelPosInPlaneAngle
+.. autoclass:: IStateCalcRelPositionInPlaneAngle
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcRelativeInclination
@@ -1725,13 +1725,13 @@ Interfaces
 .. autoclass:: IStateCalcFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcRMag
+.. autoclass:: IStateCalcRMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcRA
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcVMag
+.. autoclass:: IStateCalcVMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcVelAz
@@ -1776,13 +1776,13 @@ Interfaces
 .. autoclass:: IStateCalcVectorDec
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcVectorMag
+.. autoclass:: IStateCalcVectorMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcVectorRA
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcOnePtAccess
+.. autoclass:: IStateCalcOnePointAccess
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcDifferenceAcrossSegmentsOtherSat
@@ -1827,46 +1827,46 @@ Interfaces
 .. autoclass:: ICentralBodyCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbEphemeris
+.. autoclass:: ICentralBodyEphemeris
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbGravityModel
+.. autoclass:: ICentralBodyGravityModel
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbShape
+.. autoclass:: ICentralBodyShape
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbShapeSphere
+.. autoclass:: ICentralBodyShapeSphere
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbShapeOblateSpheroid
+.. autoclass:: ICentralBodyShapeOblateSpheroid
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbShapeTriaxialEllipsoid
+.. autoclass:: ICentralBodyShapeTriaxialEllipsoid
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbAttitude
+.. autoclass:: ICentralBodyAttitude
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbAttitudeRotationCoefficientsFile
+.. autoclass:: ICentralBodyAttitudeRotationCoefficientsFile
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbAttitudeIAU1994
+.. autoclass:: ICentralBodyAttitudeIAU1994
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbEphemerisAnalyticOrbit
+.. autoclass:: ICentralBodyEphemerisAnalyticOrbit
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbEphemerisJPLSpice
+.. autoclass:: ICentralBodyEphemerisJPLSpice
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbEphemerisFile
+.. autoclass:: ICentralBodyEphemerisFile
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbEphemerisJPLDE
+.. autoclass:: ICentralBodyEphemerisJPLDesignExplorerOptimizer
     :members:
     :exclude-members: __init__
-.. autoclass:: ICbEphemerisPlanetary
+.. autoclass:: ICentralBodyEphemerisPlanetary
     :members:
     :exclude-members: __init__
 .. autoclass:: IAstrogatorCentralBody
@@ -1884,7 +1884,7 @@ Interfaces
 .. autoclass:: IGeneralRelativityFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateTransFunction
+.. autoclass:: IStateTransformationFunction
     :members:
     :exclude-members: __init__
 .. autoclass:: ICR3BPFunc
@@ -2079,22 +2079,22 @@ Interfaces
 .. autoclass:: IGaussJacksonIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: IRK2nd3rd
+.. autoclass:: IRungeKutta2nd3rd
     :members:
     :exclude-members: __init__
-.. autoclass:: IRK4th
+.. autoclass:: IRungeKutta4th
     :members:
     :exclude-members: __init__
-.. autoclass:: IRK4th5th
+.. autoclass:: IRungeKutta4th5th
     :members:
     :exclude-members: __init__
-.. autoclass:: IRK4thAdapt
+.. autoclass:: IRungeKutta4thAdapt
     :members:
     :exclude-members: __init__
-.. autoclass:: IRKF7th8th
+.. autoclass:: IRungeKuttaF7th8th
     :members:
     :exclude-members: __init__
-.. autoclass:: IRKV8th9th
+.. autoclass:: IRungeKuttaV8th9th
     :members:
     :exclude-members: __init__
 
@@ -2369,16 +2369,16 @@ Enumerations
 Classes
 ~~~~~~~
 
-.. autoclass:: DriverMCS
+.. autoclass:: DriverMissionControlSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSSegmentCollection
+.. autoclass:: MissionControlSequenceSegmentCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSEnd
+.. autoclass:: MissionControlSequenceEnd
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSInitialState
+.. autoclass:: MissionControlSequenceInitialState
     :members:
     :exclude-members: __init__
 .. autoclass:: SpacecraftParameters
@@ -2417,7 +2417,7 @@ Classes
 .. autoclass:: ElementBPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSPropagate
+.. autoclass:: MissionControlSequencePropagate
     :members:
     :exclude-members: __init__
 .. autoclass:: State
@@ -2438,13 +2438,13 @@ Classes
 .. autoclass:: StoppingConditionElement
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSSequence
+.. autoclass:: MissionControlSequenceSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSBackwardSequence
+.. autoclass:: MissionControlSequenceBackwardSequence
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSLaunch
+.. autoclass:: MissionControlSequenceLaunch
     :members:
     :exclude-members: __init__
 .. autoclass:: DisplaySystemGeodetic
@@ -2462,7 +2462,7 @@ Classes
 .. autoclass:: BurnoutGeocentric
     :members:
     :exclude-members: __init__
-.. autoclass:: BurnoutLaunchAzAlt
+.. autoclass:: BurnoutLaunchAzAltitude
     :members:
     :exclude-members: __init__
 .. autoclass:: BurnoutLaunchAzRadius
@@ -2471,10 +2471,10 @@ Classes
 .. autoclass:: BurnoutVelocity
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSFollow
+.. autoclass:: MissionControlSequenceFollow
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSManeuver
+.. autoclass:: MissionControlSequenceManeuver
     :members:
     :exclude-members: __init__
 .. autoclass:: ManeuverFinite
@@ -2525,25 +2525,25 @@ Classes
 .. autoclass:: ManeuverFinitePropagator
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSHold
+.. autoclass:: MissionControlSequenceHold
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSUpdate
+.. autoclass:: MissionControlSequenceUpdate
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSReturn
+.. autoclass:: MissionControlSequenceReturn
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSStop
+.. autoclass:: MissionControlSequenceStop
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSTargetSequence
+.. autoclass:: MissionControlSequenceTargetSequence
     :members:
     :exclude-members: __init__
 .. autoclass:: ProfileCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSOptions
+.. autoclass:: MissionControlSequenceOptions
     :members:
     :exclude-members: __init__
 .. autoclass:: CalcObjectCollection
@@ -2582,16 +2582,16 @@ Classes
 .. autoclass:: ProfileScriptingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: DCControl
+.. autoclass:: DifferentialCorrectorControl
     :members:
     :exclude-members: __init__
-.. autoclass:: DCResult
+.. autoclass:: DifferentialCorrectorResult
     :members:
     :exclude-members: __init__
-.. autoclass:: DCControlCollection
+.. autoclass:: DifferentialCorrectorControlCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: DCResultCollection
+.. autoclass:: DifferentialCorrectorResultCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: SearchPluginControl
@@ -2636,10 +2636,10 @@ Classes
 .. autoclass:: StateCalcDamageMassFlux
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcMagFieldDipoleL
+.. autoclass:: StateCalcMagnitudeFieldDipoleL
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcSEETMagFieldFieldLineSepAngle
+.. autoclass:: StateCalcSEETMagnitudeFieldFieldLineSepAngle
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcImpactFlux
@@ -2693,7 +2693,7 @@ Classes
 .. autoclass:: StateCalcCloseApproachBearing
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcCloseApproachMag
+.. autoclass:: StateCalcCloseApproachMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcCloseApproachTheta
@@ -2735,10 +2735,10 @@ Classes
 .. autoclass:: StateCalcRepeatingGroundTrackErr
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcAltOfApoapsis
+.. autoclass:: StateCalcAltitudeOfApoapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcAltOfPeriapsis
+.. autoclass:: StateCalcAltitudeOfPeriapsis
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcArgOfLat
@@ -2747,7 +2747,7 @@ Classes
 .. autoclass:: StateCalcArgOfPeriapsis
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcEccAnomaly
+.. autoclass:: StateCalcEccentricityAnomaly
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcLonOfAscNode
@@ -2786,10 +2786,10 @@ Classes
 .. autoclass:: StateCalcDeltaVSquared
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcMCSDeltaV
+.. autoclass:: StateCalcMissionControlSequenceDeltaV
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcMCSDeltaVSquared
+.. autoclass:: StateCalcMissionControlSequenceDeltaVSquared
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcSequenceDeltaV
@@ -2804,7 +2804,7 @@ Classes
 .. autoclass:: StateCalcDensity
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcInertialDeltaVMag
+.. autoclass:: StateCalcInertialDeltaVMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcInertialDeltaVx
@@ -2846,13 +2846,13 @@ Classes
 .. autoclass:: StateCalcDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcPosDifferenceOtherSegment
+.. autoclass:: StateCalcPositionDifferenceOtherSegment
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcVelDifferenceOtherSegment
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcPosVelDifferenceOtherSegment
+.. autoclass:: StateCalcPositionVelDifferenceOtherSegment
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcValueAtSegment
@@ -2891,7 +2891,7 @@ Classes
 .. autoclass:: BDotTCalc
     :members:
     :exclude-members: __init__
-.. autoclass:: BMagCalc
+.. autoclass:: BMagnitudeCalc
     :members:
     :exclude-members: __init__
 .. autoclass:: BThetaCalc
@@ -2936,10 +2936,10 @@ Classes
 .. autoclass:: StateCalcSolarInPlaneAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcRelPosDecAngle
+.. autoclass:: StateCalcRelPositionDecAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcRelPosInPlaneAngle
+.. autoclass:: StateCalcRelPositionInPlaneAngle
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcRelativeInclination
@@ -2981,13 +2981,13 @@ Classes
 .. autoclass:: StateCalcFPA
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcRMag
+.. autoclass:: StateCalcRMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcRA
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcVMag
+.. autoclass:: StateCalcVMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcVelAz
@@ -3032,7 +3032,7 @@ Classes
 .. autoclass:: StateCalcVectorDec
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcVectorMag
+.. autoclass:: StateCalcVectorMagnitude
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcVectorRA
@@ -3041,7 +3041,7 @@ Classes
 .. autoclass:: StateCalcVectorX
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcOnePtAccess
+.. autoclass:: StateCalcOnePointAccess
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcDifferenceAcrossSegmentsOtherSat
@@ -3095,40 +3095,40 @@ Classes
 .. autoclass:: AstrogatorCentralBody
     :members:
     :exclude-members: __init__
-.. autoclass:: CbGravityModel
+.. autoclass:: CentralBodyGravityModel
     :members:
     :exclude-members: __init__
-.. autoclass:: CbShapeSphere
+.. autoclass:: CentralBodyShapeSphere
     :members:
     :exclude-members: __init__
-.. autoclass:: CbShapeOblateSpheroid
+.. autoclass:: CentralBodyShapeOblateSpheroid
     :members:
     :exclude-members: __init__
-.. autoclass:: CbShapeTriaxialEllipsoid
+.. autoclass:: CentralBodyShapeTriaxialEllipsoid
     :members:
     :exclude-members: __init__
-.. autoclass:: CbAttitudeRotationCoefficientsFile
+.. autoclass:: CentralBodyAttitudeRotationCoefficientsFile
     :members:
     :exclude-members: __init__
-.. autoclass:: CbAttitudeIAU1994
+.. autoclass:: CentralBodyAttitudeIAU1994
     :members:
     :exclude-members: __init__
-.. autoclass:: CbEphemerisAnalyticOrbit
+.. autoclass:: CentralBodyEphemerisAnalyticOrbit
     :members:
     :exclude-members: __init__
-.. autoclass:: CbEphemerisJPLSpice
+.. autoclass:: CentralBodyEphemerisJPLSpice
     :members:
     :exclude-members: __init__
-.. autoclass:: CbEphemerisFile
+.. autoclass:: CentralBodyEphemerisFile
     :members:
     :exclude-members: __init__
-.. autoclass:: CbEphemerisJPLDE
+.. autoclass:: CentralBodyEphemerisJPLDesignExplorerOptimizer
     :members:
     :exclude-members: __init__
-.. autoclass:: CbEphemerisPlanetary
+.. autoclass:: CentralBodyEphemerisPlanetary
     :members:
     :exclude-members: __init__
-.. autoclass:: MCSSegmentProperties
+.. autoclass:: MissionControlSequenceSegmentProperties
     :members:
     :exclude-members: __init__
 .. autoclass:: PowerInternal
@@ -3143,7 +3143,7 @@ Classes
 .. autoclass:: GeneralRelativityFunction
     :members:
     :exclude-members: __init__
-.. autoclass:: StateTransFunction
+.. autoclass:: StateTransformationFunction
     :members:
     :exclude-members: __init__
 .. autoclass:: CR3BPFunc
@@ -3335,22 +3335,22 @@ Classes
 .. autoclass:: GaussJacksonIntegrator
     :members:
     :exclude-members: __init__
-.. autoclass:: RK2nd3rd
+.. autoclass:: RungeKutta2nd3rd
     :members:
     :exclude-members: __init__
-.. autoclass:: RK4th
+.. autoclass:: RungeKutta4th
     :members:
     :exclude-members: __init__
-.. autoclass:: RK4th5th
+.. autoclass:: RungeKutta4th5th
     :members:
     :exclude-members: __init__
-.. autoclass:: RK4thAdapt
+.. autoclass:: RungeKutta4thAdapt
     :members:
     :exclude-members: __init__
-.. autoclass:: RKF7th8th
+.. autoclass:: RungeKuttaF7th8th
     :members:
     :exclude-members: __init__
-.. autoclass:: RKV8th9th
+.. autoclass:: RungeKuttaV8th9th
     :members:
     :exclude-members: __init__
 .. autoclass:: ScriptingTool

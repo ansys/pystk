@@ -19,7 +19,7 @@ Interfaces
     IDrawElem
     IDrawElemRect
     IDrawElemCollection
-    IWinProjPos
+    IWinProjectionPosition
     IDrawElemLine
     IExecCmdResult
     IExecMultiCmdResult
@@ -73,7 +73,7 @@ Classes
     Draw2DElemRect
     Draw2DElemCollection
     UiAxGfxAnalysisCntrl
-    WinProjPos
+    WinProjectionPosition
     DrawElemLine
     STKXSSLCertificateErrorEventArgs
     STKXConControlQuitReceivedEventArgs
@@ -115,7 +115,7 @@ Interfaces
 .. autoclass:: IDrawElemCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IWinProjPos
+.. autoclass:: IWinProjectionPosition
     :members:
     :exclude-members: __init__
 .. autoclass:: IDrawElemLine
@@ -230,7 +230,7 @@ Classes
 .. autoclass:: UiAxGfxAnalysisCntrl
     :members:
     :exclude-members: __init__
-.. autoclass:: WinProjPos
+.. autoclass:: WinProjectionPosition
     :members:
     :exclude-members: __init__
 .. autoclass:: DrawElemLine

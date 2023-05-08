@@ -1,0 +1,27 @@
+<?xml version = "1.0" standalone = "yes"?>
+<AgXMLPropertyBagData version = "1.0">
+    <Object clsid = "{BA78B8D5-9D0C-4A43-9289-FDF882A26569}">
+        <DisplayName Value = "AGI TerrainFollow Model" VarType = "VT_BSTR" />
+        <SpeedType Value = "3" VarType = "VT_I4" />
+        <MinAirspeedFuelFlow Value = "6.2998940277777782e-01" VarType = "VT_R8" />
+        <MaxEnduranceFuelFlow Value = "6.2998940277777782e-01" VarType = "VT_R8" />
+        <MaxRangeFuelFlow Value = "6.2998940277777782e-01" VarType = "VT_R8" />
+        <MaxAirspeedFuelFlow Value = "6.2998940277777782e-01" VarType = "VT_R8" />
+        <MaxPerfAirspeedFuelFlow Value = "6.2998940277777782e-01" VarType = "VT_R8" />
+        <AirspeedType Value = "3" VarType = "VT_I4" />
+        <MinAirspeed Value = "2.1606666666666669e+02" VarType = "VT_R8" />
+        <MaxEnduranceAirspeed Value = "2.1606666666666669e+02" VarType = "VT_R8" />
+        <MaxRangeAirspeed Value = "2.1606666666666669e+02" VarType = "VT_R8" />
+        <MaxAirspeed Value = "2.1606666666666669e+02" VarType = "VT_R8" />
+        <MaxPerfAirspeed Value = "2.1606666666666669e+02" VarType = "VT_R8" />
+        <MaxPitchAngle Value = "1.7453292519943295e-01" VarType = "VT_R8" />
+        <TerrainWindow Value = "3.0000000000000000e+00" VarType = "VT_R8" />
+        <UseAeroPropFuel Value = "0" VarType = "VT_I1" />
+        <ScaleFuelByDensity Value = "1" VarType = "VT_I1" />
+        <UserProperties VarType = "VT_UNKNOWN">
+            <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
+                <PropertyCount Value = "0" VarType = "VT_I4" />
+            </Object>
+        </UserProperties>
+    </Object>
+</AgXMLPropertyBagData>

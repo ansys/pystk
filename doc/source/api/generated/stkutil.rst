@@ -32,16 +32,16 @@ Interfaces
     IOrientationPositionOffset
     IOrbitState
     ICartesian2Vector
-    IUnitPrefsDim
+    IUnitPreferencesDimension
     IPropertyInfo
     IPropertyInfoCollection
     IRuntimeTypeInfo
     IRuntimeTypeInfoProvider
     IExecCmdResult
     IExecMultiCmdResult
-    IUnitPrefsUnit
-    IUnitPrefsUnitCollection
-    IUnitPrefsDimCollection
+    IUnitPreferencesUnit
+    IUnitPreferencesUnitCollection
+    IUnitPreferencesDimensionCollection
     IQuantity
     IDate
     IConversionUtility
@@ -78,10 +78,10 @@ Classes
 
     AgExecCmdResult
     AgExecMultiCmdResult
-    UnitPrefsUnit
-    UnitPrefsUnitCollection
-    UnitPrefsDim
-    UnitPrefsDimCollection
+    UnitPreferencesUnit
+    UnitPreferencesUnitCollection
+    UnitPreferencesDimension
+    UnitPreferencesDimensionCollection
     ConversionUtility
     Quantity
     Date
@@ -191,7 +191,7 @@ Interfaces
 .. autoclass:: ICartesian2Vector
     :members:
     :exclude-members: __init__
-.. autoclass:: IUnitPrefsDim
+.. autoclass:: IUnitPreferencesDimension
     :members:
     :exclude-members: __init__
 .. autoclass:: IPropertyInfo
@@ -212,13 +212,13 @@ Interfaces
 .. autoclass:: IExecMultiCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: IUnitPrefsUnit
+.. autoclass:: IUnitPreferencesUnit
     :members:
     :exclude-members: __init__
-.. autoclass:: IUnitPrefsUnitCollection
+.. autoclass:: IUnitPreferencesUnitCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: IUnitPrefsDimCollection
+.. autoclass:: IUnitPreferencesDimensionCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IQuantity
@@ -281,16 +281,16 @@ Classes
 .. autoclass:: AgExecMultiCmdResult
     :members:
     :exclude-members: __init__
-.. autoclass:: UnitPrefsUnit
+.. autoclass:: UnitPreferencesUnit
     :members:
     :exclude-members: __init__
-.. autoclass:: UnitPrefsUnitCollection
+.. autoclass:: UnitPreferencesUnitCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: UnitPrefsDim
+.. autoclass:: UnitPreferencesDimension
     :members:
     :exclude-members: __init__
-.. autoclass:: UnitPrefsDimCollection
+.. autoclass:: UnitPreferencesDimensionCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: ConversionUtility

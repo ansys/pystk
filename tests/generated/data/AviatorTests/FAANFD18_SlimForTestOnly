@@ -1,0 +1,341 @@
+HDR01FAANFD18       001P013202774031106  12-MAY-201110:51:35  U.S.A. DOT FAA                                                F5F28988
+HDR02                                 FEDERAL AVIATION ADMINISTRATION                                                               
+HDR03                                 NATIONAL AERONAUTICAL NAVIGATION SERVICES                                                     
+HDR04                                 NATIONAL FLIGHT DATABASE VOLUME 1106  EFFECTIVE 02 JUN 2011                                   
+HDR05                                 REPORT DATA ERRORS TO FAA                 TEL 800 626 3677                                    
+SUSAP 46TEK4A        0     050NSN29522963W103414966E009003799         1800018000P    MNAR    02 RANCH                      095420804
+SUSAH WA54K1A   H1   0     NARN N47362435W122200146E020000716         1800018000P    035035M 1001 FOURTH AVENUE PLAZA      032190804
+SCANDB       1B    CY002770H  W N43555000W060012200                       W0200           NARSABLE ISLAND                  005050804
+SUSAP KJFKK6AJFK     0     145YHN40382310W073464413W014000013         1800018000C    MNAR    JOHN F KENNEDY INTL           060031002
+SUSAEAENRT   AAAMY K50    R     N43040760W082365400                       W0079     NAR           AAAMY                    000011101
+SUSAP KOCHK4AOCH     0     050YHN31343995W094423640E005000355         1800018000C    MNAR    A L MANGHAM JR. RGNL          118470804
+SUSAP KOCHK4FP36   ALFK   010LFK  K4D 0V  A    IF                                             18000                 P PS   693940804
+SUSAP KOCHK4FP36   ALFK   020OXANYK4EA0EE      TF                     35600095    + 02100                           P PS   693950804
+SUSAP KOCHK4FP36   P      010OXANYK4EA0E  I    IF                                 + 02100     18000                 P PS   693960804
+SUSAP KOCHK4FP36   P      020WAJGUK4EA0E  F    TF                     35600100    + 02100                 RW36  K4PGP PS   693970804
+SUSAP KOCHK4FP36   P      030RW36 K4PG0GY M    TF                     35600050      00367             -327          P PS   693980804
+SUSAP KOCHK4FP36   P      040         0  M     CA                     3560        + 00754                           P PS   693990804
+SUSAP KOCHK4FP36   P      050LUJMUK4EA0EY      DF                                   02400                           P PS   694000809
+SUSAP KOCHK4FP36   P      060LUJMUK4EA0EE  R   HM                     17300040    + 02400                           P PS   694010910
+SUSAP KOCHK4FR18   ALFK   010LFK  K4D 0V       IF                                             18000                 B JS   693740804
+SUSAP KOCHK4FR18   ALFK   020DRBOBK4EA0E       TF                     35500353    + 03000                           B JS   693750804
+SUSAP KOCHK4FR18   ALFK   030DRBOBK4EA0EE AR   HF                     17300040    + 03000                           B JS   693760910
+SUSAP KOCHK4FR18   APIPES 010PIPESK4EA0E       IF                                             18000                 B JS   693770804
+SUSAP KOCHK4FR18   APIPES 020DRBOBK4EA0E       TF                     17100259    + 03000                           B JS   693780804
+SUSAP KOCHK4FR18   APIPES 030DRBOBK4EA0EE AR   HF                     17300040    + 03000                           B JS   693790910
+SUSAP KOCHK4FR18   R      010DRBOBK4EA0E  I    IF                                 + 03000     18000                 B JS   693800804
+SUSAP KOCHK4FR18   R      020LUJMUK4EA1E  F 031TF                     17300050    + 02000                 RW18  K4PGB JS   693810804
+SUSAP KOCHK4FR18   R      020LUJMUK4EA2WN          N          ALNAV                                                   JS   461200804
+SUSAP KOCHK4FR18   R      030RW18 K4PG0GY M 031TF                     17300050      00374             -306          B JS   693820804
+SUSAP KOCHK4FR18   R      040         0  M     CA                     1730        + 00754                           B JS   693830804
+SUSAP KOCHK4FR18   R      050WAJGUK4EA0EY      DF                                   02400                           B JS   693840809
+SUSAP KOCHK4FR18   R      060WAJGUK4EA0EE  R   HM                     36000040    + 02400                           B JS   693850910
+SUSAP KOCHK4GRW18    0050001790 N31350464W094423420               00337000037075R                                          054160805
+SUSAP KOCHK4GRW36    0050003590 N31341531W094423873               00327000054075I                                          054170805
+SUSAP KOCHK4SRW18 K4PG                0   18018002425                                                                  M   0M0270804
+SUSAP KOCHK4SRW36 K4PG                0   18018002425                                                                  M   0M0250804
+SUSAD KJFKK6 IHIQ  K6011090 ITW                    IHIQN40374382W073464058W0140000130     NARJOHN F KENNEDY IN             019800909
+SUSAD KJFKK6 IIWY  K6011090 ITW                    IIWYN40374382W073464058W0140000110     NARJOHN F KENNEDY IN             020570804
+SUSAD KJFKK6 IJFK  K6010950 ITW                    IJFKN40385329W073451318W0140000130     NARJOHN F KENNEDY IN             021450804
+SUSAD KJFKK6 IJOC  K6010950 ITW                    IJOCN40385329W073451218W0140000090     NARJOHN F KENNEDY IN             021610909
+SUSAD KJFKK6 IRTH  K6011150 ITW                    IRTHN40383337W073451832W0140000120     NARJOHN F KENNEDY IN             016190804
+SUSAD KJFKK6 ITLK  K6011150 ITW                    ITLKN40383337W073451832W0140000140     NARJOHN F KENNEDY IN             013910804
+SUSAP KJFKK6AJFK     0     145YHN40382310W073464413W014000013         1800018000C    MNAR    JOHN F KENNEDY INTL           060031002
+SUSAP KJFKK6DBETTE32ALL   010BETTEK6EA0EE      IF                                             18000                        000040804
+SUSAP KJFKK6DBETTE33ACK   010BETTEK6EA0E       IF                                             18000                        000050804
+SUSAP KJFKK6DBETTE33ACK   020ACK  K6D 0VE      TF                     08301430                                             000060804
+SUSAP KJFKK6DGREKI32ALL   010GREKIK6EA0EE      IF                                             18000                        000050804
+SUSAP KJFKK6DGREKI33MARTN 010GREKIK6EA0E       IF                                             18000                        000060804
+SUSAP KJFKK6DGREKI33MARTN 020JUDDSK6EA0E       TF                     05700130                                             000070804
+SUSAP KJFKK6DGREKI33MARTN 030MARTNK6EA0EE      TF                     00500570                                             000080804
+SUSAP KJFKK6DHAPIE32ALL   010HAPIEK6EA0EE      IF                                             18000                        000040804
+SUSAP KJFKK6DHAPIE33YAHOO 010HAPIEK6EA0E       IF                                             18000                        000050804
+SUSAP KJFKK6DHAPIE33YAHOO 020YAHOOK6EA0EE      TF                     08501530                                             000060804
+SUSAP KJFKK6DMERIT32ALL   010MERITK6EA0EE      IF                                             18000                        000050804
+SUSAP KJFKK6DMERIT33PUT   010MERITK6EA0E       IF                                             18000                        000060804
+SUSAP KJFKK6DMERIT33PUT   020HFD  K6D 0V       TF                     07200310                                             000070804
+SUSAP KJFKK6DMERIT33PUT   030PUT  K6D 0VE      TF                     07100370                                             000080804
+SUSAP KJFKK6DSKORR34RW31L 010         0        VI                     3148                    18000                        000071008
+SUSAP KJFKK6DSKORR34RW31L 020SKORRK6EA0EE   010CF JFK K6      2686005923900040D                                            000081008
+SUSAP KJFKK6DSKORR34RW31R 010         0        VI                     3148                    18000                        000091008
+SUSAP KJFKK6DSKORR34RW31R 020SKORRK6EA0EE   010CF JFK K6      2686005924400053D                                            000101008
+SUSAP KJFKK6DSKORR36RNGRR 010SKORRK6EA0E    010IF                                             18000                        000111008
+SUSAP KJFKK6DSKORR36RNGRR 020METSSK6EA0E    010TF                     22560032    +A02500                                  000121008
+SUSAP KJFKK6DSKORR36RNGRR 030RNGRRK6EA0EE   010TF                     22600236                                             000131008
+SUSAP KJFKK6DSKORR36YNKEE 010SKORRK6EA0E    010IF                                             18000                        000141008
+SUSAP KJFKK6DSKORR36YNKEE 020CESIDK6EA0E    010TF                     18370035    +A02500                                  000151008
+SUSAP KJFKK6DSKORR36YNKEE 030YNKEEK6EA0EE   010TF                     17320044                                             000161008
+SUSAP KJFKK6ECAMRN42ALL   010SIE  K6D 0V       IF                                             18000                        000730804
+SUSAP KJFKK6ECAMRN42ALL   020BOTONK6EA0E  H    TF                     04900250                                             000740804
+SUSAP KJFKK6ECAMRN42ALL   030HOGGSK6EA0E       TF                     04900130                                             000750804
+SUSAP KJFKK6ECAMRN42ALL   040PANZEK6EA0E  H    TF                     04900080                                             000760804
+SUSAP KJFKK6ECAMRN42ALL   050KARRSK6EA0E       TF                     04900130                                             000770804
+SUSAP KJFKK6ECAMRN42ALL   060CAMRNK6EA0EE H    TF                     04100120                                             000780804
+SUSAP KJFKK6EIGN8  2ALL   010IGN  K6D 0V  H    IF                                             18000                        000070804
+SUSAP KJFKK6EIGN8  2ALL   020LOLLYK6EA0E       TF                     22500200                                             000080804
+SUSAP KJFKK6EIGN8  2ALL   030DOOREK6EA0E       TF                     22500250                                             000090804
+SUSAP KJFKK6EIGN8  2ALL   040LENDYK6EA0E  HL   TFY                    13500130                                             000100804
+SUSAP KJFKK6EIGN8  2ALL   050LGA  K6D 0VE      TF                     13500140                                             000110804
+SUSAP KJFKK6ELENDY52ALL   010LVZ  K6D 0V       IF                                             18000                        573590804
+SUSAP KJFKK6ELENDY52ALL   020JENNOK6EA0E  H    TF                     12400180                                             573600804
+SUSAP KJFKK6ELENDY52ALL   030HARTYK6EA0E       TF                     12400120                                             573610804
+SUSAP KJFKK6ELENDY52ALL   040STW  K6D 0V       TF                     12400110                                             573620804
+SUSAP KJFKK6ELENDY52ALL   050LENDYK6EA0E  H    TF                     10900340                                             573630804
+SUSAP KJFKK6ELENDY52ALL   060LGA  K6D 0VE      TF                     13500140                                             573640804
+SUSAP KJFKK6EPARCH14ENE   010ENE  K6D 0V  H 010IF                                             18000                        000131002
+SUSAP KJFKK6EPARCH14ENE   020ASPENK6EA0E    010TF                     21380389                                             000141002
+SUSAP KJFKK6EPARCH14ENE   030PVD  K6D 0V  H 010TF                     21360694                                             000151002
+SUSAP KJFKK6EPARCH14ENE   040TRAITK6EA0E  H 010TF                     23400343                                             000161002
+SUSAP KJFKK6EPARCH14ENE   050PARCHK6EA0EE   010TF                     23370144                                             000171002
+SUSAP KJFKK6EPARCH14PLYMM 010PLYMMK6EA0E    010IF                                             18000                        000181002
+SUSAP KJFKK6EPARCH14PLYMM 020PVD  K6D 0V  H 010TF                     26130489                                             000191002
+SUSAP KJFKK6EPARCH14PLYMM 030TRAITK6EA0E  H 010TF                     23400343                                             000201002
+SUSAP KJFKK6EPARCH14PLYMM 040PARCHK6EA0EE   010TF                     23370144                                             000211002
+SUSAP KJFKK6EPARCH14SEY   010SEY  K6D 0V    010IF                                             18000                        000221002
+SUSAP KJFKK6EPARCH14SEY   020PARCHK6EA0EE   010TF                     27480250                                             000231002
+SUSAP KJFKK6EPARCH15      010PARCHK6EA0E    010IF                                             18000                        000241002
+SUSAP KJFKK6EPARCH15      020CCC  K6D 0V  H 010TF                     26600324                                             000251002
+SUSAP KJFKK6EPARCH15      030ROBERK6EA0EE   010TF                     23010181                                             000261002
+SUSAP KJFKK6EPARCH16RW04B 010ROBERK6EA0E    010IF                                             18000                        000271002
+SUSAP KJFKK6EPARCH16RW04B 020JFK  K6D 0VY   010TF                     27890339                                             000281002
+SUSAP KJFKK6EPARCH16RW04B 030KJFK K6PA0AE      VM                     2789                                                 000291002
+SUSAP KJFKK6EPARCH16RW13B 010ROBERK6EA0E    010IF                                             18000                        000301002
+SUSAP KJFKK6EPARCH16RW13B 020JFK  K6D 0VY   010TF                     27890339                                             000311002
+SUSAP KJFKK6EPARCH16RW13B 030KJFK K6PA0AE      VM                     2789                                                 000321002
+SUSAP KJFKK6EPARCH16RW22B 010ROBERK6EA0E    010IF                                             18000                        000331002
+SUSAP KJFKK6EPARCH16RW22B 020CRAILK6EA0E    010TF                     28450142                                             000341002
+SUSAP KJFKK6EPARCH16RW22B 030CAPITK6EA0EY   010TF                     30270138                                             000351002
+SUSAP KJFKK6EPARCH16RW22B 040KJFK K6PA0AE      VM                     3027                                                 000361002
+SUSAP KJFKK6EPARCH16RW31B 010ROBERK6EA0E    010IF                                             18000                        000371002
+SUSAP KJFKK6EPARCH16RW31B 020JFK  K6D 0VY   010TF                     27890339                                             000381002
+SUSAP KJFKK6EPARCH16RW31B 030KJFK K6PA0AE      VM                     2789                                                 000391002
+SUSAP KJFKK6EPWL2  1ALB   010ALB  K6D 0V       IF                                             18000                        573720804
+SUSAP KJFKK6EPWL2  1ALB   020ATHOSK6EA0E       TF                     19400300                                             573730804
+SUSAP KJFKK6EPWL2  1ALB   030PWL  K6D 0VE      TF                     17400300                                             573740804
+SUSAP KJFKK6EPWL2  1DNY   010DNY  K6D 0V       IF                                             18000                        573750804
+SUSAP KJFKK6EPWL2  1DNY   020PETERK6EA0E       TF                     09600190                                             573760804
+SUSAP KJFKK6EPWL2  1DNY   030ATHOSK6EA0E       TF                     09600320                                             573770804
+SUSAP KJFKK6EPWL2  1DNY   040PWL  K6D 0VE      TF                     17400300                                             573780804
+SUSAP KJFKK6EPWL2  1RKA   010RKA  K6D 0V       IF                                             18000                        573790804
+SUSAP KJFKK6EPWL2  1RKA   020PETERK6EA0E       TF                     12700350                                             573800804
+SUSAP KJFKK6EPWL2  1RKA   030ATHOSK6EA0E       TF                     09600320                                             573810804
+SUSAP KJFKK6EPWL2  1RKA   040PWL  K6D 0VE      TF                     17400300                                             573820804
+SUSAP KJFKK6EPWL2  2ALL   010PWL  K6D 0V       IF                                             18000                        573830804
+SUSAP KJFKK6EPWL2  2ALL   020LOVESK6EA0E  H    TF                     17200150                                             573840804
+SUSAP KJFKK6EPWL2  2ALL   030BDR  K6D 0V       TF                     15600280                                             573850804
+SUSAP KJFKK6EPWL2  2ALL   040BELTTK6EA0E       TF                     14500090                                             573860804
+SUSAP KJFKK6EPWL2  2ALL   050DPK  K6D 0VE      TF                     23300220                                             573870804
+SUSAP KJFKK6EROBER11ENE   010ENE  K6D 0V  H    IF                                             18000                        000101002
+SUSAP KJFKK6EROBER11ENE   020ASPENK6EA0E       TF                     21680389                                             000111002
+SUSAP KJFKK6EROBER11ENE   030PVD  K6D 0V  H    TF                     21320694                                             000121002
+SUSAP KJFKK6EROBER11ENE   040TRAITK6EA0E  H    TF                     23240343                                             000131002
+SUSAP KJFKK6EROBER11ENE   050PARCHK6EA0EE      TF                     23240144                                             000141002
+SUSAP KJFKK6EROBER11SEY   010SEY  K6D 0V       IF                                             18000                        000151002
+SUSAP KJFKK6EROBER11SEY   020PARCHK6EA0EE      TF                     27580250                                             000161002
+SUSAP KJFKK6EROBER12ALL   010PARCHK6EA0E       IF                                             18000                        000171002
+SUSAP KJFKK6EROBER12ALL   020CCC  K6D 0V  H    TF                     2645                                                 000181002
+SUSAP KJFKK6EROBER12ALL   030ROBERK6EA0E       TF                     2291                                                 000191002
+SUSAP KJFKK6EROBER12ALL   040JFK  K6D 0VE      TF                     2764                                                 000201002
+SUSAP KJFKK6FI13L  I      010TELEXK6EA0E  I    IF ITLKK6      31480077        PI  J 018000150018000                 0 NS   000061007
+SUSAP KJFKK6FI13L  I      020CAXUNK6EA0E  F    CF ITLKK6      3148006113500015PI  H 0150001500        -300JFK   K6D 0 NS   000071007
+SUSAP KJFKK6FI13L  I      030RW13LK6PG0GY M    CF ITLKK6      3148001713500044PI    00071             -300          0 NS   000081007
+SUSAP KJFKK6FI13L  I      040         0  M     CA                     1348        + 00600                           0 NS   000091007
+SUSAP KJFKK6FI13L  I      050DPK  K6D 0VY      DF                                 + 04000                           0 NS   000101007
+SUSAP KJFKK6FI13L  I      060DPK  K6D 0VE  L   HM                     2580T010    + 04000                           0 NS   000111007
+SUSAP KJFKK6FI31R  ACATOD 010CATODK6EA0E  B    IF                                 +A03000     18000                 0 NS   000081007
+SUSAP KJFKK6FI31R  ACATOD 020MALDEK6EA0EE      CF IRTHK6      1348011031480026PI  +A03000                           0 NS   000091007
+SUSAP KJFKK6FI31R  I      010MALDEK6EA0E  I    IF IRTHK6      13480110        PI  JA030000190018000                 0 NS   000101007
+SUSAP KJFKK6FI31R  I      020ZULABK6EA0E  F    CF IRTHK6      1348007231500037PI  H 0190001900        -300JFK   K6D 0 NS   000111007
+SUSAP KJFKK6FI31R  I      030RW31RK6PG0GY M    CF IRTHK6      1348001631500057PI    00061             -300          0 NS   000121007
+SUSAP KJFKK6FI31R  I      040         0  M     CA                     3148        + 01800                           0 NS   000131007
+SUSAP KJFKK6FI31R  I      050CRI  K6D 0V   L   DF                                 + 02000                           0 NS   000141007
+SUSAP KJFKK6FI31R  I      060COL  K6D 0VY      TF                                 + 04000                           0 NS   000151007
+SUSAP KJFKK6FI31R  I      070COL  K6D 0VE  R   HM                     1900T010    + 04000                           0 NS   000161007
+SUSAP KJFKK6FR028  ACOL   010COL  K6D 0V       IF                                             18000                 B JH   000070804
+SUSAP KJFKK6FR028  ACOL   020BANKAK6EA0EE A    TF                     06400065    + 01800                           B JH   000080804
+SUSAP KJFKK6FR028  R      010BANKAK6EA0E  I    IF                                 + 01800     18000                 B JH   000090804
+SUSAP KJFKK6FR028  R      015COVIRK6EA0E S     TF                     03000041    + 01800                           B JH   000100804
+SUSAP KJFKK6FR028  R      020WERINK6EA0E  F    TF                     02800032    + 01800                 HELOG K6EAB JH   000110804
+SUSAP KJFKK6FR028  R      030HELOGK6EA0EY M    TF                     02800030      00500              000          B JH   000120804
+SUSAP KJFKK6FR028  R      040         0  M     CA                     0280        + 00413                           B JH   000130804
+SUSAP KJFKK6FR028  R      050COVIRK6EA0EY  L   DF                                 + 01800                           B JH   000140804
+SUSAP KJFKK6FR028  R      060COVIRK6EA0EE  L   HM                     03000040    + 01800                           B JH   000150910
+SUSAP KJFKK6FR04LY R      010REPREK6EA0E  I    IF                                 + 02000     18000                 A JS   000050810
+SUSAP KJFKK6FR04LY R      020KRSTLK6EA1E  F 051TF                     04470061    + 01500                 RW04L K6PGA JS   000061103
+SUSAP KJFKK6FR04LY R      020KRSTLK6EA2WALPV       ALNAV/VNAV ALNAV                                                   JS   000070810
+SUSAP KJFKK6FR04LY R      030RW04LK6PG0GY M 031TF                     04470044      00069             -300          A JS   000080810
+SUSAP KJFKK6FR04LY R      040         0  M     CA                     0447        + 00280                           A JS   000090810
+SUSAP KJFKK6FR04LY R      050WORDIK6EA0E       DF                                 + 02000                           A JS   000100810
+SUSAP KJFKK6FR04LY R      060DUFFYK6EA0EY   010TF                     09130071    + 03000                           A JS   000111103
+SUSAP KJFKK6FR04LY R      070DUFFYK6EA0EE  L   HM                     24400040    + 03000                           A JS   000120910
+SUSAP KJFKK6FR04LZ R      010REPREK6EA0E  I    IF                                   02000     18000                 A PS   000051010
+SUSAP KJFKK6FR04LZ R      020KRSTLK6EA1E  F 051TF                     04470061      01500                 RW04L K6PGA PS   000061010
+SUSAP KJFKK6FR04LZ R      020KRSTLK6EA2W                                                A031                          PS   000070912
+SUSAP KJFKK6FR04LZ R      030RW04LK6PG0GY M 031TF                     04470044      00070             -300          A PS   000081010
+SUSAP KJFKK6FR04LZ R      040WORDIK6EA0E M  010TF                     04470100                                      A PS   000091010
+SUSAP KJFKK6FR04LZ R      050DUFFYK6EA0EY   010TF                     09130071    + 03000                           A PS   000101010
+SUSAP KJFKK6FR04LZ R      060DUFFYK6EA0EE  L020HM                     24400040    + 03000                           A PS   000111010
+SUSAP KJFKK6FR04RY R      010VERRUK6EA0E  I    IF                                 + 02000     18000                 A JS   000050810
+SUSAP KJFKK6FR04RY R      020EBBEEK6EA1E  F 051TF                     04470061    + 01500                 RW04R K6PGA JS   000061103
+SUSAP KJFKK6FR04RY R      020EBBEEK6EA2WALPV       ALNAV/VNAV ALNAV                                                   JS   000070810
+SUSAP KJFKK6FR04RY R      030RW04RK6PG0GY M 031TF                     04470044      00066             -300          A JS   000080810
+SUSAP KJFKK6FR04RY R      040         0  M     CA                     0447        + 00270                           A JS   000090810
+SUSAP KJFKK6FR04RY R      050FEXAKK6EA0E       DF                                                                   A JS   000100810
+SUSAP KJFKK6FR04RY R      060DPK  K6D 0VY   010TF                     08250215    + 04000                           A JS   000111103
+SUSAP KJFKK6FR04RY R      070DPK  K6D 0VE  L   HM                     26000040    + 04000                           A JS   000120910
+SUSAP KJFKK6FR04RZ R      010VERRUK6EA0E  I    IF                                   02000     18000                 A PS   000051010
+SUSAP KJFKK6FR04RZ R      020EBBEEK6EA1E  F 051TF                     04470061      01500                 RW04R K6PGA PS   000061010
+SUSAP KJFKK6FR04RZ R      020EBBEEK6EA2W                                                A031                          PS   000070912
+SUSAP KJFKK6FR04RZ R      030RW04RK6PG0GY M 031TF                     04470044      00066             -300          A PS   000081010
+SUSAP KJFKK6FR04RZ R      040PIYIYK6EA0E M  010TF                     04480070                                      A PS   000091010
+SUSAP KJFKK6FR04RZ R      050DPK  K6D 0VY   010TF                     09130181    + 04000                           A PS   000101010
+SUSAP KJFKK6FR04RZ R      060DPK  K6D 0VE  L020HM                     26000040    + 04000                           A PS   000111010
+SUSAP KJFKK6FR22LY ADPK   010DPK  K6D 0V  A    IF                                             18000                 A JS   000060810
+SUSAP KJFKK6FR22LY ADPK   020NAYIKK6EA0EE      TF                     28790148    + 02000                           A JS   000070810
+SUSAP KJFKK6FR22LY R      010NAYIKK6EA0E  I    IF                                 + 02000     18000                 A JS   000080810
+SUSAP KJFKK6FR22LY R      020ZALPOK6EA1E  F 031TF                     22490060    + 01800                 RW22L K6PGA JS   000090810
+SUSAP KJFKK6FR22LY R      020ZALPOK6EA2WALPV       ALNAV/VNAV ALNAV                                                   JS   000100810
+SUSAP KJFKK6FR22LY R      030RW22LK6PG0GY M 031TF                     22480054      00066             -300          A JS   000110810
+SUSAP KJFKK6FR22LY R      040         0  M     CA                     2248        + 00270                           A JS   000120810
+SUSAP KJFKK6FR22LY R      050FOLERK6EA0E       DF                                                                   A JS   000130810
+SUSAP KJFKK6FR22LY R      060CHANTK6EA0EY      TF                     1892        + 03000                           A JS   000140810
+SUSAP KJFKK6FR22LY R      070CHANTK6EA0EE  R   HM                     01200050    + 03000                           A JS   000150910
+SUSAP KJFKK6FR22LZ ADPK   010DPK  K6D 0V  A    IF                                             18000                 A PS   000101010
+SUSAP KJFKK6FR22LZ ADPK   020TUSTEK6EA0EE B 010TF                     28690089    + 02000                           A PS   000111010
+SUSAP KJFKK6FR22LZ R      010TUSTEK6EA0E  I    IF                                 + 02000     18000                 A PS   000121010
+SUSAP KJFKK6FR22LZ R      011ZAKUSK6EA0E    051TF                     25910060    + 01900                           A PS   000131010
+SUSAP KJFKK6FR22LZ R      020JIRVAK6EA1E  F 051TF                     24490036    + 01900                 RW22L K6PGA PS   000141010
+SUSAP KJFKK6FR22LZ R      020JIRVAK6EA2W                                                A031A021                      PS   000150912
+SUSAP KJFKK6FR22LZ R      021SOGOEK6EA0E    031TF                     24480014                        -300          A PS   000161010
+SUSAP KJFKK6FR22LZ R      022HESORK6EA0E   L031RF       0037002448    22480013                        -300UYUYI K6EAA PS   000171010
+SUSAP KJFKK6FR22LZ R      030RW22LK6PG0GY M 031TF                     22480030      00063             -300          A PS   000181010
+SUSAP KJFKK6FR22LZ R      040WEPLAK6EA0E M  010TF                     22480076                                      A PS   000191010
+SUSAP KJFKK6FR22LZ R      050CHANTK6EA0EY   010TF                     17780137    + 03000                           A PS   000201010
+SUSAP KJFKK6FR22LZ R      060CHANTK6EA0EE  R020HM                     01200050    + 03000                           A PS   000211010
+SUSAP KJFKK6FR22R  ADPK   010DPK  K6D 0V  A    IF                                             18000                 A JS   000070804
+SUSAP KJFKK6FR22R  ADPK   020LACIRK6EA0EE      TF                     28810153    + 02500                           A JS   000080804
+SUSAP KJFKK6FR22R  R      010LACIRK6EA0E  I    IF                                 + 02500     18000                 A JS   000090804
+SUSAP KJFKK6FR22R  R      020HENEBK6EA1E  F    TF                     22490060    + 01900                 RW22R K6PGA JS   000100804
+SUSAP KJFKK6FR22R  R      020HENEBK6EA2WALPV       ALNAV/VNAV ALNAV                                                   JS   284280804
+SUSAP KJFKK6FR22R  R      030RW22RK6PG0GY M 031TF                     22480057      00072             -300          A JS   000110804
+SUSAP KJFKK6FR22R  R      040         0  M     CA                     2248        + 00270                           A JS   000120804
+SUSAP KJFKK6FR22R  R      050PIDTOK6EA0E       DF                                                                   A JS   000130804
+SUSAP KJFKK6FR22R  R      060COL  K6D 0VY      TF                     23700247    + 04000                           A JS   000140809
+SUSAP KJFKK6FR22R  R      070COL  K6D 0VE  R   HM                     19300040    + 04000                           A JS   000150910
+SUSAP KJFKK6FR31LX ACHANT 010CHANTK6EA0E       IF                                             18000                 B JS   000070810
+SUSAP KJFKK6FR31LX ACHANT 020WUNKAK6EA0E  A 020TF                     05010078    + 03000                           B JS   000081103
+SUSAP KJFKK6FR31LX ACHANT 030ZACHSK6EA0EE B 010TF                     05010080    + 02000                           B JS   000091103
+SUSAP KJFKK6FR31LX ADPK   010DPK  K6D 0V       IF                                             18000                 B JS   000100810
+SUSAP KJFKK6FR31LX ADPK   020SESKEK6EA0E  A 020TF                     23000100    + 03000                           B JS   000111103
+SUSAP KJFKK6FR31LX ADPK   030ZACHSK6EA0EE B 010TF                     22990095    + 02000                           B JS   000121103
+SUSAP KJFKK6FR31LX R      010ZACHSK6EA0E  I    IF                                 + 02000     18000                 B JS   000130810
+SUSAP KJFKK6FR31LX R      020MEALSK6EA1E  F 051TF                     31490068    + 01800                 RW31L K6PGB JS   000141103
+SUSAP KJFKK6FR31LX R      020MEALSK6EA2WN          N          ALNAV                                                   JS   000150810
+SUSAP KJFKK6FR31LX R      030RW31LK6PG0GY M 031TF                     31480054      00062             -304          B JS   000161103
+SUSAP KJFKK6FR31LX R      040         0  M     CA                     3148        + 00414                           B JS   000171103
+SUSAP KJFKK6FR31LX R      050CHANTK6EA0EY  L   DF                                 + 03000                           B JS   000180810
+SUSAP KJFKK6FR31LX R      060CHANTK6EA0EE  R   HM                     01200050    + 03000                           B JS   000190910
+SUSAP KJFKK6FR31LY ACHANT 010CHANTK6EA0E       IF                                             18000                 A JS   000090810
+SUSAP KJFKK6FR31LY ACHANT 020WUNKAK6EA0E  A 020TF                     05010078    + 03000                           A JS   000101103
+SUSAP KJFKK6FR31LY ACHANT 030ZACHSK6EA0EE B 010TF                     05010080    + 02000                           A JS   000111103
+SUSAP KJFKK6FR31LY ADPK   010DPK  K6D 0V       IF                                             18000                 A JS   000120810
+SUSAP KJFKK6FR31LY ADPK   020SESKEK6EA0E  A 020TF                     23000100    + 03000                           A JS   000131103
+SUSAP KJFKK6FR31LY ADPK   030ZACHSK6EA0EE B 010TF                     22990095    + 02000                           A JS   000141103
+SUSAP KJFKK6FR31LY R      010ZACHSK6EA0E  I    IF                                 + 02000     18000                 A JS   000150810
+SUSAP KJFKK6FR31LY R      020MEALSK6EA1E  F 051TF                     31490068    + 01800                 RW31L K6PGA JS   000161103
+SUSAP KJFKK6FR31LY R      020MEALSK6EA2WALPV       ALNAV/VNAV ALNAV                                                   JS   000170810
+SUSAP KJFKK6FR31LY R      030RW31LK6PG0GY M 031TF                     31480054      00062             -300          A JS   000181103
+SUSAP KJFKK6FR31LY R      040         0  M     CA                     3148        + 00270                           A JS   000190810
+SUSAP KJFKK6FR31LY R      050OMEMEK6EA0E       DF                                                                   A JS   000200810
+SUSAP KJFKK6FR31LY R      060NELREK6EA0E   L010TFY                    21630071    + 02000                           A JS   000211103
+SUSAP KJFKK6FR31LY R      070CHANTK6EA0EY   010TF                     16530170    + 03000                           A JS   000221103
+SUSAP KJFKK6FR31LY R      080CHANTK6EA0EE  R   HM                     01200050    + 03000                           A JS   000230910
+SUSAP KJFKK6FR31LZ ACHANT 010CHANTK6EA0E       IF                                             18000                 A PS   000121010
+SUSAP KJFKK6FR31LZ ACHANT 020WUNKAK6EA0E  A 010TF                     05010078    + 03000                           A PS   000131010
+SUSAP KJFKK6FR31LZ ACHANT 030ZACHSK6EA0EE B 051TF                     05010080    + 02000          210              A-PS   000141010
+SUSAP KJFKK6FR31LZ ADPK   010DPK  K6D 0V       IF                                             18000                 A PS   000151010
+SUSAP KJFKK6FR31LZ ADPK   020SESKEK6EA0E  A 010TF                     23000100    + 03000                           A PS   000161010
+SUSAP KJFKK6FR31LZ ADPK   030ZACHSK6EA0EE B 010TF                     22990095    + 02000          210              A-PS   000171010
+SUSAP KJFKK6FR31LZ R      010ZACHSK6EA0E  I    IF                                 + 02000     18000210              A-PS   000181010
+SUSAP KJFKK6FR31LZ R      020MEALSK6EA1E  F 051TF                     31490068    + 01800                 RW31L K6PGA PS   000191010
+SUSAP KJFKK6FR31LZ R      020MEALSK6EA2W                                                A031                          PS   000200912
+SUSAP KJFKK6FR31LZ R      030RW31LK6PG0G  M 031TF                     31480054      00060             -300          A PS   000211103
+SUSAP KJFKK6FR31LZ R      040HULEPK6EA0E M  031TF                     31480007                     200              A-PS   000221010
+SUSAP KJFKK6FR31LZ R      050JONLOK6EA0E   L031RF       0037003148    26480032                     200    UYUKU K6EAA-PS   000231010
+SUSAP KJFKK6FR31LZ R      060FIKRAK6EA0E   L051RF       0050002648    16270089                     200    YIVUY K6EAA-PS   000241010
+SUSAP KJFKK6FR31LZ R      070CHANTK6EA0EY   010TF                     16270144    + 03000                           A PS   000251010
+SUSAP KJFKK6FR31LZ R      080CHANTK6EA0EE  R020HM                     01200050    + 03000                           A PS   000261010
+SUSAP KJFKK6FR31RY ADPK   010DPK  K6D 0V  A    IF                                             18000                 A JS   000060810
+SUSAP KJFKK6FR31RY ADPK   020CATODK6EA0EE B 010TF                     22960184    + 03000                           A JS   000071103
+SUSAP KJFKK6FR31RY R      010CATODK6EA0E  I    IF                                 + 03000     18000                 A JS   000080810
+SUSAP KJFKK6FR31RY R      020ZULABK6EA1E  F 051TF                     31490063    + 01900                 RW31R K6PGA JS   000091103
+SUSAP KJFKK6FR31RY R      020ZULABK6EA2WALPV       ALNAV/VNAV ALNAV                                                   JS   000100810
+SUSAP KJFKK6FR31RY R      030RW31RK6PG0GY M 031TF                     31490057      00062             -300          A JS   000110810
+SUSAP KJFKK6FR31RY R      040         0  M     CA                     3149        + 00270                           A JS   000120810
+SUSAP KJFKK6FR31RY R      050AVIMEK6EA0E       DF                                 + 02000                           A JS   000130810
+SUSAP KJFKK6FR31RY R      060COL  K6D 0VY  L010TFY                    21860266    + 04000                           A JS   000141103
+SUSAP KJFKK6FR31RY R      070COL  K6D 0VE  R   HM                     19300040    + 04000                           A JS   000150910
+SUSAP KJFKK6FR31RZ ADPK   010DPK  K6D 0V  A    IF                                             18000                 A PS   000101010
+SUSAP KJFKK6FR31RZ ADPK   020CATODK6EA0EE B 010TF                     22960184    + 03000          210              A-PS   000111010
+SUSAP KJFKK6FR31RZ R      010CATODK6EA0E  I    IF                                 + 03000     18000210              A-PS   000121010
+SUSAP KJFKK6FR31RZ R      020ZULABK6EA1E  F 010TF                     31490063    + 01900                 RW31R K6PGA PS   000131010
+SUSAP KJFKK6FR31RZ R      020ZULABK6EA2W                                                A031A021                      PS   000140912
+SUSAP KJFKK6FR31RZ R      030RW31RK6PG0G  M 031TF                     31490057      00061             -300          A PS   000151103
+SUSAP KJFKK6FR31RZ R      040ZARGAK6EA0E M  031TF                     31480006                     200              A-PS   000161010
+SUSAP KJFKK6FR31RZ R      050TENREK6EA0E   L031RF       0037003148    25480039                     200    NIYIY K6EAA-PS   000171010
+SUSAP KJFKK6FR31RZ R      060WETILK6EA0E   L051RF       0050002548    22720024                     200    OYUYI K6EAA-PS   000181010
+SUSAP KJFKK6FR31RZ R      070COL  K6D 0VY   010TF                     22720224    + 04000                           A PS   000191010
+SUSAP KJFKK6FR31RZ R      080COL  K6D 0VE  R020HM                     19300040    + 04000                           A PS   000201010
+SUSAP KJFKK6FS13L  S      010ASALTK6EA0E  D    IF                                  A03000     18000                 3 NS   000051105
+SUSAP KJFKK6FS13L  S      020CRI  K6D 0V  F    CF CRI K6      0000000004300060D    A01500                 CRI   K6D 3 NS   000061105
+SUSAP KJFKK6FS13L  S      030DMYHLK6EA0EY M    CF CRI K6      0410002604100026D     00800              000          3 NS   000071105
+SUSAP KJFKK6FS13L  S      040         0  M     CA                     0410        + 00413                           3 NS   000081105
+SUSAP KJFKK6FS13L  S      050         0        VI                     1000                                          3 NS   000091105
+SUSAP KJFKK6FS13L  S      060DPK  K6D 0VY      CF DPK K6      0000000007800160D   + 04000                           3 NS   000101105
+SUSAP KJFKK6FS13L  S      070DPK  K6D 0VE  L   HM                     25800040    + 04000                           3 NS   000111105
+SUSAP KJFKK6FS13R  S      010ASALTK6EA0E  D    IF                                  A03000     18000                 3 NS   000051105
+SUSAP KJFKK6FS13R  S      020CRI  K6D 0V  F    CF CRI K6      0000000004300060D    A01500                 CRI   K6D 3 NS   000061105
+SUSAP KJFKK6FS13R  S      030DMYHLK6EA0EY M    CF CRI K6      0410002604100026D     00800              000          3 NS   000071105
+SUSAP KJFKK6FS13R  S      040         0  M     CA                     0410        + 00413                           3 NS   000081105
+SUSAP KJFKK6FS13R  S      050         0        VI                     1000                                          3 NS   000091105
+SUSAP KJFKK6FS13R  S      060DPK  K6D 0VY      CF DPK K6      0000000007800160D   + 04000                           3 NS   000101105
+SUSAP KJFKK6FS13R  S      070DPK  K6D 0VE  L   HM                     25800040    + 04000                           3 NS   000111105
+SUSAP KJFKK6GRW04L   0113510450 N40371926W073470811               00012000057150IIHIQ1                                     102691103
+SUSAP KJFKK6GRW04R   0084000450 N40373153W073461325               00013000053200IIJFK3                                     102491103
+SUSAP KJFKK6GRW13L   0100001350 N40392338W073471477               00013090558150IITLK2                                     102511009
+SUSAP KJFKK6GRW13R   0145111350 N40384378W073483739               00014204350200D                                          102541008
+SUSAP KJFKK6GRW22L   0084002250 N40384285W073451751               00013000053200I                                          102500805
+SUSAP KJFKK6GRW22R   0113512250 N40383276W073461069               00013269659150I                                          102710805
+SUSAP KJFKK6GRW31L   0145113150 N40375728W073465478               00014326348200IIMOH1                                     102551103
+SUSAP KJFKK6GRW31R   0100003150 N40384261W073454485               00013103049150IIRTH1                                     102531008
+SUSAP KJFKK6IIRTH1   011150RW31RN40393078W0734731093150N40385033W0734551020558 08060394300W01405000011                     0M0181007
+SUSAP KJFKK6IITLK2   011150RW13LN40383069W0734518571350N40391474W0734704841331 11060383300W01405400011                     0M0131007
+SUSAP KJFKK6PR04L  RW04L001 0000W04A0N4037192600W07347081100-002860300N4038556500W07345528000106500000000570F4005007FFCF1C72M5140804
+SUSAP KJFKK6PR04L  RW04L002E      +00037+00037LPV       77519                                                              2M5150804
+SUSAP KJFKK6PR04LY RW04L001Y0000W04A0N4037192600W07347081100-002860300N4038556500W07345528000106750000000570F40050075507C020M0141103
+SUSAP KJFKK6PR04LY RW04L002E      +00037+00037LPV       77519                                                              0M0150810
+SUSAP KJFKK6PR04R  RW04R001 0000W04B0N4037315300W07346132500-002830300N4038430900W07345173300106750008000530F400500E25D5D1D0M0220804
+SUSAP KJFKK6PR04R  RW04R002E      +00040+00040LPV       81819                                                              0M0230804
+SUSAP KJFKK6PR04RY RW04R001Y0000W04B0N4037315300W07346132500-002830300N4038481400W07345133800106750192000530F400500BEE4F5370M0141103
+SUSAP KJFKK6PR04RY RW04R002E      +00040+00040LPV       81819                                                              0M0150810
+SUSAP KJFKK6PR22L  RW22L001 0000W22A0N4038428500W07345175100-002820300N4037315300W07346132500106750000000530F400500E91206012M5180804
+SUSAP KJFKK6PR22L  RW22L002E      +00040+00040LPV       97318                                                              2M5190804
+SUSAP KJFKK6PR22LY RW22L001Y0000W22A0N4038428500W07345175100-002820300N4037315300W07346132500106750000000530F400500F951CC1B0M0240810
+SUSAP KJFKK6PR22LY RW22L002E      +00040+00040LPV       97318                                                              0M0250810
+SUSAP KJFKK6PR22R  RW22R001 0000W22B0N4038327600W07346106900-002840300N4037192600W07347081200106750000000590F40050057A99B3D2M5200804
+SUSAP KJFKK6PR22R  RW22R002E      +00040+00040LPV       40019                                                              2M5210804
+SUSAP KJFKK6PR31LY RW31L001Y0000W31A0N4037572760W07346547820-002780300N4038541000W07349001700107500000000480F40050045016F600M0251103
+SUSAP KJFKK6PR31LY RW31L002E      +00042+00042LPV       50119                                                              0M0261103
+SUSAP KJFKK6PR31R  RW31R001 0000W31B0N4038425900W07345448100-002840300N4039279700W07347248700106500000000490F400500E0B485692M5240804
+SUSAP KJFKK6PR31R  RW31R002E      +00038+00038LPV       45519                                                              2M5250804
+SUSAP KJFKK6PR31RY RW31R001Y0000W31B0N4038426105W07345448530-002820300N4039282200W07347254300106750000000490F40050078B987460M0171103
+SUSAP KJFKK6PR31RY RW31R002E      +00041+00041LPV       45519                                                              0M0181103
+SUSAP KJFKK6SCRI  K6D                 0   0902100282521009001825                                                       M   0M0131105
+SUSAP KJFKK6SHELOGK6EA                0   18018002625                                                                  M   0M0240804
+SUSAP KJFKK6SJFK  K6D                 0   0901800282518009002025                                                       M   0M0141007
+SUSAP KJFKK6SRW04LK6PG                0   18018002925                                                                  M   0M0130912
+SUSAP KJFKK6SRW04RK6PG                0   18018002925                                                                  M   0M0130912
+SUSAP KJFKK6SRW22LK6PG                0   18018002925                                                                  M   0M0260812
+SUSAP KJFKK6SRW22RK6PG                0   18018002625                                                                  M   0M0240804
+SUSAP KJFKK6SRW31LK6PG                0   18018002925                                                                  M   0M0210912
+SUSAP KJFKK6SRW31RK6PG                0   18018002925                                                                  M   0M0190912

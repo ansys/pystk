@@ -47,7 +47,7 @@ __all__ = ["ADDSMessage", "ADDSMessageCollection", "ARINC424Airport", "ARINC424H
 "BasicManeuverStrategyAileronRoll", "BasicManeuverStrategyAutopilotNav", "BasicManeuverStrategyAutopilotProf", "BasicManeuverStrategyBallistic3D", 
 "BasicManeuverStrategyBarrelRoll", "BasicManeuverStrategyBezier", "BasicManeuverStrategyCruiseProfile", "BasicManeuverStrategyFlyAOA", 
 "BasicManeuverStrategyGlideProfile", "BasicManeuverStrategyIntercept", "BasicManeuverStrategyLTAHover", "BasicManeuverStrategyLoop", 
-"BasicManeuverStrategyPitch3D", "BasicManeuverStrategyPull", "BasicManeuverStrategyPushPull", "BasicManeuverStrategyRelSpeedAlt", 
+"BasicManeuverStrategyPitch3D", "BasicManeuverStrategyPull", "BasicManeuverStrategyPushPull", "BasicManeuverStrategyRelSpeedAltitude", 
 "BasicManeuverStrategyRelativeBearing", "BasicManeuverStrategyRelativeCourse", "BasicManeuverStrategyRelativeFPA", "BasicManeuverStrategyRendezvous", 
 "BasicManeuverStrategyRollingPull", "BasicManeuverStrategySimpleTurn", "BasicManeuverStrategySmoothAccel", "BasicManeuverStrategySmoothTurn", 
 "BasicManeuverStrategyStationkeeping", "BasicManeuverStrategyStraightAhead", "BasicManeuverStrategyWeave", "CalculationOptions", 
@@ -73,7 +73,7 @@ __all__ = ["ADDSMessage", "ADDSMessageCollection", "ARINC424Airport", "ARINC424H
 "IBasicManeuverStrategyAutopilotProf", "IBasicManeuverStrategyBallistic3D", "IBasicManeuverStrategyBarrelRoll", "IBasicManeuverStrategyBezier", 
 "IBasicManeuverStrategyCruiseProfile", "IBasicManeuverStrategyFlyAOA", "IBasicManeuverStrategyGlideProfile", "IBasicManeuverStrategyIntercept", 
 "IBasicManeuverStrategyLTAHover", "IBasicManeuverStrategyLoop", "IBasicManeuverStrategyPitch3D", "IBasicManeuverStrategyPull", 
-"IBasicManeuverStrategyPushPull", "IBasicManeuverStrategyRelSpeedAlt", "IBasicManeuverStrategyRelativeBearing", "IBasicManeuverStrategyRelativeCourse", 
+"IBasicManeuverStrategyPushPull", "IBasicManeuverStrategyRelSpeedAltitude", "IBasicManeuverStrategyRelativeBearing", "IBasicManeuverStrategyRelativeCourse", 
 "IBasicManeuverStrategyRelativeFPA", "IBasicManeuverStrategyRendezvous", "IBasicManeuverStrategyRollingPull", "IBasicManeuverStrategySimpleTurn", 
 "IBasicManeuverStrategySmoothAccel", "IBasicManeuverStrategySmoothTurn", "IBasicManeuverStrategyStationkeeping", "IBasicManeuverStrategyStraightAhead", 
 "IBasicManeuverStrategyWeave", "ICalculationOptions", "ICatalog", "ICatalogAirport", "ICatalogItem", "ICatalogNavaid", "ICatalogRunway", 
@@ -91,9 +91,9 @@ __all__ = ["ADDSMessage", "ADDSMessageCollection", "ARINC424Airport", "ARINC424H
 "IProcedureLanding", "IProcedureLaunch", "IProcedureLaunchDynState", "IProcedureLaunchWaypoint", "IProcedureParallelFlightLine", 
 "IProcedureReferenceState", "IProcedureSuperProcedure", "IProcedureTakeoff", "IProcedureTerrainFollow", "IProcedureTimeOptions", 
 "IProcedureTransitionToForwardFlight", "IProcedureTransitionToHover", "IProcedureVGTPoint", "IProcedureVerticalLanding", 
-"IProcedureVerticalTakeoff", "IPropulsionEfficiencies", "IPropulsionThrust", "IRefStateForwardFlightOptions", "IRefStateHoverOptions", 
-"IRefStateTakeoffLandingOptions", "IRefStateWeightOnWheelsOptions", "IRefuelDumpProperties", "IRotorcraftAero", "IRotorcraftModel", 
-"IRotorcraftModels", "IRotorcraftProp", "IRunwayCategory", "IRunwayHeadingOptions", "ISite", "ISiteAirportFromCatalog", 
+"IProcedureVerticalTakeoff", "IPropulsionEfficiencies", "IPropulsionThrust", "IReferenceStateForwardFlightOptions", "IReferenceStateHoverOptions", 
+"IReferenceStateTakeoffLandingOptions", "IReferenceStateWeightOnWheelsOptions", "IRefuelDumpProperties", "IRotorcraftAero", 
+"IRotorcraftModel", "IRotorcraftModels", "IRotorcraftProp", "IRunwayCategory", "IRunwayHeadingOptions", "ISite", "ISiteAirportFromCatalog", 
 "ISiteDynState", "ISiteEndOfPrevProcedure", "ISiteNavaidFromCatalog", "ISiteReferenceState", "ISiteRelToPrevProcedure", 
 "ISiteRelToSTKObject", "ISiteRunway", "ISiteRunwayFromCatalog", "ISiteSTKAreaTarget", "ISiteSTKObjectWaypoint", "ISiteSTKStaticObject", 
 "ISiteSTKVehicle", "ISiteSuperProcedure", "ISiteUnknown", "ISiteVTOLPoint", "ISiteVTOLPointFromCatalog", "ISiteWaypoint", 
@@ -111,14 +111,15 @@ __all__ = ["ADDSMessage", "ADDSMessageCollection", "ARINC424Airport", "ARINC424H
 "ProcedureInFormation", "ProcedureLanding", "ProcedureLaunch", "ProcedureLaunchDynState", "ProcedureLaunchWaypoint", "ProcedureParallelFlightLine", 
 "ProcedureReferenceState", "ProcedureSuperProcedure", "ProcedureTakeoff", "ProcedureTerrainFollow", "ProcedureTimeOptions", 
 "ProcedureTransitionToForwardFlight", "ProcedureTransitionToHover", "ProcedureVGTPoint", "ProcedureVerticalLanding", "ProcedureVerticalTakeoff", 
-"PropulsionEfficiencies", "PropulsionThrust", "RefStateForwardFlightOptions", "RefStateHoverOptions", "RefStateTakeoffLandingOptions", 
-"RefStateWeightOnWheelsOptions", "RefuelDumpProperties", "RotorcraftAero", "RotorcraftModel", "RotorcraftModels", "RotorcraftProp", 
-"RunwayCategory", "RunwayHeadingOptions", "Site", "SiteAirportFromCatalog", "SiteDynState", "SiteEndOfPrevProcedure", "SiteNavaidFromCatalog", 
-"SiteReferenceState", "SiteRelToPrevProcedure", "SiteRelToSTKObject", "SiteRunway", "SiteRunwayFromCatalog", "SiteSTKAreaTarget", 
-"SiteSTKObjectWaypoint", "SiteSTKStaticObject", "SiteSTKVehicle", "SiteSuperProcedure", "SiteVTOLPoint", "SiteVTOLPointFromCatalog", 
-"SiteWaypoint", "SiteWaypointFromCatalog", "StationCollection", "TakeoffDeparturePoint", "TakeoffLowTransition", "TakeoffNormal", 
-"UserRunway", "UserRunwaySource", "UserVTOLPoint", "UserVTOLPointSource", "UserWaypoint", "UserWaypointSource", "VTOLPointCategory", 
-"VerticalPlaneAndFlightPathOptions", "VerticalPlaneOptions", "WaypointCategory", "WindModel", "WindModelADDS", "WindModelConstant"]
+"PropulsionEfficiencies", "PropulsionThrust", "ReferenceStateForwardFlightOptions", "ReferenceStateHoverOptions", "ReferenceStateTakeoffLandingOptions", 
+"ReferenceStateWeightOnWheelsOptions", "RefuelDumpProperties", "RotorcraftAero", "RotorcraftModel", "RotorcraftModels", 
+"RotorcraftProp", "RunwayCategory", "RunwayHeadingOptions", "Site", "SiteAirportFromCatalog", "SiteDynState", "SiteEndOfPrevProcedure", 
+"SiteNavaidFromCatalog", "SiteReferenceState", "SiteRelToPrevProcedure", "SiteRelToSTKObject", "SiteRunway", "SiteRunwayFromCatalog", 
+"SiteSTKAreaTarget", "SiteSTKObjectWaypoint", "SiteSTKStaticObject", "SiteSTKVehicle", "SiteSuperProcedure", "SiteVTOLPoint", 
+"SiteVTOLPointFromCatalog", "SiteWaypoint", "SiteWaypointFromCatalog", "StationCollection", "TakeoffDeparturePoint", "TakeoffLowTransition", 
+"TakeoffNormal", "UserRunway", "UserRunwaySource", "UserVTOLPoint", "UserVTOLPointSource", "UserWaypoint", "UserWaypointSource", 
+"VTOLPointCategory", "VerticalPlaneAndFlightPathOptions", "VerticalPlaneOptions", "WaypointCategory", "WindModel", "WindModelADDS", 
+"WindModelConstant"]
 
 import typing
 
@@ -24719,7 +24720,7 @@ class IBasicManeuverStrategyRelativeFPA(object):
 agcls.AgClassCatalog.add_catalog_entry("{d2066432-a9ef-48f0-aeb2-e75f6b4323e2}", IBasicManeuverStrategyRelativeFPA)
 agcls.AgTypeNameMap["IBasicManeuverStrategyRelativeFPA"] = IBasicManeuverStrategyRelativeFPA
 
-class IBasicManeuverStrategyRelSpeedAlt(object):
+class IBasicManeuverStrategyRelSpeedAltitude(object):
     """Interface used to access options for a Relative Speed/Altitude Strategy of a Basic Maneuver Procedure."""
     _uuid = "{1770600b-1329-4efb-8836-200a0d8ed802}"
     _num_methods = 36
@@ -24763,64 +24764,64 @@ class IBasicManeuverStrategyRelSpeedAlt(object):
         self.__dict__["_GetCompensateForCoriolisAccel"] = _raise_uninitialized_error
         self.__dict__["_SetCompensateForCoriolisAccel"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IBasicManeuverStrategyRelSpeedAlt._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IBasicManeuverStrategyRelSpeedAltitude._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyRelSpeedAlt from source object.")
+                raise STKInvalidCastError("Failed to create IBasicManeuverStrategyRelSpeedAltitude from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IBasicManeuverStrategyRelSpeedAlt = agcom.GUID(IBasicManeuverStrategyRelSpeedAlt._uuid)
-        vtable_offset_local = IBasicManeuverStrategyRelSpeedAlt._vtable_offset - 1
-        self.__dict__["_GetTargetName"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetTargetName"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_GetValidTargetNames"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+3, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_GetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+5, agcom.DOUBLE)
-        self.__dict__["_GetRelativeAltitudeMode"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+6, POINTER(agcom.LONG))
-        self.__dict__["_SetRelativeAltitudeMode"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+7, agcom.LONG)
-        self.__dict__["_GetElevationAngle"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+8, POINTER(agcom.VARIANT))
-        self.__dict__["_SetElevationAngle"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+9, agcom.VARIANT)
-        self.__dict__["_GetAltitudeOffset"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+10, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAltitudeOffset"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+11, agcom.DOUBLE)
-        self.__dict__["_GetAirspeedOffsetType"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+12, POINTER(agcom.LONG))
-        self.__dict__["_GetAirspeedOffset"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+13, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAirspeedOffset"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+14, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetUseTgtAspectForAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+15, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetUseTgtAspectForAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+16, agcom.VARIANT_BOOL)
-        self.__dict__["_GetUsePerfModelLimits"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetUsePerfModelLimits"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+18, agcom.VARIANT_BOOL)
-        self.__dict__["_GetRangeForEqualSpeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+19, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetRangeForEqualSpeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+20, agcom.DOUBLE)
-        self.__dict__["_GetRangeToTransitionSpeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+21, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetRangeToTransitionSpeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+22, agcom.DOUBLE)
-        self.__dict__["_GetMinAltitude"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+23, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetMinAltitude"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+24, agcom.DOUBLE)
-        self.__dict__["_GetMaxAltitude"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+25, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetMaxAltitude"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+26, agcom.DOUBLE)
-        self.__dict__["_GetMinAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+27, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetMinAirspeedType"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+28, POINTER(agcom.LONG))
-        self.__dict__["_SetMinAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+29, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetMaxAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+30, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetMaxAirspeedType"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+31, POINTER(agcom.LONG))
-        self.__dict__["_SetMaxAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+32, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetStopCondition"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+33, POINTER(agcom.LONG))
-        self.__dict__["_SetStopCondition"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+34, agcom.LONG)
-        self.__dict__["_GetCompensateForCoriolisAccel"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+35, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCompensateForCoriolisAccel"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAlt, vtable_offset_local+36, agcom.VARIANT_BOOL)
+        IID_IBasicManeuverStrategyRelSpeedAltitude = agcom.GUID(IBasicManeuverStrategyRelSpeedAltitude._uuid)
+        vtable_offset_local = IBasicManeuverStrategyRelSpeedAltitude._vtable_offset - 1
+        self.__dict__["_GetTargetName"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_SetTargetName"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_GetValidTargetNames"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+3, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_GetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+5, agcom.DOUBLE)
+        self.__dict__["_GetRelativeAltitudeMode"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+6, POINTER(agcom.LONG))
+        self.__dict__["_SetRelativeAltitudeMode"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+7, agcom.LONG)
+        self.__dict__["_GetElevationAngle"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+8, POINTER(agcom.VARIANT))
+        self.__dict__["_SetElevationAngle"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+9, agcom.VARIANT)
+        self.__dict__["_GetAltitudeOffset"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+10, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAltitudeOffset"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+11, agcom.DOUBLE)
+        self.__dict__["_GetAirspeedOffsetType"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+12, POINTER(agcom.LONG))
+        self.__dict__["_GetAirspeedOffset"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+13, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAirspeedOffset"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+14, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetUseTgtAspectForAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+15, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetUseTgtAspectForAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+16, agcom.VARIANT_BOOL)
+        self.__dict__["_GetUsePerfModelLimits"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetUsePerfModelLimits"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+18, agcom.VARIANT_BOOL)
+        self.__dict__["_GetRangeForEqualSpeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+19, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetRangeForEqualSpeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+20, agcom.DOUBLE)
+        self.__dict__["_GetRangeToTransitionSpeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+21, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetRangeToTransitionSpeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+22, agcom.DOUBLE)
+        self.__dict__["_GetMinAltitude"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+23, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetMinAltitude"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+24, agcom.DOUBLE)
+        self.__dict__["_GetMaxAltitude"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+25, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetMaxAltitude"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+26, agcom.DOUBLE)
+        self.__dict__["_GetMinAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+27, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetMinAirspeedType"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+28, POINTER(agcom.LONG))
+        self.__dict__["_SetMinAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+29, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetMaxAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+30, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetMaxAirspeedType"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+31, POINTER(agcom.LONG))
+        self.__dict__["_SetMaxAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+32, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetStopCondition"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+33, POINTER(agcom.LONG))
+        self.__dict__["_SetStopCondition"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+34, agcom.LONG)
+        self.__dict__["_GetCompensateForCoriolisAccel"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+35, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetCompensateForCoriolisAccel"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyRelSpeedAltitude, vtable_offset_local+36, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IBasicManeuverStrategyRelSpeedAlt.__dict__ and type(IBasicManeuverStrategyRelSpeedAlt.__dict__[attrname]) == property:
-            return IBasicManeuverStrategyRelSpeedAlt.__dict__[attrname]
+        if attrname in IBasicManeuverStrategyRelSpeedAltitude.__dict__ and type(IBasicManeuverStrategyRelSpeedAltitude.__dict__[attrname]) == property:
+            return IBasicManeuverStrategyRelSpeedAltitude.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRelSpeedAlt.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRelSpeedAltitude.")
     
     @property
     def TargetName(self) -> str:
@@ -25058,8 +25059,8 @@ class IBasicManeuverStrategyRelSpeedAlt(object):
             agcls.evaluate_hresult(self.__dict__["_SetCompensateForCoriolisAccel"](arg_newVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{1770600b-1329-4efb-8836-200a0d8ed802}", IBasicManeuverStrategyRelSpeedAlt)
-agcls.AgTypeNameMap["IBasicManeuverStrategyRelSpeedAlt"] = IBasicManeuverStrategyRelSpeedAlt
+agcls.AgClassCatalog.add_catalog_entry("{1770600b-1329-4efb-8836-200a0d8ed802}", IBasicManeuverStrategyRelSpeedAltitude)
+agcls.AgTypeNameMap["IBasicManeuverStrategyRelSpeedAltitude"] = IBasicManeuverStrategyRelSpeedAltitude
 
 class IBasicManeuverStrategyBezier(object):
     """Interface used to access options for a Bezier Strategy of a Basic Maneuver Procedure."""
@@ -26628,7 +26629,7 @@ class ITakeoffLowTransition(object):
 agcls.AgClassCatalog.add_catalog_entry("{f205a7c2-5797-4e9f-aac6-7dfe110bcec0}", ITakeoffLowTransition)
 agcls.AgTypeNameMap["ITakeoffLowTransition"] = ITakeoffLowTransition
 
-class IRefStateForwardFlightOptions(object):
+class IReferenceStateForwardFlightOptions(object):
     """Interface used to access the forward flight options for a reference state procedure."""
     _uuid = "{f5baa380-d776-4591-a9c6-4836d6919165}"
     _num_methods = 33
@@ -26669,61 +26670,61 @@ class IRefStateForwardFlightOptions(object):
         self.__dict__["_GetAttitudeRateType"] = _raise_uninitialized_error
         self.__dict__["_SetAttitudeRate"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRefStateForwardFlightOptions._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IReferenceStateForwardFlightOptions._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IRefStateForwardFlightOptions from source object.")
+                raise STKInvalidCastError("Failed to create IReferenceStateForwardFlightOptions from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IRefStateForwardFlightOptions = agcom.GUID(IRefStateForwardFlightOptions._uuid)
-        vtable_offset_local = IRefStateForwardFlightOptions._vtable_offset - 1
-        self.__dict__["_GetAirspeedType"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_GetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+2, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+3, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+5, agcom.DOUBLE)
-        self.__dict__["_GetFlightPathAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+6, POINTER(agcom.VARIANT))
-        self.__dict__["_SetFlightPathAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+7, agcom.VARIANT)
-        self.__dict__["_GetTASDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+8, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetGroundspeedDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+9, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetLongitudinalAccelType"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+10, POINTER(agcom.LONG))
-        self.__dict__["_SetLongitudinalAccel"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+11, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetHeading"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+12, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHeading"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+13, agcom.VARIANT)
-        self.__dict__["_GetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+14, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+15, agcom.VARIANT_BOOL)
-        self.__dict__["_GetCourse"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+16, POINTER(agcom.VARIANT))
-        self.__dict__["_SetCourse"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+17, agcom.VARIANT)
-        self.__dict__["_GetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+18, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+19, agcom.VARIANT_BOOL)
-        self.__dict__["_GetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+20, POINTER(agcom.VARIANT))
-        self.__dict__["_GetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+21, POINTER(agcom.VARIANT))
-        self.__dict__["_GetLateralAccelType"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+22, POINTER(agcom.LONG))
-        self.__dict__["_SetLateralAccel"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+23, agcom.LONG, agcom.VARIANT)
-        self.__dict__["_GetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+24, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+25, agcom.VARIANT)
-        self.__dict__["_GetAOA"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+26, POINTER(agcom.VARIANT))
-        self.__dict__["_SetAOA"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+27, agcom.VARIANT)
-        self.__dict__["_GetSideslip"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+28, POINTER(agcom.VARIANT))
-        self.__dict__["_SetSideslip"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+29, agcom.VARIANT)
-        self.__dict__["_GetPitchRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+30, POINTER(agcom.VARIANT))
-        self.__dict__["_GetPushPullG"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+31, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetAttitudeRateType"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+32, POINTER(agcom.LONG))
-        self.__dict__["_SetAttitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateForwardFlightOptions, vtable_offset_local+33, agcom.LONG, agcom.VARIANT)
+        IID_IReferenceStateForwardFlightOptions = agcom.GUID(IReferenceStateForwardFlightOptions._uuid)
+        vtable_offset_local = IReferenceStateForwardFlightOptions._vtable_offset - 1
+        self.__dict__["_GetAirspeedType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_GetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+2, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+3, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+5, agcom.DOUBLE)
+        self.__dict__["_GetFlightPathAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+6, POINTER(agcom.VARIANT))
+        self.__dict__["_SetFlightPathAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+7, agcom.VARIANT)
+        self.__dict__["_GetTASDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+8, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetGroundspeedDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+9, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetLongitudinalAccelType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+10, POINTER(agcom.LONG))
+        self.__dict__["_SetLongitudinalAccel"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+11, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetHeading"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+12, POINTER(agcom.VARIANT))
+        self.__dict__["_SetHeading"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+13, agcom.VARIANT)
+        self.__dict__["_GetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+14, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+15, agcom.VARIANT_BOOL)
+        self.__dict__["_GetCourse"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+16, POINTER(agcom.VARIANT))
+        self.__dict__["_SetCourse"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+17, agcom.VARIANT)
+        self.__dict__["_GetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+18, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+19, agcom.VARIANT_BOOL)
+        self.__dict__["_GetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+20, POINTER(agcom.VARIANT))
+        self.__dict__["_GetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+21, POINTER(agcom.VARIANT))
+        self.__dict__["_GetLateralAccelType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+22, POINTER(agcom.LONG))
+        self.__dict__["_SetLateralAccel"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+23, agcom.LONG, agcom.VARIANT)
+        self.__dict__["_GetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+24, POINTER(agcom.VARIANT))
+        self.__dict__["_SetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+25, agcom.VARIANT)
+        self.__dict__["_GetAOA"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+26, POINTER(agcom.VARIANT))
+        self.__dict__["_SetAOA"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+27, agcom.VARIANT)
+        self.__dict__["_GetSideslip"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+28, POINTER(agcom.VARIANT))
+        self.__dict__["_SetSideslip"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+29, agcom.VARIANT)
+        self.__dict__["_GetPitchRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+30, POINTER(agcom.VARIANT))
+        self.__dict__["_GetPushPullG"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+31, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetAttitudeRateType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+32, POINTER(agcom.LONG))
+        self.__dict__["_SetAttitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateForwardFlightOptions, vtable_offset_local+33, agcom.LONG, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRefStateForwardFlightOptions.__dict__ and type(IRefStateForwardFlightOptions.__dict__[attrname]) == property:
-            return IRefStateForwardFlightOptions.__dict__[attrname]
+        if attrname in IReferenceStateForwardFlightOptions.__dict__ and type(IReferenceStateForwardFlightOptions.__dict__[attrname]) == property:
+            return IReferenceStateForwardFlightOptions.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRefStateForwardFlightOptions.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateForwardFlightOptions.")
     
     @property
     def AirspeedType(self) -> "AgEAvtrAirspeedType":
@@ -26944,10 +26945,10 @@ class IRefStateForwardFlightOptions(object):
             agcls.evaluate_hresult(self.__dict__["_SetAttitudeRate"](arg_attitudeRateType.COM_val, arg_value.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{f5baa380-d776-4591-a9c6-4836d6919165}", IRefStateForwardFlightOptions)
-agcls.AgTypeNameMap["IRefStateForwardFlightOptions"] = IRefStateForwardFlightOptions
+agcls.AgClassCatalog.add_catalog_entry("{f5baa380-d776-4591-a9c6-4836d6919165}", IReferenceStateForwardFlightOptions)
+agcls.AgTypeNameMap["IReferenceStateForwardFlightOptions"] = IReferenceStateForwardFlightOptions
 
-class IRefStateHoverOptions(object):
+class IReferenceStateHoverOptions(object):
     """Interface used to access the hover options for a reference state procedure."""
     _uuid = "{42eb7689-e629-44f0-b832-44dcbecbeb3e}"
     _num_methods = 28
@@ -26983,56 +26984,56 @@ class IRefStateHoverOptions(object):
         self.__dict__["_GetAttitudeRateType"] = _raise_uninitialized_error
         self.__dict__["_SetAttitudeRate"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRefStateHoverOptions._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IReferenceStateHoverOptions._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IRefStateHoverOptions from source object.")
+                raise STKInvalidCastError("Failed to create IReferenceStateHoverOptions from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IRefStateHoverOptions = agcom.GUID(IRefStateHoverOptions._uuid)
-        vtable_offset_local = IRefStateHoverOptions._vtable_offset - 1
-        self.__dict__["_GetGroundspeed"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetGroundspeed"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetTASDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetGroundspeedDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+6, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetLongitudinalAccelType"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+7, POINTER(agcom.LONG))
-        self.__dict__["_SetLongitudinalAccel"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetHeading"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+9, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHeading"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+10, agcom.VARIANT)
-        self.__dict__["_GetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+12, agcom.VARIANT_BOOL)
-        self.__dict__["_GetCourse"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+13, POINTER(agcom.VARIANT))
-        self.__dict__["_SetCourse"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+14, agcom.VARIANT)
-        self.__dict__["_GetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+15, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+16, agcom.VARIANT_BOOL)
-        self.__dict__["_GetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+17, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+18, agcom.VARIANT)
-        self.__dict__["_GetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+19, POINTER(agcom.VARIANT))
-        self.__dict__["_SetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+20, agcom.VARIANT)
-        self.__dict__["_GetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+21, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+22, agcom.VARIANT)
-        self.__dict__["_GetAOA"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+23, POINTER(agcom.VARIANT))
-        self.__dict__["_SetAOA"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+24, agcom.VARIANT)
-        self.__dict__["_GetPitchRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+25, POINTER(agcom.VARIANT))
-        self.__dict__["_GetPushPullG"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+26, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetAttitudeRateType"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+27, POINTER(agcom.LONG))
-        self.__dict__["_SetAttitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateHoverOptions, vtable_offset_local+28, agcom.LONG, agcom.VARIANT)
+        IID_IReferenceStateHoverOptions = agcom.GUID(IReferenceStateHoverOptions._uuid)
+        vtable_offset_local = IReferenceStateHoverOptions._vtable_offset - 1
+        self.__dict__["_GetGroundspeed"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetGroundspeed"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_GetTASDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetGroundspeedDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+6, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetLongitudinalAccelType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+7, POINTER(agcom.LONG))
+        self.__dict__["_SetLongitudinalAccel"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetHeading"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+9, POINTER(agcom.VARIANT))
+        self.__dict__["_SetHeading"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+10, agcom.VARIANT)
+        self.__dict__["_GetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+12, agcom.VARIANT_BOOL)
+        self.__dict__["_GetCourse"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+13, POINTER(agcom.VARIANT))
+        self.__dict__["_SetCourse"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+14, agcom.VARIANT)
+        self.__dict__["_GetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+15, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+16, agcom.VARIANT_BOOL)
+        self.__dict__["_GetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+17, POINTER(agcom.VARIANT))
+        self.__dict__["_SetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+18, agcom.VARIANT)
+        self.__dict__["_GetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+19, POINTER(agcom.VARIANT))
+        self.__dict__["_SetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+20, agcom.VARIANT)
+        self.__dict__["_GetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+21, POINTER(agcom.VARIANT))
+        self.__dict__["_SetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+22, agcom.VARIANT)
+        self.__dict__["_GetAOA"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+23, POINTER(agcom.VARIANT))
+        self.__dict__["_SetAOA"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+24, agcom.VARIANT)
+        self.__dict__["_GetPitchRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+25, POINTER(agcom.VARIANT))
+        self.__dict__["_GetPushPullG"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+26, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetAttitudeRateType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+27, POINTER(agcom.LONG))
+        self.__dict__["_SetAttitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateHoverOptions, vtable_offset_local+28, agcom.LONG, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRefStateHoverOptions.__dict__ and type(IRefStateHoverOptions.__dict__[attrname]) == property:
-            return IRefStateHoverOptions.__dict__[attrname]
+        if attrname in IReferenceStateHoverOptions.__dict__ and type(IReferenceStateHoverOptions.__dict__[attrname]) == property:
+            return IReferenceStateHoverOptions.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRefStateHoverOptions.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateHoverOptions.")
     
     @property
     def Groundspeed(self) -> float:
@@ -27219,10 +27220,10 @@ class IRefStateHoverOptions(object):
             agcls.evaluate_hresult(self.__dict__["_SetAttitudeRate"](arg_attitudeRateType.COM_val, arg_value.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{42eb7689-e629-44f0-b832-44dcbecbeb3e}", IRefStateHoverOptions)
-agcls.AgTypeNameMap["IRefStateHoverOptions"] = IRefStateHoverOptions
+agcls.AgClassCatalog.add_catalog_entry("{42eb7689-e629-44f0-b832-44dcbecbeb3e}", IReferenceStateHoverOptions)
+agcls.AgTypeNameMap["IReferenceStateHoverOptions"] = IReferenceStateHoverOptions
 
-class IRefStateWeightOnWheelsOptions(object):
+class IReferenceStateWeightOnWheelsOptions(object):
     """Interface used to access the weight on wheels options for a reference state procedure."""
     _uuid = "{14db8803-47cd-4009-b496-13caaa53babe}"
     _num_methods = 14
@@ -27244,42 +27245,42 @@ class IRefStateWeightOnWheelsOptions(object):
         self.__dict__["_GetLateralAccelType"] = _raise_uninitialized_error
         self.__dict__["_SetLateralAccel"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRefStateWeightOnWheelsOptions._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IReferenceStateWeightOnWheelsOptions._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IRefStateWeightOnWheelsOptions from source object.")
+                raise STKInvalidCastError("Failed to create IReferenceStateWeightOnWheelsOptions from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IRefStateWeightOnWheelsOptions = agcom.GUID(IRefStateWeightOnWheelsOptions._uuid)
-        vtable_offset_local = IRefStateWeightOnWheelsOptions._vtable_offset - 1
-        self.__dict__["_GetGroundspeed"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetGroundspeed"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetTASDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetGroundspeedDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetLongitudinalAccelType"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetLongitudinalAccel"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+6, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetHeading"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+7, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHeading"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+8, agcom.VARIANT)
-        self.__dict__["_GetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+9, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+10, agcom.VARIANT_BOOL)
-        self.__dict__["_GetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+11, POINTER(agcom.VARIANT))
-        self.__dict__["_GetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+12, POINTER(agcom.VARIANT))
-        self.__dict__["_GetLateralAccelType"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+13, POINTER(agcom.LONG))
-        self.__dict__["_SetLateralAccel"] = IAGFUNCTYPE(pUnk, IID_IRefStateWeightOnWheelsOptions, vtable_offset_local+14, agcom.LONG, agcom.VARIANT)
+        IID_IReferenceStateWeightOnWheelsOptions = agcom.GUID(IReferenceStateWeightOnWheelsOptions._uuid)
+        vtable_offset_local = IReferenceStateWeightOnWheelsOptions._vtable_offset - 1
+        self.__dict__["_GetGroundspeed"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetGroundspeed"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetTASDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetGroundspeedDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetLongitudinalAccelType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_SetLongitudinalAccel"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+6, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetHeading"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+7, POINTER(agcom.VARIANT))
+        self.__dict__["_SetHeading"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+8, agcom.VARIANT)
+        self.__dict__["_GetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+9, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+10, agcom.VARIANT_BOOL)
+        self.__dict__["_GetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+11, POINTER(agcom.VARIANT))
+        self.__dict__["_GetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+12, POINTER(agcom.VARIANT))
+        self.__dict__["_GetLateralAccelType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+13, POINTER(agcom.LONG))
+        self.__dict__["_SetLateralAccel"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateWeightOnWheelsOptions, vtable_offset_local+14, agcom.LONG, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRefStateWeightOnWheelsOptions.__dict__ and type(IRefStateWeightOnWheelsOptions.__dict__[attrname]) == property:
-            return IRefStateWeightOnWheelsOptions.__dict__[attrname]
+        if attrname in IReferenceStateWeightOnWheelsOptions.__dict__ and type(IReferenceStateWeightOnWheelsOptions.__dict__[attrname]) == property:
+            return IReferenceStateWeightOnWheelsOptions.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRefStateWeightOnWheelsOptions.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateWeightOnWheelsOptions.")
     
     @property
     def Groundspeed(self) -> float:
@@ -27375,10 +27376,10 @@ class IRefStateWeightOnWheelsOptions(object):
             agcls.evaluate_hresult(self.__dict__["_SetLateralAccel"](arg_accelType.COM_val, arg_value.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{14db8803-47cd-4009-b496-13caaa53babe}", IRefStateWeightOnWheelsOptions)
-agcls.AgTypeNameMap["IRefStateWeightOnWheelsOptions"] = IRefStateWeightOnWheelsOptions
+agcls.AgClassCatalog.add_catalog_entry("{14db8803-47cd-4009-b496-13caaa53babe}", IReferenceStateWeightOnWheelsOptions)
+agcls.AgTypeNameMap["IReferenceStateWeightOnWheelsOptions"] = IReferenceStateWeightOnWheelsOptions
 
-class IRefStateTakeoffLandingOptions(object):
+class IReferenceStateTakeoffLandingOptions(object):
     """Interface used to access the takeoff or landing options for a reference state procedure."""
     _uuid = "{b510a16b-3a33-408e-bed8-33dd61b76617}"
     _num_methods = 33
@@ -27419,61 +27420,61 @@ class IRefStateTakeoffLandingOptions(object):
         self.__dict__["_GetAttitudeRateType"] = _raise_uninitialized_error
         self.__dict__["_SetAttitudeRate"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRefStateTakeoffLandingOptions._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IReferenceStateTakeoffLandingOptions._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IRefStateTakeoffLandingOptions from source object.")
+                raise STKInvalidCastError("Failed to create IReferenceStateTakeoffLandingOptions from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IRefStateTakeoffLandingOptions = agcom.GUID(IRefStateTakeoffLandingOptions._uuid)
-        vtable_offset_local = IRefStateTakeoffLandingOptions._vtable_offset - 1
-        self.__dict__["_GetAirspeedType"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_GetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+2, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+3, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+5, agcom.DOUBLE)
-        self.__dict__["_GetFlightPathAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+6, POINTER(agcom.VARIANT))
-        self.__dict__["_SetFlightPathAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+7, agcom.VARIANT)
-        self.__dict__["_GetTASDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+8, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetGroundspeedDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+9, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetLongitudinalAccelType"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+10, POINTER(agcom.LONG))
-        self.__dict__["_SetLongitudinalAccel"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+11, agcom.LONG, agcom.DOUBLE)
-        self.__dict__["_GetHeading"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+12, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHeading"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+13, agcom.VARIANT)
-        self.__dict__["_GetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+14, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+15, agcom.VARIANT_BOOL)
-        self.__dict__["_GetCourse"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+16, POINTER(agcom.VARIANT))
-        self.__dict__["_SetCourse"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+17, agcom.VARIANT)
-        self.__dict__["_GetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+18, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+19, agcom.VARIANT_BOOL)
-        self.__dict__["_GetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+20, POINTER(agcom.VARIANT))
-        self.__dict__["_GetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+21, POINTER(agcom.VARIANT))
-        self.__dict__["_GetLateralAccelType"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+22, POINTER(agcom.LONG))
-        self.__dict__["_SetLateralAccel"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+23, agcom.LONG, agcom.VARIANT)
-        self.__dict__["_GetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+24, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+25, agcom.VARIANT)
-        self.__dict__["_GetAOA"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+26, POINTER(agcom.VARIANT))
-        self.__dict__["_SetAOA"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+27, agcom.VARIANT)
-        self.__dict__["_GetSideslip"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+28, POINTER(agcom.VARIANT))
-        self.__dict__["_SetSideslip"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+29, agcom.VARIANT)
-        self.__dict__["_GetPitchRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+30, POINTER(agcom.VARIANT))
-        self.__dict__["_GetPushPullG"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+31, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetAttitudeRateType"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+32, POINTER(agcom.LONG))
-        self.__dict__["_SetAttitudeRate"] = IAGFUNCTYPE(pUnk, IID_IRefStateTakeoffLandingOptions, vtable_offset_local+33, agcom.LONG, agcom.VARIANT)
+        IID_IReferenceStateTakeoffLandingOptions = agcom.GUID(IReferenceStateTakeoffLandingOptions._uuid)
+        vtable_offset_local = IReferenceStateTakeoffLandingOptions._vtable_offset - 1
+        self.__dict__["_GetAirspeedType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_GetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+2, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+3, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetAltitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+5, agcom.DOUBLE)
+        self.__dict__["_GetFlightPathAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+6, POINTER(agcom.VARIANT))
+        self.__dict__["_SetFlightPathAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+7, agcom.VARIANT)
+        self.__dict__["_GetTASDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+8, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetGroundspeedDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+9, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetLongitudinalAccelType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+10, POINTER(agcom.LONG))
+        self.__dict__["_SetLongitudinalAccel"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+11, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_GetHeading"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+12, POINTER(agcom.VARIANT))
+        self.__dict__["_SetHeading"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+13, agcom.VARIANT)
+        self.__dict__["_GetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+14, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetHeadingIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+15, agcom.VARIANT_BOOL)
+        self.__dict__["_GetCourse"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+16, POINTER(agcom.VARIANT))
+        self.__dict__["_SetCourse"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+17, agcom.VARIANT)
+        self.__dict__["_GetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+18, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetCourseIsMagnetic"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+19, agcom.VARIANT_BOOL)
+        self.__dict__["_GetHeadingDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+20, POINTER(agcom.VARIANT))
+        self.__dict__["_GetCourseDot"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+21, POINTER(agcom.VARIANT))
+        self.__dict__["_GetLateralAccelType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+22, POINTER(agcom.LONG))
+        self.__dict__["_SetLateralAccel"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+23, agcom.LONG, agcom.VARIANT)
+        self.__dict__["_GetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+24, POINTER(agcom.VARIANT))
+        self.__dict__["_SetRollAngle"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+25, agcom.VARIANT)
+        self.__dict__["_GetAOA"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+26, POINTER(agcom.VARIANT))
+        self.__dict__["_SetAOA"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+27, agcom.VARIANT)
+        self.__dict__["_GetSideslip"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+28, POINTER(agcom.VARIANT))
+        self.__dict__["_SetSideslip"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+29, agcom.VARIANT)
+        self.__dict__["_GetPitchRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+30, POINTER(agcom.VARIANT))
+        self.__dict__["_GetPushPullG"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+31, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetAttitudeRateType"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+32, POINTER(agcom.LONG))
+        self.__dict__["_SetAttitudeRate"] = IAGFUNCTYPE(pUnk, IID_IReferenceStateTakeoffLandingOptions, vtable_offset_local+33, agcom.LONG, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IRefStateTakeoffLandingOptions.__dict__ and type(IRefStateTakeoffLandingOptions.__dict__[attrname]) == property:
-            return IRefStateTakeoffLandingOptions.__dict__[attrname]
+        if attrname in IReferenceStateTakeoffLandingOptions.__dict__ and type(IReferenceStateTakeoffLandingOptions.__dict__[attrname]) == property:
+            return IReferenceStateTakeoffLandingOptions.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IRefStateTakeoffLandingOptions.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateTakeoffLandingOptions.")
     
     @property
     def AirspeedType(self) -> "AgEAvtrAirspeedType":
@@ -27694,8 +27695,8 @@ class IRefStateTakeoffLandingOptions(object):
             agcls.evaluate_hresult(self.__dict__["_SetAttitudeRate"](arg_attitudeRateType.COM_val, arg_value.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{b510a16b-3a33-408e-bed8-33dd61b76617}", IRefStateTakeoffLandingOptions)
-agcls.AgTypeNameMap["IRefStateTakeoffLandingOptions"] = IRefStateTakeoffLandingOptions
+agcls.AgClassCatalog.add_catalog_entry("{b510a16b-3a33-408e-bed8-33dd61b76617}", IReferenceStateTakeoffLandingOptions)
+agcls.AgTypeNameMap["IReferenceStateTakeoffLandingOptions"] = IReferenceStateTakeoffLandingOptions
 
 class ILandingEnterDownwindPattern(object):
     """The interface used to access the options for a Downwind Pattern approach mode for a landing procedure. The approach mode must be set to Downwind Pattern to access this interface."""
@@ -32779,28 +32780,28 @@ class IProcedureReferenceState(object):
             agcls.evaluate_hresult(self.__dict__["_SetFuelFlow"](arg_newVal.COM_val))
 
     @property
-    def ModeAsForwardFlight(self) -> "IRefStateForwardFlightOptions":
+    def ModeAsForwardFlight(self) -> "IReferenceStateForwardFlightOptions":
         """Get the forward flight options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_GetModeAsForwardFlight"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def ModeAsTakeoffLanding(self) -> "IRefStateTakeoffLandingOptions":
+    def ModeAsTakeoffLanding(self) -> "IReferenceStateTakeoffLandingOptions":
         """Get the takeoff and landing options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_GetModeAsTakeoffLanding"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def ModeAsHover(self) -> "IRefStateHoverOptions":
+    def ModeAsHover(self) -> "IReferenceStateHoverOptions":
         """Get the hover options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_GetModeAsHover"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def ModeAsWeightOnWheels(self) -> "IRefStateWeightOnWheelsOptions":
+    def ModeAsWeightOnWheels(self) -> "IReferenceStateWeightOnWheelsOptions":
         """Get the weight on wheels options."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
             agcls.evaluate_hresult(self.__dict__["_GetModeAsWeightOnWheels"](byref(arg_ppVal.COM_val)))
@@ -38852,28 +38853,28 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategyRelativeFPA, IBasic
 agcls.AgClassCatalog.add_catalog_entry("{dd290505-55b9-48a9-a800-451bcc816dd6}", BasicManeuverStrategyRelativeFPA)
 
 
-class BasicManeuverStrategyRelSpeedAlt(IBasicManeuverStrategyRelSpeedAlt, IBasicManeuverStrategy):
+class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategyRelSpeedAltitude, IBasicManeuverStrategy):
     """Class defining the Relative Speed/Altitude strategy for a basic maneuver procedure."""
     def __init__(self, sourceObject=None):
-        IBasicManeuverStrategyRelSpeedAlt.__init__(self, sourceObject)
+        IBasicManeuverStrategyRelSpeedAltitude.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IBasicManeuverStrategyRelSpeedAlt._private_init(self, pUnk)
+        IBasicManeuverStrategyRelSpeedAltitude._private_init(self, pUnk)
         IBasicManeuverStrategy._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IBasicManeuverStrategyRelSpeedAlt._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyRelSpeedAlt._get_property(self, attrname)
+        if IBasicManeuverStrategyRelSpeedAltitude._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategyRelSpeedAltitude._get_property(self, attrname)
         if IBasicManeuverStrategy._get_property(self, attrname) is not None: found_prop = IBasicManeuverStrategy._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelSpeedAlt.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in BasicManeuverStrategyRelSpeedAltitude.")
         
-agcls.AgClassCatalog.add_catalog_entry("{72d18bdd-ad36-43ed-a8d6-6c25a7d88078}", BasicManeuverStrategyRelSpeedAlt)
+agcls.AgClassCatalog.add_catalog_entry("{72d18bdd-ad36-43ed-a8d6-6c25a7d88078}", BasicManeuverStrategyRelSpeedAltitude)
 
 
 class BasicManeuverStrategyBezier(IBasicManeuverStrategyBezier, IBasicManeuverStrategy):
@@ -40043,88 +40044,88 @@ class MissileTurbojetProp(IMissileTurbojetProp):
 agcls.AgClassCatalog.add_catalog_entry("{6024d1a7-768e-4015-abb3-e0539d431ff9}", MissileTurbojetProp)
 
 
-class RefStateForwardFlightOptions(IRefStateForwardFlightOptions):
+class ReferenceStateForwardFlightOptions(IReferenceStateForwardFlightOptions):
     """Class defining the Forward Flight options for a Reference State procedure."""
     def __init__(self, sourceObject=None):
-        IRefStateForwardFlightOptions.__init__(self, sourceObject)
+        IReferenceStateForwardFlightOptions.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IRefStateForwardFlightOptions._private_init(self, pUnk)
+        IReferenceStateForwardFlightOptions._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IRefStateForwardFlightOptions._get_property(self, attrname) is not None: found_prop = IRefStateForwardFlightOptions._get_property(self, attrname)
+        if IReferenceStateForwardFlightOptions._get_property(self, attrname) is not None: found_prop = IReferenceStateForwardFlightOptions._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RefStateForwardFlightOptions.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateForwardFlightOptions.")
         
-agcls.AgClassCatalog.add_catalog_entry("{6f60fd0b-6c79-48a5-908b-b5d697552b94}", RefStateForwardFlightOptions)
+agcls.AgClassCatalog.add_catalog_entry("{6f60fd0b-6c79-48a5-908b-b5d697552b94}", ReferenceStateForwardFlightOptions)
 
 
-class RefStateTakeoffLandingOptions(IRefStateTakeoffLandingOptions):
+class ReferenceStateTakeoffLandingOptions(IReferenceStateTakeoffLandingOptions):
     """Class defining the Takeoff or Landing options for a Reference State procedure."""
     def __init__(self, sourceObject=None):
-        IRefStateTakeoffLandingOptions.__init__(self, sourceObject)
+        IReferenceStateTakeoffLandingOptions.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IRefStateTakeoffLandingOptions._private_init(self, pUnk)
+        IReferenceStateTakeoffLandingOptions._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IRefStateTakeoffLandingOptions._get_property(self, attrname) is not None: found_prop = IRefStateTakeoffLandingOptions._get_property(self, attrname)
+        if IReferenceStateTakeoffLandingOptions._get_property(self, attrname) is not None: found_prop = IReferenceStateTakeoffLandingOptions._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RefStateTakeoffLandingOptions.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateTakeoffLandingOptions.")
         
-agcls.AgClassCatalog.add_catalog_entry("{5a54840f-128e-411c-af24-2e2c49fbd922}", RefStateTakeoffLandingOptions)
+agcls.AgClassCatalog.add_catalog_entry("{5a54840f-128e-411c-af24-2e2c49fbd922}", ReferenceStateTakeoffLandingOptions)
 
 
-class RefStateHoverOptions(IRefStateHoverOptions):
+class ReferenceStateHoverOptions(IReferenceStateHoverOptions):
     """Class defining the Hover options for a Reference State procedure."""
     def __init__(self, sourceObject=None):
-        IRefStateHoverOptions.__init__(self, sourceObject)
+        IReferenceStateHoverOptions.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IRefStateHoverOptions._private_init(self, pUnk)
+        IReferenceStateHoverOptions._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IRefStateHoverOptions._get_property(self, attrname) is not None: found_prop = IRefStateHoverOptions._get_property(self, attrname)
+        if IReferenceStateHoverOptions._get_property(self, attrname) is not None: found_prop = IReferenceStateHoverOptions._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RefStateHoverOptions.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateHoverOptions.")
         
-agcls.AgClassCatalog.add_catalog_entry("{0767b34e-3bc9-447d-956e-5e0939cc9bfc}", RefStateHoverOptions)
+agcls.AgClassCatalog.add_catalog_entry("{0767b34e-3bc9-447d-956e-5e0939cc9bfc}", ReferenceStateHoverOptions)
 
 
-class RefStateWeightOnWheelsOptions(IRefStateWeightOnWheelsOptions):
+class ReferenceStateWeightOnWheelsOptions(IReferenceStateWeightOnWheelsOptions):
     """Class defining the Weight on Wheels options for a Reference State procedure."""
     def __init__(self, sourceObject=None):
-        IRefStateWeightOnWheelsOptions.__init__(self, sourceObject)
+        IReferenceStateWeightOnWheelsOptions.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IRefStateWeightOnWheelsOptions._private_init(self, pUnk)
+        IReferenceStateWeightOnWheelsOptions._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IRefStateWeightOnWheelsOptions._get_property(self, attrname) is not None: found_prop = IRefStateWeightOnWheelsOptions._get_property(self, attrname)
+        if IReferenceStateWeightOnWheelsOptions._get_property(self, attrname) is not None: found_prop = IReferenceStateWeightOnWheelsOptions._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in RefStateWeightOnWheelsOptions.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in ReferenceStateWeightOnWheelsOptions.")
         
-agcls.AgClassCatalog.add_catalog_entry("{de32d95c-707b-41dd-a7de-072506f171b9}", RefStateWeightOnWheelsOptions)
+agcls.AgClassCatalog.add_catalog_entry("{de32d95c-707b-41dd-a7de-072506f171b9}", ReferenceStateWeightOnWheelsOptions)
 
 
 class SiteRunwayFromCatalog(ISiteRunwayFromCatalog, ISite):

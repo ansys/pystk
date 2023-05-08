@@ -12,10 +12,11 @@ __all__ = ["AgEAzElAboutBoresight", "AgECoordinateSystem", "AgEDirectionType", "
 "IDirectionPR", "IDirectionRADec", "IDirectionXYZ", "IDoublesCollection", "IExecCmdResult", "IExecMultiCmdResult", "IGeocentric", 
 "IGeodetic", "ILocationData", "IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", 
 "IOrientationQuaternion", "IOrientationYPRAngles", "IPlanetocentric", "IPlanetodetic", "IPosition", "IPropertyInfo", "IPropertyInfoCollection", 
-"IQuantity", "IRuntimeTypeInfo", "IRuntimeTypeInfoProvider", "ISpherical", "IUnitPrefsDim", "IUnitPrefsDimCollection", "IUnitPrefsUnit", 
-"IUnitPrefsUnitCollection", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationYPRAngles", 
-"Planetocentric", "Planetodetic", "Position", "PropertyInfo", "PropertyInfoCollection", "Quantity", "RuntimeTypeInfo", "Spherical", 
-"UnitPrefsDim", "UnitPrefsDimCollection", "UnitPrefsUnit", "UnitPrefsUnitCollection"]
+"IQuantity", "IRuntimeTypeInfo", "IRuntimeTypeInfoProvider", "ISpherical", "IUnitPreferencesDimension", "IUnitPreferencesDimensionCollection", 
+"IUnitPreferencesUnit", "IUnitPreferencesUnitCollection", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", 
+"OrientationYPRAngles", "Planetocentric", "Planetodetic", "Position", "PropertyInfo", "PropertyInfoCollection", "Quantity", 
+"RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", "UnitPreferencesUnit", 
+"UnitPreferencesUnitCollection"]
 
 import typing
 
@@ -2824,7 +2825,7 @@ class ICartesian2Vector(object):
 agcls.AgClassCatalog.add_catalog_entry("{DA459BD7-5810-4B30-8397-21EDA9E52D2B}", ICartesian2Vector)
 agcls.AgTypeNameMap["ICartesian2Vector"] = ICartesian2Vector
 
-class IUnitPrefsDim(object):
+class IUnitPreferencesDimension(object):
     """Provides info on a Dimension from the global unit table."""
     _uuid = "{AA966FFD-1A99-45D8-9193-C519BBBA99FA}"
     _num_methods = 5
@@ -2837,33 +2838,33 @@ class IUnitPrefsDim(object):
         self.__dict__["_GetCurrentUnit"] = _raise_uninitialized_error
         self.__dict__["_SetCurrentUnit"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPrefsDim._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPreferencesDimension._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IUnitPrefsDim from source object.")
+                raise STKInvalidCastError("Failed to create IUnitPreferencesDimension from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IUnitPrefsDim = agcom.GUID(IUnitPrefsDim._uuid)
-        vtable_offset_local = IUnitPrefsDim._vtable_offset - 1
-        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_GetName"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_GetAvailableUnits"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_GetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+4, POINTER(agcom.PVOID))
-        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDim, vtable_offset_local+5, agcom.BSTR)
+        IID_IUnitPreferencesDimension = agcom.GUID(IUnitPreferencesDimension._uuid)
+        vtable_offset_local = IUnitPreferencesDimension._vtable_offset - 1
+        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_GetName"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_GetAvailableUnits"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_GetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+4, POINTER(agcom.PVOID))
+        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+5, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUnitPrefsDim.__dict__ and type(IUnitPrefsDim.__dict__[attrname]) == property:
-            return IUnitPrefsDim.__dict__[attrname]
+        if attrname in IUnitPreferencesDimension.__dict__ and type(IUnitPreferencesDimension.__dict__[attrname]) == property:
+            return IUnitPreferencesDimension.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPrefsDim.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPreferencesDimension.")
     
     @property
     def Id(self) -> int:
@@ -2880,14 +2881,14 @@ class IUnitPrefsDim(object):
             return arg_pName.python_val
 
     @property
-    def AvailableUnits(self) -> "IUnitPrefsUnitCollection":
+    def AvailableUnits(self) -> "IUnitPreferencesUnitCollection":
         """Returns collection of Units."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnitCollection:
             agcls.evaluate_hresult(self.__dict__["_GetAvailableUnits"](byref(arg_ppUnitPrefsUnitCollection.COM_val)))
             return arg_ppUnitPrefsUnitCollection.python_val
 
     @property
-    def CurrentUnit(self) -> "IUnitPrefsUnit":
+    def CurrentUnit(self) -> "IUnitPreferencesUnit":
         """Returns the current unit for this dimension."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__["_GetCurrentUnit"](byref(arg_ppUnitPrefsUnit.COM_val)))
@@ -2899,8 +2900,8 @@ class IUnitPrefsDim(object):
             agcls.evaluate_hresult(self.__dict__["_SetCurrentUnit"](arg_unitAbbrv.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{AA966FFD-1A99-45D8-9193-C519BBBA99FA}", IUnitPrefsDim)
-agcls.AgTypeNameMap["IUnitPrefsDim"] = IUnitPrefsDim
+agcls.AgClassCatalog.add_catalog_entry("{AA966FFD-1A99-45D8-9193-C519BBBA99FA}", IUnitPreferencesDimension)
+agcls.AgTypeNameMap["IUnitPreferencesDimension"] = IUnitPreferencesDimension
 
 class IPropertyInfo(object):
     """Property information."""
@@ -3389,7 +3390,7 @@ class IExecMultiCmdResult(object):
 agcls.AgClassCatalog.add_catalog_entry("{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}", IExecMultiCmdResult)
 agcls.AgTypeNameMap["IExecMultiCmdResult"] = IExecMultiCmdResult
 
-class IUnitPrefsUnit(object):
+class IUnitPreferencesUnit(object):
     """Provides info about a unit."""
     _uuid = "{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}"
     _num_methods = 4
@@ -3401,32 +3402,32 @@ class IUnitPrefsUnit(object):
         self.__dict__["_GetId"] = _raise_uninitialized_error
         self.__dict__["_GetDimension"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPrefsUnit._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPreferencesUnit._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IUnitPrefsUnit from source object.")
+                raise STKInvalidCastError("Failed to create IUnitPreferencesUnit from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IUnitPrefsUnit = agcom.GUID(IUnitPrefsUnit._uuid)
-        vtable_offset_local = IUnitPrefsUnit._vtable_offset - 1
-        self.__dict__["_GetFullName"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnit, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_GetAbbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnit, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnit, vtable_offset_local+3, POINTER(agcom.LONG))
-        self.__dict__["_GetDimension"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnit, vtable_offset_local+4, POINTER(agcom.PVOID))
+        IID_IUnitPreferencesUnit = agcom.GUID(IUnitPreferencesUnit._uuid)
+        vtable_offset_local = IUnitPreferencesUnit._vtable_offset - 1
+        self.__dict__["_GetFullName"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_GetAbbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+3, POINTER(agcom.LONG))
+        self.__dict__["_GetDimension"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+4, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUnitPrefsUnit.__dict__ and type(IUnitPrefsUnit.__dict__[attrname]) == property:
-            return IUnitPrefsUnit.__dict__[attrname]
+        if attrname in IUnitPreferencesUnit.__dict__ and type(IUnitPreferencesUnit.__dict__[attrname]) == property:
+            return IUnitPreferencesUnit.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPrefsUnit.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPreferencesUnit.")
     
     @property
     def FullName(self) -> str:
@@ -3450,17 +3451,17 @@ class IUnitPrefsUnit(object):
             return arg_pId.python_val
 
     @property
-    def Dimension(self) -> "IUnitPrefsDim":
+    def Dimension(self) -> "IUnitPreferencesDimension":
         """Returns the Dimension for this unit."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_GetDimension"](byref(arg_ppUnitPrefsDim.COM_val)))
             return arg_ppUnitPrefsDim.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}", IUnitPrefsUnit)
-agcls.AgTypeNameMap["IUnitPrefsUnit"] = IUnitPrefsUnit
+agcls.AgClassCatalog.add_catalog_entry("{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}", IUnitPreferencesUnit)
+agcls.AgTypeNameMap["IUnitPreferencesUnit"] = IUnitPreferencesUnit
 
-class IUnitPrefsUnitCollection(object):
+class IUnitPreferencesUnitCollection(object):
     """Provides access to the Unit collection."""
     _uuid = "{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}"
     _num_methods = 5
@@ -3473,39 +3474,39 @@ class IUnitPrefsUnitCollection(object):
         self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
         self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPrefsUnitCollection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPreferencesUnitCollection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IUnitPrefsUnitCollection from source object.")
+                raise STKInvalidCastError("Failed to create IUnitPreferencesUnitCollection from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IUnitPrefsUnitCollection = agcom.GUID(IUnitPrefsUnitCollection._uuid)
-        vtable_offset_local = IUnitPrefsUnitCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsUnitCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
+        IID_IUnitPreferencesUnitCollection = agcom.GUID(IUnitPreferencesUnitCollection._uuid)
+        vtable_offset_local = IUnitPreferencesUnitCollection._vtable_offset - 1
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUnitPrefsUnitCollection.__dict__ and type(IUnitPrefsUnitCollection.__dict__[attrname]) == property:
-            return IUnitPrefsUnitCollection.__dict__[attrname]
+        if attrname in IUnitPreferencesUnitCollection.__dict__ and type(IUnitPreferencesUnitCollection.__dict__[attrname]) == property:
+            return IUnitPreferencesUnitCollection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPrefsUnitCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPreferencesUnitCollection.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
         return self
-    def __next__(self) -> "IUnitPrefsUnit":
+    def __next__(self) -> "IUnitPreferencesUnit":
         if self.__dict__["enumerator"] is None:
             raise StopIteration
         nextval = self.__dict__["enumerator"].Next()
@@ -3513,7 +3514,7 @@ class IUnitPrefsUnitCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, indexOrName:typing.Any) -> "IUnitPrefsUnit":
+    def Item(self, indexOrName:typing.Any) -> "IUnitPreferencesUnit":
         """Returns the specific item in the collection given a unit identifier or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
@@ -3534,14 +3535,14 @@ class IUnitPrefsUnitCollection(object):
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def GetItemByIndex(self, index:int) -> "IUnitPrefsUnit":
+    def GetItemByIndex(self, index:int) -> "IUnitPreferencesUnit":
         """Retrieves a unit from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
-    def GetItemByName(self, name:str) -> "IUnitPrefsUnit":
+    def GetItemByName(self, name:str) -> "IUnitPreferencesUnit":
         """Retrieves a unit from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
@@ -3552,10 +3553,10 @@ class IUnitPrefsUnitCollection(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}", IUnitPrefsUnitCollection)
-agcls.AgTypeNameMap["IUnitPrefsUnitCollection"] = IUnitPrefsUnitCollection
+agcls.AgClassCatalog.add_catalog_entry("{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}", IUnitPreferencesUnitCollection)
+agcls.AgTypeNameMap["IUnitPreferencesUnitCollection"] = IUnitPreferencesUnitCollection
 
-class IUnitPrefsDimCollection(object):
+class IUnitPreferencesDimensionCollection(object):
     """Provides accesses to the global unit table."""
     _uuid = "{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}"
     _num_methods = 12
@@ -3575,46 +3576,46 @@ class IUnitPrefsDimCollection(object):
         self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
         self.__dict__["_GetItemByName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPrefsDimCollection._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPreferencesDimensionCollection._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IUnitPrefsDimCollection from source object.")
+                raise STKInvalidCastError("Failed to create IUnitPreferencesDimensionCollection from source object.")
         self.__dict__["enumerator"] = None
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IUnitPrefsDimCollection = agcom.GUID(IUnitPrefsDimCollection._uuid)
-        vtable_offset_local = IUnitPrefsDimCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+3, agcom.BSTR, agcom.BSTR)
-        self.__dict__["_GetCurrentUnitAbbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+4, agcom.VARIANT, POINTER(agcom.BSTR))
-        self.__dict__["_GetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+6, agcom.VARIANT)
-        self.__dict__["_GetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+8, agcom.DOUBLE)
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+9, POINTER(agcom.PVOID))
-        self.__dict__["_ResetUnits"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+10, )
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+11, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUnitPrefsDimCollection, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
+        IID_IUnitPreferencesDimensionCollection = agcom.GUID(IUnitPreferencesDimensionCollection._uuid)
+        vtable_offset_local = IUnitPreferencesDimensionCollection._vtable_offset - 1
+        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+3, agcom.BSTR, agcom.BSTR)
+        self.__dict__["_GetCurrentUnitAbbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+4, agcom.VARIANT, POINTER(agcom.BSTR))
+        self.__dict__["_GetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_SetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_GetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+9, POINTER(agcom.PVOID))
+        self.__dict__["_ResetUnits"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+10, )
+        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+11, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IUnitPrefsDimCollection.__dict__ and type(IUnitPrefsDimCollection.__dict__[attrname]) == property:
-            return IUnitPrefsDimCollection.__dict__[attrname]
+        if attrname in IUnitPreferencesDimensionCollection.__dict__ and type(IUnitPreferencesDimensionCollection.__dict__[attrname]) == property:
+            return IUnitPreferencesDimensionCollection.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPrefsDimCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPreferencesDimensionCollection.")
     def __iter__(self):
         self.__dict__["enumerator"] = self._NewEnum
         self.__dict__["enumerator"].Reset()
         return self
-    def __next__(self) -> "IUnitPrefsDim":
+    def __next__(self) -> "IUnitPreferencesDimension":
         if self.__dict__["enumerator"] is None:
             raise StopIteration
         nextval = self.__dict__["enumerator"].Next()
@@ -3622,7 +3623,7 @@ class IUnitPrefsDimCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, indexOrName:typing.Any) -> "IUnitPrefsDim":
+    def Item(self, indexOrName:typing.Any) -> "IUnitPreferencesDimension":
         """Returns an IAgUnitPrefsDim given a Dimension name or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
@@ -3684,14 +3685,14 @@ class IUnitPrefsDimCollection(object):
         """Resets the unitpreferences to the Default units"""
         agcls.evaluate_hresult(self.__dict__["_ResetUnits"]())
 
-    def GetItemByIndex(self, index:int) -> "IUnitPrefsDim":
+    def GetItemByIndex(self, index:int) -> "IUnitPreferencesDimension":
         """Retrieves a dimension from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
             return arg_ppAgUnitPrefsDim.python_val
 
-    def GetItemByName(self, name:str) -> "IUnitPrefsDim":
+    def GetItemByName(self, name:str) -> "IUnitPreferencesDimension":
         """Retrieves a dimension from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
@@ -3702,8 +3703,8 @@ class IUnitPrefsDimCollection(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry("{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}", IUnitPrefsDimCollection)
-agcls.AgTypeNameMap["IUnitPrefsDimCollection"] = IUnitPrefsDimCollection
+agcls.AgClassCatalog.add_catalog_entry("{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}", IUnitPreferencesDimensionCollection)
+agcls.AgTypeNameMap["IUnitPreferencesDimensionCollection"] = IUnitPreferencesDimensionCollection
 
 class IQuantity(object):
     """Provides helper methods for a quantity."""
@@ -4344,88 +4345,88 @@ class AgExecMultiCmdResult(IExecMultiCmdResult):
 agcls.AgClassCatalog.add_catalog_entry("{4B262721-FD3F-4DAD-BF32-4280752B7FE6}", AgExecMultiCmdResult)
 
 
-class UnitPrefsUnit(IUnitPrefsUnit):
+class UnitPreferencesUnit(IUnitPreferencesUnit):
     """Object that contains info on the unit."""
     def __init__(self, sourceObject=None):
-        IUnitPrefsUnit.__init__(self, sourceObject)
+        IUnitPreferencesUnit.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IUnitPrefsUnit._private_init(self, pUnk)
+        IUnitPreferencesUnit._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IUnitPrefsUnit._get_property(self, attrname) is not None: found_prop = IUnitPrefsUnit._get_property(self, attrname)
+        if IUnitPreferencesUnit._get_property(self, attrname) is not None: found_prop = IUnitPreferencesUnit._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPrefsUnit.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPreferencesUnit.")
         
-agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}", UnitPrefsUnit)
+agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}", UnitPreferencesUnit)
 
 
-class UnitPrefsUnitCollection(IUnitPrefsUnitCollection):
+class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
     """Object that contains a collection of IAgUnitPrefsUnit."""
     def __init__(self, sourceObject=None):
-        IUnitPrefsUnitCollection.__init__(self, sourceObject)
+        IUnitPreferencesUnitCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IUnitPrefsUnitCollection._private_init(self, pUnk)
+        IUnitPreferencesUnitCollection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IUnitPrefsUnitCollection._get_property(self, attrname) is not None: found_prop = IUnitPrefsUnitCollection._get_property(self, attrname)
+        if IUnitPreferencesUnitCollection._get_property(self, attrname) is not None: found_prop = IUnitPreferencesUnitCollection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPrefsUnitCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPreferencesUnitCollection.")
         
-agcls.AgClassCatalog.add_catalog_entry("{21AEACA4-B79D-455B-8DA4-89402A57A87B}", UnitPrefsUnitCollection)
+agcls.AgClassCatalog.add_catalog_entry("{21AEACA4-B79D-455B-8DA4-89402A57A87B}", UnitPreferencesUnitCollection)
 
 
-class UnitPrefsDim(IUnitPrefsDim):
+class UnitPreferencesDimension(IUnitPreferencesDimension):
     """Object that contains info on the Dimension."""
     def __init__(self, sourceObject=None):
-        IUnitPrefsDim.__init__(self, sourceObject)
+        IUnitPreferencesDimension.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IUnitPrefsDim._private_init(self, pUnk)
+        IUnitPreferencesDimension._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IUnitPrefsDim._get_property(self, attrname) is not None: found_prop = IUnitPrefsDim._get_property(self, attrname)
+        if IUnitPreferencesDimension._get_property(self, attrname) is not None: found_prop = IUnitPreferencesDimension._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPrefsDim.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPreferencesDimension.")
         
-agcls.AgClassCatalog.add_catalog_entry("{5DB8F1AE-1240-4929-B7FD-75E0800970EB}", UnitPrefsDim)
+agcls.AgClassCatalog.add_catalog_entry("{5DB8F1AE-1240-4929-B7FD-75E0800970EB}", UnitPreferencesDimension)
 
 
-class UnitPrefsDimCollection(IUnitPrefsDimCollection):
+class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection):
     """Object that contains a collection of dimensions."""
     def __init__(self, sourceObject=None):
-        IUnitPrefsDimCollection.__init__(self, sourceObject)
+        IUnitPreferencesDimensionCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IUnitPrefsDimCollection._private_init(self, pUnk)
+        IUnitPreferencesDimensionCollection._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IUnitPrefsDimCollection._get_property(self, attrname) is not None: found_prop = IUnitPrefsDimCollection._get_property(self, attrname)
+        if IUnitPreferencesDimensionCollection._get_property(self, attrname) is not None: found_prop = IUnitPreferencesDimensionCollection._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPrefsDimCollection.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in UnitPreferencesDimensionCollection.")
         
-agcls.AgClassCatalog.add_catalog_entry("{58562305-1D39-4B56-9FA8-AB49FEB68A37}", UnitPrefsDimCollection)
+agcls.AgClassCatalog.add_catalog_entry("{58562305-1D39-4B56-9FA8-AB49FEB68A37}", UnitPreferencesDimensionCollection)
 
 
 class ConversionUtility(IConversionUtility):
