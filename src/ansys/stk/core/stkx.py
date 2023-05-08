@@ -8,9 +8,9 @@ __all__ = ["AgEButtonValues", "AgEExecMultiCmdResultAction", "AgEFeatureCodes", 
 "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElemCollection", "DrawElemLine", "DrawElemRect", "IDataObject", 
 "IDataObjectFiles", "IDrawElem", "IDrawElemCollection", "IDrawElemLine", "IDrawElemRect", "IExecCmdResult", "IExecMultiCmdResult", 
 "IObjPathCollection", "IPickInfoData", "IRubberBandPickInfoData", "ISTKXApplication", "ISTKXApplicationPartnerAccess", "ISTKXConControlQuitReceivedEventArgs", 
-"ISTKXSSLCertificateErrorEventArgs", "IUiAx2DCntrl", "IUiAxGfxAnalysisCntrl", "IUiAxVOCntrl", "IWinProjPos", "ObjPathCollection", 
-"PickInfoData", "RubberBandPickInfoData", "STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", 
-"STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", "UiAxGfxAnalysisCntrl", "UiAxVOCntrl", "WinProjPos"]
+"ISTKXSSLCertificateErrorEventArgs", "IUiAx2DCntrl", "IUiAxGfxAnalysisCntrl", "IUiAxVOCntrl", "IWinProjectionPosition", 
+"ObjPathCollection", "PickInfoData", "RubberBandPickInfoData", "STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", 
+"STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", "UiAxGfxAnalysisCntrl", "UiAxVOCntrl", "WinProjectionPosition"]
 
 import typing
 
@@ -1345,7 +1345,7 @@ class IDrawElemCollection(object):
 agcls.AgClassCatalog.add_catalog_entry("{3D6D784D-7C84-4A30-95D8-7D57AF7C560E}", IDrawElemCollection)
 agcls.AgTypeNameMap["IDrawElemCollection"] = IDrawElemCollection
 
-class IWinProjPos(object):
+class IWinProjectionPosition(object):
     """Projected window position detail."""
     _uuid = "{56FF29E4-6311-4E94-B91D-53C02288C55A}"
     _num_methods = 3
@@ -1356,31 +1356,31 @@ class IWinProjPos(object):
         self.__dict__["_GetYPos"] = _raise_uninitialized_error
         self.__dict__["_GetIsWinProjPosValid"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IWinProjPos._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IWinProjectionPosition._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IWinProjPos from source object.")
+                raise STKInvalidCastError("Failed to create IWinProjectionPosition from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IWinProjPos = agcom.GUID(IWinProjPos._uuid)
-        vtable_offset_local = IWinProjPos._vtable_offset - 1
-        self.__dict__["_GetXPos"] = IAGFUNCTYPE(pUnk, IID_IWinProjPos, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetYPos"] = IAGFUNCTYPE(pUnk, IID_IWinProjPos, vtable_offset_local+2, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetIsWinProjPosValid"] = IAGFUNCTYPE(pUnk, IID_IWinProjPos, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        IID_IWinProjectionPosition = agcom.GUID(IWinProjectionPosition._uuid)
+        vtable_offset_local = IWinProjectionPosition._vtable_offset - 1
+        self.__dict__["_GetXPos"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetYPos"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+2, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetIsWinProjPosValid"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IWinProjPos.__dict__ and type(IWinProjPos.__dict__[attrname]) == property:
-            return IWinProjPos.__dict__[attrname]
+        if attrname in IWinProjectionPosition.__dict__ and type(IWinProjectionPosition.__dict__[attrname]) == property:
+            return IWinProjectionPosition.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IWinProjPos.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IWinProjectionPosition.")
     
     @property
     def XPos(self) -> float:
@@ -1404,8 +1404,8 @@ class IWinProjPos(object):
             return arg_pIsValid.python_val
 
 
-agcls.AgClassCatalog.add_catalog_entry("{56FF29E4-6311-4E94-B91D-53C02288C55A}", IWinProjPos)
-agcls.AgTypeNameMap["IWinProjPos"] = IWinProjPos
+agcls.AgClassCatalog.add_catalog_entry("{56FF29E4-6311-4E94-B91D-53C02288C55A}", IWinProjectionPosition)
+agcls.AgTypeNameMap["IWinProjectionPosition"] = IWinProjectionPosition
 
 class IDrawElemLine(IDrawElem):
     """Defines a line in control coordinates."""
@@ -2398,7 +2398,7 @@ class IUiAx2DCntrl(object):
         with agmarshall.VARIANT_BOOL_arg(bAdvancePickMode) as arg_bAdvancePickMode:
             agcls.evaluate_hresult(self.__dict__["_SetAdvancedPickMode"](arg_bAdvancePickMode.COM_val))
 
-    def GetWindowProjectedPosition(self, lat:float, lon:float, alt:float, drawCoords:"AgEGfxDrawCoords") -> "IWinProjPos":
+    def GetWindowProjectedPosition(self, lat:float, lon:float, alt:float, drawCoords:"AgEGfxDrawCoords") -> "IWinProjectionPosition":
         """Get the window projected position for given values."""
         with agmarshall.DOUBLE_arg(lat) as arg_lat, \
              agmarshall.DOUBLE_arg(lon) as arg_lon, \
@@ -3163,25 +3163,25 @@ class UiAxGfxAnalysisCntrl(IUiAxGfxAnalysisCntrl):
 agcls.AgClassCatalog.add_catalog_entry("{600541C4-8B16-47AD-ABA4-EE8BC5E9FD5F}", UiAxGfxAnalysisCntrl)
 
 
-class WinProjPos(IWinProjPos):
+class WinProjectionPosition(IWinProjectionPosition):
     """Projected window position result."""
     def __init__(self, sourceObject=None):
-        IWinProjPos.__init__(self, sourceObject)
+        IWinProjectionPosition.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IWinProjPos._private_init(self, pUnk)
+        IWinProjectionPosition._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         found_prop = None
-        if IWinProjPos._get_property(self, attrname) is not None: found_prop = IWinProjPos._get_property(self, attrname)
+        if IWinProjectionPosition._get_property(self, attrname) is not None: found_prop = IWinProjectionPosition._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in WinProjPos.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in WinProjectionPosition.")
         
-agcls.AgClassCatalog.add_catalog_entry("{21D08121-9F86-485E-B143-337DACCD5022}", WinProjPos)
+agcls.AgClassCatalog.add_catalog_entry("{21D08121-9F86-485E-B143-337DACCD5022}", WinProjectionPosition)
 
 
 class DrawElemLine(IDrawElemLine):

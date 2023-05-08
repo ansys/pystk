@@ -32,7 +32,7 @@ class EarlyBoundTests(TestBase):
         # Set to Propagator to Aviator
         EarlyBoundTests.AG_AC.SetRouteType(AgEVePropagatorType.ePropagatorAviator)
         # Get the aircrafts route (still on the STKObjects side)
-        aircraftRoute = clr.CastAs(EarlyBoundTests.AG_AC.Route, IVePropagatorAviator)
+        aircraftRoute = clr.CastAs(EarlyBoundTests.AG_AC.Route, IVehiclePropagatorAviator)
         # Get the Aviator propagator
         EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.AvtrPropagator, IAviatorPropagator)
         # Get the Aviator mission
@@ -1194,7 +1194,7 @@ class EarlyBoundTests(TestBase):
         acObj = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj = acObj.CopyObject("AC2")
         ac2 = clr.CastAs(ac2Obj, IAircraft)
-        route2 = clr.CastAs(ac2.Route, IVePropagatorAviator)
+        route2 = clr.CastAs(ac2.Route, IVehiclePropagatorAviator)
         prop2 = clr.CastAs(route2.AvtrPropagator, IAviatorPropagator)
         mission2 = prop2.AvtrMission
         phases2 = mission2.Phases
@@ -1840,7 +1840,7 @@ class EarlyBoundTests(TestBase):
         acObj = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj = acObj.CopyObject("AC2")
         ac2 = clr.CastAs(ac2Obj, IAircraft)
-        route2 = clr.CastAs(ac2.Route, IVePropagatorAviator)
+        route2 = clr.CastAs(ac2.Route, IVehiclePropagatorAviator)
         prop2 = clr.CastAs(route2.AvtrPropagator, IAviatorPropagator)
         mission2 = prop2.AvtrMission
         phases2 = mission2.Phases
@@ -2029,9 +2029,9 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         missile = clr.CastAs((EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile")), IMissile)
-        traj = clr.CastAs(missile.Trajectory, IVePropagatorBallistic)
-        impactLocation = clr.CastAs(traj.ImpactLocation, IVeImpactLocationPoint)
-        impact = clr.CastAs(impactLocation.Impact, IVeImpactLLA)
+        traj = clr.CastAs(missile.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation = clr.CastAs(traj.ImpactLocation, IVehicleImpactLocationPoint)
+        impact = clr.CastAs(impactLocation.Impact, IVehicleImpactLLA)
         impact.Lat = -20
         impact.Lon = -20
         traj.Propagate()
@@ -2039,9 +2039,9 @@ class EarlyBoundTests(TestBase):
         missile2 = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile2")), IMissile
         )
-        traj2 = clr.CastAs(missile2.Trajectory, IVePropagatorBallistic)
-        impactLocation2 = clr.CastAs(traj2.ImpactLocation, IVeImpactLocationPoint)
-        impact2 = clr.CastAs(impactLocation2.Impact, IVeImpactLLA)
+        traj2 = clr.CastAs(missile2.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation2 = clr.CastAs(traj2.ImpactLocation, IVehicleImpactLocationPoint)
+        impact2 = clr.CastAs(impactLocation2.Impact, IVehicleImpactLLA)
         impact2.Lat = -20
         impact2.Lon = -20
         traj2.Propagate()
@@ -2142,9 +2142,9 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         missile = clr.CastAs((EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile")), IMissile)
-        traj = clr.CastAs(missile.Trajectory, IVePropagatorBallistic)
-        impactLocation = clr.CastAs(traj.ImpactLocation, IVeImpactLocationPoint)
-        impact = clr.CastAs(impactLocation.Impact, IVeImpactLLA)
+        traj = clr.CastAs(missile.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation = clr.CastAs(traj.ImpactLocation, IVehicleImpactLocationPoint)
+        impact = clr.CastAs(impactLocation.Impact, IVehicleImpactLLA)
         impact.Lat = -20
         impact.Lon = -20
         traj.Propagate()
@@ -2152,9 +2152,9 @@ class EarlyBoundTests(TestBase):
         missile2 = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile2")), IMissile
         )
-        traj2 = clr.CastAs(missile2.Trajectory, IVePropagatorBallistic)
-        impactLocation2 = clr.CastAs(traj2.ImpactLocation, IVeImpactLocationPoint)
-        impact2 = clr.CastAs(impactLocation2.Impact, IVeImpactLLA)
+        traj2 = clr.CastAs(missile2.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation2 = clr.CastAs(traj2.ImpactLocation, IVehicleImpactLocationPoint)
+        impact2 = clr.CastAs(impactLocation2.Impact, IVehicleImpactLLA)
         impact2.Lat = -20
         impact2.Lon = -20
         traj2.Propagate()
@@ -3034,7 +3034,7 @@ class EarlyBoundTests(TestBase):
         acObj = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj = acObj.CopyObject("AC2")
         ac2 = clr.CastAs(ac2Obj, IAircraft)
-        route2 = clr.CastAs(ac2.Route, IVePropagatorAviator)
+        route2 = clr.CastAs(ac2.Route, IVehiclePropagatorAviator)
         prop2 = clr.CastAs(route2.AvtrPropagator, IAviatorPropagator)
         mission2 = prop2.AvtrMission
         prop2.Propagate()
@@ -3793,9 +3793,9 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("not a valid", action198)
         missile = clr.CastAs((EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile")), IMissile)
-        traj = clr.CastAs(missile.Trajectory, IVePropagatorBallistic)
-        impactLocation = clr.CastAs(traj.ImpactLocation, IVeImpactLocationPoint)
-        impact = clr.CastAs(impactLocation.Impact, IVeImpactLLA)
+        traj = clr.CastAs(missile.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation = clr.CastAs(traj.ImpactLocation, IVehicleImpactLocationPoint)
+        impact = clr.CastAs(impactLocation.Impact, IVehicleImpactLLA)
         impact.Lat = -20
         impact.Lon = -20
         traj.Propagate()
@@ -4449,7 +4449,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(targetName, relCourse.TargetName)
 
         basicManeuver.ProfileStrategyType = "Relative Speed/Altitude"
-        relSpeedAlt = clr.CastAs(basicManeuver.Profile, IBasicManeuverStrategyRelSpeedAlt)
+        relSpeedAlt = clr.CastAs(basicManeuver.Profile, IBasicManeuverStrategyRelSpeedAltitude)
 
         acObj = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         testAC = acObj.CopyObject("LeaderAC")
@@ -5329,9 +5329,9 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         missile = clr.CastAs((EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile")), IMissile)
-        traj = clr.CastAs(missile.Trajectory, IVePropagatorBallistic)
-        impactLocation = clr.CastAs(traj.ImpactLocation, IVeImpactLocationPoint)
-        impact = clr.CastAs(impactLocation.Impact, IVeImpactLLA)
+        traj = clr.CastAs(missile.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation = clr.CastAs(traj.ImpactLocation, IVehicleImpactLocationPoint)
+        impact = clr.CastAs(impactLocation.Impact, IVehicleImpactLLA)
         impact.Lat = -20
         impact.Lon = -20
         traj.Propagate()
@@ -5339,9 +5339,9 @@ class EarlyBoundTests(TestBase):
         missile2 = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile2")), IMissile
         )
-        traj2 = clr.CastAs(missile2.Trajectory, IVePropagatorBallistic)
-        impactLocation2 = clr.CastAs(traj2.ImpactLocation, IVeImpactLocationPoint)
-        impact2 = clr.CastAs(impactLocation2.Impact, IVeImpactLLA)
+        traj2 = clr.CastAs(missile2.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation2 = clr.CastAs(traj2.ImpactLocation, IVehicleImpactLocationPoint)
+        impact2 = clr.CastAs(impactLocation2.Impact, IVehicleImpactLLA)
         impact2.Lat = -20
         impact2.Lon = -20
         traj2.Propagate()
@@ -5510,9 +5510,9 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         missile = clr.CastAs((EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile")), IMissile)
-        traj = clr.CastAs(missile.Trajectory, IVePropagatorBallistic)
-        impactLocation = clr.CastAs(traj.ImpactLocation, IVeImpactLocationPoint)
-        impact = clr.CastAs(impactLocation.Impact, IVeImpactLLA)
+        traj = clr.CastAs(missile.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation = clr.CastAs(traj.ImpactLocation, IVehicleImpactLocationPoint)
+        impact = clr.CastAs(impactLocation.Impact, IVehicleImpactLLA)
         impact.Lat = -20
         impact.Lon = -20
         traj.Propagate()
@@ -5520,9 +5520,9 @@ class EarlyBoundTests(TestBase):
         missile2 = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile2")), IMissile
         )
-        traj2 = clr.CastAs(missile2.Trajectory, IVePropagatorBallistic)
-        impactLocation2 = clr.CastAs(traj2.ImpactLocation, IVeImpactLocationPoint)
-        impact2 = clr.CastAs(impactLocation2.Impact, IVeImpactLLA)
+        traj2 = clr.CastAs(missile2.Trajectory, IVehiclePropagatorBallistic)
+        impactLocation2 = clr.CastAs(traj2.ImpactLocation, IVehicleImpactLocationPoint)
+        impact2 = clr.CastAs(impactLocation2.Impact, IVehicleImpactLLA)
         impact2.Lat = -20
         impact2.Lon = -20
         traj2.Propagate()

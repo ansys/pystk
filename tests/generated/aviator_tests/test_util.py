@@ -1036,7 +1036,7 @@ class TestBase(unittest.TestCase):
         TestBase.Application.UnitPreferences.ResetUnits()
         ac1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["Boing737"], IAircraft)
         ac1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga = clr.CastAs(ac1.Route, IVePropagatorGreatArc)
+        ga = clr.CastAs(ac1.Route, IVehiclePropagatorGreatArc)
         ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
         wpe = ga.Waypoints.Add()
         wpe.Latitude = 0
@@ -1049,7 +1049,7 @@ class TestBase(unittest.TestCase):
         ga.Propagate()
         gv1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["GroundVehicle1"], IGroundVehicle)
         gv1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga = clr.CastAs(gv1.Route, IVePropagatorGreatArc)
+        ga = clr.CastAs(gv1.Route, IVehiclePropagatorGreatArc)
         ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
         wpe = ga.Waypoints.Add()
         wpe.Latitude = 0
@@ -1062,7 +1062,7 @@ class TestBase(unittest.TestCase):
         ga.Propagate()
         sh1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["Ship1"], IShip)
         sh1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga = clr.CastAs(sh1.Route, IVePropagatorGreatArc)
+        ga = clr.CastAs(sh1.Route, IVehiclePropagatorGreatArc)
         ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
         wpe = ga.Waypoints.Add()
         wpe.Latitude = 0
@@ -1075,7 +1075,7 @@ class TestBase(unittest.TestCase):
         ga.Propagate()
         ms1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["Missile1"], IMissile)
         ms1.SetTrajectoryType(AgEVePropagatorType.ePropagatorBallistic)
-        ballistic = clr.CastAs(ms1.Trajectory, IVePropagatorBallistic)
+        ballistic = clr.CastAs(ms1.Trajectory, IVehiclePropagatorBallistic)
         ballistic.Step = 59
         ballistic.Propagate()
         lt = clr.CastAs(TestBase.Application.CurrentScenario.Children["LineTarget2"], ILineTarget)
@@ -1496,7 +1496,7 @@ class CSToJavaArrayHelper:
             return obj
 
 
-class DataProviderResult(object):
+class DataProviderResultWriter(object):
     def __init__(self, result):
         self.outStr = ""
         self._result = result
@@ -1506,11 +1506,11 @@ class DataProviderResult(object):
         self.WriteLine(0, "-----------")
         self.WriteLine(0, ("Category:" + str(self._result.Category)))
         if self._result.Category == AgEDrCategories.eDrCatIntervalList:
-            self.DumpDPIntervalList(clr.Convert(self._result.Value, IDrIntervalCollection), 1)
+            self.DumpDPIntervalList(clr.Convert(self._result.Value, IDataProviderResultIntervalCollection), 1)
         elif self._result.Category == AgEDrCategories.eDrCatSubSectionList:
-            self.DumpDPSubSectionList(clr.Convert(self._result.Value, IDrSubSectionCollection), 1)
+            self.DumpDPSubSectionList(clr.Convert(self._result.Value, IDataProviderResultSubSectionCollection), 1)
         elif self._result.Category == AgEDrCategories.eDrCatMessage:
-            self.DumpDPMessage(clr.Convert(self._result.Value, IDrTextMessage), 1)
+            self.DumpDPMessage(clr.Convert(self._result.Value, IDataProviderResultTextMessage), 1)
         return Regex.Replace(self.outStr, "\n", "")
 
     def DumpDPIntervalList(self, intList, indent):
