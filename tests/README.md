@@ -24,6 +24,15 @@ To run the tests on Linux, the `ExcludeOnLinux` category needs to be excluded, w
 pytest ./generated/aviator_tests --exclude ExcludeOnLinux
 ```
 
+To exclude graphics tests, there are two categories that need to be excluded:
+* Graphics Tests
+* VO Tests
+
+This can be accomplished using:
+
+```bash
+pytest ./generated/stk_tests --exclude "Graphics Tests" --exclude "VO Tests"
+```
 
 
 
