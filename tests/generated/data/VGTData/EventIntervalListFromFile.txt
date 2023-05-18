@@ -1,0 +1,15 @@
+STK.V.10.0
+#This is a comment
+
+BEGIN IntervalList
+	ScenarioEpoch 1 Jul 1999 00:00:00.00
+	DATEUNITABRV UTCG
+
+BEGIN Intervals
+	"1 Jul 1999 00:00:00.00" "1 Jul 1999 02:00:00.00"
+	"1 Jul 1999 05:00:00.00" "1 Jul 1999 07:00:00.00"
+	"1 Jul 1999 11:00:00.00" "1 Jul 1999 13:00:00.00"
+	"1 Jul 1999 17:00:00.00" "1 Jul 1999 19:00:00.00"
+END Intervals
+
+END IntervalList
