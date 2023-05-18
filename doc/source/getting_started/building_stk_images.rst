@@ -1,3 +1,5 @@
+.. _building_stk_images:
+
 Building STK images
 ###################
 
@@ -13,18 +15,18 @@ either Windows or Linux.
 .. grid:: 2
 
     .. grid-item-card:: Dockefiles for Windows :fab:`windows`
-        :link: https://github.com/pyansys/pystk/tree/doc/examples/docker/windows
+        :link: https://github.com/ansys-internal/pystk/tree/doc/examples/docker/windows
         
         Include support for STKEngine and STKDesktop
 
     .. grid-item-card:: Dockefiles for Linux :fab:`linux`
-        :link: https://github.com/pyansys/pystk/tree/doc/examples/docker/linux
+        :link: https://github.com/ansys-internal/pystk/tree/doc/examples/docker/linux
         
 
         Include support only for STKEngine
 
 
-.. info:: 
+.. note:: 
 
     PySTK can also attach to a running instance of STK in the host machine.
     However, this feature is only supported when the host machine uses Windows.

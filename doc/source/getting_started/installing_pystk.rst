@@ -7,8 +7,9 @@ instance of STK is required to use PySTK.
 PySTK is just a Python API to STK, meaning that STK is still required to perform
 all the necessary computations.
 
-Make sure that you follow the :ref:`Building STK images` guide to containerize
-STK. Although PySTK can attach to an 
+Make sure that you followed the :ref:`Building STK images` guide to properly
+containerize STK. PySTK can also attach to an STK instance in your machine,
+being able to launch the product.
 
 
 User installation

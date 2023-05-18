@@ -94,25 +94,13 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_patterns = ["api/generated/*.rst", "links.rst"]
+exclude_patterns = ["api/generated", "links.rst"]
 
 # The suffix(es) of source filenames.
 source_suffix = ".rst"
 
 # The master toctree document.
 master_doc = "index"
-
-# autodoc configuration
-autodoc_default_options = {
-    #'members': 'var1, var2',
-    "member-order": "alphabetical",
-    #'special-members': '__init__',
-    "show-inheritance": True,
-    "undoc-members": True,
-    #'exclude-members': '__weakref__'
-}
-autodoc_class_signature = "separated"
-autodoc_mock_imports = ["tkinter"]
 
 # Common content for every RST file such us links
 rst_epilog = ""
@@ -139,7 +127,16 @@ def get_images_directories_from_path(path):
     return images
 
 
-print(get_images_directories_from_path(LINUX_IMAGES))
+# -- Declare the Jinja context -----------------------------------------------
+BUILD_API = True if os.environ.get("BUILD_API", "false") == "true" else False
+if not BUILD_API:
+    exclude_patterns.append("api")
+
+BUILD_EXAMPLES = (
+    True if os.environ.get("BUILD_EXAMPLES", "false") == "true" else False
+)
+if not BUILD_EXAMPLES:
+    exclude_patterns.append("examples.rst")
 
 jinja_contexts = {
     "docker_images": {
@@ -149,4 +146,20 @@ jinja_contexts = {
     "install_guide": {
         "version": version if not version.endswith("dev0") else "main",
     },
+    "main_toctree": {
+        "build_api": BUILD_API,
+        "build_examples": BUILD_EXAMPLES,
+    },
 }
+
+# -- autodoc configuration ---------------------------------------------------
+autodoc_default_options = {
+    #'members': 'var1, var2',
+    "member-order": "alphabetical",
+    #'special-members': '__init__',
+    "show-inheritance": True,
+    "undoc-members": True,
+    #'exclude-members': '__weakref__'
+}
+autodoc_class_signature = "separated"
+autodoc_mock_imports = ["tkinter"]
