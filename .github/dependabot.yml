@@ -16,6 +16,5 @@ updates:
       interval: "daily"
     labels:
       - "maintenance"
-      - "maintenance"
     commit-message:
       prefix: "MAINT"
