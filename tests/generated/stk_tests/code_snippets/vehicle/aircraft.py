@@ -61,6 +61,7 @@ class Aircraft(CodeSnippetsTestBase):
     # endregion
 
     # region ConfigureAircraftRouteUsingGreatArcPropagator
+    @category("PySTKFixTest-NoServerAvailable")
     def test_ConfigureAircraftRouteUsingGreatArcPropagator(self):
         self.ConfigureAircraftRouteUsingGreatArcPropagator(Aircraft.m_Object)
 

@@ -50,6 +50,7 @@ class GreatArc(CodeSnippetsTestBase):
     # endregion
 
     # region DefineGreatArcPropFromListOfWaypointsAndTime
+    @category("PySTKFixTest-NoServerAvailable")
     def test_DefineGreatArcPropFromListOfWaypointsAndTime(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
@@ -138,6 +139,7 @@ class GreatArc(CodeSnippetsTestBase):
     # endregion
 
     # region DefineGreatArcPropFromListOfWaypointsAndVelocity
+    @category("PySTKFixTest-NoServerAvailable")
     def test_DefineGreatArcPropFromListOfWaypointsAndVelocity(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
@@ -173,6 +175,7 @@ class GreatArc(CodeSnippetsTestBase):
     # endregion
 
     # region ConfigurePropagatorStartEphemerisEpochExplicitly
+    @category("PySTKFixTest-NoServerAvailable")
     def test_ConfigurePropagatorStartEphemerisEpochExplicitly(self):
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
         propagator = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
@@ -210,6 +213,7 @@ class GreatArc(CodeSnippetsTestBase):
     # endregion
 
     # region SetPointsSpecifyTimeAndPropagate
+    @category("PySTKFixTest-NoServerAvailable")
     def test_SetPointsSpecifyTimeAndPropagate(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
@@ -258,6 +262,7 @@ class GreatArc(CodeSnippetsTestBase):
     # endregion
 
     # region SetPointsSpecifyVelocityAndPropagate
+    @category("PySTKFixTest-NoServerAvailable")
     def test_SetPointsSpecifyVelocityAndPropagate(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
@@ -311,6 +316,7 @@ class GreatArc(CodeSnippetsTestBase):
     # endregion
 
     # region SetPointsSmoothRateAndPropagate
+    @category("PySTKFixTest-NoServerAvailable")
     def test_SetPointsSmoothRateAndPropagate(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
