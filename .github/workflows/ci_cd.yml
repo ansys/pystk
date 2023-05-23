@@ -92,7 +92,21 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "tox -e tests-aviator-cov-linux"
+            "tox -e tests-aviator-nographics-novo-cov-linux"
+
+      - name: "Run the stk tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "tox -e tests-stk-nographics-novo-cov-linux"
+
+      - name: "Run the vgt tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "tox -e tests-vgt-nographics-novo-cov-linux"
 
       - name: "Stop the container"
         if: always()
