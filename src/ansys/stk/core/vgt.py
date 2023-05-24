@@ -1643,7 +1643,7 @@ class AgECrdnMeanElementTheory(IntEnum):
     eCrdnMeanElementTheoryBrouwerLyddane_Short = 4
 
 AgECrdnMeanElementTheory.eCrdnMeanElementTheoryOsculating.__doc__ = "Osculating elements (six standard Keplerian orbital elements)."
-AgECrdnMeanElementTheory.eCrdnMeanElementTheoryKozai.__doc__ = "The Kozai-Iszak (KI) mean elements are based upon the paper \"The Motion of a Close earth satellite,\" Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."
+AgECrdnMeanElementTheory.eCrdnMeanElementTheoryKozai.__doc__ = "The Kozai-Iszak (KI) mean elements are based upon the paper ``The Motion of a Close earth satellite,`` Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."
 AgECrdnMeanElementTheory.eCrdnMeanElementTheoryBrouwerLyddane_Long.__doc__ = "Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
 AgECrdnMeanElementTheory.eCrdnMeanElementTheoryBrouwerLyddane_Short.__doc__ = "Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
 
@@ -1677,8 +1677,8 @@ class AgECrdnLagrangeLibrationPointType(IntEnum):
 AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL1.__doc__ = "A point between the Sun and Earth."
 AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL2.__doc__ = "Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth."
 AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL3.__doc__ = "L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times."
-AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL4.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points."
-AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL5.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points."
+AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL4.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
+AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL5.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
 
 agcls.AgTypeNameMap["AgECrdnLagrangeLibrationPointType"] = AgECrdnLagrangeLibrationPointType
 
@@ -2641,7 +2641,7 @@ class IAnalysisWorkbenchComponent(object):
 
     @property
     def Path(self) -> str:
-        """Returns the component's fully qualified path (ie. \"CentralBody/Earth Body\", etc.)."""
+        """Returns the component's fully qualified path (ie. ``CentralBody/Earth Body``, etc.)."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetPath"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -2669,7 +2669,7 @@ class IAnalysisWorkbenchComponent(object):
 
     @property
     def QualifiedPath(self) -> str:
-        """An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. \"CentralBody/Earth Body Vector\", etc.)."""
+        """An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. ``CentralBody/Earth Body Vector``, etc.)."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetQualifiedPath"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -12268,7 +12268,7 @@ class ITimeToolEventTimeOffset(object):
 
     @property
     def TimeOffset2(self) -> float:
-        """The time offset from the ReferenceTimeInstant. The value is in \'TimeUnit\' dimension."""
+        """The time offset from the ReferenceTimeInstant. The value is in ``TimeUnit`` dimension."""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetTimeOffset2"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -25621,14 +25621,14 @@ class IAnalysisWorkbenchRoot(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchRoot.")
     
     def GetTemplateProvider(self, className:str) -> "IAnalysisWorkbenchProvider":
-        """Returns a template provider. The method takes a class name (i.e. \"Satellite\", \"Facility\", etc.)"""
+        """Returns a template provider. The method takes a class name (i.e. ``Satellite``, ``Facility``, etc.)"""
         with agmarshall.BSTR_arg(className) as arg_className, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetTemplateProvider"](arg_className.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def GetProvider(self, instPath:str) -> "IAnalysisWorkbenchProvider":
-        """Returns an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. \"Satellite/Satellite1\", \"CentralBody/Earth\", etc.)"""
+        """Returns an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. ``Satellite/Satellite1``, ``CentralBody/Earth``, etc.)"""
         with agmarshall.BSTR_arg(instPath) as arg_instPath, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvider"](arg_instPath.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -26086,7 +26086,7 @@ class IVectorGeometryToolAngleFindAngleResult(object):
 
     @property
     def Angle(self) -> typing.Any:
-        """The computed angle. The value of the angle is in \"AngleUnit\" dimension."""
+        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
         with agmarshall.VARIANT_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAngle"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -26141,14 +26141,14 @@ class IVectorGeometryToolAngleFindAngleWithRateResult(object):
 
     @property
     def Angle(self) -> typing.Any:
-        """The computed angle. The value of the angle is in \"AngleUnit\" dimension."""
+        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
         with agmarshall.VARIANT_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAngle"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def AngleRate(self) -> typing.Any:
-        """The computed angle rate. The value of the angle rate is in \"AngleRateUnit\" dimension."""
+        """The computed angle rate. The value of the angle rate is in ``AngleRateUnit`` dimension."""
         with agmarshall.VARIANT_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAngleRate"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -26209,14 +26209,14 @@ class IVectorGeometryToolAngleFindWithRateResult(object):
 
     @property
     def Angle(self) -> typing.Any:
-        """The computed angle. The value of the angle is in \"AngleUnit\" dimension."""
+        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
         with agmarshall.VARIANT_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAngle"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def AngleRate(self) -> typing.Any:
-        """The computed angle rate. The value of the angle rate is in \"AngleRateUnit\" dimension."""
+        """The computed angle rate. The value of the angle rate is in ``AngleRateUnit`` dimension."""
         with agmarshall.VARIANT_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAngleRate"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -26296,7 +26296,7 @@ class IVectorGeometryToolAngleFindResult(object):
 
     @property
     def Angle(self) -> typing.Any:
-        """The computed angle. The value of the angle is in \"AngleUnit\" dimension."""
+        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
         with agmarshall.VARIANT_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAngle"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -35106,6 +35106,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5E24B44A-B46D-4B9B-A22C-615EFAA73A6C}",
 class AnalysisWorkbenchMethodCallResult(IVectorGeometryToolAngleFindResult, IVectorGeometryToolAngleFindWithRateResult, IVectorGeometryToolAxesTransformResult, IVectorGeometryToolAxesTransformWithRateResult, IVectorGeometryToolAxesFindInAxesResult, IVectorGeometryToolAxesFindInAxesWithRateResult, IVectorGeometryToolPlaneFindInAxesResult, IVectorGeometryToolPlaneFindInAxesWithRateResult, IVectorGeometryToolPlaneFindInSystemResult, IVectorGeometryToolPlaneFindInSystemWithRateResult, IVectorGeometryToolPointLocateInSystemResult, IVectorGeometryToolPointLocateInSystemWithRateResult, IVectorGeometryToolSystemTransformResult, IVectorGeometryToolSystemTransformWithRateResult, IVectorGeometryToolSystemFindInSystemResult, IVectorGeometryToolVectorFindInAxesResult, IVectorGeometryToolVectorFindInAxesWithRateResult, IVectorGeometryToolAngleFindAngleWithRateResult, IVectorGeometryToolAngleFindAngleResult, IAnalysisWorkbenchMethodCallResult):
     """
     Represents a result of a call to a VGT method.
+
     Some of the inherited interfaces for this class may be disabled at runtime.
     """
     def __init__(self, sourceObject=None):

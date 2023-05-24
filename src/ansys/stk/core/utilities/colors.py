@@ -1,6 +1,7 @@
 # Copyright 2020-2020, Analytical Graphics, Inc. 
 """
 This module is used to communicate color information between Python and STK.
+
 Color is the color object type and Colors is the factory for creating Color objects.
 """
 
@@ -86,6 +87,7 @@ class _ColorsImpl(object):
 class Colors(object):
     """
     A factory for creating Color objects that may be used with the STK object model.
+    
     Contains factory methods and named colors.
     """
     @staticmethod

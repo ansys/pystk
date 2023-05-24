@@ -752,6 +752,8 @@ class VARIANT_arg(object):
 class AgInterface_in_arg(object):
     def __init__(self, val, as_interface):
         """
+        Initialize an AgInterface_in_arg object.
+
         val should be a python CoClass object (e.g. AgFacility)
         as_interface is the interface class to send to STK
         """
@@ -812,6 +814,8 @@ class AgInterface_out_arg(object):
 class AgInterface_event_callback_arg(object):
     def __init__(self, pUnk:agcom.PVOID, as_interface):
         """
+        Initialize an AgInterface_event_callback_arg object.
+
         pUnk should be a IUnknown pointer as PVOID
         as_interface is the interface class to send to STK
         """
