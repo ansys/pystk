@@ -69,8 +69,10 @@ class ThreadMarshaller(object):
 
 class STKDesktopApplication(UiApplication):
     """
-    Interact with an STK Desktop application.  Use STKDesktop.StartApplication() or 
-    STKDesktop.AttachToApplication() to obtain an initialized STKDesktopApplication object.
+    Interact with an STK Desktop application.
+
+    Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication() 
+    to obtain an initialized STKDesktopApplication object.
     """
     def __init__(self):
         if os.name != "nt":
@@ -123,10 +125,10 @@ class STKDesktop(object):
     def StartApplication(visible:bool=False, userControl:bool=False) -> STKDesktopApplication:
         """
         Create a new STK Desktop application instance.  
+
         Specify visible = True to show the application window.
         Specify userControl = True to return the application to the user's control 
         (the application remains open) after terminating the Python API connection.
-
         Only available on Windows.
         """
         if os.name != "nt":
@@ -150,10 +152,10 @@ class STKDesktop(object):
     def AttachToApplication(pid:int=None) -> STKDesktopApplication:
         """
         Attach to an existing STK Desktop instance. 
+
         Specify the Process ID (PID) in case multiple processes are open.
         Specify userControl = True to return the application to the user's control 
         (the application remains open) after terminating the Python API connection.
-
         Only available on Windows.
         """
         if os.name != "nt":

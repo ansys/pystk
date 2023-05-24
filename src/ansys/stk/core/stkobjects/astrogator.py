@@ -10382,7 +10382,7 @@ class IElementKeplerian(IElement):
 
     @property
     def ApoapsisAltitudeSize(self) -> float:
-        """Measured from the \"surface\" of the Earth to the points of maximum and minimum radius in the orbit. For these values, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance dimension."""
+        """Measured from the ``surface`` of the Earth to the points of maximum and minimum radius in the orbit. For these values, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance dimension."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetApoapsisAltitudeSize"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -10419,7 +10419,7 @@ class IElementKeplerian(IElement):
 
     @property
     def PeriapsisAltitudeSize(self) -> float:
-        """Measured from the \"surface\" of the Earth to the points of maximum and minimum radius in the orbit. For these values, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance dimension."""
+        """Measured from the ``surface`` of the Earth to the points of maximum and minimum radius in the orbit. For these values, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance dimension."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetPeriapsisAltitudeSize"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
