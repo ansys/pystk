@@ -36,6 +36,7 @@ class STKEngineTimerType(IntEnum):
 class STKEngineApplication(STKXApplication):
     """
     Interact with STK Engine.
+
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
     def __init__(self):
@@ -173,6 +174,7 @@ class STKEngine(object):
     def StartApplication(noGraphics:bool=True) -> STKEngineApplication:
         """
         Initialize STK Engine in-process and return the instance.
+
         Must only be used once per Python process.
         """
         if STKEngine._is_engine_running:
@@ -196,6 +198,8 @@ class STKEngine(object):
         @staticmethod
         def SetSTKInstallDir(stkInstallDir:str) -> None:
             """
+            Set the STK install directory.
+
             Setting the install directory using this method will override the STK_INSTALL_DIR environment variable.
             If this method is not called, STK_INSTALL_DIR will be used instead.  This method must be called before
             StartApplication().
@@ -205,6 +209,8 @@ class STKEngine(object):
         @staticmethod
         def SetSTKConfigDir(stkConfigDir:str) -> None:
             """
+            Set the STK config directory.
+
             Setting the config directory using this method will override the STK_CONFIG_DIR environment variable.
             If this method is not called, STK_CONFIG_DIR will be used instead.  This method must be called before
             StartApplication().

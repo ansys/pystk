@@ -1,7 +1,3 @@
-import sys
-import os
-
-sys.path.insert(1, os.path.dirname(os.path.realpath(__file__)))
 from test_util import *
 from ansys.stk.core.stkobjects import *
 

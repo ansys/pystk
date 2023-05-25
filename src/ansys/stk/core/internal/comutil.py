@@ -516,12 +516,15 @@ class IUnknown(object):
         """Registers the pointer to be Released when the ref count goes to zero but does not call AddRef."""
         ObjectLifetimeManager.TakeOwnership(self, isApplication) 
     def AddRef(self):
-        """Increments the ref count on the pointer if the pointer was registered with CreateOwnership or TakeOwnership."""
+        """Increments the ref count if the pointer was registered.
+        
+        Pointer registration must be done by CreateOwnership or TakeOwnership.
+        """
         ObjectLifetimeManager.InternalAddRef(self)  
     def Release(self):
-        """
-        Decrements the ref count on the pointer if the pointer was registered with CreateOwnership or TakeOwnership.
-        Calls Release if the ref count goes to zero.
+        """Decrements the ref count if the pointer was registered. Calls Release if the ref count goes to zero.
+        
+        Pointer registration must be done by CreateOwnership or TakeOwnership.
         """
         ObjectLifetimeManager.Release(self)          
 

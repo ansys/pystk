@@ -16179,7 +16179,7 @@ class ITextOverlay(object):
     
     @property
     def Text(self) -> str:
-        """Sets the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text."""
+        r"""Sets the Text to be rendered to an overlay using newline characters ('\n') to mark the start of the next line in the text."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetText"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
