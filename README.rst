@@ -1,7 +1,5 @@
-PySTK
-#####
-
-A Python API for `Ansys Systems Tool Kit`_ (STK).
+PySTK: a Python API for `Systems Tool Kit`_
+###########################################
 
 |
 
@@ -140,7 +138,7 @@ Support
 
 .. Links and references
 
-.. _Ansys Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
+.. _Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
 
 .. _official documentation: https://stk.docs.pyansys.com
 .. _official installation guidelines: https://stk.docs.pyansys.com/getting_started/installing_pystk.html
