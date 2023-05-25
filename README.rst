@@ -1,5 +1,7 @@
 PySTK
-=====
+#####
+
+A Python API for `Ansys Systems Tool Kit`_ (STK).
 
 |pyansys| |python| |pypi| |GH-CI| |codecov| |MIT| |Twitter| |YouTube| |LinkedIn| |black|
 
@@ -43,8 +45,9 @@ PySTK
    :target: https://github.com/psf/black
    :alt: Black
 
-
-A Python API for `Ansys Systems Tool Kit`_ (STK).
+.. image:: https://github.com/ansys-internal/pystk/blob/doc/improvements/doc/source/_static/logo.png
+   :target: https://github.com/ansys-internal/pystk/
+   :alt: PySTK
 
 
 How to install
