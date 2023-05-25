@@ -3,7 +3,7 @@ PySTK: a Python API for `Systems Tool Kit`_
 
 |
 
-.. image:: https://github.com/ansys-internal/pystk/blob/doc/improvements/doc/source/_static/logo.png
+.. image:: https://github.com/ansys-internal/pystk/blob/main/doc/source/_static/logo.png
    :target: https://github.com/ansys-internal/pystk/
    :alt: PySTK
 
