@@ -110,39 +110,47 @@ The `official documentation`_ of PySTK contains the following chapters:
 Troubleshooting
 ===============
 
-...
+For troubleshooting or reporting issues, please open an issue in the project
+repository.
 
+Please follow these steps to report an issue:
 
-Contributing
-============
+- Go to the project repository.
+- Click on the ``Issues`` tab.
+- Click on the ``New Issue`` button.
+- Provide a clear and detailed description of the issue you are facing.
+- Include any relevant error messages, code snippets, or screenshots.
 
-...
-
+Additionally, you can refer to the `project documentation`_ for additional
+resources and troubleshooting guides.
 
 License
 =======
 
-...
-
+You can find the full text of the license in the `LICENSE` file.
 
 Changelog
 =========
 
-...
+The changelog section provides a summary of notable changes for each version of
+PySTK. It helps you keep track of updates, bug fixes, new features, and
+improvements made to the project over time.
 
+To view the complete changelog, please visit the project repository and navigate
+to the `CHANGELOG`_ file. It provides a comprehensive list of changes
+categorized by version, along with brief descriptions of each change.
 
-Support
-=======
-
-...
 
 .. Links and references
 
 .. _Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
 
 .. _official documentation: https://stk.docs.pyansys.com
+.. _project documentation: https://stk.docs.pyansys.com
 .. _official installation guidelines: https://stk.docs.pyansys.com/getting_started/installing_pystk.html
 .. _getting started: https://stk.docs.pyansys.com/getting_started/index.html
 .. _user guide: https://stk.docs.pyansys.com/user_guide/index.html
 .. _api reference: https://stk.docs.pyansys.com/api/index.html
 .. _examples: https://stk.docs.pyansys.com/examples/index.html
+
+.. _ CHANGELOG: https://github.com/ansys-internal/pystk/blob/main/CHANGELOG.md
