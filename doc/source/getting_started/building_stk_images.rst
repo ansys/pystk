@@ -4,7 +4,7 @@ Building STK images
 ###################
 
 PySTK provides various `Dockerfiles`_ to build `Docker images`_ that
-containerize STK. Some of these files include additional utilities such us
+containerize STK. Some of these files include additional utilities such as
 `Python`_.
 
 All the Dockerfiles are collected in the `docker/ directory`_ of the `PySTK
@@ -24,13 +24,6 @@ either Windows or Linux.
         
 
         Only STKEngine is supported.
-
-
-.. note:: 
-
-    PySTK can also attach to a running instance of STK in the host machine.
-    However, this feature is only supported when the host machine uses Windows.
-    For machines using 
 
 
 Architecture of the images
@@ -177,7 +170,7 @@ Syntax
 
 
 Images can be run by creating a Docker container. Before
-creating a new container, check if you require to share any of the following:
+creating a new container, verify if you require to share any of the following:
 
 - Environment variables
 - Network resources
@@ -242,7 +235,7 @@ Executing commands in containers
 ================================
 
 In a Docker environment, it is essential to be able to execute shell commands
-within a running container. This functionality enables interaction with the
+within a running container. This feature enables interaction with the
 container's environment and facilitates various operations.
 
 Syntax

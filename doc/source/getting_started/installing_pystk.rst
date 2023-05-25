@@ -1,7 +1,7 @@
 Installing PySTK
 ################
 
-Installing PySTK is as simple as installing a Python library. However, a runninc
+Installing PySTK is as simple as installing a Python library. However, a running
 instance of STK is required to use PySTK.
 
 PySTK is just a Python API to STK, meaning that STK is still required to perform
@@ -130,8 +130,8 @@ Activate previous environment:
             source <venv>/bin/activate
 
 Install the project in editable mode. This means that any changes you make to
-the package's source code will immediately be reflected in your project without
-requiring a reinstallation.
+the package's source code immediately reflect in your project without requiring
+to reinstalling it.
 
 .. code-block::
 
