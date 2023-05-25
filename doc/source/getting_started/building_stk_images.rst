@@ -15,15 +15,15 @@ either Windows or Linux.
 .. grid:: 2
 
     .. grid-item-card:: Dockefiles for Windows :fab:`windows`
-        :link: https://github.com/ansys-internal/pystk/tree/doc/examples/docker/windows
+        :link: https://github.com/ansys-internal/pystk/tree/main/docker/windows
         
-        Include support for STKEngine and STKDesktop
+        STKEngine and STKDesktop are supported.
 
     .. grid-item-card:: Dockefiles for Linux :fab:`linux`
-        :link: https://github.com/ansys-internal/pystk/tree/doc/examples/docker/linux
+        :link: https://github.com/ansys-internal/pystk/tree/main/docker/linux
         
 
-        Include support only for STKEngine
+        Only STKEngine is supported.
 
 
 .. note:: 
@@ -207,10 +207,10 @@ The docker run command is utilized to create and run a container from a Docker
 image. Various options are available to customize the container creation
 process.
 
-- ``--detach flag`` Runs the container in detached mode, allowing it to run in the background.
-- ``--interactive flag`` Enables interactive mode, providing a TTY session for connecting to the container.
-- ``--tty flag`` Allocates a pseudo-TTY, ensuring proper formatting and display of the container's output.
-- ``--network="host" flag`` Shares the host's network stack with the container, enabling network connectivity.
+- ``--detach`` Runs the container in detached mode, allowing it to run in the background.
+- ``--interactive`` Enables interactive mode, providing a TTY session for connecting to the container.
+- ``--tty`` Allocates a pseudo-TTY, ensuring proper formatting and display of the container's output.
+- ``--network="host"`` Shares the host's network stack with the container, enabling network connectivity.
 - ``--env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE`` Specifies environment variable(s) to be shared with the container.
 - ``--name <container-name>`` Assigns a name to the container for easy identification and reference.
 - ``--entrypoint <entrypoint>`` Defines the command or script to be executed when the container starts.
@@ -262,8 +262,8 @@ Command breakdown
 The ``docker exec`` command is used to execute commands within a Docker
 container. It provides several options to enhance the execution experience.
 
-- ``--interactive flag`` Allows interactive mode, enabling interaction with the command executed within the container.
-- ``--tty flag`` Allocates a pseudo-TTY, ensuring proper formatting and display of the executed command's output.
+- ``--interactive`` Allows interactive mode, enabling interaction with the command executed within the container.
+- ``--tty`` Allocates a pseudo-TTY, ensuring proper formatting and display of the executed command's output.
 - ``<container-name>`` Specifies the name or ID of the target container in which the command should be executed.
 - ``<command>`` Represents the shell command that you want to execute within the container.
 
@@ -286,5 +286,5 @@ consider the following example:
 
 In this example, the command ``python scripts/hello_pystk.py`` is executed
 within the container named ``stk-python3.10``. This command executes the script
-``hello_pystk.py`` contained in a shared volume with the container named
-``scripts``.
+``hello_pystk.py`` contained in a volume named ``scripts`` that gets shared with
+the container.
