@@ -77,6 +77,7 @@ jobs:
             --network="host" \
             --name ${{ env.STK_CONTAINER }} \
             --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+            --env COVERAGE_FILE=$COVERAGE_FILE \
             --volume ${PWD}:/home/stk/pystk \
             ${{ env.STK_PYTHON_IMAGE }}
 
@@ -93,6 +94,8 @@ jobs:
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "tox -e tests-aviator-nographics-novo-cov-linux"
+        env:
+          COVERAGE_FILE: 'aviator'
 
       - name: "Run the stk tests"
         run: |
@@ -100,6 +103,8 @@ jobs:
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "tox -e tests-stk-nographics-novo-cov-linux"
+        env:
+          COVERAGE_FILE: 'stk'
 
       - name: "Run the vgt tests"
         run: |
@@ -107,6 +112,17 @@ jobs:
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "tox -e tests-vgt-nographics-novo-cov-linux"
+        env:
+          COVERAGE_FILE: 'vgt'
+
+      - name: "Merge coverage results"
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == env.MAIN_PYTHON_VERSION
+        run: |
+          echo "$(pwd)"
+          ls .cov
+          html_coverage_files=$(find .cov -name "*.html")
+          coverage combine $html_coverage_files
+          ls .cov
 
       - name: "Stop the container"
         if: always()
