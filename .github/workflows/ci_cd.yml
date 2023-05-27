@@ -108,11 +108,22 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=vgt && tox -e tests-vgt-nographics-novo-cov-linux"
 
+      # Merging coverage requires installing Python in the actions environment
+      # together with all testing dependencies
+
+      - name: "Install Python and its dependencies for coverage"
+        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: "Install testing dependencies"
+        run: |
+          python -m pip install .[tests]
+
       - name: "Merge coverage results"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
         run: |
-          echo "$(pwd)"
-          ls .cov
           html_coverage_files=$(find .cov -name "*.html")
           coverage combine $html_coverage_files
           mkdir .cov/total && coverage html -d .cov/total
