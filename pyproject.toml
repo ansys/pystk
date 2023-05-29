@@ -63,5 +63,8 @@ src_paths = ["examples", "doc", "src", "tests"]
 [tool.coverage.run]
 source = ["ansys.stk"]
 
+[tool.coverage.paths]
+source = ["src", ".tox/**/ansys"]
+
 [tool.coverage.report]
 show_missing = true
