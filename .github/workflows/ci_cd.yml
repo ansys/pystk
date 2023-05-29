@@ -124,15 +124,14 @@ jobs:
       - name: "Merge coverage results"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
         run: |
-          html_coverage_files=$(find .cov -name "*.html")
-          coverage combine $html_coverage_files
-          mkdir .cov/total && coverage html -d .cov/total
+          coverage combine aviator stk vgt
+          coverage html -d .cov/total-html
 
       - name: "Upload coverage results"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
         uses: actions/upload-artifact@v3
         with:
-          path: .cov/total
+          path: .cov/total-html
           name: html-coverage
 
       - name: "Stop the container"
