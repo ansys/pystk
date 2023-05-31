@@ -1,0 +1,80 @@
+[Analytical Graphics, Inc]
+WorkbookVersion=9.0
+Title=Scenario1
+Description=
+ApplicationVersion=12.7.0 (Pre-Release)
+Scenario=YES
+ActiveMDIState=TRUE
+[WorkState_v1_2]
+ptn_Child1=Frames
+[WorkState_v1_2.Frames]
+ptn_Child1=MainFrame
+ptn_Child2=ChildFrames
+[WorkState_v1_2.Frames.MainFrame]
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAPPPPPPPPPPPPPPPPLEAAAAAACAAAAAAALJFAAAAAGDDAAAAA
+Title=Scenario1 - STK 12 - [Wingman : Basic Route]
+[WorkState_v1_2.Frames.ChildFrames]
+ptn_Child1=Document-0
+ptn_Child2=Document-1
+ptn_Child3=Document-2
+ptn_Child4=Document-3
+[WorkState_v1_2.Frames.ChildFrames.Document-0]
+ptn_Child1=ViewFrame-0
+[WorkState_v1_2.Frames.ChildFrames.Document-0.ViewFrame-0]
+DocPathName=C:\Program Files\AGI\STK 12\bin\AgUi3DGfxView12.AgUiPi3DGfxView.1
+DocumentString=AgUi3DGfxView.AgUiPi3DGfxView.1
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPGPPPPPPPPNPPPPPPBAAAAAAABAAAAAAAMCCAAAAALMBAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True
+ptn_Child1=AGI Custom Node Data
+[WorkState_v1_2.Frames.ChildFrames.Document-0.ViewFrame-0.AGI Custom Node Data]
+MapID=1
+SceneType=1
+[WorkState_v1_2.Frames.ChildFrames.Document-1]
+ptn_Child1=ViewFrame-0
+[WorkState_v1_2.Frames.ChildFrames.Document-1.ViewFrame-0]
+DocPathName=C:\Program Files\AGI\STK 12\bin\AgUiAttrBrowser12.AgUiPiAttrBrowser.1
+DocumentString=AgUiAttrBrowser.AgUiPiAttrBrowser.1
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPAAAAAAAAAAAAAAAALNAAAAAACMCAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True
+ProfUISBarID=63000
+ptn_Child1=AGI Custom Node Data
+[WorkState_v1_2.Frames.ChildFrames.Document-1.ViewFrame-0.AGI Custom Node Data]
+objectExpandedState0=/Application/STK/Scenario/Scenario1:TRUE
+objectExpandedState1=/Application/STK/Scenario/Scenario1/Aircraft/Lead:TRUE
+objectExpandedState2=/Application/STK/Scenario/Scenario1/Aircraft/Wingman:TRUE
+[WorkState_v1_2.Frames.ChildFrames.Document-3]
+ptn_Child1=ViewFrame-0
+[WorkState_v1_2.Frames.ChildFrames.Document-3.ViewFrame-0]
+DocPathName=C:\Program Files\AGI\STK 12\bin\AgUiTimelineView12.AgUiPiTimelineView.1
+DocumentString=AgUiTimelineView.AgUiPiTimelineView.1
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPAAAAAAAAAAAAAAAAAIHAAAAAOJAAAAAA
+IsActiveChildFrame=False
+IsFrameVisible=True
+ProfUISBarID=63001
+ptn_Child1=AGI Custom Node Data
+[WorkState_v1_2.Frames.ChildFrames.Document-3.ViewFrame-0.AGI Custom Node Data]
+ComponentWellWidth=200.000000000000
+CurrentContentView=Scenario Availability
+CurrentTimeView=Scenario Analysis Period
+FontSize=10.000000000000
+FullViewScaleHeight=22.000000000000
+LabelFontSize=11.000000000000
+RowHeight=20.090909090909
+ShowComponents=True
+ShowFullViewBar=True
+ShowFullViewRuler=True
+ShowGlobalScale=True
+ShowGlobalTimeline=True
+ShowIntervalLabels=True
+ShowStartTime=False
+ShowStopTime=False
+ShowToolbar=True
+ShowViewportRuler=True
+Theme=Default
+Title=Timeline 1
+ViewportScaleHeight=22.000000000000

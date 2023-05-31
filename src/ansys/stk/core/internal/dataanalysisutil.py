@@ -4,13 +4,14 @@ from functools import wraps
 import importlib
 
 try:
-    # check and do imports for forward references for function return type hints
-    from numpy import ndarray
-    from pandas import DataFrame
-
-    # imports for package references in functions
-    import pandas as pd
     import numpy as np
+    from numpy import ndarray
+except ModuleNotFoundError:
+    pass
+    
+try:
+    import pandas as pd
+    from pandas import DataFrame
 except ModuleNotFoundError:
     pass
 
