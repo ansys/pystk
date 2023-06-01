@@ -85,12 +85,6 @@ Move inside the project and create a new Python environment:
 
                     py -m venv <venv>
 
-    .. tab-item:: macOS
-
-        .. code-block:: text
-
-            python -m venv <venv>
-
     .. tab-item:: Linux/UNIX
 
         .. code-block:: text
@@ -116,12 +110,6 @@ Activate previous environment:
                 .. code-block:: text
 
                     <venv>\Scripts\Activate.ps1
-
-    .. tab-item:: macOS
-
-        .. code-block:: text
-
-            source <venv>/bin/activate
 
     .. tab-item:: Linux/UNIX
 
