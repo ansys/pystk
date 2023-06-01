@@ -96,13 +96,82 @@ class Sensor(CodeSnippetsTestBase):
 
     # endregion
 
-    # region DefineFixedSensorPointing
-    def test_DefineFixedSensorPointing(self):
-        self.DefineFixedSensorPointing(Sensor.m_Object)
+    # region DefineSensorPointingFixedAzEl
+    def test_DefineSensorPointingFixedAzEl(self):
+        self.DefineSensorPointingFixedAzEl(Sensor.m_Object)
 
-    def DefineFixedSensorPointing(self, sensor):
+    def DefineSensorPointingFixedAzEl(self, sensor):
         fixedSensor = sensor.CommonTasks.SetPointingFixedAzEl(
             4.5, -45.0, AgEAzElAboutBoresight.eAzElAboutBoresightRotate
+        )
+
+    # endregion
+
+    # region DefineSensorPointingFixedAxesAzEl
+    def test_DefineSensorPointingFixedAxesAzEl(self):
+        self.DefineSensorPointingFixedAxesAzEl(Sensor.m_Object)
+
+    def DefineSensorPointingFixedAxesAzEl(self, sensor):
+        fixedAxesSensor = sensor.CommonTasks.SetPointingFixedAxesAzEl(
+            "CentralBody/Sun J2000 Axes", 11, 22, AgEAzElAboutBoresight.eAzElAboutBoresightHold
+        )
+
+    # endregion
+
+    # region DefineSensorPointingFixedEuler
+    def test_DefineSensorPointingFixedEuler(self):
+        self.DefineSensorPointingFixedEuler(Sensor.m_Object)
+
+    def DefineSensorPointingFixedEuler(self, sensor):
+        fixedSensor = sensor.CommonTasks.SetPointingFixedEuler(AgEEulerOrientationSequence.e132, 30, 40, 50)
+
+    # endregion
+
+    # region DefineSensorPointingFixedAxesEuler
+    def test_DefineSensorPointingFixedAxesEuler(self):
+        self.DefineSensorPointingFixedAxesEuler(Sensor.m_Object)
+
+    def DefineSensorPointingFixedAxesEuler(self, sensor):
+        fixedAxesSensor = sensor.CommonTasks.SetPointingFixedAxesEuler(
+            "CentralBody/Sun J2000 Axes", AgEEulerOrientationSequence.e132, 30, 40, 50
+        )
+
+    # endregion
+
+    # region DefineSensorPointingFixedQuaternion
+    def test_DefineSensorPointingFixedQuaternion(self):
+        self.DefineSensorPointingFixedQuaternion(Sensor.m_Object)
+
+    def DefineSensorPointingFixedQuaternion(self, sensor):
+        fixedSensor = sensor.CommonTasks.SetPointingFixedQuat(0.1, 0.2, 0.3, 0.4)
+
+    # endregion
+
+    # region DefineSensorPointingFixedAxesQuaternion
+    def test_DefineSensorPointingFixedAxesQuaternion(self):
+        self.DefineSensorPointingFixedAxesQuaternion(Sensor.m_Object)
+
+    def DefineSensorPointingFixedAxesQuaternion(self, sensor):
+        fixedAxesSensor = sensor.CommonTasks.SetPointingFixedAxesQuat("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
+
+    # endregion
+
+    # region DefineSensorPointingFixedYPR
+    def test_DefineSensorPointingFixedYPR(self):
+        self.DefineSensorPointingFixedYPR(Sensor.m_Object)
+
+    def DefineSensorPointingFixedYPR(self, sensor):
+        fixedSensor = sensor.CommonTasks.SetPointingFixedYPR(AgEYPRAnglesSequence.eRPY, 12, 24, 36)
+
+    # endregion
+
+    # region DefineSensorPointingFixedAxesYPR
+    def test_DefineSensorPointingFixedAxesYPR(self):
+        self.DefineSensorPointingFixedAxesYPR(Sensor.m_Object)
+
+    def DefineSensorPointingFixedAxesYPR(self, sensor):
+        fixedAxesSensor = sensor.CommonTasks.SetPointingFixedAxesYPR(
+            "CentralBody/Sun J2000 Axes", AgEYPRAnglesSequence.eRYP, 11, 22, 33
         )
 
     # endregion

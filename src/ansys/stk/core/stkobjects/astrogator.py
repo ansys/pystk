@@ -18407,7 +18407,7 @@ agcls.AgTypeNameMap["ITargeterGraphCollection"] = ITargeterGraphCollection
 class IProfileSearchPlugin(IProfile):
     """Properties of a plugin search profile."""
     _uuid = "{9380509D-A189-453D-B1EF-D1D8E34420FF}"
-    _num_methods = 8
+    _num_methods = 9
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -18419,6 +18419,7 @@ class IProfileSearchPlugin(IProfile):
         self.__dict__["_GetResetControlsBeforeRun"] = _raise_uninitialized_error
         self.__dict__["_SetResetControlsBeforeRun"] = _raise_uninitialized_error
         self.__dict__["_GetTargeterGraphs"] = _raise_uninitialized_error
+        self.__dict__["_GetLogFile"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IProfileSearchPlugin._uuid))
             if pUnk is not None:
@@ -18439,6 +18440,7 @@ class IProfileSearchPlugin(IProfile):
         self.__dict__["_GetResetControlsBeforeRun"] = IAGFUNCTYPE(pUnk, IID_IProfileSearchPlugin, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
         self.__dict__["_SetResetControlsBeforeRun"] = IAGFUNCTYPE(pUnk, IID_IProfileSearchPlugin, vtable_offset_local+7, agcom.VARIANT_BOOL)
         self.__dict__["_GetTargeterGraphs"] = IAGFUNCTYPE(pUnk, IID_IProfileSearchPlugin, vtable_offset_local+8, POINTER(agcom.PVOID))
+        self.__dict__["_GetLogFile"] = IAGFUNCTYPE(pUnk, IID_IProfileSearchPlugin, vtable_offset_local+9, POINTER(agcom.BSTR))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -18505,6 +18507,13 @@ class IProfileSearchPlugin(IProfile):
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetTargeterGraphs"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
+
+    @property
+    def LogFile(self) -> str:
+        """Name of the log file for this profile."""
+        with agmarshall.BSTR_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetLogFile"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
 
 
 agcls.AgClassCatalog.add_catalog_entry("{9380509D-A189-453D-B1EF-D1D8E34420FF}", IProfileSearchPlugin)

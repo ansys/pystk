@@ -853,6 +853,131 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region RefuelDump
+    @category("Mission Tests")
+    def test_RefuelDump(self):
+        self.EmptyProcedures()
+
+        # Procedure where Refuel/Dump is not supported
+
+        proc1 = EarlyBoundTests.AG_Procedures.Add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff)
+        Assert.assertFalse(proc1.RefuelDumpIsSupported)
+        rdp = proc1.RefuelDumpProperties
+
+        def action43():
+            rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eRefuelDumpDisabled, 0.0)
+
+        TryCatchAssertBlock.ExpectedException("is not supported", action43)
+
+        def action44():
+            o = rdp.RefuelDumpMode
+
+        TryCatchAssertBlock.ExpectedException("is not supported", action44)
+
+        def action45():
+            o = rdp.RefuelDumpModeValue
+
+        TryCatchAssertBlock.ExpectedException("is not supported", action45)
+
+        def action46():
+            o = rdp.RefuelDumpRate
+
+        TryCatchAssertBlock.ExpectedException("is not supported", action46)
+
+        def action47():
+            o = rdp.RefuelDumpTimeOffset
+
+        TryCatchAssertBlock.ExpectedException("is not supported", action47)
+
+        def action48():
+            o = rdp.CanUseEndOfEnrouteSegmentAsEpoch
+
+        TryCatchAssertBlock.ExpectedException("is not supported", action48)
+
+        def action49():
+            o = rdp.UseEndOfEnrouteSegmentAsEpoch
+
+        TryCatchAssertBlock.ExpectedException("is not supported", action49)
+
+        # Procedure where Refuel/Dump is supported
+
+        proc2 = EarlyBoundTests.AG_Procedures.Add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcArcEnroute)
+        Assert.assertTrue(proc2.RefuelDumpIsSupported)
+        rdp = proc2.RefuelDumpProperties
+
+        rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eRefuelDumpDisabled, 1.0)
+        Assert.assertEqual(AgEAvtrRefuelDumpMode.eRefuelDumpDisabled, rdp.RefuelDumpMode)
+        Assert.assertEqual(1.0, rdp.RefuelDumpModeValue)  # "not applicable" in GUI
+
+        rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eRefuelTopOff, 2.0)
+        Assert.assertEqual(AgEAvtrRefuelDumpMode.eRefuelTopOff, rdp.RefuelDumpMode)
+        Assert.assertEqual(2.0, rdp.RefuelDumpModeValue)  # "not applicable" in GUI
+
+        rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eRefuelToFuelState, 3.0)
+        Assert.assertEqual(AgEAvtrRefuelDumpMode.eRefuelToFuelState, rdp.RefuelDumpMode)
+        Assert.assertEqual(3.0, rdp.RefuelDumpModeValue)
+
+        rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eRefuelToWeight, 4.0)
+        Assert.assertEqual(AgEAvtrRefuelDumpMode.eRefuelToWeight, rdp.RefuelDumpMode)
+        Assert.assertEqual(4.0, rdp.RefuelDumpModeValue)
+
+        rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eRefuelQuantity, 5.0)
+        Assert.assertEqual(AgEAvtrRefuelDumpMode.eRefuelQuantity, rdp.RefuelDumpMode)
+        Assert.assertEqual(5.0, rdp.RefuelDumpModeValue)
+
+        rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eDumpToFuelState, 6.0)
+        Assert.assertEqual(AgEAvtrRefuelDumpMode.eDumpToFuelState, rdp.RefuelDumpMode)
+        Assert.assertEqual(6.0, rdp.RefuelDumpModeValue)
+
+        rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eDumpToWeight, 7.0)
+        Assert.assertEqual(AgEAvtrRefuelDumpMode.eDumpToWeight, rdp.RefuelDumpMode)
+        Assert.assertEqual(7.0, rdp.RefuelDumpModeValue)
+
+        rdp.SetRefuelDumpMode(AgEAvtrRefuelDumpMode.eDumpQuantity, 8.0)
+        Assert.assertEqual(AgEAvtrRefuelDumpMode.eDumpQuantity, rdp.RefuelDumpMode)
+        Assert.assertEqual(8.0, rdp.RefuelDumpModeValue)
+
+        rdp.RefuelDumpRate = 10
+        Assert.assertEqual(10, rdp.RefuelDumpRate)
+        rdp.RefuelDumpRate = -11
+        Assert.assertEqual(11, rdp.RefuelDumpRate)  # When set to negative number, sets to absolute val. Same as GUI.
+
+        rdp.RefuelDumpTimeOffset = 20
+        Assert.assertEqual(20, rdp.RefuelDumpTimeOffset)
+
+        def action50():
+            rdp.RefuelDumpTimeOffset = -22
+
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action50)
+
+        Assert.assertFalse(rdp.CanUseEndOfEnrouteSegmentAsEpoch)
+
+        rdp.UseEndOfEnrouteSegmentAsEpoch = False
+        Assert.assertFalse(rdp.UseEndOfEnrouteSegmentAsEpoch)
+        rdp.UseEndOfEnrouteSegmentAsEpoch = True
+        Assert.assertTrue(rdp.UseEndOfEnrouteSegmentAsEpoch)
+
+        # Procedure where CanUseEndOfEnrouteSegmentAsEpoch
+
+        proc3 = EarlyBoundTests.AG_Procedures.Add(
+            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcHoldingCircular
+        )
+        Assert.assertTrue(proc3.RefuelDumpIsSupported)
+        rdp = proc3.RefuelDumpProperties
+
+        Assert.assertTrue(rdp.CanUseEndOfEnrouteSegmentAsEpoch)
+
+        rdp.UseEndOfEnrouteSegmentAsEpoch = False
+        Assert.assertFalse(rdp.UseEndOfEnrouteSegmentAsEpoch)
+        rdp.UseEndOfEnrouteSegmentAsEpoch = True
+        Assert.assertTrue(rdp.UseEndOfEnrouteSegmentAsEpoch)
+
+        EarlyBoundTests.AG_Procedures.Remove(proc1)
+        EarlyBoundTests.AG_Procedures.Remove(proc2)
+        EarlyBoundTests.AG_Procedures.Remove(proc3)
+
+    # endregion
+
     # region ArcEnroute
     @category("Procedure Tests")
     def test_ArcEnroute(self):
@@ -958,10 +1083,10 @@ class EarlyBoundTests(TestBase):
         areaTargetProc.FirstLegRetrograde = True
         Assert.assertTrue(areaTargetProc.FirstLegRetrograde)
 
-        def action43():
+        def action51():
             areaTargetProc.CentroidTrueCourse = 5
 
-        TryCatchAssertBlock.ExpectedException("must be", action43)
+        TryCatchAssertBlock.ExpectedException("must be", action51)
         areaTargetProc.CourseMode = AgEAvtrSearchPatternCourseMode.eCourseModeOverride
         areaTargetProc.CentroidTrueCourse = 5
         course = areaTargetProc.CentroidTrueCourse
@@ -971,22 +1096,22 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, areaTargetProc.FlyCruiseAirspeedProfile)
         areaTargetProc.ProcedureType = AgEAvtrFlightLineProcType.eProcTypeEnroute
 
-        def action44():
+        def action52():
             areaTargetProc.FlyCruiseAirspeedProfile = False
 
-        TryCatchAssertBlock.ExpectedException("must be", action44)
+        TryCatchAssertBlock.ExpectedException("must be", action52)
 
         areaTargetProc.ProcedureType = AgEAvtrFlightLineProcType.eProcTypeBasicPointToPoint
 
-        def action45():
+        def action53():
             areaTargetProc.MustLevelOff = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action45)
+        TryCatchAssertBlock.ExpectedException("must be", action53)
 
-        def action46():
+        def action54():
             areaTargetProc.LevelOffMode = AgEAvtrAltitudeConstraintManeuverMode.eLevelOffAutomaticManeuver
 
-        TryCatchAssertBlock.ExpectedException("must be", action46)
+        TryCatchAssertBlock.ExpectedException("must be", action54)
         areaTargetProc.ProcedureType = AgEAvtrFlightLineProcType.eProcTypeEnroute
         areaTargetProc.MustLevelOff = True
         Assert.assertTrue(areaTargetProc.MustLevelOff)
@@ -999,10 +1124,10 @@ class EarlyBoundTests(TestBase):
         areaTargetProc.CourseMode = AgEAvtrSearchPatternCourseMode.eCourseModeHigh
         EarlyBoundTests.AG_AvtrProp.Propagate()
 
-        def action47():
+        def action55():
             areaTargetProc.FirstLegRetrograde = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action47)
+        TryCatchAssertBlock.ExpectedException("must be", action55)
 
         areaTargetObj.Unload()
         EarlyBoundTests.AG_Procedures.Remove(takeoffProc)
@@ -1056,10 +1181,10 @@ class EarlyBoundTests(TestBase):
 
         delay.AltitudeMode = AgEAvtrDelayAltMode.eDelayDefaultCruiseAlt
 
-        def action48():
+        def action56():
             delay.Altitude = 5000
 
-        TryCatchAssertBlock.ExpectedException("must be", action48)
+        TryCatchAssertBlock.ExpectedException("must be", action56)
 
         delay.AltitudeMode = AgEAvtrDelayAltMode.eDelayOverride
         delay.Altitude = 5000
@@ -1108,6 +1233,91 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region ExternalEphemeris
+    @category("Procedure Tests")
+    def test_ExternalEphemeris(self):
+        self.EmptyProcedures()
+
+        extEphem = clr.CastAs(
+            EarlyBoundTests.AG_Procedures.Add(AgEAvtrSiteType.eSiteReferenceState, AgEAvtrProcedureType.eProcExtEphem),
+            IProcedureExtEphem,
+        )
+
+        proc = extEphem.GetAsProcedure()
+        Assert.assertEqual("ExtEphem", proc.Name)
+
+        def action57():
+            d = extEphem.EphemerisFileDuration
+
+        TryCatchAssertBlock.ExpectedException("No ephemeris file set", action57)
+
+        extEphem.EphemerisFile = TestBase.GetScenarioFile("ExternalTestBFW.e")
+        Assert.assertTrue(("ExternalTestBFW.e" in extEphem.EphemerisFile))
+        Assert.assertAlmostEqual(799.26, extEphem.EphemerisFileDuration, delta=0.01)
+
+        def action58():
+            extEphem.EphemerisFile = TestBase.GetScenarioFile("bogus.e")
+
+        TryCatchAssertBlock.ExpectedException("Invalid", action58)
+
+        def action59():
+            extEphem.EphemerisFile = TestBase.GetScenarioFile("Aircraft1.ac")
+
+        TryCatchAssertBlock.ExpectedException("Invalid", action59)
+
+        extEphem.FlightMode = AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightClimb
+        Assert.assertEqual(AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightClimb, extEphem.FlightMode)
+        extEphem.FlightMode = AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightCruise
+        Assert.assertEqual(AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightCruise, extEphem.FlightMode)
+        extEphem.FlightMode = AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightDescend
+        Assert.assertEqual(AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightDescend, extEphem.FlightMode)
+        extEphem.FlightMode = AgEAvtrExtEphemFlightMode.eExtEphemFlightModeLanding
+        Assert.assertEqual(AgEAvtrExtEphemFlightMode.eExtEphemFlightModeLanding, extEphem.FlightMode)
+        extEphem.FlightMode = AgEAvtrExtEphemFlightMode.eExtEphemFlightModeLandingWOW
+        Assert.assertEqual(AgEAvtrExtEphemFlightMode.eExtEphemFlightModeLandingWOW, extEphem.FlightMode)
+        extEphem.FlightMode = AgEAvtrExtEphemFlightMode.eExtEphemFlightModeTakeoff
+        Assert.assertEqual(AgEAvtrExtEphemFlightMode.eExtEphemFlightModeTakeoff, extEphem.FlightMode)
+        extEphem.FlightMode = AgEAvtrExtEphemFlightMode.eExtEphemFlightModeTakeoffWOW
+        Assert.assertEqual(AgEAvtrExtEphemFlightMode.eExtEphemFlightModeTakeoffWOW, extEphem.FlightMode)
+        extEphem.FlightMode = AgEAvtrExtEphemFlightMode.eExtEphemFlightModeVTOLHover
+        Assert.assertEqual(AgEAvtrExtEphemFlightMode.eExtEphemFlightModeVTOLHover, extEphem.FlightMode)
+
+        extEphem.UseStartDuration = False
+        Assert.assertFalse(extEphem.UseStartDuration)
+
+        def action60():
+            extEphem.StartTime = 100
+
+        TryCatchAssertBlock.ExpectedException("not writeable", action60)
+
+        def action61():
+            extEphem.Duration = 200
+
+        TryCatchAssertBlock.ExpectedException("not writeable", action61)
+
+        extEphem.UseStartDuration = True
+        Assert.assertTrue(extEphem.UseStartDuration)
+
+        extEphem.StartTime = 100
+        Assert.assertAlmostEqual(100, extEphem.StartTime, delta=extEphem.StartTime)
+
+        def action62():
+            extEphem.StartTime = -100
+
+        TryCatchAssertBlock.ExpectedException("must be non-negative", action62)
+
+        extEphem.Duration = 200
+        Assert.assertAlmostEqual(200, extEphem.Duration, delta=extEphem.Duration)
+
+        def action63():
+            extEphem.Duration = -200
+
+        TryCatchAssertBlock.ExpectedException("must be non-negative", action63)
+
+        EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(extEphem, IProcedure))
+
+    # endregion
+
     # region FlightLine
     @category("Procedure Tests")
     def test_FlightLine(self):
@@ -1147,20 +1357,20 @@ class EarlyBoundTests(TestBase):
 
         flightLine.ProcedureType = AgEAvtrFlightLineProcType.eProcTypeTerrainFollow
 
-        def action49():
+        def action64():
             flightLine.FlyCruiseAirspeedProfile = False
 
-        TryCatchAssertBlock.ExpectedException("must be", action49)
+        TryCatchAssertBlock.ExpectedException("must be", action64)
 
-        def action50():
+        def action65():
             flightLine.MustLevelOff = False
 
-        TryCatchAssertBlock.ExpectedException("must be", action50)
+        TryCatchAssertBlock.ExpectedException("must be", action65)
 
-        def action51():
+        def action66():
             flightLine.LevelOffMode = AgEAvtrAltitudeConstraintManeuverMode.eLevelOffAutomaticManeuver
 
-        TryCatchAssertBlock.ExpectedException("must be", action51)
+        TryCatchAssertBlock.ExpectedException("must be", action66)
 
         flightLine.ProcedureType = AgEAvtrFlightLineProcType.eProcTypeBasicPointToPoint
         flightLine.FlyCruiseAirspeedProfile = False
@@ -1174,6 +1384,149 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(takeoff, IProcedure))
         EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(flightLine, IProcedure))
+
+    # endregion
+
+    # region FormationFlyer
+    @category("Procedure Tests")
+    def test_FormationFlyer(self):
+        TestBase.Application.CloseScenario()
+
+        TestBase.Application.LoadScenario(TestBase.GetScenarioFile(r"Formation_Flyer\Scenario1.sc"))
+        EarlyBoundTests.AG_Scenario = TestBase.Application.CurrentScenario
+        EarlyBoundTests.AG_AC = clr.Convert((EarlyBoundTests.AG_Scenario.Children.GetItemByName("Wingman")), IAircraft)
+        aircraftRoute = clr.CastAs(EarlyBoundTests.AG_AC.Route, IVehiclePropagatorAviator)
+        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.AvtrPropagator, IAviatorPropagator)
+        EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.AvtrMission
+        EarlyBoundTests.AG_Phases = EarlyBoundTests.AG_Mission.Phases
+        EarlyBoundTests.AG_Procedures = EarlyBoundTests.AG_Phases[0].Procedures
+
+        EarlyBoundTests.AG_Procedures.RemoveAtIndex(2)  # Remove existing Formation Flyer procedure.
+
+        formationFlyer = clr.CastAs(
+            EarlyBoundTests.AG_Procedures.Add(
+                AgEAvtrSiteType.eSiteEndOfPrevProcedure, AgEAvtrProcedureType.eProcFormationFlyer
+            ),
+            IProcedureFormationFlyer,
+        )
+
+        formationFlyer.CrossRangeCloseRate = 10
+        Assert.assertEqual(10, formationFlyer.CrossRangeCloseRate)
+
+        def action67():
+            formationFlyer.CrossRangeCloseRate = -10
+
+        TryCatchAssertBlock.ExpectedException("out of range", action67)  # Can be set. Should be invalid.
+
+        formationFlyer.InitialCloseMaxSpeedAdvantage = 20
+        Assert.assertEqual(20, formationFlyer.InitialCloseMaxSpeedAdvantage)
+
+        def action68():
+            formationFlyer.InitialCloseMaxSpeedAdvantage = -20
+
+        TryCatchAssertBlock.ExpectedException("out of bounds", action68)  # Can be set. Should be invalid.
+
+        formationFlyer.MaxTimeStep = 2
+        Assert.assertEqual(2, formationFlyer.MaxTimeStep)
+        formationFlyer.MaxTimeStep = 1
+        Assert.assertEqual(1, formationFlyer.MaxTimeStep)
+
+        def action69():
+            formationFlyer.MaxTimeStep = 0
+
+        TryCatchAssertBlock.ExpectedException("out of bounds", action69)  # Can be set. Should be invalid.
+
+        formationFlyer.MinTimeStep = 0.2
+        Assert.assertEqual(0.2, formationFlyer.MinTimeStep)
+        formationFlyer.MinTimeStep = 0.1
+        Assert.assertEqual(0.1, formationFlyer.MinTimeStep)
+
+        def action70():
+            formationFlyer.MinTimeStep = 0
+
+        TryCatchAssertBlock.ExpectedException("out of bounds", action70)
+
+        for stopCond in Enum.GetValues(clr.TypeOf(AgEAvtrFormationFlyerStopCondition)):
+            formationFlyer.StopCondition = stopCond
+            Assert.assertEqual(stopCond, formationFlyer.StopCondition)
+            if AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterTime == stopCond:
+                formationFlyer.StopTime = 30
+                Assert.assertEqual(30, formationFlyer.StopTime)
+
+                def action71():
+                    formationFlyer.StopTime = -30
+
+                TryCatchAssertBlock.ExpectedException("out of bounds", action71)
+
+                def action72():
+                    formationFlyer.StopDownRange = 40
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action72)
+
+                def action73():
+                    formationFlyer.StopFuelState = 50
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action73)
+
+            elif AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterDownRange == stopCond:
+
+                def action74():
+                    formationFlyer.StopTime = 30
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action74)
+
+                formationFlyer.StopDownRange = 40
+                Assert.assertEqual(40, formationFlyer.StopDownRange)
+
+                def action75():
+                    formationFlyer.StopDownRange = -40
+
+                TryCatchAssertBlock.ExpectedException("out of bounds", action75)
+
+                def action76():
+                    formationFlyer.StopFuelState = 50
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action76)
+
+            elif AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterFuelState == stopCond:
+
+                def action77():
+                    formationFlyer.StopTime = 30
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action77)
+
+                def action78():
+                    formationFlyer.StopDownRange = 40
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action78)
+
+                formationFlyer.StopFuelState = 50
+                Assert.assertEqual(50, formationFlyer.StopFuelState)
+
+                def action79():
+                    formationFlyer.StopFuelState = -50
+
+                TryCatchAssertBlock.ExpectedException("out of bounds", action79)
+
+            else:
+
+                def action80():
+                    formationFlyer.StopTime = 30
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action80)
+
+                def action81():
+                    formationFlyer.StopDownRange = 40
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action81)
+
+                def action82():
+                    formationFlyer.StopFuelState = 50
+
+                TryCatchAssertBlock.ExpectedException("Cannot set", action82)
+
+        TestBase.Application.CloseScenario()
+        EarlyBoundTests.InitHelper()
 
     # endregion
 
@@ -1231,10 +1584,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(5, formRecov.AltitudeOffset)
         formRecov.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowTakeoff
 
-        def action52():
+        def action83():
             formRecov.OverrideFuelFlowValue = 123
 
-        TryCatchAssertBlock.ExpectedException("must be", action52)
+        TryCatchAssertBlock.ExpectedException("must be", action83)
         formRecov.ConsiderAccelForFuelFlow = True
         Assert.assertTrue(formRecov.ConsiderAccelForFuelFlow)
 
@@ -1242,10 +1595,10 @@ class EarlyBoundTests(TestBase):
         formRecov.OverrideFuelFlowValue = 123
         Assert.assertAlmostEqual(123, formRecov.OverrideFuelFlowValue, delta=tolerance)
 
-        def action53():
+        def action84():
             formRecov.ConsiderAccelForFuelFlow = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action53)
+        TryCatchAssertBlock.ExpectedException("must be", action84)
 
         formRecov.FirstPause = 1
         Assert.assertEqual(1, formRecov.FirstPause)
@@ -1271,17 +1624,17 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AgEAvtrDelayTurnDir.eDelayTurnLeft, formRecov.DelayTurnDir)
         formRecov.UseDelay = False
 
-        def action54():
+        def action85():
             formRecov.DelayTurnDir = AgEAvtrDelayTurnDir.eDelayTurnLeft
 
-        TryCatchAssertBlock.ExpectedException("must be", action54)
+        TryCatchAssertBlock.ExpectedException("must be", action85)
 
         formRecov.UseDelay = False
 
-        def action55():
+        def action86():
             airspeed = formRecov.DelayCruiseAirspeedOptions
 
-        TryCatchAssertBlock.ExpectedException("must be", action55)
+        TryCatchAssertBlock.ExpectedException("must be", action86)
         formRecov.UseDelay = True
         self.EnrouteCruiseAirspeed(formRecov.DelayCruiseAirspeedOptions)
 
@@ -1290,40 +1643,40 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_Procedures.Remove(proc1)
         EarlyBoundTests.AG_AvtrProp.Propagate()
 
-        def action56():
+        def action87():
             formRecov.FindFirstValidStartTime(minTime, maxTime, 30)
 
-        TryCatchAssertBlock.ExpectedException("first procedure", action56)
+        TryCatchAssertBlock.ExpectedException("first procedure", action87)
 
-        def action57():
+        def action88():
             formRecov.FlightPathAngle = 1
 
-        TryCatchAssertBlock.ExpectedException("first procedure", action57)
+        TryCatchAssertBlock.ExpectedException("first procedure", action88)
 
-        def action58():
+        def action89():
             formRecov.RadiusFactor = 1
 
-        TryCatchAssertBlock.ExpectedException("first procedure", action58)
+        TryCatchAssertBlock.ExpectedException("first procedure", action89)
 
-        def action59():
+        def action90():
             formRecov.UseDelay = True
 
-        TryCatchAssertBlock.ExpectedException("first procedure", action59)
+        TryCatchAssertBlock.ExpectedException("first procedure", action90)
 
-        def action60():
+        def action91():
             formRecov.DelayTurnDir = AgEAvtrDelayTurnDir.eDelayTurnAuto
 
-        TryCatchAssertBlock.ExpectedException("first procedure", action60)
+        TryCatchAssertBlock.ExpectedException("first procedure", action91)
 
-        def action61():
+        def action92():
             enrouteOpts = formRecov.EnrouteOptions
 
-        TryCatchAssertBlock.ExpectedException("first procedure", action61)
+        TryCatchAssertBlock.ExpectedException("first procedure", action92)
 
-        def action62():
+        def action93():
             airspeed = formRecov.DelayCruiseAirspeedOptions
 
-        TryCatchAssertBlock.ExpectedException("first procedure", action62)
+        TryCatchAssertBlock.ExpectedException("first procedure", action93)
 
         formRecov.FlightMode = AgEAvtrPhaseOfFlight.eFlightPhaseVTOL
         Assert.assertEqual(formRecov.FlightMode, AgEAvtrPhaseOfFlight.eFlightPhaseVTOL)
@@ -1333,15 +1686,15 @@ class EarlyBoundTests(TestBase):
         vtol = currentPhase.GetPerformanceModelByType("VTOL")
         vtol.Delete()
 
-        def action63():
+        def action94():
             formRecov.FlightMode = AgEAvtrPhaseOfFlight.eFlightPhaseVTOL
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action63)
+        TryCatchAssertBlock.ExpectedException("VTOL", action94)
 
-        def action64():
+        def action95():
             formRecov.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowVTOL
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action64)
+        TryCatchAssertBlock.ExpectedException("VTOL", action95)
 
         currentPhase.SetDefaultPerfModels()
         TestBase.Application.UnitPreferences.ResetUnits()
@@ -1395,10 +1748,10 @@ class EarlyBoundTests(TestBase):
         holdingProc.Diameter = 15
         Assert.assertEqual(15, holdingProc.Diameter)
 
-        def action65():
+        def action96():
             holdingProc.Diameter = 0.01
 
-        TryCatchAssertBlock.ExpectedException("minimum diameter", action65)
+        TryCatchAssertBlock.ExpectedException("minimum diameter", action96)
 
         holdingProc.UseAlternateEntryPoints = True
         Assert.assertTrue(holdingProc.UseAlternateEntryPoints)
@@ -1463,20 +1816,20 @@ class EarlyBoundTests(TestBase):
         holdingProc.Length = 15
         Assert.assertEqual(15, holdingProc.Length)
 
-        def action66():
+        def action97():
             holdingProc.Width = 0.01
 
-        TryCatchAssertBlock.ExpectedException("minimum diameter", action66)
+        TryCatchAssertBlock.ExpectedException("minimum diameter", action97)
 
-        def action67():
+        def action98():
             holdingProc.Length = 0.01
 
-        TryCatchAssertBlock.ExpectedException("minimum diameter", action67)
+        TryCatchAssertBlock.ExpectedException("minimum diameter", action98)
 
-        def action68():
+        def action99():
             holdingProc.Length = 13
 
-        TryCatchAssertBlock.ExpectedException("must be", action68)
+        TryCatchAssertBlock.ExpectedException("must be", action99)
 
         holdingProc.UseAlternateEntryPoints = True
         Assert.assertTrue(holdingProc.UseAlternateEntryPoints)
@@ -1537,10 +1890,10 @@ class EarlyBoundTests(TestBase):
         holdingProc.Length = 15
         Assert.assertEqual(15, holdingProc.Length)
 
-        def action69():
+        def action100():
             holdingProc.Width = 0.01
 
-        TryCatchAssertBlock.ExpectedException("minimum diameter", action69)
+        TryCatchAssertBlock.ExpectedException("minimum diameter", action100)
 
         holdingProc.EntryManeuver = AgEAvtrHoldingEntryManeuver.eUseAlternateEntryPoints
         Assert.assertEqual(AgEAvtrHoldingEntryManeuver.eUseAlternateEntryPoints, holdingProc.EntryManeuver)
@@ -1579,95 +1932,95 @@ class EarlyBoundTests(TestBase):
         fixedtime = hoverProc.FixedTime
         Assert.assertTrue(("00:00:20.000" == str(fixedtime)))
 
-        def action70():
+        def action101():
             hoverProc.HeadingMode = AgEAvtrVTOLHeadingMode.eHeadingAlignTranslationCourse
 
-        TryCatchAssertBlock.ExpectedException("must be", action70)
+        TryCatchAssertBlock.ExpectedException("must be", action101)
 
-        def action71():
+        def action102():
             hoverProc.SetAbsoluteCourse(5, False)
 
-        TryCatchAssertBlock.ExpectedException("must be", action71)
+        TryCatchAssertBlock.ExpectedException("must be", action102)
 
-        def action72():
+        def action103():
             hoverProc.SetRelativeCourse(4)
 
-        TryCatchAssertBlock.ExpectedException("must be", action72)
+        TryCatchAssertBlock.ExpectedException("must be", action103)
 
-        def action73():
+        def action104():
             hoverProc.SetFinalTranslationCourse()
 
-        TryCatchAssertBlock.ExpectedException("must be", action73)
+        TryCatchAssertBlock.ExpectedException("must be", action104)
 
-        def action74():
+        def action105():
             hoverProc.FinalHeadingRate = AgEAvtrVTOLRateMode.eAlwaysStop
 
-        TryCatchAssertBlock.ExpectedException("must be", action74)
+        TryCatchAssertBlock.ExpectedException("must be", action105)
 
-        def action75():
+        def action106():
             hoverProc.TranslationMode = AgEAvtrVTOLTranslationMode.eComeToStop
 
-        TryCatchAssertBlock.ExpectedException("must be", action75)
+        TryCatchAssertBlock.ExpectedException("must be", action106)
 
-        def action76():
+        def action107():
             hoverProc.Bearing = 6
 
-        TryCatchAssertBlock.ExpectedException("must be", action76)
+        TryCatchAssertBlock.ExpectedException("must be", action107)
 
-        def action77():
+        def action108():
             hoverProc.UseMagneticBearing = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action77)
+        TryCatchAssertBlock.ExpectedException("must be", action108)
 
-        def action78():
+        def action109():
             hoverProc.Range = 7
 
-        TryCatchAssertBlock.ExpectedException("must be", action78)
+        TryCatchAssertBlock.ExpectedException("must be", action109)
 
-        def action79():
+        def action110():
             hoverProc.FinalCourseMode = AgEAvtrVTOLTranslationFinalCourseMode.eAnticipateNextTranslation
 
-        TryCatchAssertBlock.ExpectedException("must be", action79)
+        TryCatchAssertBlock.ExpectedException("must be", action110)
 
-        def action80():
+        def action111():
             hoverProc.SmoothTranslationMode = AgEAvtrVTOLRateMode.eAlwaysStop
 
-        TryCatchAssertBlock.ExpectedException("must be", action80)
+        TryCatchAssertBlock.ExpectedException("must be", action111)
 
-        def action81():
+        def action112():
             hoverProc.RadiusFactor = 3
 
-        TryCatchAssertBlock.ExpectedException("must be", action81)
+        TryCatchAssertBlock.ExpectedException("must be", action112)
 
         hoverProc.HoverMode = AgEAvtrHoverMode.eHoverModeManeuver
 
-        def action82():
+        def action113():
             hoverProc.FixedTime = 15
 
-        TryCatchAssertBlock.ExpectedException("must be", action82)
+        TryCatchAssertBlock.ExpectedException("must be", action113)
 
         hoverProc.HeadingMode = AgEAvtrVTOLHeadingMode.eHeadingIntoWind
         Assert.assertEqual(AgEAvtrVTOLHeadingMode.eHeadingIntoWind, hoverProc.HeadingMode)
 
-        def action83():
+        def action114():
             hoverProc.SetAbsoluteCourse(5, False)
 
-        TryCatchAssertBlock.ExpectedException("must be", action83)
+        TryCatchAssertBlock.ExpectedException("must be", action114)
 
-        def action84():
+        def action115():
             hoverProc.SetRelativeCourse(4)
 
-        TryCatchAssertBlock.ExpectedException("must be", action84)
+        TryCatchAssertBlock.ExpectedException("must be", action115)
 
-        def action85():
+        def action116():
             hoverProc.SetFinalTranslationCourse()
 
-        TryCatchAssertBlock.ExpectedException("must be", action85)
+        TryCatchAssertBlock.ExpectedException("must be", action116)
 
-        def action86():
+        def action117():
             hoverProc.FinalHeadingRate = AgEAvtrVTOLRateMode.eAlwaysStop
 
-        TryCatchAssertBlock.ExpectedException("must be", action86)
+        TryCatchAssertBlock.ExpectedException("must be", action117)
 
         hoverProc.HeadingMode = AgEAvtrVTOLHeadingMode.eHeadingIndependent
         Assert.assertEqual(AgEAvtrVTOLHeadingMode.eHeadingIndependent, hoverProc.HeadingMode)
@@ -1691,35 +2044,35 @@ class EarlyBoundTests(TestBase):
         hoverProc.TranslationMode = AgEAvtrVTOLTranslationMode.eComeToStop
         Assert.assertEqual(AgEAvtrVTOLTranslationMode.eComeToStop, hoverProc.TranslationMode)
 
-        def action87():
+        def action118():
             hoverProc.Bearing = 6
 
-        TryCatchAssertBlock.ExpectedException("must be", action87)
+        TryCatchAssertBlock.ExpectedException("must be", action118)
 
-        def action88():
+        def action119():
             hoverProc.UseMagneticBearing = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action88)
+        TryCatchAssertBlock.ExpectedException("must be", action119)
 
-        def action89():
+        def action120():
             hoverProc.Range = 7
 
-        TryCatchAssertBlock.ExpectedException("must be", action89)
+        TryCatchAssertBlock.ExpectedException("must be", action120)
 
-        def action90():
+        def action121():
             hoverProc.FinalCourseMode = AgEAvtrVTOLTranslationFinalCourseMode.eAnticipateNextTranslation
 
-        TryCatchAssertBlock.ExpectedException("must be", action90)
+        TryCatchAssertBlock.ExpectedException("must be", action121)
 
-        def action91():
+        def action122():
             hoverProc.SmoothTranslationMode = AgEAvtrVTOLRateMode.eAlwaysStop
 
-        TryCatchAssertBlock.ExpectedException("must be", action91)
+        TryCatchAssertBlock.ExpectedException("must be", action122)
 
-        def action92():
+        def action123():
             hoverProc.RadiusFactor = 3
 
-        TryCatchAssertBlock.ExpectedException("must be", action92)
+        TryCatchAssertBlock.ExpectedException("must be", action123)
 
         hoverProc.TranslationMode = AgEAvtrVTOLTranslationMode.eSetBearingAndRange
         hoverProc.Bearing = 6
@@ -1769,25 +2122,25 @@ class EarlyBoundTests(TestBase):
         hoverProc.HeadingMode = AgEAvtrVTOLHeadingMode.eHeadingIntoWind
         Assert.assertEqual(AgEAvtrVTOLHeadingMode.eHeadingIntoWind, hoverProc.HeadingMode)
 
-        def action93():
+        def action124():
             hoverProc.SetAbsoluteCourse(5, False)
 
-        TryCatchAssertBlock.ExpectedException("must be", action93)
+        TryCatchAssertBlock.ExpectedException("must be", action124)
 
-        def action94():
+        def action125():
             hoverProc.SetRelativeCourse(4)
 
-        TryCatchAssertBlock.ExpectedException("must be", action94)
+        TryCatchAssertBlock.ExpectedException("must be", action125)
 
-        def action95():
+        def action126():
             hoverProc.SetFinalTranslationCourse()
 
-        TryCatchAssertBlock.ExpectedException("must be", action95)
+        TryCatchAssertBlock.ExpectedException("must be", action126)
 
-        def action96():
+        def action127():
             hoverProc.FinalHeadingRate = AgEAvtrVTOLRateMode.eAlwaysStop
 
-        TryCatchAssertBlock.ExpectedException("must be", action96)
+        TryCatchAssertBlock.ExpectedException("must be", action127)
 
         hoverProc.HeadingMode = AgEAvtrVTOLHeadingMode.eHeadingIndependent
         Assert.assertEqual(AgEAvtrVTOLHeadingMode.eHeadingIndependent, hoverProc.HeadingMode)
@@ -1884,10 +2237,10 @@ class EarlyBoundTests(TestBase):
         inFormation.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowTakeoff
         Assert.assertEqual(AgEAvtrFuelFlowType.eFuelFlowTakeoff, inFormation.FuelFlowType)
 
-        def action97():
+        def action128():
             inFormation.OverrideFuelFlowValue = 123
 
-        TryCatchAssertBlock.ExpectedException("must be", action97)
+        TryCatchAssertBlock.ExpectedException("must be", action128)
         inFormation.ConsiderAccelForFuelFlow = True
         Assert.assertTrue(inFormation.ConsiderAccelForFuelFlow)
 
@@ -1895,24 +2248,24 @@ class EarlyBoundTests(TestBase):
         inFormation.OverrideFuelFlowValue = 123
         Assert.assertAlmostEqual(123, inFormation.OverrideFuelFlowValue, delta=tolerance)
 
-        def action98():
+        def action129():
             inFormation.ConsiderAccelForFuelFlow = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action98)
+        TryCatchAssertBlock.ExpectedException("must be", action129)
 
         currentPhase = EarlyBoundTests.AG_Phases[0]
         vtol = currentPhase.GetPerformanceModelByType("VTOL")
         vtol.Delete()
 
-        def action99():
+        def action130():
             inFormation.FlightMode = AgEAvtrPhaseOfFlight.eFlightPhaseVTOL
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action99)
+        TryCatchAssertBlock.ExpectedException("VTOL", action130)
 
-        def action100():
+        def action131():
             inFormation.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowVTOL
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action100)
+        TryCatchAssertBlock.ExpectedException("VTOL", action131)
 
         currentPhase.SetDefaultPerfModels()
         TestBase.Application.UnitPreferences.ResetUnits()
@@ -1945,44 +2298,44 @@ class EarlyBoundTests(TestBase):
 
         sia = landing.ModeAsStandardInstrumentApproach
 
-        def action101():
+        def action132():
             testVal = landing.ModeAsEnterDownwindPattern
 
-        TryCatchAssertBlock.ExpectedException("must be set", action101)
+        TryCatchAssertBlock.ExpectedException("must be set", action132)
 
-        def action102():
+        def action133():
             testVal = landing.ModeAsInterceptGlideslope
 
-        TryCatchAssertBlock.ExpectedException("must be set", action102)
+        TryCatchAssertBlock.ExpectedException("must be set", action133)
 
         cruiseOpts = landing.EnrouteCruiseAirspeedOptions
 
-        def action103():
+        def action134():
             testVal = cruiseOpts.FlyCruiseAirspeedProfile
 
-        TryCatchAssertBlock.ExpectedException("must be set", action103)
+        TryCatchAssertBlock.ExpectedException("must be set", action134)
 
-        def action104():
+        def action135():
             cruiseOpts.FlyCruiseAirspeedProfile = True
 
-        TryCatchAssertBlock.ExpectedException("must be set", action104)
+        TryCatchAssertBlock.ExpectedException("must be set", action135)
 
         vertOpts = landing.VerticalPlaneOptions
 
-        def action105():
+        def action136():
             vertOpts.MaxEnrouteFlightPathAngle = 89
 
-        TryCatchAssertBlock.ExpectedException("must be set", action105)
+        TryCatchAssertBlock.ExpectedException("must be set", action136)
 
-        def action106():
+        def action137():
             vertOpts.MinEnrouteFlightPathAngle = -89
 
-        TryCatchAssertBlock.ExpectedException("must be set", action106)
+        TryCatchAssertBlock.ExpectedException("must be set", action137)
 
-        def action107():
+        def action138():
             vertOpts.MaxVertPlaneRadiusFactor = 0.99
 
-        TryCatchAssertBlock.ExpectedException("must be set", action107)
+        TryCatchAssertBlock.ExpectedException("must be set", action138)
 
         sia.ApproachAltitude = 1201
         Assert.assertEqual(1201, sia.ApproachAltitude)
@@ -1991,25 +2344,25 @@ class EarlyBoundTests(TestBase):
 
         landing.ApproachMode = AgEAvtrApproachMode.eInterceptGlideslope
 
-        def action108():
+        def action139():
             testVal = sia.ApproachAltitude
 
-        TryCatchAssertBlock.ExpectedException("must be set", action108)
+        TryCatchAssertBlock.ExpectedException("must be set", action139)
 
-        def action109():
+        def action140():
             sia.ApproachAltitude = 1201
 
-        TryCatchAssertBlock.ExpectedException("must be set", action109)
+        TryCatchAssertBlock.ExpectedException("must be set", action140)
 
-        def action110():
+        def action141():
             testVal = sia.UseRunwayTerrain
 
-        TryCatchAssertBlock.ExpectedException("must be set", action110)
+        TryCatchAssertBlock.ExpectedException("must be set", action141)
 
-        def action111():
+        def action142():
             sia.UseRunwayTerrain = True
 
-        TryCatchAssertBlock.ExpectedException("must be set", action111)
+        TryCatchAssertBlock.ExpectedException("must be set", action142)
         self.VerticalPlaneOptions(vertOpts)
 
         EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(takeoff, IProcedure))
@@ -2063,10 +2416,10 @@ class EarlyBoundTests(TestBase):
 
         launchProc.AttitudeMode = AgEAvtrLaunchAttitudeMode.eLaunchHoldParentAttitude
 
-        def action112():
+        def action143():
             launchProc.TrueCourseHint = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action112)
+        TryCatchAssertBlock.ExpectedException("must be ", action143)
 
         launchProc.AttitudeMode = AgEAvtrLaunchAttitudeMode.eLaunchAlignDirectionVector
         Assert.assertEqual(AgEAvtrLaunchAttitudeMode.eLaunchAlignDirectionVector, launchProc.AttitudeMode)
@@ -2076,25 +2429,25 @@ class EarlyBoundTests(TestBase):
 
         launchProc.SpecifyLaunchAirspeed = False
 
-        def action113():
+        def action144():
             launchProc.AccelG = 2
 
-        TryCatchAssertBlock.ExpectedException("must be ", action113)
+        TryCatchAssertBlock.ExpectedException("must be ", action144)
 
-        def action114():
+        def action145():
             launchProc.SetAirspeed(AgEAvtrAirspeedType.eTAS, 251)
 
-        TryCatchAssertBlock.ExpectedException("must be ", action114)
+        TryCatchAssertBlock.ExpectedException("must be ", action145)
 
-        def action115():
+        def action146():
             launchProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowOverride
 
-        TryCatchAssertBlock.ExpectedException("must be ", action115)
+        TryCatchAssertBlock.ExpectedException("must be ", action146)
 
-        def action116():
+        def action147():
             launchProc.OverrideFuelFlow = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action116)
+        TryCatchAssertBlock.ExpectedException("must be ", action147)
 
         launchProc.SpecifyLaunchAirspeed = True
         Assert.assertTrue(launchProc.SpecifyLaunchAirspeed)
@@ -2112,10 +2465,10 @@ class EarlyBoundTests(TestBase):
         launchProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowVTOL
         Assert.assertEqual(AgEAvtrFuelFlowType.eFuelFlowVTOL, launchProc.FuelFlowType)
 
-        def action117():
+        def action148():
             launchProc.OverrideFuelFlow = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action117)
+        TryCatchAssertBlock.ExpectedException("must be ", action148)
 
         launchProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowOverride
         Assert.assertEqual(AgEAvtrFuelFlowType.eFuelFlowOverride, launchProc.FuelFlowType)
@@ -2182,10 +2535,10 @@ class EarlyBoundTests(TestBase):
 
         launchProc.AttitudeMode = AgEAvtrLaunchAttitudeMode.eLaunchHoldParentAttitude
 
-        def action118():
+        def action149():
             launchProc.TrueCourseHint = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action118)
+        TryCatchAssertBlock.ExpectedException("must be ", action149)
 
         launchProc.AttitudeMode = AgEAvtrLaunchAttitudeMode.eLaunchAlignDirectionVector
         Assert.assertEqual(AgEAvtrLaunchAttitudeMode.eLaunchAlignDirectionVector, launchProc.AttitudeMode)
@@ -2195,25 +2548,25 @@ class EarlyBoundTests(TestBase):
 
         launchProc.SpecifyLaunchAirspeed = False
 
-        def action119():
+        def action150():
             launchProc.AccelG = 2
 
-        TryCatchAssertBlock.ExpectedException("must be ", action119)
+        TryCatchAssertBlock.ExpectedException("must be ", action150)
 
-        def action120():
+        def action151():
             launchProc.SetAirspeed(AgEAvtrAirspeedType.eTAS, 251)
 
-        TryCatchAssertBlock.ExpectedException("must be ", action120)
+        TryCatchAssertBlock.ExpectedException("must be ", action151)
 
-        def action121():
+        def action152():
             launchProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowOverride
 
-        TryCatchAssertBlock.ExpectedException("must be ", action121)
+        TryCatchAssertBlock.ExpectedException("must be ", action152)
 
-        def action122():
+        def action153():
             launchProc.OverrideFuelFlow = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action122)
+        TryCatchAssertBlock.ExpectedException("must be ", action153)
 
         launchProc.SpecifyLaunchAirspeed = True
         Assert.assertTrue(launchProc.SpecifyLaunchAirspeed)
@@ -2231,10 +2584,10 @@ class EarlyBoundTests(TestBase):
         launchProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowVTOL
         Assert.assertEqual(AgEAvtrFuelFlowType.eFuelFlowVTOL, launchProc.FuelFlowType)
 
-        def action123():
+        def action154():
             launchProc.OverrideFuelFlow = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action123)
+        TryCatchAssertBlock.ExpectedException("must be ", action154)
 
         launchProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowOverride
         Assert.assertEqual(AgEAvtrFuelFlowType.eFuelFlowOverride, launchProc.FuelFlowType)
@@ -2292,10 +2645,10 @@ class EarlyBoundTests(TestBase):
         launchProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowVTOL
         Assert.assertEqual(AgEAvtrFuelFlowType.eFuelFlowVTOL, launchProc.FuelFlowType)
 
-        def action124():
+        def action155():
             launchProc.OverrideFuelFlow = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action124)
+        TryCatchAssertBlock.ExpectedException("must be ", action155)
 
         launchProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowOverride
         Assert.assertEqual(AgEAvtrFuelFlowType.eFuelFlowOverride, launchProc.FuelFlowType)
@@ -2348,15 +2701,15 @@ class EarlyBoundTests(TestBase):
 
         parallelProc.ProcedureType = AgEAvtrFlightLineProcType.eProcTypeTerrainFollow
 
-        def action125():
+        def action156():
             parallelProc.MustLevelOff = False
 
-        TryCatchAssertBlock.ExpectedException("must be", action125)
+        TryCatchAssertBlock.ExpectedException("must be", action156)
 
-        def action126():
+        def action157():
             parallelProc.LevelOffMode = AgEAvtrAltitudeConstraintManeuverMode.eLevelOffAutomaticManeuver
 
-        TryCatchAssertBlock.ExpectedException("must be", action126)
+        TryCatchAssertBlock.ExpectedException("must be", action157)
 
         parallelProc.ProcedureType = AgEAvtrFlightLineProcType.eProcTypeEnroute
         Assert.assertEqual(AgEAvtrFlightLineProcType.eProcTypeEnroute, parallelProc.ProcedureType)
@@ -2402,10 +2755,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(10000, refState.MSLAltitude)
         refState.UseDefaultCruiseAltitude = True
 
-        def action127():
+        def action158():
             refState.MSLAltitude = 10000
 
-        TryCatchAssertBlock.ExpectedException("must be", action127)
+        TryCatchAssertBlock.ExpectedException("must be", action158)
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateClimb
         Assert.assertEqual(AgEAvtrRefStatePerfMode.eRefStateClimb, refState.PerformanceMode)
@@ -2420,10 +2773,10 @@ class EarlyBoundTests(TestBase):
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateLanding
 
-        def action128():
+        def action159():
             ffTest = refState.ModeAsForwardFlight
 
-        TryCatchAssertBlock.ExpectedException("must be", action128)
+        TryCatchAssertBlock.ExpectedException("must be", action159)
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateClimb
         ff = refState.ModeAsForwardFlight
@@ -2455,27 +2808,27 @@ class EarlyBoundTests(TestBase):
         sideslip = ff.Sideslip
         Assert.assertEqual(5, float(sideslip))
 
-        def action129():
+        def action160():
             altRateTest = ff.AltitudeRate
 
-        TryCatchAssertBlock.ExpectedException("Wind Frame", action129)
+        TryCatchAssertBlock.ExpectedException("Wind Frame", action160)
 
-        def action130():
+        def action161():
             headingTest = ff.Heading
 
-        TryCatchAssertBlock.ExpectedException("Wind Frame", action130)
+        TryCatchAssertBlock.ExpectedException("Wind Frame", action161)
 
         refState.ReferenceFrame = AgEAvtrBasicManeuverRefFrame.eWindFrame
 
-        def action131():
+        def action162():
             fpaTest = ff.FlightPathAngle
 
-        TryCatchAssertBlock.ExpectedException("Earth Frame", action131)
+        TryCatchAssertBlock.ExpectedException("Earth Frame", action162)
 
-        def action132():
+        def action163():
             courseTest = ff.Course
 
-        TryCatchAssertBlock.ExpectedException("Earth Frame", action132)
+        TryCatchAssertBlock.ExpectedException("Earth Frame", action163)
 
         ff.AltitudeRate = 6
         Assert.assertEqual(6, ff.AltitudeRate)
@@ -2507,20 +2860,20 @@ class EarlyBoundTests(TestBase):
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateLanding
 
-        def action133():
+        def action164():
             airspeedTest = ff.Airspeed
 
-        TryCatchAssertBlock.ExpectedException("must be", action133)
+        TryCatchAssertBlock.ExpectedException("must be", action164)
 
         # ////////////// TEST TAKEOFF LANDING OPTIONS ///////////////////////
         # Note: Should be same as forward flight options except on different interface
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateClimb
 
-        def action134():
+        def action165():
             tlTest = refState.ModeAsTakeoffLanding
 
-        TryCatchAssertBlock.ExpectedException("must be", action134)
+        TryCatchAssertBlock.ExpectedException("must be", action165)
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateLanding
         tl = refState.ModeAsTakeoffLanding
@@ -2553,27 +2906,27 @@ class EarlyBoundTests(TestBase):
         sideslip = tl.Sideslip
         Assert.assertEqual(5, float(sideslip))
 
-        def action135():
+        def action166():
             altRateTest = tl.AltitudeRate
 
-        TryCatchAssertBlock.ExpectedException("Wind Frame", action135)
+        TryCatchAssertBlock.ExpectedException("Wind Frame", action166)
 
-        def action136():
+        def action167():
             headingTest = tl.Heading
 
-        TryCatchAssertBlock.ExpectedException("Wind Frame", action136)
+        TryCatchAssertBlock.ExpectedException("Wind Frame", action167)
 
         refState.ReferenceFrame = AgEAvtrBasicManeuverRefFrame.eWindFrame
 
-        def action137():
+        def action168():
             fpaTest = tl.FlightPathAngle
 
-        TryCatchAssertBlock.ExpectedException("Earth Frame", action137)
+        TryCatchAssertBlock.ExpectedException("Earth Frame", action168)
 
-        def action138():
+        def action169():
             courseTest = tl.Course
 
-        TryCatchAssertBlock.ExpectedException("Earth Frame", action138)
+        TryCatchAssertBlock.ExpectedException("Earth Frame", action169)
 
         tl.AltitudeRate = 6
         Assert.assertEqual(6, tl.AltitudeRate)
@@ -2605,36 +2958,36 @@ class EarlyBoundTests(TestBase):
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateClimb
 
-        def action139():
+        def action170():
             airspeedTest = tl.Airspeed
 
-        TryCatchAssertBlock.ExpectedException("must be", action139)
+        TryCatchAssertBlock.ExpectedException("must be", action170)
 
         # ////////////// TEST HOVER OPTIONS ///////////////////////
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateClimb
 
-        def action140():
+        def action171():
             hoverTest = refState.ModeAsHover
 
-        TryCatchAssertBlock.ExpectedException("must be", action140)
+        TryCatchAssertBlock.ExpectedException("must be", action171)
 
         currentPhase = EarlyBoundTests.AG_Phases[0]
         vtol = currentPhase.GetPerformanceModelByType("VTOL")
         vtol.Delete()
 
-        def action141():
+        def action172():
             refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateHover
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action141)
+        TryCatchAssertBlock.ExpectedException("VTOL", action172)
         currentPhase.SetDefaultPerfModels()
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateHover
 
-        def action142():
+        def action173():
             refState.ReferenceFrame = AgEAvtrBasicManeuverRefFrame.eEarthFrame
 
-        TryCatchAssertBlock.ExpectedException("must be", action142)
+        TryCatchAssertBlock.ExpectedException("must be", action173)
 
         hoverOpts = refState.ModeAsHover
 
@@ -2682,26 +3035,26 @@ class EarlyBoundTests(TestBase):
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateClimb
 
-        def action143():
+        def action174():
             groundspeedTest = hoverOpts.Groundspeed
 
-        TryCatchAssertBlock.ExpectedException("must be", action143)
+        TryCatchAssertBlock.ExpectedException("must be", action174)
 
         # ////////////// TEST WEIGHT ON WHEELS OPTIONS ///////////////////////
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateClimb
 
-        def action144():
+        def action175():
             wowTest = refState.ModeAsWeightOnWheels
 
-        TryCatchAssertBlock.ExpectedException("must be", action144)
+        TryCatchAssertBlock.ExpectedException("must be", action175)
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateTakeoffRun
 
-        def action145():
+        def action176():
             refState.ReferenceFrame = AgEAvtrBasicManeuverRefFrame.eEarthFrame
 
-        TryCatchAssertBlock.ExpectedException("must be", action145)
+        TryCatchAssertBlock.ExpectedException("must be", action176)
 
         wowOpts = refState.ModeAsWeightOnWheels
 
@@ -2728,10 +3081,10 @@ class EarlyBoundTests(TestBase):
 
         refState.PerformanceMode = AgEAvtrRefStatePerfMode.eRefStateClimb
 
-        def action146():
+        def action177():
             groundspeedTest = wowOpts.Groundspeed
 
-        TryCatchAssertBlock.ExpectedException("must be", action146)
+        TryCatchAssertBlock.ExpectedException("must be", action177)
 
         TestBase.Application.UnitPreferences.ResetUnits()
         EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(refState, IProcedure))
@@ -2755,15 +3108,15 @@ class EarlyBoundTests(TestBase):
         takeoff.TakeoffMode = AgEAvtrTakeoffMode.eTakeoffNormal
         takeoffNormal = takeoff.ModeAsNormal
 
-        def action147():
+        def action178():
             testVal = takeoff.ModeAsDeparturePoint
 
-        TryCatchAssertBlock.ExpectedException("must be set", action147)
+        TryCatchAssertBlock.ExpectedException("must be set", action178)
 
-        def action148():
+        def action179():
             testVal = takeoff.ModeAsLowTransition
 
-        TryCatchAssertBlock.ExpectedException("must be set", action148)
+        TryCatchAssertBlock.ExpectedException("must be set", action179)
 
         takeoffNormal.DepartureAltitude = 501
         Assert.assertEqual(501, takeoffNormal.DepartureAltitude)
@@ -2772,25 +3125,25 @@ class EarlyBoundTests(TestBase):
 
         takeoff.TakeoffMode = AgEAvtrTakeoffMode.eTakeoffFlyToDeparturePoint
 
-        def action149():
+        def action180():
             testVal = takeoffNormal.DepartureAltitude
 
-        TryCatchAssertBlock.ExpectedException("must be set", action149)
+        TryCatchAssertBlock.ExpectedException("must be set", action180)
 
-        def action150():
+        def action181():
             takeoffNormal.DepartureAltitude = 501
 
-        TryCatchAssertBlock.ExpectedException("must be set", action150)
+        TryCatchAssertBlock.ExpectedException("must be set", action181)
 
-        def action151():
+        def action182():
             testVal = takeoffNormal.UseRunwayTerrain
 
-        TryCatchAssertBlock.ExpectedException("must be set", action151)
+        TryCatchAssertBlock.ExpectedException("must be set", action182)
 
-        def action152():
+        def action183():
             takeoffNormal.UseRunwayTerrain = True
 
-        TryCatchAssertBlock.ExpectedException("must be set", action152)
+        TryCatchAssertBlock.ExpectedException("must be set", action183)
 
         EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(takeoff, IProcedure))
 
@@ -2955,18 +3308,18 @@ class EarlyBoundTests(TestBase):
         vertLanding.HeadingMode = AgEAvtrVertLandingMode.eVertLandingAlignTranslationCourse
         Assert.assertEqual(AgEAvtrVertLandingMode.eVertLandingAlignTranslationCourse, vertLanding.HeadingMode)
 
-        def action153():
+        def action184():
             vertLanding.SetHeading(11, False)
 
-        TryCatchAssertBlock.ExpectedException("must be", action153)
+        TryCatchAssertBlock.ExpectedException("must be", action184)
 
         vertLanding.HeadingMode = AgEAvtrVertLandingMode.eVertLandingIntoWind
         Assert.assertEqual(AgEAvtrVertLandingMode.eVertLandingIntoWind, vertLanding.HeadingMode)
 
-        def action154():
+        def action185():
             vertLanding.SetHeading(11, False)
 
-        TryCatchAssertBlock.ExpectedException("must be", action154)
+        TryCatchAssertBlock.ExpectedException("must be", action185)
 
         vertLanding.RadiusFactor = 3
         Assert.assertEqual(3, vertLanding.RadiusFactor)
@@ -3067,10 +3420,10 @@ class EarlyBoundTests(TestBase):
 
         vgtProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowTakeoff
 
-        def action155():
+        def action186():
             vgtProc.OverrideFuelFlowValue = 123
 
-        TryCatchAssertBlock.ExpectedException("must be", action155)
+        TryCatchAssertBlock.ExpectedException("must be", action186)
         vgtProc.ConsiderAccelForFuelFlow = True
         Assert.assertTrue(vgtProc.ConsiderAccelForFuelFlow)
 
@@ -3078,10 +3431,10 @@ class EarlyBoundTests(TestBase):
         vgtProc.OverrideFuelFlowValue = 123
         Assert.assertAlmostEqual(123, vgtProc.OverrideFuelFlowValue, delta=tolerance)
 
-        def action156():
+        def action187():
             vgtProc.ConsiderAccelForFuelFlow = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action156)
+        TryCatchAssertBlock.ExpectedException("must be", action187)
 
         vgtProc.FlightMode = AgEAvtrPhaseOfFlight.eFlightPhaseTakeoff
         Assert.assertEqual(AgEAvtrPhaseOfFlight.eFlightPhaseTakeoff, vgtProc.FlightMode)
@@ -3096,15 +3449,15 @@ class EarlyBoundTests(TestBase):
         vtol = currentPhase.GetPerformanceModelByType("VTOL")
         vtol.Delete()
 
-        def action157():
+        def action188():
             vgtProc.FlightMode = AgEAvtrPhaseOfFlight.eFlightPhaseVTOL
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action157)
+        TryCatchAssertBlock.ExpectedException("VTOL", action188)
 
-        def action158():
+        def action189():
             vgtProc.FuelFlowType = AgEAvtrFuelFlowType.eFuelFlowVTOL
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action158)
+        TryCatchAssertBlock.ExpectedException("VTOL", action189)
 
         currentPhase.SetDefaultPerfModels()
         TestBase.Application.UnitPreferences.ResetUnits()
@@ -3143,40 +3496,40 @@ class EarlyBoundTests(TestBase):
         basicManeuver.UseMaxTimeOfFlight = False
         basicManeuver.UseStopFuelState = True
 
-        def action159():
+        def action190():
             basicManeuver.UseStopFuelState = False
 
-        TryCatchAssertBlock.ExpectedException("At least one", action159)
+        TryCatchAssertBlock.ExpectedException("At least one", action190)
 
         basicManeuver.TerrainImpactMode = AgEAvtrBasicManeuverAltitudeLimit.eBasicManeuverAltLimitContinue
 
-        def action160():
+        def action191():
             basicManeuver.TerrainImpactTimeOffset = 1
 
-        TryCatchAssertBlock.ExpectedException("terrain impact mode", action160)
+        TryCatchAssertBlock.ExpectedException("terrain impact mode", action191)
         basicManeuver.TerrainImpactMode = AgEAvtrBasicManeuverAltitudeLimit.eBasicManeuverAltLimitError
 
-        def action161():
+        def action192():
             basicManeuver.TerrainImpactTimeOffset = 1
 
-        TryCatchAssertBlock.ExpectedException("terrain impact mode", action161)
+        TryCatchAssertBlock.ExpectedException("terrain impact mode", action192)
 
         basicManeuver.FuelFlowType = AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowCruise
 
-        def action162():
+        def action193():
             basicManeuver.OverrideFuelFlowValue = 1
 
-        TryCatchAssertBlock.ExpectedException("fuel flow source", action162)
+        TryCatchAssertBlock.ExpectedException("fuel flow source", action193)
 
-        def action163():
+        def action194():
             testVal = basicManeuver.ScaleFuelFlow
 
-        TryCatchAssertBlock.ExpectedException("fuel flow source", action163)
+        TryCatchAssertBlock.ExpectedException("fuel flow source", action194)
 
-        def action164():
+        def action195():
             basicManeuver.ScaleFuelFlow = True
 
-        TryCatchAssertBlock.ExpectedException("fuel flow source", action164)
+        TryCatchAssertBlock.ExpectedException("fuel flow source", action195)
 
         basicManeuver.FlightMode = AgEAvtrPhaseOfFlight.eFlightPhaseVTOL
         Assert.assertEqual(basicManeuver.FlightMode, AgEAvtrPhaseOfFlight.eFlightPhaseVTOL)
@@ -3186,15 +3539,15 @@ class EarlyBoundTests(TestBase):
         vtol = currentPhase.GetPerformanceModelByType("VTOL")
         vtol.Delete()
 
-        def action165():
+        def action196():
             basicManeuver.FlightMode = AgEAvtrPhaseOfFlight.eFlightPhaseVTOL
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action165)
+        TryCatchAssertBlock.ExpectedException("VTOL", action196)
 
-        def action166():
+        def action197():
             basicManeuver.FuelFlowType = AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowVTOL
 
-        TryCatchAssertBlock.ExpectedException("VTOL", action166)
+        TryCatchAssertBlock.ExpectedException("VTOL", action197)
 
         currentPhase.SetDefaultPerfModels()
         TestBase.Application.UnitPreferences.ResetUnits()
@@ -3228,10 +3581,10 @@ class EarlyBoundTests(TestBase):
 
         roll.ActiveMode = AgEAvtrAileronRollMode.eRollToAngle
 
-        def action167():
+        def action198():
             roll.RollOrientation = AgEAvtrRollUprightInverted.eRollInverted
 
-        TryCatchAssertBlock.ExpectedException("must be", action167)
+        TryCatchAssertBlock.ExpectedException("must be", action198)
 
         roll.ActiveMode = AgEAvtrAileronRollMode.eRollToOrientation
         roll.RollOrientation = AgEAvtrRollUprightInverted.eRollInverted
@@ -3239,10 +3592,10 @@ class EarlyBoundTests(TestBase):
 
         roll.RollRateMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        def action168():
+        def action199():
             angle = roll.OverrideRollRate
 
-        TryCatchAssertBlock.ExpectedException("must be", action168)
+        TryCatchAssertBlock.ExpectedException("must be", action199)
         roll.RollRateMode = AgEAvtrPerfModelOverride.eOverride
         roll.OverrideRollRate = 20
         overrideRollRate = roll.OverrideRollRate
@@ -3279,10 +3632,10 @@ class EarlyBoundTests(TestBase):
 
         autopilot.ActiveMode = AgEAvtrAutopilotHorizPlaneMode.eAutopilotCourseRate
 
-        def action169():
+        def action200():
             autopilot.SetControlLimit(AgEAvtrBasicManeuverStrategyNavControlLimit.eNavMinTurnRadius, 1000)
 
-        TryCatchAssertBlock.ExpectedException("must be", action169)
+        TryCatchAssertBlock.ExpectedException("must be", action200)
 
         autopilot.CompensateForCoriolisAccel = True
         Assert.assertTrue(autopilot.CompensateForCoriolisAccel)
@@ -3309,25 +3662,25 @@ class EarlyBoundTests(TestBase):
         autopilot = clr.CastAs(basicManeuver.Profile, IBasicManeuverStrategyAutopilotProf)
         autopilot.AltitudeMode = AgEAvtrAutopilotAltitudeMode.eAutopilotHoldInitAltitude
 
-        def action170():
+        def action201():
             testVal = autopilot.AbsoluteAltitude
 
-        TryCatchAssertBlock.ExpectedException("must be", action170)
+        TryCatchAssertBlock.ExpectedException("must be", action201)
 
-        def action171():
+        def action202():
             testVal = autopilot.RelativeAltitudeChange
 
-        TryCatchAssertBlock.ExpectedException("must be", action171)
+        TryCatchAssertBlock.ExpectedException("must be", action202)
 
-        def action172():
+        def action203():
             testVal = autopilot.AltitudeRate
 
-        TryCatchAssertBlock.ExpectedException("must be", action172)
+        TryCatchAssertBlock.ExpectedException("must be", action203)
 
-        def action173():
+        def action204():
             testVal = autopilot.FPA
 
-        TryCatchAssertBlock.ExpectedException("must be", action173)
+        TryCatchAssertBlock.ExpectedException("must be", action204)
 
         autopilot.AltitudeControlMode = AgEAvtrAutopilotAltitudeControlMode.eAutopilotAltitudeRate
         autopilot.ControlAltitudeRateValue = 2001
@@ -3340,15 +3693,15 @@ class EarlyBoundTests(TestBase):
 
         autopilot.AltitudeControlMode = AgEAvtrAutopilotAltitudeControlMode.eAutopilotPerfModels
 
-        def action174():
+        def action205():
             testVal = autopilot.ControlAltitudeRateValue
 
-        TryCatchAssertBlock.ExpectedException("must be", action174)
+        TryCatchAssertBlock.ExpectedException("must be", action205)
 
-        def action175():
+        def action206():
             testVal = autopilot.ControlFPAValue
 
-        TryCatchAssertBlock.ExpectedException("must be", action175)
+        TryCatchAssertBlock.ExpectedException("must be", action206)
 
         autopilot.ControlLimitMode = AgEAvtrPerfModelOverride.eOverride
         autopilot.MaxPitchRate = 11
@@ -3356,10 +3709,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(11, pitchRate)
         autopilot.ControlLimitMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        def action176():
+        def action207():
             autopilot.MaxPitchRate = 11
 
-        TryCatchAssertBlock.ExpectedException("must be", action176)
+        TryCatchAssertBlock.ExpectedException("must be", action207)
 
         autopilot.DampingRatio = 1.5
         Assert.assertEqual(1.5, autopilot.DampingRatio)
@@ -3383,15 +3736,15 @@ class EarlyBoundTests(TestBase):
 
         autopilot.AltitudeMode = AgEAvtrAutopilotAltitudeMode.eAutopilotBallistic
 
-        def action177():
+        def action208():
             autopilot.AltitudeControlMode = AgEAvtrAutopilotAltitudeControlMode.eAutopilotFPA
 
-        TryCatchAssertBlock.ExpectedException("must be", action177)
+        TryCatchAssertBlock.ExpectedException("must be", action208)
 
-        def action178():
+        def action209():
             autopilot.DampingRatio = 1.5
 
-        TryCatchAssertBlock.ExpectedException("must be", action178)
+        TryCatchAssertBlock.ExpectedException("must be", action209)
 
         airspeedOpts = autopilot.AirspeedOptions
         self.BasicManeuverAirspeedOptions(airspeedOpts)
@@ -3425,20 +3778,20 @@ class EarlyBoundTests(TestBase):
 
         self.BasicManeuverAirspeedOptions(ballistic.AirspeedOptions)
 
-        def action179():
+        def action210():
             ballistic.WindForceEffectiveArea = 10
 
-        TryCatchAssertBlock.ExpectedException("must be", action179)
+        TryCatchAssertBlock.ExpectedException("must be", action210)
 
-        def action180():
+        def action211():
             ballistic.ParachuteArea = 5
 
-        TryCatchAssertBlock.ExpectedException("must be", action180)
+        TryCatchAssertBlock.ExpectedException("must be", action211)
 
-        def action181():
+        def action212():
             ballistic.ParachuteCd = 1.5
 
-        TryCatchAssertBlock.ExpectedException("must be", action181)
+        TryCatchAssertBlock.ExpectedException("must be", action212)
 
         ballistic.ControlMode = AgEAvtrBallistic3DControlMode.eBallistic3DWindPushesVehicle
         Assert.assertEqual(AgEAvtrBallistic3DControlMode.eBallistic3DWindPushesVehicle, ballistic.ControlMode)
@@ -3448,15 +3801,15 @@ class EarlyBoundTests(TestBase):
         ballistic.WindForceEffectiveArea = 10
         Assert.assertEqual(10, ballistic.WindForceEffectiveArea)
 
-        def action182():
+        def action213():
             ballistic.ParachuteArea = 5
 
-        TryCatchAssertBlock.ExpectedException("must be", action182)
+        TryCatchAssertBlock.ExpectedException("must be", action213)
 
-        def action183():
+        def action214():
             ballistic.ParachuteCd = 1.5
 
-        TryCatchAssertBlock.ExpectedException("must be", action183)
+        TryCatchAssertBlock.ExpectedException("must be", action214)
 
         ballistic.ControlMode = AgEAvtrBallistic3DControlMode.eBallistic3DParachuteMode
         Assert.assertEqual(AgEAvtrBallistic3DControlMode.eBallistic3DParachuteMode, ballistic.ControlMode)
@@ -3469,10 +3822,10 @@ class EarlyBoundTests(TestBase):
         ballistic.WindForceEffectiveArea = 11
         Assert.assertEqual(11, ballistic.WindForceEffectiveArea)
 
-        def action184():
+        def action215():
             self.BasicManeuverAirspeedOptions(ballistic.AirspeedOptions)
 
-        TryCatchAssertBlock.ExpectedException("must be", action184)
+        TryCatchAssertBlock.ExpectedException("must be", action215)
 
         EarlyBoundTests.AG_Procedures.Remove(proc1)
         EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(basicManeuver, IProcedure))
@@ -3508,10 +3861,10 @@ class EarlyBoundTests(TestBase):
 
         roll.HoldInitTAS = True
 
-        def action185():
+        def action216():
             roll.SetAirspeeds(AgEAvtrAirspeedType.eMach, 0.1, 0.2)
 
-        TryCatchAssertBlock.ExpectedException("must be", action185)
+        TryCatchAssertBlock.ExpectedException("must be", action216)
 
         roll.HoldInitTAS = False
         roll.SetAirspeeds(AgEAvtrAirspeedType.eMach, 0.1, 0.2)
@@ -3602,29 +3955,29 @@ class EarlyBoundTests(TestBase):
 
         cruise.UseDefaultCruiseAltitude = True
 
-        def action186():
+        def action217():
             levelOff = cruise.LevelOff
 
-        TryCatchAssertBlock.ExpectedException("must be", action186)
+        TryCatchAssertBlock.ExpectedException("must be", action217)
 
-        def action187():
+        def action218():
             cruise.LevelOff = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action187)
+        TryCatchAssertBlock.ExpectedException("must be", action218)
 
-        def action188():
+        def action219():
             cruise.RequestedAltitude = 10000
 
-        TryCatchAssertBlock.ExpectedException("must be", action188)
+        TryCatchAssertBlock.ExpectedException("must be", action219)
 
         cruise.UseDefaultCruiseAltitude = False
         cruise.LevelOff = True
         Assert.assertTrue(cruise.LevelOff)
 
-        def action189():
+        def action220():
             cruise.RequestedAltitude = 10000
 
-        TryCatchAssertBlock.ExpectedException("must be", action189)
+        TryCatchAssertBlock.ExpectedException("must be", action220)
 
         cruise.LevelOff = False
         cruise.RequestedAltitude = 10000
@@ -3671,24 +4024,24 @@ class EarlyBoundTests(TestBase):
         flyAOA.ControlRollAngle = False
         flyAOA.RollRateMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        def action190():
+        def action221():
             value = flyAOA.OverrideRollRate
 
-        TryCatchAssertBlock.ExpectedException("must be", action190)
+        TryCatchAssertBlock.ExpectedException("must be", action221)
         flyAOA.RollRateMode = AgEAvtrPerfModelOverride.eOverride
         flyAOA.OverrideRollRate = 29
         rate = flyAOA.OverrideRollRate
         Assert.assertAlmostEqual(29, float(rate), delta=tolerance)
 
-        def action191():
+        def action222():
             flyAOA.RollAngle = 59
 
-        TryCatchAssertBlock.ExpectedException("must be", action191)
+        TryCatchAssertBlock.ExpectedException("must be", action222)
 
-        def action192():
+        def action223():
             flyAOA.StopOnRollAngle = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action192)
+        TryCatchAssertBlock.ExpectedException("must be", action223)
         flyAOA.ControlRollAngle = True
         flyAOA.RollAngle = 59
         angle = flyAOA.RollAngle
@@ -3700,25 +4053,25 @@ class EarlyBoundTests(TestBase):
         flyAOA.StopOnRollAngle = False
         Assert.assertFalse(flyAOA.StopOnRollAngle)
 
-        def action193():
+        def action224():
             flyAOA.RollRateMode = AgEAvtrPerfModelOverride.eOverride
 
-        TryCatchAssertBlock.ExpectedException("must be", action193)
+        TryCatchAssertBlock.ExpectedException("must be", action224)
 
-        def action194():
+        def action225():
             flyAOA.OverrideRollRate = 29
 
-        TryCatchAssertBlock.ExpectedException("must be", action194)
+        TryCatchAssertBlock.ExpectedException("must be", action225)
 
-        def action195():
+        def action226():
             flyAOA.ControlRollAngle = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action195)
+        TryCatchAssertBlock.ExpectedException("must be", action226)
 
-        def action196():
+        def action227():
             flyAOA.RollAngle = 59
 
-        TryCatchAssertBlock.ExpectedException("must be", action196)
+        TryCatchAssertBlock.ExpectedException("must be", action227)
 
         airspeedOpts = flyAOA.AirspeedOptions
         self.BasicManeuverAirspeedOptions(airspeedOpts)
@@ -3731,8 +4084,6 @@ class EarlyBoundTests(TestBase):
     # region BasicManeuverGlide
     @category("Basic Maneuver Procedure Tests")
     def test_BasicManeuverGlide(self):
-        tolerance = 1e-09
-
         self.EmptyProcedures()
 
         proc1 = EarlyBoundTests.AG_Procedures.Add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff)
@@ -3747,20 +4098,137 @@ class EarlyBoundTests(TestBase):
         glide = clr.CastAs(basicManeuver.Profile, IBasicManeuverStrategyGlideProfile)
 
         glide.HoldInitialAirspeed = True
+        Assert.assertTrue(glide.HoldInitialAirspeed)
 
-        def action197():
+        def action228():
             glide.SetAirspeed(AgEAvtrAirspeedType.eMach, 0.5)
 
-        TryCatchAssertBlock.ExpectedException("must be", action197)
-        glide.HoldInitialAirspeed = False
-        glide.SetAirspeed(AgEAvtrAirspeedType.eMach, 0.5)
-        Assert.assertAlmostEqual(0.5, glide.Airspeed, delta=tolerance)
+        TryCatchAssertBlock.ExpectedException("must be", action228)
+        # BUG  missing Speed Mode     TryCatchAssertBlock.ExpectedException("must be", delegate () { glide.SpeedMode = ???; });
 
+        glide.HoldInitialAirspeed = False
+        Assert.assertFalse(glide.HoldInitialAirspeed)
+
+        glide.SetAirspeed(AgEAvtrAirspeedType.eMach, 0.5)  # BUG - sets to 0.257222
+        Assert.assertAlmostEqual(0.5, glide.Airspeed, delta=1e-06)
+        Assert.assertEqual(AgEAvtrAirspeedType.eMach, glide.AirspeedType)
+
+        # BUG  missing Speed Mode   // glide.SpeedMode = ???;
+        # Assert.AreEqual(???, glide.SpeedMode);
+
+        glide.MinG = 0.6
+        Assert.assertEqual(0.6, glide.MinG)
+
+        glide.MaxG = 1.6
+        Assert.assertEqual(1.6, glide.MaxG)
+
+        glide.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eConstrainIfViolated
+        Assert.assertEqual(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eConstrainIfViolated, glide.MaxSpeedLimits)
+        glide.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eStopIfViolated
+        Assert.assertEqual(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eStopIfViolated, glide.MaxSpeedLimits)
+        glide.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated
+        Assert.assertEqual(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated, glide.MaxSpeedLimits)
+        glide.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated
+        Assert.assertEqual(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated, glide.MaxSpeedLimits)
+
+        glide.CompensateForCoriolisAccel = False
+        Assert.assertFalse(glide.CompensateForCoriolisAccel)
         glide.CompensateForCoriolisAccel = True
         Assert.assertTrue(glide.CompensateForCoriolisAccel)
 
+        glide.PoweredCruiseMode = AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyUnPoweredCruise
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyUnPoweredCruise, glide.PoweredCruiseMode
+        )
+
+        glide.PoweredCruiseThrottle = 20.0
+        thrust1 = glide.PoweredCruiseThrustModel
+        # TryCatchAssertBlock.ExpectedException("read only", delegate () { glide.PoweredCruiseThrottle = 20.0; });
+        # TryCatchAssertBlock.ExpectedException("read only", delegate () { IAgAvtrPropulsionThrust thrust1 = glide.PoweredCruiseThrustModel; });
+
+        glide.PoweredCruiseMode = AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrottle
+        Assert.assertEqual(AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrottle, glide.PoweredCruiseMode)
+
+        glide.PoweredCruiseThrottle = 30.0
+        Assert.assertEqual(30.0, glide.PoweredCruiseThrottle)
+
+        self.Test_IAgAvtrPropulsionThrust(glide.PoweredCruiseThrustModel)
+        # TryCatchAssertBlock.ExpectedException("read only", delegate () { Test_IAgAvtrPropulsionThrust( glide.PoweredCruiseThrustModel); });
+
+        glide.PoweredCruiseMode = AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrustModel
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrustModel, glide.PoweredCruiseMode
+        )
+
+        glide.PoweredCruiseThrottle = 20.0
+        # TryCatchAssertBlock.ExpectedException("read only", delegate () { glide.PoweredCruiseThrottle = 20.0; });
+
+        self.Test_IAgAvtrPropulsionThrust(glide.PoweredCruiseThrustModel)
+
         EarlyBoundTests.AG_Procedures.Remove(proc1)
         EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(basicManeuver, IProcedure))
+
+    # endregion
+
+    # region Test_IAgAvtrPropulsionThrust
+    def Test_IAgAvtrPropulsionThrust(self, thrust):
+        thrust.UseConstantThrust = True
+        Assert.assertTrue(thrust.UseConstantThrust)
+
+        thrust.ConstantThrust = 111
+        Assert.assertEqual(111, thrust.ConstantThrust)
+
+        def action229():
+            thrust.BoostThrust = 999
+
+        TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action229)
+
+        def action230():
+            thrust.BoostThrustTimeLimit = 999
+
+        TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action230)
+
+        def action231():
+            thrust.SustainThrust = 999
+
+        TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action231)
+
+        def action232():
+            thrust.SustainThrustTimeLimit = 999
+
+        TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action232)
+
+        thrust.UseConstantThrust = False
+        Assert.assertFalse(thrust.UseConstantThrust)
+
+        thrust.BoostThrust = 222
+        Assert.assertEqual(222, thrust.BoostThrust)
+        thrust.BoostThrustTimeLimit = 333
+        Assert.assertEqual(333, thrust.BoostThrustTimeLimit)
+
+        thrust.SustainThrust = 444
+        Assert.assertEqual(444, thrust.SustainThrust)
+        thrust.SustainThrustTimeLimit = 555
+        Assert.assertEqual(555, thrust.SustainThrustTimeLimit)
+
+        def action233():
+            thrust.ConstantThrust = 999
+
+        TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action233)
+
+        thrust.SetMinAirspeed(AgEAvtrAirspeedType.eMach, 666)
+        Assert.assertEqual(AgEAvtrAirspeedType.eMach, thrust.MinAirspeedType)
+        Assert.assertAlmostEqual(666, thrust.MinAirspeed, delta=1e-06)
+        thrust.SetMinAirspeed(AgEAvtrAirspeedType.eEAS, 777)
+        Assert.assertEqual(AgEAvtrAirspeedType.eEAS, thrust.MinAirspeedType)
+        Assert.assertAlmostEqual(777, thrust.MinAirspeed, delta=1e-06)
+
+        thrust.SetMaxAirspeed(AgEAvtrAirspeedType.eCAS, 888)
+        Assert.assertEqual(AgEAvtrAirspeedType.eCAS, thrust.MaxAirspeedType)
+        Assert.assertAlmostEqual(888, thrust.MaxAirspeed, delta=1e-06)
+        thrust.SetMaxAirspeed(AgEAvtrAirspeedType.eTAS, 999)
+        Assert.assertEqual(AgEAvtrAirspeedType.eTAS, thrust.MaxAirspeedType)
+        Assert.assertAlmostEqual(999, thrust.MaxAirspeed, delta=1e-06)
 
     # endregion
 
@@ -3784,10 +4252,10 @@ class EarlyBoundTests(TestBase):
 
         targetName = (EarlyBoundTests.AG_Target.ClassName + "/") + EarlyBoundTests.AG_Target.InstanceName
 
-        def action198():
+        def action234():
             intercept.TargetName = targetName
 
-        TryCatchAssertBlock.ExpectedException("not a valid", action198)
+        TryCatchAssertBlock.ExpectedException("not a valid", action234)
         missile = clr.CastAs((EarlyBoundTests.AG_Scenario.Children.New(AgESTKObjectType.eMissile, "Missile")), IMissile)
         traj = clr.CastAs(missile.Trajectory, IVehiclePropagatorBallistic)
         impactLocation = clr.CastAs(traj.ImpactLocation, IVehicleImpactLocationPoint)
@@ -3813,19 +4281,19 @@ class EarlyBoundTests(TestBase):
         aspect = intercept.TargetAspect
         Assert.assertEqual(0.1, float(aspect))
 
-        def action199():
+        def action235():
             intercept.LateralSeparation = 2
 
-        TryCatchAssertBlock.ExpectedException("must be", action199)
+        TryCatchAssertBlock.ExpectedException("must be", action235)
 
         intercept.InterceptMode = AgEAvtrInterceptMode.eLateralSeparation
         intercept.LateralSeparation = 2
         Assert.assertEqual(2, intercept.LateralSeparation)
 
-        def action200():
+        def action236():
             intercept.TargetAspect = 2
 
-        TryCatchAssertBlock.ExpectedException("must be", action200)
+        TryCatchAssertBlock.ExpectedException("must be", action236)
 
         intercept.ManeuverFactor = 0.6
         Assert.assertEqual(0.6, intercept.ManeuverFactor)
@@ -3846,15 +4314,15 @@ class EarlyBoundTests(TestBase):
 
         intercept.ClosureMode = AgEAvtrClosureMode.eClosureNotSet
 
-        def action201():
+        def action237():
             intercept.HOBSAngleTol = 2
 
-        TryCatchAssertBlock.ExpectedException("must be", action201)
+        TryCatchAssertBlock.ExpectedException("must be", action237)
 
-        def action202():
+        def action238():
             intercept.HOBSMaxAngle = 5
 
-        TryCatchAssertBlock.ExpectedException("must be", action202)
+        TryCatchAssertBlock.ExpectedException("must be", action238)
 
         intercept.ClosureMode = AgEAvtrClosureMode.eHOBS
         intercept.HOBSAngleTol = 2
@@ -3903,10 +4371,10 @@ class EarlyBoundTests(TestBase):
 
         loop.HoldInitTAS = True
 
-        def action203():
+        def action239():
             loop.SetAirspeeds(AgEAvtrAirspeedType.eMach, 0.1, 0.2)
 
-        TryCatchAssertBlock.ExpectedException("must be", action203)
+        TryCatchAssertBlock.ExpectedException("must be", action239)
 
         loop.HoldInitTAS = False
         loop.SetAirspeeds(AgEAvtrAirspeedType.eMach, 0.1, 0.2)
@@ -3948,20 +4416,20 @@ class EarlyBoundTests(TestBase):
 
         hover.HeadingMode = AgEAvtrHoverHeadingMode.eHoverIntoWind
 
-        def action204():
+        def action240():
             hover.AbsoluteHeading = 1.1
 
-        TryCatchAssertBlock.ExpectedException("must be", action204)
+        TryCatchAssertBlock.ExpectedException("must be", action240)
 
-        def action205():
+        def action241():
             hover.UseMagneticHeading = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action205)
+        TryCatchAssertBlock.ExpectedException("must be", action241)
 
-        def action206():
+        def action242():
             hover.RelativeHeading = 2.2
 
-        TryCatchAssertBlock.ExpectedException("must be", action206)
+        TryCatchAssertBlock.ExpectedException("must be", action242)
 
         hover.HeadingMode = AgEAvtrHoverHeadingMode.eHoverAbsolute
         hover.AbsoluteHeading = 1.1
@@ -3977,65 +4445,65 @@ class EarlyBoundTests(TestBase):
 
         hover.AltitudeMode = AgEAvtrHoverAltitudeMode.eHoverHoldInitAltitude
 
-        def action207():
+        def action243():
             test = hover.AbsoluteAltitude
 
-        TryCatchAssertBlock.ExpectedException("must be", action207)
+        TryCatchAssertBlock.ExpectedException("must be", action243)
 
-        def action208():
+        def action244():
             hover.AbsoluteAltitude = 10001
 
-        TryCatchAssertBlock.ExpectedException("must be", action208)
+        TryCatchAssertBlock.ExpectedException("must be", action244)
 
-        def action209():
+        def action245():
             test = hover.AltitudeRate
 
-        TryCatchAssertBlock.ExpectedException("must be", action209)
+        TryCatchAssertBlock.ExpectedException("must be", action245)
 
-        def action210():
+        def action246():
             hover.AltitudeRate = 1
 
-        TryCatchAssertBlock.ExpectedException("must be", action210)
+        TryCatchAssertBlock.ExpectedException("must be", action246)
 
-        def action211():
+        def action247():
             test = hover.ControlAltRate
 
-        TryCatchAssertBlock.ExpectedException("must be", action211)
+        TryCatchAssertBlock.ExpectedException("must be", action247)
 
-        def action212():
+        def action248():
             hover.ControlAltRate = 501
 
-        TryCatchAssertBlock.ExpectedException("must be", action212)
+        TryCatchAssertBlock.ExpectedException("must be", action248)
 
-        def action213():
+        def action249():
             test = hover.RelativeAltitudeChange
 
-        TryCatchAssertBlock.ExpectedException("must be", action213)
+        TryCatchAssertBlock.ExpectedException("must be", action249)
 
-        def action214():
+        def action250():
             hover.RelativeAltitudeChange = 1
 
-        TryCatchAssertBlock.ExpectedException("must be", action214)
+        TryCatchAssertBlock.ExpectedException("must be", action250)
 
-        def action215():
+        def action251():
             test = hover.ParachuteArea
 
-        TryCatchAssertBlock.ExpectedException("must be", action215)
+        TryCatchAssertBlock.ExpectedException("must be", action251)
 
-        def action216():
+        def action252():
             hover.ParachuteArea = 1
 
-        TryCatchAssertBlock.ExpectedException("must be", action216)
+        TryCatchAssertBlock.ExpectedException("must be", action252)
 
-        def action217():
+        def action253():
             test = hover.ParachuteCd
 
-        TryCatchAssertBlock.ExpectedException("must be", action217)
+        TryCatchAssertBlock.ExpectedException("must be", action253)
 
-        def action218():
+        def action254():
             hover.ParachuteCd = 1
 
-        TryCatchAssertBlock.ExpectedException("must be", action218)
+        TryCatchAssertBlock.ExpectedException("must be", action254)
 
         hover.AltitudeMode = AgEAvtrHoverAltitudeMode.eHoverSpecifyAltitude
         hover.AbsoluteAltitude = 10001
@@ -4104,10 +4572,10 @@ class EarlyBoundTests(TestBase):
         pitch3D.ControlMode = AgEAvtrPitch3DControlMode.ePitch3DCompensateForWind
         Assert.assertEqual(AgEAvtrPitch3DControlMode.ePitch3DCompensateForWind, pitch3D.ControlMode)
 
-        def action219():
+        def action255():
             pitch3D.WindForceEffectiveArea = 10
 
-        TryCatchAssertBlock.ExpectedException("must be", action219)
+        TryCatchAssertBlock.ExpectedException("must be", action255)
 
         EarlyBoundTests.AG_Procedures.Remove(proc1)
         EarlyBoundTests.AG_Procedures.Remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4144,10 +4612,10 @@ class EarlyBoundTests(TestBase):
 
         pull.PullGMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        def action220():
+        def action256():
             pull.OverridePullG = 2
 
-        TryCatchAssertBlock.ExpectedException("must be", action220)
+        TryCatchAssertBlock.ExpectedException("must be", action256)
         pull.PullGMode = AgEAvtrPerfModelOverride.eOverride
         pull.OverridePullG = 2
         Assert.assertEqual(2, pull.OverridePullG)
@@ -4326,20 +4794,20 @@ class EarlyBoundTests(TestBase):
 
         relCourse.ClosureMode = AgEAvtrClosureMode.eClosureNotSet
 
-        def action221():
+        def action257():
             relCourse.DownrangeOffset = 0.5
 
-        TryCatchAssertBlock.ExpectedException("must be", action221)
+        TryCatchAssertBlock.ExpectedException("must be", action257)
 
-        def action222():
+        def action258():
             relCourse.HOBSMaxAngle = 89
 
-        TryCatchAssertBlock.ExpectedException("must be", action222)
+        TryCatchAssertBlock.ExpectedException("must be", action258)
 
-        def action223():
+        def action259():
             relCourse.HOBSAngleTol = 4
 
-        TryCatchAssertBlock.ExpectedException("must be", action223)
+        TryCatchAssertBlock.ExpectedException("must be", action259)
 
         relCourse.ClosureMode = AgEAvtrClosureMode.eClosureRequired
         relCourse.DownrangeOffset = 0.5
@@ -4460,20 +4928,20 @@ class EarlyBoundTests(TestBase):
         relSpeedAlt.AltitudeOffset = 2
         Assert.assertEqual(2, relSpeedAlt.AltitudeOffset)
 
-        def action224():
+        def action260():
             relSpeedAlt.ElevationAngle = 5
 
-        TryCatchAssertBlock.ExpectedException("must be", action224)
+        TryCatchAssertBlock.ExpectedException("must be", action260)
 
         relSpeedAlt.RelativeAltitudeMode = AgEAvtrRelativeAltitudeMode.eHoldElevationAngle
         relSpeedAlt.ElevationAngle = 5
         angle = relSpeedAlt.ElevationAngle
         Assert.assertEqual(5, float(angle))
 
-        def action225():
+        def action261():
             relSpeedAlt.AltitudeOffset = 2
 
-        TryCatchAssertBlock.ExpectedException("must be", action225)
+        TryCatchAssertBlock.ExpectedException("must be", action261)
 
         relSpeedAlt.UsePerfModelLimits = True
         Assert.assertTrue(relSpeedAlt.UsePerfModelLimits)
@@ -4542,10 +5010,10 @@ class EarlyBoundTests(TestBase):
 
         targetName = (EarlyBoundTests.AG_Target.ClassName + "/") + EarlyBoundTests.AG_Target.InstanceName
 
-        def action226():
+        def action262():
             formation.TargetName = targetName
 
-        TryCatchAssertBlock.ExpectedException("not a valid", action226)
+        TryCatchAssertBlock.ExpectedException("not a valid", action262)
 
         formation.TargetName = "Aircraft/LeaderAC"
         Assert.assertEqual("Aircraft/LeaderAC", formation.TargetName)
@@ -4563,20 +5031,20 @@ class EarlyBoundTests(TestBase):
 
         formation.UsePerfModelLimits = True
 
-        def action227():
+        def action263():
             formation.AltitudeRateControl = 1000
 
-        TryCatchAssertBlock.ExpectedException("must be", action227)
+        TryCatchAssertBlock.ExpectedException("must be", action263)
 
-        def action228():
+        def action264():
             formation.MinLoadFactorG = -3
 
-        TryCatchAssertBlock.ExpectedException("must be", action228)
+        TryCatchAssertBlock.ExpectedException("must be", action264)
 
-        def action229():
+        def action265():
             formation.MaxLoadFactorG = 3
 
-        TryCatchAssertBlock.ExpectedException("must be", action229)
+        TryCatchAssertBlock.ExpectedException("must be", action265)
 
         formation.UsePerfModelLimits = False
         formation.AltitudeRateControl = 1000
@@ -4598,15 +5066,15 @@ class EarlyBoundTests(TestBase):
 
         formation.AirspeedControlMode = AgEAvtrAccelPerfModelOverride.eAccelPerfModelValue
 
-        def action230():
+        def action266():
             testVal = formation.AccelDecelG
 
-        TryCatchAssertBlock.ExpectedException("must be", action230)
+        TryCatchAssertBlock.ExpectedException("must be", action266)
 
-        def action231():
+        def action267():
             formation.AccelDecelG = 0.1
 
-        TryCatchAssertBlock.ExpectedException("must be", action231)
+        TryCatchAssertBlock.ExpectedException("must be", action267)
         formation.AirspeedControlMode = AgEAvtrAccelPerfModelOverride.eAccelOverride
         formation.AccelDecelG = 0.1
         Assert.assertEqual(0.1, formation.AccelDecelG)
@@ -4648,20 +5116,20 @@ class EarlyBoundTests(TestBase):
         angleProfile = pullProfile.Angle
         Assert.assertAlmostEqual(10, float(angleProfile), delta=tolerance)
 
-        def action232():
+        def action268():
             pull.RollOrientation = AgEAvtrRollUprightInverted.eRollInverted
 
-        TryCatchAssertBlock.ExpectedException("must be", action232)
+        TryCatchAssertBlock.ExpectedException("must be", action268)
         pull.ActiveMode = AgEAvtrRollingPullMode.eRollToOrientationMode
         pull.RollOrientation = AgEAvtrRollUprightInverted.eRollInverted
         Assert.assertEqual(AgEAvtrRollUprightInverted.eRollInverted, pull.RollOrientation)
 
         pull.RollRateMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        def action233():
+        def action269():
             testRate = pull.OverrideRollRate
 
-        TryCatchAssertBlock.ExpectedException("must be", action233)
+        TryCatchAssertBlock.ExpectedException("must be", action269)
         pull.RollRateMode = AgEAvtrPerfModelOverride.eOverride
         pull.OverrideRollRate = 20
         overrideRollRate = pull.OverrideRollRate
@@ -4669,10 +5137,10 @@ class EarlyBoundTests(TestBase):
 
         pull.PullGMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        def action234():
+        def action270():
             pull.OverridePullG = 2
 
-        TryCatchAssertBlock.ExpectedException("must be", action234)
+        TryCatchAssertBlock.ExpectedException("must be", action270)
         pull.PullGMode = AgEAvtrPerfModelOverride.eOverride
         pull.OverridePullG = 2
         Assert.assertEqual(2, pull.OverridePullG)
@@ -4747,25 +5215,25 @@ class EarlyBoundTests(TestBase):
 
         accel.TurnDirection = AgEAvtrSmoothAccelLeftRight.eSmoothAccelLeft
 
-        def action235():
+        def action271():
             accel.PitchAngle = 89
 
-        TryCatchAssertBlock.ExpectedException("must be", action235)
+        TryCatchAssertBlock.ExpectedException("must be", action271)
 
-        def action236():
+        def action272():
             accel.RollAngle = 89
 
-        TryCatchAssertBlock.ExpectedException("must be", action236)
+        TryCatchAssertBlock.ExpectedException("must be", action272)
 
-        def action237():
+        def action273():
             accel.StopOnPitchAngle = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action237)
+        TryCatchAssertBlock.ExpectedException("must be", action273)
 
-        def action238():
+        def action274():
             accel.StopOnRollAngle = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action238)
+        TryCatchAssertBlock.ExpectedException("must be", action274)
 
         accel.ControlPitchAngle = True
         accel.PitchAngle = 89
@@ -4783,15 +5251,15 @@ class EarlyBoundTests(TestBase):
         accel.ControlRollAngle = False
         accel.TurnDirection = AgEAvtrSmoothAccelLeftRight.eSmoothAccelNoRoll
 
-        def action239():
+        def action275():
             accel.RollAngle = 89
 
-        TryCatchAssertBlock.ExpectedException("must be", action239)
+        TryCatchAssertBlock.ExpectedException("must be", action275)
 
-        def action240():
+        def action276():
             accel.ControlRollAngle = False
 
-        TryCatchAssertBlock.ExpectedException("must be", action240)
+        TryCatchAssertBlock.ExpectedException("must be", action276)
         accel.StopOnRollAngle = True
         Assert.assertTrue(accel.StopOnRollAngle)
 
@@ -4832,32 +5300,32 @@ class EarlyBoundTests(TestBase):
 
         turn.TurnMode = AgEAvtrSmoothTurnMode.eSmoothTurnLoadFactor
 
-        def action241():
+        def action277():
             turn.RollAngle = 5
 
-        TryCatchAssertBlock.ExpectedException("must be", action241)
+        TryCatchAssertBlock.ExpectedException("must be", action277)
         turn.LoadFactorMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        def action242():
+        def action278():
             turn.OverrideLoadFactor = 1
 
-        TryCatchAssertBlock.ExpectedException("must be", action242)
+        TryCatchAssertBlock.ExpectedException("must be", action278)
         turn.LoadFactorMode = AgEAvtrPerfModelOverride.eOverride
         turn.OverrideLoadFactor = 1
         Assert.assertEqual(1, turn.OverrideLoadFactor)
 
         turn.TurnMode = AgEAvtrSmoothTurnMode.eSmoothTurnRollAngle
 
-        def action243():
+        def action279():
             turn.LoadFactorMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        TryCatchAssertBlock.ExpectedException("must be", action243)
+        TryCatchAssertBlock.ExpectedException("must be", action279)
         turn.RollRateMode = AgEAvtrPerfModelOverride.ePerfModelValue
 
-        def action244():
+        def action280():
             turn.OverrideRollRate = 1
 
-        TryCatchAssertBlock.ExpectedException("must be", action244)
+        TryCatchAssertBlock.ExpectedException("must be", action280)
         turn.RollRateMode = AgEAvtrPerfModelOverride.eOverride
         turn.OverrideRollRate = 1
         overrideRollRate = turn.OverrideRollRate
@@ -4930,45 +5398,45 @@ class EarlyBoundTests(TestBase):
         stationNav.StopCondition = AgEAvtrStationkeepingStopCondition.eStopConditionNotSet
         Assert.assertEqual(stationNav.StopCondition, AgEAvtrStationkeepingStopCondition.eStopConditionNotSet)
 
-        def action245():
+        def action281():
             testVal = stationNav.StopAfterDuration
 
-        TryCatchAssertBlock.ExpectedException("must be", action245)
+        TryCatchAssertBlock.ExpectedException("must be", action281)
 
-        def action246():
+        def action282():
             testVal = stationNav.StopAfterTime
 
-        TryCatchAssertBlock.ExpectedException("must be", action246)
+        TryCatchAssertBlock.ExpectedException("must be", action282)
 
-        def action247():
+        def action283():
             testVal = stationNav.StopAfterTurnCount
 
-        TryCatchAssertBlock.ExpectedException("must be", action247)
+        TryCatchAssertBlock.ExpectedException("must be", action283)
 
-        def action248():
+        def action284():
             stationNav.StopAfterDuration = 2
 
-        TryCatchAssertBlock.ExpectedException("must be", action248)
+        TryCatchAssertBlock.ExpectedException("must be", action284)
 
-        def action249():
+        def action285():
             stationNav.StopAfterTime = scenario.StopTime
 
-        TryCatchAssertBlock.ExpectedException("must be", action249)
+        TryCatchAssertBlock.ExpectedException("must be", action285)
 
-        def action250():
+        def action286():
             stationNav.StopAfterTurnCount = 5
 
-        TryCatchAssertBlock.ExpectedException("must be", action250)
+        TryCatchAssertBlock.ExpectedException("must be", action286)
 
-        def action251():
+        def action287():
             stationNav.StopCourse = 2
 
-        TryCatchAssertBlock.ExpectedException("must be", action251)
+        TryCatchAssertBlock.ExpectedException("must be", action287)
 
-        def action252():
+        def action288():
             stationNav.UseRelativeCourse = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action252)
+        TryCatchAssertBlock.ExpectedException("must be", action288)
 
         stationNav.StopCondition = AgEAvtrStationkeepingStopCondition.eStopAfterTurnCount
         Assert.assertEqual(stationNav.StopCondition, AgEAvtrStationkeepingStopCondition.eStopAfterTurnCount)
@@ -5247,10 +5715,10 @@ class EarlyBoundTests(TestBase):
         runway.Altitude = 5
         Assert.assertEqual(5, runway.Altitude)
 
-        def action253():
+        def action289():
             runway.AddToCatalog(False)
 
-        TryCatchAssertBlock.ExpectedException("", action253)
+        TryCatchAssertBlock.ExpectedException("", action289)
 
         EarlyBoundTests.AG_Procedures.Remove(proc1)
 
@@ -5410,33 +5878,33 @@ class EarlyBoundTests(TestBase):
             AgEAvtrMinimizeSiteProcTimeDiff.eMinimizeTimeDifferenceAlways, objectWaypointSite.MinimizeSiteProcTimeDiff
         )
 
-        def action254():
+        def action290():
             objectWaypointSite.WaypointTime = 5
 
-        TryCatchAssertBlock.ExpectedException("must be", action254)
+        TryCatchAssertBlock.ExpectedException("must be", action290)
 
         objectWaypointSite.OffsetMode = AgEAvtrSTKObjectWaypointOffsetMode.eOffsetNone
         Assert.assertEqual(AgEAvtrSTKObjectWaypointOffsetMode.eOffsetNone, objectWaypointSite.OffsetMode)
 
-        def action255():
+        def action291():
             objectWaypointSite.Bearing = 1
 
-        TryCatchAssertBlock.ExpectedException("must be", action255)
+        TryCatchAssertBlock.ExpectedException("must be", action291)
 
-        def action256():
+        def action292():
             objectWaypointSite.UseMagneticBearing = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action256)
+        TryCatchAssertBlock.ExpectedException("must be", action292)
 
-        def action257():
+        def action293():
             objectWaypointSite.Range = 10
 
-        TryCatchAssertBlock.ExpectedException("must be", action257)
+        TryCatchAssertBlock.ExpectedException("must be", action293)
 
-        def action258():
+        def action294():
             objectWaypointSite.VGTPoint = "SubPoint(Detic)"
 
-        TryCatchAssertBlock.ExpectedException("must be", action258)
+        TryCatchAssertBlock.ExpectedException("must be", action294)
 
         objectWaypointSite.OffsetMode = AgEAvtrSTKObjectWaypointOffsetMode.eOffsetBearingRange
         Assert.assertEqual(AgEAvtrSTKObjectWaypointOffsetMode.eOffsetBearingRange, objectWaypointSite.OffsetMode)
@@ -5456,10 +5924,10 @@ class EarlyBoundTests(TestBase):
         objectWaypointSite.Range = 10
         Assert.assertEqual(10, objectWaypointSite.Range)
 
-        def action259():
+        def action295():
             objectWaypointSite.UseMagneticBearing = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action259)
+        TryCatchAssertBlock.ExpectedException("must be", action295)
 
         objectWaypointSite.OffsetMode = AgEAvtrSTKObjectWaypointOffsetMode.eOffsetVGTPoint
         objectWaypointSite.VGTPoint = "SubPoint(Detic)"
@@ -5560,10 +6028,10 @@ class EarlyBoundTests(TestBase):
 
         nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.flightprocs"))
 
-        def action260():
+        def action296():
             superProc.LoadProceduresFromFile(nonexistingfilepath)
 
-        TryCatchAssertBlock.ExpectedException("", action260)
+        TryCatchAssertBlock.ExpectedException("", action296)
 
         filepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "basicManeuver.flightprocs"))
         superProc.LoadProceduresFromFile(filepath)
@@ -5622,20 +6090,20 @@ class EarlyBoundTests(TestBase):
         acAsCatalogItem = basicAirliner.GetAsCatalogItem()
         Assert.assertEqual("Basic Airliner", acAsCatalogItem.Name)
 
-        def action261():
+        def action297():
             acAsCatalogItem.Name = ""
 
-        TryCatchAssertBlock.ExpectedException("read-only", action261)
+        TryCatchAssertBlock.ExpectedException("read-only", action297)
 
         Assert.assertEqual("Basic Airliner", acAsCatalogItem.Name)
 
         isReadOnly = acAsCatalogItem.IsReadOnly
         Assert.assertTrue(isReadOnly)
 
-        def action262():
+        def action298():
             acAsCatalogItem.Remove()
 
-        TryCatchAssertBlock.ExpectedException("read-only", action262)
+        TryCatchAssertBlock.ExpectedException("read-only", action298)
 
     # endregion
 
@@ -5648,6 +6116,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(containsTestAircraft)
 
         acTestAsCatalogItem = EarlyBoundTests.AG_AvtrAircraft.GetAsCatalogItem()
+        containsTest = acTestAsCatalogItem.ContainsChildItem("Cruise")
+        Assert.assertTrue(containsTest)
+        containsTest = acTestAsCatalogItem.ContainsChildItem("Airplane")
+        Assert.assertFalse(containsTest)
 
         Assert.assertEqual("NUNIT CSharp Test", acTestAsCatalogItem.Name)
         acTestAsCatalogItem.Name = "NUNIT CSharp Test NameChange"
@@ -5713,10 +6185,10 @@ class EarlyBoundTests(TestBase):
         tempAC.Takeoff.GetAdvTakeoffByName("CreateAllPerfModelsTest")
         tempAC.Landing.GetAdvLandingByName("CreateAllPerfModelsTest")
 
-        def action263():
+        def action299():
             advFWT.CreateAllPerfModels("CreateAllPerfModelsTest", False, False)
 
-        TryCatchAssertBlock.ExpectedException("already exist", action263)
+        TryCatchAssertBlock.ExpectedException("already exist", action299)
 
         tempAC.GetAsCatalogItem().Remove()
 
@@ -5730,20 +6202,20 @@ class EarlyBoundTests(TestBase):
 
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eSubsonicAero
 
-        def action264():
+        def action300():
             aeroTest = advFWT.AeroModeAsExternal
 
-        TryCatchAssertBlock.ExpectedException("must be", action264)
+        TryCatchAssertBlock.ExpectedException("must be", action300)
 
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eExternalAeroFile
         aero = advFWT.AeroModeAsExternal
 
         nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.aero"))
 
-        def action265():
+        def action301():
             aero.SetFilepath(nonexistingfilepath)
 
-        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action265)
+        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action301)
 
         filepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "advAero.aero"))
         returnMsg = aero.SetFilepath(filepath)
@@ -5762,10 +6234,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eSubsonicAero
 
-        def action266():
+        def action302():
             aeroTest = advFWT.AeroModeAsSubSuperHypersonic
 
-        TryCatchAssertBlock.ExpectedException("must be", action266)
+        TryCatchAssertBlock.ExpectedException("must be", action302)
 
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eSubSuperHyperAero
         Assert.assertEqual(AgEAvtrAdvFixedWingAeroStrategy.eSubSuperHyperAero, advFWT.AeroStrategy)
@@ -5800,10 +6272,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eSupersonicAero
 
-        def action267():
+        def action303():
             aeroTest = advFWT.AeroModeAsSubsonic
 
-        TryCatchAssertBlock.ExpectedException("must be", action267)
+        TryCatchAssertBlock.ExpectedException("must be", action303)
 
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eSubsonicAero
         Assert.assertEqual(AgEAvtrAdvFixedWingAeroStrategy.eSubsonicAero, advFWT.AeroStrategy)
@@ -5811,10 +6283,10 @@ class EarlyBoundTests(TestBase):
 
         aero.GeometryType = AgEAvtrAdvFixedWingGeometry.eVariableGeometry
 
-        def action268():
+        def action304():
             basicGeoTest = aero.GeometryModeAsBasic
 
-        TryCatchAssertBlock.ExpectedException("must be", action268)
+        TryCatchAssertBlock.ExpectedException("must be", action304)
         aero.GeometryType = AgEAvtrAdvFixedWingGeometry.eBasicGeometry
         basicGeo = aero.GeometryModeAsBasic
 
@@ -5824,10 +6296,10 @@ class EarlyBoundTests(TestBase):
         sweep = basicGeo.WingSweep
         Assert.assertEqual(22, float(sweep))
 
-        def action269():
+        def action305():
             variableGeoTest = aero.GeometryModeAsVariable
 
-        TryCatchAssertBlock.ExpectedException("must be", action269)
+        TryCatchAssertBlock.ExpectedException("must be", action305)
         aero.GeometryType = AgEAvtrAdvFixedWingGeometry.eVariableGeometry
         variableGeo = aero.GeometryModeAsVariable
 
@@ -5865,10 +6337,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eSubsonicAero
 
-        def action270():
+        def action306():
             aeroTest = advFWT.AeroModeAsSupersonic
 
-        TryCatchAssertBlock.ExpectedException("must be", action270)
+        TryCatchAssertBlock.ExpectedException("must be", action306)
 
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eSupersonicAero
         Assert.assertEqual(AgEAvtrAdvFixedWingAeroStrategy.eSupersonicAero, advFWT.AeroStrategy)
@@ -5876,10 +6348,10 @@ class EarlyBoundTests(TestBase):
 
         aero.GeometryType = AgEAvtrAdvFixedWingGeometry.eVariableGeometry
 
-        def action271():
+        def action307():
             basicGeoTest = aero.GeometryModeAsBasic
 
-        TryCatchAssertBlock.ExpectedException("must be", action271)
+        TryCatchAssertBlock.ExpectedException("must be", action307)
         aero.GeometryType = AgEAvtrAdvFixedWingGeometry.eBasicGeometry
         basicGeo = aero.GeometryModeAsBasic
 
@@ -5889,10 +6361,10 @@ class EarlyBoundTests(TestBase):
         sweep = basicGeo.WingSweep
         Assert.assertEqual(22, float(sweep))
 
-        def action272():
+        def action308():
             variableGeoTest = aero.GeometryModeAsVariable
 
-        TryCatchAssertBlock.ExpectedException("must be", action272)
+        TryCatchAssertBlock.ExpectedException("must be", action308)
         aero.GeometryType = AgEAvtrAdvFixedWingGeometry.eVariableGeometry
         variableGeo = aero.GeometryModeAsVariable
 
@@ -5938,10 +6410,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action273():
+        def action309():
             propTest = advFWT.PowerplantModeAsElectric
 
-        TryCatchAssertBlock.ExpectedException("must be", action273)
+        TryCatchAssertBlock.ExpectedException("must be", action309)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eElectricPowerplant
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eElectricPowerplant, advFWT.PowerplantStrategy)
@@ -5966,10 +6438,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eElectricPowerplant
 
-        def action274():
+        def action310():
             propTest = advFWT.PowerplantModeAsExternal
 
-        TryCatchAssertBlock.ExpectedException("must be", action274)
+        TryCatchAssertBlock.ExpectedException("must be", action310)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile, advFWT.PowerplantStrategy)
@@ -5977,10 +6449,10 @@ class EarlyBoundTests(TestBase):
 
         nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.prop"))
 
-        def action275():
+        def action311():
             prop.SetFilepath(nonexistingfilepath)
 
-        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action275)
+        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action311)
 
         filepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "advProp.prop"))
         returnMsg = prop.SetFilepath(filepath)
@@ -6001,10 +6473,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action276():
+        def action312():
             propTest = advFWT.PowerplantModeAsPiston
 
-        TryCatchAssertBlock.ExpectedException("must be", action276)
+        TryCatchAssertBlock.ExpectedException("must be", action312)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.ePistonPowerplant
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.ePistonPowerplant, advFWT.PowerplantStrategy)
@@ -6039,10 +6511,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action277():
+        def action313():
             propTest = advFWT.PowerplantModeAsTurboprop
 
-        TryCatchAssertBlock.ExpectedException("must be", action277)
+        TryCatchAssertBlock.ExpectedException("must be", action313)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurboprop
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eTurboprop, advFWT.PowerplantStrategy)
@@ -6070,10 +6542,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action278():
+        def action314():
             propTest = advFWT.PowerplantModeAsEmpiricalJetEngine
 
-        TryCatchAssertBlock.ExpectedException("must be", action278)
+        TryCatchAssertBlock.ExpectedException("must be", action314)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanHighBypass
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanHighBypass, advFWT.PowerplantStrategy)
@@ -6093,10 +6565,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action279():
+        def action315():
             propTest = advFWT.PowerplantModeAsEmpiricalJetEngine
 
-        TryCatchAssertBlock.ExpectedException("must be", action279)
+        TryCatchAssertBlock.ExpectedException("must be", action315)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanLowBypass
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanLowBypass, advFWT.PowerplantStrategy)
@@ -6116,10 +6588,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action280():
+        def action316():
             propTest = advFWT.PowerplantModeAsEmpiricalJetEngine
 
-        TryCatchAssertBlock.ExpectedException("must be", action280)
+        TryCatchAssertBlock.ExpectedException("must be", action316)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanLowBypassAfterburning
         Assert.assertEqual(
@@ -6141,10 +6613,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action281():
+        def action317():
             propTest = advFWT.PowerplantModeAsEmpiricalJetEngine
 
-        TryCatchAssertBlock.ExpectedException("must be", action281)
+        TryCatchAssertBlock.ExpectedException("must be", action317)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojet
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojet, advFWT.PowerplantStrategy)
@@ -6164,10 +6636,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action282():
+        def action318():
             propTest = advFWT.PowerplantModeAsEmpiricalJetEngine
 
-        TryCatchAssertBlock.ExpectedException("must be", action282)
+        TryCatchAssertBlock.ExpectedException("must be", action318)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojetAfterburning
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojetAfterburning, advFWT.PowerplantStrategy)
@@ -6187,10 +6659,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action283():
+        def action319():
             propTest = advFWT.PowerplantModeAsBasicTurbojet
 
-        TryCatchAssertBlock.ExpectedException("must be", action283)
+        TryCatchAssertBlock.ExpectedException("must be", action319)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojetBasicAB
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojetBasicAB, advFWT.PowerplantStrategy)
@@ -6208,10 +6680,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action284():
+        def action320():
             propTest = advFWT.PowerplantModeAsBasicTurbofan
 
-        TryCatchAssertBlock.ExpectedException("must be", action284)
+        TryCatchAssertBlock.ExpectedException("must be", action320)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanBasicAB
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanBasicAB, advFWT.PowerplantStrategy)
@@ -6229,10 +6701,10 @@ class EarlyBoundTests(TestBase):
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile
 
-        def action285():
+        def action321():
             propTest = advFWT.PowerplantModeAsSubSuperHypersonic
 
-        TryCatchAssertBlock.ExpectedException("must be", action285)
+        TryCatchAssertBlock.ExpectedException("must be", action321)
 
         advFWT.PowerplantStrategy = AgEAvtrAdvFixedWingPowerplantStrategy.eSubSuperHyperPowerplant
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eSubSuperHyperPowerplant, advFWT.PowerplantStrategy)
@@ -6254,24 +6726,24 @@ class EarlyBoundTests(TestBase):
         prop.TurbineMode = AgEAvtrTurbineMode.eTurbineModeDisabled
         Assert.assertEqual(AgEAvtrTurbineMode.eTurbineModeDisabled, prop.TurbineMode)
 
-        def action286():
+        def action322():
             fanTest = prop.TurbineModeAsTurbofan
 
-        TryCatchAssertBlock.ExpectedException("must be", action286)
+        TryCatchAssertBlock.ExpectedException("must be", action322)
         prop.RamjetMode = AgEAvtrRamjetMode.eRamjetModeDisabled
         Assert.assertEqual(AgEAvtrRamjetMode.eRamjetModeDisabled, prop.RamjetMode)
 
-        def action287():
+        def action323():
             ramTest = prop.RamjetModeAsBasic
 
-        TryCatchAssertBlock.ExpectedException("must be", action287)
+        TryCatchAssertBlock.ExpectedException("must be", action323)
         prop.ScramjetMode = AgEAvtrScramjetMode.eScramjetModeDisabled
         Assert.assertEqual(AgEAvtrScramjetMode.eScramjetModeDisabled, prop.ScramjetMode)
 
-        def action288():
+        def action324():
             scramTest = prop.ScramjetModeAsBasic
 
-        TryCatchAssertBlock.ExpectedException("must be", action288)
+        TryCatchAssertBlock.ExpectedException("must be", action324)
 
         # /////////////////// Now test the turbojet turbine ////////////
         prop.TurbineMode = AgEAvtrTurbineMode.eTurbineModeTurbojetBasicAB
@@ -6319,15 +6791,15 @@ class EarlyBoundTests(TestBase):
         ramjet.FuelType = AgEAvtrJetFuelType.eHydrogen
         Assert.assertEqual(AgEAvtrJetFuelType.eHydrogen, ramjet.FuelType)
 
-        def action289():
+        def action325():
             afprop = ramjet.FuelModeAsAFPROP
 
-        TryCatchAssertBlock.ExpectedException("must be", action289)
+        TryCatchAssertBlock.ExpectedException("must be", action325)
 
-        def action290():
+        def action326():
             cea = ramjet.FuelModeAsCEA
 
-        TryCatchAssertBlock.ExpectedException("must be", action290)
+        TryCatchAssertBlock.ExpectedException("must be", action326)
 
         self.TestPropulsionEfficienciesRamScram(ramjet.EfficienciesAndLosses)
 
@@ -6359,15 +6831,15 @@ class EarlyBoundTests(TestBase):
         scramjet.FuelType = AgEAvtrJetFuelType.eHydrogen
         Assert.assertEqual(AgEAvtrJetFuelType.eHydrogen, scramjet.FuelType)
 
-        def action291():
+        def action327():
             afprop = scramjet.FuelModeAsAFPROP
 
-        TryCatchAssertBlock.ExpectedException("must be", action291)
+        TryCatchAssertBlock.ExpectedException("must be", action327)
 
-        def action292():
+        def action328():
             cea = scramjet.FuelModeAsCEA
 
-        TryCatchAssertBlock.ExpectedException("must be", action292)
+        TryCatchAssertBlock.ExpectedException("must be", action328)
 
         self.TestPropulsionEfficienciesRamScram(scramjet.EfficienciesAndLosses)
 
@@ -6383,24 +6855,24 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual("Acceleration", accAsCI.Name)
 
-        def action293():
+        def action329():
             accAsCI.Name = ""
 
-        TryCatchAssertBlock.ExpectedException("read-only", action293)
+        TryCatchAssertBlock.ExpectedException("read-only", action329)
         Assert.assertEqual("Acceleration", accAsCI.Name)
 
         isReadOnly = accAsCI.IsReadOnly
         Assert.assertTrue(isReadOnly)
 
-        def action294():
+        def action330():
             accAsCI.Remove()
 
-        TryCatchAssertBlock.ExpectedException("read-only", action294)
+        TryCatchAssertBlock.ExpectedException("read-only", action330)
 
-        def action295():
+        def action331():
             accAsCI.Duplicate()
 
-        TryCatchAssertBlock.ExpectedException("", action295)
+        TryCatchAssertBlock.ExpectedException("", action331)
 
     # endregion
 
@@ -6413,20 +6885,20 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual("Built-In Model", accAsCatalogItem.Name)
 
-        def action296():
+        def action332():
             accAsCatalogItem.Name = ""
 
-        TryCatchAssertBlock.DoAssert2(action296)
+        TryCatchAssertBlock.DoAssert2(action332)
 
         Assert.assertEqual("Built-In Model", accAsCatalogItem.Name)
 
         isReadOnly = accAsCatalogItem.IsReadOnly
         Assert.assertFalse(isReadOnly)
 
-        def action297():
+        def action333():
             accAsCatalogItem.Remove()
 
-        TryCatchAssertBlock.DoAssert2(action297)
+        TryCatchAssertBlock.DoAssert2(action333)
 
     # endregion
 
@@ -6439,30 +6911,30 @@ class EarlyBoundTests(TestBase):
         levelTurns = basicAcc.LevelTurns
         levelTurns.ManeuverMode = AgEAvtrAccelManeuverMode.eAccelManeuverModeNormal
 
-        def action298():
+        def action334():
             testVal = levelTurns.ManeuverModeHelper
 
-        TryCatchAssertBlock.ExpectedException("must be set", action298)
+        TryCatchAssertBlock.ExpectedException("must be set", action334)
         levelTurns.ManeuverMode = AgEAvtrAccelManeuverMode.eAccelManeuverModeDensityScale
 
-        def action299():
+        def action335():
             testVal = levelTurns.ManeuverModeHelper
 
-        TryCatchAssertBlock.ExpectedException("must be set", action299)
+        TryCatchAssertBlock.ExpectedException("must be set", action335)
 
         climbDescent = basicAcc.ClimbAndDescentTransitions
         climbDescent.ManeuverMode = AgEAvtrAccelManeuverMode.eAccelManeuverModeNormal
 
-        def action300():
+        def action336():
             testVal = climbDescent.ManeuverModeHelper
 
-        TryCatchAssertBlock.ExpectedException("must be set", action300)
+        TryCatchAssertBlock.ExpectedException("must be set", action336)
         climbDescent.ManeuverMode = AgEAvtrAccelManeuverMode.eAccelManeuverModeDensityScale
 
-        def action301():
+        def action337():
             testVal = climbDescent.ManeuverModeHelper
 
-        TryCatchAssertBlock.ExpectedException("must be set", action301)
+        TryCatchAssertBlock.ExpectedException("must be set", action337)
 
     # endregion
 
@@ -6485,15 +6957,15 @@ class EarlyBoundTests(TestBase):
 
         aero.AeroStrategy = AgEAvtrAircraftAeroStrategy.eAircraftAeroAdvancedMissile
 
-        def action302():
+        def action338():
             aero.LiftFactor = 1.2
 
-        TryCatchAssertBlock.ExpectedException("", action302)
+        TryCatchAssertBlock.ExpectedException("", action338)
 
-        def action303():
+        def action339():
             aero.DragFactor = 1.3
 
-        TryCatchAssertBlock.ExpectedException("", action303)
+        TryCatchAssertBlock.ExpectedException("", action339)
 
         newAC.GetAsCatalogItem().Remove()
 
@@ -6594,25 +7066,25 @@ class EarlyBoundTests(TestBase):
         Assert.assertIs(None, externalAero.ForwardFlightFilepath)
         Assert.assertIs(None, externalAero.TakeoffLandingFilepath)
 
-        def action304():
+        def action340():
             externalAero.SetForwardFlightFilepath("")
 
-        TryCatchAssertBlock.ExpectedException("", action304)
+        TryCatchAssertBlock.ExpectedException("", action340)
 
-        def action305():
+        def action341():
             externalAero.SetTakeoffLandingFilepath("")
 
-        TryCatchAssertBlock.ExpectedException("", action305)
+        TryCatchAssertBlock.ExpectedException("", action341)
 
-        def action306():
+        def action342():
             externalAero.ReloadForwardFlightFile()
 
-        TryCatchAssertBlock.ExpectedException("", action306)
+        TryCatchAssertBlock.ExpectedException("", action342)
 
-        def action307():
+        def action343():
             externalAero.ReloadTakeoffLandingFile()
 
-        TryCatchAssertBlock.ExpectedException("", action307)
+        TryCatchAssertBlock.ExpectedException("", action343)
         Assert.assertEqual(False, externalAero.IsForwardFlightValid)
         Assert.assertEqual(False, externalAero.IsTakeoffLandingValid)
 
@@ -6625,30 +7097,30 @@ class EarlyBoundTests(TestBase):
 
         nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.aero"))
 
-        def action308():
+        def action344():
             externalAero.SetForwardFlightFilepath(nonexistingfilepath)
 
-        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action308)
+        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action344)
 
         aeroFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "simpleAero.aero"))
         returnMsg = externalAero.SetForwardFlightFilepath(aeroFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalAero.CanSetForwardFlightRefArea)
 
-        def action309():
+        def action345():
             externalAero.ForwardFlightRefArea = 0.05
 
-        TryCatchAssertBlock.ExpectedException("", action309)
+        TryCatchAssertBlock.ExpectedException("", action345)
         Assert.assertTrue(externalAero.IsForwardFlightValid)
 
         returnMsg2 = externalAero.SetTakeoffLandingFilepath(aeroFilepath)
         Assert.assertTrue(("processed" in returnMsg2))
         Assert.assertEqual(False, externalAero.CanSetTakeoffLandingRefArea)
 
-        def action310():
+        def action346():
             externalAero.TakeoffLandingRefArea = 0.07
 
-        TryCatchAssertBlock.ExpectedException("", action310)
+        TryCatchAssertBlock.ExpectedException("", action346)
         Assert.assertTrue(externalAero.IsTakeoffLandingValid)
 
         newAC.GetAsCatalogItem().Remove()
@@ -6681,15 +7153,15 @@ class EarlyBoundTests(TestBase):
         prop.PropStrategy = AgEAvtrAircraftPropStrategy.eAircraftPropSimple
         Assert.assertEqual(AgEAvtrAircraftPropStrategy.eAircraftPropSimple, prop.PropStrategy)
 
-        def action311():
+        def action347():
             prop.LiftFactor = 1.2
 
-        TryCatchAssertBlock.ExpectedException("", action311)
+        TryCatchAssertBlock.ExpectedException("", action347)
 
-        def action312():
+        def action348():
             prop.DragFactor = 1.3
 
-        TryCatchAssertBlock.ExpectedException("", action312)
+        TryCatchAssertBlock.ExpectedException("", action348)
 
         prop.PropStrategy = AgEAvtrAircraftPropStrategy.eAircraftPropBasicFixedWing
         Assert.assertEqual(AgEAvtrAircraftPropStrategy.eAircraftPropBasicFixedWing, prop.PropStrategy)
@@ -6742,15 +7214,15 @@ class EarlyBoundTests(TestBase):
         externalProp = prop.ModeAsExternal
         Assert.assertIs(None, externalProp.PropFilepath)
 
-        def action313():
+        def action349():
             externalProp.SetPropFilepath("")
 
-        TryCatchAssertBlock.ExpectedException("", action313)
+        TryCatchAssertBlock.ExpectedException("", action349)
 
-        def action314():
+        def action350():
             externalProp.ReloadPropFile()
 
-        TryCatchAssertBlock.ExpectedException("", action314)
+        TryCatchAssertBlock.ExpectedException("", action350)
         Assert.assertEqual(False, externalProp.IsValid)
 
         Assert.assertTrue(externalProp.CanSetAccelDecel)
@@ -6761,20 +7233,20 @@ class EarlyBoundTests(TestBase):
 
         nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.prop"))
 
-        def action315():
+        def action351():
             externalProp.SetPropFilepath(nonexistingfilepath)
 
-        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action315)
+        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action351)
 
         propFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "simpleProp.prop"))
         returnMsg = externalProp.SetPropFilepath(propFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalProp.CanSetAccelDecel)
 
-        def action316():
+        def action352():
             externalProp.MaxThrustAccel = 0.6
 
-        TryCatchAssertBlock.ExpectedException("", action316)
+        TryCatchAssertBlock.ExpectedException("", action352)
         Assert.assertTrue(externalProp.IsValid)
 
         newAC.GetAsCatalogItem().Remove()
@@ -6797,20 +7269,20 @@ class EarlyBoundTests(TestBase):
         bfwProp.PropulsionMode = AgEAvtrBasicFixedWingPropMode.eSpecifyThrust
         Assert.assertEqual(AgEAvtrBasicFixedWingPropMode.eSpecifyThrust, bfwProp.PropulsionMode)
 
-        def action317():
+        def action353():
             bfwProp.PropellerCount = 1
 
-        TryCatchAssertBlock.ExpectedException("", action317)
+        TryCatchAssertBlock.ExpectedException("", action353)
 
-        def action318():
+        def action354():
             bfwProp.PropellerDiameter = 1
 
-        TryCatchAssertBlock.ExpectedException("", action318)
+        TryCatchAssertBlock.ExpectedException("", action354)
 
-        def action319():
+        def action355():
             bfwProp.PropellerRPM = 1
 
-        TryCatchAssertBlock.ExpectedException("", action319)
+        TryCatchAssertBlock.ExpectedException("", action355)
 
         bfwProp.MinPowerThrust = 1
         Assert.assertEqual(1, bfwProp.MinPowerThrust)
@@ -6874,15 +7346,15 @@ class EarlyBoundTests(TestBase):
 
         rocketProp.UseBoostSustainMode = False
 
-        def action320():
+        def action356():
             rocketProp.BoostFuelFraction = 60
 
-        TryCatchAssertBlock.ExpectedException("must be", action320)
+        TryCatchAssertBlock.ExpectedException("must be", action356)
 
-        def action321():
+        def action357():
             rocketProp.BoostChamberPressure = 21000000.0
 
-        TryCatchAssertBlock.ExpectedException("must be", action321)
+        TryCatchAssertBlock.ExpectedException("must be", action357)
         rocketProp.UseBoostSustainMode = True
         Assert.assertTrue(rocketProp.UseBoostSustainMode)
         rocketProp.BoostFuelFraction = 60
@@ -7005,10 +7477,10 @@ class EarlyBoundTests(TestBase):
         accMode = advAcc.AccelerationMode
         accMode.AccelMode = AgEAvtrAccelerationAdvAccelMode.eAccelModeMaxAccel
 
-        def action322():
+        def action358():
             accMode.AccelG = 1
 
-        TryCatchAssertBlock.ExpectedException("must be set", action322)
+        TryCatchAssertBlock.ExpectedException("must be set", action358)
 
         advAcc.GetAsCatalogItem().Remove()
         accModelNames = accAsCatalogItem.ChildNames
@@ -7042,25 +7514,25 @@ class EarlyBoundTests(TestBase):
         basicClimb.UseAeroPropFuel = True
         Assert.assertTrue(basicClimb.UseAeroPropFuel)
 
-        def action323():
+        def action359():
             testVal = basicClimb.ScaleFuelFlowByNonStdDensity
 
-        TryCatchAssertBlock.ExpectedException("must be ", action323)
+        TryCatchAssertBlock.ExpectedException("must be ", action359)
 
-        def action324():
+        def action360():
             basicClimb.ScaleFuelFlowByNonStdDensity = True
 
-        TryCatchAssertBlock.ExpectedException("must be ", action324)
+        TryCatchAssertBlock.ExpectedException("must be ", action360)
 
-        def action325():
+        def action361():
             testVal = basicClimb.FuelFlow
 
-        TryCatchAssertBlock.ExpectedException("must be ", action325)
+        TryCatchAssertBlock.ExpectedException("must be ", action361)
 
-        def action326():
+        def action362():
             basicClimb.FuelFlow = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action326)
+        TryCatchAssertBlock.ExpectedException("must be ", action362)
 
         basicClimb.UseAeroPropFuel = False
         basicClimb.FuelFlow = 9000
@@ -7068,15 +7540,15 @@ class EarlyBoundTests(TestBase):
 
         basicClimb.EnableRelativeAirspeedTolerance = False
 
-        def action327():
+        def action363():
             testVal = basicClimb.RelativeAirspeedTolerance
 
-        TryCatchAssertBlock.ExpectedException("must be ", action327)
+        TryCatchAssertBlock.ExpectedException("must be ", action363)
 
-        def action328():
+        def action364():
             basicClimb.RelativeAirspeedTolerance = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action328)
+        TryCatchAssertBlock.ExpectedException("must be ", action364)
 
         basicClimb.EnableRelativeAirspeedTolerance = True
         basicClimb.RelativeAirspeedTolerance = 0.06
@@ -7099,10 +7571,10 @@ class EarlyBoundTests(TestBase):
         advClimb.ClimbSpeedType = AgEAvtrClimbSpeedType.eClimbSpeedMinFuel
         Assert.assertEqual(AgEAvtrClimbSpeedType.eClimbSpeedMinFuel, advClimb.ClimbSpeedType)
 
-        def action329():
+        def action365():
             advClimb.SetClimbOverrideAirspeed(AgEAvtrAirspeedType.eTAS, 251)
 
-        TryCatchAssertBlock.ExpectedException("must be", action329)
+        TryCatchAssertBlock.ExpectedException("must be", action365)
 
         advClimb.ClimbSpeedType = AgEAvtrClimbSpeedType.eClimbSpeedOverride
         advClimb.SetClimbOverrideAirspeed(AgEAvtrAirspeedType.eTAS, 251)
@@ -7113,24 +7585,24 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AgEAvtrAirspeedType.eMach, advClimb.ClimbOverrideAirspeedType)
         Assert.assertEqual(0.4, advClimb.ClimbOverrideAirspeed)
 
-        def action330():
+        def action366():
             advClimb.UseAfterburner = True
 
-        TryCatchAssertBlock.ExpectedException("not enabled", action330)
+        TryCatchAssertBlock.ExpectedException("not enabled", action366)
         Assert.assertEqual(False, advClimb.UseAfterburner)
 
         advClimb.UseAirspeedLimit = False
         Assert.assertEqual(False, advClimb.UseAirspeedLimit)
 
-        def action331():
+        def action367():
             advClimb.AltitudeLimit = 9000
 
-        TryCatchAssertBlock.ExpectedException("must be", action331)
+        TryCatchAssertBlock.ExpectedException("must be", action367)
 
-        def action332():
+        def action368():
             advClimb.SetAirspeedLimit(AgEAvtrAirspeedType.eTAS, 251)
 
-        TryCatchAssertBlock.ExpectedException("must be", action332)
+        TryCatchAssertBlock.ExpectedException("must be", action368)
 
         advClimb.UseAirspeedLimit = True
         advClimb.AltitudeLimit = 9000
@@ -7218,35 +7690,35 @@ class EarlyBoundTests(TestBase):
         basicCruise.UseAeroPropFuel = True
         Assert.assertTrue(basicCruise.UseAeroPropFuel)
 
-        def action333():
+        def action369():
             basicCruise.ScaleFuelFlowByNonStdDensity = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action333)
+        TryCatchAssertBlock.ExpectedException("must be", action369)
 
-        def action334():
+        def action370():
             basicCruise.MinAirspeedFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action334)
+        TryCatchAssertBlock.ExpectedException("must be", action370)
 
-        def action335():
+        def action371():
             basicCruise.MaxEnduranceFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action335)
+        TryCatchAssertBlock.ExpectedException("must be", action371)
 
-        def action336():
+        def action372():
             basicCruise.MaxAirspeedFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action336)
+        TryCatchAssertBlock.ExpectedException("must be", action372)
 
-        def action337():
+        def action373():
             basicCruise.MaxRangeFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action337)
+        TryCatchAssertBlock.ExpectedException("must be", action373)
 
-        def action338():
+        def action374():
             basicCruise.MaxPerfAirspeedFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action338)
+        TryCatchAssertBlock.ExpectedException("must be", action374)
 
         newAC.GetAsCatalogItem().Remove()
 
@@ -7270,15 +7742,15 @@ class EarlyBoundTests(TestBase):
         advCruise.UseAirspeedLimit = False
         Assert.assertEqual(False, advCruise.UseAirspeedLimit)
 
-        def action339():
+        def action375():
             advCruise.AltitudeLimit = 9000
 
-        TryCatchAssertBlock.ExpectedException("must be", action339)
+        TryCatchAssertBlock.ExpectedException("must be", action375)
 
-        def action340():
+        def action376():
             advCruise.SetAirspeedLimit(AgEAvtrAirspeedType.eTAS, 251)
 
-        TryCatchAssertBlock.ExpectedException("must be", action340)
+        TryCatchAssertBlock.ExpectedException("must be", action376)
 
         advCruise.UseAirspeedLimit = True
         advCruise.AltitudeLimit = 9000
@@ -7322,25 +7794,25 @@ class EarlyBoundTests(TestBase):
         basicDescent.UseAeroPropFuel = True
         Assert.assertTrue(basicDescent.UseAeroPropFuel)
 
-        def action341():
+        def action377():
             testVal = basicDescent.ScaleFuelFlowByNonStdDensity
 
-        TryCatchAssertBlock.ExpectedException("must be ", action341)
+        TryCatchAssertBlock.ExpectedException("must be ", action377)
 
-        def action342():
+        def action378():
             basicDescent.ScaleFuelFlowByNonStdDensity = True
 
-        TryCatchAssertBlock.ExpectedException("must be ", action342)
+        TryCatchAssertBlock.ExpectedException("must be ", action378)
 
-        def action343():
+        def action379():
             testVal = basicDescent.FuelFlow
 
-        TryCatchAssertBlock.ExpectedException("must be ", action343)
+        TryCatchAssertBlock.ExpectedException("must be ", action379)
 
-        def action344():
+        def action380():
             basicDescent.FuelFlow = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action344)
+        TryCatchAssertBlock.ExpectedException("must be ", action380)
 
         basicDescent.UseAeroPropFuel = False
         basicDescent.FuelFlow = 9000
@@ -7348,15 +7820,15 @@ class EarlyBoundTests(TestBase):
 
         basicDescent.EnableRelativeAirspeedTolerance = False
 
-        def action345():
+        def action381():
             testVal = basicDescent.RelativeAirspeedTolerance
 
-        TryCatchAssertBlock.ExpectedException("must be ", action345)
+        TryCatchAssertBlock.ExpectedException("must be ", action381)
 
-        def action346():
+        def action382():
             basicDescent.RelativeAirspeedTolerance = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action346)
+        TryCatchAssertBlock.ExpectedException("must be ", action382)
 
         basicDescent.EnableRelativeAirspeedTolerance = True
         basicDescent.RelativeAirspeedTolerance = 0.06
@@ -7379,15 +7851,15 @@ class EarlyBoundTests(TestBase):
         advDescent.DescentSpeedType = AgEAvtrDescentSpeedType.eDescentMaxRangeCruise
         Assert.assertEqual(AgEAvtrDescentSpeedType.eDescentMaxRangeCruise, advDescent.DescentSpeedType)
 
-        def action347():
+        def action383():
             advDescent.DescentStallSpeedRatio = 1.2
 
-        TryCatchAssertBlock.ExpectedException("must be", action347)
+        TryCatchAssertBlock.ExpectedException("must be", action383)
 
-        def action348():
+        def action384():
             advDescent.SetDescentOverrideAirspeed(AgEAvtrAirspeedType.eTAS, 251)
 
-        TryCatchAssertBlock.ExpectedException("must be", action348)
+        TryCatchAssertBlock.ExpectedException("must be", action384)
 
         advDescent.DescentSpeedType = AgEAvtrDescentSpeedType.eDescentStallSpeedRatio
         advDescent.DescentStallSpeedRatio = 1.2
@@ -7408,15 +7880,15 @@ class EarlyBoundTests(TestBase):
         advDescent.UseAirspeedLimit = False
         Assert.assertEqual(False, advDescent.UseAirspeedLimit)
 
-        def action349():
+        def action385():
             advDescent.AltitudeLimit = 9000
 
-        TryCatchAssertBlock.ExpectedException("must be", action349)
+        TryCatchAssertBlock.ExpectedException("must be", action385)
 
-        def action350():
+        def action386():
             advDescent.SetAirspeedLimit(AgEAvtrAirspeedType.eTAS, 251)
 
-        TryCatchAssertBlock.ExpectedException("must be", action350)
+        TryCatchAssertBlock.ExpectedException("must be", action386)
 
         advDescent.UseAirspeedLimit = True
         advDescent.AltitudeLimit = 9000
@@ -7457,15 +7929,15 @@ class EarlyBoundTests(TestBase):
         basicLanding.UseAeroPropFuel = True
         Assert.assertTrue(basicLanding.UseAeroPropFuel)
 
-        def action351():
+        def action387():
             basicLanding.ScaleFuelFlowByNonStdDensity = True
 
-        TryCatchAssertBlock.ExpectedException("must be ", action351)
+        TryCatchAssertBlock.ExpectedException("must be ", action387)
 
-        def action352():
+        def action388():
             basicLanding.FuelFlow = 9000
 
-        TryCatchAssertBlock.ExpectedException("must be ", action352)
+        TryCatchAssertBlock.ExpectedException("must be ", action388)
 
         basicLanding.UseAeroPropFuel = False
 
@@ -7540,20 +8012,20 @@ class EarlyBoundTests(TestBase):
         basicTakeoff.UseAeroPropFuel = True
         Assert.assertTrue(basicTakeoff.UseAeroPropFuel)
 
-        def action353():
+        def action389():
             basicTakeoff.ScaleFuelFlowByNonStdDensity = True
 
-        TryCatchAssertBlock.ExpectedException("must be ", action353)
+        TryCatchAssertBlock.ExpectedException("must be ", action389)
 
-        def action354():
+        def action390():
             basicTakeoff.AccelFuelFlow = 8000
 
-        TryCatchAssertBlock.ExpectedException("must be ", action354)
+        TryCatchAssertBlock.ExpectedException("must be ", action390)
 
-        def action355():
+        def action391():
             basicTakeoff.DepartureFuelFlow = 9000
 
-        TryCatchAssertBlock.ExpectedException("must be ", action355)
+        TryCatchAssertBlock.ExpectedException("must be ", action391)
 
         basicTakeoff.UseAeroPropFuel = False
 
@@ -7603,10 +8075,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AgEAvtrAirspeedType.eMach, advTakeoff.DepartureSpeedLimitType)
         Assert.assertAlmostEqual(0.3, advTakeoff.DepartureSpeedLimit, delta=tolerance)
 
-        def action356():
+        def action392():
             advTakeoff.UseAfterburner = True
 
-        TryCatchAssertBlock.ExpectedException("not enabled ", action356)
+        TryCatchAssertBlock.ExpectedException("not enabled ", action392)
 
         newAC.GetAsCatalogItem().Remove()
 
@@ -7625,35 +8097,35 @@ class EarlyBoundTests(TestBase):
         terrainFollow.UseAeroPropFuel = True
         Assert.assertTrue(terrainFollow.UseAeroPropFuel)
 
-        def action357():
+        def action393():
             terrainFollow.ScaleFuelFlowByNonStdDensity = True
 
-        TryCatchAssertBlock.ExpectedException("must be", action357)
+        TryCatchAssertBlock.ExpectedException("must be", action393)
 
-        def action358():
+        def action394():
             terrainFollow.MinAirspeedFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action358)
+        TryCatchAssertBlock.ExpectedException("must be", action394)
 
-        def action359():
+        def action395():
             terrainFollow.MaxEnduranceFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action359)
+        TryCatchAssertBlock.ExpectedException("must be", action395)
 
-        def action360():
+        def action396():
             terrainFollow.MaxAirspeedFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action360)
+        TryCatchAssertBlock.ExpectedException("must be", action396)
 
-        def action361():
+        def action397():
             terrainFollow.MaxRangeFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action361)
+        TryCatchAssertBlock.ExpectedException("must be", action397)
 
-        def action362():
+        def action398():
             terrainFollow.MaxPerfAirspeedFuelFlow = 100
 
-        TryCatchAssertBlock.ExpectedException("must be", action362)
+        TryCatchAssertBlock.ExpectedException("must be", action398)
 
         terrainFollow.UseAeroPropFuel = False
         Assert.assertEqual(False, terrainFollow.UseAeroPropFuel)
@@ -7728,15 +8200,15 @@ class EarlyBoundTests(TestBase):
         vtol.UseAeroPropFuel = True
         Assert.assertTrue(vtol.UseAeroPropFuel)
 
-        def action363():
+        def action399():
             vtol.ScaleFuelFlowByNonStdDensity = True
 
-        TryCatchAssertBlock.ExpectedException("must be ", action363)
+        TryCatchAssertBlock.ExpectedException("must be ", action399)
 
-        def action364():
+        def action400():
             vtol.HoverFuel = 0.25
 
-        TryCatchAssertBlock.ExpectedException("must be ", action364)
+        TryCatchAssertBlock.ExpectedException("must be ", action400)
 
         vtol.UseAeroPropFuel = False
         vtol.ScaleFuelFlowByNonStdDensity = True
@@ -7815,10 +8287,10 @@ class EarlyBoundTests(TestBase):
         missile.ManeuverMode = AgEAvtrAccelManeuverMode.eAccelManeuverModeDensityScale
         Assert.assertEqual(AgEAvtrAccelManeuverMode.eAccelManeuverModeDensityScale, missile.ManeuverMode)
 
-        def action365():
+        def action401():
             testVal = missile.ManeuverModeHelper
 
-        TryCatchAssertBlock.ExpectedException("must be set", action365)
+        TryCatchAssertBlock.ExpectedException("must be set", action401)
 
         missile.ManeuverMode = AgEAvtrAccelManeuverMode.eAccelManeuverModeAeroProp
         self.ManeuverModeHelperOptions(missile.ManeuverModeHelper)
@@ -7872,10 +8344,10 @@ class EarlyBoundTests(TestBase):
 
         missile.UseTotalTempLimit = False
 
-        def action366():
+        def action402():
             missile.TotalTempLimit = 3000
 
-        TryCatchAssertBlock.ExpectedException("must be", action366)
+        TryCatchAssertBlock.ExpectedException("must be", action402)
         missile.UseTotalTempLimit = True
         Assert.assertTrue(missile.UseTotalTempLimit)
         missile.TotalTempLimit = 3000
@@ -7883,10 +8355,10 @@ class EarlyBoundTests(TestBase):
 
         missile.UseMachLimit = False
 
-        def action367():
+        def action403():
             missile.MachLimit = 6
 
-        TryCatchAssertBlock.ExpectedException("must be", action367)
+        TryCatchAssertBlock.ExpectedException("must be", action403)
         missile.UseMachLimit = True
         Assert.assertTrue(missile.UseMachLimit)
         missile.MachLimit = 6
@@ -7894,10 +8366,10 @@ class EarlyBoundTests(TestBase):
 
         missile.UseEASLimit = False
 
-        def action368():
+        def action404():
             missile.EASLimit = 800
 
-        TryCatchAssertBlock.ExpectedException("must be", action368)
+        TryCatchAssertBlock.ExpectedException("must be", action404)
         missile.UseEASLimit = True
         Assert.assertTrue(missile.UseEASLimit)
         missile.EASLimit = 800
@@ -7966,20 +8438,20 @@ class EarlyBoundTests(TestBase):
 
         nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.aero"))
 
-        def action369():
+        def action405():
             externalAero.SetFilepath(nonexistingfilepath)
 
-        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action369)
+        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action405)
 
         aeroFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "simpleAero.aero"))
         returnMsg = externalAero.SetFilepath(aeroFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalAero.CanSetRefArea)
 
-        def action370():
+        def action406():
             externalAero.RefArea = 0.05
 
-        TryCatchAssertBlock.ExpectedException("", action370)
+        TryCatchAssertBlock.ExpectedException("", action406)
         Assert.assertTrue(externalAero.IsValid)
 
         missileModels.GetAsCatalogSource().RemoveChild("NUNIT CSharp Test Missile")
@@ -8060,10 +8532,10 @@ class EarlyBoundTests(TestBase):
 
         nonexistingPropFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.prop"))
 
-        def action371():
+        def action407():
             externalProp.SetFilepath(nonexistingPropFilepath)
 
-        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action371)
+        TryCatchAssertBlock.ExpectedException("Failed to load the file.", action407)
 
         propFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "simpleProp.prop"))
         returnMsg = externalProp.SetFilepath(propFilepath)
@@ -9016,10 +9488,10 @@ class EarlyBoundTests(TestBase):
     def ARINC424Source(self, arincSource, childName):
         Assert.assertTrue(arincSource.UseMasterDataFile)
 
-        def action372():
+        def action408():
             arincSource.OverrideDataFilepath = "NonExistantPath"
 
-        TryCatchAssertBlock.ExpectedException("to access this", action372)
+        TryCatchAssertBlock.ExpectedException("to access this", action408)
 
         arincSource.UseMasterDataFile = False
         arincSource.OverrideDataFilepath = "NonExistantPath"
@@ -9033,10 +9505,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue((Array.Length(names) > 0))
         Assert.assertTrue(catalogSource.Contains(childName))
 
-        def action373():
+        def action409():
             catalogSource.RemoveChild(childName)
 
-        TryCatchAssertBlock.ExpectedException("", action373)
+        TryCatchAssertBlock.ExpectedException("", action409)
 
     def TestPropulsionEfficiencies(self, propEffs):
         propEffs.TechnologyLevel = AgEAvtrJetEngineTechnologyLevel.eLevel5
@@ -9054,10 +9526,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AgEAvtrJetEngineTechnologyLevel.eLevel5, propEffs.TechnologyLevel)
         Assert.assertEqual(AgEAvtrJetEngineIntakeType.eSupersonicEmbedded, propEffs.IntakeType)
 
-        def action374():
+        def action410():
             turbineTypeTest = propEffs.TurbineType
 
-        TryCatchAssertBlock.ExpectedException("turbine type", action374)
+        TryCatchAssertBlock.ExpectedException("turbine type", action410)
         Assert.assertEqual(
             AgEAvtrJetEngineExhaustNozzleType.eVariableAreaConvergentDivergent, propEffs.ExhaustNozzleType
         )
@@ -9066,10 +9538,10 @@ class EarlyBoundTests(TestBase):
         afprop.Subtype = AgEAvtrAFPROPFuelType.eAFPROPJetA
         Assert.assertEqual(AgEAvtrAFPROPFuelType.eAFPROPJetA, afprop.Subtype)
 
-        def action375():
+        def action411():
             afprop.SpecificEnergy = 40
 
-        TryCatchAssertBlock.ExpectedException("must be", action375)
+        TryCatchAssertBlock.ExpectedException("must be", action411)
 
         afprop.Subtype = AgEAvtrAFPROPFuelType.eAFPROPOverride
         afprop.SpecificEnergy = 43.21
@@ -9079,10 +9551,10 @@ class EarlyBoundTests(TestBase):
         cea.Subtype = AgEAvtrCEAFuelType.eCEAJetA
         Assert.assertEqual(AgEAvtrCEAFuelType.eCEAJetA, cea.Subtype)
 
-        def action376():
+        def action412():
             cea.SpecificEnergy = 40
 
-        TryCatchAssertBlock.ExpectedException("must be", action376)
+        TryCatchAssertBlock.ExpectedException("must be", action412)
 
         cea.Subtype = AgEAvtrCEAFuelType.eCEAOverride
         cea.SpecificEnergy = 43.21
@@ -9092,15 +9564,15 @@ class EarlyBoundTests(TestBase):
         prop.CanUseAfterburner = False
         Assert.assertEqual(False, prop.CanUseAfterburner)
 
-        def action377():
+        def action413():
             prop.AfterburnerOn = False
 
-        TryCatchAssertBlock.ExpectedException("must be", action377)
+        TryCatchAssertBlock.ExpectedException("must be", action413)
 
-        def action378():
+        def action414():
             prop.MaxAfterburnerTemp = 2000
 
-        TryCatchAssertBlock.ExpectedException("must be", action378)
+        TryCatchAssertBlock.ExpectedException("must be", action414)
 
         prop.CanUseAfterburner = True
         prop.DesignAltitude = 33100
@@ -9128,15 +9600,15 @@ class EarlyBoundTests(TestBase):
         prop.FuelType = AgEAvtrJetFuelType.eHydrogen
         Assert.assertEqual(AgEAvtrJetFuelType.eHydrogen, prop.FuelType)
 
-        def action379():
+        def action415():
             afprop = prop.FuelModeAsAFPROP
 
-        TryCatchAssertBlock.ExpectedException("must be", action379)
+        TryCatchAssertBlock.ExpectedException("must be", action415)
 
-        def action380():
+        def action416():
             cea = prop.FuelModeAsCEA
 
-        TryCatchAssertBlock.ExpectedException("must be", action380)
+        TryCatchAssertBlock.ExpectedException("must be", action416)
 
         prop.FuelType = AgEAvtrJetFuelType.eKeroseneAFPROP
         self.TestFuelAFPROP(prop.FuelModeAsAFPROP)
@@ -9149,15 +9621,15 @@ class EarlyBoundTests(TestBase):
         prop.CanUseAfterburner = False
         Assert.assertEqual(False, prop.CanUseAfterburner)
 
-        def action381():
+        def action417():
             prop.AfterburnerOn = False
 
-        TryCatchAssertBlock.ExpectedException("must be", action381)
+        TryCatchAssertBlock.ExpectedException("must be", action417)
 
-        def action382():
+        def action418():
             prop.MaxAfterburnerTemp = 2000
 
-        TryCatchAssertBlock.ExpectedException("must be", action382)
+        TryCatchAssertBlock.ExpectedException("must be", action418)
 
         prop.CanUseAfterburner = True
         prop.DesignAltitude = 33100
@@ -9183,15 +9655,15 @@ class EarlyBoundTests(TestBase):
         prop.FuelType = AgEAvtrJetFuelType.eHydrogen
         Assert.assertEqual(AgEAvtrJetFuelType.eHydrogen, prop.FuelType)
 
-        def action383():
+        def action419():
             afprop = prop.FuelModeAsAFPROP
 
-        TryCatchAssertBlock.ExpectedException("must be", action383)
+        TryCatchAssertBlock.ExpectedException("must be", action419)
 
-        def action384():
+        def action420():
             cea = prop.FuelModeAsCEA
 
-        TryCatchAssertBlock.ExpectedException("must be", action384)
+        TryCatchAssertBlock.ExpectedException("must be", action420)
 
         prop.FuelType = AgEAvtrJetFuelType.eKeroseneAFPROP
         self.TestFuelAFPROP(prop.FuelModeAsAFPROP)
@@ -9221,10 +9693,10 @@ class EarlyBoundTests(TestBase):
     def AltitudeOptions(self, alt):
         alt.UseDefaultCruiseAltitude = True
 
-        def action385():
+        def action421():
             alt.Altitude = 10000
 
-        TryCatchAssertBlock.ExpectedException("must be ", action385)
+        TryCatchAssertBlock.ExpectedException("must be ", action421)
 
         alt.UseDefaultCruiseAltitude = False
         alt.AltitudeReference = AgEAvtrAGLMSL.eAltAGL
@@ -9235,10 +9707,10 @@ class EarlyBoundTests(TestBase):
     def AltitudeMSLOptions(self, altitudeOpts):
         altitudeOpts.UseDefaultCruiseAltitude = True
 
-        def action386():
+        def action422():
             altitudeOpts.MSLAltitude = 10000
 
-        TryCatchAssertBlock.ExpectedException("must be ", action386)
+        TryCatchAssertBlock.ExpectedException("must be ", action422)
 
         altitudeOpts.UseDefaultCruiseAltitude = False
         altitudeOpts.MSLAltitude = 10000
@@ -9261,15 +9733,15 @@ class EarlyBoundTests(TestBase):
     def ArcAltitudeOptions(self, alt):
         alt.UseDefaultCruiseAltitude = True
 
-        def action387():
+        def action423():
             alt.StartArcAltitude = 10001
 
-        TryCatchAssertBlock.ExpectedException("must be ", action387)
+        TryCatchAssertBlock.ExpectedException("must be ", action423)
 
-        def action388():
+        def action424():
             alt.StopArcAltitude = 10002
 
-        TryCatchAssertBlock.ExpectedException("must be ", action388)
+        TryCatchAssertBlock.ExpectedException("must be ", action424)
 
         alt.UseDefaultCruiseAltitude = False
         alt.StartArcAltitude = 10001
@@ -9280,20 +9752,20 @@ class EarlyBoundTests(TestBase):
     def ArcAltitudeAndDelayOptions(self, alt):
         alt.UseDefaultCruiseAltitude = True
 
-        def action389():
+        def action425():
             alt.DelayArcClimbDescents = True
 
-        TryCatchAssertBlock.ExpectedException("must be ", action389)
+        TryCatchAssertBlock.ExpectedException("must be ", action425)
 
-        def action390():
+        def action426():
             alt.StartArcAltitude = 10001
 
-        TryCatchAssertBlock.ExpectedException("must be ", action390)
+        TryCatchAssertBlock.ExpectedException("must be ", action426)
 
-        def action391():
+        def action427():
             alt.StopArcAltitude = 10002
 
-        TryCatchAssertBlock.ExpectedException("must be ", action391)
+        TryCatchAssertBlock.ExpectedException("must be ", action427)
 
         alt.UseDefaultCruiseAltitude = False
         alt.DelayArcClimbDescents = True
@@ -9334,15 +9806,15 @@ class EarlyBoundTests(TestBase):
 
         navOpts.NavMode = AgEAvtrPointToPointMode.eArriveOnCourseForNext
 
-        def action392():
+        def action428():
             navOpts.ArriveOnCourse = 1
 
-        TryCatchAssertBlock.ExpectedException("must be ", action392)
+        TryCatchAssertBlock.ExpectedException("must be ", action428)
 
-        def action393():
+        def action429():
             navOpts.UseMagneticHeading = True
 
-        TryCatchAssertBlock.ExpectedException("must be ", action393)
+        TryCatchAssertBlock.ExpectedException("must be ", action429)
 
         navOpts.NavMode = AgEAvtrPointToPointMode.eArriveOnCourse
         navOpts.ArriveOnCourse = 1
@@ -9370,10 +9842,10 @@ class EarlyBoundTests(TestBase):
 
         airspeedOpts.CruiseSpeedType = AgEAvtrCruiseSpeed.eMaxAirspeed
 
-        def action394():
+        def action430():
             airspeedOpts.SetOtherAirspeed(AgEAvtrAirspeedType.eTAS, 200)
 
-        TryCatchAssertBlock.ExpectedException("must be set", action394)
+        TryCatchAssertBlock.ExpectedException("must be set", action430)
 
         airspeedOpts.CruiseSpeedType = AgEAvtrCruiseSpeed.eOtherAirspeed
         airspeedOpts.SetOtherAirspeed(AgEAvtrAirspeedType.eTAS, 200)
@@ -9392,10 +9864,10 @@ class EarlyBoundTests(TestBase):
 
         airspeedOpts.CruiseSpeedType = AgEAvtrCruiseSpeed.eMaxAirspeed
 
-        def action395():
+        def action431():
             airspeedOpts.SetOtherAirspeed(AgEAvtrAirspeedType.eTAS, 200)
 
-        TryCatchAssertBlock.ExpectedException("must be set", action395)
+        TryCatchAssertBlock.ExpectedException("must be set", action431)
 
         airspeedOpts.CruiseSpeedType = AgEAvtrCruiseSpeed.eOtherAirspeed
         airspeedOpts.SetOtherAirspeed(AgEAvtrAirspeedType.eTAS, 200)
@@ -9454,171 +9926,219 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region PrivateBasicManeuverMethods
-    def BasicManeuverAirspeedOptions(self, airspeed):
-        airspeed.AirspeedMode = AgEAvtrBasicManeuverAirspeedMode.eMaintainCurrentAirspeed
+    def BasicManeuverAirspeedOptions(self, airspeedOptions):
+        for airspeedMode in Enum.GetValues(clr.TypeOf(AgEAvtrBasicManeuverAirspeedMode)):
+            airspeedOptions.AirspeedMode = airspeedMode
+            Assert.assertEqual(airspeedMode, airspeedOptions.AirspeedMode)
+            if airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eMaintainCurrentAirspeed:
+                airspeedOptions.MaintainAirspeedType = AgEAvtrAirspeedType.eMach
+                Assert.assertEqual(AgEAvtrAirspeedType.eMach, airspeedOptions.MaintainAirspeedType)
+                airspeedOptions.MaintainAirspeedType = AgEAvtrAirspeedType.eEAS
+                Assert.assertEqual(AgEAvtrAirspeedType.eEAS, airspeedOptions.MaintainAirspeedType)
+                airspeedOptions.MaintainAirspeedType = AgEAvtrAirspeedType.eCAS
+                Assert.assertEqual(AgEAvtrAirspeedType.eCAS, airspeedOptions.MaintainAirspeedType)
+                airspeedOptions.MaintainAirspeedType = AgEAvtrAirspeedType.eTAS
+                Assert.assertEqual(AgEAvtrAirspeedType.eTAS, airspeedOptions.MaintainAirspeedType)
 
-        def action396():
-            value = airspeed.AccelG
+            if airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eMaintainSpecifiedAirspeed:
+                airspeedOptions.SpecifiedAirspeed = 111
+                Assert.assertEqual(111, airspeedOptions.SpecifiedAirspeed)
 
-        TryCatchAssertBlock.ExpectedException("must be", action396)
+                airspeedOptions.SpecifiedAirspeedType = AgEAvtrAirspeedType.eMach
+                Assert.assertEqual(AgEAvtrAirspeedType.eMach, airspeedOptions.SpecifiedAirspeedType)
+                airspeedOptions.SpecifiedAirspeedType = AgEAvtrAirspeedType.eEAS
+                Assert.assertEqual(AgEAvtrAirspeedType.eEAS, airspeedOptions.SpecifiedAirspeedType)
+                airspeedOptions.SpecifiedAirspeedType = AgEAvtrAirspeedType.eCAS
+                Assert.assertEqual(AgEAvtrAirspeedType.eCAS, airspeedOptions.SpecifiedAirspeedType)
+                airspeedOptions.SpecifiedAirspeedType = AgEAvtrAirspeedType.eTAS
+                Assert.assertEqual(AgEAvtrAirspeedType.eTAS, airspeedOptions.SpecifiedAirspeedType)
 
-        def action397():
-            value = airspeed.AccelMode
+                airspeedOptions.SpecifiedAccelDecelMode = AgEAvtrPerfModelOverride.ePerfModelValue
+                Assert.assertEqual(AgEAvtrPerfModelOverride.ePerfModelValue, airspeedOptions.SpecifiedAccelDecelMode)
 
-        TryCatchAssertBlock.ExpectedException("must be", action397)
+                def action432():
+                    airspeedOptions.SpecifiedAccelDecelG = 200
 
-        def action398():
-            value = airspeed.DecelG
+                TryCatchAssertBlock.ExpectedException("must be set to override", action432)
 
-        TryCatchAssertBlock.ExpectedException("must be", action398)
+                airspeedOptions.SpecifiedAccelDecelMode = AgEAvtrPerfModelOverride.eOverride
+                Assert.assertEqual(AgEAvtrPerfModelOverride.eOverride, airspeedOptions.SpecifiedAccelDecelMode)
 
-        def action399():
-            value = airspeed.DecelMode
+                airspeedOptions.SpecifiedAccelDecelG = 200
+                Assert.assertEqual(200, airspeedOptions.SpecifiedAccelDecelG)
 
-        TryCatchAssertBlock.ExpectedException("must be", action399)
+            if (
+                (
+                    (
+                        (airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eMaintainMinAirspeed)
+                        or (airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eMaintainMaxEnduranceAirspeed)
+                    )
+                    or (airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eMaintainMaxRangeAirspeed)
+                )
+                or (airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eMaintainMaxAirspeed)
+            ) or (airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eMaintainMaxPerformanceAirspeed):
 
-        def action400():
-            value = airspeed.InterpolateEndG
+                def action433():
+                    value = airspeedOptions.AccelG
 
-        TryCatchAssertBlock.ExpectedException("must be", action400)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action433)
 
-        def action401():
-            value = airspeed.InterpolateEndTime
+                def action434():
+                    value = airspeedOptions.AccelMode
 
-        TryCatchAssertBlock.ExpectedException("must be", action401)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action434)
 
-        def action402():
-            value = airspeed.InterpolateInitG
+                def action435():
+                    value = airspeedOptions.DecelG
 
-        TryCatchAssertBlock.ExpectedException("must be", action402)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action435)
 
-        def action403():
-            value = airspeed.InterpolateStopAtEndTime
+                def action436():
+                    value = airspeedOptions.DecelMode
 
-        TryCatchAssertBlock.ExpectedException("must be", action403)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action436)
 
-        def action404():
-            value = airspeed.SpecifiedAccelDecelG
+                def action437():
+                    value = airspeedOptions.InterpolateEndG
 
-        TryCatchAssertBlock.ExpectedException("must be", action404)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action437)
 
-        def action405():
-            value = airspeed.SpecifiedAccelDecelMode
+                def action438():
+                    value = airspeedOptions.InterpolateEndTime
 
-        TryCatchAssertBlock.ExpectedException("must be", action405)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action438)
 
-        def action406():
-            value = airspeed.SpecifiedAirspeed
+                def action439():
+                    value = airspeedOptions.InterpolateInitG
 
-        TryCatchAssertBlock.ExpectedException("must be", action406)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action439)
 
-        def action407():
-            value = airspeed.SpecifiedAirspeedType
+                def action440():
+                    value = airspeedOptions.InterpolateStopAtEndTime
 
-        TryCatchAssertBlock.ExpectedException("must be", action407)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action440)
 
-        def action408():
-            value = airspeed.Throttle
+                def action441():
+                    value = airspeedOptions.MaintainAirspeedType
 
-        TryCatchAssertBlock.ExpectedException("must be", action408)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action441)
 
-        def action409():
-            value = airspeed.Thrust
+                def action442():
+                    value = airspeedOptions.SpecifiedAccelDecelG
 
-        TryCatchAssertBlock.ExpectedException("must be", action409)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action442)
 
-        airspeed.MaintainAirspeedType = AgEAvtrAirspeedType.eMach
-        Assert.assertEqual(AgEAvtrAirspeedType.eMach, airspeed.MaintainAirspeedType)
-        airspeed.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated
-        Assert.assertEqual(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated, airspeed.MaxSpeedLimits)
-        airspeed.MinSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated
-        Assert.assertEqual(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated, airspeed.MinSpeedLimits)
+                def action443():
+                    value = airspeedOptions.SpecifiedAccelDecelMode
 
-        airspeed.AirspeedMode = AgEAvtrBasicManeuverAirspeedMode.eMaintainSpecifiedAirspeed
-        airspeed.SpecifiedAirspeed = 260
-        Assert.assertEqual(260, airspeed.SpecifiedAirspeed)
-        airspeed.SpecifiedAccelDecelMode = AgEAvtrPerfModelOverride.ePerfModelValue
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action443)
 
-        def action410():
-            airspeed.SpecifiedAccelDecelG = 1
+                def action444():
+                    value = airspeedOptions.SpecifiedAirspeed
 
-        TryCatchAssertBlock.ExpectedException("must be", action410)
-        airspeed.SpecifiedAccelDecelMode = AgEAvtrPerfModelOverride.eOverride
-        airspeed.SpecifiedAccelDecelG = 1
-        Assert.assertEqual(1, airspeed.SpecifiedAccelDecelG)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action444)
 
-        airspeed.AirspeedMode = AgEAvtrBasicManeuverAirspeedMode.eAccelAtG
-        airspeed.AccelMode = AgEAvtrPerfModelOverride.ePerfModelValue
+                def action445():
+                    value = airspeedOptions.SpecifiedAirspeedType
 
-        def action411():
-            airspeed.AccelG = 1
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action445)
 
-        TryCatchAssertBlock.ExpectedException("must be", action411)
-        airspeed.AccelMode = AgEAvtrPerfModelOverride.eOverride
-        airspeed.AccelG = 1
-        Assert.assertEqual(1, airspeed.AccelG)
+                def action446():
+                    value = airspeedOptions.Throttle
 
-        airspeed.AirspeedMode = AgEAvtrBasicManeuverAirspeedMode.eDecelAtG
-        airspeed.DecelMode = AgEAvtrPerfModelOverride.ePerfModelValue
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action446)
 
-        def action412():
-            airspeed.DecelG = 1
+                def action447():
+                    value = airspeedOptions.Thrust
 
-        TryCatchAssertBlock.ExpectedException("must be", action412)
-        airspeed.DecelMode = AgEAvtrPerfModelOverride.eOverride
-        airspeed.DecelG = 1
-        Assert.assertEqual(1, airspeed.DecelG)
+                TryCatchAssertBlock.ExpectedException("must be set to the corresponding mode", action447)
 
-        airspeed.AirspeedMode = AgEAvtrBasicManeuverAirspeedMode.eAccelDecelAeroProp
-        airspeed.Throttle = 95
-        Assert.assertEqual(95, airspeed.Throttle)
+            if airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eAccelAtG:
+                airspeedOptions.AccelMode = AgEAvtrPerfModelOverride.ePerfModelValue
+                Assert.assertEqual(AgEAvtrPerfModelOverride.ePerfModelValue, airspeedOptions.AccelMode)
 
-        airspeed.AirspeedMode = AgEAvtrBasicManeuverAirspeedMode.eInterpolateAccelDecel
-        airspeed.InterpolateEndG = 0.1
-        Assert.assertEqual(0.1, airspeed.InterpolateEndG)
-        airspeed.InterpolateEndTime = 0.2
-        Assert.assertEqual(0.2, airspeed.InterpolateEndTime)
-        airspeed.InterpolateInitG = 0.3
-        Assert.assertEqual(0.3, airspeed.InterpolateInitG)
-        airspeed.InterpolateStopAtEndTime = True
-        Assert.assertTrue(airspeed.InterpolateStopAtEndTime)
+                def action448():
+                    airspeedOptions.AccelG = 300
 
-        airspeed.AirspeedMode = AgEAvtrBasicManeuverAirspeedMode.eThrust
-        thrust = airspeed.Thrust
-        thrust.UseConstantThrust = True
-        thrust.ConstantThrust = 1
-        Assert.assertEqual(1, thrust.ConstantThrust)
+                TryCatchAssertBlock.ExpectedException("must be set to override", action448)
 
-        def action413():
-            thrust.BoostThrust = 1
+                airspeedOptions.AccelMode = AgEAvtrPerfModelOverride.eOverride
+                Assert.assertEqual(AgEAvtrPerfModelOverride.eOverride, airspeedOptions.AccelMode)
 
-        TryCatchAssertBlock.ExpectedException("must be", action413)
+                airspeedOptions.AccelG = 300
+                Assert.assertEqual(300, airspeedOptions.AccelG)
 
-        def action414():
-            thrust.BoostThrustTimeLimit = 1
+            if airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eDecelAtG:
+                airspeedOptions.DecelMode = AgEAvtrPerfModelOverride.ePerfModelValue
+                Assert.assertEqual(AgEAvtrPerfModelOverride.ePerfModelValue, airspeedOptions.DecelMode)
 
-        TryCatchAssertBlock.ExpectedException("must be", action414)
+                def action449():
+                    airspeedOptions.DecelG = 400
 
-        def action415():
-            thrust.SustainThrust = 1
+                TryCatchAssertBlock.ExpectedException("must be set to override", action449)
 
-        TryCatchAssertBlock.ExpectedException("must be", action415)
+                airspeedOptions.DecelMode = AgEAvtrPerfModelOverride.eOverride
+                Assert.assertEqual(AgEAvtrPerfModelOverride.eOverride, airspeedOptions.DecelMode)
 
-        def action416():
-            thrust.SustainThrustTimeLimit = 1
+                airspeedOptions.DecelG = 400
+                Assert.assertEqual(400, airspeedOptions.DecelG)
 
-        TryCatchAssertBlock.ExpectedException("must be", action416)
+            if airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eAccelDecelUnderGravity:
+                pass
 
-        thrust.UseConstantThrust = False
+            if airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eAccelDecelAeroProp:
+                airspeedOptions.Throttle = 55
+                Assert.assertEqual(55, airspeedOptions.Throttle)
 
-        def action417():
-            thrust.ConstantThrust = 1
+            if airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eThrust:
+                self.Test_IAgAvtrPropulsionThrust(airspeedOptions.Thrust)
 
-        TryCatchAssertBlock.ExpectedException("must be", action417)
-        thrust.BoostThrust = 2
-        Assert.assertEqual(2, thrust.BoostThrust)
-        thrust.SustainThrust = 3
-        Assert.assertEqual(3, thrust.SustainThrust)
+            if airspeedMode == AgEAvtrBasicManeuverAirspeedMode.eInterpolateAccelDecel:
+                airspeedOptions.InterpolateInitG = 5
+                Assert.assertEqual(5, airspeedOptions.InterpolateInitG)
+                airspeedOptions.InterpolateEndG = 6
+                Assert.assertEqual(6, airspeedOptions.InterpolateEndG)
+                airspeedOptions.InterpolateEndTime = 7
+                Assert.assertEqual(7, airspeedOptions.InterpolateEndTime)
+
+                airspeedOptions.InterpolateStopAtEndTime = False
+                Assert.assertFalse(airspeedOptions.InterpolateStopAtEndTime)
+                airspeedOptions.InterpolateStopAtEndTime = True
+                Assert.assertTrue(airspeedOptions.InterpolateStopAtEndTime)
+
+        airspeedOptions.MinSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eConstrainIfViolated
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eConstrainIfViolated, airspeedOptions.MinSpeedLimits
+        )
+        airspeedOptions.MinSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eStopIfViolated
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eStopIfViolated, airspeedOptions.MinSpeedLimits
+        )
+        airspeedOptions.MinSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated, airspeedOptions.MinSpeedLimits
+        )
+        airspeedOptions.MinSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated, airspeedOptions.MinSpeedLimits
+        )
+
+        airspeedOptions.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eConstrainIfViolated
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eConstrainIfViolated, airspeedOptions.MaxSpeedLimits
+        )
+        airspeedOptions.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eStopIfViolated
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eStopIfViolated, airspeedOptions.MaxSpeedLimits
+        )
+        airspeedOptions.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated, airspeedOptions.MaxSpeedLimits
+        )
+        airspeedOptions.MaxSpeedLimits = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated
+        Assert.assertEqual(
+            AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated, airspeedOptions.MaxSpeedLimits
+        )
 
     # endregion
 
