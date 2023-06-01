@@ -155,6 +155,13 @@ Best practices recommend running a container in detached mode with an
 interactive teletypewriter (TTY) session. This allows for connecting to the
 container at any time without blocking the current shell session.
 
+Before creating a new container, verify if you require to share any of the
+following:
+
+- Environment variables
+- Network resources
+- Volumes (directories)
+
 Syntax
 ------
 
@@ -167,31 +174,6 @@ Syntax
       --name <container-name> \
       --entrypoint <entrypoint> \
       <image-name>
-
-
-Images can be run by creating a Docker container. Before
-creating a new container, verify if you require to share any of the following:
-
-- Environment variables
-- Network resources
-- Volumes (directories)
-
-It is advised to run a container in detached mode with an interactive
-teletypewriter (TTY) session. This allows to connect to the container at any
-point without blocking the current shell session.
-
-To create a container from the desired Docker image, run the following command:
-
-.. code-block:: text
-
-    docker run \
-     --detach --interactive --tty \
-     --network="host" \
-     --env LICENSE_FILE=$LICENSE_FILE \
-     --name <container-name> \
-     --entrypoint <entrypoint> \
-     <image-name>
-
 
 Command breakdown
 -----------------
@@ -208,7 +190,6 @@ process.
 - ``--name <container-name>`` Assigns a name to the container for easy identification and reference.
 - ``--entrypoint <entrypoint>`` Defines the command or script to be executed when the container starts.
 - ``<image-name>`` Specifies the name or ID of the Docker image to be used for creating the container.
-
 
 Usage example
 -------------
