@@ -129,12 +129,12 @@ def get_images_directories_from_path(path):
 
 
 # -- Declare the Jinja context -----------------------------------------------
-BUILD_API = True if os.environ.get("BUILD_API", "false") == "true" else False
+BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
     exclude_patterns.append("api")
 
 BUILD_EXAMPLES = (
-    True if os.environ.get("BUILD_EXAMPLES", "false") == "true" else False
+    True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 )
 if not BUILD_EXAMPLES:
     exclude_patterns.append("examples.rst")
