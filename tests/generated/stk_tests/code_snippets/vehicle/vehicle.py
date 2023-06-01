@@ -42,7 +42,6 @@ class Vehicle(CodeSnippetsTestBase):
     # endregion
 
     # region ExportVehicleToStkEphemerisFile
-    @category("PySTKFixTest-NoServerAvailable")
     def test_ExportVehicleToStkEphemerisFile(self):
         gv = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
@@ -77,7 +76,6 @@ class Vehicle(CodeSnippetsTestBase):
     # endregion
 
     # region ExportVehicleToAttitudeFile
-    @category("PySTKFixTest-NoServerAvailable")
     def test_ExportVehicleToAttitudeFile(self):
         gv = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),

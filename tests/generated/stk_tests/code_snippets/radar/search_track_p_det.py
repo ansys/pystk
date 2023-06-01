@@ -93,7 +93,6 @@ class SearchTrackPDet(CodeSnippetsTestBase):
     # endregion
 
     # region ComputeMonostaticSearchTrackProbabilityOfDetection
-    @category("PySTKFixTest-NoServerAvailable")
     def test_ComputeMonostaticSearchTrackProbabilityOfDetection(self):
         scenario = clr.Convert(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)
         self.ComputeMonostaticSearchTrackProbabilityOfDetection(
