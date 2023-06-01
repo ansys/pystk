@@ -5192,13 +5192,15 @@ agcls.AgTypeNameMap["ICalculationToolScalarConstant"] = ICalculationToolScalarCo
 class ICalculationToolScalarCustom(object):
     """A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."""
     _uuid = "{6267B685-4486-4B11-A2CA-056D6A9B558C}"
-    _num_methods = 3
+    _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
         self.__dict__["_GetFilename"] = _raise_uninitialized_error
         self.__dict__["_SetFilename"] = _raise_uninitialized_error
         self.__dict__["_Reload"] = _raise_uninitialized_error
+        self.__dict__["_GetInvalidateOnExecError"] = _raise_uninitialized_error
+        self.__dict__["_SetInvalidateOnExecError"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICalculationToolScalarCustom._uuid))
             if pUnk is not None:
@@ -5213,6 +5215,8 @@ class ICalculationToolScalarCustom(object):
         self.__dict__["_GetFilename"] = IAGFUNCTYPE(pUnk, IID_ICalculationToolScalarCustom, vtable_offset_local+1, POINTER(agcom.BSTR))
         self.__dict__["_SetFilename"] = IAGFUNCTYPE(pUnk, IID_ICalculationToolScalarCustom, vtable_offset_local+2, agcom.BSTR)
         self.__dict__["_Reload"] = IAGFUNCTYPE(pUnk, IID_ICalculationToolScalarCustom, vtable_offset_local+3, )
+        self.__dict__["_GetInvalidateOnExecError"] = IAGFUNCTYPE(pUnk, IID_ICalculationToolScalarCustom, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetInvalidateOnExecError"] = IAGFUNCTYPE(pUnk, IID_ICalculationToolScalarCustom, vtable_offset_local+5, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -5241,6 +5245,18 @@ class ICalculationToolScalarCustom(object):
     def Reload(self) -> None:
         """Reload the file specified with Filename property."""
         agcls.evaluate_hresult(self.__dict__["_Reload"]())
+
+    @property
+    def InvalidateOnExecError(self) -> bool:
+        """Specifies InvalidOnExecError flag for a custom scalar."""
+        with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
+            agcls.evaluate_hresult(self.__dict__["_GetInvalidateOnExecError"](byref(arg_pRetVal.COM_val)))
+            return arg_pRetVal.python_val
+
+    @InvalidateOnExecError.setter
+    def InvalidateOnExecError(self, invalidateOnExecError:bool) -> None:
+        with agmarshall.VARIANT_BOOL_arg(invalidateOnExecError) as arg_invalidateOnExecError:
+            agcls.evaluate_hresult(self.__dict__["_SetInvalidateOnExecError"](arg_invalidateOnExecError.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{6267B685-4486-4B11-A2CA-056D6A9B558C}", ICalculationToolScalarCustom)

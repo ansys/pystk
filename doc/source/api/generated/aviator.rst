@@ -216,6 +216,8 @@ Interfaces
     ISiteRunway
     IProcedureLanding
     IProcedureEnroute
+    IProcedureExtEphem
+    IProcedureFormationFlyer
     IProcedureBasicPointToPoint
     IProcedureDelay
     IProcedureTakeoff
@@ -284,6 +286,7 @@ Enumerations
     AgEAvtrAccelerationAdvAccelMode
     AgEAvtrAccelManeuverAeroPropMode
     AgEAvtrBasicManeuverStrategyAirspeedPerfLimits
+    AgEAvtrBasicManeuverStrategyPoweredCruiseMode
     AgEAvtrTurnMode
     AgEAvtrPointToPointMode
     AgEAvtrAltitudeConstraintManeuverMode
@@ -315,6 +318,8 @@ Enumerations
     AgEAvtrClosureMode
     AgEAvtrInterceptMode
     AgEAvtrRendezvousStopCondition
+    AgEAvtrFormationFlyerStopCondition
+    AgEAvtrExtEphemFlightMode
     AgEAvtrAccelPerfModelOverride
     AgEAvtrStationkeepingStopCondition
     AgEAvtrTurnDirection
@@ -384,6 +389,7 @@ Enumerations
     AgEAvtrSmoothTurnFPAMode
     AgEAvtrPitch3DControlMode
     AgEAvtrRefuelDumpMode
+    AgEAvtrBasicManeuverGlideSpeedControlMode
 
 
 Classes
@@ -406,6 +412,8 @@ Classes
     Site
     ProcedureLanding
     ProcedureEnroute
+    ProcedureExtEphem
+    ProcedureFormationFlyer
     ProcedureBasicPointToPoint
     ProcedureArcEnroute
     ProcedureArcPointToPoint
@@ -1253,6 +1261,12 @@ Interfaces
 .. autoclass:: IProcedureEnroute
     :members:
     :exclude-members: __init__
+.. autoclass:: IProcedureExtEphem
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IProcedureFormationFlyer
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IProcedureBasicPointToPoint
     :members:
     :exclude-members: __init__
@@ -1414,6 +1428,8 @@ Enumerations
     :members:
 .. autoenum:: AgEAvtrBasicManeuverStrategyAirspeedPerfLimits
     :members:
+.. autoenum:: AgEAvtrBasicManeuverStrategyPoweredCruiseMode
+    :members:
 .. autoenum:: AgEAvtrTurnMode
     :members:
 .. autoenum:: AgEAvtrPointToPointMode
@@ -1475,6 +1491,10 @@ Enumerations
 .. autoenum:: AgEAvtrInterceptMode
     :members:
 .. autoenum:: AgEAvtrRendezvousStopCondition
+    :members:
+.. autoenum:: AgEAvtrFormationFlyerStopCondition
+    :members:
+.. autoenum:: AgEAvtrExtEphemFlightMode
     :members:
 .. autoenum:: AgEAvtrAccelPerfModelOverride
     :members:
@@ -1614,6 +1634,8 @@ Enumerations
     :members:
 .. autoenum:: AgEAvtrRefuelDumpMode
     :members:
+.. autoenum:: AgEAvtrBasicManeuverGlideSpeedControlMode
+    :members:
 
 
 Classes
@@ -1662,6 +1684,12 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: ProcedureEnroute
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ProcedureExtEphem
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ProcedureFormationFlyer
     :members:
     :exclude-members: __init__
 .. autoclass:: ProcedureBasicPointToPoint

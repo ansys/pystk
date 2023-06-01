@@ -1,0 +1,33 @@
+<?xml version = "1.0" standalone = "yes"?>
+<VersionIndependentGUID>
+    <Item Description = "AGI AgAbsoluteTime Class" VIGuid = "{03DB6C88-1A23-4843-9317-01D69333DDBF}" />
+    <Item Description = "AGI AgFlightAttitudeAngles Class" VIGuid = "{0A074BF7-5A9D-4B62-9E0B-D47EC44C7F62}" />
+    <Item Description = "AGI AgFlightBasicManeuverStrategyRendezvousFormationProfile Class" VIGuid = "{138CB998-76D9-433f-AF9B-2800C19000B9}" />
+    <Item Description = "AGI AgFlightBasicManeuverStrategyRendezvousFormationNav Class" VIGuid = "{1BF82B43-B5DA-4129-B9BF-697E6793FE5B}" />
+    <Item Description = "AGI AgUserProperties Class" VIGuid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}" />
+    <Item Description = "AGI AgFlightProcedureFormationFlyer Class" VIGuid = "{3800FF0D-524E-4ECB-9AE4-AB49BFD04234}" />
+    <Item Description = "AGI AgFlightTerrainSet  Class" VIGuid = "{3CD176DA-A749-4029-A000-D9352FFC07F1}" />
+    <Item Description = "AGI AgFlightWindModelConstant Class" VIGuid = "{45C4D7DC-47D3-4bd3-BD95-BC3CF102C837}" />
+    <Item Description = "AGI AgFlightPerformanceModelHolder Class" VIGuid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}" />
+    <Item Description = "AGI AgFlightMissionPhase Class" VIGuid = "{46314489-746A-40A2-A63E-C2C4B8B2A8FF}" />
+    <Item Description = "AGI AgLatLonAlt Class" VIGuid = "{511BAE51-D22C-4B80-AE7D-8DC9FE7B15BE}" />
+    <Item Description = "AGI AgFlightSiteReferenceState Class" VIGuid = "{5495C743-513E-4919-8643-5DD93279416E}" />
+    <Item Description = "AGI AgFlightPerfModelCollection Class" VIGuid = "{5CA806E7-DD13-46B1-A1B8-C4F7B21725E6}" />
+    <Item Description = "AGI AgFlightSiteEndOfPrevProcedure Class" VIGuid = "{725372A8-07A4-4821-BF83-7A35FED6CBC3}" />
+    <Item Description = "AGI AgFlightRK45 Class" VIGuid = "{7C5DE14D-1015-468C-919D-DFEE2F0EE169}" />
+    <Item Description = "AGI AgFlightAircraftHolder Class" VIGuid = "{8D417B57-6B39-4467-B8A4-8911F412ABBB}" />
+    <Item Description = "AGI AgFlightConfiguration Class" VIGuid = "{961ED659-F7CD-43CD-8042-13754AEE715D}" />
+    <Item Description = "AGI AgFlightConfigInertiaMatrix Class" VIGuid = "{B0433C3C-D7C5-48EA-8256-0EB6845BBC53}" />
+    <Item Description = "AGI AgFlightAbsoluteTime Class" VIGuid = "{B5ECEFA5-F533-4168-9DBD-7BCD96E27781}" />
+    <Item Description = "AGI AgFlightRefuelDumpHelper Class" VIGuid = "{BF008410-5F70-48ee-A9B7-0D50F7E3AEAA}" />
+    <Item Description = "AGI AgVersionInfo Class" VIGuid = "{BFCB0B13-B1EB-4212-8097-3D5CCFCEB50B}" />
+    <Item Description = "AGI AgFlightAtmosphereCalcDataBasic Class" VIGuid = "{C3DD1F28-B738-4354-A098-D42F97C1A878}" />
+    <Item Description = "AGI AgFlightProcedureReferenceState Class" VIGuid = "{C4689C63-CE9D-40E1-B7B0-0F07A5BF93C7}" />
+    <Item Description = "AGI AgFlightMissionPhaseCollection Class" VIGuid = "{C70470C8-CE7E-4C85-AC93-6EE6B319836A}" />
+    <Item Description = "AGI AgFlightFuelTankInternal Class" VIGuid = "{C75B1093-95F1-45F5-A849-E2AFEA3B6B39}" />
+    <Item Description = "AGI AgFlightProcedureBasicManeuver Class" VIGuid = "{D36066E8-B327-4659-A930-AC980797391C}" />
+    <Item Description = "AGI AgCartVec3 Class" VIGuid = "{D4B5BDAA-A8E1-4f6c-BBCF-9AD487693A2C}" />
+    <Item Description = "AGI AgFlightMission Class" VIGuid = "{D90CCC89-BE3E-4AC2-A8FF-09BE38631C44}" />
+    <Item Description = "AGI AgFlightProcedureCollection Class" VIGuid = "{F0BA2E47-4AF3-4804-A190-DEC8B7FE3859}" />
+    <Item Description = "AGI AgFlightBLOB Class" VIGuid = "{F7B3DEDF-A222-4355-8DC5-6332065A51FC}" />
+</VersionIndependentGUID>
