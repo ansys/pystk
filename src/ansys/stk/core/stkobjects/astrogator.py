@@ -2127,7 +2127,7 @@ AgEVACalcObjectLocationSource.eAgEVACalcObjectLocationSourceSatellite.__doc__ = 
 agcls.AgTypeNameMap["AgEVACalcObjectLocationSource"] = AgEVACalcObjectLocationSource
 
 class AgEVAGravitationalParameterSource(IntEnum):
-    """The source of the gravitational parameter for a CAgVAStateCalcGravitationalParameter calculation object."""
+    """The source of the gravitational parameter for a CStateCalcGravitationalParameter calculation object."""
     # Cb File.
     eVAGravitationalParameterSourceCbFile = 0
     # Cb File -  System.
@@ -2145,7 +2145,7 @@ AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceGravityFile.__d
 agcls.AgTypeNameMap["AgEVAGravitationalParameterSource"] = AgEVAGravitationalParameterSource
 
 class AgEVAReferenceRadiusSource(IntEnum):
-    """The source of the reference radius for a CAgVAStateCalcReferenceRadius calculation object."""
+    """The source of the reference radius for a CStateCalcReferenceRadius calculation object."""
     # Cb File.
     eVAReferenceRadiusSourceCbFile = 0
     # Gravity File.
@@ -2157,7 +2157,7 @@ AgEVAReferenceRadiusSource.eVAReferenceRadiusSourceGravityFile.__doc__ = "Gravit
 agcls.AgTypeNameMap["AgEVAReferenceRadiusSource"] = AgEVAReferenceRadiusSource
 
 class AgEVAGravCoeffNormalizationType(IntEnum):
-    """The normalization type for the CAgVAStateCalcGravCoeff calculation object."""
+    """The normalization type for the CStateCalcGravCoeff calculation object."""
     # Normalized.
     eVAGravCoeffNormalized = 0
     # Unnormalized.
@@ -2169,7 +2169,7 @@ AgEVAGravCoeffNormalizationType.eVAGravCoeffUnnormalized.__doc__ = "Unnormalized
 agcls.AgTypeNameMap["AgEVAGravCoeffNormalizationType"] = AgEVAGravCoeffNormalizationType
 
 class AgEVAGravCoeffCoefficientType(IntEnum):
-    """The coefficient type for the CAgVAStateCalcGravCoeff calculation object."""
+    """The coefficient type for the CStateCalcGravCoeff calculation object."""
     # Zonal.
     eVAGravCoeffCoefficientTypeZonal = 0
     # Cosine.
@@ -4170,7 +4170,7 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4321,7 +4321,7 @@ class IManeuverOptimalFiniteInitialBoundaryConditions(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4467,7 +4467,7 @@ class IManeuverOptimalFiniteFinalBoundaryConditions(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4645,7 +4645,7 @@ class IManeuverOptimalFinitePathBoundaryConditions(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -6079,7 +6079,7 @@ class IMissionControlSequenceSegmentCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -7832,7 +7832,7 @@ class IScriptingSegmentCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -8061,7 +8061,7 @@ class IScriptingParameterEnumerationChoiceCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -8413,7 +8413,7 @@ class IScriptingParameterCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -9559,7 +9559,7 @@ class IMissionControlSequenceSegment(object):
             return arg_pRetVal.python_val
 
     def Run(self) -> "IState":
-        """Runs the segment in individual segment mode.  See IAgVADriverMCS."""
+        """Runs the segment in individual segment mode.  See IDriverMissionControlSequence."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_Run"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -16326,7 +16326,7 @@ class IProfileCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17533,7 +17533,7 @@ class IDifferentialCorrectorControlCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17629,7 +17629,7 @@ class IDifferentialCorrectorResultCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17991,7 +17991,7 @@ class ITargeterGraphActiveControlCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18077,7 +18077,7 @@ class ITargeterGraphResultCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18360,7 +18360,7 @@ class ITargeterGraphCollection(object):
 
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -42877,7 +42877,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4124EBC1-ABC6-4933-84D2-0F1232D8B630}",
 agcls.AgTypeNameMap["ISRPVariableArea"] = ISRPVariableArea
 
 class IThirdBodyFunction(object):
-    """Properties for a Third Body propagator function. The IAgComponentInfo object returned by the mode property can be cast to IAgVAGravityFieldFunction or IAgVAPointMassFunction depending on the selected ModeType."""
+    """Properties for a Third Body propagator function. The IComponentInfo object returned by the mode property can be cast to IGravityFieldFunction or IPointMassFunction depending on the selected ModeType."""
     _uuid = "{86FDAC1D-8E57-4915-AA9B-E6C35E06C9BC}"
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -42949,7 +42949,7 @@ class IThirdBodyFunction(object):
 
     @property
     def Mode(self) -> "IComponentInfo":
-        """The third body gravity mode. The IAgComponentInfo object returned by this property can be cast to IAgVAGravityFieldFunction or IAgVAPointMassFunction depending on the selected ModeType."""
+        """The third body gravity mode. The IComponentInfo object returned by this property can be cast to IGravityFieldFunction or IPointMassFunction depending on the selected ModeType."""
         with agmarshall.AgInterface_out_arg() as arg_ppComponent:
             agcls.evaluate_hresult(self.__dict__["_GetMode"](byref(arg_ppComponent.COM_val)))
             return arg_ppComponent.python_val

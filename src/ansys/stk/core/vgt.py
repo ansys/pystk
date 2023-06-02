@@ -2655,7 +2655,7 @@ class IAnalysisWorkbenchComponent(object):
 
     @property
     def Context(self) -> "IAnalysisWorkbenchContext":
-        """Returns the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface."""
+        """Returns the context object associated with the instance. The returned object is either an instance of IAnalysisWorkbenchInstance or IAnalysisWorkbenchTemplate interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetContext"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -2739,7 +2739,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5FBDAC10-66FA-4EA2-9F9E-B5D6C0BA3281}",
 agcls.AgTypeNameMap["IAnalysisWorkbenchComponent"] = IAnalysisWorkbenchComponent
 
 class ICalculationToolEvaluateResult(object):
-    """Represents the results of evaluating a scalar component using IAgCrdnCalcScalar.Evaluate method."""
+    """Represents the results of evaluating a scalar component using ICalculationToolScalar.Evaluate method."""
     _uuid = "{6021FC44-7BB4-4DE9-A8C4-1630AB2A7F52}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2792,7 +2792,7 @@ agcls.AgClassCatalog.add_catalog_entry("{6021FC44-7BB4-4DE9-A8C4-1630AB2A7F52}",
 agcls.AgTypeNameMap["ICalculationToolEvaluateResult"] = ICalculationToolEvaluateResult
 
 class ICalculationToolEvaluateWithRateResult(object):
-    """Represents the results of evaluating a scalar component using IAgCrdnCalcScalar.Evaluate method."""
+    """Represents the results of evaluating a scalar component using ICalculationToolScalar.Evaluate method."""
     _uuid = "{E9B2DA30-1317-43E2-8D47-9D675A28F748}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2854,7 +2854,7 @@ agcls.AgClassCatalog.add_catalog_entry("{E9B2DA30-1317-43E2-8D47-9D675A28F748}",
 agcls.AgTypeNameMap["ICalculationToolEvaluateWithRateResult"] = ICalculationToolEvaluateWithRateResult
 
 class ITimeToolEventIntervalResult(object):
-    """Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method."""
+    """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
     _uuid = "{EB80DC8E-368B-41DE-B2B6-E37041B45AAF}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2907,7 +2907,7 @@ agcls.AgClassCatalog.add_catalog_entry("{EB80DC8E-368B-41DE-B2B6-E37041B45AAF}",
 agcls.AgTypeNameMap["ITimeToolEventIntervalResult"] = ITimeToolEventIntervalResult
 
 class ITimeToolEventFindOccurrenceResult(object):
-    """Contains the results returned with IAgCrdnEvent.FindOccurrence method."""
+    """Contains the results returned with ITimeToolEvent.FindOccurrence method."""
     _uuid = "{20F964F0-8466-415E-9344-D6FBA53AF8B0}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3040,7 +3040,7 @@ agcls.AgClassCatalog.add_catalog_entry("{F7B644F0-0728-434D-8C86-C6267B625860}",
 agcls.AgTypeNameMap["ITimeToolFindTimesResult"] = ITimeToolFindTimesResult
 
 class ITimeToolIntervalsVectorResult(object):
-    """Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method."""
+    """Contains the results returned with ITimeToolEventIntervalCollection.FindIntervalCollection method."""
     _uuid = "{87F76F41-61FB-4DFF-A76E-25270023BE34}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3093,7 +3093,7 @@ agcls.AgClassCatalog.add_catalog_entry("{87F76F41-61FB-4DFF-A76E-25270023BE34}",
 agcls.AgTypeNameMap["ITimeToolIntervalsVectorResult"] = ITimeToolIntervalsVectorResult
 
 class ITimeToolEventIntervalCollectionOccurredResult(object):
-    """Contains the results returned with IAgCrdnEventIntervalCollection.Occurred method."""
+    """Contains the results returned with ITimeToolEventIntervalCollection.Occurred method."""
     _uuid = "{A829181E-A9CD-452D-AC81-19C2DA96C490}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3146,7 +3146,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A829181E-A9CD-452D-AC81-19C2DA96C490}",
 agcls.AgTypeNameMap["ITimeToolEventIntervalCollectionOccurredResult"] = ITimeToolEventIntervalCollectionOccurredResult
 
 class ITimeToolIntervalListResult(object):
-    """Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method."""
+    """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
     _uuid = "{D0FDA46F-8B86-4052-8EC7-1448284EABCF}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -14719,7 +14719,7 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             return arg_ppRetVal.python_val
 
     def SetGridValuesFixedNumberOfStepsEx(self, min:"IQuantity", max:"IQuantity", numSteps:int) -> "ISpatialAnalysisToolGridValuesFixedNumberOfSteps":
-        """Sets grid values type to fixed number of steps with min and max as IAgQuantity"""
+        """Sets grid values type to fixed number of steps with min and max as IQuantity"""
         with agmarshall.AgInterface_in_arg(min, IQuantity) as arg_min, \
              agmarshall.AgInterface_in_arg(max, IQuantity) as arg_max, \
              agmarshall.INT_arg(numSteps) as arg_numSteps, \
@@ -14871,7 +14871,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
 
     @property
     def MinEx(self) -> "IQuantity":
-        """Minimum coordinate value as IAgQuantity."""
+        """Minimum coordinate value as IQuantity."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetMinEx"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -14883,7 +14883,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
 
     @property
     def MaxEx(self) -> "IQuantity":
-        """Maximum coordinate value as IAgQuantity."""
+        """Maximum coordinate value as IQuantity."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetMaxEx"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17563,7 +17563,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2F3A17A6-4304-4565-BC1C-7A064DCFE310}",
 agcls.AgTypeNameMap["IAnalysisWorkbenchRefTo"] = IAnalysisWorkbenchRefTo
 
 class IAnalysisWorkbenchTemplate(object):
-    """The IAgCrdnTemplate interface enables to obtain information about the STK class that owns the VGT component."""
+    """The IAnalysisWorkbenchTemplate interface enables to obtain information about the STK class that owns the VGT component."""
     _uuid = "{990635EA-63F9-4CA7-A5A8-DEDAA9C52100}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17607,7 +17607,7 @@ agcls.AgClassCatalog.add_catalog_entry("{990635EA-63F9-4CA7-A5A8-DEDAA9C52100}",
 agcls.AgTypeNameMap["IAnalysisWorkbenchTemplate"] = IAnalysisWorkbenchTemplate
 
 class IAnalysisWorkbenchInstance(object):
-    """The IAgCrdnInstance interface enables to obtain information about the parent object that owns the VGT component."""
+    """The IAnalysisWorkbenchInstance interface enables to obtain information about the parent object that owns the VGT component."""
     _uuid = "{17633665-9601-4FFF-8227-4D5DF0AAEA06}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17709,7 +17709,7 @@ class IVectorGeometryToolPointRefTo(object):
             agcls.evaluate_hresult(self.__dict__["_SetPoint"](arg_point.COM_val))
 
     def GetPoint(self) -> "IVectorGeometryToolPoint":
-        """Returns the actual point object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object."""
+        """Returns the actual point object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetPoint"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17775,7 +17775,7 @@ class IVectorGeometryToolVectorRefTo(object):
             agcls.evaluate_hresult(self.__dict__["_SetVector"](arg_vector.COM_val))
 
     def GetVector(self) -> "IVectorGeometryToolVector":
-        """Returns the actual vector object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object."""
+        """Returns the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetVector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17841,7 +17841,7 @@ class IVectorGeometryToolAxesRefTo(object):
             agcls.evaluate_hresult(self.__dict__["_SetAxes"](arg_axes.COM_val))
 
     def GetAxes(self) -> "IVectorGeometryToolAxes":
-        """Returns the actual axes object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object."""
+        """Returns the actual axes object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAxes"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17907,7 +17907,7 @@ class IVectorGeometryToolAngleRefTo(object):
             agcls.evaluate_hresult(self.__dict__["_SetAngle"](arg_angle.COM_val))
 
     def GetAngle(self) -> "IVectorGeometryToolAngle":
-        """Returns the actual angle object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object."""
+        """Returns the actual angle object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetAngle"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17973,7 +17973,7 @@ class IVectorGeometryToolSystemRefTo(object):
             agcls.evaluate_hresult(self.__dict__["_SetSystem"](arg_system.COM_val))
 
     def GetSystem(self) -> "IVectorGeometryToolSystem":
-        """Returns the actual system object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object."""
+        """Returns the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetSystem"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18039,7 +18039,7 @@ class IVectorGeometryToolPlaneRefTo(object):
             agcls.evaluate_hresult(self.__dict__["_SetPlane"](arg_plane.COM_val))
 
     def GetPlane(self) -> "IVectorGeometryToolPlane":
-        """Returns the actual plane object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object."""
+        """Returns the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetPlane"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -26059,7 +26059,7 @@ agcls.AgClassCatalog.add_catalog_entry("{B2546963-CC14-4F18-91DE-7091EBEA34C5}",
 agcls.AgTypeNameMap["IVectorGeometryToolWellKnownAxes"] = IVectorGeometryToolWellKnownAxes
 
 class IVectorGeometryToolAngleFindAngleResult(object):
-    """Contains the results returned with IAgCrdnAngle.FindAngle method."""
+    """Contains the results returned with IVectorGeometryToolAngle.FindAngle method."""
     _uuid = "{0D2774CC-8D38-4C1D-9BE4-A87BE67B58B4}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26112,7 +26112,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0D2774CC-8D38-4C1D-9BE4-A87BE67B58B4}",
 agcls.AgTypeNameMap["IVectorGeometryToolAngleFindAngleResult"] = IVectorGeometryToolAngleFindAngleResult
 
 class IVectorGeometryToolAngleFindAngleWithRateResult(object):
-    """Contains the results returned with IAgCrdnAngle.FindAngleWithRate method."""
+    """Contains the results returned with IVectorGeometryToolAngle.FindAngleWithRate method."""
     _uuid = "{E46570BA-661C-4974-A780-32DFEAFB9630}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26174,7 +26174,7 @@ agcls.AgClassCatalog.add_catalog_entry("{E46570BA-661C-4974-A780-32DFEAFB9630}",
 agcls.AgTypeNameMap["IVectorGeometryToolAngleFindAngleWithRateResult"] = IVectorGeometryToolAngleFindAngleWithRateResult
 
 class IVectorGeometryToolAngleFindWithRateResult(object):
-    """Contains the results returned with IAgCrdnAngle.FindCoordinatesWithRate method."""
+    """Contains the results returned with IVectorGeometryToolAngle.FindCoordinatesWithRate method."""
     _uuid = "{C4E80CE7-2E38-4364-96D5-004EE425471D}"
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26263,7 +26263,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C4E80CE7-2E38-4364-96D5-004EE425471D}",
 agcls.AgTypeNameMap["IVectorGeometryToolAngleFindWithRateResult"] = IVectorGeometryToolAngleFindWithRateResult
 
 class IVectorGeometryToolAngleFindResult(object):
-    """Contains the results returned with IAgCrdnAngle.FindCoordinates method."""
+    """Contains the results returned with IVectorGeometryToolAngle.FindCoordinates method."""
     _uuid = "{36DD880D-214E-4987-A70A-EA31E7E26B84}"
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26343,7 +26343,7 @@ agcls.AgClassCatalog.add_catalog_entry("{36DD880D-214E-4987-A70A-EA31E7E26B84}",
 agcls.AgTypeNameMap["IVectorGeometryToolAngleFindResult"] = IVectorGeometryToolAngleFindResult
 
 class IVectorGeometryToolAxesTransformResult(object):
-    """Contains the results returned with IAgCrdnAxes.TransformFrom method."""
+    """Contains the results returned with IVectorGeometryToolAxes.TransformFrom method."""
     _uuid = "{D4EC98BE-0D20-4284-96D0-3C40A3100A06}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26396,7 +26396,7 @@ agcls.AgClassCatalog.add_catalog_entry("{D4EC98BE-0D20-4284-96D0-3C40A3100A06}",
 agcls.AgTypeNameMap["IVectorGeometryToolAxesTransformResult"] = IVectorGeometryToolAxesTransformResult
 
 class IVectorGeometryToolAxesTransformWithRateResult(object):
-    """Contains the results returned with IAgCrdnAxes.TransformFromWithRate method."""
+    """Contains the results returned with IVectorGeometryToolAxes.TransformFromWithRate method."""
     _uuid = "{6434061B-3584-49FF-99C5-2C2D6B385CF1}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26458,7 +26458,7 @@ agcls.AgClassCatalog.add_catalog_entry("{6434061B-3584-49FF-99C5-2C2D6B385CF1}",
 agcls.AgTypeNameMap["IVectorGeometryToolAxesTransformWithRateResult"] = IVectorGeometryToolAxesTransformWithRateResult
 
 class IVectorGeometryToolPlaneFindInAxesResult(object):
-    """Contains the results returned with IAgCrdnPlane.FindInAxes method."""
+    """Contains the results returned with IVectorGeometryToolPlane.FindInAxes method."""
     _uuid = "{A5CD1D7F-224B-4B19-A149-DAFDA3FF1550}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26520,7 +26520,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A5CD1D7F-224B-4B19-A149-DAFDA3FF1550}",
 agcls.AgTypeNameMap["IVectorGeometryToolPlaneFindInAxesResult"] = IVectorGeometryToolPlaneFindInAxesResult
 
 class IVectorGeometryToolPlaneFindInAxesWithRateResult(object):
-    """Contains the results returned with IAgCrdnPlane.FindInAxesWithRate method."""
+    """Contains the results returned with IVectorGeometryToolPlane.FindInAxesWithRate method."""
     _uuid = "{CD4424A8-28CF-4AE5-8242-480B6625F0EB}"
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26600,7 +26600,7 @@ agcls.AgClassCatalog.add_catalog_entry("{CD4424A8-28CF-4AE5-8242-480B6625F0EB}",
 agcls.AgTypeNameMap["IVectorGeometryToolPlaneFindInAxesWithRateResult"] = IVectorGeometryToolPlaneFindInAxesWithRateResult
 
 class IVectorGeometryToolPlaneFindInSystemResult(object):
-    """Contains the results returned with IAgCrdnPlane.FindInSystem method."""
+    """Contains the results returned with IVectorGeometryToolPlane.FindInSystem method."""
     _uuid = "{85D16885-3BEB-4590-963B-F1CC8D016097}"
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26671,7 +26671,7 @@ agcls.AgClassCatalog.add_catalog_entry("{85D16885-3BEB-4590-963B-F1CC8D016097}",
 agcls.AgTypeNameMap["IVectorGeometryToolPlaneFindInSystemResult"] = IVectorGeometryToolPlaneFindInSystemResult
 
 class IVectorGeometryToolPlaneFindInSystemWithRateResult(object):
-    """Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method."""
+    """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
     _uuid = "{888499CB-4BF7-46A6-A11B-3FFC05EA6804}"
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26769,7 +26769,7 @@ agcls.AgClassCatalog.add_catalog_entry("{888499CB-4BF7-46A6-A11B-3FFC05EA6804}",
 agcls.AgTypeNameMap["IVectorGeometryToolPlaneFindInSystemWithRateResult"] = IVectorGeometryToolPlaneFindInSystemWithRateResult
 
 class IVectorGeometryToolAxesFindInAxesResult(object):
-    """Contains the results returned with IAgCrdnAxes.FindInAxes method."""
+    """Contains the results returned with IVectorGeometryToolAxes.FindInAxes method."""
     _uuid = "{654E97B2-DF6A-4CB1-8EFC-AE3E01F3005A}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26822,7 +26822,7 @@ agcls.AgClassCatalog.add_catalog_entry("{654E97B2-DF6A-4CB1-8EFC-AE3E01F3005A}",
 agcls.AgTypeNameMap["IVectorGeometryToolAxesFindInAxesResult"] = IVectorGeometryToolAxesFindInAxesResult
 
 class IVectorGeometryToolAxesFindInAxesWithRateResult(object):
-    """Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method."""
+    """Contains the results returned with IVectorGeometryToolAxes.FindInAxesWithRate method."""
     _uuid = "{72644DD0-D129-4D7A-8A81-586E86E639BD}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26884,7 +26884,7 @@ agcls.AgClassCatalog.add_catalog_entry("{72644DD0-D129-4D7A-8A81-586E86E639BD}",
 agcls.AgTypeNameMap["IVectorGeometryToolAxesFindInAxesWithRateResult"] = IVectorGeometryToolAxesFindInAxesWithRateResult
 
 class IVectorGeometryToolPointLocateInSystemResult(object):
-    """Contains the results returned with IAgCrdnPoint.LocateInSystem method."""
+    """Contains the results returned with IVectorGeometryToolPoint.LocateInSystem method."""
     _uuid = "{84453DEC-5D01-4D47-A177-F8A737F0496D}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26937,7 +26937,7 @@ agcls.AgClassCatalog.add_catalog_entry("{84453DEC-5D01-4D47-A177-F8A737F0496D}",
 agcls.AgTypeNameMap["IVectorGeometryToolPointLocateInSystemResult"] = IVectorGeometryToolPointLocateInSystemResult
 
 class IVectorGeometryToolPointLocateInSystemWithRateResult(object):
-    """Contains the results returned with IAgCrdnPoint.LocateInSystemWithRate method."""
+    """Contains the results returned with IVectorGeometryToolPoint.LocateInSystemWithRate method."""
     _uuid = "{6CB1D8DC-42CB-417B-9B80-B7320EEEFC9E}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -26999,7 +26999,7 @@ agcls.AgClassCatalog.add_catalog_entry("{6CB1D8DC-42CB-417B-9B80-B7320EEEFC9E}",
 agcls.AgTypeNameMap["IVectorGeometryToolPointLocateInSystemWithRateResult"] = IVectorGeometryToolPointLocateInSystemWithRateResult
 
 class IVectorGeometryToolSystemTransformResult(object):
-    """Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods."""
+    """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IAnalysisWorkbenchComponentSystem.TransformTo methods."""
     _uuid = "{FE5C3393-E2B9-4DC0-BFA9-0A1377E1692A}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -27052,7 +27052,7 @@ agcls.AgClassCatalog.add_catalog_entry("{FE5C3393-E2B9-4DC0-BFA9-0A1377E1692A}",
 agcls.AgTypeNameMap["IVectorGeometryToolSystemTransformResult"] = IVectorGeometryToolSystemTransformResult
 
 class IVectorGeometryToolSystemTransformWithRateResult(object):
-    """Contains the results returned with IAgCrdnSystem.TransformFromWithRate and IAgCrdnSystem.TransformToWithRate methods."""
+    """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IAnalysisWorkbenchComponentSystem.TransformToWithRate methods."""
     _uuid = "{A9E92350-230F-45C7-A617-DB684FF89C78}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -27114,7 +27114,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A9E92350-230F-45C7-A617-DB684FF89C78}",
 agcls.AgTypeNameMap["IVectorGeometryToolSystemTransformWithRateResult"] = IVectorGeometryToolSystemTransformWithRateResult
 
 class IVectorGeometryToolSystemFindInSystemResult(object):
-    """Contains the results returned with IAgCrdnSystem.FindInSystem method."""
+    """Contains the results returned with IVectorGeometryToolSystem.FindInSystem method."""
     _uuid = "{2A97D0CA-38C6-44D9-BCB1-16CCA1C1A25E}"
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -27194,7 +27194,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2A97D0CA-38C6-44D9-BCB1-16CCA1C1A25E}",
 agcls.AgTypeNameMap["IVectorGeometryToolSystemFindInSystemResult"] = IVectorGeometryToolSystemFindInSystemResult
 
 class IVectorGeometryToolVectorFindInAxesResult(object):
-    """Contains the results returned with IAgCrdnVector.FindInAxes method."""
+    """Contains the results returned with IVectorGeometryToolVector.FindInAxes method."""
     _uuid = "{BBCEDAA0-AF02-47A9-A904-0E6B456A4D99}"
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -27247,7 +27247,7 @@ agcls.AgClassCatalog.add_catalog_entry("{BBCEDAA0-AF02-47A9-A904-0E6B456A4D99}",
 agcls.AgTypeNameMap["IVectorGeometryToolVectorFindInAxesResult"] = IVectorGeometryToolVectorFindInAxesResult
 
 class IVectorGeometryToolVectorFindInAxesWithRateResult(object):
-    """Contains the results returned with IAgCrdnVector.FindInAxesWithRate method."""
+    """Contains the results returned with IVectorGeometryToolVector.FindInAxesWithRate method."""
     _uuid = "{A5EB9B7C-559C-4ABB-839E-47109CDC8446}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -28115,7 +28115,7 @@ agcls.AgClassCatalog.add_catalog_entry("{832CA139-8ECF-4E95-AB67-1BB7713CF9FC}",
 
 
 class TimeToolEventIntervalResult(ITimeToolEventIntervalResult):
-    """Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method."""
+    """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -28136,7 +28136,7 @@ agcls.AgClassCatalog.add_catalog_entry("{ACE6C28C-4664-4B7F-8736-91F55C7962A6}",
 
 
 class TimeToolEventFindOccurrenceResult(ITimeToolEventFindOccurrenceResult):
-    """Contains the results returned with IAgCrdnEvent.FindOccurrence method."""
+    """Contains the results returned with ITimeToolEvent.FindOccurrence method."""
     def __init__(self, sourceObject=None):
         ITimeToolEventFindOccurrenceResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -28178,7 +28178,7 @@ agcls.AgClassCatalog.add_catalog_entry("{AF246FCF-7FA3-4CD6-878B-E9AC267F017A}",
 
 
 class TimeToolIntervalsVectorResult(ITimeToolIntervalsVectorResult):
-    """Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method."""
+    """Contains the results returned with ITimeToolEventIntervalCollection.FindIntervalCollection method."""
     def __init__(self, sourceObject=None):
         ITimeToolIntervalsVectorResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -28199,7 +28199,7 @@ agcls.AgClassCatalog.add_catalog_entry("{233B8EB4-0B6A-485F-BACB-C678798FDA21}",
 
 
 class TimeToolEventIntervalCollectionOccurredResult(ITimeToolEventIntervalCollectionOccurredResult):
-    """Contains the results returned with IAgCrdnEventIntervalCollection.Occurred method."""
+    """Contains the results returned with ITimeToolEventIntervalCollection.Occurred method."""
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollectionOccurredResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -28220,7 +28220,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9D2BD8F6-406D-4BA0-B5CF-C81711C7C344}",
 
 
 class TimeToolIntervalListResult(ITimeToolIntervalListResult):
-    """Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method."""
+    """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
     def __init__(self, sourceObject=None):
         ITimeToolIntervalListResult.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):

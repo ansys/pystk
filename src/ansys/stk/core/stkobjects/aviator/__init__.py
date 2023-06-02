@@ -16285,7 +16285,7 @@ agcls.AgClassCatalog.add_catalog_entry("{a3a67fca-89f4-4cc8-9ef0-194707369ef9}",
 agcls.AgTypeNameMap["ICatalogWaypoint"] = ICatalogWaypoint
 
 class IARINC424Airport(object):
-    """This interface is deprecated. Use IAgAvtrARINC424Item instead."""
+    """This interface is deprecated. Use IARINC424Item instead."""
     _uuid = "{38a8e2de-6ca0-42b4-a5c9-9a2ae40ac0d7}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -16402,7 +16402,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5725c989-94a3-47c9-8115-6d5b88b992aa}",
 agcls.AgTypeNameMap["IDAFIFItem"] = IDAFIFItem
 
 class IARINC424Runway(object):
-    """This interface is deprecated. Use IAgAvtrARINC424Item instead."""
+    """This interface is deprecated. Use IARINC424Item instead."""
     _uuid = "{fafcfc3b-d259-498d-9000-8ec380048afa}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19947,7 +19947,7 @@ agcls.AgClassCatalog.add_catalog_entry("{d3b3af6e-7b5a-4491-aaca-c05eb901afa0}",
 agcls.AgTypeNameMap["IAdvFixedWingGeometry"] = IAdvFixedWingGeometry
 
 class IAdvFixedWingTurbofanBasicABPowerplant(object):
-    """This interface is deprecated. Use IAgAvtrAdvFixedWingTurbofanBasicABProp instead."""
+    """This interface is deprecated. Use IAdvFixedWingTurbofanBasicABProp instead."""
     _uuid = "{9bc7e978-48ec-487d-8460-014c8fe376bd}"
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19982,7 +19982,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9bc7e978-48ec-487d-8460-014c8fe376bd}",
 agcls.AgTypeNameMap["IAdvFixedWingTurbofanBasicABPowerplant"] = IAdvFixedWingTurbofanBasicABPowerplant
 
 class IAdvFixedWingTurbojetBasicABPowerplant(object):
-    """This interface is deprecated. Use IAgAvtrAdvFixedWingTurbojetBasicABProp instead."""
+    """This interface is deprecated. Use IAdvFixedWingTurbojetBasicABProp instead."""
     _uuid = "{552db5f4-fe5d-4709-80b4-7ba074c673ff}"
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -40265,7 +40265,7 @@ agcls.AgClassCatalog.add_catalog_entry("{cf86965f-eacf-47ca-a6b8-5c69a1f9612f}",
 
 
 class AdvFixedWingTurbofanBasicABPowerplant(IAdvFixedWingTurbofanBasicABPowerplant):
-    """This class is deprecated. Use AgAvtrAdvFixedWingTurbofanBasicABProp instead."""
+    """This class is deprecated. Use AdvFixedWingTurbofanBasicABProp instead."""
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbofanBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -40286,7 +40286,7 @@ agcls.AgClassCatalog.add_catalog_entry("{27a6cd0b-bd9b-4af7-9367-9d2ce3fa39cd}",
 
 
 class AdvFixedWingTurbojetBasicABPowerplant(IAdvFixedWingTurbojetBasicABPowerplant):
-    """This class is deprecated. Use AgAvtrAdvFixedWingTurbojetBasicABProp instead."""
+    """This class is deprecated. Use AdvFixedWingTurbojetBasicABProp instead."""
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbojetBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
