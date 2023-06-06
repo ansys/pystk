@@ -265,7 +265,7 @@ agcls.AgClassCatalog.add_catalog_entry("{42DFA066-8474-4FAA-9F66-E4477DBD44E2}",
 agcls.AgTypeNameMap["IUiFileOpenExt"] = IUiFileOpenExt
 
 class IUiApplication(object):
-    """IAgUiApplication represents a root of the Application Model."""
+    """IUiApplication represents a root of the Application Model."""
     _uuid = "{769EDAA1-8767-4781-BC43-D968B0D67C02}"
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods

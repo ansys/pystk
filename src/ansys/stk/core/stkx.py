@@ -919,7 +919,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A2BB8372-EA5F-4D9D-84C3-4D9E5B9A8840}",
 agcls.AgTypeNameMap["ISTKXApplication"] = ISTKXApplication
 
 class IDataObject(object):
-    """IAgDataObject is used for OLE drag and drop operations"""
+    """IDataObject is used for OLE drag and drop operations"""
     _uuid = "{557F091D-247F-4040-B1E9-10E5BCEDFFD5}"
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
