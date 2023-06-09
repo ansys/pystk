@@ -277,7 +277,7 @@ class Sensor(CodeSnippetsTestBase):
         sensor.SetLocationType(AgESnLocation.eSnLocationCrdnPoint)
 
         # Get IAgLocationCrdnPoint interface
-        vgtPoint = clr.CastAs(sensor.LocationData, ILocationCrdnPoint)
+        vgtPoint = clr.CastAs(sensor.LocationData, ILocationVectorGeometryToolPoint)
 
         # point sensor to an already existing object
         vgtPoint.PointPath = "Facility/Facility1 Center"

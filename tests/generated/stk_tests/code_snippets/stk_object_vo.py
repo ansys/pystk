@@ -221,9 +221,9 @@ class StkObjectVO(CodeSnippetsTestBase):
                     )
                 ).QualifiedPath,
             ),
-            IVOReferenceCrdnVector,
+            IVOReferenceVectorGeometryToolVector,
         )
-        (clr.Convert(body, IVOReferenceCrdn)).Color = Color.Yellow
+        (clr.Convert(body, IVOReferenceAnalysisWorkbenchComponent)).Color = Color.Yellow
         body.DrawAtCB = True
         body.Axes = "CentralBody/Earth Fixed Axes"
 

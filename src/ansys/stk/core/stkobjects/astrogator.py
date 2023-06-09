@@ -95,15 +95,15 @@ __all__ = ["AccessStoppingCondition", "AgEVAAccessCriterion", "AgEVAAscentType",
 "IStateCalcAltitudeOfPeriapsis", "IStateCalcAngle", "IStateCalcApparentSolarTime", "IStateCalcArgOfLat", "IStateCalcArgOfPeriapsis", 
 "IStateCalcBetaAngle", "IStateCalcC3Energy", "IStateCalcCartSTMElem", "IStateCalcCartesianElem", "IStateCalcCd", "IStateCalcCloseApproachBearing", 
 "IStateCalcCloseApproachCosBearing", "IStateCalcCloseApproachMagnitude", "IStateCalcCloseApproachTheta", "IStateCalcCloseApproachX", 
-"IStateCalcCloseApproachY", "IStateCalcCosOfVerticalFPA", "IStateCalcCr", "IStateCalcCrdnAngle", "IStateCalcCurvilinearRelMotion", 
-"IStateCalcCustomFunction", "IStateCalcDamageFlux", "IStateCalcDamageMassFlux", "IStateCalcDec", "IStateCalcDecRate", "IStateCalcDeltaDec", 
-"IStateCalcDeltaFromMaster", "IStateCalcDeltaRA", "IStateCalcDeltaV", "IStateCalcDeltaVSquared", "IStateCalcDensity", "IStateCalcDifference", 
-"IStateCalcDifferenceAcrossSegmentsOtherSat", "IStateCalcDifferenceOtherSegment", "IStateCalcDotProduct", "IStateCalcDragArea", 
-"IStateCalcDuration", "IStateCalcEarthMeanLocTimeAN", "IStateCalcEarthMeanSolarTime", "IStateCalcEccentricity", "IStateCalcEccentricityAnomaly", 
-"IStateCalcEnvironment", "IStateCalcEpoch", "IStateCalcEquinoctialElem", "IStateCalcFPA", "IStateCalcFuelMass", "IStateCalcGeodeticElem", 
-"IStateCalcGravCoeff", "IStateCalcGravitationalParameter", "IStateCalcHeightAboveTerrain", "IStateCalcImpactFlux", "IStateCalcImpactMassFlux", 
-"IStateCalcInAsympDec", "IStateCalcInAsympRA", "IStateCalcInVelAzAtPeriapsis", "IStateCalcInclination", "IStateCalcInertialDeltaVMagnitude", 
-"IStateCalcInertialDeltaVx", "IStateCalcInertialDeltaVy", "IStateCalcInertialDeltaVz", "IStateCalcJacobiConstant", "IStateCalcLocalApparentSolarLon", 
+"IStateCalcCloseApproachY", "IStateCalcCosOfVerticalFPA", "IStateCalcCr", "IStateCalcCurvilinearRelMotion", "IStateCalcCustomFunction", 
+"IStateCalcDamageFlux", "IStateCalcDamageMassFlux", "IStateCalcDec", "IStateCalcDecRate", "IStateCalcDeltaDec", "IStateCalcDeltaFromMaster", 
+"IStateCalcDeltaRA", "IStateCalcDeltaV", "IStateCalcDeltaVSquared", "IStateCalcDensity", "IStateCalcDifference", "IStateCalcDifferenceAcrossSegmentsOtherSat", 
+"IStateCalcDifferenceOtherSegment", "IStateCalcDotProduct", "IStateCalcDragArea", "IStateCalcDuration", "IStateCalcEarthMeanLocTimeAN", 
+"IStateCalcEarthMeanSolarTime", "IStateCalcEccentricity", "IStateCalcEccentricityAnomaly", "IStateCalcEnvironment", "IStateCalcEpoch", 
+"IStateCalcEquinoctialElem", "IStateCalcFPA", "IStateCalcFuelMass", "IStateCalcGeodeticElem", "IStateCalcGravCoeff", "IStateCalcGravitationalParameter", 
+"IStateCalcHeightAboveTerrain", "IStateCalcImpactFlux", "IStateCalcImpactMassFlux", "IStateCalcInAsympDec", "IStateCalcInAsympRA", 
+"IStateCalcInVelAzAtPeriapsis", "IStateCalcInclination", "IStateCalcInertialDeltaVMagnitude", "IStateCalcInertialDeltaVx", 
+"IStateCalcInertialDeltaVy", "IStateCalcInertialDeltaVz", "IStateCalcJacobiConstant", "IStateCalcLocalApparentSolarLon", 
 "IStateCalcLonDriftRate", "IStateCalcLonOfAscNode", "IStateCalcLonOfPeriapsis", "IStateCalcMagnitudeFieldDipoleL", "IStateCalcManeuverSpecificImpulse", 
 "IStateCalcManeuverTotalMassFlowRate", "IStateCalcMass", "IStateCalcMaxValue", "IStateCalcMeanAnomaly", "IStateCalcMeanEarthLon", 
 "IStateCalcMeanMotion", "IStateCalcMeanValue", "IStateCalcMedianValue", "IStateCalcMinValue", "IStateCalcMissionControlSequenceDeltaV", 
@@ -119,24 +119,25 @@ __all__ = ["AccessStoppingCondition", "AgEVAAccessCriterion", "AgEVAAscentType",
 "IStateCalcScript", "IStateCalcSemiMajorAxis", "IStateCalcSequenceDeltaV", "IStateCalcSequenceDeltaVSquared", "IStateCalcSignedEccentricity", 
 "IStateCalcSolarBetaAngle", "IStateCalcSolarInPlaneAngle", "IStateCalcSpeedOfLight", "IStateCalcStandardDeviation", "IStateCalcTemperature", 
 "IStateCalcTimePastAscNode", "IStateCalcTimePastPeriapsis", "IStateCalcTrueAnomaly", "IStateCalcTrueLon", "IStateCalcUserValue", 
-"IStateCalcVMagnitude", "IStateCalcValueAtSegment", "IStateCalcValueAtSegmentOtherSat", "IStateCalcVectorDec", "IStateCalcVectorMagnitude", 
-"IStateCalcVectorRA", "IStateCalcVectorX", "IStateCalcVectorY", "IStateCalcVectorZ", "IStateCalcVelAz", "IStateCalcVelDifferenceOtherSegment", 
-"IStateTransformationFunction", "IStoppingCondition", "IStoppingConditionCollection", "IStoppingConditionComponent", "IStoppingConditionElement", 
-"ITargeterGraph", "ITargeterGraphActiveControl", "ITargeterGraphActiveControlCollection", "ITargeterGraphCollection", "ITargeterGraphResult", 
-"ITargeterGraphResultCollection", "IThirdBodyFunction", "IThruster", "IThrusterSet", "IThrusterSetCollection", "ITwoBodyFunction", 
-"IUS_Standard_Atmosphere", "IUserVariable", "IUserVariableCollection", "IUserVariableDefinition", "IUserVariableDefinitionCollection", 
-"IUserVariableUpdate", "IUserVariableUpdateCollection", "IVenusGRAM2005", "IYarkovskyFunc", "JacchiaBowman2008", "JacchiaRoberts", 
-"Jacchia_1960", "Jacchia_1970", "Jacchia_1971", "LightingStoppingCondition", "MSISE_1990", "MSIS_1986", "ManeuverFinite", 
-"ManeuverFinitePropagator", "ManeuverImpulsive", "ManeuverOptimalFinite", "ManeuverOptimalFiniteBounds", "ManeuverOptimalFiniteFinalBoundaryConditions", 
-"ManeuverOptimalFiniteInitialBoundaryConditions", "ManeuverOptimalFinitePathBoundaryConditions", "ManeuverOptimalFiniteSNOPTOptimizer", 
-"ManeuverOptimalFiniteSteeringNodeCollection", "ManeuverOptimalFiniteSteeringNodeElement", "MarsGRAM2000", "MarsGRAM2001", 
-"MarsGRAM2005", "MarsGRAM2010", "MarsGRAM37", "MissionControlSequenceBackwardSequence", "MissionControlSequenceEnd", "MissionControlSequenceFollow", 
-"MissionControlSequenceHold", "MissionControlSequenceInitialState", "MissionControlSequenceLaunch", "MissionControlSequenceManeuver", 
-"MissionControlSequenceOptions", "MissionControlSequencePropagate", "MissionControlSequenceReturn", "MissionControlSequenceSegmentCollection", 
-"MissionControlSequenceSegmentProperties", "MissionControlSequenceSequence", "MissionControlSequenceStop", "MissionControlSequenceTargetSequence", 
-"MissionControlSequenceUpdate", "NRLMSISE_2000", "NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP", "PluginProperties", 
-"PointMassFunction", "PowerInternal", "PowerProcessed", "PowerSolarArray", "ProfileChangeManeuverType", "ProfileChangePropagator", 
-"ProfileChangeReturnSegment", "ProfileChangeStopSegment", "ProfileChangeStoppingConditionState", "ProfileCollection", "ProfileDifferentialCorrector", 
+"IStateCalcVMagnitude", "IStateCalcValueAtSegment", "IStateCalcValueAtSegmentOtherSat", "IStateCalcVectorDec", "IStateCalcVectorGeometryToolAngle", 
+"IStateCalcVectorMagnitude", "IStateCalcVectorRA", "IStateCalcVectorX", "IStateCalcVectorY", "IStateCalcVectorZ", "IStateCalcVelAz", 
+"IStateCalcVelDifferenceOtherSegment", "IStateTransformationFunction", "IStoppingCondition", "IStoppingConditionCollection", 
+"IStoppingConditionComponent", "IStoppingConditionElement", "ITargeterGraph", "ITargeterGraphActiveControl", "ITargeterGraphActiveControlCollection", 
+"ITargeterGraphCollection", "ITargeterGraphResult", "ITargeterGraphResultCollection", "IThirdBodyFunction", "IThruster", 
+"IThrusterSet", "IThrusterSetCollection", "ITwoBodyFunction", "IUS_Standard_Atmosphere", "IUserVariable", "IUserVariableCollection", 
+"IUserVariableDefinition", "IUserVariableDefinitionCollection", "IUserVariableUpdate", "IUserVariableUpdateCollection", 
+"IVenusGRAM2005", "IYarkovskyFunc", "JacchiaBowman2008", "JacchiaRoberts", "Jacchia_1960", "Jacchia_1970", "Jacchia_1971", 
+"LightingStoppingCondition", "MSISE_1990", "MSIS_1986", "ManeuverFinite", "ManeuverFinitePropagator", "ManeuverImpulsive", 
+"ManeuverOptimalFinite", "ManeuverOptimalFiniteBounds", "ManeuverOptimalFiniteFinalBoundaryConditions", "ManeuverOptimalFiniteInitialBoundaryConditions", 
+"ManeuverOptimalFinitePathBoundaryConditions", "ManeuverOptimalFiniteSNOPTOptimizer", "ManeuverOptimalFiniteSteeringNodeCollection", 
+"ManeuverOptimalFiniteSteeringNodeElement", "MarsGRAM2000", "MarsGRAM2001", "MarsGRAM2005", "MarsGRAM2010", "MarsGRAM37", 
+"MissionControlSequenceBackwardSequence", "MissionControlSequenceEnd", "MissionControlSequenceFollow", "MissionControlSequenceHold", 
+"MissionControlSequenceInitialState", "MissionControlSequenceLaunch", "MissionControlSequenceManeuver", "MissionControlSequenceOptions", 
+"MissionControlSequencePropagate", "MissionControlSequenceReturn", "MissionControlSequenceSegmentCollection", "MissionControlSequenceSegmentProperties", 
+"MissionControlSequenceSequence", "MissionControlSequenceStop", "MissionControlSequenceTargetSequence", "MissionControlSequenceUpdate", 
+"NRLMSISE_2000", "NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP", "PluginProperties", "PointMassFunction", 
+"PowerInternal", "PowerProcessed", "PowerSolarArray", "ProfileChangeManeuverType", "ProfileChangePropagator", "ProfileChangeReturnSegment", 
+"ProfileChangeStopSegment", "ProfileChangeStoppingConditionState", "ProfileCollection", "ProfileDifferentialCorrector", 
 "ProfileGoldenSection", "ProfileGridSearch", "ProfileIPOPTOptimizer", "ProfileLambertProfile", "ProfileLambertSearchProfile", 
 "ProfileRunOnce", "ProfileSNOPTOptimizer", "ProfileScriptingTool", "ProfileSearchPlugin", "ProfileSeedFiniteManeuver", "PropagatorFunctionCollection", 
 "RadiationPressureFunction", "RungeKutta2nd3rd", "RungeKutta4th", "RungeKutta4th5th", "RungeKutta4thAdapt", "RungeKuttaF7th8th", 
@@ -149,9 +150,9 @@ __all__ = ["AccessStoppingCondition", "AgEVAAccessCriterion", "AgEVAAscentType",
 "StateCalcAngle", "StateCalcApparentSolarTime", "StateCalcArgOfLat", "StateCalcArgOfPeriapsis", "StateCalcBetaAngle", "StateCalcC3Energy", 
 "StateCalcCartSTMElem", "StateCalcCartesianElem", "StateCalcCd", "StateCalcCloseApproachBearing", "StateCalcCloseApproachCosBearing", 
 "StateCalcCloseApproachMagnitude", "StateCalcCloseApproachTheta", "StateCalcCloseApproachX", "StateCalcCloseApproachY", 
-"StateCalcCosOfVerticalFPA", "StateCalcCr", "StateCalcCrdnAngle", "StateCalcCurvilinearRelMotion", "StateCalcCustomFunction", 
-"StateCalcDamageFlux", "StateCalcDamageMassFlux", "StateCalcDec", "StateCalcDecRate", "StateCalcDeltaDec", "StateCalcDeltaFromMaster", 
-"StateCalcDeltaRA", "StateCalcDeltaV", "StateCalcDeltaVSquared", "StateCalcDensity", "StateCalcDifference", "StateCalcDifferenceAcrossSegmentsOtherSat", 
+"StateCalcCosOfVerticalFPA", "StateCalcCr", "StateCalcCurvilinearRelMotion", "StateCalcCustomFunction", "StateCalcDamageFlux", 
+"StateCalcDamageMassFlux", "StateCalcDec", "StateCalcDecRate", "StateCalcDeltaDec", "StateCalcDeltaFromMaster", "StateCalcDeltaRA", 
+"StateCalcDeltaV", "StateCalcDeltaVSquared", "StateCalcDensity", "StateCalcDifference", "StateCalcDifferenceAcrossSegmentsOtherSat", 
 "StateCalcDifferenceOtherSegment", "StateCalcDotProduct", "StateCalcDragArea", "StateCalcDuration", "StateCalcEarthMeanLocTimeAN", 
 "StateCalcEarthMeanSolarTime", "StateCalcEccentricity", "StateCalcEccentricityAnomaly", "StateCalcEnvironment", "StateCalcEpoch", 
 "StateCalcEquinoctialElem", "StateCalcFPA", "StateCalcFuelMass", "StateCalcGeodeticElem", "StateCalcGravCoeff", "StateCalcGravitationalParameter", 
@@ -173,12 +174,12 @@ __all__ = ["AccessStoppingCondition", "AgEVAAccessCriterion", "AgEVAAscentType",
 "StateCalcSignedEccentricity", "StateCalcSolarBetaAngle", "StateCalcSolarInPlaneAngle", "StateCalcSpeedOfLight", "StateCalcStandardDeviation", 
 "StateCalcTemperature", "StateCalcTimePastAscNode", "StateCalcTimePastPeriapsis", "StateCalcTrueAnomaly", "StateCalcTrueLon", 
 "StateCalcUserValue", "StateCalcVMagnitude", "StateCalcValueAtSegment", "StateCalcValueAtSegmentOtherSat", "StateCalcVectorDec", 
-"StateCalcVectorMagnitude", "StateCalcVectorRA", "StateCalcVectorX", "StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelAz", 
-"StateCalcVelDifferenceOtherSegment", "StateTransformationFunction", "StoppingCondition", "StoppingConditionCollection", 
-"StoppingConditionElement", "TargeterGraph", "TargeterGraphActiveControl", "TargeterGraphActiveControlCollection", "TargeterGraphCollection", 
-"TargeterGraphResult", "TargeterGraphResultCollection", "ThirdBodyFunction", "Thruster", "ThrusterSet", "ThrusterSetCollection", 
-"TwoBodyFunction", "US_Standard_Atmosphere", "UserVariable", "UserVariableCollection", "UserVariableDefinition", "UserVariableDefinitionCollection", 
-"UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005", "YarkovskyFunc"]
+"StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude", "StateCalcVectorRA", "StateCalcVectorX", "StateCalcVectorY", 
+"StateCalcVectorZ", "StateCalcVelAz", "StateCalcVelDifferenceOtherSegment", "StateTransformationFunction", "StoppingCondition", 
+"StoppingConditionCollection", "StoppingConditionElement", "TargeterGraph", "TargeterGraphActiveControl", "TargeterGraphActiveControlCollection", 
+"TargeterGraphCollection", "TargeterGraphResult", "TargeterGraphResultCollection", "ThirdBodyFunction", "Thruster", "ThrusterSet", 
+"ThrusterSetCollection", "TwoBodyFunction", "US_Standard_Atmosphere", "UserVariable", "UserVariableCollection", "UserVariableDefinition", 
+"UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005", "YarkovskyFunc"]
 
 import typing
 
@@ -31215,7 +31216,7 @@ class IStateCalcUserValue(object):
 agcls.AgClassCatalog.add_catalog_entry("{BB517244-9226-45E2-9048-9D4E289BA920}", IStateCalcUserValue)
 agcls.AgTypeNameMap["IStateCalcUserValue"] = IStateCalcUserValue
 
-class IStateCalcCrdnAngle(object):
+class IStateCalcVectorGeometryToolAngle(object):
     """Properties for an Vector Geometry Tool Angle calculation object."""
     _uuid = "{7EC926A3-7ED6-4091-9E74-EBA5700075A5}"
     _num_methods = 2
@@ -31225,30 +31226,30 @@ class IStateCalcCrdnAngle(object):
         self.__dict__["_GetAngleName"] = _raise_uninitialized_error
         self.__dict__["_SetAngleName"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
-            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IStateCalcCrdnAngle._uuid))
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IStateCalcVectorGeometryToolAngle._uuid))
             if pUnk is not None:
                 self._private_init(pUnk)
                 del(pUnk)
             else:
-                raise STKInvalidCastError("Failed to create IStateCalcCrdnAngle from source object.")
+                raise STKInvalidCastError("Failed to create IStateCalcVectorGeometryToolAngle from source object.")
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
-        IID_IStateCalcCrdnAngle = agcom.GUID(IStateCalcCrdnAngle._uuid)
-        vtable_offset_local = IStateCalcCrdnAngle._vtable_offset - 1
-        self.__dict__["_GetAngleName"] = IAGFUNCTYPE(pUnk, IID_IStateCalcCrdnAngle, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetAngleName"] = IAGFUNCTYPE(pUnk, IID_IStateCalcCrdnAngle, vtable_offset_local+2, agcom.BSTR)
+        IID_IStateCalcVectorGeometryToolAngle = agcom.GUID(IStateCalcVectorGeometryToolAngle._uuid)
+        vtable_offset_local = IStateCalcVectorGeometryToolAngle._vtable_offset - 1
+        self.__dict__["_GetAngleName"] = IAGFUNCTYPE(pUnk, IID_IStateCalcVectorGeometryToolAngle, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_SetAngleName"] = IAGFUNCTYPE(pUnk, IID_IStateCalcVectorGeometryToolAngle, vtable_offset_local+2, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        if attrname in IStateCalcCrdnAngle.__dict__ and type(IStateCalcCrdnAngle.__dict__[attrname]) == property:
-            return IStateCalcCrdnAngle.__dict__[attrname]
+        if attrname in IStateCalcVectorGeometryToolAngle.__dict__ and type(IStateCalcVectorGeometryToolAngle.__dict__[attrname]) == property:
+            return IStateCalcVectorGeometryToolAngle.__dict__[attrname]
         return None
     def __setattr__(self, attrname, value):
         if self._get_property(attrname) is not None:
             self._get_property(attrname).__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in IStateCalcCrdnAngle.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in IStateCalcVectorGeometryToolAngle.")
     
     @property
     def AngleName(self) -> str:
@@ -31263,8 +31264,8 @@ class IStateCalcCrdnAngle(object):
             agcls.evaluate_hresult(self.__dict__["_SetAngleName"](arg_inVal.COM_val))
 
 
-agcls.AgClassCatalog.add_catalog_entry("{7EC926A3-7ED6-4091-9E74-EBA5700075A5}", IStateCalcCrdnAngle)
-agcls.AgTypeNameMap["IStateCalcCrdnAngle"] = IStateCalcCrdnAngle
+agcls.AgClassCatalog.add_catalog_entry("{7EC926A3-7ED6-4091-9E74-EBA5700075A5}", IStateCalcVectorGeometryToolAngle)
+agcls.AgTypeNameMap["IStateCalcVectorGeometryToolAngle"] = IStateCalcVectorGeometryToolAngle
 
 class IStateCalcAngle(object):
     """Properties for an Angle Between Vectors calculation object."""
@@ -53408,17 +53409,17 @@ class StateCalcUserValue(IStateCalcUserValue, IComponentInfo, ICloneable):
 agcls.AgClassCatalog.add_catalog_entry("{DF6CDC8E-3271-4671-851E-6D8916364D04}", StateCalcUserValue)
 
 
-class StateCalcCrdnAngle(IComponentInfo, ICloneable, IStateCalcCrdnAngle):
+class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, IStateCalcVectorGeometryToolAngle):
     """Vector Geometry Tool Angle Calc objects."""
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
-        IStateCalcCrdnAngle.__init__(self, sourceObject)
+        IStateCalcVectorGeometryToolAngle.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
         self.__dict__["_pUnk"] = pUnk
         IComponentInfo._private_init(self, pUnk)
         ICloneable._private_init(self, pUnk)
-        IStateCalcCrdnAngle._private_init(self, pUnk)
+        IStateCalcVectorGeometryToolAngle._private_init(self, pUnk)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -53426,13 +53427,13 @@ class StateCalcCrdnAngle(IComponentInfo, ICloneable, IStateCalcCrdnAngle):
         found_prop = None
         if IComponentInfo._get_property(self, attrname) is not None: found_prop = IComponentInfo._get_property(self, attrname)
         if ICloneable._get_property(self, attrname) is not None: found_prop = ICloneable._get_property(self, attrname)
-        if IStateCalcCrdnAngle._get_property(self, attrname) is not None: found_prop = IStateCalcCrdnAngle._get_property(self, attrname)
+        if IStateCalcVectorGeometryToolAngle._get_property(self, attrname) is not None: found_prop = IStateCalcVectorGeometryToolAngle._get_property(self, attrname)
         if found_prop is not None:
             found_prop.__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcCrdnAngle.")
+            raise STKAttributeError(attrname + " is not a recognized attribute in StateCalcVectorGeometryToolAngle.")
         
-agcls.AgClassCatalog.add_catalog_entry("{382A3B1B-6CB2-4E54-A066-C0B62EF241C8}", StateCalcCrdnAngle)
+agcls.AgClassCatalog.add_catalog_entry("{382A3B1B-6CB2-4E54-A066-C0B62EF241C8}", StateCalcVectorGeometryToolAngle)
 
 
 class StateCalcAngle(IComponentInfo, ICloneable, IStateCalcAngle):

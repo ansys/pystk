@@ -1,5 +1,4 @@
 # AGI STK .NET API
-from ansys.stk.core.stkobjects import *
 
 
 class TestTarget:
