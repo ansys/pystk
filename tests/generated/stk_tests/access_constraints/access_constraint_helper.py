@@ -48,7 +48,6 @@ class AccessConstraintHelper(object):
     ):
         Assert.assertIsNotNone(oCollection)
         if not oCollection.IsConstraintActive(eType):
-            # Console.WriteLine("XXX " + eType.ToString());
             oConstraint = oCollection.AddConstraint(eType)
             if (
                 (
@@ -70,487 +69,343 @@ class AccessConstraintHelper(object):
                 self.TestConstraintObjectExclusion(oConstraint)
                 return
 
-        else:
-            pass
-
         oConstraint = oCollection.GetActiveConstraint(eType)
         Assert.assertIsNotNone(oConstraint)
 
         # test base class properties
         self.BasePropertiesTest(oConstraint)
+
+        typesNoFieldsToTest = []
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrNone)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrAreaMask)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrAzElMask)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrFieldOfView)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrFOVSunSpecularExclusion)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrFOVSunSpecularInclusion)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrHorizonCrossing)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrLineOfSight)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSensorAzElMask)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkClearDoppler)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkIntegratedPulses)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkMLCFilter)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkSLCFilter)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkUnambigDoppler)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkUnambigRange)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrTerrainMask)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstr3DTilesMask)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrForeground)
+        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSEETMagFieldLshell)
+
+        typesMinMaxSetSeparate = []
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrATCentroidElevationAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrBetaAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrDopplerConeAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrGrazingAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrGroundElevAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrLatitude)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrSquintAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrSunGroundElevAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrAngleOffBoresight)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrBoresightGrazingAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrSEETMagFieldLineSeparation)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrLunarElevationAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrSunElevationAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrTerrainGrazingAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrCentroidSunElevationAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrCollectionAngle)
+        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrCentralAngle)
+
+        typesMinMaxUnitLess = []
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrImageQuality)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrMatlab)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrSarExternalData)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrBSIntersectLightingCondition)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrAngularRate)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrRangeRate)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrSarAreaRate)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrAzimuthRate)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrElevationRate)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrAngleOffBoresightRate)
+        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrEOIRSNR)
+
+        typesMinMaxUnitLessSubOne = []
+        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkIntegratedPDet)
+        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkSinglePulsePDet)
+        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkSinglePulsePDetJamming)
+        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkIntegratedPDetJamming)
+        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulsePDet)
+        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulsePDetJamming)
+        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPDet)
+        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPDetJamming)
+
+        typesMinMaxDistance = []
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrAltitude)
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrCrossTrackRange)
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrGrazingAlt)
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrInTrackRange)
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrRange)
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrCentroidRange)
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrHeightAboveHorizon)
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrCentralDistance)
+        typesMinMaxDistance.append(AgEAccessConstraints.eCstrDistanceFromATBoundary)
+
+        typesMinMaxTime = []
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrDuration)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrPropagationDelay)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSarIntTime)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkDwellTime)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkIntegrationTime)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkDwellTimeJamming)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkIntegrationTimeJamming)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolDwellTime)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolDwellTimeJamming)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseJOverS)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseSNRJamming)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegrationTime)
+        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegrationTimeJamming)
+
+        typesMinMaxRatio = []
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSNR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarCNR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSCR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSigmaN)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarPTCR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSNRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSCRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarJOverS)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarCNRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolSNR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolCNR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolPTCR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolSCR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolSNRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolJOverS)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolSCRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolCNRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkSinglePulseSNR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkIntegratedSNR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkSinglePulseSNRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkIntegratedSNRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkSinglePulseJOverS)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkIntegratedJOverS)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseSNR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedSNR)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedSNRJamming)
+        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedJOverS)
+
+        typesNoTest = []
+        # Radar, Receiver, Transmitter
+        typesNoTest.append(AgEAccessConstraints.eCstrAtmosLoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrCloudsFogLoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrFreeSpaceLoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrNoiseTemperature)
+        typesNoTest.append(AgEAccessConstraints.eCstrPropLoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrRainLoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrRdrXmtTgtAccess)
+        typesNoTest.append(AgEAccessConstraints.eCstrTropoScintillLoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrUrbanTerresLoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrUserCustomALoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrUserCustomBLoss)
+        typesNoTest.append(AgEAccessConstraints.eCstrUserCustomCLoss)
+        # Receiver and Transmitter
+        typesNoTest.append(AgEAccessConstraints.eCstrBERPlusI)
+        typesNoTest.append(AgEAccessConstraints.eCstrBitErrorRate)
+        typesNoTest.append(AgEAccessConstraints.eCstrCOverI)
+        typesNoTest.append(AgEAccessConstraints.eCstrCOverN)
+        typesNoTest.append(AgEAccessConstraints.eCstrCOverNPlusI)
+        typesNoTest.append(AgEAccessConstraints.eCstrCOverNo)
+        typesNoTest.append(AgEAccessConstraints.eCstrCOverNoPlusIo)
+        typesNoTest.append(AgEAccessConstraints.eCstrDeltaTOverT)
+        typesNoTest.append(AgEAccessConstraints.eCstrDopplerShift)
+        typesNoTest.append(AgEAccessConstraints.eCstrEbOverNo)
+        typesNoTest.append(AgEAccessConstraints.eCstrEbOverNoPlusIo)
+        typesNoTest.append(AgEAccessConstraints.eCstrFluxDensity)
+        typesNoTest.append(AgEAccessConstraints.eCstrFrequency)
+        typesNoTest.append(AgEAccessConstraints.eCstrGOverT)
+        typesNoTest.append(AgEAccessConstraints.eCstrJOverS)
+        typesNoTest.append(AgEAccessConstraints.eCstrLinkEIRP)
+        typesNoTest.append(AgEAccessConstraints.eCstrLinkMargin)
+        typesNoTest.append(AgEAccessConstraints.eCstrPolRelAngle)
+        typesNoTest.append(AgEAccessConstraints.eCstrPowerAtReceiverInput)
+        typesNoTest.append(AgEAccessConstraints.eCstrPowerFluxDensity)
+        typesNoTest.append(AgEAccessConstraints.eCstrRcvdIsotropicPower)
+        typesNoTest.append(AgEAccessConstraints.eCstrTotalPwrAtRcvrInput)
+        typesNoTest.append(AgEAccessConstraints.eCstrTotalRcvdRfPower)
+        # Receiver
+        typesNoTest.append(AgEAccessConstraints.eCstrCommPlugin)
+        # Sensor
+        typesNoTest.append(AgEAccessConstraints.eCstrFOVCbCenter)
+        typesNoTest.append(AgEAccessConstraints.eCstrFOVCbHorizonRefine)
+        typesNoTest.append(AgEAccessConstraints.eCstrFOVCbObstructionCrossIn)
+        typesNoTest.append(AgEAccessConstraints.eCstrFOVCbObstructionCrossOut)
+        typesNoTest.append(AgEAccessConstraints.eCstrSensorRangeMask)
+        # Launch Vehicle and Missile
+        typesNoTest.append(AgEAccessConstraints.eCstrTimeSlipSurfaceRange)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRDwellTimeJammingMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRDwellTimeJammingMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRDwellTimeMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRDwellTimeMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedJOverSMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedJOverSMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPDetJammingMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPDetJammingMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPDetMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPDetMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPulsesJammingMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPulsesJammingMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPulsesMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPulsesMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedSNRJammingMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedSNRJammingMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedSNRMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedSNRMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegrationTimeJammingMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegrationTimeJammingMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegrationTimeMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegrationTimeMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseJOverSMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseJOverSMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulsePDetJammingMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulsePDetJammingMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulsePDetMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulsePDetMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseSNRJammingMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseSNRJammingMin)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseSNRMax)
+        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseSNRMin)
         if eType == AgEAccessConstraints.eCstrBackground:
             self.TestConstraintBackground(oConstraint)
-        elif (
-            ((eType == AgEAccessConstraints.eCstrCrdnAngle)) or ((eType == AgEAccessConstraints.eCstrCrdnVectorMag))
-        ) or ((eType == AgEAccessConstraints.eCstrCrdnCondition)):
+
+        elif ((eType == AgEAccessConstraints.eCstrCrdnAngle) or (eType == AgEAccessConstraints.eCstrCrdnVectorMag)) or (
+            eType == AgEAccessConstraints.eCstrCrdnCondition
+        ):
             self.TestConstraintCrdnCn(oConstraint)
             self.TestConstraintAWBCollection(oCollection.AWBConstraints, int(eType))
+
         elif eType == AgEAccessConstraints.eCstrLighting:
             self.TestConstraintCondition(oConstraint)
+
         elif eType == AgEAccessConstraints.eCstrGroundTrack:
             self.TestConstraintGroundTrack(oConstraint)
+
         elif eType == AgEAccessConstraints.eCstrIntervals:
             self.TestConstraintIntervals(oConstraint, temporaryDirectory)
+
         elif eType == AgEAccessConstraints.eCstrInclusionZone:
             self.TestConstraintZone(oConstraint)
+
         elif eType == AgEAccessConstraints.eCstrExclusionZone:
-            # add two additional zones for following test
             oCollection.AddConstraint(AgEAccessConstraints.eCstrExclusionZone)
             oCollection.AddConstraint(AgEAccessConstraints.eCstrExclusionZone)
             self.TestConstraintExclusionZonesCollection(oConstraint)
+
         elif (
             (
                 (
                     (
-                        ((eType == AgEAccessConstraints.eCstrLOSLunarExclusion))
-                        or ((eType == AgEAccessConstraints.eCstrLOSSunExclusion))
+                        (eType == AgEAccessConstraints.eCstrLOSLunarExclusion)
+                        or (eType == AgEAccessConstraints.eCstrLOSSunExclusion)
                     )
-                    or ((eType == AgEAccessConstraints.eCstrSunSpecularExclusion))
+                    or (eType == AgEAccessConstraints.eCstrSunSpecularExclusion)
                 )
-                or ((eType == AgEAccessConstraints.eCstrGeoExclusion))
+                or (eType == AgEAccessConstraints.eCstrGeoExclusion)
             )
-            or ((eType == AgEAccessConstraints.eCstrBSLunarExclusion))
-        ) or ((eType == AgEAccessConstraints.eCstrBSSunExclusion)):
+            or (eType == AgEAccessConstraints.eCstrBSLunarExclusion)
+        ) or (eType == AgEAccessConstraints.eCstrBSSunExclusion):
             self.TestConstraintAngle(oConstraint, "AngleUnit")
-        elif ((eType == AgEAccessConstraints.eCstrSEETImpactFlux)) or (
-            (eType == AgEAccessConstraints.eCstrSEETDamageFlux)
-        ):
+
+        elif (eType == AgEAccessConstraints.eCstrSEETImpactFlux) or (eType == AgEAccessConstraints.eCstrSEETDamageFlux):
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxFlux(oMinMax)
-        elif ((eType == AgEAccessConstraints.eCstrSEETDamageMassFlux)) or (
-            (eType == AgEAccessConstraints.eCstrSEETImpactMassFlux)
+
+        elif (eType == AgEAccessConstraints.eCstrSEETDamageMassFlux) or (
+            eType == AgEAccessConstraints.eCstrSEETImpactMassFlux
         ):
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxMassFlux(oMinMax)
+
         elif eType == AgEAccessConstraints.eCstrSEETVehicleTemperature:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxVeTemp(oMinMax)
+
         elif eType == AgEAccessConstraints.eCstrSEETSAAFluxIntensity:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxFluxIntensity(oMinMax)
-        elif (
-            (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    (
-                                        (
-                                            (
-                                                (
-                                                    (
-                                                        (
-                                                            (
-                                                                (
-                                                                    (
-                                                                        (
-                                                                            ((eType == AgEAccessConstraints.eCstrNone))
-                                                                            or (
-                                                                                (
-                                                                                    eType
-                                                                                    == AgEAccessConstraints.eCstrAreaMask
-                                                                                )
-                                                                            )
-                                                                        )
-                                                                        or (
-                                                                            (
-                                                                                eType
-                                                                                == AgEAccessConstraints.eCstrAzElMask
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                    or (
-                                                                        (eType == AgEAccessConstraints.eCstrFieldOfView)
-                                                                    )
-                                                                )
-                                                                or (
-                                                                    (
-                                                                        eType
-                                                                        == AgEAccessConstraints.eCstrFOVSunSpecularExclusion
-                                                                    )
-                                                                )
-                                                            )
-                                                            or (
-                                                                (
-                                                                    eType
-                                                                    == AgEAccessConstraints.eCstrFOVSunSpecularInclusion
-                                                                )
-                                                            )
-                                                        )
-                                                        or ((eType == AgEAccessConstraints.eCstrHorizonCrossing))
-                                                    )
-                                                    or ((eType == AgEAccessConstraints.eCstrLineOfSight))
-                                                )
-                                                or ((eType == AgEAccessConstraints.eCstrSensorAzElMask))
-                                            )
-                                            or ((eType == AgEAccessConstraints.eCstrSrchTrkClearDoppler))
-                                        )
-                                        or ((eType == AgEAccessConstraints.eCstrSrchTrkIntegratedPulses))
-                                    )
-                                    or ((eType == AgEAccessConstraints.eCstrSrchTrkMLCFilter))
-                                )
-                                or ((eType == AgEAccessConstraints.eCstrSrchTrkSLCFilter))
-                            )
-                            or ((eType == AgEAccessConstraints.eCstrSrchTrkUnambigDoppler))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrSrchTrkUnambigRange))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrTerrainMask))
-                )
-                or ((eType == AgEAccessConstraints.eCstr3DTilesMask))
-            )
-            or ((eType == AgEAccessConstraints.eCstrForeground))
-        ) or ((eType == AgEAccessConstraints.eCstrSEETMagFieldLshell)):
-            Assert.assertIsNotNone(oConstraint)  # no fields to test
-        elif (
-            (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    (
-                                        (
-                                            (
-                                                (
-                                                    (
-                                                        (
-                                                            (
-                                                                (
-                                                                    (
-                                                                        (
-                                                                            eType
-                                                                            == AgEAccessConstraints.eCstrATCentroidElevationAngle
-                                                                        )
-                                                                    )
-                                                                    or ((eType == AgEAccessConstraints.eCstrBetaAngle))
-                                                                )
-                                                                or (
-                                                                    (
-                                                                        eType
-                                                                        == AgEAccessConstraints.eCstrDopplerConeAngle
-                                                                    )
-                                                                )
-                                                            )
-                                                            or ((eType == AgEAccessConstraints.eCstrGrazingAngle))
-                                                        )
-                                                        or ((eType == AgEAccessConstraints.eCstrGroundElevAngle))
-                                                    )
-                                                    or ((eType == AgEAccessConstraints.eCstrLatitude))
-                                                )
-                                                or ((eType == AgEAccessConstraints.eCstrSquintAngle))
-                                            )
-                                            or ((eType == AgEAccessConstraints.eCstrSunGroundElevAngle))
-                                        )
-                                        or ((eType == AgEAccessConstraints.eCstrAngleOffBoresight))
-                                    )
-                                    or ((eType == AgEAccessConstraints.eCstrBoresightGrazingAngle))
-                                )
-                                or ((eType == AgEAccessConstraints.eCstrSEETMagFieldLineSeparation))
-                            )
-                            or ((eType == AgEAccessConstraints.eCstrLunarElevationAngle))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrSunElevationAngle))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrTerrainGrazingAngle))
-                )
-                or ((eType == AgEAccessConstraints.eCstrCentroidSunElevationAngle))
-            )
-            or ((eType == AgEAccessConstraints.eCstrCollectionAngle))
-        ) or ((eType == AgEAccessConstraints.eCstrCentralAngle)):
+
+        elif eType in typesNoFieldsToTest:
+            Assert.assertIsNotNone(oConstraint)
+
+        elif eType in typesMinMaxSetSeparate:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxAngle(oMinMax)
-        elif ((eType == AgEAccessConstraints.eCstrSunIlluminationAngle)) or (
-            (eType == AgEAccessConstraints.eCstrCentroidAzimuthAngle)
+
+        elif (eType == AgEAccessConstraints.eCstrSunIlluminationAngle) or (
+            eType == AgEAccessConstraints.eCstrCentroidAzimuthAngle
         ):
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxAngle_SetTogether(oMinMax)
-        elif (
-            (((eType == AgEAccessConstraints.eCstrImageQuality)) or ((eType == AgEAccessConstraints.eCstrMatlab)))
-            or ((eType == AgEAccessConstraints.eCstrSarExternalData))
-        ) or ((eType == AgEAccessConstraints.eCstrBSIntersectLightingCondition)):
+
+        elif eType in typesMinMaxUnitLess:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxUnitLess(oMinMax, 12.345, 67.89)
-        elif (
-            ((eType == AgEAccessConstraints.eCstrSrchTrkIntegratedPulsesJamming))
-            or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPulses))
-        ) or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPulsesJamming)):
-            oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
-            Assert.assertIsNotNone(oMinMax)
-            self.TestConstraintMinMaxUnitLess(oMinMax, 1, 2)
-        elif (
-            (
-                (
-                    (
-                        (
-                            (
-                                ((eType == AgEAccessConstraints.eCstrSrchTrkIntegratedPDet))
-                                or ((eType == AgEAccessConstraints.eCstrSrchTrkSinglePulsePDet))
-                            )
-                            or ((eType == AgEAccessConstraints.eCstrSrchTrkSinglePulsePDetJamming))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrSrchTrkIntegratedPDetJamming))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulsePDet))
-                )
-                or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulsePDetJamming))
-            )
-            or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPDet))
-        ) or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPDetJamming)):
+
+        elif eType in typesMinMaxUnitLessSubOne:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxUnitLess(oMinMax, 0.345, 0.89)
+
         elif (
-            (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    ((eType == AgEAccessConstraints.eCstrAltitude))
-                                    or ((eType == AgEAccessConstraints.eCstrCrossTrackRange))
-                                )
-                                or ((eType == AgEAccessConstraints.eCstrGrazingAlt))
-                            )
-                            or ((eType == AgEAccessConstraints.eCstrInTrackRange))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrRange))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrCentroidRange))
-                )
-                or ((eType == AgEAccessConstraints.eCstrHeightAboveHorizon))
-            )
-            or ((eType == AgEAccessConstraints.eCstrCentralDistance))
-        ) or ((eType == AgEAccessConstraints.eCstrDistanceFromATBoundary)):
+            (eType == AgEAccessConstraints.eCstrSrchTrkIntegratedPulsesJamming)
+            or (eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPulses)
+        ) or (eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPulsesJamming):
+            oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
+            Assert.assertIsNotNone(oMinMax)
+            self.TestConstraintMinMaxUnitLess(oMinMax, 1, 2)
+
+        elif eType in typesMinMaxDistance:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDistance(oMinMax)
-        elif (
-            (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    (
-                                        (
-                                            (
-                                                (
-                                                    ((eType == AgEAccessConstraints.eCstrDuration))
-                                                    or ((eType == AgEAccessConstraints.eCstrPropagationDelay))
-                                                )
-                                                or ((eType == AgEAccessConstraints.eCstrSarIntTime))
-                                            )
-                                            or ((eType == AgEAccessConstraints.eCstrSrchTrkDwellTime))
-                                        )
-                                        or ((eType == AgEAccessConstraints.eCstrSrchTrkIntegrationTime))
-                                    )
-                                    or ((eType == AgEAccessConstraints.eCstrSrchTrkDwellTimeJamming))
-                                )
-                                or ((eType == AgEAccessConstraints.eCstrSrchTrkIntegrationTimeJamming))
-                            )
-                            or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolDwellTime))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolDwellTimeJamming))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseJOverS))
-                )
-                or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseSNRJamming))
-            )
-            or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegrationTime))
-        ) or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegrationTimeJamming)):
+
+        elif eType in typesMinMaxTime:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxTime(oMinMax)
+
         elif eType == AgEAccessConstraints.eCstrAzimuthAngle:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxLongitude(oMinMax)
-        elif (((eType == AgEAccessConstraints.eCstrApparentTime)) or ((eType == AgEAccessConstraints.eCstrGMT))) or (
-            (eType == AgEAccessConstraints.eCstrLocalTime)
+
+        elif ((eType == AgEAccessConstraints.eCstrApparentTime) or (eType == AgEAccessConstraints.eCstrGMT)) or (
+            eType == AgEAccessConstraints.eCstrLocalTime
         ):
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDuration(oMinMax)
+
         elif eType == AgEAccessConstraints.eCstrGroundSampleDistance:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxSmallDistance(oMinMax)
-        elif (
-            (
-                (
-                    (
-                        (
-                            ((eType == AgEAccessConstraints.eCstrAngularRate))
-                            or ((eType == AgEAccessConstraints.eCstrRangeRate))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrSarAreaRate))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrAzimuthRate))
-                )
-                or ((eType == AgEAccessConstraints.eCstrElevationRate))
-            )
-            or ((eType == AgEAccessConstraints.eCstrAngleOffBoresightRate))
-        ) or ((eType == AgEAccessConstraints.eCstrEOIRSNR)):
-            oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
-            Assert.assertIsNotNone(oMinMax)
-            self.TestConstraintMinMaxUnitLess(oMinMax, 12.345, 67.89)
-        elif (
-            (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    (
-                                        (
-                                            (
-                                                (
-                                                    (
-                                                        (
-                                                            (
-                                                                (
-                                                                    (
-                                                                        (
-                                                                            (
-                                                                                (
-                                                                                    (
-                                                                                        (
-                                                                                            (
-                                                                                                (
-                                                                                                    (
-                                                                                                        (
-                                                                                                            (
-                                                                                                                (
-                                                                                                                    eType
-                                                                                                                    == AgEAccessConstraints.eCstrSarSNR
-                                                                                                                )
-                                                                                                            )
-                                                                                                            or (
-                                                                                                                (
-                                                                                                                    eType
-                                                                                                                    == AgEAccessConstraints.eCstrSarCNR
-                                                                                                                )
-                                                                                                            )
-                                                                                                        )
-                                                                                                        or (
-                                                                                                            (
-                                                                                                                eType
-                                                                                                                == AgEAccessConstraints.eCstrSarSCR
-                                                                                                            )
-                                                                                                        )
-                                                                                                    )
-                                                                                                    or (
-                                                                                                        (
-                                                                                                            eType
-                                                                                                            == AgEAccessConstraints.eCstrSarSigmaN
-                                                                                                        )
-                                                                                                    )
-                                                                                                )
-                                                                                                or (
-                                                                                                    (
-                                                                                                        eType
-                                                                                                        == AgEAccessConstraints.eCstrSarPTCR
-                                                                                                    )
-                                                                                                )
-                                                                                            )
-                                                                                            or (
-                                                                                                (
-                                                                                                    eType
-                                                                                                    == AgEAccessConstraints.eCstrSarSNRJamming
-                                                                                                )
-                                                                                            )
-                                                                                        )
-                                                                                        or (
-                                                                                            (
-                                                                                                eType
-                                                                                                == AgEAccessConstraints.eCstrSarSCRJamming
-                                                                                            )
-                                                                                        )
-                                                                                    )
-                                                                                    or (
-                                                                                        (
-                                                                                            eType
-                                                                                            == AgEAccessConstraints.eCstrSarJOverS
-                                                                                        )
-                                                                                    )
-                                                                                )
-                                                                                or (
-                                                                                    (
-                                                                                        eType
-                                                                                        == AgEAccessConstraints.eCstrSarCNRJamming
-                                                                                    )
-                                                                                )
-                                                                            )
-                                                                            or (
-                                                                                (
-                                                                                    eType
-                                                                                    == AgEAccessConstraints.eCstrSarOrthoPolSNR
-                                                                                )
-                                                                            )
-                                                                        )
-                                                                        or (
-                                                                            (
-                                                                                eType
-                                                                                == AgEAccessConstraints.eCstrSarOrthoPolCNR
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                    or (
-                                                                        (
-                                                                            eType
-                                                                            == AgEAccessConstraints.eCstrSarOrthoPolPTCR
-                                                                        )
-                                                                    )
-                                                                )
-                                                                or ((eType == AgEAccessConstraints.eCstrSarOrthoPolSCR))
-                                                            )
-                                                            or (
-                                                                (
-                                                                    eType
-                                                                    == AgEAccessConstraints.eCstrSarOrthoPolSNRJamming
-                                                                )
-                                                            )
-                                                        )
-                                                        or ((eType == AgEAccessConstraints.eCstrSarOrthoPolJOverS))
-                                                    )
-                                                    or ((eType == AgEAccessConstraints.eCstrSarOrthoPolSCRJamming))
-                                                )
-                                                or ((eType == AgEAccessConstraints.eCstrSarOrthoPolCNRJamming))
-                                            )
-                                            or ((eType == AgEAccessConstraints.eCstrSrchTrkSinglePulseSNR))
-                                        )
-                                        or ((eType == AgEAccessConstraints.eCstrSrchTrkIntegratedSNR))
-                                    )
-                                    or ((eType == AgEAccessConstraints.eCstrSrchTrkSinglePulseSNRJamming))
-                                )
-                                or ((eType == AgEAccessConstraints.eCstrSrchTrkIntegratedSNRJamming))
-                            )
-                            or ((eType == AgEAccessConstraints.eCstrSrchTrkSinglePulseJOverS))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrSrchTrkIntegratedJOverS))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseSNR))
-                )
-                or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedSNR))
-            )
-            or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedSNRJamming))
-        ) or ((eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedJOverS)):
+
+        elif eType in typesMinMaxRatio:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxRatio(oMinMax)
+
         elif eType == AgEAccessConstraints.eCstrSarAzRes:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxSARTimeResProd(oMinMax)
+
         elif eType == AgEAccessConstraints.eCstrElevationAngle:
             oMinMax = clr.CastAs(oConstraint, IAccessConstraintMinMax)
             if oMinMax != None:
@@ -566,451 +421,16 @@ class AccessConstraintHelper(object):
             oCb = clr.Convert(oConstraint, IAccessConstraintCentralBodyObstruction)
             Assert.assertIsNotNone(oCb)
             self.TestConstraintCbObstruction(oCb)
+
         elif eType == AgEAccessConstraints.eCstrSpectralFluxDensity:
             oMinMax = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxPower(oMinMax)
-        elif (
-            (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    (
-                                        (
-                                            (
-                                                (
-                                                    (
-                                                        (
-                                                            (
-                                                                (
-                                                                    (
-                                                                        (
-                                                                            (
-                                                                                (
-                                                                                    (
-                                                                                        (
-                                                                                            (
-                                                                                                (
-                                                                                                    (
-                                                                                                        (
-                                                                                                            (
-                                                                                                                (
-                                                                                                                    (
-                                                                                                                        (
-                                                                                                                            (
-                                                                                                                                (
-                                                                                                                                    (
-                                                                                                                                        (
-                                                                                                                                            (
-                                                                                                                                                (
-                                                                                                                                                    (
-                                                                                                                                                        (
-                                                                                                                                                            (
-                                                                                                                                                                (
-                                                                                                                                                                    (
-                                                                                                                                                                        (
-                                                                                                                                                                            (
-                                                                                                                                                                                eType
-                                                                                                                                                                                == AgEAccessConstraints.eCstrAtmosLoss
-                                                                                                                                                                            )
-                                                                                                                                                                        )
-                                                                                                                                                                        or (
-                                                                                                                                                                            (
-                                                                                                                                                                                eType
-                                                                                                                                                                                == AgEAccessConstraints.eCstrCloudsFogLoss
-                                                                                                                                                                            )
-                                                                                                                                                                        )
-                                                                                                                                                                    )
-                                                                                                                                                                    or (
-                                                                                                                                                                        (
-                                                                                                                                                                            eType
-                                                                                                                                                                            == AgEAccessConstraints.eCstrFreeSpaceLoss
-                                                                                                                                                                        )
-                                                                                                                                                                    )
-                                                                                                                                                                )
-                                                                                                                                                                or (
-                                                                                                                                                                    (
-                                                                                                                                                                        eType
-                                                                                                                                                                        == AgEAccessConstraints.eCstrNoiseTemperature
-                                                                                                                                                                    )
-                                                                                                                                                                )
-                                                                                                                                                            )
-                                                                                                                                                            or (
-                                                                                                                                                                (
-                                                                                                                                                                    eType
-                                                                                                                                                                    == AgEAccessConstraints.eCstrPropLoss
-                                                                                                                                                                )
-                                                                                                                                                            )
-                                                                                                                                                        )
-                                                                                                                                                        or (
-                                                                                                                                                            (
-                                                                                                                                                                eType
-                                                                                                                                                                == AgEAccessConstraints.eCstrRainLoss
-                                                                                                                                                            )
-                                                                                                                                                        )
-                                                                                                                                                    )
-                                                                                                                                                    or (
-                                                                                                                                                        (
-                                                                                                                                                            eType
-                                                                                                                                                            == AgEAccessConstraints.eCstrRdrXmtTgtAccess
-                                                                                                                                                        )
-                                                                                                                                                    )
-                                                                                                                                                )
-                                                                                                                                                or (
-                                                                                                                                                    (
-                                                                                                                                                        eType
-                                                                                                                                                        == AgEAccessConstraints.eCstrTropoScintillLoss
-                                                                                                                                                    )
-                                                                                                                                                )
-                                                                                                                                            )
-                                                                                                                                            or (
-                                                                                                                                                (
-                                                                                                                                                    eType
-                                                                                                                                                    == AgEAccessConstraints.eCstrUrbanTerresLoss
-                                                                                                                                                )
-                                                                                                                                            )
-                                                                                                                                        )
-                                                                                                                                        or (
-                                                                                                                                            (
-                                                                                                                                                eType
-                                                                                                                                                == AgEAccessConstraints.eCstrUserCustomALoss
-                                                                                                                                            )
-                                                                                                                                        )
-                                                                                                                                    )
-                                                                                                                                    or (
-                                                                                                                                        (
-                                                                                                                                            eType
-                                                                                                                                            == AgEAccessConstraints.eCstrUserCustomBLoss
-                                                                                                                                        )
-                                                                                                                                    )
-                                                                                                                                )
-                                                                                                                                or (
-                                                                                                                                    (
-                                                                                                                                        eType
-                                                                                                                                        == AgEAccessConstraints.eCstrUserCustomCLoss
-                                                                                                                                    )
-                                                                                                                                )
-                                                                                                                            )
-                                                                                                                            or (
-                                                                                                                                (
-                                                                                                                                    eType
-                                                                                                                                    == AgEAccessConstraints.eCstrBERPlusI
-                                                                                                                                )
-                                                                                                                            )
-                                                                                                                        )
-                                                                                                                        or (
-                                                                                                                            (
-                                                                                                                                eType
-                                                                                                                                == AgEAccessConstraints.eCstrBitErrorRate
-                                                                                                                            )
-                                                                                                                        )
-                                                                                                                    )
-                                                                                                                    or (
-                                                                                                                        (
-                                                                                                                            eType
-                                                                                                                            == AgEAccessConstraints.eCstrCOverI
-                                                                                                                        )
-                                                                                                                    )
-                                                                                                                )
-                                                                                                                or (
-                                                                                                                    (
-                                                                                                                        eType
-                                                                                                                        == AgEAccessConstraints.eCstrCOverN
-                                                                                                                    )
-                                                                                                                )
-                                                                                                            )
-                                                                                                            or (
-                                                                                                                (
-                                                                                                                    eType
-                                                                                                                    == AgEAccessConstraints.eCstrCOverNPlusI
-                                                                                                                )
-                                                                                                            )
-                                                                                                        )
-                                                                                                        or (
-                                                                                                            (
-                                                                                                                eType
-                                                                                                                == AgEAccessConstraints.eCstrCOverNo
-                                                                                                            )
-                                                                                                        )
-                                                                                                    )
-                                                                                                    or (
-                                                                                                        (
-                                                                                                            eType
-                                                                                                            == AgEAccessConstraints.eCstrCOverNoPlusIo
-                                                                                                        )
-                                                                                                    )
-                                                                                                )
-                                                                                                or (
-                                                                                                    (
-                                                                                                        eType
-                                                                                                        == AgEAccessConstraints.eCstrDeltaTOverT
-                                                                                                    )
-                                                                                                )
-                                                                                            )
-                                                                                            or (
-                                                                                                (
-                                                                                                    eType
-                                                                                                    == AgEAccessConstraints.eCstrDopplerShift
-                                                                                                )
-                                                                                            )
-                                                                                        )
-                                                                                        or (
-                                                                                            (
-                                                                                                eType
-                                                                                                == AgEAccessConstraints.eCstrEbOverNo
-                                                                                            )
-                                                                                        )
-                                                                                    )
-                                                                                    or (
-                                                                                        (
-                                                                                            eType
-                                                                                            == AgEAccessConstraints.eCstrEbOverNoPlusIo
-                                                                                        )
-                                                                                    )
-                                                                                )
-                                                                                or (
-                                                                                    (
-                                                                                        eType
-                                                                                        == AgEAccessConstraints.eCstrFluxDensity
-                                                                                    )
-                                                                                )
-                                                                            )
-                                                                            or (
-                                                                                (
-                                                                                    eType
-                                                                                    == AgEAccessConstraints.eCstrFrequency
-                                                                                )
-                                                                            )
-                                                                        )
-                                                                        or ((eType == AgEAccessConstraints.eCstrGOverT))
-                                                                    )
-                                                                    or ((eType == AgEAccessConstraints.eCstrJOverS))
-                                                                )
-                                                                or ((eType == AgEAccessConstraints.eCstrLinkEIRP))
-                                                            )
-                                                            or ((eType == AgEAccessConstraints.eCstrLinkMargin))
-                                                        )
-                                                        or ((eType == AgEAccessConstraints.eCstrPolRelAngle))
-                                                    )
-                                                    or ((eType == AgEAccessConstraints.eCstrPowerAtReceiverInput))
-                                                )
-                                                or ((eType == AgEAccessConstraints.eCstrPowerFluxDensity))
-                                            )
-                                            or ((eType == AgEAccessConstraints.eCstrRcvdIsotropicPower))
-                                        )
-                                        or ((eType == AgEAccessConstraints.eCstrTotalPwrAtRcvrInput))
-                                    )
-                                    or ((eType == AgEAccessConstraints.eCstrTotalRcvdRfPower))
-                                )
-                                or ((eType == AgEAccessConstraints.eCstrCommPlugin))
-                            )
-                            or ((eType == AgEAccessConstraints.eCstrFOVCbCenter))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrFOVCbHorizonRefine))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrFOVCbObstructionCrossIn))
-                )
-                or ((eType == AgEAccessConstraints.eCstrFOVCbObstructionCrossOut))
-            )
-            or ((eType == AgEAccessConstraints.eCstrSensorRangeMask))
-        ) or ((eType == AgEAccessConstraints.eCstrTimeSlipSurfaceRange)):
+
+        elif eType in typesNoTest:
             pass
-        elif (
-            (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    (
-                                        (
-                                            (
-                                                (
-                                                    (
-                                                        (
-                                                            (
-                                                                (
-                                                                    (
-                                                                        (
-                                                                            (
-                                                                                (
-                                                                                    (
-                                                                                        (
-                                                                                            (
-                                                                                                (
-                                                                                                    (
-                                                                                                        (
-                                                                                                            (
-                                                                                                                (
-                                                                                                                    (
-                                                                                                                        (
-                                                                                                                            (
-                                                                                                                                (
-                                                                                                                                    (
-                                                                                                                                        eType
-                                                                                                                                        == AgEAccessConstraints.eCstrMFRDwellTimeJammingMax
-                                                                                                                                    )
-                                                                                                                                )
-                                                                                                                                or (
-                                                                                                                                    (
-                                                                                                                                        eType
-                                                                                                                                        == AgEAccessConstraints.eCstrMFRDwellTimeJammingMin
-                                                                                                                                    )
-                                                                                                                                )
-                                                                                                                            )
-                                                                                                                            or (
-                                                                                                                                (
-                                                                                                                                    eType
-                                                                                                                                    == AgEAccessConstraints.eCstrMFRDwellTimeMax
-                                                                                                                                )
-                                                                                                                            )
-                                                                                                                        )
-                                                                                                                        or (
-                                                                                                                            (
-                                                                                                                                eType
-                                                                                                                                == AgEAccessConstraints.eCstrMFRDwellTimeMin
-                                                                                                                            )
-                                                                                                                        )
-                                                                                                                    )
-                                                                                                                    or (
-                                                                                                                        (
-                                                                                                                            eType
-                                                                                                                            == AgEAccessConstraints.eCstrMFRIntegratedJOverSMax
-                                                                                                                        )
-                                                                                                                    )
-                                                                                                                )
-                                                                                                                or (
-                                                                                                                    (
-                                                                                                                        eType
-                                                                                                                        == AgEAccessConstraints.eCstrMFRIntegratedJOverSMin
-                                                                                                                    )
-                                                                                                                )
-                                                                                                            )
-                                                                                                            or (
-                                                                                                                (
-                                                                                                                    eType
-                                                                                                                    == AgEAccessConstraints.eCstrMFRIntegratedPDetJammingMax
-                                                                                                                )
-                                                                                                            )
-                                                                                                        )
-                                                                                                        or (
-                                                                                                            (
-                                                                                                                eType
-                                                                                                                == AgEAccessConstraints.eCstrMFRIntegratedPDetJammingMin
-                                                                                                            )
-                                                                                                        )
-                                                                                                    )
-                                                                                                    or (
-                                                                                                        (
-                                                                                                            eType
-                                                                                                            == AgEAccessConstraints.eCstrMFRIntegratedPDetMax
-                                                                                                        )
-                                                                                                    )
-                                                                                                )
-                                                                                                or (
-                                                                                                    (
-                                                                                                        eType
-                                                                                                        == AgEAccessConstraints.eCstrMFRIntegratedPDetMin
-                                                                                                    )
-                                                                                                )
-                                                                                            )
-                                                                                            or (
-                                                                                                (
-                                                                                                    eType
-                                                                                                    == AgEAccessConstraints.eCstrMFRIntegratedPulsesJammingMax
-                                                                                                )
-                                                                                            )
-                                                                                        )
-                                                                                        or (
-                                                                                            (
-                                                                                                eType
-                                                                                                == AgEAccessConstraints.eCstrMFRIntegratedPulsesJammingMin
-                                                                                            )
-                                                                                        )
-                                                                                    )
-                                                                                    or (
-                                                                                        (
-                                                                                            eType
-                                                                                            == AgEAccessConstraints.eCstrMFRIntegratedPulsesMax
-                                                                                        )
-                                                                                    )
-                                                                                )
-                                                                                or (
-                                                                                    (
-                                                                                        eType
-                                                                                        == AgEAccessConstraints.eCstrMFRIntegratedPulsesMin
-                                                                                    )
-                                                                                )
-                                                                            )
-                                                                            or (
-                                                                                (
-                                                                                    eType
-                                                                                    == AgEAccessConstraints.eCstrMFRIntegratedSNRJammingMax
-                                                                                )
-                                                                            )
-                                                                        )
-                                                                        or (
-                                                                            (
-                                                                                eType
-                                                                                == AgEAccessConstraints.eCstrMFRIntegratedSNRJammingMin
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                    or (
-                                                                        (
-                                                                            eType
-                                                                            == AgEAccessConstraints.eCstrMFRIntegratedSNRMax
-                                                                        )
-                                                                    )
-                                                                )
-                                                                or (
-                                                                    (
-                                                                        eType
-                                                                        == AgEAccessConstraints.eCstrMFRIntegratedSNRMin
-                                                                    )
-                                                                )
-                                                            )
-                                                            or (
-                                                                (
-                                                                    eType
-                                                                    == AgEAccessConstraints.eCstrMFRIntegrationTimeJammingMax
-                                                                )
-                                                            )
-                                                        )
-                                                        or (
-                                                            (
-                                                                eType
-                                                                == AgEAccessConstraints.eCstrMFRIntegrationTimeJammingMin
-                                                            )
-                                                        )
-                                                    )
-                                                    or ((eType == AgEAccessConstraints.eCstrMFRIntegrationTimeMax))
-                                                )
-                                                or ((eType == AgEAccessConstraints.eCstrMFRIntegrationTimeMin))
-                                            )
-                                            or ((eType == AgEAccessConstraints.eCstrMFRSinglePulseJOverSMax))
-                                        )
-                                        or ((eType == AgEAccessConstraints.eCstrMFRSinglePulseJOverSMin))
-                                    )
-                                    or ((eType == AgEAccessConstraints.eCstrMFRSinglePulsePDetJammingMax))
-                                )
-                                or ((eType == AgEAccessConstraints.eCstrMFRSinglePulsePDetJammingMin))
-                            )
-                            or ((eType == AgEAccessConstraints.eCstrMFRSinglePulsePDetMax))
-                        )
-                        or ((eType == AgEAccessConstraints.eCstrMFRSinglePulsePDetMin))
-                    )
-                    or ((eType == AgEAccessConstraints.eCstrMFRSinglePulseSNRJammingMax))
-                )
-                or ((eType == AgEAccessConstraints.eCstrMFRSinglePulseSNRJammingMin))
-            )
-            or ((eType == AgEAccessConstraints.eCstrMFRSinglePulseSNRMax))
-        ) or ((eType == AgEAccessConstraints.eCstrMFRSinglePulseSNRMin)):
-            pass
+
         else:
-            # Console.WriteLine("XXX Constraint not tested: " + eType.ToString());
             Assert.fail(("Constraint not tested: " + eType.name))
 
     # endregion
@@ -1116,8 +536,6 @@ class AccessConstraintHelper(object):
 
         # AvailableProperties
         arProperties = oPlugin.AvailableProperties
-        # m_logger.WriteLine("\tThe {0} constraint contains: {1} properties.",
-        # oPlugin.ConstraintName, arProperties.Length);
 
         oPlugin.EnableMin = False
         Assert.assertFalse(oPlugin.EnableMin)
@@ -1153,7 +571,6 @@ class AccessConstraintHelper(object):
             strName = str(arProperties[iIndex])
             # GetProperty
             strValue = str(oPlugin.GetProperty(strName))
-            # m_logger.WriteLine("\t\tProperty {0}: Name = {1}, Value = {2}", iIndex, strName, strValue);
 
             # SetProperty
             oPlugin.SetProperty(strName, strValue)
@@ -1177,18 +594,6 @@ class AccessConstraintHelper(object):
 
         iIndex = 0
         while iIndex < len(arAvailable):
-            pass
-
-            iIndex += 1
-
-        iIndex = 0
-        while iIndex < oCollection.Count:
-            pass
-
-            iIndex += 1
-
-        iIndex = 0
-        while iIndex < len(arAvailable):
             constraintName = str(arAvailable[iIndex][0])
             eType = clr.Convert(int(arAvailable[iIndex][1]), AgEAccessConstraints)
             if not oCollection.IsConstraintSupported(eType):
@@ -1202,10 +607,7 @@ class AccessConstraintHelper(object):
             # test constraint
             self.ConstraintTest(oCollection, eType, temporaryDirectory)
             if eType == AgEAccessConstraints.eCstrExclusionZone:
-                if not oCollection.IsConstraintActive(eType):
-                    pass
-
-                else:
+                if oCollection.IsConstraintActive(eType):
                     Assert.fail()
 
             if not oCollection.IsConstraintActive(eType):
@@ -1222,9 +624,6 @@ class AccessConstraintHelper(object):
                 and (eType != AgEAccessConstraints.eCstrThirdBodyObstruction)
             ) and (eType != AgEAccessConstraints.eCstrLineOfSight):
                 oCollection.RemoveConstraint(eType)
-
-            else:
-                pass
 
             iIndex += 1
 
@@ -1253,7 +652,6 @@ class AccessConstraintHelper(object):
         oCollection.PreferredMaxTimeStep = 360
         Assert.assertEqual(360, oCollection.PreferredMaxTimeStep)
 
-        # m_logger.WriteLine("Finally, the Collection contains: {0} constraints", oCollection.Count);
         Assert.assertEqual(1, oCollection.Count)  # LineOfSight should remain
 
     # endregion
@@ -1488,14 +886,11 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxUnitLess(self, oMinMax: "IAccessConstraintMinMax", dMin: float, dMax: float):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         bRange = dMin == 0.345
 
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action29():
@@ -1504,12 +899,9 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action29)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action30():
@@ -1518,16 +910,13 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action30)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
         if float(oMinMax.Min) > float(oMinMax.Max):
             Assert.fail("The maximum must be greater than the minimum.")
 
         if float(oMinMax.Min) >= dMax:
             # Min
-            # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
             oMinMax.Min = dMin
-            # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
             Assert.assertEqual(dMin, float(oMinMax.Min))
             if bRange:
 
@@ -1537,9 +926,7 @@ class AccessConstraintHelper(object):
                 TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action31)
 
             # Max
-            # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
             oMinMax.Max = dMax
-            # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
             Assert.assertEqual(dMax, oMinMax.Max)
             if bRange:
 
@@ -1550,9 +937,7 @@ class AccessConstraintHelper(object):
 
         else:
             # Max
-            # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
             oMinMax.Max = dMax
-            # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
             Assert.assertEqual(dMax, oMinMax.Max)
             if bRange:
 
@@ -1562,9 +947,7 @@ class AccessConstraintHelper(object):
                 TryCatchAssertBlock.ExpectedException("is invalid", action33)
 
             # Min
-            # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
             oMinMax.Min = dMin
-            # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
             Assert.assertEqual(dMin, oMinMax.Min)
             if bRange:
 
@@ -1589,18 +972,12 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxDistance(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
         # set DistanceUnit
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
-        # m_logger.WriteLine("\t\tThe current DistanceUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "m")
-        # m_logger.WriteLine("\t\tThe new DistanceUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"));
         Assert.assertEqual("m", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action37():
@@ -1609,12 +986,9 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action37)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action38():
@@ -1623,17 +997,12 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action38)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
         oMinMax.Max = 67.89
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
         Assert.assertEqual(67.89, oMinMax.Max)
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
         oMinMax.Min = 12.345
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
         Assert.assertEqual(12.345, oMinMax.Min)
 
         def action39():
@@ -1648,7 +1017,6 @@ class AccessConstraintHelper(object):
 
         # restore DistanceUnit
         self.m_oUnits.SetCurrentUnit("DistanceUnit", strUnit)
-        # m_logger.WriteLine("\t\tThe new DistanceUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
 
     # endregion
@@ -1657,7 +1025,6 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxFlux(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         oMinMax.EnableMax = False
         Assert.assertEqual(False, oMinMax.EnableMax)
@@ -1724,7 +1091,6 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxMassFlux(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         oMinMax.EnableMax = False
         Assert.assertEqual(False, oMinMax.EnableMax)
@@ -1794,7 +1160,6 @@ class AccessConstraintHelper(object):
         MAX = 100000000.0
 
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         oMinMax.EnableMax = False
         Assert.assertEqual(False, oMinMax.EnableMax)
@@ -1864,7 +1229,6 @@ class AccessConstraintHelper(object):
         MAX_TEMP = 5770
 
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         oMinMax.EnableMax = False
         Assert.assertEqual(False, oMinMax.EnableMax)
@@ -1931,18 +1295,12 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxTime(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
         # set TimeUnit
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
-        # m_logger.WriteLine("\t\tThe current TimeUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("TimeUnit", "min")
-        # m_logger.WriteLine("\t\tThe new TimeUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("TimeUnit"));
         Assert.assertEqual("min", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action65():
@@ -1951,12 +1309,9 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify", action65)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action66():
@@ -1965,17 +1320,12 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify", action66)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
         oMinMax.Max = 67.89
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
         Assert.assertEqual(67.89, oMinMax.Max)
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
         oMinMax.Min = 12.345
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
         Assert.assertAlmostEqual(12.345, float(oMinMax.Min), delta=0.001)
 
         def action67():
@@ -1990,7 +1340,6 @@ class AccessConstraintHelper(object):
 
         # restore TimeUnit
         self.m_oUnits.SetCurrentUnit("TimeUnit", strUnit)
-        # m_logger.WriteLine("\t\tThe new TimeUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
 
     # endregion
@@ -1999,18 +1348,12 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxLongitude(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
         # set LongitudeUnit
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
-        # m_logger.WriteLine("\t\tThe current LongitudeUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("LongitudeUnit", "deg")
-        # m_logger.WriteLine("\t\tThe new LongitudeUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"));
         Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action69():
@@ -2019,12 +1362,9 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action69)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action70():
@@ -2033,13 +1373,10 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action70)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
 
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
         oMinMax.Max = 67.89
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
         Assert.assertEqual(67.89, oMinMax.Max)
 
         def action71():
@@ -2048,9 +1385,7 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("is invalid", action71)
 
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
         oMinMax.Min = 12.345
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
         Assert.assertEqual(12.345, oMinMax.Min)
 
         def action72():
@@ -2070,7 +1405,6 @@ class AccessConstraintHelper(object):
 
         # restore LongitudeUnit
         self.m_oUnits.SetCurrentUnit("LongitudeUnit", strUnit)
-        # m_logger.WriteLine("\t\tThe new LongitudeUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
 
     # endregion
@@ -2079,20 +1413,14 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxDuration(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         # set TimeUnit
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DurationUnit")
-        # m_logger.WriteLine("\t\tThe current DurationUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("DurationUnit", "sec")
-        # m_logger.WriteLine("\t\tThe new DurationUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("DurationUnit"));
         Assert.assertEqual("sec", self.m_oUnits.GetCurrentUnitAbbrv("DurationUnit"))
 
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action75():
@@ -2101,13 +1429,10 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action75)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
 
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action76():
@@ -2116,13 +1441,10 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action76)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
 
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
         oMinMax.Max = 67.89
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
         Assert.assertEqual(67.89, oMinMax.Max)
 
         def action77():
@@ -2131,9 +1453,7 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("is invalid", action77)
 
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
         oMinMax.Min = 12.345
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
         Assert.assertEqual(12.345, oMinMax.Min)
 
         def action78():
@@ -2153,7 +1473,6 @@ class AccessConstraintHelper(object):
 
         # restore DurationUnit
         self.m_oUnits.SetCurrentUnit("DurationUnit", strUnit)
-        # m_logger.WriteLine("\t\tThe new DurationUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("DurationUnit"))
 
     # endregion
@@ -2162,20 +1481,14 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxSmallDistance(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         # set DistanceUnit
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit")
-        # m_logger.WriteLine("\t\tThe current SmallDistanceUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("SmallDistanceUnit", "mm")
-        # m_logger.WriteLine("\t\tThe new SmallDistanceUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit"));
         Assert.assertEqual("mm", self.m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit"))
 
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action81():
@@ -2184,12 +1497,9 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify", action81)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action82():
@@ -2198,19 +1508,14 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify", action82)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
 
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
         oMinMax.Max = 67.89
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
         Assert.assertEqual(67.89, oMinMax.Max)
 
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
         oMinMax.Min = 12.345
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
         Assert.assertEqual(12.345, oMinMax.Min)
 
         def action83():
@@ -2225,7 +1530,6 @@ class AccessConstraintHelper(object):
 
         # restore DistanceUnit
         self.m_oUnits.SetCurrentUnit("SmallDistanceUnit", strUnit)
-        # m_logger.WriteLine("\t\tThe new SmallDistanceUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit"))
 
     # endregion
@@ -2234,20 +1538,14 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxRatio(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         # set RatioUnit
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("RatioUnit")
-        # m_logger.WriteLine("\t\tThe current RatioUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("RatioUnit", "dB")
-        # m_logger.WriteLine("\t\tThe new RatioUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("RatioUnit"));
         Assert.assertEqual("dB", self.m_oUnits.GetCurrentUnitAbbrv("RatioUnit"))
 
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action85():
@@ -2256,13 +1554,10 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action85)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
 
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action86():
@@ -2271,12 +1566,9 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action86)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
         oMinMax.Max = 67.89
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
         Assert.assertEqual(67.89, oMinMax.Max)
 
         def action87():
@@ -2285,9 +1577,7 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("is invalid", action87)
 
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
         oMinMax.Min = 12.345
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
         Assert.assertEqual(12.345, Math.Round(float(oMinMax.Min), 3))
 
         def action88():
@@ -2307,7 +1597,6 @@ class AccessConstraintHelper(object):
 
         # restore RatioUnit
         self.m_oUnits.SetCurrentUnit("RatioUnit", strUnit)
-        # m_logger.WriteLine("\t\tThe new RatioUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("RatioUnit"))
 
     # endregion
@@ -2374,20 +1663,14 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxSARTimeResProd(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
         # set SARTimeResPodUnit
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("SARTimeResProdUnit")
-        # m_logger.WriteLine("\t\tThe current SARTimeResProdUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("SARTimeResProdUnit", "m-msec")
-        # m_logger.WriteLine("\t\tThe new SARTimeResProdUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("SARTimeResProdUnit"));
         Assert.assertEqual("m-msec", self.m_oUnits.GetCurrentUnitAbbrv("SARTimeResProdUnit"))
 
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action97():
@@ -2396,12 +1679,9 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action97)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action98():
@@ -2410,19 +1690,14 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action98)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
 
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
         oMinMax.Max = 67.89
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
         Assert.assertEqual(67.89, oMinMax.Max)
 
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
         oMinMax.Min = 12.345
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
         Assert.assertEqual(12.345, oMinMax.Min)
 
         def action99():
@@ -2437,7 +1712,6 @@ class AccessConstraintHelper(object):
 
         # restore SARTimeResPodUnit
         self.m_oUnits.SetCurrentUnit("SARTimeResProdUnit", strUnit)
-        # m_logger.WriteLine("\t\tThe new SARTimeResProdUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("SARTimeResProdUnit"))
 
     # endregion
@@ -2454,23 +1728,17 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oConstraint)
             oIntervals = clr.Convert(oConstraint, IAccessConstraintIntervals)
             Assert.assertIsNotNone(oIntervals)
-            # m_logger.WriteLine("\tThe Intervals constraint test for: {0}", oIntervals.ConstraintName);
 
             # Filename
-            # m_logger.WriteLine("\t\tThe current Filename is: {0}", oIntervals.Filename);
             oIntervals.Filename = TestBase.GetScenarioFile("times.int")
-            # m_logger.WriteLine("\t\tThe new Filename is: {0}", oIntervals.Filename);
 
             # FilePath
             Assert.assertEqual(TestBase.GetScenarioFile("times.int"), oIntervals.FilePath)
 
             # ActionType
-            # m_logger.WriteLine("\t\tThe current ActionType is: {0}", oIntervals.ActionType);
             oIntervals.ActionType = AgEActionType.eActionExclude
-            # m_logger.WriteLine("\t\tThe new ActionType is: {0}", oIntervals.ActionType);
             Assert.assertEqual(AgEActionType.eActionExclude, oIntervals.ActionType)
             oIntervals.ActionType = AgEActionType.eActionInclude
-            # m_logger.WriteLine("\t\tThe new ActionType is: {0}", oIntervals.ActionType);
             Assert.assertEqual(AgEActionType.eActionInclude, oIntervals.ActionType)
 
             # Interval collection
@@ -2480,14 +1748,12 @@ class AccessConstraintHelper(object):
 
             # modify interval data
             # Filename
-            # m_logger.WriteLine("\t\tThe current Filename is: {0}", oIntervals.Filename);
             file1 = FileInfo(TestBase.GetScenarioFile("times.int"))
             file2 = FileInfo(Path.Combine(temporaryDirectory, "NotReadOnly1.int"))
             file2.Delete()
             file1.CopyTo(file2.FullName, True)
             file2.Attributes = FileAttributes.Normal
             oIntervals.Filename = file2.FullName
-            # m_logger.WriteLine("\t\tThe new Filename is: {0}", oIntervals.Filename);
 
             # Intervals
             oHelper.SetReadOnly(False)
@@ -2504,20 +1770,14 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oAngle = clr.Convert(oConstraint, IAccessConstraintAngle)
         Assert.assertIsNotNone(oAngle)
-        # m_logger.WriteLine("\tThe Angle constraint test for: {0}", oAngle.ConstraintName);
 
         # set unit
         strUnitAbbreviation = self.m_oUnits.GetCurrentUnitAbbrv(strUnitName)
-        # m_logger.WriteLine("\t\tThe current {0} is: {1}", strUnitName, strUnitAbbreviation);
         self.m_oUnits.SetCurrentUnit(strUnitName, "deg")
-        # m_logger.WriteLine("\t\tThe new {0} is: {1}", strUnitName,
-        # m_oUnits.GetCurrentUnitAbbrv(strUnitName));
         Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv(strUnitName))
 
         # Angle test
-        # m_logger.WriteLine("\t\tThe current Angle is: {0}", oAngle.Angle);
         oAngle.Angle = 45
-        # m_logger.WriteLine("\t\tThe new Angle is: {0}", oAngle.Angle);
         Assert.assertEqual(45, oAngle.Angle)
 
         def action101():
@@ -2527,7 +1787,6 @@ class AccessConstraintHelper(object):
 
         # restore unit
         self.m_oUnits.SetCurrentUnit(strUnitName, strUnitAbbreviation)
-        # m_logger.WriteLine("\t\tThe new {0} (restored) is: {1}", strUnitName, strUnitAbbreviation);
         Assert.assertEqual(strUnitAbbreviation, self.m_oUnits.GetCurrentUnitAbbrv(strUnitName))
 
     # endregion
@@ -2538,34 +1797,16 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oObject = clr.Convert(oConstraint, IAccessConstraintObjExAngle)
         Assert.assertIsNotNone(oObject)
-        # m_logger.WriteLine("\tThe ObjectExclusion constraint test for: {0}", oObject.ConstraintName);
 
         # AvailableObjects
         arAvailable = oObject.AvailableObjects
-
-        iIndex = 0
-        while iIndex < Array.Length(arAvailable):
-            pass
-
-            iIndex += 1
-
         arAssigned = oObject.AssignedObjects
-
-        iIndex = 0
-        while iIndex < Array.Length(arAssigned):
-            pass
-
-            iIndex += 1
-
         if Array.Length(arAvailable) > 0:
             strObject = str(arAvailable[0])
             if not oObject.IsObjectAssigned(strObject):
                 oObject.AddExclusionObject(strObject)
                 if not oObject.IsObjectAssigned(strObject):
                     Assert.fail("The {0} object should be already assigned.", strObject)
-
-            else:
-                pass
 
             def action102():
                 oObject.AddExclusionObject(strObject)
@@ -2574,21 +1815,15 @@ class AccessConstraintHelper(object):
             TryCatchAssertBlock.DoAssert("", action102)
 
         arAssigned = oObject.AssignedObjects
-        # m_logger.WriteLine("\tNow assigned {0} objects:", arAssigned.Length);
 
         # Base properties
         self.BasePropertiesTest(oObject)
 
         # ExclusionAngle
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
-        # m_logger.WriteLine("\tThe current AngleUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
-        # m_logger.WriteLine("\tThe new AngleUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("AngleUnit"));
         Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
-        # m_logger.WriteLine("\tThe current ExclusionAngle is: {0}", oObject.ExclusionAngle);
         oObject.ExclusionAngle = 123
-        # m_logger.WriteLine("\tThe new ExclusionAngle is: {0}", oObject.ExclusionAngle);
         Assert.assertEqual(123, oObject.ExclusionAngle)
 
         def action103():
@@ -2596,15 +1831,11 @@ class AccessConstraintHelper(object):
 
         TryCatchAssertBlock.DoAssert("", action103)
         self.m_oUnits.SetCurrentUnit("AngleUnit", strUnit)
-        # m_logger.WriteLine("\tThe new AngleUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
         if Array.Length(arAssigned) > 0:
             strObject = str(arAssigned[0])
             if oObject.IsObjectAssigned(strObject):
                 oObject.RemoveExclusionObject(strObject)
-
-            else:
-                pass
 
             def action104():
                 oObject.RemoveExclusionObject(strObject)
@@ -2622,31 +1853,23 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oCondition = clr.Convert(oConstraint, IAccessConstraintCondition)
         Assert.assertIsNotNone(oCondition)
-        # m_logger.WriteLine("\tThe Condition constraint test for: {0}", oCondition.ConstraintName);
-        # m_logger.WriteLine("\t\tThe current Condition is: {0}", oCondition.Condition);
         # eDirectSun
         oCondition.Condition = AgECnstrLighting.eDirectSun
-        # m_logger.WriteLine("\t\tThe new Condition is: {0}", oCondition.Condition);
         Assert.assertEqual(AgECnstrLighting.eDirectSun, oCondition.Condition)
         # ePenumbra
         oCondition.Condition = AgECnstrLighting.ePenumbra
-        # m_logger.WriteLine("\t\tThe new Condition is: {0}", oCondition.Condition);
         Assert.assertEqual(AgECnstrLighting.ePenumbra, oCondition.Condition)
         # ePenumbraOrDirectSun
         oCondition.Condition = AgECnstrLighting.ePenumbraOrDirectSun
-        # m_logger.WriteLine("\t\tThe new Condition is: {0}", oCondition.Condition);
         Assert.assertEqual(AgECnstrLighting.ePenumbraOrDirectSun, oCondition.Condition)
         # ePenumbraOrUmbra
         oCondition.Condition = AgECnstrLighting.ePenumbraOrUmbra
-        # m_logger.WriteLine("\t\tThe new Condition is: {0}", oCondition.Condition);
         Assert.assertEqual(AgECnstrLighting.ePenumbraOrUmbra, oCondition.Condition)
         # eUmbra
         oCondition.Condition = AgECnstrLighting.eUmbra
-        # m_logger.WriteLine("\t\tThe new Condition is: {0}", oCondition.Condition);
         Assert.assertEqual(AgECnstrLighting.eUmbra, oCondition.Condition)
         # eUmbraOrDirectSun
         oCondition.Condition = AgECnstrLighting.eUmbraOrDirectSun
-        # m_logger.WriteLine("\t\tThe new Condition is: {0}", oCondition.Condition);
         Assert.assertEqual(AgECnstrLighting.eUmbraOrDirectSun, oCondition.Condition)
 
     # endregion
@@ -2657,22 +1880,8 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oThirdBody = clr.Convert(oConstraint, IAccessConstraintThirdBody)
         Assert.assertIsNotNone(oThirdBody)
-        # m_logger.WriteLine("\tThe ThirdBody constraint test for: {0}", oThirdBody.ConstraintName);
         arAvailable = oThirdBody.AvailableObstructions
-
-        iIndex = 0
-        while iIndex < Array.Length(arAvailable):
-            pass
-
-            iIndex += 1
-
         arAssigned = oThirdBody.AssignedObstructions
-
-        iIndex = 0
-        while iIndex < Array.Length(arAssigned):
-            pass
-
-            iIndex += 1
 
         iIndex = 0
         while iIndex < Array.Length(arAvailable):
@@ -2708,7 +1917,6 @@ class AccessConstraintHelper(object):
         elif oCrdnCn.ConstraintName == "CrdnVectorMag":
             self.CrdnCnWithUnitLess(oCrdnCn)
         # Reference
-        # m_logger.WriteLine("\t\tThe current Reference is: {0}", oCrdnCn.Reference);
         # AvailableReferences
         arReferences = oCrdnCn.AvailableReferences
         if Array.Length(arReferences) > 0:
@@ -2743,12 +1951,7 @@ class AccessConstraintHelper(object):
                 oCrdnCn.Max = 50
                 Assert.assertEqual(50, oCrdnCn.Max)
 
-            # m_logger.WriteLine("\t\tThe {0} constraint has {1} available references:",
-            # oCrdnCn.ConstraintName, arReferences.Length);
-            # Console.WriteLine("Old ref: " + oCrdnCn.Reference);
             oCrdnCn.Reference = str(arReferences[0])
-            # Console.WriteLine("New ref: " + oCrdnCn.Reference);
-            # m_logger.WriteLine("\t\t\tThe new Reference is: {0}", oCrdnCn.Reference);
             Assert.assertEqual(str(arReferences[0]), oCrdnCn.Reference)
 
             def action108():
@@ -2765,16 +1968,11 @@ class AccessConstraintHelper(object):
 
         # set AngleUnit
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
-        # m_logger.WriteLine("\t\tThe current AngleUnit is: {0}", strUnit);
         self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
-        # m_logger.WriteLine("\t\tThe new AngleUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("AngleUnit"));
         Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
 
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oCrdnCn.EnableMax);
         oCrdnCn.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oCrdnCn.EnableMax);
         Assert.assertEqual(False, oCrdnCn.EnableMax)
 
         def action109():
@@ -2783,13 +1981,10 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action109)
 
         oCrdnCn.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oCrdnCn.EnableMax);
         Assert.assertEqual(True, oCrdnCn.EnableMax)
 
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oCrdnCn.EnableMin);
         oCrdnCn.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oCrdnCn.EnableMin);
         Assert.assertEqual(False, oCrdnCn.EnableMin)
 
         def action110():
@@ -2798,13 +1993,10 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action110)
 
         oCrdnCn.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oCrdnCn.EnableMin);
         Assert.assertEqual(True, oCrdnCn.EnableMin)
 
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oCrdnCn.Max);
         oCrdnCn.Max = 100
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oCrdnCn.Max);
         Assert.assertEqual(100, oCrdnCn.Max)
 
         def action111():
@@ -2813,9 +2005,7 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("is invalid", action111)
 
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oCrdnCn.Min);
         oCrdnCn.Min = 50
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oCrdnCn.Min);
         Assert.assertEqual(50, oCrdnCn.Min)
 
         def action112():
@@ -2835,7 +2025,6 @@ class AccessConstraintHelper(object):
 
         # restore AngleUnit
         self.m_oUnits.SetCurrentUnit("AngleUnit", strUnit)
-        # m_logger.WriteLine("\t\tThe new AngleUnit (restored) is: {0}", strUnit);
         Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
 
     # endregion
@@ -2846,9 +2035,7 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oCrdnCn)
 
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oCrdnCn.EnableMax);
         oCrdnCn.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oCrdnCn.EnableMax);
         Assert.assertEqual(False, oCrdnCn.EnableMax)
 
         def action115():
@@ -2857,13 +2044,10 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action115)
 
         oCrdnCn.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oCrdnCn.EnableMax);
         Assert.assertEqual(True, oCrdnCn.EnableMax)
 
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oCrdnCn.EnableMin);
         oCrdnCn.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oCrdnCn.EnableMin);
         Assert.assertEqual(False, oCrdnCn.EnableMin)
 
         def action116():
@@ -2872,13 +2056,10 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action116)
 
         oCrdnCn.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oCrdnCn.EnableMin);
         Assert.assertEqual(True, oCrdnCn.EnableMin)
 
         # Max
-        # m_logger.WriteLine("\t\tThe current Max is: {0}", oCrdnCn.Max);
         oCrdnCn.Max = 98765.4321
-        # m_logger.WriteLine("\t\tThe new Max is: {0}", oCrdnCn.Max);
         Assert.assertEqual(98765.4321, oCrdnCn.Max)
 
         def action117():
@@ -2887,9 +2068,7 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action117)
 
         # Min
-        # m_logger.WriteLine("\t\tThe current Min is: {0}", oCrdnCn.Min);
         oCrdnCn.Min = 12345.6789
-        # m_logger.WriteLine("\t\tThe new Min is: {0}", oCrdnCn.Min);
         Assert.assertEqual(12345.6789, oCrdnCn.Min)
 
         def action118():
@@ -2917,7 +2096,6 @@ class AccessConstraintHelper(object):
 
         origCount = awbCol.Count
         reference = str(arReferences[1])
-        # Console.WriteLine("ref string: " + reference);
 
         accConstraint = awbCol.AddConstraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
 
@@ -3094,13 +2272,10 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestAWBConstraintMinMaxUnitLess(self, oMinMax: "IAccessConstraintAnalysisWorkbench", dMin: float, dMax: float):
         Assert.assertIsNotNone(oMinMax)
-        # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
         bRange = dMin == 0.345
 
         # EnableMax
-        # m_logger.WriteLine("\t\tThe current EnableMax flag is: {0}", oMinMax.EnableMax);
         oMinMax.EnableMax = False
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(False, oMinMax.EnableMax)
 
         def action132():
@@ -3109,12 +2284,9 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action132)
 
         oMinMax.EnableMax = True
-        # m_logger.WriteLine("\t\tThe new EnableMax flag is: {0}", oMinMax.EnableMax);
         Assert.assertEqual(True, oMinMax.EnableMax)
         # EnableMin
-        # m_logger.WriteLine("\t\tThe current EnableMin flag is: {0}", oMinMax.EnableMin);
         oMinMax.EnableMin = False
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(False, oMinMax.EnableMin)
 
         def action133():
@@ -3123,16 +2295,13 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action133)
 
         oMinMax.EnableMin = True
-        # m_logger.WriteLine("\t\tThe new EnableMin flag is: {0}", oMinMax.EnableMin);
         Assert.assertEqual(True, oMinMax.EnableMin)
         if float(oMinMax.Min) > float(oMinMax.Max):
             Assert.fail("The maximum must be greater than the minimum.")
 
         if float(oMinMax.Min) >= dMax:
             # Min
-            # m_logger.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
             oMinMax.Min = dMin
-            # m_logger.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
             Assert.assertEqual(dMin, float(oMinMax.Min))
             if bRange:
 
@@ -3142,9 +2311,7 @@ class AccessConstraintHelper(object):
                 TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action134)
 
             # Max
-            # m_logger.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
             oMinMax.Max = dMax
-            # m_logger.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
             Assert.assertEqual(dMax, oMinMax.Max)
             if bRange:
 
@@ -3155,9 +2322,7 @@ class AccessConstraintHelper(object):
 
         else:
             # Max
-            # Console.WriteLine("\t\tThe current Max is: {0}", oMinMax.Max);
             oMinMax.Max = dMax
-            # Console.WriteLine("\t\tThe new Max is: {0}", oMinMax.Max);
             Assert.assertEqual(dMax, oMinMax.Max)
             if bRange:
 
@@ -3167,9 +2332,7 @@ class AccessConstraintHelper(object):
                 TryCatchAssertBlock.ExpectedException("is invalid", action136)
 
             # Min
-            # Console.WriteLine("\t\tThe current Min is: {0}", oMinMax.Min);
             oMinMax.Min = dMin
-            # Console.WriteLine("\t\tThe new Min is: {0}", oMinMax.Min);
             Assert.assertEqual(dMin, oMinMax.Min)
             if bRange:
 
@@ -3196,16 +2359,11 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oBackground = clr.Convert(oConstraint, IAccessConstraintBackground)
         Assert.assertIsNotNone(oBackground)
-        # m_logger.WriteLine("\tThe Background constraint test for: {0}", oBackground.ConstraintName);
-        # 7.x backwards compatibility
-        # m_logger.WriteLine("\t\tThe current Background is: {0}", oBackground.Background);
         # eBackgroundGround
         oBackground.Background = AgECnstrBackground.eBackgroundGround
-        # m_logger.WriteLine("\t\tThe new Background is: {0}", oBackground.Background);
         Assert.assertEqual(AgECnstrBackground.eBackgroundGround, oBackground.Background)
         # eBackgroundSpace
         oBackground.Background = AgECnstrBackground.eBackgroundSpace
-        # m_logger.WriteLine("\t\tThe new Background is: {0}", oBackground.Background);
         Assert.assertEqual(AgECnstrBackground.eBackgroundSpace, oBackground.Background)
 
     # endregion
@@ -3216,15 +2374,11 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oGroundTrack = clr.Convert(oConstraint, IAccessConstraintGroundTrack)
         Assert.assertIsNotNone(oGroundTrack)
-        # m_logger.WriteLine("\tThe GroundTrack constraint test for: {0}", oGroundTrack.ConstraintName);
-        # m_logger.WriteLine("\t\tThe current Direction is: {0}", oGroundTrack.Direction);
         # eDirectionAscending
         oGroundTrack.Direction = AgECnstrGroundTrack.eDirectionAscending
-        # m_logger.WriteLine("\t\tThe new Direction is: {0}", oGroundTrack.Direction);
         Assert.assertEqual(AgECnstrGroundTrack.eDirectionAscending, oGroundTrack.Direction)
         # eDirectionDescending
         oGroundTrack.Direction = AgECnstrGroundTrack.eDirectionDescending
-        # m_logger.WriteLine("\t\tThe new Direction is: {0}", oGroundTrack.Direction);
         Assert.assertEqual(AgECnstrGroundTrack.eDirectionDescending, oGroundTrack.Direction)
 
     # endregion
@@ -3246,62 +2400,32 @@ class AccessConstraintHelper(object):
             # ToArray test
             arZone = oZones.ToArray(0, 1)
             Assert.assertEqual(1, len(arZone))
-            # m_logger.WriteLine("\t\tElement 0 is: MinLon = {0}, MinLat = {1}, MaxLon = {2}, MaxLat = {3}",
-            # arZone.GetValue(0, 0), arZone.GetValue(0, 1),
-            # arZone.GetValue(0, 2), arZone.GetValue(0, 3));
             # RemoveIndex test
             oZones.RemoveIndex(0)
-            # m_logger.WriteLine("\t\tAfter RemoveIndex(0) the ExclusionZones collection contains: {0} elements", oZones.Count);
-            for oZone in oZones:
-                pass
 
         if oZones.Count > 0:
             # LatitudeUnit
             strLatitudeUnit = self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit")
-            # m_logger.WriteLine("\t\tThe current LatitudeUnit is: {0}", strLatitudeUnit);
             self.m_oUnits.SetCurrentUnit("LatitudeUnit", "deg")
-            # m_logger.WriteLine("\t\tThe new LatitudeUnit is: {0}",
-            # m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"));
             Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
             # LongitudeUnit
             strLongitudeUnit = self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
-            # m_logger.WriteLine("\t\tThe current LongitudeUnit is: {0}", strLatitudeUnit);
             self.m_oUnits.SetCurrentUnit("LongitudeUnit", "deg")
-            # m_logger.WriteLine("\t\tThe new LongitudeUnit is: {0}",
-            # m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"));
             Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
             (oMinLat, oMinLon, oMaxLat, oMaxLon) = oZones.GetExclZone(0)
-            # m_logger.WriteLine("\t\tBefore changes element 0 is: MinLon = {0}, MinLat = {1}, MaxLon = {2}, MaxLat = {3}",
-            # oMinLon, oMinLat, oMaxLon, oMaxLat );
             oMinLon = (float(oMinLon)) + 11.0
             oMinLat = (float(oMinLat)) + 12.0
             oMaxLon = (float(oMaxLon)) + 13.0
             oMaxLat = (float(oMaxLat)) + 14.0
             # ChangeExclZone test
             oZones.ChangeExclZone(0, oMinLat, oMinLon, oMaxLat, oMaxLon)
-
-            iIndex = 0
-            while iIndex < oZones.Count:
-                pass
-
-                iIndex += 1
-
             # RemoveExclZone test
             oZones.RemoveExclZone(oMinLat, oMinLon, oMaxLat, oMaxLon)
-
-            iIndex = 0
-            while iIndex < oZones.Count:
-                pass
-
-                iIndex += 1
-
             # Restore LatitudeUnit units
             self.m_oUnits.SetCurrentUnit("LatitudeUnit", strLatitudeUnit)
-            # m_logger.WriteLine("\t\tThe new LatitudeUnit (restored) is: {0}", strLatitudeUnit);
             Assert.assertEqual(strLatitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
             # Restore LongitudeUnit units
             self.m_oUnits.SetCurrentUnit("LongitudeUnit", strLongitudeUnit)
-            # m_logger.WriteLine("\t\tThe new LongitudeUnit (restored) is: {0}", strLongitudeUnit);
             Assert.assertEqual(strLongitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
 
         # RemoveAll test
@@ -3315,42 +2439,27 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oZone = clr.Convert(oConstraint, IAccessConstraintZone)
         Assert.assertIsNotNone(oZone)
-        # m_logger.WriteLine("\tThe Zone constraint test for: {0}", oZone.ConstraintName);
 
         # LatitudeUnit
         strLatitudeUnit = self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit")
-        # m_logger.WriteLine("\t\tThe current LatitudeUnit is: {0}", strLatitudeUnit);
         self.m_oUnits.SetCurrentUnit("LatitudeUnit", "deg")
-        # m_logger.WriteLine("\t\tThe new LatitudeUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"));
         Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
 
         # LongitudeUnit
         strLongitudeUnit = self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
-        # m_logger.WriteLine("\t\tThe current LongitudeUnit is: {0}", strLatitudeUnit);
         self.m_oUnits.SetCurrentUnit("LongitudeUnit", "deg")
-        # m_logger.WriteLine("\t\tThe new LongitudeUnit is: {0}",
-        # m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"));
         Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
 
         # MinLat - MaxLat
-        # m_logger.WriteLine("\t\tThe current MinLat is: {0}", oZone.MinLat);
         oZone.MinLat = 12.3456
-        # m_logger.WriteLine("\t\tThe new MinLat is: {0}", oZone.MinLat);
         Assert.assertEqual(12.3456, oZone.MinLat)
-        # m_logger.WriteLine("\t\tThe current MaxLat is: {0}", oZone.MaxLat);
         oZone.MaxLat = 65.4321
-        # m_logger.WriteLine("\t\tThe current MinLat is: {0}", oZone.MaxLat);
         Assert.assertEqual(65.4321, oZone.MaxLat)
 
         # MinLon - MaxLon
-        # m_logger.WriteLine("\t\tThe current MinLon is: {0}", oZone.MinLon);
         oZone.MinLon = 34.5678
-        # m_logger.WriteLine("\t\tThe new MinLon is: {0}", oZone.MinLon);
         Assert.assertEqual(34.5678, oZone.MinLon)
-        # m_logger.WriteLine("\t\tThe current MaxLon is: {0}", oZone.MaxLon);
         oZone.MaxLon = 45.6789
-        # m_logger.WriteLine("\t\tThe new MaxLon is: {0}", oZone.MaxLon);
         Assert.assertEqual(45.6789, oZone.MaxLon)
 
         def action140():
@@ -3375,12 +2484,10 @@ class AccessConstraintHelper(object):
 
         # Restore LatitudeUnit units
         self.m_oUnits.SetCurrentUnit("LatitudeUnit", strLatitudeUnit)
-        # m_logger.WriteLine("\t\tThe new LatitudeUnit (restored) is: {0}", strLatitudeUnit);
         Assert.assertEqual(strLatitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
 
         # Restore LongitudeUnit units
         self.m_oUnits.SetCurrentUnit("LongitudeUnit", strLongitudeUnit)
-        # m_logger.WriteLine("\t\tThe new LongitudeUnit (restored) is: {0}", strLongitudeUnit);
         Assert.assertEqual(strLongitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
 
     # endregion
@@ -3391,20 +2498,10 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oCb)
         # AvailableObstructions
         available = oCb.AvailableObstructions
-
-        iIndex = 0
-        while iIndex < Array.Length(available):
-            strName = str(available[iIndex])
-
-            iIndex += 1
-
         if Array.Length(available) > 0:
             strName = str(available[0])
             if not oCb.IsObstructionAssigned(strName):
                 oCb.AddObstruction(strName)
-
-            else:
-                pass
 
             if not oCb.IsObstructionAssigned(strName):
                 Assert.fail("The {0} obstruction should be assigned!", strName)
@@ -3415,7 +2512,6 @@ class AccessConstraintHelper(object):
             TryCatchAssertBlock.DoAssert("", action144)
             # AssignedObstructions
             assigned = oCb.AssignedObstructions
-            # m_logger.WriteLine("\tThere are {0} central body obstructions assigned.", assigned.Length);
             oCb.RemoveObstruction(strName)
             if oCb.IsObstructionAssigned(strName):
                 Assert.fail("The {0} obstruction should not be assigned!", strName)
