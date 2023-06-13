@@ -9,7 +9,7 @@ class Target(CodeSnippetsTestBase):
         self.m_Object = None
         super(Target, self).__init__(*args, **kwargs)
 
-    m_DefaultName = "MyTarget"
+    m_DefaultName: str = "MyTarget"
 
     # region OneTimeSetUp
     @staticmethod
@@ -45,7 +45,7 @@ class Target(CodeSnippetsTestBase):
     def test_CreateTargetOnCurrentScenarioCentralBody(self):
         self.CreateTargetOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateTargetOnCurrentScenarioCentralBody(self, root):
+    def CreateTargetOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Target on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget = clr.CastAs(
@@ -58,7 +58,7 @@ class Target(CodeSnippetsTestBase):
     def test_ChangeTargetPosition(self):
         self.ChangeTargetPosition(self.m_Object)
 
-    def ChangeTargetPosition(self, target):
+    def ChangeTargetPosition(self, target: "ITarget"):
         pos = target.Position
         pos.AssignGeodetic(39.95, 15.58, 231.54)
 
@@ -68,7 +68,7 @@ class Target(CodeSnippetsTestBase):
     def test_ConfigureTargetAzElMask(self):
         self.ConfigureTargetAzElMask(self.m_Object, TestBase.GetScenarioFile("maskfile.aem"))
 
-    def ConfigureTargetAzElMask(self, target, maskfile):
+    def ConfigureTargetAzElMask(self, target: "ITarget", maskfile: str):
         target.UseLocalTimeOffset = True
         target.LocalTimeOffset = 200.0
         target.UseTerrain = True

@@ -9,8 +9,8 @@ class StkExternal(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(StkExternal, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -56,7 +56,7 @@ class StkExternal(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("TestEph.e")
         )
 
-    def CreateSatelliteFromExternalEphemerisFile(self, root, ephemerisFilePath):
+    def CreateSatelliteFromExternalEphemerisFile(self, root: "IStkObjectRoot", ephemerisFilePath: str):
         satellite = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "MySatellite"), ISatellite
         )

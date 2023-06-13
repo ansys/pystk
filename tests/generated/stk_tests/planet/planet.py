@@ -34,7 +34,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_PL = None
+    AG_PL: "IPlanet" = None
     # endregion
 
     # region CommonTasks

@@ -7,8 +7,8 @@ class SGP4(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(SGP4, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -50,14 +50,14 @@ class SGP4(CodeSnippetsTestBase):
             sgp4, TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
 
-    def ConfigureSGP4WithFileSource(self, propagator, tleFilePath):
+    def ConfigureSGP4WithFileSource(self, propagator: "IVehiclePropagatorSGP4", tleFilePath: str):
         # Configure propagator's TLE file path
         propagator.CommonTasks.AddSegsFromFile("2215", tleFilePath)
 
         # Propagate
         propagator.Propagate()
 
-    def ConfigureSGP4WithOnlineSource(self, propagator):
+    def ConfigureSGP4WithOnlineSource(self, propagator: "IVehiclePropagatorSGP4"):
         # Configure time period
         propagator.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         propagator.Step = 60.0
@@ -82,7 +82,7 @@ class SGP4(CodeSnippetsTestBase):
 
         self.SetSGP4ToAutoUpdateFromFileSource(sgp4, TestBase.GetScenarioFile("stkAllTLE.tle"))
 
-    def SetSGP4ToAutoUpdateFromFileSource(self, propagator, fileUpdateSource):
+    def SetSGP4ToAutoUpdateFromFileSource(self, propagator: "IVehiclePropagatorSGP4", fileUpdateSource: str):
         propagator.AutoUpdateEnabled = True
         propagator.AutoUpdate.SelectedSource = AgEVeSGP4AutoUpdateSource.eSGP4AutoUpdateSourceFile
         propagator.AutoUpdate.FileSource.Filename = fileUpdateSource
@@ -118,7 +118,7 @@ class SGP4(CodeSnippetsTestBase):
 
         self.SetSGP4ToAutoUpdateFromOnlineSource(sgp4)
 
-    def SetSGP4ToAutoUpdateFromOnlineSource(self, propagator):
+    def SetSGP4ToAutoUpdateFromOnlineSource(self, propagator: "IVehiclePropagatorSGP4"):
         propagator.AutoUpdateEnabled = True
         propagator.AutoUpdate.SelectedSource = AgEVeSGP4AutoUpdateSource.eSGP4AutoUpdateSourceOnline
 

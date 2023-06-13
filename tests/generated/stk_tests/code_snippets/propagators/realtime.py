@@ -7,8 +7,8 @@ class RealTime(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(RealTime, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MyLaunchVehicle"
+    m_Object: "ILaunchVehicle" = None
+    m_DefaultName: str = "MyLaunchVehicle"
 
     # region OneTimeSetUp
     @staticmethod
@@ -70,7 +70,7 @@ class RealTime(CodeSnippetsTestBase):
             # Cleanup
             scenAnim.AnimStepType = holdTimeStepType
 
-    def ConfigureRealtimePropagator(self, root, propagator):
+    def ConfigureRealtimePropagator(self, root: "IStkObjectRoot", propagator: "IVehiclePropagatorRealtime"):
         # Set Realtime Propagator settings if they should be other than
         # the defaults.
         propagator.InterpolationOrder = 1
@@ -102,7 +102,7 @@ class RealTime(CodeSnippetsTestBase):
         self.AddRealtimeLLAPositions(realtime)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
-    def AddRealtimeLLAPositions(self, propagator):
+    def AddRealtimeLLAPositions(self, propagator: "IVehiclePropagatorRealtime"):
         points = propagator.PointBuilder.LLA
         points.Add("1 Jan 2012 12:00:00.000", 39.693, -76.399, 0.039, 0.03458, 0.01223, 0.05402)
 
@@ -120,7 +120,7 @@ class RealTime(CodeSnippetsTestBase):
         self.AddRealtimeLLAPositionsInBatches(realtime)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
-    def AddRealtimeLLAPositionsInBatches(self, propagator):
+    def AddRealtimeLLAPositionsInBatches(self, propagator: "IVehiclePropagatorRealtime"):
         # Add realtime LLA points in batches
         times = ["1 Jan 2012 12:00:00.000", "1 Jan 2012 12:01:00.000", "1 Jan 2012 12:02:00.000"]
         lat = [39.693, 41.061, 39.925]

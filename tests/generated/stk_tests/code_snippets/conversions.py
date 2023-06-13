@@ -38,7 +38,7 @@ class Conversions(CodeSnippetsTestBase):
     def test_ConvertPositionToAnotherRepresentation(self):
         self.ConvertPositionToAnotherRepresentation(CodeSnippetsTestBase.m_Root)
 
-    def ConvertPositionToAnotherRepresentation(self, root):
+    def ConvertPositionToAnotherRepresentation(self, root: "IStkObjectRoot"):
         converter = root.ConversionUtility
 
         # ConvertPositionArray expects a two dimensional array of positions
@@ -77,7 +77,7 @@ class Conversions(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
         CodeSnippetsTestBase.m_Root.CloseScenario()
 
-    def ConvertOrbitStateToAnotherRepresentation(self, orbit):
+    def ConvertOrbitStateToAnotherRepresentation(self, orbit: "IOrbitState"):
         newOrbit = clr.CastAs(orbit.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical)
 
     # endregion
@@ -88,7 +88,7 @@ class Conversions(CodeSnippetsTestBase):
         direction = TestBase.Application.ConversionUtility.NewDirection()
         self.QueryIAgDirectionAsAnotherRespresentation(direction)
 
-    def QueryIAgDirectionAsAnotherRespresentation(self, direction):
+    def QueryIAgDirectionAsAnotherRespresentation(self, direction: "IDirection"):
         b = None
         c = None
 
@@ -116,7 +116,7 @@ class Conversions(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
         CodeSnippetsTestBase.m_Root.CloseScenario()
 
-    def AssignIAgOrbitStateToAnotherRepresentation(self, orbitState):
+    def AssignIAgOrbitStateToAnotherRepresentation(self, orbitState: "IOrbitState"):
         # orbitState can be extended to one of the other representations.
         # Here it is extended to Classical representation.
         newOrbitState = clr.CastAs(orbitState.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical)

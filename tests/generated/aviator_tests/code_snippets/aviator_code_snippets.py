@@ -9,15 +9,15 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         super(AviatorCodeSnippets, self).__init__(*args, **kwargs)
 
     # region Static DataMembers
-    AG_Scenario = None
-    AG_AC = None
-    AG_AvtrProp = None
-    AG_AvtrCatalog = None
-    AG_AvtrAircraftModels = None
-    AG_Mission = None
-    AG_Phases = None
-    AG_Procedures = None
-    AG_AvtrAircraft = None
+    AG_Scenario: "IStkObject" = None
+    AG_AC: "IAircraft" = None
+    AG_AvtrProp: "IAviatorPropagator" = None
+    AG_AvtrCatalog: "ICatalog" = None
+    AG_AvtrAircraftModels: "IAircraftModels" = None
+    AG_Mission: "IMission" = None
+    AG_Phases: "IPhaseCollection" = None
+    AG_Procedures: "IProcedureCollection" = None
+    AG_AvtrAircraft: "IAircraftModel" = None
     # endregion
 
     # region OneTimeSetUp
@@ -79,7 +79,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_ConfigureAviatorPropagator(self):
         self.ConfigureAviatorPropagator(AviatorCodeSnippets.AG_AC)
 
-    def ConfigureAviatorPropagator(self, aircraft):
+    def ConfigureAviatorPropagator(self, aircraft: "IAircraft"):
         # Set to Propagator to Aviator
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorAviator)
         # Get the aircraft's route
@@ -101,7 +101,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_SetTheConfiguration(self):
         self.SetTheConfiguration(AviatorCodeSnippets.AG_Mission)
 
-    def SetTheConfiguration(self, mission):
+    def SetTheConfiguration(self, mission: "IMission"):
         # Get the configuration used for the mission
         configuration = mission.Configuration
         # Set the max landing weight
@@ -138,7 +138,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_ConfigureWeatherAtmosphere(self):
         self.ConfigureWeatherAtmosphere(AviatorCodeSnippets.AG_Mission)
 
-    def ConfigureWeatherAtmosphere(self, mission):
+    def ConfigureWeatherAtmosphere(self, mission: "IMission"):
         # Get the wind model used for the mission
         windModel = mission.WindModel
         # Let's use the mission model
@@ -172,7 +172,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         self.SetAviatorVehicle(AviatorCodeSnippets.AG_AvtrProp)
         AviatorCodeSnippets.AG_Mission.Vehicle = clr.CastAs(AviatorCodeSnippets.AG_AvtrAircraft, IAviatorVehicle)
 
-    def SetAviatorVehicle(self, propagator):
+    def SetAviatorVehicle(self, propagator: "IAviatorPropagator"):
         # Get the Aviator catalog
         catalog = propagator.AvtrCatalog
         # Get the aircraft category
@@ -192,7 +192,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_SetupAdvancedFixedWingTool(self):
         self.SetupAdvancedFixedWingTool(AviatorCodeSnippets.AG_AvtrAircraft)
 
-    def SetupAdvancedFixedWingTool(self, aviatorAircraft):
+    def SetupAdvancedFixedWingTool(self, aviatorAircraft: "IAircraftModel"):
         # Get the advanced fixed wing tool
         advFixedWingTool = aviatorAircraft.AdvFixedWingTool
         # Set the basic geometry
@@ -232,7 +232,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_ConfigurePhasePerformanceModels(self):
         self.ConfigurePhasePerformanceModels(AviatorCodeSnippets.AG_Phases[0])
 
-    def ConfigurePhasePerformanceModels(self, phase):
+    def ConfigurePhasePerformanceModels(self, phase: "IPhase"):
         # Get the acceleration performance model used for the current phase
         acceleration = phase.GetPerformanceModelByType("Acceleration")
         # Check if it is linked to the catalog
@@ -253,7 +253,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_AddPhase(self):
         self.AddPhase(AviatorCodeSnippets.AG_Phases)
 
-    def AddPhase(self, phases):
+    def AddPhase(self, phases: "IPhaseCollection"):
         # Add a new phase at the end of the mission
         newPhase = phases.Add()
         # Rename the phase
@@ -268,7 +268,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_AddAndRemoveProcedures(self):
         self.AddAndRemoveProcedures(AviatorCodeSnippets.AG_Procedures, AviatorCodeSnippets.AG_AvtrProp)
 
-    def AddAndRemoveProcedures(self, procedures, propagator):
+    def AddAndRemoveProcedures(self, procedures: "IProcedureCollection", propagator: "IAviatorPropagator"):
         # Add a takeoff procedure with a runway as a site. This will add the procedure
         takeoff = procedures.Add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff)
         # Add a procedure at a given index (starting from 0)
@@ -301,7 +301,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         self.ConfigureProcedure(procedure)
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
 
-    def ConfigureProcedure(self, procedure):
+    def ConfigureProcedure(self, procedure: "IProcedure"):
         # Rename the procedure
         procedure.Name = "New Procedure"
         # Get the site corresponding to the procedure
@@ -319,7 +319,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         self.ConfigureProcedureWindAtmos(procedure)
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
 
-    def ConfigureProcedureWindAtmos(self, procedure):
+    def ConfigureProcedureWindAtmos(self, procedure: "IProcedure"):
         # Get the wind model for the procedure
         windModel = procedure.WindModel
         # Use the procedure model
@@ -348,7 +348,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_CreatePerformanceModel(self):
         self.CreatePerformanceModel(AviatorCodeSnippets.AG_AvtrAircraft)
 
-    def CreatePerformanceModel(self, aircraft):
+    def CreatePerformanceModel(self, aircraft: "IAircraftModel"):
         # Get the acceleration type
         acceleration = aircraft.Acceleration
         # Get it as a catalog item
@@ -370,7 +370,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_ConfigureBasicAccelerationPerfModel(self):
         self.ConfigureBasicAccelerationPerfModel(AviatorCodeSnippets.AG_AvtrAircraft)
 
-    def ConfigureBasicAccelerationPerfModel(self, aircraft):
+    def ConfigureBasicAccelerationPerfModel(self, aircraft: "IAircraftModel"):
         # Get the acceleration type
         acceleration = aircraft.Acceleration
         # Get the build in performance model
@@ -418,7 +418,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def test_ConfigureBasicCruisePerfModel(self):
         self.ConfigureBasicCruisePerfModel(AviatorCodeSnippets.AG_AvtrAircraft)
 
-    def ConfigureBasicCruisePerfModel(self, aircraft):
+    def ConfigureBasicCruisePerfModel(self, aircraft: "IAircraftModel"):
         # Get the cruise type
         cruise = aircraft.Cruise
         # Get the build in performance model
@@ -462,7 +462,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         self.ConfigureProcedureTimeOptions(procedure)
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
 
-    def ConfigureProcedureTimeOptions(self, procedure):
+    def ConfigureProcedureTimeOptions(self, procedure: "IProcedure"):
         # Get the time in epoch seconds
         TestBase.Application.UnitPreferences.SetCurrentUnit("DateFormat", "EpSec")
         # Get the time options
@@ -479,7 +479,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         self.AddTakeoffProcedure(AviatorCodeSnippets.AG_Procedures)
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
 
-    def AddTakeoffProcedure(self, procedures):
+    def AddTakeoffProcedure(self, procedures: "IProcedureCollection"):
         # Add a takeoff procedure with a runway as a site
         takeoff = clr.CastAs(
             procedures.Add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff), IProcedureTakeoff
@@ -514,7 +514,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
 
-    def AddEnrouteProcedure(self, procedures):
+    def AddEnrouteProcedure(self, procedures: "IProcedureCollection"):
         # Add an enroute procedure with a site type of End of Previous Procedure
         enroute = clr.CastAs(
             procedures.Add(AgEAvtrSiteType.eSiteEndOfPrevProcedure, AgEAvtrProcedureType.eProcEnroute),
@@ -556,7 +556,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
 
-    def AddBasicManeuverProcedure(self, procedures):
+    def AddBasicManeuverProcedure(self, procedures: "IProcedureCollection"):
         # Add a basic maneuver procedure
         basicManeuver = clr.CastAs(
             procedures.Add(AgEAvtrSiteType.eSiteEndOfPrevProcedure, AgEAvtrProcedureType.eProcBasicManeuver),
@@ -605,7 +605,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
         AviatorCodeSnippets.AG_Procedures.RemoveAtIndex(0)
 
-    def AddLandingProcedure(self, procedures):
+    def AddLandingProcedure(self, procedures: "IProcedureCollection"):
         # Add a landing procedure
         landing = clr.CastAs(
             procedures.Add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcLanding), IProcedureLanding
@@ -643,7 +643,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         if userRunways.Contains("New User Runway"):
             userRunways.RemoveChild("New User Runway")
 
-    def ConfigureRunwaySite(self, runway):
+    def ConfigureRunwaySite(self, runway: "ISiteRunway"):
         # Set the latitude, longitude, and altitude
         runway.Latitude = 41
         runway.Longitude = 77
@@ -679,7 +679,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         if userRunways.GetAsCatalogSource().Contains("New User Runway"):
             userRunways.GetAsCatalogSource().RemoveChild("New User Runway")
 
-    def ConfigureRunwayFromCatalog(self, runway, catalog):
+    def ConfigureRunwayFromCatalog(self, runway: "ISiteRunway", catalog: "ICatalog"):
         # Get the source of user runways
         userRunways = catalog.RunwayCategory.UserRunways
         if userRunways.GetAsCatalogSource().Contains("New User Runway"):

@@ -57,7 +57,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def rootGetVGTProvider(self, root, path):
+    def rootGetVGTProvider(self, root, path: str):
         # Returns a provider associated with the specified
         # instance of an STK Object or a Central Body.
         provider = root.GetProvider(path)
@@ -73,7 +73,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def rootGetVGTTemplateProvider(self, root, className):
+    def rootGetVGTTemplateProvider(self, root, className: str):
         # Returns a VGT provider associated with the specified
         # STK object class (i.e., Satellite, Facility, etc.) or
         # a Central Body.
@@ -795,7 +795,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def VectorContains(self, provider, VectorName):
+    def VectorContains(self, provider, VectorName: str):
         if provider.Vectors.Contains(VectorName):
             Console.WriteLine("The vector {0} already exists!", VectorName)
 
@@ -815,7 +815,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def VectorRemove(self, provider, VectorName):
+    def VectorRemove(self, provider, VectorName: str):
         if provider.Vectors.Contains(VectorName):
             provider.Vectors.Remove(VectorName)
 
@@ -1058,7 +1058,7 @@ class VGT(CodeSnippetsTestBase):
             provider.Points.Remove("PointName")
             del root
 
-    def CreatePointBPlane(self, provider, TargetBody):
+    def CreatePointBPlane(self, provider, TargetBody: str):
         # Create a B-Plane point using selected target body
         point = clr.Convert(
             provider.Points.Factory.Create("PointName", String.Empty, AgECrdnPointType.eCrdnPointTypeBPlane),
@@ -1782,7 +1782,7 @@ class VGT(CodeSnippetsTestBase):
         sat = TestBase.Application.CurrentScenario.Children["Satellite1"]
         self.AxesTransformEarthFixed(sat)
 
-    def AxesTransformEarthFixed(self, sat):
+    def AxesTransformEarthFixed(self, sat: "IStkObject"):
         # Get the satellite's ICRF cartesian position at 180 EpSec using the data provider interface
         numEpSec = 180
         dpGroup = clr.CastAs(sat.DataProviders["Cartesian Position"], IDataProviderGroup)
@@ -1814,7 +1814,7 @@ class VGT(CodeSnippetsTestBase):
         sat = TestBase.Application.CurrentScenario.Children["Satellite1"]
         self.AxesTransformWithRateEarthFixed(sat)
 
-    def AxesTransformWithRateEarthFixed(self, sat):
+    def AxesTransformWithRateEarthFixed(self, sat: "IStkObject"):
         numEpSec = 180
 
         # Get the satellite's ICRF cartesian position at 180 EpSec using the data provider interface
@@ -1937,7 +1937,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def AxesCreateTopocentricAxesEulerAngles(self, provider, facility):
+    def AxesCreateTopocentricAxesEulerAngles(self, provider, facility: "IFacility"):
         lat = 0
         lon = 0
 
@@ -1962,7 +1962,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def AxesCreateTopocentricAxesQuaternion(self, provider, facility):
+    def AxesCreateTopocentricAxesQuaternion(self, provider, facility: "IFacility"):
         lat = 0
         lon = 0
 
@@ -1987,7 +1987,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def SystemsCreateAssembled(self, provider, facility):
+    def SystemsCreateAssembled(self, provider, facility: "IFacility"):
         systemAssembled = provider.Systems.CommonTasks.CreateAssembled(
             (clr.Convert(facility, IStkObject)).Vgt.Points["Center"], provider.Axes["Fixed"]
         )
@@ -2005,7 +2005,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def SystemsCreateEastNorthUpCartographic(self, provider, facility):
+    def SystemsCreateEastNorthUpCartographic(self, provider, facility: "IFacility"):
         lat = 0
         lon = 0
 
@@ -2026,7 +2026,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def PointCreateFixedInSystemCartographic(self, provider, facility):
+    def PointCreateFixedInSystemCartographic(self, provider, facility: "IFacility"):
         lat = 0
         lon = 0
 
@@ -2047,7 +2047,7 @@ class VGT(CodeSnippetsTestBase):
         finally:
             del root
 
-    def PointCreateFixedInSystemCartesian(self, provider, facility):
+    def PointCreateFixedInSystemCartesian(self, provider, facility: "IFacility"):
         (X, Y, Z) = facility.Position.QueryCartesian()
         origin = provider.Points.CommonTasks.CreateFixedInSystemCartesian(provider.Systems["Fixed"], X, Y, Z)
 

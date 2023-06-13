@@ -51,7 +51,7 @@ class ObjectCoverage(CodeSnippetsTestBase):
             areaTarget.Unload()
             aircraft.Unload()
 
-    def SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self, root):
+    def SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self, root: "IStkObjectRoot"):
         # For this example, set the access times to use the light intervals of the area target.
         uavAircraft = root.GetObjectFromPath("Aircraft/UAV/Sensor/UAV_Camera")
         airspaceAreaTarget = root.GetObjectFromPath("AreaTarget/Airspace")

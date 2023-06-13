@@ -8,8 +8,8 @@ class GreatArc(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(GreatArc, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "groundvehicle1"
+    m_Object: "IGroundVehicle" = None
+    m_DefaultName: str = "groundvehicle1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -55,7 +55,7 @@ class GreatArc(CodeSnippetsTestBase):
 
         self.DefineGreatArcPropFromListOfWaypointsAndTime(propagator)
 
-    def DefineGreatArcPropFromListOfWaypointsAndTime(self, propagator):
+    def DefineGreatArcPropFromListOfWaypointsAndTime(self, propagator: "IVehiclePropagatorGreatArc"):
         # Array with waypoints to insert
         waypoints = [
             [20.36, 40.04, -76.304, "1 Jan 2012 12:00:00.000"],
@@ -93,7 +93,7 @@ class GreatArc(CodeSnippetsTestBase):
 
         self.ListAllWaypointsInAWaypointCollection(propagator)
 
-    def ListAllWaypointsInAWaypointCollection(self, propagator):
+    def ListAllWaypointsInAWaypointCollection(self, propagator: "IVehiclePropagatorGreatArc"):
         # Array with waypoints to insert
         waypoints = [
             [20.36, 40.04, -76.304, "1 Jan 2012 12:00:00.000"],
@@ -143,7 +143,7 @@ class GreatArc(CodeSnippetsTestBase):
 
         self.DefineGreatArcPropFromListOfWaypointsAndVelocity(propagator)
 
-    def DefineGreatArcPropFromListOfWaypointsAndVelocity(self, propagator):
+    def DefineGreatArcPropFromListOfWaypointsAndVelocity(self, propagator: "IVehiclePropagatorGreatArc"):
         # Array with waypoints to insert
         # Consists of: altitude, latitude, longitude, speed
         waypoints = [[20.36, 40.04, -76.304, 10.5], [20.3, 40.337, -75.922, 12.5], [20.3, 40.028, -75.628, 15.0]]
@@ -175,7 +175,7 @@ class GreatArc(CodeSnippetsTestBase):
 
         self.ConfigurePropagatorStartEphemerisEpochExplicitly(propagator)
 
-    def ConfigurePropagatorStartEphemerisEpochExplicitly(self, propagator):
+    def ConfigurePropagatorStartEphemerisEpochExplicitly(self, propagator: "IVehiclePropagatorGreatArc"):
         # Set the epoch time to tomorrow.
         startEpoch = propagator.EphemerisInterval.GetStartEpoch()
         startEpoch.SetExplicitTime("Tomorrow")
@@ -215,7 +215,7 @@ class GreatArc(CodeSnippetsTestBase):
 
         self.SetPointsSpecifyTimeAndPropagate(propagator)
 
-    def SetPointsSpecifyTimeAndPropagate(self, propagator):
+    def SetPointsSpecifyTimeAndPropagate(self, propagator: "IVehiclePropagatorGreatArc"):
         propagator.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
 
         waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 5)
@@ -263,7 +263,7 @@ class GreatArc(CodeSnippetsTestBase):
 
         self.SetPointsSpecifyVelocityAndPropagate(propagator)
 
-    def SetPointsSpecifyVelocityAndPropagate(self, propagator):
+    def SetPointsSpecifyVelocityAndPropagate(self, propagator: "IVehiclePropagatorGreatArc"):
         propagator.Method = AgEVeWayPtCompMethod.eDetermineTimeAccFromVel
 
         waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 6)
@@ -316,7 +316,7 @@ class GreatArc(CodeSnippetsTestBase):
 
         self.SetPointsSmoothRateAndPropagate(propagator)
 
-    def SetPointsSmoothRateAndPropagate(self, propagator):
+    def SetPointsSmoothRateAndPropagate(self, propagator: "IVehiclePropagatorGreatArc"):
         propagator.Method = AgEVeWayPtCompMethod.eDetermineTimeFromVelAcc
 
         waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 5)

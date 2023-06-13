@@ -43,7 +43,7 @@ class VehicleVO(CodeSnippetsTestBase):
         self.ConfigureVeVOPass(sat.VO.Pass)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
 
-    def ConfigureVeVOPass(self, veVoPass):
+    def ConfigureVeVOPass(self, veVoPass: "IVehicleVOPass"):
         # Set lead data type to fraction, retrieved IAgVeGfxLeadData implementation
         veVoPass.TrackData.PassData.GroundTrack.SetLeadDataType(AgELeadTrailData.eDataQuarter)
 
@@ -68,7 +68,7 @@ class VehicleVO(CodeSnippetsTestBase):
         self.ConfigureVeVODropline(satellite.VO.DropLines.Orbit[0])
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
 
-    def ConfigureVeVODropline(self, dropLine):
+    def ConfigureVeVODropline(self, dropLine: "IVehicleVODropLinePathItem"):
         dropLine.IsVisible = True
         dropLine.Use2DColor = False
         dropLine.Color = Color.Red

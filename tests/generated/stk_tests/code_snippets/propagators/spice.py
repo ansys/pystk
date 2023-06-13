@@ -9,8 +9,8 @@ class SPICE(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(SPICE, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -51,7 +51,7 @@ class SPICE(CodeSnippetsTestBase):
             spiceProp, TestBase.GetScenarioFile(TestBase.PathCombine("External", "Satellite1.bsp"))
         )
 
-    def ConfigureSPICEPropagator(self, propagator, spiceFile):
+    def ConfigureSPICEPropagator(self, propagator: "IVehiclePropagatorSPICE", spiceFile: str):
         # Set the SPICE file
         propagator.Spice = spiceFile
 

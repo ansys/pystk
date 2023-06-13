@@ -7,7 +7,7 @@ from ansys.stk.core.vgt import *
 
 # region IntervalCollectionHelper
 class IntervalCollectionHelper(object):
-    def __init__(self, oUnits):
+    def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         self.m_oUnits = oUnits
@@ -16,13 +16,13 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region SetReadOnly
-    def SetReadOnly(self, bIsReadOnly):
+    def SetReadOnly(self, bIsReadOnly: bool):
         self.m_bReadOnlyFile = bIsReadOnly
 
     # endregion
 
     # region Run method
-    def Run(self, oCollection, eType):
+    def Run(self, oCollection: "IIntervalCollection", eType):
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine("IntervalCollection test:")
         # set DateFormat
@@ -63,7 +63,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region DuringAccess
-    def DuringAccess(self, oCollection):
+    def DuringAccess(self, oCollection: "IIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
 
         def action1():
@@ -140,7 +140,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Constraint
-    def Constraint(self, oCollection):
+    def Constraint(self, oCollection: "IIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         if self.m_bReadOnlyFile:
 
@@ -396,7 +396,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Intervals
-    def Intervals(self, oCollection):
+    def Intervals(self, oCollection: "IIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.Count)
@@ -592,7 +592,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region LabelNotes
-    def LabelNotes(self, oCollection):
+    def LabelNotes(self, oCollection: "IIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.Count)

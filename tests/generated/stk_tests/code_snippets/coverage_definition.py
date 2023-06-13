@@ -9,8 +9,8 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(CoverageDefinition, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "cd1"
+    m_Object: "ICoverageDefinition" = None
+    m_DefaultName: str = "cd1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -54,7 +54,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         )
         self.CreateCoverageDefinition(CodeSnippetsTestBase.m_Root)
 
-    def CreateCoverageDefinition(self, root):
+    def CreateCoverageDefinition(self, root: "IStkObjectRoot"):
         # Create the CoverageDefinition
         cd = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eCoverageDefinition, "cd1"), ICoverageDefinition
@@ -70,7 +70,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         )
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eAreaTarget, "AreaTarget1")
 
-    def SetCustomCoverageDefinitionByPoints(self, coverageDefinition, regionFilePath):
+    def SetCustomCoverageDefinitionByPoints(self, coverageDefinition: "ICoverageDefinition", regionFilePath: str):
         # Get the IAgCvGrid interface
         cvGrid = coverageDefinition.Grid
 
@@ -102,7 +102,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eAreaTarget, "AreaTarget2")
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eAreaTarget, "AreaTarget1")
 
-    def DefineCustomGridUsingAreaTargets(self, coverageDefinition):
+    def DefineCustomGridUsingAreaTargets(self, coverageDefinition: "ICoverageDefinition"):
         # Get the IAgCvGrid interface
         cvGrid = coverageDefinition.Grid
 
@@ -122,7 +122,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def test_DefineGridResolutionByLatLon(self):
         self.DefineGridResolutionByLatLon(CoverageDefinition.m_Object)
 
-    def DefineGridResolutionByLatLon(self, coverageDefinition):
+    def DefineGridResolutionByLatLon(self, coverageDefinition: "ICoverageDefinition"):
         # Get the IAgCvGrid interface
         grid = coverageDefinition.Grid
 
@@ -146,7 +146,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         self.DefineGridConstraintOptions(CoverageDefinition.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "North")
 
-    def DefineGridConstraintOptions(self, coverageDefinition):
+    def DefineGridConstraintOptions(self, coverageDefinition: "ICoverageDefinition"):
         pointDefinition = coverageDefinition.PointDefinition
 
         # Set facility as object seed instance
@@ -171,7 +171,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "North")
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
 
-    def DefineCoverageDefinitionAssets(self, coverageDefinition):
+    def DefineCoverageDefinitionAssets(self, coverageDefinition: "ICoverageDefinition"):
         assetCollection = coverageDefinition.AssetList
         satAssetName = "Satellite/sat1"
         facAssetName = "Facility/North"
@@ -198,7 +198,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def test_ConfigureCoverageDefinitionGraphics(self):
         self.ConfigureCoverageDefinitionGraphics(CoverageDefinition.m_Object.Graphics)
 
-    def ConfigureCoverageDefinitionGraphics(self, cvGraphics):
+    def ConfigureCoverageDefinitionGraphics(self, cvGraphics: "ICoverageGraphics"):
         # Configure animation
         cvAnimation = cvGraphics.Animation
         cvAnimation.IsSatisfactionVisible = True
@@ -220,7 +220,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def test_ConfigureCoverageDefinitionFixedStepSampling(self):
         self.ConfigureCoverageDefinitionFixedStepSampling(CoverageDefinition.m_Object)
 
-    def ConfigureCoverageDefinitionFixedStepSampling(self, coverageDefinition):
+    def ConfigureCoverageDefinitionFixedStepSampling(self, coverageDefinition: "ICoverageDefinition"):
         # Get the Sampling interface
         advanced = coverageDefinition.Advanced
         sampling = advanced.Sampling
@@ -239,7 +239,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def test_ConfigureCoverageDefinitionAdaptiveSampling(self):
         self.ConfigureCoverageDefinitionAdaptiveSampling(CoverageDefinition.m_Object)
 
-    def ConfigureCoverageDefinitionAdaptiveSampling(self, coverageDefinition):
+    def ConfigureCoverageDefinitionAdaptiveSampling(self, coverageDefinition: "ICoverageDefinition"):
         # Get the Sampling interface
         advanced = coverageDefinition.Advanced
         sampling = advanced.Sampling
@@ -287,7 +287,9 @@ class CoverageDefinition(CodeSnippetsTestBase):
             (clr.Convert(aircraft, IStkObject)).Unload()
             coverage.Unload()
 
-    def ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(self, stkRoot, coverage):
+    def ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(
+        self, stkRoot: "IStkObjectRoot", coverage: "ICoverageDefinition"
+    ):
         currentDateFormat = stkRoot.UnitPreferences.GetCurrentUnitAbbrv("DateFormat")
 
         # For this example, we will set the coverage analysis time to the times the asset is available.

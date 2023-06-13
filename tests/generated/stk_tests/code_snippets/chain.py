@@ -10,8 +10,8 @@ class Chain(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Chain, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MyChain"
+    m_Object: "IChain" = None
+    m_DefaultName: str = "MyChain"
 
     # region OneTimeSetUp
     @staticmethod
@@ -52,7 +52,7 @@ class Chain(CodeSnippetsTestBase):
         self.CreateChainOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
         Chain.m_Object = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario.Children[Chain.m_DefaultName], IChain)
 
-    def CreateChainOnCurrentScenarioCentralBody(self, root):
+    def CreateChainOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Chain on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         chain = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eChain, "MyChain"), IChain)
@@ -71,7 +71,7 @@ class Chain(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "fac1")
 
-    def DefineAndComputeChainBasic(self, chain):
+    def DefineAndComputeChainBasic(self, chain: "IChain"):
         # Add some objects to chain (using STK path)
         chain.Objects.Add("Facility/fac1")
         chain.Objects.Add("Satellite/sat1")
@@ -95,7 +95,7 @@ class Chain(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "fac1")
 
-    def DefineAndComputeChainAdvanced(self, chain):
+    def DefineAndComputeChainAdvanced(self, chain: "IChain"):
         # Remove all previous accesses
         chain.ClearAccess()
 
@@ -148,7 +148,7 @@ class Chain(CodeSnippetsTestBase):
             aircraft.Unload()
             (clr.Convert(chain, IStkObject)).Unload()
 
-    def ConfigureChainComputeTimePeriod(self, chain):
+    def ConfigureChainComputeTimePeriod(self, chain: "IChain"):
         chain.SetTimePeriodType(AgEChTimePeriodType.eUserSpecifiedTimePeriod)
         userSpecifiedTimePeriod = clr.CastAs(chain.TimePeriod, IChainUserSpecifiedTimePeriod)
         userSpecifiedTimePeriod.TimeInterval.SetExplicitInterval("1 May 2015 04:00:00.000", "1 May 2015 05:00:00.000")
@@ -180,7 +180,7 @@ class Chain(CodeSnippetsTestBase):
             aircraft.Unload()
             (clr.Convert(chain, IStkObject)).Unload()
 
-    def PrintChainStrainIntervalsTimes(self, chain):
+    def PrintChainStrainIntervalsTimes(self, chain: "IChain"):
         chainAsStkObject = clr.CastAs(chain, IStkObject)
 
         # Compute the chain access if not done already.

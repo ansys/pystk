@@ -9,8 +9,8 @@ class LOP(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(LOP, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -47,7 +47,7 @@ class LOP(CodeSnippetsTestBase):
     def test_ConfigureLOPPropagator(self):
         self.ConfigureLOPPropagator(LOP.m_Object)
 
-    def ConfigureLOPPropagator(self, satellite):
+    def ConfigureLOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to LOP
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorLOP)
 

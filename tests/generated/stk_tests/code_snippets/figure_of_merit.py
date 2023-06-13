@@ -10,10 +10,10 @@ class FigureOfMerit(CodeSnippetsTestBase):
         self.m_CovDefObject = None
         super(FigureOfMerit, self).__init__(*args, **kwargs)
 
-    m_CovDefDefaultName = "cd1"
+    m_CovDefDefaultName: str = "cd1"
 
-    m_Object = None
-    m_DefaultName = "fom1"
+    m_Object: "IFigureOfMerit" = None
+    m_DefaultName: str = "fom1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -62,7 +62,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_CreateFigureOfMeritOnCoverageDefinition(self):
         self.CreateFigureOfMeritOnCoverageDefinition(self.m_CovDefObject)
 
-    def CreateFigureOfMeritOnCoverageDefinition(self, covdef):
+    def CreateFigureOfMeritOnCoverageDefinition(self, covdef: "ICoverageDefinition"):
         # Get the coverage definition as a IAgStkObject interface
         covdefObject = clr.CastAs(covdef, IStkObject)
 
@@ -75,7 +75,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_ConfigureAccessDurationFigureOfMerit(self):
         self.ConfigureAccessDurationFigureOfMerit(FigureOfMerit.m_Object)
 
-    def ConfigureAccessDurationFigureOfMerit(self, fom):
+    def ConfigureAccessDurationFigureOfMerit(self, fom: "IFigureOfMerit"):
         # Set figure of merit definition to eFmAccessDuration
         fom.SetDefinitionType(AgEFmDefinitionType.eFmAccessDuration)
 
@@ -95,7 +95,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_ConfigureCoverageTimeFigureOfMerit(self):
         self.ConfigureCoverageTimeFigureOfMerit(FigureOfMerit.m_Object)
 
-    def ConfigureCoverageTimeFigureOfMerit(self, fom):
+    def ConfigureCoverageTimeFigureOfMerit(self, fom: "IFigureOfMerit"):
         # Set figure of merit definition to eFmCoverageTime
         fom.SetDefinitionType(AgEFmDefinitionType.eFmCoverageTime)
 
@@ -115,7 +115,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_SetFigureOfMeritDefToAccessConstraintByEnum(self):
         self.SetFigureOfMeritDefToAccessConstraintByEnum(FigureOfMerit.m_Object)
 
-    def SetFigureOfMeritDefToAccessConstraintByEnum(self, fom):
+    def SetFigureOfMeritDefToAccessConstraintByEnum(self, fom: "IFigureOfMerit"):
         acd = fom.SetAccessConstraintDefinition(AgEFmConstraintName.eFmAzimuthRate)
 
     # endregion
@@ -124,7 +124,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_SetFigureOfMeritDefToAccessConstraintByName(self):
         self.SetFigureOfMeritDefToAccessConstraintByName(FigureOfMerit.m_Object)
 
-    def SetFigureOfMeritDefToAccessConstraintByName(self, fom):
+    def SetFigureOfMeritDefToAccessConstraintByName(self, fom: "IFigureOfMerit"):
         defAccessCnstr = fom.SetAccessConstraintDefinitionName("AzimuthRate")
 
         # Confiure access constraint properties
@@ -138,7 +138,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_ConfigureFigureOfMeritDefToAccessConstraint(self):
         self.ConfigureFigureOfMeritDefToAccessConstraint(FigureOfMerit.m_Object)
 
-    def ConfigureFigureOfMeritDefToAccessConstraint(self, fom):
+    def ConfigureFigureOfMeritDefToAccessConstraint(self, fom: "IFigureOfMerit"):
         # Set access constraint definition to altitude
         fom.SetAccessConstraintDefinition(AgEFmConstraintName.eFmAltitude)
 
@@ -156,7 +156,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_InspectGridWithSelectPoint(self):
         self.InspectGridWithSelectPoint(FigureOfMerit.m_Object)
 
-    def InspectGridWithSelectPoint(self, fom):
+    def InspectGridWithSelectPoint(self, fom: "IFigureOfMerit"):
         gridInspector = fom.GridInspector
         gridInspector.SelectPoint(-13.864, -51.088)
 
@@ -180,7 +180,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         FigureOfMerit.m_Object.SetAccessConstraintDefinitionName("AzimuthRate")
         self.ConfigureFigureOfMeritContours(FigureOfMerit.m_Object.Graphics.Static.Contours)
 
-    def ConfigureFigureOfMeritContours(self, contours):
+    def ConfigureFigureOfMeritContours(self, contours: "IFigureOfMeritGfxContours"):
         contours.IsVisible = True
         contours.ContourType = AgEFmGfxContourType.eSmoothFill
         contours.ColorMethod = AgEFmGfxColorMethod.eExplicit
@@ -200,7 +200,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_FigureOfMeritDefinitionAgeOfData(self):
         self.FigureOfMeritDefinitionAgeOfData(FigureOfMerit.m_Object)
 
-    def FigureOfMeritDefinitionAgeOfData(self, fom):
+    def FigureOfMeritDefinitionAgeOfData(self, fom: "IFigureOfMerit"):
         # Get the IAgFmDefAgeOfData interface
         fom.SetDefinitionType(AgEFmDefinitionType.eFmAgeOfData)
         ageOfData = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionAgeOfData)
@@ -214,7 +214,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def test_FigureOfMeritDefinitionScalarCalculation(self):
         self.FigureOfMeritDefinitionScalarCalculation(FigureOfMerit.m_Object)
 
-    def FigureOfMeritDefinitionScalarCalculation(self, fom):
+    def FigureOfMeritDefinitionScalarCalculation(self, fom: "IFigureOfMerit"):
         # Set the Scalar Calculation definition.
         scalarCalculation = fom.SetScalarCalculationDefinition("CentralBody/Earth ElapsedTimeFromStart")
 
@@ -226,7 +226,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
             FigureOfMerit.m_Object, clr.Convert(TestBase.Application, IStkObjectRoot)
         )
 
-    def FigureOfMeritDefinitionScalarCalculationFromVGT(self, fom, stkRoot):
+    def FigureOfMeritDefinitionScalarCalculationFromVGT(self, fom: "IFigureOfMerit", stkRoot: "IStkObjectRoot"):
         # Get the qualified path of a Scalar Calculation (e.g.
         provider = stkRoot.VgtRoot.GetProvider("CentralBody/Sun")
         calcScalar = provider.CalcScalars[0]
@@ -242,7 +242,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Facility1")
         self.FigureOfMeritDefinitionSystemResponseTime(FigureOfMerit.m_Object)
 
-    def FigureOfMeritDefinitionSystemResponseTime(self, fom):
+    def FigureOfMeritDefinitionSystemResponseTime(self, fom: "IFigureOfMerit"):
         fom.SetDefinitionType(AgEFmDefinitionType.eFmSystemResponseTime)
         systemResponseTime = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionSystemResponseTime)
 
@@ -255,7 +255,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Facility1")
         self.FigureOfMeritDefinitionSystemResponseTimeReset(FigureOfMerit.m_Object)
 
-    def FigureOfMeritDefinitionSystemResponseTimeReset(self, fom):
+    def FigureOfMeritDefinitionSystemResponseTimeReset(self, fom: "IFigureOfMerit"):
         fom.SetDefinitionType(AgEFmDefinitionType.eFmSystemResponseTime)
         systemResponseTime = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionSystemResponseTime)
 

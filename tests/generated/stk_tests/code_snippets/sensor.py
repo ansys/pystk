@@ -9,10 +9,10 @@ class Sensor(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Sensor, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_Satellite = None
-    m_DefaultName = "sensor1"
-    m_SatelliteName = "satellite1"
+    m_Object: "ISensor" = None
+    m_Satellite: "IStkObject" = None
+    m_DefaultName: str = "sensor1"
+    m_SatelliteName: str = "satellite1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -49,7 +49,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSimpleConicSensor(self):
         self.DefineSimpleConicSensor(Sensor.m_Object)
 
-    def DefineSimpleConicSensor(self, sensor):
+    def DefineSimpleConicSensor(self, sensor: "ISensor"):
         patternData = sensor.CommonTasks.SetPatternSimpleConic(40.0, 0.1)
 
     # endregion
@@ -58,7 +58,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineComplexSensor(self):
         self.DefineComplexSensor(Sensor.m_Object)
 
-    def DefineComplexSensor(self, sensor):
+    def DefineComplexSensor(self, sensor: "ISensor"):
         patterndata = sensor.CommonTasks.SetPatternComplexConic(10.0, 70.0, 20.0, 220.0)
         patterndata.AngularResolution = 0.5
 
@@ -68,7 +68,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineCustomSensor(self):
         self.DefineCustomSensor(Sensor.m_Object, TestBase.GetScenarioFile("Custom.Pattern"))
 
-    def DefineCustomSensor(self, sensor, sensorPatternPath):
+    def DefineCustomSensor(self, sensor: "ISensor", sensorPatternPath: str):
         # Set pattern type to Custom
         customPattern = sensor.CommonTasks.SetPatternCustom(sensorPatternPath)
         customPattern.AngularResolution = 6.0
@@ -80,7 +80,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineHalfPowerSensor(self):
         self.DefineHalfPowerSensor(Sensor.m_Object)
 
-    def DefineHalfPowerSensor(self, sensor):
+    def DefineHalfPowerSensor(self, sensor: "ISensor"):
         # Configure pattern
         pattern = sensor.CommonTasks.SetPatternHalfPower(12.5, 3.4, 6.0)
 
@@ -90,7 +90,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSARSensor(self):
         self.DefineSARSensor(Sensor.m_Object)
 
-    def DefineSARSensor(self, sensor):
+    def DefineSARSensor(self, sensor: "ISensor"):
         # Configure pattern
         patterndata = sensor.CommonTasks.SetPatternSAR(10.0, 60.0, 40.0, 30.0, 700.0)
 
@@ -100,7 +100,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorPointingFixedAzEl(self):
         self.DefineSensorPointingFixedAzEl(Sensor.m_Object)
 
-    def DefineSensorPointingFixedAzEl(self, sensor):
+    def DefineSensorPointingFixedAzEl(self, sensor: "ISensor"):
         fixedSensor = sensor.CommonTasks.SetPointingFixedAzEl(
             4.5, -45.0, AgEAzElAboutBoresight.eAzElAboutBoresightRotate
         )
@@ -111,7 +111,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorPointingFixedAxesAzEl(self):
         self.DefineSensorPointingFixedAxesAzEl(Sensor.m_Object)
 
-    def DefineSensorPointingFixedAxesAzEl(self, sensor):
+    def DefineSensorPointingFixedAxesAzEl(self, sensor: "ISensor"):
         fixedAxesSensor = sensor.CommonTasks.SetPointingFixedAxesAzEl(
             "CentralBody/Sun J2000 Axes", 11, 22, AgEAzElAboutBoresight.eAzElAboutBoresightHold
         )
@@ -122,7 +122,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorPointingFixedEuler(self):
         self.DefineSensorPointingFixedEuler(Sensor.m_Object)
 
-    def DefineSensorPointingFixedEuler(self, sensor):
+    def DefineSensorPointingFixedEuler(self, sensor: "ISensor"):
         fixedSensor = sensor.CommonTasks.SetPointingFixedEuler(AgEEulerOrientationSequence.e132, 30, 40, 50)
 
     # endregion
@@ -131,7 +131,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorPointingFixedAxesEuler(self):
         self.DefineSensorPointingFixedAxesEuler(Sensor.m_Object)
 
-    def DefineSensorPointingFixedAxesEuler(self, sensor):
+    def DefineSensorPointingFixedAxesEuler(self, sensor: "ISensor"):
         fixedAxesSensor = sensor.CommonTasks.SetPointingFixedAxesEuler(
             "CentralBody/Sun J2000 Axes", AgEEulerOrientationSequence.e132, 30, 40, 50
         )
@@ -142,7 +142,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorPointingFixedQuaternion(self):
         self.DefineSensorPointingFixedQuaternion(Sensor.m_Object)
 
-    def DefineSensorPointingFixedQuaternion(self, sensor):
+    def DefineSensorPointingFixedQuaternion(self, sensor: "ISensor"):
         fixedSensor = sensor.CommonTasks.SetPointingFixedQuat(0.1, 0.2, 0.3, 0.4)
 
     # endregion
@@ -151,7 +151,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorPointingFixedAxesQuaternion(self):
         self.DefineSensorPointingFixedAxesQuaternion(Sensor.m_Object)
 
-    def DefineSensorPointingFixedAxesQuaternion(self, sensor):
+    def DefineSensorPointingFixedAxesQuaternion(self, sensor: "ISensor"):
         fixedAxesSensor = sensor.CommonTasks.SetPointingFixedAxesQuat("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
 
     # endregion
@@ -160,7 +160,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorPointingFixedYPR(self):
         self.DefineSensorPointingFixedYPR(Sensor.m_Object)
 
-    def DefineSensorPointingFixedYPR(self, sensor):
+    def DefineSensorPointingFixedYPR(self, sensor: "ISensor"):
         fixedSensor = sensor.CommonTasks.SetPointingFixedYPR(AgEYPRAnglesSequence.eRPY, 12, 24, 36)
 
     # endregion
@@ -169,7 +169,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorPointingFixedAxesYPR(self):
         self.DefineSensorPointingFixedAxesYPR(Sensor.m_Object)
 
-    def DefineSensorPointingFixedAxesYPR(self, sensor):
+    def DefineSensorPointingFixedAxesYPR(self, sensor: "ISensor"):
         fixedAxesSensor = sensor.CommonTasks.SetPointingFixedAxesYPR(
             "CentralBody/Sun J2000 Axes", AgEYPRAnglesSequence.eRYP, 11, 22, 33
         )
@@ -182,7 +182,7 @@ class Sensor(CodeSnippetsTestBase):
         self.DefineTargetSensorPointing(Sensor.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eAreaTarget, "AreaTarget1")
 
-    def DefineTargetSensorPointing(self, sensor):
+    def DefineTargetSensorPointing(self, sensor: "ISensor"):
         targetedSensor = sensor.CommonTasks.SetPointingTargetedTracking(
             AgETrackModeType.eTrackModeTransmit, AgEBoresightType.eBoresightLevel, "*/AreaTarget/AreaTarget1"
         )
@@ -193,7 +193,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSpinningSensorPointing(self):
         self.DefineSpinningSensorPointing(CodeSnippetsTestBase.m_Root, Sensor.m_Object)
 
-    def DefineSpinningSensorPointing(self, root, sensor):
+    def DefineSpinningSensorPointing(self, root: "IStkObjectRoot", sensor: "ISensor"):
         # Set pattern type to Spinning
         sensor.SetPointingType(AgESnPointing.eSnPtSpinning)
         spinning = clr.CastAs(sensor.Pointing, ISensorPointingSpinning)
@@ -212,7 +212,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSpinningSensorPointingUsingCommonTasks(self):
         self.DefineSpinningSensorPointingUsingCommonTasks(Sensor.m_Object)
 
-    def DefineSpinningSensorPointingUsingCommonTasks(self, sensor):
+    def DefineSpinningSensorPointingUsingCommonTasks(self, sensor: "ISensor"):
         # Configure sensor (using common taks)
         sensor.CommonTasks.SetPointingSpinning(
             14.24, 7.68, 42.46, AgESnScanMode.eSnContinuous, 88.921, 110.44, 1.2, 3.5
@@ -224,7 +224,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineExternalSensorPointing(self):
         self.DefineExternalSensorPointing(Sensor.m_Object, TestBase.GetScenarioFile("SensorPointing_External.sp"))
 
-    def DefineExternalSensorPointing(self, sensor, externalSensorPointingPath):
+    def DefineExternalSensorPointing(self, sensor: "ISensor", externalSensorPointingPath: str):
         # Sensor pointing data files traditionally have .sp extensions
         sensor.SetPointingExternalFile(externalSensorPointingPath)
 
@@ -236,7 +236,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineFixedLocation(self):
         self.DefineFixedLocation(Sensor.m_Object)
 
-    def DefineFixedLocation(self, sensor):
+    def DefineFixedLocation(self, sensor: "ISensor"):
         # Set sensor's location to fixed
         sensor.SetLocationType(AgESnLocation.eSnFixed)
 
@@ -257,7 +257,7 @@ class Sensor(CodeSnippetsTestBase):
         modelFile.Filename = r"\STKData\VO\Models\Space\satellite.dae"
         self.DefineLocationOn3DModel(Sensor.m_Object)
 
-    def DefineLocationOn3DModel(self, sensor):
+    def DefineLocationOn3DModel(self, sensor: "ISensor"):
         # Set pointing type to 3d model
         sensor.SetPointingType(AgESnPointing.eSnPt3DModel)
 
@@ -272,7 +272,7 @@ class Sensor(CodeSnippetsTestBase):
         self.DefineLocationFromCrdnPoint(Sensor.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "Facility1")
 
-    def DefineLocationFromCrdnPoint(self, sensor):
+    def DefineLocationFromCrdnPoint(self, sensor: "ISensor"):
         # Set location type to VGT
         sensor.SetLocationType(AgESnLocation.eSnLocationCrdnPoint)
 
@@ -288,7 +288,7 @@ class Sensor(CodeSnippetsTestBase):
     def test_DefineSensorAzElMask(self):
         self.DefineSensorAzElMask(Sensor.m_Object, TestBase.GetScenarioFile("maskfile.aem"))
 
-    def DefineSensorAzElMask(self, sensor, maskFilePath):
+    def DefineSensorAzElMask(self, sensor: "ISensor", maskFilePath: str):
         # Specify Mask file
         sensor.SetAzElMaskFile(maskFilePath)
 
@@ -312,7 +312,7 @@ class Sensor(CodeSnippetsTestBase):
         tb.Propagate()
         self.ConfigureAndComputeSensorSwath(Sensor.m_Object)
 
-    def ConfigureAndComputeSensorSwath(self, sensor):
+    def ConfigureAndComputeSensorSwath(self, sensor: "ISensor"):
         # Configure swath display properties
         swath = sensor.Swath
         swath.Enable = True
@@ -340,7 +340,7 @@ class Sensor(CodeSnippetsTestBase):
 
         self.ConfigureSensorVOProjection(Sensor.m_Object.VO)
 
-    def ConfigureSensorVOProjection(self, sensorVo):
+    def ConfigureSensorVOProjection(self, sensorVo: "ISensorVO"):
         sensorVo.ProjectionType = AgESnVOProjectionType.eProjectionAllIntersections
         sensorVo.InheritFrom2D = AgESnVOInheritFrom2D.eSnVOInheritFrom2DExtentOnly
         sensorVo.SpaceProjection = 2000.0
@@ -355,7 +355,7 @@ class Sensor(CodeSnippetsTestBase):
 
         self.ConfigureSensorVOProjectionTimeVarying(Sensor.m_Object.VO)
 
-    def ConfigureSensorVOProjectionTimeVarying(self, sensorVo):
+    def ConfigureSensorVOProjectionTimeVarying(self, sensorVo: "ISensorVO"):
         sensorVo.ProjectionType = AgESnVOProjectionType.eProjectionAllIntersections
         sensorVo.ProjectionTimeDependency = AgESnVOProjectionTimeDependencyType.eSnVOTimeVarying
         elem1 = sensorVo.SpaceProjectionIntervals.Add()

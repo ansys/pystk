@@ -42,7 +42,7 @@ class Interfaces(CodeSnippetsTestBase):
             "",
         )
 
-    def LoadVDF(self, root, vdfPath, vdfPassword):
+    def LoadVDF(self, root: "IStkObjectRoot", vdfPath: str, vdfPassword: str):
         # Pass an empty string if there is no password to the VDF.
         root.LoadVDF(vdfPath, vdfPassword)
 

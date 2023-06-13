@@ -8,9 +8,9 @@ class Astrogator(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Astrogator, self).__init__(*args, **kwargs)
 
-    m_Satellite = None
-    m_Object = None
-    m_DefaultName = "MyAstrogator"
+    m_Satellite: "ISatellite" = None
+    m_Object: "IDriverMissionControlSequence" = None
+    m_DefaultName: str = "MyAstrogator"
 
     # region OneTimeSetUp
     @staticmethod
@@ -51,7 +51,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_ConfigureAstrogratorPropagator(self):
         self.ConfigureAstrogratorPropagator(Astrogator.m_Satellite)
 
-    def ConfigureAstrogratorPropagator(self, satellite):
+    def ConfigureAstrogratorPropagator(self, satellite: "ISatellite"):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorAstrogator)
 
         driver = clr.CastAs(satellite.Propagator, IDriverMissionControlSequence)
@@ -72,7 +72,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_ConfigureInitialStateSegment(self):
         self.ConfigureInitialStateSegment(Astrogator.m_Object)
 
-    def ConfigureInitialStateSegment(self, driver):
+    def ConfigureInitialStateSegment(self, driver: "IDriverMissionControlSequence"):
         # Add a new segment and cast the segment to the IAgVAMCSInitialState interface
         segment = driver.MainSequence.Insert(AgEVASegmentType.eVASegmentTypeInitialState, "Inner Orbit", "-")
         initState = clr.CastAs(segment, IMissionControlSequenceInitialState)
@@ -114,7 +114,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_ConfigurePropagateSegment(self):
         self.ConfigurePropagateSegment(Astrogator.m_Object)
 
-    def ConfigurePropagateSegment(self, driver):
+    def ConfigurePropagateSegment(self, driver: "IDriverMissionControlSequence"):
         # Add a propagate segment to our sequence
         segment = driver.MainSequence.Insert(AgEVASegmentType.eVASegmentTypePropagate, "Propagate", "-")
         propagate = clr.CastAs(segment, IMissionControlSequencePropagate)
@@ -140,7 +140,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_ConfigureTargetSequenceSegment(self):
         self.ConfigureTargetSequenceSegment(Astrogator.m_Object)
 
-    def ConfigureTargetSequenceSegment(self, driver):
+    def ConfigureTargetSequenceSegment(self, driver: "IDriverMissionControlSequence"):
         # First add a sequence target
         segment = driver.MainSequence.Insert(AgEVASegmentType.eVASegmentTypeTargetSequence, "Start Transfer", "-")
         targetSequence = clr.CastAs(segment, IMissionControlSequenceTargetSequence)
@@ -188,7 +188,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_ConfigureLaunchSegment(self):
         self.ConfigureLaunchSegment(Astrogator.m_Object)
 
-    def ConfigureLaunchSegment(self, driver):
+    def ConfigureLaunchSegment(self, driver: "IDriverMissionControlSequence"):
         # Add launch sequence and retrieve the
         segment = driver.MainSequence.Insert(AgEVASegmentType.eVASegmentTypeLaunch, "MyLaunch", "-")
         launch = clr.CastAs(segment, IMissionControlSequenceLaunch)
@@ -230,7 +230,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_ConfigureUpdateSegment(self):
         self.ConfigureUpdateSegment(Astrogator.m_Object)
 
-    def ConfigureUpdateSegment(self, driver):
+    def ConfigureUpdateSegment(self, driver: "IDriverMissionControlSequence"):
         # Add launch sequence and retrieve the
         segment = driver.MainSequence.Insert(AgEVASegmentType.eVASegmentTypeUpdate, "MyUpdate", "-")
         update = clr.CastAs(segment, IMissionControlSequenceUpdate)
@@ -265,7 +265,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_ConfigureManeuverSegment(self):
         self.ConfigureManeuverSegment(Astrogator.m_Object)
 
-    def ConfigureManeuverSegment(self, driver):
+    def ConfigureManeuverSegment(self, driver: "IDriverMissionControlSequence"):
         # Add launch sequence and retrieve the IAgVAMCSManeuver interface
         segment = driver.MainSequence.Insert(AgEVASegmentType.eVASegmentTypeManeuver, "MyManeuver", "-")
         maneuver = clr.CastAs(segment, IMissionControlSequenceManeuver)
@@ -288,7 +288,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_ConfigureSequenceSegmentWithScriptingTool(self):
         self.ConfigureSequenceSegmentWithScriptingTool(Astrogator.m_Object)
 
-    def ConfigureSequenceSegmentWithScriptingTool(self, driver):
+    def ConfigureSequenceSegmentWithScriptingTool(self, driver: "IDriverMissionControlSequence"):
         # Add launch sequence and retrieve the
         segment = driver.MainSequence.Insert(AgEVASegmentType.eVASegmentTypeSequence, "MySequence", "-")
         sequence = clr.CastAs(segment, IMissionControlSequenceSequence)
@@ -360,7 +360,7 @@ class Astrogator(CodeSnippetsTestBase):
         Astrogator.m_Object.MainSequence.Insert(AgEVASegmentType.eVASegmentTypeTargetSequence, "Start Transfer", "-")
         self.ConfigureTargetSequenceWithDC(Astrogator.m_Object)
 
-    def ConfigureTargetSequenceWithDC(self, driver):
+    def ConfigureTargetSequenceWithDC(self, driver: "IDriverMissionControlSequence"):
         startTransfer = clr.CastAs(driver.MainSequence["Start Transfer"], IMissionControlSequenceTargetSequence)
 
         dcString = "Differential Corrector"
@@ -394,7 +394,7 @@ class Astrogator(CodeSnippetsTestBase):
     def test_SetUserDefinedMuValueOnThirdBody(self):
         self.SetUserDefinedMuValueOnThirdBody(clr.CastAs(TestBase.Application.CurrentScenario, IScenario))
 
-    def SetUserDefinedMuValueOnThirdBody(self, scenario):
+    def SetUserDefinedMuValueOnThirdBody(self, scenario: "IScenario"):
         compInfoCol = scenario.ComponentDirectory.GetComponents(AgEComponent.eComponentAstrogator)
         thirdBodyFolder = compInfoCol.GetFolder("Propagator Functions").GetFolder("Third Bodies")
         newMoon = clr.CastAs(thirdBodyFolder.DuplicateComponent("Moon", "NewMoon"), IThirdBodyFunction)
@@ -411,7 +411,7 @@ class Astrogator(CodeSnippetsTestBase):
             clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
         )
 
-    def SetUserDefinedMuValueOnThirdBodyFromPropagators(self, scenario):
+    def SetUserDefinedMuValueOnThirdBodyFromPropagators(self, scenario: "IScenario"):
         compInfoCol = scenario.ComponentDirectory.GetComponents(AgEComponent.eComponentAstrogator)
         propagatorFolder = compInfoCol.GetFolder("Propagators")
         myEathHPOP = clr.CastAs(

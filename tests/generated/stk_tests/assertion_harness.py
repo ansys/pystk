@@ -3,14 +3,14 @@ from ansys.stk.core.stkobjects import *
 
 
 class Unit(object):
-    def __init__(self, dimension, name):
+    def __init__(self, dimension: str, name: str):
         self.Dimension = dimension
         self.UnitName = name
 
 
 class TryCatchAssertBlock(object):
     @staticmethod
-    def DoAssert(message, action):
+    def DoAssert(message: str, action):
         TryCatchAssertBlock.ExpectedException("", action)
 
     @staticmethod
@@ -30,7 +30,7 @@ class TryCatchAssertBlock(object):
         Assert.fail("{0} was thrown. InvalidCastException was expected.", exceptionType)
 
     @staticmethod
-    def ExpectedException(message, action):
+    def ExpectedException(message: str, action):
         try:
             action()
 
@@ -56,7 +56,7 @@ class TryCatchAssertBlock(object):
             finalizer()
 
     @staticmethod
-    def DoActionRunFinalize2(root, action, finalizer, *units):
+    def DoActionRunFinalize2(root: "IStkObjectRoot", action, finalizer, *units):
         try:
             runner = CodeRunner(root)
             runner.DoWithUnits(action, units)
@@ -66,14 +66,14 @@ class TryCatchAssertBlock(object):
 
 
 class CodeRunner(object):
-    def __init__(self, root, bBeginEndUpdate=False):
+    def __init__(self, root: "IStkObjectRoot", bBeginEndUpdate: bool = False):
         self._root = root
         self._bBeginEndUpdate = bBeginEndUpdate
 
     def DoWithUnits(self, action, *units):
         self.DoWithUnits2(action, Enumerable.ToList(units))
 
-    def Iterate(self, maxIterations, action, *units):
+    def Iterate(self, maxIterations: int, action, *units):
         watch = None
         if self._bBeginEndUpdate:
             self._root.BeginUpdate()

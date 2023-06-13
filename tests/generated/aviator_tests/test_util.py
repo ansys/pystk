@@ -5,6 +5,7 @@ import pytz
 import re
 import unittest
 import sys
+import typing  # noqa
 
 from datetime import datetime, timedelta
 

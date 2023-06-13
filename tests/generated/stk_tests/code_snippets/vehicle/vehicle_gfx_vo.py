@@ -44,7 +44,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
         self.SetVehicleGfxToCustomIntervals(gv.Graphics)
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def SetVehicleGfxToCustomIntervals(self, graphics):
+    def SetVehicleGfxToCustomIntervals(self, graphics: "IGreatArcGraphics"):
         if graphics.IsAttributesTypeSupported(AgEVeGfxAttributes.eAttributesCustom):
             # Set graphics to custom
             graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesCustom)
@@ -65,7 +65,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
         self.ConfigureVehicleGfxCustomIntervals(customAttributes)
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def ConfigureVehicleGfxCustomIntervals(self, customAttributes):
+    def ConfigureVehicleGfxCustomIntervals(self, customAttributes: "IVehicleGfxAttributesCustom"):
         customIntervals = customAttributes.Intervals
 
         # Add intervals
@@ -86,7 +86,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
         self.SetVehicleGfxToBasic(gv.Graphics)
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def SetVehicleGfxToBasic(self, graphics):
+    def SetVehicleGfxToBasic(self, graphics: "IGreatArcGraphics"):
         if graphics.IsAttributesTypeSupported(AgEVeGfxAttributes.eAttributesBasic):
             # Set graphics to basic
             graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesBasic)
@@ -107,7 +107,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
         self.ConfigureVehicleGfxBasic(basicAttributes)
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def ConfigureVehicleGfxBasic(self, basicAttributes):
+    def ConfigureVehicleGfxBasic(self, basicAttributes: "IVehicleGfxAttributesBasic"):
         # Change display
         basicAttributes.IsVisible = True
         basicAttributes.Color = Color.Red
@@ -130,7 +130,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
         (clr.Convert(sat, IStkObject)).Unload()
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def SetVehicleGfxToAccessIntervals(self, graphics):
+    def SetVehicleGfxToAccessIntervals(self, graphics: "IGreatArcGraphics"):
         if graphics.IsAttributesTypeSupported(AgEVeGfxAttributes.eAttributesAccess):
             # Set graphics to access intervals
             graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesAccess)
@@ -155,7 +155,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
         (clr.Convert(sat, IStkObject)).Unload()
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def ConfigureVehicleGfxAccessIntervals(self, accessAttributes):
+    def ConfigureVehicleGfxAccessIntervals(self, accessAttributes: "IVehicleGfxAttributesAccess"):
         accessAttributes.AccessObjects.Add("Satellite/sat1")
 
         accessAttributes.DuringAccess.IsVisible = True
@@ -175,7 +175,9 @@ class VehicleGfxVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
 
-    def ConfigureVehicleGfxVOElevationContours(self, gfxContours, voContours):
+    def ConfigureVehicleGfxVOElevationContours(
+        self, gfxContours: "IVehicleGfxElevContours", voContours: "IVehicleVOElevContours"
+    ):
         gfxContours.IsVisible = True
         gfxContours.IsFillVisible = True
         gfxContours.FillStyle = AgEFillStyle.eFillStyleHorizontalStripe
@@ -207,7 +209,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
         self.ConfigureVehicleGfxVOSunLighting(sat.Graphics.Lighting)
         (clr.Convert(sat, IStkObject)).Unload()
 
-    def ConfigureVehicleGfxVOSunLighting(self, lighting):
+    def ConfigureVehicleGfxVOSunLighting(self, lighting: "IVehicleGfxLighting"):
         sunlight = lighting.Sunlight
 
         sunlight.Visible = True

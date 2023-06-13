@@ -67,16 +67,16 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_Scenario = None
-    AG_AC = None
-    AG_AvtrProp = None
-    AG_AvtrCatalog = None
-    AG_AvtrAircraftModels = None
-    AG_Mission = None
-    AG_Phases = None
-    AG_Procedures = None
-    AG_AvtrAircraft = None
-    AG_Target = None
+    AG_Scenario: "IStkObject" = None
+    AG_AC: "IAircraft" = None
+    AG_AvtrProp: "IAviatorPropagator" = None
+    AG_AvtrCatalog: "ICatalog" = None
+    AG_AvtrAircraftModels: "IAircraftModels" = None
+    AG_Mission: "IMission" = None
+    AG_Phases: "IPhaseCollection" = None
+    AG_Procedures: "IProcedureCollection" = None
+    AG_AvtrAircraft: "IAircraftModel" = None
+    AG_Target: "IStkObject" = None
     # endregion
 
     # region Mission
@@ -4171,7 +4171,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgAvtrPropulsionThrust
-    def Test_IAgAvtrPropulsionThrust(self, thrust):
+    def Test_IAgAvtrPropulsionThrust(self, thrust: "IPropulsionThrust"):
         thrust.UseConstantThrust = True
         Assert.assertTrue(thrust.UseConstantThrust)
 
@@ -9355,7 +9355,7 @@ class EarlyBoundTests(TestBase):
 
     # region PrivateCatalogMethods
 
-    def AdvancedMissileAero(self, advancedAero):
+    def AdvancedMissileAero(self, advancedAero: "IMissileAdvancedAero"):
         advancedAero.BodyWidth = 0.2
         Assert.assertEqual(0.2, advancedAero.BodyWidth)
         advancedAero.BodyHeight = 0.3
@@ -9413,7 +9413,7 @@ class EarlyBoundTests(TestBase):
         advancedAero.TailMaxThicknessAlongMAC = 0.008
         Assert.assertEqual(0.008, advancedAero.TailMaxThicknessAlongMAC)
 
-    def EmpiricalJetEngineOptions(self, prop):
+    def EmpiricalJetEngineOptions(self, prop: "IAdvFixedWingEmpiricalJetEngine"):
         tolerance = 1e-09
 
         prop.MaxSeaLevelStaticThrust = 65000
@@ -9426,7 +9426,7 @@ class EarlyBoundTests(TestBase):
         prop.FuelFlow = 25000
         Assert.assertAlmostEqual(25000, prop.FuelFlow, delta=tolerance)
 
-    def AttitudeTransitionOptions(self, att):
+    def AttitudeTransitionOptions(self, att: "IAttitudeTransitions"):
         tolerance = 1e-09
 
         att.PitchRate = 10
@@ -9441,7 +9441,7 @@ class EarlyBoundTests(TestBase):
         rollRate = att.RollRate
         Assert.assertAlmostEqual(30, float(rollRate), delta=tolerance)
 
-    def ManeuverModeHelperOptions(self, helper):
+    def ManeuverModeHelperOptions(self, helper: "IAeroPropManeuverModeHelper"):
         tolerance = 1e-09
 
         helper.Mode = AgEAvtrAccelManeuverAeroPropMode.eUseLiftCoefficientOnly
@@ -9470,7 +9470,7 @@ class EarlyBoundTests(TestBase):
         helper.ControlAuthority = 0.5
         Assert.assertEqual(0.5, helper.ControlAuthority)
 
-    def ConfigurationOptions(self, defConfig):
+    def ConfigurationOptions(self, defConfig: "IConfiguration"):
         defConfig.EmptyWeight = 100
         Assert.assertEqual(100, defConfig.EmptyWeight)
 
@@ -9485,7 +9485,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(2, defConfig.EmptyCGY)
         Assert.assertEqual(3, defConfig.EmptyCGZ)
 
-    def ARINC424Source(self, arincSource, childName):
+    def ARINC424Source(self, arincSource: "IARINC424Source", childName: str):
         Assert.assertTrue(arincSource.UseMasterDataFile)
 
         def action408():
@@ -9510,7 +9510,7 @@ class EarlyBoundTests(TestBase):
 
         TryCatchAssertBlock.ExpectedException("", action409)
 
-    def TestPropulsionEfficiencies(self, propEffs):
+    def TestPropulsionEfficiencies(self, propEffs: "IPropulsionEfficiencies"):
         propEffs.TechnologyLevel = AgEAvtrJetEngineTechnologyLevel.eLevel5
         Assert.assertEqual(AgEAvtrJetEngineTechnologyLevel.eLevel5, propEffs.TechnologyLevel)
         propEffs.IntakeType = AgEAvtrJetEngineIntakeType.eSubsonicEmbedded
@@ -9520,7 +9520,7 @@ class EarlyBoundTests(TestBase):
         propEffs.ExhaustNozzleType = AgEAvtrJetEngineExhaustNozzleType.eFixedAreaConvergent
         Assert.assertEqual(AgEAvtrJetEngineExhaustNozzleType.eFixedAreaConvergent, propEffs.ExhaustNozzleType)
 
-    def TestPropulsionEfficienciesRamScram(self, propEffs):
+    def TestPropulsionEfficienciesRamScram(self, propEffs: "IPropulsionEfficiencies"):
         # This tests the propulsion efficiencies interface only for Ramjets and Scramjets as the enumeration values are more limited
         propEffs.TechnologyLevel = AgEAvtrJetEngineTechnologyLevel.eLevel5
         Assert.assertEqual(AgEAvtrJetEngineTechnologyLevel.eLevel5, propEffs.TechnologyLevel)
@@ -9534,7 +9534,7 @@ class EarlyBoundTests(TestBase):
             AgEAvtrJetEngineExhaustNozzleType.eVariableAreaConvergentDivergent, propEffs.ExhaustNozzleType
         )
 
-    def TestFuelAFPROP(self, afprop):
+    def TestFuelAFPROP(self, afprop: "IFuelModelKeroseneAFPROP"):
         afprop.Subtype = AgEAvtrAFPROPFuelType.eAFPROPJetA
         Assert.assertEqual(AgEAvtrAFPROPFuelType.eAFPROPJetA, afprop.Subtype)
 
@@ -9547,7 +9547,7 @@ class EarlyBoundTests(TestBase):
         afprop.SpecificEnergy = 43.21
         Assert.assertEqual(43.21, afprop.SpecificEnergy)
 
-    def TestFuelCEA(self, cea):
+    def TestFuelCEA(self, cea: "IFuelModelKeroseneCEA"):
         cea.Subtype = AgEAvtrCEAFuelType.eCEAJetA
         Assert.assertEqual(AgEAvtrCEAFuelType.eCEAJetA, cea.Subtype)
 
@@ -9560,7 +9560,7 @@ class EarlyBoundTests(TestBase):
         cea.SpecificEnergy = 43.21
         Assert.assertEqual(43.21, cea.SpecificEnergy)
 
-    def TestTurbofanBasicAB(self, prop):
+    def TestTurbofanBasicAB(self, prop: "IAdvFixedWingTurbofanBasicABProp"):
         prop.CanUseAfterburner = False
         Assert.assertEqual(False, prop.CanUseAfterburner)
 
@@ -9617,7 +9617,7 @@ class EarlyBoundTests(TestBase):
 
         self.TestPropulsionEfficiencies(prop.EfficienciesAndLosses)
 
-    def TestTurbojetBasicAB(self, prop):
+    def TestTurbojetBasicAB(self, prop: "IAdvFixedWingTurbojetBasicABProp"):
         prop.CanUseAfterburner = False
         Assert.assertEqual(False, prop.CanUseAfterburner)
 
@@ -9685,12 +9685,12 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(0, EarlyBoundTests.AG_Procedures.Count)
 
-    def TestProcedureName(self, proc, name):
+    def TestProcedureName(self, proc: "IProcedure", name: str):
         Assert.assertEqual(name, proc.Name)
         proc.Name = "Name Test"
         Assert.assertEqual("Name Test", proc.Name)
 
-    def AltitudeOptions(self, alt):
+    def AltitudeOptions(self, alt: "IAltitudeOptions"):
         alt.UseDefaultCruiseAltitude = True
 
         def action421():
@@ -9704,7 +9704,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AgEAvtrAGLMSL.eAltAGL, alt.AltitudeReference)
         Assert.assertEqual(5000, alt.Altitude)
 
-    def AltitudeMSLOptions(self, altitudeOpts):
+    def AltitudeMSLOptions(self, altitudeOpts: "IAltitudeMSLOptions"):
         altitudeOpts.UseDefaultCruiseAltitude = True
 
         def action422():
@@ -9716,7 +9716,7 @@ class EarlyBoundTests(TestBase):
         altitudeOpts.MSLAltitude = 10000
         Assert.assertEqual(10000, altitudeOpts.MSLAltitude)
 
-    def AltitudeMSLAndLevelOffOptions(self, altitudeOpts):
+    def AltitudeMSLAndLevelOffOptions(self, altitudeOpts: "IAltitudeMSLAndLevelOffOptions"):
         altitudeOpts.UseDefaultCruiseAltitude = True
         # TryCatchAssertBlock.ExpectedException("must be ", delegate () { altitudeOpts.MSLAltitude = 10000; });
 
@@ -9730,7 +9730,7 @@ class EarlyBoundTests(TestBase):
         altitudeOpts.LevelOffMode = AgEAvtrAltitudeConstraintManeuverMode.eLevelOffLeftTurnManeuver
         Assert.assertEqual(AgEAvtrAltitudeConstraintManeuverMode.eLevelOffLeftTurnManeuver, altitudeOpts.LevelOffMode)
 
-    def ArcAltitudeOptions(self, alt):
+    def ArcAltitudeOptions(self, alt: "IArcAltitudeOptions"):
         alt.UseDefaultCruiseAltitude = True
 
         def action423():
@@ -9749,7 +9749,7 @@ class EarlyBoundTests(TestBase):
         alt.StopArcAltitude = 10002
         Assert.assertEqual(10002, alt.StopArcAltitude)
 
-    def ArcAltitudeAndDelayOptions(self, alt):
+    def ArcAltitudeAndDelayOptions(self, alt: "IArcAltitudeAndDelayOptions"):
         alt.UseDefaultCruiseAltitude = True
 
         def action425():
@@ -9775,7 +9775,7 @@ class EarlyBoundTests(TestBase):
         alt.StopArcAltitude = 10002
         Assert.assertEqual(10002, alt.StopArcAltitude)
 
-    def HoverAltitudeOptions(self, alt):
+    def HoverAltitudeOptions(self, alt: "IHoverAltitudeOptions"):
         alt.AltitudeReference = AgEAvtrAGLMSL.eAltAGL
         Assert.assertEqual(AgEAvtrAGLMSL.eAltAGL, alt.AltitudeReference)
 
@@ -9785,7 +9785,7 @@ class EarlyBoundTests(TestBase):
         alt.FinalAltitudeRate = AgEAvtrVTOLRateMode.eAlwaysStop
         Assert.assertEqual(AgEAvtrVTOLRateMode.eAlwaysStop, alt.FinalAltitudeRate)
 
-    def ArcOptions(self, arc):
+    def ArcOptions(self, arc: "IArcOptions"):
         arc.TurnDirection = AgEAvtrTurnDirection.eTurnRight
         Assert.assertEqual(AgEAvtrTurnDirection.eTurnRight, arc.TurnDirection)
 
@@ -9801,7 +9801,7 @@ class EarlyBoundTests(TestBase):
         turnAngle = arc.TurnAngle
         Assert.assertEqual(100, float(turnAngle))
 
-    def NavigationOptions(self, navOpts):
+    def NavigationOptions(self, navOpts: "INavigationOptions"):
         tolerance = 1e-09
 
         navOpts.NavMode = AgEAvtrPointToPointMode.eArriveOnCourseForNext
@@ -9823,13 +9823,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(1, float(course), delta=tolerance)
         Assert.assertTrue(navOpts.UseMagneticHeading)
 
-    def EnrouteOptions(self, enrouteOpts):
+    def EnrouteOptions(self, enrouteOpts: "IEnrouteOptions"):
         enrouteOpts.UseMaxSpeedTurns = True
         enrouteOpts.MaxTurnRadiusFactor = 3.5
         Assert.assertTrue(enrouteOpts.UseMaxSpeedTurns)
         Assert.assertEqual(3.5, enrouteOpts.MaxTurnRadiusFactor)
 
-    def EnrouteAndDelayOptions(self, enrouteOpts):
+    def EnrouteAndDelayOptions(self, enrouteOpts: "IEnrouteAndDelayOptions"):
         enrouteOpts.DelayEnrouteClimbDescents = True
         enrouteOpts.UseMaxSpeedTurns = True
         enrouteOpts.MaxTurnRadiusFactor = 3.5
@@ -9837,7 +9837,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(enrouteOpts.UseMaxSpeedTurns)
         Assert.assertEqual(3.5, enrouteOpts.MaxTurnRadiusFactor)
 
-    def EnrouteCruiseAirspeed(self, airspeedOpts):
+    def EnrouteCruiseAirspeed(self, airspeedOpts: "ICruiseAirspeedOptions"):
         tolerance = 1e-09
 
         airspeedOpts.CruiseSpeedType = AgEAvtrCruiseSpeed.eMaxAirspeed
@@ -9856,7 +9856,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(0.5, airspeedOpts.OtherAirspeed, delta=tolerance)
         Assert.assertEqual(AgEAvtrAirspeedType.eMach, airspeedOpts.OtherAirspeedType)
 
-    def EnrouteCruiseAirspeedAndProfile(self, airspeedOpts):
+    def EnrouteCruiseAirspeedAndProfile(self, airspeedOpts: "ICruiseAirspeedAndProfileOptions"):
         tolerance = 1e-09
 
         airspeedOpts.FlyCruiseAirspeedProfile = False
@@ -9878,13 +9878,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(0.5, airspeedOpts.OtherAirspeed, delta=tolerance)
         Assert.assertEqual(AgEAvtrAirspeedType.eMach, airspeedOpts.OtherAirspeedType)
 
-    def EnrouteTurnDirection(self, turnOpts):
+    def EnrouteTurnDirection(self, turnOpts: "IEnrouteTurnDirectionOptions"):
         turnOpts.EnrouteFirstTurn = AgEAvtrNavigatorTurnDir.eNavigatorTurnLeft
         Assert.assertEqual(AgEAvtrNavigatorTurnDir.eNavigatorTurnLeft, turnOpts.EnrouteFirstTurn)
         turnOpts.EnrouteSecondTurn = AgEAvtrNavigatorTurnDir.eNavigatorTurnRight
         Assert.assertEqual(AgEAvtrNavigatorTurnDir.eNavigatorTurnRight, turnOpts.EnrouteSecondTurn)
 
-    def VerticalPlaneOptions(self, vertOpts):
+    def VerticalPlaneOptions(self, vertOpts: "IVerticalPlaneOptions"):
         vertOpts.MaxVertPlaneRadiusFactor = 2.5
         Assert.assertEqual(2.5, vertOpts.MaxVertPlaneRadiusFactor)
         vertOpts.MinEnrouteFlightPathAngle = -89.1
@@ -9894,7 +9894,7 @@ class EarlyBoundTests(TestBase):
         maxAng = vertOpts.MaxEnrouteFlightPathAngle
         Assert.assertEqual(89.2, float(maxAng))
 
-    def VerticalPlaneAndFlightPathOptions(self, vertOpts):
+    def VerticalPlaneAndFlightPathOptions(self, vertOpts: "IVerticalPlaneAndFlightPathOptions"):
         vertOpts.FinalFlightPathAngle = 3
         fpa = vertOpts.FinalFlightPathAngle
         Assert.assertEqual(3, float(fpa))
@@ -9907,7 +9907,7 @@ class EarlyBoundTests(TestBase):
         maxAng = vertOpts.MaxEnrouteFlightPathAngle
         Assert.assertEqual(89.2, float(maxAng))
 
-    def ArcVerticalPlane(self, vertOpts):
+    def ArcVerticalPlane(self, vertOpts: "IArcVerticalPlaneOptions"):
         vertOpts.StartArcFlightPathAngle = 3
         startArc = vertOpts.StartArcFlightPathAngle
         Assert.assertEqual(3, float(startArc))
@@ -9926,7 +9926,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region PrivateBasicManeuverMethods
-    def BasicManeuverAirspeedOptions(self, airspeedOptions):
+    def BasicManeuverAirspeedOptions(self, airspeedOptions: "IBasicManeuverAirspeedOptions"):
         for airspeedMode in Enum.GetValues(clr.TypeOf(AgEAvtrBasicManeuverAirspeedMode)):
             airspeedOptions.AirspeedMode = airspeedMode
             Assert.assertEqual(airspeedMode, airspeedOptions.AirspeedMode)
@@ -10144,13 +10144,15 @@ class EarlyBoundTests(TestBase):
 
     # region PrivateSiteMethods
 
-    def TestSiteName(self, site, name):
+    def TestSiteName(self, site: "ISite", name: str):
         Assert.assertEqual(name, site.Name)
         site.Name = "Name Test"
         Assert.assertEqual("Name Test", site.Name)
         site.Name = name
 
-    def TestCatalogVTOLPoint(self, siteVTOLPointFromCatalog, catVTOLPoint):
+    def TestCatalogVTOLPoint(
+        self, siteVTOLPointFromCatalog: "ISiteVTOLPointFromCatalog", catVTOLPoint: "ICatalogVTOLPoint"
+    ):
         siteVTOLPointFromCatalog.SetCatalogVTOLPoint(catVTOLPoint)
         VTOLPointAsItem = clr.CastAs(catVTOLPoint, ICatalogItem)
         VTOLPointName = VTOLPointAsItem.Name
@@ -10158,7 +10160,7 @@ class EarlyBoundTests(TestBase):
         catVTOLPoint2 = clr.CastAs(siteVTOLPointFromCatalog.GetCatalogVTOLPoint(), ICatalogItem)
         Assert.assertEqual(VTOLPointName, catVTOLPoint2.Name)
 
-    def TestCatalogWaypoint(self, siteWaypointFromCatalog, catWaypoint):
+    def TestCatalogWaypoint(self, siteWaypointFromCatalog: "ISiteWaypointFromCatalog", catWaypoint: "ICatalogWaypoint"):
         siteWaypointFromCatalog.SetCatalogWaypoint(catWaypoint)
         waypointAsItem = clr.CastAs(catWaypoint, ICatalogItem)
         waypointName = waypointAsItem.Name

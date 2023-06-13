@@ -61,7 +61,7 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         # so this will differ from the convention for nessecity
         self.CreateSignaledEventIntervalCollection(TestBase.Application)
 
-    def CreateSignaledEventIntervalCollection(self, stkRoot):
+    def CreateSignaledEventIntervalCollection(self, stkRoot: "IStkObjectRoot"):
         satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
         aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 

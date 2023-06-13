@@ -8,8 +8,8 @@ class Attitude(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Attitude, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "sat1"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "sat1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -47,7 +47,7 @@ class Attitude(CodeSnippetsTestBase):
     def test_SetAttitudeProfileTypeIsSupported(self):
         self.SetAttitudeProfileTypeIsSupported(Attitude.m_Object)
 
-    def SetAttitudeProfileTypeIsSupported(self, satellite):
+    def SetAttitudeProfileTypeIsSupported(self, satellite: "ISatellite"):
         standard = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
         if standard.Basic.IsProfileTypeSupported(AgEVeProfile.eProfileSpinning):
             standard.Basic.SetProfileType(AgEVeProfile.eProfileSpinning)
@@ -58,7 +58,7 @@ class Attitude(CodeSnippetsTestBase):
     def test_AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(self):
         self.AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(Attitude.m_Object)
 
-    def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(self, satellite):
+    def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(self, satellite: "ISatellite"):
         satellite.SetAttitudeType(AgEVeAttitude.eAttitudeStandard)
         standard = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
         standard.Basic.SetProfileType(AgEVeProfile.eProfileInertiallyFixed)
@@ -80,7 +80,7 @@ class Attitude(CodeSnippetsTestBase):
         )
 
     def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF(
-        self, root, satellite, cpfQuaternion
+        self, root: "IStkObjectRoot", satellite: "ISatellite", cpfQuaternion
     ):
         satellite.SetAttitudeType(AgEVeAttitude.eAttitudeRealTime)
         realtime = clr.CastAs(satellite.Attitude, IVehicleAttitudeRealTime)
@@ -103,7 +103,7 @@ class Attitude(CodeSnippetsTestBase):
     def test_AddsAttitudeDataBasedOnTimeOrderedSetOfEulerAngles(self):
         self.AddsAttitudeDataBasedOnTimeOrderedSetOfEulerAngles(Attitude.m_Object)
 
-    def AddsAttitudeDataBasedOnTimeOrderedSetOfEulerAngles(self, satellite):
+    def AddsAttitudeDataBasedOnTimeOrderedSetOfEulerAngles(self, satellite: "ISatellite"):
         # Set Attitude to Standard
         satellite.SetAttitudeType(AgEVeAttitude.eAttitudeStandard)
         # Get IAgVeOrbitAttitudeStandard interface
@@ -122,7 +122,7 @@ class Attitude(CodeSnippetsTestBase):
     def test_ConfigureRealTimeAttitude(self):
         self.ConfigureRealTimeAttitude(Attitude.m_Object)
 
-    def ConfigureRealTimeAttitude(self, satellite):
+    def ConfigureRealTimeAttitude(self, satellite: "ISatellite"):
         # set attitude type to real time
         satellite.SetAttitudeType(AgEVeAttitude.eAttitudeRealTime)
         realtime = clr.CastAs(satellite.Attitude, IVehicleAttitudeRealTime)

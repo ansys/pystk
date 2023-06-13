@@ -8,8 +8,8 @@ class Planet(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Planet, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MyPlanet"
+    m_Object: "IPlanet" = None
+    m_DefaultName: str = "MyPlanet"
 
     # region OneTimeSetUp
     @staticmethod
@@ -45,7 +45,7 @@ class Planet(CodeSnippetsTestBase):
     def test_SpecifyPlanetPositionUsingCommonTasks(self):
         self.SpecifyPlanetPositionUsingCommonTasks(Planet.m_Object, TestBase.GetScenarioFile("Venus.pe"))
 
-    def SpecifyPlanetPositionUsingCommonTasks(self, planet, planetEphemeris):
+    def SpecifyPlanetPositionUsingCommonTasks(self, planet: "IPlanet", planetEphemeris: str):
         # Position source files traditionally have .pe extensions
         planet.CommonTasks.SetPositionSourceFile(planetEphemeris)
 
@@ -56,7 +56,7 @@ class Planet(CodeSnippetsTestBase):
         self.ConfigurePlanet(Planet.m_Object)
         body = clr.CastAs(Planet.m_Object.PositionSourceData, IPlanetPositionCentralBody)
 
-    def ConfigurePlanet(self, planet):
+    def ConfigurePlanet(self, planet: "IPlanet"):
         planet.PositionSource = AgEPlPositionSourceType.ePosCentralBody
 
         # Get IAgPlPosCentralBody interface
@@ -74,7 +74,7 @@ class Planet(CodeSnippetsTestBase):
     def test_ConfigurePlanetGraphics(self):
         self.ConfigurePlanetGraphics(Planet.m_Object.Graphics)
 
-    def ConfigurePlanetGraphics(self, graphics):
+    def ConfigurePlanetGraphics(self, graphics: "IPlanetGraphics"):
         graphics.Inherit = False
 
         graphics.Color = Color.Red

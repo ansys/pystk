@@ -8,8 +8,8 @@ class Missile(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Missile, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "missile1"
+    m_Object: "IMissile" = None
+    m_DefaultName: str = "missile1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -50,7 +50,7 @@ class Missile(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("TimeUnit", initialTimeUnit)
 
-    def DefineMissileTrajectory(self, missile):
+    def DefineMissileTrajectory(self, missile: "IMissile"):
         # Set missile trajectory type
         missile.SetTrajectoryType(AgEVePropagatorType.ePropagatorBallistic)
 

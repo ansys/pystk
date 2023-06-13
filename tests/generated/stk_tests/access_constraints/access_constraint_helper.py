@@ -7,14 +7,14 @@ from ansys.stk.core.stkutil import *
 
 
 class AccessConstraintHelper(object):
-    def __init__(self, oUnits):
+    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         self.m_oUnits = oUnits
 
     # region BasePropertiesTest
     # ////////////////////////////////////////////////////////////////////////
-    def BasePropertiesTest(self, oConstraint):
+    def BasePropertiesTest(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
 
         Assert.assertNotEqual("", oConstraint.ConstraintName)
@@ -43,7 +43,9 @@ class AccessConstraintHelper(object):
 
     # region ConstraintTest
     # ////////////////////////////////////////////////////////////////////////
-    def ConstraintTest(self, oCollection, eType, temporaryDirectory):
+    def ConstraintTest(
+        self, oCollection: "IAccessConstraintCollection", eType: "AgEAccessConstraints", temporaryDirectory: str
+    ):
         Assert.assertIsNotNone(oCollection)
         if not oCollection.IsConstraintActive(eType):
             # Console.WriteLine("XXX " + eType.ToString());
@@ -1014,7 +1016,7 @@ class AccessConstraintHelper(object):
     # endregion
 
     # region TestPluginConstraints
-    def TestPluginConstraints(self, oCollection, oObject):
+    def TestPluginConstraints(self, oCollection: "IAccessConstraintCollection", oObject: "IStkObject"):
         # IsNamedConstraintSupported
         Assert.assertFalse(oCollection.IsNamedConstraintSupported("InvalidConstraintName"))
         if oObject.ClassName == "Facility":
@@ -1097,7 +1099,7 @@ class AccessConstraintHelper(object):
     # endregion
 
     # region TestPluginConstraint
-    def TestPluginConstraint(self, oPlugin):
+    def TestPluginConstraint(self, oPlugin: "IAccessConstraintPluginMinMax"):
         Assert.assertIsNotNone(oPlugin)
 
         self.BasePropertiesTest(oPlugin)
@@ -1167,7 +1169,7 @@ class AccessConstraintHelper(object):
 
     # region DoTest
     # ////////////////////////////////////////////////////////////////////////
-    def DoTest(self, oCollection, oObject, temporaryDirectory):
+    def DoTest(self, oCollection: "IAccessConstraintCollection", oObject: "IStkObject", temporaryDirectory: str):
         self.m_logger.WriteLine("----- THE ACCESS CONSTRAINTS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oObject)
@@ -1258,7 +1260,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxAngle
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxAngle(self, oMinMax):
+    def TestConstraintMinMaxAngle(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
@@ -1371,7 +1373,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxAngle_SetTogether
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxAngle_SetTogether(self, oMinMax):
+    def TestConstraintMinMaxAngle_SetTogether(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
@@ -1484,7 +1486,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxUnitLess
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxUnitLess(self, oMinMax, dMin, dMax):
+    def TestConstraintMinMaxUnitLess(self, oMinMax: "IAccessConstraintMinMax", dMin: float, dMax: float):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
@@ -1585,7 +1587,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxDistance
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxDistance(self, oMinMax):
+    def TestConstraintMinMaxDistance(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
         # set DistanceUnit
@@ -1653,7 +1655,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxFlux
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxFlux(self, oMinMax):
+    def TestConstraintMinMaxFlux(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
@@ -1720,7 +1722,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxMassFlux
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxMassFlux(self, oMinMax):
+    def TestConstraintMinMaxMassFlux(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
@@ -1787,7 +1789,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxFluxIntensity
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxFluxIntensity(self, oMinMax):
+    def TestConstraintMinMaxFluxIntensity(self, oMinMax: "IAccessConstraintMinMax"):
         MIN = 5000
         MAX = 100000000.0
 
@@ -1857,7 +1859,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxVeTemp
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxVeTemp(self, oMinMax):
+    def TestConstraintMinMaxVeTemp(self, oMinMax: "IAccessConstraintMinMax"):
         MIN_TEMP = 0  # Kelvin
         MAX_TEMP = 5770
 
@@ -1927,7 +1929,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxTime
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxTime(self, oMinMax):
+    def TestConstraintMinMaxTime(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
         # set TimeUnit
@@ -1995,7 +1997,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxLongitude
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxLongitude(self, oMinMax):
+    def TestConstraintMinMaxLongitude(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
         # set LongitudeUnit
@@ -2075,7 +2077,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxDuration
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxDuration(self, oMinMax):
+    def TestConstraintMinMaxDuration(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
@@ -2158,7 +2160,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxSmallDistance
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxSmallDistance(self, oMinMax):
+    def TestConstraintMinMaxSmallDistance(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
@@ -2230,7 +2232,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxRatio
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxRatio(self, oMinMax):
+    def TestConstraintMinMaxRatio(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
@@ -2311,7 +2313,7 @@ class AccessConstraintHelper(object):
     # endregion
 
     # region TestConstraintMinMaxPower
-    def TestConstraintMinMaxPower(self, oMinMax):
+    def TestConstraintMinMaxPower(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         holdPowerUnit = self.m_oUnits.GetCurrentUnitAbbrv("PowerUnit")
 
@@ -2370,7 +2372,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintMinMaxSARTimeResProd
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintMinMaxSARTimeResProd(self, oMinMax):
+    def TestConstraintMinMaxSARTimeResProd(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
 
@@ -2442,7 +2444,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintIntervals
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintIntervals(self, oConstraint, temporaryDirectory):
+    def TestConstraintIntervals(self, oConstraint: "IAccessConstraint", temporaryDirectory: str):
         # The test below expects the interval file to be read-only
         # Make it read-only for the duration of the test
         intervalFile = TestBase.GetScenarioFile("times.int")
@@ -2498,7 +2500,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintAngle
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintAngle(self, oConstraint, strUnitName):
+    def TestConstraintAngle(self, oConstraint: "IAccessConstraint", strUnitName: str):
         Assert.assertIsNotNone(oConstraint)
         oAngle = clr.Convert(oConstraint, IAccessConstraintAngle)
         Assert.assertIsNotNone(oAngle)
@@ -2532,7 +2534,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintObjectExclusion
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintObjectExclusion(self, oConstraint):
+    def TestConstraintObjectExclusion(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
         oObject = clr.Convert(oConstraint, IAccessConstraintObjExAngle)
         Assert.assertIsNotNone(oObject)
@@ -2616,7 +2618,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintCondition
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintCondition(self, oConstraint):
+    def TestConstraintCondition(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
         oCondition = clr.Convert(oConstraint, IAccessConstraintCondition)
         Assert.assertIsNotNone(oCondition)
@@ -2651,7 +2653,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintThirdBody
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintThirdBody(self, oConstraint):
+    def TestConstraintThirdBody(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
         oThirdBody = clr.Convert(oConstraint, IAccessConstraintThirdBody)
         Assert.assertIsNotNone(oThirdBody)
@@ -2697,7 +2699,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintCrdnCn
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintCrdnCn(self, oConstraint):
+    def TestConstraintCrdnCn(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
         oCrdnCn = clr.Convert(oConstraint, IAccessConstraintCrdnConstellation)
         Assert.assertIsNotNone(oCrdnCn)
@@ -2758,7 +2760,7 @@ class AccessConstraintHelper(object):
 
     # region CrdnCnWithAngleUnit
     # ////////////////////////////////////////////////////////////////////////
-    def CrdnCnWithAngleUnit(self, oCrdnCn):
+    def CrdnCnWithAngleUnit(self, oCrdnCn: "IAccessConstraintCrdnConstellation"):
         Assert.assertIsNotNone(oCrdnCn)
 
         # set AngleUnit
@@ -2840,7 +2842,7 @@ class AccessConstraintHelper(object):
 
     # region CrdnCnWithUnitLess
     # ////////////////////////////////////////////////////////////////////////
-    def CrdnCnWithUnitLess(self, oCrdnCn):
+    def CrdnCnWithUnitLess(self, oCrdnCn: "IAccessConstraintCrdnConstellation"):
         Assert.assertIsNotNone(oCrdnCn)
 
         # EnableMax
@@ -2909,7 +2911,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintAWBCollection
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintAWBCollection(self, awbCol, eType):
+    def TestConstraintAWBCollection(self, awbCol: "IAccessConstraintAnalysisWorkbenchCollection", eType: int):
         arReferences = awbCol.GetAvailableReferences(clr.Convert(eType, AgEAWBAccessConstraints))
         Assert.assertTrue((Array.Length(arReferences) > 0))
 
@@ -2977,7 +2979,7 @@ class AccessConstraintHelper(object):
 
     # region TestAWBConstraintMinMaxAngle
     # ////////////////////////////////////////////////////////////////////////
-    def TestAWBConstraintMinMaxAngle(self, oMinMax):
+    def TestAWBConstraintMinMaxAngle(self, oMinMax: "IAccessConstraintAnalysisWorkbench"):
         Assert.assertIsNotNone(oMinMax)
         strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
@@ -3090,7 +3092,7 @@ class AccessConstraintHelper(object):
 
     # region TestAWBConstraintMinMaxUnitLess
     # ////////////////////////////////////////////////////////////////////////
-    def TestAWBConstraintMinMaxUnitLess(self, oMinMax, dMin, dMax):
+    def TestAWBConstraintMinMaxUnitLess(self, oMinMax: "IAccessConstraintAnalysisWorkbench", dMin: float, dMax: float):
         Assert.assertIsNotNone(oMinMax)
         # m_logger.WriteLine("\tThe MinMax constraint test for: {0}", oMinMax.ConstraintName);
         bRange = dMin == 0.345
@@ -3190,7 +3192,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintBackground
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintBackground(self, oConstraint):
+    def TestConstraintBackground(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
         oBackground = clr.Convert(oConstraint, IAccessConstraintBackground)
         Assert.assertIsNotNone(oBackground)
@@ -3210,7 +3212,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintGroundTrack
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintGroundTrack(self, oConstraint):
+    def TestConstraintGroundTrack(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
         oGroundTrack = clr.Convert(oConstraint, IAccessConstraintGroundTrack)
         Assert.assertIsNotNone(oGroundTrack)
@@ -3229,7 +3231,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintExclusionZonesCollection
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintExclusionZonesCollection(self, oConstraint):
+    def TestConstraintExclusionZonesCollection(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
         oZones = clr.Convert(oConstraint, IAccessConstraintExclZonesCollection)
         Assert.assertIsNotNone(oZones)
@@ -3309,7 +3311,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintZone
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintZone(self, oConstraint):
+    def TestConstraintZone(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
         oZone = clr.Convert(oConstraint, IAccessConstraintZone)
         Assert.assertIsNotNone(oZone)
@@ -3385,7 +3387,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintCbObstruction
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintCbObstruction(self, oCb):
+    def TestConstraintCbObstruction(self, oCb: "IAccessConstraintCentralBodyObstruction"):
         Assert.assertIsNotNone(oCb)
         # AvailableObstructions
         available = oCb.AvailableObstructions
@@ -3428,7 +3430,7 @@ class AccessConstraintHelper(object):
 
     # region TestConstraintCollection
     # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintCollection(self, collection):
+    def TestConstraintCollection(self, collection: "IAccessConstraintCollection"):
         Assert.assertIsNotNone(collection)
 
         i = 0

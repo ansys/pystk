@@ -30,7 +30,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_SR = None
+    AG_SR: "IStar" = None
     # endregion
 
     # region Basic
