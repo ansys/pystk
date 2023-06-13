@@ -8,7 +8,7 @@ class Ballistic(CodeSnippetsTestBase):
         self.m_Object = None
         super(Ballistic, self).__init__(*args, **kwargs)
 
-    m_DefaultName = "MyMissile"
+    m_DefaultName: str = "MyMissile"
 
     # region OneTimeSetUp
     @staticmethod
@@ -58,7 +58,7 @@ class Ballistic(CodeSnippetsTestBase):
         propBallistic.Propagate()
         self.ConfigureBallisticPropagator(propBallistic)
 
-    def ConfigureBallisticPropagator(self, propagator):
+    def ConfigureBallisticPropagator(self, propagator: "IVehiclePropagatorBallistic"):
         propagator.Step = 30
         propagator.SetLaunchType(AgEVeLaunch.eLaunchLLA)
 

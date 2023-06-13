@@ -8,7 +8,7 @@ class Vehicle(CodeSnippetsTestBase):
         self.m_DefaultName = "MyVehicle"
         super(Vehicle, self).__init__(*args, **kwargs)
 
-    m_Object = None
+    m_Object: "IGroundVehicle" = None
 
     # region OneTimeSetUp
     @staticmethod
@@ -59,7 +59,9 @@ class Vehicle(CodeSnippetsTestBase):
         )
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
-    def ExportVehicleToStkEphemerisFile(self, scenario, stkEphem, ephemFilePath):
+    def ExportVehicleToStkEphemerisFile(
+        self, scenario: "IScenario", stkEphem: "IVehicleEphemerisStkExportTool", ephemFilePath: str
+    ):
         # set export parameters
         stkEphem.CoordinateSystem = AgEStkEphemCoordinateSystem.eStkEphemCoordinateSystemFixed
         stkEphem.IncludeInterp = True
@@ -90,7 +92,7 @@ class Vehicle(CodeSnippetsTestBase):
         )
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
-    def ExportVehicleToAttitudeFile(self, scenario, attitudeExport):
+    def ExportVehicleToAttitudeFile(self, scenario: "IScenario", attitudeExport: "IVehicleAttitudeExportTool"):
         # Set and configure attitude coordinate axes
         attitudeExport.SetCoordinateAxesType(AgEAttCoordinateAxes.eAttCoordinateAxesCustom)
         customAxes = clr.CastAs(attitudeExport.CoordinateAxes, IVehicleCoordinateAxesCustom)
@@ -116,7 +118,7 @@ class Vehicle(CodeSnippetsTestBase):
     def test_AddGroundEllipseElementAndDataElement(self):
         self.AddGroundEllipseElementAndDataElement(Vehicle.m_Object.GroundEllipses)
 
-    def AddGroundEllipseElementAndDataElement(self, ellipsesCollection):
+    def AddGroundEllipseElementAndDataElement(self, ellipsesCollection: "IVehicleGroundEllipsesCollection"):
         # Add ground ellipse
         ellipse = ellipsesCollection.Add("MyEllipses")
 

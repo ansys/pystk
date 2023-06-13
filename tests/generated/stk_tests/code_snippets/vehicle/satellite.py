@@ -9,8 +9,8 @@ class Satellite(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Satellite, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -54,7 +54,7 @@ class Satellite(CodeSnippetsTestBase):
         )
         self.CreateSatelliteOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateSatelliteOnCurrentScenarioCentralBody(self, root):
+    def CreateSatelliteOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Satellite
         satellite = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "MySatellite"), ISatellite
@@ -66,7 +66,7 @@ class Satellite(CodeSnippetsTestBase):
     def test_CreateSatelliteFromDatabase(self):
         self.CreateSatelliteFromDatabase(CodeSnippetsTestBase.m_Root)
 
-    def CreateSatelliteFromDatabase(self, root):
+    def CreateSatelliteFromDatabase(self, root: "IStkObjectRoot"):
         # Get STK database location using Connect
         result = root.ExecuteCommand("GetDirectory / Database Satellite")
         satDataDir = result[0]
@@ -87,7 +87,7 @@ class Satellite(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithJ2PerturbationPropagator(self):
         self.ConfigureSatelliteWithJ2PerturbationPropagator(Satellite.m_Object)
 
-    def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite):
+    def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "ISatellite"):
         # Set propagator to J2 Perturbation
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
 
@@ -100,7 +100,7 @@ class Satellite(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithGPSPropagator(self):
         self.ConfigureSatelliteWithGPSPropagator(Satellite.m_Object)
 
-    def ConfigureSatelliteWithGPSPropagator(self, satellite):
+    def ConfigureSatelliteWithGPSPropagator(self, satellite: "ISatellite"):
         # Set propagator to GPS
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorGPS)
 
@@ -113,7 +113,7 @@ class Satellite(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithStkExternalPropagator(self):
         self.ConfigureSatelliteWithStkExternalPropagator(Satellite.m_Object)
 
-    def ConfigureSatelliteWithStkExternalPropagator(self, satellite):
+    def ConfigureSatelliteWithStkExternalPropagator(self, satellite: "ISatellite"):
         # Set propagator to STK External
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorStkExternal)
 
@@ -126,7 +126,7 @@ class Satellite(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithSGP4Propagator(self):
         self.ConfigureSatelliteWithSGP4Propagator(Satellite.m_Object)
 
-    def ConfigureSatelliteWithSGP4Propagator(self, satellite):
+    def ConfigureSatelliteWithSGP4Propagator(self, satellite: "ISatellite"):
         # Set propagator to SGP4
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
 
@@ -139,7 +139,7 @@ class Satellite(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithSPICEPropagator(self):
         self.ConfigureSatelliteWithSPICEPropagator(Satellite.m_Object)
 
-    def ConfigureSatelliteWithSPICEPropagator(self, satellite):
+    def ConfigureSatelliteWithSPICEPropagator(self, satellite: "ISatellite"):
         # Set propagator to SPICE
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorSPICE)
 
@@ -152,7 +152,7 @@ class Satellite(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithLOPPropagator(self):
         self.ConfigureSatelliteWithLOPPropagator(Satellite.m_Object)
 
-    def ConfigureSatelliteWithLOPPropagator(self, satellite):
+    def ConfigureSatelliteWithLOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to LOP
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorLOP)
 
@@ -165,7 +165,7 @@ class Satellite(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithHPOPPropagator(self):
         self.ConfigureSatelliteWithHPOPPropagator(Satellite.m_Object)
 
-    def ConfigureSatelliteWithHPOPPropagator(self, satellite):
+    def ConfigureSatelliteWithHPOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to HPOP
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorHPOP)
 
@@ -183,7 +183,7 @@ class Satellite(CodeSnippetsTestBase):
         fac.Position.AssignGeodetic(0.0, 0.0, 0.0)
         self.ConfigureTargetSlew(Satellite.m_Object)
 
-    def ConfigureTargetSlew(self, satellite):
+    def ConfigureTargetSlew(self, satellite: "ISatellite"):
         orbitAttStandard = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
         orbitAttStandard.Pointing.UseTargetPointing = True
         orbitAttStandard.Pointing.Targets.Add("Facility/FacSlew")

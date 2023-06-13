@@ -8,8 +8,8 @@ class Ship(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Ship, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MyShip"
+    m_Object: "IShip" = None
+    m_DefaultName: str = "MyShip"
 
     # region OneTimeSetUp
     @staticmethod
@@ -45,7 +45,7 @@ class Ship(CodeSnippetsTestBase):
         (clr.Convert(Ship.m_Object, IStkObject)).Unload()
         self.CreateShipOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateShipOnCurrentScenarioCentralBody(self, root):
+    def CreateShipOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Ship
         ship = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eShip, "MyShip"), IShip)
 
@@ -55,7 +55,7 @@ class Ship(CodeSnippetsTestBase):
     def test_SetShipToUseGreatArcPropagator(self):
         self.SetShipToUseGreatArcPropagator(Ship.m_Object)
 
-    def SetShipToUseGreatArcPropagator(self, ship):
+    def SetShipToUseGreatArcPropagator(self, ship: "IShip"):
         # Set ship route to great arc
         ship.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
@@ -68,7 +68,7 @@ class Ship(CodeSnippetsTestBase):
     def test_SetShipToUseStkExternalPropagator(self):
         self.SetShipToUseStkExternalPropagator(Ship.m_Object)
 
-    def SetShipToUseStkExternalPropagator(self, ship):
+    def SetShipToUseStkExternalPropagator(self, ship: "IShip"):
         # Set ship route to STK External propagator
         ship.SetRouteType(AgEVePropagatorType.ePropagatorStkExternal)
 
@@ -81,7 +81,7 @@ class Ship(CodeSnippetsTestBase):
     def test_SetShipToUseRealtimePropagator(self):
         self.SetShipToUseRealtimePropagator(Ship.m_Object)
 
-    def SetShipToUseRealtimePropagator(self, ship):
+    def SetShipToUseRealtimePropagator(self, ship: "IShip"):
         # Set ship route to STK External propagator
         ship.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
 

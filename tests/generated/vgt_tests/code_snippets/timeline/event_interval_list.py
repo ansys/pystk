@@ -107,7 +107,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         intervalFile = TestBase.GetScenarioFile(Path.Combine("VGTData", "EventIntervalListFromFile.txt"))
         self.CreateEventIntervalListFile(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt, intervalFile)
 
-    def CreateEventIntervalListFile(self, provider, intervalFile):
+    def CreateEventIntervalListFile(self, provider, intervalFile: str):
         # Example contents of a file
         #
         #  STK.V.10.0
@@ -142,7 +142,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     def test_CreateMergedEventIntervalList(self):
         self.CreateMergedEventIntervalList(clr.Convert(TestBase.Application, IStkObjectRoot))
 
-    def CreateMergedEventIntervalList(self, stkRoot):
+    def CreateMergedEventIntervalList(self, stkRoot: "IStkObjectRoot"):
         satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
         aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
@@ -211,7 +211,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     def test_CreateSignaledEventIntervalList(self):
         self.CreateSignaledEventIntervalList(clr.Convert(TestBase.Application, IStkObjectRoot))
 
-    def CreateSignaledEventIntervalList(self, stkRoot):
+    def CreateSignaledEventIntervalList(self, stkRoot: "IStkObjectRoot"):
         satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
         aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
@@ -245,7 +245,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
             clr.Convert(TestBase.Application, IStkObjectRoot)
         )
 
-    def DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self, stkRoot):
+    def DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self, stkRoot: "IStkObjectRoot"):
         aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
         intervalList = aircraftVgtProvider.EventIntervalLists.Factory.CreateEventIntervalListCondition(
@@ -275,7 +275,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     def test_DetermineIntervalsWithoutAccess(self):
         self.DetermineIntervalsWithoutAccess(clr.Convert(TestBase.Application, IStkObjectRoot))
 
-    def DetermineIntervalsWithoutAccess(self, stkRoot):
+    def DetermineIntervalsWithoutAccess(self, stkRoot: "IStkObjectRoot"):
         # Compute UAV's access to the satellite
         satellite = stkRoot.GetObjectFromPath("Satellite/LEO")
         aircraft = stkRoot.GetObjectFromPath("Aircraft/UAV")

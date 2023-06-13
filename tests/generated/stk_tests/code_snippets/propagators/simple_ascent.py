@@ -8,7 +8,7 @@ class SimpleAscent(CodeSnippetsTestBase):
         self.m_Object = None
         super(SimpleAscent, self).__init__(*args, **kwargs)
 
-    m_DefaultName = "MyLaunchVehicle"
+    m_DefaultName: str = "MyLaunchVehicle"
 
     # region OneTimeSetUp
     @staticmethod
@@ -52,7 +52,7 @@ class SimpleAscent(CodeSnippetsTestBase):
 
         self.ConfigureSimpleAscentPropagator(propagator)
 
-    def ConfigureSimpleAscentPropagator(self, propagator):
+    def ConfigureSimpleAscentPropagator(self, propagator: "IVehiclePropagatorSimpleAscent"):
         # Configure time period
         propagator.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         propagator.Step = 60.0

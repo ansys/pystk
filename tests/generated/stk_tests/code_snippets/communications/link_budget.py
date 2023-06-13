@@ -8,16 +8,16 @@ class LinkBudget(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(LinkBudget, self).__init__(*args, **kwargs)
 
-    m_DefaultSatName = "GEO"
-    m_Satellite = None
-    m_DefaultFacilityName = "Facility1"
-    m_Facility = None
-    m_XmtrObject = None
-    m_DefaultXmtrName = "MyXmtr"
-    m_RcvrObject = None
-    m_DefaultRcvrName = "MyRcvr"
-    m_AntennaObject = None
-    m_DefaultAntName = "FacilityDish"
+    m_DefaultSatName: str = "GEO"
+    m_Satellite: "IStkObject" = None
+    m_DefaultFacilityName: str = "Facility1"
+    m_Facility: "IStkObject" = None
+    m_XmtrObject: "ITransmitter" = None
+    m_DefaultXmtrName: str = "MyXmtr"
+    m_RcvrObject: "IReceiver" = None
+    m_DefaultRcvrName: str = "MyRcvr"
+    m_AntennaObject: "IAntenna" = None
+    m_DefaultAntName: str = "FacilityDish"
 
     # region OneTimeSetUp
     @staticmethod
@@ -91,7 +91,7 @@ class LinkBudget(CodeSnippetsTestBase):
     def test_ComputeLinkBudgetSimple(self):
         self.ComputeLinkBudgetSimple(LinkBudget.m_XmtrObject, LinkBudget.m_RcvrObject)
 
-    def ComputeLinkBudgetSimple(self, geoTransmitter, facilityReceiver):
+    def ComputeLinkBudgetSimple(self, geoTransmitter: "ITransmitter", facilityReceiver: "IReceiver"):
         xmtrAsStkObject = clr.CastAs(geoTransmitter, IStkObject)
         rcvrAsStkObject = clr.CastAs(facilityReceiver, IStkObject)
 
@@ -162,7 +162,13 @@ class LinkBudget(CodeSnippetsTestBase):
             LinkBudget.m_XmtrObject, LinkBudget.m_RcvrObject, LinkBudget.m_AntennaObject, scenario.RFEnvironment
         )
 
-    def ComputeLinkBudgetComplex(self, geoTransmitter, facilityReceiver, facilityDish, scenarioRFEnv):
+    def ComputeLinkBudgetComplex(
+        self,
+        geoTransmitter: "ITransmitter",
+        facilityReceiver: "IReceiver",
+        facilityDish: "IAntenna",
+        scenarioRFEnv: "IRFEnvironment",
+    ):
         xmtrAsStkObject = clr.CastAs(geoTransmitter, IStkObject)
         rcvrAsStkObject = clr.CastAs(facilityReceiver, IStkObject)
 

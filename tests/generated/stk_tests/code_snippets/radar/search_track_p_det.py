@@ -8,12 +8,12 @@ class SearchTrackPDet(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(SearchTrackPDet, self).__init__(*args, **kwargs)
 
-    m_DefaultFacilityName = "Facility1"
-    m_Facility = None
-    m_DefaultRadarName = "Radar1"
-    m_Radar = None
-    m_DefaultTargetName = "TargetAircraft"
-    m_TargetAircraft = None
+    m_DefaultFacilityName: str = "Facility1"
+    m_Facility: "IStkObject" = None
+    m_DefaultRadarName: str = "Radar1"
+    m_Radar: "IRadar" = None
+    m_DefaultTargetName: str = "TargetAircraft"
+    m_TargetAircraft: "IAircraft" = None
 
     # region OneTimeSetUp
     @staticmethod
@@ -99,7 +99,9 @@ class SearchTrackPDet(CodeSnippetsTestBase):
             SearchTrackPDet.m_Radar, SearchTrackPDet.m_TargetAircraft, scenario.RFEnvironment
         )
 
-    def ComputeMonostaticSearchTrackProbabilityOfDetection(self, radar, targetAircraft, scenarioRFEnv):
+    def ComputeMonostaticSearchTrackProbabilityOfDetection(
+        self, radar: "IRadar", targetAircraft: "IAircraft", scenarioRFEnv: "IRFEnvironment"
+    ):
         rdrAsStkObject = clr.CastAs(radar, IStkObject)
         tgtAsStkObject = clr.CastAs(targetAircraft, IStkObject)
 

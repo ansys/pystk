@@ -9,8 +9,8 @@ class J2Perturbation(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(J2Perturbation, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -51,7 +51,7 @@ class J2Perturbation(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithJ2PerturbationPropagator(self):
         self.ConfigureSatelliteWithJ2PerturbationPropagator(J2Perturbation.m_Object)
 
-    def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite):
+    def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "ISatellite"):
         # Set propagator to SGP4
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
 

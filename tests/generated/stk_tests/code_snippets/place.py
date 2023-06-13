@@ -8,8 +8,8 @@ class Place(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Place, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MyPlace"
+    m_Object: "IPlace" = None
+    m_DefaultName: str = "MyPlace"
 
     # region OneTimeSetUp
     @staticmethod
@@ -46,7 +46,7 @@ class Place(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.ePlace, Place.m_DefaultName)
         self.CreateDefaultPlaceOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateDefaultPlaceOnCurrentScenarioCentralBody(self, root):
+    def CreateDefaultPlaceOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create a place on current scenario central body
         place = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.ePlace, "MyPlace"), IPlace)
 
@@ -57,7 +57,7 @@ class Place(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.ePlace, Place.m_DefaultName)
         self.CreatePlaceOnEarth(CodeSnippetsTestBase.m_Root)
 
-    def CreatePlaceOnEarth(self, root):
+    def CreatePlaceOnEarth(self, root: "IStkObjectRoot"):
         place = clr.CastAs(
             root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.ePlace, "MyPlace", "Earth"), IPlace
         )
@@ -71,7 +71,7 @@ class Place(CodeSnippetsTestBase):
     def test_CreatePlaceOnOtherPlanet(self):
         self.CreatePlaceOnOtherPlanet(CodeSnippetsTestBase.m_Root)
 
-    def CreatePlaceOnOtherPlanet(self, root):
+    def CreatePlaceOnOtherPlanet(self, root: "IStkObjectRoot"):
         placeObject = clr.CastAs(
             root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.ePlace, "Place1", "Mars"), IPlace
         )
@@ -85,7 +85,7 @@ class Place(CodeSnippetsTestBase):
     def test_CreatePlaceFromFacilityDatabase(self):
         self.CreatePlaceFromFacilityDatabase(CodeSnippetsTestBase.m_Root)
 
-    def CreatePlaceFromFacilityDatabase(self, root):
+    def CreatePlaceFromFacilityDatabase(self, root: "IStkObjectRoot"):
         # Get STK database location using Connect
         result = root.ExecuteCommand("GetDirectory / Database Facility")
         facDataDir = result[0]
@@ -103,7 +103,7 @@ class Place(CodeSnippetsTestBase):
     def test_ChangePositionWithUseTerrain(self):
         self.ChangePositionWithUseTerrain(Place.m_Object)
 
-    def ChangePositionWithUseTerrain(self, place):
+    def ChangePositionWithUseTerrain(self, place: "IPlace"):
         # Set altitude automatically by using terrain data
         place.UseTerrain = True
 

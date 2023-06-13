@@ -43,7 +43,7 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility1")
 
-    def SetStkOjbectDisplayToAlwaysOn(self, stkObject):
+    def SetStkOjbectDisplayToAlwaysOn(self, stkObject: "IStkObject"):
         display = clr.CastAs(stkObject, IDisplayTime)
         display.SetDisplayStatusType(AgEDisplayTimesType.eAlwaysOn)
 
@@ -57,7 +57,7 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility1")
 
-    def SetStkObjectDisplayToUseIntervalsMode(self, stkObject):
+    def SetStkObjectDisplayToUseIntervalsMode(self, stkObject: "IStkObject"):
         # Attempt to cast STK Object to the IAgDisplayTm interface
         display = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
@@ -85,7 +85,7 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eStar, "star1")
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
 
-    def SetStkObjectDisplayToUseDuringAccessMode(self, stkObject):
+    def SetStkObjectDisplayToUseDuringAccessMode(self, stkObject: "IStkObject"):
         # Attempt to cast STK Object to the IAgDisplayTm interface
         display = clr.CastAs(stkObject, IDisplayTime)
         if display != None:

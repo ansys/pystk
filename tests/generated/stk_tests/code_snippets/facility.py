@@ -8,8 +8,8 @@ class Facility(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Facility, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MyFacility"
+    m_Object: "IFacility" = None
+    m_DefaultName: str = "MyFacility"
 
     # region OneTimeSetUp
     @staticmethod
@@ -48,7 +48,7 @@ class Facility(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
         self.CreateDefaultFacilityOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root):
+    def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create a facility on current scenario central body
         facility = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "MyFacility"), IFacility)
 
@@ -59,7 +59,7 @@ class Facility(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
         self.CreateFacilityOnEarth(CodeSnippetsTestBase.m_Root)
 
-    def CreateFacilityOnEarth(self, root):
+    def CreateFacilityOnEarth(self, root: "IStkObjectRoot"):
         facility = clr.CastAs(
             root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.eFacility, "MyFacility", "Earth"), IFacility
         )
@@ -73,7 +73,7 @@ class Facility(CodeSnippetsTestBase):
     def test_CreateFacilityOnOtherPlanet(self):
         self.CreateFacilityOnOtherPlanet(CodeSnippetsTestBase.m_Root)
 
-    def CreateFacilityOnOtherPlanet(self, root):
+    def CreateFacilityOnOtherPlanet(self, root: "IStkObjectRoot"):
         facObject = clr.CastAs(
             root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.eFacility, "Facility1", "Mars"), IFacility
         )
@@ -87,7 +87,7 @@ class Facility(CodeSnippetsTestBase):
     def test_CreateFacilityFromFacilityDatabase(self):
         self.CreateFacilityFromFacilityDatabase(CodeSnippetsTestBase.m_Root)
 
-    def CreateFacilityFromFacilityDatabase(self, root):
+    def CreateFacilityFromFacilityDatabase(self, root: "IStkObjectRoot"):
         # Get STK database location using Connect
         result = root.ExecuteCommand("GetDirectory / Database Facility")
         facDataDir = result[0]
@@ -105,7 +105,7 @@ class Facility(CodeSnippetsTestBase):
     def test_ChangePositionWithUseTerrain(self):
         self.ChangePositionWithUseTerrain(Facility.m_Object)
 
-    def ChangePositionWithUseTerrain(self, fac):
+    def ChangePositionWithUseTerrain(self, fac: "IFacility"):
         # Set altitude automatically by using terrain data
         fac.UseTerrain = True
 

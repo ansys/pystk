@@ -13,7 +13,7 @@ class STKObjectHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oObject):
+    def Run(self, oObject: "IStkObject"):
         Assert.assertIsNotNone(oObject)
         self.m_logger.WriteLine("----- STK OBJECT TEST ----- BEGIN -----")
         # InstanceName
@@ -188,7 +188,7 @@ class STKObjectHelper(object):
     # endregion
 
     # region OnePtAccess
-    def OnePtAccess(self, oObj):
+    def OnePtAccess(self, oObj: "IStkObject"):
         onePtAccess = oObj.CreateOnePointAccess("Satellite/Satellite1")
         onePtAccess.StartTime = "1 Jul 2007 00:00:00.000"
         Assert.assertEqual("1 Jul 2007 00:00:00.000", onePtAccess.StartTime)
@@ -248,7 +248,7 @@ class STKObjectHelper(object):
 
     # endregion
 
-    def dumpOnePtAccessConstraint(self, constraint):
+    def dumpOnePtAccessConstraint(self, constraint: "IOnePointAccessConstraint"):
         self.m_logger.WriteLine2(constraint.Constraint)
         self.m_logger.WriteLine(constraint.ObjectPath)
         self.m_logger.WriteLine2(constraint.Status)
@@ -263,7 +263,7 @@ class STKObjectHelper(object):
             self.m_logger.WriteLine(("\t" + str(file)))
 
     # region Children
-    def Children(self, oObject):
+    def Children(self, oObject: "IStkObject"):
         Assert.assertIsNotNone(oObject)
         # Children
         oCollection = oObject.Children
@@ -367,7 +367,7 @@ class STKObjectHelper(object):
     # endregion
 
     # region Metadata
-    def Metadata(self, oObject):
+    def Metadata(self, oObject: "IStkObject"):
         metadata = oObject.Metadata
 
         Assert.assertEqual(0, metadata.Count)
@@ -455,7 +455,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection):
+    def Run(self, oCollection: "IDataProviderCollection"):
         self.m_logger.WriteLine("----- DATA PROVIDER COLLECTION TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         # Count
@@ -519,7 +519,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DataProviderGroup
-    def DataProviderGroup(self, oGroup, strName):
+    def DataProviderGroup(self, oGroup: "IDataProviderGroup", strName: str):
         self.m_logger.WriteLine5("----- DATA PROVIDER GROUP TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oGroup)
         # Group
@@ -545,7 +545,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DataProvider
-    def DataProvider(self, oProvider, strName):
+    def DataProvider(self, oProvider: "IDataProvider", strName: str):
         self.m_logger.WriteLine5("----- DATA PROVIDER TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oProvider)
         # AllowUI
@@ -590,7 +590,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DataProviderFixed
-    def DataProviderFixed(self, oProvider, strName):
+    def DataProviderFixed(self, oProvider: "IDataProviderFixed", strName: str):
         self.m_logger.WriteLine5("----- DATA PROVIDER FIXED TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oProvider)
         if (clr.CastAs(oProvider, IDataProvider)).IsValid:
@@ -624,7 +624,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DrResult
-    def DrResult(self, oResult):
+    def DrResult(self, oResult: "IDataProviderResult"):
         Assert.assertIsNotNone(oResult)
         # Category
         self.m_logger.WriteLine6("\t\tThe current Category is: {0}", oResult.Category)
@@ -650,7 +650,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DrResultSections
-    def DrResultSections(self, oCollection):
+    def DrResultSections(self, oCollection: "IDataProviderResultSubSectionCollection"):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\t\tThe SubSection collection contains: {0} elements.", oCollection.Count)
@@ -669,7 +669,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DrResultIntervals
-    def DrResultIntervals(self, oCollection):
+    def DrResultIntervals(self, oCollection: "IDataProviderResultIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\t\tThe Interval collection contains: {0} elements.", oCollection.Count)
@@ -692,7 +692,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DrResultDataSets
-    def DrResultDataSets(self, oCollection):
+    def DrResultDataSets(self, oCollection: "IDataProviderResultDataSetCollection"):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\t\tThe DataSet collection contains: {0} elements.", oCollection.Count)
@@ -718,7 +718,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DrResultMessage
-    def DrResultMessage(self, oCollection):
+    def DrResultMessage(self, oCollection: "IDataProviderResultTextMessage"):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\t\tThe TextMessages collection contains: {0} elements.", oCollection.Count)
@@ -737,7 +737,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DataProviderInterval
-    def DataProviderInterval(self, oProvider, strName):
+    def DataProviderInterval(self, oProvider: "IDataProviderInterval", strName: str):
         self.m_logger.WriteLine5("----- DATA PROVIDER INTERVAL TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oProvider)
         dtStart = "1 Jun 2004 12:00:00.00"
@@ -773,7 +773,7 @@ class DataProviderCollectionHelper(object):
     # endregion
 
     # region DataProviderTimeVar
-    def DataProviderTimeVar(self, oProvider, strName):
+    def DataProviderTimeVar(self, oProvider: "IDataProviderTimeVarying", strName: str):
         self.m_logger.WriteLine5("----- DATA PROVIDER TIMEVAR TEST ({0}) ----- BEGIN -----", strName)
         if strName != "User Supplied Data":
             Assert.assertIsNotNone(oProvider)
@@ -831,7 +831,7 @@ class StkAccessHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oAccess, oRoot):
+    def Run(self, oAccess: "IStkAccess", oRoot: "IStkObjectRoot"):
         self.m_logger.WriteLine("----- STK ACCESS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oAccess)
         Assert.assertIsNotNone(oRoot)
@@ -889,7 +889,7 @@ class StkAccessHelper(object):
     # endregion
 
     # region Graphics
-    def Graphics(self, oGraphics):
+    def Graphics(self, oGraphics: "IStkAccessGraphics"):
         Assert.assertIsNotNone(oGraphics)
         # Inherit (true)
         self.m_logger.WriteLine4("\tThe current Inherit is: {0}", oGraphics.Inherit)
@@ -970,7 +970,7 @@ class StkAccessHelper(object):
     # endregion
 
     # region Advanced
-    def Advanced(self, oAccess):
+    def Advanced(self, oAccess: "IStkAccess"):
         oAdvanced = oAccess.Advanced
         Assert.assertIsNotNone(oAdvanced)
 
@@ -1153,7 +1153,7 @@ class StkAccessHelper(object):
 
 # region VODataDisplayHelper
 class VODataDisplayHelper(object):
-    def __init__(self, oRoot):
+    def __init__(self, oRoot: "IStkObjectRoot"):
         self.m_bIsAccessRequired = None
         self.m_bIsChain = None
         self.m_logger = Logger.Instance
@@ -1163,7 +1163,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oDataCollection, bIsAccessRequired, bIsChain):
+    def Run(self, oDataCollection: "IVODataDisplayCollection", bIsAccessRequired: bool, bIsChain: bool):
         self.m_logger.WriteLine("----- THE VO DATA DISPLAY TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oDataCollection)
         # save AccessRequired flag
@@ -1263,7 +1263,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region ElementTest
-    def ElementTest(self, oVODataDisplayElement):
+    def ElementTest(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # IsVisible
         self.m_logger.WriteLine4("\t\tCurrent IsVisible flag: {0}", oVODataDisplayElement.IsVisible)
@@ -1365,7 +1365,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotVisibleCheck
-    def NotVisibleCheck(self, oVODataDisplayElement):
+    def NotVisibleCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
         def action44():
@@ -1455,7 +1455,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region VisibleCheck
-    def VisibleCheck(self, oVODataDisplayElement):
+    def VisibleCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # Location
         self.m_logger.WriteLine6("\t\t\tThe current Location is: {0}", oVODataDisplayElement.Location)
@@ -1554,7 +1554,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseBackgroundCheck
-    def NotUseBackgroundCheck(self, oVODataDisplayElement):
+    def NotUseBackgroundCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
         def action60():
@@ -1614,7 +1614,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseBackgroundCheck
-    def UseBackgroundCheck(self, oVODataDisplayElement):
+    def UseBackgroundCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # TransparentBg
         self.m_logger.WriteLine4(
@@ -1692,7 +1692,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseTitleCheck
-    def NotUseTitleCheck(self, oDataDisplayElement):
+    def NotUseTitleCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
         def action69():
@@ -1710,7 +1710,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseTitleCheck
-    def UseTitleCheck(self, oDataDisplayElement):
+    def UseTitleCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # TitleText
         self.m_logger.WriteLine5("\t\t\tThe current TitleText is: {0}", oDataDisplayElement.TitleText)
@@ -1728,7 +1728,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseAutoSizeCheck
-    def NotUseAutoSizeCheck(self, oDataDisplayElement):
+    def NotUseAutoSizeCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BgWidth
         self.m_logger.WriteLine3("\t\t\tThe current BgWidth is: {0}", oDataDisplayElement.BgWidth)
@@ -1744,7 +1744,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseAutoSizeCheck
-    def UseAutoSizeCheck(self, oDataDisplayElement):
+    def UseAutoSizeCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
         def action71():
@@ -1760,7 +1760,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseBackgroundBorderCheck
-    def NotUseBackgroundBorderCheck(self, oDataDisplayElement):
+    def NotUseBackgroundBorderCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
         def action73():
@@ -1772,7 +1772,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseBackgroundBorderCheck
-    def UseBackgroundBorderCheck(self, oDataDisplayElement):
+    def UseBackgroundBorderCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BackgroundBorderColor
         self.m_logger.WriteLine6(
@@ -1787,7 +1787,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region NotUseBackgroundTextureCheck
-    def NotUseBackgroundTextureCheck(self, oDataDisplayElement):
+    def NotUseBackgroundTextureCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
         def action74():
@@ -1799,7 +1799,7 @@ class VODataDisplayHelper(object):
     # endregion
 
     # region UseBackgroundTextureCheck
-    def UseBackgroundTextureCheck(self, oDataDisplayElement):
+    def UseBackgroundTextureCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BackgroundTextureFileName
         self.m_logger.WriteLine5(
