@@ -6,9 +6,7 @@ import os
 import time
 import signal
 
-from enum import Enum
 from ctypes import CFUNCTYPE, cdll, c_size_t, c_int, c_void_p
-from ctypes.util import find_library
 
 from ..utilities.exceptions import *
 

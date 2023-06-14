@@ -12,8 +12,7 @@ __all__ = [ "IStkObjectRootEventHandler",
             "ITerrainOverlayCollectionEventHandler"]
 
 import os
-import typing
-from ctypes import CFUNCTYPE, POINTER, c_void_p, cast, addressof, sizeof, Structure
+from ctypes import CFUNCTYPE, POINTER, c_void_p, cast, addressof, Structure
 
 from .                       import marshall     as agmarshall
 from .                       import coclassutil  as agcls
