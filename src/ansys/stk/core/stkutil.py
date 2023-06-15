@@ -25,21 +25,19 @@ from datetime import datetime
 from enum     import IntEnum, IntFlag
 
 try:
-    from numpy import ndarray
+    from numpy import ndarray # noqa
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame
+    from pandas import DataFrame # noqa
 except ModuleNotFoundError:
     pass
 
 from .internal  import comutil          as agcom
 from .internal  import coclassutil      as agcls
 from .internal  import marshall         as agmarshall
-from .internal  import dataanalysisutil as agdata
-from .utilities import colors           as agcolor
-from .internal.comutil     import IUnknown, IDispatch, IPictureDisp, IAGFUNCTYPE, IEnumVARIANT
+from .internal.comutil     import IUnknown, IDispatch, IAGFUNCTYPE, IEnumVARIANT
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 

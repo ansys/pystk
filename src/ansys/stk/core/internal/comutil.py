@@ -1,10 +1,9 @@
 # Copyright 2020-2020, Analytical Graphics, Inc. 
 
 import os
-import typing
 
-from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_byte, c_ubyte, c_wchar_p, c_double, c_float, c_bool
-from ctypes import POINTER, Structure, Union, byref, cast, pointer
+from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
+from ctypes import POINTER, Structure, Union, byref, cast, pointer #noqa
 
 
 ###############################################################################
