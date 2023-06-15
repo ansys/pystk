@@ -3,10 +3,10 @@
 import os
 import typing
 
-from ctypes import byref, cast, pointer, POINTER, Structure
+from ctypes import byref, cast, pointer, POINTER, Structure #noqa
 
-from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, LPVOID, PVOID, ULONG, S_OK
-from .comutil import ole32lib, oleaut32lib, IAGFUNCTYPE, IUnknown, Succeeded, WINFUNCTYPE
+from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, PVOID, ULONG, S_OK
+from .comutil import ole32lib, oleaut32lib, IAGFUNCTYPE, IUnknown, Succeeded
 from ..utilities.comobject  import COMObject
 from ..utilities.exceptions import *
 

@@ -13,7 +13,7 @@ if os.name != "nt":
     from ctypes                       import CFUNCTYPE, cdll
     from ctypes.util                  import find_library
 
-from ..internal.comutil            import CLSCTX_INPROC_SERVER, COINIT_APARTMENTTHREADED, GUID
+from ..internal.comutil            import CLSCTX_INPROC_SERVER, GUID
 from ..internal.comutil            import ole32lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
 from ..internal.eventutil          import EventSubscriptionManager
 from ..internal.stkxinitialization import *
