@@ -38,7 +38,7 @@ class Connect(CodeSnippetsTestBase):
     def test_ExecuteConnectCommand(self):
         self.ExecuteConnectCommand(CodeSnippetsTestBase.m_Root)
 
-    def ExecuteConnectCommand(self, root):
+    def ExecuteConnectCommand(self, root: "IStkObjectRoot"):
         result = root.ExecuteCommand("New / */Satellite JeffSAT")
 
     # endregion
@@ -48,7 +48,7 @@ class Connect(CodeSnippetsTestBase):
     def test_ExecuteMultipleConnectCommands(self):
         self.ExecuteMultipleConnectCommands(CodeSnippetsTestBase.m_Root)
 
-    def ExecuteMultipleConnectCommands(self, root):
+    def ExecuteMultipleConnectCommands(self, root: "IStkObjectRoot"):
         connectCommands = ["New / */Satellite MySatellite", "Graphics */Satellite/MySatellite SetColor red"]
 
         # ExecuteMultipleCommands expect a one dimensional array of Connect commands
@@ -61,7 +61,7 @@ class Connect(CodeSnippetsTestBase):
         result = CodeSnippetsTestBase.m_Root.ExecuteCommand("GetSTKVersion /")
         self.ExtractDataFromExecConnectResult(result)
 
-    def ExtractDataFromExecConnectResult(self, result):
+    def ExtractDataFromExecConnectResult(self, result: "IExecCmdResult"):
         if result.IsSucceeded:
             i = 0
             while i < result.Count:
@@ -78,7 +78,7 @@ class Connect(CodeSnippetsTestBase):
         result = CodeSnippetsTestBase.m_Root.ExecuteMultipleCommands(obj, AgEExecMultiCmdResultAction.eContinueOnError)
         self.ExtractDataFromMultiExecConnectResult(result)
 
-    def ExtractDataFromMultiExecConnectResult(self, result):
+    def ExtractDataFromMultiExecConnectResult(self, result: "IExecMultiCmdResult"):
         i = 0
         while i < result.Count:
             if result[i].IsSucceeded:

@@ -32,7 +32,7 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_DetermineTimeOfEvent(self):
         self.DetermineTimeOfEvent(TestBase.Application)
 
-    def DetermineTimeOfEvent(self, stkRoot):
+    def DetermineTimeOfEvent(self, stkRoot: "IStkObjectRoot"):
         provider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
         timeEvent = provider.Events["PassIntervals.First.Start"]
 
@@ -99,7 +99,7 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateSignaledEvent(self):
         self.CreateSignaledEvent(clr.Convert(TestBase.Application, IStkObjectRoot))
 
-    def CreateSignaledEvent(self, stkRoot):
+    def CreateSignaledEvent(self, stkRoot: "IStkObjectRoot"):
         satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
         aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 

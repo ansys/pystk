@@ -486,8 +486,8 @@ class AgEPropertyInfoValueType(IntEnum):
 
 AgEPropertyInfoValueType.ePropertyInfoValueTypeInt.__doc__ = "Property is of type int."
 AgEPropertyInfoValueType.ePropertyInfoValueTypeReal.__doc__ = "Property is of type real."
-AgEPropertyInfoValueType.ePropertyInfoValueTypeQuantity.__doc__ = "Property is of type IAgQuantity."
-AgEPropertyInfoValueType.ePropertyInfoValueTypeDate.__doc__ = "Property is of type IAgDate."
+AgEPropertyInfoValueType.ePropertyInfoValueTypeQuantity.__doc__ = "Property is of type IQuantity."
+AgEPropertyInfoValueType.ePropertyInfoValueTypeDate.__doc__ = "Property is of type IDate."
 AgEPropertyInfoValueType.ePropertyInfoValueTypeString.__doc__ = "Property is of type string."
 AgEPropertyInfoValueType.ePropertyInfoValueTypeBool.__doc__ = "Property is of type bool."
 AgEPropertyInfoValueType.ePropertyInfoValueTypeInterface.__doc__ = "Property is an interface."
@@ -496,7 +496,7 @@ agcls.AgTypeNameMap["AgEPropertyInfoValueType"] = AgEPropertyInfoValueType
 
 
 class ILocationData(object):
-    """Base interface IAgLocationData. IAgPosition derives from this interface."""
+    """Base interface ILocationData. IPosition derives from this interface."""
     _uuid = "{C1E99EDA-C666-4971-AFD0-2259CB7E8452}"
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -531,7 +531,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C1E99EDA-C666-4971-AFD0-2259CB7E8452}",
 agcls.AgTypeNameMap["ILocationData"] = ILocationData
 
 class IPosition(object):
-    """IAgPosition provides access to the position of the object"""
+    """IPosition provides access to the position of the object"""
     _uuid = "{F25960CE-1D73-4BA0-A429-541DD6D808DE}"
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -1089,7 +1089,7 @@ agcls.AgClassCatalog.add_catalog_entry("{36F08499-F7C4-41DE-AB49-794EC65C5165}",
 agcls.AgTypeNameMap["ICylindrical"] = ICylindrical
 
 class ICartesian(IPosition):
-    """IAgCartesian Interface used to access a position using Cartesian Coordinates"""
+    """ICartesian Interface used to access a position using Cartesian Coordinates"""
     _uuid = "{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}"
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
@@ -1173,7 +1173,7 @@ agcls.AgClassCatalog.add_catalog_entry("{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}",
 agcls.AgTypeNameMap["ICartesian"] = ICartesian
 
 class IGeodetic(IPosition):
-    """IAgGeodetic sets the position using Geodetic properties."""
+    """IGeodetic sets the position using Geodetic properties."""
     _uuid = "{93D3322B-C842-48D2-AFCF-BC42B59DB28E}"
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
@@ -1257,7 +1257,7 @@ agcls.AgClassCatalog.add_catalog_entry("{93D3322B-C842-48D2-AFCF-BC42B59DB28E}",
 agcls.AgTypeNameMap["IGeodetic"] = IGeodetic
 
 class IPlanetodetic(IPosition):
-    """IAgPlanetodetic sets the position using Planetodetic properties."""
+    """IPlanetodetic sets the position using Planetodetic properties."""
     _uuid = "{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}"
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
@@ -3174,7 +3174,7 @@ agcls.AgClassCatalog.add_catalog_entry("{01F8872C-9586-4131-A724-F97C6ADD083F}",
 agcls.AgTypeNameMap["IRuntimeTypeInfo"] = IRuntimeTypeInfo
 
 class IRuntimeTypeInfoProvider(object):
-    """Access point for IAgRuntimeTypeInfo."""
+    """Access point for IRuntimeTypeInfo."""
     _uuid = "{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3208,7 +3208,7 @@ class IRuntimeTypeInfoProvider(object):
     
     @property
     def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
-        """Returns the IAgRuntimeTypeInfo interface to access properties at runtime."""
+        """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -3530,7 +3530,7 @@ class IUnitPreferencesUnitCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        """Returns an enumeration of AgUnitPrefsUnit."""
+        """Returns an enumeration of UnitPreferencesUnit."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -3624,7 +3624,7 @@ class IUnitPreferencesDimensionCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     def Item(self, indexOrName:typing.Any) -> "IUnitPreferencesDimension":
-        """Returns an IAgUnitPrefsDim given a Dimension name or an index."""
+        """Returns an IUnitPreferencesDimension given a Dimension name or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
             agcls.evaluate_hresult(self.__dict__["_Item"](arg_indexOrName.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
@@ -3676,7 +3676,7 @@ class IUnitPreferencesDimensionCollection(object):
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
-        """Returns a collection of IAgUnitPrefsDim."""
+        """Returns a collection of IUnitPreferencesDimension."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -3787,28 +3787,28 @@ class IQuantity(object):
             agcls.evaluate_hresult(self.__dict__["_SetValue"](arg_value.COM_val))
 
     def Add(self, quantity:"IQuantity") -> "IQuantity":
-        """Adds the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+        """Adds the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_Add"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
     def Subtract(self, quantity:"IQuantity") -> "IQuantity":
-        """Subtracts the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+        """Subtracts the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_Subtract"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
     def MultiplyQty(self, quantity:"IQuantity") -> "IQuantity":
-        """Multiplies the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+        """Multiplies the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_MultiplyQty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
     def DivideQty(self, quantity:"IQuantity") -> "IQuantity":
-        """Divides the value from the IAgQuantity interface to this interface. The dimensions must be similar."""
+        """Divides the value from the IQuantity interface to this interface. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_DivideQty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
@@ -3969,7 +3969,7 @@ class IDate(object):
             return arg_ppDate.python_val
 
     def Span(self, date:"IDate") -> "IQuantity":
-        """Subtracts the value from the IAgDate interface and returns an IAgQuantity."""
+        """Subtracts the value from the IDate interface and returns an IQuantity."""
         with agmarshall.AgInterface_in_arg(date, IDate) as arg_date, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_Span"](arg_date.COM_val, byref(arg_ppQuantity.COM_val)))
@@ -4085,7 +4085,7 @@ class IConversionUtility(object):
             return arg_ppConvertedDateValues.python_val
 
     def NewQuantity(self, dimension:str, unitAbbrv:str, value:float) -> "IQuantity":
-        """Creates an IAgQuantity interface with the given dimension, unit and value"""
+        """Creates an IQuantity interface with the given dimension, unit and value"""
         with agmarshall.BSTR_arg(dimension) as arg_dimension, \
              agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
@@ -4094,7 +4094,7 @@ class IConversionUtility(object):
             return arg_ppQuantity.python_val
 
     def NewDate(self, unitAbbrv:str, value:str) -> "IDate":
-        """Creates an IAgDate interface with the given unit and value"""
+        """Creates an IDate interface with the given unit and value"""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.BSTR_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppDate:
@@ -4102,7 +4102,7 @@ class IConversionUtility(object):
             return arg_ppDate.python_val
 
     def NewPositionOnEarth(self) -> "IPosition":
-        """Creates an IAgPosition interface with earth as its central body."""
+        """Creates an IPosition interface with earth as its central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewPositionOnEarth"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4117,32 +4117,32 @@ class IConversionUtility(object):
             return arg_ppOutVal.python_val
 
     def NewDirection(self) -> "IDirection":
-        """Creates an IAgDirection interface."""
+        """Creates an IDirection interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewDirection"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewOrientation(self) -> "IOrientation":
-        """Creates an IAgOrientation interface."""
+        """Creates an IOrientation interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewOrientation"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewOrbitStateOnEarth(self) -> "IOrbitState":
-        """Creates an IAgOrbitState interface with earth as its central body."""
+        """Creates an IOrbitState interface with earth as its central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewOrbitStateOnEarth"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewPositionOnCB(self, centralBodyName:str) -> "IPosition":
-        """Creates an IAgPosition interface using the supplied central body."""
+        """Creates an IPosition interface using the supplied central body."""
         with agmarshall.BSTR_arg(centralBodyName) as arg_centralBodyName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewPositionOnCB"](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     def NewOrbitStateOnCB(self, centralBodyName:str) -> "IOrbitState":
-        """Creates an IAgOrbitState interface using the supplied central body."""
+        """Creates an IOrbitState interface using the supplied central body."""
         with agmarshall.BSTR_arg(centralBodyName) as arg_centralBodyName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_NewOrbitStateOnCB"](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -4367,7 +4367,7 @@ agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}",
 
 
 class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
-    """Object that contains a collection of IAgUnitPrefsUnit."""
+    """Object that contains a collection of IUnitPreferencesUnit."""
     def __init__(self, sourceObject=None):
         IUnitPreferencesUnitCollection.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):

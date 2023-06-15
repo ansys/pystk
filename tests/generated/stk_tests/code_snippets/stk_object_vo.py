@@ -48,7 +48,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
 
-    def ConfigureVOModelFile(self, model):
+    def ConfigureVOModelFile(self, model: "IVOModel"):
         # Set new ModelFile.Filename
         model.ModelType = AgEModelType.eModelFile
         modelFile = clr.CastAs(model.ModelData, IVOModelFile)
@@ -77,7 +77,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
 
-    def ConfigureVOModelArticulations(self, model):
+    def ConfigureVOModelArticulations(self, model: "IVOModel"):
         # Configure articulation
         modelArticulation = model.Articulation
         modelArticulation.EnableDefaultSave = False
@@ -112,7 +112,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
 
-    def ListVOModelArticulations(self, satellite, model):
+    def ListVOModelArticulations(self, satellite: "ISatellite", model: "IVOModel"):
         # Enumerating through the transformation collection is helpful if you do not
         # know what tranformations exist or their value ranges
 
@@ -156,7 +156,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
 
-    def ConfigureVOModelLevelOfDetail(self, model):
+    def ConfigureVOModelLevelOfDetail(self, model: "IVOModel"):
         # Configure level of details
         detail = model.DetailThreshold
         detail.EnableDetailThreshold = True
@@ -181,7 +181,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
-    def ConfigureVOVector(self, vector):
+    def ConfigureVOVector(self, vector: "IVOVector"):
         # See AvailableCrdns for supported elements
         vector.RefCrdns.Add(
             AgEGeometricElemType.eVectorElem,
@@ -221,9 +221,9 @@ class StkObjectVO(CodeSnippetsTestBase):
                     )
                 ).QualifiedPath,
             ),
-            IVOReferenceCrdnVector,
+            IVOReferenceVectorGeometryToolVector,
         )
-        (clr.Convert(body, IVOReferenceCrdn)).Color = Color.Yellow
+        (clr.Convert(body, IVOReferenceAnalysisWorkbenchComponent)).Color = Color.Yellow
         body.DrawAtCB = True
         body.Axes = "CentralBody/Earth Fixed Axes"
 
@@ -245,7 +245,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
 
-    def ConfigureVODataDisplay(self, datadisplaycol):
+    def ConfigureVODataDisplay(self, datadisplaycol: "IVODataDisplayCollection"):
         # Add existing data display
         # See AvailableData property for available data display
         displayElement = datadisplaycol.Add("Solar Intensity")

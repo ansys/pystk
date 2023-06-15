@@ -1316,7 +1316,7 @@ class IUiAxVOCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
             if attrname in IUiAxVOCntrlEventHandler.__dict__ and type(IUiAxVOCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxVOCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
-                raise STKAttributeError(attrname + " is not a recognized event in IAgUiAxVOCntrlEvents.")
+                raise STKAttributeError(attrname + " is not a recognized event in IUiAxVOCntrlEvents.")
         
     def _init_vtable(self):
         if os.name == "nt":

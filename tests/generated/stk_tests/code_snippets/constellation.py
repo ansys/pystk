@@ -9,8 +9,8 @@ class Constellation(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Constellation, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "constellation1"
+    m_Object: "IConstellation" = None
+    m_DefaultName: str = "constellation1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -52,7 +52,7 @@ class Constellation(CodeSnippetsTestBase):
         self.AddObjectToConstellationUsingIAgStkObjectInterface(Constellation.m_Object, alos)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, alos.InstanceName)
 
-    def AddObjectToConstellationUsingIAgStkObjectInterface(self, constellation, alos):
+    def AddObjectToConstellationUsingIAgStkObjectInterface(self, constellation: "IConstellation", alos: "IStkObject"):
         # Add object to constellation
         constellation.Objects.AddObject(alos)
 
@@ -64,7 +64,7 @@ class Constellation(CodeSnippetsTestBase):
         self.AddObjectToConstellationByStkPath(Constellation.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "Cameo")
 
-    def AddObjectToConstellationByStkPath(self, constellation):
+    def AddObjectToConstellationByStkPath(self, constellation: "IConstellation"):
         # Add object to constellation
         constellation.Objects.Add("Satellite/Cameo")
 

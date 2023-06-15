@@ -144,13 +144,13 @@ Interfaces
     IVOModelData
     IVOModel
     IPointTargetVOModel
-    IVOReferenceCrdn
-    IVOReferenceCrdnVector
-    IVOReferenceCrdnAxes
-    IVOReferenceCrdnAngle
-    IVOReferenceCrdnPoint
-    IVOReferenceCrdnPlane
-    IVOReferenceCrdnCollection
+    IVOReferenceAnalysisWorkbenchComponent
+    IVOReferenceVectorGeometryToolVector
+    IVOReferenceVectorGeometryToolAxes
+    IVOReferenceVectorGeometryToolAngle
+    IVOReferenceVectorGeometryToolPoint
+    IVOReferenceVectorGeometryToolPlane
+    IVOReferenceAnalysisWorkbenchCollection
     IVOVector
     IVOVaporTrail
     ILLAPosition
@@ -274,7 +274,7 @@ Interfaces
     IAzElMaskData
     ISensorAzElMaskFile
     ISensorCommonTasks
-    ILocationCrdnPoint
+    ILocationVectorGeometryToolPoint
     ISensor
     ISensorProjectionConstantAltitude
     ISensorProjectionObjectAltitude
@@ -1668,12 +1668,12 @@ Classes
     ObjectCoverageFigureOfMerit
     Scenario3dFont
     VOBorderWall
-    VOReferenceCrdnCollection
-    VOReferenceCrdnVector
-    VOReferenceCrdnAxes
-    VOReferenceCrdnAngle
-    VOReferenceCrdnPlane
-    VOReferenceCrdnPoint
+    VOReferenceAnalysisWorkbenchCollection
+    VOReferenceVectorGeometryToolVector
+    VOReferenceVectorGeometryToolAxes
+    VOReferenceVectorGeometryToolAngle
+    VOReferenceVectorGeometryToolPlane
+    VOReferenceVectorGeometryToolPoint
     TargetGraphics
     TargetVO
     PointTargetVOModel
@@ -2084,7 +2084,7 @@ Classes
     PctCmpltEventArgs
     StkObjectChangedEventArgs
     VehicleEclipsingBodies
-    LocationCrdnPoint
+    LocationVectorGeometryToolPoint
     TimePeriod
     TimePeriodValue
     SpatialState
@@ -3072,25 +3072,25 @@ Interfaces
 .. autoclass:: IPointTargetVOModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOReferenceCrdn
+.. autoclass:: IVOReferenceAnalysisWorkbenchComponent
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOReferenceCrdnVector
+.. autoclass:: IVOReferenceVectorGeometryToolVector
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOReferenceCrdnAxes
+.. autoclass:: IVOReferenceVectorGeometryToolAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOReferenceCrdnAngle
+.. autoclass:: IVOReferenceVectorGeometryToolAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOReferenceCrdnPoint
+.. autoclass:: IVOReferenceVectorGeometryToolPoint
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOReferenceCrdnPlane
+.. autoclass:: IVOReferenceVectorGeometryToolPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: IVOReferenceCrdnCollection
+.. autoclass:: IVOReferenceAnalysisWorkbenchCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IVOVector
@@ -3462,7 +3462,7 @@ Interfaces
 .. autoclass:: ISensorCommonTasks
     :members:
     :exclude-members: __init__
-.. autoclass:: ILocationCrdnPoint
+.. autoclass:: ILocationVectorGeometryToolPoint
     :members:
     :exclude-members: __init__
 .. autoclass:: ISensor
@@ -7264,22 +7264,22 @@ Classes
 .. autoclass:: VOBorderWall
     :members:
     :exclude-members: __init__
-.. autoclass:: VOReferenceCrdnCollection
+.. autoclass:: VOReferenceAnalysisWorkbenchCollection
     :members:
     :exclude-members: __init__
-.. autoclass:: VOReferenceCrdnVector
+.. autoclass:: VOReferenceVectorGeometryToolVector
     :members:
     :exclude-members: __init__
-.. autoclass:: VOReferenceCrdnAxes
+.. autoclass:: VOReferenceVectorGeometryToolAxes
     :members:
     :exclude-members: __init__
-.. autoclass:: VOReferenceCrdnAngle
+.. autoclass:: VOReferenceVectorGeometryToolAngle
     :members:
     :exclude-members: __init__
-.. autoclass:: VOReferenceCrdnPlane
+.. autoclass:: VOReferenceVectorGeometryToolPlane
     :members:
     :exclude-members: __init__
-.. autoclass:: VOReferenceCrdnPoint
+.. autoclass:: VOReferenceVectorGeometryToolPoint
     :members:
     :exclude-members: __init__
 .. autoclass:: TargetGraphics
@@ -8512,7 +8512,7 @@ Classes
 .. autoclass:: VehicleEclipsingBodies
     :members:
     :exclude-members: __init__
-.. autoclass:: LocationCrdnPoint
+.. autoclass:: LocationVectorGeometryToolPoint
     :members:
     :exclude-members: __init__
 .. autoclass:: TimePeriod

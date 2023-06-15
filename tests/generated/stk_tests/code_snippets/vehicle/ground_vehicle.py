@@ -8,8 +8,8 @@ class GroundVehicle(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(GroundVehicle, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MyGroundVehicle"
+    m_Object: "IGroundVehicle" = None
+    m_DefaultName: str = "MyGroundVehicle"
 
     # region OneTimeSetUp
     @staticmethod
@@ -50,7 +50,7 @@ class GroundVehicle(CodeSnippetsTestBase):
         (clr.Convert(GroundVehicle.m_Object, IStkObject)).Unload()
         self.CreateGroundVehicleOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root):
+    def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the ground vehicle
         launchVehicle = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "MyGroundVehicle"), IGroundVehicle
@@ -62,7 +62,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     def test_SetGroundVehicleToUseGreatArcPropagator(self):
         self.SetGroundVehicleToUseGreatArcPropagator(GroundVehicle.m_Object)
 
-    def SetGroundVehicleToUseGreatArcPropagator(self, groundVehicle):
+    def SetGroundVehicleToUseGreatArcPropagator(self, groundVehicle: "IGroundVehicle"):
         # Set ground vehicle route to great arc
         groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
@@ -75,7 +75,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     def test_SetGroundVehicleToUseStkExternalPropagator(self):
         self.SetGroundVehicleToUseStkExternalPropagator(GroundVehicle.m_Object)
 
-    def SetGroundVehicleToUseStkExternalPropagator(self, groundVehicle):
+    def SetGroundVehicleToUseStkExternalPropagator(self, groundVehicle: "IGroundVehicle"):
         # Set groundVehicle route to STK External propagator
         groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorStkExternal)
 
@@ -88,7 +88,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     def test_SetGroundVehicleToUseRealtimePropagator(self):
         self.SetGroundVehicleToUseRealtimePropagator(GroundVehicle.m_Object)
 
-    def SetGroundVehicleToUseRealtimePropagator(self, groundVehicle):
+    def SetGroundVehicleToUseRealtimePropagator(self, groundVehicle: "IGroundVehicle"):
         # Set ground vehicle route to STK External propagator
         groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
 
@@ -106,7 +106,7 @@ class GroundVehicle(CodeSnippetsTestBase):
         self.GetExportStkEphemerisTool(gv)
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def GetExportStkEphemerisTool(self, groundVehicle):
+    def GetExportStkEphemerisTool(self, groundVehicle: "IGroundVehicle"):
         stkEphem = groundVehicle.ExportTools.GetEphemerisStkExportTool()
 
     # endregion
@@ -120,7 +120,7 @@ class GroundVehicle(CodeSnippetsTestBase):
         self.GetExportAttitudeTool(gv)
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def GetExportAttitudeTool(self, groundVehicle):
+    def GetExportAttitudeTool(self, groundVehicle: "IGroundVehicle"):
         attExTool = groundVehicle.ExportTools.GetAttitudeExportTool()
 
     # endregion
@@ -134,7 +134,7 @@ class GroundVehicle(CodeSnippetsTestBase):
         self.GetExportPropDefTool(gv)
         (clr.Convert(gv, IStkObject)).Unload()
 
-    def GetExportPropDefTool(self, groundVehicle):
+    def GetExportPropDefTool(self, groundVehicle: "IGroundVehicle"):
         attExTool = groundVehicle.ExportTools.GetPropDefExportTool()
 
     # endregion

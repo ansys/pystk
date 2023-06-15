@@ -8,8 +8,8 @@ class Aircraft(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Aircraft, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "aircraft1"
+    m_Object: "IAircraft" = None
+    m_DefaultName: str = "aircraft1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -47,7 +47,7 @@ class Aircraft(CodeSnippetsTestBase):
     def test_SetAircraftToUseGreatArcPropagator(self):
         self.SetAircraftToUseGreatArcPropagator(Aircraft.m_Object)
 
-    def SetAircraftToUseGreatArcPropagator(self, aircraft):
+    def SetAircraftToUseGreatArcPropagator(self, aircraft: "IAircraft"):
         # Set ship route to great arc
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
@@ -57,11 +57,10 @@ class Aircraft(CodeSnippetsTestBase):
     # endregion
 
     # region ConfigureAircraftRouteUsingGreatArcPropagator
-    @category("PySTKFixTest-NoServerAvailable")
     def test_ConfigureAircraftRouteUsingGreatArcPropagator(self):
         self.ConfigureAircraftRouteUsingGreatArcPropagator(Aircraft.m_Object)
 
-    def ConfigureAircraftRouteUsingGreatArcPropagator(self, aircraft):
+    def ConfigureAircraftRouteUsingGreatArcPropagator(self, aircraft: "IAircraft"):
         # Set ship route to great arc
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 

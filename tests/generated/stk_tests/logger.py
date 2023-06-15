@@ -46,85 +46,85 @@ class Logger(object):
         if File.Exists(self.LogFilename):
             File.Delete(self.LogFilename)
 
-    def Write(self, line):
+    def Write(self, line: str):
         if self.Enabled:
             Console.Write(line)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.Write(line)
 
-    def Write2(self, format, s):
+    def Write2(self, format: str, s: str):
         if self.Enabled:
             Console.Write(format, s)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.Write(format, s)
 
-    def Write3(self, format, i):
+    def Write3(self, format: str, i: int):
         if self.Enabled:
             Console.Write(format, i)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.Write(format, i)
 
-    def Write4(self, format, obj1, obj2):
+    def Write4(self, format: str, obj1: typing.Any, obj2: typing.Any):
         if self.Enabled:
             Console.Write(format, obj1, obj2)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.Write(format, obj1, obj2)
 
-    def WriteLine(self, line):
+    def WriteLine(self, line: str):
         if self.Enabled:
             Console.WriteLine(line)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(line)
 
-    def WriteLine2(self, obj):
+    def WriteLine2(self, obj: typing.Any):
         if self.Enabled:
             Console.WriteLine(obj)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(obj)
 
-    def WriteLine3(self, line, i):
+    def WriteLine3(self, line: str, i: int):
         if self.Enabled:
             Console.WriteLine(line, i)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(line)
 
-    def WriteLine4(self, line, b):
+    def WriteLine4(self, line: str, b: bool):
         if self.Enabled:
             Console.WriteLine(line, b)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(line, b)
 
-    def WriteLine5(self, line, s):
+    def WriteLine5(self, line: str, s: str):
         if self.Enabled:
             Console.WriteLine(line, s)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(line, s)
 
-    def WriteLine6(self, format, obj1):
+    def WriteLine6(self, format: str, obj1: typing.Any):
         if self.Enabled:
             Console.WriteLine(format, obj1)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(format, obj1)
 
-    def WriteLine7(self, format, obj1, obj2):
+    def WriteLine7(self, format: str, obj1: typing.Any, obj2: typing.Any):
         if self.Enabled:
             Console.WriteLine(format, obj1, obj2)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(format, obj1, obj2)
 
-    def WriteLine8(self, format, obj1, obj2, obj3):
+    def WriteLine8(self, format: str, obj1: typing.Any, obj2: typing.Any, obj3: typing.Any):
         if self.Enabled:
             Console.WriteLine(format, obj1, obj2, obj3)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(format, obj1, obj2, obj3)
 
-    def WriteLine9(self, format, obj1, obj2, obj3, obj4):
+    def WriteLine9(self, format: str, obj1: typing.Any, obj2: typing.Any, obj3: typing.Any, obj4: typing.Any):
         if self.Enabled:
             Console.WriteLine(format, obj1, obj2, obj3, obj4)
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(format, obj1, obj2, obj3, obj4)
 
-    def WriteLine10(self, format, *args):
+    def WriteLine10(self, format: str, *args):
         if self.Enabled:
             Console.WriteLine(format, args)
             with StreamWriter(self.LogFilename, True) as writer:

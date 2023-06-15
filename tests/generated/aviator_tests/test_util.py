@@ -5,6 +5,7 @@ import pytz
 import re
 import unittest
 import sys
+import typing  # noqa
 
 from datetime import datetime, timedelta
 
@@ -1027,13 +1028,17 @@ class TestBase(unittest.TestCase):
         EngineLifetimeManager.Uninitialize()
 
     @staticmethod
-    def LoadBaseScenario():
+    def LoadTestScenario(path):
         if TestBase.Application.CurrentScenario is not None:
             TestBase.Application.CloseScenario()
-        baseScenario = TestBase.GetScenarioFile("Scenario1.sc")
+        baseScenario = TestBase.GetScenarioFile(path)
         TestBase.Application.LoadScenario(baseScenario)
-
         TestBase.Application.UnitPreferences.ResetUnits()
+
+    @staticmethod
+    def LoadBaseScenario():
+        TestBase.LoadTestScenario("Scenario1.sc")
+
         ac1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["Boing737"], IAircraft)
         ac1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
         ga = clr.CastAs(ac1.Route, IVehiclePropagatorGreatArc)

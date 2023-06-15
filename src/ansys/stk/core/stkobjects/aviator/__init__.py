@@ -15,13 +15,14 @@ __all__ = ["ADDSMessage", "ADDSMessageCollection", "ARINC424Airport", "ARINC424H
 "AgEAvtrAircraftPropStrategy", "AgEAvtrAirspeedType", "AgEAvtrAltitudeConstraintManeuverMode", "AgEAvtrAltitudeRef", "AgEAvtrAndOr", 
 "AgEAvtrAngleMode", "AgEAvtrApproachMode", "AgEAvtrAtmosphereModel", "AgEAvtrAutopilotAltitudeControlMode", "AgEAvtrAutopilotAltitudeMode", 
 "AgEAvtrAutopilotHorizPlaneMode", "AgEAvtrBallistic3DControlMode", "AgEAvtrBasicFixedWingPropMode", "AgEAvtrBasicManeuverAirspeedMode", 
-"AgEAvtrBasicManeuverAltitudeLimit", "AgEAvtrBasicManeuverFuelFlowType", "AgEAvtrBasicManeuverRefFrame", "AgEAvtrBasicManeuverStrategy", 
-"AgEAvtrBasicManeuverStrategyAirspeedPerfLimits", "AgEAvtrBasicManeuverStrategyNavControlLimit", "AgEAvtrCEAFuelType", "AgEAvtrClimbSpeedType", 
-"AgEAvtrClosureMode", "AgEAvtrClosureValue", "AgEAvtrCruiseMaxPerfSpeedType", "AgEAvtrCruiseSpeed", "AgEAvtrDelayAltMode", 
-"AgEAvtrDelayTurnDir", "AgEAvtrDepartureSpeedMode", "AgEAvtrDescentSpeedType", "AgEAvtrErrorCodes", "AgEAvtrFlightLineProcType", 
-"AgEAvtrFlyAOALeftRight", "AgEAvtrFlyToFlightPathAngleMode", "AgEAvtrFuelFlowType", "AgEAvtrHoldRefuelDumpMode", "AgEAvtrHoldingDirection", 
-"AgEAvtrHoldingEntryManeuver", "AgEAvtrHoldingProfileMode", "AgEAvtrHoverAltitudeMode", "AgEAvtrHoverHeadingMode", "AgEAvtrHoverMode", 
-"AgEAvtrInterceptMode", "AgEAvtrJetEngineExhaustNozzleType", "AgEAvtrJetEngineIntakeType", "AgEAvtrJetEngineTechnologyLevel", 
+"AgEAvtrBasicManeuverAltitudeLimit", "AgEAvtrBasicManeuverFuelFlowType", "AgEAvtrBasicManeuverGlideSpeedControlMode", "AgEAvtrBasicManeuverRefFrame", 
+"AgEAvtrBasicManeuverStrategy", "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits", "AgEAvtrBasicManeuverStrategyNavControlLimit", 
+"AgEAvtrBasicManeuverStrategyPoweredCruiseMode", "AgEAvtrCEAFuelType", "AgEAvtrClimbSpeedType", "AgEAvtrClosureMode", "AgEAvtrClosureValue", 
+"AgEAvtrCruiseMaxPerfSpeedType", "AgEAvtrCruiseSpeed", "AgEAvtrDelayAltMode", "AgEAvtrDelayTurnDir", "AgEAvtrDepartureSpeedMode", 
+"AgEAvtrDescentSpeedType", "AgEAvtrErrorCodes", "AgEAvtrExtEphemFlightMode", "AgEAvtrFlightLineProcType", "AgEAvtrFlyAOALeftRight", 
+"AgEAvtrFlyToFlightPathAngleMode", "AgEAvtrFormationFlyerStopCondition", "AgEAvtrFuelFlowType", "AgEAvtrHoldRefuelDumpMode", 
+"AgEAvtrHoldingDirection", "AgEAvtrHoldingEntryManeuver", "AgEAvtrHoldingProfileMode", "AgEAvtrHoverAltitudeMode", "AgEAvtrHoverHeadingMode", 
+"AgEAvtrHoverMode", "AgEAvtrInterceptMode", "AgEAvtrJetEngineExhaustNozzleType", "AgEAvtrJetEngineIntakeType", "AgEAvtrJetEngineTechnologyLevel", 
 "AgEAvtrJetEngineTurbineType", "AgEAvtrJetFuelType", "AgEAvtrJoinExitArcMethod", "AgEAvtrLandingApproachFixRangeMode", "AgEAvtrLaunchAttitudeMode", 
 "AgEAvtrLaunchDynStateBearingRef", "AgEAvtrLaunchDynStateCoordFrame", "AgEAvtrLineOrientation", "AgEAvtrMinimizeSiteProcTimeDiff", 
 "AgEAvtrMissileAeroStrategy", "AgEAvtrMissilePropStrategy", "AgEAvtrNavigatorTurnDir", "AgEAvtrNumericalIntegrator", "AgEAvtrPerfModelOverride", 
@@ -86,27 +87,28 @@ __all__ = ["ADDSMessage", "ADDSMessageCollection", "ARINC424Airport", "ARINC424H
 "IMissileTurbojetProp", "IMission", "INavaidCategory", "INavigationOptions", "IPayloadStation", "IPerformanceModel", "IPerformanceModelOptions", 
 "IPhase", "IPhaseCollection", "IProcedure", "IProcedureAirway", "IProcedureAirwayRouter", "IProcedureArcEnroute", "IProcedureArcPointToPoint", 
 "IProcedureAreaTargetSearch", "IProcedureBasicManeuver", "IProcedureBasicPointToPoint", "IProcedureCollection", "IProcedureDelay", 
-"IProcedureEnroute", "IProcedureFastTimeOptions", "IProcedureFlightLine", "IProcedureFormationRecover", "IProcedureHoldingCircular", 
-"IProcedureHoldingFigure8", "IProcedureHoldingRacetrack", "IProcedureHover", "IProcedureHoverTranslate", "IProcedureInFormation", 
-"IProcedureLanding", "IProcedureLaunch", "IProcedureLaunchDynState", "IProcedureLaunchWaypoint", "IProcedureParallelFlightLine", 
-"IProcedureReferenceState", "IProcedureSuperProcedure", "IProcedureTakeoff", "IProcedureTerrainFollow", "IProcedureTimeOptions", 
-"IProcedureTransitionToForwardFlight", "IProcedureTransitionToHover", "IProcedureVGTPoint", "IProcedureVerticalLanding", 
-"IProcedureVerticalTakeoff", "IPropulsionEfficiencies", "IPropulsionThrust", "IReferenceStateForwardFlightOptions", "IReferenceStateHoverOptions", 
-"IReferenceStateTakeoffLandingOptions", "IReferenceStateWeightOnWheelsOptions", "IRefuelDumpProperties", "IRotorcraftAero", 
-"IRotorcraftModel", "IRotorcraftModels", "IRotorcraftProp", "IRunwayCategory", "IRunwayHeadingOptions", "ISite", "ISiteAirportFromCatalog", 
-"ISiteDynState", "ISiteEndOfPrevProcedure", "ISiteNavaidFromCatalog", "ISiteReferenceState", "ISiteRelToPrevProcedure", 
-"ISiteRelToSTKObject", "ISiteRunway", "ISiteRunwayFromCatalog", "ISiteSTKAreaTarget", "ISiteSTKObjectWaypoint", "ISiteSTKStaticObject", 
-"ISiteSTKVehicle", "ISiteSuperProcedure", "ISiteUnknown", "ISiteVTOLPoint", "ISiteVTOLPointFromCatalog", "ISiteWaypoint", 
-"ISiteWaypointFromCatalog", "IStation", "IStationCollection", "ITakeoffDeparturePoint", "ITakeoffLowTransition", "ITakeoffNormal", 
-"IUserRunway", "IUserRunwaySource", "IUserVTOLPoint", "IUserVTOLPointSource", "IUserWaypoint", "IUserWaypointSource", "IVTOLPointCategory", 
-"IVerticalPlaneAndFlightPathOptions", "IVerticalPlaneOptions", "IWaypointCategory", "IWindModel", "IWindModelADDS", "IWindModelConstant", 
-"LandingCruiseAirspeedAndProfileOptions", "LandingEnrouteOptions", "LandingEnterDownwindPattern", "LandingInterceptGlideslope", 
-"LandingStandardInstrumentApproach", "LandingVerticalPlaneOptions", "LevelTurns", "MissileAdvancedAero", "MissileAero", 
-"MissileExternalAero", "MissileExternalProp", "MissileModel", "MissileModels", "MissileProp", "MissileRamjetProp", "MissileRocketProp", 
-"MissileSimpleAero", "MissileSimpleProp", "MissileTurbojetProp", "Mission", "NavaidCategory", "NavigationOptions", "PayloadStation", 
-"PerformanceModel", "PerformanceModelOptions", "Phase", "PhaseCollection", "Procedure", "ProcedureAirway", "ProcedureAirwayRouter", 
-"ProcedureArcEnroute", "ProcedureArcPointToPoint", "ProcedureAreaTargetSearch", "ProcedureBasicManeuver", "ProcedureBasicPointToPoint", 
-"ProcedureCollection", "ProcedureDelay", "ProcedureEnroute", "ProcedureFastTimeOptions", "ProcedureFlightLine", "ProcedureFormationRecover", 
+"IProcedureEnroute", "IProcedureExtEphem", "IProcedureFastTimeOptions", "IProcedureFlightLine", "IProcedureFormationFlyer", 
+"IProcedureFormationRecover", "IProcedureHoldingCircular", "IProcedureHoldingFigure8", "IProcedureHoldingRacetrack", "IProcedureHover", 
+"IProcedureHoverTranslate", "IProcedureInFormation", "IProcedureLanding", "IProcedureLaunch", "IProcedureLaunchDynState", 
+"IProcedureLaunchWaypoint", "IProcedureParallelFlightLine", "IProcedureReferenceState", "IProcedureSuperProcedure", "IProcedureTakeoff", 
+"IProcedureTerrainFollow", "IProcedureTimeOptions", "IProcedureTransitionToForwardFlight", "IProcedureTransitionToHover", 
+"IProcedureVGTPoint", "IProcedureVerticalLanding", "IProcedureVerticalTakeoff", "IPropulsionEfficiencies", "IPropulsionThrust", 
+"IReferenceStateForwardFlightOptions", "IReferenceStateHoverOptions", "IReferenceStateTakeoffLandingOptions", "IReferenceStateWeightOnWheelsOptions", 
+"IRefuelDumpProperties", "IRotorcraftAero", "IRotorcraftModel", "IRotorcraftModels", "IRotorcraftProp", "IRunwayCategory", 
+"IRunwayHeadingOptions", "ISite", "ISiteAirportFromCatalog", "ISiteDynState", "ISiteEndOfPrevProcedure", "ISiteNavaidFromCatalog", 
+"ISiteReferenceState", "ISiteRelToPrevProcedure", "ISiteRelToSTKObject", "ISiteRunway", "ISiteRunwayFromCatalog", "ISiteSTKAreaTarget", 
+"ISiteSTKObjectWaypoint", "ISiteSTKStaticObject", "ISiteSTKVehicle", "ISiteSuperProcedure", "ISiteUnknown", "ISiteVTOLPoint", 
+"ISiteVTOLPointFromCatalog", "ISiteWaypoint", "ISiteWaypointFromCatalog", "IStation", "IStationCollection", "ITakeoffDeparturePoint", 
+"ITakeoffLowTransition", "ITakeoffNormal", "IUserRunway", "IUserRunwaySource", "IUserVTOLPoint", "IUserVTOLPointSource", 
+"IUserWaypoint", "IUserWaypointSource", "IVTOLPointCategory", "IVerticalPlaneAndFlightPathOptions", "IVerticalPlaneOptions", 
+"IWaypointCategory", "IWindModel", "IWindModelADDS", "IWindModelConstant", "LandingCruiseAirspeedAndProfileOptions", "LandingEnrouteOptions", 
+"LandingEnterDownwindPattern", "LandingInterceptGlideslope", "LandingStandardInstrumentApproach", "LandingVerticalPlaneOptions", 
+"LevelTurns", "MissileAdvancedAero", "MissileAero", "MissileExternalAero", "MissileExternalProp", "MissileModel", "MissileModels", 
+"MissileProp", "MissileRamjetProp", "MissileRocketProp", "MissileSimpleAero", "MissileSimpleProp", "MissileTurbojetProp", 
+"Mission", "NavaidCategory", "NavigationOptions", "PayloadStation", "PerformanceModel", "PerformanceModelOptions", "Phase", 
+"PhaseCollection", "Procedure", "ProcedureAirway", "ProcedureAirwayRouter", "ProcedureArcEnroute", "ProcedureArcPointToPoint", 
+"ProcedureAreaTargetSearch", "ProcedureBasicManeuver", "ProcedureBasicPointToPoint", "ProcedureCollection", "ProcedureDelay", 
+"ProcedureEnroute", "ProcedureExtEphem", "ProcedureFastTimeOptions", "ProcedureFlightLine", "ProcedureFormationFlyer", "ProcedureFormationRecover", 
 "ProcedureHoldingCircular", "ProcedureHoldingFigure8", "ProcedureHoldingRacetrack", "ProcedureHover", "ProcedureHoverTranslate", 
 "ProcedureInFormation", "ProcedureLanding", "ProcedureLaunch", "ProcedureLaunchDynState", "ProcedureLaunchWaypoint", "ProcedureParallelFlightLine", 
 "ProcedureReferenceState", "ProcedureSuperProcedure", "ProcedureTakeoff", "ProcedureTerrainFollow", "ProcedureTimeOptions", 
@@ -301,6 +303,10 @@ class AgEAvtrProcedureType(IntEnum):
     eProcLaunchDynState = 29
     # LaunchWaypoint procedure.
     eProcLaunchWaypoint = 30
+    # FormationFlyer procedure.
+    eProcFormationFlyer = 31
+    # ExtEphem procedure.
+    eProcExtEphem = 32
 
 AgEAvtrProcedureType.eProcAirway.__doc__ = "Airway procedure."
 AgEAvtrProcedureType.eProcAirwayRouter.__doc__ = "Airway Router procedure."
@@ -333,6 +339,8 @@ AgEAvtrProcedureType.eProcVerticalTakeoff.__doc__ = "Vertical Takeoff procedure.
 AgEAvtrProcedureType.eProcVGTPoint.__doc__ = "VGT Point procedure."
 AgEAvtrProcedureType.eProcLaunchDynState.__doc__ = "LaunchDynState procedure."
 AgEAvtrProcedureType.eProcLaunchWaypoint.__doc__ = "LaunchWaypoint procedure."
+AgEAvtrProcedureType.eProcFormationFlyer.__doc__ = "FormationFlyer procedure."
+AgEAvtrProcedureType.eProcExtEphem.__doc__ = "ExtEphem procedure."
 
 agcls.AgTypeNameMap["AgEAvtrProcedureType"] = AgEAvtrProcedureType
 
@@ -779,6 +787,21 @@ AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated.__doc__ = "Error
 AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated.__doc__ = "Ignore when airspeed limit exceeded."
 
 agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategyAirspeedPerfLimits"] = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits
+
+class AgEAvtrBasicManeuverStrategyPoweredCruiseMode(IntEnum):
+    """Powered Cruise Options."""
+    # The mode selected is unpowered options.
+    eGlideSpecifyUnPoweredCruise = 0
+    # The mode selected is specifiy throttle.
+    eGlideSpecifyThrottle = 1
+    # The mode selected is thrust model.
+    eGlideSpecifyThrustModel = 2
+
+AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyUnPoweredCruise.__doc__ = "The mode selected is unpowered options."
+AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrottle.__doc__ = "The mode selected is specifiy throttle."
+AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrustModel.__doc__ = "The mode selected is thrust model."
+
+agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategyPoweredCruiseMode"] = AgEAvtrBasicManeuverStrategyPoweredCruiseMode
 
 class AgEAvtrTurnMode(IntEnum):
     """The mode to specify an aircraft's level turn performance for acceleration performance models."""
@@ -1307,6 +1330,66 @@ AgEAvtrRendezvousStopCondition.eStopWhenTargetPerfModeChanges.__doc__ = "Stop wh
 AgEAvtrRendezvousStopCondition.eStopWhenTargetPhaseOfFlightChanges.__doc__ = "Stop when the target enters a new performance phase."
 
 agcls.AgTypeNameMap["AgEAvtrRendezvousStopCondition"] = AgEAvtrRendezvousStopCondition
+
+class AgEAvtrFormationFlyerStopCondition(IntEnum):
+    """The stop condition options for a Formation Flyer procedure."""
+    # Stop After FullMission.
+    eFormationFlyerStopAfterFullMission = 0
+    # Stop After Time.
+    eFormationFlyerStopAfterTime = 1
+    # Stop After FuelState.
+    eFormationFlyerStopAfterFuelState = 2
+    # Stop After DownRange.
+    eFormationFlyerStopAfterDownRange = 3
+    # Stop When TargetProcedure Changes.
+    eFormationFlyerStopWhenTargetProcedureChanges = 4
+    # Stop When Target Mission Changes.
+    eFormationFlyerStopWhenTargetMissionChanges = 5
+    # Stop When Target PhaseOfFlight Changes.
+    eFormationFlyerStopWhenTargetPhaseOfFlightChanges = 6
+    # Stop When Target PerfMode Changes.
+    eFormationFlyerStopWhenTargetPerfModeChanges = 7
+
+AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterFullMission.__doc__ = "Stop After FullMission."
+AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterTime.__doc__ = "Stop After Time."
+AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterFuelState.__doc__ = "Stop After FuelState."
+AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterDownRange.__doc__ = "Stop After DownRange."
+AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopWhenTargetProcedureChanges.__doc__ = "Stop When TargetProcedure Changes."
+AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopWhenTargetMissionChanges.__doc__ = "Stop When Target Mission Changes."
+AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopWhenTargetPhaseOfFlightChanges.__doc__ = "Stop When Target PhaseOfFlight Changes."
+AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopWhenTargetPerfModeChanges.__doc__ = "Stop When Target PerfMode Changes."
+
+agcls.AgTypeNameMap["AgEAvtrFormationFlyerStopCondition"] = AgEAvtrFormationFlyerStopCondition
+
+class AgEAvtrExtEphemFlightMode(IntEnum):
+    """Flight mode enums for ExtEphem."""
+    # ForwardFlightClimb.
+    eExtEphemFlightModeForwardFlightClimb = 0
+    # ForwardFlightCruise.
+    eExtEphemFlightModeForwardFlightCruise = 1
+    # ForwardFlightDescend.
+    eExtEphemFlightModeForwardFlightDescend = 2
+    # Landing.
+    eExtEphemFlightModeLanding = 3
+    # LandingWOW.
+    eExtEphemFlightModeLandingWOW = 4
+    # Takeoff.
+    eExtEphemFlightModeTakeoff = 5
+    # TakeoffWOW.
+    eExtEphemFlightModeTakeoffWOW = 6
+    # VTOLHover .
+    eExtEphemFlightModeVTOLHover = 7
+
+AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightClimb.__doc__ = "ForwardFlightClimb."
+AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightCruise.__doc__ = "ForwardFlightCruise."
+AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightDescend.__doc__ = "ForwardFlightDescend."
+AgEAvtrExtEphemFlightMode.eExtEphemFlightModeLanding.__doc__ = "Landing."
+AgEAvtrExtEphemFlightMode.eExtEphemFlightModeLandingWOW.__doc__ = "LandingWOW."
+AgEAvtrExtEphemFlightMode.eExtEphemFlightModeTakeoff.__doc__ = "Takeoff."
+AgEAvtrExtEphemFlightMode.eExtEphemFlightModeTakeoffWOW.__doc__ = "TakeoffWOW."
+AgEAvtrExtEphemFlightMode.eExtEphemFlightModeVTOLHover.__doc__ = "VTOLHover ."
+
+agcls.AgTypeNameMap["AgEAvtrExtEphemFlightMode"] = AgEAvtrExtEphemFlightMode
 
 class AgEAvtrAccelPerfModelOverride(IntEnum):
     """The acceleration performance model override mode."""
@@ -2399,33 +2482,45 @@ agcls.AgTypeNameMap["AgEAvtrPitch3DControlMode"] = AgEAvtrPitch3DControlMode
 
 class AgEAvtrRefuelDumpMode(IntEnum):
     """The modes used to define procedure refuel/dump modes."""
-    # Enumeration AgEAvtrRefuelDumpMode:eRefuelDumpDisabled.
+    # RefuelDump Disabled.
     eRefuelDumpDisabled = 0
-    # Enumeration AgEAvtrRefuelDumpMode:eRefuelTopOff.
+    # Refuel Top Off.
     eRefuelTopOff = 1
-    # Enumeration AgEAvtrRefuelDumpMode:eRefuelToFuelState.
+    # Refuel to specified fuel state.
     eRefuelToFuelState = 2
-    # Enumeration AgEAvtrRefuelDumpMode:eRefuelToWeight.
+    # Refuel to specified weight.
     eRefuelToWeight = 3
-    # Enumeration AgEAvtrRefuelDumpMode:eRefuelQuantity.
+    # Refuel specified quantity.
     eRefuelQuantity = 4
-    # Enumeration AgEAvtrRefuelDumpMode:eDumpToFuelState.
+    # Dump to specified fuel state.
     eDumpToFuelState = 5
-    # Enumeration AgEAvtrRefuelDumpMode:eDumpToWeight.
+    # Dump to specified weight.
     eDumpToWeight = 6
-    # Enumeration AgEAvtrRefuelDumpMode:eDumpQuantity.
+    # Dump specified quantity.
     eDumpQuantity = 7
 
-AgEAvtrRefuelDumpMode.eRefuelDumpDisabled.__doc__ = "Enumeration AgEAvtrRefuelDumpMode:eRefuelDumpDisabled."
-AgEAvtrRefuelDumpMode.eRefuelTopOff.__doc__ = "Enumeration AgEAvtrRefuelDumpMode:eRefuelTopOff."
-AgEAvtrRefuelDumpMode.eRefuelToFuelState.__doc__ = "Enumeration AgEAvtrRefuelDumpMode:eRefuelToFuelState."
-AgEAvtrRefuelDumpMode.eRefuelToWeight.__doc__ = "Enumeration AgEAvtrRefuelDumpMode:eRefuelToWeight."
-AgEAvtrRefuelDumpMode.eRefuelQuantity.__doc__ = "Enumeration AgEAvtrRefuelDumpMode:eRefuelQuantity."
-AgEAvtrRefuelDumpMode.eDumpToFuelState.__doc__ = "Enumeration AgEAvtrRefuelDumpMode:eDumpToFuelState."
-AgEAvtrRefuelDumpMode.eDumpToWeight.__doc__ = "Enumeration AgEAvtrRefuelDumpMode:eDumpToWeight."
-AgEAvtrRefuelDumpMode.eDumpQuantity.__doc__ = "Enumeration AgEAvtrRefuelDumpMode:eDumpQuantity."
+AgEAvtrRefuelDumpMode.eRefuelDumpDisabled.__doc__ = "RefuelDump Disabled."
+AgEAvtrRefuelDumpMode.eRefuelTopOff.__doc__ = "Refuel Top Off."
+AgEAvtrRefuelDumpMode.eRefuelToFuelState.__doc__ = "Refuel to specified fuel state."
+AgEAvtrRefuelDumpMode.eRefuelToWeight.__doc__ = "Refuel to specified weight."
+AgEAvtrRefuelDumpMode.eRefuelQuantity.__doc__ = "Refuel specified quantity."
+AgEAvtrRefuelDumpMode.eDumpToFuelState.__doc__ = "Dump to specified fuel state."
+AgEAvtrRefuelDumpMode.eDumpToWeight.__doc__ = "Dump to specified weight."
+AgEAvtrRefuelDumpMode.eDumpQuantity.__doc__ = "Dump specified quantity."
 
 agcls.AgTypeNameMap["AgEAvtrRefuelDumpMode"] = AgEAvtrRefuelDumpMode
+
+class AgEAvtrBasicManeuverGlideSpeedControlMode(IntEnum):
+    """The modes used to define basic maneuver glide speed control modes."""
+    # Immediate speed change.
+    eGlideSpeedImmediateChange = 0
+    # Achieve speed at altitude.
+    eGlideSpeedAtAltitude = 1
+
+AgEAvtrBasicManeuverGlideSpeedControlMode.eGlideSpeedImmediateChange.__doc__ = "Immediate speed change."
+AgEAvtrBasicManeuverGlideSpeedControlMode.eGlideSpeedAtAltitude.__doc__ = "Achieve speed at altitude."
+
+agcls.AgTypeNameMap["AgEAvtrBasicManeuverGlideSpeedControlMode"] = AgEAvtrBasicManeuverGlideSpeedControlMode
 
 
 class ISite(object):
@@ -3631,7 +3726,7 @@ agcls.AgTypeNameMap["IClimbAndDescentTransitions"] = IClimbAndDescentTransitions
 class ICatalogItem(object):
     """Interface used to access the options for a Catalog Item in the Aviator Catalog. Use this interface to Create, Remove, Duplicate, or Rename items in the catalog."""
     _uuid = "{97dd0fde-8548-4bbf-b2c5-909c6013b32d}"
-    _num_methods = 12
+    _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -3647,6 +3742,7 @@ class ICatalogItem(object):
         self.__dict__["_GetChildTypes"] = _raise_uninitialized_error
         self.__dict__["_AddDefaultChild"] = _raise_uninitialized_error
         self.__dict__["_AddChildOfType"] = _raise_uninitialized_error
+        self.__dict__["_ContainsChildItem"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICatalogItem._uuid))
             if pUnk is not None:
@@ -3670,6 +3766,7 @@ class ICatalogItem(object):
         self.__dict__["_GetChildTypes"] = IAGFUNCTYPE(pUnk, IID_ICatalogItem, vtable_offset_local+10, POINTER(agcom.SAFEARRAY))
         self.__dict__["_AddDefaultChild"] = IAGFUNCTYPE(pUnk, IID_ICatalogItem, vtable_offset_local+11, agcom.BSTR, POINTER(agcom.PVOID))
         self.__dict__["_AddChildOfType"] = IAGFUNCTYPE(pUnk, IID_ICatalogItem, vtable_offset_local+12, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_ContainsChildItem"] = IAGFUNCTYPE(pUnk, IID_ICatalogItem, vtable_offset_local+13, agcom.BSTR, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3759,6 +3856,13 @@ class ICatalogItem(object):
              agmarshall.AgInterface_out_arg() as arg_ppCatalogItem:
             agcls.evaluate_hresult(self.__dict__["_AddChildOfType"](arg_childType.COM_val, arg_childName.COM_val, byref(arg_ppCatalogItem.COM_val)))
             return arg_ppCatalogItem.python_val
+
+    def ContainsChildItem(self, childItem:str) -> bool:
+        """Get whether the catalog item is contains the given child item."""
+        with agmarshall.BSTR_arg(childItem) as arg_childItem, \
+             agmarshall.VARIANT_BOOL_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_ContainsChildItem"](arg_childItem.COM_val, byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
 
 
 agcls.AgClassCatalog.add_catalog_entry("{97dd0fde-8548-4bbf-b2c5-909c6013b32d}", ICatalogItem)
@@ -13705,67 +13809,67 @@ class IRefuelDumpProperties(object):
     
     @property
     def RefuelDumpMode(self) -> "AgEAvtrRefuelDumpMode":
-        """property RefuelDumpMode"""
+        """Get the RefuelDumpMode"""
         with agmarshall.AgEnum_arg(AgEAvtrRefuelDumpMode) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetRefuelDumpMode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def RefuelDumpModeValue(self) -> float:
-        """property RefuelDumpModeValue"""
+        """Get the RefuelDumpModeValue if applicable"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetRefuelDumpModeValue"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     def SetRefuelDumpMode(self, mode:"AgEAvtrRefuelDumpMode", value:float) -> None:
-        """method SetRefuelDumpMode"""
+        """Set RefuelDumpMode and RefuelDumpModeValue if applicable"""
         with agmarshall.AgEnum_arg(AgEAvtrRefuelDumpMode, mode) as arg_mode, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_SetRefuelDumpMode"](arg_mode.COM_val, arg_value.COM_val))
 
     @property
     def RefuelDumpRate(self) -> float:
-        """property RefuelDumpRate"""
+        """Get the RefuelDump rate"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetRefuelDumpRate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @RefuelDumpRate.setter
     def RefuelDumpRate(self, newVal:float) -> None:
-        """property RefuelDumpRate"""
+        """Set the RefuelDump rate"""
         with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetRefuelDumpRate"](arg_newVal.COM_val))
 
     @property
     def RefuelDumpTimeOffset(self) -> float:
-        """property RefuelDumpTimeOffset"""
+        """Get the RefuelDump time offset"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetRefuelDumpTimeOffset"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @RefuelDumpTimeOffset.setter
     def RefuelDumpTimeOffset(self, newVal:float) -> None:
-        """property RefuelDumpTimeOffset"""
+        """Set the RefuelDump time offset"""
         with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetRefuelDumpTimeOffset"](arg_newVal.COM_val))
 
     @property
     def CanUseEndOfEnrouteSegmentAsEpoch(self) -> bool:
-        """property CanUseEndOfEnrouteSegmentAsEpoch"""
+        """Can use end of enroute segment as the epoch"""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetCanUseEndOfEnrouteSegmentAsEpoch"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def UseEndOfEnrouteSegmentAsEpoch(self) -> bool:
-        """property UseEndOfEnrouteSegmentAsEpoch"""
+        """Use end of enroute segment as the epoch"""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_GetUseEndOfEnrouteSegmentAsEpoch"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @UseEndOfEnrouteSegmentAsEpoch.setter
     def UseEndOfEnrouteSegmentAsEpoch(self, newVal:bool) -> None:
-        """property UseEndOfEnrouteSegmentAsEpoch"""
+        """Use end of enroute segment as the epoch"""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetUseEndOfEnrouteSegmentAsEpoch"](arg_newVal.COM_val))
 
@@ -16181,7 +16285,7 @@ agcls.AgClassCatalog.add_catalog_entry("{a3a67fca-89f4-4cc8-9ef0-194707369ef9}",
 agcls.AgTypeNameMap["ICatalogWaypoint"] = ICatalogWaypoint
 
 class IARINC424Airport(object):
-    """This interface is deprecated. Use IAgAvtrARINC424Item instead."""
+    """This interface is deprecated. Use IARINC424Item instead."""
     _uuid = "{38a8e2de-6ca0-42b4-a5c9-9a2ae40ac0d7}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -16298,7 +16402,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5725c989-94a3-47c9-8115-6d5b88b992aa}",
 agcls.AgTypeNameMap["IDAFIFItem"] = IDAFIFItem
 
 class IARINC424Runway(object):
-    """This interface is deprecated. Use IAgAvtrARINC424Item instead."""
+    """This interface is deprecated. Use IARINC424Item instead."""
     _uuid = "{fafcfc3b-d259-498d-9000-8ec380048afa}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19843,7 +19947,7 @@ agcls.AgClassCatalog.add_catalog_entry("{d3b3af6e-7b5a-4491-aaca-c05eb901afa0}",
 agcls.AgTypeNameMap["IAdvFixedWingGeometry"] = IAdvFixedWingGeometry
 
 class IAdvFixedWingTurbofanBasicABPowerplant(object):
-    """This interface is deprecated. Use IAgAvtrAdvFixedWingTurbofanBasicABProp instead."""
+    """This interface is deprecated. Use IAdvFixedWingTurbofanBasicABProp instead."""
     _uuid = "{9bc7e978-48ec-487d-8460-014c8fe376bd}"
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19878,7 +19982,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9bc7e978-48ec-487d-8460-014c8fe376bd}",
 agcls.AgTypeNameMap["IAdvFixedWingTurbofanBasicABPowerplant"] = IAdvFixedWingTurbofanBasicABPowerplant
 
 class IAdvFixedWingTurbojetBasicABPowerplant(object):
-    """This interface is deprecated. Use IAgAvtrAdvFixedWingTurbojetBasicABProp instead."""
+    """This interface is deprecated. Use IAdvFixedWingTurbojetBasicABProp instead."""
     _uuid = "{552db5f4-fe5d-4709-80b4-7ba074c673ff}"
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -25557,7 +25661,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyPushPull"] = IBasicManeuverStrategyPu
 class IBasicManeuverStrategyGlideProfile(object):
     """Interface used to access options for a Glide Profile Strategy of a Basic Maneuver Procedure."""
     _uuid = "{7c0a4dd8-59ed-403d-96bb-8f45d3e71ca6}"
-    _num_methods = 13
+    _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
@@ -25574,6 +25678,14 @@ class IBasicManeuverStrategyGlideProfile(object):
         self.__dict__["_SetAirspeed"] = _raise_uninitialized_error
         self.__dict__["_GetCompensateForCoriolisAccel"] = _raise_uninitialized_error
         self.__dict__["_SetCompensateForCoriolisAccel"] = _raise_uninitialized_error
+        self.__dict__["_GetPoweredCruiseMode"] = _raise_uninitialized_error
+        self.__dict__["_SetPoweredCruiseMode"] = _raise_uninitialized_error
+        self.__dict__["_GetPoweredCruiseThrottle"] = _raise_uninitialized_error
+        self.__dict__["_SetPoweredCruiseThrottle"] = _raise_uninitialized_error
+        self.__dict__["_GetPoweredCruiseThrustModel"] = _raise_uninitialized_error
+        self.__dict__["_GetGlideSpeedControlMode"] = _raise_uninitialized_error
+        self.__dict__["_GetGlideSpeedControlAlt"] = _raise_uninitialized_error
+        self.__dict__["_SetGlideSpeedControlMode"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IBasicManeuverStrategyGlideProfile._uuid))
             if pUnk is not None:
@@ -25598,6 +25710,14 @@ class IBasicManeuverStrategyGlideProfile(object):
         self.__dict__["_SetAirspeed"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+11, agcom.LONG, agcom.DOUBLE)
         self.__dict__["_GetCompensateForCoriolisAccel"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+12, POINTER(agcom.VARIANT_BOOL))
         self.__dict__["_SetCompensateForCoriolisAccel"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+13, agcom.VARIANT_BOOL)
+        self.__dict__["_GetPoweredCruiseMode"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+14, POINTER(agcom.LONG))
+        self.__dict__["_SetPoweredCruiseMode"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+15, agcom.LONG)
+        self.__dict__["_GetPoweredCruiseThrottle"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+16, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetPoweredCruiseThrottle"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+17, agcom.DOUBLE)
+        self.__dict__["_GetPoweredCruiseThrustModel"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+18, POINTER(agcom.PVOID))
+        self.__dict__["_GetGlideSpeedControlMode"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+19, POINTER(agcom.LONG))
+        self.__dict__["_GetGlideSpeedControlAlt"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+20, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetGlideSpeedControlMode"] = IAGFUNCTYPE(pUnk, IID_IBasicManeuverStrategyGlideProfile, vtable_offset_local+21, agcom.LONG, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -25690,6 +25810,57 @@ class IBasicManeuverStrategyGlideProfile(object):
     def CompensateForCoriolisAccel(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_SetCompensateForCoriolisAccel"](arg_newVal.COM_val))
+
+    @property
+    def PoweredCruiseMode(self) -> "AgEAvtrBasicManeuverStrategyPoweredCruiseMode":
+        """The powered cruise mode"""
+        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyPoweredCruiseMode) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetPoweredCruiseMode"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @PoweredCruiseMode.setter
+    def PoweredCruiseMode(self, newVal:"AgEAvtrBasicManeuverStrategyPoweredCruiseMode") -> None:
+        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyPoweredCruiseMode, newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetPoweredCruiseMode"](arg_newVal.COM_val))
+
+    @property
+    def PoweredCruiseThrottle(self) -> float:
+        """The powered cruise throttle"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetPoweredCruiseThrottle"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @PoweredCruiseThrottle.setter
+    def PoweredCruiseThrottle(self, newVal:float) -> None:
+        with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetPoweredCruiseThrottle"](arg_newVal.COM_val))
+
+    @property
+    def PoweredCruiseThrustModel(self) -> "IPropulsionThrust":
+        """The powered cruise thrust model"""
+        with agmarshall.AgInterface_out_arg() as arg_ppVal:
+            agcls.evaluate_hresult(self.__dict__["_GetPoweredCruiseThrustModel"](byref(arg_ppVal.COM_val)))
+            return arg_ppVal.python_val
+
+    @property
+    def GlideSpeedControlMode(self) -> "AgEAvtrBasicManeuverGlideSpeedControlMode":
+        """The glide speed control mode"""
+        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverGlideSpeedControlMode) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetGlideSpeedControlMode"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @property
+    def GlideSpeedControlAlt(self) -> float:
+        """The glide speed altitude when using the altitude control mode"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetGlideSpeedControlAlt"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    def SetGlideSpeedControlMode(self, eGSMode:"AgEAvtrBasicManeuverGlideSpeedControlMode", dControlAlt:float) -> None:
+        """Set the glide speed control mode and altitude"""
+        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverGlideSpeedControlMode, eGSMode) as arg_eGSMode, \
+             agmarshall.DOUBLE_arg(dControlAlt) as arg_dControlAlt:
+            agcls.evaluate_hresult(self.__dict__["_SetGlideSpeedControlMode"](arg_eGSMode.COM_val, arg_dControlAlt.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{7c0a4dd8-59ed-403d-96bb-8f45d3e71ca6}", IBasicManeuverStrategyGlideProfile)
@@ -29885,6 +30056,322 @@ class IProcedureEnroute(object):
 
 agcls.AgClassCatalog.add_catalog_entry("{a35c59ac-496b-4b6c-aa8a-fd55e9992a97}", IProcedureEnroute)
 agcls.AgTypeNameMap["IProcedureEnroute"] = IProcedureEnroute
+
+class IProcedureExtEphem(object):
+    """Interface used to access the options for an ExtEphem procedure."""
+    _uuid = "{7A4CFB91-336F-4150-AD2C-C861410FB496}"
+    _num_methods = 12
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    def __init__(self, sourceObject=None):
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_SetEphemerisFile"] = _raise_uninitialized_error
+        self.__dict__["_GetEphemerisFile"] = _raise_uninitialized_error
+        self.__dict__["_GetEphemerisFileDuration"] = _raise_uninitialized_error
+        self.__dict__["_SetUseStartDuration"] = _raise_uninitialized_error
+        self.__dict__["_GetUseStartDuration"] = _raise_uninitialized_error
+        self.__dict__["_SetStartTime"] = _raise_uninitialized_error
+        self.__dict__["_GetStartTime"] = _raise_uninitialized_error
+        self.__dict__["_SetDuration"] = _raise_uninitialized_error
+        self.__dict__["_GetDuration"] = _raise_uninitialized_error
+        self.__dict__["_GetFlightMode"] = _raise_uninitialized_error
+        self.__dict__["_SetFlightMode"] = _raise_uninitialized_error
+        self.__dict__["_GetAsProcedure"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IProcedureExtEphem._uuid))
+            if pUnk is not None:
+                self._private_init(pUnk)
+                del(pUnk)
+            else:
+                raise STKInvalidCastError("Failed to create IProcedureExtEphem from source object.")
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IID_IProcedureExtEphem = agcom.GUID(IProcedureExtEphem._uuid)
+        vtable_offset_local = IProcedureExtEphem._vtable_offset - 1
+        self.__dict__["_SetEphemerisFile"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+1, agcom.BSTR)
+        self.__dict__["_GetEphemerisFile"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_GetEphemerisFileDuration"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetUseStartDuration"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+4, agcom.VARIANT_BOOL)
+        self.__dict__["_GetUseStartDuration"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_SetStartTime"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_GetStartTime"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetDuration"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_GetDuration"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+9, POINTER(agcom.DOUBLE))
+        self.__dict__["_GetFlightMode"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+10, POINTER(agcom.LONG))
+        self.__dict__["_SetFlightMode"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+11, agcom.LONG)
+        self.__dict__["_GetAsProcedure"] = IAGFUNCTYPE(pUnk, IID_IProcedureExtEphem, vtable_offset_local+12, POINTER(agcom.PVOID))
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        if attrname in IProcedureExtEphem.__dict__ and type(IProcedureExtEphem.__dict__[attrname]) == property:
+            return IProcedureExtEphem.__dict__[attrname]
+        return None
+    def __setattr__(self, attrname, value):
+        if self._get_property(attrname) is not None:
+            self._get_property(attrname).__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureExtEphem.")
+    
+    @property
+    def EphemerisFile(self) -> str:
+        """Get the ephemeris filename."""
+        with agmarshall.BSTR_arg() as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_GetEphemerisFile"](byref(arg_newVal.COM_val)))
+            return arg_newVal.python_val
+
+    @EphemerisFile.setter
+    def EphemerisFile(self, newVal:str) -> None:
+        """Set the ephemeris filename."""
+        with agmarshall.BSTR_arg(newVal) as arg_newVal:
+            agcls.evaluate_hresult(self.__dict__["_SetEphemerisFile"](arg_newVal.COM_val))
+
+    @property
+    def EphemerisFileDuration(self) -> float:
+        """Get the ephemeris file duration."""
+        with agmarshall.DOUBLE_arg() as arg_dDuration:
+            agcls.evaluate_hresult(self.__dict__["_GetEphemerisFileDuration"](byref(arg_dDuration.COM_val)))
+            return arg_dDuration.python_val
+
+    @property
+    def UseStartDuration(self) -> bool:
+        """Get whether to use Start and Duration"""
+        with agmarshall.VARIANT_BOOL_arg() as arg_useSD:
+            agcls.evaluate_hresult(self.__dict__["_GetUseStartDuration"](byref(arg_useSD.COM_val)))
+            return arg_useSD.python_val
+
+    @UseStartDuration.setter
+    def UseStartDuration(self, useSD:bool) -> None:
+        """Set whether to use Start and Duration"""
+        with agmarshall.VARIANT_BOOL_arg(useSD) as arg_useSD:
+            agcls.evaluate_hresult(self.__dict__["_SetUseStartDuration"](arg_useSD.COM_val))
+
+    @property
+    def StartTime(self) -> float:
+        """Get the start time"""
+        with agmarshall.DOUBLE_arg() as arg_start:
+            agcls.evaluate_hresult(self.__dict__["_GetStartTime"](byref(arg_start.COM_val)))
+            return arg_start.python_val
+
+    @StartTime.setter
+    def StartTime(self, start:float) -> None:
+        """Set the start time"""
+        with agmarshall.DOUBLE_arg(start) as arg_start:
+            agcls.evaluate_hresult(self.__dict__["_SetStartTime"](arg_start.COM_val))
+
+    @property
+    def Duration(self) -> float:
+        """Get the duration"""
+        with agmarshall.DOUBLE_arg() as arg_start:
+            agcls.evaluate_hresult(self.__dict__["_GetDuration"](byref(arg_start.COM_val)))
+            return arg_start.python_val
+
+    @Duration.setter
+    def Duration(self, start:float) -> None:
+        """Set the duration"""
+        with agmarshall.DOUBLE_arg(start) as arg_start:
+            agcls.evaluate_hresult(self.__dict__["_SetDuration"](arg_start.COM_val))
+
+    @property
+    def FlightMode(self) -> "AgEAvtrExtEphemFlightMode":
+        """Get the flight mode"""
+        with agmarshall.AgEnum_arg(AgEAvtrExtEphemFlightMode) as arg_mode:
+            agcls.evaluate_hresult(self.__dict__["_GetFlightMode"](byref(arg_mode.COM_val)))
+            return arg_mode.python_val
+
+    @FlightMode.setter
+    def FlightMode(self, mode:"AgEAvtrExtEphemFlightMode") -> None:
+        """Set the flight mode"""
+        with agmarshall.AgEnum_arg(AgEAvtrExtEphemFlightMode, mode) as arg_mode:
+            agcls.evaluate_hresult(self.__dict__["_SetFlightMode"](arg_mode.COM_val))
+
+    def GetAsProcedure(self) -> "IProcedure":
+        """Get the procedure interface."""
+        with agmarshall.AgInterface_out_arg() as arg_ppProcedure:
+            agcls.evaluate_hresult(self.__dict__["_GetAsProcedure"](byref(arg_ppProcedure.COM_val)))
+            return arg_ppProcedure.python_val
+
+
+agcls.AgClassCatalog.add_catalog_entry("{7A4CFB91-336F-4150-AD2C-C861410FB496}", IProcedureExtEphem)
+agcls.AgTypeNameMap["IProcedureExtEphem"] = IProcedureExtEphem
+
+class IProcedureFormationFlyer(object):
+    """Interface used to access the options for an enroute procedure."""
+    _uuid = "{A8EF3889-1443-405A-AFC6-5072D53F9AC4}"
+    _num_methods = 17
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    def __init__(self, sourceObject=None):
+        self.__dict__["_pUnk"] = None
+        self.__dict__["_GetMinTimeStep"] = _raise_uninitialized_error
+        self.__dict__["_SetMinTimeStep"] = _raise_uninitialized_error
+        self.__dict__["_GetMaxTimeStep"] = _raise_uninitialized_error
+        self.__dict__["_SetMaxTimeStep"] = _raise_uninitialized_error
+        self.__dict__["_GetCrossRangeCloseRate"] = _raise_uninitialized_error
+        self.__dict__["_SetCrossRangeCloseRate"] = _raise_uninitialized_error
+        self.__dict__["_GetInitialCloseMaxSpeedAdvantage"] = _raise_uninitialized_error
+        self.__dict__["_SetInitialCloseMaxSpeedAdvantage"] = _raise_uninitialized_error
+        self.__dict__["_GetStopCondition"] = _raise_uninitialized_error
+        self.__dict__["_SetStopCondition"] = _raise_uninitialized_error
+        self.__dict__["_GetStopTime"] = _raise_uninitialized_error
+        self.__dict__["_SetStopTime"] = _raise_uninitialized_error
+        self.__dict__["_GetStopDownRange"] = _raise_uninitialized_error
+        self.__dict__["_SetStopDownRange"] = _raise_uninitialized_error
+        self.__dict__["_GetStopFuelState"] = _raise_uninitialized_error
+        self.__dict__["_SetStopFuelState"] = _raise_uninitialized_error
+        self.__dict__["_GetAsProcedure"] = _raise_uninitialized_error
+        if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
+            pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IProcedureFormationFlyer._uuid))
+            if pUnk is not None:
+                self._private_init(pUnk)
+                del(pUnk)
+            else:
+                raise STKInvalidCastError("Failed to create IProcedureFormationFlyer from source object.")
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IID_IProcedureFormationFlyer = agcom.GUID(IProcedureFormationFlyer._uuid)
+        vtable_offset_local = IProcedureFormationFlyer._vtable_offset - 1
+        self.__dict__["_GetMinTimeStep"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetMinTimeStep"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_GetMaxTimeStep"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetMaxTimeStep"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_GetCrossRangeCloseRate"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetCrossRangeCloseRate"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_GetInitialCloseMaxSpeedAdvantage"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetInitialCloseMaxSpeedAdvantage"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_GetStopCondition"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+9, POINTER(agcom.LONG))
+        self.__dict__["_SetStopCondition"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+10, agcom.LONG)
+        self.__dict__["_GetStopTime"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+11, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetStopTime"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+12, agcom.DOUBLE)
+        self.__dict__["_GetStopDownRange"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+13, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetStopDownRange"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+14, agcom.DOUBLE)
+        self.__dict__["_GetStopFuelState"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+15, POINTER(agcom.DOUBLE))
+        self.__dict__["_SetStopFuelState"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+16, agcom.DOUBLE)
+        self.__dict__["_GetAsProcedure"] = IAGFUNCTYPE(pUnk, IID_IProcedureFormationFlyer, vtable_offset_local+17, POINTER(agcom.PVOID))
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        if attrname in IProcedureFormationFlyer.__dict__ and type(IProcedureFormationFlyer.__dict__[attrname]) == property:
+            return IProcedureFormationFlyer.__dict__[attrname]
+        return None
+    def __setattr__(self, attrname, value):
+        if self._get_property(attrname) is not None:
+            self._get_property(attrname).__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureFormationFlyer.")
+    
+    @property
+    def MinTimeStep(self) -> float:
+        """Get Min time Step"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetMinTimeStep"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @MinTimeStep.setter
+    def MinTimeStep(self, pVal:float) -> None:
+        """Set Min time Step"""
+        with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_SetMinTimeStep"](arg_pVal.COM_val))
+
+    @property
+    def MaxTimeStep(self) -> float:
+        """Get Max time Step"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetMaxTimeStep"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @MaxTimeStep.setter
+    def MaxTimeStep(self, pVal:float) -> None:
+        """Set Max time Step"""
+        with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_SetMaxTimeStep"](arg_pVal.COM_val))
+
+    @property
+    def CrossRangeCloseRate(self) -> float:
+        """Get Cross Range close rate"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetCrossRangeCloseRate"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @CrossRangeCloseRate.setter
+    def CrossRangeCloseRate(self, pVal:float) -> None:
+        """Set Cross Range close rate"""
+        with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_SetCrossRangeCloseRate"](arg_pVal.COM_val))
+
+    @property
+    def InitialCloseMaxSpeedAdvantage(self) -> float:
+        """Get Initial Close Max Speed Advantage"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetInitialCloseMaxSpeedAdvantage"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @InitialCloseMaxSpeedAdvantage.setter
+    def InitialCloseMaxSpeedAdvantage(self, pVal:float) -> None:
+        """Set Initial Close Max Speed Advantage"""
+        with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_SetInitialCloseMaxSpeedAdvantage"](arg_pVal.COM_val))
+
+    @property
+    def StopCondition(self) -> "AgEAvtrFormationFlyerStopCondition":
+        """Get Stop condition"""
+        with agmarshall.AgEnum_arg(AgEAvtrFormationFlyerStopCondition) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetStopCondition"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @StopCondition.setter
+    def StopCondition(self, pVal:"AgEAvtrFormationFlyerStopCondition") -> None:
+        """Set Stop condition"""
+        with agmarshall.AgEnum_arg(AgEAvtrFormationFlyerStopCondition, pVal) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_SetStopCondition"](arg_pVal.COM_val))
+
+    @property
+    def StopTime(self) -> float:
+        """Get stop time"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetStopTime"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @StopTime.setter
+    def StopTime(self, pVal:float) -> None:
+        """Set stop time"""
+        with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_SetStopTime"](arg_pVal.COM_val))
+
+    @property
+    def StopDownRange(self) -> float:
+        """Get stop downrange"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetStopDownRange"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @StopDownRange.setter
+    def StopDownRange(self, pVal:float) -> None:
+        """Set stop downrange"""
+        with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_SetStopDownRange"](arg_pVal.COM_val))
+
+    @property
+    def StopFuelState(self) -> float:
+        """Get stop fuel state"""
+        with agmarshall.DOUBLE_arg() as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_GetStopFuelState"](byref(arg_pVal.COM_val)))
+            return arg_pVal.python_val
+
+    @StopFuelState.setter
+    def StopFuelState(self, pVal:float) -> None:
+        """Set stop fuel state"""
+        with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
+            agcls.evaluate_hresult(self.__dict__["_SetStopFuelState"](arg_pVal.COM_val))
+
+    def GetAsProcedure(self) -> "IProcedure":
+        """Get the procedure interface."""
+        with agmarshall.AgInterface_out_arg() as arg_ppProcedure:
+            agcls.evaluate_hresult(self.__dict__["_GetAsProcedure"](byref(arg_ppProcedure.COM_val)))
+            return arg_ppProcedure.python_val
+
+
+agcls.AgClassCatalog.add_catalog_entry("{A8EF3889-1443-405A-AFC6-5072D53F9AC4}", IProcedureFormationFlyer)
+agcls.AgTypeNameMap["IProcedureFormationFlyer"] = IProcedureFormationFlyer
 
 class IProcedureBasicPointToPoint(object):
     """Interface used to access the options for a basic point to point procedure."""
@@ -35847,6 +36334,54 @@ class ProcedureEnroute(IProcedureEnroute, IProcedure):
 agcls.AgClassCatalog.add_catalog_entry("{f073011a-bfc1-4c9a-bd43-1a99bed41390}", ProcedureEnroute)
 
 
+class ProcedureExtEphem(IProcedureExtEphem, IProcedure):
+    """Class defining an ExtEphem procedure."""
+    def __init__(self, sourceObject=None):
+        IProcedureExtEphem.__init__(self, sourceObject)
+        IProcedure.__init__(self, sourceObject)
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IProcedureExtEphem._private_init(self, pUnk)
+        IProcedure._private_init(self, pUnk)
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        found_prop = None
+        if IProcedureExtEphem._get_property(self, attrname) is not None: found_prop = IProcedureExtEphem._get_property(self, attrname)
+        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
+        if found_prop is not None:
+            found_prop.__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureExtEphem.")
+        
+agcls.AgClassCatalog.add_catalog_entry("{0F39A3ED-4A9E-4893-A061-F73A75ACF910}", ProcedureExtEphem)
+
+
+class ProcedureFormationFlyer(IProcedureFormationFlyer, IProcedure):
+    """Class defining an formationflyer procedure."""
+    def __init__(self, sourceObject=None):
+        IProcedureFormationFlyer.__init__(self, sourceObject)
+        IProcedure.__init__(self, sourceObject)
+    def _private_init(self, pUnk:IUnknown):
+        self.__dict__["_pUnk"] = pUnk
+        IProcedureFormationFlyer._private_init(self, pUnk)
+        IProcedure._private_init(self, pUnk)
+    def __eq__(self, other):
+        """Checks equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        found_prop = None
+        if IProcedureFormationFlyer._get_property(self, attrname) is not None: found_prop = IProcedureFormationFlyer._get_property(self, attrname)
+        if IProcedure._get_property(self, attrname) is not None: found_prop = IProcedure._get_property(self, attrname)
+        if found_prop is not None:
+            found_prop.__set__(self, value)
+        else:
+            raise STKAttributeError(attrname + " is not a recognized attribute in ProcedureFormationFlyer.")
+        
+agcls.AgClassCatalog.add_catalog_entry("{678807EC-D03C-4E14-A068-3C0D14923D72}", ProcedureFormationFlyer)
+
+
 class ProcedureBasicPointToPoint(IProcedureBasicPointToPoint, IProcedure):
     """Class defining a basic point to point procedure."""
     def __init__(self, sourceObject=None):
@@ -39730,7 +40265,7 @@ agcls.AgClassCatalog.add_catalog_entry("{cf86965f-eacf-47ca-a6b8-5c69a1f9612f}",
 
 
 class AdvFixedWingTurbofanBasicABPowerplant(IAdvFixedWingTurbofanBasicABPowerplant):
-    """This class is deprecated. Use AgAvtrAdvFixedWingTurbofanBasicABProp instead."""
+    """This class is deprecated. Use AdvFixedWingTurbofanBasicABProp instead."""
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbofanBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
@@ -39751,7 +40286,7 @@ agcls.AgClassCatalog.add_catalog_entry("{27a6cd0b-bd9b-4af7-9367-9d2ce3fa39cd}",
 
 
 class AdvFixedWingTurbojetBasicABPowerplant(IAdvFixedWingTurbojetBasicABPowerplant):
-    """This class is deprecated. Use AgAvtrAdvFixedWingTurbojetBasicABProp instead."""
+    """This class is deprecated. Use AdvFixedWingTurbojetBasicABProp instead."""
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbojetBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):

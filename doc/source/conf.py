@@ -1,6 +1,7 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
 import os
+import pathlib
 
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -22,6 +23,7 @@ html_logo = pyansys_logo_black
 html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
+html_sidebars = {"**": ["globaltoc.html"]}
 html_context = {
     "github_user": "pyansys",
     "github_repo": "pystk",
@@ -41,6 +43,10 @@ html_theme_options = {
     },
     "check_switcher": False,
 }
+html_static_path = ["_static"]
+html_css_files = [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+]
 
 # Sphinx extensions
 extensions = [
@@ -49,6 +55,8 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
+    "sphinx_design",
+    "sphinx_jinja",
     "numpydoc",
 ]
 
@@ -82,14 +90,12 @@ numpydoc_validation_checks = (
 #    # type, unless multiple values are being returned"
 # }
 
-# Path to static files
-html_static_path = ["_static"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_patterns = ["api/generated/*.rst"]
+exclude_patterns = ["api/generated", "links.rst"]
 
 # The suffix(es) of source filenames.
 source_suffix = ".rst"
@@ -97,7 +103,57 @@ source_suffix = ".rst"
 # The master toctree document.
 master_doc = "index"
 
-# autodoc configuration
+# Common content for every RST file such us links
+rst_epilog = ""
+links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
+with open(links_filepath) as links_file:
+    rst_epilog += links_file.read()
+
+
+# Read available Docker images for Windows and Linux
+DOCKER_DIR = pathlib.Path(__file__).parent.parent.parent.absolute() / "docker"
+WINDOWS_IMAGES, LINUX_IMAGES = [
+    DOCKER_DIR / path for path in ["windows", "linux"]
+]
+
+
+def get_images_directories_from_path(path):
+    """Get all the Docker images present in the retrieved Path."""
+    images = [
+        folder.name
+        for folder in path.glob("**/*")
+        if folder.name != path.name and (folder / "Dockerfile").exists()
+    ] or ["No images available."]
+    images.sort()
+    return images
+
+
+# -- Declare the Jinja context -----------------------------------------------
+BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
+if not BUILD_API:
+    exclude_patterns.append("api")
+
+BUILD_EXAMPLES = (
+    True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
+)
+if not BUILD_EXAMPLES:
+    exclude_patterns.append("examples.rst")
+
+jinja_contexts = {
+    "docker_images": {
+        "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
+        "linux_images": get_images_directories_from_path(LINUX_IMAGES),
+    },
+    "install_guide": {
+        "version": version if not version.endswith("dev0") else "main",
+    },
+    "main_toctree": {
+        "build_api": BUILD_API,
+        "build_examples": BUILD_EXAMPLES,
+    },
+}
+
+# -- autodoc configuration ---------------------------------------------------
 autodoc_default_options = {
     #'members': 'var1, var2',
     "member-order": "alphabetical",

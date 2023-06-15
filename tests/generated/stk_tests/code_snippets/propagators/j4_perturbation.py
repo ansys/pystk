@@ -9,8 +9,8 @@ class J4Perturbation(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(J4Perturbation, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -52,7 +52,7 @@ class J4Perturbation(CodeSnippetsTestBase):
         self.ConfigureJ4PerturbationPropagatorOrbitToCircular(J4Perturbation.m_Object, 45.0, 500.0)
 
     # This code snippet is taken from SatelliteOrbitWizard.cs in the test suite
-    def ConfigureJ4PerturbationPropagatorOrbitToCircular(self, satellite, incl, altitude):
+    def ConfigureJ4PerturbationPropagatorOrbitToCircular(self, satellite: "ISatellite", incl: float, altitude: float):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ4Perturbation)
         prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ4Perturbation)
 
@@ -84,7 +84,9 @@ class J4Perturbation(CodeSnippetsTestBase):
         self.ConfigureJ4PerturbationPropagatorOrbitToCritcallyInclined(J4Perturbation.m_Object, 12000.0, 400.0, -100.0)
 
     # This code snippet is taken from SatelliteOrbitWizard.cs in the test suite
-    def ConfigureJ4PerturbationPropagatorOrbitToCritcallyInclined(self, satellite, apogeeAlt, perigeeAlt, ascNodeLon):
+    def ConfigureJ4PerturbationPropagatorOrbitToCritcallyInclined(
+        self, satellite: "ISatellite", apogeeAlt: float, perigeeAlt: float, ascNodeLon: float
+    ):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ4Perturbation)
         prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ4Perturbation)
 

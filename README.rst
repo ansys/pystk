@@ -1,8 +1,17 @@
-PySTK
-=====
-|pyansys| |python| |pypi| |GH-CI| |codecov| |MIT| |black|
+PySTK: a Python API for `Systems Tool Kit`_
+###########################################
 
-.. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
+|
+
+.. image:: https://github.com/ansys-internal/pystk/blob/main/doc/source/_static/logo.png
+   :target: https://github.com/ansys-internal/pystk/
+   :alt: PySTK
+
+|
+
+|pyansys| |python| |pypi| |GH-CI| |codecov| |MIT| |Twitter| |YouTube| |LinkedIn| |black|
+
+.. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?labelColor=black&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
    :target: https://docs.pyansys.com/
    :alt: PyAnsys
 
@@ -22,163 +31,126 @@ PySTK
    :target: https://github.com/pyansys/pystk-core/actions/workflows/ci_cd.yml
    :alt: GH-CI
 
-.. |MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
+.. |MIT| image:: https://img.shields.io/badge/License-MIT-blue.svg
    :target: https://opensource.org/licenses/MIT
    :alt: MIT
+
+.. |Twitter| image:: https://img.shields.io/badge/Twitter-blue.svg?logo=twitter&logoColor=white
+   :target: https://twitter.com/agitweets
+   :alt: Twitter
+
+.. |LinkedIn| image:: https://img.shields.io/badge/LinkedIn-blue.svg?logo=linkedin&logoColor=white
+   :target: https://www.linkedin.com/company/agi?trk=company_logo
+   :alt: LinkedIn
+
+.. |YouTube| image:: https://img.shields.io/badge/YouTube-red.svg?logo=youtube&logoColor=white
+   :target: https://www.youtube.com/user/AnalyticalGraphics
+   :alt: YouTube
 
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg?style=flat
    :target: https://github.com/psf/black
    :alt: Black
 
 
-A Python API for `Ansys Systems Tool Kit (STK)`_.
+About
+=====
 
+PySTK is a Python library that provides a powerful and user-friendly API for
+STK. It is designed to enhance the interaction with STK by offering a
+comprehensive set of tools and functionalities.
 
-How to install
---------------
-Two installation modes are provided: user and developer.
+With PySTK library, developers can easily integrate STK into their Python
+applications. It provides a streamlined and efficient way to automate scenarios,
+create custom applications and integrate with other popular Python libraries.
 
-For users
-^^^^^^^^^
-In order to install PySTK, make sure you have the latest version of `pip`_.
-To do so, run:
+Installation
+============
 
-.. code:: bash
+Installing PySTK is as easy as running:
 
-    python -m pip install -U pip
+.. code-block::
 
-Then, you can simply execute:
+    pip install ansys-stk-core
 
-.. code:: bash
-
-    python -m pip install ansys-stk-core
-
-For developers
-^^^^^^^^^^^^^^
-Installing PySTK in developer mode allows you to modify the source and
-enhance it.
-
-Before contributing to the project, please refer to the `PyAnsys Developer's
-guide`_. You will need to follow these steps:
-
-#. Start by cloning this repository:
-
-   .. code:: bash
-
-      git clone https://github.com/pyansys/pystk-core
-
-#. Create a fresh-clean Python environment and activate it:
-
-   .. code:: bash
-
-      # Create a virtual environment
-      python -m venv .venv
-
-      # Activate it in a POSIX system
-      source .venv/bin/activate
-
-      # Activate it in Windows CMD environment
-      .venv\Scripts\activate.bat
-
-      # Activate it in Windows Powershell
-      .venv\Scripts\Activate.ps1
-
-#. Make sure you have the latest required build system and doc, testing, and CI
-   tools:
-
-   .. code:: bash
-
-      python -m pip install -U pip flit tox
-      python -m pip install -r requirements/requirements_build.txt
-      python -m pip install -r requirements/requirements_doc.txt
-      python -m pip install -r requirements/requirements_tests.txt
-
-
-#. Install the project in editable mode:
-
-    .. code:: bash
-    
-      python -m pip install --editable ansys-stk-core
-    
-#. Finally, verify your development installation by running:
-
-   .. code:: bash
-        
-      tox
-
-
-How to testing
---------------
-This project takes advantage of `tox`_. This tool allows to automate common
-development tasks (similar to Makefile) but it is oriented towards Python
-development. 
-
-Using tox
-^^^^^^^^^
-As Makefile has rules, `tox`_ has environments. In fact, the tool creates its
-own virtual environment so anything being tested is isolated from the project in
-order to guarantee project's integrity. The following environments commands are provided:
-
-- **tox -e style**: will check for coding style quality.
-- **tox -e py**: checks for unit tests.
-- **tox -e py-coverage**: checks for unit testing and code coverage.
-- **tox -e doc**: checs for documentation building process.
-
-
-Raw testing
-^^^^^^^^^^^
-If required, you can always call the style commands (`black`_, `isort`_,
-`flake8`_...) or unit testing ones (`pytest`_) from the command line. However,
-this does not guarantee that your project is being tested in an isolated
-environment, which is the reason why tools like `tox`_ exist.
-
-
-A note on pre-commit
-^^^^^^^^^^^^^^^^^^^^
-The style checks take advantage of `pre-commit`_. Developers are not forced but
-encouraged to install this tool via:
-
-.. code:: bash
-
-    python -m pip install pre-commit && pre-commit install
+For other installation methods, please refer to the `official installation
+guidelines`_.
 
 
 Documentation
--------------
-For building documentation, you can either run the usual rules provided in the
-`Sphinx`_ Makefile, such us:
+=============
 
-.. code:: bash
+The `official documentation`_ of PySTK contains the following chapters:
 
-    make -C doc/ html && your_browser_name doc/html/index.html
+- `Getting started`_. This section provides a brief overview and instructions on
+  how to get started with the project. It typically includes information on how
+  to install the project, set up any necessary dependencies, and run a basic
+  example or test to ensure everything is functioning correctly.
 
-However, the recommended way of checking documentation integrity is using:
+- `User guide`_. The user guide section offers detailed documentation and
+  instructions on how to use the project. It provides comprehensive explanations
+  of the project's features, functionalities, and configuration options. The
+  user guide aims to help users understand the project's concepts, best
+  practices, and recommended workflows.
 
-.. code:: bash
+- `API reference`_. The API reference section provides detailed documentation
+  for the project's application programming interface (API). It includes
+  information about classes, functions, methods, and their parameters, return
+  values, and usage examples. This reference helps developers understand the
+  available API endpoints, their functionalities, and how to interact with them
+  programmatically.
 
-    tox -e doc && your_browser_name .tox/doc_out/index.html
-
-
-Distributing
-------------
-If you would like to create either source or wheel files, start by installing
-the building requirements and then executing the build module:
-
-.. code:: bash
-
-    python -m pip install -r requirements/requirements_build.txt
-    python -m build
-    python -m twine check dist/*
+- `Examples`_. The examples section showcases practical code examples that
+  demonstrate how to use the project in real-world scenarios. It provides sample
+  code snippets or complete scripts that illustrate different use cases or
+  demonstrate specific features of the project. Examples serve as practical
+  references for developers, helping them understand how to apply the project to
+  their own applications.
 
 
-.. LINKS AND REFERENCES
-.. _Ansys Systems Tool Kit (STK): https://www.ansys.com/products/missions/ansys-stk
-.. _black: https://github.com/psf/black
-.. _flake8: https://flake8.pycqa.org/en/latest/
-.. _isort: https://github.com/PyCQA/isort
-.. _pip: https://pypi.org/project/pip/
-.. _pre-commit: https://pre-commit.com/
-.. _PyAnsys Developer's guide: https://dev.docs.pyansys.com/
-.. _pytest: https://docs.pytest.org/en/stable/
-.. _Sphinx: https://www.sphinx-doc.org/en/master/
-.. _tox: https://tox.wiki/
+Troubleshooting
+===============
+
+For troubleshooting or reporting issues, please open an issue in the project
+repository.
+
+Please follow these steps to report an issue:
+
+- Go to the project repository.
+- Click on the ``Issues`` tab.
+- Click on the ``New Issue`` button.
+- Provide a clear and detailed description of the issue you are facing.
+- Include any relevant error messages, code snippets, or screenshots.
+
+Additionally, you can refer to the `project documentation`_ for additional
+resources and troubleshooting guides.
+
+License
+=======
+
+You can find the full text of the license in the `LICENSE` file.
+
+Changelog
+=========
+
+The changelog section provides a summary of notable changes for each version of
+PySTK. It helps you keep track of updates, bug fixes, new features, and
+improvements made to the project over time.
+
+To view the complete changelog, please visit the project repository and navigate
+to the `CHANGELOG`_ file. It provides a comprehensive list of changes
+categorized by version, along with brief descriptions of each change.
+
+
+.. Links and references
+
+.. _Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
+
+.. _official documentation: https://stk.docs.pyansys.com
+.. _project documentation: https://stk.docs.pyansys.com
+.. _official installation guidelines: https://stk.docs.pyansys.com/getting_started/installing_pystk.html
+.. _getting started: https://stk.docs.pyansys.com/getting_started/index.html
+.. _user guide: https://stk.docs.pyansys.com/user_guide/index.html
+.. _api reference: https://stk.docs.pyansys.com/api/index.html
+.. _examples: https://stk.docs.pyansys.com/examples/index.html
+
+.. _ CHANGELOG: https://github.com/ansys-internal/pystk/blob/main/CHANGELOG.md

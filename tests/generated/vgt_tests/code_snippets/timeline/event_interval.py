@@ -180,7 +180,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateSignaledEventInterval(self):
         self.CreateSignaledEventInterval(clr.Convert(TestBase.Application, IStkObjectRoot))
 
-    def CreateSignaledEventInterval(self, stkRoot):
+    def CreateSignaledEventInterval(self, stkRoot: "IStkObjectRoot"):
         satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
         aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 

@@ -8,8 +8,8 @@ class Mto(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Mto, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "mto1"
+    m_Object: "IMto" = None
+    m_DefaultName: str = "mto1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -47,7 +47,7 @@ class Mto(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("Distance", "m")
         self.ConfigureMtos(CodeSnippetsTestBase.m_Root, Mto.m_Object)
 
-    def ConfigureMtos(self, root, mto):
+    def ConfigureMtos(self, root: "IStkObjectRoot", mto: "IMto"):
         scenario = clr.CastAs(root.CurrentScenario, IScenario)
         scenario.SetTimePeriod("1 Feb 2008 12:00:00.000", "2 Feb 2008 12:00:00.000")
 
@@ -93,7 +93,7 @@ class Mto(CodeSnippetsTestBase):
         self.ConfigureMtoGraphics(Mto.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "Satellite1")
 
-    def ConfigureMtoGraphics(self, mto):
+    def ConfigureMtoGraphics(self, mto: "IMto"):
         tracks = mto.VO.Tracks
         for element in tracks:
             element.Marker.PixelSize = 12
@@ -127,7 +127,7 @@ class Mto(CodeSnippetsTestBase):
         self.ConfigureMtoTrackModel(Mto.m_Object.VO.Tracks[0])
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "Satellite1")
 
-    def ConfigureMtoTrackModel(self, track):
+    def ConfigureMtoTrackModel(self, track: "IMtoVOTrack"):
         model = track.Model
         model.IsVisible = True
         model.Filename = r"STKData\VO\Models\Land\ariane-lp.mdl"
@@ -145,7 +145,7 @@ class Mto(CodeSnippetsTestBase):
         self.ConfigureMtoTrackMarker(Mto.m_Object.VO.Tracks[0])
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "Satellite1")
 
-    def ConfigureMtoTrackMarker(self, track):
+    def ConfigureMtoTrackMarker(self, track: "IMtoVOTrack"):
         marker = track.Marker
         marker.PixelSize = 12
         marker.OrientationMode = AgEVOMarkerOrientation.eVOMarkerOrientationAngle
@@ -163,7 +163,7 @@ class Mto(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eMTO, Mto.m_DefaultName)
         self.CreateMtoOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateMtoOnCurrentScenarioCentralBody(self, root):
+    def CreateMtoOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the MTO
         mto = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eMTO, "mto1"), IMto)
 
@@ -187,7 +187,7 @@ class Mto(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "J2Satellite")
 
-    def DetermineWhichTracksAreVisibleFromOtherStkObjectAtSpecifiedTime(self, mto):
+    def DetermineWhichTracksAreVisibleFromOtherStkObjectAtSpecifiedTime(self, mto: "IMto"):
         mtoVisibility = mto.Analysis.Visibility
         mtoVisibility.UseTerrain = False  # Set to true to use terrain instead of line of sight.
         mtoVisibility.Entirety = (
@@ -236,7 +236,9 @@ class Mto(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "J2Satellite")
 
-    def DetermineWhichTracksOfSpecifiedSubsetOfTracksAreVisibleFromOtherStkObject(self, root, mto):
+    def DetermineWhichTracksOfSpecifiedSubsetOfTracksAreVisibleFromOtherStkObject(
+        self, root: "IStkObjectRoot", mto: "IMto"
+    ):
         mtoVisibility = mto.Analysis.Visibility
         mtoVisibility.UseTerrain = False  # Set to true to use terrain instead of line of sight.
         mtoVisibility.Entirety = (
@@ -285,7 +287,7 @@ class Mto(CodeSnippetsTestBase):
         self.DetermineIfAllTracksAreVisibleFromOtherStkObject(CodeSnippetsTestBase.m_Root, Mto.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "J2Satellite")
 
-    def DetermineIfAllTracksAreVisibleFromOtherStkObject(self, root, mto):
+    def DetermineIfAllTracksAreVisibleFromOtherStkObject(self, root: "IStkObjectRoot", mto: "IMto"):
         mtoVisibility = mto.Analysis.Visibility
         mtoVisibility.UseTerrain = False  # Set to true to use terrain instead of line of sight.
         mtoVisibility.Entirety = (
@@ -320,7 +322,7 @@ class Mto(CodeSnippetsTestBase):
         self.DetermineIfAnyTrackIsVisibleFromOtherStkObject(CodeSnippetsTestBase.m_Root, Mto.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "J2Satellite")
 
-    def DetermineIfAnyTrackIsVisibleFromOtherStkObject(self, root, mto):
+    def DetermineIfAnyTrackIsVisibleFromOtherStkObject(self, root: "IStkObjectRoot", mto: "IMto"):
         mtoVisibility = mto.Analysis.Visibility
         mtoVisibility.UseTerrain = False  # Set to true to use terrain instead of line of sight.
         mtoVisibility.Entirety = (
@@ -349,7 +351,7 @@ class Mto(CodeSnippetsTestBase):
         self.DetermineIfAllTracksAreVisible(CodeSnippetsTestBase.m_Root, Mto.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "J2Satellite")
 
-    def DetermineIfAllTracksAreVisible(self, root, mto):
+    def DetermineIfAllTracksAreVisible(self, root: "IStkObjectRoot", mto: "IMto"):
         # Are all the tracks visible from the other STK Object at the specified time?
 
         mtoVisibility = mto.Analysis.Visibility
@@ -368,7 +370,7 @@ class Mto(CodeSnippetsTestBase):
         Mto.m_Object.Tracks.Add(1)
         self.ExtendMtoTrack(Mto.m_Object.Tracks[0].Points)
 
-    def ExtendMtoTrack(self, trackPointCollection):
+    def ExtendMtoTrack(self, trackPointCollection: "IMtoTrackPointCollection"):
         time = ["1 Jan 2012 12:20:00.000", "1 Jan 2012 12:30:00.000"]
         latitude = [-18.35, 19.55]
         longitude = [-42.1, 83.21]
@@ -384,7 +386,7 @@ class Mto(CodeSnippetsTestBase):
     def test_AddMtoTrack(self):
         self.AddMtoTrack(Mto.m_Object)
 
-    def AddMtoTrack(self, mto):
+    def AddMtoTrack(self, mto: "IMto"):
         trackCollection = mto.Tracks
 
         time = ["1 Jan 2012 12:10:00.000", "1 Jan 2012 12:20:00.000"]
@@ -403,7 +405,7 @@ class Mto(CodeSnippetsTestBase):
         Mto.m_Object.Tracks.Add(0)
         self.LoadMtoTrackPointsFromFile(Mto.m_Object.Tracks[0], TestBase.GetScenarioFile("TestEph.e"))
 
-    def LoadMtoTrackPointsFromFile(self, track, filePath):
+    def LoadMtoTrackPointsFromFile(self, track: "IMtoTrack", filePath: str):
         # LoadPoints expects the path an Ephemeris file path
         track.Points.LoadPoints(filePath)
 
@@ -415,7 +417,7 @@ class Mto(CodeSnippetsTestBase):
         Mto.m_Object.Tracks.Add(4)
         self.RemoveMtoTrackByIds(Mto.m_Object)
 
-    def RemoveMtoTrackByIds(self, mto):
+    def RemoveMtoTrackByIds(self, mto: "IMto"):
         trackCollection = mto.Tracks
 
         # RemoveTracksById expects a one dimensional array of mto track ids
@@ -432,7 +434,7 @@ class Mto(CodeSnippetsTestBase):
         Mto.m_Object.Tracks.Add(3)
         self.RemoveMtoTrack(Mto.m_Object)
 
-    def RemoveMtoTrack(self, mto):
+    def RemoveMtoTrack(self, mto: "IMto"):
         trackCollection = mto.Tracks
 
         # Build tracksToRemove Array
@@ -461,7 +463,7 @@ class Mto(CodeSnippetsTestBase):
         self.ComputeMtoRange(Mto.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "J2Satellite")
 
-    def ComputeMtoRange(self, mto):
+    def ComputeMtoRange(self, mto: "IMto"):
         range = mto.Analysis.Range
         range.StkObjectPath = "Satellite/J2Satellite"
 
@@ -500,7 +502,7 @@ class Mto(CodeSnippetsTestBase):
         self.ComputeMtoFieldOfView(Mto.m_Object)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "J2Satellite")
 
-    def ComputeMtoFieldOfView(self, mto):
+    def ComputeMtoFieldOfView(self, mto: "IMto"):
         fov = mto.Analysis.FieldOfView
         fov.Sensor = "Satellite/J2Satellite/Sensor/Sensor1"
 

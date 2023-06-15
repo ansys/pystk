@@ -288,7 +288,7 @@ Interfaces
     IStateCalcOutVelAzAtPeriapsis
     IStateCalcDuration
     IStateCalcUserValue
-    IStateCalcCrdnAngle
+    IStateCalcVectorGeometryToolAngle
     IStateCalcAngle
     IStateCalcDotProduct
     IStateCalcVectorDec
@@ -761,7 +761,7 @@ Classes
     StateCalcOutVelAzAtPeriapsis
     StateCalcDuration
     StateCalcUserValue
-    StateCalcCrdnAngle
+    StateCalcVectorGeometryToolAngle
     StateCalcAngle
     StateCalcDotProduct
     StateCalcVectorDec
@@ -1764,7 +1764,7 @@ Interfaces
 .. autoclass:: IStateCalcUserValue
     :members:
     :exclude-members: __init__
-.. autoclass:: IStateCalcCrdnAngle
+.. autoclass:: IStateCalcVectorGeometryToolAngle
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcAngle
@@ -3020,7 +3020,7 @@ Classes
 .. autoclass:: StateCalcUserValue
     :members:
     :exclude-members: __init__
-.. autoclass:: StateCalcCrdnAngle
+.. autoclass:: StateCalcVectorGeometryToolAngle
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcAngle

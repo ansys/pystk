@@ -38,7 +38,7 @@ class Units(CodeSnippetsTestBase):
     def test_GetCurrentUnitPreference(self):
         self.GetCurrentUnitPreference(CodeSnippetsTestBase.m_Root)
 
-    def GetCurrentUnitPreference(self, root):
+    def GetCurrentUnitPreference(self, root: "IStkObjectRoot"):
         # DistanceUnit
         dimensionName = "Distance"
         unitAbbreviation = root.UnitPreferences.GetCurrentUnitAbbrv(dimensionName)
@@ -52,7 +52,7 @@ class Units(CodeSnippetsTestBase):
         # reverse any changes we made to Unit Preferences
         CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
 
-    def SetCurrentUnitPreference(self, root):
+    def SetCurrentUnitPreference(self, root: "IStkObjectRoot"):
         # DistanceUnit
         root.UnitPreferences.SetCurrentUnit("Distance", "m")
 
@@ -62,7 +62,7 @@ class Units(CodeSnippetsTestBase):
     def test_ResetCurrentUnitPreferences(self):
         self.ResetCurrentUnitPreferences(CodeSnippetsTestBase.m_Root)
 
-    def ResetCurrentUnitPreferences(self, root):
+    def ResetCurrentUnitPreferences(self, root: "IStkObjectRoot"):
         # Reset Units
         root.UnitPreferences.ResetUnits()
 
@@ -72,7 +72,7 @@ class Units(CodeSnippetsTestBase):
     def test_ConvertSingleQuantityUnit(self):
         self.ConvertSingleQuantityUnit(CodeSnippetsTestBase.m_Root)
 
-    def ConvertSingleQuantityUnit(self, root):
+    def ConvertSingleQuantityUnit(self, root: "IStkObjectRoot"):
         converter = root.ConversionUtility
 
         # Old value in miles, new value in km
@@ -84,7 +84,7 @@ class Units(CodeSnippetsTestBase):
     def test_ConvertMultipleQuantityUnits(self):
         self.ConvertMultipleQuantityUnits(CodeSnippetsTestBase.m_Root)
 
-    def ConvertMultipleQuantityUnits(self, root):
+    def ConvertMultipleQuantityUnits(self, root: "IStkObjectRoot"):
         converter = root.ConversionUtility
 
         # ConvertQuantityArray expects a one dimensional array of values to be converted
@@ -101,7 +101,7 @@ class Units(CodeSnippetsTestBase):
     def test_ConvertSingleDateFormat(self):
         self.ConvertSingleDateFormat(CodeSnippetsTestBase.m_Root)
 
-    def ConvertSingleDateFormat(self, root):
+    def ConvertSingleDateFormat(self, root: "IStkObjectRoot"):
         converter = root.ConversionUtility
 
         # Individually
@@ -114,7 +114,7 @@ class Units(CodeSnippetsTestBase):
     def test_ConvertMulitpleDateFormats(self):
         self.ConvertMulitpleDateFormats(CodeSnippetsTestBase.m_Root)
 
-    def ConvertMulitpleDateFormats(self, root):
+    def ConvertMulitpleDateFormats(self, root: "IStkObjectRoot"):
         converter = root.ConversionUtility
 
         # In batches
@@ -138,7 +138,7 @@ class Units(CodeSnippetsTestBase):
     def test_CalculateDateSubtraction(self):
         self.CalculateDateSubtraction(CodeSnippetsTestBase.m_Root)
 
-    def CalculateDateSubtraction(self, root):
+    def CalculateDateSubtraction(self, root: "IStkObjectRoot"):
         # Create a date representing now
         nowDate = root.ConversionUtility.NewDate("DD/MM/YYYY", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff"))
 
@@ -160,7 +160,7 @@ class Units(CodeSnippetsTestBase):
     def test_CalculateDateAddition(self):
         self.CalculateDateAddition(CodeSnippetsTestBase.m_Root)
 
-    def CalculateDateAddition(self, root):
+    def CalculateDateAddition(self, root: "IStkObjectRoot"):
         # Create a date representing now
         nowDate = root.ConversionUtility.NewDate("DD/MM/YYYY", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff"))
 
@@ -182,7 +182,7 @@ class Units(CodeSnippetsTestBase):
     def test_CalculateQuantityAddition(self):
         self.CalculateQuantityAddition(CodeSnippetsTestBase.m_Root)
 
-    def CalculateQuantityAddition(self, root):
+    def CalculateQuantityAddition(self, root: "IStkObjectRoot"):
         # Create a quantity representing a 3.1 mile/ 5 km fun run race
         race3mi = root.ConversionUtility.NewQuantity("Distance", "mi", 3.1)
         race5km = root.ConversionUtility.NewQuantity("Distance", "km", 5)

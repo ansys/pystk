@@ -8,8 +8,8 @@ class Star(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(Star, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "star1"
+    m_Object: "IStar" = None
+    m_DefaultName: str = "star1"
 
     # region OneTimeSetUp
     @staticmethod
@@ -44,7 +44,7 @@ class Star(CodeSnippetsTestBase):
     def test_CreateStarOnCurrentScenarioCentralBody(self):
         self.CreateStarOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateStarOnCurrentScenarioCentralBody(self, root):
+    def CreateStarOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Star
         star = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "MyStar"), IStar)
 
@@ -59,7 +59,7 @@ class Star(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("TimeUnit", "min")
         CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("AngleUnit", "deg")
 
-    def DefineStarBasicProperties(self, star):
+    def DefineStarBasicProperties(self, star: "IStar"):
         # Units depend on current unit preferences
         star.LocationDeclination = -40.0
         star.LocationRightAscension = 120.0  # in arcSec
@@ -76,7 +76,7 @@ class Star(CodeSnippetsTestBase):
         Star.CreateStarFromStarDatabase(CodeSnippetsTestBase.m_Root)
 
     @staticmethod
-    def CreateStarFromStarDatabase(root):
+    def CreateStarFromStarDatabase(root: "IStkObjectRoot"):
         # Import object from database using Connect
         command = "ImportFromDB * Star ScenarioCollection VisualMagnitude 0 1.0 RightAsc 200.0 230.0 Constellation ImportedFromStarDB"
         root.ExecuteCommand(command)

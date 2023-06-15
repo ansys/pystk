@@ -9,8 +9,8 @@ class HPOP(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(HPOP, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -47,7 +47,7 @@ class HPOP(CodeSnippetsTestBase):
     def test_ConfigureSatelliteWithHPOPPropagator(self):
         self.ConfigureSatelliteWithHPOPPropagator(HPOP.m_Object)
 
-    def ConfigureSatelliteWithHPOPPropagator(self, satellite):
+    def ConfigureSatelliteWithHPOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to HPOP
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorHPOP)
 

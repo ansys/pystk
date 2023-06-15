@@ -10,7 +10,7 @@ class Scenario(CodeSnippetsTestBase):
         self.m_DefaultName = "scenario1"
         super(Scenario, self).__init__(*args, **kwargs)
 
-    m_Object = None
+    m_Object: "IScenario" = None
 
     # region OneTimeSetUp
     @staticmethod
@@ -48,7 +48,7 @@ class Scenario(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.CloseScenario()
         self.CreateANewScenario(CodeSnippetsTestBase.m_Root)
 
-    def CreateANewScenario(self, root):
+    def CreateANewScenario(self, root: "IStkObjectRoot"):
         if root.CurrentScenario != None:
             root.CloseScenario()
 
@@ -67,7 +67,7 @@ class Scenario(CodeSnippetsTestBase):
         if self.Target == TestTarget.eStkX:
             self.SaveAScenario(CodeSnippetsTestBase.m_Root)
 
-    def SaveAScenario(self, root):
+    def SaveAScenario(self, root: "IStkObjectRoot"):
         root.SaveScenario()
 
     # endregion
@@ -77,7 +77,7 @@ class Scenario(CodeSnippetsTestBase):
         fileName = Path.Combine(TestBase.TemporaryDirectory, "Scenario1.sc")
         self.SaveAScenarioToNewLocation(CodeSnippetsTestBase.m_Root, fileName)
 
-    def SaveAScenarioToNewLocation(self, root, fileName):
+    def SaveAScenarioToNewLocation(self, root: "IStkObjectRoot", fileName: str):
         root.SaveScenarioAs(fileName)
 
     # endregion
@@ -86,7 +86,7 @@ class Scenario(CodeSnippetsTestBase):
     def test_CloseAScenario(self):
         self.CloseAScenario(CodeSnippetsTestBase.m_Root)
 
-    def CloseAScenario(self, root):
+    def CloseAScenario(self, root: "IStkObjectRoot"):
         root.CloseScenario()
 
     # endregion
@@ -95,7 +95,7 @@ class Scenario(CodeSnippetsTestBase):
     def test_AddStkObjectToScenario(self):
         self.AddStkObjectToScenario(CodeSnippetsTestBase.m_Root)
 
-    def AddStkObjectToScenario(self, root):
+    def AddStkObjectToScenario(self, root: "IStkObjectRoot"):
         root.CurrentScenario.Children.New(AgESTKObjectType.eShip, "Ship1")
 
     # endregion
@@ -109,7 +109,7 @@ class Scenario(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eTarget, "target1")
         self.ListAllChildrenOfAGivenType(CodeSnippetsTestBase.m_Root, AgESTKObjectType.eShip)
 
-    def ListAllChildrenOfAGivenType(self, root, type):
+    def ListAllChildrenOfAGivenType(self, root: "IStkObjectRoot", type: "AgESTKObjectType"):
         allChildrenOfType = root.CurrentScenario.Children.GetElements(type)
 
         for o in allChildrenOfType:
@@ -121,7 +121,7 @@ class Scenario(CodeSnippetsTestBase):
     def test_AddAnalyticalTerrainToEarthCentralBody(self):
         self.AddAnalyticalTerrainToEarthCentralBody(CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("ny512.dte"))
 
-    def AddAnalyticalTerrainToEarthCentralBody(self, root, terrainFile):
+    def AddAnalyticalTerrainToEarthCentralBody(self, root: "IStkObjectRoot", terrainFile: str):
         # Retrieve the IAgScenario interface
         scenario = clr.CastAs(root.CurrentScenario, IScenario)
 
@@ -142,7 +142,7 @@ class Scenario(CodeSnippetsTestBase):
     def test_ConfigureScenarioAnimation(self):
         self.ConfigureScenarioAnimation(clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario))
 
-    def ConfigureScenarioAnimation(self, scenario):
+    def ConfigureScenarioAnimation(self, scenario: "IScenario"):
         animation = scenario.Animation
 
         animation.StartTime = "1 Jun 2004 12:00:00.00"
@@ -160,7 +160,7 @@ class Scenario(CodeSnippetsTestBase):
     def test_ConfigureScenarioTextFont(self):
         self.ConfigureScenarioTextFont(clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario))
 
-    def ConfigureScenarioTextFont(self, scenario):
+    def ConfigureScenarioTextFont(self, scenario: "IScenario"):
         fonts = scenario.VO.LargeFont
 
         fonts.Bold = True
@@ -181,7 +181,7 @@ class Scenario(CodeSnippetsTestBase):
     def test_ComputeSurfaceDistanceOfCentralBody(self):
         self.ComputeSurfaceDistanceOfCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def ComputeSurfaceDistanceOfCentralBody(self, root):
+    def ComputeSurfaceDistanceOfCentralBody(self, root: "IStkObjectRoot"):
         centralBodyEllipsoid = root.CentralBodies["Earth"].Ellipsoid
 
         # Compute the distance between Philadelphia and London.
@@ -207,7 +207,7 @@ class Scenario(CodeSnippetsTestBase):
         finally:
             (clr.Convert(satellite, IStkObject)).Unload()
 
-    def SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self, stkRoot, scenario):
+    def SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self, stkRoot: "IStkObjectRoot", scenario: "IScenario"):
         satellite = clr.CastAs(stkRoot.GetObjectFromPath("/Satellite/GeoEye"), ISatellite)
 
         vgtProvider = stkRoot.VgtRoot.GetProvider("/Satellite/GeoEye")
@@ -227,7 +227,7 @@ class Scenario(CodeSnippetsTestBase):
             clr.Convert(TestBase.Application, IStkObjectRoot), clr.Convert(scenario, IScenario)
         )
 
-    def SetTimePeriodToTodayWithDurationOfOneDay(self, stkRoot, scenario):
+    def SetTimePeriodToTodayWithDurationOfOneDay(self, stkRoot: "IStkObjectRoot", scenario: "IScenario"):
         scenario.AnalysisInterval.SetStartTimeAndDuration("Today", "+1 Day")
 
     # endregion

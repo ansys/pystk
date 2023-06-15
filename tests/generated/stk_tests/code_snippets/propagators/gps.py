@@ -9,8 +9,8 @@ class GPS(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super(GPS, self).__init__(*args, **kwargs)
 
-    m_Object = None
-    m_DefaultName = "MySatellite"
+    m_Object: "ISatellite" = None
+    m_DefaultName: str = "MySatellite"
 
     # region OneTimeSetUp
     @staticmethod
@@ -55,7 +55,7 @@ class GPS(CodeSnippetsTestBase):
             (clr.Convert(GPS.m_Object, IStkObject)).Root.CurrentScenario,
         )
 
-    def ConfigureGPSWithAlmanac(self, propagator, almanacPath, scenario):
+    def ConfigureGPSWithAlmanac(self, propagator: "IVehiclePropagatorGPS", almanacPath: str, scenario: "IStkObject"):
         # Configure properties
         # Use the scenario's analysis interval
         propagator.EphemerisInterval.SetImplicitInterval(scenario.Vgt.EventIntervals["AnalysisInterval"])
