@@ -1,8 +1,3 @@
-PySTK: a Python API for `Systems Tool Kit`_
-###########################################
-
-|
-
 .. image:: https://github.com/ansys-internal/pystk/blob/main/doc/source/_static/logo.png
    :target: https://github.com/ansys-internal/pystk/
    :alt: PySTK
@@ -56,8 +51,8 @@ About
 =====
 
 PySTK is a Python library that provides a powerful and user-friendly API for
-STK. It is designed to enhance the interaction with STK by offering a
-comprehensive set of tools and functionalities.
+`Systems Tool Kit`_ (STK). It is designed to enhance the interaction with STK by
+offering a comprehensive set of tools and functionalities.
 
 With PySTK library, developers can easily integrate STK into their Python
 applications. It provides a streamlined and efficient way to automate scenarios,
