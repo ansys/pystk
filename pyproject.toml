@@ -63,7 +63,13 @@ default_section = "THIRDPARTY"
 src_paths = ["examples", "doc", "src", "tests"]
 
 [tool.coverage.run]
-source = ["ansys.stk"]
+relative_files = true
+
+[tool.coverage.paths]
+source = [
+    "src",
+    "ansys/stk",
+]
 
 [tool.coverage.report]
 show_missing = true

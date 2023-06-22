@@ -92,21 +92,52 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "tox -e tests-aviator-nographics-novo-cov-linux"
+            "export COVERAGE_FILE=aviator && tox -e tests-aviator-nographics-novo-cov-linux"
 
       - name: "Run the stk tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "tox -e tests-stk-nographics-novo-cov-linux"
+            "export COVERAGE_FILE=stk && tox -e tests-stk-nographics-novo-cov-linux"
 
       - name: "Run the vgt tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "tox -e tests-vgt-nographics-novo-cov-linux"
+            "export COVERAGE_FILE=vgt && tox -e tests-vgt-nographics-novo-cov-linux"
+
+      - name: "Install coverage dependencies"
+        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "python -m pip install .[tests]"
+
+      - name: "Combine all coverage results"
+        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "coverage combine aviator stk vgt"
+
+      - name: "Generate total coverage report"
+        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "coverage html -d .cov/total-html"
+
+      - name: "Upload coverage results"
+        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        uses: actions/upload-artifact@v3
+        with:
+          path: .cov/total-html
+          name: html-coverage
 
       - name: "Stop the container"
         if: always()
