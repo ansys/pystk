@@ -92,21 +92,21 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=aviator && tox -e tests-aviator-nographics-novo-cov-linux"
+            "export COVERAGE_FILE=aviator && tox -e tests-aviator-novo-cov-linux"
 
       - name: "Run the stk tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=stk && tox -e tests-stk-nographics-novo-cov-linux"
+            "export COVERAGE_FILE=stk && tox -e tests-stk-novo-cov-linux"
 
       - name: "Run the vgt tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=vgt && tox -e tests-vgt-nographics-novo-cov-linux"
+            "export COVERAGE_FILE=vgt && tox -e tests-vgt-novo-cov-linux"
 
       - name: "Install coverage dependencies"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
