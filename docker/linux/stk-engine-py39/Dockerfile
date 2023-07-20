@@ -1,6 +1,7 @@
 # By default, start from the base STK Engine Python image
 ARG baseImage=ansys/stk:latest-centos7
 ARG basePythonImage=ansys/stk:latest-centos7-pybase
+ARG withGraphics=true
 FROM ${basePythonImage} as builder
 
 ##############################################
@@ -32,6 +33,15 @@ COPY --from=builder /usr/local/bin/pip3.9 /usr/local/bin/pip3.9
 
 RUN ln -sfn /usr/local/bin/python3.9 /usr/bin/python && \
     ln -sfn /usr/local/bin/pip3.9 /usr/bin/pip
+
+# Install graphic utilities (if needed)
+RUN set -e; \
+    if [ "$withGraphics" = "true" ]; then \
+        yum groupinstall -y "X Window System"; \
+        yum -y install tkinter python3-tkinter; \
+        yum clean all; \
+        rm -rf /var/cache/yum; \
+    fi;
 
 # Switch back to non-root user
 USER stk

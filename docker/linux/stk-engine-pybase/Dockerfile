@@ -1,6 +1,5 @@
 # By default, start from the base STK Engine image
 ARG baseImage=ansys/stk:latest-centos7
-ARG withGraphics=true
 FROM ${baseImage}
 
 # Install system dependencies
@@ -19,12 +18,6 @@ RUN set -e; \
     yum -y install zlib-devel ncurses-devel sqlite-devel; \
     yum -y install readline-devel gdbm-devel db4-devel libpcap-devel xz-devel; \
 
-    # Install graphic utilities (if needed)
-    if [ "$withGraphics" = "true" ]; then \
-        yum groupinstall -y "X Window System"; \
-        yum -y install python3-tkinter; \
-    fi; \
-
     # Clean all unnecessary files
     yum clean all; \
     rm -rf /var/cache/yum
@@ -38,5 +31,6 @@ RUN set -e; \
    make && make install; \
    echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" > /etc/profile.d/openssl.sh; \
    echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" >> .bashrc
+
 
 CMD echo 'Extend this container by installing Python.'
