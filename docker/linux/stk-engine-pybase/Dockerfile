@@ -21,9 +21,9 @@ RUN set -e; \
 
     # Install graphic utilities (if needed)
     if [ "$withGraphics" = "true" ]; then \
-        yum groupinstall -y "X Window System" \
+        yum groupinstall -y "X Window System"; \
         yum -y install python3-tkinter; \
-    fi \
+    fi; \
 
     # Clean all unnecessary files
     yum clean all; \
