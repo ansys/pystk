@@ -9,12 +9,10 @@ FROM ${basePythonImage} as builder
 ##############################################
 
 # Install required packages for X Window System and MESA graphics
-RUN if [ "$withGraphics" = "true" ]; then \
-        yum -y groupinstall "X Window System";  \
-        yum -y install mesa-dri-drivers; \
-        yum -y install xorg-x11-utils xorg-x11-apps; \
-        yum clean all; \
-    fi;
+RUN yum -y groupinstall "X Window System";  \
+    yum -y install mesa-dri-drivers; \
+    yum -y install xorg-x11-utils xorg-x11-apps; \
+    yum clean all;
 
 # Set the display environment variable to allow GUI applications
 ENV DISPLAY=:0
