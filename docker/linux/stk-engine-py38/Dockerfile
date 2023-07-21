@@ -5,20 +5,7 @@ ARG withGraphics=true
 FROM ${basePythonImage} as builder
 
 ##############################################
-# 1) Install required graphics packages
-##############################################
-
-# Install required packages for X Window System and MESA graphics
-RUN yum -y groupinstall "X Window System";  \
-    yum -y install mesa-dri-drivers; \
-    yum -y install xorg-x11-utils xorg-x11-apps; \
-    yum clean all;
-
-# Set the display environment variable to allow GUI applications
-ENV DISPLAY=:0
-
-##############################################
-# 2) Build Python into its own builder stage
+# 1) Build Python into its own builder stage
 ##############################################
 
 # Install Python 3.8 and create a symbolic link named "python".
@@ -32,12 +19,21 @@ RUN cd /tmp && \
     make altinstall
 
 #############################################################
-# 3) Copy the Python build to the system in the second stage
+# 2) Copy the Python build to the system in the second stage
 #############################################################
 
 # Switch back to non-root user
 FROM ${baseImage}
 USER root
+
+# Install required packages for X Window System and MESA graphics
+RUN yum -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps xorg-x11-utils; \
+    yum -y install mesa-dri-drivers; \
+    yum -y install xorg-x11-utils xorg-x11-apps; \
+    yum clean all;
+
+# Set the display environment variable to allow GUI applications
+ENV DISPLAY=:0
 
 # Copy the Python interpreter, the standard library and pip to the final image
 COPY --from=builder /usr/local/bin/python3.8 /usr/local/bin/python3.8 
