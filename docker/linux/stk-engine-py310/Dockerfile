@@ -34,15 +34,15 @@ COPY --from=builder /usr/local/bin/pip3.10 /usr/local/bin/pip3.10
 RUN ln -sfn /usr/local/bin/python3.10 /usr/bin/python && \
     ln -sfn /usr/local/bin/pip3.10 /usr/bin/pip
 
-# Install graphic utilities (if needed)
-RUN set -e; \
-#    if [ "$withGraphics" = "true" ]; then \
-        yum groupinstall -y "X Window System"; \
-        yum install mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel; \
-        yum -y install tkinter python3-tkinter; \
-        yum clean all; \
-        rm -rf /var/cache/yum; \
-#    fi;
+# Install required packages for X Window System and MESA graphics
+RUN yum -y update && \
+    yum -y groupinstall "X Window System" && \
+    yum -y install mesa-dri-drivers && \
+    yum -y install xorg-x11-utils xorg-x11-apps && \
+    yum clean all
+
+# Set the display environment variable to allow GUI applications
+ENV DISPLAY=:0
 
 # Switch back to non-root user
 USER stk
