@@ -27,10 +27,9 @@ FROM ${baseImage}
 USER root
 
 # Install required packages for X Window System and MESA graphics
-RUN yum -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps xorg-x11-utils; \
+RUN yum -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps xorg-x11-utils xorg-x11-server-Xvfb; \
     yum -y install mesa-dri-drivers; \
     yum -y install tkinter python3-tkinter; \
-    yum -y install xorg-x11-utils xorg-x11-apps; \
     yum clean all;
 
 # Set the display environment variable to allow GUI applications
