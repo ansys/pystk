@@ -36,13 +36,13 @@ RUN ln -sfn /usr/local/bin/python3.10 /usr/bin/python && \
 
 # Install graphic utilities (if needed)
 RUN set -e; \
-    if [ "$withGraphics" = "true" ]; then \
+#    if [ "$withGraphics" = "true" ]; then \
         yum groupinstall -y "X Window System"; \
         yum install mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel; \
         yum -y install tkinter python3-tkinter; \
         yum clean all; \
         rm -rf /var/cache/yum; \
-    fi;
+#    fi;
 
 # Switch back to non-root user
 USER stk
