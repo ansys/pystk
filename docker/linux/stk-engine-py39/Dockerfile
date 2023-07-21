@@ -5,7 +5,22 @@ ARG withGraphics=true
 FROM ${basePythonImage} as builder
 
 ##############################################
-# 1) Build Python into its own builder stage
+# 1) Install required graphics packages
+##############################################
+
+# Install required packages for X Window System and MESA graphics
+RUN if [ "$withGraphics" = "true" ]; then \
+        yum -y groupinstall "X Window System";  \
+        yum -y install mesa-dri-drivers; \
+        yum -y install xorg-x11-utils xorg-x11-apps; \
+        yum clean all; \
+    fi;
+
+# Set the display environment variable to allow GUI applications
+ENV DISPLAY=:0
+
+##############################################
+# 2) Build Python into its own builder stage
 ##############################################
 
 # Install Python 3.9 and create a symbolic link named "python".
@@ -19,7 +34,7 @@ RUN cd /tmp && \
     make altinstall
 
 #############################################################
-# 2) Copy the Python build to the system in the second stage
+# 3) Copy the Python build to the system in the second stage
 #############################################################
 
 # Switch back to non-root user
@@ -33,16 +48,6 @@ COPY --from=builder /usr/local/bin/pip3.9 /usr/local/bin/pip3.9
 
 RUN ln -sfn /usr/local/bin/python3.9 /usr/bin/python && \
     ln -sfn /usr/local/bin/pip3.9 /usr/bin/pip
-
-# Install required packages for X Window System and MESA graphics
-RUN yum -y update && \
-    yum -y groupinstall "X Window System" && \
-    yum -y install mesa-dri-drivers && \
-    yum -y install xorg-x11-utils xorg-x11-apps && \
-    yum clean all
-
-# Set the display environment variable to allow GUI applications
-ENV DISPLAY=:0
 
 # Switch back to non-root user
 USER stk
