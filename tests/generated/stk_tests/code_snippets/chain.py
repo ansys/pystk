@@ -32,7 +32,7 @@ class Chain(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Chain.m_Object = clr.CastAs(
+        Chain.m_Object: IChain = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eChain, Chain.m_DefaultName),
             IChain,
         )
@@ -50,12 +50,14 @@ class Chain(CodeSnippetsTestBase):
     def test_CreateChainOnCurrentScenarioCentralBody(self):
         (clr.Convert(Chain.m_Object, IStkObject)).Unload()
         self.CreateChainOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
-        Chain.m_Object = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario.Children[Chain.m_DefaultName], IChain)
+        Chain.m_Object: IChain = clr.CastAs(
+            CodeSnippetsTestBase.m_Root.CurrentScenario.Children[Chain.m_DefaultName], IChain
+        )
 
     def CreateChainOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Chain on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
-        chain = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eChain, "MyChain"), IChain)
+        chain: IChain = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eChain, "MyChain"), IChain)
 
     # endregion
 
@@ -115,7 +117,7 @@ class Chain(CodeSnippetsTestBase):
         chain.SetTimePeriodType(AgEChTimePeriodType.eUserSpecifiedTimePeriod)
 
         # Get chain time period interface
-        chainUserTimePeriod = clr.CastAs(chain.TimePeriod, IChainUserSpecifiedTimePeriod)
+        chainUserTimePeriod: IChainUserSpecifiedTimePeriod = clr.CastAs(chain.TimePeriod, IChainUserSpecifiedTimePeriod)
         chainUserTimePeriod.TimeInterval.SetExplicitInterval("1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00")
 
         # Compute the chain
@@ -150,7 +152,9 @@ class Chain(CodeSnippetsTestBase):
 
     def ConfigureChainComputeTimePeriod(self, chain: "IChain"):
         chain.SetTimePeriodType(AgEChTimePeriodType.eUserSpecifiedTimePeriod)
-        userSpecifiedTimePeriod = clr.CastAs(chain.TimePeriod, IChainUserSpecifiedTimePeriod)
+        userSpecifiedTimePeriod: IChainUserSpecifiedTimePeriod = clr.CastAs(
+            chain.TimePeriod, IChainUserSpecifiedTimePeriod
+        )
         userSpecifiedTimePeriod.TimeInterval.SetExplicitInterval("1 May 2015 04:00:00.000", "1 May 2015 05:00:00.000")
 
     # endregion
@@ -181,7 +185,7 @@ class Chain(CodeSnippetsTestBase):
             (clr.Convert(chain, IStkObject)).Unload()
 
     def PrintChainStrainIntervalsTimes(self, chain: "IChain"):
-        chainAsStkObject = clr.CastAs(chain, IStkObject)
+        chainAsStkObject: IStkObject = clr.CastAs(chain, IStkObject)
 
         # Compute the chain access if not done already.
         chain.ComputeAccess()

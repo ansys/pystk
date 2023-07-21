@@ -12,7 +12,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_DetermineTimesOfEventArray(self):
         self.DetermineTimesOfEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def DetermineTimesOfEventArray(self, provider):
+    def DetermineTimesOfEventArray(self, provider: "IAnalysisWorkbenchProvider"):
         eventArray = provider.EventArrays["Orbit.Classical.SemimajorAxis.TimesOfLocalMax"]
 
         foundTimes = eventArray.FindTimes()
@@ -36,9 +36,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateFilteredEventArray(self):
         self.CreateFilteredEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateFilteredEventArray(self, provider):
+    def CreateFilteredEventArray(self, provider: "IAnalysisWorkbenchProvider"):
         eventArray = provider.EventArrays.Factory.CreateEventArrayFiltered("MyEventArrayFiltered", "MyDescription")
-        asFiltered = clr.CastAs(eventArray, ITimeToolEventArrayFiltered)
+        asFiltered: ITimeToolEventArrayFiltered = clr.CastAs(eventArray, ITimeToolEventArrayFiltered)
 
         asFiltered.OriginalTimeArray = provider.EventArrays["EphemerisTimes"]
 
@@ -69,9 +69,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateFixedStepEventArray(self):
         self.CreateFixedStepEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateFixedStepEventArray(self, provider):
+    def CreateFixedStepEventArray(self, provider: "IAnalysisWorkbenchProvider"):
         eventArray = provider.EventArrays.Factory.CreateEventArrayFixedStep("MyEventArrayFixedStep", "MyDescription")
-        asFixedStep = clr.CastAs(eventArray, ITimeToolEventArrayFixedStep)
+        asFixedStep: ITimeToolEventArrayFixedStep = clr.CastAs(eventArray, ITimeToolEventArrayFixedStep)
 
         asFixedStep.BoundingIntervalList = provider.EventIntervalLists["AfterStart.SatisfactionIntervals"]
         asFixedStep.IncludeIntervalEdges = True
@@ -105,9 +105,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateMergedEventArray(self):
         self.CreateMergedEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateMergedEventArray(self, provider):
+    def CreateMergedEventArray(self, provider: "IAnalysisWorkbenchProvider"):
         eventArray = provider.EventArrays.Factory.CreateEventArrayMerged("MyEventArrayMerged", "MyDescription")
-        asMerged = clr.CastAs(eventArray, ITimeToolEventArrayMerged)
+        asMerged: ITimeToolEventArrayMerged = clr.CastAs(eventArray, ITimeToolEventArrayMerged)
 
         asMerged.TimeArrayA = provider.EventArrays["GroundTrajectory.Detic.LLA.Altitude.TimesOfLocalMin"]
         asMerged.TimeArrayB = provider.EventArrays["GroundTrajectory.Detic.LLA.Altitude.TimesOfLocalMax"]
@@ -140,14 +140,14 @@ class EventArray(TimelineCodeSnippetsTestBase):
         eventArray = satelliteVgtProvider.EventArrays.Factory.CreateEventArraySignaled(
             "MyEventArraySignaled", "MyDescription"
         )
-        asSignaled = clr.CastAs(eventArray, ITimeToolEventArraySignaled)
+        asSignaled: ITimeToolEventArraySignaled = clr.CastAs(eventArray, ITimeToolEventArraySignaled)
 
         asSignaled.OriginalTimeArray = aircraftVgtProvider.EventArrays["OneMinuteSampleTimes"]
         asSignaled.BaseClockLocation = satelliteVgtProvider.Points["Center"]
         asSignaled.TargetClockLocation = aircraftVgtProvider.Points["Center"]
 
         asSignaled.SignalSense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
-        basicSignalDelay = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: ITimeToolSignalDelayBasic = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
         basicSignalDelay.SpeedOption = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
 
         # Uses current Time unit preference, this code snippet assumes seconds.
@@ -174,11 +174,11 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateStartStopTimesEventArray(self):
         self.CreateStartStopTimesEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateStartStopTimesEventArray(self, provider):
+    def CreateStartStopTimesEventArray(self, provider: "IAnalysisWorkbenchProvider"):
         eventArray = provider.EventArrays.Factory.CreateEventArrayStartStopTimes(
             "MyEventArrayStartStopTimes", "MyDescription"
         )
-        asStartStopTimes = clr.CastAs(eventArray, ITimeToolEventArrayStartStopTimes)
+        asStartStopTimes: ITimeToolEventArrayStartStopTimes = clr.CastAs(eventArray, ITimeToolEventArrayStartStopTimes)
 
         asStartStopTimes.ReferenceIntervals = provider.EventIntervalLists["LightingIntervals.Sunlight"]
         asStartStopTimes.StartStopOption = AgECrdnStartStopOption.eCrdnStartStopOptionCountStartOnly
@@ -204,14 +204,18 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateConditionCrossingsEventArray(self):
         self.CreateConditionCrossingsEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateConditionCrossingsEventArray(self, provider):
+    def CreateConditionCrossingsEventArray(self, provider: "IAnalysisWorkbenchProvider"):
         eventArray = provider.EventArrays.Factory.CreateEventArrayConditionCrossings(
             "MyEventArrayConditionCrossings", "MyDescription"
         )
-        asConditionCrossings = clr.CastAs(eventArray, ITimeToolEventArrayConditionCrossings)
+        asConditionCrossings: ITimeToolEventArrayConditionCrossings = clr.CastAs(
+            eventArray, ITimeToolEventArrayConditionCrossings
+        )
 
         scalarBound = provider.Conditions.Factory.CreateConditionScalarBounds("Bound", "MyDescription")
-        asScalarBounds = clr.CastAs(scalarBound, ICalculationToolConditionScalarBounds)
+        asScalarBounds: ICalculationToolConditionScalarBounds = clr.CastAs(
+            scalarBound, ICalculationToolConditionScalarBounds
+        )
         asScalarBounds.Scalar = provider.CalcScalars["GroundTrajectory.Detic.LLA.Latitude"]
         asScalarBounds.Operation = AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionInsideMinMax
         # asScalarBounds.Set(/*$Maximum$Maximum$*/-0.349, /*$Maximum$Maximum$*/0);
@@ -239,9 +243,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateExtremaEventArray(self):
         self.CreateExtremaEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateExtremaEventArray(self, provider):
+    def CreateExtremaEventArray(self, provider: "IAnalysisWorkbenchProvider"):
         eventArray = provider.EventArrays.Factory.CreateEventArrayExtrema("MyEventArrayExtrema", "MyDescription")
-        asExtrema = clr.CastAs(eventArray, ITimeToolEventArrayExtrema)
+        asExtrema: ITimeToolEventArrayExtrema = clr.CastAs(eventArray, ITimeToolEventArrayExtrema)
 
         asExtrema.Calculation = provider.CalcScalars["GroundTrajectory.Detic.LLA.Altitude"]
 
@@ -277,7 +281,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
         twentySecondSample = aircraft.Vgt.EventArrays.Factory.CreateEventArrayFixedStep(
             "TwentySecondSample", "MyDescription"
         )
-        asFixedStep = clr.CastAs(twentySecondSample, ITimeToolEventArrayFixedStep)
+        asFixedStep: ITimeToolEventArrayFixedStep = clr.CastAs(twentySecondSample, ITimeToolEventArrayFixedStep)
         asFixedStep.BoundingIntervalList = aircraft.Vgt.EventIntervalLists["AvailabilityIntervals"]
         asFixedStep.SamplingTimeStep = 20
         asFixedStep.ReferenceType = AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStartOfIntervalList

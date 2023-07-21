@@ -27,7 +27,7 @@ class Mto(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        Mto.m_Object = clr.CastAs(
+        Mto.m_Object: IMto = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eMTO, Mto.m_DefaultName), IMto
         )
 
@@ -48,7 +48,7 @@ class Mto(CodeSnippetsTestBase):
         self.ConfigureMtos(CodeSnippetsTestBase.m_Root, Mto.m_Object)
 
     def ConfigureMtos(self, root: "IStkObjectRoot", mto: "IMto"):
-        scenario = clr.CastAs(root.CurrentScenario, IScenario)
+        scenario: IScenario = clr.CastAs(root.CurrentScenario, IScenario)
         scenario.SetTimePeriod("1 Feb 2008 12:00:00.000", "2 Feb 2008 12:00:00.000")
 
         # Number of tracks and points to add
@@ -165,18 +165,18 @@ class Mto(CodeSnippetsTestBase):
 
     def CreateMtoOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the MTO
-        mto = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eMTO, "mto1"), IMto)
+        mto: IMto = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eMTO, "mto1"), IMto)
 
     # endregion
 
     # region DetermineWhichTracksAreVisibleFromOtherStkObjectAtSpecifiedTime
     def test_DetermineWhichTracksAreVisibleFromOtherStkObjectAtSpecifiedTime(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "J2Satellite"),
             ISatellite,
         )
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.Step = 60
         j2prop.Propagate()
@@ -218,12 +218,12 @@ class Mto(CodeSnippetsTestBase):
 
     # region DetermineWhichTracksOfSpecifiedSubsetOfTracksAreVisibleFromOtherStkObject
     def test_DetermineWhichTracksOfSpecifiedSubsetOfTracksAreVisibleFromOtherStkObject(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "J2Satellite"),
             ISatellite,
         )
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.Step = 60
         j2prop.Propagate()
@@ -272,12 +272,12 @@ class Mto(CodeSnippetsTestBase):
 
     # region DetermineIfAllTracksAreVisibleFromOtherStkObject
     def test_DetermineIfAllTracksAreVisibleFromOtherStkObject(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "J2Satellite"),
             ISatellite,
         )
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.Step = 60
         j2prop.Propagate()
@@ -307,12 +307,12 @@ class Mto(CodeSnippetsTestBase):
 
     # region DetermineIfAnyTrackIsVisibleFromOtherStkObject
     def test_DetermineIfAnyTrackIsVisibleFromOtherStkObject(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "J2Satellite"),
             ISatellite,
         )
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.Step = 60
         j2prop.Propagate()
@@ -336,12 +336,12 @@ class Mto(CodeSnippetsTestBase):
 
     # region DetermineIfAllTracksAreVisible
     def test_DetermineIfAllTracksAreVisible(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "J2Satellite"),
             ISatellite,
         )
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.Step = 60
         j2prop.Propagate()
@@ -447,12 +447,12 @@ class Mto(CodeSnippetsTestBase):
 
     # region ComputeMtoRange
     def test_ComputeMtoRange(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "J2Satellite"),
             ISatellite,
         )
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.Step = 60
         j2prop.Propagate()
@@ -483,12 +483,12 @@ class Mto(CodeSnippetsTestBase):
 
     # region ComputeMtoFieldOfView
     def test_ComputeMtoFieldOfView(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "J2Satellite"),
             ISatellite,
         )
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.Step = 60
         j2prop.Propagate()
@@ -496,7 +496,7 @@ class Mto(CodeSnippetsTestBase):
         Mto.m_Object.Tracks.Add(1)
         Mto.m_Object.Tracks.Add(4)
 
-        sensor1 = clr.CastAs(
+        sensor1: ISensor = clr.CastAs(
             (clr.Convert(satellite, IStkObject)).Children.New(AgESTKObjectType.eSensor, "Sensor1"), ISensor
         )
         self.ComputeMtoFieldOfView(Mto.m_Object)

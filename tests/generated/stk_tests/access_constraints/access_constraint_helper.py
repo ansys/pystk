@@ -407,13 +407,13 @@ class AccessConstraintHelper(object):
             self.TestConstraintMinMaxSARTimeResProd(oMinMax)
 
         elif eType == AgEAccessConstraints.eCstrElevationAngle:
-            oMinMax = clr.CastAs(oConstraint, IAccessConstraintMinMax)
+            oMinMax: IAccessConstraintMinMax = clr.CastAs(oConstraint, IAccessConstraintMinMax)
             if oMinMax != None:
                 self.TestConstraintMinMaxAngle(oMinMax)
 
             else:
                 # Area Target or Line Target
-                oAngle = clr.CastAs(oConstraint, IAccessConstraintAngle)
+                oAngle: IAccessConstraintAngle = clr.CastAs(oConstraint, IAccessConstraintAngle)
                 Assert.assertIsNotNone(oAngle)
                 self.TestConstraintAngle(oConstraint, "LatitudeUnit")
 

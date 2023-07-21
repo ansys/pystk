@@ -29,7 +29,7 @@ class StkObject(CodeSnippetsTestBase):
         if CodeSnippetsTestBase.m_Root.CurrentScenario != None:
             CodeSnippetsTestBase.m_Root.CloseScenario()
         CodeSnippetsTestBase.m_Root.NewScenario(self.m_DefaultName)
-        StkObject.m_Object = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)
+        StkObject.m_Object: IScenario = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)
 
     # endregion
 

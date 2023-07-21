@@ -31,7 +31,7 @@ class Scenario(CodeSnippetsTestBase):
         if CodeSnippetsTestBase.m_Root.CurrentScenario != None:
             CodeSnippetsTestBase.m_Root.CloseScenario()
         CodeSnippetsTestBase.m_Root.NewScenario(self.m_DefaultName)
-        Scenario.m_Object = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)
+        Scenario.m_Object: IScenario = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)
 
     # endregion
 
@@ -55,7 +55,7 @@ class Scenario(CodeSnippetsTestBase):
         root.NewScenario("Scenario1")
 
         # Get IAgScenario interface
-        scenario = clr.CastAs(root.CurrentScenario, IScenario)
+        scenario: IScenario = clr.CastAs(root.CurrentScenario, IScenario)
 
         # Set scenario start and stop times
         scenario.SetTimePeriod("1 Jun 1999 12:00:00.00", "2 Jun 1999 12:00:00.00")
@@ -123,7 +123,7 @@ class Scenario(CodeSnippetsTestBase):
 
     def AddAnalyticalTerrainToEarthCentralBody(self, root: "IStkObjectRoot", terrainFile: str):
         # Retrieve the IAgScenario interface
-        scenario = clr.CastAs(root.CurrentScenario, IScenario)
+        scenario: IScenario = clr.CastAs(root.CurrentScenario, IScenario)
 
         terrainCollection = scenario.Terrain
         elementCollection = terrainCollection["Earth"].TerrainCollection
@@ -208,10 +208,10 @@ class Scenario(CodeSnippetsTestBase):
             (clr.Convert(satellite, IStkObject)).Unload()
 
     def SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self, stkRoot: "IStkObjectRoot", scenario: "IScenario"):
-        satellite = clr.CastAs(stkRoot.GetObjectFromPath("/Satellite/GeoEye"), ISatellite)
+        satellite: ISatellite = clr.CastAs(stkRoot.GetObjectFromPath("/Satellite/GeoEye"), ISatellite)
 
         vgtProvider = stkRoot.VgtRoot.GetProvider("/Satellite/GeoEye")
-        twoBody = clr.CastAs(satellite.Propagator, IVehiclePropagatorTwoBody)
+        twoBody: IVehiclePropagatorTwoBody = clr.CastAs(satellite.Propagator, IVehiclePropagatorTwoBody)
         startEpoch = twoBody.EphemerisInterval.GetStartEpoch()
         stopEpoch = twoBody.EphemerisInterval.GetStopEpoch()
 

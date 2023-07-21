@@ -28,7 +28,7 @@ class LOP(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        LOP.m_Object = clr.CastAs(
+        LOP.m_Object: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, LOP.m_DefaultName),
             ISatellite,
         )
@@ -52,7 +52,7 @@ class LOP(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorLOP)
 
         # Get IAgVePropagatorLOP interface
-        lopProp = clr.CastAs(satellite.Propagator, IVehiclePropagatorLOP)
+        lopProp: IVehiclePropagatorLOP = clr.CastAs(satellite.Propagator, IVehiclePropagatorLOP)
 
         # Configure time period
         lopProp.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")

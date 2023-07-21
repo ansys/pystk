@@ -42,7 +42,7 @@ class VO(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "Satellite1")
 
     def DelayGraphicsUpdates(self, root: "IStkObjectRoot"):
-        satellite = clr.CastAs(root.CurrentScenario.Children["Satellite1"], ISatellite)
+        satellite: ISatellite = clr.CastAs(root.CurrentScenario.Children["Satellite1"], ISatellite)
         voElt = satellite.VO.DataDisplay[0]
 
         root.BeginUpdate()  # Suspend updates

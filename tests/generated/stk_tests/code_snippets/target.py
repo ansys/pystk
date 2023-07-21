@@ -27,7 +27,7 @@ class Target(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        self.m_Object = clr.CastAs(
+        self.m_Object: ITarget = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eTarget, Target.m_DefaultName),
             ITarget,
         )
@@ -48,7 +48,7 @@ class Target(CodeSnippetsTestBase):
     def CreateTargetOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Target on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
-        areaTarget = clr.CastAs(
+        areaTarget: ITarget = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eAreaTarget, "MyAreaTarget"), ITarget
         )
 

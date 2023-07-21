@@ -28,7 +28,7 @@ class Constellation(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Constellation.m_Object = clr.CastAs(
+        Constellation.m_Object: IConstellation = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eConstellation, Constellation.m_DefaultName
             ),

@@ -39,19 +39,23 @@ class SearchTrackPDet(CodeSnippetsTestBase):
         SearchTrackPDet.m_Facility = scenario.Children.New(
             AgESTKObjectType.eFacility, SearchTrackPDet.m_DefaultFacilityName
         )
-        SearchTrackPDet.m_Radar = clr.CastAs(
+        SearchTrackPDet.m_Radar: IRadar = clr.CastAs(
             SearchTrackPDet.m_Facility.Children.New(AgESTKObjectType.eRadar, SearchTrackPDet.m_DefaultRadarName), IRadar
         )
-        SearchTrackPDet.m_TargetAircraft = clr.CastAs(
+        SearchTrackPDet.m_TargetAircraft: IAircraft = clr.CastAs(
             scenario.Children.New(AgESTKObjectType.eAircraft, SearchTrackPDet.m_DefaultTargetName), IAircraft
         )
         SearchTrackPDet.m_TargetAircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        propagator = clr.CastAs(SearchTrackPDet.m_TargetAircraft.Route, IVehiclePropagatorGreatArc)
+        propagator: IVehiclePropagatorGreatArc = clr.CastAs(
+            SearchTrackPDet.m_TargetAircraft.Route, IVehiclePropagatorGreatArc
+        )
         propagator.ArcGranularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive IAgVeWayPtAltitudeRefTerrain interface
         propagator.SetAltitudeRefType(AgEVeAltitudeRef.eWayPtAltRefTerrain)
-        altRef = clr.CastAs(propagator.AltitudeRef, IVehicleWaypointAltitudeReferenceTerrain)
+        altRef: IVehicleWaypointAltitudeReferenceTerrain = clr.CastAs(
+            propagator.AltitudeRef, IVehicleWaypointAltitudeReferenceTerrain
+        )
         altRef.Granularity = 51.33
         altRef.InterpMethod = AgEVeWayPtInterpMethod.eWayPtEllipsoidHeight
 
@@ -102,15 +106,15 @@ class SearchTrackPDet(CodeSnippetsTestBase):
     def ComputeMonostaticSearchTrackProbabilityOfDetection(
         self, radar: "IRadar", targetAircraft: "IAircraft", scenarioRFEnv: "IRFEnvironment"
     ):
-        rdrAsStkObject = clr.CastAs(radar, IStkObject)
-        tgtAsStkObject = clr.CastAs(targetAircraft, IStkObject)
+        rdrAsStkObject: IStkObject = clr.CastAs(radar, IStkObject)
+        tgtAsStkObject: IStkObject = clr.CastAs(targetAircraft, IStkObject)
 
         # Enable the rain loss computation on the scenario RF environment
         scenarioRFEnv.PropagationChannel.EnableRainLoss = True
 
         # Configure the radar object as a monostatic model.
         radar.SetModel("Monostatic")
-        monostaticModel = clr.CastAs(radar.Model, IRadarModelMonostatic)
+        monostaticModel: IRadarModelMonostatic = clr.CastAs(radar.Model, IRadarModelMonostatic)
 
         # Orient the radar antenna in the direction of the target
         monostaticModel.AntennaControl.EmbeddedModelOrientation.AssignAzEl(
@@ -119,7 +123,9 @@ class SearchTrackPDet(CodeSnippetsTestBase):
 
         # Set the radar antenna model to parabolic
         monostaticModel.AntennaControl.SetEmbeddedModel("Parabolic")
-        parabolic = clr.CastAs(monostaticModel.AntennaControl.EmbeddedModel, IAntennaModelParabolic)
+        parabolic: IAntennaModelParabolic = clr.CastAs(
+            monostaticModel.AntennaControl.EmbeddedModel, IAntennaModelParabolic
+        )
 
         # Give the parabolic antenna a 2 deg beamwidth;
         parabolic.InputType = AgEAntennaModelInputType.eAntennaModelInputTypeBeamwidth
@@ -127,11 +133,15 @@ class SearchTrackPDet(CodeSnippetsTestBase):
 
         # Put the monostatic radar model in Search/Track mode
         monostaticModel.SetMode("Search Track")
-        searchTrackMode = clr.CastAs(monostaticModel.Mode, IRadarModeMonostaticSearchTrack)
+        searchTrackMode: IRadarModeMonostaticSearchTrack = clr.CastAs(
+            monostaticModel.Mode, IRadarModeMonostaticSearchTrack
+        )
 
         # Set the waveform type to fixed prf
         searchTrackMode.SetWaveformType(AgERadarWaveformSearchTrackType.eRadarWaveformSearchTrackTypeFixedPRF)
-        fixedPrf = clr.CastAs(searchTrackMode.Waveform, IRadarWaveformMonostaticSearchTrackFixedPRF)
+        fixedPrf: IRadarWaveformMonostaticSearchTrackFixedPRF = clr.CastAs(
+            searchTrackMode.Waveform, IRadarWaveformMonostaticSearchTrackFixedPRF
+        )
         fixedPrf.PulseDefinition.Prf = 0.002  # 2 kHz
 
         # Set the pulse width to 1e-8 sec
@@ -142,7 +152,9 @@ class SearchTrackPDet(CodeSnippetsTestBase):
 
         # Set the pulse integration strategy to goal SNR
         fixedPrf.PulseIntegrationType = AgERadarPulseIntegrationType.eRadarPulseIntegrationTypeGoalSNR
-        pulseIntGoalSNR = clr.CastAs(fixedPrf.PulseIntegration, IRadarPulseIntegrationGoalSNR)
+        pulseIntGoalSNR: IRadarPulseIntegrationGoalSNR = clr.CastAs(
+            fixedPrf.PulseIntegration, IRadarPulseIntegrationGoalSNR
+        )
         pulseIntGoalSNR.SNR = 40.0  # dB
 
         # Set the transmit frequency
@@ -169,11 +181,13 @@ class SearchTrackPDet(CodeSnippetsTestBase):
 
         # Don't inherit the radar cross section settings from the scenario
         targetAircraft.RadarCrossSection.Inherit = False
-        rcs = clr.CastAs(targetAircraft.RadarCrossSection.Model, IRadarCrossSectionModel)
+        rcs: IRadarCrossSectionModel = clr.CastAs(targetAircraft.RadarCrossSection.Model, IRadarCrossSectionModel)
 
         # Set the radar cross section compute strategy to constan value
         rcs.FrequencyBands[0].SetComputeStrategy("Constant Value")
-        constValRcs = clr.CastAs(rcs.FrequencyBands[0].ComputeStrategy, IRadarCrossSectionComputeStrategyConstantValue)
+        constValRcs: IRadarCrossSectionComputeStrategyConstantValue = clr.CastAs(
+            rcs.FrequencyBands[0].ComputeStrategy, IRadarCrossSectionComputeStrategyConstantValue
+        )
 
         # Set the constant radar cross section to 0.5 dBsm
         constValRcs.ConstantValue = 0.5  # dBsm
@@ -190,12 +204,14 @@ class SearchTrackPDet(CodeSnippetsTestBase):
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "S/T SNR1", "S/T PDet1", "S/T Integrated SNR", "S/T Integrated PDet"]
 
-        dp = clr.CastAs(radarAccess.DataProviders["Radar SearchTrack"], IDataProviderTimeVarying)
+        dp: IDataProviderTimeVarying = clr.CastAs(
+            radarAccess.DataProviders["Radar SearchTrack"], IDataProviderTimeVarying
+        )
 
         index0 = 0
         while index0 < accessIntervals.Count:
-            startTime = None
-            stopTime = None
+            startTime: typing.Any = None
+            stopTime: typing.Any = None
 
             (startTime, stopTime) = accessIntervals.GetInterval(index0)
 

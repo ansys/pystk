@@ -33,7 +33,7 @@ class Sensor(CodeSnippetsTestBase):
         Sensor.m_Satellite = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
             AgESTKObjectType.eSatellite, Sensor.m_SatelliteName
         )
-        Sensor.m_Object = clr.CastAs(
+        Sensor.m_Object: ISensor = clr.CastAs(
             Sensor.m_Satellite.Children.New(AgESTKObjectType.eSensor, Sensor.m_DefaultName), ISensor
         )
 
@@ -196,7 +196,7 @@ class Sensor(CodeSnippetsTestBase):
     def DefineSpinningSensorPointing(self, root: "IStkObjectRoot", sensor: "ISensor"):
         # Set pattern type to Spinning
         sensor.SetPointingType(AgESnPointing.eSnPtSpinning)
-        spinning = clr.CastAs(sensor.Pointing, ISensorPointingSpinning)
+        spinning: ISensorPointingSpinning = clr.CastAs(sensor.Pointing, ISensorPointingSpinning)
 
         # Configure sensor
         spinning.SpinAxisAzimuth = 14.24
@@ -228,7 +228,7 @@ class Sensor(CodeSnippetsTestBase):
         # Sensor pointing data files traditionally have .sp extensions
         sensor.SetPointingExternalFile(externalSensorPointingPath)
 
-        external = clr.CastAs(sensor.Pointing, ISensorPointingExternal)
+        external: ISensorPointingExternal = clr.CastAs(sensor.Pointing, ISensorPointingExternal)
 
     # endregion
 
@@ -241,7 +241,7 @@ class Sensor(CodeSnippetsTestBase):
         sensor.SetLocationType(AgESnLocation.eSnFixed)
 
         # Configure sensor location
-        pos = clr.CastAs(sensor.LocationData, IPosition)
+        pos: IPosition = clr.CastAs(sensor.LocationData, IPosition)
         pos.AssignCartesian(595.2, -110.12, 4.6)
 
     # endregion
@@ -252,8 +252,8 @@ class Sensor(CodeSnippetsTestBase):
         if TestBase.NoGraphicsMode:
             Assert.skipTest("Test cannot be run in NoGraphicsMode (because it uses VO)")
 
-        satellite = clr.CastAs(Sensor.m_Satellite, ISatellite)
-        modelFile = clr.CastAs(satellite.VO.Model.ModelData, IVOModelFile)
+        satellite: ISatellite = clr.CastAs(Sensor.m_Satellite, ISatellite)
+        modelFile: IVOModelFile = clr.CastAs(satellite.VO.Model.ModelData, IVOModelFile)
         modelFile.Filename = r"\STKData\VO\Models\Space\satellite.dae"
         self.DefineLocationOn3DModel(Sensor.m_Object)
 
@@ -277,7 +277,7 @@ class Sensor(CodeSnippetsTestBase):
         sensor.SetLocationType(AgESnLocation.eSnLocationCrdnPoint)
 
         # Get IAgLocationCrdnPoint interface
-        vgtPoint = clr.CastAs(sensor.LocationData, ILocationVectorGeometryToolPoint)
+        vgtPoint: ILocationVectorGeometryToolPoint = clr.CastAs(sensor.LocationData, ILocationVectorGeometryToolPoint)
 
         # point sensor to an already existing object
         vgtPoint.PointPath = "Facility/Facility1 Center"
@@ -293,7 +293,7 @@ class Sensor(CodeSnippetsTestBase):
         sensor.SetAzElMaskFile(maskFilePath)
 
         # Get Mask File interface
-        maskFile = clr.CastAs(sensor.AzElMaskData, ISensorAzElMaskFile)
+        maskFile: ISensorAzElMaskFile = clr.CastAs(sensor.AzElMaskData, ISensorAzElMaskFile)
 
         # Configure MaskFile as needed
         maskFile.BoresightAxis = AgESnAzElBsightAxisType.ePlus_MinusZ
@@ -307,7 +307,9 @@ class Sensor(CodeSnippetsTestBase):
             Assert.skipTest("Test cannot be run in NoGraphicsMode (because it uses swath)")
 
         (clr.Convert(Sensor.m_Satellite, ISatellite)).SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        tb = clr.CastAs((clr.Convert(Sensor.m_Satellite, ISatellite)).Propagator, IVehiclePropagatorTwoBody)
+        tb: IVehiclePropagatorTwoBody = clr.CastAs(
+            (clr.Convert(Sensor.m_Satellite, ISatellite)).Propagator, IVehiclePropagatorTwoBody
+        )
         # Propagate
         tb.Propagate()
         self.ConfigureAndComputeSensorSwath(Sensor.m_Object)

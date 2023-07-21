@@ -38,7 +38,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVOModelFile
     def test_ConfigureVOModelFile(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
@@ -51,7 +51,7 @@ class StkObjectVO(CodeSnippetsTestBase):
     def ConfigureVOModelFile(self, model: "IVOModel"):
         # Set new ModelFile.Filename
         model.ModelType = AgEModelType.eModelFile
-        modelFile = clr.CastAs(model.ModelData, IVOModelFile)
+        modelFile: IVOModelFile = clr.CastAs(model.ModelData, IVOModelFile)
         modelFile.Filename = r"\STKData\VO\Models\Space\alexis.mdl"
 
         # Configure basic settings
@@ -62,7 +62,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVOArticulations
     def test_ConfigureVOArticulations(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
@@ -70,7 +70,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
         # Set new ModelFile.Filename
         model.ModelType = AgEModelType.eModelFile
-        modelFile = clr.CastAs(model.ModelData, IVOModelFile)
+        modelFile: IVOModelFile = clr.CastAs(model.ModelData, IVOModelFile)
         modelFile.Filename = r"\STKData\VO\Models\Space\satellite.dae"
 
         self.ConfigureVOModelArticulations(model)
@@ -102,7 +102,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ListVOModelArticulations
     def test_ListVOModelArticulations(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
@@ -146,7 +146,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVOModelLevelOfDetail
     def test_ConfigureVOModelLevelOfDetail(self):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
@@ -172,7 +172,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVOVector
     def test_ConfigureVOVector(self):
-        vehicle = clr.CastAs(
+        vehicle: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
@@ -211,7 +211,7 @@ class StkObjectVO(CodeSnippetsTestBase):
         )
 
         # Draw on Central Body
-        body = clr.CastAs(
+        body: IVOReferenceVectorGeometryToolVector = clr.CastAs(
             vector.RefCrdns.GetCrdnByName(
                 AgEGeometricElemType.eAxesElem,
                 (
@@ -234,11 +234,11 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVODataDisplay
     def test_ConfigureVODataDisplay(self):
-        sat = clr.CastAs(
+        sat: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
         (clr.Convert(sat, ISatellite)).SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        tb = clr.CastAs((clr.Convert(sat, ISatellite)).Propagator, IVehiclePropagatorTwoBody)
+        tb: IVehiclePropagatorTwoBody = clr.CastAs((clr.Convert(sat, ISatellite)).Propagator, IVehiclePropagatorTwoBody)
         tb.Propagate()
         ddc = sat.VO.DataDisplay
         self.ConfigureVODataDisplay(ddc)

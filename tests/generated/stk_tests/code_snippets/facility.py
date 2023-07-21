@@ -27,7 +27,7 @@ class Facility(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Facility.m_Object = clr.CastAs(
+        Facility.m_Object: IFacility = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eFacility, Facility.m_DefaultName
             ),
@@ -50,7 +50,9 @@ class Facility(CodeSnippetsTestBase):
 
     def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create a facility on current scenario central body
-        facility = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "MyFacility"), IFacility)
+        facility: IFacility = clr.CastAs(
+            root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "MyFacility"), IFacility
+        )
 
     # endregion
 
@@ -60,7 +62,7 @@ class Facility(CodeSnippetsTestBase):
         self.CreateFacilityOnEarth(CodeSnippetsTestBase.m_Root)
 
     def CreateFacilityOnEarth(self, root: "IStkObjectRoot"):
-        facility = clr.CastAs(
+        facility: IFacility = clr.CastAs(
             root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.eFacility, "MyFacility", "Earth"), IFacility
         )
 
@@ -74,7 +76,7 @@ class Facility(CodeSnippetsTestBase):
         self.CreateFacilityOnOtherPlanet(CodeSnippetsTestBase.m_Root)
 
     def CreateFacilityOnOtherPlanet(self, root: "IStkObjectRoot"):
-        facObject = clr.CastAs(
+        facObject: IFacility = clr.CastAs(
             root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.eFacility, "Facility1", "Mars"), IFacility
         )
 
@@ -97,7 +99,7 @@ class Facility(CodeSnippetsTestBase):
         command = ('ImportFromDB * Facility "' + filelocation) + '" Class Facility SiteName Weilheim'
         root.ExecuteCommand(command)
 
-        facility = clr.CastAs(root.GetObjectFromPath("Facility/Weilheim"), IFacility)
+        facility: IFacility = clr.CastAs(root.GetObjectFromPath("Facility/Weilheim"), IFacility)
 
     # endregion
 
