@@ -125,7 +125,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        starObject = clr.CastAs(EarlyBoundTests.AG_SR, IStkObject)
+        starObject: IStkObject = clr.CastAs(EarlyBoundTests.AG_SR, IStkObject)
         oHelper.Run(starObject)
         oHelper.TestObjectFilesArray(starObject.ObjectFiles)
 
@@ -150,7 +150,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new Color is: {0}", gfx.Color)
         AssertEx.AreEqual(Color.FromArgb(6636321), gfx.Color)
         # Marker Style
-        scenario = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
+        scenario: IScenario = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
         arMarkers = scenario.VO.AvailableMarkerTypes()
         TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.MarkerStyle)
         gfx.MarkerStyle = str(arMarkers[1])

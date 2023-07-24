@@ -175,7 +175,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new Color is: {0}", gfx.Color)
         AssertEx.AreEqual(Color.FromArgb(1193046), gfx.Color)
         # Marker Style
-        scenario = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
+        scenario: IScenario = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
         arMarkers = scenario.VO.AvailableMarkerTypes()
         TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.MarkerStyle)
         gfx.MarkerStyle = str(arMarkers[0])

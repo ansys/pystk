@@ -42,7 +42,7 @@ class Access(CodeSnippetsTestBase):
 
     def AddAndConfigureSunElevationAngleConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
-        minmax = clr.CastAs(
+        minmax: IAccessConstraintMinMax = clr.CastAs(
             accessConstraints.AddConstraint(AgEAccessConstraints.eCstrSunElevationAngle), IAccessConstraintMinMax
         )
         minmax.EnableMin = True
@@ -60,7 +60,7 @@ class Access(CodeSnippetsTestBase):
 
     def AddAndConfigureLunarElevationAngleConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
-        minmax = clr.CastAs(
+        minmax: IAccessConstraintMinMax = clr.CastAs(
             accessConstraints.AddConstraint(AgEAccessConstraints.eCstrLunarElevationAngle), IAccessConstraintMinMax
         )
         minmax.EnableMin = True
@@ -78,7 +78,7 @@ class Access(CodeSnippetsTestBase):
 
     def AddAndConfigureLOSSunExclConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # Angle constraint
-        cnstrAngle = clr.CastAs(
+        cnstrAngle: IAccessConstraintAngle = clr.CastAs(
             accessConstraints.AddConstraint(AgEAccessConstraints.eCstrLOSSunExclusion), IAccessConstraintAngle
         )
         cnstrAngle.Angle = 176.0
@@ -93,7 +93,7 @@ class Access(CodeSnippetsTestBase):
 
     def AddAndConfigureLightingConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # Condition constraint
-        light = clr.CastAs(
+        light: IAccessConstraintCondition = clr.CastAs(
             accessConstraints.AddConstraint(AgEAccessConstraints.eCstrLighting), IAccessConstraintCondition
         )
         light.Condition = AgECnstrLighting.eDirectSun
@@ -109,7 +109,7 @@ class Access(CodeSnippetsTestBase):
     def AddAndConfigureAltitudeConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
         # Attitude constraint
-        altitude = clr.CastAs(
+        altitude: IAccessConstraintMinMax = clr.CastAs(
             accessConstraints.AddConstraint(AgEAccessConstraints.eCstrAltitude), IAccessConstraintMinMax
         )
         altitude.EnableMin = True
@@ -154,7 +154,7 @@ class Access(CodeSnippetsTestBase):
 
     def AddAndConfigureThirdBodyObstructionConstraint(self, accessconstraints: "IAccessConstraintCollection"):
         # Get IAgAccessCnstrThirdBody interface
-        thirdBodyConstraint = clr.CastAs(
+        thirdBodyConstraint: IAccessConstraintThirdBody = clr.CastAs(
             accessconstraints.AddConstraint(AgEAccessConstraints.eCstrThirdBodyObstruction), IAccessConstraintThirdBody
         )
 
@@ -187,7 +187,7 @@ class Access(CodeSnippetsTestBase):
         stkobject.AccessConstraints.AddConstraint(AgEAccessConstraints.eCstrExclusionZone)
         stkobject.AccessConstraints.AddConstraint(AgEAccessConstraints.eCstrExclusionZone)
 
-        excZones = clr.CastAs(
+        excZones: IAccessConstraintExclZonesCollection = clr.CastAs(
             stkobject.AccessConstraints.GetActiveConstraint(AgEAccessConstraints.eCstrExclusionZone),
             IAccessConstraintExclZonesCollection,
         )
@@ -202,7 +202,7 @@ class Access(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, satelliteName)
 
     def ListAllConstraintExclusiveZones(self, accessconstraints: "IAccessConstraintCollection"):
-        excZones = clr.CastAs(
+        excZones: IAccessConstraintExclZonesCollection = clr.CastAs(
             accessconstraints.GetActiveConstraint(AgEAccessConstraints.eCstrExclusionZone),
             IAccessConstraintExclZonesCollection,
         )
@@ -227,14 +227,14 @@ class Access(CodeSnippetsTestBase):
 
     # region ComputeAccessBetweenTwoStkObjectsUsingObjectPath
     def test_ComputeAccessBetweenTwoStkObjectsUsingObjectPath(self):
-        sat = clr.CastAs(
+        sat: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
-        fac = clr.CastAs(
+        fac: IFacility = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1"), IFacility
         )
         sat.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        tb = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
+        tb: IVehiclePropagatorTwoBody = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
         tb.Propagate()
         fac.Position.AssignGeodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
 
@@ -253,14 +253,14 @@ class Access(CodeSnippetsTestBase):
 
     # region ComputeAccessBetweenTwoStkObjectsUsingIAgStkObjectInterface
     def test_ComputeAccessBetweenTwoStkObjectsUsingIAgStkObjectInterface(self):
-        sat = clr.CastAs(
+        sat: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
-        fac = clr.CastAs(
+        fac: IFacility = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1"), IFacility
         )
         sat.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        tb = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
+        tb: IVehiclePropagatorTwoBody = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
         tb.Propagate()
         fac.Position.AssignGeodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
 
@@ -283,14 +283,14 @@ class Access(CodeSnippetsTestBase):
 
     # region ComputeAccessIntervalTimes
     def test_ComputeAccessIntervalTimes(self):
-        sat = clr.CastAs(
+        sat: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
-        fac = clr.CastAs(
+        fac: IFacility = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1"), IFacility
         )
         sat.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        tb = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
+        tb: IVehiclePropagatorTwoBody = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
         tb.Propagate()
         fac.Position.AssignGeodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
         access = (clr.CastAs(sat, IStkObject)).GetAccessToObject((clr.CastAs(fac, IStkObject)))
@@ -313,12 +313,12 @@ class Access(CodeSnippetsTestBase):
     # region CreateOnePtAccess
     def test_CreateOnePtAccess(self):
         fac = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
-        sat = clr.CastAs(
+        sat: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "Satellite1"),
             ISatellite,
         )
         sat.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(sat.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(sat.Propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "1 Jan 2012 13:00:00.000")
         j2prop.Step = 60
         j2prop.Propagate()
@@ -390,12 +390,12 @@ class Access(CodeSnippetsTestBase):
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "FromAngularRate", "FromRange"]
 
-        dp = clr.CastAs(access.DataProviders["Constraint Data"], IDataProviderTimeVarying)
+        dp: IDataProviderTimeVarying = clr.CastAs(access.DataProviders["Constraint Data"], IDataProviderTimeVarying)
 
         index0 = 0
         while index0 < accessIntervals.Count:
-            startTime = None
-            stopTime = None
+            startTime: typing.Any = None
+            stopTime: typing.Any = None
 
             (startTime, stopTime) = accessIntervals.GetInterval(index0)
 
@@ -482,7 +482,7 @@ class Access(CodeSnippetsTestBase):
         # Set the access time period with the times we figured out above.
         access = sensor.GetAccessToObject(coloradoSprings)
         access.AccessTimePeriod = AgEAccessTimeType.eUserSpecAccessTime
-        accessTimePeriod = clr.CastAs(access.AccessTimePeriodData, IAccessTimePeriod)
+        accessTimePeriod: IAccessTimePeriod = clr.CastAs(access.AccessTimePeriodData, IAccessTimePeriod)
 
         accessTimePeriod.AccessInterval.State = AgECrdnSmartIntervalState.eCrdnSmartIntervalStateStartStop
 
@@ -527,7 +527,7 @@ class Access(CodeSnippetsTestBase):
         access = satellite.GetAccessToObject(otherObject)
 
         access.AccessTimePeriod = AgEAccessTimeType.eUserSpecAccessTime
-        accessTimePeriod = clr.CastAs(access.AccessTimePeriodData, IAccessTimePeriod)
+        accessTimePeriod: IAccessTimePeriod = clr.CastAs(access.AccessTimePeriodData, IAccessTimePeriod)
         if otherObject.Vgt.EventIntervals.Contains("AvailabilityTimeSpan"):
             availabilityTimeSpan = otherObject.Vgt.EventIntervals["AvailabilityTimeSpan"]
             accessTimePeriod.AccessInterval.SetImplicitInterval(availabilityTimeSpan)
@@ -537,7 +537,7 @@ class Access(CodeSnippetsTestBase):
     # region GetAccessBetweenObjectsByPathUsingGetExistingAccesses
     def test_GetAccessBetweenObjectsByPathUsingGetExistingAccesses(self):
         objFac = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Fac1")
-        sat = clr.CastAs(
+        sat: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "Sat1"), ISatellite
         )
         sat.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
@@ -552,7 +552,7 @@ class Access(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "Sat1")
 
     def GetAccessBetweenObjectsByPathUsingGetExistingAccesses(self, stkRoot: "IStkObjectRoot"):
-        scenario = clr.CastAs(stkRoot.CurrentScenario, IScenario)
+        scenario: IScenario = clr.CastAs(stkRoot.CurrentScenario, IScenario)
         accesses = scenario.GetExistingAccesses()
 
         numAccesses = len(accesses)  # number of accesses
@@ -594,7 +594,7 @@ class Access(CodeSnippetsTestBase):
 
         # Add constraints
         objectPath = (stkobject.ClassName + "/") + stkobject.InstanceName
-        awbConst = clr.CastAs(
+        awbConst: IAccessConstraintAnalysisWorkbench = clr.CastAs(
             awbAccessConstraints.AddConstraint(
                 AgEAWBAccessConstraints.eCstrAWBVectorMag, (objectPath + " East Vector")
             ),
@@ -603,7 +603,7 @@ class Access(CodeSnippetsTestBase):
         awbConst.EnableMin = True
         awbConst.Min = 0.0
 
-        awbConst2 = clr.CastAs(
+        awbConst2: IAccessConstraintAnalysisWorkbench = clr.CastAs(
             awbAccessConstraints.AddConstraint(
                 AgEAWBAccessConstraints.eCstrAWBVectorMag, (objectPath + " North Vector")
             ),
@@ -682,12 +682,12 @@ class Access(CodeSnippetsTestBase):
     def AddAWBAccessConstraintFromAWBComponent(self, stkobject: "IStkObject"):
         if stkobject.Vgt.Vectors.Contains("East"):
             vec = stkobject.Vgt.Vectors["East"]
-            crdnVec = clr.CastAs(vec, IAnalysisWorkbenchComponent)
+            crdnVec: IAnalysisWorkbenchComponent = clr.CastAs(vec, IAnalysisWorkbenchComponent)
 
             accessConstraints = stkobject.AccessConstraints
             awbAccessConstraints = accessConstraints.AWBConstraints
 
-            awbConst = clr.CastAs(
+            awbConst: IAccessConstraintAnalysisWorkbench = clr.CastAs(
                 awbAccessConstraints.AddConstraint(AgEAWBAccessConstraints.eCstrAWBVectorMag, crdnVec.QualifiedPath),
                 IAccessConstraintAnalysisWorkbench,
             )

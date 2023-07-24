@@ -28,7 +28,7 @@ class Satellite(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Satellite.m_Object = clr.CastAs(
+        Satellite.m_Object: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eSatellite, Satellite.m_DefaultName
             ),
@@ -56,7 +56,7 @@ class Satellite(CodeSnippetsTestBase):
 
     def CreateSatelliteOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Satellite
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "MySatellite"), ISatellite
         )
 
@@ -92,7 +92,9 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
 
         # Get the J2 Perturbation propagator
-        propagator = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        propagator: IVehiclePropagatorJ2Perturbation = clr.CastAs(
+            satellite.Propagator, IVehiclePropagatorJ2Perturbation
+        )
 
     # endregion
 
@@ -105,7 +107,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorGPS)
 
         # Get the GPS propagator
-        propagator = clr.CastAs(satellite.Propagator, IVehiclePropagatorGPS)
+        propagator: IVehiclePropagatorGPS = clr.CastAs(satellite.Propagator, IVehiclePropagatorGPS)
 
     # endregion
 
@@ -118,7 +120,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorStkExternal)
 
         # Get the STK External propagator
-        propagator = clr.CastAs(satellite.Propagator, IVehiclePropagatorStkExternal)
+        propagator: IVehiclePropagatorStkExternal = clr.CastAs(satellite.Propagator, IVehiclePropagatorStkExternal)
 
     # endregion
 
@@ -131,7 +133,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
 
         # Get the SGP4 propagator
-        propagator = clr.CastAs(satellite.Propagator, IVehiclePropagatorSGP4)
+        propagator: IVehiclePropagatorSGP4 = clr.CastAs(satellite.Propagator, IVehiclePropagatorSGP4)
 
     # endregion
 
@@ -144,7 +146,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorSPICE)
 
         # Get the SPICE propagator
-        propagator = clr.CastAs(satellite.Propagator, IVehiclePropagatorSPICE)
+        propagator: IVehiclePropagatorSPICE = clr.CastAs(satellite.Propagator, IVehiclePropagatorSPICE)
 
     # endregion
 
@@ -157,7 +159,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorLOP)
 
         # Get the LOP propagator
-        propagator = clr.CastAs(satellite.Propagator, IVehiclePropagatorLOP)
+        propagator: IVehiclePropagatorLOP = clr.CastAs(satellite.Propagator, IVehiclePropagatorLOP)
 
     # endregion
 
@@ -170,26 +172,28 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorHPOP)
 
         # Get the HPOP propagator
-        propagator = clr.CastAs(satellite.Propagator, IVehiclePropagatorHPOP)
+        propagator: IVehiclePropagatorHPOP = clr.CastAs(satellite.Propagator, IVehiclePropagatorHPOP)
 
     # endregion
 
     # region ConfigureTargetSlew
     def test_ConfigureTargetSlew(self):
         Satellite.m_Object.SetAttitudeType(AgEVeAttitude.eAttitudeStandard)
-        fac = clr.CastAs(
+        fac: IFacility = clr.CastAs(
             TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "FacSlew"), IFacility
         )
         fac.Position.AssignGeodetic(0.0, 0.0, 0.0)
         self.ConfigureTargetSlew(Satellite.m_Object)
 
     def ConfigureTargetSlew(self, satellite: "ISatellite"):
-        orbitAttStandard = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
+        orbitAttStandard: IVehicleOrbitAttitudeStandard = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
         orbitAttStandard.Pointing.UseTargetPointing = True
         orbitAttStandard.Pointing.Targets.Add("Facility/FacSlew")
         orbitAttStandard.Pointing.TargetSlew.SetSlewModeType(AgEVeSlewMode.eVeSlewModeConstrained2ndOrderSpline)
 
-        constrainedSlew = clr.CastAs(orbitAttStandard.Pointing.TargetSlew.SlewMode, IVehicleAttitudeSlewConstrained)
+        constrainedSlew: IVehicleAttitudeSlewConstrained = clr.CastAs(
+            orbitAttStandard.Pointing.TargetSlew.SlewMode, IVehicleAttitudeSlewConstrained
+        )
         constrainedSlew.MaximumSlewTime = 20.0  # sec
         constrainedSlew.SlewTimingBetweenTargets = AgEVeSlewTimingBetweenTargets.eVeSlewTimingBetweenTargetsOptimal
 

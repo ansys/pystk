@@ -26,7 +26,7 @@ class RealTime(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        RealTime.m_Object = clr.CastAs(
+        RealTime.m_Object: ILaunchVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eLaunchVehicle, RealTime.m_DefaultName
             ),
@@ -47,7 +47,7 @@ class RealTime(CodeSnippetsTestBase):
     # region ConfigureRealtimePropagator
     def test_ConfigureRealtimePropagator(self):
         scenarioObject = CodeSnippetsTestBase.m_Root.CurrentScenario
-        scenario = clr.CastAs(scenarioObject, IScenario)
+        scenario: IScenario = clr.CastAs(scenarioObject, IScenario)
 
         scenAnim = None
         anim = None
@@ -56,12 +56,12 @@ class RealTime(CodeSnippetsTestBase):
             scenAnim = scenario.Animation
             holdTimeStepType = scenAnim.AnimStepType
             scenAnim.AnimStepType = AgEScTimeStepType.eScRealTime
-            anim = clr.CastAs(CodeSnippetsTestBase.m_Root, IAnimation)
+            anim: IAnimation = clr.CastAs(CodeSnippetsTestBase.m_Root, IAnimation)
             anim.PlayForward()
 
         RealTime.m_Object.SetTrajectoryType(AgEVePropagatorType.ePropagatorRealtime)
         prop = RealTime.m_Object.Trajectory
-        propRealtime = clr.CastAs(prop, IVehiclePropagatorRealtime)
+        propRealtime: IVehiclePropagatorRealtime = clr.CastAs(prop, IVehiclePropagatorRealtime)
 
         self.ConfigureRealtimePropagator(CodeSnippetsTestBase.m_Root, propRealtime)
         if not TestBase.NoGraphicsMode:
@@ -92,13 +92,13 @@ class RealTime(CodeSnippetsTestBase):
 
     # region AddRealtimeLLAPositions
     def test_AddRealtimeLLAPositions(self):
-        gv = clr.CastAs(
+        gv: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
         gv.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
         (clr.Convert(gv.Route, IVehiclePropagatorRealtime)).Propagate()
-        realtime = clr.CastAs(gv.Route, IVehiclePropagatorRealtime)
+        realtime: IVehiclePropagatorRealtime = clr.CastAs(gv.Route, IVehiclePropagatorRealtime)
         self.AddRealtimeLLAPositions(realtime)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
@@ -110,13 +110,13 @@ class RealTime(CodeSnippetsTestBase):
 
     # region AddRealtimeLLAPositionsInBatches
     def test_AddRealtimeLLAPositionsInBatches(self):
-        gv = clr.CastAs(
+        gv: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
         gv.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
         (clr.Convert(gv.Route, IVehiclePropagatorRealtime)).Propagate()
-        realtime = clr.CastAs(gv.Route, IVehiclePropagatorRealtime)
+        realtime: IVehiclePropagatorRealtime = clr.CastAs(gv.Route, IVehiclePropagatorRealtime)
         self.AddRealtimeLLAPositionsInBatches(realtime)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
 

@@ -26,7 +26,7 @@ class Vehicle(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Vehicle.m_Object = clr.CastAs(
+        Vehicle.m_Object: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eGroundVehicle, self.m_DefaultName
             ),
@@ -43,11 +43,11 @@ class Vehicle(CodeSnippetsTestBase):
 
     # region ExportVehicleToStkEphemerisFile
     def test_ExportVehicleToStkEphemerisFile(self):
-        gv = clr.CastAs(
+        gv: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        ga = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
+        ga: IVehiclePropagatorGreatArc = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
         ga.Waypoints.Add()
         ga.Waypoints.Add()
         ga.Propagate()
@@ -79,11 +79,11 @@ class Vehicle(CodeSnippetsTestBase):
 
     # region ExportVehicleToAttitudeFile
     def test_ExportVehicleToAttitudeFile(self):
-        gv = clr.CastAs(
+        gv: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        ga = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
+        ga: IVehiclePropagatorGreatArc = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
         ga.Waypoints.Add()
         ga.Waypoints.Add()
         ga.Propagate()
@@ -95,7 +95,9 @@ class Vehicle(CodeSnippetsTestBase):
     def ExportVehicleToAttitudeFile(self, scenario: "IScenario", attitudeExport: "IVehicleAttitudeExportTool"):
         # Set and configure attitude coordinate axes
         attitudeExport.SetCoordinateAxesType(AgEAttCoordinateAxes.eAttCoordinateAxesCustom)
-        customAxes = clr.CastAs(attitudeExport.CoordinateAxes, IVehicleCoordinateAxesCustom)
+        customAxes: IVehicleCoordinateAxesCustom = clr.CastAs(
+            attitudeExport.CoordinateAxes, IVehicleCoordinateAxesCustom
+        )
         customAxes.ReferenceAxesName = "CentralBody/Sun J2000 Axes"
 
         attitudeExport.VersionFormat = AgEExportToolVersionFormat.eExportToolVersionFormatCurrent

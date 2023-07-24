@@ -28,7 +28,7 @@ class StkExternal(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        StkExternal.m_Object = clr.CastAs(
+        StkExternal.m_Object: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eSatellite, StkExternal.m_DefaultName
             ),
@@ -57,13 +57,13 @@ class StkExternal(CodeSnippetsTestBase):
         )
 
     def CreateSatelliteFromExternalEphemerisFile(self, root: "IStkObjectRoot", ephemerisFilePath: str):
-        satellite = clr.CastAs(
+        satellite: ISatellite = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "MySatellite"), ISatellite
         )
 
         # Configure propagator's external file path
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorStkExternal)
-        ext = clr.CastAs(satellite.Propagator, IVehiclePropagatorStkExternal)
+        ext: IVehiclePropagatorStkExternal = clr.CastAs(satellite.Propagator, IVehiclePropagatorStkExternal)
         ext.Filename = ephemerisFilePath
 
         # Propagate

@@ -12,7 +12,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_DetermineIfEventOccurredInInterval(self):
         self.DetermineIfEventOccurredInInterval(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def DetermineIfEventOccurredInInterval(self, provider):
+    def DetermineIfEventOccurredInInterval(self, provider: "IAnalysisWorkbenchProvider"):
         # The event you are interested in.
         timeEventInterval = provider.EventIntervals["LightingIntervals.Sunlight.First"]
 
@@ -32,7 +32,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_DetermineEventInterval(self):
         self.DetermineStartAndStopTimesOfEventInterval(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def DetermineStartAndStopTimesOfEventInterval(self, provider):
+    def DetermineStartAndStopTimesOfEventInterval(self, provider: "IAnalysisWorkbenchProvider"):
         eventInterval = provider.EventIntervals["AvailabilityTimeSpan"]
 
         interval = eventInterval.FindInterval()
@@ -46,11 +46,13 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateEventIntervalBetweenTwoInstants(self):
         self.CreateEventIntervalBetweenTwoInstants(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateEventIntervalBetweenTwoInstants(self, provider):
+    def CreateEventIntervalBetweenTwoInstants(self, provider: "IAnalysisWorkbenchProvider"):
         eventInterval = provider.EventIntervals.Factory.CreateEventIntervalBetweenTimeInstants(
             "MyIntervalBetweenTwoInstants", "MyDescription"
         )
-        asTimeInstant = clr.CastAs(eventInterval, ITimeToolEventIntervalBetweenTimeInstants)
+        asTimeInstant: ITimeToolEventIntervalBetweenTimeInstants = clr.CastAs(
+            eventInterval, ITimeToolEventIntervalBetweenTimeInstants
+        )
 
         asTimeInstant.StartTimeInstant = provider.Events["EphemerisStartTime"]
         asTimeInstant.StopTimeInstant = provider.Events["EphemerisStopTime"]
@@ -66,11 +68,13 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateFixedDurationEventInterval(self):
         self.CreateFixedDurationEventInterval(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateFixedDurationEventInterval(self, provider):
+    def CreateFixedDurationEventInterval(self, provider: "IAnalysisWorkbenchProvider"):
         eventInterval = provider.EventIntervals.Factory.CreateEventIntervalFixedDuration(
             "MyIntervalFixedDuration", "MyDescription"
         )
-        asFixedDuration = clr.CastAs(eventInterval, ITimeToolEventIntervalFixedDuration)
+        asFixedDuration: ITimeToolEventIntervalFixedDuration = clr.CastAs(
+            eventInterval, ITimeToolEventIntervalFixedDuration
+        )
 
         asFixedDuration.ReferenceTimeInstant = provider.Events["AvailabilityStartTime"]
 
@@ -91,9 +95,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateFixedEventInterval(self):
         self.CreateFixedEventInterval(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateFixedEventInterval(self, provider):
+    def CreateFixedEventInterval(self, provider: "IAnalysisWorkbenchProvider"):
         eventInterval = provider.EventIntervals.Factory.CreateEventIntervalFixed("MyIntervalFixed", "MyDescription")
-        asFixed = clr.CastAs(eventInterval, ITimeToolEventIntervalFixed)
+        asFixed: ITimeToolEventIntervalFixed = clr.CastAs(eventInterval, ITimeToolEventIntervalFixed)
 
         asFixed.SetInterval(
             provider.Events["AvailabilityStartTime"].FindOccurrence().Epoch,
@@ -111,11 +115,13 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateTimeOffsetEventInterval(self):
         self.CreateTimeOffsetEventInterval(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateTimeOffsetEventInterval(self, provider):
+    def CreateTimeOffsetEventInterval(self, provider: "IAnalysisWorkbenchProvider"):
         eventInterval = provider.EventIntervals.Factory.CreateEventIntervalTimeOffset(
             "MyIntervalFixedTimeOffset", "MyDescription"
         )
-        asFixedTimeOffset = clr.CastAs(eventInterval, ITimeToolEventIntervalTimeOffset)
+        asFixedTimeOffset: ITimeToolEventIntervalTimeOffset = clr.CastAs(
+            eventInterval, ITimeToolEventIntervalTimeOffset
+        )
 
         asFixedTimeOffset.ReferenceInterval = provider.EventIntervals["AvailabilityTimeSpan"]
 
@@ -133,11 +139,13 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateEventIntervalFromIntervalList(self):
         self.CreateEventIntervalFromIntervalList(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateEventIntervalFromIntervalList(self, provider):
+    def CreateEventIntervalFromIntervalList(self, provider: "IAnalysisWorkbenchProvider"):
         eventInterval = provider.EventIntervals.Factory.CreateEventIntervalFromIntervalList(
             "MyIntervalList", "MyDescription"
         )
-        asIntervalList = clr.CastAs(eventInterval, ITimeToolEventIntervalFromIntervalList)
+        asIntervalList: ITimeToolEventIntervalFromIntervalList = clr.CastAs(
+            eventInterval, ITimeToolEventIntervalFromIntervalList
+        )
 
         asIntervalList.ReferenceIntervals = provider.EventIntervalLists["AttitudeIntervals"]
         asIntervalList.IntervalSelection = AgECrdnIntervalSelection.eCrdnIntervalSelectionMaxGap
@@ -157,9 +165,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateScaledEventInterval(self):
         self.CreateScaledEventInterval(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateScaledEventInterval(self, provider):
+    def CreateScaledEventInterval(self, provider: "IAnalysisWorkbenchProvider"):
         eventInterval = provider.EventIntervals.Factory.CreateEventIntervalScaled("MyIntervalScaled", "MyDescription")
-        asScaled = clr.CastAs(eventInterval, ITimeToolEventIntervalScaled)
+        asScaled: ITimeToolEventIntervalScaled = clr.CastAs(eventInterval, ITimeToolEventIntervalScaled)
 
         asScaled.OriginalInterval = provider.EventIntervals["AvailabilityTimeSpan"]
 
@@ -187,14 +195,14 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         eventInterval = satelliteVgtProvider.EventIntervals.Factory.CreateEventIntervalSignaled(
             "MyIntervalSignaled", "MyDescription"
         )
-        asSignaled = clr.CastAs(eventInterval, ITimeToolEventIntervalSignaled)
+        asSignaled: ITimeToolEventIntervalSignaled = clr.CastAs(eventInterval, ITimeToolEventIntervalSignaled)
 
         asSignaled.OriginalInterval = aircraftVgtProvider.EventIntervals["AvailabilityTimeSpan"]
         asSignaled.BaseClockLocation = satelliteVgtProvider.Points["Center"]
         asSignaled.TargetClockLocation = aircraftVgtProvider.Points["Center"]
 
         asSignaled.SignalSense = AgECrdnSignalSense.eCrdnSignalSenseReceive
-        basicSignalDelay = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: ITimeToolSignalDelayBasic = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
         basicSignalDelay.SpeedOption = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
 
         # Uses current Time unit preference, this code snippet assumes seconds.
@@ -213,7 +221,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
         self.SetSmartIntervalToTodayAndStopTimeToTomorrow(scenario.AnalysisInterval)
 
-    def SetSmartIntervalToTodayAndStopTimeToTomorrow(self, smartInterval):
+    def SetSmartIntervalToTodayAndStopTimeToTomorrow(self, smartInterval: "ITimeToolEventIntervalSmartInterval"):
         smartInterval.SetExplicitInterval("Today", "Tomorrow")
 
     # endregion
@@ -227,7 +235,12 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
         self.ConfigureSmartIntervalStateStartStop(scenario.AnalysisInterval, startEvent, stopEvent)
 
-    def ConfigureSmartIntervalStateStartStop(self, smartInterval, startEventEpoch, stopEventEpoch):
+    def ConfigureSmartIntervalStateStartStop(
+        self,
+        smartInterval: "ITimeToolEventIntervalSmartInterval",
+        startEventEpoch: "ITimeToolEvent",
+        stopEventEpoch: "ITimeToolEvent",
+    ):
         smartInterval.State = AgECrdnSmartIntervalState.eCrdnSmartIntervalStateStartStop
 
         accessStartEpoch = smartInterval.GetStartEpoch()
@@ -245,7 +258,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         scenario = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
         self.ConfigureSmartIntervalEpochAndDuration(scenario.AnalysisInterval)
 
-    def ConfigureSmartIntervalEpochAndDuration(self, smartInterval):
+    def ConfigureSmartIntervalEpochAndDuration(self, smartInterval: "ITimeToolEventIntervalSmartInterval"):
         # Change the time interval to 1 week after the dependent interval.
         epochOfInterest = smartInterval.GetStopEpoch()
         smartInterval.SetStartEpochAndDuration(epochOfInterest, "+1 week")
@@ -267,7 +280,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         scenario = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
         self.GetSmartIntervalStartAndStopTime(scenario.AnalysisInterval)
 
-    def GetSmartIntervalStartAndStopTime(self, smartInterval):
+    def GetSmartIntervalStartAndStopTime(self, smartInterval: "ITimeToolEventIntervalSmartInterval"):
         smartInterval.SetStartTimeAndDuration("Now", "+100 day")
         startTime = smartInterval.FindStartTime()
         stopTime = smartInterval.FindStopTime()

@@ -44,7 +44,7 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility1")
 
     def SetStkOjbectDisplayToAlwaysOn(self, stkObject: "IStkObject"):
-        display = clr.CastAs(stkObject, IDisplayTime)
+        display: IDisplayTime = clr.CastAs(stkObject, IDisplayTime)
         display.SetDisplayStatusType(AgEDisplayTimesType.eAlwaysOn)
 
     # endregion
@@ -59,13 +59,13 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
 
     def SetStkObjectDisplayToUseIntervalsMode(self, stkObject: "IStkObject"):
         # Attempt to cast STK Object to the IAgDisplayTm interface
-        display = clr.CastAs(stkObject, IDisplayTime)
+        display: IDisplayTime = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
             if display.IsDisplayStatusTypeSupported(AgEDisplayTimesType.eUseIntervals):
                 display.SetDisplayStatusType(AgEDisplayTimesType.eUseIntervals)
 
                 # Get IAgIntervalCollection interface
-                intervalCollection = clr.CastAs(display.DisplayTimesData, IIntervalCollection)
+                intervalCollection: IIntervalCollection = clr.CastAs(display.DisplayTimesData, IIntervalCollection)
                 intervalCollection.RemoveAll()
 
                 # Add subsequent intervals
@@ -87,12 +87,12 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
 
     def SetStkObjectDisplayToUseDuringAccessMode(self, stkObject: "IStkObject"):
         # Attempt to cast STK Object to the IAgDisplayTm interface
-        display = clr.CastAs(stkObject, IDisplayTime)
+        display: IDisplayTime = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
             if display.IsDisplayStatusTypeSupported(AgEDisplayTimesType.eDuringAccess):
                 display.SetDisplayStatusType(AgEDisplayTimesType.eDuringAccess)
 
-                duringAccess = clr.CastAs(display.DisplayTimesData, IDuringAccess)
+                duringAccess: IDuringAccess = clr.CastAs(display.DisplayTimesData, IDuringAccess)
 
                 # Add subsequent existing stk objects to access display
                 duringAccess.AccessObjects.Add("Satellite/satellite1")

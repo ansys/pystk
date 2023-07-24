@@ -28,7 +28,7 @@ class J4Perturbation(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        J4Perturbation.m_Object = clr.CastAs(
+        J4Perturbation.m_Object: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eSatellite, J4Perturbation.m_DefaultName
             ),
@@ -54,14 +54,14 @@ class J4Perturbation(CodeSnippetsTestBase):
     # This code snippet is taken from SatelliteOrbitWizard.cs in the test suite
     def ConfigureJ4PerturbationPropagatorOrbitToCircular(self, satellite: "ISatellite", incl: float, altitude: float):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ4Perturbation)
-        prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ4Perturbation)
+        prop: IVehiclePropagatorJ4Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ4Perturbation)
 
-        keplerian = clr.CastAs(
+        keplerian: IOrbitStateClassical = clr.CastAs(
             prop.InitialState.Representation.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
         )
 
         keplerian.SizeShapeType = AgEClassicalSizeShape.eSizeShapeAltitude
-        size = clr.CastAs(keplerian.SizeShape, IClassicalSizeShapeAltitude)
+        size: IClassicalSizeShapeAltitude = clr.CastAs(keplerian.SizeShape, IClassicalSizeShapeAltitude)
 
         size.ApogeeAltitude = altitude
         size.PerigeeAltitude = altitude
@@ -88,14 +88,14 @@ class J4Perturbation(CodeSnippetsTestBase):
         self, satellite: "ISatellite", apogeeAlt: float, perigeeAlt: float, ascNodeLon: float
     ):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ4Perturbation)
-        prop = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ4Perturbation)
+        prop: IVehiclePropagatorJ4Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ4Perturbation)
 
-        keplerian = clr.CastAs(
+        keplerian: IOrbitStateClassical = clr.CastAs(
             prop.InitialState.Representation.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
         )
 
         keplerian.SizeShapeType = AgEClassicalSizeShape.eSizeShapeAltitude
-        size = clr.CastAs(keplerian.SizeShape, IClassicalSizeShapeAltitude)
+        size: IClassicalSizeShapeAltitude = clr.CastAs(keplerian.SizeShape, IClassicalSizeShapeAltitude)
 
         size.ApogeeAltitude = apogeeAlt
         size.PerigeeAltitude = perigeeAlt

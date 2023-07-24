@@ -26,7 +26,7 @@ class SimpleAscent(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        self.m_Object = clr.CastAs(
+        self.m_Object: ILaunchVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eLaunchVehicle, SimpleAscent.m_DefaultName
             ),
@@ -48,7 +48,9 @@ class SimpleAscent(CodeSnippetsTestBase):
         self.m_Object.SetTrajectoryType(AgEVePropagatorType.ePropagatorSimpleAscent)
 
         # Get J2 IAgVePropagatorSimpleAscent interface
-        propagator = clr.CastAs(self.m_Object.Trajectory, IVehiclePropagatorSimpleAscent)
+        propagator: IVehiclePropagatorSimpleAscent = clr.CastAs(
+            self.m_Object.Trajectory, IVehiclePropagatorSimpleAscent
+        )
 
         self.ConfigureSimpleAscentPropagator(propagator)
 
