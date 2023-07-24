@@ -52,7 +52,7 @@ ENV PATH="${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_DEFAULT_TIMEOUT=600 \
     PIP_RETRY=50
 
-# Start Xvfb in background mode
-CMD ["Xvfb", "$DISPLAY", "+extension", "GLX", "-screen", "0", "1024x768x24", "&"]
-
-ENTRYPOINT [ "bash" ]
+# Use the entrypoint script
+COPY --chown=stk docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+ENTRYPOINT [ "docker-entrypoint.sh" ]
