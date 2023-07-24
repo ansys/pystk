@@ -27,7 +27,7 @@ FROM ${baseImage}
 USER root
 
 # Install required packages for X Window System and MESA graphics
-RUN yum -y xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
+RUN yum -y install xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
     yum -y install mesa-dri-drivers mesa-libGLU; \
     yum -y install glxinfo; \
     yum -y install tkinter python3-tkinter; \
