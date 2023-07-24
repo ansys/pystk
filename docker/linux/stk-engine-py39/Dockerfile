@@ -27,8 +27,9 @@ FROM ${baseImage}
 USER root
 
 # Install required packages for X Window System and MESA graphics
-RUN yum -y xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps xorg-x11-utils; \
-    yum -y install mesa-dri-drivers; \
+RUN yum -y xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
+    yum -y install mesa-dri-drivers mesa-libGLU; \
+    yum -y install glxinfo; \
     yum -y install tkinter python3-tkinter; \
     yum clean all;
 
@@ -51,4 +52,4 @@ ENV PATH="${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_DEFAULT_TIMEOUT=600 \
     PIP_RETRY=50
 
-ENTRYPOINT [ "python3.9" ]
+ENTRYPOINT [ "Xvfb ${DISPLAY} +extension GLX -screen 0 1024x768x24 && /bin/bash" ]
