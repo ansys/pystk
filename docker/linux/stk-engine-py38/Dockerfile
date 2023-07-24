@@ -52,4 +52,7 @@ ENV PATH="${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_DEFAULT_TIMEOUT=600 \
     PIP_RETRY=50
 
-ENTRYPOINT [ "Xvfb ${DISPLAY} +extension GLX -screen 0 1024x768x24 & /bin/bash" ]
+# Start Xvfb in background mode
+CMD ["Xvfb", "$DISPLAY", "+extension", "GLX", "-screen", "0", "1024x768x24", "&"]
+
+ENTRYPOINT [ "bash" ]
