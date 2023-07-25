@@ -36,7 +36,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        scenario = clr.CastAs(TestBase.Application.CurrentScenario, IStkObject)
+        scenario: IStkObject = clr.CastAs(TestBase.Application.CurrentScenario, IStkObject)
         AviatorCodeSnippets.AG_Scenario = scenario
         AviatorCodeSnippets.AG_AC = clr.Convert(
             (scenario.Children.New(AgESTKObjectType.eAircraft, "AviatorAC")), IAircraft
@@ -44,9 +44,13 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Set to Propagator to Aviator
         AviatorCodeSnippets.AG_AC.SetRouteType(AgEVePropagatorType.ePropagatorAviator)
         # Get the aircrafts route (still on the STKObjects side)
-        aircraftRoute = clr.CastAs(AviatorCodeSnippets.AG_AC.Route, IVehiclePropagatorAviator)
+        aircraftRoute: IVehiclePropagatorAviator = clr.CastAs(
+            AviatorCodeSnippets.AG_AC.Route, IVehiclePropagatorAviator
+        )
         # Get the Aviator propagator
-        AviatorCodeSnippets.AG_AvtrProp = clr.CastAs(aircraftRoute.AvtrPropagator, IAviatorPropagator)
+        AviatorCodeSnippets.AG_AvtrProp: IAviatorPropagator = clr.CastAs(
+            aircraftRoute.AvtrPropagator, IAviatorPropagator
+        )
         # Get the Aviator mission
         AviatorCodeSnippets.AG_Mission = AviatorCodeSnippets.AG_AvtrProp.AvtrMission
         # Get the phases
@@ -58,12 +62,14 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the User Aircraft Models
         AviatorCodeSnippets.AG_AvtrAircraftModels = AviatorCodeSnippets.AG_AvtrCatalog.AircraftCategory.AircraftModels
         # Duplicate the basic airliner
-        AviatorCodeSnippets.AG_AvtrAircraft = clr.CastAs(
+        AviatorCodeSnippets.AG_AvtrAircraft: IAircraftModel = clr.CastAs(
             AviatorCodeSnippets.AG_AvtrAircraftModels.GetAircraft("Basic Airliner").GetAsCatalogItem().Duplicate(),
             IAircraftModel,
         )
         # Use the aircraft in the misison
-        AviatorCodeSnippets.AG_Mission.Vehicle = clr.CastAs(AviatorCodeSnippets.AG_AvtrAircraft, IAviatorVehicle)
+        AviatorCodeSnippets.AG_Mission.Vehicle: IAviatorVehicle = clr.CastAs(
+            AviatorCodeSnippets.AG_AvtrAircraft, IAviatorVehicle
+        )
 
     # endregion
 
@@ -83,9 +89,9 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Set to Propagator to Aviator
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorAviator)
         # Get the aircraft's route
-        aircraftRoute = clr.CastAs(aircraft.Route, IVehiclePropagatorAviator)
+        aircraftRoute: IVehiclePropagatorAviator = clr.CastAs(aircraft.Route, IVehiclePropagatorAviator)
         # Get the Aviator propagator
-        propagator = clr.CastAs(aircraftRoute.AvtrPropagator, IAviatorPropagator)
+        propagator: IAviatorPropagator = clr.CastAs(aircraftRoute.AvtrPropagator, IAviatorPropagator)
         # Get the Aviator mission
         mission = propagator.AvtrMission
         # Get the list of phases from the mission
@@ -170,7 +176,9 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     # region SetAviatorVehicle
     def test_SetAviatorVehicle(self):
         self.SetAviatorVehicle(AviatorCodeSnippets.AG_AvtrProp)
-        AviatorCodeSnippets.AG_Mission.Vehicle = clr.CastAs(AviatorCodeSnippets.AG_AvtrAircraft, IAviatorVehicle)
+        AviatorCodeSnippets.AG_Mission.Vehicle: IAviatorVehicle = clr.CastAs(
+            AviatorCodeSnippets.AG_AvtrAircraft, IAviatorVehicle
+        )
 
     def SetAviatorVehicle(self, propagator: "IAviatorPropagator"):
         # Get the Aviator catalog
@@ -184,7 +192,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the mission
         mission = propagator.AvtrMission
         # Set the vehicle used for the mission
-        mission.Vehicle = clr.CastAs(fighter, IAviatorVehicle)
+        mission.Vehicle: IAviatorVehicle = clr.CastAs(fighter, IAviatorVehicle)
 
     # endregion
 
@@ -481,7 +489,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def AddTakeoffProcedure(self, procedures: "IProcedureCollection"):
         # Add a takeoff procedure with a runway as a site
-        takeoff = clr.CastAs(
+        takeoff: IProcedureTakeoff = clr.CastAs(
             procedures.Add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff), IProcedureTakeoff
         )
 
@@ -516,7 +524,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def AddEnrouteProcedure(self, procedures: "IProcedureCollection"):
         # Add an enroute procedure with a site type of End of Previous Procedure
-        enroute = clr.CastAs(
+        enroute: IProcedureEnroute = clr.CastAs(
             procedures.Add(AgEAvtrSiteType.eSiteEndOfPrevProcedure, AgEAvtrProcedureType.eProcEnroute),
             IProcedureEnroute,
         )
@@ -558,7 +566,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def AddBasicManeuverProcedure(self, procedures: "IProcedureCollection"):
         # Add a basic maneuver procedure
-        basicManeuver = clr.CastAs(
+        basicManeuver: IProcedureBasicManeuver = clr.CastAs(
             procedures.Add(AgEAvtrSiteType.eSiteEndOfPrevProcedure, AgEAvtrProcedureType.eProcBasicManeuver),
             IProcedureBasicManeuver,
         )
@@ -566,14 +574,18 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Set the navigation to use a Straight Ahead strategy
         basicManeuver.NavigationStrategyType = "Straight Ahead"
         # Get the options for the straight ahead strategy
-        straightAhead = clr.CastAs(basicManeuver.Navigation, IBasicManeuverStrategyStraightAhead)
+        straightAhead: IBasicManeuverStrategyStraightAhead = clr.CastAs(
+            basicManeuver.Navigation, IBasicManeuverStrategyStraightAhead
+        )
         # Opt to maintain course (as opposed to maintain heading)
         straightAhead.ReferenceFrame = AgEAvtrStraightAheadRefFrame.eMaintainCourse
 
         # Set the profile to use a Autopilot - Vertical Plane strategy
         basicManeuver.ProfileStrategyType = "Autopilot - Vertical Plane"
         # Get the options for the profile strategy
-        autopilot = clr.CastAs(basicManeuver.Profile, IBasicManeuverStrategyAutopilotProf)
+        autopilot: IBasicManeuverStrategyAutopilotProf = clr.CastAs(
+            basicManeuver.Profile, IBasicManeuverStrategyAutopilotProf
+        )
         # Opt to maintain the initial altitude
         autopilot.AltitudeMode = AgEAvtrAutopilotAltitudeMode.eAutopilotHoldInitAltitude
         airspeedOptions = autopilot.AirspeedOptions
@@ -607,7 +619,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def AddLandingProcedure(self, procedures: "IProcedureCollection"):
         # Add a landing procedure
-        landing = clr.CastAs(
+        landing: IProcedureLanding = clr.CastAs(
             procedures.Add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcLanding), IProcedureLanding
         )
 

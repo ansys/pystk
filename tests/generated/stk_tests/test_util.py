@@ -1039,9 +1039,9 @@ class TestBase(unittest.TestCase):
     def LoadBaseScenario():
         TestBase.LoadTestScenario("Scenario1.sc")
 
-        ac1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["Boing737"], IAircraft)
+        ac1: IAircraft = clr.CastAs(TestBase.Application.CurrentScenario.Children["Boing737"], IAircraft)
         ac1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga = clr.CastAs(ac1.Route, IVehiclePropagatorGreatArc)
+        ga: IVehiclePropagatorGreatArc = clr.CastAs(ac1.Route, IVehiclePropagatorGreatArc)
         ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
         wpe = ga.Waypoints.Add()
         wpe.Latitude = 0
@@ -1052,9 +1052,11 @@ class TestBase(unittest.TestCase):
         wpe.Longitude = 20
         wpe.Time = "1 Jul 1999 00:55:00.000"
         ga.Propagate()
-        gv1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["GroundVehicle1"], IGroundVehicle)
+        gv1: IGroundVehicle = clr.CastAs(
+            TestBase.Application.CurrentScenario.Children["GroundVehicle1"], IGroundVehicle
+        )
         gv1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga = clr.CastAs(gv1.Route, IVehiclePropagatorGreatArc)
+        ga: IVehiclePropagatorGreatArc = clr.CastAs(gv1.Route, IVehiclePropagatorGreatArc)
         ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
         wpe = ga.Waypoints.Add()
         wpe.Latitude = 0
@@ -1065,9 +1067,9 @@ class TestBase(unittest.TestCase):
         wpe.Longitude = 20
         wpe.Time = "1 Jul 1999 00:55:00.000"
         ga.Propagate()
-        sh1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["Ship1"], IShip)
+        sh1: IShip = clr.CastAs(TestBase.Application.CurrentScenario.Children["Ship1"], IShip)
         sh1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga = clr.CastAs(sh1.Route, IVehiclePropagatorGreatArc)
+        ga: IVehiclePropagatorGreatArc = clr.CastAs(sh1.Route, IVehiclePropagatorGreatArc)
         ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
         wpe = ga.Waypoints.Add()
         wpe.Latitude = 0
@@ -1078,12 +1080,12 @@ class TestBase(unittest.TestCase):
         wpe.Longitude = 20
         wpe.Time = "1 Jul 1999 00:55:00.000"
         ga.Propagate()
-        ms1 = clr.CastAs(TestBase.Application.CurrentScenario.Children["Missile1"], IMissile)
+        ms1: IMissile = clr.CastAs(TestBase.Application.CurrentScenario.Children["Missile1"], IMissile)
         ms1.SetTrajectoryType(AgEVePropagatorType.ePropagatorBallistic)
-        ballistic = clr.CastAs(ms1.Trajectory, IVehiclePropagatorBallistic)
+        ballistic: IVehiclePropagatorBallistic = clr.CastAs(ms1.Trajectory, IVehiclePropagatorBallistic)
         ballistic.Step = 59
         ballistic.Propagate()
-        lt = clr.CastAs(TestBase.Application.CurrentScenario.Children["LineTarget2"], ILineTarget)
+        lt: ILineTarget = clr.CastAs(TestBase.Application.CurrentScenario.Children["LineTarget2"], ILineTarget)
         lt.Points.Add(0, 0)
         lt.Points.Add(2, 2)
 
@@ -1149,7 +1151,7 @@ class TestBase(unittest.TestCase):
     @property
     def EarthGravModel(self):
         sc = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
-        cbEarth = clr.CastAs(
+        cbEarth: IAstrogatorCentralBody = clr.CastAs(
             sc.ComponentDirectory.GetComponents(AgEComponent.eComponentAstrogator).GetFolder("Central Bodies")["Earth"],
             IAstrogatorCentralBody,
         )

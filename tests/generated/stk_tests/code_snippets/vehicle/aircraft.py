@@ -27,7 +27,7 @@ class Aircraft(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        Aircraft.m_Object = clr.CastAs(
+        Aircraft.m_Object: IAircraft = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eAircraft, Aircraft.m_DefaultName
             ),
@@ -52,7 +52,7 @@ class Aircraft(CodeSnippetsTestBase):
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Retrieve propagator interface
-        propagator = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
+        propagator: IVehiclePropagatorGreatArc = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
 
     # endregion
 
@@ -65,12 +65,14 @@ class Aircraft(CodeSnippetsTestBase):
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Retrieve propagator interface
-        propagator = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
+        propagator: IVehiclePropagatorGreatArc = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
         propagator.ArcGranularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive IAgVeWayPtAltitudeRefTerrain interface
         propagator.SetAltitudeRefType(AgEVeAltitudeRef.eWayPtAltRefTerrain)
-        altRef = clr.CastAs(propagator.AltitudeRef, IVehicleWaypointAltitudeReferenceTerrain)
+        altRef: IVehicleWaypointAltitudeReferenceTerrain = clr.CastAs(
+            propagator.AltitudeRef, IVehicleWaypointAltitudeReferenceTerrain
+        )
         altRef.Granularity = 51.33
         altRef.InterpMethod = AgEVeWayPtInterpMethod.eWayPtEllipsoidHeight
 

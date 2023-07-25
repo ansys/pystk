@@ -26,7 +26,7 @@ class SGP4(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        SGP4.m_Object = clr.CastAs(
+        SGP4.m_Object: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, SGP4.m_DefaultName),
             ISatellite,
         )
@@ -45,7 +45,7 @@ class SGP4(CodeSnippetsTestBase):
     def test_ConfigureSGP4WithFileSource(self):
         SGP4.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
 
-        sgp4 = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
+        sgp4: IVehiclePropagatorSGP4 = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
         self.ConfigureSGP4WithFileSource(
             sgp4, TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
@@ -74,7 +74,7 @@ class SGP4(CodeSnippetsTestBase):
     def test_SetSGP4ToAutoUpdateFromFileSource(self):
         # Set propagator
         SGP4.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
-        sgp4 = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
+        sgp4: IVehiclePropagatorSGP4 = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
 
         sgp4.CommonTasks.AddSegsFromFile(
             "2215", TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
@@ -110,7 +110,7 @@ class SGP4(CodeSnippetsTestBase):
     def test_SetSGP4ToAutoUpdateFromOnlineSource(self):
         # Set propagator
         SGP4.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
-        sgp4 = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
+        sgp4: IVehiclePropagatorSGP4 = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
 
         sgp4.CommonTasks.AddSegsFromFile(
             "2215", TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")

@@ -66,11 +66,11 @@ class Conversions(CodeSnippetsTestBase):
     # region ConvertOrbitStateToAnotherRepresentation
     def test_ConvertOrbitStateToAnotherRepresentation(self):
         CodeSnippetsTestBase.m_Root.NewScenario("ConvertOrbitStateToAnotherRepresentation")
-        sat = clr.CastAs(
+        sat: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
         sat.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop = clr.CastAs(sat.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(sat.Propagator, IVehiclePropagatorJ2Perturbation)
 
         self.ConvertOrbitStateToAnotherRepresentation(j2prop.InitialState.Representation)
 
@@ -78,7 +78,9 @@ class Conversions(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CloseScenario()
 
     def ConvertOrbitStateToAnotherRepresentation(self, orbit: "IOrbitState"):
-        newOrbit = clr.CastAs(orbit.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical)
+        newOrbit: IOrbitStateClassical = clr.CastAs(
+            orbit.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
+        )
 
     # endregion
 
@@ -89,8 +91,8 @@ class Conversions(CodeSnippetsTestBase):
         self.QueryIAgDirectionAsAnotherRespresentation(direction)
 
     def QueryIAgDirectionAsAnotherRespresentation(self, direction: "IDirection"):
-        b = None
-        c = None
+        b: typing.Any = None
+        c: typing.Any = None
 
         (b, c) = direction.QueryEuler(AgEEulerDirectionSequence.e12)
         Console.WriteLine("B = {0}, C = {1}", b, c)
@@ -105,11 +107,11 @@ class Conversions(CodeSnippetsTestBase):
     # region AssignIAgOrbitStateToAnotherRepresentation
     def test_AssignIAgOrbitStateToAnotherRepresentation(self):
         CodeSnippetsTestBase.m_Root.NewScenario("AssignIOrbitStateToAnotherRepresentation")
-        sat = clr.CastAs(
+        sat: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
         sat.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        oTwobody = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
+        oTwobody: IVehiclePropagatorTwoBody = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
 
         self.AssignIAgOrbitStateToAnotherRepresentation(oTwobody.InitialState.Representation)
 
@@ -119,7 +121,9 @@ class Conversions(CodeSnippetsTestBase):
     def AssignIAgOrbitStateToAnotherRepresentation(self, orbitState: "IOrbitState"):
         # orbitState can be extended to one of the other representations.
         # Here it is extended to Classical representation.
-        newOrbitState = clr.CastAs(orbitState.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical)
+        newOrbitState: IOrbitStateClassical = clr.CastAs(
+            orbitState.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
+        )
 
         # Set the new orbit state parameters
         newOrbitState.AssignClassical(AgECoordinateSystem.eCoordinateSystemICRF, 12000000, 0, 1.8, 0, -1.8, 0)

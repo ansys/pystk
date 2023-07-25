@@ -28,7 +28,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        CoverageDefinition.m_Object = clr.CastAs(
+        CoverageDefinition.m_Object: ICoverageDefinition = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eCoverageDefinition, CoverageDefinition.m_DefaultName
             ),
@@ -56,7 +56,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
     def CreateCoverageDefinition(self, root: "IStkObjectRoot"):
         # Create the CoverageDefinition
-        cd = clr.CastAs(
+        cd: ICoverageDefinition = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eCoverageDefinition, "cd1"), ICoverageDefinition
         )
 
@@ -76,7 +76,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
         # Define custom region
         cvGrid.BoundsType = AgECvBounds.eBoundsCustomRegions
-        oBoundsCustom = clr.CastAs(cvGrid.Bounds, ICoverageBoundsCustomRegions)
+        oBoundsCustom: ICoverageBoundsCustomRegions = clr.CastAs(cvGrid.Bounds, ICoverageBoundsCustomRegions)
         oBoundsCustom.RegionFiles.Add(regionFilePath)
         oBoundsCustom.AreaTargets.Add("AreaTarget/AreaTarget1")
 
@@ -110,7 +110,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         cvGrid.BoundsType = AgECvBounds.eBoundsCustomRegions
 
         # Get IAgCvBoundsCustomRegions interface
-        boundRegion = clr.CastAs(cvGrid.Bounds, ICoverageBoundsCustomRegions)
+        boundRegion: ICoverageBoundsCustomRegions = clr.CastAs(cvGrid.Bounds, ICoverageBoundsCustomRegions)
 
         # Add custom regions
         boundRegion.AreaTargets.Add("AreaTarget/AreaTarget1")
@@ -131,7 +131,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
         # Get the resolution interface
         resolution = grid.Resolution
-        latLonResolution = clr.CastAs(resolution, ICoverageResolutionLatLon)
+        latLonResolution: ICoverageResolutionLatLon = clr.CastAs(resolution, ICoverageResolutionLatLon)
 
         # Assign LatLon used to define grid resolution
         # Uses Angle Dimension
@@ -227,7 +227,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
         # Set the Sampling Method
         sampling.SetType(AgESamplingMethod.eSamplingMethodFixedStep)
-        fixedStep = clr.CastAs(sampling.Strategy, ISamplingMethodFixedStep)
+        fixedStep: ISamplingMethodFixedStep = clr.CastAs(sampling.Strategy, ISamplingMethodFixedStep)
 
         # Set properties on the Fixed Stop sampling method interface
         fixedStep.FixedTimeStep = 360.0
@@ -246,7 +246,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
         # Set the Sampling Method
         sampling.SetType(AgESamplingMethod.eSamplingMethodAdaptive)
-        adaptive = clr.CastAs(sampling.Strategy, ISamplingMethodAdaptive)
+        adaptive: ISamplingMethodAdaptive = clr.CastAs(sampling.Strategy, ISamplingMethodAdaptive)
 
         # Set properties on the Adaptive sampling method interface
         adaptive.MaxTimeStep = 180.0

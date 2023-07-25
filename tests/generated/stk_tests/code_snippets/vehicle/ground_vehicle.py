@@ -27,7 +27,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        GroundVehicle.m_Object = clr.CastAs(
+        GroundVehicle.m_Object: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eGroundVehicle, GroundVehicle.m_DefaultName
             ),
@@ -52,7 +52,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the ground vehicle
-        launchVehicle = clr.CastAs(
+        launchVehicle: IGroundVehicle = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "MyGroundVehicle"), IGroundVehicle
         )
 
@@ -67,7 +67,7 @@ class GroundVehicle(CodeSnippetsTestBase):
         groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Retrieve propagator interface if necessary
-        propagator = clr.CastAs(groundVehicle.Route, IVehiclePropagatorGreatArc)
+        propagator: IVehiclePropagatorGreatArc = clr.CastAs(groundVehicle.Route, IVehiclePropagatorGreatArc)
 
     # endregion
 
@@ -80,7 +80,7 @@ class GroundVehicle(CodeSnippetsTestBase):
         groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorStkExternal)
 
         # Retrieve propagator interface if necessary
-        propagator = clr.CastAs(groundVehicle.Route, IVehiclePropagatorStkExternal)
+        propagator: IVehiclePropagatorStkExternal = clr.CastAs(groundVehicle.Route, IVehiclePropagatorStkExternal)
 
     # endregion
 
@@ -93,13 +93,13 @@ class GroundVehicle(CodeSnippetsTestBase):
         groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
 
         # Retrieve propagator interface if necessary
-        propagator = clr.CastAs(groundVehicle.Route, IVehiclePropagatorRealtime)
+        propagator: IVehiclePropagatorRealtime = clr.CastAs(groundVehicle.Route, IVehiclePropagatorRealtime)
 
     # endregion
 
     # region GetExportStkEphemerisTool
     def test_GetExportStkEphemerisTool(self):
-        gv = clr.CastAs(
+        gv: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
@@ -113,7 +113,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     # region GetExportAttitudeTool
     def test_GetExportAttitudeTool(self):
-        gv = clr.CastAs(
+        gv: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
@@ -127,7 +127,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     # region GetExportPropDefTool
     def test_GetExportPropDefTool(self):
-        gv = clr.CastAs(
+        gv: IGroundVehicle = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )

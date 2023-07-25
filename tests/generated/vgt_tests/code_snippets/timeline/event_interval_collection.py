@@ -12,7 +12,7 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
     def test_DetermineIfEpochOccuredInIntervalCollection(self):
         self.DetermineIfEpochOccuredInIntervalCollection(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def DetermineIfEpochOccuredInIntervalCollection(self, provider):
+    def DetermineIfEpochOccuredInIntervalCollection(self, provider: "IAnalysisWorkbenchProvider"):
         eventCollName = "LightingIntervals"
         intervalVectorCollection = provider.EventIntervalCollections[eventCollName]
 
@@ -43,7 +43,7 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
     def test_DetermineIntervalsInEventIntervalCollection(self):
         self.DetermineIntervalsInEventIntervalCollection(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def DetermineIntervalsInEventIntervalCollection(self, provider):
+    def DetermineIntervalsInEventIntervalCollection(self, provider: "IAnalysisWorkbenchProvider"):
         intervalCollection = provider.EventIntervalCollections["LightingIntervals"]
 
         intervalResult = intervalCollection.FindIntervalCollection()
@@ -70,14 +70,18 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
                 "MyIntervalCollectionSignaled", "MyDescription"
             )
         )
-        asCollectionSignaled = clr.CastAs(intervalCollection, ITimeToolEventIntervalCollectionSignaled)
+        asCollectionSignaled: ITimeToolEventIntervalCollectionSignaled = clr.CastAs(
+            intervalCollection, ITimeToolEventIntervalCollectionSignaled
+        )
 
         asCollectionSignaled.OriginalCollection = aircraftVgtProvider.EventIntervalCollections["LightingIntervals"]
         asCollectionSignaled.BaseClockLocation = satelliteVgtProvider.Points["Center"]
         asCollectionSignaled.TargetClockLocation = aircraftVgtProvider.Points["Center"]
 
         asCollectionSignaled.SignalSense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
-        basicSignalDelay = clr.CastAs(asCollectionSignaled.SignalDelay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: ITimeToolSignalDelayBasic = clr.CastAs(
+            asCollectionSignaled.SignalDelay, ITimeToolSignalDelayBasic
+        )
         basicSignalDelay.SpeedOption = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
 
         # Uses current Time unit preference, this code snippet assumes seconds.
@@ -96,11 +100,13 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
     def test_CreateLightingEventIntervalCollection(self):
         self.CreateLightingEventIntervalCollection(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateLightingEventIntervalCollection(self, provider):
+    def CreateLightingEventIntervalCollection(self, provider: "IAnalysisWorkbenchProvider"):
         intervalCollection = provider.EventIntervalCollections.Factory.CreateEventIntervalCollectionLighting(
             "MyIntervalCollectionLightning", "MyDescription"
         )
-        asCollectionLightning = clr.CastAs(intervalCollection, ITimeToolEventIntervalCollectionLighting)
+        asCollectionLightning: ITimeToolEventIntervalCollectionLighting = clr.CastAs(
+            intervalCollection, ITimeToolEventIntervalCollectionLighting
+        )
 
         # Optionally use a separate central body
         asCollectionLightning.UseObjectEclipsingBodies = True

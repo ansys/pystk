@@ -51,14 +51,14 @@ class LinkBudget(CodeSnippetsTestBase):
 
         LinkBudget.m_Facility = scenario.Children.New(AgESTKObjectType.eFacility, LinkBudget.m_DefaultFacilityName)
 
-        LinkBudget.m_XmtrObject = clr.CastAs(
+        LinkBudget.m_XmtrObject: ITransmitter = clr.CastAs(
             LinkBudget.m_Satellite.Children.New(AgESTKObjectType.eTransmitter, LinkBudget.m_DefaultXmtrName),
             ITransmitter,
         )
-        LinkBudget.m_RcvrObject = clr.CastAs(
+        LinkBudget.m_RcvrObject: IReceiver = clr.CastAs(
             LinkBudget.m_Facility.Children.New(AgESTKObjectType.eReceiver, LinkBudget.m_DefaultRcvrName), IReceiver
         )
-        LinkBudget.m_AntennaObject = clr.CastAs(
+        LinkBudget.m_AntennaObject: IAntenna = clr.CastAs(
             LinkBudget.m_Facility.Children.New(AgESTKObjectType.eAntenna, LinkBudget.m_DefaultAntName), IAntenna
         )
 
@@ -92,12 +92,12 @@ class LinkBudget(CodeSnippetsTestBase):
         self.ComputeLinkBudgetSimple(LinkBudget.m_XmtrObject, LinkBudget.m_RcvrObject)
 
     def ComputeLinkBudgetSimple(self, geoTransmitter: "ITransmitter", facilityReceiver: "IReceiver"):
-        xmtrAsStkObject = clr.CastAs(geoTransmitter, IStkObject)
-        rcvrAsStkObject = clr.CastAs(facilityReceiver, IStkObject)
+        xmtrAsStkObject: IStkObject = clr.CastAs(geoTransmitter, IStkObject)
+        rcvrAsStkObject: IStkObject = clr.CastAs(facilityReceiver, IStkObject)
 
         # Set the transmitter to the simple model
         geoTransmitter.SetModel("Simple Transmitter Model")
-        simpleTrans = clr.CastAs(geoTransmitter.Model, ITransmitterModelSimple)
+        simpleTrans: ITransmitterModelSimple = clr.CastAs(geoTransmitter.Model, ITransmitterModelSimple)
 
         # Set the simple transmitter model's frequency to 3.2 GHz
         simpleTrans.Frequency = 3.2
@@ -107,7 +107,7 @@ class LinkBudget(CodeSnippetsTestBase):
 
         # Set the receiver to the simple model
         facilityReceiver.SetModel("Simple Receiver Model")
-        simpleRcvr = clr.CastAs(facilityReceiver.Model, IReceiverModelSimple)
+        simpleRcvr: IReceiverModelSimple = clr.CastAs(facilityReceiver.Model, IReceiverModelSimple)
 
         # Set the simple receiver model's G/T to 60 dB/K
         simpleRcvr.GOverT = 60.0
@@ -124,12 +124,14 @@ class LinkBudget(CodeSnippetsTestBase):
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "Eb/No", "BER"]
 
-        dp = clr.CastAs(linkAccess.DataProviders["Link Information"], IDataProviderTimeVarying)
+        dp: IDataProviderTimeVarying = clr.CastAs(
+            linkAccess.DataProviders["Link Information"], IDataProviderTimeVarying
+        )
 
         index0 = 0
         while index0 < accessIntervals.Count:
-            startTime = None
-            stopTime = None
+            startTime: typing.Any = None
+            stopTime: typing.Any = None
 
             (startTime, stopTime) = accessIntervals.GetInterval(index0)
 
@@ -169,15 +171,15 @@ class LinkBudget(CodeSnippetsTestBase):
         facilityDish: "IAntenna",
         scenarioRFEnv: "IRFEnvironment",
     ):
-        xmtrAsStkObject = clr.CastAs(geoTransmitter, IStkObject)
-        rcvrAsStkObject = clr.CastAs(facilityReceiver, IStkObject)
+        xmtrAsStkObject: IStkObject = clr.CastAs(geoTransmitter, IStkObject)
+        rcvrAsStkObject: IStkObject = clr.CastAs(facilityReceiver, IStkObject)
 
         # Enable the rain loss computation on the scenario RF environment
         scenarioRFEnv.PropagationChannel.EnableRainLoss = True
 
         # Set the transmitter to the complex model
         geoTransmitter.SetModel("Complex Transmitter Model")
-        complexTrans = clr.CastAs(geoTransmitter.Model, ITransmitterModelComplex)
+        complexTrans: ITransmitterModelComplex = clr.CastAs(geoTransmitter.Model, ITransmitterModelComplex)
 
         # Set the complex transmitter model's frequency to 3.2 GHz
         complexTrans.Frequency = 3.2
@@ -189,7 +191,7 @@ class LinkBudget(CodeSnippetsTestBase):
         complexTrans.AntennaControl.SetEmbeddedModel("Helix")
 
         # Set the beamwidth of the parablic antenna to 2 degrees
-        helix = clr.CastAs(complexTrans.AntennaControl.EmbeddedModel, IAntennaModelHelix)
+        helix: IAntennaModelHelix = clr.CastAs(complexTrans.AntennaControl.EmbeddedModel, IAntennaModelHelix)
         helix.NumberOfTurns = 30.0
 
         # Orient the complex transmitter embedded antenna's boresight to point directly at the receiver's location
@@ -199,7 +201,7 @@ class LinkBudget(CodeSnippetsTestBase):
 
         # Set the receiver to the complex model
         facilityReceiver.SetModel("Complex Receiver Model")
-        complexRcvr = clr.CastAs(facilityReceiver.Model, IReceiverModelComplex)
+        complexRcvr: IReceiverModelComplex = clr.CastAs(facilityReceiver.Model, IReceiverModelComplex)
 
         # Configure the complex receiver to use the antenna object on the same parent facility, by linking
         complexRcvr.AntennaControl.ReferenceType = AgEAntennaControlRefType.eAntennaControlRefTypeLink
@@ -228,7 +230,7 @@ class LinkBudget(CodeSnippetsTestBase):
         facilityDish.Model.DesignFrequency = 3.2
 
         # Set the antenna object's parabolic model diameter to 5 m.
-        parabolic = clr.CastAs(facilityDish.Model, IAntennaModelParabolic)
+        parabolic: IAntennaModelParabolic = clr.CastAs(facilityDish.Model, IAntennaModelParabolic)
         parabolic.InputType = AgEAntennaModelInputType.eAntennaModelInputTypeDiameter
         parabolic.Diameter = 5.0
 
@@ -244,12 +246,14 @@ class LinkBudget(CodeSnippetsTestBase):
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "Xmtr Gain", "Rcvr Gain", "Eb/No", "BER"]
 
-        dp = clr.CastAs(linkAccess.DataProviders["Link Information"], IDataProviderTimeVarying)
+        dp: IDataProviderTimeVarying = clr.CastAs(
+            linkAccess.DataProviders["Link Information"], IDataProviderTimeVarying
+        )
 
         index0 = 0
         while index0 < accessIntervals.Count:
-            startTime = None
-            stopTime = None
+            startTime: typing.Any = None
+            stopTime: typing.Any = None
 
             (startTime, stopTime) = accessIntervals.GetInterval(index0)
 

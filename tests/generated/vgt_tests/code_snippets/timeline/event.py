@@ -12,7 +12,7 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_DetermineIfEventOccursBeforeEpoch(self):
         self.DetermineIfEventOccursBeforeEpoch(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def DetermineIfEventOccursBeforeEpoch(self, provider):
+    def DetermineIfEventOccursBeforeEpoch(self, provider: "IAnalysisWorkbenchProvider"):
         # The event you are interested in.
         timeEvent1 = provider.Events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
 
@@ -59,9 +59,9 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateFixedEpochEvent(self):
         self.CreateFixedEpochEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateFixedEpochEvent(self, provider):
+    def CreateFixedEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
         timeEvent = provider.Events.Factory.CreateEventEpoch("MyEventFixed", "MyDescription")
-        asEpoch = clr.CastAs(timeEvent, ITimeToolEventEpoch)
+        asEpoch: ITimeToolEventEpoch = clr.CastAs(timeEvent, ITimeToolEventEpoch)
 
         # Epoch can be set explicitly (Uses current DateTime unit preference, this code snippet assumes UTCG)
         asEpoch.Epoch = "1 May 2016 04:00:00.000"
@@ -80,9 +80,9 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateFixedTimeOffsetEvent(self):
         self.CreateFixedTimeOffsetEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateFixedTimeOffsetEvent(self, provider):
+    def CreateFixedTimeOffsetEvent(self, provider: "IAnalysisWorkbenchProvider"):
         timeEvent = provider.Events.Factory.CreateEventTimeOffset("MyEventTimeOffset", "MyDescription")
-        asTimeOffset = clr.CastAs(timeEvent, ITimeToolEventTimeOffset)
+        asTimeOffset: ITimeToolEventTimeOffset = clr.CastAs(timeEvent, ITimeToolEventTimeOffset)
 
         asTimeOffset.ReferenceTimeInstant = provider.Events["AvailabilityStartTime"]
 
@@ -104,14 +104,14 @@ class Event(TimelineCodeSnippetsTestBase):
         aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
         timeEvent = satelliteVgtProvider.Events.Factory.CreateEventSignaled("MyEventSignaled", "MyDescription")
-        asSignaled = clr.CastAs(timeEvent, ITimeToolEventSignaled)
+        asSignaled: ITimeToolEventSignaled = clr.CastAs(timeEvent, ITimeToolEventSignaled)
 
         asSignaled.OriginalTimeInstant = aircraftVgtProvider.Events["EphemerisStartTime"]
         asSignaled.BaseClockLocation = satelliteVgtProvider.Points["Center"]
         asSignaled.TargetClockLocation = aircraftVgtProvider.Points["Center"]
 
         asSignaled.SignalSense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
-        basicSignalDelay = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: ITimeToolSignalDelayBasic = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
         basicSignalDelay.SpeedOption = AgECrdnSpeedOptions.eCrdnCustomTransmissionSpeed
 
         # Uses current Time unit preference, this code snippet assumes seconds.
@@ -127,9 +127,9 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateStartStopTimeEvent(self):
         self.CreateStartStopTimeEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateStartStopTimeEvent(self, provider):
+    def CreateStartStopTimeEvent(self, provider: "IAnalysisWorkbenchProvider"):
         timeEvent = provider.Events.Factory.CreateEventStartStopTime("MyEventStartStopTime", "MyDescription")
-        asStartStopTime = clr.CastAs(timeEvent, ITimeToolEventStartStopTime)
+        asStartStopTime: ITimeToolEventStartStopTime = clr.CastAs(timeEvent, ITimeToolEventStartStopTime)
 
         asStartStopTime.ReferenceEventInterval = provider.EventIntervals["EphemerisTimeSpan"]
 
@@ -145,9 +145,9 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateExtremumEvent(self):
         self.CreateExtremumEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateExtremumEvent(self, provider):
+    def CreateExtremumEvent(self, provider: "IAnalysisWorkbenchProvider"):
         timeEvent = provider.Events.Factory.CreateEventExtremum("MyEventExtremum", "MyDescription")
-        asExtremum = clr.CastAs(timeEvent, ITimeToolEventExtremum)
+        asExtremum: ITimeToolEventExtremum = clr.CastAs(timeEvent, ITimeToolEventExtremum)
 
         # For instance, time at highest altitude
         asExtremum.Calculation = provider.CalcScalars["GroundTrajectory.Detic.LLA.Altitude"]
@@ -163,7 +163,7 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateExplicitSmartEpochEvent(self):
         self.CreateExplicitSmartEpochEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateExplicitSmartEpochEvent(self, provider):
+    def CreateExplicitSmartEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
         smartEpoch = provider.Events.Factory.CreateSmartEpochFromTime("1 May 2016 04:00:00.000")
 
         # Smart epochs can be set explicitly (Uses current DateTime unit preference, this code snippet assumes UTCG)
@@ -177,7 +177,7 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateImplicitSmartEpochEvent(self):
         self.CreateImplicitSmartEpochEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
-    def CreateImplicitSmartEpochEvent(self, provider):
+    def CreateImplicitSmartEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
         referencedEvent = provider.Events["AvailabilityStartTime"]
         smartEpoch = provider.Events.Factory.CreateSmartEpochFromEvent(referencedEvent)
 

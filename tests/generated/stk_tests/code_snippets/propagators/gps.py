@@ -28,7 +28,7 @@ class GPS(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        GPS.m_Object = clr.CastAs(
+        GPS.m_Object: ISatellite = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, GPS.m_DefaultName),
             ISatellite,
         )
@@ -47,7 +47,7 @@ class GPS(CodeSnippetsTestBase):
     def test_ConfigureGPSWithAlmanac(self):
         GPS.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorGPS)
 
-        propagator = clr.CastAs(GPS.m_Object.Propagator, IVehiclePropagatorGPS)
+        propagator: IVehiclePropagatorGPS = clr.CastAs(GPS.m_Object.Propagator, IVehiclePropagatorGPS)
 
         self.ConfigureGPSWithAlmanac(
             propagator,
@@ -70,14 +70,20 @@ class GPS(CodeSnippetsTestBase):
         propagator.SpecifyCatalog.Filename = almanacPath
         if propagator.SpecifyCatalog.Properties.Type == AgEVeGPSAlmanacType.eGPSAlmanacTypeSEM:
             # configure the SEM almanac
-            sem = clr.CastAs(propagator.SpecifyCatalog.Properties, IVehicleGPSAlmanacPropertiesSEM)
+            sem: IVehicleGPSAlmanacPropertiesSEM = clr.CastAs(
+                propagator.SpecifyCatalog.Properties, IVehicleGPSAlmanacPropertiesSEM
+            )
             sem.ReferenceWeek = AgEGPSReferenceWeek.eGPSReferenceWeek22Aug1999
         elif propagator.SpecifyCatalog.Properties.Type == AgEVeGPSAlmanacType.eGPSAlmanacTypeSP3:
             # SP3 almanac contains no configurable properties
-            sp3 = clr.CastAs(propagator.SpecifyCatalog.Properties, IVehicleGPSAlmanacPropertiesSP3)
+            sp3: IVehicleGPSAlmanacPropertiesSP3 = clr.CastAs(
+                propagator.SpecifyCatalog.Properties, IVehicleGPSAlmanacPropertiesSP3
+            )
         elif propagator.SpecifyCatalog.Properties.Type == AgEVeGPSAlmanacType.eGPSAlmanacTypeYUMA:
             # configure the YUMA almanac
-            yuma = clr.CastAs(propagator.SpecifyCatalog.Properties, IVehicleGPSAlmanacPropertiesYUMA)
+            yuma: IVehicleGPSAlmanacPropertiesYUMA = clr.CastAs(
+                propagator.SpecifyCatalog.Properties, IVehicleGPSAlmanacPropertiesYUMA
+            )
             yuma.ReferenceWeek = AgEGPSReferenceWeek.eGPSReferenceWeek22Aug1999
 
         # Propagate
