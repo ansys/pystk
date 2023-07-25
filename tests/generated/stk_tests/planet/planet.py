@@ -39,9 +39,7 @@ class EarlyBoundTests(TestBase):
 
     # region CommonTasks
     def test_CommonTasks(self):
-        file = EarlyBoundTests.AG_PL.CommonTasks.SetPositionSourceFile(
-            TestBase.GetScenarioFile(Path.Combine("PlanetTests", "Venus.pe"))
-        )
+        file = EarlyBoundTests.AG_PL.CommonTasks.SetPositionSourceFile(TestBase.GetScenarioFile("Venus.pe"))
         Assert.assertEqual("Venus.pe", file.Filename)
 
         cb = EarlyBoundTests.AG_PL.CommonTasks.SetPositionSourceCentralBody("Jupiter", AgEEphemSourceType.eEphemDefault)
@@ -98,7 +96,7 @@ class EarlyBoundTests(TestBase):
         file = clr.Convert(EarlyBoundTests.AG_PL.PositionSourceData, IPlanetPositionFile)
         Assert.assertIsNotNone(file)
         TestBase.logger.WriteLine5("The current Filename is: {0}", file.Filename)
-        file.Filename = TestBase.GetScenarioFile(Path.Combine("PlanetTests", "Venus.pe"))
+        file.Filename = TestBase.GetScenarioFile("Venus.pe")
         TestBase.logger.WriteLine5("The new Filename is: {0}", file.Filename)
         # Restore the planet name to its original value
         EarlyBoundTests.AG_PL.PositionSource = AgEPlPositionSourceType.ePosCentralBody

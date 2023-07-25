@@ -116,6 +116,10 @@ class Path:
     def GetFullPath(path):
         return os.path.abspath(path)
 
+    @staticmethod
+    def GetDirName(path):
+        return os.path.dirname(path)
+
 
 class ClrTypeOfResult:
     def __init__(self, typeinfo):
@@ -970,6 +974,8 @@ class TestBase(unittest.TestCase):
     NonSupportedDirectory = None
     DataProvidersDirectory = None
 
+    ScenarioDirName = "data"
+
     ApplicationProvider = None
     Target = None
 
@@ -995,7 +1001,7 @@ class TestBase(unittest.TestCase):
 
         TestBase.CurrentDirectory = TestBase._GetTestBaseDirectory()
         TestBase.CodeBaseDir = TestBase.CurrentDirectory
-        TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, "Scenario")
+        TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         TestBase.NonSupportedDirectory = Path.Combine(TestBase.ScenarioDirectory, "NonSupportedScen")
         TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProviders")
 
@@ -1031,12 +1037,18 @@ class TestBase(unittest.TestCase):
     def LoadTestScenario(path):
         if TestBase.Application.CurrentScenario is not None:
             TestBase.Application.CloseScenario()
+        TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         baseScenario = TestBase.GetScenarioFile(path)
         TestBase.Application.LoadScenario(baseScenario)
+        if Path.GetDirName(path):
+            TestBase.ScenarioDirectory = Path.Combine(
+                TestBase.CodeBaseDir, TestBase.ScenarioDirName, Path.GetDirName(path)
+            )
         TestBase.Application.UnitPreferences.ResetUnits()
 
     @staticmethod
     def LoadBaseScenario():
+        TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         TestBase.LoadTestScenario("Scenario1.sc")
 
         ac1: IAircraft = clr.CastAs(TestBase.Application.CurrentScenario.Children["Boing737"], IAircraft)
@@ -1095,7 +1107,11 @@ class TestBase(unittest.TestCase):
 
     @staticmethod
     def GetScenarioFile(path):
-        return os.path.abspath(os.path.join(TestBase._GetTestBaseDirectory(), "data", path))
+        return os.path.abspath(os.path.join(TestBase.ScenarioDirectory, path))
+
+    @staticmethod
+    def GetScenarioRootDir():
+        return os.path.abspath(os.path.join(TestBase._GetTestBaseDirectory(), TestBase.ScenarioDirName))
 
     def CreateApplication(self, ignored):
         return TestBase.ApplicationProvider.CreateApplication(ignored)

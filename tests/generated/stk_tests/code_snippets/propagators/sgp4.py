@@ -80,7 +80,9 @@ class SGP4(CodeSnippetsTestBase):
             "2215", TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
 
-        self.SetSGP4ToAutoUpdateFromFileSource(sgp4, TestBase.GetScenarioFile("stkAllTLE.tle"))
+        self.SetSGP4ToAutoUpdateFromFileSource(
+            sgp4, TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "stkAllTLE.tle"))
+        )
 
     def SetSGP4ToAutoUpdateFromFileSource(self, propagator: "IVehiclePropagatorSGP4", fileUpdateSource: str):
         propagator.AutoUpdateEnabled = True

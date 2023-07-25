@@ -66,7 +66,9 @@ class Target(CodeSnippetsTestBase):
 
     # region ConfigureTargetAzElMask
     def test_ConfigureTargetAzElMask(self):
-        self.ConfigureTargetAzElMask(self.m_Object, TestBase.GetScenarioFile("maskfile.aem"))
+        self.ConfigureTargetAzElMask(
+            self.m_Object, TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "maskfile.aem"))
+        )
 
     def ConfigureTargetAzElMask(self, target: "ITarget", maskfile: str):
         target.UseLocalTimeOffset = True
