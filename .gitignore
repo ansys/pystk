@@ -79,6 +79,7 @@ doc/_build/
 # PyBuilder
 .pybuilder/
 target/
+!tests/generated/stk_tests/target/
 
 # Jupyter Notebook
 .ipynb_checkpoints

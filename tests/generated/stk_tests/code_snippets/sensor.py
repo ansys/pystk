@@ -66,7 +66,9 @@ class Sensor(CodeSnippetsTestBase):
 
     # region DefineCustomSensor
     def test_DefineCustomSensor(self):
-        self.DefineCustomSensor(Sensor.m_Object, TestBase.GetScenarioFile("Custom.Pattern"))
+        self.DefineCustomSensor(
+            Sensor.m_Object, TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "Custom.Pattern"))
+        )
 
     def DefineCustomSensor(self, sensor: "ISensor", sensorPatternPath: str):
         # Set pattern type to Custom
@@ -222,7 +224,10 @@ class Sensor(CodeSnippetsTestBase):
 
     # region DefineExternalSensorPointing
     def test_DefineExternalSensorPointing(self):
-        self.DefineExternalSensorPointing(Sensor.m_Object, TestBase.GetScenarioFile("SensorPointing_External.sp"))
+        self.DefineExternalSensorPointing(
+            Sensor.m_Object,
+            TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "SensorPointing_External.sp")),
+        )
 
     def DefineExternalSensorPointing(self, sensor: "ISensor", externalSensorPointingPath: str):
         # Sensor pointing data files traditionally have .sp extensions
@@ -286,7 +291,9 @@ class Sensor(CodeSnippetsTestBase):
 
     # region DefineSensorAzElMask
     def test_DefineSensorAzElMask(self):
-        self.DefineSensorAzElMask(Sensor.m_Object, TestBase.GetScenarioFile("maskfile.aem"))
+        self.DefineSensorAzElMask(
+            Sensor.m_Object, TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "maskfile.aem"))
+        )
 
     def DefineSensorAzElMask(self, sensor: "ISensor", maskFilePath: str):
         # Specify Mask file
