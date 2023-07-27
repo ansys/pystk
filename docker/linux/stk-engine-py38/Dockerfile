@@ -30,7 +30,7 @@ USER root
 RUN yum -y install xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
     yum -y install mesa-dri-drivers mesa-libGLU; \
     yum -y install glxinfo; \
-    yum -y install tkinter python3-tkinter; \
+    yum -y install tk; \
     yum clean all;
 
 # Set the display environment variable to allow GUI applications
