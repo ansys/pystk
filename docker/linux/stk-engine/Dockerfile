@@ -11,13 +11,13 @@ RUN set -e; \
 
 # Reduce image size by removing unnecessary components
 RUN set -e; \
-#    rm -rf /stk/Data/ExampleScenarios/; \
+    rm -rf /stk/Data/ExampleScenarios/; \
     rm -rf /stk/Data/HtmlInterface/; \
     rm -rf /stk/Data/HtmlUtilities/; \
     rm -rf /stk/Data/LicAndReg/; \
     rm -rf /stk/Data/Resources/; \
     rm -rf /stk/Data/Viewer/; \
-#    rm -rf /stk/STKData/VO; \
+    rm -rf /stk/STKData/VO; \
     rm -rf /stk/licensingclient/linx64/ClientSettings
 
 # Set the base image for the next stage
