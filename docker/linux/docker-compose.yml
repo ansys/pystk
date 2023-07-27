@@ -33,7 +33,6 @@ services:
       args:
         baseImage: ansys/stk:latest-centos7
         basePythonImage: ansys/stk:latest-centos7-pybase
-        withGraphics: true
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -47,7 +46,6 @@ services:
       args:
         baseImage: ansys/stk:latest-centos7
         basePythonImage: ansys/stk:latest-centos7-pybase
-        withGraphics: true
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -61,6 +59,5 @@ services:
       args:
         baseImage: ansys/stk:latest-centos7
         basePythonImage: ansys/stk:latest-centos7-pybase
-        withGraphics: true
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
