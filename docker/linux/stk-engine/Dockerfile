@@ -11,7 +11,7 @@ RUN set -e; \
 
 # Reduce image size by removing unnecessary components
 RUN set -e; \
-    rm -rf /stk/Data/ExampleScenarios/; \
+#    rm -rf /stk/Data/ExampleScenarios/; \
     rm -rf /stk/Data/HtmlInterface/; \
     rm -rf /stk/Data/HtmlUtilities/; \
     rm -rf /stk/Data/LicAndReg/; \
