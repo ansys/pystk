@@ -25,6 +25,16 @@ RUN cd /tmp && \
 FROM ${baseImage}
 USER root
 
+# Install required packages for X Window System and MESA graphics
+RUN yum -y install xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
+    yum -y install mesa-dri-drivers mesa-libGLU; \
+    yum -y install glxinfo; \
+    yum -y install tk; \
+    yum clean all;
+
+# Set the display environment variable to allow GUI applications
+ENV DISPLAY=:0
+
 # Copy the Python interpreter, the standard library and pip to the final image
 COPY --from=builder /usr/local/bin/python3.9 /usr/local/bin/python3.9 
 COPY --from=builder /usr/local/lib/python3.9 /usr/local/lib/python3.9 
@@ -41,4 +51,7 @@ ENV PATH="${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_DEFAULT_TIMEOUT=600 \
     PIP_RETRY=50
 
-ENTRYPOINT [ "python3.9" ]
+# Use the entrypoint script
+COPY --chown=stk docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+ENTRYPOINT [ "docker-entrypoint.sh" ]
