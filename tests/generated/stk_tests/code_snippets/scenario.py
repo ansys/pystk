@@ -119,7 +119,10 @@ class Scenario(CodeSnippetsTestBase):
 
     # region AddAnalyticalTerrainToEarthCentralBody
     def test_AddAnalyticalTerrainToEarthCentralBody(self):
-        self.AddAnalyticalTerrainToEarthCentralBody(CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("ny512.dte"))
+        self.AddAnalyticalTerrainToEarthCentralBody(
+            CodeSnippetsTestBase.m_Root,
+            TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "ny512.dte")),
+        )
 
     def AddAnalyticalTerrainToEarthCentralBody(self, root: "IStkObjectRoot", terrainFile: str):
         # Retrieve the IAgScenario interface

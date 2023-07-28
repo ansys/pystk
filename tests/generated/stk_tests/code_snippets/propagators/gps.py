@@ -51,7 +51,7 @@ class GPS(CodeSnippetsTestBase):
 
         self.ConfigureGPSWithAlmanac(
             propagator,
-            TestBase.GetScenarioFile("GPSAlmanac.alm"),
+            TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "GPSAlmanac.alm")),
             (clr.Convert(GPS.m_Object, IStkObject)).Root.CurrentScenario,
         )
 
