@@ -403,7 +403,9 @@ class Mto(CodeSnippetsTestBase):
     # region LoadMtoTrackPointsFromFile
     def test_LoadMtoTrackPointsFromFile(self):
         Mto.m_Object.Tracks.Add(0)
-        self.LoadMtoTrackPointsFromFile(Mto.m_Object.Tracks[0], TestBase.GetScenarioFile("TestEph.e"))
+        self.LoadMtoTrackPointsFromFile(
+            Mto.m_Object.Tracks[0], TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "TestEph.e"))
+        )
 
     def LoadMtoTrackPointsFromFile(self, track: "IMtoTrack", filePath: str):
         # LoadPoints expects the path an Ephemeris file path

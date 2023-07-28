@@ -18,8 +18,8 @@ class EarlyBoundTests(TestBase):
 
     @staticmethod
     def InitHelper():
-        TestBase.Application.CloseScenario()
-        TestBase.Application.LoadScenario(TestBase.GetScenarioFile(Path.Combine("AviatorTests", "AviatorTests.sc")))
+        TestBase.LoadTestScenario(Path.Combine("AviatorTests", "AviatorTests.sc"))
+
         scenario: IStkObject = clr.CastAs(TestBase.Application.CurrentScenario, IStkObject)
         EarlyBoundTests.AG_Scenario = TestBase.Application.CurrentScenario
         EarlyBoundTests.AG_AC = clr.Convert(
@@ -54,7 +54,7 @@ class EarlyBoundTests(TestBase):
         )
 
         # Setting up Aviator Catalog databases
-        arincPath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "FAANFD18_SlimForTestOnly"))
+        arincPath = TestBase.GetScenarioFile("FAANFD18_SlimForTestOnly")
         EarlyBoundTests.AG_AvtrCatalog.RunwayCategory.ARINC424Runways.MasterDataFilepath = arincPath
         EarlyBoundTests.AG_AvtrCatalog.RunwayCategory.ARINC424Runways.GetAsCatalogSource().Save()
 
@@ -1398,9 +1398,7 @@ class EarlyBoundTests(TestBase):
     # region FormationFlyer
     @category("Procedure Tests")
     def test_FormationFlyer(self):
-        TestBase.Application.CloseScenario()
-
-        TestBase.Application.LoadScenario(TestBase.GetScenarioFile(r"Formation_Flyer\Scenario1.sc"))
+        TestBase.LoadTestScenario(Path.Combine("AviatorTests", "Formation_Flyer", "Scenario1.sc"))
         EarlyBoundTests.AG_Scenario = TestBase.Application.CurrentScenario
         EarlyBoundTests.AG_AC = clr.Convert((EarlyBoundTests.AG_Scenario.Children.GetItemByName("Wingman")), IAircraft)
         aircraftRoute: IVehiclePropagatorAviator = clr.CastAs(EarlyBoundTests.AG_AC.Route, IVehiclePropagatorAviator)
@@ -1533,7 +1531,6 @@ class EarlyBoundTests(TestBase):
 
                 TryCatchAssertBlock.ExpectedException("Cannot set", action82)
 
-        TestBase.Application.CloseScenario()
         EarlyBoundTests.InitHelper()
 
     # endregion
@@ -6094,14 +6091,14 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(False, EarlyBoundTests.AG_Mission.IsValid)
 
-        nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.flightprocs"))
+        nonexistingfilepath = TestBase.GetScenarioFile("DoesNotExist.flightprocs")
 
         def action296():
             superProc.LoadProceduresFromFile(nonexistingfilepath)
 
         TryCatchAssertBlock.ExpectedException("", action296)
 
-        filepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "basicManeuver.flightprocs"))
+        filepath = TestBase.GetScenarioFile("basicManeuver.flightprocs")
         superProc.LoadProceduresFromFile(filepath)
         Assert.assertTrue(EarlyBoundTests.AG_Mission.IsValid)
 
@@ -6282,14 +6279,14 @@ class EarlyBoundTests(TestBase):
         advFWT.AeroStrategy = AgEAvtrAdvFixedWingAeroStrategy.eExternalAeroFile
         aero = advFWT.AeroModeAsExternal
 
-        nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.aero"))
+        nonexistingfilepath = TestBase.GetScenarioFile("DoesNotExist.aero")
 
         def action301():
             aero.SetFilepath(nonexistingfilepath)
 
         TryCatchAssertBlock.ExpectedException("Failed to load the file.", action301)
 
-        filepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "advAero.aero"))
+        filepath = TestBase.GetScenarioFile("advAero.aero")
         returnMsg = aero.SetFilepath(filepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertTrue(aero.IsValid)
@@ -6529,14 +6526,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile, advFWT.PowerplantStrategy)
         prop = advFWT.PowerplantModeAsExternal
 
-        nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.prop"))
+        nonexistingfilepath = TestBase.GetScenarioFile("DoesNotExist.prop")
 
         def action311():
             prop.SetFilepath(nonexistingfilepath)
 
         TryCatchAssertBlock.ExpectedException("Failed to load the file.", action311)
 
-        filepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "advProp.prop"))
+        filepath = TestBase.GetScenarioFile("advProp.prop")
         returnMsg = prop.SetFilepath(filepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertTrue(prop.IsValid)
@@ -7205,14 +7202,14 @@ class EarlyBoundTests(TestBase):
         externalAero.TakeoffLandingRefArea = 0.07
         Assert.assertEqual(0.07, externalAero.TakeoffLandingRefArea)
 
-        nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.aero"))
+        nonexistingfilepath = TestBase.GetScenarioFile("DoesNotExist.aero")
 
         def action344():
             externalAero.SetForwardFlightFilepath(nonexistingfilepath)
 
         TryCatchAssertBlock.ExpectedException("Failed to load the file.", action344)
 
-        aeroFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "simpleAero.aero"))
+        aeroFilepath = TestBase.GetScenarioFile("simpleAero.aero")
         returnMsg = externalAero.SetForwardFlightFilepath(aeroFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalAero.CanSetForwardFlightRefArea)
@@ -7349,14 +7346,14 @@ class EarlyBoundTests(TestBase):
         externalProp.MinThrustDecel = 0.4
         Assert.assertEqual(0.4, externalProp.MinThrustDecel)
 
-        nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.prop"))
+        nonexistingfilepath = TestBase.GetScenarioFile("DoesNotExist.prop")
 
         def action351():
             externalProp.SetPropFilepath(nonexistingfilepath)
 
         TryCatchAssertBlock.ExpectedException("Failed to load the file.", action351)
 
-        propFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "simpleProp.prop"))
+        propFilepath = TestBase.GetScenarioFile("simpleProp.prop")
         returnMsg = externalProp.SetPropFilepath(propFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalProp.CanSetAccelDecel)
@@ -8586,14 +8583,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, externalAero.RefArea)
         Assert.assertEqual(False, externalAero.IsValid)
 
-        nonexistingfilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.aero"))
+        nonexistingfilepath = TestBase.GetScenarioFile("DoesNotExist.aero")
 
         def action405():
             externalAero.SetFilepath(nonexistingfilepath)
 
         TryCatchAssertBlock.ExpectedException("Failed to load the file.", action405)
 
-        aeroFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "simpleAero.aero"))
+        aeroFilepath = TestBase.GetScenarioFile("simpleAero.aero")
         returnMsg = externalAero.SetFilepath(aeroFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertEqual(False, externalAero.CanSetRefArea)
@@ -8680,14 +8677,14 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(False, externalProp.IsValid)
 
-        nonexistingPropFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "DoesNotExist.prop"))
+        nonexistingPropFilepath = TestBase.GetScenarioFile("DoesNotExist.prop")
 
         def action407():
             externalProp.SetFilepath(nonexistingPropFilepath)
 
         TryCatchAssertBlock.ExpectedException("Failed to load the file.", action407)
 
-        propFilepath = TestBase.GetScenarioFile(Path.Combine("AviatorTests", "simpleProp.prop"))
+        propFilepath = TestBase.GetScenarioFile("simpleProp.prop")
         returnMsg = externalProp.SetFilepath(propFilepath)
         Assert.assertTrue(("processed" in returnMsg))
         Assert.assertTrue(externalProp.IsValid)

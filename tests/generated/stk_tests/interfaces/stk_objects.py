@@ -5,6 +5,64 @@ from logger import *
 from ansys.stk.core.stkobjects import *
 
 
+# region LinkToObjectHelper
+class LinkToObjectHelper(object):
+    def __init__(self, *args, **kwargs):
+        self.m_logger = Logger.Instance
+
+    # endregion
+
+    # region Run method
+    def Run(self, oLink: "ILinkToObject", strObjectName: str):
+        Assert.assertIsNotNone(oLink)
+        self.m_logger.WriteLine("LinkToObject test:")
+        # Name
+        self.m_logger.WriteLine5("\tCurrent linked object name is: {0}", oLink.Name)
+        # IsIntrinsic
+        self.m_logger.WriteLine4("\tCurrent IsIntrinsic flag is: {0}", oLink.IsIntrinsic)
+        # LinkedObject
+        oObject = oLink.LinkedObject
+        if oObject != None:
+            self.m_logger.WriteLine7("\t{0} is linked to: {1}", strObjectName, oObject.Path)
+
+        else:
+            self.m_logger.WriteLine5("\t{0} is not linked to any objects.", strObjectName)
+
+        # AvailableObjects
+        arObjects = oLink.AvailableObjects
+        self.m_logger.WriteLine3("\tAvailable Objects array contains: {0} elements", Array.Length(arObjects))
+        if Array.Length(arObjects) > 0:
+            strObject = str(arObjects[0])
+            self.m_logger.WriteLine7("\t\tAvailable object {0} is: {1}", 0, strObject)
+            # BindTo
+            oLink.BindTo(strObject)
+            if not oLink.IsIntrinsic:
+                oObject = oLink.LinkedObject
+                if strObject != "None":
+                    if oObject != None:
+                        self.m_logger.WriteLine7("\t\t\tNow {0} is linked to: {1}", strObjectName, oObject.Path)
+                        self.m_logger.WriteLine5("\t\t\tLinked object name is: {0}", oLink.Name)
+                        self.m_logger.WriteLine4("\t\t\tIsIntrinsic flag is: {0}", oLink.IsIntrinsic)
+
+                    else:
+                        Assert.assertIsNone(oObject)
+                        self.m_logger.WriteLine5("\t\t\tNow {0} is not linked to any other objects.", strObjectName)
+
+            else:
+                self.m_logger.WriteLine7(
+                    "\t\t\tNow {0} is linked to an intrinsic object {1}.", strObjectName, oLink.Name
+                )
+                self.m_logger.WriteLine4("\t\t\tIsIntrinsic flag is: {0}", oLink.IsIntrinsic)
+
+        def action1():
+            oLink.BindTo("WrongObject")
+
+        TryCatchAssertBlock.DoAssert("", action1)
+
+
+# endregion
+
+
 # region STKObjectHelper
 class STKObjectHelper(object):
     def __init__(self, *args, **kwargs):
@@ -23,15 +81,15 @@ class STKObjectHelper(object):
         self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.InstanceName)
         Assert.assertEqual("Instance", oObject.InstanceName)
 
-        def action1():
+        def action2():
             oObject.InstanceName = ""
 
-        TryCatchAssertBlock.DoAssert("", action1)
+        TryCatchAssertBlock.DoAssert("", action2)
 
-        def action2():
+        def action3():
             oObject.InstanceName = "Invalid Name"
 
-        TryCatchAssertBlock.DoAssert("", action2)
+        TryCatchAssertBlock.DoAssert("", action3)
         oObject.InstanceName = strValue
         self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.InstanceName)
         Assert.assertEqual(strValue, oObject.InstanceName)
@@ -61,7 +119,7 @@ class STKObjectHelper(object):
 
         # Export
         strValue = oObject.InstanceName
-        oObject.Export(TestBase.GetScenarioFile(r"Export\ExportedObject"))
+        oObject.Export(TestBase.GetScenarioFile(Path.Combine("Export", "ExportedObject")))
         oObject.InstanceName = strValue
         # Parent
         oParent = oObject.Parent
@@ -85,10 +143,10 @@ class STKObjectHelper(object):
         else:
             self.m_logger.WriteLine5("\tThe {0} does not support an ObjectCoverage.", oObject.InstanceName)
 
-            def action3():
+            def action4():
                 oCoverage = oObject.ObjectCoverage
 
-            TryCatchAssertBlock.DoAssert("", action3)
+            TryCatchAssertBlock.DoAssert("", action4)
 
         # create an additional Satellite
         oSatellite = clr.Convert(
@@ -121,25 +179,25 @@ class STKObjectHelper(object):
         else:
             self.m_logger.WriteLine5("\tThe {0} does not support an Access.", oObject.InstanceName)
 
-            def action4():
-                oAccess = oObject.GetAccess((clr.Convert(oSatellite, IStkObject)).Path)
-
-            TryCatchAssertBlock.DoAssert("", action4)
-
             def action5():
-                oAccess = oObject.GetAccessToObject(clr.CastAs(oSatellite, IStkObject))
+                oAccess = oObject.GetAccess((clr.Convert(oSatellite, IStkObject)).Path)
 
             TryCatchAssertBlock.DoAssert("", action5)
 
             def action6():
-                acc = oObject.AccessConstraints
+                oAccess = oObject.GetAccessToObject(clr.CastAs(oSatellite, IStkObject))
 
             TryCatchAssertBlock.DoAssert("", action6)
 
             def action7():
-                opa = oObject.CreateOnePointAccess("Satellite/MIR")
+                acc = oObject.AccessConstraints
 
             TryCatchAssertBlock.DoAssert("", action7)
+
+            def action8():
+                opa = oObject.CreateOnePointAccess("Satellite/MIR")
+
+            TryCatchAssertBlock.DoAssert("", action8)
 
         oObject.Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "MIR")
         # Root
@@ -336,10 +394,10 @@ class STKObjectHelper(object):
 
         else:
 
-            def action8():
+            def action9():
                 oCollection.ImportObject(TestBase.GetScenarioFile(Path.Combine("AreaTargetTest", "at2.at")))
 
-            TryCatchAssertBlock.DoAssert("", action8)
+            TryCatchAssertBlock.DoAssert("", action9)
 
         # _NewEnum
         for oElement in oCollection:
@@ -385,25 +443,25 @@ class STKObjectHelper(object):
         metadata.SetReadOnly("Key1", True)
         Assert.assertTrue(metadata.GetReadOnly("Key1"))
 
-        def action9():
+        def action10():
             metadata.Set("Key1", "Changed1")
 
-        TryCatchAssertBlock.ExpectedException("read-only", action9)
+        TryCatchAssertBlock.ExpectedException("read-only", action10)
 
         metadata.SetReadOnly("Key1", False)
         Assert.assertFalse(metadata.GetReadOnly("Key1"))
         metadata.Set("Key1", "Changed1")
         Assert.assertEqual("Changed1", metadata["Key1"])
 
-        def action10():
+        def action11():
             metadata.SetReadOnly("BogusKey", True)
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action10)
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action11)
 
-        def action11():
+        def action12():
             metadata.Set("", "Value1")
 
-        TryCatchAssertBlock.ExpectedException("empty string", action11)
+        TryCatchAssertBlock.ExpectedException("empty string", action12)
 
         metadata.Set("Key1", "Changed1")
         metadata.Set("Key2", "Changed2")
@@ -430,10 +488,10 @@ class STKObjectHelper(object):
 
         Assert.assertFalse(metadata.Contains("Key4"))
 
-        def action12():
+        def action13():
             dummy = metadata["Key4"]
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action12)
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action13)
 
         metadata.RemoveKey("Key2")
         Assert.assertEqual(2, metadata.Count)
@@ -614,10 +672,10 @@ class DataProviderCollectionHelper(object):
 
         else:
 
-            def action13():
+            def action14():
                 oResult = oProvider.Exec()
 
-            TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action13)
+            TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action14)
 
         self.m_logger.WriteLine5("----- DATA PROVIDER FIXED TEST ({0}) ----- END -----", strName)
 
@@ -765,10 +823,10 @@ class DataProviderCollectionHelper(object):
 
         else:
 
-            def action14():
+            def action15():
                 oResult = oProvider.Exec(dtStart, dtStop)
 
-            TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action14)
+            TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action15)
 
     # endregion
 
@@ -812,10 +870,10 @@ class DataProviderCollectionHelper(object):
 
             else:
 
-                def action15():
+                def action16():
                     oResult = oProvider.Exec(dtStart, dtStop, 240.0)
 
-                TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action15)
+                TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action16)
 
         self.m_logger.WriteLine5("----- DATA PROVIDER TIMEVAR TEST ({0}) ----- END -----", strName)
 
@@ -860,10 +918,10 @@ class StkAccessHelper(object):
 
         else:
 
-            def action16():
+            def action17():
                 self.Graphics(oAccess.Graphics)
 
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action16)
+            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action17)
 
         # Advanced
         self.Advanced(oAccess)
@@ -873,11 +931,11 @@ class StkAccessHelper(object):
 
         else:
 
-            def action17():
+            def action18():
                 oDDHelper = VODataDisplayHelper(oRoot)
                 oDDHelper.Run(oAccess.DataDisplays, True, False)
 
-            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action17)
+            TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action18)
 
         # DataProviders
         oDPHelper = DataProviderCollectionHelper()
@@ -897,29 +955,29 @@ class StkAccessHelper(object):
         self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.Inherit)
         Assert.assertTrue(oGraphics.Inherit)
 
-        def action18():
+        def action19():
             oGraphics.AnimateGfx = True
 
         # AnimateGfx (readonly)
-        TryCatchAssertBlock.DoAssert("", action18)
-
-        def action19():
-            oGraphics.LineVisible = True
-
-        # LineVisible (readonly)
         TryCatchAssertBlock.DoAssert("", action19)
 
         def action20():
-            oGraphics.StaticGfx = True
+            oGraphics.LineVisible = True
 
-        # StaticGfx (readonly)
+        # LineVisible (readonly)
         TryCatchAssertBlock.DoAssert("", action20)
 
         def action21():
+            oGraphics.StaticGfx = True
+
+        # StaticGfx (readonly)
+        TryCatchAssertBlock.DoAssert("", action21)
+
+        def action22():
             oGraphics.LineWidth = 2
 
         # LineWidth (readonly)
-        TryCatchAssertBlock.DoAssert("", action21)
+        TryCatchAssertBlock.DoAssert("", action22)
         # Inherit (false)
         oGraphics.Inherit = False
         self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.Inherit)
@@ -941,12 +999,12 @@ class StkAccessHelper(object):
         self.m_logger.WriteLine4("\tThe new LineVisible is: {0}", oGraphics.LineVisible)
         Assert.assertFalse(oGraphics.LineVisible)
 
-        def action22():
+        def action23():
             oGraphics.LineWidth = 2
 
         # LineWidth
         # LineVisible is false so LineWidth can't be set (readonly)
-        TryCatchAssertBlock.DoAssert("", action22)
+        TryCatchAssertBlock.DoAssert("", action23)
         oGraphics.LineVisible = True
         self.m_logger.WriteLine3("\tThe current LineWidth is: {0}", oGraphics.LineWidth)
         oGraphics.LineWidth = 2
@@ -988,49 +1046,49 @@ class StkAccessHelper(object):
         oAdvanced.UsePreciseEventTimes = False  # Use Samples Only
         Assert.assertFalse(oAdvanced.UsePreciseEventTimes)
 
-        def action23():
+        def action24():
             oAdvanced.TimeConvergence = 0.123
 
-        TryCatchAssertBlock.ExpectedException("read only", action23)
-
-        def action24():
-            oAdvanced.RelativeTolerance = 0.456
-
-        TryCatchAssertBlock.ExpectedException("read-only", action24)
+        TryCatchAssertBlock.ExpectedException("read only", action24)
 
         def action25():
-            oAdvanced.AbsoluteTolerance = 0.789
+            oAdvanced.RelativeTolerance = 0.456
 
         TryCatchAssertBlock.ExpectedException("read-only", action25)
+
+        def action26():
+            oAdvanced.AbsoluteTolerance = 0.789
+
+        TryCatchAssertBlock.ExpectedException("read-only", action26)
 
         # Light Time Delay
         oAdvanced.EnableLightTimeDelay = False
         Assert.assertFalse(oAdvanced.EnableLightTimeDelay)
 
-        def action26():
+        def action27():
             oAdvanced.TimeLightDelayConvergence = 0.01234
 
-        TryCatchAssertBlock.ExpectedException("read only", action26)
-
-        def action27():
-            oAdvanced.AberrationType = AgEAberrationType.eAberrationAnnual
-
-        TryCatchAssertBlock.ExpectedException("read-only", action27)
+        TryCatchAssertBlock.ExpectedException("read only", action27)
 
         def action28():
-            oAdvanced.UseDefaultClockHostAndSignalSense = False
+            oAdvanced.AberrationType = AgEAberrationType.eAberrationAnnual
 
         TryCatchAssertBlock.ExpectedException("read-only", action28)
 
         def action29():
-            oAdvanced.ClockHost = AgEIvClockHost.eIvBase
+            oAdvanced.UseDefaultClockHostAndSignalSense = False
 
         TryCatchAssertBlock.ExpectedException("read-only", action29)
 
         def action30():
-            oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTransmit
+            oAdvanced.ClockHost = AgEIvClockHost.eIvBase
 
         TryCatchAssertBlock.ExpectedException("read-only", action30)
+
+        def action31():
+            oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTransmit
+
+        TryCatchAssertBlock.ExpectedException("read-only", action31)
 
         oAdvanced.EnableLightTimeDelay = True
         Assert.assertTrue(oAdvanced.EnableLightTimeDelay)
@@ -1038,10 +1096,10 @@ class StkAccessHelper(object):
         oAdvanced.TimeLightDelayConvergence = 0.0123
         Assert.assertEqual(0.0123, oAdvanced.TimeLightDelayConvergence)
 
-        def action31():
+        def action32():
             oAdvanced.TimeLightDelayConvergence = 12.34
 
-        TryCatchAssertBlock.ExpectedException("", action31)
+        TryCatchAssertBlock.ExpectedException("", action32)
 
         oAdvanced.AberrationType = AgEAberrationType.eAberrationAnnual
         Assert.assertEqual(AgEAberrationType.eAberrationAnnual, oAdvanced.AberrationType)
@@ -1050,24 +1108,24 @@ class StkAccessHelper(object):
         oAdvanced.AberrationType = AgEAberrationType.eAberrationTotal
         Assert.assertEqual(AgEAberrationType.eAberrationTotal, oAdvanced.AberrationType)
 
-        def action32():
+        def action33():
             oAdvanced.AberrationType = AgEAberrationType.eAberrationUnknown
 
-        TryCatchAssertBlock.ExpectedException("", action32)
+        TryCatchAssertBlock.ExpectedException("", action33)
 
         # Signal Path
         oAdvanced.UseDefaultClockHostAndSignalSense = True
         Assert.assertTrue(oAdvanced.UseDefaultClockHostAndSignalSense)
 
-        def action33():
+        def action34():
             oAdvanced.ClockHost = AgEIvClockHost.eIvBase
 
-        TryCatchAssertBlock.ExpectedException("read-only", action33)
+        TryCatchAssertBlock.ExpectedException("read-only", action34)
 
-        def action34():
+        def action35():
             oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTransmit
 
-        TryCatchAssertBlock.ExpectedException("read-only", action34)
+        TryCatchAssertBlock.ExpectedException("read-only", action35)
 
         oAdvanced.UseDefaultClockHostAndSignalSense = False
         Assert.assertFalse(oAdvanced.UseDefaultClockHostAndSignalSense)
@@ -1077,10 +1135,10 @@ class StkAccessHelper(object):
         oAdvanced.ClockHost = AgEIvClockHost.eIvTarget
         Assert.assertEqual(AgEIvClockHost.eIvTarget, oAdvanced.ClockHost)
 
-        def action35():
+        def action36():
             oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTimeSenseUnknown
 
-        TryCatchAssertBlock.ExpectedException("must be in", action35)
+        TryCatchAssertBlock.ExpectedException("must be in", action36)
         oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTransmit
         Assert.assertEqual(AgEIvTimeSense.eIvTransmit, oAdvanced.SignalSenseOfClockHost)
         oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvReceive
@@ -1093,28 +1151,28 @@ class StkAccessHelper(object):
         oAdvanced.MaxTimeStep = 123.456
         Assert.assertEqual(123.456, oAdvanced.MaxTimeStep)
 
-        def action36():
+        def action37():
             oAdvanced.MaxTimeStep = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action36)
+        TryCatchAssertBlock.ExpectedException("invalid", action37)
 
         oAdvanced.MinTimeStep = 456.123
         Assert.assertEqual(456.123, oAdvanced.MinTimeStep)
 
-        def action37():
+        def action38():
             oAdvanced.MinTimeStep = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action37)
-
-        def action38():
-            oAdvanced.FixedStepSize = 789
-
-        TryCatchAssertBlock.ExpectedException("read only", action38)
+        TryCatchAssertBlock.ExpectedException("invalid", action38)
 
         def action39():
-            oAdvanced.FixedTimeBound = 789
+            oAdvanced.FixedStepSize = 789
 
         TryCatchAssertBlock.ExpectedException("read only", action39)
+
+        def action40():
+            oAdvanced.FixedTimeBound = 789
+
+        TryCatchAssertBlock.ExpectedException("read only", action40)
 
         oAdvanced.UseFixedTimeStep = True  # Fixed Step
         Assert.assertTrue(oAdvanced.UseFixedTimeStep)
@@ -1122,28 +1180,28 @@ class StkAccessHelper(object):
         oAdvanced.FixedStepSize = 123.456
         Assert.assertEqual(123.456, oAdvanced.FixedStepSize)
 
-        def action40():
+        def action41():
             oAdvanced.FixedStepSize = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action40)
+        TryCatchAssertBlock.ExpectedException("invalid", action41)
 
         oAdvanced.FixedTimeBound = 56.123
         Assert.assertEqual(56.123, oAdvanced.FixedTimeBound)
 
-        def action41():
+        def action42():
             oAdvanced.FixedTimeBound = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action41)
-
-        def action42():
-            oAdvanced.MaxTimeStep = 123.456
-
-        TryCatchAssertBlock.ExpectedException("read only", action42)
+        TryCatchAssertBlock.ExpectedException("invalid", action42)
 
         def action43():
-            oAdvanced.MinTimeStep = 56.123
+            oAdvanced.MaxTimeStep = 123.456
 
         TryCatchAssertBlock.ExpectedException("read only", action43)
+
+        def action44():
+            oAdvanced.MinTimeStep = 56.123
+
+        TryCatchAssertBlock.ExpectedException("read only", action44)
 
         oAccess.ComputeAccess()  # to make changes show in GUI
 
@@ -1368,89 +1426,89 @@ class VODataDisplayHelper(object):
     def NotVisibleCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
-        def action44():
+        def action45():
             oVODataDisplayElement.Location = AgEVOLocation.e3DWindow
 
         # Location
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action44)
-
-        def action45():
-            oVODataDisplayElement.FontColor = Color.FromArgb(11254443)
-
-        # FontColor
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action45)
 
         def action46():
-            oVODataDisplayElement.XOrigin = AgEVOXOrigin.eXOriginLeft
+            oVODataDisplayElement.FontColor = Color.FromArgb(11254443)
 
-        # XOrigin
+        # FontColor
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action46)
 
         def action47():
-            oVODataDisplayElement.YOrigin = AgEVOYOrigin.eYOriginBottom
+            oVODataDisplayElement.XOrigin = AgEVOXOrigin.eXOriginLeft
 
-        # YOrigin
+        # XOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action47)
 
         def action48():
-            oVODataDisplayElement.X = 12
+            oVODataDisplayElement.YOrigin = AgEVOYOrigin.eYOriginBottom
 
-        # X
+        # YOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action48)
 
         def action49():
-            oVODataDisplayElement.Y = 21
+            oVODataDisplayElement.X = 12
 
-        # Y
+        # X
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action49)
 
         def action50():
-            oVODataDisplayElement.Title = True
+            oVODataDisplayElement.Y = 21
 
-        # Title
+        # Y
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action50)
 
         def action51():
-            oVODataDisplayElement.FontSize = AgEVOFontSize.eSmall
+            oVODataDisplayElement.Title = True
 
-        # FontSize
+        # Title
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action51)
 
         def action52():
-            oVODataDisplayElement.Format = AgEVOFormat.eHorizontal
+            oVODataDisplayElement.FontSize = AgEVOFontSize.eSmall
 
-        # Format
+        # FontSize
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action52)
 
         def action53():
-            oVODataDisplayElement.UseBackground = True
+            oVODataDisplayElement.Format = AgEVOFormat.eHorizontal
 
-        # UseBackground
+        # Format
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action53)
 
         def action54():
-            oVODataDisplayElement.TransparentBg = True
+            oVODataDisplayElement.UseBackground = True
 
-        # TransparentBg
+        # UseBackground
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action54)
 
         def action55():
-            oVODataDisplayElement.BgWidth = 34
+            oVODataDisplayElement.TransparentBg = True
 
-        # BgWidth
+        # TransparentBg
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action55)
 
         def action56():
-            oVODataDisplayElement.BgHeight = 43
+            oVODataDisplayElement.BgWidth = 34
 
-        # BgHeight
+        # BgWidth
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action56)
 
         def action57():
+            oVODataDisplayElement.BgHeight = 43
+
+        # BgHeight
+        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action57)
+
+        def action58():
             oVODataDisplayElement.BgColor = Color.FromArgb(13491405)
 
         # BgColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action57)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action58)
 
     # endregion
 
@@ -1466,17 +1524,17 @@ class VODataDisplayHelper(object):
 
         else:
 
-            def action58():
+            def action59():
                 oVODataDisplayElement.Location = AgEVOLocation.eOffsetFromAccessObject
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action58)
+            TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action59)
 
         if self.m_bIsChain:
 
-            def action59():
+            def action60():
                 oVODataDisplayElement.Location = AgEVOLocation.eOffsetFromObject
 
-            TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action59)
+            TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action60)
 
         else:
             oVODataDisplayElement.Location = AgEVOLocation.eOffsetFromObject
@@ -1557,59 +1615,59 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
-        def action60():
+        def action61():
             oVODataDisplayElement.TransparentBg = True
 
         # TransparentBg
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action60)
-
-        def action61():
-            oVODataDisplayElement.BackgroundTranslucency = 0.33
-
-        # BackgroundTranslucency
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action61)
 
         def action62():
-            oVODataDisplayElement.UseBackgroundTexture = True
+            oVODataDisplayElement.BackgroundTranslucency = 0.33
 
-        # UseBackgroundTexture
+        # BackgroundTranslucency
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action62)
 
         def action63():
-            oVODataDisplayElement.BackgroundTextureFilename = "foo.png"
+            oVODataDisplayElement.UseBackgroundTexture = True
 
-        # BackgroundTextureFileName
+        # UseBackgroundTexture
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action63)
 
         def action64():
-            oVODataDisplayElement.UseBackgroundBorder = True
+            oVODataDisplayElement.BackgroundTextureFilename = "foo.png"
 
-        # UseBackgroundBorder
+        # BackgroundTextureFileName
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action64)
 
         def action65():
-            oVODataDisplayElement.BackgroundBorderColor = Color.FromArgb(13491405)
+            oVODataDisplayElement.UseBackgroundBorder = True
 
-        # BackgroundBorderColor
+        # UseBackgroundBorder
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action65)
 
         def action66():
-            oVODataDisplayElement.UseAutoSizeWidth = True
+            oVODataDisplayElement.BackgroundBorderColor = Color.FromArgb(13491405)
 
-        # UseAutoSizeWidth
+        # BackgroundBorderColor
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action66)
 
         def action67():
-            oVODataDisplayElement.UseAutoSizeHeight = True
+            oVODataDisplayElement.UseAutoSizeWidth = True
 
-        # UseAutoSizeHeight
+        # UseAutoSizeWidth
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action67)
 
         def action68():
+            oVODataDisplayElement.UseAutoSizeHeight = True
+
+        # UseAutoSizeHeight
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action68)
+
+        def action69():
             oVODataDisplayElement.BgColor = Color.FromArgb(13491405)
 
         # BgColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action68)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action69)
 
     # endregion
 
@@ -1683,7 +1741,8 @@ class VODataDisplayHelper(object):
             "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.BackgroundTextureFilename
         )
         Assert.assertEqual("", oVODataDisplayElement.BackgroundTextureFilename)
-        oVODataDisplayElement.BackgroundTextureFilename = "Scenario\\Fire.bmp"
+
+        oVODataDisplayElement.BackgroundTextureFilename = TestBase.GetScenarioFile("Fire.bmp")
         self.m_logger.WriteLine5(
             "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.BackgroundTextureFilename
         )
@@ -1695,17 +1754,17 @@ class VODataDisplayHelper(object):
     def NotUseTitleCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action69():
+        def action70():
             oDataDisplayElement.TitleText = "New Title"
 
         # TitleText
-        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action69)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action70)
 
-        def action70():
+        def action71():
             oDataDisplayElement.IsShowNameEnabled = False
 
         # IsShowNameEnabled
-        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action70)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action71)
 
     # endregion
 
@@ -1747,15 +1806,15 @@ class VODataDisplayHelper(object):
     def UseAutoSizeCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action71():
+        def action72():
             oDataDisplayElement.BgWidth = 500
 
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeWidth is False.", action71)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeWidth is False.", action72)
 
-        def action72():
+        def action73():
             oDataDisplayElement.BgHeight = 500
 
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeHeight is False.", action72)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeHeight is False.", action73)
 
     # endregion
 
@@ -1763,11 +1822,11 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundBorderCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action73():
+        def action74():
             oDataDisplayElement.BackgroundBorderColor = Color.Black
 
         # BackgroundBorderColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundBorder is False.", action73)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundBorder is False.", action74)
 
     # endregion
 
@@ -1790,11 +1849,11 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundTextureCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action74():
+        def action75():
             oDataDisplayElement.BackgroundTextureFilename = "foo.png"
 
         # BackgroundTextureFileName
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundTexture is False.", action74)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundTexture is False.", action75)
 
     # endregion
 
