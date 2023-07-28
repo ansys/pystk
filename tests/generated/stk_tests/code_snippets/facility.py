@@ -27,7 +27,7 @@ class Facility(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Facility.m_Object: IFacility = clr.CastAs(
+        Facility.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eFacility, Facility.m_DefaultName
             ),
@@ -50,7 +50,7 @@ class Facility(CodeSnippetsTestBase):
 
     def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create a facility on current scenario central body
-        facility: IFacility = clr.CastAs(
+        facility: "IFacility" = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "MyFacility"), IFacility
         )
 
@@ -62,7 +62,7 @@ class Facility(CodeSnippetsTestBase):
         self.CreateFacilityOnEarth(CodeSnippetsTestBase.m_Root)
 
     def CreateFacilityOnEarth(self, root: "IStkObjectRoot"):
-        facility: IFacility = clr.CastAs(
+        facility: "IFacility" = clr.CastAs(
             root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.eFacility, "MyFacility", "Earth"), IFacility
         )
 
@@ -76,7 +76,7 @@ class Facility(CodeSnippetsTestBase):
         self.CreateFacilityOnOtherPlanet(CodeSnippetsTestBase.m_Root)
 
     def CreateFacilityOnOtherPlanet(self, root: "IStkObjectRoot"):
-        facObject: IFacility = clr.CastAs(
+        facObject: "IFacility" = clr.CastAs(
             root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.eFacility, "Facility1", "Mars"), IFacility
         )
 
@@ -91,15 +91,15 @@ class Facility(CodeSnippetsTestBase):
 
     def CreateFacilityFromFacilityDatabase(self, root: "IStkObjectRoot"):
         # Get STK database location using Connect
-        result = root.ExecuteCommand("GetDirectory / Database Facility")
-        facDataDir = result[0]
-        filelocation = Path.Combine(facDataDir, r"stkFacility.fd")
+        result: "IExecCmdResult" = root.ExecuteCommand("GetDirectory / Database Facility")
+        facDataDir: str = result[0]
+        filelocation: str = Path.Combine(facDataDir, r"stkFacility.fd")
 
         # Import object from database using Connect
-        command = ('ImportFromDB * Facility "' + filelocation) + '" Class Facility SiteName Weilheim'
+        command: str = ('ImportFromDB * Facility "' + filelocation) + '" Class Facility SiteName Weilheim'
         root.ExecuteCommand(command)
 
-        facility: IFacility = clr.CastAs(root.GetObjectFromPath("Facility/Weilheim"), IFacility)
+        facility: "IFacility" = clr.CastAs(root.GetObjectFromPath("Facility/Weilheim"), IFacility)
 
     # endregion
 

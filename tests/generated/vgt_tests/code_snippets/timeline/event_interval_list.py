@@ -13,11 +13,11 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.DetermineIfEpochOccuredInIntervalCollection(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def DetermineIfEpochOccuredInIntervalCollection(self, provider: "IAnalysisWorkbenchProvider"):
-        intervalList = provider.EventIntervalLists["AttitudeIntervals"]
+        intervalList: "ITimeToolEventIntervalList" = provider.EventIntervalLists["AttitudeIntervals"]
 
         # The reference event you want to determine if event of interest happened before.
-        timeEvent = provider.Events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
-        occurrence = timeEvent.FindOccurrence()
+        timeEvent: "ITimeToolEvent" = provider.Events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
+        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.FindOccurrence()
         if intervalList.Occurred(occurrence.Epoch):
             Console.WriteLine("The time of maximum altitude occurred in event interval list.")
 
@@ -31,11 +31,12 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.DetermineIntervalsInEventIntervalLists(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def DetermineIntervalsInEventIntervalLists(self, provider: "IAnalysisWorkbenchProvider"):
-        intervalsList = provider.EventIntervalLists["AttitudeIntervals"]
+        intervalsList: "ITimeToolEventIntervalList" = provider.EventIntervalLists["AttitudeIntervals"]
 
-        intervals = intervalsList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalsList.FindIntervals()
         if intervals.IsValid:
             Console.WriteLine("Intervals:")
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Interval Start: " + str(interval.Start)))
                 Console.WriteLine(("Interval Stop: " + str(interval.Stop)))
@@ -47,21 +48,25 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateFilteredEventIntervalList(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateFilteredEventIntervalList(self, provider: "IAnalysisWorkbenchProvider"):
-        intervalList = provider.EventIntervalLists.Factory.CreateEventIntervalListFiltered(
-            "MyIntervalListFiltered", "MyDescription"
+        intervalList: "ITimeToolEventIntervalList" = (
+            provider.EventIntervalLists.Factory.CreateEventIntervalListFiltered(
+                "MyIntervalListFiltered", "MyDescription"
+            )
         )
-        listFiltered: ITimeToolEventIntervalListFiltered = clr.CastAs(intervalList, ITimeToolEventIntervalListFiltered)
+        listFiltered: "ITimeToolEventIntervalListFiltered" = clr.CastAs(
+            intervalList, ITimeToolEventIntervalListFiltered
+        )
 
         listFiltered.OriginalIntervals = provider.EventIntervalLists["AttitudeIntervals"]
 
-        firstIntervals: ITimeToolFirstIntervalsFilter = clr.CastAs(
+        firstIntervals: "ITimeToolFirstIntervalsFilter" = clr.CastAs(
             listFiltered.FilterFactory.Create(AgECrdnPruneFilter.eCrdnPruneFilterFirstIntervals),
             ITimeToolFirstIntervalsFilter,
         )
         firstIntervals.MaximumNumberOfIntervals = 3
 
         # Or for example satisfaction intervals
-        asSatisfactionCondition: ITimeToolSatisfactionConditionFilter = clr.CastAs(
+        asSatisfactionCondition: "ITimeToolSatisfactionConditionFilter" = clr.CastAs(
             listFiltered.FilterFactory.Create(AgECrdnPruneFilter.eCrdnPruneFilterSatisfactionIntervals),
             ITimeToolSatisfactionConditionFilter,
         )
@@ -71,8 +76,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         # Uses current Time unit preference, this code snippet assumes seconds.
         asSatisfactionCondition.IntervalDuration = 30
 
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))
@@ -84,10 +90,12 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateTimeOffsetEventIntervalList(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateTimeOffsetEventIntervalList(self, provider: "IAnalysisWorkbenchProvider"):
-        intervalList = provider.EventIntervalLists.Factory.CreateEventIntervalListTimeOffset(
-            "MyIntervalListFixedTimeOffset", "MyDescription"
+        intervalList: "ITimeToolEventIntervalList" = (
+            provider.EventIntervalLists.Factory.CreateEventIntervalListTimeOffset(
+                "MyIntervalListFixedTimeOffset", "MyDescription"
+            )
         )
-        asTimeOffset: ITimeToolEventIntervalListTimeOffset = clr.CastAs(
+        asTimeOffset: "ITimeToolEventIntervalListTimeOffset" = clr.CastAs(
             intervalList, ITimeToolEventIntervalListTimeOffset
         )
 
@@ -96,8 +104,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         # Uses current Time unit preference, this code snippet assumes seconds.
         asTimeOffset.TimeOffset = 300
 
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))
@@ -106,7 +115,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateEventIntervalListFile
     def test_CreateEventIntervalListFile(self):
-        intervalFile = TestBase.GetScenarioFile("CodeSnippetsTests", "VGTData", "EventIntervalListFromFile.txt")
+        intervalFile: str = GetScenarioFile("CodeSnippetsTests", "VGTData", "EventIntervalListFromFile.txt")
         self.CreateEventIntervalListFile(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt, intervalFile)
 
     def CreateEventIntervalListFile(self, provider: "IAnalysisWorkbenchProvider", intervalFile: str):
@@ -127,13 +136,14 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         #
         #  END IntervalList
 
-        intervalList = provider.EventIntervalLists.Factory.CreateEventIntervalListFile(
+        intervalList: "ITimeToolEventIntervalList" = provider.EventIntervalLists.Factory.CreateEventIntervalListFile(
             "MyIntervalListFromFile", "MyDescription", intervalFile
         )
-        asListFile: ITimeToolEventIntervalListFile = clr.CastAs(intervalList, ITimeToolEventIntervalListFile)
+        asListFile: "ITimeToolEventIntervalListFile" = clr.CastAs(intervalList, ITimeToolEventIntervalListFile)
 
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))
@@ -145,20 +155,23 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateMergedEventIntervalList(clr.Convert(TestBase.Application, IStkObjectRoot))
 
     def CreateMergedEventIntervalList(self, stkRoot: "IStkObjectRoot"):
-        satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
-        aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
+        satelliteVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
+        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
-        intervalList = satelliteVgtProvider.EventIntervalLists.Factory.CreateEventIntervalListMerged(
-            "MyIntervalListMerged", "MyDescription"
+        intervalList: "ITimeToolEventIntervalList" = (
+            satelliteVgtProvider.EventIntervalLists.Factory.CreateEventIntervalListMerged(
+                "MyIntervalListMerged", "MyDescription"
+            )
         )
-        asListMerged: ITimeToolEventIntervalListMerged = clr.CastAs(intervalList, ITimeToolEventIntervalListMerged)
+        asListMerged: "ITimeToolEventIntervalListMerged" = clr.CastAs(intervalList, ITimeToolEventIntervalListMerged)
 
         asListMerged.SetIntervalListA(satelliteVgtProvider.EventIntervalLists["AvailabilityIntervals"])
         asListMerged.SetIntervalListB(aircraftVgtProvider.EventIntervalLists["AvailabilityIntervals"])
         asListMerged.MergeOperation = AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationMINUS
 
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))
@@ -170,17 +183,20 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateListConditionEventInterval(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateListConditionEventInterval(self, provider: "IAnalysisWorkbenchProvider"):
-        intervalList = provider.EventIntervalLists.Factory.CreateEventIntervalListCondition(
-            "MyIntervalListSatisfaction", "MyDescription"
+        intervalList: "ITimeToolEventIntervalList" = (
+            provider.EventIntervalLists.Factory.CreateEventIntervalListCondition(
+                "MyIntervalListSatisfaction", "MyDescription"
+            )
         )
-        asListCondition: ITimeToolEventIntervalListCondition = clr.CastAs(
+        asListCondition: "ITimeToolEventIntervalListCondition" = clr.CastAs(
             intervalList, ITimeToolEventIntervalListCondition
         )
 
         asListCondition.Condition = provider.Conditions["AfterStart"]
 
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))
@@ -192,10 +208,10 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateScaledEventIntervalList(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateScaledEventIntervalList(self, provider: "IAnalysisWorkbenchProvider"):
-        intervalList = provider.EventIntervalLists.Factory.CreateEventIntervalListScaled(
+        intervalList: "ITimeToolEventIntervalList" = provider.EventIntervalLists.Factory.CreateEventIntervalListScaled(
             "MyIntervalListScaled", "MyDescription"
         )
-        asListScaled: ITimeToolEventIntervalListScaled = clr.CastAs(intervalList, ITimeToolEventIntervalListScaled)
+        asListScaled: "ITimeToolEventIntervalListScaled" = clr.CastAs(intervalList, ITimeToolEventIntervalListScaled)
 
         asListScaled.AbsoluteIncrement = 40
 
@@ -203,8 +219,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         asListScaled.UseAbsoluteIncrement = False
         asListScaled.RelativeIncrement = 20  # Percentage
 
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))
@@ -216,27 +233,32 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventIntervalList(clr.Convert(TestBase.Application, IStkObjectRoot))
 
     def CreateSignaledEventIntervalList(self, stkRoot: "IStkObjectRoot"):
-        satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
-        aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
+        satelliteVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
+        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
-        intervalList = satelliteVgtProvider.EventIntervalLists.Factory.CreateEventIntervalListSignaled(
-            "MyIntervalListSignaled", "MyDescription"
+        intervalList: "ITimeToolEventIntervalList" = (
+            satelliteVgtProvider.EventIntervalLists.Factory.CreateEventIntervalListSignaled(
+                "MyIntervalListSignaled", "MyDescription"
+            )
         )
-        asListSingled: ITimeToolEventIntervalListSignaled = clr.CastAs(intervalList, ITimeToolEventIntervalListSignaled)
+        asListSingled: "ITimeToolEventIntervalListSignaled" = clr.CastAs(
+            intervalList, ITimeToolEventIntervalListSignaled
+        )
 
         asListSingled.OriginalIntervals = aircraftVgtProvider.EventIntervalLists["BeforeStop.SatisfactionIntervals"]
         asListSingled.BaseClockLocation = satelliteVgtProvider.Points["Center"]
         asListSingled.TargetClockLocation = aircraftVgtProvider.Points["Center"]
 
         asListSingled.SignalSense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
-        basicSignalDelay: ITimeToolSignalDelayBasic = clr.CastAs(asListSingled.SignalDelay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(asListSingled.SignalDelay, ITimeToolSignalDelayBasic)
         basicSignalDelay.SpeedOption = AgECrdnSpeedOptions.eCrdnCustomTransmissionSpeed
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.TimeDelayConvergence = 0.002
 
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))
@@ -250,19 +272,21 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         )
 
     def DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self, stkRoot: "IStkObjectRoot"):
-        aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
+        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
-        intervalList = aircraftVgtProvider.EventIntervalLists.Factory.CreateEventIntervalListCondition(
-            "IntervalsAboveCertainVelocity", "MyDescription"
+        intervalList: "ITimeToolEventIntervalList" = (
+            aircraftVgtProvider.EventIntervalLists.Factory.CreateEventIntervalListCondition(
+                "IntervalsAboveCertainVelocity", "MyDescription"
+            )
         )
-        asListCondition: ITimeToolEventIntervalListCondition = clr.CastAs(
+        asListCondition: "ITimeToolEventIntervalListCondition" = clr.CastAs(
             intervalList, ITimeToolEventIntervalListCondition
         )
 
-        aboveBoundCondition = aircraftVgtProvider.Conditions.Factory.CreateConditionScalarBounds(
-            "AboveCertainBound", "MyDescription"
+        aboveBoundCondition: "ICalculationToolCondition" = (
+            aircraftVgtProvider.Conditions.Factory.CreateConditionScalarBounds("AboveCertainBound", "MyDescription")
         )
-        asScalarBounds: ICalculationToolConditionScalarBounds = clr.CastAs(
+        asScalarBounds: "ICalculationToolConditionScalarBounds" = clr.CastAs(
             aboveBoundCondition, ICalculationToolConditionScalarBounds
         )
         asScalarBounds.Operation = AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionAboveMin
@@ -271,8 +295,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
         asListCondition.Condition = aboveBoundCondition
 
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))
@@ -285,23 +310,26 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     def DetermineIntervalsWithoutAccess(self, stkRoot: "IStkObjectRoot"):
         # Compute UAV's access to the satellite
-        satellite = stkRoot.GetObjectFromPath("Satellite/LEO")
-        aircraft = stkRoot.GetObjectFromPath("Aircraft/UAV")
-        satelliteAccess = aircraft.GetAccessToObject(satellite)
+        satellite: "IStkObject" = stkRoot.GetObjectFromPath("Satellite/LEO")
+        aircraft: "IStkObject" = stkRoot.GetObjectFromPath("Aircraft/UAV")
+        satelliteAccess: "IStkAccess" = aircraft.GetAccessToObject(satellite)
         satelliteAccess.ComputeAccess()
 
         # Subtract the aircraft availability time with the access times to get the times without access.
-        intervalList = aircraft.Vgt.EventIntervalLists.Factory.CreateEventIntervalListMerged(
-            "IntervalsWithoutAccess", "MyDescription"
+        intervalList: "ITimeToolEventIntervalList" = (
+            aircraft.Vgt.EventIntervalLists.Factory.CreateEventIntervalListMerged(
+                "IntervalsWithoutAccess", "MyDescription"
+            )
         )
-        asListMerged: ITimeToolEventIntervalListMerged = clr.CastAs(intervalList, ITimeToolEventIntervalListMerged)
+        asListMerged: "ITimeToolEventIntervalListMerged" = clr.CastAs(intervalList, ITimeToolEventIntervalListMerged)
         asListMerged.SetIntervalListA(aircraft.Vgt.EventIntervalLists["AvailabilityIntervals"])
         asListMerged.SetIntervalListB(satelliteAccess.Vgt.EventIntervalLists["AccessIntervals"])
         asListMerged.MergeOperation = AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationMINUS
 
         # Print times without access.
-        intervals = intervalList.FindIntervals()
+        intervals: "ITimeToolIntervalListResult" = intervalList.FindIntervals()
         if intervals.IsValid:
+            interval: "ITimeToolInterval"
             for interval in intervals.Intervals:
                 Console.WriteLine(("Start: " + str(interval.Start)))
                 Console.WriteLine(("Stop: " + str(interval.Stop)))

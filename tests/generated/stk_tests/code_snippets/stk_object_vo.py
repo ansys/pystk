@@ -38,11 +38,11 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVOModelFile
     def test_ConfigureVOModelFile(self):
-        satellite: ISatellite = clr.CastAs(
+        satellite: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        model = satellite.VO.Model
+        model: "IVOModel" = satellite.VO.Model
 
         self.ConfigureVOModelFile(model)
 
@@ -51,7 +51,7 @@ class StkObjectVO(CodeSnippetsTestBase):
     def ConfigureVOModelFile(self, model: "IVOModel"):
         # Set new ModelFile.Filename
         model.ModelType = AgEModelType.eModelFile
-        modelFile: IVOModelFile = clr.CastAs(model.ModelData, IVOModelFile)
+        modelFile: "IVOModelFile" = clr.CastAs(model.ModelData, IVOModelFile)
         modelFile.Filename = r"\STKData\VO\Models\Space\alexis.mdl"
 
         # Configure basic settings
@@ -62,15 +62,15 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVOArticulations
     def test_ConfigureVOArticulations(self):
-        satellite: ISatellite = clr.CastAs(
+        satellite: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        model = satellite.VO.Model
+        model: "IVOModel" = satellite.VO.Model
 
         # Set new ModelFile.Filename
         model.ModelType = AgEModelType.eModelFile
-        modelFile: IVOModelFile = clr.CastAs(model.ModelData, IVOModelFile)
+        modelFile: "IVOModelFile" = clr.CastAs(model.ModelData, IVOModelFile)
         modelFile.Filename = r"\STKData\VO\Models\Space\satellite.dae"
 
         self.ConfigureVOModelArticulations(model)
@@ -79,21 +79,21 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     def ConfigureVOModelArticulations(self, model: "IVOModel"):
         # Configure articulation
-        modelArticulation = model.Articulation
+        modelArticulation: "IVOModelArtic" = model.Articulation
         modelArticulation.EnableDefaultSave = False
         modelArticulation.SaveArticFileOnSave = True
 
         # Set our articulation and transformations
         # For this sample, these articulations exist for a default satellite model
-        levelOfDetail = 0
-        articulation = "Satellite"
-        transformation = "Size"
+        levelOfDetail: int = 0
+        articulation: str = "Satellite"
+        transformation: str = "Size"
 
         # Get the current transition value
-        currentTransVal = modelArticulation.GetTransValue(levelOfDetail, articulation, transformation)
+        currentTransVal: float = modelArticulation.GetTransValue(levelOfDetail, articulation, transformation)
 
         # Change the value
-        newTransVal = currentTransVal * 0.5
+        newTransVal: float = currentTransVal * 0.5
 
         # Set our new transition value
         modelArticulation.SetTransValue(levelOfDetail, articulation, transformation, newTransVal)
@@ -102,11 +102,11 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ListVOModelArticulations
     def test_ListVOModelArticulations(self):
-        satellite: ISatellite = clr.CastAs(
+        satellite: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        model = satellite.VO.Model
+        model: "IVOModel" = satellite.VO.Model
 
         self.ListVOModelArticulations(satellite, model)
 
@@ -116,21 +116,26 @@ class StkObjectVO(CodeSnippetsTestBase):
         # Enumerating through the transformation collection is helpful if you do not
         # know what tranformations exist or their value ranges
 
-        modelArticulation = model.Articulation
+        modelArticulation: "IVOModelArtic" = model.Articulation
 
-        lod = 0
+        lod: int = 0
         while lod < modelArticulation.LODCount:
             # Get all articulations
             # GetAvailableArticulations returns a one dimensional array of articulation names
             articulations = modelArticulation.GetAvailableArticulations(lod)
 
-            articulation = 0
+            articulation: int = 0
             while articulation < Array.Length(articulations):
                 # We need the articulation string to call the GetAvailableTransformations function
-                articulationString = str(articulations[articulation])
+                articulationString: str = str(articulations[articulation])
 
                 # Get all transformations
-                transformations = modelArticulation.GetAvailableTransformations(lod, articulationString)
+                transformations: "IVOModelTransformationCollection" = modelArticulation.GetAvailableTransformations(
+                    lod, articulationString
+                )
+
+                # Enumerate through available transformations
+                trans: "IVOModelTransformation"
 
                 # Enumerate through available transformations
                 for trans in transformations:
@@ -146,11 +151,11 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVOModelLevelOfDetail
     def test_ConfigureVOModelLevelOfDetail(self):
-        satellite: ISatellite = clr.CastAs(
+        satellite: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        model = satellite.VO.Model
+        model: "IVOModel" = satellite.VO.Model
 
         self.ConfigureVOModelLevelOfDetail(model)
 
@@ -158,7 +163,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     def ConfigureVOModelLevelOfDetail(self, model: "IVOModel"):
         # Configure level of details
-        detail = model.DetailThreshold
+        detail: "IVODetailThreshold" = model.DetailThreshold
         detail.EnableDetailThreshold = True
 
         # (assuming unit preferences set to km)
@@ -172,7 +177,7 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVOVector
     def test_ConfigureVOVector(self):
-        vehicle: IGroundVehicle = clr.CastAs(
+        vehicle: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
@@ -211,7 +216,7 @@ class StkObjectVO(CodeSnippetsTestBase):
         )
 
         # Draw on Central Body
-        body: IVOReferenceVectorGeometryToolVector = clr.CastAs(
+        body: "IVOReferenceVectorGeometryToolVector" = clr.CastAs(
             vector.RefCrdns.GetCrdnByName(
                 AgEGeometricElemType.eAxesElem,
                 (
@@ -234,13 +239,15 @@ class StkObjectVO(CodeSnippetsTestBase):
 
     # region ConfigureVODataDisplay
     def test_ConfigureVODataDisplay(self):
-        sat: ISatellite = clr.CastAs(
+        sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
         (clr.Convert(sat, ISatellite)).SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        tb: IVehiclePropagatorTwoBody = clr.CastAs((clr.Convert(sat, ISatellite)).Propagator, IVehiclePropagatorTwoBody)
+        tb: "IVehiclePropagatorTwoBody" = clr.CastAs(
+            (clr.Convert(sat, ISatellite)).Propagator, IVehiclePropagatorTwoBody
+        )
         tb.Propagate()
-        ddc = sat.VO.DataDisplay
+        ddc: "IVODataDisplayCollection" = sat.VO.DataDisplay
         self.ConfigureVODataDisplay(ddc)
 
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
@@ -248,7 +255,7 @@ class StkObjectVO(CodeSnippetsTestBase):
     def ConfigureVODataDisplay(self, datadisplaycol: "IVODataDisplayCollection"):
         # Add existing data display
         # See AvailableData property for available data display
-        displayElement = datadisplaycol.Add("Solar Intensity")
+        displayElement: "IVODataDisplayElement" = datadisplaycol.Add("Solar Intensity")
 
         # Configure data display as needed
         displayElement.TitleText = "Sol. Intensity"

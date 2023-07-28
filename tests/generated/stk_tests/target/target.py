@@ -43,7 +43,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        targetObject: IStkObject = clr.CastAs(EarlyBoundTests.AG_TG, IStkObject)
+        targetObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_TG, IStkObject)
         oHelper.Run(targetObject)
         oHelper.TestObjectFilesArray(targetObject.ObjectFiles)
 
@@ -60,7 +60,7 @@ class EarlyBoundTests(TestBase):
     # region Graphics
     @category("Graphics Tests")
     def test_Graphics(self):
-        gfx = clr.Convert(EarlyBoundTests.AG_TG.Graphics, ITargetGraphics)
+        gfx: "ITargetGraphics" = clr.Convert(EarlyBoundTests.AG_TG.Graphics, ITargetGraphics)
         Assert.assertIsNotNone(gfx)
         gfx.IsObjectGraphicsVisible = False
         Assert.assertFalse(gfx.IsObjectGraphicsVisible)
@@ -111,7 +111,7 @@ class EarlyBoundTests(TestBase):
     # region GfxAzElMask
     @category("Graphics Tests")
     def test_GfxAzElMask(self):
-        azel = clr.Convert(EarlyBoundTests.AG_TG.Graphics.AzElMask, IBasicAzElMask)
+        azel: "IBasicAzElMask" = clr.Convert(EarlyBoundTests.AG_TG.Graphics.AzElMask, IBasicAzElMask)
         azel.RangeVisible = True
         Assert.assertEqual(True, azel.RangeVisible)
         azel.AltVisible = True
@@ -218,12 +218,12 @@ class EarlyBoundTests(TestBase):
     # region VOModelPointing
     @category("VO Tests")
     def test_VOModelPointing(self):
-        oModel = EarlyBoundTests.AG_TG.VO.Model
+        oModel: "IVOModel" = EarlyBoundTests.AG_TG.VO.Model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.ModelType)
         oModel.ModelType = AgEModelType.eModelFile
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.ModelType)
         Assert.assertEqual(AgEModelType.eModelFile, oModel.ModelType)
-        oModelFile = clr.Convert(oModel.ModelData, IVOModelFile)
+        oModelFile: "IVOModelFile" = clr.Convert(oModel.ModelData, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.Filename)
         oModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")

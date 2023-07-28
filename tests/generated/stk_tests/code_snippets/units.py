@@ -40,8 +40,8 @@ class Units(CodeSnippetsTestBase):
 
     def GetCurrentUnitPreference(self, root: "IStkObjectRoot"):
         # DistanceUnit
-        dimensionName = "Distance"
-        unitAbbreviation = root.UnitPreferences.GetCurrentUnitAbbrv(dimensionName)
+        dimensionName: str = "Distance"
+        unitAbbreviation: str = root.UnitPreferences.GetCurrentUnitAbbrv(dimensionName)
 
     # endregion
 
@@ -73,10 +73,10 @@ class Units(CodeSnippetsTestBase):
         self.ConvertSingleQuantityUnit(CodeSnippetsTestBase.m_Root)
 
     def ConvertSingleQuantityUnit(self, root: "IStkObjectRoot"):
-        converter = root.ConversionUtility
+        converter: "IConversionUtility" = root.ConversionUtility
 
         # Old value in miles, new value in km
-        newValue = converter.ConvertQuantity("DistanceUnit", "mi", "km", 1.0)
+        newValue: float = converter.ConvertQuantity("DistanceUnit", "mi", "km", 1.0)
 
     # endregion
 
@@ -85,7 +85,7 @@ class Units(CodeSnippetsTestBase):
         self.ConvertMultipleQuantityUnits(CodeSnippetsTestBase.m_Root)
 
     def ConvertMultipleQuantityUnits(self, root: "IStkObjectRoot"):
-        converter = root.ConversionUtility
+        converter: "IConversionUtility" = root.ConversionUtility
 
         # ConvertQuantityArray expects a one dimensional array of values to be converted
         # An array of km/sec units
@@ -102,11 +102,11 @@ class Units(CodeSnippetsTestBase):
         self.ConvertSingleDateFormat(CodeSnippetsTestBase.m_Root)
 
     def ConvertSingleDateFormat(self, root: "IStkObjectRoot"):
-        converter = root.ConversionUtility
+        converter: "IConversionUtility" = root.ConversionUtility
 
         # Individually
-        epsec = converter.ConvertDate("UTCG", "Epsec", "1 Jan 2012 12:00:00.000")
-        utcg = converter.ConvertDate("EpSec", "UTCG", "230126401.000")
+        epsec: str = converter.ConvertDate("UTCG", "Epsec", "1 Jan 2012 12:00:00.000")
+        utcg: str = converter.ConvertDate("EpSec", "UTCG", "230126401.000")
 
     # endregion
 
@@ -115,7 +115,7 @@ class Units(CodeSnippetsTestBase):
         self.ConvertMulitpleDateFormats(CodeSnippetsTestBase.m_Root)
 
     def ConvertMulitpleDateFormats(self, root: "IStkObjectRoot"):
-        converter = root.ConversionUtility
+        converter: "IConversionUtility" = root.ConversionUtility
 
         # In batches
         # ConvertDateArray expects a one dimensional array of dates
@@ -126,7 +126,7 @@ class Units(CodeSnippetsTestBase):
         # ConvertDateArray returns a one dimensional array of converted dates
         converted = converter.ConvertDateArray("UTCG", "Epsec", tempDates)
 
-        i = 0
+        i: int = 0
         while i < Array.Length(converted):
             Console.WriteLine("Date: {0}", converted[i])
 
@@ -140,13 +140,15 @@ class Units(CodeSnippetsTestBase):
 
     def CalculateDateSubtraction(self, root: "IStkObjectRoot"):
         # Create a date representing now
-        nowDate = root.ConversionUtility.NewDate("DD/MM/YYYY", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff"))
+        nowDate: "IDate" = root.ConversionUtility.NewDate(
+            "DD/MM/YYYY", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff")
+        )
 
         # Dates can be modified using Subtract 52 days
-        newDate = nowDate.Subtract("day", 52.0)
+        newDate: "IDate" = nowDate.Subtract("day", 52.0)
 
         # Differences between dates are calculated from Span function
-        span = newDate.Span(nowDate)
+        span: "IQuantity" = newDate.Span(nowDate)
 
         # IAgDate also provides formatting functionalities
         span.ConvertToUnit("min")
@@ -162,13 +164,15 @@ class Units(CodeSnippetsTestBase):
 
     def CalculateDateAddition(self, root: "IStkObjectRoot"):
         # Create a date representing now
-        nowDate = root.ConversionUtility.NewDate("DD/MM/YYYY", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff"))
+        nowDate: "IDate" = root.ConversionUtility.NewDate(
+            "DD/MM/YYYY", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff")
+        )
 
         # Dates can be modified using Add 52 days
-        newDate = nowDate.Add("day", 52.0)
+        newDate: "IDate" = nowDate.Add("day", 52.0)
 
         # Differences between dates are calculated from Span function
-        span = newDate.Span(nowDate)
+        span: "IQuantity" = newDate.Span(nowDate)
 
         # IAgDate also provides formatting functionalities
         span.ConvertToUnit("min")
@@ -184,11 +188,11 @@ class Units(CodeSnippetsTestBase):
 
     def CalculateQuantityAddition(self, root: "IStkObjectRoot"):
         # Create a quantity representing a 3.1 mile/ 5 km fun run race
-        race3mi = root.ConversionUtility.NewQuantity("Distance", "mi", 3.1)
-        race5km = root.ConversionUtility.NewQuantity("Distance", "km", 5)
+        race3mi: "IQuantity" = root.ConversionUtility.NewQuantity("Distance", "mi", 3.1)
+        race5km: "IQuantity" = root.ConversionUtility.NewQuantity("Distance", "km", 5)
 
         # Add the two 3.1 mile/ 5 km runs
-        race10km = race5km.Add(race3mi)
+        race10km: "IQuantity" = race5km.Add(race3mi)
         Console.Write("The {0} {1} race is also called a ", race10km.Value, race10km.Unit)
 
         # Convert 10k run to 6.2 mile run internally within the quantity

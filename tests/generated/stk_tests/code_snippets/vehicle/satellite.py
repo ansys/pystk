@@ -28,7 +28,7 @@ class Satellite(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Satellite.m_Object: ISatellite = clr.CastAs(
+        Satellite.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eSatellite, Satellite.m_DefaultName
             ),
@@ -56,7 +56,7 @@ class Satellite(CodeSnippetsTestBase):
 
     def CreateSatelliteOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Satellite
-        satellite: ISatellite = clr.CastAs(
+        satellite: "ISatellite" = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "MySatellite"), ISatellite
         )
 
@@ -68,13 +68,13 @@ class Satellite(CodeSnippetsTestBase):
 
     def CreateSatelliteFromDatabase(self, root: "IStkObjectRoot"):
         # Get STK database location using Connect
-        result = root.ExecuteCommand("GetDirectory / Database Satellite")
-        satDataDir = result[0]
-        filelocation = ('"' + Path.Combine(satDataDir, r"stkAllTLE.sd")) + '"'
-        commonname = '"hst"'
+        result: "IExecCmdResult" = root.ExecuteCommand("GetDirectory / Database Satellite")
+        satDataDir: str = result[0]
+        filelocation: str = ('"' + Path.Combine(satDataDir, r"stkAllTLE.sd")) + '"'
+        commonname: str = '"hst"'
 
         # Import object from database using Connect
-        command = String.Format(
+        command: str = String.Format(
             "ImportFromDB * Satellite {0} Constellation ImportedFromSatDB Propagate On CommonName {1}",
             filelocation,
             commonname,
@@ -92,7 +92,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
 
         # Get the J2 Perturbation propagator
-        propagator: IVehiclePropagatorJ2Perturbation = clr.CastAs(
+        propagator: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(
             satellite.Propagator, IVehiclePropagatorJ2Perturbation
         )
 
@@ -107,7 +107,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorGPS)
 
         # Get the GPS propagator
-        propagator: IVehiclePropagatorGPS = clr.CastAs(satellite.Propagator, IVehiclePropagatorGPS)
+        propagator: "IVehiclePropagatorGPS" = clr.CastAs(satellite.Propagator, IVehiclePropagatorGPS)
 
     # endregion
 
@@ -120,7 +120,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorStkExternal)
 
         # Get the STK External propagator
-        propagator: IVehiclePropagatorStkExternal = clr.CastAs(satellite.Propagator, IVehiclePropagatorStkExternal)
+        propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(satellite.Propagator, IVehiclePropagatorStkExternal)
 
     # endregion
 
@@ -133,7 +133,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
 
         # Get the SGP4 propagator
-        propagator: IVehiclePropagatorSGP4 = clr.CastAs(satellite.Propagator, IVehiclePropagatorSGP4)
+        propagator: "IVehiclePropagatorSGP4" = clr.CastAs(satellite.Propagator, IVehiclePropagatorSGP4)
 
     # endregion
 
@@ -146,7 +146,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorSPICE)
 
         # Get the SPICE propagator
-        propagator: IVehiclePropagatorSPICE = clr.CastAs(satellite.Propagator, IVehiclePropagatorSPICE)
+        propagator: "IVehiclePropagatorSPICE" = clr.CastAs(satellite.Propagator, IVehiclePropagatorSPICE)
 
     # endregion
 
@@ -159,7 +159,7 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorLOP)
 
         # Get the LOP propagator
-        propagator: IVehiclePropagatorLOP = clr.CastAs(satellite.Propagator, IVehiclePropagatorLOP)
+        propagator: "IVehiclePropagatorLOP" = clr.CastAs(satellite.Propagator, IVehiclePropagatorLOP)
 
     # endregion
 
@@ -172,32 +172,34 @@ class Satellite(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorHPOP)
 
         # Get the HPOP propagator
-        propagator: IVehiclePropagatorHPOP = clr.CastAs(satellite.Propagator, IVehiclePropagatorHPOP)
+        propagator: "IVehiclePropagatorHPOP" = clr.CastAs(satellite.Propagator, IVehiclePropagatorHPOP)
 
     # endregion
 
     # region ConfigureTargetSlew
     def test_ConfigureTargetSlew(self):
         Satellite.m_Object.SetAttitudeType(AgEVeAttitude.eAttitudeStandard)
-        fac: IFacility = clr.CastAs(
+        fac: "IFacility" = clr.CastAs(
             TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "FacSlew"), IFacility
         )
         fac.Position.AssignGeodetic(0.0, 0.0, 0.0)
         self.ConfigureTargetSlew(Satellite.m_Object)
 
     def ConfigureTargetSlew(self, satellite: "ISatellite"):
-        orbitAttStandard: IVehicleOrbitAttitudeStandard = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
+        orbitAttStandard: "IVehicleOrbitAttitudeStandard" = clr.CastAs(
+            satellite.Attitude, IVehicleOrbitAttitudeStandard
+        )
         orbitAttStandard.Pointing.UseTargetPointing = True
         orbitAttStandard.Pointing.Targets.Add("Facility/FacSlew")
         orbitAttStandard.Pointing.TargetSlew.SetSlewModeType(AgEVeSlewMode.eVeSlewModeConstrained2ndOrderSpline)
 
-        constrainedSlew: IVehicleAttitudeSlewConstrained = clr.CastAs(
+        constrainedSlew: "IVehicleAttitudeSlewConstrained" = clr.CastAs(
             orbitAttStandard.Pointing.TargetSlew.SlewMode, IVehicleAttitudeSlewConstrained
         )
         constrainedSlew.MaximumSlewTime = 20.0  # sec
         constrainedSlew.SlewTimingBetweenTargets = AgEVeSlewTimingBetweenTargets.eVeSlewTimingBetweenTargetsOptimal
 
-        maxRate = constrainedSlew.MaximumSlewRate
+        maxRate: "IVehicleAttitudeMaximumSlewRate" = constrainedSlew.MaximumSlewRate
         maxRate.Magnitude = 10.0  # deg/sec^2
         maxRate.PerAxisXEnabled = True
         maxRate.PerAxisX = 5.0  # deg/sec^2
@@ -206,7 +208,7 @@ class Satellite(CodeSnippetsTestBase):
         maxRate.PerAxisZEnabled = True
         maxRate.PerAxisZ = 5.0  # deg/sec^2
 
-        maxAcceleration = constrainedSlew.MaximumSlewAcceleration
+        maxAcceleration: "IVehicleAttitudeMaximumSlewAcceleration" = constrainedSlew.MaximumSlewAcceleration
         maxAcceleration.Magnitude = 10.0  # deg/sec^2
         maxAcceleration.PerAxisXAccelEnabled = True
         maxAcceleration.PerAxisXAccel = 5.0  # deg/sec^2

@@ -28,7 +28,7 @@ class SPICE(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        SPICE.m_Object: ISatellite = clr.CastAs(
+        SPICE.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, SPICE.m_DefaultName),
             ISatellite,
         )
@@ -46,7 +46,7 @@ class SPICE(CodeSnippetsTestBase):
     # region ConfigureSPICEPropagator
     def test_ConfigureSPICEPropagator(self):
         SPICE.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorSPICE)
-        spiceProp: IVehiclePropagatorSPICE = clr.CastAs(SPICE.m_Object.Propagator, IVehiclePropagatorSPICE)
+        spiceProp: "IVehiclePropagatorSPICE" = clr.CastAs(SPICE.m_Object.Propagator, IVehiclePropagatorSPICE)
         self.ConfigureSPICEPropagator(
             spiceProp, TestBase.GetScenarioFile("CodeSnippetsTests", "External", "Satellite1.bsp")
         )

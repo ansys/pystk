@@ -28,7 +28,7 @@ class HPOP(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        HPOP.m_Object: ISatellite = clr.CastAs(
+        HPOP.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, HPOP.m_DefaultName),
             ISatellite,
         )
@@ -52,17 +52,17 @@ class HPOP(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorHPOP)
 
         # Get IAgVePropagatorLOP interface
-        hpopProp: IVehiclePropagatorHPOP = clr.CastAs(satellite.Propagator, IVehiclePropagatorHPOP)
+        hpopProp: "IVehiclePropagatorHPOP" = clr.CastAs(satellite.Propagator, IVehiclePropagatorHPOP)
 
         # Configure force model
-        hpopForceModel = hpopProp.ForceModel
+        hpopForceModel: "IVehicleHPOPForceModel" = hpopProp.ForceModel
         hpopForceModel.CentralBodyGravity.File = r"STKData\CentralBodies\Earth\GGM02C.grv"
         hpopForceModel.CentralBodyGravity.MaxDegree = 45
         hpopForceModel.CentralBodyGravity.MaxOrder = 10
         hpopForceModel.CentralBodyGravity.UseOceanTides = True
 
         hpopForceModel.Drag.Use = True
-        hpopDragModel: IVehicleHPOPDragModelSpherical = clr.CastAs(
+        hpopDragModel: "IVehicleHPOPDragModelSpherical" = clr.CastAs(
             hpopForceModel.Drag.DragModel, IVehicleHPOPDragModelSpherical
         )
         hpopDragModel.Cd = 1.89

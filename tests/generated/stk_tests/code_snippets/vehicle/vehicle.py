@@ -5,7 +5,7 @@ from ansys.stk.core.stkobjects import *
 
 class Vehicle(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
-        self.m_DefaultName = "MyVehicle"
+        self.m_DefaultName: str = "MyVehicle"
         super(Vehicle, self).__init__(*args, **kwargs)
 
     m_Object: "IGroundVehicle" = None
@@ -26,7 +26,7 @@ class Vehicle(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Vehicle.m_Object: IGroundVehicle = clr.CastAs(
+        Vehicle.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eGroundVehicle, self.m_DefaultName
             ),
@@ -43,15 +43,15 @@ class Vehicle(CodeSnippetsTestBase):
 
     # region ExportVehicleToStkEphemerisFile
     def test_ExportVehicleToStkEphemerisFile(self):
-        gv: IGroundVehicle = clr.CastAs(
+        gv: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        ga: IVehiclePropagatorGreatArc = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
+        ga: "IVehiclePropagatorGreatArc" = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
         ga.Waypoints.Add()
         ga.Waypoints.Add()
         ga.Propagate()
-        ephemFilePath = TestBase.TemporaryDirectory + "\\OMExternalFileStk.e"
+        ephemFilePath: str = TestBase.TemporaryDirectory + "\\OMExternalFileStk.e"
         self.ExportVehicleToStkEphemerisFile(
             clr.Convert(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario),
             gv.ExportTools.GetEphemerisStkExportTool(),
@@ -79,11 +79,11 @@ class Vehicle(CodeSnippetsTestBase):
 
     # region ExportVehicleToAttitudeFile
     def test_ExportVehicleToAttitudeFile(self):
-        gv: IGroundVehicle = clr.CastAs(
+        gv: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        ga: IVehiclePropagatorGreatArc = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
+        ga: "IVehiclePropagatorGreatArc" = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
         ga.Waypoints.Add()
         ga.Waypoints.Add()
         ga.Propagate()
@@ -95,7 +95,7 @@ class Vehicle(CodeSnippetsTestBase):
     def ExportVehicleToAttitudeFile(self, scenario: "IScenario", attitudeExport: "IVehicleAttitudeExportTool"):
         # Set and configure attitude coordinate axes
         attitudeExport.SetCoordinateAxesType(AgEAttCoordinateAxes.eAttCoordinateAxesCustom)
-        customAxes: IVehicleCoordinateAxesCustom = clr.CastAs(
+        customAxes: "IVehicleCoordinateAxesCustom" = clr.CastAs(
             attitudeExport.CoordinateAxes, IVehicleCoordinateAxesCustom
         )
         customAxes.ReferenceAxesName = "CentralBody/Sun J2000 Axes"
@@ -122,10 +122,10 @@ class Vehicle(CodeSnippetsTestBase):
 
     def AddGroundEllipseElementAndDataElement(self, ellipsesCollection: "IVehicleGroundEllipsesCollection"):
         # Add ground ellipse
-        ellipse = ellipsesCollection.Add("MyEllipses")
+        ellipse: "IVehicleGroundEllipseElement" = ellipsesCollection.Add("MyEllipses")
 
         # Add ellipse data element
-        element = ellipse.EllipseData.Add()
+        element: "IVehicleEllipseDataElement" = ellipse.EllipseData.Add()
 
         # Configure element properties
         element.Time = "1 Jan 2012 12:00:00.000"

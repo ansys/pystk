@@ -6,20 +6,23 @@ from ansys.stk.core.stkutil import *
 
 class OrbitStateHelper(object):
     def __init__(self, oApplication: "ansys.stk.core.stkobjects.IStkObjectRoot"):
-        self.m_oCartesian = None
-        self.m_oClassical = None
-        self.m_oGeodetic = None
-        self.m_oDelaunay = None
-        self.m_oEquinoctial = None
-        self.m_oMixed = None
-        self.m_oSpherical = None
+        self.m_oCartesian: "IOrbitStateCartesian" = None
+        self.m_oClassical: "IOrbitStateClassical" = None
+        self.m_oGeodetic: "IOrbitStateGeodetic" = None
+        self.m_oDelaunay: "IOrbitStateDelaunay" = None
+        self.m_oEquinoctial: "IOrbitStateEquinoctial" = None
+        self.m_oMixed: "IOrbitStateMixedSpherical" = None
+        self.m_oSpherical: "IOrbitStateSpherical" = None
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication = oApplication
-        self.m_oUnits = self.m_oApplication.UnitPreferences
+        self.m_oApplication: "ansys.stk.core.stkobjects.IStkObjectRoot" = oApplication
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = (
+            self.m_oApplication.UnitPreferences
+        )
 
     # region CoordinateSystemTest
     def CoordinateSystemTest(self, eOrbitStateType: "AgEOrbitStateType", eSystemType: "AgECoordinateSystem"):
+        oSystem: "IOrbitStateCoordinateSystem" = None
         if eOrbitStateType == AgEOrbitStateType.eOrbitStateCartesian:
             Assert.assertIsNotNone(self.m_oCartesian)
             self.m_oCartesian.CoordinateSystemType = eSystemType
@@ -97,6 +100,7 @@ class OrbitStateHelper(object):
             )
             or ((oSystem.Type == AgECoordinateSystem.eCoordinateSystemTrueOfRefDate))
         ) or ((oSystem.Type == AgECoordinateSystem.eCoordinateSystemICRF)):
+            bCaught: bool = False
             try:
                 bCaught = False
                 oSystem.CoordinateSystemEpoch.SetExplicitTime("13 Aug 2005 02:00:00.000")
@@ -138,7 +142,7 @@ class OrbitStateHelper(object):
         # to Delaunay representation; expecting an exception with a user-friendly explanation
         # why conversion cannot be finished.
 
-        tempCart: IOrbitStateCartesian = clr.CastAs(
+        tempCart: "IOrbitStateCartesian" = clr.CastAs(
             self.m_oCartesian.ConvertTo(AgEOrbitStateType.eOrbitStateCartesian), IOrbitStateCartesian
         )
 
@@ -152,7 +156,7 @@ class OrbitStateHelper(object):
         tempCart.YVelocity = 5.917552767
         tempCart.ZVelocity = 5.917552767
         try:
-            delaunay: IOrbitStateDelaunay = clr.CastAs(
+            delaunay: "IOrbitStateDelaunay" = clr.CastAs(
                 tempCart.ConvertTo(AgEOrbitStateType.eOrbitStateDelaunay), IOrbitStateDelaunay
             )
             Assert.fail()
@@ -161,7 +165,7 @@ class OrbitStateHelper(object):
             raise e
 
         except Exception as ex:
-            sExpectedMsg = "Invalid orbit has been specified!"
+            sExpectedMsg: str = "Invalid orbit has been specified!"
             Assert.assertEqual(sExpectedMsg, str(ex)[0 : len(sExpectedMsg)])
             self.m_logger.WriteLine5("\t\tExpected exception: {0}", str(ex))
 
@@ -294,10 +298,10 @@ class OrbitStateHelper(object):
     # endregion
 
     def Test_IAgOrbitState(self, orbitState: "IOrbitState"):
-        centralBodyName = orbitState.CentralBodyName
-        ost = orbitState.OrbitStateType
+        centralBodyName: str = orbitState.CentralBodyName
+        ost: "AgEOrbitStateType" = orbitState.OrbitStateType
 
-        epochHold = orbitState.Epoch
+        epochHold: typing.Any = orbitState.Epoch
         orbitState.Epoch = "18 Jan 2003 02:40:24.680"
         Assert.assertEqual("18 Jan 2003 02:40:24.680", orbitState.Epoch)
         orbitState.Epoch = epochHold
@@ -325,7 +329,7 @@ class OrbitStateHelper(object):
         self.Test_IAgOrbitState(self.m_oCartesian)
 
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\t\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "nm")
         self.m_logger.WriteLine5("\t\tThe new DistanceUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
@@ -358,6 +362,8 @@ class OrbitStateHelper(object):
         Assert.assertEqual(-0.0742022, self.m_oCartesian.XVelocity)
         Assert.assertAlmostEqual(-3.07376, self.m_oCartesian.YVelocity, delta=1e-05)
         Assert.assertEqual(0.0, self.m_oCartesian.ZVelocity)
+        # out of bounds
+        bCaught: bool = False
         try:
             bCaught = False
             self.m_oCartesian.XPosition = 1234567890123460000.0
@@ -433,7 +439,7 @@ class OrbitStateHelper(object):
         arTypes = self.m_oCartesian.SupportedCoordinateSystemTypes
         self.m_logger.WriteLine3("\t\tCartesian supports: {0} types", len(arTypes))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
                 "\t\t\tType {0}: {1} ({2})",
@@ -538,7 +544,7 @@ class OrbitStateHelper(object):
         arTypes = self.m_oClassical.SupportedCoordinateSystemTypes
         self.m_logger.WriteLine3("\t\tClassical supports: {0} types", len(arTypes))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
                 "\t\t\tType {0}: {1} ({2})",
@@ -556,6 +562,8 @@ class OrbitStateHelper(object):
         )
         # eCoordinateSystemB1950
         self.CoordinateSystemTest(self.m_oClassical.OrbitStateType, AgECoordinateSystem.eCoordinateSystemB1950)
+        # eCoordinateSystemFixed
+        bCaught: bool = False
         try:
             bCaught = False
             self.CoordinateSystemTest(self.m_oClassical.OrbitStateType, AgECoordinateSystem.eCoordinateSystemFixed)
@@ -583,12 +591,15 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oClassical.OrbitStateType, AgECoordinateSystem.eCoordinateSystemTrueOfDate)
         # eCoordinateSystemTrueOfEpoch
         self.CoordinateSystemTest(self.m_oClassical.OrbitStateType, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch)
+        # eCoordinateSystemTrueOfRefDate
+        # GetLicenses
+        oLicenses: "ansys.stk.core.stkutil.IExecCmdResult" = None
         oLicenses = self.m_oApplication.ExecuteCommand("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
 
-        iI = 0
+        iI: int = 0
         while iI < oLicenses.Count:
-            strLicense = oLicenses[iI]
+            strLicense: str = oLicenses[iI]
             if strLicense.find("PODS") >= 0:
                 if strLicense.find("No License") >= 0:
                     # No License
@@ -657,7 +668,7 @@ class OrbitStateHelper(object):
         Assert.assertIsNotNone(oAltitude)
 
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\t\t\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "nm")
         self.m_logger.WriteLine5(
@@ -675,6 +686,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\t\t\t PerigeeAltitude is: {0}", oAltitude.PerigeeAltitude)
         Assert.assertEqual(123456.789, oAltitude.ApogeeAltitude)
         Assert.assertAlmostEqual(987654.321, oAltitude.PerigeeAltitude, delta=0.0001)
+        bCaught: bool = False
         try:
             bCaught = False
             oAltitude.ApogeeAltitude = -12345.6
@@ -708,13 +720,13 @@ class OrbitStateHelper(object):
     def ClassicalSizeShapeMeanMotion(self, oMeanMotion: "IClassicalSizeShapeMeanMotion"):
         Assert.assertIsNotNone(oMeanMotion)
         # set AngleUnit
-        strAngleUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strAngleUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strAngleUnit)
         self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
         self.m_logger.WriteLine5("\t\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
         Assert.assertEqual("rad", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
         # set TimeUnit
-        strTimeUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
+        strTimeUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
         self.m_logger.WriteLine5("\t\t\tThe current TimeUnit is: {0}", strTimeUnit)
         self.m_oUnits.SetCurrentUnit("TimeUnit", "hr")
         self.m_logger.WriteLine5("\t\t\tThe new TimeUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
@@ -733,6 +745,8 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\t\t\t Eccentricity is: {0}", oMeanMotion.Eccentricity)
         Assert.assertEqual(1.23456789, oMeanMotion.MeanMotion)
         Assert.assertEqual(0.987654321, oMeanMotion.Eccentricity)
+
+        bCaught: bool = False
         try:
             bCaught = False
             oMeanMotion.MeanMotion = -12345.6
@@ -771,7 +785,7 @@ class OrbitStateHelper(object):
         Assert.assertIsNotNone(oPeriod)
 
         # set TimeUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
         self.m_logger.WriteLine5("\t\t\tThe current TimeUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("TimeUnit", "yr")
         self.m_logger.WriteLine5("\t\t\tThe new TimeUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
@@ -787,6 +801,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\t\t\t Eccentricity is: {0}", oPeriod.Eccentricity)
         Assert.assertAlmostEqual(123456.789, oPeriod.Period, delta=0.0001)
         Assert.assertEqual(0.987654321, oPeriod.Eccentricity)
+        bCaught: bool = False
         try:
             bCaught = False
             oPeriod.Period = -12345.6
@@ -821,7 +836,7 @@ class OrbitStateHelper(object):
         Assert.assertIsNotNone(oRadius)
 
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\t\t\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "nm")
         self.m_logger.WriteLine5(
@@ -839,6 +854,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\t\t\t PerigeeRadius is: {0}", oRadius.PerigeeRadius)
         Assert.assertAlmostEqual(987654.321, oRadius.ApogeeRadius, delta=0.0001)
         Assert.assertAlmostEqual(123456.789, oRadius.PerigeeRadius, delta=0.0001)
+        bCaught: bool = False
         try:
             bCaught = False
             oRadius.SetSizeShapeRadius(123456.789, 987654.321)
@@ -909,7 +925,7 @@ class OrbitStateHelper(object):
         Assert.assertIsNotNone(oAxis)
 
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\t\t\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "nm")
         self.m_logger.WriteLine5(
@@ -927,6 +943,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\t\t\t Eccentricity is: {0}", oAxis.Eccentricity)
         Assert.assertEqual(123456.789, oAxis.SemiMajorAxis)
         Assert.assertEqual(0.987654321, oAxis.Eccentricity)
+        bCaught: bool = False
         try:
             bCaught = False
             oAxis.SemiMajorAxis = -12345.6
@@ -962,7 +979,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine("\t\tOrientation test")
 
         # set AngleUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
         self.m_logger.WriteLine5("\t\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
@@ -979,6 +996,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\t\t\t ArgOfPerigee is: {0}", oOrientation.ArgOfPerigee)
         Assert.assertEqual(1.23456, oOrientation.Inclination)
         Assert.assertEqual(2.34561, oOrientation.ArgOfPerigee)
+        bCaught: bool = False
         try:
             bCaught = False
             oOrientation.Inclination = -12345.6
@@ -1007,7 +1025,7 @@ class OrbitStateHelper(object):
         oOrientation.AscNodeType = AgEOrientationAscNode.eAscNodeLAN
         self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.AscNodeType)
         Assert.assertEqual(AgEOrientationAscNode.eAscNodeLAN, oOrientation.AscNodeType)
-        oLAN = clr.Convert(oOrientation.AscNode, IOrientationAscNodeLAN)
+        oLAN: "IOrientationAscNodeLAN" = clr.Convert(oOrientation.AscNode, IOrientationAscNodeLAN)
         Assert.assertIsNotNone(oLAN)
         self.m_logger.WriteLine6("\t\t\t\t Current LAN value is: {0}", oLAN.Value)
         oLAN.Value = 1.23456
@@ -1028,7 +1046,7 @@ class OrbitStateHelper(object):
         oOrientation.AscNodeType = AgEOrientationAscNode.eAscNodeRAAN
         self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.AscNodeType)
         Assert.assertEqual(AgEOrientationAscNode.eAscNodeRAAN, oOrientation.AscNodeType)
-        oRAAN = clr.Convert(oOrientation.AscNode, IOrientationAscNodeRAAN)
+        oRAAN: "IOrientationAscNodeRAAN" = clr.Convert(oOrientation.AscNode, IOrientationAscNodeRAAN)
         Assert.assertIsNotNone(oRAAN)
         self.m_logger.WriteLine6("\t\t\t\t Current RAAN value is: {0}", oRAAN.Value)
         oRAAN.Value = 1.23456
@@ -1069,15 +1087,18 @@ class OrbitStateHelper(object):
         self.m_oClassical.LocationType = eType
         self.m_logger.WriteLine6("\t\tNew Location type is: {0}", self.m_oClassical.LocationType)
         Assert.assertEqual(eType, self.m_oClassical.LocationType)
+        bCaught: bool = False
         if eType == AgEClassicalLocation.eLocationArgumentOfLatitude:
             # set AngleUnit
-            strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+            strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
             self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
             Assert.assertEqual("rad", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
 
-            oAOL = clr.Convert(self.m_oClassical.Location, IClassicalLocationArgumentOfLatitude)
+            oAOL: "IClassicalLocationArgumentOfLatitude" = clr.Convert(
+                self.m_oClassical.Location, IClassicalLocationArgumentOfLatitude
+            )
             Assert.assertIsNotNone(oAOL)
             self.m_logger.WriteLine6("\t\t\t Current ArgumentOfLatitude value is: {0}", oAOL.Value)
             oAOL.Value = 1.23456
@@ -1100,13 +1121,15 @@ class OrbitStateHelper(object):
             Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
         elif eType == AgEClassicalLocation.eLocationEccentricAnomaly:
             # set AngleUnit
-            strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+            strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
             self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
             Assert.assertEqual("rad", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
 
-            oEccentric = clr.Convert(self.m_oClassical.Location, IClassicalLocationEccentricAnomaly)
+            oEccentric: "IClassicalLocationEccentricAnomaly" = clr.Convert(
+                self.m_oClassical.Location, IClassicalLocationEccentricAnomaly
+            )
             Assert.assertIsNotNone(oEccentric)
             self.m_logger.WriteLine6("\t\t\t Current EccentricAnomaly value is: {0}", oEccentric.Value)
             oEccentric.Value = 1.23456
@@ -1129,13 +1152,15 @@ class OrbitStateHelper(object):
             Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
         elif eType == AgEClassicalLocation.eLocationMeanAnomaly:
             # set AngleUnit
-            strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+            strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
             self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
             Assert.assertEqual("rad", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
 
-            oMean = clr.Convert(self.m_oClassical.Location, IClassicalLocationMeanAnomaly)
+            oMean: "IClassicalLocationMeanAnomaly" = clr.Convert(
+                self.m_oClassical.Location, IClassicalLocationMeanAnomaly
+            )
             Assert.assertIsNotNone(oMean)
             self.m_logger.WriteLine6("\t\t\t Current MeanAnomaly value is: {0}", oMean.Value)
             oMean.Value = 1.23456
@@ -1158,13 +1183,13 @@ class OrbitStateHelper(object):
             Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
         elif eType == AgEClassicalLocation.eLocationTimePastAN:
             # set TimeUnit
-            strUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
+            strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
             self.m_logger.WriteLine5("\t\t\tThe current TimeUnit is: {0}", strUnit)
             self.m_oUnits.SetCurrentUnit("TimeUnit", "hr")
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
             Assert.assertEqual("hr", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
 
-            oAN = clr.Convert(self.m_oClassical.Location, IClassicalLocationTimePastAN)
+            oAN: "IClassicalLocationTimePastAN" = clr.Convert(self.m_oClassical.Location, IClassicalLocationTimePastAN)
             Assert.assertIsNotNone(oAN)
             self.m_logger.WriteLine6("\t\t\t Current TimePastAN value is: {0}", oAN.Value)
             oAN.Value = 1.23456
@@ -1187,13 +1212,15 @@ class OrbitStateHelper(object):
             Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
         elif eType == AgEClassicalLocation.eLocationTimePastPerigee:
             # set TimeUnit
-            strUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
+            strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
             self.m_logger.WriteLine5("\t\t\tThe current TimeUnit is: {0}", strUnit)
             self.m_oUnits.SetCurrentUnit("TimeUnit", "hr")
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
             Assert.assertEqual("hr", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
 
-            oPerigee = clr.Convert(self.m_oClassical.Location, IClassicalLocationTimePastPerigee)
+            oPerigee: "IClassicalLocationTimePastPerigee" = clr.Convert(
+                self.m_oClassical.Location, IClassicalLocationTimePastPerigee
+            )
             Assert.assertIsNotNone(oPerigee)
             self.m_logger.WriteLine6("\t\t\t Current TimePastPerigee value is: {0}", oPerigee.Value)
             oPerigee.Value = 1.23456
@@ -1216,13 +1243,15 @@ class OrbitStateHelper(object):
             Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
         elif eType == AgEClassicalLocation.eLocationTrueAnomaly:
             # set AngleUnit
-            strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+            strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
             self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
             Assert.assertEqual("rad", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
 
-            oTrue = clr.Convert(self.m_oClassical.Location, IClassicalLocationTrueAnomaly)
+            oTrue: "IClassicalLocationTrueAnomaly" = clr.Convert(
+                self.m_oClassical.Location, IClassicalLocationTrueAnomaly
+            )
             Assert.assertIsNotNone(oTrue)
             self.m_logger.WriteLine6("\t\t\t Current TrueAnomaly value is: {0}", oTrue.Value)
             oTrue.Value = 1.23456
@@ -1254,7 +1283,7 @@ class OrbitStateHelper(object):
         self.Test_IAgOrbitState(self.m_oGeodetic)
 
         # set AngleUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_logger.WriteLine5("\t\tThe current AngleUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
         self.m_logger.WriteLine5("\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
@@ -1279,6 +1308,8 @@ class OrbitStateHelper(object):
         Assert.assertEqual(2.34567891, self.m_oGeodetic.LatitudeRate)
         Assert.assertEqual(3.45678912, self.m_oGeodetic.Longitude)
         Assert.assertEqual(4.56789123, self.m_oGeodetic.LongitudeRate)
+        # out of bounds
+        bCaught: bool = False
         try:
             bCaught = False
             self.m_oGeodetic.Latitude = 12.34
@@ -1332,7 +1363,7 @@ class OrbitStateHelper(object):
         arTypes = self.m_oGeodetic.SupportedCoordinateSystemTypes
         self.m_logger.WriteLine3("\t\tGeodetic supports: {0} types", len(arTypes))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
                 "\t\t\tType {0}: {1} ({2})",
@@ -1486,7 +1517,7 @@ class OrbitStateHelper(object):
         self.m_oGeodetic.SizeType = AgEGeodeticSize.eSizeAltitude
         self.m_logger.WriteLine6("\t\tNew Size type is: {0}", self.m_oGeodetic.SizeType)
         Assert.assertEqual(AgEGeodeticSize.eSizeAltitude, self.m_oGeodetic.SizeType)
-        oAltitude = clr.Convert(self.m_oGeodetic.Size, IGeodeticSizeAltitude)
+        oAltitude: "IGeodeticSizeAltitude" = clr.Convert(self.m_oGeodetic.Size, IGeodeticSizeAltitude)
         Assert.assertIsNotNone(oAltitude)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t Altitude is: {0}", oAltitude.Altitude)
@@ -1524,7 +1555,7 @@ class OrbitStateHelper(object):
         self.m_oGeodetic.SizeType = AgEGeodeticSize.eSizeRadius
         self.m_logger.WriteLine6("\t\tNew Size type is: {0}", self.m_oGeodetic.SizeType)
         Assert.assertEqual(AgEGeodeticSize.eSizeRadius, self.m_oGeodetic.SizeType)
-        oRadius = clr.Convert(self.m_oGeodetic.Size, IGeodeticSizeRadius)
+        oRadius: "IGeodeticSizeRadius" = clr.Convert(self.m_oGeodetic.Size, IGeodeticSizeRadius)
         Assert.assertIsNotNone(oRadius)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t Radius is: {0}", oRadius.Radius)
@@ -1578,7 +1609,7 @@ class OrbitStateHelper(object):
         self.Test_IAgOrbitState(self.m_oDelaunay)
 
         # set AngleUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_logger.WriteLine5("\t\tThe current AngleUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
         self.m_logger.WriteLine5("\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
@@ -1599,6 +1630,8 @@ class OrbitStateHelper(object):
         Assert.assertEqual(1.23456789, self.m_oDelaunay.MeanAnomaly)
         Assert.assertEqual(2.34567891, self.m_oDelaunay.ArgOfPeriapsis)
         Assert.assertEqual(3.45678912, self.m_oDelaunay.RAAN)
+        # out of bounds
+        bCaught: bool = False
         try:
             bCaught = False
             self.m_oDelaunay.MeanAnomaly = 12.34
@@ -1650,7 +1683,7 @@ class OrbitStateHelper(object):
         arTypes = self.m_oDelaunay.SupportedCoordinateSystemTypes
         self.m_logger.WriteLine3("\t\tDelaunay supports: {0} types", len(arTypes))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
                 "\t\t\tType {0}: {1} ({2})",
@@ -1696,12 +1729,15 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oDelaunay.OrbitStateType, AgECoordinateSystem.eCoordinateSystemTrueOfDate)
         # eCoordinateSystemTrueOfEpoch
         self.CoordinateSystemTest(self.m_oDelaunay.OrbitStateType, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch)
+        # eCoordinateSystemTrueOfRefDate
+        # GetLicenses
+        oLicenses: "ansys.stk.core.stkutil.IExecCmdResult" = None
         oLicenses = self.m_oApplication.ExecuteCommand("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
 
-        iI = 0
+        iI: int = 0
         while iI < oLicenses.Count:
-            strLicense = oLicenses[iI]
+            strLicense: str = oLicenses[iI]
             if strLicense.find("PODS") >= 0:
                 if strLicense.find("No License") >= 0:
                     # No License
@@ -1748,7 +1784,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.LType = AgEDelaunayLType.eL
         self.m_logger.WriteLine6("\t\tNew LType is: {0}", self.m_oDelaunay.LType)
         Assert.assertEqual(AgEDelaunayLType.eL, self.m_oDelaunay.LType)
-        oL = clr.Convert(self.m_oDelaunay.L, IDelaunayL)
+        oL: "IDelaunayL" = clr.Convert(self.m_oDelaunay.L, IDelaunayL)
         Assert.assertIsNotNone(oL)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t L is: {0}", oL.L)
@@ -1756,6 +1792,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine("\t\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t\t L is: {0}", oL.L)
         Assert.assertEqual(12345678.9, oL.L)
+        bCaught: bool = False
         try:
             bCaught = False
             oL.L = -12.34
@@ -1770,7 +1807,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.LType = AgEDelaunayLType.eLOverSQRTmu
         self.m_logger.WriteLine6("\t\tNew LType is: {0}", self.m_oDelaunay.LType)
         Assert.assertEqual(AgEDelaunayLType.eLOverSQRTmu, self.m_oDelaunay.LType)
-        oLOver = clr.Convert(self.m_oDelaunay.L, IDelaunayLOverSQRTmu)
+        oLOver: "IDelaunayLOverSQRTmu" = clr.Convert(self.m_oDelaunay.L, IDelaunayLOverSQRTmu)
         Assert.assertIsNotNone(oLOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t LOverSQRTmu is: {0}", oLOver.LOverSQRTmu)
@@ -1809,7 +1846,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.HType = AgEDelaunayHType.eH
         self.m_logger.WriteLine6("\t\tNew HType is: {0}", self.m_oDelaunay.HType)
         Assert.assertEqual(AgEDelaunayHType.eH, self.m_oDelaunay.HType)
-        oH = clr.Convert(self.m_oDelaunay.H, IDelaunayH)
+        oH: "IDelaunayH" = clr.Convert(self.m_oDelaunay.H, IDelaunayH)
         Assert.assertIsNotNone(oH)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t H is: {0}", oH.H)
@@ -1817,6 +1854,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine("\t\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t\t H is: {0}", oH.H)
         Assert.assertEqual(12.3456789, oH.H)
+        bCaught: bool = False
         try:
             bCaught = False
             oH.H = -12.34
@@ -1831,7 +1869,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.HType = AgEDelaunayHType.eHOverSQRTmu
         self.m_logger.WriteLine6("\t\tNew HType is: {0}", self.m_oDelaunay.HType)
         Assert.assertEqual(AgEDelaunayHType.eHOverSQRTmu, self.m_oDelaunay.HType)
-        oHOver = clr.Convert(self.m_oDelaunay.H, IDelaunayHOverSQRTmu)
+        oHOver: "IDelaunayHOverSQRTmu" = clr.Convert(self.m_oDelaunay.H, IDelaunayHOverSQRTmu)
         Assert.assertIsNotNone(oHOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t HOverSQRTmu is: {0}", oHOver.HOverSQRTmu)
@@ -1870,7 +1908,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.GType = AgEDelaunayGType.eG
         self.m_logger.WriteLine6("\t\tNew GType is: {0}", self.m_oDelaunay.GType)
         Assert.assertEqual(AgEDelaunayGType.eG, self.m_oDelaunay.GType)
-        oG = clr.Convert(self.m_oDelaunay.G, IDelaunayG)
+        oG: "IDelaunayG" = clr.Convert(self.m_oDelaunay.G, IDelaunayG)
         Assert.assertIsNotNone(oG)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t G is: {0}", oG.G)
@@ -1878,6 +1916,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine("\t\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t\t G is: {0}", oG.G)
         Assert.assertEqual(12345.6789, oG.G)
+        bCaught: bool = False
         try:
             bCaught = False
             oG.G = -12.34
@@ -1892,7 +1931,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.GType = AgEDelaunayGType.eGOverSQRTmu
         self.m_logger.WriteLine6("\t\tNew GType is: {0}", self.m_oDelaunay.GType)
         Assert.assertEqual(AgEDelaunayGType.eGOverSQRTmu, self.m_oDelaunay.GType)
-        oGOver = clr.Convert(self.m_oDelaunay.G, IDelaunayGOverSQRTmu)
+        oGOver: "IDelaunayGOverSQRTmu" = clr.Convert(self.m_oDelaunay.G, IDelaunayGOverSQRTmu)
         Assert.assertIsNotNone(oGOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t GOverSQRTmu is: {0}", oGOver.GOverSQRTmu)
@@ -1929,11 +1968,13 @@ class OrbitStateHelper(object):
         Assert.assertIsNotNone(self.m_oEquinoctial)
         self.Test_IAgOrbitState(self.m_oEquinoctial)
 
+        bCaught: bool = False
+
         # CoordinateSystem test
         arTypes = self.m_oEquinoctial.SupportedCoordinateSystemTypes
         self.m_logger.WriteLine3("\t\tEquinoctial supports: {0} types", len(arTypes))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
                 "\t\t\tType {0}: {1} ({2})",
@@ -2000,7 +2041,7 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         # set AngleUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_logger.WriteLine5("\t\tThe current AngleUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
         self.m_logger.WriteLine5("\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
@@ -2142,6 +2183,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine("\t\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t\t MeanMotion is: {0}", oMeanMotion.MeanMotion)
         Assert.assertAlmostEqual(123456.789, oMeanMotion.MeanMotion, delta=0.0001)
+        bCaught: bool = False
         try:
             bCaught = False
             oMeanMotion.MeanMotion = -12345.6
@@ -2160,7 +2202,7 @@ class OrbitStateHelper(object):
         Assert.assertIsNotNone(oAxis)
 
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\t\t\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "nm")
         self.m_logger.WriteLine5(
@@ -2174,6 +2216,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine("\t\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t\t SemiMajorAxis is: {0}", oAxis.SemiMajorAxis)
         Assert.assertEqual(123456.789, oAxis.SemiMajorAxis)
+        bCaught: bool = False
         try:
             bCaught = False
             oAxis.SemiMajorAxis = -12345.6
@@ -2197,11 +2240,13 @@ class OrbitStateHelper(object):
         Assert.assertIsNotNone(self.m_oMixed)
         self.Test_IAgOrbitState(self.m_oMixed)
 
+        bCaught: bool = False
+
         # CoordinateSystem test
         arTypes = self.m_oMixed.SupportedCoordinateSystemTypes
         self.m_logger.WriteLine3("\t\tMixedSpherical supports: {0} types", len(arTypes))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
                 "\t\t\tType {0}: {1} ({2})",
@@ -2264,7 +2309,7 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         # set AngleUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_logger.WriteLine5("\t\tThe current AngleUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
         self.m_logger.WriteLine5("\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
@@ -2354,7 +2399,7 @@ class OrbitStateHelper(object):
         self.m_oMixed.FPAType = AgEMixedSphericalFPA.eFPAHorizontal
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.FPAType)
         Assert.assertEqual(AgEMixedSphericalFPA.eFPAHorizontal, self.m_oMixed.FPAType)
-        oHorizontal = clr.Convert(self.m_oMixed.FPA, IMixedSphericalFPAHorizontal)
+        oHorizontal: "IMixedSphericalFPAHorizontal" = clr.Convert(self.m_oMixed.FPA, IMixedSphericalFPAHorizontal)
         Assert.assertIsNotNone(oHorizontal)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.FPA)
         oHorizontal.FPA = 1.2345
@@ -2375,7 +2420,7 @@ class OrbitStateHelper(object):
         self.m_oMixed.FPAType = AgEMixedSphericalFPA.eFPAVertical
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.FPAType)
         Assert.assertEqual(AgEMixedSphericalFPA.eFPAVertical, self.m_oMixed.FPAType)
-        oVertical = clr.Convert(self.m_oMixed.FPA, IMixedSphericalFPAVertical)
+        oVertical: "IMixedSphericalFPAVertical" = clr.Convert(self.m_oMixed.FPA, IMixedSphericalFPAVertical)
         Assert.assertIsNotNone(oVertical)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.FPA)
         oVertical.FPA = -1.2345
@@ -2415,11 +2460,13 @@ class OrbitStateHelper(object):
         Assert.assertIsNotNone(self.m_oSpherical)
         self.Test_IAgOrbitState(self.m_oSpherical)
 
+        bCaught: bool = False
+
         # CoordinateSystem test
         arTypes = self.m_oSpherical.SupportedCoordinateSystemTypes
         self.m_logger.WriteLine3("\t\tSpherical supports: {0} types", len(arTypes))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
                 "\t\t\tType {0}: {1} ({2})",
@@ -2476,7 +2523,7 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         # set AngleUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_logger.WriteLine5("\t\tThe current AngleUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
         self.m_logger.WriteLine5("\t\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
@@ -2566,7 +2613,7 @@ class OrbitStateHelper(object):
         self.m_oSpherical.FPAType = AgESphericalFPA.eSphericalFPAHorizontal
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.FPAType)
         Assert.assertEqual(AgESphericalFPA.eSphericalFPAHorizontal, self.m_oSpherical.FPAType)
-        oHorizontal = clr.Convert(self.m_oSpherical.FPA, ISphericalFPAHorizontal)
+        oHorizontal: "ISphericalFPAHorizontal" = clr.Convert(self.m_oSpherical.FPA, ISphericalFPAHorizontal)
         Assert.assertIsNotNone(oHorizontal)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.FPA)
         oHorizontal.FPA = 1.2345
@@ -2587,7 +2634,7 @@ class OrbitStateHelper(object):
         self.m_oSpherical.FPAType = AgESphericalFPA.eSphericalFPAVertical
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.FPAType)
         Assert.assertEqual(AgESphericalFPA.eSphericalFPAVertical, self.m_oSpherical.FPAType)
-        oVertical = clr.Convert(self.m_oSpherical.FPA, ISphericalFPAVertical)
+        oVertical: "ISphericalFPAVertical" = clr.Convert(self.m_oSpherical.FPA, ISphericalFPAVertical)
         Assert.assertIsNotNone(oVertical)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.FPA)
         oVertical.FPA = -1.2345

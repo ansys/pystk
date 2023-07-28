@@ -28,7 +28,7 @@ class LOP(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        LOP.m_Object: ISatellite = clr.CastAs(
+        LOP.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, LOP.m_DefaultName),
             ISatellite,
         )
@@ -52,21 +52,21 @@ class LOP(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorLOP)
 
         # Get IAgVePropagatorLOP interface
-        lopProp: IVehiclePropagatorLOP = clr.CastAs(satellite.Propagator, IVehiclePropagatorLOP)
+        lopProp: "IVehiclePropagatorLOP" = clr.CastAs(satellite.Propagator, IVehiclePropagatorLOP)
 
         # Configure time period
         lopProp.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         lopProp.Step = 86400
 
         # Configure propagator initial state
-        orbit = lopProp.InitialState.Representation
+        orbit: "IOrbitState" = lopProp.InitialState.Representation
         orbit.Epoch = "1 Jan 2012 12:00:00.000"
         orbit.AssignCartesian(
             AgECoordinateSystem.eCoordinateSystemFixed, -1120.32, -9520.84, 0.129, 2.155, -1.54416, 5.668412
         )  # in km/sec
 
         # Configure force model
-        lopForceModel = lopProp.ForceModel
+        lopForceModel: "IVehicleLOPForceModel" = lopProp.ForceModel
         lopForceModel.CentralBodyGravity.MaxDegree = 15
         lopForceModel.CentralBodyGravity.MaxOrder = 8
         lopForceModel.Drag.Use = True

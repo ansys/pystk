@@ -27,7 +27,7 @@ class Aircraft(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        Aircraft.m_Object: IAircraft = clr.CastAs(
+        Aircraft.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eAircraft, Aircraft.m_DefaultName
             ),
@@ -52,7 +52,7 @@ class Aircraft(CodeSnippetsTestBase):
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Retrieve propagator interface
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
 
     # endregion
 
@@ -65,12 +65,12 @@ class Aircraft(CodeSnippetsTestBase):
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Retrieve propagator interface
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
         propagator.ArcGranularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive IAgVeWayPtAltitudeRefTerrain interface
         propagator.SetAltitudeRefType(AgEVeAltitudeRef.eWayPtAltRefTerrain)
-        altRef: IVehicleWaypointAltitudeReferenceTerrain = clr.CastAs(
+        altRef: "IVehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
             propagator.AltitudeRef, IVehicleWaypointAltitudeReferenceTerrain
         )
         altRef.Granularity = 51.33
@@ -79,13 +79,13 @@ class Aircraft(CodeSnippetsTestBase):
         propagator.Method = AgEVeWayPtCompMethod.eDetermineTimeAccFromVel
 
         # Add waypoints
-        point1 = propagator.Waypoints.Add()
+        point1: "IVehicleWaypointsElement" = propagator.Waypoints.Add()
         point1.Latitude = 39.7674
         point1.Longitude = -79.7292
         point1.Altitude = 3.0
         point1.Speed = 0.0772
 
-        point2 = propagator.Waypoints.Add()
+        point2: "IVehicleWaypointsElement" = propagator.Waypoints.Add()
         point2.Latitude = 38.3721
         point2.Longitude = -120.116
         point2.Altitude = 3.0

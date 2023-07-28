@@ -32,7 +32,7 @@ class Chain(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Chain.m_Object: IChain = clr.CastAs(
+        Chain.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eChain, Chain.m_DefaultName),
             IChain,
         )
@@ -50,14 +50,12 @@ class Chain(CodeSnippetsTestBase):
     def test_CreateChainOnCurrentScenarioCentralBody(self):
         (clr.Convert(Chain.m_Object, IStkObject)).Unload()
         self.CreateChainOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
-        Chain.m_Object: IChain = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children[Chain.m_DefaultName], IChain
-        )
+        Chain.m_Object = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario.Children[Chain.m_DefaultName], IChain)
 
     def CreateChainOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Chain on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
-        chain: IChain = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eChain, "MyChain"), IChain)
+        chain: "IChain" = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eChain, "MyChain"), IChain)
 
     # endregion
 
@@ -117,7 +115,9 @@ class Chain(CodeSnippetsTestBase):
         chain.SetTimePeriodType(AgEChTimePeriodType.eUserSpecifiedTimePeriod)
 
         # Get chain time period interface
-        chainUserTimePeriod: IChainUserSpecifiedTimePeriod = clr.CastAs(chain.TimePeriod, IChainUserSpecifiedTimePeriod)
+        chainUserTimePeriod: "IChainUserSpecifiedTimePeriod" = clr.CastAs(
+            chain.TimePeriod, IChainUserSpecifiedTimePeriod
+        )
         chainUserTimePeriod.TimeInterval.SetExplicitInterval("1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00")
 
         # Compute the chain
@@ -127,17 +127,17 @@ class Chain(CodeSnippetsTestBase):
 
     # region ConfigureChainComputeTimePeriod
     def test_ConfigureChainComputeTimePeriod(self):
-        scenario = TestBase.Application.CurrentScenario
+        scenario: "IStkObject" = TestBase.Application.CurrentScenario
 
-        satellite = clr.Convert(scenario.Children.New(AgESTKObjectType.eSatellite, "GEO"), ISatellite)
+        satellite: "ISatellite" = clr.Convert(scenario.Children.New(AgESTKObjectType.eSatellite, "GEO"), ISatellite)
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        twoBody = clr.Convert(satellite.Propagator, IVehiclePropagatorTwoBody)
+        twoBody: "IVehiclePropagatorTwoBody" = clr.Convert(satellite.Propagator, IVehiclePropagatorTwoBody)
         twoBody.EphemerisInterval.SetStartTimeAndDuration("1 May 2012 04:00:00.000", "+1 hour")
         twoBody.Propagate()
 
-        aircraft = scenario.Children.New(AgESTKObjectType.eAircraft, "DummyAircraft")
+        aircraft: "IStkObject" = scenario.Children.New(AgESTKObjectType.eAircraft, "DummyAircraft")
 
-        chain = clr.Convert(scenario.Children.New(AgESTKObjectType.eChain, "ChainForCodeSnippet"), IChain)
+        chain: "IChain" = clr.Convert(scenario.Children.New(AgESTKObjectType.eChain, "ChainForCodeSnippet"), IChain)
 
         chain.Objects.Add("Satellite/GEO")
         chain.Objects.Add("Aircraft/DummyAircraft")
@@ -152,7 +152,7 @@ class Chain(CodeSnippetsTestBase):
 
     def ConfigureChainComputeTimePeriod(self, chain: "IChain"):
         chain.SetTimePeriodType(AgEChTimePeriodType.eUserSpecifiedTimePeriod)
-        userSpecifiedTimePeriod: IChainUserSpecifiedTimePeriod = clr.CastAs(
+        userSpecifiedTimePeriod: "IChainUserSpecifiedTimePeriod" = clr.CastAs(
             chain.TimePeriod, IChainUserSpecifiedTimePeriod
         )
         userSpecifiedTimePeriod.TimeInterval.SetExplicitInterval("1 May 2015 04:00:00.000", "1 May 2015 05:00:00.000")
@@ -161,17 +161,17 @@ class Chain(CodeSnippetsTestBase):
 
     # region PrintChainStrainIntervalsTimes
     def test_PrintChainStrainIntervalsTimes(self):
-        scenario = clr.Convert(TestBase.Application.CurrentScenario, IStkObject)
+        scenario: "IStkObject" = clr.Convert(TestBase.Application.CurrentScenario, IStkObject)
 
-        satellite = clr.Convert(scenario.Children.New(AgESTKObjectType.eSatellite, "GEO"), ISatellite)
+        satellite: "ISatellite" = clr.Convert(scenario.Children.New(AgESTKObjectType.eSatellite, "GEO"), ISatellite)
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        twoBody = clr.Convert(satellite.Propagator, IVehiclePropagatorTwoBody)
+        twoBody: "IVehiclePropagatorTwoBody" = clr.Convert(satellite.Propagator, IVehiclePropagatorTwoBody)
         twoBody.EphemerisInterval.SetStartTimeAndDuration("2 May 2012 04:00:00.000", "+1 hour")
         twoBody.Propagate()
 
-        aircraft = scenario.Children.New(AgESTKObjectType.eAircraft, "DummyAircraft")
+        aircraft: "IStkObject" = scenario.Children.New(AgESTKObjectType.eAircraft, "DummyAircraft")
 
-        chain = clr.Convert(scenario.Children.New(AgESTKObjectType.eChain, "ChainForCodeSnippet"), IChain)
+        chain: "IChain" = clr.Convert(scenario.Children.New(AgESTKObjectType.eChain, "ChainForCodeSnippet"), IChain)
 
         chain.Objects.Add("Satellite/GEO")
         chain.Objects.Add("Aircraft/DummyAircraft")
@@ -185,7 +185,7 @@ class Chain(CodeSnippetsTestBase):
             (clr.Convert(chain, IStkObject)).Unload()
 
     def PrintChainStrainIntervalsTimes(self, chain: "IChain"):
-        chainAsStkObject: IStkObject = clr.CastAs(chain, IStkObject)
+        chainAsStkObject: "IStkObject" = clr.CastAs(chain, IStkObject)
 
         # Compute the chain access if not done already.
         chain.ComputeAccess()
@@ -199,19 +199,21 @@ class Chain(CodeSnippetsTestBase):
             "Chain considered stop time: {0}", chainAsStkObject.Vgt.Events["ConsideredStopTime"].FindOccurrence().Epoch
         )
 
-        objectParticipationIntervals = chainAsStkObject.Vgt.EventIntervalCollections["StrandAccessIntervals"]
-        intervalListResult = objectParticipationIntervals.FindIntervalCollection()
+        objectParticipationIntervals: "ITimeToolEventIntervalCollection" = (
+            chainAsStkObject.Vgt.EventIntervalCollections["StrandAccessIntervals"]
+        )
+        intervalListResult: "ITimeToolIntervalsVectorResult" = objectParticipationIntervals.FindIntervalCollection()
 
-        i = 0
+        i: int = 0
         while i < intervalListResult.IntervalCollections.Count:
             if intervalListResult.IsValid:
                 Console.WriteLine("Link Name: {0}", objectParticipationIntervals.Labels[i])
                 Console.WriteLine("--------------")
 
-                j = 0
+                j: int = 0
                 while j < intervalListResult.IntervalCollections[i].Count:
-                    startTime = intervalListResult.IntervalCollections[i][j].Start
-                    stopTime = intervalListResult.IntervalCollections[i][j].Stop
+                    startTime: typing.Any = intervalListResult.IntervalCollections[i][j].Start
+                    stopTime: typing.Any = intervalListResult.IntervalCollections[i][j].Stop
                     Console.WriteLine("Start: {0}, Stop: {1}", startTime, stopTime)
 
                     j += 1

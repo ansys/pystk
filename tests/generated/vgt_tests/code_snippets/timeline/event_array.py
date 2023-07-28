@@ -13,18 +13,20 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.DetermineTimesOfEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def DetermineTimesOfEventArray(self, provider: "IAnalysisWorkbenchProvider"):
-        eventArray = provider.EventArrays["Orbit.Classical.SemimajorAxis.TimesOfLocalMax"]
+        eventArray: "ITimeToolEventArray" = provider.EventArrays["Orbit.Classical.SemimajorAxis.TimesOfLocalMax"]
 
-        foundTimes = eventArray.FindTimes()
+        foundTimes: "ITimeToolFindTimesResult" = eventArray.FindTimes()
         if foundTimes.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(foundTimes.Times)
+            numTimes: int = len(foundTimes.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
                 Console.WriteLine(foundTimes.Times[i])
 
                 i += 1
+
+            timeArray: "ITimeToolInterval"
 
             for timeArray in foundTimes.Intervals:
                 Console.WriteLine(("Start: " + str(timeArray.Start)))
@@ -37,8 +39,10 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.CreateFilteredEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateFilteredEventArray(self, provider: "IAnalysisWorkbenchProvider"):
-        eventArray = provider.EventArrays.Factory.CreateEventArrayFiltered("MyEventArrayFiltered", "MyDescription")
-        asFiltered: ITimeToolEventArrayFiltered = clr.CastAs(eventArray, ITimeToolEventArrayFiltered)
+        eventArray: "ITimeToolEventArray" = provider.EventArrays.Factory.CreateEventArrayFiltered(
+            "MyEventArrayFiltered", "MyDescription"
+        )
+        asFiltered: "ITimeToolEventArrayFiltered" = clr.CastAs(eventArray, ITimeToolEventArrayFiltered)
 
         asFiltered.OriginalTimeArray = provider.EventArrays["EphemerisTimes"]
 
@@ -48,16 +52,18 @@ class EventArray(TimelineCodeSnippetsTestBase):
         # Uses current Time unit preference, this code snippet assumes seconds.
         asFiltered.Step = 240
 
-        timeArrays = eventArray.FindTimes()
+        timeArrays: "ITimeToolFindTimesResult" = eventArray.FindTimes()
         if timeArrays.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(timeArrays.Times)
+            numTimes: int = len(timeArrays.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.Times[i])
 
                 i += 1
+
+            timeArray: "ITimeToolInterval"
 
             for timeArray in timeArrays.Intervals:
                 Console.WriteLine(("Start: " + str(timeArray.Start)))
@@ -70,8 +76,10 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.CreateFixedStepEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateFixedStepEventArray(self, provider: "IAnalysisWorkbenchProvider"):
-        eventArray = provider.EventArrays.Factory.CreateEventArrayFixedStep("MyEventArrayFixedStep", "MyDescription")
-        asFixedStep: ITimeToolEventArrayFixedStep = clr.CastAs(eventArray, ITimeToolEventArrayFixedStep)
+        eventArray: "ITimeToolEventArray" = provider.EventArrays.Factory.CreateEventArrayFixedStep(
+            "MyEventArrayFixedStep", "MyDescription"
+        )
+        asFixedStep: "ITimeToolEventArrayFixedStep" = clr.CastAs(eventArray, ITimeToolEventArrayFixedStep)
 
         asFixedStep.BoundingIntervalList = provider.EventIntervalLists["AfterStart.SatisfactionIntervals"]
         asFixedStep.IncludeIntervalEdges = True
@@ -84,16 +92,18 @@ class EventArray(TimelineCodeSnippetsTestBase):
         asFixedStep.ReferenceType = AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeReferenceEvent
         asFixedStep.ReferenceTimeInstant = provider.Events["EphemerisStartTime"]
 
-        timeArrays = eventArray.FindTimes()
+        timeArrays: "ITimeToolFindTimesResult" = eventArray.FindTimes()
         if timeArrays.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(timeArrays.Times)
+            numTimes: int = len(timeArrays.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.Times[i])
 
                 i += 1
+
+            timeArray: "ITimeToolInterval"
 
             for timeArray in timeArrays.Intervals:
                 Console.WriteLine(("Start: " + str(timeArray.Start)))
@@ -106,22 +116,26 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.CreateMergedEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateMergedEventArray(self, provider: "IAnalysisWorkbenchProvider"):
-        eventArray = provider.EventArrays.Factory.CreateEventArrayMerged("MyEventArrayMerged", "MyDescription")
-        asMerged: ITimeToolEventArrayMerged = clr.CastAs(eventArray, ITimeToolEventArrayMerged)
+        eventArray: "ITimeToolEventArray" = provider.EventArrays.Factory.CreateEventArrayMerged(
+            "MyEventArrayMerged", "MyDescription"
+        )
+        asMerged: "ITimeToolEventArrayMerged" = clr.CastAs(eventArray, ITimeToolEventArrayMerged)
 
         asMerged.TimeArrayA = provider.EventArrays["GroundTrajectory.Detic.LLA.Altitude.TimesOfLocalMin"]
         asMerged.TimeArrayB = provider.EventArrays["GroundTrajectory.Detic.LLA.Altitude.TimesOfLocalMax"]
 
-        timeArrays = eventArray.FindTimes()
+        timeArrays: "ITimeToolFindTimesResult" = eventArray.FindTimes()
         if timeArrays.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(timeArrays.Times)
+            numTimes: int = len(timeArrays.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.Times[i])
 
                 i += 1
+
+            timeArray: "ITimeToolInterval"
 
             for timeArray in timeArrays.Intervals:
                 Console.WriteLine(("Start: " + str(timeArray.Start)))
@@ -134,35 +148,37 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventArray(clr.Convert(TestBase.Application, IStkObjectRoot))
 
     def CreateSignaledEventArray(self, stkRoot: "IStkObjectRoot"):
-        satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
-        aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
+        satelliteVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
+        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
-        eventArray = satelliteVgtProvider.EventArrays.Factory.CreateEventArraySignaled(
+        eventArray: "ITimeToolEventArray" = satelliteVgtProvider.EventArrays.Factory.CreateEventArraySignaled(
             "MyEventArraySignaled", "MyDescription"
         )
-        asSignaled: ITimeToolEventArraySignaled = clr.CastAs(eventArray, ITimeToolEventArraySignaled)
+        asSignaled: "ITimeToolEventArraySignaled" = clr.CastAs(eventArray, ITimeToolEventArraySignaled)
 
         asSignaled.OriginalTimeArray = aircraftVgtProvider.EventArrays["OneMinuteSampleTimes"]
         asSignaled.BaseClockLocation = satelliteVgtProvider.Points["Center"]
         asSignaled.TargetClockLocation = aircraftVgtProvider.Points["Center"]
 
         asSignaled.SignalSense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
-        basicSignalDelay: ITimeToolSignalDelayBasic = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
         basicSignalDelay.SpeedOption = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.TimeDelayConvergence = 0.01
 
-        timeArrays = eventArray.FindTimes()
+        timeArrays: "ITimeToolFindTimesResult" = eventArray.FindTimes()
         if timeArrays.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(timeArrays.Times)
+            numTimes: int = len(timeArrays.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.Times[i])
 
                 i += 1
+
+            timeArray: "ITimeToolInterval"
 
             for timeArray in timeArrays.Intervals:
                 Console.WriteLine(("Start: " + str(timeArray.Start)))
@@ -175,24 +191,28 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.CreateStartStopTimesEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateStartStopTimesEventArray(self, provider: "IAnalysisWorkbenchProvider"):
-        eventArray = provider.EventArrays.Factory.CreateEventArrayStartStopTimes(
+        eventArray: "ITimeToolEventArray" = provider.EventArrays.Factory.CreateEventArrayStartStopTimes(
             "MyEventArrayStartStopTimes", "MyDescription"
         )
-        asStartStopTimes: ITimeToolEventArrayStartStopTimes = clr.CastAs(eventArray, ITimeToolEventArrayStartStopTimes)
+        asStartStopTimes: "ITimeToolEventArrayStartStopTimes" = clr.CastAs(
+            eventArray, ITimeToolEventArrayStartStopTimes
+        )
 
         asStartStopTimes.ReferenceIntervals = provider.EventIntervalLists["LightingIntervals.Sunlight"]
         asStartStopTimes.StartStopOption = AgECrdnStartStopOption.eCrdnStartStopOptionCountStartOnly
 
-        timeArrays = eventArray.FindTimes()
+        timeArrays: "ITimeToolFindTimesResult" = eventArray.FindTimes()
         if timeArrays.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(timeArrays.Times)
+            numTimes: int = len(timeArrays.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.Times[i])
 
                 i += 1
+
+            timeArray: "ITimeToolInterval"
 
             for timeArray in timeArrays.Intervals:
                 Console.WriteLine(("Start: " + str(timeArray.Start)))
@@ -205,15 +225,17 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.CreateConditionCrossingsEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateConditionCrossingsEventArray(self, provider: "IAnalysisWorkbenchProvider"):
-        eventArray = provider.EventArrays.Factory.CreateEventArrayConditionCrossings(
+        eventArray: "ITimeToolEventArray" = provider.EventArrays.Factory.CreateEventArrayConditionCrossings(
             "MyEventArrayConditionCrossings", "MyDescription"
         )
-        asConditionCrossings: ITimeToolEventArrayConditionCrossings = clr.CastAs(
+        asConditionCrossings: "ITimeToolEventArrayConditionCrossings" = clr.CastAs(
             eventArray, ITimeToolEventArrayConditionCrossings
         )
 
-        scalarBound = provider.Conditions.Factory.CreateConditionScalarBounds("Bound", "MyDescription")
-        asScalarBounds: ICalculationToolConditionScalarBounds = clr.CastAs(
+        scalarBound: "ICalculationToolCondition" = provider.Conditions.Factory.CreateConditionScalarBounds(
+            "Bound", "MyDescription"
+        )
+        asScalarBounds: "ICalculationToolConditionScalarBounds" = clr.CastAs(
             scalarBound, ICalculationToolConditionScalarBounds
         )
         asScalarBounds.Scalar = provider.CalcScalars["GroundTrajectory.Detic.LLA.Latitude"]
@@ -222,16 +244,18 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
         asConditionCrossings.Condition = scalarBound
 
-        timeArrays = eventArray.FindTimes()
+        timeArrays: "ITimeToolFindTimesResult" = eventArray.FindTimes()
         if timeArrays.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(timeArrays.Times)
+            numTimes: int = len(timeArrays.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.Times[i])
 
                 i += 1
+
+            timeArray: "ITimeToolInterval"
 
             for timeArray in timeArrays.Intervals:
                 Console.WriteLine(("Start: " + str(timeArray.Start)))
@@ -244,24 +268,28 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.CreateExtremaEventArray(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateExtremaEventArray(self, provider: "IAnalysisWorkbenchProvider"):
-        eventArray = provider.EventArrays.Factory.CreateEventArrayExtrema("MyEventArrayExtrema", "MyDescription")
-        asExtrema: ITimeToolEventArrayExtrema = clr.CastAs(eventArray, ITimeToolEventArrayExtrema)
+        eventArray: "ITimeToolEventArray" = provider.EventArrays.Factory.CreateEventArrayExtrema(
+            "MyEventArrayExtrema", "MyDescription"
+        )
+        asExtrema: "ITimeToolEventArrayExtrema" = clr.CastAs(eventArray, ITimeToolEventArrayExtrema)
 
         asExtrema.Calculation = provider.CalcScalars["GroundTrajectory.Detic.LLA.Altitude"]
 
         asExtrema.IsGlobal = True
         asExtrema.ExtremumType = AgECrdnExtremumConstants.eCrdnExtremumMaximum
 
-        timeArrays = eventArray.FindTimes()
+        timeArrays: "ITimeToolFindTimesResult" = eventArray.FindTimes()
         if timeArrays.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(timeArrays.Times)
+            numTimes: int = len(timeArrays.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.Times[i])
 
                 i += 1
+
+            timeArray: "ITimeToolInterval"
 
             for timeArray in timeArrays.Intervals:
                 Console.WriteLine(("Start: " + str(timeArray.Start)))
@@ -275,26 +303,26 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     def DetermineAltitudeOfAircraftAtOneCertainSample(self, stkRoot: "IStkObjectRoot"):
         # Get the aircraft
-        aircraft = stkRoot.GetObjectFromPath("Aircraft/UAV")
+        aircraft: "IStkObject" = stkRoot.GetObjectFromPath("Aircraft/UAV")
 
         # Configure a fixed step array that samples every 20 seconds.
-        twentySecondSample = aircraft.Vgt.EventArrays.Factory.CreateEventArrayFixedStep(
+        twentySecondSample: "ITimeToolEventArray" = aircraft.Vgt.EventArrays.Factory.CreateEventArrayFixedStep(
             "TwentySecondSample", "MyDescription"
         )
-        asFixedStep: ITimeToolEventArrayFixedStep = clr.CastAs(twentySecondSample, ITimeToolEventArrayFixedStep)
+        asFixedStep: "ITimeToolEventArrayFixedStep" = clr.CastAs(twentySecondSample, ITimeToolEventArrayFixedStep)
         asFixedStep.BoundingIntervalList = aircraft.Vgt.EventIntervalLists["AvailabilityIntervals"]
         asFixedStep.SamplingTimeStep = 20
         asFixedStep.ReferenceType = AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStartOfIntervalList
 
         # At each time step, get the aircraft's altitude and print the value.
-        timeArrays = twentySecondSample.FindTimes()
+        timeArrays: "ITimeToolFindTimesResult" = twentySecondSample.FindTimes()
         if timeArrays.IsValid:
             Console.WriteLine("Times")
-            numTimes = len(timeArrays.Times)
+            numTimes: int = len(timeArrays.Times)
 
-            i = 0
+            i: int = 0
             while i < numTimes:
-                epoch = timeArrays.Times[i]
+                epoch: typing.Any = timeArrays.Times[i]
                 altitueAtTime = aircraft.Vgt.CalcScalars["GroundTrajectory.Detic.LLA.Altitude"].QuickEvaluate(epoch)
                 if bool(altitueAtTime[0]) == True:
                     Console.WriteLine("{0}: {1}", epoch, altitueAtTime[1])

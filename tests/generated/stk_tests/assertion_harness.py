@@ -4,8 +4,8 @@ from ansys.stk.core.stkobjects import *
 
 class Unit(object):
     def __init__(self, dimension: str, name: str):
-        self.Dimension = dimension
-        self.UnitName = name
+        self.Dimension: str = dimension
+        self.UnitName: str = name
 
 
 class TryCatchAssertBlock(object):
@@ -15,7 +15,7 @@ class TryCatchAssertBlock(object):
 
     @staticmethod
     def DoAssertInvalidCast(action):
-        exceptionType = "No exception"
+        exceptionType: str = "No exception"
         try:
             action()
 
@@ -67,8 +67,8 @@ class TryCatchAssertBlock(object):
 
 class CodeRunner(object):
     def __init__(self, root: "IStkObjectRoot", bBeginEndUpdate: bool = False):
-        self._root = root
-        self._bBeginEndUpdate = bBeginEndUpdate
+        self._root: "IStkObjectRoot" = root
+        self._bBeginEndUpdate: bool = bBeginEndUpdate
 
     def DoWithUnits(self, action, *units):
         self.DoWithUnits2(action, Enumerable.ToList(units))
@@ -83,7 +83,7 @@ class CodeRunner(object):
                 nonlocal watch
                 watch = Stopwatch.StartNew()
 
-                i = 0
+                i: int = 0
                 while i < maxIterations:
                     action(i)
 

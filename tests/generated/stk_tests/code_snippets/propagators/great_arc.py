@@ -27,7 +27,7 @@ class GreatArc(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        GreatArc.m_Object: IGroundVehicle = clr.CastAs(
+        GreatArc.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eGroundVehicle, GreatArc.m_DefaultName
             ),
@@ -51,7 +51,7 @@ class GreatArc(CodeSnippetsTestBase):
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Get the IAgVePropagatorGreatArc from Route property
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
 
         self.DefineGreatArcPropFromListOfWaypointsAndTime(propagator)
 
@@ -68,9 +68,9 @@ class GreatArc(CodeSnippetsTestBase):
         # Remove any previous waypoints
         propagator.Waypoints.RemoveAll()
 
-        i = 0
+        i: int = 0
         while i < len(waypoints):
-            waypoint = propagator.Waypoints.Add()
+            waypoint: "IVehicleWaypointsElement" = propagator.Waypoints.Add()
             waypoint.Altitude = float(waypoints[i][0])
             waypoint.Latitude = waypoints[i][1]
             waypoint.Longitude = waypoints[i][2]
@@ -89,7 +89,7 @@ class GreatArc(CodeSnippetsTestBase):
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Get the IAgVePropagatorGreatArc from Route property
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
 
         self.ListAllWaypointsInAWaypointCollection(propagator)
 
@@ -106,9 +106,9 @@ class GreatArc(CodeSnippetsTestBase):
         # Remove any previous waypoints
         propagator.Waypoints.RemoveAll()
 
-        i = 0
+        i: int = 0
         while i < len(waypoints):
-            waypoint = propagator.Waypoints.Add()
+            waypoint: "IVehicleWaypointsElement" = propagator.Waypoints.Add()
             waypoint.Altitude = float(waypoints[i][0])
             waypoint.Latitude = waypoints[i][1]
             waypoint.Longitude = waypoints[i][2]
@@ -119,7 +119,7 @@ class GreatArc(CodeSnippetsTestBase):
         # List the waypoints after extracting them into an array
         waypointArray = propagator.Waypoints.ToArray()
 
-        j = 0
+        j: int = 0
         while j < len(waypointArray):
             Console.WriteLine(
                 "  Time: {0} Latitude: {1} Longitude: {2} Altitude: {3}",
@@ -139,7 +139,7 @@ class GreatArc(CodeSnippetsTestBase):
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Get the IAgVePropagatorGreatArc from Route property
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
 
         self.DefineGreatArcPropFromListOfWaypointsAndVelocity(propagator)
 
@@ -153,9 +153,9 @@ class GreatArc(CodeSnippetsTestBase):
         # Remove any previous waypoints
         propagator.Waypoints.RemoveAll()
 
-        i = 0
+        i: int = 0
         while i < len(waypoints):
-            waypoint = propagator.Waypoints.Add()
+            waypoint: "IVehicleWaypointsElement" = propagator.Waypoints.Add()
             waypoint.Altitude = waypoints[i][0]
             waypoint.Latitude = waypoints[i][1]
             waypoint.Longitude = waypoints[i][2]
@@ -171,13 +171,13 @@ class GreatArc(CodeSnippetsTestBase):
     # region ConfigurePropagatorStartEphemerisEpochExplicitly
     def test_ConfigurePropagatorStartEphemerisEpochExplicitly(self):
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
 
         self.ConfigurePropagatorStartEphemerisEpochExplicitly(propagator)
 
     def ConfigurePropagatorStartEphemerisEpochExplicitly(self, propagator: "IVehiclePropagatorGreatArc"):
         # Set the epoch time to tomorrow.
-        startEpoch = propagator.EphemerisInterval.GetStartEpoch()
+        startEpoch: "ITimeToolEventSmartEpoch" = propagator.EphemerisInterval.GetStartEpoch()
         startEpoch.SetExplicitTime("Tomorrow")
         propagator.EphemerisInterval.SetStartEpoch(startEpoch)
 
@@ -191,7 +191,7 @@ class GreatArc(CodeSnippetsTestBase):
 
         propagator.SetPointsSmoothRateAndPropagate(waypointsAndTimes)
 
-        i = 0
+        i: int = 0
         while i < propagator.Waypoints.Count:
             Console.WriteLine(
                 "Waypoint {0}, Lat = {1}, Lon = {2}, Time = {3}",
@@ -211,7 +211,7 @@ class GreatArc(CodeSnippetsTestBase):
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Get the IAgVePropagatorGreatArc from Route property
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
 
         self.SetPointsSpecifyTimeAndPropagate(propagator)
 
@@ -259,7 +259,7 @@ class GreatArc(CodeSnippetsTestBase):
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Get the IAgVePropagatorGreatArc from Route property
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
 
         self.SetPointsSpecifyVelocityAndPropagate(propagator)
 
@@ -312,7 +312,7 @@ class GreatArc(CodeSnippetsTestBase):
         GreatArc.m_Object.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Get the IAgVePropagatorGreatArc from Route property
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.Route, IVehiclePropagatorGreatArc)
 
         self.SetPointsSmoothRateAndPropagate(propagator)
 

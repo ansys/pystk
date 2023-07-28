@@ -5,7 +5,7 @@ from ansys.stk.core.stkobjects import *
 
 class SimpleAscent(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
-        self.m_Object = None
+        self.m_Object: "ILaunchVehicle" = None
         super(SimpleAscent, self).__init__(*args, **kwargs)
 
     m_DefaultName: str = "MyLaunchVehicle"
@@ -26,7 +26,7 @@ class SimpleAscent(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        self.m_Object: ILaunchVehicle = clr.CastAs(
+        self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eLaunchVehicle, SimpleAscent.m_DefaultName
             ),
@@ -48,7 +48,7 @@ class SimpleAscent(CodeSnippetsTestBase):
         self.m_Object.SetTrajectoryType(AgEVePropagatorType.ePropagatorSimpleAscent)
 
         # Get J2 IAgVePropagatorSimpleAscent interface
-        propagator: IVehiclePropagatorSimpleAscent = clr.CastAs(
+        propagator: "IVehiclePropagatorSimpleAscent" = clr.CastAs(
             self.m_Object.Trajectory, IVehiclePropagatorSimpleAscent
         )
 

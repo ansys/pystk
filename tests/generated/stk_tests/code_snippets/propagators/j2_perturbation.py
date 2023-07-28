@@ -28,7 +28,7 @@ class J2Perturbation(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        J2Perturbation.m_Object: ISatellite = clr.CastAs(
+        J2Perturbation.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eSatellite, J2Perturbation.m_DefaultName
             ),
@@ -56,14 +56,14 @@ class J2Perturbation(CodeSnippetsTestBase):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
 
         # J2 Perturbation propagator
-        j2prop: IVehiclePropagatorJ2Perturbation = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
 
         # Configure time period
         j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.Step = 60.0
 
         # Configure propagator initial state
-        initial = j2prop.InitialState
+        initial: "IVehicleJxInitialState" = j2prop.InitialState
         initial.Representation.Epoch = "1 Jan 2012 12:00:00.000"
         initial.Representation.AssignCartesian(
             AgECoordinateSystem.eCoordinateSystemFixed, -1514.4, -6790.1, -1.25, 4.8151, 1.771, 5.6414

@@ -18,7 +18,7 @@ class CodeSnippetsTestBase(TestBase):
         CodeSnippetsTestBase.SafeScenarioUnload()
 
         TestBase.Application.NewScenario("CodeSnippetScenario")
-        scenario = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
+        scenario: "IScenario" = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
         scenario.SetTimePeriod("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
 
     @staticmethod
@@ -28,7 +28,7 @@ class CodeSnippetsTestBase(TestBase):
         CodeSnippetsTestBase.SafeScenarioUnload()
         if makeNewScenario:
             TestBase.Application.NewScenario("CodeSnippetScenario")
-            scenario = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
+            scenario: "IScenario" = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
             scenario.SetTimePeriod("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
 
     @staticmethod

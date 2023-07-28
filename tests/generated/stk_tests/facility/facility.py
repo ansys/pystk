@@ -24,7 +24,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
 
-        paths = TestBase.Application.StkPreferences.STKPreferencesPythonPlugins.AccessConstraintPaths
+        paths: "IPathCollection" = TestBase.Application.StkPreferences.STKPreferencesPythonPlugins.AccessConstraintPaths
         paths.RemoveAll()
         paths.Add(Path.Combine(TestBase.GetScenarioRootDir(), "Plugins", "RangeExample.py"))
 
@@ -36,7 +36,7 @@ class EarlyBoundTests(TestBase):
     # region OneTimeTearDown
     @staticmethod
     def tearDownClass():
-        paths = TestBase.Application.StkPreferences.STKPreferencesPythonPlugins.AccessConstraintPaths
+        paths: "IPathCollection" = TestBase.Application.StkPreferences.STKPreferencesPythonPlugins.AccessConstraintPaths
         paths.RemoveAll()
 
         EarlyBoundTests.AG_FA = None
@@ -54,8 +54,8 @@ class EarlyBoundTests(TestBase):
         self.OnePtAccessStartStop("1 Jul 2007 00:00:00.000", "1 Jul 2007 01:00:00.000")
 
     def OnePtAccessStartStop(self, startTime: str, stopTime: str):
-        oObj: IStkObject = clr.CastAs(EarlyBoundTests.AG_FA, IStkObject)
-        onePtAccess = oObj.CreateOnePointAccess("Satellite/Satellite1")
+        oObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_FA, IStkObject)
+        onePtAccess: "IOnePointAccess" = oObj.CreateOnePointAccess("Satellite/Satellite1")
         onePtAccess.StartTime = startTime
         Assert.assertEqual(startTime, onePtAccess.StartTime)
         onePtAccess.StopTime = stopTime
@@ -64,26 +64,30 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(120, onePtAccess.StepSize)
         onePtAccess.SummaryOption = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
         Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed, onePtAccess.SummaryOption)
-        results = onePtAccess.Compute()
+        result: "IOnePointAccessResult" = None
+        results: "IOnePointAccessResultCollection" = onePtAccess.Compute()
 
-        i = 0
+        i: int = 0
         while i < results.Count:
             result = results[i]
             TestBase.logger.WriteLine2(result.Time)
             TestBase.logger.WriteLine2(result.AccessSatisfied)
 
-            j = 0
+            j: int = 0
             while j < result.Constraints.Count:
-                constraint = result.Constraints[j]
+                constraint: "IOnePointAccessConstraint" = result.Constraints[j]
                 self.dumpOnePtAccessConstraint(constraint)
 
                 j += 1
 
             i += 1
 
+        r: "IOnePointAccessResult"
+
         for r in results:
             TestBase.logger.WriteLine2(r.Time)
             TestBase.logger.WriteLine2(r.AccessSatisfied)
+            c: "IOnePointAccessConstraint"
             for c in r.Constraints:
                 self.dumpOnePtAccessConstraint(c)
 
@@ -113,9 +117,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine2(constraint.Value)
 
     def test_StartTime2StopTime2(self):
-        fac1 = TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "BUG56961")
-        interval: IDataProviderInterval = clr.CastAs(fac1.DataProviders["Eclipse Times"], IDataProviderInterval)
-        result = interval.Exec(
+        fac1: "IStkObject" = TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "BUG56961")
+        interval: "IDataProviderInterval" = clr.CastAs(fac1.DataProviders["Eclipse Times"], IDataProviderInterval)
+        result: "IDataProviderResult" = interval.Exec(
             (clr.CastAs(TestBase.Application.CurrentScenario, IScenario)).StartTime,
             (clr.CastAs(TestBase.Application.CurrentScenario, IScenario)).StopTime,
         )
@@ -123,7 +127,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("2 Jul 1999 00:00:00.000", result.Intervals[0].StopTime)
         Console.WriteLine(result.Intervals[0].StartTime)
         Console.WriteLine(result.Intervals[0].StopTime)
-        unitAbbrv = TestBase.Application.UnitPreferences.GetCurrentUnitAbbrv("DateFormat")
+        unitAbbrv: str = TestBase.Application.UnitPreferences.GetCurrentUnitAbbrv("DateFormat")
         TestBase.Application.UnitPreferences.SetCurrentUnit("DateFormat", "EpSec")
         Assert.assertEqual(0, result.Intervals[0].StartTime)
         Assert.assertEqual(86400, result.Intervals[0].StopTime)
@@ -198,7 +202,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        facObject: IStkObject = clr.CastAs(EarlyBoundTests.AG_FA, IStkObject)
+        facObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_FA, IStkObject)
         oHelper.Run(facObject)
         oHelper.TestObjectFilesArray(facObject.ObjectFiles)
 
@@ -215,7 +219,7 @@ class EarlyBoundTests(TestBase):
     # region Graphics
     @category("Graphics Tests")
     def test_Graphics(self):
-        gfx = EarlyBoundTests.AG_FA.Graphics
+        gfx: "IFacilityGraphics" = EarlyBoundTests.AG_FA.Graphics
         Assert.assertIsNotNone(gfx)
         gfx.IsObjectGraphicsVisible = False
         Assert.assertFalse(gfx.IsObjectGraphicsVisible)
@@ -268,7 +272,7 @@ class EarlyBoundTests(TestBase):
     # region GfxAzElMask
     @category("Graphics Tests")
     def test_GfxAzElMask(self):
-        azel = EarlyBoundTests.AG_FA.Graphics.AzElMask
+        azel: "IBasicAzElMask" = EarlyBoundTests.AG_FA.Graphics.AzElMask
         azel.RangeVisible = True
         Assert.assertTrue(azel.RangeVisible)
         azel.AltVisible = True
@@ -375,12 +379,12 @@ class EarlyBoundTests(TestBase):
     # region VOModelPointing
     @category("VO Tests")
     def test_VOModelPointing(self):
-        oModel = EarlyBoundTests.AG_FA.VO.Model
+        oModel: "IVOModel" = EarlyBoundTests.AG_FA.VO.Model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.ModelType)
         oModel.ModelType = AgEModelType.eModelFile
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.ModelType)
         Assert.assertEqual(AgEModelType.eModelFile, oModel.ModelType)
-        oModelFile: IVOModelFile = clr.CastAs(oModel.ModelData, IVOModelFile)
+        oModelFile: "IVOModelFile" = clr.CastAs(oModel.ModelData, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.Filename)
         oModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
@@ -401,14 +405,14 @@ class EarlyBoundTests(TestBase):
     def test_VOModelPointing_Snapshot(self):
         TestBase.Application.CloseScenario()
         TestBase.Application.NewScenario("BUG69449")
-        scenario: IScenario = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
+        scenario: "IScenario" = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
         # scenario.StartTime = "22 Oct 2012 16:00:00.000";
         # scenario.StopTime  = "23 Oct 2012 16:00:00.000";
 
-        fac: IFacility = clr.CastAs(
+        fac: "IFacility" = clr.CastAs(
             TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Facility1"), IFacility
         )
-        voModelFile: IVOModelFile = clr.CastAs(fac.VO.Model.ModelData, IVOModelFile)
+        voModelFile: "IVOModelFile" = clr.CastAs(fac.VO.Model.ModelData, IVOModelFile)
         voModelFile.Filename = r"STKData\VO\Models\Land\ground-antenna.mdl"
         fac.VO.ModelPointing.PointableElements[0].AssignedTargetObject.BindTo("Sun")
         fac.VO.ModelPointing.PointableElements[1].AssignedTargetObject.BindTo("Sun")
@@ -418,7 +422,7 @@ class EarlyBoundTests(TestBase):
         # TODO: Compare vs. Snapshot
         # AssertInsight3D.SceneIsSame(Scene, TypeOfComparison.NumberOfMisMatchingPixels, 0.01, ThingsToTurnOffForTest.Stars, ThingsToTurnOffForTest.Lighting);
 
-        anim: IAnimation = clr.CastAs(TestBase.Application, IAnimation)
+        anim: "IAnimation" = clr.CastAs(TestBase.Application, IAnimation)
         anim.CurrentTime = 7200  # move ahead 2 hours
 
         # Visually observe VO window to ensure that the model pointed to new location
@@ -433,7 +437,7 @@ class EarlyBoundTests(TestBase):
     def test_ZZZ_InvestigateProblemFailingOnlyOnTestMachines(self):
         TestBase.Application.CloseScenario()
         TestBase.Application.NewScenario("Investigate")
-        scenario: IScenario = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
+        scenario: "IScenario" = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
         scenario.StartTime = "22 Oct 2009 16:00:00.000"  # See 89075 - Regression suite uses start/stop of Mar 2010
         scenario.StopTime = "23 Oct 2009 16:00:00.000"
 

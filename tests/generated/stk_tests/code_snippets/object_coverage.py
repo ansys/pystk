@@ -36,11 +36,11 @@ class ObjectCoverage(CodeSnippetsTestBase):
 
     # region SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject
     def test_SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self):
-        scenario = TestBase.Application.CurrentScenario
-        aircraft = scenario.Children.New(AgESTKObjectType.eAircraft, "UAV")
+        scenario: "IStkObject" = TestBase.Application.CurrentScenario
+        aircraft: "IStkObject" = scenario.Children.New(AgESTKObjectType.eAircraft, "UAV")
         aircraft.Children.New(AgESTKObjectType.eSensor, "UAV_Camera")
 
-        areaTarget = scenario.Children.New(AgESTKObjectType.eAreaTarget, "Airspace")
+        areaTarget: "IStkObject" = scenario.Children.New(AgESTKObjectType.eAreaTarget, "Airspace")
 
         try:
             self.SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(
@@ -53,17 +53,17 @@ class ObjectCoverage(CodeSnippetsTestBase):
 
     def SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self, root: "IStkObjectRoot"):
         # For this example, set the access times to use the light intervals of the area target.
-        uavAircraft = root.GetObjectFromPath("Aircraft/UAV/Sensor/UAV_Camera")
-        airspaceAreaTarget = root.GetObjectFromPath("AreaTarget/Airspace")
+        uavAircraft: "IStkObject" = root.GetObjectFromPath("Aircraft/UAV/Sensor/UAV_Camera")
+        airspaceAreaTarget: "IStkObject" = root.GetObjectFromPath("AreaTarget/Airspace")
 
-        firstSunlightEpoch = airspaceAreaTarget.Vgt.Events["LightingIntervals.Sunlight.First.Start"]
-        lastSunlightEpoch = airspaceAreaTarget.Vgt.Events["LightingIntervals.Sunlight.First.Stop"]
+        firstSunlightEpoch: "ITimeToolEvent" = airspaceAreaTarget.Vgt.Events["LightingIntervals.Sunlight.First.Start"]
+        lastSunlightEpoch: "ITimeToolEvent" = airspaceAreaTarget.Vgt.Events["LightingIntervals.Sunlight.First.Stop"]
 
         uavAircraft.ObjectCoverage.UseObjectTimes = False
-        startEpoch = uavAircraft.ObjectCoverage.AccessInterval.GetStartEpoch()
+        startEpoch: "ITimeToolEventSmartEpoch" = uavAircraft.ObjectCoverage.AccessInterval.GetStartEpoch()
         startEpoch.SetImplicitTime(firstSunlightEpoch)
 
-        stopEpoch = uavAircraft.ObjectCoverage.AccessInterval.GetStopEpoch()
+        stopEpoch: "ITimeToolEventSmartEpoch" = uavAircraft.ObjectCoverage.AccessInterval.GetStopEpoch()
         stopEpoch.SetImplicitTime(lastSunlightEpoch)
 
         uavAircraft.ObjectCoverage.AccessInterval.SetStartAndStopEpochs(startEpoch, stopEpoch)

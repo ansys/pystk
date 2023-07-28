@@ -12,17 +12,17 @@ class TimelineCodeSnippetsTestBase(CodeSnippetsTestBase):
     def setUpClass():
         CodeSnippetsTestBase.InitializeWithNewScenario(True)
 
-        satellite: ISatellite = clr.CastAs(
+        satellite: "ISatellite" = clr.CastAs(
             TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "LEO"), ISatellite
         )
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
         (clr.CastAs(satellite.Propagator, IVehiclePropagatorTwoBody)).Propagate()
 
-        aircraft: IAircraft = clr.CastAs(
+        aircraft: "IAircraft" = clr.CastAs(
             TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eAircraft, "UAV"), IAircraft
         )
         aircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        propagator: IVehiclePropagatorGreatArc = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.Route, IVehiclePropagatorGreatArc)
         waypoints = [
             [40.0399, -75.5973, 3.048, 0.045, 0],
             [40.0308, -75.592, 3.081, 0.045, 0],

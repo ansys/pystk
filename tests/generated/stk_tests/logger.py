@@ -6,9 +6,9 @@ class Logger(object):
 
     def __init__(self, *args, **kwargs):
         self._Enabled = None
-        self.m_LogFilename = None
-        loggingEnabled = ConfigurationManager.AppSettings.Get("loggingEnabled")
-        logFilePrefix = ConfigurationManager.AppSettings.Get("logFilePrefix")
+        self.m_LogFilename: str = None
+        loggingEnabled: str = ConfigurationManager.AppSettings.Get("loggingEnabled")
+        logFilePrefix: str = ConfigurationManager.AppSettings.Get("logFilePrefix")
 
         self.Enabled = loggingEnabled == "true"
         self.LogFilename = Path.Combine(Path.GetTempPath(), ((logFilePrefix + str(Guid.NewGuid())) + ".txt"))
@@ -38,7 +38,7 @@ class Logger(object):
     def LogFilename(self, value):
         self.m_LogFilename = value
         if self.Enabled:
-            dir = Path.GetDirectoryName(self.m_LogFilename)
+            dir: str = Path.GetDirectoryName(self.m_LogFilename)
             if not Directory.Exists(dir):
                 Directory.CreateDirectory(dir)
 
