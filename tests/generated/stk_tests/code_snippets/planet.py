@@ -44,7 +44,7 @@ class Planet(CodeSnippetsTestBase):
     # region SpecifyPlanetPositionUsingCommonTasks
     def test_SpecifyPlanetPositionUsingCommonTasks(self):
         self.SpecifyPlanetPositionUsingCommonTasks(
-            Planet.m_Object, TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "Venus.pe"))
+            Planet.m_Object, TestBase.GetScenarioFile("CodeSnippetsTests", "Venus.pe")
         )
 
     def SpecifyPlanetPositionUsingCommonTasks(self, planet: "IPlanet", planetEphemeris: str):

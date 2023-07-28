@@ -344,14 +344,10 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                     TryCatchAssertBlock.ExpectedException("does not exist", action19)
 
                     def action20():
-                        scriptPlugin.Filename = TestBase.GetScenarioFile(
-                            TestBase.PathCombine("ChainTest", "ChainTest.sc")
-                        )
+                        scriptPlugin.Filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
 
                     TryCatchAssertBlock.ExpectedException("Could not initialize", action20)
-                    scriptPlugin.Filename = TestBase.GetScenarioFile(
-                        TestBase.PathCombine("CommRad", "VB_RainLossModel.vbs")
-                    )
+                    scriptPlugin.Filename = TestBase.GetScenarioFile("CommRad", "VB_RainLossModel.vbs")
                     Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_RainLossModel.vbs"), scriptPlugin.Filename)
 
             elif rainLossModelName == "CCIR 1983":
@@ -993,11 +989,11 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         TryCatchAssertBlock.ExpectedException("does not exist", action86)
 
         def action87():
-            scriptPlugin.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("ChainTest", "ChainTest.sc"))
+            scriptPlugin.Filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
 
         TryCatchAssertBlock.ExpectedException("Could not initialize", action87)
 
-        scriptPlugin.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"))
+        scriptPlugin.Filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), scriptPlugin.Filename)
 
     def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "IAtmosphericAbsorptionModelSimpleSatcom"):
@@ -1595,7 +1591,7 @@ class PlatformRF_Environment_CustomModelsHelper(object):
             Assert.assertFalse(customModel.Enable)
 
             def action139():
-                customModel.Filename = TestBase.GetScenarioFile(r"CommRad\VB_AbsorpModel.vbs")
+                customModel.Filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
 
             TryCatchAssertBlock.ExpectedException("read-only", action139)
 
@@ -1608,10 +1604,10 @@ class PlatformRF_Environment_CustomModelsHelper(object):
             TryCatchAssertBlock.ExpectedException("does not exist", action140)
 
             def action141():
-                customModel.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("ChainTest", "ChainTest.sc"))
+                customModel.Filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
 
             TryCatchAssertBlock.ExpectedException("Could not initialize", action141)
-            customModel.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"))
+            customModel.Filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
             Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), customModel.Filename)
 
 

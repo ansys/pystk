@@ -233,7 +233,7 @@ class VOModelHelper(object):
         oModelFile: IVOModelFile = clr.CastAs(oModel.ModelData, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.Filename)
-        oModelFile.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("VO", "Models", "pegasus.mdl"))
+        oModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "pegasus.mdl")
         Assert.assertEqual(TestBase.PathCombine("VO", "Models", "pegasus.mdl"), oModelFile.Filename)
         self.m_logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.Filename)
 
@@ -246,13 +246,11 @@ class VOModelHelper(object):
             oModelFile.Filename = ""
 
         TryCatchAssertBlock.DoAssert("The Filename should not allow to set invalid filename.", action20)
-        oModelFile.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("VO", "Models", "satellite.dae"))
+        oModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "satellite.dae")
         Assert.assertEqual(TestBase.PathCombine("VO", "Models", "satellite.dae"), oModelFile.Filename)
         self.m_logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.Filename)
         # FilePath
-        Assert.assertEqual(
-            TestBase.GetScenarioFile(TestBase.PathCombine("VO", "Models", "satellite.dae")), oModelFile.FilePath
-        )
+        Assert.assertEqual(TestBase.GetScenarioFile("VO", "Models", "satellite.dae"), oModelFile.FilePath)
 
         # ModelType (List)
         oModel.ModelType = AgEModelType.eModelList
@@ -274,9 +272,7 @@ class VOModelHelper(object):
 
             iIndex += 1
 
-        oModelList.Add(
-            "1 Jan 2007 12:00:00.000", TestBase.GetScenarioFile(TestBase.PathCombine("VO", "Models", "satellite.dae"))
-        )
+        oModelList.Add("1 Jan 2007 12:00:00.000", TestBase.GetScenarioFile("VO", "Models", "satellite.dae"))
         Assert.assertEqual(2, oModelList.Count)
         oModelList.Remove(1)
         Assert.assertEqual(1, oModelList.Count)
@@ -331,12 +327,12 @@ class VOModelHelper(object):
                 voModelFile = oItem.VOModelFile
                 Assert.assertEqual((TestBase.PathCombine("VO", "Models", "satellite.dae")), voModelFile.Filename)
                 Assert.assertTrue((TestBase.PathCombine("VO", "Models", "satellite.dae") in voModelFile.FilePath))
-                voModelFile.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("VO", "Models", "pegasus.mdl"))
+                voModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "pegasus.mdl")
                 Assert.assertEqual(TestBase.PathCombine("VO", "Models", "pegasus.mdl"), voModelFile.Filename)
                 Assert.assertTrue((TestBase.PathCombine("VO", "Models", "pegasus.mdl") in voModelFile.FilePath))
 
                 def action22():
-                    voModelFile.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("VO", "Models", "bogus.dae"))
+                    voModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "bogus.dae")
 
                 TryCatchAssertBlock.ExpectedException("file does not exist", action22)
 

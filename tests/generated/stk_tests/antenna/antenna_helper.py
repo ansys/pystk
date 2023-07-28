@@ -187,14 +187,10 @@ class RadarCrossSectionInheritableHelper(object):
                 TryCatchAssertBlock.ExpectedException("does not exist", action11)
 
                 def action12():
-                    strategyExternalFile.Filename = TestBase.GetScenarioFile(
-                        TestBase.PathCombine("ChainTest", "ChainTest.sc")
-                    )
+                    strategyExternalFile.Filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
 
                 TryCatchAssertBlock.ExpectedException("Unable to determine", action12)
-                strategyExternalFile.Filename = TestBase.GetScenarioFile(
-                    TestBase.PathCombine("CommRad", "RCS_External_File.txt")
-                )
+                strategyExternalFile.Filename = TestBase.GetScenarioFile("CommRad", "RCS_External_File.txt")
                 Assert.assertEqual(
                     TestBase.PathCombine("CommRad", "RCS_External_File.txt"), strategyExternalFile.Filename
                 )
@@ -216,14 +212,10 @@ class RadarCrossSectionInheritableHelper(object):
                     TryCatchAssertBlock.ExpectedException("does not exist", action13)
 
                     def action14():
-                        strategyScriptPlugin.Filename = TestBase.GetScenarioFile(
-                            TestBase.PathCombine("ChainTest", "ChainTest.sc")
-                        )
+                        strategyScriptPlugin.Filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
 
                     TryCatchAssertBlock.ExpectedException("Could not initialize", action14)
-                    strategyScriptPlugin.Filename = TestBase.GetScenarioFile(
-                        TestBase.PathCombine("CommRad", "VB_RadarCrossSection.vbs")
-                    )
+                    strategyScriptPlugin.Filename = TestBase.GetScenarioFile("CommRad", "VB_RadarCrossSection.vbs")
                     Assert.assertEqual(
                         TestBase.PathCombine("CommRad", "VB_RadarCrossSection.vbs"), strategyScriptPlugin.Filename
                     )
@@ -248,29 +240,23 @@ class RadarCrossSectionInheritableHelper(object):
                 )
 
                 def action16():
-                    ansys.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("CommRad, bogus.csv"))
+                    ansys.Filename = TestBase.GetScenarioFile("CommRad, bogus.csv")
 
                 TryCatchAssertBlock.ExpectedException("does not exist", action16)
 
                 def action17():
-                    ansys.File2name = TestBase.GetScenarioFile(TestBase.PathCombine("CommRad, bogus.csv"))
+                    ansys.File2name = TestBase.GetScenarioFile("CommRad, bogus.csv")
 
                 TryCatchAssertBlock.ExpectedException("does not exist", action17)
 
-                ansys.Filename = TestBase.GetScenarioFile(
-                    TestBase.PathCombine("CommRad", "MD4-200_H_Incident_2p8GHz.csv")
-                )
+                ansys.Filename = TestBase.GetScenarioFile("CommRad", "MD4-200_H_Incident_2p8GHz.csv")
                 Assert.assertEqual(TestBase.PathCombine("CommRad", "MD4-200_H_Incident_2p8GHz.csv"), ansys.Filename)
 
-                ansys.File2name = TestBase.GetScenarioFile(
-                    TestBase.PathCombine("CommRad", "MD4-200_V_Incident_2p8GHz.csv")
-                )
+                ansys.File2name = TestBase.GetScenarioFile("CommRad", "MD4-200_V_Incident_2p8GHz.csv")
                 Assert.assertEqual(TestBase.PathCombine("CommRad", "MD4-200_V_Incident_2p8GHz.csv"), ansys.File2name)
 
                 def action18():
-                    ansys.File2name = TestBase.GetScenarioFile(
-                        TestBase.PathCombine("CommRad", "MD4-200_H_Incident_10GHz.csv")
-                    )
+                    ansys.File2name = TestBase.GetScenarioFile("CommRad", "MD4-200_H_Incident_10GHz.csv")
 
                 TryCatchAssertBlock.ExpectedException("Please ensure that the frequency", action18)
             elif eComputeStrategy == AgERCSComputeStrategy.eRCSComputeStrategyUnknown:
@@ -499,11 +485,11 @@ class AtmosphereHelper(object):
         TryCatchAssertBlock.ExpectedException("does not exist", action35)
 
         def action36():
-            scriptPlugin.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("ChainTest", "ChainTest.sc"))
+            scriptPlugin.Filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
 
         TryCatchAssertBlock.ExpectedException("Could not initialize", action36)
 
-        scriptPlugin.Filename = TestBase.GetScenarioFile(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"))
+        scriptPlugin.Filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), scriptPlugin.Filename)
 
     def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "IAtmosphericAbsorptionModelSimpleSatcom"):
@@ -846,7 +832,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                         scriptPlugin.Filename = r"ChainTest\ChainTest.sc"
 
                     TryCatchAssertBlock.ExpectedException("Could not initialize", action70)
-                    scriptPlugin.Filename = TestBase.GetScenarioFile(r"CommRad\VB_RainLossModel.vbs")
+                    scriptPlugin.Filename = TestBase.GetScenarioFile("CommRad", "VB_RainLossModel.vbs")
                     Assert.assertEqual(r"CommRad\VB_RainLossModel.vbs", scriptPlugin.Filename)
 
             elif rainLossModelName == "CCIR 1983":
@@ -1494,7 +1480,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
 
         TryCatchAssertBlock.ExpectedException("Could not initialize", action137)
 
-        scriptPlugin.Filename = TestBase.GetScenarioFile(r"CommRad\VB_AbsorpModel.vbs")
+        scriptPlugin.Filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
         Assert.assertEqual(r"CommRad\VB_AbsorpModel.vbs", scriptPlugin.Filename)
 
     def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "IAtmosphericAbsorptionModelSimpleSatcom"):
@@ -2086,7 +2072,7 @@ class RF_Environment_CustomModelsHelper(object):
             Assert.assertFalse(customModel.Enable)
 
             def action189():
-                customModel.Filename = TestBase.GetScenarioFile(r"CommRad\VB_AbsorpModel.vbs")
+                customModel.Filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
 
             TryCatchAssertBlock.ExpectedException("read-only", action189)
 
@@ -2102,5 +2088,5 @@ class RF_Environment_CustomModelsHelper(object):
                 customModel.Filename = TestBase.PathCombine("ChainTest", "ChainTest.sc")
 
             TryCatchAssertBlock.ExpectedException("Could not initialize", action191)
-            customModel.Filename = TestBase.GetScenarioFile(r"CommRad\VB_AbsorpModel.vbs")
+            customModel.Filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
             Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), customModel.Filename)

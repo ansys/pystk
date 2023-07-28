@@ -404,7 +404,7 @@ class Mto(CodeSnippetsTestBase):
     def test_LoadMtoTrackPointsFromFile(self):
         Mto.m_Object.Tracks.Add(0)
         self.LoadMtoTrackPointsFromFile(
-            Mto.m_Object.Tracks[0], TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "TestEph.e"))
+            Mto.m_Object.Tracks[0], TestBase.GetScenarioFile("CodeSnippetsTests", "TestEph.e")
         )
 
     def LoadMtoTrackPointsFromFile(self, track: "IMtoTrack", filePath: str):

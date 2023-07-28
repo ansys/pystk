@@ -1106,8 +1106,8 @@ class TestBase(unittest.TestCase):
         return os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
 
     @staticmethod
-    def GetScenarioFile(path):
-        return os.path.abspath(os.path.join(TestBase.ScenarioDirectory, path))
+    def GetScenarioFile(*args):
+        return os.path.abspath(os.path.join(TestBase.ScenarioDirectory, *args))
 
     @staticmethod
     def GetScenarioRootDir():
