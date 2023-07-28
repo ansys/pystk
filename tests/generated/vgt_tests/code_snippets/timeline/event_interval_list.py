@@ -106,7 +106,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateEventIntervalListFile
     def test_CreateEventIntervalListFile(self):
-        intervalFile = TestBase.GetScenarioFile(Path.Combine("CodeSnippetsTests", "VGTData", "EventIntervalListFromFile.txt"))
+        intervalFile = TestBase.GetScenarioFile("CodeSnippetsTests", "VGTData", "EventIntervalListFromFile.txt")
         self.CreateEventIntervalListFile(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt, intervalFile)
 
     def CreateEventIntervalListFile(self, provider: "IAnalysisWorkbenchProvider", intervalFile: str):

@@ -311,7 +311,7 @@ class EarlyBoundTests(TestBase):
         oModelFile: IVOModelFile = clr.CastAs(oModel.ModelData, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.Filename)
-        oModelFile.Filename = TestBase.GetScenarioFile("VO/Models/m1a1.mdl")
+        oModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
         TestBase.logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.Filename)
 
         def action3():

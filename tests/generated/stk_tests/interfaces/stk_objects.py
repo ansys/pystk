@@ -119,7 +119,7 @@ class STKObjectHelper(object):
 
         # Export
         strValue = oObject.InstanceName
-        oObject.Export(TestBase.GetScenarioFile(Path.Combine("Export", "ExportedObject")))
+        oObject.Export(TestBase.GetScenarioFile("Export", "ExportedObject"))
         oObject.InstanceName = strValue
         # Parent
         oParent = oObject.Parent
@@ -390,12 +390,12 @@ class STKObjectHelper(object):
             oCollection.Unload(AgESTKObjectType.eSensor, "Radar")
 
         if oObject.ClassType == AgESTKObjectType.eScenario:
-            oCollection.ImportObject(TestBase.GetScenarioFile(Path.Combine("AreaTargetTest", "at2.at")))
+            oCollection.ImportObject(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
 
         else:
 
             def action9():
-                oCollection.ImportObject(TestBase.GetScenarioFile(Path.Combine("AreaTargetTest", "at2.at")))
+                oCollection.ImportObject(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
 
             TryCatchAssertBlock.DoAssert("", action9)
 

@@ -53,8 +53,7 @@ class StkExternal(CodeSnippetsTestBase):
             AgESTKObjectType.eSatellite, StkExternal.m_DefaultName
         )
         self.CreateSatelliteFromExternalEphemerisFile(
-            CodeSnippetsTestBase.m_Root,
-            TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "TestEph.e")),
+            CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("CodeSnippetsTests", "TestEph.e")
         )
 
     def CreateSatelliteFromExternalEphemerisFile(self, root: "IStkObjectRoot", ephemerisFilePath: str):

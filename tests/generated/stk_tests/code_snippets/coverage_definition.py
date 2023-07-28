@@ -66,8 +66,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def test_SetCustomCoverageDefinitionByPoints(self):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eAreaTarget, "AreaTarget1")
         self.SetCustomCoverageDefinitionByPoints(
-            CoverageDefinition.m_Object,
-            TestBase.GetScenarioFile(TestBase.PathCombine("CodeSnippetsTests", "CovDefTest", "usstates.rl")),
+            CoverageDefinition.m_Object, TestBase.GetScenarioFile("CodeSnippetsTests", "CovDefTest", "usstates.rl")
         )
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eAreaTarget, "AreaTarget1")
 
