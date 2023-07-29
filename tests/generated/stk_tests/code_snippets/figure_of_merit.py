@@ -7,7 +7,7 @@ from ansys.stk.core.vgt import *
 
 class FigureOfMerit(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
-        self.m_CovDefObject = None
+        self.m_CovDefObject: "ICoverageDefinition" = None
         super(FigureOfMerit, self).__init__(*args, **kwargs)
 
     m_CovDefDefaultName: str = "cd1"
@@ -31,14 +31,14 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        self.m_CovDefObject: ICoverageDefinition = clr.CastAs(
+        self.m_CovDefObject = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eCoverageDefinition, FigureOfMerit.m_CovDefDefaultName
             ),
             ICoverageDefinition,
         )
-        covdefObject: IStkObject = clr.CastAs(self.m_CovDefObject, IStkObject)
-        FigureOfMerit.m_Object: IFigureOfMerit = clr.CastAs(
+        covdefObject: "IStkObject" = clr.CastAs(self.m_CovDefObject, IStkObject)
+        FigureOfMerit.m_Object = clr.CastAs(
             covdefObject.Children.New(AgESTKObjectType.eFigureOfMerit, FigureOfMerit.m_DefaultName), IFigureOfMerit
         )
 
@@ -46,7 +46,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        covdefObject: IStkObject = clr.CastAs(self.m_CovDefObject, IStkObject)
+        covdefObject: "IStkObject" = clr.CastAs(self.m_CovDefObject, IStkObject)
         covdefObject.Children.Unload(AgESTKObjectType.eFigureOfMerit, FigureOfMerit.m_DefaultName)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
             AgESTKObjectType.eCoverageDefinition, FigureOfMerit.m_CovDefDefaultName
@@ -64,10 +64,10 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def CreateFigureOfMeritOnCoverageDefinition(self, covdef: "ICoverageDefinition"):
         # Get the coverage definition as a IAgStkObject interface
-        covdefObject: IStkObject = clr.CastAs(covdef, IStkObject)
+        covdefObject: "IStkObject" = clr.CastAs(covdef, IStkObject)
 
         # Create the figure of merit
-        fom: IFigureOfMerit = clr.CastAs(
+        fom: "IFigureOfMerit" = clr.CastAs(
             covdefObject.Children.New(AgESTKObjectType.eFigureOfMerit, "MyFigureOfMerit"), IFigureOfMerit
         )
 
@@ -82,13 +82,13 @@ class FigureOfMerit(CodeSnippetsTestBase):
         fom.SetDefinitionType(AgEFmDefinitionType.eFmAccessDuration)
 
         # Get IAgFmDefCompute interface
-        defComp: IFigureOfMeritDefinitionCompute = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionCompute)
+        defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionCompute)
         if defComp.IsComputeTypeSupported(AgEFmCompute.ePercentAbove):
             # Set Compute type to supported compute option
             defComp.SetComputeType(AgEFmCompute.ePercentAbove)
 
             # Get compute option compute interface
-            fomData: IFigureOfMeritDefinitionDataPercentLevel = clr.CastAs(
+            fomData: "IFigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
                 defComp.Compute, IFigureOfMeritDefinitionDataPercentLevel
             )
             fomData.PercentLevel = 0.25
@@ -104,13 +104,13 @@ class FigureOfMerit(CodeSnippetsTestBase):
         fom.SetDefinitionType(AgEFmDefinitionType.eFmCoverageTime)
 
         # Get IAgFmDefCompute interface
-        defComp: IFigureOfMeritDefinitionCompute = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionCompute)
+        defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionCompute)
         if defComp.IsComputeTypeSupported(AgEFmCompute.eTotalTimeAbove):
             # Set Compute type to supported compute option
             defComp.SetComputeType(AgEFmCompute.eTotalTimeAbove)
 
             # Get compute option compute interface
-            fomData: IFigureOfMeritDefinitionDataMinAssets = clr.CastAs(
+            fomData: "IFigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
                 defComp.Compute, IFigureOfMeritDefinitionDataMinAssets
             )
             fomData.MinAssets = 15
@@ -122,7 +122,9 @@ class FigureOfMerit(CodeSnippetsTestBase):
         self.SetFigureOfMeritDefToAccessConstraintByEnum(FigureOfMerit.m_Object)
 
     def SetFigureOfMeritDefToAccessConstraintByEnum(self, fom: "IFigureOfMerit"):
-        acd = fom.SetAccessConstraintDefinition(AgEFmConstraintName.eFmAzimuthRate)
+        acd: "IFigureOfMeritDefinitionAccessConstraint" = fom.SetAccessConstraintDefinition(
+            AgEFmConstraintName.eFmAzimuthRate
+        )
 
     # endregion
 
@@ -131,7 +133,9 @@ class FigureOfMerit(CodeSnippetsTestBase):
         self.SetFigureOfMeritDefToAccessConstraintByName(FigureOfMerit.m_Object)
 
     def SetFigureOfMeritDefToAccessConstraintByName(self, fom: "IFigureOfMerit"):
-        defAccessCnstr = fom.SetAccessConstraintDefinitionName("AzimuthRate")
+        defAccessCnstr: "IFigureOfMeritDefinitionAccessConstraint" = fom.SetAccessConstraintDefinitionName(
+            "AzimuthRate"
+        )
 
         # Confiure access constraint properties
         defAccessCnstr.SetComputeType(AgEFmCompute.eMaximum)
@@ -149,7 +153,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         fom.SetAccessConstraintDefinition(AgEFmConstraintName.eFmAltitude)
 
         # Get IAgFmDefAccessConstraint interface
-        defAccessCnstr: IFigureOfMeritDefinitionAccessConstraint = clr.CastAs(
+        defAccessCnstr: "IFigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
             fom.Definition, IFigureOfMeritDefinitionAccessConstraint
         )
 
@@ -165,20 +169,26 @@ class FigureOfMerit(CodeSnippetsTestBase):
         self.InspectGridWithSelectPoint(FigureOfMerit.m_Object)
 
     def InspectGridWithSelectPoint(self, fom: "IFigureOfMerit"):
-        gridInspector = fom.GridInspector
+        gridInspector: "IFigureOfMeritGridInspector" = fom.GridInspector
         gridInspector.SelectPoint(-13.864, -51.088)
 
-        pointFom: IDataProviderTimeVarying = clr.CastAs(gridInspector.PointFOM, IDataProviderTimeVarying)
-        pointFomResult = pointFom.ExecSingle("1 Jan 2012 12:00:00.00")
+        pointFom: "IDataProviderTimeVarying" = clr.CastAs(gridInspector.PointFOM, IDataProviderTimeVarying)
+        pointFomResult: "IDataProviderResult" = pointFom.ExecSingle("1 Jan 2012 12:00:00.00")
 
-        pointSatisfaction: IDataProviderInterval = clr.CastAs(gridInspector.PointSatisfaction, IDataProviderInterval)
-        pointSatisfactionResult = pointSatisfaction.Exec("1 Jan 2012 12:00:00.00", "2 Jan 2012 12:00:00.00")
+        pointSatisfaction: "IDataProviderInterval" = clr.CastAs(gridInspector.PointSatisfaction, IDataProviderInterval)
+        pointSatisfactionResult: "IDataProviderResult" = pointSatisfaction.Exec(
+            "1 Jan 2012 12:00:00.00", "2 Jan 2012 12:00:00.00"
+        )
 
-        regionFom: IDataProviderTimeVarying = clr.CastAs(gridInspector.RegionFOM, IDataProviderTimeVarying)
-        regionFomResult = regionFom.ExecSingle("1 Jan 2012 12:00:00.00")
+        regionFom: "IDataProviderTimeVarying" = clr.CastAs(gridInspector.RegionFOM, IDataProviderTimeVarying)
+        regionFomResult: "IDataProviderResult" = regionFom.ExecSingle("1 Jan 2012 12:00:00.00")
 
-        regionSatisfaction: IDataProviderInterval = clr.CastAs(gridInspector.RegionSatisfaction, IDataProviderInterval)
-        regionSatisfactionResult = regionSatisfaction.Exec("1 Jan 2012 12:00:00.00", "2 Jan 2012 12:00:00.00")
+        regionSatisfaction: "IDataProviderInterval" = clr.CastAs(
+            gridInspector.RegionSatisfaction, IDataProviderInterval
+        )
+        regionSatisfactionResult: "IDataProviderResult" = regionSatisfaction.Exec(
+            "1 Jan 2012 12:00:00.00", "2 Jan 2012 12:00:00.00"
+        )
 
     # endregion
 
@@ -195,11 +205,11 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
         # Add level ranges (batch)
         contours.LevelAttributes.AddLevelRange(25, 35, 1)
-        firstLevel = contours.LevelAttributes[0]
+        firstLevel: "IFigureOfMeritGfxLevelAttributesElement" = contours.LevelAttributes[0]
         firstLevel.Color = Color.Blue
 
         # Add one level (individually)
-        level = contours.LevelAttributes.AddLevel(55)
+        level: "IFigureOfMeritGfxLevelAttributesElement" = contours.LevelAttributes.AddLevel(55)
         level.Color = Color.Red
 
     # endregion
@@ -211,7 +221,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def FigureOfMeritDefinitionAgeOfData(self, fom: "IFigureOfMerit"):
         # Get the IAgFmDefAgeOfData interface
         fom.SetDefinitionType(AgEFmDefinitionType.eFmAgeOfData)
-        ageOfData: IFigureOfMeritDefinitionAgeOfData = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionAgeOfData)
+        ageOfData: "IFigureOfMeritDefinitionAgeOfData" = clr.CastAs(fom.Definition, IFigureOfMeritDefinitionAgeOfData)
 
         # Set the minimum number of assets for computing
         ageOfData.MinAssets = 2
@@ -224,7 +234,9 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionScalarCalculation(self, fom: "IFigureOfMerit"):
         # Set the Scalar Calculation definition.
-        scalarCalculation = fom.SetScalarCalculationDefinition("CentralBody/Earth ElapsedTimeFromStart")
+        scalarCalculation: "IFigureOfMeritDefinitionScalarCalculation" = fom.SetScalarCalculationDefinition(
+            "CentralBody/Earth ElapsedTimeFromStart"
+        )
 
     # endregion
 
@@ -236,12 +248,14 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionScalarCalculationFromVGT(self, fom: "IFigureOfMerit", stkRoot: "IStkObjectRoot"):
         # Get the qualified path of a Scalar Calculation (e.g.
-        provider = stkRoot.VgtRoot.GetProvider("CentralBody/Sun")
-        calcScalar = provider.CalcScalars[0]
-        calcScalarQualifiedPath = (clr.CastAs(calcScalar, IAnalysisWorkbenchComponent)).QualifiedPath
+        provider: "IAnalysisWorkbenchProvider" = stkRoot.VgtRoot.GetProvider("CentralBody/Sun")
+        calcScalar: "ICalculationToolScalar" = provider.CalcScalars[0]
+        calcScalarQualifiedPath: str = (clr.CastAs(calcScalar, IAnalysisWorkbenchComponent)).QualifiedPath
 
         # Set the Scalar Calculation definition using the qualified path
-        scalarCalculation = fom.SetScalarCalculationDefinition(calcScalarQualifiedPath)
+        scalarCalculation: "IFigureOfMeritDefinitionScalarCalculation" = fom.SetScalarCalculationDefinition(
+            calcScalarQualifiedPath
+        )
 
     # endregion
 
@@ -252,7 +266,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionSystemResponseTime(self, fom: "IFigureOfMerit"):
         fom.SetDefinitionType(AgEFmDefinitionType.eFmSystemResponseTime)
-        systemResponseTime: IFigureOfMeritDefinitionSystemResponseTime = clr.CastAs(
+        systemResponseTime: "IFigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
             fom.Definition, IFigureOfMeritDefinitionSystemResponseTime
         )
 
@@ -267,7 +281,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionSystemResponseTimeReset(self, fom: "IFigureOfMerit"):
         fom.SetDefinitionType(AgEFmDefinitionType.eFmSystemResponseTime)
-        systemResponseTime: IFigureOfMeritDefinitionSystemResponseTime = clr.CastAs(
+        systemResponseTime: "IFigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
             fom.Definition, IFigureOfMeritDefinitionSystemResponseTime
         )
 

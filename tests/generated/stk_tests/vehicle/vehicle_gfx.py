@@ -13,7 +13,7 @@ class GfxRangeContoursHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -89,6 +89,7 @@ class GfxRangeContoursHelper(object):
 
         availableUnits = oContours.AvailableLabelUnits
         self.m_logger.WriteLine3("The available units contains {0} units.", Array.Length(availableUnits))
+        unit: str
         for unit in availableUnits:
             self.m_logger.WriteLine(unit)
             oContours.LabelUnit = unit
@@ -103,10 +104,12 @@ class GfxRangeContoursHelper(object):
         Assert.assertEqual("nm", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
 
         # LevelAttributes
-        oLevels = oContours.LevelAttributes
+        oLevels: "ILevelAttributeCollection" = oContours.LevelAttributes
         Assert.assertIsNotNone(oLevels)
         # Count
         self.m_logger.WriteLine3("\tThe Level Attribute Collection contains: {0} elements.", oLevels.Count)
+        # _NewEnum
+        oElement: "ILevelAttribute"
         # _NewEnum
         for oElement in oLevels:
             self.m_logger.WriteLine10(
@@ -126,11 +129,12 @@ class GfxRangeContoursHelper(object):
         self.m_logger.WriteLine3(
             "\tBefore AddLevel() the Level Attribute Collection contains: {0} elements.", oLevels.Count
         )
-        oAdded = oLevels.AddLevel(123.456)
+        oAdded: "ILevelAttribute" = oLevels.AddLevel(123.456)
         Assert.assertIsNotNone(oAdded)
         self.m_logger.WriteLine3(
             "\tAfter AddLevel() the Level Attribute Collection contains: {0} elements.", oLevels.Count
         )
+        oElement: "ILevelAttribute"
         for oElement in oLevels:
             self.m_logger.WriteLine10(
                 "\t\tElement: Level = {0}, Color = {1}, LineStyle = {2}, LineWidth = {3}, LabelVisible = {4}, UserTextVisible = {5}, UserText = {6}, LabelAngle = {7}",
@@ -160,7 +164,7 @@ class GfxRangeContoursHelper(object):
         )
         if oLevels.Count > 0:
             # Item
-            oElement = oLevels[0]
+            oElement: "ILevelAttribute" = oLevels[0]
             Assert.assertIsNotNone(oElement)
             self.m_logger.WriteLine10(
                 "\t\tElement (Before): Level = {0}, Color = {1}, LineStyle = {2}, LineWidth = {3}, LabelVisible = {4}, UserTextVisible = {5}, UserText = {6}, LabelAngle = {7}",
@@ -220,7 +224,7 @@ class GfxLabelNoteHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -231,7 +235,7 @@ class GfxLabelNoteHelper(object):
         # Count
         self.m_logger.WriteLine3("The LabelNotes collection contains: {0} elements.", oCollection.Count)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oCollection.Count:
             self.m_logger.WriteLine9(
                 "\tElement {0}: Note = {1}, NoteVisible = {2}, LabelVisible = {3}",
@@ -244,9 +248,9 @@ class GfxLabelNoteHelper(object):
             iIndex += 1
 
         # Count
-        iCount = oCollection.Count
+        iCount: int = oCollection.Count
         # Add
-        oNote = oCollection.Add("Label Note 1")
+        oNote: "ILabelNote" = oCollection.Add("Label Note 1")
         Assert.assertIsNotNone(oNote)
         Assert.assertEqual("Label Note 1", oNote.Note)
         Assert.assertEqual((iCount + 1), oCollection.Count)
@@ -257,7 +261,7 @@ class GfxLabelNoteHelper(object):
         Assert.assertEqual((iCount + 2), oCollection.Count)
         self.m_logger.WriteLine3("The LabelNotes collection contains: {0} elements.", oCollection.Count)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oCollection.Count:
             # Note, NoteVisible, LabelVisible
             self.m_logger.WriteLine9(
@@ -281,6 +285,7 @@ class GfxLabelNoteHelper(object):
 
         TryCatchAssertBlock.DoAssert("Remove() should not allow to remove invalid elements.", action6)
         self.m_logger.WriteLine3("The LabelNotes collection contains: {0} elements.", oCollection.Count)
+        oElement: "ILabelNote"
         for oElement in oCollection:
             self.m_logger.WriteLine8(
                 "\tBefore: Note = {0}, NoteVisible = {1}, LabelVisible = {2}",

@@ -28,7 +28,7 @@ class Constellation(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Constellation.m_Object: IConstellation = clr.CastAs(
+        Constellation.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eConstellation, Constellation.m_DefaultName
             ),
@@ -48,7 +48,9 @@ class Constellation(CodeSnippetsTestBase):
 
     # region AddObjectToConstellationUsingIAgStkObjectInterface
     def test_AddObjectToConstellationUsingIAgStkObjectInterface(self):
-        alos = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "Alos")
+        alos: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            AgESTKObjectType.eSatellite, "Alos"
+        )
         self.AddObjectToConstellationUsingIAgStkObjectInterface(Constellation.m_Object, alos)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, alos.InstanceName)
 

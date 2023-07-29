@@ -13,7 +13,7 @@ class VOMarkerHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -85,7 +85,7 @@ class VOMarkerHelper(object):
         oMarker.MarkerType = AgEMarkerType.eShape
         Assert.assertEqual(AgEMarkerType.eShape, oMarker.MarkerType)
 
-        oShape: IVOMarkerShape = clr.CastAs(oMarker.MarkerData, IVOMarkerShape)
+        oShape: "IVOMarkerShape" = clr.CastAs(oMarker.MarkerData, IVOMarkerShape)
         Assert.assertIsNotNone(oShape)
         oShape.Style = AgE3dMarkerShape.e3dShapeCircle
         Assert.assertEqual(AgE3dMarkerShape.e3dShapeCircle, oShape.Style)
@@ -93,7 +93,7 @@ class VOMarkerHelper(object):
         Assert.assertEqual(AgE3dMarkerShape.e3dShapePoint, oShape.Style)
 
         def action7():
-            voMarkerFileX = clr.Convert(oMarker.MarkerData, IVOMarkerFile)
+            voMarkerFileX: "IVOMarkerFile" = clr.Convert(oMarker.MarkerData, IVOMarkerFile)
 
         TryCatchAssertBlock.DoAssertInvalidCast(action7)
 
@@ -105,7 +105,7 @@ class VOMarkerHelper(object):
         )  # This will set the MarkerType to eImageFile
 
         Assert.assertEqual(AgEMarkerType.eImageFile, oMarker.MarkerType)
-        oFile: IVOMarkerFile = clr.CastAs(oMarker.MarkerData, IVOMarkerFile)
+        oFile: "IVOMarkerFile" = clr.CastAs(oMarker.MarkerData, IVOMarkerFile)
         Assert.assertIsNotNone(oFile)
         self.Test_IAgVOMarkerFile(oFile)
 
@@ -185,8 +185,8 @@ class VOModelHelper(object):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root = root
-        self.m_oUnits = oUnits
+        self._root: "IStkObjectRoot" = root
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -230,7 +230,7 @@ class VOModelHelper(object):
         oModel.ModelType = AgEModelType.eModelFile
         self.m_logger.WriteLine6("\tThe new ModelType is: {0}", oModel.ModelType)
         Assert.assertEqual(AgEModelType.eModelFile, oModel.ModelType)
-        oModelFile: IVOModelFile = clr.CastAs(oModel.ModelData, IVOModelFile)
+        oModelFile: "IVOModelFile" = clr.CastAs(oModel.ModelData, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.Filename)
         oModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "pegasus.mdl")
@@ -256,12 +256,12 @@ class VOModelHelper(object):
         oModel.ModelType = AgEModelType.eModelList
         self.m_logger.WriteLine6("\tThe new ModelType is: {0}", oModel.ModelType)
         Assert.assertEqual(AgEModelType.eModelList, oModel.ModelType)
-        oModelList: IVOModelCollection = clr.CastAs(oModel.ModelData, IVOModelCollection)
+        oModelList: "IVOModelCollection" = clr.CastAs(oModel.ModelData, IVOModelCollection)
         Assert.assertIsNotNone(oModelList)
-        iSize = oModelList.Count
+        iSize: int = oModelList.Count
         self.m_logger.WriteLine3("\t\tThe Model list collection contains: {0} elements", iSize)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < iSize:
             self.m_logger.WriteLine8(
                 "\t\t\tElement {0}: ModelFile = {1}, SwitchTime = {2}",
@@ -278,13 +278,13 @@ class VOModelHelper(object):
         Assert.assertEqual(1, oModelList.Count)
 
         # set DateFormat
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DateFormat")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DateFormat")
         self.m_logger.WriteLine5("\t\tThe current DateFormat is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DateFormat", "EpSec")
         self.m_logger.WriteLine5("\t\tThe new DateFormat is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DateFormat"))
         Assert.assertEqual("EpSec", self.m_oUnits.GetCurrentUnitAbbrv("DateFormat"))
 
-        time = float(oModelList[0].SwitchTime)
+        time: float = float(oModelList[0].SwitchTime)
         self.m_logger.WriteLine6("\t\tOriginal SwitchTime = {0}", oModelList[0].SwitchTime)
         self.m_logger.WriteLine6("\t\tDouble format SwitchTime = {0}", time)
 
@@ -296,7 +296,7 @@ class VOModelHelper(object):
         iSize = oModelList.Count
         self.m_logger.WriteLine3("\t\tThe Model list collection contains: {0} elements", iSize)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < iSize:
             self.m_logger.WriteLine8(
                 "\t\t\tElement {0}: ModelFile = {1}, SwitchTime = {2}",
@@ -310,6 +310,7 @@ class VOModelHelper(object):
         if iSize > 1:
             oModelList.Remove(0)
             self.m_logger.WriteLine3("\t\tAfter Remove(0) the ModelList contains: {0} elements", oModelList.Count)
+            oItem: "IVOModelItem"
             for oItem in oModelList:
                 self.m_logger.WriteLine7(
                     "\t\t\tElement (before modification): ModelFile = {0}, SwitchTime = {1}",
@@ -324,7 +325,7 @@ class VOModelHelper(object):
                     oItem.SwitchTime,
                 )
 
-                voModelFile = oItem.VOModelFile
+                voModelFile: "IVOModelFile" = oItem.VOModelFile
                 Assert.assertEqual((TestBase.PathCombine("VO", "Models", "satellite.dae")), voModelFile.Filename)
                 Assert.assertTrue((TestBase.PathCombine("VO", "Models", "satellite.dae") in voModelFile.FilePath))
                 voModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "pegasus.mdl")
@@ -357,11 +358,11 @@ class VOModelHelper(object):
         # ------------------------------------------------------------
         oModel.ModelType = AgEModelType.eModelFile
         Assert.assertTrue((oModel.ModelType == AgEModelType.eModelFile))
-        oldModel = (clr.CastAs(oModel.ModelData, IVOModelFile)).Filename
+        oldModel: str = (clr.CastAs(oModel.ModelData, IVOModelFile)).Filename
         self._root.BeginUpdate()
         try:
             oModel.ModelType = AgEModelType.eModelFile
-            modelFile: IVOModelFile = clr.CastAs(oModel.ModelData, IVOModelFile)
+            modelFile: "IVOModelFile" = clr.CastAs(oModel.ModelData, IVOModelFile)
             modelFile.Filename = "\\STKData\\VO\\Models\\Space\\hubble.mdl"
 
             oModel.Articulation.SetTransValue(0, "HGA_Arm_1", "Fold", 90)
@@ -370,7 +371,7 @@ class VOModelHelper(object):
             self._root.EndUpdate()
 
         oModel.ModelType = AgEModelType.eModelList
-        modelList: IVOModelCollection = clr.CastAs(oModel.ModelData, IVOModelCollection)
+        modelList: "IVOModelCollection" = clr.CastAs(oModel.ModelData, IVOModelCollection)
         while modelList.Count > 1:
             modelList.Remove((modelList.Count - 1))
         modelList[0].VOModelFile.Filename = oldModel
@@ -396,7 +397,7 @@ class VOModelHelper(object):
         Assert.assertIsNotNone(oDetail)
         self.m_logger.WriteLine("VO DetailThreshold test:")
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "nm")
         self.m_logger.WriteLine5("\tThe new DistanceUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
@@ -406,6 +407,7 @@ class VOModelHelper(object):
         oDetail.EnableDetailThreshold = False
         self.m_logger.WriteLine4("\tThe new EnableDetailThreshold flag is: {0}", oDetail.EnableDetailThreshold)
         Assert.assertEqual(False, oDetail.EnableDetailThreshold)
+        bCaught: bool = False
         try:
             bCaught = False
             oDetail.All = 2.2
@@ -575,7 +577,7 @@ class VOModelHelper(object):
         oArticulation.UseObjectColorForModel = True
         Assert.assertTrue(oArticulation.UseObjectColorForModel)
 
-        articFile = oArticulation.VOArticulationFile
+        articFile: "IVOArticulationFile" = oArticulation.VOArticulationFile
         oArticulation.UseArticulationFile = False
 
         def action24():
@@ -598,26 +600,28 @@ class VOModelHelper(object):
         # LODs test
         self.m_logger.WriteLine3("\tThe number of LODs is: {0}", oArticulation.LODCount)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oArticulation.LODCount:
             self.m_logger.WriteLine3("\t\tLODs: {0}", iIndex)
             arAvailableArtic = oArticulation.GetAvailableArticulations(iIndex)
             self.m_logger.WriteLine3("\t\t\tThere are {0} available Articulations.", Array.Length(arAvailableArtic))
 
-            i = 0
+            i: int = 0
             while i < Array.Length(arAvailableArtic):
-                strArtic = str(arAvailableArtic[i])
+                strArtic: str = str(arAvailableArtic[i])
                 self.m_logger.WriteLine7("\t\t\t\tArticulation {0} is: {1}", i, strArtic)
                 # TransCollection test
-                oTransformations = oArticulation.GetAvailableTransformations(iIndex, strArtic)
+                oTransformations: "IVOModelTransformationCollection" = oArticulation.GetAvailableTransformations(
+                    iIndex, strArtic
+                )
                 Assert.assertIsNotNone(oTransformations)
                 self.m_logger.WriteLine5("\t\t\t\tTransformation name is: {0}.", oTransformations.Name)
                 self.m_logger.WriteLine3("\t\t\t\tThere are {0} available Transformations.", oTransformations.Count)
 
-                j = 0
+                j: int = 0
                 while j < oTransformations.Count:
-                    oElement = oTransformations[j]
-                    strTrans = oElement.Name
+                    oElement: "IVOModelTransformation" = oTransformations[j]
+                    strTrans: str = oElement.Name
                     self.m_logger.WriteLine7("\t\t\t\t\tTransformation {0} is: {1}", j, strTrans)
                     self.m_logger.WriteLine8(
                         "\t\t\t\t\t\tCurrent value: {0} [Min = {1}, Max = {2}]",
@@ -625,15 +629,16 @@ class VOModelHelper(object):
                         oElement.Min,
                         oElement.Max,
                     )
-                    dMax = oElement.Max if ((Math.Abs(oElement.Max) > Math.Abs(oElement.Min))) else oElement.Min
-                    dMin = oElement.Max if ((Math.Abs(oElement.Max) < Math.Abs(oElement.Min))) else oElement.Min
-                    dMidle = ((dMax - dMin)) / 2.0
+                    dMax: float = oElement.Max if ((Math.Abs(oElement.Max) > Math.Abs(oElement.Min))) else oElement.Min
+                    dMin: float = oElement.Max if ((Math.Abs(oElement.Max) < Math.Abs(oElement.Min))) else oElement.Min
+                    dMidle: float = ((dMax - dMin)) / 2.0
                     oElement.Value = dMidle
                     oArticulation.SetTransValue(iIndex, strArtic, strTrans, dMidle)
                     self.m_logger.WriteLine6(
                         "\t\t\t\t\t\tNew value: {0}", oArticulation.GetTransValue(iIndex, strArtic, strTrans)
                     )
                     Assert.assertEqual(dMidle, oArticulation.GetTransValue(iIndex, strArtic, strTrans))
+                    bCaught: bool = False
                     try:
                         bCaught = False
                         oElement.Value = dMax * 2
@@ -648,6 +653,8 @@ class VOModelHelper(object):
 
                     j += 1
 
+                # Collection enumeration test
+                oItem: "IVOModelTransformation"
                 # Collection enumeration test
                 for oItem in oTransformations:
                     Assert.assertIsNotNone(oItem)
@@ -666,8 +673,8 @@ class VOTargetModelHelper(object):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root = root
-        self.m_oUnits = oUnits
+        self._root: "IStkObjectRoot" = root
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -713,14 +720,14 @@ class VOTargetModelHelper(object):
         Assert.assertEqual(AgEModelGltfReflectionMapType.eModelGltfProceduralEnvironment, oModel.GltfReflectionMapType)
 
         def action29():
-            x = oModel.GltfImageBased
+            x: "IVOModelGltfImageBased" = oModel.GltfImageBased
 
         TryCatchAssertBlock.ExpectedException("is not set to Image Based", action29)
 
         oModel.GltfReflectionMapType = AgEModelGltfReflectionMapType.eModelGltfImageBased
         Assert.assertEqual(AgEModelGltfReflectionMapType.eModelGltfImageBased, oModel.GltfReflectionMapType)
 
-        gltfImageBased = oModel.GltfImageBased
+        gltfImageBased: "IVOModelGltfImageBased" = oModel.GltfImageBased
         gltfImageBased.Filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
         Assert.assertEqual("over_the_clouds.hdr", gltfImageBased.Filename)
         Assert.assertTrue(("over_the_clouds.hdr" in gltfImageBased.FilePath))
@@ -753,12 +760,12 @@ class VOModelPointingHelper(object):
         self.m_logger.WriteLine("----- THE VO MODEL POINTING TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oModelPointing)
         # PointableElements
-        oPECollection = oModelPointing.PointableElements
+        oPECollection: "IVOPointableElementsCollection" = oModelPointing.PointableElements
         Assert.assertIsNotNone(oPECollection)
         # Count
         self.m_logger.WriteLine3("The Pointable Elements collection contains: {0} elements", oPECollection.Count)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oPECollection.Count:
             # Index
             self.m_logger.WriteLine5("\tElement: {0}", oPECollection[iIndex].PointingName)
@@ -767,9 +774,9 @@ class VOModelPointingHelper(object):
 
         self.m_logger.WriteLine3("The Pointable Elements collection contains: {0} elements.", oPECollection.Count)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oPECollection.Count:
-            oElement = oPECollection[iIndex]
+            oElement: "IVOPointableElementsElement" = oPECollection[iIndex]
             Assert.assertIsNotNone(oElement)
             self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oElement.PointingName)
 
@@ -786,14 +793,14 @@ class VOModelPointingHelper(object):
         # Add
         self.m_logger.WriteLine3("The Pointable Elements collection still contains: {0} elements", oPECollection.Count)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oPECollection.Count:
             self.m_logger.WriteLine5("\tElement: {0}", oPECollection[iIndex].PointingName)
 
             iIndex += 1
 
         def action32():
-            oNewElement = oPECollection.Add()
+            oNewElement: "IVOPointableElementsElement" = oPECollection.Add()
 
         TryCatchAssertBlock.DoAssert("The PointableElementsCollection should be readonly!", action32)
 
@@ -809,11 +816,13 @@ class VOModelPointingHelper(object):
         # RemoveAll
         TryCatchAssertBlock.DoAssert("The PointableElementsCollection should be readonly!", action34)
         self.m_logger.WriteLine3("The Pointable Elements collection still contains: {0} elements", oPECollection.Count)
+        oTempElement: "IVOPointableElementsElement"
         for oTempElement in oPECollection:
             self.m_logger.WriteLine5("\tElement: {0}", oTempElement.PointingName)
 
         # Testing model pointing intervals
         Assert.assertTrue((oPECollection.Count > 0))
+        oTempElement: "IVOPointableElementsElement"
         for oTempElement in oPECollection:
             oTempElement.Intervals.RemoveAll()
             Assert.assertEqual(
@@ -823,7 +832,10 @@ class VOModelPointingHelper(object):
             )
 
         # Planet Target
-        sPlanetTargetObject = "Planet/MarsJPL"
+        sPlanetTargetObject: str = "Planet/MarsJPL"
+
+        # Verify that we can add intervals to existing pointable elements
+        oTempElement: "IVOPointableElementsElement"
 
         # Verify that we can add intervals to existing pointable elements
         for oTempElement in oPECollection:
@@ -833,7 +845,7 @@ class VOModelPointingHelper(object):
             Assert.assertEqual(sPlanetTargetObject, oTempElement.AssignedTargetObject.Name)
             self.m_logger.WriteLine5("\tTargetObject: {0}", oTempElement.AssignedTargetObject.Name)
             # Intervals
-            nCount = oTempElement.Intervals.Count
+            nCount: int = oTempElement.Intervals.Count
             self.m_logger.WriteLine3("\t\tThe current number of intervals: {0}", nCount)
             oTempElement.Intervals.Add("1 Jul 1999 01:00:000.00", "1 Jul 1999 02:00:000.00")
             Assert.assertEqual((nCount + 1), oTempElement.Intervals.Count)
@@ -850,12 +862,13 @@ class VOModelPointingHelper(object):
             TryCatchAssertBlock.DoAssert("Should not allow to set illegal time interval!", action35)
 
         # adding a Sun target
-        iCount = oPECollection.Count
+        iCount: int = oPECollection.Count
         oModelPointing.AddInterval(
             oPECollection[0].PointingName, "Sun", "1 Jul 1999 13:00:000.00", "2 Jul 1999 00:00:000.00"
         )
         Assert.assertEqual((iCount + 1), oPECollection.Count)
         self.m_logger.WriteLine3("The new PointebleElements collection contains: {0} elements", oPECollection.Count)
+        oTempElement: "IVOPointableElementsElement"
         for oTempElement in oPECollection:
             self.m_logger.WriteLine(oTempElement.PointingName)
             self.m_logger.WriteLine5("\tTargetObject: {0}", oTempElement.AssignedTargetObject.Name)
@@ -888,6 +901,7 @@ class VOModelPointingHelper(object):
         )
         Assert.assertEqual((iCount + 1), oPECollection.Count)
         self.m_logger.WriteLine3("The new PointebleElements collection contains: {0} elements", oPECollection.Count)
+        oTempElement: "IVOPointableElementsElement"
         for oTempElement in oPECollection:
             self.m_logger.WriteLine(oTempElement.PointingName)
             self.m_logger.WriteLine5("\tTargetObject: {0}", oTempElement.AssignedTargetObject.Name)
@@ -898,6 +912,7 @@ class VOModelPointingHelper(object):
         oModelPointing.RemoveInterval(oPECollection[1].PointingName, "Slew")
         Assert.assertEqual(iCount, oPECollection.Count)
         self.m_logger.WriteLine3("The new PointebleElements collection contains: {0} elements", oPECollection.Count)
+        oTempElement: "IVOPointableElementsElement"
         for oTempElement in oPECollection:
             self.m_logger.WriteLine(oTempElement.PointingName)
             self.m_logger.WriteLine5("\tTargetObject: {0}", oTempElement.AssignedTargetObject.Name)
@@ -923,13 +938,14 @@ class VOModelPointingHelper(object):
         oPECollection.Sort()
 
         availObjects = oModelPointing.PointableElements[0].AssignedTargetObject.AvailableObjects
+        availObject: str
         for availObject in availObjects:
             self.m_logger.WriteLine5("Available target: {0}", availObject)
             Assert.assertTrue((not ("Slew" == availObject)))
 
         oModelPointing.PointableElements[0].Intervals.RemoveAll()
 
-        i = 0
+        i: int = 0
         while i < oModelPointing.PointableElements.Count:
             oModelPointing.PointableElements[i].Intervals.RemoveAll()
 
@@ -939,7 +955,7 @@ class VOModelPointingHelper(object):
             TestBase.GetScenarioFile("MdlPtgInts.int"), oModelPointing.PointableElements[0].PointingName
         )
 
-        i = 0
+        i: int = 0
         while i < oModelPointing.PointableElements.Count:
             self.m_logger.WriteLine(oModelPointing.PointableElements[i].PointingName)
             self.m_logger.WriteLine(oModelPointing.PointableElements[i].AssignedTargetObject.Name)
@@ -960,8 +976,11 @@ class VOModelPointingHelper(object):
 
     # region PrintIntervals method
     def PrintIntervals(self, oCollection: "IIntervalCollection"):
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oCollection.Count:
+            oStart: typing.Any = None
+            oStop: typing.Any = None
+
             (oStart, oStop) = oCollection.GetInterval(iIndex)
             self.m_logger.WriteLine8("\t\t\tInterval {0}: StartTime = {1}, StopTime = {2}", iIndex, oStart, oStop)
 
@@ -976,7 +995,7 @@ class VOOffsetsHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -1012,7 +1031,7 @@ class VOOffsetRotationalHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -1021,7 +1040,7 @@ class VOOffsetRotationalHelper(object):
         Assert.assertIsNotNone(oRotational)
         self.m_logger.WriteLine("Offsets Rotational test:")
         # set AngleUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
         self.m_logger.WriteLine5("\tThe current AngleUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
         self.m_logger.WriteLine5("\tThe new AngleUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
@@ -1031,6 +1050,7 @@ class VOOffsetRotationalHelper(object):
         oRotational.Enable = False
         self.m_logger.WriteLine4("\tThe new Enable flag is: {0}", oRotational.Enable)
         Assert.assertEqual(False, oRotational.Enable)
+        bCaught: bool = False
         try:
             bCaught = False
             oRotational.X = 2.3456
@@ -1130,7 +1150,7 @@ class VOOffsetTranslationalHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -1139,7 +1159,7 @@ class VOOffsetTranslationalHelper(object):
         Assert.assertIsNotNone(oTranslational)
         self.m_logger.WriteLine("Offsets Translational test:")
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "nm")
         self.m_logger.WriteLine5("\tThe new DistanceUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
@@ -1149,6 +1169,7 @@ class VOOffsetTranslationalHelper(object):
         oTranslational.Enable = False
         self.m_logger.WriteLine4("\tThe new Enable flag is: {0}", oTranslational.Enable)
         Assert.assertEqual(False, oTranslational.Enable)
+        bCaught: bool = False
         try:
             bCaught = False
             oTranslational.X = 34.56
@@ -1248,7 +1269,7 @@ class VOOffsetLabelHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -1257,7 +1278,7 @@ class VOOffsetLabelHelper(object):
         self.m_logger.WriteLine("----- VO OFFSET LABEL ----- BEGIN -----")
         Assert.assertIsNotNone(oLabel)
         # set SmallDistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit")
         self.m_logger.WriteLine5("\tThe current SmallDistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("SmallDistanceUnit", "in")
         self.m_logger.WriteLine5(
@@ -1441,7 +1462,7 @@ class VOOffsetAttachHelper(object):
         self.m_logger.WriteLine5("\tThe current AttachPtName is: {0}", oAttach.AttachPtName)
         self.m_logger.WriteLine3("\tThe AvailableAttachPoints array contains: {0} elements.", Array.Length(arPoints))
         if Array.Length(arPoints) > 0:
-            strName = str(arPoints[0])
+            strName: str = str(arPoints[0])
             self.m_logger.WriteLine5("\t\tElement: {0}", strName)
             oAttach.AttachPtName = strName
             self.m_logger.WriteLine5("\t\t\tThe new AttachPtName is: {0}", oAttach.AttachPtName)
@@ -1461,7 +1482,7 @@ class VORangeContoursHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -1541,7 +1562,7 @@ class VOBorderWallHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
@@ -1691,7 +1712,7 @@ class VOBorderWallHelper(object):
         self.m_logger.WriteLine4("\tThe new UseBorderWall flag is: {0}", oWall.UseBorderWall)
         Assert.assertEqual(True, oWall.UseBorderWall)
         # set DistanceUnit
-        strDistanceUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strDistanceUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\t\tThe current DistanceUnit is: {0}", strDistanceUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "mi")
         self.m_logger.WriteLine5("\t\tThe new DistanceUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
@@ -1849,6 +1870,7 @@ class VOAzElMaskHelper(object):
         oMask.AltLabelsVisible = False
         self.m_logger.WriteLine4("The new AltLabelsVisible flag is: {0}", oMask.AltLabelsVisible)
         Assert.assertEqual(False, oMask.AltLabelsVisible)
+        bCaught: bool = False
         try:
             bCaught = False
             oMask.NumbAltLabels = 12
@@ -1990,8 +2012,8 @@ class VOVectorsHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection", root: "IStkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
-        self.m_oRoot = root
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oRoot: "IStkObjectRoot" = root
 
     # endregion
 
@@ -1999,6 +2021,7 @@ class VOVectorsHelper(object):
     def Run(self, oVector: "IVOVector", bScaleRelativeReadOnly: bool):
         self.m_logger.WriteLine("----- THE VO VECTORS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oVector)
+        bCaught: bool = False
         # ScaleRelativeToModel
         self.m_logger.WriteLine4("The current ScaleRelativeToModel flag is: {0}", oVector.ScaleRelativeToModel)
         if not bScaleRelativeReadOnly:
@@ -2070,21 +2093,23 @@ class VOVectorsHelper(object):
         # Count
         self.m_logger.WriteLine3("The current VectorCollection contains: {0} elements", oCollection.Count)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oCollection.Count:
-            oElement = oCollection[iIndex]
+            oElement: "IVOReferenceAnalysisWorkbenchComponent" = oCollection[iIndex]
             Assert.assertIsNotNone(oElement)
             self.m_logger.WriteLine8("\tElement {0}: Name = {1}, Type = {2}", iIndex, oElement.Name, oElement.TypeID)
 
             iIndex += 1
 
         def action90():
-            oElement = oCollection[oCollection.Count]
+            oElement: "IVOReferenceAnalysisWorkbenchComponent" = oCollection[oCollection.Count]
 
         TryCatchAssertBlock.DoAssert("Invalid index", action90)
 
+        voRefCrdn: "IVOReferenceAnalysisWorkbenchComponent"
+
         for voRefCrdn in oCollection:
-            name = voRefCrdn.Name
+            name: str = voRefCrdn.Name
 
         # RemoveAll
         oCollection.RemoveAll()
@@ -2096,87 +2121,103 @@ class VOVectorsHelper(object):
         self.m_logger.WriteLine3("The AvailableCrdns array contains {0} elements", len(arAvailable))
 
         def action91():
-            oElement = oCollection.Add(AgEGeometricElemType.eAngleElem, "bogus")
+            oElement: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.Add(
+                AgEGeometricElemType.eAngleElem, "bogus"
+            )
 
         TryCatchAssertBlock.DoAssert("Invalid object.", action91)
 
         def action92():
-            oElement2 = oCollection.GetCrdnByName(clr.Convert((-1), AgEGeometricElemType), "bogus")
+            oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.GetCrdnByName(
+                clr.Convert((-1), AgEGeometricElemType), "bogus"
+            )
 
         TryCatchAssertBlock.DoAssert("Invalid AgEGeometricElemType", action92)
 
         def action93():
-            oElement2 = oCollection.GetCrdnByName(AgEGeometricElemType.eAngleElem, "")
+            oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.GetCrdnByName(
+                AgEGeometricElemType.eAngleElem, ""
+            )
 
         TryCatchAssertBlock.DoAssert("Invalid crdn name", action93)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
+            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
             if eType == AgEGeometricElemType.eAngleElem:
-                oElement = oCollection.Add(eType, str(arAvailable[iIndex][0]))
+                oElement: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.Add(eType, str(arAvailable[iIndex][0]))
                 Assert.assertIsNotNone(oElement)
                 self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", oElement.Name, oElement.TypeID)
-                oElement2 = oCollection.GetCrdnByName(eType, str(arAvailable[iIndex][0]))
+                oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.GetCrdnByName(
+                    eType, str(arAvailable[iIndex][0])
+                )
                 Assert.assertEqual(oElement2.Name, oElement.Name)
                 break
 
             iIndex += 1
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
+            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
             if eType == AgEGeometricElemType.eAxesElem:
-                oElement = oCollection.Add(eType, str(arAvailable[iIndex][0]))
+                oElement: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.Add(eType, str(arAvailable[iIndex][0]))
                 Assert.assertIsNotNone(oElement)
                 self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", oElement.Name, oElement.TypeID)
-                oElement2 = oCollection.GetCrdnByName(eType, str(arAvailable[iIndex][0]))
+                oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.GetCrdnByName(
+                    eType, str(arAvailable[iIndex][0])
+                )
                 Assert.assertEqual(oElement2.Name, oElement.Name)
                 break
 
             iIndex += 1
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
+            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
             if eType == AgEGeometricElemType.ePlaneElem:
-                oElement = oCollection.Add(eType, str(arAvailable[iIndex][0]))
+                oElement: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.Add(eType, str(arAvailable[iIndex][0]))
                 Assert.assertIsNotNone(oElement)
                 self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", oElement.Name, oElement.TypeID)
-                oElement2 = oCollection.GetCrdnByName(eType, str(arAvailable[iIndex][0]))
+                oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.GetCrdnByName(
+                    eType, str(arAvailable[iIndex][0])
+                )
                 Assert.assertEqual(oElement2.Name, oElement.Name)
                 break
 
             iIndex += 1
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
+            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
             if eType == AgEGeometricElemType.ePointElem:
-                oElement = oCollection.Add(eType, str(arAvailable[iIndex][0]))
+                oElement: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.Add(eType, str(arAvailable[iIndex][0]))
                 Assert.assertIsNotNone(oElement)
                 self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", oElement.Name, oElement.TypeID)
-                oElement2 = oCollection.GetCrdnByName(eType, str(arAvailable[iIndex][0]))
+                oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.GetCrdnByName(
+                    eType, str(arAvailable[iIndex][0])
+                )
                 Assert.assertEqual(oElement2.Name, oElement.Name)
                 break
 
             iIndex += 1
 
         # Add Vector element
-        bFound = False
+        bFound: bool = False
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
+            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
             if eType == AgEGeometricElemType.eVectorElem:
-                oVector = clr.Convert(
+                oVector: "IVOReferenceVectorGeometryToolVector" = clr.Convert(
                     oCollection.Add(eType, str(arAvailable[iIndex][0])), IVOReferenceVectorGeometryToolVector
                 )
                 Assert.assertIsNotNone(oVector)
-                strMagnitudeDim = oVector.MagnitudeDimension
+                strMagnitudeDim: str = oVector.MagnitudeDimension
                 if (strMagnitudeDim != "Unitless") and (strMagnitudeDim.find("Rate") == -1):
                     self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", oVector.Name, oVector.TypeID)
-                    oElement2 = oCollection.GetCrdnByName(eType, str(arAvailable[iIndex][0]))
+                    oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.GetCrdnByName(
+                        eType, str(arAvailable[iIndex][0])
+                    )
                     Assert.assertEqual(oElement2.Name, oVector.Name)
                     break
 
@@ -2191,13 +2232,14 @@ class VOVectorsHelper(object):
 
         # Count
         self.m_logger.WriteLine3("The new VectorCollection contains: {0} elements", oCollection.Count)
+        oElement: "IVOReferenceAnalysisWorkbenchComponent"
         for oElement in oCollection:
             self.m_logger.WriteLine7("\tElement: Name = {0}, Type = {1}", oElement.Name, oElement.TypeID)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oCollection.Count:
             # Item
-            oElement = oCollection[iIndex]
+            oElement: "IVOReferenceAnalysisWorkbenchComponent" = oCollection[iIndex]
             Assert.assertIsNotNone(oElement)
             self.m_logger.WriteLine5("-> {0}", oElement.Name)
 
@@ -2206,6 +2248,8 @@ class VOVectorsHelper(object):
             oElement.Visible = False
             self.m_logger.WriteLine4("\tThe new Visible flag is: {0}", oElement.Visible)
             Assert.assertEqual(False, oElement.Visible)
+
+            bCaught: bool = False
             try:
                 bCaught = False
                 oElement.Color = Color.FromArgb(52)
@@ -2315,6 +2359,7 @@ class VOVectorsHelper(object):
     def RefCrdnAngleReadOnly(self, oAngle: "IVOReferenceVectorGeometryToolAngle"):
         Assert.assertIsNotNone(oAngle)
         self.m_logger.WriteLine("\tRefCrdnAngle test (ReadOnly):")
+        bCaught: bool = False
         try:
             bCaught = False
             oAngle.AngleValueVisible = True
@@ -2359,6 +2404,7 @@ class VOVectorsHelper(object):
         oAngle.AngleValueVisible = False
         self.m_logger.WriteLine4("\t\tThe new AngleValueVisible flag is: {0}", oAngle.AngleValueVisible)
         Assert.assertEqual(False, oAngle.AngleValueVisible)
+        bCaught: bool = False
         try:
             bCaught = False
             oAngle.AngleUnitAbrv = "mrad"
@@ -2395,6 +2441,7 @@ class VOVectorsHelper(object):
     def RefCrdnAxesReadOnly(self, oAxes: "IVOReferenceVectorGeometryToolAxes"):
         Assert.assertIsNotNone(oAxes)
         self.m_logger.WriteLine("\tRefCrdnAxes test (ReadOnly):")
+        bCaught: bool = False
         try:
             bCaught = False
             oAxes.DrawAtCB = False
@@ -2418,7 +2465,7 @@ class VOVectorsHelper(object):
             Assert.fail("The PersistenceVisible should be readonly.")
 
         # set TimeUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
         self.m_logger.WriteLine5("\t\tThe current TimeUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("TimeUnit", "hr")
         self.m_logger.WriteLine5("\t\tThe new TimeUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
@@ -2480,7 +2527,7 @@ class VOVectorsHelper(object):
         Assert.assertIsNotNone(oAxes)
         self.m_logger.WriteLine("\tRefCrdnAxes test:")
         # set TimeUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
         self.m_logger.WriteLine5("\t\tThe current TimeUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("TimeUnit", "hr")
         self.m_logger.WriteLine5("\t\tThe new TimeUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
@@ -2500,6 +2547,7 @@ class VOVectorsHelper(object):
         oAxes.PersistenceVisible = False
         self.m_logger.WriteLine4("\t\tThe new PersistenceVisible flag is: {0}", oAxes.PersistenceVisible)
         Assert.assertEqual(False, oAxes.PersistenceVisible)
+        bCaught: bool = False
         try:
             bCaught = False
             oAxes.Duration = 123.456
@@ -2577,6 +2625,7 @@ class VOVectorsHelper(object):
     def RefCrdnPlaneReadOnly(self, oPlane: "IVOReferenceVectorGeometryToolPlane"):
         Assert.assertIsNotNone(oPlane)
         self.m_logger.WriteLine("\tRefCrdnPlane test (ReadOnly):")
+        bCaught: bool = False
         try:
             bCaught = False
             oPlane.AxisLabelsVisible = True
@@ -2644,7 +2693,7 @@ class VOVectorsHelper(object):
             Assert.fail("The CircGridVisible should be readonly.")
 
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\t\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "ft")
         self.m_logger.WriteLine5("\t\tThe new DistanceUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
@@ -2684,7 +2733,7 @@ class VOVectorsHelper(object):
         Assert.assertIsNotNone(oPlane)
         self.m_logger.WriteLine("\tRefCrdnPlane test:")
         # set DistanceUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
         self.m_logger.WriteLine5("\t\tThe current DistanceUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DistanceUnit", "Re")
         self.m_logger.WriteLine5("\t\tThe new DistanceUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
@@ -2710,6 +2759,7 @@ class VOVectorsHelper(object):
         oPlane.Size = 3.21
         self.m_logger.WriteLine6("\t\tThe new Size is: {0}", oPlane.Size)
         Assert.assertEqual(3.21, oPlane.Size)
+        bCaught: bool = False
         # range test
         try:
             bCaught = False
@@ -2817,6 +2867,7 @@ class VOVectorsHelper(object):
     def RefCrdnPointReadOnly(self, oPoint: "IVOReferenceVectorGeometryToolPoint"):
         Assert.assertIsNotNone(oPoint)
         self.m_logger.WriteLine("\tRefCrdnPoint test (ReadOnly):")
+        bCaught: bool = False
         try:
             bCaught = False
             oPoint.TrajectoryType = AgETrajectoryType.eTrajTrace
@@ -2910,6 +2961,7 @@ class VOVectorsHelper(object):
         oPoint.Size = 3.21
         self.m_logger.WriteLine6("\t\tThe new Size is: {0}", oPoint.Size)
         Assert.assertAlmostEqual(3.21, oPoint.Size, delta=0.001)
+        bCaught: bool = False
         # range test
         try:
             bCaught = False
@@ -3081,7 +3133,7 @@ class VOVectorsHelper(object):
         # PersistenceVisible
         TryCatchAssertBlock.DoAssert("The property should be readonly.", action101)
         # set TimeUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
         self.m_logger.WriteLine5("\t\tThe current TimeUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("TimeUnit", "hr")
         self.m_logger.WriteLine5("\t\tThe new TimeUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
@@ -3237,10 +3289,10 @@ class VOVectorsHelper(object):
 
         TryCatchAssertBlock.DoAssert("Cannot set illegal RADecUnitAbrv!", action114)
         # MagnitudeDimension
-        strMagnitudeDim = oVector.MagnitudeDimension
+        strMagnitudeDim: str = oVector.MagnitudeDimension
         self.m_logger.WriteLine5("\t\tThe MagnitudeDimension is: {0}", strMagnitudeDim)
         if (strMagnitudeDim != "Unitless") and (strMagnitudeDim.find("Rate") == -1):
-            strCurrentDimensionAbrv = self.m_oUnits.GetCurrentUnitAbbrv(strMagnitudeDim)
+            strCurrentDimensionAbrv: str = self.m_oUnits.GetCurrentUnitAbbrv(strMagnitudeDim)
             self.m_logger.WriteLine5("\t\tThe current DimensionAbbreviature is: {0}", strCurrentDimensionAbrv)
             # MagnitudeVisible
             self.m_logger.WriteLine4("\t\tThe current MagnitudeVisible flag is: {0}", oVector.MagnitudeVisible)
@@ -3271,7 +3323,7 @@ class VOVectorsHelper(object):
             TryCatchAssertBlock.DoAssert("Cannot set illegal MagnitudeUnitAbrv!", action116)
 
         # set TimeUnit
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
         self.m_logger.WriteLine5("\t\tThe current TimeUnit is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("TimeUnit", "hr")
         self.m_logger.WriteLine5("\t\tThe new TimeUnit is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
@@ -3450,7 +3502,7 @@ class VOVaporTrailHelper(object):
         TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action131)
 
         # AvailableAttachPoints
-        file: IVOModelFile = clr.CastAs(oModel.ModelData, IVOModelFile)
+        file: "IVOModelFile" = clr.CastAs(oModel.ModelData, IVOModelFile)
         arAvailablePoints = oVaporTrail.AvailableAttachPoints
         self.m_logger.WriteLine3(
             "\tThe current model contains: {0} available attach points.", Array.Length(arAvailablePoints)
@@ -3476,7 +3528,7 @@ class VOVaporTrailHelper(object):
         Assert.assertTrue(oModel.Visible)
         oModel.ModelType = AgEModelType.eModelFile
         Assert.assertEqual(AgEModelType.eModelFile, oModel.ModelType)
-        oModelFile = clr.Convert(oModel.ModelData, IVOModelFile)
+        oModelFile: "IVOModelFile" = clr.Convert(oModel.ModelData, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\tThe current VOModel file is: {0}", oModelFile.Filename)
         oModelFile.Filename = strDataPath + r"\STKData\VO\Models\Space\pegasus.mdl"
@@ -3505,7 +3557,7 @@ class VOVaporTrailHelper(object):
         # AttachPointName
         self.m_logger.WriteLine5("\tThe current AttachPointName is: {0}", oVaporTrail.AttachPointName)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < Array.Length(arAvailablePoints):
             oVaporTrail.AttachPointName = str(arAvailablePoints[iIndex])
             self.m_logger.WriteLine5("\tThe new AttachPointName is: {0}", oVaporTrail.AttachPointName)

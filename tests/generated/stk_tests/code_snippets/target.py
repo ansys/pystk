@@ -6,7 +6,7 @@ from ansys.stk.core.stkutil import *
 
 class Target(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
-        self.m_Object = None
+        self.m_Object: "ITarget" = None
         super(Target, self).__init__(*args, **kwargs)
 
     m_DefaultName: str = "MyTarget"
@@ -27,7 +27,7 @@ class Target(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        self.m_Object: ITarget = clr.CastAs(
+        self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eTarget, Target.m_DefaultName),
             ITarget,
         )
@@ -48,7 +48,7 @@ class Target(CodeSnippetsTestBase):
     def CreateTargetOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Target on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
-        areaTarget: ITarget = clr.CastAs(
+        areaTarget: "ITarget" = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eAreaTarget, "MyAreaTarget"), ITarget
         )
 
@@ -59,7 +59,7 @@ class Target(CodeSnippetsTestBase):
         self.ChangeTargetPosition(self.m_Object)
 
     def ChangeTargetPosition(self, target: "ITarget"):
-        pos = target.Position
+        pos: "IPosition" = target.Position
         pos.AssignGeodetic(39.95, 15.58, 231.54)
 
     # endregion

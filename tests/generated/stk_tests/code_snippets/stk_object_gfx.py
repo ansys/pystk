@@ -45,7 +45,7 @@ class StkObjectGfx(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility1")
 
     def SetScenarioDisplayToHideShowObjects(self, scenario: "IScenario"):
-        gfx = scenario.Graphics
+        gfx: "IScenarioGraphics" = scenario.Graphics
 
         # Individually
         gfx.HideObject("Facility/facility1", "all")

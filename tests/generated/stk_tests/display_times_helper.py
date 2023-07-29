@@ -10,7 +10,7 @@ class DisplayTimesHelper(object):
     def __init__(self, oRoot: "IStkObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot = oRoot
+        self.m_oRoot: "IStkObjectRoot" = oRoot
 
     # endregion
 
@@ -22,7 +22,7 @@ class DisplayTimesHelper(object):
         arTypes = oDisplay.DisplayStatusSupportedTypes
         self.m_logger.WriteLine3("\tDisplayTimes supports {0} types:", len(arTypes))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
                 "\t\tType {0}: {1} ({2})",
@@ -48,23 +48,23 @@ class DisplayTimesHelper(object):
         # DisplayStatusType
         self.m_logger.WriteLine6("\tThe current DisplayStatusType is: {0}", oDisplay.DisplayStatusType)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < len(arTypes):
-            eType = clr.Convert(int(arTypes[iIndex][0]), AgEDisplayTimesType)
+            eType: "AgEDisplayTimesType" = clr.Convert(int(arTypes[iIndex][0]), AgEDisplayTimesType)
             if not oDisplay.IsDisplayStatusTypeSupported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
             # SetDisplayStatusType
             oDisplay.SetDisplayStatusType(eType)
             self.m_logger.WriteLine6("\tThe new DisplayStatusType is: {0}", oDisplay.DisplayStatusType)
-            eType1 = oDisplay.DisplayStatusType
+            eType1: "AgEDisplayTimesType" = oDisplay.DisplayStatusType
             Assert.assertEqual(eType, eType1)
             if eType == AgEDisplayTimesType.eDisplayTypeUnknown:
                 Assert.fail("eDisplayTypeUnknown should not be supported!")
             elif (((eType == AgEDisplayTimesType.eAlwaysOff)) or ((eType == AgEDisplayTimesType.eAlwaysOn))) or (
                 (eType == AgEDisplayTimesType.eDuringChainAccess)
             ):
-                oData = oDisplay.DisplayTimesData
+                oData: "IDisplayTimesData" = oDisplay.DisplayTimesData
                 Assert.assertIsNone(oData)
                 self.m_logger.WriteLine("\t\tNo DisplayTimesData available.")
             elif eType == AgEDisplayTimesType.eDuringAccess:
@@ -144,7 +144,7 @@ class DisplayTimesHelper(object):
             dttc.GetQualifiedPath(),
         )
 
-        crdn: IAnalysisWorkbenchComponent = clr.CastAs(
+        crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
             self.m_oRoot.CurrentScenario.Vgt.Events["AnalysisStartTime"], IAnalysisWorkbenchComponent
         )
 
@@ -152,7 +152,7 @@ class DisplayTimesHelper(object):
             dttc.SetTimeComponent(crdn)
 
         TryCatchAssertBlock.DoAssert("Setting event component", action8)
-        crdnFac: IAnalysisWorkbenchComponent = clr.CastAs(
+        crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
             self.m_oRoot.CurrentScenario.Children["Facility1"].Vgt.EventIntervalCollections["LightingIntervals"],
             IAnalysisWorkbenchComponent,
         )
@@ -161,7 +161,7 @@ class DisplayTimesHelper(object):
             dttc.SetTimeComponent(crdnFac)
 
         TryCatchAssertBlock.DoAssert("Setting IntervalCollection component", action9)
-        crdn: IAnalysisWorkbenchComponent = clr.CastAs(
+        crdn = clr.CastAs(
             self.m_oRoot.CurrentScenario.Vgt.EventArrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
         )
 
@@ -170,7 +170,7 @@ class DisplayTimesHelper(object):
 
         TryCatchAssertBlock.DoAssert("Setting EventArray component", action10)
 
-        crdn: IAnalysisWorkbenchComponent = clr.CastAs(
+        crdn = clr.CastAs(
             self.m_oRoot.CurrentScenario.Vgt.EventIntervals["AnalysisInterval"], IAnalysisWorkbenchComponent
         )
         dttc.SetTimeComponent(crdn)
@@ -179,7 +179,7 @@ class DisplayTimesHelper(object):
             (clr.CastAs(dttc.GetTimeComponent(), IAnalysisWorkbenchComponent)).QualifiedPath,
         )
 
-        crdn: IAnalysisWorkbenchComponent = clr.CastAs(
+        crdn = clr.CastAs(
             self.m_oRoot.CurrentScenario.Vgt.EventIntervalLists["AvailabilityIntervals"], IAnalysisWorkbenchComponent
         )
         dttc.SetTimeComponent(crdn)
@@ -207,8 +207,8 @@ class IntervalCollectionHelper(object):
     def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits = oUnits
-        self.m_bReadOnlyFile = False
+        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
+        self.m_bReadOnlyFile: bool = False
 
     # endregion
 
@@ -223,7 +223,7 @@ class IntervalCollectionHelper(object):
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine("IntervalCollection test:")
         # set DateFormat
-        strUnit = self.m_oUnits.GetCurrentUnitAbbrv("DateFormat")
+        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DateFormat")
         self.m_logger.WriteLine5("\tThe current DateFormat is: {0}", strUnit)
         self.m_oUnits.SetCurrentUnit("DateFormat", "UTCG")
         self.m_logger.WriteLine5("\tThe new DateFormat is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DateFormat"))
@@ -233,7 +233,7 @@ class IntervalCollectionHelper(object):
         if oCollection.Count > 0:
             arIntervals = oCollection.ToArray(0, -1)
 
-            iIndex = 0
+            iIndex: int = 0
             while iIndex < len(arIntervals):
                 self.m_logger.WriteLine8(
                     "\t\tInterval {0}: StartTime = {1}, StopTime = {2}",
@@ -268,11 +268,15 @@ class IntervalCollectionHelper(object):
 
         # RemoveAll
         TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action11)
+
+        oStart: typing.Any = None
+        oStop: typing.Any = None
+
         oStart = "1 Jul 1999 00:00:00.00"
         oStop = "1 Jul 1999 01:00:00.000"
 
         def action12():
-            iIndex = oCollection.Add(oStart, oStop)
+            iIndex: int = oCollection.Add(oStart, oStop)
 
         TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action12)
         if oCollection.Count > 0:
@@ -282,7 +286,7 @@ class IntervalCollectionHelper(object):
                 "\tAfter ToArray() the IntervalCollection contains: {0} elements", len(arIntervals)
             )
 
-            iIndex = 0
+            iIndex: int = 0
             while iIndex < len(arIntervals):
                 self.m_logger.WriteLine8(
                     "\t\tInterval {0}: StartTime = {1}, StopTime = {2}",
@@ -295,8 +299,8 @@ class IntervalCollectionHelper(object):
 
             # GetInterval
             (oStart, oStop) = oCollection.GetInterval(0)
-            oNewStart = "1 Jun 2004 12:34:56.789"
-            oNewStop = "2 Jun 2004 00:00:00.000"
+            oNewStart: typing.Any = "1 Jun 2004 12:34:56.789"
+            oNewStop: typing.Any = "2 Jun 2004 00:00:00.000"
 
             def action13():
                 oCollection.ChangeInterval(0, oNewStart, oNewStop)
@@ -346,11 +350,15 @@ class IntervalCollectionHelper(object):
 
             # RemoveAll
             TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action19)
+
+            oStart: typing.Any = None
+            oStop: typing.Any = None
+
             oStart = "1 Jul 1999 00:00:00.00"
             oStop = "1 Jul 1999 01:00:00.000"
 
             def action20():
-                iIndex = oCollection.Add(oStart, oStop)
+                iIndex: int = oCollection.Add(oStart, oStop)
 
             TryCatchAssertBlock.DoAssert("Should not allow to modify collection!", action20)
             # ToArray
@@ -359,7 +367,7 @@ class IntervalCollectionHelper(object):
                 "\tAfter ToArray() the IntervalCollection contains: {0} elements", len(arIntervals)
             )
 
-            iIndex = 0
+            iIndex: int = 0
             while iIndex < len(arIntervals):
                 self.m_logger.WriteLine8(
                     "\t\tInterval {0}: StartTime = {1}, StopTime = {2}",
@@ -373,8 +381,8 @@ class IntervalCollectionHelper(object):
             if oCollection.Count > 0:
                 # GetInterval
                 (oStart, oStop) = oCollection.GetInterval(0)
-                oNewStart = "1 Jun 2004 12:34:56.789"
-                oNewStop = "2 Jun 2004 00:00:00.000"
+                oNewStart: typing.Any = "1 Jun 2004 12:34:56.789"
+                oNewStop: typing.Any = "2 Jun 2004 00:00:00.000"
 
                 def action21():
                     oCollection.ChangeInterval(0, oNewStart, oNewStop)
@@ -409,7 +417,7 @@ class IntervalCollectionHelper(object):
                 "\tAfter ToArray() the IntervalCollection contains: {0} elements", len(arIntervals)
             )
 
-            iIndex = 0
+            iIndex: int = 0
             while iIndex < len(arIntervals):
                 self.m_logger.WriteLine8(
                     "\t\tInterval {0}: StartTime = {1}, StopTime = {2}",
@@ -431,9 +439,13 @@ class IntervalCollectionHelper(object):
             self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.Count)
             oCollection.RemoveAll()
             self.m_logger.WriteLine3("\tAfter RemoveAll() collection contains: {0} elements", oCollection.Count)
+
+            oStart: typing.Any = None
+            oStop: typing.Any = None
+
             oStart = "1 Jul 1999 00:00:00.00"
             oStop = "1 Jul 1999 01:00:00.000"
-            iIndex = oCollection.Add(oStart, oStop)
+            iIndex: int = oCollection.Add(oStart, oStop)
             self.m_logger.WriteLine8(
                 "\tAfter Add({1},{2}) collection contains: {0} elements", oCollection.Count, oStart, oStop
             )
@@ -441,7 +453,7 @@ class IntervalCollectionHelper(object):
             Assert.assertEqual(1, oCollection.Count)
             Assert.assertEqual(0, iIndex)
             # Add Duplicate (will not be added)
-            iIndex1 = oCollection.Add(oStart, oStop)
+            iIndex1: int = oCollection.Add(oStart, oStop)
             self.m_logger.WriteLine8(
                 "\tAfter Add({1},{2}) again collection contains: {0} elements", oCollection.Count, oStart, oStop
             )
@@ -516,7 +528,7 @@ class IntervalCollectionHelper(object):
 
                 iIndex += 1
             # Add
-            iNewIndex = oCollection.Add(oStart, oStop)
+            iNewIndex: int = oCollection.Add(oStart, oStop)
             self.m_logger.WriteLine8(
                 "\tAfter Add({1},{2}) collection contains: {0} elements", oCollection.Count, oStart, oStop
             )
@@ -600,9 +612,13 @@ class IntervalCollectionHelper(object):
         oCollection.RemoveAll()
         self.m_logger.WriteLine3("\tAfter RemoveAll() collection contains: {0} elements", oCollection.Count)
         Assert.assertEqual(0, oCollection.Count)
+
+        oStart: typing.Any = None
+        oStop: typing.Any = None
+
         oStart = "1 Jul 1999 00:00:00.00"
         oStop = "1 Jul 1999 01:00:00.000"
-        iIndex = oCollection.Add(oStart, oStop)
+        iIndex: int = oCollection.Add(oStart, oStop)
         self.m_logger.WriteLine8(
             "\tAfter Add({1},{2}) collection contains: {0} elements", oCollection.Count, oStart, oStop
         )
@@ -621,7 +637,7 @@ class IntervalCollectionHelper(object):
 
             iIndex += 1
         # Add Duplicate (will not be added)
-        iIndex1 = oCollection.Add(oStart, oStop)
+        iIndex1: int = oCollection.Add(oStart, oStop)
         self.m_logger.WriteLine8(
             "\tAfter Add({1},{2}) again collection contains: {0} elements", oCollection.Count, oStart, oStop
         )
@@ -704,7 +720,7 @@ class IntervalCollectionHelper(object):
 
             iIndex += 1
         # Add
-        iNewIndex = oCollection.Add(oStart, oStop)
+        iNewIndex: int = oCollection.Add(oStart, oStop)
         self.m_logger.WriteLine8(
             "\tAfter Add({1},{2}) collection contains: {0} elements", oCollection.Count, oStart, oStop
         )
@@ -796,9 +812,13 @@ class IntervalCollectionHelper(object):
         oCollection.RemoveAll()
         self.m_logger.WriteLine3("\tAfter RemoveAll() collection contains: {0} elements", oCollection.Count)
         Assert.assertEqual(0, oCollection.Count)
+
+        oStart: typing.Any = None
+        oStop: typing.Any = None
+
         oStart = "1 Jul 1999 00:00:00.00"
         oStop = "1 Jul 1999 01:00:00.000"
-        iIndex = oCollection.Add(oStart, oStop)
+        iIndex: int = oCollection.Add(oStart, oStop)
         self.m_logger.WriteLine8(
             "\tAfter Add({1},{2}) collection contains: {0} elements", oCollection.Count, oStart, oStop
         )
@@ -817,7 +837,7 @@ class IntervalCollectionHelper(object):
 
             iIndex += 1
         # Add Duplicate (will not be added)
-        iIndex1 = oCollection.Add(oStart, oStop)
+        iIndex1: int = oCollection.Add(oStart, oStop)
         self.m_logger.WriteLine8(
             "\tAfter Add({1},{2}) again collection contains: {0} elements", oCollection.Count, oStart, oStop
         )
@@ -891,7 +911,7 @@ class IntervalCollectionHelper(object):
 
             iIndex += 1
         # Add
-        iNewIndex = oCollection.Add(oStart, oStop)
+        iNewIndex: int = oCollection.Add(oStart, oStop)
         self.m_logger.WriteLine8(
             "\tAfter Add({1},{2}) collection contains: {0} elements", oCollection.Count, oStart, oStop
         )
@@ -945,8 +965,8 @@ class IntervalCollectionHelper(object):
 class ObjectLinkCollectionHelper(object):
     def __init__(self, AllowDuplicates: bool = False, RestrictToOneElement: bool = False):
         self.m_logger = Logger.Instance
-        self._bAllowDuplicates = AllowDuplicates
-        self._bRestrictToOneElement = RestrictToOneElement
+        self._bAllowDuplicates: bool = AllowDuplicates
+        self._bRestrictToOneElement: bool = RestrictToOneElement
 
     # endregion
 
@@ -964,7 +984,7 @@ class ObjectLinkCollectionHelper(object):
         arAvailable = oCollection.AvailableObjects
         self.m_logger.WriteLine3("\tAvailable {0} objects:", Array.Length(arAvailable))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
             self.m_logger.WriteLine7("\t\tObject {0}: {1}", iIndex, arAvailable[iIndex])
 
@@ -1015,6 +1035,7 @@ class ObjectLinkCollectionHelper(object):
             self.m_logger.WriteLine6("\t\tObject {0} was added to collection.", arAvailable[1])
             Assert.assertEqual(2, oCollection.Count)
             self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.Count)
+            oLink: "IObjectLink"
             for oLink in oCollection:
                 Console.WriteLine(
                     "\t\tElement: Name = {0}, Path = {1}, Type = {2}, LinkedObject = {3}",
@@ -1090,6 +1111,9 @@ class ObjectLinkCollectionHelper(object):
 
         TryCatchAssertBlock.DoAssert("Should not allow to remove an invalid object from collection.", action35)
         self.m_logger.WriteLine3("\tThe new ObjectLink collection contain: {0} elements", oCollection.Count)
+
+        # Remove
+        strName: str = None
         if not self._bRestrictToOneElement:
             strName = oCollection[0].Name
             oCollection.Remove(0)
@@ -1105,7 +1129,7 @@ class ObjectLinkCollectionHelper(object):
 
         # AddObject
         strName = str(arAvailable[0])
-        oObject = oRoot.GetObjectFromPath(strName)
+        oObject: "IStkObject" = oRoot.GetObjectFromPath(strName)
         Assert.assertIsNotNone(oObject)
         oCollection.AddObject(oObject)
         self.m_logger.WriteLine5("\tObject {0} was added to collection.", oObject.Path)

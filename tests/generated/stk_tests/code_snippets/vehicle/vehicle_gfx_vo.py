@@ -37,7 +37,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
 
     # region SetVehicleGfxToCustomIntervals
     def test_SetVehicleGfxToCustomIntervals(self):
-        gv: IGroundVehicle = clr.CastAs(
+        gv: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
@@ -50,23 +50,27 @@ class VehicleGfxVO(CodeSnippetsTestBase):
             graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesCustom)
 
             # Get IAgVeGfxAttributesCustom interface
-            customAttributes: IVehicleGfxAttributesCustom = clr.CastAs(graphics.Attributes, IVehicleGfxAttributesCustom)
+            customAttributes: "IVehicleGfxAttributesCustom" = clr.CastAs(
+                graphics.Attributes, IVehicleGfxAttributesCustom
+            )
 
     # endregion
 
     # region ConfigureVehicleGfxCustomIntervals
     def test_ConfigureVehicleGfxCustomIntervals(self):
-        gv: IGroundVehicle = clr.CastAs(
+        gv: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
         gv.Graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesCustom)
-        customAttributes: IVehicleGfxAttributesCustom = clr.CastAs(gv.Graphics.Attributes, IVehicleGfxAttributesCustom)
+        customAttributes: "IVehicleGfxAttributesCustom" = clr.CastAs(
+            gv.Graphics.Attributes, IVehicleGfxAttributesCustom
+        )
         self.ConfigureVehicleGfxCustomIntervals(customAttributes)
         (clr.Convert(gv, IStkObject)).Unload()
 
     def ConfigureVehicleGfxCustomIntervals(self, customAttributes: "IVehicleGfxAttributesCustom"):
-        customIntervals = customAttributes.Intervals
+        customIntervals: "IVehicleGfxIntervalsCollection" = customAttributes.Intervals
 
         # Add intervals
         customIntervals.Add("1 Jan 2012 12:00:00.000", "1 Jan 2012 14:00:00.000")
@@ -79,7 +83,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
 
     # region SetVehicleGfxToBasic
     def test_SetVehicleGfxToBasic(self):
-        gv: IGroundVehicle = clr.CastAs(
+        gv: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
@@ -92,18 +96,18 @@ class VehicleGfxVO(CodeSnippetsTestBase):
             graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesBasic)
 
             # Get IAgVeGfxAttributesBasic interface
-            basicAttributes: IVehicleGfxAttributesBasic = clr.CastAs(graphics.Attributes, IVehicleGfxAttributesBasic)
+            basicAttributes: "IVehicleGfxAttributesBasic" = clr.CastAs(graphics.Attributes, IVehicleGfxAttributesBasic)
 
     # endregion
 
     # region ConfigureVehicleGfxBasic
     def test_ConfigureVehicleGfxBasic(self):
-        gv: IGroundVehicle = clr.CastAs(
+        gv: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
         gv.Graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesBasic)
-        basicAttributes: IVehicleGfxAttributesBasic = clr.CastAs(gv.Graphics.Attributes, IVehicleGfxAttributesBasic)
+        basicAttributes: "IVehicleGfxAttributesBasic" = clr.CastAs(gv.Graphics.Attributes, IVehicleGfxAttributesBasic)
         self.ConfigureVehicleGfxBasic(basicAttributes)
         (clr.Convert(gv, IStkObject)).Unload()
 
@@ -119,11 +123,11 @@ class VehicleGfxVO(CodeSnippetsTestBase):
 
     # region SetVehicleGfxToAccessIntervals
     def test_SetVehicleGfxToAccessIntervals(self):
-        gv: IGroundVehicle = clr.CastAs(
+        gv: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        sat: ISatellite = clr.CastAs(
+        sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
         self.SetVehicleGfxToAccessIntervals(gv.Graphics)
@@ -136,21 +140,25 @@ class VehicleGfxVO(CodeSnippetsTestBase):
             graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesAccess)
 
             # Get IAgVeGfxAttributesAccess interface
-            accessAttributes: IVehicleGfxAttributesAccess = clr.CastAs(graphics.Attributes, IVehicleGfxAttributesAccess)
+            accessAttributes: "IVehicleGfxAttributesAccess" = clr.CastAs(
+                graphics.Attributes, IVehicleGfxAttributesAccess
+            )
 
     # endregion
 
     # region ConfigureVehicleGfxAccessIntervals
     def test_ConfigureVehicleGfxAccessIntervals(self):
-        gv: IGroundVehicle = clr.CastAs(
+        gv: "IGroundVehicle" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        sat: ISatellite = clr.CastAs(
+        sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
         gv.Graphics.SetAttributesType(AgEVeGfxAttributes.eAttributesAccess)
-        accessAttributes: IVehicleGfxAttributesAccess = clr.CastAs(gv.Graphics.Attributes, IVehicleGfxAttributesAccess)
+        accessAttributes: "IVehicleGfxAttributesAccess" = clr.CastAs(
+            gv.Graphics.Attributes, IVehicleGfxAttributesAccess
+        )
         self.ConfigureVehicleGfxAccessIntervals(accessAttributes)
         (clr.Convert(sat, IStkObject)).Unload()
         (clr.Convert(gv, IStkObject)).Unload()
@@ -167,7 +175,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
 
     # region ConfigureVehicleGfxVOElevationContours
     def test_ConfigureVehicleGfxVOElevationContours(self):
-        sat: ISatellite = clr.CastAs(
+        sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
 
@@ -184,7 +192,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
         gfxContours.NumOfDecimalDigits = 5
 
         # Add contour elevation level
-        elevation = gfxContours.Elevations.AddLevel(25.0)
+        elevation: "IVehicleGfxElevationsElement" = gfxContours.Elevations.AddLevel(25.0)
 
         # Configure contour elevation element
         elevation.Color = Color.Red
@@ -203,14 +211,14 @@ class VehicleGfxVO(CodeSnippetsTestBase):
 
     # region ConfigureVehicleGfxVOSunLighting
     def test_ConfigureVehicleGfxVOSunLighting(self):
-        sat: ISatellite = clr.CastAs(
+        sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
         self.ConfigureVehicleGfxVOSunLighting(sat.Graphics.Lighting)
         (clr.Convert(sat, IStkObject)).Unload()
 
     def ConfigureVehicleGfxVOSunLighting(self, lighting: "IVehicleGfxLighting"):
-        sunlight = lighting.Sunlight
+        sunlight: "IVehicleGfxLightingElement" = lighting.Sunlight
 
         sunlight.Visible = True
         sunlight.Color = Color.Red

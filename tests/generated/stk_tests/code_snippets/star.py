@@ -27,7 +27,7 @@ class Star(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Star.m_Object: IStar = clr.CastAs(
+        Star.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eStar, Star.m_DefaultName), IStar
         )
 
@@ -46,13 +46,13 @@ class Star(CodeSnippetsTestBase):
 
     def CreateStarOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Star
-        star: IStar = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "MyStar"), IStar)
+        star: "IStar" = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "MyStar"), IStar)
 
     # endregion
 
     # region DefineStarBasicProperties
     def test_DefineStarBasicProperties(self):
-        star: IStar = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario.Children[Star.m_DefaultName], IStar)
+        star: "IStar" = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario.Children[Star.m_DefaultName], IStar)
         CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("TimeUnit", "yr")
         CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("AngleUnit", "arcSec")
         self.DefineStarBasicProperties(star)
@@ -78,9 +78,9 @@ class Star(CodeSnippetsTestBase):
     @staticmethod
     def CreateStarFromStarDatabase(root: "IStkObjectRoot"):
         # Import object from database using Connect
-        command = "ImportFromDB * Star ScenarioCollection VisualMagnitude 0 1.0 RightAsc 200.0 230.0 Constellation ImportedFromStarDB"
+        command: str = "ImportFromDB * Star ScenarioCollection VisualMagnitude 0 1.0 RightAsc 200.0 230.0 Constellation ImportedFromStarDB"
         root.ExecuteCommand(command)
 
-        star: IStar = clr.CastAs(root.GetObjectFromPath("Star/Star-65474"), IStar)
+        star: "IStar" = clr.CastAs(root.GetObjectFromPath("Star/Star-65474"), IStar)
 
     # endregion

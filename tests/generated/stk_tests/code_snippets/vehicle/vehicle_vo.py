@@ -37,7 +37,7 @@ class VehicleVO(CodeSnippetsTestBase):
 
     # region ConfigureVeVOPass
     def test_ConfigureVeVOPass(self):
-        sat: ISatellite = clr.CastAs(
+        sat: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
         self.ConfigureVeVOPass(sat.VO.Pass)
@@ -61,7 +61,7 @@ class VehicleVO(CodeSnippetsTestBase):
 
     # region ConfigureVeVODropline
     def test_ConfigureVeVODropline(self):
-        satellite: ISatellite = clr.CastAs(
+        satellite: "ISatellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )

@@ -13,12 +13,12 @@ from ansys.stk.core.stkutil import *
 class PlatformLaserEnvAtmosLossBBLLHelper(object):
     # region Run
     def Run(self, laserEnv: "IPlatformLaserEnvironment"):
-        laserPropChan = laserEnv.PropagationChannel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.PropagationChannel
 
         laserPropChan.EnableAtmosphericLossModel = False
         Assert.assertFalse(laserPropChan.EnableAtmosphericLossModel)
 
-        laserAtmosLossModel = laserPropChan.AtmosphericLossModel
+        laserAtmosLossModel: "ILaserAtmosphericLossModel" = laserPropChan.AtmosphericLossModel
 
         def action1():
             laserPropChan.SetAtmosphericLossModel("Beer-Bouguer-Lambert Law")
@@ -36,14 +36,14 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
             laserPropChan.AtmosphericLossModel.Type,
         )
 
-        bbll: ILaserAtmosphericLossModelBeerBouguerLambertLaw = clr.CastAs(
+        bbll: "ILaserAtmosphericLossModelBeerBouguerLambertLaw" = clr.CastAs(
             laserPropChan.AtmosphericLossModel, ILaserAtmosphericLossModelBeerBouguerLambertLaw
         )
 
         bbll.CreateEvenlySpacedLayers(5, 100)
         Assert.assertTrue(bbll.EnableEvenlySpacedHeights)
         Assert.assertEqual(100, bbll.MaximumAltitude)
-        bbllLayerColl = bbll.AtmosphereLayers
+        bbllLayerColl: "IBeerBouguerLambertLawLayerCollection" = bbll.AtmosphereLayers
         Assert.assertEqual(5, bbllLayerColl.Count)
         Assert.assertEqual(100, bbllLayerColl[0].TopHeight)
         Assert.assertEqual(0, bbllLayerColl[0].ExtinctionCoefficient)
@@ -113,12 +113,12 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
 class PlatformLaserEnvAtmosLossModtranHelper(object):
     # region Run
     def Run(self, laserEnv: "IPlatformLaserEnvironment"):
-        laserPropChan = laserEnv.PropagationChannel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.PropagationChannel
 
         laserPropChan.EnableAtmosphericLossModel = False
         Assert.assertFalse(laserPropChan.EnableAtmosphericLossModel)
 
-        laserAtmosLossModel = laserPropChan.AtmosphericLossModel
+        laserAtmosLossModel: "ILaserAtmosphericLossModel" = laserPropChan.AtmosphericLossModel
 
         def action6():
             laserPropChan.SetAtmosphericLossModel("MODTRAN-derived Lookup Table")
@@ -142,7 +142,7 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
             laserPropChan.AtmosphericLossModel.Type,
         )
 
-        modtran: IModtranLookupTablePropagationModel = clr.CastAs(
+        modtran: "IModtranLookupTablePropagationModel" = clr.CastAs(
             laserPropChan.AtmosphericLossModel, IModtranLookupTablePropagationModel
         )
 
@@ -208,12 +208,12 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
 class PlatformLaserEnvTropoScintLossHelper(object):
     # region Run
     def Run(self, laserEnv: "IPlatformLaserEnvironment"):
-        laserPropChan = laserEnv.PropagationChannel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.PropagationChannel
 
         laserPropChan.EnableTroposphericScintillationLossModel = False
         Assert.assertFalse(laserPropChan.EnableTroposphericScintillationLossModel)
 
-        laserTropoScint = laserPropChan.TroposphericScintillationLossModel
+        laserTropoScint: "ILaserTroposphericScintillationLossModel" = laserPropChan.TroposphericScintillationLossModel
 
         def action14():
             laserPropChan.SetTroposphericScintillationLossModel("ITU-R P1814")
@@ -236,7 +236,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
             laserPropChan.TroposphericScintillationLossModel.Type,
         )
 
-        iturp1814: ILaserTroposphericScintillationLossModelITURP1814 = clr.CastAs(
+        iturp1814: "ILaserTroposphericScintillationLossModelITURP1814" = clr.CastAs(
             laserTropoScint, ILaserTroposphericScintillationLossModelITURP1814
         )
 
@@ -248,7 +248,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
             iturp1814.AtmosphericTurbulenceModel.Type,
         )
 
-        cnst: IAtmosphericTurbulenceModelConstant = clr.CastAs(
+        cnst: "IAtmosphericTurbulenceModelConstant" = clr.CastAs(
             iturp1814.AtmosphericTurbulenceModel, IAtmosphericTurbulenceModelConstant
         )
         cnst.ConstantRefractiveIndexStructureParameter = 99
@@ -262,7 +262,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
             iturp1814.AtmosphericTurbulenceModel.Type,
         )
 
-        huf: IAtmosphericTurbulenceModelHufnagelValley = clr.CastAs(
+        huf: "IAtmosphericTurbulenceModelHufnagelValley" = clr.CastAs(
             iturp1814.AtmosphericTurbulenceModel, IAtmosphericTurbulenceModelHufnagelValley
         )
         huf.WindSpeed = 98
@@ -278,7 +278,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
 class PlatformRF_Environment_EnvironmentalDataHelper(object):
     # region Run
     def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        propChan = rfEnv.PropagationChannel
+        propChan: "IPropagationChannel" = rfEnv.PropagationChannel
 
         propChan.EnableITU618Section2p5 = False
         Assert.assertFalse(propChan.EnableITU618Section2p5)
@@ -293,10 +293,10 @@ class PlatformRF_Environment_EnvironmentalDataHelper(object):
 class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
     # region Run
     def Run(self, rfEnv: "IPlatformRFEnvironment", root: "IStkObjectRoot"):
-        holdUnit = root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
+        holdUnit: str = root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
         root.UnitPreferences.SetCurrentUnit("Temperature", "degC")
 
-        propChan = rfEnv.PropagationChannel
+        propChan: "IPropagationChannel" = rfEnv.PropagationChannel
 
         propChan.EnableRainLoss = False
         Assert.assertFalse(propChan.EnableRainLoss)
@@ -310,13 +310,14 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
         Assert.assertTrue(propChan.EnableRainLoss)
 
         arSupportedRainLossModels = propChan.SupportedRainLossModels
+        rainLossModelName: str
         for rainLossModelName in arSupportedRainLossModels:
             propChan.SetRainLossModel(rainLossModelName)
-            rainLossModel = propChan.RainLossModel
+            rainLossModel: "IRainLossModel" = propChan.RainLossModel
             Assert.assertEqual(rainLossModelName, rainLossModel.Name)
             if rainLossModelName == "Crane 1985":
                 Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeCrane1985, rainLossModel.Type)
-                crane85: IRainLossModelCrane1985 = clr.CastAs(rainLossModel, IRainLossModelCrane1985)
+                crane85: "IRainLossModelCrane1985" = clr.CastAs(rainLossModel, IRainLossModelCrane1985)
                 crane85.SurfaceTemperature = -100
                 Assert.assertEqual(-100, crane85.SurfaceTemperature)
                 crane85.SurfaceTemperature = 100
@@ -336,7 +337,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
                     Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeScriptPlugin, rainLossModel.Type)
-                    scriptPlugin: IRainLossModelScriptPlugin = clr.CastAs(rainLossModel, IRainLossModelScriptPlugin)
+                    scriptPlugin: "IRainLossModelScriptPlugin" = clr.CastAs(rainLossModel, IRainLossModelScriptPlugin)
 
                     def action19():
                         scriptPlugin.Filename = r"C:\bogus.vbs"
@@ -352,7 +353,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "CCIR 1983":
                 Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeCCIR1983, rainLossModel.Type)
-                ccir83: IRainLossModelCCIR1983 = clr.CastAs(rainLossModel, IRainLossModelCCIR1983)
+                ccir83: "IRainLossModelCCIR1983" = clr.CastAs(rainLossModel, IRainLossModelCCIR1983)
                 ccir83.SurfaceTemperature = -100
                 Assert.assertEqual(-100, ccir83.SurfaceTemperature)
                 ccir83.SurfaceTemperature = 100
@@ -370,7 +371,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "Crane 1982":
                 Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeCrane1982, rainLossModel.Type)
-                crane82: IRainLossModelCrane1982 = clr.CastAs(rainLossModel, IRainLossModelCrane1982)
+                crane82: "IRainLossModelCrane1982" = clr.CastAs(rainLossModel, IRainLossModelCrane1982)
                 crane82.SurfaceTemperature = -100
                 Assert.assertEqual(-100, crane82.SurfaceTemperature)
                 crane82.SurfaceTemperature = 100
@@ -388,7 +389,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-10":
                 Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeITURP618_10, rainLossModel.Type)
-                itu618_10: IRainLossModelITURP618_10 = clr.CastAs(rainLossModel, IRainLossModelITURP618_10)
+                itu618_10: "IRainLossModelITURP618_10" = clr.CastAs(rainLossModel, IRainLossModelITURP618_10)
                 itu618_10.SurfaceTemperature = -100
                 Assert.assertEqual(-100, itu618_10.SurfaceTemperature)
                 itu618_10.SurfaceTemperature = 100
@@ -410,7 +411,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-12":
                 Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeITURP618_12, rainLossModel.Type)
-                itu618_12: IRainLossModelITURP618_12 = clr.CastAs(rainLossModel, IRainLossModelITURP618_12)
+                itu618_12: "IRainLossModelITURP618_12" = clr.CastAs(rainLossModel, IRainLossModelITURP618_12)
                 itu618_12.SurfaceTemperature = -100
                 Assert.assertEqual(-100, itu618_12.SurfaceTemperature)
                 itu618_12.SurfaceTemperature = 100
@@ -432,7 +433,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-13":
                 Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeITURP618_13, rainLossModel.Type)
-                itu618_13: IRainLossModelITURP618_13 = clr.CastAs(rainLossModel, IRainLossModelITURP618_13)
+                itu618_13: "IRainLossModelITURP618_13" = clr.CastAs(rainLossModel, IRainLossModelITURP618_13)
 
                 itu618_13.EnableITU1510 = False
                 Assert.assertFalse(itu618_13.EnableITU1510)
@@ -517,11 +518,11 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 # region PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper
 class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
     def Run(self, rfEnv: "IPlatformRFEnvironment", root: "IStkObjectRoot"):
-        holdUnit = root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
+        holdUnit: str = root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
         root.UnitPreferences.SetCurrentUnit("Temperature", "degC")
         root.UnitPreferences.SetCurrentUnit("MassUnit", "g")
 
-        propChan = rfEnv.PropagationChannel
+        propChan: "IPropagationChannel" = rfEnv.PropagationChannel
 
         arSupportedCFFLM = propChan.SupportedCloudsAndFogFadingLossModels
         Assert.assertEqual(2, Array.Length(arSupportedCFFLM))
@@ -540,7 +541,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         TryCatchAssertBlock.ExpectedException("Invalid model name", action38)
 
         propChan.SetCloudsAndFogFadingLossModel("ITU-R P840-7")
-        cfflm = propChan.CloudsAndFogFadingLossModel
+        cfflm: "ICloudsAndFogFadingLossModel" = propChan.CloudsAndFogFadingLossModel
         Assert.assertEqual("ITU-R P840-7", cfflm.Name)
         Assert.assertEqual(AgECloudsAndFogFadingLossModelType.eCloudsAndFogFadingLossModelP840_7Type, cfflm.Type)
         self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, ICloudsAndFogFadingLossModelP840_7))
@@ -889,16 +890,16 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 # region PlatformRF_Environment_AtmosphericAbsorptionHelper
 class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
     def __init__(self, root: "IStkObjectRoot"):
-        self._root = root
+        self._root: "IStkObjectRoot" = root
 
     # endregion
 
     def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        holdUnit = self._root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
+        holdUnit: str = self._root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
         self._root.UnitPreferences.SetCurrentUnit("Temperature", "degC")
 
-        propChan = rfEnv.PropagationChannel
-        atmosAbsorb = propChan.AtmosAbsorptionModel
+        propChan: "IPropagationChannel" = rfEnv.PropagationChannel
+        atmosAbsorb: "IAtmosphericAbsorptionModel" = propChan.AtmosAbsorptionModel
 
         propChan.EnableAtmosAbsorption = False
         Assert.assertFalse(propChan.EnableAtmosAbsorption)
@@ -912,9 +913,10 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertTrue(propChan.EnableAtmosAbsorption)
 
         supportedAtmosAbsorptionModels = propChan.SupportedAtmosAbsorptionModels
+        aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
             propChan.SetAtmosAbsorptionModel(aaModelName)
-            aaModel = propChan.AtmosAbsorptionModel
+            aaModel: "IAtmosphericAbsorptionModel" = propChan.AtmosAbsorptionModel
             Assert.assertEqual(aaModelName, aaModel.Name)
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(
@@ -1139,15 +1141,15 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 # region PlatformRF_Environment_UrbanAndTerrestrialHelper
 class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
     def __init__(self, root: "IStkObjectRoot"):
-        self._root = root
+        self._root: "IStkObjectRoot" = root
 
     # endregion
 
     def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        holdUnit = self._root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
+        holdUnit: str = self._root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
         self._root.UnitPreferences.SetCurrentUnit("Temperature", "degC")
 
-        propChan = rfEnv.PropagationChannel
+        propChan: "IPropagationChannel" = rfEnv.PropagationChannel
 
         propChan.EnableUrbanTerrestrialLoss = False
         Assert.assertFalse(propChan.EnableUrbanTerrestrialLoss)
@@ -1161,9 +1163,10 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
         Assert.assertTrue(propChan.EnableUrbanTerrestrialLoss)
 
         supportedUrbTerrModels = propChan.SupportedUrbanTerrestrialLossModels
+        utModelName: str
         for utModelName in supportedUrbTerrModels:
             propChan.SetUrbanTerrestrialLossModel(utModelName)
-            utModel = propChan.UrbanTerrestrialLossModel
+            utModel: "IUrbanTerrestrialLossModel" = propChan.UrbanTerrestrialLossModel
             Assert.assertEqual(utModelName, utModel.Name)
             if utModelName == "Two Ray":
                 Assert.assertEqual(AgEUrbanTerrestrialLossModelType.eUrbanTerrestrialLossModelTypeTwoRay, utModel.Type)
@@ -1218,6 +1221,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
     def Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(self, wisRT: "IUrbanTerrestrialLossModelWirelessInSiteRT"):
         arSupportedCalculationMethods = wisRT.SupportedCalculationMethods
         Assert.assertEqual(5, Array.Length(arSupportedCalculationMethods))
+        sCalcMethod: str
         for sCalcMethod in arSupportedCalculationMethods:
             if (
                 ((((sCalcMethod == "COST_HATA")) or ((sCalcMethod == "HATA"))) or ((sCalcMethod == "OPAR")))
@@ -1248,7 +1252,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
             TryCatchAssertBlock.ExpectedException("is invalid", action112)
 
-            geometryData = wisRT.GeometryData
+            geometryData: "IWirelessInSiteRTGeometryData" = wisRT.GeometryData
 
             def action113():
                 geometryData.Filename = TestBase.GetScenarioFile("Bogus.shp")
@@ -1370,15 +1374,15 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 # region PlatformRF_Environment_TropoScintillationHelper
 class PlatformRF_Environment_TropoScintillationHelper(object):
     def __init__(self, root: "IStkObjectRoot"):
-        self._root = root
+        self._root: "IStkObjectRoot" = root
 
     # endregion
 
     def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        holdUnit = self._root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
+        holdUnit: str = self._root.UnitPreferences.GetCurrentUnitAbbrv("Temperature")
         self._root.UnitPreferences.SetCurrentUnit("Temperature", "degC")
 
-        propChan = rfEnv.PropagationChannel
+        propChan: "IPropagationChannel" = rfEnv.PropagationChannel
 
         arSupportedTSFLM = propChan.SupportedTroposphericScintillationFadingLossModels
         Assert.assertEqual(2, Array.Length(arSupportedTSFLM))
@@ -1397,7 +1401,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         Assert.assertTrue(propChan.EnableTroposphericScintillationFadingLoss)
 
         propChan.SetTroposphericScintillationFadingLossModel("ITU-R P618-12")
-        tsflm = propChan.TroposphericScintillationFadingLossModel
+        tsflm: "ITroposphericScintillationFadingLossModel" = propChan.TroposphericScintillationFadingLossModel
         Assert.assertEqual("ITU-R P618-12", tsflm.Name)
         Assert.assertEqual(
             AgETroposphericScintillationFadingLossModelType.eTroposphericScintillationFadingLossModelP618_12Type,
@@ -1574,12 +1578,12 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
 # region PlatformRF_Environment_CustomModelsHelper
 class PlatformRF_Environment_CustomModelsHelper(object):
     def __init__(self, root: "IStkObjectRoot"):
-        self._root = root
+        self._root: "IStkObjectRoot" = root
 
     # endregion
 
     def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        propChan = rfEnv.PropagationChannel
+        propChan: "IPropagationChannel" = rfEnv.PropagationChannel
 
         self.Test_IAgCustomPropagationModel(propChan.CustomA)
         self.Test_IAgCustomPropagationModel(propChan.CustomB)

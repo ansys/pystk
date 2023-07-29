@@ -28,7 +28,7 @@ class LaunchVehicle(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
-        LaunchVehicle.m_Object: ILaunchVehicle = clr.CastAs(
+        LaunchVehicle.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
                 AgESTKObjectType.eLaunchVehicle, LaunchVehicle.m_DefaultName
             ),
@@ -53,7 +53,7 @@ class LaunchVehicle(CodeSnippetsTestBase):
 
     def CreateLaunchVehicleOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Launch vehicle
-        launchVehicle: ILaunchVehicle = clr.CastAs(
+        launchVehicle: "ILaunchVehicle" = clr.CastAs(
             root.CurrentScenario.Children.New(AgESTKObjectType.eLaunchVehicle, "MyLaunchVehicle"), ILaunchVehicle
         )
 
@@ -64,6 +64,6 @@ class LaunchVehicle(CodeSnippetsTestBase):
         self.DetermineIfTrajectoryIsSupported(LaunchVehicle.m_Object)
 
     def DetermineIfTrajectoryIsSupported(self, launchVehicle: "ILaunchVehicle"):
-        supported = launchVehicle.IsTrajectoryTypeSupported(AgEVePropagatorType.ePropagatorRealtime)
+        supported: bool = launchVehicle.IsTrajectoryTypeSupported(AgEVePropagatorType.ePropagatorRealtime)
 
     # endregion

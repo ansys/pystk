@@ -82,7 +82,7 @@ class EarlyBoundTests(TestBase):
         # Parallax
         TestBase.logger.WriteLine6("The current Parallax is: {0}", EarlyBoundTests.AG_SR.Parallax)
         EarlyBoundTests.AG_SR.Parallax = 2.0
-        parallax = Convert.ToDouble(EarlyBoundTests.AG_SR.Parallax)
+        parallax: float = Convert.ToDouble(EarlyBoundTests.AG_SR.Parallax)
         TestBase.logger.WriteLine6("The new Parallax is: {0}", EarlyBoundTests.AG_SR.Parallax)
         Assert.assertAlmostEqual(2.0, parallax, delta=1e-05)
 
@@ -91,7 +91,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AgEStarReferenceFrame.eStarReferenceFrameJ2000, EarlyBoundTests.AG_SR.ReferenceFrame)
 
         # Radial velocity
-        unit = (clr.Convert(EarlyBoundTests.AG_SR, IStkObject)).Root.UnitPreferences.GetCurrentUnitAbbrv("Distance")
+        unit: str = (clr.Convert(EarlyBoundTests.AG_SR, IStkObject)).Root.UnitPreferences.GetCurrentUnitAbbrv(
+            "Distance"
+        )
         (clr.Convert(EarlyBoundTests.AG_SR, IStkObject)).Root.UnitPreferences.SetCurrentUnit("Distance", "m")
         try:
             EarlyBoundTests.AG_SR.ProperMotionRadialVelocity = 10  # in meters
@@ -125,7 +127,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        starObject: IStkObject = clr.CastAs(EarlyBoundTests.AG_SR, IStkObject)
+        starObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SR, IStkObject)
         oHelper.Run(starObject)
         oHelper.TestObjectFilesArray(starObject.ObjectFiles)
 
@@ -135,7 +137,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- BEGIN -----")
-        gfx = EarlyBoundTests.AG_SR.Graphics
+        gfx: "IStarGraphics" = EarlyBoundTests.AG_SR.Graphics
         Assert.assertIsNotNone(gfx)
         # IsObjectGraphicsVisible
         TestBase.logger.WriteLine4("The current IsObjectGraphicsVisible is: {0}", gfx.IsObjectGraphicsVisible)
@@ -150,7 +152,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new Color is: {0}", gfx.Color)
         AssertEx.AreEqual(Color.FromArgb(6636321), gfx.Color)
         # Marker Style
-        scenario: IScenario = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
+        scenario: "IScenario" = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
         arMarkers = scenario.VO.AvailableMarkerTypes()
         TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.MarkerStyle)
         gfx.MarkerStyle = str(arMarkers[1])
@@ -160,6 +162,7 @@ class EarlyBoundTests(TestBase):
         gfx.Inherit = True
         TestBase.logger.WriteLine4("The new Inherit flag is: {0}", gfx.Inherit)
         Assert.assertEqual(True, gfx.Inherit)
+        bCaught: bool = False
         try:
             bCaught = False
             gfx.LabelVisible = True
@@ -190,7 +193,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
-        vo = EarlyBoundTests.AG_SR.VO
+        vo: "IStarVO" = EarlyBoundTests.AG_SR.VO
         Assert.assertIsNotNone(vo)
         # InertialPositionVisible
         TestBase.logger.WriteLine4("The current InertialPositionVisible flag is: {0}", vo.InertialPositionVisible)
@@ -213,6 +216,7 @@ class EarlyBoundTests(TestBase):
         vo.InheritFrom2dGfx = True
         TestBase.logger.WriteLine4("The new InheritFrom2dGfx flag is: {0}", vo.InheritFrom2dGfx)
         Assert.assertEqual(True, vo.InheritFrom2dGfx)
+        bCaught: bool = False
         try:
             bCaught = False
             vo.SubStarLabelVisible = True

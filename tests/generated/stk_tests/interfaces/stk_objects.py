@@ -21,7 +21,7 @@ class LinkToObjectHelper(object):
         # IsIntrinsic
         self.m_logger.WriteLine4("\tCurrent IsIntrinsic flag is: {0}", oLink.IsIntrinsic)
         # LinkedObject
-        oObject = oLink.LinkedObject
+        oObject: "STKObjects.IStkObject" = oLink.LinkedObject
         if oObject != None:
             self.m_logger.WriteLine7("\t{0} is linked to: {1}", strObjectName, oObject.Path)
 
@@ -32,7 +32,7 @@ class LinkToObjectHelper(object):
         arObjects = oLink.AvailableObjects
         self.m_logger.WriteLine3("\tAvailable Objects array contains: {0} elements", Array.Length(arObjects))
         if Array.Length(arObjects) > 0:
-            strObject = str(arObjects[0])
+            strObject: str = str(arObjects[0])
             self.m_logger.WriteLine7("\t\tAvailable object {0} is: {1}", 0, strObject)
             # BindTo
             oLink.BindTo(strObject)
@@ -75,7 +75,7 @@ class STKObjectHelper(object):
         Assert.assertIsNotNone(oObject)
         self.m_logger.WriteLine("----- STK OBJECT TEST ----- BEGIN -----")
         # InstanceName
-        strValue = oObject.InstanceName
+        strValue: str = oObject.InstanceName
         self.m_logger.WriteLine5("\tThe current InstanceName is: {0}", oObject.InstanceName)
         oObject.InstanceName = "Instance"
         self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.InstanceName)
@@ -122,7 +122,7 @@ class STKObjectHelper(object):
         oObject.Export(TestBase.GetScenarioFile("Export", "ExportedObject"))
         oObject.InstanceName = strValue
         # Parent
-        oParent = oObject.Parent
+        oParent: "IStkObject" = oObject.Parent
         Assert.assertIsNotNone(oParent)
         self.m_logger.WriteLine7("\tThe parent object for {0} is {1}", oObject.InstanceName, oParent.InstanceName)
         # DataProviders
@@ -135,7 +135,7 @@ class STKObjectHelper(object):
         if oObject.IsObjectCoverageSupported():
             self.m_logger.WriteLine5("\tThe {0} supports an ObjectCoverage.", oObject.InstanceName)
             # ObjectCoverage
-            oCoverage = oObject.ObjectCoverage
+            oCoverage: "IStkObjectCoverage" = oObject.ObjectCoverage
             Assert.assertIsNotNone(oCoverage)
             # DataProviders
             oDPHelper.Run(oCoverage.DataProviders)
@@ -144,24 +144,24 @@ class STKObjectHelper(object):
             self.m_logger.WriteLine5("\tThe {0} does not support an ObjectCoverage.", oObject.InstanceName)
 
             def action4():
-                oCoverage = oObject.ObjectCoverage
+                oCoverage: "IStkObjectCoverage" = oObject.ObjectCoverage
 
             TryCatchAssertBlock.DoAssert("", action4)
 
         # create an additional Satellite
-        oSatellite = clr.Convert(
+        oSatellite: "ISatellite" = clr.Convert(
             oObject.Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "MIR"), ISatellite
         )
         Assert.assertIsNotNone(oSatellite)
         oSatellite.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
         Assert.assertEqual(AgEVePropagatorType.ePropagatorTwoBody, oSatellite.PropagatorType)
-        oPropagator = clr.Convert(oSatellite.Propagator, IVehiclePropagatorTwoBody)
+        oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.Propagator, IVehiclePropagatorTwoBody)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.Propagate()
         if oObject.IsAccessSupported():
             self.m_logger.WriteLine5("\tThe {0} supports an Access.", oObject.InstanceName)
             # GetAccess
-            oAccess = oObject.GetAccess((clr.Convert(oSatellite, IStkObject)).Path)
+            oAccess: "IStkAccess" = oObject.GetAccess((clr.Convert(oSatellite, IStkObject)).Path)
             Assert.assertIsNotNone(oAccess)
             oAHelper = StkAccessHelper()
             oAHelper.Run(oAccess, oObject.Root)
@@ -171,37 +171,37 @@ class STKObjectHelper(object):
             Assert.assertIsNotNone(oAccess)
             oAHelper.Run(oAccess, oObject.Root)
 
-            acc = oObject.AccessConstraints
+            acc: "IAccessConstraintCollection" = oObject.AccessConstraints
             Assert.assertIsNotNone(acc)
-            opa = oObject.CreateOnePointAccess("Satellite/MIR")
+            opa: "IOnePointAccess" = oObject.CreateOnePointAccess("Satellite/MIR")
             Assert.assertIsNotNone(opa)
 
         else:
             self.m_logger.WriteLine5("\tThe {0} does not support an Access.", oObject.InstanceName)
 
             def action5():
-                oAccess = oObject.GetAccess((clr.Convert(oSatellite, IStkObject)).Path)
+                oAccess: "IStkAccess" = oObject.GetAccess((clr.Convert(oSatellite, IStkObject)).Path)
 
             TryCatchAssertBlock.DoAssert("", action5)
 
             def action6():
-                oAccess = oObject.GetAccessToObject(clr.CastAs(oSatellite, IStkObject))
+                oAccess: "IStkAccess" = oObject.GetAccessToObject(clr.CastAs(oSatellite, IStkObject))
 
             TryCatchAssertBlock.DoAssert("", action6)
 
             def action7():
-                acc = oObject.AccessConstraints
+                acc: "IAccessConstraintCollection" = oObject.AccessConstraints
 
             TryCatchAssertBlock.DoAssert("", action7)
 
             def action8():
-                opa = oObject.CreateOnePointAccess("Satellite/MIR")
+                opa: "IOnePointAccess" = oObject.CreateOnePointAccess("Satellite/MIR")
 
             TryCatchAssertBlock.DoAssert("", action8)
 
         oObject.Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "MIR")
         # Root
-        oRoot = oObject.Root
+        oRoot: "IStkObjectRoot" = oObject.Root
         Assert.assertIsNotNone(oRoot)
 
         # Object Files
@@ -247,7 +247,7 @@ class STKObjectHelper(object):
 
     # region OnePtAccess
     def OnePtAccess(self, oObj: "IStkObject"):
-        onePtAccess = oObj.CreateOnePointAccess("Satellite/Satellite1")
+        onePtAccess: "IOnePointAccess" = oObj.CreateOnePointAccess("Satellite/Satellite1")
         onePtAccess.StartTime = "1 Jul 2007 00:00:00.000"
         Assert.assertEqual("1 Jul 2007 00:00:00.000", onePtAccess.StartTime)
         onePtAccess.StopTime = "1 Jul 2007 01:00:00.000"
@@ -256,26 +256,30 @@ class STKObjectHelper(object):
         Assert.assertEqual(120, onePtAccess.StepSize)
         onePtAccess.SummaryOption = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
         Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed, onePtAccess.SummaryOption)
-        results = onePtAccess.Compute()
+        result: "IOnePointAccessResult" = None
+        results: "IOnePointAccessResultCollection" = onePtAccess.Compute()
 
-        i = 0
+        i: int = 0
         while i < results.Count:
             result = results[i]
             self.m_logger.WriteLine2(result.Time)
             self.m_logger.WriteLine2(result.AccessSatisfied)
 
-            j = 0
+            j: int = 0
             while j < result.Constraints.Count:
-                constraint = result.Constraints[j]
+                constraint: "IOnePointAccessConstraint" = result.Constraints[j]
                 self.dumpOnePtAccessConstraint(constraint)
 
                 j += 1
 
             i += 1
 
+        r: "IOnePointAccessResult"
+
         for r in results:
             self.m_logger.WriteLine2(r.Time)
             self.m_logger.WriteLine2(r.AccessSatisfied)
+            c: "IOnePointAccessConstraint"
             for c in r.Constraints:
                 self.dumpOnePtAccessConstraint(c)
 
@@ -317,6 +321,7 @@ class STKObjectHelper(object):
 
         Assert.assertNotEqual(0, Array.Length(arrFiles))
         self.m_logger.WriteLine("Object Files are...")
+        file: typing.Any
         for file in arrFiles:
             self.m_logger.WriteLine(("\t" + str(file)))
 
@@ -324,13 +329,13 @@ class STKObjectHelper(object):
     def Children(self, oObject: "IStkObject"):
         Assert.assertIsNotNone(oObject)
         # Children
-        oCollection = oObject.Children
+        oCollection: "IStkObjectCollection" = oObject.Children
         Assert.assertIsNotNone(oCollection)
         if oCollection.Count > 0:
-            x = oCollection[0]
-            name = x.InstanceName
-            y = oCollection.GetItemByIndex(0)
-            z = oCollection.GetItemByName(name)
+            x: "IStkObject" = oCollection[0]
+            name: str = x.InstanceName
+            y: "IStkObject" = oCollection.GetItemByIndex(0)
+            z: "IStkObject" = oCollection.GetItemByName(name)
             Assert.assertEqual(x.InstanceName, y.InstanceName)
             Assert.assertEqual(x.InstanceName, z.InstanceName)
 
@@ -367,11 +372,11 @@ class STKObjectHelper(object):
             )
             or (oObject.ClassType == AgESTKObjectType.eTarget)
         ) or (oObject.ClassType == AgESTKObjectType.eSubmarine):
-            found = False
+            found: bool = False
 
-            j = 0
+            j: int = 0
             while j < Array.Length(SupportedChildTypes):
-                objType = clr.Convert(int(SupportedChildTypes[j]), AgESTKObjectType)
+                objType: "AgESTKObjectType" = clr.Convert(int(SupportedChildTypes[j]), AgESTKObjectType)
                 if objType == AgESTKObjectType.eSensor:
                     found = True
 
@@ -384,7 +389,7 @@ class STKObjectHelper(object):
                 )
 
             # New
-            oSensor = oCollection.New(AgESTKObjectType.eSensor, "Radar")
+            oSensor: "IStkObject" = oCollection.New(AgESTKObjectType.eSensor, "Radar")
             Assert.assertIsNotNone(oSensor)
             # Unload
             oCollection.Unload(AgESTKObjectType.eSensor, "Radar")
@@ -400,33 +405,37 @@ class STKObjectHelper(object):
             TryCatchAssertBlock.DoAssert("", action9)
 
         # _NewEnum
+        oElement: "IStkObject"
+        # _NewEnum
         for oElement in oCollection:
             self.m_logger.WriteLine5("\t\tChildren: {0}", oElement.InstanceName)
 
         if oCollection.Count > 0:
             # Item
-            oEObject = oCollection[0]
+            oEObject: "IStkObject" = oCollection[0]
             Assert.assertIsNotNone(oEObject)
 
         # GetElements
-        oOECollection = oCollection.GetElements(AgESTKObjectType.eSensor)
+        oOECollection: "IStkObjectElementCollection" = oCollection.GetElements(AgESTKObjectType.eSensor)
         Assert.assertIsNotNone(oOECollection)
         # Count
         self.m_logger.WriteLine3("\tThe ObjectElement collection contains: {0}", oOECollection.Count)
+        # _NewEnum
+        oElement: "IStkObject"
         # _NewEnum
         for oElement in oOECollection:
             self.m_logger.WriteLine5("\t\tElement: {0}", oElement.InstanceName)
 
         if oOECollection.Count > 0:
             # Item
-            oEObject = oOECollection[0]
+            oEObject: "IStkObject" = oOECollection[0]
             Assert.assertIsNotNone(oEObject)
 
     # endregion
 
     # region Metadata
     def Metadata(self, oObject: "IStkObject"):
-        metadata = oObject.Metadata
+        metadata: "IKeyValueCollection" = oObject.Metadata
 
         Assert.assertEqual(0, metadata.Count)
 
@@ -470,6 +479,8 @@ class STKObjectHelper(object):
         Assert.assertEqual("Changed2", metadata["Key2"])
         Assert.assertEqual("Changed3", metadata["Key3"])
 
+        key: str
+
         for key in metadata:
             Assert.assertTrue((len(metadata[key]) > 5))
             Assert.assertTrue(metadata.Contains(key))
@@ -478,9 +489,9 @@ class STKObjectHelper(object):
         keys = metadata.Keys
         Assert.assertEqual(metadata.Count, Array.Length(keys))
 
-        i = 0
+        i: int = 0
         while i < Array.Length(keys):
-            key = clr.Convert(keys[i], str)
+            key: str = clr.Convert(keys[i], str)
             Assert.assertTrue((len(metadata[key]) > 5))
             Assert.assertTrue(metadata.Contains(key))
 
@@ -489,7 +500,7 @@ class STKObjectHelper(object):
         Assert.assertFalse(metadata.Contains("Key4"))
 
         def action13():
-            dummy = metadata["Key4"]
+            dummy: str = metadata["Key4"]
 
         TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action13)
 
@@ -519,12 +530,15 @@ class DataProviderCollectionHelper(object):
         # Count
         self.m_logger.WriteLine3("\tThe DataProvider collection contains: {0} elements.", oCollection.Count)
         if oCollection.Count > 0:
-            x = oCollection[0]
-            name = x.Name
-            y = oCollection.GetItemByIndex(0)
-            z = oCollection.GetItemByName(name)
+            x: "IDataProviderInfo" = oCollection[0]
+            name: str = x.Name
+            y: "IDataProviderInfo" = oCollection.GetItemByIndex(0)
+            z: "IDataProviderInfo" = oCollection.GetItemByName(name)
             Assert.assertEqual(x.Name, y.Name)
             Assert.assertEqual(x.Name, z.Name)
+
+        # _NewEnum
+        oDPInfo: "IDataProviderInfo"
 
         # _NewEnum
         for oDPInfo in oCollection:
@@ -534,7 +548,7 @@ class DataProviderCollectionHelper(object):
 
             Assert.assertNotEqual(0, int(oDPInfo.Type))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oCollection.Count:
             if oCollection[iIndex].IsGroup():
                 self.DataProviderGroup(clr.CastAs(oCollection[iIndex], IDataProviderGroup), oCollection[iIndex].Name)
@@ -581,17 +595,19 @@ class DataProviderCollectionHelper(object):
         self.m_logger.WriteLine5("----- DATA PROVIDER GROUP TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oGroup)
         # Group
-        oProviders = oGroup.Group
+        oProviders: "IDataProviders" = oGroup.Group
         Assert.assertIsNotNone(oProviders)
         # Count
         self.m_logger.WriteLine3("\tThe DataProvider collection contains: {0} elements.", oProviders.Count)
+        # _NewEnum
+        oDPInfo: "IDataProviderInfo"
         # _NewEnum
         for oDPInfo in oProviders:
             self.m_logger.WriteLine8(
                 "\t\tElement: Name = {0}, Type = {1}, IsGroup = {2}", oDPInfo.Name, oDPInfo.Type, oDPInfo.IsGroup()
             )
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oProviders.Count:
             if oProviders[iIndex].IsGroup():
                 Assert.fail("An unexpected group of DataProviders!")
@@ -623,9 +639,11 @@ class DataProviderCollectionHelper(object):
         self.m_logger.WriteLine5("\tThe new PreData is: {0}", oProvider.PreData)
         Assert.assertEqual("", oProvider.PreData)
         # Elements
-        oElements = oProvider.Elements
+        oElements: "IDataProviderElements" = oProvider.Elements
         Assert.assertIsNotNone(oElements)
         self.m_logger.WriteLine3("\tThe current Elements collection contains: {0} elements.", oElements.Count)
+        # _NewEnum
+        oElement: "IDataProviderElement"
         # _NewEnum
         for oElement in oElements:
             self.m_logger.WriteLine8(
@@ -635,10 +653,10 @@ class DataProviderCollectionHelper(object):
                 oElement.DimensionName,
             )
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oElements.Count:
-            strElementName = oElements[iIndex].Name
-            eType = oElements[iIndex].Type
+            strElementName: str = oElements[iIndex].Name
+            eType: "AgEDataPrvElementType" = oElements[iIndex].Type
             Assert.assertFalse(String.IsNullOrEmpty(oElements[iIndex].DimensionName))
 
             iIndex += 1
@@ -651,6 +669,9 @@ class DataProviderCollectionHelper(object):
     def DataProviderFixed(self, oProvider: "IDataProviderFixed", strName: str):
         self.m_logger.WriteLine5("----- DATA PROVIDER FIXED TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oProvider)
+
+        # Exec
+        oResult: "IDataProviderResult" = None
         if (clr.CastAs(oProvider, IDataProvider)).IsValid:
             oResult = oProvider.Exec()
             Assert.assertIsNotNone(oResult)
@@ -659,7 +680,7 @@ class DataProviderCollectionHelper(object):
             self.DrResult(oResult)
             arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.DataSets.Count)
 
-            i = 0
+            i: int = 0
             while i < oResult.DataSets.Count:
                 arCols[i] = oResult.DataSets[i].ElementName
 
@@ -713,11 +734,13 @@ class DataProviderCollectionHelper(object):
         # Count
         self.m_logger.WriteLine3("\t\tThe SubSection collection contains: {0} elements.", oCollection.Count)
         # _NewEnum
+        oSection: "IDataProviderResultSubSection"
+        # _NewEnum
         for oSection in oCollection:
             # Title
             self.m_logger.WriteLine5("\t\t\tElement: Title = {0}", oSection.Title)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < oCollection.Count:
             # Intervals
             self.DrResultIntervals(oCollection[iIndex].Intervals)
@@ -731,6 +754,8 @@ class DataProviderCollectionHelper(object):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\t\tThe Interval collection contains: {0} elements.", oCollection.Count)
+        # _NewEnum
+        oInterval: "IDataProviderResultInterval"
         # _NewEnum
         for oInterval in oCollection:
             # StartTime, StopTime
@@ -754,6 +779,8 @@ class DataProviderCollectionHelper(object):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\t\tThe DataSet collection contains: {0} elements.", oCollection.Count)
+        # _NewEnum
+        oSet: "IDataProviderResultDataSet"
         # _NewEnum
         for oSet in oCollection:
             # ElementName, ElementType, Count, UnitType
@@ -781,6 +808,8 @@ class DataProviderCollectionHelper(object):
         # Count
         self.m_logger.WriteLine3("\t\tThe TextMessages collection contains: {0} elements.", oCollection.Count)
         # _NewEnum
+        strText: str
+        # _NewEnum
         for strText in oCollection:
             self.m_logger.WriteLine5("\t\t\tElement: {0}", strText)
 
@@ -798,8 +827,11 @@ class DataProviderCollectionHelper(object):
     def DataProviderInterval(self, oProvider: "IDataProviderInterval", strName: str):
         self.m_logger.WriteLine5("----- DATA PROVIDER INTERVAL TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oProvider)
-        dtStart = "1 Jun 2004 12:00:00.00"
-        dtStop = "1 Jun 2004 13:00:00.00"
+        dtStart: typing.Any = "1 Jun 2004 12:00:00.00"
+        dtStop: typing.Any = "1 Jun 2004 13:00:00.00"
+
+        # Exec
+        oResult: "IDataProviderResult" = None
         if (clr.CastAs(oProvider, IDataProvider)).IsValid:
             # Exec
             oResult = oProvider.Exec(dtStart, dtStop)
@@ -808,7 +840,7 @@ class DataProviderCollectionHelper(object):
             self.DrResult(oResult)
             arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.DataSets.Count)
 
-            i = 0
+            i: int = 0
             while i < oResult.DataSets.Count:
                 arCols[i] = oResult.DataSets[i].ElementName
 
@@ -835,11 +867,13 @@ class DataProviderCollectionHelper(object):
         self.m_logger.WriteLine5("----- DATA PROVIDER TIMEVAR TEST ({0}) ----- BEGIN -----", strName)
         if strName != "User Supplied Data":
             Assert.assertIsNotNone(oProvider)
-            dtStart = "1 Jun 2004 12:00:00.00"
-            dtStop = "1 Jun 2004 13:00:00.00"
+            dtStart: typing.Any = "1 Jun 2004 12:00:00.00"
+            dtStop: typing.Any = "1 Jun 2004 13:00:00.00"
             # Exec
-            dp = clr.Convert(oProvider, IDataProvider)
+            dp: "IDataProvider" = clr.Convert(oProvider, IDataProvider)
             dp.PreData = "Missile/Missile1"
+
+            oResult: "IDataProviderResult" = None
             if (clr.CastAs(oProvider, IDataProvider)).IsValid:
                 oResult = oProvider.Exec(dtStart, dtStop, 240.0)
                 Assert.assertIsNotNone(oResult)
@@ -847,7 +881,7 @@ class DataProviderCollectionHelper(object):
                 self.DrResult(oResult)
                 arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.DataSets.Count)
 
-                i = 0
+                i: int = 0
                 while i < oResult.DataSets.Count:
                     arCols[i] = oResult.DataSets[i].ElementName
 
@@ -909,8 +943,8 @@ class StkAccessHelper(object):
         Assert.assertEqual(AgEAccessTimeType.eUserSpecAccessTime, oAccess.AccessTimePeriod)
         oAccess.ComputeAccess()
         # SpecifyAccessTimePeriod
-        dtStart = "1 Jul 1999 00:00:00.00"
-        dtStop = "1 Jul 1999 00:09:00.00"
+        dtStart: typing.Any = "1 Jul 1999 00:00:00.00"
+        dtStop: typing.Any = "1 Jul 1999 00:09:00.00"
         oAccess.SpecifyAccessTimePeriod(dtStart, dtStop)
         oAccess.ComputeAccess()
         if not TestBase.NoGraphicsMode:
@@ -1029,7 +1063,7 @@ class StkAccessHelper(object):
 
     # region Advanced
     def Advanced(self, oAccess: "IStkAccess"):
-        oAdvanced = oAccess.Advanced
+        oAdvanced: "IStkAccessAdvanced" = oAccess.Advanced
         Assert.assertIsNotNone(oAdvanced)
 
         # Event Detection
@@ -1212,11 +1246,11 @@ class StkAccessHelper(object):
 # region VODataDisplayHelper
 class VODataDisplayHelper(object):
     def __init__(self, oRoot: "IStkObjectRoot"):
-        self.m_bIsAccessRequired = None
-        self.m_bIsChain = None
+        self.m_bIsAccessRequired: bool = False
+        self.m_bIsChain: bool = False
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot = oRoot
+        self.m_oRoot: "IStkObjectRoot" = oRoot
 
     # endregion
 
@@ -1229,10 +1263,10 @@ class VODataDisplayHelper(object):
         # save IsChain flag
         self.m_bIsChain = bIsChain
         # Count
-        iSize = oDataCollection.Count
+        iSize: int = oDataCollection.Count
         self.m_logger.WriteLine3("The current Data Display collection contains: {0} elements.", iSize)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < iSize:
             self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oDataCollection[iIndex].Name)
 
@@ -1244,7 +1278,7 @@ class VODataDisplayHelper(object):
                 "After Remove(0) the Data Display collection contains: {0} elements.", oDataCollection.Count
             )
 
-            iIndex = 0
+            iIndex: int = 0
             while iIndex < oDataCollection.Count:
                 self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oDataCollection[iIndex].Name)
 
@@ -1261,7 +1295,7 @@ class VODataDisplayHelper(object):
         arAvailable = oDataCollection.AvailableData
         self.m_logger.WriteLine3("Available Data list contains: {0} elements", Array.Length(arAvailable))
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
             self.m_logger.WriteLine7("\tAvailable element {0} is: {1}", iIndex, arAvailable[iIndex])
 
@@ -1270,11 +1304,12 @@ class VODataDisplayHelper(object):
         self.m_oRoot.BeginUpdate()
         self.m_logger.WriteLine3("The current Data Display collection contains: {0} elements.", oDataCollection.Count)
 
-        iIndex = 0
+        iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
-            strAvailable = str(arAvailable[iIndex])
+            oDataDisp: "IVODataDisplayElement" = None
+            strAvailable: str = str(arAvailable[iIndex])
             if oDataCollection.IsPreDataRequired(strAvailable):
-                preData = "Missile/Missile1"
+                preData: str = "Missile/Missile1"
                 if strAvailable.startswith("Crdn") or ("EphemerisChooseAxes" == strAvailable):
                     preData = "Satellite/Satellite1 Body Axes"
 
@@ -1293,6 +1328,7 @@ class VODataDisplayHelper(object):
         # Count
         iSize = oDataCollection.Count
         self.m_logger.WriteLine3("The new Data Display collection contains: {0} elements.", iSize)
+        oElement: "IVODataDisplayElement"
         for oElement in oDataCollection:
             self.m_logger.WriteLine5("\tElement: {0}", oElement.Name)
 
@@ -1306,6 +1342,7 @@ class VODataDisplayHelper(object):
                 "After Remove(0) the Data Display collection contains: {0} elements.", oDataCollection.Count
             )
             Assert.assertEqual((iSize - 1), oDataCollection.Count)
+            oElement: "IVODataDisplayElement"
             for oElement in oDataCollection:
                 self.m_logger.WriteLine5("\tElement: {0}", oElement.Name)
 
@@ -1395,7 +1432,7 @@ class VODataDisplayHelper(object):
         arAvailableWindows = oVODataDisplayElement.AvailableWindows
         self.m_logger.WriteLine3("\t\tAvailable {0} Windows:", Array.Length(arAvailableWindows))
 
-        i = 0
+        i: int = 0
         while i < Array.Length(arAvailableWindows):
             self.m_logger.WriteLine6("\t\t\tWindow: {0}", arAvailableWindows[i])
 
@@ -1403,8 +1440,8 @@ class VODataDisplayHelper(object):
 
         Assert.assertEqual(2, Array.Length(arAvailableWindows))
 
-        sAll = "All"
-        sTitle = clr.Convert(arAvailableWindows[1], str)
+        sAll: str = "All"
+        sTitle: str = clr.Convert(arAvailableWindows[1], str)
         Assert.assertEqual(True, oVODataDisplayElement.IsDisplayedInWindow(sAll))
         Assert.assertEqual(False, oVODataDisplayElement.IsDisplayedInWindow(sTitle))
         oVODataDisplayElement.AddToWindow(sTitle)
@@ -1773,7 +1810,7 @@ class VODataDisplayHelper(object):
         Assert.assertIsNotNone(oDataDisplayElement)
         # TitleText
         self.m_logger.WriteLine5("\t\t\tThe current TitleText is: {0}", oDataDisplayElement.TitleText)
-        oldTitle = oDataDisplayElement.TitleText
+        oldTitle: str = oDataDisplayElement.TitleText
         oDataDisplayElement.TitleText = "foobar"
         self.m_logger.WriteLine5("\t\t\tThe new TitleText is: {0}", oDataDisplayElement.TitleText)
         Assert.assertEqual("foobar", oDataDisplayElement.TitleText)

@@ -39,7 +39,7 @@ class Connect(CodeSnippetsTestBase):
         self.ExecuteConnectCommand(CodeSnippetsTestBase.m_Root)
 
     def ExecuteConnectCommand(self, root: "IStkObjectRoot"):
-        result = root.ExecuteCommand("New / */Satellite JeffSAT")
+        result: "IExecCmdResult" = root.ExecuteCommand("New / */Satellite JeffSAT")
 
     # endregion
 
@@ -52,18 +52,20 @@ class Connect(CodeSnippetsTestBase):
         connectCommands = ["New / */Satellite MySatellite", "Graphics */Satellite/MySatellite SetColor red"]
 
         # ExecuteMultipleCommands expect a one dimensional array of Connect commands
-        result = root.ExecuteMultipleCommands(connectCommands, AgEExecMultiCmdResultAction.eExceptionOnError)
+        result: "IExecMultiCmdResult" = root.ExecuteMultipleCommands(
+            connectCommands, AgEExecMultiCmdResultAction.eExceptionOnError
+        )
 
     # endregion
 
     # region ExtractDataFromExecConnectResult
     def test_ExtractDataFromExecConnectResult(self):
-        result = CodeSnippetsTestBase.m_Root.ExecuteCommand("GetSTKVersion /")
+        result: "IExecCmdResult" = CodeSnippetsTestBase.m_Root.ExecuteCommand("GetSTKVersion /")
         self.ExtractDataFromExecConnectResult(result)
 
     def ExtractDataFromExecConnectResult(self, result: "IExecCmdResult"):
         if result.IsSucceeded:
-            i = 0
+            i: int = 0
             while i < result.Count:
                 Console.WriteLine(result[i])
 
@@ -75,14 +77,16 @@ class Connect(CodeSnippetsTestBase):
     def test_ExtractDataFromMultiExecConnectResult(self):
         obj = ["GetSTKVersion /"]
 
-        result = CodeSnippetsTestBase.m_Root.ExecuteMultipleCommands(obj, AgEExecMultiCmdResultAction.eContinueOnError)
+        result: "IExecMultiCmdResult" = CodeSnippetsTestBase.m_Root.ExecuteMultipleCommands(
+            obj, AgEExecMultiCmdResultAction.eContinueOnError
+        )
         self.ExtractDataFromMultiExecConnectResult(result)
 
     def ExtractDataFromMultiExecConnectResult(self, result: "IExecMultiCmdResult"):
-        i = 0
+        i: int = 0
         while i < result.Count:
             if result[i].IsSucceeded:
-                j = 0
+                j: int = 0
                 while j < result[i].Count:
                     Console.WriteLine(result[j])
 

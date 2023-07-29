@@ -14,11 +14,11 @@ class Event(TimelineCodeSnippetsTestBase):
 
     def DetermineIfEventOccursBeforeEpoch(self, provider: "IAnalysisWorkbenchProvider"):
         # The event you are interested in.
-        timeEvent1 = provider.Events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
+        timeEvent1: "ITimeToolEvent" = provider.Events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
 
         # The reference event you want to determine if event of interest happened before.
-        timeEvent2 = provider.Events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
-        occurrence2 = timeEvent2.FindOccurrence()
+        timeEvent2: "ITimeToolEvent" = provider.Events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
+        occurrence2: "ITimeToolEventFindOccurrenceResult" = timeEvent2.FindOccurrence()
         if occurrence2.IsValid:
             if timeEvent1.OccursBefore(occurrence2.Epoch):
                 Console.WriteLine("The time of maximum altitude happend before time of minimum altitude")
@@ -33,10 +33,10 @@ class Event(TimelineCodeSnippetsTestBase):
         self.DetermineTimeOfEvent(TestBase.Application)
 
     def DetermineTimeOfEvent(self, stkRoot: "IStkObjectRoot"):
-        provider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
-        timeEvent = provider.Events["PassIntervals.First.Start"]
+        provider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
+        timeEvent: "ITimeToolEvent" = provider.Events["PassIntervals.First.Start"]
 
-        occurrence = timeEvent.FindOccurrence()
+        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.FindOccurrence()
         if occurrence.IsValid:
             Console.WriteLine(("The first pass interval happened at: " + str(occurrence.Epoch)))
 
@@ -44,10 +44,12 @@ class Event(TimelineCodeSnippetsTestBase):
             Console.WriteLine("The first pass interval never occurred")
 
         # create a satellite with no ephem and find that there's no ocurrence of PassIntervals.First.Start
-        noEphemObj = stkRoot.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "NoEphem_FindOccurenceTest")
-        provider2 = noEphemObj.Vgt
-        timeEvent2 = provider2.Events["EphemerisStartTime"]
-        occurrence2 = timeEvent2.FindOccurrence()
+        noEphemObj: "IStkObject" = stkRoot.CurrentScenario.Children.New(
+            AgESTKObjectType.eSatellite, "NoEphem_FindOccurenceTest"
+        )
+        provider2: "IAnalysisWorkbenchProvider" = noEphemObj.Vgt
+        timeEvent2: "ITimeToolEvent" = provider2.Events["EphemerisStartTime"]
+        occurrence2: "ITimeToolEventFindOccurrenceResult" = timeEvent2.FindOccurrence()
 
         Assert.assertFalse(occurrence2.IsValid)
 
@@ -60,17 +62,17 @@ class Event(TimelineCodeSnippetsTestBase):
         self.CreateFixedEpochEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateFixedEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
-        timeEvent = provider.Events.Factory.CreateEventEpoch("MyEventFixed", "MyDescription")
-        asEpoch: ITimeToolEventEpoch = clr.CastAs(timeEvent, ITimeToolEventEpoch)
+        timeEvent: "ITimeToolEvent" = provider.Events.Factory.CreateEventEpoch("MyEventFixed", "MyDescription")
+        asEpoch: "ITimeToolEventEpoch" = clr.CastAs(timeEvent, ITimeToolEventEpoch)
 
         # Epoch can be set explicitly (Uses current DateTime unit preference, this code snippet assumes UTCG)
         asEpoch.Epoch = "1 May 2016 04:00:00.000"
 
         # Epoch can also be set with the epoch of another event
-        startTime = provider.Events["AvailabilityStartTime"].FindOccurrence()
+        startTime: "ITimeToolEventFindOccurrenceResult" = provider.Events["AvailabilityStartTime"].FindOccurrence()
         asEpoch.Epoch = startTime.Epoch
 
-        occurrence = timeEvent.FindOccurrence()
+        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.FindOccurrence()
         if occurrence.IsValid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.Epoch)))
 
@@ -81,15 +83,17 @@ class Event(TimelineCodeSnippetsTestBase):
         self.CreateFixedTimeOffsetEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateFixedTimeOffsetEvent(self, provider: "IAnalysisWorkbenchProvider"):
-        timeEvent = provider.Events.Factory.CreateEventTimeOffset("MyEventTimeOffset", "MyDescription")
-        asTimeOffset: ITimeToolEventTimeOffset = clr.CastAs(timeEvent, ITimeToolEventTimeOffset)
+        timeEvent: "ITimeToolEvent" = provider.Events.Factory.CreateEventTimeOffset(
+            "MyEventTimeOffset", "MyDescription"
+        )
+        asTimeOffset: "ITimeToolEventTimeOffset" = clr.CastAs(timeEvent, ITimeToolEventTimeOffset)
 
         asTimeOffset.ReferenceTimeInstant = provider.Events["AvailabilityStartTime"]
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asTimeOffset.TimeOffset2 = 3
 
-        occurrence = timeEvent.FindOccurrence()
+        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.FindOccurrence()
         if occurrence.IsValid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.Epoch)))
 
@@ -100,24 +104,26 @@ class Event(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEvent(clr.Convert(TestBase.Application, IStkObjectRoot))
 
     def CreateSignaledEvent(self, stkRoot: "IStkObjectRoot"):
-        satelliteVgtProvider = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
-        aircraftVgtProvider = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
+        satelliteVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
+        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
 
-        timeEvent = satelliteVgtProvider.Events.Factory.CreateEventSignaled("MyEventSignaled", "MyDescription")
-        asSignaled: ITimeToolEventSignaled = clr.CastAs(timeEvent, ITimeToolEventSignaled)
+        timeEvent: "ITimeToolEvent" = satelliteVgtProvider.Events.Factory.CreateEventSignaled(
+            "MyEventSignaled", "MyDescription"
+        )
+        asSignaled: "ITimeToolEventSignaled" = clr.CastAs(timeEvent, ITimeToolEventSignaled)
 
         asSignaled.OriginalTimeInstant = aircraftVgtProvider.Events["EphemerisStartTime"]
         asSignaled.BaseClockLocation = satelliteVgtProvider.Points["Center"]
         asSignaled.TargetClockLocation = aircraftVgtProvider.Points["Center"]
 
         asSignaled.SignalSense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
-        basicSignalDelay: ITimeToolSignalDelayBasic = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
+        basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(asSignaled.SignalDelay, ITimeToolSignalDelayBasic)
         basicSignalDelay.SpeedOption = AgECrdnSpeedOptions.eCrdnCustomTransmissionSpeed
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.TimeDelayConvergence = 0.002
 
-        occurrence = timeEvent.FindOccurrence()
+        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.FindOccurrence()
         if occurrence.IsValid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.Epoch)))
 
@@ -128,14 +134,16 @@ class Event(TimelineCodeSnippetsTestBase):
         self.CreateStartStopTimeEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateStartStopTimeEvent(self, provider: "IAnalysisWorkbenchProvider"):
-        timeEvent = provider.Events.Factory.CreateEventStartStopTime("MyEventStartStopTime", "MyDescription")
-        asStartStopTime: ITimeToolEventStartStopTime = clr.CastAs(timeEvent, ITimeToolEventStartStopTime)
+        timeEvent: "ITimeToolEvent" = provider.Events.Factory.CreateEventStartStopTime(
+            "MyEventStartStopTime", "MyDescription"
+        )
+        asStartStopTime: "ITimeToolEventStartStopTime" = clr.CastAs(timeEvent, ITimeToolEventStartStopTime)
 
         asStartStopTime.ReferenceEventInterval = provider.EventIntervals["EphemerisTimeSpan"]
 
         asStartStopTime.UseStart = True
 
-        occurrence = timeEvent.FindOccurrence()
+        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.FindOccurrence()
         if occurrence.IsValid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.Epoch)))
 
@@ -146,14 +154,14 @@ class Event(TimelineCodeSnippetsTestBase):
         self.CreateExtremumEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateExtremumEvent(self, provider: "IAnalysisWorkbenchProvider"):
-        timeEvent = provider.Events.Factory.CreateEventExtremum("MyEventExtremum", "MyDescription")
-        asExtremum: ITimeToolEventExtremum = clr.CastAs(timeEvent, ITimeToolEventExtremum)
+        timeEvent: "ITimeToolEvent" = provider.Events.Factory.CreateEventExtremum("MyEventExtremum", "MyDescription")
+        asExtremum: "ITimeToolEventExtremum" = clr.CastAs(timeEvent, ITimeToolEventExtremum)
 
         # For instance, time at highest altitude
         asExtremum.Calculation = provider.CalcScalars["GroundTrajectory.Detic.LLA.Altitude"]
         asExtremum.ExtremumType = AgECrdnExtremumConstants.eCrdnExtremumMaximum
 
-        occurrence = timeEvent.FindOccurrence()
+        occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.FindOccurrence()
         if occurrence.IsValid:
             Console.WriteLine(("Event occurred at: " + str(occurrence.Epoch)))
 
@@ -164,7 +172,9 @@ class Event(TimelineCodeSnippetsTestBase):
         self.CreateExplicitSmartEpochEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateExplicitSmartEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
-        smartEpoch = provider.Events.Factory.CreateSmartEpochFromTime("1 May 2016 04:00:00.000")
+        smartEpoch: "ITimeToolEventSmartEpoch" = provider.Events.Factory.CreateSmartEpochFromTime(
+            "1 May 2016 04:00:00.000"
+        )
 
         # Smart epochs can be set explicitly (Uses current DateTime unit preference, this code snippet assumes UTCG)
         smartEpoch.SetExplicitTime("1 May 2015 01:00:00.000")
@@ -178,11 +188,11 @@ class Event(TimelineCodeSnippetsTestBase):
         self.CreateImplicitSmartEpochEvent(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
 
     def CreateImplicitSmartEpochEvent(self, provider: "IAnalysisWorkbenchProvider"):
-        referencedEvent = provider.Events["AvailabilityStartTime"]
-        smartEpoch = provider.Events.Factory.CreateSmartEpochFromEvent(referencedEvent)
+        referencedEvent: "ITimeToolEvent" = provider.Events["AvailabilityStartTime"]
+        smartEpoch: "ITimeToolEventSmartEpoch" = provider.Events.Factory.CreateSmartEpochFromEvent(referencedEvent)
 
         # Smart epochs can be set implicitly using the another epoch.
-        anotherEvent = provider.Events["AvailabilityStopTime"]
+        anotherEvent: "ITimeToolEvent" = provider.Events["AvailabilityStopTime"]
         smartEpoch.SetImplicitTime(anotherEvent)
 
         Console.WriteLine(("Event occurred at: " + str(smartEpoch.TimeInstant)))

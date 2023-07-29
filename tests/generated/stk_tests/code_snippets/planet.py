@@ -27,7 +27,7 @@ class Planet(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        Planet.m_Object: IPlanet = clr.CastAs(
+        Planet.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.ePlanet, Planet.m_DefaultName),
             IPlanet,
         )
@@ -56,13 +56,13 @@ class Planet(CodeSnippetsTestBase):
     # region ConfigurePlanet
     def test_ConfigurePlanet(self):
         self.ConfigurePlanet(Planet.m_Object)
-        body: IPlanetPositionCentralBody = clr.CastAs(Planet.m_Object.PositionSourceData, IPlanetPositionCentralBody)
+        body: "IPlanetPositionCentralBody" = clr.CastAs(Planet.m_Object.PositionSourceData, IPlanetPositionCentralBody)
 
     def ConfigurePlanet(self, planet: "IPlanet"):
         planet.PositionSource = AgEPlPositionSourceType.ePosCentralBody
 
         # Get IAgPlPosCentralBody interface
-        body: IPlanetPositionCentralBody = clr.CastAs(planet.PositionSourceData, IPlanetPositionCentralBody)
+        body: "IPlanetPositionCentralBody" = clr.CastAs(planet.PositionSourceData, IPlanetPositionCentralBody)
 
         body.AutoRename = False
         body.CentralBody = "Jupiter"
@@ -90,7 +90,7 @@ class Planet(CodeSnippetsTestBase):
         graphics.SubPlanetLabelVisible = False
         graphics.OrbitVisible = True
         graphics.OrbitDisplay = AgEPlOrbitDisplayType.eOrbitDisplayTime
-        displayTime: IPlanetOrbitDisplayTime = clr.CastAs(graphics.OrbitDisplayData, IPlanetOrbitDisplayTime)
+        displayTime: "IPlanetOrbitDisplayTime" = clr.CastAs(graphics.OrbitDisplayData, IPlanetOrbitDisplayTime)
         displayTime.Time = 10000.0
 
     # endregion

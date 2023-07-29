@@ -5,7 +5,7 @@ from ansys.stk.core.stkobjects import *
 
 class StkObject(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
-        self.m_DefaultName = "scenario1"
+        self.m_DefaultName: str = "scenario1"
         super(StkObject, self).__init__(*args, **kwargs)
 
     m_Object: "IScenario" = None
@@ -29,7 +29,7 @@ class StkObject(CodeSnippetsTestBase):
         if CodeSnippetsTestBase.m_Root.CurrentScenario != None:
             CodeSnippetsTestBase.m_Root.CloseScenario()
         CodeSnippetsTestBase.m_Root.NewScenario(self.m_DefaultName)
-        StkObject.m_Object: IScenario = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)
+        StkObject.m_Object = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)
 
     # endregion
 
@@ -42,7 +42,7 @@ class StkObject(CodeSnippetsTestBase):
 
     # region DeleteStkObject
     def test_DeleteStkObject(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eShip, "Ship1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eShip, "Ship1")
         self.DeleteStkObject(obj)
 
     def DeleteStkObject(self, stkObject: "IStkObject"):
@@ -52,18 +52,18 @@ class StkObject(CodeSnippetsTestBase):
 
     # region ExportObjectToFile
     def test_ExportObjectToFile(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "star1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "star1")
         self.ExportObjectToFile(obj, TestBase.TemporaryDirectory)
 
     def ExportObjectToFile(self, stkObject: "IStkObject", outputPath: str):
-        fileNameWithoutExtension = Path.Combine(outputPath, "MySatellite1")
+        fileNameWithoutExtension: str = Path.Combine(outputPath, "MySatellite1")
         stkObject.Export(fileNameWithoutExtension)
 
     # endregion
 
     # region RenameAnObject
     def test_RenameAnObject(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "star1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "star1")
         self.RenameAnObject(obj)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eStar, obj.InstanceName)
 
@@ -74,7 +74,9 @@ class StkObject(CodeSnippetsTestBase):
 
     # region ConfigureObjectDescription
     def test_ConfigureObjectDescription(self):
-        stkobject = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "facility1")
+        stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            AgESTKObjectType.eFacility, "facility1"
+        )
 
         self.ConfigureObjectDescription(stkobject)
 
@@ -86,14 +88,14 @@ class StkObject(CodeSnippetsTestBase):
         stkobject.ShortDescription = "This is a short description"
 
         # Get STK Object description
-        longDescription = stkobject.LongDescription
-        shortDescription = stkobject.ShortDescription
+        longDescription: str = stkobject.LongDescription
+        shortDescription: str = stkobject.ShortDescription
 
     # endregion
 
     # region AddMetadataToObject
     def test_AddMetadataToObject(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
         self.AddMetadataToObject(obj)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, obj.InstanceName)
 
@@ -104,7 +106,7 @@ class StkObject(CodeSnippetsTestBase):
 
     # region AddReadOnlyMetadataToObject
     def test_AddReadOnlyMetadataToObject(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
         self.AddReadOnlyMetadataToObject(obj)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, obj.InstanceName)
 
@@ -116,7 +118,7 @@ class StkObject(CodeSnippetsTestBase):
 
     # region RemoveMetadataFromObject
     def test_RemoveMetadataFromObject(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
         obj.Metadata.Set("key", "value")
         self.RemoveMetadataFromObject(obj)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, obj.InstanceName)
@@ -128,7 +130,7 @@ class StkObject(CodeSnippetsTestBase):
 
     # region IterateMetadataKeys
     def test_IterateMetadataKeys(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
         obj.Metadata.Set("key1", "value1")
         obj.Metadata.Set("key2", "value1")
         obj.Metadata.Set("key3", "value1")
@@ -136,6 +138,7 @@ class StkObject(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, obj.InstanceName)
 
     def IterateMetadataKeys(self, stkObject: "IStkObject"):
+        key: str
         for key in stkObject.Metadata.Keys:
             Console.WriteLine("Key: {0}, Value: {1}", key, stkObject.Metadata[key])
 
@@ -143,7 +146,7 @@ class StkObject(CodeSnippetsTestBase):
 
     # region CheckIfMetadataIsReadOnly
     def test_CheckIfMetadataIsReadOnly(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
         obj.Metadata.Set("test", "value")
         obj.Metadata.SetReadOnly("test", True)
         self.CheckIfMetadataIsReadOnly(obj)
@@ -157,7 +160,7 @@ class StkObject(CodeSnippetsTestBase):
 
     # region CheckIfMetadataContainsKey
     def test_CheckIfMetadataContainsKey(self):
-        obj = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "fac1")
         obj.Metadata.Set("test", "value")
         self.CheckIfMetadataContainsKey(obj)
         CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, obj.InstanceName)
