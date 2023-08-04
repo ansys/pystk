@@ -326,18 +326,18 @@ class ISTKXSSLCertificateErrorEventArgs(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_SetIgnoreError"] = _raise_uninitialized_error
-        self.__dict__["_GetIsErrorIgnored"] = _raise_uninitialized_error
-        self.__dict__["_SetIgnoreErrorPermanently"] = _raise_uninitialized_error
-        self.__dict__["_GetSerialNumber"] = _raise_uninitialized_error
-        self.__dict__["_GetIssuer"] = _raise_uninitialized_error
-        self.__dict__["_GetSubject"] = _raise_uninitialized_error
-        self.__dict__["_GetValidDate"] = _raise_uninitialized_error
-        self.__dict__["_GetExpirationDate"] = _raise_uninitialized_error
-        self.__dict__["_GetIsExpired"] = _raise_uninitialized_error
-        self.__dict__["_GetPEMData"] = _raise_uninitialized_error
-        self.__dict__["_GetHandled"] = _raise_uninitialized_error
-        self.__dict__["_SetHandled"] = _raise_uninitialized_error
+        self.__dict__["_set_ignore_error"] = _raise_uninitialized_error
+        self.__dict__["_get_is_error_ignored"] = _raise_uninitialized_error
+        self.__dict__["_set_ignore_error_permanently"] = _raise_uninitialized_error
+        self.__dict__["_get_serial_number"] = _raise_uninitialized_error
+        self.__dict__["_get_issuer"] = _raise_uninitialized_error
+        self.__dict__["_get_subject"] = _raise_uninitialized_error
+        self.__dict__["_get_valid_date"] = _raise_uninitialized_error
+        self.__dict__["_get_expiration_date"] = _raise_uninitialized_error
+        self.__dict__["_get_is_expired"] = _raise_uninitialized_error
+        self.__dict__["_get_pem_data"] = _raise_uninitialized_error
+        self.__dict__["_get_handled"] = _raise_uninitialized_error
+        self.__dict__["_set_handled"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISTKXSSLCertificateErrorEventArgs._uuid))
             if pUnk is not None:
@@ -349,18 +349,18 @@ class ISTKXSSLCertificateErrorEventArgs(object):
         self.__dict__["_pUnk"] = pUnk
         IID_ISTKXSSLCertificateErrorEventArgs = agcom.GUID(ISTKXSSLCertificateErrorEventArgs._uuid)
         vtable_offset_local = ISTKXSSLCertificateErrorEventArgs._vtable_offset - 1
-        self.__dict__["_SetIgnoreError"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+1, agcom.VARIANT_BOOL)
-        self.__dict__["_GetIsErrorIgnored"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+2, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetIgnoreErrorPermanently"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+3, agcom.VARIANT_BOOL)
-        self.__dict__["_GetSerialNumber"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+4, POINTER(agcom.BSTR))
-        self.__dict__["_GetIssuer"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+5, POINTER(agcom.BSTR))
-        self.__dict__["_GetSubject"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+6, POINTER(agcom.BSTR))
-        self.__dict__["_GetValidDate"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+7, POINTER(agcom.DATE))
-        self.__dict__["_GetExpirationDate"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+8, POINTER(agcom.DATE))
-        self.__dict__["_GetIsExpired"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+9, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetPEMData"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+10, POINTER(agcom.BSTR))
-        self.__dict__["_GetHandled"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetHandled"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+12, agcom.VARIANT_BOOL)
+        self.__dict__["_set_ignore_error"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+1, agcom.VARIANT_BOOL)
+        self.__dict__["_get_is_error_ignored"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+2, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_ignore_error_permanently"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+3, agcom.VARIANT_BOOL)
+        self.__dict__["_get_serial_number"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+4, POINTER(agcom.BSTR))
+        self.__dict__["_get_issuer"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+5, POINTER(agcom.BSTR))
+        self.__dict__["_get_subject"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+6, POINTER(agcom.BSTR))
+        self.__dict__["_get_valid_date"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+7, POINTER(agcom.DATE))
+        self.__dict__["_get_expiration_date"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+8, POINTER(agcom.DATE))
+        self.__dict__["_get_is_expired"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+9, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_pem_data"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+10, POINTER(agcom.BSTR))
+        self.__dict__["_get_handled"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_handled"] = IAGFUNCTYPE(pUnk, IID_ISTKXSSLCertificateErrorEventArgs, vtable_offset_local+12, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -374,84 +374,84 @@ class ISTKXSSLCertificateErrorEventArgs(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXSSLCertificateErrorEventArgs.")
     
-    def SetIgnoreError(self, ignoreError:bool) -> None:
+    def set_ignore_error(self, ignoreError:bool) -> None:
         """Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server."""
         with agmarshall.VARIANT_BOOL_arg(ignoreError) as arg_ignoreError:
-            agcls.evaluate_hresult(self.__dict__["_SetIgnoreError"](arg_ignoreError.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_ignore_error"](arg_ignoreError.COM_val))
 
     @property
-    def IsErrorIgnored(self) -> bool:
+    def is_error_ignored(self) -> bool:
         """Returns whether the invalid certificate error is ignored."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetIsErrorIgnored"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_error_ignored"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def SetIgnoreErrorPermanently(self, ignoreErrorPermanently:bool) -> None:
+    def set_ignore_error_permanently(self, ignoreErrorPermanently:bool) -> None:
         """Specify True to ignore the certificate error and add the certificate to the list of trusted certificates."""
         with agmarshall.VARIANT_BOOL_arg(ignoreErrorPermanently) as arg_ignoreErrorPermanently:
-            agcls.evaluate_hresult(self.__dict__["_SetIgnoreErrorPermanently"](arg_ignoreErrorPermanently.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_ignore_error_permanently"](arg_ignoreErrorPermanently.COM_val))
 
     @property
-    def SerialNumber(self) -> str:
+    def serial_number(self) -> str:
         """Certificate's serial number."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSerialNumber"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_serial_number"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def Issuer(self) -> str:
+    def issuer(self) -> str:
         """The provider who issued the certificate."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetIssuer"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_issuer"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def Subject(self) -> str:
+    def subject(self) -> str:
         """Certificate's subject field."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSubject"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_subject"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def ValidDate(self) -> datetime:
+    def valid_date(self) -> datetime:
         """Certificate's valid date."""
         with agmarshall.DATE_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetValidDate"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_valid_date"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def ExpirationDate(self) -> datetime:
+    def expiration_date(self) -> datetime:
         """Certificate's expiration date."""
         with agmarshall.DATE_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetExpirationDate"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_expiration_date"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def IsExpired(self) -> bool:
+    def is_expired(self) -> bool:
         """Whether the certificate is expired."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetIsExpired"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_expired"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def PEMData(self) -> str:
+    def pem_data(self) -> str:
         """Certificate's PEM data encoded as base-64."""
         with agmarshall.BSTR_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetPEMData"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_pem_data"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def Handled(self) -> bool:
+    def handled(self) -> bool:
         """Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetHandled"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_handled"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    @Handled.setter
-    def Handled(self, bHandled:bool) -> None:
+    @handled.setter
+    def handled(self, bHandled:bool) -> None:
         """Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
         with agmarshall.VARIANT_BOOL_arg(bHandled) as arg_bHandled:
-            agcls.evaluate_hresult(self.__dict__["_SetHandled"](arg_bHandled.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_handled"](arg_bHandled.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{D0C7ACBC-D1DD-45AE-9582-C7AE5C2E5BEF}", ISTKXSSLCertificateErrorEventArgs)
@@ -464,8 +464,8 @@ class ISTKXConControlQuitReceivedEventArgs(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetAcknowledge"] = _raise_uninitialized_error
-        self.__dict__["_SetAcknowledge"] = _raise_uninitialized_error
+        self.__dict__["_get_acknowledge"] = _raise_uninitialized_error
+        self.__dict__["_set_acknowledge"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISTKXConControlQuitReceivedEventArgs._uuid))
             if pUnk is not None:
@@ -477,8 +477,8 @@ class ISTKXConControlQuitReceivedEventArgs(object):
         self.__dict__["_pUnk"] = pUnk
         IID_ISTKXConControlQuitReceivedEventArgs = agcom.GUID(ISTKXConControlQuitReceivedEventArgs._uuid)
         vtable_offset_local = ISTKXConControlQuitReceivedEventArgs._vtable_offset - 1
-        self.__dict__["_GetAcknowledge"] = IAGFUNCTYPE(pUnk, IID_ISTKXConControlQuitReceivedEventArgs, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetAcknowledge"] = IAGFUNCTYPE(pUnk, IID_ISTKXConControlQuitReceivedEventArgs, vtable_offset_local+2, agcom.VARIANT_BOOL)
+        self.__dict__["_get_acknowledge"] = IAGFUNCTYPE(pUnk, IID_ISTKXConControlQuitReceivedEventArgs, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_acknowledge"] = IAGFUNCTYPE(pUnk, IID_ISTKXConControlQuitReceivedEventArgs, vtable_offset_local+2, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -493,17 +493,17 @@ class ISTKXConControlQuitReceivedEventArgs(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXConControlQuitReceivedEventArgs.")
     
     @property
-    def Acknowledge(self) -> bool:
+    def acknowledge(self) -> bool:
         """Indicates whether or not to acknowledge the connect command."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetAcknowledge"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_acknowledge"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    @Acknowledge.setter
-    def Acknowledge(self, acknowledge:bool) -> None:
+    @acknowledge.setter
+    def acknowledge(self, acknowledge:bool) -> None:
         """Indicates whether or not to acknowledge the connect command."""
         with agmarshall.VARIANT_BOOL_arg(acknowledge) as arg_acknowledge:
-            agcls.evaluate_hresult(self.__dict__["_SetAcknowledge"](arg_acknowledge.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_acknowledge"](arg_acknowledge.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{F8925F99-8841-4DF3-A6E4-CE63E298868C}", ISTKXConControlQuitReceivedEventArgs)
@@ -516,12 +516,12 @@ class IPickInfoData(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetObjPath"] = _raise_uninitialized_error
-        self.__dict__["_GetLat"] = _raise_uninitialized_error
-        self.__dict__["_GetLon"] = _raise_uninitialized_error
-        self.__dict__["_GetAlt"] = _raise_uninitialized_error
-        self.__dict__["_GetIsObjPathValid"] = _raise_uninitialized_error
-        self.__dict__["_GetIsLatLonAltValid"] = _raise_uninitialized_error
+        self.__dict__["_get_obj_path"] = _raise_uninitialized_error
+        self.__dict__["_get_lat"] = _raise_uninitialized_error
+        self.__dict__["_get_lon"] = _raise_uninitialized_error
+        self.__dict__["_get_alt"] = _raise_uninitialized_error
+        self.__dict__["_get_is_obj_path_valid"] = _raise_uninitialized_error
+        self.__dict__["_get_is_lat_lon_alt_valid"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPickInfoData._uuid))
             if pUnk is not None:
@@ -533,12 +533,12 @@ class IPickInfoData(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IPickInfoData = agcom.GUID(IPickInfoData._uuid)
         vtable_offset_local = IPickInfoData._vtable_offset - 1
-        self.__dict__["_GetObjPath"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+2, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetIsObjPathValid"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetIsLatLonAltValid"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_obj_path"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_get_lat"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+2, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_is_obj_path_valid"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_is_lat_lon_alt_valid"] = IAGFUNCTYPE(pUnk, IID_IPickInfoData, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -553,45 +553,45 @@ class IPickInfoData(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPickInfoData.")
     
     @property
-    def ObjPath(self) -> str:
+    def obj_path(self) -> str:
         """Path of the STK object picked if any (or empty string)."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetObjPath"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_obj_path"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Lat(self) -> float:
+    def lat(self) -> float:
         """Latitude of point clicked (if available)."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLat"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lat"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Lon(self) -> float:
+    def lon(self) -> float:
         """Longitude of point clicked (if available)."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLon"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lon"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Alt(self) -> float:
+    def alt(self) -> float:
         """Altitude of point clicked (if available)."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetAlt"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def IsObjPathValid(self) -> bool:
+    def is_obj_path_valid(self) -> bool:
         """Indicate if the ObjPath property is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
-            agcls.evaluate_hresult(self.__dict__["_GetIsObjPathValid"](byref(arg_pIsValid.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_obj_path_valid"](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
 
     @property
-    def IsLatLonAltValid(self) -> bool:
+    def is_lat_lon_alt_valid(self) -> bool:
         """Indicate if the Lat/Lon/Alt properties are valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
-            agcls.evaluate_hresult(self.__dict__["_GetIsLatLonAltValid"](byref(arg_pIsValid.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_lat_lon_alt_valid"](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
 
 
@@ -605,7 +605,7 @@ class IRubberBandPickInfoData(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetObjPaths"] = _raise_uninitialized_error
+        self.__dict__["_get_obj_paths"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRubberBandPickInfoData._uuid))
             if pUnk is not None:
@@ -617,7 +617,7 @@ class IRubberBandPickInfoData(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IRubberBandPickInfoData = agcom.GUID(IRubberBandPickInfoData._uuid)
         vtable_offset_local = IRubberBandPickInfoData._vtable_offset - 1
-        self.__dict__["_GetObjPaths"] = IAGFUNCTYPE(pUnk, IID_IRubberBandPickInfoData, vtable_offset_local+1, POINTER(agcom.PVOID))
+        self.__dict__["_get_obj_paths"] = IAGFUNCTYPE(pUnk, IID_IRubberBandPickInfoData, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -632,10 +632,10 @@ class IRubberBandPickInfoData(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRubberBandPickInfoData.")
     
     @property
-    def ObjPaths(self) -> "IObjPathCollection":
+    def obj_paths(self) -> "IObjPathCollection":
         """List of object paths selected."""
         with agmarshall.AgInterface_out_arg() as arg_ppColl:
-            agcls.evaluate_hresult(self.__dict__["_GetObjPaths"](byref(arg_ppColl.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_obj_paths"](byref(arg_ppColl.COM_val)))
             return arg_ppColl.python_val
 
 
@@ -649,33 +649,33 @@ class ISTKXApplication(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_ExecuteCommand"] = _raise_uninitialized_error
-        self.__dict__["_GetEnableConnect"] = _raise_uninitialized_error
-        self.__dict__["_SetEnableConnect"] = _raise_uninitialized_error
-        self.__dict__["_GetConnectPort"] = _raise_uninitialized_error
-        self.__dict__["_SetConnectPort"] = _raise_uninitialized_error
-        self.__dict__["_GetHostID"] = _raise_uninitialized_error
-        self.__dict__["_GetRegistrationID"] = _raise_uninitialized_error
-        self.__dict__["_GetVersion"] = _raise_uninitialized_error
-        self.__dict__["_GetLicensingReport"] = _raise_uninitialized_error
-        self.__dict__["_GetVendorID"] = _raise_uninitialized_error
-        self.__dict__["_SetVendorID"] = _raise_uninitialized_error
-        self.__dict__["_SetOnlineOptions"] = _raise_uninitialized_error
-        self.__dict__["_GetOnlineOptions"] = _raise_uninitialized_error
-        self.__dict__["_SetConnectHandler"] = _raise_uninitialized_error
-        self.__dict__["_GetLogFileFullName"] = _raise_uninitialized_error
-        self.__dict__["_GetLoggingMode"] = _raise_uninitialized_error
-        self.__dict__["_SetLoggingMode"] = _raise_uninitialized_error
-        self.__dict__["_GetConnectMaxConnections"] = _raise_uninitialized_error
-        self.__dict__["_SetConnectMaxConnections"] = _raise_uninitialized_error
-        self.__dict__["_ExecuteMultipleCommands"] = _raise_uninitialized_error
-        self.__dict__["_IsFeatureAvailable"] = _raise_uninitialized_error
-        self.__dict__["_GetNoGraphics"] = _raise_uninitialized_error
-        self.__dict__["_SetNoGraphics"] = _raise_uninitialized_error
-        self.__dict__["_Terminate"] = _raise_uninitialized_error
-        self.__dict__["_GetShowSLAIfNotAccepted"] = _raise_uninitialized_error
-        self.__dict__["_SetShowSLAIfNotAccepted"] = _raise_uninitialized_error
-        self.__dict__["_SetUseHook"] = _raise_uninitialized_error
+        self.__dict__["_execute_command"] = _raise_uninitialized_error
+        self.__dict__["_get_enable_connect"] = _raise_uninitialized_error
+        self.__dict__["_set_enable_connect"] = _raise_uninitialized_error
+        self.__dict__["_get_connect_port"] = _raise_uninitialized_error
+        self.__dict__["_set_connect_port"] = _raise_uninitialized_error
+        self.__dict__["_get_host_id"] = _raise_uninitialized_error
+        self.__dict__["_get_registration_id"] = _raise_uninitialized_error
+        self.__dict__["_get_version"] = _raise_uninitialized_error
+        self.__dict__["_get_licensing_report"] = _raise_uninitialized_error
+        self.__dict__["_get_vendor_id"] = _raise_uninitialized_error
+        self.__dict__["_set_vendor_id"] = _raise_uninitialized_error
+        self.__dict__["_set_online_options"] = _raise_uninitialized_error
+        self.__dict__["_get_online_options"] = _raise_uninitialized_error
+        self.__dict__["_set_connect_handler"] = _raise_uninitialized_error
+        self.__dict__["_get_log_file_full_name"] = _raise_uninitialized_error
+        self.__dict__["_get_logging_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_logging_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_connect_max_connections"] = _raise_uninitialized_error
+        self.__dict__["_set_connect_max_connections"] = _raise_uninitialized_error
+        self.__dict__["_execute_multiple_commands"] = _raise_uninitialized_error
+        self.__dict__["_is_feature_available"] = _raise_uninitialized_error
+        self.__dict__["_get_no_graphics"] = _raise_uninitialized_error
+        self.__dict__["_set_no_graphics"] = _raise_uninitialized_error
+        self.__dict__["_terminate"] = _raise_uninitialized_error
+        self.__dict__["_get_show_sla_if_not_accepted"] = _raise_uninitialized_error
+        self.__dict__["_set_show_sla_if_not_accepted"] = _raise_uninitialized_error
+        self.__dict__["_set_use_hook"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISTKXApplication._uuid))
             if pUnk is not None:
@@ -687,33 +687,33 @@ class ISTKXApplication(object):
         self.__dict__["_pUnk"] = pUnk
         IID_ISTKXApplication = agcom.GUID(ISTKXApplication._uuid)
         vtable_offset_local = ISTKXApplication._vtable_offset - 1
-        self.__dict__["_ExecuteCommand"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+1, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_GetEnableConnect"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+2, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetEnableConnect"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+3, agcom.VARIANT_BOOL)
-        self.__dict__["_GetConnectPort"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+4, POINTER(agcom.SHORT))
-        self.__dict__["_SetConnectPort"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+5, agcom.SHORT)
-        self.__dict__["_GetHostID"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+6, POINTER(agcom.BSTR))
-        self.__dict__["_GetRegistrationID"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+7, POINTER(agcom.BSTR))
-        self.__dict__["_GetVersion"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+8, POINTER(agcom.BSTR))
-        self.__dict__["_GetLicensingReport"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+9, POINTER(agcom.BSTR))
-        self.__dict__["_GetVendorID"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+10, POINTER(agcom.BSTR))
-        self.__dict__["_SetVendorID"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+11, agcom.BSTR)
-        self.__dict__["_SetOnlineOptions"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+12, agcom.VARIANT_BOOL, agcom.BSTR, agcom.LONG, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetOnlineOptions"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+13, POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetConnectHandler"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+14, agcom.BSTR, agcom.BSTR)
-        self.__dict__["_GetLogFileFullName"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+15, POINTER(agcom.BSTR))
-        self.__dict__["_GetLoggingMode"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+16, POINTER(agcom.LONG))
-        self.__dict__["_SetLoggingMode"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+17, agcom.LONG)
-        self.__dict__["_GetConnectMaxConnections"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+18, POINTER(agcom.LONG))
-        self.__dict__["_SetConnectMaxConnections"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+19, agcom.LONG)
-        self.__dict__["_ExecuteMultipleCommands"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+20, POINTER(agcom.SAFEARRAY), agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_IsFeatureAvailable"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+21, agcom.LONG, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetNoGraphics"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+22, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetNoGraphics"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+23, agcom.VARIANT_BOOL)
-        self.__dict__["_Terminate"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+24, )
-        self.__dict__["_GetShowSLAIfNotAccepted"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+25, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetShowSLAIfNotAccepted"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+26, agcom.VARIANT_BOOL)
-        self.__dict__["_SetUseHook"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+27, agcom.VARIANT_BOOL)
+        self.__dict__["_execute_command"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+1, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_get_enable_connect"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+2, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_enable_connect"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+3, agcom.VARIANT_BOOL)
+        self.__dict__["_get_connect_port"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+4, POINTER(agcom.SHORT))
+        self.__dict__["_set_connect_port"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+5, agcom.SHORT)
+        self.__dict__["_get_host_id"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+6, POINTER(agcom.BSTR))
+        self.__dict__["_get_registration_id"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+7, POINTER(agcom.BSTR))
+        self.__dict__["_get_version"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+8, POINTER(agcom.BSTR))
+        self.__dict__["_get_licensing_report"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+9, POINTER(agcom.BSTR))
+        self.__dict__["_get_vendor_id"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+10, POINTER(agcom.BSTR))
+        self.__dict__["_set_vendor_id"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+11, agcom.BSTR)
+        self.__dict__["_set_online_options"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+12, agcom.VARIANT_BOOL, agcom.BSTR, agcom.LONG, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_online_options"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+13, POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_connect_handler"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+14, agcom.BSTR, agcom.BSTR)
+        self.__dict__["_get_log_file_full_name"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+15, POINTER(agcom.BSTR))
+        self.__dict__["_get_logging_mode"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+16, POINTER(agcom.LONG))
+        self.__dict__["_set_logging_mode"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+17, agcom.LONG)
+        self.__dict__["_get_connect_max_connections"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+18, POINTER(agcom.LONG))
+        self.__dict__["_set_connect_max_connections"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+19, agcom.LONG)
+        self.__dict__["_execute_multiple_commands"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+20, POINTER(agcom.SAFEARRAY), agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_is_feature_available"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+21, agcom.LONG, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_no_graphics"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+22, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_no_graphics"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+23, agcom.VARIANT_BOOL)
+        self.__dict__["_terminate"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+24, )
+        self.__dict__["_get_show_sla_if_not_accepted"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+25, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_show_sla_if_not_accepted"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+26, agcom.VARIANT_BOOL)
+        self.__dict__["_set_use_hook"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplication, vtable_offset_local+27, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -729,77 +729,77 @@ class ISTKXApplication(object):
     def Subscribe(self) -> ISTKXApplicationEventHandler:
         """Returns an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of ISTKXApplication."""
         return ISTKXApplicationEventHandler(self._pUnk)    
-    def ExecuteCommand(self, command:str) -> "IExecCmdResult":
+    def execute_command(self, command:str) -> "IExecCmdResult":
         """Send a connect command to STK X."""
         with agmarshall.BSTR_arg(command) as arg_command, \
              agmarshall.AgInterface_out_arg() as arg_ppExecCmdRes:
-            agcls.evaluate_hresult(self.__dict__["_ExecuteCommand"](arg_command.COM_val, byref(arg_ppExecCmdRes.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_execute_command"](arg_command.COM_val, byref(arg_ppExecCmdRes.COM_val)))
             return arg_ppExecCmdRes.python_val
 
     @property
-    def EnableConnect(self) -> bool:
+    def enable_connect(self) -> bool:
         """Enable or disable TCP/IP connect command processing (default: disabled)."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetEnableConnect"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_enable_connect"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @EnableConnect.setter
-    def EnableConnect(self, newVal:bool) -> None:
+    @enable_connect.setter
+    def enable_connect(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetEnableConnect"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_enable_connect"](arg_newVal.COM_val))
 
     @property
-    def ConnectPort(self) -> int:
+    def connect_port(self) -> int:
         """Specify TCP/IP port to be used by Connect (default: 5001)."""
         with agmarshall.SHORT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetConnectPort"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_connect_port"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @ConnectPort.setter
-    def ConnectPort(self, newVal:int) -> None:
+    @connect_port.setter
+    def connect_port(self, newVal:int) -> None:
         with agmarshall.SHORT_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetConnectPort"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_connect_port"](arg_newVal.COM_val))
 
     @property
-    def HostID(self) -> str:
+    def host_id(self) -> str:
         """Returns the Host ID."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetHostID"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_host_id"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     @property
-    def RegistrationID(self) -> str:
+    def registration_id(self) -> str:
         """Returns the Registration ID."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetRegistrationID"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_registration_id"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     @property
-    def Version(self) -> str:
+    def version(self) -> str:
         """Returns the version number"""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetVersion"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_version"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
-    def GetLicensingReport(self) -> str:
+    def get_licensing_report(self) -> str:
         """This method is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLicensingReport"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_licensing_report"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     @property
-    def VendorID(self) -> str:
+    def vendor_id(self) -> str:
         """This property is deprecated. The identifier of the vendor."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetVendorID"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_vendor_id"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
-    @VendorID.setter
-    def VendorID(self, vendorID:str) -> None:
+    @vendor_id.setter
+    def vendor_id(self, vendorID:str) -> None:
         with agmarshall.BSTR_arg(vendorID) as arg_vendorID:
-            agcls.evaluate_hresult(self.__dict__["_SetVendorID"](arg_vendorID.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_vendor_id"](arg_vendorID.COM_val))
 
-    def SetOnlineOptions(self, useProxy:bool, serverName:str, portNum:int, userName:str, password:str, savePassword:bool) -> bool:
+    def set_online_options(self, useProxy:bool, serverName:str, portNum:int, userName:str, password:str, savePassword:bool) -> bool:
         """Set http proxy online options"""
         with agmarshall.VARIANT_BOOL_arg(useProxy) as arg_useProxy, \
              agmarshall.BSTR_arg(serverName) as arg_serverName, \
@@ -808,110 +808,110 @@ class ISTKXApplication(object):
              agmarshall.BSTR_arg(password) as arg_password, \
              agmarshall.VARIANT_BOOL_arg(savePassword) as arg_savePassword, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetOnlineOptions"](arg_useProxy.COM_val, arg_serverName.COM_val, arg_portNum.COM_val, arg_userName.COM_val, arg_password.COM_val, arg_savePassword.COM_val, byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_set_online_options"](arg_useProxy.COM_val, arg_serverName.COM_val, arg_portNum.COM_val, arg_userName.COM_val, arg_password.COM_val, arg_savePassword.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def GetOnlineOptions(self) -> typing.Tuple[bool, str, int, str, bool]:
+    def get_online_options(self) -> typing.Tuple[bool, str, int, str, bool]:
         """Get http proxy online options"""
         with agmarshall.VARIANT_BOOL_arg() as arg_useProxy, \
              agmarshall.BSTR_arg() as arg_serverName, \
              agmarshall.LONG_arg() as arg_portNum, \
              agmarshall.BSTR_arg() as arg_userName, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetOnlineOptions"](byref(arg_useProxy.COM_val), byref(arg_serverName.COM_val), byref(arg_portNum.COM_val), byref(arg_userName.COM_val), byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_online_options"](byref(arg_useProxy.COM_val), byref(arg_serverName.COM_val), byref(arg_portNum.COM_val), byref(arg_userName.COM_val), byref(arg_pVal.COM_val)))
             return arg_useProxy.python_val, arg_serverName.python_val, arg_portNum.python_val, arg_userName.python_val, arg_pVal.python_val
 
-    def SetConnectHandler(self, commandID:str, progID:str) -> None:
+    def set_connect_handler(self, commandID:str, progID:str) -> None:
         """Set callback to handle a certain connect command"""
         with agmarshall.BSTR_arg(commandID) as arg_commandID, \
              agmarshall.BSTR_arg(progID) as arg_progID:
-            agcls.evaluate_hresult(self.__dict__["_SetConnectHandler"](arg_commandID.COM_val, arg_progID.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_connect_handler"](arg_commandID.COM_val, arg_progID.COM_val))
 
     @property
-    def LogFileFullName(self) -> str:
+    def log_file_full_name(self) -> str:
         """Returns full path and log file name."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLogFileFullName"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_log_file_full_name"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
     @property
-    def LoggingMode(self) -> "AgELoggingMode":
+    def logging_mode(self) -> "AgELoggingMode":
         """Controls the log file generation, and if the log file is deleted or not on application exit."""
         with agmarshall.AgEnum_arg(AgELoggingMode) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLoggingMode"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_logging_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @LoggingMode.setter
-    def LoggingMode(self, newVal:"AgELoggingMode") -> None:
+    @logging_mode.setter
+    def logging_mode(self, newVal:"AgELoggingMode") -> None:
         with agmarshall.AgEnum_arg(AgELoggingMode, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLoggingMode"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_logging_mode"](arg_newVal.COM_val))
 
     @property
-    def ConnectMaxConnections(self) -> int:
+    def connect_max_connections(self) -> int:
         """Specify the maximum number of Connect connections to allow."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetConnectMaxConnections"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_connect_max_connections"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @ConnectMaxConnections.setter
-    def ConnectMaxConnections(self, newVal:int) -> None:
+    @connect_max_connections.setter
+    def connect_max_connections(self, newVal:int) -> None:
         with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetConnectMaxConnections"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_connect_max_connections"](arg_newVal.COM_val))
 
-    def ExecuteMultipleCommands(self, connectCommands:list, eAction:"AgEExecMultiCmdResultAction") -> "IExecMultiCmdResult":
+    def execute_multiple_commands(self, connectCommands:list, eAction:"AgEExecMultiCmdResultAction") -> "IExecMultiCmdResult":
         """Executes multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
         with agmarshall.SAFEARRAY_arg(connectCommands) as arg_connectCommands, \
              agmarshall.AgEnum_arg(AgEExecMultiCmdResultAction, eAction) as arg_eAction, \
              agmarshall.AgInterface_out_arg() as arg_ppResult:
-            agcls.evaluate_hresult(self.__dict__["_ExecuteMultipleCommands"](byref(arg_connectCommands.COM_val), arg_eAction.COM_val, byref(arg_ppResult.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_execute_multiple_commands"](byref(arg_connectCommands.COM_val), arg_eAction.COM_val, byref(arg_ppResult.COM_val)))
             return arg_ppResult.python_val
 
-    def IsFeatureAvailable(self, featureCode:"AgEFeatureCodes") -> bool:
+    def is_feature_available(self, featureCode:"AgEFeatureCodes") -> bool:
         """Returns true if the specified feature is available."""
         with agmarshall.AgEnum_arg(AgEFeatureCodes, featureCode) as arg_featureCode, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_IsFeatureAvailable"](arg_featureCode.COM_val, byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_is_feature_available"](arg_featureCode.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def NoGraphics(self) -> bool:
+    def no_graphics(self) -> bool:
         """Start engine with or without graphics (default: engine starts with graphics.)."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetNoGraphics"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_no_graphics"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @NoGraphics.setter
-    def NoGraphics(self, newVal:bool) -> None:
+    @no_graphics.setter
+    def no_graphics(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetNoGraphics"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_no_graphics"](arg_newVal.COM_val))
 
-    def Terminate(self) -> None:
+    def terminate(self) -> None:
         """Terminates the use of STK Engine. This must be the last call to STK Engine."""
-        agcls.evaluate_hresult(self.__dict__["_Terminate"]())
+        agcls.evaluate_hresult(self.__dict__["_terminate"]())
 
     @property
-    def ShowSLAIfNotAccepted(self) -> bool:
+    def show_sla_if_not_accepted(self) -> bool:
         """Shows the Software License Agreement dialog if not already accepted."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetShowSLAIfNotAccepted"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_show_sla_if_not_accepted"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @ShowSLAIfNotAccepted.setter
-    def ShowSLAIfNotAccepted(self, newVal:bool) -> None:
+    @show_sla_if_not_accepted.setter
+    def show_sla_if_not_accepted(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetShowSLAIfNotAccepted"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_show_sla_if_not_accepted"](arg_newVal.COM_val))
 
     @property
-    def UseHook(self) -> None:
-        """UseHook is a write-only property."""
-        raise RuntimeError("UseHook is a write-only property.")
+    def use_hook(self) -> None:
+        """use_hook is a write-only property."""
+        raise RuntimeError("use_hook is a write-only property.")
 
 
-    @UseHook.setter
-    def UseHook(self, newVal:bool) -> None:
+    @use_hook.setter
+    def use_hook(self, newVal:bool) -> None:
         """Start engine with or without message hook setup (default: engine starts with message hook setup.)."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetUseHook"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_use_hook"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{A2BB8372-EA5F-4D9D-84C3-4D9E5B9A8840}", ISTKXApplication)
@@ -924,7 +924,7 @@ class IDataObject(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetFiles"] = _raise_uninitialized_error
+        self.__dict__["_get_files"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDataObject._uuid))
             if pUnk is not None:
@@ -936,7 +936,7 @@ class IDataObject(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IDataObject = agcom.GUID(IDataObject._uuid)
         vtable_offset_local = IDataObject._vtable_offset - 1
-        self.__dict__["_GetFiles"] = IAGFUNCTYPE(pUnk, IID_IDataObject, vtable_offset_local+1, POINTER(agcom.PVOID))
+        self.__dict__["_get_files"] = IAGFUNCTYPE(pUnk, IID_IDataObject, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -951,10 +951,10 @@ class IDataObject(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IDataObject.")
     
     @property
-    def Files(self) -> "IDataObjectFiles":
+    def files(self) -> "IDataObjectFiles":
         """Returns a collection of filenames."""
         with agmarshall.AgInterface_out_arg() as arg_pFile:
-            agcls.evaluate_hresult(self.__dict__["_GetFiles"](byref(arg_pFile.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_files"](byref(arg_pFile.COM_val)))
             return arg_pFile.python_val
 
 
@@ -968,10 +968,10 @@ class IObjPathCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_Range"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_range"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IObjPathCollection._uuid))
             if pUnk is not None:
@@ -984,10 +984,10 @@ class IObjPathCollection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IObjPathCollection = agcom.GUID(IObjPathCollection._uuid)
         vtable_offset_local = IObjPathCollection._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IObjPathCollection, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IObjPathCollection, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IObjPathCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_Range"] = IAGFUNCTYPE(pUnk, IID_IObjPathCollection, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IObjPathCollection, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IObjPathCollection, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IObjPathCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_range"] = IAGFUNCTYPE(pUnk, IID_IObjPathCollection, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1013,35 +1013,35 @@ class IObjPathCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pCount.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
-    def Item(self, index:int) -> str:
+    def item(self, index:int) -> str:
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.BSTR_arg() as arg_pItem:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_index.COM_val, byref(arg_pItem.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pItem.COM_val)))
             return arg_pItem.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns an object that can be used to iterate through all the object paths in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppEnum.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
-    def Range(self, startIndex:int, stopIndex:int) -> list:
+    def range(self, startIndex:int, stopIndex:int) -> list:
         """Return the elements within the specified range."""
         with agmarshall.LONG_arg(startIndex) as arg_startIndex, \
              agmarshall.LONG_arg(stopIndex) as arg_stopIndex, \
              agmarshall.SAFEARRAY_arg() as arg_pVar:
-            agcls.evaluate_hresult(self.__dict__["_Range"](arg_startIndex.COM_val, arg_stopIndex.COM_val, byref(arg_pVar.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_range"](arg_startIndex.COM_val, arg_stopIndex.COM_val, byref(arg_pVar.COM_val)))
             return arg_pVar.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -1055,8 +1055,8 @@ class IDrawElem(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetVisible"] = _raise_uninitialized_error
-        self.__dict__["_SetVisible"] = _raise_uninitialized_error
+        self.__dict__["_get_visible"] = _raise_uninitialized_error
+        self.__dict__["_set_visible"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDrawElem._uuid))
             if pUnk is not None:
@@ -1068,8 +1068,8 @@ class IDrawElem(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IDrawElem = agcom.GUID(IDrawElem._uuid)
         vtable_offset_local = IDrawElem._vtable_offset - 1
-        self.__dict__["_GetVisible"] = IAGFUNCTYPE(pUnk, IID_IDrawElem, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetVisible"] = IAGFUNCTYPE(pUnk, IID_IDrawElem, vtable_offset_local+2, agcom.VARIANT_BOOL)
+        self.__dict__["_get_visible"] = IAGFUNCTYPE(pUnk, IID_IDrawElem, vtable_offset_local+1, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_visible"] = IAGFUNCTYPE(pUnk, IID_IDrawElem, vtable_offset_local+2, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1084,16 +1084,16 @@ class IDrawElem(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IDrawElem.")
     
     @property
-    def Visible(self) -> bool:
+    def visible(self) -> bool:
         """Show or hide the element."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetVisible"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_visible"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Visible.setter
-    def Visible(self, newVal:bool) -> None:
+    @visible.setter
+    def visible(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetVisible"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_visible"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{C661025D-FFB3-429A-A0B1-D8421DE76AC6}", IDrawElem)
@@ -1106,17 +1106,17 @@ class IDrawElemRect(IDrawElem):
     _vtable_offset = IDrawElem._vtable_offset + IDrawElem._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetLeft"] = _raise_uninitialized_error
-        self.__dict__["_GetRight"] = _raise_uninitialized_error
-        self.__dict__["_GetTop"] = _raise_uninitialized_error
-        self.__dict__["_GetBottom"] = _raise_uninitialized_error
-        self.__dict__["_Set"] = _raise_uninitialized_error
-        self.__dict__["_GetColor"] = _raise_uninitialized_error
-        self.__dict__["_SetColor"] = _raise_uninitialized_error
-        self.__dict__["_GetLineWidth"] = _raise_uninitialized_error
-        self.__dict__["_SetLineWidth"] = _raise_uninitialized_error
-        self.__dict__["_GetLineStyle"] = _raise_uninitialized_error
-        self.__dict__["_SetLineStyle"] = _raise_uninitialized_error
+        self.__dict__["_get_left"] = _raise_uninitialized_error
+        self.__dict__["_get_right"] = _raise_uninitialized_error
+        self.__dict__["_get_top"] = _raise_uninitialized_error
+        self.__dict__["_get_bottom"] = _raise_uninitialized_error
+        self.__dict__["_set"] = _raise_uninitialized_error
+        self.__dict__["_get_color"] = _raise_uninitialized_error
+        self.__dict__["_set_color"] = _raise_uninitialized_error
+        self.__dict__["_get_line_width"] = _raise_uninitialized_error
+        self.__dict__["_set_line_width"] = _raise_uninitialized_error
+        self.__dict__["_get_line_style"] = _raise_uninitialized_error
+        self.__dict__["_set_line_style"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDrawElemRect._uuid))
             if pUnk is not None:
@@ -1129,17 +1129,17 @@ class IDrawElemRect(IDrawElem):
         IDrawElem._private_init(self, pUnk)
         IID_IDrawElemRect = agcom.GUID(IDrawElemRect._uuid)
         vtable_offset_local = IDrawElemRect._vtable_offset - 1
-        self.__dict__["_GetLeft"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+1, POINTER(agcom.OLE_XPOS_PIXELS))
-        self.__dict__["_GetRight"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+2, POINTER(agcom.OLE_XPOS_PIXELS))
-        self.__dict__["_GetTop"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+3, POINTER(agcom.OLE_YPOS_PIXELS))
-        self.__dict__["_GetBottom"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+4, POINTER(agcom.OLE_YPOS_PIXELS))
-        self.__dict__["_Set"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+5, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS)
-        self.__dict__["_GetColor"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+6, POINTER(agcom.OLE_COLOR))
-        self.__dict__["_SetColor"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+7, agcom.OLE_COLOR)
-        self.__dict__["_GetLineWidth"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+8, POINTER(agcom.FLOAT))
-        self.__dict__["_SetLineWidth"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+9, agcom.FLOAT)
-        self.__dict__["_GetLineStyle"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+10, POINTER(agcom.LONG))
-        self.__dict__["_SetLineStyle"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+11, agcom.LONG)
+        self.__dict__["_get_left"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+1, POINTER(agcom.OLE_XPOS_PIXELS))
+        self.__dict__["_get_right"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+2, POINTER(agcom.OLE_XPOS_PIXELS))
+        self.__dict__["_get_top"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+3, POINTER(agcom.OLE_YPOS_PIXELS))
+        self.__dict__["_get_bottom"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+4, POINTER(agcom.OLE_YPOS_PIXELS))
+        self.__dict__["_set"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+5, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS)
+        self.__dict__["_get_color"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+6, POINTER(agcom.OLE_COLOR))
+        self.__dict__["_set_color"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+7, agcom.OLE_COLOR)
+        self.__dict__["_get_line_width"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+8, POINTER(agcom.FLOAT))
+        self.__dict__["_set_line_width"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+9, agcom.FLOAT)
+        self.__dict__["_get_line_style"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+10, POINTER(agcom.LONG))
+        self.__dict__["_set_line_style"] = IAGFUNCTYPE(pUnk, IID_IDrawElemRect, vtable_offset_local+11, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1154,76 +1154,76 @@ class IDrawElemRect(IDrawElem):
             IDrawElem.__setattr__(self, attrname, value)
     
     @property
-    def Left(self) -> int:
+    def left(self) -> int:
         """The x-coordinate of the left edge of this rectangle."""
         with agmarshall.OLE_XPOS_PIXELS_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLeft"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_left"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Right(self) -> int:
+    def right(self) -> int:
         """The x-coordinate of the right edge of this rectangle."""
         with agmarshall.OLE_XPOS_PIXELS_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetRight"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_right"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Top(self) -> int:
+    def top(self) -> int:
         """The y-coordinate of the top edge of this rectangle."""
         with agmarshall.OLE_YPOS_PIXELS_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetTop"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_top"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Bottom(self) -> int:
+    def bottom(self) -> int:
         """The y-coordinate of the bottom edge of this rectangle."""
         with agmarshall.OLE_YPOS_PIXELS_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetBottom"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_bottom"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def Set(self, left:int, top:int, right:int, bottom:int) -> None:
+    def set(self, left:int, top:int, right:int, bottom:int) -> None:
         """Set the rectangle coordinates."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
              agmarshall.OLE_XPOS_PIXELS_arg(right) as arg_right, \
              agmarshall.OLE_YPOS_PIXELS_arg(bottom) as arg_bottom:
-            agcls.evaluate_hresult(self.__dict__["_Set"](arg_left.COM_val, arg_top.COM_val, arg_right.COM_val, arg_bottom.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set"](arg_left.COM_val, arg_top.COM_val, arg_right.COM_val, arg_bottom.COM_val))
 
     @property
-    def Color(self) -> agcolor.Color:
+    def color(self) -> agcolor.Color:
         """Color of the rectangle."""
         with agmarshall.OLE_COLOR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetColor"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_color"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Color.setter
-    def Color(self, newVal:agcolor.Color) -> None:
+    @color.setter
+    def color(self, newVal:agcolor.Color) -> None:
         with agmarshall.OLE_COLOR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetColor"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_color"](arg_newVal.COM_val))
 
     @property
-    def LineWidth(self) -> float:
+    def line_width(self) -> float:
         """Specifies the width of the line."""
         with agmarshall.FLOAT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLineWidth"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_line_width"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @LineWidth.setter
-    def LineWidth(self, newVal:float) -> None:
+    @line_width.setter
+    def line_width(self, newVal:float) -> None:
         with agmarshall.FLOAT_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLineWidth"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_line_width"](arg_newVal.COM_val))
 
     @property
-    def LineStyle(self) -> "AgELineStyle":
+    def line_style(self) -> "AgELineStyle":
         """Specifies the style of the line."""
         with agmarshall.AgEnum_arg(AgELineStyle) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLineStyle"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_line_style"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @LineStyle.setter
-    def LineStyle(self, newVal:"AgELineStyle") -> None:
+    @line_style.setter
+    def line_style(self, newVal:"AgELineStyle") -> None:
         with agmarshall.AgEnum_arg(AgELineStyle, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLineStyle"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_line_style"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{B017EED9-DC32-4865-BDB9-6C586DC1818C}", IDrawElemRect)
@@ -1236,14 +1236,14 @@ class IDrawElemCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_Clear"] = _raise_uninitialized_error
-        self.__dict__["_Add"] = _raise_uninitialized_error
-        self.__dict__["_Remove"] = _raise_uninitialized_error
-        self.__dict__["_GetVisible"] = _raise_uninitialized_error
-        self.__dict__["_SetVisible"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_clear"] = _raise_uninitialized_error
+        self.__dict__["_add"] = _raise_uninitialized_error
+        self.__dict__["_remove"] = _raise_uninitialized_error
+        self.__dict__["_get_visible"] = _raise_uninitialized_error
+        self.__dict__["_set_visible"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDrawElemCollection._uuid))
             if pUnk is not None:
@@ -1256,14 +1256,14 @@ class IDrawElemCollection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IDrawElemCollection = agcom.GUID(IDrawElemCollection._uuid)
         vtable_offset_local = IDrawElemCollection._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_Clear"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+4, )
-        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_Remove"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+6, agcom.PVOID)
-        self.__dict__["_GetVisible"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+7, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetVisible"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+8, agcom.VARIANT_BOOL)
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_clear"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+4, )
+        self.__dict__["_add"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_remove"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+6, agcom.PVOID)
+        self.__dict__["_get_visible"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+7, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_visible"] = IAGFUNCTYPE(pUnk, IID_IDrawElemCollection, vtable_offset_local+8, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1289,55 +1289,55 @@ class IDrawElemCollection(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def Item(self, index:int) -> "IDrawElem":
+    def item(self, index:int) -> "IDrawElem":
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_index.COM_val, byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns an object that can be used to iterate through all the strings in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppUnk:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppUnk.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppUnk.COM_val)))
             return arg_ppUnk.python_val
 
-    def Clear(self) -> None:
+    def clear(self) -> None:
         """Clears the contents of the collection and updates the display."""
-        agcls.evaluate_hresult(self.__dict__["_Clear"]())
+        agcls.evaluate_hresult(self.__dict__["_clear"]())
 
-    def Add(self, elemType:str) -> "IDrawElem":
+    def add(self, elemType:str) -> "IDrawElem":
         """Factory to create and add a new element to the end of the sequence."""
         with agmarshall.BSTR_arg(elemType) as arg_elemType, \
              agmarshall.AgInterface_out_arg() as arg_ppDrawElem:
-            agcls.evaluate_hresult(self.__dict__["_Add"](arg_elemType.COM_val, byref(arg_ppDrawElem.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_add"](arg_elemType.COM_val, byref(arg_ppDrawElem.COM_val)))
             return arg_ppDrawElem.python_val
 
-    def Remove(self, drawElem:"IDrawElem") -> None:
+    def remove(self, drawElem:"IDrawElem") -> None:
         """Remove the specified element."""
         with agmarshall.AgInterface_in_arg(drawElem, IDrawElem) as arg_drawElem:
-            agcls.evaluate_hresult(self.__dict__["_Remove"](arg_drawElem.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_remove"](arg_drawElem.COM_val))
 
     @property
-    def Visible(self) -> bool:
+    def visible(self) -> bool:
         """Show or hide all the elements."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetVisible"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_visible"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Visible.setter
-    def Visible(self, newVal:bool) -> None:
+    @visible.setter
+    def visible(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetVisible"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_visible"](arg_newVal.COM_val))
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -1351,9 +1351,9 @@ class IWinProjectionPosition(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetXPos"] = _raise_uninitialized_error
-        self.__dict__["_GetYPos"] = _raise_uninitialized_error
-        self.__dict__["_GetIsWinProjPosValid"] = _raise_uninitialized_error
+        self.__dict__["_get_x_pos"] = _raise_uninitialized_error
+        self.__dict__["_get_y_pos"] = _raise_uninitialized_error
+        self.__dict__["_get_is_win_proj_pos_valid"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IWinProjectionPosition._uuid))
             if pUnk is not None:
@@ -1365,9 +1365,9 @@ class IWinProjectionPosition(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IWinProjectionPosition = agcom.GUID(IWinProjectionPosition._uuid)
         vtable_offset_local = IWinProjectionPosition._vtable_offset - 1
-        self.__dict__["_GetXPos"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetYPos"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+2, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetIsWinProjPosValid"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_x_pos"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_y_pos"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+2, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_is_win_proj_pos_valid"] = IAGFUNCTYPE(pUnk, IID_IWinProjectionPosition, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1382,24 +1382,24 @@ class IWinProjectionPosition(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IWinProjectionPosition.")
     
     @property
-    def XPos(self) -> float:
+    def x_pos(self) -> float:
         """Projected window X position."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetXPos"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_x_pos"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def YPos(self) -> float:
+    def y_pos(self) -> float:
         """Projected window Y position."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetYPos"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_y_pos"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def IsWinProjPosValid(self) -> bool:
+    def is_win_proj_pos_valid(self) -> bool:
         """Indicates if the returned projected position is valid or not."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pIsValid:
-            agcls.evaluate_hresult(self.__dict__["_GetIsWinProjPosValid"](byref(arg_pIsValid.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_win_proj_pos_valid"](byref(arg_pIsValid.COM_val)))
             return arg_pIsValid.python_val
 
 
@@ -1413,17 +1413,17 @@ class IDrawElemLine(IDrawElem):
     _vtable_offset = IDrawElem._vtable_offset + IDrawElem._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetLeft"] = _raise_uninitialized_error
-        self.__dict__["_GetRight"] = _raise_uninitialized_error
-        self.__dict__["_GetTop"] = _raise_uninitialized_error
-        self.__dict__["_GetBottom"] = _raise_uninitialized_error
-        self.__dict__["_Set"] = _raise_uninitialized_error
-        self.__dict__["_GetColor"] = _raise_uninitialized_error
-        self.__dict__["_SetColor"] = _raise_uninitialized_error
-        self.__dict__["_GetLineWidth"] = _raise_uninitialized_error
-        self.__dict__["_SetLineWidth"] = _raise_uninitialized_error
-        self.__dict__["_GetLineStyle"] = _raise_uninitialized_error
-        self.__dict__["_SetLineStyle"] = _raise_uninitialized_error
+        self.__dict__["_get_left"] = _raise_uninitialized_error
+        self.__dict__["_get_right"] = _raise_uninitialized_error
+        self.__dict__["_get_top"] = _raise_uninitialized_error
+        self.__dict__["_get_bottom"] = _raise_uninitialized_error
+        self.__dict__["_set"] = _raise_uninitialized_error
+        self.__dict__["_get_color"] = _raise_uninitialized_error
+        self.__dict__["_set_color"] = _raise_uninitialized_error
+        self.__dict__["_get_line_width"] = _raise_uninitialized_error
+        self.__dict__["_set_line_width"] = _raise_uninitialized_error
+        self.__dict__["_get_line_style"] = _raise_uninitialized_error
+        self.__dict__["_set_line_style"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDrawElemLine._uuid))
             if pUnk is not None:
@@ -1436,17 +1436,17 @@ class IDrawElemLine(IDrawElem):
         IDrawElem._private_init(self, pUnk)
         IID_IDrawElemLine = agcom.GUID(IDrawElemLine._uuid)
         vtable_offset_local = IDrawElemLine._vtable_offset - 1
-        self.__dict__["_GetLeft"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+1, POINTER(agcom.OLE_XPOS_PIXELS))
-        self.__dict__["_GetRight"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+2, POINTER(agcom.OLE_XPOS_PIXELS))
-        self.__dict__["_GetTop"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+3, POINTER(agcom.OLE_YPOS_PIXELS))
-        self.__dict__["_GetBottom"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+4, POINTER(agcom.OLE_YPOS_PIXELS))
-        self.__dict__["_Set"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+5, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS)
-        self.__dict__["_GetColor"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+6, POINTER(agcom.OLE_COLOR))
-        self.__dict__["_SetColor"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+7, agcom.OLE_COLOR)
-        self.__dict__["_GetLineWidth"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+8, POINTER(agcom.FLOAT))
-        self.__dict__["_SetLineWidth"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+9, agcom.FLOAT)
-        self.__dict__["_GetLineStyle"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+10, POINTER(agcom.LONG))
-        self.__dict__["_SetLineStyle"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+11, agcom.LONG)
+        self.__dict__["_get_left"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+1, POINTER(agcom.OLE_XPOS_PIXELS))
+        self.__dict__["_get_right"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+2, POINTER(agcom.OLE_XPOS_PIXELS))
+        self.__dict__["_get_top"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+3, POINTER(agcom.OLE_YPOS_PIXELS))
+        self.__dict__["_get_bottom"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+4, POINTER(agcom.OLE_YPOS_PIXELS))
+        self.__dict__["_set"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+5, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS)
+        self.__dict__["_get_color"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+6, POINTER(agcom.OLE_COLOR))
+        self.__dict__["_set_color"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+7, agcom.OLE_COLOR)
+        self.__dict__["_get_line_width"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+8, POINTER(agcom.FLOAT))
+        self.__dict__["_set_line_width"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+9, agcom.FLOAT)
+        self.__dict__["_get_line_style"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+10, POINTER(agcom.LONG))
+        self.__dict__["_set_line_style"] = IAGFUNCTYPE(pUnk, IID_IDrawElemLine, vtable_offset_local+11, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1461,76 +1461,76 @@ class IDrawElemLine(IDrawElem):
             IDrawElem.__setattr__(self, attrname, value)
     
     @property
-    def Left(self) -> int:
+    def left(self) -> int:
         """The x-coordinate of the left edge of this line."""
         with agmarshall.OLE_XPOS_PIXELS_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLeft"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_left"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Right(self) -> int:
+    def right(self) -> int:
         """The x-coordinate of the right edge of this line."""
         with agmarshall.OLE_XPOS_PIXELS_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetRight"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_right"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Top(self) -> int:
+    def top(self) -> int:
         """The y-coordinate of the top edge of this line."""
         with agmarshall.OLE_YPOS_PIXELS_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetTop"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_top"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Bottom(self) -> int:
+    def bottom(self) -> int:
         """The y-coordinate of the bottom edge of this line."""
         with agmarshall.OLE_YPOS_PIXELS_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetBottom"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_bottom"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def Set(self, left:int, top:int, right:int, bottom:int) -> None:
+    def set(self, left:int, top:int, right:int, bottom:int) -> None:
         """Set the rectangle coordinates."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
              agmarshall.OLE_XPOS_PIXELS_arg(right) as arg_right, \
              agmarshall.OLE_YPOS_PIXELS_arg(bottom) as arg_bottom:
-            agcls.evaluate_hresult(self.__dict__["_Set"](arg_left.COM_val, arg_top.COM_val, arg_right.COM_val, arg_bottom.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set"](arg_left.COM_val, arg_top.COM_val, arg_right.COM_val, arg_bottom.COM_val))
 
     @property
-    def Color(self) -> agcolor.Color:
+    def color(self) -> agcolor.Color:
         """Color of the rectangle."""
         with agmarshall.OLE_COLOR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetColor"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_color"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Color.setter
-    def Color(self, newVal:agcolor.Color) -> None:
+    @color.setter
+    def color(self, newVal:agcolor.Color) -> None:
         with agmarshall.OLE_COLOR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetColor"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_color"](arg_newVal.COM_val))
 
     @property
-    def LineWidth(self) -> float:
+    def line_width(self) -> float:
         """Specifies the width of the line."""
         with agmarshall.FLOAT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLineWidth"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_line_width"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @LineWidth.setter
-    def LineWidth(self, newVal:float) -> None:
+    @line_width.setter
+    def line_width(self, newVal:float) -> None:
         with agmarshall.FLOAT_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLineWidth"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_line_width"](arg_newVal.COM_val))
 
     @property
-    def LineStyle(self) -> "AgELineStyle":
+    def line_style(self) -> "AgELineStyle":
         """Specifies the style of the line."""
         with agmarshall.AgEnum_arg(AgELineStyle) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLineStyle"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_line_style"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @LineStyle.setter
-    def LineStyle(self, newVal:"AgELineStyle") -> None:
+    @line_style.setter
+    def line_style(self, newVal:"AgELineStyle") -> None:
         with agmarshall.AgEnum_arg(AgELineStyle, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLineStyle"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_line_style"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{1A550DDC-7769-4A6C-9D0C-8E9D8C1757E2}", IDrawElemLine)
@@ -1543,11 +1543,11 @@ class IExecCmdResult(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_Range"] = _raise_uninitialized_error
-        self.__dict__["_GetIsSucceeded"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_range"] = _raise_uninitialized_error
+        self.__dict__["_get_is_succeeded"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IExecCmdResult._uuid))
             if pUnk is not None:
@@ -1560,11 +1560,11 @@ class IExecCmdResult(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IExecCmdResult = agcom.GUID(IExecCmdResult._uuid)
         vtable_offset_local = IExecCmdResult._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_Range"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_GetIsSucceeded"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_range"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_get_is_succeeded"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1590,42 +1590,42 @@ class IExecCmdResult(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pCount.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
-    def Item(self, index:int) -> str:
+    def item(self, index:int) -> str:
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.BSTR_arg() as arg_pItem:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_index.COM_val, byref(arg_pItem.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pItem.COM_val)))
             return arg_pItem.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns an object that can be used to iterate through all the strings in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppEnum.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
-    def Range(self, startIndex:int, stopIndex:int) -> list:
+    def range(self, startIndex:int, stopIndex:int) -> list:
         """Return the elements within the specified range."""
         with agmarshall.LONG_arg(startIndex) as arg_startIndex, \
              agmarshall.LONG_arg(stopIndex) as arg_stopIndex, \
              agmarshall.SAFEARRAY_arg() as arg_ppVar:
-            agcls.evaluate_hresult(self.__dict__["_Range"](arg_startIndex.COM_val, arg_stopIndex.COM_val, byref(arg_ppVar.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_range"](arg_startIndex.COM_val, arg_stopIndex.COM_val, byref(arg_ppVar.COM_val)))
             return arg_ppVar.python_val
 
     @property
-    def IsSucceeded(self) -> bool:
+    def is_succeeded(self) -> bool:
         """Indicates whether the object contains valid results."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetIsSucceeded"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_succeeded"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -1639,9 +1639,9 @@ class IExecMultiCmdResult(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IExecMultiCmdResult._uuid))
             if pUnk is not None:
@@ -1654,9 +1654,9 @@ class IExecMultiCmdResult(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IExecMultiCmdResult = agcom.GUID(IExecMultiCmdResult._uuid)
         vtable_offset_local = IExecMultiCmdResult._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1682,27 +1682,27 @@ class IExecMultiCmdResult(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pCount.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
-    def Item(self, index:int) -> "IExecCmdResult":
+    def item(self, index:int) -> "IExecCmdResult":
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_index.COM_val, byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns an object that can be used to iterate through all the objects in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppEnum.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -1716,54 +1716,54 @@ class IUiAxVOCntrl(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetBackColor"] = _raise_uninitialized_error
-        self.__dict__["_SetBackColor"] = _raise_uninitialized_error
-        self.__dict__["_GetPicture"] = _raise_uninitialized_error
-        self.__dict__["_PicturePutRef"] = _raise_uninitialized_error
-        self.__dict__["_SetPicture"] = _raise_uninitialized_error
-        self.__dict__["_PickInfo"] = _raise_uninitialized_error
-        self.__dict__["_GetWinID"] = _raise_uninitialized_error
-        self.__dict__["_SetWinID"] = _raise_uninitialized_error
-        self.__dict__["_GetApplication"] = _raise_uninitialized_error
-        self.__dict__["_ZoomIn"] = _raise_uninitialized_error
-        self.__dict__["_GetNoLogo"] = _raise_uninitialized_error
-        self.__dict__["_SetNoLogo"] = _raise_uninitialized_error
-        self.__dict__["_GetOLEDropMode"] = _raise_uninitialized_error
-        self.__dict__["_SetOLEDropMode"] = _raise_uninitialized_error
-        self.__dict__["_GetVendorID"] = _raise_uninitialized_error
-        self.__dict__["_SetVendorID"] = _raise_uninitialized_error
-        self.__dict__["_RubberBandPickInfo"] = _raise_uninitialized_error
-        self.__dict__["_GetMouseMode"] = _raise_uninitialized_error
-        self.__dict__["_SetMouseMode"] = _raise_uninitialized_error
-        self.__dict__["_GetDrawElements"] = _raise_uninitialized_error
-        self.__dict__["_GetReadyState"] = _raise_uninitialized_error
-        self.__dict__["_GetPptPreloadMode"] = _raise_uninitialized_error
-        self.__dict__["_SetPptPreloadMode"] = _raise_uninitialized_error
-        self.__dict__["_GetAdvancedPickMode"] = _raise_uninitialized_error
-        self.__dict__["_SetAdvancedPickMode"] = _raise_uninitialized_error
-        self.__dict__["_CopyFromWinID"] = _raise_uninitialized_error
-        self.__dict__["_StartObjectEditing"] = _raise_uninitialized_error
-        self.__dict__["_ApplyObjectEditing"] = _raise_uninitialized_error
-        self.__dict__["_StopObjectEditing"] = _raise_uninitialized_error
-        self.__dict__["_GetIsObjectEditing"] = _raise_uninitialized_error
-        self.__dict__["_GetInZoomMode"] = _raise_uninitialized_error
-        self.__dict__["_SetMouseCursorFromFile"] = _raise_uninitialized_error
-        self.__dict__["_RestoreMouseCursor"] = _raise_uninitialized_error
-        self.__dict__["_SetMouseCursorFromHandle"] = _raise_uninitialized_error
-        self.__dict__["_GetShowProgressImage"] = _raise_uninitialized_error
-        self.__dict__["_SetShowProgressImage"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageXOffset"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageXOffset"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageYOffset"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageYOffset"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageFile"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageFile"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageXOrigin"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageXOrigin"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageYOrigin"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageYOrigin"] = _raise_uninitialized_error
-        self.__dict__["_GetPictureFromFile"] = _raise_uninitialized_error
-        self.__dict__["_SetPictureFromFile"] = _raise_uninitialized_error
+        self.__dict__["_get_back_color"] = _raise_uninitialized_error
+        self.__dict__["_set_back_color"] = _raise_uninitialized_error
+        self.__dict__["_get_picture"] = _raise_uninitialized_error
+        self.__dict__["_picture_put_ref"] = _raise_uninitialized_error
+        self.__dict__["_set_picture"] = _raise_uninitialized_error
+        self.__dict__["_pick_info"] = _raise_uninitialized_error
+        self.__dict__["_get_win_id"] = _raise_uninitialized_error
+        self.__dict__["_set_win_id"] = _raise_uninitialized_error
+        self.__dict__["_get_application"] = _raise_uninitialized_error
+        self.__dict__["_zoom_in"] = _raise_uninitialized_error
+        self.__dict__["_get_no_logo"] = _raise_uninitialized_error
+        self.__dict__["_set_no_logo"] = _raise_uninitialized_error
+        self.__dict__["_get_ole_drop_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_ole_drop_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_vendor_id"] = _raise_uninitialized_error
+        self.__dict__["_set_vendor_id"] = _raise_uninitialized_error
+        self.__dict__["_rubber_band_pick_info"] = _raise_uninitialized_error
+        self.__dict__["_get_mouse_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_mouse_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_draw_elements"] = _raise_uninitialized_error
+        self.__dict__["_get_ready_state"] = _raise_uninitialized_error
+        self.__dict__["_get_ppt_preload_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_ppt_preload_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_advanced_pick_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_advanced_pick_mode"] = _raise_uninitialized_error
+        self.__dict__["_copy_from_win_id"] = _raise_uninitialized_error
+        self.__dict__["_start_object_editing"] = _raise_uninitialized_error
+        self.__dict__["_apply_object_editing"] = _raise_uninitialized_error
+        self.__dict__["_stop_object_editing"] = _raise_uninitialized_error
+        self.__dict__["_get_is_object_editing"] = _raise_uninitialized_error
+        self.__dict__["_get_in_zoom_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_mouse_cursor_from_file"] = _raise_uninitialized_error
+        self.__dict__["_restore_mouse_cursor"] = _raise_uninitialized_error
+        self.__dict__["_set_mouse_cursor_from_handle"] = _raise_uninitialized_error
+        self.__dict__["_get_show_progress_image"] = _raise_uninitialized_error
+        self.__dict__["_set_show_progress_image"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_x_offset"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_x_offset"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_y_offset"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_y_offset"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_file"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_file"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_x_origin"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_x_origin"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_y_origin"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_y_origin"] = _raise_uninitialized_error
+        self.__dict__["_get_picture_from_file"] = _raise_uninitialized_error
+        self.__dict__["_set_picture_from_file"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiAxVOCntrl._uuid))
             if pUnk is not None:
@@ -1775,54 +1775,54 @@ class IUiAxVOCntrl(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiAxVOCntrl = agcom.GUID(IUiAxVOCntrl._uuid)
         vtable_offset_local = IUiAxVOCntrl._vtable_offset - 1
-        self.__dict__["_GetBackColor"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
-        self.__dict__["_SetBackColor"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
-        self.__dict__["_GetPicture"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+4, agcom.PVOID)
-        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+5, agcom.PVOID)
-        self.__dict__["_PickInfo"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+6, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
-        self.__dict__["_GetWinID"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+7, POINTER(agcom.LONG))
-        self.__dict__["_SetWinID"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+8, agcom.LONG)
-        self.__dict__["_GetApplication"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+9, POINTER(agcom.PVOID))
-        self.__dict__["_ZoomIn"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+10, )
-        self.__dict__["_GetNoLogo"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetNoLogo"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+12, agcom.VARIANT_BOOL)
-        self.__dict__["_GetOLEDropMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+13, POINTER(agcom.LONG))
-        self.__dict__["_SetOLEDropMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+14, agcom.LONG)
-        self.__dict__["_GetVendorID"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+15, POINTER(agcom.BSTR))
-        self.__dict__["_SetVendorID"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+16, agcom.BSTR)
-        self.__dict__["_RubberBandPickInfo"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+17, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
-        self.__dict__["_GetMouseMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+18, POINTER(agcom.LONG))
-        self.__dict__["_SetMouseMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+19, agcom.LONG)
-        self.__dict__["_GetDrawElements"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+20, POINTER(agcom.PVOID))
-        self.__dict__["_GetReadyState"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+21, POINTER(agcom.LONG))
-        self.__dict__["_GetPptPreloadMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+22, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetPptPreloadMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+23, agcom.VARIANT_BOOL)
-        self.__dict__["_GetAdvancedPickMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+24, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetAdvancedPickMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+25, agcom.VARIANT_BOOL)
-        self.__dict__["_CopyFromWinID"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+26, agcom.LONG)
-        self.__dict__["_StartObjectEditing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+27, agcom.BSTR)
-        self.__dict__["_ApplyObjectEditing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+28, )
-        self.__dict__["_StopObjectEditing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+29, agcom.VARIANT_BOOL)
-        self.__dict__["_GetIsObjectEditing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+30, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetInZoomMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+31, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetMouseCursorFromFile"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+32, agcom.BSTR)
-        self.__dict__["_RestoreMouseCursor"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+33, )
-        self.__dict__["_SetMouseCursorFromHandle"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+34, agcom.OLE_HANDLE)
-        self.__dict__["_GetShowProgressImage"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+35, POINTER(agcom.LONG))
-        self.__dict__["_SetShowProgressImage"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+36, agcom.LONG)
-        self.__dict__["_GetProgressImageXOffset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+37, POINTER(agcom.LONG))
-        self.__dict__["_SetProgressImageXOffset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+38, agcom.LONG)
-        self.__dict__["_GetProgressImageYOffset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+39, POINTER(agcom.LONG))
-        self.__dict__["_SetProgressImageYOffset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+40, agcom.LONG)
-        self.__dict__["_GetProgressImageFile"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+41, POINTER(agcom.BSTR))
-        self.__dict__["_SetProgressImageFile"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+42, agcom.BSTR)
-        self.__dict__["_GetProgressImageXOrigin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+43, POINTER(agcom.LONG))
-        self.__dict__["_SetProgressImageXOrigin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+44, agcom.LONG)
-        self.__dict__["_GetProgressImageYOrigin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+45, POINTER(agcom.LONG))
-        self.__dict__["_SetProgressImageYOrigin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+46, agcom.LONG)
-        self.__dict__["_GetPictureFromFile"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+47, POINTER(agcom.BSTR))
-        self.__dict__["_SetPictureFromFile"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+48, agcom.BSTR)
+        self.__dict__["_get_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
+        self.__dict__["_set_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
+        self.__dict__["_get_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_picture_put_ref"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_set_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+5, agcom.PVOID)
+        self.__dict__["_pick_info"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+6, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
+        self.__dict__["_get_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+7, POINTER(agcom.LONG))
+        self.__dict__["_set_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+8, agcom.LONG)
+        self.__dict__["_get_application"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+9, POINTER(agcom.PVOID))
+        self.__dict__["_zoom_in"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+10, )
+        self.__dict__["_get_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+11, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+12, agcom.VARIANT_BOOL)
+        self.__dict__["_get_ole_drop_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+13, POINTER(agcom.LONG))
+        self.__dict__["_set_ole_drop_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+14, agcom.LONG)
+        self.__dict__["_get_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+15, POINTER(agcom.BSTR))
+        self.__dict__["_set_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+16, agcom.BSTR)
+        self.__dict__["_rubber_band_pick_info"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+17, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
+        self.__dict__["_get_mouse_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+18, POINTER(agcom.LONG))
+        self.__dict__["_set_mouse_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+19, agcom.LONG)
+        self.__dict__["_get_draw_elements"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+20, POINTER(agcom.PVOID))
+        self.__dict__["_get_ready_state"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+21, POINTER(agcom.LONG))
+        self.__dict__["_get_ppt_preload_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+22, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_ppt_preload_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+23, agcom.VARIANT_BOOL)
+        self.__dict__["_get_advanced_pick_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+24, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_advanced_pick_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+25, agcom.VARIANT_BOOL)
+        self.__dict__["_copy_from_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+26, agcom.LONG)
+        self.__dict__["_start_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+27, agcom.BSTR)
+        self.__dict__["_apply_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+28, )
+        self.__dict__["_stop_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+29, agcom.VARIANT_BOOL)
+        self.__dict__["_get_is_object_editing"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+30, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_in_zoom_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+31, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_mouse_cursor_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+32, agcom.BSTR)
+        self.__dict__["_restore_mouse_cursor"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+33, )
+        self.__dict__["_set_mouse_cursor_from_handle"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+34, agcom.OLE_HANDLE)
+        self.__dict__["_get_show_progress_image"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+35, POINTER(agcom.LONG))
+        self.__dict__["_set_show_progress_image"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+36, agcom.LONG)
+        self.__dict__["_get_progress_image_x_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+37, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_x_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+38, agcom.LONG)
+        self.__dict__["_get_progress_image_y_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+39, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_y_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+40, agcom.LONG)
+        self.__dict__["_get_progress_image_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+41, POINTER(agcom.BSTR))
+        self.__dict__["_set_progress_image_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+42, agcom.BSTR)
+        self.__dict__["_get_progress_image_x_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+43, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_x_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+44, agcom.LONG)
+        self.__dict__["_get_progress_image_y_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+45, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_y_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+46, agcom.LONG)
+        self.__dict__["_get_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+47, POINTER(agcom.BSTR))
+        self.__dict__["_set_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxVOCntrl, vtable_offset_local+48, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1839,291 +1839,291 @@ class IUiAxVOCntrl(object):
         """Returns an IUiAxVOCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxVOCntrl."""
         return IUiAxVOCntrlEventHandler(self._pUnk)    
     @property
-    def BackColor(self) -> agcolor.Color:
+    def back_color(self) -> agcolor.Color:
         """The background color of the control."""
         with agmarshall.OLE_COLOR_arg() as arg_pclr:
-            agcls.evaluate_hresult(self.__dict__["_GetBackColor"](byref(arg_pclr.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_back_color"](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
-    @BackColor.setter
-    def BackColor(self, clr:agcolor.Color) -> None:
+    @back_color.setter
+    def back_color(self, clr:agcolor.Color) -> None:
         with agmarshall.OLE_COLOR_arg(clr) as arg_clr:
-            agcls.evaluate_hresult(self.__dict__["_SetBackColor"](arg_clr.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_back_color"](arg_clr.COM_val))
 
     @property
-    def Picture(self) -> "IPictureDisp":
+    def picture(self) -> "IPictureDisp":
         """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
-            agcls.evaluate_hresult(self.__dict__["_GetPicture"](byref(arg_ppPicture.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_picture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def PicturePutRef(self, pPicture:"IPictureDisp") -> None:
+    def picture_put_ref(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_picture_put_ref"](arg_pPicture.COM_val))
 
-    @Picture.setter
-    def Picture(self, pPicture:"IPictureDisp") -> None:
+    @picture.setter
+    def picture(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_SetPicture"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_picture"](arg_pPicture.COM_val))
 
-    def PickInfo(self, x:int, y:int) -> "IPickInfoData":
+    def pick_info(self, x:int, y:int) -> "IPickInfoData":
         """Get detailed information about a mouse pick."""
         with agmarshall.OLE_XPOS_PIXELS_arg(x) as arg_x, \
              agmarshall.OLE_YPOS_PIXELS_arg(y) as arg_y, \
              agmarshall.AgInterface_out_arg() as arg_ppPickData:
-            agcls.evaluate_hresult(self.__dict__["_PickInfo"](arg_x.COM_val, arg_y.COM_val, byref(arg_ppPickData.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_pick_info"](arg_x.COM_val, arg_y.COM_val, byref(arg_ppPickData.COM_val)))
             return arg_ppPickData.python_val
 
     @property
-    def WinID(self) -> int:
+    def win_id(self) -> int:
         """Window identifier (for Connect commands)."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetWinID"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_win_id"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @WinID.setter
-    def WinID(self, newVal:int) -> None:
+    @win_id.setter
+    def win_id(self, newVal:int) -> None:
         with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetWinID"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_win_id"](arg_newVal.COM_val))
 
     @property
-    def Application(self) -> "ISTKXApplication":
+    def application(self) -> "ISTKXApplication":
         """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetApplication"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_application"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def ZoomIn(self) -> None:
+    def zoom_in(self) -> None:
         """Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom."""
-        agcls.evaluate_hresult(self.__dict__["_ZoomIn"]())
+        agcls.evaluate_hresult(self.__dict__["_zoom_in"]())
 
     @property
-    def NoLogo(self) -> bool:
+    def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pNoLogo:
-            agcls.evaluate_hresult(self.__dict__["_GetNoLogo"](byref(arg_pNoLogo.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_no_logo"](byref(arg_pNoLogo.COM_val)))
             return arg_pNoLogo.python_val
 
-    @NoLogo.setter
-    def NoLogo(self, bNoLogo:bool) -> None:
+    @no_logo.setter
+    def no_logo(self, bNoLogo:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(bNoLogo) as arg_bNoLogo:
-            agcls.evaluate_hresult(self.__dict__["_SetNoLogo"](arg_bNoLogo.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_no_logo"](arg_bNoLogo.COM_val))
 
     @property
-    def OLEDropMode(self) -> "AgEOLEDropMode":
+    def ole_drop_mode(self) -> "AgEOLEDropMode":
         """How the control handles drop operations."""
         with agmarshall.AgEnum_arg(AgEOLEDropMode) as arg_psOLEDropMode:
-            agcls.evaluate_hresult(self.__dict__["_GetOLEDropMode"](byref(arg_psOLEDropMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_ole_drop_mode"](byref(arg_psOLEDropMode.COM_val)))
             return arg_psOLEDropMode.python_val
 
-    @OLEDropMode.setter
-    def OLEDropMode(self, psOLEDropMode:"AgEOLEDropMode") -> None:
+    @ole_drop_mode.setter
+    def ole_drop_mode(self, psOLEDropMode:"AgEOLEDropMode") -> None:
         with agmarshall.AgEnum_arg(AgEOLEDropMode, psOLEDropMode) as arg_psOLEDropMode:
-            agcls.evaluate_hresult(self.__dict__["_SetOLEDropMode"](arg_psOLEDropMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_ole_drop_mode"](arg_psOLEDropMode.COM_val))
 
     @property
-    def VendorID(self) -> str:
+    def vendor_id(self) -> str:
         """This property is deprecated. The identifier of the vendor."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetVendorID"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_vendor_id"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
-    @VendorID.setter
-    def VendorID(self, vendorID:str) -> None:
+    @vendor_id.setter
+    def vendor_id(self, vendorID:str) -> None:
         with agmarshall.BSTR_arg(vendorID) as arg_vendorID:
-            agcls.evaluate_hresult(self.__dict__["_SetVendorID"](arg_vendorID.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_vendor_id"](arg_vendorID.COM_val))
 
-    def RubberBandPickInfo(self, left:int, top:int, right:int, bottom:int) -> "IRubberBandPickInfoData":
+    def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "IRubberBandPickInfoData":
         """Get detailed information about a rubber-band mouse pick. The values must be within the VO window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
              agmarshall.OLE_XPOS_PIXELS_arg(right) as arg_right, \
              agmarshall.OLE_YPOS_PIXELS_arg(bottom) as arg_bottom, \
              agmarshall.AgInterface_out_arg() as arg_ppPickInfoData:
-            agcls.evaluate_hresult(self.__dict__["_RubberBandPickInfo"](arg_left.COM_val, arg_top.COM_val, arg_right.COM_val, arg_bottom.COM_val, byref(arg_ppPickInfoData.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_rubber_band_pick_info"](arg_left.COM_val, arg_top.COM_val, arg_right.COM_val, arg_bottom.COM_val, byref(arg_ppPickInfoData.COM_val)))
             return arg_ppPickInfoData.python_val
 
     @property
-    def MouseMode(self) -> "AgEMouseMode":
+    def mouse_mode(self) -> "AgEMouseMode":
         """Whether this control responds to mouse events."""
         with agmarshall.AgEnum_arg(AgEMouseMode) as arg_psMouseMode:
-            agcls.evaluate_hresult(self.__dict__["_GetMouseMode"](byref(arg_psMouseMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_mouse_mode"](byref(arg_psMouseMode.COM_val)))
             return arg_psMouseMode.python_val
 
-    @MouseMode.setter
-    def MouseMode(self, psMouseMode:"AgEMouseMode") -> None:
+    @mouse_mode.setter
+    def mouse_mode(self, psMouseMode:"AgEMouseMode") -> None:
         with agmarshall.AgEnum_arg(AgEMouseMode, psMouseMode) as arg_psMouseMode:
-            agcls.evaluate_hresult(self.__dict__["_SetMouseMode"](arg_psMouseMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_mouse_mode"](arg_psMouseMode.COM_val))
 
     @property
-    def DrawElements(self) -> "IDrawElemCollection":
+    def draw_elements(self) -> "IDrawElemCollection":
         """Elements to draw on the control."""
         with agmarshall.AgInterface_out_arg() as arg_ppDrawElemColl:
-            agcls.evaluate_hresult(self.__dict__["_GetDrawElements"](byref(arg_ppDrawElemColl.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_draw_elements"](byref(arg_ppDrawElemColl.COM_val)))
             return arg_ppDrawElemColl.python_val
 
     @property
-    def ReadyState(self) -> int:
+    def ready_state(self) -> int:
         """Returns/sets the background color of the control."""
         with agmarshall.LONG_arg() as arg_pclr:
-            agcls.evaluate_hresult(self.__dict__["_GetReadyState"](byref(arg_pclr.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_ready_state"](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
     @property
-    def PptPreloadMode(self) -> bool:
+    def ppt_preload_mode(self) -> bool:
         """Special mode for PowerPoint : if true the VO control window is kept around when switching between slides."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pPptPreloadMode:
-            agcls.evaluate_hresult(self.__dict__["_GetPptPreloadMode"](byref(arg_pPptPreloadMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_ppt_preload_mode"](byref(arg_pPptPreloadMode.COM_val)))
             return arg_pPptPreloadMode.python_val
 
-    @PptPreloadMode.setter
-    def PptPreloadMode(self, bPptPreloadMode:bool) -> None:
+    @ppt_preload_mode.setter
+    def ppt_preload_mode(self, bPptPreloadMode:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(bPptPreloadMode) as arg_bPptPreloadMode:
-            agcls.evaluate_hresult(self.__dict__["_SetPptPreloadMode"](arg_bPptPreloadMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_ppt_preload_mode"](arg_bPptPreloadMode.COM_val))
 
     @property
-    def AdvancedPickMode(self) -> bool:
+    def advanced_pick_mode(self) -> bool:
         """If true, sets the advance pick mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pAdvancePickMode:
-            agcls.evaluate_hresult(self.__dict__["_GetAdvancedPickMode"](byref(arg_pAdvancePickMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_advanced_pick_mode"](byref(arg_pAdvancePickMode.COM_val)))
             return arg_pAdvancePickMode.python_val
 
-    @AdvancedPickMode.setter
-    def AdvancedPickMode(self, bAdvancePickMode:bool) -> None:
+    @advanced_pick_mode.setter
+    def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(bAdvancePickMode) as arg_bAdvancePickMode:
-            agcls.evaluate_hresult(self.__dict__["_SetAdvancedPickMode"](arg_bAdvancePickMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_advanced_pick_mode"](arg_bAdvancePickMode.COM_val))
 
-    def CopyFromWinID(self, winID:int) -> None:
+    def copy_from_win_id(self, winID:int) -> None:
         """Copies an existing Window's scene into this control"""
         with agmarshall.LONG_arg(winID) as arg_winID:
-            agcls.evaluate_hresult(self.__dict__["_CopyFromWinID"](arg_winID.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_copy_from_win_id"](arg_winID.COM_val))
 
-    def StartObjectEditing(self, objEditPath:str) -> None:
+    def start_object_editing(self, objEditPath:str) -> None:
         """Enters into 3D object editing mode."""
         with agmarshall.BSTR_arg(objEditPath) as arg_objEditPath:
-            agcls.evaluate_hresult(self.__dict__["_StartObjectEditing"](arg_objEditPath.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_start_object_editing"](arg_objEditPath.COM_val))
 
-    def ApplyObjectEditing(self) -> None:
+    def apply_object_editing(self) -> None:
         """Commits changes when in 3D object editing mode."""
-        agcls.evaluate_hresult(self.__dict__["_ApplyObjectEditing"]())
+        agcls.evaluate_hresult(self.__dict__["_apply_object_editing"]())
 
-    def StopObjectEditing(self, canceled:bool) -> None:
+    def stop_object_editing(self, canceled:bool) -> None:
         """Ends 3D object editing mode."""
         with agmarshall.VARIANT_BOOL_arg(canceled) as arg_canceled:
-            agcls.evaluate_hresult(self.__dict__["_StopObjectEditing"](arg_canceled.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_stop_object_editing"](arg_canceled.COM_val))
 
     @property
-    def IsObjectEditing(self) -> bool:
+    def is_object_editing(self) -> bool:
         """Returns true if in 3D object editing mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_p3DObjectEditing:
-            agcls.evaluate_hresult(self.__dict__["_GetIsObjectEditing"](byref(arg_p3DObjectEditing.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_object_editing"](byref(arg_p3DObjectEditing.COM_val)))
             return arg_p3DObjectEditing.python_val
 
     @property
-    def InZoomMode(self) -> bool:
+    def in_zoom_mode(self) -> bool:
         """Returns true if in zoom in mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pZoomIn:
-            agcls.evaluate_hresult(self.__dict__["_GetInZoomMode"](byref(arg_pZoomIn.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_in_zoom_mode"](byref(arg_pZoomIn.COM_val)))
             return arg_pZoomIn.python_val
 
-    def SetMouseCursorFromFile(self, cursorFileName:str) -> None:
+    def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
         """Sets mouse cursor to the selected cursor file."""
         with agmarshall.BSTR_arg(cursorFileName) as arg_cursorFileName:
-            agcls.evaluate_hresult(self.__dict__["_SetMouseCursorFromFile"](arg_cursorFileName.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_mouse_cursor_from_file"](arg_cursorFileName.COM_val))
 
-    def RestoreMouseCursor(self) -> None:
+    def restore_mouse_cursor(self) -> None:
         """Restores mouse cursor back to normal."""
-        agcls.evaluate_hresult(self.__dict__["_RestoreMouseCursor"]())
+        agcls.evaluate_hresult(self.__dict__["_restore_mouse_cursor"]())
 
-    def SetMouseCursorFromHandle(self, cursorHandle:int) -> None:
+    def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
         """Sets mouse cursor to the passed cursor handle."""
         with agmarshall.OLE_HANDLE_arg(cursorHandle) as arg_cursorHandle:
-            agcls.evaluate_hresult(self.__dict__["_SetMouseCursorFromHandle"](arg_cursorHandle.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_mouse_cursor_from_handle"](arg_cursorHandle.COM_val))
 
     @property
-    def ShowProgressImage(self) -> "AgEShowProgressImage":
+    def show_progress_image(self) -> "AgEShowProgressImage":
         """The animated progress image type."""
         with agmarshall.AgEnum_arg(AgEShowProgressImage) as arg_psProgressImage:
-            agcls.evaluate_hresult(self.__dict__["_GetShowProgressImage"](byref(arg_psProgressImage.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_show_progress_image"](byref(arg_psProgressImage.COM_val)))
             return arg_psProgressImage.python_val
 
-    @ShowProgressImage.setter
-    def ShowProgressImage(self, psProgressImage:"AgEShowProgressImage") -> None:
+    @show_progress_image.setter
+    def show_progress_image(self, psProgressImage:"AgEShowProgressImage") -> None:
         with agmarshall.AgEnum_arg(AgEShowProgressImage, psProgressImage) as arg_psProgressImage:
-            agcls.evaluate_hresult(self.__dict__["_SetShowProgressImage"](arg_psProgressImage.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_show_progress_image"](arg_psProgressImage.COM_val))
 
     @property
-    def ProgressImageXOffset(self) -> int:
+    def progress_image_x_offset(self) -> int:
         """The horizontal X offset for animated progress image."""
         with agmarshall.LONG_arg() as arg_pXOffset:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageXOffset"](byref(arg_pXOffset.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_x_offset"](byref(arg_pXOffset.COM_val)))
             return arg_pXOffset.python_val
 
-    @ProgressImageXOffset.setter
-    def ProgressImageXOffset(self, xOffset:int) -> None:
+    @progress_image_x_offset.setter
+    def progress_image_x_offset(self, xOffset:int) -> None:
         with agmarshall.LONG_arg(xOffset) as arg_xOffset:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageXOffset"](arg_xOffset.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_x_offset"](arg_xOffset.COM_val))
 
     @property
-    def ProgressImageYOffset(self) -> int:
+    def progress_image_y_offset(self) -> int:
         """The vertical Y offset for animated progress image."""
         with agmarshall.LONG_arg() as arg_pYOffset:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageYOffset"](byref(arg_pYOffset.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_y_offset"](byref(arg_pYOffset.COM_val)))
             return arg_pYOffset.python_val
 
-    @ProgressImageYOffset.setter
-    def ProgressImageYOffset(self, yOffset:int) -> None:
+    @progress_image_y_offset.setter
+    def progress_image_y_offset(self, yOffset:int) -> None:
         with agmarshall.LONG_arg(yOffset) as arg_yOffset:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageYOffset"](arg_yOffset.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_y_offset"](arg_yOffset.COM_val))
 
     @property
-    def ProgressImageFile(self) -> str:
+    def progress_image_file(self) -> str:
         """The complete image file name/path for animated progress image."""
         with agmarshall.BSTR_arg() as arg_pImageFile:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageFile"](byref(arg_pImageFile.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_file"](byref(arg_pImageFile.COM_val)))
             return arg_pImageFile.python_val
 
-    @ProgressImageFile.setter
-    def ProgressImageFile(self, imageFile:str) -> None:
+    @progress_image_file.setter
+    def progress_image_file(self, imageFile:str) -> None:
         with agmarshall.BSTR_arg(imageFile) as arg_imageFile:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageFile"](arg_imageFile.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_file"](arg_imageFile.COM_val))
 
     @property
-    def ProgressImageXOrigin(self) -> "AgEProgressImageXOrigin":
+    def progress_image_x_origin(self) -> "AgEProgressImageXOrigin":
         """The X origin alignment for animated progress image."""
         with agmarshall.AgEnum_arg(AgEProgressImageXOrigin) as arg_psProgressImageXOrigin:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageXOrigin"](byref(arg_psProgressImageXOrigin.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_x_origin"](byref(arg_psProgressImageXOrigin.COM_val)))
             return arg_psProgressImageXOrigin.python_val
 
-    @ProgressImageXOrigin.setter
-    def ProgressImageXOrigin(self, progressImageXOrigin:"AgEProgressImageXOrigin") -> None:
+    @progress_image_x_origin.setter
+    def progress_image_x_origin(self, progressImageXOrigin:"AgEProgressImageXOrigin") -> None:
         with agmarshall.AgEnum_arg(AgEProgressImageXOrigin, progressImageXOrigin) as arg_progressImageXOrigin:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageXOrigin"](arg_progressImageXOrigin.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_x_origin"](arg_progressImageXOrigin.COM_val))
 
     @property
-    def ProgressImageYOrigin(self) -> "AgEProgressImageYOrigin":
+    def progress_image_y_origin(self) -> "AgEProgressImageYOrigin":
         """The Y origin alignment for animated progress image."""
         with agmarshall.AgEnum_arg(AgEProgressImageYOrigin) as arg_psProgressImageYOrigin:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageYOrigin"](byref(arg_psProgressImageYOrigin.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_y_origin"](byref(arg_psProgressImageYOrigin.COM_val)))
             return arg_psProgressImageYOrigin.python_val
 
-    @ProgressImageYOrigin.setter
-    def ProgressImageYOrigin(self, progressImageYOrigin:"AgEProgressImageYOrigin") -> None:
+    @progress_image_y_origin.setter
+    def progress_image_y_origin(self, progressImageYOrigin:"AgEProgressImageYOrigin") -> None:
         with agmarshall.AgEnum_arg(AgEProgressImageYOrigin, progressImageYOrigin) as arg_progressImageYOrigin:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageYOrigin"](arg_progressImageYOrigin.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_y_origin"](arg_progressImageYOrigin.COM_val))
 
     @property
-    def PictureFromFile(self) -> str:
+    def picture_from_file(self) -> str:
         """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg() as arg_pPictureFile:
-            agcls.evaluate_hresult(self.__dict__["_GetPictureFromFile"](byref(arg_pPictureFile.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_picture_from_file"](byref(arg_pPictureFile.COM_val)))
             return arg_pPictureFile.python_val
 
-    @PictureFromFile.setter
-    def PictureFromFile(self, pictureFile:str) -> None:
+    @picture_from_file.setter
+    def picture_from_file(self, pictureFile:str) -> None:
         """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg(pictureFile) as arg_pictureFile:
-            agcls.evaluate_hresult(self.__dict__["_SetPictureFromFile"](arg_pictureFile.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_picture_from_file"](arg_pictureFile.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{0975BA23-E273-4B8F-BA8D-32ECB328C092}", IUiAxVOCntrl)
@@ -2136,51 +2136,51 @@ class IUiAx2DCntrl(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetBackColor"] = _raise_uninitialized_error
-        self.__dict__["_SetBackColor"] = _raise_uninitialized_error
-        self.__dict__["_GetPicture"] = _raise_uninitialized_error
-        self.__dict__["_PicturePutRef"] = _raise_uninitialized_error
-        self.__dict__["_SetPicture"] = _raise_uninitialized_error
-        self.__dict__["_GetWinID"] = _raise_uninitialized_error
-        self.__dict__["_SetWinID"] = _raise_uninitialized_error
-        self.__dict__["_ZoomIn"] = _raise_uninitialized_error
-        self.__dict__["_ZoomOut"] = _raise_uninitialized_error
-        self.__dict__["_PickInfo"] = _raise_uninitialized_error
-        self.__dict__["_GetApplication"] = _raise_uninitialized_error
-        self.__dict__["_GetNoLogo"] = _raise_uninitialized_error
-        self.__dict__["_SetNoLogo"] = _raise_uninitialized_error
-        self.__dict__["_GetOLEDropMode"] = _raise_uninitialized_error
-        self.__dict__["_SetOLEDropMode"] = _raise_uninitialized_error
-        self.__dict__["_GetVendorID"] = _raise_uninitialized_error
-        self.__dict__["_SetVendorID"] = _raise_uninitialized_error
-        self.__dict__["_GetMouseMode"] = _raise_uninitialized_error
-        self.__dict__["_SetMouseMode"] = _raise_uninitialized_error
-        self.__dict__["_GetReadyState"] = _raise_uninitialized_error
-        self.__dict__["_CopyFromWinID"] = _raise_uninitialized_error
-        self.__dict__["_RubberBandPickInfo"] = _raise_uninitialized_error
-        self.__dict__["_GetAdvancedPickMode"] = _raise_uninitialized_error
-        self.__dict__["_SetAdvancedPickMode"] = _raise_uninitialized_error
-        self.__dict__["_GetWindowProjectedPosition"] = _raise_uninitialized_error
-        self.__dict__["_GetInZoomMode"] = _raise_uninitialized_error
-        self.__dict__["_SetMouseCursorFromFile"] = _raise_uninitialized_error
-        self.__dict__["_RestoreMouseCursor"] = _raise_uninitialized_error
-        self.__dict__["_SetMouseCursorFromHandle"] = _raise_uninitialized_error
-        self.__dict__["_GetShowProgressImage"] = _raise_uninitialized_error
-        self.__dict__["_SetShowProgressImage"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageXOffset"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageXOffset"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageYOffset"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageYOffset"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageFile"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageFile"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageXOrigin"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageXOrigin"] = _raise_uninitialized_error
-        self.__dict__["_GetProgressImageYOrigin"] = _raise_uninitialized_error
-        self.__dict__["_SetProgressImageYOrigin"] = _raise_uninitialized_error
-        self.__dict__["_GetPictureFromFile"] = _raise_uninitialized_error
-        self.__dict__["_SetPictureFromFile"] = _raise_uninitialized_error
-        self.__dict__["_GetPanModeEnabled"] = _raise_uninitialized_error
-        self.__dict__["_SetPanModeEnabled"] = _raise_uninitialized_error
+        self.__dict__["_get_back_color"] = _raise_uninitialized_error
+        self.__dict__["_set_back_color"] = _raise_uninitialized_error
+        self.__dict__["_get_picture"] = _raise_uninitialized_error
+        self.__dict__["_picture_put_ref"] = _raise_uninitialized_error
+        self.__dict__["_set_picture"] = _raise_uninitialized_error
+        self.__dict__["_get_win_id"] = _raise_uninitialized_error
+        self.__dict__["_set_win_id"] = _raise_uninitialized_error
+        self.__dict__["_zoom_in"] = _raise_uninitialized_error
+        self.__dict__["_zoom_out"] = _raise_uninitialized_error
+        self.__dict__["_pick_info"] = _raise_uninitialized_error
+        self.__dict__["_get_application"] = _raise_uninitialized_error
+        self.__dict__["_get_no_logo"] = _raise_uninitialized_error
+        self.__dict__["_set_no_logo"] = _raise_uninitialized_error
+        self.__dict__["_get_ole_drop_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_ole_drop_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_vendor_id"] = _raise_uninitialized_error
+        self.__dict__["_set_vendor_id"] = _raise_uninitialized_error
+        self.__dict__["_get_mouse_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_mouse_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_ready_state"] = _raise_uninitialized_error
+        self.__dict__["_copy_from_win_id"] = _raise_uninitialized_error
+        self.__dict__["_rubber_band_pick_info"] = _raise_uninitialized_error
+        self.__dict__["_get_advanced_pick_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_advanced_pick_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_window_projected_position"] = _raise_uninitialized_error
+        self.__dict__["_get_in_zoom_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_mouse_cursor_from_file"] = _raise_uninitialized_error
+        self.__dict__["_restore_mouse_cursor"] = _raise_uninitialized_error
+        self.__dict__["_set_mouse_cursor_from_handle"] = _raise_uninitialized_error
+        self.__dict__["_get_show_progress_image"] = _raise_uninitialized_error
+        self.__dict__["_set_show_progress_image"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_x_offset"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_x_offset"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_y_offset"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_y_offset"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_file"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_file"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_x_origin"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_x_origin"] = _raise_uninitialized_error
+        self.__dict__["_get_progress_image_y_origin"] = _raise_uninitialized_error
+        self.__dict__["_set_progress_image_y_origin"] = _raise_uninitialized_error
+        self.__dict__["_get_picture_from_file"] = _raise_uninitialized_error
+        self.__dict__["_set_picture_from_file"] = _raise_uninitialized_error
+        self.__dict__["_get_pan_mode_enabled"] = _raise_uninitialized_error
+        self.__dict__["_set_pan_mode_enabled"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiAx2DCntrl._uuid))
             if pUnk is not None:
@@ -2192,51 +2192,51 @@ class IUiAx2DCntrl(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiAx2DCntrl = agcom.GUID(IUiAx2DCntrl._uuid)
         vtable_offset_local = IUiAx2DCntrl._vtable_offset - 1
-        self.__dict__["_GetBackColor"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
-        self.__dict__["_SetBackColor"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
-        self.__dict__["_GetPicture"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+4, agcom.PVOID)
-        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+5, agcom.PVOID)
-        self.__dict__["_GetWinID"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+6, POINTER(agcom.LONG))
-        self.__dict__["_SetWinID"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+7, agcom.LONG)
-        self.__dict__["_ZoomIn"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+8, )
-        self.__dict__["_ZoomOut"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+9, )
-        self.__dict__["_PickInfo"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+10, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
-        self.__dict__["_GetApplication"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+11, POINTER(agcom.PVOID))
-        self.__dict__["_GetNoLogo"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+12, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetNoLogo"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+13, agcom.VARIANT_BOOL)
-        self.__dict__["_GetOLEDropMode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+14, POINTER(agcom.LONG))
-        self.__dict__["_SetOLEDropMode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+15, agcom.LONG)
-        self.__dict__["_GetVendorID"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+16, POINTER(agcom.BSTR))
-        self.__dict__["_SetVendorID"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+17, agcom.BSTR)
-        self.__dict__["_GetMouseMode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+18, POINTER(agcom.LONG))
-        self.__dict__["_SetMouseMode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+19, agcom.LONG)
-        self.__dict__["_GetReadyState"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+20, POINTER(agcom.LONG))
-        self.__dict__["_CopyFromWinID"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+21, agcom.LONG)
-        self.__dict__["_RubberBandPickInfo"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+22, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
-        self.__dict__["_GetAdvancedPickMode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+23, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetAdvancedPickMode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+24, agcom.VARIANT_BOOL)
-        self.__dict__["_GetWindowProjectedPosition"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+25, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetInZoomMode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+26, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetMouseCursorFromFile"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+27, agcom.BSTR)
-        self.__dict__["_RestoreMouseCursor"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+28, )
-        self.__dict__["_SetMouseCursorFromHandle"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+29, agcom.OLE_HANDLE)
-        self.__dict__["_GetShowProgressImage"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+30, POINTER(agcom.LONG))
-        self.__dict__["_SetShowProgressImage"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+31, agcom.LONG)
-        self.__dict__["_GetProgressImageXOffset"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+32, POINTER(agcom.LONG))
-        self.__dict__["_SetProgressImageXOffset"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+33, agcom.LONG)
-        self.__dict__["_GetProgressImageYOffset"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+34, POINTER(agcom.LONG))
-        self.__dict__["_SetProgressImageYOffset"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+35, agcom.LONG)
-        self.__dict__["_GetProgressImageFile"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+36, POINTER(agcom.BSTR))
-        self.__dict__["_SetProgressImageFile"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+37, agcom.BSTR)
-        self.__dict__["_GetProgressImageXOrigin"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+38, POINTER(agcom.LONG))
-        self.__dict__["_SetProgressImageXOrigin"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+39, agcom.LONG)
-        self.__dict__["_GetProgressImageYOrigin"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+40, POINTER(agcom.LONG))
-        self.__dict__["_SetProgressImageYOrigin"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+41, agcom.LONG)
-        self.__dict__["_GetPictureFromFile"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+42, POINTER(agcom.BSTR))
-        self.__dict__["_SetPictureFromFile"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+43, agcom.BSTR)
-        self.__dict__["_GetPanModeEnabled"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+44, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetPanModeEnabled"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+45, agcom.VARIANT_BOOL)
+        self.__dict__["_get_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
+        self.__dict__["_set_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
+        self.__dict__["_get_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_picture_put_ref"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_set_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+5, agcom.PVOID)
+        self.__dict__["_get_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+6, POINTER(agcom.LONG))
+        self.__dict__["_set_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+7, agcom.LONG)
+        self.__dict__["_zoom_in"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+8, )
+        self.__dict__["_zoom_out"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+9, )
+        self.__dict__["_pick_info"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+10, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
+        self.__dict__["_get_application"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+11, POINTER(agcom.PVOID))
+        self.__dict__["_get_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+12, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+13, agcom.VARIANT_BOOL)
+        self.__dict__["_get_ole_drop_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+14, POINTER(agcom.LONG))
+        self.__dict__["_set_ole_drop_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+15, agcom.LONG)
+        self.__dict__["_get_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+16, POINTER(agcom.BSTR))
+        self.__dict__["_set_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+17, agcom.BSTR)
+        self.__dict__["_get_mouse_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+18, POINTER(agcom.LONG))
+        self.__dict__["_set_mouse_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+19, agcom.LONG)
+        self.__dict__["_get_ready_state"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+20, POINTER(agcom.LONG))
+        self.__dict__["_copy_from_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+21, agcom.LONG)
+        self.__dict__["_rubber_band_pick_info"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+22, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID))
+        self.__dict__["_get_advanced_pick_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+23, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_advanced_pick_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+24, agcom.VARIANT_BOOL)
+        self.__dict__["_get_window_projected_position"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+25, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get_in_zoom_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+26, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_mouse_cursor_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+27, agcom.BSTR)
+        self.__dict__["_restore_mouse_cursor"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+28, )
+        self.__dict__["_set_mouse_cursor_from_handle"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+29, agcom.OLE_HANDLE)
+        self.__dict__["_get_show_progress_image"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+30, POINTER(agcom.LONG))
+        self.__dict__["_set_show_progress_image"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+31, agcom.LONG)
+        self.__dict__["_get_progress_image_x_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+32, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_x_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+33, agcom.LONG)
+        self.__dict__["_get_progress_image_y_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+34, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_y_offset"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+35, agcom.LONG)
+        self.__dict__["_get_progress_image_file"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+36, POINTER(agcom.BSTR))
+        self.__dict__["_set_progress_image_file"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+37, agcom.BSTR)
+        self.__dict__["_get_progress_image_x_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+38, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_x_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+39, agcom.LONG)
+        self.__dict__["_get_progress_image_y_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+40, POINTER(agcom.LONG))
+        self.__dict__["_set_progress_image_y_origin"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+41, agcom.LONG)
+        self.__dict__["_get_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+42, POINTER(agcom.BSTR))
+        self.__dict__["_set_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+43, agcom.BSTR)
+        self.__dict__["_get_pan_mode_enabled"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+44, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_pan_mode_enabled"] = IAGFUNCTYPE(pUnk, IID_IUiAx2DCntrl, vtable_offset_local+45, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2253,277 +2253,277 @@ class IUiAx2DCntrl(object):
         """Returns an IUiAx2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
         return IUiAx2DCntrlEventHandler(self._pUnk)    
     @property
-    def BackColor(self) -> agcolor.Color:
+    def back_color(self) -> agcolor.Color:
         """The background color of the control."""
         with agmarshall.OLE_COLOR_arg() as arg_pclr:
-            agcls.evaluate_hresult(self.__dict__["_GetBackColor"](byref(arg_pclr.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_back_color"](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
-    @BackColor.setter
-    def BackColor(self, clr:agcolor.Color) -> None:
+    @back_color.setter
+    def back_color(self, clr:agcolor.Color) -> None:
         with agmarshall.OLE_COLOR_arg(clr) as arg_clr:
-            agcls.evaluate_hresult(self.__dict__["_SetBackColor"](arg_clr.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_back_color"](arg_clr.COM_val))
 
     @property
-    def Picture(self) -> "IPictureDisp":
+    def picture(self) -> "IPictureDisp":
         """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
-            agcls.evaluate_hresult(self.__dict__["_GetPicture"](byref(arg_ppPicture.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_picture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def PicturePutRef(self, pPicture:"IPictureDisp") -> None:
+    def picture_put_ref(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_picture_put_ref"](arg_pPicture.COM_val))
 
-    @Picture.setter
-    def Picture(self, pPicture:"IPictureDisp") -> None:
+    @picture.setter
+    def picture(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_SetPicture"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_picture"](arg_pPicture.COM_val))
 
     @property
-    def WinID(self) -> int:
+    def win_id(self) -> int:
         """Window identifier (for Connect commands)."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetWinID"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_win_id"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @WinID.setter
-    def WinID(self, newVal:int) -> None:
+    @win_id.setter
+    def win_id(self, newVal:int) -> None:
         with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetWinID"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_win_id"](arg_newVal.COM_val))
 
-    def ZoomIn(self) -> None:
+    def zoom_in(self) -> None:
         """Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom."""
-        agcls.evaluate_hresult(self.__dict__["_ZoomIn"]())
+        agcls.evaluate_hresult(self.__dict__["_zoom_in"]())
 
-    def ZoomOut(self) -> None:
+    def zoom_out(self) -> None:
         """Zoom out to view a larger portion of a previously magnified map."""
-        agcls.evaluate_hresult(self.__dict__["_ZoomOut"]())
+        agcls.evaluate_hresult(self.__dict__["_zoom_out"]())
 
-    def PickInfo(self, x:int, y:int) -> "IPickInfoData":
+    def pick_info(self, x:int, y:int) -> "IPickInfoData":
         """Get detailed information about a mouse pick."""
         with agmarshall.OLE_XPOS_PIXELS_arg(x) as arg_x, \
              agmarshall.OLE_YPOS_PIXELS_arg(y) as arg_y, \
              agmarshall.AgInterface_out_arg() as arg_ppPickData:
-            agcls.evaluate_hresult(self.__dict__["_PickInfo"](arg_x.COM_val, arg_y.COM_val, byref(arg_ppPickData.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_pick_info"](arg_x.COM_val, arg_y.COM_val, byref(arg_ppPickData.COM_val)))
             return arg_ppPickData.python_val
 
     @property
-    def Application(self) -> "ISTKXApplication":
+    def application(self) -> "ISTKXApplication":
         """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_ppApp:
-            agcls.evaluate_hresult(self.__dict__["_GetApplication"](byref(arg_ppApp.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_application"](byref(arg_ppApp.COM_val)))
             return arg_ppApp.python_val
 
     @property
-    def NoLogo(self) -> bool:
+    def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pNoLogo:
-            agcls.evaluate_hresult(self.__dict__["_GetNoLogo"](byref(arg_pNoLogo.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_no_logo"](byref(arg_pNoLogo.COM_val)))
             return arg_pNoLogo.python_val
 
-    @NoLogo.setter
-    def NoLogo(self, bNoLogo:bool) -> None:
+    @no_logo.setter
+    def no_logo(self, bNoLogo:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(bNoLogo) as arg_bNoLogo:
-            agcls.evaluate_hresult(self.__dict__["_SetNoLogo"](arg_bNoLogo.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_no_logo"](arg_bNoLogo.COM_val))
 
     @property
-    def OLEDropMode(self) -> "AgEOLEDropMode":
+    def ole_drop_mode(self) -> "AgEOLEDropMode":
         """How the control handles drop operations."""
         with agmarshall.AgEnum_arg(AgEOLEDropMode) as arg_psOLEDropMode:
-            agcls.evaluate_hresult(self.__dict__["_GetOLEDropMode"](byref(arg_psOLEDropMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_ole_drop_mode"](byref(arg_psOLEDropMode.COM_val)))
             return arg_psOLEDropMode.python_val
 
-    @OLEDropMode.setter
-    def OLEDropMode(self, psOLEDropMode:"AgEOLEDropMode") -> None:
+    @ole_drop_mode.setter
+    def ole_drop_mode(self, psOLEDropMode:"AgEOLEDropMode") -> None:
         with agmarshall.AgEnum_arg(AgEOLEDropMode, psOLEDropMode) as arg_psOLEDropMode:
-            agcls.evaluate_hresult(self.__dict__["_SetOLEDropMode"](arg_psOLEDropMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_ole_drop_mode"](arg_psOLEDropMode.COM_val))
 
     @property
-    def VendorID(self) -> str:
+    def vendor_id(self) -> str:
         """This property is deprecated. The identifier of the vendor."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetVendorID"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_vendor_id"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
-    @VendorID.setter
-    def VendorID(self, vendorID:str) -> None:
+    @vendor_id.setter
+    def vendor_id(self, vendorID:str) -> None:
         with agmarshall.BSTR_arg(vendorID) as arg_vendorID:
-            agcls.evaluate_hresult(self.__dict__["_SetVendorID"](arg_vendorID.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_vendor_id"](arg_vendorID.COM_val))
 
     @property
-    def MouseMode(self) -> "AgEMouseMode":
+    def mouse_mode(self) -> "AgEMouseMode":
         """Whether this control responds to mouse events."""
         with agmarshall.AgEnum_arg(AgEMouseMode) as arg_psMouseMode:
-            agcls.evaluate_hresult(self.__dict__["_GetMouseMode"](byref(arg_psMouseMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_mouse_mode"](byref(arg_psMouseMode.COM_val)))
             return arg_psMouseMode.python_val
 
-    @MouseMode.setter
-    def MouseMode(self, psMouseMode:"AgEMouseMode") -> None:
+    @mouse_mode.setter
+    def mouse_mode(self, psMouseMode:"AgEMouseMode") -> None:
         with agmarshall.AgEnum_arg(AgEMouseMode, psMouseMode) as arg_psMouseMode:
-            agcls.evaluate_hresult(self.__dict__["_SetMouseMode"](arg_psMouseMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_mouse_mode"](arg_psMouseMode.COM_val))
 
     @property
-    def ReadyState(self) -> int:
+    def ready_state(self) -> int:
         """Returns/sets the background color of the control."""
         with agmarshall.LONG_arg() as arg_pclr:
-            agcls.evaluate_hresult(self.__dict__["_GetReadyState"](byref(arg_pclr.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_ready_state"](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
-    def CopyFromWinID(self, winID:int) -> None:
+    def copy_from_win_id(self, winID:int) -> None:
         """Copies an existing Window's scene into this control"""
         with agmarshall.LONG_arg(winID) as arg_winID:
-            agcls.evaluate_hresult(self.__dict__["_CopyFromWinID"](arg_winID.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_copy_from_win_id"](arg_winID.COM_val))
 
-    def RubberBandPickInfo(self, left:int, top:int, right:int, bottom:int) -> "IRubberBandPickInfoData":
+    def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "IRubberBandPickInfoData":
         """Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
         with agmarshall.OLE_XPOS_PIXELS_arg(left) as arg_left, \
              agmarshall.OLE_YPOS_PIXELS_arg(top) as arg_top, \
              agmarshall.OLE_XPOS_PIXELS_arg(right) as arg_right, \
              agmarshall.OLE_YPOS_PIXELS_arg(bottom) as arg_bottom, \
              agmarshall.AgInterface_out_arg() as arg_ppPickInfoData:
-            agcls.evaluate_hresult(self.__dict__["_RubberBandPickInfo"](arg_left.COM_val, arg_top.COM_val, arg_right.COM_val, arg_bottom.COM_val, byref(arg_ppPickInfoData.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_rubber_band_pick_info"](arg_left.COM_val, arg_top.COM_val, arg_right.COM_val, arg_bottom.COM_val, byref(arg_ppPickInfoData.COM_val)))
             return arg_ppPickInfoData.python_val
 
     @property
-    def AdvancedPickMode(self) -> bool:
+    def advanced_pick_mode(self) -> bool:
         """If true, sets the advance pick mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pAdvancePickMode:
-            agcls.evaluate_hresult(self.__dict__["_GetAdvancedPickMode"](byref(arg_pAdvancePickMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_advanced_pick_mode"](byref(arg_pAdvancePickMode.COM_val)))
             return arg_pAdvancePickMode.python_val
 
-    @AdvancedPickMode.setter
-    def AdvancedPickMode(self, bAdvancePickMode:bool) -> None:
+    @advanced_pick_mode.setter
+    def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(bAdvancePickMode) as arg_bAdvancePickMode:
-            agcls.evaluate_hresult(self.__dict__["_SetAdvancedPickMode"](arg_bAdvancePickMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_advanced_pick_mode"](arg_bAdvancePickMode.COM_val))
 
-    def GetWindowProjectedPosition(self, lat:float, lon:float, alt:float, drawCoords:"AgEGfxDrawCoords") -> "IWinProjectionPosition":
+    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"AgEGfxDrawCoords") -> "IWinProjectionPosition":
         """Get the window projected position for given values."""
         with agmarshall.DOUBLE_arg(lat) as arg_lat, \
              agmarshall.DOUBLE_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt, \
              agmarshall.AgEnum_arg(AgEGfxDrawCoords, drawCoords) as arg_drawCoords, \
              agmarshall.AgInterface_out_arg() as arg_ppWinProjPos:
-            agcls.evaluate_hresult(self.__dict__["_GetWindowProjectedPosition"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val, arg_drawCoords.COM_val, byref(arg_ppWinProjPos.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_window_projected_position"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val, arg_drawCoords.COM_val, byref(arg_ppWinProjPos.COM_val)))
             return arg_ppWinProjPos.python_val
 
     @property
-    def InZoomMode(self) -> bool:
+    def in_zoom_mode(self) -> bool:
         """Returns true if in zoom in mode."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pZoomIn:
-            agcls.evaluate_hresult(self.__dict__["_GetInZoomMode"](byref(arg_pZoomIn.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_in_zoom_mode"](byref(arg_pZoomIn.COM_val)))
             return arg_pZoomIn.python_val
 
-    def SetMouseCursorFromFile(self, cursorFileName:str) -> None:
+    def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
         """Sets mouse cursor to the selected cursor file."""
         with agmarshall.BSTR_arg(cursorFileName) as arg_cursorFileName:
-            agcls.evaluate_hresult(self.__dict__["_SetMouseCursorFromFile"](arg_cursorFileName.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_mouse_cursor_from_file"](arg_cursorFileName.COM_val))
 
-    def RestoreMouseCursor(self) -> None:
+    def restore_mouse_cursor(self) -> None:
         """Restores mouse cursor back to normal."""
-        agcls.evaluate_hresult(self.__dict__["_RestoreMouseCursor"]())
+        agcls.evaluate_hresult(self.__dict__["_restore_mouse_cursor"]())
 
-    def SetMouseCursorFromHandle(self, cursorHandle:int) -> None:
+    def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
         """Sets mouse cursor to the passed cursor handle."""
         with agmarshall.OLE_HANDLE_arg(cursorHandle) as arg_cursorHandle:
-            agcls.evaluate_hresult(self.__dict__["_SetMouseCursorFromHandle"](arg_cursorHandle.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_mouse_cursor_from_handle"](arg_cursorHandle.COM_val))
 
     @property
-    def ShowProgressImage(self) -> "AgEShowProgressImage":
+    def show_progress_image(self) -> "AgEShowProgressImage":
         """The animated progress image type."""
         with agmarshall.AgEnum_arg(AgEShowProgressImage) as arg_psProgressImage:
-            agcls.evaluate_hresult(self.__dict__["_GetShowProgressImage"](byref(arg_psProgressImage.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_show_progress_image"](byref(arg_psProgressImage.COM_val)))
             return arg_psProgressImage.python_val
 
-    @ShowProgressImage.setter
-    def ShowProgressImage(self, psProgressImage:"AgEShowProgressImage") -> None:
+    @show_progress_image.setter
+    def show_progress_image(self, psProgressImage:"AgEShowProgressImage") -> None:
         with agmarshall.AgEnum_arg(AgEShowProgressImage, psProgressImage) as arg_psProgressImage:
-            agcls.evaluate_hresult(self.__dict__["_SetShowProgressImage"](arg_psProgressImage.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_show_progress_image"](arg_psProgressImage.COM_val))
 
     @property
-    def ProgressImageXOffset(self) -> int:
+    def progress_image_x_offset(self) -> int:
         """The horizontal X offset for animated progress image."""
         with agmarshall.LONG_arg() as arg_pXOffset:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageXOffset"](byref(arg_pXOffset.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_x_offset"](byref(arg_pXOffset.COM_val)))
             return arg_pXOffset.python_val
 
-    @ProgressImageXOffset.setter
-    def ProgressImageXOffset(self, xOffset:int) -> None:
+    @progress_image_x_offset.setter
+    def progress_image_x_offset(self, xOffset:int) -> None:
         with agmarshall.LONG_arg(xOffset) as arg_xOffset:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageXOffset"](arg_xOffset.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_x_offset"](arg_xOffset.COM_val))
 
     @property
-    def ProgressImageYOffset(self) -> int:
+    def progress_image_y_offset(self) -> int:
         """The vertical Y offset for animated progress image."""
         with agmarshall.LONG_arg() as arg_pYOffset:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageYOffset"](byref(arg_pYOffset.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_y_offset"](byref(arg_pYOffset.COM_val)))
             return arg_pYOffset.python_val
 
-    @ProgressImageYOffset.setter
-    def ProgressImageYOffset(self, yOffset:int) -> None:
+    @progress_image_y_offset.setter
+    def progress_image_y_offset(self, yOffset:int) -> None:
         with agmarshall.LONG_arg(yOffset) as arg_yOffset:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageYOffset"](arg_yOffset.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_y_offset"](arg_yOffset.COM_val))
 
     @property
-    def ProgressImageFile(self) -> str:
+    def progress_image_file(self) -> str:
         """The complete image file name/path for animated progress image."""
         with agmarshall.BSTR_arg() as arg_pImageFile:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageFile"](byref(arg_pImageFile.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_file"](byref(arg_pImageFile.COM_val)))
             return arg_pImageFile.python_val
 
-    @ProgressImageFile.setter
-    def ProgressImageFile(self, imageFile:str) -> None:
+    @progress_image_file.setter
+    def progress_image_file(self, imageFile:str) -> None:
         with agmarshall.BSTR_arg(imageFile) as arg_imageFile:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageFile"](arg_imageFile.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_file"](arg_imageFile.COM_val))
 
     @property
-    def ProgressImageXOrigin(self) -> "AgEProgressImageXOrigin":
+    def progress_image_x_origin(self) -> "AgEProgressImageXOrigin":
         """The X origin alignment for animated progress image."""
         with agmarshall.AgEnum_arg(AgEProgressImageXOrigin) as arg_psProgressImageXOrigin:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageXOrigin"](byref(arg_psProgressImageXOrigin.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_x_origin"](byref(arg_psProgressImageXOrigin.COM_val)))
             return arg_psProgressImageXOrigin.python_val
 
-    @ProgressImageXOrigin.setter
-    def ProgressImageXOrigin(self, progressImageXOrigin:"AgEProgressImageXOrigin") -> None:
+    @progress_image_x_origin.setter
+    def progress_image_x_origin(self, progressImageXOrigin:"AgEProgressImageXOrigin") -> None:
         with agmarshall.AgEnum_arg(AgEProgressImageXOrigin, progressImageXOrigin) as arg_progressImageXOrigin:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageXOrigin"](arg_progressImageXOrigin.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_x_origin"](arg_progressImageXOrigin.COM_val))
 
     @property
-    def ProgressImageYOrigin(self) -> "AgEProgressImageYOrigin":
+    def progress_image_y_origin(self) -> "AgEProgressImageYOrigin":
         """The Y origin alignment for animated progress image."""
         with agmarshall.AgEnum_arg(AgEProgressImageYOrigin) as arg_psProgressImageYOrigin:
-            agcls.evaluate_hresult(self.__dict__["_GetProgressImageYOrigin"](byref(arg_psProgressImageYOrigin.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_progress_image_y_origin"](byref(arg_psProgressImageYOrigin.COM_val)))
             return arg_psProgressImageYOrigin.python_val
 
-    @ProgressImageYOrigin.setter
-    def ProgressImageYOrigin(self, progressImageYOrigin:"AgEProgressImageYOrigin") -> None:
+    @progress_image_y_origin.setter
+    def progress_image_y_origin(self, progressImageYOrigin:"AgEProgressImageYOrigin") -> None:
         with agmarshall.AgEnum_arg(AgEProgressImageYOrigin, progressImageYOrigin) as arg_progressImageYOrigin:
-            agcls.evaluate_hresult(self.__dict__["_SetProgressImageYOrigin"](arg_progressImageYOrigin.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_progress_image_y_origin"](arg_progressImageYOrigin.COM_val))
 
     @property
-    def PictureFromFile(self) -> str:
+    def picture_from_file(self) -> str:
         """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg() as arg_pPictureFile:
-            agcls.evaluate_hresult(self.__dict__["_GetPictureFromFile"](byref(arg_pPictureFile.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_picture_from_file"](byref(arg_pPictureFile.COM_val)))
             return arg_pPictureFile.python_val
 
-    @PictureFromFile.setter
-    def PictureFromFile(self, pictureFile:str) -> None:
+    @picture_from_file.setter
+    def picture_from_file(self, pictureFile:str) -> None:
         """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg(pictureFile) as arg_pictureFile:
-            agcls.evaluate_hresult(self.__dict__["_SetPictureFromFile"](arg_pictureFile.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_picture_from_file"](arg_pictureFile.COM_val))
 
     @property
-    def PanModeEnabled(self) -> bool:
+    def pan_mode_enabled(self) -> bool:
         """Enables/disables pan mode for map control."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pPanMode:
-            agcls.evaluate_hresult(self.__dict__["_GetPanModeEnabled"](byref(arg_pPanMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_pan_mode_enabled"](byref(arg_pPanMode.COM_val)))
             return arg_pPanMode.python_val
 
-    @PanModeEnabled.setter
-    def PanModeEnabled(self, bPanMode:bool) -> None:
+    @pan_mode_enabled.setter
+    def pan_mode_enabled(self, bPanMode:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(bPanMode) as arg_bPanMode:
-            agcls.evaluate_hresult(self.__dict__["_SetPanModeEnabled"](arg_bPanMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_pan_mode_enabled"](arg_bPanMode.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{A5C18751-1656-4FB9-BA4E-D5746D509CFC}", IUiAx2DCntrl)
@@ -2536,7 +2536,7 @@ class ISTKXApplicationPartnerAccess(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GrantPartnerAccess"] = _raise_uninitialized_error
+        self.__dict__["_grant_partner_access"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISTKXApplicationPartnerAccess._uuid))
             if pUnk is not None:
@@ -2548,7 +2548,7 @@ class ISTKXApplicationPartnerAccess(object):
         self.__dict__["_pUnk"] = pUnk
         IID_ISTKXApplicationPartnerAccess = agcom.GUID(ISTKXApplicationPartnerAccess._uuid)
         vtable_offset_local = ISTKXApplicationPartnerAccess._vtable_offset - 1
-        self.__dict__["_GrantPartnerAccess"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplicationPartnerAccess, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_grant_partner_access"] = IAGFUNCTYPE(pUnk, IID_ISTKXApplicationPartnerAccess, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2562,13 +2562,13 @@ class ISTKXApplicationPartnerAccess(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXApplicationPartnerAccess.")
     
-    def GrantPartnerAccess(self, vendor:str, product:str, key:str) -> "ISTKXApplication":
+    def grant_partner_access(self, vendor:str, product:str, key:str) -> "ISTKXApplication":
         """Provide object model root for authorized business partners."""
         with agmarshall.BSTR_arg(vendor) as arg_vendor, \
              agmarshall.BSTR_arg(product) as arg_product, \
              agmarshall.BSTR_arg(key) as arg_key, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GrantPartnerAccess"](arg_vendor.COM_val, arg_product.COM_val, arg_key.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_grant_partner_access"](arg_vendor.COM_val, arg_product.COM_val, arg_key.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -2582,9 +2582,9 @@ class IDataObjectFiles(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDataObjectFiles._uuid))
             if pUnk is not None:
@@ -2597,9 +2597,9 @@ class IDataObjectFiles(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IDataObjectFiles = agcom.GUID(IDataObjectFiles._uuid)
         vtable_offset_local = IDataObjectFiles._vtable_offset - 1
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IDataObjectFiles, vtable_offset_local+1, POINTER(agcom.PVOID))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IDataObjectFiles, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IDataObjectFiles, vtable_offset_local+3, POINTER(agcom.LONG))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IDataObjectFiles, vtable_offset_local+1, POINTER(agcom.PVOID))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IDataObjectFiles, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IDataObjectFiles, vtable_offset_local+3, POINTER(agcom.LONG))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2628,24 +2628,24 @@ class IDataObjectFiles(object):
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns an object that can be used to iterate through all the file names in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppUnk:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppUnk.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppUnk.COM_val)))
             return arg_ppUnk.python_val
 
-    def Item(self, index:int) -> str:
+    def item(self, index:int) -> str:
         """Gets the file name at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_index.COM_val, byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Number of file names contained in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -2659,23 +2659,23 @@ class IUiAxGfxAnalysisCntrl(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetBackColor"] = _raise_uninitialized_error
-        self.__dict__["_SetBackColor"] = _raise_uninitialized_error
-        self.__dict__["_GetPicture"] = _raise_uninitialized_error
-        self.__dict__["_PicturePutRef"] = _raise_uninitialized_error
-        self.__dict__["_SetPicture"] = _raise_uninitialized_error
-        self.__dict__["_GetNoLogo"] = _raise_uninitialized_error
-        self.__dict__["_SetNoLogo"] = _raise_uninitialized_error
-        self.__dict__["_GetVendorID"] = _raise_uninitialized_error
-        self.__dict__["_SetVendorID"] = _raise_uninitialized_error
-        self.__dict__["_GetReadyState"] = _raise_uninitialized_error
-        self.__dict__["_GetApplication"] = _raise_uninitialized_error
-        self.__dict__["_GetControlMode"] = _raise_uninitialized_error
-        self.__dict__["_SetControlMode"] = _raise_uninitialized_error
-        self.__dict__["_GetPictureFromFile"] = _raise_uninitialized_error
-        self.__dict__["_SetPictureFromFile"] = _raise_uninitialized_error
-        self.__dict__["_GetWinID"] = _raise_uninitialized_error
-        self.__dict__["_SetWinID"] = _raise_uninitialized_error
+        self.__dict__["_get_back_color"] = _raise_uninitialized_error
+        self.__dict__["_set_back_color"] = _raise_uninitialized_error
+        self.__dict__["_get_picture"] = _raise_uninitialized_error
+        self.__dict__["_picture_put_ref"] = _raise_uninitialized_error
+        self.__dict__["_set_picture"] = _raise_uninitialized_error
+        self.__dict__["_get_no_logo"] = _raise_uninitialized_error
+        self.__dict__["_set_no_logo"] = _raise_uninitialized_error
+        self.__dict__["_get_vendor_id"] = _raise_uninitialized_error
+        self.__dict__["_set_vendor_id"] = _raise_uninitialized_error
+        self.__dict__["_get_ready_state"] = _raise_uninitialized_error
+        self.__dict__["_get_application"] = _raise_uninitialized_error
+        self.__dict__["_get_control_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_control_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_picture_from_file"] = _raise_uninitialized_error
+        self.__dict__["_set_picture_from_file"] = _raise_uninitialized_error
+        self.__dict__["_get_win_id"] = _raise_uninitialized_error
+        self.__dict__["_set_win_id"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiAxGfxAnalysisCntrl._uuid))
             if pUnk is not None:
@@ -2687,23 +2687,23 @@ class IUiAxGfxAnalysisCntrl(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiAxGfxAnalysisCntrl = agcom.GUID(IUiAxGfxAnalysisCntrl._uuid)
         vtable_offset_local = IUiAxGfxAnalysisCntrl._vtable_offset - 1
-        self.__dict__["_GetBackColor"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
-        self.__dict__["_SetBackColor"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
-        self.__dict__["_GetPicture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_PicturePutRef"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+4, agcom.PVOID)
-        self.__dict__["_SetPicture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+5, agcom.PVOID)
-        self.__dict__["_GetNoLogo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetNoLogo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+7, agcom.VARIANT_BOOL)
-        self.__dict__["_GetVendorID"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+8, POINTER(agcom.BSTR))
-        self.__dict__["_SetVendorID"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+9, agcom.BSTR)
-        self.__dict__["_GetReadyState"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+10, POINTER(agcom.LONG))
-        self.__dict__["_GetApplication"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+11, POINTER(agcom.PVOID))
-        self.__dict__["_GetControlMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+12, POINTER(agcom.LONG))
-        self.__dict__["_SetControlMode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+13, agcom.LONG)
-        self.__dict__["_GetPictureFromFile"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+14, POINTER(agcom.BSTR))
-        self.__dict__["_SetPictureFromFile"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+15, agcom.BSTR)
-        self.__dict__["_GetWinID"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+16, POINTER(agcom.LONG))
-        self.__dict__["_SetWinID"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+17, agcom.LONG)
+        self.__dict__["_get_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+1, POINTER(agcom.OLE_COLOR))
+        self.__dict__["_set_back_color"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+2, agcom.OLE_COLOR)
+        self.__dict__["_get_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_picture_put_ref"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+4, agcom.PVOID)
+        self.__dict__["_set_picture"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+5, agcom.PVOID)
+        self.__dict__["_get_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_no_logo"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+7, agcom.VARIANT_BOOL)
+        self.__dict__["_get_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+8, POINTER(agcom.BSTR))
+        self.__dict__["_set_vendor_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+9, agcom.BSTR)
+        self.__dict__["_get_ready_state"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+10, POINTER(agcom.LONG))
+        self.__dict__["_get_application"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+11, POINTER(agcom.PVOID))
+        self.__dict__["_get_control_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+12, POINTER(agcom.LONG))
+        self.__dict__["_set_control_mode"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+13, agcom.LONG)
+        self.__dict__["_get_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+14, POINTER(agcom.BSTR))
+        self.__dict__["_set_picture_from_file"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+15, agcom.BSTR)
+        self.__dict__["_get_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+16, POINTER(agcom.LONG))
+        self.__dict__["_set_win_id"] = IAGFUNCTYPE(pUnk, IID_IUiAxGfxAnalysisCntrl, vtable_offset_local+17, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2718,107 +2718,107 @@ class IUiAxGfxAnalysisCntrl(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiAxGfxAnalysisCntrl.")
     
     @property
-    def BackColor(self) -> agcolor.Color:
+    def back_color(self) -> agcolor.Color:
         """The background color of the control."""
         with agmarshall.OLE_COLOR_arg() as arg_pclr:
-            agcls.evaluate_hresult(self.__dict__["_GetBackColor"](byref(arg_pclr.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_back_color"](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
-    @BackColor.setter
-    def BackColor(self, clr:agcolor.Color) -> None:
+    @back_color.setter
+    def back_color(self, clr:agcolor.Color) -> None:
         with agmarshall.OLE_COLOR_arg(clr) as arg_clr:
-            agcls.evaluate_hresult(self.__dict__["_SetBackColor"](arg_clr.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_back_color"](arg_clr.COM_val))
 
     @property
-    def Picture(self) -> "IPictureDisp":
+    def picture(self) -> "IPictureDisp":
         """The splash logo graphic to be displayed in the control."""
         with agmarshall.PVOID_arg() as arg_ppPicture:
-            agcls.evaluate_hresult(self.__dict__["_GetPicture"](byref(arg_ppPicture.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_picture"](byref(arg_ppPicture.COM_val)))
             return arg_ppPicture.python_val
 
-    def PicturePutRef(self, pPicture:"IPictureDisp") -> None:
+    def picture_put_ref(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_PicturePutRef"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_picture_put_ref"](arg_pPicture.COM_val))
 
-    @Picture.setter
-    def Picture(self, pPicture:"IPictureDisp") -> None:
+    @picture.setter
+    def picture(self, pPicture:"IPictureDisp") -> None:
         with agmarshall.PVOID_arg(pPicture, IPictureDisp) as arg_pPicture:
-            agcls.evaluate_hresult(self.__dict__["_SetPicture"](arg_pPicture.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_picture"](arg_pPicture.COM_val))
 
     @property
-    def NoLogo(self) -> bool:
+    def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pNoLogo:
-            agcls.evaluate_hresult(self.__dict__["_GetNoLogo"](byref(arg_pNoLogo.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_no_logo"](byref(arg_pNoLogo.COM_val)))
             return arg_pNoLogo.python_val
 
-    @NoLogo.setter
-    def NoLogo(self, bNoLogo:bool) -> None:
+    @no_logo.setter
+    def no_logo(self, bNoLogo:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(bNoLogo) as arg_bNoLogo:
-            agcls.evaluate_hresult(self.__dict__["_SetNoLogo"](arg_bNoLogo.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_no_logo"](arg_bNoLogo.COM_val))
 
     @property
-    def VendorID(self) -> str:
+    def vendor_id(self) -> str:
         """This property is deprecated. The identifier of the vendor."""
         with agmarshall.BSTR_arg() as arg_pbstrVal:
-            agcls.evaluate_hresult(self.__dict__["_GetVendorID"](byref(arg_pbstrVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_vendor_id"](byref(arg_pbstrVal.COM_val)))
             return arg_pbstrVal.python_val
 
-    @VendorID.setter
-    def VendorID(self, vendorID:str) -> None:
+    @vendor_id.setter
+    def vendor_id(self, vendorID:str) -> None:
         with agmarshall.BSTR_arg(vendorID) as arg_vendorID:
-            agcls.evaluate_hresult(self.__dict__["_SetVendorID"](arg_vendorID.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_vendor_id"](arg_vendorID.COM_val))
 
     @property
-    def ReadyState(self) -> int:
+    def ready_state(self) -> int:
         """Returns the ready state of the control."""
         with agmarshall.LONG_arg() as arg_pclr:
-            agcls.evaluate_hresult(self.__dict__["_GetReadyState"](byref(arg_pclr.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_ready_state"](byref(arg_pclr.COM_val)))
             return arg_pclr.python_val
 
     @property
-    def Application(self) -> "ISTKXApplication":
+    def application(self) -> "ISTKXApplication":
         """Reference to the STK X application object."""
         with agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetApplication"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_application"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def ControlMode(self) -> "AgEGfxAnalysisMode":
+    def control_mode(self) -> "AgEGfxAnalysisMode":
         """The Graphics control mode."""
         with agmarshall.AgEnum_arg(AgEGfxAnalysisMode) as arg_peGfxAnalysisMode:
-            agcls.evaluate_hresult(self.__dict__["_GetControlMode"](byref(arg_peGfxAnalysisMode.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_control_mode"](byref(arg_peGfxAnalysisMode.COM_val)))
             return arg_peGfxAnalysisMode.python_val
 
-    @ControlMode.setter
-    def ControlMode(self, eGfxAnalysisMode:"AgEGfxAnalysisMode") -> None:
+    @control_mode.setter
+    def control_mode(self, eGfxAnalysisMode:"AgEGfxAnalysisMode") -> None:
         with agmarshall.AgEnum_arg(AgEGfxAnalysisMode, eGfxAnalysisMode) as arg_eGfxAnalysisMode:
-            agcls.evaluate_hresult(self.__dict__["_SetControlMode"](arg_eGfxAnalysisMode.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_eGfxAnalysisMode.COM_val))
 
     @property
-    def PictureFromFile(self) -> str:
+    def picture_from_file(self) -> str:
         """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg() as arg_pPictureFile:
-            agcls.evaluate_hresult(self.__dict__["_GetPictureFromFile"](byref(arg_pPictureFile.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_picture_from_file"](byref(arg_pPictureFile.COM_val)))
             return arg_pPictureFile.python_val
 
-    @PictureFromFile.setter
-    def PictureFromFile(self, pictureFile:str) -> None:
+    @picture_from_file.setter
+    def picture_from_file(self, pictureFile:str) -> None:
         """The splash logo graphic file to be displayed in the control."""
         with agmarshall.BSTR_arg(pictureFile) as arg_pictureFile:
-            agcls.evaluate_hresult(self.__dict__["_SetPictureFromFile"](arg_pictureFile.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_picture_from_file"](arg_pictureFile.COM_val))
 
     @property
-    def WinID(self) -> int:
+    def win_id(self) -> int:
         """Window identifier (for Connect commands)."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetWinID"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_win_id"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @WinID.setter
-    def WinID(self, newVal:int) -> None:
+    @win_id.setter
+    def win_id(self, newVal:int) -> None:
         with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetWinID"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_win_id"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{5933D068-12E5-4B73-96A3-E06CC3ACC05A}", IUiAxGfxAnalysisCntrl)

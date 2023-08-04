@@ -48,12 +48,12 @@ class STKTutorial:
         self.window.protocol("WM_DELETE_WINDOW", self._exit)
         self.controlFrame = tk.Frame()
         self.mapControl = MapControl(self.controlFrame, width=640, height=360)
-        self.mapControl.BackColor = Color.FromRGB(217, 217, 217)
+        self.mapControl.back_color = Color.FromRGB(217, 217, 217)
         self.mapControl.pack(fill=tk.BOTH, expand=tk.YES, side=tk.TOP)
         self.globeControl = GlobeControl(
             self.controlFrame, width=640, height=360
         )
-        self.globeControl.BackColor = Color.FromRGB(217, 217, 217)
+        self.globeControl.back_color = Color.FromRGB(217, 217, 217)
         self.globeControl.pack(fill=tk.BOTH, expand=tk.YES, side=tk.TOP)
         self.controlFrame.pack(fill=tk.BOTH, expand=tk.YES, side=tk.LEFT)
         self.buttonFrame = tk.Frame()
@@ -194,12 +194,12 @@ class STKTutorial:
         self.window.mainloop()
 
     def _exit(self):
-        self.root.CloseScenario()
+        self.root.close_scenario()
         self.window.destroy()
         self.stk.ShutDown()
 
     def _new_scenario(self):
-        self.root.NewScenario("Tutorial")
+        self.root.new_scenario("Tutorial")
 
         self._configure_units()
         self._configure_time_period()
@@ -208,7 +208,7 @@ class STKTutorial:
         self.createFacilitiesBtn["state"] = "normal"
 
     def _configure_time_period(self):
-        scenario = self.root.CurrentScenario
+        scenario = self.root.current_scenario
 
         scenario.SetTimePeriod(
             "1 Jul 2023 00:00:00.00", "1 Jul 2023 04:00:00.00"
@@ -216,28 +216,28 @@ class STKTutorial:
         scenario.Epoch = "1 Jul 2023 00:00:00.00"
 
     def _configure_units(self):
-        dimensions = self.root.UnitPreferences
-        dimensions.ResetUnits()
-        dimensions.SetCurrentUnit("DateFormat", "UTCG")
-        dimensions.SetCurrentUnit("DistanceUnit", "km")
-        dimensions.SetCurrentUnit("TimeUnit", "sec")
-        dimensions.SetCurrentUnit("AngleUnit", "deg")
-        dimensions.SetCurrentUnit("MassUnit", "kg")
-        dimensions.SetCurrentUnit("PowerUnit", "dbw")
-        dimensions.SetCurrentUnit("FrequencyUnit", "ghz")
-        dimensions.SetCurrentUnit("SmallDistanceUnit", "m")
-        dimensions.SetCurrentUnit("latitudeUnit", "deg")
-        dimensions.SetCurrentUnit("longitudeunit", "deg")
-        dimensions.SetCurrentUnit("DurationUnit", "HMS")
-        dimensions.SetCurrentUnit("Temperature", "K")
-        dimensions.SetCurrentUnit("SmallTimeUnit", "sec")
-        dimensions.SetCurrentUnit("RatioUnit", "db")
-        dimensions.SetCurrentUnit("rcsUnit", "dbsm")
-        dimensions.SetCurrentUnit("DopplerVelocityUnit", "m/s")
-        dimensions.SetCurrentUnit("Percent", "unitValue")
+        dimensions = self.root.unit_preferences
+        dimensions.reset_units()
+        dimensions.set_current_unit("DateFormat", "UTCG")
+        dimensions.set_current_unit("DistanceUnit", "km")
+        dimensions.set_current_unit("TimeUnit", "sec")
+        dimensions.set_current_unit("AngleUnit", "deg")
+        dimensions.set_current_unit("MassUnit", "kg")
+        dimensions.set_current_unit("PowerUnit", "dbw")
+        dimensions.set_current_unit("FrequencyUnit", "ghz")
+        dimensions.set_current_unit("SmallDistanceUnit", "m")
+        dimensions.set_current_unit("latitudeUnit", "deg")
+        dimensions.set_current_unit("longitudeunit", "deg")
+        dimensions.set_current_unit("DurationUnit", "HMS")
+        dimensions.set_current_unit("Temperature", "K")
+        dimensions.set_current_unit("SmallTimeUnit", "sec")
+        dimensions.set_current_unit("RatioUnit", "db")
+        dimensions.set_current_unit("rcsUnit", "dbsm")
+        dimensions.set_current_unit("DopplerVelocityUnit", "m/s")
+        dimensions.set_current_unit("Percent", "unitValue")
 
     def _create_facilities(self):
-        self.baikonur = self.root.CurrentScenario.Children.New(
+        self.baikonur = self.root.current_scenario.children.new(
             AgESTKObjectType.eFacility, "Baikonur"
         )
         self.baikonur.UseTerrain = False
@@ -248,12 +248,12 @@ class STKTutorial:
         self.planetodetic.Lon = 55.0
         self.planetodetic.Alt = 0.0
         self.baikonur.Position.Assign(self.planetodetic)
-        self.baikonur.ShortDescription = "Launch Site"
-        self.baikonur.LongDescription = (
+        self.baikonur.short_description = "Launch Site"
+        self.baikonur.long_description = (
             "Launch site in Kazakhstan. Also known as Tyuratam."
         )
 
-        self.perth = self.root.CurrentScenario.Children.New(
+        self.perth = self.root.current_scenario.children.new(
             AgESTKObjectType.eFacility, "Perth"
         )
         self.perth.UseTerrain = False
@@ -264,9 +264,9 @@ class STKTutorial:
         self.planetodetic.Lon = 116.0
         self.planetodetic.Alt = 0
         self.perth.Position.Assign(self.planetodetic)
-        self.perth.ShortDescription = "Australian Tracking Station"
+        self.perth.short_description = "Australian Tracking Station"
 
-        self.wallops = self.root.CurrentScenario.Children.New(
+        self.wallops = self.root.current_scenario.children.new(
             AgESTKObjectType.eFacility, "Wallops"
         )
         self.wallops.UseTerrain = False
@@ -277,9 +277,9 @@ class STKTutorial:
         self.planetodetic.Lon = -75.5095
         self.planetodetic.Alt = -0.0127878
         self.wallops.Position.Assign(self.planetodetic)
-        self.wallops.ShortDescription = "NASA Launch Site/Tracking Station"
+        self.wallops.short_description = "NASA Launch Site/Tracking Station"
 
-        result = self.root.ExecuteCommand("GetDirectory / Database Facility")
+        result = self.root.execute_command("GetDirectory / Database Facility")
         facDataDir = result[0]
         filelocation = os.path.join(facDataDir, "stkFacility.fd")
         command = (
@@ -288,17 +288,17 @@ class STKTutorial:
             + '" Class Facility SiteName "Santiago Station AGO 3 STDN AGO3" '
             + 'Network "NASA NEN" Rename Santiago'
         )
-        self.root.ExecuteCommand(command)
+        self.root.execute_command(command)
         command = (
             'ImportFromDB * Facility "'
             + filelocation
             + '" Class Facility SiteName "White Sands" '
             + 'Network "Other" Rename WhiteSands'
         )
-        self.root.ExecuteCommand(command)
+        self.root.execute_command(command)
 
-        self.santiago = self.root.CurrentScenario.Children["Santiago"]
-        self.whitesands = self.root.CurrentScenario.Children["WhiteSands"]
+        self.santiago = self.root.current_scenario.children["Santiago"]
+        self.whitesands = self.root.current_scenario.children["WhiteSands"]
         self.createFacilitiesBtn["state"] = "disabled"
         self.changeFacColorBtn["state"] = "normal"
 
@@ -312,7 +312,7 @@ class STKTutorial:
         self.createTargetBtn["state"] = "normal"
 
     def _create_target(self):
-        self.iceberg = self.root.CurrentScenario.Children.New(
+        self.iceberg = self.root.current_scenario.children.new(
             AgESTKObjectType.eTarget, "Iceberg"
         )
         self.iceberg.UseTerrain = False
@@ -324,7 +324,7 @@ class STKTutorial:
         self.planetodetic.Alt = 0.0
 
         self.iceberg.Position.Assign(self.planetodetic)
-        self.iceberg.ShortDescription = "Only the tip."
+        self.iceberg.short_description = "Only the tip."
         self.createTargetBtn["state"] = "disabled"
         self.createShipBtn["state"] = "normal"
 
@@ -337,7 +337,7 @@ class STKTutorial:
         elem.TurnRadius = tr
 
     def _create_ship(self):
-        cruise = self.root.CurrentScenario.Children.New(
+        cruise = self.root.current_scenario.children.new(
             AgESTKObjectType.eShip, "Cruise"
         )
         cruise.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
@@ -364,12 +364,12 @@ class STKTutorial:
         cruise.Graphics.WaypointMarker.IsWaypointMarkersVisible = True
         cruise.Graphics.WaypointMarker.IsTurnMarkersVisible = True
         greatArc.Propagate()
-        self.root.Rewind()
+        self.root.rewind()
         self.createShipBtn["state"] = "disabled"
         self.createSatellitesBtn["state"] = "normal"
 
     def _create_satellites(self):
-        tdrs = self.root.CurrentScenario.Children.New(
+        tdrs = self.root.current_scenario.children.new(
             AgESTKObjectType.eSatellite, "TDRS"
         )
         tdrs.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
@@ -402,7 +402,7 @@ class STKTutorial:
         twobody.InitialState.Representation.Assign(classical)
         twobody.Propagate()
 
-        result = self.root.ExecuteCommand("GetDirectory / Database Satellite")
+        result = self.root.execute_command("GetDirectory / Database Satellite")
         satDataDir = result[0]
         filelocation = os.path.join(satDataDir, "stkSatDb.sd")
         command = (
@@ -410,16 +410,16 @@ class STKTutorial:
             + filelocation
             + '" Rename TDRS_3 Propagate On CommonName "TDRS 3"'
         )
-        self.root.ExecuteCommand(command)
+        self.root.execute_command(command)
 
-        tdrsC = self.root.CurrentScenario.Children["TDRS_3"]
+        tdrsC = self.root.current_scenario.children["TDRS_3"]
         sgp4 = tdrsC.Propagator
         interval = sgp4.EphemerisInterval
         interval.SetExplicitInterval(
             "1 Jul 2023 00:00:00.000", "1 Jul 2023 04:00:00.000"
         )
 
-        self.ers1 = self.root.CurrentScenario.Children.New(
+        self.ers1 = self.root.current_scenario.children.new(
             AgESTKObjectType.eSatellite, "ERS1"
         )
         self.ers1.SetPropagatorType(
@@ -455,14 +455,14 @@ class STKTutorial:
 
         j4.InitialState.Representation.Assign(classical)
         j4.Propagate()
-        self.root.Rewind()
+        self.root.rewind()
         self.ers1.Graphics.Passes.VisibleSides = (
             AgEVeGfxVisibleSides.eVisibleSidesDescending
         )
         self.ers1.Graphics.Passes.VisibleSides = (
             AgEVeGfxVisibleSides.eVisibleSidesBoth
         )
-        self.shuttle = self.root.CurrentScenario.Children.New(
+        self.shuttle = self.root.current_scenario.children.new(
             AgESTKObjectType.eSatellite, "Shuttle"
         )
         self.shuttle.SetPropagatorType(
@@ -498,7 +498,7 @@ class STKTutorial:
         j4.InitialState.Representation.Assign(classical)
 
         j4.Propagate()
-        self.root.Rewind()
+        self.root.rewind()
         self.createSatellitesBtn["state"] = "disabled"
         self.shuttleContoursBtn["state"] = "normal"
 
@@ -521,12 +521,12 @@ class STKTutorial:
             elem.LineWidth = AgELineWidth.e3
 
         contours.IsVisible = True
-        self.root.Rewind()
+        self.root.rewind()
         self.shuttleContoursBtn["state"] = "disabled"
         self.createAreaTargetsBtn["state"] = "normal"
 
     def _create_area_targets(self):
-        self.searchArea = self.root.CurrentScenario.Children.New(
+        self.searchArea = self.root.current_scenario.children.new(
             AgESTKObjectType.eAreaTarget, "SearchArea"
         )
         atGfx = self.searchArea.Graphics
@@ -555,11 +555,11 @@ class STKTutorial:
         self.accessBtn["state"] = "normal"
 
     def _compute_access(self):
-        self.access = self.ers1.GetAccessToObject(self.searchArea)
-        self.access.ComputeAccess()
-        self.root.Rewind()
+        self.access = self.ers1.get_access_to_object(self.searchArea)
+        self.access.compute_access()
+        self.root.rewind()
 
-        interval = self.access.DataProviders["Access Data"]
+        interval = self.access.data_providers["Access Data"]
         result = interval.Exec(
             "1 Jul 2023 00:00:00.000", "1 Jul 2023 04:00:00.000"
         )
@@ -571,13 +571,13 @@ class STKTutorial:
         self.removeAccessBtn["state"] = "normal"
 
     def _remove_access(self):
-        self.access.RemoveAccess()
-        self.root.Rewind()
+        self.access.remove_access()
+        self.root.rewind()
         self.removeAccessBtn["state"] = "disabled"
         self.createSensorsBtn["state"] = "normal"
 
     def _create_sensors(self):
-        self.horizon = self.root.CurrentScenario.Children["ERS1"].Children.New(
+        self.horizon = self.root.current_scenario.children["ERS1"].children.new(
             AgESTKObjectType.eSensor, "Horizon"
         )
         self.horizon.SetPatternType(AgESnPattern.eSnSimpleConic)
@@ -592,7 +592,7 @@ class STKTutorial:
 
         # removing the ers1 elevcontours from the 2d window
         self.ers1.Graphics.ElevContours.IsVisible = False
-        downlink = self.root.CurrentScenario.Children["ERS1"].Children.New(
+        downlink = self.root.current_scenario.children["ERS1"].children.new(
             AgESTKObjectType.eSensor, "Downlink"
         )
         downlink.SetPatternType(AgESnPattern.eSnHalfPower)
@@ -608,16 +608,16 @@ class STKTutorial:
         targets.Add("Facility/WhiteSands")
         targets.Add("Facility/Perth")
         targets.AddObject(self.santiago)
-        targets.Add(self.wallops.Path)
+        targets.Add(self.wallops.path)
 
-        self.root.Rewind()
+        self.root.rewind()
         self.createSensorsBtn["state"] = "disabled"
         self.sensorVisibilityBtn["state"] = "normal"
 
     def _configure_sensor_visibility(self):
-        fiveDegElev = self.root.CurrentScenario.Children[
+        fiveDegElev = self.root.current_scenario.children[
             "Wallops"
-        ].Children.New(AgESTKObjectType.eSensor, "FiveDegElev")
+        ].children.new(AgESTKObjectType.eSensor, "FiveDegElev")
 
         fiveDegElev.SetPatternType(AgESnPattern.eSnComplexConic)
         complexConic = fiveDegElev.Pattern
@@ -640,7 +640,7 @@ class STKTutorial:
         dispDistance.Max = 785.248
         dispDistance.Min = 0
         dispDistance.NumberOfSteps = 1
-        self.root.Rewind()
+        self.root.rewind()
         self.sensorVisibilityBtn["state"] = "disabled"
         self.displayIntervalsBtn["state"] = "normal"
 
@@ -669,7 +669,7 @@ class STKTutorial:
         gfxInterval.GfxAttributes.Color = Colors.FromRGB(116, 80, 94)
         gfxInterval.GfxAttributes.IsVisible = True
         gfxInterval.GfxAttributes.Inherit = True
-        self.root.Rewind()
+        self.root.rewind()
         self.displayIntervalsBtn["state"] = "disabled"
         self.accessIntervalsBtn["state"] = "normal"
 
@@ -683,7 +683,7 @@ class STKTutorial:
         gfxAccess.AccessObjects.Add("Facility/Santiago")
         gfxAccess.AccessObjects.Add("Facility/Baikonur")
         gfxAccess.AccessObjects.Add("Facility/Perth")
-        gfxAccess.AccessObjects.Add(self.whitesands.Path)
+        gfxAccess.AccessObjects.Add(self.whitesands.path)
 
         orbitGfx = gfxAccess.NoAccess
         orbitGfx.IsVisible = True
@@ -700,15 +700,15 @@ class STKTutorial:
         accessObjects.Add("Facility/Santiago")
         accessObjects.Add("Facility/Baikonur")
         accessObjects.AddObject(self.perth)
-        accessObjects.Add(self.whitesands.Path)
-        self.root.Rewind()
+        accessObjects.Add(self.whitesands.path)
+        self.root.rewind()
         self.accessIntervalsBtn["state"] = "disabled"
         self.rangeConstraintBtn["state"] = "normal"
 
     def _configure_range_constraints(self):
-        access = self.horizon.GetAccessToObject(self.baikonur)
-        access.ComputeAccess()
-        minMax = self.horizon.AccessConstraints.AddConstraint(
+        access = self.horizon.get_access_to_object(self.baikonur)
+        access.compute_access()
+        minMax = self.horizon.access_constraints.add_constraint(
             AgEAccessConstraints.eCstrRange
         )
 
@@ -717,7 +717,7 @@ class STKTutorial:
         minMax.Max = 1500
         minMax.Max = 1000
         minMax.Max = 500
-        self.root.Rewind()
+        self.root.rewind()
         self.rangeConstraintBtn["state"] = "disabled"
 
 

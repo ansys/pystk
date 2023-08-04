@@ -27,9 +27,9 @@ class LaunchVehicle(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
+        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
         LaunchVehicle.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eLaunchVehicle, LaunchVehicle.m_DefaultName
             ),
             ILaunchVehicle,
@@ -39,7 +39,7 @@ class LaunchVehicle(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eLaunchVehicle, LaunchVehicle.m_DefaultName
         )
         LaunchVehicle.m_Object = None
@@ -48,13 +48,13 @@ class LaunchVehicle(CodeSnippetsTestBase):
 
     # region CreateLaunchVehicleOnCurrentScenarioCentralBody
     def test_CreateLaunchVehicleOnCurrentScenarioCentralBody(self):
-        (clr.Convert(LaunchVehicle.m_Object, IStkObject)).Unload()
+        (clr.Convert(LaunchVehicle.m_Object, IStkObject)).unload()
         self.CreateLaunchVehicleOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateLaunchVehicleOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Launch vehicle
         launchVehicle: "ILaunchVehicle" = clr.CastAs(
-            root.CurrentScenario.Children.New(AgESTKObjectType.eLaunchVehicle, "MyLaunchVehicle"), ILaunchVehicle
+            root.current_scenario.children.new(AgESTKObjectType.eLaunchVehicle, "MyLaunchVehicle"), ILaunchVehicle
         )
 
     # endregion
@@ -64,6 +64,6 @@ class LaunchVehicle(CodeSnippetsTestBase):
         self.DetermineIfTrajectoryIsSupported(LaunchVehicle.m_Object)
 
     def DetermineIfTrajectoryIsSupported(self, launchVehicle: "ILaunchVehicle"):
-        supported: bool = launchVehicle.IsTrajectoryTypeSupported(AgEVePropagatorType.ePropagatorRealtime)
+        supported: bool = launchVehicle.is_trajectory_type_supported(AgEVePropagatorType.ePropagatorRealtime)
 
     # endregion

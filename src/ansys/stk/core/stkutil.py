@@ -535,27 +535,27 @@ class IPosition(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_ConvertTo"] = _raise_uninitialized_error
-        self.__dict__["_GetPosType"] = _raise_uninitialized_error
-        self.__dict__["_Assign"] = _raise_uninitialized_error
-        self.__dict__["_AssignGeocentric"] = _raise_uninitialized_error
-        self.__dict__["_AssignGeodetic"] = _raise_uninitialized_error
-        self.__dict__["_AssignSpherical"] = _raise_uninitialized_error
-        self.__dict__["_AssignCylindrical"] = _raise_uninitialized_error
-        self.__dict__["_AssignCartesian"] = _raise_uninitialized_error
-        self.__dict__["_AssignPlanetocentric"] = _raise_uninitialized_error
-        self.__dict__["_AssignPlanetodetic"] = _raise_uninitialized_error
-        self.__dict__["_QueryPlanetocentric"] = _raise_uninitialized_error
-        self.__dict__["_QueryPlanetodetic"] = _raise_uninitialized_error
-        self.__dict__["_QuerySpherical"] = _raise_uninitialized_error
-        self.__dict__["_QueryCylindrical"] = _raise_uninitialized_error
-        self.__dict__["_QueryCartesian"] = _raise_uninitialized_error
-        self.__dict__["_GetCentralBodyName"] = _raise_uninitialized_error
-        self.__dict__["_QueryPlanetocentricArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryPlanetodeticArray"] = _raise_uninitialized_error
-        self.__dict__["_QuerySphericalArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryCylindricalArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryCartesianArray"] = _raise_uninitialized_error
+        self.__dict__["_convert_to"] = _raise_uninitialized_error
+        self.__dict__["_get_pos_type"] = _raise_uninitialized_error
+        self.__dict__["_assign"] = _raise_uninitialized_error
+        self.__dict__["_assign_geocentric"] = _raise_uninitialized_error
+        self.__dict__["_assign_geodetic"] = _raise_uninitialized_error
+        self.__dict__["_assign_spherical"] = _raise_uninitialized_error
+        self.__dict__["_assign_cylindrical"] = _raise_uninitialized_error
+        self.__dict__["_assign_cartesian"] = _raise_uninitialized_error
+        self.__dict__["_assign_planetocentric"] = _raise_uninitialized_error
+        self.__dict__["_assign_planetodetic"] = _raise_uninitialized_error
+        self.__dict__["_query_planetocentric"] = _raise_uninitialized_error
+        self.__dict__["_query_planetodetic"] = _raise_uninitialized_error
+        self.__dict__["_query_spherical"] = _raise_uninitialized_error
+        self.__dict__["_query_cylindrical"] = _raise_uninitialized_error
+        self.__dict__["_query_cartesian"] = _raise_uninitialized_error
+        self.__dict__["_get_central_body_name"] = _raise_uninitialized_error
+        self.__dict__["_query_planetocentric_array"] = _raise_uninitialized_error
+        self.__dict__["_query_planetodetic_array"] = _raise_uninitialized_error
+        self.__dict__["_query_spherical_array"] = _raise_uninitialized_error
+        self.__dict__["_query_cylindrical_array"] = _raise_uninitialized_error
+        self.__dict__["_query_cartesian_array"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPosition._uuid))
             if pUnk is not None:
@@ -567,27 +567,27 @@ class IPosition(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IPosition = agcom.GUID(IPosition._uuid)
         vtable_offset_local = IPosition._vtable_offset - 1
-        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetPosType"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+3, agcom.PVOID)
-        self.__dict__["_AssignGeocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_AssignGeodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_AssignSpherical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+6, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_AssignCylindrical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+7, agcom.DOUBLE, agcom.DOUBLE, agcom.VARIANT)
-        self.__dict__["_AssignCartesian"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignPlanetocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+9, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_AssignPlanetodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+10, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
-        self.__dict__["_QueryPlanetocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+11, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryPlanetodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+12, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
-        self.__dict__["_QuerySpherical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+13, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryCylindrical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+14, POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryCartesian"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+15, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_GetCentralBodyName"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+16, POINTER(agcom.BSTR))
-        self.__dict__["_QueryPlanetocentricArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+17, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryPlanetodeticArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+18, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QuerySphericalArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+19, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryCylindricalArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+20, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryCartesianArray"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+21, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_convert_to"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get_pos_type"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_assign"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+3, agcom.PVOID)
+        self.__dict__["_assign_geocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_assign_geodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_assign_spherical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+6, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_assign_cylindrical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+7, agcom.DOUBLE, agcom.DOUBLE, agcom.VARIANT)
+        self.__dict__["_assign_cartesian"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_assign_planetocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+9, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_assign_planetodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+10, agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE)
+        self.__dict__["_query_planetocentric"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+11, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
+        self.__dict__["_query_planetodetic"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+12, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
+        self.__dict__["_query_spherical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+13, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
+        self.__dict__["_query_cylindrical"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+14, POINTER(agcom.DOUBLE), POINTER(agcom.VARIANT), POINTER(agcom.DOUBLE))
+        self.__dict__["_query_cartesian"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+15, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_get_central_body_name"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+16, POINTER(agcom.BSTR))
+        self.__dict__["_query_planetocentric_array"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+17, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_planetodetic_array"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+18, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_spherical_array"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+19, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_cylindrical_array"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+20, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_cartesian_array"] = IAGFUNCTYPE(pUnk, IID_IPosition, vtable_offset_local+21, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -601,149 +601,149 @@ class IPosition(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IPosition.")
     
-    def ConvertTo(self, type:"AgEPositionType") -> "IPosition":
+    def convert_to(self, type:"AgEPositionType") -> "IPosition":
         """Changes the position coordinates to type specified."""
         with agmarshall.AgEnum_arg(AgEPositionType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgPosition:
-            agcls.evaluate_hresult(self.__dict__["_ConvertTo"](arg_type.COM_val, byref(arg_ppIAgPosition.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_to"](arg_type.COM_val, byref(arg_ppIAgPosition.COM_val)))
             return arg_ppIAgPosition.python_val
 
     @property
-    def PosType(self) -> "AgEPositionType":
+    def pos_type(self) -> "AgEPositionType":
         """Gets the type of position currently being used."""
         with agmarshall.AgEnum_arg(AgEPositionType) as arg_pType:
-            agcls.evaluate_hresult(self.__dict__["_GetPosType"](byref(arg_pType.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_pos_type"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
-    def Assign(self, pPosition:"IPosition") -> None:
+    def assign(self, pPosition:"IPosition") -> None:
         """This assigns the coordinates into the system."""
         with agmarshall.AgInterface_in_arg(pPosition, IPosition) as arg_pPosition:
-            agcls.evaluate_hresult(self.__dict__["_Assign"](arg_pPosition.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign"](arg_pPosition.COM_val))
 
-    def AssignGeocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
+    def assign_geocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
         """Helper method to assign the position using the Geocentric representation."""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt:
-            agcls.evaluate_hresult(self.__dict__["_AssignGeocentric"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_geocentric"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
 
-    def AssignGeodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
+    def assign_geodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
         """Helper method to assign the position using the Geodetic representation."""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt:
-            agcls.evaluate_hresult(self.__dict__["_AssignGeodetic"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_geodetic"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
 
-    def AssignSpherical(self, lat:typing.Any, lon:typing.Any, radius:float) -> None:
+    def assign_spherical(self, lat:typing.Any, lon:typing.Any, radius:float) -> None:
         """Helper method to assign the position using the Spherical representation"""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(radius) as arg_radius:
-            agcls.evaluate_hresult(self.__dict__["_AssignSpherical"](arg_lat.COM_val, arg_lon.COM_val, arg_radius.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_spherical"](arg_lat.COM_val, arg_lon.COM_val, arg_radius.COM_val))
 
-    def AssignCylindrical(self, radius:float, z:float, lon:typing.Any) -> None:
+    def assign_cylindrical(self, radius:float, z:float, lon:typing.Any) -> None:
         """Helper method to assign the position using the Cylindrical representation"""
         with agmarshall.DOUBLE_arg(radius) as arg_radius, \
              agmarshall.DOUBLE_arg(z) as arg_z, \
              agmarshall.VARIANT_arg(lon) as arg_lon:
-            agcls.evaluate_hresult(self.__dict__["_AssignCylindrical"](arg_radius.COM_val, arg_z.COM_val, arg_lon.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_cylindrical"](arg_radius.COM_val, arg_z.COM_val, arg_lon.COM_val))
 
-    def AssignCartesian(self, x:float, y:float, z:float) -> None:
+    def assign_cartesian(self, x:float, y:float, z:float) -> None:
         """Helper method to assign the position using the Cartesian representation"""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
-            agcls.evaluate_hresult(self.__dict__["_AssignCartesian"](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_cartesian"](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
-    def AssignPlanetocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
+    def assign_planetocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
         """Helper method to assign the position using the Planetocentric representation"""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt:
-            agcls.evaluate_hresult(self.__dict__["_AssignPlanetocentric"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_planetocentric"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
 
-    def AssignPlanetodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
+    def assign_planetodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
         """Helper method to assign the position using the Planetodetic representation"""
         with agmarshall.VARIANT_arg(lat) as arg_lat, \
              agmarshall.VARIANT_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt:
-            agcls.evaluate_hresult(self.__dict__["_AssignPlanetodetic"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_planetodetic"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val))
 
-    def QueryPlanetocentric(self) -> typing.Tuple[typing.Any, typing.Any, float]:
+    def query_planetocentric(self) -> typing.Tuple[typing.Any, typing.Any, float]:
         """Helper method to get the position using the Planetocentric representation"""
         with agmarshall.VARIANT_arg() as arg_lat, \
              agmarshall.VARIANT_arg() as arg_lon, \
              agmarshall.DOUBLE_arg() as arg_alt:
-            agcls.evaluate_hresult(self.__dict__["_QueryPlanetocentric"](byref(arg_lat.COM_val), byref(arg_lon.COM_val), byref(arg_alt.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_planetocentric"](byref(arg_lat.COM_val), byref(arg_lon.COM_val), byref(arg_alt.COM_val)))
             return arg_lat.python_val, arg_lon.python_val, arg_alt.python_val
 
-    def QueryPlanetodetic(self) -> typing.Tuple[typing.Any, typing.Any, float]:
+    def query_planetodetic(self) -> typing.Tuple[typing.Any, typing.Any, float]:
         """Helper method to get the position using the Planetodetic representation"""
         with agmarshall.VARIANT_arg() as arg_lat, \
              agmarshall.VARIANT_arg() as arg_lon, \
              agmarshall.DOUBLE_arg() as arg_alt:
-            agcls.evaluate_hresult(self.__dict__["_QueryPlanetodetic"](byref(arg_lat.COM_val), byref(arg_lon.COM_val), byref(arg_alt.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_planetodetic"](byref(arg_lat.COM_val), byref(arg_lon.COM_val), byref(arg_alt.COM_val)))
             return arg_lat.python_val, arg_lon.python_val, arg_alt.python_val
 
-    def QuerySpherical(self) -> typing.Tuple[typing.Any, typing.Any, float]:
+    def query_spherical(self) -> typing.Tuple[typing.Any, typing.Any, float]:
         """Helper method to get the position using the Spherical representation"""
         with agmarshall.VARIANT_arg() as arg_lat, \
              agmarshall.VARIANT_arg() as arg_lon, \
              agmarshall.DOUBLE_arg() as arg_radius:
-            agcls.evaluate_hresult(self.__dict__["_QuerySpherical"](byref(arg_lat.COM_val), byref(arg_lon.COM_val), byref(arg_radius.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_spherical"](byref(arg_lat.COM_val), byref(arg_lon.COM_val), byref(arg_radius.COM_val)))
             return arg_lat.python_val, arg_lon.python_val, arg_radius.python_val
 
-    def QueryCylindrical(self) -> typing.Tuple[float, typing.Any, float]:
+    def query_cylindrical(self) -> typing.Tuple[float, typing.Any, float]:
         """Helper method to get the position using the Cylindrical representation"""
         with agmarshall.DOUBLE_arg() as arg_radius, \
              agmarshall.VARIANT_arg() as arg_lon, \
              agmarshall.DOUBLE_arg() as arg_z:
-            agcls.evaluate_hresult(self.__dict__["_QueryCylindrical"](byref(arg_radius.COM_val), byref(arg_lon.COM_val), byref(arg_z.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_cylindrical"](byref(arg_radius.COM_val), byref(arg_lon.COM_val), byref(arg_z.COM_val)))
             return arg_radius.python_val, arg_lon.python_val, arg_z.python_val
 
-    def QueryCartesian(self) -> typing.Tuple[float, float, float]:
+    def query_cartesian(self) -> typing.Tuple[float, float, float]:
         """Helper method to get the position using the Cartesian representation"""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
-            agcls.evaluate_hresult(self.__dict__["_QueryCartesian"](byref(arg_x.COM_val), byref(arg_y.COM_val), byref(arg_z.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_cartesian"](byref(arg_x.COM_val), byref(arg_y.COM_val), byref(arg_z.COM_val)))
             return arg_x.python_val, arg_y.python_val, arg_z.python_val
 
     @property
-    def CentralBodyName(self) -> str:
+    def central_body_name(self) -> str:
         """Gets the central body."""
         with agmarshall.BSTR_arg() as arg_pCBName:
-            agcls.evaluate_hresult(self.__dict__["_GetCentralBodyName"](byref(arg_pCBName.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_central_body_name"](byref(arg_pCBName.COM_val)))
             return arg_pCBName.python_val
 
-    def QueryPlanetocentricArray(self) -> list:
+    def query_planetocentric_array(self) -> list:
         """Returns the Planetocentric elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryPlanetocentricArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_planetocentric_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryPlanetodeticArray(self) -> list:
+    def query_planetodetic_array(self) -> list:
         """Returns the Planetodetic elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryPlanetodeticArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_planetodetic_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QuerySphericalArray(self) -> list:
+    def query_spherical_array(self) -> list:
         """Returns the Spherical elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QuerySphericalArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_spherical_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryCylindricalArray(self) -> list:
+    def query_cylindrical_array(self) -> list:
         """Returns the Cylindrical elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryCylindricalArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_cylindrical_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryCartesianArray(self) -> list:
+    def query_cartesian_array(self) -> list:
         """Returns the Cartesian elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryCartesianArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_cartesian_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -757,12 +757,12 @@ class IPlanetocentric(IPosition):
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetLat"] = _raise_uninitialized_error
-        self.__dict__["_SetLat"] = _raise_uninitialized_error
-        self.__dict__["_GetLon"] = _raise_uninitialized_error
-        self.__dict__["_SetLon"] = _raise_uninitialized_error
-        self.__dict__["_GetAlt"] = _raise_uninitialized_error
-        self.__dict__["_SetAlt"] = _raise_uninitialized_error
+        self.__dict__["_get_lat"] = _raise_uninitialized_error
+        self.__dict__["_set_lat"] = _raise_uninitialized_error
+        self.__dict__["_get_lon"] = _raise_uninitialized_error
+        self.__dict__["_set_lon"] = _raise_uninitialized_error
+        self.__dict__["_get_alt"] = _raise_uninitialized_error
+        self.__dict__["_set_alt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPlanetocentric._uuid))
             if pUnk is not None:
@@ -775,12 +775,12 @@ class IPlanetocentric(IPosition):
         IPosition._private_init(self, pUnk)
         IID_IPlanetocentric = agcom.GUID(IPlanetocentric._uuid)
         vtable_offset_local = IPlanetocentric._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_lat"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_alt"] = IAGFUNCTYPE(pUnk, IID_IPlanetocentric, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -795,40 +795,40 @@ class IPlanetocentric(IPosition):
             IPosition.__setattr__(self, attrname, value)
     
     @property
-    def Lat(self) -> typing.Any:
+    def lat(self) -> typing.Any:
         """Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLat"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lat"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Lat.setter
-    def Lat(self, pVal:typing.Any) -> None:
+    @lat.setter
+    def lat(self, pVal:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLat"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lat"](arg_pVal.COM_val))
 
     @property
-    def Lon(self) -> typing.Any:
+    def lon(self) -> typing.Any:
         """Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLon"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lon"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Lon.setter
-    def Lon(self, pVal:typing.Any) -> None:
+    @lon.setter
+    def lon(self, pVal:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLon"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pVal.COM_val))
 
     @property
-    def Alt(self) -> float:
+    def alt(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetAlt"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Alt.setter
-    def Alt(self, pVal:float) -> None:
+    @alt.setter
+    def alt(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetAlt"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_alt"](arg_pVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}", IPlanetocentric)
@@ -841,12 +841,12 @@ class IGeocentric(IPosition):
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetLat"] = _raise_uninitialized_error
-        self.__dict__["_SetLat"] = _raise_uninitialized_error
-        self.__dict__["_GetLon"] = _raise_uninitialized_error
-        self.__dict__["_SetLon"] = _raise_uninitialized_error
-        self.__dict__["_GetAlt"] = _raise_uninitialized_error
-        self.__dict__["_SetAlt"] = _raise_uninitialized_error
+        self.__dict__["_get_lat"] = _raise_uninitialized_error
+        self.__dict__["_set_lat"] = _raise_uninitialized_error
+        self.__dict__["_get_lon"] = _raise_uninitialized_error
+        self.__dict__["_set_lon"] = _raise_uninitialized_error
+        self.__dict__["_get_alt"] = _raise_uninitialized_error
+        self.__dict__["_set_alt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IGeocentric._uuid))
             if pUnk is not None:
@@ -859,12 +859,12 @@ class IGeocentric(IPosition):
         IPosition._private_init(self, pUnk)
         IID_IGeocentric = agcom.GUID(IGeocentric._uuid)
         vtable_offset_local = IGeocentric._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_lat"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_alt"] = IAGFUNCTYPE(pUnk, IID_IGeocentric, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -879,40 +879,40 @@ class IGeocentric(IPosition):
             IPosition.__setattr__(self, attrname, value)
     
     @property
-    def Lat(self) -> typing.Any:
+    def lat(self) -> typing.Any:
         """Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLat"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lat"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Lat.setter
-    def Lat(self, pVal:typing.Any) -> None:
+    @lat.setter
+    def lat(self, pVal:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLat"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lat"](arg_pVal.COM_val))
 
     @property
-    def Lon(self) -> typing.Any:
+    def lon(self) -> typing.Any:
         """Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLon"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lon"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Lon.setter
-    def Lon(self, pVal:typing.Any) -> None:
+    @lon.setter
+    def lon(self, pVal:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLon"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pVal.COM_val))
 
     @property
-    def Alt(self) -> float:
+    def alt(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetAlt"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Alt.setter
-    def Alt(self, pVal:float) -> None:
+    @alt.setter
+    def alt(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetAlt"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_alt"](arg_pVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}", IGeocentric)
@@ -925,12 +925,12 @@ class ISpherical(IPosition):
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetLat"] = _raise_uninitialized_error
-        self.__dict__["_SetLat"] = _raise_uninitialized_error
-        self.__dict__["_GetLon"] = _raise_uninitialized_error
-        self.__dict__["_SetLon"] = _raise_uninitialized_error
-        self.__dict__["_GetRadius"] = _raise_uninitialized_error
-        self.__dict__["_SetRadius"] = _raise_uninitialized_error
+        self.__dict__["_get_lat"] = _raise_uninitialized_error
+        self.__dict__["_set_lat"] = _raise_uninitialized_error
+        self.__dict__["_get_lon"] = _raise_uninitialized_error
+        self.__dict__["_set_lon"] = _raise_uninitialized_error
+        self.__dict__["_get_radius"] = _raise_uninitialized_error
+        self.__dict__["_set_radius"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISpherical._uuid))
             if pUnk is not None:
@@ -943,12 +943,12 @@ class ISpherical(IPosition):
         IPosition._private_init(self, pUnk)
         IID_ISpherical = agcom.GUID(ISpherical._uuid)
         vtable_offset_local = ISpherical._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetRadius"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetRadius"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_lat"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_radius"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_radius"] = IAGFUNCTYPE(pUnk, IID_ISpherical, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -963,40 +963,40 @@ class ISpherical(IPosition):
             IPosition.__setattr__(self, attrname, value)
     
     @property
-    def Lat(self) -> typing.Any:
+    def lat(self) -> typing.Any:
         """Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLat"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lat"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Lat.setter
-    def Lat(self, pVal:typing.Any) -> None:
+    @lat.setter
+    def lat(self, pVal:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLat"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lat"](arg_pVal.COM_val))
 
     @property
-    def Lon(self) -> typing.Any:
+    def lon(self) -> typing.Any:
         """Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLon"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lon"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Lon.setter
-    def Lon(self, pVal:typing.Any) -> None:
+    @lon.setter
+    def lon(self, pVal:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLon"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pVal.COM_val))
 
     @property
-    def Radius(self) -> float:
+    def radius(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetRadius"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_radius"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Radius.setter
-    def Radius(self, pVal:float) -> None:
+    @radius.setter
+    def radius(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetRadius"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_radius"](arg_pVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{62B93DF1-C615-4363-B4D9-DAA1ACE56204}", ISpherical)
@@ -1009,12 +1009,12 @@ class ICylindrical(IPosition):
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetRadius"] = _raise_uninitialized_error
-        self.__dict__["_SetRadius"] = _raise_uninitialized_error
-        self.__dict__["_GetZ"] = _raise_uninitialized_error
-        self.__dict__["_SetZ"] = _raise_uninitialized_error
-        self.__dict__["_GetLon"] = _raise_uninitialized_error
-        self.__dict__["_SetLon"] = _raise_uninitialized_error
+        self.__dict__["_get_radius"] = _raise_uninitialized_error
+        self.__dict__["_set_radius"] = _raise_uninitialized_error
+        self.__dict__["_get_z"] = _raise_uninitialized_error
+        self.__dict__["_set_z"] = _raise_uninitialized_error
+        self.__dict__["_get_lon"] = _raise_uninitialized_error
+        self.__dict__["_set_lon"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICylindrical._uuid))
             if pUnk is not None:
@@ -1027,12 +1027,12 @@ class ICylindrical(IPosition):
         IPosition._private_init(self, pUnk)
         IID_ICylindrical = agcom.GUID(ICylindrical._uuid)
         vtable_offset_local = ICylindrical._vtable_offset - 1
-        self.__dict__["_GetRadius"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetRadius"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_get_radius"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_radius"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_get_z"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_z"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_ICylindrical, vtable_offset_local+6, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1047,40 +1047,40 @@ class ICylindrical(IPosition):
             IPosition.__setattr__(self, attrname, value)
     
     @property
-    def Radius(self) -> float:
+    def radius(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetRadius"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_radius"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Radius.setter
-    def Radius(self, pVal:float) -> None:
+    @radius.setter
+    def radius(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetRadius"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_radius"](arg_pVal.COM_val))
 
     @property
-    def Z(self) -> float:
+    def z(self) -> float:
         """Uses Angle Dimension."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetZ"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_z"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Z.setter
-    def Z(self, pVal:float) -> None:
+    @z.setter
+    def z(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetZ"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_z"](arg_pVal.COM_val))
 
     @property
-    def Lon(self) -> typing.Any:
+    def lon(self) -> typing.Any:
         """Dimension depends on context."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLon"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lon"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Lon.setter
-    def Lon(self, pVal:typing.Any) -> None:
+    @lon.setter
+    def lon(self, pVal:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLon"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{36F08499-F7C4-41DE-AB49-794EC65C5165}", ICylindrical)
@@ -1093,12 +1093,12 @@ class ICartesian(IPosition):
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetX"] = _raise_uninitialized_error
-        self.__dict__["_SetX"] = _raise_uninitialized_error
-        self.__dict__["_GetY"] = _raise_uninitialized_error
-        self.__dict__["_SetY"] = _raise_uninitialized_error
-        self.__dict__["_GetZ"] = _raise_uninitialized_error
-        self.__dict__["_SetZ"] = _raise_uninitialized_error
+        self.__dict__["_get_x"] = _raise_uninitialized_error
+        self.__dict__["_set_x"] = _raise_uninitialized_error
+        self.__dict__["_get_y"] = _raise_uninitialized_error
+        self.__dict__["_set_y"] = _raise_uninitialized_error
+        self.__dict__["_get_z"] = _raise_uninitialized_error
+        self.__dict__["_set_z"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICartesian._uuid))
             if pUnk is not None:
@@ -1111,12 +1111,12 @@ class ICartesian(IPosition):
         IPosition._private_init(self, pUnk)
         IID_ICartesian = agcom.GUID(ICartesian._uuid)
         vtable_offset_local = ICartesian._vtable_offset - 1
-        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_x"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_x"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_get_y"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_y"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_get_z"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_z"] = IAGFUNCTYPE(pUnk, IID_ICartesian, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1131,40 +1131,40 @@ class ICartesian(IPosition):
             IPosition.__setattr__(self, attrname, value)
     
     @property
-    def X(self) -> float:
+    def x(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetX"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_x"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @X.setter
-    def X(self, pVal:float) -> None:
+    @x.setter
+    def x(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetX"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_x"](arg_pVal.COM_val))
 
     @property
-    def Y(self) -> float:
+    def y(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetY"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_y"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Y.setter
-    def Y(self, pVal:float) -> None:
+    @y.setter
+    def y(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetY"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_y"](arg_pVal.COM_val))
 
     @property
-    def Z(self) -> float:
+    def z(self) -> float:
         """Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetZ"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_z"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Z.setter
-    def Z(self, pVal:float) -> None:
+    @z.setter
+    def z(self, pVal:float) -> None:
         with agmarshall.DOUBLE_arg(pVal) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_SetZ"](arg_pVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_z"](arg_pVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}", ICartesian)
@@ -1177,12 +1177,12 @@ class IGeodetic(IPosition):
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetLat"] = _raise_uninitialized_error
-        self.__dict__["_SetLat"] = _raise_uninitialized_error
-        self.__dict__["_GetLon"] = _raise_uninitialized_error
-        self.__dict__["_SetLon"] = _raise_uninitialized_error
-        self.__dict__["_GetAlt"] = _raise_uninitialized_error
-        self.__dict__["_SetAlt"] = _raise_uninitialized_error
+        self.__dict__["_get_lat"] = _raise_uninitialized_error
+        self.__dict__["_set_lat"] = _raise_uninitialized_error
+        self.__dict__["_get_lon"] = _raise_uninitialized_error
+        self.__dict__["_set_lon"] = _raise_uninitialized_error
+        self.__dict__["_get_alt"] = _raise_uninitialized_error
+        self.__dict__["_set_alt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IGeodetic._uuid))
             if pUnk is not None:
@@ -1195,12 +1195,12 @@ class IGeodetic(IPosition):
         IPosition._private_init(self, pUnk)
         IID_IGeodetic = agcom.GUID(IGeodetic._uuid)
         vtable_offset_local = IGeodetic._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_lat"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_alt"] = IAGFUNCTYPE(pUnk, IID_IGeodetic, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1215,40 +1215,40 @@ class IGeodetic(IPosition):
             IPosition.__setattr__(self, attrname, value)
     
     @property
-    def Lat(self) -> typing.Any:
+    def lat(self) -> typing.Any:
         """Latitude. Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pLat:
-            agcls.evaluate_hresult(self.__dict__["_GetLat"](byref(arg_pLat.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lat"](byref(arg_pLat.COM_val)))
             return arg_pLat.python_val
 
-    @Lat.setter
-    def Lat(self, pLat:typing.Any) -> None:
+    @lat.setter
+    def lat(self, pLat:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pLat) as arg_pLat:
-            agcls.evaluate_hresult(self.__dict__["_SetLat"](arg_pLat.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lat"](arg_pLat.COM_val))
 
     @property
-    def Lon(self) -> typing.Any:
+    def lon(self) -> typing.Any:
         """Longitude. Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pLon:
-            agcls.evaluate_hresult(self.__dict__["_GetLon"](byref(arg_pLon.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lon"](byref(arg_pLon.COM_val)))
             return arg_pLon.python_val
 
-    @Lon.setter
-    def Lon(self, pLon:typing.Any) -> None:
+    @lon.setter
+    def lon(self, pLon:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pLon) as arg_pLon:
-            agcls.evaluate_hresult(self.__dict__["_SetLon"](arg_pLon.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pLon.COM_val))
 
     @property
-    def Alt(self) -> float:
+    def alt(self) -> float:
         """Altitude. Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pAlt:
-            agcls.evaluate_hresult(self.__dict__["_GetAlt"](byref(arg_pAlt.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pAlt.COM_val)))
             return arg_pAlt.python_val
 
-    @Alt.setter
-    def Alt(self, pAlt:float) -> None:
+    @alt.setter
+    def alt(self, pAlt:float) -> None:
         with agmarshall.DOUBLE_arg(pAlt) as arg_pAlt:
-            agcls.evaluate_hresult(self.__dict__["_SetAlt"](arg_pAlt.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_alt"](arg_pAlt.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{93D3322B-C842-48D2-AFCF-BC42B59DB28E}", IGeodetic)
@@ -1261,12 +1261,12 @@ class IPlanetodetic(IPosition):
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetLat"] = _raise_uninitialized_error
-        self.__dict__["_SetLat"] = _raise_uninitialized_error
-        self.__dict__["_GetLon"] = _raise_uninitialized_error
-        self.__dict__["_SetLon"] = _raise_uninitialized_error
-        self.__dict__["_GetAlt"] = _raise_uninitialized_error
-        self.__dict__["_SetAlt"] = _raise_uninitialized_error
+        self.__dict__["_get_lat"] = _raise_uninitialized_error
+        self.__dict__["_set_lat"] = _raise_uninitialized_error
+        self.__dict__["_get_lon"] = _raise_uninitialized_error
+        self.__dict__["_set_lon"] = _raise_uninitialized_error
+        self.__dict__["_get_alt"] = _raise_uninitialized_error
+        self.__dict__["_set_alt"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPlanetodetic._uuid))
             if pUnk is not None:
@@ -1279,12 +1279,12 @@ class IPlanetodetic(IPosition):
         IPosition._private_init(self, pUnk)
         IID_IPlanetodetic = agcom.GUID(IPlanetodetic._uuid)
         vtable_offset_local = IPlanetodetic._vtable_offset - 1
-        self.__dict__["_GetLat"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLat"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetLon"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetLon"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAlt"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetAlt"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_lat"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lat"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_lon"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_lon"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_alt"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_alt"] = IAGFUNCTYPE(pUnk, IID_IPlanetodetic, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1299,40 +1299,40 @@ class IPlanetodetic(IPosition):
             IPosition.__setattr__(self, attrname, value)
     
     @property
-    def Lat(self) -> typing.Any:
+    def lat(self) -> typing.Any:
         """Latitude. Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pLat:
-            agcls.evaluate_hresult(self.__dict__["_GetLat"](byref(arg_pLat.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lat"](byref(arg_pLat.COM_val)))
             return arg_pLat.python_val
 
-    @Lat.setter
-    def Lat(self, pLat:typing.Any) -> None:
+    @lat.setter
+    def lat(self, pLat:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pLat) as arg_pLat:
-            agcls.evaluate_hresult(self.__dict__["_SetLat"](arg_pLat.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lat"](arg_pLat.COM_val))
 
     @property
-    def Lon(self) -> typing.Any:
+    def lon(self) -> typing.Any:
         """Longitude. Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pLon:
-            agcls.evaluate_hresult(self.__dict__["_GetLon"](byref(arg_pLon.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_lon"](byref(arg_pLon.COM_val)))
             return arg_pLon.python_val
 
-    @Lon.setter
-    def Lon(self, pLon:typing.Any) -> None:
+    @lon.setter
+    def lon(self, pLon:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pLon) as arg_pLon:
-            agcls.evaluate_hresult(self.__dict__["_SetLon"](arg_pLon.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_lon"](arg_pLon.COM_val))
 
     @property
-    def Alt(self) -> float:
+    def alt(self) -> float:
         """Altitude. Dimension depends on context."""
         with agmarshall.DOUBLE_arg() as arg_pAlt:
-            agcls.evaluate_hresult(self.__dict__["_GetAlt"](byref(arg_pAlt.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_alt"](byref(arg_pAlt.COM_val)))
             return arg_pAlt.python_val
 
-    @Alt.setter
-    def Alt(self, pAlt:float) -> None:
+    @alt.setter
+    def alt(self, pAlt:float) -> None:
         with agmarshall.DOUBLE_arg(pAlt) as arg_pAlt:
-            agcls.evaluate_hresult(self.__dict__["_SetAlt"](arg_pAlt.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_alt"](arg_pAlt.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}", IPlanetodetic)
@@ -1345,21 +1345,21 @@ class IDirection(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_ConvertTo"] = _raise_uninitialized_error
-        self.__dict__["_GetDirectionType"] = _raise_uninitialized_error
-        self.__dict__["_Assign"] = _raise_uninitialized_error
-        self.__dict__["_AssignEuler"] = _raise_uninitialized_error
-        self.__dict__["_AssignPR"] = _raise_uninitialized_error
-        self.__dict__["_AssignRADec"] = _raise_uninitialized_error
-        self.__dict__["_AssignXYZ"] = _raise_uninitialized_error
-        self.__dict__["_QueryEuler"] = _raise_uninitialized_error
-        self.__dict__["_QueryPR"] = _raise_uninitialized_error
-        self.__dict__["_QueryRADec"] = _raise_uninitialized_error
-        self.__dict__["_QueryXYZ"] = _raise_uninitialized_error
-        self.__dict__["_QueryEulerArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryPRArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryRADecArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryXYZArray"] = _raise_uninitialized_error
+        self.__dict__["_convert_to"] = _raise_uninitialized_error
+        self.__dict__["_get_direction_type"] = _raise_uninitialized_error
+        self.__dict__["_assign"] = _raise_uninitialized_error
+        self.__dict__["_assign_euler"] = _raise_uninitialized_error
+        self.__dict__["_assign_pr"] = _raise_uninitialized_error
+        self.__dict__["_assign_ra_dec"] = _raise_uninitialized_error
+        self.__dict__["_assign_xyz"] = _raise_uninitialized_error
+        self.__dict__["_query_euler"] = _raise_uninitialized_error
+        self.__dict__["_query_pr"] = _raise_uninitialized_error
+        self.__dict__["_query_ra_dec"] = _raise_uninitialized_error
+        self.__dict__["_query_xyz"] = _raise_uninitialized_error
+        self.__dict__["_query_euler_array"] = _raise_uninitialized_error
+        self.__dict__["_query_pr_array"] = _raise_uninitialized_error
+        self.__dict__["_query_ra_dec_array"] = _raise_uninitialized_error
+        self.__dict__["_query_xyz_array"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirection._uuid))
             if pUnk is not None:
@@ -1371,21 +1371,21 @@ class IDirection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IDirection = agcom.GUID(IDirection._uuid)
         vtable_offset_local = IDirection._vtable_offset - 1
-        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetDirectionType"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+3, agcom.PVOID)
-        self.__dict__["_AssignEuler"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.LONG)
-        self.__dict__["_AssignPR"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT)
-        self.__dict__["_AssignRADec"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+6, agcom.VARIANT, agcom.VARIANT)
-        self.__dict__["_AssignXYZ"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+7, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_QueryEuler"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+8, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryPR"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+9, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryRADec"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+10, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryXYZ"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+11, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryEulerArray"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+12, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryPRArray"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryRADecArray"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryXYZArray"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+15, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_convert_to"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get_direction_type"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_assign"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+3, agcom.PVOID)
+        self.__dict__["_assign_euler"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.LONG)
+        self.__dict__["_assign_pr"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+5, agcom.VARIANT, agcom.VARIANT)
+        self.__dict__["_assign_ra_dec"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+6, agcom.VARIANT, agcom.VARIANT)
+        self.__dict__["_assign_xyz"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+7, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_query_euler"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+8, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_query_pr"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+9, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_query_ra_dec"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+10, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_query_xyz"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+11, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_query_euler_array"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+12, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_pr_array"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_ra_dec_array"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_xyz_array"] = IAGFUNCTYPE(pUnk, IID_IDirection, vtable_offset_local+15, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1399,106 +1399,106 @@ class IDirection(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IDirection.")
     
-    def ConvertTo(self, type:"AgEDirectionType") -> "IDirection":
+    def convert_to(self, type:"AgEDirectionType") -> "IDirection":
         """Method to changes the direction to the type specified."""
         with agmarshall.AgEnum_arg(AgEDirectionType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgDirection:
-            agcls.evaluate_hresult(self.__dict__["_ConvertTo"](arg_type.COM_val, byref(arg_ppIAgDirection.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_to"](arg_type.COM_val, byref(arg_ppIAgDirection.COM_val)))
             return arg_ppIAgDirection.python_val
 
     @property
-    def DirectionType(self) -> "AgEDirectionType":
+    def direction_type(self) -> "AgEDirectionType":
         """Returns the type of direction currently being used."""
         with agmarshall.AgEnum_arg(AgEDirectionType) as arg_pType:
-            agcls.evaluate_hresult(self.__dict__["_GetDirectionType"](byref(arg_pType.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_direction_type"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
-    def Assign(self, pDirection:"IDirection") -> None:
+    def assign(self, pDirection:"IDirection") -> None:
         """Assign a new direction."""
         with agmarshall.AgInterface_in_arg(pDirection, IDirection) as arg_pDirection:
-            agcls.evaluate_hresult(self.__dict__["_Assign"](arg_pDirection.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign"](arg_pDirection.COM_val))
 
-    def AssignEuler(self, b:typing.Any, c:typing.Any, sequence:"AgEEulerDirectionSequence") -> None:
+    def assign_euler(self, b:typing.Any, c:typing.Any, sequence:"AgEEulerDirectionSequence") -> None:
         """Helper method to set direction using the Euler representation. Params B and C use Angle Dimension."""
         with agmarshall.VARIANT_arg(b) as arg_b, \
              agmarshall.VARIANT_arg(c) as arg_c, \
              agmarshall.AgEnum_arg(AgEEulerDirectionSequence, sequence) as arg_sequence:
-            agcls.evaluate_hresult(self.__dict__["_AssignEuler"](arg_b.COM_val, arg_c.COM_val, arg_sequence.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_euler"](arg_b.COM_val, arg_c.COM_val, arg_sequence.COM_val))
 
-    def AssignPR(self, pitch:typing.Any, roll:typing.Any) -> None:
+    def assign_pr(self, pitch:typing.Any, roll:typing.Any) -> None:
         """Helper method to set direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         with agmarshall.VARIANT_arg(pitch) as arg_pitch, \
              agmarshall.VARIANT_arg(roll) as arg_roll:
-            agcls.evaluate_hresult(self.__dict__["_AssignPR"](arg_pitch.COM_val, arg_roll.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_pr"](arg_pitch.COM_val, arg_roll.COM_val))
 
-    def AssignRADec(self, ra:typing.Any, dec:typing.Any) -> None:
+    def assign_ra_dec(self, ra:typing.Any, dec:typing.Any) -> None:
         """Helper method to set direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
         with agmarshall.VARIANT_arg(ra) as arg_ra, \
              agmarshall.VARIANT_arg(dec) as arg_dec:
-            agcls.evaluate_hresult(self.__dict__["_AssignRADec"](arg_ra.COM_val, arg_dec.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_ra_dec"](arg_ra.COM_val, arg_dec.COM_val))
 
-    def AssignXYZ(self, x:float, y:float, z:float) -> None:
+    def assign_xyz(self, x:float, y:float, z:float) -> None:
         """Helper method to set direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
-            agcls.evaluate_hresult(self.__dict__["_AssignXYZ"](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_xyz"](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
-    def QueryEuler(self, sequence:"AgEEulerDirectionSequence") -> typing.Tuple[typing.Any, typing.Any]:
+    def query_euler(self, sequence:"AgEEulerDirectionSequence") -> typing.Tuple[typing.Any, typing.Any]:
         """Helper method to get direction using the Euler representation. Params B and C use Angle Dimension."""
         with agmarshall.AgEnum_arg(AgEEulerDirectionSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg() as arg_b, \
              agmarshall.VARIANT_arg() as arg_c:
-            agcls.evaluate_hresult(self.__dict__["_QueryEuler"](arg_sequence.COM_val, byref(arg_b.COM_val), byref(arg_c.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_euler"](arg_sequence.COM_val, byref(arg_b.COM_val), byref(arg_c.COM_val)))
             return arg_b.python_val, arg_c.python_val
 
-    def QueryPR(self, sequence:"AgEPRSequence") -> typing.Tuple[typing.Any, typing.Any]:
+    def query_pr(self, sequence:"AgEPRSequence") -> typing.Tuple[typing.Any, typing.Any]:
         """Helper method to get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         with agmarshall.AgEnum_arg(AgEPRSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg() as arg_pitch, \
              agmarshall.VARIANT_arg() as arg_roll:
-            agcls.evaluate_hresult(self.__dict__["_QueryPR"](arg_sequence.COM_val, byref(arg_pitch.COM_val), byref(arg_roll.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_pr"](arg_sequence.COM_val, byref(arg_pitch.COM_val), byref(arg_roll.COM_val)))
             return arg_pitch.python_val, arg_roll.python_val
 
-    def QueryRADec(self) -> typing.Tuple[typing.Any, typing.Any]:
+    def query_ra_dec(self) -> typing.Tuple[typing.Any, typing.Any]:
         """Helper method to get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
         with agmarshall.VARIANT_arg() as arg_ra, \
              agmarshall.VARIANT_arg() as arg_dec:
-            agcls.evaluate_hresult(self.__dict__["_QueryRADec"](byref(arg_ra.COM_val), byref(arg_dec.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_ra_dec"](byref(arg_ra.COM_val), byref(arg_dec.COM_val)))
             return arg_ra.python_val, arg_dec.python_val
 
-    def QueryXYZ(self) -> typing.Tuple[float, float, float]:
+    def query_xyz(self) -> typing.Tuple[float, float, float]:
         """Helper method to get direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
-            agcls.evaluate_hresult(self.__dict__["_QueryXYZ"](byref(arg_x.COM_val), byref(arg_y.COM_val), byref(arg_z.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_xyz"](byref(arg_x.COM_val), byref(arg_y.COM_val), byref(arg_z.COM_val)))
             return arg_x.python_val, arg_y.python_val, arg_z.python_val
 
-    def QueryEulerArray(self, sequence:"AgEEulerDirectionSequence") -> list:
+    def query_euler_array(self, sequence:"AgEEulerDirectionSequence") -> list:
         """Returns the Euler elements in an array."""
         with agmarshall.AgEnum_arg(AgEEulerDirectionSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryEulerArray"](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_euler_array"](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryPRArray(self, sequence:"AgEPRSequence") -> list:
+    def query_pr_array(self, sequence:"AgEPRSequence") -> list:
         """Returns the PR elements in an array."""
         with agmarshall.AgEnum_arg(AgEPRSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryPRArray"](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_pr_array"](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryRADecArray(self) -> list:
+    def query_ra_dec_array(self) -> list:
         """Returns the RADec elements in an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryRADecArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_ra_dec_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryXYZArray(self) -> list:
+    def query_xyz_array(self) -> list:
         """Returns the XYZ elements in an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryXYZArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_xyz_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -1512,12 +1512,12 @@ class IDirectionEuler(IDirection):
     _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetB"] = _raise_uninitialized_error
-        self.__dict__["_SetB"] = _raise_uninitialized_error
-        self.__dict__["_GetC"] = _raise_uninitialized_error
-        self.__dict__["_SetC"] = _raise_uninitialized_error
-        self.__dict__["_GetSequence"] = _raise_uninitialized_error
-        self.__dict__["_SetSequence"] = _raise_uninitialized_error
+        self.__dict__["_get_b"] = _raise_uninitialized_error
+        self.__dict__["_set_b"] = _raise_uninitialized_error
+        self.__dict__["_get_c"] = _raise_uninitialized_error
+        self.__dict__["_set_c"] = _raise_uninitialized_error
+        self.__dict__["_get_sequence"] = _raise_uninitialized_error
+        self.__dict__["_set_sequence"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirectionEuler._uuid))
             if pUnk is not None:
@@ -1530,12 +1530,12 @@ class IDirectionEuler(IDirection):
         IDirection._private_init(self, pUnk)
         IID_IDirectionEuler = agcom.GUID(IDirectionEuler._uuid)
         vtable_offset_local = IDirectionEuler._vtable_offset - 1
-        self.__dict__["_GetB"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetB"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetC"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetC"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+6, agcom.LONG)
+        self.__dict__["_get_b"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_b"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_c"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_c"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_sequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_set_sequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionEuler, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1550,40 +1550,40 @@ class IDirectionEuler(IDirection):
             IDirection.__setattr__(self, attrname, value)
     
     @property
-    def B(self) -> typing.Any:
+    def b(self) -> typing.Any:
         """Euler B angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetB"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_b"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @B.setter
-    def B(self, va:typing.Any) -> None:
+    @b.setter
+    def b(self, va:typing.Any) -> None:
         with agmarshall.VARIANT_arg(va) as arg_va:
-            agcls.evaluate_hresult(self.__dict__["_SetB"](arg_va.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_b"](arg_va.COM_val))
 
     @property
-    def C(self) -> typing.Any:
+    def c(self) -> typing.Any:
         """Euler C angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetC"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_c"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @C.setter
-    def C(self, vb:typing.Any) -> None:
+    @c.setter
+    def c(self, vb:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vb) as arg_vb:
-            agcls.evaluate_hresult(self.__dict__["_SetC"](arg_vb.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_c"](arg_vb.COM_val))
 
     @property
-    def Sequence(self) -> "AgEEulerDirectionSequence":
+    def sequence(self) -> "AgEEulerDirectionSequence":
         """Euler direction sequence.  Must be set before B,C values. Otherwise the B,C values will converted to the Sequence specified."""
         with agmarshall.AgEnum_arg(AgEEulerDirectionSequence) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSequence"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_sequence"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Sequence.setter
-    def Sequence(self, sequence:"AgEEulerDirectionSequence") -> None:
+    @sequence.setter
+    def sequence(self, sequence:"AgEEulerDirectionSequence") -> None:
         with agmarshall.AgEnum_arg(AgEEulerDirectionSequence, sequence) as arg_sequence:
-            agcls.evaluate_hresult(self.__dict__["_SetSequence"](arg_sequence.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_sequence"](arg_sequence.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{9CBDC138-72D1-4734-8F95-2140266D37B5}", IDirectionEuler)
@@ -1596,12 +1596,12 @@ class IDirectionPR(IDirection):
     _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetPitch"] = _raise_uninitialized_error
-        self.__dict__["_SetPitch"] = _raise_uninitialized_error
-        self.__dict__["_GetRoll"] = _raise_uninitialized_error
-        self.__dict__["_SetRoll"] = _raise_uninitialized_error
-        self.__dict__["_GetSequence"] = _raise_uninitialized_error
-        self.__dict__["_SetSequence"] = _raise_uninitialized_error
+        self.__dict__["_get_pitch"] = _raise_uninitialized_error
+        self.__dict__["_set_pitch"] = _raise_uninitialized_error
+        self.__dict__["_get_roll"] = _raise_uninitialized_error
+        self.__dict__["_set_roll"] = _raise_uninitialized_error
+        self.__dict__["_get_sequence"] = _raise_uninitialized_error
+        self.__dict__["_set_sequence"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirectionPR._uuid))
             if pUnk is not None:
@@ -1614,12 +1614,12 @@ class IDirectionPR(IDirection):
         IDirection._private_init(self, pUnk)
         IID_IDirectionPR = agcom.GUID(IDirectionPR._uuid)
         vtable_offset_local = IDirectionPR._vtable_offset - 1
-        self.__dict__["_GetPitch"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetPitch"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetRoll"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRoll"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+6, agcom.LONG)
+        self.__dict__["_get_pitch"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_pitch"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_roll"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_roll"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_sequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_set_sequence"] = IAGFUNCTYPE(pUnk, IID_IDirectionPR, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1634,40 +1634,40 @@ class IDirectionPR(IDirection):
             IDirection.__setattr__(self, attrname, value)
     
     @property
-    def Pitch(self) -> typing.Any:
+    def pitch(self) -> typing.Any:
         """Pitch angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetPitch"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_pitch"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Pitch.setter
-    def Pitch(self, vPitch:typing.Any) -> None:
+    @pitch.setter
+    def pitch(self, vPitch:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vPitch) as arg_vPitch:
-            agcls.evaluate_hresult(self.__dict__["_SetPitch"](arg_vPitch.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_pitch"](arg_vPitch.COM_val))
 
     @property
-    def Roll(self) -> typing.Any:
+    def roll(self) -> typing.Any:
         """Roll angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetRoll"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_roll"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Roll.setter
-    def Roll(self, vRoll:typing.Any) -> None:
+    @roll.setter
+    def roll(self, vRoll:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vRoll) as arg_vRoll:
-            agcls.evaluate_hresult(self.__dict__["_SetRoll"](arg_vRoll.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_roll"](arg_vRoll.COM_val))
 
     @property
-    def Sequence(self) -> "AgEPRSequence":
+    def sequence(self) -> "AgEPRSequence":
         """PR direction sequence. Must be set before Pitch,Roll values. Otherwise the current Pitch,Roll values will be converted to the Sequence specified."""
         with agmarshall.AgEnum_arg(AgEPRSequence) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSequence"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_sequence"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Sequence.setter
-    def Sequence(self, sequence:"AgEPRSequence") -> None:
+    @sequence.setter
+    def sequence(self, sequence:"AgEPRSequence") -> None:
         with agmarshall.AgEnum_arg(AgEPRSequence, sequence) as arg_sequence:
-            agcls.evaluate_hresult(self.__dict__["_SetSequence"](arg_sequence.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_sequence"](arg_sequence.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{5AC01BF1-2B95-4C13-8B69-09FDC485330E}", IDirectionPR)
@@ -1680,12 +1680,12 @@ class IDirectionRADec(IDirection):
     _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetDec"] = _raise_uninitialized_error
-        self.__dict__["_SetDec"] = _raise_uninitialized_error
-        self.__dict__["_GetRA"] = _raise_uninitialized_error
-        self.__dict__["_SetRA"] = _raise_uninitialized_error
-        self.__dict__["_GetMagnitude"] = _raise_uninitialized_error
-        self.__dict__["_SetMagnitude"] = _raise_uninitialized_error
+        self.__dict__["_get_dec"] = _raise_uninitialized_error
+        self.__dict__["_set_dec"] = _raise_uninitialized_error
+        self.__dict__["_get_ra"] = _raise_uninitialized_error
+        self.__dict__["_set_ra"] = _raise_uninitialized_error
+        self.__dict__["_get_magnitude"] = _raise_uninitialized_error
+        self.__dict__["_set_magnitude"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirectionRADec._uuid))
             if pUnk is not None:
@@ -1698,12 +1698,12 @@ class IDirectionRADec(IDirection):
         IDirection._private_init(self, pUnk)
         IID_IDirectionRADec = agcom.GUID(IDirectionRADec._uuid)
         vtable_offset_local = IDirectionRADec._vtable_offset - 1
-        self.__dict__["_GetDec"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetDec"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetRA"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRA"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetMagnitude"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetMagnitude"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_dec"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_dec"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_ra"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_ra"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_magnitude"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_magnitude"] = IAGFUNCTYPE(pUnk, IID_IDirectionRADec, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1718,40 +1718,40 @@ class IDirectionRADec(IDirection):
             IDirection.__setattr__(self, attrname, value)
     
     @property
-    def Dec(self) -> typing.Any:
+    def dec(self) -> typing.Any:
         """Declination: angle above the x-y plane. Uses Latitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetDec"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_dec"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Dec.setter
-    def Dec(self, vLat:typing.Any) -> None:
+    @dec.setter
+    def dec(self, vLat:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vLat) as arg_vLat:
-            agcls.evaluate_hresult(self.__dict__["_SetDec"](arg_vLat.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_dec"](arg_vLat.COM_val))
 
     @property
-    def RA(self) -> typing.Any:
+    def ra(self) -> typing.Any:
         """Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetRA"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_ra"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @RA.setter
-    def RA(self, vLon:typing.Any) -> None:
+    @ra.setter
+    def ra(self, vLon:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vLon) as arg_vLon:
-            agcls.evaluate_hresult(self.__dict__["_SetRA"](arg_vLon.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_ra"](arg_vLon.COM_val))
 
     @property
-    def Magnitude(self) -> float:
+    def magnitude(self) -> float:
         """A unitless value that represents magnitude."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetMagnitude"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_magnitude"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Magnitude.setter
-    def Magnitude(self, magnitude:float) -> None:
+    @magnitude.setter
+    def magnitude(self, magnitude:float) -> None:
         with agmarshall.DOUBLE_arg(magnitude) as arg_magnitude:
-            agcls.evaluate_hresult(self.__dict__["_SetMagnitude"](arg_magnitude.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_magnitude"](arg_magnitude.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{A921E587-EC8A-4F1E-99BB-6E13B8E0D5E7}", IDirectionRADec)
@@ -1764,12 +1764,12 @@ class IDirectionXYZ(IDirection):
     _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetX"] = _raise_uninitialized_error
-        self.__dict__["_SetX"] = _raise_uninitialized_error
-        self.__dict__["_GetY"] = _raise_uninitialized_error
-        self.__dict__["_SetY"] = _raise_uninitialized_error
-        self.__dict__["_GetZ"] = _raise_uninitialized_error
-        self.__dict__["_SetZ"] = _raise_uninitialized_error
+        self.__dict__["_get_x"] = _raise_uninitialized_error
+        self.__dict__["_set_x"] = _raise_uninitialized_error
+        self.__dict__["_get_y"] = _raise_uninitialized_error
+        self.__dict__["_set_y"] = _raise_uninitialized_error
+        self.__dict__["_get_z"] = _raise_uninitialized_error
+        self.__dict__["_set_z"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDirectionXYZ._uuid))
             if pUnk is not None:
@@ -1782,12 +1782,12 @@ class IDirectionXYZ(IDirection):
         IDirection._private_init(self, pUnk)
         IID_IDirectionXYZ = agcom.GUID(IDirectionXYZ._uuid)
         vtable_offset_local = IDirectionXYZ._vtable_offset - 1
-        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_x"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_x"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_get_y"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_y"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_get_z"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_z"] = IAGFUNCTYPE(pUnk, IID_IDirectionXYZ, vtable_offset_local+6, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1802,40 +1802,40 @@ class IDirectionXYZ(IDirection):
             IDirection.__setattr__(self, attrname, value)
     
     @property
-    def X(self) -> float:
+    def x(self) -> float:
         """X component. Dimensionless"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetX"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_x"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @X.setter
-    def X(self, vx:float) -> None:
+    @x.setter
+    def x(self, vx:float) -> None:
         with agmarshall.DOUBLE_arg(vx) as arg_vx:
-            agcls.evaluate_hresult(self.__dict__["_SetX"](arg_vx.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_x"](arg_vx.COM_val))
 
     @property
-    def Y(self) -> float:
+    def y(self) -> float:
         """Y component. Dimensionless"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetY"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_y"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Y.setter
-    def Y(self, vy:float) -> None:
+    @y.setter
+    def y(self, vy:float) -> None:
         with agmarshall.DOUBLE_arg(vy) as arg_vy:
-            agcls.evaluate_hresult(self.__dict__["_SetY"](arg_vy.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_y"](arg_vy.COM_val))
 
     @property
-    def Z(self) -> float:
+    def z(self) -> float:
         """Z component. Dimensionless"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetZ"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_z"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Z.setter
-    def Z(self, vz:float) -> None:
+    @z.setter
+    def z(self, vz:float) -> None:
         with agmarshall.DOUBLE_arg(vz) as arg_vz:
-            agcls.evaluate_hresult(self.__dict__["_SetZ"](arg_vz.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_z"](arg_vz.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{2B499A22-6662-4F20-8B82-AA7701CD87A4}", IDirectionXYZ)
@@ -1848,15 +1848,15 @@ class ICartesian3Vector(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetX"] = _raise_uninitialized_error
-        self.__dict__["_SetX"] = _raise_uninitialized_error
-        self.__dict__["_GetY"] = _raise_uninitialized_error
-        self.__dict__["_SetY"] = _raise_uninitialized_error
-        self.__dict__["_GetZ"] = _raise_uninitialized_error
-        self.__dict__["_SetZ"] = _raise_uninitialized_error
-        self.__dict__["_Get"] = _raise_uninitialized_error
-        self.__dict__["_Set"] = _raise_uninitialized_error
-        self.__dict__["_ToArray"] = _raise_uninitialized_error
+        self.__dict__["_get_x"] = _raise_uninitialized_error
+        self.__dict__["_set_x"] = _raise_uninitialized_error
+        self.__dict__["_get_y"] = _raise_uninitialized_error
+        self.__dict__["_set_y"] = _raise_uninitialized_error
+        self.__dict__["_get_z"] = _raise_uninitialized_error
+        self.__dict__["_set_z"] = _raise_uninitialized_error
+        self.__dict__["_get"] = _raise_uninitialized_error
+        self.__dict__["_set"] = _raise_uninitialized_error
+        self.__dict__["_to_array"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICartesian3Vector._uuid))
             if pUnk is not None:
@@ -1868,15 +1868,15 @@ class ICartesian3Vector(object):
         self.__dict__["_pUnk"] = pUnk
         IID_ICartesian3Vector = agcom.GUID(ICartesian3Vector._uuid)
         vtable_offset_local = ICartesian3Vector._vtable_offset - 1
-        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetZ"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetZ"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+6, agcom.DOUBLE)
-        self.__dict__["_Get"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+7, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_Set"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+9, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_get_x"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_x"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_get_y"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_y"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_get_z"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_z"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+7, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_set"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+8, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_to_array"] = IAGFUNCTYPE(pUnk, IID_ICartesian3Vector, vtable_offset_local+9, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -1891,60 +1891,60 @@ class ICartesian3Vector(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICartesian3Vector.")
     
     @property
-    def X(self) -> float:
+    def x(self) -> float:
         """X coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetX"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_x"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    @X.setter
-    def X(self, x:float) -> None:
+    @x.setter
+    def x(self, x:float) -> None:
         with agmarshall.DOUBLE_arg(x) as arg_x:
-            agcls.evaluate_hresult(self.__dict__["_SetX"](arg_x.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_x"](arg_x.COM_val))
 
     @property
-    def Y(self) -> float:
+    def y(self) -> float:
         """Y coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetY"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_y"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    @Y.setter
-    def Y(self, y:float) -> None:
+    @y.setter
+    def y(self, y:float) -> None:
         with agmarshall.DOUBLE_arg(y) as arg_y:
-            agcls.evaluate_hresult(self.__dict__["_SetY"](arg_y.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_y"](arg_y.COM_val))
 
     @property
-    def Z(self) -> float:
+    def z(self) -> float:
         """Z coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetZ"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_z"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    @Z.setter
-    def Z(self, z:float) -> None:
+    @z.setter
+    def z(self, z:float) -> None:
         with agmarshall.DOUBLE_arg(z) as arg_z:
-            agcls.evaluate_hresult(self.__dict__["_SetZ"](arg_z.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_z"](arg_z.COM_val))
 
-    def Get(self) -> typing.Tuple[float, float, float]:
+    def get(self) -> typing.Tuple[float, float, float]:
         """Returns cartesian vector"""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y, \
              agmarshall.DOUBLE_arg() as arg_z:
-            agcls.evaluate_hresult(self.__dict__["_Get"](byref(arg_x.COM_val), byref(arg_y.COM_val), byref(arg_z.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get"](byref(arg_x.COM_val), byref(arg_y.COM_val), byref(arg_z.COM_val)))
             return arg_x.python_val, arg_y.python_val, arg_z.python_val
 
-    def Set(self, x:float, y:float, z:float) -> None:
+    def set(self, x:float, y:float, z:float) -> None:
         """Sets cartesian vector"""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y, \
              agmarshall.DOUBLE_arg(z) as arg_z:
-            agcls.evaluate_hresult(self.__dict__["_Set"](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set"](arg_x.COM_val, arg_y.COM_val, arg_z.COM_val))
 
-    def ToArray(self) -> list:
+    def to_array(self) -> list:
         """Returns coordinates as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_ToArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_to_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -1958,21 +1958,21 @@ class IOrientation(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_ConvertTo"] = _raise_uninitialized_error
-        self.__dict__["_GetOrientationType"] = _raise_uninitialized_error
-        self.__dict__["_Assign"] = _raise_uninitialized_error
-        self.__dict__["_AssignAzEl"] = _raise_uninitialized_error
-        self.__dict__["_AssignEulerAngles"] = _raise_uninitialized_error
-        self.__dict__["_AssignQuaternion"] = _raise_uninitialized_error
-        self.__dict__["_AssignYPRAngles"] = _raise_uninitialized_error
-        self.__dict__["_QueryAzEl"] = _raise_uninitialized_error
-        self.__dict__["_QueryEulerAngles"] = _raise_uninitialized_error
-        self.__dict__["_QueryQuaternion"] = _raise_uninitialized_error
-        self.__dict__["_QueryYPRAngles"] = _raise_uninitialized_error
-        self.__dict__["_QueryAzElArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryEulerAnglesArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryQuaternionArray"] = _raise_uninitialized_error
-        self.__dict__["_QueryYPRAnglesArray"] = _raise_uninitialized_error
+        self.__dict__["_convert_to"] = _raise_uninitialized_error
+        self.__dict__["_get_orientation_type"] = _raise_uninitialized_error
+        self.__dict__["_assign"] = _raise_uninitialized_error
+        self.__dict__["_assign_az_el"] = _raise_uninitialized_error
+        self.__dict__["_assign_euler_angles"] = _raise_uninitialized_error
+        self.__dict__["_assign_quaternion"] = _raise_uninitialized_error
+        self.__dict__["_assign_ypr_angles"] = _raise_uninitialized_error
+        self.__dict__["_query_az_el"] = _raise_uninitialized_error
+        self.__dict__["_query_euler_angles"] = _raise_uninitialized_error
+        self.__dict__["_query_quaternion"] = _raise_uninitialized_error
+        self.__dict__["_query_ypr_angles"] = _raise_uninitialized_error
+        self.__dict__["_query_az_el_array"] = _raise_uninitialized_error
+        self.__dict__["_query_euler_angles_array"] = _raise_uninitialized_error
+        self.__dict__["_query_quaternion_array"] = _raise_uninitialized_error
+        self.__dict__["_query_ypr_angles_array"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientation._uuid))
             if pUnk is not None:
@@ -1984,21 +1984,21 @@ class IOrientation(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IOrientation = agcom.GUID(IOrientation._uuid)
         vtable_offset_local = IOrientation._vtable_offset - 1
-        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetOrientationType"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+3, agcom.PVOID)
-        self.__dict__["_AssignAzEl"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.LONG)
-        self.__dict__["_AssignEulerAngles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+5, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT)
-        self.__dict__["_AssignQuaternion"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignYPRAngles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+7, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT)
-        self.__dict__["_QueryAzEl"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+8, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.LONG))
-        self.__dict__["_QueryEulerAngles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+9, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryQuaternion"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+10, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_QueryYPRAngles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+11, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
-        self.__dict__["_QueryAzElArray"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+12, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryEulerAnglesArray"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryQuaternionArray"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_QueryYPRAnglesArray"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+15, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_convert_to"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get_orientation_type"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_assign"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+3, agcom.PVOID)
+        self.__dict__["_assign_az_el"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+4, agcom.VARIANT, agcom.VARIANT, agcom.LONG)
+        self.__dict__["_assign_euler_angles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+5, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT)
+        self.__dict__["_assign_quaternion"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_assign_ypr_angles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+7, agcom.LONG, agcom.VARIANT, agcom.VARIANT, agcom.VARIANT)
+        self.__dict__["_query_az_el"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+8, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.LONG))
+        self.__dict__["_query_euler_angles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+9, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_query_quaternion"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+10, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_query_ypr_angles"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+11, agcom.LONG, POINTER(agcom.VARIANT), POINTER(agcom.VARIANT), POINTER(agcom.VARIANT))
+        self.__dict__["_query_az_el_array"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+12, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_euler_angles_array"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+13, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_quaternion_array"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+14, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_query_ypr_angles_array"] = IAGFUNCTYPE(pUnk, IID_IOrientation, vtable_offset_local+15, agcom.LONG, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2012,115 +2012,115 @@ class IOrientation(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IOrientation.")
     
-    def ConvertTo(self, type:"AgEOrientationType") -> "IOrientation":
+    def convert_to(self, type:"AgEOrientationType") -> "IOrientation":
         """Method to change the orientation method to the type specified."""
         with agmarshall.AgEnum_arg(AgEOrientationType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgOrientation:
-            agcls.evaluate_hresult(self.__dict__["_ConvertTo"](arg_type.COM_val, byref(arg_ppIAgOrientation.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_to"](arg_type.COM_val, byref(arg_ppIAgOrientation.COM_val)))
             return arg_ppIAgOrientation.python_val
 
     @property
-    def OrientationType(self) -> "AgEOrientationType":
+    def orientation_type(self) -> "AgEOrientationType":
         """Returns the orientation method currently being used."""
         with agmarshall.AgEnum_arg(AgEOrientationType) as arg_pType:
-            agcls.evaluate_hresult(self.__dict__["_GetOrientationType"](byref(arg_pType.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_orientation_type"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
-    def Assign(self, pOrientation:"IOrientation") -> None:
+    def assign(self, pOrientation:"IOrientation") -> None:
         """Assign a new orientation method."""
         with agmarshall.AgInterface_in_arg(pOrientation, IOrientation) as arg_pOrientation:
-            agcls.evaluate_hresult(self.__dict__["_Assign"](arg_pOrientation.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign"](arg_pOrientation.COM_val))
 
-    def AssignAzEl(self, azimuth:typing.Any, elevation:typing.Any, aboutBoresight:"AgEAzElAboutBoresight") -> None:
+    def assign_az_el(self, azimuth:typing.Any, elevation:typing.Any, aboutBoresight:"AgEAzElAboutBoresight") -> None:
         """Helper method to set orientation using the AzEl representation."""
         with agmarshall.VARIANT_arg(azimuth) as arg_azimuth, \
              agmarshall.VARIANT_arg(elevation) as arg_elevation, \
              agmarshall.AgEnum_arg(AgEAzElAboutBoresight, aboutBoresight) as arg_aboutBoresight:
-            agcls.evaluate_hresult(self.__dict__["_AssignAzEl"](arg_azimuth.COM_val, arg_elevation.COM_val, arg_aboutBoresight.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_az_el"](arg_azimuth.COM_val, arg_elevation.COM_val, arg_aboutBoresight.COM_val))
 
-    def AssignEulerAngles(self, sequence:"AgEEulerOrientationSequence", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
+    def assign_euler_angles(self, sequence:"AgEEulerOrientationSequence", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
         """Helper method to set orientation using the Euler angles representation."""
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg(a) as arg_a, \
              agmarshall.VARIANT_arg(b) as arg_b, \
              agmarshall.VARIANT_arg(c) as arg_c:
-            agcls.evaluate_hresult(self.__dict__["_AssignEulerAngles"](arg_sequence.COM_val, arg_a.COM_val, arg_b.COM_val, arg_c.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_euler_angles"](arg_sequence.COM_val, arg_a.COM_val, arg_b.COM_val, arg_c.COM_val))
 
-    def AssignQuaternion(self, qx:float, qy:float, qz:float, qs:float) -> None:
+    def assign_quaternion(self, qx:float, qy:float, qz:float, qs:float) -> None:
         """Helper method to set orientation using the Quaternion representation."""
         with agmarshall.DOUBLE_arg(qx) as arg_qx, \
              agmarshall.DOUBLE_arg(qy) as arg_qy, \
              agmarshall.DOUBLE_arg(qz) as arg_qz, \
              agmarshall.DOUBLE_arg(qs) as arg_qs:
-            agcls.evaluate_hresult(self.__dict__["_AssignQuaternion"](arg_qx.COM_val, arg_qy.COM_val, arg_qz.COM_val, arg_qs.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_quaternion"](arg_qx.COM_val, arg_qy.COM_val, arg_qz.COM_val, arg_qs.COM_val))
 
-    def AssignYPRAngles(self, sequence:"AgEYPRAnglesSequence", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> None:
+    def assign_ypr_angles(self, sequence:"AgEYPRAnglesSequence", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> None:
         """Helper method to set orientation using the YPR angles representation."""
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg(yaw) as arg_yaw, \
              agmarshall.VARIANT_arg(pitch) as arg_pitch, \
              agmarshall.VARIANT_arg(roll) as arg_roll:
-            agcls.evaluate_hresult(self.__dict__["_AssignYPRAngles"](arg_sequence.COM_val, arg_yaw.COM_val, arg_pitch.COM_val, arg_roll.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_ypr_angles"](arg_sequence.COM_val, arg_yaw.COM_val, arg_pitch.COM_val, arg_roll.COM_val))
 
-    def QueryAzEl(self) -> typing.Tuple[typing.Any, typing.Any, AgEAzElAboutBoresight]:
+    def query_az_el(self) -> typing.Tuple[typing.Any, typing.Any, AgEAzElAboutBoresight]:
         """Helper method to get orientation using the AzEl representation."""
         with agmarshall.VARIANT_arg() as arg_azimuth, \
              agmarshall.VARIANT_arg() as arg_elevation, \
              agmarshall.AgEnum_arg(AgEAzElAboutBoresight) as arg_aboutBoresight:
-            agcls.evaluate_hresult(self.__dict__["_QueryAzEl"](byref(arg_azimuth.COM_val), byref(arg_elevation.COM_val), byref(arg_aboutBoresight.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_az_el"](byref(arg_azimuth.COM_val), byref(arg_elevation.COM_val), byref(arg_aboutBoresight.COM_val)))
             return arg_azimuth.python_val, arg_elevation.python_val, arg_aboutBoresight.python_val
 
-    def QueryEulerAngles(self, sequence:"AgEEulerOrientationSequence") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
+    def query_euler_angles(self, sequence:"AgEEulerOrientationSequence") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
         """Helper method to get orientation using the Euler angles representation."""
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg() as arg_a, \
              agmarshall.VARIANT_arg() as arg_b, \
              agmarshall.VARIANT_arg() as arg_c:
-            agcls.evaluate_hresult(self.__dict__["_QueryEulerAngles"](arg_sequence.COM_val, byref(arg_a.COM_val), byref(arg_b.COM_val), byref(arg_c.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_euler_angles"](arg_sequence.COM_val, byref(arg_a.COM_val), byref(arg_b.COM_val), byref(arg_c.COM_val)))
             return arg_a.python_val, arg_b.python_val, arg_c.python_val
 
-    def QueryQuaternion(self) -> typing.Tuple[float, float, float, float]:
+    def query_quaternion(self) -> typing.Tuple[float, float, float, float]:
         """Helper method to get orientation using the Quaternion representation."""
         with agmarshall.DOUBLE_arg() as arg_qx, \
              agmarshall.DOUBLE_arg() as arg_qy, \
              agmarshall.DOUBLE_arg() as arg_qz, \
              agmarshall.DOUBLE_arg() as arg_qs:
-            agcls.evaluate_hresult(self.__dict__["_QueryQuaternion"](byref(arg_qx.COM_val), byref(arg_qy.COM_val), byref(arg_qz.COM_val), byref(arg_qs.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_quaternion"](byref(arg_qx.COM_val), byref(arg_qy.COM_val), byref(arg_qz.COM_val), byref(arg_qs.COM_val)))
             return arg_qx.python_val, arg_qy.python_val, arg_qz.python_val, arg_qs.python_val
 
-    def QueryYPRAngles(self, sequence:"AgEYPRAnglesSequence") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
+    def query_ypr_angles(self, sequence:"AgEYPRAnglesSequence") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
         """Helper method to get orientation using the YPR angles representation."""
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg() as arg_yaw, \
              agmarshall.VARIANT_arg() as arg_pitch, \
              agmarshall.VARIANT_arg() as arg_roll:
-            agcls.evaluate_hresult(self.__dict__["_QueryYPRAngles"](arg_sequence.COM_val, byref(arg_yaw.COM_val), byref(arg_pitch.COM_val), byref(arg_roll.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_ypr_angles"](arg_sequence.COM_val, byref(arg_yaw.COM_val), byref(arg_pitch.COM_val), byref(arg_roll.COM_val)))
             return arg_yaw.python_val, arg_pitch.python_val, arg_roll.python_val
 
-    def QueryAzElArray(self) -> list:
+    def query_az_el_array(self) -> list:
         """Returns the AzEl elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryAzElArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_az_el_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryEulerAnglesArray(self, sequence:"AgEEulerOrientationSequence") -> list:
+    def query_euler_angles_array(self, sequence:"AgEEulerOrientationSequence") -> list:
         """Returns the Euler elements as an array."""
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryEulerAnglesArray"](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_euler_angles_array"](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryQuaternionArray(self) -> list:
+    def query_quaternion_array(self) -> list:
         """Returns the Quaternion elements as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryQuaternionArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_quaternion_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryYPRAnglesArray(self, sequence:"AgEYPRAnglesSequence") -> list:
+    def query_ypr_angles_array(self, sequence:"AgEYPRAnglesSequence") -> list:
         """Returns the YPR Angles elements as an array."""
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence, sequence) as arg_sequence, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryYPRAnglesArray"](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_ypr_angles_array"](arg_sequence.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -2134,12 +2134,12 @@ class IOrientationAzEl(IOrientation):
     _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetAzimuth"] = _raise_uninitialized_error
-        self.__dict__["_SetAzimuth"] = _raise_uninitialized_error
-        self.__dict__["_GetElevation"] = _raise_uninitialized_error
-        self.__dict__["_SetElevation"] = _raise_uninitialized_error
-        self.__dict__["_GetAboutBoresight"] = _raise_uninitialized_error
-        self.__dict__["_SetAboutBoresight"] = _raise_uninitialized_error
+        self.__dict__["_get_azimuth"] = _raise_uninitialized_error
+        self.__dict__["_set_azimuth"] = _raise_uninitialized_error
+        self.__dict__["_get_elevation"] = _raise_uninitialized_error
+        self.__dict__["_set_elevation"] = _raise_uninitialized_error
+        self.__dict__["_get_about_boresight"] = _raise_uninitialized_error
+        self.__dict__["_set_about_boresight"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationAzEl._uuid))
             if pUnk is not None:
@@ -2152,12 +2152,12 @@ class IOrientationAzEl(IOrientation):
         IOrientation._private_init(self, pUnk)
         IID_IOrientationAzEl = agcom.GUID(IOrientationAzEl._uuid)
         vtable_offset_local = IOrientationAzEl._vtable_offset - 1
-        self.__dict__["_GetAzimuth"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+1, POINTER(agcom.VARIANT))
-        self.__dict__["_SetAzimuth"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+2, agcom.VARIANT)
-        self.__dict__["_GetElevation"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetElevation"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetAboutBoresight"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetAboutBoresight"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+6, agcom.LONG)
+        self.__dict__["_get_azimuth"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+1, POINTER(agcom.VARIANT))
+        self.__dict__["_set_azimuth"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+2, agcom.VARIANT)
+        self.__dict__["_get_elevation"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_elevation"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_about_boresight"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_set_about_boresight"] = IAGFUNCTYPE(pUnk, IID_IOrientationAzEl, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2172,40 +2172,40 @@ class IOrientationAzEl(IOrientation):
             IOrientation.__setattr__(self, attrname, value)
     
     @property
-    def Azimuth(self) -> typing.Any:
+    def azimuth(self) -> typing.Any:
         """Measured in the XY plane of the parent reference frame about its Z axis in the right-handed sense for both vehicle-based sensors and facility-based sensors. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetAzimuth"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_azimuth"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Azimuth.setter
-    def Azimuth(self, vAzimuth:typing.Any) -> None:
+    @azimuth.setter
+    def azimuth(self, vAzimuth:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vAzimuth) as arg_vAzimuth:
-            agcls.evaluate_hresult(self.__dict__["_SetAzimuth"](arg_vAzimuth.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_azimuth"](arg_vAzimuth.COM_val))
 
     @property
-    def Elevation(self) -> typing.Any:
+    def elevation(self) -> typing.Any:
         """Defined as the angle between the XY plane of the parent reference frame and the sensor or antenna boresight measured toward the positive Z axis. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetElevation"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_elevation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Elevation.setter
-    def Elevation(self, vElevation:typing.Any) -> None:
+    @elevation.setter
+    def elevation(self, vElevation:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vElevation) as arg_vElevation:
-            agcls.evaluate_hresult(self.__dict__["_SetElevation"](arg_vElevation.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_elevation"](arg_vElevation.COM_val))
 
     @property
-    def AboutBoresight(self) -> "AgEAzElAboutBoresight":
+    def about_boresight(self) -> "AgEAzElAboutBoresight":
         """Determines orientation of the X and Y axes with respect to the parent's reference frame."""
         with agmarshall.AgEnum_arg(AgEAzElAboutBoresight) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetAboutBoresight"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_about_boresight"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @AboutBoresight.setter
-    def AboutBoresight(self, aboutBoresight:"AgEAzElAboutBoresight") -> None:
+    @about_boresight.setter
+    def about_boresight(self, aboutBoresight:"AgEAzElAboutBoresight") -> None:
         with agmarshall.AgEnum_arg(AgEAzElAboutBoresight, aboutBoresight) as arg_aboutBoresight:
-            agcls.evaluate_hresult(self.__dict__["_SetAboutBoresight"](arg_aboutBoresight.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_about_boresight"](arg_aboutBoresight.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{6A6B1D7D-6A7F-48B3-98CA-019CA46499FE}", IOrientationAzEl)
@@ -2218,14 +2218,14 @@ class IOrientationEulerAngles(IOrientation):
     _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetSequence"] = _raise_uninitialized_error
-        self.__dict__["_SetSequence"] = _raise_uninitialized_error
-        self.__dict__["_GetA"] = _raise_uninitialized_error
-        self.__dict__["_SetA"] = _raise_uninitialized_error
-        self.__dict__["_GetB"] = _raise_uninitialized_error
-        self.__dict__["_SetB"] = _raise_uninitialized_error
-        self.__dict__["_GetC"] = _raise_uninitialized_error
-        self.__dict__["_SetC"] = _raise_uninitialized_error
+        self.__dict__["_get_sequence"] = _raise_uninitialized_error
+        self.__dict__["_set_sequence"] = _raise_uninitialized_error
+        self.__dict__["_get_a"] = _raise_uninitialized_error
+        self.__dict__["_set_a"] = _raise_uninitialized_error
+        self.__dict__["_get_b"] = _raise_uninitialized_error
+        self.__dict__["_set_b"] = _raise_uninitialized_error
+        self.__dict__["_get_c"] = _raise_uninitialized_error
+        self.__dict__["_set_c"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationEulerAngles._uuid))
             if pUnk is not None:
@@ -2238,14 +2238,14 @@ class IOrientationEulerAngles(IOrientation):
         IOrientation._private_init(self, pUnk)
         IID_IOrientationEulerAngles = agcom.GUID(IOrientationEulerAngles._uuid)
         vtable_offset_local = IOrientationEulerAngles._vtable_offset - 1
-        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+2, agcom.LONG)
-        self.__dict__["_GetA"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetA"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetB"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetB"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+6, agcom.VARIANT)
-        self.__dict__["_GetC"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
-        self.__dict__["_SetC"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+8, agcom.VARIANT)
+        self.__dict__["_get_sequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_set_sequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+2, agcom.LONG)
+        self.__dict__["_get_a"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_a"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_b"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_set_b"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_get_c"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
+        self.__dict__["_set_c"] = IAGFUNCTYPE(pUnk, IID_IOrientationEulerAngles, vtable_offset_local+8, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2260,52 +2260,52 @@ class IOrientationEulerAngles(IOrientation):
             IOrientation.__setattr__(self, attrname, value)
     
     @property
-    def Sequence(self) -> "AgEEulerOrientationSequence":
+    def sequence(self) -> "AgEEulerOrientationSequence":
         """Euler rotation sequence. Must be set before A,B,C values. Otherwise the current A,B,C values will be converted to the Sequence specified."""
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSequence"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_sequence"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Sequence.setter
-    def Sequence(self, ppVal:"AgEEulerOrientationSequence") -> None:
+    @sequence.setter
+    def sequence(self, ppVal:"AgEEulerOrientationSequence") -> None:
         with agmarshall.AgEnum_arg(AgEEulerOrientationSequence, ppVal) as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_SetSequence"](arg_ppVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_sequence"](arg_ppVal.COM_val))
 
     @property
-    def A(self) -> typing.Any:
+    def a(self) -> typing.Any:
         """Euler A angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetA"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_a"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @A.setter
-    def A(self, va:typing.Any) -> None:
+    @a.setter
+    def a(self, va:typing.Any) -> None:
         with agmarshall.VARIANT_arg(va) as arg_va:
-            agcls.evaluate_hresult(self.__dict__["_SetA"](arg_va.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_a"](arg_va.COM_val))
 
     @property
-    def B(self) -> typing.Any:
+    def b(self) -> typing.Any:
         """Euler b angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetB"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_b"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @B.setter
-    def B(self, vb:typing.Any) -> None:
+    @b.setter
+    def b(self, vb:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vb) as arg_vb:
-            agcls.evaluate_hresult(self.__dict__["_SetB"](arg_vb.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_b"](arg_vb.COM_val))
 
     @property
-    def C(self) -> typing.Any:
+    def c(self) -> typing.Any:
         """Euler C angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetC"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_c"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @C.setter
-    def C(self, vc:typing.Any) -> None:
+    @c.setter
+    def c(self, vc:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vc) as arg_vc:
-            agcls.evaluate_hresult(self.__dict__["_SetC"](arg_vc.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_c"](arg_vc.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{4204C7E1-EC21-40AD-A905-BB35A3FDF7BD}", IOrientationEulerAngles)
@@ -2318,14 +2318,14 @@ class IOrientationQuaternion(IOrientation):
     _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetQX"] = _raise_uninitialized_error
-        self.__dict__["_SetQX"] = _raise_uninitialized_error
-        self.__dict__["_GetQY"] = _raise_uninitialized_error
-        self.__dict__["_SetQY"] = _raise_uninitialized_error
-        self.__dict__["_GetQZ"] = _raise_uninitialized_error
-        self.__dict__["_SetQZ"] = _raise_uninitialized_error
-        self.__dict__["_GetQS"] = _raise_uninitialized_error
-        self.__dict__["_SetQS"] = _raise_uninitialized_error
+        self.__dict__["_get_qx"] = _raise_uninitialized_error
+        self.__dict__["_set_qx"] = _raise_uninitialized_error
+        self.__dict__["_get_qy"] = _raise_uninitialized_error
+        self.__dict__["_set_qy"] = _raise_uninitialized_error
+        self.__dict__["_get_qz"] = _raise_uninitialized_error
+        self.__dict__["_set_qz"] = _raise_uninitialized_error
+        self.__dict__["_get_qs"] = _raise_uninitialized_error
+        self.__dict__["_set_qs"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationQuaternion._uuid))
             if pUnk is not None:
@@ -2338,14 +2338,14 @@ class IOrientationQuaternion(IOrientation):
         IOrientation._private_init(self, pUnk)
         IID_IOrientationQuaternion = agcom.GUID(IOrientationQuaternion._uuid)
         vtable_offset_local = IOrientationQuaternion._vtable_offset - 1
-        self.__dict__["_GetQX"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetQX"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetQY"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetQY"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_GetQZ"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+5, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetQZ"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+6, agcom.DOUBLE)
-        self.__dict__["_GetQS"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetQS"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_get_qx"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_qx"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_get_qy"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_qy"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_get_qz"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+5, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_qz"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+6, agcom.DOUBLE)
+        self.__dict__["_get_qs"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_qs"] = IAGFUNCTYPE(pUnk, IID_IOrientationQuaternion, vtable_offset_local+8, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2360,52 +2360,52 @@ class IOrientationQuaternion(IOrientation):
             IOrientation.__setattr__(self, attrname, value)
     
     @property
-    def QX(self) -> float:
+    def qx(self) -> float:
         """The first element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QX = nx si..."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetQX"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_qx"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @QX.setter
-    def QX(self, vQX:float) -> None:
+    @qx.setter
+    def qx(self, vQX:float) -> None:
         with agmarshall.DOUBLE_arg(vQX) as arg_vQX:
-            agcls.evaluate_hresult(self.__dict__["_SetQX"](arg_vQX.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_qx"](arg_vQX.COM_val))
 
     @property
-    def QY(self) -> float:
+    def qy(self) -> float:
         """The second element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QY = ny s..."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetQY"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_qy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @QY.setter
-    def QY(self, vQY:float) -> None:
+    @qy.setter
+    def qy(self, vQY:float) -> None:
         with agmarshall.DOUBLE_arg(vQY) as arg_vQY:
-            agcls.evaluate_hresult(self.__dict__["_SetQY"](arg_vQY.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_qy"](arg_vQY.COM_val))
 
     @property
-    def QZ(self) -> float:
+    def qz(self) -> float:
         """The third element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QZ = nz si..."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetQZ"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_qz"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @QZ.setter
-    def QZ(self, vQZ:float) -> None:
+    @qz.setter
+    def qz(self, vQZ:float) -> None:
         with agmarshall.DOUBLE_arg(vQZ) as arg_vQZ:
-            agcls.evaluate_hresult(self.__dict__["_SetQZ"](arg_vQZ.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_qz"](arg_vQZ.COM_val))
 
     @property
-    def QS(self) -> float:
+    def qs(self) -> float:
         """The scalar component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QS = cos(A/2). Dimensionless."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetQS"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_qs"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @QS.setter
-    def QS(self, vQS:float) -> None:
+    @qs.setter
+    def qs(self, vQS:float) -> None:
         with agmarshall.DOUBLE_arg(vQS) as arg_vQS:
-            agcls.evaluate_hresult(self.__dict__["_SetQS"](arg_vQS.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_qs"](arg_vQS.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{101FAC5C-8DDB-4D4F-9C73-58146CA8EB01}", IOrientationQuaternion)
@@ -2418,14 +2418,14 @@ class IOrientationYPRAngles(IOrientation):
     _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetSequence"] = _raise_uninitialized_error
-        self.__dict__["_SetSequence"] = _raise_uninitialized_error
-        self.__dict__["_GetYaw"] = _raise_uninitialized_error
-        self.__dict__["_SetYaw"] = _raise_uninitialized_error
-        self.__dict__["_GetPitch"] = _raise_uninitialized_error
-        self.__dict__["_SetPitch"] = _raise_uninitialized_error
-        self.__dict__["_GetRoll"] = _raise_uninitialized_error
-        self.__dict__["_SetRoll"] = _raise_uninitialized_error
+        self.__dict__["_get_sequence"] = _raise_uninitialized_error
+        self.__dict__["_set_sequence"] = _raise_uninitialized_error
+        self.__dict__["_get_yaw"] = _raise_uninitialized_error
+        self.__dict__["_set_yaw"] = _raise_uninitialized_error
+        self.__dict__["_get_pitch"] = _raise_uninitialized_error
+        self.__dict__["_set_pitch"] = _raise_uninitialized_error
+        self.__dict__["_get_roll"] = _raise_uninitialized_error
+        self.__dict__["_set_roll"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationYPRAngles._uuid))
             if pUnk is not None:
@@ -2438,14 +2438,14 @@ class IOrientationYPRAngles(IOrientation):
         IOrientation._private_init(self, pUnk)
         IID_IOrientationYPRAngles = agcom.GUID(IOrientationYPRAngles._uuid)
         vtable_offset_local = IOrientationYPRAngles._vtable_offset - 1
-        self.__dict__["_GetSequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_SetSequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+2, agcom.LONG)
-        self.__dict__["_GetYaw"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetYaw"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetPitch"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetPitch"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+6, agcom.VARIANT)
-        self.__dict__["_GetRoll"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
-        self.__dict__["_SetRoll"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+8, agcom.VARIANT)
+        self.__dict__["_get_sequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_set_sequence"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+2, agcom.LONG)
+        self.__dict__["_get_yaw"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_yaw"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_pitch"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_set_pitch"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_get_roll"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+7, POINTER(agcom.VARIANT))
+        self.__dict__["_set_roll"] = IAGFUNCTYPE(pUnk, IID_IOrientationYPRAngles, vtable_offset_local+8, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2460,52 +2460,52 @@ class IOrientationYPRAngles(IOrientation):
             IOrientation.__setattr__(self, attrname, value)
     
     @property
-    def Sequence(self) -> "AgEYPRAnglesSequence":
+    def sequence(self) -> "AgEYPRAnglesSequence":
         """YPR sequence. Must be set before Yaw,Pitch,Roll values. Otherwise the current Yaw,Pitch,Roll values will be converted to the Sequence specified."""
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSequence"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_sequence"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Sequence.setter
-    def Sequence(self, sequence:"AgEYPRAnglesSequence") -> None:
+    @sequence.setter
+    def sequence(self, sequence:"AgEYPRAnglesSequence") -> None:
         with agmarshall.AgEnum_arg(AgEYPRAnglesSequence, sequence) as arg_sequence:
-            agcls.evaluate_hresult(self.__dict__["_SetSequence"](arg_sequence.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_sequence"](arg_sequence.COM_val))
 
     @property
-    def Yaw(self) -> typing.Any:
+    def yaw(self) -> typing.Any:
         """Yaw angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetYaw"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_yaw"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Yaw.setter
-    def Yaw(self, vYaw:typing.Any) -> None:
+    @yaw.setter
+    def yaw(self, vYaw:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vYaw) as arg_vYaw:
-            agcls.evaluate_hresult(self.__dict__["_SetYaw"](arg_vYaw.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_yaw"](arg_vYaw.COM_val))
 
     @property
-    def Pitch(self) -> typing.Any:
+    def pitch(self) -> typing.Any:
         """Pitch angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetPitch"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_pitch"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Pitch.setter
-    def Pitch(self, vPitch:typing.Any) -> None:
+    @pitch.setter
+    def pitch(self, vPitch:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vPitch) as arg_vPitch:
-            agcls.evaluate_hresult(self.__dict__["_SetPitch"](arg_vPitch.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_pitch"](arg_vPitch.COM_val))
 
     @property
-    def Roll(self) -> typing.Any:
+    def roll(self) -> typing.Any:
         """Roll angle. Uses Angle Dimension."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetRoll"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_roll"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Roll.setter
-    def Roll(self, vRoll:typing.Any) -> None:
+    @roll.setter
+    def roll(self, vRoll:typing.Any) -> None:
         with agmarshall.VARIANT_arg(vRoll) as arg_vRoll:
-            agcls.evaluate_hresult(self.__dict__["_SetRoll"](arg_vRoll.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_roll"](arg_vRoll.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{97A9D45D-E718-41FC-ACD2-CEBBEFD2011B}", IOrientationYPRAngles)
@@ -2518,7 +2518,7 @@ class IOrientationPositionOffset(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetPositionOffset"] = _raise_uninitialized_error
+        self.__dict__["_get_position_offset"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrientationPositionOffset._uuid))
             if pUnk is not None:
@@ -2530,7 +2530,7 @@ class IOrientationPositionOffset(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IOrientationPositionOffset = agcom.GUID(IOrientationPositionOffset._uuid)
         vtable_offset_local = IOrientationPositionOffset._vtable_offset - 1
-        self.__dict__["_GetPositionOffset"] = IAGFUNCTYPE(pUnk, IID_IOrientationPositionOffset, vtable_offset_local+1, POINTER(agcom.PVOID))
+        self.__dict__["_get_position_offset"] = IAGFUNCTYPE(pUnk, IID_IOrientationPositionOffset, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2545,10 +2545,10 @@ class IOrientationPositionOffset(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IOrientationPositionOffset.")
     
     @property
-    def PositionOffset(self) -> "ICartesian3Vector":
+    def position_offset(self) -> "ICartesian3Vector":
         """Gets or sets the position offset cartesian vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetPositionOffset"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_position_offset"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -2562,19 +2562,19 @@ class IOrbitState(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_ConvertTo"] = _raise_uninitialized_error
-        self.__dict__["_GetOrbitStateType"] = _raise_uninitialized_error
-        self.__dict__["_Assign"] = _raise_uninitialized_error
-        self.__dict__["_AssignClassical"] = _raise_uninitialized_error
-        self.__dict__["_AssignCartesian"] = _raise_uninitialized_error
-        self.__dict__["_AssignGeodetic"] = _raise_uninitialized_error
-        self.__dict__["_AssignEquinoctialPosigrade"] = _raise_uninitialized_error
-        self.__dict__["_AssignEquinoctialRetrograde"] = _raise_uninitialized_error
-        self.__dict__["_AssignMixedSpherical"] = _raise_uninitialized_error
-        self.__dict__["_AssignSpherical"] = _raise_uninitialized_error
-        self.__dict__["_GetCentralBodyName"] = _raise_uninitialized_error
-        self.__dict__["_GetEpoch"] = _raise_uninitialized_error
-        self.__dict__["_SetEpoch"] = _raise_uninitialized_error
+        self.__dict__["_convert_to"] = _raise_uninitialized_error
+        self.__dict__["_get_orbit_state_type"] = _raise_uninitialized_error
+        self.__dict__["_assign"] = _raise_uninitialized_error
+        self.__dict__["_assign_classical"] = _raise_uninitialized_error
+        self.__dict__["_assign_cartesian"] = _raise_uninitialized_error
+        self.__dict__["_assign_geodetic"] = _raise_uninitialized_error
+        self.__dict__["_assign_equinoctial_posigrade"] = _raise_uninitialized_error
+        self.__dict__["_assign_equinoctial_retrograde"] = _raise_uninitialized_error
+        self.__dict__["_assign_mixed_spherical"] = _raise_uninitialized_error
+        self.__dict__["_assign_spherical"] = _raise_uninitialized_error
+        self.__dict__["_get_central_body_name"] = _raise_uninitialized_error
+        self.__dict__["_get_epoch"] = _raise_uninitialized_error
+        self.__dict__["_set_epoch"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IOrbitState._uuid))
             if pUnk is not None:
@@ -2586,19 +2586,19 @@ class IOrbitState(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IOrbitState = agcom.GUID(IOrbitState._uuid)
         vtable_offset_local = IOrbitState._vtable_offset - 1
-        self.__dict__["_ConvertTo"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetOrbitStateType"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Assign"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+3, agcom.PVOID)
-        self.__dict__["_AssignClassical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+4, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignCartesian"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+5, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignGeodetic"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+6, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignEquinoctialPosigrade"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+7, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignEquinoctialRetrograde"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignMixedSpherical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+9, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_AssignSpherical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+10, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_GetCentralBodyName"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+11, POINTER(agcom.BSTR))
-        self.__dict__["_GetEpoch"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+12, POINTER(agcom.VARIANT))
-        self.__dict__["_SetEpoch"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+13, agcom.VARIANT)
+        self.__dict__["_convert_to"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+1, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get_orbit_state_type"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_assign"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+3, agcom.PVOID)
+        self.__dict__["_assign_classical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+4, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_assign_cartesian"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+5, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_assign_geodetic"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+6, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_assign_equinoctial_posigrade"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+7, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_assign_equinoctial_retrograde"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_assign_mixed_spherical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+9, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_assign_spherical"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+10, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_get_central_body_name"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+11, POINTER(agcom.BSTR))
+        self.__dict__["_get_epoch"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+12, POINTER(agcom.VARIANT))
+        self.__dict__["_set_epoch"] = IAGFUNCTYPE(pUnk, IID_IOrbitState, vtable_offset_local+13, agcom.VARIANT)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2612,26 +2612,26 @@ class IOrbitState(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IOrbitState.")
     
-    def ConvertTo(self, type:"AgEOrbitStateType") -> "IOrbitState":
+    def convert_to(self, type:"AgEOrbitStateType") -> "IOrbitState":
         """Method to changes the coordinate type to the type specified."""
         with agmarshall.AgEnum_arg(AgEOrbitStateType, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppIAgOrbitState:
-            agcls.evaluate_hresult(self.__dict__["_ConvertTo"](arg_type.COM_val, byref(arg_ppIAgOrbitState.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_to"](arg_type.COM_val, byref(arg_ppIAgOrbitState.COM_val)))
             return arg_ppIAgOrbitState.python_val
 
     @property
-    def OrbitStateType(self) -> "AgEOrbitStateType":
+    def orbit_state_type(self) -> "AgEOrbitStateType":
         """Returns the coordinate type currently being used."""
         with agmarshall.AgEnum_arg(AgEOrbitStateType) as arg_pType:
-            agcls.evaluate_hresult(self.__dict__["_GetOrbitStateType"](byref(arg_pType.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_orbit_state_type"](byref(arg_pType.COM_val)))
             return arg_pType.python_val
 
-    def Assign(self, pOrbitState:"IOrbitState") -> None:
+    def assign(self, pOrbitState:"IOrbitState") -> None:
         """Assign a new coordinate type."""
         with agmarshall.AgInterface_in_arg(pOrbitState, IOrbitState) as arg_pOrbitState:
-            agcls.evaluate_hresult(self.__dict__["_Assign"](arg_pOrbitState.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign"](arg_pOrbitState.COM_val))
 
-    def AssignClassical(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, eccentricity:float, inclination:float, argOfPerigee:float, rAAN:float, meanAnomaly:float) -> None:
+    def assign_classical(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, eccentricity:float, inclination:float, argOfPerigee:float, rAAN:float, meanAnomaly:float) -> None:
         """Helper method to assign a new orbit state using Classical representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(semiMajorAxis) as arg_semiMajorAxis, \
@@ -2640,9 +2640,9 @@ class IOrbitState(object):
              agmarshall.DOUBLE_arg(argOfPerigee) as arg_argOfPerigee, \
              agmarshall.DOUBLE_arg(rAAN) as arg_rAAN, \
              agmarshall.DOUBLE_arg(meanAnomaly) as arg_meanAnomaly:
-            agcls.evaluate_hresult(self.__dict__["_AssignClassical"](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_eccentricity.COM_val, arg_inclination.COM_val, arg_argOfPerigee.COM_val, arg_rAAN.COM_val, arg_meanAnomaly.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_classical"](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_eccentricity.COM_val, arg_inclination.COM_val, arg_argOfPerigee.COM_val, arg_rAAN.COM_val, arg_meanAnomaly.COM_val))
 
-    def AssignCartesian(self, eCoordinateSystem:"AgECoordinateSystem", xPosition:float, yPosition:float, zPosition:float, xVelocity:float, yVelocity:float, zVelocity:float) -> None:
+    def assign_cartesian(self, eCoordinateSystem:"AgECoordinateSystem", xPosition:float, yPosition:float, zPosition:float, xVelocity:float, yVelocity:float, zVelocity:float) -> None:
         """Helper method to assign a new orbit state using Cartesian representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(xPosition) as arg_xPosition, \
@@ -2651,9 +2651,9 @@ class IOrbitState(object):
              agmarshall.DOUBLE_arg(xVelocity) as arg_xVelocity, \
              agmarshall.DOUBLE_arg(yVelocity) as arg_yVelocity, \
              agmarshall.DOUBLE_arg(zVelocity) as arg_zVelocity:
-            agcls.evaluate_hresult(self.__dict__["_AssignCartesian"](arg_eCoordinateSystem.COM_val, arg_xPosition.COM_val, arg_yPosition.COM_val, arg_zPosition.COM_val, arg_xVelocity.COM_val, arg_yVelocity.COM_val, arg_zVelocity.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_cartesian"](arg_eCoordinateSystem.COM_val, arg_xPosition.COM_val, arg_yPosition.COM_val, arg_zPosition.COM_val, arg_xVelocity.COM_val, arg_yVelocity.COM_val, arg_zVelocity.COM_val))
 
-    def AssignGeodetic(self, eCoordinateSystem:"AgECoordinateSystem", latitude:float, longitude:float, altitude:float, latitudeRate:float, longitudeRate:float, altitudeRate:float) -> None:
+    def assign_geodetic(self, eCoordinateSystem:"AgECoordinateSystem", latitude:float, longitude:float, altitude:float, latitudeRate:float, longitudeRate:float, altitudeRate:float) -> None:
         """Helper method to assign a new orbit state using Geodetic representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
@@ -2662,9 +2662,9 @@ class IOrbitState(object):
              agmarshall.DOUBLE_arg(latitudeRate) as arg_latitudeRate, \
              agmarshall.DOUBLE_arg(longitudeRate) as arg_longitudeRate, \
              agmarshall.DOUBLE_arg(altitudeRate) as arg_altitudeRate:
-            agcls.evaluate_hresult(self.__dict__["_AssignGeodetic"](arg_eCoordinateSystem.COM_val, arg_latitude.COM_val, arg_longitude.COM_val, arg_altitude.COM_val, arg_latitudeRate.COM_val, arg_longitudeRate.COM_val, arg_altitudeRate.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_geodetic"](arg_eCoordinateSystem.COM_val, arg_latitude.COM_val, arg_longitude.COM_val, arg_altitude.COM_val, arg_latitudeRate.COM_val, arg_longitudeRate.COM_val, arg_altitudeRate.COM_val))
 
-    def AssignEquinoctialPosigrade(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
+    def assign_equinoctial_posigrade(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
         """Helper method to assign a new orbit state using Equinoctial representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(semiMajorAxis) as arg_semiMajorAxis, \
@@ -2673,9 +2673,9 @@ class IOrbitState(object):
              agmarshall.DOUBLE_arg(p) as arg_p, \
              agmarshall.DOUBLE_arg(q) as arg_q, \
              agmarshall.DOUBLE_arg(meanLon) as arg_meanLon:
-            agcls.evaluate_hresult(self.__dict__["_AssignEquinoctialPosigrade"](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_h.COM_val, arg_k.COM_val, arg_p.COM_val, arg_q.COM_val, arg_meanLon.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_equinoctial_posigrade"](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_h.COM_val, arg_k.COM_val, arg_p.COM_val, arg_q.COM_val, arg_meanLon.COM_val))
 
-    def AssignEquinoctialRetrograde(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
+    def assign_equinoctial_retrograde(self, eCoordinateSystem:"AgECoordinateSystem", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
         """Helper method to assign a new orbit state using Equinoctial representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(semiMajorAxis) as arg_semiMajorAxis, \
@@ -2684,9 +2684,9 @@ class IOrbitState(object):
              agmarshall.DOUBLE_arg(p) as arg_p, \
              agmarshall.DOUBLE_arg(q) as arg_q, \
              agmarshall.DOUBLE_arg(meanLon) as arg_meanLon:
-            agcls.evaluate_hresult(self.__dict__["_AssignEquinoctialRetrograde"](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_h.COM_val, arg_k.COM_val, arg_p.COM_val, arg_q.COM_val, arg_meanLon.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_equinoctial_retrograde"](arg_eCoordinateSystem.COM_val, arg_semiMajorAxis.COM_val, arg_h.COM_val, arg_k.COM_val, arg_p.COM_val, arg_q.COM_val, arg_meanLon.COM_val))
 
-    def AssignMixedSpherical(self, eCoordinateSystem:"AgECoordinateSystem", latitude:float, longitude:float, altitude:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
+    def assign_mixed_spherical(self, eCoordinateSystem:"AgECoordinateSystem", latitude:float, longitude:float, altitude:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
         """Helper method to assign a new orbit state using Mixed Spherical representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(latitude) as arg_latitude, \
@@ -2695,9 +2695,9 @@ class IOrbitState(object):
              agmarshall.DOUBLE_arg(horFlightPathAngle) as arg_horFlightPathAngle, \
              agmarshall.DOUBLE_arg(flightPathAzimuth) as arg_flightPathAzimuth, \
              agmarshall.DOUBLE_arg(velocity) as arg_velocity:
-            agcls.evaluate_hresult(self.__dict__["_AssignMixedSpherical"](arg_eCoordinateSystem.COM_val, arg_latitude.COM_val, arg_longitude.COM_val, arg_altitude.COM_val, arg_horFlightPathAngle.COM_val, arg_flightPathAzimuth.COM_val, arg_velocity.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_mixed_spherical"](arg_eCoordinateSystem.COM_val, arg_latitude.COM_val, arg_longitude.COM_val, arg_altitude.COM_val, arg_horFlightPathAngle.COM_val, arg_flightPathAzimuth.COM_val, arg_velocity.COM_val))
 
-    def AssignSpherical(self, eCoordinateSystem:"AgECoordinateSystem", rightAscension:float, declination:float, radius:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
+    def assign_spherical(self, eCoordinateSystem:"AgECoordinateSystem", rightAscension:float, declination:float, radius:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
         """Helper method to assign a new orbit state using Spherical representation"""
         with agmarshall.AgEnum_arg(AgECoordinateSystem, eCoordinateSystem) as arg_eCoordinateSystem, \
              agmarshall.DOUBLE_arg(rightAscension) as arg_rightAscension, \
@@ -2706,26 +2706,26 @@ class IOrbitState(object):
              agmarshall.DOUBLE_arg(horFlightPathAngle) as arg_horFlightPathAngle, \
              agmarshall.DOUBLE_arg(flightPathAzimuth) as arg_flightPathAzimuth, \
              agmarshall.DOUBLE_arg(velocity) as arg_velocity:
-            agcls.evaluate_hresult(self.__dict__["_AssignSpherical"](arg_eCoordinateSystem.COM_val, arg_rightAscension.COM_val, arg_declination.COM_val, arg_radius.COM_val, arg_horFlightPathAngle.COM_val, arg_flightPathAzimuth.COM_val, arg_velocity.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_assign_spherical"](arg_eCoordinateSystem.COM_val, arg_rightAscension.COM_val, arg_declination.COM_val, arg_radius.COM_val, arg_horFlightPathAngle.COM_val, arg_flightPathAzimuth.COM_val, arg_velocity.COM_val))
 
     @property
-    def CentralBodyName(self) -> str:
+    def central_body_name(self) -> str:
         """Gets the central body."""
         with agmarshall.BSTR_arg() as arg_pCBName:
-            agcls.evaluate_hresult(self.__dict__["_GetCentralBodyName"](byref(arg_pCBName.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_central_body_name"](byref(arg_pCBName.COM_val)))
             return arg_pCBName.python_val
 
     @property
-    def Epoch(self) -> typing.Any:
+    def epoch(self) -> typing.Any:
         """The state epoch"""
         with agmarshall.VARIANT_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetEpoch"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_epoch"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    @Epoch.setter
-    def Epoch(self, epoch:typing.Any) -> None:
+    @epoch.setter
+    def epoch(self, epoch:typing.Any) -> None:
         with agmarshall.VARIANT_arg(epoch) as arg_epoch:
-            agcls.evaluate_hresult(self.__dict__["_SetEpoch"](arg_epoch.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_epoch"](arg_epoch.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{42342AD2-F6C5-426B-AB2A-3688F05353C8}", IOrbitState)
@@ -2738,13 +2738,13 @@ class ICartesian2Vector(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetX"] = _raise_uninitialized_error
-        self.__dict__["_SetX"] = _raise_uninitialized_error
-        self.__dict__["_GetY"] = _raise_uninitialized_error
-        self.__dict__["_SetY"] = _raise_uninitialized_error
-        self.__dict__["_Get"] = _raise_uninitialized_error
-        self.__dict__["_Set"] = _raise_uninitialized_error
-        self.__dict__["_ToArray"] = _raise_uninitialized_error
+        self.__dict__["_get_x"] = _raise_uninitialized_error
+        self.__dict__["_set_x"] = _raise_uninitialized_error
+        self.__dict__["_get_y"] = _raise_uninitialized_error
+        self.__dict__["_set_y"] = _raise_uninitialized_error
+        self.__dict__["_get"] = _raise_uninitialized_error
+        self.__dict__["_set"] = _raise_uninitialized_error
+        self.__dict__["_to_array"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ICartesian2Vector._uuid))
             if pUnk is not None:
@@ -2756,13 +2756,13 @@ class ICartesian2Vector(object):
         self.__dict__["_pUnk"] = pUnk
         IID_ICartesian2Vector = agcom.GUID(ICartesian2Vector._uuid)
         vtable_offset_local = ICartesian2Vector._vtable_offset - 1
-        self.__dict__["_GetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+1, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetX"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+2, agcom.DOUBLE)
-        self.__dict__["_GetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+3, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetY"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_Get"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+5, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
-        self.__dict__["_Set"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE)
-        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_get_x"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+1, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_x"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+2, agcom.DOUBLE)
+        self.__dict__["_get_y"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+3, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_y"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_get"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+5, POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE))
+        self.__dict__["_set"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+6, agcom.DOUBLE, agcom.DOUBLE)
+        self.__dict__["_to_array"] = IAGFUNCTYPE(pUnk, IID_ICartesian2Vector, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2777,46 +2777,46 @@ class ICartesian2Vector(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICartesian2Vector.")
     
     @property
-    def X(self) -> float:
+    def x(self) -> float:
         """X coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetX"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_x"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    @X.setter
-    def X(self, x:float) -> None:
+    @x.setter
+    def x(self, x:float) -> None:
         with agmarshall.DOUBLE_arg(x) as arg_x:
-            agcls.evaluate_hresult(self.__dict__["_SetX"](arg_x.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_x"](arg_x.COM_val))
 
     @property
-    def Y(self) -> float:
+    def y(self) -> float:
         """Y coordinate"""
         with agmarshall.DOUBLE_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetY"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_y"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    @Y.setter
-    def Y(self, y:float) -> None:
+    @y.setter
+    def y(self, y:float) -> None:
         with agmarshall.DOUBLE_arg(y) as arg_y:
-            agcls.evaluate_hresult(self.__dict__["_SetY"](arg_y.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_y"](arg_y.COM_val))
 
-    def Get(self) -> typing.Tuple[float, float]:
+    def get(self) -> typing.Tuple[float, float]:
         """Returns cartesian vector"""
         with agmarshall.DOUBLE_arg() as arg_x, \
              agmarshall.DOUBLE_arg() as arg_y:
-            agcls.evaluate_hresult(self.__dict__["_Get"](byref(arg_x.COM_val), byref(arg_y.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get"](byref(arg_x.COM_val), byref(arg_y.COM_val)))
             return arg_x.python_val, arg_y.python_val
 
-    def Set(self, x:float, y:float) -> None:
+    def set(self, x:float, y:float) -> None:
         """Sets cartesian vector"""
         with agmarshall.DOUBLE_arg(x) as arg_x, \
              agmarshall.DOUBLE_arg(y) as arg_y:
-            agcls.evaluate_hresult(self.__dict__["_Set"](arg_x.COM_val, arg_y.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set"](arg_x.COM_val, arg_y.COM_val))
 
-    def ToArray(self) -> list:
+    def to_array(self) -> list:
         """Returns coordinates as an array."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_ToArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_to_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -2830,11 +2830,11 @@ class IUnitPreferencesDimension(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetId"] = _raise_uninitialized_error
-        self.__dict__["_GetName"] = _raise_uninitialized_error
-        self.__dict__["_GetAvailableUnits"] = _raise_uninitialized_error
-        self.__dict__["_GetCurrentUnit"] = _raise_uninitialized_error
-        self.__dict__["_SetCurrentUnit"] = _raise_uninitialized_error
+        self.__dict__["_get_id"] = _raise_uninitialized_error
+        self.__dict__["_get_name"] = _raise_uninitialized_error
+        self.__dict__["_get_available_units"] = _raise_uninitialized_error
+        self.__dict__["_get_current_unit"] = _raise_uninitialized_error
+        self.__dict__["_set_current_unit"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPreferencesDimension._uuid))
             if pUnk is not None:
@@ -2846,11 +2846,11 @@ class IUnitPreferencesDimension(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUnitPreferencesDimension = agcom.GUID(IUnitPreferencesDimension._uuid)
         vtable_offset_local = IUnitPreferencesDimension._vtable_offset - 1
-        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_GetName"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_GetAvailableUnits"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_GetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+4, POINTER(agcom.PVOID))
-        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+5, agcom.BSTR)
+        self.__dict__["_get_id"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_get_name"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_get_available_units"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_get_current_unit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+4, POINTER(agcom.PVOID))
+        self.__dict__["_set_current_unit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimension, vtable_offset_local+5, agcom.BSTR)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2865,37 +2865,37 @@ class IUnitPreferencesDimension(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPreferencesDimension.")
     
     @property
-    def Id(self) -> int:
+    def id(self) -> int:
         """Returns the ID of the dimension."""
         with agmarshall.LONG_arg() as arg_pId:
-            agcls.evaluate_hresult(self.__dict__["_GetId"](byref(arg_pId.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_id"](byref(arg_pId.COM_val)))
             return arg_pId.python_val
 
     @property
-    def Name(self) -> str:
+    def name(self) -> str:
         """Returns the current Dimension's full name."""
         with agmarshall.BSTR_arg() as arg_pName:
-            agcls.evaluate_hresult(self.__dict__["_GetName"](byref(arg_pName.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_name"](byref(arg_pName.COM_val)))
             return arg_pName.python_val
 
     @property
-    def AvailableUnits(self) -> "IUnitPreferencesUnitCollection":
+    def available_units(self) -> "IUnitPreferencesUnitCollection":
         """Returns collection of Units."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnitCollection:
-            agcls.evaluate_hresult(self.__dict__["_GetAvailableUnits"](byref(arg_ppUnitPrefsUnitCollection.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_available_units"](byref(arg_ppUnitPrefsUnitCollection.COM_val)))
             return arg_ppUnitPrefsUnitCollection.python_val
 
     @property
-    def CurrentUnit(self) -> "IUnitPreferencesUnit":
+    def current_unit(self) -> "IUnitPreferencesUnit":
         """Returns the current unit for this dimension."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
-            agcls.evaluate_hresult(self.__dict__["_GetCurrentUnit"](byref(arg_ppUnitPrefsUnit.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_current_unit"](byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
-    def SetCurrentUnit(self, unitAbbrv:str) -> None:
+    def set_current_unit(self, unitAbbrv:str) -> None:
         """Sets the Unit for this simple dimension."""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv:
-            agcls.evaluate_hresult(self.__dict__["_SetCurrentUnit"](arg_unitAbbrv.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_current_unit"](arg_unitAbbrv.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{AA966FFD-1A99-45D8-9193-C519BBBA99FA}", IUnitPreferencesDimension)
@@ -2908,14 +2908,14 @@ class IPropertyInfo(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetName"] = _raise_uninitialized_error
-        self.__dict__["_GetPropertyType"] = _raise_uninitialized_error
-        self.__dict__["_GetValue"] = _raise_uninitialized_error
-        self.__dict__["_SetValue"] = _raise_uninitialized_error
-        self.__dict__["_GetHasMin"] = _raise_uninitialized_error
-        self.__dict__["_GetHasMax"] = _raise_uninitialized_error
-        self.__dict__["_GetMin"] = _raise_uninitialized_error
-        self.__dict__["_GetMax"] = _raise_uninitialized_error
+        self.__dict__["_get_name"] = _raise_uninitialized_error
+        self.__dict__["_get_property_type"] = _raise_uninitialized_error
+        self.__dict__["_get_value"] = _raise_uninitialized_error
+        self.__dict__["_set_value"] = _raise_uninitialized_error
+        self.__dict__["_get_has_min"] = _raise_uninitialized_error
+        self.__dict__["_get_has_max"] = _raise_uninitialized_error
+        self.__dict__["_get_min"] = _raise_uninitialized_error
+        self.__dict__["_get_max"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPropertyInfo._uuid))
             if pUnk is not None:
@@ -2927,14 +2927,14 @@ class IPropertyInfo(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IPropertyInfo = agcom.GUID(IPropertyInfo._uuid)
         vtable_offset_local = IPropertyInfo._vtable_offset - 1
-        self.__dict__["_GetName"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_GetPropertyType"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_GetValue"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+3, POINTER(agcom.VARIANT))
-        self.__dict__["_SetValue"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+4, agcom.VARIANT)
-        self.__dict__["_GetHasMin"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetHasMax"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetMin"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+7, POINTER(agcom.VARIANT))
-        self.__dict__["_GetMax"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+8, POINTER(agcom.VARIANT))
+        self.__dict__["_get_name"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_get_property_type"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_get_value"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+3, POINTER(agcom.VARIANT))
+        self.__dict__["_set_value"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+4, agcom.VARIANT)
+        self.__dict__["_get_has_min"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_has_max"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_min"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+7, POINTER(agcom.VARIANT))
+        self.__dict__["_get_max"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfo, vtable_offset_local+8, POINTER(agcom.VARIANT))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -2949,56 +2949,56 @@ class IPropertyInfo(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPropertyInfo.")
     
     @property
-    def Name(self) -> str:
+    def name(self) -> str:
         """The name of the property."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetName"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_name"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def PropertyType(self) -> "AgEPropertyInfoValueType":
+    def property_type(self) -> "AgEPropertyInfoValueType":
         """The type of property."""
         with agmarshall.AgEnum_arg(AgEPropertyInfoValueType) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetPropertyType"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_property_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def GetValue(self) -> typing.Any:
+    def get_value(self) -> typing.Any:
         """The value of the property. Use PropertyType to determine the type to cast to."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetValue"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_value"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def SetValue(self, propertyInfo:typing.Any) -> None:
+    def set_value(self, propertyInfo:typing.Any) -> None:
         """The value of the property. Use PropertyType to determine the type to cast to."""
         with agmarshall.VARIANT_arg(propertyInfo) as arg_propertyInfo:
-            agcls.evaluate_hresult(self.__dict__["_SetValue"](arg_propertyInfo.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_value"](arg_propertyInfo.COM_val))
 
     @property
-    def HasMin(self) -> bool:
+    def has_min(self) -> bool:
         """Used to determine if the property has a minimum value."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetHasMin"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_has_min"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def HasMax(self) -> bool:
+    def has_max(self) -> bool:
         """Used to determine if the property has a maximum value."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetHasMax"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_has_max"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Min(self) -> typing.Any:
+    def min(self) -> typing.Any:
         """The minimum value of this property. Use PropertyType to determine the type to cast to."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetMin"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_min"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Max(self) -> typing.Any:
+    def max(self) -> typing.Any:
         """The maximum value of this property. Use PropertyType to determine the type to cast to."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetMax"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_max"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
 
@@ -3012,11 +3012,11 @@ class IPropertyInfoCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_index"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_name"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IPropertyInfoCollection._uuid))
             if pUnk is not None:
@@ -3029,11 +3029,11 @@ class IPropertyInfoCollection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IPropertyInfoCollection = agcom.GUID(IPropertyInfoCollection._uuid)
         vtable_offset_local = IPropertyInfoCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+2, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+3, POINTER(agcom.LONG))
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+2, POINTER(agcom.PVOID))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+3, POINTER(agcom.LONG))
+        self.__dict__["_get_item_by_index"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_get_item_by_name"] = IAGFUNCTYPE(pUnk, IID_IPropertyInfoCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3058,42 +3058,42 @@ class IPropertyInfoCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, indexOrName:typing.Any) -> "IPropertyInfo":
+    def item(self, indexOrName:typing.Any) -> "IPropertyInfo":
         """Allows the user to iterate through the properties."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_indexOrName.COM_val, byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Enumerates through the properties."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """The number of properties available."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def GetItemByIndex(self, index:int) -> "IPropertyInfo":
+    def get_item_by_index(self, index:int) -> "IPropertyInfo":
         """Retrieves a property from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def GetItemByName(self, name:str) -> "IPropertyInfo":
+    def get_item_by_name(self, name:str) -> "IPropertyInfo":
         """Retrieves a property from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_name"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -3107,10 +3107,10 @@ class IRuntimeTypeInfo(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetProperties"] = _raise_uninitialized_error
-        self.__dict__["_GetIsCollection"] = _raise_uninitialized_error
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_GetItem"] = _raise_uninitialized_error
+        self.__dict__["_get_properties"] = _raise_uninitialized_error
+        self.__dict__["_get_is_collection"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_get_item"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRuntimeTypeInfo._uuid))
             if pUnk is not None:
@@ -3122,10 +3122,10 @@ class IRuntimeTypeInfo(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IRuntimeTypeInfo = agcom.GUID(IRuntimeTypeInfo._uuid)
         vtable_offset_local = IRuntimeTypeInfo._vtable_offset - 1
-        self.__dict__["_GetProperties"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+1, POINTER(agcom.PVOID))
-        self.__dict__["_GetIsCollection"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+2, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+3, POINTER(agcom.LONG))
-        self.__dict__["_GetItem"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+4, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get_properties"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+1, POINTER(agcom.PVOID))
+        self.__dict__["_get_is_collection"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+2, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+3, POINTER(agcom.LONG))
+        self.__dict__["_get_item"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfo, vtable_offset_local+4, agcom.LONG, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3140,31 +3140,31 @@ class IRuntimeTypeInfo(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRuntimeTypeInfo.")
     
     @property
-    def Properties(self) -> "IPropertyInfoCollection":
+    def properties(self) -> "IPropertyInfoCollection":
         """The collection of properties."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetProperties"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_properties"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def IsCollection(self) -> bool:
+    def is_collection(self) -> bool:
         """Determines if the interface is a collection."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetIsCollection"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_collection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """If the interface is a collection, returns the collection count."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def GetItem(self, index:int) -> "IPropertyInfo":
+    def get_item(self, index:int) -> "IPropertyInfo":
         """Returns the property of the collection at the given index."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItem"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
 
@@ -3178,7 +3178,7 @@ class IRuntimeTypeInfoProvider(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetProvideRuntimeTypeInfo"] = _raise_uninitialized_error
+        self.__dict__["_get_provide_runtime_type_info"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IRuntimeTypeInfoProvider._uuid))
             if pUnk is not None:
@@ -3190,7 +3190,7 @@ class IRuntimeTypeInfoProvider(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IRuntimeTypeInfoProvider = agcom.GUID(IRuntimeTypeInfoProvider._uuid)
         vtable_offset_local = IRuntimeTypeInfoProvider._vtable_offset - 1
-        self.__dict__["_GetProvideRuntimeTypeInfo"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfoProvider, vtable_offset_local+1, POINTER(agcom.PVOID))
+        self.__dict__["_get_provide_runtime_type_info"] = IAGFUNCTYPE(pUnk, IID_IRuntimeTypeInfoProvider, vtable_offset_local+1, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3205,10 +3205,10 @@ class IRuntimeTypeInfoProvider(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRuntimeTypeInfoProvider.")
     
     @property
-    def ProvideRuntimeTypeInfo(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
         """Returns the IRuntimeTypeInfo interface to access properties at runtime."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetProvideRuntimeTypeInfo"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_provide_runtime_type_info"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -3222,11 +3222,11 @@ class IExecCmdResult(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_Range"] = _raise_uninitialized_error
-        self.__dict__["_GetIsSucceeded"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_range"] = _raise_uninitialized_error
+        self.__dict__["_get_is_succeeded"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IExecCmdResult._uuid))
             if pUnk is not None:
@@ -3239,11 +3239,11 @@ class IExecCmdResult(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IExecCmdResult = agcom.GUID(IExecCmdResult._uuid)
         vtable_offset_local = IExecCmdResult._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_Range"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_GetIsSucceeded"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.BSTR))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_range"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+4, agcom.LONG, agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_get_is_succeeded"] = IAGFUNCTYPE(pUnk, IID_IExecCmdResult, vtable_offset_local+5, POINTER(agcom.VARIANT_BOOL))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3269,42 +3269,42 @@ class IExecCmdResult(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pCount.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
-    def Item(self, index:int) -> str:
+    def item(self, index:int) -> str:
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.BSTR_arg() as arg_pItem:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_index.COM_val, byref(arg_pItem.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pItem.COM_val)))
             return arg_pItem.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns an object that can be used to iterate through all the strings in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppEnum.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
-    def Range(self, startIndex:int, stopIndex:int) -> list:
+    def range(self, startIndex:int, stopIndex:int) -> list:
         """Return the elements within the specified range."""
         with agmarshall.LONG_arg(startIndex) as arg_startIndex, \
              agmarshall.LONG_arg(stopIndex) as arg_stopIndex, \
              agmarshall.SAFEARRAY_arg() as arg_ppVar:
-            agcls.evaluate_hresult(self.__dict__["_Range"](arg_startIndex.COM_val, arg_stopIndex.COM_val, byref(arg_ppVar.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_range"](arg_startIndex.COM_val, arg_stopIndex.COM_val, byref(arg_ppVar.COM_val)))
             return arg_ppVar.python_val
 
     @property
-    def IsSucceeded(self) -> bool:
+    def is_succeeded(self) -> bool:
         """Indicates whether the object contains valid results."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetIsSucceeded"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_is_succeeded"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -3318,9 +3318,9 @@ class IExecMultiCmdResult(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IExecMultiCmdResult._uuid))
             if pUnk is not None:
@@ -3333,9 +3333,9 @@ class IExecMultiCmdResult(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IExecMultiCmdResult = agcom.GUID(IExecMultiCmdResult._uuid)
         vtable_offset_local = IExecMultiCmdResult._vtable_offset - 1
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+2, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IExecMultiCmdResult, vtable_offset_local+3, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3361,27 +3361,27 @@ class IExecMultiCmdResult(object):
         return agmarshall.python_val_from_VARIANT(nextval)
     
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Number of elements contained in the collection."""
         with agmarshall.LONG_arg() as arg_pCount:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pCount.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pCount.COM_val)))
             return arg_pCount.python_val
 
-    def Item(self, index:int) -> "IExecCmdResult":
+    def item(self, index:int) -> "IExecCmdResult":
         """Gets the element at the specified index (0-based)."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_index.COM_val, byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns an object that can be used to iterate through all the objects in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppEnum:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppEnum.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppEnum.COM_val)))
             return arg_ppEnum.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -3395,10 +3395,10 @@ class IUnitPreferencesUnit(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetFullName"] = _raise_uninitialized_error
-        self.__dict__["_GetAbbrv"] = _raise_uninitialized_error
-        self.__dict__["_GetId"] = _raise_uninitialized_error
-        self.__dict__["_GetDimension"] = _raise_uninitialized_error
+        self.__dict__["_get_full_name"] = _raise_uninitialized_error
+        self.__dict__["_get_abbrv"] = _raise_uninitialized_error
+        self.__dict__["_get_id"] = _raise_uninitialized_error
+        self.__dict__["_get_dimension"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPreferencesUnit._uuid))
             if pUnk is not None:
@@ -3410,10 +3410,10 @@ class IUnitPreferencesUnit(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUnitPreferencesUnit = agcom.GUID(IUnitPreferencesUnit._uuid)
         vtable_offset_local = IUnitPreferencesUnit._vtable_offset - 1
-        self.__dict__["_GetFullName"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_GetAbbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_GetId"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+3, POINTER(agcom.LONG))
-        self.__dict__["_GetDimension"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+4, POINTER(agcom.PVOID))
+        self.__dict__["_get_full_name"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_get_abbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_get_id"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+3, POINTER(agcom.LONG))
+        self.__dict__["_get_dimension"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnit, vtable_offset_local+4, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3428,31 +3428,31 @@ class IUnitPreferencesUnit(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IUnitPreferencesUnit.")
     
     @property
-    def FullName(self) -> str:
+    def full_name(self) -> str:
         """Returns the fullname of the unit."""
         with agmarshall.BSTR_arg() as arg_pName:
-            agcls.evaluate_hresult(self.__dict__["_GetFullName"](byref(arg_pName.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_full_name"](byref(arg_pName.COM_val)))
             return arg_pName.python_val
 
     @property
-    def Abbrv(self) -> str:
+    def abbrv(self) -> str:
         """Returns the abbreviation of the unit."""
         with agmarshall.BSTR_arg() as arg_pAbbrv:
-            agcls.evaluate_hresult(self.__dict__["_GetAbbrv"](byref(arg_pAbbrv.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_abbrv"](byref(arg_pAbbrv.COM_val)))
             return arg_pAbbrv.python_val
 
     @property
-    def Id(self) -> int:
+    def id(self) -> int:
         """Returns the ID of the unit."""
         with agmarshall.LONG_arg() as arg_pId:
-            agcls.evaluate_hresult(self.__dict__["_GetId"](byref(arg_pId.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_id"](byref(arg_pId.COM_val)))
             return arg_pId.python_val
 
     @property
-    def Dimension(self) -> "IUnitPreferencesDimension":
+    def dimension(self) -> "IUnitPreferencesDimension":
         """Returns the Dimension for this unit."""
         with agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsDim:
-            agcls.evaluate_hresult(self.__dict__["_GetDimension"](byref(arg_ppUnitPrefsDim.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_dimension"](byref(arg_ppUnitPrefsDim.COM_val)))
             return arg_ppUnitPrefsDim.python_val
 
 
@@ -3466,11 +3466,11 @@ class IUnitPreferencesUnitCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_index"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_name"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPreferencesUnitCollection._uuid))
             if pUnk is not None:
@@ -3483,11 +3483,11 @@ class IUnitPreferencesUnitCollection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUnitPreferencesUnitCollection = agcom.GUID(IUnitPreferencesUnitCollection._uuid)
         vtable_offset_local = IUnitPreferencesUnitCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_get_item_by_index"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+4, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_get_item_by_name"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesUnitCollection, vtable_offset_local+5, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3512,42 +3512,42 @@ class IUnitPreferencesUnitCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, indexOrName:typing.Any) -> "IUnitPreferencesUnit":
+    def item(self, indexOrName:typing.Any) -> "IUnitPreferencesUnit":
         """Returns the specific item in the collection given a unit identifier or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_indexOrName.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Returns the number of items in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns an enumeration of UnitPreferencesUnit."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def GetItemByIndex(self, index:int) -> "IUnitPreferencesUnit":
+    def get_item_by_index(self, index:int) -> "IUnitPreferencesUnit":
         """Retrieves a unit from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
-    def GetItemByName(self, name:str) -> "IUnitPreferencesUnit":
+    def get_item_by_name(self, name:str) -> "IUnitPreferencesUnit":
         """Retrieves a unit from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppUnitPrefsUnit:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_name"](arg_name.COM_val, byref(arg_ppUnitPrefsUnit.COM_val)))
             return arg_ppUnitPrefsUnit.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -3561,18 +3561,18 @@ class IUnitPreferencesDimensionCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_SetCurrentUnit"] = _raise_uninitialized_error
-        self.__dict__["_GetCurrentUnitAbbrv"] = _raise_uninitialized_error
-        self.__dict__["_GetMissionElapsedTime"] = _raise_uninitialized_error
-        self.__dict__["_SetMissionElapsedTime"] = _raise_uninitialized_error
-        self.__dict__["_GetJulianDateOffset"] = _raise_uninitialized_error
-        self.__dict__["_SetJulianDateOffset"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_ResetUnits"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_set_current_unit"] = _raise_uninitialized_error
+        self.__dict__["_get_current_unit_abbrv"] = _raise_uninitialized_error
+        self.__dict__["_get_mission_elapsed_time"] = _raise_uninitialized_error
+        self.__dict__["_set_mission_elapsed_time"] = _raise_uninitialized_error
+        self.__dict__["_get_julian_date_offset"] = _raise_uninitialized_error
+        self.__dict__["_set_julian_date_offset"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_reset_units"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_index"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_name"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUnitPreferencesDimensionCollection._uuid))
             if pUnk is not None:
@@ -3585,18 +3585,18 @@ class IUnitPreferencesDimensionCollection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUnitPreferencesDimensionCollection = agcom.GUID(IUnitPreferencesDimensionCollection._uuid)
         vtable_offset_local = IUnitPreferencesDimensionCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_SetCurrentUnit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+3, agcom.BSTR, agcom.BSTR)
-        self.__dict__["_GetCurrentUnitAbbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+4, agcom.VARIANT, POINTER(agcom.BSTR))
-        self.__dict__["_GetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+5, POINTER(agcom.VARIANT))
-        self.__dict__["_SetMissionElapsedTime"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+6, agcom.VARIANT)
-        self.__dict__["_GetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetJulianDateOffset"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+8, agcom.DOUBLE)
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+9, POINTER(agcom.PVOID))
-        self.__dict__["_ResetUnits"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+10, )
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+11, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_set_current_unit"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+3, agcom.BSTR, agcom.BSTR)
+        self.__dict__["_get_current_unit_abbrv"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+4, agcom.VARIANT, POINTER(agcom.BSTR))
+        self.__dict__["_get_mission_elapsed_time"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+5, POINTER(agcom.VARIANT))
+        self.__dict__["_set_mission_elapsed_time"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+6, agcom.VARIANT)
+        self.__dict__["_get_julian_date_offset"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_julian_date_offset"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+9, POINTER(agcom.PVOID))
+        self.__dict__["_reset_units"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+10, )
+        self.__dict__["_get_item_by_index"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+11, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_get_item_by_name"] = IAGFUNCTYPE(pUnk, IID_IUnitPreferencesDimensionCollection, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3621,83 +3621,83 @@ class IUnitPreferencesDimensionCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, indexOrName:typing.Any) -> "IUnitPreferencesDimension":
+    def item(self, indexOrName:typing.Any) -> "IUnitPreferencesDimension":
         """Returns an IUnitPreferencesDimension given a Dimension name or an index."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_indexOrName.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
             return arg_ppAgUnitPrefsDim.python_val
 
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Returns the number of items in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def SetCurrentUnit(self, dimension:str, unitAbbrv:str) -> None:
+    def set_current_unit(self, dimension:str, unitAbbrv:str) -> None:
         """Returns the Current unit for a Dimension."""
         with agmarshall.BSTR_arg(dimension) as arg_dimension, \
              agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv:
-            agcls.evaluate_hresult(self.__dict__["_SetCurrentUnit"](arg_dimension.COM_val, arg_unitAbbrv.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_current_unit"](arg_dimension.COM_val, arg_unitAbbrv.COM_val))
 
-    def GetCurrentUnitAbbrv(self, indexOrDimName:typing.Any) -> str:
+    def get_current_unit_abbrv(self, indexOrDimName:typing.Any) -> str:
         """Returns the Current Unit for a Dimension."""
         with agmarshall.VARIANT_arg(indexOrDimName) as arg_indexOrDimName, \
              agmarshall.BSTR_arg() as arg_pUnitAbbrv:
-            agcls.evaluate_hresult(self.__dict__["_GetCurrentUnitAbbrv"](arg_indexOrDimName.COM_val, byref(arg_pUnitAbbrv.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_current_unit_abbrv"](arg_indexOrDimName.COM_val, byref(arg_pUnitAbbrv.COM_val)))
             return arg_pUnitAbbrv.python_val
 
     @property
-    def MissionElapsedTime(self) -> typing.Any:
+    def mission_elapsed_time(self) -> typing.Any:
         """The MissionElapsedTime."""
         with agmarshall.VARIANT_arg() as arg_pMisElapTime:
-            agcls.evaluate_hresult(self.__dict__["_GetMissionElapsedTime"](byref(arg_pMisElapTime.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_mission_elapsed_time"](byref(arg_pMisElapTime.COM_val)))
             return arg_pMisElapTime.python_val
 
-    @MissionElapsedTime.setter
-    def MissionElapsedTime(self, pMisElapTime:typing.Any) -> None:
+    @mission_elapsed_time.setter
+    def mission_elapsed_time(self, pMisElapTime:typing.Any) -> None:
         with agmarshall.VARIANT_arg(pMisElapTime) as arg_pMisElapTime:
-            agcls.evaluate_hresult(self.__dict__["_SetMissionElapsedTime"](arg_pMisElapTime.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_mission_elapsed_time"](arg_pMisElapTime.COM_val))
 
     @property
-    def JulianDateOffset(self) -> float:
+    def julian_date_offset(self) -> float:
         """The JulianDateOffset."""
         with agmarshall.DOUBLE_arg() as arg_pJDateOffset:
-            agcls.evaluate_hresult(self.__dict__["_GetJulianDateOffset"](byref(arg_pJDateOffset.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_julian_date_offset"](byref(arg_pJDateOffset.COM_val)))
             return arg_pJDateOffset.python_val
 
-    @JulianDateOffset.setter
-    def JulianDateOffset(self, pJDateOffset:float) -> None:
+    @julian_date_offset.setter
+    def julian_date_offset(self, pJDateOffset:float) -> None:
         with agmarshall.DOUBLE_arg(pJDateOffset) as arg_pJDateOffset:
-            agcls.evaluate_hresult(self.__dict__["_SetJulianDateOffset"](arg_pJDateOffset.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_julian_date_offset"](arg_pJDateOffset.COM_val))
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns a collection of IUnitPreferencesDimension."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def ResetUnits(self) -> None:
+    def reset_units(self) -> None:
         """Resets the unitpreferences to the Default units"""
-        agcls.evaluate_hresult(self.__dict__["_ResetUnits"]())
+        agcls.evaluate_hresult(self.__dict__["_reset_units"]())
 
-    def GetItemByIndex(self, index:int) -> "IUnitPreferencesDimension":
+    def get_item_by_index(self, index:int) -> "IUnitPreferencesDimension":
         """Retrieves a dimension from the collection by index."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
             return arg_ppAgUnitPrefsDim.python_val
 
-    def GetItemByName(self, name:str) -> "IUnitPreferencesDimension":
+    def get_item_by_name(self, name:str) -> "IUnitPreferencesDimension":
         """Retrieves a dimension from the collection by name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppAgUnitPrefsDim:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_name"](arg_name.COM_val, byref(arg_ppAgUnitPrefsDim.COM_val)))
             return arg_ppAgUnitPrefsDim.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -3711,15 +3711,15 @@ class IQuantity(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetDimension"] = _raise_uninitialized_error
-        self.__dict__["_GetUnit"] = _raise_uninitialized_error
-        self.__dict__["_ConvertToUnit"] = _raise_uninitialized_error
-        self.__dict__["_GetValue"] = _raise_uninitialized_error
-        self.__dict__["_SetValue"] = _raise_uninitialized_error
-        self.__dict__["_Add"] = _raise_uninitialized_error
-        self.__dict__["_Subtract"] = _raise_uninitialized_error
-        self.__dict__["_MultiplyQty"] = _raise_uninitialized_error
-        self.__dict__["_DivideQty"] = _raise_uninitialized_error
+        self.__dict__["_get_dimension"] = _raise_uninitialized_error
+        self.__dict__["_get_unit"] = _raise_uninitialized_error
+        self.__dict__["_convert_to_unit"] = _raise_uninitialized_error
+        self.__dict__["_get_value"] = _raise_uninitialized_error
+        self.__dict__["_set_value"] = _raise_uninitialized_error
+        self.__dict__["_add"] = _raise_uninitialized_error
+        self.__dict__["_subtract"] = _raise_uninitialized_error
+        self.__dict__["_multiply_qty"] = _raise_uninitialized_error
+        self.__dict__["_divide_qty"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IQuantity._uuid))
             if pUnk is not None:
@@ -3731,15 +3731,15 @@ class IQuantity(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IQuantity = agcom.GUID(IQuantity._uuid)
         vtable_offset_local = IQuantity._vtable_offset - 1
-        self.__dict__["_GetDimension"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_GetUnit"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_ConvertToUnit"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+3, agcom.BSTR)
-        self.__dict__["_GetValue"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetValue"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+5, agcom.DOUBLE)
-        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.PVOID))
-        self.__dict__["_Subtract"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+7, agcom.PVOID, POINTER(agcom.PVOID))
-        self.__dict__["_MultiplyQty"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+8, agcom.PVOID, POINTER(agcom.PVOID))
-        self.__dict__["_DivideQty"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+9, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_get_dimension"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_get_unit"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_convert_to_unit"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+3, agcom.BSTR)
+        self.__dict__["_get_value"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_value"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+5, agcom.DOUBLE)
+        self.__dict__["_add"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+6, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_subtract"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+7, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_multiply_qty"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+8, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_divide_qty"] = IAGFUNCTYPE(pUnk, IID_IQuantity, vtable_offset_local+9, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3754,62 +3754,62 @@ class IQuantity(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IQuantity.")
     
     @property
-    def Dimension(self) -> str:
+    def dimension(self) -> str:
         """Gets the name of the dimension"""
         with agmarshall.BSTR_arg() as arg_pDimName:
-            agcls.evaluate_hresult(self.__dict__["_GetDimension"](byref(arg_pDimName.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_dimension"](byref(arg_pDimName.COM_val)))
             return arg_pDimName.python_val
 
     @property
-    def Unit(self) -> str:
+    def unit(self) -> str:
         """The current Unit abbreviation."""
         with agmarshall.BSTR_arg() as arg_pUnitAbbrv:
-            agcls.evaluate_hresult(self.__dict__["_GetUnit"](byref(arg_pUnitAbbrv.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_unit"](byref(arg_pUnitAbbrv.COM_val)))
             return arg_pUnitAbbrv.python_val
 
-    def ConvertToUnit(self, unitAbbrv:str) -> None:
+    def convert_to_unit(self, unitAbbrv:str) -> None:
         """Changes the value in this quantity to the specified unit."""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv:
-            agcls.evaluate_hresult(self.__dict__["_ConvertToUnit"](arg_unitAbbrv.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_convert_to_unit"](arg_unitAbbrv.COM_val))
 
     @property
-    def Value(self) -> float:
+    def value(self) -> float:
         """The current value."""
         with agmarshall.DOUBLE_arg() as arg_pValue:
-            agcls.evaluate_hresult(self.__dict__["_GetValue"](byref(arg_pValue.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_value"](byref(arg_pValue.COM_val)))
             return arg_pValue.python_val
 
-    @Value.setter
-    def Value(self, value:float) -> None:
+    @value.setter
+    def value(self, value:float) -> None:
         with agmarshall.DOUBLE_arg(value) as arg_value:
-            agcls.evaluate_hresult(self.__dict__["_SetValue"](arg_value.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_value"](arg_value.COM_val))
 
-    def Add(self, quantity:"IQuantity") -> "IQuantity":
+    def add(self, quantity:"IQuantity") -> "IQuantity":
         """Adds the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
-            agcls.evaluate_hresult(self.__dict__["_Add"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_add"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def Subtract(self, quantity:"IQuantity") -> "IQuantity":
+    def subtract(self, quantity:"IQuantity") -> "IQuantity":
         """Subtracts the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
-            agcls.evaluate_hresult(self.__dict__["_Subtract"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_subtract"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def MultiplyQty(self, quantity:"IQuantity") -> "IQuantity":
+    def multiply_qty(self, quantity:"IQuantity") -> "IQuantity":
         """Multiplies the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
-            agcls.evaluate_hresult(self.__dict__["_MultiplyQty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_multiply_qty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def DivideQty(self, quantity:"IQuantity") -> "IQuantity":
+    def divide_qty(self, quantity:"IQuantity") -> "IQuantity":
         """Divides the value from the IQuantity interface to this interface. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
-            agcls.evaluate_hresult(self.__dict__["_DivideQty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_divide_qty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
 
@@ -3823,21 +3823,21 @@ class IDate(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_Format"] = _raise_uninitialized_error
-        self.__dict__["_SetDate"] = _raise_uninitialized_error
-        self.__dict__["_GetOLEDate"] = _raise_uninitialized_error
-        self.__dict__["_SetOLEDate"] = _raise_uninitialized_error
-        self.__dict__["_GetWholeDays"] = _raise_uninitialized_error
-        self.__dict__["_SetWholeDays"] = _raise_uninitialized_error
-        self.__dict__["_GetSecIntoDay"] = _raise_uninitialized_error
-        self.__dict__["_SetSecIntoDay"] = _raise_uninitialized_error
-        self.__dict__["_GetWholeDaysUTC"] = _raise_uninitialized_error
-        self.__dict__["_SetWholeDaysUTC"] = _raise_uninitialized_error
-        self.__dict__["_GetSecIntoDayUTC"] = _raise_uninitialized_error
-        self.__dict__["_SetSecIntoDayUTC"] = _raise_uninitialized_error
-        self.__dict__["_Add"] = _raise_uninitialized_error
-        self.__dict__["_Subtract"] = _raise_uninitialized_error
-        self.__dict__["_Span"] = _raise_uninitialized_error
+        self.__dict__["_format"] = _raise_uninitialized_error
+        self.__dict__["_set_date"] = _raise_uninitialized_error
+        self.__dict__["_get_ole_date"] = _raise_uninitialized_error
+        self.__dict__["_set_ole_date"] = _raise_uninitialized_error
+        self.__dict__["_get_whole_days"] = _raise_uninitialized_error
+        self.__dict__["_set_whole_days"] = _raise_uninitialized_error
+        self.__dict__["_get_sec_into_day"] = _raise_uninitialized_error
+        self.__dict__["_set_sec_into_day"] = _raise_uninitialized_error
+        self.__dict__["_get_whole_days_utc"] = _raise_uninitialized_error
+        self.__dict__["_set_whole_days_utc"] = _raise_uninitialized_error
+        self.__dict__["_get_sec_into_day_utc"] = _raise_uninitialized_error
+        self.__dict__["_set_sec_into_day_utc"] = _raise_uninitialized_error
+        self.__dict__["_add"] = _raise_uninitialized_error
+        self.__dict__["_subtract"] = _raise_uninitialized_error
+        self.__dict__["_span"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDate._uuid))
             if pUnk is not None:
@@ -3849,21 +3849,21 @@ class IDate(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IDate = agcom.GUID(IDate._uuid)
         vtable_offset_local = IDate._vtable_offset - 1
-        self.__dict__["_Format"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+1, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_SetDate"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
-        self.__dict__["_GetOLEDate"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+3, POINTER(agcom.DATE))
-        self.__dict__["_SetOLEDate"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+4, agcom.DATE)
-        self.__dict__["_GetWholeDays"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetWholeDays"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+6, agcom.LONG)
-        self.__dict__["_GetSecIntoDay"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetSecIntoDay"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+8, agcom.DOUBLE)
-        self.__dict__["_GetWholeDaysUTC"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+9, POINTER(agcom.LONG))
-        self.__dict__["_SetWholeDaysUTC"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+10, agcom.LONG)
-        self.__dict__["_GetSecIntoDayUTC"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+11, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetSecIntoDayUTC"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+12, agcom.DOUBLE)
-        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+13, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
-        self.__dict__["_Subtract"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+14, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
-        self.__dict__["_Span"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_format"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+1, agcom.BSTR, POINTER(agcom.BSTR))
+        self.__dict__["_set_date"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
+        self.__dict__["_get_ole_date"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+3, POINTER(agcom.DATE))
+        self.__dict__["_set_ole_date"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+4, agcom.DATE)
+        self.__dict__["_get_whole_days"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_set_whole_days"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+6, agcom.LONG)
+        self.__dict__["_get_sec_into_day"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_sec_into_day"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+8, agcom.DOUBLE)
+        self.__dict__["_get_whole_days_utc"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+9, POINTER(agcom.LONG))
+        self.__dict__["_set_whole_days_utc"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+10, agcom.LONG)
+        self.__dict__["_get_sec_into_day_utc"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+11, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_sec_into_day_utc"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+12, agcom.DOUBLE)
+        self.__dict__["_add"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+13, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
+        self.__dict__["_subtract"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+14, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
+        self.__dict__["_span"] = IAGFUNCTYPE(pUnk, IID_IDate, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -3877,100 +3877,100 @@ class IDate(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IDate.")
     
-    def Format(self, unit:str) -> str:
+    def format(self, unit:str) -> str:
         """Returns the value of the date given the unit."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.BSTR_arg() as arg_pValue:
-            agcls.evaluate_hresult(self.__dict__["_Format"](arg_unit.COM_val, byref(arg_pValue.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_format"](arg_unit.COM_val, byref(arg_pValue.COM_val)))
             return arg_pValue.python_val
 
-    def SetDate(self, unit:str, value:str) -> None:
+    def set_date(self, unit:str, value:str) -> None:
         """Sets this date with the given date value and unit type."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.BSTR_arg(value) as arg_value:
-            agcls.evaluate_hresult(self.__dict__["_SetDate"](arg_unit.COM_val, arg_value.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_date"](arg_unit.COM_val, arg_value.COM_val))
 
     @property
-    def OLEDate(self) -> datetime:
+    def ole_date(self) -> datetime:
         """The current time in OLE DATE Format."""
         with agmarshall.DATE_arg() as arg_pDate:
-            agcls.evaluate_hresult(self.__dict__["_GetOLEDate"](byref(arg_pDate.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_ole_date"](byref(arg_pDate.COM_val)))
             return arg_pDate.python_val
 
-    @OLEDate.setter
-    def OLEDate(self, inVal:datetime) -> None:
+    @ole_date.setter
+    def ole_date(self, inVal:datetime) -> None:
         with agmarshall.DATE_arg(inVal) as arg_inVal:
-            agcls.evaluate_hresult(self.__dict__["_SetOLEDate"](arg_inVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_ole_date"](arg_inVal.COM_val))
 
     @property
-    def WholeDays(self) -> int:
+    def whole_days(self) -> int:
         """The Julian Day Number of the date of interest."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetWholeDays"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_whole_days"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @WholeDays.setter
-    def WholeDays(self, wholeDays:int) -> None:
+    @whole_days.setter
+    def whole_days(self, wholeDays:int) -> None:
         with agmarshall.LONG_arg(wholeDays) as arg_wholeDays:
-            agcls.evaluate_hresult(self.__dict__["_SetWholeDays"](arg_wholeDays.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_whole_days"](arg_wholeDays.COM_val))
 
     @property
-    def SecIntoDay(self) -> float:
+    def sec_into_day(self) -> float:
         """Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSecIntoDay"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_sec_into_day"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @SecIntoDay.setter
-    def SecIntoDay(self, secIntoDay:float) -> None:
+    @sec_into_day.setter
+    def sec_into_day(self, secIntoDay:float) -> None:
         with agmarshall.DOUBLE_arg(secIntoDay) as arg_secIntoDay:
-            agcls.evaluate_hresult(self.__dict__["_SetSecIntoDay"](arg_secIntoDay.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_sec_into_day"](arg_secIntoDay.COM_val))
 
     @property
-    def WholeDaysUTC(self) -> int:
+    def whole_days_utc(self) -> int:
         """The UTC Day Number of the date of interest."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetWholeDaysUTC"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_whole_days_utc"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @WholeDaysUTC.setter
-    def WholeDaysUTC(self, wholeDays:int) -> None:
+    @whole_days_utc.setter
+    def whole_days_utc(self, wholeDays:int) -> None:
         with agmarshall.LONG_arg(wholeDays) as arg_wholeDays:
-            agcls.evaluate_hresult(self.__dict__["_SetWholeDaysUTC"](arg_wholeDays.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_whole_days_utc"](arg_wholeDays.COM_val))
 
     @property
-    def SecIntoDayUTC(self) -> float:
+    def sec_into_day_utc(self) -> float:
         """Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0"""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSecIntoDayUTC"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_sec_into_day_utc"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @SecIntoDayUTC.setter
-    def SecIntoDayUTC(self, secIntoDay:float) -> None:
+    @sec_into_day_utc.setter
+    def sec_into_day_utc(self, secIntoDay:float) -> None:
         with agmarshall.DOUBLE_arg(secIntoDay) as arg_secIntoDay:
-            agcls.evaluate_hresult(self.__dict__["_SetSecIntoDayUTC"](arg_secIntoDay.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_sec_into_day_utc"](arg_secIntoDay.COM_val))
 
-    def Add(self, unit:str, value:float) -> "IDate":
+    def add(self, unit:str, value:float) -> "IDate":
         """Adds the value in the given unit and returns a new date interface."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppDate:
-            agcls.evaluate_hresult(self.__dict__["_Add"](arg_unit.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_add"](arg_unit.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
             return arg_ppDate.python_val
 
-    def Subtract(self, unit:str, value:float) -> "IDate":
+    def subtract(self, unit:str, value:float) -> "IDate":
         """Subtracts the value in the given unit and returns a new date interface."""
         with agmarshall.BSTR_arg(unit) as arg_unit, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppDate:
-            agcls.evaluate_hresult(self.__dict__["_Subtract"](arg_unit.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_subtract"](arg_unit.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
             return arg_ppDate.python_val
 
-    def Span(self, date:"IDate") -> "IQuantity":
+    def span(self, date:"IDate") -> "IQuantity":
         """Subtracts the value from the IDate interface and returns an IQuantity."""
         with agmarshall.AgInterface_in_arg(date, IDate) as arg_date, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
-            agcls.evaluate_hresult(self.__dict__["_Span"](arg_date.COM_val, byref(arg_ppQuantity.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_span"](arg_date.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
 
@@ -3984,24 +3984,24 @@ class IConversionUtility(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_ConvertQuantity"] = _raise_uninitialized_error
-        self.__dict__["_ConvertDate"] = _raise_uninitialized_error
-        self.__dict__["_ConvertQuantityArray"] = _raise_uninitialized_error
-        self.__dict__["_ConvertDateArray"] = _raise_uninitialized_error
-        self.__dict__["_NewQuantity"] = _raise_uninitialized_error
-        self.__dict__["_NewDate"] = _raise_uninitialized_error
-        self.__dict__["_NewPositionOnEarth"] = _raise_uninitialized_error
-        self.__dict__["_ConvertPositionArray"] = _raise_uninitialized_error
-        self.__dict__["_NewDirection"] = _raise_uninitialized_error
-        self.__dict__["_NewOrientation"] = _raise_uninitialized_error
-        self.__dict__["_NewOrbitStateOnEarth"] = _raise_uninitialized_error
-        self.__dict__["_NewPositionOnCB"] = _raise_uninitialized_error
-        self.__dict__["_NewOrbitStateOnCB"] = _raise_uninitialized_error
-        self.__dict__["_QueryDirectionCosineMatrix"] = _raise_uninitialized_error
-        self.__dict__["_QueryDirectionCosineMatrixArray"] = _raise_uninitialized_error
-        self.__dict__["_NewCartesian3Vector"] = _raise_uninitialized_error
-        self.__dict__["_NewCartesian3VectorFromDirection"] = _raise_uninitialized_error
-        self.__dict__["_NewCartesian3VectorFromPosition"] = _raise_uninitialized_error
+        self.__dict__["_convert_quantity"] = _raise_uninitialized_error
+        self.__dict__["_convert_date"] = _raise_uninitialized_error
+        self.__dict__["_convert_quantity_array"] = _raise_uninitialized_error
+        self.__dict__["_convert_date_array"] = _raise_uninitialized_error
+        self.__dict__["_new_quantity"] = _raise_uninitialized_error
+        self.__dict__["_new_date"] = _raise_uninitialized_error
+        self.__dict__["_new_position_on_earth"] = _raise_uninitialized_error
+        self.__dict__["_convert_position_array"] = _raise_uninitialized_error
+        self.__dict__["_new_direction"] = _raise_uninitialized_error
+        self.__dict__["_new_orientation"] = _raise_uninitialized_error
+        self.__dict__["_new_orbit_state_on_earth"] = _raise_uninitialized_error
+        self.__dict__["_new_position_on_cb"] = _raise_uninitialized_error
+        self.__dict__["_new_orbit_state_on_cb"] = _raise_uninitialized_error
+        self.__dict__["_query_direction_cosine_matrix"] = _raise_uninitialized_error
+        self.__dict__["_query_direction_cosine_matrix_array"] = _raise_uninitialized_error
+        self.__dict__["_new_cartesian3_vector"] = _raise_uninitialized_error
+        self.__dict__["_new_cartesian3_vector_from_direction"] = _raise_uninitialized_error
+        self.__dict__["_new_cartesian3_vector_from_position"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IConversionUtility._uuid))
             if pUnk is not None:
@@ -4013,24 +4013,24 @@ class IConversionUtility(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IConversionUtility = agcom.GUID(IConversionUtility._uuid)
         vtable_offset_local = IConversionUtility._vtable_offset - 1
-        self.__dict__["_ConvertQuantity"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.DOUBLE))
-        self.__dict__["_ConvertDate"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+2, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
-        self.__dict__["_ConvertQuantityArray"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY))
-        self.__dict__["_ConvertDateArray"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+4, agcom.BSTR, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY))
-        self.__dict__["_NewQuantity"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+5, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
-        self.__dict__["_NewDate"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+6, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_NewPositionOnEarth"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+7, POINTER(agcom.PVOID))
-        self.__dict__["_ConvertPositionArray"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+8, agcom.LONG, POINTER(agcom.SAFEARRAY), agcom.LONG, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_NewDirection"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+9, POINTER(agcom.PVOID))
-        self.__dict__["_NewOrientation"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+10, POINTER(agcom.PVOID))
-        self.__dict__["_NewOrbitStateOnEarth"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+11, POINTER(agcom.PVOID))
-        self.__dict__["_NewPositionOnCB"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_NewOrbitStateOnCB"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+13, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_QueryDirectionCosineMatrix"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+14, agcom.PVOID, POINTER(agcom.PVOID), POINTER(agcom.PVOID), POINTER(agcom.PVOID))
-        self.__dict__["_QueryDirectionCosineMatrixArray"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_NewCartesian3Vector"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+16, POINTER(agcom.PVOID))
-        self.__dict__["_NewCartesian3VectorFromDirection"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+17, agcom.PVOID, POINTER(agcom.PVOID))
-        self.__dict__["_NewCartesian3VectorFromPosition"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+18, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_convert_quantity"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+1, agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.DOUBLE))
+        self.__dict__["_convert_date"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+2, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR))
+        self.__dict__["_convert_quantity_array"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY))
+        self.__dict__["_convert_date_array"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+4, agcom.BSTR, agcom.BSTR, POINTER(agcom.SAFEARRAY), POINTER(agcom.SAFEARRAY))
+        self.__dict__["_new_quantity"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+5, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID))
+        self.__dict__["_new_date"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+6, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_new_position_on_earth"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+7, POINTER(agcom.PVOID))
+        self.__dict__["_convert_position_array"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+8, agcom.LONG, POINTER(agcom.SAFEARRAY), agcom.LONG, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_new_direction"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+9, POINTER(agcom.PVOID))
+        self.__dict__["_new_orientation"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+10, POINTER(agcom.PVOID))
+        self.__dict__["_new_orbit_state_on_earth"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+11, POINTER(agcom.PVOID))
+        self.__dict__["_new_position_on_cb"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+12, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_new_orbit_state_on_cb"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+13, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_query_direction_cosine_matrix"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+14, agcom.PVOID, POINTER(agcom.PVOID), POINTER(agcom.PVOID), POINTER(agcom.PVOID))
+        self.__dict__["_query_direction_cosine_matrix_array"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+15, agcom.PVOID, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_new_cartesian3_vector"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+16, POINTER(agcom.PVOID))
+        self.__dict__["_new_cartesian3_vector_from_direction"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+17, agcom.PVOID, POINTER(agcom.PVOID))
+        self.__dict__["_new_cartesian3_vector_from_position"] = IAGFUNCTYPE(pUnk, IID_IConversionUtility, vtable_offset_local+18, agcom.PVOID, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -4044,142 +4044,142 @@ class IConversionUtility(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IConversionUtility.")
     
-    def ConvertQuantity(self, dimensionName:str, fromUnit:str, toUnit:str, fromValue:float) -> float:
+    def convert_quantity(self, dimensionName:str, fromUnit:str, toUnit:str, fromValue:float) -> float:
         """Converts the specified quantity value from a given unit to another unit."""
         with agmarshall.BSTR_arg(dimensionName) as arg_dimensionName, \
              agmarshall.BSTR_arg(fromUnit) as arg_fromUnit, \
              agmarshall.BSTR_arg(toUnit) as arg_toUnit, \
              agmarshall.DOUBLE_arg(fromValue) as arg_fromValue, \
              agmarshall.DOUBLE_arg() as arg_pToValue:
-            agcls.evaluate_hresult(self.__dict__["_ConvertQuantity"](arg_dimensionName.COM_val, arg_fromUnit.COM_val, arg_toUnit.COM_val, arg_fromValue.COM_val, byref(arg_pToValue.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_quantity"](arg_dimensionName.COM_val, arg_fromUnit.COM_val, arg_toUnit.COM_val, arg_fromValue.COM_val, byref(arg_pToValue.COM_val)))
             return arg_pToValue.python_val
 
-    def ConvertDate(self, fromUnit:str, toUnit:str, fromValue:str) -> str:
+    def convert_date(self, fromUnit:str, toUnit:str, fromValue:str) -> str:
         """Converts the specified date from a given unit to another unit."""
         with agmarshall.BSTR_arg(fromUnit) as arg_fromUnit, \
              agmarshall.BSTR_arg(toUnit) as arg_toUnit, \
              agmarshall.BSTR_arg(fromValue) as arg_fromValue, \
              agmarshall.BSTR_arg() as arg_pToValue:
-            agcls.evaluate_hresult(self.__dict__["_ConvertDate"](arg_fromUnit.COM_val, arg_toUnit.COM_val, arg_fromValue.COM_val, byref(arg_pToValue.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_date"](arg_fromUnit.COM_val, arg_toUnit.COM_val, arg_fromValue.COM_val, byref(arg_pToValue.COM_val)))
             return arg_pToValue.python_val
 
-    def ConvertQuantityArray(self, dimensionName:str, fromUnit:str, toUnit:str, quantityValues:list) -> list:
+    def convert_quantity_array(self, dimensionName:str, fromUnit:str, toUnit:str, quantityValues:list) -> list:
         """Converts the specified quantity values from a given unit to another unit."""
         with agmarshall.BSTR_arg(dimensionName) as arg_dimensionName, \
              agmarshall.BSTR_arg(fromUnit) as arg_fromUnit, \
              agmarshall.BSTR_arg(toUnit) as arg_toUnit, \
              agmarshall.SAFEARRAY_arg(quantityValues) as arg_quantityValues, \
              agmarshall.SAFEARRAY_arg() as arg_ppConvertedQuantityValues:
-            agcls.evaluate_hresult(self.__dict__["_ConvertQuantityArray"](arg_dimensionName.COM_val, arg_fromUnit.COM_val, arg_toUnit.COM_val, byref(arg_quantityValues.COM_val), byref(arg_ppConvertedQuantityValues.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_quantity_array"](arg_dimensionName.COM_val, arg_fromUnit.COM_val, arg_toUnit.COM_val, byref(arg_quantityValues.COM_val), byref(arg_ppConvertedQuantityValues.COM_val)))
             return arg_ppConvertedQuantityValues.python_val
 
-    def ConvertDateArray(self, fromUnit:str, toUnit:str, fromValues:list) -> list:
+    def convert_date_array(self, fromUnit:str, toUnit:str, fromValues:list) -> list:
         """Converts the specified dates from a given unit to another unit."""
         with agmarshall.BSTR_arg(fromUnit) as arg_fromUnit, \
              agmarshall.BSTR_arg(toUnit) as arg_toUnit, \
              agmarshall.SAFEARRAY_arg(fromValues) as arg_fromValues, \
              agmarshall.SAFEARRAY_arg() as arg_ppConvertedDateValues:
-            agcls.evaluate_hresult(self.__dict__["_ConvertDateArray"](arg_fromUnit.COM_val, arg_toUnit.COM_val, byref(arg_fromValues.COM_val), byref(arg_ppConvertedDateValues.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_date_array"](arg_fromUnit.COM_val, arg_toUnit.COM_val, byref(arg_fromValues.COM_val), byref(arg_ppConvertedDateValues.COM_val)))
             return arg_ppConvertedDateValues.python_val
 
-    def NewQuantity(self, dimension:str, unitAbbrv:str, value:float) -> "IQuantity":
+    def new_quantity(self, dimension:str, unitAbbrv:str, value:float) -> "IQuantity":
         """Creates an IQuantity interface with the given dimension, unit and value"""
         with agmarshall.BSTR_arg(dimension) as arg_dimension, \
              agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.DOUBLE_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
-            agcls.evaluate_hresult(self.__dict__["_NewQuantity"](arg_dimension.COM_val, arg_unitAbbrv.COM_val, arg_value.COM_val, byref(arg_ppQuantity.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_quantity"](arg_dimension.COM_val, arg_unitAbbrv.COM_val, arg_value.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
-    def NewDate(self, unitAbbrv:str, value:str) -> "IDate":
+    def new_date(self, unitAbbrv:str, value:str) -> "IDate":
         """Creates an IDate interface with the given unit and value"""
         with agmarshall.BSTR_arg(unitAbbrv) as arg_unitAbbrv, \
              agmarshall.BSTR_arg(value) as arg_value, \
              agmarshall.AgInterface_out_arg() as arg_ppDate:
-            agcls.evaluate_hresult(self.__dict__["_NewDate"](arg_unitAbbrv.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_date"](arg_unitAbbrv.COM_val, arg_value.COM_val, byref(arg_ppDate.COM_val)))
             return arg_ppDate.python_val
 
-    def NewPositionOnEarth(self) -> "IPosition":
+    def new_position_on_earth(self) -> "IPosition":
         """Creates an IPosition interface with earth as its central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewPositionOnEarth"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_position_on_earth"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def ConvertPositionArray(self, positionType:"AgEPositionType", positionArray:list, convertTo:"AgEPositionType") -> list:
+    def convert_position_array(self, positionType:"AgEPositionType", positionArray:list, convertTo:"AgEPositionType") -> list:
         """Converts the specified position values from a given position type to another position type."""
         with agmarshall.AgEnum_arg(AgEPositionType, positionType) as arg_positionType, \
              agmarshall.SAFEARRAY_arg(positionArray) as arg_positionArray, \
              agmarshall.AgEnum_arg(AgEPositionType, convertTo) as arg_convertTo, \
              agmarshall.SAFEARRAY_arg() as arg_ppOutVal:
-            agcls.evaluate_hresult(self.__dict__["_ConvertPositionArray"](arg_positionType.COM_val, byref(arg_positionArray.COM_val), arg_convertTo.COM_val, byref(arg_ppOutVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_convert_position_array"](arg_positionType.COM_val, byref(arg_positionArray.COM_val), arg_convertTo.COM_val, byref(arg_ppOutVal.COM_val)))
             return arg_ppOutVal.python_val
 
-    def NewDirection(self) -> "IDirection":
+    def new_direction(self) -> "IDirection":
         """Creates an IDirection interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewDirection"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_direction"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewOrientation(self) -> "IOrientation":
+    def new_orientation(self) -> "IOrientation":
         """Creates an IOrientation interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewOrientation"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_orientation"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewOrbitStateOnEarth(self) -> "IOrbitState":
+    def new_orbit_state_on_earth(self) -> "IOrbitState":
         """Creates an IOrbitState interface with earth as its central body."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewOrbitStateOnEarth"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_orbit_state_on_earth"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewPositionOnCB(self, centralBodyName:str) -> "IPosition":
+    def new_position_on_cb(self, centralBodyName:str) -> "IPosition":
         """Creates an IPosition interface using the supplied central body."""
         with agmarshall.BSTR_arg(centralBodyName) as arg_centralBodyName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewPositionOnCB"](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_position_on_cb"](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewOrbitStateOnCB(self, centralBodyName:str) -> "IOrbitState":
+    def new_orbit_state_on_cb(self, centralBodyName:str) -> "IOrbitState":
         """Creates an IOrbitState interface using the supplied central body."""
         with agmarshall.BSTR_arg(centralBodyName) as arg_centralBodyName, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewOrbitStateOnCB"](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_orbit_state_on_cb"](arg_centralBodyName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def QueryDirectionCosineMatrix(self, inputOrientation:"IOrientation") -> typing.Tuple[ICartesian3Vector, ICartesian3Vector, ICartesian3Vector]:
+    def query_direction_cosine_matrix(self, inputOrientation:"IOrientation") -> typing.Tuple[ICartesian3Vector, ICartesian3Vector, ICartesian3Vector]:
         """Returns a Direction Cosine Matrix (DCM)."""
         with agmarshall.AgInterface_in_arg(inputOrientation, IOrientation) as arg_inputOrientation, \
              agmarshall.AgInterface_out_arg() as arg_px, \
              agmarshall.AgInterface_out_arg() as arg_py, \
              agmarshall.AgInterface_out_arg() as arg_pz:
-            agcls.evaluate_hresult(self.__dict__["_QueryDirectionCosineMatrix"](arg_inputOrientation.COM_val, byref(arg_px.COM_val), byref(arg_py.COM_val), byref(arg_pz.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_direction_cosine_matrix"](arg_inputOrientation.COM_val, byref(arg_px.COM_val), byref(arg_py.COM_val), byref(arg_pz.COM_val)))
             return arg_px.python_val, arg_py.python_val, arg_pz.python_val
 
-    def QueryDirectionCosineMatrixArray(self, inputOrientation:"IOrientation") -> list:
+    def query_direction_cosine_matrix_array(self, inputOrientation:"IOrientation") -> list:
         """Returns a Direction Cosine Matrix (DCM) as an array."""
         with agmarshall.AgInterface_in_arg(inputOrientation, IOrientation) as arg_inputOrientation, \
              agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_QueryDirectionCosineMatrixArray"](arg_inputOrientation.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_query_direction_cosine_matrix_array"](arg_inputOrientation.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewCartesian3Vector(self) -> "ICartesian3Vector":
+    def new_cartesian3_vector(self) -> "ICartesian3Vector":
         """Creates a cartesian vector."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewCartesian3Vector"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_cartesian3_vector"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewCartesian3VectorFromDirection(self, inputDirection:"IDirection") -> "ICartesian3Vector":
+    def new_cartesian3_vector_from_direction(self, inputDirection:"IDirection") -> "ICartesian3Vector":
         """Converts the direction to cartesian vector."""
         with agmarshall.AgInterface_in_arg(inputDirection, IDirection) as arg_inputDirection, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewCartesian3VectorFromDirection"](arg_inputDirection.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_cartesian3_vector_from_direction"](arg_inputDirection.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def NewCartesian3VectorFromPosition(self, inputPosition:"IPosition") -> "ICartesian3Vector":
+    def new_cartesian3_vector_from_position(self, inputPosition:"IPosition") -> "ICartesian3Vector":
         """Converts the position to cartesian vector."""
         with agmarshall.AgInterface_in_arg(inputPosition, IPosition) as arg_inputPosition, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_NewCartesian3VectorFromPosition"](arg_inputPosition.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_new_cartesian3_vector_from_position"](arg_inputPosition.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -4193,14 +4193,14 @@ class IDoublesCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_Add"] = _raise_uninitialized_error
-        self.__dict__["_RemoveAt"] = _raise_uninitialized_error
-        self.__dict__["_RemoveAll"] = _raise_uninitialized_error
-        self.__dict__["_ToArray"] = _raise_uninitialized_error
-        self.__dict__["_SetAt"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_add"] = _raise_uninitialized_error
+        self.__dict__["_remove_at"] = _raise_uninitialized_error
+        self.__dict__["_remove_all"] = _raise_uninitialized_error
+        self.__dict__["_to_array"] = _raise_uninitialized_error
+        self.__dict__["_set_at"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IDoublesCollection._uuid))
             if pUnk is not None:
@@ -4213,14 +4213,14 @@ class IDoublesCollection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IDoublesCollection = agcom.GUID(IDoublesCollection._uuid)
         vtable_offset_local = IDoublesCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+1, agcom.LONG, POINTER(agcom.DOUBLE))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+4, agcom.DOUBLE)
-        self.__dict__["_RemoveAt"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+5, agcom.LONG)
-        self.__dict__["_RemoveAll"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+6, )
-        self.__dict__["_ToArray"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_SetAt"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE)
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+1, agcom.LONG, POINTER(agcom.DOUBLE))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_add"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+4, agcom.DOUBLE)
+        self.__dict__["_remove_at"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+5, agcom.LONG)
+        self.__dict__["_remove_all"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+6, )
+        self.__dict__["_to_array"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+7, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_set_at"] = IAGFUNCTYPE(pUnk, IID_IDoublesCollection, vtable_offset_local+8, agcom.LONG, agcom.DOUBLE)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -4245,54 +4245,54 @@ class IDoublesCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval)
     
-    def Item(self, index:int) -> float:
+    def item(self, index:int) -> float:
         """Returns a double at a specified position."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_index.COM_val, byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_index.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Returns the number of items in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Returns a collection enumerator."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def Add(self, value:float) -> None:
+    def add(self, value:float) -> None:
         """Add a value to the collection of doubles."""
         with agmarshall.DOUBLE_arg(value) as arg_value:
-            agcls.evaluate_hresult(self.__dict__["_Add"](arg_value.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_add"](arg_value.COM_val))
 
-    def RemoveAt(self, index:int) -> None:
+    def remove_at(self, index:int) -> None:
         """Remove an element from the collection at a specified position."""
         with agmarshall.LONG_arg(index) as arg_index:
-            agcls.evaluate_hresult(self.__dict__["_RemoveAt"](arg_index.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_remove_at"](arg_index.COM_val))
 
-    def RemoveAll(self) -> None:
+    def remove_all(self) -> None:
         """Clears the collection."""
-        agcls.evaluate_hresult(self.__dict__["_RemoveAll"]())
+        agcls.evaluate_hresult(self.__dict__["_remove_all"]())
 
-    def ToArray(self) -> list:
+    def to_array(self) -> list:
         """Returns an array of the elements in the collection"""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_ToArray"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_to_array"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def SetAt(self, index:int, value:float) -> None:
+    def set_at(self, index:int, value:float) -> None:
         """Updates an element in the collection at a specified position."""
         with agmarshall.LONG_arg(index) as arg_index, \
              agmarshall.DOUBLE_arg(value) as arg_value:
-            agcls.evaluate_hresult(self.__dict__["_SetAt"](arg_index.COM_val, arg_value.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_at"](arg_index.COM_val, arg_value.COM_val))
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 

@@ -28,7 +28,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         GroundVehicle.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eGroundVehicle, GroundVehicle.m_DefaultName
             ),
             IGroundVehicle,
@@ -38,7 +38,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eGroundVehicle, GroundVehicle.m_DefaultName
         )
         GroundVehicle.m_Object = None
@@ -47,13 +47,13 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     # region CreateGroundVehicleOnCurrentScenarioCentralBody
     def test_CreateGroundVehicleOnCurrentScenarioCentralBody(self):
-        (clr.Convert(GroundVehicle.m_Object, IStkObject)).Unload()
+        (clr.Convert(GroundVehicle.m_Object, IStkObject)).unload()
         self.CreateGroundVehicleOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the ground vehicle
         launchVehicle: "IGroundVehicle" = clr.CastAs(
-            root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "MyGroundVehicle"), IGroundVehicle
+            root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "MyGroundVehicle"), IGroundVehicle
         )
 
     # endregion
@@ -64,10 +64,10 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseGreatArcPropagator(self, groundVehicle: "IGroundVehicle"):
         # Set ground vehicle route to great arc
-        groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
+        groundVehicle.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Retrieve propagator interface if necessary
-        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(groundVehicle.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(groundVehicle.route, IVehiclePropagatorGreatArc)
 
     # endregion
 
@@ -77,10 +77,10 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseStkExternalPropagator(self, groundVehicle: "IGroundVehicle"):
         # Set groundVehicle route to STK External propagator
-        groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorStkExternal)
+        groundVehicle.set_route_type(AgEVePropagatorType.ePropagatorStkExternal)
 
         # Retrieve propagator interface if necessary
-        propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(groundVehicle.Route, IVehiclePropagatorStkExternal)
+        propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(groundVehicle.route, IVehiclePropagatorStkExternal)
 
     # endregion
 
@@ -90,51 +90,51 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseRealtimePropagator(self, groundVehicle: "IGroundVehicle"):
         # Set ground vehicle route to STK External propagator
-        groundVehicle.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
+        groundVehicle.set_route_type(AgEVePropagatorType.ePropagatorRealtime)
 
         # Retrieve propagator interface if necessary
-        propagator: "IVehiclePropagatorRealtime" = clr.CastAs(groundVehicle.Route, IVehiclePropagatorRealtime)
+        propagator: "IVehiclePropagatorRealtime" = clr.CastAs(groundVehicle.route, IVehiclePropagatorRealtime)
 
     # endregion
 
     # region GetExportStkEphemerisTool
     def test_GetExportStkEphemerisTool(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
         self.GetExportStkEphemerisTool(gv)
-        (clr.Convert(gv, IStkObject)).Unload()
+        (clr.Convert(gv, IStkObject)).unload()
 
     def GetExportStkEphemerisTool(self, groundVehicle: "IGroundVehicle"):
-        stkEphem: "IVehicleEphemerisStkExportTool" = groundVehicle.ExportTools.GetEphemerisStkExportTool()
+        stkEphem: "IVehicleEphemerisStkExportTool" = groundVehicle.export_tools.get_ephemeris_stk_export_tool()
 
     # endregion
 
     # region GetExportAttitudeTool
     def test_GetExportAttitudeTool(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
         self.GetExportAttitudeTool(gv)
-        (clr.Convert(gv, IStkObject)).Unload()
+        (clr.Convert(gv, IStkObject)).unload()
 
     def GetExportAttitudeTool(self, groundVehicle: "IGroundVehicle"):
-        attExTool: "IVehicleAttitudeExportTool" = groundVehicle.ExportTools.GetAttitudeExportTool()
+        attExTool: "IVehicleAttitudeExportTool" = groundVehicle.export_tools.get_attitude_export_tool()
 
     # endregion
 
     # region GetExportPropDefTool
     def test_GetExportPropDefTool(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
         self.GetExportPropDefTool(gv)
-        (clr.Convert(gv, IStkObject)).Unload()
+        (clr.Convert(gv, IStkObject)).unload()
 
     def GetExportPropDefTool(self, groundVehicle: "IGroundVehicle"):
-        attExTool: "IVehiclePropDefinitionExportTool" = groundVehicle.ExportTools.GetPropDefExportTool()
+        attExTool: "IVehiclePropDefinitionExportTool" = groundVehicle.export_tools.get_prop_def_export_tool()
 
     # endregion

@@ -147,7 +147,7 @@ class STKEngineApplication(STKXApplication):
             EventSubscriptionManager.UnsubscribeAll()
             self._timer_impl.Terminate()
             ObjectLifetimeManager.ReleaseAll(releaseApplication=False)
-            self.Terminate()
+            self.terminate()
             ObjectLifetimeManager.ReleaseAll(releaseApplication=True)
             CoInitializeManager.uninitialize()
             self.__dict__["_initialized"] = False
@@ -190,7 +190,7 @@ class STKEngine(object):
                 STKEngine._initX11(noGraphics)
                 engine = STKEngineApplication()
                 engine._private_init(pUnk, STKEngine._stk_install_dir, STKEngine._stk_config_dir, noGraphics)
-                engine.NoGraphics = noGraphics
+                engine.no_graphics = noGraphics
                 return engine
         raise STKInitializationError("Failed to create STK Engine application.  Check for successful install and registration.")
                 

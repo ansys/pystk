@@ -28,14 +28,14 @@ class Star(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Star.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eStar, Star.m_DefaultName), IStar
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eStar, Star.m_DefaultName), IStar
         )
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eStar, Star.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eStar, Star.m_DefaultName)
         Star.m_Object = None
 
     # endregion
@@ -46,28 +46,28 @@ class Star(CodeSnippetsTestBase):
 
     def CreateStarOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Star
-        star: "IStar" = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "MyStar"), IStar)
+        star: "IStar" = clr.CastAs(root.current_scenario.children.new(AgESTKObjectType.eStar, "MyStar"), IStar)
 
     # endregion
 
     # region DefineStarBasicProperties
     def test_DefineStarBasicProperties(self):
-        star: "IStar" = clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario.Children[Star.m_DefaultName], IStar)
-        CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("TimeUnit", "yr")
-        CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("AngleUnit", "arcSec")
+        star: "IStar" = clr.CastAs(CodeSnippetsTestBase.m_Root.current_scenario.children[Star.m_DefaultName], IStar)
+        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("TimeUnit", "yr")
+        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("AngleUnit", "arcSec")
         self.DefineStarBasicProperties(star)
-        CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("TimeUnit", "min")
-        CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("AngleUnit", "deg")
+        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("TimeUnit", "min")
+        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("AngleUnit", "deg")
 
     def DefineStarBasicProperties(self, star: "IStar"):
         # Units depend on current unit preferences
-        star.LocationDeclination = -40.0
-        star.LocationRightAscension = 120.0  # in arcSec
-        star.Magnitude = -1.0
-        star.Parallax = 0.0  # in arcSec
-        star.ProperMotionDeclination = 1.5  # in arcSec
-        star.ProperMotionRadialVelocity = 0.75  # in meters
-        star.ProperMotionRightAscension = -0.5  # in arcSec
+        star.location_declination = -40.0
+        star.location_right_ascension = 120.0  # in arcSec
+        star.magnitude = -1.0
+        star.parallax = 0.0  # in arcSec
+        star.proper_motion_declination = 1.5  # in arcSec
+        star.proper_motion_radial_velocity = 0.75  # in meters
+        star.proper_motion_right_ascension = -0.5  # in arcSec
 
     # endregion
 
@@ -79,8 +79,8 @@ class Star(CodeSnippetsTestBase):
     def CreateStarFromStarDatabase(root: "IStkObjectRoot"):
         # Import object from database using Connect
         command: str = "ImportFromDB * Star ScenarioCollection VisualMagnitude 0 1.0 RightAsc 200.0 230.0 Constellation ImportedFromStarDB"
-        root.ExecuteCommand(command)
+        root.execute_command(command)
 
-        star: "IStar" = clr.CastAs(root.GetObjectFromPath("Star/Star-65474"), IStar)
+        star: "IStar" = clr.CastAs(root.get_object_from_path("Star/Star-65474"), IStar)
 
     # endregion

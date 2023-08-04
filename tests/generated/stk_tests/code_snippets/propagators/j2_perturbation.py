@@ -29,18 +29,18 @@ class J2Perturbation(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         J2Perturbation.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eSatellite, J2Perturbation.m_DefaultName
             ),
             ISatellite,
         )
-        CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
+        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eSatellite, J2Perturbation.m_DefaultName
         )
         J2Perturbation.m_Object = None
@@ -53,24 +53,24 @@ class J2Perturbation(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "ISatellite"):
         # Set propagator to SGP4
-        satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
+        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorJ2Perturbation)
 
         # J2 Perturbation propagator
-        j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ2Perturbation)
+        j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
 
         # Configure time period
-        j2prop.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
-        j2prop.Step = 60.0
+        j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
+        j2prop.step = 60.0
 
         # Configure propagator initial state
-        initial: "IVehicleJxInitialState" = j2prop.InitialState
-        initial.Representation.Epoch = "1 Jan 2012 12:00:00.000"
-        initial.Representation.AssignCartesian(
+        initial: "IVehicleJxInitialState" = j2prop.initial_state
+        initial.representation.epoch = "1 Jan 2012 12:00:00.000"
+        initial.representation.assign_cartesian(
             AgECoordinateSystem.eCoordinateSystemFixed, -1514.4, -6790.1, -1.25, 4.8151, 1.771, 5.6414
         )  # in km/sec
-        initial.EllipseOptions = AgEVeEllipseOptions.eSecularlyPrecessing
+        initial.ellipse_options = AgEVeEllipseOptions.eSecularlyPrecessing
 
         # Propagate
-        j2prop.Propagate()
+        j2prop.propagate()
 
     # endregion

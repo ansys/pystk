@@ -38,42 +38,42 @@ class VehicleVO(CodeSnippetsTestBase):
     # region ConfigureVeVOPass
     def test_ConfigureVeVOPass(self):
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
-        self.ConfigureVeVOPass(sat.VO.Pass)
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
+        self.ConfigureVeVOPass(sat.vo.pass_method)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
 
     def ConfigureVeVOPass(self, veVoPass: "IVehicleVOPass"):
         # Set lead data type to fraction, retrieved IAgVeGfxLeadData implementation
-        veVoPass.TrackData.PassData.GroundTrack.SetLeadDataType(AgELeadTrailData.eDataQuarter)
+        veVoPass.track_data.pass_data.ground_track.set_lead_data_type(AgELeadTrailData.eDataQuarter)
 
-        veVoPass.TrackData.PassData.GroundTrack.SetTrailDataType(AgELeadTrailData.eDataHalf)
-        veVoPass.TrackData.PassData.Orbit.SetLeadDataType(AgELeadTrailData.eDataQuarter)
-        veVoPass.TrackData.PassData.Orbit.SetTrailSameAsLead()
+        veVoPass.track_data.pass_data.ground_track.set_trail_data_type(AgELeadTrailData.eDataHalf)
+        veVoPass.track_data.pass_data.orbit.set_lead_data_type(AgELeadTrailData.eDataQuarter)
+        veVoPass.track_data.pass_data.orbit.set_trail_same_as_lead()
 
-        veVoPass.TickMarks.GroundTrack.IsVisible = True
-        veVoPass.TickMarks.GroundTrack.SetTickDataType(AgETickData.eTickDataRadial)
-        veVoPass.TickMarks.Orbit.IsVisible = True
-        veVoPass.TickMarks.Orbit.SetTickDataType(AgETickData.eTickDataRadialAndCrossTrack)
-        veVoPass.TickMarks.TimeBetweenTicks = 180
+        veVoPass.tick_marks.ground_track.is_visible = True
+        veVoPass.tick_marks.ground_track.set_tick_data_type(AgETickData.eTickDataRadial)
+        veVoPass.tick_marks.orbit.is_visible = True
+        veVoPass.tick_marks.orbit.set_tick_data_type(AgETickData.eTickDataRadialAndCrossTrack)
+        veVoPass.tick_marks.time_between_ticks = 180
 
     # endregion
 
     # region ConfigureVeVODropline
     def test_ConfigureVeVODropline(self):
         satellite: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        self.ConfigureVeVODropline(satellite.VO.DropLines.Orbit[0])
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
+        self.ConfigureVeVODropline(satellite.vo.drop_lines.orbit[0])
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "satellite1")
 
     def ConfigureVeVODropline(self, dropLine: "IVehicleVODropLinePathItem"):
-        dropLine.IsVisible = True
-        dropLine.Use2DColor = False
-        dropLine.Color = Color.Red
-        dropLine.LineStyle = AgELineStyle.eDashed
-        dropLine.LineWidth = AgELineWidth.e4
-        dropLine.Interval = 100.0  # in sec
+        dropLine.is_visible = True
+        dropLine.use2_d_color = False
+        dropLine.color = Color.Red
+        dropLine.line_style = AgELineStyle.eDashed
+        dropLine.line_width = AgELineWidth.e4
+        dropLine.interval = 100.0  # in sec
 
     # endregion

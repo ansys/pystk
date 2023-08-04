@@ -10,33 +10,35 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
 
     # region DetermineIfEpochOccuredInIntervalCollection
     def test_DetermineIfEpochOccuredInIntervalCollection(self):
-        self.DetermineIfEpochOccuredInIntervalCollection(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
+        self.DetermineIfEpochOccuredInIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
     def DetermineIfEpochOccuredInIntervalCollection(self, provider: "IAnalysisWorkbenchProvider"):
         eventCollName: str = "LightingIntervals"
-        intervalVectorCollection: "ITimeToolEventIntervalCollection" = provider.EventIntervalCollections[eventCollName]
+        intervalVectorCollection: "ITimeToolEventIntervalCollection" = provider.event_interval_collections[
+            eventCollName
+        ]
 
         # any time that the vehicle has ephemeris its time will occur in the LightingIntervals collection (as a sunlit, penumbra or umbra time)
         dateDuringEphem: str = "1 Jan 2012 20:00:00"
 
-        occurredResult: "ITimeToolEventIntervalCollectionOccurredResult" = intervalVectorCollection.Occurred(
+        occurredResult: "ITimeToolEventIntervalCollectionOccurredResult" = intervalVectorCollection.occurred(
             dateDuringEphem
         )
 
-        Assert.assertTrue(occurredResult.IsValid)
+        Assert.assertTrue(occurredResult.is_valid)
 
-        Console.WriteLine("Occurred at {0} index", occurredResult.Index)
+        Console.WriteLine("Occurred at {0} index", occurredResult.index)
 
         # Use the index from IAgCrdnEventIntervalCollectionOccurredResult as the index to IAgCrdnIntervalsVectorResult.IntervalCollections
-        intervalResult: "ITimeToolIntervalsVectorResult" = intervalVectorCollection.FindIntervalCollection()
-        intervalCollection: "ITimeToolIntervalCollection" = intervalResult.IntervalCollections[occurredResult.Index]
+        intervalResult: "ITimeToolIntervalsVectorResult" = intervalVectorCollection.find_interval_collection()
+        intervalCollection: "ITimeToolIntervalCollection" = intervalResult.interval_collections[occurredResult.index]
 
         dateNotDuringEphem: str = "1 May 1980 04:30:00.000"
-        occurredResult2: "ITimeToolEventIntervalCollectionOccurredResult" = intervalVectorCollection.Occurred(
+        occurredResult2: "ITimeToolEventIntervalCollectionOccurredResult" = intervalVectorCollection.occurred(
             dateNotDuringEphem
         )
 
-        Assert.assertFalse(occurredResult2.IsValid)
+        Assert.assertFalse(occurredResult2.is_valid)
         Console.WriteLine(
             "Did not find time {0} during eventIntervalCollection {1}'s times.", dateNotDuringEphem, eventCollName
         )
@@ -45,19 +47,21 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
 
     # region DetermineIntervalsInEventIntervalCollection
     def test_DetermineIntervalsInEventIntervalCollection(self):
-        self.DetermineIntervalsInEventIntervalCollection(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
+        self.DetermineIntervalsInEventIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
     def DetermineIntervalsInEventIntervalCollection(self, provider: "IAnalysisWorkbenchProvider"):
-        intervalCollection: "ITimeToolEventIntervalCollection" = provider.EventIntervalCollections["LightingIntervals"]
+        intervalCollection: "ITimeToolEventIntervalCollection" = provider.event_interval_collections[
+            "LightingIntervals"
+        ]
 
-        intervalResult: "ITimeToolIntervalsVectorResult" = intervalCollection.FindIntervalCollection()
-        if intervalResult.IsValid:
+        intervalResult: "ITimeToolIntervalsVectorResult" = intervalCollection.find_interval_collection()
+        if intervalResult.is_valid:
             intervals: "ITimeToolIntervalCollection"
-            for intervals in intervalResult.IntervalCollections:
+            for intervals in intervalResult.interval_collections:
                 interval: "ITimeToolInterval"
                 for interval in intervals:
-                    Console.WriteLine(("Start: " + str(interval.Start)))
-                    Console.WriteLine(("Start: " + str(interval.Stop)))
+                    Console.WriteLine(("Start: " + str(interval.start)))
+                    Console.WriteLine(("Start: " + str(interval.stop)))
 
     # endregion
 
@@ -68,11 +72,11 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventIntervalCollection(TestBase.Application)
 
     def CreateSignaledEventIntervalCollection(self, stkRoot: "IStkObjectRoot"):
-        satelliteVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Satellite/LEO").Vgt
-        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.GetObjectFromPath("Aircraft/UAV").Vgt
+        satelliteVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
+        aircraftVgtProvider: "IAnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
 
         intervalCollection: "ITimeToolEventIntervalCollection" = (
-            satelliteVgtProvider.EventIntervalCollections.Factory.CreateEventIntervalCollectionSignaled(
+            satelliteVgtProvider.event_interval_collections.factory.create_event_interval_collection_signaled(
                 "MyIntervalCollectionSignaled", "MyDescription"
             )
         )
@@ -80,37 +84,37 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
             intervalCollection, ITimeToolEventIntervalCollectionSignaled
         )
 
-        asCollectionSignaled.OriginalCollection = aircraftVgtProvider.EventIntervalCollections["LightingIntervals"]
-        asCollectionSignaled.BaseClockLocation = satelliteVgtProvider.Points["Center"]
-        asCollectionSignaled.TargetClockLocation = aircraftVgtProvider.Points["Center"]
+        asCollectionSignaled.original_collection = aircraftVgtProvider.event_interval_collections["LightingIntervals"]
+        asCollectionSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
+        asCollectionSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asCollectionSignaled.SignalSense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
+        asCollectionSignaled.signal_sense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
         basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(
-            asCollectionSignaled.SignalDelay, ITimeToolSignalDelayBasic
+            asCollectionSignaled.signal_delay, ITimeToolSignalDelayBasic
         )
-        basicSignalDelay.SpeedOption = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
+        basicSignalDelay.speed_option = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
 
         # Uses current Time unit preference, this code snippet assumes seconds.
-        basicSignalDelay.TimeDelayConvergence = 0.002
+        basicSignalDelay.time_delay_convergence = 0.002
 
-        intervalResult: "ITimeToolIntervalsVectorResult" = intervalCollection.FindIntervalCollection()
-        if intervalResult.IsValid:
+        intervalResult: "ITimeToolIntervalsVectorResult" = intervalCollection.find_interval_collection()
+        if intervalResult.is_valid:
             intervals: "ITimeToolIntervalCollection"
-            for intervals in intervalResult.IntervalCollections:
+            for intervals in intervalResult.interval_collections:
                 interval: "ITimeToolInterval"
                 for interval in intervals:
-                    Console.WriteLine(("Start: " + str(interval.Start)))
-                    Console.WriteLine(("Start: " + str(interval.Stop)))
+                    Console.WriteLine(("Start: " + str(interval.start)))
+                    Console.WriteLine(("Start: " + str(interval.stop)))
 
     # endregion
 
     # region CreateLightingEventIntervalCollection
     def test_CreateLightingEventIntervalCollection(self):
-        self.CreateLightingEventIntervalCollection(TestBase.Application.GetObjectFromPath("Satellite/LEO").Vgt)
+        self.CreateLightingEventIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
     def CreateLightingEventIntervalCollection(self, provider: "IAnalysisWorkbenchProvider"):
         intervalCollection: "ITimeToolEventIntervalCollection" = (
-            provider.EventIntervalCollections.Factory.CreateEventIntervalCollectionLighting(
+            provider.event_interval_collections.factory.create_event_interval_collection_lighting(
                 "MyIntervalCollectionLightning", "MyDescription"
             )
         )
@@ -119,17 +123,17 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         )
 
         # Optionally use a separate central body
-        asCollectionLightning.UseObjectEclipsingBodies = True
-        asCollectionLightning.Location = provider.Points["Center"]
-        asCollectionLightning.EclipsingBodies = ["Saturn", "Jupiter"]
+        asCollectionLightning.use_object_eclipsing_bodies = True
+        asCollectionLightning.location = provider.points["Center"]
+        asCollectionLightning.eclipsing_bodies = ["Saturn", "Jupiter"]
 
-        intervalResult: "ITimeToolIntervalsVectorResult" = intervalCollection.FindIntervalCollection()
-        if intervalResult.IsValid:
+        intervalResult: "ITimeToolIntervalsVectorResult" = intervalCollection.find_interval_collection()
+        if intervalResult.is_valid:
             intervals: "ITimeToolIntervalCollection"
-            for intervals in intervalResult.IntervalCollections:
+            for intervals in intervalResult.interval_collections:
                 interval: "ITimeToolInterval"
                 for interval in intervals:
-                    Console.WriteLine(("Start: " + str(interval.Start)))
-                    Console.WriteLine(("Start: " + str(interval.Stop)))
+                    Console.WriteLine(("Start: " + str(interval.start)))
+                    Console.WriteLine(("Start: " + str(interval.stop)))
 
     # endregion

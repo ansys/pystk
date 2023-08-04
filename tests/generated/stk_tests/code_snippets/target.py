@@ -28,7 +28,7 @@ class Target(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         self.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eTarget, Target.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eTarget, Target.m_DefaultName),
             ITarget,
         )
 
@@ -36,7 +36,7 @@ class Target(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eTarget, Target.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eTarget, Target.m_DefaultName)
         self.m_Object = None
 
     # endregion
@@ -49,7 +49,7 @@ class Target(CodeSnippetsTestBase):
         # Create the Target on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget: "ITarget" = clr.CastAs(
-            root.CurrentScenario.Children.New(AgESTKObjectType.eAreaTarget, "MyAreaTarget"), ITarget
+            root.current_scenario.children.new(AgESTKObjectType.eAreaTarget, "MyAreaTarget"), ITarget
         )
 
     # endregion
@@ -59,8 +59,8 @@ class Target(CodeSnippetsTestBase):
         self.ChangeTargetPosition(self.m_Object)
 
     def ChangeTargetPosition(self, target: "ITarget"):
-        pos: "IPosition" = target.Position
-        pos.AssignGeodetic(39.95, 15.58, 231.54)
+        pos: "IPosition" = target.position
+        pos.assign_geodetic(39.95, 15.58, 231.54)
 
     # endregion
 
@@ -69,14 +69,14 @@ class Target(CodeSnippetsTestBase):
         self.ConfigureTargetAzElMask(self.m_Object, TestBase.GetScenarioFile("CodeSnippetsTests", "maskfile.aem"))
 
     def ConfigureTargetAzElMask(self, target: "ITarget", maskfile: str):
-        target.UseLocalTimeOffset = True
-        target.LocalTimeOffset = 200.0
-        target.UseTerrain = True
+        target.use_local_time_offset = True
+        target.local_time_offset = 200.0
+        target.use_terrain = True
         # Note, if SetAzElMask is set to a type other than AgEAzElMaskType.eMaskFile,
         # the second parameter is ignored.
-        target.SetAzElMask(AgEAzElMaskType.eMaskFile, maskfile)
-        target.TerrainNorm = AgETerrainNormType.eSlopeAzimuth
-        target.AltRef = AgEAltRefType.eMSL
-        target.HeightAboveGround = 1472.0
+        target.set_az_el_mask(AgEAzElMaskType.eMaskFile, maskfile)
+        target.terrain_norm = AgETerrainNormType.eSlopeAzimuth
+        target.alt_ref = AgEAltRefType.eMSL
+        target.height_above_ground = 1472.0
 
     # endregion

@@ -39,13 +39,13 @@ class IStrategyMATLABNav(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetFunctionName"] = _raise_uninitialized_error
-        self.__dict__["_SetFunctionName"] = _raise_uninitialized_error
-        self.__dict__["_IsFunctionPathValid"] = _raise_uninitialized_error
-        self.__dict__["_GetCheckForErrors"] = _raise_uninitialized_error
-        self.__dict__["_SetCheckForErrors"] = _raise_uninitialized_error
-        self.__dict__["_GetDisplayOutput"] = _raise_uninitialized_error
-        self.__dict__["_SetDisplayOutput"] = _raise_uninitialized_error
+        self.__dict__["_get_function_name"] = _raise_uninitialized_error
+        self.__dict__["_set_function_name"] = _raise_uninitialized_error
+        self.__dict__["_is_function_path_valid"] = _raise_uninitialized_error
+        self.__dict__["_get_check_for_errors"] = _raise_uninitialized_error
+        self.__dict__["_set_check_for_errors"] = _raise_uninitialized_error
+        self.__dict__["_get_display_output"] = _raise_uninitialized_error
+        self.__dict__["_set_display_output"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IStrategyMATLABNav._uuid))
             if pUnk is not None:
@@ -57,13 +57,13 @@ class IStrategyMATLABNav(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IStrategyMATLABNav = agcom.GUID(IStrategyMATLABNav._uuid)
         vtable_offset_local = IStrategyMATLABNav._vtable_offset - 1
-        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+5, agcom.VARIANT_BOOL)
-        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+7, agcom.VARIANT_BOOL)
+        self.__dict__["_get_function_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_set_function_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_is_function_path_valid"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_check_for_errors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_check_for_errors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+5, agcom.VARIANT_BOOL)
+        self.__dict__["_get_display_output"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_display_output"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABNav, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -78,49 +78,49 @@ class IStrategyMATLABNav(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStrategyMATLABNav.")
     
     @property
-    def FunctionName(self) -> str:
+    def function_name(self) -> str:
         """The name of the MATLAB function."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetFunctionName"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_function_name"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @FunctionName.setter
-    def FunctionName(self, newVal:str) -> None:
+    @function_name.setter
+    def function_name(self, newVal:str) -> None:
         """The name of the MATLAB function."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetFunctionName"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_function_name"](arg_newVal.COM_val))
 
-    def IsFunctionPathValid(self) -> bool:
+    def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_IsFunctionPathValid"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_is_function_path_valid"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def CheckForErrors(self) -> bool:
+    def check_for_errors(self) -> bool:
         """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCheckForErrors"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_check_for_errors"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @CheckForErrors.setter
-    def CheckForErrors(self, newVal:bool) -> None:
+    @check_for_errors.setter
+    def check_for_errors(self, newVal:bool) -> None:
         """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetCheckForErrors"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_check_for_errors"](arg_newVal.COM_val))
 
     @property
-    def DisplayOutput(self) -> bool:
+    def display_output(self) -> bool:
         """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetDisplayOutput"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_display_output"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @DisplayOutput.setter
-    def DisplayOutput(self, newVal:bool) -> None:
+    @display_output.setter
+    def display_output(self, newVal:bool) -> None:
         """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetDisplayOutput"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_display_output"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{e53fcce4-1a17-488d-9053-c236d27b8b6e}", IStrategyMATLABNav)
@@ -133,13 +133,13 @@ class IStrategyMATLABProfile(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetFunctionName"] = _raise_uninitialized_error
-        self.__dict__["_SetFunctionName"] = _raise_uninitialized_error
-        self.__dict__["_IsFunctionPathValid"] = _raise_uninitialized_error
-        self.__dict__["_GetCheckForErrors"] = _raise_uninitialized_error
-        self.__dict__["_SetCheckForErrors"] = _raise_uninitialized_error
-        self.__dict__["_GetDisplayOutput"] = _raise_uninitialized_error
-        self.__dict__["_SetDisplayOutput"] = _raise_uninitialized_error
+        self.__dict__["_get_function_name"] = _raise_uninitialized_error
+        self.__dict__["_set_function_name"] = _raise_uninitialized_error
+        self.__dict__["_is_function_path_valid"] = _raise_uninitialized_error
+        self.__dict__["_get_check_for_errors"] = _raise_uninitialized_error
+        self.__dict__["_set_check_for_errors"] = _raise_uninitialized_error
+        self.__dict__["_get_display_output"] = _raise_uninitialized_error
+        self.__dict__["_set_display_output"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IStrategyMATLABProfile._uuid))
             if pUnk is not None:
@@ -151,13 +151,13 @@ class IStrategyMATLABProfile(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IStrategyMATLABProfile = agcom.GUID(IStrategyMATLABProfile._uuid)
         vtable_offset_local = IStrategyMATLABProfile._vtable_offset - 1
-        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+5, agcom.VARIANT_BOOL)
-        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+7, agcom.VARIANT_BOOL)
+        self.__dict__["_get_function_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_set_function_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_is_function_path_valid"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_check_for_errors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_check_for_errors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+5, agcom.VARIANT_BOOL)
+        self.__dict__["_get_display_output"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_display_output"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABProfile, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -172,49 +172,49 @@ class IStrategyMATLABProfile(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStrategyMATLABProfile.")
     
     @property
-    def FunctionName(self) -> str:
+    def function_name(self) -> str:
         """The name of the MATLAB function."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetFunctionName"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_function_name"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @FunctionName.setter
-    def FunctionName(self, newVal:str) -> None:
+    @function_name.setter
+    def function_name(self, newVal:str) -> None:
         """The name of the MATLAB function."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetFunctionName"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_function_name"](arg_newVal.COM_val))
 
-    def IsFunctionPathValid(self) -> bool:
+    def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_IsFunctionPathValid"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_is_function_path_valid"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def CheckForErrors(self) -> bool:
+    def check_for_errors(self) -> bool:
         """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCheckForErrors"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_check_for_errors"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @CheckForErrors.setter
-    def CheckForErrors(self, newVal:bool) -> None:
+    @check_for_errors.setter
+    def check_for_errors(self, newVal:bool) -> None:
         """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetCheckForErrors"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_check_for_errors"](arg_newVal.COM_val))
 
     @property
-    def DisplayOutput(self) -> bool:
+    def display_output(self) -> bool:
         """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetDisplayOutput"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_display_output"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @DisplayOutput.setter
-    def DisplayOutput(self, newVal:bool) -> None:
+    @display_output.setter
+    def display_output(self, newVal:bool) -> None:
         """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetDisplayOutput"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_display_output"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{c5c0a490-9e7d-4ff9-95e9-9c10ed89500b}", IStrategyMATLABProfile)
@@ -227,13 +227,13 @@ class IStrategyMATLABFull3D(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetFunctionName"] = _raise_uninitialized_error
-        self.__dict__["_SetFunctionName"] = _raise_uninitialized_error
-        self.__dict__["_IsFunctionPathValid"] = _raise_uninitialized_error
-        self.__dict__["_GetCheckForErrors"] = _raise_uninitialized_error
-        self.__dict__["_SetCheckForErrors"] = _raise_uninitialized_error
-        self.__dict__["_GetDisplayOutput"] = _raise_uninitialized_error
-        self.__dict__["_SetDisplayOutput"] = _raise_uninitialized_error
+        self.__dict__["_get_function_name"] = _raise_uninitialized_error
+        self.__dict__["_set_function_name"] = _raise_uninitialized_error
+        self.__dict__["_is_function_path_valid"] = _raise_uninitialized_error
+        self.__dict__["_get_check_for_errors"] = _raise_uninitialized_error
+        self.__dict__["_set_check_for_errors"] = _raise_uninitialized_error
+        self.__dict__["_get_display_output"] = _raise_uninitialized_error
+        self.__dict__["_set_display_output"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IStrategyMATLABFull3D._uuid))
             if pUnk is not None:
@@ -245,13 +245,13 @@ class IStrategyMATLABFull3D(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IStrategyMATLABFull3D = agcom.GUID(IStrategyMATLABFull3D._uuid)
         vtable_offset_local = IStrategyMATLABFull3D._vtable_offset - 1
-        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+5, agcom.VARIANT_BOOL)
-        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+7, agcom.VARIANT_BOOL)
+        self.__dict__["_get_function_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_set_function_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_is_function_path_valid"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_check_for_errors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+4, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_check_for_errors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+5, agcom.VARIANT_BOOL)
+        self.__dict__["_get_display_output"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_display_output"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLABFull3D, vtable_offset_local+7, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -266,49 +266,49 @@ class IStrategyMATLABFull3D(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStrategyMATLABFull3D.")
     
     @property
-    def FunctionName(self) -> str:
+    def function_name(self) -> str:
         """The name of the MATLAB function."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetFunctionName"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_function_name"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @FunctionName.setter
-    def FunctionName(self, newVal:str) -> None:
+    @function_name.setter
+    def function_name(self, newVal:str) -> None:
         """The name of the MATLAB function."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetFunctionName"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_function_name"](arg_newVal.COM_val))
 
-    def IsFunctionPathValid(self) -> bool:
+    def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_IsFunctionPathValid"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_is_function_path_valid"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def CheckForErrors(self) -> bool:
+    def check_for_errors(self) -> bool:
         """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCheckForErrors"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_check_for_errors"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @CheckForErrors.setter
-    def CheckForErrors(self, newVal:bool) -> None:
+    @check_for_errors.setter
+    def check_for_errors(self, newVal:bool) -> None:
         """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetCheckForErrors"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_check_for_errors"](arg_newVal.COM_val))
 
     @property
-    def DisplayOutput(self) -> bool:
+    def display_output(self) -> bool:
         """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetDisplayOutput"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_display_output"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @DisplayOutput.setter
-    def DisplayOutput(self, newVal:bool) -> None:
+    @display_output.setter
+    def display_output(self, newVal:bool) -> None:
         """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetDisplayOutput"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_display_output"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{eb6b432e-50fc-4546-9d4b-a4285ae96a9d}", IStrategyMATLABFull3D)
@@ -321,33 +321,33 @@ class IStrategyMATLAB3DGuidance(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetTargetName"] = _raise_uninitialized_error
-        self.__dict__["_SetTargetName"] = _raise_uninitialized_error
-        self.__dict__["_GetValidTargetNames"] = _raise_uninitialized_error
-        self.__dict__["_GetTargetResolution"] = _raise_uninitialized_error
-        self.__dict__["_SetTargetResolution"] = _raise_uninitialized_error
-        self.__dict__["_GetUseStopTimeToGo"] = _raise_uninitialized_error
-        self.__dict__["_GetStopTimeToGo"] = _raise_uninitialized_error
-        self.__dict__["_SetStopTimeToGo"] = _raise_uninitialized_error
-        self.__dict__["_GetUseStopSlantRange"] = _raise_uninitialized_error
-        self.__dict__["_GetStopSlantRange"] = _raise_uninitialized_error
-        self.__dict__["_SetStopSlantRange"] = _raise_uninitialized_error
-        self.__dict__["_GetFunctionName"] = _raise_uninitialized_error
-        self.__dict__["_SetFunctionName"] = _raise_uninitialized_error
-        self.__dict__["_IsFunctionPathValid"] = _raise_uninitialized_error
-        self.__dict__["_GetCheckForErrors"] = _raise_uninitialized_error
-        self.__dict__["_SetCheckForErrors"] = _raise_uninitialized_error
-        self.__dict__["_GetDisplayOutput"] = _raise_uninitialized_error
-        self.__dict__["_SetDisplayOutput"] = _raise_uninitialized_error
-        self.__dict__["_GetClosureMode"] = _raise_uninitialized_error
-        self.__dict__["_SetClosureMode"] = _raise_uninitialized_error
-        self.__dict__["_GetHOBSMaxAngle"] = _raise_uninitialized_error
-        self.__dict__["_SetHOBSMaxAngle"] = _raise_uninitialized_error
-        self.__dict__["_GetHOBSAngleTol"] = _raise_uninitialized_error
-        self.__dict__["_SetHOBSAngleTol"] = _raise_uninitialized_error
-        self.__dict__["_GetComputeTASDot"] = _raise_uninitialized_error
-        self.__dict__["_SetComputeTASDot"] = _raise_uninitialized_error
-        self.__dict__["_GetAirspeedOptions"] = _raise_uninitialized_error
+        self.__dict__["_get_target_name"] = _raise_uninitialized_error
+        self.__dict__["_set_target_name"] = _raise_uninitialized_error
+        self.__dict__["_get_valid_target_names"] = _raise_uninitialized_error
+        self.__dict__["_get_target_resolution"] = _raise_uninitialized_error
+        self.__dict__["_set_target_resolution"] = _raise_uninitialized_error
+        self.__dict__["_get_use_stop_time_to_go"] = _raise_uninitialized_error
+        self.__dict__["_get_stop_time_to_go"] = _raise_uninitialized_error
+        self.__dict__["_set_stop_time_to_go"] = _raise_uninitialized_error
+        self.__dict__["_get_use_stop_slant_range"] = _raise_uninitialized_error
+        self.__dict__["_get_stop_slant_range"] = _raise_uninitialized_error
+        self.__dict__["_set_stop_slant_range"] = _raise_uninitialized_error
+        self.__dict__["_get_function_name"] = _raise_uninitialized_error
+        self.__dict__["_set_function_name"] = _raise_uninitialized_error
+        self.__dict__["_is_function_path_valid"] = _raise_uninitialized_error
+        self.__dict__["_get_check_for_errors"] = _raise_uninitialized_error
+        self.__dict__["_set_check_for_errors"] = _raise_uninitialized_error
+        self.__dict__["_get_display_output"] = _raise_uninitialized_error
+        self.__dict__["_set_display_output"] = _raise_uninitialized_error
+        self.__dict__["_get_closure_mode"] = _raise_uninitialized_error
+        self.__dict__["_set_closure_mode"] = _raise_uninitialized_error
+        self.__dict__["_get_hobs_max_angle"] = _raise_uninitialized_error
+        self.__dict__["_set_hobs_max_angle"] = _raise_uninitialized_error
+        self.__dict__["_get_hobs_angle_tol"] = _raise_uninitialized_error
+        self.__dict__["_set_hobs_angle_tol"] = _raise_uninitialized_error
+        self.__dict__["_get_compute_tas_dot"] = _raise_uninitialized_error
+        self.__dict__["_set_compute_tas_dot"] = _raise_uninitialized_error
+        self.__dict__["_get_airspeed_options"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IStrategyMATLAB3DGuidance._uuid))
             if pUnk is not None:
@@ -359,33 +359,33 @@ class IStrategyMATLAB3DGuidance(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IStrategyMATLAB3DGuidance = agcom.GUID(IStrategyMATLAB3DGuidance._uuid)
         vtable_offset_local = IStrategyMATLAB3DGuidance._vtable_offset - 1
-        self.__dict__["_GetTargetName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetTargetName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_GetValidTargetNames"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+3, POINTER(agcom.SAFEARRAY))
-        self.__dict__["_GetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+4, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetTargetResolution"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+5, agcom.DOUBLE)
-        self.__dict__["_GetUseStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+7, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetStopTimeToGo"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+8, agcom.VARIANT_BOOL, agcom.DOUBLE)
-        self.__dict__["_GetUseStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+9, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+10, POINTER(agcom.DOUBLE))
-        self.__dict__["_SetStopSlantRange"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+11, agcom.VARIANT_BOOL, agcom.DOUBLE)
-        self.__dict__["_GetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+12, POINTER(agcom.BSTR))
-        self.__dict__["_SetFunctionName"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+13, agcom.BSTR)
-        self.__dict__["_IsFunctionPathValid"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+14, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+15, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetCheckForErrors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+16, agcom.VARIANT_BOOL)
-        self.__dict__["_GetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetDisplayOutput"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+18, agcom.VARIANT_BOOL)
-        self.__dict__["_GetClosureMode"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+19, POINTER(agcom.LONG))
-        self.__dict__["_SetClosureMode"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+20, agcom.LONG)
-        self.__dict__["_GetHOBSMaxAngle"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+21, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHOBSMaxAngle"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+22, agcom.VARIANT)
-        self.__dict__["_GetHOBSAngleTol"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+23, POINTER(agcom.VARIANT))
-        self.__dict__["_SetHOBSAngleTol"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+24, agcom.VARIANT)
-        self.__dict__["_GetComputeTASDot"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+25, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetComputeTASDot"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+26, agcom.VARIANT_BOOL)
-        self.__dict__["_GetAirspeedOptions"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+27, POINTER(agcom.PVOID))
+        self.__dict__["_get_target_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_set_target_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_get_valid_target_names"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+3, POINTER(agcom.SAFEARRAY))
+        self.__dict__["_get_target_resolution"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+4, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_target_resolution"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+5, agcom.DOUBLE)
+        self.__dict__["_get_use_stop_time_to_go"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+6, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_stop_time_to_go"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+7, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_stop_time_to_go"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+8, agcom.VARIANT_BOOL, agcom.DOUBLE)
+        self.__dict__["_get_use_stop_slant_range"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+9, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_stop_slant_range"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+10, POINTER(agcom.DOUBLE))
+        self.__dict__["_set_stop_slant_range"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+11, agcom.VARIANT_BOOL, agcom.DOUBLE)
+        self.__dict__["_get_function_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+12, POINTER(agcom.BSTR))
+        self.__dict__["_set_function_name"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+13, agcom.BSTR)
+        self.__dict__["_is_function_path_valid"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+14, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_check_for_errors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+15, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_check_for_errors"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+16, agcom.VARIANT_BOOL)
+        self.__dict__["_get_display_output"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_display_output"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+18, agcom.VARIANT_BOOL)
+        self.__dict__["_get_closure_mode"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+19, POINTER(agcom.LONG))
+        self.__dict__["_set_closure_mode"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+20, agcom.LONG)
+        self.__dict__["_get_hobs_max_angle"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+21, POINTER(agcom.VARIANT))
+        self.__dict__["_set_hobs_max_angle"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+22, agcom.VARIANT)
+        self.__dict__["_get_hobs_angle_tol"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+23, POINTER(agcom.VARIANT))
+        self.__dict__["_set_hobs_angle_tol"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+24, agcom.VARIANT)
+        self.__dict__["_get_compute_tas_dot"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+25, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_compute_tas_dot"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+26, agcom.VARIANT_BOOL)
+        self.__dict__["_get_airspeed_options"] = IAGFUNCTYPE(pUnk, IID_IStrategyMATLAB3DGuidance, vtable_offset_local+27, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -400,180 +400,180 @@ class IStrategyMATLAB3DGuidance(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStrategyMATLAB3DGuidance.")
     
     @property
-    def TargetName(self) -> str:
+    def target_name(self) -> str:
         """The target name."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetTargetName"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_target_name"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @TargetName.setter
-    def TargetName(self, newVal:str) -> None:
+    @target_name.setter
+    def target_name(self, newVal:str) -> None:
         """The target name."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetTargetName"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_target_name"](arg_newVal.COM_val))
 
     @property
-    def ValidTargetNames(self) -> list:
+    def valid_target_names(self) -> list:
         """Returns the valid target names."""
         with agmarshall.SAFEARRAY_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetValidTargetNames"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_valid_target_names"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
     @property
-    def TargetResolution(self) -> float:
+    def target_resolution(self) -> float:
         """The target position/velocity sampling resolution."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetTargetResolution"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_target_resolution"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @TargetResolution.setter
-    def TargetResolution(self, newVal:float) -> None:
+    @target_resolution.setter
+    def target_resolution(self, newVal:float) -> None:
         """The target position/velocity sampling resolution."""
         with agmarshall.DOUBLE_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetTargetResolution"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_target_resolution"](arg_newVal.COM_val))
 
     @property
-    def UseStopTimeToGo(self) -> bool:
+    def use_stop_time_to_go(self) -> bool:
         """The option to specify a time to go stopping condition."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetUseStopTimeToGo"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_use_stop_time_to_go"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def StopTimeToGo(self) -> float:
+    def stop_time_to_go(self) -> float:
         """The stop time from the target at which the maneuver will stop."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetStopTimeToGo"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_stop_time_to_go"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def SetStopTimeToGo(self, enable:bool, time:float) -> None:
+    def set_stop_time_to_go(self, enable:bool, time:float) -> None:
         """Set the option to use the stop time from target stopping condition and set the according value."""
         with agmarshall.VARIANT_BOOL_arg(enable) as arg_enable, \
              agmarshall.DOUBLE_arg(time) as arg_time:
-            agcls.evaluate_hresult(self.__dict__["_SetStopTimeToGo"](arg_enable.COM_val, arg_time.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_stop_time_to_go"](arg_enable.COM_val, arg_time.COM_val))
 
     @property
-    def UseStopSlantRange(self) -> bool:
+    def use_stop_slant_range(self) -> bool:
         """The option to specify a range from target stopping condition."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetUseStopSlantRange"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_use_stop_slant_range"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def StopSlantRange(self) -> float:
+    def stop_slant_range(self) -> float:
         """The range from the target at which the maneuver will stop."""
         with agmarshall.DOUBLE_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetStopSlantRange"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_stop_slant_range"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def SetStopSlantRange(self, enable:bool, range:float) -> None:
+    def set_stop_slant_range(self, enable:bool, range:float) -> None:
         """Set the option to use the stop slant range stopping condition and set the according value."""
         with agmarshall.VARIANT_BOOL_arg(enable) as arg_enable, \
              agmarshall.DOUBLE_arg(range) as arg_range:
-            agcls.evaluate_hresult(self.__dict__["_SetStopSlantRange"](arg_enable.COM_val, arg_range.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_stop_slant_range"](arg_enable.COM_val, arg_range.COM_val))
 
     @property
-    def FunctionName(self) -> str:
+    def function_name(self) -> str:
         """The name of the MATLAB function."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetFunctionName"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_function_name"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @FunctionName.setter
-    def FunctionName(self, newVal:str) -> None:
+    @function_name.setter
+    def function_name(self, newVal:str) -> None:
         """The name of the MATLAB function."""
         with agmarshall.BSTR_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetFunctionName"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_function_name"](arg_newVal.COM_val))
 
-    def IsFunctionPathValid(self) -> bool:
+    def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_IsFunctionPathValid"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_is_function_path_valid"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def CheckForErrors(self) -> bool:
+    def check_for_errors(self) -> bool:
         """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCheckForErrors"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_check_for_errors"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @CheckForErrors.setter
-    def CheckForErrors(self, newVal:bool) -> None:
+    @check_for_errors.setter
+    def check_for_errors(self, newVal:bool) -> None:
         """The option to check the function for errors."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetCheckForErrors"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_check_for_errors"](arg_newVal.COM_val))
 
     @property
-    def DisplayOutput(self) -> bool:
+    def display_output(self) -> bool:
         """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetDisplayOutput"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_display_output"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @DisplayOutput.setter
-    def DisplayOutput(self, newVal:bool) -> None:
+    @display_output.setter
+    def display_output(self, newVal:bool) -> None:
         """The option to display the output from the MATLAB function."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetDisplayOutput"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_display_output"](arg_newVal.COM_val))
 
     @property
-    def ClosureMode(self) -> "AgEAvtrClosureMode":
+    def closure_mode(self) -> "AgEAvtrClosureMode":
         """The closure mode for the guidance strategy."""
         with agmarshall.AgEnum_arg(AgEAvtrClosureMode) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetClosureMode"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_closure_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @ClosureMode.setter
-    def ClosureMode(self, newVal:"AgEAvtrClosureMode") -> None:
+    @closure_mode.setter
+    def closure_mode(self, newVal:"AgEAvtrClosureMode") -> None:
         """The closure mode for the guidance strategy."""
         with agmarshall.AgEnum_arg(AgEAvtrClosureMode, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetClosureMode"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_closure_mode"](arg_newVal.COM_val))
 
     @property
-    def HOBSMaxAngle(self) -> typing.Any:
+    def hobs_max_angle(self) -> typing.Any:
         """The closure high off boresight max angle."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetHOBSMaxAngle"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_hobs_max_angle"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @HOBSMaxAngle.setter
-    def HOBSMaxAngle(self, newVal:typing.Any) -> None:
+    @hobs_max_angle.setter
+    def hobs_max_angle(self, newVal:typing.Any) -> None:
         """The closure high off boresight max angle."""
         with agmarshall.VARIANT_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetHOBSMaxAngle"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_hobs_max_angle"](arg_newVal.COM_val))
 
     @property
-    def HOBSAngleTol(self) -> typing.Any:
+    def hobs_angle_tol(self) -> typing.Any:
         """The closure high off boresight angle tolerance."""
         with agmarshall.VARIANT_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetHOBSAngleTol"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_hobs_angle_tol"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @HOBSAngleTol.setter
-    def HOBSAngleTol(self, newVal:typing.Any) -> None:
+    @hobs_angle_tol.setter
+    def hobs_angle_tol(self, newVal:typing.Any) -> None:
         """The closure high off boresight angle tolerance."""
         with agmarshall.VARIANT_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetHOBSAngleTol"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_hobs_angle_tol"](arg_newVal.COM_val))
 
     @property
-    def ComputeTASDot(self) -> bool:
+    def compute_tas_dot(self) -> bool:
         """The option to allow MATLAB to compute the true airspeed for the aircraft."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetComputeTASDot"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_compute_tas_dot"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @ComputeTASDot.setter
-    def ComputeTASDot(self, newVal:bool) -> None:
+    @compute_tas_dot.setter
+    def compute_tas_dot(self, newVal:bool) -> None:
         """The option to allow MATLAB to compute the true airspeed for the aircraft."""
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetComputeTASDot"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_compute_tas_dot"](arg_newVal.COM_val))
 
     @property
-    def AirspeedOptions(self) -> "IBasicManeuverAirspeedOptions":
+    def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetAirspeedOptions"](byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_airspeed_options"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 

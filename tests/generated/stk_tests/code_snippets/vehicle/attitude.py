@@ -28,7 +28,7 @@ class Attitude(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         Attitude.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eSatellite, Attitude.m_DefaultName
             ),
             ISatellite,
@@ -38,7 +38,9 @@ class Attitude(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, Attitude.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
+            AgESTKObjectType.eSatellite, Attitude.m_DefaultName
+        )
         Attitude.m_Object = None
 
     # endregion
@@ -48,9 +50,9 @@ class Attitude(CodeSnippetsTestBase):
         self.SetAttitudeProfileTypeIsSupported(Attitude.m_Object)
 
     def SetAttitudeProfileTypeIsSupported(self, satellite: "ISatellite"):
-        standard: "IVehicleOrbitAttitudeStandard" = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
-        if standard.Basic.IsProfileTypeSupported(AgEVeProfile.eProfileSpinning):
-            standard.Basic.SetProfileType(AgEVeProfile.eProfileSpinning)
+        standard: "IVehicleOrbitAttitudeStandard" = clr.CastAs(satellite.attitude, IVehicleOrbitAttitudeStandard)
+        if standard.basic.is_profile_type_supported(AgEVeProfile.eProfileSpinning):
+            standard.basic.set_profile_type(AgEVeProfile.eProfileSpinning)
 
     # endregion
 
@@ -59,21 +61,21 @@ class Attitude(CodeSnippetsTestBase):
         self.AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(Attitude.m_Object)
 
     def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(self, satellite: "ISatellite"):
-        satellite.SetAttitudeType(AgEVeAttitude.eAttitudeStandard)
-        standard: "IVehicleOrbitAttitudeStandard" = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
-        standard.Basic.SetProfileType(AgEVeProfile.eProfileInertiallyFixed)
-        interfix: "IVehicleProfileInertial" = clr.CastAs(standard.Basic.Profile, IVehicleProfileInertial)
+        satellite.set_attitude_type(AgEVeAttitude.eAttitudeStandard)
+        standard: "IVehicleOrbitAttitudeStandard" = clr.CastAs(satellite.attitude, IVehicleOrbitAttitudeStandard)
+        standard.basic.set_profile_type(AgEVeProfile.eProfileInertiallyFixed)
+        interfix: "IVehicleProfileInertial" = clr.CastAs(standard.basic.profile, IVehicleProfileInertial)
 
-        interfix.Inertial.AssignQuaternion(-0.34298, -0.47081, 0.70345, 0.40725)
+        interfix.inertial.assign_quaternion(-0.34298, -0.47081, 0.70345, 0.40725)
 
     # endregion
 
     # region AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF
     def test_AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF(self):
-        dtTime: "IDate" = CodeSnippetsTestBase.m_Root.ConversionUtility.NewDate(
-            CodeSnippetsTestBase.m_Root.UnitPreferences.GetCurrentUnitAbbrv("DateFormat"), "1 Jan 2012 12:00:00.000"
+        dtTime: "IDate" = CodeSnippetsTestBase.m_Root.conversion_utility.new_date(
+            CodeSnippetsTestBase.m_Root.unit_preferences.get_current_unit_abbrv("DateFormat"), "1 Jan 2012 12:00:00.000"
         )
-        time: str = dtTime.Format("UTCG")
+        time: str = dtTime.format("UTCG")
         cpfQuaternion = [[time, 0.5, 0.5, 0.5, 0.5], [time, 0.125, 0.25, 0.5, 0.35], [time, 0.35, 0.4, 0.45, 0.5]]
         self.AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF(
             CodeSnippetsTestBase.m_Root, Attitude.m_Object, cpfQuaternion
@@ -82,12 +84,12 @@ class Attitude(CodeSnippetsTestBase):
     def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF(
         self, root: "IStkObjectRoot", satellite: "ISatellite", cpfQuaternion
     ):
-        satellite.SetAttitudeType(AgEVeAttitude.eAttitudeRealTime)
-        realtime: "IVehicleAttitudeRealTime" = clr.CastAs(satellite.Attitude, IVehicleAttitudeRealTime)
+        satellite.set_attitude_type(AgEVeAttitude.eAttitudeRealTime)
+        realtime: "IVehicleAttitudeRealTime" = clr.CastAs(satellite.attitude, IVehicleAttitudeRealTime)
 
         i: int = 0
         while i <= (len(cpfQuaternion) - 1):
-            realtime.AddCBFQuaternion(
+            realtime.add_cbf_quaternion(
                 cpfQuaternion[i][0],
                 float(cpfQuaternion[i][1]),
                 float(cpfQuaternion[i][2]),
@@ -105,16 +107,16 @@ class Attitude(CodeSnippetsTestBase):
 
     def AddsAttitudeDataBasedOnTimeOrderedSetOfEulerAngles(self, satellite: "ISatellite"):
         # Set Attitude to Standard
-        satellite.SetAttitudeType(AgEVeAttitude.eAttitudeStandard)
+        satellite.set_attitude_type(AgEVeAttitude.eAttitudeStandard)
         # Get IAgVeOrbitAttitudeStandard interface
-        standard: "IVehicleOrbitAttitudeStandard" = clr.CastAs(satellite.Attitude, IVehicleOrbitAttitudeStandard)
+        standard: "IVehicleOrbitAttitudeStandard" = clr.CastAs(satellite.attitude, IVehicleOrbitAttitudeStandard)
 
         # Set Profile to Inertially Fixed
-        standard.Basic.SetProfileType(AgEVeProfile.eProfileInertiallyFixed)
+        standard.basic.set_profile_type(AgEVeProfile.eProfileInertiallyFixed)
         # Get IAgVeProfileInertial interface
-        interfix: "IVehicleProfileInertial" = clr.CastAs(standard.Basic.Profile, IVehicleProfileInertial)
+        interfix: "IVehicleProfileInertial" = clr.CastAs(standard.basic.profile, IVehicleProfileInertial)
 
-        interfix.Inertial.AssignEulerAngles(AgEEulerOrientationSequence.e123, 20.1, 50.0, 20.0)
+        interfix.inertial.assign_euler_angles(AgEEulerOrientationSequence.e123, 20.1, 50.0, 20.0)
 
     # endregion
 
@@ -124,19 +126,19 @@ class Attitude(CodeSnippetsTestBase):
 
     def ConfigureRealTimeAttitude(self, satellite: "ISatellite"):
         # set attitude type to real time
-        satellite.SetAttitudeType(AgEVeAttitude.eAttitudeRealTime)
-        realtime: "IVehicleAttitudeRealTime" = clr.CastAs(satellite.Attitude, IVehicleAttitudeRealTime)
+        satellite.set_attitude_type(AgEVeAttitude.eAttitudeRealTime)
+        realtime: "IVehicleAttitudeRealTime" = clr.CastAs(satellite.attitude, IVehicleAttitudeRealTime)
 
         # Set our Attitude Look Ahead method to Extrapolate
-        realtime.LookAheadMethod = AgEVeLookAheadMethod.eExtrapolate
+        realtime.look_ahead_method = AgEVeLookAheadMethod.eExtrapolate
 
         # Duration
-        duration: "IVehicleDuration" = realtime.Duration
-        duration.LookAhead = 1600.0
-        duration.LookBehind = 1600.0
+        duration: "IVehicleDuration" = realtime.duration
+        duration.look_ahead = 1600.0
+        duration.look_behind = 1600.0
 
         # BlockFactor
-        realtime.BlockFactor = 40
-        realtime.DataReference.SetProfileType(AgEVeProfile.eProfileInertiallyFixed)
+        realtime.block_factor = 40
+        realtime.data_reference.set_profile_type(AgEVeProfile.eProfileInertiallyFixed)
 
     # endregion

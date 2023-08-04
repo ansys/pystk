@@ -39,14 +39,14 @@ class Conversions(CodeSnippetsTestBase):
         self.ConvertPositionToAnotherRepresentation(CodeSnippetsTestBase.m_Root)
 
     def ConvertPositionToAnotherRepresentation(self, root: "IStkObjectRoot"):
-        converter: "IConversionUtility" = root.ConversionUtility
+        converter: "IConversionUtility" = root.conversion_utility
 
         # ConvertPositionArray expects a two dimensional array of positions
         cartesianPositions = [[1216.47, -4736.12, 4081.39], [1000, -2000, 2000]]
 
         # Convert cartesian dates to cylindrical
         # ConvertPositionArray returns a two dimensional array of cartesian dates
-        cylindricalPositions = converter.ConvertPositionArray(
+        cylindricalPositions = converter.convert_position_array(
             AgEPositionType.eCartesian, cartesianPositions, AgEPositionType.eCylindrical
         )
 
@@ -65,21 +65,21 @@ class Conversions(CodeSnippetsTestBase):
 
     # region ConvertOrbitStateToAnotherRepresentation
     def test_ConvertOrbitStateToAnotherRepresentation(self):
-        CodeSnippetsTestBase.m_Root.NewScenario("ConvertOrbitStateToAnotherRepresentation")
+        CodeSnippetsTestBase.m_Root.new_scenario("ConvertOrbitStateToAnotherRepresentation")
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
-        sat.SetPropagatorType(AgEVePropagatorType.ePropagatorJ2Perturbation)
-        j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(sat.Propagator, IVehiclePropagatorJ2Perturbation)
+        sat.set_propagator_type(AgEVePropagatorType.ePropagatorJ2Perturbation)
+        j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(sat.propagator, IVehiclePropagatorJ2Perturbation)
 
-        self.ConvertOrbitStateToAnotherRepresentation(j2prop.InitialState.Representation)
+        self.ConvertOrbitStateToAnotherRepresentation(j2prop.initial_state.representation)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
-        CodeSnippetsTestBase.m_Root.CloseScenario()
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.close_scenario()
 
     def ConvertOrbitStateToAnotherRepresentation(self, orbit: "IOrbitState"):
         newOrbit: "IOrbitStateClassical" = clr.CastAs(
-            orbit.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
+            orbit.convert_to(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
         )
 
     # endregion
@@ -87,45 +87,45 @@ class Conversions(CodeSnippetsTestBase):
     # region QueryIAgDirectionAsAnotherRespresentation
 
     def test_QueryIAgDirectionAsAnotherRespresentation(self):
-        direction: "IDirection" = TestBase.Application.ConversionUtility.NewDirection()
+        direction: "IDirection" = TestBase.Application.conversion_utility.new_direction()
         self.QueryIAgDirectionAsAnotherRespresentation(direction)
 
     def QueryIAgDirectionAsAnotherRespresentation(self, direction: "IDirection"):
         b: typing.Any = None
         c: typing.Any = None
 
-        (b, c) = direction.QueryEuler(AgEEulerDirectionSequence.e12)
+        (b, c) = direction.query_euler(AgEEulerDirectionSequence.e12)
         Console.WriteLine("B = {0}, C = {1}", b, c)
         # Method 2
         # The Query functions returns a one dimension array
         # The number of column rows depends on the representation
-        euler = direction.QueryEulerArray(AgEEulerDirectionSequence.e12)
+        euler = direction.query_euler_array(AgEEulerDirectionSequence.e12)
         Console.WriteLine("B = {0}, C = {1}", euler[0], euler[1])
 
     # endregion
 
     # region AssignIAgOrbitStateToAnotherRepresentation
     def test_AssignIAgOrbitStateToAnotherRepresentation(self):
-        CodeSnippetsTestBase.m_Root.NewScenario("AssignIOrbitStateToAnotherRepresentation")
+        CodeSnippetsTestBase.m_Root.new_scenario("AssignIOrbitStateToAnotherRepresentation")
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
-        sat.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        oTwobody: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.Propagator, IVehiclePropagatorTwoBody)
+        sat.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        oTwobody: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
 
-        self.AssignIAgOrbitStateToAnotherRepresentation(oTwobody.InitialState.Representation)
+        self.AssignIAgOrbitStateToAnotherRepresentation(oTwobody.initial_state.representation)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
-        CodeSnippetsTestBase.m_Root.CloseScenario()
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.close_scenario()
 
     def AssignIAgOrbitStateToAnotherRepresentation(self, orbitState: "IOrbitState"):
         # orbitState can be extended to one of the other representations.
         # Here it is extended to Classical representation.
         newOrbitState: "IOrbitStateClassical" = clr.CastAs(
-            orbitState.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
+            orbitState.convert_to(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
         )
 
         # Set the new orbit state parameters
-        newOrbitState.AssignClassical(AgECoordinateSystem.eCoordinateSystemICRF, 12000000, 0, 1.8, 0, -1.8, 0)
+        newOrbitState.assign_classical(AgECoordinateSystem.eCoordinateSystemICRF, 12000000, 0, 1.8, 0, -1.8, 0)
 
     # endregion

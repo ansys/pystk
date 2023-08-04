@@ -29,16 +29,16 @@ class HPOP(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         HPOP.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, HPOP.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, HPOP.m_DefaultName),
             ISatellite,
         )
-        CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
+        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, HPOP.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, HPOP.m_DefaultName)
         HPOP.m_Object = None
 
     # endregion
@@ -49,29 +49,29 @@ class HPOP(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to HPOP
-        satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorHPOP)
+        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorHPOP)
 
         # Get IAgVePropagatorLOP interface
-        hpopProp: "IVehiclePropagatorHPOP" = clr.CastAs(satellite.Propagator, IVehiclePropagatorHPOP)
+        hpopProp: "IVehiclePropagatorHPOP" = clr.CastAs(satellite.propagator, IVehiclePropagatorHPOP)
 
         # Configure force model
-        hpopForceModel: "IVehicleHPOPForceModel" = hpopProp.ForceModel
-        hpopForceModel.CentralBodyGravity.File = r"STKData\CentralBodies\Earth\GGM02C.grv"
-        hpopForceModel.CentralBodyGravity.MaxDegree = 45
-        hpopForceModel.CentralBodyGravity.MaxOrder = 10
-        hpopForceModel.CentralBodyGravity.UseOceanTides = True
+        hpopForceModel: "IVehicleHPOPForceModel" = hpopProp.force_model
+        hpopForceModel.central_body_gravity.file = r"STKData\CentralBodies\Earth\GGM02C.grv"
+        hpopForceModel.central_body_gravity.max_degree = 45
+        hpopForceModel.central_body_gravity.max_order = 10
+        hpopForceModel.central_body_gravity.use_ocean_tides = True
 
-        hpopForceModel.Drag.Use = True
+        hpopForceModel.drag.use = True
         hpopDragModel: "IVehicleHPOPDragModelSpherical" = clr.CastAs(
-            hpopForceModel.Drag.DragModel, IVehicleHPOPDragModelSpherical
+            hpopForceModel.drag.drag_model, IVehicleHPOPDragModelSpherical
         )
-        hpopDragModel.Cd = 1.89
-        hpopDragModel.AreaMassRatio = 0.05
-        hpopForceModel.Drag.AtmosphericDensityModel = AgEAtmosphericDensityModel.eMSIS90
+        hpopDragModel.cd = 1.89
+        hpopDragModel.area_mass_ratio = 0.05
+        hpopForceModel.drag.atmospheric_density_model = AgEAtmosphericDensityModel.eMSIS90
 
-        hpopForceModel.ThirdBodyGravity.RemoveThirdBody("Moon")
+        hpopForceModel.third_body_gravity.remove_third_body("Moon")
 
         # Propagate
-        hpopProp.Propagate()
+        hpopProp.propagate()
 
     # endregion
