@@ -17,9 +17,9 @@ class CodeSnippetsTestBase(TestBase):
         CodeSnippetsTestBase.m_Root = TestBase.Application
         CodeSnippetsTestBase.SafeScenarioUnload()
 
-        TestBase.Application.NewScenario("CodeSnippetScenario")
-        scenario: "IScenario" = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
-        scenario.SetTimePeriod("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
+        TestBase.Application.new_scenario("CodeSnippetScenario")
+        scenario: "IScenario" = clr.Convert(TestBase.Application.current_scenario, IScenario)
+        scenario.set_time_period("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
 
     @staticmethod
     def InitializeWithNewScenario(makeNewScenario: bool):
@@ -27,17 +27,17 @@ class CodeSnippetsTestBase(TestBase):
         CodeSnippetsTestBase.m_Root = TestBase.Application
         CodeSnippetsTestBase.SafeScenarioUnload()
         if makeNewScenario:
-            TestBase.Application.NewScenario("CodeSnippetScenario")
-            scenario: "IScenario" = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
-            scenario.SetTimePeriod("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
+            TestBase.Application.new_scenario("CodeSnippetScenario")
+            scenario: "IScenario" = clr.Convert(TestBase.Application.current_scenario, IScenario)
+            scenario.set_time_period("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
 
     @staticmethod
     def Uninitialize():
         CodeSnippetsTestBase.SafeScenarioUnload()
-        CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
+        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
         TestBase.Uninitialize()
 
     @staticmethod
     def SafeScenarioUnload():
-        if CodeSnippetsTestBase.m_Root.CurrentScenario != None:
-            CodeSnippetsTestBase.m_Root.CloseScenario()
+        if CodeSnippetsTestBase.m_Root.current_scenario != None:
+            CodeSnippetsTestBase.m_Root.close_scenario()

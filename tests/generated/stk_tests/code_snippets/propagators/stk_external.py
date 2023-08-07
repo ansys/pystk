@@ -29,18 +29,18 @@ class StkExternal(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         StkExternal.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eSatellite, StkExternal.m_DefaultName
             ),
             ISatellite,
         )
-        CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
+        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eSatellite, StkExternal.m_DefaultName
         )
         StkExternal.m_Object = None
@@ -49,7 +49,7 @@ class StkExternal(CodeSnippetsTestBase):
 
     # region CreateSatelliteFromExternalEphemerisFile
     def test_CreateSatelliteFromExternalEphemerisFile(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eSatellite, StkExternal.m_DefaultName
         )
         self.CreateSatelliteFromExternalEphemerisFile(
@@ -58,15 +58,15 @@ class StkExternal(CodeSnippetsTestBase):
 
     def CreateSatelliteFromExternalEphemerisFile(self, root: "IStkObjectRoot", ephemerisFilePath: str):
         satellite: "ISatellite" = clr.CastAs(
-            root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "MySatellite"), ISatellite
+            root.current_scenario.children.new(AgESTKObjectType.eSatellite, "MySatellite"), ISatellite
         )
 
         # Configure propagator's external file path
-        satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorStkExternal)
-        ext: "IVehiclePropagatorStkExternal" = clr.CastAs(satellite.Propagator, IVehiclePropagatorStkExternal)
-        ext.Filename = ephemerisFilePath
+        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorStkExternal)
+        ext: "IVehiclePropagatorStkExternal" = clr.CastAs(satellite.propagator, IVehiclePropagatorStkExternal)
+        ext.filename = ephemerisFilePath
 
         # Propagate
-        ext.Propagate()
+        ext.propagate()
 
     # endregion

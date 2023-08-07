@@ -27,7 +27,7 @@ class AreaTarget(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         self.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eAreaTarget, AreaTarget.m_DefaultName
             ),
             IAreaTarget,
@@ -37,7 +37,7 @@ class AreaTarget(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eAreaTarget, AreaTarget.m_DefaultName
         )
         self.m_Object = None
@@ -46,17 +46,17 @@ class AreaTarget(CodeSnippetsTestBase):
 
     # region CreateAreaTargetOnCurrentScenarioCentralBody
     def test_CreateAreaTargetOnCurrentScenarioCentralBody(self):
-        (clr.Convert(self.m_Object, IStkObject)).Unload()
+        (clr.Convert(self.m_Object, IStkObject)).unload()
         self.CreateAreaTargetOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
         self.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children[AreaTarget.m_DefaultName], IAreaTarget
+            CodeSnippetsTestBase.m_Root.current_scenario.children[AreaTarget.m_DefaultName], IAreaTarget
         )
 
     def CreateAreaTargetOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the AreaTarget on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget: "IAreaTarget" = clr.CastAs(
-            root.CurrentScenario.Children.New(AgESTKObjectType.eAreaTarget, "MyAreaTarget"), IAreaTarget
+            root.current_scenario.children.new(AgESTKObjectType.eAreaTarget, "MyAreaTarget"), IAreaTarget
         )
 
     # endregion
@@ -68,13 +68,13 @@ class AreaTarget(CodeSnippetsTestBase):
     def SetAreaTargetBoundaryAndPosition(self, root: "IStkObjectRoot", areaTarget: "IAreaTarget"):
         # By using the fine grained interfaces,
         # BeginUpdate/EndUpdate prevent intermediate redraws
-        root.BeginUpdate()
-        areaTarget.AreaType = AgEAreaType.ePattern
-        patterns: "IAreaTypePatternCollection" = clr.CastAs(areaTarget.AreaTypeData, IAreaTypePatternCollection)
-        patterns.Add(40.04, -76.304)
-        patterns.Add(40.337, -75.922)
-        patterns.Add(40.028, -75.628)
-        root.EndUpdate()
+        root.begin_update()
+        areaTarget.area_type = AgEAreaType.ePattern
+        patterns: "IAreaTypePatternCollection" = clr.CastAs(areaTarget.area_type_data, IAreaTypePatternCollection)
+        patterns.add(40.04, -76.304)
+        patterns.add(40.337, -75.922)
+        patterns.add(40.028, -75.628)
+        root.end_update()
 
     # endregion
 
@@ -88,7 +88,7 @@ class AreaTarget(CodeSnippetsTestBase):
         boundary = [[40.04, -76.304], [40.337, -75.922], [40.028, -75.628]]
 
         # SetAreaTypePattern expects a two dimensional array of latitude and longitude values
-        areaTarget.CommonTasks.SetAreaTypePattern(boundary)
+        areaTarget.common_tasks.set_area_type_pattern(boundary)
 
     # endregion
 
@@ -99,13 +99,13 @@ class AreaTarget(CodeSnippetsTestBase):
     def SetEllipticalAreaTarget(self, root: "IStkObjectRoot", areaTarget: "IAreaTarget"):
         # By using the fine grained interfaces,
         # BeginUpdate/EndUpdate prevent intermediate redraws
-        root.BeginUpdate()
-        areaTarget.AreaType = AgEAreaType.eEllipse
-        ellipse: "IAreaTypeEllipse" = clr.CastAs(areaTarget.AreaTypeData, IAreaTypeEllipse)
-        ellipse.SemiMajorAxis = 85.25  # in km (distance dimension)
-        ellipse.SemiMinorAxis = 80.75  # in km (distance dimension)
-        ellipse.Bearing = 44  # in deg (angle dimension)
-        root.EndUpdate()
+        root.begin_update()
+        areaTarget.area_type = AgEAreaType.eEllipse
+        ellipse: "IAreaTypeEllipse" = clr.CastAs(areaTarget.area_type_data, IAreaTypeEllipse)
+        ellipse.semi_major_axis = 85.25  # in km (distance dimension)
+        ellipse.semi_minor_axis = 80.75  # in km (distance dimension)
+        ellipse.bearing = 44  # in deg (angle dimension)
+        root.end_update()
 
     # endregion
 
@@ -115,7 +115,7 @@ class AreaTarget(CodeSnippetsTestBase):
 
     def SetEllipticalAreaTargetCommonTask(self, root: "IStkObjectRoot", areaTarget: "IAreaTarget"):
         # By using the CommonTasks interface
-        areaTarget.CommonTasks.SetAreaTypeEllipse(85.25, 80.75, 44)
+        areaTarget.common_tasks.set_area_type_ellipse(85.25, 80.75, 44)
 
     # endregion
 
@@ -125,14 +125,14 @@ class AreaTarget(CodeSnippetsTestBase):
         self.ListAllPointsInAnAreaTarget(self.m_Object)
 
     def ListAllPointsInAnAreaTarget(self, areaTarget: "IAreaTarget"):
-        if areaTarget.AreaType == AgEAreaType.ePattern:
+        if areaTarget.area_type == AgEAreaType.ePattern:
             # Get IAgAreaTypePatternCollection interface from AreaTypeData
             patternPoints: "IAreaTypePatternCollection" = clr.CastAs(
-                areaTarget.AreaTypeData, IAreaTypePatternCollection
+                areaTarget.area_type_data, IAreaTypePatternCollection
             )
 
             # ToArray returns a two dimensional array of latitude and longitude points
-            areaTargetPoints = patternPoints.ToArray()
+            areaTargetPoints = patternPoints.to_array()
 
             Console.WriteLine("All points in Area Target")
 

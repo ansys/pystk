@@ -27,7 +27,7 @@ class RealTime(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         RealTime.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eLaunchVehicle, RealTime.m_DefaultName
             ),
             ILaunchVehicle,
@@ -37,7 +37,7 @@ class RealTime(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eLaunchVehicle, RealTime.m_DefaultName
         )
         RealTime.m_Object = None
@@ -46,79 +46,79 @@ class RealTime(CodeSnippetsTestBase):
 
     # region ConfigureRealtimePropagator
     def test_ConfigureRealtimePropagator(self):
-        scenarioObject: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario
+        scenarioObject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario
         scenario: "IScenario" = clr.CastAs(scenarioObject, IScenario)
 
         scenAnim: "IScenarioAnimation" = None
         anim: "IAnimation" = None
         holdTimeStepType: "AgEScTimeStepType" = AgEScTimeStepType.eScRealTime
         if not TestBase.NoGraphicsMode:
-            scenAnim = scenario.Animation
-            holdTimeStepType = scenAnim.AnimStepType
-            scenAnim.AnimStepType = AgEScTimeStepType.eScRealTime
+            scenAnim = scenario.animation
+            holdTimeStepType = scenAnim.anim_step_type
+            scenAnim.anim_step_type = AgEScTimeStepType.eScRealTime
             anim = clr.CastAs(CodeSnippetsTestBase.m_Root, IAnimation)
-            anim.PlayForward()
+            anim.play_forward()
 
-        RealTime.m_Object.SetTrajectoryType(AgEVePropagatorType.ePropagatorRealtime)
-        prop: "IVehiclePropagator" = RealTime.m_Object.Trajectory
+        RealTime.m_Object.set_trajectory_type(AgEVePropagatorType.ePropagatorRealtime)
+        prop: "IVehiclePropagator" = RealTime.m_Object.trajectory
         propRealtime: "IVehiclePropagatorRealtime" = clr.CastAs(prop, IVehiclePropagatorRealtime)
 
         self.ConfigureRealtimePropagator(CodeSnippetsTestBase.m_Root, propRealtime)
         if not TestBase.NoGraphicsMode:
-            anim.Pause()
+            anim.pause()
 
             # Cleanup
-            scenAnim.AnimStepType = holdTimeStepType
+            scenAnim.anim_step_type = holdTimeStepType
 
     def ConfigureRealtimePropagator(self, root: "IStkObjectRoot", propagator: "IVehiclePropagatorRealtime"):
         # Set Realtime Propagator settings if they should be other than
         # the defaults.
-        propagator.InterpolationOrder = 1
-        propagator.TimeoutGap = 30.0
-        propagator.TimeStep = 60.0
-        if propagator.IsLookAheadPropagatorSupported(AgELookAheadPropagator.eLookAheadTwoBody):
+        propagator.interpolation_order = 1
+        propagator.timeout_gap = 30.0
+        propagator.time_step = 60.0
+        if propagator.is_look_ahead_propagator_supported(AgELookAheadPropagator.eLookAheadTwoBody):
             # Set the look ahead type
-            propagator.LookAheadPropagator = AgELookAheadPropagator.eLookAheadTwoBody
+            propagator.look_ahead_propagator = AgELookAheadPropagator.eLookAheadTwoBody
 
             # Set the duration time to look ahead and look behind
-            duration: "IVehicleDuration" = propagator.Duration
-            duration.LookAhead = 3600.0
-            duration.LookBehind = 3600.0
+            duration: "IVehicleDuration" = propagator.duration
+            duration.look_ahead = 3600.0
+            duration.look_behind = 3600.0
 
             # Apply the Realtime Propagator settings
-            propagator.Propagate()
+            propagator.propagate()
 
     # endregion
 
     # region AddRealtimeLLAPositions
     def test_AddRealtimeLLAPositions(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        gv.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
-        (clr.Convert(gv.Route, IVehiclePropagatorRealtime)).Propagate()
-        realtime: "IVehiclePropagatorRealtime" = clr.CastAs(gv.Route, IVehiclePropagatorRealtime)
+        gv.set_route_type(AgEVePropagatorType.ePropagatorRealtime)
+        (clr.Convert(gv.route, IVehiclePropagatorRealtime)).propagate()
+        realtime: "IVehiclePropagatorRealtime" = clr.CastAs(gv.route, IVehiclePropagatorRealtime)
         self.AddRealtimeLLAPositions(realtime)
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
     def AddRealtimeLLAPositions(self, propagator: "IVehiclePropagatorRealtime"):
-        points: "IVehicleRealtimeLLAPoints" = propagator.PointBuilder.LLA
-        points.Add("1 Jan 2012 12:00:00.000", 39.693, -76.399, 0.039, 0.03458, 0.01223, 0.05402)
+        points: "IVehicleRealtimeLLAPoints" = propagator.point_builder.lla
+        points.add("1 Jan 2012 12:00:00.000", 39.693, -76.399, 0.039, 0.03458, 0.01223, 0.05402)
 
     # endregion
 
     # region AddRealtimeLLAPositionsInBatches
     def test_AddRealtimeLLAPositionsInBatches(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        gv.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
-        (clr.Convert(gv.Route, IVehiclePropagatorRealtime)).Propagate()
-        realtime: "IVehiclePropagatorRealtime" = clr.CastAs(gv.Route, IVehiclePropagatorRealtime)
+        gv.set_route_type(AgEVePropagatorType.ePropagatorRealtime)
+        (clr.Convert(gv.route, IVehiclePropagatorRealtime)).propagate()
+        realtime: "IVehiclePropagatorRealtime" = clr.CastAs(gv.route, IVehiclePropagatorRealtime)
         self.AddRealtimeLLAPositionsInBatches(realtime)
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
     def AddRealtimeLLAPositionsInBatches(self, propagator: "IVehiclePropagatorRealtime"):
         # Add realtime LLA points in batches
@@ -130,9 +130,9 @@ class RealTime(CodeSnippetsTestBase):
         lonrate = [0.01223, 0.01148, 0.01075]
         altrate = [0.05402, 0.0521, 0.05075]
 
-        points: "IVehicleRealtimeLLAPoints" = propagator.PointBuilder.LLA
+        points: "IVehicleRealtimeLLAPoints" = propagator.point_builder.lla
 
         # AddBatch expects each parameter to be a one dimensional array and all of the same length
-        points.AddBatch(times, lat, lon, alt, latrate, lonrate, altrate)
+        points.add_batch(times, lat, lon, alt, latrate, lonrate, altrate)
 
     # endregion

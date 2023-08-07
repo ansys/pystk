@@ -28,26 +28,26 @@ class Ship(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         Ship.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eShip, Ship.m_DefaultName), IShip
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eShip, Ship.m_DefaultName), IShip
         )
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eShip, Ship.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eShip, Ship.m_DefaultName)
         Ship.m_Object = None
 
     # endregion
 
     # region CreateShipOnCurrentScenarioCentralBody
     def test_CreateShipOnCurrentScenarioCentralBody(self):
-        (clr.Convert(Ship.m_Object, IStkObject)).Unload()
+        (clr.Convert(Ship.m_Object, IStkObject)).unload()
         self.CreateShipOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateShipOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Ship
-        ship: "IShip" = clr.CastAs(root.CurrentScenario.Children.New(AgESTKObjectType.eShip, "MyShip"), IShip)
+        ship: "IShip" = clr.CastAs(root.current_scenario.children.new(AgESTKObjectType.eShip, "MyShip"), IShip)
 
     # endregion
 
@@ -57,10 +57,10 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseGreatArcPropagator(self, ship: "IShip"):
         # Set ship route to great arc
-        ship.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
+        ship.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
 
         # Retrieve propagator interface if necessary
-        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(ship.Route, IVehiclePropagatorGreatArc)
+        propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(ship.route, IVehiclePropagatorGreatArc)
 
     # endregion
 
@@ -70,10 +70,10 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseStkExternalPropagator(self, ship: "IShip"):
         # Set ship route to STK External propagator
-        ship.SetRouteType(AgEVePropagatorType.ePropagatorStkExternal)
+        ship.set_route_type(AgEVePropagatorType.ePropagatorStkExternal)
 
         # Retrieve propagator interface if necessary
-        propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(ship.Route, IVehiclePropagatorStkExternal)
+        propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(ship.route, IVehiclePropagatorStkExternal)
 
     # endregion
 
@@ -83,9 +83,9 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseRealtimePropagator(self, ship: "IShip"):
         # Set ship route to STK External propagator
-        ship.SetRouteType(AgEVePropagatorType.ePropagatorRealtime)
+        ship.set_route_type(AgEVePropagatorType.ePropagatorRealtime)
 
         # Retrieve propagator interface if necessary
-        propagator: "IVehiclePropagatorRealtime" = clr.CastAs(ship.Route, IVehiclePropagatorRealtime)
+        propagator: "IVehiclePropagatorRealtime" = clr.CastAs(ship.route, IVehiclePropagatorRealtime)
 
     # endregion

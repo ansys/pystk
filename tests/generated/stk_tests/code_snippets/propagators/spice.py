@@ -29,38 +29,38 @@ class SPICE(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         SPICE.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, SPICE.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, SPICE.m_DefaultName),
             ISatellite,
         )
-        CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
+        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, SPICE.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, SPICE.m_DefaultName)
         SPICE.m_Object = None
 
     # endregion
 
     # region ConfigureSPICEPropagator
     def test_ConfigureSPICEPropagator(self):
-        SPICE.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorSPICE)
-        spiceProp: "IVehiclePropagatorSPICE" = clr.CastAs(SPICE.m_Object.Propagator, IVehiclePropagatorSPICE)
+        SPICE.m_Object.set_propagator_type(AgEVePropagatorType.ePropagatorSPICE)
+        spiceProp: "IVehiclePropagatorSPICE" = clr.CastAs(SPICE.m_Object.propagator, IVehiclePropagatorSPICE)
         self.ConfigureSPICEPropagator(
             spiceProp, TestBase.GetScenarioFile("CodeSnippetsTests", "External", "Satellite1.bsp")
         )
 
     def ConfigureSPICEPropagator(self, propagator: "IVehiclePropagatorSPICE", spiceFile: str):
         # Set the SPICE file
-        propagator.Spice = spiceFile
+        propagator.spice = spiceFile
 
         # Configure time period
-        propagator.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
-        propagator.Step = 60.0
-        propagator.BodyName = "-200000"
+        propagator.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
+        propagator.step = 60.0
+        propagator.body_name = "-200000"
 
         # Propagate
-        propagator.Propagate()
+        propagator.propagate()
 
     # endregion

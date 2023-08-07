@@ -39,7 +39,7 @@ class Connect(CodeSnippetsTestBase):
         self.ExecuteConnectCommand(CodeSnippetsTestBase.m_Root)
 
     def ExecuteConnectCommand(self, root: "IStkObjectRoot"):
-        result: "IExecCmdResult" = root.ExecuteCommand("New / */Satellite JeffSAT")
+        result: "IExecCmdResult" = root.execute_command("New / */Satellite JeffSAT")
 
     # endregion
 
@@ -52,7 +52,7 @@ class Connect(CodeSnippetsTestBase):
         connectCommands = ["New / */Satellite MySatellite", "Graphics */Satellite/MySatellite SetColor red"]
 
         # ExecuteMultipleCommands expect a one dimensional array of Connect commands
-        result: "IExecMultiCmdResult" = root.ExecuteMultipleCommands(
+        result: "IExecMultiCmdResult" = root.execute_multiple_commands(
             connectCommands, AgEExecMultiCmdResultAction.eExceptionOnError
         )
 
@@ -60,13 +60,13 @@ class Connect(CodeSnippetsTestBase):
 
     # region ExtractDataFromExecConnectResult
     def test_ExtractDataFromExecConnectResult(self):
-        result: "IExecCmdResult" = CodeSnippetsTestBase.m_Root.ExecuteCommand("GetSTKVersion /")
+        result: "IExecCmdResult" = CodeSnippetsTestBase.m_Root.execute_command("GetSTKVersion /")
         self.ExtractDataFromExecConnectResult(result)
 
     def ExtractDataFromExecConnectResult(self, result: "IExecCmdResult"):
-        if result.IsSucceeded:
+        if result.is_succeeded:
             i: int = 0
-            while i < result.Count:
+            while i < result.count:
                 Console.WriteLine(result[i])
 
                 i += 1
@@ -77,17 +77,17 @@ class Connect(CodeSnippetsTestBase):
     def test_ExtractDataFromMultiExecConnectResult(self):
         obj = ["GetSTKVersion /"]
 
-        result: "IExecMultiCmdResult" = CodeSnippetsTestBase.m_Root.ExecuteMultipleCommands(
+        result: "IExecMultiCmdResult" = CodeSnippetsTestBase.m_Root.execute_multiple_commands(
             obj, AgEExecMultiCmdResultAction.eContinueOnError
         )
         self.ExtractDataFromMultiExecConnectResult(result)
 
     def ExtractDataFromMultiExecConnectResult(self, result: "IExecMultiCmdResult"):
         i: int = 0
-        while i < result.Count:
-            if result[i].IsSucceeded:
+        while i < result.count:
+            if result[i].is_succeeded:
                 j: int = 0
-                while j < result[i].Count:
+                while j < result[i].count:
                     Console.WriteLine(result[j])
 
                     j += 1

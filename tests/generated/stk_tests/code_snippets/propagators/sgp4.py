@@ -27,69 +27,69 @@ class SGP4(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         SGP4.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, SGP4.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, SGP4.m_DefaultName),
             ISatellite,
         )
-        CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
+        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, SGP4.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, SGP4.m_DefaultName)
         SGP4.m_Object = None
 
     # endregion
 
     # region ConfigureSGP4WithFileSource
     def test_ConfigureSGP4WithFileSource(self):
-        SGP4.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
+        SGP4.m_Object.set_propagator_type(AgEVePropagatorType.ePropagatorSGP4)
 
-        sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
+        sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.propagator, IVehiclePropagatorSGP4)
         self.ConfigureSGP4WithFileSource(
             sgp4, TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
 
     def ConfigureSGP4WithFileSource(self, propagator: "IVehiclePropagatorSGP4", tleFilePath: str):
         # Configure propagator's TLE file path
-        propagator.CommonTasks.AddSegsFromFile("2215", tleFilePath)
+        propagator.common_tasks.add_segs_from_file("2215", tleFilePath)
 
         # Propagate
-        propagator.Propagate()
+        propagator.propagate()
 
     def ConfigureSGP4WithOnlineSource(self, propagator: "IVehiclePropagatorSGP4"):
         # Configure time period
-        propagator.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
-        propagator.Step = 60.0
+        propagator.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
+        propagator.step = 60.0
 
         # Add segments
-        propagator.CommonTasks.AddSegsFromOnlineSource("25544")
+        propagator.common_tasks.add_segs_from_online_source("25544")
 
         # Propagate
-        propagator.Propagate()
+        propagator.propagate()
 
     # endregion
 
     # region SetSGP4ToAutoUpdateFromFileSource
     def test_SetSGP4ToAutoUpdateFromFileSource(self):
         # Set propagator
-        SGP4.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
-        sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
+        SGP4.m_Object.set_propagator_type(AgEVePropagatorType.ePropagatorSGP4)
+        sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.propagator, IVehiclePropagatorSGP4)
 
-        sgp4.CommonTasks.AddSegsFromFile(
+        sgp4.common_tasks.add_segs_from_file(
             "2215", TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
 
         self.SetSGP4ToAutoUpdateFromFileSource(sgp4, TestBase.GetScenarioFile("CodeSnippetsTests", "stkAllTLE.tle"))
 
     def SetSGP4ToAutoUpdateFromFileSource(self, propagator: "IVehiclePropagatorSGP4", fileUpdateSource: str):
-        propagator.AutoUpdateEnabled = True
-        propagator.AutoUpdate.SelectedSource = AgEVeSGP4AutoUpdateSource.eSGP4AutoUpdateSourceFile
-        propagator.AutoUpdate.FileSource.Filename = fileUpdateSource
+        propagator.auto_update_enabled = True
+        propagator.auto_update.selected_source = AgEVeSGP4AutoUpdateSource.eSGP4AutoUpdateSourceFile
+        propagator.auto_update.file_source.filename = fileUpdateSource
 
         # Preview TLEs (optional)
         # Preview() returns a one dimension string of tles
-        tles = propagator.AutoUpdate.FileSource.Preview()
+        tles = propagator.auto_update.file_source.preview()
 
         rx = Regex(r"^(?<ssc>[-]?\d+) (?<orbitepoch>[-]?\d+[.]?\d+) (?<revnumber>[-]?\d+)$")
         line: typing.Any
@@ -103,29 +103,29 @@ class SGP4(CodeSnippetsTestBase):
             )
 
         # Propagate
-        propagator.Propagate()
+        propagator.propagate()
 
     # endregion
 
     # region SetSGP4ToAutoUpdateFromOnlineSource
     def test_SetSGP4ToAutoUpdateFromOnlineSource(self):
         # Set propagator
-        SGP4.m_Object.SetPropagatorType(AgEVePropagatorType.ePropagatorSGP4)
-        sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.Propagator, IVehiclePropagatorSGP4)
+        SGP4.m_Object.set_propagator_type(AgEVePropagatorType.ePropagatorSGP4)
+        sgp4: "IVehiclePropagatorSGP4" = clr.CastAs(SGP4.m_Object.propagator, IVehiclePropagatorSGP4)
 
-        sgp4.CommonTasks.AddSegsFromFile(
+        sgp4.common_tasks.add_segs_from_file(
             "2215", TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
 
         self.SetSGP4ToAutoUpdateFromOnlineSource(sgp4)
 
     def SetSGP4ToAutoUpdateFromOnlineSource(self, propagator: "IVehiclePropagatorSGP4"):
-        propagator.AutoUpdateEnabled = True
-        propagator.AutoUpdate.SelectedSource = AgEVeSGP4AutoUpdateSource.eSGP4AutoUpdateSourceOnline
+        propagator.auto_update_enabled = True
+        propagator.auto_update.selected_source = AgEVeSGP4AutoUpdateSource.eSGP4AutoUpdateSourceOnline
 
         # Preview TLEs (optional)
         # Preview() returns a one dimension string of tles
-        tles = propagator.AutoUpdate.FileSource.Preview()
+        tles = propagator.auto_update.file_source.preview()
 
         rx = Regex(r"^(?<ssc>[-]?\d+) (?<orbitepoch>[-]?\d+[.]?\d+) (?<revnumber>[-]?\d+)$")
         line: typing.Any
@@ -139,6 +139,6 @@ class SGP4(CodeSnippetsTestBase):
             )
 
         # Propagate
-        propagator.Propagate()
+        propagator.propagate()
 
     # endregion

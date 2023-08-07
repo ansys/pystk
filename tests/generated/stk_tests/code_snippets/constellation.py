@@ -29,7 +29,7 @@ class Constellation(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Constellation.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eConstellation, Constellation.m_DefaultName
             ),
             IConstellation,
@@ -39,7 +39,7 @@ class Constellation(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eConstellation, Constellation.m_DefaultName
         )
         Constellation.m_Object = None
@@ -48,26 +48,26 @@ class Constellation(CodeSnippetsTestBase):
 
     # region AddObjectToConstellationUsingIAgStkObjectInterface
     def test_AddObjectToConstellationUsingIAgStkObjectInterface(self):
-        alos: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+        alos: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
             AgESTKObjectType.eSatellite, "Alos"
         )
         self.AddObjectToConstellationUsingIAgStkObjectInterface(Constellation.m_Object, alos)
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, alos.InstanceName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, alos.instance_name)
 
     def AddObjectToConstellationUsingIAgStkObjectInterface(self, constellation: "IConstellation", alos: "IStkObject"):
         # Add object to constellation
-        constellation.Objects.AddObject(alos)
+        constellation.objects.add_object(alos)
 
     # endregion
 
     # region AddObjectToConstellationByStkPath
     def test_AddObjectToConstellationByStkPath(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "Cameo")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "Cameo")
         self.AddObjectToConstellationByStkPath(Constellation.m_Object)
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "Cameo")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "Cameo")
 
     def AddObjectToConstellationByStkPath(self, constellation: "IConstellation"):
         # Add object to constellation
-        constellation.Objects.Add("Satellite/Cameo")
+        constellation.objects.add("Satellite/Cameo")
 
     # endregion

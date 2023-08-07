@@ -36,25 +36,25 @@ class StkObjectGfx(CodeSnippetsTestBase):
     # region SetScenarioDisplayToHideShowObjects
     @category("Graphics Tests")
     def test_SetScenarioDisplayToHideShowObjects(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "facility1")
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "facility2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "facility2")
 
-        self.SetScenarioDisplayToHideShowObjects((clr.CastAs(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)))
+        self.SetScenarioDisplayToHideShowObjects((clr.CastAs(CodeSnippetsTestBase.m_Root.current_scenario, IScenario)))
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility2")
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
 
     def SetScenarioDisplayToHideShowObjects(self, scenario: "IScenario"):
-        gfx: "IScenarioGraphics" = scenario.Graphics
+        gfx: "IScenarioGraphics" = scenario.graphics
 
         # Individually
-        gfx.HideObject("Facility/facility1", "all")
-        gfx.ShowObject("Facility/facility1", "1")
+        gfx.hide_object("Facility/facility1", "all")
+        gfx.show_object("Facility/facility1", "1")
 
         # In Batches
         # HideObjects and ShowObjects expects as the first parameter a one dimensional array of object paths
         objects = ["Facility/facility1", "Facility/facility2"]
-        gfx.HideObjects(objects, "1")
-        gfx.ShowObjects(objects, "all")
+        gfx.hide_objects(objects, "1")
+        gfx.show_objects(objects, "all")
 
     # endregion

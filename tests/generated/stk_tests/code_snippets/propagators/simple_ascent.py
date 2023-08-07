@@ -27,7 +27,7 @@ class SimpleAscent(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         self.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eLaunchVehicle, SimpleAscent.m_DefaultName
             ),
             ILaunchVehicle,
@@ -37,7 +37,7 @@ class SimpleAscent(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (clr.Convert(self.m_Object, IStkObject)).Unload()
+        (clr.Convert(self.m_Object, IStkObject)).unload()
         self.m_Object = None
 
     # endregion
@@ -45,26 +45,26 @@ class SimpleAscent(CodeSnippetsTestBase):
     # region ConfigureSimpleAscentPropagator
     def test_ConfigureSimpleAscentPropagator(self):
         # Set launch vehicle propagator to Simple Ascent
-        self.m_Object.SetTrajectoryType(AgEVePropagatorType.ePropagatorSimpleAscent)
+        self.m_Object.set_trajectory_type(AgEVePropagatorType.ePropagatorSimpleAscent)
 
         # Get J2 IAgVePropagatorSimpleAscent interface
         propagator: "IVehiclePropagatorSimpleAscent" = clr.CastAs(
-            self.m_Object.Trajectory, IVehiclePropagatorSimpleAscent
+            self.m_Object.trajectory, IVehiclePropagatorSimpleAscent
         )
 
         self.ConfigureSimpleAscentPropagator(propagator)
 
     def ConfigureSimpleAscentPropagator(self, propagator: "IVehiclePropagatorSimpleAscent"):
         # Configure time period
-        propagator.EphemerisInterval.SetExplicitInterval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
-        propagator.Step = 60.0
+        propagator.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
+        propagator.step = 60.0
 
         # Set the initial state
-        propagator.InitialState.Launch.AssignGeodetic(38.3721, -77.6402, 25.0)
-        propagator.InitialState.Burnout.AssignGeodetic(48.1395, -82.5145, 25.0)
-        propagator.InitialState.BurnoutVel = 7.7258
+        propagator.initial_state.launch.assign_geodetic(38.3721, -77.6402, 25.0)
+        propagator.initial_state.burnout.assign_geodetic(48.1395, -82.5145, 25.0)
+        propagator.initial_state.burnout_vel = 7.7258
 
         # Propagate
-        propagator.Propagate()
+        propagator.propagate()
 
     # endregion

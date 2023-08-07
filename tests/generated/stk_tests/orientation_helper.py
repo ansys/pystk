@@ -16,46 +16,46 @@ class PositionTest(object):
         Spherical = 16
         All = 31
 
-    def __init__(self, oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection"):
+    def __init__(self, oUnits: "IUnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_oUnits: "ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection" = oUnits
+        self.m_oUnits: "IUnitPreferencesDimensionCollection" = oUnits
 
     # endregion
 
     # region Display method
     def Display(self, oPosition: "IPosition"):
         Assert.assertIsNotNone(oPosition)
-        if oPosition.PosType == AgEPositionType.eCartesian:
-            oCartesian: "ICartesian" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eCartesian), ICartesian)
+        if oPosition.pos_type == AgEPositionType.eCartesian:
+            oCartesian: "ICartesian" = clr.Convert(oPosition.convert_to(AgEPositionType.eCartesian), ICartesian)
             Assert.assertIsNotNone(oCartesian)
-            self.m_logger.WriteLine6("\t\tCartesian X is: {0}", oCartesian.X)
-            self.m_logger.WriteLine6("\t\tCartesian Y is: {0}", oCartesian.Y)
-            self.m_logger.WriteLine6("\t\tCartesian Z is: {0}", oCartesian.Z)
-        elif oPosition.PosType == AgEPositionType.eCylindrical:
-            oCylindrical: "ICylindrical" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eCylindrical), ICylindrical)
+            self.m_logger.WriteLine6("\t\tCartesian X is: {0}", oCartesian.x)
+            self.m_logger.WriteLine6("\t\tCartesian Y is: {0}", oCartesian.y)
+            self.m_logger.WriteLine6("\t\tCartesian Z is: {0}", oCartesian.z)
+        elif oPosition.pos_type == AgEPositionType.eCylindrical:
+            oCylindrical: "ICylindrical" = clr.Convert(oPosition.convert_to(AgEPositionType.eCylindrical), ICylindrical)
             Assert.assertIsNotNone(oCylindrical)
-            self.m_logger.WriteLine6("\t\tCylindrical Radius is: {0}", oCylindrical.Radius)
-            self.m_logger.WriteLine6("\t\tCylindrical Z is: {0}", oCylindrical.Z)
-            self.m_logger.WriteLine6("\t\tCylindrical Lon is: {0}", oCylindrical.Lon)
-        elif oPosition.PosType == AgEPositionType.eGeocentric:
-            oGeocentric: "IGeocentric" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eGeocentric), IGeocentric)
+            self.m_logger.WriteLine6("\t\tCylindrical Radius is: {0}", oCylindrical.radius)
+            self.m_logger.WriteLine6("\t\tCylindrical Z is: {0}", oCylindrical.z)
+            self.m_logger.WriteLine6("\t\tCylindrical Lon is: {0}", oCylindrical.lon)
+        elif oPosition.pos_type == AgEPositionType.eGeocentric:
+            oGeocentric: "IGeocentric" = clr.Convert(oPosition.convert_to(AgEPositionType.eGeocentric), IGeocentric)
             Assert.assertIsNotNone(oGeocentric)
-            self.m_logger.WriteLine6("\t\tGeocentric Lat is: {0}", oGeocentric.Lat)
-            self.m_logger.WriteLine6("\t\tGeocentric Lon is: {0}", oGeocentric.Lon)
-            self.m_logger.WriteLine6("\t\tGeocentric Alt is: {0}", oGeocentric.Alt)
-        elif oPosition.PosType == AgEPositionType.eGeodetic:
-            oGeodetic: "IGeodetic" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eGeodetic), IGeodetic)
+            self.m_logger.WriteLine6("\t\tGeocentric Lat is: {0}", oGeocentric.lat)
+            self.m_logger.WriteLine6("\t\tGeocentric Lon is: {0}", oGeocentric.lon)
+            self.m_logger.WriteLine6("\t\tGeocentric Alt is: {0}", oGeocentric.alt)
+        elif oPosition.pos_type == AgEPositionType.eGeodetic:
+            oGeodetic: "IGeodetic" = clr.Convert(oPosition.convert_to(AgEPositionType.eGeodetic), IGeodetic)
             Assert.assertIsNotNone(oGeodetic)
-            self.m_logger.WriteLine6("\t\tGeodetic Lat is: {0}", oGeodetic.Lat)
-            self.m_logger.WriteLine6("\t\tGeodetic Lon is: {0}", oGeodetic.Lon)
-            self.m_logger.WriteLine6("\t\tGeodetic Alt is: {0}", oGeodetic.Alt)
-        elif oPosition.PosType == AgEPositionType.eSpherical:
-            oSpherical: "ISpherical" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eSpherical), ISpherical)
+            self.m_logger.WriteLine6("\t\tGeodetic Lat is: {0}", oGeodetic.lat)
+            self.m_logger.WriteLine6("\t\tGeodetic Lon is: {0}", oGeodetic.lon)
+            self.m_logger.WriteLine6("\t\tGeodetic Alt is: {0}", oGeodetic.alt)
+        elif oPosition.pos_type == AgEPositionType.eSpherical:
+            oSpherical: "ISpherical" = clr.Convert(oPosition.convert_to(AgEPositionType.eSpherical), ISpherical)
             Assert.assertIsNotNone(oSpherical)
-            self.m_logger.WriteLine6("\t\tSpherical Lat is: {0}", oSpherical.Lat)
-            self.m_logger.WriteLine6("\t\tSpherical Lon is: {0}", oSpherical.Lon)
-            self.m_logger.WriteLine6("\t\tSpherical Radius is: {0}", oSpherical.Radius)
+            self.m_logger.WriteLine6("\t\tSpherical Lat is: {0}", oSpherical.lat)
+            self.m_logger.WriteLine6("\t\tSpherical Lon is: {0}", oSpherical.lon)
+            self.m_logger.WriteLine6("\t\tSpherical Radius is: {0}", oSpherical.radius)
         else:
             Assert.fail("Invalid Position type!")
 
@@ -67,283 +67,285 @@ class PositionTest(object):
         Assert.assertIsNotNone(oPosition)
         self.m_logger.WriteLine6("\tPosition test for: {0} positions", eTypes)
         # set DistanceUnit
-        strDistanceUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+        strDistanceUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
         self.m_logger.WriteLine5("\tThe current DistanceUnit format is: {0}", strDistanceUnit)
-        self.m_oUnits.SetCurrentUnit("DistanceUnit", "m")
+        self.m_oUnits.set_current_unit("DistanceUnit", "m")
         self.m_logger.WriteLine5(
-            "\tThe new DistanceUnit format is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+            "\tThe new DistanceUnit format is: {0}", self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
         )
-        Assert.assertEqual("m", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
+        Assert.assertEqual("m", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
         # set LatitudeUnit
-        strLatitudeUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit")
+        strLatitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LatitudeUnit")
         self.m_logger.WriteLine5("\tThe current LatitudeUnit format is: {0}", strLatitudeUnit)
-        self.m_oUnits.SetCurrentUnit("LatitudeUnit", "rad")
+        self.m_oUnits.set_current_unit("LatitudeUnit", "rad")
         self.m_logger.WriteLine5(
-            "\tThe new LatitudeUnit format is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit")
+            "\tThe new LatitudeUnit format is: {0}", self.m_oUnits.get_current_unit_abbrv("LatitudeUnit")
         )
-        Assert.assertEqual("rad", self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
+        Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("LatitudeUnit"))
         # set LongitudeUnit
-        strLongitudeUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
+        strLongitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
         self.m_logger.WriteLine5("\tThe current LongitudeUnit format is: {0}", strLongitudeUnit)
-        self.m_oUnits.SetCurrentUnit("LongitudeUnit", "rad")
+        self.m_oUnits.set_current_unit("LongitudeUnit", "rad")
         self.m_logger.WriteLine5(
-            "\tThe new LongitudeUnit format is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
+            "\tThe new LongitudeUnit format is: {0}", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
         )
-        Assert.assertEqual("rad", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
+        Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
         # set AngleUnit
-        strAngleUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+        strAngleUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
         self.m_logger.WriteLine5("\tThe current AngleUnit format is: {0}", strAngleUnit)
-        self.m_oUnits.SetCurrentUnit("AngleUnit", "rad")
-        self.m_logger.WriteLine5("\tThe new AngleUnit format is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
-        Assert.assertEqual("rad", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
+        self.m_oUnits.set_current_unit("AngleUnit", "rad")
+        self.m_logger.WriteLine5(
+            "\tThe new AngleUnit format is: {0}", self.m_oUnits.get_current_unit_abbrv("AngleUnit")
+        )
+        Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
-        self.m_logger.WriteLine6("\tCurrent position type is: {0}", oPosition.PosType)
+        self.m_logger.WriteLine6("\tCurrent position type is: {0}", oPosition.pos_type)
         self.Display(oPosition)
         if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
-            oCartesian: "ICartesian" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eCartesian), ICartesian)
+            oCartesian: "ICartesian" = clr.Convert(oPosition.convert_to(AgEPositionType.eCartesian), ICartesian)
             Assert.assertIsNotNone(oCartesian)
-            oCartesian.Assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oCartesian.PosType)
+            oCartesian.assign(oPosition)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oCartesian.pos_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oCartesian)
-            oCartesian.X = 1234.5
-            oCartesian.Y = 54.321
-            oCartesian.Z = 789.012
-            oCartesian.AssignCartesian(1234.5, 54.321, 789.012)
+            oCartesian.x = 1234.5
+            oCartesian.y = 54.321
+            oCartesian.z = 789.012
+            oCartesian.assign_cartesian(1234.5, 54.321, 789.012)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oCartesian)
 
             def action1():
-                oCartesian.X = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
+                oCartesian.x = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
             TryCatchAssertBlock.DoAssert("", action1)
 
             def action2():
-                oCartesian.Y = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
+                oCartesian.y = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
             TryCatchAssertBlock.DoAssert("", action2)
 
             def action3():
-                oCartesian.Z = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
+                oCartesian.z = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
             TryCatchAssertBlock.DoAssert("", action3)
 
-            oCartesian.ConvertTo(AgEPositionType.eCartesian)
+            oCartesian.convert_to(AgEPositionType.eCartesian)
             if ((eTypes & PositionTest.Positions.Cylindrical)) == PositionTest.Positions.Cylindrical:
-                oCartesian.ConvertTo(AgEPositionType.eCylindrical)
+                oCartesian.convert_to(AgEPositionType.eCylindrical)
             if ((eTypes & PositionTest.Positions.Geocentric)) == PositionTest.Positions.Geocentric:
-                oCartesian.ConvertTo(AgEPositionType.eGeocentric)
+                oCartesian.convert_to(AgEPositionType.eGeocentric)
             if ((eTypes & PositionTest.Positions.Geodetic)) == PositionTest.Positions.Geodetic:
-                oCartesian.ConvertTo(AgEPositionType.eGeodetic)
+                oCartesian.convert_to(AgEPositionType.eGeodetic)
             if ((eTypes & PositionTest.Positions.Spherical)) == PositionTest.Positions.Spherical:
-                oCartesian.ConvertTo(AgEPositionType.eSpherical)
+                oCartesian.convert_to(AgEPositionType.eSpherical)
 
         if ((eTypes & PositionTest.Positions.Cylindrical)) == PositionTest.Positions.Cylindrical:
-            oCylindrical: "ICylindrical" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eCylindrical), ICylindrical)
+            oCylindrical: "ICylindrical" = clr.Convert(oPosition.convert_to(AgEPositionType.eCylindrical), ICylindrical)
             Assert.assertIsNotNone(oCylindrical)
-            oCylindrical.Assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oCylindrical.PosType)
+            oCylindrical.assign(oPosition)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oCylindrical.pos_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oCylindrical)
-            oCylindrical.Radius = 12203.4
-            oCylindrical.Z = 3513.17
-            oCylindrical.Lon = 1.23
-            oCylindrical.AssignCylindrical(12203.4, 3513.17, 1.23)
+            oCylindrical.radius = 12203.4
+            oCylindrical.z = 3513.17
+            oCylindrical.lon = 1.23
+            oCylindrical.assign_cylindrical(12203.4, 3513.17, 1.23)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oCylindrical)
 
             def action4():
-                oCylindrical.Radius = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
+                oCylindrical.radius = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
             TryCatchAssertBlock.DoAssert("", action4)
 
             def action5():
-                oCylindrical.Z = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
+                oCylindrical.z = 567800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0
 
             TryCatchAssertBlock.DoAssert("", action5)
 
             def action6():
-                oCylindrical.Lon = 6.78
+                oCylindrical.lon = 6.78
 
             TryCatchAssertBlock.DoAssert("", action6)
 
-            oCylindrical.ConvertTo(AgEPositionType.eCylindrical)
+            oCylindrical.convert_to(AgEPositionType.eCylindrical)
             if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
-                oCylindrical.ConvertTo(AgEPositionType.eCartesian)
+                oCylindrical.convert_to(AgEPositionType.eCartesian)
             if ((eTypes & PositionTest.Positions.Geocentric)) == PositionTest.Positions.Geocentric:
-                oCylindrical.ConvertTo(AgEPositionType.eGeocentric)
+                oCylindrical.convert_to(AgEPositionType.eGeocentric)
             if ((eTypes & PositionTest.Positions.Geodetic)) == PositionTest.Positions.Geodetic:
-                oCylindrical.ConvertTo(AgEPositionType.eGeodetic)
+                oCylindrical.convert_to(AgEPositionType.eGeodetic)
             if ((eTypes & PositionTest.Positions.Spherical)) == PositionTest.Positions.Spherical:
-                oCylindrical.ConvertTo(AgEPositionType.eSpherical)
+                oCylindrical.convert_to(AgEPositionType.eSpherical)
 
         if ((eTypes & PositionTest.Positions.Geocentric)) == PositionTest.Positions.Geocentric:
-            oGeocentric: "IGeocentric" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eGeocentric), IGeocentric)
+            oGeocentric: "IGeocentric" = clr.Convert(oPosition.convert_to(AgEPositionType.eGeocentric), IGeocentric)
             Assert.assertIsNotNone(oGeocentric)
-            oGeocentric.Assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oGeocentric.PosType)
+            oGeocentric.assign(oPosition)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oGeocentric.pos_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oGeocentric)
-            oGeocentric.Lat = 1.234
-            oGeocentric.Lon = 2.345
-            oGeocentric.Alt = 12.34
-            oGeocentric.AssignGeocentric(1.234, 2.345, 12.34)
+            oGeocentric.lat = 1.234
+            oGeocentric.lon = 2.345
+            oGeocentric.alt = 12.34
+            oGeocentric.assign_geocentric(1.234, 2.345, 12.34)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oGeocentric)
 
             def action7():
-                oGeocentric.Lat = 2.34
+                oGeocentric.lat = 2.34
 
             TryCatchAssertBlock.DoAssert("", action7)
 
             def action8():
-                oGeocentric.Lon = 6.78
+                oGeocentric.lon = 6.78
 
             TryCatchAssertBlock.DoAssert("", action8)
 
             def action9():
-                oGeocentric.Alt = 6780000000000.0
+                oGeocentric.alt = 6780000000000.0
 
             TryCatchAssertBlock.DoAssert("", action9)
 
-            oGeocentric.ConvertTo(AgEPositionType.eGeocentric)
+            oGeocentric.convert_to(AgEPositionType.eGeocentric)
             if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
-                oGeocentric.ConvertTo(AgEPositionType.eCartesian)
+                oGeocentric.convert_to(AgEPositionType.eCartesian)
             if ((eTypes & PositionTest.Positions.Cylindrical)) == PositionTest.Positions.Cylindrical:
-                oGeocentric.ConvertTo(AgEPositionType.eCylindrical)
+                oGeocentric.convert_to(AgEPositionType.eCylindrical)
             if ((eTypes & PositionTest.Positions.Geodetic)) == PositionTest.Positions.Geodetic:
-                oGeocentric.ConvertTo(AgEPositionType.eGeodetic)
+                oGeocentric.convert_to(AgEPositionType.eGeodetic)
             if ((eTypes & PositionTest.Positions.Spherical)) == PositionTest.Positions.Spherical:
-                oGeocentric.ConvertTo(AgEPositionType.eSpherical)
+                oGeocentric.convert_to(AgEPositionType.eSpherical)
 
         if ((eTypes & PositionTest.Positions.Geodetic)) == PositionTest.Positions.Geodetic:
-            oGeodetic: "IGeodetic" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eGeodetic), IGeodetic)
+            oGeodetic: "IGeodetic" = clr.Convert(oPosition.convert_to(AgEPositionType.eGeodetic), IGeodetic)
             Assert.assertIsNotNone(oGeodetic)
-            oGeodetic.Assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oGeodetic.PosType)
+            oGeodetic.assign(oPosition)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oGeodetic.pos_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oGeodetic)
-            oGeodetic.Lat = 0.190988679940043
-            oGeodetic.Lon = -0.743582379766568
-            oGeodetic.Alt = 0.640787459798838
-            oGeodetic.AssignGeodetic(0.190988679940043, -0.743582379766568, 0.640787459798838)
+            oGeodetic.lat = 0.190988679940043
+            oGeodetic.lon = -0.743582379766568
+            oGeodetic.alt = 0.640787459798838
+            oGeodetic.assign_geodetic(0.190988679940043, -0.743582379766568, 0.640787459798838)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oGeodetic)
 
             def action10():
-                oGeodetic.Lat = 2.34
+                oGeodetic.lat = 2.34
 
             TryCatchAssertBlock.DoAssert("", action10)
 
             def action11():
-                oGeodetic.Lon = 6.78
+                oGeodetic.lon = 6.78
 
             TryCatchAssertBlock.DoAssert("", action11)
 
             def action12():
-                oGeodetic.Alt = 6780000000000.0
+                oGeodetic.alt = 6780000000000.0
 
             TryCatchAssertBlock.DoAssert("", action12)
 
-            oGeodetic.ConvertTo(AgEPositionType.eGeodetic)
+            oGeodetic.convert_to(AgEPositionType.eGeodetic)
             if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
-                oGeodetic.ConvertTo(AgEPositionType.eCartesian)
+                oGeodetic.convert_to(AgEPositionType.eCartesian)
             if ((eTypes & PositionTest.Positions.Cylindrical)) == PositionTest.Positions.Cylindrical:
-                oGeodetic.ConvertTo(AgEPositionType.eCylindrical)
+                oGeodetic.convert_to(AgEPositionType.eCylindrical)
             if ((eTypes & PositionTest.Positions.Geocentric)) == PositionTest.Positions.Geocentric:
-                oGeodetic.ConvertTo(AgEPositionType.eGeocentric)
+                oGeodetic.convert_to(AgEPositionType.eGeocentric)
             if ((eTypes & PositionTest.Positions.Spherical)) == PositionTest.Positions.Spherical:
-                oGeodetic.ConvertTo(AgEPositionType.eSpherical)
+                oGeodetic.convert_to(AgEPositionType.eSpherical)
 
         if ((eTypes & PositionTest.Positions.Spherical)) == PositionTest.Positions.Spherical:
-            oSpherical: "ISpherical" = clr.Convert(oPosition.ConvertTo(AgEPositionType.eSpherical), ISpherical)
+            oSpherical: "ISpherical" = clr.Convert(oPosition.convert_to(AgEPositionType.eSpherical), ISpherical)
             Assert.assertIsNotNone(oSpherical)
-            oSpherical.Assign(oPosition)
-            self.m_logger.WriteLine6("\tNew position type is: {0}", oSpherical.PosType)
+            oSpherical.assign(oPosition)
+            self.m_logger.WriteLine6("\tNew position type is: {0}", oSpherical.pos_type)
             self.m_logger.WriteLine("\t\tCurrent values:")
             self.Display(oSpherical)
-            oSpherical.Lat = 1
-            oSpherical.Lon = 2
-            oSpherical.Radius = 6355753
-            oSpherical.AssignSpherical(1, 2, 6355753)
+            oSpherical.lat = 1
+            oSpherical.lon = 2
+            oSpherical.radius = 6355753
+            oSpherical.assign_spherical(1, 2, 6355753)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oSpherical)
 
             def action13():
-                oSpherical.Lat = 2.34
+                oSpherical.lat = 2.34
 
             TryCatchAssertBlock.DoAssert("", action13)
 
             def action14():
-                oSpherical.Lon = 6.78
+                oSpherical.lon = 6.78
 
             TryCatchAssertBlock.DoAssert("", action14)
 
             def action15():
-                oSpherical.Radius = 67800000000000000000000000.0
+                oSpherical.radius = 67800000000000000000000000.0
 
             TryCatchAssertBlock.DoAssert("", action15)
 
-            oSpherical.ConvertTo(AgEPositionType.eSpherical)
+            oSpherical.convert_to(AgEPositionType.eSpherical)
             if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
-                oSpherical.ConvertTo(AgEPositionType.eCartesian)
+                oSpherical.convert_to(AgEPositionType.eCartesian)
             if ((eTypes & PositionTest.Positions.Cylindrical)) == PositionTest.Positions.Cylindrical:
-                oSpherical.ConvertTo(AgEPositionType.eCylindrical)
+                oSpherical.convert_to(AgEPositionType.eCylindrical)
             if ((eTypes & PositionTest.Positions.Geocentric)) == PositionTest.Positions.Geocentric:
-                oSpherical.ConvertTo(AgEPositionType.eGeocentric)
+                oSpherical.convert_to(AgEPositionType.eGeocentric)
             if ((eTypes & PositionTest.Positions.Geodetic)) == PositionTest.Positions.Geodetic:
-                oSpherical.ConvertTo(AgEPositionType.eGeodetic)
+                oSpherical.convert_to(AgEPositionType.eGeodetic)
 
         if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
             # SetAsCartesian
             # oPosition.AssignCartesian(0.190988679940043, -0.743582379766568, 0.640787459798838); // See 35836
-            oPosition.AssignCartesian(6654000, 230000, 113000)
-            self.Display(oPosition.ConvertTo(AgEPositionType.eCartesian))
+            oPosition.assign_cartesian(6654000, 230000, 113000)
+            self.Display(oPosition.convert_to(AgEPositionType.eCartesian))
 
         if ((eTypes & PositionTest.Positions.Cylindrical)) == PositionTest.Positions.Cylindrical:
             # SetAsCylindrical
-            oPosition.AssignCylindrical(1, 500, 5)
-            self.Display(oPosition.ConvertTo(AgEPositionType.eCylindrical))
+            oPosition.assign_cylindrical(1, 500, 5)
+            self.Display(oPosition.convert_to(AgEPositionType.eCylindrical))
 
         if ((eTypes & PositionTest.Positions.Geocentric)) == PositionTest.Positions.Geocentric:
             # SetAsGeocentric
-            oPosition.AssignGeocentric(0, 0, 1)
-            self.Display(oPosition.ConvertTo(AgEPositionType.eGeocentric))
+            oPosition.assign_geocentric(0, 0, 1)
+            self.Display(oPosition.convert_to(AgEPositionType.eGeocentric))
 
         if ((eTypes & PositionTest.Positions.Geodetic)) == PositionTest.Positions.Geodetic:
             # SetAsGeodetic
-            oPosition.AssignGeodetic(0.190988679940043, -0.743582379766568, 0.640787459798838)
-            self.Display(oPosition.ConvertTo(AgEPositionType.eGeodetic))
+            oPosition.assign_geodetic(0.190988679940043, -0.743582379766568, 0.640787459798838)
+            self.Display(oPosition.convert_to(AgEPositionType.eGeodetic))
 
         if ((eTypes & PositionTest.Positions.Spherical)) == PositionTest.Positions.Spherical:
             # SetAsSpherical
-            oPosition.AssignSpherical(-1, -1, 600355753)
-            self.Display(oPosition.ConvertTo(AgEPositionType.eSpherical))
+            oPosition.assign_spherical(-1, -1, 600355753)
+            self.Display(oPosition.convert_to(AgEPositionType.eSpherical))
 
         # restore AngleUnit
-        self.m_oUnits.SetCurrentUnit("AngleUnit", strAngleUnit)
+        self.m_oUnits.set_current_unit("AngleUnit", strAngleUnit)
         self.m_logger.WriteLine5(
-            "\tThe restored AngleUnit format is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
+            "\tThe restored AngleUnit format is: {0}", self.m_oUnits.get_current_unit_abbrv("AngleUnit")
         )
-        Assert.assertEqual(strAngleUnit, self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
+        Assert.assertEqual(strAngleUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
         # restore DistanceUnit
-        self.m_oUnits.SetCurrentUnit("DistanceUnit", strDistanceUnit)
+        self.m_oUnits.set_current_unit("DistanceUnit", strDistanceUnit)
         self.m_logger.WriteLine5(
-            "\tThe restored DistanceUnit format is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
+            "\tThe restored DistanceUnit format is: {0}", self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
         )
-        Assert.assertEqual(strDistanceUnit, self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
+        Assert.assertEqual(strDistanceUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
         # restore LatitudeUnit
-        self.m_oUnits.SetCurrentUnit("LatitudeUnit", strLatitudeUnit)
+        self.m_oUnits.set_current_unit("LatitudeUnit", strLatitudeUnit)
         self.m_logger.WriteLine5(
-            "\tThe restored LatitudeUnit format is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit")
+            "\tThe restored LatitudeUnit format is: {0}", self.m_oUnits.get_current_unit_abbrv("LatitudeUnit")
         )
-        Assert.assertEqual(strLatitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
+        Assert.assertEqual(strLatitudeUnit, self.m_oUnits.get_current_unit_abbrv("LatitudeUnit"))
         # restore LongitudeUnit
-        self.m_oUnits.SetCurrentUnit("LongitudeUnit", strLongitudeUnit)
+        self.m_oUnits.set_current_unit("LongitudeUnit", strLongitudeUnit)
         self.m_logger.WriteLine5(
-            "\tThe restored LongitudeUnit format is: {0}", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
+            "\tThe restored LongitudeUnit format is: {0}", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
         )
-        Assert.assertEqual(strLongitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
+        Assert.assertEqual(strLongitudeUnit, self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
         self.m_logger.WriteLine("----- POSITION TEST ----- END -----")
 
     # endregion
