@@ -5,16 +5,15 @@ updates:
     schedule:
       interval: "daily"
     labels:
-      - "maintenance"
-      - "dependencies"
+      - "dependencies:pyproject"
     commit-message:
-      prefix: "MAINT"
+      prefix: "maint"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
     labels:
-      - "maintenance"
+      - "dependencies:ci"
     commit-message:
-      prefix: "MAINT"
+      prefix: "maint"

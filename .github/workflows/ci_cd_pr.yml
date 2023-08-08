@@ -1,11 +1,6 @@
 name: CI
 on:
   pull_request:
-  push:
-    tags:
-      - "*"
-    branches:
-      - main
 
 env:
   MAIN_PYTHON_VERSION: '3.10'
@@ -22,13 +17,27 @@ concurrency:
 
 jobs:
 
+  labeler:
+    name: "Sync labels and label pull-request"
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/labeler@v4
+       with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  branch-name-style:
+    name: "Run branch name style checks"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ansys/actions/branch-name-style@v4
+
   code-style:
     name: "Code style checks"
     runs-on: ubuntu-latest
-    if: |
-      # Only executes during pull-requests or when pushing a new tag (new release)
-      github.event_name == 'pull_request' || 
-      (github.event_name == 'push' && contains(github.ref, 'refs/tags'))
+    needs: branch-name-style
     steps:
       - uses: ansys/actions/code-style@v4
         with: 
@@ -37,33 +46,39 @@ jobs:
   doc-style:
     name: "Doc style checks"
     runs-on: ubuntu-latest
-    if: |
-      # Only executes during pull-requests or when pushing a new tag (new release)
-      github.event_name == 'pull_request' || 
-      (github.event_name == 'push' && contains(github.ref, 'refs/tags'))
+    needs: branch-name-style
     steps:
       - uses: ansys/actions/doc-style@v4
         with: 
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  doc-build-partial:
+  doc-build:
     name: "Doc build excluding 'API' and 'Examples' sections"
     runs-on: ubuntu-latest
-    if: |
-      # Only executes during pull-requests not labeled with 'documentation' or
-      # when merging into the 'main' branch
-      (github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'documentation')) ||
-      github.ref == 'refs/heads/main' 
     needs: doc-style
     steps:
 
-      - name: "Build project documentation excluding 'API' and 'Example' sections"
+      - name: "Build docs excluding 'Examples' section"
         uses: ansys/actions/doc-build@v4
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:api') &&
+          !contains(github.event.pull_request.labels.*.name, 'docs:examples')
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+        env:
+          BUILD_API: true
+          BUILD_EXAMPLES: false
+
+      - name: "Build docs excluding 'API' section"
+        uses: ansys/actions/doc-build@v4
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
+          !contains(github.event.pull_request.labels.*.name, 'docs:api')
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
         env:
           BUILD_API: false
-          BUILD_EXAMPLES: false
+          BUILD_EXAMPLES: true
 
       - name: "Download latest API docs"
         uses: actions/checkout@v3
@@ -83,17 +98,11 @@ jobs:
           path: doc/_build/gh-pages
           name: documentation-html
 
-  doc-build-complete:
-    name: "Doc build including 'API' and 'Examples' sections"
-    runs-on: ubuntu-latest
-    if: |
-      # Only executes during pull-requests labeled with 'documentation' or
-      # when pushing a tag (new release)
-      ( github.event_name == 'pull_request' && contains( github.event.pull_request.labels.*.name, 'documentation')) ||
-      (github.event_name == 'push' && contains(github.ref, 'refs/tags'))
-    needs: doc-style
-    steps:
-      - uses: ansys/actions/doc-build@v4
+      - name: "Build all docs"
+        uses: ansys/actions/doc-build@v4
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
+          contains(github.event.pull_request.labels.*.name, 'docs:api')
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
         env:
@@ -103,10 +112,6 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: |
-      # Only executes during pull-requests or when pushing a tag (new release)
-      github.event_name == 'pull_request' ||
-      (github.event_name == 'push' && contains(github.ref, 'refs/tags'))
     # needs: code-style
     strategy:
       matrix:
@@ -203,19 +208,8 @@ jobs:
   build-library:
     name: "Build library"
     runs-on: ubuntu-latest
-    needs: [doc-build-partial, doc-build-complete, tests]
+    needs: [doc-build, tests]
     steps:
       - uses: ansys/actions/build-library@v4
         with:
           library-name: ${{ env.LIBRARY_NAME }}
-
-  doc-deploy-dev:
-    name: "Deploy dev docs"
-    runs-on: ubuntu-latest
-    needs: build-library
-    if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
-    steps:
-      - uses: ansys/actions/doc-deploy-dev@v4
-        with:
-          cname: ${{ env.DOCUMENTATION_CNAME }}
-          token: ${{ secrets.GITHUB_TOKEN }}

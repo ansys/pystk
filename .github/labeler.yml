@@ -1,8 +1,21 @@
-documentation:
-- doc/source/**/*
-maintenance:
-- .github/**/*
-- .flake8
-- pyproject.toml
-dependencies:
-- requirements/*
+# This file is required by the the action 'https://github.com/actions/labeler'
+# and used in the '.github/workflows/ci_cd_pr.yml' workflow
+
+# -- Documentation labels ----------------------------------------------------
+
+'docs':
+- any: ['doc/source/**/*.rst']
+  all: ['!doc/source/examples.rst', '!doc/source/api/**/*.rst']
+
+'docs:api':
+- any: ['doc/source/api/**/*.rst']
+
+'docs:examples':
+- any: ['examples/**/*.py', 'doc/source/examples.rst']
+
+# -- Enhancement labels ------------------------------------------------------
+
+'maintenance:docker':
+- any: ['docker/**']
+
+
