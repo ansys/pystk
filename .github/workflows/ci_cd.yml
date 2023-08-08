@@ -45,10 +45,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: doc-style
     steps:
-      - name: "Building project documentation"
+
+      - name: "Build project documentation excluding API docs"
+        if: ${{ github.event_name == 'pull_request' && github.event.action == 'synchronize' }}
         uses: ansys/actions/doc-build@v4
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
+        env:
+          BUILD_API: false
+
+      - name: "Build project documentation including API docs"
+        if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
+        uses: ansys/actions/doc-build@v4
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+        env:
+          BUILD_API: true
 
   tests:
     name: "Tests Python ${{ matrix.python }}"
