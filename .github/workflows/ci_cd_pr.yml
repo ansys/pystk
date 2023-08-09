@@ -54,6 +54,7 @@ jobs:
   branch-name-style:
     name: "Run branch name style checks"
     runs-on: ubuntu-latest
+    needs: labeler
     steps:
       - uses: ansys/actions/branch-name-style@v4
 
