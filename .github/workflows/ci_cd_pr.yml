@@ -82,6 +82,17 @@ jobs:
     needs: doc-style
     steps:
 
+      - name: "Build docs excluding 'API' section"
+        uses: ansys/actions/doc-build@v4
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
+          !contains(github.event.pull_request.labels.*.name, 'docs:api')
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+        env:
+          BUILD_API: false
+          BUILD_EXAMPLES: true
+
       - name: "Build docs excluding 'Examples' section"
         uses: ansys/actions/doc-build@v4
         if: |
@@ -93,16 +104,16 @@ jobs:
           BUILD_API: true
           BUILD_EXAMPLES: false
 
-      - name: "Build docs excluding 'API' section"
+      - name: "Build docs excluding 'API' and 'Examples' section"
         uses: ansys/actions/doc-build@v4
         if: |
-          contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
+          !contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
         env:
           BUILD_API: false
-          BUILD_EXAMPLES: true
+          BUILD_EXAMPLES: false
 
       - name: "Build all docs"
         uses: ansys/actions/doc-build@v4
