@@ -1,0 +1,57 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+
+env:
+  MAIN_PYTHON_VERSION: '3.10'
+  DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  doc-build:
+    name: "Doc build excluding 'API' and 'Examples' sections"
+    runs-on: ubuntu-latest
+    needs: doc-style
+    steps:
+
+      - name: "Build project documentation excluding 'API' and 'Example' sections"
+        uses: ansys/actions/doc-build@v4
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+        env:
+          BUILD_API: false
+          BUILD_EXAMPLES: false
+
+      - name: "Download latest API docs"
+        uses: actions/checkout@v3
+        with:
+          ref: "gh-pages"
+          path: "gh-pages"
+
+      - name: "Include 'API' and 'Examples' sections from nightly build docs"
+        run: |
+          cp -r gh-pages/version/dev/api doc/_build/html/api
+          cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
+          cp gh-pages/version/dev/index.html doc/_build/html/index.html
+
+      - name: "Upload combined artifacts"
+        uses: actions/upload-artifact@v3
+        with:
+          path: doc/_build/gh-pages
+          name: documentation-html
+
+  doc-deploy-dev:
+    name: "Deploy dev docs"
+    runs-on: ubuntu-latest
+    needs: doc-build
+    steps:
+      - uses: ansys/actions/doc-deploy-dev@v4
+        with:
+          cname: ${{ env.DOCUMENTATION_CNAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
