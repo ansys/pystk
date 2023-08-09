@@ -18,7 +18,7 @@
   color: 0677ba
 
 - name: 'docs:api'
-  description: Related to API docuemntation
+  description: Related to API documentation
   color: 0677ba
 
 - name: 'docs:examples'

@@ -25,6 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v3
+
+     - name: "Sync labels"
+       uses: micnncim/action-label-syncer@v1
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
      - name: "Label PR based on the modified files"
        uses: actions/labeler@v4
        with:
