@@ -55,7 +55,7 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    # needs: code-style
+    needs: code-style
     strategy:
       matrix:
         python: ["3.8", "3.9", "3.10"]

@@ -149,7 +149,9 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    needs: branch-name-style
+    needs: code-style
+    # TODO: remove when ``code-style`` jobs succeeds
+    if: ${{ always() }}
     strategy:
       matrix:
         python: ["3.8", "3.9", "3.10"]
