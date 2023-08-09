@@ -24,12 +24,11 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-
+     - uses: actions/checkout@v3
      - name: "Label PR based on the modified files"
        uses: actions/labeler@v4
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        configuration-path: '.github/labeler.yml'
 
      - name: "Label PR based on the branch name"
        uses: actions-ecosystem/action-add-labels@v1
