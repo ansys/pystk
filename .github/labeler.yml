@@ -5,7 +5,7 @@
 
 'docs':
 - any: ['doc/source/**/*.rst']
-  all: ['!doc/source/examples.rst', '!doc/source/api/**/*.rst']
+  all: ['!doc/source/examples.rst', '!doc/source/api/**/*.rst', '!doc/styles/**', '!doc/.vale.ini']
 
 'docs:api':
 - any: ['doc/source/api/**/*.rst']
@@ -13,9 +13,16 @@
 'docs:examples':
 - any: ['examples/**/*.py', 'doc/source/examples.rst']
 
-# -- Enhancement labels ------------------------------------------------------
+# -- Other labels ------------------------------------------------------------
 
-'maintenance:docker':
+'code-style':
+- any: ['.pre-commit-config.yaml', 'doc/.vale.ini', '.flake8']
+
+'docker':
 - any: ['docker/**']
 
+'ci':
+- any: ['.github/workflows/**']
 
+'tests':
+- any: ['tests/**']

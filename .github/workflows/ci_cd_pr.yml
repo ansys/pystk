@@ -24,9 +24,32 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/labeler@v4
+
+     - name: "Label PR based on the modified files"
+       uses: actions/labeler@v4
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+     - name: "Label PR based on the branch name"
+       uses: actions-ecosystem/action-add-labels@v1
+       if: |
+         startsWith(github.event.pull_request.head.ref, 'fix')
+       with:
+         labels: fix
+
+     - name: "Label PR based on the branch name"
+       uses: actions-ecosystem/action-add-labels@v1
+       if: |
+         startsWith(github.event.pull_request.head.ref, 'feat')
+       with:
+         labels: enhancement
+
+     - name: "Label PR based on the branch name"
+       uses: actions-ecosystem/action-add-labels@v1
+       if: |
+         startsWith(github.event.pull_request.head.ref, 'ci')
+       with:
+         labels: ci
 
   branch-name-style:
     name: "Run branch name style checks"
@@ -80,24 +103,6 @@ jobs:
           BUILD_API: false
           BUILD_EXAMPLES: true
 
-      - name: "Download latest API docs"
-        uses: actions/checkout@v3
-        with:
-          ref: "gh-pages"
-          path: "gh-pages"
-
-      - name: "Include 'API' and 'Examples' sections from nightly build docs"
-        run: |
-          cp -r gh-pages/version/dev/api doc/_build/html/api
-          cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
-          cp gh-pages/version/dev/index.html doc/_build/html/index.html
-
-      - name: "Upload combined artifacts"
-        uses: actions/upload-artifact@v3
-        with:
-          path: doc/_build/gh-pages
-          name: documentation-html
-
       - name: "Build all docs"
         uses: ansys/actions/doc-build@v4
         if: |
@@ -108,6 +113,36 @@ jobs:
         env:
           BUILD_API: true
           BUILD_EXAMPLES: true
+
+      - name: "Download latest API docs"
+        uses: actions/checkout@v3
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples') ||
+          contains(github.event.pull_request.labels.*.name, 'docs:api')
+        with:
+          ref: "gh-pages"
+          path: "gh-pages"
+
+      - name: "Include 'API' section from nightly build docs"
+        if: contains(github.event.pull_request.labels.*.name, 'docs:api')
+        run: |
+          cp -r gh-pages/version/dev/api doc/_build/html/api
+          cp gh-pages/version/dev/index.html doc/_build/html/index.html
+
+      - name: "Include 'Examples' section from nightly build docs"
+        if: contains(github.event.pull_request.labels.*.name, 'docs:api')
+        run: |
+          cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
+          cp gh-pages/version/dev/index.html doc/_build/html/index.html
+
+      - name: "Upload combined artifacts"
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples') ||
+          contains(github.event.pull_request.labels.*.name, 'docs:api')
+        uses: actions/upload-artifact@v3
+        with:
+          path: doc/_build/gh-pages
+          name: documentation-html
 
   tests:
     name: "Tests Python ${{ matrix.python }}"
