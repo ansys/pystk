@@ -18,7 +18,7 @@ concurrency:
 jobs:
 
   labeler:
-    name: "Sync labels and label pull-request"
+    name: "Labels"
     permissions:
       contents: read
       pull-requests: write
@@ -52,7 +52,7 @@ jobs:
          labels: ci
 
   branch-name-style:
-    name: "Run branch name style checks"
+    name: "Branch style checks"
     runs-on: ubuntu-latest
     needs: labeler
     steps:
