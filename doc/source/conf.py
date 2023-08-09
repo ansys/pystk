@@ -25,13 +25,13 @@ html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
 html_sidebars = {"**": ["globaltoc.html"]}
 html_context = {
-    "github_user": "pyansys",
+    "github_user": "ansys-internal",
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
 }
 html_theme_options = {
-    "github_url": "https://github.com/pyansys/pystk",
+    "github_url": "https://github.com/ansys-internal/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
     "additional_breadcrumbs": [
