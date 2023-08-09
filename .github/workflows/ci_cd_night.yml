@@ -1,4 +1,4 @@
-name: "Nightly build"
+name: night
 on:
   workflow_dispatch:
   schedule: # UTC at 0000
