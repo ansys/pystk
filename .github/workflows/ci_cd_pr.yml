@@ -29,6 +29,7 @@ jobs:
        uses: actions/labeler@v4
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        sync-labels: true
 
      - name: "Label PR based on the branch name"
        uses: actions-ecosystem/action-add-labels@v1
