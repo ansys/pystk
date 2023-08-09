@@ -29,7 +29,7 @@ jobs:
        uses: actions/labeler@v4
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        sync-labels: true
+        configuration-path: '.github/labeler.yml'
 
      - name: "Label PR based on the branch name"
        uses: actions-ecosystem/action-add-labels@v1
@@ -149,9 +149,8 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    needs: code-style
-    # TODO: remove when ``code-style`` jobs succeeds
-    if: ${{ always() }}
+    # needs: code-style
+    needs: branch-name-style
     strategy:
       matrix:
         python: ["3.8", "3.9", "3.10"]
