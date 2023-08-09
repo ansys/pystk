@@ -32,9 +32,10 @@ jobs:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
      - name: "Label PR based on the modified files"
-       uses: actions/labeler@v4
+       uses: actions/labeler@v5.0.0-alpha.1
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        sync-labels: false
 
      - name: "Label PR based on the branch name"
        uses: actions-ecosystem/action-add-labels@v1
