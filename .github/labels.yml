@@ -1,3 +1,6 @@
+# The labels declared in this file are the ones avialables 
+# https://github.com/ansys-internal/pystk/labels
+
 # -- Defects and glitches labels----------------------------------------------
 
 - name: 'bug'
