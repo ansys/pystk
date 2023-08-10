@@ -1,7 +1,7 @@
 .. PySTK repository links
 
-.. _PySTK repository: https://github.com/pyansys/pystk
-.. _docker/ directory: https://github.com/pyansys/pystk/tree/doc/examples/docker/
+.. _PySTK repository: https://github.com/ansys-internal/pystk
+.. _docker/ directory: https://github.com/ansys-internal/pystk/tree/docker/
 
 
 .. Ansys products

@@ -18,7 +18,6 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-
 # Customized clean due to examples gallery
 clean:
 	rm -rf $(BUILDDIR)
