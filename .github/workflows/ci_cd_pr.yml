@@ -1,8 +1,7 @@
 name: pull-request
 on:
   pull_request:
-  label:
-    types: [created, deleted]
+    types: [opened, synchronize, reopened, labeled]
 
 env:
   MAIN_PYTHON_VERSION: '3.10'
