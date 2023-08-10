@@ -68,7 +68,11 @@ jobs:
     needs: doc-style
     steps:
 
+      # Render the documentation including or excluding different sections
+      # according to the labels of the pull-request.
+
       - name: "Build docs including the 'Examples' section"
+        id: build-doc-with-examples
         uses: ansys/actions/doc-build@v4
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
@@ -80,6 +84,7 @@ jobs:
           BUILD_EXAMPLES: true
 
       - name: "Build docs including the 'API' section"
+        id: build-doc-with-api
         uses: ansys/actions/doc-build@v4
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:api') &&
@@ -91,6 +96,7 @@ jobs:
           BUILD_EXAMPLES: false
 
       - name: "Build docs excluding 'API' and 'Examples' sections"
+        id: build-doc-minimum
         uses: ansys/actions/doc-build@v4
         if: |
           !contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
@@ -102,6 +108,7 @@ jobs:
           BUILD_EXAMPLES: false
 
       - name: "Build docs including 'API' and 'Examples' sections"
+        id: build-doc-full
         uses: ansys/actions/doc-build@v4
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
@@ -112,31 +119,35 @@ jobs:
           BUILD_API: true
           BUILD_EXAMPLES: true
 
+      # If required, combine partially rendered documentation with the nightly
+      # build artifacts. Upload the generated documentation as an artifact in
+      # the CI/CD session.
+
       - name: "Download latest API docs"
         uses: actions/checkout@v3
-        if: |
-          contains(github.event.pull_request.labels.*.name, 'docs:examples') ||
-          contains(github.event.pull_request.labels.*.name, 'docs:api')
+        if: steps.build-doc-full.outcome == 'skipped'
         with:
           ref: "gh-pages"
           path: "gh-pages"
 
       - name: "Include 'API' section from nightly build docs"
-        if: contains(github.event.pull_request.labels.*.name, 'docs:api')
+        if: |
+          steps.build-doc-with-api.outcome == 'success' ||
+          steps.build-doc-minimum.outcome == 'success'
         run: |
           cp -r gh-pages/version/dev/api doc/_build/html/api
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
       - name: "Include 'Examples' section from nightly build docs"
-        if: contains(github.event.pull_request.labels.*.name, 'docs:api')
+        if: |
+          steps.build-doc-with-examples.outcome == 'success' ||
+          steps.build-doc-minimum.outcome == 'success'
         run: |
           cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
       - name: "Upload combined artifacts"
-        if: |
-          contains(github.event.pull_request.labels.*.name, 'docs:examples') ||
-          contains(github.event.pull_request.labels.*.name, 'docs:api')
+        if: steps.build-doc-full.outcome == 'skipped'
         uses: actions/upload-artifact@v3
         with:
           path: doc/_build/html
