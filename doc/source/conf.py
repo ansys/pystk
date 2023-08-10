@@ -25,13 +25,13 @@ html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
 html_sidebars = {"**": ["globaltoc.html"]}
 html_context = {
-    "github_user": "pyansys",
+    "github_user": "ansys-internal",
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
 }
 html_theme_options = {
-    "github_url": "https://github.com/pyansys/pystk",
+    "github_url": "https://github.com/ansys-internal/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
     "additional_breadcrumbs": [
@@ -164,3 +164,9 @@ autodoc_default_options = {
 }
 autodoc_class_signature = "separated"
 autodoc_mock_imports = ["tkinter"]
+
+# -- Linkcheck configuration -------------------------------------------------
+user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+linkcheck_ignore = [
+    f"https://github.com/{user_repo}/*",
+]
