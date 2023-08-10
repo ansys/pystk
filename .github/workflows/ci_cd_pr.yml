@@ -139,7 +139,7 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'docs:api')
         uses: actions/upload-artifact@v3
         with:
-          path: doc/_build/gh-pages
+          path: doc/_build/html
           name: documentation-html
 
   tests:
