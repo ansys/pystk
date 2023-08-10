@@ -35,7 +35,6 @@ jobs:
        uses: actions/labeler@v5.0.0-alpha.1
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        sync-labels: false
 
   branch-name-style:
     name: "Branch style checks"
