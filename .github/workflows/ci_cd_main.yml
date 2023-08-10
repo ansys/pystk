@@ -43,7 +43,7 @@ jobs:
       - name: "Upload combined artifacts"
         uses: actions/upload-artifact@v3
         with:
-          path: doc/_build/gh-pages
+          path: doc/_build/html
           name: documentation-html
 
   doc-deploy-dev:
