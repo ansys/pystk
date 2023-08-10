@@ -17,7 +17,6 @@ jobs:
   doc-build:
     name: "Doc build excluding 'API' and 'Examples' sections"
     runs-on: ubuntu-latest
-    needs: doc-style
     steps:
 
       - name: "Build project documentation excluding 'API' and 'Example' sections"
