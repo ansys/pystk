@@ -1,28 +1,44 @@
 # This file is required by the the action 'https://github.com/actions/labeler'
 # and used in the '.github/workflows/ci_cd_pr.yml' workflow
 
+# -- Labels based on PR title ------------------------------------------------
+
+'fix':
+- head-branch: ['fix']
+  
+'enhancement':
+- head-branch: ['feat']
+
 # -- Documentation labels ----------------------------------------------------
 
 'docs':
-- any: ['doc/source/**/*.rst']
-  all: ['!doc/source/examples.rst', '!doc/source/api/**/*.rst', '!doc/styles/**', '!doc/.vale.ini']
+- any: 
+  - changed-files: ['doc/source/**/*.rst']
+- all: 
+  - changed-files: ['!doc/source/examples.rst', '!doc/source/api/**/*.rst', '!doc/styles/**', '!doc/.vale.ini']
 
 'docs:api':
-- any: ['doc/source/api/**/*.rst']
+- any:
+  - changed-files: ['doc/source/api/**/*.rst']
 
 'docs:examples':
-- any: ['examples/**/*.py', 'doc/source/examples.rst']
+- any: 
+  - changed-files: ['examples/**/*.py', 'doc/source/examples.rst']
 
-# -- Other labels ------------------------------------------------------------
+## -- Other labels ------------------------------------------------------------
 
 'code-style':
-- any: ['.pre-commit-config.yaml', 'doc/.vale.ini', '.flake8']
+- any: 
+  - changed-files: ['.pre-commit-config.yaml', 'doc/.vale.ini', '.flake8']
 
 'docker':
-- any: ['docker/**']
+- any: 
+  - changed-files: ['docker/**']
 
 'ci':
-- any: ['.github/workflows/**']
+- any: 
+  - changed-files: ['.github/workflows/**']
 
 'tests':
-- any: ['tests/**']
+- any: 
+  - changed-files: ['tests/**']

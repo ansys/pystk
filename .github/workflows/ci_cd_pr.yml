@@ -26,37 +26,16 @@ jobs:
     steps:
      - uses: actions/checkout@v3
 
-     - name: "Sync labels"
+     - name: "Update labels"
        uses: micnncim/action-label-syncer@v1
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-     - name: "Label PR based on the modified files"
+     - name: "Label pull-request"
        uses: actions/labeler@v5.0.0-alpha.1
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         sync-labels: false
-
-     - name: "Label PR based on the branch name"
-       uses: actions-ecosystem/action-add-labels@v1
-       if: |
-         startsWith(github.event.pull_request.head.ref, 'fix')
-       with:
-         labels: fix
-
-     - name: "Label PR based on the branch name"
-       uses: actions-ecosystem/action-add-labels@v1
-       if: |
-         startsWith(github.event.pull_request.head.ref, 'feat')
-       with:
-         labels: enhancement
-
-     - name: "Label PR based on the branch name"
-       uses: actions-ecosystem/action-add-labels@v1
-       if: |
-         startsWith(github.event.pull_request.head.ref, 'ci')
-       with:
-         labels: ci
 
   branch-name-style:
     name: "Branch style checks"
