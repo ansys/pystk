@@ -1904,7 +1904,7 @@ class ITimeToolIntervalCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -2652,7 +2652,7 @@ class IAnalysisWorkbenchComponent(object):
 
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns the context object associated with the instance. The returned object is either an instance of IAnalysisWorkbenchInstance or IAnalysisWorkbenchTemplate interface."""
+        """Returns the context object associated with the instance. The returned object is either an instance of IAnalysisWorkbenchInstance or IAnalysisWorkbenchComponentTemplate interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_context"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -3242,7 +3242,7 @@ class ITimeToolIntervalVectorCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -3331,7 +3331,7 @@ class ITimeToolEventGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -3460,7 +3460,7 @@ class ITimeToolEventIntervalGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventIntervalName:str) -> None:
         """Removes an element by name."""
@@ -3589,7 +3589,7 @@ class ITimeToolEventIntervalListGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -3718,7 +3718,7 @@ class ITimeToolEventArrayGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -3847,7 +3847,7 @@ class ICalculationToolScalarGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -3976,7 +3976,7 @@ class ITimeToolEventIntervalCollectionGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -4105,7 +4105,7 @@ class ICalculationToolParameterSetGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -4234,7 +4234,7 @@ class ICalculationToolConditionGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -4363,7 +4363,7 @@ class ICalculationToolConditionSetGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -4607,7 +4607,7 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -4736,7 +4736,7 @@ class ISpatialAnalysisToolVolumeGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -4865,7 +4865,7 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, eventName:str) -> None:
         """Removes a specified element."""
@@ -24619,7 +24619,7 @@ class IVectorGeometryToolVectorGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, vectorName:str) -> None:
         """Removes a specified vector."""
@@ -24750,7 +24750,7 @@ class IVectorGeometryToolPointGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, pointName:str) -> None:
         """Removes a specified point by name."""
@@ -24886,7 +24886,7 @@ class IVectorGeometryToolAngleGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, angleName:str) -> None:
         """Removes a specified Angle."""
@@ -25017,7 +25017,7 @@ class IVectorGeometryToolAxesGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, axesName:str) -> None:
         """Removes a specified Axes."""
@@ -25153,7 +25153,7 @@ class IVectorGeometryToolPlaneGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, planeName:str) -> None:
         """Removes a specified Plane."""
@@ -25284,7 +25284,7 @@ class IVectorGeometryToolSystemGroup(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def remove(self, systemName:str) -> None:
         """Removes a specified System."""
@@ -27501,7 +27501,7 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -27596,7 +27596,7 @@ class IAnalysisWorkbenchCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def contains(self, name:str) -> bool:
         """Searches for a an element with a given name. Returns false if the specified element does not exist."""
@@ -27827,7 +27827,7 @@ class ITimeToolPointSamplingIntervalCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -28037,7 +28037,7 @@ class ITimeToolAxesSamplingIntervalCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:

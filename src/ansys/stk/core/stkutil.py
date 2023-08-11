@@ -3056,7 +3056,7 @@ class IPropertyInfoCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def item(self, indexOrName:typing.Any) -> "IPropertyInfo":
         """Allows the user to iterate through the properties."""
@@ -3266,7 +3266,7 @@ class IExecCmdResult(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -3358,7 +3358,7 @@ class IExecMultiCmdResult(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -3510,7 +3510,7 @@ class IUnitPreferencesUnitCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def item(self, indexOrName:typing.Any) -> "IUnitPreferencesUnit":
         """Returns the specific item in the collection given a unit identifier or an index."""
@@ -3619,7 +3619,7 @@ class IUnitPreferencesDimensionCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def item(self, indexOrName:typing.Any) -> "IUnitPreferencesDimension":
         """Returns an IUnitPreferencesDimension given a Dimension name or an index."""
@@ -3785,21 +3785,21 @@ class IQuantity(object):
             agcls.evaluate_hresult(self.__dict__["_set_value"](arg_value.COM_val))
 
     def add(self, quantity:"IQuantity") -> "IQuantity":
-        """Adds the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
+        """Adds the value from the IQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_add"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
     def subtract(self, quantity:"IQuantity") -> "IQuantity":
-        """Subtracts the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
+        """Subtracts the value from the IQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_subtract"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
             return arg_ppQuantity.python_val
 
     def multiply_qty(self, quantity:"IQuantity") -> "IQuantity":
-        """Multiplies the value from the IQuantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
+        """Multiplies the value from the IQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         with agmarshall.AgInterface_in_arg(quantity, IQuantity) as arg_quantity, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_multiply_qty"](arg_quantity.COM_val, byref(arg_ppQuantity.COM_val)))
@@ -3967,7 +3967,7 @@ class IDate(object):
             return arg_ppDate.python_val
 
     def span(self, date:"IDate") -> "IQuantity":
-        """Subtracts the value from the IDate interface and returns an IQuantity."""
+        """Subtracts the value from the IDate interface and returns an IAgQuantity."""
         with agmarshall.AgInterface_in_arg(date, IDate) as arg_date, \
              agmarshall.AgInterface_out_arg() as arg_ppQuantity:
             agcls.evaluate_hresult(self.__dict__["_span"](arg_date.COM_val, byref(arg_ppQuantity.COM_val)))
@@ -4243,7 +4243,7 @@ class IDoublesCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def item(self, index:int) -> float:
         """Returns a double at a specified position."""

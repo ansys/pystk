@@ -1,4 +1,4 @@
-# Copyright 2020-2020, Analytical Graphics, Inc. 
+# Copyright 2020-2020, Ansys Government Initiatives 
 """
 This module is used to communicate color information between Python and STK.
 
