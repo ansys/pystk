@@ -142,7 +142,6 @@ class AccessConstraintHelper(object):
         typesMinMaxDistance = []
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrAltitude)
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrCrossTrackRange)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrGrazingAlt)
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrInTrackRange)
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrRange)
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrCentroidRange)
@@ -277,9 +276,10 @@ class AccessConstraintHelper(object):
         if eType == AgEAccessConstraints.eCstrBackground:
             self.TestConstraintBackground(oConstraint)
 
-        elif ((eType == AgEAccessConstraints.eCstrCrdnAngle) or (eType == AgEAccessConstraints.eCstrCrdnVectorMag)) or (
-            eType == AgEAccessConstraints.eCstrCrdnCondition
-        ):
+        elif (
+            ((eType == AgEAccessConstraints.eCstrCrdnAngle) or (eType == AgEAccessConstraints.eCstrCrdnCalcScalar))
+            or (eType == AgEAccessConstraints.eCstrCrdnVectorMag)
+        ) or (eType == AgEAccessConstraints.eCstrCrdnCondition):
             self.TestConstraintCrdnCn(oConstraint)
             self.TestConstraintAWBCollection(oCollection.awb_constraints, int(eType))
 
@@ -374,6 +374,11 @@ class AccessConstraintHelper(object):
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDistance(oMinMax)
+
+        elif eType == AgEAccessConstraints.eCstrGrazingAlt:
+            oGrazingAlt: "IAccessConstraintGrazingAltitude" = clr.Convert(oConstraint, IAccessConstraintGrazingAltitude)
+            Assert.assertIsNotNone(oGrazingAlt)
+            self.TestConstraintMinMaxGrazingAlt(oGrazingAlt)
 
         elif eType in typesMinMaxTime:
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
@@ -1719,6 +1724,64 @@ class AccessConstraintHelper(object):
 
     # endregion
 
+    # region TestConstraintMinMaxGrazingAlt
+    # ////////////////////////////////////////////////////////////////////////
+    def TestConstraintMinMaxGrazingAlt(self, oGrazingAlt: "IAccessConstraintGrazingAltitude"):
+        Assert.assertIsNotNone(oGrazingAlt)
+
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
+        self.m_oUnits.set_current_unit("DistanceUnit", "m")
+        Assert.assertEqual("m", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
+
+        oGrazingAlt.enable_max = False
+        Assert.assertEqual(False, oGrazingAlt.enable_max)
+
+        def action101():
+            oGrazingAlt.max = 10
+
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action101)
+
+        oGrazingAlt.enable_max = True
+        Assert.assertEqual(True, oGrazingAlt.enable_max)
+
+        oGrazingAlt.enable_min = False
+        Assert.assertEqual(False, oGrazingAlt.enable_min)
+
+        def action102():
+            oGrazingAlt.min = 1
+
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action102)
+
+        oGrazingAlt.enable_min = True
+        Assert.assertEqual(True, oGrazingAlt.enable_min)
+
+        oGrazingAlt.max = 67.89
+        Assert.assertEqual(67.89, oGrazingAlt.max)
+
+        oGrazingAlt.min = 12.345
+        Assert.assertEqual(12.345, oGrazingAlt.min)
+
+        def action103():
+            oGrazingAlt.max = 1.2
+
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action103)
+
+        def action104():
+            oGrazingAlt.min = 87.65
+
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action104)
+
+        oGrazingAlt.compute_beyond_tgt = True
+        Assert.assertEqual(True, oGrazingAlt.compute_beyond_tgt)
+
+        oGrazingAlt.compute_beyond_tgt = False
+        Assert.assertEqual(False, oGrazingAlt.compute_beyond_tgt)
+
+        self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
+
+    # endregion
+
     # region TestConstraintIntervals
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintIntervals(self, oConstraint: "IAccessConstraint", temporaryDirectory: str):
@@ -1783,10 +1846,10 @@ class AccessConstraintHelper(object):
         oAngle.angle = 45
         Assert.assertEqual(45, oAngle.angle)
 
-        def action101():
+        def action105():
             oAngle.angle = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action101)
+        TryCatchAssertBlock.ExpectedException("is invalid", action105)
 
         # restore unit
         self.m_oUnits.set_current_unit(strUnitName, strUnitAbbreviation)
@@ -1811,11 +1874,11 @@ class AccessConstraintHelper(object):
                 if not oObject.is_object_assigned(strObject):
                     Assert.fail("The {0} object should be already assigned.", strObject)
 
-            def action102():
+            def action106():
                 oObject.add_exclusion_object(strObject)
 
             # re-assign object test
-            TryCatchAssertBlock.DoAssert("", action102)
+            TryCatchAssertBlock.DoAssert("", action106)
 
         arAssigned = oObject.assigned_objects
 
@@ -1829,10 +1892,10 @@ class AccessConstraintHelper(object):
         oObject.exclusion_angle = 123
         Assert.assertEqual(123, oObject.exclusion_angle)
 
-        def action103():
+        def action107():
             oObject.exclusion_angle = 1234
 
-        TryCatchAssertBlock.DoAssert("", action103)
+        TryCatchAssertBlock.DoAssert("", action107)
         self.m_oUnits.set_current_unit("AngleUnit", strUnit)
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
         if Array.Length(arAssigned) > 0:
@@ -1840,11 +1903,11 @@ class AccessConstraintHelper(object):
             if oObject.is_object_assigned(strObject):
                 oObject.remove_exclusion_object(strObject)
 
-            def action104():
+            def action108():
                 oObject.remove_exclusion_object(strObject)
 
             # remove object test
-            TryCatchAssertBlock.DoAssert("", action104)
+            TryCatchAssertBlock.DoAssert("", action108)
 
         arAssigned = oObject.assigned_objects
 
@@ -1917,32 +1980,34 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oCrdnCn)
         if oCrdnCn.constraint_name == "CrdnAngle":
             self.CrdnCnWithAngleUnit(oCrdnCn)
-        elif oCrdnCn.constraint_name == "CrdnVectorMag":
+        elif (oCrdnCn.constraint_name == "CrdnCalcScalar") or (oCrdnCn.constraint_name == "CrdnVectorMag"):
             self.CrdnCnWithUnitLess(oCrdnCn)
         # Reference
         # AvailableReferences
         arReferences = oCrdnCn.available_references
         if Array.Length(arReferences) > 0:
-            if (oCrdnCn.constraint_name == "CrdnAngle") or (oCrdnCn.constraint_name == "CrdnVectorMag"):
+            if ((oCrdnCn.constraint_name == "CrdnAngle") or (oCrdnCn.constraint_name == "CrdnCalcScalar")) or (
+                oCrdnCn.constraint_name == "CrdnVectorMag"
+            ):
                 oCrdnCn.enable_max = False
                 Assert.assertEqual(False, oCrdnCn.enable_max)
                 oCrdnCn.enable_min = False
                 Assert.assertEqual(False, oCrdnCn.enable_min)
 
-                def action105():
+                def action109():
                     oCrdnCn.min = 40
 
-                TryCatchAssertBlock.ExpectedException("read-only", action105)
+                TryCatchAssertBlock.ExpectedException("read-only", action109)
 
-                def action106():
+                def action110():
                     oCrdnCn.max = 50
 
-                TryCatchAssertBlock.ExpectedException("read-only", action106)
+                TryCatchAssertBlock.ExpectedException("read-only", action110)
 
-                def action107():
+                def action111():
                     oCrdnCn.reference = str(arReferences[0])
 
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action107)
+                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action111)
 
                 oCrdnCn.enable_max = True
                 Assert.assertEqual(True, oCrdnCn.enable_max)
@@ -1957,10 +2022,10 @@ class AccessConstraintHelper(object):
             oCrdnCn.reference = str(arReferences[0])
             Assert.assertEqual(str(arReferences[0]), oCrdnCn.reference)
 
-            def action108():
+            def action112():
                 oCrdnCn.reference = "Bogus"
 
-            TryCatchAssertBlock.ExpectedException("not a valid choice", action108)
+            TryCatchAssertBlock.ExpectedException("not a valid choice", action112)
 
     # endregion
 
@@ -1978,10 +2043,10 @@ class AccessConstraintHelper(object):
         oCrdnCn.enable_max = False
         Assert.assertEqual(False, oCrdnCn.enable_max)
 
-        def action109():
+        def action113():
             oCrdnCn.max = 100
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action109)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action113)
 
         oCrdnCn.enable_max = True
         Assert.assertEqual(True, oCrdnCn.enable_max)
@@ -1990,10 +2055,10 @@ class AccessConstraintHelper(object):
         oCrdnCn.enable_min = False
         Assert.assertEqual(False, oCrdnCn.enable_min)
 
-        def action110():
+        def action114():
             oCrdnCn.min = 10
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action110)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action114)
 
         oCrdnCn.enable_min = True
         Assert.assertEqual(True, oCrdnCn.enable_min)
@@ -2002,29 +2067,29 @@ class AccessConstraintHelper(object):
         oCrdnCn.max = 100
         Assert.assertEqual(100, oCrdnCn.max)
 
-        def action111():
+        def action115():
             oCrdnCn.max = 1234
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action111)
+        TryCatchAssertBlock.ExpectedException("is invalid", action115)
 
         # Min
         oCrdnCn.min = 50
         Assert.assertEqual(50, oCrdnCn.min)
 
-        def action112():
+        def action116():
             oCrdnCn.min = -1234
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action112)
+        TryCatchAssertBlock.ExpectedException("is invalid", action116)
 
-        def action113():
+        def action117():
             oCrdnCn.max = 12
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action113)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action117)
 
-        def action114():
+        def action118():
             oCrdnCn.min = 123
 
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action114)
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action118)
 
         # restore AngleUnit
         self.m_oUnits.set_current_unit("AngleUnit", strUnit)
@@ -2041,10 +2106,10 @@ class AccessConstraintHelper(object):
         oCrdnCn.enable_max = False
         Assert.assertEqual(False, oCrdnCn.enable_max)
 
-        def action115():
+        def action119():
             oCrdnCn.max = 100
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action115)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action119)
 
         oCrdnCn.enable_max = True
         Assert.assertEqual(True, oCrdnCn.enable_max)
@@ -2053,10 +2118,10 @@ class AccessConstraintHelper(object):
         oCrdnCn.enable_min = False
         Assert.assertEqual(False, oCrdnCn.enable_min)
 
-        def action116():
+        def action120():
             oCrdnCn.min = 10
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action116)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action120)
 
         oCrdnCn.enable_min = True
         Assert.assertEqual(True, oCrdnCn.enable_min)
@@ -2065,29 +2130,30 @@ class AccessConstraintHelper(object):
         oCrdnCn.max = 98765.4321
         Assert.assertEqual(98765.4321, oCrdnCn.max)
 
-        def action117():
+        def action121():
             oCrdnCn.max = -1234
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action117)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action121)
 
         # Min
         oCrdnCn.min = 12345.6789
         Assert.assertEqual(12345.6789, oCrdnCn.min)
+        if oCrdnCn.constraint_name != "CrdnCalcScalar":
 
-        def action118():
-            oCrdnCn.min = -1234
+            def action122():
+                oCrdnCn.min = -1234
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action118)
+            TryCatchAssertBlock.ExpectedException("is invalid", action122)
 
-        def action119():
+        def action123():
             oCrdnCn.max = 12
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action119)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action123)
 
-        def action120():
+        def action124():
             oCrdnCn.min = 123456
 
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action120)
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action124)
 
     # endregion
 
@@ -2114,12 +2180,17 @@ class AccessConstraintHelper(object):
         elif clr.Convert(eType, AgEAccessConstraints) == AgEAccessConstraints.eCstrCrdnAngle:
             self.TestAWBConstraintMinMaxAngle(clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench))
 
+        elif clr.Convert(eType, AgEAccessConstraints) == AgEAccessConstraints.eCstrCrdnCalcScalar:
+            self.TestAWBConstraintMinMaxUnitLess(
+                clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench), -2000.0, 2000.0
+            )
+
         Assert.assertEqual(reference, (clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench)).reference)
 
-        def action121():
+        def action125():
             awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), "Bogus")
 
-        TryCatchAssertBlock.ExpectedException("Specified reference cannot be found", action121)
+        TryCatchAssertBlock.ExpectedException("Specified reference cannot be found", action125)
 
         awbCol.remove_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
         Assert.assertEqual(origCount, awbCol.count)
@@ -2132,10 +2203,10 @@ class AccessConstraintHelper(object):
 
         awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
 
-        def action122():
+        def action126():
             awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
 
-        TryCatchAssertBlock.ExpectedException("Constraint already active", action122)
+        TryCatchAssertBlock.ExpectedException("Constraint already active", action126)
 
         found: bool = False
         awbConstraint: "IAccessConstraintAnalysisWorkbench"
@@ -2182,15 +2253,15 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action123():
+        def action127():
             oMinMax.min = 1
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action123)
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action127)
 
-        def action124():
+        def action128():
             oMinMax.max = 10
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action124)
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action128)
 
         # Min on, Max off
         oMinMax.enable_min = True
@@ -2202,10 +2273,10 @@ class AccessConstraintHelper(object):
         oMinMax.min = 12.345
         Assert.assertEqual(12.345, oMinMax.min)
 
-        def action125():
+        def action129():
             oMinMax.max = 10
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action125)
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action129)
 
         # Min on, Max on
         oMinMax.enable_min = True
@@ -2219,20 +2290,20 @@ class AccessConstraintHelper(object):
         oMinMax.min = 21.345
         Assert.assertEqual(21.345, oMinMax.min)
 
-        def action126():
+        def action130():
             oMinMax.max = -1234
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action126)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action130)
 
-        def action127():
+        def action131():
             oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action127)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action131)
 
-        def action128():
+        def action132():
             oMinMax.min = 87.65
 
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action128)
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action132)
 
         # Min off, Max on
         oMinMax.enable_min = False
@@ -2242,10 +2313,10 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(True, oMinMax.enable_max)
 
-        def action129():
+        def action133():
             oMinMax.min = 1
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action129)
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action133)
         oMinMax.max = 76.89
         Assert.assertEqual(76.89, oMinMax.max)
 
@@ -2257,15 +2328,15 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(False, oMinMax.enable_min)
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action130():
+        def action134():
             oMinMax.min = 1
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action130)
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action134)
 
-        def action131():
+        def action135():
             oMinMax.max = 10
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action131)
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action135)
 
         # restore to original
         oMinMax.enable_min = holdEnableMin
@@ -2284,10 +2355,10 @@ class AccessConstraintHelper(object):
         oMinMax.enable_max = False
         Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action132():
+        def action136():
             oMinMax.max = dMax
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action132)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action136)
 
         oMinMax.enable_max = True
         Assert.assertEqual(True, oMinMax.enable_max)
@@ -2295,10 +2366,10 @@ class AccessConstraintHelper(object):
         oMinMax.enable_min = False
         Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action133():
+        def action137():
             oMinMax.min = dMin
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action133)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action137)
 
         oMinMax.enable_min = True
         Assert.assertEqual(True, oMinMax.enable_min)
@@ -2311,20 +2382,20 @@ class AccessConstraintHelper(object):
             Assert.assertEqual(dMin, float(oMinMax.min))
             if bRange:
 
-                def action134():
+                def action138():
                     oMinMax.min = dMin * (-2)
 
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action134)
+                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action138)
 
             # Max
             oMinMax.max = dMax
             Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
 
-                def action135():
+                def action139():
                     oMinMax.max = dMax * 2
 
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action135)
+                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action139)
 
         else:
             # Max
@@ -2332,30 +2403,30 @@ class AccessConstraintHelper(object):
             Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
 
-                def action136():
+                def action140():
                     oMinMax.max = dMax * 2
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action136)
+                TryCatchAssertBlock.ExpectedException("is invalid", action140)
 
             # Min
             oMinMax.min = dMin
             Assert.assertEqual(dMin, oMinMax.min)
             if bRange:
 
-                def action137():
+                def action141():
                     oMinMax.min = dMin * (-2)
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action137)
+                TryCatchAssertBlock.ExpectedException("is invalid", action141)
 
-        def action138():
+        def action142():
             oMinMax.max = dMin - 0.01
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action138)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action142)
 
-        def action139():
+        def action143():
             oMinMax.min = dMax + 0.01
 
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action139)
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action143)
 
     # endregion
 
@@ -2474,25 +2545,25 @@ class AccessConstraintHelper(object):
         oZone.max_lon = 45.6789
         Assert.assertEqual(45.6789, oZone.max_lon)
 
-        def action140():
+        def action144():
             oZone.min_lat = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action140)
+        TryCatchAssertBlock.ExpectedException("is invalid", action144)
 
-        def action141():
+        def action145():
             oZone.max_lat = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action141)
+        TryCatchAssertBlock.ExpectedException("is invalid", action145)
 
-        def action142():
+        def action146():
             oZone.min_lon = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action142)
+        TryCatchAssertBlock.ExpectedException("is invalid", action146)
 
-        def action143():
+        def action147():
             oZone.max_lon = -380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action143)
+        TryCatchAssertBlock.ExpectedException("is invalid", action147)
 
         # Restore LatitudeUnit units
         self.m_oUnits.set_current_unit("LatitudeUnit", strLatitudeUnit)
@@ -2518,20 +2589,20 @@ class AccessConstraintHelper(object):
             if not oCb.is_obstruction_assigned(strName):
                 Assert.fail("The {0} obstruction should be assigned!", strName)
 
-            def action144():
+            def action148():
                 oCb.add_obstruction(strName)
 
-            TryCatchAssertBlock.DoAssert("", action144)
+            TryCatchAssertBlock.DoAssert("", action148)
             # AssignedObstructions
             assigned = oCb.assigned_obstructions
             oCb.remove_obstruction(strName)
             if oCb.is_obstruction_assigned(strName):
                 Assert.fail("The {0} obstruction should not be assigned!", strName)
 
-            def action145():
+            def action149():
                 oCb.remove_obstruction(strName)
 
-            TryCatchAssertBlock.DoAssert("", action145)
+            TryCatchAssertBlock.DoAssert("", action149)
             assigned = oCb.assigned_obstructions
 
     # endregion
@@ -2555,15 +2626,15 @@ class AccessConstraintHelper(object):
         collection.add_constraint(AgEAccessConstraints.eCstrAltitude)
         Assert.assertEqual((origCount + 1), collection.count)
 
-        def action146():
+        def action150():
             collection.add_constraint(AgEAccessConstraints.eCstrAltitude)
 
-        TryCatchAssertBlock.ExpectedException("already active", action146)
+        TryCatchAssertBlock.ExpectedException("already active", action150)
 
-        def action147():
+        def action151():
             collection.add_constraint(clr.Convert((-1), AgEAccessConstraints))
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action147)
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action151)
 
         activeConstraint: "IAccessConstraint" = collection.get_active_constraint(AgEAccessConstraints.eCstrAltitude)
         Assert.assertEqual(AgEAccessConstraints.eCstrAltitude, activeConstraint.constraint_type)
@@ -2575,10 +2646,10 @@ class AccessConstraintHelper(object):
         Assert.assertFalse(collection.is_constraint_active(AgEAccessConstraints.eCstrAltitude))
         Assert.assertFalse(collection.is_constraint_supported(AgEAccessConstraints.eCstrNone))
 
-        def action148():
+        def action152():
             activeConstraint = collection.get_active_constraint(AgEAccessConstraints.eCstrAltitude)
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action148)
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action152)
 
         arAvailable = collection.available_constraints()
 
@@ -2593,15 +2664,15 @@ class AccessConstraintHelper(object):
         collection.add_named_constraint("Altitude")
         Assert.assertEqual((origCount + 1), collection.count)
 
-        def action149():
+        def action153():
             collection.add_named_constraint("Altitude")
 
-        TryCatchAssertBlock.ExpectedException("already active", action149)
+        TryCatchAssertBlock.ExpectedException("already active", action153)
 
-        def action150():
+        def action154():
             collection.add_named_constraint("Bogus")
 
-        TryCatchAssertBlock.ExpectedException("does not exist", action150)
+        TryCatchAssertBlock.ExpectedException("does not exist", action154)
 
         activeConstraint = collection.get_active_named_constraint("Altitude")
         Assert.assertEqual(AgEAccessConstraints.eCstrAltitude, activeConstraint.constraint_type)
@@ -2619,14 +2690,14 @@ class AccessConstraintHelper(object):
         collection.remove_named_constraint_ex("Altitude")
         Assert.assertEqual(origCount, collection.count)
 
-        def action151():
+        def action155():
             collection.remove_named_constraint_ex("Bogus")
 
-        TryCatchAssertBlock.ExpectedException("was not found", action151)
+        TryCatchAssertBlock.ExpectedException("was not found", action155)
 
-        def action152():
+        def action156():
             activeConstraint = collection.get_active_named_constraint("Altitude")
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action152)
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action156)
 
     # endregion

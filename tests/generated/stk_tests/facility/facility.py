@@ -28,9 +28,9 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.stk_preferences.stk_preferences_python_plugins.access_constraint_paths
         )
         paths.remove_all()
-        paths.add(Path.Combine(TestBase.GetScenarioRootDir(), "Plugins", "RangeExample.py"))
+        paths.add(TestBase.PathCombine(TestBase.GetScenarioRootDir(), "Plugins", "RangeExample.py"))
 
-        TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))
+        TestBase.LoadTestScenario(TestBase.PathCombine("FacilityTests", "FacilityTests.sc"))
         EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], IFacility)
 
     # endregion

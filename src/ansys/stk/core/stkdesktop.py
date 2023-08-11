@@ -1,5 +1,5 @@
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2020, Ansys Government Initiatives
 ################################################################################
 
 __all__ = ["STKDesktop", "STKDesktopApplication"]
@@ -200,5 +200,5 @@ class STKDesktop(object):
 
 
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2020, Ansys Government Initiatives
 ################################################################################

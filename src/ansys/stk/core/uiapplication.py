@@ -145,7 +145,7 @@ class IMRUCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def item(self, index:typing.Any) -> str:
         """Gets the MRU at the specified index."""
@@ -713,7 +713,7 @@ class IUiFileOpenExtCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:

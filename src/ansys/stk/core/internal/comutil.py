@@ -1,4 +1,4 @@
-# Copyright 2020-2020, Analytical Graphics, Inc. 
+# Copyright 2020-2020, Ansys Government Initiatives 
 
 import os
 
@@ -552,6 +552,7 @@ class IEnumVARIANT(object):
         one_obj = ULONG(1)
         num_fetched = ULONG()
         obj = VARIANT()
+        oleaut32lib.VariantInit(obj)
         if self._Next(one_obj, byref(obj), byref(num_fetched)) == S_OK:
             return obj
         else:

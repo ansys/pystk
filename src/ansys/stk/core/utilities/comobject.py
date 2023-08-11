@@ -1,4 +1,4 @@
-# Copyright 2020-2020, Analytical Graphics, Inc. 
+# Copyright 2020-2020, Ansys Government Initiatives 
 """This module contains a wrapper for a raw COM object that is not part of the STK Object Model."""
 
 from ctypes import c_void_p

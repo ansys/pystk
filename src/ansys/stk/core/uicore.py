@@ -249,7 +249,7 @@ class IUiToolbarCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def item(self, indexOrCaption:typing.Any) -> "IUiToolbar":
         """Retrieves a toolbar object."""
@@ -583,7 +583,7 @@ class IUiWindowsCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     def item(self, indexOrCaption:typing.Any) -> "IUiWindow":
         """Retrieves a window object."""

@@ -108,6 +108,7 @@ Interfaces
     IAccessConstraintGroundTrack
     IAccessConstraintAnalysisWorkbench
     IAccessConstraintAnalysisWorkbenchCollection
+    IAccessConstraintGrazingAltitude
     ILevelAttribute
     ILevelAttributeCollection
     IGfxRangeContours
@@ -924,6 +925,7 @@ Interfaces
     IVehicleVOBPlaneInstancesCollection
     IVehicleVOBPlanes
     IVehicleSpaceEnvironment
+    IEOIR
     ISatelliteVOModel
     ISatelliteVO
     IVehicleCentralBodies
@@ -1156,6 +1158,27 @@ Interfaces
     IAdvCATVO
     IAdvCAT
     IAdvCATChosenObject
+    IEOIRShapeObject
+    IEOIRShapeBox
+    IEOIRShapeCone
+    IEOIRShapePlate
+    IEOIRShapeSphere
+    IEOIRShapeCoupler
+    IEOIRShapeNone
+    IEOIRShapeGEOComm
+    IEOIRShapeLEOComm
+    IEOIRShapeLEOImaging
+    IEOIRShapeCustomMesh
+    IEOIRShapeTargetSignature
+    IEOIRStagePlume
+    IEOIRShape
+    IEOIRStage
+    IEOIRShapeCollection
+    IEOIRMaterialElement
+    IEOIRMaterialElementCollection
+    IMissileEOIR
+    IVehicleEOIR
+    IEOIRShapeCylinder
     IStkObjectChangedEventArgs
     IScenarioBeforeSaveEventArgs
     IPctCmpltEventArgs
@@ -1403,6 +1426,10 @@ Enumerations
     AgEAdvCATEllipsoidClass
     AgEAdvCATConjunctionType
     AgEAdvCATSecondaryEllipsoidsVisibilityType
+    AgEEOIRShapeType
+    AgEEOIRShapeMaterialSpecificationType
+    AgEEOIRThermalModelType
+    AgEEOIRFlightType
     AgEComponentLinkEmbedControlReferenceType
     AgESwathComputationalMethod
     AgEClassicalLocation
@@ -1630,6 +1657,7 @@ Classes
     AccessConstraintZone
     AccessConstraintThirdBody
     AccessConstraintExclZonesCollection
+    AccessConstraintGrazingAltitude
     SensorPointingGrazingAltitude
     AreaTarget
     Facility
@@ -2659,6 +2687,28 @@ Classes
     AdvCATAdvEllipsoid
     AdvCATAdvanced
     AdvCATVO
+    AgEOIRShapeObject
+    AgEOIRShapeBox
+    AgEOIRShapeCone
+    AgEOIRShapeCylinder
+    AgEOIRShapePlate
+    AgEOIRShapeSphere
+    AgEOIRShapeCoupler
+    AgEOIRShapeNone
+    AgEOIRShapeGEOComm
+    AgEOIRShapeLEOComm
+    AgEOIRShapeLEOImaging
+    AgEOIRShapeCustomMesh
+    AgEOIRShapeTargetSignature
+    AgEOIRStagePlume
+    AgEOIRShape
+    AgEOIRShapeCollection
+    AgEOIRMaterialElement
+    AgEOIRMaterialElementCollection
+    AgEOIRStage
+    AgEOIR
+    MissileEOIR
+    VehicleEOIR
 
 
 Reference
@@ -2962,6 +3012,9 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IAccessConstraintAnalysisWorkbenchCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAccessConstraintGrazingAltitude
     :members:
     :exclude-members: __init__
 .. autoclass:: ILevelAttribute
@@ -5412,6 +5465,9 @@ Interfaces
 .. autoclass:: IVehicleSpaceEnvironment
     :members:
     :exclude-members: __init__
+.. autoclass:: IEOIR
+    :members:
+    :exclude-members: __init__
 .. autoclass:: ISatelliteVOModel
     :members:
     :exclude-members: __init__
@@ -6108,6 +6164,69 @@ Interfaces
 .. autoclass:: IAdvCATChosenObject
     :members:
     :exclude-members: __init__
+.. autoclass:: IEOIRShapeObject
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeBox
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeCone
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapePlate
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeSphere
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeCoupler
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeNone
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeGEOComm
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeLEOComm
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeLEOImaging
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeCustomMesh
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeTargetSignature
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRStagePlume
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShape
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRStage
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRMaterialElement
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRMaterialElementCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IMissileEOIR
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IVehicleEOIR
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IEOIRShapeCylinder
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IStkObjectChangedEventArgs
     :members:
     :exclude-members: __init__
@@ -6597,6 +6716,14 @@ Enumerations
 .. autoenum:: AgEAdvCATConjunctionType
     :members:
 .. autoenum:: AgEAdvCATSecondaryEllipsoidsVisibilityType
+    :members:
+.. autoenum:: AgEEOIRShapeType
+    :members:
+.. autoenum:: AgEEOIRShapeMaterialSpecificationType
+    :members:
+.. autoenum:: AgEEOIRThermalModelType
+    :members:
+.. autoenum:: AgEEOIRFlightType
     :members:
 .. autoenum:: AgEComponentLinkEmbedControlReferenceType
     :members:
@@ -7148,6 +7275,9 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: AccessConstraintExclZonesCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AccessConstraintGrazingAltitude
     :members:
     :exclude-members: __init__
 .. autoclass:: SensorPointingGrazingAltitude
@@ -10235,6 +10365,72 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: AdvCATVO
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeObject
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeBox
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeCone
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeCylinder
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapePlate
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeSphere
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeCoupler
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeNone
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeGEOComm
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeLEOComm
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeLEOImaging
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeCustomMesh
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeTargetSignature
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRStagePlume
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShape
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRShapeCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRMaterialElement
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRMaterialElementCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIRStage
+    :members:
+    :exclude-members: __init__
+.. autoclass:: AgEOIR
+    :members:
+    :exclude-members: __init__
+.. autoclass:: MissileEOIR
+    :members:
+    :exclude-members: __init__
+.. autoclass:: VehicleEOIR
     :members:
     :exclude-members: __init__
 

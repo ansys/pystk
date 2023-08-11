@@ -1970,7 +1970,7 @@ class IPathPointCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -2046,7 +2046,7 @@ class IObjectCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -2122,7 +2122,7 @@ class ISceneCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -2274,7 +2274,7 @@ class IScreenOverlayPickResultCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -2438,7 +2438,7 @@ class IPickResultCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -2620,7 +2620,7 @@ class IKmlDocumentCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -2696,7 +2696,7 @@ class IKmlFeatureCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -5568,7 +5568,7 @@ class IScreenOverlayCollectionBase(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -6933,7 +6933,7 @@ class ICompositeDisplayCondition(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -7108,7 +7108,7 @@ class ICompositePrimitive(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -8188,7 +8188,7 @@ class IImageCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     def Subscribe(self) -> IImageCollectionEventHandler:
         """Returns an IImageCollectionEventHandler that is subscribed to handle events associated with this instance of IImageCollection."""
         return IImageCollectionEventHandler(self._pUnk)    
@@ -11381,7 +11381,7 @@ class IModelArticulation(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def name(self) -> str:
@@ -11492,7 +11492,7 @@ class IModelArticulationCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -12524,7 +12524,7 @@ class IPathPrimitive(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -13933,7 +13933,7 @@ class IPrimitiveManager(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -15453,7 +15453,7 @@ class ITerrainOverlayCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     def Subscribe(self) -> ITerrainOverlayCollectionEventHandler:
         """Returns an ITerrainOverlayCollectionEventHandler that is subscribed to handle events associated with this instance of ITerrainOverlayCollection."""
         return ITerrainOverlayCollectionEventHandler(self._pUnk)    
