@@ -73,7 +73,7 @@ class STKEngineApplication(STKXApplication):
                 config_dir = self.__dict__["_stk_config_dir"] if self.__dict__["_stk_config_dir"] is not None else os.getenv("STK_CONFIG_DIR")
                 if config_dir is None:
                     raise STKInitializationError("Please set a valid STK_CONFIG_DIR environment variable.")
-                pInit.InitializeData(install_dir, config_dir)
+                pInit.initialize_data(install_dir, config_dir)
                 
     @staticmethod
     def _get_signo(sigrtmin_offset):
