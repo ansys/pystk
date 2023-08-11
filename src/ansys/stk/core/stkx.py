@@ -1010,7 +1010,7 @@ class IObjPathCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -1286,7 +1286,7 @@ class IDrawElemCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -1587,7 +1587,7 @@ class IExecCmdResult(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -1679,7 +1679,7 @@ class IExecMultiCmdResult(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -2622,7 +2622,7 @@ class IDataObjectFiles(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def _NewEnum(self) -> IEnumVARIANT:

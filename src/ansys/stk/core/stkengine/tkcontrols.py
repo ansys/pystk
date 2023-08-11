@@ -1,5 +1,5 @@
 ################################################################################
-#          Copyright 2021-2021, Analytical Graphics, Inc.
+#          Copyright 2021-2021, Ansys Government Initiatives
 ################################################################################
 
 __all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]

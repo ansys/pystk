@@ -33,6 +33,9 @@ Interfaces
     IGridSearchControl
     IGridSearchResultCollection
     IGridSearchResult
+    IBisectionControlCollection
+    IBisectionResult
+    IBisectionResultCollection
     IStoppingConditionElement
     IStoppingConditionCollection
     IMissionControlSequenceSegmentCollection
@@ -157,6 +160,8 @@ Interfaces
     IProfileGoldenSection
     IProfileGridSearch
     ICalcObjectLinkEmbedControlCollection
+    IProfileBisection
+    IBisectionControl
     IStateCalcHeightAboveTerrain
     IStateCalcEpoch
     IStateCalcOrbitDelaunayG
@@ -190,6 +195,20 @@ Interfaces
     IStateCalcLonDriftRate
     IStateCalcMeanEarthLon
     IStateCalcRectifiedLon
+    IStateCalcTrueLongitude
+    IStateCalcGeodeticTrueLongitude
+    IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee
+    IStateCalcMeanRightAscension
+    IStateCalcGeodeticMeanRightAscension
+    IStateCalcTwoBodyDriftRate
+    IStateCalcDriftRateFactor
+    IStateCalcEccentricityX
+    IStateCalcEccentricityY
+    IStateCalcInclinationX
+    IStateCalcInclinationY
+    IStateCalcUnitAngularMomentumX
+    IStateCalcUnitAngularMomentumY
+    IStateCalcUnitAngularMomentumZ
     IStateCalcGeodeticElem
     IStateCalcRepeatingGroundTrackErr
     IStateCalcAltitudeOfApoapsis
@@ -382,6 +401,9 @@ Interfaces
     IEngineCustom
     IEnginePlugin
     IEngineModelPoly
+    IDesignCR3BPObjectCollection
+    IDesignCR3BPSetup
+    IDesignCR3BPObject
     IThruster
     IThrusterSetCollection
     IThrusterSet
@@ -502,6 +524,8 @@ Enumerations
     AgEVASTMEigenNumber
     AgEVAComplexNumber
     AgEVASquaredType
+    AgEVAGeoStationaryDriftRateModel
+    AgEVAGeoStationaryInclinationMag
     AgEVACbGravityModel
     AgEVACbShape
     AgEVACbAttitude
@@ -530,6 +554,8 @@ Enumerations
     AgEVAControlEngineModelPoly
     AgEVAEngineModelFunction
     AgEVAThrottleTableOperationMode
+    AgEVAIdealOrbitRadius
+    AgEVARotatingCoordinateSystem
     AgEVAControlThrusters
     AgEVAThrusterDirection
     AgEVACriteria
@@ -663,6 +689,20 @@ Classes
     StateCalcLonDriftRate
     StateCalcMeanEarthLon
     StateCalcRectifiedLon
+    StateCalcTrueLongitude
+    StateCalcGeodeticTrueLongitude
+    StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
+    StateCalcMeanRightAscension
+    StateCalcGeodeticMeanRightAscension
+    StateCalcTwoBodyDriftRate
+    StateCalcDriftRateFactor
+    StateCalcEccentricityX
+    StateCalcEccentricityY
+    StateCalcInclinationX
+    StateCalcInclinationY
+    StateCalcUnitAngularMomentumX
+    StateCalcUnitAngularMomentumY
+    StateCalcUnitAngularMomentumZ
     StateCalcHeightAboveTerrain
     StateCalcGeodeticElem
     StateCalcRepeatingGroundTrackErr
@@ -856,6 +896,9 @@ Classes
     EngineModelThrustCoefficients
     EngineModelIspCoefficients
     EngineDefinition
+    DesignCR3BPSetup
+    DesignCR3BPObject
+    DesignCR3BPObjectCollection
     Thruster
     ThrusterSetCollection
     ThrusterSet
@@ -919,6 +962,11 @@ Classes
     GridSearchResultCollection
     GridSearchResult
     CalcObjectLinkEmbedControlCollection
+    ProfileBisection
+    BisectionControl
+    BisectionControlCollection
+    BisectionResult
+    BisectionResultCollection
 
 
 Reference
@@ -997,6 +1045,15 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IGridSearchResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBisectionControlCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBisectionResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBisectionResultCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: IStoppingConditionElement
@@ -1371,6 +1428,12 @@ Interfaces
 .. autoclass:: ICalcObjectLinkEmbedControlCollection
     :members:
     :exclude-members: __init__
+.. autoclass:: IProfileBisection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBisectionControl
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IStateCalcHeightAboveTerrain
     :members:
     :exclude-members: __init__
@@ -1468,6 +1531,48 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcRectifiedLon
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcTrueLongitude
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcGeodeticTrueLongitude
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcMeanRightAscension
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcGeodeticMeanRightAscension
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcTwoBodyDriftRate
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcDriftRateFactor
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcEccentricityX
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcEccentricityY
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcInclinationX
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcInclinationY
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcUnitAngularMomentumX
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcUnitAngularMomentumY
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IStateCalcUnitAngularMomentumZ
     :members:
     :exclude-members: __init__
 .. autoclass:: IStateCalcGeodeticElem
@@ -2046,6 +2151,15 @@ Interfaces
 .. autoclass:: IEngineModelPoly
     :members:
     :exclude-members: __init__
+.. autoclass:: IDesignCR3BPObjectCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IDesignCR3BPSetup
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IDesignCR3BPObject
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IThruster
     :members:
     :exclude-members: __init__
@@ -2294,6 +2408,10 @@ Enumerations
     :members:
 .. autoenum:: AgEVASquaredType
     :members:
+.. autoenum:: AgEVAGeoStationaryDriftRateModel
+    :members:
+.. autoenum:: AgEVAGeoStationaryInclinationMag
+    :members:
 .. autoenum:: AgEVACbGravityModel
     :members:
 .. autoenum:: AgEVACbShape
@@ -2349,6 +2467,10 @@ Enumerations
 .. autoenum:: AgEVAEngineModelFunction
     :members:
 .. autoenum:: AgEVAThrottleTableOperationMode
+    :members:
+.. autoenum:: AgEVAIdealOrbitRadius
+    :members:
+.. autoenum:: AgEVARotatingCoordinateSystem
     :members:
 .. autoenum:: AgEVAControlThrusters
     :members:
@@ -2724,6 +2846,48 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcRectifiedLon
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcTrueLongitude
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcGeodeticTrueLongitude
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcMeanRightAscension
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcGeodeticMeanRightAscension
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcTwoBodyDriftRate
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcDriftRateFactor
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcEccentricityX
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcEccentricityY
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcInclinationX
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcInclinationY
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcUnitAngularMomentumX
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcUnitAngularMomentumY
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcUnitAngularMomentumZ
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcHeightAboveTerrain
@@ -3305,6 +3469,15 @@ Classes
 .. autoclass:: EngineDefinition
     :members:
     :exclude-members: __init__
+.. autoclass:: DesignCR3BPSetup
+    :members:
+    :exclude-members: __init__
+.. autoclass:: DesignCR3BPObject
+    :members:
+    :exclude-members: __init__
+.. autoclass:: DesignCR3BPObjectCollection
+    :members:
+    :exclude-members: __init__
 .. autoclass:: Thruster
     :members:
     :exclude-members: __init__
@@ -3492,6 +3665,21 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: CalcObjectLinkEmbedControlCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ProfileBisection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BisectionControl
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BisectionControlCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BisectionResult
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BisectionResultCollection
     :members:
     :exclude-members: __init__
 

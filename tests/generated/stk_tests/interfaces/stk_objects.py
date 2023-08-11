@@ -1013,6 +1013,12 @@ class StkAccessHelper(object):
 
         # LineWidth (readonly)
         TryCatchAssertBlock.DoAssert("", action22)
+
+        def action23():
+            oGraphics.line_style = "Dashed"
+
+        # LineStyle (readonly)
+        TryCatchAssertBlock.DoAssert("", action23)
         # Inherit (false)
         oGraphics.inherit = False
         self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.inherit)
@@ -1034,12 +1040,12 @@ class StkAccessHelper(object):
         self.m_logger.WriteLine4("\tThe new LineVisible is: {0}", oGraphics.line_visible)
         Assert.assertFalse(oGraphics.line_visible)
 
-        def action23():
+        def action24():
             oGraphics.line_width = 2
 
         # LineWidth
         # LineVisible is false so LineWidth can't be set (readonly)
-        TryCatchAssertBlock.DoAssert("", action23)
+        TryCatchAssertBlock.DoAssert("", action24)
         oGraphics.line_visible = True
         self.m_logger.WriteLine3("\tThe current LineWidth is: {0}", oGraphics.line_width)
         oGraphics.line_width = 2
@@ -1048,6 +1054,23 @@ class StkAccessHelper(object):
         oGraphics.line_width = 1
         self.m_logger.WriteLine3("\tThe new LineWidth is: {0}", oGraphics.line_width)
         Assert.assertTrue((oGraphics.line_width == 1))
+        # Restore LineVisible (false)
+        oGraphics.line_visible = False
+
+        def action25():
+            oGraphics.line_style = "Dashed"
+
+        # LineStyle
+        # LineVisible is false so LineStyle can't be set (readonly)
+        TryCatchAssertBlock.DoAssert("", action25)
+        oGraphics.line_visible = True
+        self.m_logger.WriteLine5("\tThe current LineStyle is: {0}", oGraphics.line_style)
+        oGraphics.line_style = "Dashed"
+        self.m_logger.WriteLine5("\tThe new LineStyle is: {0}", oGraphics.line_style)
+        Assert.assertEqual(oGraphics.line_style, "Dashed")
+        oGraphics.line_style = "Solid"
+        self.m_logger.WriteLine5("\tThe new LineStyle is: {0}", oGraphics.line_style)
+        Assert.assertEqual(oGraphics.line_style, "Solid")
         # Restore LineVisible (false)
         oGraphics.line_visible = False
 
@@ -1081,49 +1104,49 @@ class StkAccessHelper(object):
         oAdvanced.use_precise_event_times = False  # Use Samples Only
         Assert.assertFalse(oAdvanced.use_precise_event_times)
 
-        def action24():
+        def action26():
             oAdvanced.time_convergence = 0.123
 
-        TryCatchAssertBlock.ExpectedException("read only", action24)
+        TryCatchAssertBlock.ExpectedException("read only", action26)
 
-        def action25():
+        def action27():
             oAdvanced.relative_tolerance = 0.456
 
-        TryCatchAssertBlock.ExpectedException("read-only", action25)
+        TryCatchAssertBlock.ExpectedException("read-only", action27)
 
-        def action26():
+        def action28():
             oAdvanced.absolute_tolerance = 0.789
 
-        TryCatchAssertBlock.ExpectedException("read-only", action26)
+        TryCatchAssertBlock.ExpectedException("read-only", action28)
 
         # Light Time Delay
         oAdvanced.enable_light_time_delay = False
         Assert.assertFalse(oAdvanced.enable_light_time_delay)
 
-        def action27():
+        def action29():
             oAdvanced.time_light_delay_convergence = 0.01234
 
-        TryCatchAssertBlock.ExpectedException("read only", action27)
-
-        def action28():
-            oAdvanced.aberration_type = AgEAberrationType.eAberrationAnnual
-
-        TryCatchAssertBlock.ExpectedException("read-only", action28)
-
-        def action29():
-            oAdvanced.use_default_clock_host_and_signal_sense = False
-
-        TryCatchAssertBlock.ExpectedException("read-only", action29)
+        TryCatchAssertBlock.ExpectedException("read only", action29)
 
         def action30():
-            oAdvanced.clock_host = AgEIvClockHost.eIvBase
+            oAdvanced.aberration_type = AgEAberrationType.eAberrationAnnual
 
         TryCatchAssertBlock.ExpectedException("read-only", action30)
 
         def action31():
-            oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
+            oAdvanced.use_default_clock_host_and_signal_sense = False
 
         TryCatchAssertBlock.ExpectedException("read-only", action31)
+
+        def action32():
+            oAdvanced.clock_host = AgEIvClockHost.eIvBase
+
+        TryCatchAssertBlock.ExpectedException("read-only", action32)
+
+        def action33():
+            oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
+
+        TryCatchAssertBlock.ExpectedException("read-only", action33)
 
         oAdvanced.enable_light_time_delay = True
         Assert.assertTrue(oAdvanced.enable_light_time_delay)
@@ -1131,10 +1154,10 @@ class StkAccessHelper(object):
         oAdvanced.time_light_delay_convergence = 0.0123
         Assert.assertEqual(0.0123, oAdvanced.time_light_delay_convergence)
 
-        def action32():
+        def action34():
             oAdvanced.time_light_delay_convergence = 12.34
 
-        TryCatchAssertBlock.ExpectedException("", action32)
+        TryCatchAssertBlock.ExpectedException("", action34)
 
         oAdvanced.aberration_type = AgEAberrationType.eAberrationAnnual
         Assert.assertEqual(AgEAberrationType.eAberrationAnnual, oAdvanced.aberration_type)
@@ -1143,24 +1166,24 @@ class StkAccessHelper(object):
         oAdvanced.aberration_type = AgEAberrationType.eAberrationTotal
         Assert.assertEqual(AgEAberrationType.eAberrationTotal, oAdvanced.aberration_type)
 
-        def action33():
+        def action35():
             oAdvanced.aberration_type = AgEAberrationType.eAberrationUnknown
 
-        TryCatchAssertBlock.ExpectedException("", action33)
+        TryCatchAssertBlock.ExpectedException("", action35)
 
         # Signal Path
         oAdvanced.use_default_clock_host_and_signal_sense = True
         Assert.assertTrue(oAdvanced.use_default_clock_host_and_signal_sense)
 
-        def action34():
+        def action36():
             oAdvanced.clock_host = AgEIvClockHost.eIvBase
 
-        TryCatchAssertBlock.ExpectedException("read-only", action34)
+        TryCatchAssertBlock.ExpectedException("read-only", action36)
 
-        def action35():
+        def action37():
             oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
 
-        TryCatchAssertBlock.ExpectedException("read-only", action35)
+        TryCatchAssertBlock.ExpectedException("read-only", action37)
 
         oAdvanced.use_default_clock_host_and_signal_sense = False
         Assert.assertFalse(oAdvanced.use_default_clock_host_and_signal_sense)
@@ -1170,10 +1193,10 @@ class StkAccessHelper(object):
         oAdvanced.clock_host = AgEIvClockHost.eIvTarget
         Assert.assertEqual(AgEIvClockHost.eIvTarget, oAdvanced.clock_host)
 
-        def action36():
+        def action38():
             oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTimeSenseUnknown
 
-        TryCatchAssertBlock.ExpectedException("must be in", action36)
+        TryCatchAssertBlock.ExpectedException("must be in", action38)
         oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
         Assert.assertEqual(AgEIvTimeSense.eIvTransmit, oAdvanced.signal_sense_of_clock_host)
         oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvReceive
@@ -1186,28 +1209,28 @@ class StkAccessHelper(object):
         oAdvanced.max_time_step = 123.456
         Assert.assertEqual(123.456, oAdvanced.max_time_step)
 
-        def action37():
+        def action39():
             oAdvanced.max_time_step = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action37)
+        TryCatchAssertBlock.ExpectedException("invalid", action39)
 
         oAdvanced.min_time_step = 456.123
         Assert.assertEqual(456.123, oAdvanced.min_time_step)
 
-        def action38():
+        def action40():
             oAdvanced.min_time_step = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action38)
+        TryCatchAssertBlock.ExpectedException("invalid", action40)
 
-        def action39():
+        def action41():
             oAdvanced.fixed_step_size = 789
 
-        TryCatchAssertBlock.ExpectedException("read only", action39)
+        TryCatchAssertBlock.ExpectedException("read only", action41)
 
-        def action40():
+        def action42():
             oAdvanced.fixed_time_bound = 789
 
-        TryCatchAssertBlock.ExpectedException("read only", action40)
+        TryCatchAssertBlock.ExpectedException("read only", action42)
 
         oAdvanced.use_fixed_time_step = True  # Fixed Step
         Assert.assertTrue(oAdvanced.use_fixed_time_step)
@@ -1215,28 +1238,28 @@ class StkAccessHelper(object):
         oAdvanced.fixed_step_size = 123.456
         Assert.assertEqual(123.456, oAdvanced.fixed_step_size)
 
-        def action41():
+        def action43():
             oAdvanced.fixed_step_size = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action41)
+        TryCatchAssertBlock.ExpectedException("invalid", action43)
 
         oAdvanced.fixed_time_bound = 56.123
         Assert.assertEqual(56.123, oAdvanced.fixed_time_bound)
 
-        def action42():
+        def action44():
             oAdvanced.fixed_time_bound = 0
 
-        TryCatchAssertBlock.ExpectedException("invalid", action42)
+        TryCatchAssertBlock.ExpectedException("invalid", action44)
 
-        def action43():
+        def action45():
             oAdvanced.max_time_step = 123.456
 
-        TryCatchAssertBlock.ExpectedException("read only", action43)
+        TryCatchAssertBlock.ExpectedException("read only", action45)
 
-        def action44():
+        def action46():
             oAdvanced.min_time_step = 56.123
 
-        TryCatchAssertBlock.ExpectedException("read only", action44)
+        TryCatchAssertBlock.ExpectedException("read only", action46)
 
         oAccess.compute_access()  # to make changes show in GUI
 
@@ -1464,89 +1487,89 @@ class VODataDisplayHelper(object):
     def NotVisibleCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
-        def action45():
+        def action47():
             oVODataDisplayElement.location = AgEVOLocation.e3DWindow
 
         # Location
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action45)
-
-        def action46():
-            oVODataDisplayElement.font_color = Color.FromArgb(11254443)
-
-        # FontColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action46)
-
-        def action47():
-            oVODataDisplayElement.x_origin = AgEVOXOrigin.eXOriginLeft
-
-        # XOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action47)
 
         def action48():
-            oVODataDisplayElement.y_origin = AgEVOYOrigin.eYOriginBottom
+            oVODataDisplayElement.font_color = Color.FromArgb(11254443)
 
-        # YOrigin
+        # FontColor
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action48)
 
         def action49():
-            oVODataDisplayElement.x = 12
+            oVODataDisplayElement.x_origin = AgEVOXOrigin.eXOriginLeft
 
-        # X
+        # XOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action49)
 
         def action50():
-            oVODataDisplayElement.y = 21
+            oVODataDisplayElement.y_origin = AgEVOYOrigin.eYOriginBottom
 
-        # Y
+        # YOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action50)
 
         def action51():
-            oVODataDisplayElement.title = True
+            oVODataDisplayElement.x = 12
 
-        # Title
+        # X
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action51)
 
         def action52():
-            oVODataDisplayElement.font_size = AgEVOFontSize.eSmall
+            oVODataDisplayElement.y = 21
 
-        # FontSize
+        # Y
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action52)
 
         def action53():
-            oVODataDisplayElement.format = AgEVOFormat.eHorizontal
+            oVODataDisplayElement.title = True
 
-        # Format
+        # Title
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action53)
 
         def action54():
-            oVODataDisplayElement.use_background = True
+            oVODataDisplayElement.font_size = AgEVOFontSize.eSmall
 
-        # UseBackground
+        # FontSize
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action54)
 
         def action55():
-            oVODataDisplayElement.transparent_bg = True
+            oVODataDisplayElement.format = AgEVOFormat.eHorizontal
 
-        # TransparentBg
+        # Format
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action55)
 
         def action56():
-            oVODataDisplayElement.bg_width = 34
+            oVODataDisplayElement.use_background = True
 
-        # BgWidth
+        # UseBackground
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action56)
 
         def action57():
-            oVODataDisplayElement.bg_height = 43
+            oVODataDisplayElement.transparent_bg = True
 
-        # BgHeight
+        # TransparentBg
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action57)
 
         def action58():
+            oVODataDisplayElement.bg_width = 34
+
+        # BgWidth
+        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action58)
+
+        def action59():
+            oVODataDisplayElement.bg_height = 43
+
+        # BgHeight
+        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action59)
+
+        def action60():
             oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
 
         # BgColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action58)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action60)
 
     # endregion
 
@@ -1562,17 +1585,17 @@ class VODataDisplayHelper(object):
 
         else:
 
-            def action59():
+            def action61():
                 oVODataDisplayElement.location = AgEVOLocation.eOffsetFromAccessObject
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action59)
+            TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action61)
 
         if self.m_bIsChain:
 
-            def action60():
+            def action62():
                 oVODataDisplayElement.location = AgEVOLocation.eOffsetFromObject
 
-            TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action60)
+            TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action62)
 
         else:
             oVODataDisplayElement.location = AgEVOLocation.eOffsetFromObject
@@ -1653,59 +1676,59 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
-        def action61():
+        def action63():
             oVODataDisplayElement.transparent_bg = True
 
         # TransparentBg
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action61)
-
-        def action62():
-            oVODataDisplayElement.background_translucency = 0.33
-
-        # BackgroundTranslucency
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action62)
-
-        def action63():
-            oVODataDisplayElement.use_background_texture = True
-
-        # UseBackgroundTexture
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action63)
 
         def action64():
-            oVODataDisplayElement.background_texture_filename = "foo.png"
+            oVODataDisplayElement.background_translucency = 0.33
 
-        # BackgroundTextureFileName
+        # BackgroundTranslucency
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action64)
 
         def action65():
-            oVODataDisplayElement.use_background_border = True
+            oVODataDisplayElement.use_background_texture = True
 
-        # UseBackgroundBorder
+        # UseBackgroundTexture
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action65)
 
         def action66():
-            oVODataDisplayElement.background_border_color = Color.FromArgb(13491405)
+            oVODataDisplayElement.background_texture_filename = "foo.png"
 
-        # BackgroundBorderColor
+        # BackgroundTextureFileName
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action66)
 
         def action67():
-            oVODataDisplayElement.use_auto_size_width = True
+            oVODataDisplayElement.use_background_border = True
 
-        # UseAutoSizeWidth
+        # UseBackgroundBorder
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action67)
 
         def action68():
-            oVODataDisplayElement.use_auto_size_height = True
+            oVODataDisplayElement.background_border_color = Color.FromArgb(13491405)
 
-        # UseAutoSizeHeight
+        # BackgroundBorderColor
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action68)
 
         def action69():
+            oVODataDisplayElement.use_auto_size_width = True
+
+        # UseAutoSizeWidth
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action69)
+
+        def action70():
+            oVODataDisplayElement.use_auto_size_height = True
+
+        # UseAutoSizeHeight
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action70)
+
+        def action71():
             oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
 
         # BgColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action69)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action71)
 
     # endregion
 
@@ -1796,17 +1819,17 @@ class VODataDisplayHelper(object):
     def NotUseTitleCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action70():
+        def action72():
             oDataDisplayElement.title_text = "New Title"
 
         # TitleText
-        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action70)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action72)
 
-        def action71():
+        def action73():
             oDataDisplayElement.is_show_name_enabled = False
 
         # IsShowNameEnabled
-        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action71)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action73)
 
     # endregion
 
@@ -1850,15 +1873,15 @@ class VODataDisplayHelper(object):
     def UseAutoSizeCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action72():
+        def action74():
             oDataDisplayElement.bg_width = 500
 
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeWidth is False.", action72)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeWidth is False.", action74)
 
-        def action73():
+        def action75():
             oDataDisplayElement.bg_height = 500
 
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeHeight is False.", action73)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeHeight is False.", action75)
 
     # endregion
 
@@ -1866,11 +1889,11 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundBorderCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action74():
+        def action76():
             oDataDisplayElement.background_border_color = Color.Black
 
         # BackgroundBorderColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundBorder is False.", action74)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundBorder is False.", action76)
 
     # endregion
 
@@ -1893,11 +1916,11 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundTextureCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action75():
+        def action77():
             oDataDisplayElement.background_texture_filename = "foo.png"
 
         # BackgroundTextureFileName
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundTexture is False.", action75)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundTexture is False.", action77)
 
     # endregion
 

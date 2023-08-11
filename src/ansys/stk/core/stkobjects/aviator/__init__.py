@@ -14218,7 +14218,7 @@ class IADDSMessageCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -14612,7 +14612,7 @@ class IStationCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -19431,7 +19431,7 @@ class IProcedureCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -19639,7 +19639,7 @@ class IPhaseCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
     @property
     def count(self) -> int:
@@ -20383,7 +20383,7 @@ agcls.AgClassCatalog.add_catalog_entry("{34e47cb6-b418-468b-b5bf-df98428b7691}",
 agcls.AgTypeNameMap["IAircraftTerrainFollowModel"] = IAircraftTerrainFollowModel
 
 class IPropulsionThrust(object):
-    """Interface used to access airspeed options for basic maneuver strategies."""
+    """Interface used to access propulsion thrust for basic maneuver strategies."""
     _uuid = "{fea63cff-6fa0-406e-ad12-8b17617cb34d}"
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
