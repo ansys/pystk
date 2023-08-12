@@ -290,17 +290,17 @@ agcls.AgTypeNameMap["AgEStkGraphicsMapProjection"] = AgEStkGraphicsMapProjection
 
 class AgEStkGraphicsMarkerBatchRenderingMethod(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
-    # Render the marker batch using a geometry shader. Requires <a href='http://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt'>ARB_geometry_shader4</a> extension.
+    # Render the marker batch using a geometry shader. Requires <a href='https://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='https://registry.khronos.org/OpenGL/extensions/ARB/ARB_geometry_shader4.txt'>ARB_geometry_shader4</a> extension.
     eStkGraphicsMarkerBatchRenderingMethodGeometryShader = 0
-    # Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='http://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='http://www.opengl.org/registry/specs/ARB/vertex_shader...
+    # Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='https://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='https://www.opengl.org/registry/specs/ARB/vertex_shader...
     eStkGraphicsMarkerBatchRenderingMethodVertexShader = 1
     # Render the marker batch using an automatically selected method based on the capabilities of the video card.
     eStkGraphicsMarkerBatchRenderingMethodAutomatic = 2
     # Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards.
     eStkGraphicsMarkerBatchRenderingMethodFixedFunction = 3
 
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodGeometryShader.__doc__ = "Render the marker batch using a geometry shader. Requires <a href='http://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt'>ARB_geometry_shader4</a> extension."
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodVertexShader.__doc__ = "Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='http://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='http://www.opengl.org/registry/specs/ARB/vertex_shader..."
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodGeometryShader.__doc__ = "Render the marker batch using a geometry shader. Requires <a href='https://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='https://registry.khronos.org/OpenGL/extensions/ARB/ARB_geometry_shader4.txt'>ARB_geometry_shader4</a> extension."
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodVertexShader.__doc__ = "Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='https://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='https://www.opengl.org/registry/specs/ARB/vertex_shader..."
 AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodAutomatic.__doc__ = "Render the marker batch using an automatically selected method based on the capabilities of the video card."
 AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodFixedFunction.__doc__ = "Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."
 
@@ -626,15 +626,15 @@ agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayUnit"] = AgEStkGraphicsScreenOve
 
 class AgEStkGraphicsSurfaceMeshRenderingMethod(IntEnum):
     """Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
-    # Render the surface mesh using a geometry shader. Requires <a href='http://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt'>ARB_geometry_shader4</a> extension.
+    # Render the surface mesh using a geometry shader. Requires <a href='https://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='https://registry.khronos.org/OpenGL/extensions/ARB/ARB_geometry_shader4.txt'>ARB_geometry_shader4</a> extension.
     eStkGraphicsSurfaceMeshRenderingMethodGeometryShader = 0
-    # Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='http://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='http://www.opengl.org/registry/specs/ARB/vertex_shader...
+    # Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='https://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='https://www.opengl.org/registry/specs/ARB/vertex_shader...
     eStkGraphicsSurfaceMeshRenderingMethodVertexShader = 1
     # Render the surface mesh using an automatically selected method based on the capabilities of the video card.
     eStkGraphicsSurfaceMeshRenderingMethodAutomatic = 2
 
-AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodGeometryShader.__doc__ = "Render the surface mesh using a geometry shader. Requires <a href='http://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt'>ARB_geometry_shader4</a> extension."
-AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodVertexShader.__doc__ = "Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='http://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='http://www.opengl.org/registry/specs/ARB/vertex_shader..."
+AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodGeometryShader.__doc__ = "Render the surface mesh using a geometry shader. Requires <a href='https://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='https://registry.khronos.org/OpenGL/extensions/ARB/ARB_geometry_shader4.txt'>ARB_geometry_shader4</a> extension."
+AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodVertexShader.__doc__ = "Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='https://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='https://www.opengl.org/registry/specs/ARB/vertex_shader..."
 AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodAutomatic.__doc__ = "Render the surface mesh using an automatically selected method based on the capabilities of the video card."
 
 agcls.AgTypeNameMap["AgEStkGraphicsSurfaceMeshRenderingMethod"] = AgEStkGraphicsSurfaceMeshRenderingMethod
@@ -11544,7 +11544,7 @@ agcls.AgClassCatalog.add_catalog_entry("{cf6e3054-4d92-42f8-ac4d-e43bfd93d23d}",
 agcls.AgTypeNameMap["IModelArticulationCollection"] = IModelArticulationCollection
 
 class IModelPrimitive(object):
-    """The model primitive loads and renders <a href='http://www.collada.org/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
+    """The model primitive loads and renders <a href='https://www.khronos.org/collada/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
     _uuid = "{67a2ad57-e9b2-4dc9-b509-62cbebc405ca}"
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -11647,12 +11647,12 @@ class IModelPrimitive(object):
             return arg_ppRetVal.python_val
 
     def load_with_string_uri(self, uri:str) -> None:
-        """For convenience. Loads a <a href='http://www.collada.org/'>COLLADA</a> (DAE) or AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) model using a file path."""
+        """For convenience. Loads a <a href='https://www.khronos.org/collada/'>COLLADA</a> (DAE) or AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) model using a file path."""
         with agmarshall.BSTR_arg(uri) as arg_uri:
             agcls.evaluate_hresult(self.__dict__["_load_with_string_uri"](arg_uri.COM_val))
 
     def load_with_string_uri_and_up_axis(self, uri:str, upAxis:"AgEStkGraphicsModelUpAxis") -> None:
-        """For convenience. Loads a <a href='http://www.collada.org/'>COLLADA</a> (DAE) or AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) model using a file path."""
+        """For convenience. Loads a <a href='https://www.khronos.org/collada/'>COLLADA</a> (DAE) or AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) model using a file path."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
              agmarshall.AgEnum_arg(AgEStkGraphicsModelUpAxis, upAxis) as arg_upAxis:
             agcls.evaluate_hresult(self.__dict__["_load_with_string_uri_and_up_axis"](arg_uri.COM_val, arg_upAxis.COM_val))
@@ -20415,7 +20415,7 @@ agcls.AgClassCatalog.add_catalog_entry("{046383cc-b5b9-4ff5-b662-701e694170ba}",
 agcls.AgTypeNameMap["IMaximumCountPathPrimitiveUpdatePolicyFactory"] = IMaximumCountPathPrimitiveUpdatePolicyFactory
 
 class IModelPrimitiveFactory(object):
-    """The model primitive loads and renders <a href='http://www.collada.org/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
+    """The model primitive loads and renders <a href='https://www.khronos.org/collada/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
     _uuid = "{93ea79ef-8da7-4992-b8fa-81d372d4258a}"
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -24353,7 +24353,7 @@ agcls.AgClassCatalog.add_catalog_entry("{ACC4920A-6D6B-4374-937F-2469F439ABA8}",
 
 
 class ModelPrimitive(IModelPrimitive, IPrimitive):
-    """The model primitive loads and renders <a href='http://www.collada.org/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
+    """The model primitive loads and renders <a href='https://www.khronos.org/collada/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
     def __init__(self, sourceObject=None):
         IModelPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -26369,7 +26369,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C3F59BCB-635A-4E50-B5AA-269CD0380069}",
 
 
 class ModelPrimitiveFactory(IModelPrimitiveFactory):
-    """The model primitive loads and renders <a href='http://www.collada.org/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
+    """The model primitive loads and renders <a href='https://www.khronos.org/collada/'>COLLADA</a> (DAE) and AGI <a href='https://support.agi.com/3d-models'>MDL</a> (MDL) models."""
     def __init__(self, sourceObject=None):
         IModelPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
