@@ -4508,7 +4508,7 @@ agcls.AgClassCatalog.add_catalog_entry("{197fbafd-0f9c-44d9-b2d0-14c8b30f312e}",
 agcls.AgTypeNameMap["ICustomImageGlobeOverlayPluginProxy"] = ICustomImageGlobeOverlayPluginProxy
 
 class IGeospatialImageGlobeOverlay(object):
-    """A globe image overlay for handling <a href='https://www.jpeg.org/jpeg2000/'>JPEG 2000</a> (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
+    """A globe image overlay for handling `JPEG 2000 <https://www.jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
     _uuid = "{fd42a5ba-5049-4c58-bf40-61ca5943dccf}"
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17975,7 +17975,7 @@ agcls.AgClassCatalog.add_catalog_entry("{c80d1ae6-db35-4f55-a9a4-131260022535}",
 agcls.AgTypeNameMap["ICustomImageGlobeOverlayPluginActivatorFactory"] = ICustomImageGlobeOverlayPluginActivatorFactory
 
 class IGeospatialImageGlobeOverlayFactory(object):
-    """A globe image overlay for handling <a href='https://www.jpeg.org/jpeg2000/'>JPEG 2000</a> (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
+    """A globe image overlay for handling `JPEG 2000 <https://www.jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
     _uuid = "{77060b41-7b24-4118-ab48-22efb3007c76}"
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -22742,7 +22742,7 @@ agcls.AgClassCatalog.add_catalog_entry("{1A2C5F92-FEFD-4961-B840-D940D30D3637}",
 
 
 class GeospatialImageGlobeOverlay(IGeospatialImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
-    """A globe image overlay for handling <a href='https://www.jpeg.org/jpeg2000/'>JPEG 2000</a> (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
+    """A globe image overlay for handling `JPEG 2000 <https://www.jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
     def __init__(self, sourceObject=None):
         IGeospatialImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
@@ -25445,7 +25445,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2B0D7F25-8A54-40C5-BD10-75EB00788704}",
 
 
 class GeospatialImageGlobeOverlayFactory(IGeospatialImageGlobeOverlayFactory):
-    """A globe image overlay for handling <a href='https://www.jpeg.org/jpeg2000/'>JPEG 2000</a> (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
+    """A globe image overlay for handling `JPEG 2000 <https://www.jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
     def __init__(self, sourceObject=None):
         IGeospatialImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, pUnk:IUnknown):
