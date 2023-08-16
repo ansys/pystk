@@ -292,7 +292,7 @@ class AgEStkGraphicsMarkerBatchRenderingMethod(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
     # Render the marker batch using a geometry shader. Requires `OpenGL <https://www.opengl.org/>`_ 3.0 or 2.0 with the `ARB_geometry_shader4 <https://registry.khronos.org/OpenGL/extensions/ARB/ARB_geometry_shader4.txt>`_ extension.
     eStkGraphicsMarkerBatchRenderingMethodGeometryShader = 0
-    # Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following `extensions <https://www.opengl.org/registry/>`_: <ul><li><a href='https://www.opengl.org/registry/specs/ARB/vertex_shader...
+    # Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following `extensions <https://registry.khronos.org/OpenGL/index_gl.php>`_: <ul><li>`Vertex Shader <https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt>`_
     eStkGraphicsMarkerBatchRenderingMethodVertexShader = 1
     # Render the marker batch using an automatically selected method based on the capabilities of the video card.
     eStkGraphicsMarkerBatchRenderingMethodAutomatic = 2
@@ -300,7 +300,7 @@ class AgEStkGraphicsMarkerBatchRenderingMethod(IntEnum):
     eStkGraphicsMarkerBatchRenderingMethodFixedFunction = 3
 
 AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodGeometryShader.__doc__ = "Render the marker batch using a geometry shader. Requires `OpenGL <https://www.opengl.org/>`_ 3.0 or 2.0 with the `ARB_geometry_shader4 <https://registry.khronos.org/OpenGL/extensions/ARB/ARB_geometry_shader4.txt>`_ extension."
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodVertexShader.__doc__ = "Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following `extensions <https://www.opengl.org/registry/>`_: <ul><li><a href='https://www.opengl.org/registry/specs/ARB/vertex_shader..."
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodVertexShader.__doc__ = "Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following `extensions <https://registry.khronos.org/OpenGL/index_gl.php>`_: <ul><li>`Vertex Shader <https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt>`_"
 AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodAutomatic.__doc__ = "Render the marker batch using an automatically selected method based on the capabilities of the video card."
 AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodFixedFunction.__doc__ = "Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."
 
@@ -628,13 +628,13 @@ class AgEStkGraphicsSurfaceMeshRenderingMethod(IntEnum):
     """Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
     # Render the surface mesh using a geometry shader. Requires `OpenGL <https://www.opengl.org/>`_ 3.0 or 2.0 with the `ARB_geometry_shader4 <https://registry.khronos.org/OpenGL/extensions/ARB/ARB_geometry_shader4.txt>`_ extension.
     eStkGraphicsSurfaceMeshRenderingMethodGeometryShader = 0
-    # Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following `extensions <https://www.opengl.org/registry/>`_: <ul><li><a href='https://www.opengl.org/registry/specs/ARB/vertex_shader...
+    # Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following `extensions <https://registry.khronos.org/OpenGL/index_gl.php>`_: <ul><li>`Vertex Shader <https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt>`_
     eStkGraphicsSurfaceMeshRenderingMethodVertexShader = 1
     # Render the surface mesh using an automatically selected method based on the capabilities of the video card.
     eStkGraphicsSurfaceMeshRenderingMethodAutomatic = 2
 
 AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodGeometryShader.__doc__ = "Render the surface mesh using a geometry shader. Requires `OpenGL <https://www.opengl.org/>`_ 3.0 or 2.0 with the `ARB_geometry_shader4 <https://registry.khronos.org/OpenGL/extensions/ARB/ARB_geometry_shader4.txt>`_ extension."
-AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodVertexShader.__doc__ = "Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following `extensions <https://www.opengl.org/registry/>`_: <ul><li><a href='https://www.opengl.org/registry/specs/ARB/vertex_shader..."
+AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodVertexShader.__doc__ = "Render the surface mesh using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following `extensions <https://registry.khronos.org/OpenGL/index_gl.php>`_: <ul><li>`Vertex Shader <https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt>`_
 AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodAutomatic.__doc__ = "Render the surface mesh using an automatically selected method based on the capabilities of the video card."
 
 agcls.AgTypeNameMap["AgEStkGraphicsSurfaceMeshRenderingMethod"] = AgEStkGraphicsSurfaceMeshRenderingMethod
