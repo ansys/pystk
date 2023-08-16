@@ -192,7 +192,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install tox && rm -rf .tox"
+            "python -m pip install tox==4.8.0 && rm -rf .tox"
 
       - name: "Run the aviator tests"
         run: |
