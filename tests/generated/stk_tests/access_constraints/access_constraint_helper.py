@@ -17,27 +17,27 @@ class AccessConstraintHelper(object):
     def BasePropertiesTest(self, oConstraint: "IAccessConstraint"):
         Assert.assertIsNotNone(oConstraint)
 
-        Assert.assertNotEqual("", oConstraint.ConstraintName)
-        constraintType: "AgEAccessConstraints" = oConstraint.ConstraintType
+        Assert.assertNotEqual("", oConstraint.constraint_name)
+        constraintType: "AgEAccessConstraints" = oConstraint.constraint_type
 
-        bIsPlugin: bool = oConstraint.IsPlugin
+        bIsPlugin: bool = oConstraint.is_plugin
 
-        holdExclIntvl: bool = oConstraint.ExclIntvl
-        oConstraint.ExclIntvl = True
-        Assert.assertTrue(oConstraint.ExclIntvl)
-        oConstraint.ExclIntvl = False
-        Assert.assertFalse(oConstraint.ExclIntvl)
-        oConstraint.ExclIntvl = holdExclIntvl
+        holdExclIntvl: bool = oConstraint.excl_intvl
+        oConstraint.excl_intvl = True
+        Assert.assertTrue(oConstraint.excl_intvl)
+        oConstraint.excl_intvl = False
+        Assert.assertFalse(oConstraint.excl_intvl)
+        oConstraint.excl_intvl = holdExclIntvl
 
-        oConstraint.MaxRelMotion = 1
-        Assert.assertEqual(1, oConstraint.MaxRelMotion)
-        oConstraint.MaxRelMotion = 2
-        Assert.assertEqual(2, oConstraint.MaxRelMotion)
+        oConstraint.max_rel_motion = 1
+        Assert.assertEqual(1, oConstraint.max_rel_motion)
+        oConstraint.max_rel_motion = 2
+        Assert.assertEqual(2, oConstraint.max_rel_motion)
 
-        oConstraint.MaxTimeStep = 30
-        Assert.assertEqual(30, oConstraint.MaxTimeStep)
-        oConstraint.MaxTimeStep = 60
-        Assert.assertEqual(60, oConstraint.MaxTimeStep)
+        oConstraint.max_time_step = 30
+        Assert.assertEqual(30, oConstraint.max_time_step)
+        oConstraint.max_time_step = 60
+        Assert.assertEqual(60, oConstraint.max_time_step)
 
     # endregion
 
@@ -48,8 +48,8 @@ class AccessConstraintHelper(object):
     ):
         Assert.assertIsNotNone(oCollection)
         oConstraint: "IAccessConstraint" = None
-        if not oCollection.IsConstraintActive(eType):
-            oConstraint = oCollection.AddConstraint(eType)
+        if not oCollection.is_constraint_active(eType):
+            oConstraint = oCollection.add_constraint(eType)
             if (
                 (
                     ((eType == AgEAccessConstraints.eCstrApparentTime) or (eType == AgEAccessConstraints.eCstrDuration))
@@ -57,7 +57,7 @@ class AccessConstraintHelper(object):
                 )
                 or (eType == AgEAccessConstraints.eCstrGMT)
             ) or (eType == AgEAccessConstraints.eCstrIntervals):
-                oConstraint = oCollection.AddConstraint(eType)
+                oConstraint = oCollection.add_constraint(eType)
 
             Assert.assertIsNotNone(oConstraint)
             if eType == AgEAccessConstraints.eCstrThirdBodyObstruction:
@@ -70,7 +70,7 @@ class AccessConstraintHelper(object):
                 self.TestConstraintObjectExclusion(oConstraint)
                 return
 
-        oConstraint = oCollection.GetActiveConstraint(eType)
+        oConstraint = oCollection.get_active_constraint(eType)
         Assert.assertIsNotNone(oConstraint)
 
         # test base class properties
@@ -142,7 +142,6 @@ class AccessConstraintHelper(object):
         typesMinMaxDistance = []
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrAltitude)
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrCrossTrackRange)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrGrazingAlt)
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrInTrackRange)
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrRange)
         typesMinMaxDistance.append(AgEAccessConstraints.eCstrCentroidRange)
@@ -277,11 +276,12 @@ class AccessConstraintHelper(object):
         if eType == AgEAccessConstraints.eCstrBackground:
             self.TestConstraintBackground(oConstraint)
 
-        elif ((eType == AgEAccessConstraints.eCstrCrdnAngle) or (eType == AgEAccessConstraints.eCstrCrdnVectorMag)) or (
-            eType == AgEAccessConstraints.eCstrCrdnCondition
-        ):
+        elif (
+            ((eType == AgEAccessConstraints.eCstrCrdnAngle) or (eType == AgEAccessConstraints.eCstrCrdnCalcScalar))
+            or (eType == AgEAccessConstraints.eCstrCrdnVectorMag)
+        ) or (eType == AgEAccessConstraints.eCstrCrdnCondition):
             self.TestConstraintCrdnCn(oConstraint)
-            self.TestConstraintAWBCollection(oCollection.AWBConstraints, int(eType))
+            self.TestConstraintAWBCollection(oCollection.awb_constraints, int(eType))
 
         elif eType == AgEAccessConstraints.eCstrLighting:
             self.TestConstraintCondition(oConstraint)
@@ -296,8 +296,8 @@ class AccessConstraintHelper(object):
             self.TestConstraintZone(oConstraint)
 
         elif eType == AgEAccessConstraints.eCstrExclusionZone:
-            oCollection.AddConstraint(AgEAccessConstraints.eCstrExclusionZone)
-            oCollection.AddConstraint(AgEAccessConstraints.eCstrExclusionZone)
+            oCollection.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
+            oCollection.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
             self.TestConstraintExclusionZonesCollection(oConstraint)
 
         elif (
@@ -375,6 +375,11 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDistance(oMinMax)
 
+        elif eType == AgEAccessConstraints.eCstrGrazingAlt:
+            oGrazingAlt: "IAccessConstraintGrazingAltitude" = clr.Convert(oConstraint, IAccessConstraintGrazingAltitude)
+            Assert.assertIsNotNone(oGrazingAlt)
+            self.TestConstraintMinMaxGrazingAlt(oGrazingAlt)
+
         elif eType in typesMinMaxTime:
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
@@ -441,80 +446,80 @@ class AccessConstraintHelper(object):
     # region TestPluginConstraints
     def TestPluginConstraints(self, oCollection: "IAccessConstraintCollection", oObject: "IStkObject"):
         # IsNamedConstraintSupported
-        Assert.assertFalse(oCollection.IsNamedConstraintSupported("InvalidConstraintName"))
-        if oObject.ClassName == "Facility":
+        Assert.assertFalse(oCollection.is_named_constraint_supported("InvalidConstraintName"))
+        if oObject.class_name == "Facility":
             namedConstraint: str = "CSharp.NIIRS"
             if not OSHelper.IsLinux():
-                if oCollection.IsNamedConstraintSupported(namedConstraint):
+                if oCollection.is_named_constraint_supported(namedConstraint):
                     # System.Windows.Forms.MessageBox.Show("NIIRS");
                     # IsNamedConstraintActive
-                    Assert.assertFalse(oCollection.IsNamedConstraintActive(namedConstraint))
-                    Assert.assertFalse(oCollection.IsNamedConstraintActive("InvalidConstraintName"))
-                    count: int = oCollection.Count
+                    Assert.assertFalse(oCollection.is_named_constraint_active(namedConstraint))
+                    Assert.assertFalse(oCollection.is_named_constraint_active("InvalidConstraintName"))
+                    count: int = oCollection.count
                     # AddNamedConstraint
-                    oConstraint: "IAccessConstraint" = oCollection.AddNamedConstraint(namedConstraint)
-                    Assert.assertEqual((count + 1), oCollection.Count)
-                    Assert.assertTrue(oCollection.IsNamedConstraintActive(namedConstraint))
+                    oConstraint: "IAccessConstraint" = oCollection.add_named_constraint(namedConstraint)
+                    Assert.assertEqual((count + 1), oCollection.count)
+                    Assert.assertTrue(oCollection.is_named_constraint_active(namedConstraint))
                     # GetActiveNamedConstraint
-                    oSecond: "IAccessConstraint" = oCollection.GetActiveNamedConstraint(namedConstraint)
+                    oSecond: "IAccessConstraint" = oCollection.get_active_named_constraint(namedConstraint)
                     Assert.assertIsNotNone(oSecond)
-                    Assert.assertEqual(oConstraint.ConstraintName, oSecond.ConstraintName)
+                    Assert.assertEqual(oConstraint.constraint_name, oSecond.constraint_name)
 
                     self.TestPluginConstraint(clr.CastAs(oConstraint, IAccessConstraintPluginMinMax))
 
                     # RemoveNamedConstraint
-                    oCollection.RemoveNamedConstraint(namedConstraint)
-                    Assert.assertEqual(count, oCollection.Count)
+                    oCollection.remove_named_constraint(namedConstraint)
+                    Assert.assertEqual(count, oCollection.count)
 
                 else:
                     Assert.fail(("Named constraint not supported: " + namedConstraint))
 
                 namedConstraint = "CSharp.RangeExample"
-                if oCollection.IsNamedConstraintSupported(namedConstraint):
+                if oCollection.is_named_constraint_supported(namedConstraint):
                     # System.Windows.Forms.MessageBox.Show("CS range");
                     # IsNamedConstraintActive
-                    Assert.assertFalse(oCollection.IsNamedConstraintActive(namedConstraint))
-                    Assert.assertFalse(oCollection.IsNamedConstraintActive("InvalidConstraintName"))
-                    count: int = oCollection.Count
+                    Assert.assertFalse(oCollection.is_named_constraint_active(namedConstraint))
+                    Assert.assertFalse(oCollection.is_named_constraint_active("InvalidConstraintName"))
+                    count: int = oCollection.count
                     # AddNamedConstraint
-                    oConstraint: "IAccessConstraint" = oCollection.AddNamedConstraint(namedConstraint)
-                    Assert.assertEqual((count + 1), oCollection.Count)
-                    Assert.assertTrue(oCollection.IsNamedConstraintActive(namedConstraint))
+                    oConstraint: "IAccessConstraint" = oCollection.add_named_constraint(namedConstraint)
+                    Assert.assertEqual((count + 1), oCollection.count)
+                    Assert.assertTrue(oCollection.is_named_constraint_active(namedConstraint))
                     # GetActiveNamedConstraint
-                    oSecond: "IAccessConstraint" = oCollection.GetActiveNamedConstraint(namedConstraint)
+                    oSecond: "IAccessConstraint" = oCollection.get_active_named_constraint(namedConstraint)
                     Assert.assertIsNotNone(oSecond)
-                    Assert.assertEqual(oConstraint.ConstraintName, oSecond.ConstraintName)
+                    Assert.assertEqual(oConstraint.constraint_name, oSecond.constraint_name)
 
                     self.TestPluginConstraint(clr.CastAs(oConstraint, IAccessConstraintPluginMinMax))
 
                     # RemoveNamedConstraint
-                    oCollection.RemoveNamedConstraint(namedConstraint)
-                    Assert.assertEqual(count, oCollection.Count)
+                    oCollection.remove_named_constraint(namedConstraint)
+                    Assert.assertEqual(count, oCollection.count)
 
                 else:
                     Assert.fail(("Named constraint not supported: " + namedConstraint))
 
                 namedConstraint = "JScript.RangeExample"
-                if oCollection.IsNamedConstraintSupported(namedConstraint):
+                if oCollection.is_named_constraint_supported(namedConstraint):
                     # System.Windows.Forms.MessageBox.Show("JS range");
                     # IsNamedConstraintActive
-                    Assert.assertFalse(oCollection.IsNamedConstraintActive(namedConstraint))
-                    Assert.assertFalse(oCollection.IsNamedConstraintActive("InvalidConstraintName"))
-                    count: int = oCollection.Count
+                    Assert.assertFalse(oCollection.is_named_constraint_active(namedConstraint))
+                    Assert.assertFalse(oCollection.is_named_constraint_active("InvalidConstraintName"))
+                    count: int = oCollection.count
                     # AddNamedConstraint
-                    oConstraint: "IAccessConstraint" = oCollection.AddNamedConstraint(namedConstraint)
-                    Assert.assertEqual((count + 1), oCollection.Count)
-                    Assert.assertTrue(oCollection.IsNamedConstraintActive(namedConstraint))
+                    oConstraint: "IAccessConstraint" = oCollection.add_named_constraint(namedConstraint)
+                    Assert.assertEqual((count + 1), oCollection.count)
+                    Assert.assertTrue(oCollection.is_named_constraint_active(namedConstraint))
                     # GetActiveNamedConstraint
-                    oSecond: "IAccessConstraint" = oCollection.GetActiveNamedConstraint(namedConstraint)
+                    oSecond: "IAccessConstraint" = oCollection.get_active_named_constraint(namedConstraint)
                     Assert.assertIsNotNone(oSecond)
-                    Assert.assertEqual(oConstraint.ConstraintName, oSecond.ConstraintName)
+                    Assert.assertEqual(oConstraint.constraint_name, oSecond.constraint_name)
 
                     self.TestPluginConstraint(clr.CastAs(oConstraint, IAccessConstraintPluginMinMax))
 
                     # RemoveNamedConstraint
-                    oCollection.RemoveNamedConstraint(namedConstraint)
-                    Assert.assertEqual(count, oCollection.Count)
+                    oCollection.remove_named_constraint(namedConstraint)
+                    Assert.assertEqual(count, oCollection.count)
 
                 else:
                     Assert.fail(("Named constraint not supported: " + namedConstraint))
@@ -526,60 +531,60 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oPlugin)
 
         self.BasePropertiesTest(oPlugin)
-        if (oPlugin.ConstraintName == "CSharp.NIIRS") or (oPlugin.ConstraintName == "PythonRangeExample"):
-            oRawPlugin: typing.Any = oPlugin.GetRawPluginObject()
+        if (oPlugin.constraint_name == "CSharp.NIIRS") or (oPlugin.constraint_name == "PythonRangeExample"):
+            oRawPlugin: typing.Any = oPlugin.get_raw_plugin_object()
             Assert.assertIsNotNone(oRawPlugin)
 
         else:
 
             def action1():
-                oRawPlugin: typing.Any = oPlugin.GetRawPluginObject()
+                oRawPlugin: typing.Any = oPlugin.get_raw_plugin_object()
 
             TryCatchAssertBlock.ExpectedException("Failed to get a raw pointer", action1)
 
         # AvailableProperties
-        arProperties = oPlugin.AvailableProperties
+        arProperties = oPlugin.available_properties
 
-        oPlugin.EnableMin = False
-        Assert.assertFalse(oPlugin.EnableMin)
+        oPlugin.enable_min = False
+        Assert.assertFalse(oPlugin.enable_min)
 
         def action2():
-            (clr.Convert(oPlugin, IAccessConstraintMinMax)).Min = 20.0
+            (clr.Convert(oPlugin, IAccessConstraintMinMax)).min = 20.0
 
         TryCatchAssertBlock.DoAssert("", action2)
-        oPlugin.EnableMin = True
-        Assert.assertTrue(oPlugin.EnableMin)
-        (clr.Convert(oPlugin, IAccessConstraintMinMax)).Min = 20.0
-        Assert.assertEqual(20.0, oPlugin.Min)
+        oPlugin.enable_min = True
+        Assert.assertTrue(oPlugin.enable_min)
+        (clr.Convert(oPlugin, IAccessConstraintMinMax)).min = 20.0
+        Assert.assertEqual(20.0, oPlugin.min)
 
-        oPlugin.EnableMax = False
-        Assert.assertFalse(oPlugin.EnableMax)
+        oPlugin.enable_max = False
+        Assert.assertFalse(oPlugin.enable_max)
 
         def action3():
-            (clr.Convert(oPlugin, IAccessConstraintMinMax)).Max = 20.0
+            (clr.Convert(oPlugin, IAccessConstraintMinMax)).max = 20.0
 
         TryCatchAssertBlock.DoAssert("", action3)
-        oPlugin.EnableMax = True
-        Assert.assertTrue(oPlugin.EnableMax)
+        oPlugin.enable_max = True
+        Assert.assertTrue(oPlugin.enable_max)
 
         def action4():
-            (clr.Convert(oPlugin, IAccessConstraintMinMax)).Max = 19.0
+            (clr.Convert(oPlugin, IAccessConstraintMinMax)).max = 19.0
 
         TryCatchAssertBlock.DoAssert("", action4)
-        (clr.Convert(oPlugin, IAccessConstraintMinMax)).Max = 20.0
-        Assert.assertEqual(20.0, oPlugin.Max)
+        (clr.Convert(oPlugin, IAccessConstraintMinMax)).max = 20.0
+        Assert.assertEqual(20.0, oPlugin.max)
 
         iIndex: int = 0
         while iIndex < Array.Length(arProperties):
             strName: str = str(arProperties[iIndex])
             # GetProperty
-            strValue: str = str(oPlugin.GetProperty(strName))
+            strValue: str = str(oPlugin.get_property(strName))
 
             # SetProperty
-            oPlugin.SetProperty(strName, strValue)
+            oPlugin.set_property(strName, strValue)
 
             def action5():
-                oPlugin.SetProperty("bogus", strValue)
+                oPlugin.set_property("bogus", strValue)
 
             TryCatchAssertBlock.DoAssert("", action5)
 
@@ -593,13 +598,13 @@ class AccessConstraintHelper(object):
         self.m_logger.WriteLine("----- THE ACCESS CONSTRAINTS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oObject)
-        arAvailable = oCollection.AvailableConstraints()
+        arAvailable = oCollection.available_constraints()
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
             constraintName: str = str(arAvailable[iIndex][0])
             eType: "AgEAccessConstraints" = clr.Convert(int(arAvailable[iIndex][1]), AgEAccessConstraints)
-            if not oCollection.IsConstraintSupported(eType):
+            if not oCollection.is_constraint_supported(eType):
                 if AgEAccessConstraints.eCstrNone == eType:
                     iIndex += 1
                     continue
@@ -610,14 +615,14 @@ class AccessConstraintHelper(object):
             # test constraint
             self.ConstraintTest(oCollection, eType, temporaryDirectory)
             if eType == AgEAccessConstraints.eCstrExclusionZone:
-                if oCollection.IsConstraintActive(eType):
+                if oCollection.is_constraint_active(eType):
                     Assert.fail()
 
-            if not oCollection.IsConstraintActive(eType):
+            if not oCollection.is_constraint_active(eType):
                 iIndex += 1
                 continue
 
-            oConstraint: "IAccessConstraint" = oCollection.GetActiveConstraint(eType)
+            oConstraint: "IAccessConstraint" = oCollection.get_active_constraint(eType)
             Assert.assertIsNotNone(oConstraint)
             if (
                 (
@@ -626,7 +631,7 @@ class AccessConstraintHelper(object):
                 )
                 and (eType != AgEAccessConstraints.eCstrThirdBodyObstruction)
             ) and (eType != AgEAccessConstraints.eCstrLineOfSight):
-                oCollection.RemoveConstraint(eType)
+                oCollection.remove_constraint(eType)
 
             iIndex += 1
 
@@ -635,27 +640,27 @@ class AccessConstraintHelper(object):
         # ---------------------------------
         self.TestPluginConstraints(oCollection, oObject)
 
-        oCollection.UsePreferredMaxTimeStep = False
-        Assert.assertFalse(oCollection.UsePreferredMaxTimeStep)
+        oCollection.use_preferred_max_time_step = False
+        Assert.assertFalse(oCollection.use_preferred_max_time_step)
 
         def action6():
-            oCollection.PreferredMaxTimeStep = 100
+            oCollection.preferred_max_time_step = 100
 
         TryCatchAssertBlock.ExpectedException("read only", action6)
 
-        oCollection.UsePreferredMaxTimeStep = True
-        Assert.assertTrue(oCollection.UsePreferredMaxTimeStep)
+        oCollection.use_preferred_max_time_step = True
+        Assert.assertTrue(oCollection.use_preferred_max_time_step)
 
         def action7():
-            oCollection.PreferredMaxTimeStep = 0
+            oCollection.preferred_max_time_step = 0
 
         TryCatchAssertBlock.ExpectedException("invalid", action7)
-        oCollection.PreferredMaxTimeStep = 1
-        Assert.assertEqual(1, oCollection.PreferredMaxTimeStep)
-        oCollection.PreferredMaxTimeStep = 360
-        Assert.assertEqual(360, oCollection.PreferredMaxTimeStep)
+        oCollection.preferred_max_time_step = 1
+        Assert.assertEqual(1, oCollection.preferred_max_time_step)
+        oCollection.preferred_max_time_step = 360
+        Assert.assertEqual(360, oCollection.preferred_max_time_step)
 
-        Assert.assertEqual(1, oCollection.Count)  # LineOfSight should remain
+        Assert.assertEqual(1, oCollection.count)  # LineOfSight should remain
 
     # endregion
 
@@ -663,112 +668,112 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxAngle(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
-        self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
-        holdEnableMin: bool = oMinMax.EnableMin
-        holdEnableMax: bool = oMinMax.EnableMax
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
+        self.m_oUnits.set_current_unit("AngleUnit", "deg")
+        holdEnableMin: bool = oMinMax.enable_min
+        holdEnableMax: bool = oMinMax.enable_max
 
         # set initial states
-        oMinMax.EnableMin = True
-        oMinMax.EnableMax = True
+        oMinMax.enable_min = True
+        oMinMax.enable_max = True
 
         # Min off, Max off
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action8():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action8)
 
         def action9():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action9)
 
         # Min on, Max off
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
-        oMinMax.EnableMax = False
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
+        oMinMax.enable_max = False
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
 
         def action10():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action10)
 
         # Min on, Max on
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
-        oMinMax.Min = 21.345
-        Assert.assertEqual(21.345, oMinMax.Min)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
+        oMinMax.min = 21.345
+        Assert.assertEqual(21.345, oMinMax.min)
 
         def action11():
-            oMinMax.Max = -1234
+            oMinMax.max = -1234
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action11)
 
         def action12():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action12)
 
         def action13():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action13)
 
         # Min off, Max on
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.EnableMax = True
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.enable_max = True
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
 
         def action14():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action14)
-        oMinMax.Max = 76.89
-        Assert.assertEqual(76.89, oMinMax.Max)
+        oMinMax.max = 76.89
+        Assert.assertEqual(76.89, oMinMax.max)
 
         # Min off, Max off
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action15():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action15)
 
         def action16():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action16)
 
         # restore to original
-        oMinMax.EnableMin = holdEnableMin
-        oMinMax.EnableMax = holdEnableMax
-        self.m_oUnits.SetCurrentUnit("AngleUnit", strUnit)
+        oMinMax.enable_min = holdEnableMin
+        oMinMax.enable_max = holdEnableMax
+        self.m_oUnits.set_current_unit("AngleUnit", strUnit)
 
     # endregion
 
@@ -776,112 +781,112 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintMinMaxAngle_SetTogether(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
-        self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
-        holdEnableMin: bool = oMinMax.EnableMin
-        holdEnableMax: bool = oMinMax.EnableMax
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
+        self.m_oUnits.set_current_unit("AngleUnit", "deg")
+        holdEnableMin: bool = oMinMax.enable_min
+        holdEnableMax: bool = oMinMax.enable_max
 
         # set initial states
-        oMinMax.EnableMin = True
-        oMinMax.EnableMax = True
+        oMinMax.enable_min = True
+        oMinMax.enable_max = True
 
         # Min off
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action17():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action17)
 
         def action18():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action18)
 
         # Min on
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
 
         def action19():
-            oMinMax.Max = -1234
+            oMinMax.max = -1234
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action19)
 
         def action20():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action20)
 
         def action21():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action21)
 
         # Max off
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action22():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action22)
 
         def action23():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action23)
 
         # Max on
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
-        oMinMax.Max = 76.89
-        Assert.assertEqual(76.89, oMinMax.Max)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
+        oMinMax.max = 76.89
+        Assert.assertEqual(76.89, oMinMax.max)
 
         def action24():
-            oMinMax.Max = -1234
+            oMinMax.max = -1234
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action24)
 
         def action25():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action25)
 
         def action26():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action26)
 
         # Max off
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action27():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action27)
 
         def action28():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action28)
 
         # restore to original
-        oMinMax.EnableMin = holdEnableMin
-        oMinMax.EnableMax = holdEnableMax
-        self.m_oUnits.SetCurrentUnit("AngleUnit", strUnit)
+        oMinMax.enable_min = holdEnableMin
+        oMinMax.enable_max = holdEnableMax
+        self.m_oUnits.set_current_unit("AngleUnit", strUnit)
 
     # endregion
 
@@ -893,79 +898,79 @@ class AccessConstraintHelper(object):
         bRange: bool = dMin == 0.345
 
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action29():
-            oMinMax.Max = dMax
+            oMinMax.max = dMax
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action29)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action30():
-            oMinMax.Min = dMin
+            oMinMax.min = dMin
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action30)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        if float(oMinMax.Min) > float(oMinMax.Max):
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        if float(oMinMax.min) > float(oMinMax.max):
             Assert.fail("The maximum must be greater than the minimum.")
 
-        if float(oMinMax.Min) >= dMax:
+        if float(oMinMax.min) >= dMax:
             # Min
-            oMinMax.Min = dMin
-            Assert.assertEqual(dMin, float(oMinMax.Min))
+            oMinMax.min = dMin
+            Assert.assertEqual(dMin, float(oMinMax.min))
             if bRange:
 
                 def action31():
-                    oMinMax.Min = dMin * (-2)
+                    oMinMax.min = dMin * (-2)
 
                 TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action31)
 
             # Max
-            oMinMax.Max = dMax
-            Assert.assertEqual(dMax, oMinMax.Max)
+            oMinMax.max = dMax
+            Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
 
                 def action32():
-                    oMinMax.Max = dMax * 2
+                    oMinMax.max = dMax * 2
 
                 TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action32)
 
         else:
             # Max
-            oMinMax.Max = dMax
-            Assert.assertEqual(dMax, oMinMax.Max)
+            oMinMax.max = dMax
+            Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
 
                 def action33():
-                    oMinMax.Max = dMax * 2
+                    oMinMax.max = dMax * 2
 
                 TryCatchAssertBlock.ExpectedException("is invalid", action33)
 
             # Min
-            oMinMax.Min = dMin
-            Assert.assertEqual(dMin, oMinMax.Min)
+            oMinMax.min = dMin
+            Assert.assertEqual(dMin, oMinMax.min)
             if bRange:
 
                 def action34():
-                    oMinMax.Min = dMin * (-2)
+                    oMinMax.min = dMin * (-2)
 
                 TryCatchAssertBlock.ExpectedException("is invalid", action34)
 
         def action35():
-            oMinMax.Max = dMin - 0.01
+            oMinMax.max = dMin - 0.01
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action35)
 
         def action36():
-            oMinMax.Min = dMax + 0.01
+            oMinMax.min = dMax + 0.01
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action36)
 
@@ -976,51 +981,51 @@ class AccessConstraintHelper(object):
     def TestConstraintMinMaxDistance(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # set DistanceUnit
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit")
-        self.m_oUnits.SetCurrentUnit("DistanceUnit", "m")
-        Assert.assertEqual("m", self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
+        self.m_oUnits.set_current_unit("DistanceUnit", "m")
+        Assert.assertEqual("m", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action37():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action37)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action38():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action38)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
         # Max
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
         # Min
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
 
         def action39():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action39)
 
         def action40():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action40)
 
         # restore DistanceUnit
-        self.m_oUnits.SetCurrentUnit("DistanceUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("DistanceUnit"))
+        self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
 
     # endregion
 
@@ -1029,64 +1034,64 @@ class AccessConstraintHelper(object):
     def TestConstraintMinMaxFlux(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
 
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action41():
-            oMinMax.Max = 1.01
+            oMinMax.max = 1.01
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action41)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
 
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action42():
-            oMinMax.Min = 0
+            oMinMax.min = 0
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action42)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
         def action43():
-            oMinMax.Min = 0
+            oMinMax.min = 0
 
         TryCatchAssertBlock.ExpectedException("Value 0 is invalid", action43)
 
-        oMinMax.Min = 1e-25
-        Assert.assertEqual(1e-25, oMinMax.Min)
+        oMinMax.min = 1e-25
+        Assert.assertEqual(1e-25, oMinMax.min)
 
         def action44():
-            oMinMax.Max = 1.01
+            oMinMax.max = 1.01
 
         TryCatchAssertBlock.ExpectedException("Value 1.010000 is invalid", action44)
 
-        oMinMax.Max = 1
-        Assert.assertEqual(1, oMinMax.Max)
+        oMinMax.max = 1
+        Assert.assertEqual(1, oMinMax.max)
 
-        oMinMax.Min = 0.2
-        Assert.assertEqual(0.2, oMinMax.Min)
+        oMinMax.min = 0.2
+        Assert.assertEqual(0.2, oMinMax.min)
 
         def action45():
-            oMinMax.Max = 0.1
+            oMinMax.max = 0.1
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action45)
 
-        oMinMax.Max = 0.8
-        Assert.assertEqual(0.8, oMinMax.Max)
+        oMinMax.max = 0.8
+        Assert.assertEqual(0.8, oMinMax.max)
 
         def action46():
-            oMinMax.Min = 0.9
+            oMinMax.min = 0.9
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action46)
 
-        oMinMax.Min = 1e-25
-        Assert.assertEqual(1e-25, oMinMax.Min)
-        oMinMax.Max = 1
-        Assert.assertEqual(1, oMinMax.Max)
+        oMinMax.min = 1e-25
+        Assert.assertEqual(1e-25, oMinMax.min)
+        oMinMax.max = 1
+        Assert.assertEqual(1, oMinMax.max)
 
     # endregion
 
@@ -1095,64 +1100,64 @@ class AccessConstraintHelper(object):
     def TestConstraintMinMaxMassFlux(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
 
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action47():
-            oMinMax.Max = 1.01
+            oMinMax.max = 1.01
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action47)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
 
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action48():
-            oMinMax.Min = 0
+            oMinMax.min = 0
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action48)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
         def action49():
-            oMinMax.Min = 0.9
+            oMinMax.min = 0.9
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action49)
 
-        oMinMax.Min = 1e-25
-        Assert.assertEqual(1e-25, oMinMax.Min)
+        oMinMax.min = 1e-25
+        Assert.assertEqual(1e-25, oMinMax.min)
 
         def action50():
-            oMinMax.Max = 1.01
+            oMinMax.max = 1.01
 
         TryCatchAssertBlock.ExpectedException("is invalid", action50)
 
-        oMinMax.Max = 1
-        Assert.assertEqual(1, oMinMax.Max)
+        oMinMax.max = 1
+        Assert.assertEqual(1, oMinMax.max)
 
-        oMinMax.Min = 0.2
-        Assert.assertEqual(0.2, oMinMax.Min)
+        oMinMax.min = 0.2
+        Assert.assertEqual(0.2, oMinMax.min)
 
         def action51():
-            oMinMax.Max = 0.1
+            oMinMax.max = 0.1
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action51)
 
-        oMinMax.Max = 0.8
-        Assert.assertEqual(0.8, oMinMax.Max)
+        oMinMax.max = 0.8
+        Assert.assertEqual(0.8, oMinMax.max)
 
         def action52():
-            oMinMax.Min = 0.9
+            oMinMax.min = 0.9
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action52)
 
-        oMinMax.Min = 1e-25
-        Assert.assertEqual(1e-25, oMinMax.Min)
-        oMinMax.Max = 1
-        Assert.assertEqual(1, oMinMax.Max)
+        oMinMax.min = 1e-25
+        Assert.assertEqual(1e-25, oMinMax.min)
+        oMinMax.max = 1
+        Assert.assertEqual(1, oMinMax.max)
 
     # endregion
 
@@ -1164,64 +1169,64 @@ class AccessConstraintHelper(object):
 
         Assert.assertIsNotNone(oMinMax)
 
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action53():
-            oMinMax.Max = MAX
+            oMinMax.max = MAX
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action53)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
 
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action54():
-            oMinMax.Min = MIN
+            oMinMax.min = MIN
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action54)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
         def action55():
-            oMinMax.Min = 0
+            oMinMax.min = 0
 
         TryCatchAssertBlock.ExpectedException("is invalid", action55)
 
-        oMinMax.Min = MIN
-        Assert.assertEqual(MIN, oMinMax.Min)
+        oMinMax.min = MIN
+        Assert.assertEqual(MIN, oMinMax.min)
 
         def action56():
-            oMinMax.Max = 100000000.0 + 1
+            oMinMax.max = 100000000.0 + 1
 
         TryCatchAssertBlock.ExpectedException("is invalid", action56)
 
-        oMinMax.Max = MAX
-        Assert.assertEqual(MAX, oMinMax.Max)
+        oMinMax.max = MAX
+        Assert.assertEqual(MAX, oMinMax.max)
 
-        oMinMax.Min = MIN + 200
-        Assert.assertEqual((MIN + 200), oMinMax.Min)
+        oMinMax.min = MIN + 200
+        Assert.assertEqual((MIN + 200), oMinMax.min)
 
         def action57():
-            oMinMax.Max = MIN + 100
+            oMinMax.max = MIN + 100
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action57)
 
-        oMinMax.Max = MAX - 2000
-        Assert.assertEqual((MAX - 2000), oMinMax.Max)
+        oMinMax.max = MAX - 2000
+        Assert.assertEqual((MAX - 2000), oMinMax.max)
 
         def action58():
-            oMinMax.Min = MAX - 1000
+            oMinMax.min = MAX - 1000
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action58)
 
-        oMinMax.Min = MIN
-        Assert.assertEqual(MIN, oMinMax.Min)
-        oMinMax.Max = MAX
-        Assert.assertEqual(MAX, oMinMax.Max)
+        oMinMax.min = MIN
+        Assert.assertEqual(MIN, oMinMax.min)
+        oMinMax.max = MAX
+        Assert.assertEqual(MAX, oMinMax.max)
 
     # endregion
 
@@ -1233,64 +1238,64 @@ class AccessConstraintHelper(object):
 
         Assert.assertIsNotNone(oMinMax)
 
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action59():
-            oMinMax.Max = MAX_TEMP
+            oMinMax.max = MAX_TEMP
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action59)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
 
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action60():
-            oMinMax.Min = MIN_TEMP
+            oMinMax.min = MIN_TEMP
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action60)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
         def action61():
-            oMinMax.Min = -1
+            oMinMax.min = -1
 
         TryCatchAssertBlock.ExpectedException("is invalid", action61)
 
-        oMinMax.Min = MIN_TEMP
-        Assert.assertEqual(MIN_TEMP, oMinMax.Min)
+        oMinMax.min = MIN_TEMP
+        Assert.assertEqual(MIN_TEMP, oMinMax.min)
 
         def action62():
-            oMinMax.Max = 5771
+            oMinMax.max = 5771
 
         TryCatchAssertBlock.ExpectedException("is invalid", action62)
 
-        oMinMax.Max = MAX_TEMP
-        Assert.assertEqual(MAX_TEMP, oMinMax.Max)
+        oMinMax.max = MAX_TEMP
+        Assert.assertEqual(MAX_TEMP, oMinMax.max)
 
-        oMinMax.Min = MIN_TEMP + 200
-        Assert.assertEqual((MIN_TEMP + 200), oMinMax.Min)
+        oMinMax.min = MIN_TEMP + 200
+        Assert.assertEqual((MIN_TEMP + 200), oMinMax.min)
 
         def action63():
-            oMinMax.Max = MIN_TEMP + 100
+            oMinMax.max = MIN_TEMP + 100
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action63)
 
-        oMinMax.Max = MAX_TEMP - 2000
-        Assert.assertEqual((MAX_TEMP - 2000), oMinMax.Max)
+        oMinMax.max = MAX_TEMP - 2000
+        Assert.assertEqual((MAX_TEMP - 2000), oMinMax.max)
 
         def action64():
-            oMinMax.Min = MAX_TEMP - 1000
+            oMinMax.min = MAX_TEMP - 1000
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action64)
 
-        oMinMax.Min = MIN_TEMP
-        Assert.assertEqual(MIN_TEMP, oMinMax.Min)
-        oMinMax.Max = MAX_TEMP
-        Assert.assertEqual(MAX_TEMP, oMinMax.Max)
+        oMinMax.min = MIN_TEMP
+        Assert.assertEqual(MIN_TEMP, oMinMax.min)
+        oMinMax.max = MAX_TEMP
+        Assert.assertEqual(MAX_TEMP, oMinMax.max)
 
     # endregion
 
@@ -1299,51 +1304,51 @@ class AccessConstraintHelper(object):
     def TestConstraintMinMaxTime(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # set TimeUnit
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit")
-        self.m_oUnits.SetCurrentUnit("TimeUnit", "min")
-        Assert.assertEqual("min", self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
+        self.m_oUnits.set_current_unit("TimeUnit", "min")
+        Assert.assertEqual("min", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action65():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action65)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action66():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action66)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
         # Max
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
         # Min
-        oMinMax.Min = 12.345
-        Assert.assertAlmostEqual(12.345, float(oMinMax.Min), delta=0.001)
+        oMinMax.min = 12.345
+        Assert.assertAlmostEqual(12.345, float(oMinMax.min), delta=0.001)
 
         def action67():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action67)
 
         def action68():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action68)
 
         # restore TimeUnit
-        self.m_oUnits.SetCurrentUnit("TimeUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("TimeUnit"))
+        self.m_oUnits.set_current_unit("TimeUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
 
     # endregion
 
@@ -1352,63 +1357,63 @@ class AccessConstraintHelper(object):
     def TestConstraintMinMaxLongitude(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
         # set LongitudeUnit
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
-        self.m_oUnits.SetCurrentUnit("LongitudeUnit", "deg")
-        Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
+        self.m_oUnits.set_current_unit("LongitudeUnit", "deg")
+        Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action69():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action69)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action70():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action70)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
         # Max
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
 
         def action71():
-            oMinMax.Max = 1234
+            oMinMax.max = 1234
 
         TryCatchAssertBlock.ExpectedException("is invalid", action71)
 
         # Min
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
 
         def action72():
-            oMinMax.Min = -1234
+            oMinMax.min = -1234
 
         TryCatchAssertBlock.ExpectedException("is invalid", action72)
 
         def action73():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action73)
 
         def action74():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action74)
 
         # restore LongitudeUnit
-        self.m_oUnits.SetCurrentUnit("LongitudeUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
+        self.m_oUnits.set_current_unit("LongitudeUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
 
     # endregion
 
@@ -1418,65 +1423,65 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oMinMax)
 
         # set TimeUnit
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("DurationUnit")
-        self.m_oUnits.SetCurrentUnit("DurationUnit", "sec")
-        Assert.assertEqual("sec", self.m_oUnits.GetCurrentUnitAbbrv("DurationUnit"))
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("DurationUnit")
+        self.m_oUnits.set_current_unit("DurationUnit", "sec")
+        Assert.assertEqual("sec", self.m_oUnits.get_current_unit_abbrv("DurationUnit"))
 
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action75():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action75)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
 
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action76():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify a read only", action76)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
         # Max
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
 
         def action77():
-            oMinMax.Max = 123456.789
+            oMinMax.max = 123456.789
 
         TryCatchAssertBlock.ExpectedException("is invalid", action77)
 
         # Min
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
 
         def action78():
-            oMinMax.Min = -123456.789
+            oMinMax.min = -123456.789
 
         TryCatchAssertBlock.ExpectedException("is invalid", action78)
 
         def action79():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action79)
 
         def action80():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action80)
 
         # restore DurationUnit
-        self.m_oUnits.SetCurrentUnit("DurationUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("DurationUnit"))
+        self.m_oUnits.set_current_unit("DurationUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DurationUnit"))
 
     # endregion
 
@@ -1486,54 +1491,54 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oMinMax)
 
         # set DistanceUnit
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit")
-        self.m_oUnits.SetCurrentUnit("SmallDistanceUnit", "mm")
-        Assert.assertEqual("mm", self.m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit"))
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("SmallDistanceUnit")
+        self.m_oUnits.set_current_unit("SmallDistanceUnit", "mm")
+        Assert.assertEqual("mm", self.m_oUnits.get_current_unit_abbrv("SmallDistanceUnit"))
 
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action81():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action81)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action82():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action82)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
         # Max
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
 
         # Min
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
 
         def action83():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action83)
 
         def action84():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action84)
 
         # restore DistanceUnit
-        self.m_oUnits.SetCurrentUnit("SmallDistanceUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("SmallDistanceUnit"))
+        self.m_oUnits.set_current_unit("SmallDistanceUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("SmallDistanceUnit"))
 
     # endregion
 
@@ -1543,120 +1548,120 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oMinMax)
 
         # set RatioUnit
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("RatioUnit")
-        self.m_oUnits.SetCurrentUnit("RatioUnit", "dB")
-        Assert.assertEqual("dB", self.m_oUnits.GetCurrentUnitAbbrv("RatioUnit"))
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("RatioUnit")
+        self.m_oUnits.set_current_unit("RatioUnit", "dB")
+        Assert.assertEqual("dB", self.m_oUnits.get_current_unit_abbrv("RatioUnit"))
 
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action85():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action85)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
 
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action86():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action86)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
         # Max
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
 
         def action87():
-            oMinMax.Max = 3001.0
+            oMinMax.max = 3001.0
 
         TryCatchAssertBlock.ExpectedException("is invalid", action87)
 
         # Min
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, Math.Round(float(oMinMax.Min), 3))
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, Math.Round(float(oMinMax.min), 3))
 
         def action88():
-            oMinMax.Min = -3001.0
+            oMinMax.min = -3001.0
 
         TryCatchAssertBlock.ExpectedException("is invalid", action88)
 
         def action89():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action89)
 
         def action90():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action90)
 
         # restore RatioUnit
-        self.m_oUnits.SetCurrentUnit("RatioUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("RatioUnit"))
+        self.m_oUnits.set_current_unit("RatioUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("RatioUnit"))
 
     # endregion
 
     # region TestConstraintMinMaxPower
     def TestConstraintMinMaxPower(self, oMinMax: "IAccessConstraintMinMax"):
         Assert.assertIsNotNone(oMinMax)
-        holdPowerUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("PowerUnit")
+        holdPowerUnit: str = self.m_oUnits.get_current_unit_abbrv("PowerUnit")
 
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action91():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action91)
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
 
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action92():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action92)
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
 
         def action93():
-            oMinMax.Max = 3001.0
+            oMinMax.max = 3001.0
 
         TryCatchAssertBlock.ExpectedException("is invalid", action93)
 
-        oMinMax.Min = 12.34
-        Assert.assertEqual(12.34, oMinMax.Min)
+        oMinMax.min = 12.34
+        Assert.assertEqual(12.34, oMinMax.min)
 
-        self.m_oUnits.SetCurrentUnit("PowerUnit", "mW")
-        Assert.assertAlmostEqual(17139.6, float(oMinMax.Min), delta=0.1)
-        Assert.assertAlmostEqual(6151770000.0, float(oMinMax.Max), delta=10000)
-        self.m_oUnits.SetCurrentUnit("PowerUnit", holdPowerUnit)
+        self.m_oUnits.set_current_unit("PowerUnit", "mW")
+        Assert.assertAlmostEqual(17139.6, float(oMinMax.min), delta=0.1)
+        Assert.assertAlmostEqual(6151770000.0, float(oMinMax.max), delta=10000)
+        self.m_oUnits.set_current_unit("PowerUnit", holdPowerUnit)
 
         def action94():
-            oMinMax.Min = -3001.0
+            oMinMax.min = -3001.0
 
         TryCatchAssertBlock.ExpectedException("is invalid", action94)
 
         def action95():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action95)
 
         def action96():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action96)
 
@@ -1668,54 +1673,112 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oMinMax)
 
         # set SARTimeResPodUnit
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("SARTimeResProdUnit")
-        self.m_oUnits.SetCurrentUnit("SARTimeResProdUnit", "m-msec")
-        Assert.assertEqual("m-msec", self.m_oUnits.GetCurrentUnitAbbrv("SARTimeResProdUnit"))
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("SARTimeResProdUnit")
+        self.m_oUnits.set_current_unit("SARTimeResProdUnit", "m-msec")
+        Assert.assertEqual("m-msec", self.m_oUnits.get_current_unit_abbrv("SARTimeResProdUnit"))
 
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action97():
-            oMinMax.Max = 10
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action97)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
         def action98():
-            oMinMax.Min = 1
+            oMinMax.min = 1
 
         TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action98)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
 
         # Max
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
 
         # Min
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
 
         def action99():
-            oMinMax.Max = 1.2
+            oMinMax.max = 1.2
 
         TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action99)
 
         def action100():
-            oMinMax.Min = 87.65
+            oMinMax.min = 87.65
 
         TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action100)
 
         # restore SARTimeResPodUnit
-        self.m_oUnits.SetCurrentUnit("SARTimeResProdUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("SARTimeResProdUnit"))
+        self.m_oUnits.set_current_unit("SARTimeResProdUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("SARTimeResProdUnit"))
+
+    # endregion
+
+    # region TestConstraintMinMaxGrazingAlt
+    # ////////////////////////////////////////////////////////////////////////
+    def TestConstraintMinMaxGrazingAlt(self, oGrazingAlt: "IAccessConstraintGrazingAltitude"):
+        Assert.assertIsNotNone(oGrazingAlt)
+
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
+        self.m_oUnits.set_current_unit("DistanceUnit", "m")
+        Assert.assertEqual("m", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
+
+        oGrazingAlt.enable_max = False
+        Assert.assertEqual(False, oGrazingAlt.enable_max)
+
+        def action101():
+            oGrazingAlt.max = 10
+
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action101)
+
+        oGrazingAlt.enable_max = True
+        Assert.assertEqual(True, oGrazingAlt.enable_max)
+
+        oGrazingAlt.enable_min = False
+        Assert.assertEqual(False, oGrazingAlt.enable_min)
+
+        def action102():
+            oGrazingAlt.min = 1
+
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action102)
+
+        oGrazingAlt.enable_min = True
+        Assert.assertEqual(True, oGrazingAlt.enable_min)
+
+        oGrazingAlt.max = 67.89
+        Assert.assertEqual(67.89, oGrazingAlt.max)
+
+        oGrazingAlt.min = 12.345
+        Assert.assertEqual(12.345, oGrazingAlt.min)
+
+        def action103():
+            oGrazingAlt.max = 1.2
+
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action103)
+
+        def action104():
+            oGrazingAlt.min = 87.65
+
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action104)
+
+        oGrazingAlt.compute_beyond_tgt = True
+        Assert.assertEqual(True, oGrazingAlt.compute_beyond_tgt)
+
+        oGrazingAlt.compute_beyond_tgt = False
+        Assert.assertEqual(False, oGrazingAlt.compute_beyond_tgt)
+
+        self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
 
     # endregion
 
@@ -1733,21 +1796,21 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oIntervals)
 
             # Filename
-            oIntervals.Filename = TestBase.GetScenarioFile("times.int")
+            oIntervals.filename = TestBase.GetScenarioFile("times.int")
 
             # FilePath
-            Assert.assertEqual(TestBase.GetScenarioFile("times.int"), oIntervals.FilePath)
+            Assert.assertEqual(TestBase.GetScenarioFile("times.int"), oIntervals.file_path)
 
             # ActionType
-            oIntervals.ActionType = AgEActionType.eActionExclude
-            Assert.assertEqual(AgEActionType.eActionExclude, oIntervals.ActionType)
-            oIntervals.ActionType = AgEActionType.eActionInclude
-            Assert.assertEqual(AgEActionType.eActionInclude, oIntervals.ActionType)
+            oIntervals.action_type = AgEActionType.eActionExclude
+            Assert.assertEqual(AgEActionType.eActionExclude, oIntervals.action_type)
+            oIntervals.action_type = AgEActionType.eActionInclude
+            Assert.assertEqual(AgEActionType.eActionInclude, oIntervals.action_type)
 
             # Interval collection
             oHelper = IntervalCollectionHelper(self.m_oUnits)
             oHelper.SetReadOnly(True)
-            oHelper.Run(oIntervals.Intervals, IntervalCollectionHelper.IntervalCollectionType.Constraint)
+            oHelper.Run(oIntervals.intervals, IntervalCollectionHelper.IntervalCollectionType.Constraint)
 
             # modify interval data
             # Filename
@@ -1756,11 +1819,11 @@ class AccessConstraintHelper(object):
             file2.Delete()
             file1.CopyTo(file2.FullName, True)
             file2.Attributes = FileAttributes.Normal
-            oIntervals.Filename = file2.FullName
+            oIntervals.filename = file2.FullName
 
             # Intervals
             oHelper.SetReadOnly(False)
-            oHelper.Run(oIntervals.Intervals, IntervalCollectionHelper.IntervalCollectionType.Constraint)
+            oHelper.Run(oIntervals.intervals, IntervalCollectionHelper.IntervalCollectionType.Constraint)
 
         finally:
             File.SetAttributes(intervalFile, FileAttributes.Normal)
@@ -1775,22 +1838,22 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oAngle)
 
         # set unit
-        strUnitAbbreviation: str = self.m_oUnits.GetCurrentUnitAbbrv(strUnitName)
-        self.m_oUnits.SetCurrentUnit(strUnitName, "deg")
-        Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv(strUnitName))
+        strUnitAbbreviation: str = self.m_oUnits.get_current_unit_abbrv(strUnitName)
+        self.m_oUnits.set_current_unit(strUnitName, "deg")
+        Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv(strUnitName))
 
         # Angle test
-        oAngle.Angle = 45
-        Assert.assertEqual(45, oAngle.Angle)
+        oAngle.angle = 45
+        Assert.assertEqual(45, oAngle.angle)
 
-        def action101():
-            oAngle.Angle = 380
+        def action105():
+            oAngle.angle = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action101)
+        TryCatchAssertBlock.ExpectedException("is invalid", action105)
 
         # restore unit
-        self.m_oUnits.SetCurrentUnit(strUnitName, strUnitAbbreviation)
-        Assert.assertEqual(strUnitAbbreviation, self.m_oUnits.GetCurrentUnitAbbrv(strUnitName))
+        self.m_oUnits.set_current_unit(strUnitName, strUnitAbbreviation)
+        Assert.assertEqual(strUnitAbbreviation, self.m_oUnits.get_current_unit_abbrv(strUnitName))
 
     # endregion
 
@@ -1802,51 +1865,51 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oObject)
 
         # AvailableObjects
-        arAvailable = oObject.AvailableObjects
-        arAssigned = oObject.AssignedObjects
+        arAvailable = oObject.available_objects
+        arAssigned = oObject.assigned_objects
         if Array.Length(arAvailable) > 0:
             strObject: str = str(arAvailable[0])
-            if not oObject.IsObjectAssigned(strObject):
-                oObject.AddExclusionObject(strObject)
-                if not oObject.IsObjectAssigned(strObject):
+            if not oObject.is_object_assigned(strObject):
+                oObject.add_exclusion_object(strObject)
+                if not oObject.is_object_assigned(strObject):
                     Assert.fail("The {0} object should be already assigned.", strObject)
 
-            def action102():
-                oObject.AddExclusionObject(strObject)
+            def action106():
+                oObject.add_exclusion_object(strObject)
 
             # re-assign object test
-            TryCatchAssertBlock.DoAssert("", action102)
+            TryCatchAssertBlock.DoAssert("", action106)
 
-        arAssigned = oObject.AssignedObjects
+        arAssigned = oObject.assigned_objects
 
         # Base properties
         self.BasePropertiesTest(oObject)
 
         # ExclusionAngle
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
-        self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
-        Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
-        oObject.ExclusionAngle = 123
-        Assert.assertEqual(123, oObject.ExclusionAngle)
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
+        self.m_oUnits.set_current_unit("AngleUnit", "deg")
+        Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
+        oObject.exclusion_angle = 123
+        Assert.assertEqual(123, oObject.exclusion_angle)
 
-        def action103():
-            oObject.ExclusionAngle = 1234
+        def action107():
+            oObject.exclusion_angle = 1234
 
-        TryCatchAssertBlock.DoAssert("", action103)
-        self.m_oUnits.SetCurrentUnit("AngleUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
+        TryCatchAssertBlock.DoAssert("", action107)
+        self.m_oUnits.set_current_unit("AngleUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
         if Array.Length(arAssigned) > 0:
             strObject: str = str(arAssigned[0])
-            if oObject.IsObjectAssigned(strObject):
-                oObject.RemoveExclusionObject(strObject)
+            if oObject.is_object_assigned(strObject):
+                oObject.remove_exclusion_object(strObject)
 
-            def action104():
-                oObject.RemoveExclusionObject(strObject)
+            def action108():
+                oObject.remove_exclusion_object(strObject)
 
             # remove object test
-            TryCatchAssertBlock.DoAssert("", action104)
+            TryCatchAssertBlock.DoAssert("", action108)
 
-        arAssigned = oObject.AssignedObjects
+        arAssigned = oObject.assigned_objects
 
     # endregion
 
@@ -1857,23 +1920,23 @@ class AccessConstraintHelper(object):
         oCondition: "IAccessConstraintCondition" = clr.Convert(oConstraint, IAccessConstraintCondition)
         Assert.assertIsNotNone(oCondition)
         # eDirectSun
-        oCondition.Condition = AgECnstrLighting.eDirectSun
-        Assert.assertEqual(AgECnstrLighting.eDirectSun, oCondition.Condition)
+        oCondition.condition = AgECnstrLighting.eDirectSun
+        Assert.assertEqual(AgECnstrLighting.eDirectSun, oCondition.condition)
         # ePenumbra
-        oCondition.Condition = AgECnstrLighting.ePenumbra
-        Assert.assertEqual(AgECnstrLighting.ePenumbra, oCondition.Condition)
+        oCondition.condition = AgECnstrLighting.ePenumbra
+        Assert.assertEqual(AgECnstrLighting.ePenumbra, oCondition.condition)
         # ePenumbraOrDirectSun
-        oCondition.Condition = AgECnstrLighting.ePenumbraOrDirectSun
-        Assert.assertEqual(AgECnstrLighting.ePenumbraOrDirectSun, oCondition.Condition)
+        oCondition.condition = AgECnstrLighting.ePenumbraOrDirectSun
+        Assert.assertEqual(AgECnstrLighting.ePenumbraOrDirectSun, oCondition.condition)
         # ePenumbraOrUmbra
-        oCondition.Condition = AgECnstrLighting.ePenumbraOrUmbra
-        Assert.assertEqual(AgECnstrLighting.ePenumbraOrUmbra, oCondition.Condition)
+        oCondition.condition = AgECnstrLighting.ePenumbraOrUmbra
+        Assert.assertEqual(AgECnstrLighting.ePenumbraOrUmbra, oCondition.condition)
         # eUmbra
-        oCondition.Condition = AgECnstrLighting.eUmbra
-        Assert.assertEqual(AgECnstrLighting.eUmbra, oCondition.Condition)
+        oCondition.condition = AgECnstrLighting.eUmbra
+        Assert.assertEqual(AgECnstrLighting.eUmbra, oCondition.condition)
         # eUmbraOrDirectSun
-        oCondition.Condition = AgECnstrLighting.eUmbraOrDirectSun
-        Assert.assertEqual(AgECnstrLighting.eUmbraOrDirectSun, oCondition.Condition)
+        oCondition.condition = AgECnstrLighting.eUmbraOrDirectSun
+        Assert.assertEqual(AgECnstrLighting.eUmbraOrDirectSun, oCondition.condition)
 
     # endregion
 
@@ -1883,29 +1946,29 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oThirdBody: "IAccessConstraintThirdBody" = clr.Convert(oConstraint, IAccessConstraintThirdBody)
         Assert.assertIsNotNone(oThirdBody)
-        arAvailable = oThirdBody.AvailableObstructions
-        arAssigned = oThirdBody.AssignedObstructions
+        arAvailable = oThirdBody.available_obstructions
+        arAssigned = oThirdBody.assigned_obstructions
 
         iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
             strObstruction: str = str(arAvailable[iIndex])
-            if not oThirdBody.IsObstructionAssigned(strObstruction):
-                oThirdBody.AddObstruction(strObstruction)
+            if not oThirdBody.is_obstruction_assigned(strObstruction):
+                oThirdBody.add_obstruction(strObstruction)
 
             iIndex += 1
 
         # Base properties
         self.BasePropertiesTest(oThirdBody)
-        arAssigned = oThirdBody.AssignedObstructions
+        arAssigned = oThirdBody.assigned_obstructions
 
         iIndex: int = 0
         while iIndex < Array.Length(arAssigned):
             strObstruction: str = str(arAssigned[iIndex])
-            oThirdBody.RemoveObstruction(strObstruction)
+            oThirdBody.remove_obstruction(strObstruction)
 
             iIndex += 1
 
-        arAssigned = oThirdBody.AssignedObstructions
+        arAssigned = oThirdBody.assigned_obstructions
 
     # endregion
 
@@ -1915,52 +1978,54 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
         oCrdnCn: "IAccessConstraintCrdnConstellation" = clr.Convert(oConstraint, IAccessConstraintCrdnConstellation)
         Assert.assertIsNotNone(oCrdnCn)
-        if oCrdnCn.ConstraintName == "CrdnAngle":
+        if oCrdnCn.constraint_name == "CrdnAngle":
             self.CrdnCnWithAngleUnit(oCrdnCn)
-        elif oCrdnCn.ConstraintName == "CrdnVectorMag":
+        elif (oCrdnCn.constraint_name == "CrdnCalcScalar") or (oCrdnCn.constraint_name == "CrdnVectorMag"):
             self.CrdnCnWithUnitLess(oCrdnCn)
         # Reference
         # AvailableReferences
-        arReferences = oCrdnCn.AvailableReferences
+        arReferences = oCrdnCn.available_references
         if Array.Length(arReferences) > 0:
-            if (oCrdnCn.ConstraintName == "CrdnAngle") or (oCrdnCn.ConstraintName == "CrdnVectorMag"):
-                oCrdnCn.EnableMax = False
-                Assert.assertEqual(False, oCrdnCn.EnableMax)
-                oCrdnCn.EnableMin = False
-                Assert.assertEqual(False, oCrdnCn.EnableMin)
+            if ((oCrdnCn.constraint_name == "CrdnAngle") or (oCrdnCn.constraint_name == "CrdnCalcScalar")) or (
+                oCrdnCn.constraint_name == "CrdnVectorMag"
+            ):
+                oCrdnCn.enable_max = False
+                Assert.assertEqual(False, oCrdnCn.enable_max)
+                oCrdnCn.enable_min = False
+                Assert.assertEqual(False, oCrdnCn.enable_min)
 
-                def action105():
-                    oCrdnCn.Min = 40
+                def action109():
+                    oCrdnCn.min = 40
 
-                TryCatchAssertBlock.ExpectedException("read-only", action105)
+                TryCatchAssertBlock.ExpectedException("read-only", action109)
 
-                def action106():
-                    oCrdnCn.Max = 50
+                def action110():
+                    oCrdnCn.max = 50
 
-                TryCatchAssertBlock.ExpectedException("read-only", action106)
+                TryCatchAssertBlock.ExpectedException("read-only", action110)
 
-                def action107():
-                    oCrdnCn.Reference = str(arReferences[0])
+                def action111():
+                    oCrdnCn.reference = str(arReferences[0])
 
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action107)
+                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action111)
 
-                oCrdnCn.EnableMax = True
-                Assert.assertEqual(True, oCrdnCn.EnableMax)
-                oCrdnCn.EnableMin = True
-                Assert.assertEqual(True, oCrdnCn.EnableMin)
+                oCrdnCn.enable_max = True
+                Assert.assertEqual(True, oCrdnCn.enable_max)
+                oCrdnCn.enable_min = True
+                Assert.assertEqual(True, oCrdnCn.enable_min)
 
-                oCrdnCn.Min = 40
-                Assert.assertEqual(40, oCrdnCn.Min)
-                oCrdnCn.Max = 50
-                Assert.assertEqual(50, oCrdnCn.Max)
+                oCrdnCn.min = 40
+                Assert.assertEqual(40, oCrdnCn.min)
+                oCrdnCn.max = 50
+                Assert.assertEqual(50, oCrdnCn.max)
 
-            oCrdnCn.Reference = str(arReferences[0])
-            Assert.assertEqual(str(arReferences[0]), oCrdnCn.Reference)
+            oCrdnCn.reference = str(arReferences[0])
+            Assert.assertEqual(str(arReferences[0]), oCrdnCn.reference)
 
-            def action108():
-                oCrdnCn.Reference = "Bogus"
+            def action112():
+                oCrdnCn.reference = "Bogus"
 
-            TryCatchAssertBlock.ExpectedException("not a valid choice", action108)
+            TryCatchAssertBlock.ExpectedException("not a valid choice", action112)
 
     # endregion
 
@@ -1970,65 +2035,65 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oCrdnCn)
 
         # set AngleUnit
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
-        self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
-        Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
+        self.m_oUnits.set_current_unit("AngleUnit", "deg")
+        Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
         # EnableMax
-        oCrdnCn.EnableMax = False
-        Assert.assertEqual(False, oCrdnCn.EnableMax)
-
-        def action109():
-            oCrdnCn.Max = 100
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action109)
-
-        oCrdnCn.EnableMax = True
-        Assert.assertEqual(True, oCrdnCn.EnableMax)
-
-        # EnableMin
-        oCrdnCn.EnableMin = False
-        Assert.assertEqual(False, oCrdnCn.EnableMin)
-
-        def action110():
-            oCrdnCn.Min = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action110)
-
-        oCrdnCn.EnableMin = True
-        Assert.assertEqual(True, oCrdnCn.EnableMin)
-
-        # Max
-        oCrdnCn.Max = 100
-        Assert.assertEqual(100, oCrdnCn.Max)
-
-        def action111():
-            oCrdnCn.Max = 1234
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action111)
-
-        # Min
-        oCrdnCn.Min = 50
-        Assert.assertEqual(50, oCrdnCn.Min)
-
-        def action112():
-            oCrdnCn.Min = -1234
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action112)
+        oCrdnCn.enable_max = False
+        Assert.assertEqual(False, oCrdnCn.enable_max)
 
         def action113():
-            oCrdnCn.Max = 12
+            oCrdnCn.max = 100
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action113)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action113)
+
+        oCrdnCn.enable_max = True
+        Assert.assertEqual(True, oCrdnCn.enable_max)
+
+        # EnableMin
+        oCrdnCn.enable_min = False
+        Assert.assertEqual(False, oCrdnCn.enable_min)
 
         def action114():
-            oCrdnCn.Min = 123
+            oCrdnCn.min = 10
 
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action114)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action114)
+
+        oCrdnCn.enable_min = True
+        Assert.assertEqual(True, oCrdnCn.enable_min)
+
+        # Max
+        oCrdnCn.max = 100
+        Assert.assertEqual(100, oCrdnCn.max)
+
+        def action115():
+            oCrdnCn.max = 1234
+
+        TryCatchAssertBlock.ExpectedException("is invalid", action115)
+
+        # Min
+        oCrdnCn.min = 50
+        Assert.assertEqual(50, oCrdnCn.min)
+
+        def action116():
+            oCrdnCn.min = -1234
+
+        TryCatchAssertBlock.ExpectedException("is invalid", action116)
+
+        def action117():
+            oCrdnCn.max = 12
+
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action117)
+
+        def action118():
+            oCrdnCn.min = 123
+
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action118)
 
         # restore AngleUnit
-        self.m_oUnits.SetCurrentUnit("AngleUnit", strUnit)
-        Assert.assertEqual(strUnit, self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit"))
+        self.m_oUnits.set_current_unit("AngleUnit", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
     # endregion
 
@@ -2038,74 +2103,75 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oCrdnCn)
 
         # EnableMax
-        oCrdnCn.EnableMax = False
-        Assert.assertEqual(False, oCrdnCn.EnableMax)
-
-        def action115():
-            oCrdnCn.Max = 100
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action115)
-
-        oCrdnCn.EnableMax = True
-        Assert.assertEqual(True, oCrdnCn.EnableMax)
-
-        # EnableMin
-        oCrdnCn.EnableMin = False
-        Assert.assertEqual(False, oCrdnCn.EnableMin)
-
-        def action116():
-            oCrdnCn.Min = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action116)
-
-        oCrdnCn.EnableMin = True
-        Assert.assertEqual(True, oCrdnCn.EnableMin)
-
-        # Max
-        oCrdnCn.Max = 98765.4321
-        Assert.assertEqual(98765.4321, oCrdnCn.Max)
-
-        def action117():
-            oCrdnCn.Max = -1234
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action117)
-
-        # Min
-        oCrdnCn.Min = 12345.6789
-        Assert.assertEqual(12345.6789, oCrdnCn.Min)
-
-        def action118():
-            oCrdnCn.Min = -1234
-
-        TryCatchAssertBlock.ExpectedException("is invalid", action118)
+        oCrdnCn.enable_max = False
+        Assert.assertEqual(False, oCrdnCn.enable_max)
 
         def action119():
-            oCrdnCn.Max = 12
+            oCrdnCn.max = 100
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action119)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action119)
+
+        oCrdnCn.enable_max = True
+        Assert.assertEqual(True, oCrdnCn.enable_max)
+
+        # EnableMin
+        oCrdnCn.enable_min = False
+        Assert.assertEqual(False, oCrdnCn.enable_min)
 
         def action120():
-            oCrdnCn.Min = 123456
+            oCrdnCn.min = 10
 
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action120)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action120)
+
+        oCrdnCn.enable_min = True
+        Assert.assertEqual(True, oCrdnCn.enable_min)
+
+        # Max
+        oCrdnCn.max = 98765.4321
+        Assert.assertEqual(98765.4321, oCrdnCn.max)
+
+        def action121():
+            oCrdnCn.max = -1234
+
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action121)
+
+        # Min
+        oCrdnCn.min = 12345.6789
+        Assert.assertEqual(12345.6789, oCrdnCn.min)
+        if oCrdnCn.constraint_name != "CrdnCalcScalar":
+
+            def action122():
+                oCrdnCn.min = -1234
+
+            TryCatchAssertBlock.ExpectedException("is invalid", action122)
+
+        def action123():
+            oCrdnCn.max = 12
+
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action123)
+
+        def action124():
+            oCrdnCn.min = 123456
+
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action124)
 
     # endregion
 
     # region TestConstraintAWBCollection
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintAWBCollection(self, awbCol: "IAccessConstraintAnalysisWorkbenchCollection", eType: int):
-        arReferences = awbCol.GetAvailableReferences(clr.Convert(eType, AgEAWBAccessConstraints))
+        arReferences = awbCol.get_available_references(clr.Convert(eType, AgEAWBAccessConstraints))
         Assert.assertTrue((Array.Length(arReferences) > 0))
 
-        origCount: int = awbCol.Count
+        origCount: int = awbCol.count
         reference: str = str(arReferences[1])
 
-        accConstraint: "IAccessConstraint" = awbCol.AddConstraint(
+        accConstraint: "IAccessConstraint" = awbCol.add_constraint(
             clr.Convert(eType, AgEAWBAccessConstraints), reference
         )
 
         Assert.assertIsNotNone(accConstraint)
-        Assert.assertEqual((origCount + 1), awbCol.Count)
+        Assert.assertEqual((origCount + 1), awbCol.count)
         if clr.Convert(eType, AgEAccessConstraints) == AgEAccessConstraints.eCstrCrdnVectorMag:
             self.TestAWBConstraintMinMaxUnitLess(
                 clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench), 0.0, 2000.0
@@ -2114,33 +2180,38 @@ class AccessConstraintHelper(object):
         elif clr.Convert(eType, AgEAccessConstraints) == AgEAccessConstraints.eCstrCrdnAngle:
             self.TestAWBConstraintMinMaxAngle(clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench))
 
-        Assert.assertEqual(reference, (clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench)).Reference)
+        elif clr.Convert(eType, AgEAccessConstraints) == AgEAccessConstraints.eCstrCrdnCalcScalar:
+            self.TestAWBConstraintMinMaxUnitLess(
+                clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench), -2000.0, 2000.0
+            )
 
-        def action121():
-            awbCol.AddConstraint(clr.Convert(eType, AgEAWBAccessConstraints), "Bogus")
+        Assert.assertEqual(reference, (clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench)).reference)
 
-        TryCatchAssertBlock.ExpectedException("Specified reference cannot be found", action121)
+        def action125():
+            awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), "Bogus")
 
-        awbCol.RemoveConstraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
-        Assert.assertEqual(origCount, awbCol.Count)
+        TryCatchAssertBlock.ExpectedException("Specified reference cannot be found", action125)
 
-        awbCol.AddConstraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
-        Assert.assertEqual((origCount + 1), awbCol.Count)
+        awbCol.remove_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+        Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.RemoveIndex(origCount)
-        Assert.assertEqual(origCount, awbCol.Count)
+        awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+        Assert.assertEqual((origCount + 1), awbCol.count)
 
-        awbCol.AddConstraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+        awbCol.remove_index(origCount)
+        Assert.assertEqual(origCount, awbCol.count)
 
-        def action122():
-            awbCol.AddConstraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+        awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
 
-        TryCatchAssertBlock.ExpectedException("Constraint already active", action122)
+        def action126():
+            awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+
+        TryCatchAssertBlock.ExpectedException("Constraint already active", action126)
 
         found: bool = False
         awbConstraint: "IAccessConstraintAnalysisWorkbench"
         for awbConstraint in awbCol:
-            if awbConstraint.Reference == reference:
+            if awbConstraint.reference == reference:
                 found = True
 
         Assert.assertTrue(found)
@@ -2148,16 +2219,16 @@ class AccessConstraintHelper(object):
         found = False
 
         i: int = 0
-        while i < awbCol.Count:
-            if (clr.Convert(awbCol[i], IAccessConstraintAnalysisWorkbench)).Reference == reference:
+        while i < awbCol.count:
+            if (clr.Convert(awbCol[i], IAccessConstraintAnalysisWorkbench)).reference == reference:
                 found = True
 
             i += 1
 
         Assert.assertTrue(found)
 
-        awbCol.RemoveAll()
-        Assert.assertEqual(0, awbCol.Count)
+        awbCol.remove_all()
+        Assert.assertEqual(0, awbCol.count)
 
     # endregion
 
@@ -2165,112 +2236,112 @@ class AccessConstraintHelper(object):
     # ////////////////////////////////////////////////////////////////////////
     def TestAWBConstraintMinMaxAngle(self, oMinMax: "IAccessConstraintAnalysisWorkbench"):
         Assert.assertIsNotNone(oMinMax)
-        strUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("AngleUnit")
-        self.m_oUnits.SetCurrentUnit("AngleUnit", "deg")
-        holdEnableMin: bool = oMinMax.EnableMin
-        holdEnableMax: bool = oMinMax.EnableMax
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
+        self.m_oUnits.set_current_unit("AngleUnit", "deg")
+        holdEnableMin: bool = oMinMax.enable_min
+        holdEnableMax: bool = oMinMax.enable_max
 
         # set initial states
-        oMinMax.EnableMin = True
-        oMinMax.EnableMax = True
+        oMinMax.enable_min = True
+        oMinMax.enable_max = True
 
         # Min off, Max off
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
-
-        def action123():
-            oMinMax.Min = 1
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action123)
-
-        def action124():
-            oMinMax.Max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action124)
-
-        # Min on, Max off
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
-        oMinMax.EnableMax = False
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
-        oMinMax.Min = 12.345
-        Assert.assertEqual(12.345, oMinMax.Min)
-
-        def action125():
-            oMinMax.Max = 10
-
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action125)
-
-        # Min on, Max on
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.Max = 67.89
-        Assert.assertEqual(67.89, oMinMax.Max)
-        oMinMax.Min = 21.345
-        Assert.assertEqual(21.345, oMinMax.Min)
-
-        def action126():
-            oMinMax.Max = -1234
-
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action126)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
 
         def action127():
-            oMinMax.Max = 1.2
+            oMinMax.min = 1
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action127)
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action127)
 
         def action128():
-            oMinMax.Min = 87.65
+            oMinMax.max = 10
 
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action128)
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action128)
 
-        # Min off, Max on
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.EnableMax = True
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        # Min on, Max off
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
+        oMinMax.enable_max = False
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
+        oMinMax.min = 12.345
+        Assert.assertEqual(12.345, oMinMax.min)
 
         def action129():
-            oMinMax.Min = 1
+            oMinMax.max = 10
 
         TryCatchAssertBlock.ExpectedException("Cannot modify", action129)
-        oMinMax.Max = 76.89
-        Assert.assertEqual(76.89, oMinMax.Max)
 
-        # Min off, Max off
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(True, oMinMax.EnableMax)
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        # Min on, Max on
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.max = 67.89
+        Assert.assertEqual(67.89, oMinMax.max)
+        oMinMax.min = 21.345
+        Assert.assertEqual(21.345, oMinMax.min)
 
         def action130():
-            oMinMax.Min = 1
+            oMinMax.max = -1234
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action130)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action130)
 
         def action131():
-            oMinMax.Max = 10
+            oMinMax.max = 1.2
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify", action131)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action131)
+
+        def action132():
+            oMinMax.min = 87.65
+
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action132)
+
+        # Min off, Max on
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.enable_max = True
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+
+        def action133():
+            oMinMax.min = 1
+
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action133)
+        oMinMax.max = 76.89
+        Assert.assertEqual(76.89, oMinMax.max)
+
+        # Min off, Max off
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(True, oMinMax.enable_max)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_min)
+        Assert.assertEqual(False, oMinMax.enable_max)
+
+        def action134():
+            oMinMax.min = 1
+
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action134)
+
+        def action135():
+            oMinMax.max = 10
+
+        TryCatchAssertBlock.ExpectedException("Cannot modify", action135)
 
         # restore to original
-        oMinMax.EnableMin = holdEnableMin
-        oMinMax.EnableMax = holdEnableMax
-        self.m_oUnits.SetCurrentUnit("AngleUnit", strUnit)
+        oMinMax.enable_min = holdEnableMin
+        oMinMax.enable_max = holdEnableMax
+        self.m_oUnits.set_current_unit("AngleUnit", strUnit)
 
     # endregion
 
@@ -2281,81 +2352,81 @@ class AccessConstraintHelper(object):
         bRange: bool = dMin == 0.345
 
         # EnableMax
-        oMinMax.EnableMax = False
-        Assert.assertEqual(False, oMinMax.EnableMax)
+        oMinMax.enable_max = False
+        Assert.assertEqual(False, oMinMax.enable_max)
 
-        def action132():
-            oMinMax.Max = dMax
+        def action136():
+            oMinMax.max = dMax
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action132)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action136)
 
-        oMinMax.EnableMax = True
-        Assert.assertEqual(True, oMinMax.EnableMax)
+        oMinMax.enable_max = True
+        Assert.assertEqual(True, oMinMax.enable_max)
         # EnableMin
-        oMinMax.EnableMin = False
-        Assert.assertEqual(False, oMinMax.EnableMin)
+        oMinMax.enable_min = False
+        Assert.assertEqual(False, oMinMax.enable_min)
 
-        def action133():
-            oMinMax.Min = dMin
+        def action137():
+            oMinMax.min = dMin
 
-        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action133)
+        TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action137)
 
-        oMinMax.EnableMin = True
-        Assert.assertEqual(True, oMinMax.EnableMin)
-        if float(oMinMax.Min) > float(oMinMax.Max):
+        oMinMax.enable_min = True
+        Assert.assertEqual(True, oMinMax.enable_min)
+        if float(oMinMax.min) > float(oMinMax.max):
             Assert.fail("The maximum must be greater than the minimum.")
 
-        if float(oMinMax.Min) >= dMax:
+        if float(oMinMax.min) >= dMax:
             # Min
-            oMinMax.Min = dMin
-            Assert.assertEqual(dMin, float(oMinMax.Min))
+            oMinMax.min = dMin
+            Assert.assertEqual(dMin, float(oMinMax.min))
             if bRange:
 
-                def action134():
-                    oMinMax.Min = dMin * (-2)
+                def action138():
+                    oMinMax.min = dMin * (-2)
 
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action134)
+                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action138)
 
             # Max
-            oMinMax.Max = dMax
-            Assert.assertEqual(dMax, oMinMax.Max)
+            oMinMax.max = dMax
+            Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
 
-                def action135():
-                    oMinMax.Max = dMax * 2
+                def action139():
+                    oMinMax.max = dMax * 2
 
-                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action135)
+                TryCatchAssertBlock.ExpectedException("Cannot modify read-only", action139)
 
         else:
             # Max
-            oMinMax.Max = dMax
-            Assert.assertEqual(dMax, oMinMax.Max)
+            oMinMax.max = dMax
+            Assert.assertEqual(dMax, oMinMax.max)
             if bRange:
 
-                def action136():
-                    oMinMax.Max = dMax * 2
+                def action140():
+                    oMinMax.max = dMax * 2
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action136)
+                TryCatchAssertBlock.ExpectedException("is invalid", action140)
 
             # Min
-            oMinMax.Min = dMin
-            Assert.assertEqual(dMin, oMinMax.Min)
+            oMinMax.min = dMin
+            Assert.assertEqual(dMin, oMinMax.min)
             if bRange:
 
-                def action137():
-                    oMinMax.Min = dMin * (-2)
+                def action141():
+                    oMinMax.min = dMin * (-2)
 
-                TryCatchAssertBlock.ExpectedException("is invalid", action137)
+                TryCatchAssertBlock.ExpectedException("is invalid", action141)
 
-        def action138():
-            oMinMax.Max = dMin - 0.01
+        def action142():
+            oMinMax.max = dMin - 0.01
 
-        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action138)
+        TryCatchAssertBlock.ExpectedException("Cannot set max less than min", action142)
 
-        def action139():
-            oMinMax.Min = dMax + 0.01
+        def action143():
+            oMinMax.min = dMax + 0.01
 
-        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action139)
+        TryCatchAssertBlock.ExpectedException("Cannot set min greater than max", action143)
 
     # endregion
 
@@ -2366,11 +2437,11 @@ class AccessConstraintHelper(object):
         oBackground: "IAccessConstraintBackground" = clr.Convert(oConstraint, IAccessConstraintBackground)
         Assert.assertIsNotNone(oBackground)
         # eBackgroundGround
-        oBackground.Background = AgECnstrBackground.eBackgroundGround
-        Assert.assertEqual(AgECnstrBackground.eBackgroundGround, oBackground.Background)
+        oBackground.background = AgECnstrBackground.eBackgroundGround
+        Assert.assertEqual(AgECnstrBackground.eBackgroundGround, oBackground.background)
         # eBackgroundSpace
-        oBackground.Background = AgECnstrBackground.eBackgroundSpace
-        Assert.assertEqual(AgECnstrBackground.eBackgroundSpace, oBackground.Background)
+        oBackground.background = AgECnstrBackground.eBackgroundSpace
+        Assert.assertEqual(AgECnstrBackground.eBackgroundSpace, oBackground.background)
 
     # endregion
 
@@ -2381,11 +2452,11 @@ class AccessConstraintHelper(object):
         oGroundTrack: "IAccessConstraintGroundTrack" = clr.Convert(oConstraint, IAccessConstraintGroundTrack)
         Assert.assertIsNotNone(oGroundTrack)
         # eDirectionAscending
-        oGroundTrack.Direction = AgECnstrGroundTrack.eDirectionAscending
-        Assert.assertEqual(AgECnstrGroundTrack.eDirectionAscending, oGroundTrack.Direction)
+        oGroundTrack.direction = AgECnstrGroundTrack.eDirectionAscending
+        Assert.assertEqual(AgECnstrGroundTrack.eDirectionAscending, oGroundTrack.direction)
         # eDirectionDescending
-        oGroundTrack.Direction = AgECnstrGroundTrack.eDirectionDescending
-        Assert.assertEqual(AgECnstrGroundTrack.eDirectionDescending, oGroundTrack.Direction)
+        oGroundTrack.direction = AgECnstrGroundTrack.eDirectionDescending
+        Assert.assertEqual(AgECnstrGroundTrack.eDirectionDescending, oGroundTrack.direction)
 
     # endregion
 
@@ -2397,51 +2468,51 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oZones)
 
         iIndex: int = 0
-        while iIndex < oZones.Count:
+        while iIndex < oZones.count:
             zone: "IAccessConstraintZone" = oZones[iIndex]
 
             iIndex += 1
 
-        if oZones.Count > 0:
+        if oZones.count > 0:
             # ToArray test
-            arZone = oZones.ToArray(0, 1)
+            arZone = oZones.to_array(0, 1)
             Assert.assertEqual(1, len(arZone))
             # RemoveIndex test
-            oZones.RemoveIndex(0)
+            oZones.remove_index(0)
 
-        if oZones.Count > 0:
+        if oZones.count > 0:
             # LatitudeUnit
-            strLatitudeUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit")
-            self.m_oUnits.SetCurrentUnit("LatitudeUnit", "deg")
-            Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
+            strLatitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LatitudeUnit")
+            self.m_oUnits.set_current_unit("LatitudeUnit", "deg")
+            Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("LatitudeUnit"))
             # LongitudeUnit
-            strLongitudeUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
-            self.m_oUnits.SetCurrentUnit("LongitudeUnit", "deg")
-            Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
+            strLongitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
+            self.m_oUnits.set_current_unit("LongitudeUnit", "deg")
+            Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
 
             oMinLon: typing.Any = None
             oMinLat: typing.Any = None
             oMaxLon: typing.Any = None
             oMaxLat: typing.Any = None
 
-            (oMinLat, oMinLon, oMaxLat, oMaxLon) = oZones.GetExclZone(0)
+            (oMinLat, oMinLon, oMaxLat, oMaxLon) = oZones.get_excl_zone(0)
             oMinLon = (float(oMinLon)) + 11.0
             oMinLat = (float(oMinLat)) + 12.0
             oMaxLon = (float(oMaxLon)) + 13.0
             oMaxLat = (float(oMaxLat)) + 14.0
             # ChangeExclZone test
-            oZones.ChangeExclZone(0, oMinLat, oMinLon, oMaxLat, oMaxLon)
+            oZones.change_excl_zone(0, oMinLat, oMinLon, oMaxLat, oMaxLon)
             # RemoveExclZone test
-            oZones.RemoveExclZone(oMinLat, oMinLon, oMaxLat, oMaxLon)
+            oZones.remove_excl_zone(oMinLat, oMinLon, oMaxLat, oMaxLon)
             # Restore LatitudeUnit units
-            self.m_oUnits.SetCurrentUnit("LatitudeUnit", strLatitudeUnit)
-            Assert.assertEqual(strLatitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
+            self.m_oUnits.set_current_unit("LatitudeUnit", strLatitudeUnit)
+            Assert.assertEqual(strLatitudeUnit, self.m_oUnits.get_current_unit_abbrv("LatitudeUnit"))
             # Restore LongitudeUnit units
-            self.m_oUnits.SetCurrentUnit("LongitudeUnit", strLongitudeUnit)
-            Assert.assertEqual(strLongitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
+            self.m_oUnits.set_current_unit("LongitudeUnit", strLongitudeUnit)
+            Assert.assertEqual(strLongitudeUnit, self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
 
         # RemoveAll test
-        oZones.RemoveAll()
+        oZones.remove_all()
 
     # endregion
 
@@ -2453,54 +2524,54 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oZone)
 
         # LatitudeUnit
-        strLatitudeUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit")
-        self.m_oUnits.SetCurrentUnit("LatitudeUnit", "deg")
-        Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
+        strLatitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LatitudeUnit")
+        self.m_oUnits.set_current_unit("LatitudeUnit", "deg")
+        Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("LatitudeUnit"))
 
         # LongitudeUnit
-        strLongitudeUnit: str = self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit")
-        self.m_oUnits.SetCurrentUnit("LongitudeUnit", "deg")
-        Assert.assertEqual("deg", self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
+        strLongitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
+        self.m_oUnits.set_current_unit("LongitudeUnit", "deg")
+        Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
 
         # MinLat - MaxLat
-        oZone.MinLat = 12.3456
-        Assert.assertEqual(12.3456, oZone.MinLat)
-        oZone.MaxLat = 65.4321
-        Assert.assertEqual(65.4321, oZone.MaxLat)
+        oZone.min_lat = 12.3456
+        Assert.assertEqual(12.3456, oZone.min_lat)
+        oZone.max_lat = 65.4321
+        Assert.assertEqual(65.4321, oZone.max_lat)
 
         # MinLon - MaxLon
-        oZone.MinLon = 34.5678
-        Assert.assertEqual(34.5678, oZone.MinLon)
-        oZone.MaxLon = 45.6789
-        Assert.assertEqual(45.6789, oZone.MaxLon)
+        oZone.min_lon = 34.5678
+        Assert.assertEqual(34.5678, oZone.min_lon)
+        oZone.max_lon = 45.6789
+        Assert.assertEqual(45.6789, oZone.max_lon)
 
-        def action140():
-            oZone.MinLat = 380
+        def action144():
+            oZone.min_lat = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action140)
+        TryCatchAssertBlock.ExpectedException("is invalid", action144)
 
-        def action141():
-            oZone.MaxLat = 380
+        def action145():
+            oZone.max_lat = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action141)
+        TryCatchAssertBlock.ExpectedException("is invalid", action145)
 
-        def action142():
-            oZone.MinLon = 380
+        def action146():
+            oZone.min_lon = 380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action142)
+        TryCatchAssertBlock.ExpectedException("is invalid", action146)
 
-        def action143():
-            oZone.MaxLon = -380
+        def action147():
+            oZone.max_lon = -380
 
-        TryCatchAssertBlock.ExpectedException("is invalid", action143)
+        TryCatchAssertBlock.ExpectedException("is invalid", action147)
 
         # Restore LatitudeUnit units
-        self.m_oUnits.SetCurrentUnit("LatitudeUnit", strLatitudeUnit)
-        Assert.assertEqual(strLatitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LatitudeUnit"))
+        self.m_oUnits.set_current_unit("LatitudeUnit", strLatitudeUnit)
+        Assert.assertEqual(strLatitudeUnit, self.m_oUnits.get_current_unit_abbrv("LatitudeUnit"))
 
         # Restore LongitudeUnit units
-        self.m_oUnits.SetCurrentUnit("LongitudeUnit", strLongitudeUnit)
-        Assert.assertEqual(strLongitudeUnit, self.m_oUnits.GetCurrentUnitAbbrv("LongitudeUnit"))
+        self.m_oUnits.set_current_unit("LongitudeUnit", strLongitudeUnit)
+        Assert.assertEqual(strLongitudeUnit, self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
 
     # endregion
 
@@ -2509,30 +2580,30 @@ class AccessConstraintHelper(object):
     def TestConstraintCbObstruction(self, oCb: "IAccessConstraintCentralBodyObstruction"):
         Assert.assertIsNotNone(oCb)
         # AvailableObstructions
-        available = oCb.AvailableObstructions
+        available = oCb.available_obstructions
         if Array.Length(available) > 0:
             strName: str = str(available[0])
-            if not oCb.IsObstructionAssigned(strName):
-                oCb.AddObstruction(strName)
+            if not oCb.is_obstruction_assigned(strName):
+                oCb.add_obstruction(strName)
 
-            if not oCb.IsObstructionAssigned(strName):
+            if not oCb.is_obstruction_assigned(strName):
                 Assert.fail("The {0} obstruction should be assigned!", strName)
 
-            def action144():
-                oCb.AddObstruction(strName)
+            def action148():
+                oCb.add_obstruction(strName)
 
-            TryCatchAssertBlock.DoAssert("", action144)
+            TryCatchAssertBlock.DoAssert("", action148)
             # AssignedObstructions
-            assigned = oCb.AssignedObstructions
-            oCb.RemoveObstruction(strName)
-            if oCb.IsObstructionAssigned(strName):
+            assigned = oCb.assigned_obstructions
+            oCb.remove_obstruction(strName)
+            if oCb.is_obstruction_assigned(strName):
                 Assert.fail("The {0} obstruction should not be assigned!", strName)
 
-            def action145():
-                oCb.RemoveObstruction(strName)
+            def action149():
+                oCb.remove_obstruction(strName)
 
-            TryCatchAssertBlock.DoAssert("", action145)
-            assigned = oCb.AssignedObstructions
+            TryCatchAssertBlock.DoAssert("", action149)
+            assigned = oCb.assigned_obstructions
 
     # endregion
 
@@ -2542,45 +2613,45 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(collection)
 
         i: int = 0
-        while i < collection.Count:
+        while i < collection.count:
             constraint: "IAccessConstraint" = collection[i]
 
             i += 1
 
         constraint: "IAccessConstraint"
         for constraint in collection:
-            name: str = constraint.ConstraintName
+            name: str = constraint.constraint_name
 
-        origCount: int = collection.Count
-        collection.AddConstraint(AgEAccessConstraints.eCstrAltitude)
-        Assert.assertEqual((origCount + 1), collection.Count)
+        origCount: int = collection.count
+        collection.add_constraint(AgEAccessConstraints.eCstrAltitude)
+        Assert.assertEqual((origCount + 1), collection.count)
 
-        def action146():
-            collection.AddConstraint(AgEAccessConstraints.eCstrAltitude)
+        def action150():
+            collection.add_constraint(AgEAccessConstraints.eCstrAltitude)
 
-        TryCatchAssertBlock.ExpectedException("already active", action146)
+        TryCatchAssertBlock.ExpectedException("already active", action150)
 
-        def action147():
-            collection.AddConstraint(clr.Convert((-1), AgEAccessConstraints))
+        def action151():
+            collection.add_constraint(clr.Convert((-1), AgEAccessConstraints))
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action147)
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action151)
 
-        activeConstraint: "IAccessConstraint" = collection.GetActiveConstraint(AgEAccessConstraints.eCstrAltitude)
-        Assert.assertEqual(AgEAccessConstraints.eCstrAltitude, activeConstraint.ConstraintType)
-        Assert.assertTrue(collection.IsConstraintActive(AgEAccessConstraints.eCstrAltitude))
-        Assert.assertTrue(collection.IsConstraintSupported(AgEAccessConstraints.eCstrAltitude))
+        activeConstraint: "IAccessConstraint" = collection.get_active_constraint(AgEAccessConstraints.eCstrAltitude)
+        Assert.assertEqual(AgEAccessConstraints.eCstrAltitude, activeConstraint.constraint_type)
+        Assert.assertTrue(collection.is_constraint_active(AgEAccessConstraints.eCstrAltitude))
+        Assert.assertTrue(collection.is_constraint_supported(AgEAccessConstraints.eCstrAltitude))
 
-        collection.RemoveConstraint(AgEAccessConstraints.eCstrAltitude)
-        Assert.assertEqual(origCount, collection.Count)
-        Assert.assertFalse(collection.IsConstraintActive(AgEAccessConstraints.eCstrAltitude))
-        Assert.assertFalse(collection.IsConstraintSupported(AgEAccessConstraints.eCstrNone))
+        collection.remove_constraint(AgEAccessConstraints.eCstrAltitude)
+        Assert.assertEqual(origCount, collection.count)
+        Assert.assertFalse(collection.is_constraint_active(AgEAccessConstraints.eCstrAltitude))
+        Assert.assertFalse(collection.is_constraint_supported(AgEAccessConstraints.eCstrNone))
 
-        def action148():
-            activeConstraint = collection.GetActiveConstraint(AgEAccessConstraints.eCstrAltitude)
+        def action152():
+            activeConstraint = collection.get_active_constraint(AgEAccessConstraints.eCstrAltitude)
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action148)
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action152)
 
-        arAvailable = collection.AvailableConstraints()
+        arAvailable = collection.available_constraints()
 
         i: int = 0
         while i < len(arAvailable):
@@ -2589,44 +2660,44 @@ class AccessConstraintHelper(object):
 
             i += 1
 
-        origCount = collection.Count
-        collection.AddNamedConstraint("Altitude")
-        Assert.assertEqual((origCount + 1), collection.Count)
+        origCount = collection.count
+        collection.add_named_constraint("Altitude")
+        Assert.assertEqual((origCount + 1), collection.count)
 
-        def action149():
-            collection.AddNamedConstraint("Altitude")
+        def action153():
+            collection.add_named_constraint("Altitude")
 
-        TryCatchAssertBlock.ExpectedException("already active", action149)
+        TryCatchAssertBlock.ExpectedException("already active", action153)
 
-        def action150():
-            collection.AddNamedConstraint("Bogus")
+        def action154():
+            collection.add_named_constraint("Bogus")
 
-        TryCatchAssertBlock.ExpectedException("does not exist", action150)
+        TryCatchAssertBlock.ExpectedException("does not exist", action154)
 
-        activeConstraint = collection.GetActiveNamedConstraint("Altitude")
-        Assert.assertEqual(AgEAccessConstraints.eCstrAltitude, activeConstraint.ConstraintType)
-        Assert.assertTrue(collection.IsNamedConstraintActive("Altitude"))
-        Assert.assertTrue(collection.IsNamedConstraintSupported("Altitude"))
+        activeConstraint = collection.get_active_named_constraint("Altitude")
+        Assert.assertEqual(AgEAccessConstraints.eCstrAltitude, activeConstraint.constraint_type)
+        Assert.assertTrue(collection.is_named_constraint_active("Altitude"))
+        Assert.assertTrue(collection.is_named_constraint_supported("Altitude"))
 
-        collection.RemoveNamedConstraint("Altitude")
-        Assert.assertEqual(origCount, collection.Count)
-        Assert.assertFalse(collection.IsNamedConstraintActive("Altitude"))
-        Assert.assertFalse(collection.IsNamedConstraintSupported("None"))
+        collection.remove_named_constraint("Altitude")
+        Assert.assertEqual(origCount, collection.count)
+        Assert.assertFalse(collection.is_named_constraint_active("Altitude"))
+        Assert.assertFalse(collection.is_named_constraint_supported("None"))
 
-        collection.RemoveNamedConstraint("Bogus")  # no exception.  See RemoveNamedConstraintEx below.
+        collection.remove_named_constraint("Bogus")  # no exception.  See RemoveNamedConstraintEx below.
 
-        collection.AddNamedConstraint("Altitude")
-        collection.RemoveNamedConstraintEx("Altitude")
-        Assert.assertEqual(origCount, collection.Count)
+        collection.add_named_constraint("Altitude")
+        collection.remove_named_constraint_ex("Altitude")
+        Assert.assertEqual(origCount, collection.count)
 
-        def action151():
-            collection.RemoveNamedConstraintEx("Bogus")
+        def action155():
+            collection.remove_named_constraint_ex("Bogus")
 
-        TryCatchAssertBlock.ExpectedException("was not found", action151)
+        TryCatchAssertBlock.ExpectedException("was not found", action155)
 
-        def action152():
-            activeConstraint = collection.GetActiveNamedConstraint("Altitude")
+        def action156():
+            activeConstraint = collection.get_active_named_constraint("Altitude")
 
-        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action152)
+        TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action156)
 
     # endregion

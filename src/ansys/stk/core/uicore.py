@@ -118,12 +118,12 @@ class IUiToolbar(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetID"] = _raise_uninitialized_error
-        self.__dict__["_GetCaption"] = _raise_uninitialized_error
-        self.__dict__["_GetVisible"] = _raise_uninitialized_error
-        self.__dict__["_SetVisible"] = _raise_uninitialized_error
-        self.__dict__["_GetFloatState"] = _raise_uninitialized_error
-        self.__dict__["_SetFloatState"] = _raise_uninitialized_error
+        self.__dict__["_get_id"] = _raise_uninitialized_error
+        self.__dict__["_get_caption"] = _raise_uninitialized_error
+        self.__dict__["_get_visible"] = _raise_uninitialized_error
+        self.__dict__["_set_visible"] = _raise_uninitialized_error
+        self.__dict__["_get_float_state"] = _raise_uninitialized_error
+        self.__dict__["_set_float_state"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiToolbar._uuid))
             if pUnk is not None:
@@ -135,12 +135,12 @@ class IUiToolbar(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiToolbar = agcom.GUID(IUiToolbar._uuid)
         vtable_offset_local = IUiToolbar._vtable_offset - 1
-        self.__dict__["_GetID"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+1, POINTER(agcom.LONG))
-        self.__dict__["_GetCaption"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+2, POINTER(agcom.BSTR))
-        self.__dict__["_GetVisible"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetVisible"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+4, agcom.VARIANT_BOOL)
-        self.__dict__["_GetFloatState"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+5, POINTER(agcom.LONG))
-        self.__dict__["_SetFloatState"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+6, agcom.LONG)
+        self.__dict__["_get_id"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_get_caption"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+2, POINTER(agcom.BSTR))
+        self.__dict__["_get_visible"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+3, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_visible"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+4, agcom.VARIANT_BOOL)
+        self.__dict__["_get_float_state"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+5, POINTER(agcom.LONG))
+        self.__dict__["_set_float_state"] = IAGFUNCTYPE(pUnk, IID_IUiToolbar, vtable_offset_local+6, agcom.LONG)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -155,42 +155,42 @@ class IUiToolbar(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiToolbar.")
     
     @property
-    def ID(self) -> int:
+    def id(self) -> int:
         """The identity."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetID"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_id"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Caption(self) -> str:
+    def caption(self) -> str:
         """The caption."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCaption"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_caption"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Visible(self) -> bool:
+    def visible(self) -> bool:
         """The visibility."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetVisible"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_visible"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Visible.setter
-    def Visible(self, newVal:bool) -> None:
+    @visible.setter
+    def visible(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetVisible"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_visible"](arg_newVal.COM_val))
 
     @property
-    def FloatState(self) -> "AgEFloatState":
+    def float_state(self) -> "AgEFloatState":
         """The float state."""
         with agmarshall.AgEnum_arg(AgEFloatState) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetFloatState"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_float_state"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @FloatState.setter
-    def FloatState(self, newVal:"AgEFloatState") -> None:
+    @float_state.setter
+    def float_state(self, newVal:"AgEFloatState") -> None:
         with agmarshall.AgEnum_arg(AgEFloatState, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetFloatState"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_float_state"](arg_newVal.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{69C72C16-36F2-42d4-A183-6879BB5B8070}", IUiToolbar)
@@ -203,12 +203,12 @@ class IUiToolbarCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_GetToolbarByID"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_get_toolbar_by_id"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_index"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_name"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiToolbarCollection._uuid))
             if pUnk is not None:
@@ -221,12 +221,12 @@ class IUiToolbarCollection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiToolbarCollection = agcom.GUID(IUiToolbarCollection._uuid)
         vtable_offset_local = IUiToolbarCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
-        self.__dict__["_GetToolbarByID"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+4, agcom.LONG, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+5, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+6, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+3, POINTER(agcom.PVOID))
+        self.__dict__["_get_toolbar_by_id"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+4, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get_item_by_index"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+5, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_get_item_by_name"] = IAGFUNCTYPE(pUnk, IID_IUiToolbarCollection, vtable_offset_local+6, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -249,51 +249,51 @@ class IUiToolbarCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def Item(self, indexOrCaption:typing.Any) -> "IUiToolbar":
+    def item(self, indexOrCaption:typing.Any) -> "IUiToolbar":
         """Retrieves a toolbar object."""
         with agmarshall.VARIANT_arg(indexOrCaption) as arg_indexOrCaption, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_indexOrCaption.COM_val, byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrCaption.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Returns a total number of toolbars in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Enumerates the toolbars in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def GetToolbarByID(self, id:int) -> "IUiToolbar":
+    def get_toolbar_by_id(self, id:int) -> "IUiToolbar":
         """Returns a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object."""
         with agmarshall.LONG_arg(id) as arg_id, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetToolbarByID"](arg_id.COM_val, byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_toolbar_by_id"](arg_id.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def GetItemByIndex(self, index:int) -> "IUiToolbar":
+    def get_item_by_index(self, index:int) -> "IUiToolbar":
         """Retrieves a toolbar object based on the index in the collection."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def GetItemByName(self, name:str) -> "IUiToolbar":
+    def get_item_by_name(self, name:str) -> "IUiToolbar":
         """Retrieves a toolbar object based on the name of the Toolbar in the collection."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_name"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -307,30 +307,30 @@ class IUiWindow(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetCaption"] = _raise_uninitialized_error
-        self.__dict__["_SetCaption"] = _raise_uninitialized_error
-        self.__dict__["_Activate"] = _raise_uninitialized_error
-        self.__dict__["_GetWindowState"] = _raise_uninitialized_error
-        self.__dict__["_SetWindowState"] = _raise_uninitialized_error
-        self.__dict__["_Close"] = _raise_uninitialized_error
-        self.__dict__["_GetHeight"] = _raise_uninitialized_error
-        self.__dict__["_SetHeight"] = _raise_uninitialized_error
-        self.__dict__["_GetWidth"] = _raise_uninitialized_error
-        self.__dict__["_SetWidth"] = _raise_uninitialized_error
-        self.__dict__["_GetLeft"] = _raise_uninitialized_error
-        self.__dict__["_SetLeft"] = _raise_uninitialized_error
-        self.__dict__["_GetTop"] = _raise_uninitialized_error
-        self.__dict__["_SetTop"] = _raise_uninitialized_error
-        self.__dict__["_GetDockStyle"] = _raise_uninitialized_error
-        self.__dict__["_SetDockStyle"] = _raise_uninitialized_error
-        self.__dict__["_GetNoWBClose"] = _raise_uninitialized_error
-        self.__dict__["_SetNoWBClose"] = _raise_uninitialized_error
-        self.__dict__["_GetUnPinned"] = _raise_uninitialized_error
-        self.__dict__["_SetUnPinned"] = _raise_uninitialized_error
-        self.__dict__["_GetSupportsPinning"] = _raise_uninitialized_error
-        self.__dict__["_GetToolbars"] = _raise_uninitialized_error
-        self.__dict__["_GetServiceByName"] = _raise_uninitialized_error
-        self.__dict__["_GetServiceByType"] = _raise_uninitialized_error
+        self.__dict__["_get_caption"] = _raise_uninitialized_error
+        self.__dict__["_set_caption"] = _raise_uninitialized_error
+        self.__dict__["_activate"] = _raise_uninitialized_error
+        self.__dict__["_get_window_state"] = _raise_uninitialized_error
+        self.__dict__["_set_window_state"] = _raise_uninitialized_error
+        self.__dict__["_close"] = _raise_uninitialized_error
+        self.__dict__["_get_height"] = _raise_uninitialized_error
+        self.__dict__["_set_height"] = _raise_uninitialized_error
+        self.__dict__["_get_width"] = _raise_uninitialized_error
+        self.__dict__["_set_width"] = _raise_uninitialized_error
+        self.__dict__["_get_left"] = _raise_uninitialized_error
+        self.__dict__["_set_left"] = _raise_uninitialized_error
+        self.__dict__["_get_top"] = _raise_uninitialized_error
+        self.__dict__["_set_top"] = _raise_uninitialized_error
+        self.__dict__["_get_dock_style"] = _raise_uninitialized_error
+        self.__dict__["_set_dock_style"] = _raise_uninitialized_error
+        self.__dict__["_get_no_wb_close"] = _raise_uninitialized_error
+        self.__dict__["_set_no_wb_close"] = _raise_uninitialized_error
+        self.__dict__["_get_un_pinned"] = _raise_uninitialized_error
+        self.__dict__["_set_un_pinned"] = _raise_uninitialized_error
+        self.__dict__["_get_supports_pinning"] = _raise_uninitialized_error
+        self.__dict__["_get_toolbars"] = _raise_uninitialized_error
+        self.__dict__["_get_service_by_name"] = _raise_uninitialized_error
+        self.__dict__["_get_service_by_type"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiWindow._uuid))
             if pUnk is not None:
@@ -342,30 +342,30 @@ class IUiWindow(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiWindow = agcom.GUID(IUiWindow._uuid)
         vtable_offset_local = IUiWindow._vtable_offset - 1
-        self.__dict__["_GetCaption"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+1, POINTER(agcom.BSTR))
-        self.__dict__["_SetCaption"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+2, agcom.BSTR)
-        self.__dict__["_Activate"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+3, )
-        self.__dict__["_GetWindowState"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+4, POINTER(agcom.LONG))
-        self.__dict__["_SetWindowState"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+5, agcom.LONG)
-        self.__dict__["_Close"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+6, )
-        self.__dict__["_GetHeight"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+7, POINTER(agcom.LONG))
-        self.__dict__["_SetHeight"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+8, agcom.LONG)
-        self.__dict__["_GetWidth"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+9, POINTER(agcom.LONG))
-        self.__dict__["_SetWidth"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+10, agcom.LONG)
-        self.__dict__["_GetLeft"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+11, POINTER(agcom.LONG))
-        self.__dict__["_SetLeft"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+12, agcom.LONG)
-        self.__dict__["_GetTop"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+13, POINTER(agcom.LONG))
-        self.__dict__["_SetTop"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+14, agcom.LONG)
-        self.__dict__["_GetDockStyle"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+15, POINTER(agcom.LONG))
-        self.__dict__["_SetDockStyle"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+16, agcom.LONG)
-        self.__dict__["_GetNoWBClose"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetNoWBClose"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+18, agcom.VARIANT_BOOL)
-        self.__dict__["_GetUnPinned"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+19, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_SetUnPinned"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+20, agcom.VARIANT_BOOL)
-        self.__dict__["_GetSupportsPinning"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+21, POINTER(agcom.VARIANT_BOOL))
-        self.__dict__["_GetToolbars"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+22, POINTER(agcom.PVOID))
-        self.__dict__["_GetServiceByName"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+23, agcom.BSTR, POINTER(agcom.PVOID))
-        self.__dict__["_GetServiceByType"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+24, agcom.LONG, POINTER(agcom.PVOID))
+        self.__dict__["_get_caption"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+1, POINTER(agcom.BSTR))
+        self.__dict__["_set_caption"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+2, agcom.BSTR)
+        self.__dict__["_activate"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+3, )
+        self.__dict__["_get_window_state"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+4, POINTER(agcom.LONG))
+        self.__dict__["_set_window_state"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+5, agcom.LONG)
+        self.__dict__["_close"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+6, )
+        self.__dict__["_get_height"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+7, POINTER(agcom.LONG))
+        self.__dict__["_set_height"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+8, agcom.LONG)
+        self.__dict__["_get_width"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+9, POINTER(agcom.LONG))
+        self.__dict__["_set_width"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+10, agcom.LONG)
+        self.__dict__["_get_left"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+11, POINTER(agcom.LONG))
+        self.__dict__["_set_left"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+12, agcom.LONG)
+        self.__dict__["_get_top"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+13, POINTER(agcom.LONG))
+        self.__dict__["_set_top"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+14, agcom.LONG)
+        self.__dict__["_get_dock_style"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+15, POINTER(agcom.LONG))
+        self.__dict__["_set_dock_style"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+16, agcom.LONG)
+        self.__dict__["_get_no_wb_close"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+17, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_no_wb_close"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+18, agcom.VARIANT_BOOL)
+        self.__dict__["_get_un_pinned"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+19, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_set_un_pinned"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+20, agcom.VARIANT_BOOL)
+        self.__dict__["_get_supports_pinning"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+21, POINTER(agcom.VARIANT_BOOL))
+        self.__dict__["_get_toolbars"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+22, POINTER(agcom.PVOID))
+        self.__dict__["_get_service_by_name"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+23, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_get_service_by_type"] = IAGFUNCTYPE(pUnk, IID_IUiWindow, vtable_offset_local+24, agcom.LONG, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -380,148 +380,148 @@ class IUiWindow(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindow.")
     
     @property
-    def Caption(self) -> str:
+    def caption(self) -> str:
         """The window caption. Can only be set within UI plugins for the non unique windows they own."""
         with agmarshall.BSTR_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCaption"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_caption"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Caption.setter
-    def Caption(self, caption:str) -> None:
+    @caption.setter
+    def caption(self, caption:str) -> None:
         """The window caption. Can only be set within UI plugins for the non unique windows they own."""
         with agmarshall.BSTR_arg(caption) as arg_caption:
-            agcls.evaluate_hresult(self.__dict__["_SetCaption"](arg_caption.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_caption"](arg_caption.COM_val))
 
-    def Activate(self) -> None:
+    def activate(self) -> None:
         """Activates the window."""
-        agcls.evaluate_hresult(self.__dict__["_Activate"]())
+        agcls.evaluate_hresult(self.__dict__["_activate"]())
 
     @property
-    def WindowState(self) -> "AgEWindowState":
+    def window_state(self) -> "AgEWindowState":
         """The window state."""
         with agmarshall.AgEnum_arg(AgEWindowState) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetWindowState"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_window_state"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @WindowState.setter
-    def WindowState(self, newVal:"AgEWindowState") -> None:
+    @window_state.setter
+    def window_state(self, newVal:"AgEWindowState") -> None:
         with agmarshall.AgEnum_arg(AgEWindowState, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetWindowState"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_window_state"](arg_newVal.COM_val))
 
-    def Close(self) -> None:
+    def close(self) -> None:
         """Closes the window."""
-        agcls.evaluate_hresult(self.__dict__["_Close"]())
+        agcls.evaluate_hresult(self.__dict__["_close"]())
 
     @property
-    def Height(self) -> int:
+    def height(self) -> int:
         """The window height."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetHeight"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_height"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Height.setter
-    def Height(self, newVal:int) -> None:
+    @height.setter
+    def height(self, newVal:int) -> None:
         with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetHeight"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_height"](arg_newVal.COM_val))
 
     @property
-    def Width(self) -> int:
+    def width(self) -> int:
         """The window width."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetWidth"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_width"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Width.setter
-    def Width(self, newVal:int) -> None:
+    @width.setter
+    def width(self, newVal:int) -> None:
         with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetWidth"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_width"](arg_newVal.COM_val))
 
     @property
-    def Left(self) -> int:
+    def left(self) -> int:
         """The window horizontal position."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetLeft"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_left"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Left.setter
-    def Left(self, newVal:int) -> None:
+    @left.setter
+    def left(self, newVal:int) -> None:
         with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetLeft"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_left"](arg_newVal.COM_val))
 
     @property
-    def Top(self) -> int:
+    def top(self) -> int:
         """The window vertical position"""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetTop"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_top"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @Top.setter
-    def Top(self, newVal:int) -> None:
+    @top.setter
+    def top(self, newVal:int) -> None:
         with agmarshall.LONG_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetTop"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_top"](arg_newVal.COM_val))
 
     @property
-    def DockStyle(self) -> "AgEDockStyle":
+    def dock_style(self) -> "AgEDockStyle":
         """The window docking style."""
         with agmarshall.AgEnum_arg(AgEDockStyle) as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetDockStyle"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_dock_style"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @DockStyle.setter
-    def DockStyle(self, newVal:"AgEDockStyle") -> None:
+    @dock_style.setter
+    def dock_style(self, newVal:"AgEDockStyle") -> None:
         with agmarshall.AgEnum_arg(AgEDockStyle, newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetDockStyle"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_dock_style"](arg_newVal.COM_val))
 
     @property
-    def NoWBClose(self) -> bool:
+    def no_wb_close(self) -> bool:
         """Whether to close the window when the application workbook is loaded/closed."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetNoWBClose"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_no_wb_close"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @NoWBClose.setter
-    def NoWBClose(self, newVal:bool) -> None:
+    @no_wb_close.setter
+    def no_wb_close(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetNoWBClose"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_no_wb_close"](arg_newVal.COM_val))
 
     @property
-    def UnPinned(self) -> bool:
+    def un_pinned(self) -> bool:
         """The window's pinned state."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetUnPinned"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_un_pinned"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    @UnPinned.setter
-    def UnPinned(self, newVal:bool) -> None:
+    @un_pinned.setter
+    def un_pinned(self, newVal:bool) -> None:
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
-            agcls.evaluate_hresult(self.__dict__["_SetUnPinned"](arg_newVal.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_set_un_pinned"](arg_newVal.COM_val))
 
     @property
-    def SupportsPinning(self) -> bool:
+    def supports_pinning(self) -> bool:
         """Returns whether the window supports pinning."""
         with agmarshall.VARIANT_BOOL_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSupportsPinning"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_supports_pinning"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Toolbars(self) -> "IUiToolbarCollection":
+    def toolbars(self) -> "IUiToolbarCollection":
         """Returns the window's toolbar collection."""
         with agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetToolbars"](byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_toolbars"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def GetServiceByName(self, name:str) -> typing.Any:
+    def get_service_by_name(self, name:str) -> typing.Any:
         """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetServiceByName"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_service_by_name"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def GetServiceByType(self, serviceType:"AgEWindowService") -> typing.Any:
+    def get_service_by_type(self, serviceType:"AgEWindowService") -> typing.Any:
         """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
         with agmarshall.AgEnum_arg(AgEWindowService, serviceType) as arg_serviceType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetServiceByType"](arg_serviceType.COM_val, byref(arg_ppRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_service_by_type"](arg_serviceType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
 
@@ -535,13 +535,13 @@ class IUiWindowsCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_Item"] = _raise_uninitialized_error
-        self.__dict__["_GetCount"] = _raise_uninitialized_error
-        self.__dict__["_Arrange"] = _raise_uninitialized_error
-        self.__dict__["_Add"] = _raise_uninitialized_error
-        self.__dict__["_Get_NewEnum"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByIndex"] = _raise_uninitialized_error
-        self.__dict__["_GetItemByName"] = _raise_uninitialized_error
+        self.__dict__["_item"] = _raise_uninitialized_error
+        self.__dict__["_get_count"] = _raise_uninitialized_error
+        self.__dict__["_arrange"] = _raise_uninitialized_error
+        self.__dict__["_add"] = _raise_uninitialized_error
+        self.__dict__["_get__NewEnum"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_index"] = _raise_uninitialized_error
+        self.__dict__["_get_item_by_name"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiWindowsCollection._uuid))
             if pUnk is not None:
@@ -554,13 +554,13 @@ class IUiWindowsCollection(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiWindowsCollection = agcom.GUID(IUiWindowsCollection._uuid)
         vtable_offset_local = IUiWindowsCollection._vtable_offset - 1
-        self.__dict__["_Item"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_GetCount"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+2, POINTER(agcom.LONG))
-        self.__dict__["_Arrange"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+3, agcom.LONG)
-        self.__dict__["_Add"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+4, agcom.BSTR, agcom.VARIANT, POINTER(agcom.PVOID))
-        self.__dict__["_Get_NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+5, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByIndex"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+6, agcom.INT, POINTER(agcom.PVOID))
-        self.__dict__["_GetItemByName"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+7, agcom.BSTR, POINTER(agcom.PVOID))
+        self.__dict__["_item"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+1, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_get_count"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+2, POINTER(agcom.LONG))
+        self.__dict__["_arrange"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+3, agcom.LONG)
+        self.__dict__["_add"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+4, agcom.BSTR, agcom.VARIANT, POINTER(agcom.PVOID))
+        self.__dict__["_get__NewEnum"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+5, POINTER(agcom.PVOID))
+        self.__dict__["_get_item_by_index"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+6, agcom.INT, POINTER(agcom.PVOID))
+        self.__dict__["_get_item_by_name"] = IAGFUNCTYPE(pUnk, IID_IUiWindowsCollection, vtable_offset_local+7, agcom.BSTR, POINTER(agcom.PVOID))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -583,57 +583,57 @@ class IUiWindowsCollection(object):
         nextval = self.__dict__["enumerator"].Next()
         if nextval is None:
             raise StopIteration
-        return agmarshall.python_val_from_VARIANT(nextval)
+        return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def Item(self, indexOrCaption:typing.Any) -> "IUiWindow":
+    def item(self, indexOrCaption:typing.Any) -> "IUiWindow":
         """Retrieves a window object."""
         with agmarshall.VARIANT_arg(indexOrCaption) as arg_indexOrCaption, \
              agmarshall.AgInterface_out_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_Item"](arg_indexOrCaption.COM_val, byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrCaption.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @property
-    def Count(self) -> int:
+    def count(self) -> int:
         """Returns a total number of window objects in the collection."""
         with agmarshall.LONG_arg() as arg_pVal:
-            agcls.evaluate_hresult(self.__dict__["_GetCount"](byref(arg_pVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def Arrange(self, arrangeStyle:"AgEArrangeStyle") -> None:
+    def arrange(self, arrangeStyle:"AgEArrangeStyle") -> None:
         """Arranges the application windows using the specified style."""
         with agmarshall.AgEnum_arg(AgEArrangeStyle, arrangeStyle) as arg_arrangeStyle:
-            agcls.evaluate_hresult(self.__dict__["_Arrange"](arg_arrangeStyle.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_arrange"](arg_arrangeStyle.COM_val))
 
-    def Add(self, pluginID:str, initData:typing.Any) -> "IUiWindow":
+    def add(self, pluginID:str, initData:typing.Any) -> "IUiWindow":
         """Creates a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
         with agmarshall.BSTR_arg(pluginID) as arg_pluginID, \
              agmarshall.VARIANT_arg(initData) as arg_initData, \
              agmarshall.AgInterface_out_arg() as arg_pNewWin:
-            agcls.evaluate_hresult(self.__dict__["_Add"](arg_pluginID.COM_val, arg_initData.COM_val, byref(arg_pNewWin.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_add"](arg_pluginID.COM_val, arg_initData.COM_val, byref(arg_pNewWin.COM_val)))
             return arg_pNewWin.python_val
 
     @property
     def _NewEnum(self) -> IEnumVARIANT:
         """Enumerates the windows in the collection."""
         with agmarshall.IEnumVARIANT_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_Get_NewEnum"](byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def GetItemByIndex(self, index:int) -> "IUiWindow":
+    def get_item_by_index(self, index:int) -> "IUiWindow":
         """Retrieves a window object by index in collection."""
         with agmarshall.INT_arg(index) as arg_index, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByIndex"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_index"](arg_index.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    def GetItemByName(self, name:str) -> "IUiWindow":
+    def get_item_by_name(self, name:str) -> "IUiWindow":
         """Retrieves a window object by name of window object."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.AgInterface_out_arg() as arg_ppVal:
-            agcls.evaluate_hresult(self.__dict__["_GetItemByName"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_item_by_name"](arg_name.COM_val, byref(arg_ppVal.COM_val)))
             return arg_ppVal.python_val
 
-    __getitem__ = Item
+    __getitem__ = item
 
 
 
@@ -647,7 +647,7 @@ class IUiWindowMapObject(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetMapID"] = _raise_uninitialized_error
+        self.__dict__["_get_map_id"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiWindowMapObject._uuid))
             if pUnk is not None:
@@ -659,7 +659,7 @@ class IUiWindowMapObject(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiWindowMapObject = agcom.GUID(IUiWindowMapObject._uuid)
         vtable_offset_local = IUiWindowMapObject._vtable_offset - 1
-        self.__dict__["_GetMapID"] = IAGFUNCTYPE(pUnk, IID_IUiWindowMapObject, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_get_map_id"] = IAGFUNCTYPE(pUnk, IID_IUiWindowMapObject, vtable_offset_local+1, POINTER(agcom.LONG))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -674,10 +674,10 @@ class IUiWindowMapObject(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindowMapObject.")
     
     @property
-    def MapID(self) -> int:
+    def map_id(self) -> int:
         """A unique identifier associated with the window that can be used with Connect to control the 2D map."""
         with agmarshall.LONG_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetMapID"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_map_id"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
 
@@ -691,7 +691,7 @@ class IUiWindowGlobeObject(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_GetSceneID"] = _raise_uninitialized_error
+        self.__dict__["_get_scene_id"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(IUiWindowGlobeObject._uuid))
             if pUnk is not None:
@@ -703,7 +703,7 @@ class IUiWindowGlobeObject(object):
         self.__dict__["_pUnk"] = pUnk
         IID_IUiWindowGlobeObject = agcom.GUID(IUiWindowGlobeObject._uuid)
         vtable_offset_local = IUiWindowGlobeObject._vtable_offset - 1
-        self.__dict__["_GetSceneID"] = IAGFUNCTYPE(pUnk, IID_IUiWindowGlobeObject, vtable_offset_local+1, POINTER(agcom.LONG))
+        self.__dict__["_get_scene_id"] = IAGFUNCTYPE(pUnk, IID_IUiWindowGlobeObject, vtable_offset_local+1, POINTER(agcom.LONG))
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -718,10 +718,10 @@ class IUiWindowGlobeObject(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IUiWindowGlobeObject.")
     
     @property
-    def SceneID(self) -> int:
+    def scene_id(self) -> int:
         """A unique identifier associated with the window that can be used with Connect to control the 3D globe."""
         with agmarshall.LONG_arg() as arg_pRetVal:
-            agcls.evaluate_hresult(self.__dict__["_GetSceneID"](byref(arg_pRetVal.COM_val)))
+            agcls.evaluate_hresult(self.__dict__["_get_scene_id"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
 

@@ -35,7 +35,7 @@ class Interfaces(CodeSnippetsTestBase):
 
     # region LoadVDF
     def test_LoadVDF(self):
-        CodeSnippetsTestBase.m_Root.CloseScenario()
+        CodeSnippetsTestBase.m_Root.close_scenario()
         self.LoadVDF(
             CodeSnippetsTestBase.m_Root,
             Path.Combine(TestBase.GetSTKHomeDir(), r"Data\ExampleScenarios\Intro_STK_Aircraft_Systems.vdf"),
@@ -44,6 +44,6 @@ class Interfaces(CodeSnippetsTestBase):
 
     def LoadVDF(self, root: "IStkObjectRoot", vdfPath: str, vdfPassword: str):
         # Pass an empty string if there is no password to the VDF.
-        root.LoadVDF(vdfPath, vdfPassword)
+        root.load_vdf(vdfPath, vdfPassword)
 
     # endregion

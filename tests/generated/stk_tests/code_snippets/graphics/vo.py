@@ -37,22 +37,22 @@ class VO(CodeSnippetsTestBase):
     # region DelayGraphicsUpdates
     @category("VO Tests")
     def test_DelayGraphicsUpdates(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "Satellite1")
         self.DelayGraphicsUpdates(CodeSnippetsTestBase.m_Root)
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "Satellite1")
 
     def DelayGraphicsUpdates(self, root: "IStkObjectRoot"):
-        satellite: "ISatellite" = clr.CastAs(root.CurrentScenario.Children["Satellite1"], ISatellite)
-        voElt: "IVODataDisplayElement" = satellite.VO.DataDisplay[0]
+        satellite: "ISatellite" = clr.CastAs(root.current_scenario.children["Satellite1"], ISatellite)
+        voElt: "IVODataDisplayElement" = satellite.vo.data_display[0]
 
-        root.BeginUpdate()  # Suspend updates
+        root.begin_update()  # Suspend updates
 
         # Put modifications here
-        voElt.IsVisible = True
-        voElt.UseBackground = True
-        voElt.BgColor = Color.Green
-        voElt.UseBackground = False
+        voElt.is_visible = True
+        voElt.use_background = True
+        voElt.bg_color = Color.Green
+        voElt.use_background = False
 
-        root.EndUpdate()  # Resume updates now
+        root.end_update()  # Resume updates now
 
     # endregion

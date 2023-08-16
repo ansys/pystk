@@ -1,5 +1,5 @@
 ################################################################################
-#          Copyright 2020-2021, Analytical Graphics, Inc.
+#          Copyright 2020-2021, Ansys Government Initiatives
 ################################################################################
 
 __all__ = [ "IStkObjectRootEventHandler", 
@@ -1817,5 +1817,5 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber, STKEventHandlerB
                 callback(arg_Sender.python_val, arg_Args.python_val)
 
 ################################################################################
-#          Copyright 2020-2021, Analytical Graphics, Inc.
+#          Copyright 2020-2021, Ansys Government Initiatives
 ################################################################################

@@ -29,18 +29,18 @@ class J4Perturbation(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         J4Perturbation.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eSatellite, J4Perturbation.m_DefaultName
             ),
             ISatellite,
         )
-        CodeSnippetsTestBase.m_Root.UnitPreferences.ResetUnits()
+        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eSatellite, J4Perturbation.m_DefaultName
         )
         J4Perturbation.m_Object = None
@@ -53,29 +53,29 @@ class J4Perturbation(CodeSnippetsTestBase):
 
     # This code snippet is taken from SatelliteOrbitWizard.cs in the test suite
     def ConfigureJ4PerturbationPropagatorOrbitToCircular(self, satellite: "ISatellite", incl: float, altitude: float):
-        satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ4Perturbation)
-        prop: "IVehiclePropagatorJ4Perturbation" = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ4Perturbation)
+        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorJ4Perturbation)
+        prop: "IVehiclePropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ4Perturbation)
 
         keplerian: "IOrbitStateClassical" = clr.CastAs(
-            prop.InitialState.Representation.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
+            prop.initial_state.representation.convert_to(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
         )
 
-        keplerian.SizeShapeType = AgEClassicalSizeShape.eSizeShapeAltitude
-        size: "IClassicalSizeShapeAltitude" = clr.CastAs(keplerian.SizeShape, IClassicalSizeShapeAltitude)
+        keplerian.size_shape_type = AgEClassicalSizeShape.eSizeShapeAltitude
+        size: "IClassicalSizeShapeAltitude" = clr.CastAs(keplerian.size_shape, IClassicalSizeShapeAltitude)
 
-        size.ApogeeAltitude = altitude
-        size.PerigeeAltitude = altitude
+        size.apogee_altitude = altitude
+        size.perigee_altitude = altitude
 
-        keplerian.Orientation.Inclination = incl
-        keplerian.Orientation.ArgOfPerigee = 0
-        keplerian.Orientation.AscNodeType = AgEOrientationAscNode.eAscNodeRAAN
-        (clr.CastAs(keplerian.Orientation.AscNode, IOrientationAscNodeRAAN)).Value = 0
+        keplerian.orientation.inclination = incl
+        keplerian.orientation.arg_of_perigee = 0
+        keplerian.orientation.asc_node_type = AgEOrientationAscNode.eAscNodeRAAN
+        (clr.CastAs(keplerian.orientation.asc_node, IOrientationAscNodeRAAN)).value = 0
 
-        keplerian.LocationType = AgEClassicalLocation.eLocationTrueAnomaly
-        (clr.CastAs(keplerian.Location, IClassicalLocationTrueAnomaly)).Value = 0
+        keplerian.location_type = AgEClassicalLocation.eLocationTrueAnomaly
+        (clr.CastAs(keplerian.location, IClassicalLocationTrueAnomaly)).value = 0
 
-        prop.InitialState.Representation.Assign(keplerian)
-        prop.Propagate()
+        prop.initial_state.representation.assign(keplerian)
+        prop.propagate()
 
     # endregion
 
@@ -87,28 +87,28 @@ class J4Perturbation(CodeSnippetsTestBase):
     def ConfigureJ4PerturbationPropagatorOrbitToCritcallyInclined(
         self, satellite: "ISatellite", apogeeAlt: float, perigeeAlt: float, ascNodeLon: float
     ):
-        satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ4Perturbation)
-        prop: "IVehiclePropagatorJ4Perturbation" = clr.CastAs(satellite.Propagator, IVehiclePropagatorJ4Perturbation)
+        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorJ4Perturbation)
+        prop: "IVehiclePropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ4Perturbation)
 
         keplerian: "IOrbitStateClassical" = clr.CastAs(
-            prop.InitialState.Representation.ConvertTo(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
+            prop.initial_state.representation.convert_to(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
         )
 
-        keplerian.SizeShapeType = AgEClassicalSizeShape.eSizeShapeAltitude
-        size: "IClassicalSizeShapeAltitude" = clr.CastAs(keplerian.SizeShape, IClassicalSizeShapeAltitude)
+        keplerian.size_shape_type = AgEClassicalSizeShape.eSizeShapeAltitude
+        size: "IClassicalSizeShapeAltitude" = clr.CastAs(keplerian.size_shape, IClassicalSizeShapeAltitude)
 
-        size.ApogeeAltitude = apogeeAlt
-        size.PerigeeAltitude = perigeeAlt
+        size.apogee_altitude = apogeeAlt
+        size.perigee_altitude = perigeeAlt
 
-        keplerian.Orientation.Inclination = 63.434949
-        keplerian.Orientation.ArgOfPerigee = 270.0
-        keplerian.Orientation.AscNodeType = AgEOrientationAscNode.eAscNodeLAN
-        (clr.CastAs(keplerian.Orientation.AscNode, IOrientationAscNodeLAN)).Value = ascNodeLon
+        keplerian.orientation.inclination = 63.434949
+        keplerian.orientation.arg_of_perigee = 270.0
+        keplerian.orientation.asc_node_type = AgEOrientationAscNode.eAscNodeLAN
+        (clr.CastAs(keplerian.orientation.asc_node, IOrientationAscNodeLAN)).value = ascNodeLon
 
-        keplerian.LocationType = AgEClassicalLocation.eLocationTrueAnomaly
-        (clr.CastAs(keplerian.Location, IClassicalLocationTrueAnomaly)).Value = 90.0
+        keplerian.location_type = AgEClassicalLocation.eLocationTrueAnomaly
+        (clr.CastAs(keplerian.location, IClassicalLocationTrueAnomaly)).value = 90.0
 
-        prop.InitialState.Representation.Assign(keplerian)
-        prop.Propagate()
+        prop.initial_state.representation.assign(keplerian)
+        prop.propagate()
 
     # endregion

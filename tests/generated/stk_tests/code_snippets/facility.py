@@ -28,7 +28,7 @@ class Facility(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Facility.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eFacility, Facility.m_DefaultName
             ),
             IFacility,
@@ -38,36 +38,37 @@ class Facility(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
         Facility.m_Object = None
 
     # endregion
 
     # region CreateDefaultFacilityOnCurrentScenarioCentralBody
     def test_CreateDefaultFacilityOnCurrentScenarioCentralBody(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
         self.CreateDefaultFacilityOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create a facility on current scenario central body
         facility: "IFacility" = clr.CastAs(
-            root.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "MyFacility"), IFacility
+            root.current_scenario.children.new(AgESTKObjectType.eFacility, "MyFacility"), IFacility
         )
 
     # endregion
 
     # region CreateFacilityOnEarth
     def test_CreateFacilityOnEarth(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
         self.CreateFacilityOnEarth(CodeSnippetsTestBase.m_Root)
 
     def CreateFacilityOnEarth(self, root: "IStkObjectRoot"):
         facility: "IFacility" = clr.CastAs(
-            root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.eFacility, "MyFacility", "Earth"), IFacility
+            root.current_scenario.children.new_on_central_body(AgESTKObjectType.eFacility, "MyFacility", "Earth"),
+            IFacility,
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance
-        facility.Position.AssignPlanetodetic(0.4506, -1.4011, 4)
+        facility.position.assign_planetodetic(0.4506, -1.4011, 4)
 
     # endregion
 
@@ -77,11 +78,12 @@ class Facility(CodeSnippetsTestBase):
 
     def CreateFacilityOnOtherPlanet(self, root: "IStkObjectRoot"):
         facObject: "IFacility" = clr.CastAs(
-            root.CurrentScenario.Children.NewOnCentralBody(AgESTKObjectType.eFacility, "Facility1", "Mars"), IFacility
+            root.current_scenario.children.new_on_central_body(AgESTKObjectType.eFacility, "Facility1", "Mars"),
+            IFacility,
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance
-        facObject.Position.AssignPlanetodetic(-5.4245, 0.1902, 0)
+        facObject.position.assign_planetodetic(-5.4245, 0.1902, 0)
 
     # endregion
 
@@ -91,15 +93,15 @@ class Facility(CodeSnippetsTestBase):
 
     def CreateFacilityFromFacilityDatabase(self, root: "IStkObjectRoot"):
         # Get STK database location using Connect
-        result: "IExecCmdResult" = root.ExecuteCommand("GetDirectory / Database Facility")
+        result: "IExecCmdResult" = root.execute_command("GetDirectory / Database Facility")
         facDataDir: str = result[0]
         filelocation: str = Path.Combine(facDataDir, r"stkFacility.fd")
 
         # Import object from database using Connect
         command: str = ('ImportFromDB * Facility "' + filelocation) + '" Class Facility SiteName Weilheim'
-        root.ExecuteCommand(command)
+        root.execute_command(command)
 
-        facility: "IFacility" = clr.CastAs(root.GetObjectFromPath("Facility/Weilheim"), IFacility)
+        facility: "IFacility" = clr.CastAs(root.get_object_from_path("Facility/Weilheim"), IFacility)
 
     # endregion
 
@@ -109,15 +111,15 @@ class Facility(CodeSnippetsTestBase):
 
     def ChangePositionWithUseTerrain(self, fac: "IFacility"):
         # Set altitude automatically by using terrain data
-        fac.UseTerrain = True
+        fac.use_terrain = True
 
         # Set the position ignores the altitude value in AssignGeodetic
-        fac.Position.AssignGeodetic(29.98, -90.25, 9)
+        fac.position.assign_geodetic(29.98, -90.25, 9)
 
         # Ignores the altitude value in AssignGeocentric
-        fac.Position.AssignGeocentric(32.12, -110.93, 787)
+        fac.position.assign_geocentric(32.12, -110.93, 787)
 
         # Ignores the radius value in AssignSpherical
-        fac.Position.AssignSpherical(40.65, -73.78, 7)
+        fac.position.assign_spherical(40.65, -73.78, 7)
 
     # endregion

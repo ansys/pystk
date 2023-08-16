@@ -3,6 +3,7 @@ from assert_extension import *
 from assertion_harness import *
 from logger import *
 from ansys.stk.core.stkobjects import *
+from ansys.stk.core.stkutil import *
 
 
 # region LinkToObjectHelper
@@ -17,32 +18,32 @@ class LinkToObjectHelper(object):
         Assert.assertIsNotNone(oLink)
         self.m_logger.WriteLine("LinkToObject test:")
         # Name
-        self.m_logger.WriteLine5("\tCurrent linked object name is: {0}", oLink.Name)
+        self.m_logger.WriteLine5("\tCurrent linked object name is: {0}", oLink.name)
         # IsIntrinsic
-        self.m_logger.WriteLine4("\tCurrent IsIntrinsic flag is: {0}", oLink.IsIntrinsic)
+        self.m_logger.WriteLine4("\tCurrent IsIntrinsic flag is: {0}", oLink.is_intrinsic)
         # LinkedObject
-        oObject: "STKObjects.IStkObject" = oLink.LinkedObject
+        oObject: "IStkObject" = oLink.linked_object
         if oObject != None:
-            self.m_logger.WriteLine7("\t{0} is linked to: {1}", strObjectName, oObject.Path)
+            self.m_logger.WriteLine7("\t{0} is linked to: {1}", strObjectName, oObject.path)
 
         else:
             self.m_logger.WriteLine5("\t{0} is not linked to any objects.", strObjectName)
 
         # AvailableObjects
-        arObjects = oLink.AvailableObjects
+        arObjects = oLink.available_objects
         self.m_logger.WriteLine3("\tAvailable Objects array contains: {0} elements", Array.Length(arObjects))
         if Array.Length(arObjects) > 0:
             strObject: str = str(arObjects[0])
             self.m_logger.WriteLine7("\t\tAvailable object {0} is: {1}", 0, strObject)
             # BindTo
-            oLink.BindTo(strObject)
-            if not oLink.IsIntrinsic:
-                oObject = oLink.LinkedObject
+            oLink.bind_to(strObject)
+            if not oLink.is_intrinsic:
+                oObject = oLink.linked_object
                 if strObject != "None":
                     if oObject != None:
-                        self.m_logger.WriteLine7("\t\t\tNow {0} is linked to: {1}", strObjectName, oObject.Path)
-                        self.m_logger.WriteLine5("\t\t\tLinked object name is: {0}", oLink.Name)
-                        self.m_logger.WriteLine4("\t\t\tIsIntrinsic flag is: {0}", oLink.IsIntrinsic)
+                        self.m_logger.WriteLine7("\t\t\tNow {0} is linked to: {1}", strObjectName, oObject.path)
+                        self.m_logger.WriteLine5("\t\t\tLinked object name is: {0}", oLink.name)
+                        self.m_logger.WriteLine4("\t\t\tIsIntrinsic flag is: {0}", oLink.is_intrinsic)
 
                     else:
                         Assert.assertIsNone(oObject)
@@ -50,12 +51,12 @@ class LinkToObjectHelper(object):
 
             else:
                 self.m_logger.WriteLine7(
-                    "\t\t\tNow {0} is linked to an intrinsic object {1}.", strObjectName, oLink.Name
+                    "\t\t\tNow {0} is linked to an intrinsic object {1}.", strObjectName, oLink.name
                 )
-                self.m_logger.WriteLine4("\t\t\tIsIntrinsic flag is: {0}", oLink.IsIntrinsic)
+                self.m_logger.WriteLine4("\t\t\tIsIntrinsic flag is: {0}", oLink.is_intrinsic)
 
         def action1():
-            oLink.BindTo("WrongObject")
+            oLink.bind_to("WrongObject")
 
         TryCatchAssertBlock.DoAssert("", action1)
 
@@ -75,137 +76,137 @@ class STKObjectHelper(object):
         Assert.assertIsNotNone(oObject)
         self.m_logger.WriteLine("----- STK OBJECT TEST ----- BEGIN -----")
         # InstanceName
-        strValue: str = oObject.InstanceName
-        self.m_logger.WriteLine5("\tThe current InstanceName is: {0}", oObject.InstanceName)
-        oObject.InstanceName = "Instance"
-        self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.InstanceName)
-        Assert.assertEqual("Instance", oObject.InstanceName)
+        strValue: str = oObject.instance_name
+        self.m_logger.WriteLine5("\tThe current InstanceName is: {0}", oObject.instance_name)
+        oObject.instance_name = "Instance"
+        self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.instance_name)
+        Assert.assertEqual("Instance", oObject.instance_name)
 
         def action2():
-            oObject.InstanceName = ""
+            oObject.instance_name = ""
 
         TryCatchAssertBlock.DoAssert("", action2)
 
         def action3():
-            oObject.InstanceName = "Invalid Name"
+            oObject.instance_name = "Invalid Name"
 
         TryCatchAssertBlock.DoAssert("", action3)
-        oObject.InstanceName = strValue
-        self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.InstanceName)
-        Assert.assertEqual(strValue, oObject.InstanceName)
+        oObject.instance_name = strValue
+        self.m_logger.WriteLine5("\tThe new InstanceName is: {0}", oObject.instance_name)
+        Assert.assertEqual(strValue, oObject.instance_name)
         # ClassType
-        self.m_logger.WriteLine6("\tThe ClassType is: {0}", oObject.ClassType)
+        self.m_logger.WriteLine6("\tThe ClassType is: {0}", oObject.class_type)
         # ClassName
-        self.m_logger.WriteLine5("\tThe ClassName is: {0}", oObject.ClassName)
+        self.m_logger.WriteLine5("\tThe ClassName is: {0}", oObject.class_name)
         # Path
-        self.m_logger.WriteLine5("\tThe Path is: {0}", oObject.Path)
-        if oObject.ClassType != AgESTKObjectType.eMTO:
+        self.m_logger.WriteLine5("\tThe Path is: {0}", oObject.path)
+        if oObject.class_type != AgESTKObjectType.eMTO:
             # ShortDescription
-            self.m_logger.WriteLine5("\tThe current ShortDescription is: {0}", oObject.ShortDescription)
-            oObject.ShortDescription = "This is a new short description."
-            self.m_logger.WriteLine5("\tThe new ShortDescription is: {0}", oObject.ShortDescription)
-            Assert.assertEqual("This is a new short description.", oObject.ShortDescription)
-            oObject.ShortDescription = ""
-            self.m_logger.WriteLine5("\tThe new ShortDescription is: {0}", oObject.ShortDescription)
-            Assert.assertEqual("", oObject.ShortDescription)
+            self.m_logger.WriteLine5("\tThe current ShortDescription is: {0}", oObject.short_description)
+            oObject.short_description = "This is a new short description."
+            self.m_logger.WriteLine5("\tThe new ShortDescription is: {0}", oObject.short_description)
+            Assert.assertEqual("This is a new short description.", oObject.short_description)
+            oObject.short_description = ""
+            self.m_logger.WriteLine5("\tThe new ShortDescription is: {0}", oObject.short_description)
+            Assert.assertEqual("", oObject.short_description)
             # LongDescription
-            self.m_logger.WriteLine5("\tThe current LongDescription is: {0}", oObject.LongDescription)
-            oObject.LongDescription = "This is a new long description."
-            self.m_logger.WriteLine5("\tThe new LongDescription is: {0}", oObject.LongDescription)
-            Assert.assertEqual("This is a new long description.", oObject.LongDescription)
-            oObject.LongDescription = ""
-            self.m_logger.WriteLine5("\tThe new LongDescription is: {0}", oObject.LongDescription)
-            Assert.assertEqual("", oObject.LongDescription)
+            self.m_logger.WriteLine5("\tThe current LongDescription is: {0}", oObject.long_description)
+            oObject.long_description = "This is a new long description."
+            self.m_logger.WriteLine5("\tThe new LongDescription is: {0}", oObject.long_description)
+            Assert.assertEqual("This is a new long description.", oObject.long_description)
+            oObject.long_description = ""
+            self.m_logger.WriteLine5("\tThe new LongDescription is: {0}", oObject.long_description)
+            Assert.assertEqual("", oObject.long_description)
 
         # Export
-        strValue = oObject.InstanceName
-        oObject.Export(TestBase.GetScenarioFile("Export", "ExportedObject"))
-        oObject.InstanceName = strValue
+        strValue = oObject.instance_name
+        oObject.export(TestBase.GetScenarioFile("Export", "ExportedObject"))
+        oObject.instance_name = strValue
         # Parent
-        oParent: "IStkObject" = oObject.Parent
+        oParent: "IStkObject" = oObject.parent
         Assert.assertIsNotNone(oParent)
-        self.m_logger.WriteLine7("\tThe parent object for {0} is {1}", oObject.InstanceName, oParent.InstanceName)
+        self.m_logger.WriteLine7("\tThe parent object for {0} is {1}", oObject.instance_name, oParent.instance_name)
         # DataProviders
 
         oDPHelper = DataProviderCollectionHelper()
-        oDPHelper.Run(oObject.DataProviders)
+        oDPHelper.Run(oObject.data_providers)
 
         # Children
         self.Children(oObject)
-        if oObject.IsObjectCoverageSupported():
-            self.m_logger.WriteLine5("\tThe {0} supports an ObjectCoverage.", oObject.InstanceName)
+        if oObject.is_object_coverage_supported():
+            self.m_logger.WriteLine5("\tThe {0} supports an ObjectCoverage.", oObject.instance_name)
             # ObjectCoverage
-            oCoverage: "IStkObjectCoverage" = oObject.ObjectCoverage
+            oCoverage: "IStkObjectCoverage" = oObject.object_coverage
             Assert.assertIsNotNone(oCoverage)
             # DataProviders
-            oDPHelper.Run(oCoverage.DataProviders)
+            oDPHelper.Run(oCoverage.data_providers)
 
         else:
-            self.m_logger.WriteLine5("\tThe {0} does not support an ObjectCoverage.", oObject.InstanceName)
+            self.m_logger.WriteLine5("\tThe {0} does not support an ObjectCoverage.", oObject.instance_name)
 
             def action4():
-                oCoverage: "IStkObjectCoverage" = oObject.ObjectCoverage
+                oCoverage: "IStkObjectCoverage" = oObject.object_coverage
 
             TryCatchAssertBlock.DoAssert("", action4)
 
         # create an additional Satellite
         oSatellite: "ISatellite" = clr.Convert(
-            oObject.Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "MIR"), ISatellite
+            oObject.root.current_scenario.children.new(AgESTKObjectType.eSatellite, "MIR"), ISatellite
         )
         Assert.assertIsNotNone(oSatellite)
-        oSatellite.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
-        Assert.assertEqual(AgEVePropagatorType.ePropagatorTwoBody, oSatellite.PropagatorType)
-        oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.Propagator, IVehiclePropagatorTwoBody)
+        oSatellite.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        Assert.assertEqual(AgEVePropagatorType.ePropagatorTwoBody, oSatellite.propagator_type)
+        oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, IVehiclePropagatorTwoBody)
         Assert.assertIsNotNone(oPropagator)
-        oPropagator.Propagate()
-        if oObject.IsAccessSupported():
-            self.m_logger.WriteLine5("\tThe {0} supports an Access.", oObject.InstanceName)
+        oPropagator.propagate()
+        if oObject.is_access_supported():
+            self.m_logger.WriteLine5("\tThe {0} supports an Access.", oObject.instance_name)
             # GetAccess
-            oAccess: "IStkAccess" = oObject.GetAccess((clr.Convert(oSatellite, IStkObject)).Path)
+            oAccess: "IStkAccess" = oObject.get_access((clr.Convert(oSatellite, IStkObject)).path)
             Assert.assertIsNotNone(oAccess)
             oAHelper = StkAccessHelper()
-            oAHelper.Run(oAccess, oObject.Root)
+            oAHelper.Run(oAccess, oObject.root)
 
             # GetAccessToObject
-            oAccess = oObject.GetAccessToObject(clr.CastAs(oSatellite, IStkObject))
+            oAccess = oObject.get_access_to_object(clr.CastAs(oSatellite, IStkObject))
             Assert.assertIsNotNone(oAccess)
-            oAHelper.Run(oAccess, oObject.Root)
+            oAHelper.Run(oAccess, oObject.root)
 
-            acc: "IAccessConstraintCollection" = oObject.AccessConstraints
+            acc: "IAccessConstraintCollection" = oObject.access_constraints
             Assert.assertIsNotNone(acc)
-            opa: "IOnePointAccess" = oObject.CreateOnePointAccess("Satellite/MIR")
+            opa: "IOnePointAccess" = oObject.create_one_point_access("Satellite/MIR")
             Assert.assertIsNotNone(opa)
 
         else:
-            self.m_logger.WriteLine5("\tThe {0} does not support an Access.", oObject.InstanceName)
+            self.m_logger.WriteLine5("\tThe {0} does not support an Access.", oObject.instance_name)
 
             def action5():
-                oAccess: "IStkAccess" = oObject.GetAccess((clr.Convert(oSatellite, IStkObject)).Path)
+                oAccess: "IStkAccess" = oObject.get_access((clr.Convert(oSatellite, IStkObject)).path)
 
             TryCatchAssertBlock.DoAssert("", action5)
 
             def action6():
-                oAccess: "IStkAccess" = oObject.GetAccessToObject(clr.CastAs(oSatellite, IStkObject))
+                oAccess: "IStkAccess" = oObject.get_access_to_object(clr.CastAs(oSatellite, IStkObject))
 
             TryCatchAssertBlock.DoAssert("", action6)
 
             def action7():
-                acc: "IAccessConstraintCollection" = oObject.AccessConstraints
+                acc: "IAccessConstraintCollection" = oObject.access_constraints
 
             TryCatchAssertBlock.DoAssert("", action7)
 
             def action8():
-                opa: "IOnePointAccess" = oObject.CreateOnePointAccess("Satellite/MIR")
+                opa: "IOnePointAccess" = oObject.create_one_point_access("Satellite/MIR")
 
             TryCatchAssertBlock.DoAssert("", action8)
 
-        oObject.Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "MIR")
+        oObject.root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "MIR")
         # Root
-        oRoot: "IStkObjectRoot" = oObject.Root
+        oRoot: "IStkObjectRoot" = oObject.root
         Assert.assertIsNotNone(oRoot)
 
         # Object Files
-        self.TestObjectFilesArray(oObject.ObjectFiles)
+        self.TestObjectFilesArray(oObject.object_files)
         if (
             (
                 (
@@ -216,27 +217,27 @@ class STKObjectHelper(object):
                                     (
                                         (
                                             (
-                                                ((oObject.ClassName != "AdvCAT") and (oObject.ClassName != "Chain"))
-                                                and (oObject.ClassName != "CommSystem")
+                                                ((oObject.class_name != "AdvCAT") and (oObject.class_name != "Chain"))
+                                                and (oObject.class_name != "CommSystem")
                                             )
-                                            and (oObject.ClassName != "Constellation")
+                                            and (oObject.class_name != "Constellation")
                                         )
-                                        and (oObject.ClassName != "Coverage")
+                                        and (oObject.class_name != "Coverage")
                                     )
-                                    and (oObject.ClassName != "CoverageDefinition")
+                                    and (oObject.class_name != "CoverageDefinition")
                                 )
-                                and (oObject.ClassName != "FigureOfMerit")
+                                and (oObject.class_name != "FigureOfMerit")
                             )
-                            and (oObject.ClassName != "MTO")
+                            and (oObject.class_name != "MTO")
                         )
-                        and (oObject.ClassName != "Satellite")
+                        and (oObject.class_name != "Satellite")
                     )
-                    and (oObject.ClassName != "Scenario")
+                    and (oObject.class_name != "Scenario")
                 )
-                and (oObject.ClassName != "Sensor")
+                and (oObject.class_name != "Sensor")
             )
-            and (oObject.ClassName != "LineTarget")
-        ) and (oObject.ClassName != "Volumetric"):
+            and (oObject.class_name != "LineTarget")
+        ) and (oObject.class_name != "Volumetric"):
             self.OnePtAccess(oObject)
 
         self.Metadata(oObject)
@@ -247,27 +248,27 @@ class STKObjectHelper(object):
 
     # region OnePtAccess
     def OnePtAccess(self, oObj: "IStkObject"):
-        onePtAccess: "IOnePointAccess" = oObj.CreateOnePointAccess("Satellite/Satellite1")
-        onePtAccess.StartTime = "1 Jul 2007 00:00:00.000"
-        Assert.assertEqual("1 Jul 2007 00:00:00.000", onePtAccess.StartTime)
-        onePtAccess.StopTime = "1 Jul 2007 01:00:00.000"
-        Assert.assertEqual("1 Jul 2007 01:00:00.000", onePtAccess.StopTime)
-        onePtAccess.StepSize = 120
-        Assert.assertEqual(120, onePtAccess.StepSize)
-        onePtAccess.SummaryOption = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed, onePtAccess.SummaryOption)
+        onePtAccess: "IOnePointAccess" = oObj.create_one_point_access("Satellite/Satellite1")
+        onePtAccess.start_time = "1 Jul 2007 00:00:00.000"
+        Assert.assertEqual("1 Jul 2007 00:00:00.000", onePtAccess.start_time)
+        onePtAccess.stop_time = "1 Jul 2007 01:00:00.000"
+        Assert.assertEqual("1 Jul 2007 01:00:00.000", onePtAccess.stop_time)
+        onePtAccess.step_size = 120
+        Assert.assertEqual(120, onePtAccess.step_size)
+        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
+        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed, onePtAccess.summary_option)
         result: "IOnePointAccessResult" = None
-        results: "IOnePointAccessResultCollection" = onePtAccess.Compute()
+        results: "IOnePointAccessResultCollection" = onePtAccess.compute()
 
         i: int = 0
-        while i < results.Count:
+        while i < results.count:
             result = results[i]
-            self.m_logger.WriteLine2(result.Time)
-            self.m_logger.WriteLine2(result.AccessSatisfied)
+            self.m_logger.WriteLine2(result.time)
+            self.m_logger.WriteLine2(result.access_satisfied)
 
             j: int = 0
-            while j < result.Constraints.Count:
-                constraint: "IOnePointAccessConstraint" = result.Constraints[j]
+            while j < result.constraints.count:
+                constraint: "IOnePointAccessConstraint" = result.constraints[j]
                 self.dumpOnePtAccessConstraint(constraint)
 
                 j += 1
@@ -277,44 +278,44 @@ class STKObjectHelper(object):
         r: "IOnePointAccessResult"
 
         for r in results:
-            self.m_logger.WriteLine2(r.Time)
-            self.m_logger.WriteLine2(r.AccessSatisfied)
+            self.m_logger.WriteLine2(r.time)
+            self.m_logger.WriteLine2(r.access_satisfied)
             c: "IOnePointAccessConstraint"
-            for c in r.Constraints:
+            for c in r.constraints:
                 self.dumpOnePtAccessConstraint(c)
 
-        onePtAccess.SummaryOption = AgEOnePtAccessSummary.eOnePtAccessSummaryFast
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryFast, onePtAccess.SummaryOption)
-        results = onePtAccess.Compute()
-        Assert.assertGreater(results.Count, 1)
+        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryFast
+        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryFast, onePtAccess.summary_option)
+        results = onePtAccess.compute()
+        Assert.assertGreater(results.count, 1)
         result = results[0]
-        if (oObj.ClassName != "Star") and (oObj.ClassName != "Planet"):
-            Assert.assertEqual(1, result.Constraints.Count)
-            self.dumpOnePtAccessConstraint(result.Constraints[0])
+        if (oObj.class_name != "Star") and (oObj.class_name != "Planet"):
+            Assert.assertEqual(1, result.constraints.count)
+            self.dumpOnePtAccessConstraint(result.constraints[0])
 
-        onePtAccess.SummaryOption = AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly, onePtAccess.SummaryOption)
-        results = onePtAccess.Compute()
-        Assert.assertGreater(results.Count, 1)
+        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly
+        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly, onePtAccess.summary_option)
+        results = onePtAccess.compute()
+        Assert.assertGreater(results.count, 1)
         result = results[0]
-        Assert.assertEqual(0, result.Constraints.Count)
+        Assert.assertEqual(0, result.constraints.count)
 
-        onePtAccess.OutputFile = r"C:\Dummy\File.out"
-        Assert.assertEqual(r"C:\Dummy\File.out", onePtAccess.OutputFile)
-        onePtAccess.OutputToFile = True
-        Assert.assertTrue(onePtAccess.OutputToFile)
-        onePtAccess.OutputToFile = False
-        Assert.assertFalse(onePtAccess.OutputToFile)
+        onePtAccess.output_file = r"C:\Dummy\File.out"
+        Assert.assertEqual(r"C:\Dummy\File.out", onePtAccess.output_file)
+        onePtAccess.output_to_file = True
+        Assert.assertTrue(onePtAccess.output_to_file)
+        onePtAccess.output_to_file = False
+        Assert.assertFalse(onePtAccess.output_to_file)
 
-        onePtAccess.Remove()
+        onePtAccess.remove()
 
     # endregion
 
     def dumpOnePtAccessConstraint(self, constraint: "IOnePointAccessConstraint"):
-        self.m_logger.WriteLine2(constraint.Constraint)
-        self.m_logger.WriteLine(constraint.ObjectPath)
-        self.m_logger.WriteLine2(constraint.Status)
-        self.m_logger.WriteLine2(constraint.Value)
+        self.m_logger.WriteLine2(constraint.constraint)
+        self.m_logger.WriteLine(constraint.object_path)
+        self.m_logger.WriteLine2(constraint.status)
+        self.m_logger.WriteLine2(constraint.value)
 
     def TestObjectFilesArray(self, arrFiles):
         Assert.assertIsNotNone(arrFiles)
@@ -329,27 +330,27 @@ class STKObjectHelper(object):
     def Children(self, oObject: "IStkObject"):
         Assert.assertIsNotNone(oObject)
         # Children
-        oCollection: "IStkObjectCollection" = oObject.Children
+        oCollection: "IStkObjectCollection" = oObject.children
         Assert.assertIsNotNone(oCollection)
-        if oCollection.Count > 0:
+        if oCollection.count > 0:
             x: "IStkObject" = oCollection[0]
-            name: str = x.InstanceName
-            y: "IStkObject" = oCollection.GetItemByIndex(0)
-            z: "IStkObject" = oCollection.GetItemByName(name)
-            Assert.assertEqual(x.InstanceName, y.InstanceName)
-            Assert.assertEqual(x.InstanceName, z.InstanceName)
+            name: str = x.instance_name
+            y: "IStkObject" = oCollection.get_item_by_index(0)
+            z: "IStkObject" = oCollection.get_item_by_name(name)
+            Assert.assertEqual(x.instance_name, y.instance_name)
+            Assert.assertEqual(x.instance_name, z.instance_name)
 
         # HasChildren
-        self.m_logger.WriteLine4("\tThe HasChildren flag is: {0}", oObject.HasChildren)
+        self.m_logger.WriteLine4("\tThe HasChildren flag is: {0}", oObject.has_children)
         # Count
-        self.m_logger.WriteLine7("\tThe {0} has: {1} children", oObject.InstanceName, oCollection.Count)
-        if oObject.HasChildren:
-            Assert.assertTrue((oCollection.Count > 0))
+        self.m_logger.WriteLine7("\tThe {0} has: {1} children", oObject.instance_name, oCollection.count)
+        if oObject.has_children:
+            Assert.assertTrue((oCollection.count > 0))
 
         else:
-            Assert.assertTrue((oCollection.Count == 0))
+            Assert.assertTrue((oCollection.count == 0))
 
-        SupportedChildTypes = oObject.Children.SupportedChildTypes
+        SupportedChildTypes = oObject.children.supported_child_types
         if (
             (
                 (
@@ -357,21 +358,21 @@ class STKObjectHelper(object):
                         (
                             (
                                 (
-                                    (oObject.ClassType == AgESTKObjectType.eAircraft)
-                                    or (oObject.ClassType == AgESTKObjectType.eFacility)
+                                    (oObject.class_type == AgESTKObjectType.eAircraft)
+                                    or (oObject.class_type == AgESTKObjectType.eFacility)
                                 )
-                                or (oObject.ClassType == AgESTKObjectType.eGroundVehicle)
+                                or (oObject.class_type == AgESTKObjectType.eGroundVehicle)
                             )
-                            or (oObject.ClassType == AgESTKObjectType.eLaunchVehicle)
+                            or (oObject.class_type == AgESTKObjectType.eLaunchVehicle)
                         )
-                        or (oObject.ClassType == AgESTKObjectType.eMissile)
+                        or (oObject.class_type == AgESTKObjectType.eMissile)
                     )
-                    or (oObject.ClassType == AgESTKObjectType.eSatellite)
+                    or (oObject.class_type == AgESTKObjectType.eSatellite)
                 )
-                or (oObject.ClassType == AgESTKObjectType.eShip)
+                or (oObject.class_type == AgESTKObjectType.eShip)
             )
-            or (oObject.ClassType == AgESTKObjectType.eTarget)
-        ) or (oObject.ClassType == AgESTKObjectType.eSubmarine):
+            or (oObject.class_type == AgESTKObjectType.eTarget)
+        ) or (oObject.class_type == AgESTKObjectType.eSubmarine):
             found: bool = False
 
             j: int = 0
@@ -385,48 +386,48 @@ class STKObjectHelper(object):
             if not found:
                 Assert.fail(
                     "Sensor should be an available child object of the {0} object",
-                    clr.Convert(oObject.ClassType, AgESTKObjectType),
+                    clr.Convert(oObject.class_type, AgESTKObjectType),
                 )
 
             # New
-            oSensor: "IStkObject" = oCollection.New(AgESTKObjectType.eSensor, "Radar")
+            oSensor: "IStkObject" = oCollection.new(AgESTKObjectType.eSensor, "Radar")
             Assert.assertIsNotNone(oSensor)
             # Unload
-            oCollection.Unload(AgESTKObjectType.eSensor, "Radar")
+            oCollection.unload(AgESTKObjectType.eSensor, "Radar")
 
-        if oObject.ClassType == AgESTKObjectType.eScenario:
-            oCollection.ImportObject(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
+        if oObject.class_type == AgESTKObjectType.eScenario:
+            oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
 
         else:
 
             def action9():
-                oCollection.ImportObject(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
+                oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
 
             TryCatchAssertBlock.DoAssert("", action9)
 
         # _NewEnum
-        oElement: "IStkObject"
+        stkObject1: "IStkObject"
         # _NewEnum
-        for oElement in oCollection:
-            self.m_logger.WriteLine5("\t\tChildren: {0}", oElement.InstanceName)
+        for stkObject1 in oCollection:
+            self.m_logger.WriteLine5("\t\tChildren: {0}", stkObject1.instance_name)
 
-        if oCollection.Count > 0:
+        if oCollection.count > 0:
             # Item
             oEObject: "IStkObject" = oCollection[0]
             Assert.assertIsNotNone(oEObject)
 
         # GetElements
-        oOECollection: "IStkObjectElementCollection" = oCollection.GetElements(AgESTKObjectType.eSensor)
+        oOECollection: "IStkObjectElementCollection" = oCollection.get_elements(AgESTKObjectType.eSensor)
         Assert.assertIsNotNone(oOECollection)
         # Count
-        self.m_logger.WriteLine3("\tThe ObjectElement collection contains: {0}", oOECollection.Count)
+        self.m_logger.WriteLine3("\tThe ObjectElement collection contains: {0}", oOECollection.count)
         # _NewEnum
-        oElement: "IStkObject"
+        stkObject2: "IStkObject"
         # _NewEnum
-        for oElement in oOECollection:
-            self.m_logger.WriteLine5("\t\tElement: {0}", oElement.InstanceName)
+        for stkObject2 in oOECollection:
+            self.m_logger.WriteLine5("\t\tElement: {0}", stkObject2.instance_name)
 
-        if oOECollection.Count > 0:
+        if oOECollection.count > 0:
             # Item
             oEObject: "IStkObject" = oOECollection[0]
             Assert.assertIsNotNone(oEObject)
@@ -435,46 +436,46 @@ class STKObjectHelper(object):
 
     # region Metadata
     def Metadata(self, oObject: "IStkObject"):
-        metadata: "IKeyValueCollection" = oObject.Metadata
+        metadata: "IKeyValueCollection" = oObject.metadata
 
-        Assert.assertEqual(0, metadata.Count)
+        Assert.assertEqual(0, metadata.count)
 
-        metadata.Set("Key1", "Value1")
-        metadata.Set("Key2", "Value2")
-        metadata.Set("Key3", "")
-        Assert.assertEqual(3, metadata.Count)
+        metadata.set("Key1", "Value1")
+        metadata.set("Key2", "Value2")
+        metadata.set("Key3", "")
+        Assert.assertEqual(3, metadata.count)
         Assert.assertEqual("Value1", metadata["Key1"])
         Assert.assertEqual("Value2", metadata["Key2"])
         Assert.assertEqual("", metadata["Key3"])
 
-        Assert.assertFalse(metadata.GetReadOnly("Key1"))
+        Assert.assertFalse(metadata.get_read_only("Key1"))
 
-        metadata.SetReadOnly("Key1", True)
-        Assert.assertTrue(metadata.GetReadOnly("Key1"))
+        metadata.set_read_only("Key1", True)
+        Assert.assertTrue(metadata.get_read_only("Key1"))
 
         def action10():
-            metadata.Set("Key1", "Changed1")
+            metadata.set("Key1", "Changed1")
 
         TryCatchAssertBlock.ExpectedException("read-only", action10)
 
-        metadata.SetReadOnly("Key1", False)
-        Assert.assertFalse(metadata.GetReadOnly("Key1"))
-        metadata.Set("Key1", "Changed1")
+        metadata.set_read_only("Key1", False)
+        Assert.assertFalse(metadata.get_read_only("Key1"))
+        metadata.set("Key1", "Changed1")
         Assert.assertEqual("Changed1", metadata["Key1"])
 
         def action11():
-            metadata.SetReadOnly("BogusKey", True)
+            metadata.set_read_only("BogusKey", True)
 
         TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action11)
 
         def action12():
-            metadata.Set("", "Value1")
+            metadata.set("", "Value1")
 
         TryCatchAssertBlock.ExpectedException("empty string", action12)
 
-        metadata.Set("Key1", "Changed1")
-        metadata.Set("Key2", "Changed2")
-        metadata.Set("Key3", "Changed3")
+        metadata.set("Key1", "Changed1")
+        metadata.set("Key2", "Changed2")
+        metadata.set("Key3", "Changed3")
         Assert.assertEqual("Changed1", metadata["Key1"])
         Assert.assertEqual("Changed2", metadata["Key2"])
         Assert.assertEqual("Changed3", metadata["Key3"])
@@ -483,34 +484,34 @@ class STKObjectHelper(object):
 
         for key in metadata:
             Assert.assertTrue((len(metadata[key]) > 5))
-            Assert.assertTrue(metadata.Contains(key))
+            Assert.assertTrue(metadata.contains(key))
 
         # Testing the keys property
-        keys = metadata.Keys
-        Assert.assertEqual(metadata.Count, Array.Length(keys))
+        keys = metadata.keys
+        Assert.assertEqual(metadata.count, Array.Length(keys))
 
         i: int = 0
         while i < Array.Length(keys):
             key: str = clr.Convert(keys[i], str)
             Assert.assertTrue((len(metadata[key]) > 5))
-            Assert.assertTrue(metadata.Contains(key))
+            Assert.assertTrue(metadata.contains(key))
 
             i += 1
 
-        Assert.assertFalse(metadata.Contains("Key4"))
+        Assert.assertFalse(metadata.contains("Key4"))
 
         def action13():
             dummy: str = metadata["Key4"]
 
         TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action13)
 
-        metadata.RemoveKey("Key2")
-        Assert.assertEqual(2, metadata.Count)
+        metadata.remove_key("Key2")
+        Assert.assertEqual(2, metadata.count)
         Assert.assertEqual("Changed1", metadata["Key1"])
         Assert.assertEqual("Changed3", metadata["Key3"])
 
-        metadata.RemoveAll()
-        Assert.assertEqual(0, metadata.Count)
+        metadata.remove_all()
+        Assert.assertEqual(0, metadata.count)
 
 
 # endregion
@@ -528,14 +529,14 @@ class DataProviderCollectionHelper(object):
         self.m_logger.WriteLine("----- DATA PROVIDER COLLECTION TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         # Count
-        self.m_logger.WriteLine3("\tThe DataProvider collection contains: {0} elements.", oCollection.Count)
-        if oCollection.Count > 0:
+        self.m_logger.WriteLine3("\tThe DataProvider collection contains: {0} elements.", oCollection.count)
+        if oCollection.count > 0:
             x: "IDataProviderInfo" = oCollection[0]
-            name: str = x.Name
-            y: "IDataProviderInfo" = oCollection.GetItemByIndex(0)
-            z: "IDataProviderInfo" = oCollection.GetItemByName(name)
-            Assert.assertEqual(x.Name, y.Name)
-            Assert.assertEqual(x.Name, z.Name)
+            name: str = x.name
+            y: "IDataProviderInfo" = oCollection.get_item_by_index(0)
+            z: "IDataProviderInfo" = oCollection.get_item_by_name(name)
+            Assert.assertEqual(x.name, y.name)
+            Assert.assertEqual(x.name, z.name)
 
         # _NewEnum
         oDPInfo: "IDataProviderInfo"
@@ -543,15 +544,15 @@ class DataProviderCollectionHelper(object):
         # _NewEnum
         for oDPInfo in oCollection:
             self.m_logger.WriteLine8(
-                "\t\tElement: Name = {0}, Type = {1}, IsGroup = {2}", oDPInfo.Name, oDPInfo.Type, oDPInfo.IsGroup()
+                "\t\tElement: Name = {0}, Type = {1}, IsGroup = {2}", oDPInfo.name, oDPInfo.type, oDPInfo.is_group()
             )
 
-            Assert.assertNotEqual(0, int(oDPInfo.Type))
+            Assert.assertNotEqual(0, int(oDPInfo.type))
 
         iIndex: int = 0
-        while iIndex < oCollection.Count:
-            if oCollection[iIndex].IsGroup():
-                self.DataProviderGroup(clr.CastAs(oCollection[iIndex], IDataProviderGroup), oCollection[iIndex].Name)
+        while iIndex < oCollection.count:
+            if oCollection[iIndex].is_group():
+                self.DataProviderGroup(clr.CastAs(oCollection[iIndex], IDataProviderGroup), oCollection[iIndex].name)
 
             else:
                 # we need to use a try-catch block here, because some data providers
@@ -559,20 +560,20 @@ class DataProviderCollectionHelper(object):
                 try:
                     # IAgDataProvider
                     # Console.WriteLine(oCollection[iIndex].Name);
-                    self.DataProvider(clr.CastAs(oCollection[iIndex], IDataProvider), oCollection[iIndex].Name)
-                    if oCollection[iIndex].Type == AgEDataProviderType.eDrFixed:
+                    self.DataProvider(clr.CastAs(oCollection[iIndex], IDataProvider), oCollection[iIndex].name)
+                    if oCollection[iIndex].type == AgEDataProviderType.eDrFixed:
                         self.DataProviderFixed(
-                            clr.CastAs(oCollection[iIndex], IDataProviderFixed), oCollection[iIndex].Name
+                            clr.CastAs(oCollection[iIndex], IDataProviderFixed), oCollection[iIndex].name
                         )
-                    elif oCollection[iIndex].Type == AgEDataProviderType.eDrIntvl:
+                    elif oCollection[iIndex].type == AgEDataProviderType.eDrIntvl:
                         self.DataProviderInterval(
-                            clr.CastAs(oCollection[iIndex], IDataProviderInterval), oCollection[iIndex].Name
+                            clr.CastAs(oCollection[iIndex], IDataProviderInterval), oCollection[iIndex].name
                         )
-                    elif ((oCollection[iIndex].Type == AgEDataProviderType.eDrTimeVar)) or (
-                        (oCollection[iIndex].Type == AgEDataProviderType.eDrIntvlDefined)
+                    elif ((oCollection[iIndex].type == AgEDataProviderType.eDrTimeVar)) or (
+                        (oCollection[iIndex].type == AgEDataProviderType.eDrIntvlDefined)
                     ):
                         self.DataProviderTimeVar(
-                            clr.CastAs(oCollection[iIndex], IDataProviderTimeVarying), oCollection[iIndex].Name
+                            clr.CastAs(oCollection[iIndex], IDataProviderTimeVarying), oCollection[iIndex].name
                         )
                     else:
                         Assert.fail("Invalid type?")
@@ -595,21 +596,21 @@ class DataProviderCollectionHelper(object):
         self.m_logger.WriteLine5("----- DATA PROVIDER GROUP TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oGroup)
         # Group
-        oProviders: "IDataProviders" = oGroup.Group
+        oProviders: "IDataProviders" = oGroup.group
         Assert.assertIsNotNone(oProviders)
         # Count
-        self.m_logger.WriteLine3("\tThe DataProvider collection contains: {0} elements.", oProviders.Count)
+        self.m_logger.WriteLine3("\tThe DataProvider collection contains: {0} elements.", oProviders.count)
         # _NewEnum
         oDPInfo: "IDataProviderInfo"
         # _NewEnum
         for oDPInfo in oProviders:
             self.m_logger.WriteLine8(
-                "\t\tElement: Name = {0}, Type = {1}, IsGroup = {2}", oDPInfo.Name, oDPInfo.Type, oDPInfo.IsGroup()
+                "\t\tElement: Name = {0}, Type = {1}, IsGroup = {2}", oDPInfo.name, oDPInfo.type, oDPInfo.is_group()
             )
 
         iIndex: int = 0
-        while iIndex < oProviders.Count:
-            if oProviders[iIndex].IsGroup():
+        while iIndex < oProviders.count:
+            if oProviders[iIndex].is_group():
                 Assert.fail("An unexpected group of DataProviders!")
 
             iIndex += 1
@@ -623,41 +624,41 @@ class DataProviderCollectionHelper(object):
         self.m_logger.WriteLine5("----- DATA PROVIDER TEST ({0}) ----- BEGIN -----", strName)
         Assert.assertIsNotNone(oProvider)
         # AllowUI
-        self.m_logger.WriteLine4("\tThe current AllowUI is: {0}", oProvider.AllowUI)
-        oProvider.AllowUI = False
-        self.m_logger.WriteLine4("\tThe new AllowUI is: {0}", oProvider.AllowUI)
-        Assert.assertFalse(oProvider.AllowUI)
-        oProvider.AllowUI = True
-        self.m_logger.WriteLine4("\tThe new AllowUI is: {0}", oProvider.AllowUI)
-        Assert.assertTrue(oProvider.AllowUI)
+        self.m_logger.WriteLine4("\tThe current AllowUI is: {0}", oProvider.allow_ui)
+        oProvider.allow_ui = False
+        self.m_logger.WriteLine4("\tThe new AllowUI is: {0}", oProvider.allow_ui)
+        Assert.assertFalse(oProvider.allow_ui)
+        oProvider.allow_ui = True
+        self.m_logger.WriteLine4("\tThe new AllowUI is: {0}", oProvider.allow_ui)
+        Assert.assertTrue(oProvider.allow_ui)
         # PreData
-        self.m_logger.WriteLine5("\tThe current PreData is: {0}", oProvider.PreData)
-        oProvider.PreData = "Some PreData string"
-        self.m_logger.WriteLine5("\tThe new PreData is: {0}", oProvider.PreData)
-        Assert.assertEqual("Some PreData string", oProvider.PreData)
-        oProvider.PreData = ""
-        self.m_logger.WriteLine5("\tThe new PreData is: {0}", oProvider.PreData)
-        Assert.assertEqual("", oProvider.PreData)
+        self.m_logger.WriteLine5("\tThe current PreData is: {0}", oProvider.pre_data)
+        oProvider.pre_data = "Some PreData string"
+        self.m_logger.WriteLine5("\tThe new PreData is: {0}", oProvider.pre_data)
+        Assert.assertEqual("Some PreData string", oProvider.pre_data)
+        oProvider.pre_data = ""
+        self.m_logger.WriteLine5("\tThe new PreData is: {0}", oProvider.pre_data)
+        Assert.assertEqual("", oProvider.pre_data)
         # Elements
-        oElements: "IDataProviderElements" = oProvider.Elements
+        oElements: "IDataProviderElements" = oProvider.elements
         Assert.assertIsNotNone(oElements)
-        self.m_logger.WriteLine3("\tThe current Elements collection contains: {0} elements.", oElements.Count)
+        self.m_logger.WriteLine3("\tThe current Elements collection contains: {0} elements.", oElements.count)
         # _NewEnum
-        oElement: "IDataProviderElement"
+        dataPrvElement: "IDataProviderElement"
         # _NewEnum
-        for oElement in oElements:
+        for dataPrvElement in oElements:
             self.m_logger.WriteLine8(
                 "\t\tElement: Name = {0}, Type = {1}, DimensionName = {2}",
-                oElement.Name,
-                oElement.Type,
-                oElement.DimensionName,
+                dataPrvElement.name,
+                dataPrvElement.type,
+                dataPrvElement.dimension_name,
             )
 
         iIndex: int = 0
-        while iIndex < oElements.Count:
-            strElementName: str = oElements[iIndex].Name
-            eType: "AgEDataPrvElementType" = oElements[iIndex].Type
-            Assert.assertFalse(String.IsNullOrEmpty(oElements[iIndex].DimensionName))
+        while iIndex < oElements.count:
+            strElementName: str = oElements[iIndex].name
+            eType: "AgEDataPrvElementType" = oElements[iIndex].type
+            Assert.assertFalse(String.IsNullOrEmpty(oElements[iIndex].dimension_name))
 
             iIndex += 1
 
@@ -672,21 +673,21 @@ class DataProviderCollectionHelper(object):
 
         # Exec
         oResult: "IDataProviderResult" = None
-        if (clr.CastAs(oProvider, IDataProvider)).IsValid:
-            oResult = oProvider.Exec()
+        if (clr.CastAs(oProvider, IDataProvider)).is_valid:
+            oResult = oProvider.exec()
             Assert.assertIsNotNone(oResult)
 
             self.m_logger.WriteLine("\tExec:")
             self.DrResult(oResult)
-            arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.DataSets.Count)
+            arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.data_sets.count)
 
             i: int = 0
-            while i < oResult.DataSets.Count:
-                arCols[i] = oResult.DataSets[i].ElementName
+            while i < oResult.data_sets.count:
+                arCols[i] = oResult.data_sets[i].element_name
 
                 i += 1
 
-            oResult = oProvider.ExecElements(arCols)
+            oResult = oProvider.exec_elements(arCols)
             Assert.assertIsNotNone(oResult)
             self.m_logger.WriteLine("\tExecElements:")
             self.DrResult(oResult)
@@ -694,7 +695,7 @@ class DataProviderCollectionHelper(object):
         else:
 
             def action14():
-                oResult = oProvider.Exec()
+                oResult = oProvider.exec()
 
             TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action14)
 
@@ -706,23 +707,23 @@ class DataProviderCollectionHelper(object):
     def DrResult(self, oResult: "IDataProviderResult"):
         Assert.assertIsNotNone(oResult)
         # Category
-        self.m_logger.WriteLine6("\t\tThe current Category is: {0}", oResult.Category)
+        self.m_logger.WriteLine6("\t\tThe current Category is: {0}", oResult.category)
         # Sections
-        self.DrResultSections(oResult.Sections)
+        self.DrResultSections(oResult.sections)
         # Intervals
-        self.DrResultIntervals(oResult.Intervals)
+        self.DrResultIntervals(oResult.intervals)
         # DataSets
-        self.DrResultDataSets(oResult.DataSets)
+        self.DrResultDataSets(oResult.data_sets)
         # Message
-        self.DrResultMessage(oResult.Message)
-        if oResult.Category == AgEDrCategories.eDrCatDataSetList:
-            self.DrResultDataSets(clr.CastAs(oResult.Value, IDataProviderResultDataSetCollection))
-        elif oResult.Category == AgEDrCategories.eDrCatIntervalList:
-            self.DrResultIntervals(clr.CastAs(oResult.Value, IDataProviderResultIntervalCollection))
-        elif oResult.Category == AgEDrCategories.eDrCatMessage:
-            self.DrResultMessage(clr.CastAs(oResult.Value, IDataProviderResultTextMessage))
-        elif oResult.Category == AgEDrCategories.eDrCatSubSectionList:
-            self.DrResultSections(clr.CastAs(oResult.Value, IDataProviderResultSubSectionCollection))
+        self.DrResultMessage(oResult.message)
+        if oResult.category == AgEDrCategories.eDrCatDataSetList:
+            self.DrResultDataSets(clr.CastAs(oResult.value, IDataProviderResultDataSetCollection))
+        elif oResult.category == AgEDrCategories.eDrCatIntervalList:
+            self.DrResultIntervals(clr.CastAs(oResult.value, IDataProviderResultIntervalCollection))
+        elif oResult.category == AgEDrCategories.eDrCatMessage:
+            self.DrResultMessage(clr.CastAs(oResult.value, IDataProviderResultTextMessage))
+        elif oResult.category == AgEDrCategories.eDrCatSubSectionList:
+            self.DrResultSections(clr.CastAs(oResult.value, IDataProviderResultSubSectionCollection))
         else:
             Assert.fail("Invalid type!")
 
@@ -732,18 +733,18 @@ class DataProviderCollectionHelper(object):
     def DrResultSections(self, oCollection: "IDataProviderResultSubSectionCollection"):
         Assert.assertIsNotNone(oCollection)
         # Count
-        self.m_logger.WriteLine3("\t\tThe SubSection collection contains: {0} elements.", oCollection.Count)
+        self.m_logger.WriteLine3("\t\tThe SubSection collection contains: {0} elements.", oCollection.count)
         # _NewEnum
         oSection: "IDataProviderResultSubSection"
         # _NewEnum
         for oSection in oCollection:
             # Title
-            self.m_logger.WriteLine5("\t\t\tElement: Title = {0}", oSection.Title)
+            self.m_logger.WriteLine5("\t\t\tElement: Title = {0}", oSection.title)
 
         iIndex: int = 0
-        while iIndex < oCollection.Count:
+        while iIndex < oCollection.count:
             # Intervals
-            self.DrResultIntervals(oCollection[iIndex].Intervals)
+            self.DrResultIntervals(oCollection[iIndex].intervals)
 
             iIndex += 1
 
@@ -753,24 +754,24 @@ class DataProviderCollectionHelper(object):
     def DrResultIntervals(self, oCollection: "IDataProviderResultIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # Count
-        self.m_logger.WriteLine3("\t\tThe Interval collection contains: {0} elements.", oCollection.Count)
+        self.m_logger.WriteLine3("\t\tThe Interval collection contains: {0} elements.", oCollection.count)
         # _NewEnum
         oInterval: "IDataProviderResultInterval"
         # _NewEnum
         for oInterval in oCollection:
             # StartTime, StopTime
             self.m_logger.WriteLine7(
-                "\t\t\tElement: StartTime = {0}, StopTime = {1}", oInterval.StartTime, oInterval.StopTime
+                "\t\t\tElement: StartTime = {0}, StopTime = {1}", oInterval.start_time, oInterval.stop_time
             )
             self.m_logger.WriteLine7(
-                "\t\t\tElement: StartTime2 = {0}, StopTime2 = {1}", oInterval.StartTime, oInterval.StopTime
+                "\t\t\tElement: StartTime2 = {0}, StopTime2 = {1}", oInterval.start_time, oInterval.stop_time
             )
 
-        if oCollection.Count > 0:
+        if oCollection.count > 0:
             # ThresholdCrossings (see DataProviders.ObjectCoverage test)
             # MultipleThresholdCrossings (see DataProviders.ObjectCoverage test)
             # DataSets
-            self.DrResultDataSets(oCollection[0].DataSets)
+            self.DrResultDataSets(oCollection[0].data_sets)
 
     # endregion
 
@@ -778,7 +779,7 @@ class DataProviderCollectionHelper(object):
     def DrResultDataSets(self, oCollection: "IDataProviderResultDataSetCollection"):
         Assert.assertIsNotNone(oCollection)
         # Count
-        self.m_logger.WriteLine3("\t\tThe DataSet collection contains: {0} elements.", oCollection.Count)
+        self.m_logger.WriteLine3("\t\tThe DataSet collection contains: {0} elements.", oCollection.count)
         # _NewEnum
         oSet: "IDataProviderResultDataSet"
         # _NewEnum
@@ -786,18 +787,18 @@ class DataProviderCollectionHelper(object):
             # ElementName, ElementType, Count, UnitType
             self.m_logger.WriteLine9(
                 "\t\t\tElement: ElementName = {0}, ElementType = {1}, Count = {2}, DimensionName = {3}",
-                oSet.ElementName,
-                oSet.ElementType,
-                oSet.Count,
-                oSet.DimensionName,
+                oSet.element_name,
+                oSet.element_type,
+                oSet.count,
+                oSet.dimension_name,
             )
 
-        if oCollection.Count > 0:
+        if oCollection.count > 0:
             # GetValues
-            arValues = oCollection[0].GetValues()
+            arValues = oCollection[0].get_values()
             self.m_logger.WriteLine3("\t\tThe Values array contains: {0} elements.", Array.Length(arValues))
             # GetInternalUnitValues
-            arValues = oCollection[0].GetInternalUnitValues()
+            arValues = oCollection[0].get_internal_unit_values()
             self.m_logger.WriteLine3("\t\tThe InternalUnitValues array contains: {0} elements.", Array.Length(arValues))
 
     # endregion
@@ -806,7 +807,7 @@ class DataProviderCollectionHelper(object):
     def DrResultMessage(self, oCollection: "IDataProviderResultTextMessage"):
         Assert.assertIsNotNone(oCollection)
         # Count
-        self.m_logger.WriteLine3("\t\tThe TextMessages collection contains: {0} elements.", oCollection.Count)
+        self.m_logger.WriteLine3("\t\tThe TextMessages collection contains: {0} elements.", oCollection.count)
         # _NewEnum
         strText: str
         # _NewEnum
@@ -814,11 +815,11 @@ class DataProviderCollectionHelper(object):
             self.m_logger.WriteLine5("\t\t\tElement: {0}", strText)
 
         # Messages
-        arStrings = oCollection.Messages
+        arStrings = oCollection.messages
         self.m_logger.WriteLine3("\t\tThe Messages array contains: {0} elements.", Array.Length(arStrings))
         # IsFailure
-        self.m_logger.WriteLine4("\t\tThe IsFailure flag is: {0}", oCollection.IsFailure)
-        if oCollection.Count > 0:
+        self.m_logger.WriteLine4("\t\tThe IsFailure flag is: {0}", oCollection.is_failure)
+        if oCollection.count > 0:
             self.m_logger.WriteLine5("\t\tThe first message text string: {0}", oCollection[0])
 
     # endregion
@@ -832,22 +833,22 @@ class DataProviderCollectionHelper(object):
 
         # Exec
         oResult: "IDataProviderResult" = None
-        if (clr.CastAs(oProvider, IDataProvider)).IsValid:
+        if (clr.CastAs(oProvider, IDataProvider)).is_valid:
             # Exec
-            oResult = oProvider.Exec(dtStart, dtStop)
+            oResult = oProvider.exec(dtStart, dtStop)
             Assert.assertIsNotNone(oResult)
             self.m_logger.WriteLine("\tExec:")
             self.DrResult(oResult)
-            arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.DataSets.Count)
+            arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.data_sets.count)
 
             i: int = 0
-            while i < oResult.DataSets.Count:
-                arCols[i] = oResult.DataSets[i].ElementName
+            while i < oResult.data_sets.count:
+                arCols[i] = oResult.data_sets[i].element_name
 
                 i += 1
 
             # Array arCols = new object[] { "Time", "y" };
-            oResult = oProvider.ExecElements("1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", arCols)
+            oResult = oProvider.exec_elements("1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", arCols)
             Assert.assertIsNotNone(oResult)
             self.m_logger.WriteLine("\tExecElements:")
             self.DrResult(oResult)
@@ -856,7 +857,7 @@ class DataProviderCollectionHelper(object):
         else:
 
             def action15():
-                oResult = oProvider.Exec(dtStart, dtStop)
+                oResult = oProvider.exec(dtStart, dtStop)
 
             TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action15)
 
@@ -871,33 +872,33 @@ class DataProviderCollectionHelper(object):
             dtStop: typing.Any = "1 Jun 2004 13:00:00.00"
             # Exec
             dp: "IDataProvider" = clr.Convert(oProvider, IDataProvider)
-            dp.PreData = "Missile/Missile1"
+            dp.pre_data = "Missile/Missile1"
 
             oResult: "IDataProviderResult" = None
-            if (clr.CastAs(oProvider, IDataProvider)).IsValid:
-                oResult = oProvider.Exec(dtStart, dtStop, 240.0)
+            if (clr.CastAs(oProvider, IDataProvider)).is_valid:
+                oResult = oProvider.exec(dtStart, dtStop, 240.0)
                 Assert.assertIsNotNone(oResult)
                 self.m_logger.WriteLine("\tExec:")
                 self.DrResult(oResult)
-                arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.DataSets.Count)
+                arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.data_sets.count)
 
                 i: int = 0
-                while i < oResult.DataSets.Count:
-                    arCols[i] = oResult.DataSets[i].ElementName
+                while i < oResult.data_sets.count:
+                    arCols[i] = oResult.data_sets[i].element_name
 
                     i += 1
 
-                oResult = oProvider.ExecElements("1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.9, arCols)
+                oResult = oProvider.exec_elements("1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.9, arCols)
                 Assert.assertIsNotNone(oResult)
                 self.m_logger.WriteLine("\tExecElements:")
                 self.DrResult(oResult)
                 # ExecSingle
-                oResult = oProvider.ExecSingle(dtStart)
+                oResult = oProvider.exec_single(dtStart)
                 Assert.assertIsNotNone(oResult)
                 self.m_logger.WriteLine("\tExecSingle:")
                 self.DrResult(oResult)
                 # ExecSingleElements
-                oResult = oProvider.ExecSingleElements("1 Jun 2004 12:00:00.00", arCols)
+                oResult = oProvider.exec_single_elements("1 Jun 2004 12:00:00.00", arCols)
                 Assert.assertIsNotNone(oResult)
                 self.m_logger.WriteLine("\tExecSingleElements:")
                 self.DrResult(oResult)
@@ -905,7 +906,7 @@ class DataProviderCollectionHelper(object):
             else:
 
                 def action16():
-                    oResult = oProvider.Exec(dtStart, dtStop, 240.0)
+                    oResult = oProvider.exec(dtStart, dtStop, 240.0)
 
                 TryCatchAssertBlock.DoAssert(("Able to execute invalid DP: " + strName), action16)
 
@@ -928,32 +929,32 @@ class StkAccessHelper(object):
         Assert.assertIsNotNone(oAccess)
         Assert.assertIsNotNone(oRoot)
         # AccessTimePeriod
-        self.m_logger.WriteLine6("\tThe current AccessTimePeriod is: {0}", oAccess.AccessTimePeriod)
-        oAccess.AccessTimePeriod = AgEAccessTimeType.eObjectAccessTime
-        self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.AccessTimePeriod)
-        Assert.assertEqual(AgEAccessTimeType.eObjectAccessTime, oAccess.AccessTimePeriod)
+        self.m_logger.WriteLine6("\tThe current AccessTimePeriod is: {0}", oAccess.access_time_period)
+        oAccess.access_time_period = AgEAccessTimeType.eObjectAccessTime
+        self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
+        Assert.assertEqual(AgEAccessTimeType.eObjectAccessTime, oAccess.access_time_period)
         # ComputeAccess
-        oAccess.ComputeAccess()
-        oAccess.AccessTimePeriod = AgEAccessTimeType.eScenarioAccessTime
-        self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.AccessTimePeriod)
-        Assert.assertEqual(AgEAccessTimeType.eScenarioAccessTime, oAccess.AccessTimePeriod)
-        oAccess.ComputeAccess()
-        oAccess.AccessTimePeriod = AgEAccessTimeType.eUserSpecAccessTime
-        self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.AccessTimePeriod)
-        Assert.assertEqual(AgEAccessTimeType.eUserSpecAccessTime, oAccess.AccessTimePeriod)
-        oAccess.ComputeAccess()
+        oAccess.compute_access()
+        oAccess.access_time_period = AgEAccessTimeType.eScenarioAccessTime
+        self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
+        Assert.assertEqual(AgEAccessTimeType.eScenarioAccessTime, oAccess.access_time_period)
+        oAccess.compute_access()
+        oAccess.access_time_period = AgEAccessTimeType.eUserSpecAccessTime
+        self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
+        Assert.assertEqual(AgEAccessTimeType.eUserSpecAccessTime, oAccess.access_time_period)
+        oAccess.compute_access()
         # SpecifyAccessTimePeriod
         dtStart: typing.Any = "1 Jul 1999 00:00:00.00"
         dtStop: typing.Any = "1 Jul 1999 00:09:00.00"
-        oAccess.SpecifyAccessTimePeriod(dtStart, dtStop)
-        oAccess.ComputeAccess()
+        oAccess.specify_access_time_period(dtStart, dtStop)
+        oAccess.compute_access()
         if not TestBase.NoGraphicsMode:
-            self.Graphics(oAccess.Graphics)
+            self.Graphics(oAccess.graphics)
 
         else:
 
             def action17():
-                self.Graphics(oAccess.Graphics)
+                self.Graphics(oAccess.graphics)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action17)
 
@@ -961,21 +962,21 @@ class StkAccessHelper(object):
         self.Advanced(oAccess)
         if not TestBase.NoGraphicsMode:
             oDDHelper = VODataDisplayHelper(oRoot)
-            oDDHelper.Run(oAccess.DataDisplays, True, False)
+            oDDHelper.Run(oAccess.data_displays, True, False)
 
         else:
 
             def action18():
                 oDDHelper = VODataDisplayHelper(oRoot)
-                oDDHelper.Run(oAccess.DataDisplays, True, False)
+                oDDHelper.Run(oAccess.data_displays, True, False)
 
             TryCatchAssertBlock.ExpectedException("NoGraphics property is set to true", action18)
 
         # DataProviders
         oDPHelper = DataProviderCollectionHelper()
-        oDPHelper.Run(oAccess.DataProviders)
+        oDPHelper.Run(oAccess.data_providers)
         # RemoveAccess
-        oAccess.RemoveAccess()
+        oAccess.remove_access()
         self.m_logger.WriteLine("----- STK ACCESS TEST ----- END -----")
 
     # endregion
@@ -984,260 +985,283 @@ class StkAccessHelper(object):
     def Graphics(self, oGraphics: "IStkAccessGraphics"):
         Assert.assertIsNotNone(oGraphics)
         # Inherit (true)
-        self.m_logger.WriteLine4("\tThe current Inherit is: {0}", oGraphics.Inherit)
-        oGraphics.Inherit = True
-        self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.Inherit)
-        Assert.assertTrue(oGraphics.Inherit)
+        self.m_logger.WriteLine4("\tThe current Inherit is: {0}", oGraphics.inherit)
+        oGraphics.inherit = True
+        self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.inherit)
+        Assert.assertTrue(oGraphics.inherit)
 
         def action19():
-            oGraphics.AnimateGfx = True
+            oGraphics.animate_gfx = True
 
         # AnimateGfx (readonly)
         TryCatchAssertBlock.DoAssert("", action19)
 
         def action20():
-            oGraphics.LineVisible = True
+            oGraphics.line_visible = True
 
         # LineVisible (readonly)
         TryCatchAssertBlock.DoAssert("", action20)
 
         def action21():
-            oGraphics.StaticGfx = True
+            oGraphics.static_gfx = True
 
         # StaticGfx (readonly)
         TryCatchAssertBlock.DoAssert("", action21)
 
         def action22():
-            oGraphics.LineWidth = 2
+            oGraphics.line_width = 2
 
         # LineWidth (readonly)
         TryCatchAssertBlock.DoAssert("", action22)
-        # Inherit (false)
-        oGraphics.Inherit = False
-        self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.Inherit)
-        Assert.assertFalse(oGraphics.Inherit)
-        # AnimateGfx
-        self.m_logger.WriteLine4("\tThe current AnimateGfx is: {0}", oGraphics.AnimateGfx)
-        oGraphics.AnimateGfx = True
-        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.AnimateGfx)
-        Assert.assertTrue(oGraphics.AnimateGfx)
-        oGraphics.AnimateGfx = False
-        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.AnimateGfx)
-        Assert.assertFalse(oGraphics.AnimateGfx)
-        # LineVisible
-        self.m_logger.WriteLine4("\tThe current LineVisible is: {0}", oGraphics.LineVisible)
-        oGraphics.LineVisible = True
-        self.m_logger.WriteLine4("\tThe new LineVisible is: {0}", oGraphics.LineVisible)
-        Assert.assertTrue(oGraphics.LineVisible)
-        oGraphics.LineVisible = False
-        self.m_logger.WriteLine4("\tThe new LineVisible is: {0}", oGraphics.LineVisible)
-        Assert.assertFalse(oGraphics.LineVisible)
 
         def action23():
-            oGraphics.LineWidth = 2
+            oGraphics.line_style = "Dashed"
+
+        # LineStyle (readonly)
+        TryCatchAssertBlock.DoAssert("", action23)
+        # Inherit (false)
+        oGraphics.inherit = False
+        self.m_logger.WriteLine4("\tThe new Inherit is: {0}", oGraphics.inherit)
+        Assert.assertFalse(oGraphics.inherit)
+        # AnimateGfx
+        self.m_logger.WriteLine4("\tThe current AnimateGfx is: {0}", oGraphics.animate_gfx)
+        oGraphics.animate_gfx = True
+        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_gfx)
+        Assert.assertTrue(oGraphics.animate_gfx)
+        oGraphics.animate_gfx = False
+        self.m_logger.WriteLine4("\tThe new AnimateGfx is: {0}", oGraphics.animate_gfx)
+        Assert.assertFalse(oGraphics.animate_gfx)
+        # LineVisible
+        self.m_logger.WriteLine4("\tThe current LineVisible is: {0}", oGraphics.line_visible)
+        oGraphics.line_visible = True
+        self.m_logger.WriteLine4("\tThe new LineVisible is: {0}", oGraphics.line_visible)
+        Assert.assertTrue(oGraphics.line_visible)
+        oGraphics.line_visible = False
+        self.m_logger.WriteLine4("\tThe new LineVisible is: {0}", oGraphics.line_visible)
+        Assert.assertFalse(oGraphics.line_visible)
+
+        def action24():
+            oGraphics.line_width = 2
 
         # LineWidth
         # LineVisible is false so LineWidth can't be set (readonly)
-        TryCatchAssertBlock.DoAssert("", action23)
-        oGraphics.LineVisible = True
-        self.m_logger.WriteLine3("\tThe current LineWidth is: {0}", oGraphics.LineWidth)
-        oGraphics.LineWidth = 2
-        self.m_logger.WriteLine3("\tThe new LineWidth is: {0}", oGraphics.LineWidth)
-        Assert.assertTrue((oGraphics.LineWidth == 2))
-        oGraphics.LineWidth = 1
-        self.m_logger.WriteLine3("\tThe new LineWidth is: {0}", oGraphics.LineWidth)
-        Assert.assertTrue((oGraphics.LineWidth == 1))
+        TryCatchAssertBlock.DoAssert("", action24)
+        oGraphics.line_visible = True
+        self.m_logger.WriteLine3("\tThe current LineWidth is: {0}", oGraphics.line_width)
+        oGraphics.line_width = 2
+        self.m_logger.WriteLine3("\tThe new LineWidth is: {0}", oGraphics.line_width)
+        Assert.assertTrue((oGraphics.line_width == 2))
+        oGraphics.line_width = 1
+        self.m_logger.WriteLine3("\tThe new LineWidth is: {0}", oGraphics.line_width)
+        Assert.assertTrue((oGraphics.line_width == 1))
         # Restore LineVisible (false)
-        oGraphics.LineVisible = False
+        oGraphics.line_visible = False
+
+        def action25():
+            oGraphics.line_style = "Dashed"
+
+        # LineStyle
+        # LineVisible is false so LineStyle can't be set (readonly)
+        TryCatchAssertBlock.DoAssert("", action25)
+        oGraphics.line_visible = True
+        self.m_logger.WriteLine5("\tThe current LineStyle is: {0}", oGraphics.line_style)
+        oGraphics.line_style = "Dashed"
+        self.m_logger.WriteLine5("\tThe new LineStyle is: {0}", oGraphics.line_style)
+        Assert.assertEqual(oGraphics.line_style, "Dashed")
+        oGraphics.line_style = "Solid"
+        self.m_logger.WriteLine5("\tThe new LineStyle is: {0}", oGraphics.line_style)
+        Assert.assertEqual(oGraphics.line_style, "Solid")
+        # Restore LineVisible (false)
+        oGraphics.line_visible = False
 
         # StaticGfx
-        self.m_logger.WriteLine4("\tThe current StaticGfx is: {0}", oGraphics.StaticGfx)
-        oGraphics.StaticGfx = True
-        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.StaticGfx)
-        Assert.assertTrue(oGraphics.StaticGfx)
-        oGraphics.StaticGfx = False
-        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.StaticGfx)
-        Assert.assertFalse(oGraphics.StaticGfx)
+        self.m_logger.WriteLine4("\tThe current StaticGfx is: {0}", oGraphics.static_gfx)
+        oGraphics.static_gfx = True
+        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_gfx)
+        Assert.assertTrue(oGraphics.static_gfx)
+        oGraphics.static_gfx = False
+        self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_gfx)
+        Assert.assertFalse(oGraphics.static_gfx)
 
     # endregion
 
     # region Advanced
     def Advanced(self, oAccess: "IStkAccess"):
-        oAdvanced: "IStkAccessAdvanced" = oAccess.Advanced
+        oAdvanced: "IStkAccessAdvanced" = oAccess.advanced
         Assert.assertIsNotNone(oAdvanced)
 
         # Event Detection
-        oAdvanced.UsePreciseEventTimes = True
-        Assert.assertTrue(oAdvanced.UsePreciseEventTimes)
+        oAdvanced.use_precise_event_times = True
+        Assert.assertTrue(oAdvanced.use_precise_event_times)
 
-        oAdvanced.TimeConvergence = 0.123
-        Assert.assertEqual(0.123, oAdvanced.TimeConvergence)
-        oAdvanced.RelativeTolerance = 0.456
-        Assert.assertEqual(0.456, oAdvanced.RelativeTolerance)
-        oAdvanced.AbsoluteTolerance = 0.789
-        Assert.assertEqual(0.789, oAdvanced.AbsoluteTolerance)
+        oAdvanced.time_convergence = 0.123
+        Assert.assertEqual(0.123, oAdvanced.time_convergence)
+        oAdvanced.relative_tolerance = 0.456
+        Assert.assertEqual(0.456, oAdvanced.relative_tolerance)
+        oAdvanced.absolute_tolerance = 0.789
+        Assert.assertEqual(0.789, oAdvanced.absolute_tolerance)
 
-        oAdvanced.UsePreciseEventTimes = False  # Use Samples Only
-        Assert.assertFalse(oAdvanced.UsePreciseEventTimes)
-
-        def action24():
-            oAdvanced.TimeConvergence = 0.123
-
-        TryCatchAssertBlock.ExpectedException("read only", action24)
-
-        def action25():
-            oAdvanced.RelativeTolerance = 0.456
-
-        TryCatchAssertBlock.ExpectedException("read-only", action25)
+        oAdvanced.use_precise_event_times = False  # Use Samples Only
+        Assert.assertFalse(oAdvanced.use_precise_event_times)
 
         def action26():
-            oAdvanced.AbsoluteTolerance = 0.789
+            oAdvanced.time_convergence = 0.123
 
-        TryCatchAssertBlock.ExpectedException("read-only", action26)
-
-        # Light Time Delay
-        oAdvanced.EnableLightTimeDelay = False
-        Assert.assertFalse(oAdvanced.EnableLightTimeDelay)
+        TryCatchAssertBlock.ExpectedException("read only", action26)
 
         def action27():
-            oAdvanced.TimeLightDelayConvergence = 0.01234
+            oAdvanced.relative_tolerance = 0.456
 
-        TryCatchAssertBlock.ExpectedException("read only", action27)
+        TryCatchAssertBlock.ExpectedException("read-only", action27)
 
         def action28():
-            oAdvanced.AberrationType = AgEAberrationType.eAberrationAnnual
+            oAdvanced.absolute_tolerance = 0.789
 
         TryCatchAssertBlock.ExpectedException("read-only", action28)
 
-        def action29():
-            oAdvanced.UseDefaultClockHostAndSignalSense = False
+        # Light Time Delay
+        oAdvanced.enable_light_time_delay = False
+        Assert.assertFalse(oAdvanced.enable_light_time_delay)
 
-        TryCatchAssertBlock.ExpectedException("read-only", action29)
+        def action29():
+            oAdvanced.time_light_delay_convergence = 0.01234
+
+        TryCatchAssertBlock.ExpectedException("read only", action29)
 
         def action30():
-            oAdvanced.ClockHost = AgEIvClockHost.eIvBase
+            oAdvanced.aberration_type = AgEAberrationType.eAberrationAnnual
 
         TryCatchAssertBlock.ExpectedException("read-only", action30)
 
         def action31():
-            oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTransmit
+            oAdvanced.use_default_clock_host_and_signal_sense = False
 
         TryCatchAssertBlock.ExpectedException("read-only", action31)
 
-        oAdvanced.EnableLightTimeDelay = True
-        Assert.assertTrue(oAdvanced.EnableLightTimeDelay)
-
-        oAdvanced.TimeLightDelayConvergence = 0.0123
-        Assert.assertEqual(0.0123, oAdvanced.TimeLightDelayConvergence)
-
         def action32():
-            oAdvanced.TimeLightDelayConvergence = 12.34
+            oAdvanced.clock_host = AgEIvClockHost.eIvBase
 
-        TryCatchAssertBlock.ExpectedException("", action32)
-
-        oAdvanced.AberrationType = AgEAberrationType.eAberrationAnnual
-        Assert.assertEqual(AgEAberrationType.eAberrationAnnual, oAdvanced.AberrationType)
-        oAdvanced.AberrationType = AgEAberrationType.eAberrationNone
-        Assert.assertEqual(AgEAberrationType.eAberrationNone, oAdvanced.AberrationType)
-        oAdvanced.AberrationType = AgEAberrationType.eAberrationTotal
-        Assert.assertEqual(AgEAberrationType.eAberrationTotal, oAdvanced.AberrationType)
+        TryCatchAssertBlock.ExpectedException("read-only", action32)
 
         def action33():
-            oAdvanced.AberrationType = AgEAberrationType.eAberrationUnknown
+            oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
 
-        TryCatchAssertBlock.ExpectedException("", action33)
+        TryCatchAssertBlock.ExpectedException("read-only", action33)
 
-        # Signal Path
-        oAdvanced.UseDefaultClockHostAndSignalSense = True
-        Assert.assertTrue(oAdvanced.UseDefaultClockHostAndSignalSense)
+        oAdvanced.enable_light_time_delay = True
+        Assert.assertTrue(oAdvanced.enable_light_time_delay)
+
+        oAdvanced.time_light_delay_convergence = 0.0123
+        Assert.assertEqual(0.0123, oAdvanced.time_light_delay_convergence)
 
         def action34():
-            oAdvanced.ClockHost = AgEIvClockHost.eIvBase
+            oAdvanced.time_light_delay_convergence = 12.34
 
-        TryCatchAssertBlock.ExpectedException("read-only", action34)
+        TryCatchAssertBlock.ExpectedException("", action34)
+
+        oAdvanced.aberration_type = AgEAberrationType.eAberrationAnnual
+        Assert.assertEqual(AgEAberrationType.eAberrationAnnual, oAdvanced.aberration_type)
+        oAdvanced.aberration_type = AgEAberrationType.eAberrationNone
+        Assert.assertEqual(AgEAberrationType.eAberrationNone, oAdvanced.aberration_type)
+        oAdvanced.aberration_type = AgEAberrationType.eAberrationTotal
+        Assert.assertEqual(AgEAberrationType.eAberrationTotal, oAdvanced.aberration_type)
 
         def action35():
-            oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTransmit
+            oAdvanced.aberration_type = AgEAberrationType.eAberrationUnknown
 
-        TryCatchAssertBlock.ExpectedException("read-only", action35)
+        TryCatchAssertBlock.ExpectedException("", action35)
 
-        oAdvanced.UseDefaultClockHostAndSignalSense = False
-        Assert.assertFalse(oAdvanced.UseDefaultClockHostAndSignalSense)
-
-        oAdvanced.ClockHost = AgEIvClockHost.eIvBase
-        Assert.assertEqual(AgEIvClockHost.eIvBase, oAdvanced.ClockHost)
-        oAdvanced.ClockHost = AgEIvClockHost.eIvTarget
-        Assert.assertEqual(AgEIvClockHost.eIvTarget, oAdvanced.ClockHost)
+        # Signal Path
+        oAdvanced.use_default_clock_host_and_signal_sense = True
+        Assert.assertTrue(oAdvanced.use_default_clock_host_and_signal_sense)
 
         def action36():
-            oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTimeSenseUnknown
+            oAdvanced.clock_host = AgEIvClockHost.eIvBase
 
-        TryCatchAssertBlock.ExpectedException("must be in", action36)
-        oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvTransmit
-        Assert.assertEqual(AgEIvTimeSense.eIvTransmit, oAdvanced.SignalSenseOfClockHost)
-        oAdvanced.SignalSenseOfClockHost = AgEIvTimeSense.eIvReceive
-        Assert.assertEqual(AgEIvTimeSense.eIvReceive, oAdvanced.SignalSenseOfClockHost)
-
-        # Step Size Control
-        oAdvanced.UseFixedTimeStep = False  # Adaptive
-        Assert.assertFalse(oAdvanced.UseFixedTimeStep)
-
-        oAdvanced.MaxTimeStep = 123.456
-        Assert.assertEqual(123.456, oAdvanced.MaxTimeStep)
+        TryCatchAssertBlock.ExpectedException("read-only", action36)
 
         def action37():
-            oAdvanced.MaxTimeStep = 0
+            oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
 
-        TryCatchAssertBlock.ExpectedException("invalid", action37)
+        TryCatchAssertBlock.ExpectedException("read-only", action37)
 
-        oAdvanced.MinTimeStep = 456.123
-        Assert.assertEqual(456.123, oAdvanced.MinTimeStep)
+        oAdvanced.use_default_clock_host_and_signal_sense = False
+        Assert.assertFalse(oAdvanced.use_default_clock_host_and_signal_sense)
+
+        oAdvanced.clock_host = AgEIvClockHost.eIvBase
+        Assert.assertEqual(AgEIvClockHost.eIvBase, oAdvanced.clock_host)
+        oAdvanced.clock_host = AgEIvClockHost.eIvTarget
+        Assert.assertEqual(AgEIvClockHost.eIvTarget, oAdvanced.clock_host)
 
         def action38():
-            oAdvanced.MinTimeStep = 0
+            oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTimeSenseUnknown
 
-        TryCatchAssertBlock.ExpectedException("invalid", action38)
+        TryCatchAssertBlock.ExpectedException("must be in", action38)
+        oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
+        Assert.assertEqual(AgEIvTimeSense.eIvTransmit, oAdvanced.signal_sense_of_clock_host)
+        oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvReceive
+        Assert.assertEqual(AgEIvTimeSense.eIvReceive, oAdvanced.signal_sense_of_clock_host)
+
+        # Step Size Control
+        oAdvanced.use_fixed_time_step = False  # Adaptive
+        Assert.assertFalse(oAdvanced.use_fixed_time_step)
+
+        oAdvanced.max_time_step = 123.456
+        Assert.assertEqual(123.456, oAdvanced.max_time_step)
 
         def action39():
-            oAdvanced.FixedStepSize = 789
+            oAdvanced.max_time_step = 0
 
-        TryCatchAssertBlock.ExpectedException("read only", action39)
+        TryCatchAssertBlock.ExpectedException("invalid", action39)
+
+        oAdvanced.min_time_step = 456.123
+        Assert.assertEqual(456.123, oAdvanced.min_time_step)
 
         def action40():
-            oAdvanced.FixedTimeBound = 789
+            oAdvanced.min_time_step = 0
 
-        TryCatchAssertBlock.ExpectedException("read only", action40)
-
-        oAdvanced.UseFixedTimeStep = True  # Fixed Step
-        Assert.assertTrue(oAdvanced.UseFixedTimeStep)
-
-        oAdvanced.FixedStepSize = 123.456
-        Assert.assertEqual(123.456, oAdvanced.FixedStepSize)
+        TryCatchAssertBlock.ExpectedException("invalid", action40)
 
         def action41():
-            oAdvanced.FixedStepSize = 0
+            oAdvanced.fixed_step_size = 789
 
-        TryCatchAssertBlock.ExpectedException("invalid", action41)
-
-        oAdvanced.FixedTimeBound = 56.123
-        Assert.assertEqual(56.123, oAdvanced.FixedTimeBound)
+        TryCatchAssertBlock.ExpectedException("read only", action41)
 
         def action42():
-            oAdvanced.FixedTimeBound = 0
+            oAdvanced.fixed_time_bound = 789
 
-        TryCatchAssertBlock.ExpectedException("invalid", action42)
+        TryCatchAssertBlock.ExpectedException("read only", action42)
+
+        oAdvanced.use_fixed_time_step = True  # Fixed Step
+        Assert.assertTrue(oAdvanced.use_fixed_time_step)
+
+        oAdvanced.fixed_step_size = 123.456
+        Assert.assertEqual(123.456, oAdvanced.fixed_step_size)
 
         def action43():
-            oAdvanced.MaxTimeStep = 123.456
+            oAdvanced.fixed_step_size = 0
 
-        TryCatchAssertBlock.ExpectedException("read only", action43)
+        TryCatchAssertBlock.ExpectedException("invalid", action43)
+
+        oAdvanced.fixed_time_bound = 56.123
+        Assert.assertEqual(56.123, oAdvanced.fixed_time_bound)
 
         def action44():
-            oAdvanced.MinTimeStep = 56.123
+            oAdvanced.fixed_time_bound = 0
 
-        TryCatchAssertBlock.ExpectedException("read only", action44)
+        TryCatchAssertBlock.ExpectedException("invalid", action44)
 
-        oAccess.ComputeAccess()  # to make changes show in GUI
+        def action45():
+            oAdvanced.max_time_step = 123.456
+
+        TryCatchAssertBlock.ExpectedException("read only", action45)
+
+        def action46():
+            oAdvanced.min_time_step = 56.123
+
+        TryCatchAssertBlock.ExpectedException("read only", action46)
+
+        oAccess.compute_access()  # to make changes show in GUI
 
 
 # endregion
@@ -1263,36 +1287,36 @@ class VODataDisplayHelper(object):
         # save IsChain flag
         self.m_bIsChain = bIsChain
         # Count
-        iSize: int = oDataCollection.Count
+        iSize: int = oDataCollection.count
         self.m_logger.WriteLine3("The current Data Display collection contains: {0} elements.", iSize)
 
         iIndex: int = 0
         while iIndex < iSize:
-            self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oDataCollection[iIndex].Name)
+            self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oDataCollection[iIndex].name)
 
             iIndex += 1
 
-        if oDataCollection.Count > 0:
-            oDataCollection.RemoveAt(0)
+        if oDataCollection.count > 0:
+            oDataCollection.remove_at(0)
             self.m_logger.WriteLine3(
-                "After Remove(0) the Data Display collection contains: {0} elements.", oDataCollection.Count
+                "After Remove(0) the Data Display collection contains: {0} elements.", oDataCollection.count
             )
 
             iIndex: int = 0
-            while iIndex < oDataCollection.Count:
-                self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oDataCollection[iIndex].Name)
+            while iIndex < oDataCollection.count:
+                self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oDataCollection[iIndex].name)
 
                 iIndex += 1
 
-            Assert.assertEqual((iSize - 1), oDataCollection.Count)
+            Assert.assertEqual((iSize - 1), oDataCollection.count)
 
-        oDataCollection.RemoveAll()
+        oDataCollection.remove_all()
         self.m_logger.WriteLine3(
-            "After RemoveAll() the Data Display collection contains: {0} elements.", oDataCollection.Count
+            "After RemoveAll() the Data Display collection contains: {0} elements.", oDataCollection.count
         )
-        Assert.assertEqual(0, oDataCollection.Count)
+        Assert.assertEqual(0, oDataCollection.count)
 
-        arAvailable = oDataCollection.AvailableData
+        arAvailable = oDataCollection.available_data
         self.m_logger.WriteLine3("Available Data list contains: {0} elements", Array.Length(arAvailable))
 
         iIndex: int = 0
@@ -1301,57 +1325,57 @@ class VODataDisplayHelper(object):
 
             iIndex += 1
 
-        self.m_oRoot.BeginUpdate()
-        self.m_logger.WriteLine3("The current Data Display collection contains: {0} elements.", oDataCollection.Count)
+        self.m_oRoot.begin_update()
+        self.m_logger.WriteLine3("The current Data Display collection contains: {0} elements.", oDataCollection.count)
 
         iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
             oDataDisp: "IVODataDisplayElement" = None
             strAvailable: str = str(arAvailable[iIndex])
-            if oDataCollection.IsPreDataRequired(strAvailable):
+            if oDataCollection.is_pre_data_required(strAvailable):
                 preData: str = "Missile/Missile1"
                 if strAvailable.startswith("Crdn") or ("EphemerisChooseAxes" == strAvailable):
                     preData = "Satellite/Satellite1 Body Axes"
 
-                oDataDisp = oDataCollection.AddDataDisplayRequiringPreData(strAvailable, preData)
+                oDataDisp = oDataCollection.add_data_display_requiring_pre_data(strAvailable, preData)
                 Assert.assertIsNotNone(oDataDisp)
-                self.m_logger.WriteLine7("\tAdded element: {0} (with PreData - {1})", oDataDisp.Name, preData)
+                self.m_logger.WriteLine7("\tAdded element: {0} (with PreData - {1})", oDataDisp.name, preData)
                 break
 
-            if (not oDataCollection.IsPreDataRequired(strAvailable)) and (oDataCollection.Count == 0):
-                oDataDisp = oDataCollection.Add(strAvailable)
+            if (not oDataCollection.is_pre_data_required(strAvailable)) and (oDataCollection.count == 0):
+                oDataDisp = oDataCollection.add(strAvailable)
                 Assert.assertIsNotNone(oDataDisp)
-                self.m_logger.WriteLine5("\tAdded element: {0}", oDataDisp.Name)
+                self.m_logger.WriteLine5("\tAdded element: {0}", oDataDisp.name)
 
             iIndex += 1
 
         # Count
-        iSize = oDataCollection.Count
+        iSize = oDataCollection.count
         self.m_logger.WriteLine3("The new Data Display collection contains: {0} elements.", iSize)
-        oElement: "IVODataDisplayElement"
-        for oElement in oDataCollection:
-            self.m_logger.WriteLine5("\tElement: {0}", oElement.Name)
+        dataDisplayElement: "IVODataDisplayElement"
+        for dataDisplayElement in oDataCollection:
+            self.m_logger.WriteLine5("\tElement: {0}", dataDisplayElement.name)
 
-            self.ElementTest(oElement)
+            self.ElementTest(dataDisplayElement)
 
-        self.m_oRoot.EndUpdate()
-        if oDataCollection.Count > 0:
+        self.m_oRoot.end_update()
+        if oDataCollection.count > 0:
             # RemoveAt
-            oDataCollection.RemoveAt(0)
+            oDataCollection.remove_at(0)
             self.m_logger.WriteLine3(
-                "After Remove(0) the Data Display collection contains: {0} elements.", oDataCollection.Count
+                "After Remove(0) the Data Display collection contains: {0} elements.", oDataCollection.count
             )
-            Assert.assertEqual((iSize - 1), oDataCollection.Count)
-            oElement: "IVODataDisplayElement"
-            for oElement in oDataCollection:
-                self.m_logger.WriteLine5("\tElement: {0}", oElement.Name)
+            Assert.assertEqual((iSize - 1), oDataCollection.count)
+            dataDisplayElement: "IVODataDisplayElement"
+            for dataDisplayElement in oDataCollection:
+                self.m_logger.WriteLine5("\tElement: {0}", dataDisplayElement.name)
 
         # RemoveAll
-        oDataCollection.RemoveAll()
+        oDataCollection.remove_all()
         self.m_logger.WriteLine3(
-            "After RemoveAll() the Data Display collection contains: {0} elements.", oDataCollection.Count
+            "After RemoveAll() the Data Display collection contains: {0} elements.", oDataCollection.count
         )
-        Assert.assertEqual(0, oDataCollection.Count)
+        Assert.assertEqual(0, oDataCollection.count)
 
         self.m_logger.WriteLine("----- THE VO DATA DISPLAY TEST ----- END -----")
 
@@ -1361,75 +1385,75 @@ class VODataDisplayHelper(object):
     def ElementTest(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # IsVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsVisible flag: {0}", oVODataDisplayElement.IsVisible)
-        oVODataDisplayElement.IsVisible = False
-        self.m_logger.WriteLine4("\t\tNew IsVisible flag: {0}", oVODataDisplayElement.IsVisible)
-        Assert.assertFalse(oVODataDisplayElement.IsVisible)
+        self.m_logger.WriteLine4("\t\tCurrent IsVisible flag: {0}", oVODataDisplayElement.is_visible)
+        oVODataDisplayElement.is_visible = False
+        self.m_logger.WriteLine4("\t\tNew IsVisible flag: {0}", oVODataDisplayElement.is_visible)
+        Assert.assertFalse(oVODataDisplayElement.is_visible)
         self.NotVisibleCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.IsVisible = True
-        self.m_logger.WriteLine4("\t\tNew IsVisible flag: {0}", oVODataDisplayElement.IsVisible)
-        Assert.assertTrue(oVODataDisplayElement.IsVisible)
+        oVODataDisplayElement.is_visible = True
+        self.m_logger.WriteLine4("\t\tNew IsVisible flag: {0}", oVODataDisplayElement.is_visible)
+        Assert.assertTrue(oVODataDisplayElement.is_visible)
         self.VisibleCheck(oVODataDisplayElement)
 
-        self.m_logger.WriteLine4("\t\tCurrent UseBackground flag: {0}", oVODataDisplayElement.UseBackground)
-        oVODataDisplayElement.UseBackground = False
-        self.m_logger.WriteLine4("\t\tNew UseBackground flag: {0}", oVODataDisplayElement.UseBackground)
-        Assert.assertFalse(oVODataDisplayElement.UseBackground)
+        self.m_logger.WriteLine4("\t\tCurrent UseBackground flag: {0}", oVODataDisplayElement.use_background)
+        oVODataDisplayElement.use_background = False
+        self.m_logger.WriteLine4("\t\tNew UseBackground flag: {0}", oVODataDisplayElement.use_background)
+        Assert.assertFalse(oVODataDisplayElement.use_background)
         self.NotUseBackgroundCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.UseBackground = True
-        self.m_logger.WriteLine4("\t\tNew UseBackground flag: {0}", oVODataDisplayElement.UseBackground)
-        Assert.assertTrue(oVODataDisplayElement.UseBackground)
+        oVODataDisplayElement.use_background = True
+        self.m_logger.WriteLine4("\t\tNew UseBackground flag: {0}", oVODataDisplayElement.use_background)
+        Assert.assertTrue(oVODataDisplayElement.use_background)
         self.UseBackgroundCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.UseAutoSizeWidth = False
-        oVODataDisplayElement.UseAutoSizeHeight = False
-        self.m_logger.WriteLine4("\t\tNew UseAutoSizeWidth flag: {0}", oVODataDisplayElement.UseAutoSizeWidth)
-        self.m_logger.WriteLine4("\t\tNew UseAutoSizeHeight flag: {0}", oVODataDisplayElement.UseAutoSizeHeight)
-        Assert.assertFalse(oVODataDisplayElement.UseAutoSizeWidth)
-        Assert.assertFalse(oVODataDisplayElement.UseAutoSizeHeight)
+        oVODataDisplayElement.use_auto_size_width = False
+        oVODataDisplayElement.use_auto_size_height = False
+        self.m_logger.WriteLine4("\t\tNew UseAutoSizeWidth flag: {0}", oVODataDisplayElement.use_auto_size_width)
+        self.m_logger.WriteLine4("\t\tNew UseAutoSizeHeight flag: {0}", oVODataDisplayElement.use_auto_size_height)
+        Assert.assertFalse(oVODataDisplayElement.use_auto_size_width)
+        Assert.assertFalse(oVODataDisplayElement.use_auto_size_height)
         self.NotUseAutoSizeCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.UseAutoSizeWidth = True
-        oVODataDisplayElement.UseAutoSizeHeight = True
-        self.m_logger.WriteLine4("\t\tNew UseAutoSizeWidth flag: {0}", oVODataDisplayElement.UseAutoSizeWidth)
-        self.m_logger.WriteLine4("\t\tNew UseAutoSizeHeight flag: {0}", oVODataDisplayElement.UseAutoSizeHeight)
-        Assert.assertTrue(oVODataDisplayElement.UseAutoSizeWidth)
-        Assert.assertTrue(oVODataDisplayElement.UseAutoSizeHeight)
+        oVODataDisplayElement.use_auto_size_width = True
+        oVODataDisplayElement.use_auto_size_height = True
+        self.m_logger.WriteLine4("\t\tNew UseAutoSizeWidth flag: {0}", oVODataDisplayElement.use_auto_size_width)
+        self.m_logger.WriteLine4("\t\tNew UseAutoSizeHeight flag: {0}", oVODataDisplayElement.use_auto_size_height)
+        Assert.assertTrue(oVODataDisplayElement.use_auto_size_width)
+        Assert.assertTrue(oVODataDisplayElement.use_auto_size_height)
         self.UseAutoSizeCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.UseBackgroundBorder = False
-        self.m_logger.WriteLine4("\t\tNew UseBackgroundBorder flag: {0}", oVODataDisplayElement.UseBackgroundBorder)
-        Assert.assertFalse(oVODataDisplayElement.UseBackgroundBorder)
+        oVODataDisplayElement.use_background_border = False
+        self.m_logger.WriteLine4("\t\tNew UseBackgroundBorder flag: {0}", oVODataDisplayElement.use_background_border)
+        Assert.assertFalse(oVODataDisplayElement.use_background_border)
         self.NotUseBackgroundBorderCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.UseBackgroundBorder = True
-        self.m_logger.WriteLine4("\t\tNew UseBackgroundBorder flag: {0}", oVODataDisplayElement.UseBackgroundBorder)
-        Assert.assertTrue(oVODataDisplayElement.UseBackgroundBorder)
+        oVODataDisplayElement.use_background_border = True
+        self.m_logger.WriteLine4("\t\tNew UseBackgroundBorder flag: {0}", oVODataDisplayElement.use_background_border)
+        Assert.assertTrue(oVODataDisplayElement.use_background_border)
         self.UseBackgroundBorderCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.UseBackgroundTexture = False
-        self.m_logger.WriteLine4("\t\tNew UseBackgroundTexture flag: {0}", oVODataDisplayElement.UseBackgroundTexture)
-        Assert.assertFalse(oVODataDisplayElement.UseBackgroundTexture)
+        oVODataDisplayElement.use_background_texture = False
+        self.m_logger.WriteLine4("\t\tNew UseBackgroundTexture flag: {0}", oVODataDisplayElement.use_background_texture)
+        Assert.assertFalse(oVODataDisplayElement.use_background_texture)
         self.NotUseBackgroundTextureCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.UseBackgroundTexture = True
-        self.m_logger.WriteLine4("\t\tNew UseBackgroundTexture flag: {0}", oVODataDisplayElement.UseBackgroundTexture)
-        Assert.assertTrue(oVODataDisplayElement.UseBackgroundTexture)
+        oVODataDisplayElement.use_background_texture = True
+        self.m_logger.WriteLine4("\t\tNew UseBackgroundTexture flag: {0}", oVODataDisplayElement.use_background_texture)
+        Assert.assertTrue(oVODataDisplayElement.use_background_texture)
         self.UseBackgroundTextureCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.Title = False
-        self.m_logger.WriteLine4("\t\tNew Title flag: {0}", oVODataDisplayElement.Title)
-        Assert.assertFalse(oVODataDisplayElement.Title)
+        oVODataDisplayElement.title = False
+        self.m_logger.WriteLine4("\t\tNew Title flag: {0}", oVODataDisplayElement.title)
+        Assert.assertFalse(oVODataDisplayElement.title)
         self.NotUseTitleCheck(oVODataDisplayElement)
 
-        oVODataDisplayElement.Title = True
-        self.m_logger.WriteLine4("\t\tNew Title flag: {0}", oVODataDisplayElement.Title)
-        Assert.assertTrue(oVODataDisplayElement.Title)
+        oVODataDisplayElement.title = True
+        self.m_logger.WriteLine4("\t\tNew Title flag: {0}", oVODataDisplayElement.title)
+        Assert.assertTrue(oVODataDisplayElement.title)
         self.UseTitleCheck(oVODataDisplayElement)
 
-        arAvailableWindows = oVODataDisplayElement.AvailableWindows
+        arAvailableWindows = oVODataDisplayElement.available_windows
         self.m_logger.WriteLine3("\t\tAvailable {0} Windows:", Array.Length(arAvailableWindows))
 
         i: int = 0
@@ -1442,20 +1466,20 @@ class VODataDisplayHelper(object):
 
         sAll: str = "All"
         sTitle: str = clr.Convert(arAvailableWindows[1], str)
-        Assert.assertEqual(True, oVODataDisplayElement.IsDisplayedInWindow(sAll))
-        Assert.assertEqual(False, oVODataDisplayElement.IsDisplayedInWindow(sTitle))
-        oVODataDisplayElement.AddToWindow(sTitle)
-        Assert.assertEqual(False, oVODataDisplayElement.IsDisplayedInWindow(sAll))
-        Assert.assertEqual(True, oVODataDisplayElement.IsDisplayedInWindow(sTitle))
-        oVODataDisplayElement.RemoveFromWindow(sTitle)
-        Assert.assertEqual(True, oVODataDisplayElement.IsDisplayedInWindow(sAll))
-        Assert.assertEqual(False, oVODataDisplayElement.IsDisplayedInWindow(sTitle))
-        oVODataDisplayElement.AddToWindow(sTitle)
-        Assert.assertEqual(False, oVODataDisplayElement.IsDisplayedInWindow(sAll))
-        Assert.assertEqual(True, oVODataDisplayElement.IsDisplayedInWindow(sTitle))
-        oVODataDisplayElement.AddToAllWindows()
-        Assert.assertEqual(True, oVODataDisplayElement.IsDisplayedInWindow(sAll))
-        Assert.assertEqual(False, oVODataDisplayElement.IsDisplayedInWindow(sTitle))
+        Assert.assertEqual(True, oVODataDisplayElement.is_displayed_in_window(sAll))
+        Assert.assertEqual(False, oVODataDisplayElement.is_displayed_in_window(sTitle))
+        oVODataDisplayElement.add_to_window(sTitle)
+        Assert.assertEqual(False, oVODataDisplayElement.is_displayed_in_window(sAll))
+        Assert.assertEqual(True, oVODataDisplayElement.is_displayed_in_window(sTitle))
+        oVODataDisplayElement.remove_from_window(sTitle)
+        Assert.assertEqual(True, oVODataDisplayElement.is_displayed_in_window(sAll))
+        Assert.assertEqual(False, oVODataDisplayElement.is_displayed_in_window(sTitle))
+        oVODataDisplayElement.add_to_window(sTitle)
+        Assert.assertEqual(False, oVODataDisplayElement.is_displayed_in_window(sAll))
+        Assert.assertEqual(True, oVODataDisplayElement.is_displayed_in_window(sTitle))
+        oVODataDisplayElement.add_to_all_windows()
+        Assert.assertEqual(True, oVODataDisplayElement.is_displayed_in_window(sAll))
+        Assert.assertEqual(False, oVODataDisplayElement.is_displayed_in_window(sTitle))
 
     # endregion
 
@@ -1463,89 +1487,89 @@ class VODataDisplayHelper(object):
     def NotVisibleCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
-        def action45():
-            oVODataDisplayElement.Location = AgEVOLocation.e3DWindow
+        def action47():
+            oVODataDisplayElement.location = AgEVOLocation.e3DWindow
 
         # Location
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action45)
-
-        def action46():
-            oVODataDisplayElement.FontColor = Color.FromArgb(11254443)
-
-        # FontColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action46)
-
-        def action47():
-            oVODataDisplayElement.XOrigin = AgEVOXOrigin.eXOriginLeft
-
-        # XOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action47)
 
         def action48():
-            oVODataDisplayElement.YOrigin = AgEVOYOrigin.eYOriginBottom
+            oVODataDisplayElement.font_color = Color.FromArgb(11254443)
 
-        # YOrigin
+        # FontColor
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action48)
 
         def action49():
-            oVODataDisplayElement.X = 12
+            oVODataDisplayElement.x_origin = AgEVOXOrigin.eXOriginLeft
 
-        # X
+        # XOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action49)
 
         def action50():
-            oVODataDisplayElement.Y = 21
+            oVODataDisplayElement.y_origin = AgEVOYOrigin.eYOriginBottom
 
-        # Y
+        # YOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action50)
 
         def action51():
-            oVODataDisplayElement.Title = True
+            oVODataDisplayElement.x = 12
 
-        # Title
+        # X
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action51)
 
         def action52():
-            oVODataDisplayElement.FontSize = AgEVOFontSize.eSmall
+            oVODataDisplayElement.y = 21
 
-        # FontSize
+        # Y
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action52)
 
         def action53():
-            oVODataDisplayElement.Format = AgEVOFormat.eHorizontal
+            oVODataDisplayElement.title = True
 
-        # Format
+        # Title
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action53)
 
         def action54():
-            oVODataDisplayElement.UseBackground = True
+            oVODataDisplayElement.font_size = AgEVOFontSize.eSmall
 
-        # UseBackground
+        # FontSize
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action54)
 
         def action55():
-            oVODataDisplayElement.TransparentBg = True
+            oVODataDisplayElement.format = AgEVOFormat.eHorizontal
 
-        # TransparentBg
+        # Format
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action55)
 
         def action56():
-            oVODataDisplayElement.BgWidth = 34
+            oVODataDisplayElement.use_background = True
 
-        # BgWidth
+        # UseBackground
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action56)
 
         def action57():
-            oVODataDisplayElement.BgHeight = 43
+            oVODataDisplayElement.transparent_bg = True
 
-        # BgHeight
+        # TransparentBg
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action57)
 
         def action58():
-            oVODataDisplayElement.BgColor = Color.FromArgb(13491405)
+            oVODataDisplayElement.bg_width = 34
+
+        # BgWidth
+        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action58)
+
+        def action59():
+            oVODataDisplayElement.bg_height = 43
+
+        # BgHeight
+        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action59)
+
+        def action60():
+            oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
 
         # BgColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action58)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action60)
 
     # endregion
 
@@ -1553,98 +1577,98 @@ class VODataDisplayHelper(object):
     def VisibleCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # Location
-        self.m_logger.WriteLine6("\t\t\tThe current Location is: {0}", oVODataDisplayElement.Location)
+        self.m_logger.WriteLine6("\t\t\tThe current Location is: {0}", oVODataDisplayElement.location)
         if self.m_bIsAccessRequired:
-            oVODataDisplayElement.Location = AgEVOLocation.eOffsetFromAccessObject
-            self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.Location)
-            Assert.assertEqual(AgEVOLocation.eOffsetFromAccessObject, oVODataDisplayElement.Location)
+            oVODataDisplayElement.location = AgEVOLocation.eOffsetFromAccessObject
+            self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
+            Assert.assertEqual(AgEVOLocation.eOffsetFromAccessObject, oVODataDisplayElement.location)
 
         else:
 
-            def action59():
-                oVODataDisplayElement.Location = AgEVOLocation.eOffsetFromAccessObject
+            def action61():
+                oVODataDisplayElement.location = AgEVOLocation.eOffsetFromAccessObject
 
-            TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action59)
+            TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action61)
 
         if self.m_bIsChain:
 
-            def action60():
-                oVODataDisplayElement.Location = AgEVOLocation.eOffsetFromObject
+            def action62():
+                oVODataDisplayElement.location = AgEVOLocation.eOffsetFromObject
 
-            TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action60)
+            TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action62)
 
         else:
-            oVODataDisplayElement.Location = AgEVOLocation.eOffsetFromObject
-            self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.Location)
-            Assert.assertEqual(AgEVOLocation.eOffsetFromObject, oVODataDisplayElement.Location)
+            oVODataDisplayElement.location = AgEVOLocation.eOffsetFromObject
+            self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
+            Assert.assertEqual(AgEVOLocation.eOffsetFromObject, oVODataDisplayElement.location)
 
-        oVODataDisplayElement.Location = AgEVOLocation.eDataDisplayArea
-        self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.Location)
-        Assert.assertEqual(AgEVOLocation.eDataDisplayArea, oVODataDisplayElement.Location)
-        oVODataDisplayElement.Location = AgEVOLocation.e3DWindow
-        self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.Location)
-        Assert.assertEqual(AgEVOLocation.e3DWindow, oVODataDisplayElement.Location)
+        oVODataDisplayElement.location = AgEVOLocation.eDataDisplayArea
+        self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
+        Assert.assertEqual(AgEVOLocation.eDataDisplayArea, oVODataDisplayElement.location)
+        oVODataDisplayElement.location = AgEVOLocation.e3DWindow
+        self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
+        Assert.assertEqual(AgEVOLocation.e3DWindow, oVODataDisplayElement.location)
         # Font Color
-        self.m_logger.WriteLine6("\t\t\tThe current Font Color is: {0}", oVODataDisplayElement.FontColor)
-        oVODataDisplayElement.FontColor = Color.FromArgb(65280)
-        self.m_logger.WriteLine6("\t\t\tThe new Font Color is: {0}", oVODataDisplayElement.FontColor)
-        AssertEx.AreEqual(Color.FromArgb(65280), oVODataDisplayElement.FontColor)
+        self.m_logger.WriteLine6("\t\t\tThe current Font Color is: {0}", oVODataDisplayElement.font_color)
+        oVODataDisplayElement.font_color = Color.FromArgb(65280)
+        self.m_logger.WriteLine6("\t\t\tThe new Font Color is: {0}", oVODataDisplayElement.font_color)
+        AssertEx.AreEqual(Color.FromArgb(65280), oVODataDisplayElement.font_color)
         # XOrigin
-        self.m_logger.WriteLine6("\t\t\tThe current X Origin is: {0}", oVODataDisplayElement.XOrigin)
-        oVODataDisplayElement.XOrigin = AgEVOXOrigin.eXOriginLeft
-        self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.XOrigin)
-        Assert.assertEqual(AgEVOXOrigin.eXOriginLeft, oVODataDisplayElement.XOrigin)
-        oVODataDisplayElement.XOrigin = AgEVOXOrigin.eXOriginRight
-        self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.XOrigin)
-        Assert.assertEqual(AgEVOXOrigin.eXOriginRight, oVODataDisplayElement.XOrigin)
+        self.m_logger.WriteLine6("\t\t\tThe current X Origin is: {0}", oVODataDisplayElement.x_origin)
+        oVODataDisplayElement.x_origin = AgEVOXOrigin.eXOriginLeft
+        self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
+        Assert.assertEqual(AgEVOXOrigin.eXOriginLeft, oVODataDisplayElement.x_origin)
+        oVODataDisplayElement.x_origin = AgEVOXOrigin.eXOriginRight
+        self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
+        Assert.assertEqual(AgEVOXOrigin.eXOriginRight, oVODataDisplayElement.x_origin)
         # YOrigin
-        self.m_logger.WriteLine6("\t\t\tThe current Y Origin is: {0}", oVODataDisplayElement.YOrigin)
-        oVODataDisplayElement.YOrigin = AgEVOYOrigin.eYOriginTop
-        self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.YOrigin)
-        Assert.assertEqual(AgEVOYOrigin.eYOriginTop, oVODataDisplayElement.YOrigin)
-        oVODataDisplayElement.YOrigin = AgEVOYOrigin.eYOriginBottom
-        self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.YOrigin)
-        Assert.assertEqual(AgEVOYOrigin.eYOriginBottom, oVODataDisplayElement.YOrigin)
+        self.m_logger.WriteLine6("\t\t\tThe current Y Origin is: {0}", oVODataDisplayElement.y_origin)
+        oVODataDisplayElement.y_origin = AgEVOYOrigin.eYOriginTop
+        self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
+        Assert.assertEqual(AgEVOYOrigin.eYOriginTop, oVODataDisplayElement.y_origin)
+        oVODataDisplayElement.y_origin = AgEVOYOrigin.eYOriginBottom
+        self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
+        Assert.assertEqual(AgEVOYOrigin.eYOriginBottom, oVODataDisplayElement.y_origin)
         # X
-        self.m_logger.WriteLine3("\t\t\tThe current X is: {0}", oVODataDisplayElement.X)
-        oVODataDisplayElement.X = 12
-        self.m_logger.WriteLine3("\t\t\tThe new X is: {0}", oVODataDisplayElement.X)
-        Assert.assertEqual(12, oVODataDisplayElement.X)
+        self.m_logger.WriteLine3("\t\t\tThe current X is: {0}", oVODataDisplayElement.x)
+        oVODataDisplayElement.x = 12
+        self.m_logger.WriteLine3("\t\t\tThe new X is: {0}", oVODataDisplayElement.x)
+        Assert.assertEqual(12, oVODataDisplayElement.x)
         # Y
-        self.m_logger.WriteLine3("\t\t\tThe current Y is: {0}", oVODataDisplayElement.Y)
-        oVODataDisplayElement.Y = 21
-        self.m_logger.WriteLine3("\t\t\tThe new Y is: {0}", oVODataDisplayElement.Y)
-        Assert.assertEqual(21, oVODataDisplayElement.Y)
+        self.m_logger.WriteLine3("\t\t\tThe current Y is: {0}", oVODataDisplayElement.y)
+        oVODataDisplayElement.y = 21
+        self.m_logger.WriteLine3("\t\t\tThe new Y is: {0}", oVODataDisplayElement.y)
+        Assert.assertEqual(21, oVODataDisplayElement.y)
         # Title
-        self.m_logger.WriteLine4("\t\t\tThe current Title is: {0}", oVODataDisplayElement.Title)
-        oVODataDisplayElement.Title = False
-        self.m_logger.WriteLine4("\t\t\tThe new Title is: {0}", oVODataDisplayElement.Title)
-        Assert.assertEqual(False, oVODataDisplayElement.Title)
-        oVODataDisplayElement.Title = True
-        self.m_logger.WriteLine4("\t\t\tThe new Title is: {0}", oVODataDisplayElement.Title)
-        Assert.assertEqual(True, oVODataDisplayElement.Title)
+        self.m_logger.WriteLine4("\t\t\tThe current Title is: {0}", oVODataDisplayElement.title)
+        oVODataDisplayElement.title = False
+        self.m_logger.WriteLine4("\t\t\tThe new Title is: {0}", oVODataDisplayElement.title)
+        Assert.assertEqual(False, oVODataDisplayElement.title)
+        oVODataDisplayElement.title = True
+        self.m_logger.WriteLine4("\t\t\tThe new Title is: {0}", oVODataDisplayElement.title)
+        Assert.assertEqual(True, oVODataDisplayElement.title)
         # FontSize
-        self.m_logger.WriteLine6("\t\t\tThe current Font Size is: {0}", oVODataDisplayElement.FontSize)
-        oVODataDisplayElement.FontSize = AgEVOFontSize.eLarge
-        self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.FontSize)
-        Assert.assertEqual(AgEVOFontSize.eLarge, oVODataDisplayElement.FontSize)
-        oVODataDisplayElement.FontSize = AgEVOFontSize.eSmall
-        self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.FontSize)
-        Assert.assertEqual(AgEVOFontSize.eSmall, oVODataDisplayElement.FontSize)
-        oVODataDisplayElement.FontSize = AgEVOFontSize.eMedium
-        self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.FontSize)
-        Assert.assertEqual(AgEVOFontSize.eMedium, oVODataDisplayElement.FontSize)
+        self.m_logger.WriteLine6("\t\t\tThe current Font Size is: {0}", oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = AgEVOFontSize.eLarge
+        self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
+        Assert.assertEqual(AgEVOFontSize.eLarge, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = AgEVOFontSize.eSmall
+        self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
+        Assert.assertEqual(AgEVOFontSize.eSmall, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = AgEVOFontSize.eMedium
+        self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
+        Assert.assertEqual(AgEVOFontSize.eMedium, oVODataDisplayElement.font_size)
         # Format
-        self.m_logger.WriteLine6("\t\t\tThe current Font Format is: {0}", oVODataDisplayElement.Format)
-        oVODataDisplayElement.Format = AgEVOFormat.eHorizontal
-        self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.Format)
-        Assert.assertEqual(AgEVOFormat.eHorizontal, oVODataDisplayElement.Format)
-        oVODataDisplayElement.Format = AgEVOFormat.eNoLabels
-        self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.Format)
-        Assert.assertEqual(AgEVOFormat.eNoLabels, oVODataDisplayElement.Format)
-        oVODataDisplayElement.Format = AgEVOFormat.eVertical
-        self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.Format)
-        Assert.assertEqual(AgEVOFormat.eVertical, oVODataDisplayElement.Format)
+        self.m_logger.WriteLine6("\t\t\tThe current Font Format is: {0}", oVODataDisplayElement.format)
+        oVODataDisplayElement.format = AgEVOFormat.eHorizontal
+        self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
+        Assert.assertEqual(AgEVOFormat.eHorizontal, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = AgEVOFormat.eNoLabels
+        self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
+        Assert.assertEqual(AgEVOFormat.eNoLabels, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = AgEVOFormat.eVertical
+        self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
+        Assert.assertEqual(AgEVOFormat.eVertical, oVODataDisplayElement.format)
 
     # endregion
 
@@ -1652,59 +1676,59 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundCheck(self, oVODataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
-        def action61():
-            oVODataDisplayElement.TransparentBg = True
+        def action63():
+            oVODataDisplayElement.transparent_bg = True
 
         # TransparentBg
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action61)
-
-        def action62():
-            oVODataDisplayElement.BackgroundTranslucency = 0.33
-
-        # BackgroundTranslucency
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action62)
-
-        def action63():
-            oVODataDisplayElement.UseBackgroundTexture = True
-
-        # UseBackgroundTexture
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action63)
 
         def action64():
-            oVODataDisplayElement.BackgroundTextureFilename = "foo.png"
+            oVODataDisplayElement.background_translucency = 0.33
 
-        # BackgroundTextureFileName
+        # BackgroundTranslucency
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action64)
 
         def action65():
-            oVODataDisplayElement.UseBackgroundBorder = True
+            oVODataDisplayElement.use_background_texture = True
 
-        # UseBackgroundBorder
+        # UseBackgroundTexture
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action65)
 
         def action66():
-            oVODataDisplayElement.BackgroundBorderColor = Color.FromArgb(13491405)
+            oVODataDisplayElement.background_texture_filename = "foo.png"
 
-        # BackgroundBorderColor
+        # BackgroundTextureFileName
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action66)
 
         def action67():
-            oVODataDisplayElement.UseAutoSizeWidth = True
+            oVODataDisplayElement.use_background_border = True
 
-        # UseAutoSizeWidth
+        # UseBackgroundBorder
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action67)
 
         def action68():
-            oVODataDisplayElement.UseAutoSizeHeight = True
+            oVODataDisplayElement.background_border_color = Color.FromArgb(13491405)
 
-        # UseAutoSizeHeight
+        # BackgroundBorderColor
         TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action68)
 
         def action69():
-            oVODataDisplayElement.BgColor = Color.FromArgb(13491405)
+            oVODataDisplayElement.use_auto_size_width = True
+
+        # UseAutoSizeWidth
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action69)
+
+        def action70():
+            oVODataDisplayElement.use_auto_size_height = True
+
+        # UseAutoSizeHeight
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action70)
+
+        def action71():
+            oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
 
         # BgColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action69)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackground is False.", action71)
 
     # endregion
 
@@ -1713,77 +1737,81 @@ class VODataDisplayHelper(object):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # TransparentBg
         self.m_logger.WriteLine4(
-            "\t\t\tThe current Background Transparency is: {0}", oVODataDisplayElement.TransparentBg
+            "\t\t\tThe current Background Transparency is: {0}", oVODataDisplayElement.transparent_bg
         )
-        oVODataDisplayElement.TransparentBg = False
-        self.m_logger.WriteLine4("\t\t\tThe new Background Transparency is: {0}", oVODataDisplayElement.TransparentBg)
-        Assert.assertEqual(False, oVODataDisplayElement.TransparentBg)
-        oVODataDisplayElement.TransparentBg = True
-        self.m_logger.WriteLine4("\t\t\tThe new Background Transparency is: {0}", oVODataDisplayElement.TransparentBg)
-        Assert.assertEqual(True, oVODataDisplayElement.TransparentBg)
+        oVODataDisplayElement.transparent_bg = False
+        self.m_logger.WriteLine4("\t\t\tThe new Background Transparency is: {0}", oVODataDisplayElement.transparent_bg)
+        Assert.assertEqual(False, oVODataDisplayElement.transparent_bg)
+        oVODataDisplayElement.transparent_bg = True
+        self.m_logger.WriteLine4("\t\t\tThe new Background Transparency is: {0}", oVODataDisplayElement.transparent_bg)
+        Assert.assertEqual(True, oVODataDisplayElement.transparent_bg)
         # UseAutoSizeWidth
         self.m_logger.WriteLine4(
-            "\t\t\tThe current Background UseAutoSizeWidth is: {0}", oVODataDisplayElement.UseAutoSizeWidth
+            "\t\t\tThe current Background UseAutoSizeWidth is: {0}", oVODataDisplayElement.use_auto_size_width
         )
-        oVODataDisplayElement.UseAutoSizeWidth = False
-        self.m_logger.WriteLine4("\t\t\tThe new Background Width is: {0}", oVODataDisplayElement.UseAutoSizeWidth)
-        Assert.assertEqual(False, oVODataDisplayElement.UseAutoSizeWidth)
+        oVODataDisplayElement.use_auto_size_width = False
+        self.m_logger.WriteLine4("\t\t\tThe new Background Width is: {0}", oVODataDisplayElement.use_auto_size_width)
+        Assert.assertEqual(False, oVODataDisplayElement.use_auto_size_width)
         # UseAutoSizeHeight
         self.m_logger.WriteLine4(
-            "\t\t\tThe current Background UseAutoSizeHeight is: {0}", oVODataDisplayElement.UseAutoSizeHeight
+            "\t\t\tThe current Background UseAutoSizeHeight is: {0}", oVODataDisplayElement.use_auto_size_height
         )
-        oVODataDisplayElement.UseAutoSizeHeight = False
+        oVODataDisplayElement.use_auto_size_height = False
         self.m_logger.WriteLine4(
-            "\t\t\tThe new Background UseAutoSizeHeight is: {0}", oVODataDisplayElement.UseAutoSizeHeight
+            "\t\t\tThe new Background UseAutoSizeHeight is: {0}", oVODataDisplayElement.use_auto_size_height
         )
-        Assert.assertEqual(False, oVODataDisplayElement.UseAutoSizeHeight)
+        Assert.assertEqual(False, oVODataDisplayElement.use_auto_size_height)
         # BgWidth
-        self.m_logger.WriteLine3("\t\t\tThe current Background Width is: {0}", oVODataDisplayElement.BgWidth)
-        oVODataDisplayElement.BgWidth = 34
-        self.m_logger.WriteLine3("\t\t\tThe new Background Width is: {0}", oVODataDisplayElement.BgWidth)
-        Assert.assertEqual(34, oVODataDisplayElement.BgWidth)
+        self.m_logger.WriteLine3("\t\t\tThe current Background Width is: {0}", oVODataDisplayElement.bg_width)
+        oVODataDisplayElement.bg_width = 34
+        self.m_logger.WriteLine3("\t\t\tThe new Background Width is: {0}", oVODataDisplayElement.bg_width)
+        Assert.assertEqual(34, oVODataDisplayElement.bg_width)
         # BgHeight
-        self.m_logger.WriteLine3("\t\t\tThe current Background Height is: {0}", oVODataDisplayElement.BgHeight)
-        oVODataDisplayElement.BgHeight = 12
-        self.m_logger.WriteLine3("\t\t\tThe new Background Height is: {0}", oVODataDisplayElement.BgHeight)
-        Assert.assertEqual(12, oVODataDisplayElement.BgHeight)
+        self.m_logger.WriteLine3("\t\t\tThe current Background Height is: {0}", oVODataDisplayElement.bg_height)
+        oVODataDisplayElement.bg_height = 12
+        self.m_logger.WriteLine3("\t\t\tThe new Background Height is: {0}", oVODataDisplayElement.bg_height)
+        Assert.assertEqual(12, oVODataDisplayElement.bg_height)
         # BgColor
-        self.m_logger.WriteLine6("\t\t\tThe current Background Color is: {0}", oVODataDisplayElement.BgColor)
-        oVODataDisplayElement.BgColor = Color.FromArgb(255)
-        self.m_logger.WriteLine6("\t\t\tThe new Background Color is: {0}", oVODataDisplayElement.BgColor)
-        AssertEx.AreEqual(Color.FromArgb(255), oVODataDisplayElement.BgColor)
+        self.m_logger.WriteLine6("\t\t\tThe current Background Color is: {0}", oVODataDisplayElement.bg_color)
+        oVODataDisplayElement.bg_color = Color.FromArgb(255)
+        self.m_logger.WriteLine6("\t\t\tThe new Background Color is: {0}", oVODataDisplayElement.bg_color)
+        AssertEx.AreEqual(Color.FromArgb(255), oVODataDisplayElement.bg_color)
         # UseBackgroundBorder
-        self.m_logger.WriteLine4("\t\t\tThe new Background Border is: {0}", oVODataDisplayElement.UseBackgroundBorder)
-        Assert.assertEqual(False, oVODataDisplayElement.UseBackgroundBorder)
-        oVODataDisplayElement.UseBackgroundBorder = True
-        self.m_logger.WriteLine4("\t\t\tThe new Background Border is: {0}", oVODataDisplayElement.UseBackgroundBorder)
-        Assert.assertEqual(True, oVODataDisplayElement.UseBackgroundBorder)
+        self.m_logger.WriteLine4("\t\t\tThe new Background Border is: {0}", oVODataDisplayElement.use_background_border)
+        Assert.assertEqual(False, oVODataDisplayElement.use_background_border)
+        oVODataDisplayElement.use_background_border = True
+        self.m_logger.WriteLine4("\t\t\tThe new Background Border is: {0}", oVODataDisplayElement.use_background_border)
+        Assert.assertEqual(True, oVODataDisplayElement.use_background_border)
         # BackgroundBorderColor
         self.m_logger.WriteLine6(
-            "\t\t\tThe current Background Color is: {0}", oVODataDisplayElement.BackgroundBorderColor
+            "\t\t\tThe current Background Color is: {0}", oVODataDisplayElement.background_border_color
         )
-        oVODataDisplayElement.BackgroundBorderColor = Color.FromArgb(255)
+        oVODataDisplayElement.background_border_color = Color.FromArgb(255)
         self.m_logger.WriteLine6(
-            "\t\t\tThe new Background Border Color is: {0}", oVODataDisplayElement.BackgroundBorderColor
+            "\t\t\tThe new Background Border Color is: {0}", oVODataDisplayElement.background_border_color
         )
-        AssertEx.AreEqual(Color.FromArgb(255), oVODataDisplayElement.BackgroundBorderColor)
+        AssertEx.AreEqual(Color.FromArgb(255), oVODataDisplayElement.background_border_color)
         # UseBackgroundTexture
-        self.m_logger.WriteLine4("\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.UseBackgroundTexture)
-        Assert.assertEqual(False, oVODataDisplayElement.UseBackgroundTexture)
-        oVODataDisplayElement.UseBackgroundTexture = True
-        self.m_logger.WriteLine4("\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.UseBackgroundTexture)
-        Assert.assertEqual(True, oVODataDisplayElement.UseBackgroundTexture)
+        self.m_logger.WriteLine4(
+            "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.use_background_texture
+        )
+        Assert.assertEqual(False, oVODataDisplayElement.use_background_texture)
+        oVODataDisplayElement.use_background_texture = True
+        self.m_logger.WriteLine4(
+            "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.use_background_texture
+        )
+        Assert.assertEqual(True, oVODataDisplayElement.use_background_texture)
         # BackgroundTextureFileName
         self.m_logger.WriteLine5(
-            "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.BackgroundTextureFilename
+            "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.background_texture_filename
         )
-        Assert.assertEqual("", oVODataDisplayElement.BackgroundTextureFilename)
+        Assert.assertEqual("", oVODataDisplayElement.background_texture_filename)
 
-        oVODataDisplayElement.BackgroundTextureFilename = TestBase.GetScenarioFile("Fire.bmp")
+        oVODataDisplayElement.background_texture_filename = TestBase.GetScenarioFile("Fire.bmp")
         self.m_logger.WriteLine5(
-            "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.BackgroundTextureFilename
+            "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.background_texture_filename
         )
-        StringAssert.Contains("Fire.bmp", oVODataDisplayElement.BackgroundTextureFilename)
+        StringAssert.Contains("Fire.bmp", oVODataDisplayElement.background_texture_filename)
 
     # endregion
 
@@ -1791,17 +1819,17 @@ class VODataDisplayHelper(object):
     def NotUseTitleCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action70():
-            oDataDisplayElement.TitleText = "New Title"
+        def action72():
+            oDataDisplayElement.title_text = "New Title"
 
         # TitleText
-        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action70)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action72)
 
-        def action71():
-            oDataDisplayElement.IsShowNameEnabled = False
+        def action73():
+            oDataDisplayElement.is_show_name_enabled = False
 
         # IsShowNameEnabled
-        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action71)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when Title is False.", action73)
 
     # endregion
 
@@ -1809,17 +1837,19 @@ class VODataDisplayHelper(object):
     def UseTitleCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # TitleText
-        self.m_logger.WriteLine5("\t\t\tThe current TitleText is: {0}", oDataDisplayElement.TitleText)
-        oldTitle: str = oDataDisplayElement.TitleText
-        oDataDisplayElement.TitleText = "foobar"
-        self.m_logger.WriteLine5("\t\t\tThe new TitleText is: {0}", oDataDisplayElement.TitleText)
-        Assert.assertEqual("foobar", oDataDisplayElement.TitleText)
-        oDataDisplayElement.TitleText = oldTitle
+        self.m_logger.WriteLine5("\t\t\tThe current TitleText is: {0}", oDataDisplayElement.title_text)
+        oldTitle: str = oDataDisplayElement.title_text
+        oDataDisplayElement.title_text = "foobar"
+        self.m_logger.WriteLine5("\t\t\tThe new TitleText is: {0}", oDataDisplayElement.title_text)
+        Assert.assertEqual("foobar", oDataDisplayElement.title_text)
+        oDataDisplayElement.title_text = oldTitle
         # IsShowNameEnabled
-        self.m_logger.WriteLine4("\t\t\tThe current IsShowNameEnabled is: {0}", oDataDisplayElement.IsShowNameEnabled)
-        oDataDisplayElement.IsShowNameEnabled = False
-        self.m_logger.WriteLine4("\t\t\tThe new IsShowNameEnabled is: {0}", oDataDisplayElement.IsShowNameEnabled)
-        Assert.assertEqual(False, oDataDisplayElement.IsShowNameEnabled)
+        self.m_logger.WriteLine4(
+            "\t\t\tThe current IsShowNameEnabled is: {0}", oDataDisplayElement.is_show_name_enabled
+        )
+        oDataDisplayElement.is_show_name_enabled = False
+        self.m_logger.WriteLine4("\t\t\tThe new IsShowNameEnabled is: {0}", oDataDisplayElement.is_show_name_enabled)
+        Assert.assertEqual(False, oDataDisplayElement.is_show_name_enabled)
 
     # endregion
 
@@ -1827,15 +1857,15 @@ class VODataDisplayHelper(object):
     def NotUseAutoSizeCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BgWidth
-        self.m_logger.WriteLine3("\t\t\tThe current BgWidth is: {0}", oDataDisplayElement.BgWidth)
-        oDataDisplayElement.BgWidth = 300
-        self.m_logger.WriteLine3("\t\t\tThe new BgWidth is: {0}", oDataDisplayElement.BgWidth)
-        Assert.assertEqual(300, oDataDisplayElement.BgWidth)
+        self.m_logger.WriteLine3("\t\t\tThe current BgWidth is: {0}", oDataDisplayElement.bg_width)
+        oDataDisplayElement.bg_width = 300
+        self.m_logger.WriteLine3("\t\t\tThe new BgWidth is: {0}", oDataDisplayElement.bg_width)
+        Assert.assertEqual(300, oDataDisplayElement.bg_width)
         # BgHeight
-        self.m_logger.WriteLine3("\t\t\tThe current BgHeight is: {0}", oDataDisplayElement.BgHeight)
-        oDataDisplayElement.BgHeight = 150
-        self.m_logger.WriteLine3("\t\t\tThe new BgHeight is: {0}", oDataDisplayElement.BgHeight)
-        Assert.assertEqual(150, oDataDisplayElement.BgHeight)
+        self.m_logger.WriteLine3("\t\t\tThe current BgHeight is: {0}", oDataDisplayElement.bg_height)
+        oDataDisplayElement.bg_height = 150
+        self.m_logger.WriteLine3("\t\t\tThe new BgHeight is: {0}", oDataDisplayElement.bg_height)
+        Assert.assertEqual(150, oDataDisplayElement.bg_height)
 
     # endregion
 
@@ -1843,15 +1873,15 @@ class VODataDisplayHelper(object):
     def UseAutoSizeCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action72():
-            oDataDisplayElement.BgWidth = 500
+        def action74():
+            oDataDisplayElement.bg_width = 500
 
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeWidth is False.", action72)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeWidth is False.", action74)
 
-        def action73():
-            oDataDisplayElement.BgHeight = 500
+        def action75():
+            oDataDisplayElement.bg_height = 500
 
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeHeight is False.", action73)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseAutoSizeHeight is False.", action75)
 
     # endregion
 
@@ -1859,11 +1889,11 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundBorderCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action74():
-            oDataDisplayElement.BackgroundBorderColor = Color.Black
+        def action76():
+            oDataDisplayElement.background_border_color = Color.Black
 
         # BackgroundBorderColor
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundBorder is False.", action74)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundBorder is False.", action76)
 
     # endregion
 
@@ -1872,13 +1902,13 @@ class VODataDisplayHelper(object):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BackgroundBorderColor
         self.m_logger.WriteLine6(
-            "\t\t\tThe current BackgroundBorderColor is: {0}", oDataDisplayElement.BackgroundBorderColor
+            "\t\t\tThe current BackgroundBorderColor is: {0}", oDataDisplayElement.background_border_color
         )
-        oDataDisplayElement.BackgroundBorderColor = Color.Black
+        oDataDisplayElement.background_border_color = Color.Black
         self.m_logger.WriteLine6(
-            "\t\t\tThe new BackgroundBorderColor is: {0}", oDataDisplayElement.BackgroundBorderColor
+            "\t\t\tThe new BackgroundBorderColor is: {0}", oDataDisplayElement.background_border_color
         )
-        Assert.assertEqual(Color.Black, oDataDisplayElement.BackgroundBorderColor)
+        Assert.assertEqual(Color.Black, oDataDisplayElement.background_border_color)
 
     # endregion
 
@@ -1886,11 +1916,11 @@ class VODataDisplayHelper(object):
     def NotUseBackgroundTextureCheck(self, oDataDisplayElement: "IVODataDisplayElement"):
         Assert.assertIsNotNone(oDataDisplayElement)
 
-        def action75():
-            oDataDisplayElement.BackgroundTextureFilename = "foo.png"
+        def action77():
+            oDataDisplayElement.background_texture_filename = "foo.png"
 
         # BackgroundTextureFileName
-        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundTexture is False.", action75)
+        TryCatchAssertBlock.DoAssert("The property should be readonly when UseBackgroundTexture is False.", action77)
 
     # endregion
 
@@ -1899,12 +1929,12 @@ class VODataDisplayHelper(object):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BackgroundTextureFileName
         self.m_logger.WriteLine5(
-            "\t\t\tThe current BackgroundTextureFileName is: {0}", oDataDisplayElement.BackgroundTextureFilename
+            "\t\t\tThe current BackgroundTextureFileName is: {0}", oDataDisplayElement.background_texture_filename
         )
-        oDataDisplayElement.BackgroundTextureFilename = "Scenario\\Fire.bmp"
+        oDataDisplayElement.background_texture_filename = "Scenario\\Fire.bmp"
         self.m_logger.WriteLine5(
-            "\t\t\tThe new BackgroundTextureFileName is: {0}", oDataDisplayElement.BackgroundTextureFilename
+            "\t\t\tThe new BackgroundTextureFileName is: {0}", oDataDisplayElement.background_texture_filename
         )
-        StringAssert.Contains("Fire.bmp", oDataDisplayElement.BackgroundTextureFilename)
+        StringAssert.Contains("Fire.bmp", oDataDisplayElement.background_texture_filename)
 
     # endregion

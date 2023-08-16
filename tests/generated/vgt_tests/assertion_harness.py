@@ -76,7 +76,7 @@ class CodeRunner(object):
     def Iterate(self, maxIterations: int, action, *units):
         watch = None
         if self._bBeginEndUpdate:
-            self._root.BeginUpdate()
+            self._root.begin_update()
         try:
 
             def action1():
@@ -95,7 +95,7 @@ class CodeRunner(object):
 
         finally:
             if self._bBeginEndUpdate:
-                self._root.EndUpdate()
+                self._root.end_update()
 
         Assert.assertIsNotNone(watch)
         return watch.Elapsed
@@ -104,12 +104,12 @@ class CodeRunner(object):
         temp = []
         try:
             for unit in units:
-                saved = Unit(unit.Dimension, self._root.UnitPreferences.GetCurrentUnitAbbrv(unit.Dimension))
+                saved = Unit(unit.Dimension, self._root.unit_preferences.get_current_unit_abbrv(unit.Dimension))
                 temp.append(saved)
-                self._root.UnitPreferences.SetCurrentUnit(unit.Dimension, unit.UnitName)
+                self._root.unit_preferences.set_current_unit(unit.Dimension, unit.UnitName)
 
             action()
 
         finally:
             for unit in temp:
-                self._root.UnitPreferences.SetCurrentUnit(unit.Dimension, unit.UnitName)
+                self._root.unit_preferences.set_current_unit(unit.Dimension, unit.UnitName)

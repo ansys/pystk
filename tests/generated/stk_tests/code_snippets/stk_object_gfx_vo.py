@@ -37,71 +37,71 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
 
     # region SetStkOjbectDisplayToAlwaysOn
     def test_SetStkOjbectDisplayToAlwaysOn(self):
-        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
             AgESTKObjectType.eFacility, "facility1"
         )
 
         self.SetStkOjbectDisplayToAlwaysOn(facility)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
 
     def SetStkOjbectDisplayToAlwaysOn(self, stkObject: "IStkObject"):
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
-        display.SetDisplayStatusType(AgEDisplayTimesType.eAlwaysOn)
+        display.set_display_status_type(AgEDisplayTimesType.eAlwaysOn)
 
     # endregion
 
     # region SetStkObjectDisplayToUseIntervalsMode
     def test_SetStkObjectDisplayToUseIntervalsMode(self):
-        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
             AgESTKObjectType.eFacility, "facility1"
         )
 
         self.SetStkObjectDisplayToUseIntervalsMode(facility)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
 
     def SetStkObjectDisplayToUseIntervalsMode(self, stkObject: "IStkObject"):
         # Attempt to cast STK Object to the IAgDisplayTm interface
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
-            if display.IsDisplayStatusTypeSupported(AgEDisplayTimesType.eUseIntervals):
-                display.SetDisplayStatusType(AgEDisplayTimesType.eUseIntervals)
+            if display.is_display_status_type_supported(AgEDisplayTimesType.eUseIntervals):
+                display.set_display_status_type(AgEDisplayTimesType.eUseIntervals)
 
                 # Get IAgIntervalCollection interface
-                intervalCollection: "IIntervalCollection" = clr.CastAs(display.DisplayTimesData, IIntervalCollection)
-                intervalCollection.RemoveAll()
+                intervalCollection: "IIntervalCollection" = clr.CastAs(display.display_times_data, IIntervalCollection)
+                intervalCollection.remove_all()
 
                 # Add subsequent intervals
-                intervalCollection.Add("1 Jan 2012 12:00:00.00", "1 Jan 2012 13:00:00.000")
+                intervalCollection.add("1 Jan 2012 12:00:00.00", "1 Jan 2012 13:00:00.000")
 
     # endregion
 
     # region SetStkObjectDisplayToUseDuringAccessMode
     def test_SetStkObjectDisplayToUseDuringAccessMode(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1")
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eStar, "star1")
-        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eStar, "star1")
+        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
             AgESTKObjectType.eFacility, "facility1"
         )
 
         self.SetStkObjectDisplayToUseDuringAccessMode(facility)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eFacility, "facility1")
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eStar, "star1")
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eStar, "star1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "satellite1")
 
     def SetStkObjectDisplayToUseDuringAccessMode(self, stkObject: "IStkObject"):
         # Attempt to cast STK Object to the IAgDisplayTm interface
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
-            if display.IsDisplayStatusTypeSupported(AgEDisplayTimesType.eDuringAccess):
-                display.SetDisplayStatusType(AgEDisplayTimesType.eDuringAccess)
+            if display.is_display_status_type_supported(AgEDisplayTimesType.eDuringAccess):
+                display.set_display_status_type(AgEDisplayTimesType.eDuringAccess)
 
-                duringAccess: "IDuringAccess" = clr.CastAs(display.DisplayTimesData, IDuringAccess)
+                duringAccess: "IDuringAccess" = clr.CastAs(display.display_times_data, IDuringAccess)
 
                 # Add subsequent existing stk objects to access display
-                duringAccess.AccessObjects.Add("Satellite/satellite1")
-                duringAccess.AccessObjects.Add("Star/star1")
+                duringAccess.access_objects.add("Satellite/satellite1")
+                duringAccess.access_objects.add("Star/star1")
 
     # endregion

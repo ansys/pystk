@@ -1,8 +1,44 @@
-documentation:
-- doc/source/**/*
-maintenance:
-- .github/**/*
-- .flake8
-- pyproject.toml
-dependencies:
-- requirements/*
+# This file is required by the the action 'https://github.com/actions/labeler'
+# and used in the '.github/workflows/ci_cd_pr.yml' workflow
+
+# -- Labels based on PR title ------------------------------------------------
+
+'fix':
+- head-branch: ['fix']
+  
+'enhancement':
+- head-branch: ['feat']
+
+# -- Documentation labels ----------------------------------------------------
+
+'docs':
+- any: 
+  - changed-files: ['doc/source/**/*.rst']
+- all: 
+  - changed-files: ['!doc/source/examples.rst', '!doc/source/api/**/*.rst', '!doc/styles/**', '!doc/.vale.ini']
+
+'docs:api':
+- any:
+  - changed-files: ['doc/source/api/**/*.rst']
+
+'docs:examples':
+- any: 
+  - changed-files: ['examples/**/*.py', 'doc/source/examples.rst']
+
+## -- Other labels ------------------------------------------------------------
+
+'code-style':
+- any: 
+  - changed-files: ['.pre-commit-config.yaml', 'doc/.vale.ini', '.flake8']
+
+'docker':
+- any: 
+  - changed-files: ['docker/**']
+
+'ci':
+- any: 
+  - changed-files: ['.github/workflows/**']
+
+'tests':
+- any: 
+  - changed-files: ['tests/**']

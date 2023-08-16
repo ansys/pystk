@@ -19,10 +19,10 @@ class SearchTrackPDet(CodeSnippetsTestBase):
     @staticmethod
     def setUpClass():
         CodeSnippetsTestBase.Initialize()
-        CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("Angle", "deg")
-        CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("Distance", "km")
-        CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("Power", "dBW")
-        CodeSnippetsTestBase.m_Root.UnitPreferences.SetCurrentUnit("Ratio", "dB")
+        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Angle", "deg")
+        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Distance", "km")
+        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Power", "dBW")
+        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Ratio", "dB")
 
     # endregion
 
@@ -35,61 +35,61 @@ class SearchTrackPDet(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        scenario: "IStkObject" = clr.Convert(CodeSnippetsTestBase.m_Root.CurrentScenario, IStkObject)
-        SearchTrackPDet.m_Facility = scenario.Children.New(
+        scenario: "IStkObject" = clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, IStkObject)
+        SearchTrackPDet.m_Facility = scenario.children.new(
             AgESTKObjectType.eFacility, SearchTrackPDet.m_DefaultFacilityName
         )
         SearchTrackPDet.m_Radar = clr.CastAs(
-            SearchTrackPDet.m_Facility.Children.New(AgESTKObjectType.eRadar, SearchTrackPDet.m_DefaultRadarName), IRadar
+            SearchTrackPDet.m_Facility.children.new(AgESTKObjectType.eRadar, SearchTrackPDet.m_DefaultRadarName), IRadar
         )
         SearchTrackPDet.m_TargetAircraft = clr.CastAs(
-            scenario.Children.New(AgESTKObjectType.eAircraft, SearchTrackPDet.m_DefaultTargetName), IAircraft
+            scenario.children.new(AgESTKObjectType.eAircraft, SearchTrackPDet.m_DefaultTargetName), IAircraft
         )
-        SearchTrackPDet.m_TargetAircraft.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
+        SearchTrackPDet.m_TargetAircraft.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(
-            SearchTrackPDet.m_TargetAircraft.Route, IVehiclePropagatorGreatArc
+            SearchTrackPDet.m_TargetAircraft.route, IVehiclePropagatorGreatArc
         )
-        propagator.ArcGranularity = 51.333
+        propagator.arc_granularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive IAgVeWayPtAltitudeRefTerrain interface
-        propagator.SetAltitudeRefType(AgEVeAltitudeRef.eWayPtAltRefTerrain)
+        propagator.set_altitude_ref_type(AgEVeAltitudeRef.eWayPtAltRefTerrain)
         altRef: "IVehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
-            propagator.AltitudeRef, IVehicleWaypointAltitudeReferenceTerrain
+            propagator.altitude_ref, IVehicleWaypointAltitudeReferenceTerrain
         )
-        altRef.Granularity = 51.33
-        altRef.InterpMethod = AgEVeWayPtInterpMethod.eWayPtEllipsoidHeight
+        altRef.granularity = 51.33
+        altRef.interp_method = AgEVeWayPtInterpMethod.eWayPtEllipsoidHeight
 
-        propagator.Method = AgEVeWayPtCompMethod.eDetermineTimeAccFromVel
+        propagator.method = AgEVeWayPtCompMethod.eDetermineTimeAccFromVel
 
         # Add waypoints
-        point1: "IVehicleWaypointsElement" = propagator.Waypoints.Add()
-        point1.Latitude = 39.8
-        point1.Longitude = -76.1
-        point1.Altitude = 10.7
-        point1.Speed = 0.18
+        point1: "IVehicleWaypointsElement" = propagator.waypoints.add()
+        point1.latitude = 39.8
+        point1.longitude = -76.1
+        point1.altitude = 10.7
+        point1.speed = 0.18
 
-        point2: "IVehicleWaypointsElement" = propagator.Waypoints.Add()
-        point2.Latitude = 40.4
-        point2.Longitude = -74.9
-        point2.Altitude = 10.7
-        point2.Speed = 0.18
+        point2: "IVehicleWaypointsElement" = propagator.waypoints.add()
+        point2.latitude = 40.4
+        point2.longitude = -74.9
+        point2.altitude = 10.7
+        point2.speed = 0.18
 
         # Propagate
-        propagator.Propagate()
+        propagator.propagate()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        SearchTrackPDet.m_Facility.Children.Unload(AgESTKObjectType.eRadar, SearchTrackPDet.m_DefaultRadarName)
+        SearchTrackPDet.m_Facility.children.unload(AgESTKObjectType.eRadar, SearchTrackPDet.m_DefaultRadarName)
         SearchTrackPDet.m_Radar = None
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eFacility, SearchTrackPDet.m_DefaultFacilityName
         )
         SearchTrackPDet.m_Facility = None
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             AgESTKObjectType.eAircraft, SearchTrackPDet.m_DefaultTargetName
         )
         SearchTrackPDet.m_TargetAircraft = None
@@ -98,9 +98,9 @@ class SearchTrackPDet(CodeSnippetsTestBase):
 
     # region ComputeMonostaticSearchTrackProbabilityOfDetection
     def test_ComputeMonostaticSearchTrackProbabilityOfDetection(self):
-        scenario: "IScenario" = clr.Convert(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario)
+        scenario: "IScenario" = clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, IScenario)
         self.ComputeMonostaticSearchTrackProbabilityOfDetection(
-            SearchTrackPDet.m_Radar, SearchTrackPDet.m_TargetAircraft, scenario.RFEnvironment
+            SearchTrackPDet.m_Radar, SearchTrackPDet.m_TargetAircraft, scenario.rf_environment
         )
 
     def ComputeMonostaticSearchTrackProbabilityOfDetection(
@@ -110,118 +110,118 @@ class SearchTrackPDet(CodeSnippetsTestBase):
         tgtAsStkObject: "IStkObject" = clr.CastAs(targetAircraft, IStkObject)
 
         # Enable the rain loss computation on the scenario RF environment
-        scenarioRFEnv.PropagationChannel.EnableRainLoss = True
+        scenarioRFEnv.propagation_channel.enable_rain_loss = True
 
         # Configure the radar object as a monostatic model.
-        radar.SetModel("Monostatic")
-        monostaticModel: "IRadarModelMonostatic" = clr.CastAs(radar.Model, IRadarModelMonostatic)
+        radar.set_model("Monostatic")
+        monostaticModel: "IRadarModelMonostatic" = clr.CastAs(radar.model, IRadarModelMonostatic)
 
         # Orient the radar antenna in the direction of the target
-        monostaticModel.AntennaControl.EmbeddedModelOrientation.AssignAzEl(
+        monostaticModel.antenna_control.embedded_model_orientation.assign_az_el(
             50.9, 36.8, AgEAzElAboutBoresight.eAzElAboutBoresightRotate
         )
 
         # Set the radar antenna model to parabolic
-        monostaticModel.AntennaControl.SetEmbeddedModel("Parabolic")
+        monostaticModel.antenna_control.set_embedded_model("Parabolic")
         parabolic: "IAntennaModelParabolic" = clr.CastAs(
-            monostaticModel.AntennaControl.EmbeddedModel, IAntennaModelParabolic
+            monostaticModel.antenna_control.embedded_model, IAntennaModelParabolic
         )
 
         # Give the parabolic antenna a 2 deg beamwidth;
-        parabolic.InputType = AgEAntennaModelInputType.eAntennaModelInputTypeBeamwidth
-        parabolic.Beamwidth = 2.0
+        parabolic.input_type = AgEAntennaModelInputType.eAntennaModelInputTypeBeamwidth
+        parabolic.beamwidth = 2.0
 
         # Put the monostatic radar model in Search/Track mode
-        monostaticModel.SetMode("Search Track")
+        monostaticModel.set_mode("Search Track")
         searchTrackMode: "IRadarModeMonostaticSearchTrack" = clr.CastAs(
-            monostaticModel.Mode, IRadarModeMonostaticSearchTrack
+            monostaticModel.mode, IRadarModeMonostaticSearchTrack
         )
 
         # Set the waveform type to fixed prf
-        searchTrackMode.SetWaveformType(AgERadarWaveformSearchTrackType.eRadarWaveformSearchTrackTypeFixedPRF)
+        searchTrackMode.set_waveform_type(AgERadarWaveformSearchTrackType.eRadarWaveformSearchTrackTypeFixedPRF)
         fixedPrf: "IRadarWaveformMonostaticSearchTrackFixedPRF" = clr.CastAs(
-            searchTrackMode.Waveform, IRadarWaveformMonostaticSearchTrackFixedPRF
+            searchTrackMode.waveform, IRadarWaveformMonostaticSearchTrackFixedPRF
         )
-        fixedPrf.PulseDefinition.Prf = 0.002  # 2 kHz
+        fixedPrf.pulse_definition.prf = 0.002  # 2 kHz
 
         # Set the pulse width to 1e-8 sec
-        fixedPrf.PulseDefinition.PulseWidth = 1e-08  # sec
+        fixedPrf.pulse_definition.pulse_width = 1e-08  # sec
 
         # Set the number of pulses
-        fixedPrf.PulseDefinition.NumberOfPulses = 25
+        fixedPrf.pulse_definition.number_of_pulses = 25
 
         # Set the pulse integration strategy to goal SNR
-        fixedPrf.PulseIntegrationType = AgERadarPulseIntegrationType.eRadarPulseIntegrationTypeGoalSNR
+        fixedPrf.pulse_integration_type = AgERadarPulseIntegrationType.eRadarPulseIntegrationTypeGoalSNR
         pulseIntGoalSNR: "IRadarPulseIntegrationGoalSNR" = clr.CastAs(
-            fixedPrf.PulseIntegration, IRadarPulseIntegrationGoalSNR
+            fixedPrf.pulse_integration, IRadarPulseIntegrationGoalSNR
         )
-        pulseIntGoalSNR.SNR = 40.0  # dB
+        pulseIntGoalSNR.snr = 40.0  # dB
 
         # Set the transmit frequency
-        monostaticModel.Transmitter.FrequencySpecification = AgERadarFrequencySpec.eRadarFrequencySpecFrequency
-        monostaticModel.Transmitter.Frequency = 2.1  # GHz
+        monostaticModel.transmitter.frequency_specification = AgERadarFrequencySpec.eRadarFrequencySpecFrequency
+        monostaticModel.transmitter.frequency = 2.1  # GHz
 
         # Set the transmit power
-        monostaticModel.Transmitter.Power = 50.0  # dBW
+        monostaticModel.transmitter.power = 50.0  # dBW
 
         # Enable rain loss computation on the receiver
-        monostaticModel.Receiver.UseRain = True
-        monostaticModel.Receiver.RainOutagePercent = 0.001
+        monostaticModel.receiver.use_rain = True
+        monostaticModel.receiver.rain_outage_percent = 0.001
 
         # Enable the receiver system noise temperature computation.
-        monostaticModel.Receiver.SystemNoiseTemperature.ComputeType = (
+        monostaticModel.receiver.system_noise_temperature.compute_type = (
             AgENoiseTempComputeType.eNoiseTempComputeTypeCalculate
         )
 
         # Enable the antenna noise temperature computation
-        monostaticModel.Receiver.SystemNoiseTemperature.AntennaNoiseTemperature.ComputeType = (
+        monostaticModel.receiver.system_noise_temperature.antenna_noise_temperature.compute_type = (
             AgENoiseTempComputeType.eNoiseTempComputeTypeCalculate
         )
-        monostaticModel.Receiver.SystemNoiseTemperature.AntennaNoiseTemperature.UseRain = True
+        monostaticModel.receiver.system_noise_temperature.antenna_noise_temperature.use_rain = True
 
         # Don't inherit the radar cross section settings from the scenario
-        targetAircraft.RadarCrossSection.Inherit = False
-        rcs: "IRadarCrossSectionModel" = clr.CastAs(targetAircraft.RadarCrossSection.Model, IRadarCrossSectionModel)
+        targetAircraft.radar_cross_section.inherit = False
+        rcs: "IRadarCrossSectionModel" = clr.CastAs(targetAircraft.radar_cross_section.model, IRadarCrossSectionModel)
 
         # Set the radar cross section compute strategy to constan value
-        rcs.FrequencyBands[0].SetComputeStrategy("Constant Value")
+        rcs.frequency_bands[0].set_compute_strategy("Constant Value")
         constValRcs: "IRadarCrossSectionComputeStrategyConstantValue" = clr.CastAs(
-            rcs.FrequencyBands[0].ComputeStrategy, IRadarCrossSectionComputeStrategyConstantValue
+            rcs.frequency_bands[0].compute_strategy, IRadarCrossSectionComputeStrategyConstantValue
         )
 
         # Set the constant radar cross section to 0.5 dBsm
-        constValRcs.ConstantValue = 0.5  # dBsm
+        constValRcs.constant_value = 0.5  # dBsm
 
         # Create an access object for the access between the radar and target
-        radarAccess: "IStkAccess" = rdrAsStkObject.GetAccessToObject(tgtAsStkObject)
+        radarAccess: "IStkAccess" = rdrAsStkObject.get_access_to_object(tgtAsStkObject)
 
         # Compute access
-        radarAccess.ComputeAccess()
+        radarAccess.compute_access()
 
         # Get the access intervals
-        accessIntervals: "IIntervalCollection" = radarAccess.ComputedAccessIntervalTimes
+        accessIntervals: "IIntervalCollection" = radarAccess.computed_access_interval_times
 
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "S/T SNR1", "S/T PDet1", "S/T Integrated SNR", "S/T Integrated PDet"]
 
         dp: "IDataProviderTimeVarying" = clr.CastAs(
-            radarAccess.DataProviders["Radar SearchTrack"], IDataProviderTimeVarying
+            radarAccess.data_providers["Radar SearchTrack"], IDataProviderTimeVarying
         )
 
         index0: int = 0
-        while index0 < accessIntervals.Count:
+        while index0 < accessIntervals.count:
             startTime: typing.Any = None
             stopTime: typing.Any = None
 
-            (startTime, stopTime) = accessIntervals.GetInterval(index0)
+            (startTime, stopTime) = accessIntervals.get_interval(index0)
 
-            result: "IDataProviderResult" = dp.ExecElements(startTime, stopTime, 60, dataPrvElements)
+            result: "IDataProviderResult" = dp.exec_elements(startTime, stopTime, 60, dataPrvElements)
 
-            timeValues = result.DataSets.GetDataSetByName("Time").GetValues()
-            snr1 = result.DataSets.GetDataSetByName("S/T SNR1").GetValues()
-            pdet1 = result.DataSets.GetDataSetByName("S/T PDet1").GetValues()
-            integSnr = result.DataSets.GetDataSetByName("S/T Integrated SNR").GetValues()
-            integPdet = result.DataSets.GetDataSetByName("S/T Integrated PDet").GetValues()
+            timeValues = result.data_sets.get_data_set_by_name("Time").get_values()
+            snr1 = result.data_sets.get_data_set_by_name("S/T SNR1").get_values()
+            pdet1 = result.data_sets.get_data_set_by_name("S/T PDet1").get_values()
+            integSnr = result.data_sets.get_data_set_by_name("S/T Integrated SNR").get_values()
+            integPdet = result.data_sets.get_data_set_by_name("S/T Integrated PDet").get_values()
 
             index1: int = 0
             while index1 < len(timeValues):

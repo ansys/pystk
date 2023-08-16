@@ -1,4 +1,4 @@
-# Copyright 2020-2020, Analytical Graphics, Inc. 
+# Copyright 2020-2020, Ansys Government Initiatives 
 
 import typing
 
@@ -215,7 +215,8 @@ def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
         else:
             val = ctypes_val.value
         return val
-    elif vt == agcom.VT_UNKNOWN or vt == agcom.VT_UNKNOWN|agcom.VT_BYREF:
+    elif vt == agcom.VT_UNKNOWN or vt == agcom.VT_UNKNOWN|agcom.VT_BYREF \
+        or vt == agcom.VT_DISPATCH or vt == agcom.VT_DISPATCH|agcom.VT_BYREF:
         if vt & agcom.VT_BYREF:
             pUnk = agcom.PVOID(ctypes_val.contents.value)
         else:
@@ -223,13 +224,6 @@ def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
         ret = agcom.IUnknown()
         ret.p = pUnk
         ret.CreateOwnership()
-        return agcoclass.get_concrete_class(ret)
-    elif vt == agcom.VT_DISPATCH or vt == agcom.VT_DISPATCH|agcom.VT_BYREF:
-        if vt & agcom.VT_BYREF:
-            pDisp = agcom.PVOID(ctypes_val.contents.value)
-        else:
-            pDisp = ctypes_val
-        ret = agcoclass.IUnknown_from_IDispatch(pDisp)
         return agcoclass.get_concrete_class(ret)
     elif vt & agcom.VT_ARRAY:
         if vt & agcom.VT_BYREF:
@@ -246,8 +240,11 @@ def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
         return None
     raise RuntimeError("Unrecognized variant type: " + str(vt))
     
-def python_val_from_VARIANT(var:agcom.VARIANT) -> typing.Any:
-        return python_val_from_ctypes_val(ctype_val_from_VARIANT(var), var.vt)
+def python_val_from_VARIANT(var:agcom.VARIANT, clear_variant:bool=False) -> typing.Any:
+    retval = python_val_from_ctypes_val(ctype_val_from_VARIANT(var), var.vt)
+    if clear_variant:
+        agcom.oleaut32lib.VariantClear(var)
+    return retval
     
 ###############################################################################
 #   Marshalling SAFEARRAY
@@ -977,3 +974,20 @@ class OLE_YPOS_PIXELS_arg(object):
     @property
     def python_val(self) -> int:
         return self.OLE_YPOS_PIXELS.value
+
+class PVOID_arg(object):
+    def __init__(self, val: agcom.PVOID = None):
+        if val is None:
+            self.ipd = agcom.PVOID()
+        else:
+            self.ipd = val
+    def __enter__(self):
+        return self
+    def __exit__(self, type, value, tb):
+        return False
+    @property
+    def COM_val(self) -> agcom.PVOID:
+        return self.ipd
+    @property
+    def python_val(self) -> agcom.PVOID:
+        return self.ipd

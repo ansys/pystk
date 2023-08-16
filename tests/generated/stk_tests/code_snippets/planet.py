@@ -28,7 +28,7 @@ class Planet(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Planet.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.ePlanet, Planet.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.ePlanet, Planet.m_DefaultName),
             IPlanet,
         )
 
@@ -36,7 +36,7 @@ class Planet(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.ePlanet, Planet.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.ePlanet, Planet.m_DefaultName)
         Planet.m_Object = None
 
     # endregion
@@ -49,48 +49,50 @@ class Planet(CodeSnippetsTestBase):
 
     def SpecifyPlanetPositionUsingCommonTasks(self, planet: "IPlanet", planetEphemeris: str):
         # Position source files traditionally have .pe extensions
-        planet.CommonTasks.SetPositionSourceFile(planetEphemeris)
+        planet.common_tasks.set_position_source_file(planetEphemeris)
 
     # endregion
 
     # region ConfigurePlanet
     def test_ConfigurePlanet(self):
         self.ConfigurePlanet(Planet.m_Object)
-        body: "IPlanetPositionCentralBody" = clr.CastAs(Planet.m_Object.PositionSourceData, IPlanetPositionCentralBody)
+        body: "IPlanetPositionCentralBody" = clr.CastAs(
+            Planet.m_Object.position_source_data, IPlanetPositionCentralBody
+        )
 
     def ConfigurePlanet(self, planet: "IPlanet"):
-        planet.PositionSource = AgEPlPositionSourceType.ePosCentralBody
+        planet.position_source = AgEPlPositionSourceType.ePosCentralBody
 
         # Get IAgPlPosCentralBody interface
-        body: "IPlanetPositionCentralBody" = clr.CastAs(planet.PositionSourceData, IPlanetPositionCentralBody)
+        body: "IPlanetPositionCentralBody" = clr.CastAs(planet.position_source_data, IPlanetPositionCentralBody)
 
-        body.AutoRename = False
-        body.CentralBody = "Jupiter"
-        if Array.IndexOf(body.AvailableEphemSourceTypes, int(AgEEphemSourceType.eEphemAnalytic)) != -1:
-            body.EphemSource = AgEEphemSourceType.eEphemAnalytic
+        body.auto_rename = False
+        body.central_body = "Jupiter"
+        if Array.IndexOf(body.available_ephem_source_types, int(AgEEphemSourceType.eEphemAnalytic)) != -1:
+            body.ephem_source = AgEEphemSourceType.eEphemAnalytic
 
     # endregion
 
     # region ConfigurePlanetGraphics
     @category("Graphics Tests")
     def test_ConfigurePlanetGraphics(self):
-        self.ConfigurePlanetGraphics(Planet.m_Object.Graphics)
+        self.ConfigurePlanetGraphics(Planet.m_Object.graphics)
 
     def ConfigurePlanetGraphics(self, graphics: "IPlanetGraphics"):
-        graphics.Inherit = False
+        graphics.inherit = False
 
-        graphics.Color = Color.Red
-        graphics.MarkerStyle = "Circle"
-        graphics.LineStyle = AgELineStyle.eMDashDot
-        graphics.LineWidth = AgELineWidth.e4
+        graphics.color = Color.Red
+        graphics.marker_style = "Circle"
+        graphics.line_style = AgELineStyle.eMDashDot
+        graphics.line_width = AgELineWidth.e4
 
-        graphics.InertialPositionVisible = False
-        graphics.SubPlanetPointVisible = False
-        graphics.PositionLabelVisible = False
-        graphics.SubPlanetLabelVisible = False
-        graphics.OrbitVisible = True
-        graphics.OrbitDisplay = AgEPlOrbitDisplayType.eOrbitDisplayTime
-        displayTime: "IPlanetOrbitDisplayTime" = clr.CastAs(graphics.OrbitDisplayData, IPlanetOrbitDisplayTime)
-        displayTime.Time = 10000.0
+        graphics.inertial_position_visible = False
+        graphics.sub_planet_point_visible = False
+        graphics.position_label_visible = False
+        graphics.sub_planet_label_visible = False
+        graphics.orbit_visible = True
+        graphics.orbit_display = AgEPlOrbitDisplayType.eOrbitDisplayTime
+        displayTime: "IPlanetOrbitDisplayTime" = clr.CastAs(graphics.orbit_display_data, IPlanetOrbitDisplayTime)
+        displayTime.time = 10000.0
 
     # endregion

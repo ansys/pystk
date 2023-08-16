@@ -1,5 +1,5 @@
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2020, Ansys Government Initiatives
 ################################################################################
 
 __all__ = ["STKDesktop", "STKDesktopApplication"]
@@ -99,21 +99,21 @@ class STKDesktopApplication(UiApplication):
         if self.__dict__["_root"] is not None:
             return self.__dict__["_root"]
         if self.__dict__["_pUnk"] is not None:
-            self.__dict__["_root"] = self.Personality2
+            self.__dict__["_root"] = self.personality2
             return self.__dict__["_root"]
             
     def NewObjectModelContext(self) -> StkObjectModelContext:
         '''
         Create a new object model context for the STK Desktop application.
         '''
-        return self.CreateObject("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
+        return self.create_object("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
     
     def ShutDown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
         if self.__dict__["_pUnk"] is not None:
             if self.__dict__["_root"] is not None:
                 self.__dict__["_root"].CloseScenario()
-            self.Quit()
+            self.quit()
             self.__dict__["_root"] = None
             self.__dict__["_pUnk"] = None
             
@@ -143,8 +143,8 @@ class STKDesktop(object):
                 pUnk.TakeOwnership(isApplication=True)
                 app = STKDesktopApplication()
                 app._private_init(pUnk)
-                app.Visible = visible
-                app.UserControl = userControl
+                app.visible = visible
+                app.user_control = userControl
                 return app
         raise STKInitializationError("Failed to create STK Desktop application.  Check for successful install and registration.")
         
@@ -200,5 +200,5 @@ class STKDesktop(object):
 
 
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2020, Ansys Government Initiatives
 ################################################################################

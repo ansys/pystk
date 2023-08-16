@@ -34,9 +34,9 @@ class ISTKXInitialize(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     def __init__(self, sourceObject=None):
         self.__dict__["_pUnk"] = None
-        self.__dict__["_InitializeActivationContext"] = _raise_uninitialized_error
-        self.__dict__["_InitializeData"] = _raise_uninitialized_error
-        self.__dict__["_InitializeDataEx"] = _raise_uninitialized_error
+        self.__dict__["_initialize_activation_context"] = _raise_uninitialized_error
+        self.__dict__["_initialize_data"] = _raise_uninitialized_error
+        self.__dict__["_initialize_data_ex"] = _raise_uninitialized_error
         if sourceObject is not None and sourceObject.__dict__["_pUnk"] is not None:
             pUnk = sourceObject.__dict__["_pUnk"].QueryInterface(agcom.GUID(ISTKXInitialize._uuid))
             if pUnk is not None:
@@ -48,9 +48,9 @@ class ISTKXInitialize(object):
         self.__dict__["_pUnk"] = pUnk
         IID_ISTKXInitialize = agcom.GUID(ISTKXInitialize._uuid)
         vtable_offset_local = ISTKXInitialize._vtable_offset - 1
-        self.__dict__["_InitializeActivationContext"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+1, )
-        self.__dict__["_InitializeData"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
-        self.__dict__["_InitializeDataEx"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL)
+        self.__dict__["_initialize_activation_context"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+1, )
+        self.__dict__["_initialize_data"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+2, agcom.BSTR, agcom.BSTR)
+        self.__dict__["_initialize_data_ex"] = IAGFUNCTYPE(pUnk, IID_ISTKXInitialize, vtable_offset_local+3, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL)
     def __eq__(self, other):
         """Checks equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
@@ -64,17 +64,17 @@ class ISTKXInitialize(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISTKXInitialize.")
     
-    def InitializeActivationContext(self) -> None:
+    def initialize_activation_context(self) -> None:
         """Initialize the activation context to be used by STK Engine based on the current activation context."""
-        agcls.evaluate_hresult(self.__dict__["_InitializeActivationContext"]())
+        agcls.evaluate_hresult(self.__dict__["_initialize_activation_context"]())
 
-    def InitializeData(self, installHome:str, configDirectory:str) -> None:
+    def initialize_data(self, installHome:str, configDirectory:str) -> None:
         """Copy the virtual registry to the Config directory and initialize it with the install home specified."""
         with agmarshall.BSTR_arg(installHome) as arg_installHome, \
              agmarshall.BSTR_arg(configDirectory) as arg_configDirectory:
-            agcls.evaluate_hresult(self.__dict__["_InitializeData"](arg_installHome.COM_val, arg_configDirectory.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_initialize_data"](arg_installHome.COM_val, arg_configDirectory.COM_val))
 
-    def InitializeDataEx(self, installHome:str, configDirectory:str, bDefaults:bool, bStyles:bool, bVGT:bool, bAMM:bool, bGator:bool, bOnlineData:bool, bOnlineSGP4:bool) -> None:
+    def initialize_data_ex(self, installHome:str, configDirectory:str, bDefaults:bool, bStyles:bool, bVGT:bool, bAMM:bool, bGator:bool, bOnlineData:bool, bOnlineSGP4:bool) -> None:
         """Copy the virtual registry to the Config directory and initialize it with the install home specified, and config options."""
         with agmarshall.BSTR_arg(installHome) as arg_installHome, \
              agmarshall.BSTR_arg(configDirectory) as arg_configDirectory, \
@@ -85,7 +85,7 @@ class ISTKXInitialize(object):
              agmarshall.VARIANT_BOOL_arg(bGator) as arg_bGator, \
              agmarshall.VARIANT_BOOL_arg(bOnlineData) as arg_bOnlineData, \
              agmarshall.VARIANT_BOOL_arg(bOnlineSGP4) as arg_bOnlineSGP4:
-            agcls.evaluate_hresult(self.__dict__["_InitializeDataEx"](arg_installHome.COM_val, arg_configDirectory.COM_val, arg_bDefaults.COM_val, arg_bStyles.COM_val, arg_bVGT.COM_val, arg_bAMM.COM_val, arg_bGator.COM_val, arg_bOnlineData.COM_val, arg_bOnlineSGP4.COM_val))
+            agcls.evaluate_hresult(self.__dict__["_initialize_data_ex"](arg_installHome.COM_val, arg_configDirectory.COM_val, arg_bDefaults.COM_val, arg_bStyles.COM_val, arg_bVGT.COM_val, arg_bAMM.COM_val, arg_bGator.COM_val, arg_bOnlineData.COM_val, arg_bOnlineSGP4.COM_val))
 
 
 agcls.AgClassCatalog.add_catalog_entry("{EDC9E451-09B3-4D8B-9EC5-B75C6D95A52D}", ISTKXInitialize)

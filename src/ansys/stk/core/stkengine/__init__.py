@@ -1,5 +1,5 @@
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2020, Ansys Government Initiatives
 ################################################################################
 
 __all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
@@ -73,7 +73,7 @@ class STKEngineApplication(STKXApplication):
                 config_dir = self.__dict__["_stk_config_dir"] if self.__dict__["_stk_config_dir"] is not None else os.getenv("STK_CONFIG_DIR")
                 if config_dir is None:
                     raise STKInitializationError("Please set a valid STK_CONFIG_DIR environment variable.")
-                pInit.InitializeData(install_dir, config_dir)
+                pInit.initialize_data(install_dir, config_dir)
                 
     @staticmethod
     def _get_signo(sigrtmin_offset):
@@ -147,7 +147,7 @@ class STKEngineApplication(STKXApplication):
             EventSubscriptionManager.UnsubscribeAll()
             self._timer_impl.Terminate()
             ObjectLifetimeManager.ReleaseAll(releaseApplication=False)
-            self.Terminate()
+            self.terminate()
             ObjectLifetimeManager.ReleaseAll(releaseApplication=True)
             CoInitializeManager.uninitialize()
             self.__dict__["_initialized"] = False
@@ -190,7 +190,7 @@ class STKEngine(object):
                 STKEngine._initX11(noGraphics)
                 engine = STKEngineApplication()
                 engine._private_init(pUnk, STKEngine._stk_install_dir, STKEngine._stk_config_dir, noGraphics)
-                engine.NoGraphics = noGraphics
+                engine.no_graphics = noGraphics
                 return engine
         raise STKInitializationError("Failed to create STK Engine application.  Check for successful install and registration.")
                 
@@ -219,5 +219,5 @@ class STKEngine(object):
         
        
 ################################################################################
-#          Copyright 2020-2020, Analytical Graphics, Inc.
+#          Copyright 2020-2020, Ansys Government Initiatives
 ################################################################################

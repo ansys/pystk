@@ -39,49 +39,49 @@ class StkObjectVO(CodeSnippetsTestBase):
     # region ConfigureVOModelFile
     def test_ConfigureVOModelFile(self):
         satellite: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        model: "IVOModel" = satellite.VO.Model
+        model: "IVOModel" = satellite.vo.model
 
         self.ConfigureVOModelFile(model)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "satellite1")
 
     def ConfigureVOModelFile(self, model: "IVOModel"):
         # Set new ModelFile.Filename
-        model.ModelType = AgEModelType.eModelFile
-        modelFile: "IVOModelFile" = clr.CastAs(model.ModelData, IVOModelFile)
-        modelFile.Filename = r"\STKData\VO\Models\Space\alexis.mdl"
+        model.model_type = AgEModelType.eModelFile
+        modelFile: "IVOModelFile" = clr.CastAs(model.model_data, IVOModelFile)
+        modelFile.filename = r"\STKData\VO\Models\Space\alexis.mdl"
 
         # Configure basic settings
-        model.Visible = True
-        model.ScaleValue = 4.8
+        model.visible = True
+        model.scale_value = 4.8
 
     # endregion
 
     # region ConfigureVOArticulations
     def test_ConfigureVOArticulations(self):
         satellite: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        model: "IVOModel" = satellite.VO.Model
+        model: "IVOModel" = satellite.vo.model
 
         # Set new ModelFile.Filename
-        model.ModelType = AgEModelType.eModelFile
-        modelFile: "IVOModelFile" = clr.CastAs(model.ModelData, IVOModelFile)
-        modelFile.Filename = r"\STKData\VO\Models\Space\satellite.dae"
+        model.model_type = AgEModelType.eModelFile
+        modelFile: "IVOModelFile" = clr.CastAs(model.model_data, IVOModelFile)
+        modelFile.filename = r"\STKData\VO\Models\Space\satellite.dae"
 
         self.ConfigureVOModelArticulations(model)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "satellite1")
 
     def ConfigureVOModelArticulations(self, model: "IVOModel"):
         # Configure articulation
-        modelArticulation: "IVOModelArtic" = model.Articulation
-        modelArticulation.EnableDefaultSave = False
-        modelArticulation.SaveArticFileOnSave = True
+        modelArticulation: "IVOModelArtic" = model.articulation
+        modelArticulation.enable_default_save = False
+        modelArticulation.save_artic_file_on_save = True
 
         # Set our articulation and transformations
         # For this sample, these articulations exist for a default satellite model
@@ -90,39 +90,39 @@ class StkObjectVO(CodeSnippetsTestBase):
         transformation: str = "Size"
 
         # Get the current transition value
-        currentTransVal: float = modelArticulation.GetTransValue(levelOfDetail, articulation, transformation)
+        currentTransVal: float = modelArticulation.get_trans_value(levelOfDetail, articulation, transformation)
 
         # Change the value
         newTransVal: float = currentTransVal * 0.5
 
         # Set our new transition value
-        modelArticulation.SetTransValue(levelOfDetail, articulation, transformation, newTransVal)
+        modelArticulation.set_trans_value(levelOfDetail, articulation, transformation, newTransVal)
 
     # endregion
 
     # region ListVOModelArticulations
     def test_ListVOModelArticulations(self):
         satellite: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        model: "IVOModel" = satellite.VO.Model
+        model: "IVOModel" = satellite.vo.model
 
         self.ListVOModelArticulations(satellite, model)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "satellite1")
 
     def ListVOModelArticulations(self, satellite: "ISatellite", model: "IVOModel"):
         # Enumerating through the transformation collection is helpful if you do not
         # know what tranformations exist or their value ranges
 
-        modelArticulation: "IVOModelArtic" = model.Articulation
+        modelArticulation: "IVOModelArtic" = model.articulation
 
         lod: int = 0
-        while lod < modelArticulation.LODCount:
+        while lod < modelArticulation.lod_count:
             # Get all articulations
             # GetAvailableArticulations returns a one dimensional array of articulation names
-            articulations = modelArticulation.GetAvailableArticulations(lod)
+            articulations = modelArticulation.get_available_articulations(lod)
 
             articulation: int = 0
             while articulation < Array.Length(articulations):
@@ -130,7 +130,7 @@ class StkObjectVO(CodeSnippetsTestBase):
                 articulationString: str = str(articulations[articulation])
 
                 # Get all transformations
-                transformations: "IVOModelTransformationCollection" = modelArticulation.GetAvailableTransformations(
+                transformations: "IVOModelTransformationCollection" = modelArticulation.get_available_transformations(
                     lod, articulationString
                 )
 
@@ -140,7 +140,7 @@ class StkObjectVO(CodeSnippetsTestBase):
                 # Enumerate through available transformations
                 for trans in transformations:
                     Console.WriteLine(
-                        "Name: {0}, Current {1}, Max {2}, Min {3}", trans.Name, trans.Value, trans.Max, trans.Min
+                        "Name: {0}, Current {1}, Max {2}, Min {3}", trans.name, trans.value, trans.max, trans.min
                     )
 
                 articulation += 1
@@ -152,126 +152,126 @@ class StkObjectVO(CodeSnippetsTestBase):
     # region ConfigureVOModelLevelOfDetail
     def test_ConfigureVOModelLevelOfDetail(self):
         satellite: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "satellite1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "satellite1"),
             ISatellite,
         )
-        model: "IVOModel" = satellite.VO.Model
+        model: "IVOModel" = satellite.vo.model
 
         self.ConfigureVOModelLevelOfDetail(model)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "satellite1")
 
     def ConfigureVOModelLevelOfDetail(self, model: "IVOModel"):
         # Configure level of details
-        detail: "IVODetailThreshold" = model.DetailThreshold
-        detail.EnableDetailThreshold = True
+        detail: "IVODetailThreshold" = model.detail_threshold
+        detail.enable_detail_threshold = True
 
         # (assuming unit preferences set to km)
-        detail.All = 2.51189
-        detail.ModelLabel = 158489
-        detail.MarkerLabel = 2511890.0
-        detail.Marker = 25110000.0
-        detail.Point = 1000000000000.0
+        detail.all = 2.51189
+        detail.model_label = 158489
+        detail.marker_label = 2511890.0
+        detail.marker = 25110000.0
+        detail.point = 1000000000000.0
 
     # endregion
 
     # region ConfigureVOVector
     def test_ConfigureVOVector(self):
         vehicle: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
 
-        self.ConfigureVOVector(vehicle.VO.Vector)
+        self.ConfigureVOVector(vehicle.vo.vector)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
     def ConfigureVOVector(self, vector: "IVOVector"):
         # See AvailableCrdns for supported elements
-        vector.RefCrdns.Add(
+        vector.ref_crdns.add(
             AgEGeometricElemType.eVectorElem,
             (
                 clr.Convert(
-                    CodeSnippetsTestBase.m_Root.CentralBodies["Earth"].Vgt.Vectors["Moon"], IAnalysisWorkbenchComponent
+                    CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"], IAnalysisWorkbenchComponent
                 )
-            ).QualifiedPath,
+            ).qualified_path,
         )
-        vector.RefCrdns.Add(
+        vector.ref_crdns.add(
             AgEGeometricElemType.eAxesElem,
             (
                 clr.Convert(
-                    CodeSnippetsTestBase.m_Root.CentralBodies["Moon"].Vgt.Vectors["Position"],
+                    CodeSnippetsTestBase.m_Root.central_bodies["Moon"].vgt.vectors["Position"],
                     IAnalysisWorkbenchComponent,
                 )
-            ).QualifiedPath,
+            ).qualified_path,
         )
-        vector.RefCrdns.Add(
+        vector.ref_crdns.add(
             AgEGeometricElemType.eVectorElem,
             (
                 clr.Convert(
-                    CodeSnippetsTestBase.m_Root.CentralBodies["Sun"].Vgt.Vectors["Velocity(Barycenter)"],
+                    CodeSnippetsTestBase.m_Root.central_bodies["Sun"].vgt.vectors["Velocity(Barycenter)"],
                     IAnalysisWorkbenchComponent,
                 )
-            ).QualifiedPath,
+            ).qualified_path,
         )
 
         # Draw on Central Body
         body: "IVOReferenceVectorGeometryToolVector" = clr.CastAs(
-            vector.RefCrdns.GetCrdnByName(
+            vector.ref_crdns.get_crdn_by_name(
                 AgEGeometricElemType.eAxesElem,
                 (
                     clr.Convert(
-                        CodeSnippetsTestBase.m_Root.CentralBodies["Earth"].Vgt.Vectors["Moon"],
+                        CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"],
                         IAnalysisWorkbenchComponent,
                     )
-                ).QualifiedPath,
+                ).qualified_path,
             ),
             IVOReferenceVectorGeometryToolVector,
         )
-        (clr.Convert(body, IVOReferenceAnalysisWorkbenchComponent)).Color = Color.Yellow
-        body.DrawAtCB = True
-        body.Axes = "CentralBody/Earth Fixed Axes"
+        (clr.Convert(body, IVOReferenceAnalysisWorkbenchComponent)).color = Color.Yellow
+        body.draw_at_cb = True
+        body.axes = "CentralBody/Earth Fixed Axes"
 
-        vector.ScaleRelativeToModel = True
-        vector.AngleSizeScale = 4.5
+        vector.scale_relative_to_model = True
+        vector.angle_size_scale = 4.5
 
     # endregion
 
     # region ConfigureVODataDisplay
     def test_ConfigureVODataDisplay(self):
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
         )
-        (clr.Convert(sat, ISatellite)).SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
+        (clr.Convert(sat, ISatellite)).set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
         tb: "IVehiclePropagatorTwoBody" = clr.CastAs(
-            (clr.Convert(sat, ISatellite)).Propagator, IVehiclePropagatorTwoBody
+            (clr.Convert(sat, ISatellite)).propagator, IVehiclePropagatorTwoBody
         )
-        tb.Propagate()
-        ddc: "IVODataDisplayCollection" = sat.VO.DataDisplay
+        tb.propagate()
+        ddc: "IVODataDisplayCollection" = sat.vo.data_display
         self.ConfigureVODataDisplay(ddc)
 
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
 
     def ConfigureVODataDisplay(self, datadisplaycol: "IVODataDisplayCollection"):
         # Add existing data display
         # See AvailableData property for available data display
-        displayElement: "IVODataDisplayElement" = datadisplaycol.Add("Solar Intensity")
+        displayElement: "IVODataDisplayElement" = datadisplaycol.add("Solar Intensity")
 
         # Configure data display as needed
-        displayElement.TitleText = "Sol. Intensity"
-        displayElement.IsVisible = True
-        displayElement.Location = AgEVOLocation.e3DWindow
-        displayElement.FontColor = Color.White
-        displayElement.FontSize = AgEVOFontSize.eSmall
-        displayElement.UseBackground = True
-        displayElement.BgColor = Color.Orange
-        displayElement.UseAutoSizeWidth = False
-        displayElement.UseAutoSizeHeight = False
-        displayElement.BgHeight = 55
-        displayElement.BgWidth = 260
-        displayElement.BackgroundTranslucency = 0.5
-        displayElement.UseBackgroundTexture = False
-        displayElement.UseBackgroundBorder = True
-        displayElement.BackgroundBorderColor = Color.White
+        displayElement.title_text = "Sol. Intensity"
+        displayElement.is_visible = True
+        displayElement.location = AgEVOLocation.e3DWindow
+        displayElement.font_color = Color.White
+        displayElement.font_size = AgEVOFontSize.eSmall
+        displayElement.use_background = True
+        displayElement.bg_color = Color.Orange
+        displayElement.use_auto_size_width = False
+        displayElement.use_auto_size_height = False
+        displayElement.bg_height = 55
+        displayElement.bg_width = 260
+        displayElement.background_translucency = 0.5
+        displayElement.use_background_texture = False
+        displayElement.use_background_border = True
+        displayElement.background_border_color = Color.White
 
     # endregion

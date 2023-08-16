@@ -24,20 +24,24 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
 
-        paths: "IPathCollection" = TestBase.Application.StkPreferences.STKPreferencesPythonPlugins.AccessConstraintPaths
-        paths.RemoveAll()
-        paths.Add(Path.Combine(TestBase.GetScenarioRootDir(), "Plugins", "RangeExample.py"))
+        paths: "IPathCollection" = (
+            TestBase.Application.stk_preferences.stk_preferences_python_plugins.access_constraint_paths
+        )
+        paths.remove_all()
+        paths.add(TestBase.PathCombine(TestBase.GetScenarioRootDir(), "Plugins", "RangeExample.py"))
 
-        TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.CurrentScenario.Children["Facility1"], IFacility)
+        TestBase.LoadTestScenario(TestBase.PathCombine("FacilityTests", "FacilityTests.sc"))
+        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], IFacility)
 
     # endregion
 
     # region OneTimeTearDown
     @staticmethod
     def tearDownClass():
-        paths: "IPathCollection" = TestBase.Application.StkPreferences.STKPreferencesPythonPlugins.AccessConstraintPaths
-        paths.RemoveAll()
+        paths: "IPathCollection" = (
+            TestBase.Application.stk_preferences.stk_preferences_python_plugins.access_constraint_paths
+        )
+        paths.remove_all()
 
         EarlyBoundTests.AG_FA = None
         TestBase.Uninitialize()
@@ -55,27 +59,27 @@ class EarlyBoundTests(TestBase):
 
     def OnePtAccessStartStop(self, startTime: str, stopTime: str):
         oObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_FA, IStkObject)
-        onePtAccess: "IOnePointAccess" = oObj.CreateOnePointAccess("Satellite/Satellite1")
-        onePtAccess.StartTime = startTime
-        Assert.assertEqual(startTime, onePtAccess.StartTime)
-        onePtAccess.StopTime = stopTime
-        Assert.assertEqual(stopTime, onePtAccess.StopTime)
-        onePtAccess.StepSize = 120
-        Assert.assertEqual(120, onePtAccess.StepSize)
-        onePtAccess.SummaryOption = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed, onePtAccess.SummaryOption)
+        onePtAccess: "IOnePointAccess" = oObj.create_one_point_access("Satellite/Satellite1")
+        onePtAccess.start_time = startTime
+        Assert.assertEqual(startTime, onePtAccess.start_time)
+        onePtAccess.stop_time = stopTime
+        Assert.assertEqual(stopTime, onePtAccess.stop_time)
+        onePtAccess.step_size = 120
+        Assert.assertEqual(120, onePtAccess.step_size)
+        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
+        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed, onePtAccess.summary_option)
         result: "IOnePointAccessResult" = None
-        results: "IOnePointAccessResultCollection" = onePtAccess.Compute()
+        results: "IOnePointAccessResultCollection" = onePtAccess.compute()
 
         i: int = 0
-        while i < results.Count:
+        while i < results.count:
             result = results[i]
-            TestBase.logger.WriteLine2(result.Time)
-            TestBase.logger.WriteLine2(result.AccessSatisfied)
+            TestBase.logger.WriteLine2(result.time)
+            TestBase.logger.WriteLine2(result.access_satisfied)
 
             j: int = 0
-            while j < result.Constraints.Count:
-                constraint: "IOnePointAccessConstraint" = result.Constraints[j]
+            while j < result.constraints.count:
+                constraint: "IOnePointAccessConstraint" = result.constraints[j]
                 self.dumpOnePtAccessConstraint(constraint)
 
                 j += 1
@@ -85,116 +89,116 @@ class EarlyBoundTests(TestBase):
         r: "IOnePointAccessResult"
 
         for r in results:
-            TestBase.logger.WriteLine2(r.Time)
-            TestBase.logger.WriteLine2(r.AccessSatisfied)
+            TestBase.logger.WriteLine2(r.time)
+            TestBase.logger.WriteLine2(r.access_satisfied)
             c: "IOnePointAccessConstraint"
-            for c in r.Constraints:
+            for c in r.constraints:
                 self.dumpOnePtAccessConstraint(c)
 
-        onePtAccess.SummaryOption = AgEOnePtAccessSummary.eOnePtAccessSummaryFast
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryFast, onePtAccess.SummaryOption)
-        results = onePtAccess.Compute()
-        Assert.assertGreater(results.Count, 1)
+        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryFast
+        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryFast, onePtAccess.summary_option)
+        results = onePtAccess.compute()
+        Assert.assertGreater(results.count, 1)
         result = results[0]
-        if result.Constraints.Count > 0:
-            self.dumpOnePtAccessConstraint(result.Constraints[0])
+        if result.constraints.count > 0:
+            self.dumpOnePtAccessConstraint(result.constraints[0])
 
-        onePtAccess.SummaryOption = AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly, onePtAccess.SummaryOption)
-        results = onePtAccess.Compute()
-        Assert.assertGreater(results.Count, 1)
+        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly
+        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly, onePtAccess.summary_option)
+        results = onePtAccess.compute()
+        Assert.assertGreater(results.count, 1)
         result = results[0]
-        Assert.assertEqual(0, result.Constraints.Count)
+        Assert.assertEqual(0, result.constraints.count)
 
-        onePtAccess.Remove()
+        onePtAccess.remove()
 
     # endregion
 
     def dumpOnePtAccessConstraint(self, constraint: "IOnePointAccessConstraint"):
-        TestBase.logger.WriteLine2(constraint.Constraint)
-        TestBase.logger.WriteLine(constraint.ObjectPath)
-        TestBase.logger.WriteLine2(constraint.Status)
-        TestBase.logger.WriteLine2(constraint.Value)
+        TestBase.logger.WriteLine2(constraint.constraint)
+        TestBase.logger.WriteLine(constraint.object_path)
+        TestBase.logger.WriteLine2(constraint.status)
+        TestBase.logger.WriteLine2(constraint.value)
 
     def test_StartTime2StopTime2(self):
-        fac1: "IStkObject" = TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "BUG56961")
-        interval: "IDataProviderInterval" = clr.CastAs(fac1.DataProviders["Eclipse Times"], IDataProviderInterval)
-        result: "IDataProviderResult" = interval.Exec(
-            (clr.CastAs(TestBase.Application.CurrentScenario, IScenario)).StartTime,
-            (clr.CastAs(TestBase.Application.CurrentScenario, IScenario)).StopTime,
+        fac1: "IStkObject" = TestBase.Application.current_scenario.children.new(AgESTKObjectType.eFacility, "BUG56961")
+        interval: "IDataProviderInterval" = clr.CastAs(fac1.data_providers["Eclipse Times"], IDataProviderInterval)
+        result: "IDataProviderResult" = interval.exec(
+            (clr.CastAs(TestBase.Application.current_scenario, IScenario)).start_time,
+            (clr.CastAs(TestBase.Application.current_scenario, IScenario)).stop_time,
         )
-        Assert.assertEqual("1 Jul 1999 00:00:00.000", result.Intervals[0].StartTime)
-        Assert.assertEqual("2 Jul 1999 00:00:00.000", result.Intervals[0].StopTime)
-        Console.WriteLine(result.Intervals[0].StartTime)
-        Console.WriteLine(result.Intervals[0].StopTime)
-        unitAbbrv: str = TestBase.Application.UnitPreferences.GetCurrentUnitAbbrv("DateFormat")
-        TestBase.Application.UnitPreferences.SetCurrentUnit("DateFormat", "EpSec")
-        Assert.assertEqual(0, result.Intervals[0].StartTime)
-        Assert.assertEqual(86400, result.Intervals[0].StopTime)
-        TestBase.Application.UnitPreferences.SetCurrentUnit("DateFormat", unitAbbrv)
-        fac1.Unload()
+        Assert.assertEqual("1 Jul 1999 00:00:00.000", result.intervals[0].start_time)
+        Assert.assertEqual("2 Jul 1999 00:00:00.000", result.intervals[0].stop_time)
+        Console.WriteLine(result.intervals[0].start_time)
+        Console.WriteLine(result.intervals[0].stop_time)
+        unitAbbrv: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat")
+        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+        Assert.assertEqual(0, result.intervals[0].start_time)
+        Assert.assertEqual(86400, result.intervals[0].stop_time)
+        TestBase.Application.unit_preferences.set_current_unit("DateFormat", unitAbbrv)
+        fac1.unload()
 
     # region AzElMask
     @category("Basic Tests")
     def test_AzElMask(self):
-        EarlyBoundTests.AG_FA.ResetAzElMask()
-        Assert.assertEqual(AgEAzElMaskType.eAzElMaskNone, EarlyBoundTests.AG_FA.GetAzElMask())
+        EarlyBoundTests.AG_FA.reset_az_el_mask()
+        Assert.assertEqual(AgEAzElMaskType.eAzElMaskNone, EarlyBoundTests.AG_FA.get_az_el_mask())
 
-        EarlyBoundTests.AG_FA.SetAzElMask(AgEAzElMaskType.eAzElMaskNone, "dummy data")
-        Assert.assertEqual(AgEAzElMaskType.eAzElMaskNone, EarlyBoundTests.AG_FA.GetAzElMask())
-        Assert.assertEqual(None, EarlyBoundTests.AG_FA.GetAzElMaskData())
+        EarlyBoundTests.AG_FA.set_az_el_mask(AgEAzElMaskType.eAzElMaskNone, "dummy data")
+        Assert.assertEqual(AgEAzElMaskType.eAzElMaskNone, EarlyBoundTests.AG_FA.get_az_el_mask())
+        Assert.assertEqual(None, EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
         def action1():
-            EarlyBoundTests.AG_FA.MaxRangeWhenComputingAzElMask = 11.0
+            EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 11.0
 
         # BUG120275 TryCatchAssertBlock.ExpectedException("read-only", delegate () { AG_FA.SaveTerrainMaskDataInBinary = true; });    // Undefined symbol - should be "read only"
         TryCatchAssertBlock.ExpectedException("read only", action1)
 
-        EarlyBoundTests.AG_FA.SetAzElMask(AgEAzElMaskType.eMaskFile, TestBase.GetScenarioFile(r"maskfile.aem"))
-        Assert.assertEqual(AgEAzElMaskType.eMaskFile, EarlyBoundTests.AG_FA.GetAzElMask())
-        Assert.assertEqual("maskfile.aem", EarlyBoundTests.AG_FA.GetAzElMaskData())
+        EarlyBoundTests.AG_FA.set_az_el_mask(AgEAzElMaskType.eMaskFile, TestBase.GetScenarioFile(r"maskfile.aem"))
+        Assert.assertEqual(AgEAzElMaskType.eMaskFile, EarlyBoundTests.AG_FA.get_az_el_mask())
+        Assert.assertEqual("maskfile.aem", EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
         def action2():
-            EarlyBoundTests.AG_FA.MaxRangeWhenComputingAzElMask = 11.0
+            EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 11.0
 
         # BUG120275 TryCatchAssertBlock.ExpectedException("read-only", delegate () { AG_FA.SaveTerrainMaskDataInBinary = true; });    // Undefined symbol - should be "read only"
         TryCatchAssertBlock.ExpectedException("read only", action2)
 
         def action3():
-            EarlyBoundTests.AG_FA.SetAzElMask(AgEAzElMaskType.eMaskFile, TestBase.GetScenarioFile("bogus.aem"))
+            EarlyBoundTests.AG_FA.set_az_el_mask(AgEAzElMaskType.eMaskFile, TestBase.GetScenarioFile("bogus.aem"))
 
         TryCatchAssertBlock.ExpectedException("does not exist", action3)
 
-        EarlyBoundTests.AG_FA.SetAzElMask(
+        EarlyBoundTests.AG_FA.set_az_el_mask(
             AgEAzElMaskType.eTerrainData, 22
         )  #  BUG120275 Data value?  Helpstring says: "If Type is eTerrainData then it is the Height above ground"
-        Assert.assertEqual(AgEAzElMaskType.eTerrainData, EarlyBoundTests.AG_FA.GetAzElMask())
-        Assert.assertEqual(22, EarlyBoundTests.AG_FA.GetAzElMaskData())
+        Assert.assertEqual(AgEAzElMaskType.eTerrainData, EarlyBoundTests.AG_FA.get_az_el_mask())
+        Assert.assertEqual(22, EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
-        EarlyBoundTests.AG_FA.SaveTerrainMaskDataInBinary = True
-        Assert.assertTrue(EarlyBoundTests.AG_FA.SaveTerrainMaskDataInBinary)
-        EarlyBoundTests.AG_FA.SaveTerrainMaskDataInBinary = False
-        Assert.assertFalse(EarlyBoundTests.AG_FA.SaveTerrainMaskDataInBinary)
+        EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary = True
+        Assert.assertTrue(EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary)
+        EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary = False
+        Assert.assertFalse(EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary)
 
-        EarlyBoundTests.AG_FA.MaxRangeWhenComputingAzElMask = 0.0
-        Assert.assertEqual(0.0, EarlyBoundTests.AG_FA.MaxRangeWhenComputingAzElMask)
-        EarlyBoundTests.AG_FA.MaxRangeWhenComputingAzElMask = 1000.0
-        Assert.assertEqual(1000.0, EarlyBoundTests.AG_FA.MaxRangeWhenComputingAzElMask)
+        EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 0.0
+        Assert.assertEqual(0.0, EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask)
+        EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 1000.0
+        Assert.assertEqual(1000.0, EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask)
 
         def action4():
-            EarlyBoundTests.AG_FA.MaxRangeWhenComputingAzElMask = -1.0
+            EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = -1.0
 
         TryCatchAssertBlock.ExpectedException("invalid", action4)
 
         def action5():
-            EarlyBoundTests.AG_FA.MaxRangeWhenComputingAzElMask = 1001.0
+            EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 1001.0
 
         TryCatchAssertBlock.ExpectedException("invalid", action5)
 
         #  BUG120275 No OM property for "Use Mask for Access Constraint" checkbox
 
-        EarlyBoundTests.AG_FA.ResetAzElMask()
-        Assert.assertEqual(AgEAzElMaskType.eAzElMaskNone, EarlyBoundTests.AG_FA.GetAzElMask())
+        EarlyBoundTests.AG_FA.reset_az_el_mask()
+        Assert.assertEqual(AgEAzElMaskType.eAzElMaskNone, EarlyBoundTests.AG_FA.get_az_el_mask())
 
     # endregion
 
@@ -204,7 +208,7 @@ class EarlyBoundTests(TestBase):
         oHelper = STKObjectHelper()
         facObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_FA, IStkObject)
         oHelper.Run(facObject)
-        oHelper.TestObjectFilesArray(facObject.ObjectFiles)
+        oHelper.TestObjectFilesArray(facObject.object_files)
 
     # endregion
 
@@ -219,45 +223,45 @@ class EarlyBoundTests(TestBase):
     # region Graphics
     @category("Graphics Tests")
     def test_Graphics(self):
-        gfx: "IFacilityGraphics" = EarlyBoundTests.AG_FA.Graphics
+        gfx: "IFacilityGraphics" = EarlyBoundTests.AG_FA.graphics
         Assert.assertIsNotNone(gfx)
-        gfx.IsObjectGraphicsVisible = False
-        Assert.assertFalse(gfx.IsObjectGraphicsVisible)
-        gfx.IsObjectGraphicsVisible = True
-        Assert.assertTrue(gfx.IsObjectGraphicsVisible)
-        gfx.InheritFromScenario = True
-        Assert.assertTrue(gfx.InheritFromScenario)
-        gfx.UseInstNameLabel = False
-        Assert.assertFalse(gfx.UseInstNameLabel)
-        gfx.LabelName = "new label"
-        Assert.assertEqual("new label", gfx.LabelName)
-        gfx.LabelColor = Color.FromArgb(((128 * 256) * 256))
-        AssertEx.AreEqual(Color.FromArgb(((128 * 256) * 256)), gfx.LabelColor)
-        gfx.LabelVisible = True
-        Assert.assertTrue(gfx.LabelVisible)
-        gfx.MarkerColor = Color.FromArgb((255 * 256))
-        AssertEx.AreEqual(Color.FromArgb((255 * 256)), gfx.MarkerColor)
-        gfx.MarkerStyle = "Star"
-        Assert.assertEqual("Star", gfx.MarkerStyle)
+        gfx.is_object_graphics_visible = False
+        Assert.assertFalse(gfx.is_object_graphics_visible)
+        gfx.is_object_graphics_visible = True
+        Assert.assertTrue(gfx.is_object_graphics_visible)
+        gfx.inherit_from_scenario = True
+        Assert.assertTrue(gfx.inherit_from_scenario)
+        gfx.use_inst_name_label = False
+        Assert.assertFalse(gfx.use_inst_name_label)
+        gfx.label_name = "new label"
+        Assert.assertEqual("new label", gfx.label_name)
+        gfx.label_color = Color.FromArgb(((128 * 256) * 256))
+        AssertEx.AreEqual(Color.FromArgb(((128 * 256) * 256)), gfx.label_color)
+        gfx.label_visible = True
+        Assert.assertTrue(gfx.label_visible)
+        gfx.marker_color = Color.FromArgb((255 * 256))
+        AssertEx.AreEqual(Color.FromArgb((255 * 256)), gfx.marker_color)
+        gfx.marker_style = "Star"
+        Assert.assertEqual("Star", gfx.marker_style)
 
-        TestBase.Application.LoadCustomMarker(TestBase.GetScenarioFile("gp_marker.bmp"))
-        gfx.MarkerStyle = TestBase.GetScenarioFile("gp_marker.bmp")
+        TestBase.Application.load_custom_marker(TestBase.GetScenarioFile("gp_marker.bmp"))
+        gfx.marker_style = TestBase.GetScenarioFile("gp_marker.bmp")
 
         oHelper = GfxLabelNoteHelper(self.Units)
-        oHelper.Run(gfx.LabelNotes)
+        oHelper.Run(gfx.label_notes)
 
-        uiLC = gfx.LabelColor
+        uiLC = gfx.label_color
         uiNewColor = Color.Green
         AssertEx.AreEqual(Color.Green, uiNewColor)
-        gfx.LabelColor = uiNewColor
-        AssertEx.AreEqual(uiNewColor, gfx.LabelColor)
+        gfx.label_color = uiNewColor
+        AssertEx.AreEqual(uiNewColor, gfx.label_color)
 
-        uiMC = gfx.MarkerColor
+        uiMC = gfx.marker_color
         uiNewColor = Color.Blue
         AssertEx.AreEqual(Color.Blue, uiNewColor)
-        gfx.MarkerColor = uiNewColor
-        AssertEx.AreEqual(uiNewColor, gfx.MarkerColor)
-        gfx.LabelName = "Finish"
+        gfx.marker_color = uiNewColor
+        AssertEx.AreEqual(uiNewColor, gfx.marker_color)
+        gfx.label_name = "Finish"
 
     # endregion
 
@@ -265,48 +269,48 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_GfxRangeContours(self):
         oHelper = GfxRangeContoursHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_FA.Graphics.Contours)
+        oHelper.Run(EarlyBoundTests.AG_FA.graphics.contours)
 
     # endregion
 
     # region GfxAzElMask
     @category("Graphics Tests")
     def test_GfxAzElMask(self):
-        azel: "IBasicAzElMask" = EarlyBoundTests.AG_FA.Graphics.AzElMask
-        azel.RangeVisible = True
-        Assert.assertTrue(azel.RangeVisible)
-        azel.AltVisible = True
-        Assert.assertTrue(azel.AltVisible)
-        azel.NumberOfAltSteps = 3
-        Assert.assertEqual(3, azel.NumberOfAltSteps)
-        azel.NumberOfRangeSteps = 4
-        Assert.assertEqual(4, azel.NumberOfRangeSteps)
-        azel.DisplayAltMaximum = 10
-        Assert.assertEqual(10, azel.DisplayAltMaximum)
-        azel.DisplayAltMinimum = 3
-        Assert.assertEqual(3, azel.DisplayAltMinimum)
-        azel.DisplayRangeMaximum = 20
-        Assert.assertEqual(20, azel.DisplayRangeMaximum)
-        azel.DisplayRangeMinimum = 10
-        Assert.assertEqual(10, azel.DisplayRangeMinimum)
+        azel: "IBasicAzElMask" = EarlyBoundTests.AG_FA.graphics.az_el_mask
+        azel.range_visible = True
+        Assert.assertTrue(azel.range_visible)
+        azel.alt_visible = True
+        Assert.assertTrue(azel.alt_visible)
+        azel.number_of_alt_steps = 3
+        Assert.assertEqual(3, azel.number_of_alt_steps)
+        azel.number_of_range_steps = 4
+        Assert.assertEqual(4, azel.number_of_range_steps)
+        azel.display_alt_maximum = 10
+        Assert.assertEqual(10, azel.display_alt_maximum)
+        azel.display_alt_minimum = 3
+        Assert.assertEqual(3, azel.display_alt_minimum)
+        azel.display_range_maximum = 20
+        Assert.assertEqual(20, azel.display_range_maximum)
+        azel.display_range_minimum = 10
+        Assert.assertEqual(10, azel.display_range_minimum)
 
         def action6():
-            azel.AltColor = Color.Yellow
+            azel.alt_color = Color.Yellow
 
         TryCatchAssertBlock.DoAssert("", action6)
 
         def action7():
-            azel.RangeColor = Color.Yellow
+            azel.range_color = Color.Yellow
 
         TryCatchAssertBlock.DoAssert("", action7)
-        azel.AltColorVisible = True
-        Assert.assertTrue(azel.AltColorVisible)
-        azel.AltColor = Color.Yellow
-        AssertEx.AreEqual(Color.Yellow, azel.AltColor)
-        azel.RangeColorVisible = True
-        Assert.assertTrue(azel.RangeColorVisible)
-        azel.RangeColor = Color.Yellow
-        AssertEx.AreEqual(Color.Yellow, azel.RangeColor)
+        azel.alt_color_visible = True
+        Assert.assertTrue(azel.alt_color_visible)
+        azel.alt_color = Color.Yellow
+        AssertEx.AreEqual(Color.Yellow, azel.alt_color)
+        azel.range_color_visible = True
+        Assert.assertTrue(azel.range_color_visible)
+        azel.range_color = Color.Yellow
+        AssertEx.AreEqual(Color.Yellow, azel.range_color)
 
     # endregion
 
@@ -314,7 +318,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOAzElMask(self):
         oHelper = VOAzElMaskHelper()
-        oHelper.Run(EarlyBoundTests.AG_FA.VO.AzElMask)
+        oHelper.Run(EarlyBoundTests.AG_FA.vo.az_el_mask)
 
     # endregion
 
@@ -322,7 +326,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOAOULabelSwapDistance(self):
         oLabelSwapHelper = VOLabelSwapDistanceHelper()
-        oLabelSwapHelper.Run(EarlyBoundTests.AG_FA.VO.AOULabelSwapDistance)
+        oLabelSwapHelper.Run(EarlyBoundTests.AG_FA.vo.aou_label_swap_distance)
 
     # endregion
 
@@ -330,7 +334,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOVectors(self):
         oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, IStkObjectRoot))
-        oHelper.Run(EarlyBoundTests.AG_FA.VO.Vector, False)
+        oHelper.Run(EarlyBoundTests.AG_FA.vo.vector, False)
 
     # endregion
 
@@ -340,7 +344,7 @@ class EarlyBoundTests(TestBase):
     def test_VODataDisplay(self):
         # DataDisplay
         helper = VODataDisplayHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_FA.VO.DataDisplays, False, False)
+        helper.Run(EarlyBoundTests.AG_FA.vo.data_displays, False, False)
 
     # endregion
 
@@ -348,7 +352,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VORangeContours(self):
         oHelper = VORangeContoursHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_FA.VO.RangeContours)
+        oHelper.Run(EarlyBoundTests.AG_FA.vo.range_contours)
 
     # endregion
 
@@ -356,7 +360,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOOffsets(self):
         oHelper = VOOffsetsHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_FA.VO.Offsets)
+        oHelper.Run(EarlyBoundTests.AG_FA.vo.offsets)
 
     # endregion
 
@@ -364,7 +368,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModel(self):
         oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, IStkObjectRoot), self.Units)
-        oHelper.Run(EarlyBoundTests.AG_FA.VO.Model)
+        oHelper.Run(EarlyBoundTests.AG_FA.vo.model)
 
     # endregion
 
@@ -372,77 +376,70 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOModelMarker(self):
         oHelper = VOMarkerHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_FA.VO.Model.Marker, False)
+        oHelper.Run(EarlyBoundTests.AG_FA.vo.model.marker, False)
 
     # endregion
 
     # region VOModelPointing
     @category("VO Tests")
     def test_VOModelPointing(self):
-        oModel: "IVOModel" = EarlyBoundTests.AG_FA.VO.Model
-        TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.ModelType)
-        oModel.ModelType = AgEModelType.eModelFile
-        TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.ModelType)
-        Assert.assertEqual(AgEModelType.eModelFile, oModel.ModelType)
-        oModelFile: "IVOModelFile" = clr.CastAs(oModel.ModelData, IVOModelFile)
+        oModel: "IVOModel" = EarlyBoundTests.AG_FA.vo.model
+        TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
+        oModel.model_type = AgEModelType.eModelFile
+        TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
+        Assert.assertEqual(AgEModelType.eModelFile, oModel.model_type)
+        oModelFile: "IVOModelFile" = clr.CastAs(oModel.model_data, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
-        TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.Filename)
-        oModelFile.Filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
-        TestBase.logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.Filename)
+        TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
+        oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
+        TestBase.logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.filename)
 
         def action8():
-            oModelFile.Filename = ""
+            oModelFile.filename = ""
 
         TryCatchAssertBlock.DoAssert("", action8)
 
         oHelper = VOModelPointingHelper()
-        oHelper.Run(EarlyBoundTests.AG_FA.VO.ModelPointing)
+        oHelper.Run(EarlyBoundTests.AG_FA.vo.model_pointing)
 
     # endregion
 
     # region VOModelPointing_Snapshot
     @category("VO Tests")
     def test_VOModelPointing_Snapshot(self):
-        TestBase.Application.CloseScenario()
-        TestBase.Application.NewScenario("BUG69449")
-        scenario: "IScenario" = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
+        TestBase.Application.close_scenario()
+        TestBase.Application.new_scenario("BUG69449")
+        scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
         # scenario.StartTime = "22 Oct 2012 16:00:00.000";
         # scenario.StopTime  = "23 Oct 2012 16:00:00.000";
 
         fac: "IFacility" = clr.CastAs(
-            TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Facility1"), IFacility
+            TestBase.Application.current_scenario.children.new(AgESTKObjectType.eFacility, "Facility1"), IFacility
         )
-        voModelFile: "IVOModelFile" = clr.CastAs(fac.VO.Model.ModelData, IVOModelFile)
-        voModelFile.Filename = r"STKData\VO\Models\Land\ground-antenna.mdl"
-        fac.VO.ModelPointing.PointableElements[0].AssignedTargetObject.BindTo("Sun")
-        fac.VO.ModelPointing.PointableElements[1].AssignedTargetObject.BindTo("Sun")
-        TestBase.Application.ExecuteCommand("VO * ViewFromTo Normal From Facility/Facility1 To Facility/Facility1")
-
-        # Visually observe VO window
-        # TODO: Compare vs. Snapshot
-        # AssertInsight3D.SceneIsSame(Scene, TypeOfComparison.NumberOfMisMatchingPixels, 0.01, ThingsToTurnOffForTest.Stars, ThingsToTurnOffForTest.Lighting);
+        voModelFile: "IVOModelFile" = clr.CastAs(fac.vo.model.model_data, IVOModelFile)
+        voModelFile.filename = r"STKData\VO\Models\Land\ground-antenna.mdl"
+        fac.vo.model_pointing.pointable_elements[0].assigned_target_object.bind_to("Sun")
+        fac.vo.model_pointing.pointable_elements[1].assigned_target_object.bind_to("Sun")
+        TestBase.Application.execute_command("VO * ViewFromTo Normal From Facility/Facility1 To Facility/Facility1")
 
         anim: "IAnimation" = clr.CastAs(TestBase.Application, IAnimation)
-        anim.CurrentTime = 7200  # move ahead 2 hours
-
-        # Visually observe VO window to ensure that the model pointed to new location
-        # TODO: Compare vs. Snapshot
+        anim.current_time = 7200  # move ahead 2 hours
 
         TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.CurrentScenario.Children["Facility1"], IFacility)
+        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], IFacility)
 
     # endregion
 
     # region ZZZ_InvestigateProblemFailingOnlyOnTestMachines
     def test_ZZZ_InvestigateProblemFailingOnlyOnTestMachines(self):
-        TestBase.Application.CloseScenario()
-        TestBase.Application.NewScenario("Investigate")
-        scenario: "IScenario" = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
-        scenario.StartTime = "22 Oct 2009 16:00:00.000"  # See 89075 - Regression suite uses start/stop of Mar 2010
-        scenario.StopTime = "23 Oct 2009 16:00:00.000"
+        TestBase.Application.close_scenario()
+        TestBase.Application.new_scenario("Investigate")
+        scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
+        scenario.start_time = "22 Oct 2009 16:00:00.000"  # See 89075 - Regression suite uses start/stop of Mar 2010
+        scenario.stop_time = "23 Oct 2009 16:00:00.000"
 
         TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.CurrentScenario.Children["Facility1"], IFacility)
+        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], IFacility)
 
     # endregion
 
@@ -451,8 +448,8 @@ class EarlyBoundTests(TestBase):
     def test_VOVaporTrail(self):
         oHelper = VOVaporTrailHelper()
         oHelper.Run(
-            EarlyBoundTests.AG_FA.VO.VaporTrail,
-            clr.CastAs(EarlyBoundTests.AG_FA.VO.Model, IVOModel),
+            EarlyBoundTests.AG_FA.vo.vapor_trail,
+            clr.CastAs(EarlyBoundTests.AG_FA.vo.model, IVOModel),
             TestBase.GetSTKHomeDir(),
         )
 
@@ -464,7 +461,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_FA.AccessConstraints,
+            EarlyBoundTests.AG_FA.access_constraints,
             clr.Convert(EarlyBoundTests.AG_FA, IStkObject),
             TestBase.TemporaryDirectory,
         )
@@ -476,54 +473,21 @@ class EarlyBoundTests(TestBase):
     def test_Position(self):
         oPositionTest = PositionTest(self.Units)
         Assert.assertIsNotNone(oPositionTest)
-        oPositionTest.Run(EarlyBoundTests.AG_FA.Position, PositionTest.Positions.All)
+        oPositionTest.Run(EarlyBoundTests.AG_FA.position, PositionTest.Positions.All)
 
     # endregion
-
-    # As of Oct 13? 2015, positions use terrain as defaults, and cannot be set via Cartesian
-    # [Test]
-    # public void UiDisplayPositionType()
-    # {
-    #    IAgFacility fac;
-
-    #    fac = (IAgFacility)Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Facility_Cartesian");
-    #    IAgCartesian cart = (IAgCartesian)fac.Position.ConvertTo(AgEPositionType.eCartesian);
-    #    cart.X += 10.0;
-    #    fac.Position.Assign(cart);
-
-    #    fac = (IAgFacility)Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Facility_Cylindrical");
-    #    IAgCylindrical cylindrical = (IAgCylindrical)fac.Position.ConvertTo(AgEPositionType.eCylindrical);
-    #    cylindrical.Radius += 1.0;
-    #    fac.Position.Assign(cylindrical);
-
-    #    fac = (IAgFacility)Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Facility_Geocentric");
-    #    IAgGeocentric geocentric = (IAgGeocentric)fac.Position.ConvertTo(AgEPositionType.eGeocentric);
-    #    geocentric.Alt += 10;
-    #    fac.Position.Assign(geocentric);
-
-    #    fac = (IAgFacility)Application.CurrentScenario.Children.New(AgESTKObjectType.eFacility, "Facility_Spherical");
-    #    IAgSpherical  spherical = (IAgSpherical)fac.Position.ConvertTo(AgEPositionType.eSpherical);
-    #    spherical.Radius += 10;
-    #    fac.Position.Assign(spherical);
-
-    #    Application.SaveScenarioAs(Path.Combine(TemporaryDirectory, "Scenario_FacilityPositions.sc"));
-
-    #    LoadBaseScenario();
-
-    #    AG_FA = (IAgFacility)Application.CurrentScenario.Children["Facility1"];
-    # }
 
     # region RF_Atmosphere_AtmosphericAbsorptionModel
     def test_RF_Atmosphere_AtmosphericAbsorptionModel(self):
         helper = AtmosphereHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_FA.Atmosphere)
+        helper.Run(EarlyBoundTests.AG_FA.atmosphere)
 
     # endregion
 
     # region RF_Atmosphere_LocalRainData
     def test_RF_Atmosphere_LocalRainData(self):
         helper = AtmosphereLocalRainDataHelper()
-        helper.Run(EarlyBoundTests.AG_FA.Atmosphere, TestBase.Application)
+        helper.Run(EarlyBoundTests.AG_FA.atmosphere, TestBase.Application)
 
     # endregion
 
@@ -532,7 +496,7 @@ class EarlyBoundTests(TestBase):
         helper = RadarClutterMapInheritableHelper()
 
         def action9():
-            helper.Run(EarlyBoundTests.AG_FA.RadarClutterMap)
+            helper.Run(EarlyBoundTests.AG_FA.radar_clutter_map)
 
         TryCatchAssertBlock.ExpectedException("obsolete", action9)
 
@@ -541,76 +505,76 @@ class EarlyBoundTests(TestBase):
     # region RF_RadarCrossSection
     def test_RF_RadarCrossSection(self):
         helper = RadarCrossSectionInheritableHelper()
-        helper.Run(EarlyBoundTests.AG_FA.RadarCrossSection)
+        helper.Run(EarlyBoundTests.AG_FA.radar_cross_section)
 
     # endregion
 
     # region Laser_Environment_AtmosphericLoss_BBLL
     def test_Laser_Environment_AtmosphericLoss_BBLL(self):
         helper = PlatformLaserEnvAtmosLossBBLLHelper()
-        helper.Run(EarlyBoundTests.AG_FA.LaserEnvironment)
+        helper.Run(EarlyBoundTests.AG_FA.laser_environment)
 
     # endregion
 
     # region Laser_Environment_AtmosphericLoss_Modtran
     def test_Laser_Environment_AtmosphericLoss_Modtran(self):
         helper = PlatformLaserEnvAtmosLossModtranHelper()
-        helper.Run(EarlyBoundTests.AG_FA.LaserEnvironment)
+        helper.Run(EarlyBoundTests.AG_FA.laser_environment)
 
     # endregion
 
     # region Laser_Environment_TroposphericScintillationLoss
     def test_Laser_Environment_TroposphericScintillationLoss(self):
         helper = PlatformLaserEnvTropoScintLossHelper()
-        helper.Run(EarlyBoundTests.AG_FA.LaserEnvironment)
+        helper.Run(EarlyBoundTests.AG_FA.laser_environment)
 
     # endregion
 
     # region RF_Environment_EnvironmentalData
     def test_RF_Environment_EnvironmentalData(self):
         helper = PlatformRF_Environment_EnvironmentalDataHelper()
-        helper.Run(EarlyBoundTests.AG_FA.RFEnvironment)
+        helper.Run(EarlyBoundTests.AG_FA.rf_environment)
 
     # endregion
 
     # region RF_Environment_RainCloudFog_RainModel
     def test_RF_Environment_RainCloudFog_RainModel(self):
         helper = PlatformRF_Environment_RainCloudFog_RainModelHelper()
-        helper.Run(EarlyBoundTests.AG_FA.RFEnvironment, TestBase.Application)
+        helper.Run(EarlyBoundTests.AG_FA.rf_environment, TestBase.Application)
 
     # endregion
 
     # region RF_Environment_RainCloudFog_CloudsAndFogModel
     def test_RF_Environment_RainCloudFog_CloudsAndFogModel(self):
         helper = PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper()
-        helper.Run(EarlyBoundTests.AG_FA.RFEnvironment, TestBase.Application)
+        helper.Run(EarlyBoundTests.AG_FA.rf_environment, TestBase.Application)
 
     # endregion
 
     # region RF_Environment_AtmosphericAbsorption
     def test_RF_Environment_AtmosphericAbsorption(self):
         helper = PlatformRF_Environment_AtmosphericAbsorptionHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_FA.RFEnvironment)
+        helper.Run(EarlyBoundTests.AG_FA.rf_environment)
 
     # endregion
 
     # region RF_Environment_UrbanAndTerrestrial
     def test_RF_Environment_UrbanAndTerrestrial(self):
         helper = PlatformRF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_FA.RFEnvironment)
+        helper.Run(EarlyBoundTests.AG_FA.rf_environment)
 
     # endregion
 
     # region RF_Environment_TropoScintillation
     def test_RF_Environment_TropoScintillation(self):
         helper = PlatformRF_Environment_TropoScintillationHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_FA.RFEnvironment)
+        helper.Run(EarlyBoundTests.AG_FA.rf_environment)
 
     # endregion
 
     # region RF_Environment_CustomModels
     def test_RF_Environment_CustomModels(self):
         helper = PlatformRF_Environment_CustomModelsHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_FA.RFEnvironment)
+        helper.Run(EarlyBoundTests.AG_FA.rf_environment)
 
     # endregion

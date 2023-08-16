@@ -5,6 +5,7 @@ from assertion_harness import *
 from interfaces.stk_objects import *
 from logger import *
 from ansys.stk.core.stkobjects import *
+from ansys.stk.core.stkutil import *
 
 
 @category("EarlyBoundTests")
@@ -18,7 +19,7 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("PlanetTests", "PlanetTests.sc"))
-            EarlyBoundTests.AG_PL = clr.Convert(TestBase.Application.CurrentScenario.Children["Planet1"], IPlanet)
+            EarlyBoundTests.AG_PL = clr.Convert(TestBase.Application.current_scenario.children["Planet1"], IPlanet)
 
         except Exception as e:
             raise e
@@ -39,16 +40,16 @@ class EarlyBoundTests(TestBase):
 
     # region CommonTasks
     def test_CommonTasks(self):
-        file: "IPlanetPositionFile" = EarlyBoundTests.AG_PL.CommonTasks.SetPositionSourceFile(
+        file: "IPlanetPositionFile" = EarlyBoundTests.AG_PL.common_tasks.set_position_source_file(
             TestBase.GetScenarioFile("Venus.pe")
         )
-        Assert.assertEqual("Venus.pe", file.Filename)
+        Assert.assertEqual("Venus.pe", file.filename)
 
-        cb: "IPlanetPositionCentralBody" = EarlyBoundTests.AG_PL.CommonTasks.SetPositionSourceCentralBody(
+        cb: "IPlanetPositionCentralBody" = EarlyBoundTests.AG_PL.common_tasks.set_position_source_central_body(
             "Jupiter", AgEEphemSourceType.eEphemDefault
         )
-        Assert.assertEqual(AgEEphemSourceType.eEphemDefault, cb.EphemSource)
-        Assert.assertEqual("Jupiter", cb.CentralBody)
+        Assert.assertEqual(AgEEphemSourceType.eEphemDefault, cb.ephem_source)
+        Assert.assertEqual("Jupiter", cb.central_body)
 
     # endregion
 
@@ -57,99 +58,99 @@ class EarlyBoundTests(TestBase):
     def test_Basic(self):
         TestBase.logger.WriteLine("----- THE BASIC TEST ----- BEGIN -----")
         # PositionSource
-        TestBase.logger.WriteLine6("The current PositionSource type is: {0}", EarlyBoundTests.AG_PL.PositionSource)
-        EarlyBoundTests.AG_PL.PositionSource = AgEPlPositionSourceType.ePosCentralBody
-        TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.PositionSource)
-        Assert.assertEqual(AgEPlPositionSourceType.ePosCentralBody, EarlyBoundTests.AG_PL.PositionSource)
+        TestBase.logger.WriteLine6("The current PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
+        EarlyBoundTests.AG_PL.position_source = AgEPlPositionSourceType.ePosCentralBody
+        TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
+        Assert.assertEqual(AgEPlPositionSourceType.ePosCentralBody, EarlyBoundTests.AG_PL.position_source)
         # CentralBody
         oBody: "IPlanetPositionCentralBody" = clr.Convert(
-            EarlyBoundTests.AG_PL.PositionSourceData, IPlanetPositionCentralBody
+            EarlyBoundTests.AG_PL.position_source_data, IPlanetPositionCentralBody
         )
         Assert.assertIsNotNone(oBody)
-        TestBase.logger.WriteLine6("\tThe current Radius is: {0}", oBody.Radius)
-        TestBase.logger.WriteLine4("\tThe current AutoRename flag is: {0}", oBody.AutoRename)
-        oBody.AutoRename = False
-        TestBase.logger.WriteLine4("\tThe new AutoRename flag is: {0}", oBody.AutoRename)
-        Assert.assertEqual(False, oBody.AutoRename)
-        oBody.AutoRename = True
-        TestBase.logger.WriteLine4("\tThe new AutoRename flag is: {0}", oBody.AutoRename)
-        Assert.assertEqual(True, oBody.AutoRename)
-        TestBase.logger.WriteLine5("\tThe current CentralBody is: {0}", oBody.CentralBody)
-        arBodies = oBody.AvailableCentralBodies
+        TestBase.logger.WriteLine6("\tThe current Radius is: {0}", oBody.radius)
+        TestBase.logger.WriteLine4("\tThe current AutoRename flag is: {0}", oBody.auto_rename)
+        oBody.auto_rename = False
+        TestBase.logger.WriteLine4("\tThe new AutoRename flag is: {0}", oBody.auto_rename)
+        Assert.assertEqual(False, oBody.auto_rename)
+        oBody.auto_rename = True
+        TestBase.logger.WriteLine4("\tThe new AutoRename flag is: {0}", oBody.auto_rename)
+        Assert.assertEqual(True, oBody.auto_rename)
+        TestBase.logger.WriteLine5("\tThe current CentralBody is: {0}", oBody.central_body)
+        arBodies = oBody.available_central_bodies
         TestBase.logger.WriteLine3("\tThe CentralBody contains: {0} available bodies", Array.Length(arBodies))
         if Array.Length(arBodies) > 0:
             strBody: str = str(arBodies[0])
             TestBase.logger.WriteLine7("\t\tAvailable Body {0}: {1}", 0, strBody)
-            oBody.CentralBody = strBody
-            TestBase.logger.WriteLine5("\t\t\tThe new CentralBody is: {0}", oBody.CentralBody)
-            Assert.assertEqual(strBody, oBody.CentralBody)
-            TestBase.logger.WriteLine6("\t\t\tThe current EphemSourceType is: {0}", oBody.EphemSource)
-            arEphem = oBody.AvailableEphemSourceTypes
+            oBody.central_body = strBody
+            TestBase.logger.WriteLine5("\t\t\tThe new CentralBody is: {0}", oBody.central_body)
+            Assert.assertEqual(strBody, oBody.central_body)
+            TestBase.logger.WriteLine6("\t\t\tThe current EphemSourceType is: {0}", oBody.ephem_source)
+            arEphem = oBody.available_ephem_source_types
             TestBase.logger.WriteLine7(
-                "\t\t\tThe {0} supports {1} EphemSourceTypes", oBody.CentralBody, Array.Length(arEphem)
+                "\t\t\tThe {0} supports {1} EphemSourceTypes", oBody.central_body, Array.Length(arEphem)
             )
             if Array.Length(arEphem) > 0:
                 eType: "AgEEphemSourceType" = clr.Convert(int(arEphem[0]), AgEEphemSourceType)
                 TestBase.logger.WriteLine7("\t\t\t\tAvailable Type {0}: {1}", 0, eType)
-                oBody.EphemSource = eType
-                TestBase.logger.WriteLine6("\t\t\t\t\tThe new EphemSourceType is: {0}", oBody.EphemSource)
-                Assert.assertEqual(eType, clr.Convert(oBody.EphemSource, AgEEphemSourceType))
+                oBody.ephem_source = eType
+                TestBase.logger.WriteLine6("\t\t\t\t\tThe new EphemSourceType is: {0}", oBody.ephem_source)
+                Assert.assertEqual(eType, clr.Convert(oBody.ephem_source, AgEEphemSourceType))
 
         # File
-        EarlyBoundTests.AG_PL.PositionSource = AgEPlPositionSourceType.ePosFile
-        TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.PositionSource)
-        Assert.assertEqual(AgEPlPositionSourceType.ePosFile, EarlyBoundTests.AG_PL.PositionSource)
-        file: "IPlanetPositionFile" = clr.Convert(EarlyBoundTests.AG_PL.PositionSourceData, IPlanetPositionFile)
+        EarlyBoundTests.AG_PL.position_source = AgEPlPositionSourceType.ePosFile
+        TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
+        Assert.assertEqual(AgEPlPositionSourceType.ePosFile, EarlyBoundTests.AG_PL.position_source)
+        file: "IPlanetPositionFile" = clr.Convert(EarlyBoundTests.AG_PL.position_source_data, IPlanetPositionFile)
         Assert.assertIsNotNone(file)
-        TestBase.logger.WriteLine5("The current Filename is: {0}", file.Filename)
-        file.Filename = TestBase.GetScenarioFile("Venus.pe")
-        TestBase.logger.WriteLine5("The new Filename is: {0}", file.Filename)
+        TestBase.logger.WriteLine5("The current Filename is: {0}", file.filename)
+        file.filename = TestBase.GetScenarioFile("Venus.pe")
+        TestBase.logger.WriteLine5("The new Filename is: {0}", file.filename)
         # Restore the planet name to its original value
-        EarlyBoundTests.AG_PL.PositionSource = AgEPlPositionSourceType.ePosCentralBody
-        oBody = clr.Convert(EarlyBoundTests.AG_PL.PositionSourceData, IPlanetPositionCentralBody)
+        EarlyBoundTests.AG_PL.position_source = AgEPlPositionSourceType.ePosCentralBody
+        oBody = clr.Convert(EarlyBoundTests.AG_PL.position_source_data, IPlanetPositionCentralBody)
         Assert.assertIsNotNone(oBody)
-        oBody.AutoRename = False
-        (clr.Convert(EarlyBoundTests.AG_PL, IStkObject)).InstanceName = "Planet1"
-        oBody.CentralBody = "Sun"
-        TestBase.logger.WriteLine5("JPLDEVersion: {0}", oBody.JPLDEVersion)
-        oBody.EphemSource = AgEEphemSourceType.eEphemAnalytic
-        Assert.assertEqual(AgEEphemSourceType.eEphemAnalytic, oBody.EphemSource)
-        oBody.EphemSource = AgEEphemSourceType.eEphemDefault
-        Assert.assertEqual(AgEEphemSourceType.eEphemDefault, oBody.EphemSource)
-        oBody.EphemSource = AgEEphemSourceType.eEphemSpice
-        Assert.assertEqual(AgEEphemSourceType.eEphemSpice, oBody.EphemSource)
-        oBody.EphemSource = AgEEphemSourceType.eEphemJPLDE
-        Assert.assertEqual(AgEEphemSourceType.eEphemJPLDE, oBody.EphemSource)
+        oBody.auto_rename = False
+        (clr.Convert(EarlyBoundTests.AG_PL, IStkObject)).instance_name = "Planet1"
+        oBody.central_body = "Sun"
+        TestBase.logger.WriteLine5("JPLDEVersion: {0}", oBody.jplde_version)
+        oBody.ephem_source = AgEEphemSourceType.eEphemAnalytic
+        Assert.assertEqual(AgEEphemSourceType.eEphemAnalytic, oBody.ephem_source)
+        oBody.ephem_source = AgEEphemSourceType.eEphemDefault
+        Assert.assertEqual(AgEEphemSourceType.eEphemDefault, oBody.ephem_source)
+        oBody.ephem_source = AgEEphemSourceType.eEphemSpice
+        Assert.assertEqual(AgEEphemSourceType.eEphemSpice, oBody.ephem_source)
+        oBody.ephem_source = AgEEphemSourceType.eEphemJPLDE
+        Assert.assertEqual(AgEEphemSourceType.eEphemJPLDE, oBody.ephem_source)
 
         TestBase.logger.WriteLine("----- THE BASIC TEST ----- END -----")
 
     @category("Basic Tests")
     def test_PlanetRadius(self):
-        initialDistanceUnit: str = TestBase.Application.UnitPreferences.GetCurrentUnitAbbrv("DistanceUnit")
+        initialDistanceUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DistanceUnit")
         try:
             tempPlanet: "IPlanet" = clr.Convert(
-                TestBase.Application.CurrentScenario.Children.New(AgESTKObjectType.ePlanet, "TempPlanet"), IPlanet
+                TestBase.Application.current_scenario.children.new(AgESTKObjectType.ePlanet, "TempPlanet"), IPlanet
             )
-            tempPlanet.PositionSource = AgEPlPositionSourceType.ePosCentralBody
+            tempPlanet.position_source = AgEPlPositionSourceType.ePosCentralBody
             centralBody: "IPlanetPositionCentralBody" = clr.Convert(
-                tempPlanet.PositionSourceData, IPlanetPositionCentralBody
+                tempPlanet.position_source_data, IPlanetPositionCentralBody
             )
-            centralBody.AutoRename = False
-            centralBody.CentralBody = "Sun"
+            centralBody.auto_rename = False
+            centralBody.central_body = "Sun"
 
-            TestBase.Application.UnitPreferences.SetCurrentUnit("DistanceUnit", "m")
+            TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "m")
             Assert.assertAlmostEqual(
-                695700000.0, centralBody.Radius, delta=10, msg="Sun radius not property converted to meters"
+                695700000.0, centralBody.radius, delta=10, msg="Sun radius not property converted to meters"
             )
 
-            TestBase.Application.UnitPreferences.SetCurrentUnit("DistanceUnit", "km")
+            TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "km")
             Assert.assertAlmostEqual(
-                695700.0, centralBody.Radius, delta=10, msg="Sun radius not property converted to kilometers"
+                695700.0, centralBody.radius, delta=10, msg="Sun radius not property converted to kilometers"
             )
 
         finally:
-            TestBase.Application.CurrentScenario.Children.Unload(AgESTKObjectType.ePlanet, "TempPlanet")
-            TestBase.Application.UnitPreferences.SetCurrentUnit("DistanceUnit", initialDistanceUnit)
+            TestBase.Application.current_scenario.children.unload(AgESTKObjectType.ePlanet, "TempPlanet")
+            TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", initialDistanceUnit)
 
     # endregion
 
@@ -158,7 +159,7 @@ class EarlyBoundTests(TestBase):
     def test_STKObject(self):
         oHelper = STKObjectHelper()
         oHelper.Run(clr.CastAs(EarlyBoundTests.AG_PL, IStkObject))
-        oHelper.TestObjectFilesArray((clr.Convert(EarlyBoundTests.AG_PL, IStkObject)).ObjectFiles)
+        oHelper.TestObjectFilesArray((clr.Convert(EarlyBoundTests.AG_PL, IStkObject)).object_files)
 
     # endregion
 
@@ -166,57 +167,57 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- BEGIN -----")
-        gfx: "IPlanetGraphics" = EarlyBoundTests.AG_PL.Graphics
+        gfx: "IPlanetGraphics" = EarlyBoundTests.AG_PL.graphics
         Assert.assertIsNotNone(gfx)
         # IsObjectGraphicsVisible
-        TestBase.logger.WriteLine4("The current IsObjectGraphicsVisible is: {0}", gfx.IsObjectGraphicsVisible)
-        gfx.IsObjectGraphicsVisible = False
-        TestBase.logger.WriteLine4("The new IsObjectGraphicsVisible is: {0}", gfx.IsObjectGraphicsVisible)
-        Assert.assertFalse(gfx.IsObjectGraphicsVisible)
-        gfx.IsObjectGraphicsVisible = True
-        Assert.assertTrue(gfx.IsObjectGraphicsVisible)
+        TestBase.logger.WriteLine4("The current IsObjectGraphicsVisible is: {0}", gfx.is_object_graphics_visible)
+        gfx.is_object_graphics_visible = False
+        TestBase.logger.WriteLine4("The new IsObjectGraphicsVisible is: {0}", gfx.is_object_graphics_visible)
+        Assert.assertFalse(gfx.is_object_graphics_visible)
+        gfx.is_object_graphics_visible = True
+        Assert.assertTrue(gfx.is_object_graphics_visible)
         # Color
-        TestBase.logger.WriteLine6("The current Color is: {0}", gfx.Color)
-        gfx.Color = Color.FromArgb(1193046)
-        TestBase.logger.WriteLine6("The new Color is: {0}", gfx.Color)
-        AssertEx.AreEqual(Color.FromArgb(1193046), gfx.Color)
+        TestBase.logger.WriteLine6("The current Color is: {0}", gfx.color)
+        gfx.color = Color.FromArgb(1193046)
+        TestBase.logger.WriteLine6("The new Color is: {0}", gfx.color)
+        AssertEx.AreEqual(Color.FromArgb(1193046), gfx.color)
         # Marker Style
-        scenario: "IScenario" = clr.CastAs(TestBase.Application.CurrentScenario, IScenario)
-        arMarkers = scenario.VO.AvailableMarkerTypes()
-        TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.MarkerStyle)
-        gfx.MarkerStyle = str(arMarkers[0])
-        TestBase.logger.WriteLine5("The new MarkerStyle is: {0}", gfx.MarkerStyle)
+        scenario: "IScenario" = clr.CastAs(TestBase.Application.current_scenario, IScenario)
+        arMarkers = scenario.vo.available_marker_types()
+        TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.marker_style)
+        gfx.marker_style = str(arMarkers[0])
+        TestBase.logger.WriteLine5("The new MarkerStyle is: {0}", gfx.marker_style)
         # LineStyle
-        TestBase.logger.WriteLine6("The current LineStyle is: {0}", gfx.LineStyle)
-        gfx.LineStyle = AgELineStyle.eMDashDot
-        TestBase.logger.WriteLine6("The new LineStyle is: {0}", gfx.LineStyle)
-        Assert.assertEqual(AgELineStyle.eMDashDot, gfx.LineStyle)
+        TestBase.logger.WriteLine6("The current LineStyle is: {0}", gfx.line_style)
+        gfx.line_style = AgELineStyle.eMDashDot
+        TestBase.logger.WriteLine6("The new LineStyle is: {0}", gfx.line_style)
+        Assert.assertEqual(AgELineStyle.eMDashDot, gfx.line_style)
 
         # LineWidth
-        TestBase.logger.WriteLine6("The current LineWidth is: {0}", gfx.LineWidth)
-        gfx.LineWidth = AgELineWidth.e4
-        TestBase.logger.WriteLine6("The new LineWidth is: {0}", gfx.LineWidth)
-        Assert.assertEqual(AgELineWidth.e4, gfx.LineWidth)
+        TestBase.logger.WriteLine6("The current LineWidth is: {0}", gfx.line_width)
+        gfx.line_width = AgELineWidth.e4
+        TestBase.logger.WriteLine6("The new LineWidth is: {0}", gfx.line_width)
+        Assert.assertEqual(AgELineWidth.e4, gfx.line_width)
 
         def action1():
-            gfx.LineWidth = clr.Convert((-1), AgELineWidth)
+            gfx.line_width = clr.Convert((-1), AgELineWidth)
 
         TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action1)
 
         def action2():
-            gfx.LineWidth = clr.Convert((11), AgELineWidth)
+            gfx.line_width = clr.Convert((11), AgELineWidth)
 
         TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action2)
 
         # Inherit from 2D
-        TestBase.logger.WriteLine4("The current Inherit is: {0}", gfx.Inherit)
-        gfx.Inherit = True
-        TestBase.logger.WriteLine4("The new Inherit is: {0}", gfx.Inherit)
-        Assert.assertEqual(True, gfx.Inherit)
+        TestBase.logger.WriteLine4("The current Inherit is: {0}", gfx.inherit)
+        gfx.inherit = True
+        TestBase.logger.WriteLine4("The new Inherit is: {0}", gfx.inherit)
+        Assert.assertEqual(True, gfx.inherit)
         bCaught: bool = False
         try:
             bCaught = False
-            gfx.InertialPositionVisible = True
+            gfx.inertial_position_visible = True
 
         except Exception as e:
             bCaught = True
@@ -227,7 +228,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             bCaught = False
-            gfx.PositionLabelVisible = True
+            gfx.position_label_visible = True
 
         except Exception as e:
             bCaught = True
@@ -238,7 +239,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             bCaught = False
-            gfx.SubPlanetLabelVisible = True
+            gfx.sub_planet_label_visible = True
 
         except Exception as e:
             bCaught = True
@@ -249,7 +250,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             bCaught = False
-            gfx.SubPlanetPointVisible = True
+            gfx.sub_planet_point_visible = True
 
         except Exception as e:
             bCaught = True
@@ -260,7 +261,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             bCaught = False
-            gfx.OrbitVisible = True
+            gfx.orbit_visible = True
 
         except Exception as e:
             bCaught = True
@@ -269,20 +270,20 @@ class EarlyBoundTests(TestBase):
         if not bCaught:
             Assert.fail("The property should be read-only.")
 
-        gfx.Inherit = False
-        TestBase.logger.WriteLine4("The new Inherit is: {0}", gfx.Inherit)
-        Assert.assertEqual(False, gfx.Inherit)
-        TestBase.logger.WriteLine4("The current InertialPositionVisible is: {0}", gfx.InertialPositionVisible)
-        gfx.InertialPositionVisible = False
-        TestBase.logger.WriteLine4("The new InertialPositionVisible is: {0}", gfx.InertialPositionVisible)
-        Assert.assertEqual(False, gfx.InertialPositionVisible)
-        TestBase.logger.WriteLine4("The current SubPlanetPointVisible is: {0}", gfx.SubPlanetPointVisible)
-        gfx.SubPlanetPointVisible = False
-        TestBase.logger.WriteLine4("The new SubPlanetPointVisible is: {0}", gfx.SubPlanetPointVisible)
-        Assert.assertEqual(False, gfx.SubPlanetPointVisible)
+        gfx.inherit = False
+        TestBase.logger.WriteLine4("The new Inherit is: {0}", gfx.inherit)
+        Assert.assertEqual(False, gfx.inherit)
+        TestBase.logger.WriteLine4("The current InertialPositionVisible is: {0}", gfx.inertial_position_visible)
+        gfx.inertial_position_visible = False
+        TestBase.logger.WriteLine4("The new InertialPositionVisible is: {0}", gfx.inertial_position_visible)
+        Assert.assertEqual(False, gfx.inertial_position_visible)
+        TestBase.logger.WriteLine4("The current SubPlanetPointVisible is: {0}", gfx.sub_planet_point_visible)
+        gfx.sub_planet_point_visible = False
+        TestBase.logger.WriteLine4("The new SubPlanetPointVisible is: {0}", gfx.sub_planet_point_visible)
+        Assert.assertEqual(False, gfx.sub_planet_point_visible)
         try:
             bCaught = False
-            gfx.MarkerStyle = str(arMarkers[0])
+            gfx.marker_style = str(arMarkers[0])
 
         except Exception as e:
             bCaught = True
@@ -291,21 +292,21 @@ class EarlyBoundTests(TestBase):
         if not bCaught:
             Assert.fail("The property should be read-only.")
 
-        TestBase.logger.WriteLine4("The current PositionLabelVisible is: {0}", gfx.PositionLabelVisible)
-        gfx.PositionLabelVisible = False
-        TestBase.logger.WriteLine4("The new PositionLabelVisible is: {0}", gfx.PositionLabelVisible)
-        Assert.assertEqual(False, gfx.PositionLabelVisible)
-        TestBase.logger.WriteLine4("The current SubPlanetLabelVisible is: {0}", gfx.SubPlanetLabelVisible)
-        gfx.SubPlanetLabelVisible = False
-        TestBase.logger.WriteLine4("The new SubPlanetLabelVisible is: {0}", gfx.SubPlanetLabelVisible)
-        Assert.assertEqual(False, gfx.SubPlanetLabelVisible)
-        TestBase.logger.WriteLine4("The current OrbitVisible is: {0}", gfx.OrbitVisible)
-        gfx.OrbitVisible = False
-        TestBase.logger.WriteLine4("The new OrbitVisible is: {0}", gfx.OrbitVisible)
-        Assert.assertEqual(False, gfx.OrbitVisible)
+        TestBase.logger.WriteLine4("The current PositionLabelVisible is: {0}", gfx.position_label_visible)
+        gfx.position_label_visible = False
+        TestBase.logger.WriteLine4("The new PositionLabelVisible is: {0}", gfx.position_label_visible)
+        Assert.assertEqual(False, gfx.position_label_visible)
+        TestBase.logger.WriteLine4("The current SubPlanetLabelVisible is: {0}", gfx.sub_planet_label_visible)
+        gfx.sub_planet_label_visible = False
+        TestBase.logger.WriteLine4("The new SubPlanetLabelVisible is: {0}", gfx.sub_planet_label_visible)
+        Assert.assertEqual(False, gfx.sub_planet_label_visible)
+        TestBase.logger.WriteLine4("The current OrbitVisible is: {0}", gfx.orbit_visible)
+        gfx.orbit_visible = False
+        TestBase.logger.WriteLine4("The new OrbitVisible is: {0}", gfx.orbit_visible)
+        Assert.assertEqual(False, gfx.orbit_visible)
         try:
             bCaught = False
-            gfx.OrbitDisplay = AgEPlOrbitDisplayType.eOrbitDisplayTime
+            gfx.orbit_display = AgEPlOrbitDisplayType.eOrbitDisplayTime
 
         except Exception as e:
             bCaught = True
@@ -316,9 +317,9 @@ class EarlyBoundTests(TestBase):
 
         try:
             bCaught = False
-            oODD: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.OrbitDisplayData, IPlanetOrbitDisplayTime)
+            oODD: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, IPlanetOrbitDisplayTime)
             Assert.assertIsNotNone(oODD)
-            oODD.Time = 12345.6789
+            oODD.time = 12345.6789
 
         except Exception as e:
             bCaught = True
@@ -327,18 +328,18 @@ class EarlyBoundTests(TestBase):
         if not bCaught:
             Assert.fail("The property should be read-only.")
 
-        gfx.OrbitVisible = True
-        TestBase.logger.WriteLine4("The new OrbitVisible is: {0}", gfx.OrbitVisible)
-        Assert.assertEqual(True, gfx.OrbitVisible)
-        TestBase.logger.WriteLine6("The current OrbitDisplay is: {0}", gfx.OrbitDisplay)
-        gfx.OrbitDisplay = AgEPlOrbitDisplayType.eDisplayOneOrbit
-        TestBase.logger.WriteLine6("The new OrbitDisplay is: {0}", gfx.OrbitDisplay)
-        Assert.assertEqual(AgEPlOrbitDisplayType.eDisplayOneOrbit, gfx.OrbitDisplay)
+        gfx.orbit_visible = True
+        TestBase.logger.WriteLine4("The new OrbitVisible is: {0}", gfx.orbit_visible)
+        Assert.assertEqual(True, gfx.orbit_visible)
+        TestBase.logger.WriteLine6("The current OrbitDisplay is: {0}", gfx.orbit_display)
+        gfx.orbit_display = AgEPlOrbitDisplayType.eDisplayOneOrbit
+        TestBase.logger.WriteLine6("The new OrbitDisplay is: {0}", gfx.orbit_display)
+        Assert.assertEqual(AgEPlOrbitDisplayType.eDisplayOneOrbit, gfx.orbit_display)
         try:
             bCaught = False
-            oODD: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.OrbitDisplayData, IPlanetOrbitDisplayTime)
+            oODD: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, IPlanetOrbitDisplayTime)
             Assert.assertIsNotNone(oODD)
-            oODD.Time = 12345.6789
+            oODD.time = 12345.6789
 
         except Exception as e:
             bCaught = True
@@ -347,15 +348,15 @@ class EarlyBoundTests(TestBase):
         if not bCaught:
             Assert.fail("The property should be read-only.")
 
-        gfx.OrbitDisplay = AgEPlOrbitDisplayType.eOrbitDisplayTime
-        TestBase.logger.WriteLine6("The new OrbitDisplay is: {0}", gfx.OrbitDisplay)
-        Assert.assertEqual(AgEPlOrbitDisplayType.eOrbitDisplayTime, gfx.OrbitDisplay)
-        oODT: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.OrbitDisplayData, IPlanetOrbitDisplayTime)
+        gfx.orbit_display = AgEPlOrbitDisplayType.eOrbitDisplayTime
+        TestBase.logger.WriteLine6("The new OrbitDisplay is: {0}", gfx.orbit_display)
+        Assert.assertEqual(AgEPlOrbitDisplayType.eOrbitDisplayTime, gfx.orbit_display)
+        oODT: "IPlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, IPlanetOrbitDisplayTime)
         Assert.assertIsNotNone(oODT)
-        TestBase.logger.WriteLine6("The current Time is: {0}", oODT.Time)
-        oODT.Time = 12345.6789
-        TestBase.logger.WriteLine6("The new Time is: {0}", oODT.Time)
-        Assert.assertEqual(12345.6789, oODT.Time)
+        TestBase.logger.WriteLine6("The current Time is: {0}", oODT.time)
+        oODT.time = 12345.6789
+        TestBase.logger.WriteLine6("The new Time is: {0}", oODT.time)
+        Assert.assertEqual(12345.6789, oODT.time)
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- END -----")
 
     # endregion
@@ -365,72 +366,72 @@ class EarlyBoundTests(TestBase):
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
         # VO
-        vo: "IPlanetVO" = EarlyBoundTests.AG_PL.VO
+        vo: "IPlanetVO" = EarlyBoundTests.AG_PL.vo
         Assert.assertIsNotNone(vo)
         # InheritFrom2dGfx (true)
-        TestBase.logger.WriteLine4("\tThe current InheritFrom2dGfx flag is: {0}", vo.InheritFrom2dGfx)
-        vo.InheritFrom2dGfx = True
-        TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.InheritFrom2dGfx)
-        Assert.assertTrue(vo.InheritFrom2dGfx)
+        TestBase.logger.WriteLine4("\tThe current InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_gfx)
+        vo.inherit_from2_d_gfx = True
+        TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_gfx)
+        Assert.assertTrue(vo.inherit_from2_d_gfx)
 
         def action3():
-            vo.InertialPositionVisible = False
+            vo.inertial_position_visible = False
 
         # InertialPositionVisible (readonly)
         TryCatchAssertBlock.DoAssert("The property should be read-only.", action3)
 
         def action4():
-            vo.PositionLabelVisible = False
+            vo.position_label_visible = False
 
         # PositionLabelVisible (readonly)
         TryCatchAssertBlock.DoAssert("The property should be read-only.", action4)
 
         def action5():
-            vo.SubPlanetLabelVisible = False
+            vo.sub_planet_label_visible = False
 
         # SubPlanetLabelVisible (readonly)
         TryCatchAssertBlock.DoAssert("The property should be read-only.", action5)
 
         def action6():
-            vo.SubPlanetPointVisible = False
+            vo.sub_planet_point_visible = False
 
         # SubPlanetPointVisible (readonly)
         TryCatchAssertBlock.DoAssert("The property should be read-only.", action6)
 
         def action7():
-            vo.OrbitVisible = False
+            vo.orbit_visible = False
 
         # OrbitVisible (readonly)
         TryCatchAssertBlock.DoAssert("The property should be read-only.", action7)
         # InheritFrom2dGfx (false)
-        vo.InheritFrom2dGfx = False
-        TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.InheritFrom2dGfx)
-        Assert.assertFalse(vo.InheritFrom2dGfx)
+        vo.inherit_from2_d_gfx = False
+        TestBase.logger.WriteLine4("\tThe new InheritFrom2dGfx flag is: {0}", vo.inherit_from2_d_gfx)
+        Assert.assertFalse(vo.inherit_from2_d_gfx)
         # OrbitVisible
-        TestBase.logger.WriteLine4("\tThe current OrbitVisible flag is: {0}", vo.OrbitVisible)
-        vo.OrbitVisible = True
-        TestBase.logger.WriteLine4("\tThe new OrbitVisible flag is: {0}", vo.OrbitVisible)
-        Assert.assertTrue(vo.OrbitVisible)
+        TestBase.logger.WriteLine4("\tThe current OrbitVisible flag is: {0}", vo.orbit_visible)
+        vo.orbit_visible = True
+        TestBase.logger.WriteLine4("\tThe new OrbitVisible flag is: {0}", vo.orbit_visible)
+        Assert.assertTrue(vo.orbit_visible)
         # PositionLabelVisible
-        TestBase.logger.WriteLine4("\tThe current PositionLabelVisible flag is: {0}", vo.PositionLabelVisible)
-        vo.PositionLabelVisible = True
-        TestBase.logger.WriteLine4("\tThe new PositionLabelVisible flag is: {0}", vo.PositionLabelVisible)
-        Assert.assertTrue(vo.PositionLabelVisible)
+        TestBase.logger.WriteLine4("\tThe current PositionLabelVisible flag is: {0}", vo.position_label_visible)
+        vo.position_label_visible = True
+        TestBase.logger.WriteLine4("\tThe new PositionLabelVisible flag is: {0}", vo.position_label_visible)
+        Assert.assertTrue(vo.position_label_visible)
         # InertialPositionVisible
-        TestBase.logger.WriteLine4("\tThe current InertialPositionVisible flag is: {0}", vo.InertialPositionVisible)
-        vo.InertialPositionVisible = True
-        TestBase.logger.WriteLine4("\tThe new InertialPositionVisible flag is: {0}", vo.InertialPositionVisible)
-        Assert.assertTrue(vo.InertialPositionVisible)
+        TestBase.logger.WriteLine4("\tThe current InertialPositionVisible flag is: {0}", vo.inertial_position_visible)
+        vo.inertial_position_visible = True
+        TestBase.logger.WriteLine4("\tThe new InertialPositionVisible flag is: {0}", vo.inertial_position_visible)
+        Assert.assertTrue(vo.inertial_position_visible)
         # SubPlanetLabelVisible
-        TestBase.logger.WriteLine4("\tThe current SubPlanetLabelVisible flag is: {0}", vo.SubPlanetLabelVisible)
-        vo.SubPlanetLabelVisible = True
-        TestBase.logger.WriteLine4("\tThe new SubPlanetLabelVisible flag is: {0}", vo.SubPlanetLabelVisible)
-        Assert.assertTrue(vo.SubPlanetLabelVisible)
+        TestBase.logger.WriteLine4("\tThe current SubPlanetLabelVisible flag is: {0}", vo.sub_planet_label_visible)
+        vo.sub_planet_label_visible = True
+        TestBase.logger.WriteLine4("\tThe new SubPlanetLabelVisible flag is: {0}", vo.sub_planet_label_visible)
+        Assert.assertTrue(vo.sub_planet_label_visible)
         # SubPlanetPointVisible
-        TestBase.logger.WriteLine4("\tThe current SubPlanetPointVisible flag is: {0}", vo.SubPlanetPointVisible)
-        vo.SubPlanetPointVisible = True
-        TestBase.logger.WriteLine4("\tThe new SubPlanetPointVisible flag is: {0}", vo.SubPlanetPointVisible)
-        Assert.assertTrue(vo.SubPlanetPointVisible)
+        TestBase.logger.WriteLine4("\tThe current SubPlanetPointVisible flag is: {0}", vo.sub_planet_point_visible)
+        vo.sub_planet_point_visible = True
+        TestBase.logger.WriteLine4("\tThe new SubPlanetPointVisible flag is: {0}", vo.sub_planet_point_visible)
+        Assert.assertTrue(vo.sub_planet_point_visible)
         TestBase.logger.WriteLine("----- THE VO TEST ----- END -----")
 
     # endregion
@@ -440,7 +441,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_PL.AccessConstraints,
+            EarlyBoundTests.AG_PL.access_constraints,
             clr.Convert(EarlyBoundTests.AG_PL, IStkObject),
             TestBase.TemporaryDirectory,
         )

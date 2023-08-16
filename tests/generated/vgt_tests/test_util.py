@@ -65,10 +65,10 @@ class EngineLifetimeManager:
             elif EngineLifetimeManager.target == TestTarget.eStkX:
                 EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=False)
                 EngineLifetimeManager.ctrlWindow = frmStkX()
-                print(EngineLifetimeManager.stk.ExecuteCommand("GetStkVersion /")[0])
+                print(EngineLifetimeManager.stk.execute_command("GetStkVersion /")[0])
             elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
                 EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=True)
-                print(EngineLifetimeManager.stk.ExecuteCommand("GetStkVersion /")[0])
+                print(EngineLifetimeManager.stk.execute_command("GetStkVersion /")[0])
             EngineLifetimeManager.locked = lock
         return EngineLifetimeManager.stk
 
@@ -905,7 +905,14 @@ class Application:
 
 
 class IAgAppProvider:
-    pass
+    def CreateApplication(self, ignored) -> "IStkObjectRoot":
+        return None
+
+    def InstantiateStkObjectModelContext(self) -> "IStkObjectModelContext":
+        return None
+
+    def InstantiateSTKXApplication(self) -> "ISTKXApplication":
+        return None
 
 
 class PythonStkApplicationProvider(IAgAppProvider):
@@ -917,10 +924,10 @@ class PythonStkApplicationProvider(IAgAppProvider):
         self.stk = stk
         PythonStkApplicationProvider.Application = root
 
-    def CreateApplication(self, ignored):
+    def CreateApplication(self, ignored) -> "IStkObjectRoot":
         return self.stk.Root
 
-    def InstantiateStkObjectModelContext(self):
+    def InstantiateStkObjectModelContext(self) -> "IStkObjectModelContext":
         return self.stk.NewObjectModelContext()
 
 
@@ -933,13 +940,13 @@ class PythonStkXApplicationProvider(IAgAppProvider):
         self.stk = stk
         PythonStkXApplicationProvider.Application = root
 
-    def CreateApplication(self, ignored):
+    def CreateApplication(self, ignored) -> "IStkObjectRoot":
         return self.stk.NewObjectRoot()
 
-    def InstantiateStkObjectModelContext(self):
+    def InstantiateStkObjectModelContext(self) -> "IStkObjectModelContext":
         return self.stk.NewObjectModelContext()
 
-    def InstantiateSTKXApplication(self):
+    def InstantiateSTKXApplication(self) -> "ISTKXApplication":
         return self.stk
 
 
@@ -952,20 +959,20 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
         self.stk = stk
         PythonStkXNoGfxApplicationProvider.Application = root
 
-    def CreateApplication(self, ignored):
+    def CreateApplication(self, ignored) -> "IStkObjectRoot":
         return self.stk.NewObjectRoot()
 
-    def InstantiateStkObjectModelContext(self):
+    def InstantiateStkObjectModelContext(self) -> "IStkObjectModelContext":
         return self.stk.NewObjectModelContext()
 
 
 class TestBase(unittest.TestCase):
-    Application = None
+    Application: "IStkObjectRoot" = None
     stk = None
-    root = None
+    root: "IStkObjectRoot" = None
     logger = Logger()
     NoGraphicsMode = True
-    Units = None
+    Units: "IUnitPreferencesDimensionCollection" = None
     OriginalAccConstraintPaths = []
 
     CurrentDirectory = None
@@ -976,7 +983,7 @@ class TestBase(unittest.TestCase):
 
     ScenarioDirName = "data"
 
-    ApplicationProvider = None
+    ApplicationProvider: "IAgAppProvider" = None
     Target = None
 
     _tempDirectory = None
@@ -991,13 +998,17 @@ class TestBase(unittest.TestCase):
         else:
             TestBase.root = TestBase.stk.NewObjectRoot()
 
-        TestBase.root.NewScenario("Snippet")
-        parent = TestBase.root.CurrentScenario.Children.New(AgESTKObjectType.eSatellite, "parent")
-        parent.Propagator.Propagate()
-        accessConstraints = parent.AccessConstraints
+        # Try to recover if previous test aborted with a scenario loaded
+        if TestBase.root.current_scenario != None:
+            TestBase.root.close_scenario()
+
+        TestBase.root.new_scenario("Snippet")
+        parent: ISatellite = TestBase.root.current_scenario.children.new(AgESTKObjectType.eSatellite, "parent")
+        clr.CastAs(parent.propagator, IVehiclePropagatorTwoBody).propagate()
+        accessConstraints = parent.access_constraints
 
         TestBase.Application = TestBase.root
-        TestBase.Units = TestBase.Application.UnitPreferences
+        TestBase.Units = TestBase.Application.unit_preferences
 
         TestBase.CurrentDirectory = TestBase._GetTestBaseDirectory()
         TestBase.CodeBaseDir = TestBase.CurrentDirectory
@@ -1027,79 +1038,79 @@ class TestBase(unittest.TestCase):
     def Uninitialize():
         EngineLifetimeManager.UpdateWindow()
 
-        if TestBase.root.CurrentScenario is not None:
-            TestBase.root.CloseScenario()
+        if TestBase.root.current_scenario is not None:
+            TestBase.root.close_scenario()
         TestBase.root = None
         TestBase.Application = None
         EngineLifetimeManager.Uninitialize()
 
     @staticmethod
     def LoadTestScenario(path):
-        if TestBase.Application.CurrentScenario is not None:
-            TestBase.Application.CloseScenario()
+        if TestBase.Application.current_scenario is not None:
+            TestBase.Application.close_scenario()
         TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         baseScenario = TestBase.GetScenarioFile(path)
-        TestBase.Application.LoadScenario(baseScenario)
+        TestBase.Application.load_scenario(baseScenario)
         if Path.GetDirName(path):
             TestBase.ScenarioDirectory = Path.Combine(
                 TestBase.CodeBaseDir, TestBase.ScenarioDirName, Path.GetDirName(path)
             )
-        TestBase.Application.UnitPreferences.ResetUnits()
+        TestBase.Application.unit_preferences.reset_units()
 
     @staticmethod
     def LoadBaseScenario():
         TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         TestBase.LoadTestScenario("Scenario1.sc")
 
-        ac1: IAircraft = clr.CastAs(TestBase.Application.CurrentScenario.Children["Boing737"], IAircraft)
-        ac1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga: IVehiclePropagatorGreatArc = clr.CastAs(ac1.Route, IVehiclePropagatorGreatArc)
-        ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
-        wpe = ga.Waypoints.Add()
-        wpe.Latitude = 0
-        wpe.Longitude = 0
-        wpe.Time = "1 Jul 1999 00:00:00.000"
-        wpe = ga.Waypoints.Add()
-        wpe.Latitude = 10
-        wpe.Longitude = 20
-        wpe.Time = "1 Jul 1999 00:55:00.000"
-        ga.Propagate()
+        ac1: IAircraft = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], IAircraft)
+        ac1.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        ga: IVehiclePropagatorGreatArc = clr.CastAs(ac1.route, IVehiclePropagatorGreatArc)
+        ga.method = AgEVeWayPtCompMethod.eDetermineVelFromTime
+        wpe = ga.waypoints.add()
+        wpe.latitude = 0
+        wpe.longitude = 0
+        wpe.time = "1 Jul 1999 00:00:00.000"
+        wpe = ga.waypoints.add()
+        wpe.latitude = 10
+        wpe.longitude = 20
+        wpe.time = "1 Jul 1999 00:55:00.000"
+        ga.propagate()
         gv1: IGroundVehicle = clr.CastAs(
-            TestBase.Application.CurrentScenario.Children["GroundVehicle1"], IGroundVehicle
+            TestBase.Application.current_scenario.children["GroundVehicle1"], IGroundVehicle
         )
-        gv1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga: IVehiclePropagatorGreatArc = clr.CastAs(gv1.Route, IVehiclePropagatorGreatArc)
-        ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
-        wpe = ga.Waypoints.Add()
-        wpe.Latitude = 0
-        wpe.Longitude = 0
-        wpe.Time = "1 Jul 1999 00:00:00.000"
-        wpe = ga.Waypoints.Add()
-        wpe.Latitude = 10
-        wpe.Longitude = 20
-        wpe.Time = "1 Jul 1999 00:55:00.000"
-        ga.Propagate()
-        sh1: IShip = clr.CastAs(TestBase.Application.CurrentScenario.Children["Ship1"], IShip)
-        sh1.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
-        ga: IVehiclePropagatorGreatArc = clr.CastAs(sh1.Route, IVehiclePropagatorGreatArc)
-        ga.Method = AgEVeWayPtCompMethod.eDetermineVelFromTime
-        wpe = ga.Waypoints.Add()
-        wpe.Latitude = 0
-        wpe.Longitude = 0
-        wpe.Time = "1 Jul 1999 00:00:00.000"
-        wpe = ga.Waypoints.Add()
-        wpe.Latitude = 10
-        wpe.Longitude = 20
-        wpe.Time = "1 Jul 1999 00:55:00.000"
-        ga.Propagate()
-        ms1: IMissile = clr.CastAs(TestBase.Application.CurrentScenario.Children["Missile1"], IMissile)
-        ms1.SetTrajectoryType(AgEVePropagatorType.ePropagatorBallistic)
-        ballistic: IVehiclePropagatorBallistic = clr.CastAs(ms1.Trajectory, IVehiclePropagatorBallistic)
-        ballistic.Step = 59
-        ballistic.Propagate()
-        lt: ILineTarget = clr.CastAs(TestBase.Application.CurrentScenario.Children["LineTarget2"], ILineTarget)
-        lt.Points.Add(0, 0)
-        lt.Points.Add(2, 2)
+        gv1.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        ga: IVehiclePropagatorGreatArc = clr.CastAs(gv1.route, IVehiclePropagatorGreatArc)
+        ga.method = AgEVeWayPtCompMethod.eDetermineVelFromTime
+        wpe = ga.waypoints.add()
+        wpe.latitude = 0
+        wpe.longitude = 0
+        wpe.time = "1 Jul 1999 00:00:00.000"
+        wpe = ga.waypoints.add()
+        wpe.latitude = 10
+        wpe.longitude = 20
+        wpe.time = "1 Jul 1999 00:55:00.000"
+        ga.propagate()
+        sh1: IShip = clr.CastAs(TestBase.Application.current_scenario.children["Ship1"], IShip)
+        sh1.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        ga: IVehiclePropagatorGreatArc = clr.CastAs(sh1.route, IVehiclePropagatorGreatArc)
+        ga.method = AgEVeWayPtCompMethod.eDetermineVelFromTime
+        wpe = ga.waypoints.add()
+        wpe.latitude = 0
+        wpe.longitude = 0
+        wpe.time = "1 Jul 1999 00:00:00.000"
+        wpe = ga.waypoints.add()
+        wpe.latitude = 10
+        wpe.longitude = 20
+        wpe.time = "1 Jul 1999 00:55:00.000"
+        ga.propagate()
+        ms1: IMissile = clr.CastAs(TestBase.Application.current_scenario.children["Missile1"], IMissile)
+        ms1.set_trajectory_type(AgEVePropagatorType.ePropagatorBallistic)
+        ballistic: IVehiclePropagatorBallistic = clr.CastAs(ms1.trajectory, IVehiclePropagatorBallistic)
+        ballistic.step = 59
+        ballistic.propagate()
+        lt: ILineTarget = clr.CastAs(TestBase.Application.current_scenario.children["LineTarget2"], ILineTarget)
+        lt.points.add(0, 0)
+        lt.points.add(2, 2)
 
     @staticmethod
     def _GetTestBaseDirectory():
@@ -1129,7 +1140,7 @@ class TestBase(unittest.TestCase):
     @staticmethod
     def GetSTKDBDir():
         if TestBase._stkDbDir is None:
-            databaseDir = TestBase.Application.ExecuteCommand("GetDB /")[0]
+            databaseDir = TestBase.Application.execute_command("GetDB /")[0]
             if os.path.exists(os.path.join(databaseDir, "Databases")):
                 # user config
                 TestBase._stkDbDir = databaseDir
@@ -1145,12 +1156,12 @@ class TestBase(unittest.TestCase):
     @staticmethod
     def GetSTKHomeDir():
         if TestBase._stkHomeDir is None:
-            TestBase._stkHomeDir = TestBase.Application.ExecuteCommand("GetSTKHomeDir /")[0]
+            TestBase._stkHomeDir = TestBase.Application.execute_command("GetSTKHomeDir /")[0]
             print(f"Using STKHOMEDIR={TestBase._stkHomeDir}")
         return TestBase._stkHomeDir
 
     def setUp(self):
-        TestBase.Application.UnitPreferences.ResetUnits()
+        TestBase.Application.unit_preferences.reset_units()
 
     def tearDown(self):
         EngineLifetimeManager.UpdateWindow()
@@ -1166,21 +1177,23 @@ class TestBase(unittest.TestCase):
 
     @property
     def EarthGravModel(self):
-        sc = clr.Convert(TestBase.Application.CurrentScenario, IScenario)
+        sc = clr.Convert(TestBase.Application.current_scenario, IScenario)
         cbEarth: IAstrogatorCentralBody = clr.CastAs(
-            sc.ComponentDirectory.GetComponents(AgEComponent.eComponentAstrogator).GetFolder("Central Bodies")["Earth"],
+            sc.component_directory.get_components(AgEComponent.eComponentAstrogator).get_folder("Central Bodies")[
+                "Earth"
+            ],
             IAstrogatorCentralBody,
         )
-        if cbEarth.DefaultGravityModelName == "EGM2008":
+        if cbEarth.default_gravity_model_name == "EGM2008":
             return TestBase.GravModel.EGM2008
-        elif cbEarth.DefaultGravityModelName == "WGS84 EGM96":
+        elif cbEarth.default_gravity_model_name == "WGS84 EGM96":
             return TestBase.GravModel.WGS84_EGM96
         else:
             raise Exception("New cb file detected, need to check the numbers.")
 
     @property
     def HasUnderseaLicense(self):
-        licenseResults = TestBase.Application.ExecuteCommand("GetLicenses /")
+        licenseResults = TestBase.Application.execute_command("GetLicenses /")
         for licenseResult in licenseResults:
             if "Undersea" in licenseResult:
                 if "Excluded" in licenseResult:
@@ -1520,57 +1533,59 @@ class CSToJavaArrayHelper:
 
 
 class DataProviderResultWriter(object):
-    def __init__(self, result):
+    def __init__(self, result: IDataProviderResult):
         self.outStr = ""
-        self._result = result
+        self._result: IDataProviderResult = result
 
     def Dump(self):
         self.WriteLine(0, "Result Info")
         self.WriteLine(0, "-----------")
-        self.WriteLine(0, ("Category:" + str(self._result.Category)))
-        if self._result.Category == AgEDrCategories.eDrCatIntervalList:
-            self.DumpDPIntervalList(clr.Convert(self._result.Value, IDataProviderResultIntervalCollection), 1)
-        elif self._result.Category == AgEDrCategories.eDrCatSubSectionList:
-            self.DumpDPSubSectionList(clr.Convert(self._result.Value, IDataProviderResultSubSectionCollection), 1)
-        elif self._result.Category == AgEDrCategories.eDrCatMessage:
-            self.DumpDPMessage(clr.Convert(self._result.Value, IDataProviderResultTextMessage), 1)
+        self.WriteLine(0, ("Category:" + str(self._result.category)))
+        if self._result.category == AgEDrCategories.eDrCatIntervalList:
+            self.DumpDPIntervalList(clr.Convert(self._result.value, IDataProviderResultIntervalCollection), 1)
+        elif self._result.category == AgEDrCategories.eDrCatSubSectionList:
+            self.DumpDPSubSectionList(clr.Convert(self._result.value, IDataProviderResultSubSectionCollection), 1)
+        elif self._result.category == AgEDrCategories.eDrCatMessage:
+            self.DumpDPMessage(clr.Convert(self._result.value, IDataProviderResultTextMessage), 1)
         return Regex.Replace(self.outStr, "\n", "")
 
-    def DumpDPIntervalList(self, intList, indent):
+    def DumpDPIntervalList(self, intList: IDataProviderResultIntervalCollection, indent):
         index = 0
+        intrvl: IDataProviderResultInterval
         for intrvl in intList:
             index += 1
             self.DumpInterval(intrvl, index, (indent + 1))
 
-    def DumpDPSubSectionList(self, sections, indent):
+    def DumpDPSubSectionList(self, sections: IDataProviderResultSubSectionCollection, indent):
         index = 0
+        section: IDataProviderResultSubSection
         for section in sections:
             index += 1
             self.DumpDPSection(section, index, (indent + 1))
 
-    def DumpDPSection(self, section, index, indent):
-        self.WriteLine(indent, ((("Section #" + str(index)) + ": ") + section.Title))
+    def DumpDPSection(self, section: IDataProviderResultSubSection, index, indent):
+        self.WriteLine(indent, ((("Section #" + str(index)) + ": ") + section.title))
         self.WriteLine(indent, "{")
-        self.DumpDPIntervalList(section.Intervals, (indent + 1))
+        self.DumpDPIntervalList(section.intervals, (indent + 1))
         self.WriteLine(indent, "}")
 
-    def DumpDPMessage(self, msgContainer, indent):
+    def DumpDPMessage(self, msgContainer: IDataProviderResultTextMessage, indent):
         self.WriteLine(indent, "Message ")
         self.WriteLine(indent, "{")
         i = 0
-        while i < msgContainer.Count:
+        while i < msgContainer.count:
             self.WriteLine(indent, clr.Convert(msgContainer[i], str))
             i += 1
         self.WriteLine(indent, "}")
 
-    def DumpDPDataSet(self, ds, index, indent):
+    def DumpDPDataSet(self, ds: IDataProviderResultDataSet, index, indent):
         self.WriteLine(indent, ("  DataSet #" + str(index)))
         self.WriteLine(indent, "  {")
-        self.WriteLine(indent, ("    Element Name:  " + ds.ElementName))
-        self.WriteLine(indent, ("    Dimension Name:     " + ds.DimensionName))
-        self.WriteLine(indent, ("    # of elements: " + str(ds.Count)))
+        self.WriteLine(indent, ("    Element Name:  " + ds.element_name))
+        self.WriteLine(indent, ("    Dimension Name:     " + ds.dimension_name))
+        self.WriteLine(indent, ("    # of elements: " + str(ds.count)))
         self.WriteStr(indent, "    values:       [")
-        values = ds.GetValues()
+        values = ds.get_values()
         for d in values:
             if d != values[0]:
                 Console.Write(", ")
@@ -1578,46 +1593,47 @@ class DataProviderResultWriter(object):
         Console.WriteLine("]")
         self.WriteLine(indent, "  }")
 
-    def DumpDPDataSetList(self, datasets, indent):
-        Console.WriteLine("DumpDPDataSetList: Num elements in collection: {0}", str(datasets.Count))
+    def DumpDPDataSetList(self, datasets: IDataProviderResultDataSetCollection, indent):
+        Console.WriteLine("DumpDPDataSetList: Num elements in collection: {0}", str(datasets.count))
         i = 0
-        while i < datasets.Count:
-            dataset = datasets[i]
-            Console.WriteLine(dataset.ElementName)
+        while i < datasets.count:
+            dataset: IDataProviderResultDataSet = datasets[i]
+            Console.WriteLine(dataset.element_name)
             i += 1
-        Console.WriteLine("DumpDPDataSetList: Num rows in datasetcollection: {0}", str(datasets.RowCount))
+        Console.WriteLine("DumpDPDataSetList: Num rows in datasetcollection: {0}", str(datasets.row_count))
         i = 0
-        while i < datasets.RowCount:
-            arRow = datasets.GetRow(i)
+        while i < datasets.row_count:
+            arRow = datasets.get_row(i)
             for obj in arRow:
                 Console.WriteLine("    Row({0}): {1}", i, str(obj))
             i += 1
-        arArray = datasets.ToArray()
+        arArray = datasets.to_array()
         for obj in arArray:
             Console.WriteLine("    Row: {0}", str(obj))
-        arElementNames = datasets.ElementNames
+        arElementNames = datasets.element_names
         for elementName in arElementNames:
             Console.WriteLine("DumpDPDataSetList: elementName: {0}", elementName)
         index = 0
+        ds: IDataProviderResultDataSet
         for ds in datasets:
             index += 1
             self.DumpDPDataSet(ds, index, indent)
-            self.WriteLine(indent, "DataSets Count: " + str(ds.Count))
-            self.WriteLine(indent, "DataSets GetValues Length: " + str(len(ds.GetValues())))
+            self.WriteLine(indent, "DataSets Count: " + str(ds.count))
+            self.WriteLine(indent, "DataSets GetValues Length: " + str(len(ds.get_values())))
 
-    def DumpInterval(self, interval, index, indent):
+    def DumpInterval(self, interval: IDataProviderResultInterval, index, indent):
         self.WriteLine(indent, ("Interval #" + str(index)))
         self.WriteLine(indent, "{")
         self.WriteLine(
             indent,
             "  start="
-            + str(interval.StartTime)
+            + str(interval.start_time)
             + ", stop="
-            + str(interval.StopTime)
+            + str(interval.stop_time)
             + ", #datasets="
-            + str(interval.DataSets.Count),
+            + str(interval.data_sets.count),
         )
-        self.DumpDPDataSetList(interval.DataSets, (indent + 1))
+        self.DumpDPDataSetList(interval.data_sets, (indent + 1))
         self.WriteLine(indent, "}")
 
     def WriteLine(self, indent, strMsg):

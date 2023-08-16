@@ -27,7 +27,7 @@ class Vehicle(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Vehicle.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 AgESTKObjectType.eGroundVehicle, self.m_DefaultName
             ),
             IGroundVehicle,
@@ -37,102 +37,103 @@ class Vehicle(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (clr.Convert(Vehicle.m_Object, IStkObject)).Unload()
+        (clr.Convert(Vehicle.m_Object, IStkObject)).unload()
 
     # endregion
 
     # region ExportVehicleToStkEphemerisFile
     def test_ExportVehicleToStkEphemerisFile(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        ga: "IVehiclePropagatorGreatArc" = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
-        ga.Waypoints.Add()
-        ga.Waypoints.Add()
-        ga.Propagate()
+        ga: "IVehiclePropagatorGreatArc" = clr.CastAs(gv.route, IVehiclePropagatorGreatArc)
+        ga.waypoints.add()
+        ga.waypoints.add()
+        ga.propagate()
         ephemFilePath: str = TestBase.TemporaryDirectory + "\\OMExternalFileStk.e"
         self.ExportVehicleToStkEphemerisFile(
-            clr.Convert(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario),
-            gv.ExportTools.GetEphemerisStkExportTool(),
+            clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, IScenario),
+            gv.export_tools.get_ephemeris_stk_export_tool(),
             ephemFilePath,
         )
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
     def ExportVehicleToStkEphemerisFile(
         self, scenario: "IScenario", stkEphem: "IVehicleEphemerisStkExportTool", ephemFilePath: str
     ):
         # set export parameters
-        stkEphem.CoordinateSystem = AgEStkEphemCoordinateSystem.eStkEphemCoordinateSystemFixed
-        stkEphem.IncludeInterp = True
-        stkEphem.VersionFormat = AgEExportToolVersionFormat.eExportToolVersionFormatCurrent
-        stkEphem.TimePeriod.TimePeriodType = AgEExportToolTimePeriod.eExportToolTimePeriodSpecify
+        stkEphem.coordinate_system = AgEStkEphemCoordinateSystem.eStkEphemCoordinateSystemFixed
+        stkEphem.include_interp = True
+        stkEphem.version_format = AgEExportToolVersionFormat.eExportToolVersionFormatCurrent
+        stkEphem.time_period.time_period_type = AgEExportToolTimePeriod.eExportToolTimePeriodSpecify
 
         # Set the ephemeris to the Scenario start and stop times
-        stkEphem.TimePeriod.Start = scenario.StartTime
-        stkEphem.TimePeriod.Stop = scenario.StopTime
+        stkEphem.time_period.start = scenario.start_time
+        stkEphem.time_period.stop = scenario.stop_time
 
-        stkEphem.StepSize.StepSizeType = AgEExportToolStepSize.eExportToolStepSizeEphem
-        stkEphem.Export(ephemFilePath)
+        stkEphem.step_size.step_size_type = AgEExportToolStepSize.eExportToolStepSizeEphem
+        stkEphem.export(ephemFilePath)
 
     # endregion
 
     # region ExportVehicleToAttitudeFile
     def test_ExportVehicleToAttitudeFile(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.CurrentScenario.Children.New(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
             IGroundVehicle,
         )
-        ga: "IVehiclePropagatorGreatArc" = clr.CastAs(gv.Route, IVehiclePropagatorGreatArc)
-        ga.Waypoints.Add()
-        ga.Waypoints.Add()
-        ga.Propagate()
+        ga: "IVehiclePropagatorGreatArc" = clr.CastAs(gv.route, IVehiclePropagatorGreatArc)
+        ga.waypoints.add()
+        ga.waypoints.add()
+        ga.propagate()
         self.ExportVehicleToAttitudeFile(
-            clr.Convert(CodeSnippetsTestBase.m_Root.CurrentScenario, IScenario), gv.ExportTools.GetAttitudeExportTool()
+            clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, IScenario),
+            gv.export_tools.get_attitude_export_tool(),
         )
-        CodeSnippetsTestBase.m_Root.CurrentScenario.Children.Unload(AgESTKObjectType.eGroundVehicle, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eGroundVehicle, "gv1")
 
     def ExportVehicleToAttitudeFile(self, scenario: "IScenario", attitudeExport: "IVehicleAttitudeExportTool"):
         # Set and configure attitude coordinate axes
-        attitudeExport.SetCoordinateAxesType(AgEAttCoordinateAxes.eAttCoordinateAxesCustom)
+        attitudeExport.set_coordinate_axes_type(AgEAttCoordinateAxes.eAttCoordinateAxesCustom)
         customAxes: "IVehicleCoordinateAxesCustom" = clr.CastAs(
-            attitudeExport.CoordinateAxes, IVehicleCoordinateAxesCustom
+            attitudeExport.coordinate_axes, IVehicleCoordinateAxesCustom
         )
-        customAxes.ReferenceAxesName = "CentralBody/Sun J2000 Axes"
+        customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
-        attitudeExport.VersionFormat = AgEExportToolVersionFormat.eExportToolVersionFormatCurrent
-        attitudeExport.Include = AgEAttInclude.eAttIncludeQuaternionsAngularVelocity
+        attitudeExport.version_format = AgEExportToolVersionFormat.eExportToolVersionFormatCurrent
+        attitudeExport.include = AgEAttInclude.eAttIncludeQuaternionsAngularVelocity
 
         # Set the attitude file to use Scenario start and stop time
-        attitudeExport.TimePeriod.TimePeriodType = AgEExportToolTimePeriod.eExportToolTimePeriodSpecify
-        attitudeExport.TimePeriod.Start = scenario.StartTime
-        attitudeExport.TimePeriod.Stop = scenario.StopTime
+        attitudeExport.time_period.time_period_type = AgEExportToolTimePeriod.eExportToolTimePeriodSpecify
+        attitudeExport.time_period.start = scenario.start_time
+        attitudeExport.time_period.stop = scenario.stop_time
 
-        attitudeExport.StepSize.StepSizeType = AgEExportToolStepSize.eExportToolStepSizeSpecify
-        attitudeExport.StepSize.Value = 3600
+        attitudeExport.step_size.step_size_type = AgEExportToolStepSize.eExportToolStepSizeSpecify
+        attitudeExport.step_size.value = 3600
 
         # Save Attitude File
-        attitudeExport.Export("OMExternalFileAttitude.a")
+        attitudeExport.export("OMExternalFileAttitude.a")
 
     # endregion
 
     # region AddGroundEllipseElementAndDataElement
     def test_AddGroundEllipseElementAndDataElement(self):
-        self.AddGroundEllipseElementAndDataElement(Vehicle.m_Object.GroundEllipses)
+        self.AddGroundEllipseElementAndDataElement(Vehicle.m_Object.ground_ellipses)
 
     def AddGroundEllipseElementAndDataElement(self, ellipsesCollection: "IVehicleGroundEllipsesCollection"):
         # Add ground ellipse
-        ellipse: "IVehicleGroundEllipseElement" = ellipsesCollection.Add("MyEllipses")
+        ellipse: "IVehicleGroundEllipseElement" = ellipsesCollection.add("MyEllipses")
 
         # Add ellipse data element
-        element: "IVehicleEllipseDataElement" = ellipse.EllipseData.Add()
+        element: "IVehicleEllipseDataElement" = ellipse.ellipse_data.add()
 
         # Configure element properties
-        element.Time = "1 Jan 2012 12:00:00.000"
-        element.Latitude = 35.292
-        element.Longitude = -93.7299
-        element.SemiMajorAxis = 400.0
-        element.SemiMinorAxis = 300.0
-        element.Bearing = 35.71
+        element.time = "1 Jan 2012 12:00:00.000"
+        element.latitude = 35.292
+        element.longitude = -93.7299
+        element.semi_major_axis = 400.0
+        element.semi_minor_axis = 300.0
+        element.bearing = 35.71
 
     # endregion

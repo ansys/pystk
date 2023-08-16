@@ -1,31 +1,75 @@
-- name: bug
-  description: Something isn't working
+# The labels declared in this file are the ones avialables 
+# https://github.com/ansys-internal/pystk/labels
+
+# -- Defects and glitches labels----------------------------------------------
+
+- name: 'bug'
+  description: Defects or glitches reported by users or developers
   color: d42a34
 
-- name: code-style
-  description: Improvements related to code style
-  color: c2c2c2
+- name: 'fix'
+  description:  Pull requests related to resolving problems or errors
+  color: d42a34
 
-- name: dependencies
-  description: Related with project dependencies
-  color: ffc0cb
+# -- Documentation labels ----------------------------------------------------
 
-- name: documentation
-  description: Improvements or additions to documentation
+- name: 'docs'
+  description: Issues related to documentation
   color: 0677ba
 
-- name: enhancement
-  description: New features or code improvements
-  color: FFD827
+- name: 'docs:api'
+  description: Related to API documentation
+  color: 0677ba
 
-- name: good first issue
-  description: Easy to solve for newcomers
-  color: 62ca50
+- name: 'docs:examples'
+  description: Related to documentation examples
+  color: 0677ba
 
-- name: maintenance
-  description: Package and maintenance related
-  color: f78c37
+# -- Dependencies labels -----------------------------------------------------
 
-- name: release
+- name: 'dependencies'
+  description: Related with project dependencies
+  color: fabed4
+
+- name: 'dependencies:pyproject'
+  description: Related with project file dependencies
+  color: fabed4
+
+- name: 'dependencies:ci'
+  description: Related with pipelines dependencies
+  color: fabed4
+
+# -- Other labels ------------------------------------------------------------
+
+- name: 'release'
   description: Anything related to an incoming release
   color: ffffff
+
+- name: 'good first issue'
+  description: Issues suitable for newcomers or those with less experience
+  color: 62ca50
+
+- name: 'enhancement'
+  description: General improvements to existing features
+  color: ffd827
+
+- name: 'code-style'
+  description: Improvements related to code style
+  color: dcbeff
+
+- name: 'maintenance'
+  description: Generic maintenance related
+  color: f78c37
+
+- name: 'ci'
+  description: Pipelines maintenance related
+  color: a9a9a9
+
+- name: 'docker'
+  description: Docker maintenance related
+  color: 000075
+
+- name: 'tests'
+  description: Related with improvements of the test suite
+  color: ffd8b1
+

@@ -1,7 +1,8 @@
-# Copyright 2020-2020, Analytical Graphics, Inc. 
+# Copyright 2020-2020, Ansys Government Initiatives 
 
 import os
 import typing
+import copy
 
 from ctypes import byref, cast, pointer, POINTER, Structure #noqa
 
@@ -146,16 +147,19 @@ class _ITypeInfo(object):
         #CreateInstanceIndex        = 14  (skipping CreateInstance as it is not needed)
         #GetMopsIndex               = 15  (skipping GetMops as it is not needed)
         #GetContainingTypeLibIndex  = 16  (skipping GetContainingTypeLib as it is not needed)
-        #ReleaseTypeAttrIndex       = 17  (skipping ReleaseTypeAttr as it is not needed)
+        ReleaseTypeAttrIndex        = 17
         #ReleaseFuncDescIndex       = 18  (skipping ReleaseFuncDesc as it is not needed)
         #ReleaseVarDescIndex        = 19  (skipping ReleaseVarDesc as it is not needed)
         self._GetTypeAttr = IAGFUNCTYPE(pUnk, IID__ITypeInfo, vtable_offset + GetTypeAttrIndex, POINTER(PVOID))
+        self._ReleaseTypeAttr = IAGFUNCTYPE(pUnk, IID__ITypeInfo, vtable_offset + ReleaseTypeAttrIndex, POINTER(_TYPEATTR))
     def GetTypeAttr(self):
         p = PVOID()
         hr = self._GetTypeAttr(byref(p))
         if Succeeded(hr):
             ta = cast(p, POINTER(_TYPEATTR)).contents
             return ta
+    def ReleaseTypeAttr(self, ta):
+        self._ReleaseTypeAttr(byref(ta))
             
 class _IProvideClassInfo(object):
     guid = "{B196B283-BAB4-101A-B69C-00AA00341D07}"
@@ -182,10 +186,14 @@ class _IProvideClassInfo(object):
                 pUnk.TakeOwnership()
                 type_info = _ITypeInfo(pUnk)
                 type_attr = type_info.GetTypeAttr()
+                if type_attr is not None:
+                    guid = copy.deepcopy(type_attr.guid)
+                    type_info.ReleaseTypeAttr(type_attr)
+                else:
+                    guid = None
                 del(type_info)
                 del(pUnk)
-                if type_attr is not None:
-                    return type_attr.guid
+                return guid
         return None
         
 def get_concrete_class(punk:IUnknown) -> typing.Any:
@@ -272,19 +280,6 @@ class IConnectionPointContainer(object):
             return conn_point
         
         
-###############################################################################
-#   Helper Methods for IDispatch marshalling
-###############################################################################
-def IUnknown_from_IDispatch(pdisp:PVOID) -> IUnknown: 
-    pDispAsUnk = IUnknown()
-    if pdisp.value > 0:
-        pDispAsUnk.p = pdisp
-        IID_IUnknown = GUID(IUnknown._guid)
-        pUnk = pDispAsUnk.QueryInterface(iid=IID_IUnknown)
-        del(pDispAsUnk)
-        return pUnk
-
-      
 ###############################################################################
 #   attach_to_stk_by_pid (Windows-only)
 ###############################################################################
