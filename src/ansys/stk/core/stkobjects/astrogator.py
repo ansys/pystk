@@ -2336,7 +2336,7 @@ class AgEVACbGravityModel(IntEnum):
     eVACbGravityModelMGNP180U = 12
     # GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m.
     eVACbGravityModelGMM1 = 13
-    # GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at <a href='https://www.nasa.gov/'>NASA</a> and were gotten from Journal of Geophysical Research, November 2000.
+    # GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at `NASA <https://www.nasa.gov/>`_ and were gotten from Journal of Geophysical Research, November 2000.
     eVACbGravityModelGMM2B = 14
     # Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m.
     eVACbGravityModelMars50c = 15
@@ -2383,7 +2383,7 @@ AgEVACbGravityModel.eVACbGravityModelLP165P.__doc__ = "LP165P - (Moon) GM = 4.90
 AgEVACbGravityModel.eVACbGravityModelIcarus1987.__doc__ = "Icarus1987 - (Mercury) GM = 2.203209e+013, reference distance = 2,439,000 m. Reference: Anderson, J. J., Colombo, G., Esposito, P. B., Lau E. L., and Trager, G. B. 'The Mass, Gravity Field, and Ephemeris of Mercury', Icarus 71, 337-349, 1987."
 AgEVACbGravityModel.eVACbGravityModelMGNP180U.__doc__ = "MGNP180U - (Venus) GM = 3.248585920790000E+14, reference distance = 6,051,000.0 m."
 AgEVACbGravityModel.eVACbGravityModelGMM1.__doc__ = "GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m."
-AgEVACbGravityModel.eVACbGravityModelGMM2B.__doc__ = "GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at <a href='https://www.nasa.gov/'>NASA</a> and were gotten from Journal of Geophysical Research, November 2000."
+AgEVACbGravityModel.eVACbGravityModelGMM2B.__doc__ = "GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at `NASA <https://www.nasa.gov/>`_ and were gotten from Journal of Geophysical Research, November 2000."
 AgEVACbGravityModel.eVACbGravityModelMars50c.__doc__ = "Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m."
 AgEVACbGravityModel.eVACbGravityModelJUP230.__doc__ = "JUP230 - (Jupiter) GM = 1.26686535e+017, reference distance = 71,492,000 m. Reference: Jacobson, R. A. The JUP230 orbit solution, 2003."
 AgEVACbGravityModel.eVACbGravityModelAstron2004.__doc__ = "Astron2004 - (Saturn) GM = 3.7931284e+016, reference distance = 60,330,000 m."

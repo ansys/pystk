@@ -290,17 +290,17 @@ agcls.AgTypeNameMap["AgEStkGraphicsMapProjection"] = AgEStkGraphicsMapProjection
 
 class AgEStkGraphicsMarkerBatchRenderingMethod(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
-    # Render the marker batch using a geometry shader. Requires <a href='http://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt'>ARB_geometry_shader4</a> extension.
+    # Render the marker batch using a geometry shader.
     eStkGraphicsMarkerBatchRenderingMethodGeometryShader = 0
-    # Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='http://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='http://www.opengl.org/registry/specs/ARB/vertex_shader...
+    # Render the marker batch using a vertex shader.
     eStkGraphicsMarkerBatchRenderingMethodVertexShader = 1
     # Render the marker batch using an automatically selected method based on the capabilities of the video card.
     eStkGraphicsMarkerBatchRenderingMethodAutomatic = 2
     # Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards.
     eStkGraphicsMarkerBatchRenderingMethodFixedFunction = 3
 
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodGeometryShader.__doc__ = "Render the marker batch using a geometry shader. Requires <a href='http://www.opengl.org/'>OpenGL</a> 3.0 or 2.0 with the <a href='http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt'>ARB_geometry_shader4</a> extension."
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodVertexShader.__doc__ = "Render the marker batch using a vertex shader. Requires OpenGL 2.0 or 1.5 with the following <a href='http://www.opengl.org/registry/'>extensions</a>: <ul><li><a href='http://www.opengl.org/registry/specs/ARB/vertex_shader..."
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodGeometryShader.__doc__ = "Render the marker batch using a geometry shader."
+AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodVertexShader.__doc__ = "Render the marker batch using a vertex shader."
 AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodAutomatic.__doc__ = "Render the marker batch using an automatically selected method based on the capabilities of the video card."
 AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodFixedFunction.__doc__ = "Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."
 
