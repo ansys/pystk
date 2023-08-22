@@ -51,7 +51,7 @@ class HPOP(CodeSnippetsTestBase):
         # Set satellite propagator to HPOP
         satellite.set_propagator_type(AgEVePropagatorType.ePropagatorHPOP)
 
-        # Get IAgVePropagatorLOP interface
+        # Get IVehiclePropagatorLOP interface
         hpopProp: "IVehiclePropagatorHPOP" = clr.CastAs(satellite.propagator, IVehiclePropagatorHPOP)
 
         # Configure force model

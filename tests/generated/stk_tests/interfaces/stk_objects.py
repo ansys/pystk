@@ -558,7 +558,7 @@ class DataProviderCollectionHelper(object):
                 # we need to use a try-catch block here, because some data providers
                 # can't be created without specific settings
                 try:
-                    # IAgDataProvider
+                    # IDataProvider
                     # Console.WriteLine(oCollection[iIndex].Name);
                     self.DataProvider(clr.CastAs(oCollection[iIndex], IDataProvider), oCollection[iIndex].name)
                     if oCollection[iIndex].type == AgEDataProviderType.eDrFixed:

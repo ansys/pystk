@@ -47,7 +47,7 @@ class SimpleAscent(CodeSnippetsTestBase):
         # Set launch vehicle propagator to Simple Ascent
         self.m_Object.set_trajectory_type(AgEVePropagatorType.ePropagatorSimpleAscent)
 
-        # Get J2 IAgVePropagatorSimpleAscent interface
+        # Get J2 IVehiclePropagatorSimpleAscent interface
         propagator: "IVehiclePropagatorSimpleAscent" = clr.CastAs(
             self.m_Object.trajectory, IVehiclePropagatorSimpleAscent
         )

@@ -126,7 +126,7 @@ class AreaTarget(CodeSnippetsTestBase):
 
     def ListAllPointsInAnAreaTarget(self, areaTarget: "IAreaTarget"):
         if areaTarget.area_type == AgEAreaType.ePattern:
-            # Get IAgAreaTypePatternCollection interface from AreaTypeData
+            # Get IAreaTypePatternCollection interface from AreaTypeData
             patternPoints: "IAreaTypePatternCollection" = clr.CastAs(
                 areaTarget.area_type_data, IAreaTypePatternCollection
             )
