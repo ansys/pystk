@@ -29,7 +29,7 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
 
         Console.WriteLine("Occurred at {0} index", occurredResult.index)
 
-        # Use the index from IAgCrdnEventIntervalCollectionOccurredResult as the index to IAgCrdnIntervalsVectorResult.IntervalCollections
+        # Use the index from ITimeToolEventIntervalCollectionOccurredResult as the index to ITimeToolIntervalsVectorResult.IntervalCollections
         intervalResult: "ITimeToolIntervalsVectorResult" = intervalVectorCollection.find_interval_collection()
         intervalCollection: "ITimeToolIntervalCollection" = intervalResult.interval_collections[occurredResult.index]
 

@@ -443,7 +443,7 @@ class Mto(CodeSnippetsTestBase):
         # Build tracksToRemove Array
         tracksToRemove = [trackCollection[0], trackCollection[1]]
 
-        # RemoveTracks expects a one dimensional array of IAgMtoTrack objects
+        # RemoveTracks expects a one dimensional array of IMtoTrack objects
         trackCollection.remove_tracks(tracksToRemove)
 
     # endregion

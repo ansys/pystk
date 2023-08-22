@@ -751,7 +751,7 @@ class AgInterface_in_arg(object):
         """
         Initialize an AgInterface_in_arg object.
 
-        val should be a python CoClass object (e.g. AgFacility)
+        val should be a python CoClass object (e.g. Facility)
         as_interface is the interface class to send to STK
         """
         self.pIntf = None

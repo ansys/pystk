@@ -73,7 +73,7 @@ class Astrogator(CodeSnippetsTestBase):
         self.ConfigureInitialStateSegment(Astrogator.m_Object)
 
     def ConfigureInitialStateSegment(self, driver: "IDriverMissionControlSequence"):
-        # Add a new segment and cast the segment to the IAgVAMCSInitialState interface
+        # Add a new segment and cast the segment to the IMissionControlSequenceInitialState interface
         segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
             AgEVASegmentType.eVASegmentTypeInitialState, "Inner Orbit", "-"
         )
@@ -284,7 +284,7 @@ class Astrogator(CodeSnippetsTestBase):
         self.ConfigureManeuverSegment(Astrogator.m_Object)
 
     def ConfigureManeuverSegment(self, driver: "IDriverMissionControlSequence"):
-        # Add launch sequence and retrieve the IAgVAMCSManeuver interface
+        # Add launch sequence and retrieve the IMissionControlSequenceManeuver interface
         segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
             AgEVASegmentType.eVASegmentTypeManeuver, "MyManeuver", "-"
         )

@@ -63,7 +63,7 @@ class Planet(CodeSnippetsTestBase):
     def ConfigurePlanet(self, planet: "IPlanet"):
         planet.position_source = AgEPlPositionSourceType.ePosCentralBody
 
-        # Get IAgPlPosCentralBody interface
+        # Get IPlanetPositionCentralBody interface
         body: "IPlanetPositionCentralBody" = clr.CastAs(planet.position_source_data, IPlanetPositionCentralBody)
 
         body.auto_rename = False

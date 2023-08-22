@@ -49,7 +49,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
             # Set graphics to custom
             graphics.set_attributes_type(AgEVeGfxAttributes.eAttributesCustom)
 
-            # Get IAgVeGfxAttributesCustom interface
+            # Get IVehicleGfxAttributesCustom interface
             customAttributes: "IVehicleGfxAttributesCustom" = clr.CastAs(
                 graphics.attributes, IVehicleGfxAttributesCustom
             )
@@ -95,7 +95,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
             # Set graphics to basic
             graphics.set_attributes_type(AgEVeGfxAttributes.eAttributesBasic)
 
-            # Get IAgVeGfxAttributesBasic interface
+            # Get IVehicleGfxAttributesBasic interface
             basicAttributes: "IVehicleGfxAttributesBasic" = clr.CastAs(graphics.attributes, IVehicleGfxAttributesBasic)
 
     # endregion
@@ -139,7 +139,7 @@ class VehicleGfxVO(CodeSnippetsTestBase):
             # Set graphics to access intervals
             graphics.set_attributes_type(AgEVeGfxAttributes.eAttributesAccess)
 
-            # Get IAgVeGfxAttributesAccess interface
+            # Get IVehicleGfxAttributesAccess interface
             accessAttributes: "IVehicleGfxAttributesAccess" = clr.CastAs(
                 graphics.attributes, IVehicleGfxAttributesAccess
             )

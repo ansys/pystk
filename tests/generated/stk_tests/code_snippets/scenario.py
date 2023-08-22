@@ -54,7 +54,7 @@ class Scenario(CodeSnippetsTestBase):
 
         root.new_scenario("Scenario1")
 
-        # Get IAgScenario interface
+        # Get IScenario interface
         scenario: "IScenario" = clr.CastAs(root.current_scenario, IScenario)
 
         # Set scenario start and stop times
@@ -126,7 +126,7 @@ class Scenario(CodeSnippetsTestBase):
         )
 
     def AddAnalyticalTerrainToEarthCentralBody(self, root: "IStkObjectRoot", terrainFile: str):
-        # Retrieve the IAgScenario interface
+        # Retrieve the IScenario interface
         scenario: "IScenario" = clr.CastAs(root.current_scenario, IScenario)
 
         terrainCollection: "ICentralBodyTerrainCollection" = scenario.terrain

@@ -108,12 +108,12 @@ class Attitude(CodeSnippetsTestBase):
     def AddsAttitudeDataBasedOnTimeOrderedSetOfEulerAngles(self, satellite: "ISatellite"):
         # Set Attitude to Standard
         satellite.set_attitude_type(AgEVeAttitude.eAttitudeStandard)
-        # Get IAgVeOrbitAttitudeStandard interface
+        # Get IVehicleOrbitAttitudeStandard interface
         standard: "IVehicleOrbitAttitudeStandard" = clr.CastAs(satellite.attitude, IVehicleOrbitAttitudeStandard)
 
         # Set Profile to Inertially Fixed
         standard.basic.set_profile_type(AgEVeProfile.eProfileInertiallyFixed)
-        # Get IAgVeProfileInertial interface
+        # Get IVehicleProfileInertial interface
         interfix: "IVehicleProfileInertial" = clr.CastAs(standard.basic.profile, IVehicleProfileInertial)
 
         interfix.inertial.assign_euler_angles(AgEEulerOrientationSequence.e123, 20.1, 50.0, 20.0)
