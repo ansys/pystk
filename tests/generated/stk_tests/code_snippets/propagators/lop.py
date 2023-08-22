@@ -51,7 +51,7 @@ class LOP(CodeSnippetsTestBase):
         # Set satellite propagator to LOP
         satellite.set_propagator_type(AgEVePropagatorType.ePropagatorLOP)
 
-        # Get IAgVePropagatorLOP interface
+        # Get IVehiclePropagatorLOP interface
         lopProp: "IVehiclePropagatorLOP" = clr.CastAs(satellite.propagator, IVehiclePropagatorLOP)
 
         # Configure time period

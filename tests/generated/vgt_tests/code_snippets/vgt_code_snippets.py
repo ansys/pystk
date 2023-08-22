@@ -96,7 +96,7 @@ class VGT(CodeSnippetsTestBase):
         vector: "IVectorGeometryToolVector"
         # Enumerate the existing vectors using specified CrdnProvider.
         for vector in provider.vectors:
-            # All vectors implement IAgCrdn interface which provides
+            # All vectors implement IAnalysisWorkbenchComponent interface which provides
             # information about the vector instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(vector, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, vector.type)
@@ -118,7 +118,7 @@ class VGT(CodeSnippetsTestBase):
         point: "IVectorGeometryToolPoint"
         # Enumerate the existing points using specified CrdnProvider.
         for point in provider.points:
-            # All points implement IAgCrdn interface which provides
+            # All points implement IAnalysisWorkbenchComponent interface which provides
             # information about the point instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(point, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, point.type)
@@ -140,7 +140,7 @@ class VGT(CodeSnippetsTestBase):
         angle: "IVectorGeometryToolAngle"
         # Enumerate the existing angles using specified CrdnProvider.
         for angle in provider.angles:
-            # All angles implement IAgCrdn interface which provides
+            # All angles implement IAnalysisWorkbenchComponent interface which provides
             # information about the angle instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(angle, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, angle.type)
@@ -162,7 +162,7 @@ class VGT(CodeSnippetsTestBase):
         axes: "IVectorGeometryToolAxes"
         # Enumerate the existing Axes using specified CrdnProvider.
         for axes in provider.axes:
-            # All axes implement IAgCrdn interface which provides
+            # All axes implement IAnalysisWorkbenchComponent interface which provides
             # information about the axes instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(axes, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, axes.type)
@@ -184,7 +184,7 @@ class VGT(CodeSnippetsTestBase):
         plane: "IVectorGeometryToolPlane"
         # Enumerate the existing Planes using specified CrdnProvider.
         for plane in provider.planes:
-            # All planes implement IAgCrdn interface which provides
+            # All planes implement IAnalysisWorkbenchComponent interface which provides
             # information about the plane instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(plane, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, plane.type)
@@ -206,7 +206,7 @@ class VGT(CodeSnippetsTestBase):
         system: "IVectorGeometryToolSystem"
         # Enumerate the existing Systems using specified CrdnProvider.
         for system in provider.systems:
-            # All systems implement IAgCrdn interface which provides
+            # All systems implement IAnalysisWorkbenchComponent interface which provides
             # information about the system instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(system, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, system.type)
@@ -228,7 +228,7 @@ class VGT(CodeSnippetsTestBase):
         parameterSet: "ICalculationToolParameterSet"
         # Enumerate the existing ParameterSets using specified CrdnProvider.
         for parameterSet in provider.parameter_sets:
-            # All parameter sets implement IAgCrdn interface which provides
+            # All parameter sets implement IAnalysisWorkbenchComponent interface which provides
             # information about the parameter set instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(parameterSet, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, parameterSet.type)
@@ -250,7 +250,7 @@ class VGT(CodeSnippetsTestBase):
         calcScalar: "ICalculationToolScalar"
         # Enumerate the existing CalcScalars using specified CrdnProvider.
         for calcScalar in provider.calc_scalars:
-            # All calc scalars implement IAgCrdn interface which provides
+            # All calc scalars implement IAnalysisWorkbenchComponent interface which provides
             # information about the calc scalar instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(calcScalar, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, calcScalar.type)
@@ -272,7 +272,7 @@ class VGT(CodeSnippetsTestBase):
         condition: "ICalculationToolCondition"
         # Enumerate the existing Conditions using specified CrdnProvider.
         for condition in provider.conditions:
-            # All conditions implement IAgCrdn interface which provides
+            # All conditions implement IAnalysisWorkbenchComponent interface which provides
             # information about the condition instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(condition, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, condition.type)
@@ -294,7 +294,7 @@ class VGT(CodeSnippetsTestBase):
         event: "ITimeToolEvent"
         # Enumerate the existing Events using specified CrdnProvider.
         for event in provider.events:
-            # All events implement IAgCrdn interface which provides
+            # All events implement IAnalysisWorkbenchComponent interface which provides
             # information about the event instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(event, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, event.type)
@@ -316,7 +316,7 @@ class VGT(CodeSnippetsTestBase):
         eventArray: "ITimeToolEventArray"
         # Enumerate the existing EventArrays using specified CrdnProvider.
         for eventArray in provider.event_arrays:
-            # All event arrays implement IAgCrdn interface which provides
+            # All event arrays implement IAnalysisWorkbenchComponent interface which provides
             # information about the event array instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(eventArray, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventArray.type)
@@ -338,7 +338,7 @@ class VGT(CodeSnippetsTestBase):
         eventInterval: "ITimeToolEventInterval"
         # Enumerate the existing EventIntervals using specified CrdnProvider.
         for eventInterval in provider.event_intervals:
-            # All event intervals implement IAgCrdn interface which provides
+            # All event intervals implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(eventInterval, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventInterval.type)
@@ -360,7 +360,7 @@ class VGT(CodeSnippetsTestBase):
         eventIntervalCollection: "ITimeToolEventIntervalCollection"
         # Enumerate the existing EventIntervalCollections using specified CrdnProvider.
         for eventIntervalCollection in provider.event_interval_collections:
-            # All event interval collections implement IAgCrdn interface which provides
+            # All event interval collections implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval collection instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(eventIntervalCollection, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventIntervalCollection.type)
@@ -382,7 +382,7 @@ class VGT(CodeSnippetsTestBase):
         eventIntervalList: "ITimeToolEventIntervalList"
         # Enumerate the existing EventIntervalLists using specified CrdnProvider.
         for eventIntervalList in provider.event_interval_lists:
-            # All event interval lists implement IAgCrdn interface which provides
+            # All event interval lists implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval list instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(eventIntervalList, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventIntervalList.type)
@@ -403,7 +403,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.vectors.count:
             vector: "IVectorGeometryToolVector" = provider.vectors[i]
-            # All vectors implement IAgCrdn interface which provides
+            # All vectors implement IAnalysisWorkbenchComponent interface which provides
             # information about the vector instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(vector, IAnalysisWorkbenchComponent)
             # Print the vector name and type to the standard output.
@@ -427,7 +427,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.points.count:
             point: "IVectorGeometryToolPoint" = provider.points[i]
-            # All points implement IAgCrdn interface which provides
+            # All points implement IAnalysisWorkbenchComponent interface which provides
             # information about the point instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.points[i], IAnalysisWorkbenchComponent)
             # Print the point name and type to the standard output.
@@ -451,7 +451,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.angles.count:
             angle: "IVectorGeometryToolAngle" = provider.angles[i]
-            # All angles implement IAgCrdn interface which provides
+            # All angles implement IAnalysisWorkbenchComponent interface which provides
             # information about the angle instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.angles[i], IAnalysisWorkbenchComponent)
             # Print the angle name and type to the standard output.
@@ -475,7 +475,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.axes.count:
             axes: "IVectorGeometryToolAxes" = provider.axes[i]
-            # All axes implement IAgCrdn interface which provides
+            # All axes implement IAnalysisWorkbenchComponent interface which provides
             # information about the axes instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.axes[i], IAnalysisWorkbenchComponent)
             # Print the axes name and type to the standard output.
@@ -499,7 +499,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.planes.count:
             plane: "IVectorGeometryToolPlane" = provider.planes[i]
-            # All planes implement IAgCrdn interface which provides
+            # All planes implement IAnalysisWorkbenchComponent interface which provides
             # information about the plane's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.planes[i], IAnalysisWorkbenchComponent)
             # Print the plane's name and type to the standard output.
@@ -523,7 +523,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.systems.count:
             crdnSystem: "IVectorGeometryToolSystem" = provider.systems[i]
-            # All coordinate reference frames implement IAgCrdn interface which provides
+            # All coordinate reference frames implement IAnalysisWorkbenchComponent interface which provides
             # information about the reference frame's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.systems[i], IAnalysisWorkbenchComponent)
             # Print the reference frame's name and type to the standard output.
@@ -547,7 +547,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.parameter_sets.count:
             parameterSet: "ICalculationToolParameterSet" = provider.parameter_sets[i]
-            # All parameter sets implement IAgCrdn interface which provides
+            # All parameter sets implement IAnalysisWorkbenchComponent interface which provides
             # information about the parameter set's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.parameter_sets[i], IAnalysisWorkbenchComponent)
             # Print the parameter set's name and type to the standard output.
@@ -571,7 +571,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.calc_scalars.count:
             calcScalar: "ICalculationToolScalar" = provider.calc_scalars[i]
-            # All calc scalars implement IAgCrdn interface which provides
+            # All calc scalars implement IAnalysisWorkbenchComponent interface which provides
             # information about the calc scalar's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.calc_scalars[i], IAnalysisWorkbenchComponent)
             # Print the calc scalar's name and type to the standard output.
@@ -595,7 +595,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.conditions.count:
             condition: "ICalculationToolCondition" = provider.conditions[i]
-            # All conditions implement IAgCrdn interface which provides
+            # All conditions implement IAnalysisWorkbenchComponent interface which provides
             # information about the condition's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.conditions[i], IAnalysisWorkbenchComponent)
             # Print the condition's name and type to the standard output.
@@ -619,7 +619,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.events.count:
             event: "ITimeToolEvent" = provider.events[i]
-            # All events implement IAgCrdn interface which provides
+            # All events implement IAnalysisWorkbenchComponent interface which provides
             # information about the event's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.events[i], IAnalysisWorkbenchComponent)
             # Print the event's name and type to the standard output.
@@ -643,7 +643,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.event_arrays.count:
             eventArray: "ITimeToolEventArray" = provider.event_arrays[i]
-            # All event arrays implement IAgCrdn interface which provides
+            # All event arrays implement IAnalysisWorkbenchComponent interface which provides
             # information about the event array's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.event_arrays[i], IAnalysisWorkbenchComponent)
             # Print the event array's name and type to the standard output.
@@ -667,7 +667,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.event_intervals.count:
             eventInterval: "ITimeToolEventInterval" = provider.event_intervals[i]
-            # All event intervals implement IAgCrdn interface which provides
+            # All event intervals implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.event_intervals[i], IAnalysisWorkbenchComponent)
             # Print the event interval's name and type to the standard output.
@@ -691,7 +691,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.event_interval_collections.count:
             eventIntervalCollection: "ITimeToolEventIntervalCollection" = provider.event_interval_collections[i]
-            # All event interval collections implement IAgCrdn interface which provides
+            # All event interval collections implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval collection's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
                 provider.event_interval_collections[i], IAnalysisWorkbenchComponent
@@ -717,7 +717,7 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.event_interval_lists.count:
             eventIntervalList: "ITimeToolEventIntervalList" = provider.event_interval_lists[i]
-            # All event interval lists implement IAgCrdn interface which provides
+            # All event interval lists implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval list's instance and its type.
             crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
                 provider.event_interval_lists[i], IAnalysisWorkbenchComponent

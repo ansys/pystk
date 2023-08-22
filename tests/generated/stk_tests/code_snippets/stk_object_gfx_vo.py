@@ -62,13 +62,13 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
 
     def SetStkObjectDisplayToUseIntervalsMode(self, stkObject: "IStkObject"):
-        # Attempt to cast STK Object to the IAgDisplayTm interface
+        # Attempt to cast STK Object to the IDisplayTime interface
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
             if display.is_display_status_type_supported(AgEDisplayTimesType.eUseIntervals):
                 display.set_display_status_type(AgEDisplayTimesType.eUseIntervals)
 
-                # Get IAgIntervalCollection interface
+                # Get IIntervalCollection interface
                 intervalCollection: "IIntervalCollection" = clr.CastAs(display.display_times_data, IIntervalCollection)
                 intervalCollection.remove_all()
 
@@ -92,7 +92,7 @@ class StkObjectGfxVO(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "satellite1")
 
     def SetStkObjectDisplayToUseDuringAccessMode(self, stkObject: "IStkObject"):
-        # Attempt to cast STK Object to the IAgDisplayTm interface
+        # Attempt to cast STK Object to the IDisplayTime interface
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
             if display.is_display_status_type_supported(AgEDisplayTimesType.eDuringAccess):

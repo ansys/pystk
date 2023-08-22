@@ -151,7 +151,7 @@ class Units(CodeSnippetsTestBase):
         # Differences between dates are calculated from Span function
         span: "IQuantity" = newDate.span(nowDate)
 
-        # IAgDate also provides formatting functionalities
+        # IDate also provides formatting functionalities
         span.convert_to_unit("min")
         Console.WriteLine("Date(now) in UTCG is: {0}", nowDate.format("UTCG"))
         Console.WriteLine("Date(52 days before now) in UTCG is: {0}", newDate.format("UTCG"))
@@ -175,7 +175,7 @@ class Units(CodeSnippetsTestBase):
         # Differences between dates are calculated from Span function
         span: "IQuantity" = newDate.span(nowDate)
 
-        # IAgDate also provides formatting functionalities
+        # IDate also provides formatting functionalities
         span.convert_to_unit("min")
         Console.WriteLine("Date(now) in UTCG is: {0}", nowDate.format("UTCG"))
         Console.WriteLine("Date(52 days from now) in UTCG is: {0}", newDate.format("UTCG"))

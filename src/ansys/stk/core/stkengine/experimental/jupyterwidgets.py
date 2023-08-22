@@ -125,7 +125,7 @@ asyncioTimerManager = None
 
 class AgRemoteFrameBufferHostVTable(Structure):
     '''
-    Structure of the vtable for IAgRemoteFrameBufferHost
+    Structure of the vtable for IRemoteFrameBufferHost
     '''
     _fields_ = [("IUnknown1",        c_void_p),
                 ("IUnknown2",        c_void_p),
@@ -135,7 +135,7 @@ class AgRemoteFrameBufferHostVTable(Structure):
 
 class AgRemoteFrameBufferHost(object):
     '''
-    Implements IAgRemoteFrameBufferHost 
+    Implements IRemoteFrameBufferHost 
     
     Assemble a vtable following the layout of that interface
     '''

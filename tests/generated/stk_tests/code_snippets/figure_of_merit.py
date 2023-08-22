@@ -63,7 +63,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         self.CreateFigureOfMeritOnCoverageDefinition(self.m_CovDefObject)
 
     def CreateFigureOfMeritOnCoverageDefinition(self, covdef: "ICoverageDefinition"):
-        # Get the coverage definition as a IAgStkObject interface
+        # Get the coverage definition as a IStkObject interface
         covdefObject: "IStkObject" = clr.CastAs(covdef, IStkObject)
 
         # Create the figure of merit
@@ -81,7 +81,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         # Set figure of merit definition to eFmAccessDuration
         fom.set_definition_type(AgEFmDefinitionType.eFmAccessDuration)
 
-        # Get IAgFmDefCompute interface
+        # Get IFigureOfMeritDefinitionCompute interface
         defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionCompute)
         if defComp.is_compute_type_supported(AgEFmCompute.ePercentAbove):
             # Set Compute type to supported compute option
@@ -103,7 +103,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         # Set figure of merit definition to eFmCoverageTime
         fom.set_definition_type(AgEFmDefinitionType.eFmCoverageTime)
 
-        # Get IAgFmDefCompute interface
+        # Get IFigureOfMeritDefinitionCompute interface
         defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionCompute)
         if defComp.is_compute_type_supported(AgEFmCompute.eTotalTimeAbove):
             # Set Compute type to supported compute option
@@ -152,7 +152,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         # Set access constraint definition to altitude
         fom.set_access_constraint_definition(AgEFmConstraintName.eFmAltitude)
 
-        # Get IAgFmDefAccessConstraint interface
+        # Get IFigureOfMeritDefinitionAccessConstraint interface
         defAccessCnstr: "IFigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
             fom.definition, IFigureOfMeritDefinitionAccessConstraint
         )
@@ -219,7 +219,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
         self.FigureOfMeritDefinitionAgeOfData(FigureOfMerit.m_Object)
 
     def FigureOfMeritDefinitionAgeOfData(self, fom: "IFigureOfMerit"):
-        # Get the IAgFmDefAgeOfData interface
+        # Get the IFigureOfMeritDefinitionAgeOfData interface
         fom.set_definition_type(AgEFmDefinitionType.eFmAgeOfData)
         ageOfData: "IFigureOfMeritDefinitionAgeOfData" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionAgeOfData)
 

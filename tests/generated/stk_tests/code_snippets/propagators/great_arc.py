@@ -50,7 +50,7 @@ class GreatArc(CodeSnippetsTestBase):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
 
-        # Get the IAgVePropagatorGreatArc from Route property
+        # Get the IVehiclePropagatorGreatArc from Route property
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.route, IVehiclePropagatorGreatArc)
 
         self.DefineGreatArcPropFromListOfWaypointsAndTime(propagator)
@@ -88,7 +88,7 @@ class GreatArc(CodeSnippetsTestBase):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
 
-        # Get the IAgVePropagatorGreatArc from Route property
+        # Get the IVehiclePropagatorGreatArc from Route property
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.route, IVehiclePropagatorGreatArc)
 
         self.ListAllWaypointsInAWaypointCollection(propagator)
@@ -138,7 +138,7 @@ class GreatArc(CodeSnippetsTestBase):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
 
-        # Get the IAgVePropagatorGreatArc from Route property
+        # Get the IVehiclePropagatorGreatArc from Route property
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.route, IVehiclePropagatorGreatArc)
 
         self.DefineGreatArcPropFromListOfWaypointsAndVelocity(propagator)
@@ -210,7 +210,7 @@ class GreatArc(CodeSnippetsTestBase):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
 
-        # Get the IAgVePropagatorGreatArc from Route property
+        # Get the IVehiclePropagatorGreatArc from Route property
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.route, IVehiclePropagatorGreatArc)
 
         self.SetPointsSpecifyTimeAndPropagate(propagator)
@@ -258,7 +258,7 @@ class GreatArc(CodeSnippetsTestBase):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
 
-        # Get the IAgVePropagatorGreatArc from Route property
+        # Get the IVehiclePropagatorGreatArc from Route property
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.route, IVehiclePropagatorGreatArc)
 
         self.SetPointsSpecifyVelocityAndPropagate(propagator)
@@ -311,7 +311,7 @@ class GreatArc(CodeSnippetsTestBase):
         # Set groundVehicle object's route to ePropagtorGreatArc
         GreatArc.m_Object.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
 
-        # Get the IAgVePropagatorGreatArc from Route property
+        # Get the IVehiclePropagatorGreatArc from Route property
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(GreatArc.m_Object.route, IVehiclePropagatorGreatArc)
 
         self.SetPointsSmoothRateAndPropagate(propagator)

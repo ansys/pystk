@@ -169,7 +169,7 @@ class Access(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, satelliteName)
 
     def AddAndConfigureThirdBodyObstructionConstraint(self, accessconstraints: "IAccessConstraintCollection"):
-        # Get IAgAccessCnstrThirdBody interface
+        # Get IAccessConstraintThirdBody interface
         thirdBodyConstraint: "IAccessConstraintThirdBody" = clr.CastAs(
             accessconstraints.add_constraint(AgEAccessConstraints.eCstrThirdBodyObstruction), IAccessConstraintThirdBody
         )

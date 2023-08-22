@@ -4298,7 +4298,7 @@ class EarlyBoundTests(TestBase):
         glide.powered_cruise_throttle = 20.0
         thrust1: "IPropulsionThrust" = glide.powered_cruise_thrust_model
         # BUG120578 TryCatchAssertBlock.ExpectedException("read only", delegate () { glide.PoweredCruiseThrottle = 20.0; });
-        # BUG120578 TryCatchAssertBlock.ExpectedException("read only", delegate () { IAgAvtrPropulsionThrust thrust1 = glide.PoweredCruiseThrustModel; });
+        # BUG120578 TryCatchAssertBlock.ExpectedException("read only", delegate () { IPropulsionThrust thrust1 = glide.PoweredCruiseThrustModel; });
 
         glide.powered_cruise_mode = AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrottle
         Assert.assertEqual(

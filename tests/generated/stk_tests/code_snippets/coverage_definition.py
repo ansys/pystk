@@ -71,7 +71,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eAreaTarget, "AreaTarget1")
 
     def SetCustomCoverageDefinitionByPoints(self, coverageDefinition: "ICoverageDefinition", regionFilePath: str):
-        # Get the IAgCvGrid interface
+        # Get the ICoverageGrid interface
         cvGrid: "ICoverageGrid" = coverageDefinition.grid
 
         # Define custom region
@@ -103,13 +103,13 @@ class CoverageDefinition(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eAreaTarget, "AreaTarget1")
 
     def DefineCustomGridUsingAreaTargets(self, coverageDefinition: "ICoverageDefinition"):
-        # Get the IAgCvGrid interface
+        # Get the ICoverageGrid interface
         cvGrid: "ICoverageGrid" = coverageDefinition.grid
 
         # Set bound region type to use custom regions
         cvGrid.bounds_type = AgECvBounds.eBoundsCustomRegions
 
-        # Get IAgCvBoundsCustomRegions interface
+        # Get ICoverageBoundsCustomRegions interface
         boundRegion: "ICoverageBoundsCustomRegions" = clr.CastAs(cvGrid.bounds, ICoverageBoundsCustomRegions)
 
         # Add custom regions
@@ -123,7 +123,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         self.DefineGridResolutionByLatLon(CoverageDefinition.m_Object)
 
     def DefineGridResolutionByLatLon(self, coverageDefinition: "ICoverageDefinition"):
-        # Get the IAgCvGrid interface
+        # Get the ICoverageGrid interface
         grid: "ICoverageGrid" = coverageDefinition.grid
 
         # Set resolution type

@@ -288,7 +288,7 @@ class Sensor(CodeSnippetsTestBase):
         # Set location type to VGT
         sensor.set_location_type(AgESnLocation.eSnLocationCrdnPoint)
 
-        # Get IAgLocationCrdnPoint interface
+        # Get ILocationVectorGeometryToolPoint interface
         vgtPoint: "ILocationVectorGeometryToolPoint" = clr.CastAs(
             sensor.location_data, ILocationVectorGeometryToolPoint
         )

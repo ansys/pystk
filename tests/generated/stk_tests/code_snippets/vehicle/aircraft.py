@@ -68,7 +68,7 @@ class Aircraft(CodeSnippetsTestBase):
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, IVehiclePropagatorGreatArc)
         propagator.arc_granularity = 51.333
 
-        # Set Ref type to WayPtAltRefTerrain and retreive IAgVeWayPtAltitudeRefTerrain interface
+        # Set Ref type to WayPtAltRefTerrain and retreive IVehicleWaypointAltitudeReferenceTerrain interface
         propagator.set_altitude_ref_type(AgEVeAltitudeRef.eWayPtAltRefTerrain)
         altRef: "IVehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
             propagator.altitude_ref, IVehicleWaypointAltitudeReferenceTerrain
