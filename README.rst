@@ -22,8 +22,8 @@
    :target: https://codecov.io/gh/pyansys/pystk-core
    :alt: Codecov
 
-.. |GH-CI| image:: https://github.com/pyansys/pystk-core/actions/workflows/ci_cd.yml/badge.svg
-   :target: https://github.com/pyansys/pystk-core/actions/workflows/ci_cd.yml
+.. |GH-CI| image:: https://github.com/ansys-internal/pystk/actions/workflows/ci_cd_night.yml/badge.svg
+   :target: https://github.com/ansys-internal/pystk/actions/workflows/ci_cd_night.yml
    :alt: GH-CI
 
 .. |MIT| image:: https://img.shields.io/badge/License-MIT-blue.svg
