@@ -149,7 +149,6 @@ BEGIN SceneWindow
         BEGIN RecordMovie
             OutputFormat		 VIDEO
             SdfSelected		 No
-            Directory		 C:\Users\jseiler\Documents\STK 12\Scenario1
             BaseName		 VOsnap
             Digits		 4
             Frame		 0
