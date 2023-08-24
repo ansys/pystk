@@ -149,7 +149,6 @@ BEGIN SceneWindow
         BEGIN RecordMovie
             OutputFormat		 VIDEO
             SdfSelected		 No
-            Directory		 D:\abarrow_PySTK\Source\STK\Automation\Tests\NUnitTests\Scenario\AreaTargetTests\
             BaseName		 VOsnap
             Digits		 4
             Frame		 0
@@ -163,7 +162,7 @@ BEGIN SceneWindow
             SnapInterval		 0
             VideoCodec		 "H264"
             Framerate		 30
-            Bitrate		 10000000
+            Bitrate		 3000000
         END RecordMovie
 
 
@@ -528,7 +527,7 @@ BEGIN SceneWindow
             ConnectType		 Sweep
             ColorIndex		 #8fbc8f
             IntervalType		 AlwaysOn
-            Thickness		 20
+            Thickness		 10
             AngleUnit		 deg
         END
         BEGIN VectorAxes
@@ -553,7 +552,7 @@ BEGIN SceneWindow
             ConnectType		 Sweep
             ColorIndex		 #0000ff
             IntervalType		 AlwaysOn
-            Thickness		 20
+            Thickness		 10
             AngleUnit		 deg
         END
         BEGIN VectorAxes
@@ -579,7 +578,7 @@ BEGIN SceneWindow
             ConnectType		 Sweep
             ColorIndex		 #ffff00
             IntervalType		 AlwaysOn
-            Thickness		 20
+            Thickness		 10
             AngleUnit		 deg
         END
         BEGIN VectorAxes
@@ -605,7 +604,7 @@ BEGIN SceneWindow
             ConnectType		 Sweep
             ColorIndex		 #ffffff
             IntervalType		 AlwaysOn
-            Thickness		 20
+            Thickness		 10
             AngleUnit		 deg
         END
         BEGIN VectorAxes
@@ -630,7 +629,7 @@ BEGIN SceneWindow
             ConnectType		 Sweep
             ColorIndex		 #ba55d3
             IntervalType		 AlwaysOn
-            Thickness		 20
+            Thickness		 10
             AngleUnit		 deg
         END
         BEGIN VectorAxes
@@ -655,7 +654,7 @@ BEGIN SceneWindow
             ConnectType		 Sweep
             ColorIndex		 #fff0f5
             IntervalType		 AlwaysOn
-            Thickness		 20
+            Thickness		 10
             AngleUnit		 deg
         END
         BEGIN VectorAngle
@@ -730,9 +729,9 @@ BEGIN SceneWindow
             UseLayer		 Yes
             FromName		 "Earth"
             FromRegPosAttView		 "Point"
-            FromPosition		 -1.5206630428804317e+07  3.1612457933898859e+07  0.0000000000000000e+00
-            FromOffset		 -1.5206630428804317e+07  3.1612457933898859e+07  0.0000000000000000e+00
-            FromOffsetLLR		  0.0000000000000000e+00  2.0191553982332069e+00  3.5079753500000000e+07
+            FromPosition		  2.8600295874704167e+07 -2.0312857541472152e+07  0.0000000000000000e+00
+            FromOffset		  2.8600295874704167e+07 -2.0312857541472152e+07  0.0000000000000000e+00
+            FromOffsetLLR		  0.0000000000000000e+00 -6.1756040350727082e-01  3.5079753500000000e+07
             ToName		 "Earth"
             ToRegPosAttView		 "Point"
             ToPosition		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
@@ -742,7 +741,7 @@ BEGIN SceneWindow
             ConstantDistanceValue		 1
             UpVector		  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00
             ViewRad		  3.5079753500000000e+07
-            ViewQuat		  8.4660716386104784e-01  0.0000000000000000e+00  0.0000000000000000e+00 -5.3221829177429902e-01
+            ViewQuat		  3.0389675496348700e-01  0.0000000000000000e+00  0.0000000000000000e+00  9.5270497129104048e-01
             ViewCoordSystem		 From
             ViewFromToMode		 FromTo
             ViewToCBIMtx		  1.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00
@@ -756,7 +755,7 @@ BEGIN SceneWindow
             MinAngleToUpAxis		  8.7266462599716477e-03
             InitUpAxisUp		 Yes
             TempUpAxisUp		 Yes
-            CrossAxis		  9.0115963710802183e-01  4.3348737980169438e-01 -0.0000000000000000e+00
+            CrossAxis		 -5.7904789842585846e-01 -8.1529352464532479e-01  0.0000000000000000e+00
             DefaultOffset		  3.5079753500000000e+07
             BaseDefaultOffset		  6.3781370000000000e+06
         END View
@@ -810,9 +809,9 @@ BEGIN View
     UseLayer		 Yes
     FromName		 "Earth"
     FromRegPosAttView		 "Point"
-    FromPosition		 -1.5206630428804317e+07  3.1612457933898859e+07  0.0000000000000000e+00
+    FromPosition		  2.8600295874704167e+07 -2.0312857541472152e+07  0.0000000000000000e+00
     FromOffset		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
-    FromOffsetLLR		  0.0000000000000000e+00  2.0191553982332069e+00  3.5079753500000000e+07
+    FromOffsetLLR		  0.0000000000000000e+00 -6.1756040350727082e-01  3.5079753500000000e+07
     ToName		 "Earth"
     ToRegPosAttView		 "Point"
     ToPosition		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
@@ -822,7 +821,7 @@ BEGIN View
     ConstantDistanceValue		 1
     UpVector		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
     ViewRad		  3.5079753500000000e+07
-    ViewQuat		  8.4660716386104784e-01  0.0000000000000000e+00  0.0000000000000000e+00 -5.3221829177429902e-01
+    ViewQuat		  3.0389675496348700e-01  0.0000000000000000e+00  0.0000000000000000e+00  9.5270497129104048e-01
     ViewCoordSystem		 From
     ViewFromToMode		 FromTo
     ViewToCBIMtx		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00

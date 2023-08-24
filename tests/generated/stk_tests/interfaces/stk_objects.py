@@ -396,7 +396,7 @@ class STKObjectHelper(object):
             oCollection.unload(AgESTKObjectType.eSensor, "Radar")
 
         if oObject.class_type == AgESTKObjectType.eScenario:
-            oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTest", "at2.at"))
+            oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTests", "at2.at"))
 
         else:
 

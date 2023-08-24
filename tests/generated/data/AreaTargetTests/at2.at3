@@ -8,9 +8,9 @@ BorderWallTransparencyOnOff		 No
 BorderWallLineTransparencyOnOff		 No
 BorderWallTransparency		 0.699999988079071
 BorderWallLineTransparency		 0.699999988079071
-BorderWallTopCapType		 TERRAIN
+BorderWallTopCapType		 WGS84
 BorderWallTopCap		 0
-BorderWallBotCapType		 TERRAIN
+BorderWallBotCapType		 WGS84
 BorderWallBotCap		 0
 BorderWallSampleRate		 2
 UseLabelMaxViewingDist		 No
@@ -41,7 +41,7 @@ BEGIN VectorAxes
     ConnectType		 Sweep
     ColorIndex		 #f0ffff
     IntervalType		 AlwaysOn
-    Thickness		 10
+    Thickness		 20
     AngleUnit		 deg
 END
 BEGIN VectorAxes
@@ -66,7 +66,7 @@ BEGIN VectorAxes
     ConnectType		 Sweep
     ColorIndex		 #f0ffff
     IntervalType		 AlwaysOn
-    Thickness		 10
+    Thickness		 20
     AngleUnit		 deg
 END
 BEGIN VectorAxes
@@ -91,7 +91,7 @@ BEGIN VectorAxes
     ConnectType		 Sweep
     ColorIndex		 #f0ffff
     IntervalType		 AlwaysOn
-    Thickness		 10
+    Thickness		 20
     AngleUnit		 deg
 END
 BEGIN VectorAxes
@@ -116,7 +116,7 @@ BEGIN VectorAxes
     ConnectType		 Sweep
     ColorIndex		 #f0ffff
     IntervalType		 AlwaysOn
-    Thickness		 10
+    Thickness		 20
     AngleUnit		 deg
 END
 BEGIN VectorAxes
@@ -142,7 +142,7 @@ BEGIN VectorAxes
     ConnectType		 Sweep
     ColorIndex		 #ffff00
     IntervalType		 AlwaysOn
-    Thickness		 10
+    Thickness		 20
     AngleUnit		 deg
 END
 BEGIN VectorAxes
@@ -168,14 +168,14 @@ BEGIN VectorAxes
     ConnectType		 Sweep
     ColorIndex		 #ffffff
     IntervalType		 AlwaysOn
-    Thickness		 10
+    Thickness		 20
     AngleUnit		 deg
 END
 BEGIN VectorAxes
     BEGIN CrdnDef
         IsVector		 Yes
         IsCentralBodyFrame		 No
-        Name		 "Zenith"
+        Name		 "Zenith(Detic)"
     END
     BEGIN RefCrdn
         IsVector		 No
@@ -193,7 +193,7 @@ BEGIN VectorAxes
     ConnectType		 Sweep
     ColorIndex		 #87cefa
     IntervalType		 AlwaysOn
-    Thickness		 10
+    Thickness		 20
     AngleUnit		 deg
 END
 BEGIN VectorAxes
@@ -217,7 +217,7 @@ BEGIN VectorAxes
     ConnectType		 Sweep
     ColorIndex		 #87cefa
     IntervalType		 AlwaysOn
-    Thickness		 10
+    Thickness		 20
     AngleUnit		 deg
 END
 BEGIN VectorAngle
