@@ -1816,7 +1816,6 @@ BEGIN Scenario
                     BEGIN RecordMovie
                         OutputFormat		 VIDEO
                         SdfSelected		 No
-                        Directory		 D:\abarrow_PySTK\Source\STK\Automation\Tests\NUnitTests\Scenario\AreaTargetTests\
                         BaseName		 Frame
                         Digits		 4
                         Frame		 0
@@ -2005,7 +2004,6 @@ BEGIN Scenario
                         BEGIN RecordMovie
                             OutputFormat		 VIDEO
                             SdfSelected		 No
-                            Directory		 D:\abarrow_PySTK\Source\STK\Automation\Tests\NUnitTests\Scenario\AreaTargetTests\
                             BaseName		 Frame
                             Digits		 4
                             Frame		 0
@@ -2193,7 +2191,6 @@ BEGIN Scenario
                         BEGIN RecordMovie
                             OutputFormat		 VIDEO
                             SdfSelected		 No
-                            Directory		 D:\abarrow_PySTK\Source\STK\Automation\Tests\NUnitTests\Scenario\AreaTargetTests\
                             BaseName		 Frame
                             Digits		 4
                             Frame		 0
