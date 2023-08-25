@@ -100,7 +100,7 @@ BEGIN Async3dPickOptions
 END Async3dPickOptions
 _AGI_PIBEGINTYPEMGR3DINPDEVMODE
 END
-EarthShapeModel		 "MSL"
+EarthShapeModel		 "WGS84"
 
 BEGIN SceneWindow
 
@@ -162,7 +162,7 @@ BEGIN SceneWindow
             SnapInterval		 0
             VideoCodec		 "H264"
             Framerate		 30
-            Bitrate		 10000000
+            Bitrate		 3000000
         END RecordMovie
 
 
@@ -696,22 +696,22 @@ BEGIN SceneWindow
             BEGIN ViewCrdnAxes
                 BEGIN AXES
                     Type		 AXES_LINKTO
-                    Name		 TopoCentric
-                    RelativePath		 Aircraft/Lead
+                    Name		 Inertial
+                    AbsolutePath		 CentralBody/Earth
                 END AXES
             END
             BEGIN FromViewCrdnPoint
                 BEGIN POINT
                     Type		 POINT_LINKTO
                     Name		 Center
-                    RelativePath		 Aircraft/Lead
+                    AbsolutePath		 CentralBody/Earth
                 END POINT
             END
             BEGIN ToViewCrdnPoint
                 BEGIN POINT
                     Type		 POINT_LINKTO
                     Name		 Center
-                    RelativePath		 Aircraft/Lead
+                    AbsolutePath		 CentralBody/Earth
                 END POINT
             END
             fov		 0.7853981633974483
@@ -727,24 +727,24 @@ BEGIN SceneWindow
             ZoomUseDistanceToCb		 Yes
             GlobeDetailLevel		 1
             UseLayer		 Yes
-            FromName		 "Aircraft/Lead"
+            FromName		 "Earth"
             FromRegPosAttView		 "Point"
-            FromPosition		  4.9217068706867779e+06  4.0854167392527913e+06  1.4053983091862575e+05
-            FromOffset		  2.2947464587116629e+04 -1.1979012502528731e+04  3.5709037216691344e+04
-            FromOffsetLLR		  2.4050985119106949e-01 -2.5507656339020155e+00  4.4104627993621682e+04
-            ToName		 "Aircraft/Lead"
+            FromPosition		  2.8600295874704167e+07 -2.0312857541472152e+07  0.0000000000000000e+00
+            FromOffset		  2.8600295874704167e+07 -2.0312857541472152e+07  0.0000000000000000e+00
+            FromOffsetLLR		  0.0000000000000000e+00 -6.1756040350727082e-01  3.5079753500000000e+07
+            ToName		 "Earth"
             ToRegPosAttView		 "Point"
-            ToPosition		  4.8987594060996613e+06  4.0973957517553200e+06  1.0483079370193441e+05
+            ToPosition		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
             ToOffset		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
             ToOffsetLLR		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
             ConstantDistanceType		 None
             ConstantDistanceValue		 1
-            UpVector		  6.6207610709461684e-01  7.2711492323792848e-01 -1.8154645912035780e-01
-            ViewRad		  4.4104627993621689e+04
-            ViewQuat		  9.4977276267560440e-01 -3.4926153038886229e-02  1.1476861946221810e-01  2.8903291698384631e-01
+            UpVector		  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00
+            ViewRad		  3.5079753500000000e+07
+            ViewQuat		  3.0389675496348700e-01  0.0000000000000000e+00  0.0000000000000000e+00  9.5270497129104048e-01
             ViewCoordSystem		 From
             ViewFromToMode		 FromTo
-            ViewToCBIMtx		  1.1781566284985889e-02  1.1685699123143711e-02 -9.9986231008668214e-01 -6.4159542621309895e-01  7.6704193895591133e-01  1.4046156728083625e-03  7.6695273893396121e-01  6.4149053642182430e-01  1.6534446556684623e-02
+            ViewToCBIMtx		  1.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00
             UseUpAxis		 Yes
             UpAxisType		 Z
             UserDefinedUpAxis		  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00
@@ -755,9 +755,9 @@ BEGIN SceneWindow
             MinAngleToUpAxis		  8.7266462599716477e-03
             InitUpAxisUp		 Yes
             TempUpAxisUp		 Yes
-            CrossAxis		 -5.5704803687067084e-01  8.3048027346742659e-01  0.0000000000000000e+00
-            DefaultOffset		  5.7435643672943115e+01
-            BaseDefaultOffset		  4.5948514938354492e+01
+            CrossAxis		 -5.7904789842585846e-01 -8.1529352464532479e-01  0.0000000000000000e+00
+            DefaultOffset		  3.5079753500000000e+07
+            BaseDefaultOffset		  6.3781370000000000e+06
         END View
 
         BEGIN ViewPathManagerSceneInfo
@@ -809,9 +809,9 @@ BEGIN View
     UseLayer		 Yes
     FromName		 "Earth"
     FromRegPosAttView		 "Point"
-    FromPosition		  2.6568574537037458e+07 -2.2906329969915453e+07  0.0000000000000000e+00
+    FromPosition		  2.8600295874704167e+07 -2.0312857541472152e+07  0.0000000000000000e+00
     FromOffset		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
-    FromOffsetLLR		  0.0000000000000000e+00 -7.1151065078192355e-01  3.5079753500000000e+07
+    FromOffsetLLR		  0.0000000000000000e+00 -6.1756040350727082e-01  3.5079753500000000e+07
     ToName		 "Earth"
     ToRegPosAttView		 "Point"
     ToPosition		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
@@ -821,7 +821,7 @@ BEGIN View
     ConstantDistanceValue		 1
     UpVector		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
     ViewRad		  3.5079753500000000e+07
-    ViewQuat		  3.4829849421618786e-01  0.0000000000000000e+00  0.0000000000000000e+00  9.3738367754443863e-01
+    ViewQuat		  3.0389675496348700e-01  0.0000000000000000e+00  0.0000000000000000e+00  9.5270497129104048e-01
     ViewCoordSystem		 From
     ViewFromToMode		 FromTo
     ViewToCBIMtx		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00

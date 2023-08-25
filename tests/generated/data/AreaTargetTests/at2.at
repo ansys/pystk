@@ -3,16 +3,16 @@ WrittenBy    STK_v12.8.0
 
 BEGIN AreaTarget
 
-    Name		 AreaTarget1
+    Name		 at2
 
     BEGIN CentroidPosition
 
         CentralBody		 Earth
         AutoCentroid		 On
-        EcfLatitude		  4.0969517839992598e+01
-        EcfLongitude		 -9.7086750153273357e+01
-        EcfAltitude		  0.0000000000000000e+00
-        UseTerrainInfo		 Off
+        EcfLatitude		  3.7385133889603864e+01
+        EcfLongitude		 -9.9870930378988803e+01
+        EcfAltitude		  7.4906844171440696e+02
+        UseTerrainInfo		 On
         DisplayCoords		 Geodetic
 
         AreaType		 Pattern
@@ -20,16 +20,16 @@ BEGIN AreaTarget
 
         BEGIN PolygonPoints
 
-             3.4772727272727273e+01 -1.0909090909090909e+02  0.0000000000000000e+00
-             5.1136363636363640e+01 -1.0363636363636364e+02  0.0000000000000000e+00
-             4.5000000000000000e+01 -8.5909090909090921e+01  0.0000000000000000e+00
-             3.1363636363636370e+01 -9.0000000000000000e+01  0.0000000000000000e+00
-             3.4772727272727273e+01 -1.0909090909090909e+02  0.0000000000000000e+00
+             3.0000000000000004e+01 -1.1045454545454547e+02  0.0000000000000000e+00
+             4.8409090909090914e+01 -1.0159090909090909e+02  0.0000000000000000e+00
+             4.0909090909090914e+01 -9.1363636363636374e+01  0.0000000000000000e+00
+             2.9318181818181820e+01 -9.5454545454545467e+01  0.0000000000000000e+00
+             3.0000000000000004e+01 -1.1045454545454547e+02  0.0000000000000000e+00
 
         END PolygonPoints
 
         BoundaryType		 GreatArc
-        Granularity		 0.008726645999999999
+        Granularity		 0.008727
 
     END CentroidPosition
 
@@ -64,13 +64,13 @@ BEGIN AreaTarget
 
             BEGIN Attributes
 
-                MarkerColor		 #ffa500
-                PolygonColor		 #ffa500
-                LabelColor		 #ffa500
+                MarkerColor		 #ffffff
+                PolygonColor		 #ffffff
+                LabelColor		 #ffffff
                 LineStyle		 0
                 LineWidth		 1
                 FillTranslucency		 0.5
-                MarkerStyle		 1
+                MarkerStyle		 0
                 FontStyle		 0
 
             END Attributes

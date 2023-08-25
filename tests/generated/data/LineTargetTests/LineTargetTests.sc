@@ -1,7 +1,7 @@
 stk.v.12.0
 WrittenBy    STK_v12.8.0
 BEGIN Scenario
-    Name		 AreaTargetTests
+    Name		 LineTargetTests
 
     BEGIN Epoch
 
@@ -130,7 +130,7 @@ BEGIN Scenario
             LaunchWindowTrajMETStart		 0
             LaunchWindowTrajMETStop		 900
             LaunchWindowStart		 0
-            LaunchWindowStop		 86400
+            LaunchWindowStop		 0
             LaunchMETOffset		 0
             LaunchWindowUseSecEphem		 No 
             LaunchWindowUseScenFolderForSecEphem		 Yes
@@ -565,6 +565,12 @@ BEGIN Scenario
         END ExportDataFile
 
         BEGIN Desc
+            BEGIN ShortText
+
+            END ShortText
+            BEGIN LongText
+
+            END LongText
         END Desc
 
         BEGIN RfEnv
@@ -593,7 +599,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{8E5AFC07-7FAB-4755-BD45-E2CAFEF060B8}&quot;</STRING>
+                                                <STRING>&quot;{278F6D03-2673-486A-B63E-0C03100DED4B}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -714,7 +720,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{EA25A633-0CA5-47B8-9148-58C43C24AA52}&quot;</STRING>
+                                                <STRING>&quot;{F6067AA2-B85B-40C6-850C-692DAB88F466}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -814,7 +820,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{5CBBEE0A-248F-4C9F-AF4A-94B349506B02}&quot;</STRING>
+                                                <STRING>&quot;{3644C4B0-6DC6-4937-9580-0810054F9CE7}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -905,7 +911,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{A67741F3-3000-4CF6-A14D-6B177FFF7595}&quot;</STRING>
+                                                <STRING>&quot;{F967D73F-E472-4167-8281-302741BF64AA}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1004,7 +1010,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{735FA2EF-B255-45B7-AE6A-1C30BCEBD673}&quot;</STRING>
+                                                <STRING>&quot;{4EE16E49-7529-40E6-A9A2-353753D267C8}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1092,7 +1098,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{917C25A9-D1B5-4F4D-BC8A-C9C910BBA6C9}&quot;</STRING>
+                                                <STRING>&quot;{7C9BFDA5-42C2-4462-945F-77D4C525ADAF}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1223,7 +1229,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{73003C73-9BFD-4EEB-ABF7-C608D2D4421B}&quot;</STRING>
+                                                <STRING>&quot;{99C1E0A0-80B0-44FF-825F-E0471E279674}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1332,7 +1338,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{20D8862C-B096-4F2A-B603-84E2CF7F9650}&quot;</STRING>
+                                                <STRING>&quot;{305FE7FE-0366-4986-98F8-D2B42EFD87C6}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1433,7 +1439,7 @@ BEGIN Scenario
                             <VAR name = "IdentifierInformation">
                                 <SCOPE>
                                     <VAR name = "Identifier">
-                                        <STRING>&quot;{5D251E5C-60E6-4B2A-8B98-A4D9FC613D95}&quot;</STRING>
+                                        <STRING>&quot;{9E8FE4E3-2543-4CC2-BF66-A1EDB8C9F3EC}&quot;</STRING>
                                     </VAR>
                                     <VAR name = "Version">
                                         <STRING>&quot;1&quot;</STRING>
@@ -1558,10 +1564,10 @@ BEGIN Scenario
             SpiceFile		 "jupiter.bsp"
             SpiceFile		 "mars.bsp"
             SpiceFile		 "neptune.bsp"
+            SpiceFile		 "planets.bsp"
             SpiceFile		 "pluto.bsp"
             SpiceFile		 "saturn.bsp"
             SpiceFile		 "uranus.bsp"
-            SpiceFile		 "planets.bsp"
         END SpiceExt
 
         BEGIN FlightScenExt
@@ -1829,7 +1835,7 @@ BEGIN Scenario
                         SnapInterval		 0
                         VideoCodec		 "H264"
                         Framerate		 30
-                        Bitrate		 10000000
+                        Bitrate		 3000000
                     END RecordMovie
 
 
@@ -2017,7 +2023,7 @@ BEGIN Scenario
                             SnapInterval		 0
                             VideoCodec		 "H264"
                             Framerate		 30
-                            Bitrate		 10000000
+                            Bitrate		 3000000
                         END RecordMovie
 
 
@@ -2303,23 +2309,15 @@ BEGIN Scenario
 
     BEGIN SubObjects
 
-        Class AreaTarget
-
-            AreaTarget1		
-            at2		
-
-        END Class
-
         Class Facility
 
             Facility1		
 
         END Class
 
-        Class Planet
+        Class LineTarget
 
-            JupiterAnalytic		
-            Planet1		
+            LineTarget2		
 
         END Class
 
@@ -2341,27 +2339,14 @@ BEGIN Scenario
         Instance *
             *		
         END Instance
-        Instance AreaTarget/AreaTarget1
-            AreaTarget/AreaTarget1		
-        END Instance
-        Instance AreaTarget/at2
-            AreaTarget/at2		
-        END Instance
         Instance Facility/Facility1
             Facility/Facility1		
         END Instance
-        Instance Planet/JupiterAnalytic
-            Planet/JupiterAnalytic		
-        END Instance
-        Instance Planet/Planet1
-            Planet/Planet1		
+        Instance LineTarget/LineTarget2
+            LineTarget/LineTarget2		
         END Instance
         Instance Satellite/Satellite1
             Satellite/Satellite1		
-            Satellite/Satellite1/Sensor/Sensor2		
-        END Instance
-        Instance Satellite/Satellite1/Sensor/Sensor2
-            Satellite/Satellite1/Sensor/Sensor2		
         END Instance
         Instance Star/Star1
             Star/Star1		

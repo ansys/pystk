@@ -1758,7 +1758,6 @@ BEGIN Scenario
                         BEGIN RecordMovie
                             OutputFormat		 VIDEO
                             SdfSelected		 No
-                            Directory		 C:\Users\jseiler\Documents\STK 12\Scenario1
                             BaseName		 Frame
                             Digits		 4
                             Frame		 0
@@ -1946,7 +1945,6 @@ BEGIN Scenario
                         BEGIN RecordMovie
                             OutputFormat		 VIDEO
                             SdfSelected		 No
-                            Directory		 C:\Users\jseiler\Documents\STK 12\Scenario1
                             BaseName		 Frame
                             Digits		 4
                             Frame		 0
