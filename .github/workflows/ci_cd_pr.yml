@@ -5,6 +5,7 @@ on:
 
 env:
   MAIN_PYTHON_VERSION: '3.10'
+  MINIMUM_PYTHON_VERSION: '3.8'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -163,6 +164,9 @@ jobs:
         # Tests run against Python 3.8 to ensure backwards compatibility with
         # the lowest supported Python version. Testing against a single version
         # minimizes the time for CI/CD runs.
+        #
+        # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
+        # does not support ENV variable substitution in matrix definition
         python: ['3.8']
       fail-fast: false
     steps:
@@ -216,7 +220,7 @@ jobs:
             "export COVERAGE_FILE=vgt && tox -e tests-vgt-graphics-cov-linux"
 
       - name: "Install coverage dependencies"
-        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -224,7 +228,7 @@ jobs:
             "python -m pip install .[tests]"
 
       - name: "Combine all coverage results"
-        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -232,7 +236,7 @@ jobs:
             "coverage combine aviator stk vgt"
 
       - name: "Generate total coverage report"
-        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -240,7 +244,7 @@ jobs:
             "coverage html -d .cov/total-html"
 
       - name: "Upload coverage results"
-        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         uses: actions/upload-artifact@v3
         with:
           path: .cov/total-html
