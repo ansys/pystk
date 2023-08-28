@@ -28,7 +28,7 @@ class Target(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         self.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eTarget, Target.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.TARGET, Target.m_DefaultName),
             ITarget,
         )
 
@@ -36,7 +36,7 @@ class Target(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eTarget, Target.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.TARGET, Target.m_DefaultName)
         self.m_Object = None
 
     # endregion
@@ -49,7 +49,7 @@ class Target(CodeSnippetsTestBase):
         # Create the Target on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget: "ITarget" = clr.CastAs(
-            root.current_scenario.children.new(AgESTKObjectType.eAreaTarget, "MyAreaTarget"), ITarget
+            root.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "MyAreaTarget"), ITarget
         )
 
     # endregion
@@ -72,11 +72,11 @@ class Target(CodeSnippetsTestBase):
         target.use_local_time_offset = True
         target.local_time_offset = 200.0
         target.use_terrain = True
-        # Note, if SetAzElMask is set to a type other than AgEAzElMaskType.eMaskFile,
+        # Note, if SetAzElMask is set to a type other than AZ_EL_MASK_TYPE.eMaskFile,
         # the second parameter is ignored.
-        target.set_az_el_mask(AgEAzElMaskType.eMaskFile, maskfile)
-        target.terrain_norm = AgETerrainNormType.eSlopeAzimuth
-        target.alt_ref = AgEAltRefType.eMSL
+        target.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, maskfile)
+        target.terrain_norm = TERRAIN_NORM_TYPE.SLOPE_AZIMUTH
+        target.alt_ref = ALT_REF_TYPE.MSL
         target.height_above_ground = 1472.0
 
     # endregion

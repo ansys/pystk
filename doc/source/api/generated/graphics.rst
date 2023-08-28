@@ -238,60 +238,60 @@ Enumerations
 
 .. autosummary::
 
-    AgEStkGraphicsCylinderFill
-    AgEStkGraphicsWindingOrder
-    AgEStkGraphicsCameraSnapshotFileFormat
-    AgEStkGraphicsCameraVideoFormat
-    AgEStkGraphicsConstrainedUpAxis
-    AgEStkGraphicsGlobeOverlayRole
-    AgEStkGraphicsIndicesOrderHint
-    AgEStkGraphicsMaintainAspectRatio
-    AgEStkGraphicsMapProjection
-    AgEStkGraphicsMarkerBatchRenderingMethod
-    AgEStkGraphicsMarkerBatchRenderPass
-    AgEStkGraphicsMarkerBatchSizeSource
-    AgEStkGraphicsMarkerBatchSortOrder
-    AgEStkGraphicsMarkerBatchUnit
-    AgEStkGraphicsModelTransformationType
-    AgEStkGraphicsOrigin
-    AgEStkGraphicsPathPrimitiveRemoveLocation
-    AgEStkGraphicsPrimitivesSortOrder
-    AgEStkGraphicsRefreshRate
-    AgEStkGraphicsRenderPass
-    AgEStkGraphicsRenderPassHint
-    AgEStkGraphicsScreenOverlayOrigin
-    AgEStkGraphicsScreenOverlayPinningOrigin
-    AgEStkGraphicsScreenOverlayUnit
-    AgEStkGraphicsSurfaceMeshRenderingMethod
-    AgEStkGraphicsVisibility
-    AgEStkGraphicsAntiAliasing
-    AgEStkGraphicsBinaryLogicOperation
-    AgEStkGraphicsBlurMethod
-    AgEStkGraphicsEdgeDetectMethod
-    AgEStkGraphicsFlipAxis
-    AgEStkGraphicsGradientDetectMethod
-    AgEStkGraphicsJpeg2000CompressionProfile
-    AgEStkGraphicsRasterBand
-    AgEStkGraphicsRasterFormat
-    AgEStkGraphicsRasterOrientation
-    AgEStkGraphicsRasterType
-    AgEStkGraphicsSharpenMethod
-    AgEStkGraphicsVideoPlayback
-    AgEStkGraphicsKmlNetworkLinkRefreshMode
-    AgEStkGraphicsKmlNetworkLinkViewRefreshMode
-    AgEStkGraphicsModelUpAxis
-    AgEStkGraphicsOutlineAppearance
-    AgEStkGraphicsPolylineType
-    AgEStkGraphicsCullFace
-    AgEStkGraphicsInternalTextureFormat
-    AgEStkGraphicsMagnificationFilter
-    AgEStkGraphicsMinificationFilter
-    AgEStkGraphicsRendererShadeModel
-    AgEStkGraphicsTextureWrap
-    AgEStkGraphicsSetHint
-    AgEStkGraphicsStereoProjectionMode
-    AgEStkGraphicsStereoscopicDisplayMode
-    AgEStkGraphicsFontStyle
+    STK_GRAPHICS_CYLINDER_FILL
+    STK_GRAPHICS_WINDING_ORDER
+    STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT
+    STK_GRAPHICS_CAMERA_VIDEO_FORMAT
+    STK_GRAPHICS_CONSTRAINED_UP_AXIS
+    STK_GRAPHICS_GLOBE_OVERLAY_ROLE
+    STK_GRAPHICS_INDICES_ORDER_HINT
+    STK_GRAPHICS_MAINTAIN_ASPECT_RATIO
+    STK_GRAPHICS_MAP_PROJECTION
+    STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD
+    STK_GRAPHICS_MARKER_BATCH_RENDER_PASS
+    STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE
+    STK_GRAPHICS_MARKER_BATCH_SORT_ORDER
+    STK_GRAPHICS_MARKER_BATCH_UNIT
+    STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE
+    STK_GRAPHICS_ORIGIN
+    STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION
+    STK_GRAPHICS_PRIMITIVES_SORT_ORDER
+    STK_GRAPHICS_REFRESH_RATE
+    STK_GRAPHICS_RENDER_PASS
+    STK_GRAPHICS_RENDER_PASS_HINT
+    STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN
+    STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN
+    STK_GRAPHICS_SCREEN_OVERLAY_UNIT
+    STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD
+    STK_GRAPHICS_VISIBILITY
+    STK_GRAPHICS_ANTI_ALIASING
+    STK_GRAPHICS_BINARY_LOGIC_OPERATION
+    STK_GRAPHICS_BLUR_METHOD
+    STK_GRAPHICS_EDGE_DETECT_METHOD
+    STK_GRAPHICS_FLIP_AXIS
+    STK_GRAPHICS_GRADIENT_DETECT_METHOD
+    STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE
+    STK_GRAPHICS_RASTER_BAND
+    STK_GRAPHICS_RASTER_FORMAT
+    STK_GRAPHICS_RASTER_ORIENTATION
+    STK_GRAPHICS_RASTER_TYPE
+    STK_GRAPHICS_SHARPEN_METHOD
+    STK_GRAPHICS_VIDEO_PLAYBACK
+    STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE
+    STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE
+    STK_GRAPHICS_MODEL_UP_AXIS
+    STK_GRAPHICS_OUTLINE_APPEARANCE
+    STK_GRAPHICS_POLYLINE_TYPE
+    STK_GRAPHICS_CULL_FACE
+    STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT
+    STK_GRAPHICS_MAGNIFICATION_FILTER
+    STK_GRAPHICS_MINIFICATION_FILTER
+    STK_GRAPHICS_RENDERER_SHADE_MODEL
+    STK_GRAPHICS_TEXTURE_WRAP
+    STK_GRAPHICS_SET_HINT
+    STK_GRAPHICS_STEREO_PROJECTION_MODE
+    STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE
+    STK_GRAPHICS_FONT_STYLE
 
 
 Classes
@@ -1199,113 +1199,113 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgEStkGraphicsCylinderFill
+.. autoenum:: STK_GRAPHICS_CYLINDER_FILL
     :members:
-.. autoenum:: AgEStkGraphicsWindingOrder
+.. autoenum:: STK_GRAPHICS_WINDING_ORDER
     :members:
-.. autoenum:: AgEStkGraphicsCameraSnapshotFileFormat
+.. autoenum:: STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT
     :members:
-.. autoenum:: AgEStkGraphicsCameraVideoFormat
+.. autoenum:: STK_GRAPHICS_CAMERA_VIDEO_FORMAT
     :members:
-.. autoenum:: AgEStkGraphicsConstrainedUpAxis
+.. autoenum:: STK_GRAPHICS_CONSTRAINED_UP_AXIS
     :members:
-.. autoenum:: AgEStkGraphicsGlobeOverlayRole
+.. autoenum:: STK_GRAPHICS_GLOBE_OVERLAY_ROLE
     :members:
-.. autoenum:: AgEStkGraphicsIndicesOrderHint
+.. autoenum:: STK_GRAPHICS_INDICES_ORDER_HINT
     :members:
-.. autoenum:: AgEStkGraphicsMaintainAspectRatio
+.. autoenum:: STK_GRAPHICS_MAINTAIN_ASPECT_RATIO
     :members:
-.. autoenum:: AgEStkGraphicsMapProjection
+.. autoenum:: STK_GRAPHICS_MAP_PROJECTION
     :members:
-.. autoenum:: AgEStkGraphicsMarkerBatchRenderingMethod
+.. autoenum:: STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD
     :members:
-.. autoenum:: AgEStkGraphicsMarkerBatchRenderPass
+.. autoenum:: STK_GRAPHICS_MARKER_BATCH_RENDER_PASS
     :members:
-.. autoenum:: AgEStkGraphicsMarkerBatchSizeSource
+.. autoenum:: STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE
     :members:
-.. autoenum:: AgEStkGraphicsMarkerBatchSortOrder
+.. autoenum:: STK_GRAPHICS_MARKER_BATCH_SORT_ORDER
     :members:
-.. autoenum:: AgEStkGraphicsMarkerBatchUnit
+.. autoenum:: STK_GRAPHICS_MARKER_BATCH_UNIT
     :members:
-.. autoenum:: AgEStkGraphicsModelTransformationType
+.. autoenum:: STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE
     :members:
-.. autoenum:: AgEStkGraphicsOrigin
+.. autoenum:: STK_GRAPHICS_ORIGIN
     :members:
-.. autoenum:: AgEStkGraphicsPathPrimitiveRemoveLocation
+.. autoenum:: STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION
     :members:
-.. autoenum:: AgEStkGraphicsPrimitivesSortOrder
+.. autoenum:: STK_GRAPHICS_PRIMITIVES_SORT_ORDER
     :members:
-.. autoenum:: AgEStkGraphicsRefreshRate
+.. autoenum:: STK_GRAPHICS_REFRESH_RATE
     :members:
-.. autoenum:: AgEStkGraphicsRenderPass
+.. autoenum:: STK_GRAPHICS_RENDER_PASS
     :members:
-.. autoenum:: AgEStkGraphicsRenderPassHint
+.. autoenum:: STK_GRAPHICS_RENDER_PASS_HINT
     :members:
-.. autoenum:: AgEStkGraphicsScreenOverlayOrigin
+.. autoenum:: STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN
     :members:
-.. autoenum:: AgEStkGraphicsScreenOverlayPinningOrigin
+.. autoenum:: STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN
     :members:
-.. autoenum:: AgEStkGraphicsScreenOverlayUnit
+.. autoenum:: STK_GRAPHICS_SCREEN_OVERLAY_UNIT
     :members:
-.. autoenum:: AgEStkGraphicsSurfaceMeshRenderingMethod
+.. autoenum:: STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD
     :members:
-.. autoenum:: AgEStkGraphicsVisibility
+.. autoenum:: STK_GRAPHICS_VISIBILITY
     :members:
-.. autoenum:: AgEStkGraphicsAntiAliasing
+.. autoenum:: STK_GRAPHICS_ANTI_ALIASING
     :members:
-.. autoenum:: AgEStkGraphicsBinaryLogicOperation
+.. autoenum:: STK_GRAPHICS_BINARY_LOGIC_OPERATION
     :members:
-.. autoenum:: AgEStkGraphicsBlurMethod
+.. autoenum:: STK_GRAPHICS_BLUR_METHOD
     :members:
-.. autoenum:: AgEStkGraphicsEdgeDetectMethod
+.. autoenum:: STK_GRAPHICS_EDGE_DETECT_METHOD
     :members:
-.. autoenum:: AgEStkGraphicsFlipAxis
+.. autoenum:: STK_GRAPHICS_FLIP_AXIS
     :members:
-.. autoenum:: AgEStkGraphicsGradientDetectMethod
+.. autoenum:: STK_GRAPHICS_GRADIENT_DETECT_METHOD
     :members:
-.. autoenum:: AgEStkGraphicsJpeg2000CompressionProfile
+.. autoenum:: STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE
     :members:
-.. autoenum:: AgEStkGraphicsRasterBand
+.. autoenum:: STK_GRAPHICS_RASTER_BAND
     :members:
-.. autoenum:: AgEStkGraphicsRasterFormat
+.. autoenum:: STK_GRAPHICS_RASTER_FORMAT
     :members:
-.. autoenum:: AgEStkGraphicsRasterOrientation
+.. autoenum:: STK_GRAPHICS_RASTER_ORIENTATION
     :members:
-.. autoenum:: AgEStkGraphicsRasterType
+.. autoenum:: STK_GRAPHICS_RASTER_TYPE
     :members:
-.. autoenum:: AgEStkGraphicsSharpenMethod
+.. autoenum:: STK_GRAPHICS_SHARPEN_METHOD
     :members:
-.. autoenum:: AgEStkGraphicsVideoPlayback
+.. autoenum:: STK_GRAPHICS_VIDEO_PLAYBACK
     :members:
-.. autoenum:: AgEStkGraphicsKmlNetworkLinkRefreshMode
+.. autoenum:: STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE
     :members:
-.. autoenum:: AgEStkGraphicsKmlNetworkLinkViewRefreshMode
+.. autoenum:: STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE
     :members:
-.. autoenum:: AgEStkGraphicsModelUpAxis
+.. autoenum:: STK_GRAPHICS_MODEL_UP_AXIS
     :members:
-.. autoenum:: AgEStkGraphicsOutlineAppearance
+.. autoenum:: STK_GRAPHICS_OUTLINE_APPEARANCE
     :members:
-.. autoenum:: AgEStkGraphicsPolylineType
+.. autoenum:: STK_GRAPHICS_POLYLINE_TYPE
     :members:
-.. autoenum:: AgEStkGraphicsCullFace
+.. autoenum:: STK_GRAPHICS_CULL_FACE
     :members:
-.. autoenum:: AgEStkGraphicsInternalTextureFormat
+.. autoenum:: STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT
     :members:
-.. autoenum:: AgEStkGraphicsMagnificationFilter
+.. autoenum:: STK_GRAPHICS_MAGNIFICATION_FILTER
     :members:
-.. autoenum:: AgEStkGraphicsMinificationFilter
+.. autoenum:: STK_GRAPHICS_MINIFICATION_FILTER
     :members:
-.. autoenum:: AgEStkGraphicsRendererShadeModel
+.. autoenum:: STK_GRAPHICS_RENDERER_SHADE_MODEL
     :members:
-.. autoenum:: AgEStkGraphicsTextureWrap
+.. autoenum:: STK_GRAPHICS_TEXTURE_WRAP
     :members:
-.. autoenum:: AgEStkGraphicsSetHint
+.. autoenum:: STK_GRAPHICS_SET_HINT
     :members:
-.. autoenum:: AgEStkGraphicsStereoProjectionMode
+.. autoenum:: STK_GRAPHICS_STEREO_PROJECTION_MODE
     :members:
-.. autoenum:: AgEStkGraphicsStereoscopicDisplayMode
+.. autoenum:: STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE
     :members:
-.. autoenum:: AgEStkGraphicsFontStyle
+.. autoenum:: STK_GRAPHICS_FONT_STYLE
     :members:
 
 

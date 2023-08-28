@@ -21,10 +21,10 @@ Enumerations
 
 .. autosummary::
 
-    AgEOpenLogFileMode
-    AgEUiLogMsgType
-    AgEAppConstants
-    AgEAppErrorCodes
+    OPEN_LOG_FILE_MODE
+    UI_LOG_MSG_TYPE
+    APP_CONSTANTS
+    APP_ERROR_CODES
 
 
 Classes
@@ -64,13 +64,13 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgEOpenLogFileMode
+.. autoenum:: OPEN_LOG_FILE_MODE
     :members:
-.. autoenum:: AgEUiLogMsgType
+.. autoenum:: UI_LOG_MSG_TYPE
     :members:
-.. autoenum:: AgEAppConstants
+.. autoenum:: APP_CONSTANTS
     :members:
-.. autoenum:: AgEAppErrorCodes
+.. autoenum:: APP_ERROR_CODES
     :members:
 
 

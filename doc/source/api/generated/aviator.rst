@@ -259,137 +259,137 @@ Enumerations
 
 .. autosummary::
 
-    AgEAvtrErrorCodes
-    AgEAvtrClosureValue
-    AgEAvtrProcedureType
-    AgEAvtrSiteType
-    AgEAvtrBasicManeuverStrategy
-    AgEAvtrStraightAheadRefFrame
-    AgEAvtrAirspeedType
-    AgEAvtrAeroPropSimpleMode
-    AgEAvtrAeroPropFlightMode
-    AgEAvtrPhaseOfFlight
-    AgEAvtrCruiseSpeed
-    AgEAvtrTakeoffMode
-    AgEAvtrApproachMode
-    AgEAvtrNavigatorTurnDir
-    AgEAvtrBasicManeuverFuelFlowType
-    AgEAvtrBasicManeuverAltitudeLimit
-    AgEAvtrRunwayHighLowEnd
-    AgEAvtrBasicManeuverRefFrame
-    AgEAvtrBasicManeuverStrategyNavControlLimit
-    AgEAvtrAccelManeuverMode
-    AgEAvtrAircraftAeroStrategy
-    AgEAvtrAircraftPropStrategy
-    AgEAvtrAGLMSL
-    AgEAvtrLandingApproachFixRangeMode
-    AgEAvtrAccelerationAdvAccelMode
-    AgEAvtrAccelManeuverAeroPropMode
-    AgEAvtrBasicManeuverStrategyAirspeedPerfLimits
-    AgEAvtrBasicManeuverStrategyPoweredCruiseMode
-    AgEAvtrTurnMode
-    AgEAvtrPointToPointMode
-    AgEAvtrAltitudeConstraintManeuverMode
-    AgEAvtrWindModelType
-    AgEAvtrWindAtmosModelSource
-    AgEAvtrADDSMsgInterpType
-    AgEAvtrADDSMissingMsgType
-    AgEAvtrADDSMsgExtrapType
-    AgEAvtrADDSForecastType
-    AgEAvtrAtmosphereModel
-    AgEAvtrSmoothTurnMode
-    AgEAvtrPerfModelOverride
-    AgEAvtrBasicManeuverAirspeedMode
-    AgEAvtrAileronRollFlightPath
-    AgEAvtrRollLeftRight
-    AgEAvtrRollUprightInverted
-    AgEAvtrAileronRollMode
-    AgEAvtrFlyAOALeftRight
-    AgEAvtrSmoothAccelLeftRight
-    AgEAvtrPullMode
-    AgEAvtrRollingPullMode
-    AgEAvtrSmoothAccelStopConditions
-    AgEAvtrAutopilotHorizPlaneMode
-    AgEAvtrAngleMode
-    AgEAvtrHoverAltitudeMode
-    AgEAvtrHoverHeadingMode
-    AgEAvtrAutopilotAltitudeMode
-    AgEAvtrAutopilotAltitudeControlMode
-    AgEAvtrClosureMode
-    AgEAvtrInterceptMode
-    AgEAvtrRendezvousStopCondition
-    AgEAvtrFormationFlyerStopCondition
-    AgEAvtrExtEphemFlightMode
-    AgEAvtrAccelPerfModelOverride
-    AgEAvtrStationkeepingStopCondition
-    AgEAvtrTurnDirection
-    AgEAvtrProfileControlLimit
-    AgEAvtrRelSpeedAltStopCondition
-    AgEAvtrRelativeAltitudeMode
-    AgEAvtrFlyToFlightPathAngleMode
-    AgEAvtrPushPull
-    AgEAvtrAccelMode
-    AgEAvtrDelayAltMode
-    AgEAvtrJoinExitArcMethod
-    AgEAvtrFlightLineProcType
-    AgEAvtrTransitionToHoverMode
-    AgEAvtrVTOLRateMode
-    AgEAvtrHoldingProfileMode
-    AgEAvtrHoldingDirection
-    AgEAvtrHoldRefuelDumpMode
-    AgEAvtrHoldingEntryManeuver
-    AgEAvtrVTOLTransitionMode
-    AgEAvtrVTOLFinalHeadingMode
-    AgEAvtrVTOLTranslationMode
-    AgEAvtrVTOLTranslationFinalCourseMode
-    AgEAvtrHoverMode
-    AgEAvtrVTOLHeadingMode
-    AgEAvtrVertLandingMode
-    AgEAvtrLaunchAttitudeMode
-    AgEAvtrFuelFlowType
-    AgEAvtrLineOrientation
-    AgEAvtrRelAbsBearing
-    AgEAvtrBasicFixedWingPropMode
-    AgEAvtrClimbSpeedType
-    AgEAvtrCruiseMaxPerfSpeedType
-    AgEAvtrDescentSpeedType
-    AgEAvtrTakeoffLandingSpeedMode
-    AgEAvtrDepartureSpeedMode
-    AgEAvtrAdvFixedWingAeroStrategy
-    AgEAvtrAdvFixedWingGeometry
-    AgEAvtrAdvFixedWingPowerplantStrategy
-    AgEAvtrMissileAeroStrategy
-    AgEAvtrMissilePropStrategy
-    AgEAvtrRotorcraftPowerplantType
-    AgEAvtrMinimizeSiteProcTimeDiff
-    AgEAvtrSTKObjectWaypointOffsetMode
-    AgEAvtrSearchPatternCourseMode
-    AgEAvtrDelayTurnDir
-    AgEAvtrTrajectoryBlendMode
-    AgEAvtrRefStatePerfMode
-    AgEAvtrRefStateLongitudinalAccelMode
-    AgEAvtrRefStateLateralAccelMode
-    AgEAvtrRefStateAttitudeMode
-    AgEAvtrAndOr
-    AgEAvtrJetEngineTechnologyLevel
-    AgEAvtrJetEngineIntakeType
-    AgEAvtrJetEngineTurbineType
-    AgEAvtrJetEngineExhaustNozzleType
-    AgEAvtrJetFuelType
-    AgEAvtrAFPROPFuelType
-    AgEAvtrCEAFuelType
-    AgEAvtrTurbineMode
-    AgEAvtrRamjetMode
-    AgEAvtrScramjetMode
-    AgEAvtrNumericalIntegrator
-    AgEAvtrBallistic3DControlMode
-    AgEAvtrLaunchDynStateCoordFrame
-    AgEAvtrLaunchDynStateBearingRef
-    AgEAvtrAltitudeRef
-    AgEAvtrSmoothTurnFPAMode
-    AgEAvtrPitch3DControlMode
-    AgEAvtrRefuelDumpMode
-    AgEAvtrBasicManeuverGlideSpeedControlMode
+    AVTR_ERROR_CODES
+    AVTR_CLOSURE_VALUE
+    AVTR_PROCEDURE_TYPE
+    AVTR_SITE_TYPE
+    AVTR_BASIC_MANEUVER_STRATEGY
+    AVTR_STRAIGHT_AHEAD_REF_FRAME
+    AVTR_AIRSPEED_TYPE
+    AVTR_AERO_PROP_SIMPLE_MODE
+    AVTR_AERO_PROP_FLIGHT_MODE
+    AVTR_PHASE_OF_FLIGHT
+    AVTR_CRUISE_SPEED
+    AVTR_TAKEOFF_MODE
+    AVTR_APPROACH_MODE
+    AVTR_NAVIGATOR_TURN_DIR
+    AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE
+    AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT
+    AVTR_RUNWAY_HIGH_LOW_END
+    AVTR_BASIC_MANEUVER_REF_FRAME
+    AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
+    AVTR_ACCEL_MANEUVER_MODE
+    AVTR_AIRCRAFT_AERO_STRATEGY
+    AVTR_AIRCRAFT_PROP_STRATEGY
+    AVTR_AGLMSL
+    AVTR_LANDING_APPROACH_FIX_RANGE_MODE
+    AVTR_ACCELERATION_ADV_ACCEL_MODE
+    AVTR_ACCEL_MANEUVER_AERO_PROP_MODE
+    AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
+    AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE
+    AVTR_TURN_MODE
+    AVTR_POINT_TO_POINT_MODE
+    AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE
+    AVTR_WIND_MODEL_TYPE
+    AVTR_WIND_ATMOS_MODEL_SOURCE
+    AVTR_ADDS_MSG_INTERP_TYPE
+    AVTR_ADDS_MISSING_MSG_TYPE
+    AVTR_ADDS_MSG_EXTRAP_TYPE
+    AVTR_ADDS_FORECAST_TYPE
+    AVTR_ATMOSPHERE_MODEL
+    AVTR_SMOOTH_TURN_MODE
+    AVTR_PERF_MODEL_OVERRIDE
+    AVTR_BASIC_MANEUVER_AIRSPEED_MODE
+    AVTR_AILERON_ROLL_FLIGHT_PATH
+    AVTR_ROLL_LEFT_RIGHT
+    AVTR_ROLL_UPRIGHT_INVERTED
+    AVTR_AILERON_ROLL_MODE
+    AVTR_FLY_AOA_LEFT_RIGHT
+    AVTR_SMOOTH_ACCEL_LEFT_RIGHT
+    AVTR_PULL_MODE
+    AVTR_ROLLING_PULL_MODE
+    AVTR_SMOOTH_ACCEL_STOP_CONDITIONS
+    AVTR_AUTOPILOT_HORIZ_PLANE_MODE
+    AVTR_ANGLE_MODE
+    AVTR_HOVER_ALTITUDE_MODE
+    AVTR_HOVER_HEADING_MODE
+    AVTR_AUTOPILOT_ALTITUDE_MODE
+    AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE
+    AVTR_CLOSURE_MODE
+    AVTR_INTERCEPT_MODE
+    AVTR_RENDEZVOUS_STOP_CONDITION
+    AVTR_FORMATION_FLYER_STOP_CONDITION
+    AVTR_EXT_EPHEM_FLIGHT_MODE
+    AVTR_ACCEL_PERF_MODEL_OVERRIDE
+    AVTR_STATIONKEEPING_STOP_CONDITION
+    AVTR_TURN_DIRECTION
+    AVTR_PROFILE_CONTROL_LIMIT
+    AVTR_REL_SPEED_ALT_STOP_CONDITION
+    AVTR_RELATIVE_ALTITUDE_MODE
+    AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE
+    AVTR_PUSH_PULL
+    AVTR_ACCEL_MODE
+    AVTR_DELAY_ALT_MODE
+    AVTR_JOIN_EXIT_ARC_METHOD
+    AVTR_FLIGHT_LINE_PROC_TYPE
+    AVTR_TRANSITION_TO_HOVER_MODE
+    AVTR_VTOL_RATE_MODE
+    AVTR_HOLDING_PROFILE_MODE
+    AVTR_HOLDING_DIRECTION
+    AVTR_HOLD_REFUEL_DUMP_MODE
+    AVTR_HOLDING_ENTRY_MANEUVER
+    AVTR_VTOL_TRANSITION_MODE
+    AVTR_VTOL_FINAL_HEADING_MODE
+    AVTR_VTOL_TRANSLATION_MODE
+    AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE
+    AVTR_HOVER_MODE
+    AVTR_VTOL_HEADING_MODE
+    AVTR_VERT_LANDING_MODE
+    AVTR_LAUNCH_ATTITUDE_MODE
+    AVTR_FUEL_FLOW_TYPE
+    AVTR_LINE_ORIENTATION
+    AVTR_REL_ABS_BEARING
+    AVTR_BASIC_FIXED_WING_PROP_MODE
+    AVTR_CLIMB_SPEED_TYPE
+    AVTR_CRUISE_MAX_PERF_SPEED_TYPE
+    AVTR_DESCENT_SPEED_TYPE
+    AVTR_TAKEOFF_LANDING_SPEED_MODE
+    AVTR_DEPARTURE_SPEED_MODE
+    AVTR_ADV_FIXED_WING_AERO_STRATEGY
+    AVTR_ADV_FIXED_WING_GEOMETRY
+    AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY
+    AVTR_MISSILE_AERO_STRATEGY
+    AVTR_MISSILE_PROP_STRATEGY
+    AVTR_ROTORCRAFT_POWERPLANT_TYPE
+    AVTR_MINIMIZE_SITE_PROC_TIME_DIFF
+    AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE
+    AVTR_SEARCH_PATTERN_COURSE_MODE
+    AVTR_DELAY_TURN_DIR
+    AVTR_TRAJECTORY_BLEND_MODE
+    AVTR_REF_STATE_PERF_MODE
+    AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE
+    AVTR_REF_STATE_LATERAL_ACCEL_MODE
+    AVTR_REF_STATE_ATTITUDE_MODE
+    AVTR_AND_OR
+    AVTR_JET_ENGINE_TECHNOLOGY_LEVEL
+    AVTR_JET_ENGINE_INTAKE_TYPE
+    AVTR_JET_ENGINE_TURBINE_TYPE
+    AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE
+    AVTR_JET_FUEL_TYPE
+    AVTR_AFPROP_FUEL_TYPE
+    AVTR_CEA_FUEL_TYPE
+    AVTR_TURBINE_MODE
+    AVTR_RAMJET_MODE
+    AVTR_SCRAMJET_MODE
+    AVTR_NUMERICAL_INTEGRATOR
+    AVTR_BALLISTIC3_D_CONTROL_MODE
+    AVTR_LAUNCH_DYN_STATE_COORD_FRAME
+    AVTR_LAUNCH_DYN_STATE_BEARING_REF
+    AVTR_ALTITUDE_REF
+    AVTR_SMOOTH_TURN_FPA_MODE
+    AVTR_PITCH3_D_CONTROL_MODE
+    AVTR_REFUEL_DUMP_MODE
+    AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
 
 
 Classes
@@ -1374,267 +1374,267 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgEAvtrErrorCodes
+.. autoenum:: AVTR_ERROR_CODES
     :members:
-.. autoenum:: AgEAvtrClosureValue
+.. autoenum:: AVTR_CLOSURE_VALUE
     :members:
-.. autoenum:: AgEAvtrProcedureType
+.. autoenum:: AVTR_PROCEDURE_TYPE
     :members:
-.. autoenum:: AgEAvtrSiteType
+.. autoenum:: AVTR_SITE_TYPE
     :members:
-.. autoenum:: AgEAvtrBasicManeuverStrategy
+.. autoenum:: AVTR_BASIC_MANEUVER_STRATEGY
     :members:
-.. autoenum:: AgEAvtrStraightAheadRefFrame
+.. autoenum:: AVTR_STRAIGHT_AHEAD_REF_FRAME
     :members:
-.. autoenum:: AgEAvtrAirspeedType
+.. autoenum:: AVTR_AIRSPEED_TYPE
     :members:
-.. autoenum:: AgEAvtrAeroPropSimpleMode
+.. autoenum:: AVTR_AERO_PROP_SIMPLE_MODE
     :members:
-.. autoenum:: AgEAvtrAeroPropFlightMode
+.. autoenum:: AVTR_AERO_PROP_FLIGHT_MODE
     :members:
-.. autoenum:: AgEAvtrPhaseOfFlight
+.. autoenum:: AVTR_PHASE_OF_FLIGHT
     :members:
-.. autoenum:: AgEAvtrCruiseSpeed
+.. autoenum:: AVTR_CRUISE_SPEED
     :members:
-.. autoenum:: AgEAvtrTakeoffMode
+.. autoenum:: AVTR_TAKEOFF_MODE
     :members:
-.. autoenum:: AgEAvtrApproachMode
+.. autoenum:: AVTR_APPROACH_MODE
     :members:
-.. autoenum:: AgEAvtrNavigatorTurnDir
+.. autoenum:: AVTR_NAVIGATOR_TURN_DIR
     :members:
-.. autoenum:: AgEAvtrBasicManeuverFuelFlowType
+.. autoenum:: AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE
     :members:
-.. autoenum:: AgEAvtrBasicManeuverAltitudeLimit
+.. autoenum:: AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT
     :members:
-.. autoenum:: AgEAvtrRunwayHighLowEnd
+.. autoenum:: AVTR_RUNWAY_HIGH_LOW_END
     :members:
-.. autoenum:: AgEAvtrBasicManeuverRefFrame
+.. autoenum:: AVTR_BASIC_MANEUVER_REF_FRAME
     :members:
-.. autoenum:: AgEAvtrBasicManeuverStrategyNavControlLimit
+.. autoenum:: AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
     :members:
-.. autoenum:: AgEAvtrAccelManeuverMode
+.. autoenum:: AVTR_ACCEL_MANEUVER_MODE
     :members:
-.. autoenum:: AgEAvtrAircraftAeroStrategy
+.. autoenum:: AVTR_AIRCRAFT_AERO_STRATEGY
     :members:
-.. autoenum:: AgEAvtrAircraftPropStrategy
+.. autoenum:: AVTR_AIRCRAFT_PROP_STRATEGY
     :members:
-.. autoenum:: AgEAvtrAGLMSL
+.. autoenum:: AVTR_AGLMSL
     :members:
-.. autoenum:: AgEAvtrLandingApproachFixRangeMode
+.. autoenum:: AVTR_LANDING_APPROACH_FIX_RANGE_MODE
     :members:
-.. autoenum:: AgEAvtrAccelerationAdvAccelMode
+.. autoenum:: AVTR_ACCELERATION_ADV_ACCEL_MODE
     :members:
-.. autoenum:: AgEAvtrAccelManeuverAeroPropMode
+.. autoenum:: AVTR_ACCEL_MANEUVER_AERO_PROP_MODE
     :members:
-.. autoenum:: AgEAvtrBasicManeuverStrategyAirspeedPerfLimits
+.. autoenum:: AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
     :members:
-.. autoenum:: AgEAvtrBasicManeuverStrategyPoweredCruiseMode
+.. autoenum:: AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE
     :members:
-.. autoenum:: AgEAvtrTurnMode
+.. autoenum:: AVTR_TURN_MODE
     :members:
-.. autoenum:: AgEAvtrPointToPointMode
+.. autoenum:: AVTR_POINT_TO_POINT_MODE
     :members:
-.. autoenum:: AgEAvtrAltitudeConstraintManeuverMode
+.. autoenum:: AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE
     :members:
-.. autoenum:: AgEAvtrWindModelType
+.. autoenum:: AVTR_WIND_MODEL_TYPE
     :members:
-.. autoenum:: AgEAvtrWindAtmosModelSource
+.. autoenum:: AVTR_WIND_ATMOS_MODEL_SOURCE
     :members:
-.. autoenum:: AgEAvtrADDSMsgInterpType
+.. autoenum:: AVTR_ADDS_MSG_INTERP_TYPE
     :members:
-.. autoenum:: AgEAvtrADDSMissingMsgType
+.. autoenum:: AVTR_ADDS_MISSING_MSG_TYPE
     :members:
-.. autoenum:: AgEAvtrADDSMsgExtrapType
+.. autoenum:: AVTR_ADDS_MSG_EXTRAP_TYPE
     :members:
-.. autoenum:: AgEAvtrADDSForecastType
+.. autoenum:: AVTR_ADDS_FORECAST_TYPE
     :members:
-.. autoenum:: AgEAvtrAtmosphereModel
+.. autoenum:: AVTR_ATMOSPHERE_MODEL
     :members:
-.. autoenum:: AgEAvtrSmoothTurnMode
+.. autoenum:: AVTR_SMOOTH_TURN_MODE
     :members:
-.. autoenum:: AgEAvtrPerfModelOverride
+.. autoenum:: AVTR_PERF_MODEL_OVERRIDE
     :members:
-.. autoenum:: AgEAvtrBasicManeuverAirspeedMode
+.. autoenum:: AVTR_BASIC_MANEUVER_AIRSPEED_MODE
     :members:
-.. autoenum:: AgEAvtrAileronRollFlightPath
+.. autoenum:: AVTR_AILERON_ROLL_FLIGHT_PATH
     :members:
-.. autoenum:: AgEAvtrRollLeftRight
+.. autoenum:: AVTR_ROLL_LEFT_RIGHT
     :members:
-.. autoenum:: AgEAvtrRollUprightInverted
+.. autoenum:: AVTR_ROLL_UPRIGHT_INVERTED
     :members:
-.. autoenum:: AgEAvtrAileronRollMode
+.. autoenum:: AVTR_AILERON_ROLL_MODE
     :members:
-.. autoenum:: AgEAvtrFlyAOALeftRight
+.. autoenum:: AVTR_FLY_AOA_LEFT_RIGHT
     :members:
-.. autoenum:: AgEAvtrSmoothAccelLeftRight
+.. autoenum:: AVTR_SMOOTH_ACCEL_LEFT_RIGHT
     :members:
-.. autoenum:: AgEAvtrPullMode
+.. autoenum:: AVTR_PULL_MODE
     :members:
-.. autoenum:: AgEAvtrRollingPullMode
+.. autoenum:: AVTR_ROLLING_PULL_MODE
     :members:
-.. autoenum:: AgEAvtrSmoothAccelStopConditions
+.. autoenum:: AVTR_SMOOTH_ACCEL_STOP_CONDITIONS
     :members:
-.. autoenum:: AgEAvtrAutopilotHorizPlaneMode
+.. autoenum:: AVTR_AUTOPILOT_HORIZ_PLANE_MODE
     :members:
-.. autoenum:: AgEAvtrAngleMode
+.. autoenum:: AVTR_ANGLE_MODE
     :members:
-.. autoenum:: AgEAvtrHoverAltitudeMode
+.. autoenum:: AVTR_HOVER_ALTITUDE_MODE
     :members:
-.. autoenum:: AgEAvtrHoverHeadingMode
+.. autoenum:: AVTR_HOVER_HEADING_MODE
     :members:
-.. autoenum:: AgEAvtrAutopilotAltitudeMode
+.. autoenum:: AVTR_AUTOPILOT_ALTITUDE_MODE
     :members:
-.. autoenum:: AgEAvtrAutopilotAltitudeControlMode
+.. autoenum:: AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE
     :members:
-.. autoenum:: AgEAvtrClosureMode
+.. autoenum:: AVTR_CLOSURE_MODE
     :members:
-.. autoenum:: AgEAvtrInterceptMode
+.. autoenum:: AVTR_INTERCEPT_MODE
     :members:
-.. autoenum:: AgEAvtrRendezvousStopCondition
+.. autoenum:: AVTR_RENDEZVOUS_STOP_CONDITION
     :members:
-.. autoenum:: AgEAvtrFormationFlyerStopCondition
+.. autoenum:: AVTR_FORMATION_FLYER_STOP_CONDITION
     :members:
-.. autoenum:: AgEAvtrExtEphemFlightMode
+.. autoenum:: AVTR_EXT_EPHEM_FLIGHT_MODE
     :members:
-.. autoenum:: AgEAvtrAccelPerfModelOverride
+.. autoenum:: AVTR_ACCEL_PERF_MODEL_OVERRIDE
     :members:
-.. autoenum:: AgEAvtrStationkeepingStopCondition
+.. autoenum:: AVTR_STATIONKEEPING_STOP_CONDITION
     :members:
-.. autoenum:: AgEAvtrTurnDirection
+.. autoenum:: AVTR_TURN_DIRECTION
     :members:
-.. autoenum:: AgEAvtrProfileControlLimit
+.. autoenum:: AVTR_PROFILE_CONTROL_LIMIT
     :members:
-.. autoenum:: AgEAvtrRelSpeedAltStopCondition
+.. autoenum:: AVTR_REL_SPEED_ALT_STOP_CONDITION
     :members:
-.. autoenum:: AgEAvtrRelativeAltitudeMode
+.. autoenum:: AVTR_RELATIVE_ALTITUDE_MODE
     :members:
-.. autoenum:: AgEAvtrFlyToFlightPathAngleMode
+.. autoenum:: AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE
     :members:
-.. autoenum:: AgEAvtrPushPull
+.. autoenum:: AVTR_PUSH_PULL
     :members:
-.. autoenum:: AgEAvtrAccelMode
+.. autoenum:: AVTR_ACCEL_MODE
     :members:
-.. autoenum:: AgEAvtrDelayAltMode
+.. autoenum:: AVTR_DELAY_ALT_MODE
     :members:
-.. autoenum:: AgEAvtrJoinExitArcMethod
+.. autoenum:: AVTR_JOIN_EXIT_ARC_METHOD
     :members:
-.. autoenum:: AgEAvtrFlightLineProcType
+.. autoenum:: AVTR_FLIGHT_LINE_PROC_TYPE
     :members:
-.. autoenum:: AgEAvtrTransitionToHoverMode
+.. autoenum:: AVTR_TRANSITION_TO_HOVER_MODE
     :members:
-.. autoenum:: AgEAvtrVTOLRateMode
+.. autoenum:: AVTR_VTOL_RATE_MODE
     :members:
-.. autoenum:: AgEAvtrHoldingProfileMode
+.. autoenum:: AVTR_HOLDING_PROFILE_MODE
     :members:
-.. autoenum:: AgEAvtrHoldingDirection
+.. autoenum:: AVTR_HOLDING_DIRECTION
     :members:
-.. autoenum:: AgEAvtrHoldRefuelDumpMode
+.. autoenum:: AVTR_HOLD_REFUEL_DUMP_MODE
     :members:
-.. autoenum:: AgEAvtrHoldingEntryManeuver
+.. autoenum:: AVTR_HOLDING_ENTRY_MANEUVER
     :members:
-.. autoenum:: AgEAvtrVTOLTransitionMode
+.. autoenum:: AVTR_VTOL_TRANSITION_MODE
     :members:
-.. autoenum:: AgEAvtrVTOLFinalHeadingMode
+.. autoenum:: AVTR_VTOL_FINAL_HEADING_MODE
     :members:
-.. autoenum:: AgEAvtrVTOLTranslationMode
+.. autoenum:: AVTR_VTOL_TRANSLATION_MODE
     :members:
-.. autoenum:: AgEAvtrVTOLTranslationFinalCourseMode
+.. autoenum:: AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE
     :members:
-.. autoenum:: AgEAvtrHoverMode
+.. autoenum:: AVTR_HOVER_MODE
     :members:
-.. autoenum:: AgEAvtrVTOLHeadingMode
+.. autoenum:: AVTR_VTOL_HEADING_MODE
     :members:
-.. autoenum:: AgEAvtrVertLandingMode
+.. autoenum:: AVTR_VERT_LANDING_MODE
     :members:
-.. autoenum:: AgEAvtrLaunchAttitudeMode
+.. autoenum:: AVTR_LAUNCH_ATTITUDE_MODE
     :members:
-.. autoenum:: AgEAvtrFuelFlowType
+.. autoenum:: AVTR_FUEL_FLOW_TYPE
     :members:
-.. autoenum:: AgEAvtrLineOrientation
+.. autoenum:: AVTR_LINE_ORIENTATION
     :members:
-.. autoenum:: AgEAvtrRelAbsBearing
+.. autoenum:: AVTR_REL_ABS_BEARING
     :members:
-.. autoenum:: AgEAvtrBasicFixedWingPropMode
+.. autoenum:: AVTR_BASIC_FIXED_WING_PROP_MODE
     :members:
-.. autoenum:: AgEAvtrClimbSpeedType
+.. autoenum:: AVTR_CLIMB_SPEED_TYPE
     :members:
-.. autoenum:: AgEAvtrCruiseMaxPerfSpeedType
+.. autoenum:: AVTR_CRUISE_MAX_PERF_SPEED_TYPE
     :members:
-.. autoenum:: AgEAvtrDescentSpeedType
+.. autoenum:: AVTR_DESCENT_SPEED_TYPE
     :members:
-.. autoenum:: AgEAvtrTakeoffLandingSpeedMode
+.. autoenum:: AVTR_TAKEOFF_LANDING_SPEED_MODE
     :members:
-.. autoenum:: AgEAvtrDepartureSpeedMode
+.. autoenum:: AVTR_DEPARTURE_SPEED_MODE
     :members:
-.. autoenum:: AgEAvtrAdvFixedWingAeroStrategy
+.. autoenum:: AVTR_ADV_FIXED_WING_AERO_STRATEGY
     :members:
-.. autoenum:: AgEAvtrAdvFixedWingGeometry
+.. autoenum:: AVTR_ADV_FIXED_WING_GEOMETRY
     :members:
-.. autoenum:: AgEAvtrAdvFixedWingPowerplantStrategy
+.. autoenum:: AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY
     :members:
-.. autoenum:: AgEAvtrMissileAeroStrategy
+.. autoenum:: AVTR_MISSILE_AERO_STRATEGY
     :members:
-.. autoenum:: AgEAvtrMissilePropStrategy
+.. autoenum:: AVTR_MISSILE_PROP_STRATEGY
     :members:
-.. autoenum:: AgEAvtrRotorcraftPowerplantType
+.. autoenum:: AVTR_ROTORCRAFT_POWERPLANT_TYPE
     :members:
-.. autoenum:: AgEAvtrMinimizeSiteProcTimeDiff
+.. autoenum:: AVTR_MINIMIZE_SITE_PROC_TIME_DIFF
     :members:
-.. autoenum:: AgEAvtrSTKObjectWaypointOffsetMode
+.. autoenum:: AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE
     :members:
-.. autoenum:: AgEAvtrSearchPatternCourseMode
+.. autoenum:: AVTR_SEARCH_PATTERN_COURSE_MODE
     :members:
-.. autoenum:: AgEAvtrDelayTurnDir
+.. autoenum:: AVTR_DELAY_TURN_DIR
     :members:
-.. autoenum:: AgEAvtrTrajectoryBlendMode
+.. autoenum:: AVTR_TRAJECTORY_BLEND_MODE
     :members:
-.. autoenum:: AgEAvtrRefStatePerfMode
+.. autoenum:: AVTR_REF_STATE_PERF_MODE
     :members:
-.. autoenum:: AgEAvtrRefStateLongitudinalAccelMode
+.. autoenum:: AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE
     :members:
-.. autoenum:: AgEAvtrRefStateLateralAccelMode
+.. autoenum:: AVTR_REF_STATE_LATERAL_ACCEL_MODE
     :members:
-.. autoenum:: AgEAvtrRefStateAttitudeMode
+.. autoenum:: AVTR_REF_STATE_ATTITUDE_MODE
     :members:
-.. autoenum:: AgEAvtrAndOr
+.. autoenum:: AVTR_AND_OR
     :members:
-.. autoenum:: AgEAvtrJetEngineTechnologyLevel
+.. autoenum:: AVTR_JET_ENGINE_TECHNOLOGY_LEVEL
     :members:
-.. autoenum:: AgEAvtrJetEngineIntakeType
+.. autoenum:: AVTR_JET_ENGINE_INTAKE_TYPE
     :members:
-.. autoenum:: AgEAvtrJetEngineTurbineType
+.. autoenum:: AVTR_JET_ENGINE_TURBINE_TYPE
     :members:
-.. autoenum:: AgEAvtrJetEngineExhaustNozzleType
+.. autoenum:: AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE
     :members:
-.. autoenum:: AgEAvtrJetFuelType
+.. autoenum:: AVTR_JET_FUEL_TYPE
     :members:
-.. autoenum:: AgEAvtrAFPROPFuelType
+.. autoenum:: AVTR_AFPROP_FUEL_TYPE
     :members:
-.. autoenum:: AgEAvtrCEAFuelType
+.. autoenum:: AVTR_CEA_FUEL_TYPE
     :members:
-.. autoenum:: AgEAvtrTurbineMode
+.. autoenum:: AVTR_TURBINE_MODE
     :members:
-.. autoenum:: AgEAvtrRamjetMode
+.. autoenum:: AVTR_RAMJET_MODE
     :members:
-.. autoenum:: AgEAvtrScramjetMode
+.. autoenum:: AVTR_SCRAMJET_MODE
     :members:
-.. autoenum:: AgEAvtrNumericalIntegrator
+.. autoenum:: AVTR_NUMERICAL_INTEGRATOR
     :members:
-.. autoenum:: AgEAvtrBallistic3DControlMode
+.. autoenum:: AVTR_BALLISTIC3_D_CONTROL_MODE
     :members:
-.. autoenum:: AgEAvtrLaunchDynStateCoordFrame
+.. autoenum:: AVTR_LAUNCH_DYN_STATE_COORD_FRAME
     :members:
-.. autoenum:: AgEAvtrLaunchDynStateBearingRef
+.. autoenum:: AVTR_LAUNCH_DYN_STATE_BEARING_REF
     :members:
-.. autoenum:: AgEAvtrAltitudeRef
+.. autoenum:: AVTR_ALTITUDE_REF
     :members:
-.. autoenum:: AgEAvtrSmoothTurnFPAMode
+.. autoenum:: AVTR_SMOOTH_TURN_FPA_MODE
     :members:
-.. autoenum:: AgEAvtrPitch3DControlMode
+.. autoenum:: AVTR_PITCH3_D_CONTROL_MODE
     :members:
-.. autoenum:: AgEAvtrRefuelDumpMode
+.. autoenum:: AVTR_REFUEL_DUMP_MODE
     :members:
-.. autoenum:: AgEAvtrBasicManeuverGlideSpeedControlMode
+.. autoenum:: AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
     :members:
 
 

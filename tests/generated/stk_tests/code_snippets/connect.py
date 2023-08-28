@@ -53,7 +53,7 @@ class Connect(CodeSnippetsTestBase):
 
         # ExecuteMultipleCommands expect a one dimensional array of Connect commands
         result: "IExecMultiCmdResult" = root.execute_multiple_commands(
-            connectCommands, AgEExecMultiCmdResultAction.eExceptionOnError
+            connectCommands, EXEC_MULTI_CMD_RESULT_ACTION.EXCEPTION_ON_ERROR
         )
 
     # endregion
@@ -78,7 +78,7 @@ class Connect(CodeSnippetsTestBase):
         obj = ["GetSTKVersion /"]
 
         result: "IExecMultiCmdResult" = CodeSnippetsTestBase.m_Root.execute_multiple_commands(
-            obj, AgEExecMultiCmdResultAction.eContinueOnError
+            obj, EXEC_MULTI_CMD_RESULT_ACTION.CONTINUE_ON_ERROR
         )
         self.ExtractDataFromMultiExecConnectResult(result)
 

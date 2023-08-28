@@ -54,8 +54,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(stopTime, onePtAccess.stop_time)
         onePtAccess.step_size = 120
         Assert.assertEqual(120, onePtAccess.step_size)
-        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.DETAILED
+        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.DETAILED, onePtAccess.summary_option)
         result: "IOnePointAccessResult" = None
         results: "IOnePointAccessResultCollection" = onePtAccess.compute()
 
@@ -83,16 +83,16 @@ class EarlyBoundTests(TestBase):
             for c in r.constraints:
                 self.dumpOnePtAccessConstraint(c)
 
-        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryFast
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryFast, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.FAST
+        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.FAST, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
         if result.constraints.count > 0:
             self.dumpOnePtAccessConstraint(result.constraints[0])
 
-        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.RESULT_ONLY
+        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.RESULT_ONLY, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
@@ -109,7 +109,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine2(constraint.value)
 
     def test_StartTime2StopTime2(self):
-        place1: "IStkObject" = TestBase.Application.current_scenario.children.new(AgESTKObjectType.ePlace, "BUG56961")
+        place1: "IStkObject" = TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "BUG56961")
         interval: "IDataProviderInterval" = clr.CastAs(place1.data_providers["Eclipse Times"], IDataProviderInterval)
         result: "IDataProviderResult" = interval.exec(
             (clr.CastAs(TestBase.Application.current_scenario, IScenario)).start_time,
@@ -309,9 +309,9 @@ class EarlyBoundTests(TestBase):
     def test_VOModelPointing(self):
         oModel: "IVOModel" = EarlyBoundTests.AG_PLC.vo.model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = AgEModelType.eModelFile
+        oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(AgEModelType.eModelFile, oModel.model_type)
+        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
         oModelFile: "IVOModelFile" = clr.CastAs(oModel.model_data, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)

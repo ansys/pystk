@@ -33,7 +33,7 @@ class Chain(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Chain.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eChain, Chain.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, Chain.m_DefaultName),
             IChain,
         )
 
@@ -41,7 +41,7 @@ class Chain(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eChain, Chain.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.CHAIN, Chain.m_DefaultName)
         Chain.m_Object = None
 
     # endregion
@@ -55,21 +55,21 @@ class Chain(CodeSnippetsTestBase):
     def CreateChainOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Chain on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
-        chain: "IChain" = clr.CastAs(root.current_scenario.children.new(AgESTKObjectType.eChain, "MyChain"), IChain)
+        chain: "IChain" = clr.CastAs(root.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, "MyChain"), IChain)
 
     # endregion
 
     # region DefineAndComputeChainBasic
     def test_DefineAndComputeChainBasic(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "fac1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat2")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eAircraft, "air1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "air1")
         self.DefineAndComputeChainBasic(Chain.m_Object)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eAircraft, "air1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat2")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "air1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
 
     def DefineAndComputeChainBasic(self, chain: "IChain"):
         # Add some objects to chain (using STK path)
@@ -85,15 +85,15 @@ class Chain(CodeSnippetsTestBase):
 
     # region DefineAndComputeChainAdvanced
     def test_DefineAndComputeChainAdvanced(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "fac1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat2")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eAircraft, "air1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "air1")
         self.DefineAndComputeChainAdvanced(Chain.m_Object)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eAircraft, "air1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat2")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "air1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
 
     def DefineAndComputeChainAdvanced(self, chain: "IChain"):
         # Remove all previous accesses
@@ -109,10 +109,10 @@ class Chain(CodeSnippetsTestBase):
         chain.auto_recompute = False
         chain.enable_light_time_delay = False
         chain.time_convergence = 0.001
-        chain.data_save_mode = AgEDataSaveMode.eSaveAccesses
+        chain.data_save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
 
         # Specify our own time period
-        chain.set_time_period_type(AgEChTimePeriodType.eUserSpecifiedTimePeriod)
+        chain.set_time_period_type(CH_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
 
         # Get chain time period interface
         chainUserTimePeriod: "IChainUserSpecifiedTimePeriod" = clr.CastAs(
@@ -129,15 +129,15 @@ class Chain(CodeSnippetsTestBase):
     def test_ConfigureChainComputeTimePeriod(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
-        satellite: "ISatellite" = clr.Convert(scenario.children.new(AgESTKObjectType.eSatellite, "GEO"), ISatellite)
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        satellite: "ISatellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"), ISatellite)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twoBody: "IVehiclePropagatorTwoBody" = clr.Convert(satellite.propagator, IVehiclePropagatorTwoBody)
         twoBody.ephemeris_interval.set_start_time_and_duration("1 May 2012 04:00:00.000", "+1 hour")
         twoBody.propagate()
 
-        aircraft: "IStkObject" = scenario.children.new(AgESTKObjectType.eAircraft, "DummyAircraft")
+        aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "DummyAircraft")
 
-        chain: "IChain" = clr.Convert(scenario.children.new(AgESTKObjectType.eChain, "ChainForCodeSnippet"), IChain)
+        chain: "IChain" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.CHAIN, "ChainForCodeSnippet"), IChain)
 
         chain.objects.add("Satellite/GEO")
         chain.objects.add("Aircraft/DummyAircraft")
@@ -151,7 +151,7 @@ class Chain(CodeSnippetsTestBase):
             (clr.Convert(chain, IStkObject)).unload()
 
     def ConfigureChainComputeTimePeriod(self, chain: "IChain"):
-        chain.set_time_period_type(AgEChTimePeriodType.eUserSpecifiedTimePeriod)
+        chain.set_time_period_type(CH_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
         userSpecifiedTimePeriod: "IChainUserSpecifiedTimePeriod" = clr.CastAs(
             chain.time_period, IChainUserSpecifiedTimePeriod
         )
@@ -165,15 +165,15 @@ class Chain(CodeSnippetsTestBase):
     def test_PrintChainStrainIntervalsTimes(self):
         scenario: "IStkObject" = clr.Convert(TestBase.Application.current_scenario, IStkObject)
 
-        satellite: "ISatellite" = clr.Convert(scenario.children.new(AgESTKObjectType.eSatellite, "GEO"), ISatellite)
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        satellite: "ISatellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"), ISatellite)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twoBody: "IVehiclePropagatorTwoBody" = clr.Convert(satellite.propagator, IVehiclePropagatorTwoBody)
         twoBody.ephemeris_interval.set_start_time_and_duration("2 May 2012 04:00:00.000", "+1 hour")
         twoBody.propagate()
 
-        aircraft: "IStkObject" = scenario.children.new(AgESTKObjectType.eAircraft, "DummyAircraft")
+        aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "DummyAircraft")
 
-        chain: "IChain" = clr.Convert(scenario.children.new(AgESTKObjectType.eChain, "ChainForCodeSnippet"), IChain)
+        chain: "IChain" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.CHAIN, "ChainForCodeSnippet"), IChain)
 
         chain.objects.add("Satellite/GEO")
         chain.objects.add("Aircraft/DummyAircraft")

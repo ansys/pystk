@@ -37,29 +37,29 @@ class SearchTrackPDet(CodeSnippetsTestBase):
     def setUp(self):
         scenario: "IStkObject" = clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, IStkObject)
         SearchTrackPDet.m_Facility = scenario.children.new(
-            AgESTKObjectType.eFacility, SearchTrackPDet.m_DefaultFacilityName
+            STK_OBJECT_TYPE.FACILITY, SearchTrackPDet.m_DefaultFacilityName
         )
         SearchTrackPDet.m_Radar = clr.CastAs(
-            SearchTrackPDet.m_Facility.children.new(AgESTKObjectType.eRadar, SearchTrackPDet.m_DefaultRadarName), IRadar
+            SearchTrackPDet.m_Facility.children.new(STK_OBJECT_TYPE.RADAR, SearchTrackPDet.m_DefaultRadarName), IRadar
         )
         SearchTrackPDet.m_TargetAircraft = clr.CastAs(
-            scenario.children.new(AgESTKObjectType.eAircraft, SearchTrackPDet.m_DefaultTargetName), IAircraft
+            scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, SearchTrackPDet.m_DefaultTargetName), IAircraft
         )
-        SearchTrackPDet.m_TargetAircraft.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        SearchTrackPDet.m_TargetAircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(
             SearchTrackPDet.m_TargetAircraft.route, IVehiclePropagatorGreatArc
         )
         propagator.arc_granularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive IVehicleWaypointAltitudeReferenceTerrain interface
-        propagator.set_altitude_ref_type(AgEVeAltitudeRef.eWayPtAltRefTerrain)
+        propagator.set_altitude_ref_type(VE_ALTITUDE_REF.WAY_PT_ALT_REF_TERRAIN)
         altRef: "IVehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
             propagator.altitude_ref, IVehicleWaypointAltitudeReferenceTerrain
         )
         altRef.granularity = 51.33
-        altRef.interp_method = AgEVeWayPtInterpMethod.eWayPtEllipsoidHeight
+        altRef.interp_method = VE_WAY_PT_INTERP_METHOD.WAY_PT_ELLIPSOID_HEIGHT
 
-        propagator.method = AgEVeWayPtCompMethod.eDetermineTimeAccFromVel
+        propagator.method = VE_WAY_PT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
 
         # Add waypoints
         point1: "IVehicleWaypointsElement" = propagator.waypoints.add()
@@ -81,16 +81,16 @@ class SearchTrackPDet(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        SearchTrackPDet.m_Facility.children.unload(AgESTKObjectType.eRadar, SearchTrackPDet.m_DefaultRadarName)
+        SearchTrackPDet.m_Facility.children.unload(STK_OBJECT_TYPE.RADAR, SearchTrackPDet.m_DefaultRadarName)
         SearchTrackPDet.m_Radar = None
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eFacility, SearchTrackPDet.m_DefaultFacilityName
+            STK_OBJECT_TYPE.FACILITY, SearchTrackPDet.m_DefaultFacilityName
         )
         SearchTrackPDet.m_Facility = None
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eAircraft, SearchTrackPDet.m_DefaultTargetName
+            STK_OBJECT_TYPE.AIRCRAFT, SearchTrackPDet.m_DefaultTargetName
         )
         SearchTrackPDet.m_TargetAircraft = None
 
@@ -118,7 +118,7 @@ class SearchTrackPDet(CodeSnippetsTestBase):
 
         # Orient the radar antenna in the direction of the target
         monostaticModel.antenna_control.embedded_model_orientation.assign_az_el(
-            50.9, 36.8, AgEAzElAboutBoresight.eAzElAboutBoresightRotate
+            50.9, 36.8, AZ_EL_ABOUT_BORESIGHT.ROTATE
         )
 
         # Set the radar antenna model to parabolic
@@ -128,7 +128,7 @@ class SearchTrackPDet(CodeSnippetsTestBase):
         )
 
         # Give the parabolic antenna a 2 deg beamwidth;
-        parabolic.input_type = AgEAntennaModelInputType.eAntennaModelInputTypeBeamwidth
+        parabolic.input_type = ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH
         parabolic.beamwidth = 2.0
 
         # Put the monostatic radar model in Search/Track mode
@@ -138,7 +138,7 @@ class SearchTrackPDet(CodeSnippetsTestBase):
         )
 
         # Set the waveform type to fixed prf
-        searchTrackMode.set_waveform_type(AgERadarWaveformSearchTrackType.eRadarWaveformSearchTrackTypeFixedPRF)
+        searchTrackMode.set_waveform_type(RADAR_WAVEFORM_SEARCH_TRACK_TYPE.FIXED_PRF)
         fixedPrf: "IRadarWaveformMonostaticSearchTrackFixedPRF" = clr.CastAs(
             searchTrackMode.waveform, IRadarWaveformMonostaticSearchTrackFixedPRF
         )
@@ -151,14 +151,14 @@ class SearchTrackPDet(CodeSnippetsTestBase):
         fixedPrf.pulse_definition.number_of_pulses = 25
 
         # Set the pulse integration strategy to goal SNR
-        fixedPrf.pulse_integration_type = AgERadarPulseIntegrationType.eRadarPulseIntegrationTypeGoalSNR
+        fixedPrf.pulse_integration_type = RADAR_PULSE_INTEGRATION_TYPE.GOAL_SNR
         pulseIntGoalSNR: "IRadarPulseIntegrationGoalSNR" = clr.CastAs(
             fixedPrf.pulse_integration, IRadarPulseIntegrationGoalSNR
         )
         pulseIntGoalSNR.snr = 40.0  # dB
 
         # Set the transmit frequency
-        monostaticModel.transmitter.frequency_specification = AgERadarFrequencySpec.eRadarFrequencySpecFrequency
+        monostaticModel.transmitter.frequency_specification = RADAR_FREQUENCY_SPEC.FREQUENCY
         monostaticModel.transmitter.frequency = 2.1  # GHz
 
         # Set the transmit power
@@ -169,13 +169,11 @@ class SearchTrackPDet(CodeSnippetsTestBase):
         monostaticModel.receiver.rain_outage_percent = 0.001
 
         # Enable the receiver system noise temperature computation.
-        monostaticModel.receiver.system_noise_temperature.compute_type = (
-            AgENoiseTempComputeType.eNoiseTempComputeTypeCalculate
-        )
+        monostaticModel.receiver.system_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
 
         # Enable the antenna noise temperature computation
         monostaticModel.receiver.system_noise_temperature.antenna_noise_temperature.compute_type = (
-            AgENoiseTempComputeType.eNoiseTempComputeTypeCalculate
+            NOISE_TEMP_COMPUTE_TYPE.CALCULATE
         )
         monostaticModel.receiver.system_noise_temperature.antenna_noise_temperature.use_rain = True
 

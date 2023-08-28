@@ -28,9 +28,7 @@ class Aircraft(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         Aircraft.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eAircraft, Aircraft.m_DefaultName
-            ),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, Aircraft.m_DefaultName),
             IAircraft,
         )
 
@@ -38,7 +36,7 @@ class Aircraft(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eAircraft, Aircraft.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, Aircraft.m_DefaultName)
         Aircraft.m_Object = None
 
     # endregion
@@ -49,7 +47,7 @@ class Aircraft(CodeSnippetsTestBase):
 
     def SetAircraftToUseGreatArcPropagator(self, aircraft: "IAircraft"):
         # Set ship route to great arc
-        aircraft.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        aircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
 
         # Retrieve propagator interface
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, IVehiclePropagatorGreatArc)
@@ -62,21 +60,21 @@ class Aircraft(CodeSnippetsTestBase):
 
     def ConfigureAircraftRouteUsingGreatArcPropagator(self, aircraft: "IAircraft"):
         # Set ship route to great arc
-        aircraft.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        aircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
 
         # Retrieve propagator interface
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, IVehiclePropagatorGreatArc)
         propagator.arc_granularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive IVehicleWaypointAltitudeReferenceTerrain interface
-        propagator.set_altitude_ref_type(AgEVeAltitudeRef.eWayPtAltRefTerrain)
+        propagator.set_altitude_ref_type(VE_ALTITUDE_REF.WAY_PT_ALT_REF_TERRAIN)
         altRef: "IVehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
             propagator.altitude_ref, IVehicleWaypointAltitudeReferenceTerrain
         )
         altRef.granularity = 51.33
-        altRef.interp_method = AgEVeWayPtInterpMethod.eWayPtEllipsoidHeight
+        altRef.interp_method = VE_WAY_PT_INTERP_METHOD.WAY_PT_ELLIPSOID_HEIGHT
 
-        propagator.method = AgEVeWayPtCompMethod.eDetermineTimeAccFromVel
+        propagator.method = VE_WAY_PT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
 
         # Add waypoints
         point1: "IVehicleWaypointsElement" = propagator.waypoints.add()

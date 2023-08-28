@@ -428,141 +428,141 @@ Enumerations
 
 .. autosummary::
 
-    AgEVAGraphOption
-    AgEVASmartRunMode
-    AgEVAFormulation
-    AgEVALightingCondition
-    AgEVAProfile
-    AgEVAAccessCriterion
-    AgEVAEclipsingBodiesSource
-    AgEVACriterion
-    AgEVACalcObjectReference
-    AgEVACalcObjectCentralBodyReference
-    AgEVACalcObjectElem
-    AgEVAProfileMode
-    AgEVAControlStoppingCondition
-    AgEVAState
-    AgEVAReturnControl
-    AgEVADrawPerturbation
-    AgEVADeriveCalcMethod
-    AgEVAConvergenceCriteria
-    AgEVADCScalingMethod
-    AgEVAControlUpdate
-    AgEVAControlFollow
-    AgEVAControlInitState
-    AgEVAControlManeuver
-    AgEVAControlLaunch
-    AgEVAControlAdvanced
-    AgEVATargetSeqAction
-    AgEVAProfilesFinish
-    AgEVAUpdateParam
-    AgEVAUpdateAction
-    AgEVAPressureMode
-    AgEVAThrustType
-    AgEVAAttitudeUpdate
-    AgEVAPropulsionMethod
-    AgEVACustomFunction
-    AgEVABodyAxis
-    AgEVAConstraintSign
-    AgEVAAttitudeControl
-    AgEVAFollowJoin
-    AgEVAFollowSeparation
-    AgEVAFollowSpacecraftAndFuelTank
-    AgEVABurnoutOptions
-    AgEVABurnoutType
-    AgEVAAscentType
-    AgEVALaunchDisplaySystem
-    AgEVARunCode
-    AgEVASequenceStateToPass
-    AgEVAManeuverType
-    AgEVASegmentType
-    AgEVAElementType
-    AgEVALanguage
-    AgEVAStoppingCondition
-    AgEVAClearEphemerisDirection
-    AgEVAProfileInsertDirection
-    AgEVARootFindingAlgorithm
-    AgEVAScriptingParameterType
-    AgEVASNOPTGoal
-    AgEVAIPOPTGoal
-    AgEVAOptimalFiniteSeedMethod
-    AgEVAOptimalFiniteRunMode
-    AgEVAOptimalFiniteDiscretizationStrategy
-    AgEVAOptimalFiniteWorkingVariables
-    AgEVAOptimalFiniteScalingOptions
-    AgEVAOptimalFiniteSNOPTObjective
-    AgEVAOptimalFiniteSNOPTScaling
-    AgEVAOptimalFiniteExportNodesFormat
-    AgEVAOptimalFiniteGuessMethod
-    AgEVAImpDeltaVRep
-    AgEVALambertTargetCoordType
-    AgEVALambertSolutionOptionType
-    AgEVALambertOrbitalEnergyType
-    AgEVALambertDirectionOfMotionType
-    AgEVAGoldenSectionDesiredOperation
-    AgEVAGridSearchDesiredOperation
-    AgEVAElement
-    AgEVABaseSelection
-    AgEVAControlOrbitStateValue
-    AgEVASegmentState
-    AgEVADifferenceOrder
-    AgEVASegmentDifferenceOrder
-    AgEVAControlRepeatingGroundTrackErr
-    AgEVACalcObjectDirection
-    AgEVACalcObjectOrbitPlaneSource
-    AgEVACalcObjectSunPosition
-    AgEVACalcObjectAngleSign
-    AgEVACalcObjectReferenceDirection
-    AgEVACalcObjectRelativePosition
-    AgEVACalcObjectReferenceEllipse
-    AgEVACalcObjectLocationSource
-    AgEVAGravitationalParameterSource
-    AgEVAReferenceRadiusSource
-    AgEVAGravCoeffNormalizationType
-    AgEVAGravCoeffCoefficientType
-    AgEVASTMPertVariables
-    AgEVASTMEigenNumber
-    AgEVAComplexNumber
-    AgEVASquaredType
-    AgEVAGeoStationaryDriftRateModel
-    AgEVAGeoStationaryInclinationMag
-    AgEVACbGravityModel
-    AgEVACbShape
-    AgEVACbAttitude
-    AgEVACbEphemeris
-    AgEVAControlPowerInternal
-    AgEVAControlPowerProcessed
-    AgEVAControlPowerSolarArray
-    AgEVAThirdBodyMode
-    AgEVAGravParamSource
-    AgEVAEphemSource
-    AgEVASolarForceMethod
-    AgEVAShadowModel
-    AgEVASunPosition
-    AgEVAAtmosDataSource
-    AgEVAGeoMagneticFluxSource
-    AgEVAGeoMagneticFluxUpdateRate
-    AgEVADragModelType
-    AgEVAMarsGRAMDensityType
-    AgEVAVenusGRAMDensityType
-    AgEVATabVecInterpMethod
-    AgEVAControlEngineConstAcc
-    AgEVAControlEngineConstant
-    AgEVAControlEngineCustom
-    AgEVAControlEngineThrottleTable
-    AgEVAControlEngineIon
-    AgEVAControlEngineModelPoly
-    AgEVAEngineModelFunction
-    AgEVAThrottleTableOperationMode
-    AgEVAIdealOrbitRadius
-    AgEVARotatingCoordinateSystem
-    AgEVAControlThrusters
-    AgEVAThrusterDirection
-    AgEVACriteria
-    AgEVAErrorControl
-    AgEVAPredictorCorrector
-    AgEVANumericalIntegrator
-    AgEVACoeffRKV8th9th
+    VA_GRAPH_OPTION
+    VA_SMART_RUN_MODE
+    VA_FORMULATION
+    VA_LIGHTING_CONDITION
+    VA_PROFILE
+    VA_ACCESS_CRITERION
+    VA_ECLIPSING_BODIES_SOURCE
+    VA_CRITERION
+    VA_CALC_OBJECT_REFERENCE
+    VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE
+    VA_CALC_OBJECT_ELEM
+    VA_PROFILE_MODE
+    VA_CONTROL_STOPPING_CONDITION
+    VA_STATE
+    VA_RETURN_CONTROL
+    VA_DRAW_PERTURBATION
+    VA_DERIVE_CALC_METHOD
+    VA_CONVERGENCE_CRITERIA
+    VADC_SCALING_METHOD
+    VA_CONTROL_UPDATE
+    VA_CONTROL_FOLLOW
+    VA_CONTROL_INIT_STATE
+    VA_CONTROL_MANEUVER
+    VA_CONTROL_LAUNCH
+    VA_CONTROL_ADVANCED
+    VA_TARGET_SEQ_ACTION
+    VA_PROFILES_FINISH
+    VA_UPDATE_PARAM
+    VA_UPDATE_ACTION
+    VA_PRESSURE_MODE
+    VA_THRUST_TYPE
+    VA_ATTITUDE_UPDATE
+    VA_PROPULSION_METHOD
+    VA_CUSTOM_FUNCTION
+    VA_BODY_AXIS
+    VA_CONSTRAINT_SIGN
+    VA_ATTITUDE_CONTROL
+    VA_FOLLOW_JOIN
+    VA_FOLLOW_SEPARATION
+    VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK
+    VA_BURNOUT_OPTIONS
+    VA_BURNOUT_TYPE
+    VA_ASCENT_TYPE
+    VA_LAUNCH_DISPLAY_SYSTEM
+    VA_RUN_CODE
+    VA_SEQUENCE_STATE_TO_PASS
+    VA_MANEUVER_TYPE
+    VA_SEGMENT_TYPE
+    VA_ELEMENT_TYPE
+    VA_LANGUAGE
+    VA_STOPPING_CONDITION
+    VA_CLEAR_EPHEMERIS_DIRECTION
+    VA_PROFILE_INSERT_DIRECTION
+    VA_ROOT_FINDING_ALGORITHM
+    VA_SCRIPTING_PARAMETER_TYPE
+    VASNOPT_GOAL
+    VAIPOPT_GOAL
+    VA_OPTIMAL_FINITE_SEED_METHOD
+    VA_OPTIMAL_FINITE_RUN_MODE
+    VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY
+    VA_OPTIMAL_FINITE_WORKING_VARIABLES
+    VA_OPTIMAL_FINITE_SCALING_OPTIONS
+    VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE
+    VA_OPTIMAL_FINITE_SNOPT_SCALING
+    VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT
+    VA_OPTIMAL_FINITE_GUESS_METHOD
+    VA_IMP_DELTA_V_REP
+    VA_LAMBERT_TARGET_COORD_TYPE
+    VA_LAMBERT_SOLUTION_OPTION_TYPE
+    VA_LAMBERT_ORBITAL_ENERGY_TYPE
+    VA_LAMBERT_DIRECTION_OF_MOTION_TYPE
+    VA_GOLDEN_SECTION_DESIRED_OPERATION
+    VA_GRID_SEARCH_DESIRED_OPERATION
+    VA_ELEMENT
+    VA_BASE_SELECTION
+    VA_CONTROL_ORBIT_STATE_VALUE
+    VA_SEGMENT_STATE
+    VA_DIFFERENCE_ORDER
+    VA_SEGMENT_DIFFERENCE_ORDER
+    VA_CONTROL_REPEATING_GROUND_TRACK_ERR
+    VA_CALC_OBJECT_DIRECTION
+    VA_CALC_OBJECT_ORBIT_PLANE_SOURCE
+    VA_CALC_OBJECT_SUN_POSITION
+    VA_CALC_OBJECT_ANGLE_SIGN
+    VA_CALC_OBJECT_REFERENCE_DIRECTION
+    VA_CALC_OBJECT_RELATIVE_POSITION
+    VA_CALC_OBJECT_REFERENCE_ELLIPSE
+    VA_CALC_OBJECT_LOCATION_SOURCE
+    VA_GRAVITATIONAL_PARAMETER_SOURCE
+    VA_REFERENCE_RADIUS_SOURCE
+    VA_GRAV_COEFF_NORMALIZATION_TYPE
+    VA_GRAV_COEFF_COEFFICIENT_TYPE
+    VASTM_PERT_VARIABLES
+    VASTM_EIGEN_NUMBER
+    VA_COMPLEX_NUMBER
+    VA_SQUARED_TYPE
+    VA_GEO_STATIONARY_DRIFT_RATE_MODEL
+    VA_GEO_STATIONARY_INCLINATION_MAG
+    VA_CB_GRAVITY_MODEL
+    VA_CB_SHAPE
+    VA_CB_ATTITUDE
+    VA_CB_EPHEMERIS
+    VA_CONTROL_POWER_INTERNAL
+    VA_CONTROL_POWER_PROCESSED
+    VA_CONTROL_POWER_SOLAR_ARRAY
+    VA_THIRD_BODY_MODE
+    VA_GRAV_PARAM_SOURCE
+    VA_EPHEM_SOURCE
+    VA_SOLAR_FORCE_METHOD
+    VA_SHADOW_MODEL
+    VA_SUN_POSITION
+    VA_ATMOS_DATA_SOURCE
+    VA_GEO_MAGNETIC_FLUX_SOURCE
+    VA_GEO_MAGNETIC_FLUX_UPDATE_RATE
+    VA_DRAG_MODEL_TYPE
+    VA_MARS_GRAM_DENSITY_TYPE
+    VA_VENUS_GRAM_DENSITY_TYPE
+    VA_TAB_VEC_INTERP_METHOD
+    VA_CONTROL_ENGINE_CONST_ACC
+    VA_CONTROL_ENGINE_CONSTANT
+    VA_CONTROL_ENGINE_CUSTOM
+    VA_CONTROL_ENGINE_THROTTLE_TABLE
+    VA_CONTROL_ENGINE_ION
+    VA_CONTROL_ENGINE_MODEL_POLY
+    VA_ENGINE_MODEL_FUNCTION
+    VA_THROTTLE_TABLE_OPERATION_MODE
+    VA_IDEAL_ORBIT_RADIUS
+    VA_ROTATING_COORDINATE_SYSTEM
+    VA_CONTROL_THRUSTERS
+    VA_THRUSTER_DIRECTION
+    VA_CRITERIA
+    VA_ERROR_CONTROL
+    VA_PREDICTOR_CORRECTOR
+    VA_NUMERICAL_INTEGRATOR
+    VA_COEFF_R_K_V_8TH9_TH
 
 
 Classes
@@ -2216,275 +2216,275 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgEVAGraphOption
+.. autoenum:: VA_GRAPH_OPTION
     :members:
-.. autoenum:: AgEVASmartRunMode
+.. autoenum:: VA_SMART_RUN_MODE
     :members:
-.. autoenum:: AgEVAFormulation
+.. autoenum:: VA_FORMULATION
     :members:
-.. autoenum:: AgEVALightingCondition
+.. autoenum:: VA_LIGHTING_CONDITION
     :members:
-.. autoenum:: AgEVAProfile
+.. autoenum:: VA_PROFILE
     :members:
-.. autoenum:: AgEVAAccessCriterion
+.. autoenum:: VA_ACCESS_CRITERION
     :members:
-.. autoenum:: AgEVAEclipsingBodiesSource
+.. autoenum:: VA_ECLIPSING_BODIES_SOURCE
     :members:
-.. autoenum:: AgEVACriterion
+.. autoenum:: VA_CRITERION
     :members:
-.. autoenum:: AgEVACalcObjectReference
+.. autoenum:: VA_CALC_OBJECT_REFERENCE
     :members:
-.. autoenum:: AgEVACalcObjectCentralBodyReference
+.. autoenum:: VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE
     :members:
-.. autoenum:: AgEVACalcObjectElem
+.. autoenum:: VA_CALC_OBJECT_ELEM
     :members:
-.. autoenum:: AgEVAProfileMode
+.. autoenum:: VA_PROFILE_MODE
     :members:
-.. autoenum:: AgEVAControlStoppingCondition
+.. autoenum:: VA_CONTROL_STOPPING_CONDITION
     :members:
-.. autoenum:: AgEVAState
+.. autoenum:: VA_STATE
     :members:
-.. autoenum:: AgEVAReturnControl
+.. autoenum:: VA_RETURN_CONTROL
     :members:
-.. autoenum:: AgEVADrawPerturbation
+.. autoenum:: VA_DRAW_PERTURBATION
     :members:
-.. autoenum:: AgEVADeriveCalcMethod
+.. autoenum:: VA_DERIVE_CALC_METHOD
     :members:
-.. autoenum:: AgEVAConvergenceCriteria
+.. autoenum:: VA_CONVERGENCE_CRITERIA
     :members:
-.. autoenum:: AgEVADCScalingMethod
+.. autoenum:: VADC_SCALING_METHOD
     :members:
-.. autoenum:: AgEVAControlUpdate
+.. autoenum:: VA_CONTROL_UPDATE
     :members:
-.. autoenum:: AgEVAControlFollow
+.. autoenum:: VA_CONTROL_FOLLOW
     :members:
-.. autoenum:: AgEVAControlInitState
+.. autoenum:: VA_CONTROL_INIT_STATE
     :members:
-.. autoenum:: AgEVAControlManeuver
+.. autoenum:: VA_CONTROL_MANEUVER
     :members:
-.. autoenum:: AgEVAControlLaunch
+.. autoenum:: VA_CONTROL_LAUNCH
     :members:
-.. autoenum:: AgEVAControlAdvanced
+.. autoenum:: VA_CONTROL_ADVANCED
     :members:
-.. autoenum:: AgEVATargetSeqAction
+.. autoenum:: VA_TARGET_SEQ_ACTION
     :members:
-.. autoenum:: AgEVAProfilesFinish
+.. autoenum:: VA_PROFILES_FINISH
     :members:
-.. autoenum:: AgEVAUpdateParam
+.. autoenum:: VA_UPDATE_PARAM
     :members:
-.. autoenum:: AgEVAUpdateAction
+.. autoenum:: VA_UPDATE_ACTION
     :members:
-.. autoenum:: AgEVAPressureMode
+.. autoenum:: VA_PRESSURE_MODE
     :members:
-.. autoenum:: AgEVAThrustType
+.. autoenum:: VA_THRUST_TYPE
     :members:
-.. autoenum:: AgEVAAttitudeUpdate
+.. autoenum:: VA_ATTITUDE_UPDATE
     :members:
-.. autoenum:: AgEVAPropulsionMethod
+.. autoenum:: VA_PROPULSION_METHOD
     :members:
-.. autoenum:: AgEVACustomFunction
+.. autoenum:: VA_CUSTOM_FUNCTION
     :members:
-.. autoenum:: AgEVABodyAxis
+.. autoenum:: VA_BODY_AXIS
     :members:
-.. autoenum:: AgEVAConstraintSign
+.. autoenum:: VA_CONSTRAINT_SIGN
     :members:
-.. autoenum:: AgEVAAttitudeControl
+.. autoenum:: VA_ATTITUDE_CONTROL
     :members:
-.. autoenum:: AgEVAFollowJoin
+.. autoenum:: VA_FOLLOW_JOIN
     :members:
-.. autoenum:: AgEVAFollowSeparation
+.. autoenum:: VA_FOLLOW_SEPARATION
     :members:
-.. autoenum:: AgEVAFollowSpacecraftAndFuelTank
+.. autoenum:: VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK
     :members:
-.. autoenum:: AgEVABurnoutOptions
+.. autoenum:: VA_BURNOUT_OPTIONS
     :members:
-.. autoenum:: AgEVABurnoutType
+.. autoenum:: VA_BURNOUT_TYPE
     :members:
-.. autoenum:: AgEVAAscentType
+.. autoenum:: VA_ASCENT_TYPE
     :members:
-.. autoenum:: AgEVALaunchDisplaySystem
+.. autoenum:: VA_LAUNCH_DISPLAY_SYSTEM
     :members:
-.. autoenum:: AgEVARunCode
+.. autoenum:: VA_RUN_CODE
     :members:
-.. autoenum:: AgEVASequenceStateToPass
+.. autoenum:: VA_SEQUENCE_STATE_TO_PASS
     :members:
-.. autoenum:: AgEVAManeuverType
+.. autoenum:: VA_MANEUVER_TYPE
     :members:
-.. autoenum:: AgEVASegmentType
+.. autoenum:: VA_SEGMENT_TYPE
     :members:
-.. autoenum:: AgEVAElementType
+.. autoenum:: VA_ELEMENT_TYPE
     :members:
-.. autoenum:: AgEVALanguage
+.. autoenum:: VA_LANGUAGE
     :members:
-.. autoenum:: AgEVAStoppingCondition
+.. autoenum:: VA_STOPPING_CONDITION
     :members:
-.. autoenum:: AgEVAClearEphemerisDirection
+.. autoenum:: VA_CLEAR_EPHEMERIS_DIRECTION
     :members:
-.. autoenum:: AgEVAProfileInsertDirection
+.. autoenum:: VA_PROFILE_INSERT_DIRECTION
     :members:
-.. autoenum:: AgEVARootFindingAlgorithm
+.. autoenum:: VA_ROOT_FINDING_ALGORITHM
     :members:
-.. autoenum:: AgEVAScriptingParameterType
+.. autoenum:: VA_SCRIPTING_PARAMETER_TYPE
     :members:
-.. autoenum:: AgEVASNOPTGoal
+.. autoenum:: VASNOPT_GOAL
     :members:
-.. autoenum:: AgEVAIPOPTGoal
+.. autoenum:: VAIPOPT_GOAL
     :members:
-.. autoenum:: AgEVAOptimalFiniteSeedMethod
+.. autoenum:: VA_OPTIMAL_FINITE_SEED_METHOD
     :members:
-.. autoenum:: AgEVAOptimalFiniteRunMode
+.. autoenum:: VA_OPTIMAL_FINITE_RUN_MODE
     :members:
-.. autoenum:: AgEVAOptimalFiniteDiscretizationStrategy
+.. autoenum:: VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY
     :members:
-.. autoenum:: AgEVAOptimalFiniteWorkingVariables
+.. autoenum:: VA_OPTIMAL_FINITE_WORKING_VARIABLES
     :members:
-.. autoenum:: AgEVAOptimalFiniteScalingOptions
+.. autoenum:: VA_OPTIMAL_FINITE_SCALING_OPTIONS
     :members:
-.. autoenum:: AgEVAOptimalFiniteSNOPTObjective
+.. autoenum:: VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE
     :members:
-.. autoenum:: AgEVAOptimalFiniteSNOPTScaling
+.. autoenum:: VA_OPTIMAL_FINITE_SNOPT_SCALING
     :members:
-.. autoenum:: AgEVAOptimalFiniteExportNodesFormat
+.. autoenum:: VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT
     :members:
-.. autoenum:: AgEVAOptimalFiniteGuessMethod
+.. autoenum:: VA_OPTIMAL_FINITE_GUESS_METHOD
     :members:
-.. autoenum:: AgEVAImpDeltaVRep
+.. autoenum:: VA_IMP_DELTA_V_REP
     :members:
-.. autoenum:: AgEVALambertTargetCoordType
+.. autoenum:: VA_LAMBERT_TARGET_COORD_TYPE
     :members:
-.. autoenum:: AgEVALambertSolutionOptionType
+.. autoenum:: VA_LAMBERT_SOLUTION_OPTION_TYPE
     :members:
-.. autoenum:: AgEVALambertOrbitalEnergyType
+.. autoenum:: VA_LAMBERT_ORBITAL_ENERGY_TYPE
     :members:
-.. autoenum:: AgEVALambertDirectionOfMotionType
+.. autoenum:: VA_LAMBERT_DIRECTION_OF_MOTION_TYPE
     :members:
-.. autoenum:: AgEVAGoldenSectionDesiredOperation
+.. autoenum:: VA_GOLDEN_SECTION_DESIRED_OPERATION
     :members:
-.. autoenum:: AgEVAGridSearchDesiredOperation
+.. autoenum:: VA_GRID_SEARCH_DESIRED_OPERATION
     :members:
-.. autoenum:: AgEVAElement
+.. autoenum:: VA_ELEMENT
     :members:
-.. autoenum:: AgEVABaseSelection
+.. autoenum:: VA_BASE_SELECTION
     :members:
-.. autoenum:: AgEVAControlOrbitStateValue
+.. autoenum:: VA_CONTROL_ORBIT_STATE_VALUE
     :members:
-.. autoenum:: AgEVASegmentState
+.. autoenum:: VA_SEGMENT_STATE
     :members:
-.. autoenum:: AgEVADifferenceOrder
+.. autoenum:: VA_DIFFERENCE_ORDER
     :members:
-.. autoenum:: AgEVASegmentDifferenceOrder
+.. autoenum:: VA_SEGMENT_DIFFERENCE_ORDER
     :members:
-.. autoenum:: AgEVAControlRepeatingGroundTrackErr
+.. autoenum:: VA_CONTROL_REPEATING_GROUND_TRACK_ERR
     :members:
-.. autoenum:: AgEVACalcObjectDirection
+.. autoenum:: VA_CALC_OBJECT_DIRECTION
     :members:
-.. autoenum:: AgEVACalcObjectOrbitPlaneSource
+.. autoenum:: VA_CALC_OBJECT_ORBIT_PLANE_SOURCE
     :members:
-.. autoenum:: AgEVACalcObjectSunPosition
+.. autoenum:: VA_CALC_OBJECT_SUN_POSITION
     :members:
-.. autoenum:: AgEVACalcObjectAngleSign
+.. autoenum:: VA_CALC_OBJECT_ANGLE_SIGN
     :members:
-.. autoenum:: AgEVACalcObjectReferenceDirection
+.. autoenum:: VA_CALC_OBJECT_REFERENCE_DIRECTION
     :members:
-.. autoenum:: AgEVACalcObjectRelativePosition
+.. autoenum:: VA_CALC_OBJECT_RELATIVE_POSITION
     :members:
-.. autoenum:: AgEVACalcObjectReferenceEllipse
+.. autoenum:: VA_CALC_OBJECT_REFERENCE_ELLIPSE
     :members:
-.. autoenum:: AgEVACalcObjectLocationSource
+.. autoenum:: VA_CALC_OBJECT_LOCATION_SOURCE
     :members:
-.. autoenum:: AgEVAGravitationalParameterSource
+.. autoenum:: VA_GRAVITATIONAL_PARAMETER_SOURCE
     :members:
-.. autoenum:: AgEVAReferenceRadiusSource
+.. autoenum:: VA_REFERENCE_RADIUS_SOURCE
     :members:
-.. autoenum:: AgEVAGravCoeffNormalizationType
+.. autoenum:: VA_GRAV_COEFF_NORMALIZATION_TYPE
     :members:
-.. autoenum:: AgEVAGravCoeffCoefficientType
+.. autoenum:: VA_GRAV_COEFF_COEFFICIENT_TYPE
     :members:
-.. autoenum:: AgEVASTMPertVariables
+.. autoenum:: VASTM_PERT_VARIABLES
     :members:
-.. autoenum:: AgEVASTMEigenNumber
+.. autoenum:: VASTM_EIGEN_NUMBER
     :members:
-.. autoenum:: AgEVAComplexNumber
+.. autoenum:: VA_COMPLEX_NUMBER
     :members:
-.. autoenum:: AgEVASquaredType
+.. autoenum:: VA_SQUARED_TYPE
     :members:
-.. autoenum:: AgEVAGeoStationaryDriftRateModel
+.. autoenum:: VA_GEO_STATIONARY_DRIFT_RATE_MODEL
     :members:
-.. autoenum:: AgEVAGeoStationaryInclinationMag
+.. autoenum:: VA_GEO_STATIONARY_INCLINATION_MAG
     :members:
-.. autoenum:: AgEVACbGravityModel
+.. autoenum:: VA_CB_GRAVITY_MODEL
     :members:
-.. autoenum:: AgEVACbShape
+.. autoenum:: VA_CB_SHAPE
     :members:
-.. autoenum:: AgEVACbAttitude
+.. autoenum:: VA_CB_ATTITUDE
     :members:
-.. autoenum:: AgEVACbEphemeris
+.. autoenum:: VA_CB_EPHEMERIS
     :members:
-.. autoenum:: AgEVAControlPowerInternal
+.. autoenum:: VA_CONTROL_POWER_INTERNAL
     :members:
-.. autoenum:: AgEVAControlPowerProcessed
+.. autoenum:: VA_CONTROL_POWER_PROCESSED
     :members:
-.. autoenum:: AgEVAControlPowerSolarArray
+.. autoenum:: VA_CONTROL_POWER_SOLAR_ARRAY
     :members:
-.. autoenum:: AgEVAThirdBodyMode
+.. autoenum:: VA_THIRD_BODY_MODE
     :members:
-.. autoenum:: AgEVAGravParamSource
+.. autoenum:: VA_GRAV_PARAM_SOURCE
     :members:
-.. autoenum:: AgEVAEphemSource
+.. autoenum:: VA_EPHEM_SOURCE
     :members:
-.. autoenum:: AgEVASolarForceMethod
+.. autoenum:: VA_SOLAR_FORCE_METHOD
     :members:
-.. autoenum:: AgEVAShadowModel
+.. autoenum:: VA_SHADOW_MODEL
     :members:
-.. autoenum:: AgEVASunPosition
+.. autoenum:: VA_SUN_POSITION
     :members:
-.. autoenum:: AgEVAAtmosDataSource
+.. autoenum:: VA_ATMOS_DATA_SOURCE
     :members:
-.. autoenum:: AgEVAGeoMagneticFluxSource
+.. autoenum:: VA_GEO_MAGNETIC_FLUX_SOURCE
     :members:
-.. autoenum:: AgEVAGeoMagneticFluxUpdateRate
+.. autoenum:: VA_GEO_MAGNETIC_FLUX_UPDATE_RATE
     :members:
-.. autoenum:: AgEVADragModelType
+.. autoenum:: VA_DRAG_MODEL_TYPE
     :members:
-.. autoenum:: AgEVAMarsGRAMDensityType
+.. autoenum:: VA_MARS_GRAM_DENSITY_TYPE
     :members:
-.. autoenum:: AgEVAVenusGRAMDensityType
+.. autoenum:: VA_VENUS_GRAM_DENSITY_TYPE
     :members:
-.. autoenum:: AgEVATabVecInterpMethod
+.. autoenum:: VA_TAB_VEC_INTERP_METHOD
     :members:
-.. autoenum:: AgEVAControlEngineConstAcc
+.. autoenum:: VA_CONTROL_ENGINE_CONST_ACC
     :members:
-.. autoenum:: AgEVAControlEngineConstant
+.. autoenum:: VA_CONTROL_ENGINE_CONSTANT
     :members:
-.. autoenum:: AgEVAControlEngineCustom
+.. autoenum:: VA_CONTROL_ENGINE_CUSTOM
     :members:
-.. autoenum:: AgEVAControlEngineThrottleTable
+.. autoenum:: VA_CONTROL_ENGINE_THROTTLE_TABLE
     :members:
-.. autoenum:: AgEVAControlEngineIon
+.. autoenum:: VA_CONTROL_ENGINE_ION
     :members:
-.. autoenum:: AgEVAControlEngineModelPoly
+.. autoenum:: VA_CONTROL_ENGINE_MODEL_POLY
     :members:
-.. autoenum:: AgEVAEngineModelFunction
+.. autoenum:: VA_ENGINE_MODEL_FUNCTION
     :members:
-.. autoenum:: AgEVAThrottleTableOperationMode
+.. autoenum:: VA_THROTTLE_TABLE_OPERATION_MODE
     :members:
-.. autoenum:: AgEVAIdealOrbitRadius
+.. autoenum:: VA_IDEAL_ORBIT_RADIUS
     :members:
-.. autoenum:: AgEVARotatingCoordinateSystem
+.. autoenum:: VA_ROTATING_COORDINATE_SYSTEM
     :members:
-.. autoenum:: AgEVAControlThrusters
+.. autoenum:: VA_CONTROL_THRUSTERS
     :members:
-.. autoenum:: AgEVAThrusterDirection
+.. autoenum:: VA_THRUSTER_DIRECTION
     :members:
-.. autoenum:: AgEVACriteria
+.. autoenum:: VA_CRITERIA
     :members:
-.. autoenum:: AgEVAErrorControl
+.. autoenum:: VA_ERROR_CONTROL
     :members:
-.. autoenum:: AgEVAPredictorCorrector
+.. autoenum:: VA_PREDICTOR_CORRECTOR
     :members:
-.. autoenum:: AgEVANumericalIntegrator
+.. autoenum:: VA_NUMERICAL_INTEGRATOR
     :members:
-.. autoenum:: AgEVACoeffRKV8th9th
+.. autoenum:: VA_COEFF_R_K_V_8TH9_TH
     :members:
 
 

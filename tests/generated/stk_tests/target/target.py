@@ -220,9 +220,9 @@ class EarlyBoundTests(TestBase):
     def test_VOModelPointing(self):
         oModel: "IVOModel" = EarlyBoundTests.AG_TG.vo.model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = AgEModelType.eModelFile
+        oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(AgEModelType.eModelFile, oModel.model_type)
+        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
         oModelFile: "IVOModelFile" = clr.Convert(oModel.model_data, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)

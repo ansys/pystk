@@ -5,7 +5,7 @@ import pytz
 import re
 import unittest
 import sys
-import typing  # noqa
+import typing
 
 from datetime import datetime, timedelta
 
@@ -1003,7 +1003,7 @@ class TestBase(unittest.TestCase):
             TestBase.root.close_scenario()
 
         TestBase.root.new_scenario("Snippet")
-        parent: ISatellite = TestBase.root.current_scenario.children.new(AgESTKObjectType.eSatellite, "parent")
+        parent: ISatellite = TestBase.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "parent")
         clr.CastAs(parent.propagator, IVehiclePropagatorTwoBody).propagate()
         accessConstraints = parent.access_constraints
 
@@ -1063,9 +1063,9 @@ class TestBase(unittest.TestCase):
         TestBase.LoadTestScenario("Scenario1.sc")
 
         ac1: IAircraft = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], IAircraft)
-        ac1.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        ac1.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         ga: IVehiclePropagatorGreatArc = clr.CastAs(ac1.route, IVehiclePropagatorGreatArc)
-        ga.method = AgEVeWayPtCompMethod.eDetermineVelFromTime
+        ga.method = VE_WAY_PT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1078,9 +1078,9 @@ class TestBase(unittest.TestCase):
         gv1: IGroundVehicle = clr.CastAs(
             TestBase.Application.current_scenario.children["GroundVehicle1"], IGroundVehicle
         )
-        gv1.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        gv1.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         ga: IVehiclePropagatorGreatArc = clr.CastAs(gv1.route, IVehiclePropagatorGreatArc)
-        ga.method = AgEVeWayPtCompMethod.eDetermineVelFromTime
+        ga.method = VE_WAY_PT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1091,9 +1091,9 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         sh1: IShip = clr.CastAs(TestBase.Application.current_scenario.children["Ship1"], IShip)
-        sh1.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        sh1.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         ga: IVehiclePropagatorGreatArc = clr.CastAs(sh1.route, IVehiclePropagatorGreatArc)
-        ga.method = AgEVeWayPtCompMethod.eDetermineVelFromTime
+        ga.method = VE_WAY_PT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1104,7 +1104,7 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         ms1: IMissile = clr.CastAs(TestBase.Application.current_scenario.children["Missile1"], IMissile)
-        ms1.set_trajectory_type(AgEVePropagatorType.ePropagatorBallistic)
+        ms1.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
         ballistic: IVehiclePropagatorBallistic = clr.CastAs(ms1.trajectory, IVehiclePropagatorBallistic)
         ballistic.step = 59
         ballistic.propagate()
@@ -1179,9 +1179,7 @@ class TestBase(unittest.TestCase):
     def EarthGravModel(self):
         sc = clr.Convert(TestBase.Application.current_scenario, IScenario)
         cbEarth: IAstrogatorCentralBody = clr.CastAs(
-            sc.component_directory.get_components(AgEComponent.eComponentAstrogator).get_folder("Central Bodies")[
-                "Earth"
-            ],
+            sc.component_directory.get_components(COMPONENT.ASTROGATOR).get_folder("Central Bodies")["Earth"],
             IAstrogatorCentralBody,
         )
         if cbEarth.default_gravity_model_name == "EGM2008":
@@ -1541,11 +1539,11 @@ class DataProviderResultWriter(object):
         self.WriteLine(0, "Result Info")
         self.WriteLine(0, "-----------")
         self.WriteLine(0, ("Category:" + str(self._result.category)))
-        if self._result.category == AgEDrCategories.eDrCatIntervalList:
+        if self._result.category == DR_CATEGORIES.INTERVAL_LIST:
             self.DumpDPIntervalList(clr.Convert(self._result.value, IDataProviderResultIntervalCollection), 1)
-        elif self._result.category == AgEDrCategories.eDrCatSubSectionList:
+        elif self._result.category == DR_CATEGORIES.SUB_SECTION_LIST:
             self.DumpDPSubSectionList(clr.Convert(self._result.value, IDataProviderResultSubSectionCollection), 1)
-        elif self._result.category == AgEDrCategories.eDrCatMessage:
+        elif self._result.category == DR_CATEGORIES.MESSAGE:
             self.DumpDPMessage(clr.Convert(self._result.value, IDataProviderResultTextMessage), 1)
         return Regex.Replace(self.outStr, "\n", "")
 

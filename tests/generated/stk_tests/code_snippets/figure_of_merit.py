@@ -33,13 +33,13 @@ class FigureOfMerit(CodeSnippetsTestBase):
     def setUp(self):
         self.m_CovDefObject = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eCoverageDefinition, FigureOfMerit.m_CovDefDefaultName
+                STK_OBJECT_TYPE.COVERAGE_DEFINITION, FigureOfMerit.m_CovDefDefaultName
             ),
             ICoverageDefinition,
         )
         covdefObject: "IStkObject" = clr.CastAs(self.m_CovDefObject, IStkObject)
         FigureOfMerit.m_Object = clr.CastAs(
-            covdefObject.children.new(AgESTKObjectType.eFigureOfMerit, FigureOfMerit.m_DefaultName), IFigureOfMerit
+            covdefObject.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, FigureOfMerit.m_DefaultName), IFigureOfMerit
         )
 
     # endregion
@@ -47,14 +47,14 @@ class FigureOfMerit(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         covdefObject: "IStkObject" = clr.CastAs(self.m_CovDefObject, IStkObject)
-        covdefObject.children.unload(AgESTKObjectType.eFigureOfMerit, FigureOfMerit.m_DefaultName)
+        covdefObject.children.unload(STK_OBJECT_TYPE.FIGURE_OF_MERIT, FigureOfMerit.m_DefaultName)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eCoverageDefinition, FigureOfMerit.m_CovDefDefaultName
+            STK_OBJECT_TYPE.COVERAGE_DEFINITION, FigureOfMerit.m_CovDefDefaultName
         )
         FigureOfMerit.m_Object = None
         self.m_CovDefObject = None
-        if TestBase.Application.current_scenario.children.contains(AgESTKObjectType.eFacility, "Facility1"):
-            TestBase.Application.current_scenario.children.unload(AgESTKObjectType.eFacility, "Facility1")
+        if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.FACILITY, "Facility1"):
+            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "Facility1")
 
     # endregion
 
@@ -68,7 +68,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
         # Create the figure of merit
         fom: "IFigureOfMerit" = clr.CastAs(
-            covdefObject.children.new(AgESTKObjectType.eFigureOfMerit, "MyFigureOfMerit"), IFigureOfMerit
+            covdefObject.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "MyFigureOfMerit"), IFigureOfMerit
         )
 
     # endregion
@@ -79,13 +79,13 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def ConfigureAccessDurationFigureOfMerit(self, fom: "IFigureOfMerit"):
         # Set figure of merit definition to eFmAccessDuration
-        fom.set_definition_type(AgEFmDefinitionType.eFmAccessDuration)
+        fom.set_definition_type(FM_DEFINITION_TYPE.ACCESS_DURATION)
 
         # Get IFigureOfMeritDefinitionCompute interface
         defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionCompute)
-        if defComp.is_compute_type_supported(AgEFmCompute.ePercentAbove):
+        if defComp.is_compute_type_supported(FM_COMPUTE.PERCENT_ABOVE):
             # Set Compute type to supported compute option
-            defComp.set_compute_type(AgEFmCompute.ePercentAbove)
+            defComp.set_compute_type(FM_COMPUTE.PERCENT_ABOVE)
 
             # Get compute option compute interface
             fomData: "IFigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
@@ -101,13 +101,13 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def ConfigureCoverageTimeFigureOfMerit(self, fom: "IFigureOfMerit"):
         # Set figure of merit definition to eFmCoverageTime
-        fom.set_definition_type(AgEFmDefinitionType.eFmCoverageTime)
+        fom.set_definition_type(FM_DEFINITION_TYPE.COVERAGE_TIME)
 
         # Get IFigureOfMeritDefinitionCompute interface
         defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionCompute)
-        if defComp.is_compute_type_supported(AgEFmCompute.eTotalTimeAbove):
+        if defComp.is_compute_type_supported(FM_COMPUTE.TOTAL_TIME_ABOVE):
             # Set Compute type to supported compute option
-            defComp.set_compute_type(AgEFmCompute.eTotalTimeAbove)
+            defComp.set_compute_type(FM_COMPUTE.TOTAL_TIME_ABOVE)
 
             # Get compute option compute interface
             fomData: "IFigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
@@ -123,7 +123,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def SetFigureOfMeritDefToAccessConstraintByEnum(self, fom: "IFigureOfMerit"):
         acd: "IFigureOfMeritDefinitionAccessConstraint" = fom.set_access_constraint_definition(
-            AgEFmConstraintName.eFmAzimuthRate
+            FM_CONSTRAINT_NAME.AZIMUTH_RATE
         )
 
     # endregion
@@ -138,8 +138,8 @@ class FigureOfMerit(CodeSnippetsTestBase):
         )
 
         # Confiure access constraint properties
-        defAccessCnstr.set_compute_type(AgEFmCompute.eMaximum)
-        defAccessCnstr.across_assets = AgEFmAcrossAssets.eFmMinimum
+        defAccessCnstr.set_compute_type(FM_COMPUTE.MAXIMUM)
+        defAccessCnstr.across_assets = FM_ACROSS_ASSETS.MINIMUM
         defAccessCnstr.time_step = 60.0
 
     # endregion
@@ -150,7 +150,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def ConfigureFigureOfMeritDefToAccessConstraint(self, fom: "IFigureOfMerit"):
         # Set access constraint definition to altitude
-        fom.set_access_constraint_definition(AgEFmConstraintName.eFmAltitude)
+        fom.set_access_constraint_definition(FM_CONSTRAINT_NAME.ALTITUDE)
 
         # Get IFigureOfMeritDefinitionAccessConstraint interface
         defAccessCnstr: "IFigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
@@ -158,8 +158,8 @@ class FigureOfMerit(CodeSnippetsTestBase):
         )
 
         # Confiure access constraint properties
-        defAccessCnstr.set_compute_type(AgEFmCompute.eMaximum)
-        defAccessCnstr.across_assets = AgEFmAcrossAssets.eFmMinimum
+        defAccessCnstr.set_compute_type(FM_COMPUTE.MAXIMUM)
+        defAccessCnstr.across_assets = FM_ACROSS_ASSETS.MINIMUM
         defAccessCnstr.time_step = 60.0
 
     # endregion
@@ -200,8 +200,8 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def ConfigureFigureOfMeritContours(self, contours: "IFigureOfMeritGfxContours"):
         contours.is_visible = True
-        contours.contour_type = AgEFmGfxContourType.eSmoothFill
-        contours.color_method = AgEFmGfxColorMethod.eExplicit
+        contours.contour_type = FM_GFX_CONTOUR_TYPE.SMOOTH_FILL
+        contours.color_method = FM_GFX_COLOR_METHOD.EXPLICIT
 
         # Add level ranges (batch)
         contours.level_attributes.add_level_range(25, 35, 1)
@@ -220,7 +220,7 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionAgeOfData(self, fom: "IFigureOfMerit"):
         # Get the IFigureOfMeritDefinitionAgeOfData interface
-        fom.set_definition_type(AgEFmDefinitionType.eFmAgeOfData)
+        fom.set_definition_type(FM_DEFINITION_TYPE.AGE_OF_DATA)
         ageOfData: "IFigureOfMeritDefinitionAgeOfData" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionAgeOfData)
 
         # Set the minimum number of assets for computing
@@ -261,11 +261,11 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     # region FigureOfMeritDefinitionSystemResponseTime
     def test_FigureOfMeritDefinitionSystemResponseTime(self):
-        TestBase.Application.current_scenario.children.new(AgESTKObjectType.eFacility, "Facility1")
+        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
         self.FigureOfMeritDefinitionSystemResponseTime(FigureOfMerit.m_Object)
 
     def FigureOfMeritDefinitionSystemResponseTime(self, fom: "IFigureOfMerit"):
-        fom.set_definition_type(AgEFmDefinitionType.eFmSystemResponseTime)
+        fom.set_definition_type(FM_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
         systemResponseTime: "IFigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
             fom.definition, IFigureOfMeritDefinitionSystemResponseTime
         )
@@ -276,11 +276,11 @@ class FigureOfMerit(CodeSnippetsTestBase):
 
     # region FigureOfMeritDefinitionSystemResponseTimeReset
     def test_FigureOfMeritDefinitionSystemResponseTimeReset(self):
-        TestBase.Application.current_scenario.children.new(AgESTKObjectType.eFacility, "Facility1")
+        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
         self.FigureOfMeritDefinitionSystemResponseTimeReset(FigureOfMerit.m_Object)
 
     def FigureOfMeritDefinitionSystemResponseTimeReset(self, fom: "IFigureOfMerit"):
-        fom.set_definition_type(AgEFmDefinitionType.eFmSystemResponseTime)
+        fom.set_definition_type(FM_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
         systemResponseTime: "IFigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
             fom.definition, IFigureOfMeritDefinitionSystemResponseTime
         )

@@ -28,7 +28,7 @@ class Planet(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Planet.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.ePlanet, Planet.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, Planet.m_DefaultName),
             IPlanet,
         )
 
@@ -36,7 +36,7 @@ class Planet(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.ePlanet, Planet.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.PLANET, Planet.m_DefaultName)
         Planet.m_Object = None
 
     # endregion
@@ -61,15 +61,15 @@ class Planet(CodeSnippetsTestBase):
         )
 
     def ConfigurePlanet(self, planet: "IPlanet"):
-        planet.position_source = AgEPlPositionSourceType.ePosCentralBody
+        planet.position_source = PL_POSITION_SOURCE_TYPE.POS_CENTRAL_BODY
 
         # Get IPlanetPositionCentralBody interface
         body: "IPlanetPositionCentralBody" = clr.CastAs(planet.position_source_data, IPlanetPositionCentralBody)
 
         body.auto_rename = False
         body.central_body = "Jupiter"
-        if Array.IndexOf(body.available_ephem_source_types, int(AgEEphemSourceType.eEphemAnalytic)) != -1:
-            body.ephem_source = AgEEphemSourceType.eEphemAnalytic
+        if Array.IndexOf(body.available_ephem_source_types, int(EPHEM_SOURCE_TYPE.ANALYTIC)) != -1:
+            body.ephem_source = EPHEM_SOURCE_TYPE.ANALYTIC
 
     # endregion
 
@@ -83,15 +83,15 @@ class Planet(CodeSnippetsTestBase):
 
         graphics.color = Color.Red
         graphics.marker_style = "Circle"
-        graphics.line_style = AgELineStyle.eMDashDot
-        graphics.line_width = AgELineWidth.e4
+        graphics.line_style = LINE_STYLE.M_DASH_DOT
+        graphics.line_width = LINE_WIDTH.WIDTH4
 
         graphics.inertial_position_visible = False
         graphics.sub_planet_point_visible = False
         graphics.position_label_visible = False
         graphics.sub_planet_label_visible = False
         graphics.orbit_visible = True
-        graphics.orbit_display = AgEPlOrbitDisplayType.eOrbitDisplayTime
+        graphics.orbit_display = PL_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME
         displayTime: "IPlanetOrbitDisplayTime" = clr.CastAs(graphics.orbit_display_data, IPlanetOrbitDisplayTime)
         displayTime.time = 10000.0
 

@@ -16,7 +16,7 @@ from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
     addressof, Structure, cast, pointer
 
 from ...stkx import IUiAxVOCntrl, IUiAx2DCntrl, \
-    IUiAxGfxAnalysisCntrl, AgEButtonValues, AgEShiftValues
+    IUiAxGfxAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import ole32lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
@@ -297,11 +297,11 @@ class WidgetBase(RemoteFrameBuffer):
         modifiers = event['modifiers']
         result = 0
         if "Shift" in modifiers:
-            result = result | AgEShiftValues.eShiftPressed
+            result = result | SHIFT_VALUES.PRESSED
         if "Ctrl" in modifiers:
-            result = result | AgEShiftValues.eCtrlPressed
+            result = result | SHIFT_VALUES.CTRL_PRESSED
         if "Alt" in modifiers:
-            result = result | AgEShiftValues.eAltPressed
+            result = result | SHIFT_VALUES.ALT_PRESSED
         return result
 
     def __get_position(self, event):
@@ -331,13 +331,13 @@ class WidgetBase(RemoteFrameBuffer):
             (x, y) = self.__get_position(event)
             buttons = event["buttons"]
             if len(buttons) > 0 and buttons[0] == 1:
-                self._rfb.notify_mouse_move(x, y, AgEButtonValues.eLeftPressed,
+                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.LEFT_PRESSED,
                                           self.__get_modifiers(event))
             elif len(buttons) > 0 and buttons[0] == 2:
-                self._rfb.notify_mouse_move(x, y, AgEButtonValues.eRightPressed,
+                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.RIGHT_PRESSED,
                                           self.__get_modifiers(event))
             elif len(buttons) > 0 and buttons[0] == 3:
-                self._rfb.notify_mouse_move(x, y, AgEButtonValues.eMiddlePressed,
+                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.MIDDLE_PRESSED,
                                           self.__get_modifiers(event))
             else:
                 self._rfb.notify_mouse_move(x, y, 0, 0)

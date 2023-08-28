@@ -2,15 +2,16 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgEButtonValues", "AgEExecMultiCmdResultAction", "AgEFeatureCodes", "AgEGfxAnalysisMode", "AgEGfxDrawCoords", 
-"AgELineStyle", "AgELogMsgDispID", "AgELogMsgType", "AgELoggingMode", "AgEMouseMode", "AgEOLEDropMode", "AgEProgressImageXOrigin", 
-"AgEProgressImageYOrigin", "AgEShiftValues", "AgEShowProgressImage", "AgExecCmdResult", "AgExecMultiCmdResult", "DataObject", 
-"DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElemCollection", "DrawElemLine", "DrawElemRect", "IDataObject", 
-"IDataObjectFiles", "IDrawElem", "IDrawElemCollection", "IDrawElemLine", "IDrawElemRect", "IExecCmdResult", "IExecMultiCmdResult", 
-"IObjPathCollection", "IPickInfoData", "IRubberBandPickInfoData", "ISTKXApplication", "ISTKXApplicationPartnerAccess", "ISTKXConControlQuitReceivedEventArgs", 
-"ISTKXSSLCertificateErrorEventArgs", "IUiAx2DCntrl", "IUiAxGfxAnalysisCntrl", "IUiAxVOCntrl", "IWinProjectionPosition", 
-"ObjPathCollection", "PickInfoData", "RubberBandPickInfoData", "STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", 
-"STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", "UiAxGfxAnalysisCntrl", "UiAxVOCntrl", "WinProjectionPosition"]
+__all__ = ["AgExecCmdResult", "AgExecMultiCmdResult", "BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", 
+"Draw2DElemRect", "DrawElemCollection", "DrawElemLine", "DrawElemRect", "EXEC_MULTI_CMD_RESULT_ACTION", "FEATURE_CODES", 
+"GFX_ANALYSIS_MODE", "GFX_DRAW_COORDS", "IDataObject", "IDataObjectFiles", "IDrawElem", "IDrawElemCollection", "IDrawElemLine", 
+"IDrawElemRect", "IExecCmdResult", "IExecMultiCmdResult", "IObjPathCollection", "IPickInfoData", "IRubberBandPickInfoData", 
+"ISTKXApplication", "ISTKXApplicationPartnerAccess", "ISTKXConControlQuitReceivedEventArgs", "ISTKXSSLCertificateErrorEventArgs", 
+"IUiAx2DCntrl", "IUiAxGfxAnalysisCntrl", "IUiAxVOCntrl", "IWinProjectionPosition", "LINE_STYLE", "LOGGING_MODE", "LOG_MSG_DISP_ID", 
+"LOG_MSG_TYPE", "MOUSE_MODE", "OLE_DROP_MODE", "ObjPathCollection", "PROGRESS_IMAGE_X_ORIGIN", "PROGRESS_IMAGE_Y_ORIGIN", 
+"PickInfoData", "RubberBandPickInfoData", "SHIFT_VALUES", "SHOW_PROGRESS_IMAGE", "STKXApplication", "STKXApplicationPartnerAccess", 
+"STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", "UiAxGfxAnalysisCntrl", "UiAxVOCntrl", 
+"WinProjectionPosition"]
 
 import typing
 
@@ -19,12 +20,12 @@ from datetime import datetime
 from enum     import IntEnum, IntFlag
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
@@ -42,281 +43,281 @@ from .stkutil import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class AgELogMsgType(IntEnum):
+class LOG_MSG_TYPE(IntEnum):
     """Log message types."""
     # Debugging message.
-    eLogMsgDebug = 0
+    DEBUG = 0
     # Informational message.
-    eLogMsgInfo = 1
+    INFO = 1
     # Informational message.
-    eLogMsgForceInfo = 2
+    FORCE_INFO = 2
     # Warning message.
-    eLogMsgWarning = 3
+    WARNING = 3
     # Alarm message.
-    eLogMsgAlarm = 4
+    ALARM = 4
 
-AgELogMsgType.eLogMsgDebug.__doc__ = "Debugging message."
-AgELogMsgType.eLogMsgInfo.__doc__ = "Informational message."
-AgELogMsgType.eLogMsgForceInfo.__doc__ = "Informational message."
-AgELogMsgType.eLogMsgWarning.__doc__ = "Warning message."
-AgELogMsgType.eLogMsgAlarm.__doc__ = "Alarm message."
+LOG_MSG_TYPE.DEBUG.__doc__ = "Debugging message."
+LOG_MSG_TYPE.INFO.__doc__ = "Informational message."
+LOG_MSG_TYPE.FORCE_INFO.__doc__ = "Informational message."
+LOG_MSG_TYPE.WARNING.__doc__ = "Warning message."
+LOG_MSG_TYPE.ALARM.__doc__ = "Alarm message."
 
-agcls.AgTypeNameMap["AgELogMsgType"] = AgELogMsgType
+agcls.AgTypeNameMap["LOG_MSG_TYPE"] = LOG_MSG_TYPE
 
-class AgELogMsgDispID(IntEnum):
+class LOG_MSG_DISP_ID(IntEnum):
     """Log message destination options."""
     # STK displays the message in all the log destination.
-    eLogMsgDispAll = -1
+    ALL = -1
     # STK displays the message in the default log destination.
-    eLogMsgDispDefault = 0
+    DEFAULT = 0
     # STK displays the message in the message window.
-    eLogMsgDispMsgWin = 1
+    MSG_WIN = 1
     # STK displays the message in the status bar.
-    eLogMsgDispStatusBar = 2
+    STATUS_BAR = 2
 
-AgELogMsgDispID.eLogMsgDispAll.__doc__ = "STK displays the message in all the log destination."
-AgELogMsgDispID.eLogMsgDispDefault.__doc__ = "STK displays the message in the default log destination."
-AgELogMsgDispID.eLogMsgDispMsgWin.__doc__ = "STK displays the message in the message window."
-AgELogMsgDispID.eLogMsgDispStatusBar.__doc__ = "STK displays the message in the status bar."
+LOG_MSG_DISP_ID.ALL.__doc__ = "STK displays the message in all the log destination."
+LOG_MSG_DISP_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
+LOG_MSG_DISP_ID.MSG_WIN.__doc__ = "STK displays the message in the message window."
+LOG_MSG_DISP_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
 
-agcls.AgTypeNameMap["AgELogMsgDispID"] = AgELogMsgDispID
+agcls.AgTypeNameMap["LOG_MSG_DISP_ID"] = LOG_MSG_DISP_ID
 
-class AgELineStyle(IntEnum):
+class LINE_STYLE(IntEnum):
     """Line Style"""
     # Specifies a solid line.
-    eSolid = 0
+    SOLID = 0
     # Specifies a dashed line.
-    eDashed = 1
+    DASHED = 1
     # Specifies a dotted line.
-    eDotted = 2
+    DOTTED = 2
     # Dot-dashed line.
-    eDotDashed = 3
+    DOT_DASHED = 3
     # Specifies a long dashed line.
-    eLongDashed = 4
+    LONG_DASHED = 4
     # Specifies an alternating dash-dot-dot line.
-    eDashDotDotted = 5
+    DASH_DOT_DOTTED = 5
     # Specifies a user configurable medium dashed line.
-    eMDash = 6
+    M_DASH = 6
     # Specifies a user configurable long dashed line.
-    eLDash = 7
+    L_DASH = 7
     # Specifies a user configurable small dash-dotted line.
-    eSDashDot = 8
+    S_DASH_DOT = 8
     # Specifies a user configurable medium dash-dotted line.
-    eMDashDot = 9
+    M_DASH_DOT = 9
     # Specifies a user configurable long dash-dotted line.
-    eLDashDot = 10
+    DASH_DOT = 10
     # Specifies a user configurable medium followed by small dashed line.
-    eMSDash = 11
+    MS_DASH = 11
     # Specifies a user configurable long followed by small dashed line.
-    eLSDash = 12
+    LS_DASH = 12
     # Specifies a user configurable long followed by medium dashed line.
-    eLMDash = 13
+    LM_DASH = 13
     # Specifies a user configurable medium followed by small dashed line.
-    eLMSDash = 14
+    LMS_DASH = 14
     # Specifies a dotted line.
-    eDot = 15
+    DOT = 15
     # Specifies a long dashed line.
-    eLongDash = 16
+    LONG_DASH = 16
     # Specifies an alternating dash-dot line.
-    eSDash = 17
+    S_DASH = 17
 
-AgELineStyle.eSolid.__doc__ = "Specifies a solid line."
-AgELineStyle.eDashed.__doc__ = "Specifies a dashed line."
-AgELineStyle.eDotted.__doc__ = "Specifies a dotted line."
-AgELineStyle.eDotDashed.__doc__ = "Dot-dashed line."
-AgELineStyle.eLongDashed.__doc__ = "Specifies a long dashed line."
-AgELineStyle.eDashDotDotted.__doc__ = "Specifies an alternating dash-dot-dot line."
-AgELineStyle.eMDash.__doc__ = "Specifies a user configurable medium dashed line."
-AgELineStyle.eLDash.__doc__ = "Specifies a user configurable long dashed line."
-AgELineStyle.eSDashDot.__doc__ = "Specifies a user configurable small dash-dotted line."
-AgELineStyle.eMDashDot.__doc__ = "Specifies a user configurable medium dash-dotted line."
-AgELineStyle.eLDashDot.__doc__ = "Specifies a user configurable long dash-dotted line."
-AgELineStyle.eMSDash.__doc__ = "Specifies a user configurable medium followed by small dashed line."
-AgELineStyle.eLSDash.__doc__ = "Specifies a user configurable long followed by small dashed line."
-AgELineStyle.eLMDash.__doc__ = "Specifies a user configurable long followed by medium dashed line."
-AgELineStyle.eLMSDash.__doc__ = "Specifies a user configurable medium followed by small dashed line."
-AgELineStyle.eDot.__doc__ = "Specifies a dotted line."
-AgELineStyle.eLongDash.__doc__ = "Specifies a long dashed line."
-AgELineStyle.eSDash.__doc__ = "Specifies an alternating dash-dot line."
+LINE_STYLE.SOLID.__doc__ = "Specifies a solid line."
+LINE_STYLE.DASHED.__doc__ = "Specifies a dashed line."
+LINE_STYLE.DOTTED.__doc__ = "Specifies a dotted line."
+LINE_STYLE.DOT_DASHED.__doc__ = "Dot-dashed line."
+LINE_STYLE.LONG_DASHED.__doc__ = "Specifies a long dashed line."
+LINE_STYLE.DASH_DOT_DOTTED.__doc__ = "Specifies an alternating dash-dot-dot line."
+LINE_STYLE.M_DASH.__doc__ = "Specifies a user configurable medium dashed line."
+LINE_STYLE.L_DASH.__doc__ = "Specifies a user configurable long dashed line."
+LINE_STYLE.S_DASH_DOT.__doc__ = "Specifies a user configurable small dash-dotted line."
+LINE_STYLE.M_DASH_DOT.__doc__ = "Specifies a user configurable medium dash-dotted line."
+LINE_STYLE.DASH_DOT.__doc__ = "Specifies a user configurable long dash-dotted line."
+LINE_STYLE.MS_DASH.__doc__ = "Specifies a user configurable medium followed by small dashed line."
+LINE_STYLE.LS_DASH.__doc__ = "Specifies a user configurable long followed by small dashed line."
+LINE_STYLE.LM_DASH.__doc__ = "Specifies a user configurable long followed by medium dashed line."
+LINE_STYLE.LMS_DASH.__doc__ = "Specifies a user configurable medium followed by small dashed line."
+LINE_STYLE.DOT.__doc__ = "Specifies a dotted line."
+LINE_STYLE.LONG_DASH.__doc__ = "Specifies a long dashed line."
+LINE_STYLE.S_DASH.__doc__ = "Specifies an alternating dash-dot line."
 
-agcls.AgTypeNameMap["AgELineStyle"] = AgELineStyle
+agcls.AgTypeNameMap["LINE_STYLE"] = LINE_STYLE
 
-class AgEExecMultiCmdResultAction(IntFlag):
+class EXEC_MULTI_CMD_RESULT_ACTION(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
     # Continue executing the remaining commands in the command batch.
-    eContinueOnError = 0
+    CONTINUE_ON_ERROR = 0
     # Terminate the execution of the command batch but do not throw an exception.
-    eStopOnError = 1
+    STOP_ON_ERROR = 1
     # Terminate the execution of the command batch and throw an exception.
-    eExceptionOnError = 2
+    EXCEPTION_ON_ERROR = 2
     # Ignore results returned by individual commands. The option must be used in combination with other flags.
-    eIgnoreExecCmdResult = 0x8000
+    IGNORE_EXEC_CMD_RESULT = 0x8000
 
-AgEExecMultiCmdResultAction.eContinueOnError.__doc__ = "Continue executing the remaining commands in the command batch."
-AgEExecMultiCmdResultAction.eStopOnError.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
-AgEExecMultiCmdResultAction.eExceptionOnError.__doc__ = "Terminate the execution of the command batch and throw an exception."
-AgEExecMultiCmdResultAction.eIgnoreExecCmdResult.__doc__ = "Ignore results returned by individual commands. The option must be used in combination with other flags."
+EXEC_MULTI_CMD_RESULT_ACTION.CONTINUE_ON_ERROR.__doc__ = "Continue executing the remaining commands in the command batch."
+EXEC_MULTI_CMD_RESULT_ACTION.STOP_ON_ERROR.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
+EXEC_MULTI_CMD_RESULT_ACTION.EXCEPTION_ON_ERROR.__doc__ = "Terminate the execution of the command batch and throw an exception."
+EXEC_MULTI_CMD_RESULT_ACTION.IGNORE_EXEC_CMD_RESULT.__doc__ = "Ignore results returned by individual commands. The option must be used in combination with other flags."
 
-agcls.AgTypeNameMap["AgEExecMultiCmdResultAction"] = AgEExecMultiCmdResultAction
+agcls.AgTypeNameMap["EXEC_MULTI_CMD_RESULT_ACTION"] = EXEC_MULTI_CMD_RESULT_ACTION
 
-class AgEShiftValues(IntEnum):
+class SHIFT_VALUES(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
     # The Shift key was pressed.
-    eShiftPressed = 1
+    PRESSED = 1
     # The Ctrl key was pressed.
-    eCtrlPressed = 2
+    CTRL_PRESSED = 2
     # The ALT key was pressed.
-    eAltPressed = 4
+    ALT_PRESSED = 4
 
-AgEShiftValues.eShiftPressed.__doc__ = "The Shift key was pressed."
-AgEShiftValues.eCtrlPressed.__doc__ = "The Ctrl key was pressed."
-AgEShiftValues.eAltPressed.__doc__ = "The ALT key was pressed."
+SHIFT_VALUES.PRESSED.__doc__ = "The Shift key was pressed."
+SHIFT_VALUES.CTRL_PRESSED.__doc__ = "The Ctrl key was pressed."
+SHIFT_VALUES.ALT_PRESSED.__doc__ = "The ALT key was pressed."
 
-agcls.AgTypeNameMap["AgEShiftValues"] = AgEShiftValues
+agcls.AgTypeNameMap["SHIFT_VALUES"] = SHIFT_VALUES
 
-class AgEButtonValues(IntEnum):
+class BUTTON_VALUES(IntEnum):
     """Numeric value of the mouse button pressed."""
     # The left button is pressed.
-    eLeftPressed = 1
+    LEFT_PRESSED = 1
     # The right button is pressed.
-    eRightPressed = 2
+    RIGHT_PRESSED = 2
     # The middle button is pressed.
-    eMiddlePressed = 4
+    MIDDLE_PRESSED = 4
 
-AgEButtonValues.eLeftPressed.__doc__ = "The left button is pressed."
-AgEButtonValues.eRightPressed.__doc__ = "The right button is pressed."
-AgEButtonValues.eMiddlePressed.__doc__ = "The middle button is pressed."
+BUTTON_VALUES.LEFT_PRESSED.__doc__ = "The left button is pressed."
+BUTTON_VALUES.RIGHT_PRESSED.__doc__ = "The right button is pressed."
+BUTTON_VALUES.MIDDLE_PRESSED.__doc__ = "The middle button is pressed."
 
-agcls.AgTypeNameMap["AgEButtonValues"] = AgEButtonValues
+agcls.AgTypeNameMap["BUTTON_VALUES"] = BUTTON_VALUES
 
-class AgEOLEDropMode(IntEnum):
+class OLE_DROP_MODE(IntEnum):
     """Specifies how to handle OLE drop operations."""
     # None. The control does not accept OLE drops and displays the No Drop cursor.
-    eNone = 0
+    NONE = 0
     # Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code.
-    eManual = 1
+    MANUAL = 1
     # Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic.
-    eAutomatic = 2
+    AUTOMATIC = 2
 
-AgEOLEDropMode.eNone.__doc__ = "None. The control does not accept OLE drops and displays the No Drop cursor."
-AgEOLEDropMode.eManual.__doc__ = "Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."
-AgEOLEDropMode.eAutomatic.__doc__ = "Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."
+OLE_DROP_MODE.NONE.__doc__ = "None. The control does not accept OLE drops and displays the No Drop cursor."
+OLE_DROP_MODE.MANUAL.__doc__ = "Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."
+OLE_DROP_MODE.AUTOMATIC.__doc__ = "Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."
 
-agcls.AgTypeNameMap["AgEOLEDropMode"] = AgEOLEDropMode
+agcls.AgTypeNameMap["OLE_DROP_MODE"] = OLE_DROP_MODE
 
-class AgEMouseMode(IntEnum):
+class MOUSE_MODE(IntEnum):
     """Mouse modes."""
     # Automatic. The control handles the mouse events and then fires the events to the container for additional processing.
-    eMouseModeAutomatic = 0
+    AUTOMATIC = 0
     # None. No default action happens on mouse events. Events are fired to the container.
-    eMouseModeManual = 1
+    MANUAL = 1
 
-AgEMouseMode.eMouseModeAutomatic.__doc__ = "Automatic. The control handles the mouse events and then fires the events to the container for additional processing."
-AgEMouseMode.eMouseModeManual.__doc__ = "None. No default action happens on mouse events. Events are fired to the container."
+MOUSE_MODE.AUTOMATIC.__doc__ = "Automatic. The control handles the mouse events and then fires the events to the container for additional processing."
+MOUSE_MODE.MANUAL.__doc__ = "None. No default action happens on mouse events. Events are fired to the container."
 
-agcls.AgTypeNameMap["AgEMouseMode"] = AgEMouseMode
+agcls.AgTypeNameMap["MOUSE_MODE"] = MOUSE_MODE
 
-class AgELoggingMode(IntEnum):
+class LOGGING_MODE(IntEnum):
     """Specifies the state of the log file."""
     # The log file is not created.
-    eLogInactive = 0
+    INACTIVE = 0
     # The log file is created but deleted upon application termination.
-    eLogActive = 1
+    ACTIVE = 1
     # The log file is created and kept even after application is terminated.
-    eLogActiveKeepFile = 2
+    ACTIVE_KEEP_FILE = 2
 
-AgELoggingMode.eLogInactive.__doc__ = "The log file is not created."
-AgELoggingMode.eLogActive.__doc__ = "The log file is created but deleted upon application termination."
-AgELoggingMode.eLogActiveKeepFile.__doc__ = "The log file is created and kept even after application is terminated."
+LOGGING_MODE.INACTIVE.__doc__ = "The log file is not created."
+LOGGING_MODE.ACTIVE.__doc__ = "The log file is created but deleted upon application termination."
+LOGGING_MODE.ACTIVE_KEEP_FILE.__doc__ = "The log file is created and kept even after application is terminated."
 
-agcls.AgTypeNameMap["AgELoggingMode"] = AgELoggingMode
+agcls.AgTypeNameMap["LOGGING_MODE"] = LOGGING_MODE
 
-class AgEGfxAnalysisMode(IntEnum):
+class GFX_ANALYSIS_MODE(IntEnum):
     """Specifies the mode of Gfx Analysis Control."""
     # The Solar Panel Tool mode.
-    eSolarPanelTool = 1
+    SOLAR_PANEL_TOOL = 1
     # The Area Tool mode.
-    eAreaTool = 2
+    AREA_TOOL = 2
     # The Obscuration Tool mode.
-    eObscurationTool = 3
+    OBSCURATION_TOOL = 3
     # The AzElMask Tool mode.
-    eAzElMaskTool = 4
+    AZ_EL_MASK_TOOL = 4
 
-AgEGfxAnalysisMode.eSolarPanelTool.__doc__ = "The Solar Panel Tool mode."
-AgEGfxAnalysisMode.eAreaTool.__doc__ = "The Area Tool mode."
-AgEGfxAnalysisMode.eObscurationTool.__doc__ = "The Obscuration Tool mode."
-AgEGfxAnalysisMode.eAzElMaskTool.__doc__ = "The AzElMask Tool mode."
+GFX_ANALYSIS_MODE.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
+GFX_ANALYSIS_MODE.AREA_TOOL.__doc__ = "The Area Tool mode."
+GFX_ANALYSIS_MODE.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
+GFX_ANALYSIS_MODE.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
 
-agcls.AgTypeNameMap["AgEGfxAnalysisMode"] = AgEGfxAnalysisMode
+agcls.AgTypeNameMap["GFX_ANALYSIS_MODE"] = GFX_ANALYSIS_MODE
 
-class AgEGfxDrawCoords(IntEnum):
+class GFX_DRAW_COORDS(IntEnum):
     """Specifies the draw coordinates for Map Control."""
     # The draw coordinates values in pixels.
-    ePixelDrawCoords = 1
+    PIXEL_DRAW_COORDS = 1
     # The draw coordinates values in screen coordinates.
-    eScreenDrawCoords = 2
+    SCREEN_DRAW_COORDS = 2
 
-AgEGfxDrawCoords.ePixelDrawCoords.__doc__ = "The draw coordinates values in pixels."
-AgEGfxDrawCoords.eScreenDrawCoords.__doc__ = "The draw coordinates values in screen coordinates."
+GFX_DRAW_COORDS.PIXEL_DRAW_COORDS.__doc__ = "The draw coordinates values in pixels."
+GFX_DRAW_COORDS.SCREEN_DRAW_COORDS.__doc__ = "The draw coordinates values in screen coordinates."
 
-agcls.AgTypeNameMap["AgEGfxDrawCoords"] = AgEGfxDrawCoords
+agcls.AgTypeNameMap["GFX_DRAW_COORDS"] = GFX_DRAW_COORDS
 
-class AgEShowProgressImage(IntEnum):
+class SHOW_PROGRESS_IMAGE(IntEnum):
     """Specifies to show progress image."""
     # Do not show any progress Image.
-    eShowProgressImageNone = 1
+    NONE = 1
     # Show the default progress image.
-    eShowProgressImageDefault = 2
+    DEFAULT = 2
     # Show the user specified progress image.
-    eShowProgressImageUser = 3
+    USER = 3
 
-AgEShowProgressImage.eShowProgressImageNone.__doc__ = "Do not show any progress Image."
-AgEShowProgressImage.eShowProgressImageDefault.__doc__ = "Show the default progress image."
-AgEShowProgressImage.eShowProgressImageUser.__doc__ = "Show the user specified progress image."
+SHOW_PROGRESS_IMAGE.NONE.__doc__ = "Do not show any progress Image."
+SHOW_PROGRESS_IMAGE.DEFAULT.__doc__ = "Show the default progress image."
+SHOW_PROGRESS_IMAGE.USER.__doc__ = "Show the user specified progress image."
 
-agcls.AgTypeNameMap["AgEShowProgressImage"] = AgEShowProgressImage
+agcls.AgTypeNameMap["SHOW_PROGRESS_IMAGE"] = SHOW_PROGRESS_IMAGE
 
-class AgEFeatureCodes(IntEnum):
+class FEATURE_CODES(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
     # The enumeration is used to check whether the engine runtime is available.
-    eFeatureCodeEngineRuntime = 1
+    ENGINE_RUNTIME = 1
     # The enumeration is used to check whether the globe is available.
-    eFeatureCodeGlobeControl = 2
+    GLOBE_CONTROL = 2
 
-AgEFeatureCodes.eFeatureCodeEngineRuntime.__doc__ = "The enumeration is used to check whether the engine runtime is available."
-AgEFeatureCodes.eFeatureCodeGlobeControl.__doc__ = "The enumeration is used to check whether the globe is available."
+FEATURE_CODES.ENGINE_RUNTIME.__doc__ = "The enumeration is used to check whether the engine runtime is available."
+FEATURE_CODES.GLOBE_CONTROL.__doc__ = "The enumeration is used to check whether the globe is available."
 
-agcls.AgTypeNameMap["AgEFeatureCodes"] = AgEFeatureCodes
+agcls.AgTypeNameMap["FEATURE_CODES"] = FEATURE_CODES
 
-class AgEProgressImageXOrigin(IntEnum):
+class PROGRESS_IMAGE_X_ORIGIN(IntEnum):
     """Specifies to align progress image X origin."""
     # Align progress Image from X left.
-    eProgressImageXLeft = 1
+    LEFT = 1
     # Align progress Image from X right.
-    eProgressImageXRight = 2
+    RIGHT = 2
     # Align progress Image from X center.
-    eProgressImageXCenter = 3
+    CENTER = 3
 
-AgEProgressImageXOrigin.eProgressImageXLeft.__doc__ = "Align progress Image from X left."
-AgEProgressImageXOrigin.eProgressImageXRight.__doc__ = "Align progress Image from X right."
-AgEProgressImageXOrigin.eProgressImageXCenter.__doc__ = "Align progress Image from X center."
+PROGRESS_IMAGE_X_ORIGIN.LEFT.__doc__ = "Align progress Image from X left."
+PROGRESS_IMAGE_X_ORIGIN.RIGHT.__doc__ = "Align progress Image from X right."
+PROGRESS_IMAGE_X_ORIGIN.CENTER.__doc__ = "Align progress Image from X center."
 
-agcls.AgTypeNameMap["AgEProgressImageXOrigin"] = AgEProgressImageXOrigin
+agcls.AgTypeNameMap["PROGRESS_IMAGE_X_ORIGIN"] = PROGRESS_IMAGE_X_ORIGIN
 
-class AgEProgressImageYOrigin(IntEnum):
+class PROGRESS_IMAGE_Y_ORIGIN(IntEnum):
     """Specifies to align progress image Y origin."""
     # Align progress Image from Y top.
-    eProgressImageYTop = 1
+    TOP = 1
     # Align progress Image from Y bottom.
-    eProgressImageYBottom = 2
+    BOTTOM = 2
     # Align progress Image from Y center.
-    eProgressImageYCenter = 3
+    CENTER = 3
 
-AgEProgressImageYOrigin.eProgressImageYTop.__doc__ = "Align progress Image from Y top."
-AgEProgressImageYOrigin.eProgressImageYBottom.__doc__ = "Align progress Image from Y bottom."
-AgEProgressImageYOrigin.eProgressImageYCenter.__doc__ = "Align progress Image from Y center."
+PROGRESS_IMAGE_Y_ORIGIN.TOP.__doc__ = "Align progress Image from Y top."
+PROGRESS_IMAGE_Y_ORIGIN.BOTTOM.__doc__ = "Align progress Image from Y bottom."
+PROGRESS_IMAGE_Y_ORIGIN.CENTER.__doc__ = "Align progress Image from Y center."
 
-agcls.AgTypeNameMap["AgEProgressImageYOrigin"] = AgEProgressImageYOrigin
+agcls.AgTypeNameMap["PROGRESS_IMAGE_Y_ORIGIN"] = PROGRESS_IMAGE_Y_ORIGIN
 
 
 class ISTKXSSLCertificateErrorEventArgs(object):
@@ -835,15 +836,15 @@ class ISTKXApplication(object):
             return arg_pbstrVal.python_val
 
     @property
-    def logging_mode(self) -> "AgELoggingMode":
+    def logging_mode(self) -> "LOGGING_MODE":
         """Controls the log file generation, and if the log file is deleted or not on application exit."""
-        with agmarshall.AgEnum_arg(AgELoggingMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(LOGGING_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_logging_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @logging_mode.setter
-    def logging_mode(self, newVal:"AgELoggingMode") -> None:
-        with agmarshall.AgEnum_arg(AgELoggingMode, newVal) as arg_newVal:
+    def logging_mode(self, newVal:"LOGGING_MODE") -> None:
+        with agmarshall.AgEnum_arg(LOGGING_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_logging_mode"](arg_newVal.COM_val))
 
     @property
@@ -858,17 +859,17 @@ class ISTKXApplication(object):
         with agmarshall.LONG_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_connect_max_connections"](arg_newVal.COM_val))
 
-    def execute_multiple_commands(self, connectCommands:list, eAction:"AgEExecMultiCmdResultAction") -> "IExecMultiCmdResult":
+    def execute_multiple_commands(self, connectCommands:list, eAction:"EXEC_MULTI_CMD_RESULT_ACTION") -> "IExecMultiCmdResult":
         """Executes multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
         with agmarshall.SAFEARRAY_arg(connectCommands) as arg_connectCommands, \
-             agmarshall.AgEnum_arg(AgEExecMultiCmdResultAction, eAction) as arg_eAction, \
+             agmarshall.AgEnum_arg(EXEC_MULTI_CMD_RESULT_ACTION, eAction) as arg_eAction, \
              agmarshall.AgInterface_out_arg() as arg_ppResult:
             agcls.evaluate_hresult(self.__dict__["_execute_multiple_commands"](byref(arg_connectCommands.COM_val), arg_eAction.COM_val, byref(arg_ppResult.COM_val)))
             return arg_ppResult.python_val
 
-    def is_feature_available(self, featureCode:"AgEFeatureCodes") -> bool:
+    def is_feature_available(self, featureCode:"FEATURE_CODES") -> bool:
         """Returns true if the specified feature is available."""
-        with agmarshall.AgEnum_arg(AgEFeatureCodes, featureCode) as arg_featureCode, \
+        with agmarshall.AgEnum_arg(FEATURE_CODES, featureCode) as arg_featureCode, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_feature_available"](arg_featureCode.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -1214,15 +1215,15 @@ class IDrawElemRect(IDrawElem):
             agcls.evaluate_hresult(self.__dict__["_set_line_width"](arg_newVal.COM_val))
 
     @property
-    def line_style(self) -> "AgELineStyle":
+    def line_style(self) -> "LINE_STYLE":
         """Specifies the style of the line."""
-        with agmarshall.AgEnum_arg(AgELineStyle) as arg_pVal:
+        with agmarshall.AgEnum_arg(LINE_STYLE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_line_style"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @line_style.setter
-    def line_style(self, newVal:"AgELineStyle") -> None:
-        with agmarshall.AgEnum_arg(AgELineStyle, newVal) as arg_newVal:
+    def line_style(self, newVal:"LINE_STYLE") -> None:
+        with agmarshall.AgEnum_arg(LINE_STYLE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_line_style"](arg_newVal.COM_val))
 
 
@@ -1521,15 +1522,15 @@ class IDrawElemLine(IDrawElem):
             agcls.evaluate_hresult(self.__dict__["_set_line_width"](arg_newVal.COM_val))
 
     @property
-    def line_style(self) -> "AgELineStyle":
+    def line_style(self) -> "LINE_STYLE":
         """Specifies the style of the line."""
-        with agmarshall.AgEnum_arg(AgELineStyle) as arg_pVal:
+        with agmarshall.AgEnum_arg(LINE_STYLE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_line_style"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @line_style.setter
-    def line_style(self, newVal:"AgELineStyle") -> None:
-        with agmarshall.AgEnum_arg(AgELineStyle, newVal) as arg_newVal:
+    def line_style(self, newVal:"LINE_STYLE") -> None:
+        with agmarshall.AgEnum_arg(LINE_STYLE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_line_style"](arg_newVal.COM_val))
 
 
@@ -1910,15 +1911,15 @@ class IUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_no_logo"](arg_bNoLogo.COM_val))
 
     @property
-    def ole_drop_mode(self) -> "AgEOLEDropMode":
+    def ole_drop_mode(self) -> "OLE_DROP_MODE":
         """How the control handles drop operations."""
-        with agmarshall.AgEnum_arg(AgEOLEDropMode) as arg_psOLEDropMode:
+        with agmarshall.AgEnum_arg(OLE_DROP_MODE) as arg_psOLEDropMode:
             agcls.evaluate_hresult(self.__dict__["_get_ole_drop_mode"](byref(arg_psOLEDropMode.COM_val)))
             return arg_psOLEDropMode.python_val
 
     @ole_drop_mode.setter
-    def ole_drop_mode(self, psOLEDropMode:"AgEOLEDropMode") -> None:
-        with agmarshall.AgEnum_arg(AgEOLEDropMode, psOLEDropMode) as arg_psOLEDropMode:
+    def ole_drop_mode(self, psOLEDropMode:"OLE_DROP_MODE") -> None:
+        with agmarshall.AgEnum_arg(OLE_DROP_MODE, psOLEDropMode) as arg_psOLEDropMode:
             agcls.evaluate_hresult(self.__dict__["_set_ole_drop_mode"](arg_psOLEDropMode.COM_val))
 
     @property
@@ -1944,15 +1945,15 @@ class IUiAxVOCntrl(object):
             return arg_ppPickInfoData.python_val
 
     @property
-    def mouse_mode(self) -> "AgEMouseMode":
+    def mouse_mode(self) -> "MOUSE_MODE":
         """Whether this control responds to mouse events."""
-        with agmarshall.AgEnum_arg(AgEMouseMode) as arg_psMouseMode:
+        with agmarshall.AgEnum_arg(MOUSE_MODE) as arg_psMouseMode:
             agcls.evaluate_hresult(self.__dict__["_get_mouse_mode"](byref(arg_psMouseMode.COM_val)))
             return arg_psMouseMode.python_val
 
     @mouse_mode.setter
-    def mouse_mode(self, psMouseMode:"AgEMouseMode") -> None:
-        with agmarshall.AgEnum_arg(AgEMouseMode, psMouseMode) as arg_psMouseMode:
+    def mouse_mode(self, psMouseMode:"MOUSE_MODE") -> None:
+        with agmarshall.AgEnum_arg(MOUSE_MODE, psMouseMode) as arg_psMouseMode:
             agcls.evaluate_hresult(self.__dict__["_set_mouse_mode"](arg_psMouseMode.COM_val))
 
     @property
@@ -2041,15 +2042,15 @@ class IUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_mouse_cursor_from_handle"](arg_cursorHandle.COM_val))
 
     @property
-    def show_progress_image(self) -> "AgEShowProgressImage":
+    def show_progress_image(self) -> "SHOW_PROGRESS_IMAGE":
         """The animated progress image type."""
-        with agmarshall.AgEnum_arg(AgEShowProgressImage) as arg_psProgressImage:
+        with agmarshall.AgEnum_arg(SHOW_PROGRESS_IMAGE) as arg_psProgressImage:
             agcls.evaluate_hresult(self.__dict__["_get_show_progress_image"](byref(arg_psProgressImage.COM_val)))
             return arg_psProgressImage.python_val
 
     @show_progress_image.setter
-    def show_progress_image(self, psProgressImage:"AgEShowProgressImage") -> None:
-        with agmarshall.AgEnum_arg(AgEShowProgressImage, psProgressImage) as arg_psProgressImage:
+    def show_progress_image(self, psProgressImage:"SHOW_PROGRESS_IMAGE") -> None:
+        with agmarshall.AgEnum_arg(SHOW_PROGRESS_IMAGE, psProgressImage) as arg_psProgressImage:
             agcls.evaluate_hresult(self.__dict__["_set_show_progress_image"](arg_psProgressImage.COM_val))
 
     @property
@@ -2089,27 +2090,27 @@ class IUiAxVOCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_progress_image_file"](arg_imageFile.COM_val))
 
     @property
-    def progress_image_x_origin(self) -> "AgEProgressImageXOrigin":
+    def progress_image_x_origin(self) -> "PROGRESS_IMAGE_X_ORIGIN":
         """The X origin alignment for animated progress image."""
-        with agmarshall.AgEnum_arg(AgEProgressImageXOrigin) as arg_psProgressImageXOrigin:
+        with agmarshall.AgEnum_arg(PROGRESS_IMAGE_X_ORIGIN) as arg_psProgressImageXOrigin:
             agcls.evaluate_hresult(self.__dict__["_get_progress_image_x_origin"](byref(arg_psProgressImageXOrigin.COM_val)))
             return arg_psProgressImageXOrigin.python_val
 
     @progress_image_x_origin.setter
-    def progress_image_x_origin(self, progressImageXOrigin:"AgEProgressImageXOrigin") -> None:
-        with agmarshall.AgEnum_arg(AgEProgressImageXOrigin, progressImageXOrigin) as arg_progressImageXOrigin:
+    def progress_image_x_origin(self, progressImageXOrigin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
+        with agmarshall.AgEnum_arg(PROGRESS_IMAGE_X_ORIGIN, progressImageXOrigin) as arg_progressImageXOrigin:
             agcls.evaluate_hresult(self.__dict__["_set_progress_image_x_origin"](arg_progressImageXOrigin.COM_val))
 
     @property
-    def progress_image_y_origin(self) -> "AgEProgressImageYOrigin":
+    def progress_image_y_origin(self) -> "PROGRESS_IMAGE_Y_ORIGIN":
         """The Y origin alignment for animated progress image."""
-        with agmarshall.AgEnum_arg(AgEProgressImageYOrigin) as arg_psProgressImageYOrigin:
+        with agmarshall.AgEnum_arg(PROGRESS_IMAGE_Y_ORIGIN) as arg_psProgressImageYOrigin:
             agcls.evaluate_hresult(self.__dict__["_get_progress_image_y_origin"](byref(arg_psProgressImageYOrigin.COM_val)))
             return arg_psProgressImageYOrigin.python_val
 
     @progress_image_y_origin.setter
-    def progress_image_y_origin(self, progressImageYOrigin:"AgEProgressImageYOrigin") -> None:
-        with agmarshall.AgEnum_arg(AgEProgressImageYOrigin, progressImageYOrigin) as arg_progressImageYOrigin:
+    def progress_image_y_origin(self, progressImageYOrigin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
+        with agmarshall.AgEnum_arg(PROGRESS_IMAGE_Y_ORIGIN, progressImageYOrigin) as arg_progressImageYOrigin:
             agcls.evaluate_hresult(self.__dict__["_set_progress_image_y_origin"](arg_progressImageYOrigin.COM_val))
 
     @property
@@ -2328,15 +2329,15 @@ class IUiAx2DCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_no_logo"](arg_bNoLogo.COM_val))
 
     @property
-    def ole_drop_mode(self) -> "AgEOLEDropMode":
+    def ole_drop_mode(self) -> "OLE_DROP_MODE":
         """How the control handles drop operations."""
-        with agmarshall.AgEnum_arg(AgEOLEDropMode) as arg_psOLEDropMode:
+        with agmarshall.AgEnum_arg(OLE_DROP_MODE) as arg_psOLEDropMode:
             agcls.evaluate_hresult(self.__dict__["_get_ole_drop_mode"](byref(arg_psOLEDropMode.COM_val)))
             return arg_psOLEDropMode.python_val
 
     @ole_drop_mode.setter
-    def ole_drop_mode(self, psOLEDropMode:"AgEOLEDropMode") -> None:
-        with agmarshall.AgEnum_arg(AgEOLEDropMode, psOLEDropMode) as arg_psOLEDropMode:
+    def ole_drop_mode(self, psOLEDropMode:"OLE_DROP_MODE") -> None:
+        with agmarshall.AgEnum_arg(OLE_DROP_MODE, psOLEDropMode) as arg_psOLEDropMode:
             agcls.evaluate_hresult(self.__dict__["_set_ole_drop_mode"](arg_psOLEDropMode.COM_val))
 
     @property
@@ -2352,15 +2353,15 @@ class IUiAx2DCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_vendor_id"](arg_vendorID.COM_val))
 
     @property
-    def mouse_mode(self) -> "AgEMouseMode":
+    def mouse_mode(self) -> "MOUSE_MODE":
         """Whether this control responds to mouse events."""
-        with agmarshall.AgEnum_arg(AgEMouseMode) as arg_psMouseMode:
+        with agmarshall.AgEnum_arg(MOUSE_MODE) as arg_psMouseMode:
             agcls.evaluate_hresult(self.__dict__["_get_mouse_mode"](byref(arg_psMouseMode.COM_val)))
             return arg_psMouseMode.python_val
 
     @mouse_mode.setter
-    def mouse_mode(self, psMouseMode:"AgEMouseMode") -> None:
-        with agmarshall.AgEnum_arg(AgEMouseMode, psMouseMode) as arg_psMouseMode:
+    def mouse_mode(self, psMouseMode:"MOUSE_MODE") -> None:
+        with agmarshall.AgEnum_arg(MOUSE_MODE, psMouseMode) as arg_psMouseMode:
             agcls.evaluate_hresult(self.__dict__["_set_mouse_mode"](arg_psMouseMode.COM_val))
 
     @property
@@ -2397,12 +2398,12 @@ class IUiAx2DCntrl(object):
         with agmarshall.VARIANT_BOOL_arg(bAdvancePickMode) as arg_bAdvancePickMode:
             agcls.evaluate_hresult(self.__dict__["_set_advanced_pick_mode"](arg_bAdvancePickMode.COM_val))
 
-    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"AgEGfxDrawCoords") -> "IWinProjectionPosition":
+    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GFX_DRAW_COORDS") -> "IWinProjectionPosition":
         """Get the window projected position for given values."""
         with agmarshall.DOUBLE_arg(lat) as arg_lat, \
              agmarshall.DOUBLE_arg(lon) as arg_lon, \
              agmarshall.DOUBLE_arg(alt) as arg_alt, \
-             agmarshall.AgEnum_arg(AgEGfxDrawCoords, drawCoords) as arg_drawCoords, \
+             agmarshall.AgEnum_arg(GFX_DRAW_COORDS, drawCoords) as arg_drawCoords, \
              agmarshall.AgInterface_out_arg() as arg_ppWinProjPos:
             agcls.evaluate_hresult(self.__dict__["_get_window_projected_position"](arg_lat.COM_val, arg_lon.COM_val, arg_alt.COM_val, arg_drawCoords.COM_val, byref(arg_ppWinProjPos.COM_val)))
             return arg_ppWinProjPos.python_val
@@ -2429,15 +2430,15 @@ class IUiAx2DCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_mouse_cursor_from_handle"](arg_cursorHandle.COM_val))
 
     @property
-    def show_progress_image(self) -> "AgEShowProgressImage":
+    def show_progress_image(self) -> "SHOW_PROGRESS_IMAGE":
         """The animated progress image type."""
-        with agmarshall.AgEnum_arg(AgEShowProgressImage) as arg_psProgressImage:
+        with agmarshall.AgEnum_arg(SHOW_PROGRESS_IMAGE) as arg_psProgressImage:
             agcls.evaluate_hresult(self.__dict__["_get_show_progress_image"](byref(arg_psProgressImage.COM_val)))
             return arg_psProgressImage.python_val
 
     @show_progress_image.setter
-    def show_progress_image(self, psProgressImage:"AgEShowProgressImage") -> None:
-        with agmarshall.AgEnum_arg(AgEShowProgressImage, psProgressImage) as arg_psProgressImage:
+    def show_progress_image(self, psProgressImage:"SHOW_PROGRESS_IMAGE") -> None:
+        with agmarshall.AgEnum_arg(SHOW_PROGRESS_IMAGE, psProgressImage) as arg_psProgressImage:
             agcls.evaluate_hresult(self.__dict__["_set_show_progress_image"](arg_psProgressImage.COM_val))
 
     @property
@@ -2477,27 +2478,27 @@ class IUiAx2DCntrl(object):
             agcls.evaluate_hresult(self.__dict__["_set_progress_image_file"](arg_imageFile.COM_val))
 
     @property
-    def progress_image_x_origin(self) -> "AgEProgressImageXOrigin":
+    def progress_image_x_origin(self) -> "PROGRESS_IMAGE_X_ORIGIN":
         """The X origin alignment for animated progress image."""
-        with agmarshall.AgEnum_arg(AgEProgressImageXOrigin) as arg_psProgressImageXOrigin:
+        with agmarshall.AgEnum_arg(PROGRESS_IMAGE_X_ORIGIN) as arg_psProgressImageXOrigin:
             agcls.evaluate_hresult(self.__dict__["_get_progress_image_x_origin"](byref(arg_psProgressImageXOrigin.COM_val)))
             return arg_psProgressImageXOrigin.python_val
 
     @progress_image_x_origin.setter
-    def progress_image_x_origin(self, progressImageXOrigin:"AgEProgressImageXOrigin") -> None:
-        with agmarshall.AgEnum_arg(AgEProgressImageXOrigin, progressImageXOrigin) as arg_progressImageXOrigin:
+    def progress_image_x_origin(self, progressImageXOrigin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
+        with agmarshall.AgEnum_arg(PROGRESS_IMAGE_X_ORIGIN, progressImageXOrigin) as arg_progressImageXOrigin:
             agcls.evaluate_hresult(self.__dict__["_set_progress_image_x_origin"](arg_progressImageXOrigin.COM_val))
 
     @property
-    def progress_image_y_origin(self) -> "AgEProgressImageYOrigin":
+    def progress_image_y_origin(self) -> "PROGRESS_IMAGE_Y_ORIGIN":
         """The Y origin alignment for animated progress image."""
-        with agmarshall.AgEnum_arg(AgEProgressImageYOrigin) as arg_psProgressImageYOrigin:
+        with agmarshall.AgEnum_arg(PROGRESS_IMAGE_Y_ORIGIN) as arg_psProgressImageYOrigin:
             agcls.evaluate_hresult(self.__dict__["_get_progress_image_y_origin"](byref(arg_psProgressImageYOrigin.COM_val)))
             return arg_psProgressImageYOrigin.python_val
 
     @progress_image_y_origin.setter
-    def progress_image_y_origin(self, progressImageYOrigin:"AgEProgressImageYOrigin") -> None:
-        with agmarshall.AgEnum_arg(AgEProgressImageYOrigin, progressImageYOrigin) as arg_progressImageYOrigin:
+    def progress_image_y_origin(self, progressImageYOrigin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
+        with agmarshall.AgEnum_arg(PROGRESS_IMAGE_Y_ORIGIN, progressImageYOrigin) as arg_progressImageYOrigin:
             agcls.evaluate_hresult(self.__dict__["_set_progress_image_y_origin"](arg_progressImageYOrigin.COM_val))
 
     @property
@@ -2784,15 +2785,15 @@ class IUiAxGfxAnalysisCntrl(object):
             return arg_pVal.python_val
 
     @property
-    def control_mode(self) -> "AgEGfxAnalysisMode":
+    def control_mode(self) -> "GFX_ANALYSIS_MODE":
         """The Graphics control mode."""
-        with agmarshall.AgEnum_arg(AgEGfxAnalysisMode) as arg_peGfxAnalysisMode:
+        with agmarshall.AgEnum_arg(GFX_ANALYSIS_MODE) as arg_peGfxAnalysisMode:
             agcls.evaluate_hresult(self.__dict__["_get_control_mode"](byref(arg_peGfxAnalysisMode.COM_val)))
             return arg_peGfxAnalysisMode.python_val
 
     @control_mode.setter
-    def control_mode(self, eGfxAnalysisMode:"AgEGfxAnalysisMode") -> None:
-        with agmarshall.AgEnum_arg(AgEGfxAnalysisMode, eGfxAnalysisMode) as arg_eGfxAnalysisMode:
+    def control_mode(self, eGfxAnalysisMode:"GFX_ANALYSIS_MODE") -> None:
+        with agmarshall.AgEnum_arg(GFX_ANALYSIS_MODE, eGfxAnalysisMode) as arg_eGfxAnalysisMode:
             agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_eGfxAnalysisMode.COM_val))
 
     @property

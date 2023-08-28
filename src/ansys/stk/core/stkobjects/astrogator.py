@@ -2,34 +2,7 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AccessStoppingCondition", "AgEVAAccessCriterion", "AgEVAAscentType", "AgEVAAtmosDataSource", "AgEVAAttitudeControl", 
-"AgEVAAttitudeUpdate", "AgEVABaseSelection", "AgEVABodyAxis", "AgEVABurnoutOptions", "AgEVABurnoutType", "AgEVACalcObjectAngleSign", 
-"AgEVACalcObjectCentralBodyReference", "AgEVACalcObjectDirection", "AgEVACalcObjectElem", "AgEVACalcObjectLocationSource", 
-"AgEVACalcObjectOrbitPlaneSource", "AgEVACalcObjectReference", "AgEVACalcObjectReferenceDirection", "AgEVACalcObjectReferenceEllipse", 
-"AgEVACalcObjectRelativePosition", "AgEVACalcObjectSunPosition", "AgEVACbAttitude", "AgEVACbEphemeris", "AgEVACbGravityModel", 
-"AgEVACbShape", "AgEVAClearEphemerisDirection", "AgEVACoeffRKV8th9th", "AgEVAComplexNumber", "AgEVAConstraintSign", "AgEVAControlAdvanced", 
-"AgEVAControlEngineConstAcc", "AgEVAControlEngineConstant", "AgEVAControlEngineCustom", "AgEVAControlEngineIon", "AgEVAControlEngineModelPoly", 
-"AgEVAControlEngineThrottleTable", "AgEVAControlFollow", "AgEVAControlInitState", "AgEVAControlLaunch", "AgEVAControlManeuver", 
-"AgEVAControlOrbitStateValue", "AgEVAControlPowerInternal", "AgEVAControlPowerProcessed", "AgEVAControlPowerSolarArray", 
-"AgEVAControlRepeatingGroundTrackErr", "AgEVAControlStoppingCondition", "AgEVAControlThrusters", "AgEVAControlUpdate", "AgEVAConvergenceCriteria", 
-"AgEVACriteria", "AgEVACriterion", "AgEVACustomFunction", "AgEVADCScalingMethod", "AgEVADeriveCalcMethod", "AgEVADifferenceOrder", 
-"AgEVADragModelType", "AgEVADrawPerturbation", "AgEVAEclipsingBodiesSource", "AgEVAElement", "AgEVAElementType", "AgEVAEngineModelFunction", 
-"AgEVAEphemSource", "AgEVAErrorControl", "AgEVAFollowJoin", "AgEVAFollowSeparation", "AgEVAFollowSpacecraftAndFuelTank", 
-"AgEVAFormulation", "AgEVAGeoMagneticFluxSource", "AgEVAGeoMagneticFluxUpdateRate", "AgEVAGeoStationaryDriftRateModel", 
-"AgEVAGeoStationaryInclinationMag", "AgEVAGoldenSectionDesiredOperation", "AgEVAGraphOption", "AgEVAGravCoeffCoefficientType", 
-"AgEVAGravCoeffNormalizationType", "AgEVAGravParamSource", "AgEVAGravitationalParameterSource", "AgEVAGridSearchDesiredOperation", 
-"AgEVAIPOPTGoal", "AgEVAIdealOrbitRadius", "AgEVAImpDeltaVRep", "AgEVALambertDirectionOfMotionType", "AgEVALambertOrbitalEnergyType", 
-"AgEVALambertSolutionOptionType", "AgEVALambertTargetCoordType", "AgEVALanguage", "AgEVALaunchDisplaySystem", "AgEVALightingCondition", 
-"AgEVAManeuverType", "AgEVAMarsGRAMDensityType", "AgEVANumericalIntegrator", "AgEVAOptimalFiniteDiscretizationStrategy", 
-"AgEVAOptimalFiniteExportNodesFormat", "AgEVAOptimalFiniteGuessMethod", "AgEVAOptimalFiniteRunMode", "AgEVAOptimalFiniteSNOPTObjective", 
-"AgEVAOptimalFiniteSNOPTScaling", "AgEVAOptimalFiniteScalingOptions", "AgEVAOptimalFiniteSeedMethod", "AgEVAOptimalFiniteWorkingVariables", 
-"AgEVAPredictorCorrector", "AgEVAPressureMode", "AgEVAProfile", "AgEVAProfileInsertDirection", "AgEVAProfileMode", "AgEVAProfilesFinish", 
-"AgEVAPropulsionMethod", "AgEVAReferenceRadiusSource", "AgEVAReturnControl", "AgEVARootFindingAlgorithm", "AgEVARotatingCoordinateSystem", 
-"AgEVARunCode", "AgEVASNOPTGoal", "AgEVASTMEigenNumber", "AgEVASTMPertVariables", "AgEVAScriptingParameterType", "AgEVASegmentDifferenceOrder", 
-"AgEVASegmentState", "AgEVASegmentType", "AgEVASequenceStateToPass", "AgEVAShadowModel", "AgEVASmartRunMode", "AgEVASolarForceMethod", 
-"AgEVASquaredType", "AgEVAState", "AgEVAStoppingCondition", "AgEVASunPosition", "AgEVATabVecInterpMethod", "AgEVATargetSeqAction", 
-"AgEVAThirdBodyMode", "AgEVAThrottleTableOperationMode", "AgEVAThrustType", "AgEVAThrusterDirection", "AgEVAUpdateAction", 
-"AgEVAUpdateParam", "AgEVAVenusGRAMDensityType", "AsTriggerCondition", "AstrogatorCentralBody", "AttitudeControlFiniteAntiVelocityVector", 
+__all__ = ["AccessStoppingCondition", "AsTriggerCondition", "AstrogatorCentralBody", "AttitudeControlFiniteAntiVelocityVector", 
 "AttitudeControlFiniteAttitude", "AttitudeControlFiniteFile", "AttitudeControlFinitePlugin", "AttitudeControlFiniteThrustVector", 
 "AttitudeControlFiniteTimeVarying", "AttitudeControlFiniteVelocityVector", "AttitudeControlImpulsiveAntiVelocityVector", 
 "AttitudeControlImpulsiveAttitude", "AttitudeControlImpulsiveFile", "AttitudeControlImpulsiveThrustVector", "AttitudeControlImpulsiveVelocityVector", 
@@ -192,7 +165,34 @@ __all__ = ["AccessStoppingCondition", "AgEVAAccessCriterion", "AgEVAAscentType",
 "TargeterGraphActiveControlCollection", "TargeterGraphCollection", "TargeterGraphResult", "TargeterGraphResultCollection", 
 "ThirdBodyFunction", "Thruster", "ThrusterSet", "ThrusterSetCollection", "TwoBodyFunction", "US_Standard_Atmosphere", "UserVariable", 
 "UserVariableCollection", "UserVariableDefinition", "UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", 
-"VenusGRAM2005", "YarkovskyFunc"]
+"VADC_SCALING_METHOD", "VAIPOPT_GOAL", "VASNOPT_GOAL", "VASTM_EIGEN_NUMBER", "VASTM_PERT_VARIABLES", "VA_ACCESS_CRITERION", 
+"VA_ASCENT_TYPE", "VA_ATMOS_DATA_SOURCE", "VA_ATTITUDE_CONTROL", "VA_ATTITUDE_UPDATE", "VA_BASE_SELECTION", "VA_BODY_AXIS", 
+"VA_BURNOUT_OPTIONS", "VA_BURNOUT_TYPE", "VA_CALC_OBJECT_ANGLE_SIGN", "VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE", "VA_CALC_OBJECT_DIRECTION", 
+"VA_CALC_OBJECT_ELEM", "VA_CALC_OBJECT_LOCATION_SOURCE", "VA_CALC_OBJECT_ORBIT_PLANE_SOURCE", "VA_CALC_OBJECT_REFERENCE", 
+"VA_CALC_OBJECT_REFERENCE_DIRECTION", "VA_CALC_OBJECT_REFERENCE_ELLIPSE", "VA_CALC_OBJECT_RELATIVE_POSITION", "VA_CALC_OBJECT_SUN_POSITION", 
+"VA_CB_ATTITUDE", "VA_CB_EPHEMERIS", "VA_CB_GRAVITY_MODEL", "VA_CB_SHAPE", "VA_CLEAR_EPHEMERIS_DIRECTION", "VA_COEFF_R_K_V_8TH9_TH", 
+"VA_COMPLEX_NUMBER", "VA_CONSTRAINT_SIGN", "VA_CONTROL_ADVANCED", "VA_CONTROL_ENGINE_CONSTANT", "VA_CONTROL_ENGINE_CONST_ACC", 
+"VA_CONTROL_ENGINE_CUSTOM", "VA_CONTROL_ENGINE_ION", "VA_CONTROL_ENGINE_MODEL_POLY", "VA_CONTROL_ENGINE_THROTTLE_TABLE", 
+"VA_CONTROL_FOLLOW", "VA_CONTROL_INIT_STATE", "VA_CONTROL_LAUNCH", "VA_CONTROL_MANEUVER", "VA_CONTROL_ORBIT_STATE_VALUE", 
+"VA_CONTROL_POWER_INTERNAL", "VA_CONTROL_POWER_PROCESSED", "VA_CONTROL_POWER_SOLAR_ARRAY", "VA_CONTROL_REPEATING_GROUND_TRACK_ERR", 
+"VA_CONTROL_STOPPING_CONDITION", "VA_CONTROL_THRUSTERS", "VA_CONTROL_UPDATE", "VA_CONVERGENCE_CRITERIA", "VA_CRITERIA", 
+"VA_CRITERION", "VA_CUSTOM_FUNCTION", "VA_DERIVE_CALC_METHOD", "VA_DIFFERENCE_ORDER", "VA_DRAG_MODEL_TYPE", "VA_DRAW_PERTURBATION", 
+"VA_ECLIPSING_BODIES_SOURCE", "VA_ELEMENT", "VA_ELEMENT_TYPE", "VA_ENGINE_MODEL_FUNCTION", "VA_EPHEM_SOURCE", "VA_ERROR_CONTROL", 
+"VA_FOLLOW_JOIN", "VA_FOLLOW_SEPARATION", "VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK", "VA_FORMULATION", "VA_GEO_MAGNETIC_FLUX_SOURCE", 
+"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE", "VA_GEO_STATIONARY_DRIFT_RATE_MODEL", "VA_GEO_STATIONARY_INCLINATION_MAG", "VA_GOLDEN_SECTION_DESIRED_OPERATION", 
+"VA_GRAPH_OPTION", "VA_GRAVITATIONAL_PARAMETER_SOURCE", "VA_GRAV_COEFF_COEFFICIENT_TYPE", "VA_GRAV_COEFF_NORMALIZATION_TYPE", 
+"VA_GRAV_PARAM_SOURCE", "VA_GRID_SEARCH_DESIRED_OPERATION", "VA_IDEAL_ORBIT_RADIUS", "VA_IMP_DELTA_V_REP", "VA_LAMBERT_DIRECTION_OF_MOTION_TYPE", 
+"VA_LAMBERT_ORBITAL_ENERGY_TYPE", "VA_LAMBERT_SOLUTION_OPTION_TYPE", "VA_LAMBERT_TARGET_COORD_TYPE", "VA_LANGUAGE", "VA_LAUNCH_DISPLAY_SYSTEM", 
+"VA_LIGHTING_CONDITION", "VA_MANEUVER_TYPE", "VA_MARS_GRAM_DENSITY_TYPE", "VA_NUMERICAL_INTEGRATOR", "VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY", 
+"VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT", "VA_OPTIMAL_FINITE_GUESS_METHOD", "VA_OPTIMAL_FINITE_RUN_MODE", "VA_OPTIMAL_FINITE_SCALING_OPTIONS", 
+"VA_OPTIMAL_FINITE_SEED_METHOD", "VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE", "VA_OPTIMAL_FINITE_SNOPT_SCALING", "VA_OPTIMAL_FINITE_WORKING_VARIABLES", 
+"VA_PREDICTOR_CORRECTOR", "VA_PRESSURE_MODE", "VA_PROFILE", "VA_PROFILES_FINISH", "VA_PROFILE_INSERT_DIRECTION", "VA_PROFILE_MODE", 
+"VA_PROPULSION_METHOD", "VA_REFERENCE_RADIUS_SOURCE", "VA_RETURN_CONTROL", "VA_ROOT_FINDING_ALGORITHM", "VA_ROTATING_COORDINATE_SYSTEM", 
+"VA_RUN_CODE", "VA_SCRIPTING_PARAMETER_TYPE", "VA_SEGMENT_DIFFERENCE_ORDER", "VA_SEGMENT_STATE", "VA_SEGMENT_TYPE", "VA_SEQUENCE_STATE_TO_PASS", 
+"VA_SHADOW_MODEL", "VA_SMART_RUN_MODE", "VA_SOLAR_FORCE_METHOD", "VA_SQUARED_TYPE", "VA_STATE", "VA_STOPPING_CONDITION", 
+"VA_SUN_POSITION", "VA_TAB_VEC_INTERP_METHOD", "VA_TARGET_SEQ_ACTION", "VA_THIRD_BODY_MODE", "VA_THROTTLE_TABLE_OPERATION_MODE", 
+"VA_THRUSTER_DIRECTION", "VA_THRUST_TYPE", "VA_UPDATE_ACTION", "VA_UPDATE_PARAM", "VA_VENUS_GRAM_DENSITY_TYPE", "VenusGRAM2005", 
+"YarkovskyFunc"]
 
 import typing
 
@@ -200,12 +200,12 @@ from ctypes   import byref, POINTER
 from enum     import IntEnum
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
@@ -224,2936 +224,2936 @@ from ..stkobjects import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class AgEVAGraphOption(IntEnum):
+class VA_GRAPH_OPTION(IntEnum):
     """Mode that the mcs will run in."""
     # Don't graph.
-    eVAGraphOptionNoGraph = 0
+    NO_GRAPH = 0
     # Graph the difference.
-    eVAGraphOptionGraphDifference = 1
+    GRAPH_DIFFERENCE = 1
     # Graph the value.
-    eVAGraphOptionGraphValue = 2
+    GRAPH_VALUE = 2
 
-AgEVAGraphOption.eVAGraphOptionNoGraph.__doc__ = "Don't graph."
-AgEVAGraphOption.eVAGraphOptionGraphDifference.__doc__ = "Graph the difference."
-AgEVAGraphOption.eVAGraphOptionGraphValue.__doc__ = "Graph the value."
+VA_GRAPH_OPTION.NO_GRAPH.__doc__ = "Don't graph."
+VA_GRAPH_OPTION.GRAPH_DIFFERENCE.__doc__ = "Graph the difference."
+VA_GRAPH_OPTION.GRAPH_VALUE.__doc__ = "Graph the value."
 
-agcls.AgTypeNameMap["AgEVAGraphOption"] = AgEVAGraphOption
+agcls.AgTypeNameMap["VA_GRAPH_OPTION"] = VA_GRAPH_OPTION
 
-class AgEVASmartRunMode(IntEnum):
+class VA_SMART_RUN_MODE(IntEnum):
     """Mode that the mcs will run in."""
     # Run Entire Mission Control Sequence
-    eVASmartRunModeEntireMCS = 0
+    ENTIRE_MCS = 0
     # Run Only Changed Segments
-    eVASmartRunModeOnlyChanged = 1
+    ONLY_CHANGED = 1
 
-AgEVASmartRunMode.eVASmartRunModeEntireMCS.__doc__ = "Run Entire Mission Control Sequence"
-AgEVASmartRunMode.eVASmartRunModeOnlyChanged.__doc__ = "Run Only Changed Segments"
+VA_SMART_RUN_MODE.ENTIRE_MCS.__doc__ = "Run Entire Mission Control Sequence"
+VA_SMART_RUN_MODE.ONLY_CHANGED.__doc__ = "Run Only Changed Segments"
 
-agcls.AgTypeNameMap["AgEVASmartRunMode"] = AgEVASmartRunMode
+agcls.AgTypeNameMap["VA_SMART_RUN_MODE"] = VA_SMART_RUN_MODE
 
-class AgEVAFormulation(IntEnum):
+class VA_FORMULATION(IntEnum):
     """Equinoctial Formulation."""
     # Posigrade.
-    eVAFormulationPosigrade = 0
+    POSIGRADE = 0
     # Retrograde.
-    eVAFormulationRetrograde = 1
+    RETROGRADE = 1
 
-AgEVAFormulation.eVAFormulationPosigrade.__doc__ = "Posigrade."
-AgEVAFormulation.eVAFormulationRetrograde.__doc__ = "Retrograde."
+VA_FORMULATION.POSIGRADE.__doc__ = "Posigrade."
+VA_FORMULATION.RETROGRADE.__doc__ = "Retrograde."
 
-agcls.AgTypeNameMap["AgEVAFormulation"] = AgEVAFormulation
+agcls.AgTypeNameMap["VA_FORMULATION"] = VA_FORMULATION
 
-class AgEVALightingCondition(IntEnum):
+class VA_LIGHTING_CONDITION(IntEnum):
     """The criteria of a Lighting stopping condition."""
     # The Enter Direct Sun criterion.
-    eVALightingCriterionEnterDirectSun = 0
+    CRITERION_ENTER_DIRECT_SUN = 0
     # The Exit Direct Sun criterion.
-    eVALightingCriterionExitDirectSun = 1
+    CRITERION_EXIT_DIRECT_SUN = 1
     # The Enter Umbra criterion.
-    eVALightingCriterionEnterUmbra = 2
+    CRITERION_ENTER_UMBRA = 2
     # The Exit Umbra criterion.
-    eVALightingCriterionExitUmbra = 3
+    CRITERION_EXIT_UMBRA = 3
 
-AgEVALightingCondition.eVALightingCriterionEnterDirectSun.__doc__ = "The Enter Direct Sun criterion."
-AgEVALightingCondition.eVALightingCriterionExitDirectSun.__doc__ = "The Exit Direct Sun criterion."
-AgEVALightingCondition.eVALightingCriterionEnterUmbra.__doc__ = "The Enter Umbra criterion."
-AgEVALightingCondition.eVALightingCriterionExitUmbra.__doc__ = "The Exit Umbra criterion."
+VA_LIGHTING_CONDITION.CRITERION_ENTER_DIRECT_SUN.__doc__ = "The Enter Direct Sun criterion."
+VA_LIGHTING_CONDITION.CRITERION_EXIT_DIRECT_SUN.__doc__ = "The Exit Direct Sun criterion."
+VA_LIGHTING_CONDITION.CRITERION_ENTER_UMBRA.__doc__ = "The Enter Umbra criterion."
+VA_LIGHTING_CONDITION.CRITERION_EXIT_UMBRA.__doc__ = "The Exit Umbra criterion."
 
-agcls.AgTypeNameMap["AgEVALightingCondition"] = AgEVALightingCondition
+agcls.AgTypeNameMap["VA_LIGHTING_CONDITION"] = VA_LIGHTING_CONDITION
 
-class AgEVAProfile(IntEnum):
+class VA_PROFILE(IntEnum):
     """Type of profile."""
     # Plugin search profile.
-    eVAProfileSearchPlugin = 0
+    SEARCH_PLUGIN = 0
     # Differential corrector profile.
-    eVAProfileDifferentialCorrector = 2
+    DIFFERENTIAL_CORRECTOR = 2
     # Change maneuver type profile.
-    eVAProfileChangeManeuverType = 3
+    CHANGE_MANEUVER_TYPE = 3
     # Scripting tool profile.
-    eVAProfileScriptingTool = 4
+    SCRIPTING_TOOL = 4
     # Change return segment profile.
-    eVAProfileChangeReturnSegment = 5
+    CHANGE_RETURN_SEGMENT = 5
     # Change propagator profile.
-    eVAProfileChangePropagator = 6
+    CHANGE_PROPAGATOR = 6
     # Change stop segment profile.
-    eVAProfileChangeStopSegment = 7
+    CHANGE_STOP_SEGMENT = 7
     # Change stopping condition state profile.
-    eVAProfileChangeStoppingConditionState = 8
+    CHANGE_STOPPING_CONDITION_STATE = 8
     # Change seed finite maneuver profile.
-    eVAProfileSeedFiniteManeuver = 9
+    SEED_FINITE_MANEUVER = 9
     # Run once profile.
-    eVAProfileRunOnce = 10
+    RUN_ONCE = 10
     # SNOPT Optimizer profile.
-    eVAProfileSNOPTOptimizer = 11
+    SNOPT_OPTIMIZER = 11
     # IPOPT Optimizer profile.
-    eVAProfileIPOPTOptimizer = 12
+    IPOPT_OPTIMIZER = 12
     # Lambert profile.
-    eVAProfileLambertProfile = 13
+    LAMBERT_PROFILE = 13
     # Lambert Search profile.
-    eVAProfileLambertSearchProfile = 14
+    LAMBERT_SEARCH_PROFILE = 14
     # Golden Section profile.
-    eVAProfileGoldenSection = 15
+    GOLDEN_SECTION = 15
     # grid Search profile.
-    eVAProfileGridSearch = 16
+    GRID_SEARCH = 16
     # Single Parameter Bisection profile.
-    eVAProfileBisection = 17
+    BISECTION = 17
 
-AgEVAProfile.eVAProfileSearchPlugin.__doc__ = "Plugin search profile."
-AgEVAProfile.eVAProfileDifferentialCorrector.__doc__ = "Differential corrector profile."
-AgEVAProfile.eVAProfileChangeManeuverType.__doc__ = "Change maneuver type profile."
-AgEVAProfile.eVAProfileScriptingTool.__doc__ = "Scripting tool profile."
-AgEVAProfile.eVAProfileChangeReturnSegment.__doc__ = "Change return segment profile."
-AgEVAProfile.eVAProfileChangePropagator.__doc__ = "Change propagator profile."
-AgEVAProfile.eVAProfileChangeStopSegment.__doc__ = "Change stop segment profile."
-AgEVAProfile.eVAProfileChangeStoppingConditionState.__doc__ = "Change stopping condition state profile."
-AgEVAProfile.eVAProfileSeedFiniteManeuver.__doc__ = "Change seed finite maneuver profile."
-AgEVAProfile.eVAProfileRunOnce.__doc__ = "Run once profile."
-AgEVAProfile.eVAProfileSNOPTOptimizer.__doc__ = "SNOPT Optimizer profile."
-AgEVAProfile.eVAProfileIPOPTOptimizer.__doc__ = "IPOPT Optimizer profile."
-AgEVAProfile.eVAProfileLambertProfile.__doc__ = "Lambert profile."
-AgEVAProfile.eVAProfileLambertSearchProfile.__doc__ = "Lambert Search profile."
-AgEVAProfile.eVAProfileGoldenSection.__doc__ = "Golden Section profile."
-AgEVAProfile.eVAProfileGridSearch.__doc__ = "grid Search profile."
-AgEVAProfile.eVAProfileBisection.__doc__ = "Single Parameter Bisection profile."
+VA_PROFILE.SEARCH_PLUGIN.__doc__ = "Plugin search profile."
+VA_PROFILE.DIFFERENTIAL_CORRECTOR.__doc__ = "Differential corrector profile."
+VA_PROFILE.CHANGE_MANEUVER_TYPE.__doc__ = "Change maneuver type profile."
+VA_PROFILE.SCRIPTING_TOOL.__doc__ = "Scripting tool profile."
+VA_PROFILE.CHANGE_RETURN_SEGMENT.__doc__ = "Change return segment profile."
+VA_PROFILE.CHANGE_PROPAGATOR.__doc__ = "Change propagator profile."
+VA_PROFILE.CHANGE_STOP_SEGMENT.__doc__ = "Change stop segment profile."
+VA_PROFILE.CHANGE_STOPPING_CONDITION_STATE.__doc__ = "Change stopping condition state profile."
+VA_PROFILE.SEED_FINITE_MANEUVER.__doc__ = "Change seed finite maneuver profile."
+VA_PROFILE.RUN_ONCE.__doc__ = "Run once profile."
+VA_PROFILE.SNOPT_OPTIMIZER.__doc__ = "SNOPT Optimizer profile."
+VA_PROFILE.IPOPT_OPTIMIZER.__doc__ = "IPOPT Optimizer profile."
+VA_PROFILE.LAMBERT_PROFILE.__doc__ = "Lambert profile."
+VA_PROFILE.LAMBERT_SEARCH_PROFILE.__doc__ = "Lambert Search profile."
+VA_PROFILE.GOLDEN_SECTION.__doc__ = "Golden Section profile."
+VA_PROFILE.GRID_SEARCH.__doc__ = "grid Search profile."
+VA_PROFILE.BISECTION.__doc__ = "Single Parameter Bisection profile."
 
-agcls.AgTypeNameMap["AgEVAProfile"] = AgEVAProfile
+agcls.AgTypeNameMap["VA_PROFILE"] = VA_PROFILE
 
-class AgEVAAccessCriterion(IntEnum):
+class VA_ACCESS_CRITERION(IntEnum):
     """The criteria of an Access stopping condition."""
     # The Gain Access criterion.
-    eVAAccessCriterionGain = 0
+    GAIN = 0
     # The Lose Access criterion.
-    eVAAccessCriterionLose = 1
+    LOSE = 1
     # The Either criterion.
-    eVAAccessCriterionEither = 2
+    EITHER = 2
 
-AgEVAAccessCriterion.eVAAccessCriterionGain.__doc__ = "The Gain Access criterion."
-AgEVAAccessCriterion.eVAAccessCriterionLose.__doc__ = "The Lose Access criterion."
-AgEVAAccessCriterion.eVAAccessCriterionEither.__doc__ = "The Either criterion."
+VA_ACCESS_CRITERION.GAIN.__doc__ = "The Gain Access criterion."
+VA_ACCESS_CRITERION.LOSE.__doc__ = "The Lose Access criterion."
+VA_ACCESS_CRITERION.EITHER.__doc__ = "The Either criterion."
 
-agcls.AgTypeNameMap["AgEVAAccessCriterion"] = AgEVAAccessCriterion
+agcls.AgTypeNameMap["VA_ACCESS_CRITERION"] = VA_ACCESS_CRITERION
 
-class AgEVAEclipsingBodiesSource(IntEnum):
+class VA_ECLIPSING_BODIES_SOURCE(IntEnum):
     """The source types of the eclipsing bodies list."""
     # The eclipsing bodies list of the propagator's central body.
-    eVAEclipsingBodiesPropagatorCb = 0
+    PROPAGATOR_CB = 0
     # A user-defined eclipsing bodies list related to the propagator's central body.
-    eVAEclipsingBodiesUserDefined = 1
+    USER_DEFINED = 1
     # The eclipsing bodies list of the vehicle's central body.
-    eVAEclipsingBodiesVehicleCb = 2
+    VEHICLE_CB = 2
     # A list of eclipsing bodies from the vehicle's Basic Properties->Eclipse Bodies list.
-    eVAEclipsingBodiesVehicleUserDefined = 3
+    VEHICLE_USER_DEFINED = 3
 
-AgEVAEclipsingBodiesSource.eVAEclipsingBodiesPropagatorCb.__doc__ = "The eclipsing bodies list of the propagator's central body."
-AgEVAEclipsingBodiesSource.eVAEclipsingBodiesUserDefined.__doc__ = "A user-defined eclipsing bodies list related to the propagator's central body."
-AgEVAEclipsingBodiesSource.eVAEclipsingBodiesVehicleCb.__doc__ = "The eclipsing bodies list of the vehicle's central body."
-AgEVAEclipsingBodiesSource.eVAEclipsingBodiesVehicleUserDefined.__doc__ = "A list of eclipsing bodies from the vehicle's Basic Properties->Eclipse Bodies list."
+VA_ECLIPSING_BODIES_SOURCE.PROPAGATOR_CB.__doc__ = "The eclipsing bodies list of the propagator's central body."
+VA_ECLIPSING_BODIES_SOURCE.USER_DEFINED.__doc__ = "A user-defined eclipsing bodies list related to the propagator's central body."
+VA_ECLIPSING_BODIES_SOURCE.VEHICLE_CB.__doc__ = "The eclipsing bodies list of the vehicle's central body."
+VA_ECLIPSING_BODIES_SOURCE.VEHICLE_USER_DEFINED.__doc__ = "A list of eclipsing bodies from the vehicle's Basic Properties->Eclipse Bodies list."
 
-agcls.AgTypeNameMap["AgEVAEclipsingBodiesSource"] = AgEVAEclipsingBodiesSource
+agcls.AgTypeNameMap["VA_ECLIPSING_BODIES_SOURCE"] = VA_ECLIPSING_BODIES_SOURCE
 
-class AgEVACriterion(IntEnum):
+class VA_CRITERION(IntEnum):
     """The stopping condition criterion types."""
     # The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing.
-    eVACriterionCrossDecreasing = 0
+    CROSS_DECREASING = 0
     # The Cross Either criterion - the stopping condition is satisfied when either of the above situations occurs.
-    eVACriterionCrossEither = 1
+    CROSS_EITHER = 1
     # The Cross Increasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while increasing.
-    eVACriterionCrossIncreasing = 2
+    CROSS_INCREASING = 2
 
-AgEVACriterion.eVACriterionCrossDecreasing.__doc__ = "The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing."
-AgEVACriterion.eVACriterionCrossEither.__doc__ = "The Cross Either criterion - the stopping condition is satisfied when either of the above situations occurs."
-AgEVACriterion.eVACriterionCrossIncreasing.__doc__ = "The Cross Increasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while increasing."
+VA_CRITERION.CROSS_DECREASING.__doc__ = "The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing."
+VA_CRITERION.CROSS_EITHER.__doc__ = "The Cross Either criterion - the stopping condition is satisfied when either of the above situations occurs."
+VA_CRITERION.CROSS_INCREASING.__doc__ = "The Cross Increasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while increasing."
 
-agcls.AgTypeNameMap["AgEVACriterion"] = AgEVACriterion
+agcls.AgTypeNameMap["VA_CRITERION"] = VA_CRITERION
 
-class AgEVACalcObjectReference(IntEnum):
+class VA_CALC_OBJECT_REFERENCE(IntEnum):
     """The calculation object Reference Selection types."""
     # The Use Basic Reference type - uses the current satellite as the reference vehicle.
-    eVACalcObjectReferenceBasic = 0
+    BASIC = 0
     # The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle.
-    eVACalcObjectReferenceSpecified = 1
+    SPECIFIED = 1
 
-AgEVACalcObjectReference.eVACalcObjectReferenceBasic.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
-AgEVACalcObjectReference.eVACalcObjectReferenceSpecified.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
+VA_CALC_OBJECT_REFERENCE.BASIC.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
+VA_CALC_OBJECT_REFERENCE.SPECIFIED.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
 
-agcls.AgTypeNameMap["AgEVACalcObjectReference"] = AgEVACalcObjectReference
+agcls.AgTypeNameMap["VA_CALC_OBJECT_REFERENCE"] = VA_CALC_OBJECT_REFERENCE
 
-class AgEVACalcObjectCentralBodyReference(IntEnum):
+class VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE(IntEnum):
     """The calculation object Central Body Reference Selection types."""
     # The Use Basic Reference type - uses the current satellite as the reference vehicle.
-    eVACalcObjectCentralBodyReferenceSpecified = 0
+    SPECIFIED = 0
     # The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle.
-    eVACalcObjectCentralBodyReferenceParent = 1
+    PARENT = 1
 
-AgEVACalcObjectCentralBodyReference.eVACalcObjectCentralBodyReferenceSpecified.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
-AgEVACalcObjectCentralBodyReference.eVACalcObjectCentralBodyReferenceParent.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
+VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
+VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
 
-agcls.AgTypeNameMap["AgEVACalcObjectCentralBodyReference"] = AgEVACalcObjectCentralBodyReference
+agcls.AgTypeNameMap["VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE"] = VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE
 
-class AgEVACalcObjectElem(IntEnum):
+class VA_CALC_OBJECT_ELEM(IntEnum):
     """The calculation object Element Types."""
     # Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2.
-    eVACalcObjectElemBrouwerLyddaneMeanLong = 0
+    BROUWER_LYDDANE_MEAN_LONG = 0
     # Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term.
-    eVACalcObjectElemBrouwerLyddaneMeanShort = 1
+    BROUWER_LYDDANE_MEAN_SHORT = 1
     # Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term.
-    eVACalcObjectElemKozaiIzsakMean = 2
+    KOZAI_IZSAK_MEAN = 2
     # Osculating.
-    eVACalcObjectElemOsculating = 3
+    OSCULATING = 3
 
-AgEVACalcObjectElem.eVACalcObjectElemBrouwerLyddaneMeanLong.__doc__ = "Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
-AgEVACalcObjectElem.eVACalcObjectElemBrouwerLyddaneMeanShort.__doc__ = "Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
-AgEVACalcObjectElem.eVACalcObjectElemKozaiIzsakMean.__doc__ = "Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term."
-AgEVACalcObjectElem.eVACalcObjectElemOsculating.__doc__ = "Osculating."
+VA_CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG.__doc__ = "Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
+VA_CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT.__doc__ = "Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
+VA_CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN.__doc__ = "Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term."
+VA_CALC_OBJECT_ELEM.OSCULATING.__doc__ = "Osculating."
 
-agcls.AgTypeNameMap["AgEVACalcObjectElem"] = AgEVACalcObjectElem
+agcls.AgTypeNameMap["VA_CALC_OBJECT_ELEM"] = VA_CALC_OBJECT_ELEM
 
-class AgEVAProfileMode(IntEnum):
+class VA_PROFILE_MODE(IntEnum):
     """The Target Sequence profile modes."""
     # Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution.
-    eVAProfileModeIterate = 0
+    ITERATE = 0
     # Not Active - the Target Sequence will ignore the profile when running.
-    eVAProfileModeNotActive = 1
+    NOT_ACTIVE = 1
     # Run Once - the Target Sequence will run the profile once according to its current configuration.
-    eVAProfileModeRunOnce = 2
+    RUN_ONCE = 2
     # Active - the Target Sequence will apply the change that the profile passes when running.
-    eVAProfileModeActive = 3
+    ACTIVE = 3
 
-AgEVAProfileMode.eVAProfileModeIterate.__doc__ = "Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."
-AgEVAProfileMode.eVAProfileModeNotActive.__doc__ = "Not Active - the Target Sequence will ignore the profile when running."
-AgEVAProfileMode.eVAProfileModeRunOnce.__doc__ = "Run Once - the Target Sequence will run the profile once according to its current configuration."
-AgEVAProfileMode.eVAProfileModeActive.__doc__ = "Active - the Target Sequence will apply the change that the profile passes when running."
+VA_PROFILE_MODE.ITERATE.__doc__ = "Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."
+VA_PROFILE_MODE.NOT_ACTIVE.__doc__ = "Not Active - the Target Sequence will ignore the profile when running."
+VA_PROFILE_MODE.RUN_ONCE.__doc__ = "Run Once - the Target Sequence will run the profile once according to its current configuration."
+VA_PROFILE_MODE.ACTIVE.__doc__ = "Active - the Target Sequence will apply the change that the profile passes when running."
 
-agcls.AgTypeNameMap["AgEVAProfileMode"] = AgEVAProfileMode
+agcls.AgTypeNameMap["VA_PROFILE_MODE"] = VA_PROFILE_MODE
 
-class AgEVAControlStoppingCondition(IntEnum):
+class VA_CONTROL_STOPPING_CONDITION(IntEnum):
     """The stopping condition control types."""
     # Trip - the value at which the stopping condition will be satisfied.
-    eVAControlStoppingConditionTripValue = 0
+    TRIP_VALUE = 0
 
-AgEVAControlStoppingCondition.eVAControlStoppingConditionTripValue.__doc__ = "Trip - the value at which the stopping condition will be satisfied."
+VA_CONTROL_STOPPING_CONDITION.TRIP_VALUE.__doc__ = "Trip - the value at which the stopping condition will be satisfied."
 
-agcls.AgTypeNameMap["AgEVAControlStoppingCondition"] = AgEVAControlStoppingCondition
+agcls.AgTypeNameMap["VA_CONTROL_STOPPING_CONDITION"] = VA_CONTROL_STOPPING_CONDITION
 
-class AgEVAState(IntEnum):
+class VA_STATE(IntEnum):
     """The Stop segment state types."""
     # Enabled - the segment stops the run of the MCS.
-    eVAStateEnabled = 0
+    ENABLED = 0
     # Disabled - the MCS ignores this segment and continues to run.
-    eVAStateDisabled = 1
+    DISABLED = 1
 
-AgEVAState.eVAStateEnabled.__doc__ = "Enabled - the segment stops the run of the MCS."
-AgEVAState.eVAStateDisabled.__doc__ = "Disabled - the MCS ignores this segment and continues to run."
+VA_STATE.ENABLED.__doc__ = "Enabled - the segment stops the run of the MCS."
+VA_STATE.DISABLED.__doc__ = "Disabled - the MCS ignores this segment and continues to run."
 
-agcls.AgTypeNameMap["AgEVAState"] = AgEVAState
+agcls.AgTypeNameMap["VA_STATE"] = VA_STATE
 
-class AgEVAReturnControl(IntEnum):
+class VA_RETURN_CONTROL(IntEnum):
     """The Return segment control types"""
     # Enable - returns control of the MCS run to the parent segment.
-    eVAReturnControlEnable = 0
+    ENABLE = 0
     # Disable - the MCS ignores this segment and continues to run.
-    eVAReturnControlDisable = 1
+    DISABLE = 1
     # Enable (except Profiles bypass)- functions as enabled except when run from a Target Sequence profile (e.g., a differential corrector), which will ignore it.
-    eVAReturnControlEnableExceptProfilesBypass = 2
+    ENABLE_EXCEPT_PROFILES_BYPASS = 2
 
-AgEVAReturnControl.eVAReturnControlEnable.__doc__ = "Enable - returns control of the MCS run to the parent segment."
-AgEVAReturnControl.eVAReturnControlDisable.__doc__ = "Disable - the MCS ignores this segment and continues to run."
-AgEVAReturnControl.eVAReturnControlEnableExceptProfilesBypass.__doc__ = "Enable (except Profiles bypass)- functions as enabled except when run from a Target Sequence profile (e.g., a differential corrector), which will ignore it."
+VA_RETURN_CONTROL.ENABLE.__doc__ = "Enable - returns control of the MCS run to the parent segment."
+VA_RETURN_CONTROL.DISABLE.__doc__ = "Disable - the MCS ignores this segment and continues to run."
+VA_RETURN_CONTROL.ENABLE_EXCEPT_PROFILES_BYPASS.__doc__ = "Enable (except Profiles bypass)- functions as enabled except when run from a Target Sequence profile (e.g., a differential corrector), which will ignore it."
 
-agcls.AgTypeNameMap["AgEVAReturnControl"] = AgEVAReturnControl
+agcls.AgTypeNameMap["VA_RETURN_CONTROL"] = VA_RETURN_CONTROL
 
-class AgEVADrawPerturbation(IntEnum):
+class VA_DRAW_PERTURBATION(IntEnum):
     """The Draw Perturbation types for a Differential Corrector profile."""
     # Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence.
-    eVADrawPerturbationSegmentColor = 0
+    SEGMENT_COLOR = 0
     # Don't Draw - perturbations will not be drawn, which may decrease the run time of the target sequence.
-    eVADrawPerturbationDontDraw = 1
+    DONT_DRAW = 1
     # Targeter Color - perturbations will be displayed in the trajectory color defined for the target sequence.
-    eVADrawPerturbationTargeterColor = 2
+    TARGETER_COLOR = 2
 
-AgEVADrawPerturbation.eVADrawPerturbationSegmentColor.__doc__ = "Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence."
-AgEVADrawPerturbation.eVADrawPerturbationDontDraw.__doc__ = "Don't Draw - perturbations will not be drawn, which may decrease the run time of the target sequence."
-AgEVADrawPerturbation.eVADrawPerturbationTargeterColor.__doc__ = "Targeter Color - perturbations will be displayed in the trajectory color defined for the target sequence."
+VA_DRAW_PERTURBATION.SEGMENT_COLOR.__doc__ = "Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence."
+VA_DRAW_PERTURBATION.DONT_DRAW.__doc__ = "Don't Draw - perturbations will not be drawn, which may decrease the run time of the target sequence."
+VA_DRAW_PERTURBATION.TARGETER_COLOR.__doc__ = "Targeter Color - perturbations will be displayed in the trajectory color defined for the target sequence."
 
-agcls.AgTypeNameMap["AgEVADrawPerturbation"] = AgEVADrawPerturbation
+agcls.AgTypeNameMap["VA_DRAW_PERTURBATION"] = VA_DRAW_PERTURBATION
 
-class AgEVADeriveCalcMethod(IntEnum):
+class VA_DERIVE_CALC_METHOD(IntEnum):
     """The Derivative Calculation method types for a Differential Corrector profile."""
     # Forward Difference - (f(x + delta) - f(x))/ delta
-    eVADeriveCalcMethodForward = 0
+    FORWARD = 0
     # Central Difference - (f(x + delta) - f(x - delta)) / 2delta
-    eVADeriveCalcMethodCentral = 1
+    CENTRAL = 1
     # Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference.
-    eVADeriveCalcMethodSigned = 2
+    SIGNED = 2
 
-AgEVADeriveCalcMethod.eVADeriveCalcMethodForward.__doc__ = "Forward Difference - (f(x + delta) - f(x))/ delta"
-AgEVADeriveCalcMethod.eVADeriveCalcMethodCentral.__doc__ = "Central Difference - (f(x + delta) - f(x - delta)) / 2delta"
-AgEVADeriveCalcMethod.eVADeriveCalcMethodSigned.__doc__ = "Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."
+VA_DERIVE_CALC_METHOD.FORWARD.__doc__ = "Forward Difference - (f(x + delta) - f(x))/ delta"
+VA_DERIVE_CALC_METHOD.CENTRAL.__doc__ = "Central Difference - (f(x + delta) - f(x - delta)) / 2delta"
+VA_DERIVE_CALC_METHOD.SIGNED.__doc__ = "Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."
 
-agcls.AgTypeNameMap["AgEVADeriveCalcMethod"] = AgEVADeriveCalcMethod
+agcls.AgTypeNameMap["VA_DERIVE_CALC_METHOD"] = VA_DERIVE_CALC_METHOD
 
-class AgEVAConvergenceCriteria(IntEnum):
+class VA_CONVERGENCE_CRITERIA(IntEnum):
     """The Convergence Criteria types for a Differential Corrector profile."""
     # Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence.
-    eVAConvergenceCriteriaEqualityConstraintWithinTolerance = 0
+    EQUALITY_CONSTRAINT_WITHIN_TOLERANCE = 0
     # Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence.
-    eVAConvervenceCriteriaEitherEqualityConstraintsOrControlParams = 1
+    CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS = 1
 
-AgEVAConvergenceCriteria.eVAConvergenceCriteriaEqualityConstraintWithinTolerance.__doc__ = "Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."
-AgEVAConvergenceCriteria.eVAConvervenceCriteriaEitherEqualityConstraintsOrControlParams.__doc__ = "Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence."
+VA_CONVERGENCE_CRITERIA.EQUALITY_CONSTRAINT_WITHIN_TOLERANCE.__doc__ = "Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."
+VA_CONVERGENCE_CRITERIA.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS.__doc__ = "Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence."
 
-agcls.AgTypeNameMap["AgEVAConvergenceCriteria"] = AgEVAConvergenceCriteria
+agcls.AgTypeNameMap["VA_CONVERGENCE_CRITERIA"] = VA_CONVERGENCE_CRITERIA
 
-class AgEVADCScalingMethod(IntEnum):
+class VADC_SCALING_METHOD(IntEnum):
     """The Scaling Method types for a Differential Corrector profile."""
     # By initial value.
-    eVADCScalingMethodInitialValue = 0
+    INITIAL_VALUE = 0
     # By one (no scaling).
-    eVADCScalingMethodOneNoScaling = 1
+    ONE_NO_SCALING = 1
     # By specified value.
-    eVADCScalingMethodSpecifiedValue = 2
+    SPECIFIED_VALUE = 2
     # By tolerance.
-    eVADCScalingMethodTolerance = 3
+    TOLERANCE = 3
 
-AgEVADCScalingMethod.eVADCScalingMethodInitialValue.__doc__ = "By initial value."
-AgEVADCScalingMethod.eVADCScalingMethodOneNoScaling.__doc__ = "By one (no scaling)."
-AgEVADCScalingMethod.eVADCScalingMethodSpecifiedValue.__doc__ = "By specified value."
-AgEVADCScalingMethod.eVADCScalingMethodTolerance.__doc__ = "By tolerance."
+VADC_SCALING_METHOD.INITIAL_VALUE.__doc__ = "By initial value."
+VADC_SCALING_METHOD.ONE_NO_SCALING.__doc__ = "By one (no scaling)."
+VADC_SCALING_METHOD.SPECIFIED_VALUE.__doc__ = "By specified value."
+VADC_SCALING_METHOD.TOLERANCE.__doc__ = "By tolerance."
 
-agcls.AgTypeNameMap["AgEVADCScalingMethod"] = AgEVADCScalingMethod
+agcls.AgTypeNameMap["VADC_SCALING_METHOD"] = VADC_SCALING_METHOD
 
-class AgEVAControlUpdate(IntEnum):
+class VA_CONTROL_UPDATE(IntEnum):
     """Update segment properties that can be selected as control parameters for a Target Sequence."""
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAControlUpdateCdVal = 100
+    CD_VAL = 100
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlUpdateCrVal = 101
+    CR_VAL = 101
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
-    eVAControlUpdateDragAreaVal = 102
+    DRAG_AREA_VAL = 102
     # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlUpdateDryMassVal = 103
+    DRY_MASS_VAL = 103
     # Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3).
-    eVAControlUpdateFuelDensityVal = 104
+    FUEL_DENSITY_VAL = 104
     # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlUpdateFuelMassVal = 105
+    FUEL_MASS_VAL = 105
     # The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared.
-    eVAControlUpdateRadiationPressureAreaVal = 106
+    RADIATION_PRESSURE_AREA_VAL = 106
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlUpdateRadiationPressureCoefficientVal = 107
+    RADIATION_PRESSURE_COEFFICIENT_VAL = 107
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared.
-    eVAControlUpdateSRPAreaVal = 108
+    SRP_AREA_VAL = 108
     # Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa).
-    eVAControlUpdateTankPressureVal = 109
+    TANK_PRESSURE_VAL = 109
     # Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
-    eVAControlUpdateTankTempVal = 110
+    TANK_TEMP_VAL = 110
 
-AgEVAControlUpdate.eVAControlUpdateCdVal.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
-AgEVAControlUpdate.eVAControlUpdateCrVal.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAControlUpdate.eVAControlUpdateDragAreaVal.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
-AgEVAControlUpdate.eVAControlUpdateDryMassVal.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
-AgEVAControlUpdate.eVAControlUpdateFuelDensityVal.__doc__ = "Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."
-AgEVAControlUpdate.eVAControlUpdateFuelMassVal.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
-AgEVAControlUpdate.eVAControlUpdateRadiationPressureAreaVal.__doc__ = "The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."
-AgEVAControlUpdate.eVAControlUpdateRadiationPressureCoefficientVal.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAControlUpdate.eVAControlUpdateSRPAreaVal.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
-AgEVAControlUpdate.eVAControlUpdateTankPressureVal.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
-AgEVAControlUpdate.eVAControlUpdateTankTempVal.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
+VA_CONTROL_UPDATE.CD_VAL.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+VA_CONTROL_UPDATE.CR_VAL.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_CONTROL_UPDATE.DRAG_AREA_VAL.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
+VA_CONTROL_UPDATE.DRY_MASS_VAL.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
+VA_CONTROL_UPDATE.FUEL_DENSITY_VAL.__doc__ = "Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."
+VA_CONTROL_UPDATE.FUEL_MASS_VAL.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
+VA_CONTROL_UPDATE.RADIATION_PRESSURE_AREA_VAL.__doc__ = "The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."
+VA_CONTROL_UPDATE.RADIATION_PRESSURE_COEFFICIENT_VAL.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_CONTROL_UPDATE.SRP_AREA_VAL.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
+VA_CONTROL_UPDATE.TANK_PRESSURE_VAL.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
+VA_CONTROL_UPDATE.TANK_TEMP_VAL.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
 
-agcls.AgTypeNameMap["AgEVAControlUpdate"] = AgEVAControlUpdate
+agcls.AgTypeNameMap["VA_CONTROL_UPDATE"] = VA_CONTROL_UPDATE
 
-class AgEVAControlFollow(IntEnum):
+class VA_CONTROL_FOLLOW(IntEnum):
     """Follow segment properties that can be selected as control parameters for a Target Sequence."""
     # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlFollowFuelMass = 200
+    FUEL_MASS = 200
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAControlFollowCd = 201
+    CD = 201
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlFollowCr = 202
+    CR = 202
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
-    eVAControlFollowDragArea = 203
+    DRAG_AREA = 203
     # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlFollowDryMass = 204
+    DRY_MASS = 204
     # Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3).
-    eVAControlFollowFuelDensity = 205
+    FUEL_DENSITY = 205
     # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
-    eVAControlFollowK1 = 206
+    K1 = 206
     # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value.
-    eVAControlFollowK2 = 207
+    K2 = 207
     # The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared.
-    eVAControlFollowRadiationPressureArea = 208
+    RADIATION_PRESSURE_AREA = 208
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlFollowCk = 209
+    CK = 209
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared.
-    eVAControlFollowSRPArea = 210
+    SRP_AREA = 210
     # Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa).
-    eVAControlFollowTankPressure = 211
+    TANK_PRESSURE = 211
     # Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
-    eVAControlFollowTankTemp = 212
+    TANK_TEMP = 212
     # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlFollowMaxFuelMass = 213
+    MAX_FUEL_MASS = 213
     # Tank Volume - the volume of the fuel tank. Enter a value in the selected distance unit cubed (e.g. m^3). The minimum value is 1e-019 m^3.
-    eVAControlFollowTankVolume = 214
+    TANK_VOLUME = 214
     # X Offset - the distance that the spacecraft will be offset from the leader's body frame along the X axis.
-    eVAControlFollowXOffset = 215
+    X_OFFSET = 215
     # Y Offset - the distance that the spacecraft will be offset from the leader's body frame along the Y axis.
-    eVAControlFollowYOffset = 216
+    Y_OFFSET = 216
     # Z Offset - the distance that the spacecraft will be offset from the leader's body frame along the Z axis.
-    eVAControlFollowZOffset = 217
+    Z_OFFSET = 217
 
-AgEVAControlFollow.eVAControlFollowFuelMass.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
-AgEVAControlFollow.eVAControlFollowCd.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
-AgEVAControlFollow.eVAControlFollowCr.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAControlFollow.eVAControlFollowDragArea.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
-AgEVAControlFollow.eVAControlFollowDryMass.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
-AgEVAControlFollow.eVAControlFollowFuelDensity.__doc__ = "Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."
-AgEVAControlFollow.eVAControlFollowK1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
-AgEVAControlFollow.eVAControlFollowK2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."
-AgEVAControlFollow.eVAControlFollowRadiationPressureArea.__doc__ = "The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."
-AgEVAControlFollow.eVAControlFollowCk.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAControlFollow.eVAControlFollowSRPArea.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
-AgEVAControlFollow.eVAControlFollowTankPressure.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
-AgEVAControlFollow.eVAControlFollowTankTemp.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
-AgEVAControlFollow.eVAControlFollowMaxFuelMass.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg)."
-AgEVAControlFollow.eVAControlFollowTankVolume.__doc__ = "Tank Volume - the volume of the fuel tank. Enter a value in the selected distance unit cubed (e.g. m^3). The minimum value is 1e-019 m^3."
-AgEVAControlFollow.eVAControlFollowXOffset.__doc__ = "X Offset - the distance that the spacecraft will be offset from the leader's body frame along the X axis."
-AgEVAControlFollow.eVAControlFollowYOffset.__doc__ = "Y Offset - the distance that the spacecraft will be offset from the leader's body frame along the Y axis."
-AgEVAControlFollow.eVAControlFollowZOffset.__doc__ = "Z Offset - the distance that the spacecraft will be offset from the leader's body frame along the Z axis."
+VA_CONTROL_FOLLOW.FUEL_MASS.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
+VA_CONTROL_FOLLOW.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+VA_CONTROL_FOLLOW.CR.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_CONTROL_FOLLOW.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
+VA_CONTROL_FOLLOW.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
+VA_CONTROL_FOLLOW.FUEL_DENSITY.__doc__ = "Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."
+VA_CONTROL_FOLLOW.K1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
+VA_CONTROL_FOLLOW.K2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."
+VA_CONTROL_FOLLOW.RADIATION_PRESSURE_AREA.__doc__ = "The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."
+VA_CONTROL_FOLLOW.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_CONTROL_FOLLOW.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
+VA_CONTROL_FOLLOW.TANK_PRESSURE.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
+VA_CONTROL_FOLLOW.TANK_TEMP.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
+VA_CONTROL_FOLLOW.MAX_FUEL_MASS.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg)."
+VA_CONTROL_FOLLOW.TANK_VOLUME.__doc__ = "Tank Volume - the volume of the fuel tank. Enter a value in the selected distance unit cubed (e.g. m^3). The minimum value is 1e-019 m^3."
+VA_CONTROL_FOLLOW.X_OFFSET.__doc__ = "X Offset - the distance that the spacecraft will be offset from the leader's body frame along the X axis."
+VA_CONTROL_FOLLOW.Y_OFFSET.__doc__ = "Y Offset - the distance that the spacecraft will be offset from the leader's body frame along the Y axis."
+VA_CONTROL_FOLLOW.Z_OFFSET.__doc__ = "Z Offset - the distance that the spacecraft will be offset from the leader's body frame along the Z axis."
 
-agcls.AgTypeNameMap["AgEVAControlFollow"] = AgEVAControlFollow
+agcls.AgTypeNameMap["VA_CONTROL_FOLLOW"] = VA_CONTROL_FOLLOW
 
-class AgEVAControlInitState(IntEnum):
+class VA_CONTROL_INIT_STATE(IntEnum):
     """Initial State segment properties that can be selected as control parameters for a Target Sequence."""
     # Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlInitStateFuelMass = 300
+    FUEL_MASS = 300
     # Vx Component - the X component of the spacecraft velocity vector.
-    eVAControlInitStateCartesianVx = 301
+    CARTESIAN_VX = 301
     # Vy Component - the Y component of the spacecraft velocity vector.
-    eVAControlInitStateCartesianVy = 302
+    CARTESIAN_VY = 302
     # Vz Component - the Z component of the spacecraft velocity vector.
-    eVAControlInitStateCartesianVz = 303
+    CARTESIAN_VZ = 303
     # X Component - the X component of the spacecraft position vector.
-    eVAControlInitStateCartesianX = 304
+    CARTESIAN_X = 304
     # Y Component - the Y component of the spacecraft position vector.
-    eVAControlInitStateCartesianY = 305
+    CARTESIAN_Y = 305
     # Z Component - the Z component of the spacecraft position vector.
-    eVAControlInitStateCartesianZ = 306
+    CARTESIAN_Z = 306
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAControlInitStateCd = 307
+    CD = 307
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlInitStateCr = 308
+    CR = 308
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
-    eVAControlInitStateDragArea = 309
+    DRAG_AREA = 309
     # Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
-    eVAControlInitStateDryMass = 310
+    DRY_MASS = 310
     # Epoch - the orbit epoch.
-    eVAControlInitStateEpoch = 311
+    EPOCH = 311
     # Fuel Density - the density of the fuel tank.
-    eVAControlInitStateFuelDensity = 312
+    FUEL_DENSITY = 312
     # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
-    eVAControlInitStateK1 = 313
+    K1 = 313
     # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value.
-    eVAControlInitStateK2 = 314
+    K2 = 314
     # Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless.
-    eVAControlInitStateKeplerianEcc = 315
+    KEPLERIAN_ECC = 315
     # Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit.
-    eVAControlInitStateKeplerianInc = 316
+    KEPLERIAN_INC = 316
     # Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction.
-    eVAControlInitStateKeplerianRAAN = 317
+    KEPLERIAN_RAAN = 317
     # Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse.
-    eVAControlInitStateKeplerianSMA = 318
+    KEPLERIAN_SMA = 318
     # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
-    eVAControlInitStateKeplerianTA = 319
+    KEPLERIAN_TA = 319
     # Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit.
-    eVAControlInitStateKeplerianW = 320
+    KEPLERIAN_W = 320
     # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
-    eVAControlInitStateRadiationPressureArea = 327
+    RADIATION_PRESSURE_AREA = 327
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlInitStateCk = 328
+    CK = 328
     # Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north.
-    eVAControlInitStateSphericalAz = 329
+    SPHERICAL_AZ = 329
     # Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector.
-    eVAControlInitStateSphericalDec = 330
+    SPHERICAL_DEC = 330
     # Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle).
-    eVAControlInitStateSphericalHorizFPA = 331
+    SPHERICAL_HORIZ_FPA = 331
     # Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector.
-    eVAControlInitStateSphericalRA = 332
+    SPHERICAL_RA = 332
     # Radius Magnitude - the magnitude of the spacecraft position vector.
-    eVAControlInitStateSphericalRMag = 333
+    SPHERICAL_R_MAG = 333
     # Velocity Magnitude - the magnitude of the spacecraft velocity vector.
-    eVAControlInitStateSphericalVMag = 334
+    SPHERICAL_V_MAG = 334
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
-    eVAControlInitStateSRPArea = 335
+    SRP_AREA = 335
     # Tank Pressure - the fuel tank pressure.
-    eVAControlInitStateTankPressure = 336
+    TANK_PRESSURE = 336
     # Tank Temperature - the temperature of the fuel tank.
-    eVAControlInitStateTankTemp = 337
+    TANK_TEMP = 337
     # Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system.
-    eVAControlInitStateTargetVecInAsympDec = 338
+    TARGET_VEC_IN_ASYMP_DEC = 338
     # Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system.
-    eVAControlInitStateTargetVecInAsympRA = 339
+    TARGET_VEC_IN_ASYMP_RA = 339
     # Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis.
-    eVAControlInitStateTargetVecInVelAzAtPeriapsis = 340
+    TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS = 340
     # C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis.
-    eVAControlInitStateTargetVecInC3 = 341
+    TARGET_VEC_IN_C3 = 341
     # Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit.
-    eVAControlInitStateTargetVecInRadOfPeriapsis = 342
+    TARGET_VEC_IN_RAD_OF_PERIAPSIS = 342
     # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
-    eVAControlInitStateTargetVecInTrueAnomaly = 343
+    TARGET_VEC_IN_TRUE_ANOMALY = 343
     # Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system.
-    eVAControlInitStateTargetVecOutAsympDec = 344
+    TARGET_VEC_OUT_ASYMP_DEC = 344
     # Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system.
-    eVAControlInitStateTargetVecOutAsympRA = 345
+    TARGET_VEC_OUT_ASYMP_RA = 345
     # Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis.
-    eVAControlInitStateTargetVecOutVelAzAtPeriapsis = 346
+    TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS = 346
     # C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis.
-    eVAControlInitStateTargetVecOutC3 = 347
+    TARGET_VEC_OUT_C3 = 347
     # Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit.
-    eVAControlInitStateTargetVecOutRadOfPeriapsis = 348
+    TARGET_VEC_OUT_RAD_OF_PERIAPSIS = 348
     # True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
-    eVAControlInitStateTargetVecOutTrueAnomaly = 349
+    TARGET_VEC_OUT_TRUE_ANOMALY = 349
     # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences.
-    eVAControlInitStateMaxFuelMass = 350
+    MAX_FUEL_MASS = 350
     # Tank Volume - the volume of the fuel tank.
-    eVAControlInitStateTankVolume = 351
+    TANK_VOLUME = 351
     # G - Magnitude of orbital angular momentum, sqrt(GM * p).
-    eVAControlInitStateDelaunayG = 352
+    DELAUNAY_G = 352
     # H - Z component of orbital angular momentum, G cos(inc).
-    eVAControlInitStateDelaunayH = 353
+    DELAUNAY_H = 353
     # Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis.
-    eVAControlInitStateDelaunayInc = 354
+    DELAUNAY_INC = 354
     # L - Related to two-body orbital energy, sqrt(GM * a)
-    eVAControlInitStateDelaunayL = 355
+    DELAUNAY_L = 355
     # Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate.
-    eVAControlInitStateDelaunayMeanAnomaly = 356
+    DELAUNAY_MEAN_ANOMALY = 356
     # Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane.
-    eVAControlInitStateDelaunayRAAN = 357
+    DELAUNAY_RAAN = 357
     # Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees
-    eVAControlInitStateDelaunaySemiLatusRectum = 358
+    DELAUNAY_SEMI_LATUS_RECTUM = 358
     # Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse.
-    eVAControlInitStateDelaunaySMA = 359
+    DELAUNAY_SMA = 359
     # Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane.
-    eVAControlInitStateDelaunayW = 360
+    DELAUNAY_W = 360
     # H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)
-    eVAControlInitStateEquinoctialH = 361
+    EQUINOCTIAL_H = 361
     # K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)
-    eVAControlInitStateEquinoctialK = 362
+    EQUINOCTIAL_K = 362
     # Mean Longitude - RAAN + w + M
-    eVAControlInitStateEquinoctialMeanLongitude = 363
+    EQUINOCTIAL_MEAN_LONGITUDE = 363
     # Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion.
-    eVAControlInitStateEquinoctialMeanMotion = 364
+    EQUINOCTIAL_MEAN_MOTION = 364
     # P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)
-    eVAControlInitStateEquinoctialP = 365
+    EQUINOCTIAL_P = 365
     # Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)
-    eVAControlInitStateEquinoctialQ = 366
+    EQUINOCTIAL_Q = 366
     # Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse.
-    eVAControlInitStateEquinoctialSMA = 367
+    EQUINOCTIAL_SMA = 367
     # Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid.
-    eVAControlInitStateMixedSphericalAltitude = 368
+    MIXED_SPHERICAL_ALTITUDE = 368
     # Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction.
-    eVAControlInitStateMixedSphericalAzimuth = 369
+    MIXED_SPHERICAL_AZIMUTH = 369
     # Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector.
-    eVAControlInitStateMixedSphericalHorizFPA = 370
+    MIXED_SPHERICAL_HORIZ_FPA = 370
     # Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane.
-    eVAControlInitStateMixedSphericalLatitude = 371
+    MIXED_SPHERICAL_LATITUDE = 371
     # Longitude
-    eVAControlInitStateMixedSphericalLongitude = 372
+    MIXED_SPHERICAL_LONGITUDE = 372
     # Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector.
-    eVAControlInitStateMixedSphericalVerticalFPA = 373
+    MIXED_SPHERICAL_VERTICAL_FPA = 373
     # Velocity Magnitude - The magnitude of the inertial velocity vector.
-    eVAControlInitStateMixedSphericalVMag = 374
+    MIXED_SPHERICAL_V_MAG = 374
     # Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector.
-    eVAControlInitStateSphericalVerticalFPA = 375
+    SPHERICAL_VERTICAL_FPA = 375
     # Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit.
-    eVAControlInitStateKeplerianApoapsisAltShape = 376
+    KEPLERIAN_APOAPSIS_ALT_SHAPE = 376
     # Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit.
-    eVAControlInitStateKeplerianApoapsisAltSize = 377
+    KEPLERIAN_APOAPSIS_ALT_SIZE = 377
     # Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit.
-    eVAControlInitStateKeplerianApoapsisRadShape = 378
+    KEPLERIAN_APOAPSIS_RAD_SHAPE = 378
     # Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit.
-    eVAControlInitStateKeplerianApoapsisRadSize = 379
+    KEPLERIAN_APOAPSIS_RAD_SIZE = 379
     # Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee.
-    eVAControlInitStateKeplerianArgLat = 380
+    KEPLERIAN_ARG_LAT = 380
     # Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse.
-    eVAControlInitStateKeplerianEccAnomaly = 381
+    KEPLERIAN_ECC_ANOMALY = 381
     # Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion.
-    eVAControlInitStateKeplerianLAN = 382
+    KEPLERIAN_LAN = 382
     # Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate.
-    eVAControlInitStateKeplerianMeanAnomaly = 383
+    KEPLERIAN_MEAN_ANOMALY = 383
     # Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion.
-    eVAControlInitStateKeplerianMeanMotion = 384
+    KEPLERIAN_MEAN_MOTION = 384
     # Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
-    eVAControlInitStateKeplerianPeriapsisAltShape = 385
+    KEPLERIAN_PERIAPSIS_ALT_SHAPE = 385
     # Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
-    eVAControlInitStateKeplerianPeriapsisAltSize = 386
+    KEPLERIAN_PERIAPSIS_ALT_SIZE = 386
     # Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit.
-    eVAControlInitStateKeplerianPeriapsisRadShape = 387
+    KEPLERIAN_PERIAPSIS_RAD_SHAPE = 387
     # Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
-    eVAControlInitStateKeplerianPeriapsisRadSize = 388
+    KEPLERIAN_PERIAPSIS_RAD_SIZE = 388
     # Period - The duration of one orbit, based on assumed two-body motion.
-    eVAControlInitStateKeplerianPeriod = 389
+    KEPLERIAN_PERIOD = 389
     # Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion.
-    eVAControlInitStateKeplerianTimePastAN = 390
+    KEPLERIAN_TIME_PAST_AN = 390
     # Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion.
-    eVAControlInitStateKeplerianTimePastPeriapsis = 391
+    KEPLERIAN_TIME_PAST_PERIAPSIS = 391
 
-AgEVAControlInitState.eVAControlInitStateFuelMass.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
-AgEVAControlInitState.eVAControlInitStateCartesianVx.__doc__ = "Vx Component - the X component of the spacecraft velocity vector."
-AgEVAControlInitState.eVAControlInitStateCartesianVy.__doc__ = "Vy Component - the Y component of the spacecraft velocity vector."
-AgEVAControlInitState.eVAControlInitStateCartesianVz.__doc__ = "Vz Component - the Z component of the spacecraft velocity vector."
-AgEVAControlInitState.eVAControlInitStateCartesianX.__doc__ = "X Component - the X component of the spacecraft position vector."
-AgEVAControlInitState.eVAControlInitStateCartesianY.__doc__ = "Y Component - the Y component of the spacecraft position vector."
-AgEVAControlInitState.eVAControlInitStateCartesianZ.__doc__ = "Z Component - the Z component of the spacecraft position vector."
-AgEVAControlInitState.eVAControlInitStateCd.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
-AgEVAControlInitState.eVAControlInitStateCr.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAControlInitState.eVAControlInitStateDragArea.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
-AgEVAControlInitState.eVAControlInitStateDryMass.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
-AgEVAControlInitState.eVAControlInitStateEpoch.__doc__ = "Epoch - the orbit epoch."
-AgEVAControlInitState.eVAControlInitStateFuelDensity.__doc__ = "Fuel Density - the density of the fuel tank."
-AgEVAControlInitState.eVAControlInitStateK1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
-AgEVAControlInitState.eVAControlInitStateK2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."
-AgEVAControlInitState.eVAControlInitStateKeplerianEcc.__doc__ = "Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless."
-AgEVAControlInitState.eVAControlInitStateKeplerianInc.__doc__ = "Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianRAAN.__doc__ = "Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction."
-AgEVAControlInitState.eVAControlInitStateKeplerianSMA.__doc__ = "Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse."
-AgEVAControlInitState.eVAControlInitStateKeplerianTA.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
-AgEVAControlInitState.eVAControlInitStateKeplerianW.__doc__ = "Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit."
-AgEVAControlInitState.eVAControlInitStateRadiationPressureArea.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
-AgEVAControlInitState.eVAControlInitStateCk.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAControlInitState.eVAControlInitStateSphericalAz.__doc__ = "Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north."
-AgEVAControlInitState.eVAControlInitStateSphericalDec.__doc__ = "Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."
-AgEVAControlInitState.eVAControlInitStateSphericalHorizFPA.__doc__ = "Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle)."
-AgEVAControlInitState.eVAControlInitStateSphericalRA.__doc__ = "Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."
-AgEVAControlInitState.eVAControlInitStateSphericalRMag.__doc__ = "Radius Magnitude - the magnitude of the spacecraft position vector."
-AgEVAControlInitState.eVAControlInitStateSphericalVMag.__doc__ = "Velocity Magnitude - the magnitude of the spacecraft velocity vector."
-AgEVAControlInitState.eVAControlInitStateSRPArea.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
-AgEVAControlInitState.eVAControlInitStateTankPressure.__doc__ = "Tank Pressure - the fuel tank pressure."
-AgEVAControlInitState.eVAControlInitStateTankTemp.__doc__ = "Tank Temperature - the temperature of the fuel tank."
-AgEVAControlInitState.eVAControlInitStateTargetVecInAsympDec.__doc__ = "Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system."
-AgEVAControlInitState.eVAControlInitStateTargetVecInAsympRA.__doc__ = "Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system."
-AgEVAControlInitState.eVAControlInitStateTargetVecInVelAzAtPeriapsis.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
-AgEVAControlInitState.eVAControlInitStateTargetVecInC3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
-AgEVAControlInitState.eVAControlInitStateTargetVecInRadOfPeriapsis.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
-AgEVAControlInitState.eVAControlInitStateTargetVecInTrueAnomaly.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
-AgEVAControlInitState.eVAControlInitStateTargetVecOutAsympDec.__doc__ = "Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system."
-AgEVAControlInitState.eVAControlInitStateTargetVecOutAsympRA.__doc__ = "Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system."
-AgEVAControlInitState.eVAControlInitStateTargetVecOutVelAzAtPeriapsis.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
-AgEVAControlInitState.eVAControlInitStateTargetVecOutC3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
-AgEVAControlInitState.eVAControlInitStateTargetVecOutRadOfPeriapsis.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
-AgEVAControlInitState.eVAControlInitStateTargetVecOutTrueAnomaly.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
-AgEVAControlInitState.eVAControlInitStateMaxFuelMass.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."
-AgEVAControlInitState.eVAControlInitStateTankVolume.__doc__ = "Tank Volume - the volume of the fuel tank."
-AgEVAControlInitState.eVAControlInitStateDelaunayG.__doc__ = "G - Magnitude of orbital angular momentum, sqrt(GM * p)."
-AgEVAControlInitState.eVAControlInitStateDelaunayH.__doc__ = "H - Z component of orbital angular momentum, G cos(inc)."
-AgEVAControlInitState.eVAControlInitStateDelaunayInc.__doc__ = "Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."
-AgEVAControlInitState.eVAControlInitStateDelaunayL.__doc__ = "L - Related to two-body orbital energy, sqrt(GM * a)"
-AgEVAControlInitState.eVAControlInitStateDelaunayMeanAnomaly.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
-AgEVAControlInitState.eVAControlInitStateDelaunayRAAN.__doc__ = "Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane."
-AgEVAControlInitState.eVAControlInitStateDelaunaySemiLatusRectum.__doc__ = "Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees"
-AgEVAControlInitState.eVAControlInitStateDelaunaySMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
-AgEVAControlInitState.eVAControlInitStateDelaunayW.__doc__ = "Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane."
-AgEVAControlInitState.eVAControlInitStateEquinoctialH.__doc__ = "H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)"
-AgEVAControlInitState.eVAControlInitStateEquinoctialK.__doc__ = "K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)"
-AgEVAControlInitState.eVAControlInitStateEquinoctialMeanLongitude.__doc__ = "Mean Longitude - RAAN + w + M"
-AgEVAControlInitState.eVAControlInitStateEquinoctialMeanMotion.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
-AgEVAControlInitState.eVAControlInitStateEquinoctialP.__doc__ = "P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)"
-AgEVAControlInitState.eVAControlInitStateEquinoctialQ.__doc__ = "Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)"
-AgEVAControlInitState.eVAControlInitStateEquinoctialSMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
-AgEVAControlInitState.eVAControlInitStateMixedSphericalAltitude.__doc__ = "Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid."
-AgEVAControlInitState.eVAControlInitStateMixedSphericalAzimuth.__doc__ = "Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction."
-AgEVAControlInitState.eVAControlInitStateMixedSphericalHorizFPA.__doc__ = "Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector."
-AgEVAControlInitState.eVAControlInitStateMixedSphericalLatitude.__doc__ = "Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane."
-AgEVAControlInitState.eVAControlInitStateMixedSphericalLongitude.__doc__ = "Longitude"
-AgEVAControlInitState.eVAControlInitStateMixedSphericalVerticalFPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
-AgEVAControlInitState.eVAControlInitStateMixedSphericalVMag.__doc__ = "Velocity Magnitude - The magnitude of the inertial velocity vector."
-AgEVAControlInitState.eVAControlInitStateSphericalVerticalFPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
-AgEVAControlInitState.eVAControlInitStateKeplerianApoapsisAltShape.__doc__ = "Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianApoapsisAltSize.__doc__ = "Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianApoapsisRadShape.__doc__ = "Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianApoapsisRadSize.__doc__ = "Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianArgLat.__doc__ = "Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee."
-AgEVAControlInitState.eVAControlInitStateKeplerianEccAnomaly.__doc__ = "Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse."
-AgEVAControlInitState.eVAControlInitStateKeplerianLAN.__doc__ = "Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion."
-AgEVAControlInitState.eVAControlInitStateKeplerianMeanAnomaly.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
-AgEVAControlInitState.eVAControlInitStateKeplerianMeanMotion.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
-AgEVAControlInitState.eVAControlInitStateKeplerianPeriapsisAltShape.__doc__ = "Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianPeriapsisAltSize.__doc__ = "Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianPeriapsisRadShape.__doc__ = "Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianPeriapsisRadSize.__doc__ = "Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
-AgEVAControlInitState.eVAControlInitStateKeplerianPeriod.__doc__ = "Period - The duration of one orbit, based on assumed two-body motion."
-AgEVAControlInitState.eVAControlInitStateKeplerianTimePastAN.__doc__ = "Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion."
-AgEVAControlInitState.eVAControlInitStateKeplerianTimePastPeriapsis.__doc__ = "Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion."
+VA_CONTROL_INIT_STATE.FUEL_MASS.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
+VA_CONTROL_INIT_STATE.CARTESIAN_VX.__doc__ = "Vx Component - the X component of the spacecraft velocity vector."
+VA_CONTROL_INIT_STATE.CARTESIAN_VY.__doc__ = "Vy Component - the Y component of the spacecraft velocity vector."
+VA_CONTROL_INIT_STATE.CARTESIAN_VZ.__doc__ = "Vz Component - the Z component of the spacecraft velocity vector."
+VA_CONTROL_INIT_STATE.CARTESIAN_X.__doc__ = "X Component - the X component of the spacecraft position vector."
+VA_CONTROL_INIT_STATE.CARTESIAN_Y.__doc__ = "Y Component - the Y component of the spacecraft position vector."
+VA_CONTROL_INIT_STATE.CARTESIAN_Z.__doc__ = "Z Component - the Z component of the spacecraft position vector."
+VA_CONTROL_INIT_STATE.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+VA_CONTROL_INIT_STATE.CR.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_CONTROL_INIT_STATE.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
+VA_CONTROL_INIT_STATE.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
+VA_CONTROL_INIT_STATE.EPOCH.__doc__ = "Epoch - the orbit epoch."
+VA_CONTROL_INIT_STATE.FUEL_DENSITY.__doc__ = "Fuel Density - the density of the fuel tank."
+VA_CONTROL_INIT_STATE.K1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
+VA_CONTROL_INIT_STATE.K2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."
+VA_CONTROL_INIT_STATE.KEPLERIAN_ECC.__doc__ = "Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless."
+VA_CONTROL_INIT_STATE.KEPLERIAN_INC.__doc__ = "Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_RAAN.__doc__ = "Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction."
+VA_CONTROL_INIT_STATE.KEPLERIAN_SMA.__doc__ = "Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse."
+VA_CONTROL_INIT_STATE.KEPLERIAN_TA.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+VA_CONTROL_INIT_STATE.KEPLERIAN_W.__doc__ = "Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit."
+VA_CONTROL_INIT_STATE.RADIATION_PRESSURE_AREA.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
+VA_CONTROL_INIT_STATE.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_CONTROL_INIT_STATE.SPHERICAL_AZ.__doc__ = "Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north."
+VA_CONTROL_INIT_STATE.SPHERICAL_DEC.__doc__ = "Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."
+VA_CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA.__doc__ = "Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle)."
+VA_CONTROL_INIT_STATE.SPHERICAL_RA.__doc__ = "Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."
+VA_CONTROL_INIT_STATE.SPHERICAL_R_MAG.__doc__ = "Radius Magnitude - the magnitude of the spacecraft position vector."
+VA_CONTROL_INIT_STATE.SPHERICAL_V_MAG.__doc__ = "Velocity Magnitude - the magnitude of the spacecraft velocity vector."
+VA_CONTROL_INIT_STATE.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
+VA_CONTROL_INIT_STATE.TANK_PRESSURE.__doc__ = "Tank Pressure - the fuel tank pressure."
+VA_CONTROL_INIT_STATE.TANK_TEMP.__doc__ = "Tank Temperature - the temperature of the fuel tank."
+VA_CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_DEC.__doc__ = "Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system."
+VA_CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_RA.__doc__ = "Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system."
+VA_CONTROL_INIT_STATE.TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
+VA_CONTROL_INIT_STATE.TARGET_VEC_IN_C3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
+VA_CONTROL_INIT_STATE.TARGET_VEC_IN_RAD_OF_PERIAPSIS.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
+VA_CONTROL_INIT_STATE.TARGET_VEC_IN_TRUE_ANOMALY.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+VA_CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_DEC.__doc__ = "Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system."
+VA_CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_RA.__doc__ = "Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system."
+VA_CONTROL_INIT_STATE.TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
+VA_CONTROL_INIT_STATE.TARGET_VEC_OUT_C3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
+VA_CONTROL_INIT_STATE.TARGET_VEC_OUT_RAD_OF_PERIAPSIS.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
+VA_CONTROL_INIT_STATE.TARGET_VEC_OUT_TRUE_ANOMALY.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+VA_CONTROL_INIT_STATE.MAX_FUEL_MASS.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."
+VA_CONTROL_INIT_STATE.TANK_VOLUME.__doc__ = "Tank Volume - the volume of the fuel tank."
+VA_CONTROL_INIT_STATE.DELAUNAY_G.__doc__ = "G - Magnitude of orbital angular momentum, sqrt(GM * p)."
+VA_CONTROL_INIT_STATE.DELAUNAY_H.__doc__ = "H - Z component of orbital angular momentum, G cos(inc)."
+VA_CONTROL_INIT_STATE.DELAUNAY_INC.__doc__ = "Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."
+VA_CONTROL_INIT_STATE.DELAUNAY_L.__doc__ = "L - Related to two-body orbital energy, sqrt(GM * a)"
+VA_CONTROL_INIT_STATE.DELAUNAY_MEAN_ANOMALY.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
+VA_CONTROL_INIT_STATE.DELAUNAY_RAAN.__doc__ = "Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane."
+VA_CONTROL_INIT_STATE.DELAUNAY_SEMI_LATUS_RECTUM.__doc__ = "Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees"
+VA_CONTROL_INIT_STATE.DELAUNAY_SMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
+VA_CONTROL_INIT_STATE.DELAUNAY_W.__doc__ = "Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane."
+VA_CONTROL_INIT_STATE.EQUINOCTIAL_H.__doc__ = "H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)"
+VA_CONTROL_INIT_STATE.EQUINOCTIAL_K.__doc__ = "K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)"
+VA_CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_LONGITUDE.__doc__ = "Mean Longitude - RAAN + w + M"
+VA_CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_MOTION.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
+VA_CONTROL_INIT_STATE.EQUINOCTIAL_P.__doc__ = "P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)"
+VA_CONTROL_INIT_STATE.EQUINOCTIAL_Q.__doc__ = "Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)"
+VA_CONTROL_INIT_STATE.EQUINOCTIAL_SMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
+VA_CONTROL_INIT_STATE.MIXED_SPHERICAL_ALTITUDE.__doc__ = "Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid."
+VA_CONTROL_INIT_STATE.MIXED_SPHERICAL_AZIMUTH.__doc__ = "Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction."
+VA_CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA.__doc__ = "Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector."
+VA_CONTROL_INIT_STATE.MIXED_SPHERICAL_LATITUDE.__doc__ = "Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane."
+VA_CONTROL_INIT_STATE.MIXED_SPHERICAL_LONGITUDE.__doc__ = "Longitude"
+VA_CONTROL_INIT_STATE.MIXED_SPHERICAL_VERTICAL_FPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
+VA_CONTROL_INIT_STATE.MIXED_SPHERICAL_V_MAG.__doc__ = "Velocity Magnitude - The magnitude of the inertial velocity vector."
+VA_CONTROL_INIT_STATE.SPHERICAL_VERTICAL_FPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
+VA_CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALT_SHAPE.__doc__ = "Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALT_SIZE.__doc__ = "Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SHAPE.__doc__ = "Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SIZE.__doc__ = "Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_ARG_LAT.__doc__ = "Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee."
+VA_CONTROL_INIT_STATE.KEPLERIAN_ECC_ANOMALY.__doc__ = "Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse."
+VA_CONTROL_INIT_STATE.KEPLERIAN_LAN.__doc__ = "Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion."
+VA_CONTROL_INIT_STATE.KEPLERIAN_MEAN_ANOMALY.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
+VA_CONTROL_INIT_STATE.KEPLERIAN_MEAN_MOTION.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
+VA_CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALT_SHAPE.__doc__ = "Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALT_SIZE.__doc__ = "Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SHAPE.__doc__ = "Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SIZE.__doc__ = "Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
+VA_CONTROL_INIT_STATE.KEPLERIAN_PERIOD.__doc__ = "Period - The duration of one orbit, based on assumed two-body motion."
+VA_CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_AN.__doc__ = "Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion."
+VA_CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_PERIAPSIS.__doc__ = "Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion."
 
-agcls.AgTypeNameMap["AgEVAControlInitState"] = AgEVAControlInitState
+agcls.AgTypeNameMap["VA_CONTROL_INIT_STATE"] = VA_CONTROL_INIT_STATE
 
-class AgEVAControlManeuver(IntEnum):
+class VA_CONTROL_MANEUVER(IntEnum):
     """Maneuver segment properties that can be selected as control parameters for a Target Sequence."""
     # The Cartesian X component of the thrust vector.
-    eVAControlManeuverFiniteCartesianX = 400
+    FINITE_CARTESIAN_X = 400
     # The Cartesian Y component of the thrust vector.
-    eVAControlManeuverFiniteCartesianY = 401
+    FINITE_CARTESIAN_Y = 401
     # The Cartesian Z component of the thrust vector.
-    eVAControlManeuverFiniteCartesianZ = 402
+    FINITE_CARTESIAN_Z = 402
     # The Euler A (Phi) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverFiniteEulerAngles1 = 403
+    FINITE_EULER_ANGLES1 = 403
     # The Euler B (Theta) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverFiniteEulerAngles2 = 404
+    FINITE_EULER_ANGLES2 = 404
     # The Euler C (Psi) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverFiniteEulerAngles3 = 405
+    FINITE_EULER_ANGLES3 = 405
     # The spherical azimuth component of the thrust vector.
-    eVAControlManeuverFiniteSphericalAz = 406
+    FINITE_SPHERICAL_AZ = 406
     # The spherical elevation component of the thrust vector.
-    eVAControlManeuverFiniteSphericalElev = 407
+    FINITE_SPHERICAL_ELEV = 407
     # The Cartesian X component of the thrust vector.
-    eVAControlManeuverImpulsiveCartesianX = 408
+    IMPULSIVE_CARTESIAN_X = 408
     # The Cartesian Y component of the thrust vector.
-    eVAControlManeuverImpulsiveCartesianY = 409
+    IMPULSIVE_CARTESIAN_Y = 409
     # The Cartesian Z component of the thrust vector.
-    eVAControlManeuverImpulsiveCartesianZ = 410
+    IMPULSIVE_CARTESIAN_Z = 410
     # The Euler A (Phi) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverImpulsiveEulerAngles1 = 411
+    IMPULSIVE_EULER_ANGLES1 = 411
     # The Euler B (Theta) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverImpulsiveEulerAngles2 = 412
+    IMPULSIVE_EULER_ANGLES2 = 412
     # The Euler C (Psi) component of the rotation from the reference axes to the body frame.
-    eVAControlManeuverImpulsiveEulerAngles3 = 413
+    IMPULSIVE_EULER_ANGLES3 = 413
     # The spherical azimuth component of the thrust vector.
-    eVAControlManeuverImpulsiveSphericalAz = 414
+    IMPULSIVE_SPHERICAL_AZ = 414
     # The spherical elevation component of the thrust vector.
-    eVAControlManeuverImpulsiveSphericalElev = 415
+    IMPULSIVE_SPHERICAL_ELEV = 415
     # The spherical magnitude component of the thrust vector.
-    eVAControlManeuverImpulsiveSphericalMag = 416
+    IMPULSIVE_SPHERICAL_MAG = 416
     # The burn center bias of the thrust.
-    eVAControlManeuverFiniteBurnCenterBias = 417
+    FINITE_BURN_CENTER_BIAS = 417
     # The thrust efficiency value.
-    eVAControlManeuverFiniteThrustEfficiency = 418
+    FINITE_THRUST_EFFICIENCY = 418
     # The time varying azimuth polynomial constant term.
-    eVAControlManeuverFiniteAz0 = 419
+    FINITE_AZ0 = 419
     # The time varying azimuth polynomial linear term.
-    eVAControlManeuverFiniteAz1 = 420
+    FINITE_AZ1 = 420
     # The time varying azimuth polynomial quadratic term.
-    eVAControlManeuverFiniteAz2 = 421
+    FINITE_AZ2 = 421
     # The time varying azimuth polynomial cubic term.
-    eVAControlManeuverFiniteAz3 = 422
+    FINITE_AZ3 = 422
     # The time varying azimuth polynomial quartic term.
-    eVAControlManeuverFiniteAz4 = 423
+    FINITE_AZ4 = 423
     # The time varying azimuth sine amplitude term.
-    eVAControlManeuverFiniteAzA = 424
+    FINITE_AZ_A = 424
     # The time varying azimuth sine frequency term.
-    eVAControlManeuverFiniteAzF = 425
+    FINITE_AZ_F = 425
     # The time varying azimuth sine phase term.
-    eVAControlManeuverFiniteAzP = 426
+    FINITE_AZ_P = 426
     # The time varying elevation polynomial constant term.
-    eVAControlManeuverFiniteEl0 = 427
+    FINITE_EL0 = 427
     # The time varying elevation polynomial linear term.
-    eVAControlManeuverFiniteEl1 = 428
+    FINITE_EL1 = 428
     # The time varying elevation polynomial quadratic term.
-    eVAControlManeuverFiniteEl2 = 429
+    FINITE_EL2 = 429
     # The time varying elevation polynomial cubic term.
-    eVAControlManeuverFiniteEl3 = 430
+    FINITE_EL3 = 430
     # The time varying elevation polynomial quartic term.
-    eVAControlManeuverFiniteEl4 = 431
+    FINITE_EL4 = 431
     # The time varying elevation sine amplitude term.
-    eVAControlManeuverFiniteElA = 432
+    FINITE_EL_A = 432
     # The time varying elevation sine frequency term.
-    eVAControlManeuverFiniteElF = 433
+    FINITE_EL_F = 433
     # The time varying elevation sine phase term.
-    eVAControlManeuverFiniteElP = 434
+    FINITE_EL_P = 434
 
-AgEVAControlManeuver.eVAControlManeuverFiniteCartesianX.__doc__ = "The Cartesian X component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverFiniteCartesianY.__doc__ = "The Cartesian Y component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverFiniteCartesianZ.__doc__ = "The Cartesian Z component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverFiniteEulerAngles1.__doc__ = "The Euler A (Phi) component of the rotation from the reference axes to the body frame."
-AgEVAControlManeuver.eVAControlManeuverFiniteEulerAngles2.__doc__ = "The Euler B (Theta) component of the rotation from the reference axes to the body frame."
-AgEVAControlManeuver.eVAControlManeuverFiniteEulerAngles3.__doc__ = "The Euler C (Psi) component of the rotation from the reference axes to the body frame."
-AgEVAControlManeuver.eVAControlManeuverFiniteSphericalAz.__doc__ = "The spherical azimuth component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverFiniteSphericalElev.__doc__ = "The spherical elevation component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveCartesianX.__doc__ = "The Cartesian X component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveCartesianY.__doc__ = "The Cartesian Y component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveCartesianZ.__doc__ = "The Cartesian Z component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveEulerAngles1.__doc__ = "The Euler A (Phi) component of the rotation from the reference axes to the body frame."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveEulerAngles2.__doc__ = "The Euler B (Theta) component of the rotation from the reference axes to the body frame."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveEulerAngles3.__doc__ = "The Euler C (Psi) component of the rotation from the reference axes to the body frame."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveSphericalAz.__doc__ = "The spherical azimuth component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveSphericalElev.__doc__ = "The spherical elevation component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverImpulsiveSphericalMag.__doc__ = "The spherical magnitude component of the thrust vector."
-AgEVAControlManeuver.eVAControlManeuverFiniteBurnCenterBias.__doc__ = "The burn center bias of the thrust."
-AgEVAControlManeuver.eVAControlManeuverFiniteThrustEfficiency.__doc__ = "The thrust efficiency value."
-AgEVAControlManeuver.eVAControlManeuverFiniteAz0.__doc__ = "The time varying azimuth polynomial constant term."
-AgEVAControlManeuver.eVAControlManeuverFiniteAz1.__doc__ = "The time varying azimuth polynomial linear term."
-AgEVAControlManeuver.eVAControlManeuverFiniteAz2.__doc__ = "The time varying azimuth polynomial quadratic term."
-AgEVAControlManeuver.eVAControlManeuverFiniteAz3.__doc__ = "The time varying azimuth polynomial cubic term."
-AgEVAControlManeuver.eVAControlManeuverFiniteAz4.__doc__ = "The time varying azimuth polynomial quartic term."
-AgEVAControlManeuver.eVAControlManeuverFiniteAzA.__doc__ = "The time varying azimuth sine amplitude term."
-AgEVAControlManeuver.eVAControlManeuverFiniteAzF.__doc__ = "The time varying azimuth sine frequency term."
-AgEVAControlManeuver.eVAControlManeuverFiniteAzP.__doc__ = "The time varying azimuth sine phase term."
-AgEVAControlManeuver.eVAControlManeuverFiniteEl0.__doc__ = "The time varying elevation polynomial constant term."
-AgEVAControlManeuver.eVAControlManeuverFiniteEl1.__doc__ = "The time varying elevation polynomial linear term."
-AgEVAControlManeuver.eVAControlManeuverFiniteEl2.__doc__ = "The time varying elevation polynomial quadratic term."
-AgEVAControlManeuver.eVAControlManeuverFiniteEl3.__doc__ = "The time varying elevation polynomial cubic term."
-AgEVAControlManeuver.eVAControlManeuverFiniteEl4.__doc__ = "The time varying elevation polynomial quartic term."
-AgEVAControlManeuver.eVAControlManeuverFiniteElA.__doc__ = "The time varying elevation sine amplitude term."
-AgEVAControlManeuver.eVAControlManeuverFiniteElF.__doc__ = "The time varying elevation sine frequency term."
-AgEVAControlManeuver.eVAControlManeuverFiniteElP.__doc__ = "The time varying elevation sine phase term."
+VA_CONTROL_MANEUVER.FINITE_CARTESIAN_X.__doc__ = "The Cartesian X component of the thrust vector."
+VA_CONTROL_MANEUVER.FINITE_CARTESIAN_Y.__doc__ = "The Cartesian Y component of the thrust vector."
+VA_CONTROL_MANEUVER.FINITE_CARTESIAN_Z.__doc__ = "The Cartesian Z component of the thrust vector."
+VA_CONTROL_MANEUVER.FINITE_EULER_ANGLES1.__doc__ = "The Euler A (Phi) component of the rotation from the reference axes to the body frame."
+VA_CONTROL_MANEUVER.FINITE_EULER_ANGLES2.__doc__ = "The Euler B (Theta) component of the rotation from the reference axes to the body frame."
+VA_CONTROL_MANEUVER.FINITE_EULER_ANGLES3.__doc__ = "The Euler C (Psi) component of the rotation from the reference axes to the body frame."
+VA_CONTROL_MANEUVER.FINITE_SPHERICAL_AZ.__doc__ = "The spherical azimuth component of the thrust vector."
+VA_CONTROL_MANEUVER.FINITE_SPHERICAL_ELEV.__doc__ = "The spherical elevation component of the thrust vector."
+VA_CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X.__doc__ = "The Cartesian X component of the thrust vector."
+VA_CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Y.__doc__ = "The Cartesian Y component of the thrust vector."
+VA_CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Z.__doc__ = "The Cartesian Z component of the thrust vector."
+VA_CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES1.__doc__ = "The Euler A (Phi) component of the rotation from the reference axes to the body frame."
+VA_CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES2.__doc__ = "The Euler B (Theta) component of the rotation from the reference axes to the body frame."
+VA_CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES3.__doc__ = "The Euler C (Psi) component of the rotation from the reference axes to the body frame."
+VA_CONTROL_MANEUVER.IMPULSIVE_SPHERICAL_AZ.__doc__ = "The spherical azimuth component of the thrust vector."
+VA_CONTROL_MANEUVER.IMPULSIVE_SPHERICAL_ELEV.__doc__ = "The spherical elevation component of the thrust vector."
+VA_CONTROL_MANEUVER.IMPULSIVE_SPHERICAL_MAG.__doc__ = "The spherical magnitude component of the thrust vector."
+VA_CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS.__doc__ = "The burn center bias of the thrust."
+VA_CONTROL_MANEUVER.FINITE_THRUST_EFFICIENCY.__doc__ = "The thrust efficiency value."
+VA_CONTROL_MANEUVER.FINITE_AZ0.__doc__ = "The time varying azimuth polynomial constant term."
+VA_CONTROL_MANEUVER.FINITE_AZ1.__doc__ = "The time varying azimuth polynomial linear term."
+VA_CONTROL_MANEUVER.FINITE_AZ2.__doc__ = "The time varying azimuth polynomial quadratic term."
+VA_CONTROL_MANEUVER.FINITE_AZ3.__doc__ = "The time varying azimuth polynomial cubic term."
+VA_CONTROL_MANEUVER.FINITE_AZ4.__doc__ = "The time varying azimuth polynomial quartic term."
+VA_CONTROL_MANEUVER.FINITE_AZ_A.__doc__ = "The time varying azimuth sine amplitude term."
+VA_CONTROL_MANEUVER.FINITE_AZ_F.__doc__ = "The time varying azimuth sine frequency term."
+VA_CONTROL_MANEUVER.FINITE_AZ_P.__doc__ = "The time varying azimuth sine phase term."
+VA_CONTROL_MANEUVER.FINITE_EL0.__doc__ = "The time varying elevation polynomial constant term."
+VA_CONTROL_MANEUVER.FINITE_EL1.__doc__ = "The time varying elevation polynomial linear term."
+VA_CONTROL_MANEUVER.FINITE_EL2.__doc__ = "The time varying elevation polynomial quadratic term."
+VA_CONTROL_MANEUVER.FINITE_EL3.__doc__ = "The time varying elevation polynomial cubic term."
+VA_CONTROL_MANEUVER.FINITE_EL4.__doc__ = "The time varying elevation polynomial quartic term."
+VA_CONTROL_MANEUVER.FINITE_EL_A.__doc__ = "The time varying elevation sine amplitude term."
+VA_CONTROL_MANEUVER.FINITE_EL_F.__doc__ = "The time varying elevation sine frequency term."
+VA_CONTROL_MANEUVER.FINITE_EL_P.__doc__ = "The time varying elevation sine phase term."
 
-agcls.AgTypeNameMap["AgEVAControlManeuver"] = AgEVAControlManeuver
+agcls.AgTypeNameMap["VA_CONTROL_MANEUVER"] = VA_CONTROL_MANEUVER
 
-class AgEVAControlLaunch(IntEnum):
+class VA_CONTROL_LAUNCH(IntEnum):
     """Launch segment properties that can be selected as control parameters for a Target Sequence."""
     # The date and time of the launch.
-    eVAControlLaunchEpoch = 500
+    EPOCH = 500
     # The geodetic latitude of the launch location.
-    eVAControlLaunchGeodeticLat = 501
+    GEODETIC_LAT = 501
     # The geodetic longitude of the launch location.
-    eVAControlLaunchGeodeticLon = 502
+    GEODETIC_LON = 502
     # The geodetic altitude of the launch location.
-    eVAControlLaunchGeodeticAlt = 503
+    GEODETIC_ALT = 503
     # The geocentric latitude of the launch location.
-    eVAControlLaunchGeocentricLat = 504
+    GEOCENTRIC_LAT = 504
     # The geocentric longitude of the launch location.
-    eVAControlLaunchGeocentricLon = 505
+    GEOCENTRIC_LON = 505
     # The geocentric radius of the launch location.
-    eVAControlLaunchGeocentricRad = 506
+    GEOCENTRIC_RAD = 506
     # The time of flight, from launch until burnout.
-    eVAControlLaunchTimeOfFlight = 507
+    TIME_OF_FLIGHT = 507
     # The geocentric latitude of the burnout point.
-    eVAControlLaunchBurnoutGeocentricLat = 508
+    BURNOUT_GEOCENTRIC_LAT = 508
     # The geocentric longitude of the burnout point.
-    eVAControlLaunchBurnoutGeocentricLon = 509
+    BURNOUT_GEOCENTRIC_LON = 509
     # The geocentric radius of the burnout point.
-    eVAControlLaunchBurnoutGeocentricRad = 510
+    BURNOUT_GEOCENTRIC_RAD = 510
     # The geodetic latitude of the burnout point.
-    eVAControlLaunchBurnoutGeodeticLat = 511
+    BURNOUT_GEODETIC_LAT = 511
     # The geodetic longitude of the burnout point.
-    eVAControlLaunchBurnoutGeodeticLon = 512
+    BURNOUT_GEODETIC_LON = 512
     # The geodetic altitude of the burnout point.
-    eVAControlLaunchBurnoutGeodeticAlt = 513
+    BURNOUT_GEODETIC_ALT = 513
     # The geodetic azimuth of the launch trajectory.
-    eVAControlLaunchBurnoutAzAltAz = 514
+    BURNOUT_AZ_ALT_AZ = 514
     # The geodetic downrange distance of the burnout point.
-    eVAControlLaunchBurnoutAzAltDownrangeDist = 515
+    BURNOUT_AZ_ALT_DOWNRANGE_DIST = 515
     # The geodetic altitude of the burnout point.
-    eVAControlLaunchBurnoutAzAltAlt = 516
+    BURNOUT_AZ_ALT_ALT = 516
     # The geocentric azimuth of the launch trajectory.
-    eVAControlLaunchBurnoutAzRadAz = 517
+    BURNOUT_AZ_RAD_AZ = 517
     # The geocentric downrange distance of the burnout point.
-    eVAControlLaunchBurnoutAzRadDownrangeDist = 518
+    BURNOUT_AZ_RAD_DOWNRANGE_DIST = 518
     # The geocentric radius of the burnout point.
-    eVAControlLaunchBurnoutAzRadRad = 519
+    BURNOUT_AZ_RAD_RAD = 519
     # The burnout velocity in the fixed frame.
-    eVAControlLaunchBurnoutFixedVelocity = 520
+    BURNOUT_FIXED_VELOCITY = 520
     # The burnout velocity in the inertial frame.
-    eVAControlLaunchBurnoutInertialVelocity = 521
+    BURNOUT_INERTIAL_VELOCITY = 521
     # Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed.
-    eVAControlLaunchBurnoutInertialVelocityAzimuth = 522
+    BURNOUT_INERTIAL_VELOCITY_AZIMUTH = 522
     # Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle.
-    eVAControlLaunchBurnoutInertialHorizontalFPA = 523
+    BURNOUT_INERTIAL_HORIZONTAL_FPA = 523
     # Dry Mass - the mass of the spacecraft exclusive of propellant.
-    eVAControlLaunchDryMass = 524
+    DRY_MASS = 524
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAControlLaunchCd = 525
+    CD = 525
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations.
-    eVAControlLaunchDragArea = 526
+    DRAG_AREA = 526
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlLaunchCr = 527
+    CR = 527
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
-    eVAControlLaunchSRPArea = 528
+    SRP_AREA = 528
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAControlLaunchCk = 529
+    CK = 529
     # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
-    eVAControlLaunchRadiationPressureArea = 530
+    RADIATION_PRESSURE_AREA = 530
     # GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value.
-    eVAControlLaunchK1 = 531
+    K1 = 531
     # GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (scale) value.
-    eVAControlLaunchK2 = 532
+    K2 = 532
     # The fuel tank pressure.
-    eVAControlLaunchTankPressure = 533
+    TANK_PRESSURE = 533
     # The volume of the fuel tank.
-    eVAControlLaunchTankVolume = 534
+    TANK_VOLUME = 534
     # The fuel tank temperature.
-    eVAControlLaunchTankTemp = 535
+    TANK_TEMP = 535
     # The density of the fuel tank.
-    eVAControlLaunchFuelDensity = 536
+    FUEL_DENSITY = 536
     # The mass of the spacecraft propellant.
-    eVAControlLaunchFuelMass = 537
+    FUEL_MASS = 537
     # Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences.
-    eVAControlLaunchMaxFuelMass = 538
+    MAX_FUEL_MASS = 538
 
-AgEVAControlLaunch.eVAControlLaunchEpoch.__doc__ = "The date and time of the launch."
-AgEVAControlLaunch.eVAControlLaunchGeodeticLat.__doc__ = "The geodetic latitude of the launch location."
-AgEVAControlLaunch.eVAControlLaunchGeodeticLon.__doc__ = "The geodetic longitude of the launch location."
-AgEVAControlLaunch.eVAControlLaunchGeodeticAlt.__doc__ = "The geodetic altitude of the launch location."
-AgEVAControlLaunch.eVAControlLaunchGeocentricLat.__doc__ = "The geocentric latitude of the launch location."
-AgEVAControlLaunch.eVAControlLaunchGeocentricLon.__doc__ = "The geocentric longitude of the launch location."
-AgEVAControlLaunch.eVAControlLaunchGeocentricRad.__doc__ = "The geocentric radius of the launch location."
-AgEVAControlLaunch.eVAControlLaunchTimeOfFlight.__doc__ = "The time of flight, from launch until burnout."
-AgEVAControlLaunch.eVAControlLaunchBurnoutGeocentricLat.__doc__ = "The geocentric latitude of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutGeocentricLon.__doc__ = "The geocentric longitude of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutGeocentricRad.__doc__ = "The geocentric radius of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutGeodeticLat.__doc__ = "The geodetic latitude of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutGeodeticLon.__doc__ = "The geodetic longitude of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutGeodeticAlt.__doc__ = "The geodetic altitude of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutAzAltAz.__doc__ = "The geodetic azimuth of the launch trajectory."
-AgEVAControlLaunch.eVAControlLaunchBurnoutAzAltDownrangeDist.__doc__ = "The geodetic downrange distance of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutAzAltAlt.__doc__ = "The geodetic altitude of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutAzRadAz.__doc__ = "The geocentric azimuth of the launch trajectory."
-AgEVAControlLaunch.eVAControlLaunchBurnoutAzRadDownrangeDist.__doc__ = "The geocentric downrange distance of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutAzRadRad.__doc__ = "The geocentric radius of the burnout point."
-AgEVAControlLaunch.eVAControlLaunchBurnoutFixedVelocity.__doc__ = "The burnout velocity in the fixed frame."
-AgEVAControlLaunch.eVAControlLaunchBurnoutInertialVelocity.__doc__ = "The burnout velocity in the inertial frame."
-AgEVAControlLaunch.eVAControlLaunchBurnoutInertialVelocityAzimuth.__doc__ = "Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed."
-AgEVAControlLaunch.eVAControlLaunchBurnoutInertialHorizontalFPA.__doc__ = "Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle."
-AgEVAControlLaunch.eVAControlLaunchDryMass.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
-AgEVAControlLaunch.eVAControlLaunchCd.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
-AgEVAControlLaunch.eVAControlLaunchDragArea.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
-AgEVAControlLaunch.eVAControlLaunchCr.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAControlLaunch.eVAControlLaunchSRPArea.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
-AgEVAControlLaunch.eVAControlLaunchCk.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAControlLaunch.eVAControlLaunchRadiationPressureArea.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
-AgEVAControlLaunch.eVAControlLaunchK1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
-AgEVAControlLaunch.eVAControlLaunchK2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (scale) value."
-AgEVAControlLaunch.eVAControlLaunchTankPressure.__doc__ = "The fuel tank pressure."
-AgEVAControlLaunch.eVAControlLaunchTankVolume.__doc__ = "The volume of the fuel tank."
-AgEVAControlLaunch.eVAControlLaunchTankTemp.__doc__ = "The fuel tank temperature."
-AgEVAControlLaunch.eVAControlLaunchFuelDensity.__doc__ = "The density of the fuel tank."
-AgEVAControlLaunch.eVAControlLaunchFuelMass.__doc__ = "The mass of the spacecraft propellant."
-AgEVAControlLaunch.eVAControlLaunchMaxFuelMass.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."
+VA_CONTROL_LAUNCH.EPOCH.__doc__ = "The date and time of the launch."
+VA_CONTROL_LAUNCH.GEODETIC_LAT.__doc__ = "The geodetic latitude of the launch location."
+VA_CONTROL_LAUNCH.GEODETIC_LON.__doc__ = "The geodetic longitude of the launch location."
+VA_CONTROL_LAUNCH.GEODETIC_ALT.__doc__ = "The geodetic altitude of the launch location."
+VA_CONTROL_LAUNCH.GEOCENTRIC_LAT.__doc__ = "The geocentric latitude of the launch location."
+VA_CONTROL_LAUNCH.GEOCENTRIC_LON.__doc__ = "The geocentric longitude of the launch location."
+VA_CONTROL_LAUNCH.GEOCENTRIC_RAD.__doc__ = "The geocentric radius of the launch location."
+VA_CONTROL_LAUNCH.TIME_OF_FLIGHT.__doc__ = "The time of flight, from launch until burnout."
+VA_CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LAT.__doc__ = "The geocentric latitude of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LON.__doc__ = "The geocentric longitude of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_RAD.__doc__ = "The geocentric radius of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_GEODETIC_LAT.__doc__ = "The geodetic latitude of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_GEODETIC_LON.__doc__ = "The geodetic longitude of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_GEODETIC_ALT.__doc__ = "The geodetic altitude of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_AZ_ALT_AZ.__doc__ = "The geodetic azimuth of the launch trajectory."
+VA_CONTROL_LAUNCH.BURNOUT_AZ_ALT_DOWNRANGE_DIST.__doc__ = "The geodetic downrange distance of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_AZ_ALT_ALT.__doc__ = "The geodetic altitude of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_AZ_RAD_AZ.__doc__ = "The geocentric azimuth of the launch trajectory."
+VA_CONTROL_LAUNCH.BURNOUT_AZ_RAD_DOWNRANGE_DIST.__doc__ = "The geocentric downrange distance of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_AZ_RAD_RAD.__doc__ = "The geocentric radius of the burnout point."
+VA_CONTROL_LAUNCH.BURNOUT_FIXED_VELOCITY.__doc__ = "The burnout velocity in the fixed frame."
+VA_CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY.__doc__ = "The burnout velocity in the inertial frame."
+VA_CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY_AZIMUTH.__doc__ = "Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed."
+VA_CONTROL_LAUNCH.BURNOUT_INERTIAL_HORIZONTAL_FPA.__doc__ = "Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle."
+VA_CONTROL_LAUNCH.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
+VA_CONTROL_LAUNCH.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+VA_CONTROL_LAUNCH.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
+VA_CONTROL_LAUNCH.CR.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_CONTROL_LAUNCH.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
+VA_CONTROL_LAUNCH.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_CONTROL_LAUNCH.RADIATION_PRESSURE_AREA.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
+VA_CONTROL_LAUNCH.K1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
+VA_CONTROL_LAUNCH.K2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (scale) value."
+VA_CONTROL_LAUNCH.TANK_PRESSURE.__doc__ = "The fuel tank pressure."
+VA_CONTROL_LAUNCH.TANK_VOLUME.__doc__ = "The volume of the fuel tank."
+VA_CONTROL_LAUNCH.TANK_TEMP.__doc__ = "The fuel tank temperature."
+VA_CONTROL_LAUNCH.FUEL_DENSITY.__doc__ = "The density of the fuel tank."
+VA_CONTROL_LAUNCH.FUEL_MASS.__doc__ = "The mass of the spacecraft propellant."
+VA_CONTROL_LAUNCH.MAX_FUEL_MASS.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."
 
-agcls.AgTypeNameMap["AgEVAControlLaunch"] = AgEVAControlLaunch
+agcls.AgTypeNameMap["VA_CONTROL_LAUNCH"] = VA_CONTROL_LAUNCH
 
-class AgEVAControlAdvanced(IntEnum):
+class VA_CONTROL_ADVANCED(IntEnum):
     """Propagate segment properties that can be selected as control parameters for a Target Sequence."""
     # The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied.
-    eVAControlPropagateMaxPropTime = 600
+    PROPAGATE_MAX_PROP_TIME = 600
     # The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction.
-    eVAControlPropagateMinPropTime = 601
+    PROPAGATE_MIN_PROP_TIME = 601
 
-AgEVAControlAdvanced.eVAControlPropagateMaxPropTime.__doc__ = "The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."
-AgEVAControlAdvanced.eVAControlPropagateMinPropTime.__doc__ = "The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."
+VA_CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME.__doc__ = "The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."
+VA_CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME.__doc__ = "The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."
 
-agcls.AgTypeNameMap["AgEVAControlAdvanced"] = AgEVAControlAdvanced
+agcls.AgTypeNameMap["VA_CONTROL_ADVANCED"] = VA_CONTROL_ADVANCED
 
-class AgEVATargetSeqAction(IntEnum):
+class VA_TARGET_SEQ_ACTION(IntEnum):
     """Action options for Target Sequence profiles."""
     # Run Nominal Sequence - runs the mission control sequence.
-    eVATargetSeqActionRunNominalSeq = 0
+    RUN_NOMINAL_SEQ = 0
     # Run Active Profiles - runs the mission control sequence allowing the active profiles to operate.
-    eVATargetSeqActionRunActiveProfiles = 1
+    RUN_ACTIVE_PROFILES = 1
     # Run Active Profiles Once - runs the profile with corrections applied to control parameters.
-    eVATargetSeqActionRunActiveProfilesOnce = 2
+    RUN_ACTIVE_PROFILES_ONCE = 2
 
-AgEVATargetSeqAction.eVATargetSeqActionRunNominalSeq.__doc__ = "Run Nominal Sequence - runs the mission control sequence."
-AgEVATargetSeqAction.eVATargetSeqActionRunActiveProfiles.__doc__ = "Run Active Profiles - runs the mission control sequence allowing the active profiles to operate."
-AgEVATargetSeqAction.eVATargetSeqActionRunActiveProfilesOnce.__doc__ = "Run Active Profiles Once - runs the profile with corrections applied to control parameters."
+VA_TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ.__doc__ = "Run Nominal Sequence - runs the mission control sequence."
+VA_TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES.__doc__ = "Run Active Profiles - runs the mission control sequence allowing the active profiles to operate."
+VA_TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES_ONCE.__doc__ = "Run Active Profiles Once - runs the profile with corrections applied to control parameters."
 
-agcls.AgTypeNameMap["AgEVATargetSeqAction"] = AgEVATargetSeqAction
+agcls.AgTypeNameMap["VA_TARGET_SEQ_ACTION"] = VA_TARGET_SEQ_ACTION
 
-class AgEVAProfilesFinish(IntEnum):
+class VA_PROFILES_FINISH(IntEnum):
     """Action options for Target Sequence profiles convergence."""
     # Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence.
-    eVAProfilesFinishRunToReturnAndContinue = 0
+    RUN_TO_RETURN_AND_CONTINUE = 0
     # Run To Return And Stop - run the target sequence to the first Return segment, and then stop running the MCS altogether.
-    eVAProfilesFinishRunToReturnAndStop = 1
+    RUN_TO_RETURN_AND_STOP = 1
     # Stop - stop the MCS as soon as the target sequence has converged.
-    eVAProfilesFinishStop = 2
+    STOP = 2
 
-AgEVAProfilesFinish.eVAProfilesFinishRunToReturnAndContinue.__doc__ = "Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence."
-AgEVAProfilesFinish.eVAProfilesFinishRunToReturnAndStop.__doc__ = "Run To Return And Stop - run the target sequence to the first Return segment, and then stop running the MCS altogether."
-AgEVAProfilesFinish.eVAProfilesFinishStop.__doc__ = "Stop - stop the MCS as soon as the target sequence has converged."
+VA_PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE.__doc__ = "Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence."
+VA_PROFILES_FINISH.RUN_TO_RETURN_AND_STOP.__doc__ = "Run To Return And Stop - run the target sequence to the first Return segment, and then stop running the MCS altogether."
+VA_PROFILES_FINISH.STOP.__doc__ = "Stop - stop the MCS as soon as the target sequence has converged."
 
-agcls.AgTypeNameMap["AgEVAProfilesFinish"] = AgEVAProfilesFinish
+agcls.AgTypeNameMap["VA_PROFILES_FINISH"] = VA_PROFILES_FINISH
 
-class AgEVAUpdateParam(IntEnum):
+class VA_UPDATE_PARAM(IntEnum):
     """Spacecraft parameters that can be modified by an Update segment."""
     # Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations.
-    eVAUpdateParamDragArea = 0
+    DRAG_AREA = 0
     # Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations.
-    eVAUpdateParamSRPArea = 1
+    SRP_AREA = 1
     # Dry Mass - the mass of the spacecraft exclusive of propellant.
-    eVAUpdateParamDryMass = 2
+    DRY_MASS = 2
     # The mass of the spacecraft propellant.
-    eVAUpdateParamFuelMass = 3
+    FUEL_MASS = 3
     # The density of the fuel tank.
-    eVAUpdateParamFuelDensity = 4
+    FUEL_DENSITY = 4
     # The fuel tank pressure.
-    eVAUpdateParamTankPressure = 5
+    TANK_PRESSURE = 5
     # The temperature of the fuel tank.
-    eVAUpdateParamTankTemp = 6
+    TANK_TEMP = 6
     # Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAUpdateParamCr = 7
+    CR = 7
     # Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
-    eVAUpdateParamCd = 8
+    CD = 8
     # Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
-    eVAUpdateParamCk = 9
+    CK = 9
     # Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations.
-    eVAUpdateParamRadiationPressureArea = 10
+    RADIATION_PRESSURE_AREA = 10
 
-AgEVAUpdateParam.eVAUpdateParamDragArea.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
-AgEVAUpdateParam.eVAUpdateParamSRPArea.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
-AgEVAUpdateParam.eVAUpdateParamDryMass.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
-AgEVAUpdateParam.eVAUpdateParamFuelMass.__doc__ = "The mass of the spacecraft propellant."
-AgEVAUpdateParam.eVAUpdateParamFuelDensity.__doc__ = "The density of the fuel tank."
-AgEVAUpdateParam.eVAUpdateParamTankPressure.__doc__ = "The fuel tank pressure."
-AgEVAUpdateParam.eVAUpdateParamTankTemp.__doc__ = "The temperature of the fuel tank."
-AgEVAUpdateParam.eVAUpdateParamCr.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAUpdateParam.eVAUpdateParamCd.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
-AgEVAUpdateParam.eVAUpdateParamCk.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-AgEVAUpdateParam.eVAUpdateParamRadiationPressureArea.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
+VA_UPDATE_PARAM.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
+VA_UPDATE_PARAM.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
+VA_UPDATE_PARAM.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
+VA_UPDATE_PARAM.FUEL_MASS.__doc__ = "The mass of the spacecraft propellant."
+VA_UPDATE_PARAM.FUEL_DENSITY.__doc__ = "The density of the fuel tank."
+VA_UPDATE_PARAM.TANK_PRESSURE.__doc__ = "The fuel tank pressure."
+VA_UPDATE_PARAM.TANK_TEMP.__doc__ = "The temperature of the fuel tank."
+VA_UPDATE_PARAM.CR.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_UPDATE_PARAM.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+VA_UPDATE_PARAM.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+VA_UPDATE_PARAM.RADIATION_PRESSURE_AREA.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
 
-agcls.AgTypeNameMap["AgEVAUpdateParam"] = AgEVAUpdateParam
+agcls.AgTypeNameMap["VA_UPDATE_PARAM"] = VA_UPDATE_PARAM
 
-class AgEVAUpdateAction(IntEnum):
+class VA_UPDATE_ACTION(IntEnum):
     """Actions for the Update segment."""
     # No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column).
-    eVAUpdateActionNoChange = 0
+    NO_CHANGE = 0
     # Add value - add the quantity entered in the Value column to the current value for this parameter.
-    eVAUpdateActionAddValue = 1
+    ADD_VALUE = 1
     # Subtract value - subtract the quantity entered in the Value column from the current value for this parameter.
-    eVAUpdateActionSubtractValue = 2
+    SUBTRACT_VALUE = 2
     # Set to new value - replace the current value for this parameter with the quantity entered in the Value column.
-    eVAUpdateActionSetToNewValue = 3
+    SET_TO_NEW_VALUE = 3
 
-AgEVAUpdateAction.eVAUpdateActionNoChange.__doc__ = "No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column)."
-AgEVAUpdateAction.eVAUpdateActionAddValue.__doc__ = "Add value - add the quantity entered in the Value column to the current value for this parameter."
-AgEVAUpdateAction.eVAUpdateActionSubtractValue.__doc__ = "Subtract value - subtract the quantity entered in the Value column from the current value for this parameter."
-AgEVAUpdateAction.eVAUpdateActionSetToNewValue.__doc__ = "Set to new value - replace the current value for this parameter with the quantity entered in the Value column."
+VA_UPDATE_ACTION.NO_CHANGE.__doc__ = "No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column)."
+VA_UPDATE_ACTION.ADD_VALUE.__doc__ = "Add value - add the quantity entered in the Value column to the current value for this parameter."
+VA_UPDATE_ACTION.SUBTRACT_VALUE.__doc__ = "Subtract value - subtract the quantity entered in the Value column from the current value for this parameter."
+VA_UPDATE_ACTION.SET_TO_NEW_VALUE.__doc__ = "Set to new value - replace the current value for this parameter with the quantity entered in the Value column."
 
-agcls.AgTypeNameMap["AgEVAUpdateAction"] = AgEVAUpdateAction
+agcls.AgTypeNameMap["VA_UPDATE_ACTION"] = VA_UPDATE_ACTION
 
-class AgEVAPressureMode(IntEnum):
+class VA_PRESSURE_MODE(IntEnum):
     """Pressure Mode options."""
     # Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law.
-    eVAPressureModeBlowDown = 0
+    BLOW_DOWN = 0
     # Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases.
-    eVAPressureModePressureRegulated = 1
+    PRESSURE_REGULATED = 1
 
-AgEVAPressureMode.eVAPressureModeBlowDown.__doc__ = "Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law."
-AgEVAPressureMode.eVAPressureModePressureRegulated.__doc__ = "Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases."
+VA_PRESSURE_MODE.BLOW_DOWN.__doc__ = "Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law."
+VA_PRESSURE_MODE.PRESSURE_REGULATED.__doc__ = "Pressure-Regulated - constant pressure is maintained in the fuel tank through some pressurization mechanism as the propellant mass decreases."
 
-agcls.AgTypeNameMap["AgEVAPressureMode"] = AgEVAPressureMode
+agcls.AgTypeNameMap["VA_PRESSURE_MODE"] = VA_PRESSURE_MODE
 
-class AgEVAThrustType(IntEnum):
+class VA_THRUST_TYPE(IntEnum):
     """Thrust options."""
     # Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines.
-    eVAThrustTypeAffectsAccelAndMassFlow = 0
+    AFFECTS_ACCEL_AND_MASS_FLOW = 0
     # Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber.
-    eVAThrustTypeAffectsAccelOnly = 1
+    AFFECTS_ACCEL_ONLY = 1
 
-AgEVAThrustType.eVAThrustTypeAffectsAccelAndMassFlow.__doc__ = "Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."
-AgEVAThrustType.eVAThrustTypeAffectsAccelOnly.__doc__ = "Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber."
+VA_THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW.__doc__ = "Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."
+VA_THRUST_TYPE.AFFECTS_ACCEL_ONLY.__doc__ = "Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber."
 
-agcls.AgTypeNameMap["AgEVAThrustType"] = AgEVAThrustType
+agcls.AgTypeNameMap["VA_THRUST_TYPE"] = VA_THRUST_TYPE
 
-class AgEVAAttitudeUpdate(IntEnum):
+class VA_ATTITUDE_UPDATE(IntEnum):
     """Attitude Update."""
     # Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn.
-    eVAAttitudeUpdateDuringBurn = 0
+    DURING_BURN = 0
     # Inertial at ignition - specified by Attitude Control at ignition and remains the same throughout the maneuver. This fixes the thrust direction in the inertial direction calculated at the beginning of the burn and is used for inertially fixed spacecraft.
-    eVAAttitudeUpdateInertialAtIgnition = 1
+    INERTIAL_AT_IGNITION = 1
     # Inertial at start - specified by Attitude Control at the beginning of the maneuver segment and remains the same throughout the maneuver.
-    eVAAttitudeUpdateInertialAtStart = 2
+    INERTIAL_AT_START = 2
 
-AgEVAAttitudeUpdate.eVAAttitudeUpdateDuringBurn.__doc__ = "Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn."
-AgEVAAttitudeUpdate.eVAAttitudeUpdateInertialAtIgnition.__doc__ = "Inertial at ignition - specified by Attitude Control at ignition and remains the same throughout the maneuver. This fixes the thrust direction in the inertial direction calculated at the beginning of the burn and is used for inertially fixed spacecraft."
-AgEVAAttitudeUpdate.eVAAttitudeUpdateInertialAtStart.__doc__ = "Inertial at start - specified by Attitude Control at the beginning of the maneuver segment and remains the same throughout the maneuver."
+VA_ATTITUDE_UPDATE.DURING_BURN.__doc__ = "Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn."
+VA_ATTITUDE_UPDATE.INERTIAL_AT_IGNITION.__doc__ = "Inertial at ignition - specified by Attitude Control at ignition and remains the same throughout the maneuver. This fixes the thrust direction in the inertial direction calculated at the beginning of the burn and is used for inertially fixed spacecraft."
+VA_ATTITUDE_UPDATE.INERTIAL_AT_START.__doc__ = "Inertial at start - specified by Attitude Control at the beginning of the maneuver segment and remains the same throughout the maneuver."
 
-agcls.AgTypeNameMap["AgEVAAttitudeUpdate"] = AgEVAAttitudeUpdate
+agcls.AgTypeNameMap["VA_ATTITUDE_UPDATE"] = VA_ATTITUDE_UPDATE
 
-class AgEVAPropulsionMethod(IntEnum):
+class VA_PROPULSION_METHOD(IntEnum):
     """Propulsion method options."""
     # Engine Model - can be used to quickly model the firing of a single engine.
-    eVAPropulsionMethodEngineModel = 0
+    ENGINE_MODEL = 0
     # Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing.
-    eVAPropulsionMethodThrusterSet = 1
+    THRUSTER_SET = 1
 
-AgEVAPropulsionMethod.eVAPropulsionMethodEngineModel.__doc__ = "Engine Model - can be used to quickly model the firing of a single engine."
-AgEVAPropulsionMethod.eVAPropulsionMethodThrusterSet.__doc__ = "Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing."
+VA_PROPULSION_METHOD.ENGINE_MODEL.__doc__ = "Engine Model - can be used to quickly model the firing of a single engine."
+VA_PROPULSION_METHOD.THRUSTER_SET.__doc__ = "Thruster Set - used to fire multiple engines simultaneously, and to simulate off-pulsing or complex engine pointing."
 
-agcls.AgTypeNameMap["AgEVAPropulsionMethod"] = AgEVAPropulsionMethod
+agcls.AgTypeNameMap["VA_PROPULSION_METHOD"] = VA_PROPULSION_METHOD
 
-class AgEVACustomFunction(IntEnum):
+class VA_CUSTOM_FUNCTION(IntEnum):
     """Attitude definition options for other STK functions."""
     # Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK.
-    eVAEnablePageDefinition = 0
+    ENABLE_PAGE_DEFINITION = 0
     # Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window.
-    eVAEnableManeuverAttitude = 1
+    ENABLE_MANEUVER_ATTITUDE = 1
 
-AgEVACustomFunction.eVAEnablePageDefinition.__doc__ = "Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK."
-AgEVACustomFunction.eVAEnableManeuverAttitude.__doc__ = "Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window."
+VA_CUSTOM_FUNCTION.ENABLE_PAGE_DEFINITION.__doc__ = "Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK."
+VA_CUSTOM_FUNCTION.ENABLE_MANEUVER_ATTITUDE.__doc__ = "Maneuver attitude will be used for the satellite during the time at the maneuver, and during the specified lead and trail times. This attitude will also show up in reports, graphs, sensor access calculations, and in the 3D Graphics window."
 
-agcls.AgTypeNameMap["AgEVACustomFunction"] = AgEVACustomFunction
+agcls.AgTypeNameMap["VA_CUSTOM_FUNCTION"] = VA_CUSTOM_FUNCTION
 
-class AgEVABodyAxis(IntEnum):
+class VA_BODY_AXIS(IntEnum):
     """Attitude body axis options."""
     # The positive X engine acceleration direction.
-    eVABodyAxisPlusX = 0
+    PLUS_X = 0
     # The positive Y engine acceleration direction.
-    eVABodyAxisPlusY = 1
+    PLUS_Y = 1
     # The positive Z engine acceleration direction.
-    eVABodyAxisPlusZ = 2
+    PLUS_Z = 2
     # The negative X engine acceleration direction.
-    eVABodyAxisMinusX = 3
+    MINUS_X = 3
     # The negative Y engine acceleration direction.
-    eVABodyAxisMinusY = 4
+    MINUS_Y = 4
     # The negative Z engine acceleration direction.
-    eVABodyAxisMinusZ = 5
+    MINUS_Z = 5
 
-AgEVABodyAxis.eVABodyAxisPlusX.__doc__ = "The positive X engine acceleration direction."
-AgEVABodyAxis.eVABodyAxisPlusY.__doc__ = "The positive Y engine acceleration direction."
-AgEVABodyAxis.eVABodyAxisPlusZ.__doc__ = "The positive Z engine acceleration direction."
-AgEVABodyAxis.eVABodyAxisMinusX.__doc__ = "The negative X engine acceleration direction."
-AgEVABodyAxis.eVABodyAxisMinusY.__doc__ = "The negative Y engine acceleration direction."
-AgEVABodyAxis.eVABodyAxisMinusZ.__doc__ = "The negative Z engine acceleration direction."
+VA_BODY_AXIS.PLUS_X.__doc__ = "The positive X engine acceleration direction."
+VA_BODY_AXIS.PLUS_Y.__doc__ = "The positive Y engine acceleration direction."
+VA_BODY_AXIS.PLUS_Z.__doc__ = "The positive Z engine acceleration direction."
+VA_BODY_AXIS.MINUS_X.__doc__ = "The negative X engine acceleration direction."
+VA_BODY_AXIS.MINUS_Y.__doc__ = "The negative Y engine acceleration direction."
+VA_BODY_AXIS.MINUS_Z.__doc__ = "The negative Z engine acceleration direction."
 
-agcls.AgTypeNameMap["AgEVABodyAxis"] = AgEVABodyAxis
+agcls.AgTypeNameMap["VA_BODY_AXIS"] = VA_BODY_AXIS
 
-class AgEVAConstraintSign(IntEnum):
+class VA_CONSTRAINT_SIGN(IntEnum):
     """Constraint vector sign options."""
     # Positive.
-    eVAConstraintSignPlus = 0
+    PLUS = 0
     # Negative.
-    eVAConstraintSignMinus = 1
+    MINUS = 1
 
-AgEVAConstraintSign.eVAConstraintSignPlus.__doc__ = "Positive."
-AgEVAConstraintSign.eVAConstraintSignMinus.__doc__ = "Negative."
+VA_CONSTRAINT_SIGN.PLUS.__doc__ = "Positive."
+VA_CONSTRAINT_SIGN.MINUS.__doc__ = "Negative."
 
-agcls.AgTypeNameMap["AgEVAConstraintSign"] = AgEVAConstraintSign
+agcls.AgTypeNameMap["VA_CONSTRAINT_SIGN"] = VA_CONSTRAINT_SIGN
 
-class AgEVAAttitudeControl(IntEnum):
+class VA_ATTITUDE_CONTROL(IntEnum):
     """Attitude Control options."""
     # Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector.
-    eVAAttitudeControlVelocityVector = 0
+    VELOCITY_VECTOR = 0
     # Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector.
-    eVAAttitudeControlAntiVelocityVector = 1
+    ANTI_VELOCITY_VECTOR = 1
     # Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. 
-    eVAAttitudeControlAttitude = 2
+    ATTITUDE = 2
     # File (impulsive/finite) - uses an attitude file to set the thrust vector direction.
-    eVAAttitudeControlFile = 3
+    FILE = 3
     # Thrust Vector (impulsive/finite) - the total thrust vector is explicitly specified in Cartesian or spherical form with respect to the thrust axes.
-    eVAAttitudeControlThrustVector = 4
+    THRUST_VECTOR = 4
     # Plugin (finite) - thrust vector direction is defined using a COM plugin.
-    eVAAttitudeControlPlugin = 5
+    PLUGIN = 5
     # Time Varying (finite) - polynomial and sine representations for the azimuth and elevation of the thrust vector.
-    eVAAttitudeControlTimeVarying = 6
+    TIME_VARYING = 6
     # Lagrange Interpolation (optimal finite, always set) - supports the 'Run current nodes' execution mode of the Optimal Finite Maneuver.
-    eVAAttitudeControlLagrangeInterpolation = 7
+    LAGRANGE_INTERPOLATION = 7
 
-AgEVAAttitudeControl.eVAAttitudeControlVelocityVector.__doc__ = "Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector."
-AgEVAAttitudeControl.eVAAttitudeControlAntiVelocityVector.__doc__ = "Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector."
-AgEVAAttitudeControl.eVAAttitudeControlAttitude.__doc__ = "Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. "
-AgEVAAttitudeControl.eVAAttitudeControlFile.__doc__ = "File (impulsive/finite) - uses an attitude file to set the thrust vector direction."
-AgEVAAttitudeControl.eVAAttitudeControlThrustVector.__doc__ = "Thrust Vector (impulsive/finite) - the total thrust vector is explicitly specified in Cartesian or spherical form with respect to the thrust axes."
-AgEVAAttitudeControl.eVAAttitudeControlPlugin.__doc__ = "Plugin (finite) - thrust vector direction is defined using a COM plugin."
-AgEVAAttitudeControl.eVAAttitudeControlTimeVarying.__doc__ = "Time Varying (finite) - polynomial and sine representations for the azimuth and elevation of the thrust vector."
-AgEVAAttitudeControl.eVAAttitudeControlLagrangeInterpolation.__doc__ = "Lagrange Interpolation (optimal finite, always set) - supports the 'Run current nodes' execution mode of the Optimal Finite Maneuver."
+VA_ATTITUDE_CONTROL.VELOCITY_VECTOR.__doc__ = "Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector."
+VA_ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR.__doc__ = "Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector."
+VA_ATTITUDE_CONTROL.ATTITUDE.__doc__ = "Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. "
+VA_ATTITUDE_CONTROL.FILE.__doc__ = "File (impulsive/finite) - uses an attitude file to set the thrust vector direction."
+VA_ATTITUDE_CONTROL.THRUST_VECTOR.__doc__ = "Thrust Vector (impulsive/finite) - the total thrust vector is explicitly specified in Cartesian or spherical form with respect to the thrust axes."
+VA_ATTITUDE_CONTROL.PLUGIN.__doc__ = "Plugin (finite) - thrust vector direction is defined using a COM plugin."
+VA_ATTITUDE_CONTROL.TIME_VARYING.__doc__ = "Time Varying (finite) - polynomial and sine representations for the azimuth and elevation of the thrust vector."
+VA_ATTITUDE_CONTROL.LAGRANGE_INTERPOLATION.__doc__ = "Lagrange Interpolation (optimal finite, always set) - supports the 'Run current nodes' execution mode of the Optimal Finite Maneuver."
 
-agcls.AgTypeNameMap["AgEVAAttitudeControl"] = AgEVAAttitudeControl
+agcls.AgTypeNameMap["VA_ATTITUDE_CONTROL"] = VA_ATTITUDE_CONTROL
 
-class AgEVAFollowJoin(IntEnum):
+class VA_FOLLOW_JOIN(IntEnum):
     """Joining options for the Follow segment."""
     # Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining.
-    eVAFollowJoinSpecify = 0
+    SPECIFY = 0
     # Join at Beginning of Leader's Ephemeris - the spacecraft will follow the leader from the beginning of the leader's ephemeris.
-    eVAFollowJoinAtBeginning = 1
+    AT_BEGINNING = 1
     # Join at End of Leader's Ephemeris - the spacecraft will use the leader's final ephemeris point as the initial and final state of the Follow segment; the separation parameter will automatically be set to 'Separate at End of Leader's Ephemeris'.
-    eVAFollowJoinAtEnd = 2
+    AT_END = 2
     # Join at Final Epoch of Previous Segment - the spacecraft will follow the leader from the final epoch at the end of the previous segment.
-    eVAFollowJoinAtFinalEpochOfPreviousSeg = 3
+    AT_FINAL_EPOCH_OF_PREVIOUS_SEG = 3
 
-AgEVAFollowJoin.eVAFollowJoinSpecify.__doc__ = "Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining."
-AgEVAFollowJoin.eVAFollowJoinAtBeginning.__doc__ = "Join at Beginning of Leader's Ephemeris - the spacecraft will follow the leader from the beginning of the leader's ephemeris."
-AgEVAFollowJoin.eVAFollowJoinAtEnd.__doc__ = "Join at End of Leader's Ephemeris - the spacecraft will use the leader's final ephemeris point as the initial and final state of the Follow segment; the separation parameter will automatically be set to 'Separate at End of Leader's Ephemeris'."
-AgEVAFollowJoin.eVAFollowJoinAtFinalEpochOfPreviousSeg.__doc__ = "Join at Final Epoch of Previous Segment - the spacecraft will follow the leader from the final epoch at the end of the previous segment."
+VA_FOLLOW_JOIN.SPECIFY.__doc__ = "Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining."
+VA_FOLLOW_JOIN.AT_BEGINNING.__doc__ = "Join at Beginning of Leader's Ephemeris - the spacecraft will follow the leader from the beginning of the leader's ephemeris."
+VA_FOLLOW_JOIN.AT_END.__doc__ = "Join at End of Leader's Ephemeris - the spacecraft will use the leader's final ephemeris point as the initial and final state of the Follow segment; the separation parameter will automatically be set to 'Separate at End of Leader's Ephemeris'."
+VA_FOLLOW_JOIN.AT_FINAL_EPOCH_OF_PREVIOUS_SEG.__doc__ = "Join at Final Epoch of Previous Segment - the spacecraft will follow the leader from the final epoch at the end of the previous segment."
 
-agcls.AgTypeNameMap["AgEVAFollowJoin"] = AgEVAFollowJoin
+agcls.AgTypeNameMap["VA_FOLLOW_JOIN"] = VA_FOLLOW_JOIN
 
-class AgEVAFollowSeparation(IntEnum):
+class VA_FOLLOW_SEPARATION(IntEnum):
     """Separation options for the Follow segment."""
     # Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation.
-    eVAFollowSeparationSpecify = 0
+    SPECIFY = 0
     # Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate.
-    eVAFollowSeparationAtEndOfLeadersEphem = 1
+    AT_END_OF_LEADERS_EPHEM = 1
 
-AgEVAFollowSeparation.eVAFollowSeparationSpecify.__doc__ = "Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."
-AgEVAFollowSeparation.eVAFollowSeparationAtEndOfLeadersEphem.__doc__ = "Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate."
+VA_FOLLOW_SEPARATION.SPECIFY.__doc__ = "Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."
+VA_FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEM.__doc__ = "Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate."
 
-agcls.AgTypeNameMap["AgEVAFollowSeparation"] = AgEVAFollowSeparation
+agcls.AgTypeNameMap["VA_FOLLOW_SEPARATION"] = VA_FOLLOW_SEPARATION
 
-class AgEVAFollowSpacecraftAndFuelTank(IntEnum):
+class VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK(IntEnum):
     """Spacecraft parameter options for the Follow segment."""
     # Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank.
-    eVAFollowSpacecraftAndFuelTankSpecify = 0
+    SPECIFY = 0
     # Inherit Spacecraft Configuration From Previous Segment - the spacecraft will be defined by its configuration at the end of the previous segment. The configuration will not be changed by the Follow segment.
-    eVAFollowSpacecraftAndFuelTankInherit = 1
+    INHERIT = 1
     # Inherit Spacecraft Configuration From Leader - if leader is an Astrogator satellite, configuration will be defined by the leader's configuration.
-    eVAFollowSpacecraftAndFuelTankLeader = 2
+    LEADER = 2
 
-AgEVAFollowSpacecraftAndFuelTank.eVAFollowSpacecraftAndFuelTankSpecify.__doc__ = "Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank."
-AgEVAFollowSpacecraftAndFuelTank.eVAFollowSpacecraftAndFuelTankInherit.__doc__ = "Inherit Spacecraft Configuration From Previous Segment - the spacecraft will be defined by its configuration at the end of the previous segment. The configuration will not be changed by the Follow segment."
-AgEVAFollowSpacecraftAndFuelTank.eVAFollowSpacecraftAndFuelTankLeader.__doc__ = "Inherit Spacecraft Configuration From Leader - if leader is an Astrogator satellite, configuration will be defined by the leader's configuration."
+VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK.SPECIFY.__doc__ = "Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank."
+VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK.INHERIT.__doc__ = "Inherit Spacecraft Configuration From Previous Segment - the spacecraft will be defined by its configuration at the end of the previous segment. The configuration will not be changed by the Follow segment."
+VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK.LEADER.__doc__ = "Inherit Spacecraft Configuration From Leader - if leader is an Astrogator satellite, configuration will be defined by the leader's configuration."
 
-agcls.AgTypeNameMap["AgEVAFollowSpacecraftAndFuelTank"] = AgEVAFollowSpacecraftAndFuelTank
+agcls.AgTypeNameMap["VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK"] = VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK
 
-class AgEVABurnoutOptions(IntEnum):
+class VA_BURNOUT_OPTIONS(IntEnum):
     """Burnout options for the Launch segment."""
     # Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero.
-    eVABurnoutOptionsFixedVelocity = 0
+    FIXED_VELOCITY = 0
     # Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity.
-    eVABurnoutOptionsInertialVelocity = 1
+    INERTIAL_VELOCITY = 1
 
-AgEVABurnoutOptions.eVABurnoutOptionsFixedVelocity.__doc__ = "Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero."
-AgEVABurnoutOptions.eVABurnoutOptionsInertialVelocity.__doc__ = "Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity."
+VA_BURNOUT_OPTIONS.FIXED_VELOCITY.__doc__ = "Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero."
+VA_BURNOUT_OPTIONS.INERTIAL_VELOCITY.__doc__ = "Use Inertial Velocity - the final state of the launch segment is solely and completely determined by the burnout position and velocity."
 
-agcls.AgTypeNameMap["AgEVABurnoutOptions"] = AgEVABurnoutOptions
+agcls.AgTypeNameMap["VA_BURNOUT_OPTIONS"] = VA_BURNOUT_OPTIONS
 
-class AgEVABurnoutType(IntEnum):
+class VA_BURNOUT_TYPE(IntEnum):
     """Burnout point definition types for the Launch segment."""
     # Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body.
-    eVABurnoutTypeGeocentric = 0
+    GEOCENTRIC = 0
     # Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body).
-    eVABurnoutTypeGeodetic = 1
+    GEODETIC = 1
     # Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body.
-    eVABurnoutTypeLaunchAzRad = 2
+    LAUNCH_AZ_RAD = 2
     # Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body.
-    eVABurnoutTypeLaunchAzAlt = 3
+    LAUNCH_AZ_ALT = 3
     # Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system.
-    eVABurnoutTypeCBFCartesian = 4
+    CBF_CARTESIAN = 4
 
-AgEVABurnoutType.eVABurnoutTypeGeocentric.__doc__ = "Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."
-AgEVABurnoutType.eVABurnoutTypeGeodetic.__doc__ = "Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
-AgEVABurnoutType.eVABurnoutTypeLaunchAzRad.__doc__ = "Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body."
-AgEVABurnoutType.eVABurnoutTypeLaunchAzAlt.__doc__ = "Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body."
-AgEVABurnoutType.eVABurnoutTypeCBFCartesian.__doc__ = "Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system."
+VA_BURNOUT_TYPE.GEOCENTRIC.__doc__ = "Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."
+VA_BURNOUT_TYPE.GEODETIC.__doc__ = "Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
+VA_BURNOUT_TYPE.LAUNCH_AZ_RAD.__doc__ = "Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body."
+VA_BURNOUT_TYPE.LAUNCH_AZ_ALT.__doc__ = "Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body."
+VA_BURNOUT_TYPE.CBF_CARTESIAN.__doc__ = "Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system."
 
-agcls.AgTypeNameMap["AgEVABurnoutType"] = AgEVABurnoutType
+agcls.AgTypeNameMap["VA_BURNOUT_TYPE"] = VA_BURNOUT_TYPE
 
-class AgEVAAscentType(IntEnum):
+class VA_ASCENT_TYPE(IntEnum):
     """Ascent types for the Launch segment."""
     # Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities.
-    eVAAscentTypeEllipseCubicMotion = 0
+    ELLIPSE_CUBIC_MOTION = 0
     # Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration.
-    eVAAscentTypeEllipseQuarticMotion = 1
+    ELLIPSE_QUARTIC_MOTION = 1
 
-AgEVAAscentType.eVAAscentTypeEllipseCubicMotion.__doc__ = "Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities."
-AgEVAAscentType.eVAAscentTypeEllipseQuarticMotion.__doc__ = "Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration."
+VA_ASCENT_TYPE.ELLIPSE_CUBIC_MOTION.__doc__ = "Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities."
+VA_ASCENT_TYPE.ELLIPSE_QUARTIC_MOTION.__doc__ = "Ellipse: Quartic Motion - the motion is computed on the basis of given positions and velocities and initial acceleration."
 
-agcls.AgTypeNameMap["AgEVAAscentType"] = AgEVAAscentType
+agcls.AgTypeNameMap["VA_ASCENT_TYPE"] = VA_ASCENT_TYPE
 
-class AgEVALaunchDisplaySystem(IntEnum):
+class VA_LAUNCH_DISPLAY_SYSTEM(IntEnum):
     """Launch location coordinate types for the Launch segment."""
     # Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body.
-    eVADisplaySystemGeodetic = 0
+    DISPLAY_SYSTEM_GEODETIC = 0
     # Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body).
-    eVADisplaySystemGeocentric = 1
+    DISPLAY_SYSTEM_GEOCENTRIC = 1
 
-AgEVALaunchDisplaySystem.eVADisplaySystemGeodetic.__doc__ = "Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body."
-AgEVALaunchDisplaySystem.eVADisplaySystemGeocentric.__doc__ = "Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
+VA_LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEODETIC.__doc__ = "Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body."
+VA_LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEOCENTRIC.__doc__ = "Geodetic (Planetodetic) - the location is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
 
-agcls.AgTypeNameMap["AgEVALaunchDisplaySystem"] = AgEVALaunchDisplaySystem
+agcls.AgTypeNameMap["VA_LAUNCH_DISPLAY_SYSTEM"] = VA_LAUNCH_DISPLAY_SYSTEM
 
-class AgEVARunCode(IntEnum):
+class VA_RUN_CODE(IntEnum):
     """The run code returned after the MCS is run."""
     # Marching - a segment has run successfully.
-    eVARunCodeMarching = 0
+    MARCHING = 0
     # Profile Failure - a search profile failed to converge.
-    eVARunCodeProfileFailure = 1
+    PROFILE_FAILURE = 1
     # Error - encountered an error.
-    eVARunCodeError = 2
+    ERROR = 2
     # Stopped - encountered a stop segment.
-    eVARunCodeStopped = 3
+    STOPPED = 3
     # Returned - encountered a return segment.
-    eVARunCodeReturned = 4
+    RETURNED = 4
     # Cancelled - cancelled by user.
-    eVARunCodeCancelled = 5
+    CANCELLED = 5
     # Global Stop - hit a global stopping condition.
-    eVARunCodeHitGlobalStop = 6
+    HIT_GLOBAL_STOP = 6
 
-AgEVARunCode.eVARunCodeMarching.__doc__ = "Marching - a segment has run successfully."
-AgEVARunCode.eVARunCodeProfileFailure.__doc__ = "Profile Failure - a search profile failed to converge."
-AgEVARunCode.eVARunCodeError.__doc__ = "Error - encountered an error."
-AgEVARunCode.eVARunCodeStopped.__doc__ = "Stopped - encountered a stop segment."
-AgEVARunCode.eVARunCodeReturned.__doc__ = "Returned - encountered a return segment."
-AgEVARunCode.eVARunCodeCancelled.__doc__ = "Cancelled - cancelled by user."
-AgEVARunCode.eVARunCodeHitGlobalStop.__doc__ = "Global Stop - hit a global stopping condition."
+VA_RUN_CODE.MARCHING.__doc__ = "Marching - a segment has run successfully."
+VA_RUN_CODE.PROFILE_FAILURE.__doc__ = "Profile Failure - a search profile failed to converge."
+VA_RUN_CODE.ERROR.__doc__ = "Error - encountered an error."
+VA_RUN_CODE.STOPPED.__doc__ = "Stopped - encountered a stop segment."
+VA_RUN_CODE.RETURNED.__doc__ = "Returned - encountered a return segment."
+VA_RUN_CODE.CANCELLED.__doc__ = "Cancelled - cancelled by user."
+VA_RUN_CODE.HIT_GLOBAL_STOP.__doc__ = "Global Stop - hit a global stopping condition."
 
-agcls.AgTypeNameMap["AgEVARunCode"] = AgEVARunCode
+agcls.AgTypeNameMap["VA_RUN_CODE"] = VA_RUN_CODE
 
-class AgEVASequenceStateToPass(IntEnum):
+class VA_SEQUENCE_STATE_TO_PASS(IntEnum):
     """State To Pass options for the Sequence segment."""
     # The initial state of the sequence.
-    eVASequenceStateToPassInitial = 0
+    INITIAL = 0
     # The final state of the sequence.
-    eVASequenceStateToPassFinal = 1
+    FINAL = 1
 
-AgEVASequenceStateToPass.eVASequenceStateToPassInitial.__doc__ = "The initial state of the sequence."
-AgEVASequenceStateToPass.eVASequenceStateToPassFinal.__doc__ = "The final state of the sequence."
+VA_SEQUENCE_STATE_TO_PASS.INITIAL.__doc__ = "The initial state of the sequence."
+VA_SEQUENCE_STATE_TO_PASS.FINAL.__doc__ = "The final state of the sequence."
 
-agcls.AgTypeNameMap["AgEVASequenceStateToPass"] = AgEVASequenceStateToPass
+agcls.AgTypeNameMap["VA_SEQUENCE_STATE_TO_PASS"] = VA_SEQUENCE_STATE_TO_PASS
 
-class AgEVAManeuverType(IntEnum):
+class VA_MANEUVER_TYPE(IntEnum):
     """Maneuver types for the maneuver segment."""
     # Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment.
-    eVAManeuverTypeImpulsive = 0
+    IMPULSIVE = 0
     # Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met.
-    eVAManeuverTypeFinite = 1
+    FINITE = 1
     # Optimal Finite
-    eVAManeuverTypeOptimalFinite = 2
+    OPTIMAL_FINITE = 2
 
-AgEVAManeuverType.eVAManeuverTypeImpulsive.__doc__ = "Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment."
-AgEVAManeuverType.eVAManeuverTypeFinite.__doc__ = "Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met."
-AgEVAManeuverType.eVAManeuverTypeOptimalFinite.__doc__ = "Optimal Finite"
+VA_MANEUVER_TYPE.IMPULSIVE.__doc__ = "Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment."
+VA_MANEUVER_TYPE.FINITE.__doc__ = "Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met."
+VA_MANEUVER_TYPE.OPTIMAL_FINITE.__doc__ = "Optimal Finite"
 
-agcls.AgTypeNameMap["AgEVAManeuverType"] = AgEVAManeuverType
+agcls.AgTypeNameMap["VA_MANEUVER_TYPE"] = VA_MANEUVER_TYPE
 
-class AgEVASegmentType(IntEnum):
+class VA_SEGMENT_TYPE(IntEnum):
     """Segment types."""
     # Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS.
-    eVASegmentTypeInitialState = 0
+    INITIAL_STATE = 0
     # Launch - can be used to model a simple spacecraft launch from Earth or another central body.
-    eVASegmentTypeLaunch = 1
+    LAUNCH = 1
     # Maneuver - can be used to model a spacecraft maneuver.
-    eVASegmentTypeManeuver = 2
+    MANEUVER = 2
     # Follow - can be used to set the spacecraft to follow another vehicle (Satellite, Launch Vehicle, Missile, Aircraft, Ship, or Ground Vehicle) at a specified offset, and to separate from that vehicle upon meeting specified conditions.
-    eVASegmentTypeFollow = 3
+    FOLLOW = 3
     # Hold - can be used to model landing or rendezvous operations by setting the spacecraft to maintain a fixed position in reference to another object or body, until meeting specified conditions.
-    eVASegmentTypeHold = 4
+    HOLD = 4
     # Propagate - can be used to model the movement of the spacecraft along its current trajectory until meeting specified stopping conditions.
-    eVASegmentTypePropagate = 5
+    PROPAGATE = 5
     # Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS.
-    eVASegmentTypeSequence = 6
+    SEQUENCE = 6
     # Return - can be used to control the execution of the Mission Control Sequence by returning control to its parent segment.
-    eVASegmentTypeReturn = 7
+    RETURN = 7
     # Target Sequence - can be used to define maneuvers and propagations in terms of the goals they are intended to achieve.
-    eVASegmentTypeTargetSequence = 8
+    TARGET_SEQUENCE = 8
     # Stop - can be used to control the execution of the Mission Control Sequence by halting execution of the MCS.
-    eVASegmentTypeStop = 9
+    STOP = 9
     # Update - can be used to modify some of the satellite properties to reflect changes that occur during the mission.
-    eVASegmentTypeUpdate = 10
+    UPDATE = 10
     # Backward Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS.
-    eVASegmentTypeBackwardSequence = 11
+    BACKWARD_SEQUENCE = 11
     # End - The End segment is a default segment of the MCS that functions similarly to a Return segment; it returns control to the beginning of the MCS. The End segment cannot be disabled or deleted, nor can any segments be inserted into the MCS after it.
-    eVASegmentTypeEnd = 12
+    END = 12
 
-AgEVASegmentType.eVASegmentTypeInitialState.__doc__ = "Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS."
-AgEVASegmentType.eVASegmentTypeLaunch.__doc__ = "Launch - can be used to model a simple spacecraft launch from Earth or another central body."
-AgEVASegmentType.eVASegmentTypeManeuver.__doc__ = "Maneuver - can be used to model a spacecraft maneuver."
-AgEVASegmentType.eVASegmentTypeFollow.__doc__ = "Follow - can be used to set the spacecraft to follow another vehicle (Satellite, Launch Vehicle, Missile, Aircraft, Ship, or Ground Vehicle) at a specified offset, and to separate from that vehicle upon meeting specified conditions."
-AgEVASegmentType.eVASegmentTypeHold.__doc__ = "Hold - can be used to model landing or rendezvous operations by setting the spacecraft to maintain a fixed position in reference to another object or body, until meeting specified conditions."
-AgEVASegmentType.eVASegmentTypePropagate.__doc__ = "Propagate - can be used to model the movement of the spacecraft along its current trajectory until meeting specified stopping conditions."
-AgEVASegmentType.eVASegmentTypeSequence.__doc__ = "Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS."
-AgEVASegmentType.eVASegmentTypeReturn.__doc__ = "Return - can be used to control the execution of the Mission Control Sequence by returning control to its parent segment."
-AgEVASegmentType.eVASegmentTypeTargetSequence.__doc__ = "Target Sequence - can be used to define maneuvers and propagations in terms of the goals they are intended to achieve."
-AgEVASegmentType.eVASegmentTypeStop.__doc__ = "Stop - can be used to control the execution of the Mission Control Sequence by halting execution of the MCS."
-AgEVASegmentType.eVASegmentTypeUpdate.__doc__ = "Update - can be used to modify some of the satellite properties to reflect changes that occur during the mission."
-AgEVASegmentType.eVASegmentTypeBackwardSequence.__doc__ = "Backward Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS."
-AgEVASegmentType.eVASegmentTypeEnd.__doc__ = "End - The End segment is a default segment of the MCS that functions similarly to a Return segment; it returns control to the beginning of the MCS. The End segment cannot be disabled or deleted, nor can any segments be inserted into the MCS after it."
+VA_SEGMENT_TYPE.INITIAL_STATE.__doc__ = "Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS."
+VA_SEGMENT_TYPE.LAUNCH.__doc__ = "Launch - can be used to model a simple spacecraft launch from Earth or another central body."
+VA_SEGMENT_TYPE.MANEUVER.__doc__ = "Maneuver - can be used to model a spacecraft maneuver."
+VA_SEGMENT_TYPE.FOLLOW.__doc__ = "Follow - can be used to set the spacecraft to follow another vehicle (Satellite, Launch Vehicle, Missile, Aircraft, Ship, or Ground Vehicle) at a specified offset, and to separate from that vehicle upon meeting specified conditions."
+VA_SEGMENT_TYPE.HOLD.__doc__ = "Hold - can be used to model landing or rendezvous operations by setting the spacecraft to maintain a fixed position in reference to another object or body, until meeting specified conditions."
+VA_SEGMENT_TYPE.PROPAGATE.__doc__ = "Propagate - can be used to model the movement of the spacecraft along its current trajectory until meeting specified stopping conditions."
+VA_SEGMENT_TYPE.SEQUENCE.__doc__ = "Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS."
+VA_SEGMENT_TYPE.RETURN.__doc__ = "Return - can be used to control the execution of the Mission Control Sequence by returning control to its parent segment."
+VA_SEGMENT_TYPE.TARGET_SEQUENCE.__doc__ = "Target Sequence - can be used to define maneuvers and propagations in terms of the goals they are intended to achieve."
+VA_SEGMENT_TYPE.STOP.__doc__ = "Stop - can be used to control the execution of the Mission Control Sequence by halting execution of the MCS."
+VA_SEGMENT_TYPE.UPDATE.__doc__ = "Update - can be used to modify some of the satellite properties to reflect changes that occur during the mission."
+VA_SEGMENT_TYPE.BACKWARD_SEQUENCE.__doc__ = "Backward Sequence - can be used to organize segments and define the nature of the results that are passed on to the next segment or sequence in the MCS."
+VA_SEGMENT_TYPE.END.__doc__ = "End - The End segment is a default segment of the MCS that functions similarly to a Return segment; it returns control to the beginning of the MCS. The End segment cannot be disabled or deleted, nor can any segments be inserted into the MCS after it."
 
-agcls.AgTypeNameMap["AgEVASegmentType"] = AgEVASegmentType
+agcls.AgTypeNameMap["VA_SEGMENT_TYPE"] = VA_SEGMENT_TYPE
 
-class AgEVAElementType(IntEnum):
+class VA_ELEMENT_TYPE(IntEnum):
     """Types of orbit element sets."""
     # Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system.
-    eVAElementTypeCartesian = 0
+    CARTESIAN = 0
     # Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space.
-    eVAElementTypeKeplerian = 1
+    KEPLERIAN = 1
     # Spherical - a system in which positions are specified as a radial distance from the origin and two angles relative to a fundamental plane.
-    eVAElementTypeSpherical = 3
+    SPHERICAL = 3
     # Target Vector Incoming Asymptote - used for hyperbolic arrival trajectories.
-    eVAElementTypeTargetVectorIncomingAsymptote = 4
+    TARGET_VECTOR_INCOMING_ASYMPTOTE = 4
     # Target Vector Outgoing Asymptote - used for hyperbolic departure trajectories.
-    eVAElementTypeTargetVectorOutgoingAsymptote = 5
+    TARGET_VECTOR_OUTGOING_ASYMPTOTE = 5
     # Mixed Spherical.
-    eVAElementTypeMixedSpherical = 6
+    MIXED_SPHERICAL = 6
     # Delaunay.
-    eVAElementTypeDelaunay = 7
+    DELAUNAY = 7
     # Equinoctial.
-    eVAElementTypeEquinoctial = 8
+    EQUINOCTIAL = 8
     # Geodetic.
-    eVAElementTypeGeodetic = 9
+    GEODETIC = 9
     # BPlane.
-    eVAElementTypeBPlane = 10
+    B_PLANE = 10
 
-AgEVAElementType.eVAElementTypeCartesian.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
-AgEVAElementType.eVAElementTypeKeplerian.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
-AgEVAElementType.eVAElementTypeSpherical.__doc__ = "Spherical - a system in which positions are specified as a radial distance from the origin and two angles relative to a fundamental plane."
-AgEVAElementType.eVAElementTypeTargetVectorIncomingAsymptote.__doc__ = "Target Vector Incoming Asymptote - used for hyperbolic arrival trajectories."
-AgEVAElementType.eVAElementTypeTargetVectorOutgoingAsymptote.__doc__ = "Target Vector Outgoing Asymptote - used for hyperbolic departure trajectories."
-AgEVAElementType.eVAElementTypeMixedSpherical.__doc__ = "Mixed Spherical."
-AgEVAElementType.eVAElementTypeDelaunay.__doc__ = "Delaunay."
-AgEVAElementType.eVAElementTypeEquinoctial.__doc__ = "Equinoctial."
-AgEVAElementType.eVAElementTypeGeodetic.__doc__ = "Geodetic."
-AgEVAElementType.eVAElementTypeBPlane.__doc__ = "BPlane."
+VA_ELEMENT_TYPE.CARTESIAN.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
+VA_ELEMENT_TYPE.KEPLERIAN.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
+VA_ELEMENT_TYPE.SPHERICAL.__doc__ = "Spherical - a system in which positions are specified as a radial distance from the origin and two angles relative to a fundamental plane."
+VA_ELEMENT_TYPE.TARGET_VECTOR_INCOMING_ASYMPTOTE.__doc__ = "Target Vector Incoming Asymptote - used for hyperbolic arrival trajectories."
+VA_ELEMENT_TYPE.TARGET_VECTOR_OUTGOING_ASYMPTOTE.__doc__ = "Target Vector Outgoing Asymptote - used for hyperbolic departure trajectories."
+VA_ELEMENT_TYPE.MIXED_SPHERICAL.__doc__ = "Mixed Spherical."
+VA_ELEMENT_TYPE.DELAUNAY.__doc__ = "Delaunay."
+VA_ELEMENT_TYPE.EQUINOCTIAL.__doc__ = "Equinoctial."
+VA_ELEMENT_TYPE.GEODETIC.__doc__ = "Geodetic."
+VA_ELEMENT_TYPE.B_PLANE.__doc__ = "BPlane."
 
-agcls.AgTypeNameMap["AgEVAElementType"] = AgEVAElementType
+agcls.AgTypeNameMap["VA_ELEMENT_TYPE"] = VA_ELEMENT_TYPE
 
-class AgEVALanguage(IntEnum):
+class VA_LANGUAGE(IntEnum):
     """Scripting language types for the Scripting Tool."""
     # VBScript.
-    eVALanguageVBScript = 0
+    VB_SCRIPT = 0
     # JScript.
-    eVALanguageJScript = 1
+    J_SCRIPT = 1
     # MATLAB.
-    eVALanguageMATLAB = 2
+    MATLAB = 2
 
-AgEVALanguage.eVALanguageVBScript.__doc__ = "VBScript."
-AgEVALanguage.eVALanguageJScript.__doc__ = "JScript."
-AgEVALanguage.eVALanguageMATLAB.__doc__ = "MATLAB."
+VA_LANGUAGE.VB_SCRIPT.__doc__ = "VBScript."
+VA_LANGUAGE.J_SCRIPT.__doc__ = "JScript."
+VA_LANGUAGE.MATLAB.__doc__ = "MATLAB."
 
-agcls.AgTypeNameMap["AgEVALanguage"] = AgEVALanguage
+agcls.AgTypeNameMap["VA_LANGUAGE"] = VA_LANGUAGE
 
-class AgEVAStoppingCondition(IntEnum):
+class VA_STOPPING_CONDITION(IntEnum):
     """Type of stopping condition."""
     # Basic Stopping Condition.
-    eVAStoppingConditionBasic = 0
+    BASIC = 0
     # Before Stopping Condition.
-    eVAStoppingConditionBefore = 1
+    BEFORE = 1
     # One Point Access Stopping Condition.
-    eVAStoppingConditionOnePtAccess = 2
+    ONE_PT_ACCESS = 2
     # Lighting Stopping Condition.
-    eVAStoppingConditionLighting = 3
+    LIGHTING = 3
 
-AgEVAStoppingCondition.eVAStoppingConditionBasic.__doc__ = "Basic Stopping Condition."
-AgEVAStoppingCondition.eVAStoppingConditionBefore.__doc__ = "Before Stopping Condition."
-AgEVAStoppingCondition.eVAStoppingConditionOnePtAccess.__doc__ = "One Point Access Stopping Condition."
-AgEVAStoppingCondition.eVAStoppingConditionLighting.__doc__ = "Lighting Stopping Condition."
+VA_STOPPING_CONDITION.BASIC.__doc__ = "Basic Stopping Condition."
+VA_STOPPING_CONDITION.BEFORE.__doc__ = "Before Stopping Condition."
+VA_STOPPING_CONDITION.ONE_PT_ACCESS.__doc__ = "One Point Access Stopping Condition."
+VA_STOPPING_CONDITION.LIGHTING.__doc__ = "Lighting Stopping Condition."
 
-agcls.AgTypeNameMap["AgEVAStoppingCondition"] = AgEVAStoppingCondition
+agcls.AgTypeNameMap["VA_STOPPING_CONDITION"] = VA_STOPPING_CONDITION
 
-class AgEVAClearEphemerisDirection(IntEnum):
+class VA_CLEAR_EPHEMERIS_DIRECTION(IntEnum):
     """Direction in which to clear ephemeris."""
     # Clear ephemeris before selected time or state.
-    eVAClearEphemerisBefore = -1
+    BEFORE = -1
     # Do not clear ephemeris.
-    eVAClearEphemerisNoClear = 0
+    NO_CLEAR = 0
     # Clear ephemeris after selected time or state.
-    eVAClearEphemerisAfter = 1
+    AFTER = 1
 
-AgEVAClearEphemerisDirection.eVAClearEphemerisBefore.__doc__ = "Clear ephemeris before selected time or state."
-AgEVAClearEphemerisDirection.eVAClearEphemerisNoClear.__doc__ = "Do not clear ephemeris."
-AgEVAClearEphemerisDirection.eVAClearEphemerisAfter.__doc__ = "Clear ephemeris after selected time or state."
+VA_CLEAR_EPHEMERIS_DIRECTION.BEFORE.__doc__ = "Clear ephemeris before selected time or state."
+VA_CLEAR_EPHEMERIS_DIRECTION.NO_CLEAR.__doc__ = "Do not clear ephemeris."
+VA_CLEAR_EPHEMERIS_DIRECTION.AFTER.__doc__ = "Clear ephemeris after selected time or state."
 
-agcls.AgTypeNameMap["AgEVAClearEphemerisDirection"] = AgEVAClearEphemerisDirection
+agcls.AgTypeNameMap["VA_CLEAR_EPHEMERIS_DIRECTION"] = VA_CLEAR_EPHEMERIS_DIRECTION
 
-class AgEVAProfileInsertDirection(IntEnum):
+class VA_PROFILE_INSERT_DIRECTION(IntEnum):
     """Direction to insert profile."""
     # Insert profile before reference profile.
-    eVAProfileInsertBefore = 0
+    BEFORE = 0
     # Insert profile after reference profile.
-    eVAProfileInsertAfter = 1
+    AFTER = 1
 
-AgEVAProfileInsertDirection.eVAProfileInsertBefore.__doc__ = "Insert profile before reference profile."
-AgEVAProfileInsertDirection.eVAProfileInsertAfter.__doc__ = "Insert profile after reference profile."
+VA_PROFILE_INSERT_DIRECTION.BEFORE.__doc__ = "Insert profile before reference profile."
+VA_PROFILE_INSERT_DIRECTION.AFTER.__doc__ = "Insert profile after reference profile."
 
-agcls.AgTypeNameMap["AgEVAProfileInsertDirection"] = AgEVAProfileInsertDirection
+agcls.AgTypeNameMap["VA_PROFILE_INSERT_DIRECTION"] = VA_PROFILE_INSERT_DIRECTION
 
-class AgEVARootFindingAlgorithm(IntEnum):
+class VA_ROOT_FINDING_ALGORITHM(IntEnum):
     """Root-finding algorithms."""
     # Secant method.
-    eVASecantMethod = 0
+    SECANT_METHOD = 0
     # Newton-Raphson method.
-    eVANewtonRaphsonMethod = 1
+    NEWTON_RAPHSON_METHOD = 1
 
-AgEVARootFindingAlgorithm.eVASecantMethod.__doc__ = "Secant method."
-AgEVARootFindingAlgorithm.eVANewtonRaphsonMethod.__doc__ = "Newton-Raphson method."
+VA_ROOT_FINDING_ALGORITHM.SECANT_METHOD.__doc__ = "Secant method."
+VA_ROOT_FINDING_ALGORITHM.NEWTON_RAPHSON_METHOD.__doc__ = "Newton-Raphson method."
 
-agcls.AgTypeNameMap["AgEVARootFindingAlgorithm"] = AgEVARootFindingAlgorithm
+agcls.AgTypeNameMap["VA_ROOT_FINDING_ALGORITHM"] = VA_ROOT_FINDING_ALGORITHM
 
-class AgEVAScriptingParameterType(IntEnum):
+class VA_SCRIPTING_PARAMETER_TYPE(IntEnum):
     """Scripting Tool parameter type."""
     # Double.
-    eVAScriptingParameterTypeDouble = 0
+    DOUBLE = 0
     # Quantity.
-    eVAScriptingParameterTypeQuantity = 1
+    QUANTITY = 1
     # Date.
-    eVAScriptingParameterTypeDate = 2
+    DATE = 2
     # String.
-    eVAScriptingParameterTypeString = 3
+    STRING = 3
     # Boolean.
-    eVAScriptingParameterTypeBoolean = 4
+    BOOLEAN = 4
     # Integer.
-    eVAScriptingParameterTypeInteger = 5
+    INTEGER = 5
     # Enumeration.
-    eVAScriptingParameterTypeEnumeration = 6
+    ENUMERATION = 6
 
-AgEVAScriptingParameterType.eVAScriptingParameterTypeDouble.__doc__ = "Double."
-AgEVAScriptingParameterType.eVAScriptingParameterTypeQuantity.__doc__ = "Quantity."
-AgEVAScriptingParameterType.eVAScriptingParameterTypeDate.__doc__ = "Date."
-AgEVAScriptingParameterType.eVAScriptingParameterTypeString.__doc__ = "String."
-AgEVAScriptingParameterType.eVAScriptingParameterTypeBoolean.__doc__ = "Boolean."
-AgEVAScriptingParameterType.eVAScriptingParameterTypeInteger.__doc__ = "Integer."
-AgEVAScriptingParameterType.eVAScriptingParameterTypeEnumeration.__doc__ = "Enumeration."
+VA_SCRIPTING_PARAMETER_TYPE.DOUBLE.__doc__ = "Double."
+VA_SCRIPTING_PARAMETER_TYPE.QUANTITY.__doc__ = "Quantity."
+VA_SCRIPTING_PARAMETER_TYPE.DATE.__doc__ = "Date."
+VA_SCRIPTING_PARAMETER_TYPE.STRING.__doc__ = "String."
+VA_SCRIPTING_PARAMETER_TYPE.BOOLEAN.__doc__ = "Boolean."
+VA_SCRIPTING_PARAMETER_TYPE.INTEGER.__doc__ = "Integer."
+VA_SCRIPTING_PARAMETER_TYPE.ENUMERATION.__doc__ = "Enumeration."
 
-agcls.AgTypeNameMap["AgEVAScriptingParameterType"] = AgEVAScriptingParameterType
+agcls.AgTypeNameMap["VA_SCRIPTING_PARAMETER_TYPE"] = VA_SCRIPTING_PARAMETER_TYPE
 
-class AgEVASNOPTGoal(IntEnum):
+class VASNOPT_GOAL(IntEnum):
     """The Goal types for a SNOPT profile."""
     # Minimize
-    eVASNOPTGoalMinimize = 0
+    MINIMIZE = 0
     # Bound
-    eVASNOPTGoalBound = 1
+    BOUND = 1
 
-AgEVASNOPTGoal.eVASNOPTGoalMinimize.__doc__ = "Minimize"
-AgEVASNOPTGoal.eVASNOPTGoalBound.__doc__ = "Bound"
+VASNOPT_GOAL.MINIMIZE.__doc__ = "Minimize"
+VASNOPT_GOAL.BOUND.__doc__ = "Bound"
 
-agcls.AgTypeNameMap["AgEVASNOPTGoal"] = AgEVASNOPTGoal
+agcls.AgTypeNameMap["VASNOPT_GOAL"] = VASNOPT_GOAL
 
-class AgEVAIPOPTGoal(IntEnum):
+class VAIPOPT_GOAL(IntEnum):
     """The Goal types for a IPOPT profile."""
     # Minimize
-    eVAIPOPTGoalMinimize = 0
+    MINIMIZE = 0
     # Bound
-    eVAIPOPTGoalBound = 1
+    BOUND = 1
 
-AgEVAIPOPTGoal.eVAIPOPTGoalMinimize.__doc__ = "Minimize"
-AgEVAIPOPTGoal.eVAIPOPTGoalBound.__doc__ = "Bound"
+VAIPOPT_GOAL.MINIMIZE.__doc__ = "Minimize"
+VAIPOPT_GOAL.BOUND.__doc__ = "Bound"
 
-agcls.AgTypeNameMap["AgEVAIPOPTGoal"] = AgEVAIPOPTGoal
+agcls.AgTypeNameMap["VAIPOPT_GOAL"] = VAIPOPT_GOAL
 
-class AgEVAOptimalFiniteSeedMethod(IntEnum):
+class VA_OPTIMAL_FINITE_SEED_METHOD(IntEnum):
     """Seed methods."""
     # Seed initial guess from file.
-    eVAOptimalFiniteSeedMethodInitialGuessFile = 0
+    INITIAL_GUESS_FILE = 0
     # Seed initial guess from finite maneuver.
-    eVAOptimalFiniteSeedMethodFiniteManeuver = 1
+    FINITE_MANEUVER = 1
 
-AgEVAOptimalFiniteSeedMethod.eVAOptimalFiniteSeedMethodInitialGuessFile.__doc__ = "Seed initial guess from file."
-AgEVAOptimalFiniteSeedMethod.eVAOptimalFiniteSeedMethodFiniteManeuver.__doc__ = "Seed initial guess from finite maneuver."
+VA_OPTIMAL_FINITE_SEED_METHOD.INITIAL_GUESS_FILE.__doc__ = "Seed initial guess from file."
+VA_OPTIMAL_FINITE_SEED_METHOD.FINITE_MANEUVER.__doc__ = "Seed initial guess from finite maneuver."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteSeedMethod"] = AgEVAOptimalFiniteSeedMethod
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_SEED_METHOD"] = VA_OPTIMAL_FINITE_SEED_METHOD
 
-class AgEVAOptimalFiniteRunMode(IntEnum):
+class VA_OPTIMAL_FINITE_RUN_MODE(IntEnum):
     """Run modes."""
     # Run current nodes.
-    eVAOptimalFiniteRunModeRunCurrentNodes = 0
+    RUN_CURRENT_NODES = 0
     # Optimize via direct transcription.
-    eVAOptimalFiniteRunModeOptimizeViaDirectTranscription = 1
+    OPTIMIZE_VIA_DIRECT_TRANSCRIPTION = 1
 
-AgEVAOptimalFiniteRunMode.eVAOptimalFiniteRunModeRunCurrentNodes.__doc__ = "Run current nodes."
-AgEVAOptimalFiniteRunMode.eVAOptimalFiniteRunModeOptimizeViaDirectTranscription.__doc__ = "Optimize via direct transcription."
+VA_OPTIMAL_FINITE_RUN_MODE.RUN_CURRENT_NODES.__doc__ = "Run current nodes."
+VA_OPTIMAL_FINITE_RUN_MODE.OPTIMIZE_VIA_DIRECT_TRANSCRIPTION.__doc__ = "Optimize via direct transcription."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteRunMode"] = AgEVAOptimalFiniteRunMode
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_RUN_MODE"] = VA_OPTIMAL_FINITE_RUN_MODE
 
-class AgEVAOptimalFiniteDiscretizationStrategy(IntEnum):
+class VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY(IntEnum):
     """Discretization Strategy."""
     # The Legendre-Gauss-Lobatto quadrature rule
-    eVAOptimalFiniteDiscretizationStrategyLegendreGaussLobatto = 0
+    LEGENDRE_GAUSS_LOBATTO = 0
     # The Legendre-Gauss-Radau quadrature rule.
-    eVAOptimalFiniteDiscretizationStrategyLegendreGaussRadau = 1
+    LEGENDRE_GAUSS_RADAU = 1
 
-AgEVAOptimalFiniteDiscretizationStrategy.eVAOptimalFiniteDiscretizationStrategyLegendreGaussLobatto.__doc__ = "The Legendre-Gauss-Lobatto quadrature rule"
-AgEVAOptimalFiniteDiscretizationStrategy.eVAOptimalFiniteDiscretizationStrategyLegendreGaussRadau.__doc__ = "The Legendre-Gauss-Radau quadrature rule."
+VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY.LEGENDRE_GAUSS_LOBATTO.__doc__ = "The Legendre-Gauss-Lobatto quadrature rule"
+VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY.LEGENDRE_GAUSS_RADAU.__doc__ = "The Legendre-Gauss-Radau quadrature rule."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteDiscretizationStrategy"] = AgEVAOptimalFiniteDiscretizationStrategy
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY"] = VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY
 
-class AgEVAOptimalFiniteWorkingVariables(IntEnum):
+class VA_OPTIMAL_FINITE_WORKING_VARIABLES(IntEnum):
     """Working Variables."""
     # Standard inertial equinoctial coordinates.
-    eVAOptimalFiniteWorkingVariablesEquinoctial = 0
+    EQUINOCTIAL = 0
     # Use semi-latus rectum instead of SMA and true longitude instead of mean longitude.
-    eVAOptimalFiniteWorkingVariablesModifiedEquinoctial = 1
+    MODIFIED_EQUINOCTIAL = 1
 
-AgEVAOptimalFiniteWorkingVariables.eVAOptimalFiniteWorkingVariablesEquinoctial.__doc__ = "Standard inertial equinoctial coordinates."
-AgEVAOptimalFiniteWorkingVariables.eVAOptimalFiniteWorkingVariablesModifiedEquinoctial.__doc__ = "Use semi-latus rectum instead of SMA and true longitude instead of mean longitude."
+VA_OPTIMAL_FINITE_WORKING_VARIABLES.EQUINOCTIAL.__doc__ = "Standard inertial equinoctial coordinates."
+VA_OPTIMAL_FINITE_WORKING_VARIABLES.MODIFIED_EQUINOCTIAL.__doc__ = "Use semi-latus rectum instead of SMA and true longitude instead of mean longitude."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteWorkingVariables"] = AgEVAOptimalFiniteWorkingVariables
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_WORKING_VARIABLES"] = VA_OPTIMAL_FINITE_WORKING_VARIABLES
 
-class AgEVAOptimalFiniteScalingOptions(IntEnum):
+class VA_OPTIMAL_FINITE_SCALING_OPTIONS(IntEnum):
     """Scaling Options."""
     # No scaling.
-    eVAOptimalFiniteScalingOptionsNoScaling = 0
+    NO_SCALING = 0
     # Scale based on canonical units.
-    eVAOptimalFiniteScalingOptionsCanonicalUnits = 1
+    CANONICAL_UNITS = 1
     # Scale based on the initial state.
-    eVAOptimalFiniteScalingOptionsInitialStateBased = 2
+    INITIAL_STATE_BASED = 2
 
-AgEVAOptimalFiniteScalingOptions.eVAOptimalFiniteScalingOptionsNoScaling.__doc__ = "No scaling."
-AgEVAOptimalFiniteScalingOptions.eVAOptimalFiniteScalingOptionsCanonicalUnits.__doc__ = "Scale based on canonical units."
-AgEVAOptimalFiniteScalingOptions.eVAOptimalFiniteScalingOptionsInitialStateBased.__doc__ = "Scale based on the initial state."
+VA_OPTIMAL_FINITE_SCALING_OPTIONS.NO_SCALING.__doc__ = "No scaling."
+VA_OPTIMAL_FINITE_SCALING_OPTIONS.CANONICAL_UNITS.__doc__ = "Scale based on canonical units."
+VA_OPTIMAL_FINITE_SCALING_OPTIONS.INITIAL_STATE_BASED.__doc__ = "Scale based on the initial state."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteScalingOptions"] = AgEVAOptimalFiniteScalingOptions
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_SCALING_OPTIONS"] = VA_OPTIMAL_FINITE_SCALING_OPTIONS
 
-class AgEVAOptimalFiniteSNOPTObjective(IntEnum):
+class VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE(IntEnum):
     """Optimal Finite SNOPT objective."""
     # Minimize the total TOF along the collocation arc.
-    eVAOptimalFiniteSNOPTObjectiveMinimizeTOF = 0
+    MINIMIZE_TOF = 0
     # Minimize the total calculated DeltaV along the collocation arc.
-    eVAOptimalFiniteSNOPTObjectiveMaximizeFinalRad = 1
+    MAXIMIZE_FINAL_RAD = 1
     # Maximize the final mass after the collocation arc.
-    eVAOptimalFiniteSNOPTObjectiveMinimizePropellantUse = 2
+    MINIMIZE_PROPELLANT_USE = 2
 
-AgEVAOptimalFiniteSNOPTObjective.eVAOptimalFiniteSNOPTObjectiveMinimizeTOF.__doc__ = "Minimize the total TOF along the collocation arc."
-AgEVAOptimalFiniteSNOPTObjective.eVAOptimalFiniteSNOPTObjectiveMaximizeFinalRad.__doc__ = "Minimize the total calculated DeltaV along the collocation arc."
-AgEVAOptimalFiniteSNOPTObjective.eVAOptimalFiniteSNOPTObjectiveMinimizePropellantUse.__doc__ = "Maximize the final mass after the collocation arc."
+VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE.MINIMIZE_TOF.__doc__ = "Minimize the total TOF along the collocation arc."
+VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE.MAXIMIZE_FINAL_RAD.__doc__ = "Minimize the total calculated DeltaV along the collocation arc."
+VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE.MINIMIZE_PROPELLANT_USE.__doc__ = "Maximize the final mass after the collocation arc."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteSNOPTObjective"] = AgEVAOptimalFiniteSNOPTObjective
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE"] = VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE
 
-class AgEVAOptimalFiniteSNOPTScaling(IntEnum):
+class VA_OPTIMAL_FINITE_SNOPT_SCALING(IntEnum):
     """Optimal Finite SNOPT scaling option."""
     # No scaling.
-    eVAOptimalFiniteSNOPTScalingNone = 0
+    NONE = 0
     # Scale linear constraints and variables.
-    eVAOptimalFiniteSNOPTScalingLinear = 1
+    LINEAR = 1
     # Scale all constraints and variables.
-    eVAOptimalFiniteSNOPTScalingAll = 2
+    ALL = 2
 
-AgEVAOptimalFiniteSNOPTScaling.eVAOptimalFiniteSNOPTScalingNone.__doc__ = "No scaling."
-AgEVAOptimalFiniteSNOPTScaling.eVAOptimalFiniteSNOPTScalingLinear.__doc__ = "Scale linear constraints and variables."
-AgEVAOptimalFiniteSNOPTScaling.eVAOptimalFiniteSNOPTScalingAll.__doc__ = "Scale all constraints and variables."
+VA_OPTIMAL_FINITE_SNOPT_SCALING.NONE.__doc__ = "No scaling."
+VA_OPTIMAL_FINITE_SNOPT_SCALING.LINEAR.__doc__ = "Scale linear constraints and variables."
+VA_OPTIMAL_FINITE_SNOPT_SCALING.ALL.__doc__ = "Scale all constraints and variables."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteSNOPTScaling"] = AgEVAOptimalFiniteSNOPTScaling
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_SNOPT_SCALING"] = VA_OPTIMAL_FINITE_SNOPT_SCALING
 
-class AgEVAOptimalFiniteExportNodesFormat(IntEnum):
+class VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT(IntEnum):
     """Steering nodes export format."""
     # Export controls as Az/El = Ra/Dec angles.
-    eVAOptimalFiniteExportNodesFormatAzimuthElevation = 0
+    AZIMUTH_ELEVATION = 0
     # Export controls as unit vectors = direction cosines.
-    eVAOptimalFiniteExportNodesFormatUnitVector = 1
+    UNIT_VECTOR = 1
 
-AgEVAOptimalFiniteExportNodesFormat.eVAOptimalFiniteExportNodesFormatAzimuthElevation.__doc__ = "Export controls as Az/El = Ra/Dec angles."
-AgEVAOptimalFiniteExportNodesFormat.eVAOptimalFiniteExportNodesFormatUnitVector.__doc__ = "Export controls as unit vectors = direction cosines."
+VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT.AZIMUTH_ELEVATION.__doc__ = "Export controls as Az/El = Ra/Dec angles."
+VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT.UNIT_VECTOR.__doc__ = "Export controls as unit vectors = direction cosines."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteExportNodesFormat"] = AgEVAOptimalFiniteExportNodesFormat
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT"] = VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT
 
-class AgEVAOptimalFiniteGuessMethod(IntEnum):
+class VA_OPTIMAL_FINITE_GUESS_METHOD(IntEnum):
     """Guess interpolation method."""
     # Lagrange polynomial method.
-    eVAOptimalFiniteGuessMethodLagrangePolynomial = 0
+    LAGRANGE_POLYNOMIAL = 0
     # Piecewise linear method.
-    eVAOptimalFiniteGuessMethodPiecewiseLinear = 1
+    PIECEWISE_LINEAR = 1
 
-AgEVAOptimalFiniteGuessMethod.eVAOptimalFiniteGuessMethodLagrangePolynomial.__doc__ = "Lagrange polynomial method."
-AgEVAOptimalFiniteGuessMethod.eVAOptimalFiniteGuessMethodPiecewiseLinear.__doc__ = "Piecewise linear method."
+VA_OPTIMAL_FINITE_GUESS_METHOD.LAGRANGE_POLYNOMIAL.__doc__ = "Lagrange polynomial method."
+VA_OPTIMAL_FINITE_GUESS_METHOD.PIECEWISE_LINEAR.__doc__ = "Piecewise linear method."
 
-agcls.AgTypeNameMap["AgEVAOptimalFiniteGuessMethod"] = AgEVAOptimalFiniteGuessMethod
+agcls.AgTypeNameMap["VA_OPTIMAL_FINITE_GUESS_METHOD"] = VA_OPTIMAL_FINITE_GUESS_METHOD
 
-class AgEVAImpDeltaVRep(IntEnum):
+class VA_IMP_DELTA_V_REP(IntEnum):
     """Vector representations for impulsive DeltaV specification"""
     # Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z).
-    eVACartesianImpDeltaV = 0
+    CARTESIAN_IMP_DELTA_V = 0
     # Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude).
-    eVASphericalImpDeltaV = 1
+    SPHERICAL_IMP_DELTA_V = 1
 
-AgEVAImpDeltaVRep.eVACartesianImpDeltaV.__doc__ = "Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."
-AgEVAImpDeltaVRep.eVASphericalImpDeltaV.__doc__ = "Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude)."
+VA_IMP_DELTA_V_REP.CARTESIAN_IMP_DELTA_V.__doc__ = "Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."
+VA_IMP_DELTA_V_REP.SPHERICAL_IMP_DELTA_V.__doc__ = "Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude)."
 
-agcls.AgTypeNameMap["AgEVAImpDeltaVRep"] = AgEVAImpDeltaVRep
+agcls.AgTypeNameMap["VA_IMP_DELTA_V_REP"] = VA_IMP_DELTA_V_REP
 
-class AgEVALambertTargetCoordType(IntEnum):
+class VA_LAMBERT_TARGET_COORD_TYPE(IntEnum):
     """Lambert Target CoordType."""
     # Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system.
-    eVALambertTargetCoordTypeCartesian = 0
+    CARTESIAN = 0
     # Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space.
-    eVALambertTargetCoordTypeKeplerian = 1
+    KEPLERIAN = 1
 
-AgEVALambertTargetCoordType.eVALambertTargetCoordTypeCartesian.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
-AgEVALambertTargetCoordType.eVALambertTargetCoordTypeKeplerian.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
+VA_LAMBERT_TARGET_COORD_TYPE.CARTESIAN.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
+VA_LAMBERT_TARGET_COORD_TYPE.KEPLERIAN.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
 
-agcls.AgTypeNameMap["AgEVALambertTargetCoordType"] = AgEVALambertTargetCoordType
+agcls.AgTypeNameMap["VA_LAMBERT_TARGET_COORD_TYPE"] = VA_LAMBERT_TARGET_COORD_TYPE
 
-class AgEVALambertSolutionOptionType(IntEnum):
+class VA_LAMBERT_SOLUTION_OPTION_TYPE(IntEnum):
     """Lambert Solution Option Type."""
     # Fixed time - The type of Lambert solution to calculate.
-    eAgEVALambertSolutionOptionFixedTime = 0
+    AG_EVA_LAMBERT_SOLUTION_OPTION_FIXED_TIME = 0
     # Minimum Eccentricity - The type of Lambert solution to calculate.
-    eAgEVALambertSolutionOptionMinEccentricity = 1
+    AG_EVA_LAMBERT_SOLUTION_OPTION_MIN_ECCENTRICITY = 1
     # Minimum Energy - The type of Lambert solution to calculate.
-    eAgEVALambertSolutionOptionMinEnergy = 2
+    AG_EVA_LAMBERT_SOLUTION_OPTION_MIN_ENERGY = 2
 
-AgEVALambertSolutionOptionType.eAgEVALambertSolutionOptionFixedTime.__doc__ = "Fixed time - The type of Lambert solution to calculate."
-AgEVALambertSolutionOptionType.eAgEVALambertSolutionOptionMinEccentricity.__doc__ = "Minimum Eccentricity - The type of Lambert solution to calculate."
-AgEVALambertSolutionOptionType.eAgEVALambertSolutionOptionMinEnergy.__doc__ = "Minimum Energy - The type of Lambert solution to calculate."
+VA_LAMBERT_SOLUTION_OPTION_TYPE.AG_EVA_LAMBERT_SOLUTION_OPTION_FIXED_TIME.__doc__ = "Fixed time - The type of Lambert solution to calculate."
+VA_LAMBERT_SOLUTION_OPTION_TYPE.AG_EVA_LAMBERT_SOLUTION_OPTION_MIN_ECCENTRICITY.__doc__ = "Minimum Eccentricity - The type of Lambert solution to calculate."
+VA_LAMBERT_SOLUTION_OPTION_TYPE.AG_EVA_LAMBERT_SOLUTION_OPTION_MIN_ENERGY.__doc__ = "Minimum Energy - The type of Lambert solution to calculate."
 
-agcls.AgTypeNameMap["AgEVALambertSolutionOptionType"] = AgEVALambertSolutionOptionType
+agcls.AgTypeNameMap["VA_LAMBERT_SOLUTION_OPTION_TYPE"] = VA_LAMBERT_SOLUTION_OPTION_TYPE
 
-class AgEVALambertOrbitalEnergyType(IntEnum):
+class VA_LAMBERT_ORBITAL_ENERGY_TYPE(IntEnum):
     """Lambert Orbital Energy Type."""
     # Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution.
-    eAgEVALambertOrbitalEnergyLow = 0
+    AG_EVA_LAMBERT_ORBITAL_ENERGY_LOW = 0
     # High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution.
-    eAgEVALambertOrbitalEnergyHigh = 1
+    AG_EVA_LAMBERT_ORBITAL_ENERGY_HIGH = 1
 
-AgEVALambertOrbitalEnergyType.eAgEVALambertOrbitalEnergyLow.__doc__ = "Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution."
-AgEVALambertOrbitalEnergyType.eAgEVALambertOrbitalEnergyHigh.__doc__ = "High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution."
+VA_LAMBERT_ORBITAL_ENERGY_TYPE.AG_EVA_LAMBERT_ORBITAL_ENERGY_LOW.__doc__ = "Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution."
+VA_LAMBERT_ORBITAL_ENERGY_TYPE.AG_EVA_LAMBERT_ORBITAL_ENERGY_HIGH.__doc__ = "High energy- This is the orbital energy for the Lambert solution that corresponds to the larger semimajor axis solution."
 
-agcls.AgTypeNameMap["AgEVALambertOrbitalEnergyType"] = AgEVALambertOrbitalEnergyType
+agcls.AgTypeNameMap["VA_LAMBERT_ORBITAL_ENERGY_TYPE"] = VA_LAMBERT_ORBITAL_ENERGY_TYPE
 
-class AgEVALambertDirectionOfMotionType(IntEnum):
+class VA_LAMBERT_DIRECTION_OF_MOTION_TYPE(IntEnum):
     """Lambert Direction Of Motion Type."""
     # The short direction of motion for the Lambert solution.
-    eAgEVALambertDirectionOfMotionShort = 0
+    AG_EVA_LAMBERT_DIRECTION_OF_MOTION_SHORT = 0
     # The long direction of motion for the Lambert solution.
-    eAgEVALambertDirectionOfMotionLong = 1
+    AG_EVA_LAMBERT_DIRECTION_OF_MOTION_LONG = 1
 
-AgEVALambertDirectionOfMotionType.eAgEVALambertDirectionOfMotionShort.__doc__ = "The short direction of motion for the Lambert solution."
-AgEVALambertDirectionOfMotionType.eAgEVALambertDirectionOfMotionLong.__doc__ = "The long direction of motion for the Lambert solution."
+VA_LAMBERT_DIRECTION_OF_MOTION_TYPE.AG_EVA_LAMBERT_DIRECTION_OF_MOTION_SHORT.__doc__ = "The short direction of motion for the Lambert solution."
+VA_LAMBERT_DIRECTION_OF_MOTION_TYPE.AG_EVA_LAMBERT_DIRECTION_OF_MOTION_LONG.__doc__ = "The long direction of motion for the Lambert solution."
 
-agcls.AgTypeNameMap["AgEVALambertDirectionOfMotionType"] = AgEVALambertDirectionOfMotionType
+agcls.AgTypeNameMap["VA_LAMBERT_DIRECTION_OF_MOTION_TYPE"] = VA_LAMBERT_DIRECTION_OF_MOTION_TYPE
 
-class AgEVAGoldenSectionDesiredOperation(IntEnum):
+class VA_GOLDEN_SECTION_DESIRED_OPERATION(IntEnum):
     """The types for Desired Operation/Objective of golden section profile."""
     # Minimize value
-    eVAGoldenSectionDesiredOpMinimizeValue = 0
+    MINIMIZE_VALUE = 0
     # Maximize value
-    eVAGoldenSectionDesiredOpMaximizeValue = 1
+    MAXIMIZE_VALUE = 1
 
-AgEVAGoldenSectionDesiredOperation.eVAGoldenSectionDesiredOpMinimizeValue.__doc__ = "Minimize value"
-AgEVAGoldenSectionDesiredOperation.eVAGoldenSectionDesiredOpMaximizeValue.__doc__ = "Maximize value"
+VA_GOLDEN_SECTION_DESIRED_OPERATION.MINIMIZE_VALUE.__doc__ = "Minimize value"
+VA_GOLDEN_SECTION_DESIRED_OPERATION.MAXIMIZE_VALUE.__doc__ = "Maximize value"
 
-agcls.AgTypeNameMap["AgEVAGoldenSectionDesiredOperation"] = AgEVAGoldenSectionDesiredOperation
+agcls.AgTypeNameMap["VA_GOLDEN_SECTION_DESIRED_OPERATION"] = VA_GOLDEN_SECTION_DESIRED_OPERATION
 
-class AgEVAGridSearchDesiredOperation(IntEnum):
+class VA_GRID_SEARCH_DESIRED_OPERATION(IntEnum):
     """The types for Desired Operation/Objective of Grid Search profile."""
     # Minimize value
-    eVAGridSearchDesiredOpMinimizeValue = 0
+    MINIMIZE_VALUE = 0
     # Maximize value
-    eVAGridSearchDesiredOpMaximizeValue = 1
+    MAXIMIZE_VALUE = 1
 
-AgEVAGridSearchDesiredOperation.eVAGridSearchDesiredOpMinimizeValue.__doc__ = "Minimize value"
-AgEVAGridSearchDesiredOperation.eVAGridSearchDesiredOpMaximizeValue.__doc__ = "Maximize value"
+VA_GRID_SEARCH_DESIRED_OPERATION.MINIMIZE_VALUE.__doc__ = "Minimize value"
+VA_GRID_SEARCH_DESIRED_OPERATION.MAXIMIZE_VALUE.__doc__ = "Maximize value"
 
-agcls.AgTypeNameMap["AgEVAGridSearchDesiredOperation"] = AgEVAGridSearchDesiredOperation
+agcls.AgTypeNameMap["VA_GRID_SEARCH_DESIRED_OPERATION"] = VA_GRID_SEARCH_DESIRED_OPERATION
 
-class AgEVAElement(IntEnum):
+class VA_ELEMENT(IntEnum):
     """Which type of elements (osculating or mean)"""
     # Osculating.
-    eVAElementOsculating = 0
+    OSCULATING = 0
     # Kozai-Izsak Mean.
-    eVAElementKozaiIzsakMean = 1
+    KOZAI_IZSAK_MEAN = 1
     # Brouwer-Lyddane Mean Long.
-    eVAElementBrouwerLyddaneMeanLong = 2
+    BROUWER_LYDDANE_MEAN_LONG = 2
     # Brouwer-Lyddane Mean Short.
-    eVAElementBrouwerLyddaneMeanShort = 3
+    BROUWER_LYDDANE_MEAN_SHORT = 3
 
-AgEVAElement.eVAElementOsculating.__doc__ = "Osculating."
-AgEVAElement.eVAElementKozaiIzsakMean.__doc__ = "Kozai-Izsak Mean."
-AgEVAElement.eVAElementBrouwerLyddaneMeanLong.__doc__ = "Brouwer-Lyddane Mean Long."
-AgEVAElement.eVAElementBrouwerLyddaneMeanShort.__doc__ = "Brouwer-Lyddane Mean Short."
+VA_ELEMENT.OSCULATING.__doc__ = "Osculating."
+VA_ELEMENT.KOZAI_IZSAK_MEAN.__doc__ = "Kozai-Izsak Mean."
+VA_ELEMENT.BROUWER_LYDDANE_MEAN_LONG.__doc__ = "Brouwer-Lyddane Mean Long."
+VA_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT.__doc__ = "Brouwer-Lyddane Mean Short."
 
-agcls.AgTypeNameMap["AgEVAElement"] = AgEVAElement
+agcls.AgTypeNameMap["VA_ELEMENT"] = VA_ELEMENT
 
-class AgEVABaseSelection(IntEnum):
+class VA_BASE_SELECTION(IntEnum):
     """Access base object selections types."""
     # An object in the current scenario.
-    eVABaseSelectionSpecify = 0
+    SPECIFY = 0
     # The current satellite.
-    eVABaseSelectionCurrentSatellite = 1
+    CURRENT_SATELLITE = 1
 
-AgEVABaseSelection.eVABaseSelectionSpecify.__doc__ = "An object in the current scenario."
-AgEVABaseSelection.eVABaseSelectionCurrentSatellite.__doc__ = "The current satellite."
+VA_BASE_SELECTION.SPECIFY.__doc__ = "An object in the current scenario."
+VA_BASE_SELECTION.CURRENT_SATELLITE.__doc__ = "The current satellite."
 
-agcls.AgTypeNameMap["AgEVABaseSelection"] = AgEVABaseSelection
+agcls.AgTypeNameMap["VA_BASE_SELECTION"] = VA_BASE_SELECTION
 
-class AgEVAControlOrbitStateValue(IntEnum):
+class VA_CONTROL_ORBIT_STATE_VALUE(IntEnum):
     """Orbit State Value properties that can be selected as control parameters for a Target Sequence."""
     # The Vx velocity component of the orbit state.
-    eVAControlOrbitStateValueVx = 0
+    VX = 0
     # The Vy velocity component of the orbit state.
-    eVAControlOrbitStateValueVy = 1
+    VY = 1
     # The Vz velocity component of the orbit state.
-    eVAControlOrbitStateValueVz = 2
+    VZ = 2
     # The x position component of the orbit state.
-    eVAControlOrbitStateValueX = 3
+    X = 3
     # The y position component of the orbit state.
-    eVAControlOrbitStateValueY = 4
+    Y = 4
     # The z position component of the orbit state.
-    eVAControlOrbitStateValueZ = 5
+    Z = 5
 
-AgEVAControlOrbitStateValue.eVAControlOrbitStateValueVx.__doc__ = "The Vx velocity component of the orbit state."
-AgEVAControlOrbitStateValue.eVAControlOrbitStateValueVy.__doc__ = "The Vy velocity component of the orbit state."
-AgEVAControlOrbitStateValue.eVAControlOrbitStateValueVz.__doc__ = "The Vz velocity component of the orbit state."
-AgEVAControlOrbitStateValue.eVAControlOrbitStateValueX.__doc__ = "The x position component of the orbit state."
-AgEVAControlOrbitStateValue.eVAControlOrbitStateValueY.__doc__ = "The y position component of the orbit state."
-AgEVAControlOrbitStateValue.eVAControlOrbitStateValueZ.__doc__ = "The z position component of the orbit state."
+VA_CONTROL_ORBIT_STATE_VALUE.VX.__doc__ = "The Vx velocity component of the orbit state."
+VA_CONTROL_ORBIT_STATE_VALUE.VY.__doc__ = "The Vy velocity component of the orbit state."
+VA_CONTROL_ORBIT_STATE_VALUE.VZ.__doc__ = "The Vz velocity component of the orbit state."
+VA_CONTROL_ORBIT_STATE_VALUE.X.__doc__ = "The x position component of the orbit state."
+VA_CONTROL_ORBIT_STATE_VALUE.Y.__doc__ = "The y position component of the orbit state."
+VA_CONTROL_ORBIT_STATE_VALUE.Z.__doc__ = "The z position component of the orbit state."
 
-agcls.AgTypeNameMap["AgEVAControlOrbitStateValue"] = AgEVAControlOrbitStateValue
+agcls.AgTypeNameMap["VA_CONTROL_ORBIT_STATE_VALUE"] = VA_CONTROL_ORBIT_STATE_VALUE
 
-class AgEVASegmentState(IntEnum):
+class VA_SEGMENT_STATE(IntEnum):
     """Segment state to use types."""
     # The segment initial state.
-    eVASegmentStateInitial = 0
+    INITIAL = 0
     # The segment final state.
-    eVASegmentStateFinal = 1
+    FINAL = 1
 
-AgEVASegmentState.eVASegmentStateInitial.__doc__ = "The segment initial state."
-AgEVASegmentState.eVASegmentStateFinal.__doc__ = "The segment final state."
+VA_SEGMENT_STATE.INITIAL.__doc__ = "The segment initial state."
+VA_SEGMENT_STATE.FINAL.__doc__ = "The segment final state."
 
-agcls.AgTypeNameMap["AgEVASegmentState"] = AgEVASegmentState
+agcls.AgTypeNameMap["VA_SEGMENT_STATE"] = VA_SEGMENT_STATE
 
-class AgEVADifferenceOrder(IntEnum):
+class VA_DIFFERENCE_ORDER(IntEnum):
     """The Difference order types."""
     # The initial minus current difference.
-    eVADifferenceOrderInitialMinusCurrent = 0
+    INITIAL_MINUS_CURRENT = 0
     # The current minus initial difference.
-    eVADifferenceOrderCurrentMinusInitial = 1
+    CURRENT_MINUS_INITIAL = 1
 
-AgEVADifferenceOrder.eVADifferenceOrderInitialMinusCurrent.__doc__ = "The initial minus current difference."
-AgEVADifferenceOrder.eVADifferenceOrderCurrentMinusInitial.__doc__ = "The current minus initial difference."
+VA_DIFFERENCE_ORDER.INITIAL_MINUS_CURRENT.__doc__ = "The initial minus current difference."
+VA_DIFFERENCE_ORDER.CURRENT_MINUS_INITIAL.__doc__ = "The current minus initial difference."
 
-agcls.AgTypeNameMap["AgEVADifferenceOrder"] = AgEVADifferenceOrder
+agcls.AgTypeNameMap["VA_DIFFERENCE_ORDER"] = VA_DIFFERENCE_ORDER
 
-class AgEVASegmentDifferenceOrder(IntEnum):
+class VA_SEGMENT_DIFFERENCE_ORDER(IntEnum):
     """The Difference Across Segments order types."""
     # The current minus segment difference.
-    eVASegmentDifferenceOrderCurrentMinusSegment = 0
+    CURRENT_MINUS_SEGMENT = 0
     # The segment minus current difference.
-    eVASegmentDifferenceOrderSegmentMinusCurrent = 1
+    SEGMENT_MINUS_CURRENT = 1
 
-AgEVASegmentDifferenceOrder.eVASegmentDifferenceOrderCurrentMinusSegment.__doc__ = "The current minus segment difference."
-AgEVASegmentDifferenceOrder.eVASegmentDifferenceOrderSegmentMinusCurrent.__doc__ = "The segment minus current difference."
+VA_SEGMENT_DIFFERENCE_ORDER.CURRENT_MINUS_SEGMENT.__doc__ = "The current minus segment difference."
+VA_SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT.__doc__ = "The segment minus current difference."
 
-agcls.AgTypeNameMap["AgEVASegmentDifferenceOrder"] = AgEVASegmentDifferenceOrder
+agcls.AgTypeNameMap["VA_SEGMENT_DIFFERENCE_ORDER"] = VA_SEGMENT_DIFFERENCE_ORDER
 
-class AgEVAControlRepeatingGroundTrackErr(IntEnum):
+class VA_CONTROL_REPEATING_GROUND_TRACK_ERR(IntEnum):
     """Repeating Ground Track Equator Error properties that can be selected as control parameters for a Target Sequence."""
     # The reference longitude.
-    eVAControlRepeatingGroundTrackErrRefLon = 0
+    REF_LON = 0
     # The repeat count.
-    eVAControlRepeatingGroundTrackErrRepeatCount = 1
+    REPEAT_COUNT = 1
 
-AgEVAControlRepeatingGroundTrackErr.eVAControlRepeatingGroundTrackErrRefLon.__doc__ = "The reference longitude."
-AgEVAControlRepeatingGroundTrackErr.eVAControlRepeatingGroundTrackErrRepeatCount.__doc__ = "The repeat count."
+VA_CONTROL_REPEATING_GROUND_TRACK_ERR.REF_LON.__doc__ = "The reference longitude."
+VA_CONTROL_REPEATING_GROUND_TRACK_ERR.REPEAT_COUNT.__doc__ = "The repeat count."
 
-agcls.AgTypeNameMap["AgEVAControlRepeatingGroundTrackErr"] = AgEVAControlRepeatingGroundTrackErr
+agcls.AgTypeNameMap["VA_CONTROL_REPEATING_GROUND_TRACK_ERR"] = VA_CONTROL_REPEATING_GROUND_TRACK_ERR
 
-class AgEVACalcObjectDirection(IntEnum):
+class VA_CALC_OBJECT_DIRECTION(IntEnum):
     """The direction to search for a desired value."""
     # Search in the direction of the next calculation object.
-    eVACalcObjectDirectionNext = 0
+    NEXT = 0
     # Search in the direction of the previous calculation object.
-    eVACalcObjectDirectionPrevious = 1
+    PREVIOUS = 1
 
-AgEVACalcObjectDirection.eVACalcObjectDirectionNext.__doc__ = "Search in the direction of the next calculation object."
-AgEVACalcObjectDirection.eVACalcObjectDirectionPrevious.__doc__ = "Search in the direction of the previous calculation object."
+VA_CALC_OBJECT_DIRECTION.NEXT.__doc__ = "Search in the direction of the next calculation object."
+VA_CALC_OBJECT_DIRECTION.PREVIOUS.__doc__ = "Search in the direction of the previous calculation object."
 
-agcls.AgTypeNameMap["AgEVACalcObjectDirection"] = AgEVACalcObjectDirection
+agcls.AgTypeNameMap["VA_CALC_OBJECT_DIRECTION"] = VA_CALC_OBJECT_DIRECTION
 
-class AgEVACalcObjectOrbitPlaneSource(IntEnum):
+class VA_CALC_OBJECT_ORBIT_PLANE_SOURCE(IntEnum):
     """The calculation object orbit plane source Types."""
     # Use the reference satellite to generate the orbit plane.
-    eAgEVACalcObjectOrbitPlaneSourceReferenceSatellite = 0
+    AG_EVA_CALC_OBJECT_ORBIT_PLANE_SOURCE_REFERENCE_SATELLITE = 0
     # Use the satellite to generate the orbit plane.
-    eAgEVACalcObjectOrbitPlaneSourceSatellite = 1
+    AG_EVA_CALC_OBJECT_ORBIT_PLANE_SOURCE_SATELLITE = 1
 
-AgEVACalcObjectOrbitPlaneSource.eAgEVACalcObjectOrbitPlaneSourceReferenceSatellite.__doc__ = "Use the reference satellite to generate the orbit plane."
-AgEVACalcObjectOrbitPlaneSource.eAgEVACalcObjectOrbitPlaneSourceSatellite.__doc__ = "Use the satellite to generate the orbit plane."
+VA_CALC_OBJECT_ORBIT_PLANE_SOURCE.AG_EVA_CALC_OBJECT_ORBIT_PLANE_SOURCE_REFERENCE_SATELLITE.__doc__ = "Use the reference satellite to generate the orbit plane."
+VA_CALC_OBJECT_ORBIT_PLANE_SOURCE.AG_EVA_CALC_OBJECT_ORBIT_PLANE_SOURCE_SATELLITE.__doc__ = "Use the satellite to generate the orbit plane."
 
-agcls.AgTypeNameMap["AgEVACalcObjectOrbitPlaneSource"] = AgEVACalcObjectOrbitPlaneSource
+agcls.AgTypeNameMap["VA_CALC_OBJECT_ORBIT_PLANE_SOURCE"] = VA_CALC_OBJECT_ORBIT_PLANE_SOURCE
 
-class AgEVACalcObjectSunPosition(IntEnum):
+class VA_CALC_OBJECT_SUN_POSITION(IntEnum):
     """The calculation object sun location Types."""
     # Use the sun location apparent from satellite.
-    eAgEVACalcObjectSunPositionApparentFromSatellite = 0
+    AG_EVA_CALC_OBJECT_SUN_POSITION_APPARENT_FROM_SATELLITE = 0
     # Use the sun location apparent from reference satellite.
-    eAgEVACalcObjectSunPositionApparentFromRefSatellite = 1
+    AG_EVA_CALC_OBJECT_SUN_POSITION_APPARENT_FROM_REF_SATELLITE = 1
     # Use the sun location true from satellite.
-    eAgEVACalcObjectSunPositionTrueFromSatellite = 2
+    AG_EVA_CALC_OBJECT_SUN_POSITION_TRUE_FROM_SATELLITE = 2
     # Use the sun location true from reference satellite.
-    eAgEVACalcObjectSunPositionTrueFromRefSatellite = 3
+    AG_EVA_CALC_OBJECT_SUN_POSITION_TRUE_FROM_REF_SATELLITE = 3
 
-AgEVACalcObjectSunPosition.eAgEVACalcObjectSunPositionApparentFromSatellite.__doc__ = "Use the sun location apparent from satellite."
-AgEVACalcObjectSunPosition.eAgEVACalcObjectSunPositionApparentFromRefSatellite.__doc__ = "Use the sun location apparent from reference satellite."
-AgEVACalcObjectSunPosition.eAgEVACalcObjectSunPositionTrueFromSatellite.__doc__ = "Use the sun location true from satellite."
-AgEVACalcObjectSunPosition.eAgEVACalcObjectSunPositionTrueFromRefSatellite.__doc__ = "Use the sun location true from reference satellite."
+VA_CALC_OBJECT_SUN_POSITION.AG_EVA_CALC_OBJECT_SUN_POSITION_APPARENT_FROM_SATELLITE.__doc__ = "Use the sun location apparent from satellite."
+VA_CALC_OBJECT_SUN_POSITION.AG_EVA_CALC_OBJECT_SUN_POSITION_APPARENT_FROM_REF_SATELLITE.__doc__ = "Use the sun location apparent from reference satellite."
+VA_CALC_OBJECT_SUN_POSITION.AG_EVA_CALC_OBJECT_SUN_POSITION_TRUE_FROM_SATELLITE.__doc__ = "Use the sun location true from satellite."
+VA_CALC_OBJECT_SUN_POSITION.AG_EVA_CALC_OBJECT_SUN_POSITION_TRUE_FROM_REF_SATELLITE.__doc__ = "Use the sun location true from reference satellite."
 
-agcls.AgTypeNameMap["AgEVACalcObjectSunPosition"] = AgEVACalcObjectSunPosition
+agcls.AgTypeNameMap["VA_CALC_OBJECT_SUN_POSITION"] = VA_CALC_OBJECT_SUN_POSITION
 
-class AgEVACalcObjectAngleSign(IntEnum):
+class VA_CALC_OBJECT_ANGLE_SIGN(IntEnum):
     """The sign of the angle when the relative position has a component along the orbit normal."""
     # Use the positive sign for the angle when the relative position has a positive component along the orbit normal.
-    eAgEVACalcObjectAngleSignPositive = 0
+    AG_EVA_CALC_OBJECT_ANGLE_SIGN_POSITIVE = 0
     # Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal.
-    eAgEVACalcObjectAngleSignNegative = 1
+    AG_EVA_CALC_OBJECT_ANGLE_SIGN_NEGATIVE = 1
 
-AgEVACalcObjectAngleSign.eAgEVACalcObjectAngleSignPositive.__doc__ = "Use the positive sign for the angle when the relative position has a positive component along the orbit normal."
-AgEVACalcObjectAngleSign.eAgEVACalcObjectAngleSignNegative.__doc__ = "Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal."
+VA_CALC_OBJECT_ANGLE_SIGN.AG_EVA_CALC_OBJECT_ANGLE_SIGN_POSITIVE.__doc__ = "Use the positive sign for the angle when the relative position has a positive component along the orbit normal."
+VA_CALC_OBJECT_ANGLE_SIGN.AG_EVA_CALC_OBJECT_ANGLE_SIGN_NEGATIVE.__doc__ = "Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal."
 
-agcls.AgTypeNameMap["AgEVACalcObjectAngleSign"] = AgEVACalcObjectAngleSign
+agcls.AgTypeNameMap["VA_CALC_OBJECT_ANGLE_SIGN"] = VA_CALC_OBJECT_ANGLE_SIGN
 
-class AgEVACalcObjectReferenceDirection(IntEnum):
+class VA_CALC_OBJECT_REFERENCE_DIRECTION(IntEnum):
     """Direction that establishes the zero value when projected into the orbit plane."""
     # Use the reference satellite position when projected into the orbit plane.
-    eAgEVACalcObjectReferenceDirectionReferenceSatellitePosition = 0
+    AG_EVA_CALC_OBJECT_REFERENCE_DIRECTION_REFERENCE_SATELLITE_POSITION = 0
     # Use the satellite position when projected into the orbit plane.
-    eAgEVACalcObjectReferenceDirectionSatellitePosition = 1
+    AG_EVA_CALC_OBJECT_REFERENCE_DIRECTION_SATELLITE_POSITION = 1
     # Use the reference satellite nadir (centric) when projected into the orbit plane.
-    eAgEVACalcObjectReferenceDirectionReferenceSatelliteNadir = 2
+    AG_EVA_CALC_OBJECT_REFERENCE_DIRECTION_REFERENCE_SATELLITE_NADIR = 2
     # Use the satellite nadir (centric) position when projected into the orbit plane.
-    eAgEVACalcObjectReferenceDirectionSatelliteNadir = 3
+    AG_EVA_CALC_OBJECT_REFERENCE_DIRECTION_SATELLITE_NADIR = 3
 
-AgEVACalcObjectReferenceDirection.eAgEVACalcObjectReferenceDirectionReferenceSatellitePosition.__doc__ = "Use the reference satellite position when projected into the orbit plane."
-AgEVACalcObjectReferenceDirection.eAgEVACalcObjectReferenceDirectionSatellitePosition.__doc__ = "Use the satellite position when projected into the orbit plane."
-AgEVACalcObjectReferenceDirection.eAgEVACalcObjectReferenceDirectionReferenceSatelliteNadir.__doc__ = "Use the reference satellite nadir (centric) when projected into the orbit plane."
-AgEVACalcObjectReferenceDirection.eAgEVACalcObjectReferenceDirectionSatelliteNadir.__doc__ = "Use the satellite nadir (centric) position when projected into the orbit plane."
+VA_CALC_OBJECT_REFERENCE_DIRECTION.AG_EVA_CALC_OBJECT_REFERENCE_DIRECTION_REFERENCE_SATELLITE_POSITION.__doc__ = "Use the reference satellite position when projected into the orbit plane."
+VA_CALC_OBJECT_REFERENCE_DIRECTION.AG_EVA_CALC_OBJECT_REFERENCE_DIRECTION_SATELLITE_POSITION.__doc__ = "Use the satellite position when projected into the orbit plane."
+VA_CALC_OBJECT_REFERENCE_DIRECTION.AG_EVA_CALC_OBJECT_REFERENCE_DIRECTION_REFERENCE_SATELLITE_NADIR.__doc__ = "Use the reference satellite nadir (centric) when projected into the orbit plane."
+VA_CALC_OBJECT_REFERENCE_DIRECTION.AG_EVA_CALC_OBJECT_REFERENCE_DIRECTION_SATELLITE_NADIR.__doc__ = "Use the satellite nadir (centric) position when projected into the orbit plane."
 
-agcls.AgTypeNameMap["AgEVACalcObjectReferenceDirection"] = AgEVACalcObjectReferenceDirection
+agcls.AgTypeNameMap["VA_CALC_OBJECT_REFERENCE_DIRECTION"] = VA_CALC_OBJECT_REFERENCE_DIRECTION
 
-class AgEVACalcObjectRelativePosition(IntEnum):
+class VA_CALC_OBJECT_RELATIVE_POSITION(IntEnum):
     """The calculation object relative position Types."""
     # Use the relative position satellite to reference satellite.
-    eAgEVACalcObjectRelativePositionSatelliteToRefSatellite = 0
+    AG_EVA_CALC_OBJECT_RELATIVE_POSITION_SATELLITE_TO_REF_SATELLITE = 0
     # Use the relative position reference satellite to satellite.
-    eAgEVACalcObjectRelativePositionRefSatelliteToSatellite = 1
+    AG_EVA_CALC_OBJECT_RELATIVE_POSITION_REF_SATELLITE_TO_SATELLITE = 1
 
-AgEVACalcObjectRelativePosition.eAgEVACalcObjectRelativePositionSatelliteToRefSatellite.__doc__ = "Use the relative position satellite to reference satellite."
-AgEVACalcObjectRelativePosition.eAgEVACalcObjectRelativePositionRefSatelliteToSatellite.__doc__ = "Use the relative position reference satellite to satellite."
+VA_CALC_OBJECT_RELATIVE_POSITION.AG_EVA_CALC_OBJECT_RELATIVE_POSITION_SATELLITE_TO_REF_SATELLITE.__doc__ = "Use the relative position satellite to reference satellite."
+VA_CALC_OBJECT_RELATIVE_POSITION.AG_EVA_CALC_OBJECT_RELATIVE_POSITION_REF_SATELLITE_TO_SATELLITE.__doc__ = "Use the relative position reference satellite to satellite."
 
-agcls.AgTypeNameMap["AgEVACalcObjectRelativePosition"] = AgEVACalcObjectRelativePosition
+agcls.AgTypeNameMap["VA_CALC_OBJECT_RELATIVE_POSITION"] = VA_CALC_OBJECT_RELATIVE_POSITION
 
-class AgEVACalcObjectReferenceEllipse(IntEnum):
+class VA_CALC_OBJECT_REFERENCE_ELLIPSE(IntEnum):
     """The calculation object reference ellipse Types."""
     # Use the reference satellite orbit.
-    eAgEVACalcObjectReferenceEllipseRefSatOrbit = 0
+    AG_EVA_CALC_OBJECT_REFERENCE_ELLIPSE_REF_SAT_ORBIT = 0
     # Use the satellite orbit.
-    eAgEVACalcObjectReferenceEllipseSatelliteOrbit = 1
+    AG_EVA_CALC_OBJECT_REFERENCE_ELLIPSE_SATELLITE_ORBIT = 1
 
-AgEVACalcObjectReferenceEllipse.eAgEVACalcObjectReferenceEllipseRefSatOrbit.__doc__ = "Use the reference satellite orbit."
-AgEVACalcObjectReferenceEllipse.eAgEVACalcObjectReferenceEllipseSatelliteOrbit.__doc__ = "Use the satellite orbit."
+VA_CALC_OBJECT_REFERENCE_ELLIPSE.AG_EVA_CALC_OBJECT_REFERENCE_ELLIPSE_REF_SAT_ORBIT.__doc__ = "Use the reference satellite orbit."
+VA_CALC_OBJECT_REFERENCE_ELLIPSE.AG_EVA_CALC_OBJECT_REFERENCE_ELLIPSE_SATELLITE_ORBIT.__doc__ = "Use the satellite orbit."
 
-agcls.AgTypeNameMap["AgEVACalcObjectReferenceEllipse"] = AgEVACalcObjectReferenceEllipse
+agcls.AgTypeNameMap["VA_CALC_OBJECT_REFERENCE_ELLIPSE"] = VA_CALC_OBJECT_REFERENCE_ELLIPSE
 
-class AgEVACalcObjectLocationSource(IntEnum):
+class VA_CALC_OBJECT_LOCATION_SOURCE(IntEnum):
     """The calculation object location source Types."""
     # Use the reference satellite.
-    eAgEVACalcObjectLocationSourceRefSat = 0
+    AG_EVA_CALC_OBJECT_LOCATION_SOURCE_REF_SAT = 0
     # Use the satellite.
-    eAgEVACalcObjectLocationSourceSatellite = 1
+    AG_EVA_CALC_OBJECT_LOCATION_SOURCE_SATELLITE = 1
 
-AgEVACalcObjectLocationSource.eAgEVACalcObjectLocationSourceRefSat.__doc__ = "Use the reference satellite."
-AgEVACalcObjectLocationSource.eAgEVACalcObjectLocationSourceSatellite.__doc__ = "Use the satellite."
+VA_CALC_OBJECT_LOCATION_SOURCE.AG_EVA_CALC_OBJECT_LOCATION_SOURCE_REF_SAT.__doc__ = "Use the reference satellite."
+VA_CALC_OBJECT_LOCATION_SOURCE.AG_EVA_CALC_OBJECT_LOCATION_SOURCE_SATELLITE.__doc__ = "Use the satellite."
 
-agcls.AgTypeNameMap["AgEVACalcObjectLocationSource"] = AgEVACalcObjectLocationSource
+agcls.AgTypeNameMap["VA_CALC_OBJECT_LOCATION_SOURCE"] = VA_CALC_OBJECT_LOCATION_SOURCE
 
-class AgEVAGravitationalParameterSource(IntEnum):
+class VA_GRAVITATIONAL_PARAMETER_SOURCE(IntEnum):
     """The source of the gravitational parameter for a CStateCalcGravitationalParameter calculation object."""
     # Cb File.
-    eVAGravitationalParameterSourceCbFile = 0
+    CB_FILE = 0
     # Cb File -  System.
-    eVAGravitationalParameterSourceCbFileSystem = 1
+    CB_FILE_SYSTEM = 1
     # DE File.
-    eVAGravitationalParameterSourceDEFile = 2
+    DE_FILE = 2
     # Gravity File.
-    eVAGravitationalParameterSourceGravityFile = 3
+    GRAVITY_FILE = 3
 
-AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceCbFile.__doc__ = "Cb File."
-AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceCbFileSystem.__doc__ = "Cb File -  System."
-AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceDEFile.__doc__ = "DE File."
-AgEVAGravitationalParameterSource.eVAGravitationalParameterSourceGravityFile.__doc__ = "Gravity File."
+VA_GRAVITATIONAL_PARAMETER_SOURCE.CB_FILE.__doc__ = "Cb File."
+VA_GRAVITATIONAL_PARAMETER_SOURCE.CB_FILE_SYSTEM.__doc__ = "Cb File -  System."
+VA_GRAVITATIONAL_PARAMETER_SOURCE.DE_FILE.__doc__ = "DE File."
+VA_GRAVITATIONAL_PARAMETER_SOURCE.GRAVITY_FILE.__doc__ = "Gravity File."
 
-agcls.AgTypeNameMap["AgEVAGravitationalParameterSource"] = AgEVAGravitationalParameterSource
+agcls.AgTypeNameMap["VA_GRAVITATIONAL_PARAMETER_SOURCE"] = VA_GRAVITATIONAL_PARAMETER_SOURCE
 
-class AgEVAReferenceRadiusSource(IntEnum):
+class VA_REFERENCE_RADIUS_SOURCE(IntEnum):
     """The source of the reference radius for a CStateCalcReferenceRadius calculation object."""
     # Cb File.
-    eVAReferenceRadiusSourceCbFile = 0
+    CB_FILE = 0
     # Gravity File.
-    eVAReferenceRadiusSourceGravityFile = 1
+    GRAVITY_FILE = 1
 
-AgEVAReferenceRadiusSource.eVAReferenceRadiusSourceCbFile.__doc__ = "Cb File."
-AgEVAReferenceRadiusSource.eVAReferenceRadiusSourceGravityFile.__doc__ = "Gravity File."
+VA_REFERENCE_RADIUS_SOURCE.CB_FILE.__doc__ = "Cb File."
+VA_REFERENCE_RADIUS_SOURCE.GRAVITY_FILE.__doc__ = "Gravity File."
 
-agcls.AgTypeNameMap["AgEVAReferenceRadiusSource"] = AgEVAReferenceRadiusSource
+agcls.AgTypeNameMap["VA_REFERENCE_RADIUS_SOURCE"] = VA_REFERENCE_RADIUS_SOURCE
 
-class AgEVAGravCoeffNormalizationType(IntEnum):
+class VA_GRAV_COEFF_NORMALIZATION_TYPE(IntEnum):
     """The normalization type for the CStateCalcGravCoeff calculation object."""
     # Normalized.
-    eVAGravCoeffNormalized = 0
+    NORMALIZED = 0
     # Unnormalized.
-    eVAGravCoeffUnnormalized = 1
+    UNNORMALIZED = 1
 
-AgEVAGravCoeffNormalizationType.eVAGravCoeffNormalized.__doc__ = "Normalized."
-AgEVAGravCoeffNormalizationType.eVAGravCoeffUnnormalized.__doc__ = "Unnormalized."
+VA_GRAV_COEFF_NORMALIZATION_TYPE.NORMALIZED.__doc__ = "Normalized."
+VA_GRAV_COEFF_NORMALIZATION_TYPE.UNNORMALIZED.__doc__ = "Unnormalized."
 
-agcls.AgTypeNameMap["AgEVAGravCoeffNormalizationType"] = AgEVAGravCoeffNormalizationType
+agcls.AgTypeNameMap["VA_GRAV_COEFF_NORMALIZATION_TYPE"] = VA_GRAV_COEFF_NORMALIZATION_TYPE
 
-class AgEVAGravCoeffCoefficientType(IntEnum):
+class VA_GRAV_COEFF_COEFFICIENT_TYPE(IntEnum):
     """The coefficient type for the CStateCalcGravCoeff calculation object."""
     # Zonal.
-    eVAGravCoeffCoefficientTypeZonal = 0
+    ZONAL = 0
     # Cosine.
-    eVAGravCoeffCoefficientTypeCosine = 1
+    COSINE = 1
     # Sine.
-    eVAGravCoeffCoefficientTypeSine = 2
+    SINE = 2
 
-AgEVAGravCoeffCoefficientType.eVAGravCoeffCoefficientTypeZonal.__doc__ = "Zonal."
-AgEVAGravCoeffCoefficientType.eVAGravCoeffCoefficientTypeCosine.__doc__ = "Cosine."
-AgEVAGravCoeffCoefficientType.eVAGravCoeffCoefficientTypeSine.__doc__ = "Sine."
+VA_GRAV_COEFF_COEFFICIENT_TYPE.ZONAL.__doc__ = "Zonal."
+VA_GRAV_COEFF_COEFFICIENT_TYPE.COSINE.__doc__ = "Cosine."
+VA_GRAV_COEFF_COEFFICIENT_TYPE.SINE.__doc__ = "Sine."
 
-agcls.AgTypeNameMap["AgEVAGravCoeffCoefficientType"] = AgEVAGravCoeffCoefficientType
+agcls.AgTypeNameMap["VA_GRAV_COEFF_COEFFICIENT_TYPE"] = VA_GRAV_COEFF_COEFFICIENT_TYPE
 
-class AgEVASTMPertVariables(IntEnum):
+class VASTM_PERT_VARIABLES(IntEnum):
     """The initial and final Cartesian variational variables that describe an STM element."""
     # Designates the initial or final variation in the 'x' component of position.
-    eVASTMPertVariablePosX = 0
+    POS_X = 0
     # Designates the initial or final variation in the 'y' component of position.
-    eVASTMPertVariablePosY = 1
+    POS_Y = 1
     # Designates the initial or final variation in the 'z' component of position.
-    eVASTMPertVariablePosZ = 2
+    POS_Z = 2
     # Designates the initial or final variation in the 'x' component of velocity.
-    eVASTMPertVariableVelX = 3
+    VEL_X = 3
     # Designates the initial or final variation in the 'y' component of velocity.
-    eVASTMPertVariableVelY = 4
+    VEL_Y = 4
     # Designates the initial or final variation in the 'z' component of velocity.
-    eVASTMPertVariableVelZ = 5
+    VEL_Z = 5
 
-AgEVASTMPertVariables.eVASTMPertVariablePosX.__doc__ = "Designates the initial or final variation in the 'x' component of position."
-AgEVASTMPertVariables.eVASTMPertVariablePosY.__doc__ = "Designates the initial or final variation in the 'y' component of position."
-AgEVASTMPertVariables.eVASTMPertVariablePosZ.__doc__ = "Designates the initial or final variation in the 'z' component of position."
-AgEVASTMPertVariables.eVASTMPertVariableVelX.__doc__ = "Designates the initial or final variation in the 'x' component of velocity."
-AgEVASTMPertVariables.eVASTMPertVariableVelY.__doc__ = "Designates the initial or final variation in the 'y' component of velocity."
-AgEVASTMPertVariables.eVASTMPertVariableVelZ.__doc__ = "Designates the initial or final variation in the 'z' component of velocity."
+VASTM_PERT_VARIABLES.POS_X.__doc__ = "Designates the initial or final variation in the 'x' component of position."
+VASTM_PERT_VARIABLES.POS_Y.__doc__ = "Designates the initial or final variation in the 'y' component of position."
+VASTM_PERT_VARIABLES.POS_Z.__doc__ = "Designates the initial or final variation in the 'z' component of position."
+VASTM_PERT_VARIABLES.VEL_X.__doc__ = "Designates the initial or final variation in the 'x' component of velocity."
+VASTM_PERT_VARIABLES.VEL_Y.__doc__ = "Designates the initial or final variation in the 'y' component of velocity."
+VASTM_PERT_VARIABLES.VEL_Z.__doc__ = "Designates the initial or final variation in the 'z' component of velocity."
 
-agcls.AgTypeNameMap["AgEVASTMPertVariables"] = AgEVASTMPertVariables
+agcls.AgTypeNameMap["VASTM_PERT_VARIABLES"] = VASTM_PERT_VARIABLES
 
-class AgEVASTMEigenNumber(IntEnum):
+class VASTM_EIGEN_NUMBER(IntEnum):
     """The number that describes one of the 6 STM Eigenvalues or Eigenvectors."""
     # Designates the first Eigenvalue or Eigenvector.
-    eVASTMEigenNumber1 = 0
+    NUMBER1 = 0
     # Designates the second Eigenvalue or Eigenvector.
-    eVASTMEigenNumber2 = 1
+    NUMBER2 = 1
     # Designates the third Eigenvalue or Eigenvector.
-    eVASTMEigenNumber3 = 2
+    NUMBER3 = 2
     # Designates the fourth Eigenvalue or Eigenvector.
-    eVASTMEigenNumber4 = 3
+    NUMBER4 = 3
     # Designates the fifth Eigenvalue or Eigenvector.
-    eVASTMEigenNumber5 = 4
+    NUMBER5 = 4
     # Designates the sixth Eigenvalue or Eigenvector.
-    eVASTMEigenNumber6 = 5
+    NUMBER6 = 5
 
-AgEVASTMEigenNumber.eVASTMEigenNumber1.__doc__ = "Designates the first Eigenvalue or Eigenvector."
-AgEVASTMEigenNumber.eVASTMEigenNumber2.__doc__ = "Designates the second Eigenvalue or Eigenvector."
-AgEVASTMEigenNumber.eVASTMEigenNumber3.__doc__ = "Designates the third Eigenvalue or Eigenvector."
-AgEVASTMEigenNumber.eVASTMEigenNumber4.__doc__ = "Designates the fourth Eigenvalue or Eigenvector."
-AgEVASTMEigenNumber.eVASTMEigenNumber5.__doc__ = "Designates the fifth Eigenvalue or Eigenvector."
-AgEVASTMEigenNumber.eVASTMEigenNumber6.__doc__ = "Designates the sixth Eigenvalue or Eigenvector."
+VASTM_EIGEN_NUMBER.NUMBER1.__doc__ = "Designates the first Eigenvalue or Eigenvector."
+VASTM_EIGEN_NUMBER.NUMBER2.__doc__ = "Designates the second Eigenvalue or Eigenvector."
+VASTM_EIGEN_NUMBER.NUMBER3.__doc__ = "Designates the third Eigenvalue or Eigenvector."
+VASTM_EIGEN_NUMBER.NUMBER4.__doc__ = "Designates the fourth Eigenvalue or Eigenvector."
+VASTM_EIGEN_NUMBER.NUMBER5.__doc__ = "Designates the fifth Eigenvalue or Eigenvector."
+VASTM_EIGEN_NUMBER.NUMBER6.__doc__ = "Designates the sixth Eigenvalue or Eigenvector."
 
-agcls.AgTypeNameMap["AgEVASTMEigenNumber"] = AgEVASTMEigenNumber
+agcls.AgTypeNameMap["VASTM_EIGEN_NUMBER"] = VASTM_EIGEN_NUMBER
 
-class AgEVAComplexNumber(IntEnum):
+class VA_COMPLEX_NUMBER(IntEnum):
     """Whether a value represents the real or imaginary portion of a number."""
     # Designates the value as the real part.
-    eVAComplexNumberReal = 0
+    REAL = 0
     # Designates the value as the imaginary part.
-    eVAComplexNumberImaginary = 1
+    IMAGINARY = 1
 
-AgEVAComplexNumber.eVAComplexNumberReal.__doc__ = "Designates the value as the real part."
-AgEVAComplexNumber.eVAComplexNumberImaginary.__doc__ = "Designates the value as the imaginary part."
+VA_COMPLEX_NUMBER.REAL.__doc__ = "Designates the value as the real part."
+VA_COMPLEX_NUMBER.IMAGINARY.__doc__ = "Designates the value as the imaginary part."
 
-agcls.AgTypeNameMap["AgEVAComplexNumber"] = AgEVAComplexNumber
+agcls.AgTypeNameMap["VA_COMPLEX_NUMBER"] = VA_COMPLEX_NUMBER
 
-class AgEVASquaredType(IntEnum):
+class VA_SQUARED_TYPE(IntEnum):
     """Whether to calculate the value as the square of the sum of each component or the sum of the squares."""
     # Designates the calculation to be the sum of the squares.
-    eVASumOfSquares = 0
+    SUM_OF_SQUARES = 0
     # Designates the calculation to be the square of the sum.
-    eVASquareOfSum = 1
+    OF_SUM = 1
 
-AgEVASquaredType.eVASumOfSquares.__doc__ = "Designates the calculation to be the sum of the squares."
-AgEVASquaredType.eVASquareOfSum.__doc__ = "Designates the calculation to be the square of the sum."
+VA_SQUARED_TYPE.SUM_OF_SQUARES.__doc__ = "Designates the calculation to be the sum of the squares."
+VA_SQUARED_TYPE.OF_SUM.__doc__ = "Designates the calculation to be the square of the sum."
 
-agcls.AgTypeNameMap["AgEVASquaredType"] = AgEVASquaredType
+agcls.AgTypeNameMap["VA_SQUARED_TYPE"] = VA_SQUARED_TYPE
 
-class AgEVAGeoStationaryDriftRateModel(IntEnum):
+class VA_GEO_STATIONARY_DRIFT_RATE_MODEL(IntEnum):
     """Gravity models used to compute geostationary drift rate."""
     # Computes drift rate using two-body point mass gravity model.
-    eVAGeoStationaryDriftRatePointMass = 0
+    POINT_MASS = 0
     # Computes drift rate using gravity model that includes point mass plus secular effect of J2.
-    eVAGeoStationaryDriftRatePointMassPlusJ2 = 1
+    POINT_MASS_PLUS_J2 = 1
 
-AgEVAGeoStationaryDriftRateModel.eVAGeoStationaryDriftRatePointMass.__doc__ = "Computes drift rate using two-body point mass gravity model."
-AgEVAGeoStationaryDriftRateModel.eVAGeoStationaryDriftRatePointMassPlusJ2.__doc__ = "Computes drift rate using gravity model that includes point mass plus secular effect of J2."
+VA_GEO_STATIONARY_DRIFT_RATE_MODEL.POINT_MASS.__doc__ = "Computes drift rate using two-body point mass gravity model."
+VA_GEO_STATIONARY_DRIFT_RATE_MODEL.POINT_MASS_PLUS_J2.__doc__ = "Computes drift rate using gravity model that includes point mass plus secular effect of J2."
 
-agcls.AgTypeNameMap["AgEVAGeoStationaryDriftRateModel"] = AgEVAGeoStationaryDriftRateModel
+agcls.AgTypeNameMap["VA_GEO_STATIONARY_DRIFT_RATE_MODEL"] = VA_GEO_STATIONARY_DRIFT_RATE_MODEL
 
-class AgEVAGeoStationaryInclinationMag(IntEnum):
+class VA_GEO_STATIONARY_INCLINATION_MAG(IntEnum):
     """Magnitude to use when computing the inclination vector."""
     # Computes inclination vector magnitude as the inclination angle itself (in radins).
-    AgEVAGeoStationaryInclinationMagInclinationAngle = 0
+    inclination_angle = 0
     # Computes inclination vector magnitude as sin(inclination).
-    AgEVAGeoStationaryInclinationMagSinInclination = 1
+    sin_inclination = 1
     # Computes inclination vector magnitude as sin(0.5*inclination).
-    AgEVAGeoStationaryInclinationMagSinHalfInclination = 2
+    sin_half_inclination = 2
     # Computes inclination vector magnitude as 2*sin(0.5*inclination).
-    AgEVAGeoStationaryInclinationMagTwiceSinHalfInclination = 3
+    twice_sin_half_inclination = 3
     # Computes inclination vector magnitude as tan(0.5*inclination).
-    AgEVAGeoStationaryInclinationMagTanHalfInclination = 4
+    tan_half_inclination = 4
     # Computes inclination vector magnitude as 2*tan(0.5*inclination).
-    AgEVAGeoStationaryInclinationMagTwiceTanHalfInclination = 5
+    twice_tan_half_inclination = 5
 
-AgEVAGeoStationaryInclinationMag.AgEVAGeoStationaryInclinationMagInclinationAngle.__doc__ = "Computes inclination vector magnitude as the inclination angle itself (in radins)."
-AgEVAGeoStationaryInclinationMag.AgEVAGeoStationaryInclinationMagSinInclination.__doc__ = "Computes inclination vector magnitude as sin(inclination)."
-AgEVAGeoStationaryInclinationMag.AgEVAGeoStationaryInclinationMagSinHalfInclination.__doc__ = "Computes inclination vector magnitude as sin(0.5*inclination)."
-AgEVAGeoStationaryInclinationMag.AgEVAGeoStationaryInclinationMagTwiceSinHalfInclination.__doc__ = "Computes inclination vector magnitude as 2*sin(0.5*inclination)."
-AgEVAGeoStationaryInclinationMag.AgEVAGeoStationaryInclinationMagTanHalfInclination.__doc__ = "Computes inclination vector magnitude as tan(0.5*inclination)."
-AgEVAGeoStationaryInclinationMag.AgEVAGeoStationaryInclinationMagTwiceTanHalfInclination.__doc__ = "Computes inclination vector magnitude as 2*tan(0.5*inclination)."
+VA_GEO_STATIONARY_INCLINATION_MAG.inclination_angle.__doc__ = "Computes inclination vector magnitude as the inclination angle itself (in radins)."
+VA_GEO_STATIONARY_INCLINATION_MAG.sin_inclination.__doc__ = "Computes inclination vector magnitude as sin(inclination)."
+VA_GEO_STATIONARY_INCLINATION_MAG.sin_half_inclination.__doc__ = "Computes inclination vector magnitude as sin(0.5*inclination)."
+VA_GEO_STATIONARY_INCLINATION_MAG.twice_sin_half_inclination.__doc__ = "Computes inclination vector magnitude as 2*sin(0.5*inclination)."
+VA_GEO_STATIONARY_INCLINATION_MAG.tan_half_inclination.__doc__ = "Computes inclination vector magnitude as tan(0.5*inclination)."
+VA_GEO_STATIONARY_INCLINATION_MAG.twice_tan_half_inclination.__doc__ = "Computes inclination vector magnitude as 2*tan(0.5*inclination)."
 
-agcls.AgTypeNameMap["AgEVAGeoStationaryInclinationMag"] = AgEVAGeoStationaryInclinationMag
+agcls.AgTypeNameMap["VA_GEO_STATIONARY_INCLINATION_MAG"] = VA_GEO_STATIONARY_INCLINATION_MAG
 
-class AgEVACbGravityModel(IntEnum):
+class VA_CB_GRAVITY_MODEL(IntEnum):
     """The gravity model."""
     # ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon.
-    eVACbGravityModelZonalsToJ4 = 0
+    ZONALS_TO_J4 = 0
     # Earth Simple gravity model.
-    eVACbGravityModelEarthSimple = 1
+    EARTH_SIMPLE = 1
     # WGS84 - (Earth) World Geodetic System 1984; WGS 84 was created by the Defense Mapping Agency (DMA).
-    eVACbGravityModelWGS84 = 2
+    WGS84 = 2
     # EGM96 - (Earth) Earth Gravity Model 1996, a geopotential model of the Earth consisting of spherical harmonic coefficients complete to degree and order 360. Developed jointly by NGA (formerly known as NIMA), NASA Goddard and Ohio State University.
-    eVACbGravityModelEGM96 = 3
+    EGM96 = 3
     # GEMT1 - (Earth) Goddard Earth Model T1.
-    eVACbGravityModelGEMT1 = 4
+    GEMT1 = 4
     # JGM2 - (Earth) Joint Gravity Model version 2, a model that describes the Earth gravity field up to degree and order 70, developed by NASA/GSFC Space Geodesy Branch, the University of Texas Center for Space Research and CNES.
-    eVACbGravityModelJGM2 = 5
+    JGM2 = 5
     # JGM3 - (Earth) Joint Gravity Model version 3, a model that describes the Earth gravity field up to degree and order 70, developed by the University of Texas and NASA/GSFC.
-    eVACbGravityModelJGM3 = 6
+    JGM3 = 6
     # WGS84 EGM96 - (Earth) Uses the coefficients from EGM96 with the shape model of WGS84. This model is the recommended gravity model of the WGS84 definition document: NIMA TR8350.2, Third Edition, 4 July 1997.
-    eVACbGravityModelWSG84EGM96 = 7
+    WSG84EGM96 = 7
     # WGS84 old - (Earth) Old version of WGS84.
-    eVACbGravityModelWGS84Old = 8
+    WGS84_OLD = 8
     # GLGM2 - (Moon) GM = 4.9028029535968e+12, reference distance = 1,738,000 m.
-    eVACbGravityModelGLGM2 = 9
+    GLGM2 = 9
     # LP165P - (Moon) GM = 4.902801056E+12, reference distance = 1,738,000.0 m.
-    eVACbGravityModelLP165P = 10
+    LP165P = 10
     # Icarus1987 - (Mercury) GM = 2.203209e+013, reference distance = 2,439,000 m. Reference: Anderson, J. J., Colombo, G., Esposito, P. B., Lau E. L., and Trager, G. B. 'The Mass, Gravity Field, and Ephemeris of Mercury', Icarus 71, 337-349, 1987.
-    eVACbGravityModelIcarus1987 = 11
+    ICARUS1987 = 11
     # MGNP180U - (Venus) GM = 3.248585920790000E+14, reference distance = 6,051,000.0 m.
-    eVACbGravityModelMGNP180U = 12
+    MGNP180U = 12
     # GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m.
-    eVACbGravityModelGMM1 = 13
+    GMM1 = 13
     # GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at `NASA <https://www.nasa.gov/>`_ and were gotten from Journal of Geophysical Research, November 2000.
-    eVACbGravityModelGMM2B = 14
+    GMM2B = 14
     # Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m.
-    eVACbGravityModelMars50c = 15
+    MARS50_C = 15
     # JUP230 - (Jupiter) GM = 1.26686535e+017, reference distance = 71,492,000 m. Reference: Jacobson, R. A. The JUP230 orbit solution, 2003.
-    eVACbGravityModelJUP230 = 16
+    JUP230 = 16
     # Astron2004 - (Saturn) GM = 3.7931284e+016, reference distance = 60,330,000 m.
-    eVACbGravityModelAstron2004 = 17
+    ASTRON2004 = 17
     # AstronAstro1991 - (Neptune) GM = 6.835107e+015, reference distance = 25,225,000 m.
-    eVACbGravityModelAstronAstro1991 = 18
+    ASTRON_ASTRO1991 = 18
     # Icarus2001 - (Callisto) GM = 7.179292e+12, reference distance = 2,410,300 m.
-    eVACbGravityModelIcarus2001 = 19
+    ICARUS2001 = 19
     # Science1998 - (Europa) GM =3.20272e+012, reference distance = 1,565,000 m.
-    eVACbGravityModelScience1998 = 20
+    SCIENCE1998 = 20
     # Nature1996 - (Ganymede) GM = 9.8866e+12, reference distance = 2,634,000 m.
-    eVACbGravityModelNature1996 = 21
+    NATURE1996 = 21
     # JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m.
-    eVACbGravityModelJGeoRes2001 = 22
+    J_GEO_RES2001 = 22
     # GGM01C - (Earth)
-    eVACbGravityModelGGM01C = 23
+    GGM01C = 23
     # GGM02C - (Earth)
-    eVACbGravityModelGGM02C = 24
+    GGM02C = 24
     # WGS72 ZonalsToJ4 - (Earth)
-    eVACbGravityModelWGS72ZonalsToJ4 = 25
+    WGS72_ZONALS_TO_J4 = 25
     # LP100J - (Moon)
-    eVACbGravityModelLP100J = 26
+    LP100J = 26
     # LP100K - (Moon)
-    eVACbGravityModelLP100K = 27
+    LP100K = 27
     # LP150Q - (Moon)
-    eVACbGravityModelLP150Q = 28
+    LP150Q = 28
     # LP75G - (Moon)
-    eVACbGravityModelLP75G = 29
+    LP75G = 29
 
-AgEVACbGravityModel.eVACbGravityModelZonalsToJ4.__doc__ = "ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon."
-AgEVACbGravityModel.eVACbGravityModelEarthSimple.__doc__ = "Earth Simple gravity model."
-AgEVACbGravityModel.eVACbGravityModelWGS84.__doc__ = "WGS84 - (Earth) World Geodetic System 1984; WGS 84 was created by the Defense Mapping Agency (DMA)."
-AgEVACbGravityModel.eVACbGravityModelEGM96.__doc__ = "EGM96 - (Earth) Earth Gravity Model 1996, a geopotential model of the Earth consisting of spherical harmonic coefficients complete to degree and order 360. Developed jointly by NGA (formerly known as NIMA), NASA Goddard and Ohio State University."
-AgEVACbGravityModel.eVACbGravityModelGEMT1.__doc__ = "GEMT1 - (Earth) Goddard Earth Model T1."
-AgEVACbGravityModel.eVACbGravityModelJGM2.__doc__ = "JGM2 - (Earth) Joint Gravity Model version 2, a model that describes the Earth gravity field up to degree and order 70, developed by NASA/GSFC Space Geodesy Branch, the University of Texas Center for Space Research and CNES."
-AgEVACbGravityModel.eVACbGravityModelJGM3.__doc__ = "JGM3 - (Earth) Joint Gravity Model version 3, a model that describes the Earth gravity field up to degree and order 70, developed by the University of Texas and NASA/GSFC."
-AgEVACbGravityModel.eVACbGravityModelWSG84EGM96.__doc__ = "WGS84 EGM96 - (Earth) Uses the coefficients from EGM96 with the shape model of WGS84. This model is the recommended gravity model of the WGS84 definition document: NIMA TR8350.2, Third Edition, 4 July 1997."
-AgEVACbGravityModel.eVACbGravityModelWGS84Old.__doc__ = "WGS84 old - (Earth) Old version of WGS84."
-AgEVACbGravityModel.eVACbGravityModelGLGM2.__doc__ = "GLGM2 - (Moon) GM = 4.9028029535968e+12, reference distance = 1,738,000 m."
-AgEVACbGravityModel.eVACbGravityModelLP165P.__doc__ = "LP165P - (Moon) GM = 4.902801056E+12, reference distance = 1,738,000.0 m."
-AgEVACbGravityModel.eVACbGravityModelIcarus1987.__doc__ = "Icarus1987 - (Mercury) GM = 2.203209e+013, reference distance = 2,439,000 m. Reference: Anderson, J. J., Colombo, G., Esposito, P. B., Lau E. L., and Trager, G. B. 'The Mass, Gravity Field, and Ephemeris of Mercury', Icarus 71, 337-349, 1987."
-AgEVACbGravityModel.eVACbGravityModelMGNP180U.__doc__ = "MGNP180U - (Venus) GM = 3.248585920790000E+14, reference distance = 6,051,000.0 m."
-AgEVACbGravityModel.eVACbGravityModelGMM1.__doc__ = "GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m."
-AgEVACbGravityModel.eVACbGravityModelGMM2B.__doc__ = "GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at `NASA <https://www.nasa.gov/>`_ and were gotten from Journal of Geophysical Research, November 2000."
-AgEVACbGravityModel.eVACbGravityModelMars50c.__doc__ = "Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m."
-AgEVACbGravityModel.eVACbGravityModelJUP230.__doc__ = "JUP230 - (Jupiter) GM = 1.26686535e+017, reference distance = 71,492,000 m. Reference: Jacobson, R. A. The JUP230 orbit solution, 2003."
-AgEVACbGravityModel.eVACbGravityModelAstron2004.__doc__ = "Astron2004 - (Saturn) GM = 3.7931284e+016, reference distance = 60,330,000 m."
-AgEVACbGravityModel.eVACbGravityModelAstronAstro1991.__doc__ = "AstronAstro1991 - (Neptune) GM = 6.835107e+015, reference distance = 25,225,000 m."
-AgEVACbGravityModel.eVACbGravityModelIcarus2001.__doc__ = "Icarus2001 - (Callisto) GM = 7.179292e+12, reference distance = 2,410,300 m."
-AgEVACbGravityModel.eVACbGravityModelScience1998.__doc__ = "Science1998 - (Europa) GM =3.20272e+012, reference distance = 1,565,000 m."
-AgEVACbGravityModel.eVACbGravityModelNature1996.__doc__ = "Nature1996 - (Ganymede) GM = 9.8866e+12, reference distance = 2,634,000 m."
-AgEVACbGravityModel.eVACbGravityModelJGeoRes2001.__doc__ = "JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m."
-AgEVACbGravityModel.eVACbGravityModelGGM01C.__doc__ = "GGM01C - (Earth)"
-AgEVACbGravityModel.eVACbGravityModelGGM02C.__doc__ = "GGM02C - (Earth)"
-AgEVACbGravityModel.eVACbGravityModelWGS72ZonalsToJ4.__doc__ = "WGS72 ZonalsToJ4 - (Earth)"
-AgEVACbGravityModel.eVACbGravityModelLP100J.__doc__ = "LP100J - (Moon)"
-AgEVACbGravityModel.eVACbGravityModelLP100K.__doc__ = "LP100K - (Moon)"
-AgEVACbGravityModel.eVACbGravityModelLP150Q.__doc__ = "LP150Q - (Moon)"
-AgEVACbGravityModel.eVACbGravityModelLP75G.__doc__ = "LP75G - (Moon)"
+VA_CB_GRAVITY_MODEL.ZONALS_TO_J4.__doc__ = "ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon."
+VA_CB_GRAVITY_MODEL.EARTH_SIMPLE.__doc__ = "Earth Simple gravity model."
+VA_CB_GRAVITY_MODEL.WGS84.__doc__ = "WGS84 - (Earth) World Geodetic System 1984; WGS 84 was created by the Defense Mapping Agency (DMA)."
+VA_CB_GRAVITY_MODEL.EGM96.__doc__ = "EGM96 - (Earth) Earth Gravity Model 1996, a geopotential model of the Earth consisting of spherical harmonic coefficients complete to degree and order 360. Developed jointly by NGA (formerly known as NIMA), NASA Goddard and Ohio State University."
+VA_CB_GRAVITY_MODEL.GEMT1.__doc__ = "GEMT1 - (Earth) Goddard Earth Model T1."
+VA_CB_GRAVITY_MODEL.JGM2.__doc__ = "JGM2 - (Earth) Joint Gravity Model version 2, a model that describes the Earth gravity field up to degree and order 70, developed by NASA/GSFC Space Geodesy Branch, the University of Texas Center for Space Research and CNES."
+VA_CB_GRAVITY_MODEL.JGM3.__doc__ = "JGM3 - (Earth) Joint Gravity Model version 3, a model that describes the Earth gravity field up to degree and order 70, developed by the University of Texas and NASA/GSFC."
+VA_CB_GRAVITY_MODEL.WSG84EGM96.__doc__ = "WGS84 EGM96 - (Earth) Uses the coefficients from EGM96 with the shape model of WGS84. This model is the recommended gravity model of the WGS84 definition document: NIMA TR8350.2, Third Edition, 4 July 1997."
+VA_CB_GRAVITY_MODEL.WGS84_OLD.__doc__ = "WGS84 old - (Earth) Old version of WGS84."
+VA_CB_GRAVITY_MODEL.GLGM2.__doc__ = "GLGM2 - (Moon) GM = 4.9028029535968e+12, reference distance = 1,738,000 m."
+VA_CB_GRAVITY_MODEL.LP165P.__doc__ = "LP165P - (Moon) GM = 4.902801056E+12, reference distance = 1,738,000.0 m."
+VA_CB_GRAVITY_MODEL.ICARUS1987.__doc__ = "Icarus1987 - (Mercury) GM = 2.203209e+013, reference distance = 2,439,000 m. Reference: Anderson, J. J., Colombo, G., Esposito, P. B., Lau E. L., and Trager, G. B. 'The Mass, Gravity Field, and Ephemeris of Mercury', Icarus 71, 337-349, 1987."
+VA_CB_GRAVITY_MODEL.MGNP180U.__doc__ = "MGNP180U - (Venus) GM = 3.248585920790000E+14, reference distance = 6,051,000.0 m."
+VA_CB_GRAVITY_MODEL.GMM1.__doc__ = "GMM1 - (Mars) GM = 4.28283579647735e+13, reference distance = 3,394,200.0 m."
+VA_CB_GRAVITY_MODEL.GMM2B.__doc__ = "GMM2B - (Mars) GM = 4.28283719012840e+13, reference distance = 3,397,000 m. Reference: These numbers came from the GMM-2B model published at `NASA <https://www.nasa.gov/>`_ and were gotten from Journal of Geophysical Research, November 2000."
+VA_CB_GRAVITY_MODEL.MARS50_C.__doc__ = "Mars50c - (Mars) GM = 4.2828370371000e+13, reference distance = 3,394,200 m."
+VA_CB_GRAVITY_MODEL.JUP230.__doc__ = "JUP230 - (Jupiter) GM = 1.26686535e+017, reference distance = 71,492,000 m. Reference: Jacobson, R. A. The JUP230 orbit solution, 2003."
+VA_CB_GRAVITY_MODEL.ASTRON2004.__doc__ = "Astron2004 - (Saturn) GM = 3.7931284e+016, reference distance = 60,330,000 m."
+VA_CB_GRAVITY_MODEL.ASTRON_ASTRO1991.__doc__ = "AstronAstro1991 - (Neptune) GM = 6.835107e+015, reference distance = 25,225,000 m."
+VA_CB_GRAVITY_MODEL.ICARUS2001.__doc__ = "Icarus2001 - (Callisto) GM = 7.179292e+12, reference distance = 2,410,300 m."
+VA_CB_GRAVITY_MODEL.SCIENCE1998.__doc__ = "Science1998 - (Europa) GM =3.20272e+012, reference distance = 1,565,000 m."
+VA_CB_GRAVITY_MODEL.NATURE1996.__doc__ = "Nature1996 - (Ganymede) GM = 9.8866e+12, reference distance = 2,634,000 m."
+VA_CB_GRAVITY_MODEL.J_GEO_RES2001.__doc__ = "JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m."
+VA_CB_GRAVITY_MODEL.GGM01C.__doc__ = "GGM01C - (Earth)"
+VA_CB_GRAVITY_MODEL.GGM02C.__doc__ = "GGM02C - (Earth)"
+VA_CB_GRAVITY_MODEL.WGS72_ZONALS_TO_J4.__doc__ = "WGS72 ZonalsToJ4 - (Earth)"
+VA_CB_GRAVITY_MODEL.LP100J.__doc__ = "LP100J - (Moon)"
+VA_CB_GRAVITY_MODEL.LP100K.__doc__ = "LP100K - (Moon)"
+VA_CB_GRAVITY_MODEL.LP150Q.__doc__ = "LP150Q - (Moon)"
+VA_CB_GRAVITY_MODEL.LP75G.__doc__ = "LP75G - (Moon)"
 
-agcls.AgTypeNameMap["AgEVACbGravityModel"] = AgEVACbGravityModel
+agcls.AgTypeNameMap["VA_CB_GRAVITY_MODEL"] = VA_CB_GRAVITY_MODEL
 
-class AgEVACbShape(IntEnum):
+class VA_CB_SHAPE(IntEnum):
     """The central body shape types."""
     # A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis.
-    eVACbShapeTriaxialEllipsoid = 0
+    TRIAXIAL_ELLIPSOID = 0
     # An oblate spheroid defined by a minimum and maximum radii, and a derived flattening coefficient.
-    eVACbShapeOblateSpheroid = 1
+    OBLATE_SPHEROID = 1
     # A sphere defined by a radius.
-    eVACbShapeSphere = 2
+    SPHERE = 2
 
-AgEVACbShape.eVACbShapeTriaxialEllipsoid.__doc__ = "A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis."
-AgEVACbShape.eVACbShapeOblateSpheroid.__doc__ = "An oblate spheroid defined by a minimum and maximum radii, and a derived flattening coefficient."
-AgEVACbShape.eVACbShapeSphere.__doc__ = "A sphere defined by a radius."
+VA_CB_SHAPE.TRIAXIAL_ELLIPSOID.__doc__ = "A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis."
+VA_CB_SHAPE.OBLATE_SPHEROID.__doc__ = "An oblate spheroid defined by a minimum and maximum radii, and a derived flattening coefficient."
+VA_CB_SHAPE.SPHERE.__doc__ = "A sphere defined by a radius."
 
-agcls.AgTypeNameMap["AgEVACbShape"] = AgEVACbShape
+agcls.AgTypeNameMap["VA_CB_SHAPE"] = VA_CB_SHAPE
 
-class AgEVACbAttitude(IntEnum):
+class VA_CB_ATTITUDE(IntEnum):
     """The central body attitude types."""
     # An IAU 1994 attitude definition.
-    eVACbAttitudeIAU1994 = 0
+    IAU1994 = 0
     # A rotation coefficient file.
-    eVACbAttitudeRotationCoefficientsFile = 1
+    ROTATION_COEFFICIENTS_FILE = 1
 
-AgEVACbAttitude.eVACbAttitudeIAU1994.__doc__ = "An IAU 1994 attitude definition."
-AgEVACbAttitude.eVACbAttitudeRotationCoefficientsFile.__doc__ = "A rotation coefficient file."
+VA_CB_ATTITUDE.IAU1994.__doc__ = "An IAU 1994 attitude definition."
+VA_CB_ATTITUDE.ROTATION_COEFFICIENTS_FILE.__doc__ = "A rotation coefficient file."
 
-agcls.AgTypeNameMap["AgEVACbAttitude"] = AgEVACbAttitude
+agcls.AgTypeNameMap["VA_CB_ATTITUDE"] = VA_CB_ATTITUDE
 
-class AgEVACbEphemeris(IntEnum):
+class VA_CB_EPHEMERIS(IntEnum):
     """The central body ephemeris types."""
     # Specified values and rates of change for the classical orbital elements.
-    eVACbEphemerisAnalyticOrbit = 0
+    ANALYTIC_ORBIT = 0
     # An external ephemeris (.e) file.
-    eVACbEphemerisFile = 1
+    FILE = 1
     # Ephemerides from the Jet Propulsion Laboratory's JPL DE set are used.
-    eVACbEphemerisJPLDE = 2
+    JPLDE = 2
     # The SPICE propagator reads ephemeris from binary files that are in a standard format produced by the Jet Propulsion Laboratory for ephemeris for celestial bodies but can be used for spacecraft.
-    eVACbEphemerisJPLSPICE = 3
+    JPLSPICE = 3
     # A planetary ephemeris (.pe) file.
-    eVACbEphemerisPlanetary = 4
+    PLANETARY = 4
 
-AgEVACbEphemeris.eVACbEphemerisAnalyticOrbit.__doc__ = "Specified values and rates of change for the classical orbital elements."
-AgEVACbEphemeris.eVACbEphemerisFile.__doc__ = "An external ephemeris (.e) file."
-AgEVACbEphemeris.eVACbEphemerisJPLDE.__doc__ = "Ephemerides from the Jet Propulsion Laboratory's JPL DE set are used."
-AgEVACbEphemeris.eVACbEphemerisJPLSPICE.__doc__ = "The SPICE propagator reads ephemeris from binary files that are in a standard format produced by the Jet Propulsion Laboratory for ephemeris for celestial bodies but can be used for spacecraft."
-AgEVACbEphemeris.eVACbEphemerisPlanetary.__doc__ = "A planetary ephemeris (.pe) file."
+VA_CB_EPHEMERIS.ANALYTIC_ORBIT.__doc__ = "Specified values and rates of change for the classical orbital elements."
+VA_CB_EPHEMERIS.FILE.__doc__ = "An external ephemeris (.e) file."
+VA_CB_EPHEMERIS.JPLDE.__doc__ = "Ephemerides from the Jet Propulsion Laboratory's JPL DE set are used."
+VA_CB_EPHEMERIS.JPLSPICE.__doc__ = "The SPICE propagator reads ephemeris from binary files that are in a standard format produced by the Jet Propulsion Laboratory for ephemeris for celestial bodies but can be used for spacecraft."
+VA_CB_EPHEMERIS.PLANETARY.__doc__ = "A planetary ephemeris (.pe) file."
 
-agcls.AgTypeNameMap["AgEVACbEphemeris"] = AgEVACbEphemeris
+agcls.AgTypeNameMap["VA_CB_EPHEMERIS"] = VA_CB_EPHEMERIS
 
-class AgEVAControlPowerInternal(IntEnum):
+class VA_CONTROL_POWER_INTERNAL(IntEnum):
     """Internal Power properties that can be selected as control parameters for a Target Sequence."""
     # The power generated by the spacecraft from internal sources.
-    eVAControlPowerInternalGeneratedPower = 0
+    GENERATED_POWER = 0
     # The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch.
-    eVAControlPowerInternalPercentDegradation = 1
+    PERCENT_DEGRADATION = 1
     # The date and time used as a reference epoch for degradation.
-    eVAControlPowerInternalEpoch = 2
+    EPOCH = 2
 
-AgEVAControlPowerInternal.eVAControlPowerInternalGeneratedPower.__doc__ = "The power generated by the spacecraft from internal sources."
-AgEVAControlPowerInternal.eVAControlPowerInternalPercentDegradation.__doc__ = "The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."
-AgEVAControlPowerInternal.eVAControlPowerInternalEpoch.__doc__ = "The date and time used as a reference epoch for degradation."
+VA_CONTROL_POWER_INTERNAL.GENERATED_POWER.__doc__ = "The power generated by the spacecraft from internal sources."
+VA_CONTROL_POWER_INTERNAL.PERCENT_DEGRADATION.__doc__ = "The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."
+VA_CONTROL_POWER_INTERNAL.EPOCH.__doc__ = "The date and time used as a reference epoch for degradation."
 
-agcls.AgTypeNameMap["AgEVAControlPowerInternal"] = AgEVAControlPowerInternal
+agcls.AgTypeNameMap["VA_CONTROL_POWER_INTERNAL"] = VA_CONTROL_POWER_INTERNAL
 
-class AgEVAControlPowerProcessed(IntEnum):
+class VA_CONTROL_POWER_PROCESSED(IntEnum):
     """Processed Power properties that can be selected as control parameters for a Target Sequence."""
     # The efficiency of the power processing unit(PPU).
-    eVAControlPowerProcessedEfficiency = 0
+    EFFICIENCY = 0
     # The power diverted from the power source and unavailable to the power processing unit(PPU).
-    eVAControlPowerProcessedLoad = 1
+    LOAD = 1
 
-AgEVAControlPowerProcessed.eVAControlPowerProcessedEfficiency.__doc__ = "The efficiency of the power processing unit(PPU)."
-AgEVAControlPowerProcessed.eVAControlPowerProcessedLoad.__doc__ = "The power diverted from the power source and unavailable to the power processing unit(PPU)."
+VA_CONTROL_POWER_PROCESSED.EFFICIENCY.__doc__ = "The efficiency of the power processing unit(PPU)."
+VA_CONTROL_POWER_PROCESSED.LOAD.__doc__ = "The power diverted from the power source and unavailable to the power processing unit(PPU)."
 
-agcls.AgTypeNameMap["AgEVAControlPowerProcessed"] = AgEVAControlPowerProcessed
+agcls.AgTypeNameMap["VA_CONTROL_POWER_PROCESSED"] = VA_CONTROL_POWER_PROCESSED
 
-class AgEVAControlPowerSolarArray(IntEnum):
+class VA_CONTROL_POWER_SOLAR_ARRAY(IntEnum):
     """Solar Array Power properties that can be selected as control parameters for a Target Sequence."""
     # The ThermalModel.C0 coefficient.
-    eVAControlPowerSolarArrayC0 = 0
+    C0 = 0
     # The ThermalModel.C1 coefficient.
-    eVAControlPowerSolarArrayC1 = 1
+    C1 = 1
     # The ThermalModel.C2 coefficient.
-    eVAControlPowerSolarArrayC2 = 2
+    C2 = 2
     # The ThermalModel.C3 coefficient.
-    eVAControlPowerSolarArrayC3 = 3
+    C3 = 3
     # The ThermalModel.C4 coefficient.
-    eVAControlPowerSolarArrayC4 = 4
+    C4 = 4
     # The solar array panel area.
-    eVAControlPowerSolarArrayArea = 5
+    AREA = 5
     # The array efficiency in producing output power from a collection of cells.
-    eVAControlPowerSolarArrayEfficiency = 6
+    EFFICIENCY = 6
     # The cell efficiency in producing output power from incident sunlight.
-    eVAControlPowerSolarArrayCellEfficiency = 7
+    CELL_EFFICIENCY = 7
     # The solar array concentration factor.
-    eVAControlPowerSolarArrayConcentration = 8
+    CONCENTRATION = 8
     # The angle from the panel normal vector to the apparent sun line.
-    eVAControlPowerSolarArrayInclinationToSunLine = 9
+    INCLINATION_TO_SUN_LINE = 9
     # The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch.
-    eVAControlPowerSolarArrayPercentDegradation = 10
+    PERCENT_DEGRADATION = 10
     # The date and time used as a reference epoch for degradation.
-    eVAControlPowerSolarArrayEpoch = 11
+    EPOCH = 11
 
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC0.__doc__ = "The ThermalModel.C0 coefficient."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC1.__doc__ = "The ThermalModel.C1 coefficient."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC2.__doc__ = "The ThermalModel.C2 coefficient."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC3.__doc__ = "The ThermalModel.C3 coefficient."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayC4.__doc__ = "The ThermalModel.C4 coefficient."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayArea.__doc__ = "The solar array panel area."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayEfficiency.__doc__ = "The array efficiency in producing output power from a collection of cells."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayCellEfficiency.__doc__ = "The cell efficiency in producing output power from incident sunlight."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayConcentration.__doc__ = "The solar array concentration factor."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayInclinationToSunLine.__doc__ = "The angle from the panel normal vector to the apparent sun line."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayPercentDegradation.__doc__ = "The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."
-AgEVAControlPowerSolarArray.eVAControlPowerSolarArrayEpoch.__doc__ = "The date and time used as a reference epoch for degradation."
+VA_CONTROL_POWER_SOLAR_ARRAY.C0.__doc__ = "The ThermalModel.C0 coefficient."
+VA_CONTROL_POWER_SOLAR_ARRAY.C1.__doc__ = "The ThermalModel.C1 coefficient."
+VA_CONTROL_POWER_SOLAR_ARRAY.C2.__doc__ = "The ThermalModel.C2 coefficient."
+VA_CONTROL_POWER_SOLAR_ARRAY.C3.__doc__ = "The ThermalModel.C3 coefficient."
+VA_CONTROL_POWER_SOLAR_ARRAY.C4.__doc__ = "The ThermalModel.C4 coefficient."
+VA_CONTROL_POWER_SOLAR_ARRAY.AREA.__doc__ = "The solar array panel area."
+VA_CONTROL_POWER_SOLAR_ARRAY.EFFICIENCY.__doc__ = "The array efficiency in producing output power from a collection of cells."
+VA_CONTROL_POWER_SOLAR_ARRAY.CELL_EFFICIENCY.__doc__ = "The cell efficiency in producing output power from incident sunlight."
+VA_CONTROL_POWER_SOLAR_ARRAY.CONCENTRATION.__doc__ = "The solar array concentration factor."
+VA_CONTROL_POWER_SOLAR_ARRAY.INCLINATION_TO_SUN_LINE.__doc__ = "The angle from the panel normal vector to the apparent sun line."
+VA_CONTROL_POWER_SOLAR_ARRAY.PERCENT_DEGRADATION.__doc__ = "The percent degradation per year; degradation factor is (1 - x%/yr)timeSinceRefEpoch."
+VA_CONTROL_POWER_SOLAR_ARRAY.EPOCH.__doc__ = "The date and time used as a reference epoch for degradation."
 
-agcls.AgTypeNameMap["AgEVAControlPowerSolarArray"] = AgEVAControlPowerSolarArray
+agcls.AgTypeNameMap["VA_CONTROL_POWER_SOLAR_ARRAY"] = VA_CONTROL_POWER_SOLAR_ARRAY
 
-class AgEVAThirdBodyMode(IntEnum):
+class VA_THIRD_BODY_MODE(IntEnum):
     """The third body gravity mode."""
     # Defines the gravitational effect as a full Gravitational Force model
-    eVAThirdBodyModeGravityField = 0
+    GRAVITY_FIELD = 0
     # Defines the gravitational effect as a third body point mass effect.
-    eVAThirdBodyModePointMass = 1
+    POINT_MASS = 1
 
-AgEVAThirdBodyMode.eVAThirdBodyModeGravityField.__doc__ = "Defines the gravitational effect as a full Gravitational Force model"
-AgEVAThirdBodyMode.eVAThirdBodyModePointMass.__doc__ = "Defines the gravitational effect as a third body point mass effect."
+VA_THIRD_BODY_MODE.GRAVITY_FIELD.__doc__ = "Defines the gravitational effect as a full Gravitational Force model"
+VA_THIRD_BODY_MODE.POINT_MASS.__doc__ = "Defines the gravitational effect as a third body point mass effect."
 
-agcls.AgTypeNameMap["AgEVAThirdBodyMode"] = AgEVAThirdBodyMode
+agcls.AgTypeNameMap["VA_THIRD_BODY_MODE"] = VA_THIRD_BODY_MODE
 
-class AgEVAGravParamSource(IntEnum):
+class VA_GRAV_PARAM_SOURCE(IntEnum):
     """The gravity parameter source."""
     # The Cb file provided with STK; uses the default, body centered gravity source for the central body.
-    eVAGravParamSourceCbFile = 0
+    CB_FILE = 0
     # A DE file; body centered for the inner planets and barycentered for the outer planets.
-    eVAGravParamSourceDEFile = 1
+    DE_FILE = 1
     # User defined; requires you to specify the mu value of the Gravitational Parameter.
-    eVAGravParamSourceUser = 2
+    USER = 2
     # The Cb file provided with STK; uses the default, barycentered gravity source for the central body.
-    eVAGravParamSourceCbFileSystem = 3
+    CB_FILE_SYSTEM = 3
 
-AgEVAGravParamSource.eVAGravParamSourceCbFile.__doc__ = "The Cb file provided with STK; uses the default, body centered gravity source for the central body."
-AgEVAGravParamSource.eVAGravParamSourceDEFile.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
-AgEVAGravParamSource.eVAGravParamSourceUser.__doc__ = "User defined; requires you to specify the mu value of the Gravitational Parameter."
-AgEVAGravParamSource.eVAGravParamSourceCbFileSystem.__doc__ = "The Cb file provided with STK; uses the default, barycentered gravity source for the central body."
+VA_GRAV_PARAM_SOURCE.CB_FILE.__doc__ = "The Cb file provided with STK; uses the default, body centered gravity source for the central body."
+VA_GRAV_PARAM_SOURCE.DE_FILE.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
+VA_GRAV_PARAM_SOURCE.USER.__doc__ = "User defined; requires you to specify the mu value of the Gravitational Parameter."
+VA_GRAV_PARAM_SOURCE.CB_FILE_SYSTEM.__doc__ = "The Cb file provided with STK; uses the default, barycentered gravity source for the central body."
 
-agcls.AgTypeNameMap["AgEVAGravParamSource"] = AgEVAGravParamSource
+agcls.AgTypeNameMap["VA_GRAV_PARAM_SOURCE"] = VA_GRAV_PARAM_SOURCE
 
-class AgEVAEphemSource(IntEnum):
+class VA_EPHEM_SOURCE(IntEnum):
     """The ephemeris source type."""
     # The Cb file provided with STK; uses the default ephemeris source for that central body.
-    eVAEphemSourceCbFile = 0
+    CB_FILE = 0
     # A DE file; body centered for the inner planets and barycentered for the outer planets.
-    eVAEphemSourceDEFile = 1
+    DE_FILE = 1
     # A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass.
-    eVAEphemSourceSPICEBary = 2
+    SPICE_BARY = 2
     # A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass.
-    eVAEphemSourceSPICEBody = 3
+    SPICE_BODY = 3
 
-AgEVAEphemSource.eVAEphemSourceCbFile.__doc__ = "The Cb file provided with STK; uses the default ephemeris source for that central body."
-AgEVAEphemSource.eVAEphemSourceDEFile.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
-AgEVAEphemSource.eVAEphemSourceSPICEBary.__doc__ = "A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass."
-AgEVAEphemSource.eVAEphemSourceSPICEBody.__doc__ = "A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass."
+VA_EPHEM_SOURCE.CB_FILE.__doc__ = "The Cb file provided with STK; uses the default ephemeris source for that central body."
+VA_EPHEM_SOURCE.DE_FILE.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
+VA_EPHEM_SOURCE.SPICE_BARY.__doc__ = "A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass."
+VA_EPHEM_SOURCE.SPICE_BODY.__doc__ = "A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass."
 
-agcls.AgTypeNameMap["AgEVAEphemSource"] = AgEVAEphemSource
+agcls.AgTypeNameMap["VA_EPHEM_SOURCE"] = VA_EPHEM_SOURCE
 
-class AgEVASolarForceMethod(IntEnum):
+class VA_SOLAR_FORCE_METHOD(IntEnum):
     """The solar force method type for a spherical or N-plate SRP model."""
     # Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation.
-    eVASolarForceMethodLuminosity = 0
+    LUMINOSITY = 0
     # Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation.
-    eVASolarForceMethodMeanFlux = 1
+    MEAN_FLUX = 1
 
-AgEVASolarForceMethod.eVASolarForceMethodLuminosity.__doc__ = "Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation."
-AgEVASolarForceMethod.eVASolarForceMethodMeanFlux.__doc__ = "Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation."
+VA_SOLAR_FORCE_METHOD.LUMINOSITY.__doc__ = "Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation."
+VA_SOLAR_FORCE_METHOD.MEAN_FLUX.__doc__ = "Mean Flux - used as the value for solar flux at 1 AU in the Solar Radiation computation."
 
-agcls.AgTypeNameMap["AgEVASolarForceMethod"] = AgEVASolarForceMethod
+agcls.AgTypeNameMap["VA_SOLAR_FORCE_METHOD"] = VA_SOLAR_FORCE_METHOD
 
-class AgEVAShadowModel(IntEnum):
+class VA_SHADOW_MODEL(IntEnum):
     """The shadow model type."""
     # Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector.
-    eVAShadowModelCylindrical = 0
+    CYLINDRICAL = 0
     # Dual Cone - uses the actual size and distance of the Sun to model regions of full, partial (penumbra) and zero (umbra) sunlight. The visible fraction of the solar disk is used to compute the acceleration during penumbra.
-    eVAShadowModelDualCone = 1
+    DUAL_CONE = 1
     # None - turns off all shadowing of the satellite.
-    eVAShadowModelNone = 2
+    NONE = 2
 
-AgEVAShadowModel.eVAShadowModelCylindrical.__doc__ = "Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector."
-AgEVAShadowModel.eVAShadowModelDualCone.__doc__ = "Dual Cone - uses the actual size and distance of the Sun to model regions of full, partial (penumbra) and zero (umbra) sunlight. The visible fraction of the solar disk is used to compute the acceleration during penumbra."
-AgEVAShadowModel.eVAShadowModelNone.__doc__ = "None - turns off all shadowing of the satellite."
+VA_SHADOW_MODEL.CYLINDRICAL.__doc__ = "Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector."
+VA_SHADOW_MODEL.DUAL_CONE.__doc__ = "Dual Cone - uses the actual size and distance of the Sun to model regions of full, partial (penumbra) and zero (umbra) sunlight. The visible fraction of the solar disk is used to compute the acceleration during penumbra."
+VA_SHADOW_MODEL.NONE.__doc__ = "None - turns off all shadowing of the satellite."
 
-agcls.AgTypeNameMap["AgEVAShadowModel"] = AgEVAShadowModel
+agcls.AgTypeNameMap["VA_SHADOW_MODEL"] = VA_SHADOW_MODEL
 
-class AgEVASunPosition(IntEnum):
+class VA_SUN_POSITION(IntEnum):
     """The sun position type."""
     # Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft.
-    eVASunPositionApparent = 0
+    APPARENT = 0
     # Apparent Sun to True Cb - takes into account the time required for light to travel from the sun to the central body.
-    eVASunPositionApparentToTrueCb = 1
+    APPARENT_TO_TRUE_CB = 1
     # True - assumes that light from the sun reaches the spacecraft instantaneously.
-    eVASunPositionTrue = 2
+    TRUE = 2
 
-AgEVASunPosition.eVASunPositionApparent.__doc__ = "Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft."
-AgEVASunPosition.eVASunPositionApparentToTrueCb.__doc__ = "Apparent Sun to True Cb - takes into account the time required for light to travel from the sun to the central body."
-AgEVASunPosition.eVASunPositionTrue.__doc__ = "True - assumes that light from the sun reaches the spacecraft instantaneously."
+VA_SUN_POSITION.APPARENT.__doc__ = "Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft."
+VA_SUN_POSITION.APPARENT_TO_TRUE_CB.__doc__ = "Apparent Sun to True Cb - takes into account the time required for light to travel from the sun to the central body."
+VA_SUN_POSITION.TRUE.__doc__ = "True - assumes that light from the sun reaches the spacecraft instantaneously."
 
-agcls.AgTypeNameMap["AgEVASunPosition"] = AgEVASunPosition
+agcls.AgTypeNameMap["VA_SUN_POSITION"] = VA_SUN_POSITION
 
-class AgEVAAtmosDataSource(IntEnum):
+class VA_ATMOS_DATA_SOURCE(IntEnum):
     """The Atmospheric data source type."""
     # Constant Atmospheric data source.
-    eVAAtmosDataSourceConstant = 0
+    CONSTANT = 0
     # Atmopsheric data source from file.
-    eVAAtmosDataSourceFile = 1
+    FILE = 1
 
-AgEVAAtmosDataSource.eVAAtmosDataSourceConstant.__doc__ = "Constant Atmospheric data source."
-AgEVAAtmosDataSource.eVAAtmosDataSourceFile.__doc__ = "Atmopsheric data source from file."
+VA_ATMOS_DATA_SOURCE.CONSTANT.__doc__ = "Constant Atmospheric data source."
+VA_ATMOS_DATA_SOURCE.FILE.__doc__ = "Atmopsheric data source from file."
 
-agcls.AgTypeNameMap["AgEVAAtmosDataSource"] = AgEVAAtmosDataSource
+agcls.AgTypeNameMap["VA_ATMOS_DATA_SOURCE"] = VA_ATMOS_DATA_SOURCE
 
-class AgEVAGeoMagneticFluxSource(IntEnum):
+class VA_GEO_MAGNETIC_FLUX_SOURCE(IntEnum):
     """Whether to use Kp or Ap data from the flux file."""
     # Read Ap from file.
-    eVAGeoMagneticFluxSourceAp = 0
+    AP = 0
     # Read Kp from file.
-    eVAGeoMagneticFluxSourceKp = 1
+    KP = 1
 
-AgEVAGeoMagneticFluxSource.eVAGeoMagneticFluxSourceAp.__doc__ = "Read Ap from file."
-AgEVAGeoMagneticFluxSource.eVAGeoMagneticFluxSourceKp.__doc__ = "Read Kp from file."
+VA_GEO_MAGNETIC_FLUX_SOURCE.AP.__doc__ = "Read Ap from file."
+VA_GEO_MAGNETIC_FLUX_SOURCE.KP.__doc__ = "Read Kp from file."
 
-agcls.AgTypeNameMap["AgEVAGeoMagneticFluxSource"] = AgEVAGeoMagneticFluxSource
+agcls.AgTypeNameMap["VA_GEO_MAGNETIC_FLUX_SOURCE"] = VA_GEO_MAGNETIC_FLUX_SOURCE
 
-class AgEVAGeoMagneticFluxUpdateRate(IntEnum):
+class VA_GEO_MAGNETIC_FLUX_UPDATE_RATE(IntEnum):
     """Method for using geomagnetic flux values from the flux file."""
     # Three hourly
-    eVAGeoMagneticFluxUpdateRate3Hourly = 0
+    RATE3_HOURLY = 0
     # Three hourly cubic spline
-    eVAGeoMagneticFluxUpdateRate3HourlyCubicSpline = 1
+    RATE3_HOURLY_CUBIC_SPLINE = 1
     # Three hourly interpolated
-    eVAGeoMagneticFluxUpdateRate3HourlyInterpolated = 2
+    RATE3_HOURLY_INTERPOLATED = 2
     # Daily
-    eVAGeoMagneticFluxUpdateRateDaily = 3
+    DAILY = 3
 
-AgEVAGeoMagneticFluxUpdateRate.eVAGeoMagneticFluxUpdateRate3Hourly.__doc__ = "Three hourly"
-AgEVAGeoMagneticFluxUpdateRate.eVAGeoMagneticFluxUpdateRate3HourlyCubicSpline.__doc__ = "Three hourly cubic spline"
-AgEVAGeoMagneticFluxUpdateRate.eVAGeoMagneticFluxUpdateRate3HourlyInterpolated.__doc__ = "Three hourly interpolated"
-AgEVAGeoMagneticFluxUpdateRate.eVAGeoMagneticFluxUpdateRateDaily.__doc__ = "Daily"
+VA_GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY.__doc__ = "Three hourly"
+VA_GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY_CUBIC_SPLINE.__doc__ = "Three hourly cubic spline"
+VA_GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY_INTERPOLATED.__doc__ = "Three hourly interpolated"
+VA_GEO_MAGNETIC_FLUX_UPDATE_RATE.DAILY.__doc__ = "Daily"
 
-agcls.AgTypeNameMap["AgEVAGeoMagneticFluxUpdateRate"] = AgEVAGeoMagneticFluxUpdateRate
+agcls.AgTypeNameMap["VA_GEO_MAGNETIC_FLUX_UPDATE_RATE"] = VA_GEO_MAGNETIC_FLUX_UPDATE_RATE
 
-class AgEVADragModelType(IntEnum):
+class VA_DRAG_MODEL_TYPE(IntEnum):
     """Type of Drag Model."""
     # Spherical
-    eVADragModelTypeSpherical = 0
+    SPHERICAL = 0
     # Plugin
-    eVADragModelTypePlugin = 1
+    PLUGIN = 1
     # Variable Area
-    eVADragModelTypeVariableArea = 2
+    VARIABLE_AREA = 2
     # N-Plate
-    eVADragModelTypeNPlate = 3
+    N_PLATE = 3
 
-AgEVADragModelType.eVADragModelTypeSpherical.__doc__ = "Spherical"
-AgEVADragModelType.eVADragModelTypePlugin.__doc__ = "Plugin"
-AgEVADragModelType.eVADragModelTypeVariableArea.__doc__ = "Variable Area"
-AgEVADragModelType.eVADragModelTypeNPlate.__doc__ = "N-Plate"
+VA_DRAG_MODEL_TYPE.SPHERICAL.__doc__ = "Spherical"
+VA_DRAG_MODEL_TYPE.PLUGIN.__doc__ = "Plugin"
+VA_DRAG_MODEL_TYPE.VARIABLE_AREA.__doc__ = "Variable Area"
+VA_DRAG_MODEL_TYPE.N_PLATE.__doc__ = "N-Plate"
 
-agcls.AgTypeNameMap["AgEVADragModelType"] = AgEVADragModelType
+agcls.AgTypeNameMap["VA_DRAG_MODEL_TYPE"] = VA_DRAG_MODEL_TYPE
 
-class AgEVAMarsGRAMDensityType(IntEnum):
+class VA_MARS_GRAM_DENSITY_TYPE(IntEnum):
     """Density Type for MarsGRAM Density Models"""
     # Low density
-    eVAMarsGRAMDensityTypeLow = 0
+    LOW = 0
     # Mean density
-    eVAMarsGRAMDensityTypeMean = 1
+    MEAN = 1
     # High density
-    eVAMarsGRAMDensityTypeHigh = 2
+    HIGH = 2
     # Randomly perturbed density
-    eVAMarsGRAMDensityTypeRandomlyPerturbed = 3
+    RANDOMLY_PERTURBED = 3
 
-AgEVAMarsGRAMDensityType.eVAMarsGRAMDensityTypeLow.__doc__ = "Low density"
-AgEVAMarsGRAMDensityType.eVAMarsGRAMDensityTypeMean.__doc__ = "Mean density"
-AgEVAMarsGRAMDensityType.eVAMarsGRAMDensityTypeHigh.__doc__ = "High density"
-AgEVAMarsGRAMDensityType.eVAMarsGRAMDensityTypeRandomlyPerturbed.__doc__ = "Randomly perturbed density"
+VA_MARS_GRAM_DENSITY_TYPE.LOW.__doc__ = "Low density"
+VA_MARS_GRAM_DENSITY_TYPE.MEAN.__doc__ = "Mean density"
+VA_MARS_GRAM_DENSITY_TYPE.HIGH.__doc__ = "High density"
+VA_MARS_GRAM_DENSITY_TYPE.RANDOMLY_PERTURBED.__doc__ = "Randomly perturbed density"
 
-agcls.AgTypeNameMap["AgEVAMarsGRAMDensityType"] = AgEVAMarsGRAMDensityType
+agcls.AgTypeNameMap["VA_MARS_GRAM_DENSITY_TYPE"] = VA_MARS_GRAM_DENSITY_TYPE
 
-class AgEVAVenusGRAMDensityType(IntEnum):
+class VA_VENUS_GRAM_DENSITY_TYPE(IntEnum):
     """Density Type for VenusGRAM Density Models"""
     # Low density
-    eVAVenusGRAMDensityTypeLow = 0
+    LOW = 0
     # Mean density
-    eVAVenusGRAMDensityTypeMean = 1
+    MEAN = 1
     # High density
-    eVAVenusGRAMDensityTypeHigh = 2
+    HIGH = 2
     # Randomly perturbed density
-    eVAVenusGRAMDensityTypeRandomlyPerturbed = 3
+    RANDOMLY_PERTURBED = 3
 
-AgEVAVenusGRAMDensityType.eVAVenusGRAMDensityTypeLow.__doc__ = "Low density"
-AgEVAVenusGRAMDensityType.eVAVenusGRAMDensityTypeMean.__doc__ = "Mean density"
-AgEVAVenusGRAMDensityType.eVAVenusGRAMDensityTypeHigh.__doc__ = "High density"
-AgEVAVenusGRAMDensityType.eVAVenusGRAMDensityTypeRandomlyPerturbed.__doc__ = "Randomly perturbed density"
+VA_VENUS_GRAM_DENSITY_TYPE.LOW.__doc__ = "Low density"
+VA_VENUS_GRAM_DENSITY_TYPE.MEAN.__doc__ = "Mean density"
+VA_VENUS_GRAM_DENSITY_TYPE.HIGH.__doc__ = "High density"
+VA_VENUS_GRAM_DENSITY_TYPE.RANDOMLY_PERTURBED.__doc__ = "Randomly perturbed density"
 
-agcls.AgTypeNameMap["AgEVAVenusGRAMDensityType"] = AgEVAVenusGRAMDensityType
+agcls.AgTypeNameMap["VA_VENUS_GRAM_DENSITY_TYPE"] = VA_VENUS_GRAM_DENSITY_TYPE
 
-class AgEVATabVecInterpMethod(IntEnum):
+class VA_TAB_VEC_INTERP_METHOD(IntEnum):
     """The interpolation method for tabulated area vector file."""
     # Bilinear interpolation on the Cartesian grid.
-    eVATabVecCartesianInterpolation = 0
+    CARTESIAN_INTERPOLATION = 0
     # Bilinear interpolation in magnitude and direction space.
-    eVATabVecMagDirInterpolation = 1
+    MAG_DIR_INTERPOLATION = 1
 
-AgEVATabVecInterpMethod.eVATabVecCartesianInterpolation.__doc__ = "Bilinear interpolation on the Cartesian grid."
-AgEVATabVecInterpMethod.eVATabVecMagDirInterpolation.__doc__ = "Bilinear interpolation in magnitude and direction space."
+VA_TAB_VEC_INTERP_METHOD.CARTESIAN_INTERPOLATION.__doc__ = "Bilinear interpolation on the Cartesian grid."
+VA_TAB_VEC_INTERP_METHOD.MAG_DIR_INTERPOLATION.__doc__ = "Bilinear interpolation in magnitude and direction space."
 
-agcls.AgTypeNameMap["AgEVATabVecInterpMethod"] = AgEVATabVecInterpMethod
+agcls.AgTypeNameMap["VA_TAB_VEC_INTERP_METHOD"] = VA_TAB_VEC_INTERP_METHOD
 
-class AgEVAControlEngineConstAcc(IntEnum):
+class VA_CONTROL_ENGINE_CONST_ACC(IntEnum):
     """Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
     # The gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineConstAccGrav = 0
+    GRAV = 0
     # The acceleration for the engine.
-    eVAControlEngineConstAccAcceleration = 1
+    ACCELERATION = 1
     # The specific impulse for the engine.
-    eVAControlEngineConstAccIsp = 2
+    ISP = 2
 
-AgEVAControlEngineConstAcc.eVAControlEngineConstAccGrav.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
-AgEVAControlEngineConstAcc.eVAControlEngineConstAccAcceleration.__doc__ = "The acceleration for the engine."
-AgEVAControlEngineConstAcc.eVAControlEngineConstAccIsp.__doc__ = "The specific impulse for the engine."
+VA_CONTROL_ENGINE_CONST_ACC.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
+VA_CONTROL_ENGINE_CONST_ACC.ACCELERATION.__doc__ = "The acceleration for the engine."
+VA_CONTROL_ENGINE_CONST_ACC.ISP.__doc__ = "The specific impulse for the engine."
 
-agcls.AgTypeNameMap["AgEVAControlEngineConstAcc"] = AgEVAControlEngineConstAcc
+agcls.AgTypeNameMap["VA_CONTROL_ENGINE_CONST_ACC"] = VA_CONTROL_ENGINE_CONST_ACC
 
-class AgEVAControlEngineConstant(IntEnum):
+class VA_CONTROL_ENGINE_CONSTANT(IntEnum):
     """Constant Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
     # The gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineConstantGrav = 0
+    GRAV = 0
     # The thrust for the engine.
-    eVAControlEngineConstantThrust = 1
+    THRUST = 1
     # The specific impulse for the engine.
-    eVAControlEngineConstantIsp = 2
+    ISP = 2
 
-AgEVAControlEngineConstant.eVAControlEngineConstantGrav.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
-AgEVAControlEngineConstant.eVAControlEngineConstantThrust.__doc__ = "The thrust for the engine."
-AgEVAControlEngineConstant.eVAControlEngineConstantIsp.__doc__ = "The specific impulse for the engine."
+VA_CONTROL_ENGINE_CONSTANT.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
+VA_CONTROL_ENGINE_CONSTANT.THRUST.__doc__ = "The thrust for the engine."
+VA_CONTROL_ENGINE_CONSTANT.ISP.__doc__ = "The specific impulse for the engine."
 
-agcls.AgTypeNameMap["AgEVAControlEngineConstant"] = AgEVAControlEngineConstant
+agcls.AgTypeNameMap["VA_CONTROL_ENGINE_CONSTANT"] = VA_CONTROL_ENGINE_CONSTANT
 
-class AgEVAControlEngineCustom(IntEnum):
+class VA_CONTROL_ENGINE_CUSTOM(IntEnum):
     """Custom engine model properties that can be selected as control parameters for a Target Sequence."""
     # Earth surface gravity acceleration for Isp conversions.
-    eVAControlEngineCustomGrav = 0
+    GRAV = 0
 
-AgEVAControlEngineCustom.eVAControlEngineCustomGrav.__doc__ = "Earth surface gravity acceleration for Isp conversions."
+VA_CONTROL_ENGINE_CUSTOM.GRAV.__doc__ = "Earth surface gravity acceleration for Isp conversions."
 
-agcls.AgTypeNameMap["AgEVAControlEngineCustom"] = AgEVAControlEngineCustom
+agcls.AgTypeNameMap["VA_CONTROL_ENGINE_CUSTOM"] = VA_CONTROL_ENGINE_CUSTOM
 
-class AgEVAControlEngineThrottleTable(IntEnum):
+class VA_CONTROL_ENGINE_THROTTLE_TABLE(IntEnum):
     """Throttle table engine model properties that can be selected as control parameters for a Target Sequence."""
     # Gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineThrottleTableGrav = 0
+    GRAV = 0
     # The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year.
-    eVAControlEngineThrottleTablePercentDegradationPerYear = 1
+    PERCENT_DEGRADATION_PER_YEAR = 1
     # The date and time used as a reference epoch for degradation.
-    eVAControlEngineThrottleTableReferenceEpoch = 2
+    REFERENCE_EPOCH = 2
 
-AgEVAControlEngineThrottleTable.eVAControlEngineThrottleTableGrav.__doc__ = "Gravitational acceleration constant at sea level on the Earth."
-AgEVAControlEngineThrottleTable.eVAControlEngineThrottleTablePercentDegradationPerYear.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
-AgEVAControlEngineThrottleTable.eVAControlEngineThrottleTableReferenceEpoch.__doc__ = "The date and time used as a reference epoch for degradation."
+VA_CONTROL_ENGINE_THROTTLE_TABLE.GRAV.__doc__ = "Gravitational acceleration constant at sea level on the Earth."
+VA_CONTROL_ENGINE_THROTTLE_TABLE.PERCENT_DEGRADATION_PER_YEAR.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
+VA_CONTROL_ENGINE_THROTTLE_TABLE.REFERENCE_EPOCH.__doc__ = "The date and time used as a reference epoch for degradation."
 
-agcls.AgTypeNameMap["AgEVAControlEngineThrottleTable"] = AgEVAControlEngineThrottleTable
+agcls.AgTypeNameMap["VA_CONTROL_ENGINE_THROTTLE_TABLE"] = VA_CONTROL_ENGINE_THROTTLE_TABLE
 
-class AgEVAControlEngineIon(IntEnum):
+class VA_CONTROL_ENGINE_ION(IntEnum):
     """Ion engine model properties that can be selected as control parameters for a Target Sequence."""
     # FlowRateModel.C0 - the constant coefficient.
-    eVAControlEngineIonFlowRateC0 = 0
+    FLOW_RATE_C0 = 0
     # FlowRateModel.C1 - the linear coefficient.
-    eVAControlEngineIonFlowRateC1 = 1
+    FLOW_RATE_C1 = 1
     # FlowRateModel.C2 - the quadratic coefficient.
-    eVAControlEngineIonFlowRateC2 = 2
+    FLOW_RATE_C2 = 2
     # FlowRateModel.C3 - the cubic coefficient.
-    eVAControlEngineIonFlowRateC3 = 3
+    FLOW_RATE_C3 = 3
     # Gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineIonGrav = 4
+    GRAV = 4
     # IspModel.C0 - the constant coefficient.
-    eVAControlEngineIonIspC0 = 5
+    ISP_C0 = 5
     # IspModel.C1 - the linear coefficient.
-    eVAControlEngineIonIspC1 = 6
+    ISP_C1 = 6
     # IspModel.C2 - the quadratic coefficient.
-    eVAControlEngineIonIspC2 = 7
+    ISP_C2 = 7
     # IspModel.C3 - the cubic coefficient.
-    eVAControlEngineIonIspC3 = 8
+    ISP_C3 = 8
     # MassFlowEfficiencyModel.C0 - the constant coefficient.
-    eVAControlEngineIonMassFlowEfficiencyC0 = 9
+    MASS_FLOW_EFFICIENCY_C0 = 9
     # MassFlowEfficiencyModel.C1 - the linear coefficient.
-    eVAControlEngineIonMassFlowEfficiencyC1 = 10
+    MASS_FLOW_EFFICIENCY_C1 = 10
     # MassFlowEfficiencyModel.C2 - the quadratic coefficient.
-    eVAControlEngineIonMassFlowEfficiencyC2 = 11
+    MASS_FLOW_EFFICIENCY_C2 = 11
     # MassFlowEfficiencyModel.C3 - the cubic coefficient.
-    eVAControlEngineIonMassFlowEfficiencyC3 = 12
+    MASS_FLOW_EFFICIENCY_C3 = 12
     # Minimum power required for the engine to produce thrust. 
-    eVAControlEngineIonMaxInputPower = 13
+    MAX_INPUT_POWER = 13
     # Maximum power that can be used by the engine to produce thrust.
-    eVAControlEngineIonMinRequiredPower = 14
+    MIN_REQUIRED_POWER = 14
     # The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year.
-    eVAControlEngineIonPercentDegradationPerYear = 15
+    PERCENT_DEGRADATION_PER_YEAR = 15
     # Percentage of available thrust to use (100 is full on, 0 is off).
-    eVAControlEngineIonPercentThrottle = 16
+    PERCENT_THROTTLE = 16
     # PowerEfficiencyModel.C0 - the constant coefficient.
-    eVAControlEngineIonPowerEfficiencyC0 = 17
+    POWER_EFFICIENCY_C0 = 17
     # PowerEfficiencyModel.C1 - the linear coefficient.
-    eVAControlEngineIonPowerEfficiencyC1 = 18
+    POWER_EFFICIENCY_C1 = 18
     # PowerEfficiencyModel.C2 - the quadratic coefficient.
-    eVAControlEngineIonPowerEfficiencyC2 = 19
+    POWER_EFFICIENCY_C2 = 19
     # PowerEfficiencyModel.C3 - the cubic coefficient.
-    eVAControlEngineIonPowerEfficiencyC3 = 20
+    POWER_EFFICIENCY_C3 = 20
     # The date and time used as a reference epoch for degradation.
-    eVAControlEngineIonReferenceEpoch = 21
+    REFERENCE_EPOCH = 21
 
-AgEVAControlEngineIon.eVAControlEngineIonFlowRateC0.__doc__ = "FlowRateModel.C0 - the constant coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonFlowRateC1.__doc__ = "FlowRateModel.C1 - the linear coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonFlowRateC2.__doc__ = "FlowRateModel.C2 - the quadratic coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonFlowRateC3.__doc__ = "FlowRateModel.C3 - the cubic coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonGrav.__doc__ = "Gravitational acceleration constant at sea level on the Earth."
-AgEVAControlEngineIon.eVAControlEngineIonIspC0.__doc__ = "IspModel.C0 - the constant coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonIspC1.__doc__ = "IspModel.C1 - the linear coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonIspC2.__doc__ = "IspModel.C2 - the quadratic coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonIspC3.__doc__ = "IspModel.C3 - the cubic coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonMassFlowEfficiencyC0.__doc__ = "MassFlowEfficiencyModel.C0 - the constant coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonMassFlowEfficiencyC1.__doc__ = "MassFlowEfficiencyModel.C1 - the linear coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonMassFlowEfficiencyC2.__doc__ = "MassFlowEfficiencyModel.C2 - the quadratic coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonMassFlowEfficiencyC3.__doc__ = "MassFlowEfficiencyModel.C3 - the cubic coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonMaxInputPower.__doc__ = "Minimum power required for the engine to produce thrust. "
-AgEVAControlEngineIon.eVAControlEngineIonMinRequiredPower.__doc__ = "Maximum power that can be used by the engine to produce thrust."
-AgEVAControlEngineIon.eVAControlEngineIonPercentDegradationPerYear.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
-AgEVAControlEngineIon.eVAControlEngineIonPercentThrottle.__doc__ = "Percentage of available thrust to use (100 is full on, 0 is off)."
-AgEVAControlEngineIon.eVAControlEngineIonPowerEfficiencyC0.__doc__ = "PowerEfficiencyModel.C0 - the constant coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonPowerEfficiencyC1.__doc__ = "PowerEfficiencyModel.C1 - the linear coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonPowerEfficiencyC2.__doc__ = "PowerEfficiencyModel.C2 - the quadratic coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonPowerEfficiencyC3.__doc__ = "PowerEfficiencyModel.C3 - the cubic coefficient."
-AgEVAControlEngineIon.eVAControlEngineIonReferenceEpoch.__doc__ = "The date and time used as a reference epoch for degradation."
+VA_CONTROL_ENGINE_ION.FLOW_RATE_C0.__doc__ = "FlowRateModel.C0 - the constant coefficient."
+VA_CONTROL_ENGINE_ION.FLOW_RATE_C1.__doc__ = "FlowRateModel.C1 - the linear coefficient."
+VA_CONTROL_ENGINE_ION.FLOW_RATE_C2.__doc__ = "FlowRateModel.C2 - the quadratic coefficient."
+VA_CONTROL_ENGINE_ION.FLOW_RATE_C3.__doc__ = "FlowRateModel.C3 - the cubic coefficient."
+VA_CONTROL_ENGINE_ION.GRAV.__doc__ = "Gravitational acceleration constant at sea level on the Earth."
+VA_CONTROL_ENGINE_ION.ISP_C0.__doc__ = "IspModel.C0 - the constant coefficient."
+VA_CONTROL_ENGINE_ION.ISP_C1.__doc__ = "IspModel.C1 - the linear coefficient."
+VA_CONTROL_ENGINE_ION.ISP_C2.__doc__ = "IspModel.C2 - the quadratic coefficient."
+VA_CONTROL_ENGINE_ION.ISP_C3.__doc__ = "IspModel.C3 - the cubic coefficient."
+VA_CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C0.__doc__ = "MassFlowEfficiencyModel.C0 - the constant coefficient."
+VA_CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C1.__doc__ = "MassFlowEfficiencyModel.C1 - the linear coefficient."
+VA_CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C2.__doc__ = "MassFlowEfficiencyModel.C2 - the quadratic coefficient."
+VA_CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C3.__doc__ = "MassFlowEfficiencyModel.C3 - the cubic coefficient."
+VA_CONTROL_ENGINE_ION.MAX_INPUT_POWER.__doc__ = "Minimum power required for the engine to produce thrust. "
+VA_CONTROL_ENGINE_ION.MIN_REQUIRED_POWER.__doc__ = "Maximum power that can be used by the engine to produce thrust."
+VA_CONTROL_ENGINE_ION.PERCENT_DEGRADATION_PER_YEAR.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
+VA_CONTROL_ENGINE_ION.PERCENT_THROTTLE.__doc__ = "Percentage of available thrust to use (100 is full on, 0 is off)."
+VA_CONTROL_ENGINE_ION.POWER_EFFICIENCY_C0.__doc__ = "PowerEfficiencyModel.C0 - the constant coefficient."
+VA_CONTROL_ENGINE_ION.POWER_EFFICIENCY_C1.__doc__ = "PowerEfficiencyModel.C1 - the linear coefficient."
+VA_CONTROL_ENGINE_ION.POWER_EFFICIENCY_C2.__doc__ = "PowerEfficiencyModel.C2 - the quadratic coefficient."
+VA_CONTROL_ENGINE_ION.POWER_EFFICIENCY_C3.__doc__ = "PowerEfficiencyModel.C3 - the cubic coefficient."
+VA_CONTROL_ENGINE_ION.REFERENCE_EPOCH.__doc__ = "The date and time used as a reference epoch for degradation."
 
-agcls.AgTypeNameMap["AgEVAControlEngineIon"] = AgEVAControlEngineIon
+agcls.AgTypeNameMap["VA_CONTROL_ENGINE_ION"] = VA_CONTROL_ENGINE_ION
 
-class AgEVAControlEngineModelPoly(IntEnum):
+class VA_CONTROL_ENGINE_MODEL_POLY(IntEnum):
     """Polynomial Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
     # The thrust C0 coefficient.
-    eVAControlEngineModelPolyThrustC0 = 0
+    THRUST_C0 = 0
     # The thrust C1 coefficient.
-    eVAControlEngineModelPolyThrustC1 = 1
+    THRUST_C1 = 1
     # The thrust C2 coefficient.
-    eVAControlEngineModelPolyThrustC2 = 2
+    THRUST_C2 = 2
     # The thrust C3 coefficient.
-    eVAControlEngineModelPolyThrustC3 = 3
+    THRUST_C3 = 3
     # The thrust C4 coefficient.
-    eVAControlEngineModelPolyThrustC4 = 4
+    THRUST_C4 = 4
     # The thrust C5 coefficient.
-    eVAControlEngineModelPolyThrustC5 = 5
+    THRUST_C5 = 5
     # The thrust C6 coefficient.
-    eVAControlEngineModelPolyThrustC6 = 6
+    THRUST_C6 = 6
     # The thrust C7 coefficient.
-    eVAControlEngineModelPolyThrustC7 = 7
+    THRUST_C7 = 7
     # The thrust B7 coefficient.
-    eVAControlEngineModelPolyThrustB7 = 8
+    THRUST_B7 = 8
     # The thrust E4 coefficient.
-    eVAControlEngineModelPolyThrustE4 = 9
+    THRUST_E4 = 9
     # The thrust E5 coefficient.
-    eVAControlEngineModelPolyThrustE5 = 10
+    THRUST_E5 = 10
     # The thrust E6 coefficient.
-    eVAControlEngineModelPolyThrustE6 = 11
+    THRUST_E6 = 11
     # The thrust E7 coefficient.
-    eVAControlEngineModelPolyThrustE7 = 12
+    THRUST_E7 = 12
     # The thrust K0 coefficient.
-    eVAControlEngineModelPolyThrustK0 = 13
+    THRUST_K0 = 13
     # The thrust K1 coefficient.
-    eVAControlEngineModelPolyThrustK1 = 14
+    THRUST_K1 = 14
     # The thrust reference temperature, Tr.
-    eVAControlEngineModelPolyThrustReferenceTemp = 15
+    THRUST_REFERENCE_TEMP = 15
     # The specific impulse C0 coefficient.
-    eVAControlEngineModelPolyIspC0 = 16
+    ISP_C0 = 16
     # The specific impulse C1 coefficient.
-    eVAControlEngineModelPolyIspC1 = 17
+    ISP_C1 = 17
     # The specific impulse C2 coefficient.
-    eVAControlEngineModelPolyIspC2 = 18
+    ISP_C2 = 18
     # The specific impulse C3 coefficient.
-    eVAControlEngineModelPolyIspC3 = 19
+    ISP_C3 = 19
     # The specific impulse C4 coefficient.
-    eVAControlEngineModelPolyIspC4 = 20
+    ISP_C4 = 20
     # The specific impulse C5 coefficient.
-    eVAControlEngineModelPolyIspC5 = 21
+    ISP_C5 = 21
     # The specific impulse C6 coefficient.
-    eVAControlEngineModelPolyIspC6 = 22
+    ISP_C6 = 22
     # The specific impulse C7 coefficient.
-    eVAControlEngineModelPolyIspC7 = 23
+    ISP_C7 = 23
     # The specific impulse B7 coefficient.
-    eVAControlEngineModelPolyIspB7 = 24
+    ISP_B7 = 24
     # The specific impulse E4 coefficient.
-    eVAControlEngineModelPolyIspE4 = 25
+    ISP_E4 = 25
     # The specific impulse E5 coefficient.
-    eVAControlEngineModelPolyIspE5 = 26
+    ISP_E5 = 26
     # The specific impulse E6 coefficient.
-    eVAControlEngineModelPolyIspE6 = 27
+    ISP_E6 = 27
     # The specific impulse E7 coefficient.
-    eVAControlEngineModelPolyIspE7 = 28
+    ISP_E7 = 28
     # The specific impulse K0 coefficient.
-    eVAControlEngineModelPolyIspK0 = 29
+    ISP_K0 = 29
     # The specific impulse K1 coefficient.
-    eVAControlEngineModelPolyIspK1 = 30
+    ISP_K1 = 30
     # The specific impulse reference temperature, Tr.
-    eVAControlEngineModelPolyIspReferenceTemp = 31
+    ISP_REFERENCE_TEMP = 31
     # The gravitational acceleration constant at sea level on the Earth.
-    eVAControlEngineModelPolyGrav = 32
+    GRAV = 32
 
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC0.__doc__ = "The thrust C0 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC1.__doc__ = "The thrust C1 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC2.__doc__ = "The thrust C2 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC3.__doc__ = "The thrust C3 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC4.__doc__ = "The thrust C4 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC5.__doc__ = "The thrust C5 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC6.__doc__ = "The thrust C6 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustC7.__doc__ = "The thrust C7 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustB7.__doc__ = "The thrust B7 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustE4.__doc__ = "The thrust E4 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustE5.__doc__ = "The thrust E5 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustE6.__doc__ = "The thrust E6 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustE7.__doc__ = "The thrust E7 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustK0.__doc__ = "The thrust K0 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustK1.__doc__ = "The thrust K1 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyThrustReferenceTemp.__doc__ = "The thrust reference temperature, Tr."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC0.__doc__ = "The specific impulse C0 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC1.__doc__ = "The specific impulse C1 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC2.__doc__ = "The specific impulse C2 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC3.__doc__ = "The specific impulse C3 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC4.__doc__ = "The specific impulse C4 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC5.__doc__ = "The specific impulse C5 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC6.__doc__ = "The specific impulse C6 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspC7.__doc__ = "The specific impulse C7 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspB7.__doc__ = "The specific impulse B7 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspE4.__doc__ = "The specific impulse E4 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspE5.__doc__ = "The specific impulse E5 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspE6.__doc__ = "The specific impulse E6 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspE7.__doc__ = "The specific impulse E7 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspK0.__doc__ = "The specific impulse K0 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspK1.__doc__ = "The specific impulse K1 coefficient."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyIspReferenceTemp.__doc__ = "The specific impulse reference temperature, Tr."
-AgEVAControlEngineModelPoly.eVAControlEngineModelPolyGrav.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_C0.__doc__ = "The thrust C0 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_C1.__doc__ = "The thrust C1 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_C2.__doc__ = "The thrust C2 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_C3.__doc__ = "The thrust C3 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_C4.__doc__ = "The thrust C4 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_C5.__doc__ = "The thrust C5 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_C6.__doc__ = "The thrust C6 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_C7.__doc__ = "The thrust C7 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_B7.__doc__ = "The thrust B7 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_E4.__doc__ = "The thrust E4 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_E5.__doc__ = "The thrust E5 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_E6.__doc__ = "The thrust E6 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_E7.__doc__ = "The thrust E7 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_K0.__doc__ = "The thrust K0 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_K1.__doc__ = "The thrust K1 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.THRUST_REFERENCE_TEMP.__doc__ = "The thrust reference temperature, Tr."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_C0.__doc__ = "The specific impulse C0 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_C1.__doc__ = "The specific impulse C1 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_C2.__doc__ = "The specific impulse C2 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_C3.__doc__ = "The specific impulse C3 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_C4.__doc__ = "The specific impulse C4 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_C5.__doc__ = "The specific impulse C5 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_C6.__doc__ = "The specific impulse C6 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_C7.__doc__ = "The specific impulse C7 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_B7.__doc__ = "The specific impulse B7 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_E4.__doc__ = "The specific impulse E4 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_E5.__doc__ = "The specific impulse E5 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_E6.__doc__ = "The specific impulse E6 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_E7.__doc__ = "The specific impulse E7 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_K0.__doc__ = "The specific impulse K0 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_K1.__doc__ = "The specific impulse K1 coefficient."
+VA_CONTROL_ENGINE_MODEL_POLY.ISP_REFERENCE_TEMP.__doc__ = "The specific impulse reference temperature, Tr."
+VA_CONTROL_ENGINE_MODEL_POLY.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
 
-agcls.AgTypeNameMap["AgEVAControlEngineModelPoly"] = AgEVAControlEngineModelPoly
+agcls.AgTypeNameMap["VA_CONTROL_ENGINE_MODEL_POLY"] = VA_CONTROL_ENGINE_MODEL_POLY
 
-class AgEVAEngineModelFunction(IntEnum):
+class VA_ENGINE_MODEL_FUNCTION(IntEnum):
     """The engine model function types."""
     # Isp as an independent variable of an equation.
-    eVAEngineModelFunctionIsp = 0
+    ISP = 0
     # Power as an independent variable of an equation.
-    eVAEngineModelFunctionPower = 1
+    POWER = 1
     # Isp and Power as independent variables of an equation.
-    eVAEngineModelFunctionIspAndPower = 2
+    ISP_AND_POWER = 2
 
-AgEVAEngineModelFunction.eVAEngineModelFunctionIsp.__doc__ = "Isp as an independent variable of an equation."
-AgEVAEngineModelFunction.eVAEngineModelFunctionPower.__doc__ = "Power as an independent variable of an equation."
-AgEVAEngineModelFunction.eVAEngineModelFunctionIspAndPower.__doc__ = "Isp and Power as independent variables of an equation."
+VA_ENGINE_MODEL_FUNCTION.ISP.__doc__ = "Isp as an independent variable of an equation."
+VA_ENGINE_MODEL_FUNCTION.POWER.__doc__ = "Power as an independent variable of an equation."
+VA_ENGINE_MODEL_FUNCTION.ISP_AND_POWER.__doc__ = "Isp and Power as independent variables of an equation."
 
-agcls.AgTypeNameMap["AgEVAEngineModelFunction"] = AgEVAEngineModelFunction
+agcls.AgTypeNameMap["VA_ENGINE_MODEL_FUNCTION"] = VA_ENGINE_MODEL_FUNCTION
 
-class AgEVAThrottleTableOperationMode(IntEnum):
+class VA_THROTTLE_TABLE_OPERATION_MODE(IntEnum):
     """Engine operation mode."""
     # Interpolation of engine performance data based on a regression polynomial model.
-    eVAEngineOperationRegPoly = 0
+    ENGINE_OPERATION_REG_POLY = 0
     # Interpolation of engine performance data based on a piecewise linear model.
-    eVAEngineOperationPiecewiseLinear = 1
+    ENGINE_OPERATION_PIECEWISE_LINEAR = 1
     # Discrete engine operation: piecewise constant engine performance as a function of available power.
-    eVAEngineOperationDiscrete = 2
+    ENGINE_OPERATION_DISCRETE = 2
 
-AgEVAThrottleTableOperationMode.eVAEngineOperationRegPoly.__doc__ = "Interpolation of engine performance data based on a regression polynomial model."
-AgEVAThrottleTableOperationMode.eVAEngineOperationPiecewiseLinear.__doc__ = "Interpolation of engine performance data based on a piecewise linear model."
-AgEVAThrottleTableOperationMode.eVAEngineOperationDiscrete.__doc__ = "Discrete engine operation: piecewise constant engine performance as a function of available power."
+VA_THROTTLE_TABLE_OPERATION_MODE.ENGINE_OPERATION_REG_POLY.__doc__ = "Interpolation of engine performance data based on a regression polynomial model."
+VA_THROTTLE_TABLE_OPERATION_MODE.ENGINE_OPERATION_PIECEWISE_LINEAR.__doc__ = "Interpolation of engine performance data based on a piecewise linear model."
+VA_THROTTLE_TABLE_OPERATION_MODE.ENGINE_OPERATION_DISCRETE.__doc__ = "Discrete engine operation: piecewise constant engine performance as a function of available power."
 
-agcls.AgTypeNameMap["AgEVAThrottleTableOperationMode"] = AgEVAThrottleTableOperationMode
+agcls.AgTypeNameMap["VA_THROTTLE_TABLE_OPERATION_MODE"] = VA_THROTTLE_TABLE_OPERATION_MODE
 
-class AgEVAIdealOrbitRadius(IntEnum):
+class VA_IDEAL_ORBIT_RADIUS(IntEnum):
     """Ideal Orbit Radius."""
     # Epoch centered average source radius.
-    eVAIdealOrbitEpochCenteredAvgSourceRadius = 0
+    EPOCH_CENTERED_AVG_SOURCE_RADIUS = 0
     # Instantanous characteristic distance.
-    eVAIdealOrbitRadiusInstantCharDistance = 1
+    INSTANT_CHAR_DISTANCE = 1
 
-AgEVAIdealOrbitRadius.eVAIdealOrbitEpochCenteredAvgSourceRadius.__doc__ = "Epoch centered average source radius."
-AgEVAIdealOrbitRadius.eVAIdealOrbitRadiusInstantCharDistance.__doc__ = "Instantanous characteristic distance."
+VA_IDEAL_ORBIT_RADIUS.EPOCH_CENTERED_AVG_SOURCE_RADIUS.__doc__ = "Epoch centered average source radius."
+VA_IDEAL_ORBIT_RADIUS.INSTANT_CHAR_DISTANCE.__doc__ = "Instantanous characteristic distance."
 
-agcls.AgTypeNameMap["AgEVAIdealOrbitRadius"] = AgEVAIdealOrbitRadius
+agcls.AgTypeNameMap["VA_IDEAL_ORBIT_RADIUS"] = VA_IDEAL_ORBIT_RADIUS
 
-class AgEVARotatingCoordinateSystem(IntEnum):
+class VA_ROTATING_COORDINATE_SYSTEM(IntEnum):
     """Barycenter centered rotating system."""
     # Barycenter centered rotating system.
-    eVARotatingCoordinateSystemBarycenterCentered = 0
+    BARYCENTER_CENTERED = 0
     # Primary centered rotating system.
-    eVARotatingCoordinateSystemPrimaryCentered = 1
+    PRIMARY_CENTERED = 1
     # Secondary centered rotating system.
-    eVARotatingCoordinateSystemSecondaryCentered = 2
+    SECONDARY_CENTERED = 2
     # L1 centered rotating system.
-    eVARotatingCoordinateSystemL1Centered = 3
+    L1_CENTERED = 3
     # L2 centered rotating system.
-    eVARotatingCoordinateSystemL2Centered = 4
+    L2_CENTERED = 4
     # L3 centered rotating system.
-    eVARotatingCoordinateSystemL3Centered = 5
+    L3_CENTERED = 5
     # L4 centered rotating system.
-    eVARotatingCoordinateSystemL4Centered = 6
+    L4_CENTERED = 6
     # L5 centered rotating system.
-    eVARotatingCoordinateSystemL5Centered = 7
+    L5_CENTERED = 7
 
-AgEVARotatingCoordinateSystem.eVARotatingCoordinateSystemBarycenterCentered.__doc__ = "Barycenter centered rotating system."
-AgEVARotatingCoordinateSystem.eVARotatingCoordinateSystemPrimaryCentered.__doc__ = "Primary centered rotating system."
-AgEVARotatingCoordinateSystem.eVARotatingCoordinateSystemSecondaryCentered.__doc__ = "Secondary centered rotating system."
-AgEVARotatingCoordinateSystem.eVARotatingCoordinateSystemL1Centered.__doc__ = "L1 centered rotating system."
-AgEVARotatingCoordinateSystem.eVARotatingCoordinateSystemL2Centered.__doc__ = "L2 centered rotating system."
-AgEVARotatingCoordinateSystem.eVARotatingCoordinateSystemL3Centered.__doc__ = "L3 centered rotating system."
-AgEVARotatingCoordinateSystem.eVARotatingCoordinateSystemL4Centered.__doc__ = "L4 centered rotating system."
-AgEVARotatingCoordinateSystem.eVARotatingCoordinateSystemL5Centered.__doc__ = "L5 centered rotating system."
+VA_ROTATING_COORDINATE_SYSTEM.BARYCENTER_CENTERED.__doc__ = "Barycenter centered rotating system."
+VA_ROTATING_COORDINATE_SYSTEM.PRIMARY_CENTERED.__doc__ = "Primary centered rotating system."
+VA_ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED.__doc__ = "Secondary centered rotating system."
+VA_ROTATING_COORDINATE_SYSTEM.L1_CENTERED.__doc__ = "L1 centered rotating system."
+VA_ROTATING_COORDINATE_SYSTEM.L2_CENTERED.__doc__ = "L2 centered rotating system."
+VA_ROTATING_COORDINATE_SYSTEM.L3_CENTERED.__doc__ = "L3 centered rotating system."
+VA_ROTATING_COORDINATE_SYSTEM.L4_CENTERED.__doc__ = "L4 centered rotating system."
+VA_ROTATING_COORDINATE_SYSTEM.L5_CENTERED.__doc__ = "L5 centered rotating system."
 
-agcls.AgTypeNameMap["AgEVARotatingCoordinateSystem"] = AgEVARotatingCoordinateSystem
+agcls.AgTypeNameMap["VA_ROTATING_COORDINATE_SYSTEM"] = VA_ROTATING_COORDINATE_SYSTEM
 
-class AgEVAControlThrusters(IntEnum):
+class VA_CONTROL_THRUSTERS(IntEnum):
     """Thruster properties that can be selected as control parameters for a Target Sequence."""
     # The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced.
-    eVAControlThrustersEquivOnTime = 0
+    EQUIV_ON_TIME = 0
     # The thruster efficiency.
-    eVAControlThrustersThrustEfficiency = 1
+    THRUST_EFFICIENCY = 1
     # Thruster direction defined as a vector in the body frame. Spherical azimuth value.
-    eVAControlThrustersSphericalAzimuth = 2
+    SPHERICAL_AZIMUTH = 2
     # Thruster direction defined as a vector in the body frame. Spherical elevation value.
-    eVAControlThrustersSphericalElevation = 3
+    SPHERICAL_ELEVATION = 3
     # Thruster direction defined as a vector in the body frame. Cartesian X value.
-    eVAControlThrustersCartesianX = 4
+    CARTESIAN_X = 4
     # Thruster direction defined as a vector in the body frame. Cartesian Y value.
-    eVAControlThrustersCartesianY = 5
+    CARTESIAN_Y = 5
     # Thruster direction defined as a vector in the body frame. Cartesian Z value.
-    eVAControlThrustersCartesianZ = 6
+    CARTESIAN_Z = 6
 
-AgEVAControlThrusters.eVAControlThrustersEquivOnTime.__doc__ = "The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."
-AgEVAControlThrusters.eVAControlThrustersThrustEfficiency.__doc__ = "The thruster efficiency."
-AgEVAControlThrusters.eVAControlThrustersSphericalAzimuth.__doc__ = "Thruster direction defined as a vector in the body frame. Spherical azimuth value."
-AgEVAControlThrusters.eVAControlThrustersSphericalElevation.__doc__ = "Thruster direction defined as a vector in the body frame. Spherical elevation value."
-AgEVAControlThrusters.eVAControlThrustersCartesianX.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian X value."
-AgEVAControlThrusters.eVAControlThrustersCartesianY.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian Y value."
-AgEVAControlThrusters.eVAControlThrustersCartesianZ.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian Z value."
+VA_CONTROL_THRUSTERS.EQUIV_ON_TIME.__doc__ = "The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."
+VA_CONTROL_THRUSTERS.THRUST_EFFICIENCY.__doc__ = "The thruster efficiency."
+VA_CONTROL_THRUSTERS.SPHERICAL_AZIMUTH.__doc__ = "Thruster direction defined as a vector in the body frame. Spherical azimuth value."
+VA_CONTROL_THRUSTERS.SPHERICAL_ELEVATION.__doc__ = "Thruster direction defined as a vector in the body frame. Spherical elevation value."
+VA_CONTROL_THRUSTERS.CARTESIAN_X.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian X value."
+VA_CONTROL_THRUSTERS.CARTESIAN_Y.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian Y value."
+VA_CONTROL_THRUSTERS.CARTESIAN_Z.__doc__ = "Thruster direction defined as a vector in the body frame. Cartesian Z value."
 
-agcls.AgTypeNameMap["AgEVAControlThrusters"] = AgEVAControlThrusters
+agcls.AgTypeNameMap["VA_CONTROL_THRUSTERS"] = VA_CONTROL_THRUSTERS
 
-class AgEVAThrusterDirection(IntEnum):
+class VA_THRUSTER_DIRECTION(IntEnum):
     """The thruster direction type."""
     # The direction that is opposite the direction of the exhaust.
-    eVAThrusterDirectionAcceleration = 0
+    ACCELERATION = 0
     # The direction of engine exhaust.
-    eVAThrusterDirectionExhaust = 1
+    EXHAUST = 1
 
-AgEVAThrusterDirection.eVAThrusterDirectionAcceleration.__doc__ = "The direction that is opposite the direction of the exhaust."
-AgEVAThrusterDirection.eVAThrusterDirectionExhaust.__doc__ = "The direction of engine exhaust."
+VA_THRUSTER_DIRECTION.ACCELERATION.__doc__ = "The direction that is opposite the direction of the exhaust."
+VA_THRUSTER_DIRECTION.EXHAUST.__doc__ = "The direction of engine exhaust."
 
-agcls.AgTypeNameMap["AgEVAThrusterDirection"] = AgEVAThrusterDirection
+agcls.AgTypeNameMap["VA_THRUSTER_DIRECTION"] = VA_THRUSTER_DIRECTION
 
-class AgEVACriteria(IntEnum):
+class VA_CRITERIA(IntEnum):
     """The criteria type."""
     # The test parameter must be equal (within the specified tolerance) to the specified value.
-    eVACriteriaEquals = 0
+    EQUALS = 0
     # The test parameter must be greater than the specified value.
-    eVACriteriaGreaterThan = 1
+    GREATER_THAN = 1
     # The current value for the calculation object is greater by the specified tolerance than the minimum reached by that object during the segment.
-    eVACriteriaGreaterThanMinimum = 2
+    GREATER_THAN_MINIMUM = 2
     # The test parameter must be less than the specified value.
-    eVACriteriaLessThan = 3
+    LESS_THAN = 3
     # The current value for the calculation object is less by the specified tolerance than the maximum reached by that object during the segment.
-    eVACriteriaLessThanMaximum = 4
+    LESS_THAN_MAXIMUM = 4
     # The test parameter must be not equal (within the specified tolerance) to the specified value.
-    eVACriteriaNotEqualTo = 5
+    NOT_EQUAL_TO = 5
 
-AgEVACriteria.eVACriteriaEquals.__doc__ = "The test parameter must be equal (within the specified tolerance) to the specified value."
-AgEVACriteria.eVACriteriaGreaterThan.__doc__ = "The test parameter must be greater than the specified value."
-AgEVACriteria.eVACriteriaGreaterThanMinimum.__doc__ = "The current value for the calculation object is greater by the specified tolerance than the minimum reached by that object during the segment."
-AgEVACriteria.eVACriteriaLessThan.__doc__ = "The test parameter must be less than the specified value."
-AgEVACriteria.eVACriteriaLessThanMaximum.__doc__ = "The current value for the calculation object is less by the specified tolerance than the maximum reached by that object during the segment."
-AgEVACriteria.eVACriteriaNotEqualTo.__doc__ = "The test parameter must be not equal (within the specified tolerance) to the specified value."
+VA_CRITERIA.EQUALS.__doc__ = "The test parameter must be equal (within the specified tolerance) to the specified value."
+VA_CRITERIA.GREATER_THAN.__doc__ = "The test parameter must be greater than the specified value."
+VA_CRITERIA.GREATER_THAN_MINIMUM.__doc__ = "The current value for the calculation object is greater by the specified tolerance than the minimum reached by that object during the segment."
+VA_CRITERIA.LESS_THAN.__doc__ = "The test parameter must be less than the specified value."
+VA_CRITERIA.LESS_THAN_MAXIMUM.__doc__ = "The current value for the calculation object is less by the specified tolerance than the maximum reached by that object during the segment."
+VA_CRITERIA.NOT_EQUAL_TO.__doc__ = "The test parameter must be not equal (within the specified tolerance) to the specified value."
 
-agcls.AgTypeNameMap["AgEVACriteria"] = AgEVACriteria
+agcls.AgTypeNameMap["VA_CRITERIA"] = VA_CRITERIA
 
-class AgEVAErrorControl(IntEnum):
+class VA_ERROR_CONTROL(IntEnum):
     """Error Control for the numerical integrator."""
     # The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc.
-    eVAErrorControlAbsolute = 0
+    ABSOLUTE = 0
     # The error estimate of each element being integrated relative to the element's value at the start of the step is compared to the relative error tolerance, and the absolute error estimate of each element is compared to the absolute error tolerance.
-    eVAErrorControlRelativeByComponent = 1
+    RELATIVE_BY_COMPONENT = 1
     # Relative to State error control.
-    eVAErrorControlRelativeToState = 2
+    RELATIVE_TO_STATE = 2
     # Error estimate of each integrated component relative to the element's change in value over the step is compared to the relative error tolerance, and the absolute error estimate of each integrated component is compared to the absolute error tolerance.
-    eVAErrorControlRelativeToStep = 3
+    RELATIVE_TO_STEP = 3
 
-AgEVAErrorControl.eVAErrorControlAbsolute.__doc__ = "The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc."
-AgEVAErrorControl.eVAErrorControlRelativeByComponent.__doc__ = "The error estimate of each element being integrated relative to the element's value at the start of the step is compared to the relative error tolerance, and the absolute error estimate of each element is compared to the absolute error tolerance."
-AgEVAErrorControl.eVAErrorControlRelativeToState.__doc__ = "Relative to State error control."
-AgEVAErrorControl.eVAErrorControlRelativeToStep.__doc__ = "Error estimate of each integrated component relative to the element's change in value over the step is compared to the relative error tolerance, and the absolute error estimate of each integrated component is compared to the absolute error tolerance."
+VA_ERROR_CONTROL.ABSOLUTE.__doc__ = "The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc."
+VA_ERROR_CONTROL.RELATIVE_BY_COMPONENT.__doc__ = "The error estimate of each element being integrated relative to the element's value at the start of the step is compared to the relative error tolerance, and the absolute error estimate of each element is compared to the absolute error tolerance."
+VA_ERROR_CONTROL.RELATIVE_TO_STATE.__doc__ = "Relative to State error control."
+VA_ERROR_CONTROL.RELATIVE_TO_STEP.__doc__ = "Error estimate of each integrated component relative to the element's change in value over the step is compared to the relative error tolerance, and the absolute error estimate of each integrated component is compared to the absolute error tolerance."
 
-agcls.AgTypeNameMap["AgEVAErrorControl"] = AgEVAErrorControl
+agcls.AgTypeNameMap["VA_ERROR_CONTROL"] = VA_ERROR_CONTROL
 
-class AgEVAPredictorCorrector(IntEnum):
+class VA_PREDICTOR_CORRECTOR(IntEnum):
     """Predictor corrector scheme for the numerical integrator."""
     # All force models are re-evaluated at each corrector step.
-    eVAPredictorCorrectorFull = 0
+    FULL = 0
     # Only the two-body acceleration is re-evaluated at each corrector step.
-    eVAPredictorCorrectorPseudo = 1
+    PSEUDO = 1
 
-AgEVAPredictorCorrector.eVAPredictorCorrectorFull.__doc__ = "All force models are re-evaluated at each corrector step."
-AgEVAPredictorCorrector.eVAPredictorCorrectorPseudo.__doc__ = "Only the two-body acceleration is re-evaluated at each corrector step."
+VA_PREDICTOR_CORRECTOR.FULL.__doc__ = "All force models are re-evaluated at each corrector step."
+VA_PREDICTOR_CORRECTOR.PSEUDO.__doc__ = "Only the two-body acceleration is re-evaluated at each corrector step."
 
-agcls.AgTypeNameMap["AgEVAPredictorCorrector"] = AgEVAPredictorCorrector
+agcls.AgTypeNameMap["VA_PREDICTOR_CORRECTOR"] = VA_PREDICTOR_CORRECTOR
 
-class AgEVANumericalIntegrator(IntEnum):
+class VA_NUMERICAL_INTEGRATOR(IntEnum):
     """Numerical integrator type."""
     # A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison.
-    eVANumericalIntegratorRK4thAdapt = 0
+    R_K_4TH_ADAPT = 0
     # A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator.
-    eVANumericalIntegratorRKF7th8th = 1
+    R_K_F_7TH8_TH = 1
     # A 9th order Runge-Kutta-Verner integrator with 8th order error control.
-    eVANumericalIntegratorRKV8th9th = 2
+    R_K_V_8TH9_TH = 2
     # An integrator based on Richardson extrapolation with automatic step size control.
-    eVANumericalIntegratorBulirschStoer = 3
+    BULIRSCH_STOER = 3
     # A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used.
-    eVANumericalIntegratorGaussJackson = 4
+    GAUSS_JACKSON = 4
     # A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients.
-    eVANumericalIntegratorRK2nd3rd = 5
+    R_K_2ND3_RD = 5
     # A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients.
-    eVANumericalIntegratorRK4th5th = 6
+    R_K_4TH5_TH = 6
     # A 4th order Runge-Kutta integrator that does not employ error control.
-    eVANumericalIntegratorRK4th = 7
+    R_K_4TH = 7
 
-AgEVANumericalIntegrator.eVANumericalIntegratorRK4thAdapt.__doc__ = "A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."
-AgEVANumericalIntegrator.eVANumericalIntegratorRKF7th8th.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
-AgEVANumericalIntegrator.eVANumericalIntegratorRKV8th9th.__doc__ = "A 9th order Runge-Kutta-Verner integrator with 8th order error control."
-AgEVANumericalIntegrator.eVANumericalIntegratorBulirschStoer.__doc__ = "An integrator based on Richardson extrapolation with automatic step size control."
-AgEVANumericalIntegrator.eVANumericalIntegratorGaussJackson.__doc__ = "A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."
-AgEVANumericalIntegrator.eVANumericalIntegratorRK2nd3rd.__doc__ = "A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."
-AgEVANumericalIntegrator.eVANumericalIntegratorRK4th5th.__doc__ = "A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."
-AgEVANumericalIntegrator.eVANumericalIntegratorRK4th.__doc__ = "A 4th order Runge-Kutta integrator that does not employ error control."
+VA_NUMERICAL_INTEGRATOR.R_K_4TH_ADAPT.__doc__ = "A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."
+VA_NUMERICAL_INTEGRATOR.R_K_F_7TH8_TH.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
+VA_NUMERICAL_INTEGRATOR.R_K_V_8TH9_TH.__doc__ = "A 9th order Runge-Kutta-Verner integrator with 8th order error control."
+VA_NUMERICAL_INTEGRATOR.BULIRSCH_STOER.__doc__ = "An integrator based on Richardson extrapolation with automatic step size control."
+VA_NUMERICAL_INTEGRATOR.GAUSS_JACKSON.__doc__ = "A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."
+VA_NUMERICAL_INTEGRATOR.R_K_2ND3_RD.__doc__ = "A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."
+VA_NUMERICAL_INTEGRATOR.R_K_4TH5_TH.__doc__ = "A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."
+VA_NUMERICAL_INTEGRATOR.R_K_4TH.__doc__ = "A 4th order Runge-Kutta integrator that does not employ error control."
 
-agcls.AgTypeNameMap["AgEVANumericalIntegrator"] = AgEVANumericalIntegrator
+agcls.AgTypeNameMap["VA_NUMERICAL_INTEGRATOR"] = VA_NUMERICAL_INTEGRATOR
 
-class AgEVACoeffRKV8th9th(IntEnum):
+class VA_COEFF_R_K_V_8TH9_TH(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
     # SIAM 1978.
-    eVACoeffRKV8th9th1978 = 0
+    TH1978 = 0
     # Efficient.
-    eVACoeffRKV8th9thEfficient = 1
+    EFFICIENT = 1
 
-AgEVACoeffRKV8th9th.eVACoeffRKV8th9th1978.__doc__ = "SIAM 1978."
-AgEVACoeffRKV8th9th.eVACoeffRKV8th9thEfficient.__doc__ = "Efficient."
+VA_COEFF_R_K_V_8TH9_TH.TH1978.__doc__ = "SIAM 1978."
+VA_COEFF_R_K_V_8TH9_TH.EFFICIENT.__doc__ = "Efficient."
 
-agcls.AgTypeNameMap["AgEVACoeffRKV8th9th"] = AgEVACoeffRKV8th9th
+agcls.AgTypeNameMap["VA_COEFF_R_K_V_8TH9_TH"] = VA_COEFF_R_K_V_8TH9_TH
 
 
 class IUserVariableDefinitionCollection(object):
@@ -4178,15 +4178,15 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IManeuverOptimalFiniteSNOPTOptimizer.")
     
     @property
-    def objective(self) -> "AgEVAOptimalFiniteSNOPTObjective":
+    def objective(self) -> "VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE":
         """Objective."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteSNOPTObjective) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_objective"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @objective.setter
-    def objective(self, newVal:"AgEVAOptimalFiniteSNOPTObjective") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteSNOPTObjective, newVal) as arg_newVal:
+    def objective(self, newVal:"VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_SNOPT_OBJECTIVE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_objective"](arg_newVal.COM_val))
 
     @property
@@ -4293,15 +4293,15 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
             agcls.evaluate_hresult(self.__dict__["_set_allow_internal_primal_infeasibility_measure_normalization"](arg_newVal.COM_val))
 
     @property
-    def snopt_scaling(self) -> "AgEVAOptimalFiniteSNOPTScaling":
+    def snopt_scaling(self) -> "VA_OPTIMAL_FINITE_SNOPT_SCALING":
         """SNOPT scaling option."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteSNOPTScaling) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_SNOPT_SCALING) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_snopt_scaling"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @snopt_scaling.setter
-    def snopt_scaling(self, newVal:"AgEVAOptimalFiniteSNOPTScaling") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteSNOPTScaling, newVal) as arg_newVal:
+    def snopt_scaling(self, newVal:"VA_OPTIMAL_FINITE_SNOPT_SCALING") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_SNOPT_SCALING, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_snopt_scaling"](arg_newVal.COM_val))
 
 
@@ -5310,15 +5310,15 @@ class IGoldenSectionResult(object):
             return arg_pVal.python_val
 
     @property
-    def desired_operation(self) -> "AgEVAGoldenSectionDesiredOperation":
+    def desired_operation(self) -> "VA_GOLDEN_SECTION_DESIRED_OPERATION":
         """The Desired Operation/Objective of golden section."""
-        with agmarshall.AgEnum_arg(AgEVAGoldenSectionDesiredOperation) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GOLDEN_SECTION_DESIRED_OPERATION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_desired_operation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @desired_operation.setter
-    def desired_operation(self, inVal:"AgEVAGoldenSectionDesiredOperation") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGoldenSectionDesiredOperation, inVal) as arg_inVal:
+    def desired_operation(self, inVal:"VA_GOLDEN_SECTION_DESIRED_OPERATION") -> None:
+        with agmarshall.AgEnum_arg(VA_GOLDEN_SECTION_DESIRED_OPERATION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_desired_operation"](arg_inVal.COM_val))
 
     @property
@@ -5768,15 +5768,15 @@ class IGridSearchResult(object):
             return arg_pVal.python_val
 
     @property
-    def desired_operation(self) -> "AgEVAGridSearchDesiredOperation":
+    def desired_operation(self) -> "VA_GRID_SEARCH_DESIRED_OPERATION":
         """The Desired Operation/Objective of grid search."""
-        with agmarshall.AgEnum_arg(AgEVAGridSearchDesiredOperation) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GRID_SEARCH_DESIRED_OPERATION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_desired_operation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @desired_operation.setter
-    def desired_operation(self, inVal:"AgEVAGridSearchDesiredOperation") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGridSearchDesiredOperation, inVal) as arg_inVal:
+    def desired_operation(self, inVal:"VA_GRID_SEARCH_DESIRED_OPERATION") -> None:
+        with agmarshall.AgEnum_arg(VA_GRID_SEARCH_DESIRED_OPERATION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_desired_operation"](arg_inVal.COM_val))
 
     @property
@@ -6180,19 +6180,19 @@ class IStoppingConditionElement(object):
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_active"](arg_newVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlStoppingCondition") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_STOPPING_CONDITION") -> None:
         """Enables or disables the specified control parameter"""
-        with agmarshall.AgEnum_arg(AgEVAControlStoppingCondition, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_STOPPING_CONDITION, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlStoppingCondition") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_STOPPING_CONDITION") -> None:
         """Disables the specified control parameter"""
-        with agmarshall.AgEnum_arg(AgEVAControlStoppingCondition, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_STOPPING_CONDITION, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlStoppingCondition") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_STOPPING_CONDITION") -> bool:
         """Sees if the specified control is enabled"""
-        with agmarshall.AgEnum_arg(AgEVAControlStoppingCondition, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_STOPPING_CONDITION, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -6426,9 +6426,9 @@ class IMissionControlSequenceSegmentCollection(object):
             agcls.evaluate_hresult(self.__dict__["_item"](arg_indexOrName.COM_val, byref(arg_ppVAMCSSegment.COM_val)))
             return arg_ppVAMCSSegment.python_val
 
-    def insert(self, segmentType:"AgEVASegmentType", segmentName:str, segmentToInsertBefore:str) -> "IMissionControlSequenceSegment":
+    def insert(self, segmentType:"VA_SEGMENT_TYPE", segmentName:str, segmentToInsertBefore:str) -> "IMissionControlSequenceSegment":
         """Adds a segment to the segment collection."""
-        with agmarshall.AgEnum_arg(AgEVASegmentType, segmentType) as arg_segmentType, \
+        with agmarshall.AgEnum_arg(VA_SEGMENT_TYPE, segmentType) as arg_segmentType, \
              agmarshall.BSTR_arg(segmentName) as arg_segmentName, \
              agmarshall.BSTR_arg(segmentToInsertBefore) as arg_segmentToInsertBefore, \
              agmarshall.AgInterface_out_arg() as arg_ppMCSSegment:
@@ -6612,15 +6612,15 @@ class IState(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IState.")
     
     @property
-    def element_type(self) -> "AgEVAElementType":
+    def element_type(self) -> "VA_ELEMENT_TYPE":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVAElementType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_element_type(self, elementType:"AgEVAElementType") -> None:
+    def set_element_type(self, elementType:"VA_ELEMENT_TYPE") -> None:
         """Sets the element type."""
-        with agmarshall.AgEnum_arg(AgEVAElementType, elementType) as arg_elementType:
+        with agmarshall.AgEnum_arg(VA_ELEMENT_TYPE, elementType) as arg_elementType:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_elementType.COM_val))
 
     @property
@@ -6850,9 +6850,9 @@ class IStoppingConditionComponent(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStoppingConditionComponent.")
     
     @property
-    def stopping_condition_type(self) -> "AgEVAStoppingCondition":
+    def stopping_condition_type(self) -> "VA_STOPPING_CONDITION":
         """The type of stopping condition."""
-        with agmarshall.AgEnum_arg(AgEVAStoppingCondition) as arg_pEVAStoppingCondition:
+        with agmarshall.AgEnum_arg(VA_STOPPING_CONDITION) as arg_pEVAStoppingCondition:
             agcls.evaluate_hresult(self.__dict__["_get_stopping_condition_type"](byref(arg_pEVAStoppingCondition.COM_val)))
             return arg_pEVAStoppingCondition.python_val
 
@@ -7544,15 +7544,15 @@ class IBurnoutVelocity(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBurnoutVelocity.")
     
     @property
-    def burnout_option(self) -> "AgEVABurnoutOptions":
+    def burnout_option(self) -> "VA_BURNOUT_OPTIONS":
         """Select to use the fixed or inertial frame."""
-        with agmarshall.AgEnum_arg(AgEVABurnoutOptions) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_BURNOUT_OPTIONS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_burnout_option"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @burnout_option.setter
-    def burnout_option(self, newVal:"AgEVABurnoutOptions") -> None:
-        with agmarshall.AgEnum_arg(AgEVABurnoutOptions, newVal) as arg_newVal:
+    def burnout_option(self, newVal:"VA_BURNOUT_OPTIONS") -> None:
+        with agmarshall.AgEnum_arg(VA_BURNOUT_OPTIONS, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_burnout_option"](arg_newVal.COM_val))
 
     @property
@@ -7687,27 +7687,27 @@ class IAttitudeControl(object):
             agcls.evaluate_hresult(self.__dict__["_set_trail_duration"](arg_newVal.COM_val))
 
     @property
-    def body_axis(self) -> "AgEVABodyAxis":
+    def body_axis(self) -> "VA_BODY_AXIS":
         """Whether the engine acceleration (the direction opposite the engine's exhaust) is aligned with positive or negative X, Y or Z body axis."""
-        with agmarshall.AgEnum_arg(AgEVABodyAxis) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_BODY_AXIS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_body_axis"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @body_axis.setter
-    def body_axis(self, newVal:"AgEVABodyAxis") -> None:
-        with agmarshall.AgEnum_arg(AgEVABodyAxis, newVal) as arg_newVal:
+    def body_axis(self, newVal:"VA_BODY_AXIS") -> None:
+        with agmarshall.AgEnum_arg(VA_BODY_AXIS, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_body_axis"](arg_newVal.COM_val))
 
     @property
-    def constraint_sign(self) -> "AgEVAConstraintSign":
+    def constraint_sign(self) -> "VA_CONSTRAINT_SIGN":
         """Whether the Constraint Vector is positive or negative."""
-        with agmarshall.AgEnum_arg(AgEVAConstraintSign) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CONSTRAINT_SIGN) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_constraint_sign"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @constraint_sign.setter
-    def constraint_sign(self, newVal:"AgEVAConstraintSign") -> None:
-        with agmarshall.AgEnum_arg(AgEVAConstraintSign, newVal) as arg_newVal:
+    def constraint_sign(self, newVal:"VA_CONSTRAINT_SIGN") -> None:
+        with agmarshall.AgEnum_arg(VA_CONSTRAINT_SIGN, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_constraint_sign"](arg_newVal.COM_val))
 
     @property
@@ -7723,15 +7723,15 @@ class IAttitudeControl(object):
             agcls.evaluate_hresult(self.__dict__["_set_constraint_vector_name"](arg_newVal.COM_val))
 
     @property
-    def custom_function(self) -> "AgEVACustomFunction":
+    def custom_function(self) -> "VA_CUSTOM_FUNCTION":
         """The attitude definition to use for other STK functions."""
-        with agmarshall.AgEnum_arg(AgEVACustomFunction) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CUSTOM_FUNCTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_custom_function"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @custom_function.setter
-    def custom_function(self, newVal:"AgEVACustomFunction") -> None:
-        with agmarshall.AgEnum_arg(AgEVACustomFunction, newVal) as arg_newVal:
+    def custom_function(self, newVal:"VA_CUSTOM_FUNCTION") -> None:
+        with agmarshall.AgEnum_arg(VA_CUSTOM_FUNCTION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_custom_function"](arg_newVal.COM_val))
 
 
@@ -7890,15 +7890,15 @@ class IManeuver(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IManeuver.")
     
     @property
-    def attitude_control_type(self) -> "AgEVAAttitudeControl":
+    def attitude_control_type(self) -> "VA_ATTITUDE_CONTROL":
         """Determines the attitude parameters available for you to specify."""
-        with agmarshall.AgEnum_arg(AgEVAAttitudeControl) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_CONTROL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_control_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_attitude_control_type(self, attitudeControlType:"AgEVAAttitudeControl") -> None:
+    def set_attitude_control_type(self, attitudeControlType:"VA_ATTITUDE_CONTROL") -> None:
         """Sets the attitude control type."""
-        with agmarshall.AgEnum_arg(AgEVAAttitudeControl, attitudeControlType) as arg_attitudeControlType:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_CONTROL, attitudeControlType) as arg_attitudeControlType:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_control_type"](arg_attitudeControlType.COM_val))
 
     @property
@@ -7909,15 +7909,15 @@ class IManeuver(object):
             return arg_ppVAAttitudeControl.python_val
 
     @property
-    def propulsion_method(self) -> "AgEVAPropulsionMethod":
+    def propulsion_method(self) -> "VA_PROPULSION_METHOD":
         """The propulsion type to be modeled."""
-        with agmarshall.AgEnum_arg(AgEVAPropulsionMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_PROPULSION_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_propulsion_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_propulsion_method(self, propulsionMethod:"AgEVAPropulsionMethod", value:str) -> None:
+    def set_propulsion_method(self, propulsionMethod:"VA_PROPULSION_METHOD", value:str) -> None:
         """Sets the propulsion type and associated engine/thruster set."""
-        with agmarshall.AgEnum_arg(AgEVAPropulsionMethod, propulsionMethod) as arg_propulsionMethod, \
+        with agmarshall.AgEnum_arg(VA_PROPULSION_METHOD, propulsionMethod) as arg_propulsionMethod, \
              agmarshall.BSTR_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_propulsion_method"](arg_propulsionMethod.COM_val, arg_value.COM_val))
 
@@ -8610,15 +8610,15 @@ class IScriptingParameter(object):
             agcls.evaluate_hresult(self.__dict__["_set_unit"](arg_inVal.COM_val))
 
     @property
-    def type(self) -> "AgEVAScriptingParameterType":
+    def type(self) -> "VA_SCRIPTING_PARAMETER_TYPE":
         """The parameter's type."""
-        with agmarshall.AgEnum_arg(AgEVAScriptingParameterType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SCRIPTING_PARAMETER_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @type.setter
-    def type(self, inVal:"AgEVAScriptingParameterType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAScriptingParameterType, inVal) as arg_inVal:
+    def type(self, inVal:"VA_SCRIPTING_PARAMETER_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_SCRIPTING_PARAMETER_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_type"](arg_inVal.COM_val))
 
     @property
@@ -9207,15 +9207,15 @@ class IScriptingTool(object):
             return arg_ppRetVal.python_val
 
     @property
-    def language_type(self) -> "AgEVALanguage":
+    def language_type(self) -> "VA_LANGUAGE":
         """The scripting language being used."""
-        with agmarshall.AgEnum_arg(AgEVALanguage) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LANGUAGE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_language_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @language_type.setter
-    def language_type(self, inVal:"AgEVALanguage") -> None:
-        with agmarshall.AgEnum_arg(AgEVALanguage, inVal) as arg_inVal:
+    def language_type(self, inVal:"VA_LANGUAGE") -> None:
+        with agmarshall.AgEnum_arg(VA_LANGUAGE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_language_type"](arg_inVal.COM_val))
 
     def script_text(self, script:str) -> None:
@@ -9689,9 +9689,9 @@ class IMissionControlSequenceSegmentProperties(object):
             return arg_ppVABPlaneCollection.python_val
 
     @property
-    def last_run_code(self) -> "AgEVARunCode":
+    def last_run_code(self) -> "VA_RUN_CODE":
         """The last run code returned by the segment."""
-        with agmarshall.AgEnum_arg(AgEVARunCode) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_RUN_CODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_last_run_code"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -9832,15 +9832,15 @@ class IMissionControlSequenceInitialState(object):
             return arg_ppVAFuelTank.python_val
 
     @property
-    def element_type(self) -> "AgEVAElementType":
+    def element_type(self) -> "VA_ELEMENT_TYPE":
         """The coordinate type."""
-        with agmarshall.AgEnum_arg(AgEVAElementType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_element_type(self, elementType:"AgEVAElementType") -> None:
+    def set_element_type(self, elementType:"VA_ELEMENT_TYPE") -> None:
         """Selects an coordinate type."""
-        with agmarshall.AgEnum_arg(AgEVAElementType, elementType) as arg_elementType:
+        with agmarshall.AgEnum_arg(VA_ELEMENT_TYPE, elementType) as arg_elementType:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_elementType.COM_val))
 
     @property
@@ -9850,19 +9850,19 @@ class IMissionControlSequenceInitialState(object):
             agcls.evaluate_hresult(self.__dict__["_get_element"](byref(arg_ppVAElement.COM_val)))
             return arg_ppVAElement.python_val
 
-    def enable_control_parameter(self, param:"AgEVAControlInitState") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_INIT_STATE") -> None:
         """Enables a control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlInitState, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_INIT_STATE, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlInitState") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_INIT_STATE") -> None:
         """Disables a control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlInitState, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_INIT_STATE, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlInitState") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_INIT_STATE") -> bool:
         """Sees if a control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlInitState, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_INIT_STATE, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -9933,9 +9933,9 @@ class IMissionControlSequenceSegment(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissionControlSequenceSegment.")
     
     @property
-    def type(self) -> "AgEVASegmentType":
+    def type(self) -> "VA_SEGMENT_TYPE":
         """Returns the type of segment."""
-        with agmarshall.AgEnum_arg(AgEVASegmentType) as arg_pSegmentType:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_TYPE) as arg_pSegmentType:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pSegmentType.COM_val)))
             return arg_pSegmentType.python_val
 
@@ -10308,16 +10308,16 @@ class IMissionControlSequenceOptions(object):
             return arg_ppRetVal.python_val
 
     @property
-    def smart_run_mode(self) -> "AgEVASmartRunMode":
+    def smart_run_mode(self) -> "VA_SMART_RUN_MODE":
         """Controls whether the run will attempt to only run changed segments."""
-        with agmarshall.AgEnum_arg(AgEVASmartRunMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SMART_RUN_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_smart_run_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @smart_run_mode.setter
-    def smart_run_mode(self, inVal:"AgEVASmartRunMode") -> None:
+    def smart_run_mode(self, inVal:"VA_SMART_RUN_MODE") -> None:
         """Controls whether the run will attempt to only run changed segments."""
-        with agmarshall.AgEnum_arg(AgEVASmartRunMode, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_SMART_RUN_MODE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_smart_run_mode"](arg_inVal.COM_val))
 
 
@@ -10432,21 +10432,21 @@ class IDriverMissionControlSequence(object):
         """Append the existing ephemeris with another individual segment mode run"""
         agcls.evaluate_hresult(self.__dict__["_append_run"]())
 
-    def append_run_from_time(self, epoch:typing.Any, clearEphemerisDirection:"AgEVAClearEphemerisDirection") -> None:
+    def append_run_from_time(self, epoch:typing.Any, clearEphemerisDirection:"VA_CLEAR_EPHEMERIS_DIRECTION") -> None:
         """Append the existing ephemeris with another individual segment mode run, starting at a specified time. Ephemeris is cleared from time based on clear direction."""
         with agmarshall.VARIANT_arg(epoch) as arg_epoch, \
-             agmarshall.AgEnum_arg(AgEVAClearEphemerisDirection, clearEphemerisDirection) as arg_clearEphemerisDirection:
+             agmarshall.AgEnum_arg(VA_CLEAR_EPHEMERIS_DIRECTION, clearEphemerisDirection) as arg_clearEphemerisDirection:
             agcls.evaluate_hresult(self.__dict__["_append_run_from_time"](arg_epoch.COM_val, arg_clearEphemerisDirection.COM_val))
 
-    def append_run_from_state(self, appendState:"IState", clearEphemerisDirection:"AgEVAClearEphemerisDirection") -> None:
+    def append_run_from_state(self, appendState:"IState", clearEphemerisDirection:"VA_CLEAR_EPHEMERIS_DIRECTION") -> None:
         """Append the existing ephemeris with another individual segment mode run, starting at a specified state. Ephemeris is cleared from time based on clear direction."""
         with agmarshall.AgInterface_in_arg(appendState, IState) as arg_appendState, \
-             agmarshall.AgEnum_arg(AgEVAClearEphemerisDirection, clearEphemerisDirection) as arg_clearEphemerisDirection:
+             agmarshall.AgEnum_arg(VA_CLEAR_EPHEMERIS_DIRECTION, clearEphemerisDirection) as arg_clearEphemerisDirection:
             agcls.evaluate_hresult(self.__dict__["_append_run_from_state"](arg_appendState.COM_val, arg_clearEphemerisDirection.COM_val))
 
-    def run_mcs2(self) -> "AgEVARunCode":
+    def run_mcs2(self) -> "VA_RUN_CODE":
         """Runs the current MCS and returns an error code."""
-        with agmarshall.AgEnum_arg(AgEVARunCode) as arg_pRunCode:
+        with agmarshall.AgEnum_arg(VA_RUN_CODE) as arg_pRunCode:
             agcls.evaluate_hresult(self.__dict__["_run_mcs2"](byref(arg_pRunCode.COM_val)))
             return arg_pRunCode.python_val
 
@@ -10935,16 +10935,16 @@ class IElementKeplerian(IElement):
             agcls.evaluate_hresult(self.__dict__["_set_time_past_periapsis"](arg_newVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVAElement":
+    def element_type(self) -> "VA_ELEMENT":
         """Which type of element (osculating or mean)."""
-        with agmarshall.AgEnum_arg(AgEVAElement) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVAElement") -> None:
+    def element_type(self, inVal:"VA_ELEMENT") -> None:
         """."""
-        with agmarshall.AgEnum_arg(AgEVAElement, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
     @property
@@ -11328,15 +11328,15 @@ class IElementEquinoctial(IElement):
             agcls.evaluate_hresult(self.__dict__["_set_mean_longitude"](arg_newVal.COM_val))
 
     @property
-    def formulation(self) -> "AgEVAFormulation":
+    def formulation(self) -> "VA_FORMULATION":
         """Retrograde, which has its singularity at an inclination of 0 deg. Posigrade, which has its singularity at an inclination of 180 deg."""
-        with agmarshall.AgEnum_arg(AgEVAFormulation) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_FORMULATION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_formulation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @formulation.setter
-    def formulation(self, inVal:"AgEVAFormulation") -> None:
-        with agmarshall.AgEnum_arg(AgEVAFormulation, inVal) as arg_inVal:
+    def formulation(self, inVal:"VA_FORMULATION") -> None:
+        with agmarshall.AgEnum_arg(VA_FORMULATION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_formulation"](arg_inVal.COM_val))
 
 
@@ -12531,15 +12531,15 @@ class IStoppingCondition(IStoppingConditionComponent):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_newVal.COM_val))
 
     @property
-    def criterion(self) -> "AgEVACriterion":
+    def criterion(self) -> "VA_CRITERION":
         """Specifies the direction from which the stopping condition value must be achieved."""
-        with agmarshall.AgEnum_arg(AgEVACriterion) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CRITERION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_criterion"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @criterion.setter
-    def criterion(self, newVal:"AgEVACriterion") -> None:
-        with agmarshall.AgEnum_arg(AgEVACriterion, newVal) as arg_newVal:
+    def criterion(self, newVal:"VA_CRITERION") -> None:
+        with agmarshall.AgEnum_arg(VA_CRITERION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_criterion"](arg_newVal.COM_val))
 
     @property
@@ -12719,27 +12719,27 @@ class ILightingStoppingCondition(IStoppingConditionComponent):
             agcls.evaluate_hresult(self.__dict__["_set_sequence"](arg_newVal.COM_val))
 
     @property
-    def condition(self) -> "AgEVALightingCondition":
+    def condition(self) -> "VA_LIGHTING_CONDITION":
         """Specifies the direction from which the stopping condition value must be achieved."""
-        with agmarshall.AgEnum_arg(AgEVALightingCondition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LIGHTING_CONDITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_condition"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @condition.setter
-    def condition(self, newVal:"AgEVALightingCondition") -> None:
-        with agmarshall.AgEnum_arg(AgEVALightingCondition, newVal) as arg_newVal:
+    def condition(self, newVal:"VA_LIGHTING_CONDITION") -> None:
+        with agmarshall.AgEnum_arg(VA_LIGHTING_CONDITION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_condition"](arg_newVal.COM_val))
 
     @property
-    def eclipsing_bodies_list_source(self) -> "AgEVAEclipsingBodiesSource":
+    def eclipsing_bodies_list_source(self) -> "VA_ECLIPSING_BODIES_SOURCE":
         """Eclipsing Bodies List Source."""
-        with agmarshall.AgEnum_arg(AgEVAEclipsingBodiesSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ECLIPSING_BODIES_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_eclipsing_bodies_list_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @eclipsing_bodies_list_source.setter
-    def eclipsing_bodies_list_source(self, newVal:"AgEVAEclipsingBodiesSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAEclipsingBodiesSource, newVal) as arg_newVal:
+    def eclipsing_bodies_list_source(self, newVal:"VA_ECLIPSING_BODIES_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ECLIPSING_BODIES_SOURCE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_eclipsing_bodies_list_source"](arg_newVal.COM_val))
 
     def add_eclipsing_body(self, eclipsingBody:str) -> None:
@@ -12926,15 +12926,15 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             return arg_ppVAConstraintCollection.python_val
 
     @property
-    def criterion(self) -> "AgEVAAccessCriterion":
+    def criterion(self) -> "VA_ACCESS_CRITERION":
         """Specifies the direction from which the stopping condition value must be achieved."""
-        with agmarshall.AgEnum_arg(AgEVAAccessCriterion) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ACCESS_CRITERION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_criterion"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @criterion.setter
-    def criterion(self, newVal:"AgEVAAccessCriterion") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAccessCriterion, newVal) as arg_newVal:
+    def criterion(self, newVal:"VA_ACCESS_CRITERION") -> None:
+        with agmarshall.AgEnum_arg(VA_ACCESS_CRITERION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_criterion"](arg_newVal.COM_val))
 
     @property
@@ -12945,26 +12945,26 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             return arg_ppStoppingConditionCollection.python_val
 
     @property
-    def aberration_type(self) -> "AgEAberrationType":
+    def aberration_type(self) -> "ABERRATION_TYPE":
         """Sets the model of aberration to be used in access computations."""
-        with agmarshall.AgEnum_arg(AgEAberrationType) as arg_pVal:
+        with agmarshall.AgEnum_arg(ABERRATION_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_aberration_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @aberration_type.setter
-    def aberration_type(self, inVal:"AgEAberrationType") -> None:
-        with agmarshall.AgEnum_arg(AgEAberrationType, inVal) as arg_inVal:
+    def aberration_type(self, inVal:"ABERRATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(ABERRATION_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_aberration_type"](arg_inVal.COM_val))
 
-    def set_base_selection(self, selection:"AgEVABaseSelection") -> None:
+    def set_base_selection(self, selection:"VA_BASE_SELECTION") -> None:
         """BaseSelection"""
-        with agmarshall.AgEnum_arg(AgEVABaseSelection, selection) as arg_selection:
+        with agmarshall.AgEnum_arg(VA_BASE_SELECTION, selection) as arg_selection:
             agcls.evaluate_hresult(self.__dict__["_set_base_selection"](arg_selection.COM_val))
 
     @property
-    def base_selection_type(self) -> "AgEVABaseSelection":
+    def base_selection_type(self) -> "VA_BASE_SELECTION":
         """The base object for the access calculation."""
-        with agmarshall.AgEnum_arg(AgEVABaseSelection) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_BASE_SELECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_base_selection_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -12976,27 +12976,27 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             return arg_ppRetVal.python_val
 
     @property
-    def clock_host(self) -> "AgEIvClockHost":
+    def clock_host(self) -> "IV_CLOCK_HOST":
         """Time values are reported with a clock colocated with the clock host object."""
-        with agmarshall.AgEnum_arg(AgEIvClockHost) as arg_pVal:
+        with agmarshall.AgEnum_arg(IV_CLOCK_HOST) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_clock_host"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @clock_host.setter
-    def clock_host(self, inVal:"AgEIvClockHost") -> None:
-        with agmarshall.AgEnum_arg(AgEIvClockHost, inVal) as arg_inVal:
+    def clock_host(self, inVal:"IV_CLOCK_HOST") -> None:
+        with agmarshall.AgEnum_arg(IV_CLOCK_HOST, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_clock_host"](arg_inVal.COM_val))
 
     @property
-    def signal_sense(self) -> "AgEIvTimeSense":
+    def signal_sense(self) -> "IV_TIME_SENSE":
         """Sets the direction of the signal."""
-        with agmarshall.AgEnum_arg(AgEIvTimeSense) as arg_pVal:
+        with agmarshall.AgEnum_arg(IV_TIME_SENSE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_sense"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @signal_sense.setter
-    def signal_sense(self, inVal:"AgEIvTimeSense") -> None:
-        with agmarshall.AgEnum_arg(AgEIvTimeSense, inVal) as arg_inVal:
+    def signal_sense(self, inVal:"IV_TIME_SENSE") -> None:
+        with agmarshall.AgEnum_arg(IV_TIME_SENSE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_inVal.COM_val))
 
     @property
@@ -13174,19 +13174,19 @@ class IMissionControlSequencePropagate(object):
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_enable_warning_message"](arg_newVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlAdvanced") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ADVANCED") -> None:
         """Enables or disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlAdvanced, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ADVANCED, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlAdvanced") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ADVANCED") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlAdvanced, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ADVANCED, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlAdvanced") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ADVANCED") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlAdvanced, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ADVANCED, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -13319,15 +13319,15 @@ class IMissionControlSequenceSequence(object):
             return arg_ppVAMCSSegmentCollection.python_val
 
     @property
-    def sequence_state_to_pass(self) -> "AgEVASequenceStateToPass":
+    def sequence_state_to_pass(self) -> "VA_SEQUENCE_STATE_TO_PASS":
         """State To Pass To Next Segment - the state of the sequence to pass."""
-        with agmarshall.AgEnum_arg(AgEVASequenceStateToPass) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEQUENCE_STATE_TO_PASS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sequence_state_to_pass"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sequence_state_to_pass.setter
-    def sequence_state_to_pass(self, inVal:"AgEVASequenceStateToPass") -> None:
-        with agmarshall.AgEnum_arg(AgEVASequenceStateToPass, inVal) as arg_inVal:
+    def sequence_state_to_pass(self, inVal:"VA_SEQUENCE_STATE_TO_PASS") -> None:
+        with agmarshall.AgEnum_arg(VA_SEQUENCE_STATE_TO_PASS, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sequence_state_to_pass"](arg_inVal.COM_val))
 
     @property
@@ -13524,19 +13524,19 @@ class IMissionControlSequenceLaunch(object):
         with agmarshall.VARIANT_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_epoch"](arg_newVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlLaunch") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_LAUNCH") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlLaunch, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_LAUNCH, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlLaunch") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_LAUNCH") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlLaunch, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_LAUNCH, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlLaunch") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_LAUNCH") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlLaunch, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_LAUNCH, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -13575,15 +13575,15 @@ class IMissionControlSequenceLaunch(object):
             return arg_ppVAFuelTank.python_val
 
     @property
-    def display_system_type(self) -> "AgEVALaunchDisplaySystem":
+    def display_system_type(self) -> "VA_LAUNCH_DISPLAY_SYSTEM":
         """The launch coordinate type."""
-        with agmarshall.AgEnum_arg(AgEVALaunchDisplaySystem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LAUNCH_DISPLAY_SYSTEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_display_system_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_display_system_type(self, displaySystemType:"AgEVALaunchDisplaySystem") -> None:
+    def set_display_system_type(self, displaySystemType:"VA_LAUNCH_DISPLAY_SYSTEM") -> None:
         """Sets the display system type."""
-        with agmarshall.AgEnum_arg(AgEVALaunchDisplaySystem, displaySystemType) as arg_displaySystemType:
+        with agmarshall.AgEnum_arg(VA_LAUNCH_DISPLAY_SYSTEM, displaySystemType) as arg_displaySystemType:
             agcls.evaluate_hresult(self.__dict__["_set_display_system_type"](arg_displaySystemType.COM_val))
 
     @property
@@ -13594,15 +13594,15 @@ class IMissionControlSequenceLaunch(object):
             return arg_ppVADisplaySystem.python_val
 
     @property
-    def ascent_type(self) -> "AgEVAAscentType":
+    def ascent_type(self) -> "VA_ASCENT_TYPE":
         """The order of the spline used to generate the motion along the ellipse."""
-        with agmarshall.AgEnum_arg(AgEVAAscentType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ASCENT_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_ascent_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ascent_type.setter
-    def ascent_type(self, newVal:"AgEVAAscentType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAscentType, newVal) as arg_newVal:
+    def ascent_type(self, newVal:"VA_ASCENT_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_ASCENT_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_ascent_type"](arg_newVal.COM_val))
 
     @property
@@ -13618,15 +13618,15 @@ class IMissionControlSequenceLaunch(object):
             agcls.evaluate_hresult(self.__dict__["_set_time_of_flight"](arg_newVal.COM_val))
 
     @property
-    def burnout_type(self) -> "AgEVABurnoutType":
+    def burnout_type(self) -> "VA_BURNOUT_TYPE":
         """The burnout type."""
-        with agmarshall.AgEnum_arg(AgEVABurnoutType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_BURNOUT_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_burnout_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_burnout_type(self, burnoutType:"AgEVABurnoutType") -> None:
+    def set_burnout_type(self, burnoutType:"VA_BURNOUT_TYPE") -> None:
         """Sets the burnout type."""
-        with agmarshall.AgEnum_arg(AgEVABurnoutType, burnoutType) as arg_burnoutType:
+        with agmarshall.AgEnum_arg(VA_BURNOUT_TYPE, burnoutType) as arg_burnoutType:
             agcls.evaluate_hresult(self.__dict__["_set_burnout_type"](arg_burnoutType.COM_val))
 
     @property
@@ -14454,39 +14454,39 @@ class IMissionControlSequenceFollow(object):
             return arg_ppVAFuelTank.python_val
 
     @property
-    def joining_type(self) -> "AgEVAFollowJoin":
+    def joining_type(self) -> "VA_FOLLOW_JOIN":
         """The joining type."""
-        with agmarshall.AgEnum_arg(AgEVAFollowJoin) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_FOLLOW_JOIN) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_joining_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @joining_type.setter
-    def joining_type(self, newVal:"AgEVAFollowJoin") -> None:
-        with agmarshall.AgEnum_arg(AgEVAFollowJoin, newVal) as arg_newVal:
+    def joining_type(self, newVal:"VA_FOLLOW_JOIN") -> None:
+        with agmarshall.AgEnum_arg(VA_FOLLOW_JOIN, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_joining_type"](arg_newVal.COM_val))
 
     @property
-    def separation_type(self) -> "AgEVAFollowSeparation":
+    def separation_type(self) -> "VA_FOLLOW_SEPARATION":
         """The separation type."""
-        with agmarshall.AgEnum_arg(AgEVAFollowSeparation) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_FOLLOW_SEPARATION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_separation_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @separation_type.setter
-    def separation_type(self, newVal:"AgEVAFollowSeparation") -> None:
-        with agmarshall.AgEnum_arg(AgEVAFollowSeparation, newVal) as arg_newVal:
+    def separation_type(self, newVal:"VA_FOLLOW_SEPARATION") -> None:
+        with agmarshall.AgEnum_arg(VA_FOLLOW_SEPARATION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_separation_type"](arg_newVal.COM_val))
 
     @property
-    def spacecraft_and_fuel_tank_type(self) -> "AgEVAFollowSpacecraftAndFuelTank":
+    def spacecraft_and_fuel_tank_type(self) -> "VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK":
         """The spacecraft snd fuel tank configuration type."""
-        with agmarshall.AgEnum_arg(AgEVAFollowSpacecraftAndFuelTank) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_spacecraft_and_fuel_tank_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @spacecraft_and_fuel_tank_type.setter
-    def spacecraft_and_fuel_tank_type(self, newVal:"AgEVAFollowSpacecraftAndFuelTank") -> None:
-        with agmarshall.AgEnum_arg(AgEVAFollowSpacecraftAndFuelTank, newVal) as arg_newVal:
+    def spacecraft_and_fuel_tank_type(self, newVal:"VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK") -> None:
+        with agmarshall.AgEnum_arg(VA_FOLLOW_SPACECRAFT_AND_FUEL_TANK, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_spacecraft_and_fuel_tank_type"](arg_newVal.COM_val))
 
     @property
@@ -14496,19 +14496,19 @@ class IMissionControlSequenceFollow(object):
             agcls.evaluate_hresult(self.__dict__["_get_joining_conditions"](byref(arg_ppVAStoppingConditionCollection.COM_val)))
             return arg_ppVAStoppingConditionCollection.python_val
 
-    def enable_control_parameter(self, param:"AgEVAControlFollow") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_FOLLOW") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlFollow, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_FOLLOW, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlFollow") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_FOLLOW") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlFollow, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_FOLLOW, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlFollow") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_FOLLOW") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlFollow, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_FOLLOW, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -14577,15 +14577,15 @@ class IMissionControlSequenceManeuver(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissionControlSequenceManeuver.")
     
     @property
-    def maneuver_type(self) -> "AgEVAManeuverType":
+    def maneuver_type(self) -> "VA_MANEUVER_TYPE":
         """The maneuver type."""
-        with agmarshall.AgEnum_arg(AgEVAManeuverType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_MANEUVER_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_maneuver_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_maneuver_type(self, maneuverType:"AgEVAManeuverType") -> None:
+    def set_maneuver_type(self, maneuverType:"VA_MANEUVER_TYPE") -> None:
         """Sets the maneuver type"""
-        with agmarshall.AgEnum_arg(AgEVAManeuverType, maneuverType) as arg_maneuverType:
+        with agmarshall.AgEnum_arg(VA_MANEUVER_TYPE, maneuverType) as arg_maneuverType:
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_type"](arg_maneuverType.COM_val))
 
     @property
@@ -14595,19 +14595,19 @@ class IMissionControlSequenceManeuver(object):
             agcls.evaluate_hresult(self.__dict__["_get_maneuver"](byref(arg_ppVAManeuver.COM_val)))
             return arg_ppVAManeuver.python_val
 
-    def enable_control_parameter(self, param:"AgEVAControlManeuver") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_MANEUVER") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlManeuver, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_MANEUVER, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlManeuver") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_MANEUVER") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlManeuver, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_MANEUVER, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlManeuver") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_MANEUVER") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlManeuver, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_MANEUVER, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -14670,15 +14670,15 @@ class IManeuverFinite(IManeuver):
             IManeuver.__setattr__(self, attrname, value)
     
     @property
-    def pressure_mode(self) -> "AgEVAPressureMode":
+    def pressure_mode(self) -> "VA_PRESSURE_MODE":
         """The pressure mode."""
-        with agmarshall.AgEnum_arg(AgEVAPressureMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_PRESSURE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_pressure_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @pressure_mode.setter
-    def pressure_mode(self, newVal:"AgEVAPressureMode") -> None:
-        with agmarshall.AgEnum_arg(AgEVAPressureMode, newVal) as arg_newVal:
+    def pressure_mode(self, newVal:"VA_PRESSURE_MODE") -> None:
+        with agmarshall.AgEnum_arg(VA_PRESSURE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_pressure_mode"](arg_newVal.COM_val))
 
     @property
@@ -14694,15 +14694,15 @@ class IManeuverFinite(IManeuver):
             agcls.evaluate_hresult(self.__dict__["_set_thrust_efficiency"](arg_newVal.COM_val))
 
     @property
-    def thrust_efficiency_mode(self) -> "AgEVAThrustType":
+    def thrust_efficiency_mode(self) -> "VA_THRUST_TYPE":
         """Thrust - the calculations that are effected by the thrust efficiency value."""
-        with agmarshall.AgEnum_arg(AgEVAThrustType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_THRUST_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_thrust_efficiency_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @thrust_efficiency_mode.setter
-    def thrust_efficiency_mode(self, newVal:"AgEVAThrustType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAThrustType, newVal) as arg_newVal:
+    def thrust_efficiency_mode(self, newVal:"VA_THRUST_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_THRUST_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_thrust_efficiency_mode"](arg_newVal.COM_val))
 
     @property
@@ -15170,15 +15170,15 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             agcls.evaluate_hresult(self.__dict__["_set_allow_negative_spherical_magnitude"](arg_newVal.COM_val))
 
     @property
-    def coord_type(self) -> "AgEVAImpDeltaVRep":
+    def coord_type(self) -> "VA_IMP_DELTA_V_REP":
         """The coordinate representation for the DeltaV."""
-        with agmarshall.AgEnum_arg(AgEVAImpDeltaVRep) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_IMP_DELTA_V_REP) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_coord_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @coord_type.setter
-    def coord_type(self, newVal:"AgEVAImpDeltaVRep") -> None:
-        with agmarshall.AgEnum_arg(AgEVAImpDeltaVRep, newVal) as arg_newVal:
+    def coord_type(self, newVal:"VA_IMP_DELTA_V_REP") -> None:
+        with agmarshall.AgEnum_arg(VA_IMP_DELTA_V_REP, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_coord_type"](arg_newVal.COM_val))
 
     @property
@@ -15322,15 +15322,15 @@ class IAttitudeControlFiniteAntiVelocityVector(IAttitudeControlFinite):
             IAttitudeControlFinite.__setattr__(self, attrname, value)
     
     @property
-    def attitude_update(self) -> "AgEVAAttitudeUpdate":
+    def attitude_update(self) -> "VA_ATTITUDE_UPDATE":
         """How and when the attitude will be updated."""
-        with agmarshall.AgEnum_arg(AgEVAAttitudeUpdate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_UPDATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_update"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @attitude_update.setter
-    def attitude_update(self, newVal:"AgEVAAttitudeUpdate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAttitudeUpdate, newVal) as arg_newVal:
+    def attitude_update(self, newVal:"VA_ATTITUDE_UPDATE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_UPDATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_update"](arg_newVal.COM_val))
 
     @property
@@ -15387,15 +15387,15 @@ class IAttitudeControlFiniteAttitude(IAttitudeControlFinite):
             IAttitudeControlFinite.__setattr__(self, attrname, value)
     
     @property
-    def attitude_update(self) -> "AgEVAAttitudeUpdate":
+    def attitude_update(self) -> "VA_ATTITUDE_UPDATE":
         """How and when the attitude will be updated."""
-        with agmarshall.AgEnum_arg(AgEVAAttitudeUpdate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_UPDATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_update"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @attitude_update.setter
-    def attitude_update(self, newVal:"AgEVAAttitudeUpdate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAttitudeUpdate, newVal) as arg_newVal:
+    def attitude_update(self, newVal:"VA_ATTITUDE_UPDATE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_UPDATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_update"](arg_newVal.COM_val))
 
     @property
@@ -15543,15 +15543,15 @@ class IAttitudeControlFiniteThrustVector(IAttitudeControlFinite):
             IAttitudeControlFinite.__setattr__(self, attrname, value)
     
     @property
-    def attitude_update(self) -> "AgEVAAttitudeUpdate":
+    def attitude_update(self) -> "VA_ATTITUDE_UPDATE":
         """How and when the attitude will be updated."""
-        with agmarshall.AgEnum_arg(AgEVAAttitudeUpdate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_UPDATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_update"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @attitude_update.setter
-    def attitude_update(self, newVal:"AgEVAAttitudeUpdate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAttitudeUpdate, newVal) as arg_newVal:
+    def attitude_update(self, newVal:"VA_ATTITUDE_UPDATE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_UPDATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_update"](arg_newVal.COM_val))
 
     @property
@@ -15940,15 +15940,15 @@ class IAttitudeControlFiniteVelocityVector(IAttitudeControlFinite):
             IAttitudeControlFinite.__setattr__(self, attrname, value)
     
     @property
-    def attitude_update(self) -> "AgEVAAttitudeUpdate":
+    def attitude_update(self) -> "VA_ATTITUDE_UPDATE":
         """How and when the attitude will be updated."""
-        with agmarshall.AgEnum_arg(AgEVAAttitudeUpdate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_UPDATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_update"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @attitude_update.setter
-    def attitude_update(self, newVal:"AgEVAAttitudeUpdate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAttitudeUpdate, newVal) as arg_newVal:
+    def attitude_update(self, newVal:"VA_ATTITUDE_UPDATE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATTITUDE_UPDATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_update"](arg_newVal.COM_val))
 
     @property
@@ -16236,19 +16236,19 @@ class IMissionControlSequenceHold(object):
         with agmarshall.VARIANT_BOOL_arg(newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_enable_warning_message"](arg_newVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlAdvanced") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ADVANCED") -> None:
         """Enables or disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlAdvanced, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ADVANCED, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlAdvanced") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ADVANCED") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlAdvanced, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ADVANCED, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlAdvanced") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ADVANCED") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlAdvanced, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ADVANCED, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -16339,52 +16339,52 @@ class IMissionControlSequenceUpdate(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissionControlSequenceUpdate.")
     
-    def set_action_and_value(self, parameterType:"AgEVAUpdateParam", actionType:"AgEVAUpdateAction", value:float) -> None:
+    def set_action_and_value(self, parameterType:"VA_UPDATE_PARAM", actionType:"VA_UPDATE_ACTION", value:float) -> None:
         """Sets an action and the new value."""
-        with agmarshall.AgEnum_arg(AgEVAUpdateParam, parameterType) as arg_parameterType, \
-             agmarshall.AgEnum_arg(AgEVAUpdateAction, actionType) as arg_actionType, \
+        with agmarshall.AgEnum_arg(VA_UPDATE_PARAM, parameterType) as arg_parameterType, \
+             agmarshall.AgEnum_arg(VA_UPDATE_ACTION, actionType) as arg_actionType, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_action_and_value"](arg_parameterType.COM_val, arg_actionType.COM_val, arg_value.COM_val))
 
-    def get_action(self, parameterType:"AgEVAUpdateParam") -> "AgEVAUpdateAction":
+    def get_action(self, parameterType:"VA_UPDATE_PARAM") -> "VA_UPDATE_ACTION":
         """Gets the action type for a parameter."""
-        with agmarshall.AgEnum_arg(AgEVAUpdateParam, parameterType) as arg_parameterType, \
-             agmarshall.AgEnum_arg(AgEVAUpdateAction) as arg_pActionType:
+        with agmarshall.AgEnum_arg(VA_UPDATE_PARAM, parameterType) as arg_parameterType, \
+             agmarshall.AgEnum_arg(VA_UPDATE_ACTION) as arg_pActionType:
             agcls.evaluate_hresult(self.__dict__["_get_action"](arg_parameterType.COM_val, byref(arg_pActionType.COM_val)))
             return arg_pActionType.python_val
 
-    def get_value(self, parameterType:"AgEVAUpdateParam") -> float:
+    def get_value(self, parameterType:"VA_UPDATE_PARAM") -> float:
         """Gets the value type for a parameter."""
-        with agmarshall.AgEnum_arg(AgEVAUpdateParam, parameterType) as arg_parameterType, \
+        with agmarshall.AgEnum_arg(VA_UPDATE_PARAM, parameterType) as arg_parameterType, \
              agmarshall.DOUBLE_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_value"](arg_parameterType.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_action(self, parameterName:"AgEVAUpdateParam", actionType:"AgEVAUpdateAction") -> None:
+    def set_action(self, parameterName:"VA_UPDATE_PARAM", actionType:"VA_UPDATE_ACTION") -> None:
         """Sets the update action type."""
-        with agmarshall.AgEnum_arg(AgEVAUpdateParam, parameterName) as arg_parameterName, \
-             agmarshall.AgEnum_arg(AgEVAUpdateAction, actionType) as arg_actionType:
+        with agmarshall.AgEnum_arg(VA_UPDATE_PARAM, parameterName) as arg_parameterName, \
+             agmarshall.AgEnum_arg(VA_UPDATE_ACTION, actionType) as arg_actionType:
             agcls.evaluate_hresult(self.__dict__["_set_action"](arg_parameterName.COM_val, arg_actionType.COM_val))
 
-    def set_value(self, parameterName:"AgEVAUpdateParam", value:float) -> None:
+    def set_value(self, parameterName:"VA_UPDATE_PARAM", value:float) -> None:
         """Sets the update value."""
-        with agmarshall.AgEnum_arg(AgEVAUpdateParam, parameterName) as arg_parameterName, \
+        with agmarshall.AgEnum_arg(VA_UPDATE_PARAM, parameterName) as arg_parameterName, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_value"](arg_parameterName.COM_val, arg_value.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlUpdate") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_UPDATE") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlUpdate, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_UPDATE, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlUpdate") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_UPDATE") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlUpdate, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_UPDATE, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlUpdate") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_UPDATE") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlUpdate, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_UPDATE, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -16443,15 +16443,15 @@ class IMissionControlSequenceReturn(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissionControlSequenceReturn.")
     
     @property
-    def return_control_to_parent_sequence(self) -> "AgEVAReturnControl":
+    def return_control_to_parent_sequence(self) -> "VA_RETURN_CONTROL":
         """The state of the segment."""
-        with agmarshall.AgEnum_arg(AgEVAReturnControl) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_RETURN_CONTROL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_return_control_to_parent_sequence"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @return_control_to_parent_sequence.setter
-    def return_control_to_parent_sequence(self, newVal:"AgEVAReturnControl") -> None:
-        with agmarshall.AgEnum_arg(AgEVAReturnControl, newVal) as arg_newVal:
+    def return_control_to_parent_sequence(self, newVal:"VA_RETURN_CONTROL") -> None:
+        with agmarshall.AgEnum_arg(VA_RETURN_CONTROL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_return_control_to_parent_sequence"](arg_newVal.COM_val))
 
 
@@ -16596,21 +16596,21 @@ class IProfile(object):
             agcls.evaluate_hresult(self.__dict__["_set_user_comment"](arg_inVal.COM_val))
 
     @property
-    def mode(self) -> "AgEVAProfileMode":
+    def mode(self) -> "VA_PROFILE_MODE":
         """The profile's mode."""
-        with agmarshall.AgEnum_arg(AgEVAProfileMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_PROFILE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @mode.setter
-    def mode(self, inVal:"AgEVAProfileMode") -> None:
-        with agmarshall.AgEnum_arg(AgEVAProfileMode, inVal) as arg_inVal:
+    def mode(self, inVal:"VA_PROFILE_MODE") -> None:
+        with agmarshall.AgEnum_arg(VA_PROFILE_MODE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_mode"](arg_inVal.COM_val))
 
     @property
-    def type(self) -> "AgEVAProfile":
+    def type(self) -> "VA_PROFILE":
         """Return the current profile type."""
-        with agmarshall.AgEnum_arg(AgEVAProfile) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_PROFILE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -16745,28 +16745,28 @@ class IProfileCollection(object):
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName:
             agcls.evaluate_hresult(self.__dict__["_cut"](arg_indexOrName.COM_val))
 
-    def paste(self, indexOrName:typing.Any, direction:"AgEVAProfileInsertDirection") -> "IProfile":
+    def paste(self, indexOrName:typing.Any, direction:"VA_PROFILE_INSERT_DIRECTION") -> "IProfile":
         """Pastes the profile from the clipboard and inserts into the list."""
         with agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
-             agmarshall.AgEnum_arg(AgEVAProfileInsertDirection, direction) as arg_direction, \
+             agmarshall.AgEnum_arg(VA_PROFILE_INSERT_DIRECTION, direction) as arg_direction, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_paste"](arg_indexOrName.COM_val, arg_direction.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def insert_copy(self, profile:"IProfile", indexOrName:typing.Any, direction:"AgEVAProfileInsertDirection") -> "IProfile":
+    def insert_copy(self, profile:"IProfile", indexOrName:typing.Any, direction:"VA_PROFILE_INSERT_DIRECTION") -> "IProfile":
         """Copies the profile and inserts the copy into the list."""
         with agmarshall.AgInterface_in_arg(profile, IProfile) as arg_profile, \
              agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
-             agmarshall.AgEnum_arg(AgEVAProfileInsertDirection, direction) as arg_direction, \
+             agmarshall.AgEnum_arg(VA_PROFILE_INSERT_DIRECTION, direction) as arg_direction, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_insert_copy"](arg_profile.COM_val, arg_indexOrName.COM_val, arg_direction.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def add2(self, profileName:str, indexOrName:typing.Any, direction:"AgEVAProfileInsertDirection") -> "IProfile":
+    def add2(self, profileName:str, indexOrName:typing.Any, direction:"VA_PROFILE_INSERT_DIRECTION") -> "IProfile":
         """Adds a profile."""
         with agmarshall.BSTR_arg(profileName) as arg_profileName, \
              agmarshall.VARIANT_arg(indexOrName) as arg_indexOrName, \
-             agmarshall.AgEnum_arg(AgEVAProfileInsertDirection, direction) as arg_direction, \
+             agmarshall.AgEnum_arg(VA_PROFILE_INSERT_DIRECTION, direction) as arg_direction, \
              agmarshall.AgInterface_out_arg() as arg_ppVAProfile:
             agcls.evaluate_hresult(self.__dict__["_add2"](arg_profileName.COM_val, arg_indexOrName.COM_val, arg_direction.COM_val, byref(arg_ppVAProfile.COM_val)))
             return arg_ppVAProfile.python_val
@@ -16856,27 +16856,27 @@ class IMissionControlSequenceTargetSequence(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissionControlSequenceTargetSequence.")
     
     @property
-    def action(self) -> "AgEVATargetSeqAction":
+    def action(self) -> "VA_TARGET_SEQ_ACTION":
         """Whether to run the sequence nominally or using profiles."""
-        with agmarshall.AgEnum_arg(AgEVATargetSeqAction) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_TARGET_SEQ_ACTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_action"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @action.setter
-    def action(self, newVal:"AgEVATargetSeqAction") -> None:
-        with agmarshall.AgEnum_arg(AgEVATargetSeqAction, newVal) as arg_newVal:
+    def action(self, newVal:"VA_TARGET_SEQ_ACTION") -> None:
+        with agmarshall.AgEnum_arg(VA_TARGET_SEQ_ACTION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_action"](arg_newVal.COM_val))
 
     @property
-    def when_profiles_finish(self) -> "AgEVAProfilesFinish":
+    def when_profiles_finish(self) -> "VA_PROFILES_FINISH":
         """When Profiles Converge - the action to be carried out if targeting has converged."""
-        with agmarshall.AgEnum_arg(AgEVAProfilesFinish) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_PROFILES_FINISH) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_when_profiles_finish"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @when_profiles_finish.setter
-    def when_profiles_finish(self, newVal:"AgEVAProfilesFinish") -> None:
-        with agmarshall.AgEnum_arg(AgEVAProfilesFinish, newVal) as arg_newVal:
+    def when_profiles_finish(self, newVal:"VA_PROFILES_FINISH") -> None:
+        with agmarshall.AgEnum_arg(VA_PROFILES_FINISH, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_when_profiles_finish"](arg_newVal.COM_val))
 
     @property
@@ -17126,15 +17126,15 @@ class IDifferentialCorrectorControl(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_step"](arg_newVal.COM_val))
 
     @property
-    def scaling_method(self) -> "AgEVADCScalingMethod":
+    def scaling_method(self) -> "VADC_SCALING_METHOD":
         """Allows better numerical behavior if the parameters have very different magnitudes. The same scaling method is applied to all parameters."""
-        with agmarshall.AgEnum_arg(AgEVADCScalingMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VADC_SCALING_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_scaling_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @scaling_method.setter
-    def scaling_method(self, newVal:"AgEVADCScalingMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVADCScalingMethod, newVal) as arg_newVal:
+    def scaling_method(self, newVal:"VADC_SCALING_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VADC_SCALING_METHOD, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_scaling_method"](arg_newVal.COM_val))
 
     @property
@@ -17331,15 +17331,15 @@ class IDifferentialCorrectorResult(object):
             agcls.evaluate_hresult(self.__dict__["_set_tolerance"](arg_newVal.COM_val))
 
     @property
-    def scaling_method(self) -> "AgEVADCScalingMethod":
+    def scaling_method(self) -> "VADC_SCALING_METHOD":
         """Allows better numerical behavior if the constraints have very different magnitudes. The same scaling method is applied to all constraints."""
-        with agmarshall.AgEnum_arg(AgEVADCScalingMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VADC_SCALING_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_scaling_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @scaling_method.setter
-    def scaling_method(self, newVal:"AgEVADCScalingMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVADCScalingMethod, newVal) as arg_newVal:
+    def scaling_method(self, newVal:"VADC_SCALING_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VADC_SCALING_METHOD, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_scaling_method"](arg_newVal.COM_val))
 
     @property
@@ -18297,16 +18297,16 @@ class ITargeterGraphResult(object):
             agcls.evaluate_hresult(self.__dict__["_set_y_axis"](arg_inVal.COM_val))
 
     @property
-    def graph_option(self) -> "AgEVAGraphOption":
+    def graph_option(self) -> "VA_GRAPH_OPTION":
         """Graph option."""
-        with agmarshall.AgEnum_arg(AgEVAGraphOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(VA_GRAPH_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_graph_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @graph_option.setter
-    def graph_option(self, inVal:"AgEVAGraphOption") -> None:
+    def graph_option(self, inVal:"VA_GRAPH_OPTION") -> None:
         """Graph option."""
-        with agmarshall.AgEnum_arg(AgEVAGraphOption, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_GRAPH_OPTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_graph_option"](arg_inVal.COM_val))
 
     @property
@@ -19077,15 +19077,15 @@ class IProfileDifferentialCorrector(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_enable_display_status"](arg_newVal.COM_val))
 
     @property
-    def convergence_criteria(self) -> "AgEVAConvergenceCriteria":
+    def convergence_criteria(self) -> "VA_CONVERGENCE_CRITERIA":
         """The convergence criteria."""
-        with agmarshall.AgEnum_arg(AgEVAConvergenceCriteria) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CONVERGENCE_CRITERIA) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_convergence_criteria"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @convergence_criteria.setter
-    def convergence_criteria(self, newVal:"AgEVAConvergenceCriteria") -> None:
-        with agmarshall.AgEnum_arg(AgEVAConvergenceCriteria, newVal) as arg_newVal:
+    def convergence_criteria(self, newVal:"VA_CONVERGENCE_CRITERIA") -> None:
+        with agmarshall.AgEnum_arg(VA_CONVERGENCE_CRITERIA, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_convergence_criteria"](arg_newVal.COM_val))
 
     @property
@@ -19173,15 +19173,15 @@ class IProfileDifferentialCorrector(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_homotopy_steps"](arg_newVal.COM_val))
 
     @property
-    def derivative_calc_method(self) -> "AgEVADeriveCalcMethod":
+    def derivative_calc_method(self) -> "VA_DERIVE_CALC_METHOD":
         """The derivative calculation method."""
-        with agmarshall.AgEnum_arg(AgEVADeriveCalcMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DERIVE_CALC_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_derivative_calc_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @derivative_calc_method.setter
-    def derivative_calc_method(self, newVal:"AgEVADeriveCalcMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVADeriveCalcMethod, newVal) as arg_newVal:
+    def derivative_calc_method(self, newVal:"VA_DERIVE_CALC_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VA_DERIVE_CALC_METHOD, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_derivative_calc_method"](arg_newVal.COM_val))
 
     @property
@@ -19221,15 +19221,15 @@ class IProfileDifferentialCorrector(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_enable_b_plane_perturbations"](arg_newVal.COM_val))
 
     @property
-    def draw_perturbation(self) -> "AgEVADrawPerturbation":
+    def draw_perturbation(self) -> "VA_DRAW_PERTURBATION":
         """Defines the display of perturbations in the 2D and 3D Graphics windows, if you have set Astrogator to draw while calculating."""
-        with agmarshall.AgEnum_arg(AgEVADrawPerturbation) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAW_PERTURBATION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_draw_perturbation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @draw_perturbation.setter
-    def draw_perturbation(self, newVal:"AgEVADrawPerturbation") -> None:
-        with agmarshall.AgEnum_arg(AgEVADrawPerturbation, newVal) as arg_newVal:
+    def draw_perturbation(self, newVal:"VA_DRAW_PERTURBATION") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAW_PERTURBATION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_draw_perturbation"](arg_newVal.COM_val))
 
     @property
@@ -19240,15 +19240,15 @@ class IProfileDifferentialCorrector(IProfile):
             return arg_ppRetVal.python_val
 
     @property
-    def root_finding_algorithm(self) -> "AgEVARootFindingAlgorithm":
+    def root_finding_algorithm(self) -> "VA_ROOT_FINDING_ALGORITHM":
         """The root-finding algorithm to use."""
-        with agmarshall.AgEnum_arg(AgEVARootFindingAlgorithm) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ROOT_FINDING_ALGORITHM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_root_finding_algorithm"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @root_finding_algorithm.setter
-    def root_finding_algorithm(self, pVal:"AgEVARootFindingAlgorithm") -> None:
-        with agmarshall.AgEnum_arg(AgEVARootFindingAlgorithm, pVal) as arg_pVal:
+    def root_finding_algorithm(self, pVal:"VA_ROOT_FINDING_ALGORITHM") -> None:
+        with agmarshall.AgEnum_arg(VA_ROOT_FINDING_ALGORITHM, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_root_finding_algorithm"](arg_pVal.COM_val))
 
     @property
@@ -19334,15 +19334,15 @@ class IProfileChangeManeuverType(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_segment"](arg_pSegment.COM_val))
 
     @property
-    def maneuver_type(self) -> "AgEVAManeuverType":
+    def maneuver_type(self) -> "VA_MANEUVER_TYPE":
         """The new maneuver type for the targeted segment."""
-        with agmarshall.AgEnum_arg(AgEVAManeuverType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_MANEUVER_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_maneuver_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @maneuver_type.setter
-    def maneuver_type(self, newVal:"AgEVAManeuverType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAManeuverType, newVal) as arg_newVal:
+    def maneuver_type(self, newVal:"VA_MANEUVER_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_MANEUVER_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_type"](arg_newVal.COM_val))
 
 
@@ -19435,15 +19435,15 @@ class IProfileScriptingTool(IProfile):
             return arg_ppRetVal.python_val
 
     @property
-    def language_type(self) -> "AgEVALanguage":
+    def language_type(self) -> "VA_LANGUAGE":
         """The scripting language being used."""
-        with agmarshall.AgEnum_arg(AgEVALanguage) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LANGUAGE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_language_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @language_type.setter
-    def language_type(self, inVal:"AgEVALanguage") -> None:
-        with agmarshall.AgEnum_arg(AgEVALanguage, inVal) as arg_inVal:
+    def language_type(self, inVal:"VA_LANGUAGE") -> None:
+        with agmarshall.AgEnum_arg(VA_LANGUAGE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_language_type"](arg_inVal.COM_val))
 
     def script_text(self, script:str) -> None:
@@ -19523,15 +19523,15 @@ class IProfileChangeReturnSegment(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_segment"](arg_pVAMCSReturn.COM_val))
 
     @property
-    def state(self) -> "AgEVAReturnControl":
+    def state(self) -> "VA_RETURN_CONTROL":
         """The new state for the targeted return segment."""
-        with agmarshall.AgEnum_arg(AgEVAReturnControl) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_RETURN_CONTROL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_state"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @state.setter
-    def state(self, newVal:"AgEVAReturnControl") -> None:
-        with agmarshall.AgEnum_arg(AgEVAReturnControl, newVal) as arg_newVal:
+    def state(self, newVal:"VA_RETURN_CONTROL") -> None:
+        with agmarshall.AgEnum_arg(VA_RETURN_CONTROL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_state"](arg_newVal.COM_val))
 
 
@@ -19673,15 +19673,15 @@ class IProfileChangeStopSegment(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_segment"](arg_pVAMCSStop.COM_val))
 
     @property
-    def state(self) -> "AgEVAState":
+    def state(self) -> "VA_STATE":
         """The new state of the targeted stop segment."""
-        with agmarshall.AgEnum_arg(AgEVAState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_state"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @state.setter
-    def state(self, newVal:"AgEVAState") -> None:
-        with agmarshall.AgEnum_arg(AgEVAState, newVal) as arg_newVal:
+    def state(self, newVal:"VA_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_STATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_state"](arg_newVal.COM_val))
 
 
@@ -19754,15 +19754,15 @@ class IProfileChangeStoppingConditionState(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_segment"](arg_mCSSegment.COM_val))
 
     @property
-    def state(self) -> "AgEVAState":
+    def state(self) -> "VA_STATE":
         """The new state of the targeted stopping condition."""
-        with agmarshall.AgEnum_arg(AgEVAState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_state"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @state.setter
-    def state(self, newVal:"AgEVAState") -> None:
-        with agmarshall.AgEnum_arg(AgEVAState, newVal) as arg_newVal:
+    def state(self, newVal:"VA_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_STATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_state"](arg_newVal.COM_val))
 
     def set_trigger(self, stoppingCondition:"IStoppingCondition") -> None:
@@ -20143,15 +20143,15 @@ class IUserVariableUpdate(object):
             agcls.evaluate_hresult(self.__dict__["_set_variable_value"](arg_inVal.COM_val))
 
     @property
-    def variable_action(self) -> "AgEVAUpdateAction":
+    def variable_action(self) -> "VA_UPDATE_ACTION":
         """Action to be performed using the value."""
-        with agmarshall.AgEnum_arg(AgEVAUpdateAction) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_UPDATE_ACTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_variable_action"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @variable_action.setter
-    def variable_action(self, inVal:"AgEVAUpdateAction") -> None:
-        with agmarshall.AgEnum_arg(AgEVAUpdateAction, inVal) as arg_inVal:
+    def variable_action(self, inVal:"VA_UPDATE_ACTION") -> None:
+        with agmarshall.AgEnum_arg(VA_UPDATE_ACTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_variable_action"](arg_inVal.COM_val))
 
     def enable_control_parameter(self) -> None:
@@ -20720,15 +20720,15 @@ class ISNOPTResult(object):
             agcls.evaluate_hresult(self.__dict__["_set_weight"](arg_newVal.COM_val))
 
     @property
-    def goal(self) -> "AgEVASNOPTGoal":
+    def goal(self) -> "VASNOPT_GOAL":
         """The purpose of the element in the problem."""
-        with agmarshall.AgEnum_arg(AgEVASNOPTGoal) as arg_pVal:
+        with agmarshall.AgEnum_arg(VASNOPT_GOAL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_goal"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @goal.setter
-    def goal(self, inVal:"AgEVASNOPTGoal") -> None:
-        with agmarshall.AgEnum_arg(AgEVASNOPTGoal, inVal) as arg_inVal:
+    def goal(self, inVal:"VASNOPT_GOAL") -> None:
+        with agmarshall.AgEnum_arg(VASNOPT_GOAL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_goal"](arg_inVal.COM_val))
 
     @property
@@ -21268,15 +21268,15 @@ class IIPOPTResult(object):
             agcls.evaluate_hresult(self.__dict__["_set_weight"](arg_newVal.COM_val))
 
     @property
-    def goal(self) -> "AgEVAIPOPTGoal":
+    def goal(self) -> "VAIPOPT_GOAL":
         """The purpose of the element in the problem."""
-        with agmarshall.AgEnum_arg(AgEVAIPOPTGoal) as arg_pVal:
+        with agmarshall.AgEnum_arg(VAIPOPT_GOAL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_goal"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @goal.setter
-    def goal(self, inVal:"AgEVAIPOPTGoal") -> None:
-        with agmarshall.AgEnum_arg(AgEVAIPOPTGoal, inVal) as arg_inVal:
+    def goal(self, inVal:"VAIPOPT_GOAL") -> None:
+        with agmarshall.AgEnum_arg(VAIPOPT_GOAL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_goal"](arg_inVal.COM_val))
 
     @property
@@ -21420,15 +21420,15 @@ class IManeuverOptimalFinite(IManeuver):
             IManeuver.__setattr__(self, attrname, value)
     
     @property
-    def pressure_mode(self) -> "AgEVAPressureMode":
+    def pressure_mode(self) -> "VA_PRESSURE_MODE":
         """The pressure mode."""
-        with agmarshall.AgEnum_arg(AgEVAPressureMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_PRESSURE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_pressure_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @pressure_mode.setter
-    def pressure_mode(self, newVal:"AgEVAPressureMode") -> None:
-        with agmarshall.AgEnum_arg(AgEVAPressureMode, newVal) as arg_newVal:
+    def pressure_mode(self, newVal:"VA_PRESSURE_MODE") -> None:
+        with agmarshall.AgEnum_arg(VA_PRESSURE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_pressure_mode"](arg_newVal.COM_val))
 
     @property
@@ -21444,16 +21444,16 @@ class IManeuverOptimalFinite(IManeuver):
             agcls.evaluate_hresult(self.__dict__["_set_thrust_efficiency"](arg_newVal.COM_val))
 
     @property
-    def thrust_efficiency_mode(self) -> "AgEVAThrustType":
+    def thrust_efficiency_mode(self) -> "VA_THRUST_TYPE":
         """Thrust - the calculations that are effected by the thrust efficiency value."""
-        with agmarshall.AgEnum_arg(AgEVAThrustType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_THRUST_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_thrust_efficiency_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @thrust_efficiency_mode.setter
-    def thrust_efficiency_mode(self, newVal:"AgEVAThrustType") -> None:
+    def thrust_efficiency_mode(self, newVal:"VA_THRUST_TYPE") -> None:
         """Mode indicating fraction of ideal thrust applied."""
-        with agmarshall.AgEnum_arg(AgEVAThrustType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(VA_THRUST_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_thrust_efficiency_mode"](arg_newVal.COM_val))
 
     @property
@@ -21481,15 +21481,15 @@ class IManeuverOptimalFinite(IManeuver):
             agcls.evaluate_hresult(self.__dict__["_set_initial_guess_file_name"](arg_newVal.COM_val))
 
     @property
-    def seed_method(self) -> "AgEVAOptimalFiniteSeedMethod":
+    def seed_method(self) -> "VA_OPTIMAL_FINITE_SEED_METHOD":
         """Initial seed method."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteSeedMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_SEED_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_seed_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @seed_method.setter
-    def seed_method(self, newVal:"AgEVAOptimalFiniteSeedMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteSeedMethod, newVal) as arg_newVal:
+    def seed_method(self, newVal:"VA_OPTIMAL_FINITE_SEED_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_SEED_METHOD, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_seed_method"](arg_newVal.COM_val))
 
     def run_seed(self) -> None:
@@ -21504,15 +21504,15 @@ class IManeuverOptimalFinite(IManeuver):
             return arg_pVal.python_val
 
     @property
-    def run_mode(self) -> "AgEVAOptimalFiniteRunMode":
+    def run_mode(self) -> "VA_OPTIMAL_FINITE_RUN_MODE":
         """Run mode."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteRunMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_RUN_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_run_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @run_mode.setter
-    def run_mode(self, newVal:"AgEVAOptimalFiniteRunMode") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteRunMode, newVal) as arg_newVal:
+    def run_mode(self, newVal:"VA_OPTIMAL_FINITE_RUN_MODE") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_RUN_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_run_mode"](arg_newVal.COM_val))
 
     @property
@@ -21528,39 +21528,39 @@ class IManeuverOptimalFinite(IManeuver):
             agcls.evaluate_hresult(self.__dict__["_set_halt_mcs_when_no_convergence"](arg_newVal.COM_val))
 
     @property
-    def discretization_strategy(self) -> "AgEVAOptimalFiniteDiscretizationStrategy":
+    def discretization_strategy(self) -> "VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY":
         """Discretization Strategy."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteDiscretizationStrategy) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_discretization_strategy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @discretization_strategy.setter
-    def discretization_strategy(self, newVal:"AgEVAOptimalFiniteDiscretizationStrategy") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteDiscretizationStrategy, newVal) as arg_newVal:
+    def discretization_strategy(self, newVal:"VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_DISCRETIZATION_STRATEGY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_discretization_strategy"](arg_newVal.COM_val))
 
     @property
-    def working_variables(self) -> "AgEVAOptimalFiniteWorkingVariables":
+    def working_variables(self) -> "VA_OPTIMAL_FINITE_WORKING_VARIABLES":
         """Working Variables."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteWorkingVariables) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_WORKING_VARIABLES) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_working_variables"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @working_variables.setter
-    def working_variables(self, newVal:"AgEVAOptimalFiniteWorkingVariables") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteWorkingVariables, newVal) as arg_newVal:
+    def working_variables(self, newVal:"VA_OPTIMAL_FINITE_WORKING_VARIABLES") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_WORKING_VARIABLES, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_working_variables"](arg_newVal.COM_val))
 
     @property
-    def scaling_options(self) -> "AgEVAOptimalFiniteScalingOptions":
+    def scaling_options(self) -> "VA_OPTIMAL_FINITE_SCALING_OPTIONS":
         """Scaling Options."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteScalingOptions) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_SCALING_OPTIONS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_scaling_options"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @scaling_options.setter
-    def scaling_options(self, newVal:"AgEVAOptimalFiniteScalingOptions") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteScalingOptions, newVal) as arg_newVal:
+    def scaling_options(self, newVal:"VA_OPTIMAL_FINITE_SCALING_OPTIONS") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_SCALING_OPTIONS, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_scaling_options"](arg_newVal.COM_val))
 
     @property
@@ -21618,15 +21618,15 @@ class IManeuverOptimalFinite(IManeuver):
             return arg_pVal.python_val
 
     @property
-    def export_format(self) -> "AgEVAOptimalFiniteExportNodesFormat":
+    def export_format(self) -> "VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT":
         """Format for exporting collocation control variables."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteExportNodesFormat) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_export_format"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @export_format.setter
-    def export_format(self, newVal:"AgEVAOptimalFiniteExportNodesFormat") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteExportNodesFormat, newVal) as arg_newVal:
+    def export_format(self, newVal:"VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_EXPORT_NODES_FORMAT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_export_format"](arg_newVal.COM_val))
 
     @property
@@ -21642,15 +21642,15 @@ class IManeuverOptimalFinite(IManeuver):
             agcls.evaluate_hresult(self.__dict__["_export_nodes"](arg_fileName.COM_val))
 
     @property
-    def initial_guess_interpolation_method(self) -> "AgEVAOptimalFiniteGuessMethod":
+    def initial_guess_interpolation_method(self) -> "VA_OPTIMAL_FINITE_GUESS_METHOD":
         """Guess interpolation method."""
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteGuessMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_GUESS_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_initial_guess_interpolation_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @initial_guess_interpolation_method.setter
-    def initial_guess_interpolation_method(self, newVal:"AgEVAOptimalFiniteGuessMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVAOptimalFiniteGuessMethod, newVal) as arg_newVal:
+    def initial_guess_interpolation_method(self, newVal:"VA_OPTIMAL_FINITE_GUESS_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VA_OPTIMAL_FINITE_GUESS_METHOD, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_initial_guess_interpolation_method"](arg_newVal.COM_val))
 
     @property
@@ -21987,15 +21987,15 @@ class IProfileLambertProfile(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_newVal.COM_val))
 
     @property
-    def target_coord_type(self) -> "AgEVALambertTargetCoordType":
+    def target_coord_type(self) -> "VA_LAMBERT_TARGET_COORD_TYPE":
         """The target coordinate type."""
-        with agmarshall.AgEnum_arg(AgEVALambertTargetCoordType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_TARGET_COORD_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_target_coord_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_target_coord_type(self, elementType:"AgEVALambertTargetCoordType") -> None:
+    def set_target_coord_type(self, elementType:"VA_LAMBERT_TARGET_COORD_TYPE") -> None:
         """Selects a target coordinate type."""
-        with agmarshall.AgEnum_arg(AgEVALambertTargetCoordType, elementType) as arg_elementType:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_TARGET_COORD_TYPE, elementType) as arg_elementType:
             agcls.evaluate_hresult(self.__dict__["_set_target_coord_type"](arg_elementType.COM_val))
 
     @property
@@ -22155,15 +22155,15 @@ class IProfileLambertProfile(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_target_true_anomaly"](arg_newVal.COM_val))
 
     @property
-    def solution_option(self) -> "AgEVALambertSolutionOptionType":
+    def solution_option(self) -> "VA_LAMBERT_SOLUTION_OPTION_TYPE":
         """Lambert solution calculation type."""
-        with agmarshall.AgEnum_arg(AgEVALambertSolutionOptionType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_SOLUTION_OPTION_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_solution_option"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @solution_option.setter
-    def solution_option(self, newVal:"AgEVALambertSolutionOptionType") -> None:
-        with agmarshall.AgEnum_arg(AgEVALambertSolutionOptionType, newVal) as arg_newVal:
+    def solution_option(self, newVal:"VA_LAMBERT_SOLUTION_OPTION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_SOLUTION_OPTION_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_solution_option"](arg_newVal.COM_val))
 
     @property
@@ -22191,27 +22191,27 @@ class IProfileLambertProfile(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_revolutions"](arg_newVal.COM_val))
 
     @property
-    def orbital_energy(self) -> "AgEVALambertOrbitalEnergyType":
+    def orbital_energy(self) -> "VA_LAMBERT_ORBITAL_ENERGY_TYPE":
         """The orbital energy for the Lambert solution."""
-        with agmarshall.AgEnum_arg(AgEVALambertOrbitalEnergyType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_ORBITAL_ENERGY_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_orbital_energy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @orbital_energy.setter
-    def orbital_energy(self, newVal:"AgEVALambertOrbitalEnergyType") -> None:
-        with agmarshall.AgEnum_arg(AgEVALambertOrbitalEnergyType, newVal) as arg_newVal:
+    def orbital_energy(self, newVal:"VA_LAMBERT_ORBITAL_ENERGY_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_ORBITAL_ENERGY_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_orbital_energy"](arg_newVal.COM_val))
 
     @property
-    def direction_of_motion(self) -> "AgEVALambertDirectionOfMotionType":
+    def direction_of_motion(self) -> "VA_LAMBERT_DIRECTION_OF_MOTION_TYPE":
         """The direction of motion (long or short) for the Lambert solution."""
-        with agmarshall.AgEnum_arg(AgEVALambertDirectionOfMotionType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_DIRECTION_OF_MOTION_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction_of_motion"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @direction_of_motion.setter
-    def direction_of_motion(self, newVal:"AgEVALambertDirectionOfMotionType") -> None:
-        with agmarshall.AgEnum_arg(AgEVALambertDirectionOfMotionType, newVal) as arg_newVal:
+    def direction_of_motion(self, newVal:"VA_LAMBERT_DIRECTION_OF_MOTION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_DIRECTION_OF_MOTION_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_direction_of_motion"](arg_newVal.COM_val))
 
     @property
@@ -22487,15 +22487,15 @@ class IProfileLambertSearchProfile(IProfile):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_newVal.COM_val))
 
     @property
-    def target_coord_type(self) -> "AgEVALambertTargetCoordType":
+    def target_coord_type(self) -> "VA_LAMBERT_TARGET_COORD_TYPE":
         """The target coordinate type."""
-        with agmarshall.AgEnum_arg(AgEVALambertTargetCoordType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_TARGET_COORD_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_target_coord_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_target_coord_type(self, elementType:"AgEVALambertTargetCoordType") -> None:
+    def set_target_coord_type(self, elementType:"VA_LAMBERT_TARGET_COORD_TYPE") -> None:
         """Selects a target coordinate type."""
-        with agmarshall.AgEnum_arg(AgEVALambertTargetCoordType, elementType) as arg_elementType:
+        with agmarshall.AgEnum_arg(VA_LAMBERT_TARGET_COORD_TYPE, elementType) as arg_elementType:
             agcls.evaluate_hresult(self.__dict__["_set_target_coord_type"](arg_elementType.COM_val))
 
     @property
@@ -23151,10 +23151,10 @@ class ICalcObjectLinkEmbedControlCollection(object):
             raise StopIteration
         return agmarshall.python_val_from_VARIANT(nextval, clear_variant=True)
     
-    def add(self, name:str, refType:"AgEComponentLinkEmbedControlReferenceType") -> "IComponentLinkEmbedControl":
+    def add(self, name:str, refType:"COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE") -> "IComponentLinkEmbedControl":
         """Adds a link/embed calc object to the collection."""
         with agmarshall.BSTR_arg(name) as arg_name, \
-             agmarshall.AgEnum_arg(AgEComponentLinkEmbedControlReferenceType, refType) as arg_refType, \
+             agmarshall.AgEnum_arg(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE, refType) as arg_refType, \
              agmarshall.AgInterface_out_arg() as arg_ppComponentLinkEmbedControl:
             agcls.evaluate_hresult(self.__dict__["_add"](arg_name.COM_val, arg_refType.COM_val, byref(arg_ppComponentLinkEmbedControl.COM_val)))
             return arg_ppComponentLinkEmbedControl.python_val
@@ -23610,16 +23610,16 @@ class IStateCalcOrbitDelaunayG(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVAElement":
+    def element_type(self) -> "VA_ELEMENT":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVAElement) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVAElement") -> None:
+    def element_type(self, inVal:"VA_ELEMENT") -> None:
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVAElement, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -23679,16 +23679,16 @@ class IStateCalcOrbitDelaunayH(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVAElement":
+    def element_type(self) -> "VA_ELEMENT":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVAElement) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVAElement") -> None:
+    def element_type(self, inVal:"VA_ELEMENT") -> None:
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVAElement, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -23748,16 +23748,16 @@ class IStateCalcOrbitDelaunayL(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVAElement":
+    def element_type(self) -> "VA_ELEMENT":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVAElement) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVAElement") -> None:
+    def element_type(self, inVal:"VA_ELEMENT") -> None:
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVAElement, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -23817,16 +23817,16 @@ class IStateCalcOrbitSemiLatusRectum(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVAElement":
+    def element_type(self) -> "VA_ELEMENT":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVAElement) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVAElement") -> None:
+    def element_type(self, inVal:"VA_ELEMENT") -> None:
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVAElement, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_ELEMENT, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -23975,27 +23975,27 @@ class IStateCalcCartSTMElem(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def final_var(self) -> "AgEVASTMPertVariables":
+    def final_var(self) -> "VASTM_PERT_VARIABLES":
         """The final variation variable."""
-        with agmarshall.AgEnum_arg(AgEVASTMPertVariables) as arg_pVal:
+        with agmarshall.AgEnum_arg(VASTM_PERT_VARIABLES) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_var"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @final_var.setter
-    def final_var(self, inVal:"AgEVASTMPertVariables") -> None:
-        with agmarshall.AgEnum_arg(AgEVASTMPertVariables, inVal) as arg_inVal:
+    def final_var(self, inVal:"VASTM_PERT_VARIABLES") -> None:
+        with agmarshall.AgEnum_arg(VASTM_PERT_VARIABLES, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_var"](arg_inVal.COM_val))
 
     @property
-    def init_var(self) -> "AgEVASTMPertVariables":
+    def init_var(self) -> "VASTM_PERT_VARIABLES":
         """The initial variation variable."""
-        with agmarshall.AgEnum_arg(AgEVASTMPertVariables) as arg_pVal:
+        with agmarshall.AgEnum_arg(VASTM_PERT_VARIABLES) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_init_var"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @init_var.setter
-    def init_var(self, inVal:"AgEVASTMPertVariables") -> None:
-        with agmarshall.AgEnum_arg(AgEVASTMPertVariables, inVal) as arg_inVal:
+    def init_var(self, inVal:"VASTM_PERT_VARIABLES") -> None:
+        with agmarshall.AgEnum_arg(VASTM_PERT_VARIABLES, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_init_var"](arg_inVal.COM_val))
 
 
@@ -24058,27 +24058,27 @@ class IStateCalcSTMEigenval(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def eigenvalue_number(self) -> "AgEVASTMEigenNumber":
+    def eigenvalue_number(self) -> "VASTM_EIGEN_NUMBER":
         """The number identifying one of the six Eigenvalues."""
-        with agmarshall.AgEnum_arg(AgEVASTMEigenNumber) as arg_pVal:
+        with agmarshall.AgEnum_arg(VASTM_EIGEN_NUMBER) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_eigenvalue_number"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @eigenvalue_number.setter
-    def eigenvalue_number(self, inVal:"AgEVASTMEigenNumber") -> None:
-        with agmarshall.AgEnum_arg(AgEVASTMEigenNumber, inVal) as arg_inVal:
+    def eigenvalue_number(self, inVal:"VASTM_EIGEN_NUMBER") -> None:
+        with agmarshall.AgEnum_arg(VASTM_EIGEN_NUMBER, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_eigenvalue_number"](arg_inVal.COM_val))
 
     @property
-    def eigenvalue_complex_part(self) -> "AgEVAComplexNumber":
+    def eigenvalue_complex_part(self) -> "VA_COMPLEX_NUMBER":
         """Whether this value represents the real or imaginary part of the Eigenvalue."""
-        with agmarshall.AgEnum_arg(AgEVAComplexNumber) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_COMPLEX_NUMBER) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_eigenvalue_complex_part"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @eigenvalue_complex_part.setter
-    def eigenvalue_complex_part(self, inVal:"AgEVAComplexNumber") -> None:
-        with agmarshall.AgEnum_arg(AgEVAComplexNumber, inVal) as arg_inVal:
+    def eigenvalue_complex_part(self, inVal:"VA_COMPLEX_NUMBER") -> None:
+        with agmarshall.AgEnum_arg(VA_COMPLEX_NUMBER, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_eigenvalue_complex_part"](arg_inVal.COM_val))
 
 
@@ -24145,39 +24145,39 @@ class IStateCalcSTMEigenvecElem(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def eigenvector_number(self) -> "AgEVASTMEigenNumber":
+    def eigenvector_number(self) -> "VASTM_EIGEN_NUMBER":
         """The number identifying one of the six Eigenvectors."""
-        with agmarshall.AgEnum_arg(AgEVASTMEigenNumber) as arg_pVal:
+        with agmarshall.AgEnum_arg(VASTM_EIGEN_NUMBER) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_eigenvector_number"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @eigenvector_number.setter
-    def eigenvector_number(self, inVal:"AgEVASTMEigenNumber") -> None:
-        with agmarshall.AgEnum_arg(AgEVASTMEigenNumber, inVal) as arg_inVal:
+    def eigenvector_number(self, inVal:"VASTM_EIGEN_NUMBER") -> None:
+        with agmarshall.AgEnum_arg(VASTM_EIGEN_NUMBER, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_eigenvector_number"](arg_inVal.COM_val))
 
     @property
-    def state_variable(self) -> "AgEVASTMPertVariables":
+    def state_variable(self) -> "VASTM_PERT_VARIABLES":
         """The variable identifying the component within an Eigenvector."""
-        with agmarshall.AgEnum_arg(AgEVASTMPertVariables) as arg_pVal:
+        with agmarshall.AgEnum_arg(VASTM_PERT_VARIABLES) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_state_variable"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @state_variable.setter
-    def state_variable(self, inVal:"AgEVASTMPertVariables") -> None:
-        with agmarshall.AgEnum_arg(AgEVASTMPertVariables, inVal) as arg_inVal:
+    def state_variable(self, inVal:"VASTM_PERT_VARIABLES") -> None:
+        with agmarshall.AgEnum_arg(VASTM_PERT_VARIABLES, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_state_variable"](arg_inVal.COM_val))
 
     @property
-    def eigenvector_complex_part(self) -> "AgEVAComplexNumber":
+    def eigenvector_complex_part(self) -> "VA_COMPLEX_NUMBER":
         """Whether this value represents the real or imaginary part of an Eigenvector element."""
-        with agmarshall.AgEnum_arg(AgEVAComplexNumber) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_COMPLEX_NUMBER) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_eigenvector_complex_part"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @eigenvector_complex_part.setter
-    def eigenvector_complex_part(self, inVal:"AgEVAComplexNumber") -> None:
-        with agmarshall.AgEnum_arg(AgEVAComplexNumber, inVal) as arg_inVal:
+    def eigenvector_complex_part(self, inVal:"VA_COMPLEX_NUMBER") -> None:
+        with agmarshall.AgEnum_arg(VA_COMPLEX_NUMBER, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_eigenvector_complex_part"](arg_inVal.COM_val))
 
 
@@ -24303,15 +24303,15 @@ class IStateCalcEquinoctialElem(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -24661,15 +24661,15 @@ class IStateCalcCloseApproachBearing(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -24737,15 +24737,15 @@ class IStateCalcCloseApproachMagnitude(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -24813,15 +24813,15 @@ class IStateCalcCloseApproachTheta(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -24889,15 +24889,15 @@ class IStateCalcCloseApproachX(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -24965,15 +24965,15 @@ class IStateCalcCloseApproachY(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -25041,15 +25041,15 @@ class IStateCalcCloseApproachCosBearing(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -25125,15 +25125,15 @@ class IStateCalcRelGroundTrackError(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def direction(self) -> "AgEVACalcObjectDirection":
+    def direction(self) -> "VA_CALC_OBJECT_DIRECTION":
         """The direction to search for the desired value."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectDirection) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_DIRECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @direction.setter
-    def direction(self, inVal:"AgEVACalcObjectDirection") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectDirection, inVal) as arg_inVal:
+    def direction(self, inVal:"VA_CALC_OBJECT_DIRECTION") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_DIRECTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_direction"](arg_inVal.COM_val))
 
     @property
@@ -25149,15 +25149,15 @@ class IStateCalcRelGroundTrackError(object):
             agcls.evaluate_hresult(self.__dict__["_set_signed"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -25245,27 +25245,27 @@ class IStateCalcRelAtAOLMaster(object):
             agcls.evaluate_hresult(self.__dict__["_set_calc_object_name"](arg_inVal.COM_val))
 
     @property
-    def direction(self) -> "AgEVACalcObjectDirection":
+    def direction(self) -> "VA_CALC_OBJECT_DIRECTION":
         """The direction to search for the desired value."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectDirection) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_DIRECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @direction.setter
-    def direction(self, inVal:"AgEVACalcObjectDirection") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectDirection, inVal) as arg_inVal:
+    def direction(self, inVal:"VA_CALC_OBJECT_DIRECTION") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_DIRECTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_direction"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -25333,15 +25333,15 @@ class IStateCalcDeltaFromMaster(object):
             agcls.evaluate_hresult(self.__dict__["_set_calc_object_name"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -25407,15 +25407,15 @@ class IStateCalcLonDriftRate(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -25882,15 +25882,15 @@ class IStateCalcDriftRateFactor(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def drift_rate_model(self) -> "AgEVAGeoStationaryDriftRateModel":
+    def drift_rate_model(self) -> "VA_GEO_STATIONARY_DRIFT_RATE_MODEL":
         """The gravity model used to compute drift rate."""
-        with agmarshall.AgEnum_arg(AgEVAGeoStationaryDriftRateModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_STATIONARY_DRIFT_RATE_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drift_rate_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drift_rate_model.setter
-    def drift_rate_model(self, val:"AgEVAGeoStationaryDriftRateModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoStationaryDriftRateModel, val) as arg_val:
+    def drift_rate_model(self, val:"VA_GEO_STATIONARY_DRIFT_RATE_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_STATIONARY_DRIFT_RATE_MODEL, val) as arg_val:
             agcls.evaluate_hresult(self.__dict__["_set_drift_rate_model"](arg_val.COM_val))
 
 
@@ -26051,15 +26051,15 @@ class IStateCalcInclinationX(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def inclination_magnitude_type(self) -> "AgEVAGeoStationaryInclinationMag":
+    def inclination_magnitude_type(self) -> "VA_GEO_STATIONARY_INCLINATION_MAG":
         """Magnitude to use when computing the inclination vector."""
-        with agmarshall.AgEnum_arg(AgEVAGeoStationaryInclinationMag) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_STATIONARY_INCLINATION_MAG) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_inclination_magnitude_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @inclination_magnitude_type.setter
-    def inclination_magnitude_type(self, val:"AgEVAGeoStationaryInclinationMag") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoStationaryInclinationMag, val) as arg_val:
+    def inclination_magnitude_type(self, val:"VA_GEO_STATIONARY_INCLINATION_MAG") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_STATIONARY_INCLINATION_MAG, val) as arg_val:
             agcls.evaluate_hresult(self.__dict__["_set_inclination_magnitude_type"](arg_val.COM_val))
 
 
@@ -26118,15 +26118,15 @@ class IStateCalcInclinationY(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def inclination_magnitude_type(self) -> "AgEVAGeoStationaryInclinationMag":
+    def inclination_magnitude_type(self) -> "VA_GEO_STATIONARY_INCLINATION_MAG":
         """Magnitude to use when computing the inclination vector."""
-        with agmarshall.AgEnum_arg(AgEVAGeoStationaryInclinationMag) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_STATIONARY_INCLINATION_MAG) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_inclination_magnitude_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @inclination_magnitude_type.setter
-    def inclination_magnitude_type(self, val:"AgEVAGeoStationaryInclinationMag") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoStationaryInclinationMag, val) as arg_val:
+    def inclination_magnitude_type(self, val:"VA_GEO_STATIONARY_INCLINATION_MAG") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_STATIONARY_INCLINATION_MAG, val) as arg_val:
             agcls.evaluate_hresult(self.__dict__["_set_inclination_magnitude_type"](arg_val.COM_val))
 
 
@@ -26424,19 +26424,19 @@ class IStateCalcRepeatingGroundTrackErr(object):
         with agmarshall.DOUBLE_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_repeat_count"](arg_inVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlRepeatingGroundTrackErr") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_REPEATING_GROUND_TRACK_ERR") -> None:
         """Enables the specified control parameter"""
-        with agmarshall.AgEnum_arg(AgEVAControlRepeatingGroundTrackErr, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_REPEATING_GROUND_TRACK_ERR, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlRepeatingGroundTrackErr") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_REPEATING_GROUND_TRACK_ERR") -> None:
         """Disables the specified control parameter"""
-        with agmarshall.AgEnum_arg(AgEVAControlRepeatingGroundTrackErr, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_REPEATING_GROUND_TRACK_ERR, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlRepeatingGroundTrackErr") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_REPEATING_GROUND_TRACK_ERR") -> bool:
         """Sees if the specified control is enabled"""
-        with agmarshall.AgEnum_arg(AgEVAControlRepeatingGroundTrackErr, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_REPEATING_GROUND_TRACK_ERR, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -26504,15 +26504,15 @@ class IStateCalcAltitudeOfApoapsis(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -26571,15 +26571,15 @@ class IStateCalcAltitudeOfPeriapsis(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -26638,15 +26638,15 @@ class IStateCalcArgOfLat(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -26705,15 +26705,15 @@ class IStateCalcArgOfPeriapsis(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -26772,15 +26772,15 @@ class IStateCalcEccentricityAnomaly(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -26839,15 +26839,15 @@ class IStateCalcEccentricity(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -26906,15 +26906,15 @@ class IStateCalcInclination(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -26973,15 +26973,15 @@ class IStateCalcLonOfAscNode(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27040,15 +27040,15 @@ class IStateCalcMeanAnomaly(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27107,15 +27107,15 @@ class IStateCalcMeanMotion(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27174,15 +27174,15 @@ class IStateCalcOrbitPeriod(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27241,15 +27241,15 @@ class IStateCalcNumRevs(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27308,15 +27308,15 @@ class IStateCalcRAAN(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27375,15 +27375,15 @@ class IStateCalcRadOfApoapsis(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27442,15 +27442,15 @@ class IStateCalcRadOfPeriapsis(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27509,15 +27509,15 @@ class IStateCalcSemiMajorAxis(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27576,15 +27576,15 @@ class IStateCalcTimePastAscNode(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27643,15 +27643,15 @@ class IStateCalcTimePastPeriapsis(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -27799,16 +27799,16 @@ class IStateCalcMissionControlSequenceDeltaVSquared(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStateCalcMissionControlSequenceDeltaVSquared.")
     
     @property
-    def squared_type(self) -> "AgEVASquaredType":
+    def squared_type(self) -> "VA_SQUARED_TYPE":
         """Whether the value should be calculated as the sum of the squares of the maneuver Delta-Vs or the square of the sum of the maneuver Delta-Vs."""
-        with agmarshall.AgEnum_arg(AgEVASquaredType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SQUARED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_squared_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @squared_type.setter
-    def squared_type(self, inVal:"AgEVASquaredType") -> None:
+    def squared_type(self, inVal:"VA_SQUARED_TYPE") -> None:
         """Whether the value should be calculated as the sum of the squares of the maneuver Delta-Vs or the square of the sum of the maneuver Delta-Vs."""
-        with agmarshall.AgEnum_arg(AgEVASquaredType, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_SQUARED_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_squared_type"](arg_inVal.COM_val))
 
 
@@ -27918,16 +27918,16 @@ class IStateCalcSequenceDeltaVSquared(object):
             agcls.evaluate_hresult(self.__dict__["_set_sequence_name"](arg_inVal.COM_val))
 
     @property
-    def squared_type(self) -> "AgEVASquaredType":
+    def squared_type(self) -> "VA_SQUARED_TYPE":
         """Whether the value should be calculated as the sum of the squares of the maneuver Delta-Vs or the square of the sum of the maneuver Delta-Vs."""
-        with agmarshall.AgEnum_arg(AgEVASquaredType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SQUARED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_squared_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @squared_type.setter
-    def squared_type(self, inVal:"AgEVASquaredType") -> None:
+    def squared_type(self, inVal:"VA_SQUARED_TYPE") -> None:
         """Whether the value should be calculated as the sum of the squares of the maneuver Delta-Vs or the square of the sum of the maneuver Delta-Vs."""
-        with agmarshall.AgEnum_arg(AgEVASquaredType, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(VA_SQUARED_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_squared_type"](arg_inVal.COM_val))
 
 
@@ -28767,15 +28767,15 @@ class IStateCalcDifference(object):
             agcls.evaluate_hresult(self.__dict__["_set_calc_object_name"](arg_inVal.COM_val))
 
     @property
-    def difference_order(self) -> "AgEVADifferenceOrder":
+    def difference_order(self) -> "VA_DIFFERENCE_ORDER":
         """The order of the difference calculation."""
-        with agmarshall.AgEnum_arg(AgEVADifferenceOrder) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DIFFERENCE_ORDER) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_difference_order"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @difference_order.setter
-    def difference_order(self, inVal:"AgEVADifferenceOrder") -> None:
-        with agmarshall.AgEnum_arg(AgEVADifferenceOrder, inVal) as arg_inVal:
+    def difference_order(self, inVal:"VA_DIFFERENCE_ORDER") -> None:
+        with agmarshall.AgEnum_arg(VA_DIFFERENCE_ORDER, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_difference_order"](arg_inVal.COM_val))
 
 
@@ -28854,27 +28854,27 @@ class IStateCalcDifferenceOtherSegment(object):
             agcls.evaluate_hresult(self.__dict__["_set_other_segment_name"](arg_inVal.COM_val))
 
     @property
-    def segment_state_to_use(self) -> "AgEVASegmentState":
+    def segment_state_to_use(self) -> "VA_SEGMENT_STATE":
         """The segment state to use in the calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_state_to_use"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @segment_state_to_use.setter
-    def segment_state_to_use(self, inVal:"AgEVASegmentState") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentState, inVal) as arg_inVal:
+    def segment_state_to_use(self, inVal:"VA_SEGMENT_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_segment_state_to_use"](arg_inVal.COM_val))
 
     @property
-    def difference_order(self) -> "AgEVASegmentDifferenceOrder":
+    def difference_order(self) -> "VA_SEGMENT_DIFFERENCE_ORDER":
         """The order of the difference calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentDifferenceOrder) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_DIFFERENCE_ORDER) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_difference_order"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @difference_order.setter
-    def difference_order(self, inVal:"AgEVASegmentDifferenceOrder") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentDifferenceOrder, inVal) as arg_inVal:
+    def difference_order(self, inVal:"VA_SEGMENT_DIFFERENCE_ORDER") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_DIFFERENCE_ORDER, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_difference_order"](arg_inVal.COM_val))
 
 
@@ -28933,15 +28933,15 @@ class IStateCalcPositionDifferenceOtherSegment(object):
             agcls.evaluate_hresult(self.__dict__["_set_other_segment_name"](arg_inVal.COM_val))
 
     @property
-    def segment_state_to_use(self) -> "AgEVASegmentState":
+    def segment_state_to_use(self) -> "VA_SEGMENT_STATE":
         """The segment state to use in the calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_state_to_use"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @segment_state_to_use.setter
-    def segment_state_to_use(self, inVal:"AgEVASegmentState") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentState, inVal) as arg_inVal:
+    def segment_state_to_use(self, inVal:"VA_SEGMENT_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_segment_state_to_use"](arg_inVal.COM_val))
 
 
@@ -29000,15 +29000,15 @@ class IStateCalcVelDifferenceOtherSegment(object):
             agcls.evaluate_hresult(self.__dict__["_set_other_segment_name"](arg_inVal.COM_val))
 
     @property
-    def segment_state_to_use(self) -> "AgEVASegmentState":
+    def segment_state_to_use(self) -> "VA_SEGMENT_STATE":
         """The segment state to use in the calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_state_to_use"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @segment_state_to_use.setter
-    def segment_state_to_use(self, inVal:"AgEVASegmentState") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentState, inVal) as arg_inVal:
+    def segment_state_to_use(self, inVal:"VA_SEGMENT_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_segment_state_to_use"](arg_inVal.COM_val))
 
 
@@ -29067,15 +29067,15 @@ class IStateCalcPositionVelDifferenceOtherSegment(object):
             agcls.evaluate_hresult(self.__dict__["_set_other_segment_name"](arg_inVal.COM_val))
 
     @property
-    def segment_state_to_use(self) -> "AgEVASegmentState":
+    def segment_state_to_use(self) -> "VA_SEGMENT_STATE":
         """The segment state to use in the calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_state_to_use"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @segment_state_to_use.setter
-    def segment_state_to_use(self, inVal:"AgEVASegmentState") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentState, inVal) as arg_inVal:
+    def segment_state_to_use(self, inVal:"VA_SEGMENT_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_segment_state_to_use"](arg_inVal.COM_val))
 
 
@@ -29150,15 +29150,15 @@ class IStateCalcValueAtSegment(object):
             agcls.evaluate_hresult(self.__dict__["_set_other_segment_name"](arg_inVal.COM_val))
 
     @property
-    def segment_state_to_use(self) -> "AgEVASegmentState":
+    def segment_state_to_use(self) -> "VA_SEGMENT_STATE":
         """The segment state to use in the calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_state_to_use"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @segment_state_to_use.setter
-    def segment_state_to_use(self, inVal:"AgEVASegmentState") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentState, inVal) as arg_inVal:
+    def segment_state_to_use(self, inVal:"VA_SEGMENT_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_segment_state_to_use"](arg_inVal.COM_val))
 
 
@@ -29523,15 +29523,15 @@ class IStateCalcTrueAnomaly(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -29846,15 +29846,15 @@ class IStateCalcDeltaDec(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_type(self) -> "AgEVACalcObjectCentralBodyReference":
+    def reference_type(self) -> "VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE":
         """The central body's reference type"""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectCentralBodyReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_type.setter
-    def reference_type(self, inVal:"AgEVACalcObjectCentralBodyReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectCentralBodyReference, inVal) as arg_inVal:
+    def reference_type(self, inVal:"VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_type"](arg_inVal.COM_val))
 
     @property
@@ -29929,15 +29929,15 @@ class IStateCalcDeltaRA(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_type(self) -> "AgEVACalcObjectCentralBodyReference":
+    def reference_type(self) -> "VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE":
         """The central body's reference type"""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectCentralBodyReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_type.setter
-    def reference_type(self, inVal:"AgEVACalcObjectCentralBodyReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectCentralBodyReference, inVal) as arg_inVal:
+    def reference_type(self, inVal:"VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_CENTRAL_BODY_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_type"](arg_inVal.COM_val))
 
     @property
@@ -30110,15 +30110,15 @@ class IStateCalcLonOfPeriapsis(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -30292,19 +30292,19 @@ class IStateCalcOrbitStateValue(object):
         with agmarshall.VARIANT_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_vz"](arg_inVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlOrbitStateValue") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ORBIT_STATE_VALUE") -> None:
         """Enables the specified control parameter"""
-        with agmarshall.AgEnum_arg(AgEVAControlOrbitStateValue, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ORBIT_STATE_VALUE, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlOrbitStateValue") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ORBIT_STATE_VALUE") -> None:
         """Disables the specified control parameter"""
-        with agmarshall.AgEnum_arg(AgEVAControlOrbitStateValue, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ORBIT_STATE_VALUE, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlOrbitStateValue") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ORBIT_STATE_VALUE") -> bool:
         """Sees if the specified control is enabled"""
-        with agmarshall.AgEnum_arg(AgEVAControlOrbitStateValue, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ORBIT_STATE_VALUE, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -30372,15 +30372,15 @@ class IStateCalcSignedEccentricity(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -30439,15 +30439,15 @@ class IStateCalcTrueLon(object):
             agcls.evaluate_hresult(self.__dict__["_set_coord_system_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -30575,15 +30575,15 @@ class IStateCalcRelMotion(object):
             agcls.evaluate_hresult(self.__dict__["_set_origin_at_master"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -30667,39 +30667,39 @@ class IStateCalcSolarBetaAngle(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def orbit_plane_source(self) -> "AgEVACalcObjectOrbitPlaneSource":
+    def orbit_plane_source(self) -> "VA_CALC_OBJECT_ORBIT_PLANE_SOURCE":
         """Selection of the satellite that will generate the orbit plane."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectOrbitPlaneSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ORBIT_PLANE_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_orbit_plane_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @orbit_plane_source.setter
-    def orbit_plane_source(self, inVal:"AgEVACalcObjectOrbitPlaneSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectOrbitPlaneSource, inVal) as arg_inVal:
+    def orbit_plane_source(self, inVal:"VA_CALC_OBJECT_ORBIT_PLANE_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ORBIT_PLANE_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_orbit_plane_source"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -30710,27 +30710,27 @@ class IStateCalcSolarBetaAngle(object):
             return arg_ppLinkToObject.python_val
 
     @property
-    def sun_position(self) -> "AgEVACalcObjectSunPosition":
+    def sun_position(self) -> "VA_CALC_OBJECT_SUN_POSITION":
         """The type of the Sun location."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectSunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVACalcObjectSunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectSunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_CALC_OBJECT_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def sign_convention(self) -> "AgEVACalcObjectAngleSign":
+    def sign_convention(self) -> "VA_CALC_OBJECT_ANGLE_SIGN":
         """Sets the sign of the angle when the relative position has a positive component along the orbit normal."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sign_convention"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sign_convention.setter
-    def sign_convention(self, inVal:"AgEVACalcObjectAngleSign") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign, inVal) as arg_inVal:
+    def sign_convention(self, inVal:"VA_CALC_OBJECT_ANGLE_SIGN") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sign_convention"](arg_inVal.COM_val))
 
 
@@ -30811,39 +30811,39 @@ class IStateCalcSolarInPlaneAngle(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def orbit_plane_source(self) -> "AgEVACalcObjectOrbitPlaneSource":
+    def orbit_plane_source(self) -> "VA_CALC_OBJECT_ORBIT_PLANE_SOURCE":
         """Selection of the satellite that will generate the orbit plane."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectOrbitPlaneSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ORBIT_PLANE_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_orbit_plane_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @orbit_plane_source.setter
-    def orbit_plane_source(self, inVal:"AgEVACalcObjectOrbitPlaneSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectOrbitPlaneSource, inVal) as arg_inVal:
+    def orbit_plane_source(self, inVal:"VA_CALC_OBJECT_ORBIT_PLANE_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ORBIT_PLANE_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_orbit_plane_source"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -30854,39 +30854,39 @@ class IStateCalcSolarInPlaneAngle(object):
             return arg_ppLinkToObject.python_val
 
     @property
-    def sun_position(self) -> "AgEVACalcObjectSunPosition":
+    def sun_position(self) -> "VA_CALC_OBJECT_SUN_POSITION":
         """The type of the Sun location."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectSunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVACalcObjectSunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectSunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_CALC_OBJECT_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def counter_clockwise_rotation(self) -> "AgEVACalcObjectAngleSign":
+    def counter_clockwise_rotation(self) -> "VA_CALC_OBJECT_ANGLE_SIGN":
         """Sets sign of the angle for counterclockwise rotation about orbit normal."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_counter_clockwise_rotation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @counter_clockwise_rotation.setter
-    def counter_clockwise_rotation(self, inVal:"AgEVACalcObjectAngleSign") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign, inVal) as arg_inVal:
+    def counter_clockwise_rotation(self, inVal:"VA_CALC_OBJECT_ANGLE_SIGN") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_counter_clockwise_rotation"](arg_inVal.COM_val))
 
     @property
-    def reference_direction(self) -> "AgEVACalcObjectReferenceDirection":
+    def reference_direction(self) -> "VA_CALC_OBJECT_REFERENCE_DIRECTION":
         """Direction that establishes the zero value when projected into the orbit plane."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReferenceDirection) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE_DIRECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_direction.setter
-    def reference_direction(self, inVal:"AgEVACalcObjectReferenceDirection") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReferenceDirection, inVal) as arg_inVal:
+    def reference_direction(self, inVal:"VA_CALC_OBJECT_REFERENCE_DIRECTION") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE_DIRECTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_direction"](arg_inVal.COM_val))
 
 
@@ -30963,39 +30963,39 @@ class IStateCalcRelPositionDecAngle(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def orbit_plane_source(self) -> "AgEVACalcObjectOrbitPlaneSource":
+    def orbit_plane_source(self) -> "VA_CALC_OBJECT_ORBIT_PLANE_SOURCE":
         """Selection of the satellite that will generate the orbit plane."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectOrbitPlaneSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ORBIT_PLANE_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_orbit_plane_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @orbit_plane_source.setter
-    def orbit_plane_source(self, inVal:"AgEVACalcObjectOrbitPlaneSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectOrbitPlaneSource, inVal) as arg_inVal:
+    def orbit_plane_source(self, inVal:"VA_CALC_OBJECT_ORBIT_PLANE_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ORBIT_PLANE_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_orbit_plane_source"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -31006,27 +31006,27 @@ class IStateCalcRelPositionDecAngle(object):
             return arg_ppLinkToObject.python_val
 
     @property
-    def relative_position_type(self) -> "AgEVACalcObjectRelativePosition":
+    def relative_position_type(self) -> "VA_CALC_OBJECT_RELATIVE_POSITION":
         """The type of the relative position."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectRelativePosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_RELATIVE_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_relative_position_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @relative_position_type.setter
-    def relative_position_type(self, inVal:"AgEVACalcObjectRelativePosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectRelativePosition, inVal) as arg_inVal:
+    def relative_position_type(self, inVal:"VA_CALC_OBJECT_RELATIVE_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_RELATIVE_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_relative_position_type"](arg_inVal.COM_val))
 
     @property
-    def sign_convention(self) -> "AgEVACalcObjectAngleSign":
+    def sign_convention(self) -> "VA_CALC_OBJECT_ANGLE_SIGN":
         """Sets the sign of the angle when the relative position has a positive component along the orbit normal."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sign_convention"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sign_convention.setter
-    def sign_convention(self, inVal:"AgEVACalcObjectAngleSign") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign, inVal) as arg_inVal:
+    def sign_convention(self, inVal:"VA_CALC_OBJECT_ANGLE_SIGN") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sign_convention"](arg_inVal.COM_val))
 
 
@@ -31107,39 +31107,39 @@ class IStateCalcRelPositionInPlaneAngle(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def orbit_plane_source(self) -> "AgEVACalcObjectOrbitPlaneSource":
+    def orbit_plane_source(self) -> "VA_CALC_OBJECT_ORBIT_PLANE_SOURCE":
         """Selection of the satellite that will generate the orbit plane."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectOrbitPlaneSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ORBIT_PLANE_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_orbit_plane_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @orbit_plane_source.setter
-    def orbit_plane_source(self, inVal:"AgEVACalcObjectOrbitPlaneSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectOrbitPlaneSource, inVal) as arg_inVal:
+    def orbit_plane_source(self, inVal:"VA_CALC_OBJECT_ORBIT_PLANE_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ORBIT_PLANE_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_orbit_plane_source"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -31150,39 +31150,39 @@ class IStateCalcRelPositionInPlaneAngle(object):
             return arg_ppLinkToObject.python_val
 
     @property
-    def relative_position_type(self) -> "AgEVACalcObjectRelativePosition":
+    def relative_position_type(self) -> "VA_CALC_OBJECT_RELATIVE_POSITION":
         """The type of the relative position."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectRelativePosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_RELATIVE_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_relative_position_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @relative_position_type.setter
-    def relative_position_type(self, inVal:"AgEVACalcObjectRelativePosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectRelativePosition, inVal) as arg_inVal:
+    def relative_position_type(self, inVal:"VA_CALC_OBJECT_RELATIVE_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_RELATIVE_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_relative_position_type"](arg_inVal.COM_val))
 
     @property
-    def counter_clockwise_rotation(self) -> "AgEVACalcObjectAngleSign":
+    def counter_clockwise_rotation(self) -> "VA_CALC_OBJECT_ANGLE_SIGN":
         """Sets sign of the angle for counterclockwise rotation about orbit normal."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_counter_clockwise_rotation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @counter_clockwise_rotation.setter
-    def counter_clockwise_rotation(self, inVal:"AgEVACalcObjectAngleSign") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign, inVal) as arg_inVal:
+    def counter_clockwise_rotation(self, inVal:"VA_CALC_OBJECT_ANGLE_SIGN") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_counter_clockwise_rotation"](arg_inVal.COM_val))
 
     @property
-    def reference_direction(self) -> "AgEVACalcObjectReferenceDirection":
+    def reference_direction(self) -> "VA_CALC_OBJECT_REFERENCE_DIRECTION":
         """Direction that establishes the zero value when projected into the orbit plane."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReferenceDirection) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE_DIRECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_direction.setter
-    def reference_direction(self, inVal:"AgEVACalcObjectReferenceDirection") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReferenceDirection, inVal) as arg_inVal:
+    def reference_direction(self, inVal:"VA_CALC_OBJECT_REFERENCE_DIRECTION") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE_DIRECTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_direction"](arg_inVal.COM_val))
 
 
@@ -31251,39 +31251,39 @@ class IStateCalcRelativeInclination(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def satellite_orbit_normal_type(self) -> "AgEVACalcObjectElem":
+    def satellite_orbit_normal_type(self) -> "VA_CALC_OBJECT_ELEM":
         """Choice of osculating or mean elements for describing the orbit plane."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_satellite_orbit_normal_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @satellite_orbit_normal_type.setter
-    def satellite_orbit_normal_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def satellite_orbit_normal_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_satellite_orbit_normal_type"](arg_inVal.COM_val))
 
     @property
-    def ref_satellite_orbit_normal_type(self) -> "AgEVACalcObjectElem":
+    def ref_satellite_orbit_normal_type(self) -> "VA_CALC_OBJECT_ELEM":
         """Choice of osculating or mean elements for describing the orbit plane"""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_ref_satellite_orbit_normal_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ref_satellite_orbit_normal_type.setter
-    def ref_satellite_orbit_normal_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def ref_satellite_orbit_normal_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_ref_satellite_orbit_normal_type"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -31367,39 +31367,39 @@ class IStateCalcCurvilinearRelMotion(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_ellipse(self) -> "AgEVACalcObjectReferenceEllipse":
+    def reference_ellipse(self) -> "VA_CALC_OBJECT_REFERENCE_ELLIPSE":
         """Selection of the satellite orbit that is used as the reference ellipse."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReferenceEllipse) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE_ELLIPSE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_ellipse"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_ellipse.setter
-    def reference_ellipse(self, inVal:"AgEVACalcObjectReferenceEllipse") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReferenceEllipse, inVal) as arg_inVal:
+    def reference_ellipse(self, inVal:"VA_CALC_OBJECT_REFERENCE_ELLIPSE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE_ELLIPSE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_ellipse"](arg_inVal.COM_val))
 
     @property
-    def location_source(self) -> "AgEVACalcObjectLocationSource":
+    def location_source(self) -> "VA_CALC_OBJECT_LOCATION_SOURCE":
         """Selection of the satellite whose location is being reported with respect to the reference ellipse."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectLocationSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_LOCATION_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_location_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @location_source.setter
-    def location_source(self, inVal:"AgEVACalcObjectLocationSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectLocationSource, inVal) as arg_inVal:
+    def location_source(self, inVal:"VA_CALC_OBJECT_LOCATION_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_LOCATION_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_location_source"](arg_inVal.COM_val))
 
     @property
-    def reference_selection(self) -> "AgEVACalcObjectReference":
+    def reference_selection(self) -> "VA_CALC_OBJECT_REFERENCE":
         """The reference object selection."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_selection"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_selection.setter
-    def reference_selection(self, inVal:"AgEVACalcObjectReference") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectReference, inVal) as arg_inVal:
+    def reference_selection(self, inVal:"VA_CALC_OBJECT_REFERENCE") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_REFERENCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_selection"](arg_inVal.COM_val))
 
     @property
@@ -31410,27 +31410,27 @@ class IStateCalcCurvilinearRelMotion(object):
             return arg_ppLinkToObject.python_val
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """Choice of osculating or mean elements"""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
     @property
-    def sign_convention(self) -> "AgEVACalcObjectAngleSign":
+    def sign_convention(self) -> "VA_CALC_OBJECT_ANGLE_SIGN":
         """Sets the sign of the angle when the relative position has a positive component along the orbit normal."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sign_convention"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sign_convention.setter
-    def sign_convention(self, inVal:"AgEVACalcObjectAngleSign") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectAngleSign, inVal) as arg_inVal:
+    def sign_convention(self, inVal:"VA_CALC_OBJECT_ANGLE_SIGN") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ANGLE_SIGN, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sign_convention"](arg_inVal.COM_val))
 
 
@@ -32224,15 +32224,15 @@ class IStateCalcC3Energy(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def element_type(self) -> "AgEVACalcObjectElem":
+    def element_type(self) -> "VA_CALC_OBJECT_ELEM":
         """The element type - osculating or a mean type."""
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_element_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @element_type.setter
-    def element_type(self, inVal:"AgEVACalcObjectElem") -> None:
-        with agmarshall.AgEnum_arg(AgEVACalcObjectElem, inVal) as arg_inVal:
+    def element_type(self, inVal:"VA_CALC_OBJECT_ELEM") -> None:
+        with agmarshall.AgEnum_arg(VA_CALC_OBJECT_ELEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_element_type"](arg_inVal.COM_val))
 
 
@@ -33078,26 +33078,26 @@ class IStateCalcOnePointAccess(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStateCalcOnePointAccess.")
     
     @property
-    def aberration_type(self) -> "AgEAberrationType":
+    def aberration_type(self) -> "ABERRATION_TYPE":
         """The type of aberration to use, if light time delay is applied."""
-        with agmarshall.AgEnum_arg(AgEAberrationType) as arg_pVal:
+        with agmarshall.AgEnum_arg(ABERRATION_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_aberration_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @aberration_type.setter
-    def aberration_type(self, inVal:"AgEAberrationType") -> None:
-        with agmarshall.AgEnum_arg(AgEAberrationType, inVal) as arg_inVal:
+    def aberration_type(self, inVal:"ABERRATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(ABERRATION_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_aberration_type"](arg_inVal.COM_val))
 
-    def set_base_selection(self, selection:"AgEVABaseSelection") -> None:
+    def set_base_selection(self, selection:"VA_BASE_SELECTION") -> None:
         """Base Selection"""
-        with agmarshall.AgEnum_arg(AgEVABaseSelection, selection) as arg_selection:
+        with agmarshall.AgEnum_arg(VA_BASE_SELECTION, selection) as arg_selection:
             agcls.evaluate_hresult(self.__dict__["_set_base_selection"](arg_selection.COM_val))
 
     @property
-    def base_selection_type(self) -> "AgEVABaseSelection":
+    def base_selection_type(self) -> "VA_BASE_SELECTION":
         """The base selection type."""
-        with agmarshall.AgEnum_arg(AgEVABaseSelection) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_BASE_SELECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_base_selection_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -33109,27 +33109,27 @@ class IStateCalcOnePointAccess(object):
             return arg_ppRetVal.python_val
 
     @property
-    def clock_host(self) -> "AgEIvClockHost":
+    def clock_host(self) -> "IV_CLOCK_HOST":
         """The object whose location is associated with time."""
-        with agmarshall.AgEnum_arg(AgEIvClockHost) as arg_pVal:
+        with agmarshall.AgEnum_arg(IV_CLOCK_HOST) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_clock_host"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @clock_host.setter
-    def clock_host(self, inVal:"AgEIvClockHost") -> None:
-        with agmarshall.AgEnum_arg(AgEIvClockHost, inVal) as arg_inVal:
+    def clock_host(self, inVal:"IV_CLOCK_HOST") -> None:
+        with agmarshall.AgEnum_arg(IV_CLOCK_HOST, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_clock_host"](arg_inVal.COM_val))
 
     @property
-    def signal_sense(self) -> "AgEIvTimeSense":
+    def signal_sense(self) -> "IV_TIME_SENSE":
         """Sense of the signal at the base object."""
-        with agmarshall.AgEnum_arg(AgEIvTimeSense) as arg_pVal:
+        with agmarshall.AgEnum_arg(IV_TIME_SENSE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_sense"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @signal_sense.setter
-    def signal_sense(self, inVal:"AgEIvTimeSense") -> None:
-        with agmarshall.AgEnum_arg(AgEIvTimeSense, inVal) as arg_inVal:
+    def signal_sense(self, inVal:"IV_TIME_SENSE") -> None:
+        with agmarshall.AgEnum_arg(IV_TIME_SENSE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_inVal.COM_val))
 
     @property
@@ -33241,27 +33241,27 @@ class IStateCalcDifferenceAcrossSegmentsOtherSat(object):
             agcls.evaluate_hresult(self.__dict__["_set_other_segment_name"](arg_inVal.COM_val))
 
     @property
-    def segment_state_to_use(self) -> "AgEVASegmentState":
+    def segment_state_to_use(self) -> "VA_SEGMENT_STATE":
         """The segment state to use in the calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_state_to_use"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @segment_state_to_use.setter
-    def segment_state_to_use(self, inVal:"AgEVASegmentState") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentState, inVal) as arg_inVal:
+    def segment_state_to_use(self, inVal:"VA_SEGMENT_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_segment_state_to_use"](arg_inVal.COM_val))
 
     @property
-    def difference_order(self) -> "AgEVASegmentDifferenceOrder":
+    def difference_order(self) -> "VA_SEGMENT_DIFFERENCE_ORDER":
         """The order of the difference calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentDifferenceOrder) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_DIFFERENCE_ORDER) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_difference_order"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @difference_order.setter
-    def difference_order(self, inVal:"AgEVASegmentDifferenceOrder") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentDifferenceOrder, inVal) as arg_inVal:
+    def difference_order(self, inVal:"VA_SEGMENT_DIFFERENCE_ORDER") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_DIFFERENCE_ORDER, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_difference_order"](arg_inVal.COM_val))
 
     @property
@@ -33345,15 +33345,15 @@ class IStateCalcValueAtSegmentOtherSat(object):
             agcls.evaluate_hresult(self.__dict__["_set_other_segment_name"](arg_inVal.COM_val))
 
     @property
-    def segment_state_to_use(self) -> "AgEVASegmentState":
+    def segment_state_to_use(self) -> "VA_SEGMENT_STATE":
         """The segment state to use in the calculation."""
-        with agmarshall.AgEnum_arg(AgEVASegmentState) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_segment_state_to_use"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @segment_state_to_use.setter
-    def segment_state_to_use(self, inVal:"AgEVASegmentState") -> None:
-        with agmarshall.AgEnum_arg(AgEVASegmentState, inVal) as arg_inVal:
+    def segment_state_to_use(self, inVal:"VA_SEGMENT_STATE") -> None:
+        with agmarshall.AgEnum_arg(VA_SEGMENT_STATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_segment_state_to_use"](arg_inVal.COM_val))
 
     @property
@@ -33525,15 +33525,15 @@ class IStateCalcGravitationalParameter(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def grav_source(self) -> "AgEVAGravitationalParameterSource":
+    def grav_source(self) -> "VA_GRAVITATIONAL_PARAMETER_SOURCE":
         """The source for the gravitational parameter."""
-        with agmarshall.AgEnum_arg(AgEVAGravitationalParameterSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GRAVITATIONAL_PARAMETER_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_grav_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @grav_source.setter
-    def grav_source(self, inVal:"AgEVAGravitationalParameterSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGravitationalParameterSource, inVal) as arg_inVal:
+    def grav_source(self, inVal:"VA_GRAVITATIONAL_PARAMETER_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GRAVITATIONAL_PARAMETER_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_grav_source"](arg_inVal.COM_val))
 
     @property
@@ -33608,15 +33608,15 @@ class IStateCalcReferenceRadius(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body_name"](arg_inVal.COM_val))
 
     @property
-    def reference_radius_source(self) -> "AgEVAReferenceRadiusSource":
+    def reference_radius_source(self) -> "VA_REFERENCE_RADIUS_SOURCE":
         """The source for the reference radius."""
-        with agmarshall.AgEnum_arg(AgEVAReferenceRadiusSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_REFERENCE_RADIUS_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_radius_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_radius_source.setter
-    def reference_radius_source(self, inVal:"AgEVAReferenceRadiusSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAReferenceRadiusSource, inVal) as arg_inVal:
+    def reference_radius_source(self, inVal:"VA_REFERENCE_RADIUS_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_REFERENCE_RADIUS_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_radius_source"](arg_inVal.COM_val))
 
     @property
@@ -33715,15 +33715,15 @@ class IStateCalcGravCoeff(object):
             agcls.evaluate_hresult(self.__dict__["_set_gravity_filename"](arg_inVal.COM_val))
 
     @property
-    def coefficient_type(self) -> "AgEVAGravCoeffCoefficientType":
+    def coefficient_type(self) -> "VA_GRAV_COEFF_COEFFICIENT_TYPE":
         """Coefficient type."""
-        with agmarshall.AgEnum_arg(AgEVAGravCoeffCoefficientType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GRAV_COEFF_COEFFICIENT_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_coefficient_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @coefficient_type.setter
-    def coefficient_type(self, inVal:"AgEVAGravCoeffCoefficientType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGravCoeffCoefficientType, inVal) as arg_inVal:
+    def coefficient_type(self, inVal:"VA_GRAV_COEFF_COEFFICIENT_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_GRAV_COEFF_COEFFICIENT_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_coefficient_type"](arg_inVal.COM_val))
 
     @property
@@ -33751,15 +33751,15 @@ class IStateCalcGravCoeff(object):
             agcls.evaluate_hresult(self.__dict__["_set_order"](arg_inVal.COM_val))
 
     @property
-    def normalization_type(self) -> "AgEVAGravCoeffNormalizationType":
+    def normalization_type(self) -> "VA_GRAV_COEFF_NORMALIZATION_TYPE":
         """Normalization type."""
-        with agmarshall.AgEnum_arg(AgEVAGravCoeffNormalizationType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GRAV_COEFF_NORMALIZATION_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_normalization_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @normalization_type.setter
-    def normalization_type(self, inVal:"AgEVAGravCoeffNormalizationType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGravCoeffNormalizationType, inVal) as arg_inVal:
+    def normalization_type(self, inVal:"VA_GRAV_COEFF_NORMALIZATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_GRAV_COEFF_NORMALIZATION_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_normalization_type"](arg_inVal.COM_val))
 
 
@@ -35403,9 +35403,9 @@ class IAstrogatorCentralBody(object):
             agcls.evaluate_hresult(self.__dict__["_get_default_gravity_model_data"](byref(arg_ppCbGravityModel.COM_val)))
             return arg_ppCbGravityModel.python_val
 
-    def add_gravity_model(self, eGravityModel:"AgEVACbGravityModel", uniqueName:str) -> "ICentralBodyGravityModel":
+    def add_gravity_model(self, eGravityModel:"VA_CB_GRAVITY_MODEL", uniqueName:str) -> "ICentralBodyGravityModel":
         """Adds a central body gravity model type."""
-        with agmarshall.AgEnum_arg(AgEVACbGravityModel, eGravityModel) as arg_eGravityModel, \
+        with agmarshall.AgEnum_arg(VA_CB_GRAVITY_MODEL, eGravityModel) as arg_eGravityModel, \
              agmarshall.BSTR_arg(uniqueName) as arg_uniqueName, \
              agmarshall.AgInterface_out_arg() as arg_ppCbGravityModel:
             agcls.evaluate_hresult(self.__dict__["_add_gravity_model"](arg_eGravityModel.COM_val, arg_uniqueName.COM_val, byref(arg_ppCbGravityModel.COM_val)))
@@ -35435,9 +35435,9 @@ class IAstrogatorCentralBody(object):
         with agmarshall.BSTR_arg(shapeName) as arg_shapeName:
             agcls.evaluate_hresult(self.__dict__["_set_default_shape_by_name"](arg_shapeName.COM_val))
 
-    def add_shape(self, eShape:"AgEVACbShape", uniqueName:str) -> "ICentralBodyShape":
+    def add_shape(self, eShape:"VA_CB_SHAPE", uniqueName:str) -> "ICentralBodyShape":
         """Adds a central body shape type from the available types."""
-        with agmarshall.AgEnum_arg(AgEVACbShape, eShape) as arg_eShape, \
+        with agmarshall.AgEnum_arg(VA_CB_SHAPE, eShape) as arg_eShape, \
              agmarshall.BSTR_arg(uniqueName) as arg_uniqueName, \
              agmarshall.AgInterface_out_arg() as arg_ppCbShape:
             agcls.evaluate_hresult(self.__dict__["_add_shape"](arg_eShape.COM_val, arg_uniqueName.COM_val, byref(arg_ppCbShape.COM_val)))
@@ -35467,9 +35467,9 @@ class IAstrogatorCentralBody(object):
         with agmarshall.BSTR_arg(attitudeName) as arg_attitudeName:
             agcls.evaluate_hresult(self.__dict__["_set_default_attitude_by_name"](arg_attitudeName.COM_val))
 
-    def add_attitude(self, eAttitude:"AgEVACbAttitude", uniqueName:str) -> "ICentralBodyAttitude":
+    def add_attitude(self, eAttitude:"VA_CB_ATTITUDE", uniqueName:str) -> "ICentralBodyAttitude":
         """Adds a central body attitude type from the available types."""
-        with agmarshall.AgEnum_arg(AgEVACbAttitude, eAttitude) as arg_eAttitude, \
+        with agmarshall.AgEnum_arg(VA_CB_ATTITUDE, eAttitude) as arg_eAttitude, \
              agmarshall.BSTR_arg(uniqueName) as arg_uniqueName, \
              agmarshall.AgInterface_out_arg() as arg_ppCbAttitude:
             agcls.evaluate_hresult(self.__dict__["_add_attitude"](arg_eAttitude.COM_val, arg_uniqueName.COM_val, byref(arg_ppCbAttitude.COM_val)))
@@ -35499,9 +35499,9 @@ class IAstrogatorCentralBody(object):
             agcls.evaluate_hresult(self.__dict__["_get_default_ephemeris_data"](byref(arg_ppCbEphemeris.COM_val)))
             return arg_ppCbEphemeris.python_val
 
-    def add_ephemeris(self, eEphemeris:"AgEVACbEphemeris", uniqueName:str) -> "ICentralBodyEphemeris":
+    def add_ephemeris(self, eEphemeris:"VA_CB_EPHEMERIS", uniqueName:str) -> "ICentralBodyEphemeris":
         """Adds an ephemeris type from the available types."""
-        with agmarshall.AgEnum_arg(AgEVACbEphemeris, eEphemeris) as arg_eEphemeris, \
+        with agmarshall.AgEnum_arg(VA_CB_EPHEMERIS, eEphemeris) as arg_eEphemeris, \
              agmarshall.BSTR_arg(uniqueName) as arg_uniqueName, \
              agmarshall.AgInterface_out_arg() as arg_ppCbEphemeris:
             agcls.evaluate_hresult(self.__dict__["_add_ephemeris"](arg_eEphemeris.COM_val, arg_uniqueName.COM_val, byref(arg_ppCbEphemeris.COM_val)))
@@ -35695,19 +35695,19 @@ class IPowerInternal(object):
         with agmarshall.VARIANT_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_epoch"](arg_inVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlPowerInternal") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_POWER_INTERNAL") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerInternal, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_INTERNAL, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlPowerInternal") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_POWER_INTERNAL") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerInternal, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_INTERNAL, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlPowerInternal") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_POWER_INTERNAL") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerInternal, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_INTERNAL, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -35810,19 +35810,19 @@ class IPowerProcessed(object):
         with agmarshall.BSTR_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_input_power_source_name"](arg_inVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlPowerProcessed") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_POWER_PROCESSED") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerProcessed, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_PROCESSED, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlPowerProcessed") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_POWER_PROCESSED") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerProcessed, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_PROCESSED, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlPowerProcessed") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_POWER_PROCESSED") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerProcessed, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_PROCESSED, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -36078,19 +36078,19 @@ class IPowerSolarArray(object):
             agcls.evaluate_hresult(self.__dict__["_get_approximation_formula"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def enable_control_parameter(self, param:"AgEVAControlPowerSolarArray") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_POWER_SOLAR_ARRAY") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerSolarArray, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_SOLAR_ARRAY, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlPowerSolarArray") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_POWER_SOLAR_ARRAY") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerSolarArray, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_SOLAR_ARRAY, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlPowerSolarArray") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_POWER_SOLAR_ARRAY") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlPowerSolarArray, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_POWER_SOLAR_ARRAY, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -36815,27 +36815,27 @@ class ICira72Function(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -36875,27 +36875,27 @@ class ICira72Function(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate of geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -36911,15 +36911,15 @@ class ICira72Function(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -37083,15 +37083,15 @@ class IExponential(object):
             agcls.evaluate_hresult(self.__dict__["_set_scale_altitude"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -37241,27 +37241,27 @@ class IHarrisPriester(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -37289,15 +37289,15 @@ class IHarrisPriester(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -37526,27 +37526,27 @@ class IDensityModelPlugin(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -37670,27 +37670,27 @@ class IDensityModelPlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_dst_d_tc"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate for geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -37730,15 +37730,15 @@ class IDensityModelPlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_aug_dtc_file"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -37911,27 +37911,27 @@ class IJacchiaRoberts(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -37971,27 +37971,27 @@ class IJacchiaRoberts(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate for geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -38007,15 +38007,15 @@ class IJacchiaRoberts(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -38183,27 +38183,27 @@ class IJacchiaBowman2008(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_approximate_altitude"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -38339,15 +38339,15 @@ class IJacchiaBowman2008(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_aug_dtc_file"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -38485,27 +38485,27 @@ class IJacchia_1960(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -38671,27 +38671,27 @@ class IJacchia_1970(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -38731,27 +38731,27 @@ class IJacchia_1970(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file"""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate for geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -38767,15 +38767,15 @@ class IJacchia_1970(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -38941,27 +38941,27 @@ class IJacchia_1971(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -39001,27 +39001,27 @@ class IJacchia_1971(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate for geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -39037,15 +39037,15 @@ class IJacchia_1971(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -39211,27 +39211,27 @@ class IMSISE_1990(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -39271,27 +39271,27 @@ class IMSISE_1990(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate for geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -39307,15 +39307,15 @@ class IMSISE_1990(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -39481,27 +39481,27 @@ class IMSIS_1986(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation"""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -39541,27 +39541,27 @@ class IMSIS_1986(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate for geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -39577,15 +39577,15 @@ class IMSIS_1986(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -39751,27 +39751,27 @@ class INRLMSISE_2000(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -39811,27 +39811,27 @@ class INRLMSISE_2000(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate for geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -39847,15 +39847,15 @@ class INRLMSISE_2000(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -39989,15 +39989,15 @@ class IUS_Standard_Atmosphere(object):
             return arg_pVal.python_val
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -40159,15 +40159,15 @@ class IMarsGRAM37(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -40195,27 +40195,27 @@ class IMarsGRAM37(object):
             agcls.evaluate_hresult(self.__dict__["_set_namelist_file"](arg_inVal.COM_val))
 
     @property
-    def density_type(self) -> "AgEVAMarsGRAMDensityType":
+    def density_type(self) -> "VA_MARS_GRAM_DENSITY_TYPE":
         """Low, mean or high density type."""
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_density_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @density_type.setter
-    def density_type(self, inVal:"AgEVAMarsGRAMDensityType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType, inVal) as arg_inVal:
+    def density_type(self, inVal:"VA_MARS_GRAM_DENSITY_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_density_type"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -40243,15 +40243,15 @@ class IMarsGRAM37(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -40413,15 +40413,15 @@ class IMarsGRAM2005(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -40449,27 +40449,27 @@ class IMarsGRAM2005(object):
             agcls.evaluate_hresult(self.__dict__["_set_namelist_file"](arg_inVal.COM_val))
 
     @property
-    def density_type(self) -> "AgEVAMarsGRAMDensityType":
+    def density_type(self) -> "VA_MARS_GRAM_DENSITY_TYPE":
         """Low, mean, high or randomly perturbed density type."""
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_density_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @density_type.setter
-    def density_type(self, inVal:"AgEVAMarsGRAMDensityType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType, inVal) as arg_inVal:
+    def density_type(self, inVal:"VA_MARS_GRAM_DENSITY_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_density_type"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -40497,15 +40497,15 @@ class IMarsGRAM2005(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -40675,27 +40675,27 @@ class IVenusGRAM2005(object):
             agcls.evaluate_hresult(self.__dict__["_set_namelist_file"](arg_inVal.COM_val))
 
     @property
-    def density_type(self) -> "AgEVAVenusGRAMDensityType":
+    def density_type(self) -> "VA_VENUS_GRAM_DENSITY_TYPE":
         """Low, mean, high or randomly perturbed density type."""
-        with agmarshall.AgEnum_arg(AgEVAVenusGRAMDensityType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_VENUS_GRAM_DENSITY_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_density_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @density_type.setter
-    def density_type(self, inVal:"AgEVAVenusGRAMDensityType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAVenusGRAMDensityType, inVal) as arg_inVal:
+    def density_type(self, inVal:"VA_VENUS_GRAM_DENSITY_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_VENUS_GRAM_DENSITY_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_density_type"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -40857,15 +40857,15 @@ class IMarsGRAM2010(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -40893,27 +40893,27 @@ class IMarsGRAM2010(object):
             agcls.evaluate_hresult(self.__dict__["_set_namelist_file"](arg_inVal.COM_val))
 
     @property
-    def density_type(self) -> "AgEVAMarsGRAMDensityType":
+    def density_type(self) -> "VA_MARS_GRAM_DENSITY_TYPE":
         """Low, mean, high or randomly perturbed density type."""
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_density_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @density_type.setter
-    def density_type(self, inVal:"AgEVAMarsGRAMDensityType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType, inVal) as arg_inVal:
+    def density_type(self, inVal:"VA_MARS_GRAM_DENSITY_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_density_type"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -40941,15 +40941,15 @@ class IMarsGRAM2010(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -41111,15 +41111,15 @@ class IMarsGRAM2001(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -41147,27 +41147,27 @@ class IMarsGRAM2001(object):
             agcls.evaluate_hresult(self.__dict__["_set_namelist_file"](arg_inVal.COM_val))
 
     @property
-    def density_type(self) -> "AgEVAMarsGRAMDensityType":
+    def density_type(self) -> "VA_MARS_GRAM_DENSITY_TYPE":
         """Low, mean, high or randomly perturbed density type."""
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_density_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @density_type.setter
-    def density_type(self, inVal:"AgEVAMarsGRAMDensityType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType, inVal) as arg_inVal:
+    def density_type(self, inVal:"VA_MARS_GRAM_DENSITY_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_density_type"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -41195,15 +41195,15 @@ class IMarsGRAM2001(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -41365,15 +41365,15 @@ class IMarsGRAM2000(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -41401,27 +41401,27 @@ class IMarsGRAM2000(object):
             agcls.evaluate_hresult(self.__dict__["_set_namelist_file"](arg_inVal.COM_val))
 
     @property
-    def density_type(self) -> "AgEVAMarsGRAMDensityType":
+    def density_type(self) -> "VA_MARS_GRAM_DENSITY_TYPE":
         """Low, mean, high or randomly perturbed density type."""
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_density_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @density_type.setter
-    def density_type(self, inVal:"AgEVAMarsGRAMDensityType") -> None:
-        with agmarshall.AgEnum_arg(AgEVAMarsGRAMDensityType, inVal) as arg_inVal:
+    def density_type(self, inVal:"VA_MARS_GRAM_DENSITY_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_MARS_GRAM_DENSITY_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_density_type"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -41449,15 +41449,15 @@ class IMarsGRAM2000(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -41623,27 +41623,27 @@ class IDTM2012(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -41671,15 +41671,15 @@ class IDTM2012(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -41726,27 +41726,27 @@ class IDTM2012(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate of geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -41893,27 +41893,27 @@ class IDTM2020(object):
             return arg_pVal.python_val
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_source(self) -> "AgEVAAtmosDataSource":
+    def atmos_data_source(self) -> "VA_ATMOS_DATA_SOURCE":
         """The atmospheric model data source - data file or constant values."""
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_source.setter
-    def atmos_data_source(self, inVal:"AgEVAAtmosDataSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAAtmosDataSource, inVal) as arg_inVal:
+    def atmos_data_source(self, inVal:"VA_ATMOS_DATA_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_ATMOS_DATA_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_source"](arg_inVal.COM_val))
 
     @property
@@ -41941,15 +41941,15 @@ class IDTM2020(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_filename"](arg_inVal.COM_val))
 
     @property
-    def drag_model_type(self) -> "AgEVADragModelType":
+    def drag_model_type(self) -> "VA_DRAG_MODEL_TYPE":
         """Drag model type."""
-        with agmarshall.AgEnum_arg(AgEVADragModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_drag_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @drag_model_type.setter
-    def drag_model_type(self, inVal:"AgEVADragModelType") -> None:
-        with agmarshall.AgEnum_arg(AgEVADragModelType, inVal) as arg_inVal:
+    def drag_model_type(self, inVal:"VA_DRAG_MODEL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(VA_DRAG_MODEL_TYPE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_drag_model_type"](arg_inVal.COM_val))
 
     @property
@@ -41996,27 +41996,27 @@ class IDTM2020(object):
             agcls.evaluate_hresult(self.__dict__["_set_kp"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "AgEVAGeoMagneticFluxSource":
+    def atmos_data_geo_magnetic_flux_source(self) -> "VA_GEO_MAGNETIC_FLUX_SOURCE":
         """Whether to use Kp or Ap data from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, inVal:"AgEVAGeoMagneticFluxSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxSource, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_source(self, inVal:"VA_GEO_MAGNETIC_FLUX_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_source"](arg_inVal.COM_val))
 
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "AgEVAGeoMagneticFluxUpdateRate":
+    def atmos_data_geo_magnetic_flux_update_rate(self) -> "VA_GEO_MAGNETIC_FLUX_UPDATE_RATE":
         """The update rate of geomagnetic flux values from the flux file."""
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmos_data_geo_magnetic_flux_update_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"AgEVAGeoMagneticFluxUpdateRate") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGeoMagneticFluxUpdateRate, inVal) as arg_inVal:
+    def atmos_data_geo_magnetic_flux_update_rate(self, inVal:"VA_GEO_MAGNETIC_FLUX_UPDATE_RATE") -> None:
+        with agmarshall.AgEnum_arg(VA_GEO_MAGNETIC_FLUX_UPDATE_RATE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmos_data_geo_magnetic_flux_update_rate"](arg_inVal.COM_val))
 
     @property
@@ -42290,15 +42290,15 @@ class IGravityFieldFunction(object):
             agcls.evaluate_hresult(self.__dict__["_set_ocean_tide_max_order"](arg_inVal.COM_val))
 
     @property
-    def solid_tide_type(self) -> "AgESolidTide":
+    def solid_tide_type(self) -> "SOLID_TIDE":
         """The type of solid tide contribution to be modeled."""
-        with agmarshall.AgEnum_arg(AgESolidTide) as arg_pSolidTide:
+        with agmarshall.AgEnum_arg(SOLID_TIDE) as arg_pSolidTide:
             agcls.evaluate_hresult(self.__dict__["_get_solid_tide_type"](byref(arg_pSolidTide.COM_val)))
             return arg_pSolidTide.python_val
 
     @solid_tide_type.setter
-    def solid_tide_type(self, solidTide:"AgESolidTide") -> None:
-        with agmarshall.AgEnum_arg(AgESolidTide, solidTide) as arg_solidTide:
+    def solid_tide_type(self, solidTide:"SOLID_TIDE") -> None:
+        with agmarshall.AgEnum_arg(SOLID_TIDE, solidTide) as arg_solidTide:
             agcls.evaluate_hresult(self.__dict__["_set_solid_tide_type"](arg_solidTide.COM_val))
 
     @property
@@ -42407,15 +42407,15 @@ class IPointMassFunction(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPointMassFunction.")
     
     @property
-    def grav_source(self) -> "AgEVAGravParamSource":
+    def grav_source(self) -> "VA_GRAV_PARAM_SOURCE":
         """The source for the third body's gravitational parameter."""
-        with agmarshall.AgEnum_arg(AgEVAGravParamSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GRAV_PARAM_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_grav_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @grav_source.setter
-    def grav_source(self, inVal:"AgEVAGravParamSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGravParamSource, inVal) as arg_inVal:
+    def grav_source(self, inVal:"VA_GRAV_PARAM_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GRAV_PARAM_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_grav_source"](arg_inVal.COM_val))
 
     @property
@@ -42478,15 +42478,15 @@ class ITwoBodyFunction(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITwoBodyFunction.")
     
     @property
-    def grav_source(self) -> "AgEVAGravParamSource":
+    def grav_source(self) -> "VA_GRAV_PARAM_SOURCE":
         """The source for the gravitational parameter."""
-        with agmarshall.AgEnum_arg(AgEVAGravParamSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_GRAV_PARAM_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_grav_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @grav_source.setter
-    def grav_source(self, inVal:"AgEVAGravParamSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAGravParamSource, inVal) as arg_inVal:
+    def grav_source(self, inVal:"VA_GRAV_PARAM_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_GRAV_PARAM_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_grav_source"](arg_inVal.COM_val))
 
     @property
@@ -42707,27 +42707,27 @@ class ISRPAeroT20(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -42847,27 +42847,27 @@ class ISRPAeroT30(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -42987,27 +42987,27 @@ class ISRPGSPM04aIIA(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -43127,27 +43127,27 @@ class ISRPGSPM04aIIR(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -43267,27 +43267,27 @@ class ISRPGSPM04aeIIA(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -43407,27 +43407,27 @@ class ISRPGSPM04aeIIR(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -43559,27 +43559,27 @@ class ISRPSpherical(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -43614,15 +43614,15 @@ class ISRPSpherical(object):
             agcls.evaluate_hresult(self.__dict__["_set_luminosity"](arg_inVal.COM_val))
 
     @property
-    def solar_force_method(self) -> "AgEVASolarForceMethod":
+    def solar_force_method(self) -> "VA_SOLAR_FORCE_METHOD":
         """The solar force method"""
-        with agmarshall.AgEnum_arg(AgEVASolarForceMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SOLAR_FORCE_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_solar_force_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @solar_force_method.setter
-    def solar_force_method(self, inVal:"AgEVASolarForceMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVASolarForceMethod, inVal) as arg_inVal:
+    def solar_force_method(self, inVal:"VA_SOLAR_FORCE_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VA_SOLAR_FORCE_METHOD, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_solar_force_method"](arg_inVal.COM_val))
 
     @property
@@ -43751,27 +43751,27 @@ class ISRPNPlate(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -43806,15 +43806,15 @@ class ISRPNPlate(object):
             agcls.evaluate_hresult(self.__dict__["_set_luminosity"](arg_inVal.COM_val))
 
     @property
-    def solar_force_method(self) -> "AgEVASolarForceMethod":
+    def solar_force_method(self) -> "VA_SOLAR_FORCE_METHOD":
         """The solar force method"""
-        with agmarshall.AgEnum_arg(AgEVASolarForceMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SOLAR_FORCE_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_solar_force_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @solar_force_method.setter
-    def solar_force_method(self, inVal:"AgEVASolarForceMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVASolarForceMethod, inVal) as arg_inVal:
+    def solar_force_method(self, inVal:"VA_SOLAR_FORCE_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VA_SOLAR_FORCE_METHOD, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_solar_force_method"](arg_inVal.COM_val))
 
     @property
@@ -43959,27 +43959,27 @@ class ISRPTabAreaVec(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -44014,15 +44014,15 @@ class ISRPTabAreaVec(object):
             agcls.evaluate_hresult(self.__dict__["_set_luminosity"](arg_inVal.COM_val))
 
     @property
-    def solar_force_method(self) -> "AgEVASolarForceMethod":
+    def solar_force_method(self) -> "VA_SOLAR_FORCE_METHOD":
         """The solar force method"""
-        with agmarshall.AgEnum_arg(AgEVASolarForceMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SOLAR_FORCE_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_solar_force_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @solar_force_method.setter
-    def solar_force_method(self, inVal:"AgEVASolarForceMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVASolarForceMethod, inVal) as arg_inVal:
+    def solar_force_method(self, inVal:"VA_SOLAR_FORCE_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VA_SOLAR_FORCE_METHOD, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_solar_force_method"](arg_inVal.COM_val))
 
     @property
@@ -44074,15 +44074,15 @@ class ISRPTabAreaVec(object):
             agcls.evaluate_hresult(self.__dict__["_set_tab_area_vector_definition_file"](arg_inVal.COM_val))
 
     @property
-    def interpolation_method(self) -> "AgEVATabVecInterpMethod":
+    def interpolation_method(self) -> "VA_TAB_VEC_INTERP_METHOD":
         """The file interpolation method."""
-        with agmarshall.AgEnum_arg(AgEVATabVecInterpMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_TAB_VEC_INTERP_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_interpolation_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @interpolation_method.setter
-    def interpolation_method(self, inVal:"AgEVATabVecInterpMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVATabVecInterpMethod, inVal) as arg_inVal:
+    def interpolation_method(self, inVal:"VA_TAB_VEC_INTERP_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VA_TAB_VEC_INTERP_METHOD, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_interpolation_method"](arg_inVal.COM_val))
 
 
@@ -44175,27 +44175,27 @@ class ISRPVariableArea(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -44230,15 +44230,15 @@ class ISRPVariableArea(object):
             agcls.evaluate_hresult(self.__dict__["_set_luminosity"](arg_inVal.COM_val))
 
     @property
-    def solar_force_method(self) -> "AgEVASolarForceMethod":
+    def solar_force_method(self) -> "VA_SOLAR_FORCE_METHOD":
         """The solar force method"""
-        with agmarshall.AgEnum_arg(AgEVASolarForceMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SOLAR_FORCE_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_solar_force_method"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @solar_force_method.setter
-    def solar_force_method(self, inVal:"AgEVASolarForceMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEVASolarForceMethod, inVal) as arg_inVal:
+    def solar_force_method(self, inVal:"VA_SOLAR_FORCE_METHOD") -> None:
+        with agmarshall.AgEnum_arg(VA_SOLAR_FORCE_METHOD, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_solar_force_method"](arg_inVal.COM_val))
 
     @property
@@ -44353,15 +44353,15 @@ class IThirdBodyFunction(object):
             agcls.evaluate_hresult(self.__dict__["_set_third_body_name"](arg_inVal.COM_val))
 
     @property
-    def ephem_source(self) -> "AgEVAEphemSource":
+    def ephem_source(self) -> "VA_EPHEM_SOURCE":
         """Source for the third body's ephemeris"""
-        with agmarshall.AgEnum_arg(AgEVAEphemSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_EPHEM_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_ephem_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ephem_source.setter
-    def ephem_source(self, inVal:"AgEVAEphemSource") -> None:
-        with agmarshall.AgEnum_arg(AgEVAEphemSource, inVal) as arg_inVal:
+    def ephem_source(self, inVal:"VA_EPHEM_SOURCE") -> None:
+        with agmarshall.AgEnum_arg(VA_EPHEM_SOURCE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_ephem_source"](arg_inVal.COM_val))
 
     @property
@@ -44371,15 +44371,15 @@ class IThirdBodyFunction(object):
             agcls.evaluate_hresult(self.__dict__["_get_mode"](byref(arg_ppComponent.COM_val)))
             return arg_ppComponent.python_val
 
-    def set_mode_type(self, mode:"AgEVAThirdBodyMode") -> None:
+    def set_mode_type(self, mode:"VA_THIRD_BODY_MODE") -> None:
         """The third body gravity mode."""
-        with agmarshall.AgEnum_arg(AgEVAThirdBodyMode, mode) as arg_mode:
+        with agmarshall.AgEnum_arg(VA_THIRD_BODY_MODE, mode) as arg_mode:
             agcls.evaluate_hresult(self.__dict__["_set_mode_type"](arg_mode.COM_val))
 
     @property
-    def mode_type(self) -> "AgEVAThirdBodyMode":
+    def mode_type(self) -> "VA_THIRD_BODY_MODE":
         """The third body gravity mode type."""
-        with agmarshall.AgEnum_arg(AgEVAThirdBodyMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_THIRD_BODY_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -44489,27 +44489,27 @@ class ISRPReflectionPlugin(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmos_alt"](arg_inVal.COM_val))
 
     @property
-    def shadow_model(self) -> "AgEVAShadowModel":
+    def shadow_model(self) -> "VA_SHADOW_MODEL":
         """The shadow model type."""
-        with agmarshall.AgEnum_arg(AgEVAShadowModel) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_shadow_model"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @shadow_model.setter
-    def shadow_model(self, inVal:"AgEVAShadowModel") -> None:
-        with agmarshall.AgEnum_arg(AgEVAShadowModel, inVal) as arg_inVal:
+    def shadow_model(self, inVal:"VA_SHADOW_MODEL") -> None:
+        with agmarshall.AgEnum_arg(VA_SHADOW_MODEL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_shadow_model"](arg_inVal.COM_val))
 
     @property
-    def sun_position(self) -> "AgEVASunPosition":
+    def sun_position(self) -> "VA_SUN_POSITION":
         """The sun position computation."""
-        with agmarshall.AgEnum_arg(AgEVASunPosition) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_sun_position"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @sun_position.setter
-    def sun_position(self, inVal:"AgEVASunPosition") -> None:
-        with agmarshall.AgEnum_arg(AgEVASunPosition, inVal) as arg_inVal:
+    def sun_position(self, inVal:"VA_SUN_POSITION") -> None:
+        with agmarshall.AgEnum_arg(VA_SUN_POSITION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_sun_position"](arg_inVal.COM_val))
 
     @property
@@ -45228,19 +45228,19 @@ class IEngineConstAcc(object):
         with agmarshall.DOUBLE_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_isp"](arg_inVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlEngineConstAcc") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ENGINE_CONST_ACC") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineConstAcc, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CONST_ACC, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlEngineConstAcc") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ENGINE_CONST_ACC") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineConstAcc, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CONST_ACC, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlEngineConstAcc") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ENGINE_CONST_ACC") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineConstAcc, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CONST_ACC, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -45343,19 +45343,19 @@ class IEngineConstant(object):
         with agmarshall.DOUBLE_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_isp"](arg_inVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlEngineConstant") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ENGINE_CONSTANT") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineConstant, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CONSTANT, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlEngineConstant") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ENGINE_CONSTANT") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineConstant, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CONSTANT, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlEngineConstant") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ENGINE_CONSTANT") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineConstant, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CONSTANT, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -45535,15 +45535,15 @@ class IEngineDefinition(object):
             agcls.evaluate_hresult(self.__dict__["_set_isp_c3"](arg_inVal.COM_val))
 
     @property
-    def mass_flow_rate_equation_type(self) -> "AgEVAEngineModelFunction":
+    def mass_flow_rate_equation_type(self) -> "VA_ENGINE_MODEL_FUNCTION":
         """The independent variable for the mass flow rate equation."""
-        with agmarshall.AgEnum_arg(AgEVAEngineModelFunction) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ENGINE_MODEL_FUNCTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_mass_flow_rate_equation_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @mass_flow_rate_equation_type.setter
-    def mass_flow_rate_equation_type(self, inVal:"AgEVAEngineModelFunction") -> None:
-        with agmarshall.AgEnum_arg(AgEVAEngineModelFunction, inVal) as arg_inVal:
+    def mass_flow_rate_equation_type(self, inVal:"VA_ENGINE_MODEL_FUNCTION") -> None:
+        with agmarshall.AgEnum_arg(VA_ENGINE_MODEL_FUNCTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_mass_flow_rate_equation_type"](arg_inVal.COM_val))
 
     @property
@@ -45650,15 +45650,15 @@ class IEngineDefinition(object):
             agcls.evaluate_hresult(self.__dict__["_set_mass_flow_efficiency_c3"](arg_inVal.COM_val))
 
     @property
-    def mass_flow_efficiency_independent_var(self) -> "AgEVAEngineModelFunction":
+    def mass_flow_efficiency_independent_var(self) -> "VA_ENGINE_MODEL_FUNCTION":
         """The independent variable for the mass flow efficiency equation."""
-        with agmarshall.AgEnum_arg(AgEVAEngineModelFunction) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ENGINE_MODEL_FUNCTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_mass_flow_efficiency_independent_var"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @mass_flow_efficiency_independent_var.setter
-    def mass_flow_efficiency_independent_var(self, inVal:"AgEVAEngineModelFunction") -> None:
-        with agmarshall.AgEnum_arg(AgEVAEngineModelFunction, inVal) as arg_inVal:
+    def mass_flow_efficiency_independent_var(self, inVal:"VA_ENGINE_MODEL_FUNCTION") -> None:
+        with agmarshall.AgEnum_arg(VA_ENGINE_MODEL_FUNCTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_mass_flow_efficiency_independent_var"](arg_inVal.COM_val))
 
     @property
@@ -45717,15 +45717,15 @@ class IEngineDefinition(object):
             agcls.evaluate_hresult(self.__dict__["_set_power_efficiency_c3"](arg_inVal.COM_val))
 
     @property
-    def power_efficiency_independent_var(self) -> "AgEVAEngineModelFunction":
+    def power_efficiency_independent_var(self) -> "VA_ENGINE_MODEL_FUNCTION":
         """The independent variable for the power efficiency equation."""
-        with agmarshall.AgEnum_arg(AgEVAEngineModelFunction) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ENGINE_MODEL_FUNCTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_power_efficiency_independent_var"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @power_efficiency_independent_var.setter
-    def power_efficiency_independent_var(self, inVal:"AgEVAEngineModelFunction") -> None:
-        with agmarshall.AgEnum_arg(AgEVAEngineModelFunction, inVal) as arg_inVal:
+    def power_efficiency_independent_var(self, inVal:"VA_ENGINE_MODEL_FUNCTION") -> None:
+        with agmarshall.AgEnum_arg(VA_ENGINE_MODEL_FUNCTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_power_efficiency_independent_var"](arg_inVal.COM_val))
 
     @property
@@ -45826,15 +45826,15 @@ class IEngineThrottleTable(object):
             agcls.evaluate_hresult(self.__dict__["_set_throttle_table_filename"](arg_inVal.COM_val))
 
     @property
-    def operation_mode_definition(self) -> "AgEVAThrottleTableOperationMode":
+    def operation_mode_definition(self) -> "VA_THROTTLE_TABLE_OPERATION_MODE":
         """The engine operation mode definition."""
-        with agmarshall.AgEnum_arg(AgEVAThrottleTableOperationMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_THROTTLE_TABLE_OPERATION_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_operation_mode_definition"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @operation_mode_definition.setter
-    def operation_mode_definition(self, inVal:"AgEVAThrottleTableOperationMode") -> None:
-        with agmarshall.AgEnum_arg(AgEVAThrottleTableOperationMode, inVal) as arg_inVal:
+    def operation_mode_definition(self, inVal:"VA_THROTTLE_TABLE_OPERATION_MODE") -> None:
+        with agmarshall.AgEnum_arg(VA_THROTTLE_TABLE_OPERATION_MODE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_operation_mode_definition"](arg_inVal.COM_val))
 
     @property
@@ -45897,19 +45897,19 @@ class IEngineThrottleTable(object):
         with agmarshall.VARIANT_arg(inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_epoch"](arg_inVal.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlEngineThrottleTable") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ENGINE_THROTTLE_TABLE") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineThrottleTable, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_THROTTLE_TABLE, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlEngineThrottleTable") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ENGINE_THROTTLE_TABLE") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineThrottleTable, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_THROTTLE_TABLE, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlEngineThrottleTable") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ENGINE_THROTTLE_TABLE") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineThrottleTable, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_THROTTLE_TABLE, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46085,19 +46085,19 @@ class IEngineIon(object):
             agcls.evaluate_hresult(self.__dict__["_get_engine_definition"](byref(arg_ppVAEngineDefinition.COM_val)))
             return arg_ppVAEngineDefinition.python_val
 
-    def enable_control_parameter(self, param:"AgEVAControlEngineIon") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ENGINE_ION") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineIon, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_ION, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlEngineIon") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ENGINE_ION") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineIon, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_ION, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlEngineIon") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ENGINE_ION") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineIon, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_ION, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46248,19 +46248,19 @@ class IEngineCustom(object):
         with agmarshall.BSTR_arg(updateFunction) as arg_updateFunction:
             agcls.evaluate_hresult(self.__dict__["_set_update_function_name"](arg_updateFunction.COM_val))
 
-    def enable_control_parameter(self, param:"AgEVAControlEngineCustom") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ENGINE_CUSTOM") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineCustom, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CUSTOM, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlEngineCustom") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ENGINE_CUSTOM") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineCustom, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CUSTOM, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlEngineCustom") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ENGINE_CUSTOM") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineCustom, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_CUSTOM, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46425,19 +46425,19 @@ class IEngineModelPoly(object):
             agcls.evaluate_hresult(self.__dict__["_get_isp_coefficients"](byref(arg_ppVAEngineModelIspCoefficients.COM_val)))
             return arg_ppVAEngineModelIspCoefficients.python_val
 
-    def enable_control_parameter(self, param:"AgEVAControlEngineModelPoly") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_ENGINE_MODEL_POLY") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineModelPoly, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_MODEL_POLY, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlEngineModelPoly") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_ENGINE_MODEL_POLY") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineModelPoly, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_MODEL_POLY, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlEngineModelPoly") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_ENGINE_MODEL_POLY") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlEngineModelPoly, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_ENGINE_MODEL_POLY, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -46666,15 +46666,15 @@ class IDesignCR3BPSetup(object):
             agcls.evaluate_hresult(self.__dict__["_set_initial_epoch"](arg_newVal.COM_val))
 
     @property
-    def ideal_orbit_radius(self) -> "AgEVAIdealOrbitRadius":
+    def ideal_orbit_radius(self) -> "VA_IDEAL_ORBIT_RADIUS":
         """Orbital radius of the idealized secondary definition."""
-        with agmarshall.AgEnum_arg(AgEVAIdealOrbitRadius) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_IDEAL_ORBIT_RADIUS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_ideal_orbit_radius"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ideal_orbit_radius.setter
-    def ideal_orbit_radius(self, inVal:"AgEVAIdealOrbitRadius") -> None:
-        with agmarshall.AgEnum_arg(AgEVAIdealOrbitRadius, inVal) as arg_inVal:
+    def ideal_orbit_radius(self, inVal:"VA_IDEAL_ORBIT_RADIUS") -> None:
+        with agmarshall.AgEnum_arg(VA_IDEAL_ORBIT_RADIUS, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_ideal_orbit_radius"](arg_inVal.COM_val))
 
     @property
@@ -46725,15 +46725,15 @@ class IDesignCR3BPSetup(object):
             return arg_pVal.python_val
 
     @property
-    def rotating_system_choice(self) -> "AgEVARotatingCoordinateSystem":
+    def rotating_system_choice(self) -> "VA_ROTATING_COORDINATE_SYSTEM":
         """The rotating coordinate system and associated calculation objects to interact with."""
-        with agmarshall.AgEnum_arg(AgEVARotatingCoordinateSystem) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ROTATING_COORDINATE_SYSTEM) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_rotating_system_choice"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @rotating_system_choice.setter
-    def rotating_system_choice(self, inVal:"AgEVARotatingCoordinateSystem") -> None:
-        with agmarshall.AgEnum_arg(AgEVARotatingCoordinateSystem, inVal) as arg_inVal:
+    def rotating_system_choice(self, inVal:"VA_ROTATING_COORDINATE_SYSTEM") -> None:
+        with agmarshall.AgEnum_arg(VA_ROTATING_COORDINATE_SYSTEM, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_rotating_system_choice"](arg_inVal.COM_val))
 
     def create_ideal_secondary_cb(self) -> None:
@@ -46973,19 +46973,19 @@ class IThruster(object):
             agcls.evaluate_hresult(self.__dict__["_get_thruster_direction"](byref(arg_ppDirection.COM_val)))
             return arg_ppDirection.python_val
 
-    def enable_control_parameter(self, param:"AgEVAControlThrusters") -> None:
+    def enable_control_parameter(self, param:"VA_CONTROL_THRUSTERS") -> None:
         """Enables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlThrusters, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_THRUSTERS, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_enable_control_parameter"](arg_param.COM_val))
 
-    def disable_control_parameter(self, param:"AgEVAControlThrusters") -> None:
+    def disable_control_parameter(self, param:"VA_CONTROL_THRUSTERS") -> None:
         """Disables the specified control parameter."""
-        with agmarshall.AgEnum_arg(AgEVAControlThrusters, param) as arg_param:
+        with agmarshall.AgEnum_arg(VA_CONTROL_THRUSTERS, param) as arg_param:
             agcls.evaluate_hresult(self.__dict__["_disable_control_parameter"](arg_param.COM_val))
 
-    def is_control_parameter_enabled(self, param:"AgEVAControlThrusters") -> bool:
+    def is_control_parameter_enabled(self, param:"VA_CONTROL_THRUSTERS") -> bool:
         """Sees if the specified control is enabled."""
-        with agmarshall.AgEnum_arg(AgEVAControlThrusters, param) as arg_param, \
+        with agmarshall.AgEnum_arg(VA_CONTROL_THRUSTERS, param) as arg_param, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_is_control_parameter_enabled"](arg_param.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
@@ -47180,15 +47180,15 @@ class IThrusterSet(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IThrusterSet.")
     
     @property
-    def direction_definition(self) -> "AgEVAThrusterDirection":
+    def direction_definition(self) -> "VA_THRUSTER_DIRECTION":
         """The thruster set direction definition."""
-        with agmarshall.AgEnum_arg(AgEVAThrusterDirection) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_THRUSTER_DIRECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction_definition"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @direction_definition.setter
-    def direction_definition(self, inVal:"AgEVAThrusterDirection") -> None:
-        with agmarshall.AgEnum_arg(AgEVAThrusterDirection, inVal) as arg_inVal:
+    def direction_definition(self, inVal:"VA_THRUSTER_DIRECTION") -> None:
+        with agmarshall.AgEnum_arg(VA_THRUSTER_DIRECTION, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_direction_definition"](arg_inVal.COM_val))
 
     @property
@@ -47262,15 +47262,15 @@ class IAsTriggerCondition(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAsTriggerCondition.")
     
     @property
-    def criteria(self) -> "AgEVACriteria":
+    def criteria(self) -> "VA_CRITERIA":
         """The criteria to be applied to the desired value."""
-        with agmarshall.AgEnum_arg(AgEVACriteria) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_CRITERIA) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_criteria"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @criteria.setter
-    def criteria(self, inVal:"AgEVACriteria") -> None:
-        with agmarshall.AgEnum_arg(AgEVACriteria, inVal) as arg_inVal:
+    def criteria(self, inVal:"VA_CRITERIA") -> None:
+        with agmarshall.AgEnum_arg(VA_CRITERIA, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_criteria"](arg_inVal.COM_val))
 
     @property
@@ -47722,15 +47722,15 @@ class INumericalPropagatorWrapper(object):
             return arg_ppVANumericalIntegrator.python_val
 
     @property
-    def numerical_integrator_type(self) -> "AgEVANumericalIntegrator":
+    def numerical_integrator_type(self) -> "VA_NUMERICAL_INTEGRATOR":
         """The single step integrator type."""
-        with agmarshall.AgEnum_arg(AgEVANumericalIntegrator) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_NUMERICAL_INTEGRATOR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_numerical_integrator_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_numerical_integrator(self, integrator:"AgEVANumericalIntegrator") -> None:
+    def set_numerical_integrator(self, integrator:"VA_NUMERICAL_INTEGRATOR") -> None:
         """Changes the single step integrator."""
-        with agmarshall.AgEnum_arg(AgEVANumericalIntegrator, integrator) as arg_integrator:
+        with agmarshall.AgEnum_arg(VA_NUMERICAL_INTEGRATOR, integrator) as arg_integrator:
             agcls.evaluate_hresult(self.__dict__["_set_numerical_integrator"](arg_integrator.COM_val))
 
 
@@ -47807,15 +47807,15 @@ class INumericalPropagatorWrapperCR3BP(object):
             return arg_ppVANumericalIntegrator.python_val
 
     @property
-    def numerical_integrator_type(self) -> "AgEVANumericalIntegrator":
+    def numerical_integrator_type(self) -> "VA_NUMERICAL_INTEGRATOR":
         """The numerical integrator type."""
-        with agmarshall.AgEnum_arg(AgEVANumericalIntegrator) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_NUMERICAL_INTEGRATOR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_numerical_integrator_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_numerical_integrator(self, integrator:"AgEVANumericalIntegrator") -> None:
+    def set_numerical_integrator(self, integrator:"VA_NUMERICAL_INTEGRATOR") -> None:
         """Changes the numerical integrator."""
-        with agmarshall.AgEnum_arg(AgEVANumericalIntegrator, integrator) as arg_integrator:
+        with agmarshall.AgEnum_arg(VA_NUMERICAL_INTEGRATOR, integrator) as arg_integrator:
             agcls.evaluate_hresult(self.__dict__["_set_numerical_integrator"](arg_integrator.COM_val))
 
 
@@ -48127,15 +48127,15 @@ class IGaussJacksonIntegrator(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_corrector_rel_err"](arg_inVal.COM_val))
 
     @property
-    def corrector_mode(self) -> "AgEVAPredictorCorrector":
+    def corrector_mode(self) -> "VA_PREDICTOR_CORRECTOR":
         """The Predictor Corrector scheme."""
-        with agmarshall.AgEnum_arg(AgEVAPredictorCorrector) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_PREDICTOR_CORRECTOR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_corrector_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @corrector_mode.setter
-    def corrector_mode(self, inVal:"AgEVAPredictorCorrector") -> None:
-        with agmarshall.AgEnum_arg(AgEVAPredictorCorrector, inVal) as arg_inVal:
+    def corrector_mode(self, inVal:"VA_PREDICTOR_CORRECTOR") -> None:
+        with agmarshall.AgEnum_arg(VA_PREDICTOR_CORRECTOR, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_corrector_mode"](arg_inVal.COM_val))
 
     @property
@@ -48158,15 +48158,15 @@ class IGaussJacksonIntegrator(object):
             return arg_ppVANumericalIntegrator.python_val
 
     @property
-    def single_step_integrator_type(self) -> "AgEVANumericalIntegrator":
+    def single_step_integrator_type(self) -> "VA_NUMERICAL_INTEGRATOR":
         """The stopping integrator type."""
-        with agmarshall.AgEnum_arg(AgEVANumericalIntegrator) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_NUMERICAL_INTEGRATOR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_single_step_integrator_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_single_step_integrator(self, integrator:"AgEVANumericalIntegrator") -> None:
+    def set_single_step_integrator(self, integrator:"VA_NUMERICAL_INTEGRATOR") -> None:
         """Changes the stopping integrator."""
-        with agmarshall.AgEnum_arg(AgEVANumericalIntegrator, integrator) as arg_integrator:
+        with agmarshall.AgEnum_arg(VA_NUMERICAL_INTEGRATOR, integrator) as arg_integrator:
             agcls.evaluate_hresult(self.__dict__["_set_single_step_integrator"](arg_integrator.COM_val))
 
 
@@ -48373,15 +48373,15 @@ class IRungeKutta2nd3rd(object):
             agcls.evaluate_hresult(self.__dict__["_set_low_safety_coefficient"](arg_inVal.COM_val))
 
     @property
-    def error_control(self) -> "AgEVAErrorControl":
+    def error_control(self) -> "VA_ERROR_CONTROL":
         """The error control method."""
-        with agmarshall.AgEnum_arg(AgEVAErrorControl) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_error_control"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @error_control.setter
-    def error_control(self, inVal:"AgEVAErrorControl") -> None:
-        with agmarshall.AgEnum_arg(AgEVAErrorControl, inVal) as arg_inVal:
+    def error_control(self, inVal:"VA_ERROR_CONTROL") -> None:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_error_control"](arg_inVal.COM_val))
 
     @property
@@ -48651,15 +48651,15 @@ class IRungeKutta4th5th(object):
             agcls.evaluate_hresult(self.__dict__["_set_low_safety_coefficient"](arg_inVal.COM_val))
 
     @property
-    def error_control(self) -> "AgEVAErrorControl":
+    def error_control(self) -> "VA_ERROR_CONTROL":
         """The error control method."""
-        with agmarshall.AgEnum_arg(AgEVAErrorControl) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_error_control"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @error_control.setter
-    def error_control(self, inVal:"AgEVAErrorControl") -> None:
-        with agmarshall.AgEnum_arg(AgEVAErrorControl, inVal) as arg_inVal:
+    def error_control(self, inVal:"VA_ERROR_CONTROL") -> None:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_error_control"](arg_inVal.COM_val))
 
     @property
@@ -48878,15 +48878,15 @@ class IRungeKutta4thAdapt(object):
             agcls.evaluate_hresult(self.__dict__["_set_low_safety_coefficient"](arg_inVal.COM_val))
 
     @property
-    def error_control(self) -> "AgEVAErrorControl":
+    def error_control(self) -> "VA_ERROR_CONTROL":
         """The error control method."""
-        with agmarshall.AgEnum_arg(AgEVAErrorControl) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_error_control"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @error_control.setter
-    def error_control(self, inVal:"AgEVAErrorControl") -> None:
-        with agmarshall.AgEnum_arg(AgEVAErrorControl, inVal) as arg_inVal:
+    def error_control(self, inVal:"VA_ERROR_CONTROL") -> None:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_error_control"](arg_inVal.COM_val))
 
     @property
@@ -49105,15 +49105,15 @@ class IRungeKuttaF7th8th(object):
             agcls.evaluate_hresult(self.__dict__["_set_low_safety_coefficient"](arg_inVal.COM_val))
 
     @property
-    def error_control(self) -> "AgEVAErrorControl":
+    def error_control(self) -> "VA_ERROR_CONTROL":
         """The error control method."""
-        with agmarshall.AgEnum_arg(AgEVAErrorControl) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_error_control"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @error_control.setter
-    def error_control(self, inVal:"AgEVAErrorControl") -> None:
-        with agmarshall.AgEnum_arg(AgEVAErrorControl, inVal) as arg_inVal:
+    def error_control(self, inVal:"VA_ERROR_CONTROL") -> None:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_error_control"](arg_inVal.COM_val))
 
     @property
@@ -49336,15 +49336,15 @@ class IRungeKuttaV8th9th(object):
             agcls.evaluate_hresult(self.__dict__["_set_low_safety_coefficient"](arg_inVal.COM_val))
 
     @property
-    def error_control(self) -> "AgEVAErrorControl":
+    def error_control(self) -> "VA_ERROR_CONTROL":
         """The error control method."""
-        with agmarshall.AgEnum_arg(AgEVAErrorControl) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_error_control"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @error_control.setter
-    def error_control(self, inVal:"AgEVAErrorControl") -> None:
-        with agmarshall.AgEnum_arg(AgEVAErrorControl, inVal) as arg_inVal:
+    def error_control(self, inVal:"VA_ERROR_CONTROL") -> None:
+        with agmarshall.AgEnum_arg(VA_ERROR_CONTROL, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_error_control"](arg_inVal.COM_val))
 
     @property
@@ -49360,15 +49360,15 @@ class IRungeKuttaV8th9th(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_iterations"](arg_inVal.COM_val))
 
     @property
-    def coeff_type(self) -> "AgEVACoeffRKV8th9th":
+    def coeff_type(self) -> "VA_COEFF_R_K_V_8TH9_TH":
         """The set of coefficients to use."""
-        with agmarshall.AgEnum_arg(AgEVACoeffRKV8th9th) as arg_pVal:
+        with agmarshall.AgEnum_arg(VA_COEFF_R_K_V_8TH9_TH) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_coeff_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @coeff_type.setter
-    def coeff_type(self, inVal:"AgEVACoeffRKV8th9th") -> None:
-        with agmarshall.AgEnum_arg(AgEVACoeffRKV8th9th, inVal) as arg_inVal:
+    def coeff_type(self, inVal:"VA_COEFF_R_K_V_8TH9_TH") -> None:
+        with agmarshall.AgEnum_arg(VA_COEFF_R_K_V_8TH9_TH, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_coeff_type"](arg_inVal.COM_val))
 
 

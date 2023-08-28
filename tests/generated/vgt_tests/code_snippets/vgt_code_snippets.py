@@ -14,13 +14,13 @@ class VGT(CodeSnippetsTestBase):
     def setUpClass():
         CodeSnippetsTestBase.InitializeWithNewScenario(True)
         sat: "ISatellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(AgESTKObjectType.eSatellite, "Satellite1"), ISatellite
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"), ISatellite
         )
-        sat.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         (clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)).propagate()
 
         fac: "IFacility" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(AgESTKObjectType.eFacility, "Facility1"), IFacility
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1"), IFacility
         )
 
         scenario: "IScenario" = clr.Convert(TestBase.Application.current_scenario, IScenario)
@@ -747,7 +747,7 @@ class VGT(CodeSnippetsTestBase):
             provider.vectors.factory.create(
                 "myVector",
                 "a vector.perpendicular to the plane in which the angle is defined.",
-                AgECrdnVectorType.eCrdnVectorTypeAngleRate,
+                CRDN_VECTOR_TYPE.ANGLE_RATE,
             ),
             IVectorGeometryToolVectorAngleRate,
         )
@@ -760,13 +760,13 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("myVector")))
         try:
-            self.IsVectorTypeSupported(provider, AgECrdnVectorType.eCrdnVectorTypeAngleRate)
+            self.IsVectorTypeSupported(provider, CRDN_VECTOR_TYPE.ANGLE_RATE)
 
         finally:
             provider.vectors.remove("myVector")
             del root
 
-    def IsVectorTypeSupported(self, provider: "IAnalysisWorkbenchProvider", vectorType: "AgECrdnVectorType"):
+    def IsVectorTypeSupported(self, provider: "IAnalysisWorkbenchProvider", vectorType: "CRDN_VECTOR_TYPE"):
         if provider.vectors.factory.is_type_supported(vectorType):
             # Create a custom vector.
             vector: "IVectorGeometryToolVector" = provider.vectors.factory.create("myVector", String.Empty, vectorType)
@@ -779,12 +779,8 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("Point1")))
         Assert.assertTrue((not provider.points.contains("Point2")))
-        p: "IVectorGeometryToolPoint" = provider.points.factory.create(
-            "Point1", String.Empty, AgECrdnPointType.eCrdnPointTypeGlint
-        )
-        p2: "IVectorGeometryToolPoint" = provider.points.factory.create(
-            "Point2", String.Empty, AgECrdnPointType.eCrdnPointTypeGrazing
-        )
+        p: "IVectorGeometryToolPoint" = provider.points.factory.create("Point1", String.Empty, CRDN_POINT_TYPE.GLINT)
+        p2: "IVectorGeometryToolPoint" = provider.points.factory.create("Point2", String.Empty, CRDN_POINT_TYPE.GRAZING)
         try:
             self.CreateDisplacementVector(provider, p, p2)
 
@@ -812,12 +808,8 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("Vector1")))
         Assert.assertTrue((not provider.vectors.contains("Vector2")))
-        v1: "IVectorGeometryToolVector" = provider.vectors.factory.create(
-            "Vector1", "", AgECrdnVectorType.eCrdnVectorTypeLineOfNodes
-        )
-        v2: "IVectorGeometryToolVector" = provider.vectors.factory.create(
-            "Vector2", "", AgECrdnVectorType.eCrdnVectorTypeEccentricity
-        )
+        v1: "IVectorGeometryToolVector" = provider.vectors.factory.create("Vector1", "", CRDN_VECTOR_TYPE.LINE_OF_NODES)
+        v2: "IVectorGeometryToolVector" = provider.vectors.factory.create("Vector2", "", CRDN_VECTOR_TYPE.ECCENTRICITY)
         try:
             self.CreateCrossProductVector(provider, v1, v2)
 
@@ -861,7 +853,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("SomeVector")))
         someVector: "IVectorGeometryToolVector" = provider.vectors.factory.create(
-            "SomeVector", String.Empty, AgECrdnVectorType.eCrdnVectorTypeDisplacement
+            "SomeVector", String.Empty, CRDN_VECTOR_TYPE.DISPLACEMENT
         )
         try:
             self.VectorRemove(provider, (clr.Convert(someVector, IAnalysisWorkbenchComponent)).name)
@@ -891,7 +883,7 @@ class VGT(CodeSnippetsTestBase):
         # Create an angle between two planes.
         angle: "IVectorGeometryToolAngleBetweenPlanes" = clr.Convert(
             provider.angles.factory.create(
-                "AngleName", "Angle from one plane to another.", AgECrdnAngleType.eCrdnAngleTypeBetweenPlanes
+                "AngleName", "Angle from one plane to another.", CRDN_ANGLE_TYPE.BETWEEN_PLANES
             ),
             IVectorGeometryToolAngleBetweenPlanes,
         )
@@ -904,14 +896,14 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("MyAngle")))
         try:
-            self.IsAngleTypeSupported(provider, AgECrdnAngleType.eCrdnAngleTypeBetweenPlanes)
+            self.IsAngleTypeSupported(provider, CRDN_ANGLE_TYPE.BETWEEN_PLANES)
 
         finally:
             provider.angles.remove("MyAngle")
             del root
 
     # Review: see the comments for the Vector
-    def IsAngleTypeSupported(self, provider: "IAnalysisWorkbenchProvider", angleType: "AgECrdnAngleType"):
+    def IsAngleTypeSupported(self, provider: "IAnalysisWorkbenchProvider", angleType: "CRDN_ANGLE_TYPE"):
         if provider.angles.factory.is_type_supported(angleType):
             # Create an Angle with the supported Type
             angle: "IVectorGeometryToolAngle" = provider.angles.factory.create("MyAngle", String.Empty, angleType)
@@ -941,7 +933,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("AngleName")))
         angle: "IVectorGeometryToolAngle" = provider.angles.factory.create(
-            "AngleName", String.Empty, AgECrdnAngleType.eCrdnAngleTypeBetweenPlanes
+            "AngleName", String.Empty, CRDN_ANGLE_TYPE.BETWEEN_PLANES
         )
         try:
             self.AngleRemove(provider)
@@ -970,9 +962,7 @@ class VGT(CodeSnippetsTestBase):
     def CreateNormalPlane(self, provider: "IAnalysisWorkbenchProvider"):
         # Create a plane normal to vector.
         p: "IVectorGeometryToolPlaneNormal" = clr.Convert(
-            provider.planes.factory.create(
-                "PlaneName", "A plane normal to vector.", AgECrdnPlaneType.eCrdnPlaneTypeNormal
-            ),
+            provider.planes.factory.create("PlaneName", "A plane normal to vector.", CRDN_PLANE_TYPE.NORMAL),
             IVectorGeometryToolPlaneNormal,
         )
 
@@ -984,13 +974,13 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.planes.contains("PlaneName")))
         try:
-            self.IsPlaneTypeSupported(provider, AgECrdnPlaneType.eCrdnPlaneTypeNormal)
+            self.IsPlaneTypeSupported(provider, CRDN_PLANE_TYPE.NORMAL)
 
         finally:
             provider.planes.remove("PlaneName")
             del root
 
-    def IsPlaneTypeSupported(self, provider: "IAnalysisWorkbenchProvider", planeType: "AgECrdnPlaneType"):
+    def IsPlaneTypeSupported(self, provider: "IAnalysisWorkbenchProvider", planeType: "CRDN_PLANE_TYPE"):
         if provider.planes.factory.is_type_supported(planeType):
             p: "IVectorGeometryToolPlane" = provider.planes.factory.create("PlaneName", String.Empty, planeType)
 
@@ -1018,7 +1008,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.planes.contains("PlaneName")))
         plane: "IVectorGeometryToolPlane" = provider.planes.factory.create(
-            "PlaneName", String.Empty, AgECrdnPlaneType.eCrdnPlaneTypeNormal
+            "PlaneName", String.Empty, CRDN_PLANE_TYPE.NORMAL
         )
         try:
             self.PlaneRemove(provider)
@@ -1046,7 +1036,7 @@ class VGT(CodeSnippetsTestBase):
 
     def CreateAxesAlignedAndConstrained(self, provider: "IAnalysisWorkbenchProvider"):
         axes: "IVectorGeometryToolAxesAlignedAndConstrained" = clr.Convert(
-            provider.axes.factory.create("AxesName", String.Empty, AgECrdnAxesType.eCrdnAxesTypeAlignedAndConstrained),
+            provider.axes.factory.create("AxesName", String.Empty, CRDN_AXES_TYPE.ALIGNED_AND_CONSTRAINED),
             IVectorGeometryToolAxesAlignedAndConstrained,
         )
 
@@ -1058,13 +1048,13 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.axes.contains("AxesName")))
         try:
-            self.IsAxesTypeSupported(provider, AgECrdnAxesType.eCrdnAxesTypeAlignedAndConstrained)
+            self.IsAxesTypeSupported(provider, CRDN_AXES_TYPE.ALIGNED_AND_CONSTRAINED)
 
         finally:
             provider.axes.remove("AxesName")
             del root
 
-    def IsAxesTypeSupported(self, provider: "IAnalysisWorkbenchProvider", axesType: "AgECrdnAxesType"):
+    def IsAxesTypeSupported(self, provider: "IAnalysisWorkbenchProvider", axesType: "CRDN_AXES_TYPE"):
         if provider.axes.factory.is_type_supported(axesType):
             axes: "IVectorGeometryToolAxes" = provider.axes.factory.create("AxesName", String.Empty, axesType)
 
@@ -1091,9 +1081,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.axes.contains("AxesName")))
-        axes: "IVectorGeometryToolAxes" = provider.axes.factory.create(
-            "AxesName", String.Empty, AgECrdnAxesType.eCrdnAxesTypeFixed
-        )
+        axes: "IVectorGeometryToolAxes" = provider.axes.factory.create("AxesName", String.Empty, CRDN_AXES_TYPE.FIXED)
         try:
             self.AxesRemove(provider)
 
@@ -1121,7 +1109,7 @@ class VGT(CodeSnippetsTestBase):
     def CreatePointBPlane(self, provider: "IAnalysisWorkbenchProvider", TargetBody: str):
         # Create a B-Plane point using selected target body
         point: "IVectorGeometryToolPointBPlane" = clr.Convert(
-            provider.points.factory.create("PointName", String.Empty, AgECrdnPointType.eCrdnPointTypeBPlane),
+            provider.points.factory.create("PointName", String.Empty, CRDN_POINT_TYPE.B_PLANE),
             IVectorGeometryToolPointBPlane,
         )
         point.target_body.set_path(TargetBody)
@@ -1134,13 +1122,13 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("PointName")))
         try:
-            self.IsPointTypeSupported(provider, AgECrdnPointType.eCrdnPointTypeBPlane)
+            self.IsPointTypeSupported(provider, CRDN_POINT_TYPE.B_PLANE)
 
         finally:
             provider.points.remove("PointName")
             del root
 
-    def IsPointTypeSupported(self, provider: "IAnalysisWorkbenchProvider", PointType: "AgECrdnPointType"):
+    def IsPointTypeSupported(self, provider: "IAnalysisWorkbenchProvider", PointType: "CRDN_POINT_TYPE"):
         if provider.points.factory.is_type_supported(PointType):
             point: "IVectorGeometryToolPoint" = provider.points.factory.create("PointName", String.Empty, PointType)
 
@@ -1168,7 +1156,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("PointName")))
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
-            "PointName", String.Empty, AgECrdnPointType.eCrdnPointTypeFixedInSystem
+            "PointName", String.Empty, CRDN_POINT_TYPE.FIXED_IN_SYSTEM
         )
         try:
             self.PointRemove(provider)
@@ -1201,7 +1189,7 @@ class VGT(CodeSnippetsTestBase):
         ReferenceAxes: "IVectorGeometryToolAxes",
     ):
         system: "IVectorGeometryToolSystemAssembled" = clr.Convert(
-            provider.systems.factory.create("SystemName", String.Empty, AgECrdnSystemType.eCrdnSystemTypeAssembled),
+            provider.systems.factory.create("SystemName", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED),
             IVectorGeometryToolSystemAssembled,
         )
         # Set the system's origin point.
@@ -1217,13 +1205,13 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.systems.contains("SystemName")))
         try:
-            self.IsSystemTypeSupported(provider, AgECrdnSystemType.eCrdnSystemTypeAssembled)
+            self.IsSystemTypeSupported(provider, CRDN_SYSTEM_TYPE.ASSEMBLED)
 
         finally:
             provider.systems.remove("SystemName")
             del root
 
-    def IsSystemTypeSupported(self, provider: "IAnalysisWorkbenchProvider", SystemType: "AgECrdnSystemType"):
+    def IsSystemTypeSupported(self, provider: "IAnalysisWorkbenchProvider", SystemType: "CRDN_SYSTEM_TYPE"):
         if provider.systems.factory.is_type_supported(SystemType):
             # Create a System with supported Type
             system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
@@ -1254,7 +1242,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.systems.contains("SystemName")))
         system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
-            "SystemName", String.Empty, AgECrdnSystemType.eCrdnSystemTypeAssembled
+            "SystemName", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED
         )
         try:
             self.SystemRemove(provider)
@@ -1284,7 +1272,7 @@ class VGT(CodeSnippetsTestBase):
         # Create an attitude parameter set.
         parameterSet: "ICalculationToolParameterSetAttitude" = clr.Convert(
             provider.parameter_sets.factory.create(
-                "ParameterSetName", "Attitude parameter set.", AgECrdnParameterSetType.eCrdnParameterSetTypeAttitude
+                "ParameterSetName", "Attitude parameter set.", CRDN_PARAMETER_SET_TYPE.ATTITUDE
             ),
             ICalculationToolParameterSetAttitude,
         )
@@ -1297,14 +1285,14 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.parameter_sets.contains("MyParameterSet")))
         try:
-            self.IsParameterSetTypeSupported(provider, AgECrdnParameterSetType.eCrdnParameterSetTypeAttitude)
+            self.IsParameterSetTypeSupported(provider, CRDN_PARAMETER_SET_TYPE.ATTITUDE)
 
         finally:
             provider.parameter_sets.remove("MyParameterSet")
             del root
 
     def IsParameterSetTypeSupported(
-        self, provider: "IAnalysisWorkbenchProvider", parameterSetType: "AgECrdnParameterSetType"
+        self, provider: "IAnalysisWorkbenchProvider", parameterSetType: "CRDN_PARAMETER_SET_TYPE"
     ):
         if provider.parameter_sets.factory.is_type_supported(parameterSetType):
             # Create a ParameterSet with the supported Type
@@ -1336,7 +1324,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.parameter_sets.contains("ParameterSetName")))
         parameterSet: "ICalculationToolParameterSet" = provider.parameter_sets.factory.create(
-            "ParameterSetName", String.Empty, AgECrdnParameterSetType.eCrdnParameterSetTypeAttitude
+            "ParameterSetName", String.Empty, CRDN_PARAMETER_SET_TYPE.ATTITUDE
         )
         try:
             self.ParameterSetRemove(provider)
@@ -1366,7 +1354,7 @@ class VGT(CodeSnippetsTestBase):
         # Create a calc scalar constant.
         calcScalar: "ICalculationToolScalarConstant" = clr.Convert(
             provider.calc_scalars.factory.create(
-                "CalcScalarName", "Calc scalar constant.", AgECrdnCalcScalarType.eCrdnCalcScalarTypeConstant
+                "CalcScalarName", "Calc scalar constant.", CRDN_CALC_SCALAR_TYPE.CONSTANT
             ),
             ICalculationToolScalarConstant,
         )
@@ -1379,14 +1367,14 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.calc_scalars.contains("MyCalcScalar")))
         try:
-            self.IsCalcScalarTypeSupported(provider, AgECrdnCalcScalarType.eCrdnCalcScalarTypeConstant)
+            self.IsCalcScalarTypeSupported(provider, CRDN_CALC_SCALAR_TYPE.CONSTANT)
 
         finally:
             provider.calc_scalars.remove("MyCalcScalar")
             del root
 
     def IsCalcScalarTypeSupported(
-        self, provider: "IAnalysisWorkbenchProvider", calcScalarType: "AgECrdnCalcScalarType"
+        self, provider: "IAnalysisWorkbenchProvider", calcScalarType: "CRDN_CALC_SCALAR_TYPE"
     ):
         if provider.calc_scalars.factory.is_type_supported(calcScalarType):
             # Create a CalcScalar with the supported Type
@@ -1418,7 +1406,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.calc_scalars.contains("CalcScalarName")))
         calcScalar: "ICalculationToolScalar" = provider.calc_scalars.factory.create(
-            "CalcScalarName", String.Empty, AgECrdnCalcScalarType.eCrdnCalcScalarTypeConstant
+            "CalcScalarName", String.Empty, CRDN_CALC_SCALAR_TYPE.CONSTANT
         )
         try:
             self.CalcScalarRemove(provider)
@@ -1448,7 +1436,7 @@ class VGT(CodeSnippetsTestBase):
         # Create a condition from a scalar.
         condition: "ICalculationToolConditionScalarBounds" = clr.Convert(
             provider.conditions.factory.create(
-                "ConditionName", "Condition from a scalar.", AgECrdnConditionType.eCrdnConditionTypeScalarBounds
+                "ConditionName", "Condition from a scalar.", CRDN_CONDITION_TYPE.SCALAR_BOUNDS
             ),
             ICalculationToolConditionScalarBounds,
         )
@@ -1461,13 +1449,13 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.conditions.contains("MyCondition")))
         try:
-            self.IsConditionTypeSupported(provider, AgECrdnConditionType.eCrdnConditionTypeScalarBounds)
+            self.IsConditionTypeSupported(provider, CRDN_CONDITION_TYPE.SCALAR_BOUNDS)
 
         finally:
             provider.conditions.remove("MyCondition")
             del root
 
-    def IsConditionTypeSupported(self, provider: "IAnalysisWorkbenchProvider", conditionType: "AgECrdnConditionType"):
+    def IsConditionTypeSupported(self, provider: "IAnalysisWorkbenchProvider", conditionType: "CRDN_CONDITION_TYPE"):
         if provider.conditions.factory.is_type_supported(conditionType):
             # Create a Condition with the supported Type
             condition: "ICalculationToolCondition" = provider.conditions.factory.create(
@@ -1498,7 +1486,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.conditions.contains("ConditionName")))
         condition: "ICalculationToolCondition" = provider.conditions.factory.create(
-            "ConditionName", String.Empty, AgECrdnConditionType.eCrdnConditionTypeScalarBounds
+            "ConditionName", String.Empty, CRDN_CONDITION_TYPE.SCALAR_BOUNDS
         )
         try:
             self.ConditionRemove(provider)
@@ -1518,13 +1506,13 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.events.contains("MyEvent")))
         try:
-            self.IsEventTypeSupported(provider, AgECrdnEventType.eCrdnEventTypeEpoch)
+            self.IsEventTypeSupported(provider, CRDN_EVENT_TYPE.EPOCH)
 
         finally:
             provider.events.remove("MyEvent")
             del root
 
-    def IsEventTypeSupported(self, provider: "IAnalysisWorkbenchProvider", eventType: "AgECrdnEventType"):
+    def IsEventTypeSupported(self, provider: "IAnalysisWorkbenchProvider", eventType: "CRDN_EVENT_TYPE"):
         if provider.events.factory.is_type_supported(eventType):
             # Create an Event with the supported Type
             event: "ITimeToolEvent" = provider.events.factory.create("MyEvent", String.Empty, eventType)
@@ -1552,9 +1540,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.events.contains("EventName")))
-        event: "ITimeToolEvent" = provider.events.factory.create(
-            "EventName", String.Empty, AgECrdnEventType.eCrdnEventTypeEpoch
-        )
+        event: "ITimeToolEvent" = provider.events.factory.create("EventName", String.Empty, CRDN_EVENT_TYPE.EPOCH)
         try:
             self.EventRemove(provider)
 
@@ -1573,14 +1559,14 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.event_arrays.contains("MyEventArray")))
         try:
-            self.IsEventArrayTypeSupported(provider, AgECrdnEventArrayType.eCrdnEventArrayTypeConditionCrossings)
+            self.IsEventArrayTypeSupported(provider, CRDN_EVENT_ARRAY_TYPE.CONDITION_CROSSINGS)
 
         finally:
             provider.event_arrays.remove("MyEventArray")
             del root
 
     def IsEventArrayTypeSupported(
-        self, provider: "IAnalysisWorkbenchProvider", eventArrayType: "AgECrdnEventArrayType"
+        self, provider: "IAnalysisWorkbenchProvider", eventArrayType: "CRDN_EVENT_ARRAY_TYPE"
     ):
         if provider.event_arrays.factory.is_type_supported(eventArrayType):
             # Create an EventArray with the supported Type
@@ -1612,7 +1598,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.event_arrays.contains("EventArrayName")))
         eventArray: "ITimeToolEventArray" = provider.event_arrays.factory.create(
-            "EventArrayName", String.Empty, AgECrdnEventArrayType.eCrdnEventArrayTypeConditionCrossings
+            "EventArrayName", String.Empty, CRDN_EVENT_ARRAY_TYPE.CONDITION_CROSSINGS
         )
         try:
             self.EventArrayRemove(provider)
@@ -1632,14 +1618,14 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.event_intervals.contains("MyEventInterval")))
         try:
-            self.IsEventIntervalTypeSupported(provider, AgECrdnEventIntervalType.eCrdnEventIntervalTypeFixed)
+            self.IsEventIntervalTypeSupported(provider, CRDN_EVENT_INTERVAL_TYPE.FIXED)
 
         finally:
             provider.event_intervals.remove("MyEventInterval")
             del root
 
     def IsEventIntervalTypeSupported(
-        self, provider: "IAnalysisWorkbenchProvider", eventIntervalType: "AgECrdnEventIntervalType"
+        self, provider: "IAnalysisWorkbenchProvider", eventIntervalType: "CRDN_EVENT_INTERVAL_TYPE"
     ):
         if provider.event_intervals.factory.is_type_supported(eventIntervalType):
             # Create an EventInterval with the supported Type
@@ -1671,7 +1657,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.event_intervals.contains("EventIntervalName")))
         eventInterval: "ITimeToolEventInterval" = provider.event_intervals.factory.create(
-            "EventIntervalName", String.Empty, AgECrdnEventIntervalType.eCrdnEventIntervalTypeFixed
+            "EventIntervalName", String.Empty, CRDN_EVENT_INTERVAL_TYPE.FIXED
         )
         try:
             self.EventIntervalRemove(provider)
@@ -1691,16 +1677,14 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.event_interval_collections.contains("MyEventIntervalCollection")))
         try:
-            self.IsEventIntervalCollectionTypeSupported(
-                provider, AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeLighting
-            )
+            self.IsEventIntervalCollectionTypeSupported(provider, CRDN_EVENT_INTERVAL_COLLECTION_TYPE.LIGHTING)
 
         finally:
             provider.event_interval_collections.remove("MyEventIntervalCollection")
             del root
 
     def IsEventIntervalCollectionTypeSupported(
-        self, provider: "IAnalysisWorkbenchProvider", eventIntervalCollectionType: "AgECrdnEventIntervalCollectionType"
+        self, provider: "IAnalysisWorkbenchProvider", eventIntervalCollectionType: "CRDN_EVENT_INTERVAL_COLLECTION_TYPE"
     ):
         if provider.event_interval_collections.factory.is_type_supported(eventIntervalCollectionType):
             # Create an EventIntervalCollection with the supported Type
@@ -1735,9 +1719,7 @@ class VGT(CodeSnippetsTestBase):
         Assert.assertTrue((not provider.event_interval_collections.contains("EventIntervalCollectionName")))
         eventIntervalCollection: "ITimeToolEventIntervalCollection" = (
             provider.event_interval_collections.factory.create(
-                "EventIntervalCollectionName",
-                String.Empty,
-                AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeLighting,
+                "EventIntervalCollectionName", String.Empty, CRDN_EVENT_INTERVAL_COLLECTION_TYPE.LIGHTING
             )
         )
         try:
@@ -1758,16 +1740,14 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.event_interval_lists.contains("MyEventIntervalList")))
         try:
-            self.IsEventIntervalListTypeSupported(
-                provider, AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeCondition
-            )
+            self.IsEventIntervalListTypeSupported(provider, CRDN_EVENT_INTERVAL_LIST_TYPE.CONDITION)
 
         finally:
             provider.event_interval_lists.remove("MyEventIntervalList")
             del root
 
     def IsEventIntervalListTypeSupported(
-        self, provider: "IAnalysisWorkbenchProvider", eventIntervalListType: "AgECrdnEventIntervalListType"
+        self, provider: "IAnalysisWorkbenchProvider", eventIntervalListType: "CRDN_EVENT_INTERVAL_LIST_TYPE"
     ):
         if provider.event_interval_lists.factory.is_type_supported(eventIntervalListType):
             # Create an EventIntervalList with the supported Type
@@ -1799,7 +1779,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.event_interval_lists.contains("EventIntervalListName")))
         eventIntervalList: "ITimeToolEventIntervalList" = provider.event_interval_lists.factory.create(
-            "EventIntervalListName", String.Empty, AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeCondition
+            "EventIntervalListName", String.Empty, CRDN_EVENT_INTERVAL_LIST_TYPE.CONDITION
         )
         try:
             self.EventIntervalListRemove(provider)
@@ -1819,7 +1799,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("AngleName")))
         angle: "IVectorGeometryToolAngle" = provider.angles.factory.create(
-            "AngleName", String.Empty, AgECrdnAngleType.eCrdnAngleTypeBetweenVectors
+            "AngleName", String.Empty, CRDN_ANGLE_TYPE.BETWEEN_VECTORS
         )
         try:
             self.FindAngle(angle)
@@ -1841,7 +1821,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("AngleName")))
         angle: "IVectorGeometryToolAngle" = provider.angles.factory.create(
-            "AngleName", String.Empty, AgECrdnAngleType.eCrdnAngleTypeBetweenVectors
+            "AngleName", String.Empty, CRDN_ANGLE_TYPE.BETWEEN_VECTORS
         )
         try:
             self.FindAngleAndRate(angle)
@@ -1862,9 +1842,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.axes.contains("AxesName")))
-        axes: "IVectorGeometryToolAxes" = provider.axes.factory.create(
-            "AxesName", String.Empty, AgECrdnAxesType.eCrdnAxesTypeFixed
-        )
+        axes: "IVectorGeometryToolAxes" = provider.axes.factory.create("AxesName", String.Empty, CRDN_AXES_TYPE.FIXED)
         try:
             self.FindAxesInEarthFixed(provider, axes)
 
@@ -1876,7 +1854,7 @@ class VGT(CodeSnippetsTestBase):
         result: "IVectorGeometryToolAxesFindInAxesResult" = axes.find_in_axes(0, provider.well_known_axes.earth.fixed)
         if result.is_valid:
             angles: "IOrientationEulerAngles" = clr.Convert(
-                result.orientation.convert_to(AgEOrientationType.eEulerAngles), IOrientationEulerAngles
+                result.orientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES), IOrientationEulerAngles
             )
             Console.WriteLine(
                 "Euler Angles [A,B,C,SEQ] => [{1}, {1}, {2}, {3}]", angles.a, angles.b, angles.c, angles.sequence
@@ -1972,7 +1950,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("PointName")))
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
-            "PointName", String.Empty, AgECrdnPointType.eCrdnPointTypeFixedInSystem
+            "PointName", String.Empty, CRDN_POINT_TYPE.FIXED_IN_SYSTEM
         )
         try:
             self.PointLocateInEarthFixedSystem(provider, point)
@@ -2001,7 +1979,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("VectorName")))
         vector: "IVectorGeometryToolVector" = provider.vectors.factory.create(
-            "PointName", String.Empty, AgECrdnVectorType.eCrdnVectorTypeDisplacement
+            "PointName", String.Empty, CRDN_VECTOR_TYPE.DISPLACEMENT
         )
         try:
             self.VectorFindInEarthFixedAxes(provider, vector)
@@ -2063,7 +2041,7 @@ class VGT(CodeSnippetsTestBase):
             provider.points.common_tasks.create_fixed_in_system_cartographic(provider.systems["Fixed"], lat, lon, alt)
         )
         eastNorthUp: "IVectorGeometryToolAxesFixed" = provider.axes.common_tasks.create_topocentric_axes_euler_angles(
-            clr.Convert(origin, IVectorGeometryToolPoint), AgEEulerOrientationSequence.e321, 90.0, 0.0, 0.0
+            clr.Convert(origin, IVectorGeometryToolPoint), EULER_ORIENTATION_SEQUENCE.SEQUENCE_321, 90.0, 0.0, 0.0
         )
 
     # endregion
@@ -2194,7 +2172,7 @@ class VGT(CodeSnippetsTestBase):
 
     def Duplicate(self, provider: "IAnalysisWorkbenchProvider"):
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
-            "OriginalPoint", "description", AgECrdnPointType.eCrdnPointTypeAtTimeInstant
+            "OriginalPoint", "description", CRDN_POINT_TYPE.AT_TIME_INSTANT
         )
         duplicate: "IAnalysisWorkbenchComponent" = (clr.Convert(point, IAnalysisWorkbenchComponent)).duplicate(
             "DuplicatePoint", "description"
@@ -2214,7 +2192,7 @@ class VGT(CodeSnippetsTestBase):
 
     def AnonymousDuplicate(self, provider: "IAnalysisWorkbenchProvider"):
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
-            "OriginalPoint", "description", AgECrdnPointType.eCrdnPointTypeAtTimeInstant
+            "OriginalPoint", "description", CRDN_POINT_TYPE.AT_TIME_INSTANT
         )
         anonymousDuplicate: "IAnalysisWorkbenchComponent" = (
             clr.Convert(point, IAnalysisWorkbenchComponent)
@@ -2227,7 +2205,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
-            "mySystem", String.Empty, AgECrdnSystemType.eCrdnSystemTypeAssembled
+            "mySystem", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED
         )
         try:
             self.GetEmbeddedComponent(clr.Convert(system, IAnalysisWorkbenchComponent))
@@ -2247,7 +2225,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
-            "mySystem", String.Empty, AgECrdnSystemType.eCrdnSystemTypeAssembled
+            "mySystem", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED
         )
         try:
             self.EnumerateThroughEmbeddedComponents(clr.Convert(system, IAnalysisWorkbenchComponent))
@@ -2268,7 +2246,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
-            "mySystem", String.Empty, AgECrdnSystemType.eCrdnSystemTypeAssembled
+            "mySystem", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED
         )
         try:
             self.IterateThroughEmbeddedComponents(clr.Convert(system, IAnalysisWorkbenchComponent))
@@ -2292,7 +2270,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         angleRate: "IVectorGeometryToolVectorAngleRate" = clr.CastAs(
-            provider.vectors.factory.create("DependencyTest", String.Empty, AgECrdnVectorType.eCrdnVectorTypeAngleRate),
+            provider.vectors.factory.create("DependencyTest", String.Empty, CRDN_VECTOR_TYPE.ANGLE_RATE),
             IVectorGeometryToolVectorAngleRate,
         )
         angle: "IVectorGeometryToolAngle" = provider.angles["VelocityAzimuth"]
@@ -2318,9 +2296,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         angVel: "IVectorGeometryToolVectorAngularVelocity" = clr.CastAs(
-            provider.vectors.factory.create(
-                "DependencyTest", String.Empty, AgECrdnVectorType.eCrdnVectorTypeAngularVelocity
-            ),
+            provider.vectors.factory.create("DependencyTest", String.Empty, CRDN_VECTOR_TYPE.ANGULAR_VELOCITY),
             IVectorGeometryToolVectorAngularVelocity,
         )
         axes: "IVectorGeometryToolAxes" = provider.axes["Body"]
@@ -2346,9 +2322,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         twoPlane: "IVectorGeometryToolVectorTwoPlanesIntersection" = clr.CastAs(
-            provider.vectors.factory.create(
-                "DependencyTest", String.Empty, AgECrdnVectorType.eCrdnVectorTypeTwoPlanesIntersection
-            ),
+            provider.vectors.factory.create("DependencyTest", String.Empty, CRDN_VECTOR_TYPE.TWO_PLANES_INTERSECTION),
             IVectorGeometryToolVectorTwoPlanesIntersection,
         )
         plane: "IVectorGeometryToolPlane" = provider.planes["BodyXY"]
@@ -2374,7 +2348,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         apoapsis: "IVectorGeometryToolVectorApoapsis" = clr.CastAs(
-            provider.vectors.factory.create("DependencyTest", String.Empty, AgECrdnVectorType.eCrdnVectorTypeApoapsis),
+            provider.vectors.factory.create("DependencyTest", String.Empty, CRDN_VECTOR_TYPE.APOAPSIS),
             IVectorGeometryToolVectorApoapsis,
         )
         point: "IVectorGeometryToolPoint" = provider.points["Center"]
@@ -2400,9 +2374,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         displacement: "IVectorGeometryToolVectorDisplacement" = clr.CastAs(
-            provider.vectors.factory.create(
-                "DependencyTest", String.Empty, AgECrdnVectorType.eCrdnVectorTypeDisplacement
-            ),
+            provider.vectors.factory.create("DependencyTest", String.Empty, CRDN_VECTOR_TYPE.DISPLACEMENT),
             IVectorGeometryToolVectorDisplacement,
         )
         displacement.apparent = True
@@ -2431,9 +2403,7 @@ class VGT(CodeSnippetsTestBase):
         root: "IAnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "IAnalysisWorkbenchProvider" = root.get_provider("Satellite/Satellite1")
         reflection: "IVectorGeometryToolVectorReflection" = clr.CastAs(
-            provider.vectors.factory.create(
-                "DependencyTest", String.Empty, AgECrdnVectorType.eCrdnVectorTypeReflection
-            ),
+            provider.vectors.factory.create("DependencyTest", String.Empty, CRDN_VECTOR_TYPE.REFLECTION),
             IVectorGeometryToolVectorReflection,
         )
         vector: "IVectorGeometryToolVector" = provider.vectors["Earth"]

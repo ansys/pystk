@@ -30,7 +30,7 @@ class J2Perturbation(CodeSnippetsTestBase):
     def setUp(self):
         J2Perturbation.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eSatellite, J2Perturbation.m_DefaultName
+                STK_OBJECT_TYPE.SATELLITE, J2Perturbation.m_DefaultName
             ),
             ISatellite,
         )
@@ -41,7 +41,7 @@ class J2Perturbation(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eSatellite, J2Perturbation.m_DefaultName
+            STK_OBJECT_TYPE.SATELLITE, J2Perturbation.m_DefaultName
         )
         J2Perturbation.m_Object = None
 
@@ -53,7 +53,7 @@ class J2Perturbation(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "ISatellite"):
         # Set propagator to SGP4
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorJ2Perturbation)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
 
         # J2 Perturbation propagator
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, IVehiclePropagatorJ2Perturbation)
@@ -66,9 +66,9 @@ class J2Perturbation(CodeSnippetsTestBase):
         initial: "IVehicleJxInitialState" = j2prop.initial_state
         initial.representation.epoch = "1 Jan 2012 12:00:00.000"
         initial.representation.assign_cartesian(
-            AgECoordinateSystem.eCoordinateSystemFixed, -1514.4, -6790.1, -1.25, 4.8151, 1.771, 5.6414
+            COORDINATE_SYSTEM.FIXED, -1514.4, -6790.1, -1.25, 4.8151, 1.771, 5.6414
         )  # in km/sec
-        initial.ellipse_options = AgEVeEllipseOptions.eSecularlyPrecessing
+        initial.ellipse_options = VE_ELLIPSE_OPTIONS.SECULARLY_PRECESSING
 
         # Propagate
         j2prop.propagate()

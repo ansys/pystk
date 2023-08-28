@@ -210,25 +210,25 @@ class EarlyBoundTests(TestBase):
 
         # LineWidth
         TestBase.logger.WriteLine6("\tThe current LineWidth is: {0}", gfx.line_width)
-        gfx.line_width = AgELineWidth.e2
+        gfx.line_width = LINE_WIDTH.WIDTH2
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", gfx.line_width)
-        Assert.assertEqual(AgELineWidth.e2, gfx.line_width)
+        Assert.assertEqual(LINE_WIDTH.WIDTH2, gfx.line_width)
 
         def action4():
-            gfx.line_width = clr.Convert((-1), AgELineWidth)
+            gfx.line_width = clr.Convert((-1), LINE_WIDTH)
 
         TryCatchAssertBlock.DoAssert("LineWidth -1 should fail.", action4)
 
         def action5():
-            gfx.line_width = clr.Convert((11), AgELineWidth)
+            gfx.line_width = clr.Convert((11), LINE_WIDTH)
 
         TryCatchAssertBlock.DoAssert("LineWidth 11 should fail.", action5)
 
         # LineStyle
         TestBase.logger.WriteLine6("\tThe current LineStyle is: {0}", gfx.line_style)
-        gfx.line_style = AgELineStyle.eDashed
+        gfx.line_style = LINE_STYLE.DASHED
         TestBase.logger.WriteLine6("\tThe new LineStyle is: {0}", gfx.line_style)
-        Assert.assertEqual(AgELineStyle.eDashed, gfx.line_style)
+        Assert.assertEqual(LINE_STYLE.DASHED, gfx.line_style)
         # LinePtsVisible
         TestBase.logger.WriteLine4("\tThe current LinePtsVisible is: {0}", gfx.line_pts_visible)
         gfx.line_pts_visible = False
@@ -339,8 +339,8 @@ class EarlyBoundTests(TestBase):
         # test Access VO DataDisplays
         oSatellite: "ISatellite" = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], ISatellite)
         Assert.assertNotEqual(None, oSatellite)
-        oSatellite.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
-        Assert.assertEqual(AgEVePropagatorType.ePropagatorTwoBody, oSatellite.propagator_type)
+        oSatellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        Assert.assertEqual(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
         oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, IVehiclePropagatorTwoBody)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()

@@ -35,21 +35,21 @@ Enumerations
 
 .. autosummary::
 
-    AgELogMsgType
-    AgELogMsgDispID
-    AgELineStyle
-    AgEExecMultiCmdResultAction
-    AgEShiftValues
-    AgEButtonValues
-    AgEOLEDropMode
-    AgEMouseMode
-    AgELoggingMode
-    AgEGfxAnalysisMode
-    AgEGfxDrawCoords
-    AgEShowProgressImage
-    AgEFeatureCodes
-    AgEProgressImageXOrigin
-    AgEProgressImageYOrigin
+    LOG_MSG_TYPE
+    LOG_MSG_DISP_ID
+    LINE_STYLE
+    EXEC_MULTI_CMD_RESULT_ACTION
+    SHIFT_VALUES
+    BUTTON_VALUES
+    OLE_DROP_MODE
+    MOUSE_MODE
+    LOGGING_MODE
+    GFX_ANALYSIS_MODE
+    GFX_DRAW_COORDS
+    SHOW_PROGRESS_IMAGE
+    FEATURE_CODES
+    PROGRESS_IMAGE_X_ORIGIN
+    PROGRESS_IMAGE_Y_ORIGIN
 
 
 Classes
@@ -147,35 +147,35 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgELogMsgType
+.. autoenum:: LOG_MSG_TYPE
     :members:
-.. autoenum:: AgELogMsgDispID
+.. autoenum:: LOG_MSG_DISP_ID
     :members:
-.. autoenum:: AgELineStyle
+.. autoenum:: LINE_STYLE
     :members:
-.. autoenum:: AgEExecMultiCmdResultAction
+.. autoenum:: EXEC_MULTI_CMD_RESULT_ACTION
     :members:
-.. autoenum:: AgEShiftValues
+.. autoenum:: SHIFT_VALUES
     :members:
-.. autoenum:: AgEButtonValues
+.. autoenum:: BUTTON_VALUES
     :members:
-.. autoenum:: AgEOLEDropMode
+.. autoenum:: OLE_DROP_MODE
     :members:
-.. autoenum:: AgEMouseMode
+.. autoenum:: MOUSE_MODE
     :members:
-.. autoenum:: AgELoggingMode
+.. autoenum:: LOGGING_MODE
     :members:
-.. autoenum:: AgEGfxAnalysisMode
+.. autoenum:: GFX_ANALYSIS_MODE
     :members:
-.. autoenum:: AgEGfxDrawCoords
+.. autoenum:: GFX_DRAW_COORDS
     :members:
-.. autoenum:: AgEShowProgressImage
+.. autoenum:: SHOW_PROGRESS_IMAGE
     :members:
-.. autoenum:: AgEFeatureCodes
+.. autoenum:: FEATURE_CODES
     :members:
-.. autoenum:: AgEProgressImageXOrigin
+.. autoenum:: PROGRESS_IMAGE_X_ORIGIN
     :members:
-.. autoenum:: AgEProgressImageYOrigin
+.. autoenum:: PROGRESS_IMAGE_Y_ORIGIN
     :members:
 
 

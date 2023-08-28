@@ -30,7 +30,7 @@ class StkExternal(CodeSnippetsTestBase):
     def setUp(self):
         StkExternal.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eSatellite, StkExternal.m_DefaultName
+                STK_OBJECT_TYPE.SATELLITE, StkExternal.m_DefaultName
             ),
             ISatellite,
         )
@@ -41,7 +41,7 @@ class StkExternal(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eSatellite, StkExternal.m_DefaultName
+            STK_OBJECT_TYPE.SATELLITE, StkExternal.m_DefaultName
         )
         StkExternal.m_Object = None
 
@@ -50,7 +50,7 @@ class StkExternal(CodeSnippetsTestBase):
     # region CreateSatelliteFromExternalEphemerisFile
     def test_CreateSatelliteFromExternalEphemerisFile(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eSatellite, StkExternal.m_DefaultName
+            STK_OBJECT_TYPE.SATELLITE, StkExternal.m_DefaultName
         )
         self.CreateSatelliteFromExternalEphemerisFile(
             CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("CodeSnippetsTests", "TestEph.e")
@@ -58,11 +58,11 @@ class StkExternal(CodeSnippetsTestBase):
 
     def CreateSatelliteFromExternalEphemerisFile(self, root: "IStkObjectRoot", ephemerisFilePath: str):
         satellite: "ISatellite" = clr.CastAs(
-            root.current_scenario.children.new(AgESTKObjectType.eSatellite, "MySatellite"), ISatellite
+            root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite"), ISatellite
         )
 
         # Configure propagator's external file path
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorStkExternal)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
         ext: "IVehiclePropagatorStkExternal" = clr.CastAs(satellite.propagator, IVehiclePropagatorStkExternal)
         ext.filename = ephemerisFilePath
 

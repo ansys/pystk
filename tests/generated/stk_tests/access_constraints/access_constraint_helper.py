@@ -18,7 +18,7 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
 
         Assert.assertNotEqual("", oConstraint.constraint_name)
-        constraintType: "AgEAccessConstraints" = oConstraint.constraint_type
+        constraintType: "ACCESS_CONSTRAINTS" = oConstraint.constraint_type
 
         bIsPlugin: bool = oConstraint.is_plugin
 
@@ -44,7 +44,7 @@ class AccessConstraintHelper(object):
     # region ConstraintTest
     # ////////////////////////////////////////////////////////////////////////
     def ConstraintTest(
-        self, oCollection: "IAccessConstraintCollection", eType: "AgEAccessConstraints", temporaryDirectory: str
+        self, oCollection: "IAccessConstraintCollection", eType: "ACCESS_CONSTRAINTS", temporaryDirectory: str
     ):
         Assert.assertIsNotNone(oCollection)
         oConstraint: "IAccessConstraint" = None
@@ -52,20 +52,20 @@ class AccessConstraintHelper(object):
             oConstraint = oCollection.add_constraint(eType)
             if (
                 (
-                    ((eType == AgEAccessConstraints.eCstrApparentTime) or (eType == AgEAccessConstraints.eCstrDuration))
-                    or (eType == AgEAccessConstraints.eCstrLocalTime)
+                    ((eType == ACCESS_CONSTRAINTS.CSTR_APPARENT_TIME) or (eType == ACCESS_CONSTRAINTS.CSTR_DURATION))
+                    or (eType == ACCESS_CONSTRAINTS.CSTR_LOCAL_TIME)
                 )
-                or (eType == AgEAccessConstraints.eCstrGMT)
-            ) or (eType == AgEAccessConstraints.eCstrIntervals):
+                or (eType == ACCESS_CONSTRAINTS.CSTR_GMT)
+            ) or (eType == ACCESS_CONSTRAINTS.CSTR_INTERVALS):
                 oConstraint = oCollection.add_constraint(eType)
 
             Assert.assertIsNotNone(oConstraint)
-            if eType == AgEAccessConstraints.eCstrThirdBodyObstruction:
+            if eType == ACCESS_CONSTRAINTS.CSTR_THIRD_BODY_OBSTRUCTION:
                 # Third Body
                 self.TestConstraintThirdBody(oConstraint)
                 return
 
-            if eType == AgEAccessConstraints.eCstrObjectExclusionAngle:
+            if eType == ACCESS_CONSTRAINTS.CSTR_OBJECT_EXCLUSION_ANGLE:
                 # Object Exclusion Angle
                 self.TestConstraintObjectExclusion(oConstraint)
                 return
@@ -77,262 +77,262 @@ class AccessConstraintHelper(object):
         self.BasePropertiesTest(oConstraint)
 
         typesNoFieldsToTest = []
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrNone)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrAreaMask)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrAzElMask)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrFieldOfView)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrFOVSunSpecularExclusion)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrFOVSunSpecularInclusion)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrHorizonCrossing)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrLineOfSight)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSensorAzElMask)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkClearDoppler)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkIntegratedPulses)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkMLCFilter)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkSLCFilter)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkUnambigDoppler)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSrchTrkUnambigRange)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrTerrainMask)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstr3DTilesMask)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrForeground)
-        typesNoFieldsToTest.append(AgEAccessConstraints.eCstrSEETMagFieldLshell)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_NONE)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_AREA_MASK)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_AZ_EL_MASK)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_FIELD_OF_VIEW)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_SUN_SPECULAR_EXCLUSION)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_SUN_SPECULAR_INCLUSION)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_HORIZON_CROSSING)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_LINE_OF_SIGHT)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SENSOR_AZ_EL_MASK)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_CLEAR_DOPPLER)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATED_PULSES)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_MLC_FILTER)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_SLC_FILTER)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_UNAMBIG_DOPPLER)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_UNAMBIG_RANGE)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_TERRAIN_MASK)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR3_D_TILES_MASK)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_FOREGROUND)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.CSTR_SEET_MAG_FIELD_LSHELL)
 
         typesMinMaxSetSeparate = []
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrATCentroidElevationAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrBetaAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrDopplerConeAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrGrazingAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrGroundElevAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrLatitude)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrSquintAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrSunGroundElevAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrAngleOffBoresight)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrBoresightGrazingAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrSEETMagFieldLineSeparation)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrLunarElevationAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrSunElevationAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrTerrainGrazingAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrCentroidSunElevationAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrCollectionAngle)
-        typesMinMaxSetSeparate.append(AgEAccessConstraints.eCstrCentralAngle)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_AT_CENTROID_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_BETA_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_DOPPLER_CONE_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_GRAZING_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_GROUND_ELEV_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_LATITUDE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_SQUINT_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_SUN_GROUND_ELEV_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_ANGLE_OFF_BORESIGHT)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_BORESIGHT_GRAZING_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_SEET_MAG_FIELD_LINE_SEPARATION)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_LUNAR_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_SUN_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_TERRAIN_GRAZING_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_CENTROID_SUN_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_COLLECTION_ANGLE)
+        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINTS.CSTR_CENTRAL_ANGLE)
 
         typesMinMaxUnitLess = []
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrImageQuality)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrMatlab)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrSarExternalData)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrBSIntersectLightingCondition)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrAngularRate)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrRangeRate)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrSarAreaRate)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrAzimuthRate)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrElevationRate)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrAngleOffBoresightRate)
-        typesMinMaxUnitLess.append(AgEAccessConstraints.eCstrEOIRSNR)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_IMAGE_QUALITY)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_MATLAB)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_SAR_EXTERNAL_DATA)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_BS_INTERSECT_LIGHTING_CONDITION)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_ANGULAR_RATE)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_RANGE_RATE)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_SAR_AREA_RATE)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_AZIMUTH_RATE)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_ELEVATION_RATE)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_ANGLE_OFF_BORESIGHT_RATE)
+        typesMinMaxUnitLess.append(ACCESS_CONSTRAINTS.CSTR_EOIRSNR)
 
         typesMinMaxUnitLessSubOne = []
-        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkIntegratedPDet)
-        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkSinglePulsePDet)
-        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkSinglePulsePDetJamming)
-        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkIntegratedPDetJamming)
-        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulsePDet)
-        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulsePDetJamming)
-        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPDet)
-        typesMinMaxUnitLessSubOne.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPDetJamming)
+        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATED_P_DET)
+        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_SINGLE_PULSE_P_DET)
+        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_SINGLE_PULSE_P_DET_JAMMING)
+        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATED_P_DET_JAMMING)
+        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_SINGLE_PULSE_P_DET)
+        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_SINGLE_PULSE_P_DET_JAMMING)
+        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATED_P_DET)
+        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATED_P_DET_JAMMING)
 
         typesMinMaxDistance = []
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrAltitude)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrCrossTrackRange)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrInTrackRange)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrRange)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrCentroidRange)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrHeightAboveHorizon)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrCentralDistance)
-        typesMinMaxDistance.append(AgEAccessConstraints.eCstrDistanceFromATBoundary)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_CROSS_TRACK_RANGE)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_IN_TRACK_RANGE)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_RANGE)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_CENTROID_RANGE)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_HEIGHT_ABOVE_HORIZON)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_CENTRAL_DISTANCE)
+        typesMinMaxDistance.append(ACCESS_CONSTRAINTS.CSTR_DISTANCE_FROM_AT_BOUNDARY)
 
         typesMinMaxTime = []
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrDuration)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrPropagationDelay)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSarIntTime)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkDwellTime)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkIntegrationTime)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkDwellTimeJamming)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkIntegrationTimeJamming)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolDwellTime)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolDwellTimeJamming)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseJOverS)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseSNRJamming)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegrationTime)
-        typesMinMaxTime.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegrationTimeJamming)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_DURATION)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_PROPAGATION_DELAY)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SAR_INT_TIME)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_DWELL_TIME)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATION_TIME)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_DWELL_TIME_JAMMING)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATION_TIME_JAMMING)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_DWELL_TIME)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_DWELL_TIME_JAMMING)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_SINGLE_PULSE_J_OVER_S)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_SINGLE_PULSE_SNR_JAMMING)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATION_TIME)
+        typesMinMaxTime.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATION_TIME_JAMMING)
 
         typesMinMaxRatio = []
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSNR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarCNR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSCR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSigmaN)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarPTCR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSNRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarSCRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarJOverS)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarCNRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolSNR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolCNR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolPTCR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolSCR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolSNRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolJOverS)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolSCRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSarOrthoPolCNRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkSinglePulseSNR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkIntegratedSNR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkSinglePulseSNRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkIntegratedSNRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkSinglePulseJOverS)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkIntegratedJOverS)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolSinglePulseSNR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedSNR)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedSNRJamming)
-        typesMinMaxRatio.append(AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedJOverS)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_SNR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_CNR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_SCR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_SIGMA_N)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_PTCR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_SNR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_SCR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_J_OVER_S)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_CNR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_ORTHO_POL_SNR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_ORTHO_POL_CNR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_ORTHO_POL_PTCR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_ORTHO_POL_SCR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_ORTHO_POL_SNR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_ORTHO_POL_J_OVER_S)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_ORTHO_POL_SCR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SAR_ORTHO_POL_CNR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_SINGLE_PULSE_SNR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATED_SNR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_SINGLE_PULSE_SNR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATED_SNR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_SINGLE_PULSE_J_OVER_S)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATED_J_OVER_S)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_SINGLE_PULSE_SNR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATED_SNR)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATED_SNR_JAMMING)
+        typesMinMaxRatio.append(ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATED_J_OVER_S)
 
         typesNoTest = []
         # Radar, Receiver, Transmitter
-        typesNoTest.append(AgEAccessConstraints.eCstrAtmosLoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrCloudsFogLoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrFreeSpaceLoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrNoiseTemperature)
-        typesNoTest.append(AgEAccessConstraints.eCstrPropLoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrRainLoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrRdrXmtTgtAccess)
-        typesNoTest.append(AgEAccessConstraints.eCstrTropoScintillLoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrUrbanTerresLoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrUserCustomALoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrUserCustomBLoss)
-        typesNoTest.append(AgEAccessConstraints.eCstrUserCustomCLoss)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_ATMOS_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_CLOUDS_FOG_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FREE_SPACE_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_NOISE_TEMPERATURE)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_PROP_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_RAIN_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_RDR_XMT_TGT_ACCESS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_TROPO_SCINTILL_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_URBAN_TERRES_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_USER_CUSTOM_A_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_USER_CUSTOM_B_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_USER_CUSTOM_C_LOSS)
         # Receiver and Transmitter
-        typesNoTest.append(AgEAccessConstraints.eCstrBERPlusI)
-        typesNoTest.append(AgEAccessConstraints.eCstrBitErrorRate)
-        typesNoTest.append(AgEAccessConstraints.eCstrCOverI)
-        typesNoTest.append(AgEAccessConstraints.eCstrCOverN)
-        typesNoTest.append(AgEAccessConstraints.eCstrCOverNPlusI)
-        typesNoTest.append(AgEAccessConstraints.eCstrCOverNo)
-        typesNoTest.append(AgEAccessConstraints.eCstrCOverNoPlusIo)
-        typesNoTest.append(AgEAccessConstraints.eCstrDeltaTOverT)
-        typesNoTest.append(AgEAccessConstraints.eCstrDopplerShift)
-        typesNoTest.append(AgEAccessConstraints.eCstrEbOverNo)
-        typesNoTest.append(AgEAccessConstraints.eCstrEbOverNoPlusIo)
-        typesNoTest.append(AgEAccessConstraints.eCstrFluxDensity)
-        typesNoTest.append(AgEAccessConstraints.eCstrFrequency)
-        typesNoTest.append(AgEAccessConstraints.eCstrGOverT)
-        typesNoTest.append(AgEAccessConstraints.eCstrJOverS)
-        typesNoTest.append(AgEAccessConstraints.eCstrLinkEIRP)
-        typesNoTest.append(AgEAccessConstraints.eCstrLinkMargin)
-        typesNoTest.append(AgEAccessConstraints.eCstrPolRelAngle)
-        typesNoTest.append(AgEAccessConstraints.eCstrPowerAtReceiverInput)
-        typesNoTest.append(AgEAccessConstraints.eCstrPowerFluxDensity)
-        typesNoTest.append(AgEAccessConstraints.eCstrRcvdIsotropicPower)
-        typesNoTest.append(AgEAccessConstraints.eCstrTotalPwrAtRcvrInput)
-        typesNoTest.append(AgEAccessConstraints.eCstrTotalRcvdRfPower)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_BER_PLUS_I)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_BIT_ERROR_RATE)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_C_OVER_I)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_C_OVER_N)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_C_OVER_N_PLUS_I)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_C_OVER_NO)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_C_OVER_NO_PLUS_IO)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_DELTA_T_OVER_T)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_DOPPLER_SHIFT)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_EB_OVER_NO)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_EB_OVER_NO_PLUS_IO)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FLUX_DENSITY)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FREQUENCY)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_G_OVER_T)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_J_OVER_S)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_LINK_EIRP)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_LINK_MARGIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_POL_REL_ANGLE)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_POWER_AT_RECEIVER_INPUT)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_POWER_FLUX_DENSITY)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_RCVD_ISOTROPIC_POWER)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_TOTAL_PWR_AT_RCVR_INPUT)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_TOTAL_RCVD_RF_POWER)
         # Receiver
-        typesNoTest.append(AgEAccessConstraints.eCstrCommPlugin)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_COMM_PLUGIN)
         # Sensor
-        typesNoTest.append(AgEAccessConstraints.eCstrFOVCbCenter)
-        typesNoTest.append(AgEAccessConstraints.eCstrFOVCbHorizonRefine)
-        typesNoTest.append(AgEAccessConstraints.eCstrFOVCbObstructionCrossIn)
-        typesNoTest.append(AgEAccessConstraints.eCstrFOVCbObstructionCrossOut)
-        typesNoTest.append(AgEAccessConstraints.eCstrSensorRangeMask)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CB_CENTER)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CB_HORIZON_REFINE)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CB_OBSTRUCTION_CROSS_IN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_FOV_CB_OBSTRUCTION_CROSS_OUT)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_SENSOR_RANGE_MASK)
         # Launch Vehicle and Missile
-        typesNoTest.append(AgEAccessConstraints.eCstrTimeSlipSurfaceRange)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRDwellTimeJammingMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRDwellTimeJammingMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRDwellTimeMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRDwellTimeMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedJOverSMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedJOverSMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPDetJammingMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPDetJammingMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPDetMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPDetMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPulsesJammingMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPulsesJammingMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPulsesMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedPulsesMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedSNRJammingMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedSNRJammingMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedSNRMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegratedSNRMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegrationTimeJammingMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegrationTimeJammingMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegrationTimeMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRIntegrationTimeMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseJOverSMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseJOverSMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulsePDetJammingMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulsePDetJammingMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulsePDetMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulsePDetMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseSNRJammingMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseSNRJammingMin)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseSNRMax)
-        typesNoTest.append(AgEAccessConstraints.eCstrMFRSinglePulseSNRMin)
-        if eType == AgEAccessConstraints.eCstrBackground:
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_TIME_SLIP_SURFACE_RANGE)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_DWELL_TIME_JAMMING_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_DWELL_TIME_JAMMING_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_DWELL_TIME_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_DWELL_TIME_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_J_OVER_S_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_J_OVER_S_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_P_DET_JAMMING_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_P_DET_JAMMING_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_P_DET_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_P_DET_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_PULSES_JAMMING_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_PULSES_JAMMING_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_PULSES_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_PULSES_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_SNR_JAMMING_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_SNR_JAMMING_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_SNR_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATED_SNR_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATION_TIME_JAMMING_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATION_TIME_JAMMING_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATION_TIME_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_INTEGRATION_TIME_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_J_OVER_S_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_J_OVER_S_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_P_DET_JAMMING_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_P_DET_JAMMING_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_P_DET_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_P_DET_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_SNR_JAMMING_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_SNR_JAMMING_MIN)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_SNR_MAX)
+        typesNoTest.append(ACCESS_CONSTRAINTS.CSTR_MFR_SINGLE_PULSE_SNR_MIN)
+        if eType == ACCESS_CONSTRAINTS.CSTR_BACKGROUND:
             self.TestConstraintBackground(oConstraint)
 
         elif (
-            ((eType == AgEAccessConstraints.eCstrCrdnAngle) or (eType == AgEAccessConstraints.eCstrCrdnCalcScalar))
-            or (eType == AgEAccessConstraints.eCstrCrdnVectorMag)
-        ) or (eType == AgEAccessConstraints.eCstrCrdnCondition):
+            ((eType == ACCESS_CONSTRAINTS.CSTR_CRDN_ANGLE) or (eType == ACCESS_CONSTRAINTS.CSTR_CRDN_CALC_SCALAR))
+            or (eType == ACCESS_CONSTRAINTS.CSTR_CRDN_VECTOR_MAG)
+        ) or (eType == ACCESS_CONSTRAINTS.CSTR_CRDN_CONDITION):
             self.TestConstraintCrdnCn(oConstraint)
             self.TestConstraintAWBCollection(oCollection.awb_constraints, int(eType))
 
-        elif eType == AgEAccessConstraints.eCstrLighting:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_LIGHTING:
             self.TestConstraintCondition(oConstraint)
 
-        elif eType == AgEAccessConstraints.eCstrGroundTrack:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_GROUND_TRACK:
             self.TestConstraintGroundTrack(oConstraint)
 
-        elif eType == AgEAccessConstraints.eCstrIntervals:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_INTERVALS:
             self.TestConstraintIntervals(oConstraint, temporaryDirectory)
 
-        elif eType == AgEAccessConstraints.eCstrInclusionZone:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_INCLUSION_ZONE:
             self.TestConstraintZone(oConstraint)
 
-        elif eType == AgEAccessConstraints.eCstrExclusionZone:
-            oCollection.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
-            oCollection.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
+        elif eType == ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE:
+            oCollection.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
+            oCollection.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
             self.TestConstraintExclusionZonesCollection(oConstraint)
 
         elif (
             (
                 (
                     (
-                        (eType == AgEAccessConstraints.eCstrLOSLunarExclusion)
-                        or (eType == AgEAccessConstraints.eCstrLOSSunExclusion)
+                        (eType == ACCESS_CONSTRAINTS.CSTR_LOS_LUNAR_EXCLUSION)
+                        or (eType == ACCESS_CONSTRAINTS.CSTR_LOS_SUN_EXCLUSION)
                     )
-                    or (eType == AgEAccessConstraints.eCstrSunSpecularExclusion)
+                    or (eType == ACCESS_CONSTRAINTS.CSTR_SUN_SPECULAR_EXCLUSION)
                 )
-                or (eType == AgEAccessConstraints.eCstrGeoExclusion)
+                or (eType == ACCESS_CONSTRAINTS.CSTR_GEO_EXCLUSION)
             )
-            or (eType == AgEAccessConstraints.eCstrBSLunarExclusion)
-        ) or (eType == AgEAccessConstraints.eCstrBSSunExclusion):
+            or (eType == ACCESS_CONSTRAINTS.CSTR_BS_LUNAR_EXCLUSION)
+        ) or (eType == ACCESS_CONSTRAINTS.CSTR_BS_SUN_EXCLUSION):
             self.TestConstraintAngle(oConstraint, "AngleUnit")
 
-        elif (eType == AgEAccessConstraints.eCstrSEETImpactFlux) or (eType == AgEAccessConstraints.eCstrSEETDamageFlux):
+        elif (eType == ACCESS_CONSTRAINTS.CSTR_SEET_IMPACT_FLUX) or (eType == ACCESS_CONSTRAINTS.CSTR_SEET_DAMAGE_FLUX):
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxFlux(oMinMax)
 
-        elif (eType == AgEAccessConstraints.eCstrSEETDamageMassFlux) or (
-            eType == AgEAccessConstraints.eCstrSEETImpactMassFlux
+        elif (eType == ACCESS_CONSTRAINTS.CSTR_SEET_DAMAGE_MASS_FLUX) or (
+            eType == ACCESS_CONSTRAINTS.CSTR_SEET_IMPACT_MASS_FLUX
         ):
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxMassFlux(oMinMax)
 
-        elif eType == AgEAccessConstraints.eCstrSEETVehicleTemperature:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_SEET_VEHICLE_TEMPERATURE:
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxVeTemp(oMinMax)
 
-        elif eType == AgEAccessConstraints.eCstrSEETSAAFluxIntensity:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_SEETSAA_FLUX_INTENSITY:
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxFluxIntensity(oMinMax)
@@ -345,8 +345,8 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxAngle(oMinMax)
 
-        elif (eType == AgEAccessConstraints.eCstrSunIlluminationAngle) or (
-            eType == AgEAccessConstraints.eCstrCentroidAzimuthAngle
+        elif (eType == ACCESS_CONSTRAINTS.CSTR_SUN_ILLUMINATION_ANGLE) or (
+            eType == ACCESS_CONSTRAINTS.CSTR_CENTROID_AZIMUTH_ANGLE
         ):
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
@@ -363,9 +363,9 @@ class AccessConstraintHelper(object):
             self.TestConstraintMinMaxUnitLess(oMinMax, 0.345, 0.89)
 
         elif (
-            (eType == AgEAccessConstraints.eCstrSrchTrkIntegratedPulsesJamming)
-            or (eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPulses)
-        ) or (eType == AgEAccessConstraints.eCstrSrchTrkOrthoPolIntegratedPulsesJamming):
+            (eType == ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_INTEGRATED_PULSES_JAMMING)
+            or (eType == ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATED_PULSES)
+        ) or (eType == ACCESS_CONSTRAINTS.CSTR_SRCH_TRK_ORTHO_POL_INTEGRATED_PULSES_JAMMING):
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxUnitLess(oMinMax, 1, 2)
@@ -375,7 +375,7 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDistance(oMinMax)
 
-        elif eType == AgEAccessConstraints.eCstrGrazingAlt:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_GRAZING_ALT:
             oGrazingAlt: "IAccessConstraintGrazingAltitude" = clr.Convert(oConstraint, IAccessConstraintGrazingAltitude)
             Assert.assertIsNotNone(oGrazingAlt)
             self.TestConstraintMinMaxGrazingAlt(oGrazingAlt)
@@ -385,19 +385,19 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxTime(oMinMax)
 
-        elif eType == AgEAccessConstraints.eCstrAzimuthAngle:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_AZIMUTH_ANGLE:
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxLongitude(oMinMax)
 
-        elif ((eType == AgEAccessConstraints.eCstrApparentTime) or (eType == AgEAccessConstraints.eCstrGMT)) or (
-            eType == AgEAccessConstraints.eCstrLocalTime
+        elif ((eType == ACCESS_CONSTRAINTS.CSTR_APPARENT_TIME) or (eType == ACCESS_CONSTRAINTS.CSTR_GMT)) or (
+            eType == ACCESS_CONSTRAINTS.CSTR_LOCAL_TIME
         ):
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDuration(oMinMax)
 
-        elif eType == AgEAccessConstraints.eCstrGroundSampleDistance:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_GROUND_SAMPLE_DISTANCE:
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxSmallDistance(oMinMax)
@@ -407,12 +407,12 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxRatio(oMinMax)
 
-        elif eType == AgEAccessConstraints.eCstrSarAzRes:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_SAR_AZ_RES:
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxSARTimeResProd(oMinMax)
 
-        elif eType == AgEAccessConstraints.eCstrElevationAngle:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_ELEVATION_ANGLE:
             oMinMax: "IAccessConstraintMinMax" = clr.CastAs(oConstraint, IAccessConstraintMinMax)
             if oMinMax != None:
                 self.TestConstraintMinMaxAngle(oMinMax)
@@ -423,14 +423,14 @@ class AccessConstraintHelper(object):
                 Assert.assertIsNotNone(oAngle)
                 self.TestConstraintAngle(oConstraint, "LatitudeUnit")
 
-        elif eType == AgEAccessConstraints.eCstrCbObstruction:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_CB_OBSTRUCTION:
             oCb: "IAccessConstraintCentralBodyObstruction" = clr.Convert(
                 oConstraint, IAccessConstraintCentralBodyObstruction
             )
             Assert.assertIsNotNone(oCb)
             self.TestConstraintCbObstruction(oCb)
 
-        elif eType == AgEAccessConstraints.eCstrSpectralFluxDensity:
+        elif eType == ACCESS_CONSTRAINTS.CSTR_SPECTRAL_FLUX_DENSITY:
             oMinMax: "IAccessConstraintMinMax" = clr.Convert(oConstraint, IAccessConstraintMinMax)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxPower(oMinMax)
@@ -603,9 +603,9 @@ class AccessConstraintHelper(object):
         iIndex: int = 0
         while iIndex < len(arAvailable):
             constraintName: str = str(arAvailable[iIndex][0])
-            eType: "AgEAccessConstraints" = clr.Convert(int(arAvailable[iIndex][1]), AgEAccessConstraints)
+            eType: "ACCESS_CONSTRAINTS" = clr.Convert(int(arAvailable[iIndex][1]), ACCESS_CONSTRAINTS)
             if not oCollection.is_constraint_supported(eType):
-                if AgEAccessConstraints.eCstrNone == eType:
+                if ACCESS_CONSTRAINTS.CSTR_NONE == eType:
                     iIndex += 1
                     continue
 
@@ -614,7 +614,7 @@ class AccessConstraintHelper(object):
 
             # test constraint
             self.ConstraintTest(oCollection, eType, temporaryDirectory)
-            if eType == AgEAccessConstraints.eCstrExclusionZone:
+            if eType == ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE:
                 if oCollection.is_constraint_active(eType):
                     Assert.fail()
 
@@ -626,11 +626,11 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oConstraint)
             if (
                 (
-                    (eType != AgEAccessConstraints.eCstrExclusionZone)
-                    and (eType != AgEAccessConstraints.eCstrObjectExclusionAngle)
+                    (eType != ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
+                    and (eType != ACCESS_CONSTRAINTS.CSTR_OBJECT_EXCLUSION_ANGLE)
                 )
-                and (eType != AgEAccessConstraints.eCstrThirdBodyObstruction)
-            ) and (eType != AgEAccessConstraints.eCstrLineOfSight):
+                and (eType != ACCESS_CONSTRAINTS.CSTR_THIRD_BODY_OBSTRUCTION)
+            ) and (eType != ACCESS_CONSTRAINTS.CSTR_LINE_OF_SIGHT):
                 oCollection.remove_constraint(eType)
 
             iIndex += 1
@@ -1802,10 +1802,10 @@ class AccessConstraintHelper(object):
             Assert.assertEqual(TestBase.GetScenarioFile("times.int"), oIntervals.file_path)
 
             # ActionType
-            oIntervals.action_type = AgEActionType.eActionExclude
-            Assert.assertEqual(AgEActionType.eActionExclude, oIntervals.action_type)
-            oIntervals.action_type = AgEActionType.eActionInclude
-            Assert.assertEqual(AgEActionType.eActionInclude, oIntervals.action_type)
+            oIntervals.action_type = ACTION_TYPE.EXCLUDE
+            Assert.assertEqual(ACTION_TYPE.EXCLUDE, oIntervals.action_type)
+            oIntervals.action_type = ACTION_TYPE.INCLUDE
+            Assert.assertEqual(ACTION_TYPE.INCLUDE, oIntervals.action_type)
 
             # Interval collection
             oHelper = IntervalCollectionHelper(self.m_oUnits)
@@ -1920,23 +1920,23 @@ class AccessConstraintHelper(object):
         oCondition: "IAccessConstraintCondition" = clr.Convert(oConstraint, IAccessConstraintCondition)
         Assert.assertIsNotNone(oCondition)
         # eDirectSun
-        oCondition.condition = AgECnstrLighting.eDirectSun
-        Assert.assertEqual(AgECnstrLighting.eDirectSun, oCondition.condition)
+        oCondition.condition = CNSTR_LIGHTING.DIRECT_SUN
+        Assert.assertEqual(CNSTR_LIGHTING.DIRECT_SUN, oCondition.condition)
         # ePenumbra
-        oCondition.condition = AgECnstrLighting.ePenumbra
-        Assert.assertEqual(AgECnstrLighting.ePenumbra, oCondition.condition)
+        oCondition.condition = CNSTR_LIGHTING.PENUMBRA
+        Assert.assertEqual(CNSTR_LIGHTING.PENUMBRA, oCondition.condition)
         # ePenumbraOrDirectSun
-        oCondition.condition = AgECnstrLighting.ePenumbraOrDirectSun
-        Assert.assertEqual(AgECnstrLighting.ePenumbraOrDirectSun, oCondition.condition)
+        oCondition.condition = CNSTR_LIGHTING.PENUMBRA_OR_DIRECT_SUN
+        Assert.assertEqual(CNSTR_LIGHTING.PENUMBRA_OR_DIRECT_SUN, oCondition.condition)
         # ePenumbraOrUmbra
-        oCondition.condition = AgECnstrLighting.ePenumbraOrUmbra
-        Assert.assertEqual(AgECnstrLighting.ePenumbraOrUmbra, oCondition.condition)
+        oCondition.condition = CNSTR_LIGHTING.PENUMBRA_OR_UMBRA
+        Assert.assertEqual(CNSTR_LIGHTING.PENUMBRA_OR_UMBRA, oCondition.condition)
         # eUmbra
-        oCondition.condition = AgECnstrLighting.eUmbra
-        Assert.assertEqual(AgECnstrLighting.eUmbra, oCondition.condition)
+        oCondition.condition = CNSTR_LIGHTING.UMBRA
+        Assert.assertEqual(CNSTR_LIGHTING.UMBRA, oCondition.condition)
         # eUmbraOrDirectSun
-        oCondition.condition = AgECnstrLighting.eUmbraOrDirectSun
-        Assert.assertEqual(AgECnstrLighting.eUmbraOrDirectSun, oCondition.condition)
+        oCondition.condition = CNSTR_LIGHTING.UMBRA_OR_DIRECT_SUN
+        Assert.assertEqual(CNSTR_LIGHTING.UMBRA_OR_DIRECT_SUN, oCondition.condition)
 
     # endregion
 
@@ -2160,27 +2160,27 @@ class AccessConstraintHelper(object):
     # region TestConstraintAWBCollection
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintAWBCollection(self, awbCol: "IAccessConstraintAnalysisWorkbenchCollection", eType: int):
-        arReferences = awbCol.get_available_references(clr.Convert(eType, AgEAWBAccessConstraints))
+        arReferences = awbCol.get_available_references(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS))
         Assert.assertTrue((Array.Length(arReferences) > 0))
 
         origCount: int = awbCol.count
         reference: str = str(arReferences[1])
 
         accConstraint: "IAccessConstraint" = awbCol.add_constraint(
-            clr.Convert(eType, AgEAWBAccessConstraints), reference
+            clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference
         )
 
         Assert.assertIsNotNone(accConstraint)
         Assert.assertEqual((origCount + 1), awbCol.count)
-        if clr.Convert(eType, AgEAccessConstraints) == AgEAccessConstraints.eCstrCrdnVectorMag:
+        if clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_CRDN_VECTOR_MAG:
             self.TestAWBConstraintMinMaxUnitLess(
                 clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench), 0.0, 2000.0
             )
 
-        elif clr.Convert(eType, AgEAccessConstraints) == AgEAccessConstraints.eCstrCrdnAngle:
+        elif clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_CRDN_ANGLE:
             self.TestAWBConstraintMinMaxAngle(clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench))
 
-        elif clr.Convert(eType, AgEAccessConstraints) == AgEAccessConstraints.eCstrCrdnCalcScalar:
+        elif clr.Convert(eType, ACCESS_CONSTRAINTS) == ACCESS_CONSTRAINTS.CSTR_CRDN_CALC_SCALAR:
             self.TestAWBConstraintMinMaxUnitLess(
                 clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench), -2000.0, 2000.0
             )
@@ -2188,23 +2188,23 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(reference, (clr.Convert(accConstraint, IAccessConstraintAnalysisWorkbench)).reference)
 
         def action125():
-            awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), "Bogus")
+            awbCol.add_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), "Bogus")
 
         TryCatchAssertBlock.ExpectedException("Specified reference cannot be found", action125)
 
-        awbCol.remove_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+        awbCol.remove_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference)
         Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+        awbCol.add_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference)
         Assert.assertEqual((origCount + 1), awbCol.count)
 
         awbCol.remove_index(origCount)
         Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+        awbCol.add_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference)
 
         def action126():
-            awbCol.add_constraint(clr.Convert(eType, AgEAWBAccessConstraints), reference)
+            awbCol.add_constraint(clr.Convert(eType, AWB_ACCESS_CONSTRAINTS), reference)
 
         TryCatchAssertBlock.ExpectedException("Constraint already active", action126)
 
@@ -2437,11 +2437,11 @@ class AccessConstraintHelper(object):
         oBackground: "IAccessConstraintBackground" = clr.Convert(oConstraint, IAccessConstraintBackground)
         Assert.assertIsNotNone(oBackground)
         # eBackgroundGround
-        oBackground.background = AgECnstrBackground.eBackgroundGround
-        Assert.assertEqual(AgECnstrBackground.eBackgroundGround, oBackground.background)
+        oBackground.background = CNSTR_BACKGROUND.BACKGROUND_GROUND
+        Assert.assertEqual(CNSTR_BACKGROUND.BACKGROUND_GROUND, oBackground.background)
         # eBackgroundSpace
-        oBackground.background = AgECnstrBackground.eBackgroundSpace
-        Assert.assertEqual(AgECnstrBackground.eBackgroundSpace, oBackground.background)
+        oBackground.background = CNSTR_BACKGROUND.BACKGROUND_SPACE
+        Assert.assertEqual(CNSTR_BACKGROUND.BACKGROUND_SPACE, oBackground.background)
 
     # endregion
 
@@ -2452,11 +2452,11 @@ class AccessConstraintHelper(object):
         oGroundTrack: "IAccessConstraintGroundTrack" = clr.Convert(oConstraint, IAccessConstraintGroundTrack)
         Assert.assertIsNotNone(oGroundTrack)
         # eDirectionAscending
-        oGroundTrack.direction = AgECnstrGroundTrack.eDirectionAscending
-        Assert.assertEqual(AgECnstrGroundTrack.eDirectionAscending, oGroundTrack.direction)
+        oGroundTrack.direction = CNSTR_GROUND_TRACK.DIRECTION_ASCENDING
+        Assert.assertEqual(CNSTR_GROUND_TRACK.DIRECTION_ASCENDING, oGroundTrack.direction)
         # eDirectionDescending
-        oGroundTrack.direction = AgECnstrGroundTrack.eDirectionDescending
-        Assert.assertEqual(AgECnstrGroundTrack.eDirectionDescending, oGroundTrack.direction)
+        oGroundTrack.direction = CNSTR_GROUND_TRACK.DIRECTION_DESCENDING
+        Assert.assertEqual(CNSTR_GROUND_TRACK.DIRECTION_DESCENDING, oGroundTrack.direction)
 
     # endregion
 
@@ -2623,31 +2623,31 @@ class AccessConstraintHelper(object):
             name: str = constraint.constraint_name
 
         origCount: int = collection.count
-        collection.add_constraint(AgEAccessConstraints.eCstrAltitude)
+        collection.add_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
         Assert.assertEqual((origCount + 1), collection.count)
 
         def action150():
-            collection.add_constraint(AgEAccessConstraints.eCstrAltitude)
+            collection.add_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
 
         TryCatchAssertBlock.ExpectedException("already active", action150)
 
         def action151():
-            collection.add_constraint(clr.Convert((-1), AgEAccessConstraints))
+            collection.add_constraint(clr.Convert((-1), ACCESS_CONSTRAINTS))
 
         TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action151)
 
-        activeConstraint: "IAccessConstraint" = collection.get_active_constraint(AgEAccessConstraints.eCstrAltitude)
-        Assert.assertEqual(AgEAccessConstraints.eCstrAltitude, activeConstraint.constraint_type)
-        Assert.assertTrue(collection.is_constraint_active(AgEAccessConstraints.eCstrAltitude))
-        Assert.assertTrue(collection.is_constraint_supported(AgEAccessConstraints.eCstrAltitude))
+        activeConstraint: "IAccessConstraint" = collection.get_active_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
+        Assert.assertEqual(ACCESS_CONSTRAINTS.CSTR_ALTITUDE, activeConstraint.constraint_type)
+        Assert.assertTrue(collection.is_constraint_active(ACCESS_CONSTRAINTS.CSTR_ALTITUDE))
+        Assert.assertTrue(collection.is_constraint_supported(ACCESS_CONSTRAINTS.CSTR_ALTITUDE))
 
-        collection.remove_constraint(AgEAccessConstraints.eCstrAltitude)
+        collection.remove_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
         Assert.assertEqual(origCount, collection.count)
-        Assert.assertFalse(collection.is_constraint_active(AgEAccessConstraints.eCstrAltitude))
-        Assert.assertFalse(collection.is_constraint_supported(AgEAccessConstraints.eCstrNone))
+        Assert.assertFalse(collection.is_constraint_active(ACCESS_CONSTRAINTS.CSTR_ALTITUDE))
+        Assert.assertFalse(collection.is_constraint_supported(ACCESS_CONSTRAINTS.CSTR_NONE))
 
         def action152():
-            activeConstraint = collection.get_active_constraint(AgEAccessConstraints.eCstrAltitude)
+            activeConstraint = collection.get_active_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE)
 
         TryCatchAssertBlock.ExpectedException("One or more arguments are invalid.", action152)
 
@@ -2656,7 +2656,7 @@ class AccessConstraintHelper(object):
         i: int = 0
         while i < len(arAvailable):
             availName: str = clr.Convert(arAvailable[i][0], str)
-            eAccessConstraint: "AgEAccessConstraints" = clr.Convert(int(arAvailable[i][1]), AgEAccessConstraints)
+            eAccessConstraint: "ACCESS_CONSTRAINTS" = clr.Convert(int(arAvailable[i][1]), ACCESS_CONSTRAINTS)
 
             i += 1
 
@@ -2675,7 +2675,7 @@ class AccessConstraintHelper(object):
         TryCatchAssertBlock.ExpectedException("does not exist", action154)
 
         activeConstraint = collection.get_active_named_constraint("Altitude")
-        Assert.assertEqual(AgEAccessConstraints.eCstrAltitude, activeConstraint.constraint_type)
+        Assert.assertEqual(ACCESS_CONSTRAINTS.CSTR_ALTITUDE, activeConstraint.constraint_type)
         Assert.assertTrue(collection.is_named_constraint_active("Altitude"))
         Assert.assertTrue(collection.is_named_constraint_supported("Altitude"))
 

@@ -36,13 +36,13 @@ class StkObjectGfx(CodeSnippetsTestBase):
     # region SetScenarioDisplayToHideShowObjects
     @category("Graphics Tests")
     def test_SetScenarioDisplayToHideShowObjects(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "facility1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "facility2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "facility2")
 
         self.SetScenarioDisplayToHideShowObjects((clr.CastAs(CodeSnippetsTestBase.m_Root.current_scenario, IScenario)))
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility2")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def SetScenarioDisplayToHideShowObjects(self, scenario: "IScenario"):
         gfx: "IScenarioGraphics" = scenario.graphics

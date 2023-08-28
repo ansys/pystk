@@ -27,9 +27,7 @@ class Ballistic(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         self.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eMissile, Ballistic.m_DefaultName
-            ),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, Ballistic.m_DefaultName),
             IMissile,
         )
 
@@ -37,7 +35,7 @@ class Ballistic(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eMissile, Ballistic.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.MISSILE, Ballistic.m_DefaultName)
         self.m_Object = None
 
     # endregion
@@ -47,7 +45,7 @@ class Ballistic(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("DistanceUnit", "km")
         CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("TimeUnit", "sec")
 
-        self.m_Object.set_trajectory_type(AgEVePropagatorType.ePropagatorBallistic)
+        self.m_Object.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
 
         propBallistic: "IVehiclePropagatorBallistic" = clr.CastAs(self.m_Object.trajectory, IVehiclePropagatorBallistic)
         impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(
@@ -62,20 +60,20 @@ class Ballistic(CodeSnippetsTestBase):
 
     def ConfigureBallisticPropagator(self, propagator: "IVehiclePropagatorBallistic"):
         propagator.step = 30
-        propagator.set_launch_type(AgEVeLaunch.eLaunchLLA)
+        propagator.set_launch_type(VE_LAUNCH.LAUNCH_LLA)
 
         launch: "IVehicleLaunchLLA" = clr.CastAs(propagator.launch, IVehicleLaunchLLA)
         launch.lat = 40.04
         launch.lon = -76.304
         launch.alt = 1.5
 
-        propagator.set_impact_location_type(AgEVeImpactLocation.eImpactLocationPoint)
+        propagator.set_impact_location_type(VE_IMPACT_LOCATION.IMPACT_LOCATION_POINT)
 
         impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(
             propagator.impact_location, IVehicleImpactLocationPoint
         )
-        impactLocation.set_impact_type(AgEVeImpact.eImpactLLA)
-        impactLocation.set_launch_control_type(AgEVeLaunchControl.eLaunchControlFixedDeltaV)
+        impactLocation.set_impact_type(VE_IMPACT.IMPACT_LLA)
+        impactLocation.set_launch_control_type(VE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V)
 
         impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
         impact.lat = 40.337

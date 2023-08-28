@@ -357,7 +357,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnLogMessage(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"AgELogMsgType", errorCode:int, fileName:str, lineNo:int, dispID:"AgELogMsgDispID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MSG_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MSG_DISP_ID") -> None]"""
         return self._OnLogMessageEvent
         
     @OnLogMessage.setter
@@ -402,7 +402,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnAnimationPlayback(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"AgEAnimationActions", eDirection:"AgEAnimationDirections") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"ANIMATION_ACTIONS", eDirection:"ANIMATION_DIRECTIONS") -> None]"""
         return self._OnAnimationPlaybackEvent
         
     @OnAnimationPlayback.setter
@@ -607,7 +607,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
 
     def _OnLogMessage(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._OnLogMessageEvent._callbacks:
-            callback(message, agcls.AgTypeNameMap["AgELogMsgType"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["AgELogMsgDispID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LOG_MSG_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MSG_DISP_ID"](dispID))
 
     def _OnAnimUpdate(self, pThis:PVOID, timeEpSec:float) -> None:
         for callback in self._OnAnimUpdateEvent._callbacks:
@@ -630,7 +630,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber, STKEventHandlerBase):
                 
     def _OnAnimationPlayback(self, pThis:PVOID, CurrentTime:float, eAction:int, eDirection:int) -> None:
         for callback in self._OnAnimationPlaybackEvent._callbacks:
-            callback(CurrentTime, agcls.AgTypeNameMap["AgEAnimationActions"](eAction), agcls.AgTypeNameMap["AgEAnimationDirections"](eDirection.python_val))
+            callback(CurrentTime, agcls.AgTypeNameMap["ANIMATION_ACTIONS"](eAction), agcls.AgTypeNameMap["ANIMATION_DIRECTIONS"](eDirection.python_val))
                 
     def _OnAnimationRewind(self, pThis:PVOID) -> None:
         for callback in self._OnAnimationRewindEvent._callbacks:
@@ -871,7 +871,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
         
     @property
     def OnLogMessage(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"AgELogMsgType", errorCode:int, fileName:str, lineNo:int, dispID:"AgELogMsgDispID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MSG_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MSG_DISP_ID") -> None]"""
         return self._OnLogMessageEvent
         
     @OnLogMessage.setter
@@ -934,7 +934,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     @property
     def OnNewGfxAnalysisCtrlRequest(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"AgEGfxAnalysisMode") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GFX_ANALYSIS_MODE") -> None]"""
         return self._OnNewGfxAnalysisCtrlRequestEvent
         
     @OnNewGfxAnalysisCtrlRequest.setter
@@ -977,7 +977,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
 
     def _OnLogMessage(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._OnLogMessageEvent._callbacks:
-            callback(message, agcls.AgTypeNameMap["AgELogMsgType"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["AgELogMsgDispID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LOG_MSG_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MSG_DISP_ID"](dispID))
 
     def _OnAnimUpdate(self, pThis:PVOID, timeEpSec:float) -> int:
         for callback in self._OnAnimUpdateEvent._callbacks:
@@ -1006,7 +1006,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber, STKEventHandlerBase):
     
     def _OnNewGfxAnalysisCtrlRequest(self, pThis:PVOID, SceneID:int, GfxAnalysisMode:int) -> None:
         for callback in self._OnNewGfxAnalysisCtrlRequestEvent._callbacks:
-            callback(SceneID, agcls.AgTypeNameMap["AgEGfxAnalysisMode"](GfxAnalysisMode))
+            callback(SceneID, agcls.AgTypeNameMap["GFX_ANALYSIS_MODE"](GfxAnalysisMode))
     
     def _OnSSLCertificateServerError(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._OnSSLCertificateServerErrorEvent._callbacks:

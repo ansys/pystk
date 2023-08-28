@@ -30,7 +30,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def setUp(self):
         CoverageDefinition.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eCoverageDefinition, CoverageDefinition.m_DefaultName
+                STK_OBJECT_TYPE.COVERAGE_DEFINITION, CoverageDefinition.m_DefaultName
             ),
             ICoverageDefinition,
         )
@@ -40,7 +40,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eCoverageDefinition, CoverageDefinition.m_DefaultName
+            STK_OBJECT_TYPE.COVERAGE_DEFINITION, CoverageDefinition.m_DefaultName
         )
         CoverageDefinition.m_Object = None
 
@@ -50,32 +50,32 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def test_CreateCoverageDefinition(self):
         # Unload because all other code snippet's want the at already loaded except for this one.
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eCoverageDefinition, CoverageDefinition.m_DefaultName
+            STK_OBJECT_TYPE.COVERAGE_DEFINITION, CoverageDefinition.m_DefaultName
         )
         self.CreateCoverageDefinition(CodeSnippetsTestBase.m_Root)
 
     def CreateCoverageDefinition(self, root: "IStkObjectRoot"):
         # Create the CoverageDefinition
         cd: "ICoverageDefinition" = clr.CastAs(
-            root.current_scenario.children.new(AgESTKObjectType.eCoverageDefinition, "cd1"), ICoverageDefinition
+            root.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "cd1"), ICoverageDefinition
         )
 
     # endregion
 
     # region SetCustomCoverageDefinitionByPoints
     def test_SetCustomCoverageDefinitionByPoints(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eAreaTarget, "AreaTarget1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
         self.SetCustomCoverageDefinitionByPoints(
             CoverageDefinition.m_Object, TestBase.GetScenarioFile("CodeSnippetsTests", "CovDefTest", "usstates.rl")
         )
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eAreaTarget, "AreaTarget1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
 
     def SetCustomCoverageDefinitionByPoints(self, coverageDefinition: "ICoverageDefinition", regionFilePath: str):
         # Get the ICoverageGrid interface
         cvGrid: "ICoverageGrid" = coverageDefinition.grid
 
         # Define custom region
-        cvGrid.bounds_type = AgECvBounds.eBoundsCustomRegions
+        cvGrid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_REGIONS
         oBoundsCustom: "ICoverageBoundsCustomRegions" = clr.CastAs(cvGrid.bounds, ICoverageBoundsCustomRegions)
         oBoundsCustom.region_files.add(regionFilePath)
         oBoundsCustom.area_targets.add("AreaTarget/AreaTarget1")
@@ -96,18 +96,18 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
     # region DefineCustomGridUsingAreaTargets
     def test_DefineCustomGridUsingAreaTargets(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eAreaTarget, "AreaTarget1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eAreaTarget, "AreaTarget2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget2")
         self.DefineCustomGridUsingAreaTargets(CoverageDefinition.m_Object)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eAreaTarget, "AreaTarget2")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eAreaTarget, "AreaTarget1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget2")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
 
     def DefineCustomGridUsingAreaTargets(self, coverageDefinition: "ICoverageDefinition"):
         # Get the ICoverageGrid interface
         cvGrid: "ICoverageGrid" = coverageDefinition.grid
 
         # Set bound region type to use custom regions
-        cvGrid.bounds_type = AgECvBounds.eBoundsCustomRegions
+        cvGrid.bounds_type = CV_BOUNDS.BOUNDS_CUSTOM_REGIONS
 
         # Get ICoverageBoundsCustomRegions interface
         boundRegion: "ICoverageBoundsCustomRegions" = clr.CastAs(cvGrid.bounds, ICoverageBoundsCustomRegions)
@@ -127,7 +127,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         grid: "ICoverageGrid" = coverageDefinition.grid
 
         # Set resolution type
-        grid.resolution_type = AgECvResolution.eResolutionLatLon
+        grid.resolution_type = CV_RESOLUTION.RESOLUTION_LAT_LON
 
         # Get the resolution interface
         resolution: "ICoverageResolution" = grid.resolution
@@ -141,37 +141,33 @@ class CoverageDefinition(CodeSnippetsTestBase):
 
     # region DefineGridConstraintOptions
     def test_DefineGridConstraintOptions(self):
-        fac: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "North"
-        )
-        fac.children.new(AgESTKObjectType.eReceiver, "rec")
+        fac: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "North")
+        fac.children.new(STK_OBJECT_TYPE.RECEIVER, "rec")
         self.DefineGridConstraintOptions(CoverageDefinition.m_Object)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "North")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "North")
 
     def DefineGridConstraintOptions(self, coverageDefinition: "ICoverageDefinition"):
         pointDefinition: "ICoveragePointDefinition" = coverageDefinition.point_definition
 
         # Set facility as object seed instance
-        pointDefinition.grid_class = AgECvGridClass.eGridClassFacility
+        pointDefinition.grid_class = CV_GRID_CLASS.GRID_CLASS_FACILITY
         pointDefinition.use_grid_seed = True
         pointDefinition.seed_instance = "Facility/North"
 
         # Configure Altitude
-        pointDefinition.altitude_method = AgECvAltitudeMethod.eAltitude
+        pointDefinition.altitude_method = CV_ALTITUDE_METHOD.ALTITUDE
         pointDefinition.altitude = 0.0
-        coverageDefinition.point_definition.ground_altitude_method = (
-            AgECvGroundAltitudeMethod.eCvGroundAltitudeMethodUsePointAlt
-        )
+        coverageDefinition.point_definition.ground_altitude_method = CV_GROUND_ALTITUDE_METHOD.USE_POINT_ALT
 
     # endregion
 
     # region DefineCoverageDefinitionAssets
     def test_DefineCoverageDefinitionAssets(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "North")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "North")
         self.DefineCoverageDefinitionAssets(CoverageDefinition.m_Object)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "North")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "North")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
     def DefineCoverageDefinitionAssets(self, coverageDefinition: "ICoverageDefinition"):
         assetCollection: "ICoverageAssetListCollection" = coverageDefinition.asset_list
@@ -228,7 +224,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         sampling: "IAccessSampling" = advanced.sampling
 
         # Set the Sampling Method
-        sampling.set_type(AgESamplingMethod.eSamplingMethodFixedStep)
+        sampling.set_type(SAMPLING_METHOD.FIXED_STEP)
         fixedStep: "ISamplingMethodFixedStep" = clr.CastAs(sampling.strategy, ISamplingMethodFixedStep)
 
         # Set properties on the Fixed Stop sampling method interface
@@ -247,7 +243,7 @@ class CoverageDefinition(CodeSnippetsTestBase):
         sampling: "IAccessSampling" = advanced.sampling
 
         # Set the Sampling Method
-        sampling.set_type(AgESamplingMethod.eSamplingMethodAdaptive)
+        sampling.set_type(SAMPLING_METHOD.ADAPTIVE)
         adaptive: "ISamplingMethodAdaptive" = clr.CastAs(sampling.strategy, ISamplingMethodAdaptive)
 
         # Set properties on the Adaptive sampling method interface
@@ -260,14 +256,14 @@ class CoverageDefinition(CodeSnippetsTestBase):
     def test_ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(self):
         scenario: "IScenario" = clr.Convert(TestBase.Application.current_scenario, IScenario)
         coverage: "IStkObject" = (clr.Convert(scenario, IStkObject)).children.new(
-            AgESTKObjectType.eCoverageDefinition, "CoverageForCodeSnippet"
+            STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageForCodeSnippet"
         )
 
         aircraft: "IAircraft" = clr.Convert(
-            (clr.Convert(scenario, IStkObject)).children.new(AgESTKObjectType.eAircraft, "Aircraft1"), IAircraft
+            (clr.Convert(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft1"), IAircraft
         )
-        (clr.Convert(aircraft, IStkObject)).children.new(AgESTKObjectType.eSensor, "AircraftSensor1")
-        aircraft.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        (clr.Convert(aircraft, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "AircraftSensor1")
+        aircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         greatArc: "IVehiclePropagatorGreatArc" = clr.Convert(aircraft.route, IVehiclePropagatorGreatArc)
 
         waypoints = [

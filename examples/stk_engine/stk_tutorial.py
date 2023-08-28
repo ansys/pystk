@@ -6,32 +6,32 @@ import tkinter as tk
 from ansys.stk.core.stkengine import STKEngine
 from ansys.stk.core.stkengine.tkcontrols import GlobeControl, MapControl
 from ansys.stk.core.stkobjects import (
-    AgEAccessConstraints,
-    AgEAreaType,
-    AgEAzElAboutBoresight,
-    AgEClassicalLocation,
-    AgEClassicalSizeShape,
-    AgEDisplayTimesType,
-    AgELineWidth,
-    AgEOrientationAscNode,
-    AgEOrientationType,
-    AgESnPattern,
-    AgESnPointing,
-    AgESnProjectionDistanceType,
-    AgESnPtTrgtBsightType,
-    AgESTKObjectType,
-    AgEVeAttitude,
-    AgEVeGfxAttributes,
-    AgEVeGfxVisibleSides,
-    AgEVeProfile,
-    AgEVePropagatorType,
-    AgEVeWayPtCompMethod,
+    ACCESS_CONSTRAINTS,
+    AREA_TYPE,
+    AZ_EL_ABOUT_BORESIGHT,
+    CLASSICAL_LOCATION,
+    CLASSICAL_SIZE_SHAPE,
+    DISPLAY_TIMES_TYPE,
+    LINE_WIDTH,
+    ORIENTATION_ASC_NODE,
+    ORIENTATION_TYPE,
+    SN_PATTERN,
+    SN_POINTING,
+    SN_PROJECTION_DISTANCE_TYPE,
+    SN_PT_TRGT_BSIGHT_TYPE,
+    STK_OBJECT_TYPE,
+    VE_ATTITUDE,
+    VE_GFX_ATTRIBUTES,
+    VE_GFX_VISIBLE_SIDES,
+    VE_PROFILE,
+    VE_PROPAGATOR_TYPE,
+    VE_WAY_PT_COMP_METHOD,
 )
 from ansys.stk.core.stkutil import (
-    AgECoordinateSystem,
-    AgELineStyle,
-    AgEOrbitStateType,
-    AgEPositionType,
+    COORDINATE_SYSTEM,
+    LINE_STYLE,
+    ORBIT_STATE_TYPE,
+    POSITION_TYPE,
 )
 from ansys.stk.core.utilities.colors import Color, Colors
 
@@ -238,11 +238,11 @@ class STKTutorial:
 
     def _create_facilities(self):
         self.baikonur = self.root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "Baikonur"
+            STK_OBJECT_TYPE.FACILITY, "Baikonur"
         )
         self.baikonur.UseTerrain = False
         self.planetodetic = self.baikonur.Position.ConvertTo(
-            AgEPositionType.ePlanetodetic
+            POSITION_TYPE.PLANETODETIC
         )
         self.planetodetic.Lat = 48.0
         self.planetodetic.Lon = 55.0
@@ -254,11 +254,11 @@ class STKTutorial:
         )
 
         self.perth = self.root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "Perth"
+            STK_OBJECT_TYPE.FACILITY, "Perth"
         )
         self.perth.UseTerrain = False
         self.planetodetic = self.perth.Position.ConvertTo(
-            AgEPositionType.ePlanetodetic
+            POSITION_TYPE.PLANETODETIC
         )
         self.planetodetic.Lat = -31.0
         self.planetodetic.Lon = 116.0
@@ -267,11 +267,11 @@ class STKTutorial:
         self.perth.short_description = "Australian Tracking Station"
 
         self.wallops = self.root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "Wallops"
+            STK_OBJECT_TYPE.FACILITY, "Wallops"
         )
         self.wallops.UseTerrain = False
         self.planetodetic = self.wallops.Position.ConvertTo(
-            AgEPositionType.ePlanetodetic
+            POSITION_TYPE.PLANETODETIC
         )
         self.planetodetic.Lat = 37.8602
         self.planetodetic.Lon = -75.5095
@@ -313,11 +313,11 @@ class STKTutorial:
 
     def _create_target(self):
         self.iceberg = self.root.current_scenario.children.new(
-            AgESTKObjectType.eTarget, "Iceberg"
+            STK_OBJECT_TYPE.TARGET, "Iceberg"
         )
         self.iceberg.UseTerrain = False
         self.planetodetic = self.iceberg.Position.ConvertTo(
-            AgEPositionType.ePlanetodetic
+            POSITION_TYPE.PLANETODETIC
         )
         self.planetodetic.Lat = 74.91
         self.planetodetic.Lon = -74.5
@@ -338,15 +338,15 @@ class STKTutorial:
 
     def _create_ship(self):
         cruise = self.root.current_scenario.children.new(
-            AgESTKObjectType.eShip, "Cruise"
+            STK_OBJECT_TYPE.SHIP, "Cruise"
         )
-        cruise.SetRouteType(AgEVePropagatorType.ePropagatorGreatArc)
+        cruise.SetRouteType(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         greatArc = cruise.Route
         interval = greatArc.EphemerisInterval
         interval.SetExplicitInterval(
             "1 Jul 2023 00:00:00.00", interval.FindStopTime()
         )
-        greatArc.Method = AgEVeWayPtCompMethod.eDetermineTimeAccFromVel
+        greatArc.Method = VE_WAY_PT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
 
         self._add_waypoint(greatArc.Waypoints, 44.1, -8.5, 0.0, 0.015, 0.0)
         self._add_waypoint(greatArc.Waypoints, 51.0, -26.6, 0.0, 0.015, 0.0)
@@ -356,10 +356,10 @@ class STKTutorial:
         self._add_waypoint(greatArc.Waypoints, 72.5, -70.1, 0.0, 0.015, 0.0)
         self._add_waypoint(greatArc.Waypoints, 74.9, -74.5, 0.0, 0.015, 0.0)
 
-        cruise.SetAttitudeType(AgEVeAttitude.eAttitudeStandard)
+        cruise.SetAttitudeType(VE_ATTITUDE.ATTITUDE_STANDARD)
         attitude = cruise.Attitude
         attitude.Basic.SetProfileType(
-            AgEVeProfile.eProfileECFVelocityAlignmentWithRadialConstraint
+            VE_PROFILE.PROFILE_ECF_VELOCITY_ALIGNMENT_WITH_RADIAL_CONSTRAINT
         )
         cruise.Graphics.WaypointMarker.IsWaypointMarkersVisible = True
         cruise.Graphics.WaypointMarker.IsTurnMarkersVisible = True
@@ -370,33 +370,33 @@ class STKTutorial:
 
     def _create_satellites(self):
         tdrs = self.root.current_scenario.children.new(
-            AgESTKObjectType.eSatellite, "TDRS"
+            STK_OBJECT_TYPE.SATELLITE, "TDRS"
         )
-        tdrs.SetPropagatorType(AgEVePropagatorType.ePropagatorTwoBody)
+        tdrs.SetPropagatorType(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         twobody = tdrs.Propagator
 
         classical = twobody.InitialState.Representation.ConvertTo(
-            AgEOrbitStateType.eOrbitStateClassical
+            ORBIT_STATE_TYPE.CLASSICAL
         )
         classical.CoordinateSystemType = (
-            AgECoordinateSystem.eCoordinateSystemJ2000
+            COORDINATE_SYSTEM.J2000
         )
         interval = twobody.EphemerisInterval
         interval.SetExplicitInterval(
             "1 Jul 2023 00:00:00.000", "1 Jul 2023 04:00:00.000"
         )
         twobody.Step = 60
-        classical.LocationType = AgEClassicalLocation.eLocationTrueAnomaly
+        classical.LocationType = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
         trueAnomaly = classical.Location
         trueAnomaly.Value = 178.845262
 
-        classical.SizeShapeType = AgEClassicalSizeShape.eSizeShapePeriod
+        classical.SizeShapeType = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD
         period = classical.SizeShape
         period.Eccentricity = 0.0
         period.Period = 86164.090540
         classical.Orientation.ArgOfPerigee = 0.0
         classical.Orientation.Inclination = 0.0
-        classical.Orientation.AscNodeType = AgEOrientationAscNode.eAscNodeLAN
+        classical.Orientation.AscNodeType = ORIENTATION_ASC_NODE.ASC_NODE_LAN
         lan = classical.Orientation.AscNode
         lan.Value = 259.999982
         twobody.InitialState.Representation.Assign(classical)
@@ -420,10 +420,10 @@ class STKTutorial:
         )
 
         self.ers1 = self.root.current_scenario.children.new(
-            AgESTKObjectType.eSatellite, "ERS1"
+            STK_OBJECT_TYPE.SATELLITE, "ERS1"
         )
         self.ers1.SetPropagatorType(
-            AgEVePropagatorType.ePropagatorJ4Perturbation
+            VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION
         )
         j4 = self.ers1.Propagator
         interval = j4.EphemerisInterval
@@ -435,20 +435,20 @@ class STKTutorial:
         oOrb.Epoch = "1 Jul 2023 00:00:00.000"
 
         classical = j4.InitialState.Representation.ConvertTo(
-            AgEOrbitStateType.eOrbitStateClassical
+            ORBIT_STATE_TYPE.CLASSICAL
         )
         classical.CoordinateSystemType = (
-            AgECoordinateSystem.eCoordinateSystemJ2000
+            COORDINATE_SYSTEM.J2000
         )
-        classical.LocationType = AgEClassicalLocation.eLocationTrueAnomaly
+        classical.LocationType = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
         trueAnomaly = classical.Location
         trueAnomaly.Value = 0.0
-        classical.SizeShapeType = AgEClassicalSizeShape.eSizeShapeSemimajorAxis
+        classical.SizeShapeType = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS
         semi = classical.SizeShape
         semi.SemiMajorAxis = 7163.14
         semi.Eccentricity = 0.0
         classical.Orientation.ArgOfPerigee = 0.0
-        classical.Orientation.AscNodeType = AgEOrientationAscNode.eAscNodeLAN
+        classical.Orientation.AscNodeType = ORIENTATION_ASC_NODE.ASC_NODE_LAN
         lan = classical.Orientation.AscNode
         lan.Value = 99.38
         classical.Orientation.Inclination = 98.50
@@ -457,16 +457,16 @@ class STKTutorial:
         j4.Propagate()
         self.root.rewind()
         self.ers1.Graphics.Passes.VisibleSides = (
-            AgEVeGfxVisibleSides.eVisibleSidesDescending
+            VE_GFX_VISIBLE_SIDES.VISIBLE_SIDES_DESCENDING
         )
         self.ers1.Graphics.Passes.VisibleSides = (
-            AgEVeGfxVisibleSides.eVisibleSidesBoth
+            VE_GFX_VISIBLE_SIDES.VISIBLE_SIDES_BOTH
         )
         self.shuttle = self.root.current_scenario.children.new(
-            AgESTKObjectType.eSatellite, "Shuttle"
+            STK_OBJECT_TYPE.SATELLITE, "Shuttle"
         )
         self.shuttle.SetPropagatorType(
-            AgEVePropagatorType.ePropagatorJ4Perturbation
+            VE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION
         )
         j4 = self.shuttle.Propagator
         interval = j4.EphemerisInterval
@@ -478,20 +478,20 @@ class STKTutorial:
         oOrb.Epoch = "1 Jul 2023 00:00:00.000"
 
         classical = j4.InitialState.Representation.ConvertTo(
-            AgEOrbitStateType.eOrbitStateClassical
+            ORBIT_STATE_TYPE.CLASSICAL
         )
         classical.CoordinateSystemType = (
-            AgECoordinateSystem.eCoordinateSystemJ2000
+            COORDINATE_SYSTEM.J2000
         )
-        classical.LocationType = AgEClassicalLocation.eLocationTrueAnomaly
+        classical.LocationType = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
         trueAnomaly = classical.Location
         trueAnomaly.Value = 0.0
-        classical.SizeShapeType = AgEClassicalSizeShape.eSizeShapeAltitude
+        classical.SizeShapeType = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE
         altitude = classical.SizeShape
         altitude.ApogeeAltitude = 370.4
         altitude.PerigeeAltitude = 370.4
         classical.Orientation.ArgOfPerigee = 0.0
-        classical.Orientation.AscNodeType = AgEOrientationAscNode.eAscNodeLAN
+        classical.Orientation.AscNodeType = ORIENTATION_ASC_NODE.ASC_NODE_LAN
         lan = classical.Orientation.AscNode
         lan.Value = -151.0
         classical.Orientation.Inclination = 28.5
@@ -504,10 +504,10 @@ class STKTutorial:
 
     def _configure_shuttle_contours(self):
         self.shuttle.Graphics.SetAttributesType(
-            AgEVeGfxAttributes.eAttributesBasic
+            VE_GFX_ATTRIBUTES.ATTRIBUTES_BASIC
         )
         orbitgfx = self.shuttle.Graphics.Attributes
-        orbitgfx.Line.Style = AgELineStyle.eDashed
+        orbitgfx.Line.Style = LINE_STYLE.DASHED
         orbitgfx.MarkerStyle = "Plus"
 
         contours = self.shuttle.Graphics.ElevContours
@@ -517,8 +517,8 @@ class STKTutorial:
 
         for elem in elevations:
             elem.DistanceVisible = False
-            elem.LineStyle = AgELineStyle.eDotDashed
-            elem.LineWidth = AgELineWidth.e3
+            elem.LineStyle = LINE_STYLE.DOT_DASHED
+            elem.LineWidth = LINE_WIDTH.WIDTH3
 
         contours.IsVisible = True
         self.root.rewind()
@@ -527,7 +527,7 @@ class STKTutorial:
 
     def _create_area_targets(self):
         self.searchArea = self.root.current_scenario.children.new(
-            AgESTKObjectType.eAreaTarget, "SearchArea"
+            STK_OBJECT_TYPE.AREA_TARGET, "SearchArea"
         )
         atGfx = self.searchArea.Graphics
         atGfx.MarkerStyle = "None"
@@ -536,7 +536,7 @@ class STKTutorial:
         atGfx.CentroidVisible = False
 
         self.searchArea.AutoCentroid = False
-        self.searchArea.AreaType = AgEAreaType.ePattern
+        self.searchArea.AreaType = AREA_TYPE.PATTERN
         patterns = self.searchArea.AreaTypeData
         patterns.Add(78.4399, -77.6125)
         patterns.Add(77.7879, -71.1578)
@@ -546,7 +546,7 @@ class STKTutorial:
         patterns.Add(71.9851, -76.3086)
 
         self.searchArea.UseTerrainData = False
-        sphere = self.searchArea.Position.ConvertTo(AgEPositionType.eSpherical)
+        sphere = self.searchArea.Position.ConvertTo(POSITION_TYPE.SPHERICAL)
         sphere.Lat = 74.9533
         sphere.Lon = -74.5482
         sphere.Radius = 6358.186790
@@ -578,31 +578,31 @@ class STKTutorial:
 
     def _create_sensors(self):
         self.horizon = self.root.current_scenario.children["ERS1"].children.new(
-            AgESTKObjectType.eSensor, "Horizon"
+            STK_OBJECT_TYPE.SENSOR, "Horizon"
         )
-        self.horizon.SetPatternType(AgESnPattern.eSnSimpleConic)
+        self.horizon.SetPatternType(SN_PATTERN.SIMPLE_CONIC)
         simpleConic = self.horizon.Pattern
         simpleConic.ConeAngle = 90
-        self.horizon.SetPointingType(AgESnPointing.eSnPtFixed)
+        self.horizon.SetPointingType(SN_POINTING.PT_FIXED)
         fixedPt = self.horizon.Pointing
-        azEl = fixedPt.Orientation.ConvertTo(AgEOrientationType.eAzEl)
+        azEl = fixedPt.Orientation.ConvertTo(ORIENTATION_TYPE.AZ_EL)
         azEl.Elevation = 90
-        azEl.AboutBoresight = AgEAzElAboutBoresight.eAzElAboutBoresightRotate
+        azEl.AboutBoresight = AZ_EL_ABOUT_BORESIGHT.ROTATE
         fixedPt.Orientation.Assign(azEl)
 
         # removing the ers1 elevcontours from the 2d window
         self.ers1.Graphics.ElevContours.IsVisible = False
         downlink = self.root.current_scenario.children["ERS1"].children.new(
-            AgESTKObjectType.eSensor, "Downlink"
+            STK_OBJECT_TYPE.SENSOR, "Downlink"
         )
-        downlink.SetPatternType(AgESnPattern.eSnHalfPower)
+        downlink.SetPatternType(SN_PATTERN.HALF_POWER)
         halfpower = downlink.Pattern
         halfpower.Frequency = 0.85
         halfpower.AntennaDiameter = 1.0
 
-        downlink.SetPointingType(AgESnPointing.eSnPtTargeted)
+        downlink.SetPointingType(SN_POINTING.PT_TARGETED)
         targeted = downlink.Pointing
-        targeted.Boresight = AgESnPtTrgtBsightType.eSnPtTrgtBsightTracking
+        targeted.Boresight = SN_PT_TRGT_BSIGHT_TYPE.TRACKING
         targets = targeted.Targets
         targets.Add("Facility/Baikonur")
         targets.Add("Facility/WhiteSands")
@@ -617,24 +617,24 @@ class STKTutorial:
     def _configure_sensor_visibility(self):
         fiveDegElev = self.root.current_scenario.children[
             "Wallops"
-        ].children.new(AgESTKObjectType.eSensor, "FiveDegElev")
+        ].children.new(STK_OBJECT_TYPE.SENSOR, "FiveDegElev")
 
-        fiveDegElev.SetPatternType(AgESnPattern.eSnComplexConic)
+        fiveDegElev.SetPatternType(SN_PATTERN.COMPLEX_CONIC)
         complexConic = fiveDegElev.Pattern
         complexConic.InnerConeHalfAngle = 0
         complexConic.OuterConeHalfAngle = 85
         complexConic.MinimumClockAngle = 0
         complexConic.MaximumClockAngle = 360
 
-        fiveDegElev.SetPointingType(AgESnPointing.eSnPtFixed)
+        fiveDegElev.SetPointingType(SN_POINTING.PT_FIXED)
         fixedPt = fiveDegElev.Pointing
-        azEl = fixedPt.Orientation.ConvertTo(AgEOrientationType.eAzEl)
+        azEl = fixedPt.Orientation.ConvertTo(ORIENTATION_TYPE.AZ_EL)
         azEl.Elevation = 90
-        azEl.AboutBoresight = AgEAzElAboutBoresight.eAzElAboutBoresightRotate
+        azEl.AboutBoresight = AZ_EL_ABOUT_BORESIGHT.ROTATE
         fixedPt.Orientation.Assign(azEl)
 
         fiveDegElev.Graphics.Projection.DistanceType = (
-            AgESnProjectionDistanceType.eConstantAlt
+            SN_PROJECTION_DISTANCE_TYPE.CONSTANT_ALT
         )
         dispDistance = fiveDegElev.Graphics.Projection.DistanceData
         dispDistance.Max = 785.248
@@ -653,7 +653,7 @@ class STKTutorial:
         j4.Propagate()
 
         self.ers1.Graphics.SetAttributesType(
-            AgEVeGfxAttributes.eAttributesCustom
+            VE_GFX_ATTRIBUTES.ATTRIBUTES_CUSTOM
         )
         customAtt = self.ers1.Graphics.Attributes
         gfxInterval = customAtt.Intervals.Add(
@@ -675,7 +675,7 @@ class STKTutorial:
 
     def _configure_access_intervals(self):
         self.ers1.Graphics.SetAttributesType(
-            AgEVeGfxAttributes.eAttributesAccess
+            VE_GFX_ATTRIBUTES.ATTRIBUTES_ACCESS
         )
         gfxAccess = self.ers1.Graphics.Attributes
 
@@ -692,7 +692,7 @@ class STKTutorial:
         orbitGfx.IsOrbitMarkerVisible = False
 
         horizonDispTm = self.horizon
-        horizonDispTm.SetDisplayStatusType(AgEDisplayTimesType.eDuringAccess)
+        horizonDispTm.SetDisplayStatusType(DISPLAY_TIMES_TYPE.DURING_ACCESS)
         duringAccess = horizonDispTm.DisplayTimesData
 
         accessObjects = duringAccess.AccessObjects
@@ -709,7 +709,7 @@ class STKTutorial:
         access = self.horizon.get_access_to_object(self.baikonur)
         access.compute_access()
         minMax = self.horizon.access_constraints.add_constraint(
-            AgEAccessConstraints.eCstrRange
+            ACCESS_CONSTRAINTS.CSTR_RANGE
         )
 
         minMax.EnableMax = True

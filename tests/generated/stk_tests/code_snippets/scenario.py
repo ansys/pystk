@@ -96,20 +96,20 @@ class Scenario(CodeSnippetsTestBase):
         self.AddStkObjectToScenario(CodeSnippetsTestBase.m_Root)
 
     def AddStkObjectToScenario(self, root: "IStkObjectRoot"):
-        root.current_scenario.children.new(AgESTKObjectType.eShip, "Ship1")
+        root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "Ship1")
 
     # endregion
 
     # region ListAllObjectsOfTypeInScenario
     def test_ListAllChildrenOfAGivenType(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eStar, "star1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eShip, "ship1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.ePlanet, "planet1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eTarget, "target1")
-        self.ListAllChildrenOfAGivenType(CodeSnippetsTestBase.m_Root, AgESTKObjectType.eShip)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.STAR, "star1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "ship1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "planet1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.TARGET, "target1")
+        self.ListAllChildrenOfAGivenType(CodeSnippetsTestBase.m_Root, STK_OBJECT_TYPE.SHIP)
 
-    def ListAllChildrenOfAGivenType(self, root: "IStkObjectRoot", type: "AgESTKObjectType"):
+    def ListAllChildrenOfAGivenType(self, root: "IStkObjectRoot", type: "STK_OBJECT_TYPE"):
         allChildrenOfType: "IStkObjectElementCollection" = root.current_scenario.children.get_elements(type)
 
         o: "IStkObject"
@@ -134,7 +134,7 @@ class Scenario(CodeSnippetsTestBase):
 
         # Add terrain data file to current scenario's terrain collection
         # Terrain data files traditionally have .dte extensions
-        terrain: "ITerrain" = elementCollection.add(terrainFile, AgETerrainFileType.eMUSERasterFile)
+        terrain: "ITerrain" = elementCollection.add(terrainFile, TERRAIN_FILE_TYPE.MUSE_RASTER_FILE)
 
         # Set Scenario to use terrain data file
         terrain.use_terrain = True
@@ -151,10 +151,10 @@ class Scenario(CodeSnippetsTestBase):
 
         animation.start_time = "1 Jun 2004 12:00:00.00"
         animation.enable_anim_cycle_time = True
-        animation.anim_cycle_type = AgEScEndLoopType.eEndTime
+        animation.anim_cycle_type = SC_END_LOOP_TYPE.END_TIME
         animation.anim_cycle_time = "2 Jun 2004 12:00:00.00"
         animation.anim_step_value = 1000
-        animation.refresh_delta_type = AgEScRefreshDeltaType.eRefreshDelta
+        animation.refresh_delta_type = SC_REFRESH_DELTA_TYPE.REFRESH_DELTA
         animation.refresh_delta = 0.02
 
     # endregion
@@ -169,7 +169,7 @@ class Scenario(CodeSnippetsTestBase):
 
         fonts.bold = True
         fonts.italic = True
-        fonts.pt_size = AgESc3dPtSize.eSc3dFontSize36
+        fonts.pt_size = SC3_D_PT_SIZE.FONT_SIZE36
         if fonts.is_font_available("Impact"):
             fonts.name = "Impact"
 
@@ -199,8 +199,8 @@ class Scenario(CodeSnippetsTestBase):
     def test_SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
-        satellite: "ISatellite" = clr.Convert(scenario.children.new(AgESTKObjectType.eSatellite, "GeoEye"), ISatellite)
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        satellite: "ISatellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GeoEye"), ISatellite)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         (clr.Convert(satellite.propagator, IVehiclePropagatorTwoBody)).propagate()
 
         try:

@@ -7,12 +7,12 @@ __all__ = ["ISTKXInitialize", "STKXInitialize"]
 
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 

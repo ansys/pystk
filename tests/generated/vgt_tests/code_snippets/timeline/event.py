@@ -45,7 +45,7 @@ class Event(TimelineCodeSnippetsTestBase):
 
         # create a satellite with no ephem and find that there's no ocurrence of PassIntervals.First.Start
         noEphemObj: "IStkObject" = stkRoot.current_scenario.children.new(
-            AgESTKObjectType.eSatellite, "NoEphem_FindOccurenceTest"
+            STK_OBJECT_TYPE.SATELLITE, "NoEphem_FindOccurenceTest"
         )
         provider2: "IAnalysisWorkbenchProvider" = noEphemObj.vgt
         timeEvent2: "ITimeToolEvent" = provider2.events["EphemerisStartTime"]
@@ -116,9 +116,9 @@ class Event(TimelineCodeSnippetsTestBase):
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asSignaled.signal_sense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
+        asSignaled.signal_sense = CRDN_SIGNAL_SENSE.TRANSMIT
         basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, ITimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = AgECrdnSpeedOptions.eCrdnCustomTransmissionSpeed
+        basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.CUSTOM_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -159,7 +159,7 @@ class Event(TimelineCodeSnippetsTestBase):
 
         # For instance, time at highest altitude
         asExtremum.calculation = provider.calc_scalars["GroundTrajectory.Detic.LLA.Altitude"]
-        asExtremum.extremum_type = AgECrdnExtremumConstants.eCrdnExtremumMaximum
+        asExtremum.extremum_type = CRDN_EXTREMUM_CONSTANTS.MAXIMUM
 
         occurrence: "ITimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:

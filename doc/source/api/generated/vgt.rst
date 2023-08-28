@@ -324,80 +324,80 @@ Enumerations
 
 .. autosummary::
 
-    AgECrdnCalcScalarType
-    AgECrdnConditionCombinedOperationType
-    AgECrdnConditionSetType
-    AgECrdnConditionThresholdOption
-    AgECrdnConditionType
-    AgECrdnDimensionInheritance
-    AgECrdnEventArrayFilterType
-    AgECrdnEventArrayType
-    AgECrdnEventIntervalCollectionType
-    AgECrdnEventIntervalListType
-    AgECrdnEventIntervalType
-    AgECrdnEventListMergeOperation
-    AgECrdnEventType
-    AgECrdnExtremumConstants
-    AgECrdnFileInterpolatorType
-    AgECrdnIntegralType
-    AgECrdnIntegrationWindowType
-    AgECrdnInterpolatorType
-    AgECrdnIntervalDurationKind
-    AgECrdnIntervalSelection
-    AgECrdnParameterSetType
-    AgECrdnPruneFilter
-    AgECrdnSampledReferenceTime
-    AgECrdnSamplingMethod
-    AgECrdnSatisfactionCrossing
-    AgECrdnSaveDataOption
-    AgECrdnSignalPathReferenceSystem
-    AgECrdnSmartEpochState
-    AgECrdnSmartIntervalState
-    AgECrdnSpeedOptions
-    AgECrdnStartStopOption
-    AgECrdnThreshConvergeSense
-    AgECrdnVectorComponentType
-    AgECrdnVolumeCalcAltitudeReferenceType
-    AgECrdnVolumeCalcAngleOffVectorType
-    AgECrdnVolumeCalcRangeDistanceType
-    AgECrdnVolumeCalcRangeSpeedType
-    AgECrdnVolumeCalcType
-    AgECrdnVolumeCalcVolumeSatisfactionAccumulationType
-    AgECrdnVolumeCalcVolumeSatisfactionDurationType
-    AgECrdnVolumeCalcVolumeSatisfactionFilterType
-    AgECrdnVolumeCalcVolumeSatisfactionMetricType
-    AgECrdnVolumeGridType
-    AgECrdnVolumeResultVectorRequest
-    AgECrdnVolumeType
-    AgECrdnVolumeAberrationType
-    AgECrdnVolumeClockHostType
-    AgECrdnVolumeCombinedOperationType
-    AgECrdnVolumeFromGridEdgeType
-    AgECrdnVolumeLightingConditionsType
-    AgECrdnVolumeOverTimeDurationType
-    AgECrdnVolumeTimeSenseType
-    AgECrdnVolumetricGridValuesMethodType
-    AgECrdnKind
-    AgECrdnAngleType
-    AgECrdnAxesType
-    AgECrdnPlaneType
-    AgECrdnPointType
-    AgECrdnSystemType
-    AgECrdnVectorType
-    AgECrdnMeanElementTheory
-    AgECrdnDirectionType
-    AgECrdnLagrangeLibrationPointType
-    AgECrdnQuadrantType
-    AgECrdnTrajectoryAxesType
-    AgECrdnDisplayAxisSelector
-    AgECrdnSignedAngleType
-    AgECrdnPointBPlaneType
-    AgECrdnReferenceShapeType
-    AgECrdnSurfaceType
-    AgECrdnSweepMode
-    AgECrdnSignalSense
-    AgECrdnIntersectionSurface
-    AgECrdnVectorScaledDimensionInheritance
+    CRDN_CALC_SCALAR_TYPE
+    CRDN_CONDITION_COMBINED_OPERATION_TYPE
+    CRDN_CONDITION_SET_TYPE
+    CRDN_CONDITION_THRESHOLD_OPTION
+    CRDN_CONDITION_TYPE
+    CRDN_DIMENSION_INHERITANCE
+    CRDN_EVENT_ARRAY_FILTER_TYPE
+    CRDN_EVENT_ARRAY_TYPE
+    CRDN_EVENT_INTERVAL_COLLECTION_TYPE
+    CRDN_EVENT_INTERVAL_LIST_TYPE
+    CRDN_EVENT_INTERVAL_TYPE
+    CRDN_EVENT_LIST_MERGE_OPERATION
+    CRDN_EVENT_TYPE
+    CRDN_EXTREMUM_CONSTANTS
+    CRDN_FILE_INTERPOLATOR_TYPE
+    CRDN_INTEGRAL_TYPE
+    CRDN_INTEGRATION_WINDOW_TYPE
+    CRDN_INTERPOLATOR_TYPE
+    CRDN_INTERVAL_DURATION_KIND
+    CRDN_INTERVAL_SELECTION
+    CRDN_PARAMETER_SET_TYPE
+    CRDN_PRUNE_FILTER
+    CRDN_SAMPLED_REFERENCE_TIME
+    CRDN_SAMPLING_METHOD
+    CRDN_SATISFACTION_CROSSING
+    CRDN_SAVE_DATA_OPTION
+    CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
+    CRDN_SMART_EPOCH_STATE
+    CRDN_SMART_INTERVAL_STATE
+    CRDN_SPEED_OPTIONS
+    CRDN_START_STOP_OPTION
+    CRDN_THRESH_CONVERGE_SENSE
+    CRDN_VECTOR_COMPONENT_TYPE
+    CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE
+    CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE
+    CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE
+    CRDN_VOLUME_CALC_RANGE_SPEED_TYPE
+    CRDN_VOLUME_CALC_TYPE
+    CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE
+    CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE
+    CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE
+    CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE
+    CRDN_VOLUME_GRID_TYPE
+    CRDN_VOLUME_RESULT_VECTOR_REQUEST
+    CRDN_VOLUME_TYPE
+    CRDN_VOLUME_ABERRATION_TYPE
+    CRDN_VOLUME_CLOCK_HOST_TYPE
+    CRDN_VOLUME_COMBINED_OPERATION_TYPE
+    CRDN_VOLUME_FROM_GRID_EDGE_TYPE
+    CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE
+    CRDN_VOLUME_OVER_TIME_DURATION_TYPE
+    CRDN_VOLUME_TIME_SENSE_TYPE
+    CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE
+    CRDN_KIND
+    CRDN_ANGLE_TYPE
+    CRDN_AXES_TYPE
+    CRDN_PLANE_TYPE
+    CRDN_POINT_TYPE
+    CRDN_SYSTEM_TYPE
+    CRDN_VECTOR_TYPE
+    CRDN_MEAN_ELEMENT_THEORY
+    CRDN_DIRECTION_TYPE
+    CRDN_LAGRANGE_LIBRATION_POINT_TYPE
+    CRDN_QUADRANT_TYPE
+    CRDN_TRAJECTORY_AXES_TYPE
+    CRDN_DISPLAY_AXIS_SELECTOR
+    CRDN_SIGNED_ANGLE_TYPE
+    CRDN_POINT_B_PLANE_TYPE
+    CRDN_REFERENCE_SHAPE_TYPE
+    CRDN_SURFACE_TYPE
+    CRDN_SWEEP_MODE
+    CRDN_SIGNAL_SENSE
+    CRDN_INTERSECTION_SURFACE
+    CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE
 
 
 Classes
@@ -1628,153 +1628,153 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgECrdnCalcScalarType
+.. autoenum:: CRDN_CALC_SCALAR_TYPE
     :members:
-.. autoenum:: AgECrdnConditionCombinedOperationType
+.. autoenum:: CRDN_CONDITION_COMBINED_OPERATION_TYPE
     :members:
-.. autoenum:: AgECrdnConditionSetType
+.. autoenum:: CRDN_CONDITION_SET_TYPE
     :members:
-.. autoenum:: AgECrdnConditionThresholdOption
+.. autoenum:: CRDN_CONDITION_THRESHOLD_OPTION
     :members:
-.. autoenum:: AgECrdnConditionType
+.. autoenum:: CRDN_CONDITION_TYPE
     :members:
-.. autoenum:: AgECrdnDimensionInheritance
+.. autoenum:: CRDN_DIMENSION_INHERITANCE
     :members:
-.. autoenum:: AgECrdnEventArrayFilterType
+.. autoenum:: CRDN_EVENT_ARRAY_FILTER_TYPE
     :members:
-.. autoenum:: AgECrdnEventArrayType
+.. autoenum:: CRDN_EVENT_ARRAY_TYPE
     :members:
-.. autoenum:: AgECrdnEventIntervalCollectionType
+.. autoenum:: CRDN_EVENT_INTERVAL_COLLECTION_TYPE
     :members:
-.. autoenum:: AgECrdnEventIntervalListType
+.. autoenum:: CRDN_EVENT_INTERVAL_LIST_TYPE
     :members:
-.. autoenum:: AgECrdnEventIntervalType
+.. autoenum:: CRDN_EVENT_INTERVAL_TYPE
     :members:
-.. autoenum:: AgECrdnEventListMergeOperation
+.. autoenum:: CRDN_EVENT_LIST_MERGE_OPERATION
     :members:
-.. autoenum:: AgECrdnEventType
+.. autoenum:: CRDN_EVENT_TYPE
     :members:
-.. autoenum:: AgECrdnExtremumConstants
+.. autoenum:: CRDN_EXTREMUM_CONSTANTS
     :members:
-.. autoenum:: AgECrdnFileInterpolatorType
+.. autoenum:: CRDN_FILE_INTERPOLATOR_TYPE
     :members:
-.. autoenum:: AgECrdnIntegralType
+.. autoenum:: CRDN_INTEGRAL_TYPE
     :members:
-.. autoenum:: AgECrdnIntegrationWindowType
+.. autoenum:: CRDN_INTEGRATION_WINDOW_TYPE
     :members:
-.. autoenum:: AgECrdnInterpolatorType
+.. autoenum:: CRDN_INTERPOLATOR_TYPE
     :members:
-.. autoenum:: AgECrdnIntervalDurationKind
+.. autoenum:: CRDN_INTERVAL_DURATION_KIND
     :members:
-.. autoenum:: AgECrdnIntervalSelection
+.. autoenum:: CRDN_INTERVAL_SELECTION
     :members:
-.. autoenum:: AgECrdnParameterSetType
+.. autoenum:: CRDN_PARAMETER_SET_TYPE
     :members:
-.. autoenum:: AgECrdnPruneFilter
+.. autoenum:: CRDN_PRUNE_FILTER
     :members:
-.. autoenum:: AgECrdnSampledReferenceTime
+.. autoenum:: CRDN_SAMPLED_REFERENCE_TIME
     :members:
-.. autoenum:: AgECrdnSamplingMethod
+.. autoenum:: CRDN_SAMPLING_METHOD
     :members:
-.. autoenum:: AgECrdnSatisfactionCrossing
+.. autoenum:: CRDN_SATISFACTION_CROSSING
     :members:
-.. autoenum:: AgECrdnSaveDataOption
+.. autoenum:: CRDN_SAVE_DATA_OPTION
     :members:
-.. autoenum:: AgECrdnSignalPathReferenceSystem
+.. autoenum:: CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
     :members:
-.. autoenum:: AgECrdnSmartEpochState
+.. autoenum:: CRDN_SMART_EPOCH_STATE
     :members:
-.. autoenum:: AgECrdnSmartIntervalState
+.. autoenum:: CRDN_SMART_INTERVAL_STATE
     :members:
-.. autoenum:: AgECrdnSpeedOptions
+.. autoenum:: CRDN_SPEED_OPTIONS
     :members:
-.. autoenum:: AgECrdnStartStopOption
+.. autoenum:: CRDN_START_STOP_OPTION
     :members:
-.. autoenum:: AgECrdnThreshConvergeSense
+.. autoenum:: CRDN_THRESH_CONVERGE_SENSE
     :members:
-.. autoenum:: AgECrdnVectorComponentType
+.. autoenum:: CRDN_VECTOR_COMPONENT_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcAltitudeReferenceType
+.. autoenum:: CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcAngleOffVectorType
+.. autoenum:: CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcRangeDistanceType
+.. autoenum:: CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcRangeSpeedType
+.. autoenum:: CRDN_VOLUME_CALC_RANGE_SPEED_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcType
+.. autoenum:: CRDN_VOLUME_CALC_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcVolumeSatisfactionAccumulationType
+.. autoenum:: CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcVolumeSatisfactionDurationType
+.. autoenum:: CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcVolumeSatisfactionFilterType
+.. autoenum:: CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCalcVolumeSatisfactionMetricType
+.. autoenum:: CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeGridType
+.. autoenum:: CRDN_VOLUME_GRID_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeResultVectorRequest
+.. autoenum:: CRDN_VOLUME_RESULT_VECTOR_REQUEST
     :members:
-.. autoenum:: AgECrdnVolumeType
+.. autoenum:: CRDN_VOLUME_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeAberrationType
+.. autoenum:: CRDN_VOLUME_ABERRATION_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeClockHostType
+.. autoenum:: CRDN_VOLUME_CLOCK_HOST_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeCombinedOperationType
+.. autoenum:: CRDN_VOLUME_COMBINED_OPERATION_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeFromGridEdgeType
+.. autoenum:: CRDN_VOLUME_FROM_GRID_EDGE_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeLightingConditionsType
+.. autoenum:: CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeOverTimeDurationType
+.. autoenum:: CRDN_VOLUME_OVER_TIME_DURATION_TYPE
     :members:
-.. autoenum:: AgECrdnVolumeTimeSenseType
+.. autoenum:: CRDN_VOLUME_TIME_SENSE_TYPE
     :members:
-.. autoenum:: AgECrdnVolumetricGridValuesMethodType
+.. autoenum:: CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE
     :members:
-.. autoenum:: AgECrdnKind
+.. autoenum:: CRDN_KIND
     :members:
-.. autoenum:: AgECrdnAngleType
+.. autoenum:: CRDN_ANGLE_TYPE
     :members:
-.. autoenum:: AgECrdnAxesType
+.. autoenum:: CRDN_AXES_TYPE
     :members:
-.. autoenum:: AgECrdnPlaneType
+.. autoenum:: CRDN_PLANE_TYPE
     :members:
-.. autoenum:: AgECrdnPointType
+.. autoenum:: CRDN_POINT_TYPE
     :members:
-.. autoenum:: AgECrdnSystemType
+.. autoenum:: CRDN_SYSTEM_TYPE
     :members:
-.. autoenum:: AgECrdnVectorType
+.. autoenum:: CRDN_VECTOR_TYPE
     :members:
-.. autoenum:: AgECrdnMeanElementTheory
+.. autoenum:: CRDN_MEAN_ELEMENT_THEORY
     :members:
-.. autoenum:: AgECrdnDirectionType
+.. autoenum:: CRDN_DIRECTION_TYPE
     :members:
-.. autoenum:: AgECrdnLagrangeLibrationPointType
+.. autoenum:: CRDN_LAGRANGE_LIBRATION_POINT_TYPE
     :members:
-.. autoenum:: AgECrdnQuadrantType
+.. autoenum:: CRDN_QUADRANT_TYPE
     :members:
-.. autoenum:: AgECrdnTrajectoryAxesType
+.. autoenum:: CRDN_TRAJECTORY_AXES_TYPE
     :members:
-.. autoenum:: AgECrdnDisplayAxisSelector
+.. autoenum:: CRDN_DISPLAY_AXIS_SELECTOR
     :members:
-.. autoenum:: AgECrdnSignedAngleType
+.. autoenum:: CRDN_SIGNED_ANGLE_TYPE
     :members:
-.. autoenum:: AgECrdnPointBPlaneType
+.. autoenum:: CRDN_POINT_B_PLANE_TYPE
     :members:
-.. autoenum:: AgECrdnReferenceShapeType
+.. autoenum:: CRDN_REFERENCE_SHAPE_TYPE
     :members:
-.. autoenum:: AgECrdnSurfaceType
+.. autoenum:: CRDN_SURFACE_TYPE
     :members:
-.. autoenum:: AgECrdnSweepMode
+.. autoenum:: CRDN_SWEEP_MODE
     :members:
-.. autoenum:: AgECrdnSignalSense
+.. autoenum:: CRDN_SIGNAL_SENSE
     :members:
-.. autoenum:: AgECrdnIntersectionSurface
+.. autoenum:: CRDN_INTERSECTION_SURFACE
     :members:
-.. autoenum:: AgECrdnVectorScaledDimensionInheritance
+.. autoenum:: CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE
     :members:
 
 

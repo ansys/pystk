@@ -33,8 +33,7 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
         laserPropChan.set_atmospheric_loss_model("Beer-Bouguer-Lambert Law")
         Assert.assertEqual("Beer-Bouguer-Lambert Law", laserPropChan.atmospheric_loss_model.name)
         Assert.assertEqual(
-            AgELaserPropagationLossModelType.eLaserPropagationLossModelTypeBeerBouguerLambertLaw,
-            laserPropChan.atmospheric_loss_model.type,
+            LASER_PROPAGATION_LOSS_MODEL_TYPE.BEER_BOUGUER_LAMBERT_LAW, laserPropChan.atmospheric_loss_model.type
         )
 
         bbll: "ILaserAtmosphericLossModelBeerBouguerLambertLaw" = clr.CastAs(
@@ -139,22 +138,21 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
 
         Assert.assertEqual("MODTRAN-derived Lookup Table", laserPropChan.atmospheric_loss_model.name)
         Assert.assertEqual(
-            AgELaserPropagationLossModelType.eLaserPropagationLossModelModtranLookupTableType,
-            laserPropChan.atmospheric_loss_model.type,
+            LASER_PROPAGATION_LOSS_MODEL_TYPE.MODTRAN_LOOKUP_TABLE_TYPE, laserPropChan.atmospheric_loss_model.type
         )
 
         modtran: "IModtranLookupTablePropagationModel" = clr.CastAs(
             laserPropChan.atmospheric_loss_model, IModtranLookupTablePropagationModel
         )
 
-        modtran.aerosol_model_type = AgEModtranAerosolModelType.eModtranAerosolModelTypeMaritime
-        Assert.assertEqual(AgEModtranAerosolModelType.eModtranAerosolModelTypeMaritime, modtran.aerosol_model_type)
-        modtran.aerosol_model_type = AgEModtranAerosolModelType.eModtranAerosolModelTypeRuralHiVis
-        Assert.assertEqual(AgEModtranAerosolModelType.eModtranAerosolModelTypeRuralHiVis, modtran.aerosol_model_type)
-        modtran.aerosol_model_type = AgEModtranAerosolModelType.eModtranAerosolModelTypeTropospheric
-        Assert.assertEqual(AgEModtranAerosolModelType.eModtranAerosolModelTypeTropospheric, modtran.aerosol_model_type)
-        modtran.aerosol_model_type = AgEModtranAerosolModelType.eModtranAerosolModelTypeUrban
-        Assert.assertEqual(AgEModtranAerosolModelType.eModtranAerosolModelTypeUrban, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.MARITIME
+        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.MARITIME, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.RURAL_HI_VIS
+        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.RURAL_HI_VIS, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.TROPOSPHERIC
+        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.TROPOSPHERIC, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.URBAN
+        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.URBAN, modtran.aerosol_model_type)
 
         modtran.visibility = 0.5
         Assert.assertEqual(0.5, modtran.visibility)
@@ -235,7 +233,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
         laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
         Assert.assertEqual("ITU-R P1814", laserPropChan.tropospheric_scintillation_loss_model.name)
         Assert.assertEqual(
-            AgELaserTroposphericScintillationLossModelType.eLaserTroposphericScintillationLossModelTypeITURP1814,
+            LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE.ITURP1814,
             laserPropChan.tropospheric_scintillation_loss_model.type,
         )
 
@@ -243,13 +241,8 @@ class PlatformLaserEnvTropoScintLossHelper(object):
             laserTropoScint, ILaserTroposphericScintillationLossModelITURP1814
         )
 
-        iturp1814.set_atmospheric_turbulence_model_type(
-            AgEAtmosphericTurbulenceModelType.eAtmosphericTurbulenceModelTypeConstant
-        )
-        Assert.assertEqual(
-            AgEAtmosphericTurbulenceModelType.eAtmosphericTurbulenceModelTypeConstant,
-            iturp1814.atmospheric_turbulence_model.type,
-        )
+        iturp1814.set_atmospheric_turbulence_model_type(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.CONSTANT)
+        Assert.assertEqual(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.CONSTANT, iturp1814.atmospheric_turbulence_model.type)
 
         cnst: "IAtmosphericTurbulenceModelConstant" = clr.CastAs(
             iturp1814.atmospheric_turbulence_model, IAtmosphericTurbulenceModelConstant
@@ -257,12 +250,9 @@ class PlatformLaserEnvTropoScintLossHelper(object):
         cnst.constant_refractive_index_structure_parameter = 99
         Assert.assertEqual(99, cnst.constant_refractive_index_structure_parameter)
 
-        iturp1814.set_atmospheric_turbulence_model_type(
-            AgEAtmosphericTurbulenceModelType.eAtmosphericTurbulenceModelTypeHufnagelValley
-        )
+        iturp1814.set_atmospheric_turbulence_model_type(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.HUFNAGEL_VALLEY)
         Assert.assertEqual(
-            AgEAtmosphericTurbulenceModelType.eAtmosphericTurbulenceModelTypeHufnagelValley,
-            iturp1814.atmospheric_turbulence_model.type,
+            ATMOSPHERIC_TURBULENCE_MODEL_TYPE.HUFNAGEL_VALLEY, iturp1814.atmospheric_turbulence_model.type
         )
 
         huf: "IAtmosphericTurbulenceModelHufnagelValley" = clr.CastAs(
@@ -319,7 +309,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
             rainLossModel: "IRainLossModel" = propChan.rain_loss_model
             Assert.assertEqual(rainLossModelName, rainLossModel.name)
             if rainLossModelName == "Crane 1985":
-                Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeCrane1985, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1985, rainLossModel.type)
                 crane85: "IRainLossModelCrane1985" = clr.CastAs(rainLossModel, IRainLossModelCrane1985)
                 crane85.surface_temperature = -100
                 Assert.assertEqual(-100, crane85.surface_temperature)
@@ -339,7 +329,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
             elif rainLossModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
-                    Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeScriptPlugin, rainLossModel.type)
+                    Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.SCRIPT_PLUGIN, rainLossModel.type)
                     scriptPlugin: "IRainLossModelScriptPlugin" = clr.CastAs(rainLossModel, IRainLossModelScriptPlugin)
 
                     def action19():
@@ -355,7 +345,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                     Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_RainLossModel.vbs"), scriptPlugin.filename)
 
             elif rainLossModelName == "CCIR 1983":
-                Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeCCIR1983, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CCIR1983, rainLossModel.type)
                 ccir83: "IRainLossModelCCIR1983" = clr.CastAs(rainLossModel, IRainLossModelCCIR1983)
                 ccir83.surface_temperature = -100
                 Assert.assertEqual(-100, ccir83.surface_temperature)
@@ -373,7 +363,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 TryCatchAssertBlock.ExpectedException("is invalid", action22)
 
             elif rainLossModelName == "Crane 1982":
-                Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeCrane1982, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1982, rainLossModel.type)
                 crane82: "IRainLossModelCrane1982" = clr.CastAs(rainLossModel, IRainLossModelCrane1982)
                 crane82.surface_temperature = -100
                 Assert.assertEqual(-100, crane82.surface_temperature)
@@ -391,7 +381,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 TryCatchAssertBlock.ExpectedException("is invalid", action24)
 
             elif rainLossModelName == "ITU-R P618-10":
-                Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeITURP618_10, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_10, rainLossModel.type)
                 itu618_10: "IRainLossModelITURP618_10" = clr.CastAs(rainLossModel, IRainLossModelITURP618_10)
                 itu618_10.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
@@ -413,7 +403,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertTrue(itu618_10.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-12":
-                Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeITURP618_12, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_12, rainLossModel.type)
                 itu618_12: "IRainLossModelITURP618_12" = clr.CastAs(rainLossModel, IRainLossModelITURP618_12)
                 itu618_12.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
@@ -435,7 +425,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertTrue(itu618_12.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-13":
-                Assert.assertEqual(AgERainLossModelType.eRainLossModelTypeITURP618_13, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.I_T_U_R_P_618_13, rainLossModel.type)
                 itu618_13: "IRainLossModelITURP618_13" = clr.CastAs(rainLossModel, IRainLossModelITURP618_13)
 
                 itu618_13.enable_itu1510 = False
@@ -546,13 +536,13 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-7")
         cfflm: "ICloudsAndFogFadingLossModel" = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-7", cfflm.name)
-        Assert.assertEqual(AgECloudsAndFogFadingLossModelType.eCloudsAndFogFadingLossModelP840_7Type, cfflm.type)
+        Assert.assertEqual(CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE.P_840_7_TYPE, cfflm.type)
         self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, ICloudsAndFogFadingLossModelP840_7))
 
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-6")
         cfflm = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-6", cfflm.name)
-        Assert.assertEqual(AgECloudsAndFogFadingLossModelType.eCloudsAndFogFadingLossModelP840_6Type, cfflm.type)
+        Assert.assertEqual(CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE.P_840_6_TYPE, cfflm.type)
         self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, ICloudsAndFogFadingLossModelP840_6))
 
         root.unit_preferences.set_current_unit("Temperature", holdUnit)
@@ -602,11 +592,11 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         TryCatchAssertBlock.ExpectedException("is invalid", action42)
 
         def action43():
-            cfflm7.liquid_water_density_choice = AgECloudsAndFogLiquidWaterChoices.eCloudsAndFogLiqWaterChoiceUnknown
+            cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_UNKNOWN
 
         TryCatchAssertBlock.ExpectedException("must be in", action43)
 
-        cfflm7.liquid_water_density_choice = AgECloudsAndFogLiquidWaterChoices.eCloudsAndFogLiqWaterChoiceDensityValue
+        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_DENSITY_VALUE
         # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
         cfflm7.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm7.cloud_liquid_water_density)
@@ -645,7 +635,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
         TryCatchAssertBlock.ExpectedException("read-only", action49)
 
-        cfflm7.liquid_water_density_choice = AgECloudsAndFogLiquidWaterChoices.eCloudsAndFogLiqWaterChoiceAnnualExceeded
+        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_ANNUAL_EXCEEDED
         cfflm7.liquid_water_percent_annual_exceeded = 0.1
         Assert.assertEqual(0.1, cfflm7.liquid_water_percent_annual_exceeded)
         cfflm7.liquid_water_percent_annual_exceeded = 99
@@ -680,9 +670,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
         TryCatchAssertBlock.ExpectedException("read-only", action54)
 
-        cfflm7.liquid_water_density_choice = (
-            AgECloudsAndFogLiquidWaterChoices.eCloudsAndFoglLiqWaterChoiceMonthlyExceeded
-        )
+        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.FOGL_LIQ_WATER_CHOICE_MONTHLY_EXCEEDED
         cfflm7.liquid_water_percent_monthly_exceeded = 1.0
         Assert.assertEqual(1.0, cfflm7.liquid_water_percent_monthly_exceeded)
         cfflm7.liquid_water_percent_monthly_exceeded = 99.0
@@ -779,11 +767,11 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         TryCatchAssertBlock.ExpectedException("is invalid", action66)
 
         def action67():
-            cfflm6.liquid_water_density_choice = AgECloudsAndFogLiquidWaterChoices.eCloudsAndFogLiqWaterChoiceUnknown
+            cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_UNKNOWN
 
         TryCatchAssertBlock.ExpectedException("must be in", action67)
 
-        cfflm6.liquid_water_density_choice = AgECloudsAndFogLiquidWaterChoices.eCloudsAndFogLiqWaterChoiceDensityValue
+        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_DENSITY_VALUE
         # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
         cfflm6.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm6.cloud_liquid_water_density)
@@ -817,7 +805,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
         TryCatchAssertBlock.ExpectedException("read-only", action72)
 
-        cfflm6.liquid_water_density_choice = AgECloudsAndFogLiquidWaterChoices.eCloudsAndFogLiqWaterChoiceAnnualExceeded
+        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_ANNUAL_EXCEEDED
         cfflm6.liquid_water_percent_annual_exceeded = 0.1
         Assert.assertEqual(0.1, cfflm6.liquid_water_percent_annual_exceeded)
         cfflm6.liquid_water_percent_annual_exceeded = 99
@@ -848,9 +836,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
         TryCatchAssertBlock.ExpectedException("read-only", action77)
 
-        cfflm6.liquid_water_density_choice = (
-            AgECloudsAndFogLiquidWaterChoices.eCloudsAndFoglLiqWaterChoiceMonthlyExceeded
-        )
+        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.FOGL_LIQ_WATER_CHOICE_MONTHLY_EXCEEDED
         cfflm6.liquid_water_percent_monthly_exceeded = 1.0
         Assert.assertEqual(1.0, cfflm6.liquid_water_percent_monthly_exceeded)
         cfflm6.liquid_water_percent_monthly_exceeded = 99.0
@@ -926,48 +912,34 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             aaModel: "IAtmosphericAbsorptionModel" = propChan.atmos_absorption_model
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-9":
-                Assert.assertEqual(
-                    AgEAtmosphericAbsorptionModelType.eAtmosphericAbsorptionModelTypeITURP676_9, aaModel.type
-                )
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.I_T_U_R_P_676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
                     clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
-                    Assert.assertEqual(
-                        AgEAtmosphericAbsorptionModelType.eAtmosphericAbsorptionModelTypeScriptPlugin, aaModel.type
-                    )
+                    Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SCRIPT_PLUGIN, aaModel.type)
                     self.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
                         clr.CastAs(aaModel, IAtmosphericAbsorptionModelScriptPlugin)
                     )
 
             elif aaModelName == "Simple Satcom":
-                Assert.assertEqual(
-                    AgEAtmosphericAbsorptionModelType.eAtmosphericAbsorptionModelTypeSimpleSatcom, aaModel.type
-                )
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SIMPLE_SATCOM, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
                     clr.CastAs(aaModel, IAtmosphericAbsorptionModelSimpleSatcom)
                 )
             elif aaModelName == "TIREM 3.31":
-                Assert.assertEqual(
-                    AgEAtmosphericAbsorptionModelType.eAtmosphericAbsorptionModelTypeTirem331, aaModel.type
-                )
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM331, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
             elif aaModelName == "TIREM 3.20":
-                Assert.assertEqual(
-                    AgEAtmosphericAbsorptionModelType.eAtmosphericAbsorptionModelTypeTirem320, aaModel.type
-                )
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM320, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
             elif aaModelName == "TIREM 5.50":
-                Assert.assertEqual(
-                    AgEAtmosphericAbsorptionModelType.eAtmosphericAbsorptionModelTypeTirem550, aaModel.type
-                )
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM550, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
             elif aaModelName == "VOACAP":
-                Assert.assertEqual(
-                    AgEAtmosphericAbsorptionModelType.eAtmosphericAbsorptionModelTypeVoacap, aaModel.type
-                )
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
                 helper = AtmosphereHelper(self._root)
                 helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, IAtmosphericAbsorptionModelVoacap))
             else:
@@ -1176,12 +1148,10 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             utModel: "IUrbanTerrestrialLossModel" = propChan.urban_terrestrial_loss_model
             Assert.assertEqual(utModelName, utModel.name)
             if utModelName == "Two Ray":
-                Assert.assertEqual(AgEUrbanTerrestrialLossModelType.eUrbanTerrestrialLossModelTypeTwoRay, utModel.type)
+                Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.TWO_RAY, utModel.type)
                 self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, IUrbanTerrestrialLossModelTwoRay))
             elif utModelName == "Urban Propagation Wireless InSite RT":
-                Assert.assertEqual(
-                    AgEUrbanTerrestrialLossModelType.eUrbanTerrestrialLossModelTypeWirelessInSiteRT, utModel.type
-                )
+                Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE_RT, utModel.type)
                 self.Test_IAgUrbanTerrestrialLossModelWirelessInSiteRT(
                     clr.CastAs(utModel, IUrbanTerrestrialLossModelWirelessInSiteRT)
                 )
@@ -1267,18 +1237,11 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             TryCatchAssertBlock.ExpectedException("does not exist", action113)
             geometryData.filename = TestBase.GetScenarioFile("Cochise.shp")
 
-            geometryData.projection_horizontal_datum = (
-                AgEProjectionHorizontalDatumType.eProjectionHorizontalDatumTypeLatLonWGS84
-            )
-            Assert.assertEqual(
-                AgEProjectionHorizontalDatumType.eProjectionHorizontalDatumTypeLatLonWGS84,
-                geometryData.projection_horizontal_datum,
-            )
+            geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84
+            Assert.assertEqual(PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84, geometryData.projection_horizontal_datum)
 
             def action114():
-                geometryData.projection_horizontal_datum = (
-                    AgEProjectionHorizontalDatumType.eProjectionHorizontalDatumTypeUTMWGS84
-                )
+                geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.UTMWGS84
 
             TryCatchAssertBlock.ExpectedException("must be in", action114)
 
@@ -1290,19 +1253,13 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
             TryCatchAssertBlock.ExpectedException("must be in", action115)
 
-            geometryData.building_height_reference_method = (
-                AgEBuildHeightReferenceMethod.eBuildHeightReferenceMethodHeightAboveSeaLevel
-            )
+            geometryData.building_height_reference_method = BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_SEA_LEVEL
             Assert.assertEqual(
-                AgEBuildHeightReferenceMethod.eBuildHeightReferenceMethodHeightAboveSeaLevel,
-                geometryData.building_height_reference_method,
+                BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_SEA_LEVEL, geometryData.building_height_reference_method
             )
-            geometryData.building_height_reference_method = (
-                AgEBuildHeightReferenceMethod.eBuildHeightReferenceMethodHeightAboveTerrain
-            )
+            geometryData.building_height_reference_method = BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_TERRAIN
             Assert.assertEqual(
-                AgEBuildHeightReferenceMethod.eBuildHeightReferenceMethodHeightAboveTerrain,
-                geometryData.building_height_reference_method,
+                BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_TERRAIN, geometryData.building_height_reference_method
             )
 
             geometryData.override_geometry_tile_origin = False
@@ -1403,10 +1360,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-12")
         tsflm: "ITroposphericScintillationFadingLossModel" = propChan.tropospheric_scintillation_fading_loss_model
         Assert.assertEqual("ITU-R P618-12", tsflm.name)
-        Assert.assertEqual(
-            AgETroposphericScintillationFadingLossModelType.eTroposphericScintillationFadingLossModelP618_12Type,
-            tsflm.type,
-        )
+        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_12_TYPE, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_12(
             clr.CastAs(tsflm, ITroposphericScintillationFadingLossModelP618_12)
         )
@@ -1414,10 +1368,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-8")
         tsflm = propChan.tropospheric_scintillation_fading_loss_model
         Assert.assertEqual("ITU-R P618-8", tsflm.name)
-        Assert.assertEqual(
-            AgETroposphericScintillationFadingLossModelType.eTroposphericScintillationFadingLossModelP618_8Type,
-            tsflm.type,
-        )
+        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_8_TYPE, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
             clr.CastAs(tsflm, ITroposphericScintillationFadingLossModelP618_8)
         )
@@ -1490,25 +1441,13 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
 
         TryCatchAssertBlock.ExpectedException("is invalid", action131)
 
-        tsflm12.average_time_choice = (
-            AgETroposphericScintillationAverageTimeChoices.eTroposphericScintillationAverageTimeChoiceWorstMonth
-        )
-        Assert.assertEqual(
-            AgETroposphericScintillationAverageTimeChoices.eTroposphericScintillationAverageTimeChoiceWorstMonth,
-            tsflm12.average_time_choice,
-        )
-        tsflm12.average_time_choice = (
-            AgETroposphericScintillationAverageTimeChoices.eTroposphericScintillationAverageTimeChoiceYear
-        )
-        Assert.assertEqual(
-            AgETroposphericScintillationAverageTimeChoices.eTroposphericScintillationAverageTimeChoiceYear,
-            tsflm12.average_time_choice,
-        )
+        tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.WORST_MONTH
+        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.WORST_MONTH, tsflm12.average_time_choice)
+        tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.YEAR
+        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.YEAR, tsflm12.average_time_choice)
 
         def action132():
-            tsflm12.average_time_choice = (
-                AgETroposphericScintillationAverageTimeChoices.eTroposphericScintillationAverageTimeChoiceUnknown
-            )
+            tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.UNKNOWN
 
         TryCatchAssertBlock.ExpectedException("must be in", action132)
 

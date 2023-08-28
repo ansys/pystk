@@ -28,14 +28,14 @@ class Star(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Star.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eStar, Star.m_DefaultName), IStar
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.STAR, Star.m_DefaultName), IStar
         )
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eStar, Star.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.STAR, Star.m_DefaultName)
         Star.m_Object = None
 
     # endregion
@@ -46,7 +46,7 @@ class Star(CodeSnippetsTestBase):
 
     def CreateStarOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Star
-        star: "IStar" = clr.CastAs(root.current_scenario.children.new(AgESTKObjectType.eStar, "MyStar"), IStar)
+        star: "IStar" = clr.CastAs(root.current_scenario.children.new(STK_OBJECT_TYPE.STAR, "MyStar"), IStar)
 
     # endregion
 

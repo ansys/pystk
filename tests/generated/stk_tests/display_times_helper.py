@@ -29,20 +29,20 @@ class DisplayTimesHelper(object):
                 "\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), AgEDisplayTimesType),
+                clr.Convert(int(arTypes[iIndex][0]), DISPLAY_TIMES_TYPE),
             )
 
             iIndex += 1
 
-        if not oDisplay.is_display_status_type_supported(AgEDisplayTimesType.eDuringChainAccess):
+        if not oDisplay.is_display_status_type_supported(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS):
 
             def action1():
-                oDisplay.set_display_status_type(AgEDisplayTimesType.eDuringChainAccess)
+                oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
 
             TryCatchAssertBlock.DoAssert("Cannot set eDuringChainAccess type!", action1)
 
         def action2():
-            oDisplay.set_display_status_type(AgEDisplayTimesType.eDisplayTypeUnknown)
+            oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.TYPE_UNKNOWN)
 
         # eDisplayTypeUnknown
         TryCatchAssertBlock.DoAssert("Cannot set eDisplayTypeUnknown type!", action2)
@@ -51,35 +51,35 @@ class DisplayTimesHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "AgEDisplayTimesType" = clr.Convert(int(arTypes[iIndex][0]), AgEDisplayTimesType)
+            eType: "DISPLAY_TIMES_TYPE" = clr.Convert(int(arTypes[iIndex][0]), DISPLAY_TIMES_TYPE)
             if not oDisplay.is_display_status_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
             # SetDisplayStatusType
             oDisplay.set_display_status_type(eType)
             self.m_logger.WriteLine6("\tThe new DisplayStatusType is: {0}", oDisplay.display_status_type)
-            eType1: "AgEDisplayTimesType" = oDisplay.display_status_type
+            eType1: "DISPLAY_TIMES_TYPE" = oDisplay.display_status_type
             Assert.assertEqual(eType, eType1)
-            if eType == AgEDisplayTimesType.eDisplayTypeUnknown:
+            if eType == DISPLAY_TIMES_TYPE.TYPE_UNKNOWN:
                 Assert.fail("eDisplayTypeUnknown should not be supported!")
-            elif (((eType == AgEDisplayTimesType.eAlwaysOff)) or ((eType == AgEDisplayTimesType.eAlwaysOn))) or (
-                (eType == AgEDisplayTimesType.eDuringChainAccess)
+            elif (((eType == DISPLAY_TIMES_TYPE.ALWAYS_OFF)) or ((eType == DISPLAY_TIMES_TYPE.ALWAYS_ON))) or (
+                (eType == DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
             ):
                 displayTimesData: "IDisplayTimesData" = oDisplay.display_times_data
                 Assert.assertIsNone(displayTimesData)
                 self.m_logger.WriteLine("\t\tNo DisplayTimesData available.")
-            elif eType == AgEDisplayTimesType.eDuringAccess:
+            elif eType == DISPLAY_TIMES_TYPE.DURING_ACCESS:
                 self.DuringAccess(clr.CastAs(oDisplay.display_times_data, IDuringAccess))
-            elif eType == AgEDisplayTimesType.eUseIntervals:
+            elif eType == DISPLAY_TIMES_TYPE.USE_INTERVALS:
                 oHelper = IntervalCollectionHelper(self.m_oRoot.unit_preferences)
                 oHelper.Run(
                     clr.Convert(oDisplay.display_times_data, IIntervalCollection),
                     IntervalCollectionHelper.IntervalCollectionType.Intervals,
                 )
-            elif eType == AgEDisplayTimesType.eUseTimeComponent:
+            elif eType == DISPLAY_TIMES_TYPE.USE_TIME_COMPONENT:
                 self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, IDisplayTimesTimeComponent))
             else:
-                Assert.fail("Unknown AgEDisplayTimesType")
+                Assert.fail("Unknown DISPLAY_TIMES_TYPE")
 
             iIndex += 1
 
