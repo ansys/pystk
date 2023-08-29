@@ -29,7 +29,7 @@ class LOP(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         LOP.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, LOP.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, LOP.m_DefaultName),
             ISatellite,
         )
         CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
@@ -38,7 +38,7 @@ class LOP(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, LOP.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, LOP.m_DefaultName)
         LOP.m_Object = None
 
     # endregion
@@ -49,7 +49,7 @@ class LOP(CodeSnippetsTestBase):
 
     def ConfigureLOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to LOP
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorLOP)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_LOP)
 
         # Get IVehiclePropagatorLOP interface
         lopProp: "IVehiclePropagatorLOP" = clr.CastAs(satellite.propagator, IVehiclePropagatorLOP)
@@ -62,7 +62,7 @@ class LOP(CodeSnippetsTestBase):
         orbit: "IOrbitState" = lopProp.initial_state.representation
         orbit.epoch = "1 Jan 2012 12:00:00.000"
         orbit.assign_cartesian(
-            AgECoordinateSystem.eCoordinateSystemFixed, -1120.32, -9520.84, 0.129, 2.155, -1.54416, 5.668412
+            COORDINATE_SYSTEM.FIXED, -1120.32, -9520.84, 0.129, 2.155, -1.54416, 5.668412
         )  # in km/sec
 
         # Configure force model

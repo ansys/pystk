@@ -19,33 +19,33 @@ class OrbitStateHelper(object):
         self.m_oUnits: "IUnitPreferencesDimensionCollection" = self.m_oApplication.unit_preferences
 
     # region CoordinateSystemTest
-    def CoordinateSystemTest(self, eOrbitStateType: "AgEOrbitStateType", eSystemType: "AgECoordinateSystem"):
+    def CoordinateSystemTest(self, eOrbitStateType: "ORBIT_STATE_TYPE", eSystemType: "COORDINATE_SYSTEM"):
         oSystem: "IOrbitStateCoordinateSystem" = None
-        if eOrbitStateType == AgEOrbitStateType.eOrbitStateCartesian:
+        if eOrbitStateType == ORBIT_STATE_TYPE.CARTESIAN:
             Assert.assertIsNotNone(self.m_oCartesian)
             self.m_oCartesian.coordinate_system_type = eSystemType
             self.m_logger.WriteLine6("\t\tNew CoordinateSystem type is: {0}", self.m_oCartesian.coordinate_system_type)
             Assert.assertEqual(eSystemType, self.m_oCartesian.coordinate_system_type)
             oSystem = self.m_oCartesian.coordinate_system
-        elif eOrbitStateType == AgEOrbitStateType.eOrbitStateClassical:
+        elif eOrbitStateType == ORBIT_STATE_TYPE.CLASSICAL:
             Assert.assertIsNotNone(self.m_oClassical)
             self.m_oClassical.coordinate_system_type = eSystemType
             self.m_logger.WriteLine6("\t\tNew CoordinateSystem type is: {0}", self.m_oClassical.coordinate_system_type)
             Assert.assertEqual(eSystemType, self.m_oClassical.coordinate_system_type)
             oSystem = self.m_oClassical.coordinate_system
-        elif eOrbitStateType == AgEOrbitStateType.eOrbitStateGeodetic:
+        elif eOrbitStateType == ORBIT_STATE_TYPE.GEODETIC:
             Assert.assertIsNotNone(self.m_oGeodetic)
             self.m_oGeodetic.coordinate_system_type = eSystemType
             self.m_logger.WriteLine6("\t\tNew CoordinateSystem type is: {0}", self.m_oGeodetic.coordinate_system_type)
             Assert.assertEqual(eSystemType, self.m_oGeodetic.coordinate_system_type)
             oSystem = self.m_oGeodetic.coordinate_system
-        elif eOrbitStateType == AgEOrbitStateType.eOrbitStateDelaunay:
+        elif eOrbitStateType == ORBIT_STATE_TYPE.DELAUNAY:
             Assert.assertIsNotNone(self.m_oDelaunay)
             self.m_oDelaunay.coordinate_system_type = eSystemType
             self.m_logger.WriteLine6("\t\tNew CoordinateSystem type is: {0}", self.m_oDelaunay.coordinate_system_type)
             Assert.assertEqual(eSystemType, self.m_oDelaunay.coordinate_system_type)
             oSystem = self.m_oDelaunay.coordinate_system
-        elif eOrbitStateType == AgEOrbitStateType.eOrbitStateEquinoctial:
+        elif eOrbitStateType == ORBIT_STATE_TYPE.EQUINOCTIAL:
             Assert.assertIsNotNone(self.m_oEquinoctial)
             self.m_oEquinoctial.coordinate_system_type = eSystemType
             self.m_logger.WriteLine6(
@@ -53,13 +53,13 @@ class OrbitStateHelper(object):
             )
             Assert.assertEqual(eSystemType, self.m_oEquinoctial.coordinate_system_type)
             oSystem = self.m_oEquinoctial.coordinate_system
-        elif eOrbitStateType == AgEOrbitStateType.eOrbitStateMixedSpherical:
+        elif eOrbitStateType == ORBIT_STATE_TYPE.MIXED_SPHERICAL:
             Assert.assertIsNotNone(self.m_oMixed)
             self.m_oMixed.coordinate_system_type = eSystemType
             self.m_logger.WriteLine6("\t\tNew CoordinateSystem type is: {0}", self.m_oMixed.coordinate_system_type)
             Assert.assertEqual(eSystemType, self.m_oMixed.coordinate_system_type)
             oSystem = self.m_oMixed.coordinate_system
-        elif eOrbitStateType == AgEOrbitStateType.eOrbitStateSpherical:
+        elif eOrbitStateType == ORBIT_STATE_TYPE.SPHERICAL:
             Assert.assertIsNotNone(self.m_oSpherical)
             self.m_oSpherical.coordinate_system_type = eSystemType
             self.m_logger.WriteLine6("\t\tNew CoordinateSystem type is: {0}", self.m_oSpherical.coordinate_system_type)
@@ -73,11 +73,11 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\t\tCurrent Epoch is: {0}", oSystem.coordinate_system_epoch.time_instant)
         if (
             (
-                ((oSystem.type == AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch))
-                or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemMeanOfEpoch))
+                ((oSystem.type == COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH))
+                or ((oSystem.type == COORDINATE_SYSTEM.MEAN_OF_EPOCH))
             )
-            or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch))
-        ) or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemTrueOfEpoch)):
+            or ((oSystem.type == COORDINATE_SYSTEM.TEME_OF_EPOCH))
+        ) or ((oSystem.type == COORDINATE_SYSTEM.TRUE_OF_EPOCH)):
             oSystem.coordinate_system_epoch.set_explicit_time("13 Aug 2005 02:00:00.000")
             self.m_logger.WriteLine6("\t\t\tNew Epoch is: {0}", oSystem.coordinate_system_epoch.time_instant)
             Assert.assertEqual("13 Aug 2005 02:00:00.000", oSystem.coordinate_system_epoch.time_instant)
@@ -86,20 +86,17 @@ class OrbitStateHelper(object):
                 (
                     (
                         (
-                            (
-                                ((oSystem.type == AgECoordinateSystem.eCoordinateSystemB1950))
-                                or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemFixed))
-                            )
-                            or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemJ2000))
+                            (((oSystem.type == COORDINATE_SYSTEM.B1950)) or ((oSystem.type == COORDINATE_SYSTEM.FIXED)))
+                            or ((oSystem.type == COORDINATE_SYSTEM.J2000))
                         )
-                        or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemMeanOfDate))
+                        or ((oSystem.type == COORDINATE_SYSTEM.MEAN_OF_DATE))
                     )
-                    or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemTEMEOfDate))
+                    or ((oSystem.type == COORDINATE_SYSTEM.TEME_OF_DATE))
                 )
-                or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemTrueOfDate))
+                or ((oSystem.type == COORDINATE_SYSTEM.TRUE_OF_DATE))
             )
-            or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemTrueOfRefDate))
-        ) or ((oSystem.type == AgECoordinateSystem.eCoordinateSystemICRF)):
+            or ((oSystem.type == COORDINATE_SYSTEM.TRUE_OF_REF_DATE))
+        ) or ((oSystem.type == COORDINATE_SYSTEM.ICRF)):
             bCaught: bool = False
             try:
                 bCaught = False
@@ -124,26 +121,24 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\tCurrent OrbitState type is: {0}", oOrbitState.orbit_state_type)
 
         # Cartesian OrbitState test
-        self.m_oCartesian = clr.Convert(
-            oOrbitState.convert_to(AgEOrbitStateType.eOrbitStateCartesian), IOrbitStateCartesian
-        )
+        self.m_oCartesian = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.CARTESIAN), IOrbitStateCartesian)
         Assert.assertIsNotNone(self.m_oCartesian)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oCartesian.orbit_state_type)
         self.m_oCartesian.assign(oOrbitState)
-        self.m_oCartesian.convert_to(AgEOrbitStateType.eOrbitStateCartesian)
-        self.m_oCartesian.convert_to(AgEOrbitStateType.eOrbitStateClassical)
-        self.m_oCartesian.convert_to(AgEOrbitStateType.eOrbitStateDelaunay)
-        self.m_oCartesian.convert_to(AgEOrbitStateType.eOrbitStateEquinoctial)
-        self.m_oCartesian.convert_to(AgEOrbitStateType.eOrbitStateGeodetic)
-        self.m_oCartesian.convert_to(AgEOrbitStateType.eOrbitStateMixedSpherical)
-        self.m_oCartesian.convert_to(AgEOrbitStateType.eOrbitStateSpherical)
+        self.m_oCartesian.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+        self.m_oCartesian.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+        self.m_oCartesian.convert_to(ORBIT_STATE_TYPE.DELAUNAY)
+        self.m_oCartesian.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL)
+        self.m_oCartesian.convert_to(ORBIT_STATE_TYPE.GEODETIC)
+        self.m_oCartesian.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL)
+        self.m_oCartesian.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
 
         # See 25151: try to convert an orbit state that's describes open orbits
         # to Delaunay representation; expecting an exception with a user-friendly explanation
         # why conversion cannot be finished.
 
         tempCart: "IOrbitStateCartesian" = clr.CastAs(
-            self.m_oCartesian.convert_to(AgEOrbitStateType.eOrbitStateCartesian), IOrbitStateCartesian
+            self.m_oCartesian.convert_to(ORBIT_STATE_TYPE.CARTESIAN), IOrbitStateCartesian
         )
 
         self.m_oUnits.set_current_unit("DistanceUnit", "km")
@@ -157,7 +152,7 @@ class OrbitStateHelper(object):
         tempCart.z_velocity = 5.917552767
         try:
             delaunay: "IOrbitStateDelaunay" = clr.CastAs(
-                tempCart.convert_to(AgEOrbitStateType.eOrbitStateDelaunay), IOrbitStateDelaunay
+                tempCart.convert_to(ORBIT_STATE_TYPE.DELAUNAY), IOrbitStateDelaunay
             )
             Assert.fail()
 
@@ -175,99 +170,87 @@ class OrbitStateHelper(object):
         self.CartesianTest()
 
         # Classical OrbitState test
-        self.m_oClassical = clr.Convert(
-            oOrbitState.convert_to(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
-        )
+        self.m_oClassical = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.CLASSICAL), IOrbitStateClassical)
         Assert.assertIsNotNone(self.m_oClassical)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oClassical.orbit_state_type)
         self.m_oClassical.assign(oOrbitState)
-        self.m_oClassical.convert_to(AgEOrbitStateType.eOrbitStateCartesian)
-        self.m_oClassical.convert_to(AgEOrbitStateType.eOrbitStateClassical)
-        self.m_oClassical.convert_to(AgEOrbitStateType.eOrbitStateDelaunay)
-        self.m_oClassical.convert_to(AgEOrbitStateType.eOrbitStateEquinoctial)
-        self.m_oClassical.convert_to(AgEOrbitStateType.eOrbitStateGeodetic)
-        self.m_oClassical.convert_to(AgEOrbitStateType.eOrbitStateMixedSpherical)
-        self.m_oClassical.convert_to(AgEOrbitStateType.eOrbitStateSpherical)
+        self.m_oClassical.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+        self.m_oClassical.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+        self.m_oClassical.convert_to(ORBIT_STATE_TYPE.DELAUNAY)
+        self.m_oClassical.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL)
+        self.m_oClassical.convert_to(ORBIT_STATE_TYPE.GEODETIC)
+        self.m_oClassical.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL)
+        self.m_oClassical.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
         self.ClassicalTest()
 
         # Geodetic OrbitState test
-        self.m_oGeodetic = clr.Convert(
-            oOrbitState.convert_to(AgEOrbitStateType.eOrbitStateGeodetic), IOrbitStateGeodetic
-        )
+        self.m_oGeodetic = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.GEODETIC), IOrbitStateGeodetic)
         Assert.assertIsNotNone(self.m_oGeodetic)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oGeodetic.orbit_state_type)
         self.m_oGeodetic.assign(oOrbitState)
-        self.m_oGeodetic.convert_to(AgEOrbitStateType.eOrbitStateCartesian)
-        self.m_oGeodetic.convert_to(AgEOrbitStateType.eOrbitStateClassical)
-        self.m_oGeodetic.convert_to(AgEOrbitStateType.eOrbitStateDelaunay)
-        self.m_oGeodetic.convert_to(AgEOrbitStateType.eOrbitStateEquinoctial)
-        self.m_oGeodetic.convert_to(AgEOrbitStateType.eOrbitStateGeodetic)
-        self.m_oGeodetic.convert_to(AgEOrbitStateType.eOrbitStateMixedSpherical)
-        self.m_oGeodetic.convert_to(AgEOrbitStateType.eOrbitStateSpherical)
+        self.m_oGeodetic.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+        self.m_oGeodetic.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+        self.m_oGeodetic.convert_to(ORBIT_STATE_TYPE.DELAUNAY)
+        self.m_oGeodetic.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL)
+        self.m_oGeodetic.convert_to(ORBIT_STATE_TYPE.GEODETIC)
+        self.m_oGeodetic.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL)
+        self.m_oGeodetic.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
         self.GeodeticTest()
 
         # Delaunay OrbitState test
-        self.m_oDelaunay = clr.Convert(
-            oOrbitState.convert_to(AgEOrbitStateType.eOrbitStateDelaunay), IOrbitStateDelaunay
-        )
+        self.m_oDelaunay = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.DELAUNAY), IOrbitStateDelaunay)
         Assert.assertIsNotNone(self.m_oDelaunay)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oDelaunay.orbit_state_type)
         self.m_oDelaunay.assign(oOrbitState)
-        self.m_oDelaunay.convert_to(AgEOrbitStateType.eOrbitStateCartesian)
-        self.m_oDelaunay.convert_to(AgEOrbitStateType.eOrbitStateClassical)
-        self.m_oDelaunay.convert_to(AgEOrbitStateType.eOrbitStateDelaunay)
-        self.m_oDelaunay.convert_to(AgEOrbitStateType.eOrbitStateEquinoctial)
-        self.m_oDelaunay.convert_to(AgEOrbitStateType.eOrbitStateGeodetic)
-        self.m_oDelaunay.convert_to(AgEOrbitStateType.eOrbitStateMixedSpherical)
-        self.m_oDelaunay.convert_to(AgEOrbitStateType.eOrbitStateSpherical)
+        self.m_oDelaunay.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+        self.m_oDelaunay.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+        self.m_oDelaunay.convert_to(ORBIT_STATE_TYPE.DELAUNAY)
+        self.m_oDelaunay.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL)
+        self.m_oDelaunay.convert_to(ORBIT_STATE_TYPE.GEODETIC)
+        self.m_oDelaunay.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL)
+        self.m_oDelaunay.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
         self.DelaunayTest()
 
         # Equinoctical OrbitState test
-        self.m_oEquinoctial = clr.Convert(
-            oOrbitState.convert_to(AgEOrbitStateType.eOrbitStateEquinoctial), IOrbitStateEquinoctial
-        )
+        self.m_oEquinoctial = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL), IOrbitStateEquinoctial)
         Assert.assertIsNotNone(self.m_oEquinoctial)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oEquinoctial.orbit_state_type)
         self.m_oEquinoctial.assign(oOrbitState)
-        self.m_oEquinoctial.convert_to(AgEOrbitStateType.eOrbitStateCartesian)
-        self.m_oEquinoctial.convert_to(AgEOrbitStateType.eOrbitStateClassical)
-        self.m_oEquinoctial.convert_to(AgEOrbitStateType.eOrbitStateDelaunay)
-        self.m_oEquinoctial.convert_to(AgEOrbitStateType.eOrbitStateEquinoctial)
-        self.m_oEquinoctial.convert_to(AgEOrbitStateType.eOrbitStateGeodetic)
-        self.m_oEquinoctial.convert_to(AgEOrbitStateType.eOrbitStateMixedSpherical)
-        self.m_oEquinoctial.convert_to(AgEOrbitStateType.eOrbitStateSpherical)
+        self.m_oEquinoctial.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+        self.m_oEquinoctial.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+        self.m_oEquinoctial.convert_to(ORBIT_STATE_TYPE.DELAUNAY)
+        self.m_oEquinoctial.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL)
+        self.m_oEquinoctial.convert_to(ORBIT_STATE_TYPE.GEODETIC)
+        self.m_oEquinoctial.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL)
+        self.m_oEquinoctial.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
         self.EquinoctialTest()
 
         # MixedSpherical OrbitState test
-        self.m_oMixed = clr.Convert(
-            oOrbitState.convert_to(AgEOrbitStateType.eOrbitStateMixedSpherical), IOrbitStateMixedSpherical
-        )
+        self.m_oMixed = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL), IOrbitStateMixedSpherical)
         Assert.assertIsNotNone(self.m_oMixed)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oMixed.orbit_state_type)
         self.m_oMixed.assign(oOrbitState)
-        self.m_oMixed.convert_to(AgEOrbitStateType.eOrbitStateCartesian)
-        self.m_oMixed.convert_to(AgEOrbitStateType.eOrbitStateClassical)
-        self.m_oMixed.convert_to(AgEOrbitStateType.eOrbitStateDelaunay)
-        self.m_oMixed.convert_to(AgEOrbitStateType.eOrbitStateEquinoctial)
-        self.m_oMixed.convert_to(AgEOrbitStateType.eOrbitStateGeodetic)
-        self.m_oMixed.convert_to(AgEOrbitStateType.eOrbitStateMixedSpherical)
-        self.m_oMixed.convert_to(AgEOrbitStateType.eOrbitStateSpherical)
+        self.m_oMixed.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+        self.m_oMixed.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+        self.m_oMixed.convert_to(ORBIT_STATE_TYPE.DELAUNAY)
+        self.m_oMixed.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL)
+        self.m_oMixed.convert_to(ORBIT_STATE_TYPE.GEODETIC)
+        self.m_oMixed.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL)
+        self.m_oMixed.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
         self.MixedSphericalTest()
 
         # Spherical OrbitState test
-        self.m_oSpherical = clr.Convert(
-            oOrbitState.convert_to(AgEOrbitStateType.eOrbitStateSpherical), IOrbitStateSpherical
-        )
+        self.m_oSpherical = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.SPHERICAL), IOrbitStateSpherical)
         Assert.assertIsNotNone(self.m_oSpherical)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oSpherical.orbit_state_type)
         self.m_oSpherical.assign(oOrbitState)
-        self.m_oSpherical.convert_to(AgEOrbitStateType.eOrbitStateCartesian)
-        self.m_oSpherical.convert_to(AgEOrbitStateType.eOrbitStateClassical)
-        self.m_oSpherical.convert_to(AgEOrbitStateType.eOrbitStateDelaunay)
-        self.m_oSpherical.convert_to(AgEOrbitStateType.eOrbitStateEquinoctial)
-        self.m_oSpherical.convert_to(AgEOrbitStateType.eOrbitStateGeodetic)
-        self.m_oSpherical.convert_to(AgEOrbitStateType.eOrbitStateMixedSpherical)
-        self.m_oSpherical.convert_to(AgEOrbitStateType.eOrbitStateSpherical)
+        self.m_oSpherical.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+        self.m_oSpherical.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+        self.m_oSpherical.convert_to(ORBIT_STATE_TYPE.DELAUNAY)
+        self.m_oSpherical.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL)
+        self.m_oSpherical.convert_to(ORBIT_STATE_TYPE.GEODETIC)
+        self.m_oSpherical.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL)
+        self.m_oSpherical.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
         self.SphericalTest()
 
         # Testing the helper methods to convert to desired orbit state type and set its values in one call
@@ -276,22 +259,14 @@ class OrbitStateHelper(object):
         self.m_oUnits.set_current_unit("AngleUnit", "deg")
 
         # SetOrbitStateAsCartesian
-        oOrbitState.assign_cartesian(
-            AgECoordinateSystem.eCoordinateSystemFixed, -22760.2, 549.443, 0.0, -0.0742022, -3.07376, 0.0
-        )
-        oOrbitState.assign_classical(AgECoordinateSystem.eCoordinateSystemJ2000, 22000.1, 0.1, 12.3, 0.2, 358.0, 45.4)
-        oOrbitState.assign_equinoctial_posigrade(
-            AgECoordinateSystem.eCoordinateSystemJ2000, 22000.1, 0.1, 0.4, 0.2, 58.0, 45.4
-        )
-        oOrbitState.assign_geodetic(
-            AgECoordinateSystem.eCoordinateSystemFixed, 0.004011, -99.998868, 35786.032637, 1.51e-07, 0.0, 0.0
-        )
+        oOrbitState.assign_cartesian(COORDINATE_SYSTEM.FIXED, -22760.2, 549.443, 0.0, -0.0742022, -3.07376, 0.0)
+        oOrbitState.assign_classical(COORDINATE_SYSTEM.J2000, 22000.1, 0.1, 12.3, 0.2, 358.0, 45.4)
+        oOrbitState.assign_equinoctial_posigrade(COORDINATE_SYSTEM.J2000, 22000.1, 0.1, 0.4, 0.2, 58.0, 45.4)
+        oOrbitState.assign_geodetic(COORDINATE_SYSTEM.FIXED, 0.004011, -99.998868, 35786.032637, 1.51e-07, 0.0, 0.0)
         oOrbitState.assign_mixed_spherical(
-            AgECoordinateSystem.eCoordinateSystemJ2000, 0.004011, -99.998868, 35786.032637, -0.0, 90.0, 3.074660099
+            COORDINATE_SYSTEM.J2000, 0.004011, -99.998868, 35786.032637, -0.0, 90.0, 3.074660099
         )
-        oOrbitState.assign_spherical(
-            AgECoordinateSystem.eCoordinateSystemJ2000, 178.617119, 0.0, 42164.169637, -0.0, 90.0, 3.074660099
-        )
+        oOrbitState.assign_spherical(COORDINATE_SYSTEM.J2000, 178.617119, 0.0, 42164.169637, -0.0, 90.0, 3.074660099)
 
         self.m_oUnits.reset_units()
 
@@ -299,29 +274,21 @@ class OrbitStateHelper(object):
 
     def Test_IAgOrbitState(self, orbitState: "IOrbitState"):
         centralBodyName: str = orbitState.central_body_name
-        ost: "AgEOrbitStateType" = orbitState.orbit_state_type
+        ost: "ORBIT_STATE_TYPE" = orbitState.orbit_state_type
 
         epochHold: typing.Any = orbitState.epoch
         orbitState.epoch = "18 Jan 2003 02:40:24.680"
         Assert.assertEqual("18 Jan 2003 02:40:24.680", orbitState.epoch)
         orbitState.epoch = epochHold
 
-        orbitState.assign_cartesian(
-            AgECoordinateSystem.eCoordinateSystemFixed, -22760.2, 549.443, 0.0, -0.0742022, -3.07376, 0.0
-        )
-        orbitState.assign_classical(AgECoordinateSystem.eCoordinateSystemJ2000, 22000.1, 0.1, 12.3, 0.2, 358.0, 45.4)
-        orbitState.assign_equinoctial_posigrade(
-            AgECoordinateSystem.eCoordinateSystemJ2000, 22000.1, 0.1, 0.4, 0.2, 58.0, 45.4
-        )
-        orbitState.assign_geodetic(
-            AgECoordinateSystem.eCoordinateSystemFixed, 0.004011, -99.998868, 35786.032637, 1.51e-07, 0.0, 0.0
-        )
+        orbitState.assign_cartesian(COORDINATE_SYSTEM.FIXED, -22760.2, 549.443, 0.0, -0.0742022, -3.07376, 0.0)
+        orbitState.assign_classical(COORDINATE_SYSTEM.J2000, 22000.1, 0.1, 12.3, 0.2, 358.0, 45.4)
+        orbitState.assign_equinoctial_posigrade(COORDINATE_SYSTEM.J2000, 22000.1, 0.1, 0.4, 0.2, 58.0, 45.4)
+        orbitState.assign_geodetic(COORDINATE_SYSTEM.FIXED, 0.004011, -99.998868, 35786.032637, 1.51e-07, 0.0, 0.0)
         orbitState.assign_mixed_spherical(
-            AgECoordinateSystem.eCoordinateSystemJ2000, 0.004011, -99.998868, 35786.032637, -0.0, 90.0, 3.074660099
+            COORDINATE_SYSTEM.J2000, 0.004011, -99.998868, 35786.032637, -0.0, 90.0, 3.074660099
         )
-        orbitState.assign_spherical(
-            AgECoordinateSystem.eCoordinateSystemJ2000, 178.617119, 0.0, 42164.169637, -0.0, 90.0, 3.074660099
-        )
+        orbitState.assign_spherical(COORDINATE_SYSTEM.J2000, 178.617119, 0.0, 42164.169637, -0.0, 90.0, 3.074660099)
 
     # region CartesianTest
     def CartesianTest(self):
@@ -447,48 +414,44 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), AgECoordinateSystem),
+                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
             )
 
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oCartesian.coordinate_system_type)
         # eCoordinateSystemAlignmentAtEpoch
-        self.CoordinateSystemTest(
-            self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch
-        )
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
         # eCoordinateSystemB1950
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemB1950)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.B1950)
         # eCoordinateSystemFixed
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemFixed)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.FIXED)
         # eCoordinateSystemJ2000
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemJ2000)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.J2000)
         # eCoordinateSystemICRF;
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemICRF)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.ICRF)
         # eCoordinateSystemMeanOfDate
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfDate)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
         # eCoordinateSystemMeanOfEpoch
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfEpoch)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
         # eCoordinateSystemTEMEOfDate
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfDate)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
         # eCoordinateSystemTEMEOfEpoch
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
         # eCoordinateSystemTrueOfDate
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfDate)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
         # eCoordinateSystemTrueOfEpoch
-        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch)
+        self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(
-                self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
-            )
+            self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
 
         except:
             self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
 
         # eCoordinateSystemUnknown
         try:
-            self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, AgECoordinateSystem.eCoordinateSystemUnknown)
+            self.CoordinateSystemTest(self.m_oCartesian.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
             Assert.fail("Cannot set eCoordinateSystemUnknown coordinate system.")
 
         except AssertionError as e:
@@ -506,14 +469,14 @@ class OrbitStateHelper(object):
 
         # SizeShape test
         self.m_logger.WriteLine6("\t\tCurrent SizeShape type is: {0}", self.m_oClassical.size_shape_type)
-        self.ClassicalSizeShape(AgEClassicalSizeShape.eSizeShapeAltitude)
-        self.ClassicalSizeShape(AgEClassicalSizeShape.eSizeShapeMeanMotion)
-        self.ClassicalSizeShape(AgEClassicalSizeShape.eSizeShapePeriod)
-        self.ClassicalSizeShape(AgEClassicalSizeShape.eSizeShapeRadius)
-        self.ClassicalSizeShape(AgEClassicalSizeShape.eSizeShapeSemimajorAxis)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_MEAN_MOTION)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_RADIUS)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS)
         try:
-            self.ClassicalSizeShape(AgEClassicalSizeShape.eSizeShapeUnknown)
-            Assert.fail("Cannot set AgEClassicalSizeShape.eSizeShapeUnknown.")
+            self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_UNKNOWN)
+            Assert.fail("Cannot set CLASSICAL_SIZE_SHAPE.eSizeShapeUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -526,15 +489,15 @@ class OrbitStateHelper(object):
 
         # Location test
         self.m_logger.WriteLine6("\t\tCurrent Location type is: {0}", self.m_oClassical.location_type)
-        self.ClassicalLocation(AgEClassicalLocation.eLocationArgumentOfLatitude)
-        self.ClassicalLocation(AgEClassicalLocation.eLocationEccentricAnomaly)
-        self.ClassicalLocation(AgEClassicalLocation.eLocationMeanAnomaly)
-        self.ClassicalLocation(AgEClassicalLocation.eLocationTimePastAN)
-        self.ClassicalLocation(AgEClassicalLocation.eLocationTimePastPerigee)
-        self.ClassicalLocation(AgEClassicalLocation.eLocationTrueAnomaly)
+        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_ARGUMENT_OF_LATITUDE)
+        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_ECCENTRIC_ANOMALY)
+        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_MEAN_ANOMALY)
+        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_TIME_PAST_AN)
+        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_TIME_PAST_PERIGEE)
+        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY)
         try:
-            self.ClassicalLocation(AgEClassicalLocation.eLocationUnknown)
-            Assert.fail("Cannot set AgEClassicalLocation.eLocationUnknown.")
+            self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_UNKNOWN)
+            Assert.fail("Cannot set CLASSICAL_LOCATION.eLocationUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -552,23 +515,21 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), AgECoordinateSystem),
+                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
             )
 
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oClassical.coordinate_system_type)
         # eCoordinateSystemAlignmentAtEpoch
-        self.CoordinateSystemTest(
-            self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch
-        )
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
         # eCoordinateSystemB1950
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemB1950)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.B1950)
         # eCoordinateSystemFixed
         bCaught: bool = False
         try:
             bCaught = False
-            self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemFixed)
+            self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.FIXED)
 
         except Exception as e:
             bCaught = True
@@ -578,21 +539,21 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set eCoordinateSystemFixed")
 
         # eCoordinateSystemJ2000
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemJ2000)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.J2000)
         # eCoordinateSystemICRF
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemICRF)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.ICRF)
         # eCoordinateSystemMeanOfDate
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfDate)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
         # eCoordinateSystemMeanOfEpoch
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfEpoch)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
         # eCoordinateSystemTEMEOfDate
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfDate)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
         # eCoordinateSystemTEMEOfEpoch
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
         # eCoordinateSystemTrueOfDate
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfDate)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
         # eCoordinateSystemTrueOfEpoch
-        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch)
+        self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         # eCoordinateSystemTrueOfRefDate
         # GetLicenses
         oLicenses: "IExecCmdResult" = None
@@ -608,7 +569,7 @@ class OrbitStateHelper(object):
                     try:
                         bCaught = False
                         self.CoordinateSystemTest(
-                            self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
+                            self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE
                         )
 
                     except Exception as e:
@@ -620,9 +581,7 @@ class OrbitStateHelper(object):
 
                 else:
                     # License available
-                    self.CoordinateSystemTest(
-                        self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
-                    )
+                    self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
 
                 break
 
@@ -630,8 +589,8 @@ class OrbitStateHelper(object):
 
         # eCoordinateSystemUnknown
         try:
-            self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemUnknown)
-            Assert.fail("Cannot set AgECoordinateSystem.eCoordinateSystemUnknown.")
+            self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
+            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -642,21 +601,21 @@ class OrbitStateHelper(object):
     # endregion
 
     # region ClassicalSizeShape
-    def ClassicalSizeShape(self, eShapeType: "AgEClassicalSizeShape"):
+    def ClassicalSizeShape(self, eShapeType: "CLASSICAL_SIZE_SHAPE"):
         Assert.assertIsNotNone(self.m_oClassical)
         # set shape type
         self.m_oClassical.size_shape_type = eShapeType
         self.m_logger.WriteLine6("\t\tNew SizeShape type is: {0}", self.m_oClassical.size_shape_type)
         Assert.assertEqual(eShapeType, self.m_oClassical.size_shape_type)
-        if eShapeType == AgEClassicalSizeShape.eSizeShapeAltitude:
+        if eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE:
             self.ClassicalSizeShapeAltitude(clr.Convert(self.m_oClassical.size_shape, IClassicalSizeShapeAltitude))
-        elif eShapeType == AgEClassicalSizeShape.eSizeShapeMeanMotion:
+        elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_MEAN_MOTION:
             self.ClassicalSizeShapeMeanMotion(clr.Convert(self.m_oClassical.size_shape, IClassicalSizeShapeMeanMotion))
-        elif eShapeType == AgEClassicalSizeShape.eSizeShapePeriod:
+        elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD:
             self.ClassicalSizeShapePeriod(clr.Convert(self.m_oClassical.size_shape, IClassicalSizeShapePeriod))
-        elif eShapeType == AgEClassicalSizeShape.eSizeShapeRadius:
+        elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_RADIUS:
             self.ClassicalSizeShapeRadius(clr.Convert(self.m_oClassical.size_shape, IClassicalSizeShapeRadius))
-        elif eShapeType == AgEClassicalSizeShape.eSizeShapeSemimajorAxis:
+        elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS:
             self.ClassicalSizeShapeSemimajorAxis(
                 clr.Convert(self.m_oClassical.size_shape, IClassicalSizeShapeSemimajorAxis)
             )
@@ -1024,9 +983,9 @@ class OrbitStateHelper(object):
         # AscNode test
         self.m_logger.WriteLine6("\t\t\tCurent AscNodeType is: {0}", oOrientation.asc_node_type)
         # LAN test
-        oOrientation.asc_node_type = AgEOrientationAscNode.eAscNodeLAN
+        oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_LAN
         self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.asc_node_type)
-        Assert.assertEqual(AgEOrientationAscNode.eAscNodeLAN, oOrientation.asc_node_type)
+        Assert.assertEqual(ORIENTATION_ASC_NODE.ASC_NODE_LAN, oOrientation.asc_node_type)
         oLAN: "IOrientationAscNodeLAN" = clr.Convert(oOrientation.asc_node, IOrientationAscNodeLAN)
         Assert.assertIsNotNone(oLAN)
         self.m_logger.WriteLine6("\t\t\t\t Current LAN value is: {0}", oLAN.value)
@@ -1045,9 +1004,9 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set LAN.Value out of bounds")
 
         # RAAN test
-        oOrientation.asc_node_type = AgEOrientationAscNode.eAscNodeRAAN
+        oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
         self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.asc_node_type)
-        Assert.assertEqual(AgEOrientationAscNode.eAscNodeRAAN, oOrientation.asc_node_type)
+        Assert.assertEqual(ORIENTATION_ASC_NODE.ASC_NODE_RAAN, oOrientation.asc_node_type)
         oRAAN: "IOrientationAscNodeRAAN" = clr.Convert(oOrientation.asc_node, IOrientationAscNodeRAAN)
         Assert.assertIsNotNone(oRAAN)
         self.m_logger.WriteLine6("\t\t\t\t Current RAAN value is: {0}", oRAAN.value)
@@ -1067,8 +1026,8 @@ class OrbitStateHelper(object):
 
         # eAscNodeUnknown test
         try:
-            oOrientation.asc_node_type = AgEOrientationAscNode.eAscNodeUnknown
-            Assert.fail("Cannot set AgEOrientationAscNode.eAscNodeUnknown.")
+            oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_UNKNOWN
+            Assert.fail("Cannot set ORIENTATION_ASC_NODE.eAscNodeUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1084,13 +1043,13 @@ class OrbitStateHelper(object):
     # endregion
 
     # region ClassicalLocation
-    def ClassicalLocation(self, eType: "AgEClassicalLocation"):
+    def ClassicalLocation(self, eType: "CLASSICAL_LOCATION"):
         Assert.assertIsNotNone(self.m_oClassical)
         self.m_oClassical.location_type = eType
         self.m_logger.WriteLine6("\t\tNew Location type is: {0}", self.m_oClassical.location_type)
         Assert.assertEqual(eType, self.m_oClassical.location_type)
         bCaught: bool = False
-        if eType == AgEClassicalLocation.eLocationArgumentOfLatitude:
+        if eType == CLASSICAL_LOCATION.LOCATION_ARGUMENT_OF_LATITUDE:
             # set AngleUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
@@ -1123,7 +1082,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("AngleUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        elif eType == AgEClassicalLocation.eLocationEccentricAnomaly:
+        elif eType == CLASSICAL_LOCATION.LOCATION_ECCENTRIC_ANOMALY:
             # set AngleUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
@@ -1156,7 +1115,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("AngleUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        elif eType == AgEClassicalLocation.eLocationMeanAnomaly:
+        elif eType == CLASSICAL_LOCATION.LOCATION_MEAN_ANOMALY:
             # set AngleUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
@@ -1189,7 +1148,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("AngleUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        elif eType == AgEClassicalLocation.eLocationTimePastAN:
+        elif eType == CLASSICAL_LOCATION.LOCATION_TIME_PAST_AN:
             # set TimeUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
             self.m_logger.WriteLine5("\t\t\tThe current TimeUnit is: {0}", strUnit)
@@ -1218,7 +1177,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("TimeUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
-        elif eType == AgEClassicalLocation.eLocationTimePastPerigee:
+        elif eType == CLASSICAL_LOCATION.LOCATION_TIME_PAST_PERIGEE:
             # set TimeUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
             self.m_logger.WriteLine5("\t\t\tThe current TimeUnit is: {0}", strUnit)
@@ -1249,7 +1208,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("TimeUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
-        elif eType == AgEClassicalLocation.eLocationTrueAnomaly:
+        elif eType == CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY:
             # set AngleUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
@@ -1379,7 +1338,7 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), AgECoordinateSystem),
+                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
             )
 
             iIndex += 1
@@ -1388,9 +1347,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemAlignmentAtEpoch
-            self.CoordinateSystemTest(
-                self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch
-            )
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
 
         except Exception as e:
             bCaught = True
@@ -1402,7 +1359,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemB1950
-            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemB1950)
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.B1950)
 
         except Exception as e:
             bCaught = True
@@ -1412,11 +1369,11 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set eCoordinateSystemB1950")
 
         # eCoordinateSystemFixed
-        self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemFixed)
+        self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.FIXED)
         try:
             bCaught = False
             # eCoordinateSystemJ2000
-            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemJ2000)
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.J2000)
 
         except Exception as e:
             bCaught = True
@@ -1428,9 +1385,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemMeanOfDate
-            self.CoordinateSystemTest(
-                self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfDate
-            )
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
 
         except Exception as e:
             bCaught = True
@@ -1442,9 +1397,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemMeanOfEpoch
-            self.CoordinateSystemTest(
-                self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfEpoch
-            )
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
 
         except Exception as e:
             bCaught = True
@@ -1456,9 +1409,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemTEMEOfDate
-            self.CoordinateSystemTest(
-                self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfDate
-            )
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
 
         except Exception as e:
             bCaught = True
@@ -1470,9 +1421,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemTEMEOfEpoch
-            self.CoordinateSystemTest(
-                self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch
-            )
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
 
         except Exception as e:
             bCaught = True
@@ -1484,9 +1433,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemTrueOfDate
-            self.CoordinateSystemTest(
-                self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfDate
-            )
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
 
         except Exception as e:
             bCaught = True
@@ -1498,9 +1445,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemTrueOfEpoch
-            self.CoordinateSystemTest(
-                self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch
-            )
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
 
         except Exception as e:
             bCaught = True
@@ -1512,9 +1457,7 @@ class OrbitStateHelper(object):
         try:
             bCaught = False
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(
-                self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
-            )
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
 
         except Exception as e:
             bCaught = True
@@ -1525,8 +1468,8 @@ class OrbitStateHelper(object):
 
         # eCoordinateSystemUnknown
         try:
-            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, AgECoordinateSystem.eCoordinateSystemUnknown)
-            Assert.fail("Cannot set AgECoordinateSystem.eCoordinateSystemUnknown.")
+            self.CoordinateSystemTest(self.m_oGeodetic.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
+            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1536,9 +1479,9 @@ class OrbitStateHelper(object):
 
         # Geodetic Size (Altitude) test
         self.m_logger.WriteLine6("\t\tCurrent Size type is: {0}", self.m_oGeodetic.size_type)
-        self.m_oGeodetic.size_type = AgEGeodeticSize.eSizeAltitude
+        self.m_oGeodetic.size_type = GEODETIC_SIZE.SIZE_ALTITUDE
         self.m_logger.WriteLine6("\t\tNew Size type is: {0}", self.m_oGeodetic.size_type)
-        Assert.assertEqual(AgEGeodeticSize.eSizeAltitude, self.m_oGeodetic.size_type)
+        Assert.assertEqual(GEODETIC_SIZE.SIZE_ALTITUDE, self.m_oGeodetic.size_type)
         oAltitude: "IGeodeticSizeAltitude" = clr.Convert(self.m_oGeodetic.size, IGeodeticSizeAltitude)
         Assert.assertIsNotNone(oAltitude)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
@@ -1574,9 +1517,9 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set Rate out of bounds")
 
         # Geodetic Size (Radius) test
-        self.m_oGeodetic.size_type = AgEGeodeticSize.eSizeRadius
+        self.m_oGeodetic.size_type = GEODETIC_SIZE.SIZE_RADIUS
         self.m_logger.WriteLine6("\t\tNew Size type is: {0}", self.m_oGeodetic.size_type)
-        Assert.assertEqual(AgEGeodeticSize.eSizeRadius, self.m_oGeodetic.size_type)
+        Assert.assertEqual(GEODETIC_SIZE.SIZE_RADIUS, self.m_oGeodetic.size_type)
         oRadius: "IGeodeticSizeRadius" = clr.Convert(self.m_oGeodetic.size, IGeodeticSizeRadius)
         Assert.assertIsNotNone(oRadius)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
@@ -1614,7 +1557,7 @@ class OrbitStateHelper(object):
         # Geodetic Size (Unknown) test
         try:
             bCaught = False
-            self.m_oGeodetic.size_type = AgEGeodeticSize.eGeodeticSizeUnknown
+            self.m_oGeodetic.size_type = GEODETIC_SIZE.UNKNOWN
 
         except Exception as e:
             bCaught = True
@@ -1711,23 +1654,21 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), AgECoordinateSystem),
+                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
             )
 
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oDelaunay.coordinate_system_type)
         # eCoordinateSystemAlignmentAtEpoch
-        self.CoordinateSystemTest(
-            self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch
-        )
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
 
         # eCoordinateSystemB1950
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemB1950)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.B1950)
         # eCoordinateSystemFixed
         try:
-            self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemFixed)
-            Assert.fail("Cannot set AgECoordinateSystem.eCoordinateSystemFixed.")
+            self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.FIXED)
+            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemFixed.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1736,21 +1677,21 @@ class OrbitStateHelper(object):
             self.m_logger.Write2("\t\tExpected exception: {0}", str(e))
 
         # eCoordinateSystemJ2000
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemJ2000)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.J2000)
         # eCoordinateSystemICRF
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemICRF)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.ICRF)
         # eCoordinateSystemMeanOfDate
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfDate)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
         # eCoordinateSystemMeanOfEpoch
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfEpoch)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
         # eCoordinateSystemTEMEOfDate
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfDate)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
         # eCoordinateSystemTEMEOfEpoch
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
         # eCoordinateSystemTrueOfDate
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfDate)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
         # eCoordinateSystemTrueOfEpoch
-        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch)
+        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         # eCoordinateSystemTrueOfRefDate
         # GetLicenses
         oLicenses: "IExecCmdResult" = None
@@ -1765,9 +1706,7 @@ class OrbitStateHelper(object):
                     # No License
                     try:
                         bCaught = False
-                        self.CoordinateSystemTest(
-                            self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
-                        )
+                        self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
 
                     except Exception as e:
                         bCaught = True
@@ -1778,9 +1717,7 @@ class OrbitStateHelper(object):
 
                 else:
                     # License available
-                    self.CoordinateSystemTest(
-                        self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
-                    )
+                    self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
 
                 break
 
@@ -1788,8 +1725,8 @@ class OrbitStateHelper(object):
 
         # eCoordinateSystemUnknown
         try:
-            self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, AgECoordinateSystem.eCoordinateSystemUnknown)
-            Assert.fail("Cannot set AgECoordinateSystem.eCoordinateSystemUnknown.")
+            self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
+            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1803,9 +1740,9 @@ class OrbitStateHelper(object):
     def DelaunayLTest(self):
         Assert.assertIsNotNone(self.m_oDelaunay)
         self.m_logger.WriteLine6("\t\tCurrent LType is: {0}", self.m_oDelaunay.l_type)
-        self.m_oDelaunay.l_type = AgEDelaunayLType.eL
+        self.m_oDelaunay.l_type = DELAUNAY_L_TYPE.L
         self.m_logger.WriteLine6("\t\tNew LType is: {0}", self.m_oDelaunay.l_type)
-        Assert.assertEqual(AgEDelaunayLType.eL, self.m_oDelaunay.l_type)
+        Assert.assertEqual(DELAUNAY_L_TYPE.L, self.m_oDelaunay.l_type)
         oL: "IDelaunayL" = clr.Convert(self.m_oDelaunay.l, IDelaunayL)
         Assert.assertIsNotNone(oL)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
@@ -1826,9 +1763,9 @@ class OrbitStateHelper(object):
         if not bCaught:
             Assert.fail("Cannot set L out of bounds")
 
-        self.m_oDelaunay.l_type = AgEDelaunayLType.eLOverSQRTmu
+        self.m_oDelaunay.l_type = DELAUNAY_L_TYPE.L_OVER_SQR_TMU
         self.m_logger.WriteLine6("\t\tNew LType is: {0}", self.m_oDelaunay.l_type)
-        Assert.assertEqual(AgEDelaunayLType.eLOverSQRTmu, self.m_oDelaunay.l_type)
+        Assert.assertEqual(DELAUNAY_L_TYPE.L_OVER_SQR_TMU, self.m_oDelaunay.l_type)
         oLOver: "IDelaunayLOverSQRTmu" = clr.Convert(self.m_oDelaunay.l, IDelaunayLOverSQRTmu)
         Assert.assertIsNotNone(oLOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
@@ -1850,7 +1787,7 @@ class OrbitStateHelper(object):
 
         try:
             bCaught = False
-            self.m_oDelaunay.l_type = AgEDelaunayLType.eDelaunayLTypeUnknown
+            self.m_oDelaunay.l_type = DELAUNAY_L_TYPE.UNKNOWN
 
         except Exception as e:
             bCaught = True
@@ -1865,9 +1802,9 @@ class OrbitStateHelper(object):
     def DelaunayHTest(self):
         Assert.assertIsNotNone(self.m_oDelaunay)
         self.m_logger.WriteLine6("\t\tCurrent HType is: {0}", self.m_oDelaunay.h_type)
-        self.m_oDelaunay.h_type = AgEDelaunayHType.eH
+        self.m_oDelaunay.h_type = DELAUNAY_H_TYPE.H
         self.m_logger.WriteLine6("\t\tNew HType is: {0}", self.m_oDelaunay.h_type)
-        Assert.assertEqual(AgEDelaunayHType.eH, self.m_oDelaunay.h_type)
+        Assert.assertEqual(DELAUNAY_H_TYPE.H, self.m_oDelaunay.h_type)
         oH: "IDelaunayH" = clr.Convert(self.m_oDelaunay.h, IDelaunayH)
         Assert.assertIsNotNone(oH)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
@@ -1888,9 +1825,9 @@ class OrbitStateHelper(object):
         if not bCaught:
             Assert.fail("Cannot set H out of bounds")
 
-        self.m_oDelaunay.h_type = AgEDelaunayHType.eHOverSQRTmu
+        self.m_oDelaunay.h_type = DELAUNAY_H_TYPE.H_OVER_SQR_TMU
         self.m_logger.WriteLine6("\t\tNew HType is: {0}", self.m_oDelaunay.h_type)
-        Assert.assertEqual(AgEDelaunayHType.eHOverSQRTmu, self.m_oDelaunay.h_type)
+        Assert.assertEqual(DELAUNAY_H_TYPE.H_OVER_SQR_TMU, self.m_oDelaunay.h_type)
         oHOver: "IDelaunayHOverSQRTmu" = clr.Convert(self.m_oDelaunay.h, IDelaunayHOverSQRTmu)
         Assert.assertIsNotNone(oHOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
@@ -1912,7 +1849,7 @@ class OrbitStateHelper(object):
 
         try:
             bCaught = False
-            self.m_oDelaunay.h_type = AgEDelaunayHType.eDelaunayHTypeUnknown
+            self.m_oDelaunay.h_type = DELAUNAY_H_TYPE.UNKNOWN
 
         except Exception as e:
             bCaught = True
@@ -1927,9 +1864,9 @@ class OrbitStateHelper(object):
     def DelaunayGTest(self):
         Assert.assertIsNotNone(self.m_oDelaunay)
         self.m_logger.WriteLine6("\t\tCurrent GType is: {0}", self.m_oDelaunay.g_type)
-        self.m_oDelaunay.g_type = AgEDelaunayGType.eG
+        self.m_oDelaunay.g_type = DELAUNAY_G_TYPE.G
         self.m_logger.WriteLine6("\t\tNew GType is: {0}", self.m_oDelaunay.g_type)
-        Assert.assertEqual(AgEDelaunayGType.eG, self.m_oDelaunay.g_type)
+        Assert.assertEqual(DELAUNAY_G_TYPE.G, self.m_oDelaunay.g_type)
         oG: "IDelaunayG" = clr.Convert(self.m_oDelaunay.g, IDelaunayG)
         Assert.assertIsNotNone(oG)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
@@ -1950,9 +1887,9 @@ class OrbitStateHelper(object):
         if not bCaught:
             Assert.fail("Cannot set G out of bounds")
 
-        self.m_oDelaunay.g_type = AgEDelaunayGType.eGOverSQRTmu
+        self.m_oDelaunay.g_type = DELAUNAY_G_TYPE.G_OVER_SQR_TMU
         self.m_logger.WriteLine6("\t\tNew GType is: {0}", self.m_oDelaunay.g_type)
-        Assert.assertEqual(AgEDelaunayGType.eGOverSQRTmu, self.m_oDelaunay.g_type)
+        Assert.assertEqual(DELAUNAY_G_TYPE.G_OVER_SQR_TMU, self.m_oDelaunay.g_type)
         oGOver: "IDelaunayGOverSQRTmu" = clr.Convert(self.m_oDelaunay.g, IDelaunayGOverSQRTmu)
         Assert.assertIsNotNone(oGOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
@@ -1974,7 +1911,7 @@ class OrbitStateHelper(object):
 
         try:
             bCaught = False
-            self.m_oDelaunay.g_type = AgEDelaunayGType.eDelaunayGTypeUnknown
+            self.m_oDelaunay.g_type = DELAUNAY_G_TYPE.UNKNOWN
 
         except Exception as e:
             bCaught = True
@@ -2002,7 +1939,7 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), AgECoordinateSystem),
+                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
             )
 
             iIndex += 1
@@ -2011,15 +1948,13 @@ class OrbitStateHelper(object):
             "\t\tCurrent CoordinateSystem type is: {0}", self.m_oEquinoctial.coordinate_system_type
         )
         # eCoordinateSystemAlignmentAtEpoch
-        self.CoordinateSystemTest(
-            self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch
-        )
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
         # eCoordinateSystemB1950
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemB1950)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.B1950)
         try:
             bCaught = False
             # eCoordinateSystemFixed
-            self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemFixed)
+            self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.FIXED)
 
         except Exception as e:
             bCaught = True
@@ -2029,42 +1964,32 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set eCoordinateSystemFixed")
 
         # eCoordinateSystemJ2000
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemJ2000)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.J2000)
         # eCoordinateSystemICRF
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemICRF)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.ICRF)
         # eCoordinateSystemMeanOfDate
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfDate)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
         # eCoordinateSystemMeanOfEpoch
-        self.CoordinateSystemTest(
-            self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfEpoch
-        )
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
         # eCoordinateSystemTEMEOfDate
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfDate)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
         # eCoordinateSystemTEMEOfEpoch
-        self.CoordinateSystemTest(
-            self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch
-        )
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
         # eCoordinateSystemTrueOfDate
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfDate)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
         # eCoordinateSystemTrueOfEpoch
-        self.CoordinateSystemTest(
-            self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch
-        )
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(
-                self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
-            )
+            self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
 
         except:
             self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
 
         # eCoordinateSystemUnknown
         try:
-            self.CoordinateSystemTest(
-                self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemUnknown
-            )
-            Assert.fail("Cannot set AgECoordinateSystem.eCoordinateSystemUnknown.")
+            self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
+            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2092,7 +2017,7 @@ class OrbitStateHelper(object):
         self.m_oEquinoctial.p = 3.45678912
         self.m_oEquinoctial.q = 4.56789123
         self.m_oEquinoctial.mean_longitude = 5.67891234
-        self.m_oEquinoctial.formulation = AgEEquinoctialFormulation.eFormulationPosigrade
+        self.m_oEquinoctial.formulation = EQUINOCTIAL_FORMULATION.FORMULATION_POSIGRADE
         self.m_logger.WriteLine("\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t H is: {0}", self.m_oEquinoctial.h)
         self.m_logger.WriteLine6("\t\t\t K is: {0}", self.m_oEquinoctial.k)
@@ -2105,10 +2030,10 @@ class OrbitStateHelper(object):
         Assert.assertEqual(3.45678912, self.m_oEquinoctial.p)
         Assert.assertEqual(4.56789123, self.m_oEquinoctial.q)
         Assert.assertEqual(5.67891234, self.m_oEquinoctial.mean_longitude)
-        Assert.assertEqual(AgEEquinoctialFormulation.eFormulationPosigrade, self.m_oEquinoctial.formulation)
-        self.m_oEquinoctial.formulation = AgEEquinoctialFormulation.eFormulationRetrograde
+        Assert.assertEqual(EQUINOCTIAL_FORMULATION.FORMULATION_POSIGRADE, self.m_oEquinoctial.formulation)
+        self.m_oEquinoctial.formulation = EQUINOCTIAL_FORMULATION.FORMULATION_RETROGRADE
         self.m_logger.WriteLine6("\t\t\t Formulation is: {0}", self.m_oEquinoctial.formulation)
-        Assert.assertEqual(AgEEquinoctialFormulation.eFormulationRetrograde, self.m_oEquinoctial.formulation)
+        Assert.assertEqual(EQUINOCTIAL_FORMULATION.FORMULATION_RETROGRADE, self.m_oEquinoctial.formulation)
         # out of bounds
         try:
             bCaught = False
@@ -2172,11 +2097,11 @@ class OrbitStateHelper(object):
 
         # SizeShape test
         self.m_logger.WriteLine6("\t\tCurrent SizeShape type is: {0}", self.m_oEquinoctial.size_shape_type)
-        self.EquinoctialSizeShape(AgEEquinoctialSizeShape.eEquinoctialSizeShapeMeanMotion)
-        self.EquinoctialSizeShape(AgEEquinoctialSizeShape.eEquinoctialSizeShapeSemimajorAxis)
+        self.EquinoctialSizeShape(EQUINOCTIAL_SIZE_SHAPE.MEAN_MOTION)
+        self.EquinoctialSizeShape(EQUINOCTIAL_SIZE_SHAPE.SEMIMAJOR_AXIS)
         try:
-            self.EquinoctialSizeShape(AgEEquinoctialSizeShape.eEquinoctialSizeShapeUnknown)
-            Assert.fail("Cannot set AgEEquinoctialSizeShape.eEquinoctialSizeShapeUnknown.")
+            self.EquinoctialSizeShape(EQUINOCTIAL_SIZE_SHAPE.UNKNOWN)
+            Assert.fail("Cannot set EQUINOCTIAL_SIZE_SHAPE.eEquinoctialSizeShapeUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2187,17 +2112,17 @@ class OrbitStateHelper(object):
     # endregion
 
     # region EquinoctialSizeShape
-    def EquinoctialSizeShape(self, eShapeType: "AgEEquinoctialSizeShape"):
+    def EquinoctialSizeShape(self, eShapeType: "EQUINOCTIAL_SIZE_SHAPE"):
         Assert.assertIsNotNone(self.m_oEquinoctial)
         # set shape type
         self.m_oEquinoctial.size_shape_type = eShapeType
         self.m_logger.WriteLine6("\t\tNew SizeShape type is: {0}", self.m_oEquinoctial.size_shape_type)
         Assert.assertEqual(eShapeType, self.m_oEquinoctial.size_shape_type)
-        if eShapeType == AgEEquinoctialSizeShape.eEquinoctialSizeShapeMeanMotion:
+        if eShapeType == EQUINOCTIAL_SIZE_SHAPE.MEAN_MOTION:
             self.EquinoctialSizeShapeMeanMotion(
                 clr.Convert(self.m_oEquinoctial.size_shape, IEquinoctialSizeShapeMeanMotion)
             )
-        elif eShapeType == AgEEquinoctialSizeShape.eEquinoctialSizeShapeSemimajorAxis:
+        elif eShapeType == EQUINOCTIAL_SIZE_SHAPE.SEMIMAJOR_AXIS:
             self.EquinoctialSizeShapeSemimajorAxis(
                 clr.Convert(self.m_oEquinoctial.size_shape, IEquinoctialSizeShapeSemimajorAxis)
             )
@@ -2284,20 +2209,20 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), AgECoordinateSystem),
+                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
             )
 
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oMixed.coordinate_system_type)
         # eCoordinateSystemAlignmentAtEpoch
-        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch)
+        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
         # eCoordinateSystemB1950
-        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemB1950)
+        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.B1950)
         try:
             bCaught = False
             # eCoordinateSystemFixed
-            self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemFixed)
+            self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.FIXED)
 
         except Exception as e:
             bCaught = True
@@ -2307,34 +2232,32 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set eCoordinateSystemFixed")
 
         # eCoordinateSystemJ2000
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemJ2000)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.J2000)
         # eCoordinateSystemICRF
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemICRF)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.ICRF)
         # eCoordinateSystemMeanOfDate
-        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfDate)
+        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
         # eCoordinateSystemMeanOfEpoch
-        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfEpoch)
+        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
         # eCoordinateSystemTEMEOfDate
-        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfDate)
+        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
         # eCoordinateSystemTEMEOfEpoch
-        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch)
+        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
         # eCoordinateSystemTrueOfDate
-        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfDate)
+        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
         # eCoordinateSystemTrueOfEpoch
-        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch)
+        self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(
-                self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
-            )
+            self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
 
         except:
             self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
 
         # eCoordinateSystemUnknown
         try:
-            self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, AgECoordinateSystem.eCoordinateSystemUnknown)
-            Assert.fail("Cannot set AgECoordinateSystem.eCoordinateSystemUnknown.")
+            self.CoordinateSystemTest(self.m_oMixed.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
+            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2430,9 +2353,9 @@ class OrbitStateHelper(object):
 
         # FPA (Horizontal) test
         self.m_logger.WriteLine6("\t\tCurrent FPA type is: {0}", self.m_oMixed.fpa_type)
-        self.m_oMixed.fpa_type = AgEMixedSphericalFPA.eFPAHorizontal
+        self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_HORIZONTAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.fpa_type)
-        Assert.assertEqual(AgEMixedSphericalFPA.eFPAHorizontal, self.m_oMixed.fpa_type)
+        Assert.assertEqual(MIXED_SPHERICAL_FPA.FPA_HORIZONTAL, self.m_oMixed.fpa_type)
         oHorizontal: "IMixedSphericalFPAHorizontal" = clr.Convert(self.m_oMixed.fpa, IMixedSphericalFPAHorizontal)
         Assert.assertIsNotNone(oHorizontal)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.fpa)
@@ -2451,9 +2374,9 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set FPA out of bounds")
 
         # FPA (Vertical) test
-        self.m_oMixed.fpa_type = AgEMixedSphericalFPA.eFPAVertical
+        self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_VERTICAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.fpa_type)
-        Assert.assertEqual(AgEMixedSphericalFPA.eFPAVertical, self.m_oMixed.fpa_type)
+        Assert.assertEqual(MIXED_SPHERICAL_FPA.FPA_VERTICAL, self.m_oMixed.fpa_type)
         oVertical: "IMixedSphericalFPAVertical" = clr.Convert(self.m_oMixed.fpa, IMixedSphericalFPAVertical)
         Assert.assertIsNotNone(oVertical)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.fpa)
@@ -2473,8 +2396,8 @@ class OrbitStateHelper(object):
 
         # FPA (Vertical) test
         try:
-            self.m_oMixed.fpa_type = AgEMixedSphericalFPA.eFPAUnknown
-            Assert.fail("Cannot set AgEMixedSphericalFPA.eFPAUnknown.")
+            self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_UNKNOWN
+            Assert.fail("Cannot set MIXED_SPHERICAL_FPA.eFPAUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2506,49 +2429,45 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), AgECoordinateSystem),
+                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
             )
 
             iIndex += 1
 
         self.m_logger.WriteLine6("\t\tCurrent CoordinateSystem type is: {0}", self.m_oSpherical.coordinate_system_type)
         # eCoordinateSystemAlignmentAtEpoch
-        self.CoordinateSystemTest(
-            self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemAlignmentAtEpoch
-        )
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH)
         # eCoordinateSystemB1950
-        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemB1950)
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.B1950)
         # eCoordinateSystemFixed
-        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemFixed)
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.FIXED)
         # eCoordinateSystemJ2000
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemJ2000)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.J2000)
         # eCoordinateSystemICRF
-        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, AgECoordinateSystem.eCoordinateSystemICRF)
+        self.CoordinateSystemTest(self.m_oEquinoctial.orbit_state_type, COORDINATE_SYSTEM.ICRF)
         # eCoordinateSystemMeanOfDate
-        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfDate)
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_DATE)
         # eCoordinateSystemMeanOfEpoch
-        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemMeanOfEpoch)
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.MEAN_OF_EPOCH)
         # eCoordinateSystemTEMEOfDate
-        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfDate)
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_DATE)
         # eCoordinateSystemTEMEOfEpoch
-        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTEMEOfEpoch)
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TEME_OF_EPOCH)
         # eCoordinateSystemTrueOfDate
-        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfDate)
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_DATE)
         # eCoordinateSystemTrueOfEpoch
-        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfEpoch)
+        self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         try:
             # eCoordinateSystemTrueOfRefDate
-            self.CoordinateSystemTest(
-                self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemTrueOfRefDate
-            )
+            self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_REF_DATE)
 
         except:
             self.m_logger.WriteLine("\t\tThe eCoordinateSystemTrueOfRefDate does not supported by current licenses.")
 
         # eCoordinateSystemUnknown
         try:
-            self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, AgECoordinateSystem.eCoordinateSystemUnknown)
-            Assert.fail("Cannot set AgECoordinateSystem.eCoordinateSystemUnknown.")
+            self.CoordinateSystemTest(self.m_oSpherical.orbit_state_type, COORDINATE_SYSTEM.UNKNOWN)
+            Assert.fail("Cannot set COORDINATE_SYSTEM.eCoordinateSystemUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2644,9 +2563,9 @@ class OrbitStateHelper(object):
 
         # FPA (Horizontal) test
         self.m_logger.WriteLine6("\t\tCurrent FPA type is: {0}", self.m_oSpherical.fpa_type)
-        self.m_oSpherical.fpa_type = AgESphericalFPA.eSphericalFPAHorizontal
+        self.m_oSpherical.fpa_type = SPHERICAL_FPA.HORIZONTAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.fpa_type)
-        Assert.assertEqual(AgESphericalFPA.eSphericalFPAHorizontal, self.m_oSpherical.fpa_type)
+        Assert.assertEqual(SPHERICAL_FPA.HORIZONTAL, self.m_oSpherical.fpa_type)
         oHorizontal: "ISphericalFPAHorizontal" = clr.Convert(self.m_oSpherical.fpa, ISphericalFPAHorizontal)
         Assert.assertIsNotNone(oHorizontal)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.fpa)
@@ -2665,9 +2584,9 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set FPA out of bounds")
 
         # FPA (Vertical) test
-        self.m_oSpherical.fpa_type = AgESphericalFPA.eSphericalFPAVertical
+        self.m_oSpherical.fpa_type = SPHERICAL_FPA.VERTICAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.fpa_type)
-        Assert.assertEqual(AgESphericalFPA.eSphericalFPAVertical, self.m_oSpherical.fpa_type)
+        Assert.assertEqual(SPHERICAL_FPA.VERTICAL, self.m_oSpherical.fpa_type)
         oVertical: "ISphericalFPAVertical" = clr.Convert(self.m_oSpherical.fpa, ISphericalFPAVertical)
         Assert.assertIsNotNone(oVertical)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.fpa)
@@ -2687,8 +2606,8 @@ class OrbitStateHelper(object):
 
         # FPA (Vertical) test
         try:
-            self.m_oSpherical.fpa_type = AgESphericalFPA.eSphericalFPAUnknown
-            Assert.fail("Cannot set AgESphericalFPA.eSphericalFPAUnknown.")
+            self.m_oSpherical.fpa_type = SPHERICAL_FPA.UNKNOWN
+            Assert.fail("Cannot set SPHERICAL_FPA.eSphericalFPAUnknown.")
 
         except AssertionError as e:
             Assert.fail(str(e))

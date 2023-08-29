@@ -30,11 +30,11 @@ class Astrogator(CodeSnippetsTestBase):
     def setUp(self):
         Astrogator.m_Satellite = clr.Convert(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eSatellite, Astrogator.m_DefaultName
+                STK_OBJECT_TYPE.SATELLITE, Astrogator.m_DefaultName
             ),
             ISatellite,
         )
-        Astrogator.m_Satellite.set_propagator_type(AgEVePropagatorType.ePropagatorAstrogator)
+        Astrogator.m_Satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
         Astrogator.m_Object = clr.CastAs(Astrogator.m_Satellite.propagator, IDriverMissionControlSequence)
         CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
 
@@ -52,7 +52,7 @@ class Astrogator(CodeSnippetsTestBase):
         self.ConfigureAstrogratorPropagator(Astrogator.m_Satellite)
 
     def ConfigureAstrogratorPropagator(self, satellite: "ISatellite"):
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorAstrogator)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
 
         driver: "IDriverMissionControlSequence" = clr.CastAs(satellite.propagator, IDriverMissionControlSequence)
 
@@ -75,7 +75,7 @@ class Astrogator(CodeSnippetsTestBase):
     def ConfigureInitialStateSegment(self, driver: "IDriverMissionControlSequence"):
         # Add a new segment and cast the segment to the IMissionControlSequenceInitialState interface
         segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            AgEVASegmentType.eVASegmentTypeInitialState, "Inner Orbit", "-"
+            VA_SEGMENT_TYPE.INITIAL_STATE, "Inner Orbit", "-"
         )
         initState: "IMissionControlSequenceInitialState" = clr.CastAs(segment, IMissionControlSequenceInitialState)
 
@@ -84,7 +84,7 @@ class Astrogator(CodeSnippetsTestBase):
 
         # Set element type and cast the Element property to the appropriate interface
         # configure the element as necessary
-        initState.set_element_type(AgEVAElementType.eVAElementTypeCartesian)
+        initState.set_element_type(VA_ELEMENT_TYPE.CARTESIAN)
         cartesian: "IElementCartesian" = clr.CastAs(initState.element, IElementCartesian)
         cartesian.vx = 8051.21
         cartesian.y = 55
@@ -119,7 +119,7 @@ class Astrogator(CodeSnippetsTestBase):
     def ConfigurePropagateSegment(self, driver: "IDriverMissionControlSequence"):
         # Add a propagate segment to our sequence
         segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            AgEVASegmentType.eVASegmentTypePropagate, "Propagate", "-"
+            VA_SEGMENT_TYPE.PROPAGATE, "Propagate", "-"
         )
         propagate: "IMissionControlSequencePropagate" = clr.CastAs(segment, IMissionControlSequencePropagate)
         propagate.propagator_name = "Earth Point Mass"
@@ -149,24 +149,22 @@ class Astrogator(CodeSnippetsTestBase):
     def ConfigureTargetSequenceSegment(self, driver: "IDriverMissionControlSequence"):
         # First add a sequence target
         segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            AgEVASegmentType.eVASegmentTypeTargetSequence, "Start Transfer", "-"
+            VA_SEGMENT_TYPE.TARGET_SEQUENCE, "Start Transfer", "-"
         )
         targetSequence: "IMissionControlSequenceTargetSequence" = clr.CastAs(
             segment, IMissionControlSequenceTargetSequence
         )
 
-        targetSequence.action = AgEVATargetSeqAction.eVATargetSeqActionRunActiveProfiles
-        targetSequence.when_profiles_finish = AgEVAProfilesFinish.eVAProfilesFinishRunToReturnAndContinue
+        targetSequence.action = VA_TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targetSequence.when_profiles_finish = VA_PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
         targetSequence.continue_on_failure = False
 
         # Add as many child segments to target
         dv1: "IMissionControlSequenceManeuver" = clr.CastAs(
-            targetSequence.segments.insert(AgEVASegmentType.eVASegmentTypeManeuver, "DV1", "-"),
-            IMissionControlSequenceManeuver,
+            targetSequence.segments.insert(VA_SEGMENT_TYPE.MANEUVER, "DV1", "-"), IMissionControlSequenceManeuver
         )
         dv2: "IMissionControlSequenceManeuver" = clr.CastAs(
-            targetSequence.segments.insert(AgEVASegmentType.eVASegmentTypeManeuver, "DV2", "-"),
-            IMissionControlSequenceManeuver,
+            targetSequence.segments.insert(VA_SEGMENT_TYPE.MANEUVER, "DV2", "-"), IMissionControlSequenceManeuver
         )
 
         # Add more profiles if necessary
@@ -175,7 +173,7 @@ class Astrogator(CodeSnippetsTestBase):
             newProfile: "IProfile" = targetSequence.profiles.add(profileName)
 
         # Enable controls
-        dv1.enable_control_parameter(AgEVAControlManeuver.eVAControlManeuverImpulsiveCartesianX)
+        dv1.enable_control_parameter(VA_CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
         dc: "IProfileDifferentialCorrector" = clr.CastAs(
             targetSequence.profiles["Differential Corrector"], IProfileDifferentialCorrector
         )
@@ -193,8 +191,8 @@ class Astrogator(CodeSnippetsTestBase):
         # Confiure the differential corrector
         dc.max_iterations = 50
         dc.enable_display_status = True
-        dc.mode = AgEVAProfileMode.eVAProfileModeIterate
-        targetSequence.action = AgEVATargetSeqAction.eVATargetSeqActionRunActiveProfiles
+        dc.mode = VA_PROFILE_MODE.ITERATE
+        targetSequence.action = VA_TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
 
     # endregion
 
@@ -204,9 +202,7 @@ class Astrogator(CodeSnippetsTestBase):
 
     def ConfigureLaunchSegment(self, driver: "IDriverMissionControlSequence"):
         # Add launch sequence and retrieve the
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            AgEVASegmentType.eVASegmentTypeLaunch, "MyLaunch", "-"
-        )
+        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(VA_SEGMENT_TYPE.LAUNCH, "MyLaunch", "-")
         launch: "IMissionControlSequenceLaunch" = clr.CastAs(segment, IMissionControlSequenceLaunch)
 
         # Configure launch properties
@@ -216,28 +212,28 @@ class Astrogator(CodeSnippetsTestBase):
         launch.use_previous_segment_state = False
         launch.pre_launch_time = 1
         launch.time_of_flight = 500
-        launch.ascent_type = AgEVAAscentType.eVAAscentTypeEllipseQuarticMotion
+        launch.ascent_type = VA_ASCENT_TYPE.ELLIPSE_QUARTIC_MOTION
         launch.initial_acceleration = 0.02
 
         # Configure display type
-        launch.set_display_system_type(AgEVALaunchDisplaySystem.eVADisplaySystemGeocentric)
+        launch.set_display_system_type(VA_LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEOCENTRIC)
         llr: "IDisplaySystemGeocentric" = clr.Convert(launch.display_system, IDisplaySystemGeocentric)
         llr.latitude = 35.581
         llr.longitude = -92.263
         llr.radius = 1000
 
         # Configure launch type
-        launch.ascent_type = AgEVAAscentType.eVAAscentTypeEllipseQuarticMotion
+        launch.ascent_type = VA_ASCENT_TYPE.ELLIPSE_QUARTIC_MOTION
         launch.initial_acceleration = 0.02
-        launch.ascent_type = AgEVAAscentType.eVAAscentTypeEllipseCubicMotion
+        launch.ascent_type = VA_ASCENT_TYPE.ELLIPSE_CUBIC_MOTION
 
         # Configure burnout type
         velocity: "IBurnoutVelocity" = launch.burnout_velocity
-        velocity.burnout_option = AgEVABurnoutOptions.eVABurnoutOptionsInertialVelocity
+        velocity.burnout_option = VA_BURNOUT_OPTIONS.INERTIAL_VELOCITY
         velocity.inertial_velocity = 20.0
         velocity.inertial_horizontal_fpa = 22
         velocity.inertial_velocity_azimuth = 55
-        velocity.burnout_option = AgEVABurnoutOptions.eVABurnoutOptionsFixedVelocity
+        velocity.burnout_option = VA_BURNOUT_OPTIONS.FIXED_VELOCITY
         velocity.fixed_velocity = 20
 
     # endregion
@@ -248,34 +244,22 @@ class Astrogator(CodeSnippetsTestBase):
 
     def ConfigureUpdateSegment(self, driver: "IDriverMissionControlSequence"):
         # Add launch sequence and retrieve the
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            AgEVASegmentType.eVASegmentTypeUpdate, "MyUpdate", "-"
-        )
+        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(VA_SEGMENT_TYPE.UPDATE, "MyUpdate", "-")
         update: "IMissionControlSequenceUpdate" = clr.CastAs(segment, IMissionControlSequenceUpdate)
 
         # Specify the element to be changed, the action, and the value
 
         # Add values
-        update.set_action_and_value(AgEVAUpdateParam.eVAUpdateParamCd, AgEVAUpdateAction.eVAUpdateActionAddValue, 2)
-        update.set_action_and_value(
-            AgEVAUpdateParam.eVAUpdateParamFuelDensity, AgEVAUpdateAction.eVAUpdateActionAddValue, 1
-        )
+        update.set_action_and_value(VA_UPDATE_PARAM.CD, VA_UPDATE_ACTION.ADD_VALUE, 2)
+        update.set_action_and_value(VA_UPDATE_PARAM.FUEL_DENSITY, VA_UPDATE_ACTION.ADD_VALUE, 1)
 
         # Set to new value
-        update.set_action_and_value(
-            AgEVAUpdateParam.eVAUpdateParamTankPressure, AgEVAUpdateAction.eVAUpdateActionSetToNewValue, 6000
-        )
-        update.set_action_and_value(
-            AgEVAUpdateParam.eVAUpdateParamTankTemp, AgEVAUpdateAction.eVAUpdateActionSetToNewValue, 5
-        )
+        update.set_action_and_value(VA_UPDATE_PARAM.TANK_PRESSURE, VA_UPDATE_ACTION.SET_TO_NEW_VALUE, 6000)
+        update.set_action_and_value(VA_UPDATE_PARAM.TANK_TEMP, VA_UPDATE_ACTION.SET_TO_NEW_VALUE, 5)
 
         # Subtract values
-        update.set_action_and_value(
-            AgEVAUpdateParam.eVAUpdateParamSRPArea, AgEVAUpdateAction.eVAUpdateActionSubtractValue, 10
-        )
-        update.set_action_and_value(
-            AgEVAUpdateParam.eVAUpdateParamSRPArea, AgEVAUpdateAction.eVAUpdateActionSubtractValue, 1
-        )
+        update.set_action_and_value(VA_UPDATE_PARAM.SRP_AREA, VA_UPDATE_ACTION.SUBTRACT_VALUE, 10)
+        update.set_action_and_value(VA_UPDATE_PARAM.SRP_AREA, VA_UPDATE_ACTION.SUBTRACT_VALUE, 1)
 
     # endregion
 
@@ -286,22 +270,22 @@ class Astrogator(CodeSnippetsTestBase):
     def ConfigureManeuverSegment(self, driver: "IDriverMissionControlSequence"):
         # Add launch sequence and retrieve the IMissionControlSequenceManeuver interface
         segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            AgEVASegmentType.eVASegmentTypeManeuver, "MyManeuver", "-"
+            VA_SEGMENT_TYPE.MANEUVER, "MyManeuver", "-"
         )
         maneuver: "IMissionControlSequenceManeuver" = clr.CastAs(segment, IMissionControlSequenceManeuver)
 
         # Set Maneuver to Impulsive
-        maneuver.set_maneuver_type(AgEVAManeuverType.eVAManeuverTypeImpulsive)
+        maneuver.set_maneuver_type(VA_MANEUVER_TYPE.IMPULSIVE)
         impulse: "IManeuverImpulsive" = clr.CastAs(maneuver.maneuver, IManeuverImpulsive)
 
         # Set Impulsive attitude to VelocityVector
-        impulse.set_attitude_control_type(AgEVAAttitudeControl.eVAAttitudeControlVelocityVector)
+        impulse.set_attitude_control_type(VA_ATTITUDE_CONTROL.VELOCITY_VECTOR)
         velVec: "IAttitudeControlImpulsiveVelocityVector" = clr.CastAs(
             impulse.attitude_control, IAttitudeControlImpulsiveVelocityVector
         )
         velVec.delta_v_magnitude = 1.0
 
-        impulse.set_propulsion_method(AgEVAPropulsionMethod.eVAPropulsionMethodThrusterSet, "Thruster Set")
+        impulse.set_propulsion_method(VA_PROPULSION_METHOD.THRUSTER_SET, "Thruster Set")
         impulse.update_mass = True
 
     # endregion
@@ -313,13 +297,13 @@ class Astrogator(CodeSnippetsTestBase):
     def ConfigureSequenceSegmentWithScriptingTool(self, driver: "IDriverMissionControlSequence"):
         # Add launch sequence and retrieve the
         segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            AgEVASegmentType.eVASegmentTypeSequence, "MySequence", "-"
+            VA_SEGMENT_TYPE.SEQUENCE, "MySequence", "-"
         )
         sequence: "IMissionControlSequenceSequence" = clr.CastAs(segment, IMissionControlSequenceSequence)
 
         scriptTool: "IScriptingTool" = sequence.scripting_tool
         scriptTool.enable = True
-        scriptTool.language_type = AgEVALanguage.eVALanguageVBScript
+        scriptTool.language_type = VA_LANGUAGE.VB_SCRIPT
         scriptTool.script_text(
             r"""
             DeltaArg = dArg
@@ -381,7 +365,7 @@ class Astrogator(CodeSnippetsTestBase):
 
     # region ConfigureTargetSequenceWithDC
     def test_ConfigureTargetSequenceWithDC(self):
-        Astrogator.m_Object.main_sequence.insert(AgEVASegmentType.eVASegmentTypeTargetSequence, "Start Transfer", "-")
+        Astrogator.m_Object.main_sequence.insert(VA_SEGMENT_TYPE.TARGET_SEQUENCE, "Start Transfer", "-")
         self.ConfigureTargetSequenceWithDC(Astrogator.m_Object)
 
     def ConfigureTargetSequenceWithDC(self, driver: "IDriverMissionControlSequence"):
@@ -398,7 +382,7 @@ class Astrogator(CodeSnippetsTestBase):
             # Configure differential corrector
             dc.clear_corrections_before_run = True
             dc.convergence_criteria = (
-                AgEVAConvergenceCriteria.eVAConvervenceCriteriaEitherEqualityConstraintsOrControlParams
+                VA_CONVERGENCE_CRITERIA.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS
             )
             dc.enable_b_plane_nominal = False
             dc.enable_b_plane_perturbations = False
@@ -423,18 +407,16 @@ class Astrogator(CodeSnippetsTestBase):
         self.SetUserDefinedMuValueOnThirdBody(clr.CastAs(TestBase.Application.current_scenario, IScenario))
 
     def SetUserDefinedMuValueOnThirdBody(self, scenario: "IScenario"):
-        compInfoCol: "IComponentInfoCollection" = scenario.component_directory.get_components(
-            AgEComponent.eComponentAstrogator
-        )
+        compInfoCol: "IComponentInfoCollection" = scenario.component_directory.get_components(COMPONENT.ASTROGATOR)
         thirdBodyFolder: "IComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
             "Third Bodies"
         )
         newMoon: "IThirdBodyFunction" = clr.CastAs(
             thirdBodyFolder.duplicate_component("Moon", "NewMoon"), IThirdBodyFunction
         )
-        newMoon.set_mode_type(AgEVAThirdBodyMode.eVAThirdBodyModePointMass)
+        newMoon.set_mode_type(VA_THIRD_BODY_MODE.POINT_MASS)
         pointMass: "IPointMassFunction" = clr.CastAs(newMoon.mode, IPointMassFunction)
-        pointMass.grav_source = AgEVAGravParamSource.eVAGravParamSourceUser
+        pointMass.grav_source = VA_GRAV_PARAM_SOURCE.USER
         pointMass.mu = 390000.0
 
     # endregion
@@ -446,17 +428,15 @@ class Astrogator(CodeSnippetsTestBase):
         )
 
     def SetUserDefinedMuValueOnThirdBodyFromPropagators(self, scenario: "IScenario"):
-        compInfoCol: "IComponentInfoCollection" = scenario.component_directory.get_components(
-            AgEComponent.eComponentAstrogator
-        )
+        compInfoCol: "IComponentInfoCollection" = scenario.component_directory.get_components(COMPONENT.ASTROGATOR)
         propagatorFolder: "IComponentInfoCollection" = compInfoCol.get_folder("Propagators")
         myEathHPOP: "INumericalPropagatorWrapper" = clr.CastAs(
             propagatorFolder.duplicate_component("Earth HPOP Default v10", "myEathHPOP"), INumericalPropagatorWrapper
         )
         moon: "IThirdBodyFunction" = clr.CastAs(myEathHPOP.propagator_functions["Moon"], IThirdBodyFunction)
-        moon.set_mode_type(AgEVAThirdBodyMode.eVAThirdBodyModePointMass)
+        moon.set_mode_type(VA_THIRD_BODY_MODE.POINT_MASS)
         pointMass: "IPointMassFunction" = clr.CastAs(moon.mode, IPointMassFunction)
-        pointMass.grav_source = AgEVAGravParamSource.eVAGravParamSourceUser
+        pointMass.grav_source = VA_GRAV_PARAM_SOURCE.USER
         pointMass.mu = 390000.0
 
     # endregion

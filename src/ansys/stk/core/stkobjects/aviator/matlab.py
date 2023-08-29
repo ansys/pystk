@@ -10,12 +10,12 @@ import typing
 from ctypes   import byref, POINTER
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
@@ -518,16 +518,16 @@ class IStrategyMATLAB3DGuidance(object):
             agcls.evaluate_hresult(self.__dict__["_set_display_output"](arg_newVal.COM_val))
 
     @property
-    def closure_mode(self) -> "AgEAvtrClosureMode":
+    def closure_mode(self) -> "AVTR_CLOSURE_MODE":
         """The closure mode for the guidance strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrClosureMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_CLOSURE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_closure_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @closure_mode.setter
-    def closure_mode(self, newVal:"AgEAvtrClosureMode") -> None:
+    def closure_mode(self, newVal:"AVTR_CLOSURE_MODE") -> None:
         """The closure mode for the guidance strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrClosureMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_CLOSURE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_closure_mode"](arg_newVal.COM_val))
 
     @property

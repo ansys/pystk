@@ -37,7 +37,7 @@ class GfxRangeContoursHelper(object):
         Assert.assertFalse(oContours.is_fill_visible)
 
         def action1():
-            oContours.fill_style = AgEFillStyle.eFillStyleHatch
+            oContours.fill_style = FILL_STYLE.HATCH
 
         TryCatchAssertBlock.DoAssert("Should not allow to modify a readonly property.", action1)
         oContours.is_fill_visible = True
@@ -45,30 +45,30 @@ class GfxRangeContoursHelper(object):
         Assert.assertTrue(oContours.is_fill_visible)
         # FillStyle
         self.m_logger.WriteLine6("\tThe current FillStyle is: {0}", oContours.fill_style)
-        oContours.fill_style = AgEFillStyle.eFillStyleDiagonalHatch
+        oContours.fill_style = FILL_STYLE.DIAGONAL_HATCH
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(AgEFillStyle.eFillStyleDiagonalHatch, oContours.fill_style)
-        oContours.fill_style = AgEFillStyle.eFillStyleDiagonalStripe1
+        Assert.assertEqual(FILL_STYLE.DIAGONAL_HATCH, oContours.fill_style)
+        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE1
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(AgEFillStyle.eFillStyleDiagonalStripe1, oContours.fill_style)
-        oContours.fill_style = AgEFillStyle.eFillStyleDiagonalStripe2
+        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE1, oContours.fill_style)
+        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE2
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(AgEFillStyle.eFillStyleDiagonalStripe2, oContours.fill_style)
-        oContours.fill_style = AgEFillStyle.eFillStyleHatch
+        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE2, oContours.fill_style)
+        oContours.fill_style = FILL_STYLE.HATCH
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(AgEFillStyle.eFillStyleHatch, oContours.fill_style)
-        oContours.fill_style = AgEFillStyle.eFillStyleHorizontalStripe
+        Assert.assertEqual(FILL_STYLE.HATCH, oContours.fill_style)
+        oContours.fill_style = FILL_STYLE.HORIZONTAL_STRIPE
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(AgEFillStyle.eFillStyleHorizontalStripe, oContours.fill_style)
-        oContours.fill_style = AgEFillStyle.eFillStyleScreen
+        Assert.assertEqual(FILL_STYLE.HORIZONTAL_STRIPE, oContours.fill_style)
+        oContours.fill_style = FILL_STYLE.SCREEN
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(AgEFillStyle.eFillStyleScreen, oContours.fill_style)
-        oContours.fill_style = AgEFillStyle.eFillStyleSolid
+        Assert.assertEqual(FILL_STYLE.SCREEN, oContours.fill_style)
+        oContours.fill_style = FILL_STYLE.SOLID
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(AgEFillStyle.eFillStyleSolid, oContours.fill_style)
-        oContours.fill_style = AgEFillStyle.eFillStyleVerticalStripe
+        Assert.assertEqual(FILL_STYLE.SOLID, oContours.fill_style)
+        oContours.fill_style = FILL_STYLE.VERTICAL_STRIPE
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(AgEFillStyle.eFillStyleVerticalStripe, oContours.fill_style)
+        Assert.assertEqual(FILL_STYLE.VERTICAL_STRIPE, oContours.fill_style)
         # NumOfDecimalDigits
         self.m_logger.WriteLine3("\tThe current NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
         oContours.num_of_decimal_digits = 7
@@ -180,8 +180,8 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.label_angle,
             )
             levelAttribute.color = Color.FromArgb((levelAttribute.color._ToOLECOLOR() + 250))
-            levelAttribute.line_style = AgELineStyle.eMDash
-            levelAttribute.line_width = AgELineWidth.e2
+            levelAttribute.line_style = LINE_STYLE.M_DASH
+            levelAttribute.line_width = LINE_WIDTH.WIDTH2
             levelAttribute.level = float(levelAttribute.level) + 1.5
             levelAttribute.label_visible = not levelAttribute.label_visible
             levelAttribute.user_text_visible = True
@@ -301,16 +301,16 @@ class GfxLabelNoteHelper(object):
             labelNote.label_visible = True
             Assert.assertEqual(True, labelNote.label_visible)
             # NoteVisible
-            labelNote.note_visible = AgENoteShowType.eNoteOn
-            Assert.assertEqual(AgENoteShowType.eNoteOn, labelNote.note_visible)
-            labelNote.note_visible = AgENoteShowType.eNoteIntervals
-            Assert.assertEqual(AgENoteShowType.eNoteIntervals, labelNote.note_visible)
+            labelNote.note_visible = NOTE_SHOW_TYPE.ON
+            Assert.assertEqual(NOTE_SHOW_TYPE.ON, labelNote.note_visible)
+            labelNote.note_visible = NOTE_SHOW_TYPE.INTERVALS
+            Assert.assertEqual(NOTE_SHOW_TYPE.INTERVALS, labelNote.note_visible)
             # Intervals
             oHelper = IntervalCollectionHelper(self.m_oUnits)
             oHelper.Run(labelNote.intervals, IntervalCollectionHelper.IntervalCollectionType.LabelNotes)
             # NoteVisible
-            labelNote.note_visible = AgENoteShowType.eNoteOff
-            Assert.assertEqual(AgENoteShowType.eNoteOff, labelNote.note_visible)
+            labelNote.note_visible = NOTE_SHOW_TYPE.OFF
+            Assert.assertEqual(NOTE_SHOW_TYPE.OFF, labelNote.note_visible)
 
         self.m_logger.WriteLine("----- THE GRAPHICS LABELNOTES TEST ----- END -----")
 

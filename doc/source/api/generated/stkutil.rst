@@ -53,22 +53,22 @@ Enumerations
 
 .. autosummary::
 
-    AgEPositionType
-    AgEEulerDirectionSequence
-    AgEDirectionType
-    AgEPRSequence
-    AgEOrientationType
-    AgEAzElAboutBoresight
-    AgEEulerOrientationSequence
-    AgEYPRAnglesSequence
-    AgEOrbitStateType
-    AgECoordinateSystem
-    AgELogMsgType
-    AgELogMsgDispID
-    AgELineStyle
-    AgEExecMultiCmdResultAction
-    AgEFillStyle
-    AgEPropertyInfoValueType
+    POSITION_TYPE
+    EULER_DIRECTION_SEQUENCE
+    DIRECTION_TYPE
+    PR_SEQUENCE
+    ORIENTATION_TYPE
+    AZ_EL_ABOUT_BORESIGHT
+    EULER_ORIENTATION_SEQUENCE
+    YPR_ANGLES_SEQUENCE
+    ORBIT_STATE_TYPE
+    COORDINATE_SYSTEM
+    LOG_MSG_TYPE
+    LOG_MSG_DISP_ID
+    LINE_STYLE
+    EXEC_MULTI_CMD_RESULT_ACTION
+    FILL_STYLE
+    PROPERTY_INFO_VALUE_TYPE
 
 
 Classes
@@ -238,37 +238,37 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgEPositionType
+.. autoenum:: POSITION_TYPE
     :members:
-.. autoenum:: AgEEulerDirectionSequence
+.. autoenum:: EULER_DIRECTION_SEQUENCE
     :members:
-.. autoenum:: AgEDirectionType
+.. autoenum:: DIRECTION_TYPE
     :members:
-.. autoenum:: AgEPRSequence
+.. autoenum:: PR_SEQUENCE
     :members:
-.. autoenum:: AgEOrientationType
+.. autoenum:: ORIENTATION_TYPE
     :members:
-.. autoenum:: AgEAzElAboutBoresight
+.. autoenum:: AZ_EL_ABOUT_BORESIGHT
     :members:
-.. autoenum:: AgEEulerOrientationSequence
+.. autoenum:: EULER_ORIENTATION_SEQUENCE
     :members:
-.. autoenum:: AgEYPRAnglesSequence
+.. autoenum:: YPR_ANGLES_SEQUENCE
     :members:
-.. autoenum:: AgEOrbitStateType
+.. autoenum:: ORBIT_STATE_TYPE
     :members:
-.. autoenum:: AgECoordinateSystem
+.. autoenum:: COORDINATE_SYSTEM
     :members:
-.. autoenum:: AgELogMsgType
+.. autoenum:: LOG_MSG_TYPE
     :members:
-.. autoenum:: AgELogMsgDispID
+.. autoenum:: LOG_MSG_DISP_ID
     :members:
-.. autoenum:: AgELineStyle
+.. autoenum:: LINE_STYLE
     :members:
-.. autoenum:: AgEExecMultiCmdResultAction
+.. autoenum:: EXEC_MULTI_CMD_RESULT_ACTION
     :members:
-.. autoenum:: AgEFillStyle
+.. autoenum:: FILL_STYLE
     :members:
-.. autoenum:: AgEPropertyInfoValueType
+.. autoenum:: PROPERTY_INFO_VALUE_TYPE
     :members:
 
 

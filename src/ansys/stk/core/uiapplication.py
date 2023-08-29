@@ -2,8 +2,8 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgEAppConstants", "AgEAppErrorCodes", "AgEOpenLogFileMode", "AgEUiLogMsgType", "IMRUCollection", "IUiApplication", 
-"IUiApplicationPartnerAccess", "IUiFileOpenExt", "IUiFileOpenExtCollection", "MRUCollection", "UiApplication", "UiFileOpenExt", 
+__all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IMRUCollection", "IUiApplication", "IUiApplicationPartnerAccess", "IUiFileOpenExt", 
+"IUiFileOpenExtCollection", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MSG_TYPE", "UiApplication", "UiFileOpenExt", 
 "UiFileOpenExtCollection"]
 
 import typing
@@ -12,12 +12,12 @@ from ctypes   import byref, POINTER
 from enum     import IntEnum
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
@@ -34,68 +34,68 @@ from .uicore import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class AgEOpenLogFileMode(IntEnum):
+class OPEN_LOG_FILE_MODE(IntEnum):
     """Log file open modes."""
     # Open log file in write file mode.
-    eOpenLogFileForWriting = 2
+    FOR_WRITING = 2
     # Open log file in append file mode.
-    eOpenLogFileForAppending = 8
+    FOR_APPENDING = 8
 
-AgEOpenLogFileMode.eOpenLogFileForWriting.__doc__ = "Open log file in write file mode."
-AgEOpenLogFileMode.eOpenLogFileForAppending.__doc__ = "Open log file in append file mode."
+OPEN_LOG_FILE_MODE.FOR_WRITING.__doc__ = "Open log file in write file mode."
+OPEN_LOG_FILE_MODE.FOR_APPENDING.__doc__ = "Open log file in append file mode."
 
-agcls.AgTypeNameMap["AgEOpenLogFileMode"] = AgEOpenLogFileMode
+agcls.AgTypeNameMap["OPEN_LOG_FILE_MODE"] = OPEN_LOG_FILE_MODE
 
-class AgEUiLogMsgType(IntEnum):
+class UI_LOG_MSG_TYPE(IntEnum):
     """Log message types."""
     # Log messages that provide Debug text.
-    eUiLogMsgDebug = 0
+    DEBUG = 0
     # Log messages that provide information text.
-    eUiLogMsgInfo = 1
+    INFO = 1
     # Log messages that provide forceful information text.
-    eUiLogMsgForceInfo = 2
+    FORCE_INFO = 2
     # Log messages that provide warning text.
-    eUiLogMsgWarning = 3
+    WARNING = 3
     # Log messages that provide alarm text.
-    eUiLogMsgAlarm = 4
+    ALARM = 4
 
-AgEUiLogMsgType.eUiLogMsgDebug.__doc__ = "Log messages that provide Debug text."
-AgEUiLogMsgType.eUiLogMsgInfo.__doc__ = "Log messages that provide information text."
-AgEUiLogMsgType.eUiLogMsgForceInfo.__doc__ = "Log messages that provide forceful information text."
-AgEUiLogMsgType.eUiLogMsgWarning.__doc__ = "Log messages that provide warning text."
-AgEUiLogMsgType.eUiLogMsgAlarm.__doc__ = "Log messages that provide alarm text."
+UI_LOG_MSG_TYPE.DEBUG.__doc__ = "Log messages that provide Debug text."
+UI_LOG_MSG_TYPE.INFO.__doc__ = "Log messages that provide information text."
+UI_LOG_MSG_TYPE.FORCE_INFO.__doc__ = "Log messages that provide forceful information text."
+UI_LOG_MSG_TYPE.WARNING.__doc__ = "Log messages that provide warning text."
+UI_LOG_MSG_TYPE.ALARM.__doc__ = "Log messages that provide alarm text."
 
-agcls.AgTypeNameMap["AgEUiLogMsgType"] = AgEUiLogMsgType
+agcls.AgTypeNameMap["UI_LOG_MSG_TYPE"] = UI_LOG_MSG_TYPE
 
-class AgEAppConstants(IntEnum):
-    """AgEAppConstants contains base IDs for various structures."""
+class APP_CONSTANTS(IntEnum):
+    """APP_CONSTANTS contains base IDs for various structures."""
     # Error base.
-    eAppErrorBase = 0x200
+    APP_ERROR_BASE = 0x200
 
-AgEAppConstants.eAppErrorBase.__doc__ = "Error base."
+APP_CONSTANTS.APP_ERROR_BASE.__doc__ = "Error base."
 
-agcls.AgTypeNameMap["AgEAppConstants"] = AgEAppConstants
+agcls.AgTypeNameMap["APP_CONSTANTS"] = APP_CONSTANTS
 
-class AgEAppErrorCodes(IntEnum):
+class APP_ERROR_CODES(IntEnum):
     """App error codes."""
     # Failed to load personality.
-    eAppErrorPersLoadFail = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 1))
+    PERS_LOAD_FAIL = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 1))
     # Personality already loaded.
-    eAppErrorAlreadyLoadFail = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 2))
+    ALREADY_LOAD_FAIL = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 2))
     # No personality is loaded.
-    eAppErrorPersLoadFirst = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 3))
+    PERS_LOAD_FIRST = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 3))
     # You do not have the required license to connect externally to the application.
-    eAppErrorPersLicenseError = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 4))
+    PERS_LICENSE_ERROR = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 4))
     # No license could be found.
-    eAppErrorNoLicenseError = (((1 << 31) | (4 << 16)) | (AgEAppConstants.eAppErrorBase + 5))
+    NO_LICENSE_ERROR = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 5))
 
-AgEAppErrorCodes.eAppErrorPersLoadFail.__doc__ = "Failed to load personality."
-AgEAppErrorCodes.eAppErrorAlreadyLoadFail.__doc__ = "Personality already loaded."
-AgEAppErrorCodes.eAppErrorPersLoadFirst.__doc__ = "No personality is loaded."
-AgEAppErrorCodes.eAppErrorPersLicenseError.__doc__ = "You do not have the required license to connect externally to the application."
-AgEAppErrorCodes.eAppErrorNoLicenseError.__doc__ = "No license could be found."
+APP_ERROR_CODES.PERS_LOAD_FAIL.__doc__ = "Failed to load personality."
+APP_ERROR_CODES.ALREADY_LOAD_FAIL.__doc__ = "Personality already loaded."
+APP_ERROR_CODES.PERS_LOAD_FIRST.__doc__ = "No personality is loaded."
+APP_ERROR_CODES.PERS_LICENSE_ERROR.__doc__ = "You do not have the required license to connect externally to the application."
+APP_ERROR_CODES.NO_LICENSE_ERROR.__doc__ = "No license could be found."
 
-agcls.AgTypeNameMap["AgEAppErrorCodes"] = AgEAppErrorCodes
+agcls.AgTypeNameMap["APP_ERROR_CODES"] = APP_ERROR_CODES
 
 
 class IMRUCollection(object):
@@ -464,16 +464,16 @@ class IUiApplication(object):
             agcls.evaluate_hresult(self.__dict__["_set_top"](arg_newVal.COM_val))
 
     @property
-    def window_state(self) -> "AgEWindowState":
+    def window_state(self) -> "WINDOW_STATE":
         """Gets/sets the state of the main window."""
-        with agmarshall.AgEnum_arg(AgEWindowState) as arg_pVal:
+        with agmarshall.AgEnum_arg(WINDOW_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_window_state"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @window_state.setter
-    def window_state(self, newVal:"AgEWindowState") -> None:
+    def window_state(self, newVal:"WINDOW_STATE") -> None:
         """Gets/sets the state of the main window."""
-        with agmarshall.AgEnum_arg(AgEWindowState, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(WINDOW_STATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_window_state"](arg_newVal.COM_val))
 
     def activate(self) -> None:
@@ -569,17 +569,17 @@ class IUiApplication(object):
             agcls.evaluate_hresult(self.__dict__["_get_personality2"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def open_log_file(self, logFileName:str, logFileMode:"AgEOpenLogFileMode") -> bool:
+    def open_log_file(self, logFileName:str, logFileMode:"OPEN_LOG_FILE_MODE") -> bool:
         """Specifies the current log file to be written to."""
         with agmarshall.BSTR_arg(logFileName) as arg_logFileName, \
-             agmarshall.AgEnum_arg(AgEOpenLogFileMode, logFileMode) as arg_logFileMode, \
+             agmarshall.AgEnum_arg(OPEN_LOG_FILE_MODE, logFileMode) as arg_logFileMode, \
              agmarshall.VARIANT_BOOL_arg() as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_open_log_file"](arg_logFileName.COM_val, arg_logFileMode.COM_val, byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def log_msg(self, msgType:"AgEUiLogMsgType", msg:str) -> None:
+    def log_msg(self, msgType:"UI_LOG_MSG_TYPE", msg:str) -> None:
         """Logs the Message specified."""
-        with agmarshall.AgEnum_arg(AgEUiLogMsgType, msgType) as arg_msgType, \
+        with agmarshall.AgEnum_arg(UI_LOG_MSG_TYPE, msgType) as arg_msgType, \
              agmarshall.BSTR_arg(msg) as arg_msg:
             agcls.evaluate_hresult(self.__dict__["_log_msg"](arg_msgType.COM_val, arg_msg.COM_val))
 

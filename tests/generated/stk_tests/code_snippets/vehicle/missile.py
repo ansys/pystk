@@ -28,7 +28,7 @@ class Missile(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         Missile.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eMissile, Missile.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, Missile.m_DefaultName),
             IMissile,
         )
 
@@ -36,7 +36,7 @@ class Missile(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eMissile, Missile.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.MISSILE, Missile.m_DefaultName)
         Missile.m_Object = None
 
     # endregion
@@ -52,7 +52,7 @@ class Missile(CodeSnippetsTestBase):
 
     def DefineMissileTrajectory(self, missile: "IMissile"):
         # Set missile trajectory type
-        missile.set_trajectory_type(AgEVePropagatorType.ePropagatorBallistic)
+        missile.set_trajectory_type(VE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
 
         # Retrieve the Propagator interface
         trajectory: "IVehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, IVehiclePropagatorBallistic)
@@ -62,20 +62,20 @@ class Missile(CodeSnippetsTestBase):
         trajectory.step = 60.0
 
         # Set flight parameters
-        trajectory.set_launch_type(AgEVeLaunch.eLaunchLLA)
+        trajectory.set_launch_type(VE_LAUNCH.LAUNCH_LLA)
         launch: "IVehicleLaunchLLA" = clr.CastAs(trajectory.launch, IVehicleLaunchLLA)
         launch.lat = 0.0
         launch.lon = 0.0
         launch.alt = 0.0
 
         # Set impact location type
-        trajectory.set_impact_location_type(AgEVeImpactLocation.eImpactLocationPoint)
+        trajectory.set_impact_location_type(VE_IMPACT_LOCATION.IMPACT_LOCATION_POINT)
 
         # Retrieve the impact point interface
         impactLocation: "IVehicleImpactLocationPoint" = clr.CastAs(
             trajectory.impact_location, IVehicleImpactLocationPoint
         )
-        impactLocation.set_launch_control_type(AgEVeLaunchControl.eLaunchControlFixedTimeOfFlight)
+        impactLocation.set_launch_control_type(VE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_TIME_OF_FLIGHT)
 
         # Retrieve the launch flight interface
         launchControl: "IVehicleLaunchControlFixedTimeOfFlight" = clr.CastAs(
@@ -84,7 +84,7 @@ class Missile(CodeSnippetsTestBase):
         launchControl.time_of_flight = 9000.0
 
         # Configure missile Impact parameters
-        impactLocation.set_impact_type(AgEVeImpact.eImpactLLA)
+        impactLocation.set_impact_type(VE_IMPACT.IMPACT_LLA)
         impact: "IVehicleImpactLLA" = clr.CastAs(impactLocation.impact, IVehicleImpactLLA)
         impact.lat = -20.0
         impact.lon = -20.0

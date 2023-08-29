@@ -22,11 +22,11 @@ Enumerations
 
 .. autosummary::
 
-    AgEWindowService
-    AgEWindowState
-    AgEArrangeStyle
-    AgEDockStyle
-    AgEFloatState
+    WINDOW_SERVICE
+    WINDOW_STATE
+    ARRANGE_STYLE
+    DOCK_STYLE
+    FLOAT_STATE
 
 
 Classes
@@ -71,15 +71,15 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgEWindowService
+.. autoenum:: WINDOW_SERVICE
     :members:
-.. autoenum:: AgEWindowState
+.. autoenum:: WINDOW_STATE
     :members:
-.. autoenum:: AgEArrangeStyle
+.. autoenum:: ARRANGE_STYLE
     :members:
-.. autoenum:: AgEDockStyle
+.. autoenum:: DOCK_STYLE
     :members:
-.. autoenum:: AgEFloatState
+.. autoenum:: FLOAT_STATE
     :members:
 
 

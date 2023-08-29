@@ -29,7 +29,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     def setUp(self):
         GroundVehicle.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eGroundVehicle, GroundVehicle.m_DefaultName
+                STK_OBJECT_TYPE.GROUND_VEHICLE, GroundVehicle.m_DefaultName
             ),
             IGroundVehicle,
         )
@@ -39,7 +39,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eGroundVehicle, GroundVehicle.m_DefaultName
+            STK_OBJECT_TYPE.GROUND_VEHICLE, GroundVehicle.m_DefaultName
         )
         GroundVehicle.m_Object = None
 
@@ -53,7 +53,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the ground vehicle
         launchVehicle: "IGroundVehicle" = clr.CastAs(
-            root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "MyGroundVehicle"), IGroundVehicle
+            root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "MyGroundVehicle"), IGroundVehicle
         )
 
     # endregion
@@ -64,7 +64,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseGreatArcPropagator(self, groundVehicle: "IGroundVehicle"):
         # Set ground vehicle route to great arc
-        groundVehicle.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        groundVehicle.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(groundVehicle.route, IVehiclePropagatorGreatArc)
@@ -77,7 +77,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseStkExternalPropagator(self, groundVehicle: "IGroundVehicle"):
         # Set groundVehicle route to STK External propagator
-        groundVehicle.set_route_type(AgEVePropagatorType.ePropagatorStkExternal)
+        groundVehicle.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(groundVehicle.route, IVehiclePropagatorStkExternal)
@@ -90,7 +90,7 @@ class GroundVehicle(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseRealtimePropagator(self, groundVehicle: "IGroundVehicle"):
         # Set ground vehicle route to STK External propagator
-        groundVehicle.set_route_type(AgEVePropagatorType.ePropagatorRealtime)
+        groundVehicle.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorRealtime" = clr.CastAs(groundVehicle.route, IVehiclePropagatorRealtime)
@@ -100,7 +100,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     # region GetExportStkEphemerisTool
     def test_GetExportStkEphemerisTool(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             IGroundVehicle,
         )
         self.GetExportStkEphemerisTool(gv)
@@ -114,7 +114,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     # region GetExportAttitudeTool
     def test_GetExportAttitudeTool(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             IGroundVehicle,
         )
         self.GetExportAttitudeTool(gv)
@@ -128,7 +128,7 @@ class GroundVehicle(CodeSnippetsTestBase):
     # region GetExportPropDefTool
     def test_GetExportPropDefTool(self):
         gv: "IGroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eGroundVehicle, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             IGroundVehicle,
         )
         self.GetExportPropDefTool(gv)

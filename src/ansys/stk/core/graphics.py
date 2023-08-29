@@ -4,24 +4,10 @@
 
 __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProcessedImageGlobeOverlay", "AGIProcessedImageGlobeOverlayFactory", 
 "AGIProcessedTerrainOverlay", "AGIProcessedTerrainOverlayFactory", "AGIRoamImageGlobeOverlay", "AGIRoamImageGlobeOverlayFactory", 
-"AgEStkGraphicsAntiAliasing", "AgEStkGraphicsBinaryLogicOperation", "AgEStkGraphicsBlurMethod", "AgEStkGraphicsCameraSnapshotFileFormat", 
-"AgEStkGraphicsCameraVideoFormat", "AgEStkGraphicsConstrainedUpAxis", "AgEStkGraphicsCullFace", "AgEStkGraphicsCylinderFill", 
-"AgEStkGraphicsEdgeDetectMethod", "AgEStkGraphicsFlipAxis", "AgEStkGraphicsFontStyle", "AgEStkGraphicsGlobeOverlayRole", 
-"AgEStkGraphicsGradientDetectMethod", "AgEStkGraphicsIndicesOrderHint", "AgEStkGraphicsInternalTextureFormat", "AgEStkGraphicsJpeg2000CompressionProfile", 
-"AgEStkGraphicsKmlNetworkLinkRefreshMode", "AgEStkGraphicsKmlNetworkLinkViewRefreshMode", "AgEStkGraphicsMagnificationFilter", 
-"AgEStkGraphicsMaintainAspectRatio", "AgEStkGraphicsMapProjection", "AgEStkGraphicsMarkerBatchRenderPass", "AgEStkGraphicsMarkerBatchRenderingMethod", 
-"AgEStkGraphicsMarkerBatchSizeSource", "AgEStkGraphicsMarkerBatchSortOrder", "AgEStkGraphicsMarkerBatchUnit", "AgEStkGraphicsMinificationFilter", 
-"AgEStkGraphicsModelTransformationType", "AgEStkGraphicsModelUpAxis", "AgEStkGraphicsOrigin", "AgEStkGraphicsOutlineAppearance", 
-"AgEStkGraphicsPathPrimitiveRemoveLocation", "AgEStkGraphicsPolylineType", "AgEStkGraphicsPrimitivesSortOrder", "AgEStkGraphicsRasterBand", 
-"AgEStkGraphicsRasterFormat", "AgEStkGraphicsRasterOrientation", "AgEStkGraphicsRasterType", "AgEStkGraphicsRefreshRate", 
-"AgEStkGraphicsRenderPass", "AgEStkGraphicsRenderPassHint", "AgEStkGraphicsRendererShadeModel", "AgEStkGraphicsScreenOverlayOrigin", 
-"AgEStkGraphicsScreenOverlayPinningOrigin", "AgEStkGraphicsScreenOverlayUnit", "AgEStkGraphicsSetHint", "AgEStkGraphicsSharpenMethod", 
-"AgEStkGraphicsStereoProjectionMode", "AgEStkGraphicsStereoscopicDisplayMode", "AgEStkGraphicsSurfaceMeshRenderingMethod", 
-"AgEStkGraphicsTextureWrap", "AgEStkGraphicsVideoPlayback", "AgEStkGraphicsVisibility", "AgEStkGraphicsWindingOrder", "AlphaFromLuminanceFilter", 
-"AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", "AlphaFromRasterFilter", "AlphaFromRasterFilterFactory", 
-"AltitudeDisplayCondition", "AltitudeDisplayConditionFactory", "AxesPrimitive", "AxesPrimitiveFactory", "BandExtractFilter", 
-"BandExtractFilterFactory", "BandOrderFilter", "BandOrderFilterFactory", "BatchPrimitiveIndex", "BlurFilter", "BlurFilterFactory", 
-"BoundingSphere", "BoundingSphereFactory", "BoxTriangulatorInitializer", "BrightnessFilter", "BrightnessFilterFactory", 
+"AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", "AlphaFromRasterFilter", 
+"AlphaFromRasterFilterFactory", "AltitudeDisplayCondition", "AltitudeDisplayConditionFactory", "AxesPrimitive", "AxesPrimitiveFactory", 
+"BandExtractFilter", "BandExtractFilterFactory", "BandOrderFilter", "BandOrderFilterFactory", "BatchPrimitiveIndex", "BlurFilter", 
+"BlurFilterFactory", "BoundingSphere", "BoundingSphereFactory", "BoxTriangulatorInitializer", "BrightnessFilter", "BrightnessFilterFactory", 
 "Camera", "CameraSnapshot", "CameraVideoRecording", "CentralBodyGraphics", "CentralBodyGraphicsIndexer", "Clouds", "ColorToLuminanceFilter", 
 "ColorToLuminanceFilterFactory", "CompositeDisplayCondition", "CompositeDisplayConditionFactory", "CompositePrimitive", 
 "CompositePrimitiveFactory", "ConstantDisplayCondition", "ConstantDisplayConditionFactory", "ContrastFilter", "ContrastFilterFactory", 
@@ -94,7 +80,21 @@ __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProc
 "ProjectedRasterOverlayFactory", "Projection", "ProjectionFactory", "ProjectionRasterStreamPluginActivator", "ProjectionRasterStreamPluginActivatorFactory", 
 "ProjectionRasterStreamPluginProxy", "ProjectionStream", "Raster", "RasterAttributes", "RasterAttributesFactory", "RasterFactory", 
 "RasterFilter", "RasterImageGlobeOverlay", "RasterImageGlobeOverlayFactory", "RasterStream", "RendererTexture2D", "RendererTextureTemplate2D", 
-"RenderingEventArgs", "RhumbLineInterpolator", "RhumbLineInterpolatorFactory", "RotateFilter", "RotateFilterFactory", "Scene", 
+"RenderingEventArgs", "RhumbLineInterpolator", "RhumbLineInterpolatorFactory", "RotateFilter", "RotateFilterFactory", "STK_GRAPHICS_ANTI_ALIASING", 
+"STK_GRAPHICS_BINARY_LOGIC_OPERATION", "STK_GRAPHICS_BLUR_METHOD", "STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT", "STK_GRAPHICS_CAMERA_VIDEO_FORMAT", 
+"STK_GRAPHICS_CONSTRAINED_UP_AXIS", "STK_GRAPHICS_CULL_FACE", "STK_GRAPHICS_CYLINDER_FILL", "STK_GRAPHICS_EDGE_DETECT_METHOD", 
+"STK_GRAPHICS_FLIP_AXIS", "STK_GRAPHICS_FONT_STYLE", "STK_GRAPHICS_GLOBE_OVERLAY_ROLE", "STK_GRAPHICS_GRADIENT_DETECT_METHOD", 
+"STK_GRAPHICS_INDICES_ORDER_HINT", "STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT", "STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE", 
+"STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE", "STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE", "STK_GRAPHICS_MAGNIFICATION_FILTER", 
+"STK_GRAPHICS_MAINTAIN_ASPECT_RATIO", "STK_GRAPHICS_MAP_PROJECTION", "STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD", "STK_GRAPHICS_MARKER_BATCH_RENDER_PASS", 
+"STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE", "STK_GRAPHICS_MARKER_BATCH_SORT_ORDER", "STK_GRAPHICS_MARKER_BATCH_UNIT", "STK_GRAPHICS_MINIFICATION_FILTER", 
+"STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE", "STK_GRAPHICS_MODEL_UP_AXIS", "STK_GRAPHICS_ORIGIN", "STK_GRAPHICS_OUTLINE_APPEARANCE", 
+"STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION", "STK_GRAPHICS_POLYLINE_TYPE", "STK_GRAPHICS_PRIMITIVES_SORT_ORDER", "STK_GRAPHICS_RASTER_BAND", 
+"STK_GRAPHICS_RASTER_FORMAT", "STK_GRAPHICS_RASTER_ORIENTATION", "STK_GRAPHICS_RASTER_TYPE", "STK_GRAPHICS_REFRESH_RATE", 
+"STK_GRAPHICS_RENDERER_SHADE_MODEL", "STK_GRAPHICS_RENDER_PASS", "STK_GRAPHICS_RENDER_PASS_HINT", "STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN", 
+"STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN", "STK_GRAPHICS_SCREEN_OVERLAY_UNIT", "STK_GRAPHICS_SET_HINT", "STK_GRAPHICS_SHARPEN_METHOD", 
+"STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE", "STK_GRAPHICS_STEREO_PROJECTION_MODE", "STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD", 
+"STK_GRAPHICS_TEXTURE_WRAP", "STK_GRAPHICS_VIDEO_PLAYBACK", "STK_GRAPHICS_VISIBILITY", "STK_GRAPHICS_WINDING_ORDER", "Scene", 
 "SceneCollection", "SceneDisplayCondition", "SceneDisplayConditionFactory", "SceneGlobeOverlaySettings", "SceneManager", 
 "SceneManagerInitializer", "ScreenOverlay", "ScreenOverlayCollection", "ScreenOverlayCollectionBase", "ScreenOverlayFactory", 
 "ScreenOverlayManager", "ScreenOverlayPickResult", "ScreenOverlayPickResultCollection", "SequenceFilter", "SequenceFilterFactory", 
@@ -114,12 +114,12 @@ from ctypes   import byref, POINTER
 from enum     import IntEnum, IntFlag
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
@@ -138,1148 +138,1148 @@ from .vgt import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class AgEStkGraphicsCylinderFill(IntFlag):
+class STK_GRAPHICS_CYLINDER_FILL(IntFlag):
     """Cylinder faces that can be filled."""
     # Fill the cylinder's wall.
-    eStkGraphicsCylinderFillWall = 1
+    WALL = 1
     # Fill the cylinder's bottom cap.
-    eStkGraphicsCylinderFillBottomCap = 2
+    BOTTOM_CAP = 2
     # Fill the cylinder's top cap.
-    eStkGraphicsCylinderFillTopCap = 4
+    TOP_CAP = 4
     # Completely fill the cylinder, including its wall, bottom, and top cap.
-    eStkGraphicsCylinderFillAll = 7
+    ALL = 7
 
-AgEStkGraphicsCylinderFill.eStkGraphicsCylinderFillWall.__doc__ = "Fill the cylinder's wall."
-AgEStkGraphicsCylinderFill.eStkGraphicsCylinderFillBottomCap.__doc__ = "Fill the cylinder's bottom cap."
-AgEStkGraphicsCylinderFill.eStkGraphicsCylinderFillTopCap.__doc__ = "Fill the cylinder's top cap."
-AgEStkGraphicsCylinderFill.eStkGraphicsCylinderFillAll.__doc__ = "Completely fill the cylinder, including its wall, bottom, and top cap."
+STK_GRAPHICS_CYLINDER_FILL.WALL.__doc__ = "Fill the cylinder's wall."
+STK_GRAPHICS_CYLINDER_FILL.BOTTOM_CAP.__doc__ = "Fill the cylinder's bottom cap."
+STK_GRAPHICS_CYLINDER_FILL.TOP_CAP.__doc__ = "Fill the cylinder's top cap."
+STK_GRAPHICS_CYLINDER_FILL.ALL.__doc__ = "Completely fill the cylinder, including its wall, bottom, and top cap."
 
-agcls.AgTypeNameMap["AgEStkGraphicsCylinderFill"] = AgEStkGraphicsCylinderFill
+agcls.AgTypeNameMap["STK_GRAPHICS_CYLINDER_FILL"] = STK_GRAPHICS_CYLINDER_FILL
 
-class AgEStkGraphicsWindingOrder(IntEnum):
+class STK_GRAPHICS_WINDING_ORDER(IntEnum):
     """Specifies the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
     # Positions or triangles are defined in counter-clockwise order.
-    eStkGraphicsWindingOrderCounterClockwise = 0
+    COUNTER_CLOCKWISE = 0
     # Positions or triangles are defined in clockwise order.
-    eStkGraphicsWindingOrderClockwise = 1
+    CLOCKWISE = 1
     # The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order.
-    eStkGraphicsWindingOrderCompute = 2
+    COMPUTE = 2
 
-AgEStkGraphicsWindingOrder.eStkGraphicsWindingOrderCounterClockwise.__doc__ = "Positions or triangles are defined in counter-clockwise order."
-AgEStkGraphicsWindingOrder.eStkGraphicsWindingOrderClockwise.__doc__ = "Positions or triangles are defined in clockwise order."
-AgEStkGraphicsWindingOrder.eStkGraphicsWindingOrderCompute.__doc__ = "The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order."
+STK_GRAPHICS_WINDING_ORDER.COUNTER_CLOCKWISE.__doc__ = "Positions or triangles are defined in counter-clockwise order."
+STK_GRAPHICS_WINDING_ORDER.CLOCKWISE.__doc__ = "Positions or triangles are defined in clockwise order."
+STK_GRAPHICS_WINDING_ORDER.COMPUTE.__doc__ = "The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order."
 
-agcls.AgTypeNameMap["AgEStkGraphicsWindingOrder"] = AgEStkGraphicsWindingOrder
+agcls.AgTypeNameMap["STK_GRAPHICS_WINDING_ORDER"] = STK_GRAPHICS_WINDING_ORDER
 
-class AgEStkGraphicsCameraSnapshotFileFormat(IntEnum):
+class STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT(IntEnum):
     """When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format."""
     # BMP file format
-    eStkGraphicsCameraSnapshotFileFormatBmp = 0
+    BMP = 0
     # TIFF file format
-    eStkGraphicsCameraSnapshotFileFormatTiff = 2
+    TIFF = 2
     # JPEG file format
-    eStkGraphicsCameraSnapshotFileFormatJpeg = 3
+    JPEG = 3
     # PNG file format
-    eStkGraphicsCameraSnapshotFileFormatPng = 4
+    PNG = 4
 
-AgEStkGraphicsCameraSnapshotFileFormat.eStkGraphicsCameraSnapshotFileFormatBmp.__doc__ = "BMP file format"
-AgEStkGraphicsCameraSnapshotFileFormat.eStkGraphicsCameraSnapshotFileFormatTiff.__doc__ = "TIFF file format"
-AgEStkGraphicsCameraSnapshotFileFormat.eStkGraphicsCameraSnapshotFileFormatJpeg.__doc__ = "JPEG file format"
-AgEStkGraphicsCameraSnapshotFileFormat.eStkGraphicsCameraSnapshotFileFormatPng.__doc__ = "PNG file format"
+STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT.BMP.__doc__ = "BMP file format"
+STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT.TIFF.__doc__ = "TIFF file format"
+STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT.JPEG.__doc__ = "JPEG file format"
+STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT.PNG.__doc__ = "PNG file format"
 
-agcls.AgTypeNameMap["AgEStkGraphicsCameraSnapshotFileFormat"] = AgEStkGraphicsCameraSnapshotFileFormat
+agcls.AgTypeNameMap["STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT"] = STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT
 
-class AgEStkGraphicsCameraVideoFormat(IntEnum):
+class STK_GRAPHICS_CAMERA_VIDEO_FORMAT(IntEnum):
     """When using camera video recording to record a video, this specifies the file format."""
     # H.264 file format
-    eStkGraphicsCameraVideoFormatH264 = 0
+    H264 = 0
     # Windows Media Video (WMV) file format
-    eStkGraphicsCameraVideoFormatWMV = 1
+    WMV = 1
 
-AgEStkGraphicsCameraVideoFormat.eStkGraphicsCameraVideoFormatH264.__doc__ = "H.264 file format"
-AgEStkGraphicsCameraVideoFormat.eStkGraphicsCameraVideoFormatWMV.__doc__ = "Windows Media Video (WMV) file format"
+STK_GRAPHICS_CAMERA_VIDEO_FORMAT.H264.__doc__ = "H.264 file format"
+STK_GRAPHICS_CAMERA_VIDEO_FORMAT.WMV.__doc__ = "Windows Media Video (WMV) file format"
 
-agcls.AgTypeNameMap["AgEStkGraphicsCameraVideoFormat"] = AgEStkGraphicsCameraVideoFormat
+agcls.AgTypeNameMap["STK_GRAPHICS_CAMERA_VIDEO_FORMAT"] = STK_GRAPHICS_CAMERA_VIDEO_FORMAT
 
-class AgEStkGraphicsConstrainedUpAxis(IntEnum):
+class STK_GRAPHICS_CONSTRAINED_UP_AXIS(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
     # The X axis is constrained.
-    eStkGraphicsConstrainedUpAxisX = 0
+    X = 0
     # The Y axis is constrained.
-    eStkGraphicsConstrainedUpAxisY = 1
+    Y = 1
     # The Z axis is constrained.
-    eStkGraphicsConstrainedUpAxisZ = 2
+    Z = 2
     # The negative X axis is constrained.
-    eStkGraphicsConstrainedUpAxisNegativeX = 3
+    NEGATIVE_X = 3
     # The negative Y axis is constrained.
-    eStkGraphicsConstrainedUpAxisNegativeY = 4
+    NEGATIVE_Y = 4
     # The negative Z axis is constrained.
-    eStkGraphicsConstrainedUpAxisNegativeZ = 5
+    NEGATIVE_Z = 5
     # No axis is contained.
-    eStkGraphicsConstrainedUpAxisNone = 6
+    NONE = 6
 
-AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisX.__doc__ = "The X axis is constrained."
-AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisY.__doc__ = "The Y axis is constrained."
-AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisZ.__doc__ = "The Z axis is constrained."
-AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisNegativeX.__doc__ = "The negative X axis is constrained."
-AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisNegativeY.__doc__ = "The negative Y axis is constrained."
-AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisNegativeZ.__doc__ = "The negative Z axis is constrained."
-AgEStkGraphicsConstrainedUpAxis.eStkGraphicsConstrainedUpAxisNone.__doc__ = "No axis is contained."
+STK_GRAPHICS_CONSTRAINED_UP_AXIS.X.__doc__ = "The X axis is constrained."
+STK_GRAPHICS_CONSTRAINED_UP_AXIS.Y.__doc__ = "The Y axis is constrained."
+STK_GRAPHICS_CONSTRAINED_UP_AXIS.Z.__doc__ = "The Z axis is constrained."
+STK_GRAPHICS_CONSTRAINED_UP_AXIS.NEGATIVE_X.__doc__ = "The negative X axis is constrained."
+STK_GRAPHICS_CONSTRAINED_UP_AXIS.NEGATIVE_Y.__doc__ = "The negative Y axis is constrained."
+STK_GRAPHICS_CONSTRAINED_UP_AXIS.NEGATIVE_Z.__doc__ = "The negative Z axis is constrained."
+STK_GRAPHICS_CONSTRAINED_UP_AXIS.NONE.__doc__ = "No axis is contained."
 
-agcls.AgTypeNameMap["AgEStkGraphicsConstrainedUpAxis"] = AgEStkGraphicsConstrainedUpAxis
+agcls.AgTypeNameMap["STK_GRAPHICS_CONSTRAINED_UP_AXIS"] = STK_GRAPHICS_CONSTRAINED_UP_AXIS
 
-class AgEStkGraphicsGlobeOverlayRole(IntEnum):
+class STK_GRAPHICS_GLOBE_OVERLAY_ROLE(IntEnum):
     """The role of a globe overlay."""
     # The globe overlay is a base image.
-    eStkGraphicsGlobeOverlayRoleBase = 0
+    BASE = 0
     # The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun.
-    eStkGraphicsGlobeOverlayRoleNight = 1
+    NIGHT = 1
     # The globe overlay is a base image that shows the glint of the sun on the central body.
-    eStkGraphicsGlobeOverlayRoleSpecular = 2
+    SPECULAR = 2
     # The globe overlay is a normal overlay without a special role.
-    eStkGraphicsGlobeOverlayRoleNormal = 4
+    NORMAL = 4
     # The role of the globe overlay isn't set.
-    eStkGraphicsGlobeOverlayRoleNone = 5
+    NONE = 5
 
-AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleBase.__doc__ = "The globe overlay is a base image."
-AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleNight.__doc__ = "The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."
-AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleSpecular.__doc__ = "The globe overlay is a base image that shows the glint of the sun on the central body."
-AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleNormal.__doc__ = "The globe overlay is a normal overlay without a special role."
-AgEStkGraphicsGlobeOverlayRole.eStkGraphicsGlobeOverlayRoleNone.__doc__ = "The role of the globe overlay isn't set."
+STK_GRAPHICS_GLOBE_OVERLAY_ROLE.BASE.__doc__ = "The globe overlay is a base image."
+STK_GRAPHICS_GLOBE_OVERLAY_ROLE.NIGHT.__doc__ = "The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."
+STK_GRAPHICS_GLOBE_OVERLAY_ROLE.SPECULAR.__doc__ = "The globe overlay is a base image that shows the glint of the sun on the central body."
+STK_GRAPHICS_GLOBE_OVERLAY_ROLE.NORMAL.__doc__ = "The globe overlay is a normal overlay without a special role."
+STK_GRAPHICS_GLOBE_OVERLAY_ROLE.NONE.__doc__ = "The role of the globe overlay isn't set."
 
-agcls.AgTypeNameMap["AgEStkGraphicsGlobeOverlayRole"] = AgEStkGraphicsGlobeOverlayRole
+agcls.AgTypeNameMap["STK_GRAPHICS_GLOBE_OVERLAY_ROLE"] = STK_GRAPHICS_GLOBE_OVERLAY_ROLE
 
-class AgEStkGraphicsIndicesOrderHint(IntEnum):
+class STK_GRAPHICS_INDICES_ORDER_HINT(IntEnum):
     """An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance."""
     # The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory.
-    eStkGraphicsIndicesOrderHintNotSorted = 0
+    NOT_SORTED = 0
     # The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order...
-    eStkGraphicsIndicesOrderHintSortedAscending = 1
+    SORTED_ASCENDING = 1
 
-AgEStkGraphicsIndicesOrderHint.eStkGraphicsIndicesOrderHintNotSorted.__doc__ = "The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."
-AgEStkGraphicsIndicesOrderHint.eStkGraphicsIndicesOrderHintSortedAscending.__doc__ = "The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."
+STK_GRAPHICS_INDICES_ORDER_HINT.NOT_SORTED.__doc__ = "The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."
+STK_GRAPHICS_INDICES_ORDER_HINT.SORTED_ASCENDING.__doc__ = "The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."
 
-agcls.AgTypeNameMap["AgEStkGraphicsIndicesOrderHint"] = AgEStkGraphicsIndicesOrderHint
+agcls.AgTypeNameMap["STK_GRAPHICS_INDICES_ORDER_HINT"] = STK_GRAPHICS_INDICES_ORDER_HINT
 
-class AgEStkGraphicsMaintainAspectRatio(IntEnum):
+class STK_GRAPHICS_MAINTAIN_ASPECT_RATIO(IntEnum):
     """Specifies whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
     # The aspect ratio of the texture is not maintained during sizing of the screen overlay.
-    eStkGraphicsMaintainAspectRatioNone = 0
+    NONE = 0
     # The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property.
-    eStkGraphicsMaintainAspectRatioWidth = 1
+    WIDTH = 1
     # The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property.
-    eStkGraphicsMaintainAspectRatioHeight = 2
+    HEIGHT = 2
 
-AgEStkGraphicsMaintainAspectRatio.eStkGraphicsMaintainAspectRatioNone.__doc__ = "The aspect ratio of the texture is not maintained during sizing of the screen overlay."
-AgEStkGraphicsMaintainAspectRatio.eStkGraphicsMaintainAspectRatioWidth.__doc__ = "The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."
-AgEStkGraphicsMaintainAspectRatio.eStkGraphicsMaintainAspectRatioHeight.__doc__ = "The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."
+STK_GRAPHICS_MAINTAIN_ASPECT_RATIO.NONE.__doc__ = "The aspect ratio of the texture is not maintained during sizing of the screen overlay."
+STK_GRAPHICS_MAINTAIN_ASPECT_RATIO.WIDTH.__doc__ = "The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."
+STK_GRAPHICS_MAINTAIN_ASPECT_RATIO.HEIGHT.__doc__ = "The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."
 
-agcls.AgTypeNameMap["AgEStkGraphicsMaintainAspectRatio"] = AgEStkGraphicsMaintainAspectRatio
+agcls.AgTypeNameMap["STK_GRAPHICS_MAINTAIN_ASPECT_RATIO"] = STK_GRAPHICS_MAINTAIN_ASPECT_RATIO
 
-class AgEStkGraphicsMapProjection(IntEnum):
+class STK_GRAPHICS_MAP_PROJECTION(IntEnum):
     """The projection of the pixel data returned from a custom image globe overlay."""
     # Mercator projection
-    eStkGraphicsMapProjectionMercator = 0
+    MERCATOR = 0
     # Equidistant Cylindrical projection
-    eStkGraphicsMapProjectionEquidistantCylindrical = 1
+    EQUIDISTANT_CYLINDRICAL = 1
 
-AgEStkGraphicsMapProjection.eStkGraphicsMapProjectionMercator.__doc__ = "Mercator projection"
-AgEStkGraphicsMapProjection.eStkGraphicsMapProjectionEquidistantCylindrical.__doc__ = "Equidistant Cylindrical projection"
+STK_GRAPHICS_MAP_PROJECTION.MERCATOR.__doc__ = "Mercator projection"
+STK_GRAPHICS_MAP_PROJECTION.EQUIDISTANT_CYLINDRICAL.__doc__ = "Equidistant Cylindrical projection"
 
-agcls.AgTypeNameMap["AgEStkGraphicsMapProjection"] = AgEStkGraphicsMapProjection
+agcls.AgTypeNameMap["STK_GRAPHICS_MAP_PROJECTION"] = STK_GRAPHICS_MAP_PROJECTION
 
-class AgEStkGraphicsMarkerBatchRenderingMethod(IntEnum):
+class STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
     # Render the marker batch using a geometry shader.
-    eStkGraphicsMarkerBatchRenderingMethodGeometryShader = 0
+    GEOMETRY_SHADER = 0
     # Render the marker batch using a vertex shader.
-    eStkGraphicsMarkerBatchRenderingMethodVertexShader = 1
+    VERTEX_SHADER = 1
     # Render the marker batch using an automatically selected method based on the capabilities of the video card.
-    eStkGraphicsMarkerBatchRenderingMethodAutomatic = 2
+    AUTOMATIC = 2
     # Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards.
-    eStkGraphicsMarkerBatchRenderingMethodFixedFunction = 3
+    FIXED_FUNCTION = 3
 
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodGeometryShader.__doc__ = "Render the marker batch using a geometry shader."
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodVertexShader.__doc__ = "Render the marker batch using a vertex shader."
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodAutomatic.__doc__ = "Render the marker batch using an automatically selected method based on the capabilities of the video card."
-AgEStkGraphicsMarkerBatchRenderingMethod.eStkGraphicsMarkerBatchRenderingMethodFixedFunction.__doc__ = "Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."
+STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD.GEOMETRY_SHADER.__doc__ = "Render the marker batch using a geometry shader."
+STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD.VERTEX_SHADER.__doc__ = "Render the marker batch using a vertex shader."
+STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD.AUTOMATIC.__doc__ = "Render the marker batch using an automatically selected method based on the capabilities of the video card."
+STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD.FIXED_FUNCTION.__doc__ = "Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."
 
-agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchRenderingMethod"] = AgEStkGraphicsMarkerBatchRenderingMethod
+agcls.AgTypeNameMap["STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD"] = STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD
 
-class AgEStkGraphicsMarkerBatchRenderPass(IntEnum):
+class STK_GRAPHICS_MARKER_BATCH_RENDER_PASS(IntEnum):
     """The pass during which the marker batch is rendered."""
     # The marker batch contains all opaque textures and therefore should be rendered using the opaque pass.
-    eStkGraphicsMarkerBatchRenderPassOpaque = 0
+    OPAQUE = 0
     # The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front.
-    eStkGraphicsMarkerBatchRenderPassTranslucent = 1
+    TRANSLUCENT = 1
     # The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used.
-    eStkGraphicsMarkerBatchRenderPassBasedOnTranslucency = 2
+    BASED_ON_TRANSLUCENCY = 2
 
-AgEStkGraphicsMarkerBatchRenderPass.eStkGraphicsMarkerBatchRenderPassOpaque.__doc__ = "The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."
-AgEStkGraphicsMarkerBatchRenderPass.eStkGraphicsMarkerBatchRenderPassTranslucent.__doc__ = "The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front."
-AgEStkGraphicsMarkerBatchRenderPass.eStkGraphicsMarkerBatchRenderPassBasedOnTranslucency.__doc__ = "The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used."
+STK_GRAPHICS_MARKER_BATCH_RENDER_PASS.OPAQUE.__doc__ = "The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."
+STK_GRAPHICS_MARKER_BATCH_RENDER_PASS.TRANSLUCENT.__doc__ = "The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front."
+STK_GRAPHICS_MARKER_BATCH_RENDER_PASS.BASED_ON_TRANSLUCENCY.__doc__ = "The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used."
 
-agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchRenderPass"] = AgEStkGraphicsMarkerBatchRenderPass
+agcls.AgTypeNameMap["STK_GRAPHICS_MARKER_BATCH_RENDER_PASS"] = STK_GRAPHICS_MARKER_BATCH_RENDER_PASS
 
-class AgEStkGraphicsMarkerBatchSizeSource(IntEnum):
+class STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE(IntEnum):
     """Determines which marker batch property is used to size each marker in a marker batch."""
     # The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead.
-    eStkGraphicsMarkerBatchSizeSourceFromTexture = 0
+    FROM_TEXTURE = 0
     # The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes).
-    eStkGraphicsMarkerBatchSizeSourceUserDefined = 1
+    USER_DEFINED = 1
 
-AgEStkGraphicsMarkerBatchSizeSource.eStkGraphicsMarkerBatchSizeSourceFromTexture.__doc__ = "The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."
-AgEStkGraphicsMarkerBatchSizeSource.eStkGraphicsMarkerBatchSizeSourceUserDefined.__doc__ = "The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes)."
+STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE.FROM_TEXTURE.__doc__ = "The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."
+STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE.USER_DEFINED.__doc__ = "The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes)."
 
-agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchSizeSource"] = AgEStkGraphicsMarkerBatchSizeSource
+agcls.AgTypeNameMap["STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE"] = STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE
 
-class AgEStkGraphicsMarkerBatchSortOrder(IntEnum):
+class STK_GRAPHICS_MARKER_BATCH_SORT_ORDER(IntEnum):
     """The order in which markers in a marker batch are sorted before rendering."""
     # The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results...
-    eStkGraphicsMarkerBatchSortOrderBackToFront = 0
+    BACK_TO_FRONT = 0
     # The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers...
-    eStkGraphicsMarkerBatchSortOrderFrontToBack = 1
+    FRONT_TO_BACK = 1
     # The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position.
-    eStkGraphicsMarkerBatchSortOrderByTexture = 2
+    BY_TEXTURE = 2
 
-AgEStkGraphicsMarkerBatchSortOrder.eStkGraphicsMarkerBatchSortOrderBackToFront.__doc__ = "The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."
-AgEStkGraphicsMarkerBatchSortOrder.eStkGraphicsMarkerBatchSortOrderFrontToBack.__doc__ = "The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers..."
-AgEStkGraphicsMarkerBatchSortOrder.eStkGraphicsMarkerBatchSortOrderByTexture.__doc__ = "The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position."
+STK_GRAPHICS_MARKER_BATCH_SORT_ORDER.BACK_TO_FRONT.__doc__ = "The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."
+STK_GRAPHICS_MARKER_BATCH_SORT_ORDER.FRONT_TO_BACK.__doc__ = "The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers..."
+STK_GRAPHICS_MARKER_BATCH_SORT_ORDER.BY_TEXTURE.__doc__ = "The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position."
 
-agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchSortOrder"] = AgEStkGraphicsMarkerBatchSortOrder
+agcls.AgTypeNameMap["STK_GRAPHICS_MARKER_BATCH_SORT_ORDER"] = STK_GRAPHICS_MARKER_BATCH_SORT_ORDER
 
-class AgEStkGraphicsMarkerBatchUnit(IntEnum):
+class STK_GRAPHICS_MARKER_BATCH_UNIT(IntEnum):
     """The unit for marker sizes in a marker batch."""
     # The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change.
-    eStkGraphicsMarkerBatchUnitPixels = 0
+    PIXELS = 0
     # The size of a marker is defined in meters.
-    eStkGraphicsMarkerBatchUnitMeters = 1
+    METERS = 1
 
-AgEStkGraphicsMarkerBatchUnit.eStkGraphicsMarkerBatchUnitPixels.__doc__ = "The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."
-AgEStkGraphicsMarkerBatchUnit.eStkGraphicsMarkerBatchUnitMeters.__doc__ = "The size of a marker is defined in meters."
+STK_GRAPHICS_MARKER_BATCH_UNIT.PIXELS.__doc__ = "The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."
+STK_GRAPHICS_MARKER_BATCH_UNIT.METERS.__doc__ = "The size of a marker is defined in meters."
 
-agcls.AgTypeNameMap["AgEStkGraphicsMarkerBatchUnit"] = AgEStkGraphicsMarkerBatchUnit
+agcls.AgTypeNameMap["STK_GRAPHICS_MARKER_BATCH_UNIT"] = STK_GRAPHICS_MARKER_BATCH_UNIT
 
-class AgEStkGraphicsModelTransformationType(IntEnum):
+class STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE(IntEnum):
     """Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with."""
     # Translates the geometry along the X axis.
-    eStkGraphicsModelTransformationTypeTranslateX = 0
+    TRANSLATE_X = 0
     # Translates the geometry along the Y axis.
-    eStkGraphicsModelTransformationTypeTranslateY = 1
+    TRANSLATE_Y = 1
     # Translates the geometry along the Z axis.
-    eStkGraphicsModelTransformationTypeTranslateZ = 2
+    TRANSLATE_Z = 2
     # Rotates the geometry about the X axis.
-    eStkGraphicsModelTransformationTypeRotateX = 3
+    ROTATE_X = 3
     # Rotates the geometry about the Y axis.
-    eStkGraphicsModelTransformationTypeRotateY = 4
+    ROTATE_Y = 4
     # Rotates the geometry about the Z axis.
-    eStkGraphicsModelTransformationTypeRotateZ = 5
+    ROTATE_Z = 5
     # Scales the geometry along the X axis.
-    eStkGraphicsModelTransformationTypeScaleX = 6
+    SCALE_X = 6
     # Scales the geometry along the Y axis.
-    eStkGraphicsModelTransformationTypeScaleY = 7
+    SCALE_Y = 7
     # Scales the geometry along the Z axis.
-    eStkGraphicsModelTransformationTypeScaleZ = 8
+    SCALE_Z = 8
     # Scales the geometry uniformly along the X, Y, and Z axes.
-    eStkGraphicsModelTransformationTypeScaleUniform = 9
+    SCALE_UNIFORM = 9
     # Translates the texture associated with the geometry along the X axis.
-    eStkGraphicsModelTransformationTypeTextureTranslateX = 10
+    TEXTURE_TRANSLATE_X = 10
     # Translates the texture associated with the geometry along the Y axis.
-    eStkGraphicsModelTransformationTypeTextureTranslateY = 11
+    TEXTURE_TRANSLATE_Y = 11
     # Translates the texture associated with the geometry along the Z axis.
-    eStkGraphicsModelTransformationTypeTextureTranslateZ = 12
+    TEXTURE_TRANSLATE_Z = 12
     # Rotates the texture associated with the geometry about the X axis.
-    eStkGraphicsModelTransformationTypeTextureRotateX = 13
+    TEXTURE_ROTATE_X = 13
     # Rotates the texture associated with the geometry about the Y axis.
-    eStkGraphicsModelTransformationTypeTextureRotateY = 14
+    TEXTURE_ROTATE_Y = 14
     # Rotates the texture associated with the geometry about the Z axis.
-    eStkGraphicsModelTransformationTypeTextureRotateZ = 15
+    TEXTURE_ROTATE_Z = 15
     # Scales the texture associated with the geometry along the X axis.
-    eStkGraphicsModelTransformationTypeTextureScaleX = 16
+    TEXTURE_SCALE_X = 16
     # Scales the texture associated with the geometry along the Y axis.
-    eStkGraphicsModelTransformationTypeTextureScaleY = 17
+    TEXTURE_SCALE_Y = 17
     # Scales the texture associated with the geometry along the Z axis.
-    eStkGraphicsModelTransformationTypeTextureScaleZ = 18
+    TEXTURE_SCALE_Z = 18
     # Scales the texture associated with the geometry uniformly along the X, Y, and Z axes.
-    eStkGraphicsModelTransformationTypeTextureScaleUniform = 19
+    TEXTURE_SCALE_UNIFORM = 19
     # Translates the red band of color associated with the geometry.
-    eStkGraphicsModelTransformationTypeTranslateRed = 20
+    TRANSLATE_RED = 20
     # Translates the green band of color associated with the geometry.
-    eStkGraphicsModelTransformationTypeTranslateGreen = 21
+    TRANSLATE_GREEN = 21
     # Translates the blue band of color associated with the geometry.
-    eStkGraphicsModelTransformationTypeTranslateBlue = 22
+    TRANSLATE_BLUE = 22
 
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateX.__doc__ = "Translates the geometry along the X axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateY.__doc__ = "Translates the geometry along the Y axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateZ.__doc__ = "Translates the geometry along the Z axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeRotateX.__doc__ = "Rotates the geometry about the X axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeRotateY.__doc__ = "Rotates the geometry about the Y axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeRotateZ.__doc__ = "Rotates the geometry about the Z axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeScaleX.__doc__ = "Scales the geometry along the X axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeScaleY.__doc__ = "Scales the geometry along the Y axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeScaleZ.__doc__ = "Scales the geometry along the Z axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeScaleUniform.__doc__ = "Scales the geometry uniformly along the X, Y, and Z axes."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureTranslateX.__doc__ = "Translates the texture associated with the geometry along the X axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureTranslateY.__doc__ = "Translates the texture associated with the geometry along the Y axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureTranslateZ.__doc__ = "Translates the texture associated with the geometry along the Z axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureRotateX.__doc__ = "Rotates the texture associated with the geometry about the X axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureRotateY.__doc__ = "Rotates the texture associated with the geometry about the Y axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureRotateZ.__doc__ = "Rotates the texture associated with the geometry about the Z axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureScaleX.__doc__ = "Scales the texture associated with the geometry along the X axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureScaleY.__doc__ = "Scales the texture associated with the geometry along the Y axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureScaleZ.__doc__ = "Scales the texture associated with the geometry along the Z axis."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTextureScaleUniform.__doc__ = "Scales the texture associated with the geometry uniformly along the X, Y, and Z axes."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateRed.__doc__ = "Translates the red band of color associated with the geometry."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateGreen.__doc__ = "Translates the green band of color associated with the geometry."
-AgEStkGraphicsModelTransformationType.eStkGraphicsModelTransformationTypeTranslateBlue.__doc__ = "Translates the blue band of color associated with the geometry."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TRANSLATE_X.__doc__ = "Translates the geometry along the X axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TRANSLATE_Y.__doc__ = "Translates the geometry along the Y axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TRANSLATE_Z.__doc__ = "Translates the geometry along the Z axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.ROTATE_X.__doc__ = "Rotates the geometry about the X axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.ROTATE_Y.__doc__ = "Rotates the geometry about the Y axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.ROTATE_Z.__doc__ = "Rotates the geometry about the Z axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.SCALE_X.__doc__ = "Scales the geometry along the X axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.SCALE_Y.__doc__ = "Scales the geometry along the Y axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.SCALE_Z.__doc__ = "Scales the geometry along the Z axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.SCALE_UNIFORM.__doc__ = "Scales the geometry uniformly along the X, Y, and Z axes."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_X.__doc__ = "Translates the texture associated with the geometry along the X axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_Y.__doc__ = "Translates the texture associated with the geometry along the Y axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_Z.__doc__ = "Translates the texture associated with the geometry along the Z axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_X.__doc__ = "Rotates the texture associated with the geometry about the X axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_Y.__doc__ = "Rotates the texture associated with the geometry about the Y axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_Z.__doc__ = "Rotates the texture associated with the geometry about the Z axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_X.__doc__ = "Scales the texture associated with the geometry along the X axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_Y.__doc__ = "Scales the texture associated with the geometry along the Y axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_Z.__doc__ = "Scales the texture associated with the geometry along the Z axis."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_UNIFORM.__doc__ = "Scales the texture associated with the geometry uniformly along the X, Y, and Z axes."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TRANSLATE_RED.__doc__ = "Translates the red band of color associated with the geometry."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TRANSLATE_GREEN.__doc__ = "Translates the green band of color associated with the geometry."
+STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE.TRANSLATE_BLUE.__doc__ = "Translates the blue band of color associated with the geometry."
 
-agcls.AgTypeNameMap["AgEStkGraphicsModelTransformationType"] = AgEStkGraphicsModelTransformationType
+agcls.AgTypeNameMap["STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE"] = STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE
 
-class AgEStkGraphicsOrigin(IntEnum):
+class STK_GRAPHICS_ORIGIN(IntEnum):
     """Vertical and horizontal origin."""
     # The object's origin is its bottom, left corner.
-    eStkGraphicsOriginBottomLeft = 0
+    BOTTOM_LEFT = 0
     # The object's origin is its bottom, center point.
-    eStkGraphicsOriginBottomCenter = 1
+    BOTTOM_CENTER = 1
     # The object's origin is its bottom, right corner.
-    eStkGraphicsOriginBottomRight = 2
+    BOTTOM_RIGHT = 2
     # The object's origin is its center, left point.
-    eStkGraphicsOriginCenterLeft = 3
+    CENTER_LEFT = 3
     # The object's origin is its center.
-    eStkGraphicsOriginCenter = 4
+    CENTER = 4
     # The object's origin is its center, right point.
-    eStkGraphicsOriginCenterRight = 5
+    CENTER_RIGHT = 5
     # The object's origin is its top, left corner.
-    eStkGraphicsOriginTopLeft = 6
+    TOP_LEFT = 6
     # The object's origin is its top, center point.
-    eStkGraphicsOriginTopCenter = 7
+    TOP_CENTER = 7
     # The object's origin is its top, right corner.
-    eStkGraphicsOriginTopRight = 8
+    TOP_RIGHT = 8
 
-AgEStkGraphicsOrigin.eStkGraphicsOriginBottomLeft.__doc__ = "The object's origin is its bottom, left corner."
-AgEStkGraphicsOrigin.eStkGraphicsOriginBottomCenter.__doc__ = "The object's origin is its bottom, center point."
-AgEStkGraphicsOrigin.eStkGraphicsOriginBottomRight.__doc__ = "The object's origin is its bottom, right corner."
-AgEStkGraphicsOrigin.eStkGraphicsOriginCenterLeft.__doc__ = "The object's origin is its center, left point."
-AgEStkGraphicsOrigin.eStkGraphicsOriginCenter.__doc__ = "The object's origin is its center."
-AgEStkGraphicsOrigin.eStkGraphicsOriginCenterRight.__doc__ = "The object's origin is its center, right point."
-AgEStkGraphicsOrigin.eStkGraphicsOriginTopLeft.__doc__ = "The object's origin is its top, left corner."
-AgEStkGraphicsOrigin.eStkGraphicsOriginTopCenter.__doc__ = "The object's origin is its top, center point."
-AgEStkGraphicsOrigin.eStkGraphicsOriginTopRight.__doc__ = "The object's origin is its top, right corner."
+STK_GRAPHICS_ORIGIN.BOTTOM_LEFT.__doc__ = "The object's origin is its bottom, left corner."
+STK_GRAPHICS_ORIGIN.BOTTOM_CENTER.__doc__ = "The object's origin is its bottom, center point."
+STK_GRAPHICS_ORIGIN.BOTTOM_RIGHT.__doc__ = "The object's origin is its bottom, right corner."
+STK_GRAPHICS_ORIGIN.CENTER_LEFT.__doc__ = "The object's origin is its center, left point."
+STK_GRAPHICS_ORIGIN.CENTER.__doc__ = "The object's origin is its center."
+STK_GRAPHICS_ORIGIN.CENTER_RIGHT.__doc__ = "The object's origin is its center, right point."
+STK_GRAPHICS_ORIGIN.TOP_LEFT.__doc__ = "The object's origin is its top, left corner."
+STK_GRAPHICS_ORIGIN.TOP_CENTER.__doc__ = "The object's origin is its top, center point."
+STK_GRAPHICS_ORIGIN.TOP_RIGHT.__doc__ = "The object's origin is its top, right corner."
 
-agcls.AgTypeNameMap["AgEStkGraphicsOrigin"] = AgEStkGraphicsOrigin
+agcls.AgTypeNameMap["STK_GRAPHICS_ORIGIN"] = STK_GRAPHICS_ORIGIN
 
-class AgEStkGraphicsPathPrimitiveRemoveLocation(IntEnum):
+class STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION(IntEnum):
     """Represents the location of a point to be removed."""
     # Remove from the front of the line.
-    eStkGraphicsRemoveLocationFront = 0
+    REMOVE_LOCATION_FRONT = 0
     # Remove from the back of the line.
-    eStkGraphicsRemoveLocationBack = 1
+    REMOVE_LOCATION_BACK = 1
 
-AgEStkGraphicsPathPrimitiveRemoveLocation.eStkGraphicsRemoveLocationFront.__doc__ = "Remove from the front of the line."
-AgEStkGraphicsPathPrimitiveRemoveLocation.eStkGraphicsRemoveLocationBack.__doc__ = "Remove from the back of the line."
+STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION.REMOVE_LOCATION_FRONT.__doc__ = "Remove from the front of the line."
+STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION.REMOVE_LOCATION_BACK.__doc__ = "Remove from the back of the line."
 
-agcls.AgTypeNameMap["AgEStkGraphicsPathPrimitiveRemoveLocation"] = AgEStkGraphicsPathPrimitiveRemoveLocation
+agcls.AgTypeNameMap["STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION"] = STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION
 
-class AgEStkGraphicsPrimitivesSortOrder(IntEnum):
+class STK_GRAPHICS_PRIMITIVES_SORT_ORDER(IntEnum):
     """The order in which primitives are sorted before rendering."""
     # Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight.
-    eStkGraphicsPrimitivesSortOrderByState = 0
+    BY_STATE = 0
     # Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering.
-    eStkGraphicsPrimitivesSortOrderBackToFront = 1
+    BACK_TO_FRONT = 1
 
-AgEStkGraphicsPrimitivesSortOrder.eStkGraphicsPrimitivesSortOrderByState.__doc__ = "Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."
-AgEStkGraphicsPrimitivesSortOrder.eStkGraphicsPrimitivesSortOrderBackToFront.__doc__ = "Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering."
+STK_GRAPHICS_PRIMITIVES_SORT_ORDER.BY_STATE.__doc__ = "Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."
+STK_GRAPHICS_PRIMITIVES_SORT_ORDER.BACK_TO_FRONT.__doc__ = "Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering."
 
-agcls.AgTypeNameMap["AgEStkGraphicsPrimitivesSortOrder"] = AgEStkGraphicsPrimitivesSortOrder
+agcls.AgTypeNameMap["STK_GRAPHICS_PRIMITIVES_SORT_ORDER"] = STK_GRAPHICS_PRIMITIVES_SORT_ORDER
 
-class AgEStkGraphicsRefreshRate(IntEnum):
+class STK_GRAPHICS_REFRESH_RATE(IntEnum):
     """The rate at which animation frames will occur."""
     # The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off.
-    eStkGraphicsRefreshRateFastest = 0
+    FASTEST = 0
     # The animation will target a specified frame rate.
-    eStkGraphicsRefreshRateTargetedFramesPerSecond = 1
+    TARGETED_FRAMES_PER_SECOND = 1
 
-AgEStkGraphicsRefreshRate.eStkGraphicsRefreshRateFastest.__doc__ = "The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."
-AgEStkGraphicsRefreshRate.eStkGraphicsRefreshRateTargetedFramesPerSecond.__doc__ = "The animation will target a specified frame rate."
+STK_GRAPHICS_REFRESH_RATE.FASTEST.__doc__ = "The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."
+STK_GRAPHICS_REFRESH_RATE.TARGETED_FRAMES_PER_SECOND.__doc__ = "The animation will target a specified frame rate."
 
-agcls.AgTypeNameMap["AgEStkGraphicsRefreshRate"] = AgEStkGraphicsRefreshRate
+agcls.AgTypeNameMap["STK_GRAPHICS_REFRESH_RATE"] = STK_GRAPHICS_REFRESH_RATE
 
-class AgEStkGraphicsRenderPass(IntFlag):
+class STK_GRAPHICS_RENDER_PASS(IntFlag):
     """Describes when a primitive will be rendered. Some primitives need to be rendered during or at a certain time. For example, translucent primitives need to be rendered after opaque primitives to allow proper blending..."""
     # Render during the opaque rendering pass.
-    eStkGraphicsRenderPassOpaque = 1
+    OPAQUE = 1
     # Render during the translucent rendering pass.
-    eStkGraphicsRenderPassTranslucent = 2
+    TRANSLUCENT = 2
     # Render before the central body is rendered.
-    eStkGraphicsRenderPassCentralBodyClipped = 4
+    CENTRAL_BODY_CLIPPED = 4
     # Rendered in an ordered composite before all other primitives and before the central body is rendered.
-    eStkGraphicsRenderPassOrderedCompositeCentralBodyClipped = 8
+    ORDERED_COMPOSITE_CENTRAL_BODY_CLIPPED = 8
     # Rendered in an ordered composite before all primitives but after the central body is rendered.
-    eStkGraphicsRenderPassOrderedComposite = 16
+    ORDERED_COMPOSITE = 16
     # Render after the terrain is rendered.
-    eStkGraphicsRenderPassTerrain = 32
+    TERRAIN = 32
 
-AgEStkGraphicsRenderPass.eStkGraphicsRenderPassOpaque.__doc__ = "Render during the opaque rendering pass."
-AgEStkGraphicsRenderPass.eStkGraphicsRenderPassTranslucent.__doc__ = "Render during the translucent rendering pass."
-AgEStkGraphicsRenderPass.eStkGraphicsRenderPassCentralBodyClipped.__doc__ = "Render before the central body is rendered."
-AgEStkGraphicsRenderPass.eStkGraphicsRenderPassOrderedCompositeCentralBodyClipped.__doc__ = "Rendered in an ordered composite before all other primitives and before the central body is rendered."
-AgEStkGraphicsRenderPass.eStkGraphicsRenderPassOrderedComposite.__doc__ = "Rendered in an ordered composite before all primitives but after the central body is rendered."
-AgEStkGraphicsRenderPass.eStkGraphicsRenderPassTerrain.__doc__ = "Render after the terrain is rendered."
+STK_GRAPHICS_RENDER_PASS.OPAQUE.__doc__ = "Render during the opaque rendering pass."
+STK_GRAPHICS_RENDER_PASS.TRANSLUCENT.__doc__ = "Render during the translucent rendering pass."
+STK_GRAPHICS_RENDER_PASS.CENTRAL_BODY_CLIPPED.__doc__ = "Render before the central body is rendered."
+STK_GRAPHICS_RENDER_PASS.ORDERED_COMPOSITE_CENTRAL_BODY_CLIPPED.__doc__ = "Rendered in an ordered composite before all other primitives and before the central body is rendered."
+STK_GRAPHICS_RENDER_PASS.ORDERED_COMPOSITE.__doc__ = "Rendered in an ordered composite before all primitives but after the central body is rendered."
+STK_GRAPHICS_RENDER_PASS.TERRAIN.__doc__ = "Render after the terrain is rendered."
 
-agcls.AgTypeNameMap["AgEStkGraphicsRenderPass"] = AgEStkGraphicsRenderPass
+agcls.AgTypeNameMap["STK_GRAPHICS_RENDER_PASS"] = STK_GRAPHICS_RENDER_PASS
 
-class AgEStkGraphicsRenderPassHint(IntEnum):
+class STK_GRAPHICS_RENDER_PASS_HINT(IntEnum):
     """An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used."""
     # The collection of colors contains only opaque colors. This implies that each color's alpha component is 255.
-    eStkGraphicsRenderPassHintOpaque = 0
+    OPAQUE = 0
     # The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255.
-    eStkGraphicsRenderPassHintTranslucent = 1
+    TRANSLUCENT = 1
     # It is unknown if the collection of colors contains opaque or translucent colors.
-    eStkGraphicsRenderPassHintUnknown = 2
+    UNKNOWN = 2
 
-AgEStkGraphicsRenderPassHint.eStkGraphicsRenderPassHintOpaque.__doc__ = "The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."
-AgEStkGraphicsRenderPassHint.eStkGraphicsRenderPassHintTranslucent.__doc__ = "The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255."
-AgEStkGraphicsRenderPassHint.eStkGraphicsRenderPassHintUnknown.__doc__ = "It is unknown if the collection of colors contains opaque or translucent colors."
+STK_GRAPHICS_RENDER_PASS_HINT.OPAQUE.__doc__ = "The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."
+STK_GRAPHICS_RENDER_PASS_HINT.TRANSLUCENT.__doc__ = "The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255."
+STK_GRAPHICS_RENDER_PASS_HINT.UNKNOWN.__doc__ = "It is unknown if the collection of colors contains opaque or translucent colors."
 
-agcls.AgTypeNameMap["AgEStkGraphicsRenderPassHint"] = AgEStkGraphicsRenderPassHint
+agcls.AgTypeNameMap["STK_GRAPHICS_RENDER_PASS_HINT"] = STK_GRAPHICS_RENDER_PASS_HINT
 
-class AgEStkGraphicsScreenOverlayOrigin(IntEnum):
+class STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN(IntEnum):
     """Specifies the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned."""
     # When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up.
-    eStkGraphicsScreenOverlayOriginBottomLeft = 0
+    BOTTOM_LEFT = 0
     # When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent...
-    eStkGraphicsScreenOverlayOriginBottomCenter = 1
+    BOTTOM_CENTER = 1
     # When the X and Y position are both set to 0, this value places the bottom, right corner of the overlay in its parent's bottom, right corner. Increasing X values move the overlay to the left and increasing Y values move it up.
-    eStkGraphicsScreenOverlayOriginBottomRight = 2
+    BOTTOM_RIGHT = 2
     # When the X and Y position are both set to 0, this value places the left edge of the overlay at its parent's left edge and the center of the overlay is vertically centered within its parent...
-    eStkGraphicsScreenOverlayOriginCenterLeft = 3
+    CENTER_LEFT = 3
     # When the X and Y position are both set to 0, this value places the center of the overlay at its parent's center. Increasing X values move the overlay to the right and increasing Y values move it up.
-    eStkGraphicsScreenOverlayOriginCenter = 4
+    CENTER = 4
     # When the X and Y position are both set to 0, this value places the right edge of the overlay at its parent's right edge and the center of the overlay is vertically centered within its parent...
-    eStkGraphicsScreenOverlayOriginCenterRight = 5
+    CENTER_RIGHT = 5
     # When the X and Y position are both set to 0, this value places the top, left corner of the overlay in its parent's top, left corner. Increasing X values move the overlay to the right and increasing Y values move it down.
-    eStkGraphicsScreenOverlayOriginTopLeft = 6
+    TOP_LEFT = 6
     # When the X and Y position are both set to 0, this value places the top edge of the overlay at its parent's top edge and the center of the overlay is horizontally centered within its parent...
-    eStkGraphicsScreenOverlayOriginTopCenter = 7
+    TOP_CENTER = 7
     # When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down.
-    eStkGraphicsScreenOverlayOriginTopRight = 8
+    TOP_RIGHT = 8
 
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginBottomLeft.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginBottomCenter.__doc__ = "When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent..."
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginBottomRight.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, right corner of the overlay in its parent's bottom, right corner. Increasing X values move the overlay to the left and increasing Y values move it up."
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginCenterLeft.__doc__ = "When the X and Y position are both set to 0, this value places the left edge of the overlay at its parent's left edge and the center of the overlay is vertically centered within its parent..."
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginCenter.__doc__ = "When the X and Y position are both set to 0, this value places the center of the overlay at its parent's center. Increasing X values move the overlay to the right and increasing Y values move it up."
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginCenterRight.__doc__ = "When the X and Y position are both set to 0, this value places the right edge of the overlay at its parent's right edge and the center of the overlay is vertically centered within its parent..."
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginTopLeft.__doc__ = "When the X and Y position are both set to 0, this value places the top, left corner of the overlay in its parent's top, left corner. Increasing X values move the overlay to the right and increasing Y values move it down."
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginTopCenter.__doc__ = "When the X and Y position are both set to 0, this value places the top edge of the overlay at its parent's top edge and the center of the overlay is horizontally centered within its parent..."
-AgEStkGraphicsScreenOverlayOrigin.eStkGraphicsScreenOverlayOriginTopRight.__doc__ = "When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.BOTTOM_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.BOTTOM_CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent..."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.BOTTOM_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, right corner of the overlay in its parent's bottom, right corner. Increasing X values move the overlay to the left and increasing Y values move it up."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.CENTER_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the left edge of the overlay at its parent's left edge and the center of the overlay is vertically centered within its parent..."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the center of the overlay at its parent's center. Increasing X values move the overlay to the right and increasing Y values move it up."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.CENTER_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the right edge of the overlay at its parent's right edge and the center of the overlay is vertically centered within its parent..."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.TOP_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the top, left corner of the overlay in its parent's top, left corner. Increasing X values move the overlay to the right and increasing Y values move it down."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.TOP_CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the top edge of the overlay at its parent's top edge and the center of the overlay is horizontally centered within its parent..."
+STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN.TOP_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down."
 
-agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayOrigin"] = AgEStkGraphicsScreenOverlayOrigin
+agcls.AgTypeNameMap["STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN"] = STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN
 
-class AgEStkGraphicsScreenOverlayPinningOrigin(IntEnum):
+class STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN(IntEnum):
     """Specifies the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system."""
     # When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up.
-    eStkGraphicsScreenOverlayPinningOriginBottomLeft = 0
+    BOTTOM_LEFT = 0
     # When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay...
-    eStkGraphicsScreenOverlayPinningOriginBottomCenter = 1
+    BOTTOM_CENTER = 1
     # When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's bottom, right corner. Increasing X values move the pinning position to the left and increasing Y values move it up.
-    eStkGraphicsScreenOverlayPinningOriginBottomRight = 2
+    BOTTOM_RIGHT = 2
     # When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's left edge and the pinning position is vertically centered within its overlay...
-    eStkGraphicsScreenOverlayPinningOriginCenterLeft = 3
+    CENTER_LEFT = 3
     # When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's center. Increasing X values move the pinning position to the right and increasing Y values move it up.
-    eStkGraphicsScreenOverlayPinningOriginCenter = 4
+    CENTER = 4
     # When the X and Y pinning pinning position are both set to 0, this value places the pinning position at its overlay's right edge and the pinning position is vertically centered within its overlay...
-    eStkGraphicsScreenOverlayPinningOriginCenterRight = 5
+    CENTER_RIGHT = 5
     # When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, left corner. Increasing X values move the pinning position to the right and increasing Y values move it down.
-    eStkGraphicsScreenOverlayPinningOriginTopLeft = 6
+    TOP_LEFT = 6
     # When the X and Y pinning position are both set to 0, this value places the pinning position at its overlays's top edge and the pinning position is horizontally centered within its overlay...
-    eStkGraphicsScreenOverlayPinningOriginTopCenter = 7
+    TOP_CENTER = 7
     # When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, right corner. Increasing X values move the pinning position to the left and increasing Y values move it down.
-    eStkGraphicsScreenOverlayPinningOriginTopRight = 8
+    TOP_RIGHT = 8
     # The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft.
-    eStkGraphicsScreenOverlayPinningOriginAutomatic = 9
+    AUTOMATIC = 9
 
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginBottomLeft.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginBottomCenter.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay..."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginBottomRight.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's bottom, right corner. Increasing X values move the pinning position to the left and increasing Y values move it up."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginCenterLeft.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's left edge and the pinning position is vertically centered within its overlay..."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginCenter.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's center. Increasing X values move the pinning position to the right and increasing Y values move it up."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginCenterRight.__doc__ = "When the X and Y pinning pinning position are both set to 0, this value places the pinning position at its overlay's right edge and the pinning position is vertically centered within its overlay..."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginTopLeft.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, left corner. Increasing X values move the pinning position to the right and increasing Y values move it down."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginTopCenter.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlays's top edge and the pinning position is horizontally centered within its overlay..."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginTopRight.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, right corner. Increasing X values move the pinning position to the left and increasing Y values move it down."
-AgEStkGraphicsScreenOverlayPinningOrigin.eStkGraphicsScreenOverlayPinningOriginAutomatic.__doc__ = "The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.BOTTOM_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.BOTTOM_CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay..."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.BOTTOM_RIGHT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's bottom, right corner. Increasing X values move the pinning position to the left and increasing Y values move it up."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.CENTER_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's left edge and the pinning position is vertically centered within its overlay..."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's center. Increasing X values move the pinning position to the right and increasing Y values move it up."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.CENTER_RIGHT.__doc__ = "When the X and Y pinning pinning position are both set to 0, this value places the pinning position at its overlay's right edge and the pinning position is vertically centered within its overlay..."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.TOP_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, left corner. Increasing X values move the pinning position to the right and increasing Y values move it down."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.TOP_CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlays's top edge and the pinning position is horizontally centered within its overlay..."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.TOP_RIGHT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, right corner. Increasing X values move the pinning position to the left and increasing Y values move it down."
+STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN.AUTOMATIC.__doc__ = "The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft."
 
-agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayPinningOrigin"] = AgEStkGraphicsScreenOverlayPinningOrigin
+agcls.AgTypeNameMap["STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN"] = STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN
 
-class AgEStkGraphicsScreenOverlayUnit(IntEnum):
+class STK_GRAPHICS_SCREEN_OVERLAY_UNIT(IntEnum):
     """A unit specifying how a screen overlay is sized and positioned relative to its parent."""
     # The value is specified in pixels.
-    eStkGraphicsScreenOverlayUnitPixels = 0
+    PIXELS = 0
     # The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%.
-    eStkGraphicsScreenOverlayUnitFraction = 1
+    FRACTION = 1
 
-AgEStkGraphicsScreenOverlayUnit.eStkGraphicsScreenOverlayUnitPixels.__doc__ = "The value is specified in pixels."
-AgEStkGraphicsScreenOverlayUnit.eStkGraphicsScreenOverlayUnitFraction.__doc__ = "The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."
+STK_GRAPHICS_SCREEN_OVERLAY_UNIT.PIXELS.__doc__ = "The value is specified in pixels."
+STK_GRAPHICS_SCREEN_OVERLAY_UNIT.FRACTION.__doc__ = "The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."
 
-agcls.AgTypeNameMap["AgEStkGraphicsScreenOverlayUnit"] = AgEStkGraphicsScreenOverlayUnit
+agcls.AgTypeNameMap["STK_GRAPHICS_SCREEN_OVERLAY_UNIT"] = STK_GRAPHICS_SCREEN_OVERLAY_UNIT
 
-class AgEStkGraphicsSurfaceMeshRenderingMethod(IntEnum):
+class STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD(IntEnum):
     """Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
     # Render the surface mesh using a geometry shader.
-    eStkGraphicsSurfaceMeshRenderingMethodGeometryShader = 0
+    GEOMETRY_SHADER = 0
     # Render the surface mesh using a vertex shader.
-    eStkGraphicsSurfaceMeshRenderingMethodVertexShader = 1
+    VERTEX_SHADER = 1
     # Render the surface mesh using an automatically selected method based on the capabilities of the video card.
-    eStkGraphicsSurfaceMeshRenderingMethodAutomatic = 2
+    AUTOMATIC = 2
 
-AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodGeometryShader.__doc__ = "Render the surface mesh using a geometry shader."
-AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodVertexShader.__doc__ = "Render the surface mesh using a vertex shader."
-AgEStkGraphicsSurfaceMeshRenderingMethod.eStkGraphicsSurfaceMeshRenderingMethodAutomatic.__doc__ = "Render the surface mesh using an automatically selected method based on the capabilities of the video card."
+STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD.GEOMETRY_SHADER.__doc__ = "Render the surface mesh using a geometry shader."
+STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD.VERTEX_SHADER.__doc__ = "Render the surface mesh using a vertex shader."
+STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD.AUTOMATIC.__doc__ = "Render the surface mesh using an automatically selected method based on the capabilities of the video card."
 
-agcls.AgTypeNameMap["AgEStkGraphicsSurfaceMeshRenderingMethod"] = AgEStkGraphicsSurfaceMeshRenderingMethod
+agcls.AgTypeNameMap["STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD"] = STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD
 
-class AgEStkGraphicsVisibility(IntEnum):
+class STK_GRAPHICS_VISIBILITY(IntEnum):
     """Result of a visibility test, such as testing if a sphere intersects a frustum."""
     # The object is not visible.
-    eStkGraphicsVisibilityNone = 0
+    NONE = 0
     # The object is partially visible.
-    eStkGraphicsVisibilityPartial = 1
+    PARTIAL = 1
     # The object is completely visible.
-    eStkGraphicsVisibilityAll = 2
+    ALL = 2
 
-AgEStkGraphicsVisibility.eStkGraphicsVisibilityNone.__doc__ = "The object is not visible."
-AgEStkGraphicsVisibility.eStkGraphicsVisibilityPartial.__doc__ = "The object is partially visible."
-AgEStkGraphicsVisibility.eStkGraphicsVisibilityAll.__doc__ = "The object is completely visible."
+STK_GRAPHICS_VISIBILITY.NONE.__doc__ = "The object is not visible."
+STK_GRAPHICS_VISIBILITY.PARTIAL.__doc__ = "The object is partially visible."
+STK_GRAPHICS_VISIBILITY.ALL.__doc__ = "The object is completely visible."
 
-agcls.AgTypeNameMap["AgEStkGraphicsVisibility"] = AgEStkGraphicsVisibility
+agcls.AgTypeNameMap["STK_GRAPHICS_VISIBILITY"] = STK_GRAPHICS_VISIBILITY
 
-class AgEStkGraphicsAntiAliasing(IntEnum):
+class STK_GRAPHICS_ANTI_ALIASING(IntEnum):
     """The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
     # No anti-aliasing
-    eStkGraphicsAntiAliasingOff = 0
+    OFF = 0
     # Fast Approximate Anti aliasing
-    eStkGraphicsAntiAliasingFXAA = 1
+    FXAA = 1
     # Anti-aliasing at 2x
-    eStkGraphicsAntiAliasingTwoX = 2
+    TWO_X = 2
     # Anti-aliasing at 4x
-    eStkGraphicsAntiAliasingFourX = 4
+    FOUR_X = 4
     # Anti-aliasing at 8x
-    eStkGraphicsAntiAliasingEightX = 8
+    EIGHT_X = 8
     # Anti-aliasing at 16x
-    eStkGraphicsAntiAliasingSixteenX = 16
+    SIXTEEN_X = 16
     # Anti-aliasing at 32x
-    eStkGraphicsAntiAliasingThirtyTwoX = 32
+    THIRTY_TWO_X = 32
     # Anti-aliasing at 64x
-    eStkGraphicsAntiAliasingSixtyFourX = 64
+    SIXTY_FOUR_X = 64
 
-AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingOff.__doc__ = "No anti-aliasing"
-AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingFXAA.__doc__ = "Fast Approximate Anti aliasing"
-AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingTwoX.__doc__ = "Anti-aliasing at 2x"
-AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingFourX.__doc__ = "Anti-aliasing at 4x"
-AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingEightX.__doc__ = "Anti-aliasing at 8x"
-AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingSixteenX.__doc__ = "Anti-aliasing at 16x"
-AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingThirtyTwoX.__doc__ = "Anti-aliasing at 32x"
-AgEStkGraphicsAntiAliasing.eStkGraphicsAntiAliasingSixtyFourX.__doc__ = "Anti-aliasing at 64x"
+STK_GRAPHICS_ANTI_ALIASING.OFF.__doc__ = "No anti-aliasing"
+STK_GRAPHICS_ANTI_ALIASING.FXAA.__doc__ = "Fast Approximate Anti aliasing"
+STK_GRAPHICS_ANTI_ALIASING.TWO_X.__doc__ = "Anti-aliasing at 2x"
+STK_GRAPHICS_ANTI_ALIASING.FOUR_X.__doc__ = "Anti-aliasing at 4x"
+STK_GRAPHICS_ANTI_ALIASING.EIGHT_X.__doc__ = "Anti-aliasing at 8x"
+STK_GRAPHICS_ANTI_ALIASING.SIXTEEN_X.__doc__ = "Anti-aliasing at 16x"
+STK_GRAPHICS_ANTI_ALIASING.THIRTY_TWO_X.__doc__ = "Anti-aliasing at 32x"
+STK_GRAPHICS_ANTI_ALIASING.SIXTY_FOUR_X.__doc__ = "Anti-aliasing at 64x"
 
-agcls.AgTypeNameMap["AgEStkGraphicsAntiAliasing"] = AgEStkGraphicsAntiAliasing
+agcls.AgTypeNameMap["STK_GRAPHICS_ANTI_ALIASING"] = STK_GRAPHICS_ANTI_ALIASING
 
-class AgEStkGraphicsBinaryLogicOperation(IntEnum):
+class STK_GRAPHICS_BINARY_LOGIC_OPERATION(IntEnum):
     """Binary logic operations that can be used by composite display condition."""
     # Logically and together display conditions in the composite.
-    eStkGraphicsBinaryLogicOperationAnd = 0
+    AND = 0
     # Logically or together display conditions in the composite.
-    eStkGraphicsBinaryLogicOperationOr = 1
+    OR = 1
 
-AgEStkGraphicsBinaryLogicOperation.eStkGraphicsBinaryLogicOperationAnd.__doc__ = "Logically and together display conditions in the composite."
-AgEStkGraphicsBinaryLogicOperation.eStkGraphicsBinaryLogicOperationOr.__doc__ = "Logically or together display conditions in the composite."
+STK_GRAPHICS_BINARY_LOGIC_OPERATION.AND.__doc__ = "Logically and together display conditions in the composite."
+STK_GRAPHICS_BINARY_LOGIC_OPERATION.OR.__doc__ = "Logically or together display conditions in the composite."
 
-agcls.AgTypeNameMap["AgEStkGraphicsBinaryLogicOperation"] = AgEStkGraphicsBinaryLogicOperation
+agcls.AgTypeNameMap["STK_GRAPHICS_BINARY_LOGIC_OPERATION"] = STK_GRAPHICS_BINARY_LOGIC_OPERATION
 
-class AgEStkGraphicsBlurMethod(IntEnum):
+class STK_GRAPHICS_BLUR_METHOD(IntEnum):
     """The method used to blur or smooth a raster."""
     # Provides smoothing and noise reduction through mean filtering.
-    eStkGraphicsBlurMethodMean = 0
+    MEAN = 0
     # Provides basic blurring.
-    eStkGraphicsBlurMethodBasic = 1
+    BASIC = 1
 
-AgEStkGraphicsBlurMethod.eStkGraphicsBlurMethodMean.__doc__ = "Provides smoothing and noise reduction through mean filtering."
-AgEStkGraphicsBlurMethod.eStkGraphicsBlurMethodBasic.__doc__ = "Provides basic blurring."
+STK_GRAPHICS_BLUR_METHOD.MEAN.__doc__ = "Provides smoothing and noise reduction through mean filtering."
+STK_GRAPHICS_BLUR_METHOD.BASIC.__doc__ = "Provides basic blurring."
 
-agcls.AgTypeNameMap["AgEStkGraphicsBlurMethod"] = AgEStkGraphicsBlurMethod
+agcls.AgTypeNameMap["STK_GRAPHICS_BLUR_METHOD"] = STK_GRAPHICS_BLUR_METHOD
 
-class AgEStkGraphicsEdgeDetectMethod(IntEnum):
+class STK_GRAPHICS_EDGE_DETECT_METHOD(IntEnum):
     """The method used to detect edges in a raster."""
     # Detects vertical edges.
-    eStkGraphicsEdgeDetectMethodVertical = 0
+    VERTICAL = 0
     # Detects horizontal edges.
-    eStkGraphicsEdgeDetectMethodHorizontal = 1
+    HORIZONTAL = 1
     # Detects left diagonal edges.
-    eStkGraphicsEdgeDetectMethodLeftDiagonal = 2
+    LEFT_DIAGONAL = 2
     # Detects right diagonal edges.
-    eStkGraphicsEdgeDetectMethodRightDiagonal = 3
+    RIGHT_DIAGONAL = 3
     # Detects edges using the Laplacian method.
-    eStkGraphicsEdgeDetectMethodLaplacian = 4
+    LAPLACIAN = 4
     # Detects edges using the Prewitt-Laplacian method.
-    eStkGraphicsEdgeDetectMethodPrewittLaplacian = 5
+    PREWITT_LAPLACIAN = 5
     # Detects vertical edges using the Sobel method.
-    eStkGraphicsEdgeDetectMethodSobelVertical = 6
+    SOBEL_VERTICAL = 6
     # Detects horizontal edges using the Sobel method.
-    eStkGraphicsEdgeDetectMethodSobelHorizontal = 7
+    SOBEL_HORIZONTAL = 7
 
-AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodVertical.__doc__ = "Detects vertical edges."
-AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodHorizontal.__doc__ = "Detects horizontal edges."
-AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodLeftDiagonal.__doc__ = "Detects left diagonal edges."
-AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodRightDiagonal.__doc__ = "Detects right diagonal edges."
-AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodLaplacian.__doc__ = "Detects edges using the Laplacian method."
-AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodPrewittLaplacian.__doc__ = "Detects edges using the Prewitt-Laplacian method."
-AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodSobelVertical.__doc__ = "Detects vertical edges using the Sobel method."
-AgEStkGraphicsEdgeDetectMethod.eStkGraphicsEdgeDetectMethodSobelHorizontal.__doc__ = "Detects horizontal edges using the Sobel method."
+STK_GRAPHICS_EDGE_DETECT_METHOD.VERTICAL.__doc__ = "Detects vertical edges."
+STK_GRAPHICS_EDGE_DETECT_METHOD.HORIZONTAL.__doc__ = "Detects horizontal edges."
+STK_GRAPHICS_EDGE_DETECT_METHOD.LEFT_DIAGONAL.__doc__ = "Detects left diagonal edges."
+STK_GRAPHICS_EDGE_DETECT_METHOD.RIGHT_DIAGONAL.__doc__ = "Detects right diagonal edges."
+STK_GRAPHICS_EDGE_DETECT_METHOD.LAPLACIAN.__doc__ = "Detects edges using the Laplacian method."
+STK_GRAPHICS_EDGE_DETECT_METHOD.PREWITT_LAPLACIAN.__doc__ = "Detects edges using the Prewitt-Laplacian method."
+STK_GRAPHICS_EDGE_DETECT_METHOD.SOBEL_VERTICAL.__doc__ = "Detects vertical edges using the Sobel method."
+STK_GRAPHICS_EDGE_DETECT_METHOD.SOBEL_HORIZONTAL.__doc__ = "Detects horizontal edges using the Sobel method."
 
-agcls.AgTypeNameMap["AgEStkGraphicsEdgeDetectMethod"] = AgEStkGraphicsEdgeDetectMethod
+agcls.AgTypeNameMap["STK_GRAPHICS_EDGE_DETECT_METHOD"] = STK_GRAPHICS_EDGE_DETECT_METHOD
 
-class AgEStkGraphicsFlipAxis(IntEnum):
+class STK_GRAPHICS_FLIP_AXIS(IntEnum):
     """The axis on which a raster will be flipped."""
     # The horizontal axis.
-    eStkGraphicsFlipAxisHorizontal = 0
+    HORIZONTAL = 0
     # The vertical axis.
-    eStkGraphicsFlipAxisVertical = 1
+    VERTICAL = 1
 
-AgEStkGraphicsFlipAxis.eStkGraphicsFlipAxisHorizontal.__doc__ = "The horizontal axis."
-AgEStkGraphicsFlipAxis.eStkGraphicsFlipAxisVertical.__doc__ = "The vertical axis."
+STK_GRAPHICS_FLIP_AXIS.HORIZONTAL.__doc__ = "The horizontal axis."
+STK_GRAPHICS_FLIP_AXIS.VERTICAL.__doc__ = "The vertical axis."
 
-agcls.AgTypeNameMap["AgEStkGraphicsFlipAxis"] = AgEStkGraphicsFlipAxis
+agcls.AgTypeNameMap["STK_GRAPHICS_FLIP_AXIS"] = STK_GRAPHICS_FLIP_AXIS
 
-class AgEStkGraphicsGradientDetectMethod(IntEnum):
+class STK_GRAPHICS_GRADIENT_DETECT_METHOD(IntEnum):
     """The method used to detect gradients in a raster. Gradient detection is commonly referred to as embossing."""
     # Detects east gradients.
-    eStkGraphicsGradientDetectMethodEast = 0
+    EAST = 0
     # Detects north gradients.
-    eStkGraphicsGradientDetectMethodNorth = 1
+    NORTH = 1
     # Detects west gradients.
-    eStkGraphicsGradientDetectMethodWest = 2
+    WEST = 2
     # Detects south gradients.
-    eStkGraphicsGradientDetectMethodSouth = 3
+    SOUTH = 3
     # Detects north east gradients.
-    eStkGraphicsGradientDetectMethodNorthEast = 4
+    NORTH_EAST = 4
     # Detects north west gradients.
-    eStkGraphicsGradientDetectMethodNorthWest = 5
+    NORTH_WEST = 5
     # Detects south east gradients.
-    eStkGraphicsGradientDetectMethodSouthEast = 6
+    SOUTH_EAST = 6
     # Detects south west gradients.
-    eStkGraphicsGradientDetectMethodSouthWest = 7
+    SOUTH_WEST = 7
 
-AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodEast.__doc__ = "Detects east gradients."
-AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodNorth.__doc__ = "Detects north gradients."
-AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodWest.__doc__ = "Detects west gradients."
-AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodSouth.__doc__ = "Detects south gradients."
-AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodNorthEast.__doc__ = "Detects north east gradients."
-AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodNorthWest.__doc__ = "Detects north west gradients."
-AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodSouthEast.__doc__ = "Detects south east gradients."
-AgEStkGraphicsGradientDetectMethod.eStkGraphicsGradientDetectMethodSouthWest.__doc__ = "Detects south west gradients."
+STK_GRAPHICS_GRADIENT_DETECT_METHOD.EAST.__doc__ = "Detects east gradients."
+STK_GRAPHICS_GRADIENT_DETECT_METHOD.NORTH.__doc__ = "Detects north gradients."
+STK_GRAPHICS_GRADIENT_DETECT_METHOD.WEST.__doc__ = "Detects west gradients."
+STK_GRAPHICS_GRADIENT_DETECT_METHOD.SOUTH.__doc__ = "Detects south gradients."
+STK_GRAPHICS_GRADIENT_DETECT_METHOD.NORTH_EAST.__doc__ = "Detects north east gradients."
+STK_GRAPHICS_GRADIENT_DETECT_METHOD.NORTH_WEST.__doc__ = "Detects north west gradients."
+STK_GRAPHICS_GRADIENT_DETECT_METHOD.SOUTH_EAST.__doc__ = "Detects south east gradients."
+STK_GRAPHICS_GRADIENT_DETECT_METHOD.SOUTH_WEST.__doc__ = "Detects south west gradients."
 
-agcls.AgTypeNameMap["AgEStkGraphicsGradientDetectMethod"] = AgEStkGraphicsGradientDetectMethod
+agcls.AgTypeNameMap["STK_GRAPHICS_GRADIENT_DETECT_METHOD"] = STK_GRAPHICS_GRADIENT_DETECT_METHOD
 
-class AgEStkGraphicsJpeg2000CompressionProfile(IntEnum):
+class STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE(IntEnum):
     """Defines the profile used when encoding a JPEG 2000 file."""
     # This is the default profile, which is recommended for those unfamiliar with the others.
-    eStkGraphicsJpeg2000CompressionProfileDefault = 0
+    DEFAULT = 0
     # This profile is designed for U.S. and NATO military applications.
-    eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_NPJE = 1
+    N_I_T_F_B_I_I_F_NPJE = 1
     # This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE.
-    eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_EPJE = 2
+    N_I_T_F_B_I_I_F_EPJE = 2
 
-AgEStkGraphicsJpeg2000CompressionProfile.eStkGraphicsJpeg2000CompressionProfileDefault.__doc__ = "This is the default profile, which is recommended for those unfamiliar with the others."
-AgEStkGraphicsJpeg2000CompressionProfile.eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_NPJE.__doc__ = "This profile is designed for U.S. and NATO military applications."
-AgEStkGraphicsJpeg2000CompressionProfile.eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_EPJE.__doc__ = "This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."
+STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE.DEFAULT.__doc__ = "This is the default profile, which is recommended for those unfamiliar with the others."
+STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE.N_I_T_F_B_I_I_F_NPJE.__doc__ = "This profile is designed for U.S. and NATO military applications."
+STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE.N_I_T_F_B_I_I_F_EPJE.__doc__ = "This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."
 
-agcls.AgTypeNameMap["AgEStkGraphicsJpeg2000CompressionProfile"] = AgEStkGraphicsJpeg2000CompressionProfile
+agcls.AgTypeNameMap["STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE"] = STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE
 
-class AgEStkGraphicsRasterBand(IntEnum):
+class STK_GRAPHICS_RASTER_BAND(IntEnum):
     """Common band types that may be contained within a raster dataset. Each band can be thought of as a set of values, which are most commonly associated with colors when the raster represents an image..."""
     # A band containing red values.
-    eStkGraphicsRasterBandRed = 0
+    RED = 0
     # A band containing green values.
-    eStkGraphicsRasterBandGreen = 1
+    GREEN = 1
     # A band containing blue values.
-    eStkGraphicsRasterBandBlue = 2
+    BLUE = 2
     # A band containing alpha values.
-    eStkGraphicsRasterBandAlpha = 3
+    ALPHA = 3
     # A band containing luminance values.
-    eStkGraphicsRasterBandLuminance = 4
+    LUMINANCE = 4
 
-AgEStkGraphicsRasterBand.eStkGraphicsRasterBandRed.__doc__ = "A band containing red values."
-AgEStkGraphicsRasterBand.eStkGraphicsRasterBandGreen.__doc__ = "A band containing green values."
-AgEStkGraphicsRasterBand.eStkGraphicsRasterBandBlue.__doc__ = "A band containing blue values."
-AgEStkGraphicsRasterBand.eStkGraphicsRasterBandAlpha.__doc__ = "A band containing alpha values."
-AgEStkGraphicsRasterBand.eStkGraphicsRasterBandLuminance.__doc__ = "A band containing luminance values."
+STK_GRAPHICS_RASTER_BAND.RED.__doc__ = "A band containing red values."
+STK_GRAPHICS_RASTER_BAND.GREEN.__doc__ = "A band containing green values."
+STK_GRAPHICS_RASTER_BAND.BLUE.__doc__ = "A band containing blue values."
+STK_GRAPHICS_RASTER_BAND.ALPHA.__doc__ = "A band containing alpha values."
+STK_GRAPHICS_RASTER_BAND.LUMINANCE.__doc__ = "A band containing luminance values."
 
-agcls.AgTypeNameMap["AgEStkGraphicsRasterBand"] = AgEStkGraphicsRasterBand
+agcls.AgTypeNameMap["STK_GRAPHICS_RASTER_BAND"] = STK_GRAPHICS_RASTER_BAND
 
-class AgEStkGraphicsRasterFormat(IntEnum):
+class STK_GRAPHICS_RASTER_FORMAT(IntEnum):
     """Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format."""
     # The format of the raster is a single band consisting of red values.
-    eStkGraphicsRasterFormatRed = 0
+    RED = 0
     # The format of the raster is a single band consisting of green values.
-    eStkGraphicsRasterFormatGreen = 1
+    GREEN = 1
     # The format of the raster is a single band consisting of blue values.
-    eStkGraphicsRasterFormatBlue = 2
+    BLUE = 2
     # The format of the raster is a single band consisting of alpha values.
-    eStkGraphicsRasterFormatAlpha = 3
+    ALPHA = 3
     # The format of the raster is three bands consisting of red, green, and blue values.
-    eStkGraphicsRasterFormatRgb = 4
+    RGB = 4
     # The format of the raster is three bands consisting of blue, green, and red values.
-    eStkGraphicsRasterFormatBgr = 5
+    BGR = 5
     # The format of the raster is four bands consisting of red, green, blue, and alpha values.
-    eStkGraphicsRasterFormatRgba = 6
+    RGBA = 6
     # The format of the raster is four bands consisting of blue, green, red, and alpha values.
-    eStkGraphicsRasterFormatBgra = 7
+    BGRA = 7
     # The format of the raster is a single band consisting of luminance values.
-    eStkGraphicsRasterFormatLuminance = 8
+    LUMINANCE = 8
     # The format of the raster is two bands consisting of luminance and alpha values.
-    eStkGraphicsRasterFormatLuminanceAlpha = 9
+    LUMINANCE_ALPHA = 9
 
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatRed.__doc__ = "The format of the raster is a single band consisting of red values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatGreen.__doc__ = "The format of the raster is a single band consisting of green values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatBlue.__doc__ = "The format of the raster is a single band consisting of blue values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatAlpha.__doc__ = "The format of the raster is a single band consisting of alpha values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatRgb.__doc__ = "The format of the raster is three bands consisting of red, green, and blue values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatBgr.__doc__ = "The format of the raster is three bands consisting of blue, green, and red values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatRgba.__doc__ = "The format of the raster is four bands consisting of red, green, blue, and alpha values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatBgra.__doc__ = "The format of the raster is four bands consisting of blue, green, red, and alpha values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatLuminance.__doc__ = "The format of the raster is a single band consisting of luminance values."
-AgEStkGraphicsRasterFormat.eStkGraphicsRasterFormatLuminanceAlpha.__doc__ = "The format of the raster is two bands consisting of luminance and alpha values."
+STK_GRAPHICS_RASTER_FORMAT.RED.__doc__ = "The format of the raster is a single band consisting of red values."
+STK_GRAPHICS_RASTER_FORMAT.GREEN.__doc__ = "The format of the raster is a single band consisting of green values."
+STK_GRAPHICS_RASTER_FORMAT.BLUE.__doc__ = "The format of the raster is a single band consisting of blue values."
+STK_GRAPHICS_RASTER_FORMAT.ALPHA.__doc__ = "The format of the raster is a single band consisting of alpha values."
+STK_GRAPHICS_RASTER_FORMAT.RGB.__doc__ = "The format of the raster is three bands consisting of red, green, and blue values."
+STK_GRAPHICS_RASTER_FORMAT.BGR.__doc__ = "The format of the raster is three bands consisting of blue, green, and red values."
+STK_GRAPHICS_RASTER_FORMAT.RGBA.__doc__ = "The format of the raster is four bands consisting of red, green, blue, and alpha values."
+STK_GRAPHICS_RASTER_FORMAT.BGRA.__doc__ = "The format of the raster is four bands consisting of blue, green, red, and alpha values."
+STK_GRAPHICS_RASTER_FORMAT.LUMINANCE.__doc__ = "The format of the raster is a single band consisting of luminance values."
+STK_GRAPHICS_RASTER_FORMAT.LUMINANCE_ALPHA.__doc__ = "The format of the raster is two bands consisting of luminance and alpha values."
 
-agcls.AgTypeNameMap["AgEStkGraphicsRasterFormat"] = AgEStkGraphicsRasterFormat
+agcls.AgTypeNameMap["STK_GRAPHICS_RASTER_FORMAT"] = STK_GRAPHICS_RASTER_FORMAT
 
-class AgEStkGraphicsRasterOrientation(IntEnum):
+class STK_GRAPHICS_RASTER_ORIENTATION(IntEnum):
     """The vertical orientation of the raster."""
     # The raster has a top to bottom orientation.
-    eStkGraphicsRasterOrientationTopToBottom = 0
+    TOP_TO_BOTTOM = 0
     # The raster has a bottom to top orientation.
-    eStkGraphicsRasterOrientationBottomToTop = 1
+    BOTTOM_TO_TOP = 1
 
-AgEStkGraphicsRasterOrientation.eStkGraphicsRasterOrientationTopToBottom.__doc__ = "The raster has a top to bottom orientation."
-AgEStkGraphicsRasterOrientation.eStkGraphicsRasterOrientationBottomToTop.__doc__ = "The raster has a bottom to top orientation."
+STK_GRAPHICS_RASTER_ORIENTATION.TOP_TO_BOTTOM.__doc__ = "The raster has a top to bottom orientation."
+STK_GRAPHICS_RASTER_ORIENTATION.BOTTOM_TO_TOP.__doc__ = "The raster has a bottom to top orientation."
 
-agcls.AgTypeNameMap["AgEStkGraphicsRasterOrientation"] = AgEStkGraphicsRasterOrientation
+agcls.AgTypeNameMap["STK_GRAPHICS_RASTER_ORIENTATION"] = STK_GRAPHICS_RASTER_ORIENTATION
 
-class AgEStkGraphicsRasterType(IntEnum):
+class STK_GRAPHICS_RASTER_TYPE(IntEnum):
     """The type of data contained within each band of a raster dataset."""
     # Each value contained within a band can be represented with an unsigned byte.
-    eStkGraphicsRasterTypeUnsignedByte = 0
+    UNSIGNED_BYTE = 0
     # Each value contained within a band can be represented with a byte.
-    eStkGraphicsRasterTypeByte = 1
+    BYTE = 1
     # Each value contained within a band can be represented with an unsigned short.
-    eStkGraphicsRasterTypeUnsignedShort = 2
+    UNSIGNED_SHORT = 2
     # Each value contained within a band can be represented with a short.
-    eStkGraphicsRasterTypeShort = 3
+    SHORT = 3
     # Each value contained within a band can be represented with an unsigned int.
-    eStkGraphicsRasterTypeUnsignedInt = 4
+    UNSIGNED_INT = 4
     # Each value contained within a band can be represented with an int.
-    eStkGraphicsRasterTypeInt = 5
+    INT = 5
     # Each value contained within a band can be represented with a float.
-    eStkGraphicsRasterTypeFloat = 6
+    FLOAT = 6
     # Each value contained within a band can be represented with a double.
-    eStkGraphicsRasterTypeDouble = 7
+    DOUBLE = 7
 
-AgEStkGraphicsRasterType.eStkGraphicsRasterTypeUnsignedByte.__doc__ = "Each value contained within a band can be represented with an unsigned byte."
-AgEStkGraphicsRasterType.eStkGraphicsRasterTypeByte.__doc__ = "Each value contained within a band can be represented with a byte."
-AgEStkGraphicsRasterType.eStkGraphicsRasterTypeUnsignedShort.__doc__ = "Each value contained within a band can be represented with an unsigned short."
-AgEStkGraphicsRasterType.eStkGraphicsRasterTypeShort.__doc__ = "Each value contained within a band can be represented with a short."
-AgEStkGraphicsRasterType.eStkGraphicsRasterTypeUnsignedInt.__doc__ = "Each value contained within a band can be represented with an unsigned int."
-AgEStkGraphicsRasterType.eStkGraphicsRasterTypeInt.__doc__ = "Each value contained within a band can be represented with an int."
-AgEStkGraphicsRasterType.eStkGraphicsRasterTypeFloat.__doc__ = "Each value contained within a band can be represented with a float."
-AgEStkGraphicsRasterType.eStkGraphicsRasterTypeDouble.__doc__ = "Each value contained within a band can be represented with a double."
+STK_GRAPHICS_RASTER_TYPE.UNSIGNED_BYTE.__doc__ = "Each value contained within a band can be represented with an unsigned byte."
+STK_GRAPHICS_RASTER_TYPE.BYTE.__doc__ = "Each value contained within a band can be represented with a byte."
+STK_GRAPHICS_RASTER_TYPE.UNSIGNED_SHORT.__doc__ = "Each value contained within a band can be represented with an unsigned short."
+STK_GRAPHICS_RASTER_TYPE.SHORT.__doc__ = "Each value contained within a band can be represented with a short."
+STK_GRAPHICS_RASTER_TYPE.UNSIGNED_INT.__doc__ = "Each value contained within a band can be represented with an unsigned int."
+STK_GRAPHICS_RASTER_TYPE.INT.__doc__ = "Each value contained within a band can be represented with an int."
+STK_GRAPHICS_RASTER_TYPE.FLOAT.__doc__ = "Each value contained within a band can be represented with a float."
+STK_GRAPHICS_RASTER_TYPE.DOUBLE.__doc__ = "Each value contained within a band can be represented with a double."
 
-agcls.AgTypeNameMap["AgEStkGraphicsRasterType"] = AgEStkGraphicsRasterType
+agcls.AgTypeNameMap["STK_GRAPHICS_RASTER_TYPE"] = STK_GRAPHICS_RASTER_TYPE
 
-class AgEStkGraphicsSharpenMethod(IntEnum):
+class STK_GRAPHICS_SHARPEN_METHOD(IntEnum):
     """The method used to sharpen a raster."""
     # Provides sharpening through mean removal.
-    eStkGraphicsSharpenMethodMeanRemoval = 0
+    MEAN_REMOVAL = 0
     # Provides basic sharpening.
-    eStkGraphicsSharpenMethodBasic = 1
+    BASIC = 1
 
-AgEStkGraphicsSharpenMethod.eStkGraphicsSharpenMethodMeanRemoval.__doc__ = "Provides sharpening through mean removal."
-AgEStkGraphicsSharpenMethod.eStkGraphicsSharpenMethodBasic.__doc__ = "Provides basic sharpening."
+STK_GRAPHICS_SHARPEN_METHOD.MEAN_REMOVAL.__doc__ = "Provides sharpening through mean removal."
+STK_GRAPHICS_SHARPEN_METHOD.BASIC.__doc__ = "Provides basic sharpening."
 
-agcls.AgTypeNameMap["AgEStkGraphicsSharpenMethod"] = AgEStkGraphicsSharpenMethod
+agcls.AgTypeNameMap["STK_GRAPHICS_SHARPEN_METHOD"] = STK_GRAPHICS_SHARPEN_METHOD
 
-class AgEStkGraphicsVideoPlayback(IntEnum):
+class STK_GRAPHICS_VIDEO_PLAYBACK(IntEnum):
     """Specifies how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
     # The video will playback in realtime.
-    eStkGraphicsVideoPlaybackRealTime = 0
+    REAL_TIME = 0
     # The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time.
-    eStkGraphicsVideoPlaybackTimeInterval = 1
+    TIME_INTERVAL = 1
 
-AgEStkGraphicsVideoPlayback.eStkGraphicsVideoPlaybackRealTime.__doc__ = "The video will playback in realtime."
-AgEStkGraphicsVideoPlayback.eStkGraphicsVideoPlaybackTimeInterval.__doc__ = "The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."
+STK_GRAPHICS_VIDEO_PLAYBACK.REAL_TIME.__doc__ = "The video will playback in realtime."
+STK_GRAPHICS_VIDEO_PLAYBACK.TIME_INTERVAL.__doc__ = "The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."
 
-agcls.AgTypeNameMap["AgEStkGraphicsVideoPlayback"] = AgEStkGraphicsVideoPlayback
+agcls.AgTypeNameMap["STK_GRAPHICS_VIDEO_PLAYBACK"] = STK_GRAPHICS_VIDEO_PLAYBACK
 
-class AgEStkGraphicsKmlNetworkLinkRefreshMode(IntEnum):
+class STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE(IntEnum):
     """Defines the options available for a KmlNetworkLink's RefreshMode property."""
     # Refresh when the document is loaded and whenever the Link parameters change (the default).
-    eStkGraphicsKmlNetworkLinkRefreshModeOnChange = 0
+    ON_CHANGE = 0
     # Refresh the network link at the duration specified by refresh interval.
-    eStkGraphicsKmlNetworkLinkRefreshModeOnInterval = 1
+    ON_INTERVAL = 1
     # Refresh the network link when the expiration time is reached.
-    eStkGraphicsKmlNetworkLinkRefreshModeOnExpire = 2
+    ON_EXPIRE = 2
 
-AgEStkGraphicsKmlNetworkLinkRefreshMode.eStkGraphicsKmlNetworkLinkRefreshModeOnChange.__doc__ = "Refresh when the document is loaded and whenever the Link parameters change (the default)."
-AgEStkGraphicsKmlNetworkLinkRefreshMode.eStkGraphicsKmlNetworkLinkRefreshModeOnInterval.__doc__ = "Refresh the network link at the duration specified by refresh interval."
-AgEStkGraphicsKmlNetworkLinkRefreshMode.eStkGraphicsKmlNetworkLinkRefreshModeOnExpire.__doc__ = "Refresh the network link when the expiration time is reached."
+STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE.ON_CHANGE.__doc__ = "Refresh when the document is loaded and whenever the Link parameters change (the default)."
+STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE.ON_INTERVAL.__doc__ = "Refresh the network link at the duration specified by refresh interval."
+STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE.ON_EXPIRE.__doc__ = "Refresh the network link when the expiration time is reached."
 
-agcls.AgTypeNameMap["AgEStkGraphicsKmlNetworkLinkRefreshMode"] = AgEStkGraphicsKmlNetworkLinkRefreshMode
+agcls.AgTypeNameMap["STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE"] = STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE
 
-class AgEStkGraphicsKmlNetworkLinkViewRefreshMode(IntEnum):
+class STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE(IntEnum):
     """Defines the options available for a KmlNetworkLink's ViewRefreshMode property."""
     # Do not refresh the network link when the camera's view changes.
-    eStkGraphicsKmlNetworkLinkViewRefreshModeNever = 0
+    NEVER = 0
     # Only refresh the network link when it is explicitly refreshed by calling the refresh method.
-    eStkGraphicsKmlNetworkLinkViewRefreshModeOnRequest = 1
+    ON_REQUEST = 1
     # Refresh the network link after camera view movement stops for the duration specified by view refresh time.
-    eStkGraphicsKmlNetworkLinkViewRefreshModeOnStop = 2
+    ON_STOP = 2
     # Refreshes the network link when the region associated with this link becomes active.
-    eStkGraphicsKmlNetworkLinkViewRefreshModeOnRegion = 3
+    ON_REGION = 3
 
-AgEStkGraphicsKmlNetworkLinkViewRefreshMode.eStkGraphicsKmlNetworkLinkViewRefreshModeNever.__doc__ = "Do not refresh the network link when the camera's view changes."
-AgEStkGraphicsKmlNetworkLinkViewRefreshMode.eStkGraphicsKmlNetworkLinkViewRefreshModeOnRequest.__doc__ = "Only refresh the network link when it is explicitly refreshed by calling the refresh method."
-AgEStkGraphicsKmlNetworkLinkViewRefreshMode.eStkGraphicsKmlNetworkLinkViewRefreshModeOnStop.__doc__ = "Refresh the network link after camera view movement stops for the duration specified by view refresh time."
-AgEStkGraphicsKmlNetworkLinkViewRefreshMode.eStkGraphicsKmlNetworkLinkViewRefreshModeOnRegion.__doc__ = "Refreshes the network link when the region associated with this link becomes active."
+STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE.NEVER.__doc__ = "Do not refresh the network link when the camera's view changes."
+STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_REQUEST.__doc__ = "Only refresh the network link when it is explicitly refreshed by calling the refresh method."
+STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_STOP.__doc__ = "Refresh the network link after camera view movement stops for the duration specified by view refresh time."
+STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_REGION.__doc__ = "Refreshes the network link when the region associated with this link becomes active."
 
-agcls.AgTypeNameMap["AgEStkGraphicsKmlNetworkLinkViewRefreshMode"] = AgEStkGraphicsKmlNetworkLinkViewRefreshMode
+agcls.AgTypeNameMap["STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE"] = STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE
 
-class AgEStkGraphicsModelUpAxis(IntEnum):
+class STK_GRAPHICS_MODEL_UP_AXIS(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
     # The positive X axis.
-    eStkGraphicsModelUpAxisX = 0
+    X = 0
     # The positive Y axis.
-    eStkGraphicsModelUpAxisY = 1
+    Y = 1
     # The positive Z axis.
-    eStkGraphicsModelUpAxisZ = 2
+    Z = 2
     # The negative X axis.
-    eStkGraphicsModelUpAxisNegativeX = 3
+    NEGATIVE_X = 3
     # The negative Y axis.
-    eStkGraphicsModelUpAxisNegativeY = 4
+    NEGATIVE_Y = 4
     # The negative Z axis.
-    eStkGraphicsModelUpAxisNegativeZ = 5
+    NEGATIVE_Z = 5
 
-AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisX.__doc__ = "The positive X axis."
-AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisY.__doc__ = "The positive Y axis."
-AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisZ.__doc__ = "The positive Z axis."
-AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisNegativeX.__doc__ = "The negative X axis."
-AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisNegativeY.__doc__ = "The negative Y axis."
-AgEStkGraphicsModelUpAxis.eStkGraphicsModelUpAxisNegativeZ.__doc__ = "The negative Z axis."
+STK_GRAPHICS_MODEL_UP_AXIS.X.__doc__ = "The positive X axis."
+STK_GRAPHICS_MODEL_UP_AXIS.Y.__doc__ = "The positive Y axis."
+STK_GRAPHICS_MODEL_UP_AXIS.Z.__doc__ = "The positive Z axis."
+STK_GRAPHICS_MODEL_UP_AXIS.NEGATIVE_X.__doc__ = "The negative X axis."
+STK_GRAPHICS_MODEL_UP_AXIS.NEGATIVE_Y.__doc__ = "The negative Y axis."
+STK_GRAPHICS_MODEL_UP_AXIS.NEGATIVE_Z.__doc__ = "The negative Z axis."
 
-agcls.AgTypeNameMap["AgEStkGraphicsModelUpAxis"] = AgEStkGraphicsModelUpAxis
+agcls.AgTypeNameMap["STK_GRAPHICS_MODEL_UP_AXIS"] = STK_GRAPHICS_MODEL_UP_AXIS
 
-class AgEStkGraphicsOutlineAppearance(IntEnum):
+class STK_GRAPHICS_OUTLINE_APPEARANCE(IntEnum):
     """Possible appearances of an outline. Front lines are lines on front facing geometry and back lines are lines on back facing geometry."""
     # Both the front and back lines are displayed.
-    eStkGraphicsFrontAndBackLines = 0
+    FRONT_AND_BACK_LINES = 0
     # Only the front lines are displayed. This can be used to declutter the outline.
-    eStkGraphicsFrontLinesOnly = 1
+    FRONT_LINES_ONLY = 1
     # Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry.
-    eStkGraphicsStylizeBackLines = 2
+    STYLIZE_BACK_LINES = 2
 
-AgEStkGraphicsOutlineAppearance.eStkGraphicsFrontAndBackLines.__doc__ = "Both the front and back lines are displayed."
-AgEStkGraphicsOutlineAppearance.eStkGraphicsFrontLinesOnly.__doc__ = "Only the front lines are displayed. This can be used to declutter the outline."
-AgEStkGraphicsOutlineAppearance.eStkGraphicsStylizeBackLines.__doc__ = "Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry."
+STK_GRAPHICS_OUTLINE_APPEARANCE.FRONT_AND_BACK_LINES.__doc__ = "Both the front and back lines are displayed."
+STK_GRAPHICS_OUTLINE_APPEARANCE.FRONT_LINES_ONLY.__doc__ = "Only the front lines are displayed. This can be used to declutter the outline."
+STK_GRAPHICS_OUTLINE_APPEARANCE.STYLIZE_BACK_LINES.__doc__ = "Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry."
 
-agcls.AgTypeNameMap["AgEStkGraphicsOutlineAppearance"] = AgEStkGraphicsOutlineAppearance
+agcls.AgTypeNameMap["STK_GRAPHICS_OUTLINE_APPEARANCE"] = STK_GRAPHICS_OUTLINE_APPEARANCE
 
-class AgEStkGraphicsPolylineType(IntEnum):
+class STK_GRAPHICS_POLYLINE_TYPE(IntEnum):
     """Describes how to interpret positions defining a polyline."""
     # Every two positions define a line segment. Line segments are not required to be connected to each other.
-    eStkGraphicsPolylineTypeLines = 0
+    LINES = 0
     # After the first position, each additional position defines a line segment from the previous position to the current position.
-    eStkGraphicsPolylineTypeLineStrip = 1
+    LINE_STRIP = 1
     # Lines are drawn as points.
-    eStkGraphicsPolylineTypePoints = 2
+    POINTS = 2
 
-AgEStkGraphicsPolylineType.eStkGraphicsPolylineTypeLines.__doc__ = "Every two positions define a line segment. Line segments are not required to be connected to each other."
-AgEStkGraphicsPolylineType.eStkGraphicsPolylineTypeLineStrip.__doc__ = "After the first position, each additional position defines a line segment from the previous position to the current position."
-AgEStkGraphicsPolylineType.eStkGraphicsPolylineTypePoints.__doc__ = "Lines are drawn as points."
+STK_GRAPHICS_POLYLINE_TYPE.LINES.__doc__ = "Every two positions define a line segment. Line segments are not required to be connected to each other."
+STK_GRAPHICS_POLYLINE_TYPE.LINE_STRIP.__doc__ = "After the first position, each additional position defines a line segment from the previous position to the current position."
+STK_GRAPHICS_POLYLINE_TYPE.POINTS.__doc__ = "Lines are drawn as points."
 
-agcls.AgTypeNameMap["AgEStkGraphicsPolylineType"] = AgEStkGraphicsPolylineType
+agcls.AgTypeNameMap["STK_GRAPHICS_POLYLINE_TYPE"] = STK_GRAPHICS_POLYLINE_TYPE
 
-class AgEStkGraphicsCullFace(IntEnum):
+class STK_GRAPHICS_CULL_FACE(IntEnum):
     """Identifies whether front- and/or back-facing triangles are culled."""
     # Front-facing triangles are culled.
-    eStkGraphicsECullFaceFront = 0
+    E_CULL_FACE_FRONT = 0
     # Back-facing triangles are culled.
-    eStkGraphicsECullFaceBack = 1
+    E_CULL_FACE_BACK = 1
     # Both front- and back-facing triangles are culled. Therefore, no triangles are rendered.
-    eStkGraphicsECullFaceFrontAndBack = 2
+    E_CULL_FACE_FRONT_AND_BACK = 2
     # No triangles are culled.
-    eStkGraphicsECullFaceNeither = 3
+    E_CULL_FACE_NEITHER = 3
 
-AgEStkGraphicsCullFace.eStkGraphicsECullFaceFront.__doc__ = "Front-facing triangles are culled."
-AgEStkGraphicsCullFace.eStkGraphicsECullFaceBack.__doc__ = "Back-facing triangles are culled."
-AgEStkGraphicsCullFace.eStkGraphicsECullFaceFrontAndBack.__doc__ = "Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."
-AgEStkGraphicsCullFace.eStkGraphicsECullFaceNeither.__doc__ = "No triangles are culled."
+STK_GRAPHICS_CULL_FACE.E_CULL_FACE_FRONT.__doc__ = "Front-facing triangles are culled."
+STK_GRAPHICS_CULL_FACE.E_CULL_FACE_BACK.__doc__ = "Back-facing triangles are culled."
+STK_GRAPHICS_CULL_FACE.E_CULL_FACE_FRONT_AND_BACK.__doc__ = "Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."
+STK_GRAPHICS_CULL_FACE.E_CULL_FACE_NEITHER.__doc__ = "No triangles are culled."
 
-agcls.AgTypeNameMap["AgEStkGraphicsCullFace"] = AgEStkGraphicsCullFace
+agcls.AgTypeNameMap["STK_GRAPHICS_CULL_FACE"] = STK_GRAPHICS_CULL_FACE
 
-class AgEStkGraphicsInternalTextureFormat(IntEnum):
+class STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT(IntEnum):
     """The format of individual texels in a texture."""
     # Each texel is an 4-bit alpha component.
-    eStkGraphicsInternalTextureFormatAlpha4 = 0
+    ALPHA4 = 0
     # Each texel is an 8-bit alpha component.
-    eStkGraphicsInternalTextureFormatAlpha8 = 1
+    ALPHA8 = 1
     # Each texel is an 12-bit alpha component.
-    eStkGraphicsInternalTextureFormatAlpha12 = 2
+    ALPHA12 = 2
     # Each texel is an 16-bit alpha component.
-    eStkGraphicsInternalTextureFormatAlpha16 = 3
+    ALPHA16 = 3
     # Each texel contains 3-bit red and green components and 2-bit blue component.
-    eStkGraphicsInternalTextureFormatR3G3B2 = 4
+    R3G3B2 = 4
     # Each texel contains 4-bit red, green, and blue components.
-    eStkGraphicsInternalTextureFormatRgb4 = 5
+    RGB4 = 5
     # Each texel contains 5-bit red, green, and blue components.
-    eStkGraphicsInternalTextureFormatRgb5 = 6
+    RGB5 = 6
     # Each texel contains 8-bit red, green, and blue components.
-    eStkGraphicsInternalTextureFormatRgb8 = 7
+    RGB8 = 7
     # Each texel contains 10-bit red, green, and blue components.
-    eStkGraphicsInternalTextureFormatRgb10 = 8
+    RGB10 = 8
     # Each texel contains 12-bit red, green, and blue components.
-    eStkGraphicsInternalTextureFormatRgb12 = 9
+    RGB12 = 9
     # Each texel contains 16-bit red, green, and blue components.
-    eStkGraphicsInternalTextureFormatRgb16 = 10
+    RGB16 = 10
     # Each texel contains 16-bit red, green, and blue floating point components.
-    eStkGraphicsInternalTextureFormatRgb16F = 11
+    RGB16_F = 11
     # Each texel contains 32-bit red, green, and blue floating point components.
-    eStkGraphicsInternalTextureFormatRgb32F = 12
+    RGB32_F = 12
     # Each texel contains 2-bit red, green, blue, and alpha components.
-    eStkGraphicsInternalTextureFormatRgba2 = 13
+    RGBA2 = 13
     # Each texel contains 4-bit red, green, blue, and alpha components.
-    eStkGraphicsInternalTextureFormatRgba4 = 14
+    RGBA4 = 14
     # Each texel contains 5-bit red, green, blue components and 1-bit alpha component.
-    eStkGraphicsInternalTextureFormatRgb5A1 = 15
+    RGB5_A1 = 15
     # Each texel contains 8-bit red, green, blue, and alpha components.
-    eStkGraphicsInternalTextureFormatRgba8 = 16
+    RGBA8 = 16
     # Each texel contains 10-bit red, green, blue components and 2-bit alpha component.
-    eStkGraphicsInternalTextureFormatRgb10A2 = 17
+    RGB10_A2 = 17
     # Each texel contains 12-bit red, green, blue, and alpha components.
-    eStkGraphicsInternalTextureFormatRgba12 = 18
+    RGBA12 = 18
     # Each texel contains 16-bit red, green, blue, and alpha components.
-    eStkGraphicsInternalTextureFormatRgba16 = 19
+    RGBA16 = 19
     # Each texel contains 16-bit red, green, blue, and alpha floating point components.
-    eStkGraphicsInternalTextureFormatRgba16F = 20
+    RGBA16_F = 20
     # Each texel contains 32-bit red, green, blue, and alpha floating point components.
-    eStkGraphicsInternalTextureFormatRgba32F = 21
+    RGBA32_F = 21
     # Each texel is an 4-bit luminance, e.g. intensity, component.
-    eStkGraphicsInternalTextureFormatLuminance4 = 22
+    LUMINANCE4 = 22
     # Each texel is an 8-bit luminance, e.g. intensity, component.
-    eStkGraphicsInternalTextureFormatLuminance8 = 23
+    LUMINANCE8 = 23
     # Each texel is an 12-bit luminance, e.g. intensity, component.
-    eStkGraphicsInternalTextureFormatLuminance12 = 24
+    LUMINANCE12 = 24
     # Each texel is an 16-bit luminance, e.g. intensity, component.
-    eStkGraphicsInternalTextureFormatLuminance16 = 25
+    LUMINANCE16 = 25
     # Each texel is an 16-bit luminance, e.g. intensity, floating point component.
-    eStkGraphicsInternalTextureFormatLuminance16F = 26
+    LUMINANCE16_F = 26
     # Each texel is an 32-bit luminance, e.g. intensity, floating point component.
-    eStkGraphicsInternalTextureFormatLuminance32F = 27
+    LUMINANCE32_F = 27
     # Each texel contains an 4-bit luminance and 4-bit alpha component.
-    eStkGraphicsInternalTextureFormatLuminance4Alpha4 = 28
+    LUMINANCE4_ALPHA4 = 28
     # Each texel contains an 6-bit luminance and 2-bit alpha component.
-    eStkGraphicsInternalTextureFormatLuminance6Alpha2 = 29
+    LUMINANCE6_ALPHA2 = 29
     # Each texel contains an 8-bit luminance and 8-bit alpha component.
-    eStkGraphicsInternalTextureFormatLuminance8Alpha8 = 30
+    LUMINANCE8_ALPHA8 = 30
     # Each texel contains an 12-bit luminance and 4-bit alpha component.
-    eStkGraphicsInternalTextureFormatLuminance12Alpha4 = 31
+    LUMINANCE12_ALPHA4 = 31
     # Each texel contains an 12-bit luminance and 12-bit alpha component.
-    eStkGraphicsInternalTextureFormatLuminance12Alpha12 = 32
+    LUMINANCE12_ALPHA12 = 32
     # Each texel contains an 16-bit luminance and 16-bit alpha component.
-    eStkGraphicsInternalTextureFormatLuminance16Alpha16 = 33
+    LUMINANCE16_ALPHA16 = 33
     # Each texel contains an 16-bit luminance and 16-bit alpha floating point component.
-    eStkGraphicsInternalTextureFormatLuminance16Alpha16F = 34
+    LUMINANCE16_ALPHA16_F = 34
     # Each texel contains an 32-bit luminance and 32-bit alpha floating point component.
-    eStkGraphicsInternalTextureFormatLuminance32Alpha32F = 35
+    LUMINANCE32_ALPHA32_F = 35
 
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatAlpha4.__doc__ = "Each texel is an 4-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatAlpha8.__doc__ = "Each texel is an 8-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatAlpha12.__doc__ = "Each texel is an 12-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatAlpha16.__doc__ = "Each texel is an 16-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatR3G3B2.__doc__ = "Each texel contains 3-bit red and green components and 2-bit blue component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb4.__doc__ = "Each texel contains 4-bit red, green, and blue components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb5.__doc__ = "Each texel contains 5-bit red, green, and blue components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb8.__doc__ = "Each texel contains 8-bit red, green, and blue components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb10.__doc__ = "Each texel contains 10-bit red, green, and blue components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb12.__doc__ = "Each texel contains 12-bit red, green, and blue components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb16.__doc__ = "Each texel contains 16-bit red, green, and blue components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb16F.__doc__ = "Each texel contains 16-bit red, green, and blue floating point components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb32F.__doc__ = "Each texel contains 32-bit red, green, and blue floating point components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba2.__doc__ = "Each texel contains 2-bit red, green, blue, and alpha components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba4.__doc__ = "Each texel contains 4-bit red, green, blue, and alpha components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb5A1.__doc__ = "Each texel contains 5-bit red, green, blue components and 1-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba8.__doc__ = "Each texel contains 8-bit red, green, blue, and alpha components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgb10A2.__doc__ = "Each texel contains 10-bit red, green, blue components and 2-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba12.__doc__ = "Each texel contains 12-bit red, green, blue, and alpha components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba16.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba16F.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha floating point components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatRgba32F.__doc__ = "Each texel contains 32-bit red, green, blue, and alpha floating point components."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance4.__doc__ = "Each texel is an 4-bit luminance, e.g. intensity, component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance8.__doc__ = "Each texel is an 8-bit luminance, e.g. intensity, component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance12.__doc__ = "Each texel is an 12-bit luminance, e.g. intensity, component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance16.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance16F.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, floating point component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance32F.__doc__ = "Each texel is an 32-bit luminance, e.g. intensity, floating point component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance4Alpha4.__doc__ = "Each texel contains an 4-bit luminance and 4-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance6Alpha2.__doc__ = "Each texel contains an 6-bit luminance and 2-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance8Alpha8.__doc__ = "Each texel contains an 8-bit luminance and 8-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance12Alpha4.__doc__ = "Each texel contains an 12-bit luminance and 4-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance12Alpha12.__doc__ = "Each texel contains an 12-bit luminance and 12-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance16Alpha16.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance16Alpha16F.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha floating point component."
-AgEStkGraphicsInternalTextureFormat.eStkGraphicsInternalTextureFormatLuminance32Alpha32F.__doc__ = "Each texel contains an 32-bit luminance and 32-bit alpha floating point component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.ALPHA4.__doc__ = "Each texel is an 4-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.ALPHA8.__doc__ = "Each texel is an 8-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.ALPHA12.__doc__ = "Each texel is an 12-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.ALPHA16.__doc__ = "Each texel is an 16-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.R3G3B2.__doc__ = "Each texel contains 3-bit red and green components and 2-bit blue component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB4.__doc__ = "Each texel contains 4-bit red, green, and blue components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB5.__doc__ = "Each texel contains 5-bit red, green, and blue components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB8.__doc__ = "Each texel contains 8-bit red, green, and blue components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB10.__doc__ = "Each texel contains 10-bit red, green, and blue components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB12.__doc__ = "Each texel contains 12-bit red, green, and blue components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB16.__doc__ = "Each texel contains 16-bit red, green, and blue components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB16_F.__doc__ = "Each texel contains 16-bit red, green, and blue floating point components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB32_F.__doc__ = "Each texel contains 32-bit red, green, and blue floating point components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGBA2.__doc__ = "Each texel contains 2-bit red, green, blue, and alpha components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGBA4.__doc__ = "Each texel contains 4-bit red, green, blue, and alpha components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB5_A1.__doc__ = "Each texel contains 5-bit red, green, blue components and 1-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGBA8.__doc__ = "Each texel contains 8-bit red, green, blue, and alpha components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGB10_A2.__doc__ = "Each texel contains 10-bit red, green, blue components and 2-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGBA12.__doc__ = "Each texel contains 12-bit red, green, blue, and alpha components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGBA16.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGBA16_F.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha floating point components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.RGBA32_F.__doc__ = "Each texel contains 32-bit red, green, blue, and alpha floating point components."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE4.__doc__ = "Each texel is an 4-bit luminance, e.g. intensity, component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE8.__doc__ = "Each texel is an 8-bit luminance, e.g. intensity, component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE12.__doc__ = "Each texel is an 12-bit luminance, e.g. intensity, component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE16.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE16_F.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, floating point component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE32_F.__doc__ = "Each texel is an 32-bit luminance, e.g. intensity, floating point component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE4_ALPHA4.__doc__ = "Each texel contains an 4-bit luminance and 4-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE6_ALPHA2.__doc__ = "Each texel contains an 6-bit luminance and 2-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE8_ALPHA8.__doc__ = "Each texel contains an 8-bit luminance and 8-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE12_ALPHA4.__doc__ = "Each texel contains an 12-bit luminance and 4-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE12_ALPHA12.__doc__ = "Each texel contains an 12-bit luminance and 12-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE16_ALPHA16.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE16_ALPHA16_F.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha floating point component."
+STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT.LUMINANCE32_ALPHA32_F.__doc__ = "Each texel contains an 32-bit luminance and 32-bit alpha floating point component."
 
-agcls.AgTypeNameMap["AgEStkGraphicsInternalTextureFormat"] = AgEStkGraphicsInternalTextureFormat
+agcls.AgTypeNameMap["STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT"] = STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT
 
-class AgEStkGraphicsMagnificationFilter(IntEnum):
+class STK_GRAPHICS_MAGNIFICATION_FILTER(IntEnum):
     """The filter used when the pixel being textured maps to an area less than or equal to one texel."""
     # Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges.
-    eStkGraphicsMagnificationFilterNearest = 0
+    NEAREST = 0
     # Use the weighted average of the four texels that are closest to the center of the pixel being textured.
-    eStkGraphicsMagnificationFilterLinear = 1
+    LINEAR = 1
 
-AgEStkGraphicsMagnificationFilter.eStkGraphicsMagnificationFilterNearest.__doc__ = "Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."
-AgEStkGraphicsMagnificationFilter.eStkGraphicsMagnificationFilterLinear.__doc__ = "Use the weighted average of the four texels that are closest to the center of the pixel being textured."
+STK_GRAPHICS_MAGNIFICATION_FILTER.NEAREST.__doc__ = "Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."
+STK_GRAPHICS_MAGNIFICATION_FILTER.LINEAR.__doc__ = "Use the weighted average of the four texels that are closest to the center of the pixel being textured."
 
-agcls.AgTypeNameMap["AgEStkGraphicsMagnificationFilter"] = AgEStkGraphicsMagnificationFilter
+agcls.AgTypeNameMap["STK_GRAPHICS_MAGNIFICATION_FILTER"] = STK_GRAPHICS_MAGNIFICATION_FILTER
 
-class AgEStkGraphicsMinificationFilter(IntEnum):
+class STK_GRAPHICS_MINIFICATION_FILTER(IntEnum):
     """The filter used when the pixel being textured maps to an area greater than one texel."""
     # Use the texel that is closest to the center of the pixel being textured.
-    eStkGraphicsMinificationFilterNearest = 0
+    NEAREST = 0
     # Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured.
-    eStkGraphicsMinificationFilterLinear = 1
+    LINEAR = 1
     # Use the mipmap that most closely matches the size of the pixel being textured. Then use the texel from that mipmap that is closest to the center of the pixel being textured.
-    eStkGraphicsMinificationFilterNearestMipMapNearest = 2
+    NEAREST_MIP_MAP_NEAREST = 2
     # Use the mipmap that most closely matches the size of the pixel being textured. Then use the weighted average of the four (for 2D textures, two for 1D textures) texels from that mipmap that are closest to the center of the pixel being textured.
-    eStkGraphicsMinificationFilterLinearMipMapNearest = 3
+    LINEAR_MIP_MAP_NEAREST = 3
     # Use the two mipmaps that most closely match the size of the pixel being textured. Determine the texel that is closest to the center of the pixel being textured in each mipmap. The final texture value is a weighted average of these two texels.
-    eStkGraphicsMinificationFilterNearestMipMapLinear = 4
+    NEAREST_MIP_MAP_LINEAR = 4
     # Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap...
-    eStkGraphicsMinificationFilterLinearMipMapLinear = 5
+    LINEAR_MIP_MAP_LINEAR = 5
 
-AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterNearest.__doc__ = "Use the texel that is closest to the center of the pixel being textured."
-AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterLinear.__doc__ = "Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured."
-AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterNearestMipMapNearest.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the texel from that mipmap that is closest to the center of the pixel being textured."
-AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterLinearMipMapNearest.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the weighted average of the four (for 2D textures, two for 1D textures) texels from that mipmap that are closest to the center of the pixel being textured."
-AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterNearestMipMapLinear.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the texel that is closest to the center of the pixel being textured in each mipmap. The final texture value is a weighted average of these two texels."
-AgEStkGraphicsMinificationFilter.eStkGraphicsMinificationFilterLinearMipMapLinear.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap..."
+STK_GRAPHICS_MINIFICATION_FILTER.NEAREST.__doc__ = "Use the texel that is closest to the center of the pixel being textured."
+STK_GRAPHICS_MINIFICATION_FILTER.LINEAR.__doc__ = "Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured."
+STK_GRAPHICS_MINIFICATION_FILTER.NEAREST_MIP_MAP_NEAREST.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the texel from that mipmap that is closest to the center of the pixel being textured."
+STK_GRAPHICS_MINIFICATION_FILTER.LINEAR_MIP_MAP_NEAREST.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the weighted average of the four (for 2D textures, two for 1D textures) texels from that mipmap that are closest to the center of the pixel being textured."
+STK_GRAPHICS_MINIFICATION_FILTER.NEAREST_MIP_MAP_LINEAR.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the texel that is closest to the center of the pixel being textured in each mipmap. The final texture value is a weighted average of these two texels."
+STK_GRAPHICS_MINIFICATION_FILTER.LINEAR_MIP_MAP_LINEAR.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap..."
 
-agcls.AgTypeNameMap["AgEStkGraphicsMinificationFilter"] = AgEStkGraphicsMinificationFilter
+agcls.AgTypeNameMap["STK_GRAPHICS_MINIFICATION_FILTER"] = STK_GRAPHICS_MINIFICATION_FILTER
 
-class AgEStkGraphicsRendererShadeModel(IntEnum):
+class STK_GRAPHICS_RENDERER_SHADE_MODEL(IntEnum):
     """Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors."""
     # Flat shading renders the primitive with one color across all of the vertices.
-    eStkGraphicsRendererShadeModelFlat = 0
+    FLAT = 0
     # Gouraud shading renders the primitive by interpolating the color between the vertices.
-    eStkGraphicsRendererShadeModelGouraud = 1
+    GOURAUD = 1
 
-AgEStkGraphicsRendererShadeModel.eStkGraphicsRendererShadeModelFlat.__doc__ = "Flat shading renders the primitive with one color across all of the vertices."
-AgEStkGraphicsRendererShadeModel.eStkGraphicsRendererShadeModelGouraud.__doc__ = "Gouraud shading renders the primitive by interpolating the color between the vertices."
+STK_GRAPHICS_RENDERER_SHADE_MODEL.FLAT.__doc__ = "Flat shading renders the primitive with one color across all of the vertices."
+STK_GRAPHICS_RENDERER_SHADE_MODEL.GOURAUD.__doc__ = "Gouraud shading renders the primitive by interpolating the color between the vertices."
 
-agcls.AgTypeNameMap["AgEStkGraphicsRendererShadeModel"] = AgEStkGraphicsRendererShadeModel
+agcls.AgTypeNameMap["STK_GRAPHICS_RENDERER_SHADE_MODEL"] = STK_GRAPHICS_RENDERER_SHADE_MODEL
 
-class AgEStkGraphicsTextureWrap(IntEnum):
+class STK_GRAPHICS_TEXTURE_WRAP(IntEnum):
     """Determine how to handle textures coordinates that fall outside of the range [0, 1]."""
     # Clamp the texture coordinate to the range [0, 1].
-    eStkGraphicsTextureWrapClamp = 0
+    CLAMP = 0
     # Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping.
-    eStkGraphicsTextureWrapClampToBorder = 1
+    CLAMP_TO_BORDER = 1
     # Clamp the texture coordinate to the range [1/2N, 1 - 1/2N], where N is the size the texture in the direction of clamping.
-    eStkGraphicsTextureWrapClampToEdge = 2
+    CLAMP_TO_EDGE = 2
     # If the integer part of the texture coordinate is even, use the fractional part of the texture coordinate. Otherwise, use one minus the fractional part of the texture coordinate.
-    eStkGraphicsTextureWrapMirroredRepeat = 3
+    MIRRORED_REPEAT = 3
     # Ignore the integer part of the texture coordinate.
-    eStkGraphicsTextureWrapRepeat = 4
+    REPEAT = 4
 
-AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapClamp.__doc__ = "Clamp the texture coordinate to the range [0, 1]."
-AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapClampToBorder.__doc__ = "Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping."
-AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapClampToEdge.__doc__ = "Clamp the texture coordinate to the range [1/2N, 1 - 1/2N], where N is the size the texture in the direction of clamping."
-AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapMirroredRepeat.__doc__ = "If the integer part of the texture coordinate is even, use the fractional part of the texture coordinate. Otherwise, use one minus the fractional part of the texture coordinate."
-AgEStkGraphicsTextureWrap.eStkGraphicsTextureWrapRepeat.__doc__ = "Ignore the integer part of the texture coordinate."
+STK_GRAPHICS_TEXTURE_WRAP.CLAMP.__doc__ = "Clamp the texture coordinate to the range [0, 1]."
+STK_GRAPHICS_TEXTURE_WRAP.CLAMP_TO_BORDER.__doc__ = "Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping."
+STK_GRAPHICS_TEXTURE_WRAP.CLAMP_TO_EDGE.__doc__ = "Clamp the texture coordinate to the range [1/2N, 1 - 1/2N], where N is the size the texture in the direction of clamping."
+STK_GRAPHICS_TEXTURE_WRAP.MIRRORED_REPEAT.__doc__ = "If the integer part of the texture coordinate is even, use the fractional part of the texture coordinate. Otherwise, use one minus the fractional part of the texture coordinate."
+STK_GRAPHICS_TEXTURE_WRAP.REPEAT.__doc__ = "Ignore the integer part of the texture coordinate."
 
-agcls.AgTypeNameMap["AgEStkGraphicsTextureWrap"] = AgEStkGraphicsTextureWrap
+agcls.AgTypeNameMap["STK_GRAPHICS_TEXTURE_WRAP"] = STK_GRAPHICS_TEXTURE_WRAP
 
-class AgEStkGraphicsSetHint(IntEnum):
+class STK_GRAPHICS_SET_HINT(IntEnum):
     """An optimization hint optionally provided to primitives to enhance performance for static or dynamic primitives. See the Set Hint Performance Overview for selecting an appropriate value."""
     # Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent.
-    eStkGraphicsSetHintInfrequent = 0
+    INFREQUENT = 0
     # Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not.
-    eStkGraphicsSetHintPartial = 1
+    PARTIAL = 1
     # Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail.
-    eStkGraphicsSetHintFrequent = 2
+    FREQUENT = 2
 
-AgEStkGraphicsSetHint.eStkGraphicsSetHintInfrequent.__doc__ = "Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."
-AgEStkGraphicsSetHint.eStkGraphicsSetHintPartial.__doc__ = "Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not."
-AgEStkGraphicsSetHint.eStkGraphicsSetHintFrequent.__doc__ = "Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail."
+STK_GRAPHICS_SET_HINT.INFREQUENT.__doc__ = "Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."
+STK_GRAPHICS_SET_HINT.PARTIAL.__doc__ = "Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not."
+STK_GRAPHICS_SET_HINT.FREQUENT.__doc__ = "Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail."
 
-agcls.AgTypeNameMap["AgEStkGraphicsSetHint"] = AgEStkGraphicsSetHint
+agcls.AgTypeNameMap["STK_GRAPHICS_SET_HINT"] = STK_GRAPHICS_SET_HINT
 
-class AgEStkGraphicsStereoProjectionMode(IntEnum):
+class STK_GRAPHICS_STEREO_PROJECTION_MODE(IntEnum):
     """The stereoscopic projection mode used for the left and right eye scenes."""
     # Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen...
-    eStkGraphicsStereoProjectionParallel = 0
+    PARALLEL = 0
     # Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen.
-    eStkGraphicsStereoProjectionFixedDistance = 1
+    FIXED_DISTANCE = 1
     # Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene.
-    eStkGraphicsStereoProjectionAutomatic = 2
+    AUTOMATIC = 2
 
-AgEStkGraphicsStereoProjectionMode.eStkGraphicsStereoProjectionParallel.__doc__ = "Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."
-AgEStkGraphicsStereoProjectionMode.eStkGraphicsStereoProjectionFixedDistance.__doc__ = "Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen."
-AgEStkGraphicsStereoProjectionMode.eStkGraphicsStereoProjectionAutomatic.__doc__ = "Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene."
+STK_GRAPHICS_STEREO_PROJECTION_MODE.PARALLEL.__doc__ = "Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."
+STK_GRAPHICS_STEREO_PROJECTION_MODE.FIXED_DISTANCE.__doc__ = "Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen."
+STK_GRAPHICS_STEREO_PROJECTION_MODE.AUTOMATIC.__doc__ = "Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene."
 
-agcls.AgTypeNameMap["AgEStkGraphicsStereoProjectionMode"] = AgEStkGraphicsStereoProjectionMode
+agcls.AgTypeNameMap["STK_GRAPHICS_STEREO_PROJECTION_MODE"] = STK_GRAPHICS_STEREO_PROJECTION_MODE
 
-class AgEStkGraphicsStereoscopicDisplayMode(IntEnum):
+class STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE(IntEnum):
     """The stereoscopic display mode. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
     # No stereoscopic
-    eStkGraphicsStereoscopicDisplayModeOff = 0
+    OFF = 0
     # OpenGL Quad-buffer stereoscopic
-    eStkGraphicsStereoscopicDisplayModeQuadBuffer = 1
+    QUAD_BUFFER = 1
     # Anaglyph or two-color stereoscopic
-    eStkGraphicsStereoscopicDisplayModeAnaglyph = 2
+    ANAGLYPH = 2
     # Left eye view of the stereoscopic scene
-    eStkGraphicsStereoscopicDisplayModeLeftEye = 3
+    LEFT_EYE = 3
     # Right eye view of the stereoscopic scene
-    eStkGraphicsStereoscopicDisplayModeRightEye = 4
+    RIGHT_EYE = 4
     # Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window.
-    eStkGraphicsStereoscopicDisplayModeSideBySide = 5
+    SIDE_BY_SIDE = 5
 
-AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeOff.__doc__ = "No stereoscopic"
-AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeQuadBuffer.__doc__ = "OpenGL Quad-buffer stereoscopic"
-AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeAnaglyph.__doc__ = "Anaglyph or two-color stereoscopic"
-AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeLeftEye.__doc__ = "Left eye view of the stereoscopic scene"
-AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeRightEye.__doc__ = "Right eye view of the stereoscopic scene"
-AgEStkGraphicsStereoscopicDisplayMode.eStkGraphicsStereoscopicDisplayModeSideBySide.__doc__ = "Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."
+STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE.OFF.__doc__ = "No stereoscopic"
+STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE.QUAD_BUFFER.__doc__ = "OpenGL Quad-buffer stereoscopic"
+STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE.ANAGLYPH.__doc__ = "Anaglyph or two-color stereoscopic"
+STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE.LEFT_EYE.__doc__ = "Left eye view of the stereoscopic scene"
+STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE.RIGHT_EYE.__doc__ = "Right eye view of the stereoscopic scene"
+STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE.SIDE_BY_SIDE.__doc__ = "Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."
 
-agcls.AgTypeNameMap["AgEStkGraphicsStereoscopicDisplayMode"] = AgEStkGraphicsStereoscopicDisplayMode
+agcls.AgTypeNameMap["STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE"] = STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE
 
-class AgEStkGraphicsFontStyle(IntEnum):
+class STK_GRAPHICS_FONT_STYLE(IntEnum):
     """Font styles."""
     # Regular font.
-    eStkGraphicsFontStyleRegular = 0x0
+    REGULAR = 0x0
     # Bold font.
-    eStkGraphicsFontStyleBold = 0x1
+    BOLD = 0x1
     # Italic font.
-    eStkGraphicsFontStyleItalic = 0x2
+    ITALIC = 0x2
     # Underlined font.
-    eStkGraphicsFontStyleUnderline = 0x4
+    UNDERLINE = 0x4
     # Strike-out style.
-    eStkGraphicsFontStyleStrikeout = 0x8
+    STRIKEOUT = 0x8
 
-AgEStkGraphicsFontStyle.eStkGraphicsFontStyleRegular.__doc__ = "Regular font."
-AgEStkGraphicsFontStyle.eStkGraphicsFontStyleBold.__doc__ = "Bold font."
-AgEStkGraphicsFontStyle.eStkGraphicsFontStyleItalic.__doc__ = "Italic font."
-AgEStkGraphicsFontStyle.eStkGraphicsFontStyleUnderline.__doc__ = "Underlined font."
-AgEStkGraphicsFontStyle.eStkGraphicsFontStyleStrikeout.__doc__ = "Strike-out style."
+STK_GRAPHICS_FONT_STYLE.REGULAR.__doc__ = "Regular font."
+STK_GRAPHICS_FONT_STYLE.BOLD.__doc__ = "Bold font."
+STK_GRAPHICS_FONT_STYLE.ITALIC.__doc__ = "Italic font."
+STK_GRAPHICS_FONT_STYLE.UNDERLINE.__doc__ = "Underlined font."
+STK_GRAPHICS_FONT_STYLE.STRIKEOUT.__doc__ = "Strike-out style."
 
-agcls.AgTypeNameMap["AgEStkGraphicsFontStyle"] = AgEStkGraphicsFontStyle
+agcls.AgTypeNameMap["STK_GRAPHICS_FONT_STYLE"] = STK_GRAPHICS_FONT_STYLE
 
 
 class IPathPoint(object):
@@ -1655,30 +1655,30 @@ class ITextureFilter2D(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextureFilter2D.")
     
     @property
-    def minification_filter(self) -> "AgEStkGraphicsMinificationFilter":
+    def minification_filter(self) -> "STK_GRAPHICS_MINIFICATION_FILTER":
         """Gets the minification filter used when the pixel being textured maps to an area less than or equal to one texel."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMinificationFilter) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MINIFICATION_FILTER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_minification_filter"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def magnification_filter(self) -> "AgEStkGraphicsMagnificationFilter":
+    def magnification_filter(self) -> "STK_GRAPHICS_MAGNIFICATION_FILTER":
         """Gets the magnification filter used when the pixel being textured maps to an area greater than one texel."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMagnificationFilter) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MAGNIFICATION_FILTER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_magnification_filter"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def wrap_s(self) -> "AgEStkGraphicsTextureWrap":
+    def wrap_s(self) -> "STK_GRAPHICS_TEXTURE_WRAP":
         """Gets the texture wrap for the s direction."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsTextureWrap) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_TEXTURE_WRAP) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_wrap_s"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def wrap_t(self) -> "AgEStkGraphicsTextureWrap":
+    def wrap_t(self) -> "STK_GRAPHICS_TEXTURE_WRAP":
         """Gets the texture wrap for the t direction."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsTextureWrap) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_TEXTURE_WRAP) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_wrap_t"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -1787,28 +1787,28 @@ class ITextureFilter2DFactory(object):
             agcls.evaluate_hresult(self.__dict__["_get_linear_repeat"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize(self, minificationFilter:"AgEStkGraphicsMinificationFilter", magnificationFilter:"AgEStkGraphicsMagnificationFilter", wrapS:"AgEStkGraphicsTextureWrap", wrapT:"AgEStkGraphicsTextureWrap") -> "ITextureFilter2D":
+    def initialize(self, minificationFilter:"STK_GRAPHICS_MINIFICATION_FILTER", magnificationFilter:"STK_GRAPHICS_MAGNIFICATION_FILTER", wrapS:"STK_GRAPHICS_TEXTURE_WRAP", wrapT:"STK_GRAPHICS_TEXTURE_WRAP") -> "ITextureFilter2D":
         """Creates a texture filter using the specified minification/magnification options and texture wrap."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMinificationFilter, minificationFilter) as arg_minificationFilter, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsMagnificationFilter, magnificationFilter) as arg_magnificationFilter, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsTextureWrap, wrapS) as arg_wrapS, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsTextureWrap, wrapT) as arg_wrapT, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MINIFICATION_FILTER, minificationFilter) as arg_minificationFilter, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_MAGNIFICATION_FILTER, magnificationFilter) as arg_magnificationFilter, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_TEXTURE_WRAP, wrapS) as arg_wrapS, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_TEXTURE_WRAP, wrapT) as arg_wrapT, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize"](arg_minificationFilter.COM_val, arg_magnificationFilter.COM_val, arg_wrapS.COM_val, arg_wrapT.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_texture_wrap(self, wrapS:"AgEStkGraphicsTextureWrap", wrapT:"AgEStkGraphicsTextureWrap") -> "ITextureFilter2D":
+    def initialize_with_texture_wrap(self, wrapS:"STK_GRAPHICS_TEXTURE_WRAP", wrapT:"STK_GRAPHICS_TEXTURE_WRAP") -> "ITextureFilter2D":
         """Creates a texture filter using the specified texture wrap."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsTextureWrap, wrapS) as arg_wrapS, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsTextureWrap, wrapT) as arg_wrapT, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_TEXTURE_WRAP, wrapS) as arg_wrapS, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_TEXTURE_WRAP, wrapT) as arg_wrapT, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_texture_wrap"](arg_wrapS.COM_val, arg_wrapT.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_minification_and_magnification(self, minificationFilter:"AgEStkGraphicsMinificationFilter", magnificationFilter:"AgEStkGraphicsMagnificationFilter") -> "ITextureFilter2D":
+    def initialize_with_minification_and_magnification(self, minificationFilter:"STK_GRAPHICS_MINIFICATION_FILTER", magnificationFilter:"STK_GRAPHICS_MAGNIFICATION_FILTER") -> "ITextureFilter2D":
         """Creates a texture filter using the specified minification/magnification options."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMinificationFilter, minificationFilter) as arg_minificationFilter, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsMagnificationFilter, magnificationFilter) as arg_magnificationFilter, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MINIFICATION_FILTER, minificationFilter) as arg_minificationFilter, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_MAGNIFICATION_FILTER, magnificationFilter) as arg_magnificationFilter, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_minification_and_magnification"](arg_minificationFilter.COM_val, arg_magnificationFilter.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -1899,9 +1899,9 @@ class IRendererTextureTemplate2D(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRendererTextureTemplate2D.")
     
     @property
-    def internal_format(self) -> "AgEStkGraphicsInternalTextureFormat":
+    def internal_format(self) -> "STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT":
         """Gets an internal format of the texture."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsInternalTextureFormat) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_INTERNAL_TEXTURE_FORMAT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_internal_format"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -3612,9 +3612,9 @@ class IExtrudedPolylineTriangulatorResult(object):
             return arg_ppRetVal.python_val
 
     @property
-    def boundary_positions_winding_order(self) -> "AgEStkGraphicsWindingOrder":
+    def boundary_positions_winding_order(self) -> "STK_GRAPHICS_WINDING_ORDER":
         """Gets the winding order of top boundary positions and bottom boundary positions."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_boundary_positions_winding_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -3676,9 +3676,9 @@ class ISolidTriangulatorResult(object):
             return arg_ppRetVal.python_val
 
     @property
-    def outline_polyline_type(self) -> "AgEStkGraphicsPolylineType":
+    def outline_polyline_type(self) -> "STK_GRAPHICS_POLYLINE_TYPE":
         """Gets the polyline type of outline indices and outline positions."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_outline_polyline_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -3738,16 +3738,16 @@ class ISurfaceShapesResult(object):
             return arg_ppRetVal.python_val
 
     @property
-    def positions_winding_order(self) -> "AgEStkGraphicsWindingOrder":
+    def positions_winding_order(self) -> "STK_GRAPHICS_WINDING_ORDER":
         """Gets the winding order of positions."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_positions_winding_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def polyline_type(self) -> "AgEStkGraphicsPolylineType":
+    def polyline_type(self) -> "STK_GRAPHICS_POLYLINE_TYPE":
         """Gets the polyline type of positions."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_polyline_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -3818,16 +3818,16 @@ class ISurfaceTriangulatorResult(object):
             return arg_ppRetVal.python_val
 
     @property
-    def boundary_positions_winding_order(self) -> "AgEStkGraphicsWindingOrder":
+    def boundary_positions_winding_order(self) -> "STK_GRAPHICS_WINDING_ORDER":
         """Gets the winding order of boundary positions."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_boundary_positions_winding_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def boundary_polyline_type(self) -> "AgEStkGraphicsPolylineType":
+    def boundary_polyline_type(self) -> "STK_GRAPHICS_POLYLINE_TYPE":
         """Gets the polyline type of boundary positions."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_boundary_polyline_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -3898,9 +3898,9 @@ class ITriangulatorResult(object):
             return arg_ppRetVal.python_val
 
     @property
-    def triangle_winding_order(self) -> "AgEStkGraphicsWindingOrder":
+    def triangle_winding_order(self) -> "STK_GRAPHICS_WINDING_ORDER":
         """Gets the orientation of front-facing triangles in the mesh."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_triangle_winding_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -4096,16 +4096,16 @@ class ICameraSnapshot(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICameraSnapshot.")
     
-    def save_to_file(self, filename:str, cameraSnapshotFormat:"AgEStkGraphicsCameraSnapshotFileFormat") -> None:
+    def save_to_file(self, filename:str, cameraSnapshotFormat:"STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT") -> None:
         """Saves a snapshot of the 3D window to the filename with the specified format."""
         with agmarshall.BSTR_arg(filename) as arg_filename, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsCameraSnapshotFileFormat, cameraSnapshotFormat) as arg_cameraSnapshotFormat:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT, cameraSnapshotFormat) as arg_cameraSnapshotFormat:
             agcls.evaluate_hresult(self.__dict__["_save_to_file"](arg_filename.COM_val, arg_cameraSnapshotFormat.COM_val))
 
-    def save_to_file_with_width_and_dpi(self, filename:str, cameraSnapshotFormat:"AgEStkGraphicsCameraSnapshotFileFormat", widthInInches:float, dotsPerInch:float) -> None:
+    def save_to_file_with_width_and_dpi(self, filename:str, cameraSnapshotFormat:"STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT", widthInInches:float, dotsPerInch:float) -> None:
         """Saves a snapshot of the 3D window to the filename with the specified format at high resolution..."""
         with agmarshall.BSTR_arg(filename) as arg_filename, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsCameraSnapshotFileFormat, cameraSnapshotFormat) as arg_cameraSnapshotFormat, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT, cameraSnapshotFormat) as arg_cameraSnapshotFormat, \
              agmarshall.DOUBLE_arg(widthInInches) as arg_widthInInches, \
              agmarshall.DOUBLE_arg(dotsPerInch) as arg_dotsPerInch:
             agcls.evaluate_hresult(self.__dict__["_save_to_file_with_width_and_dpi"](arg_filename.COM_val, arg_cameraSnapshotFormat.COM_val, arg_widthInInches.COM_val, arg_dotsPerInch.COM_val))
@@ -4185,11 +4185,11 @@ class ICameraVideoRecording(object):
              agmarshall.INT_arg(videoFrameRate) as arg_videoFrameRate:
             agcls.evaluate_hresult(self.__dict__["_start_recording"](arg_wmvFilename.COM_val, arg_videoBitRate.COM_val, arg_videoFrameRate.COM_val))
 
-    def start_recording_frame_stack(self, fileDirectory:str, filePrefix:str, cameraSnapshotFileFormat:"AgEStkGraphicsCameraSnapshotFileFormat", startingFrameNumber:int, numberOfFrameDigits:int) -> None:
+    def start_recording_frame_stack(self, fileDirectory:str, filePrefix:str, cameraSnapshotFileFormat:"STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT", startingFrameNumber:int, numberOfFrameDigits:int) -> None:
         """Starts recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number."""
         with agmarshall.BSTR_arg(fileDirectory) as arg_fileDirectory, \
              agmarshall.BSTR_arg(filePrefix) as arg_filePrefix, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsCameraSnapshotFileFormat, cameraSnapshotFileFormat) as arg_cameraSnapshotFileFormat, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_CAMERA_SNAPSHOT_FILE_FORMAT, cameraSnapshotFileFormat) as arg_cameraSnapshotFileFormat, \
              agmarshall.INT_arg(startingFrameNumber) as arg_startingFrameNumber, \
              agmarshall.INT_arg(numberOfFrameDigits) as arg_numberOfFrameDigits:
             agcls.evaluate_hresult(self.__dict__["_start_recording_frame_stack"](arg_fileDirectory.COM_val, arg_filePrefix.COM_val, arg_cameraSnapshotFileFormat.COM_val, arg_startingFrameNumber.COM_val, arg_numberOfFrameDigits.COM_val))
@@ -4198,11 +4198,11 @@ class ICameraVideoRecording(object):
         """Stops recording."""
         agcls.evaluate_hresult(self.__dict__["_stop_recording"]())
 
-    def start_recording_video(self, fileDirectory:str, filePrefix:str, videoFormat:"AgEStkGraphicsCameraVideoFormat", videoBitRate:int, videoFrameRate:int) -> None:
+    def start_recording_video(self, fileDirectory:str, filePrefix:str, videoFormat:"STK_GRAPHICS_CAMERA_VIDEO_FORMAT", videoBitRate:int, videoFrameRate:int) -> None:
         """Starts recording a video file at the specified bit and frame rate."""
         with agmarshall.BSTR_arg(fileDirectory) as arg_fileDirectory, \
              agmarshall.BSTR_arg(filePrefix) as arg_filePrefix, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsCameraVideoFormat, videoFormat) as arg_videoFormat, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_CAMERA_VIDEO_FORMAT, videoFormat) as arg_videoFormat, \
              agmarshall.INT_arg(videoBitRate) as arg_videoBitRate, \
              agmarshall.INT_arg(videoFrameRate) as arg_videoFrameRate:
             agcls.evaluate_hresult(self.__dict__["_start_recording_video"](arg_fileDirectory.COM_val, arg_filePrefix.COM_val, arg_videoFormat.COM_val, arg_videoBitRate.COM_val, arg_videoFrameRate.COM_val))
@@ -4356,9 +4356,9 @@ class ICustomImageGlobeOverlay(object):
             return arg_pRetVal.python_val
 
     @property
-    def projection(self) -> "AgEStkGraphicsMapProjection":
+    def projection(self) -> "STK_GRAPHICS_MAP_PROJECTION":
         """Gets the map projection. Valid values are mercator and equidistant cylindrical."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMapProjection) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MAP_PROJECTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_projection"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -4634,9 +4634,9 @@ class IGlobeOverlay(object):
             return arg_ppRetVal.python_val
 
     @property
-    def role(self) -> "AgEStkGraphicsGlobeOverlayRole":
+    def role(self) -> "STK_GRAPHICS_GLOBE_OVERLAY_ROLE":
         """Gets the globe overlay role of the globe overlay."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsGlobeOverlayRole) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_GLOBE_OVERLAY_ROLE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_role"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -6262,15 +6262,15 @@ class ICamera(object):
             agcls.evaluate_hresult(self.__dict__["_set_axes"](arg_axes.COM_val))
 
     @property
-    def constrained_up_axis(self) -> "AgEStkGraphicsConstrainedUpAxis":
+    def constrained_up_axis(self) -> "STK_GRAPHICS_CONSTRAINED_UP_AXIS":
         """Gets or sets the axis to constrain the up vector to."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsConstrainedUpAxis) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_CONSTRAINED_UP_AXIS) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_constrained_up_axis"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @constrained_up_axis.setter
-    def constrained_up_axis(self, constrainedUpAxis:"AgEStkGraphicsConstrainedUpAxis") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsConstrainedUpAxis, constrainedUpAxis) as arg_constrainedUpAxis:
+    def constrained_up_axis(self, constrainedUpAxis:"STK_GRAPHICS_CONSTRAINED_UP_AXIS") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_CONSTRAINED_UP_AXIS, constrainedUpAxis) as arg_constrainedUpAxis:
             agcls.evaluate_hresult(self.__dict__["_set_constrained_up_axis"](arg_constrainedUpAxis.COM_val))
 
     @property
@@ -6401,11 +6401,11 @@ class ICamera(object):
             agcls.evaluate_hresult(self.__dict__["_get_reference_point_reference_frame"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def visibility_test(self, referenceFrame:"IVectorGeometryToolSystem", sphere:"IBoundingSphere") -> "AgEStkGraphicsVisibility":
+    def visibility_test(self, referenceFrame:"IVectorGeometryToolSystem", sphere:"IBoundingSphere") -> "STK_GRAPHICS_VISIBILITY":
         """Gets the visibility of a sphere against the view frustum and any occluding central bodies."""
         with agmarshall.AgInterface_in_arg(referenceFrame, IVectorGeometryToolSystem) as arg_referenceFrame, \
              agmarshall.AgInterface_in_arg(sphere, IBoundingSphere) as arg_sphere, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsVisibility) as arg_pRetVal:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_VISIBILITY) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_visibility_test"](arg_referenceFrame.COM_val, arg_sphere.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -6950,15 +6950,15 @@ class ICompositeDisplayCondition(object):
             return arg_pRetVal.python_val
 
     @property
-    def logic_operation(self) -> "AgEStkGraphicsBinaryLogicOperation":
+    def logic_operation(self) -> "STK_GRAPHICS_BINARY_LOGIC_OPERATION":
         """Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsBinaryLogicOperation) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_BINARY_LOGIC_OPERATION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_logic_operation"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @logic_operation.setter
-    def logic_operation(self, logicOperation:"AgEStkGraphicsBinaryLogicOperation") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsBinaryLogicOperation, logicOperation) as arg_logicOperation:
+    def logic_operation(self, logicOperation:"STK_GRAPHICS_BINARY_LOGIC_OPERATION") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_BINARY_LOGIC_OPERATION, logicOperation) as arg_logicOperation:
             agcls.evaluate_hresult(self.__dict__["_set_logic_operation"](arg_logicOperation.COM_val))
 
     def item(self, index:int) -> "IDisplayCondition":
@@ -7118,15 +7118,15 @@ class ICompositePrimitive(object):
             return arg_pRetVal.python_val
 
     @property
-    def translucent_primitives_sort_order(self) -> "AgEStkGraphicsPrimitivesSortOrder":
+    def translucent_primitives_sort_order(self) -> "STK_GRAPHICS_PRIMITIVES_SORT_ORDER":
         """Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality..."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPrimitivesSortOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_PRIMITIVES_SORT_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_translucent_primitives_sort_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @translucent_primitives_sort_order.setter
-    def translucent_primitives_sort_order(self, translucentPrimitivesSortOrder:"AgEStkGraphicsPrimitivesSortOrder") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPrimitivesSortOrder, translucentPrimitivesSortOrder) as arg_translucentPrimitivesSortOrder:
+    def translucent_primitives_sort_order(self, translucentPrimitivesSortOrder:"STK_GRAPHICS_PRIMITIVES_SORT_ORDER") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_PRIMITIVES_SORT_ORDER, translucentPrimitivesSortOrder) as arg_translucentPrimitivesSortOrder:
             agcls.evaluate_hresult(self.__dict__["_set_translucent_primitives_sort_order"](arg_translucentPrimitivesSortOrder.COM_val))
 
     def add(self, primitive:"IPrimitive") -> None:
@@ -7703,15 +7703,15 @@ class IDurationPathPrimitiveUpdatePolicy(object):
             agcls.evaluate_hresult(self.__dict__["_set_duration"](arg_duration.COM_val))
 
     @property
-    def remove_location(self) -> "AgEStkGraphicsPathPrimitiveRemoveLocation":
+    def remove_location(self) -> "STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION":
         """Gets or sets where the positions on the path are removed from."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPathPrimitiveRemoveLocation) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_remove_location"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @remove_location.setter
-    def remove_location(self, removeLocation:"AgEStkGraphicsPathPrimitiveRemoveLocation") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPathPrimitiveRemoveLocation, removeLocation) as arg_removeLocation:
+    def remove_location(self, removeLocation:"STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION, removeLocation) as arg_removeLocation:
             agcls.evaluate_hresult(self.__dict__["_set_remove_location"](arg_removeLocation.COM_val))
 
 
@@ -8023,9 +8023,9 @@ class IGraphicsFont(object):
             return arg_pRetVal.python_val
 
     @property
-    def style(self) -> "AgEStkGraphicsFontStyle":
+    def style(self) -> "STK_GRAPHICS_FONT_STYLE":
         """Gets the font style enumeration that contains the style for this font. This does not include the outline property."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsFontStyle) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_FONT_STYLE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_style"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -8481,15 +8481,15 @@ class IBandExtractFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBandExtractFilter.")
     
     @property
-    def extract_format(self) -> "AgEStkGraphicsRasterFormat":
+    def extract_format(self) -> "STK_GRAPHICS_RASTER_FORMAT":
         """Gets or sets the raster format containing the bands and the order of the bands that will be extracted."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_extract_format"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @extract_format.setter
-    def extract_format(self, extractFormat:"AgEStkGraphicsRasterFormat") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, extractFormat) as arg_extractFormat:
+    def extract_format(self, extractFormat:"STK_GRAPHICS_RASTER_FORMAT") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, extractFormat) as arg_extractFormat:
             agcls.evaluate_hresult(self.__dict__["_set_extract_format"](arg_extractFormat.COM_val))
 
 
@@ -8536,15 +8536,15 @@ class IBandOrderFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBandOrderFilter.")
     
     @property
-    def band_order(self) -> "AgEStkGraphicsRasterFormat":
+    def band_order(self) -> "STK_GRAPHICS_RASTER_FORMAT":
         """Gets or sets the raster format indicating the desired order of the bands in the source raster."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_band_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @band_order.setter
-    def band_order(self, bandOrder:"AgEStkGraphicsRasterFormat") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, bandOrder) as arg_bandOrder:
+    def band_order(self, bandOrder:"STK_GRAPHICS_RASTER_FORMAT") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, bandOrder) as arg_bandOrder:
             agcls.evaluate_hresult(self.__dict__["_set_band_order"](arg_bandOrder.COM_val))
 
     @property
@@ -8599,15 +8599,15 @@ class IBlurFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBlurFilter.")
     
     @property
-    def method(self) -> "AgEStkGraphicsBlurMethod":
+    def method(self) -> "STK_GRAPHICS_BLUR_METHOD":
         """Gets or sets the method used to blur the source raster."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsBlurMethod) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_BLUR_METHOD) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_method"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @method.setter
-    def method(self, method:"AgEStkGraphicsBlurMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsBlurMethod, method) as arg_method:
+    def method(self, method:"STK_GRAPHICS_BLUR_METHOD") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_BLUR_METHOD, method) as arg_method:
             agcls.evaluate_hresult(self.__dict__["_set_method"](arg_method.COM_val))
 
 
@@ -8870,15 +8870,15 @@ class IEdgeDetectFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IEdgeDetectFilter.")
     
     @property
-    def method(self) -> "AgEStkGraphicsEdgeDetectMethod":
+    def method(self) -> "STK_GRAPHICS_EDGE_DETECT_METHOD":
         """Gets or sets the method used to detect edges in the source raster."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsEdgeDetectMethod) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_EDGE_DETECT_METHOD) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_method"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @method.setter
-    def method(self, method:"AgEStkGraphicsEdgeDetectMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsEdgeDetectMethod, method) as arg_method:
+    def method(self, method:"STK_GRAPHICS_EDGE_DETECT_METHOD") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_EDGE_DETECT_METHOD, method) as arg_method:
             agcls.evaluate_hresult(self.__dict__["_set_method"](arg_method.COM_val))
 
 
@@ -8974,15 +8974,15 @@ class IFlipFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IFlipFilter.")
     
     @property
-    def flip_axis(self) -> "AgEStkGraphicsFlipAxis":
+    def flip_axis(self) -> "STK_GRAPHICS_FLIP_AXIS":
         """Gets or sets the flip axis along which the source raster will be flipped."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsFlipAxis) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_FLIP_AXIS) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_flip_axis"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @flip_axis.setter
-    def flip_axis(self, flipAxis:"AgEStkGraphicsFlipAxis") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsFlipAxis, flipAxis) as arg_flipAxis:
+    def flip_axis(self, flipAxis:"STK_GRAPHICS_FLIP_AXIS") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_FLIP_AXIS, flipAxis) as arg_flipAxis:
             agcls.evaluate_hresult(self.__dict__["_set_flip_axis"](arg_flipAxis.COM_val))
 
 
@@ -9111,15 +9111,15 @@ class IGradientDetectFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IGradientDetectFilter.")
     
     @property
-    def method(self) -> "AgEStkGraphicsGradientDetectMethod":
+    def method(self) -> "STK_GRAPHICS_GRADIENT_DETECT_METHOD":
         """Gets or sets the method used to detect gradients in the source raster."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsGradientDetectMethod) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_GRADIENT_DETECT_METHOD) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_method"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @method.setter
-    def method(self, method:"AgEStkGraphicsGradientDetectMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsGradientDetectMethod, method) as arg_method:
+    def method(self, method:"STK_GRAPHICS_GRADIENT_DETECT_METHOD") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_GRADIENT_DETECT_METHOD, method) as arg_method:
             agcls.evaluate_hresult(self.__dict__["_set_method"](arg_method.COM_val))
 
 
@@ -9161,9 +9161,9 @@ class ILevelsFilter(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ILevelsFilter.")
     
-    def set_level_adjustment(self, band:"AgEStkGraphicsRasterBand", adjustment:int) -> None:
+    def set_level_adjustment(self, band:"STK_GRAPHICS_RASTER_BAND", adjustment:int) -> None:
         """Sets the linear level adjustment value for the given raster band. Both negative and positive values are accepted."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterBand, band) as arg_band, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_BAND, band) as arg_band, \
              agmarshall.INT_arg(adjustment) as arg_adjustment:
             agcls.evaluate_hresult(self.__dict__["_set_level_adjustment"](arg_band.COM_val, arg_adjustment.COM_val))
 
@@ -9379,9 +9379,9 @@ class IRaster(object):
             agcls.evaluate_hresult(self.__dict__["_get_height"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def flip(self, axis:"AgEStkGraphicsFlipAxis") -> None:
+    def flip(self, axis:"STK_GRAPHICS_FLIP_AXIS") -> None:
         """Flips the raster along the given axis."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsFlipAxis, axis) as arg_axis:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_FLIP_AXIS, axis) as arg_axis:
             agcls.evaluate_hresult(self.__dict__["_flip"](arg_axis.COM_val))
 
     def rotate(self, angle:float) -> None:
@@ -9401,16 +9401,16 @@ class IRaster(object):
         with agmarshall.AgInterface_in_arg(filter, IRasterFilter) as arg_filter:
             agcls.evaluate_hresult(self.__dict__["_apply_in_place"](arg_filter.COM_val))
 
-    def extract_band(self, band:"AgEStkGraphicsRasterBand") -> "IRaster":
+    def extract_band(self, band:"STK_GRAPHICS_RASTER_BAND") -> "IRaster":
         """Extracts the band of raster data associated with the given raster band."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterBand, band) as arg_band, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_BAND, band) as arg_band, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_extract_band"](arg_band.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def extract_band_from_raster_format(self, format:"AgEStkGraphicsRasterFormat") -> "IRaster":
+    def extract_band_from_raster_format(self, format:"STK_GRAPHICS_RASTER_FORMAT") -> "IRaster":
         """Extracts the bands of raster data associated with the given raster format."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, format) as arg_format, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, format) as arg_format, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_extract_band_from_raster_format"](arg_format.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -9478,23 +9478,23 @@ class IRasterAttributes(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRasterAttributes.")
     
     @property
-    def format(self) -> "AgEStkGraphicsRasterFormat":
+    def format(self) -> "STK_GRAPHICS_RASTER_FORMAT":
         """Gets the raster format associated with the attributes."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_format"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def type(self) -> "AgEStkGraphicsRasterType":
+    def type(self) -> "STK_GRAPHICS_RASTER_TYPE":
         """Gets the raster type associated with the attributes."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def orientation(self) -> "AgEStkGraphicsRasterOrientation":
+    def orientation(self) -> "STK_GRAPHICS_RASTER_ORIENTATION":
         """Gets the raster orientation associated with the attributes."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterOrientation) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_ORIENTATION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_orientation"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -9547,9 +9547,9 @@ class IRasterAttributes(object):
             agcls.evaluate_hresult(self.__dict__["_get_row_stride"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def has_band(self, band:"AgEStkGraphicsRasterBand") -> bool:
+    def has_band(self, band:"STK_GRAPHICS_RASTER_BAND") -> bool:
         """Gets whether the raster contains the given band."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterBand, band) as arg_band, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_BAND, band) as arg_band, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_has_band"](arg_band.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -9830,15 +9830,15 @@ class ISharpenFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISharpenFilter.")
     
     @property
-    def method(self) -> "AgEStkGraphicsSharpenMethod":
+    def method(self) -> "STK_GRAPHICS_SHARPEN_METHOD":
         """Gets or sets the method used to sharpen the source raster."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSharpenMethod) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SHARPEN_METHOD) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_method"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @method.setter
-    def method(self, method:"AgEStkGraphicsSharpenMethod") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSharpenMethod, method) as arg_method:
+    def method(self, method:"STK_GRAPHICS_SHARPEN_METHOD") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SHARPEN_METHOD, method) as arg_method:
             agcls.evaluate_hresult(self.__dict__["_set_method"](arg_method.COM_val))
 
 
@@ -9954,15 +9954,15 @@ class IVideoStream(object):
             return arg_pRetVal.python_val
 
     @property
-    def playback(self) -> "AgEStkGraphicsVideoPlayback":
+    def playback(self) -> "STK_GRAPHICS_VIDEO_PLAYBACK":
         """Gets or sets the video playback mode of the video."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsVideoPlayback) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_VIDEO_PLAYBACK) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_playback"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @playback.setter
-    def playback(self, playback:"AgEStkGraphicsVideoPlayback") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsVideoPlayback, playback) as arg_playback:
+    def playback(self, playback:"STK_GRAPHICS_VIDEO_PLAYBACK") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_VIDEO_PLAYBACK, playback) as arg_playback:
             agcls.evaluate_hresult(self.__dict__["_set_playback"](arg_playback.COM_val))
 
     @property
@@ -10566,15 +10566,15 @@ class IKmlNetworkLink(object):
             return arg_pRetVal.python_val
 
     @property
-    def refresh_mode(self) -> "AgEStkGraphicsKmlNetworkLinkRefreshMode":
+    def refresh_mode(self) -> "STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE":
         """Gets or sets the refresh mode of the network link. The refresh mode specifies a time-based refresh policy for this link."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsKmlNetworkLinkRefreshMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_refresh_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @refresh_mode.setter
-    def refresh_mode(self, refreshMode:"AgEStkGraphicsKmlNetworkLinkRefreshMode") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsKmlNetworkLinkRefreshMode, refreshMode) as arg_refreshMode:
+    def refresh_mode(self, refreshMode:"STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_KML_NETWORK_LINK_REFRESH_MODE, refreshMode) as arg_refreshMode:
             agcls.evaluate_hresult(self.__dict__["_set_refresh_mode"](arg_refreshMode.COM_val))
 
     @property
@@ -10590,15 +10590,15 @@ class IKmlNetworkLink(object):
             agcls.evaluate_hresult(self.__dict__["_set_refresh_interval"](arg_refreshInterval.COM_val))
 
     @property
-    def view_refresh_mode(self) -> "AgEStkGraphicsKmlNetworkLinkViewRefreshMode":
+    def view_refresh_mode(self) -> "STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE":
         """Gets or sets the view refresh mode of the network link. The view refresh mode specifies the refresh policy for the when the camera's view changes."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsKmlNetworkLinkViewRefreshMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_view_refresh_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @view_refresh_mode.setter
-    def view_refresh_mode(self, viewRefreshMode:"AgEStkGraphicsKmlNetworkLinkViewRefreshMode") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsKmlNetworkLinkViewRefreshMode, viewRefreshMode) as arg_viewRefreshMode:
+    def view_refresh_mode(self, viewRefreshMode:"STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_KML_NETWORK_LINK_VIEW_REFRESH_MODE, viewRefreshMode) as arg_viewRefreshMode:
             agcls.evaluate_hresult(self.__dict__["_set_view_refresh_mode"](arg_viewRefreshMode.COM_val))
 
     @property
@@ -10808,43 +10808,43 @@ class IMarkerBatchPrimitive(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMarkerBatchPrimitive.")
     
     @property
-    def size_source(self) -> "AgEStkGraphicsMarkerBatchSizeSource":
+    def size_source(self) -> "STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE":
         """Gets the source used for the size of markers in the batch."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSizeSource) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_size_source"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def sort_order(self) -> "AgEStkGraphicsMarkerBatchSortOrder":
+    def sort_order(self) -> "STK_GRAPHICS_MARKER_BATCH_SORT_ORDER":
         """Gets the order in which markers in the marker batch are sorted before rendering."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSortOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SORT_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_sort_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def set_hint(self) -> "AgEStkGraphicsSetHint":
+    def set_hint(self) -> "STK_GRAPHICS_SET_HINT":
         """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_set_hint"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def rendering_method(self) -> "AgEStkGraphicsMarkerBatchRenderingMethod":
+    def rendering_method(self) -> "STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD":
         """Gets the rendering method used to render the marker batch."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchRenderingMethod) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_rendering_method"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def render_pass(self) -> "AgEStkGraphicsMarkerBatchRenderPass":
+    def render_pass(self) -> "STK_GRAPHICS_MARKER_BATCH_RENDER_PASS":
         """Gets or sets the pass during which the marker batch is rendered."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchRenderPass) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_RENDER_PASS) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_render_pass"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @render_pass.setter
-    def render_pass(self, renderPass:"AgEStkGraphicsMarkerBatchRenderPass") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchRenderPass, renderPass) as arg_renderPass:
+    def render_pass(self, renderPass:"STK_GRAPHICS_MARKER_BATCH_RENDER_PASS") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_RENDER_PASS, renderPass) as arg_renderPass:
             agcls.evaluate_hresult(self.__dict__["_set_render_pass"](arg_renderPass.COM_val))
 
     @property
@@ -10884,15 +10884,15 @@ class IMarkerBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_texture"](arg_texture.COM_val))
 
     @property
-    def size_unit(self) -> "AgEStkGraphicsMarkerBatchUnit":
+    def size_unit(self) -> "STK_GRAPHICS_MARKER_BATCH_UNIT":
         """Gets or sets the unit that each marker's size is defined in."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchUnit) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_UNIT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_size_unit"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @size_unit.setter
-    def size_unit(self, sizeUnit:"AgEStkGraphicsMarkerBatchUnit") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchUnit, sizeUnit) as arg_sizeUnit:
+    def size_unit(self, sizeUnit:"STK_GRAPHICS_MARKER_BATCH_UNIT") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_UNIT, sizeUnit) as arg_sizeUnit:
             agcls.evaluate_hresult(self.__dict__["_set_size_unit"](arg_sizeUnit.COM_val))
 
     @property
@@ -10908,15 +10908,15 @@ class IMarkerBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_size"](arg_size.COM_val))
 
     @property
-    def origin(self) -> "AgEStkGraphicsOrigin":
+    def origin(self) -> "STK_GRAPHICS_ORIGIN":
         """Gets or sets the per-batch origin, which is applied to each marker in the batch."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsOrigin) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_ORIGIN) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_origin"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @origin.setter
-    def origin(self, origin:"AgEStkGraphicsOrigin") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsOrigin, origin) as arg_origin:
+    def origin(self, origin:"STK_GRAPHICS_ORIGIN") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_ORIGIN, origin) as arg_origin:
             agcls.evaluate_hresult(self.__dict__["_set_origin"](arg_origin.COM_val))
 
     @property
@@ -11014,11 +11014,11 @@ class IMarkerBatchPrimitive(object):
              agmarshall.AgInterface_in_arg(optionalParameters, IMarkerBatchPrimitiveOptionalParameters) as arg_optionalParameters:
             agcls.evaluate_hresult(self.__dict__["_set_with_optional_parameters"](byref(arg_positions.COM_val), arg_optionalParameters.COM_val))
 
-    def set_with_optional_parameters_and_render_pass_hint(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_with_optional_parameters_and_render_pass_hint(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Defines the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.AgInterface_in_arg(optionalParameters, IMarkerBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_with_optional_parameters_and_render_pass_hint"](byref(arg_positions.COM_val), arg_optionalParameters.COM_val, arg_renderPassHint.COM_val))
 
     def set_cartographic(self, centralBody:str, positions:list) -> None:
@@ -11034,12 +11034,12 @@ class IMarkerBatchPrimitive(object):
              agmarshall.AgInterface_in_arg(optionalParameters, IMarkerBatchPrimitiveOptionalParameters) as arg_optionalParameters:
             agcls.evaluate_hresult(self.__dict__["_set_cartographic_with_optional_parameters"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_optionalParameters.COM_val))
 
-    def set_cartographic_with_optional_parameters_and_render_pass_hint(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_cartographic_with_optional_parameters_and_render_pass_hint(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """For convenience. Defines the positions and optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency..."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.AgInterface_in_arg(optionalParameters, IMarkerBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_cartographic_with_optional_parameters_and_render_pass_hint"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_optionalParameters.COM_val, arg_renderPassHint.COM_val))
 
     def set_partial(self, positions:list, indices:list) -> None:
@@ -11048,11 +11048,11 @@ class IMarkerBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial"](byref(arg_positions.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint") -> None:
+    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT") -> None:
         """Updates a subset of marker positions in a marker batch."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_indices_order"](byref(arg_positions.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val))
 
     def set_partial_with_optional_parameters(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list) -> None:
@@ -11062,13 +11062,13 @@ class IMarkerBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_optional_parameters"](byref(arg_positions.COM_val), arg_optionalParameters.COM_val, byref(arg_indices.COM_val)))
 
-    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Updates a subset of marker positions and/or per-marker parameters in a marker batch."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.AgInterface_in_arg(optionalParameters, IMarkerBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_optional_parameters_indices_order_and_render_pass"](byref(arg_positions.COM_val), arg_optionalParameters.COM_val, byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val, arg_renderPassHint.COM_val))
 
     def set_partial_cartographic(self, centralBody:str, positions:list, indices:list) -> None:
@@ -11078,12 +11078,12 @@ class IMarkerBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint") -> None:
+    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT") -> None:
         """For convenience. Updates a subset of positions in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_indices_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val))
 
     def set_partial_cartographic_with_optional_parameters(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list) -> None:
@@ -11094,19 +11094,19 @@ class IMarkerBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_optional_parameters"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_optionalParameters.COM_val, byref(arg_indices.COM_val)))
 
-    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """For convenience. Updates a subset of positions and/or optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency..."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.AgInterface_in_arg(optionalParameters, IMarkerBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_optionalParameters.COM_val, byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val, arg_renderPassHint.COM_val))
 
-    def supported(self, renderingMethod:"AgEStkGraphicsMarkerBatchRenderingMethod") -> bool:
+    def supported(self, renderingMethod:"STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD") -> bool:
         """Determines whether or not the video card supports the marker batch primitive with the given renderingMethod."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchRenderingMethod, renderingMethod) as arg_renderingMethod, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD, renderingMethod) as arg_renderingMethod, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_supported"](arg_renderingMethod.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -11311,15 +11311,15 @@ class IMaximumCountPathPrimitiveUpdatePolicy(object):
             agcls.evaluate_hresult(self.__dict__["_set_maximum_count"](arg_maximumCount.COM_val))
 
     @property
-    def remove_location(self) -> "AgEStkGraphicsPathPrimitiveRemoveLocation":
+    def remove_location(self) -> "STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION":
         """Gets or sets where the positions on the path are removed from."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPathPrimitiveRemoveLocation) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_remove_location"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @remove_location.setter
-    def remove_location(self, removeLocation:"AgEStkGraphicsPathPrimitiveRemoveLocation") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPathPrimitiveRemoveLocation, removeLocation) as arg_removeLocation:
+    def remove_location(self, removeLocation:"STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION, removeLocation) as arg_removeLocation:
             agcls.evaluate_hresult(self.__dict__["_set_remove_location"](arg_removeLocation.COM_val))
 
 
@@ -11651,10 +11651,10 @@ class IModelPrimitive(object):
         with agmarshall.BSTR_arg(uri) as arg_uri:
             agcls.evaluate_hresult(self.__dict__["_load_with_string_uri"](arg_uri.COM_val))
 
-    def load_with_string_uri_and_up_axis(self, uri:str, upAxis:"AgEStkGraphicsModelUpAxis") -> None:
+    def load_with_string_uri_and_up_axis(self, uri:str, upAxis:"STK_GRAPHICS_MODEL_UP_AXIS") -> None:
         """For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsModelUpAxis, upAxis) as arg_upAxis:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_MODEL_UP_AXIS, upAxis) as arg_upAxis:
             agcls.evaluate_hresult(self.__dict__["_load_with_string_uri_and_up_axis"](arg_uri.COM_val, arg_upAxis.COM_val))
 
     def set_position_cartographic(self, centralBody:str, position:list) -> None:
@@ -11762,9 +11762,9 @@ class IModelTransformation(object):
             return arg_pRetVal.python_val
 
     @property
-    def type(self) -> "AgEStkGraphicsModelTransformationType":
+    def type(self) -> "STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE":
         """Gets the model transformation type associated with the transformation."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsModelTransformationType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MODEL_TRANSFORMATION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -11992,15 +11992,15 @@ class IOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_x"](arg_x.COM_val))
 
     @property
-    def x_unit(self) -> "AgEStkGraphicsScreenOverlayUnit":
+    def x_unit(self) -> "STK_GRAPHICS_SCREEN_OVERLAY_UNIT":
         """Gets or sets the unit of the x property."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_x_unit"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @x_unit.setter
-    def x_unit(self, xUnit:"AgEStkGraphicsScreenOverlayUnit") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit, xUnit) as arg_xUnit:
+    def x_unit(self, xUnit:"STK_GRAPHICS_SCREEN_OVERLAY_UNIT") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT, xUnit) as arg_xUnit:
             agcls.evaluate_hresult(self.__dict__["_set_x_unit"](arg_xUnit.COM_val))
 
     @property
@@ -12016,15 +12016,15 @@ class IOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_y"](arg_y.COM_val))
 
     @property
-    def y_unit(self) -> "AgEStkGraphicsScreenOverlayUnit":
+    def y_unit(self) -> "STK_GRAPHICS_SCREEN_OVERLAY_UNIT":
         """Gets or sets the unit of the y property."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_y_unit"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @y_unit.setter
-    def y_unit(self, yUnit:"AgEStkGraphicsScreenOverlayUnit") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit, yUnit) as arg_yUnit:
+    def y_unit(self, yUnit:"STK_GRAPHICS_SCREEN_OVERLAY_UNIT") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT, yUnit) as arg_yUnit:
             agcls.evaluate_hresult(self.__dict__["_set_y_unit"](arg_yUnit.COM_val))
 
     @property
@@ -12052,15 +12052,15 @@ class IOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_width"](arg_width.COM_val))
 
     @property
-    def width_unit(self) -> "AgEStkGraphicsScreenOverlayUnit":
+    def width_unit(self) -> "STK_GRAPHICS_SCREEN_OVERLAY_UNIT":
         """Gets or sets the unit of the width property."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_width_unit"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @width_unit.setter
-    def width_unit(self, widthUnit:"AgEStkGraphicsScreenOverlayUnit") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit, widthUnit) as arg_widthUnit:
+    def width_unit(self, widthUnit:"STK_GRAPHICS_SCREEN_OVERLAY_UNIT") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT, widthUnit) as arg_widthUnit:
             agcls.evaluate_hresult(self.__dict__["_set_width_unit"](arg_widthUnit.COM_val))
 
     @property
@@ -12076,15 +12076,15 @@ class IOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_height"](arg_height.COM_val))
 
     @property
-    def height_unit(self) -> "AgEStkGraphicsScreenOverlayUnit":
+    def height_unit(self) -> "STK_GRAPHICS_SCREEN_OVERLAY_UNIT":
         """Gets or sets the unit of the height property."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_height_unit"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @height_unit.setter
-    def height_unit(self, heightUnit:"AgEStkGraphicsScreenOverlayUnit") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit, heightUnit) as arg_heightUnit:
+    def height_unit(self, heightUnit:"STK_GRAPHICS_SCREEN_OVERLAY_UNIT") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT, heightUnit) as arg_heightUnit:
             agcls.evaluate_hresult(self.__dict__["_set_height_unit"](arg_heightUnit.COM_val))
 
     @property
@@ -12239,27 +12239,27 @@ class IOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_flip_y"](arg_flipY.COM_val))
 
     @property
-    def origin(self) -> "AgEStkGraphicsScreenOverlayOrigin":
+    def origin(self) -> "STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN":
         """Gets or sets the origin from which the overlay's position is defined. By default, the value of this property is bottom left..."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayOrigin) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_origin"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @origin.setter
-    def origin(self, origin:"AgEStkGraphicsScreenOverlayOrigin") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayOrigin, origin) as arg_origin:
+    def origin(self, origin:"STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_ORIGIN, origin) as arg_origin:
             agcls.evaluate_hresult(self.__dict__["_set_origin"](arg_origin.COM_val))
 
     @property
-    def pinning_origin(self) -> "AgEStkGraphicsScreenOverlayPinningOrigin":
+    def pinning_origin(self) -> "STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN":
         """Gets or sets the origin of the pinning position property, relative to the overlay..."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayPinningOrigin) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_pinning_origin"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @pinning_origin.setter
-    def pinning_origin(self, pinningOrigin:"AgEStkGraphicsScreenOverlayPinningOrigin") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayPinningOrigin, pinningOrigin) as arg_pinningOrigin:
+    def pinning_origin(self, pinningOrigin:"STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_PINNING_ORIGIN, pinningOrigin) as arg_pinningOrigin:
             agcls.evaluate_hresult(self.__dict__["_set_pinning_origin"](arg_pinningOrigin.COM_val))
 
     @property
@@ -12553,15 +12553,15 @@ class IPathPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_update_policy"](arg_updatePolicy.COM_val))
 
     @property
-    def polyline_type(self) -> "AgEStkGraphicsPolylineType":
+    def polyline_type(self) -> "STK_GRAPHICS_POLYLINE_TYPE":
         """Gets or sets how the primitive interprets the positions."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_polyline_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @polyline_type.setter
-    def polyline_type(self, polylineType:"AgEStkGraphicsPolylineType") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType, polylineType) as arg_polylineType:
+    def polyline_type(self, polylineType:"STK_GRAPHICS_POLYLINE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE, polylineType) as arg_polylineType:
             agcls.evaluate_hresult(self.__dict__["_set_polyline_type"](arg_polylineType.COM_val))
 
     @property
@@ -13028,9 +13028,9 @@ class IPointBatchPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_distance_display_condition_per_point"](arg_distanceDisplayConditionPerPoint.COM_val))
 
     @property
-    def set_hint(self) -> "AgEStkGraphicsSetHint":
+    def set_hint(self) -> "STK_GRAPHICS_SET_HINT":
         """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_set_hint"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -13057,11 +13057,11 @@ class IPointBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(colors) as arg_colors:
             agcls.evaluate_hresult(self.__dict__["_set_with_colors"](byref(arg_positions.COM_val), byref(arg_colors.COM_val)))
 
-    def set_with_colors_and_render_pass(self, positions:list, colors:list, renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_with_colors_and_render_pass(self, positions:list, colors:list, renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Defines the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_with_colors_and_render_pass"](byref(arg_positions.COM_val), byref(arg_colors.COM_val), arg_renderPassHint.COM_val))
 
     def set_cartographic(self, centralBody:str, positions:list) -> None:
@@ -13077,12 +13077,12 @@ class IPointBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(colors) as arg_colors:
             agcls.evaluate_hresult(self.__dict__["_set_cartographic_with_colors"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_colors.COM_val)))
 
-    def set_cartographic_with_colors_and_render_pass(self, centralBody:str, positions:list, colors:list, renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_cartographic_with_colors_and_render_pass(self, centralBody:str, positions:list, colors:list, renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """For convenience. Defines the positions and colors of points in a point batch using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_cartographic_with_colors_and_render_pass"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_colors.COM_val), arg_renderPassHint.COM_val))
 
     def set_partial(self, positions:list, indices:list) -> None:
@@ -13091,11 +13091,11 @@ class IPointBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial"](byref(arg_positions.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint") -> None:
+    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT") -> None:
         """Updates a subset of positions in a point batch."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_indices_order"](byref(arg_positions.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val))
 
     def set_partial_with_colors(self, positions:list, colors:list, indices:list) -> None:
@@ -13105,13 +13105,13 @@ class IPointBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_colors"](byref(arg_positions.COM_val), byref(arg_colors.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_with_colors_indices_order_and_render_pass(self, positions:list, colors:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_partial_with_colors_indices_order_and_render_pass(self, positions:list, colors:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Updates a subset of positions and/or colors in a point batch."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_colors_indices_order_and_render_pass"](byref(arg_positions.COM_val), byref(arg_colors.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val, arg_renderPassHint.COM_val))
 
     def set_partial_cartographic(self, centralBody:str, positions:list, indices:list) -> None:
@@ -13121,12 +13121,12 @@ class IPointBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint") -> None:
+    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT") -> None:
         """For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_indices_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val))
 
     def set_partial_cartographic_with_colors(self, centralBody:str, positions:list, colors:list, indices:list) -> None:
@@ -13137,14 +13137,14 @@ class IPointBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_colors"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_colors.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_colors_indices_order_and_render_pass"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_colors.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val, arg_renderPassHint.COM_val))
 
     @property
@@ -13159,12 +13159,12 @@ class IPointBatchPrimitive(object):
         with agmarshall.VARIANT_BOOL_arg(centralBodyClipped) as arg_centralBodyClipped:
             agcls.evaluate_hresult(self.__dict__["_set_central_body_clipped"](arg_centralBodyClipped.COM_val))
 
-    def set_with_optional_parameters(self, positions:list, colors:list, optionalParameters:"IPointBatchPrimitiveOptionalParameters", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_with_optional_parameters(self, positions:list, colors:list, optionalParameters:"IPointBatchPrimitiveOptionalParameters", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Defines the positions, colors, and optional parameters of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
              agmarshall.AgInterface_in_arg(optionalParameters, IPointBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_with_optional_parameters"](byref(arg_positions.COM_val), byref(arg_colors.COM_val), arg_optionalParameters.COM_val, arg_renderPassHint.COM_val))
 
 
@@ -13362,16 +13362,16 @@ class IPolylinePrimitive(object):
             return arg_ppRetVal.python_val
 
     @property
-    def polyline_type(self) -> "AgEStkGraphicsPolylineType":
+    def polyline_type(self) -> "STK_GRAPHICS_POLYLINE_TYPE":
         """Gets how the polyline interprets the positions passed to Set methods."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_polyline_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def set_hint(self) -> "AgEStkGraphicsSetHint":
+    def set_hint(self) -> "STK_GRAPHICS_SET_HINT":
         """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_set_hint"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -13446,11 +13446,11 @@ class IPolylinePrimitive(object):
              agmarshall.SAFEARRAY_arg(colors) as arg_colors:
             agcls.evaluate_hresult(self.__dict__["_set_with_colors"](byref(arg_positions.COM_val), byref(arg_colors.COM_val)))
 
-    def set_with_colors_and_hint(self, positions:list, colors:list, renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_with_colors_and_hint(self, positions:list, colors:list, renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Defines the positions and colors of a polyline. The polyline is rendered in its reference frame. renderPassHint is provided for efficiency."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_with_colors_and_hint"](byref(arg_positions.COM_val), byref(arg_colors.COM_val), arg_renderPassHint.COM_val))
 
     def set_with_surface_shapes_result(self, surfaceShapesResult:"ISurfaceShapesResult") -> None:
@@ -13481,12 +13481,12 @@ class IPolylinePrimitive(object):
              agmarshall.SAFEARRAY_arg(colors) as arg_colors:
             agcls.evaluate_hresult(self.__dict__["_set_cartographic_with_colors"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_colors.COM_val)))
 
-    def set_cartographic_with_colors_and_hint(self, centralBody:str, positions:list, colors:list, renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_cartographic_with_colors_and_hint(self, centralBody:str, positions:list, colors:list, renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """For convenience. Defines the positions and colors of a polyline using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_cartographic_with_colors_and_hint"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_colors.COM_val), arg_renderPassHint.COM_val))
 
     def set_subset(self, positions:list, index:int, count:int) -> None:
@@ -13510,11 +13510,11 @@ class IPolylinePrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial"](byref(arg_positions.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint") -> None:
+    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT") -> None:
         """Updates a subset of positions in a polyline."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_indices_order"](byref(arg_positions.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val))
 
     def set_partial_with_colors(self, positions:list, colors:list, indices:list) -> None:
@@ -13524,13 +13524,13 @@ class IPolylinePrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_colors"](byref(arg_positions.COM_val), byref(arg_colors.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_with_colors_indices_order_and_render_pass_hint(self, positions:list, colors:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_partial_with_colors_indices_order_and_render_pass_hint(self, positions:list, colors:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Updates a subset of positions and/or colors in a polyline."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_colors_indices_order_and_render_pass_hint"](byref(arg_positions.COM_val), byref(arg_colors.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val, arg_renderPassHint.COM_val))
 
     def set_partial_cartographic(self, centralBody:str, positions:list, indices:list) -> None:
@@ -13540,12 +13540,12 @@ class IPolylinePrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint") -> None:
+    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT") -> None:
         """For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_indices_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val))
 
     def set_partial_cartographic_with_colors(self, centralBody:str, positions:list, colors:list, indices:list) -> None:
@@ -13556,14 +13556,14 @@ class IPolylinePrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_colors"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_colors.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(colors) as arg_colors, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_colors_indices_order_and_render_pass"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_colors.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val, arg_renderPassHint.COM_val))
 
     @property
@@ -13692,9 +13692,9 @@ class IPositionInterpolator(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPositionInterpolator.")
     
     @property
-    def polyline_type(self) -> "AgEStkGraphicsPolylineType":
+    def polyline_type(self) -> "STK_GRAPHICS_POLYLINE_TYPE":
         """Gets the polyline type of positions returned from interpolate"""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_polyline_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -13955,15 +13955,15 @@ class IPrimitiveManager(object):
             agcls.evaluate_hresult(self.__dict__["_set_precision_exponent"](arg_precisionExponent.COM_val))
 
     @property
-    def translucent_primitives_sort_order(self) -> "AgEStkGraphicsPrimitivesSortOrder":
+    def translucent_primitives_sort_order(self) -> "STK_GRAPHICS_PRIMITIVES_SORT_ORDER":
         """Gets or sets the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality..."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPrimitivesSortOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_PRIMITIVES_SORT_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_translucent_primitives_sort_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @translucent_primitives_sort_order.setter
-    def translucent_primitives_sort_order(self, translucentPrimitivesSortOrder:"AgEStkGraphicsPrimitivesSortOrder") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPrimitivesSortOrder, translucentPrimitivesSortOrder) as arg_translucentPrimitivesSortOrder:
+    def translucent_primitives_sort_order(self, translucentPrimitivesSortOrder:"STK_GRAPHICS_PRIMITIVES_SORT_ORDER") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_PRIMITIVES_SORT_ORDER, translucentPrimitivesSortOrder) as arg_translucentPrimitivesSortOrder:
             agcls.evaluate_hresult(self.__dict__["_set_translucent_primitives_sort_order"](arg_translucentPrimitivesSortOrder.COM_val))
 
     def add(self, primitive:"IPrimitive") -> None:
@@ -14337,15 +14337,15 @@ class IScene(object):
             agcls.evaluate_hresult(self.__dict__["_set_show_water_surface"](arg_showWaterSurface.COM_val))
 
     @property
-    def anti_aliasing(self) -> "AgEStkGraphicsAntiAliasing":
+    def anti_aliasing(self) -> "STK_GRAPHICS_ANTI_ALIASING":
         """Gets or sets the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsAntiAliasing) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_ANTI_ALIASING) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_anti_aliasing"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @anti_aliasing.setter
-    def anti_aliasing(self, antiAliasing:"AgEStkGraphicsAntiAliasing") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsAntiAliasing, antiAliasing) as arg_antiAliasing:
+    def anti_aliasing(self, antiAliasing:"STK_GRAPHICS_ANTI_ALIASING") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_ANTI_ALIASING, antiAliasing) as arg_antiAliasing:
             agcls.evaluate_hresult(self.__dict__["_set_anti_aliasing"](arg_antiAliasing.COM_val))
 
     @property
@@ -14990,15 +14990,15 @@ class ISolidPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_outline_width"](arg_outlineWidth.COM_val))
 
     @property
-    def outline_appearance(self) -> "AgEStkGraphicsOutlineAppearance":
+    def outline_appearance(self) -> "STK_GRAPHICS_OUTLINE_APPEARANCE":
         """Gets or sets the outline's appearance."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsOutlineAppearance) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_OUTLINE_APPEARANCE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_outline_appearance"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @outline_appearance.setter
-    def outline_appearance(self, outlineAppearance:"AgEStkGraphicsOutlineAppearance") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsOutlineAppearance, outlineAppearance) as arg_outlineAppearance:
+    def outline_appearance(self, outlineAppearance:"STK_GRAPHICS_OUTLINE_APPEARANCE") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_OUTLINE_APPEARANCE, outlineAppearance) as arg_outlineAppearance:
             agcls.evaluate_hresult(self.__dict__["_set_outline_appearance"](arg_outlineAppearance.COM_val))
 
     @property
@@ -15074,9 +15074,9 @@ class ISolidPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_back_line_width"](arg_backLineWidth.COM_val))
 
     @property
-    def set_hint(self) -> "AgEStkGraphicsSetHint":
+    def set_hint(self) -> "STK_GRAPHICS_SET_HINT":
         """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_set_hint"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -15085,13 +15085,13 @@ class ISolidPrimitive(object):
         with agmarshall.AgInterface_in_arg(solidTriangulatorResult, ISolidTriangulatorResult) as arg_solidTriangulatorResult:
             agcls.evaluate_hresult(self.__dict__["_set_with_result"](arg_solidTriangulatorResult.COM_val))
 
-    def set(self, positions:list, normals:list, indices:list, outlineIndices:list, windingOrder:"AgEStkGraphicsWindingOrder", boundingSphere:"IBoundingSphere", closed:bool) -> None:
+    def set(self, positions:list, normals:list, indices:list, outlineIndices:list, windingOrder:"STK_GRAPHICS_WINDING_ORDER", boundingSphere:"IBoundingSphere", closed:bool) -> None:
         """Defines the solid using the specified parameters. The solid is rendered in the primitive's reference frame."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(normals) as arg_normals, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
              agmarshall.SAFEARRAY_arg(outlineIndices) as arg_outlineIndices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, windingOrder) as arg_windingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, windingOrder) as arg_windingOrder, \
              agmarshall.AgInterface_in_arg(boundingSphere, IBoundingSphere) as arg_boundingSphere, \
              agmarshall.VARIANT_BOOL_arg(closed) as arg_closed:
             agcls.evaluate_hresult(self.__dict__["_set"](byref(arg_positions.COM_val), byref(arg_normals.COM_val), byref(arg_indices.COM_val), byref(arg_outlineIndices.COM_val), arg_windingOrder.COM_val, arg_boundingSphere.COM_val, arg_closed.COM_val))
@@ -15148,27 +15148,27 @@ class IStereoscopic(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IStereoscopic.")
     
     @property
-    def display_mode(self) -> "AgEStkGraphicsStereoscopicDisplayMode":
+    def display_mode(self) -> "STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE":
         """Gets or sets the stereoscopic display mode for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsStereoscopicDisplayMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_display_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @display_mode.setter
-    def display_mode(self, displayMode:"AgEStkGraphicsStereoscopicDisplayMode") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsStereoscopicDisplayMode, displayMode) as arg_displayMode:
+    def display_mode(self, displayMode:"STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_STEREOSCOPIC_DISPLAY_MODE, displayMode) as arg_displayMode:
             agcls.evaluate_hresult(self.__dict__["_set_display_mode"](arg_displayMode.COM_val))
 
     @property
-    def projection_mode(self) -> "AgEStkGraphicsStereoProjectionMode":
+    def projection_mode(self) -> "STK_GRAPHICS_STEREO_PROJECTION_MODE":
         """Gets or sets whether the type of stereo projection that will be used."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsStereoProjectionMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_STEREO_PROJECTION_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_projection_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @projection_mode.setter
-    def projection_mode(self, projectionMode:"AgEStkGraphicsStereoProjectionMode") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsStereoProjectionMode, projectionMode) as arg_projectionMode:
+    def projection_mode(self, projectionMode:"STK_GRAPHICS_STEREO_PROJECTION_MODE") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_STEREO_PROJECTION_MODE, projectionMode) as arg_projectionMode:
             agcls.evaluate_hresult(self.__dict__["_set_projection_mode"](arg_projectionMode.COM_val))
 
     @property
@@ -15289,23 +15289,23 @@ class ISurfaceMeshPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_wireframe"](arg_wireframe.COM_val))
 
     @property
-    def triangle_winding_order(self) -> "AgEStkGraphicsWindingOrder":
+    def triangle_winding_order(self) -> "STK_GRAPHICS_WINDING_ORDER":
         """Gets the orientation of front-facing triangles in the mesh."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_triangle_winding_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def set_hint(self) -> "AgEStkGraphicsSetHint":
+    def set_hint(self) -> "STK_GRAPHICS_SET_HINT":
         """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_set_hint"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @property
-    def rendering_method(self) -> "AgEStkGraphicsSurfaceMeshRenderingMethod":
+    def rendering_method(self) -> "STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD":
         """Gets the rendering method used to render the mesh."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSurfaceMeshRenderingMethod) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_rendering_method"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -15355,9 +15355,9 @@ class ISurfaceMeshPrimitive(object):
         with agmarshall.AgInterface_in_arg(surfaceTriangulator, ISurfaceTriangulatorResult) as arg_surfaceTriangulator:
             agcls.evaluate_hresult(self.__dict__["_set_without_texturing"](arg_surfaceTriangulator.COM_val))
 
-    def supported(self, renderingMethod:"AgEStkGraphicsSurfaceMeshRenderingMethod") -> bool:
+    def supported(self, renderingMethod:"STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD") -> bool:
         """Determines whether or not the video card supports the surface mesh primitive with the given renderingMethod."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSurfaceMeshRenderingMethod, renderingMethod) as arg_renderingMethod, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD, renderingMethod) as arg_renderingMethod, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_supported"](arg_renderingMethod.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -15761,9 +15761,9 @@ class ITextBatchPrimitive(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextBatchPrimitive.")
     
     @property
-    def set_hint(self) -> "AgEStkGraphicsSetHint":
+    def set_hint(self) -> "STK_GRAPHICS_SET_HINT":
         """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_set_hint"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -15871,12 +15871,12 @@ class ITextBatchPrimitive(object):
              agmarshall.AgInterface_in_arg(optionalParameters, ITextBatchPrimitiveOptionalParameters) as arg_optionalParameters:
             agcls.evaluate_hresult(self.__dict__["_set_with_optional_parameters"](byref(arg_positions.COM_val), byref(arg_text.COM_val), arg_optionalParameters.COM_val))
 
-    def set_with_optional_parameters_and_render_pass(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_with_optional_parameters_and_render_pass(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Defines the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(text) as arg_text, \
              agmarshall.AgInterface_in_arg(optionalParameters, ITextBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_with_optional_parameters_and_render_pass"](byref(arg_positions.COM_val), byref(arg_text.COM_val), arg_optionalParameters.COM_val, arg_renderPassHint.COM_val))
 
     def set_cartographic(self, centralBody:str, positions:list, text:list) -> None:
@@ -15894,13 +15894,13 @@ class ITextBatchPrimitive(object):
              agmarshall.AgInterface_in_arg(optionalParameters, ITextBatchPrimitiveOptionalParameters) as arg_optionalParameters:
             agcls.evaluate_hresult(self.__dict__["_set_cartographic_with_optional_parameters"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_text.COM_val), arg_optionalParameters.COM_val))
 
-    def set_cartographic_with_optional_parameters_and_render_pass(self, centralBody:str, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_cartographic_with_optional_parameters_and_render_pass(self, centralBody:str, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """For convenience. Defines the positions, text, and optional parameters of strings in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(text) as arg_text, \
              agmarshall.AgInterface_in_arg(optionalParameters, ITextBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_cartographic_with_optional_parameters_and_render_pass"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_text.COM_val), arg_optionalParameters.COM_val, arg_renderPassHint.COM_val))
 
     def set_partial(self, positions:list, text:list, indices:list) -> None:
@@ -15910,12 +15910,12 @@ class ITextBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial"](byref(arg_positions.COM_val), byref(arg_text.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_with_indices_order(self, positions:list, text:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint") -> None:
+    def set_partial_with_indices_order(self, positions:list, text:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT") -> None:
         """Updates a subset of positions and/or text in a text batch."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(text) as arg_text, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_indices_order"](byref(arg_positions.COM_val), byref(arg_text.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val))
 
     def set_partial_with_optional_parameters(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", indices:list) -> None:
@@ -15926,14 +15926,14 @@ class ITextBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_optional_parameters"](byref(arg_positions.COM_val), byref(arg_text.COM_val), arg_optionalParameters.COM_val, byref(arg_indices.COM_val)))
 
-    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """Updates a subset of positions, text, and/or optional per-string parameters in a text batch."""
         with agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(text) as arg_text, \
              agmarshall.AgInterface_in_arg(optionalParameters, ITextBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_with_optional_parameters_indices_order_and_render_pass"](byref(arg_positions.COM_val), byref(arg_text.COM_val), arg_optionalParameters.COM_val, byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val, arg_renderPassHint.COM_val))
 
     def set_partial_cartographic(self, centralBody:str, positions:list, text:list, indices:list) -> None:
@@ -15944,13 +15944,13 @@ class ITextBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_text.COM_val), byref(arg_indices.COM_val)))
 
-    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, text:list, indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint") -> None:
+    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, text:list, indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT") -> None:
         """For convenience. Updates a subset of positions and/or text in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(text) as arg_text, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_indices_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_text.COM_val), byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val))
 
     def set_partial_cartographic_with_optional_parameters(self, centralBody:str, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", indices:list) -> None:
@@ -15962,15 +15962,15 @@ class ITextBatchPrimitive(object):
              agmarshall.SAFEARRAY_arg(indices) as arg_indices:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_optional_parameters"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_text.COM_val), arg_optionalParameters.COM_val, byref(arg_indices.COM_val)))
 
-    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"AgEStkGraphicsIndicesOrderHint", renderPassHint:"AgEStkGraphicsRenderPassHint") -> None:
+    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, text:list, optionalParameters:"ITextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"STK_GRAPHICS_INDICES_ORDER_HINT", renderPassHint:"STK_GRAPHICS_RENDER_PASS_HINT") -> None:
         """For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.SAFEARRAY_arg(text) as arg_text, \
              agmarshall.AgInterface_in_arg(optionalParameters, ITextBatchPrimitiveOptionalParameters) as arg_optionalParameters, \
              agmarshall.SAFEARRAY_arg(indices) as arg_indices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsIndicesOrderHint, indicesOrderHint) as arg_indicesOrderHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRenderPassHint, renderPassHint) as arg_renderPassHint:
+             agmarshall.AgEnum_arg(STK_GRAPHICS_INDICES_ORDER_HINT, indicesOrderHint) as arg_indicesOrderHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RENDER_PASS_HINT, renderPassHint) as arg_renderPassHint:
             agcls.evaluate_hresult(self.__dict__["_set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_text.COM_val), arg_optionalParameters.COM_val, byref(arg_indices.COM_val), arg_indicesOrderHint.COM_val, arg_renderPassHint.COM_val))
 
     @property
@@ -16049,15 +16049,15 @@ class ITextBatchPrimitiveOptionalParameters(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITextBatchPrimitiveOptionalParameters.")
     
     @property
-    def origin(self) -> "AgEStkGraphicsOrigin":
+    def origin(self) -> "STK_GRAPHICS_ORIGIN":
         """Gets or sets the per-batch origin, which is applied to each string in the text batch."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsOrigin) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_ORIGIN) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_origin"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @origin.setter
-    def origin(self, origin:"AgEStkGraphicsOrigin") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsOrigin, origin) as arg_origin:
+    def origin(self, origin:"STK_GRAPHICS_ORIGIN") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_ORIGIN, origin) as arg_origin:
             agcls.evaluate_hresult(self.__dict__["_set_origin"](arg_origin.COM_val))
 
     @property
@@ -16462,15 +16462,15 @@ class ITextureScreenOverlay(object):
             agcls.evaluate_hresult(self.__dict__["_set_texture_filter"](arg_textureFilter.COM_val))
 
     @property
-    def maintain_aspect_ratio(self) -> "AgEStkGraphicsMaintainAspectRatio":
+    def maintain_aspect_ratio(self) -> "STK_GRAPHICS_MAINTAIN_ASPECT_RATIO":
         """Gets or sets a value indicating whether the aspect ratio of the texture screen overlay is maintained or not."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMaintainAspectRatio) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MAINTAIN_ASPECT_RATIO) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_maintain_aspect_ratio"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @maintain_aspect_ratio.setter
-    def maintain_aspect_ratio(self, maintainAspectRatio:"AgEStkGraphicsMaintainAspectRatio") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMaintainAspectRatio, maintainAspectRatio) as arg_maintainAspectRatio:
+    def maintain_aspect_ratio(self, maintainAspectRatio:"STK_GRAPHICS_MAINTAIN_ASPECT_RATIO") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MAINTAIN_ASPECT_RATIO, maintainAspectRatio) as arg_maintainAspectRatio:
             agcls.evaluate_hresult(self.__dict__["_set_maintain_aspect_ratio"](arg_maintainAspectRatio.COM_val))
 
 
@@ -16656,39 +16656,39 @@ class ITriangleMeshPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_lighting"](arg_lighting.COM_val))
 
     @property
-    def triangle_winding_order(self) -> "AgEStkGraphicsWindingOrder":
+    def triangle_winding_order(self) -> "STK_GRAPHICS_WINDING_ORDER":
         """Gets or sets the orientation of front-facing triangles. This is used in combination with cull face for culling."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_triangle_winding_order"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @triangle_winding_order.setter
-    def triangle_winding_order(self, triangleWindingOrder:"AgEStkGraphicsWindingOrder") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, triangleWindingOrder) as arg_triangleWindingOrder:
+    def triangle_winding_order(self, triangleWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, triangleWindingOrder) as arg_triangleWindingOrder:
             agcls.evaluate_hresult(self.__dict__["_set_triangle_winding_order"](arg_triangleWindingOrder.COM_val))
 
     @property
-    def cull_face(self) -> "AgEStkGraphicsCullFace":
+    def cull_face(self) -> "STK_GRAPHICS_CULL_FACE":
         """Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsCullFace) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_CULL_FACE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_cull_face"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @cull_face.setter
-    def cull_face(self, cullFace:"AgEStkGraphicsCullFace") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsCullFace, cullFace) as arg_cullFace:
+    def cull_face(self, cullFace:"STK_GRAPHICS_CULL_FACE") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_CULL_FACE, cullFace) as arg_cullFace:
             agcls.evaluate_hresult(self.__dict__["_set_cull_face"](arg_cullFace.COM_val))
 
     @property
-    def shade_model(self) -> "AgEStkGraphicsRendererShadeModel":
+    def shade_model(self) -> "STK_GRAPHICS_RENDERER_SHADE_MODEL":
         """Gets or sets the shading model for the mesh."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRendererShadeModel) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RENDERER_SHADE_MODEL) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_shade_model"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @shade_model.setter
-    def shade_model(self, shadeModel:"AgEStkGraphicsRendererShadeModel") -> None:
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRendererShadeModel, shadeModel) as arg_shadeModel:
+    def shade_model(self, shadeModel:"STK_GRAPHICS_RENDERER_SHADE_MODEL") -> None:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RENDERER_SHADE_MODEL, shadeModel) as arg_shadeModel:
             agcls.evaluate_hresult(self.__dict__["_set_shade_model"](arg_shadeModel.COM_val))
 
     @property
@@ -16716,9 +16716,9 @@ class ITriangleMeshPrimitive(object):
             agcls.evaluate_hresult(self.__dict__["_set_texture_filter"](arg_textureFilter.COM_val))
 
     @property
-    def set_hint(self) -> "AgEStkGraphicsSetHint":
+    def set_hint(self) -> "STK_GRAPHICS_SET_HINT":
         """Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_set_hint"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -17153,13 +17153,13 @@ class ICylinderTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_create_simple"](arg_length.COM_val, arg_radius.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute(self, length:float, bottomRadius:float, topRadius:float, slices:int, cylinderFill:"AgEStkGraphicsCylinderFill") -> "ISolidTriangulatorResult":
+    def compute(self, length:float, bottomRadius:float, topRadius:float, slices:int, cylinderFill:"STK_GRAPHICS_CYLINDER_FILL") -> "ISolidTriangulatorResult":
         """Computes the triangulation for a cylinder centered at the origin."""
         with agmarshall.DOUBLE_arg(length) as arg_length, \
              agmarshall.DOUBLE_arg(bottomRadius) as arg_bottomRadius, \
              agmarshall.DOUBLE_arg(topRadius) as arg_topRadius, \
              agmarshall.INT_arg(slices) as arg_slices, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsCylinderFill, cylinderFill) as arg_cylinderFill, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_CYLINDER_FILL, cylinderFill) as arg_cylinderFill, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute"](arg_length.COM_val, arg_bottomRadius.COM_val, arg_topRadius.COM_val, arg_slices.COM_val, arg_cylinderFill.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17287,12 +17287,12 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute"](arg_centralBody.COM_val, byref(arg_bottomPositions.COM_val), byref(arg_topPositions.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"AgEStkGraphicsWindingOrder") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
         """Computes an extrusion between bottomPositions and topPositions on the specified centralBody."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(bottomPositions) as arg_bottomPositions, \
              agmarshall.SAFEARRAY_arg(topPositions) as arg_topPositions, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, positionsWindingOrder) as arg_positionsWindingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, positionsWindingOrder) as arg_positionsWindingOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_with_winding_order"](arg_centralBody.COM_val, byref(arg_bottomPositions.COM_val), byref(arg_topPositions.COM_val), arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17306,12 +17306,12 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic"](arg_centralBody.COM_val, byref(arg_bottomPositions.COM_val), byref(arg_topPositions.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"AgEStkGraphicsWindingOrder") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_cartographic_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(bottomPositions) as arg_bottomPositions, \
              agmarshall.SAFEARRAY_arg(topPositions) as arg_topPositions, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, positionsWindingOrder) as arg_positionsWindingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, positionsWindingOrder) as arg_positionsWindingOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic_with_winding_order"](arg_centralBody.COM_val, byref(arg_bottomPositions.COM_val), byref(arg_topPositions.COM_val), arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17326,13 +17326,13 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_with_altitudes"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_bottomAltitude.COM_val, arg_topAltitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"AgEStkGraphicsWindingOrder") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
         """Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.DOUBLE_arg(bottomAltitude) as arg_bottomAltitude, \
              agmarshall.DOUBLE_arg(topAltitude) as arg_topAltitude, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, positionsWindingOrder) as arg_positionsWindingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, positionsWindingOrder) as arg_positionsWindingOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_with_altitudes_and_winding_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_bottomAltitude.COM_val, arg_topAltitude.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17347,13 +17347,13 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic_with_altitudes"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_bottomAltitude.COM_val, arg_topAltitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"AgEStkGraphicsWindingOrder") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_cartographic_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.DOUBLE_arg(bottomAltitude) as arg_bottomAltitude, \
              agmarshall.DOUBLE_arg(topAltitude) as arg_topAltitude, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, positionsWindingOrder) as arg_positionsWindingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, positionsWindingOrder) as arg_positionsWindingOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic_with_altitudes_and_winding_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_bottomAltitude.COM_val, arg_topAltitude.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17367,12 +17367,12 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_single_constant_altitude"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_single_constant_altitude_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"AgEStkGraphicsWindingOrder") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_single_constant_altitude_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
         """Computes an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.DOUBLE_arg(altitude) as arg_altitude, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, positionsWindingOrder) as arg_positionsWindingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, positionsWindingOrder) as arg_positionsWindingOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_single_constant_altitude_with_winding_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17386,12 +17386,12 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_single_constant_altitude_cartographic"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_single_constant_altitude_cartographic_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"AgEStkGraphicsWindingOrder") -> "IExtrudedPolylineTriangulatorResult":
+    def compute_single_constant_altitude_cartographic_with_winding_order(self, centralBody:str, positions:list, altitude:float, positionsWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> "IExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion of positions on the specified centralBody using cartographic positions. One side of the extrusion has a constant altitude and the other has the original altitudes from positions..."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.DOUBLE_arg(altitude) as arg_altitude, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, positionsWindingOrder) as arg_positionsWindingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, positionsWindingOrder) as arg_positionsWindingOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_single_constant_altitude_cartographic_with_winding_order"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -17536,24 +17536,24 @@ class ISurfacePolygonTriangulatorInitializer(object):
             agcls.evaluate_hresult(self.__dict__["_compute_with_hole_altitude_and_granularity"](arg_centralBody.COM_val, byref(arg_positions.COM_val), byref(arg_holePositions.COM_val), arg_altitude.COM_val, arg_granularity.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"AgEStkGraphicsWindingOrder") -> "ISurfaceTriangulatorResult":
+    def compute_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> "ISurfaceTriangulatorResult":
         """Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions."""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.DOUBLE_arg(altitude) as arg_altitude, \
              agmarshall.DOUBLE_arg(granularity) as arg_granularity, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, positionsWindingOrder) as arg_positionsWindingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, positionsWindingOrder) as arg_positionsWindingOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_with_altitude_and_granularity"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, arg_granularity.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def compute_cartographic_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"AgEStkGraphicsWindingOrder") -> "ISurfaceTriangulatorResult":
+    def compute_cartographic_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"STK_GRAPHICS_WINDING_ORDER") -> "ISurfaceTriangulatorResult":
         """For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
         with agmarshall.BSTR_arg(centralBody) as arg_centralBody, \
              agmarshall.SAFEARRAY_arg(positions) as arg_positions, \
              agmarshall.DOUBLE_arg(altitude) as arg_altitude, \
              agmarshall.DOUBLE_arg(granularity) as arg_granularity, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsWindingOrder, positionsWindingOrder) as arg_positionsWindingOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_WINDING_ORDER, positionsWindingOrder) as arg_positionsWindingOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_compute_cartographic_with_altitude_and_granularity"](arg_centralBody.COM_val, byref(arg_positions.COM_val), arg_altitude.COM_val, arg_granularity.COM_val, arg_positionsWindingOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18654,10 +18654,10 @@ class IDurationPathPrimitiveUpdatePolicyFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_parameters(self, duration:float, removeLocation:"AgEStkGraphicsPathPrimitiveRemoveLocation") -> "IDurationPathPrimitiveUpdatePolicy":
+    def initialize_with_parameters(self, duration:float, removeLocation:"STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION") -> "IDurationPathPrimitiveUpdatePolicy":
         """Initializes a policy with the specified duration and removeLocation."""
         with agmarshall.DOUBLE_arg(duration) as arg_duration, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsPathPrimitiveRemoveLocation, removeLocation) as arg_removeLocation, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION, removeLocation) as arg_removeLocation, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_parameters"](arg_duration.COM_val, arg_removeLocation.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -18745,11 +18745,11 @@ class IGraphicsFontFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IGraphicsFontFactory.")
     
-    def initialize_with_name_size_font_style_outline(self, name:str, size:int, fontStyle:"AgEStkGraphicsFontStyle", outline:bool) -> "IGraphicsFont":
+    def initialize_with_name_size_font_style_outline(self, name:str, size:int, fontStyle:"STK_GRAPHICS_FONT_STYLE", outline:bool) -> "IGraphicsFont":
         """Initializes a graphics font with the given arguments."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.INT_arg(size) as arg_size, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsFontStyle, fontStyle) as arg_fontStyle, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_FONT_STYLE, fontStyle) as arg_fontStyle, \
              agmarshall.VARIANT_BOOL_arg(outline) as arg_outline, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_name_size_font_style_outline"](arg_name.COM_val, arg_size.COM_val, arg_fontStyle.COM_val, arg_outline.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -19010,16 +19010,16 @@ class IBandExtractFilterFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_band(self, rasterBand:"AgEStkGraphicsRasterBand") -> "IBandExtractFilter":
+    def initialize_with_band(self, rasterBand:"STK_GRAPHICS_RASTER_BAND") -> "IBandExtractFilter":
         """Initializes a new instance with the raster band to be extracted from the source raster."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterBand, rasterBand) as arg_rasterBand, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_BAND, rasterBand) as arg_rasterBand, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_band"](arg_rasterBand.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format(self, rasterFormat:"AgEStkGraphicsRasterFormat") -> "IBandExtractFilter":
+    def initialize_with_format(self, rasterFormat:"STK_GRAPHICS_RASTER_FORMAT") -> "IBandExtractFilter":
         """Initializes a new instance with the raster format containing the bands to be extracted from the source raster."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, rasterFormat) as arg_rasterFormat, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, rasterFormat) as arg_rasterFormat, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format"](arg_rasterFormat.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -19071,16 +19071,16 @@ class IBandOrderFilterFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_order(self, bandOrder:"AgEStkGraphicsRasterFormat") -> "IBandOrderFilter":
+    def initialize_with_order(self, bandOrder:"STK_GRAPHICS_RASTER_FORMAT") -> "IBandOrderFilter":
         """Initializes a new instance with a raster format indicating the desired order of the bands in the source raster."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, bandOrder) as arg_bandOrder, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, bandOrder) as arg_bandOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_order"](arg_bandOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_order_and_bool(self, bandOrder:"AgEStkGraphicsRasterFormat", maintainImageFormat:bool) -> "IBandOrderFilter":
+    def initialize_with_order_and_bool(self, bandOrder:"STK_GRAPHICS_RASTER_FORMAT", maintainImageFormat:bool) -> "IBandOrderFilter":
         """Initializes a new instance with a raster format indicating the desired order of the bands in the source raster, and whether to maintain the source raster's format after swizzling."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, bandOrder) as arg_bandOrder, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, bandOrder) as arg_bandOrder, \
              agmarshall.VARIANT_BOOL_arg(maintainImageFormat) as arg_maintainImageFormat, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_order_and_bool"](arg_bandOrder.COM_val, arg_maintainImageFormat.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -19131,9 +19131,9 @@ class IBlurFilterFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_method(self, method:"AgEStkGraphicsBlurMethod") -> "IBlurFilter":
+    def initialize_with_method(self, method:"STK_GRAPHICS_BLUR_METHOD") -> "IBlurFilter":
         """Initialize a new instance with the specified blur method."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsBlurMethod, method) as arg_method, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_BLUR_METHOD, method) as arg_method, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_method"](arg_method.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -19403,9 +19403,9 @@ class IEdgeDetectFilterFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_method(self, method:"AgEStkGraphicsEdgeDetectMethod") -> "IEdgeDetectFilter":
+    def initialize_with_method(self, method:"STK_GRAPHICS_EDGE_DETECT_METHOD") -> "IEdgeDetectFilter":
         """Initializes a new instance with the specified edge detect method."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsEdgeDetectMethod, method) as arg_method, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_EDGE_DETECT_METHOD, method) as arg_method, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_method"](arg_method.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -19500,9 +19500,9 @@ class IFlipFilterFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_flip_axis(self, flipAxis:"AgEStkGraphicsFlipAxis") -> "IFlipFilter":
+    def initialize_with_flip_axis(self, flipAxis:"STK_GRAPHICS_FLIP_AXIS") -> "IFlipFilter":
         """Initializes a new instance with the specified flip axis."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsFlipAxis, flipAxis) as arg_flipAxis, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_FLIP_AXIS, flipAxis) as arg_flipAxis, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_flip_axis"](arg_flipAxis.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -19647,9 +19647,9 @@ class IGradientDetectFilterFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_method(self, method:"AgEStkGraphicsGradientDetectMethod") -> "IGradientDetectFilter":
+    def initialize_with_method(self, method:"STK_GRAPHICS_GRADIENT_DETECT_METHOD") -> "IGradientDetectFilter":
         """Initializes a new instance with specified gradient detect method."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsGradientDetectMethod, method) as arg_method, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_GRADIENT_DETECT_METHOD, method) as arg_method, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_method"](arg_method.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -19697,42 +19697,42 @@ class IJpeg2000WriterInitializer(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IJpeg2000WriterInitializer.")
     
-    def write_string(self, imageUri:str, compressionProfile:"AgEStkGraphicsJpeg2000CompressionProfile", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
+    def write_string(self, imageUri:str, compressionProfile:"STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
         """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image must be in the image, as in a GeoTIFF."""
         with agmarshall.BSTR_arg(imageUri) as arg_imageUri, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsJpeg2000CompressionProfile, compressionProfile) as arg_compressionProfile, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE, compressionProfile) as arg_compressionProfile, \
              agmarshall.INT_arg(compressionRate) as arg_compressionRate, \
              agmarshall.BSTR_arg(jpeg2000Uri) as arg_jpeg2000Uri, \
              agmarshall.VARIANT_BOOL_arg(overwriteExistingFile) as arg_overwriteExistingFile:
             agcls.evaluate_hresult(self.__dict__["_write_string"](arg_imageUri.COM_val, arg_compressionProfile.COM_val, arg_compressionRate.COM_val, arg_jpeg2000Uri.COM_val, arg_overwriteExistingFile.COM_val))
 
-    def write_extent_string(self, imageUri:str, extent:list, compressionProfile:"AgEStkGraphicsJpeg2000CompressionProfile", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
+    def write_extent_string(self, imageUri:str, extent:list, compressionProfile:"STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
         """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         with agmarshall.BSTR_arg(imageUri) as arg_imageUri, \
              agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsJpeg2000CompressionProfile, compressionProfile) as arg_compressionProfile, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE, compressionProfile) as arg_compressionProfile, \
              agmarshall.INT_arg(compressionRate) as arg_compressionRate, \
              agmarshall.BSTR_arg(jpeg2000Uri) as arg_jpeg2000Uri, \
              agmarshall.VARIANT_BOOL_arg(overwriteExistingFile) as arg_overwriteExistingFile:
             agcls.evaluate_hresult(self.__dict__["_write_extent_string"](arg_imageUri.COM_val, byref(arg_extent.COM_val), arg_compressionProfile.COM_val, arg_compressionRate.COM_val, arg_jpeg2000Uri.COM_val, arg_overwriteExistingFile.COM_val))
 
-    def write_extent_and_sub_extent_string(self, imageUri:str, extent:list, subExtent:list, compressionProfile:"AgEStkGraphicsJpeg2000CompressionProfile", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
+    def write_extent_and_sub_extent_string(self, imageUri:str, extent:list, subExtent:list, compressionProfile:"STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool) -> None:
         """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         with agmarshall.BSTR_arg(imageUri) as arg_imageUri, \
              agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
              agmarshall.SAFEARRAY_arg(subExtent) as arg_subExtent, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsJpeg2000CompressionProfile, compressionProfile) as arg_compressionProfile, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE, compressionProfile) as arg_compressionProfile, \
              agmarshall.INT_arg(compressionRate) as arg_compressionRate, \
              agmarshall.BSTR_arg(jpeg2000Uri) as arg_jpeg2000Uri, \
              agmarshall.VARIANT_BOOL_arg(overwriteExistingFile) as arg_overwriteExistingFile:
             agcls.evaluate_hresult(self.__dict__["_write_extent_and_sub_extent_string"](arg_imageUri.COM_val, byref(arg_extent.COM_val), byref(arg_subExtent.COM_val), arg_compressionProfile.COM_val, arg_compressionRate.COM_val, arg_jpeg2000Uri.COM_val, arg_overwriteExistingFile.COM_val))
 
-    def write_extent_and_sub_extent_transparent_color_string(self, imageUri:str, extent:list, subExtent:list, compressionProfile:"AgEStkGraphicsJpeg2000CompressionProfile", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool, transparentColor:agcolor.Color) -> None:
+    def write_extent_and_sub_extent_transparent_color_string(self, imageUri:str, extent:list, subExtent:list, compressionProfile:"STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE", compressionRate:int, jpeg2000Uri:str, overwriteExistingFile:bool, transparentColor:agcolor.Color) -> None:
         """Converts an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         with agmarshall.BSTR_arg(imageUri) as arg_imageUri, \
              agmarshall.SAFEARRAY_arg(extent) as arg_extent, \
              agmarshall.SAFEARRAY_arg(subExtent) as arg_subExtent, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsJpeg2000CompressionProfile, compressionProfile) as arg_compressionProfile, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_JPEG2000_COMPRESSION_PROFILE, compressionProfile) as arg_compressionProfile, \
              agmarshall.INT_arg(compressionRate) as arg_compressionRate, \
              agmarshall.BSTR_arg(jpeg2000Uri) as arg_jpeg2000Uri, \
              agmarshall.VARIANT_BOOL_arg(overwriteExistingFile) as arg_overwriteExistingFile, \
@@ -19938,55 +19938,55 @@ class IRasterAttributesFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IRasterAttributesFactory.")
     
-    def initialize_with_format(self, width:int, height:int, rasterFormat:"AgEStkGraphicsRasterFormat") -> "IRasterAttributes":
+    def initialize_with_format(self, width:int, height:int, rasterFormat:"STK_GRAPHICS_RASTER_FORMAT") -> "IRasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, rasterFormat) as arg_rasterFormat, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, rasterFormat) as arg_rasterFormat, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format_and_type(self, width:int, height:int, rasterFormat:"AgEStkGraphicsRasterFormat", rasterType:"AgEStkGraphicsRasterType") -> "IRasterAttributes":
+    def initialize_with_format_and_type(self, width:int, height:int, rasterFormat:"STK_GRAPHICS_RASTER_FORMAT", rasterType:"STK_GRAPHICS_RASTER_TYPE") -> "IRasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format and raster type."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, rasterFormat) as arg_rasterFormat, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterType, rasterType) as arg_rasterType, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, rasterFormat) as arg_rasterFormat, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_TYPE, rasterType) as arg_rasterType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format_and_type"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, arg_rasterType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format_type_and_orientation(self, width:int, height:int, rasterFormat:"AgEStkGraphicsRasterFormat", rasterType:"AgEStkGraphicsRasterType", rasterOrientation:"AgEStkGraphicsRasterOrientation") -> "IRasterAttributes":
+    def initialize_with_format_type_and_orientation(self, width:int, height:int, rasterFormat:"STK_GRAPHICS_RASTER_FORMAT", rasterType:"STK_GRAPHICS_RASTER_TYPE", rasterOrientation:"STK_GRAPHICS_RASTER_ORIENTATION") -> "IRasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, and raster orientation."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, rasterFormat) as arg_rasterFormat, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterType, rasterType) as arg_rasterType, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterOrientation, rasterOrientation) as arg_rasterOrientation, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, rasterFormat) as arg_rasterFormat, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_TYPE, rasterType) as arg_rasterType, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_ORIENTATION, rasterOrientation) as arg_rasterOrientation, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format_type_and_orientation"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, arg_rasterType.COM_val, arg_rasterOrientation.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format_type_orientation_and_alignment(self, width:int, height:int, rasterFormat:"AgEStkGraphicsRasterFormat", rasterType:"AgEStkGraphicsRasterType", rasterOrientation:"AgEStkGraphicsRasterOrientation", rowAlignment:int) -> "IRasterAttributes":
+    def initialize_with_format_type_orientation_and_alignment(self, width:int, height:int, rasterFormat:"STK_GRAPHICS_RASTER_FORMAT", rasterType:"STK_GRAPHICS_RASTER_TYPE", rasterOrientation:"STK_GRAPHICS_RASTER_ORIENTATION", rowAlignment:int) -> "IRasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, and row alignment."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, rasterFormat) as arg_rasterFormat, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterType, rasterType) as arg_rasterType, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterOrientation, rasterOrientation) as arg_rasterOrientation, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, rasterFormat) as arg_rasterFormat, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_TYPE, rasterType) as arg_rasterType, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_ORIENTATION, rasterOrientation) as arg_rasterOrientation, \
              agmarshall.INT_arg(rowAlignment) as arg_rowAlignment, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_format_type_orientation_and_alignment"](arg_width.COM_val, arg_height.COM_val, arg_rasterFormat.COM_val, arg_rasterType.COM_val, arg_rasterOrientation.COM_val, arg_rowAlignment.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_format_type_orientation_alignment_and_ratio(self, width:int, height:int, rasterFormat:"AgEStkGraphicsRasterFormat", rasterType:"AgEStkGraphicsRasterType", rasterOrientation:"AgEStkGraphicsRasterOrientation", rowAlignment:int, pixelAspectRatio:float) -> "IRasterAttributes":
+    def initialize_with_format_type_orientation_alignment_and_ratio(self, width:int, height:int, rasterFormat:"STK_GRAPHICS_RASTER_FORMAT", rasterType:"STK_GRAPHICS_RASTER_TYPE", rasterOrientation:"STK_GRAPHICS_RASTER_ORIENTATION", rowAlignment:int, pixelAspectRatio:float) -> "IRasterAttributes":
         """Initializes a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, row alignment, and pixel aspect ratio."""
         with agmarshall.INT_arg(width) as arg_width, \
              agmarshall.INT_arg(height) as arg_height, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterFormat, rasterFormat) as arg_rasterFormat, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterType, rasterType) as arg_rasterType, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsRasterOrientation, rasterOrientation) as arg_rasterOrientation, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_FORMAT, rasterFormat) as arg_rasterFormat, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_TYPE, rasterType) as arg_rasterType, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_RASTER_ORIENTATION, rasterOrientation) as arg_rasterOrientation, \
              agmarshall.INT_arg(rowAlignment) as arg_rowAlignment, \
              agmarshall.DOUBLE_arg(pixelAspectRatio) as arg_pixelAspectRatio, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
@@ -20140,9 +20140,9 @@ class ISharpenFilterFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_method(self, method:"AgEStkGraphicsSharpenMethod") -> "ISharpenFilter":
+    def initialize_with_method(self, method:"STK_GRAPHICS_SHARPEN_METHOD") -> "ISharpenFilter":
         """Initialize a new instance with the specified sharpen method."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSharpenMethod, method) as arg_method, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SHARPEN_METHOD, method) as arg_method, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_method"](arg_method.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -20266,50 +20266,50 @@ class IMarkerBatchPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint(self, setHint:"AgEStkGraphicsSetHint") -> "IMarkerBatchPrimitive":
+    def initialize_with_set_hint(self, setHint:"STK_GRAPHICS_SET_HINT") -> "IMarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified setHint..."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_set_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_size_source(self, sizeSource:"AgEStkGraphicsMarkerBatchSizeSource") -> "IMarkerBatchPrimitive":
+    def initialize_with_size_source(self, sizeSource:"STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE") -> "IMarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified sizeSource..."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSizeSource, sizeSource) as arg_sizeSource, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE, sizeSource) as arg_sizeSource, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_size_source"](arg_sizeSource.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_size_source_and_sort_order(self, sizeSource:"AgEStkGraphicsMarkerBatchSizeSource", sortOrder:"AgEStkGraphicsMarkerBatchSortOrder") -> "IMarkerBatchPrimitive":
+    def initialize_with_size_source_and_sort_order(self, sizeSource:"STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE", sortOrder:"STK_GRAPHICS_MARKER_BATCH_SORT_ORDER") -> "IMarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified sizeSource and sortOrder..."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSizeSource, sizeSource) as arg_sizeSource, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSortOrder, sortOrder) as arg_sortOrder, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE, sizeSource) as arg_sizeSource, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SORT_ORDER, sortOrder) as arg_sortOrder, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_size_source_and_sort_order"](arg_sizeSource.COM_val, arg_sortOrder.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_size_source_sort_order_and_set_hint(self, sizeSource:"AgEStkGraphicsMarkerBatchSizeSource", sortOrder:"AgEStkGraphicsMarkerBatchSortOrder", setHint:"AgEStkGraphicsSetHint") -> "IMarkerBatchPrimitive":
+    def initialize_size_source_sort_order_and_set_hint(self, sizeSource:"STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE", sortOrder:"STK_GRAPHICS_MARKER_BATCH_SORT_ORDER", setHint:"STK_GRAPHICS_SET_HINT") -> "IMarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified sizeSource, sortOrder, and setHint. This is equivalent to constructing a marker batch with the specified arguments and a marker batch rendering method of Automatic."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSizeSource, sizeSource) as arg_sizeSource, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSortOrder, sortOrder) as arg_sortOrder, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE, sizeSource) as arg_sizeSource, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SORT_ORDER, sortOrder) as arg_sortOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_size_source_sort_order_and_set_hint"](arg_sizeSource.COM_val, arg_sortOrder.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_size_source_sort_order_set_hint_and_rendering_method(self, sizeSource:"AgEStkGraphicsMarkerBatchSizeSource", sortOrder:"AgEStkGraphicsMarkerBatchSortOrder", setHint:"AgEStkGraphicsSetHint", renderingMethod:"AgEStkGraphicsMarkerBatchRenderingMethod") -> "IMarkerBatchPrimitive":
+    def initialize_size_source_sort_order_set_hint_and_rendering_method(self, sizeSource:"STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE", sortOrder:"STK_GRAPHICS_MARKER_BATCH_SORT_ORDER", setHint:"STK_GRAPHICS_SET_HINT", renderingMethod:"STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD") -> "IMarkerBatchPrimitive":
         """Initializes a marker batch primitive with the specified arguments."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSizeSource, sizeSource) as arg_sizeSource, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchSortOrder, sortOrder) as arg_sortOrder, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchRenderingMethod, renderingMethod) as arg_renderingMethod, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SIZE_SOURCE, sizeSource) as arg_sizeSource, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_SORT_ORDER, sortOrder) as arg_sortOrder, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD, renderingMethod) as arg_renderingMethod, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_size_source_sort_order_set_hint_and_rendering_method"](arg_sizeSource.COM_val, arg_sortOrder.COM_val, arg_setHint.COM_val, arg_renderingMethod.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def supported(self, renderingMethod:"AgEStkGraphicsMarkerBatchRenderingMethod") -> bool:
+    def supported(self, renderingMethod:"STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD") -> bool:
         """Determines whether or not the video card supports the marker batch primitive with the given renderingMethod."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsMarkerBatchRenderingMethod, renderingMethod) as arg_renderingMethod, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_MARKER_BATCH_RENDERING_METHOD, renderingMethod) as arg_renderingMethod, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_supported"](arg_renderingMethod.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -20402,10 +20402,10 @@ class IMaximumCountPathPrimitiveUpdatePolicyFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_parameters(self, maximumCount:int, removeLocation:"AgEStkGraphicsPathPrimitiveRemoveLocation") -> "IMaximumCountPathPrimitiveUpdatePolicy":
+    def initialize_with_parameters(self, maximumCount:int, removeLocation:"STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION") -> "IMaximumCountPathPrimitiveUpdatePolicy":
         """Initializes a policy with the specified maximumCount and removeLocation."""
         with agmarshall.INT_arg(maximumCount) as arg_maximumCount, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsPathPrimitiveRemoveLocation, removeLocation) as arg_removeLocation, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_PATH_PRIMITIVE_REMOVE_LOCATION, removeLocation) as arg_removeLocation, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_parameters"](arg_maximumCount.COM_val, arg_removeLocation.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -20464,10 +20464,10 @@ class IModelPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_string_uri"](arg_uri.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_string_uri_and_up_axis(self, uri:str, upAxis:"AgEStkGraphicsModelUpAxis") -> "IModelPrimitive":
+    def initialize_with_string_uri_and_up_axis(self, uri:str, upAxis:"STK_GRAPHICS_MODEL_UP_AXIS") -> "IModelPrimitive":
         """For convenience. Initializes a model primitive with the specified file path and up axis."""
         with agmarshall.BSTR_arg(uri) as arg_uri, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsModelUpAxis, upAxis) as arg_upAxis, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_MODEL_UP_AXIS, upAxis) as arg_upAxis, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_string_uri_and_up_axis"](arg_uri.COM_val, arg_upAxis.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -20644,9 +20644,9 @@ class IPointBatchPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint(self, setHint:"AgEStkGraphicsSetHint") -> "IPointBatchPrimitive":
+    def initialize_with_set_hint(self, setHint:"STK_GRAPHICS_SET_HINT") -> "IPointBatchPrimitive":
         """Initializes a new instance of a point batch primitive with the specified set hint."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_set_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -20765,18 +20765,18 @@ class IPolylinePrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_interpolator_and_set_hint(self, interpolator:"IPositionInterpolator", setHint:"AgEStkGraphicsSetHint") -> "IPolylinePrimitive":
+    def initialize_with_interpolator_and_set_hint(self, interpolator:"IPositionInterpolator", setHint:"STK_GRAPHICS_SET_HINT") -> "IPolylinePrimitive":
         """Initializes a polyline primitive with the specified interpolator and setHint."""
         with agmarshall.AgInterface_in_arg(interpolator, IPositionInterpolator) as arg_interpolator, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_interpolator_and_set_hint"](arg_interpolator.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_type_and_hint(self, polylineType:"AgEStkGraphicsPolylineType", setHint:"AgEStkGraphicsSetHint") -> "IPolylinePrimitive":
+    def initialize_with_type_and_hint(self, polylineType:"STK_GRAPHICS_POLYLINE_TYPE", setHint:"STK_GRAPHICS_SET_HINT") -> "IPolylinePrimitive":
         """Initializes a new instance of a polyline primitive with the specified polylineType and setHint."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType, polylineType) as arg_polylineType, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE, polylineType) as arg_polylineType, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_type_and_hint"](arg_polylineType.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -20788,16 +20788,16 @@ class IPolylinePrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_interpolator"](arg_interpolator.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_hint(self, setHint:"AgEStkGraphicsSetHint") -> "IPolylinePrimitive":
+    def initialize_with_hint(self, setHint:"STK_GRAPHICS_SET_HINT") -> "IPolylinePrimitive":
         """Initializes a new instance of a polyline primitive with the specified set hint. This is equivalent to constructing a polyline with a polyline type of LineStrip and the specified set hint."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_type(self, polylineType:"AgEStkGraphicsPolylineType") -> "IPolylinePrimitive":
+    def initialize_with_type(self, polylineType:"STK_GRAPHICS_POLYLINE_TYPE") -> "IPolylinePrimitive":
         """Initializes a polyline primitive with the specified polylineType. This is equivalent to constructing a polyline with the specified polylineType and a set hint of Frequent."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsPolylineType, polylineType) as arg_polylineType, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_POLYLINE_TYPE, polylineType) as arg_polylineType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_type"](arg_polylineType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -21230,9 +21230,9 @@ class ISolidPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_hint(self, setHint:"AgEStkGraphicsSetHint") -> "ISolidPrimitive":
+    def initialize_with_hint(self, setHint:"STK_GRAPHICS_SET_HINT") -> "ISolidPrimitive":
         """Initializes a solid primitive with the specified setHint."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -21302,24 +21302,24 @@ class ISurfaceMeshPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint(self, setHint:"AgEStkGraphicsSetHint") -> "ISurfaceMeshPrimitive":
+    def initialize_with_set_hint(self, setHint:"STK_GRAPHICS_SET_HINT") -> "ISurfaceMeshPrimitive":
         """Initializes a surface mesh primitive with the specified setHint. This is equivalent to constructing a surface mesh with the specified setHint and a surface mesh rendering method of Automatic."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_set_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint_and_rendering_method(self, setHint:"AgEStkGraphicsSetHint", renderingMethod:"AgEStkGraphicsSurfaceMeshRenderingMethod") -> "ISurfaceMeshPrimitive":
+    def initialize_with_set_hint_and_rendering_method(self, setHint:"STK_GRAPHICS_SET_HINT", renderingMethod:"STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD") -> "ISurfaceMeshPrimitive":
         """Initializes a surface mesh primitive with the specified setHint and renderingMethod."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsSurfaceMeshRenderingMethod, renderingMethod) as arg_renderingMethod, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD, renderingMethod) as arg_renderingMethod, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_set_hint_and_rendering_method"](arg_setHint.COM_val, arg_renderingMethod.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def supported(self, renderingMethod:"AgEStkGraphicsSurfaceMeshRenderingMethod") -> bool:
+    def supported(self, renderingMethod:"STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD") -> bool:
         """Determines whether or not the video card supports the surface mesh primitive with the given renderingMethod."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSurfaceMeshRenderingMethod, renderingMethod) as arg_renderingMethod, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SURFACE_MESH_RENDERING_METHOD, renderingMethod) as arg_renderingMethod, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_supported"](arg_renderingMethod.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -21422,18 +21422,18 @@ class ITextBatchPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_graphics_font"](arg_font.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_graphics_font_and_set_hint(self, font:"IGraphicsFont", setHint:"AgEStkGraphicsSetHint") -> "ITextBatchPrimitive":
+    def initialize_with_graphics_font_and_set_hint(self, font:"IGraphicsFont", setHint:"STK_GRAPHICS_SET_HINT") -> "ITextBatchPrimitive":
         """Initializes a marker batch primitive with the specified font and setHint."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_graphics_font_and_set_hint"](arg_font.COM_val, arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_graphics_font_and_set_hint2_d(self, font:"IGraphicsFont", setHint:"AgEStkGraphicsSetHint", renderInScreenSpace:bool) -> "ITextBatchPrimitive":
+    def initialize_with_graphics_font_and_set_hint2_d(self, font:"IGraphicsFont", setHint:"STK_GRAPHICS_SET_HINT", renderInScreenSpace:bool) -> "ITextBatchPrimitive":
         """Initializes a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.VARIANT_BOOL_arg(renderInScreenSpace) as arg_renderInScreenSpace, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_graphics_font_and_set_hint2_d"](arg_font.COM_val, arg_setHint.COM_val, arg_renderInScreenSpace.COM_val, byref(arg_ppRetVal.COM_val)))
@@ -21552,13 +21552,13 @@ class ITextOverlayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize_with_position_size"](arg_font.COM_val, byref(arg_position.COM_val), byref(arg_size.COM_val), byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_width_height_units(self, font:"IGraphicsFont", width:float, widthUnit:"AgEStkGraphicsScreenOverlayUnit", height:float, heightUnit:"AgEStkGraphicsScreenOverlayUnit") -> "ITextOverlay":
+    def initialize_with_width_height_units(self, font:"IGraphicsFont", width:float, widthUnit:"STK_GRAPHICS_SCREEN_OVERLAY_UNIT", height:float, heightUnit:"STK_GRAPHICS_SCREEN_OVERLAY_UNIT") -> "ITextOverlay":
         """Initializes the overlay with the specified position and size."""
         with agmarshall.AgInterface_in_arg(font, IGraphicsFont) as arg_font, \
              agmarshall.DOUBLE_arg(width) as arg_width, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit, widthUnit) as arg_widthUnit, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT, widthUnit) as arg_widthUnit, \
              agmarshall.DOUBLE_arg(height) as arg_height, \
-             agmarshall.AgEnum_arg(AgEStkGraphicsScreenOverlayUnit, heightUnit) as arg_heightUnit, \
+             agmarshall.AgEnum_arg(STK_GRAPHICS_SCREEN_OVERLAY_UNIT, heightUnit) as arg_heightUnit, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_width_height_units"](arg_font.COM_val, arg_width.COM_val, arg_widthUnit.COM_val, arg_height.COM_val, arg_heightUnit.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -21844,9 +21844,9 @@ class ITriangleMeshPrimitiveFactory(object):
             agcls.evaluate_hresult(self.__dict__["_initialize"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def initialize_with_set_hint(self, setHint:"AgEStkGraphicsSetHint") -> "ITriangleMeshPrimitive":
+    def initialize_with_set_hint(self, setHint:"STK_GRAPHICS_SET_HINT") -> "ITriangleMeshPrimitive":
         """Initializes a triangle mesh primitive with the specified setHint ."""
-        with agmarshall.AgEnum_arg(AgEStkGraphicsSetHint, setHint) as arg_setHint, \
+        with agmarshall.AgEnum_arg(STK_GRAPHICS_SET_HINT, setHint) as arg_setHint, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_initialize_with_set_hint"](arg_setHint.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val

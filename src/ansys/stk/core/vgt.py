@@ -2,32 +2,32 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgECrdnAngleType", "AgECrdnAxesType", "AgECrdnCalcScalarType", "AgECrdnConditionCombinedOperationType", "AgECrdnConditionSetType", 
-"AgECrdnConditionThresholdOption", "AgECrdnConditionType", "AgECrdnDimensionInheritance", "AgECrdnDirectionType", "AgECrdnDisplayAxisSelector", 
-"AgECrdnEventArrayFilterType", "AgECrdnEventArrayType", "AgECrdnEventIntervalCollectionType", "AgECrdnEventIntervalListType", 
-"AgECrdnEventIntervalType", "AgECrdnEventListMergeOperation", "AgECrdnEventType", "AgECrdnExtremumConstants", "AgECrdnFileInterpolatorType", 
-"AgECrdnIntegralType", "AgECrdnIntegrationWindowType", "AgECrdnInterpolatorType", "AgECrdnIntersectionSurface", "AgECrdnIntervalDurationKind", 
-"AgECrdnIntervalSelection", "AgECrdnKind", "AgECrdnLagrangeLibrationPointType", "AgECrdnMeanElementTheory", "AgECrdnParameterSetType", 
-"AgECrdnPlaneType", "AgECrdnPointBPlaneType", "AgECrdnPointType", "AgECrdnPruneFilter", "AgECrdnQuadrantType", "AgECrdnReferenceShapeType", 
-"AgECrdnSampledReferenceTime", "AgECrdnSamplingMethod", "AgECrdnSatisfactionCrossing", "AgECrdnSaveDataOption", "AgECrdnSignalPathReferenceSystem", 
-"AgECrdnSignalSense", "AgECrdnSignedAngleType", "AgECrdnSmartEpochState", "AgECrdnSmartIntervalState", "AgECrdnSpeedOptions", 
-"AgECrdnStartStopOption", "AgECrdnSurfaceType", "AgECrdnSweepMode", "AgECrdnSystemType", "AgECrdnThreshConvergeSense", "AgECrdnTrajectoryAxesType", 
-"AgECrdnVectorComponentType", "AgECrdnVectorScaledDimensionInheritance", "AgECrdnVectorType", "AgECrdnVolumeAberrationType", 
-"AgECrdnVolumeCalcAltitudeReferenceType", "AgECrdnVolumeCalcAngleOffVectorType", "AgECrdnVolumeCalcRangeDistanceType", "AgECrdnVolumeCalcRangeSpeedType", 
-"AgECrdnVolumeCalcType", "AgECrdnVolumeCalcVolumeSatisfactionAccumulationType", "AgECrdnVolumeCalcVolumeSatisfactionDurationType", 
-"AgECrdnVolumeCalcVolumeSatisfactionFilterType", "AgECrdnVolumeCalcVolumeSatisfactionMetricType", "AgECrdnVolumeClockHostType", 
-"AgECrdnVolumeCombinedOperationType", "AgECrdnVolumeFromGridEdgeType", "AgECrdnVolumeGridType", "AgECrdnVolumeLightingConditionsType", 
-"AgECrdnVolumeOverTimeDurationType", "AgECrdnVolumeResultVectorRequest", "AgECrdnVolumeTimeSenseType", "AgECrdnVolumeType", 
-"AgECrdnVolumetricGridValuesMethodType", "AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", "AnalysisWorkbenchCentralBodyRefTo", 
+__all__ = ["AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", "AnalysisWorkbenchCentralBodyRefTo", 
 "AnalysisWorkbenchCollection", "AnalysisWorkbenchConverge", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchGeneric", "AnalysisWorkbenchInstance", 
 "AnalysisWorkbenchIntegral", "AnalysisWorkbenchInterp", "AnalysisWorkbenchLLAPosition", "AnalysisWorkbenchMethodCallResult", 
 "AnalysisWorkbenchProvider", "AnalysisWorkbenchRoot", "AnalysisWorkbenchSampling", "AnalysisWorkbenchSignalDelay", "AnalysisWorkbenchTemplate", 
-"AnalysisWorkbenchTypeInfo", "CalculationToolCondition", "CalculationToolConditionCombined", "CalculationToolConditionFactory", 
-"CalculationToolConditionGroup", "CalculationToolConditionPointInVolume", "CalculationToolConditionScalarBounds", "CalculationToolConditionSet", 
-"CalculationToolConditionSetEvaluateResult", "CalculationToolConditionSetEvaluateWithRateResult", "CalculationToolConditionSetFactory", 
-"CalculationToolConditionSetGroup", "CalculationToolConditionSetScalarThresholds", "CalculationToolConvergeBasic", "CalculationToolDerivativeBasic", 
-"CalculationToolEvaluateResult", "CalculationToolEvaluateWithRateResult", "CalculationToolIntegralBasic", "CalculationToolInterpBasic", 
-"CalculationToolParameterSet", "CalculationToolParameterSetAttitude", "CalculationToolParameterSetFactory", "CalculationToolParameterSetGroundTrajectory", 
+"AnalysisWorkbenchTypeInfo", "CRDN_ANGLE_TYPE", "CRDN_AXES_TYPE", "CRDN_CALC_SCALAR_TYPE", "CRDN_CONDITION_COMBINED_OPERATION_TYPE", 
+"CRDN_CONDITION_SET_TYPE", "CRDN_CONDITION_THRESHOLD_OPTION", "CRDN_CONDITION_TYPE", "CRDN_DIMENSION_INHERITANCE", "CRDN_DIRECTION_TYPE", 
+"CRDN_DISPLAY_AXIS_SELECTOR", "CRDN_EVENT_ARRAY_FILTER_TYPE", "CRDN_EVENT_ARRAY_TYPE", "CRDN_EVENT_INTERVAL_COLLECTION_TYPE", 
+"CRDN_EVENT_INTERVAL_LIST_TYPE", "CRDN_EVENT_INTERVAL_TYPE", "CRDN_EVENT_LIST_MERGE_OPERATION", "CRDN_EVENT_TYPE", "CRDN_EXTREMUM_CONSTANTS", 
+"CRDN_FILE_INTERPOLATOR_TYPE", "CRDN_INTEGRAL_TYPE", "CRDN_INTEGRATION_WINDOW_TYPE", "CRDN_INTERPOLATOR_TYPE", "CRDN_INTERSECTION_SURFACE", 
+"CRDN_INTERVAL_DURATION_KIND", "CRDN_INTERVAL_SELECTION", "CRDN_KIND", "CRDN_LAGRANGE_LIBRATION_POINT_TYPE", "CRDN_MEAN_ELEMENT_THEORY", 
+"CRDN_PARAMETER_SET_TYPE", "CRDN_PLANE_TYPE", "CRDN_POINT_B_PLANE_TYPE", "CRDN_POINT_TYPE", "CRDN_PRUNE_FILTER", "CRDN_QUADRANT_TYPE", 
+"CRDN_REFERENCE_SHAPE_TYPE", "CRDN_SAMPLED_REFERENCE_TIME", "CRDN_SAMPLING_METHOD", "CRDN_SATISFACTION_CROSSING", "CRDN_SAVE_DATA_OPTION", 
+"CRDN_SIGNAL_PATH_REFERENCE_SYSTEM", "CRDN_SIGNAL_SENSE", "CRDN_SIGNED_ANGLE_TYPE", "CRDN_SMART_EPOCH_STATE", "CRDN_SMART_INTERVAL_STATE", 
+"CRDN_SPEED_OPTIONS", "CRDN_START_STOP_OPTION", "CRDN_SURFACE_TYPE", "CRDN_SWEEP_MODE", "CRDN_SYSTEM_TYPE", "CRDN_THRESH_CONVERGE_SENSE", 
+"CRDN_TRAJECTORY_AXES_TYPE", "CRDN_VECTOR_COMPONENT_TYPE", "CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE", "CRDN_VECTOR_TYPE", 
+"CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE", "CRDN_VOLUME_ABERRATION_TYPE", "CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE", "CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE", 
+"CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE", "CRDN_VOLUME_CALC_RANGE_SPEED_TYPE", "CRDN_VOLUME_CALC_TYPE", "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE", 
+"CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE", "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE", "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE", 
+"CRDN_VOLUME_CLOCK_HOST_TYPE", "CRDN_VOLUME_COMBINED_OPERATION_TYPE", "CRDN_VOLUME_FROM_GRID_EDGE_TYPE", "CRDN_VOLUME_GRID_TYPE", 
+"CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE", "CRDN_VOLUME_OVER_TIME_DURATION_TYPE", "CRDN_VOLUME_RESULT_VECTOR_REQUEST", "CRDN_VOLUME_TIME_SENSE_TYPE", 
+"CRDN_VOLUME_TYPE", "CalculationToolCondition", "CalculationToolConditionCombined", "CalculationToolConditionFactory", "CalculationToolConditionGroup", 
+"CalculationToolConditionPointInVolume", "CalculationToolConditionScalarBounds", "CalculationToolConditionSet", "CalculationToolConditionSetEvaluateResult", 
+"CalculationToolConditionSetEvaluateWithRateResult", "CalculationToolConditionSetFactory", "CalculationToolConditionSetGroup", 
+"CalculationToolConditionSetScalarThresholds", "CalculationToolConvergeBasic", "CalculationToolDerivativeBasic", "CalculationToolEvaluateResult", 
+"CalculationToolEvaluateWithRateResult", "CalculationToolIntegralBasic", "CalculationToolInterpBasic", "CalculationToolParameterSet", 
+"CalculationToolParameterSetAttitude", "CalculationToolParameterSetFactory", "CalculationToolParameterSetGroundTrajectory", 
 "CalculationToolParameterSetGroup", "CalculationToolParameterSetOrbit", "CalculationToolParameterSetTrajectory", "CalculationToolParameterSetVector", 
 "CalculationToolSamplingBasic", "CalculationToolSamplingCurvatureTolerance", "CalculationToolSamplingFixedStep", "CalculationToolSamplingMethod", 
 "CalculationToolSamplingMethodFactory", "CalculationToolSamplingRelativeTolerance", "CalculationToolScalar", "CalculationToolScalarAngle", 
@@ -184,12 +184,12 @@ from ctypes   import byref, POINTER
 from enum     import IntEnum, IntFlag
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
@@ -206,1655 +206,1655 @@ from .stkutil import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class AgECrdnCalcScalarType(IntEnum):
+class CRDN_CALC_SCALAR_TYPE(IntEnum):
     """Defines available calculation scalar types."""
     # Unknown or unsupported calculation scalar types
-    eCrdnCalcScalarTypeUnknown = -1
+    UNKNOWN = -1
     # Scalar equal to angular displacement obtained from any angle in VGT.
-    eCrdnCalcScalarTypeAngle = 0
+    ANGLE = 0
     # Constant scalar created by evaluating input scalar calculation at specified reference time instant.
-    eCrdnCalcScalarTypeFixedAtTimeInstant = 1
+    FIXED_AT_TIME_INSTANT = 1
     # Constant scalar value of specified dimension.
-    eCrdnCalcScalarTypeConstant = 2
+    CONSTANT = 2
     # Any time-dependent data element from STK data providers available for parent STK object.
-    eCrdnCalcScalarTypeDataElement = 3
+    DATA_ELEMENT = 3
     # Derivative of input scalar calculation.
-    eCrdnCalcScalarTypeDerivative = 4
+    DERIVATIVE = 4
     # Time elapsed since reference time instant.
-    eCrdnCalcScalarTypeElapsedTime = 5
+    ELAPSED_TIME = 5
     # Tabulated scalar calculation data loaded from specified file.
-    eCrdnCalcScalarTypeFile = 6
+    FILE = 6
     # Defined by performing one of specified functions on input scalar.
-    eCrdnCalcScalarTypeFunction = 7
+    FUNCTION = 7
     # Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types.
-    eCrdnCalcScalarTypeIntegral = 8
+    INTEGRAL = 8
     # Defined by performing one of specified binary operations on two scalar arguments.
-    eCrdnCalcScalarTypeFunction2Var = 9
+    FUNCTION2_VAR = 9
     # Scalar equal to magnitude of specified vector.
-    eCrdnCalcScalarTypeVectorMagnitude = 10
+    VECTOR_MAGNITUDE = 10
     # A calc scalar plugin based on a COM object.
-    eCrdnCalcScalarTypePlugin = 11
+    PLUGIN = 11
     # A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
-    eCrdnCalcScalarTypeCustomScript = 12
+    CUSTOM_SCRIPT = 12
     # Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude).
-    eCrdnCalcScalarTypeSurfaceDistanceBetweenPoints = 13
+    SURFACE_DISTANCE_BETWEEN_POINTS = 13
     # Scalar equal to the dot product between two vectors.
-    eCrdnCalcScalarTypeDotProduct = 14
+    DOT_PRODUCT = 14
     # Scalar equal to the specified component of a vector when resolved in the specified axes.
-    eCrdnCalcScalarTypeVectorComponent = 15
+    VECTOR_COMPONENT = 15
 
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeUnknown.__doc__ = "Unknown or unsupported calculation scalar types"
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeAngle.__doc__ = "Scalar equal to angular displacement obtained from any angle in VGT."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeFixedAtTimeInstant.__doc__ = "Constant scalar created by evaluating input scalar calculation at specified reference time instant."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeConstant.__doc__ = "Constant scalar value of specified dimension."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeDataElement.__doc__ = "Any time-dependent data element from STK data providers available for parent STK object."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeDerivative.__doc__ = "Derivative of input scalar calculation."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeElapsedTime.__doc__ = "Time elapsed since reference time instant."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeFile.__doc__ = "Tabulated scalar calculation data loaded from specified file."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeFunction.__doc__ = "Defined by performing one of specified functions on input scalar."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeIntegral.__doc__ = "Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeFunction2Var.__doc__ = "Defined by performing one of specified binary operations on two scalar arguments."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeVectorMagnitude.__doc__ = "Scalar equal to magnitude of specified vector."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypePlugin.__doc__ = "A calc scalar plugin based on a COM object."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeCustomScript.__doc__ = "A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeSurfaceDistanceBetweenPoints.__doc__ = "Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeDotProduct.__doc__ = "Scalar equal to the dot product between two vectors."
-AgECrdnCalcScalarType.eCrdnCalcScalarTypeVectorComponent.__doc__ = "Scalar equal to the specified component of a vector when resolved in the specified axes."
+CRDN_CALC_SCALAR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported calculation scalar types"
+CRDN_CALC_SCALAR_TYPE.ANGLE.__doc__ = "Scalar equal to angular displacement obtained from any angle in VGT."
+CRDN_CALC_SCALAR_TYPE.FIXED_AT_TIME_INSTANT.__doc__ = "Constant scalar created by evaluating input scalar calculation at specified reference time instant."
+CRDN_CALC_SCALAR_TYPE.CONSTANT.__doc__ = "Constant scalar value of specified dimension."
+CRDN_CALC_SCALAR_TYPE.DATA_ELEMENT.__doc__ = "Any time-dependent data element from STK data providers available for parent STK object."
+CRDN_CALC_SCALAR_TYPE.DERIVATIVE.__doc__ = "Derivative of input scalar calculation."
+CRDN_CALC_SCALAR_TYPE.ELAPSED_TIME.__doc__ = "Time elapsed since reference time instant."
+CRDN_CALC_SCALAR_TYPE.FILE.__doc__ = "Tabulated scalar calculation data loaded from specified file."
+CRDN_CALC_SCALAR_TYPE.FUNCTION.__doc__ = "Defined by performing one of specified functions on input scalar."
+CRDN_CALC_SCALAR_TYPE.INTEGRAL.__doc__ = "Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
+CRDN_CALC_SCALAR_TYPE.FUNCTION2_VAR.__doc__ = "Defined by performing one of specified binary operations on two scalar arguments."
+CRDN_CALC_SCALAR_TYPE.VECTOR_MAGNITUDE.__doc__ = "Scalar equal to magnitude of specified vector."
+CRDN_CALC_SCALAR_TYPE.PLUGIN.__doc__ = "A calc scalar plugin based on a COM object."
+CRDN_CALC_SCALAR_TYPE.CUSTOM_SCRIPT.__doc__ = "A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."
+CRDN_CALC_SCALAR_TYPE.SURFACE_DISTANCE_BETWEEN_POINTS.__doc__ = "Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."
+CRDN_CALC_SCALAR_TYPE.DOT_PRODUCT.__doc__ = "Scalar equal to the dot product between two vectors."
+CRDN_CALC_SCALAR_TYPE.VECTOR_COMPONENT.__doc__ = "Scalar equal to the specified component of a vector when resolved in the specified axes."
 
-agcls.AgTypeNameMap["AgECrdnCalcScalarType"] = AgECrdnCalcScalarType
+agcls.AgTypeNameMap["CRDN_CALC_SCALAR_TYPE"] = CRDN_CALC_SCALAR_TYPE
 
-class AgECrdnConditionCombinedOperationType(IntEnum):
+class CRDN_CONDITION_COMBINED_OPERATION_TYPE(IntEnum):
     """Defines scalar condition combined operation types."""
     # Scalar condition combined AND operation.
-    eCrdnConditionCombinedOperationTypeAND = 1
+    AND = 1
     # Scalar condition combined OR operation.
-    eCrdnConditionCombinedOperationTypeOR = 2
+    OR = 2
     # Scalar condition combined XOR operation.
-    eCrdnConditionCombinedOperationTypeXOR = 3
+    XOR = 3
     # Scalar condition combined MINUS operation.
-    eCrdnConditionCombinedOperationTypeMINUS = 4
+    MINUS = 4
 
-AgECrdnConditionCombinedOperationType.eCrdnConditionCombinedOperationTypeAND.__doc__ = "Scalar condition combined AND operation."
-AgECrdnConditionCombinedOperationType.eCrdnConditionCombinedOperationTypeOR.__doc__ = "Scalar condition combined OR operation."
-AgECrdnConditionCombinedOperationType.eCrdnConditionCombinedOperationTypeXOR.__doc__ = "Scalar condition combined XOR operation."
-AgECrdnConditionCombinedOperationType.eCrdnConditionCombinedOperationTypeMINUS.__doc__ = "Scalar condition combined MINUS operation."
+CRDN_CONDITION_COMBINED_OPERATION_TYPE.AND.__doc__ = "Scalar condition combined AND operation."
+CRDN_CONDITION_COMBINED_OPERATION_TYPE.OR.__doc__ = "Scalar condition combined OR operation."
+CRDN_CONDITION_COMBINED_OPERATION_TYPE.XOR.__doc__ = "Scalar condition combined XOR operation."
+CRDN_CONDITION_COMBINED_OPERATION_TYPE.MINUS.__doc__ = "Scalar condition combined MINUS operation."
 
-agcls.AgTypeNameMap["AgECrdnConditionCombinedOperationType"] = AgECrdnConditionCombinedOperationType
+agcls.AgTypeNameMap["CRDN_CONDITION_COMBINED_OPERATION_TYPE"] = CRDN_CONDITION_COMBINED_OPERATION_TYPE
 
-class AgECrdnConditionSetType(IntEnum):
+class CRDN_CONDITION_SET_TYPE(IntEnum):
     """Defines available condition set types."""
     # Unknown or unsupported condition set types.
-    eCrdnConditionSetTypeUnknown = -1
+    UNKNOWN = -1
     # Condition set placing multiple thresholds on specified scalar.
-    eCrdnConditionSetTypeScalarThresholds = 0
+    SCALAR_THRESHOLDS = 0
 
-AgECrdnConditionSetType.eCrdnConditionSetTypeUnknown.__doc__ = "Unknown or unsupported condition set types."
-AgECrdnConditionSetType.eCrdnConditionSetTypeScalarThresholds.__doc__ = "Condition set placing multiple thresholds on specified scalar."
+CRDN_CONDITION_SET_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported condition set types."
+CRDN_CONDITION_SET_TYPE.SCALAR_THRESHOLDS.__doc__ = "Condition set placing multiple thresholds on specified scalar."
 
-agcls.AgTypeNameMap["AgECrdnConditionSetType"] = AgECrdnConditionSetType
+agcls.AgTypeNameMap["CRDN_CONDITION_SET_TYPE"] = CRDN_CONDITION_SET_TYPE
 
-class AgECrdnConditionThresholdOption(IntEnum):
+class CRDN_CONDITION_THRESHOLD_OPTION(IntEnum):
     """Operations for Scalar Bounds Condition"""
     # Bound is above a minimum value
-    eCrdnConditionThresholdOptionAboveMin = 1
+    ABOVE_MIN = 1
     # Bound is below a maximum value
-    eCrdnConditionThresholdOptionBelowMax = 2
+    BELOW_MAX = 2
     # Bound is between a minimum and maximum value
-    eCrdnConditionThresholdOptionInsideMinMax = 3
+    INSIDE_MIN_MAX = 3
     # Bound is outside a minimum and maximum value
-    eCrdnConditionThresholdOptionOutsideMinMax = 4
+    OUTSIDE_MIN_MAX = 4
 
-AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionAboveMin.__doc__ = "Bound is above a minimum value"
-AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionBelowMax.__doc__ = "Bound is below a maximum value"
-AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionInsideMinMax.__doc__ = "Bound is between a minimum and maximum value"
-AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionOutsideMinMax.__doc__ = "Bound is outside a minimum and maximum value"
+CRDN_CONDITION_THRESHOLD_OPTION.ABOVE_MIN.__doc__ = "Bound is above a minimum value"
+CRDN_CONDITION_THRESHOLD_OPTION.BELOW_MAX.__doc__ = "Bound is below a maximum value"
+CRDN_CONDITION_THRESHOLD_OPTION.INSIDE_MIN_MAX.__doc__ = "Bound is between a minimum and maximum value"
+CRDN_CONDITION_THRESHOLD_OPTION.OUTSIDE_MIN_MAX.__doc__ = "Bound is outside a minimum and maximum value"
 
-agcls.AgTypeNameMap["AgECrdnConditionThresholdOption"] = AgECrdnConditionThresholdOption
+agcls.AgTypeNameMap["CRDN_CONDITION_THRESHOLD_OPTION"] = CRDN_CONDITION_THRESHOLD_OPTION
 
-class AgECrdnConditionType(IntEnum):
+class CRDN_CONDITION_TYPE(IntEnum):
     """Defines available condition types."""
     # Unknown or unsupported condition type
-    eCrdnConditionTypeUnknown = -1
+    UNKNOWN = -1
     # Condition placing bounds on specified scalar.
-    eCrdnConditionTypeScalarBounds = 0
+    SCALAR_BOUNDS = 0
     # Multiple conditiones on specified scalar.
-    eCrdnConditionTypeCombined = 1
+    COMBINED = 1
     # Condition placing point in volume.
-    eCrdnConditionTypePointInVolume = 2
+    POINT_IN_VOLUME = 2
 
-AgECrdnConditionType.eCrdnConditionTypeUnknown.__doc__ = "Unknown or unsupported condition type"
-AgECrdnConditionType.eCrdnConditionTypeScalarBounds.__doc__ = "Condition placing bounds on specified scalar."
-AgECrdnConditionType.eCrdnConditionTypeCombined.__doc__ = "Multiple conditiones on specified scalar."
-AgECrdnConditionType.eCrdnConditionTypePointInVolume.__doc__ = "Condition placing point in volume."
+CRDN_CONDITION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported condition type"
+CRDN_CONDITION_TYPE.SCALAR_BOUNDS.__doc__ = "Condition placing bounds on specified scalar."
+CRDN_CONDITION_TYPE.COMBINED.__doc__ = "Multiple conditiones on specified scalar."
+CRDN_CONDITION_TYPE.POINT_IN_VOLUME.__doc__ = "Condition placing point in volume."
 
-agcls.AgTypeNameMap["AgECrdnConditionType"] = AgECrdnConditionType
+agcls.AgTypeNameMap["CRDN_CONDITION_TYPE"] = CRDN_CONDITION_TYPE
 
-class AgECrdnDimensionInheritance(IntEnum):
+class CRDN_DIMENSION_INHERITANCE(IntEnum):
     """Defines how dimension is inherited"""
     # Do not inherit dimension.
-    eCrdnDimensionInheritanceNone = 0
+    NONE = 0
     # Inherit dimension from X scalar.
-    eCrdnDimensionInheritanceFromX = 1
+    FROM_X = 1
     # Inherit dimension from Y scalar.
-    eCrdnDimensionInheritanceFromY = 2
+    FROM_Y = 2
 
-AgECrdnDimensionInheritance.eCrdnDimensionInheritanceNone.__doc__ = "Do not inherit dimension."
-AgECrdnDimensionInheritance.eCrdnDimensionInheritanceFromX.__doc__ = "Inherit dimension from X scalar."
-AgECrdnDimensionInheritance.eCrdnDimensionInheritanceFromY.__doc__ = "Inherit dimension from Y scalar."
+CRDN_DIMENSION_INHERITANCE.NONE.__doc__ = "Do not inherit dimension."
+CRDN_DIMENSION_INHERITANCE.FROM_X.__doc__ = "Inherit dimension from X scalar."
+CRDN_DIMENSION_INHERITANCE.FROM_Y.__doc__ = "Inherit dimension from Y scalar."
 
-agcls.AgTypeNameMap["AgECrdnDimensionInheritance"] = AgECrdnDimensionInheritance
+agcls.AgTypeNameMap["CRDN_DIMENSION_INHERITANCE"] = CRDN_DIMENSION_INHERITANCE
 
-class AgECrdnEventArrayFilterType(IntEnum):
+class CRDN_EVENT_ARRAY_FILTER_TYPE(IntEnum):
     """Event array filter types."""
     # Skip time step
-    eCrdnEventArrayFilterTypeSkipTimeStep = 0
+    SKIP_TIME_STEP = 0
     # Skip count
-    eCrdnEventArrayFilterTypeSkipCount = 1
+    SKIP_COUNT = 1
     # Intervals
-    eCrdnEventArrayFilterTypeIntervals = 2
+    INTERVALS = 2
 
-AgECrdnEventArrayFilterType.eCrdnEventArrayFilterTypeSkipTimeStep.__doc__ = "Skip time step"
-AgECrdnEventArrayFilterType.eCrdnEventArrayFilterTypeSkipCount.__doc__ = "Skip count"
-AgECrdnEventArrayFilterType.eCrdnEventArrayFilterTypeIntervals.__doc__ = "Intervals"
+CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_TIME_STEP.__doc__ = "Skip time step"
+CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_COUNT.__doc__ = "Skip count"
+CRDN_EVENT_ARRAY_FILTER_TYPE.INTERVALS.__doc__ = "Intervals"
 
-agcls.AgTypeNameMap["AgECrdnEventArrayFilterType"] = AgECrdnEventArrayFilterType
+agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_FILTER_TYPE"] = CRDN_EVENT_ARRAY_FILTER_TYPE
 
-class AgECrdnEventArrayType(IntEnum):
+class CRDN_EVENT_ARRAY_TYPE(IntEnum):
     """Defines available time array types."""
     # Unknown or unsupported time array types
-    eCrdnEventArrayTypeUnknown = -1
+    UNKNOWN = -1
     # Determines time of local minimum and/or maximum of specified scalar calculation.
-    eCrdnEventArrayTypeExtrema = 0
+    EXTREMA = 0
     # Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array.
-    eCrdnEventArrayTypeStartStopTimes = 1
+    START_STOP_TIMES = 1
     # Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays.
-    eCrdnEventArrayTypeMerged = 2
+    MERGED = 2
     # Defined by filtering times from original time array according to specified filtering method.
-    eCrdnEventArrayTypeFiltered = 3
+    FILTERED = 3
     # Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list.
-    eCrdnEventArrayTypeFixedStep = 4
+    FIXED_STEP = 4
     # Time array containing times at which specified condition changes its satisfaction status.
-    eCrdnEventArrayTypeConditionCrossings = 5
+    CONDITION_CROSSINGS = 5
     # Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations.
-    eCrdnEventArrayTypeSignaled = 6
+    SIGNALED = 6
     # Time array containing specific times.
-    eCrdnEventArrayTypeFixedTimes = 7
+    FIXED_TIMES = 7
 
-AgECrdnEventArrayType.eCrdnEventArrayTypeUnknown.__doc__ = "Unknown or unsupported time array types"
-AgECrdnEventArrayType.eCrdnEventArrayTypeExtrema.__doc__ = "Determines time of local minimum and/or maximum of specified scalar calculation."
-AgECrdnEventArrayType.eCrdnEventArrayTypeStartStopTimes.__doc__ = "Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."
-AgECrdnEventArrayType.eCrdnEventArrayTypeMerged.__doc__ = "Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays."
-AgECrdnEventArrayType.eCrdnEventArrayTypeFiltered.__doc__ = "Defined by filtering times from original time array according to specified filtering method."
-AgECrdnEventArrayType.eCrdnEventArrayTypeFixedStep.__doc__ = "Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."
-AgECrdnEventArrayType.eCrdnEventArrayTypeConditionCrossings.__doc__ = "Time array containing times at which specified condition changes its satisfaction status."
-AgECrdnEventArrayType.eCrdnEventArrayTypeSignaled.__doc__ = "Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."
-AgECrdnEventArrayType.eCrdnEventArrayTypeFixedTimes.__doc__ = "Time array containing specific times."
+CRDN_EVENT_ARRAY_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time array types"
+CRDN_EVENT_ARRAY_TYPE.EXTREMA.__doc__ = "Determines time of local minimum and/or maximum of specified scalar calculation."
+CRDN_EVENT_ARRAY_TYPE.START_STOP_TIMES.__doc__ = "Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."
+CRDN_EVENT_ARRAY_TYPE.MERGED.__doc__ = "Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays."
+CRDN_EVENT_ARRAY_TYPE.FILTERED.__doc__ = "Defined by filtering times from original time array according to specified filtering method."
+CRDN_EVENT_ARRAY_TYPE.FIXED_STEP.__doc__ = "Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."
+CRDN_EVENT_ARRAY_TYPE.CONDITION_CROSSINGS.__doc__ = "Time array containing times at which specified condition changes its satisfaction status."
+CRDN_EVENT_ARRAY_TYPE.SIGNALED.__doc__ = "Determines what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."
+CRDN_EVENT_ARRAY_TYPE.FIXED_TIMES.__doc__ = "Time array containing specific times."
 
-agcls.AgTypeNameMap["AgECrdnEventArrayType"] = AgECrdnEventArrayType
+agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_TYPE"] = CRDN_EVENT_ARRAY_TYPE
 
-class AgECrdnEventIntervalCollectionType(IntEnum):
+class CRDN_EVENT_INTERVAL_COLLECTION_TYPE(IntEnum):
     """Defines available interval collection types."""
     # Unknown or unsupported interval collection types
-    eCrdnEventIntervalCollectionTypeUnknown = -1
+    UNKNOWN = -1
     # Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
-    eCrdnEventIntervalCollectionTypeLighting = 0
+    LIGHTING = 0
     # Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations.
-    eCrdnEventIntervalCollectionTypeSignaled = 1
+    SIGNALED = 1
     # Interval collection containing intervals during which condition set is satisfied.
-    eCrdnEventIntervalCollectionTypeCondition = 2
+    CONDITION = 2
 
-AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeUnknown.__doc__ = "Unknown or unsupported interval collection types"
-AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeLighting.__doc__ = "Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."
-AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeSignaled.__doc__ = "Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."
-AgECrdnEventIntervalCollectionType.eCrdnEventIntervalCollectionTypeCondition.__doc__ = "Interval collection containing intervals during which condition set is satisfied."
+CRDN_EVENT_INTERVAL_COLLECTION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval collection types"
+CRDN_EVENT_INTERVAL_COLLECTION_TYPE.LIGHTING.__doc__ = "Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."
+CRDN_EVENT_INTERVAL_COLLECTION_TYPE.SIGNALED.__doc__ = "Determines what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."
+CRDN_EVENT_INTERVAL_COLLECTION_TYPE.CONDITION.__doc__ = "Interval collection containing intervals during which condition set is satisfied."
 
-agcls.AgTypeNameMap["AgECrdnEventIntervalCollectionType"] = AgECrdnEventIntervalCollectionType
+agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_COLLECTION_TYPE"] = CRDN_EVENT_INTERVAL_COLLECTION_TYPE
 
-class AgECrdnEventIntervalListType(IntEnum):
+class CRDN_EVENT_INTERVAL_LIST_TYPE(IntEnum):
     """Defines available interval list types."""
     # Unknown or unsupported interval list types
-    eCrdnEventIntervalListTypeUnknown = -1
+    UNKNOWN = -1
     # Interval list created by merging two constituent interval lists using specified logical operation.
-    eCrdnEventIntervalListTypeMerged = 1
+    MERGED = 1
     # Defined by filtering intervals from original interval list using specified filtering method.
-    eCrdnEventIntervalListTypeFiltered = 2
+    FILTERED = 2
     # Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction).
-    eCrdnEventIntervalListTypeCondition = 3
+    CONDITION = 3
     # Interval List defined by scaling every interval in original interval list using either absolute or relative scale.
-    eCrdnEventIntervalListTypeScaled = 4
+    SCALED = 4
     # Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations.
-    eCrdnEventIntervalListTypeSignaled = 5
+    SIGNALED = 5
     # Interval List defined by shifting specified reference interval list by fixed time offset.
-    eCrdnEventIntervalListTypeTimeOffset = 6
+    TIME_OFFSET = 6
     # Interval list loaded from specified interval file
-    eCrdnEventIntervalListTypeFile = 0
+    FILE = 0
     # Interval list with individual intervals defined between explicitly specified start and stop times.
-    eCrdnEventIntervalListTypeFixed = 7
+    FIXED = 7
 
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeUnknown.__doc__ = "Unknown or unsupported interval list types"
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeMerged.__doc__ = "Interval list created by merging two constituent interval lists using specified logical operation."
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeFiltered.__doc__ = "Defined by filtering intervals from original interval list using specified filtering method."
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeCondition.__doc__ = "Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction)."
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeScaled.__doc__ = "Interval List defined by scaling every interval in original interval list using either absolute or relative scale."
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeSignaled.__doc__ = "Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeTimeOffset.__doc__ = "Interval List defined by shifting specified reference interval list by fixed time offset."
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeFile.__doc__ = "Interval list loaded from specified interval file"
-AgECrdnEventIntervalListType.eCrdnEventIntervalListTypeFixed.__doc__ = "Interval list with individual intervals defined between explicitly specified start and stop times."
+CRDN_EVENT_INTERVAL_LIST_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval list types"
+CRDN_EVENT_INTERVAL_LIST_TYPE.MERGED.__doc__ = "Interval list created by merging two constituent interval lists using specified logical operation."
+CRDN_EVENT_INTERVAL_LIST_TYPE.FILTERED.__doc__ = "Defined by filtering intervals from original interval list using specified filtering method."
+CRDN_EVENT_INTERVAL_LIST_TYPE.CONDITION.__doc__ = "Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction)."
+CRDN_EVENT_INTERVAL_LIST_TYPE.SCALED.__doc__ = "Interval List defined by scaling every interval in original interval list using either absolute or relative scale."
+CRDN_EVENT_INTERVAL_LIST_TYPE.SIGNALED.__doc__ = "Determines what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."
+CRDN_EVENT_INTERVAL_LIST_TYPE.TIME_OFFSET.__doc__ = "Interval List defined by shifting specified reference interval list by fixed time offset."
+CRDN_EVENT_INTERVAL_LIST_TYPE.FILE.__doc__ = "Interval list loaded from specified interval file"
+CRDN_EVENT_INTERVAL_LIST_TYPE.FIXED.__doc__ = "Interval list with individual intervals defined between explicitly specified start and stop times."
 
-agcls.AgTypeNameMap["AgECrdnEventIntervalListType"] = AgECrdnEventIntervalListType
+agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_LIST_TYPE"] = CRDN_EVENT_INTERVAL_LIST_TYPE
 
-class AgECrdnEventIntervalType(IntEnum):
+class CRDN_EVENT_INTERVAL_TYPE(IntEnum):
     """Defines available interval types."""
     # Unknown or unsupported interval types
-    eCrdnEventIntervalTypeUnknown = -1
+    UNKNOWN = -1
     # Interval defined between two explicitly specified start and stop times.
-    eCrdnEventIntervalTypeFixed = 0
+    FIXED = 0
     # Interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
-    eCrdnEventIntervalTypeFixedDuration = 1
+    FIXED_DURATION = 1
     # Interval between specified start and stop time instants.
-    eCrdnEventIntervalTypeBetweenTimeInstants = 2
+    BETWEEN_TIME_INSTANTS = 2
     # Interval created from specified interval list by using one of several selection methods.
-    eCrdnEventIntervalTypeFromIntervalList = 3
+    FROM_INTERVAL_LIST = 3
     # Interval defined by scaling original interval using either absolute or relative scale.
-    eCrdnEventIntervalTypeScaled = 4
+    SCALED = 4
     # Determines an interval recorded at a target clock location by performing signal transmission.
-    eCrdnEventIntervalTypeSignaled = 5
+    SIGNALED = 5
     # Interval defined by shifting specified reference interval by fixed time offset.
-    eCrdnEventIntervalTypeTimeOffset = 6
+    TIME_OFFSET = 6
     # A smart interval.
-    eCrdnEventIntervalTypeSmartInterval = 7
+    SMART_INTERVAL = 7
 
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeUnknown.__doc__ = "Unknown or unsupported interval types"
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeFixed.__doc__ = "Interval defined between two explicitly specified start and stop times."
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeFixedDuration.__doc__ = "Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeBetweenTimeInstants.__doc__ = "Interval between specified start and stop time instants."
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeFromIntervalList.__doc__ = "Interval created from specified interval list by using one of several selection methods."
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeScaled.__doc__ = "Interval defined by scaling original interval using either absolute or relative scale."
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeSignaled.__doc__ = "Determines an interval recorded at a target clock location by performing signal transmission."
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeTimeOffset.__doc__ = "Interval defined by shifting specified reference interval by fixed time offset."
-AgECrdnEventIntervalType.eCrdnEventIntervalTypeSmartInterval.__doc__ = "A smart interval."
+CRDN_EVENT_INTERVAL_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval types"
+CRDN_EVENT_INTERVAL_TYPE.FIXED.__doc__ = "Interval defined between two explicitly specified start and stop times."
+CRDN_EVENT_INTERVAL_TYPE.FIXED_DURATION.__doc__ = "Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."
+CRDN_EVENT_INTERVAL_TYPE.BETWEEN_TIME_INSTANTS.__doc__ = "Interval between specified start and stop time instants."
+CRDN_EVENT_INTERVAL_TYPE.FROM_INTERVAL_LIST.__doc__ = "Interval created from specified interval list by using one of several selection methods."
+CRDN_EVENT_INTERVAL_TYPE.SCALED.__doc__ = "Interval defined by scaling original interval using either absolute or relative scale."
+CRDN_EVENT_INTERVAL_TYPE.SIGNALED.__doc__ = "Determines an interval recorded at a target clock location by performing signal transmission."
+CRDN_EVENT_INTERVAL_TYPE.TIME_OFFSET.__doc__ = "Interval defined by shifting specified reference interval by fixed time offset."
+CRDN_EVENT_INTERVAL_TYPE.SMART_INTERVAL.__doc__ = "A smart interval."
 
-agcls.AgTypeNameMap["AgECrdnEventIntervalType"] = AgECrdnEventIntervalType
+agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_TYPE"] = CRDN_EVENT_INTERVAL_TYPE
 
-class AgECrdnEventListMergeOperation(IntEnum):
+class CRDN_EVENT_LIST_MERGE_OPERATION(IntEnum):
     """Defines merge operations for interval lists."""
     # Intervals both in A and B
-    eCrdnEventListMergeOperationAND = 0
+    AND = 0
     # Intervals in A or B
-    eCrdnEventListMergeOperationOR = 1
+    OR = 1
     # Intervals in A or B but not in both
-    eCrdnEventListMergeOperationXOR = 2
+    XOR = 2
     # Intervals in A and not in B
-    eCrdnEventListMergeOperationMINUS = 3
+    MINUS = 3
 
-AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationAND.__doc__ = "Intervals both in A and B"
-AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationOR.__doc__ = "Intervals in A or B"
-AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationXOR.__doc__ = "Intervals in A or B but not in both"
-AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationMINUS.__doc__ = "Intervals in A and not in B"
+CRDN_EVENT_LIST_MERGE_OPERATION.AND.__doc__ = "Intervals both in A and B"
+CRDN_EVENT_LIST_MERGE_OPERATION.OR.__doc__ = "Intervals in A or B"
+CRDN_EVENT_LIST_MERGE_OPERATION.XOR.__doc__ = "Intervals in A or B but not in both"
+CRDN_EVENT_LIST_MERGE_OPERATION.MINUS.__doc__ = "Intervals in A and not in B"
 
-agcls.AgTypeNameMap["AgECrdnEventListMergeOperation"] = AgECrdnEventListMergeOperation
+agcls.AgTypeNameMap["CRDN_EVENT_LIST_MERGE_OPERATION"] = CRDN_EVENT_LIST_MERGE_OPERATION
 
-class AgECrdnEventType(IntEnum):
+class CRDN_EVENT_TYPE(IntEnum):
     """Defines available time instant types."""
     # Unknown or unsupported time instant types
-    eCrdnEventTypeUnknown = -1
+    UNKNOWN = -1
     # Time instant set at specified date/time
-    eCrdnEventTypeEpoch = 0
+    EPOCH = 0
     # Determines time of global minimum or maximum of specified scalar calculation.
-    eCrdnEventTypeExtremum = 1
+    EXTREMUM = 1
     # Start or stop time of selected reference interval
-    eCrdnEventTypeFromInterval = 2
+    FROM_INTERVAL = 2
     # Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations.
-    eCrdnEventTypeSignaled = 3
+    SIGNALED = 3
     # Time instant at fixed offset from specified reference time instant
-    eCrdnEventTypeTimeOffset = 4
+    TIME_OFFSET = 4
     # A smart epoch.
-    eCrdnEventTypeSmartEpoch = 5
+    SMART_EPOCH = 5
 
-AgECrdnEventType.eCrdnEventTypeUnknown.__doc__ = "Unknown or unsupported time instant types"
-AgECrdnEventType.eCrdnEventTypeEpoch.__doc__ = "Time instant set at specified date/time"
-AgECrdnEventType.eCrdnEventTypeExtremum.__doc__ = "Determines time of global minimum or maximum of specified scalar calculation."
-AgECrdnEventType.eCrdnEventTypeFromInterval.__doc__ = "Start or stop time of selected reference interval"
-AgECrdnEventType.eCrdnEventTypeSignaled.__doc__ = "Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."
-AgECrdnEventType.eCrdnEventTypeTimeOffset.__doc__ = "Time instant at fixed offset from specified reference time instant"
-AgECrdnEventType.eCrdnEventTypeSmartEpoch.__doc__ = "A smart epoch."
+CRDN_EVENT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time instant types"
+CRDN_EVENT_TYPE.EPOCH.__doc__ = "Time instant set at specified date/time"
+CRDN_EVENT_TYPE.EXTREMUM.__doc__ = "Determines time of global minimum or maximum of specified scalar calculation."
+CRDN_EVENT_TYPE.FROM_INTERVAL.__doc__ = "Start or stop time of selected reference interval"
+CRDN_EVENT_TYPE.SIGNALED.__doc__ = "Determines what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."
+CRDN_EVENT_TYPE.TIME_OFFSET.__doc__ = "Time instant at fixed offset from specified reference time instant"
+CRDN_EVENT_TYPE.SMART_EPOCH.__doc__ = "A smart epoch."
 
-agcls.AgTypeNameMap["AgECrdnEventType"] = AgECrdnEventType
+agcls.AgTypeNameMap["CRDN_EVENT_TYPE"] = CRDN_EVENT_TYPE
 
-class AgECrdnExtremumConstants(IntFlag):
+class CRDN_EXTREMUM_CONSTANTS(IntFlag):
     """These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing."""
     # Find the minimum value
-    eCrdnExtremumMinimum = 1
+    MINIMUM = 1
     # Find the maximum value
-    eCrdnExtremumMaximum = 2
+    MAXIMUM = 2
 
-AgECrdnExtremumConstants.eCrdnExtremumMinimum.__doc__ = "Find the minimum value"
-AgECrdnExtremumConstants.eCrdnExtremumMaximum.__doc__ = "Find the maximum value"
+CRDN_EXTREMUM_CONSTANTS.MINIMUM.__doc__ = "Find the minimum value"
+CRDN_EXTREMUM_CONSTANTS.MAXIMUM.__doc__ = "Find the maximum value"
 
-agcls.AgTypeNameMap["AgECrdnExtremumConstants"] = AgECrdnExtremumConstants
+agcls.AgTypeNameMap["CRDN_EXTREMUM_CONSTANTS"] = CRDN_EXTREMUM_CONSTANTS
 
-class AgECrdnFileInterpolatorType(IntEnum):
+class CRDN_FILE_INTERPOLATOR_TYPE(IntEnum):
     """Interpolator types."""
     # Unknown or invalid interpolator.
-    eCrdnFileInterpolatorInvalid = -1
+    INVALID = -1
     # Lagrange interpolation.
-    eCrdnFileInterpolatorTypeLagrange = 1
+    LAGRANGE = 1
     # Hermite interpolation.
-    eCrdnFileInterpolatorTypeHermite = 2
+    HERMITE = 2
     # Holds the value at the closest previous sample time to any requested time.
-    eCrdnFileInterpolatorTypeHoldPrevious = 3
+    HOLD_PREVIOUS = 3
     # Holds the value at the closest next sample time to any requested time.
-    eCrdnFileInterpolatorTypeHoldNext = 4
+    HOLD_NEXT = 4
     # Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time.
-    eCrdnFileInterpolatorTypeHoldNearest = 5
+    HOLD_NEAREST = 5
 
-AgECrdnFileInterpolatorType.eCrdnFileInterpolatorInvalid.__doc__ = "Unknown or invalid interpolator."
-AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeLagrange.__doc__ = "Lagrange interpolation."
-AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeHermite.__doc__ = "Hermite interpolation."
-AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeHoldPrevious.__doc__ = "Holds the value at the closest previous sample time to any requested time."
-AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeHoldNext.__doc__ = "Holds the value at the closest next sample time to any requested time."
-AgECrdnFileInterpolatorType.eCrdnFileInterpolatorTypeHoldNearest.__doc__ = "Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time."
+CRDN_FILE_INTERPOLATOR_TYPE.INVALID.__doc__ = "Unknown or invalid interpolator."
+CRDN_FILE_INTERPOLATOR_TYPE.LAGRANGE.__doc__ = "Lagrange interpolation."
+CRDN_FILE_INTERPOLATOR_TYPE.HERMITE.__doc__ = "Hermite interpolation."
+CRDN_FILE_INTERPOLATOR_TYPE.HOLD_PREVIOUS.__doc__ = "Holds the value at the closest previous sample time to any requested time."
+CRDN_FILE_INTERPOLATOR_TYPE.HOLD_NEXT.__doc__ = "Holds the value at the closest next sample time to any requested time."
+CRDN_FILE_INTERPOLATOR_TYPE.HOLD_NEAREST.__doc__ = "Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time."
 
-agcls.AgTypeNameMap["AgECrdnFileInterpolatorType"] = AgECrdnFileInterpolatorType
+agcls.AgTypeNameMap["CRDN_FILE_INTERPOLATOR_TYPE"] = CRDN_FILE_INTERPOLATOR_TYPE
 
-class AgECrdnIntegralType(IntEnum):
+class CRDN_INTEGRAL_TYPE(IntEnum):
     """Integral types."""
     # Simpson integral method
-    eCrdnIntegralTypeFixedStepSimpson = 2
+    FIXED_STEP_SIMPSON = 2
     # Trapezoidal integral method
-    eCrdnIntegralTypeFixedStepTrapz = 1
+    FIXED_STEP_TRAPZ = 1
     # Adaptive Lobatto integral method
-    eCrdnIntegralTypeAdaptiveStep = 3
+    ADAPTIVE_STEP = 3
 
-AgECrdnIntegralType.eCrdnIntegralTypeFixedStepSimpson.__doc__ = "Simpson integral method"
-AgECrdnIntegralType.eCrdnIntegralTypeFixedStepTrapz.__doc__ = "Trapezoidal integral method"
-AgECrdnIntegralType.eCrdnIntegralTypeAdaptiveStep.__doc__ = "Adaptive Lobatto integral method"
+CRDN_INTEGRAL_TYPE.FIXED_STEP_SIMPSON.__doc__ = "Simpson integral method"
+CRDN_INTEGRAL_TYPE.FIXED_STEP_TRAPZ.__doc__ = "Trapezoidal integral method"
+CRDN_INTEGRAL_TYPE.ADAPTIVE_STEP.__doc__ = "Adaptive Lobatto integral method"
 
-agcls.AgTypeNameMap["AgECrdnIntegralType"] = AgECrdnIntegralType
+agcls.AgTypeNameMap["CRDN_INTEGRAL_TYPE"] = CRDN_INTEGRAL_TYPE
 
-class AgECrdnIntegrationWindowType(IntEnum):
+class CRDN_INTEGRATION_WINDOW_TYPE(IntEnum):
     """Defines the interval of times during which an integral is evaluated."""
     # Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant.
-    eCrdnIntegrationWindowTypeTotal = 0
+    TOTAL = 0
     # Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time.
-    eCrdnIntegrationWindowTypeCumulativeToCurrent = 1
+    CUMULATIVE_TO_CURRENT = 1
     # Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time.
-    eCrdnIntegrationWindowTypeCumulativeFromCurrent = 2
+    CUMULATIVE_FROM_CURRENT = 2
     # Defines the integral's window as the interval of times centered around the current time with the specified front and back durations.
-    eCrdnIntegrationWindowTypeSlidingWindow = 3
+    SLIDING_WINDOW = 3
 
-AgECrdnIntegrationWindowType.eCrdnIntegrationWindowTypeTotal.__doc__ = "Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant."
-AgECrdnIntegrationWindowType.eCrdnIntegrationWindowTypeCumulativeToCurrent.__doc__ = "Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."
-AgECrdnIntegrationWindowType.eCrdnIntegrationWindowTypeCumulativeFromCurrent.__doc__ = "Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."
-AgECrdnIntegrationWindowType.eCrdnIntegrationWindowTypeSlidingWindow.__doc__ = "Defines the integral's window as the interval of times centered around the current time with the specified front and back durations."
+CRDN_INTEGRATION_WINDOW_TYPE.TOTAL.__doc__ = "Defines the integral's window as the entire available interval list which effectively makes the value of the integral constant."
+CRDN_INTEGRATION_WINDOW_TYPE.CUMULATIVE_TO_CURRENT.__doc__ = "Defines the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."
+CRDN_INTEGRATION_WINDOW_TYPE.CUMULATIVE_FROM_CURRENT.__doc__ = "Defines the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."
+CRDN_INTEGRATION_WINDOW_TYPE.SLIDING_WINDOW.__doc__ = "Defines the integral's window as the interval of times centered around the current time with the specified front and back durations."
 
-agcls.AgTypeNameMap["AgECrdnIntegrationWindowType"] = AgECrdnIntegrationWindowType
+agcls.AgTypeNameMap["CRDN_INTEGRATION_WINDOW_TYPE"] = CRDN_INTEGRATION_WINDOW_TYPE
 
-class AgECrdnInterpolatorType(IntEnum):
+class CRDN_INTERPOLATOR_TYPE(IntEnum):
     """Interpolator types."""
     # Unknown or invalid interpolator.
-    eCrdnInterpolatorInvalid = -1
+    INVALID = -1
     # Lagrange interpolation.
-    eCrdnInterpolatorTypeLagrange = 1
+    LAGRANGE = 1
     # Hermite interpolation.
-    eCrdnInterpolatorTypeHermite = 2
+    HERMITE = 2
 
-AgECrdnInterpolatorType.eCrdnInterpolatorInvalid.__doc__ = "Unknown or invalid interpolator."
-AgECrdnInterpolatorType.eCrdnInterpolatorTypeLagrange.__doc__ = "Lagrange interpolation."
-AgECrdnInterpolatorType.eCrdnInterpolatorTypeHermite.__doc__ = "Hermite interpolation."
+CRDN_INTERPOLATOR_TYPE.INVALID.__doc__ = "Unknown or invalid interpolator."
+CRDN_INTERPOLATOR_TYPE.LAGRANGE.__doc__ = "Lagrange interpolation."
+CRDN_INTERPOLATOR_TYPE.HERMITE.__doc__ = "Hermite interpolation."
 
-agcls.AgTypeNameMap["AgECrdnInterpolatorType"] = AgECrdnInterpolatorType
+agcls.AgTypeNameMap["CRDN_INTERPOLATOR_TYPE"] = CRDN_INTERPOLATOR_TYPE
 
-class AgECrdnIntervalDurationKind(IntEnum):
+class CRDN_INTERVAL_DURATION_KIND(IntEnum):
     """Duration for filtering intervals or gaps from interval lists or time arrays"""
     # Filter by at least a specified number of seconds
-    eCrdnIntervalDurationKindAtLeast = 0
+    AT_LEAST = 0
     # Filter by at most a specified number of seconds
-    eCrdnIntervalDurationKindAtMost = 1
+    AT_MOST = 1
 
-AgECrdnIntervalDurationKind.eCrdnIntervalDurationKindAtLeast.__doc__ = "Filter by at least a specified number of seconds"
-AgECrdnIntervalDurationKind.eCrdnIntervalDurationKindAtMost.__doc__ = "Filter by at most a specified number of seconds"
+CRDN_INTERVAL_DURATION_KIND.AT_LEAST.__doc__ = "Filter by at least a specified number of seconds"
+CRDN_INTERVAL_DURATION_KIND.AT_MOST.__doc__ = "Filter by at most a specified number of seconds"
 
-agcls.AgTypeNameMap["AgECrdnIntervalDurationKind"] = AgECrdnIntervalDurationKind
+agcls.AgTypeNameMap["CRDN_INTERVAL_DURATION_KIND"] = CRDN_INTERVAL_DURATION_KIND
 
-class AgECrdnIntervalSelection(IntEnum):
+class CRDN_INTERVAL_SELECTION(IntEnum):
     """Select the method to choose an interval from an interval list"""
     # Select an interval by counting a specified number from the first interval
-    eCrdnIntervalSelectionFromStart = 1
+    FROM_START = 1
     # Select an interval by counting a specified number back from the last interval
-    eCrdnIntervalSelectionFromEnd = 2
+    FROM_END = 2
     # Select the interval with the largest duration
-    eCrdnIntervalSelectionMaxDuration = 4
+    MAX_DURATION = 4
     # Select the interval with the smallest duration
-    eCrdnIntervalSelectionMinDuration = 5
+    MIN_DURATION = 5
     # Select the largest gap between intervals
-    eCrdnIntervalSelectionMaxGap = 9
+    MAX_GAP = 9
     # Select the largest gap between intervals
-    eCrdnIntervalSelectionMinGap = 10
+    MIN_GAP = 10
     # Select the interval that is the span of the interval list
-    eCrdnIntervalSelectionSpan = 100
+    SPAN = 100
 
-AgECrdnIntervalSelection.eCrdnIntervalSelectionFromStart.__doc__ = "Select an interval by counting a specified number from the first interval"
-AgECrdnIntervalSelection.eCrdnIntervalSelectionFromEnd.__doc__ = "Select an interval by counting a specified number back from the last interval"
-AgECrdnIntervalSelection.eCrdnIntervalSelectionMaxDuration.__doc__ = "Select the interval with the largest duration"
-AgECrdnIntervalSelection.eCrdnIntervalSelectionMinDuration.__doc__ = "Select the interval with the smallest duration"
-AgECrdnIntervalSelection.eCrdnIntervalSelectionMaxGap.__doc__ = "Select the largest gap between intervals"
-AgECrdnIntervalSelection.eCrdnIntervalSelectionMinGap.__doc__ = "Select the largest gap between intervals"
-AgECrdnIntervalSelection.eCrdnIntervalSelectionSpan.__doc__ = "Select the interval that is the span of the interval list"
+CRDN_INTERVAL_SELECTION.FROM_START.__doc__ = "Select an interval by counting a specified number from the first interval"
+CRDN_INTERVAL_SELECTION.FROM_END.__doc__ = "Select an interval by counting a specified number back from the last interval"
+CRDN_INTERVAL_SELECTION.MAX_DURATION.__doc__ = "Select the interval with the largest duration"
+CRDN_INTERVAL_SELECTION.MIN_DURATION.__doc__ = "Select the interval with the smallest duration"
+CRDN_INTERVAL_SELECTION.MAX_GAP.__doc__ = "Select the largest gap between intervals"
+CRDN_INTERVAL_SELECTION.MIN_GAP.__doc__ = "Select the largest gap between intervals"
+CRDN_INTERVAL_SELECTION.SPAN.__doc__ = "Select the interval that is the span of the interval list"
 
-agcls.AgTypeNameMap["AgECrdnIntervalSelection"] = AgECrdnIntervalSelection
+agcls.AgTypeNameMap["CRDN_INTERVAL_SELECTION"] = CRDN_INTERVAL_SELECTION
 
-class AgECrdnParameterSetType(IntEnum):
+class CRDN_PARAMETER_SET_TYPE(IntEnum):
     """Defines parameter set types."""
     # Unknown or unsupported parameter set
-    eCrdnParameterSetTypeUnknown = -1
+    UNKNOWN = -1
     # A parameter set type is defined by identifying one set of axes in reference to another.
-    eCrdnParameterSetTypeAttitude = 0
+    ATTITUDE = 0
     # A parameter set type is defined by identifying location in reference central body.
-    eCrdnParameterSetTypeGroundTrajectory = 1
+    GROUND_TRAJECTORY = 1
     # A parameter set type is defined by identifying location in reference coordinate system.
-    eCrdnParameterSetTypeTrajectory = 2
+    TRAJECTORY = 2
     # A parameter set type is defined by identifying orbiting point and its central body.
-    eCrdnParameterSetTypeOrbit = 3
+    ORBIT = 3
     # A parameter set type is defined by identifying vector in reference axes.
-    eCrdnParameterSetTypeVector = 4
+    VECTOR = 4
 
-AgECrdnParameterSetType.eCrdnParameterSetTypeUnknown.__doc__ = "Unknown or unsupported parameter set"
-AgECrdnParameterSetType.eCrdnParameterSetTypeAttitude.__doc__ = "A parameter set type is defined by identifying one set of axes in reference to another."
-AgECrdnParameterSetType.eCrdnParameterSetTypeGroundTrajectory.__doc__ = "A parameter set type is defined by identifying location in reference central body."
-AgECrdnParameterSetType.eCrdnParameterSetTypeTrajectory.__doc__ = "A parameter set type is defined by identifying location in reference coordinate system."
-AgECrdnParameterSetType.eCrdnParameterSetTypeOrbit.__doc__ = "A parameter set type is defined by identifying orbiting point and its central body."
-AgECrdnParameterSetType.eCrdnParameterSetTypeVector.__doc__ = "A parameter set type is defined by identifying vector in reference axes."
+CRDN_PARAMETER_SET_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported parameter set"
+CRDN_PARAMETER_SET_TYPE.ATTITUDE.__doc__ = "A parameter set type is defined by identifying one set of axes in reference to another."
+CRDN_PARAMETER_SET_TYPE.GROUND_TRAJECTORY.__doc__ = "A parameter set type is defined by identifying location in reference central body."
+CRDN_PARAMETER_SET_TYPE.TRAJECTORY.__doc__ = "A parameter set type is defined by identifying location in reference coordinate system."
+CRDN_PARAMETER_SET_TYPE.ORBIT.__doc__ = "A parameter set type is defined by identifying orbiting point and its central body."
+CRDN_PARAMETER_SET_TYPE.VECTOR.__doc__ = "A parameter set type is defined by identifying vector in reference axes."
 
-agcls.AgTypeNameMap["AgECrdnParameterSetType"] = AgECrdnParameterSetType
+agcls.AgTypeNameMap["CRDN_PARAMETER_SET_TYPE"] = CRDN_PARAMETER_SET_TYPE
 
-class AgECrdnPruneFilter(IntEnum):
+class CRDN_PRUNE_FILTER(IntEnum):
     """Specify the filter for filtering interval lists or time arrays"""
     # Unknown or unsupported prune filter
-    eCrdnPruneFilterUnknown = 0
+    UNKNOWN = 0
     # Selects specified number of first intervals from original list
-    eCrdnPruneFilterFirstIntervals = 1
+    FIRST_INTERVALS = 1
     # Selects specified number of last intervals from original list
-    eCrdnPruneFilterLastIntervals = 2
+    LAST_INTERVALS = 2
     # Selects intervals which satisfy additional duration condition.
-    eCrdnPruneFilterIntervals = 3
+    INTERVALS = 3
     # Selects gaps between intervals which satisfy additional duration condition.
-    eCrdnPruneFilterGaps = 4
+    GAPS = 4
     # Satisfaction Intervals selects intervals which satisfy additional condition and duration.
-    eCrdnPruneFilterSatisfactionIntervals = 5
+    SATISFACTION_INTERVALS = 5
     # Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration.
-    eCrdnPruneFilterRelativeSatisfactionIntervals = 6
+    RELATIVE_SATISFACTION_INTERVALS = 6
 
-AgECrdnPruneFilter.eCrdnPruneFilterUnknown.__doc__ = "Unknown or unsupported prune filter"
-AgECrdnPruneFilter.eCrdnPruneFilterFirstIntervals.__doc__ = "Selects specified number of first intervals from original list"
-AgECrdnPruneFilter.eCrdnPruneFilterLastIntervals.__doc__ = "Selects specified number of last intervals from original list"
-AgECrdnPruneFilter.eCrdnPruneFilterIntervals.__doc__ = "Selects intervals which satisfy additional duration condition."
-AgECrdnPruneFilter.eCrdnPruneFilterGaps.__doc__ = "Selects gaps between intervals which satisfy additional duration condition."
-AgECrdnPruneFilter.eCrdnPruneFilterSatisfactionIntervals.__doc__ = "Satisfaction Intervals selects intervals which satisfy additional condition and duration."
-AgECrdnPruneFilter.eCrdnPruneFilterRelativeSatisfactionIntervals.__doc__ = "Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."
+CRDN_PRUNE_FILTER.UNKNOWN.__doc__ = "Unknown or unsupported prune filter"
+CRDN_PRUNE_FILTER.FIRST_INTERVALS.__doc__ = "Selects specified number of first intervals from original list"
+CRDN_PRUNE_FILTER.LAST_INTERVALS.__doc__ = "Selects specified number of last intervals from original list"
+CRDN_PRUNE_FILTER.INTERVALS.__doc__ = "Selects intervals which satisfy additional duration condition."
+CRDN_PRUNE_FILTER.GAPS.__doc__ = "Selects gaps between intervals which satisfy additional duration condition."
+CRDN_PRUNE_FILTER.SATISFACTION_INTERVALS.__doc__ = "Satisfaction Intervals selects intervals which satisfy additional condition and duration."
+CRDN_PRUNE_FILTER.RELATIVE_SATISFACTION_INTERVALS.__doc__ = "Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."
 
-agcls.AgTypeNameMap["AgECrdnPruneFilter"] = AgECrdnPruneFilter
+agcls.AgTypeNameMap["CRDN_PRUNE_FILTER"] = CRDN_PRUNE_FILTER
 
-class AgECrdnSampledReferenceTime(IntEnum):
+class CRDN_SAMPLED_REFERENCE_TIME(IntEnum):
     """Event array reference type."""
     # Use a Time Instant as the reference time
-    eCrdnSampledReferenceTimeReferenceEvent = 0
+    REFERENCE_EVENT = 0
     # Use the start of each interval as the reference time
-    eCrdnSampledReferenceTimeStartOfEachInterval = 1
+    START_OF_EACH_INTERVAL = 1
     # Use the stop of each interval as the reference time
-    eCrdnSampledReferenceTimeStopOfEachInterval = 2
+    STOP_OF_EACH_INTERVAL = 2
     # Use the start of each interval list as the reference time
-    eCrdnSampledReferenceTimeStartOfIntervalList = 3
+    START_OF_INTERVAL_LIST = 3
     # Use the stop of each interval list as the reference time
-    eCrdnSampledReferenceTimeStopOfIntervalList = 4
+    STOP_OF_INTERVAL_LIST = 4
 
-AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeReferenceEvent.__doc__ = "Use a Time Instant as the reference time"
-AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStartOfEachInterval.__doc__ = "Use the start of each interval as the reference time"
-AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStopOfEachInterval.__doc__ = "Use the stop of each interval as the reference time"
-AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStartOfIntervalList.__doc__ = "Use the start of each interval list as the reference time"
-AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStopOfIntervalList.__doc__ = "Use the stop of each interval list as the reference time"
+CRDN_SAMPLED_REFERENCE_TIME.REFERENCE_EVENT.__doc__ = "Use a Time Instant as the reference time"
+CRDN_SAMPLED_REFERENCE_TIME.START_OF_EACH_INTERVAL.__doc__ = "Use the start of each interval as the reference time"
+CRDN_SAMPLED_REFERENCE_TIME.STOP_OF_EACH_INTERVAL.__doc__ = "Use the stop of each interval as the reference time"
+CRDN_SAMPLED_REFERENCE_TIME.START_OF_INTERVAL_LIST.__doc__ = "Use the start of each interval list as the reference time"
+CRDN_SAMPLED_REFERENCE_TIME.STOP_OF_INTERVAL_LIST.__doc__ = "Use the stop of each interval list as the reference time"
 
-agcls.AgTypeNameMap["AgECrdnSampledReferenceTime"] = AgECrdnSampledReferenceTime
+agcls.AgTypeNameMap["CRDN_SAMPLED_REFERENCE_TIME"] = CRDN_SAMPLED_REFERENCE_TIME
 
-class AgECrdnSamplingMethod(IntEnum):
+class CRDN_SAMPLING_METHOD(IntEnum):
     """Defines the Sampling Method"""
     # Unknown or unsupported sampling method
-    eCrdnSamplingMethodUnknown = 0
+    UNKNOWN = 0
     # Fixed step sampling method
-    eCrdnSamplingMethodFixedStep = 1
+    FIXED_STEP = 1
     # Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples.
-    eCrdnSamplingMethodRelativeTolerance = 2
+    RELATIVE_TOLERANCE = 2
     # Curvature tolerance also uses changes in slope between samples
-    eCrdnSamplingMethodCurvatureTolerance = 3
+    CURVATURE_TOLERANCE = 3
 
-AgECrdnSamplingMethod.eCrdnSamplingMethodUnknown.__doc__ = "Unknown or unsupported sampling method"
-AgECrdnSamplingMethod.eCrdnSamplingMethodFixedStep.__doc__ = "Fixed step sampling method"
-AgECrdnSamplingMethod.eCrdnSamplingMethodRelativeTolerance.__doc__ = "Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples."
-AgECrdnSamplingMethod.eCrdnSamplingMethodCurvatureTolerance.__doc__ = "Curvature tolerance also uses changes in slope between samples"
+CRDN_SAMPLING_METHOD.UNKNOWN.__doc__ = "Unknown or unsupported sampling method"
+CRDN_SAMPLING_METHOD.FIXED_STEP.__doc__ = "Fixed step sampling method"
+CRDN_SAMPLING_METHOD.RELATIVE_TOLERANCE.__doc__ = "Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples."
+CRDN_SAMPLING_METHOD.CURVATURE_TOLERANCE.__doc__ = "Curvature tolerance also uses changes in slope between samples"
 
-agcls.AgTypeNameMap["AgECrdnSamplingMethod"] = AgECrdnSamplingMethod
+agcls.AgTypeNameMap["CRDN_SAMPLING_METHOD"] = CRDN_SAMPLING_METHOD
 
-class AgECrdnSatisfactionCrossing(IntEnum):
+class CRDN_SATISFACTION_CROSSING(IntEnum):
     """Direction crossing flags."""
     # Use either off-to-on or on-to-off condition to determine satisfaction
-    eCrdnSatisfactionCrossingNone = 0
+    NONE = 0
     # Satisfaction occurs when crossing from off to on condition
-    eCrdnSatisfactionCrossingIn = 1
+    IN = 1
     # Satisfaction occurs when crossing from on to off condition
-    eCrdnSatisfactionCrossingOut = 2
+    OUT = 2
 
-AgECrdnSatisfactionCrossing.eCrdnSatisfactionCrossingNone.__doc__ = "Use either off-to-on or on-to-off condition to determine satisfaction"
-AgECrdnSatisfactionCrossing.eCrdnSatisfactionCrossingIn.__doc__ = "Satisfaction occurs when crossing from off to on condition"
-AgECrdnSatisfactionCrossing.eCrdnSatisfactionCrossingOut.__doc__ = "Satisfaction occurs when crossing from on to off condition"
+CRDN_SATISFACTION_CROSSING.NONE.__doc__ = "Use either off-to-on or on-to-off condition to determine satisfaction"
+CRDN_SATISFACTION_CROSSING.IN.__doc__ = "Satisfaction occurs when crossing from off to on condition"
+CRDN_SATISFACTION_CROSSING.OUT.__doc__ = "Satisfaction occurs when crossing from on to off condition"
 
-agcls.AgTypeNameMap["AgECrdnSatisfactionCrossing"] = AgECrdnSatisfactionCrossing
+agcls.AgTypeNameMap["CRDN_SATISFACTION_CROSSING"] = CRDN_SATISFACTION_CROSSING
 
-class AgECrdnSaveDataOption(IntEnum):
+class CRDN_SAVE_DATA_OPTION(IntEnum):
     """Method for saving computed data"""
     # Use the application setting to determine whether computed data should be saved/loaded.
-    eCrdnSaveDataOptionApplicationSettings = -1
+    APPLICATION_SETTINGS = -1
     # Save/load computed data.
-    eCrdnSaveDataOptionYes = 100
+    YES = 100
     # Don't save computed data, recompute data on load.
-    eCrdnSaveDataOptionNo = 10
+    NO = 10
 
-AgECrdnSaveDataOption.eCrdnSaveDataOptionApplicationSettings.__doc__ = "Use the application setting to determine whether computed data should be saved/loaded."
-AgECrdnSaveDataOption.eCrdnSaveDataOptionYes.__doc__ = "Save/load computed data."
-AgECrdnSaveDataOption.eCrdnSaveDataOptionNo.__doc__ = "Don't save computed data, recompute data on load."
+CRDN_SAVE_DATA_OPTION.APPLICATION_SETTINGS.__doc__ = "Use the application setting to determine whether computed data should be saved/loaded."
+CRDN_SAVE_DATA_OPTION.YES.__doc__ = "Save/load computed data."
+CRDN_SAVE_DATA_OPTION.NO.__doc__ = "Don't save computed data, recompute data on load."
 
-agcls.AgTypeNameMap["AgECrdnSaveDataOption"] = AgECrdnSaveDataOption
+agcls.AgTypeNameMap["CRDN_SAVE_DATA_OPTION"] = CRDN_SAVE_DATA_OPTION
 
-class AgECrdnSignalPathReferenceSystem(IntEnum):
+class CRDN_SIGNAL_PATH_REFERENCE_SYSTEM(IntEnum):
     """Signal path reference system types."""
     # Use Access default system
-    eCrdnSignalPathReferenceSystemUseAccessDefault = -1
+    USE_ACCESS_DEFAULT = -1
     # Use central body inertial system
-    eCrdnSignalPathReferenceSystemCentralBodyInertial = 0
+    CENTRAL_BODY_INERTIAL = 0
     # Use solar system barycenter system
-    eCrdnSignalPathReferenceSystemSolarSystemBarycenter = 1
+    SOLAR_SYSTEM_BARYCENTER = 1
     # User will specify a system
-    eCrdnSignalPathReferenceSystemCustom = 2
+    CUSTOM = 2
 
-AgECrdnSignalPathReferenceSystem.eCrdnSignalPathReferenceSystemUseAccessDefault.__doc__ = "Use Access default system"
-AgECrdnSignalPathReferenceSystem.eCrdnSignalPathReferenceSystemCentralBodyInertial.__doc__ = "Use central body inertial system"
-AgECrdnSignalPathReferenceSystem.eCrdnSignalPathReferenceSystemSolarSystemBarycenter.__doc__ = "Use solar system barycenter system"
-AgECrdnSignalPathReferenceSystem.eCrdnSignalPathReferenceSystemCustom.__doc__ = "User will specify a system"
+CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.USE_ACCESS_DEFAULT.__doc__ = "Use Access default system"
+CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.CENTRAL_BODY_INERTIAL.__doc__ = "Use central body inertial system"
+CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.SOLAR_SYSTEM_BARYCENTER.__doc__ = "Use solar system barycenter system"
+CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.CUSTOM.__doc__ = "User will specify a system"
 
-agcls.AgTypeNameMap["AgECrdnSignalPathReferenceSystem"] = AgECrdnSignalPathReferenceSystem
+agcls.AgTypeNameMap["CRDN_SIGNAL_PATH_REFERENCE_SYSTEM"] = CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
 
-class AgECrdnSmartEpochState(IntEnum):
+class CRDN_SMART_EPOCH_STATE(IntEnum):
     """Smart epoch states."""
     # Smart epoch is specified explicitly using a time.
-    eCrdnSmartEpochStateExplicit = 0
+    EXPLICIT = 0
     # Smart epoch is specified implicitly.
-    eCrdnSmartEpochStateImplicit = 3
+    IMPLICIT = 3
 
-AgECrdnSmartEpochState.eCrdnSmartEpochStateExplicit.__doc__ = "Smart epoch is specified explicitly using a time."
-AgECrdnSmartEpochState.eCrdnSmartEpochStateImplicit.__doc__ = "Smart epoch is specified implicitly."
+CRDN_SMART_EPOCH_STATE.EXPLICIT.__doc__ = "Smart epoch is specified explicitly using a time."
+CRDN_SMART_EPOCH_STATE.IMPLICIT.__doc__ = "Smart epoch is specified implicitly."
 
-agcls.AgTypeNameMap["AgECrdnSmartEpochState"] = AgECrdnSmartEpochState
+agcls.AgTypeNameMap["CRDN_SMART_EPOCH_STATE"] = CRDN_SMART_EPOCH_STATE
 
-class AgECrdnSmartIntervalState(IntEnum):
+class CRDN_SMART_INTERVAL_STATE(IntEnum):
     """Smart interval states."""
     # Smart interval is specified explicitly using start/stop times.
-    eCrdnSmartIntervalStateExplicit = 0
+    EXPLICIT = 0
     # Smart interval is specified implicitly using start/stop times.
-    eCrdnSmartIntervalStateImplicit = 1
+    IMPLICIT = 1
     # Smart interval is specified using smart epochs.
-    eCrdnSmartIntervalStateStartStop = 2
+    START_STOP = 2
     # Smart interval is specified using a start epoch and duration.
-    eCrdnSmartIntervalStateStartDuration = 4
+    START_DURATION = 4
     # Smart interval is specified using a start time and explicit duration.
-    eCrdnSmartIntervalStateExplicitDuration = 3
+    EXPLICIT_DURATION = 3
 
-AgECrdnSmartIntervalState.eCrdnSmartIntervalStateExplicit.__doc__ = "Smart interval is specified explicitly using start/stop times."
-AgECrdnSmartIntervalState.eCrdnSmartIntervalStateImplicit.__doc__ = "Smart interval is specified implicitly using start/stop times."
-AgECrdnSmartIntervalState.eCrdnSmartIntervalStateStartStop.__doc__ = "Smart interval is specified using smart epochs."
-AgECrdnSmartIntervalState.eCrdnSmartIntervalStateStartDuration.__doc__ = "Smart interval is specified using a start epoch and duration."
-AgECrdnSmartIntervalState.eCrdnSmartIntervalStateExplicitDuration.__doc__ = "Smart interval is specified using a start time and explicit duration."
+CRDN_SMART_INTERVAL_STATE.EXPLICIT.__doc__ = "Smart interval is specified explicitly using start/stop times."
+CRDN_SMART_INTERVAL_STATE.IMPLICIT.__doc__ = "Smart interval is specified implicitly using start/stop times."
+CRDN_SMART_INTERVAL_STATE.START_STOP.__doc__ = "Smart interval is specified using smart epochs."
+CRDN_SMART_INTERVAL_STATE.START_DURATION.__doc__ = "Smart interval is specified using a start epoch and duration."
+CRDN_SMART_INTERVAL_STATE.EXPLICIT_DURATION.__doc__ = "Smart interval is specified using a start time and explicit duration."
 
-agcls.AgTypeNameMap["AgECrdnSmartIntervalState"] = AgECrdnSmartIntervalState
+agcls.AgTypeNameMap["CRDN_SMART_INTERVAL_STATE"] = CRDN_SMART_INTERVAL_STATE
 
-class AgECrdnSpeedOptions(IntEnum):
+class CRDN_SPEED_OPTIONS(IntEnum):
     """Defines various speed options."""
     # Light transmission speed.
-    eCrdnLightTransmissionSpeed = 1
+    LIGHT_TRANSMISSION_SPEED = 1
     # Custom transmission speed.
-    eCrdnCustomTransmissionSpeed = 2
+    CUSTOM_TRANSMISSION_SPEED = 2
 
-AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed.__doc__ = "Light transmission speed."
-AgECrdnSpeedOptions.eCrdnCustomTransmissionSpeed.__doc__ = "Custom transmission speed."
+CRDN_SPEED_OPTIONS.LIGHT_TRANSMISSION_SPEED.__doc__ = "Light transmission speed."
+CRDN_SPEED_OPTIONS.CUSTOM_TRANSMISSION_SPEED.__doc__ = "Custom transmission speed."
 
-agcls.AgTypeNameMap["AgECrdnSpeedOptions"] = AgECrdnSpeedOptions
+agcls.AgTypeNameMap["CRDN_SPEED_OPTIONS"] = CRDN_SPEED_OPTIONS
 
-class AgECrdnStartStopOption(IntEnum):
+class CRDN_START_STOP_OPTION(IntEnum):
     """Start/stop options."""
     # Use the start time of the interval
-    eCrdnStartStopOptionCountStartOnly = 1
+    COUNT_START_ONLY = 1
     # Use the stop time of the interval
-    eCrdnStartStopOptionCountStopOnly = 2
+    COUNT_STOP_ONLY = 2
     # Use the start time and stop time of the interval
-    eCrdnStartStopOptionCountStartStop = 3
+    COUNT_START_STOP = 3
 
-AgECrdnStartStopOption.eCrdnStartStopOptionCountStartOnly.__doc__ = "Use the start time of the interval"
-AgECrdnStartStopOption.eCrdnStartStopOptionCountStopOnly.__doc__ = "Use the stop time of the interval"
-AgECrdnStartStopOption.eCrdnStartStopOptionCountStartStop.__doc__ = "Use the start time and stop time of the interval"
+CRDN_START_STOP_OPTION.COUNT_START_ONLY.__doc__ = "Use the start time of the interval"
+CRDN_START_STOP_OPTION.COUNT_STOP_ONLY.__doc__ = "Use the stop time of the interval"
+CRDN_START_STOP_OPTION.COUNT_START_STOP.__doc__ = "Use the start time and stop time of the interval"
 
-agcls.AgTypeNameMap["AgECrdnStartStopOption"] = AgECrdnStartStopOption
+agcls.AgTypeNameMap["CRDN_START_STOP_OPTION"] = CRDN_START_STOP_OPTION
 
-class AgECrdnThreshConvergeSense(IntEnum):
+class CRDN_THRESH_CONVERGE_SENSE(IntEnum):
     """Specifies the desired sense of the results from threshold crossing computations."""
     # Just converge within tolerance.
-    eCrdnThreshConvergeSenseSimple = 0
+    SIMPLE = 0
     # Result above or at threshold.
-    eCrdnThreshConvergeSenseAbove = 1
+    ABOVE = 1
     # Result below or at threshold.
-    eCrdnThreshConvergeSenseBelow = 2
+    BELOW = 2
 
-AgECrdnThreshConvergeSense.eCrdnThreshConvergeSenseSimple.__doc__ = "Just converge within tolerance."
-AgECrdnThreshConvergeSense.eCrdnThreshConvergeSenseAbove.__doc__ = "Result above or at threshold."
-AgECrdnThreshConvergeSense.eCrdnThreshConvergeSenseBelow.__doc__ = "Result below or at threshold."
+CRDN_THRESH_CONVERGE_SENSE.SIMPLE.__doc__ = "Just converge within tolerance."
+CRDN_THRESH_CONVERGE_SENSE.ABOVE.__doc__ = "Result above or at threshold."
+CRDN_THRESH_CONVERGE_SENSE.BELOW.__doc__ = "Result below or at threshold."
 
-agcls.AgTypeNameMap["AgECrdnThreshConvergeSense"] = AgECrdnThreshConvergeSense
+agcls.AgTypeNameMap["CRDN_THRESH_CONVERGE_SENSE"] = CRDN_THRESH_CONVERGE_SENSE
 
-class AgECrdnVectorComponentType(IntEnum):
+class CRDN_VECTOR_COMPONENT_TYPE(IntEnum):
     """Defines component directions for a vector."""
     # X component.
-    eCrdnVectorComponentX = 0
+    X = 0
     # Y component.
-    eCrdnVectorComponentY = 1
+    Y = 1
     # Z component.
-    eCrdnVectorComponentZ = 2
+    Z = 2
     # -X component.
-    eCrdnVectorComponentMinusX = 3
+    MINUS_X = 3
     # -Y component.
-    eCrdnVectorComponentMinusY = 4
+    MINUS_Y = 4
     # -Z component.
-    eCrdnVectorComponentMinusZ = 5
+    MINUS_Z = 5
 
-AgECrdnVectorComponentType.eCrdnVectorComponentX.__doc__ = "X component."
-AgECrdnVectorComponentType.eCrdnVectorComponentY.__doc__ = "Y component."
-AgECrdnVectorComponentType.eCrdnVectorComponentZ.__doc__ = "Z component."
-AgECrdnVectorComponentType.eCrdnVectorComponentMinusX.__doc__ = "-X component."
-AgECrdnVectorComponentType.eCrdnVectorComponentMinusY.__doc__ = "-Y component."
-AgECrdnVectorComponentType.eCrdnVectorComponentMinusZ.__doc__ = "-Z component."
+CRDN_VECTOR_COMPONENT_TYPE.X.__doc__ = "X component."
+CRDN_VECTOR_COMPONENT_TYPE.Y.__doc__ = "Y component."
+CRDN_VECTOR_COMPONENT_TYPE.Z.__doc__ = "Z component."
+CRDN_VECTOR_COMPONENT_TYPE.MINUS_X.__doc__ = "-X component."
+CRDN_VECTOR_COMPONENT_TYPE.MINUS_Y.__doc__ = "-Y component."
+CRDN_VECTOR_COMPONENT_TYPE.MINUS_Z.__doc__ = "-Z component."
 
-agcls.AgTypeNameMap["AgECrdnVectorComponentType"] = AgECrdnVectorComponentType
+agcls.AgTypeNameMap["CRDN_VECTOR_COMPONENT_TYPE"] = CRDN_VECTOR_COMPONENT_TYPE
 
-class AgECrdnVolumeCalcAltitudeReferenceType(IntEnum):
+class CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE(IntEnum):
     """Defines volume calc altitude reference types."""
     # Volume calc altitude above reference ellipsoid.
-    eCrdnVolumeCalcAltitudeReferenceEllipsoid = 0
+    ELLIPSOID = 0
     # Volume calc altitude reference above terrain.
-    eCrdnVolumeCalcAltitudeReferenceTerrain = 1
+    TERRAIN = 1
     # Volume calc altitude reference above mean sea level.
-    eCrdnVolumeCalcAltitudeReferenceMSL = 2
+    MSL = 2
 
-AgECrdnVolumeCalcAltitudeReferenceType.eCrdnVolumeCalcAltitudeReferenceEllipsoid.__doc__ = "Volume calc altitude above reference ellipsoid."
-AgECrdnVolumeCalcAltitudeReferenceType.eCrdnVolumeCalcAltitudeReferenceTerrain.__doc__ = "Volume calc altitude reference above terrain."
-AgECrdnVolumeCalcAltitudeReferenceType.eCrdnVolumeCalcAltitudeReferenceMSL.__doc__ = "Volume calc altitude reference above mean sea level."
+CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE.ELLIPSOID.__doc__ = "Volume calc altitude above reference ellipsoid."
+CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE.TERRAIN.__doc__ = "Volume calc altitude reference above terrain."
+CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE.MSL.__doc__ = "Volume calc altitude reference above mean sea level."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcAltitudeReferenceType"] = AgECrdnVolumeCalcAltitudeReferenceType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE"] = CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE
 
-class AgECrdnVolumeCalcAngleOffVectorType(IntEnum):
+class CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE(IntEnum):
     """Defines volume calc angle off vector reference types."""
     # Volume calc angle off plane signed.
-    eCrdnVolumeCalcAngleOffPlaneSigned = 1
+    PLANE_SIGNED = 1
     # Volume calc angle off plane unsigned.
-    eCrdnVolumeCalcAngleOffPlaneUnsigned = 2
+    PLANE_UNSIGNED = 2
     # Volume calc angle about vector signed.
-    eCrdnVolumeCalcAngleAboutVectorSigned = 4
+    ABOUT_VECTOR_SIGNED = 4
     # Volume calc angle about vector unsigned.
-    eCrdnVolumeCalcAngleAboutVectorUnsigned = 8
+    ABOUT_VECTOR_UNSIGNED = 8
     # Volume calc angle off vector.
-    eCrdnVolumeCalcAngleOffVector = 16
+    VECTOR = 16
 
-AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleOffPlaneSigned.__doc__ = "Volume calc angle off plane signed."
-AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleOffPlaneUnsigned.__doc__ = "Volume calc angle off plane unsigned."
-AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleAboutVectorSigned.__doc__ = "Volume calc angle about vector signed."
-AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleAboutVectorUnsigned.__doc__ = "Volume calc angle about vector unsigned."
-AgECrdnVolumeCalcAngleOffVectorType.eCrdnVolumeCalcAngleOffVector.__doc__ = "Volume calc angle off vector."
+CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE.PLANE_SIGNED.__doc__ = "Volume calc angle off plane signed."
+CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE.PLANE_UNSIGNED.__doc__ = "Volume calc angle off plane unsigned."
+CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE.ABOUT_VECTOR_SIGNED.__doc__ = "Volume calc angle about vector signed."
+CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE.ABOUT_VECTOR_UNSIGNED.__doc__ = "Volume calc angle about vector unsigned."
+CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE.VECTOR.__doc__ = "Volume calc angle off vector."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcAngleOffVectorType"] = AgECrdnVolumeCalcAngleOffVectorType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE"] = CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE
 
-class AgECrdnVolumeCalcRangeDistanceType(IntEnum):
+class CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE(IntEnum):
     """Defines volume calc range distance types."""
     # Volume calc range distance type from point.
-    eCrdnVolumeCalcRangeDistanceFromPoint = 0
+    FROM_POINT = 0
     # Volume calc range distance type from point.
-    eCrdnVolumeCalcRangeDistanceAlongVectorSigned = 1
+    ALONG_VECTOR_SIGNED = 1
     # Volume calc range distance type along vector unsigned
-    eCrdnVolumeCalcRangeDistanceAlongVectorUnsigned = 2
+    ALONG_VECTOR_UNSIGNED = 2
     # Volume calc range distance type plane signed
-    eCrdnVolumeCalcRangeDistancePlaneSigned = 4
+    PLANE_SIGNED = 4
     # Volume calc range distance type plane signed
-    eCrdnVolumeCalcRangeDistancePlaneUnsigned = 8
+    PLANE_UNSIGNED = 8
 
-AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistanceFromPoint.__doc__ = "Volume calc range distance type from point."
-AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistanceAlongVectorSigned.__doc__ = "Volume calc range distance type from point."
-AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistanceAlongVectorUnsigned.__doc__ = "Volume calc range distance type along vector unsigned"
-AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistancePlaneSigned.__doc__ = "Volume calc range distance type plane signed"
-AgECrdnVolumeCalcRangeDistanceType.eCrdnVolumeCalcRangeDistancePlaneUnsigned.__doc__ = "Volume calc range distance type plane signed"
+CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.FROM_POINT.__doc__ = "Volume calc range distance type from point."
+CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.ALONG_VECTOR_SIGNED.__doc__ = "Volume calc range distance type from point."
+CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.ALONG_VECTOR_UNSIGNED.__doc__ = "Volume calc range distance type along vector unsigned"
+CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.PLANE_SIGNED.__doc__ = "Volume calc range distance type plane signed"
+CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.PLANE_UNSIGNED.__doc__ = "Volume calc range distance type plane signed"
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcRangeDistanceType"] = AgECrdnVolumeCalcRangeDistanceType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE"] = CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE
 
-class AgECrdnVolumeCalcRangeSpeedType(IntEnum):
+class CRDN_VOLUME_CALC_RANGE_SPEED_TYPE(IntEnum):
     """Defines volume calc range distance types."""
     # Volume calc range distance type from point.
-    eCrdnVolumeCalcRangeSpeedLight = 1
+    LIGHT = 1
     # Volume calc range distance type from point.
-    eCrdnVolumeCalcRangeSpeedCustom = 2
+    CUSTOM = 2
 
-AgECrdnVolumeCalcRangeSpeedType.eCrdnVolumeCalcRangeSpeedLight.__doc__ = "Volume calc range distance type from point."
-AgECrdnVolumeCalcRangeSpeedType.eCrdnVolumeCalcRangeSpeedCustom.__doc__ = "Volume calc range distance type from point."
+CRDN_VOLUME_CALC_RANGE_SPEED_TYPE.LIGHT.__doc__ = "Volume calc range distance type from point."
+CRDN_VOLUME_CALC_RANGE_SPEED_TYPE.CUSTOM.__doc__ = "Volume calc range distance type from point."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcRangeSpeedType"] = AgECrdnVolumeCalcRangeSpeedType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_RANGE_SPEED_TYPE"] = CRDN_VOLUME_CALC_RANGE_SPEED_TYPE
 
-class AgECrdnVolumeCalcType(IntEnum):
+class CRDN_VOLUME_CALC_TYPE(IntEnum):
     """Defines volume calc types."""
     # Unknown or unsupported volume calc.
-    eCrdnVolumeCalcTypeUnknown = -1
+    UNKNOWN = -1
     # volume calc type altitude to location.
-    eCrdnVolumeCalcTypeAltitude = 0
+    ALTITUDE = 0
     # volume calc type angle to location.
-    eCrdnVolumeCalcTypeAngleOffVector = 1
+    ANGLE_OFF_VECTOR = 1
     # volume calc type File.
-    eCrdnVolumeCalcTypeFile = 2
+    FILE = 2
     # volume calc type scalar at location.
-    eCrdnVolumeCalcTypeFromScalar = 3
+    FROM_SCALAR = 3
     # volume calc type Solar Intensity.
-    eCrdnVolumeCalcTypeSolarIntensity = 4
+    SOLAR_INTENSITY = 4
     # volume calc type Spatial Condition Satisfaction Metric.
-    eCrdnVolumeCalcTypeVolumeSatisfactionMetric = 5
+    VOLUME_SATISFACTION_METRIC = 5
     # volume calc type Distance to Location.
-    eCrdnVolumeCalcTypeRange = 6
+    RANGE = 6
     # volume calc type Propagation Delay to Location.
-    eCrdnVolumeCalcTypeDelayRange = 7
+    DELAY_RANGE = 7
 
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeUnknown.__doc__ = "Unknown or unsupported volume calc."
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeAltitude.__doc__ = "volume calc type altitude to location."
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeAngleOffVector.__doc__ = "volume calc type angle to location."
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeFile.__doc__ = "volume calc type File."
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeFromScalar.__doc__ = "volume calc type scalar at location."
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeSolarIntensity.__doc__ = "volume calc type Solar Intensity."
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeVolumeSatisfactionMetric.__doc__ = "volume calc type Spatial Condition Satisfaction Metric."
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeRange.__doc__ = "volume calc type Distance to Location."
-AgECrdnVolumeCalcType.eCrdnVolumeCalcTypeDelayRange.__doc__ = "volume calc type Propagation Delay to Location."
+CRDN_VOLUME_CALC_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume calc."
+CRDN_VOLUME_CALC_TYPE.ALTITUDE.__doc__ = "volume calc type altitude to location."
+CRDN_VOLUME_CALC_TYPE.ANGLE_OFF_VECTOR.__doc__ = "volume calc type angle to location."
+CRDN_VOLUME_CALC_TYPE.FILE.__doc__ = "volume calc type File."
+CRDN_VOLUME_CALC_TYPE.FROM_SCALAR.__doc__ = "volume calc type scalar at location."
+CRDN_VOLUME_CALC_TYPE.SOLAR_INTENSITY.__doc__ = "volume calc type Solar Intensity."
+CRDN_VOLUME_CALC_TYPE.VOLUME_SATISFACTION_METRIC.__doc__ = "volume calc type Spatial Condition Satisfaction Metric."
+CRDN_VOLUME_CALC_TYPE.RANGE.__doc__ = "volume calc type Distance to Location."
+CRDN_VOLUME_CALC_TYPE.DELAY_RANGE.__doc__ = "volume calc type Propagation Delay to Location."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcType"] = AgECrdnVolumeCalcType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_TYPE"] = CRDN_VOLUME_CALC_TYPE
 
-class AgECrdnVolumeCalcVolumeSatisfactionAccumulationType(IntEnum):
+class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE(IntEnum):
     """Defines volume calc spatial condition accumulation types."""
     # Volume calc spatial condition satisfaction accumulation type up to current time.
-    eCrdnVolumeCalcVolumeSatisfactionAccumulationUpToCurrentTime = -1
+    UP_TO_CURRENT_TIME = -1
     # Volume calc spatial condition satisfaction accumulation type current time.
-    eCrdnVolumeCalcVolumeSatisfactionAccumulationCurrentTime = 0
+    CURRENT_TIME = 0
     # Volume calc spatial condition satisfaction accumulation type from current time.
-    eCrdnVolumeCalcVolumeSatisfactionAccumulationFromCurrentTime = 1
+    FROM_CURRENT_TIME = 1
     # Volume calc spatial condition satisfaction accumulation type total.
-    eCrdnVolumeCalcVolumeSatisfactionAccumulationTotal = 10
+    TOTAL = 10
 
-AgECrdnVolumeCalcVolumeSatisfactionAccumulationType.eCrdnVolumeCalcVolumeSatisfactionAccumulationUpToCurrentTime.__doc__ = "Volume calc spatial condition satisfaction accumulation type up to current time."
-AgECrdnVolumeCalcVolumeSatisfactionAccumulationType.eCrdnVolumeCalcVolumeSatisfactionAccumulationCurrentTime.__doc__ = "Volume calc spatial condition satisfaction accumulation type current time."
-AgECrdnVolumeCalcVolumeSatisfactionAccumulationType.eCrdnVolumeCalcVolumeSatisfactionAccumulationFromCurrentTime.__doc__ = "Volume calc spatial condition satisfaction accumulation type from current time."
-AgECrdnVolumeCalcVolumeSatisfactionAccumulationType.eCrdnVolumeCalcVolumeSatisfactionAccumulationTotal.__doc__ = "Volume calc spatial condition satisfaction accumulation type total."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE.UP_TO_CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type up to current time."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE.CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type current time."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE.FROM_CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type from current time."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE.TOTAL.__doc__ = "Volume calc spatial condition satisfaction accumulation type total."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionAccumulationType"] = AgECrdnVolumeCalcVolumeSatisfactionAccumulationType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE"] = CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE
 
-class AgECrdnVolumeCalcVolumeSatisfactionDurationType(IntEnum):
+class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE(IntEnum):
     """Defines volume calc spatial condition duration types."""
     # Volume calc spatial condition satisfaction duration type minimum.
-    eCrdnVolumeCalcVolumeSatisfactionDurationMin = -1
+    MIN = -1
     # Volume calc spatial condition satisfaction duration type sum.
-    eCrdnVolumeCalcVolumeSatisfactionDurationSum = 0
+    SUM = 0
     # Volume calc spatial condition satisfaction duration type maximum.
-    eCrdnVolumeCalcVolumeSatisfactionDurationMax = 1
+    MAX = 1
 
-AgECrdnVolumeCalcVolumeSatisfactionDurationType.eCrdnVolumeCalcVolumeSatisfactionDurationMin.__doc__ = "Volume calc spatial condition satisfaction duration type minimum."
-AgECrdnVolumeCalcVolumeSatisfactionDurationType.eCrdnVolumeCalcVolumeSatisfactionDurationSum.__doc__ = "Volume calc spatial condition satisfaction duration type sum."
-AgECrdnVolumeCalcVolumeSatisfactionDurationType.eCrdnVolumeCalcVolumeSatisfactionDurationMax.__doc__ = "Volume calc spatial condition satisfaction duration type maximum."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE.MIN.__doc__ = "Volume calc spatial condition satisfaction duration type minimum."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE.SUM.__doc__ = "Volume calc spatial condition satisfaction duration type sum."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE.MAX.__doc__ = "Volume calc spatial condition satisfaction duration type maximum."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionDurationType"] = AgECrdnVolumeCalcVolumeSatisfactionDurationType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE"] = CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE
 
-class AgECrdnVolumeCalcVolumeSatisfactionFilterType(IntEnum):
+class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE(IntEnum):
     """Defines volume calc spatial condition filter types."""
     # Volume calc spatial condition satisfaction filter type first intervals.
-    eCrdnVolumeCalcVolumeSatisfactionFilterFirstIntervals = -10
+    FIRST_INTERVALS = -10
     # Volume calc spatial condition satisfaction filter type last intervals.
-    eCrdnVolumeCalcVolumeSatisfactionFilterLastIntervals = -20
+    LAST_INTERVALS = -20
     # Volume calc spatial condition satisfaction filter type none.
-    eCrdnVolumeCalcVolumeSatisfactionFilterNone = 0
+    NONE = 0
     # Volume calc spatial condition satisfaction filter type gap duration.
-    eCrdnVolumeCalcVolumeSatisfactionFilterGapDuration = 1
+    GAP_DURATION = 1
     # Volume calc spatial condition satisfaction filter type interval duration.
-    eCrdnVolumeCalcVolumeSatisfactionFilterIntervalDuration = 2
+    INTERVAL_DURATION = 2
 
-AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterFirstIntervals.__doc__ = "Volume calc spatial condition satisfaction filter type first intervals."
-AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterLastIntervals.__doc__ = "Volume calc spatial condition satisfaction filter type last intervals."
-AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterNone.__doc__ = "Volume calc spatial condition satisfaction filter type none."
-AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterGapDuration.__doc__ = "Volume calc spatial condition satisfaction filter type gap duration."
-AgECrdnVolumeCalcVolumeSatisfactionFilterType.eCrdnVolumeCalcVolumeSatisfactionFilterIntervalDuration.__doc__ = "Volume calc spatial condition satisfaction filter type interval duration."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE.FIRST_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction filter type first intervals."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE.LAST_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction filter type last intervals."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE.NONE.__doc__ = "Volume calc spatial condition satisfaction filter type none."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE.GAP_DURATION.__doc__ = "Volume calc spatial condition satisfaction filter type gap duration."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE.INTERVAL_DURATION.__doc__ = "Volume calc spatial condition satisfaction filter type interval duration."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionFilterType"] = AgECrdnVolumeCalcVolumeSatisfactionFilterType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE"] = CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE
 
-class AgECrdnVolumeCalcVolumeSatisfactionMetricType(IntEnum):
+class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE(IntEnum):
     """Defines volume calc spatial condition satisfaction metric types."""
     # Volume calc spatial condition satisfaction metric type number of gaps.
-    eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfGaps = -2
+    NUMBER_OF_GAPS = -2
     # Volume calc spatial condition satisfaction metric type number of intervals.
-    eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfIntervals = -1
+    NUMBER_OF_INTERVALS = -1
     # Volume calc spatial condition satisfaction metric type time since last satisfaction.
-    eCrdnVolumeCalcVolumeSatisfactionMetricTimeSinceLastSatisfaction = 1
+    TIME_SINCE_LAST_SATISFACTION = 1
     # Volume calc spatial condition satisfaction metric type time until next satisfaction.
-    eCrdnVolumeCalcVolumeSatisfactionMetricTimeUntilNextSatisfaction = 2
+    TIME_UNTIL_NEXT_SATISFACTION = 2
     # Volume calc spatial condition satisfaction metric type interbnal duration.
-    eCrdnVolumeCalcVolumeSatisfactionMetricIntervalDuration = 10
+    INTERVAL_DURATION = 10
     # Volume calc spatial condition satisfaction metric type gap duration.
-    eCrdnVolumeCalcVolumeSatisfactionMetricGapDuration = 20
+    GAP_DURATION = 20
 
-AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfGaps.__doc__ = "Volume calc spatial condition satisfaction metric type number of gaps."
-AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfIntervals.__doc__ = "Volume calc spatial condition satisfaction metric type number of intervals."
-AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricTimeSinceLastSatisfaction.__doc__ = "Volume calc spatial condition satisfaction metric type time since last satisfaction."
-AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricTimeUntilNextSatisfaction.__doc__ = "Volume calc spatial condition satisfaction metric type time until next satisfaction."
-AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricIntervalDuration.__doc__ = "Volume calc spatial condition satisfaction metric type interbnal duration."
-AgECrdnVolumeCalcVolumeSatisfactionMetricType.eCrdnVolumeCalcVolumeSatisfactionMetricGapDuration.__doc__ = "Volume calc spatial condition satisfaction metric type gap duration."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.NUMBER_OF_GAPS.__doc__ = "Volume calc spatial condition satisfaction metric type number of gaps."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.NUMBER_OF_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction metric type number of intervals."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.TIME_SINCE_LAST_SATISFACTION.__doc__ = "Volume calc spatial condition satisfaction metric type time since last satisfaction."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.TIME_UNTIL_NEXT_SATISFACTION.__doc__ = "Volume calc spatial condition satisfaction metric type time until next satisfaction."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.INTERVAL_DURATION.__doc__ = "Volume calc spatial condition satisfaction metric type interbnal duration."
+CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.GAP_DURATION.__doc__ = "Volume calc spatial condition satisfaction metric type gap duration."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCalcVolumeSatisfactionMetricType"] = AgECrdnVolumeCalcVolumeSatisfactionMetricType
+agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE"] = CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE
 
-class AgECrdnVolumeGridType(IntEnum):
+class CRDN_VOLUME_GRID_TYPE(IntEnum):
     """Defines volume grid types."""
     # Unknown or unsupported volume grid.
-    eCrdnVolumeGridTypeUnknown = -1
+    UNKNOWN = -1
     # volume grid type cartesian.
-    eCrdnVolumeGridTypeCartesian = 0
+    CARTESIAN = 0
     # volume grid type Cylindrical.
-    eCrdnVolumeGridTypeCylindrical = 1
+    CYLINDRICAL = 1
     # volume grid type Spherical.
-    eCrdnVolumeGridTypeSpherical = 2
+    SPHERICAL = 2
     # volume grid type Constrained.
-    eCrdnVolumeGridTypeConstrained = 3
+    CONSTRAINED = 3
     # volume grid type LatLonAlt (Cartographic).
-    eCrdnVolumeGridTypeLatLonAlt = 4
+    LAT_LON_ALT = 4
     # volume grid type BearingAlt (Surface Bearing).
-    eCrdnVolumeGridTypeBearingAlt = 5
+    BEARING_ALT = 5
 
-AgECrdnVolumeGridType.eCrdnVolumeGridTypeUnknown.__doc__ = "Unknown or unsupported volume grid."
-AgECrdnVolumeGridType.eCrdnVolumeGridTypeCartesian.__doc__ = "volume grid type cartesian."
-AgECrdnVolumeGridType.eCrdnVolumeGridTypeCylindrical.__doc__ = "volume grid type Cylindrical."
-AgECrdnVolumeGridType.eCrdnVolumeGridTypeSpherical.__doc__ = "volume grid type Spherical."
-AgECrdnVolumeGridType.eCrdnVolumeGridTypeConstrained.__doc__ = "volume grid type Constrained."
-AgECrdnVolumeGridType.eCrdnVolumeGridTypeLatLonAlt.__doc__ = "volume grid type LatLonAlt (Cartographic)."
-AgECrdnVolumeGridType.eCrdnVolumeGridTypeBearingAlt.__doc__ = "volume grid type BearingAlt (Surface Bearing)."
+CRDN_VOLUME_GRID_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume grid."
+CRDN_VOLUME_GRID_TYPE.CARTESIAN.__doc__ = "volume grid type cartesian."
+CRDN_VOLUME_GRID_TYPE.CYLINDRICAL.__doc__ = "volume grid type Cylindrical."
+CRDN_VOLUME_GRID_TYPE.SPHERICAL.__doc__ = "volume grid type Spherical."
+CRDN_VOLUME_GRID_TYPE.CONSTRAINED.__doc__ = "volume grid type Constrained."
+CRDN_VOLUME_GRID_TYPE.LAT_LON_ALT.__doc__ = "volume grid type LatLonAlt (Cartographic)."
+CRDN_VOLUME_GRID_TYPE.BEARING_ALT.__doc__ = "volume grid type BearingAlt (Surface Bearing)."
 
-agcls.AgTypeNameMap["AgECrdnVolumeGridType"] = AgECrdnVolumeGridType
+agcls.AgTypeNameMap["CRDN_VOLUME_GRID_TYPE"] = CRDN_VOLUME_GRID_TYPE
 
-class AgECrdnVolumeResultVectorRequest(IntEnum):
+class CRDN_VOLUME_RESULT_VECTOR_REQUEST(IntEnum):
     """Defines volume result vector request types."""
     # volume result vector request pos type
-    eCrdnVolumeResultVectorRequestPos = 1
+    POS = 1
     # volume result vector request native pos type
-    eCrdnVolumeResultVectorRequestNativePos = 2
+    NATIVE_POS = 2
     # volume result vector request metric type
-    eCrdnVolumeResultVectorRequestMetric = 16
+    METRIC = 16
     # volume result vector request satisfaction type
-    eCrdnVolumeResultVectorRequestSatisfaction = 32
+    SATISFACTION = 32
     # volume result vector request gradient type
-    eCrdnVolumeResultVectorRequestGradient = 256
+    GRADIENT = 256
 
-AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestPos.__doc__ = "volume result vector request pos type"
-AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestNativePos.__doc__ = "volume result vector request native pos type"
-AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestMetric.__doc__ = "volume result vector request metric type"
-AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestSatisfaction.__doc__ = "volume result vector request satisfaction type"
-AgECrdnVolumeResultVectorRequest.eCrdnVolumeResultVectorRequestGradient.__doc__ = "volume result vector request gradient type"
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.POS.__doc__ = "volume result vector request pos type"
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.NATIVE_POS.__doc__ = "volume result vector request native pos type"
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.METRIC.__doc__ = "volume result vector request metric type"
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.SATISFACTION.__doc__ = "volume result vector request satisfaction type"
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.GRADIENT.__doc__ = "volume result vector request gradient type"
 
-agcls.AgTypeNameMap["AgECrdnVolumeResultVectorRequest"] = AgECrdnVolumeResultVectorRequest
+agcls.AgTypeNameMap["CRDN_VOLUME_RESULT_VECTOR_REQUEST"] = CRDN_VOLUME_RESULT_VECTOR_REQUEST
 
-class AgECrdnVolumeType(IntEnum):
+class CRDN_VOLUME_TYPE(IntEnum):
     """Defines volume grid types."""
     # Unknown or unsupported volume.
-    eCrdnVolumeTypeUnknown = -1
+    UNKNOWN = -1
     # volume type combined.
-    eCrdnVolumeTypeCombined = 0
+    COMBINED = 0
     # volume type lighting.
-    eCrdnVolumeTypeLighting = 1
+    LIGHTING = 1
     # volume type over time.
-    eCrdnVolumeTypeOverTime = 2
+    OVER_TIME = 2
     # volume type from grid (Grid Bounding Volume).
-    eCrdnVolumeTypeFromGrid = 3
+    FROM_GRID = 3
     # volume type from calc (Spatial Calculation Bounds).
-    eCrdnVolumeTypeFromCalc = 4
+    FROM_CALC = 4
     # volume type from time satisfaction (Valid Time At Location).
-    eCrdnVolumeTypeFromTimeSatisfaction = 5
+    FROM_TIME_SATISFACTION = 5
     # volume type from condition (Condition At Location).
-    eCrdnVolumeTypeFromCondition = 6
+    FROM_CONDITION = 6
     # volume type Inview (Access To Location).
-    eCrdnVolumeTypeInview = 7
+    INVIEW = 7
 
-AgECrdnVolumeType.eCrdnVolumeTypeUnknown.__doc__ = "Unknown or unsupported volume."
-AgECrdnVolumeType.eCrdnVolumeTypeCombined.__doc__ = "volume type combined."
-AgECrdnVolumeType.eCrdnVolumeTypeLighting.__doc__ = "volume type lighting."
-AgECrdnVolumeType.eCrdnVolumeTypeOverTime.__doc__ = "volume type over time."
-AgECrdnVolumeType.eCrdnVolumeTypeFromGrid.__doc__ = "volume type from grid (Grid Bounding Volume)."
-AgECrdnVolumeType.eCrdnVolumeTypeFromCalc.__doc__ = "volume type from calc (Spatial Calculation Bounds)."
-AgECrdnVolumeType.eCrdnVolumeTypeFromTimeSatisfaction.__doc__ = "volume type from time satisfaction (Valid Time At Location)."
-AgECrdnVolumeType.eCrdnVolumeTypeFromCondition.__doc__ = "volume type from condition (Condition At Location)."
-AgECrdnVolumeType.eCrdnVolumeTypeInview.__doc__ = "volume type Inview (Access To Location)."
+CRDN_VOLUME_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume."
+CRDN_VOLUME_TYPE.COMBINED.__doc__ = "volume type combined."
+CRDN_VOLUME_TYPE.LIGHTING.__doc__ = "volume type lighting."
+CRDN_VOLUME_TYPE.OVER_TIME.__doc__ = "volume type over time."
+CRDN_VOLUME_TYPE.FROM_GRID.__doc__ = "volume type from grid (Grid Bounding Volume)."
+CRDN_VOLUME_TYPE.FROM_CALC.__doc__ = "volume type from calc (Spatial Calculation Bounds)."
+CRDN_VOLUME_TYPE.FROM_TIME_SATISFACTION.__doc__ = "volume type from time satisfaction (Valid Time At Location)."
+CRDN_VOLUME_TYPE.FROM_CONDITION.__doc__ = "volume type from condition (Condition At Location)."
+CRDN_VOLUME_TYPE.INVIEW.__doc__ = "volume type Inview (Access To Location)."
 
-agcls.AgTypeNameMap["AgECrdnVolumeType"] = AgECrdnVolumeType
+agcls.AgTypeNameMap["CRDN_VOLUME_TYPE"] = CRDN_VOLUME_TYPE
 
-class AgECrdnVolumeAberrationType(IntEnum):
+class CRDN_VOLUME_ABERRATION_TYPE(IntEnum):
     """Defines the model of aberration to use."""
     # Aberration type unknown.
-    eCrdnVolumeAberrationUnknown = -1
+    UNKNOWN = -1
     # Aberration type total.
-    eCrdnVolumeAberrationTotal = 0
+    TOTAL = 0
     # SAberration type annual.
-    eCrdnVolumeAberrationAnnual = 1
+    ANNUAL = 1
     # Aberration type none.
-    eCrdnVolumeAberrationNone = 2
+    NONE = 2
 
-AgECrdnVolumeAberrationType.eCrdnVolumeAberrationUnknown.__doc__ = "Aberration type unknown."
-AgECrdnVolumeAberrationType.eCrdnVolumeAberrationTotal.__doc__ = "Aberration type total."
-AgECrdnVolumeAberrationType.eCrdnVolumeAberrationAnnual.__doc__ = "SAberration type annual."
-AgECrdnVolumeAberrationType.eCrdnVolumeAberrationNone.__doc__ = "Aberration type none."
+CRDN_VOLUME_ABERRATION_TYPE.UNKNOWN.__doc__ = "Aberration type unknown."
+CRDN_VOLUME_ABERRATION_TYPE.TOTAL.__doc__ = "Aberration type total."
+CRDN_VOLUME_ABERRATION_TYPE.ANNUAL.__doc__ = "SAberration type annual."
+CRDN_VOLUME_ABERRATION_TYPE.NONE.__doc__ = "Aberration type none."
 
-agcls.AgTypeNameMap["AgECrdnVolumeAberrationType"] = AgECrdnVolumeAberrationType
+agcls.AgTypeNameMap["CRDN_VOLUME_ABERRATION_TYPE"] = CRDN_VOLUME_ABERRATION_TYPE
 
-class AgECrdnVolumeClockHostType(IntEnum):
+class CRDN_VOLUME_CLOCK_HOST_TYPE(IntEnum):
     """Defines whether base or target of an Access instance holds the clock for Access times."""
     # Unknown
-    eCrdnVolumeClockHostUnknown = -1
+    UNKNOWN = -1
     # Base object holds time instance.
-    eCrdnVolumeClockHostBase = 0
+    BASE = 0
     # Target object holds time instance.
-    eCrdnVolumeClockHostTarget = 1
+    TARGET = 1
 
-AgECrdnVolumeClockHostType.eCrdnVolumeClockHostUnknown.__doc__ = "Unknown"
-AgECrdnVolumeClockHostType.eCrdnVolumeClockHostBase.__doc__ = "Base object holds time instance."
-AgECrdnVolumeClockHostType.eCrdnVolumeClockHostTarget.__doc__ = "Target object holds time instance."
+CRDN_VOLUME_CLOCK_HOST_TYPE.UNKNOWN.__doc__ = "Unknown"
+CRDN_VOLUME_CLOCK_HOST_TYPE.BASE.__doc__ = "Base object holds time instance."
+CRDN_VOLUME_CLOCK_HOST_TYPE.TARGET.__doc__ = "Target object holds time instance."
 
-agcls.AgTypeNameMap["AgECrdnVolumeClockHostType"] = AgECrdnVolumeClockHostType
+agcls.AgTypeNameMap["CRDN_VOLUME_CLOCK_HOST_TYPE"] = CRDN_VOLUME_CLOCK_HOST_TYPE
 
-class AgECrdnVolumeCombinedOperationType(IntEnum):
+class CRDN_VOLUME_COMBINED_OPERATION_TYPE(IntEnum):
     """Defines spatial condition combined operation types."""
     # Spatial condition combined AND operation.
-    eCrdnVolumeCombinedOperationTypeAND = 1
+    AND = 1
     # Spatial condition combined OR operation.
-    eCrdnVolumeCombinedOperationTypeOR = 2
+    OR = 2
     # Spatial condition combined XOR operation.
-    eCrdnVolumeCombinedOperationTypeXOR = 3
+    XOR = 3
     # Spatial condition combined MINUS operation.
-    eCrdnVolumeCombinedOperationTypeMINUS = 4
+    MINUS = 4
 
-AgECrdnVolumeCombinedOperationType.eCrdnVolumeCombinedOperationTypeAND.__doc__ = "Spatial condition combined AND operation."
-AgECrdnVolumeCombinedOperationType.eCrdnVolumeCombinedOperationTypeOR.__doc__ = "Spatial condition combined OR operation."
-AgECrdnVolumeCombinedOperationType.eCrdnVolumeCombinedOperationTypeXOR.__doc__ = "Spatial condition combined XOR operation."
-AgECrdnVolumeCombinedOperationType.eCrdnVolumeCombinedOperationTypeMINUS.__doc__ = "Spatial condition combined MINUS operation."
+CRDN_VOLUME_COMBINED_OPERATION_TYPE.AND.__doc__ = "Spatial condition combined AND operation."
+CRDN_VOLUME_COMBINED_OPERATION_TYPE.OR.__doc__ = "Spatial condition combined OR operation."
+CRDN_VOLUME_COMBINED_OPERATION_TYPE.XOR.__doc__ = "Spatial condition combined XOR operation."
+CRDN_VOLUME_COMBINED_OPERATION_TYPE.MINUS.__doc__ = "Spatial condition combined MINUS operation."
 
-agcls.AgTypeNameMap["AgECrdnVolumeCombinedOperationType"] = AgECrdnVolumeCombinedOperationType
+agcls.AgTypeNameMap["CRDN_VOLUME_COMBINED_OPERATION_TYPE"] = CRDN_VOLUME_COMBINED_OPERATION_TYPE
 
-class AgECrdnVolumeFromGridEdgeType(IntEnum):
+class CRDN_VOLUME_FROM_GRID_EDGE_TYPE(IntEnum):
     """Defines spatial condition from grid edge type."""
     # Spatial condition over time from grid edge type mask points.
-    eCrdnVolumeFromGridEdgeTypeMaskPoints = 16
+    MASK_POINTS = 16
     # Spatial condition over time from grid edge type mask voxels.
-    eCrdnVolumeFromGridEdgeTypeMaskVoxels = 32
+    MASK_VOXELS = 32
 
-AgECrdnVolumeFromGridEdgeType.eCrdnVolumeFromGridEdgeTypeMaskPoints.__doc__ = "Spatial condition over time from grid edge type mask points."
-AgECrdnVolumeFromGridEdgeType.eCrdnVolumeFromGridEdgeTypeMaskVoxels.__doc__ = "Spatial condition over time from grid edge type mask voxels."
+CRDN_VOLUME_FROM_GRID_EDGE_TYPE.MASK_POINTS.__doc__ = "Spatial condition over time from grid edge type mask points."
+CRDN_VOLUME_FROM_GRID_EDGE_TYPE.MASK_VOXELS.__doc__ = "Spatial condition over time from grid edge type mask voxels."
 
-agcls.AgTypeNameMap["AgECrdnVolumeFromGridEdgeType"] = AgECrdnVolumeFromGridEdgeType
+agcls.AgTypeNameMap["CRDN_VOLUME_FROM_GRID_EDGE_TYPE"] = CRDN_VOLUME_FROM_GRID_EDGE_TYPE
 
-class AgECrdnVolumeLightingConditionsType(IntFlag):
+class CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE(IntFlag):
     """Defines spatial condition lighting conditions types."""
     # Spatial condition lighting undefined.
-    eCrdnVolumeLightingConditionTypeUndefined = 0
+    TYPE_UNDEFINED = 0
     # Spatial condition lighting sun light.
-    eCrdnVolumeLightingConditionTypeSunlight = 1
+    TYPE_SUNLIGHT = 1
     # Spatial condition lighting penumbra.
-    eCrdnVolumeLightingConditionTypePenumbra = 2
+    TYPE_PENUMBRA = 2
     # Spatial condition lighting umbra.
-    eCrdnVolumeLightingConditionTypeUmbra = 4
+    TYPE_UMBRA = 4
 
-AgECrdnVolumeLightingConditionsType.eCrdnVolumeLightingConditionTypeUndefined.__doc__ = "Spatial condition lighting undefined."
-AgECrdnVolumeLightingConditionsType.eCrdnVolumeLightingConditionTypeSunlight.__doc__ = "Spatial condition lighting sun light."
-AgECrdnVolumeLightingConditionsType.eCrdnVolumeLightingConditionTypePenumbra.__doc__ = "Spatial condition lighting penumbra."
-AgECrdnVolumeLightingConditionsType.eCrdnVolumeLightingConditionTypeUmbra.__doc__ = "Spatial condition lighting umbra."
+CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE.TYPE_UNDEFINED.__doc__ = "Spatial condition lighting undefined."
+CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE.TYPE_SUNLIGHT.__doc__ = "Spatial condition lighting sun light."
+CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE.TYPE_PENUMBRA.__doc__ = "Spatial condition lighting penumbra."
+CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE.TYPE_UMBRA.__doc__ = "Spatial condition lighting umbra."
 
-agcls.AgTypeNameMap["AgECrdnVolumeLightingConditionsType"] = AgECrdnVolumeLightingConditionsType
+agcls.AgTypeNameMap["CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE"] = CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE
 
-class AgECrdnVolumeOverTimeDurationType(IntEnum):
+class CRDN_VOLUME_OVER_TIME_DURATION_TYPE(IntEnum):
     """Defines spatial condition over time duration type."""
     # Spatial condition over time duration type Static.
-    eCrdnVolumeOverTimeDurationTypeStatic = 0
+    STATIC = 0
     # Spatial condition over time duration type CumulativeToCurrent.
-    eCrdnVolumeOverTimeDurationTypeCumulativeToCurrent = 1
+    CUMULATIVE_TO_CURRENT = 1
     # Spatial condition over time duration type CumulativeFromCurrent.
-    eCrdnVolumeOverTimeDurationTypeCumulativeFromCurrent = 2
+    CUMULATIVE_FROM_CURRENT = 2
     # Spatial condition over time duration type SlidingWindow.
-    eCrdnVolumeOverTimeDurationTypeSlidingWindow = 3
+    SLIDING_WINDOW = 3
 
-AgECrdnVolumeOverTimeDurationType.eCrdnVolumeOverTimeDurationTypeStatic.__doc__ = "Spatial condition over time duration type Static."
-AgECrdnVolumeOverTimeDurationType.eCrdnVolumeOverTimeDurationTypeCumulativeToCurrent.__doc__ = "Spatial condition over time duration type CumulativeToCurrent."
-AgECrdnVolumeOverTimeDurationType.eCrdnVolumeOverTimeDurationTypeCumulativeFromCurrent.__doc__ = "Spatial condition over time duration type CumulativeFromCurrent."
-AgECrdnVolumeOverTimeDurationType.eCrdnVolumeOverTimeDurationTypeSlidingWindow.__doc__ = "Spatial condition over time duration type SlidingWindow."
+CRDN_VOLUME_OVER_TIME_DURATION_TYPE.STATIC.__doc__ = "Spatial condition over time duration type Static."
+CRDN_VOLUME_OVER_TIME_DURATION_TYPE.CUMULATIVE_TO_CURRENT.__doc__ = "Spatial condition over time duration type CumulativeToCurrent."
+CRDN_VOLUME_OVER_TIME_DURATION_TYPE.CUMULATIVE_FROM_CURRENT.__doc__ = "Spatial condition over time duration type CumulativeFromCurrent."
+CRDN_VOLUME_OVER_TIME_DURATION_TYPE.SLIDING_WINDOW.__doc__ = "Spatial condition over time duration type SlidingWindow."
 
-agcls.AgTypeNameMap["AgECrdnVolumeOverTimeDurationType"] = AgECrdnVolumeOverTimeDurationType
+agcls.AgTypeNameMap["CRDN_VOLUME_OVER_TIME_DURATION_TYPE"] = CRDN_VOLUME_OVER_TIME_DURATION_TYPE
 
-class AgECrdnVolumeTimeSenseType(IntEnum):
+class CRDN_VOLUME_TIME_SENSE_TYPE(IntEnum):
     """Defines whether object1 or object2 of an Access instance holds the clock for Access times."""
     # Unklnown
-    eCrdnVolumeTimeSenseUnknown = -1
+    UNKNOWN = -1
     # Position is computed in Time Sense
-    eCrdnVolumeTimeSenseTransmit = 0
+    TRANSMIT = 0
     # Position is computed in Receive Sense
-    eCrdnVolumeTimeSenseReceive = 1
+    RECEIVE = 1
 
-AgECrdnVolumeTimeSenseType.eCrdnVolumeTimeSenseUnknown.__doc__ = "Unklnown"
-AgECrdnVolumeTimeSenseType.eCrdnVolumeTimeSenseTransmit.__doc__ = "Position is computed in Time Sense"
-AgECrdnVolumeTimeSenseType.eCrdnVolumeTimeSenseReceive.__doc__ = "Position is computed in Receive Sense"
+CRDN_VOLUME_TIME_SENSE_TYPE.UNKNOWN.__doc__ = "Unklnown"
+CRDN_VOLUME_TIME_SENSE_TYPE.TRANSMIT.__doc__ = "Position is computed in Time Sense"
+CRDN_VOLUME_TIME_SENSE_TYPE.RECEIVE.__doc__ = "Position is computed in Receive Sense"
 
-agcls.AgTypeNameMap["AgECrdnVolumeTimeSenseType"] = AgECrdnVolumeTimeSenseType
+agcls.AgTypeNameMap["CRDN_VOLUME_TIME_SENSE_TYPE"] = CRDN_VOLUME_TIME_SENSE_TYPE
 
-class AgECrdnVolumetricGridValuesMethodType(IntEnum):
+class CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE(IntEnum):
     """Defines volumetric grid values method types."""
     # Unknown or unsupportedgrid values method.
-    eCrdnVolumetricGridValuesMethodMethodUnknown = -1
+    METHOD_UNKNOWN = -1
     # Fixed number steps grid values method for volumetric grid.
-    eCrdnVolumetricGridValuesMethodMethodFixedNumSteps = 0
+    METHOD_FIXED_NUM_STEPS = 0
     # Fixed step size grid values method for volumetric grid.
-    eCrdnVolumetricGridValuesMethodMethodFixedStepSize = 1
+    METHOD_FIXED_STEP_SIZE = 1
     # Custom grid values method for volumetric grid.
-    eCrdnVolumetricGridValuesMethodMethodCustomValues = 2
+    METHOD_CUSTOM_VALUES = 2
 
-AgECrdnVolumetricGridValuesMethodType.eCrdnVolumetricGridValuesMethodMethodUnknown.__doc__ = "Unknown or unsupportedgrid values method."
-AgECrdnVolumetricGridValuesMethodType.eCrdnVolumetricGridValuesMethodMethodFixedNumSteps.__doc__ = "Fixed number steps grid values method for volumetric grid."
-AgECrdnVolumetricGridValuesMethodType.eCrdnVolumetricGridValuesMethodMethodFixedStepSize.__doc__ = "Fixed step size grid values method for volumetric grid."
-AgECrdnVolumetricGridValuesMethodType.eCrdnVolumetricGridValuesMethodMethodCustomValues.__doc__ = "Custom grid values method for volumetric grid."
+CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE.METHOD_UNKNOWN.__doc__ = "Unknown or unsupportedgrid values method."
+CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE.METHOD_FIXED_NUM_STEPS.__doc__ = "Fixed number steps grid values method for volumetric grid."
+CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE.METHOD_FIXED_STEP_SIZE.__doc__ = "Fixed step size grid values method for volumetric grid."
+CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE.METHOD_CUSTOM_VALUES.__doc__ = "Custom grid values method for volumetric grid."
 
-agcls.AgTypeNameMap["AgECrdnVolumetricGridValuesMethodType"] = AgECrdnVolumetricGridValuesMethodType
+agcls.AgTypeNameMap["CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE"] = CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE
 
-class AgECrdnKind(IntEnum):
+class CRDN_KIND(IntEnum):
     """Represents kinds of vectory geometry components."""
     # Unsupported component kind.
-    eCrdnKindUnknown = -1
+    UNKNOWN = -1
     # Invalid component.
-    eCrdnKindInvalid = 0
+    INVALID = 0
     # Axes component.
-    eCrdnKindAxes = 1
+    AXES = 1
     # Angle component.
-    eCrdnKindAngle = 2
+    ANGLE = 2
     # Vector component.
-    eCrdnKindVector = 3
+    VECTOR = 3
     # Point component.
-    eCrdnKindPoint = 4
+    POINT = 4
     # Plane component.
-    eCrdnKindPlane = 5
+    PLANE = 5
     # System component.
-    eCrdnKindSystem = 6
+    SYSTEM = 6
     # An event.
-    eCrdnKindEvent = 7
+    EVENT = 7
     # An event array.
-    eCrdnKindEventArray = 8
+    EVENT_ARRAY = 8
     # An event interval.
-    eCrdnKindEventInterval = 9
+    EVENT_INTERVAL = 9
     # An event interval collection.
-    eCrdnKindEventIntervalCollection = 10
+    EVENT_INTERVAL_COLLECTION = 10
     # A list of event intervals.
-    eCrdnKindEventIntervalList = 11
+    EVENT_INTERVAL_LIST = 11
     # A parameter set.
-    eCrdnKindParameterSet = 12
+    PARAMETER_SET = 12
     # A scalar.
-    eCrdnKindCalcScalar = 13
+    CALC_SCALAR = 13
     # A condition.
-    eCrdnKindCondition = 14
+    CONDITION = 14
     # A condition set.
-    eCrdnKindConditionSet = 15
+    CONDITION_SET = 15
     # A volume grid.
-    eCrdnKindVolumeGrid = 16
+    VOLUME_GRID = 16
     # A volume.
-    eCrdnKindVolume = 17
+    VOLUME = 17
     # A volume calc.
-    eCrdnKindVolumeCalc = 18
+    VOLUME_CALC = 18
 
-AgECrdnKind.eCrdnKindUnknown.__doc__ = "Unsupported component kind."
-AgECrdnKind.eCrdnKindInvalid.__doc__ = "Invalid component."
-AgECrdnKind.eCrdnKindAxes.__doc__ = "Axes component."
-AgECrdnKind.eCrdnKindAngle.__doc__ = "Angle component."
-AgECrdnKind.eCrdnKindVector.__doc__ = "Vector component."
-AgECrdnKind.eCrdnKindPoint.__doc__ = "Point component."
-AgECrdnKind.eCrdnKindPlane.__doc__ = "Plane component."
-AgECrdnKind.eCrdnKindSystem.__doc__ = "System component."
-AgECrdnKind.eCrdnKindEvent.__doc__ = "An event."
-AgECrdnKind.eCrdnKindEventArray.__doc__ = "An event array."
-AgECrdnKind.eCrdnKindEventInterval.__doc__ = "An event interval."
-AgECrdnKind.eCrdnKindEventIntervalCollection.__doc__ = "An event interval collection."
-AgECrdnKind.eCrdnKindEventIntervalList.__doc__ = "A list of event intervals."
-AgECrdnKind.eCrdnKindParameterSet.__doc__ = "A parameter set."
-AgECrdnKind.eCrdnKindCalcScalar.__doc__ = "A scalar."
-AgECrdnKind.eCrdnKindCondition.__doc__ = "A condition."
-AgECrdnKind.eCrdnKindConditionSet.__doc__ = "A condition set."
-AgECrdnKind.eCrdnKindVolumeGrid.__doc__ = "A volume grid."
-AgECrdnKind.eCrdnKindVolume.__doc__ = "A volume."
-AgECrdnKind.eCrdnKindVolumeCalc.__doc__ = "A volume calc."
+CRDN_KIND.UNKNOWN.__doc__ = "Unsupported component kind."
+CRDN_KIND.INVALID.__doc__ = "Invalid component."
+CRDN_KIND.AXES.__doc__ = "Axes component."
+CRDN_KIND.ANGLE.__doc__ = "Angle component."
+CRDN_KIND.VECTOR.__doc__ = "Vector component."
+CRDN_KIND.POINT.__doc__ = "Point component."
+CRDN_KIND.PLANE.__doc__ = "Plane component."
+CRDN_KIND.SYSTEM.__doc__ = "System component."
+CRDN_KIND.EVENT.__doc__ = "An event."
+CRDN_KIND.EVENT_ARRAY.__doc__ = "An event array."
+CRDN_KIND.EVENT_INTERVAL.__doc__ = "An event interval."
+CRDN_KIND.EVENT_INTERVAL_COLLECTION.__doc__ = "An event interval collection."
+CRDN_KIND.EVENT_INTERVAL_LIST.__doc__ = "A list of event intervals."
+CRDN_KIND.PARAMETER_SET.__doc__ = "A parameter set."
+CRDN_KIND.CALC_SCALAR.__doc__ = "A scalar."
+CRDN_KIND.CONDITION.__doc__ = "A condition."
+CRDN_KIND.CONDITION_SET.__doc__ = "A condition set."
+CRDN_KIND.VOLUME_GRID.__doc__ = "A volume grid."
+CRDN_KIND.VOLUME.__doc__ = "A volume."
+CRDN_KIND.VOLUME_CALC.__doc__ = "A volume calc."
 
-agcls.AgTypeNameMap["AgECrdnKind"] = AgECrdnKind
+agcls.AgTypeNameMap["CRDN_KIND"] = CRDN_KIND
 
-class AgECrdnAngleType(IntEnum):
+class CRDN_ANGLE_TYPE(IntEnum):
     """Represents angle types."""
     # Unknown or unsupported type.
-    eCrdnAngleTypeUnknown = -1
+    UNKNOWN = -1
     # An angle between two vectors.
-    eCrdnAngleTypeBetweenVectors = 0
+    BETWEEN_VECTORS = 0
     # An angle between two planes.
-    eCrdnAngleTypeBetweenPlanes = 1
+    BETWEEN_PLANES = 1
     # An angle between two vectors about an axis.
-    eCrdnAngleTypeDihedralAngle = 2
+    DIHEDRAL_ANGLE = 2
     # Angle of the shortest rotation between the two specified axes.
-    eCrdnAngleTypeRotation = 3
+    ROTATION = 3
     # An angle between a vector and a plane.
-    eCrdnAngleTypeToPlane = 4
+    TO_PLANE = 4
     # Represents a VGT angle created from a template. This type of angle is not creatable.
-    eCrdnAngleTypeTemplate = 5
+    TEMPLATE = 5
 
-AgECrdnAngleType.eCrdnAngleTypeUnknown.__doc__ = "Unknown or unsupported type."
-AgECrdnAngleType.eCrdnAngleTypeBetweenVectors.__doc__ = "An angle between two vectors."
-AgECrdnAngleType.eCrdnAngleTypeBetweenPlanes.__doc__ = "An angle between two planes."
-AgECrdnAngleType.eCrdnAngleTypeDihedralAngle.__doc__ = "An angle between two vectors about an axis."
-AgECrdnAngleType.eCrdnAngleTypeRotation.__doc__ = "Angle of the shortest rotation between the two specified axes."
-AgECrdnAngleType.eCrdnAngleTypeToPlane.__doc__ = "An angle between a vector and a plane."
-AgECrdnAngleType.eCrdnAngleTypeTemplate.__doc__ = "Represents a VGT angle created from a template. This type of angle is not creatable."
+CRDN_ANGLE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
+CRDN_ANGLE_TYPE.BETWEEN_VECTORS.__doc__ = "An angle between two vectors."
+CRDN_ANGLE_TYPE.BETWEEN_PLANES.__doc__ = "An angle between two planes."
+CRDN_ANGLE_TYPE.DIHEDRAL_ANGLE.__doc__ = "An angle between two vectors about an axis."
+CRDN_ANGLE_TYPE.ROTATION.__doc__ = "Angle of the shortest rotation between the two specified axes."
+CRDN_ANGLE_TYPE.TO_PLANE.__doc__ = "An angle between a vector and a plane."
+CRDN_ANGLE_TYPE.TEMPLATE.__doc__ = "Represents a VGT angle created from a template. This type of angle is not creatable."
 
-agcls.AgTypeNameMap["AgECrdnAngleType"] = AgECrdnAngleType
+agcls.AgTypeNameMap["CRDN_ANGLE_TYPE"] = CRDN_ANGLE_TYPE
 
-class AgECrdnAxesType(IntEnum):
+class CRDN_AXES_TYPE(IntEnum):
     """Represents vector types."""
     # Unknown or unsupported type.
-    eCrdnAxesTypeUnknown = -1
+    UNKNOWN = -1
     # Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type.
-    eCrdnAxesTypeLagrangeLibration = 0
+    LAGRANGE_LIBRATION = 0
     # Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset.
-    eCrdnAxesTypeAngularOffset = 1
+    ANGULAR_OFFSET = 1
     # Axes based on another set fixed at a specified epoch.
-    eCrdnAxesTypeFixedAtEpoch = 2
+    FIXED_AT_EPOCH = 2
     # B-Plane axes using the selected target body and reference vector.
-    eCrdnAxesTypeBPlane = 3
+    B_PLANE = 3
     # Customized axes offset with respect to a set of reference Axes.
-    eCrdnAxesTypeCustomScript = 4
+    CUSTOM_SCRIPT = 4
     # Axes fixed in reference axes.
-    eCrdnAxesTypeFixed = 6
+    FIXED = 6
     # Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference.
-    eCrdnAxesTypeAlignedAndConstrained = 7
+    ALIGNED_AND_CONSTRAINED = 7
     # Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element.
-    eCrdnAxesTypeModelAttachment = 8
+    MODEL_ATTACHMENT = 8
     # Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset.
-    eCrdnAxesTypeSpinning = 9
+    SPINNING = 9
     # Projection of the reference point onto the central body.
-    eCrdnAxesTypeOnSurface = 10
+    ON_SURFACE = 10
     # Axes based on trajectory of the point relative to the reference coordinate system.
-    eCrdnAxesTypeTrajectory = 11
+    TRAJECTORY = 11
     # Represents a VGT axes created from a template. This type of axes is not creatable.
-    eCrdnAxesTypeTemplate = 12
+    TEMPLATE = 12
     # Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant.
-    eCrdnAxesTypeAtTimeInstant = 13
+    AT_TIME_INSTANT = 13
     # An axes plugin point.
-    eCrdnAxesTypePlugin = 14
+    PLUGIN = 14
     # Axes specified by data from a file.
-    eCrdnAxesTypeFile = 5
+    FILE = 5
 
-AgECrdnAxesType.eCrdnAxesTypeUnknown.__doc__ = "Unknown or unsupported type."
-AgECrdnAxesType.eCrdnAxesTypeLagrangeLibration.__doc__ = "Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."
-AgECrdnAxesType.eCrdnAxesTypeAngularOffset.__doc__ = "Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."
-AgECrdnAxesType.eCrdnAxesTypeFixedAtEpoch.__doc__ = "Axes based on another set fixed at a specified epoch."
-AgECrdnAxesType.eCrdnAxesTypeBPlane.__doc__ = "B-Plane axes using the selected target body and reference vector."
-AgECrdnAxesType.eCrdnAxesTypeCustomScript.__doc__ = "Customized axes offset with respect to a set of reference Axes."
-AgECrdnAxesType.eCrdnAxesTypeFixed.__doc__ = "Axes fixed in reference axes."
-AgECrdnAxesType.eCrdnAxesTypeAlignedAndConstrained.__doc__ = "Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."
-AgECrdnAxesType.eCrdnAxesTypeModelAttachment.__doc__ = "Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."
-AgECrdnAxesType.eCrdnAxesTypeSpinning.__doc__ = "Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."
-AgECrdnAxesType.eCrdnAxesTypeOnSurface.__doc__ = "Projection of the reference point onto the central body."
-AgECrdnAxesType.eCrdnAxesTypeTrajectory.__doc__ = "Axes based on trajectory of the point relative to the reference coordinate system."
-AgECrdnAxesType.eCrdnAxesTypeTemplate.__doc__ = "Represents a VGT axes created from a template. This type of axes is not creatable."
-AgECrdnAxesType.eCrdnAxesTypeAtTimeInstant.__doc__ = "Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."
-AgECrdnAxesType.eCrdnAxesTypePlugin.__doc__ = "An axes plugin point."
-AgECrdnAxesType.eCrdnAxesTypeFile.__doc__ = "Axes specified by data from a file."
+CRDN_AXES_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
+CRDN_AXES_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."
+CRDN_AXES_TYPE.ANGULAR_OFFSET.__doc__ = "Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."
+CRDN_AXES_TYPE.FIXED_AT_EPOCH.__doc__ = "Axes based on another set fixed at a specified epoch."
+CRDN_AXES_TYPE.B_PLANE.__doc__ = "B-Plane axes using the selected target body and reference vector."
+CRDN_AXES_TYPE.CUSTOM_SCRIPT.__doc__ = "Customized axes offset with respect to a set of reference Axes."
+CRDN_AXES_TYPE.FIXED.__doc__ = "Axes fixed in reference axes."
+CRDN_AXES_TYPE.ALIGNED_AND_CONSTRAINED.__doc__ = "Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."
+CRDN_AXES_TYPE.MODEL_ATTACHMENT.__doc__ = "Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."
+CRDN_AXES_TYPE.SPINNING.__doc__ = "Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."
+CRDN_AXES_TYPE.ON_SURFACE.__doc__ = "Projection of the reference point onto the central body."
+CRDN_AXES_TYPE.TRAJECTORY.__doc__ = "Axes based on trajectory of the point relative to the reference coordinate system."
+CRDN_AXES_TYPE.TEMPLATE.__doc__ = "Represents a VGT axes created from a template. This type of axes is not creatable."
+CRDN_AXES_TYPE.AT_TIME_INSTANT.__doc__ = "Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."
+CRDN_AXES_TYPE.PLUGIN.__doc__ = "An axes plugin point."
+CRDN_AXES_TYPE.FILE.__doc__ = "Axes specified by data from a file."
 
-agcls.AgTypeNameMap["AgECrdnAxesType"] = AgECrdnAxesType
+agcls.AgTypeNameMap["CRDN_AXES_TYPE"] = CRDN_AXES_TYPE
 
-class AgECrdnPlaneType(IntEnum):
+class CRDN_PLANE_TYPE(IntEnum):
     """Represents plane types."""
     # Unknown or unsupported type.
-    eCrdnPlaneTypeUnknown = -1
+    UNKNOWN = -1
     # A plane normal to a vector at a given point.
-    eCrdnPlaneTypeNormal = 0
+    NORMAL = 0
     # A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system.
-    eCrdnPlaneTypeQuadrant = 1
+    QUADRANT = 1
     # A plane is defined on the basis of a trajectory of a selected point with respect to a reference point.
-    eCrdnPlaneTypeTrajectory = 2
+    TRAJECTORY = 2
     # A plane is defined by the three points.
-    eCrdnPlaneTypeTriad = 3
+    TRIAD = 3
     # Represents a VGT plane created from a template. This type of plane is not creatable.
-    eCrdnPlaneTypeTemplate = 4
+    TEMPLATE = 4
     # A plane passing through point and containing two given vectors.
-    eCrdnPlaneTypeTwoVector = 5
+    TWO_VECTOR = 5
 
-AgECrdnPlaneType.eCrdnPlaneTypeUnknown.__doc__ = "Unknown or unsupported type."
-AgECrdnPlaneType.eCrdnPlaneTypeNormal.__doc__ = "A plane normal to a vector at a given point."
-AgECrdnPlaneType.eCrdnPlaneTypeQuadrant.__doc__ = "A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system."
-AgECrdnPlaneType.eCrdnPlaneTypeTrajectory.__doc__ = "A plane is defined on the basis of a trajectory of a selected point with respect to a reference point."
-AgECrdnPlaneType.eCrdnPlaneTypeTriad.__doc__ = "A plane is defined by the three points."
-AgECrdnPlaneType.eCrdnPlaneTypeTemplate.__doc__ = "Represents a VGT plane created from a template. This type of plane is not creatable."
-AgECrdnPlaneType.eCrdnPlaneTypeTwoVector.__doc__ = "A plane passing through point and containing two given vectors."
+CRDN_PLANE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
+CRDN_PLANE_TYPE.NORMAL.__doc__ = "A plane normal to a vector at a given point."
+CRDN_PLANE_TYPE.QUADRANT.__doc__ = "A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system."
+CRDN_PLANE_TYPE.TRAJECTORY.__doc__ = "A plane is defined on the basis of a trajectory of a selected point with respect to a reference point."
+CRDN_PLANE_TYPE.TRIAD.__doc__ = "A plane is defined by the three points."
+CRDN_PLANE_TYPE.TEMPLATE.__doc__ = "Represents a VGT plane created from a template. This type of plane is not creatable."
+CRDN_PLANE_TYPE.TWO_VECTOR.__doc__ = "A plane passing through point and containing two given vectors."
 
-agcls.AgTypeNameMap["AgECrdnPlaneType"] = AgECrdnPlaneType
+agcls.AgTypeNameMap["CRDN_PLANE_TYPE"] = CRDN_PLANE_TYPE
 
-class AgECrdnPointType(IntEnum):
+class CRDN_POINT_TYPE(IntEnum):
     """Represents point types."""
     # Unknown or unsupported type.
-    eCrdnPointTypeUnknown = -1
+    UNKNOWN = -1
     # B-Plane point using the selected target body.
-    eCrdnPointTypeBPlane = 0
+    B_PLANE = 0
     # The grazing point is the point of closest approach to the surface of the selected central body along a defined direction.
-    eCrdnPointTypeGrazing = 1
+    GRAZING = 1
     # The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option.
-    eCrdnPointTypeCovarianceGrazing = 2
+    COVARIANCE_GRAZING = 2
     # Point fixed in a reference coordinate system.
-    eCrdnPointTypeFixedInSystem = 4
+    FIXED_IN_SYSTEM = 4
     # Point on central body surface that reflects from source to observer.
-    eCrdnPointTypeGlint = 5
+    GLINT = 5
     # Point on a plane located along a given direction looking from a given origin.
-    eCrdnPointTypePlaneIntersection = 6
+    PLANE_INTERSECTION = 6
     # Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point.
-    eCrdnPointTypeModelAttachment = 7
+    MODEL_ATTACHMENT = 7
     # The projection of a point onto a reference plane.
-    eCrdnPointTypePlaneProjection = 8
+    PLANE_PROJECTION = 8
     # The detic subpoint of the reference point as projected onto the central body.
-    eCrdnPointTypeOnSurface = 9
+    ON_SURFACE = 9
     # Libration point using one primary and multiple secondary central bodies.
-    eCrdnPointTypeLagrangeLibration = 10
+    LAGRANGE_LIBRATION = 10
     # Represents a VGT point created from a template. This type of point is not creatable.
-    eCrdnPointTypeTemplate = 11
+    TEMPLATE = 11
     # Point on central body surface along direction vector originating at source point.
-    eCrdnPointTypeCentralBodyIntersect = 12
+    CENTRAL_BODY_INTERSECT = 12
     # Point fixed relative to reference system based on another point evaluated at specified time instant.
-    eCrdnPointTypeAtTimeInstant = 13
+    AT_TIME_INSTANT = 13
     # A point plugin point.
-    eCrdnPointTypePlugin = 14
+    PLUGIN = 14
     # Point specified by data from a file.
-    eCrdnPointTypeFile = 3
+    FILE = 3
     # Point fixed on a central body.
-    eCrdnPointTypeFixedOnCentralBody = 15
+    FIXED_ON_CENTRAL_BODY = 15
     # A point placed at the center of mass of a specified satellite of the satellite collection.
-    eCrdnPointTypeSatelliteCollectionEntry = 16
+    SATELLITE_COLLECTION_ENTRY = 16
 
-AgECrdnPointType.eCrdnPointTypeUnknown.__doc__ = "Unknown or unsupported type."
-AgECrdnPointType.eCrdnPointTypeBPlane.__doc__ = "B-Plane point using the selected target body."
-AgECrdnPointType.eCrdnPointTypeGrazing.__doc__ = "The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."
-AgECrdnPointType.eCrdnPointTypeCovarianceGrazing.__doc__ = "The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."
-AgECrdnPointType.eCrdnPointTypeFixedInSystem.__doc__ = "Point fixed in a reference coordinate system."
-AgECrdnPointType.eCrdnPointTypeGlint.__doc__ = "Point on central body surface that reflects from source to observer."
-AgECrdnPointType.eCrdnPointTypePlaneIntersection.__doc__ = "Point on a plane located along a given direction looking from a given origin."
-AgECrdnPointType.eCrdnPointTypeModelAttachment.__doc__ = "Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."
-AgECrdnPointType.eCrdnPointTypePlaneProjection.__doc__ = "The projection of a point onto a reference plane."
-AgECrdnPointType.eCrdnPointTypeOnSurface.__doc__ = "The detic subpoint of the reference point as projected onto the central body."
-AgECrdnPointType.eCrdnPointTypeLagrangeLibration.__doc__ = "Libration point using one primary and multiple secondary central bodies."
-AgECrdnPointType.eCrdnPointTypeTemplate.__doc__ = "Represents a VGT point created from a template. This type of point is not creatable."
-AgECrdnPointType.eCrdnPointTypeCentralBodyIntersect.__doc__ = "Point on central body surface along direction vector originating at source point."
-AgECrdnPointType.eCrdnPointTypeAtTimeInstant.__doc__ = "Point fixed relative to reference system based on another point evaluated at specified time instant."
-AgECrdnPointType.eCrdnPointTypePlugin.__doc__ = "A point plugin point."
-AgECrdnPointType.eCrdnPointTypeFile.__doc__ = "Point specified by data from a file."
-AgECrdnPointType.eCrdnPointTypeFixedOnCentralBody.__doc__ = "Point fixed on a central body."
-AgECrdnPointType.eCrdnPointTypeSatelliteCollectionEntry.__doc__ = "A point placed at the center of mass of a specified satellite of the satellite collection."
+CRDN_POINT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
+CRDN_POINT_TYPE.B_PLANE.__doc__ = "B-Plane point using the selected target body."
+CRDN_POINT_TYPE.GRAZING.__doc__ = "The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."
+CRDN_POINT_TYPE.COVARIANCE_GRAZING.__doc__ = "The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."
+CRDN_POINT_TYPE.FIXED_IN_SYSTEM.__doc__ = "Point fixed in a reference coordinate system."
+CRDN_POINT_TYPE.GLINT.__doc__ = "Point on central body surface that reflects from source to observer."
+CRDN_POINT_TYPE.PLANE_INTERSECTION.__doc__ = "Point on a plane located along a given direction looking from a given origin."
+CRDN_POINT_TYPE.MODEL_ATTACHMENT.__doc__ = "Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."
+CRDN_POINT_TYPE.PLANE_PROJECTION.__doc__ = "The projection of a point onto a reference plane."
+CRDN_POINT_TYPE.ON_SURFACE.__doc__ = "The detic subpoint of the reference point as projected onto the central body."
+CRDN_POINT_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point using one primary and multiple secondary central bodies."
+CRDN_POINT_TYPE.TEMPLATE.__doc__ = "Represents a VGT point created from a template. This type of point is not creatable."
+CRDN_POINT_TYPE.CENTRAL_BODY_INTERSECT.__doc__ = "Point on central body surface along direction vector originating at source point."
+CRDN_POINT_TYPE.AT_TIME_INSTANT.__doc__ = "Point fixed relative to reference system based on another point evaluated at specified time instant."
+CRDN_POINT_TYPE.PLUGIN.__doc__ = "A point plugin point."
+CRDN_POINT_TYPE.FILE.__doc__ = "Point specified by data from a file."
+CRDN_POINT_TYPE.FIXED_ON_CENTRAL_BODY.__doc__ = "Point fixed on a central body."
+CRDN_POINT_TYPE.SATELLITE_COLLECTION_ENTRY.__doc__ = "A point placed at the center of mass of a specified satellite of the satellite collection."
 
-agcls.AgTypeNameMap["AgECrdnPointType"] = AgECrdnPointType
+agcls.AgTypeNameMap["CRDN_POINT_TYPE"] = CRDN_POINT_TYPE
 
-class AgECrdnSystemType(IntEnum):
+class CRDN_SYSTEM_TYPE(IntEnum):
     """Represents system types."""
     # Unknown or unsupported system type.
-    eCrdnSystemTypeUnknown = -1
+    UNKNOWN = -1
     # A system assembled from an origin point and a set of reference axes.
-    eCrdnSystemTypeAssembled = 0
+    ASSEMBLED = 0
     # A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle.
-    eCrdnSystemTypeOnSurface = 1
+    ON_SURFACE = 1
     # Represents a VGT system created from a template. This type of system is not creatable.
-    eCrdnSystemTypeTemplate = 2
+    TEMPLATE = 2
 
-AgECrdnSystemType.eCrdnSystemTypeUnknown.__doc__ = "Unknown or unsupported system type."
-AgECrdnSystemType.eCrdnSystemTypeAssembled.__doc__ = "A system assembled from an origin point and a set of reference axes."
-AgECrdnSystemType.eCrdnSystemTypeOnSurface.__doc__ = "A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle."
-AgECrdnSystemType.eCrdnSystemTypeTemplate.__doc__ = "Represents a VGT system created from a template. This type of system is not creatable."
+CRDN_SYSTEM_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported system type."
+CRDN_SYSTEM_TYPE.ASSEMBLED.__doc__ = "A system assembled from an origin point and a set of reference axes."
+CRDN_SYSTEM_TYPE.ON_SURFACE.__doc__ = "A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle."
+CRDN_SYSTEM_TYPE.TEMPLATE.__doc__ = "Represents a VGT system created from a template. This type of system is not creatable."
 
-agcls.AgTypeNameMap["AgECrdnSystemType"] = AgECrdnSystemType
+agcls.AgTypeNameMap["CRDN_SYSTEM_TYPE"] = CRDN_SYSTEM_TYPE
 
-class AgECrdnVectorType(IntEnum):
+class CRDN_VECTOR_TYPE(IntEnum):
     """Represents vector types."""
     # Unknown or unsupported vector type.
-    eCrdnVectorTypeUnknown = -1
+    UNKNOWN = -1
     # Vector defined by its start and end points.
-    eCrdnVectorTypeDisplacement = 0
+    DISPLACEMENT = 0
     # Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point.
-    eCrdnVectorTypeApoapsis = 1
+    APOAPSIS = 1
     # Based on another vector fixed at a specified epoch.
-    eCrdnVectorTypeFixedAtEpoch = 2
+    FIXED_AT_EPOCH = 2
     # Angular velocity vector of one set of axes computed with respect to the reference set.
-    eCrdnVectorTypeAngularVelocity = 3
+    ANGULAR_VELOCITY = 3
     # Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode.
-    eCrdnVectorTypeConing = 4
+    CONING = 4
     # The vector cross product of two vectors.
-    eCrdnVectorTypeCrossProduct = 5
+    CROSS_PRODUCT = 5
     # Customized vector components defined with respect to reference axes.
-    eCrdnVectorTypeCustomScript = 6
+    CUSTOM_SCRIPT = 6
     # Derivative of a vector computed with respect to specified axes.
-    eCrdnVectorTypeDerivative = 7
+    DERIVATIVE = 7
     # Angle rate vector perpendicular to the plane in which the angle is defined.
-    eCrdnVectorTypeAngleRate = 8
+    ANGLE_RATE = 8
     # Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point.
-    eCrdnVectorTypeEccentricity = 9
+    ECCENTRICITY = 9
     # Vector fixed in reference axes.
-    eCrdnVectorTypeFixedInAxes = 10
+    FIXED_IN_AXES = 10
     # Defined along the intersection of two planes.
-    eCrdnVectorTypeTwoPlanesIntersection = 12
+    TWO_PLANES_INTERSECTION = 12
     # Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body.
-    eCrdnVectorTypeLineOfNodes = 13
+    LINE_OF_NODES = 13
     # Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element.
-    eCrdnVectorTypeModelAttachment = 14
+    MODEL_ATTACHMENT = 14
     # Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body.
-    eCrdnVectorTypeOrbitAngularMomentum = 15
+    ORBIT_ANGULAR_MOMENTUM = 15
     # Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body.
-    eCrdnVectorTypeOrbitNormal = 16
+    ORBIT_NORMAL = 16
     # Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point.
-    eCrdnVectorTypePeriapsis = 17
+    PERIAPSIS = 17
     # A projection of a vector computed with respect to a reference plane.
-    eCrdnVectorTypeProjection = 18
+    PROJECTION = 18
     # Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane.
-    eCrdnVectorTypeReflection = 19
+    REFLECTION = 19
     # Scaled version of the input vector.
-    eCrdnVectorTypeScaled = 20
+    SCALED = 20
     # Defined with respect to a star object.
-    eCrdnVectorTypeDirectionToStar = 21
+    DIRECTION_TO_STAR = 21
     # Represents a VGT vector created from a template. This type of vector is not creatable.
-    eCrdnVectorTypeTemplate = 22
+    TEMPLATE = 22
     # Vector fixed relative to reference axes based on another vector evaluated at specified time instant.
-    eCrdnVectorTypeAtTimeInstant = 23
+    AT_TIME_INSTANT = 23
     # Linear combination of two input vectors.
-    eCrdnVectorTypeLinearCombination = 24
+    LINEAR_COMBINATION = 24
     # A projection of a source vector in the direction of another vector.
-    eCrdnVectorTypeProjectAlong = 25
+    PROJECT_ALONG = 25
     # Linear combination of two input vectors using scalars.
-    eCrdnVectorTypeScalarLinearCombination = 26
+    SCALAR_LINEAR_COMBINATION = 26
     # Scaled version of the input vector using scalar.
-    eCrdnVectorTypeScalarScaled = 27
+    SCALAR_SCALED = 27
     # Velocity vector of a point in a coordinate system.
-    eCrdnVectorTypeVelocity = 28
+    VELOCITY = 28
     # A vector plugin point.
-    eCrdnVectorTypePlugin = 29
+    PLUGIN = 29
     # Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis.
-    eCrdnVectorTypeRotationVector = 30
+    ROTATION_VECTOR = 30
     # Displacement between origin and destination points using surface distance and altitude difference.
-    eCrdnVectorTypeDisplacementOnSurface = 31
+    DISPLACEMENT_ON_SURFACE = 31
 
-AgECrdnVectorType.eCrdnVectorTypeUnknown.__doc__ = "Unknown or unsupported vector type."
-AgECrdnVectorType.eCrdnVectorTypeDisplacement.__doc__ = "Vector defined by its start and end points."
-AgECrdnVectorType.eCrdnVectorTypeApoapsis.__doc__ = "Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."
-AgECrdnVectorType.eCrdnVectorTypeFixedAtEpoch.__doc__ = "Based on another vector fixed at a specified epoch."
-AgECrdnVectorType.eCrdnVectorTypeAngularVelocity.__doc__ = "Angular velocity vector of one set of axes computed with respect to the reference set."
-AgECrdnVectorType.eCrdnVectorTypeConing.__doc__ = "Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode."
-AgECrdnVectorType.eCrdnVectorTypeCrossProduct.__doc__ = "The vector cross product of two vectors."
-AgECrdnVectorType.eCrdnVectorTypeCustomScript.__doc__ = "Customized vector components defined with respect to reference axes."
-AgECrdnVectorType.eCrdnVectorTypeDerivative.__doc__ = "Derivative of a vector computed with respect to specified axes."
-AgECrdnVectorType.eCrdnVectorTypeAngleRate.__doc__ = "Angle rate vector perpendicular to the plane in which the angle is defined."
-AgECrdnVectorType.eCrdnVectorTypeEccentricity.__doc__ = "Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."
-AgECrdnVectorType.eCrdnVectorTypeFixedInAxes.__doc__ = "Vector fixed in reference axes."
-AgECrdnVectorType.eCrdnVectorTypeTwoPlanesIntersection.__doc__ = "Defined along the intersection of two planes."
-AgECrdnVectorType.eCrdnVectorTypeLineOfNodes.__doc__ = "Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."
-AgECrdnVectorType.eCrdnVectorTypeModelAttachment.__doc__ = "Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."
-AgECrdnVectorType.eCrdnVectorTypeOrbitAngularMomentum.__doc__ = "Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
-AgECrdnVectorType.eCrdnVectorTypeOrbitNormal.__doc__ = "Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
-AgECrdnVectorType.eCrdnVectorTypePeriapsis.__doc__ = "Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."
-AgECrdnVectorType.eCrdnVectorTypeProjection.__doc__ = "A projection of a vector computed with respect to a reference plane."
-AgECrdnVectorType.eCrdnVectorTypeReflection.__doc__ = "Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."
-AgECrdnVectorType.eCrdnVectorTypeScaled.__doc__ = "Scaled version of the input vector."
-AgECrdnVectorType.eCrdnVectorTypeDirectionToStar.__doc__ = "Defined with respect to a star object."
-AgECrdnVectorType.eCrdnVectorTypeTemplate.__doc__ = "Represents a VGT vector created from a template. This type of vector is not creatable."
-AgECrdnVectorType.eCrdnVectorTypeAtTimeInstant.__doc__ = "Vector fixed relative to reference axes based on another vector evaluated at specified time instant."
-AgECrdnVectorType.eCrdnVectorTypeLinearCombination.__doc__ = "Linear combination of two input vectors."
-AgECrdnVectorType.eCrdnVectorTypeProjectAlong.__doc__ = "A projection of a source vector in the direction of another vector."
-AgECrdnVectorType.eCrdnVectorTypeScalarLinearCombination.__doc__ = "Linear combination of two input vectors using scalars."
-AgECrdnVectorType.eCrdnVectorTypeScalarScaled.__doc__ = "Scaled version of the input vector using scalar."
-AgECrdnVectorType.eCrdnVectorTypeVelocity.__doc__ = "Velocity vector of a point in a coordinate system."
-AgECrdnVectorType.eCrdnVectorTypePlugin.__doc__ = "A vector plugin point."
-AgECrdnVectorType.eCrdnVectorTypeRotationVector.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
-AgECrdnVectorType.eCrdnVectorTypeDisplacementOnSurface.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
+CRDN_VECTOR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
+CRDN_VECTOR_TYPE.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
+CRDN_VECTOR_TYPE.APOAPSIS.__doc__ = "Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."
+CRDN_VECTOR_TYPE.FIXED_AT_EPOCH.__doc__ = "Based on another vector fixed at a specified epoch."
+CRDN_VECTOR_TYPE.ANGULAR_VELOCITY.__doc__ = "Angular velocity vector of one set of axes computed with respect to the reference set."
+CRDN_VECTOR_TYPE.CONING.__doc__ = "Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode."
+CRDN_VECTOR_TYPE.CROSS_PRODUCT.__doc__ = "The vector cross product of two vectors."
+CRDN_VECTOR_TYPE.CUSTOM_SCRIPT.__doc__ = "Customized vector components defined with respect to reference axes."
+CRDN_VECTOR_TYPE.DERIVATIVE.__doc__ = "Derivative of a vector computed with respect to specified axes."
+CRDN_VECTOR_TYPE.ANGLE_RATE.__doc__ = "Angle rate vector perpendicular to the plane in which the angle is defined."
+CRDN_VECTOR_TYPE.ECCENTRICITY.__doc__ = "Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."
+CRDN_VECTOR_TYPE.FIXED_IN_AXES.__doc__ = "Vector fixed in reference axes."
+CRDN_VECTOR_TYPE.TWO_PLANES_INTERSECTION.__doc__ = "Defined along the intersection of two planes."
+CRDN_VECTOR_TYPE.LINE_OF_NODES.__doc__ = "Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."
+CRDN_VECTOR_TYPE.MODEL_ATTACHMENT.__doc__ = "Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."
+CRDN_VECTOR_TYPE.ORBIT_ANGULAR_MOMENTUM.__doc__ = "Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
+CRDN_VECTOR_TYPE.ORBIT_NORMAL.__doc__ = "Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
+CRDN_VECTOR_TYPE.PERIAPSIS.__doc__ = "Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."
+CRDN_VECTOR_TYPE.PROJECTION.__doc__ = "A projection of a vector computed with respect to a reference plane."
+CRDN_VECTOR_TYPE.REFLECTION.__doc__ = "Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."
+CRDN_VECTOR_TYPE.SCALED.__doc__ = "Scaled version of the input vector."
+CRDN_VECTOR_TYPE.DIRECTION_TO_STAR.__doc__ = "Defined with respect to a star object."
+CRDN_VECTOR_TYPE.TEMPLATE.__doc__ = "Represents a VGT vector created from a template. This type of vector is not creatable."
+CRDN_VECTOR_TYPE.AT_TIME_INSTANT.__doc__ = "Vector fixed relative to reference axes based on another vector evaluated at specified time instant."
+CRDN_VECTOR_TYPE.LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors."
+CRDN_VECTOR_TYPE.PROJECT_ALONG.__doc__ = "A projection of a source vector in the direction of another vector."
+CRDN_VECTOR_TYPE.SCALAR_LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors using scalars."
+CRDN_VECTOR_TYPE.SCALAR_SCALED.__doc__ = "Scaled version of the input vector using scalar."
+CRDN_VECTOR_TYPE.VELOCITY.__doc__ = "Velocity vector of a point in a coordinate system."
+CRDN_VECTOR_TYPE.PLUGIN.__doc__ = "A vector plugin point."
+CRDN_VECTOR_TYPE.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
+CRDN_VECTOR_TYPE.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
 
-agcls.AgTypeNameMap["AgECrdnVectorType"] = AgECrdnVectorType
+agcls.AgTypeNameMap["CRDN_VECTOR_TYPE"] = CRDN_VECTOR_TYPE
 
-class AgECrdnMeanElementTheory(IntEnum):
+class CRDN_MEAN_ELEMENT_THEORY(IntEnum):
     """Mean element theory types for approximating motion."""
     # Osculating elements (six standard Keplerian orbital elements).
-    eCrdnMeanElementTheoryOsculating = 1
+    OSCULATING = 1
     # The Kozai-Iszak (KI) mean elements are based upon the paper \"The Motion of a Close earth satellite,\" Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377.
-    eCrdnMeanElementTheoryKozai = 2
+    KOZAI = 2
     # Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2.
-    eCrdnMeanElementTheoryBrouwerLyddane_Long = 3
+    BROUWER_LYDDANE_LONG = 3
     # Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term.
-    eCrdnMeanElementTheoryBrouwerLyddane_Short = 4
+    BROUWER_LYDDANE_SHORT = 4
 
-AgECrdnMeanElementTheory.eCrdnMeanElementTheoryOsculating.__doc__ = "Osculating elements (six standard Keplerian orbital elements)."
-AgECrdnMeanElementTheory.eCrdnMeanElementTheoryKozai.__doc__ = "The Kozai-Iszak (KI) mean elements are based upon the paper ``The Motion of a Close earth satellite,`` Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."
-AgECrdnMeanElementTheory.eCrdnMeanElementTheoryBrouwerLyddane_Long.__doc__ = "Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
-AgECrdnMeanElementTheory.eCrdnMeanElementTheoryBrouwerLyddane_Short.__doc__ = "Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
+CRDN_MEAN_ELEMENT_THEORY.OSCULATING.__doc__ = "Osculating elements (six standard Keplerian orbital elements)."
+CRDN_MEAN_ELEMENT_THEORY.KOZAI.__doc__ = "The Kozai-Iszak (KI) mean elements are based upon the paper ``The Motion of a Close earth satellite,`` Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."
+CRDN_MEAN_ELEMENT_THEORY.BROUWER_LYDDANE_LONG.__doc__ = "Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
+CRDN_MEAN_ELEMENT_THEORY.BROUWER_LYDDANE_SHORT.__doc__ = "Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
 
-agcls.AgTypeNameMap["AgECrdnMeanElementTheory"] = AgECrdnMeanElementTheory
+agcls.AgTypeNameMap["CRDN_MEAN_ELEMENT_THEORY"] = CRDN_MEAN_ELEMENT_THEORY
 
-class AgECrdnDirectionType(IntEnum):
+class CRDN_DIRECTION_TYPE(IntEnum):
     """Direction options."""
     # Incoming direction.
-    eCrdnDirectionIncomingAsymptote = 1
+    INCOMING_ASYMPTOTE = 1
     # Outgoing direction.
-    eCrdnDirectionOutgoingAsymptote = 2
+    OUTGOING_ASYMPTOTE = 2
 
-AgECrdnDirectionType.eCrdnDirectionIncomingAsymptote.__doc__ = "Incoming direction."
-AgECrdnDirectionType.eCrdnDirectionOutgoingAsymptote.__doc__ = "Outgoing direction."
+CRDN_DIRECTION_TYPE.INCOMING_ASYMPTOTE.__doc__ = "Incoming direction."
+CRDN_DIRECTION_TYPE.OUTGOING_ASYMPTOTE.__doc__ = "Outgoing direction."
 
-agcls.AgTypeNameMap["AgECrdnDirectionType"] = AgECrdnDirectionType
+agcls.AgTypeNameMap["CRDN_DIRECTION_TYPE"] = CRDN_DIRECTION_TYPE
 
-class AgECrdnLagrangeLibrationPointType(IntEnum):
+class CRDN_LAGRANGE_LIBRATION_POINT_TYPE(IntEnum):
     """Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other."""
     # A point between the Sun and Earth.
-    eCrdnLagrangeLibrationPointTypeL1 = 1
+    L1 = 1
     # Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth.
-    eCrdnLagrangeLibrationPointTypeL2 = 2
+    L2 = 2
     # L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times.
-    eCrdnLagrangeLibrationPointTypeL3 = 3
+    L3 = 3
     # The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points.
-    eCrdnLagrangeLibrationPointTypeL4 = 4
+    L4 = 4
     # The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points.
-    eCrdnLagrangeLibrationPointTypeL5 = 5
+    L5 = 5
 
-AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL1.__doc__ = "A point between the Sun and Earth."
-AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL2.__doc__ = "Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth."
-AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL3.__doc__ = "L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times."
-AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL4.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
-AgECrdnLagrangeLibrationPointType.eCrdnLagrangeLibrationPointTypeL5.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
+CRDN_LAGRANGE_LIBRATION_POINT_TYPE.L1.__doc__ = "A point between the Sun and Earth."
+CRDN_LAGRANGE_LIBRATION_POINT_TYPE.L2.__doc__ = "Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth."
+CRDN_LAGRANGE_LIBRATION_POINT_TYPE.L3.__doc__ = "L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times."
+CRDN_LAGRANGE_LIBRATION_POINT_TYPE.L4.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
+CRDN_LAGRANGE_LIBRATION_POINT_TYPE.L5.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
 
-agcls.AgTypeNameMap["AgECrdnLagrangeLibrationPointType"] = AgECrdnLagrangeLibrationPointType
+agcls.AgTypeNameMap["CRDN_LAGRANGE_LIBRATION_POINT_TYPE"] = CRDN_LAGRANGE_LIBRATION_POINT_TYPE
 
-class AgECrdnQuadrantType(IntEnum):
+class CRDN_QUADRANT_TYPE(IntEnum):
     """Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY),"""
     # XY quadrant.
-    eCrdnQuadrantXY = 1
+    XY = 1
     # YX quadrant.
-    eCrdnQuadrantYX = 2
+    YX = 2
     # XZ quadrant.
-    eCrdnQuadrantXZ = 3
+    XZ = 3
     # ZX quadrant.
-    eCrdnQuadrantZX = 4
+    ZX = 4
     # YZ quadrant.
-    eCrdnQuadrantYZ = 5
+    YZ = 5
     # ZY quadrant.
-    eCrdnQuadrantZY = 6
+    ZY = 6
 
-AgECrdnQuadrantType.eCrdnQuadrantXY.__doc__ = "XY quadrant."
-AgECrdnQuadrantType.eCrdnQuadrantYX.__doc__ = "YX quadrant."
-AgECrdnQuadrantType.eCrdnQuadrantXZ.__doc__ = "XZ quadrant."
-AgECrdnQuadrantType.eCrdnQuadrantZX.__doc__ = "ZX quadrant."
-AgECrdnQuadrantType.eCrdnQuadrantYZ.__doc__ = "YZ quadrant."
-AgECrdnQuadrantType.eCrdnQuadrantZY.__doc__ = "ZY quadrant."
+CRDN_QUADRANT_TYPE.XY.__doc__ = "XY quadrant."
+CRDN_QUADRANT_TYPE.YX.__doc__ = "YX quadrant."
+CRDN_QUADRANT_TYPE.XZ.__doc__ = "XZ quadrant."
+CRDN_QUADRANT_TYPE.ZX.__doc__ = "ZX quadrant."
+CRDN_QUADRANT_TYPE.YZ.__doc__ = "YZ quadrant."
+CRDN_QUADRANT_TYPE.ZY.__doc__ = "ZY quadrant."
 
-agcls.AgTypeNameMap["AgECrdnQuadrantType"] = AgECrdnQuadrantType
+agcls.AgTypeNameMap["CRDN_QUADRANT_TYPE"] = CRDN_QUADRANT_TYPE
 
-class AgECrdnTrajectoryAxesType(IntEnum):
+class CRDN_TRAJECTORY_AXES_TYPE(IntEnum):
     """Trajectory axes coordinate types."""
     # Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack).
-    eCrdnTrajectoryAxesICR = 0
+    ICR = 0
     # Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal).
-    eCrdnTrajectoryAxesVNC = 1
+    VNC = 1
     # Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack).
-    eCrdnTrajectoryAxesRIC = 2
+    RIC = 2
     # Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal).
-    eCrdnTrajectoryAxesLVLH = 3
+    LVLH = 3
     # Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity).
-    eCrdnTrajectoryAxesVVLH = 4
+    VVLH = 4
     # Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X.
-    eCrdnTrajectoryAxesBBR = 5
+    BBR = 5
     # Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X.
-    eCrdnTrajectoryAxesEquinoctial = 6
+    EQUINOCTIAL = 6
     # Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal).
-    eCrdnTrajectoryAxesNTC = 7
+    NTC = 7
 
-AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesICR.__doc__ = "Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."
-AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesVNC.__doc__ = "Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal)."
-AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesRIC.__doc__ = "Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack)."
-AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesLVLH.__doc__ = "Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal)."
-AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesVVLH.__doc__ = "Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity)."
-AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesBBR.__doc__ = "Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X."
-AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesEquinoctial.__doc__ = "Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X."
-AgECrdnTrajectoryAxesType.eCrdnTrajectoryAxesNTC.__doc__ = "Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal)."
+CRDN_TRAJECTORY_AXES_TYPE.ICR.__doc__ = "Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."
+CRDN_TRAJECTORY_AXES_TYPE.VNC.__doc__ = "Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal)."
+CRDN_TRAJECTORY_AXES_TYPE.RIC.__doc__ = "Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack)."
+CRDN_TRAJECTORY_AXES_TYPE.LVLH.__doc__ = "Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal)."
+CRDN_TRAJECTORY_AXES_TYPE.VVLH.__doc__ = "Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity)."
+CRDN_TRAJECTORY_AXES_TYPE.BBR.__doc__ = "Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X."
+CRDN_TRAJECTORY_AXES_TYPE.EQUINOCTIAL.__doc__ = "Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X."
+CRDN_TRAJECTORY_AXES_TYPE.NTC.__doc__ = "Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal)."
 
-agcls.AgTypeNameMap["AgECrdnTrajectoryAxesType"] = AgECrdnTrajectoryAxesType
+agcls.AgTypeNameMap["CRDN_TRAJECTORY_AXES_TYPE"] = CRDN_TRAJECTORY_AXES_TYPE
 
-class AgECrdnDisplayAxisSelector(IntEnum):
+class CRDN_DISPLAY_AXIS_SELECTOR(IntEnum):
     """Rotation directions."""
     # Rotate about Axis X.
-    eCrdnDisplayAxisX = 0
+    X = 0
     # Rotate about Axis Y.
-    eCrdnDisplayAxisY = 1
+    Y = 1
     # Rotate about Axis Z.
-    eCrdnDisplayAxisZ = 2
+    Z = 2
 
-AgECrdnDisplayAxisSelector.eCrdnDisplayAxisX.__doc__ = "Rotate about Axis X."
-AgECrdnDisplayAxisSelector.eCrdnDisplayAxisY.__doc__ = "Rotate about Axis Y."
-AgECrdnDisplayAxisSelector.eCrdnDisplayAxisZ.__doc__ = "Rotate about Axis Z."
+CRDN_DISPLAY_AXIS_SELECTOR.X.__doc__ = "Rotate about Axis X."
+CRDN_DISPLAY_AXIS_SELECTOR.Y.__doc__ = "Rotate about Axis Y."
+CRDN_DISPLAY_AXIS_SELECTOR.Z.__doc__ = "Rotate about Axis Z."
 
-agcls.AgTypeNameMap["AgECrdnDisplayAxisSelector"] = AgECrdnDisplayAxisSelector
+agcls.AgTypeNameMap["CRDN_DISPLAY_AXIS_SELECTOR"] = CRDN_DISPLAY_AXIS_SELECTOR
 
-class AgECrdnSignedAngleType(IntEnum):
+class CRDN_SIGNED_ANGLE_TYPE(IntEnum):
     """Defines options for computing an angle."""
     # Choose the option to use unsigned angle.
-    eCrdnSignedAngleNone = 0
+    NONE = 0
     # Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal.
-    eCrdnSignedAnglePositive = 1
+    POSITIVE = 1
     # Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal.
-    eCrdnSignedAngleNegative = 2
+    NEGATIVE = 2
 
-AgECrdnSignedAngleType.eCrdnSignedAngleNone.__doc__ = "Choose the option to use unsigned angle."
-AgECrdnSignedAngleType.eCrdnSignedAnglePositive.__doc__ = "Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal."
-AgECrdnSignedAngleType.eCrdnSignedAngleNegative.__doc__ = "Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal."
+CRDN_SIGNED_ANGLE_TYPE.NONE.__doc__ = "Choose the option to use unsigned angle."
+CRDN_SIGNED_ANGLE_TYPE.POSITIVE.__doc__ = "Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal."
+CRDN_SIGNED_ANGLE_TYPE.NEGATIVE.__doc__ = "Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal."
 
-agcls.AgTypeNameMap["AgECrdnSignedAngleType"] = AgECrdnSignedAngleType
+agcls.AgTypeNameMap["CRDN_SIGNED_ANGLE_TYPE"] = CRDN_SIGNED_ANGLE_TYPE
 
-class AgECrdnPointBPlaneType(IntEnum):
+class CRDN_POINT_B_PLANE_TYPE(IntEnum):
     """B-Plane point types."""
     # Asymptote.
-    eCrdnPointBPlaneAsymptote = 1
+    ASYMPTOTE = 1
     # Two body.
-    eCrdnPointBPlaneATwoBody = 2
+    A_TWO_BODY = 2
 
-AgECrdnPointBPlaneType.eCrdnPointBPlaneAsymptote.__doc__ = "Asymptote."
-AgECrdnPointBPlaneType.eCrdnPointBPlaneATwoBody.__doc__ = "Two body."
+CRDN_POINT_B_PLANE_TYPE.ASYMPTOTE.__doc__ = "Asymptote."
+CRDN_POINT_B_PLANE_TYPE.A_TWO_BODY.__doc__ = "Two body."
 
-agcls.AgTypeNameMap["AgECrdnPointBPlaneType"] = AgECrdnPointBPlaneType
+agcls.AgTypeNameMap["CRDN_POINT_B_PLANE_TYPE"] = CRDN_POINT_B_PLANE_TYPE
 
-class AgECrdnReferenceShapeType(IntEnum):
+class CRDN_REFERENCE_SHAPE_TYPE(IntEnum):
     """Surface shape types."""
     # An ellipsoid reference shape as defined by the central body (by default, it is WSG84).
-    eCrdnReferenceShapeEllipsoid = 1
+    ELLIPSOID = 1
     # Terrain as the terrain reference.
-    eCrdnReferenceShapeTerrain = 2
+    TERRAIN = 2
     # Mean Sea Level as the terrain reference.
-    eCrdnReferenceShapeMSL = 3
+    MSL = 3
 
-AgECrdnReferenceShapeType.eCrdnReferenceShapeEllipsoid.__doc__ = "An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."
-AgECrdnReferenceShapeType.eCrdnReferenceShapeTerrain.__doc__ = "Terrain as the terrain reference."
-AgECrdnReferenceShapeType.eCrdnReferenceShapeMSL.__doc__ = "Mean Sea Level as the terrain reference."
+CRDN_REFERENCE_SHAPE_TYPE.ELLIPSOID.__doc__ = "An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."
+CRDN_REFERENCE_SHAPE_TYPE.TERRAIN.__doc__ = "Terrain as the terrain reference."
+CRDN_REFERENCE_SHAPE_TYPE.MSL.__doc__ = "Mean Sea Level as the terrain reference."
 
-agcls.AgTypeNameMap["AgECrdnReferenceShapeType"] = AgECrdnReferenceShapeType
+agcls.AgTypeNameMap["CRDN_REFERENCE_SHAPE_TYPE"] = CRDN_REFERENCE_SHAPE_TYPE
 
-class AgECrdnSurfaceType(IntEnum):
+class CRDN_SURFACE_TYPE(IntEnum):
     """Surface types."""
     # Detic surface model.
-    eCrdnSurfaceDetic = 1
+    DETIC = 1
     # Centric surface model.
-    eCrdnSurfaceCentric = 2
+    CENTRIC = 2
 
-AgECrdnSurfaceType.eCrdnSurfaceDetic.__doc__ = "Detic surface model."
-AgECrdnSurfaceType.eCrdnSurfaceCentric.__doc__ = "Centric surface model."
+CRDN_SURFACE_TYPE.DETIC.__doc__ = "Detic surface model."
+CRDN_SURFACE_TYPE.CENTRIC.__doc__ = "Centric surface model."
 
-agcls.AgTypeNameMap["AgECrdnSurfaceType"] = AgECrdnSurfaceType
+agcls.AgTypeNameMap["CRDN_SURFACE_TYPE"] = CRDN_SURFACE_TYPE
 
-class AgECrdnSweepMode(IntEnum):
+class CRDN_SWEEP_MODE(IntEnum):
     """The rotation sweeping modes."""
     # Bidirectional sweeping mode.
-    eCrdnSweepModeBidirectional = 1
+    BIDIRECTIONAL = 1
     # Unidirectional sweeping mode.
-    eCrdnSweepModeUnidirectional = 2
+    UNIDIRECTIONAL = 2
 
-AgECrdnSweepMode.eCrdnSweepModeBidirectional.__doc__ = "Bidirectional sweeping mode."
-AgECrdnSweepMode.eCrdnSweepModeUnidirectional.__doc__ = "Unidirectional sweeping mode."
+CRDN_SWEEP_MODE.BIDIRECTIONAL.__doc__ = "Bidirectional sweeping mode."
+CRDN_SWEEP_MODE.UNIDIRECTIONAL.__doc__ = "Unidirectional sweeping mode."
 
-agcls.AgTypeNameMap["AgECrdnSweepMode"] = AgECrdnSweepMode
+agcls.AgTypeNameMap["CRDN_SWEEP_MODE"] = CRDN_SWEEP_MODE
 
-class AgECrdnSignalSense(IntEnum):
+class CRDN_SIGNAL_SENSE(IntEnum):
     """Signal sense transmission options."""
     # Signal receive.
-    eCrdnSignalSenseReceive = 1
+    RECEIVE = 1
     # Signal transmit.
-    eCrdnSignalSenseTransmit = 2
+    TRANSMIT = 2
 
-AgECrdnSignalSense.eCrdnSignalSenseReceive.__doc__ = "Signal receive."
-AgECrdnSignalSense.eCrdnSignalSenseTransmit.__doc__ = "Signal transmit."
+CRDN_SIGNAL_SENSE.RECEIVE.__doc__ = "Signal receive."
+CRDN_SIGNAL_SENSE.TRANSMIT.__doc__ = "Signal transmit."
 
-agcls.AgTypeNameMap["AgECrdnSignalSense"] = AgECrdnSignalSense
+agcls.AgTypeNameMap["CRDN_SIGNAL_SENSE"] = CRDN_SIGNAL_SENSE
 
-class AgECrdnIntersectionSurface(IntEnum):
+class CRDN_INTERSECTION_SURFACE(IntEnum):
     """Intersection surface flags."""
     # Intersection with central body ellipsoid.
-    eCrdnIntersectionSurfaceAtCentralBodyEllipsoid = 0
+    AT_CENTRAL_BODY_ELLIPSOID = 0
     # Intersection at altitude.
-    eCrdnIntersectionSurfaceAtAltitudeAboveEllipsoid = 1
+    AT_ALTITUDE_ABOVE_ELLIPSOID = 1
     # Use terrain as intersection surface.
-    eCrdnIntersectionSurfaceAtTerrain = 2
+    AT_TERRAIN = 2
 
-AgECrdnIntersectionSurface.eCrdnIntersectionSurfaceAtCentralBodyEllipsoid.__doc__ = "Intersection with central body ellipsoid."
-AgECrdnIntersectionSurface.eCrdnIntersectionSurfaceAtAltitudeAboveEllipsoid.__doc__ = "Intersection at altitude."
-AgECrdnIntersectionSurface.eCrdnIntersectionSurfaceAtTerrain.__doc__ = "Use terrain as intersection surface."
+CRDN_INTERSECTION_SURFACE.AT_CENTRAL_BODY_ELLIPSOID.__doc__ = "Intersection with central body ellipsoid."
+CRDN_INTERSECTION_SURFACE.AT_ALTITUDE_ABOVE_ELLIPSOID.__doc__ = "Intersection at altitude."
+CRDN_INTERSECTION_SURFACE.AT_TERRAIN.__doc__ = "Use terrain as intersection surface."
 
-agcls.AgTypeNameMap["AgECrdnIntersectionSurface"] = AgECrdnIntersectionSurface
+agcls.AgTypeNameMap["CRDN_INTERSECTION_SURFACE"] = CRDN_INTERSECTION_SURFACE
 
-class AgECrdnVectorScaledDimensionInheritance(IntEnum):
+class CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
     # Do not inherit dimension.
-    eCrdnVectorScaledDimensionInheritanceNone = 0
+    NONE = 0
     # Inherit dimension from scalar.
-    eCrdnVectorScaledDimensionInheritanceFromScalar = 1
+    FROM_SCALAR = 1
     # Inherit dimension from vector.
-    eCrdnVectorScaledDimensionInheritanceFromVector = 2
+    FROM_VECTOR = 2
 
-AgECrdnVectorScaledDimensionInheritance.eCrdnVectorScaledDimensionInheritanceNone.__doc__ = "Do not inherit dimension."
-AgECrdnVectorScaledDimensionInheritance.eCrdnVectorScaledDimensionInheritanceFromScalar.__doc__ = "Inherit dimension from scalar."
-AgECrdnVectorScaledDimensionInheritance.eCrdnVectorScaledDimensionInheritanceFromVector.__doc__ = "Inherit dimension from vector."
+CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE.NONE.__doc__ = "Do not inherit dimension."
+CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE.FROM_SCALAR.__doc__ = "Inherit dimension from scalar."
+CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE.FROM_VECTOR.__doc__ = "Inherit dimension from vector."
 
-agcls.AgTypeNameMap["AgECrdnVectorScaledDimensionInheritance"] = AgECrdnVectorScaledDimensionInheritance
+agcls.AgTypeNameMap["CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE"] = CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE
 
 
 class ITimeToolIntervalCollection(object):
@@ -2025,9 +2025,9 @@ class IVectorGeometryToolPoint(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPoint.")
     
     @property
-    def type(self) -> "AgECrdnPointType":
+    def type(self) -> "CRDN_POINT_TYPE":
         """Returns a type of the point object."""
-        with agmarshall.AgEnum_arg(AgECrdnPointType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_POINT_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2089,9 +2089,9 @@ class IVectorGeometryToolVector(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVector.")
     
     @property
-    def type(self) -> "AgECrdnVectorType":
+    def type(self) -> "CRDN_VECTOR_TYPE":
         """Returns a type of the vector object."""
-        with agmarshall.AgEnum_arg(AgECrdnVectorType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VECTOR_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2155,9 +2155,9 @@ class IVectorGeometryToolSystem(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystem.")
     
     @property
-    def type(self) -> "AgECrdnSystemType":
+    def type(self) -> "CRDN_SYSTEM_TYPE":
         """Returns a type of the system object."""
-        with agmarshall.AgEnum_arg(AgECrdnSystemType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SYSTEM_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2242,9 +2242,9 @@ class IVectorGeometryToolAxes(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxes.")
     
     @property
-    def type(self) -> "AgECrdnAxesType":
+    def type(self) -> "CRDN_AXES_TYPE":
         """Returns a type of the axes object."""
-        with agmarshall.AgEnum_arg(AgECrdnAxesType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_AXES_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2357,9 +2357,9 @@ class IVectorGeometryToolAngle(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngle.")
     
     @property
-    def type(self) -> "AgECrdnAngleType":
+    def type(self) -> "CRDN_ANGLE_TYPE":
         """Returns a type of the angle object."""
-        with agmarshall.AgEnum_arg(AgECrdnAngleType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_ANGLE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2441,9 +2441,9 @@ class IVectorGeometryToolPlane(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlane.")
     
     @property
-    def type(self) -> "AgECrdnPlaneType":
+    def type(self) -> "CRDN_PLANE_TYPE":
         """Returns a type of the plane object."""
-        with agmarshall.AgEnum_arg(AgECrdnPlaneType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_PLANE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2604,9 +2604,9 @@ class IAnalysisWorkbenchComponent(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAnalysisWorkbenchComponent.")
     
     @property
-    def kind(self) -> "AgECrdnKind":
+    def kind(self) -> "CRDN_KIND":
         """Returns the component kind."""
-        with agmarshall.AgEnum_arg(AgECrdnKind) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_KIND) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_kind"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -2652,7 +2652,7 @@ class IAnalysisWorkbenchComponent(object):
 
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Returns the context object associated with the instance. The returned object is either an instance of IAnalysisWorkbenchInstance or IAnalysisWorkbenchComponentTemplate interface."""
+        """Returns the context object associated with the instance. The returned object is either an instance of IAnalysisWorkbenchInstance or IAnalysisWorkbenchTemplate interface."""
         with agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_context"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -4989,9 +4989,9 @@ class ICalculationToolScalar(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolScalar.")
     
     @property
-    def type(self) -> "AgECrdnCalcScalarType":
+    def type(self) -> "CRDN_CALC_SCALAR_TYPE":
         """Returns the scalar calculation type."""
-        with agmarshall.AgEnum_arg(AgECrdnCalcScalarType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_CALC_SCALAR_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -5378,15 +5378,15 @@ class ICalculationToolScalarDataElement(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_samples"](arg_useSamples.COM_val))
 
     @property
-    def save_data_option(self) -> "AgECrdnSaveDataOption":
+    def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
         """Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load."""
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_save_data_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"AgECrdnSaveDataOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption, saveDataOption) as arg_saveDataOption:
+    def save_data_option(self, saveDataOption:"CRDN_SAVE_DATA_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION, saveDataOption) as arg_saveDataOption:
             agcls.evaluate_hresult(self.__dict__["_set_save_data_option"](arg_saveDataOption.COM_val))
 
     def set(self, dataProvider:str, elementName:str) -> None:
@@ -5745,11 +5745,11 @@ class ICalculationToolScalarFactory(object):
             agcls.evaluate_hresult(self.__dict__["_get_available_calc_scalar_plugin_display_names"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create(self, name:str, description:str, type:"AgECrdnCalcScalarType") -> "ICalculationToolScalar":
+    def create(self, name:str, description:str, type:"CRDN_CALC_SCALAR_TYPE") -> "ICalculationToolScalar":
         """Creates and registers a scalar calculation using specified name, description, and type."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnCalcScalarType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_CALC_SCALAR_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -5865,9 +5865,9 @@ class ICalculationToolScalarFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_calc_scalar_plugin_from_display_name"](arg_name.COM_val, arg_description.COM_val, arg_displayName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnCalcScalarType") -> bool:
+    def is_type_supported(self, eType:"CRDN_CALC_SCALAR_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnCalcScalarType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_CALC_SCALAR_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -5983,15 +5983,15 @@ class ICalculationToolScalarFile(object):
             return arg_ppRetVal.python_val
 
     @property
-    def file_interpolation_type(self) -> "AgECrdnFileInterpolatorType":
+    def file_interpolation_type(self) -> "CRDN_FILE_INTERPOLATOR_TYPE":
         """The interpolation method used with the data."""
-        with agmarshall.AgEnum_arg(AgECrdnFileInterpolatorType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_FILE_INTERPOLATOR_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_file_interpolation_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @file_interpolation_type.setter
-    def file_interpolation_type(self, fileInterpolationType:"AgECrdnFileInterpolatorType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnFileInterpolatorType, fileInterpolationType) as arg_fileInterpolationType:
+    def file_interpolation_type(self, fileInterpolationType:"CRDN_FILE_INTERPOLATOR_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_FILE_INTERPOLATOR_TYPE, fileInterpolationType) as arg_fileInterpolationType:
             agcls.evaluate_hresult(self.__dict__["_set_file_interpolation_type"](arg_fileInterpolationType.COM_val))
 
     @property
@@ -6535,15 +6535,15 @@ class ICalculationToolScalarFunction2Var(object):
             agcls.evaluate_hresult(self.__dict__["_set_c"](arg_c.COM_val))
 
     @property
-    def output_dimension_inheritance(self) -> "AgECrdnDimensionInheritance":
+    def output_dimension_inheritance(self) -> "CRDN_DIMENSION_INHERITANCE":
         """Specifies whether the output dimension is inherited or explicitly specified using OutputDimension."""
-        with agmarshall.AgEnum_arg(AgECrdnDimensionInheritance) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_output_dimension_inheritance"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, outputDimensionInheritance:"AgECrdnDimensionInheritance") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnDimensionInheritance, outputDimensionInheritance) as arg_outputDimensionInheritance:
+    def output_dimension_inheritance(self, outputDimensionInheritance:"CRDN_DIMENSION_INHERITANCE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE, outputDimensionInheritance) as arg_outputDimensionInheritance:
             agcls.evaluate_hresult(self.__dict__["_set_output_dimension_inheritance"](arg_outputDimensionInheritance.COM_val))
 
     @property
@@ -6699,15 +6699,15 @@ class ICalculationToolScalarIntegral(object):
             agcls.evaluate_hresult(self.__dict__["_set_compute_as_average"](arg_computeAsAverage.COM_val))
 
     @property
-    def integration_window_type(self) -> "AgECrdnIntegrationWindowType":
+    def integration_window_type(self) -> "CRDN_INTEGRATION_WINDOW_TYPE":
         """The integration window, or accumulation, type."""
-        with agmarshall.AgEnum_arg(AgECrdnIntegrationWindowType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTEGRATION_WINDOW_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_integration_window_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @integration_window_type.setter
-    def integration_window_type(self, integrationWindowType:"AgECrdnIntegrationWindowType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnIntegrationWindowType, integrationWindowType) as arg_integrationWindowType:
+    def integration_window_type(self, integrationWindowType:"CRDN_INTEGRATION_WINDOW_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTEGRATION_WINDOW_TYPE, integrationWindowType) as arg_integrationWindowType:
             agcls.evaluate_hresult(self.__dict__["_set_integration_window_type"](arg_integrationWindowType.COM_val))
 
     @property
@@ -6759,15 +6759,15 @@ class ICalculationToolScalarIntegral(object):
             agcls.evaluate_hresult(self.__dict__["_set_custom_time_limits"](arg_customTimeLimits.COM_val))
 
     @property
-    def save_data_option(self) -> "AgECrdnSaveDataOption":
+    def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
         """Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary."""
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_save_data_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"AgECrdnSaveDataOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption, saveDataOption) as arg_saveDataOption:
+    def save_data_option(self, saveDataOption:"CRDN_SAVE_DATA_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION, saveDataOption) as arg_saveDataOption:
             agcls.evaluate_hresult(self.__dict__["_set_save_data_option"](arg_saveDataOption.COM_val))
 
     @property
@@ -7080,15 +7080,15 @@ class ICalculationToolScalarVectorComponent(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_axes"](arg_referenceAxes.COM_val))
 
     @property
-    def component(self) -> "AgECrdnVectorComponentType":
+    def component(self) -> "CRDN_VECTOR_COMPONENT_TYPE":
         """The component of the vector to return as the value of the scalar."""
-        with agmarshall.AgEnum_arg(AgECrdnVectorComponentType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VECTOR_COMPONENT_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_component"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @component.setter
-    def component(self, component:"AgECrdnVectorComponentType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVectorComponentType, component) as arg_component:
+    def component(self, component:"CRDN_VECTOR_COMPONENT_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VECTOR_COMPONENT_TYPE, component) as arg_component:
             agcls.evaluate_hresult(self.__dict__["_set_component"](arg_component.COM_val))
 
 
@@ -7184,9 +7184,9 @@ class ICalculationToolCondition(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolCondition.")
     
     @property
-    def type(self) -> "AgECrdnConditionType":
+    def type(self) -> "CRDN_CONDITION_TYPE":
         """Returns the type of condition."""
-        with agmarshall.AgEnum_arg(AgECrdnConditionType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -7258,15 +7258,15 @@ class ICalculationToolConditionCombined(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionCombined.")
     
     @property
-    def combine_operation(self) -> "AgECrdnConditionCombinedOperationType":
+    def combine_operation(self) -> "CRDN_CONDITION_COMBINED_OPERATION_TYPE":
         """Get the operation from the condition that determines how the conditions are combined. The operation can be set to AND, OR, XOR, MINUS."""
-        with agmarshall.AgEnum_arg(AgECrdnConditionCombinedOperationType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_COMBINED_OPERATION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_combine_operation"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @combine_operation.setter
-    def combine_operation(self, combineOperation:"AgECrdnConditionCombinedOperationType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnConditionCombinedOperationType, combineOperation) as arg_combineOperation:
+    def combine_operation(self, combineOperation:"CRDN_CONDITION_COMBINED_OPERATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_COMBINED_OPERATION_TYPE, combineOperation) as arg_combineOperation:
             agcls.evaluate_hresult(self.__dict__["_set_combine_operation"](arg_combineOperation.COM_val))
 
     @property
@@ -7355,11 +7355,11 @@ class ICalculationToolConditionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnConditionType") -> "ICalculationToolCondition":
+    def create(self, name:str, description:str, type:"CRDN_CONDITION_TYPE") -> "ICalculationToolCondition":
         """Creates and registers a condition using specified name, description and type."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnConditionType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_CONDITION_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -7372,9 +7372,9 @@ class ICalculationToolConditionFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_condition_scalar_bounds"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnConditionType") -> bool:
+    def is_type_supported(self, eType:"CRDN_CONDITION_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnConditionType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -7538,15 +7538,15 @@ class ICalculationToolConditionScalarBounds(object):
             agcls.evaluate_hresult(self.__dict__["_set_scalar"](arg_scalar.COM_val))
 
     @property
-    def operation(self) -> "AgECrdnConditionThresholdOption":
+    def operation(self) -> "CRDN_CONDITION_THRESHOLD_OPTION":
         """Get the operation from the condition that determines how the bounds are considered. The operation can be set to define satisfaction when the scalar is above minimum, below maximum, between minimum and maximum or outside minimum and maximum."""
-        with agmarshall.AgEnum_arg(AgECrdnConditionThresholdOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_THRESHOLD_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_operation"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @operation.setter
-    def operation(self, operation:"AgECrdnConditionThresholdOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnConditionThresholdOption, operation) as arg_operation:
+    def operation(self, operation:"CRDN_CONDITION_THRESHOLD_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_THRESHOLD_OPTION, operation) as arg_operation:
             agcls.evaluate_hresult(self.__dict__["_set_operation"](arg_operation.COM_val))
 
     def get_minimum(self) -> "IQuantity":
@@ -7647,9 +7647,9 @@ class ICalculationToolConditionSet(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionSet.")
     
     @property
-    def type(self) -> "AgECrdnConditionSetType":
+    def type(self) -> "CRDN_CONDITION_SET_TYPE":
         """Returns the type of condition set."""
-        with agmarshall.AgEnum_arg(AgECrdnConditionSetType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_SET_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -7708,11 +7708,11 @@ class ICalculationToolConditionSetFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConditionSetFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnConditionSetType") -> "ICalculationToolConditionSet":
+    def create(self, name:str, description:str, type:"CRDN_CONDITION_SET_TYPE") -> "ICalculationToolConditionSet":
         """Creates and registers a condition set using specified name, description, and type."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnConditionSetType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_CONDITION_SET_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -7725,9 +7725,9 @@ class ICalculationToolConditionSetFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_scalar_thresholds"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnConditionSetType") -> bool:
+    def is_type_supported(self, eType:"CRDN_CONDITION_SET_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnConditionSetType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_SET_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -7928,15 +7928,15 @@ class ICalculationToolConvergeBasic(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolConvergeBasic.")
     
     @property
-    def sense(self) -> "AgECrdnThreshConvergeSense":
+    def sense(self) -> "CRDN_THRESH_CONVERGE_SENSE":
         """Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries."""
-        with agmarshall.AgEnum_arg(AgECrdnThreshConvergeSense) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_THRESH_CONVERGE_SENSE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_sense"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @sense.setter
-    def sense(self, sense:"AgECrdnThreshConvergeSense") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnThreshConvergeSense, sense) as arg_sense:
+    def sense(self, sense:"CRDN_THRESH_CONVERGE_SENSE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_THRESH_CONVERGE_SENSE, sense) as arg_sense:
             agcls.evaluate_hresult(self.__dict__["_set_sense"](arg_sense.COM_val))
 
     @property
@@ -8111,9 +8111,9 @@ class ITimeToolEvent(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEvent.")
     
     @property
-    def type(self) -> "AgECrdnEventType":
+    def type(self) -> "CRDN_EVENT_TYPE":
         """Return the type of time instant."""
-        with agmarshall.AgEnum_arg(AgECrdnEventType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -8198,9 +8198,9 @@ class ITimeToolEventArray(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArray.")
     
     @property
-    def type(self) -> "AgECrdnEventArrayType":
+    def type(self) -> "CRDN_EVENT_ARRAY_TYPE":
         """Return the type of time array."""
-        with agmarshall.AgEnum_arg(AgECrdnEventArrayType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_ARRAY_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -8274,15 +8274,15 @@ class ITimeToolEventArrayConditionCrossings(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayConditionCrossings.")
     
     @property
-    def satisfaction_crossing(self) -> "AgECrdnSatisfactionCrossing":
+    def satisfaction_crossing(self) -> "CRDN_SATISFACTION_CROSSING":
         """The direction of interest for satisfaction crossing."""
-        with agmarshall.AgEnum_arg(AgECrdnSatisfactionCrossing) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SATISFACTION_CROSSING) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_satisfaction_crossing"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @satisfaction_crossing.setter
-    def satisfaction_crossing(self, satisfactionCrossing:"AgECrdnSatisfactionCrossing") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSatisfactionCrossing, satisfactionCrossing) as arg_satisfactionCrossing:
+    def satisfaction_crossing(self, satisfactionCrossing:"CRDN_SATISFACTION_CROSSING") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SATISFACTION_CROSSING, satisfactionCrossing) as arg_satisfactionCrossing:
             agcls.evaluate_hresult(self.__dict__["_set_satisfaction_crossing"](arg_satisfactionCrossing.COM_val))
 
     @property
@@ -8322,15 +8322,15 @@ class ITimeToolEventArrayConditionCrossings(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_custom_time_limits"](arg_useCustomTimeLimits.COM_val))
 
     @property
-    def save_data_option(self) -> "AgECrdnSaveDataOption":
+    def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
         """Determine if computed satisfaction crossing times are saved/loaded, or recomputed on load if necessary."""
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_save_data_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"AgECrdnSaveDataOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption, saveDataOption) as arg_saveDataOption:
+    def save_data_option(self, saveDataOption:"CRDN_SAVE_DATA_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION, saveDataOption) as arg_saveDataOption:
             agcls.evaluate_hresult(self.__dict__["_set_save_data_option"](arg_saveDataOption.COM_val))
 
     @property
@@ -8425,15 +8425,15 @@ class ITimeToolEventArrayExtrema(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayExtrema.")
     
     @property
-    def extremum_type(self) -> "AgECrdnExtremumConstants":
+    def extremum_type(self) -> "CRDN_EXTREMUM_CONSTANTS":
         """The extremum type of interest (either minimum or maximum) for scalar calculation."""
-        with agmarshall.AgEnum_arg(AgECrdnExtremumConstants) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EXTREMUM_CONSTANTS) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_extremum_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @extremum_type.setter
-    def extremum_type(self, extremumType:"AgECrdnExtremumConstants") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnExtremumConstants, extremumType) as arg_extremumType:
+    def extremum_type(self, extremumType:"CRDN_EXTREMUM_CONSTANTS") -> None:
+        with agmarshall.AgEnum_arg(CRDN_EXTREMUM_CONSTANTS, extremumType) as arg_extremumType:
             agcls.evaluate_hresult(self.__dict__["_set_extremum_type"](arg_extremumType.COM_val))
 
     @property
@@ -8485,15 +8485,15 @@ class ITimeToolEventArrayExtrema(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_custom_time_limits"](arg_useCustomTimeLimits.COM_val))
 
     @property
-    def save_data_option(self) -> "AgECrdnSaveDataOption":
+    def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
         """Specify whether computed times of extrema are saved/loaded, otherwise it is recomputed on load if necessary."""
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_save_data_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"AgECrdnSaveDataOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption, saveDataOption) as arg_saveDataOption:
+    def save_data_option(self, saveDataOption:"CRDN_SAVE_DATA_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION, saveDataOption) as arg_saveDataOption:
             agcls.evaluate_hresult(self.__dict__["_set_save_data_option"](arg_saveDataOption.COM_val))
 
     @property
@@ -8575,11 +8575,11 @@ class ITimeToolEventArrayFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnEventArrayType") -> "ITimeToolEventArray":
+    def create(self, name:str, description:str, type:"CRDN_EVENT_ARRAY_TYPE") -> "ITimeToolEventArray":
         """Create and register an event array using specified name, description, and type."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnEventArrayType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_EVENT_ARRAY_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -8640,9 +8640,9 @@ class ITimeToolEventArrayFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_event_array_signaled"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnEventArrayType") -> bool:
+    def is_type_supported(self, eType:"CRDN_EVENT_ARRAY_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnEventArrayType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_EVENT_ARRAY_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -8727,15 +8727,15 @@ class ITimeToolEventArrayFiltered(object):
             agcls.evaluate_hresult(self.__dict__["_set_original_time_array"](arg_originalTimeArray.COM_val))
 
     @property
-    def filter_type(self) -> "AgECrdnEventArrayFilterType":
+    def filter_type(self) -> "CRDN_EVENT_ARRAY_FILTER_TYPE":
         """Skip Time Steps filter type omits from filtered time array any times that fall within specified time step of last accepted time sample. Skip Count filter type omits specified number of time samples since last accepted time sample..."""
-        with agmarshall.AgEnum_arg(AgECrdnEventArrayFilterType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_ARRAY_FILTER_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_filter_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @filter_type.setter
-    def filter_type(self, filterType:"AgECrdnEventArrayFilterType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnEventArrayFilterType, filterType) as arg_filterType:
+    def filter_type(self, filterType:"CRDN_EVENT_ARRAY_FILTER_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_ARRAY_FILTER_TYPE, filterType) as arg_filterType:
             agcls.evaluate_hresult(self.__dict__["_set_filter_type"](arg_filterType.COM_val))
 
     @property
@@ -8878,15 +8878,15 @@ class ITimeToolEventArrayFixedStep(object):
             agcls.evaluate_hresult(self.__dict__["_set_include_interval_edges"](arg_includeIntervalEdges.COM_val))
 
     @property
-    def reference_type(self) -> "AgECrdnSampledReferenceTime":
+    def reference_type(self) -> "CRDN_SAMPLED_REFERENCE_TIME":
         """Specify the time reference from which fixed sampling time steps are taken. Note: selecting Start/Stop of each Interval resets the time reference for each interval, whereas other types maintain single reference for entire array."""
-        with agmarshall.AgEnum_arg(AgECrdnSampledReferenceTime) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAMPLED_REFERENCE_TIME) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @reference_type.setter
-    def reference_type(self, referenceType:"AgECrdnSampledReferenceTime") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSampledReferenceTime, referenceType) as arg_referenceType:
+    def reference_type(self, referenceType:"CRDN_SAMPLED_REFERENCE_TIME") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SAMPLED_REFERENCE_TIME, referenceType) as arg_referenceType:
             agcls.evaluate_hresult(self.__dict__["_set_reference_type"](arg_referenceType.COM_val))
 
     @property
@@ -9087,15 +9087,15 @@ class ITimeToolEventArraySignaled(object):
             agcls.evaluate_hresult(self.__dict__["_set_original_time_array"](arg_originalTimeArray.COM_val))
 
     @property
-    def signal_sense(self) -> "AgECrdnSignalSense":
+    def signal_sense(self) -> "CRDN_SIGNAL_SENSE":
         """The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location."""
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_sense"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @signal_sense.setter
-    def signal_sense(self, signalSense:"AgECrdnSignalSense") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense, signalSense) as arg_signalSense:
+    def signal_sense(self, signalSense:"CRDN_SIGNAL_SENSE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE, signalSense) as arg_signalSense:
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_signalSense.COM_val))
 
     @property
@@ -9178,15 +9178,15 @@ class ITimeToolEventArrayStartStopTimes(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventArrayStartStopTimes.")
     
     @property
-    def start_stop_option(self) -> "AgECrdnStartStopOption":
+    def start_stop_option(self) -> "CRDN_START_STOP_OPTION":
         """The edge type. At least one of the two edge types must be selected."""
-        with agmarshall.AgEnum_arg(AgECrdnStartStopOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_START_STOP_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_start_stop_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @start_stop_option.setter
-    def start_stop_option(self, startStopOption:"AgECrdnStartStopOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnStartStopOption, startStopOption) as arg_startStopOption:
+    def start_stop_option(self, startStopOption:"CRDN_START_STOP_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_START_STOP_OPTION, startStopOption) as arg_startStopOption:
             agcls.evaluate_hresult(self.__dict__["_set_start_stop_option"](arg_startStopOption.COM_val))
 
     @property
@@ -9316,15 +9316,15 @@ class ITimeToolEventExtremum(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventExtremum.")
     
     @property
-    def extremum_type(self) -> "AgECrdnExtremumConstants":
+    def extremum_type(self) -> "CRDN_EXTREMUM_CONSTANTS":
         """The extremum type of interest (either minimum or maximum) for scalar calculation."""
-        with agmarshall.AgEnum_arg(AgECrdnExtremumConstants) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EXTREMUM_CONSTANTS) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_extremum_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @extremum_type.setter
-    def extremum_type(self, extremumType:"AgECrdnExtremumConstants") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnExtremumConstants, extremumType) as arg_extremumType:
+    def extremum_type(self, extremumType:"CRDN_EXTREMUM_CONSTANTS") -> None:
+        with agmarshall.AgEnum_arg(CRDN_EXTREMUM_CONSTANTS, extremumType) as arg_extremumType:
             agcls.evaluate_hresult(self.__dict__["_set_extremum_type"](arg_extremumType.COM_val))
 
     @property
@@ -9364,15 +9364,15 @@ class ITimeToolEventExtremum(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_custom_time_limits"](arg_useCustomTimeLimits.COM_val))
 
     @property
-    def save_data_option(self) -> "AgECrdnSaveDataOption":
+    def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
         """Determines if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary."""
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_save_data_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"AgECrdnSaveDataOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption, saveDataOption) as arg_saveDataOption:
+    def save_data_option(self, saveDataOption:"CRDN_SAVE_DATA_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION, saveDataOption) as arg_saveDataOption:
             agcls.evaluate_hresult(self.__dict__["_set_save_data_option"](arg_saveDataOption.COM_val))
 
     @property
@@ -9470,11 +9470,11 @@ class ITimeToolEventFactory(object):
             agcls.evaluate_hresult(self.__dict__["_get_tomorrow"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create(self, name:str, description:str, type:"AgECrdnEventType") -> "ITimeToolEvent":
+    def create(self, name:str, description:str, type:"CRDN_EVENT_TYPE") -> "ITimeToolEvent":
         """Creates and registers an event using specified name, description, and type."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnEventType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_EVENT_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -9533,9 +9533,9 @@ class ITimeToolEventFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_smart_epoch_from_event"](arg_refEvent.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnEventType") -> bool:
+    def is_type_supported(self, eType:"CRDN_EVENT_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnEventType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_EVENT_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -9590,9 +9590,9 @@ class ITimeToolEventInterval(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventInterval.")
     
     @property
-    def type(self) -> "AgECrdnEventIntervalType":
+    def type(self) -> "CRDN_EVENT_INTERVAL_TYPE":
         """Return the type of interval."""
-        with agmarshall.AgEnum_arg(AgECrdnEventIntervalType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -9748,9 +9748,9 @@ class ITimeToolEventIntervalCollection(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollection.")
     
     @property
-    def type(self) -> "AgECrdnEventIntervalCollectionType":
+    def type(self) -> "CRDN_EVENT_INTERVAL_COLLECTION_TYPE":
         """Return the type of collection of interval lists."""
-        with agmarshall.AgEnum_arg(AgECrdnEventIntervalCollectionType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_COLLECTION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -9870,15 +9870,15 @@ class ITimeToolEventIntervalCollectionCondition(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_custom_time_limits"](arg_useCustomTimeLimits.COM_val))
 
     @property
-    def save_data_option(self) -> "AgECrdnSaveDataOption":
+    def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
         """Determines if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary."""
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_save_data_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"AgECrdnSaveDataOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption, saveDataOption) as arg_saveDataOption:
+    def save_data_option(self, saveDataOption:"CRDN_SAVE_DATA_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION, saveDataOption) as arg_saveDataOption:
             agcls.evaluate_hresult(self.__dict__["_set_save_data_option"](arg_saveDataOption.COM_val))
 
     @property
@@ -9950,11 +9950,11 @@ class ITimeToolEventIntervalCollectionFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalCollectionFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnEventIntervalCollectionType") -> "ITimeToolEventIntervalCollection":
+    def create(self, name:str, description:str, type:"CRDN_EVENT_INTERVAL_COLLECTION_TYPE") -> "ITimeToolEventIntervalCollection":
         """Create and register an event interval collection using specified name, description, and type."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnEventIntervalCollectionType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_COLLECTION_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -9975,9 +9975,9 @@ class ITimeToolEventIntervalCollectionFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_event_interval_collection_signaled"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnEventIntervalCollectionType") -> bool:
+    def is_type_supported(self, eType:"CRDN_EVENT_INTERVAL_COLLECTION_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnEventIntervalCollectionType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_COLLECTION_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -10141,15 +10141,15 @@ class ITimeToolEventIntervalCollectionSignaled(object):
             agcls.evaluate_hresult(self.__dict__["_set_original_collection"](arg_originalCollection.COM_val))
 
     @property
-    def signal_sense(self) -> "AgECrdnSignalSense":
+    def signal_sense(self) -> "CRDN_SIGNAL_SENSE":
         """The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location."""
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_sense"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @signal_sense.setter
-    def signal_sense(self, signalSense:"AgECrdnSignalSense") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense, signalSense) as arg_signalSense:
+    def signal_sense(self, signalSense:"CRDN_SIGNAL_SENSE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE, signalSense) as arg_signalSense:
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_signalSense.COM_val))
 
     @property
@@ -10241,11 +10241,11 @@ class ITimeToolEventIntervalFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnEventIntervalType") -> "ITimeToolEventInterval":
+    def create(self, name:str, description:str, type:"CRDN_EVENT_INTERVAL_TYPE") -> "ITimeToolEventInterval":
         """Create and register an interval using specified name, description, and type."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnEventIntervalType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -10306,9 +10306,9 @@ class ITimeToolEventIntervalFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_event_interval_time_offset"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnEventIntervalType") -> bool:
+    def is_type_supported(self, eType:"CRDN_EVENT_INTERVAL_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnEventIntervalType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -10517,15 +10517,15 @@ class ITimeToolEventIntervalFromIntervalList(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_intervals"](arg_referenceIntervals.COM_val))
 
     @property
-    def interval_selection(self) -> "AgECrdnIntervalSelection":
+    def interval_selection(self) -> "CRDN_INTERVAL_SELECTION":
         """The method used to select an interval from the reference interval list."""
-        with agmarshall.AgEnum_arg(AgECrdnIntervalSelection) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_SELECTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_interval_selection"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @interval_selection.setter
-    def interval_selection(self, intervalSelection:"AgECrdnIntervalSelection") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnIntervalSelection, intervalSelection) as arg_intervalSelection:
+    def interval_selection(self, intervalSelection:"CRDN_INTERVAL_SELECTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_SELECTION, intervalSelection) as arg_intervalSelection:
             agcls.evaluate_hresult(self.__dict__["_set_interval_selection"](arg_intervalSelection.COM_val))
 
     @property
@@ -10586,9 +10586,9 @@ class ITimeToolEventIntervalList(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalList.")
     
     @property
-    def type(self) -> "AgECrdnEventIntervalListType":
+    def type(self) -> "CRDN_EVENT_INTERVAL_LIST_TYPE":
         """Return the type of interval list."""
-        with agmarshall.AgEnum_arg(AgECrdnEventIntervalListType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_LIST_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -10715,15 +10715,15 @@ class ITimeToolEventIntervalListCondition(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_custom_time_limits"](arg_useCustomTimeLimits.COM_val))
 
     @property
-    def save_data_option(self) -> "AgECrdnSaveDataOption":
+    def save_data_option(self) -> "CRDN_SAVE_DATA_OPTION":
         """Determine if computed intervals of satisfaction are saved/loaded, or recomputed on load if necessary."""
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_save_data_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"AgECrdnSaveDataOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSaveDataOption, saveDataOption) as arg_saveDataOption:
+    def save_data_option(self, saveDataOption:"CRDN_SAVE_DATA_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SAVE_DATA_OPTION, saveDataOption) as arg_saveDataOption:
             agcls.evaluate_hresult(self.__dict__["_set_save_data_option"](arg_saveDataOption.COM_val))
 
     @property
@@ -10805,11 +10805,11 @@ class ITimeToolEventIntervalListFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolEventIntervalListFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnEventIntervalListType") -> "ITimeToolEventIntervalList":
+    def create(self, name:str, description:str, type:"CRDN_EVENT_INTERVAL_LIST_TYPE") -> "ITimeToolEventIntervalList":
         """Create and register an interval list using specified name, description, and type."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnEventIntervalListType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_LIST_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -10862,9 +10862,9 @@ class ITimeToolEventIntervalListFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_event_interval_list_time_offset"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnEventIntervalListType") -> bool:
+    def is_type_supported(self, eType:"CRDN_EVENT_INTERVAL_LIST_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnEventIntervalListType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_EVENT_INTERVAL_LIST_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -11157,15 +11157,15 @@ class ITimeToolEventIntervalListMerged(object):
             return arg_ppRetVal.python_val
 
     @property
-    def merge_operation(self) -> "AgECrdnEventListMergeOperation":
+    def merge_operation(self) -> "CRDN_EVENT_LIST_MERGE_OPERATION":
         """The merge operation."""
-        with agmarshall.AgEnum_arg(AgECrdnEventListMergeOperation) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_LIST_MERGE_OPERATION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_merge_operation"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @merge_operation.setter
-    def merge_operation(self, mergeOperation:"AgECrdnEventListMergeOperation") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnEventListMergeOperation, mergeOperation) as arg_mergeOperation:
+    def merge_operation(self, mergeOperation:"CRDN_EVENT_LIST_MERGE_OPERATION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_EVENT_LIST_MERGE_OPERATION, mergeOperation) as arg_mergeOperation:
             agcls.evaluate_hresult(self.__dict__["_set_merge_operation"](arg_mergeOperation.COM_val))
 
     def set_interval_list_a(self, refIntervals:"ITimeToolEventIntervalList") -> None:
@@ -11395,15 +11395,15 @@ class ITimeToolEventIntervalListSignaled(object):
             agcls.evaluate_hresult(self.__dict__["_set_original_intervals"](arg_originalIntervals.COM_val))
 
     @property
-    def signal_sense(self) -> "AgECrdnSignalSense":
+    def signal_sense(self) -> "CRDN_SIGNAL_SENSE":
         """The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location."""
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_sense"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @signal_sense.setter
-    def signal_sense(self, signalSense:"AgECrdnSignalSense") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense, signalSense) as arg_signalSense:
+    def signal_sense(self, signalSense:"CRDN_SIGNAL_SENSE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE, signalSense) as arg_signalSense:
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_signalSense.COM_val))
 
     @property
@@ -11676,15 +11676,15 @@ class ITimeToolEventIntervalSignaled(object):
             agcls.evaluate_hresult(self.__dict__["_set_original_interval"](arg_originalInterval.COM_val))
 
     @property
-    def signal_sense(self) -> "AgECrdnSignalSense":
+    def signal_sense(self) -> "CRDN_SIGNAL_SENSE":
         """The direction of the signal, whether you are Transmitting or Receiving from the BaseClockLocation."""
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_sense"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @signal_sense.setter
-    def signal_sense(self, signalSense:"AgECrdnSignalSense") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense, signalSense) as arg_signalSense:
+    def signal_sense(self, signalSense:"CRDN_SIGNAL_SENSE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE, signalSense) as arg_signalSense:
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_signalSense.COM_val))
 
     @property
@@ -11812,15 +11812,15 @@ class ITimeToolEventIntervalSmartInterval(object):
             agcls.evaluate_hresult(self.__dict__["_set_duration_as_string"](arg_durationAsString.COM_val))
 
     @property
-    def state(self) -> "AgECrdnSmartIntervalState":
+    def state(self) -> "CRDN_SMART_INTERVAL_STATE":
         """A state of the smart interval."""
-        with agmarshall.AgEnum_arg(AgECrdnSmartIntervalState) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SMART_INTERVAL_STATE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_state"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @state.setter
-    def state(self, state:"AgECrdnSmartIntervalState") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSmartIntervalState, state) as arg_state:
+    def state(self, state:"CRDN_SMART_INTERVAL_STATE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SMART_INTERVAL_STATE, state) as arg_state:
             agcls.evaluate_hresult(self.__dict__["_set_state"](arg_state.COM_val))
 
     def set_implicit_interval(self, eventInterval:"ITimeToolEventInterval") -> None:
@@ -12027,15 +12027,15 @@ class ITimeToolEventSignaled(object):
             agcls.evaluate_hresult(self.__dict__["_set_original_time_instant"](arg_originalTimeInstant.COM_val))
 
     @property
-    def signal_sense(self) -> "AgECrdnSignalSense":
+    def signal_sense(self) -> "CRDN_SIGNAL_SENSE":
         """The direction of the signal, whether you are Transmitting or Receiving from the BaseClockLocation."""
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_sense"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @signal_sense.setter
-    def signal_sense(self, signalSense:"AgECrdnSignalSense") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense, signalSense) as arg_signalSense:
+    def signal_sense(self, signalSense:"CRDN_SIGNAL_SENSE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE, signalSense) as arg_signalSense:
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_signalSense.COM_val))
 
     @property
@@ -12136,15 +12136,15 @@ class ITimeToolEventSmartEpoch(object):
             return arg_ppRetVal.python_val
 
     @property
-    def state(self) -> "AgECrdnSmartEpochState":
+    def state(self) -> "CRDN_SMART_EPOCH_STATE":
         """State of the event."""
-        with agmarshall.AgEnum_arg(AgECrdnSmartEpochState) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SMART_EPOCH_STATE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_state"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @state.setter
-    def state(self, state:"AgECrdnSmartEpochState") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSmartEpochState, state) as arg_state:
+    def state(self, state:"CRDN_SMART_EPOCH_STATE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SMART_EPOCH_STATE, state) as arg_state:
             agcls.evaluate_hresult(self.__dict__["_set_state"](arg_state.COM_val))
 
     def set_explicit_time(self, epoch:typing.Any) -> None:
@@ -12386,15 +12386,15 @@ class ITimeToolGapsFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolGapsFilter.")
     
     @property
-    def duration_kind(self) -> "AgECrdnIntervalDurationKind":
+    def duration_kind(self) -> "CRDN_INTERVAL_DURATION_KIND":
         """Choose a duration type (at least/at most)."""
-        with agmarshall.AgEnum_arg(AgECrdnIntervalDurationKind) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_DURATION_KIND) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_duration_kind"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @duration_kind.setter
-    def duration_kind(self, durationKind:"AgECrdnIntervalDurationKind") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnIntervalDurationKind, durationKind) as arg_durationKind:
+    def duration_kind(self, durationKind:"CRDN_INTERVAL_DURATION_KIND") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_DURATION_KIND, durationKind) as arg_durationKind:
             agcls.evaluate_hresult(self.__dict__["_set_duration_kind"](arg_durationKind.COM_val))
 
     @property
@@ -12492,15 +12492,15 @@ class ICalculationToolIntegralBasic(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolIntegralBasic.")
     
     @property
-    def type(self) -> "AgECrdnIntegralType":
+    def type(self) -> "CRDN_INTEGRAL_TYPE":
         """Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto."""
-        with agmarshall.AgEnum_arg(AgECrdnIntegralType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTEGRAL_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @type.setter
-    def type(self, type:"AgECrdnIntegralType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnIntegralType, type) as arg_type:
+    def type(self, type:"CRDN_INTEGRAL_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTEGRAL_TYPE, type) as arg_type:
             agcls.evaluate_hresult(self.__dict__["_set_type"](arg_type.COM_val))
 
     @property
@@ -12606,15 +12606,15 @@ class ICalculationToolInterpBasic(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolInterpBasic.")
     
     @property
-    def type(self) -> "AgECrdnInterpolatorType":
+    def type(self) -> "CRDN_INTERPOLATOR_TYPE":
         """Get the interpolation type, which can be Lagrange or Hermite interpolation. See STK help on interpolation for further details."""
-        with agmarshall.AgEnum_arg(AgECrdnInterpolatorType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTERPOLATOR_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @type.setter
-    def type(self, type:"AgECrdnInterpolatorType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnInterpolatorType, type) as arg_type:
+    def type(self, type:"CRDN_INTERPOLATOR_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTERPOLATOR_TYPE, type) as arg_type:
             agcls.evaluate_hresult(self.__dict__["_set_type"](arg_type.COM_val))
 
     @property
@@ -12673,15 +12673,15 @@ class ITimeToolIntervalsFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolIntervalsFilter.")
     
     @property
-    def duration_kind(self) -> "AgECrdnIntervalDurationKind":
+    def duration_kind(self) -> "CRDN_INTERVAL_DURATION_KIND":
         """Choose a duration type (at least/at most)."""
-        with agmarshall.AgEnum_arg(AgECrdnIntervalDurationKind) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_DURATION_KIND) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_duration_kind"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @duration_kind.setter
-    def duration_kind(self, durationKind:"AgECrdnIntervalDurationKind") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnIntervalDurationKind, durationKind) as arg_durationKind:
+    def duration_kind(self, durationKind:"CRDN_INTERVAL_DURATION_KIND") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_DURATION_KIND, durationKind) as arg_durationKind:
             agcls.evaluate_hresult(self.__dict__["_set_duration_kind"](arg_durationKind.COM_val))
 
     @property
@@ -12795,9 +12795,9 @@ class ICalculationToolParameterSet(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSet.")
     
     @property
-    def type(self) -> "AgECrdnParameterSetType":
+    def type(self) -> "CRDN_PARAMETER_SET_TYPE":
         """Get the type of parameter set."""
-        with agmarshall.AgEnum_arg(AgECrdnParameterSetType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_PARAMETER_SET_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -12952,11 +12952,11 @@ class ICalculationToolParameterSetFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolParameterSetFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnParameterSetType") -> "ICalculationToolParameterSet":
+    def create(self, name:str, description:str, type:"CRDN_PARAMETER_SET_TYPE") -> "ICalculationToolParameterSet":
         """Creates and registers a parameter set using specified name and description."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnParameterSetType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_PARAMETER_SET_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -13001,9 +13001,9 @@ class ICalculationToolParameterSetFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_parameter_set_vector"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnParameterSetType") -> bool:
+    def is_type_supported(self, eType:"CRDN_PARAMETER_SET_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnParameterSetType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_PARAMETER_SET_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -13378,9 +13378,9 @@ class ITimeToolPruneFilter(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolPruneFilter.")
     
     @property
-    def filter_type(self) -> "AgECrdnPruneFilter":
+    def filter_type(self) -> "CRDN_PRUNE_FILTER":
         """Returns a type of the filter."""
-        with agmarshall.AgEnum_arg(AgECrdnPruneFilter) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_PRUNE_FILTER) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_filter_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -13421,9 +13421,9 @@ class ITimeToolPruneFilterFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolPruneFilterFactory.")
     
-    def create(self, eFilter:"AgECrdnPruneFilter") -> "ITimeToolPruneFilter":
+    def create(self, eFilter:"CRDN_PRUNE_FILTER") -> "ITimeToolPruneFilter":
         """Create and initializes a new prune filter using default configuration."""
-        with agmarshall.AgEnum_arg(AgECrdnPruneFilter, eFilter) as arg_eFilter, \
+        with agmarshall.AgEnum_arg(CRDN_PRUNE_FILTER, eFilter) as arg_eFilter, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_eFilter.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -13488,15 +13488,15 @@ class ITimeToolRelativeSatisfactionConditionFilter(object):
             agcls.evaluate_hresult(self.__dict__["_set_condition"](arg_condition.COM_val))
 
     @property
-    def duration_kind(self) -> "AgECrdnIntervalDurationKind":
+    def duration_kind(self) -> "CRDN_INTERVAL_DURATION_KIND":
         """Choose a duration type (at least/at most)."""
-        with agmarshall.AgEnum_arg(AgECrdnIntervalDurationKind) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_DURATION_KIND) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_duration_kind"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @duration_kind.setter
-    def duration_kind(self, durationKind:"AgECrdnIntervalDurationKind") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnIntervalDurationKind, durationKind) as arg_durationKind:
+    def duration_kind(self, durationKind:"CRDN_INTERVAL_DURATION_KIND") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_DURATION_KIND, durationKind) as arg_durationKind:
             agcls.evaluate_hresult(self.__dict__["_set_duration_kind"](arg_durationKind.COM_val))
 
     @property
@@ -13826,9 +13826,9 @@ class ICalculationToolSamplingMethod(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICalculationToolSamplingMethod.")
     
     @property
-    def method_type(self) -> "AgECrdnSamplingMethod":
+    def method_type(self) -> "CRDN_SAMPLING_METHOD":
         """A sampling method type."""
-        with agmarshall.AgEnum_arg(AgECrdnSamplingMethod) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SAMPLING_METHOD) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_method_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -14069,15 +14069,15 @@ class ITimeToolSatisfactionConditionFilter(object):
             agcls.evaluate_hresult(self.__dict__["_set_condition"](arg_condition.COM_val))
 
     @property
-    def duration_kind(self) -> "AgECrdnIntervalDurationKind":
+    def duration_kind(self) -> "CRDN_INTERVAL_DURATION_KIND":
         """Choose a duration type (at least/at most)."""
-        with agmarshall.AgEnum_arg(AgECrdnIntervalDurationKind) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_DURATION_KIND) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_duration_kind"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @duration_kind.setter
-    def duration_kind(self, durationKind:"AgECrdnIntervalDurationKind") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnIntervalDurationKind, durationKind) as arg_durationKind:
+    def duration_kind(self, durationKind:"CRDN_INTERVAL_DURATION_KIND") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTERVAL_DURATION_KIND, durationKind) as arg_durationKind:
             agcls.evaluate_hresult(self.__dict__["_set_duration_kind"](arg_durationKind.COM_val))
 
     @property
@@ -14183,15 +14183,15 @@ class ITimeToolSignalDelayBasic(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ITimeToolSignalDelayBasic.")
     
     @property
-    def signal_path_reference_system(self) -> "AgECrdnSignalPathReferenceSystem":
+    def signal_path_reference_system(self) -> "CRDN_SIGNAL_PATH_REFERENCE_SYSTEM":
         """Get the type of signal path reference system which can be set to use STK Access default (see STK Help for further details), Solar system barycenter inertial reference, central body inertial reference or custom reference system..."""
-        with agmarshall.AgEnum_arg(AgECrdnSignalPathReferenceSystem) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_PATH_REFERENCE_SYSTEM) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_path_reference_system"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @signal_path_reference_system.setter
-    def signal_path_reference_system(self, signalPathReferenceSystem:"AgECrdnSignalPathReferenceSystem") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSignalPathReferenceSystem, signalPathReferenceSystem) as arg_signalPathReferenceSystem:
+    def signal_path_reference_system(self, signalPathReferenceSystem:"CRDN_SIGNAL_PATH_REFERENCE_SYSTEM") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_PATH_REFERENCE_SYSTEM, signalPathReferenceSystem) as arg_signalPathReferenceSystem:
             agcls.evaluate_hresult(self.__dict__["_set_signal_path_reference_system"](arg_signalPathReferenceSystem.COM_val))
 
     @property
@@ -14207,15 +14207,15 @@ class ITimeToolSignalDelayBasic(object):
             agcls.evaluate_hresult(self.__dict__["_set_reference_system"](arg_referenceSystem.COM_val))
 
     @property
-    def speed_option(self) -> "AgECrdnSpeedOptions":
+    def speed_option(self) -> "CRDN_SPEED_OPTIONS":
         """Get the speed option which determines whether to use the speed of light or a custom speed value."""
-        with agmarshall.AgEnum_arg(AgECrdnSpeedOptions) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SPEED_OPTIONS) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_speed_option"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @speed_option.setter
-    def speed_option(self, speedOption:"AgECrdnSpeedOptions") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSpeedOptions, speedOption) as arg_speedOption:
+    def speed_option(self, speedOption:"CRDN_SPEED_OPTIONS") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SPEED_OPTIONS, speedOption) as arg_speedOption:
             agcls.evaluate_hresult(self.__dict__["_set_speed_option"](arg_speedOption.COM_val))
 
     @property
@@ -14297,18 +14297,18 @@ class ISpatialAnalysisToolVolumeCalcFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcFactory.")
     
-    def is_type_supported(self, eType:"AgECrdnVolumeCalcType") -> bool:
+    def is_type_supported(self, eType:"CRDN_VOLUME_CALC_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
-    def create(self, name:str, description:str, type:"AgECrdnVolumeCalcType") -> "ISpatialAnalysisToolVolumeCalc":
+    def create(self, name:str, description:str, type:"CRDN_VOLUME_CALC_TYPE") -> "ISpatialAnalysisToolVolumeCalc":
         """Creates and registers a volume calc using specified name and description."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnVolumeCalcType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -14432,18 +14432,18 @@ class ISpatialAnalysisToolVolumeFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnVolumeType") -> "ISpatialAnalysisToolVolume":
+    def create(self, name:str, description:str, type:"CRDN_VOLUME_TYPE") -> "ISpatialAnalysisToolVolume":
         """Creates and registers a volume using specified name and description."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnVolumeType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_VOLUME_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnVolumeType") -> bool:
+    def is_type_supported(self, eType:"CRDN_VOLUME_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -14563,11 +14563,11 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeGridFactory.")
     
-    def create(self, name:str, description:str, type:"AgECrdnVolumeGridType") -> "ISpatialAnalysisToolVolumeGrid":
+    def create(self, name:str, description:str, type:"CRDN_VOLUME_GRID_TYPE") -> "ISpatialAnalysisToolVolumeGrid":
         """Creates and registers a volume grid using specified name and description."""
         with agmarshall.BSTR_arg(name) as arg_name, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnVolumeGridType, type) as arg_type, \
+             agmarshall.AgEnum_arg(CRDN_VOLUME_GRID_TYPE, type) as arg_type, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_name.COM_val, arg_description.COM_val, arg_type.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -14580,9 +14580,9 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_volume_grid_cartesian"](arg_name.COM_val, arg_description.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, eType:"AgECrdnVolumeGridType") -> bool:
+    def is_type_supported(self, eType:"CRDN_VOLUME_GRID_TYPE") -> bool:
         """Returns whether the specified type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeGridType, eType) as arg_eType, \
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_GRID_TYPE, eType) as arg_eType, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_eType.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -14675,9 +14675,9 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolGridCoordinateDefinition.")
     
     @property
-    def method_type(self) -> "AgECrdnVolumetricGridValuesMethodType":
+    def method_type(self) -> "CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE":
         """Grid values method type."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumetricGridValuesMethodType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_method_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -15043,9 +15043,9 @@ class ISpatialAnalysisToolGridValuesMethod(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolGridValuesMethod.")
     
     @property
-    def method_type(self) -> "AgECrdnVolumetricGridValuesMethodType":
+    def method_type(self) -> "CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE":
         """Grid values method type."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumetricGridValuesMethodType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_method_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
@@ -15129,39 +15129,39 @@ class ITimeToolLightTimeDelay(object):
             agcls.evaluate_hresult(self.__dict__["_set_time_delay_convergence"](arg_timeDelayConvergence.COM_val))
 
     @property
-    def aberration_type(self) -> "AgECrdnVolumeAberrationType":
+    def aberration_type(self) -> "CRDN_VOLUME_ABERRATION_TYPE":
         """Method used to Aberration Type."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeAberrationType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_ABERRATION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_aberration_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @aberration_type.setter
-    def aberration_type(self, aberrationType:"AgECrdnVolumeAberrationType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeAberrationType, aberrationType) as arg_aberrationType:
+    def aberration_type(self, aberrationType:"CRDN_VOLUME_ABERRATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_ABERRATION_TYPE, aberrationType) as arg_aberrationType:
             agcls.evaluate_hresult(self.__dict__["_set_aberration_type"](arg_aberrationType.COM_val))
 
     @property
-    def clock_host(self) -> "AgECrdnVolumeClockHostType":
+    def clock_host(self) -> "CRDN_VOLUME_CLOCK_HOST_TYPE":
         """Indicates whether object1 or object2 of an Access instance holds the clock for Access times."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeClockHostType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CLOCK_HOST_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_clock_host"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @clock_host.setter
-    def clock_host(self, clockHost:"AgECrdnVolumeClockHostType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeClockHostType, clockHost) as arg_clockHost:
+    def clock_host(self, clockHost:"CRDN_VOLUME_CLOCK_HOST_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CLOCK_HOST_TYPE, clockHost) as arg_clockHost:
             agcls.evaluate_hresult(self.__dict__["_set_clock_host"](arg_clockHost.COM_val))
 
     @property
-    def time_sense(self) -> "AgECrdnVolumeTimeSenseType":
+    def time_sense(self) -> "CRDN_VOLUME_TIME_SENSE_TYPE":
         """Indicates whether apparent position is computed in a transmit or receive sense"""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeTimeSenseType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_TIME_SENSE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_time_sense"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @time_sense.setter
-    def time_sense(self, timeSense:"AgECrdnVolumeTimeSenseType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeTimeSenseType, timeSense) as arg_timeSense:
+    def time_sense(self, timeSense:"CRDN_VOLUME_TIME_SENSE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_TIME_SENSE_TYPE, timeSense) as arg_timeSense:
             agcls.evaluate_hresult(self.__dict__["_set_time_sense"](arg_timeSense.COM_val))
 
 
@@ -15298,15 +15298,15 @@ class ISpatialAnalysisToolVolumeCalcAltitude(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body"](arg_centralBody.COM_val))
 
     @property
-    def shape_model(self) -> "AgECrdnVolumeCalcAltitudeReferenceType":
+    def shape_model(self) -> "CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE":
         """The Volume Calc Altitude Reference Type."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcAltitudeReferenceType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_shape_model"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @shape_model.setter
-    def shape_model(self, shapeModel:"AgECrdnVolumeCalcAltitudeReferenceType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcAltitudeReferenceType, shapeModel) as arg_shapeModel:
+    def shape_model(self, shapeModel:"CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE, shapeModel) as arg_shapeModel:
             agcls.evaluate_hresult(self.__dict__["_set_shape_model"](arg_shapeModel.COM_val))
 
     @property
@@ -15389,15 +15389,15 @@ class ISpatialAnalysisToolVolumeCalcAngleOffVector(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcAngleOffVector.")
     
     @property
-    def angle(self) -> "AgECrdnVolumeCalcAngleOffVectorType":
+    def angle(self) -> "CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE":
         """The Volume Calc Angle Off Vector Type."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcAngleOffVectorType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_angle"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @angle.setter
-    def angle(self, angle:"AgECrdnVolumeCalcAngleOffVectorType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcAngleOffVectorType, angle) as arg_angle:
+    def angle(self, angle:"CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE, angle) as arg_angle:
             agcls.evaluate_hresult(self.__dict__["_set_angle"](arg_angle.COM_val))
 
     @property
@@ -15536,51 +15536,51 @@ class ISpatialAnalysisToolVolumeCalcConditionSatMetric(object):
             agcls.evaluate_hresult(self.__dict__["_set_spatial_condition"](arg_spatialCondition.COM_val))
 
     @property
-    def satisfaction_metric(self) -> "AgECrdnVolumeCalcVolumeSatisfactionMetricType":
+    def satisfaction_metric(self) -> "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE":
         """Spatial condition satisfaction metric types."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionMetricType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_satisfaction_metric"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @satisfaction_metric.setter
-    def satisfaction_metric(self, satisfactionMetric:"AgECrdnVolumeCalcVolumeSatisfactionMetricType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionMetricType, satisfactionMetric) as arg_satisfactionMetric:
+    def satisfaction_metric(self, satisfactionMetric:"CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE, satisfactionMetric) as arg_satisfactionMetric:
             agcls.evaluate_hresult(self.__dict__["_set_satisfaction_metric"](arg_satisfactionMetric.COM_val))
 
     @property
-    def accumulation_type(self) -> "AgECrdnVolumeCalcVolumeSatisfactionAccumulationType":
+    def accumulation_type(self) -> "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE":
         """Spatial condition satisfaction accumulation types."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionAccumulationType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_accumulation_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @accumulation_type.setter
-    def accumulation_type(self, accumulationType:"AgECrdnVolumeCalcVolumeSatisfactionAccumulationType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionAccumulationType, accumulationType) as arg_accumulationType:
+    def accumulation_type(self, accumulationType:"CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE, accumulationType) as arg_accumulationType:
             agcls.evaluate_hresult(self.__dict__["_set_accumulation_type"](arg_accumulationType.COM_val))
 
     @property
-    def duration_type(self) -> "AgECrdnVolumeCalcVolumeSatisfactionDurationType":
+    def duration_type(self) -> "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE":
         """Spatial condition satisfaction duration types."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionDurationType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_duration_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @duration_type.setter
-    def duration_type(self, durationType:"AgECrdnVolumeCalcVolumeSatisfactionDurationType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionDurationType, durationType) as arg_durationType:
+    def duration_type(self, durationType:"CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE, durationType) as arg_durationType:
             agcls.evaluate_hresult(self.__dict__["_set_duration_type"](arg_durationType.COM_val))
 
     @property
-    def filter(self) -> "AgECrdnVolumeCalcVolumeSatisfactionFilterType":
+    def filter(self) -> "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE":
         """Spatial condition satisfaction duration types."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionFilterType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_filter"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @filter.setter
-    def filter(self, filter:"AgECrdnVolumeCalcVolumeSatisfactionFilterType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcVolumeSatisfactionFilterType, filter) as arg_filter:
+    def filter(self, filter:"CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE, filter) as arg_filter:
             agcls.evaluate_hresult(self.__dict__["_set_filter"](arg_filter.COM_val))
 
     @property
@@ -15703,15 +15703,15 @@ class ISpatialAnalysisToolVolumeCalcDelayRange(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcDelayRange.")
     
     @property
-    def distance(self) -> "AgECrdnVolumeCalcRangeDistanceType":
+    def distance(self) -> "CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE":
         """The Volume Calc range distance types."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcRangeDistanceType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @distance.setter
-    def distance(self, distance:"AgECrdnVolumeCalcRangeDistanceType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcRangeDistanceType, distance) as arg_distance:
+    def distance(self, distance:"CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE, distance) as arg_distance:
             agcls.evaluate_hresult(self.__dict__["_set_distance"](arg_distance.COM_val))
 
     @property
@@ -15751,15 +15751,15 @@ class ISpatialAnalysisToolVolumeCalcDelayRange(object):
             agcls.evaluate_hresult(self.__dict__["_set_along_vector"](arg_alongVector.COM_val))
 
     @property
-    def speed_type(self) -> "AgECrdnVolumeCalcRangeSpeedType":
+    def speed_type(self) -> "CRDN_VOLUME_CALC_RANGE_SPEED_TYPE":
         """The Volume Calc range speed types."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcRangeSpeedType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_RANGE_SPEED_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_speed_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @speed_type.setter
-    def speed_type(self, speedType:"AgECrdnVolumeCalcRangeSpeedType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcRangeSpeedType, speedType) as arg_speedType:
+    def speed_type(self, speedType:"CRDN_VOLUME_CALC_RANGE_SPEED_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_RANGE_SPEED_TYPE, speedType) as arg_speedType:
             agcls.evaluate_hresult(self.__dict__["_set_speed_type"](arg_speedType.COM_val))
 
     @property
@@ -15934,15 +15934,15 @@ class ISpatialAnalysisToolVolumeCalcRange(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCalcRange.")
     
     @property
-    def distance(self) -> "AgECrdnVolumeCalcRangeDistanceType":
+    def distance(self) -> "CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE":
         """The Volume Calc range distance types."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcRangeDistanceType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_distance"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @distance.setter
-    def distance(self, distance:"AgECrdnVolumeCalcRangeDistanceType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCalcRangeDistanceType, distance) as arg_distance:
+    def distance(self, distance:"CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE, distance) as arg_distance:
             agcls.evaluate_hresult(self.__dict__["_set_distance"](arg_distance.COM_val))
 
     @property
@@ -16100,15 +16100,15 @@ class ISpatialAnalysisToolVolumeCombined(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeCombined.")
     
     @property
-    def combine_operation(self) -> "AgECrdnVolumeCombinedOperationType":
+    def combine_operation(self) -> "CRDN_VOLUME_COMBINED_OPERATION_TYPE":
         """Sets/Returns volume combined operation."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCombinedOperationType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_COMBINED_OPERATION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_combine_operation"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @combine_operation.setter
-    def combine_operation(self, combineOperation:"AgECrdnVolumeCombinedOperationType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeCombinedOperationType, combineOperation) as arg_combineOperation:
+    def combine_operation(self, combineOperation:"CRDN_VOLUME_COMBINED_OPERATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_COMBINED_OPERATION_TYPE, combineOperation) as arg_combineOperation:
             agcls.evaluate_hresult(self.__dict__["_set_combine_operation"](arg_combineOperation.COM_val))
 
     @property
@@ -16201,15 +16201,15 @@ class ISpatialAnalysisToolVolumeFromCalc(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeFromCalc.")
     
     @property
-    def operation(self) -> "AgECrdnConditionThresholdOption":
+    def operation(self) -> "CRDN_CONDITION_THRESHOLD_OPTION":
         """Get the operation from the condition that determines how the bounds are considered. The operation can be set to define satisfaction when the scalar is above minimum, below maximum, between minimum and maximum or outside minimum and maximum."""
-        with agmarshall.AgEnum_arg(AgECrdnConditionThresholdOption) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_THRESHOLD_OPTION) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_operation"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @operation.setter
-    def operation(self, operation:"AgECrdnConditionThresholdOption") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnConditionThresholdOption, operation) as arg_operation:
+    def operation(self, operation:"CRDN_CONDITION_THRESHOLD_OPTION") -> None:
+        with agmarshall.AgEnum_arg(CRDN_CONDITION_THRESHOLD_OPTION, operation) as arg_operation:
             agcls.evaluate_hresult(self.__dict__["_set_operation"](arg_operation.COM_val))
 
     @property
@@ -16411,15 +16411,15 @@ class ISpatialAnalysisToolVolumeFromGrid(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeFromGrid.")
     
     @property
-    def edge_type(self) -> "AgECrdnVolumeFromGridEdgeType":
+    def edge_type(self) -> "CRDN_VOLUME_FROM_GRID_EDGE_TYPE":
         """Sets/Returns the edge type."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeFromGridEdgeType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_FROM_GRID_EDGE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_edge_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @edge_type.setter
-    def edge_type(self, edgeType:"AgECrdnVolumeFromGridEdgeType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeFromGridEdgeType, edgeType) as arg_edgeType:
+    def edge_type(self, edgeType:"CRDN_VOLUME_FROM_GRID_EDGE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_FROM_GRID_EDGE_TYPE, edgeType) as arg_edgeType:
             agcls.evaluate_hresult(self.__dict__["_set_edge_type"](arg_edgeType.COM_val))
 
     @property
@@ -17280,15 +17280,15 @@ class ISpatialAnalysisToolVolumeLighting(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_object_eclipsing_bodies"](arg_useObjectEclipsingBodies.COM_val))
 
     @property
-    def lighting_conditions(self) -> "AgECrdnVolumeLightingConditionsType":
+    def lighting_conditions(self) -> "CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE":
         """Sets/Returns the lighting conditions."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeLightingConditionsType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_lighting_conditions"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @lighting_conditions.setter
-    def lighting_conditions(self, lightingConditions:"AgECrdnVolumeLightingConditionsType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeLightingConditionsType, lightingConditions) as arg_lightingConditions:
+    def lighting_conditions(self, lightingConditions:"CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE, lightingConditions) as arg_lightingConditions:
             agcls.evaluate_hresult(self.__dict__["_set_lighting_conditions"](arg_lightingConditions.COM_val))
 
 
@@ -17347,15 +17347,15 @@ class ISpatialAnalysisToolVolumeOverTime(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISpatialAnalysisToolVolumeOverTime.")
     
     @property
-    def duration_type(self) -> "AgECrdnVolumeOverTimeDurationType":
+    def duration_type(self) -> "CRDN_VOLUME_OVER_TIME_DURATION_TYPE":
         """Sets/Returns the lighting conditions."""
-        with agmarshall.AgEnum_arg(AgECrdnVolumeOverTimeDurationType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_OVER_TIME_DURATION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_duration_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @duration_type.setter
-    def duration_type(self, durationType:"AgECrdnVolumeOverTimeDurationType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVolumeOverTimeDurationType, durationType) as arg_durationType:
+    def duration_type(self, durationType:"CRDN_VOLUME_OVER_TIME_DURATION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VOLUME_OVER_TIME_DURATION_TYPE, durationType) as arg_durationType:
             agcls.evaluate_hresult(self.__dict__["_set_duration_type"](arg_durationType.COM_val))
 
     @property
@@ -18483,15 +18483,15 @@ class IVectorGeometryToolAxesBPlane(object):
             return arg_ppRetVal.python_val
 
     @property
-    def direction(self) -> "AgECrdnDirectionType":
+    def direction(self) -> "CRDN_DIRECTION_TYPE":
         """Specify a direction (incoming or outgoing)."""
-        with agmarshall.AgEnum_arg(AgECrdnDirectionType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_DIRECTION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @direction.setter
-    def direction(self, direction:"AgECrdnDirectionType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnDirectionType, direction) as arg_direction:
+    def direction(self, direction:"CRDN_DIRECTION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_DIRECTION_TYPE, direction) as arg_direction:
             agcls.evaluate_hresult(self.__dict__["_set_direction"](arg_direction.COM_val))
 
 
@@ -18937,15 +18937,15 @@ class IVectorGeometryToolAxesTrajectory(object):
             return arg_ppRetVal.python_val
 
     @property
-    def trajectory_axes_type(self) -> "AgECrdnTrajectoryAxesType":
+    def trajectory_axes_type(self) -> "CRDN_TRAJECTORY_AXES_TYPE":
         """Specify a type of the trajectory's coordinate frame."""
-        with agmarshall.AgEnum_arg(AgECrdnTrajectoryAxesType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_TRAJECTORY_AXES_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_trajectory_axes_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @trajectory_axes_type.setter
-    def trajectory_axes_type(self, trajectoryAxesType:"AgECrdnTrajectoryAxesType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnTrajectoryAxesType, trajectoryAxesType) as arg_trajectoryAxesType:
+    def trajectory_axes_type(self, trajectoryAxesType:"CRDN_TRAJECTORY_AXES_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_TRAJECTORY_AXES_TYPE, trajectoryAxesType) as arg_trajectoryAxesType:
             agcls.evaluate_hresult(self.__dict__["_set_trajectory_axes_type"](arg_trajectoryAxesType.COM_val))
 
 
@@ -18999,15 +18999,15 @@ class IVectorGeometryToolAxesLagrangeLibration(object):
             return arg_ppRetVal.python_val
 
     @property
-    def point_type(self) -> "AgECrdnLagrangeLibrationPointType":
+    def point_type(self) -> "CRDN_LAGRANGE_LIBRATION_POINT_TYPE":
         """Specify a lagrange point (L1, L2, etc.)"""
-        with agmarshall.AgEnum_arg(AgECrdnLagrangeLibrationPointType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_LAGRANGE_LIBRATION_POINT_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @point_type.setter
-    def point_type(self, pointType:"AgECrdnLagrangeLibrationPointType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnLagrangeLibrationPointType, pointType) as arg_pointType:
+    def point_type(self, pointType:"CRDN_LAGRANGE_LIBRATION_POINT_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_LAGRANGE_LIBRATION_POINT_TYPE, pointType) as arg_pointType:
             agcls.evaluate_hresult(self.__dict__["_set_point_type"](arg_pointType.COM_val))
 
     @property
@@ -19071,10 +19071,10 @@ class IVectorGeometryToolAxesCommonTasks(object):
             agcls.evaluate_hresult(self.__dict__["_create_topocentric_axes_quaternion"](arg_originPoint.COM_val, arg_qx.COM_val, arg_qy.COM_val, arg_qz.COM_val, arg_qs.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_topocentric_axes_euler_angles(self, originPoint:"IVectorGeometryToolPoint", sequence:"AgEEulerOrientationSequence", a:typing.Any, b:typing.Any, c:typing.Any) -> "IVectorGeometryToolAxesFixed":
+    def create_topocentric_axes_euler_angles(self, originPoint:"IVectorGeometryToolPoint", sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> "IVectorGeometryToolAxesFixed":
         """Creates non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation."""
         with agmarshall.AgInterface_in_arg(originPoint, IVectorGeometryToolPoint) as arg_originPoint, \
-             agmarshall.AgEnum_arg(AgEEulerOrientationSequence, sequence) as arg_sequence, \
+             agmarshall.AgEnum_arg(EULER_ORIENTATION_SEQUENCE, sequence) as arg_sequence, \
              agmarshall.VARIANT_arg(a) as arg_a, \
              agmarshall.VARIANT_arg(b) as arg_b, \
              agmarshall.VARIANT_arg(c) as arg_c, \
@@ -19527,15 +19527,15 @@ class IVectorGeometryToolAngleRotation(object):
             return arg_ppRetVal.python_val
 
     @property
-    def reference_direction(self) -> "AgECrdnDisplayAxisSelector":
+    def reference_direction(self) -> "CRDN_DISPLAY_AXIS_SELECTOR":
         """Specify a rotation direction."""
-        with agmarshall.AgEnum_arg(AgECrdnDisplayAxisSelector) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_DISPLAY_AXIS_SELECTOR) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_direction"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @reference_direction.setter
-    def reference_direction(self, referenceDirection:"AgECrdnDisplayAxisSelector") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnDisplayAxisSelector, referenceDirection) as arg_referenceDirection:
+    def reference_direction(self, referenceDirection:"CRDN_DISPLAY_AXIS_SELECTOR") -> None:
+        with agmarshall.AgEnum_arg(CRDN_DISPLAY_AXIS_SELECTOR, referenceDirection) as arg_referenceDirection:
             agcls.evaluate_hresult(self.__dict__["_set_reference_direction"](arg_referenceDirection.COM_val))
 
 
@@ -19596,15 +19596,15 @@ class IVectorGeometryToolAngleToPlane(object):
             return arg_ppRetVal.python_val
 
     @property
-    def signed(self) -> "AgECrdnSignedAngleType":
+    def signed(self) -> "CRDN_SIGNED_ANGLE_TYPE":
         """Controls whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive."""
-        with agmarshall.AgEnum_arg(AgECrdnSignedAngleType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SIGNED_ANGLE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_signed"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @signed.setter
-    def signed(self, signed:"AgECrdnSignedAngleType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSignedAngleType, signed) as arg_signed:
+    def signed(self, signed:"CRDN_SIGNED_ANGLE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SIGNED_ANGLE_TYPE, signed) as arg_signed:
             agcls.evaluate_hresult(self.__dict__["_set_signed"](arg_signed.COM_val))
 
 
@@ -19718,15 +19718,15 @@ class IVectorGeometryToolPlaneQuadrant(object):
             return arg_ppRetVal.python_val
 
     @property
-    def quadrant(self) -> "AgECrdnQuadrantType":
+    def quadrant(self) -> "CRDN_QUADRANT_TYPE":
         """Specify a quadrant."""
-        with agmarshall.AgEnum_arg(AgECrdnQuadrantType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_QUADRANT_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_quadrant"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @quadrant.setter
-    def quadrant(self, quadrant:"AgECrdnQuadrantType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnQuadrantType, quadrant) as arg_quadrant:
+    def quadrant(self, quadrant:"CRDN_QUADRANT_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_QUADRANT_TYPE, quadrant) as arg_quadrant:
             agcls.evaluate_hresult(self.__dict__["_set_quadrant"](arg_quadrant.COM_val))
 
 
@@ -20000,27 +20000,27 @@ class IVectorGeometryToolPointBPlane(object):
             return arg_ppRetVal.python_val
 
     @property
-    def point_type(self) -> "AgECrdnPointBPlaneType":
+    def point_type(self) -> "CRDN_POINT_B_PLANE_TYPE":
         """Specify a point type."""
-        with agmarshall.AgEnum_arg(AgECrdnPointBPlaneType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_POINT_B_PLANE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @point_type.setter
-    def point_type(self, pointType:"AgECrdnPointBPlaneType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnPointBPlaneType, pointType) as arg_pointType:
+    def point_type(self, pointType:"CRDN_POINT_B_PLANE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_POINT_B_PLANE_TYPE, pointType) as arg_pointType:
             agcls.evaluate_hresult(self.__dict__["_set_point_type"](arg_pointType.COM_val))
 
     @property
-    def direction(self) -> "AgECrdnDirectionType":
+    def direction(self) -> "CRDN_DIRECTION_TYPE":
         """Specify a direction (incoming or outgoing)."""
-        with agmarshall.AgEnum_arg(AgECrdnDirectionType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_DIRECTION_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_direction"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @direction.setter
-    def direction(self, direction:"AgECrdnDirectionType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnDirectionType, direction) as arg_direction:
+    def direction(self, direction:"CRDN_DIRECTION_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_DIRECTION_TYPE, direction) as arg_direction:
             agcls.evaluate_hresult(self.__dict__["_set_direction"](arg_direction.COM_val))
 
 
@@ -20524,27 +20524,27 @@ class IVectorGeometryToolPointOnSurface(object):
             return arg_ppRetVal.python_val
 
     @property
-    def reference_shape(self) -> "AgECrdnReferenceShapeType":
+    def reference_shape(self) -> "CRDN_REFERENCE_SHAPE_TYPE":
         """Specify a reference shape."""
-        with agmarshall.AgEnum_arg(AgECrdnReferenceShapeType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_REFERENCE_SHAPE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_shape"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @reference_shape.setter
-    def reference_shape(self, referenceShape:"AgECrdnReferenceShapeType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnReferenceShapeType, referenceShape) as arg_referenceShape:
+    def reference_shape(self, referenceShape:"CRDN_REFERENCE_SHAPE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_REFERENCE_SHAPE_TYPE, referenceShape) as arg_referenceShape:
             agcls.evaluate_hresult(self.__dict__["_set_reference_shape"](arg_referenceShape.COM_val))
 
     @property
-    def surface_type(self) -> "AgECrdnSurfaceType":
+    def surface_type(self) -> "CRDN_SURFACE_TYPE":
         """Specify a surface type."""
-        with agmarshall.AgEnum_arg(AgECrdnSurfaceType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SURFACE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_surface_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @surface_type.setter
-    def surface_type(self, surfaceType:"AgECrdnSurfaceType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSurfaceType, surfaceType) as arg_surfaceType:
+    def surface_type(self, surfaceType:"CRDN_SURFACE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SURFACE_TYPE, surfaceType) as arg_surfaceType:
             agcls.evaluate_hresult(self.__dict__["_set_surface_type"](arg_surfaceType.COM_val))
 
 
@@ -20769,15 +20769,15 @@ class IVectorGeometryToolPointLagrangeLibration(object):
             return arg_ppRetVal.python_val
 
     @property
-    def point_type(self) -> "AgECrdnLagrangeLibrationPointType":
+    def point_type(self) -> "CRDN_LAGRANGE_LIBRATION_POINT_TYPE":
         """Specify a lagrange point (L1, L2, etc.)"""
-        with agmarshall.AgEnum_arg(AgECrdnLagrangeLibrationPointType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_LAGRANGE_LIBRATION_POINT_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_point_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @point_type.setter
-    def point_type(self, pointType:"AgECrdnLagrangeLibrationPointType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnLagrangeLibrationPointType, pointType) as arg_pointType:
+    def point_type(self, pointType:"CRDN_LAGRANGE_LIBRATION_POINT_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_LAGRANGE_LIBRATION_POINT_TYPE, pointType) as arg_pointType:
             agcls.evaluate_hresult(self.__dict__["_set_point_type"](arg_pointType.COM_val))
 
     @property
@@ -20978,15 +20978,15 @@ class IVectorGeometryToolPointCentBodyIntersect(object):
             agcls.evaluate_hresult(self.__dict__["_set_direction_vector"](arg_directionVector.COM_val))
 
     @property
-    def intersection_surface(self) -> "AgECrdnIntersectionSurface":
+    def intersection_surface(self) -> "CRDN_INTERSECTION_SURFACE":
         """An intersection surface."""
-        with agmarshall.AgEnum_arg(AgECrdnIntersectionSurface) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_INTERSECTION_SURFACE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_intersection_surface"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @intersection_surface.setter
-    def intersection_surface(self, intersectionSurface:"AgECrdnIntersectionSurface") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnIntersectionSurface, intersectionSurface) as arg_intersectionSurface:
+    def intersection_surface(self, intersectionSurface:"CRDN_INTERSECTION_SURFACE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_INTERSECTION_SURFACE, intersectionSurface) as arg_intersectionSurface:
             agcls.evaluate_hresult(self.__dict__["_set_intersection_surface"](arg_intersectionSurface.COM_val))
 
     @property
@@ -21305,15 +21305,15 @@ class IVectorGeometryToolPointCBFixedOffset(object):
             agcls.evaluate_hresult(self.__dict__["_set_central_body"](arg_centralBody.COM_val))
 
     @property
-    def reference_shape(self) -> "AgECrdnReferenceShapeType":
+    def reference_shape(self) -> "CRDN_REFERENCE_SHAPE_TYPE":
         """Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level."""
-        with agmarshall.AgEnum_arg(AgECrdnReferenceShapeType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_REFERENCE_SHAPE_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_shape"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @reference_shape.setter
-    def reference_shape(self, referenceShape:"AgECrdnReferenceShapeType") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnReferenceShapeType, referenceShape) as arg_referenceShape:
+    def reference_shape(self, referenceShape:"CRDN_REFERENCE_SHAPE_TYPE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_REFERENCE_SHAPE_TYPE, referenceShape) as arg_referenceShape:
             agcls.evaluate_hresult(self.__dict__["_set_reference_shape"](arg_referenceShape.COM_val))
 
     @property
@@ -21718,15 +21718,15 @@ class IVectorGeometryToolVectorApoapsis(object):
             return arg_ppRetVal.python_val
 
     @property
-    def mean_element_type(self) -> "AgECrdnMeanElementTheory":
+    def mean_element_type(self) -> "CRDN_MEAN_ELEMENT_THEORY":
         """Specify the mean element theory type for approximating motion."""
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mean_element_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"AgECrdnMeanElementTheory") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory, meanElementType) as arg_meanElementType:
+    def mean_element_type(self, meanElementType:"CRDN_MEAN_ELEMENT_THEORY") -> None:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY, meanElementType) as arg_meanElementType:
             agcls.evaluate_hresult(self.__dict__["_set_mean_element_type"](arg_meanElementType.COM_val))
 
 
@@ -21989,15 +21989,15 @@ class IVectorGeometryToolVectorConing(object):
             agcls.evaluate_hresult(self.__dict__["_set_clock_angle_rate"](arg_clockAngleRate.COM_val))
 
     @property
-    def mode(self) -> "AgECrdnSweepMode":
+    def mode(self) -> "CRDN_SWEEP_MODE":
         """Specify either unidirectional or bidirectional mode."""
-        with agmarshall.AgEnum_arg(AgECrdnSweepMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SWEEP_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @mode.setter
-    def mode(self, mode:"AgECrdnSweepMode") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSweepMode, mode) as arg_mode:
+    def mode(self, mode:"CRDN_SWEEP_MODE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SWEEP_MODE, mode) as arg_mode:
             agcls.evaluate_hresult(self.__dict__["_set_mode"](arg_mode.COM_val))
 
 
@@ -22338,15 +22338,15 @@ class IVectorGeometryToolVectorDisplacement(object):
             agcls.evaluate_hresult(self.__dict__["_set_ignore_aberration"](arg_ignoreAberration.COM_val))
 
     @property
-    def signal_sense(self) -> "AgECrdnSignalSense":
+    def signal_sense(self) -> "CRDN_SIGNAL_SENSE":
         """Specify a sense of signal transmission. This property is read-only if Apparent is set to false."""
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_signal_sense"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @signal_sense.setter
-    def signal_sense(self, signalSense:"AgECrdnSignalSense") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnSignalSense, signalSense) as arg_signalSense:
+    def signal_sense(self, signalSense:"CRDN_SIGNAL_SENSE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_SIGNAL_SENSE, signalSense) as arg_signalSense:
             agcls.evaluate_hresult(self.__dict__["_set_signal_sense"](arg_signalSense.COM_val))
 
     @property
@@ -22647,15 +22647,15 @@ class IVectorGeometryToolVectorEccentricity(object):
             return arg_ppRetVal.python_val
 
     @property
-    def mean_element_type(self) -> "AgECrdnMeanElementTheory":
+    def mean_element_type(self) -> "CRDN_MEAN_ELEMENT_THEORY":
         """Specify the mean element theory type for approximating motion."""
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mean_element_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"AgECrdnMeanElementTheory") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory, meanElementType) as arg_meanElementType:
+    def mean_element_type(self, meanElementType:"CRDN_MEAN_ELEMENT_THEORY") -> None:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY, meanElementType) as arg_meanElementType:
             agcls.evaluate_hresult(self.__dict__["_set_mean_element_type"](arg_meanElementType.COM_val))
 
 
@@ -22822,15 +22822,15 @@ class IVectorGeometryToolVectorOrbitAngularMomentum(object):
             return arg_ppRetVal.python_val
 
     @property
-    def mean_element_type(self) -> "AgECrdnMeanElementTheory":
+    def mean_element_type(self) -> "CRDN_MEAN_ELEMENT_THEORY":
         """Specify the mean element theory type for approximating motion."""
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mean_element_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"AgECrdnMeanElementTheory") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory, meanElementType) as arg_meanElementType:
+    def mean_element_type(self, meanElementType:"CRDN_MEAN_ELEMENT_THEORY") -> None:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY, meanElementType) as arg_meanElementType:
             agcls.evaluate_hresult(self.__dict__["_set_mean_element_type"](arg_meanElementType.COM_val))
 
 
@@ -22891,15 +22891,15 @@ class IVectorGeometryToolVectorOrbitNormal(object):
             return arg_ppRetVal.python_val
 
     @property
-    def mean_element_type(self) -> "AgECrdnMeanElementTheory":
+    def mean_element_type(self) -> "CRDN_MEAN_ELEMENT_THEORY":
         """Specify the mean element theory type for approximating motion."""
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mean_element_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"AgECrdnMeanElementTheory") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory, meanElementType) as arg_meanElementType:
+    def mean_element_type(self, meanElementType:"CRDN_MEAN_ELEMENT_THEORY") -> None:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY, meanElementType) as arg_meanElementType:
             agcls.evaluate_hresult(self.__dict__["_set_mean_element_type"](arg_meanElementType.COM_val))
 
 
@@ -22960,15 +22960,15 @@ class IVectorGeometryToolVectorPeriapsis(object):
             return arg_ppRetVal.python_val
 
     @property
-    def mean_element_type(self) -> "AgECrdnMeanElementTheory":
+    def mean_element_type(self) -> "CRDN_MEAN_ELEMENT_THEORY":
         """Specify the mean element theory type for approximating motion."""
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_mean_element_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"AgECrdnMeanElementTheory") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnMeanElementTheory, meanElementType) as arg_meanElementType:
+    def mean_element_type(self, meanElementType:"CRDN_MEAN_ELEMENT_THEORY") -> None:
+        with agmarshall.AgEnum_arg(CRDN_MEAN_ELEMENT_THEORY, meanElementType) as arg_meanElementType:
             agcls.evaluate_hresult(self.__dict__["_set_mean_element_type"](arg_meanElementType.COM_val))
 
 
@@ -23415,15 +23415,15 @@ class IVectorGeometryToolVectorLinearCombination(object):
             agcls.evaluate_hresult(self.__dict__["_set_normalize_vector_b"](arg_normalizeVectorB.COM_val))
 
     @property
-    def output_dimension_inheritance(self) -> "AgECrdnDimensionInheritance":
+    def output_dimension_inheritance(self) -> "CRDN_DIMENSION_INHERITANCE":
         """Determines whether the output dimension is inherited or explicitly specified using OutputDimension."""
-        with agmarshall.AgEnum_arg(AgECrdnDimensionInheritance) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_output_dimension_inheritance"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, outputDimensionInheritance:"AgECrdnDimensionInheritance") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnDimensionInheritance, outputDimensionInheritance) as arg_outputDimensionInheritance:
+    def output_dimension_inheritance(self, outputDimensionInheritance:"CRDN_DIMENSION_INHERITANCE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE, outputDimensionInheritance) as arg_outputDimensionInheritance:
             agcls.evaluate_hresult(self.__dict__["_set_output_dimension_inheritance"](arg_outputDimensionInheritance.COM_val))
 
     @property
@@ -23709,15 +23709,15 @@ class IVectorGeometryToolVectorScalarLinearCombination(object):
             agcls.evaluate_hresult(self.__dict__["_set_normalize_vector_b"](arg_normalizeVectorB.COM_val))
 
     @property
-    def output_dimension_inheritance(self) -> "AgECrdnDimensionInheritance":
+    def output_dimension_inheritance(self) -> "CRDN_DIMENSION_INHERITANCE":
         """Determines whether the output dimension is inherited or explicitly specified using OutputDimension."""
-        with agmarshall.AgEnum_arg(AgECrdnDimensionInheritance) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_output_dimension_inheritance"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, outputDimensionInheritance:"AgECrdnDimensionInheritance") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnDimensionInheritance, outputDimensionInheritance) as arg_outputDimensionInheritance:
+    def output_dimension_inheritance(self, outputDimensionInheritance:"CRDN_DIMENSION_INHERITANCE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_DIMENSION_INHERITANCE, outputDimensionInheritance) as arg_outputDimensionInheritance:
             agcls.evaluate_hresult(self.__dict__["_set_output_dimension_inheritance"](arg_outputDimensionInheritance.COM_val))
 
     @property
@@ -23840,15 +23840,15 @@ class IVectorGeometryToolVectorScalarScaled(object):
             agcls.evaluate_hresult(self.__dict__["_set_normalize"](arg_normalize.COM_val))
 
     @property
-    def dimension_inheritance(self) -> "AgECrdnVectorScaledDimensionInheritance":
+    def dimension_inheritance(self) -> "CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE":
         """Whether or not to inherit dimension from the input vector or the scalar."""
-        with agmarshall.AgEnum_arg(AgECrdnVectorScaledDimensionInheritance) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_dimension_inheritance"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @dimension_inheritance.setter
-    def dimension_inheritance(self, dimensionInheritance:"AgECrdnVectorScaledDimensionInheritance") -> None:
-        with agmarshall.AgEnum_arg(AgECrdnVectorScaledDimensionInheritance, dimensionInheritance) as arg_dimensionInheritance:
+    def dimension_inheritance(self, dimensionInheritance:"CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE") -> None:
+        with agmarshall.AgEnum_arg(CRDN_VECTOR_SCALED_DIMENSION_INHERITANCE, dimensionInheritance) as arg_dimensionInheritance:
             agcls.evaluate_hresult(self.__dict__["_set_dimension_inheritance"](arg_dimensionInheritance.COM_val))
 
     @property
@@ -24177,18 +24177,18 @@ class IVectorGeometryToolVectorFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolVectorFactory.")
     
-    def create(self, vectorName:str, description:str, vectorType:"AgECrdnVectorType") -> "IVectorGeometryToolVector":
+    def create(self, vectorName:str, description:str, vectorType:"CRDN_VECTOR_TYPE") -> "IVectorGeometryToolVector":
         """Creates a VGT vector using specified name, description and type."""
         with agmarshall.BSTR_arg(vectorName) as arg_vectorName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnVectorType, vectorType) as arg_vectorType, \
+             agmarshall.AgEnum_arg(CRDN_VECTOR_TYPE, vectorType) as arg_vectorType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_vectorName.COM_val, arg_description.COM_val, arg_vectorType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"AgECrdnVectorType") -> bool:
+    def is_type_supported(self, type:"CRDN_VECTOR_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnVectorType, type) as arg_type, \
+        with agmarshall.AgEnum_arg(CRDN_VECTOR_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24270,18 +24270,18 @@ class IVectorGeometryToolAxesFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAxesFactory.")
     
-    def create(self, axesName:str, description:str, axesType:"AgECrdnAxesType") -> "IVectorGeometryToolAxes":
+    def create(self, axesName:str, description:str, axesType:"CRDN_AXES_TYPE") -> "IVectorGeometryToolAxes":
         """Creates a VGT axes using specified name, description and type."""
         with agmarshall.BSTR_arg(axesName) as arg_axesName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnAxesType, axesType) as arg_axesType, \
+             agmarshall.AgEnum_arg(CRDN_AXES_TYPE, axesType) as arg_axesType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_axesName.COM_val, arg_description.COM_val, arg_axesType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"AgECrdnAxesType") -> bool:
+    def is_type_supported(self, type:"CRDN_AXES_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnAxesType, type) as arg_type, \
+        with agmarshall.AgEnum_arg(CRDN_AXES_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24341,18 +24341,18 @@ class IVectorGeometryToolSystemFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolSystemFactory.")
     
-    def create(self, systemName:str, description:str, systemType:"AgECrdnSystemType") -> "IVectorGeometryToolSystem":
+    def create(self, systemName:str, description:str, systemType:"CRDN_SYSTEM_TYPE") -> "IVectorGeometryToolSystem":
         """Creates a VGT system using the specified name, description and type."""
         with agmarshall.BSTR_arg(systemName) as arg_systemName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnSystemType, systemType) as arg_systemType, \
+             agmarshall.AgEnum_arg(CRDN_SYSTEM_TYPE, systemType) as arg_systemType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_systemName.COM_val, arg_description.COM_val, arg_systemType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"AgECrdnSystemType") -> bool:
+    def is_type_supported(self, type:"CRDN_SYSTEM_TYPE") -> bool:
         """Returns true if the specified system type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnSystemType, type) as arg_type, \
+        with agmarshall.AgEnum_arg(CRDN_SYSTEM_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24402,18 +24402,18 @@ class IVectorGeometryToolPointFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPointFactory.")
     
-    def create(self, pointName:str, description:str, pointType:"AgECrdnPointType") -> "IVectorGeometryToolPoint":
+    def create(self, pointName:str, description:str, pointType:"CRDN_POINT_TYPE") -> "IVectorGeometryToolPoint":
         """Creates a VGT point using the specified name, description and type."""
         with agmarshall.BSTR_arg(pointName) as arg_pointName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnPointType, pointType) as arg_pointType, \
+             agmarshall.AgEnum_arg(CRDN_POINT_TYPE, pointType) as arg_pointType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_pointName.COM_val, arg_description.COM_val, arg_pointType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"AgECrdnPointType") -> bool:
+    def is_type_supported(self, type:"CRDN_POINT_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnPointType, type) as arg_type, \
+        with agmarshall.AgEnum_arg(CRDN_POINT_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24434,14 +24434,14 @@ class IVectorGeometryToolPointFactory(object):
             agcls.evaluate_hresult(self.__dict__["_create_point_plugin_from_display_name"](arg_pointName.COM_val, arg_description.COM_val, arg_displayName.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def create_point_fixed_on_central_body(self, pointName:str, description:str, longitude:typing.Any, latitude:typing.Any, altitude:float, referenceShape:"AgECrdnReferenceShapeType") -> "IVectorGeometryToolPoint":
+    def create_point_fixed_on_central_body(self, pointName:str, description:str, longitude:typing.Any, latitude:typing.Any, altitude:float, referenceShape:"CRDN_REFERENCE_SHAPE_TYPE") -> "IVectorGeometryToolPoint":
         """Creates a point fixed on a central body."""
         with agmarshall.BSTR_arg(pointName) as arg_pointName, \
              agmarshall.BSTR_arg(description) as arg_description, \
              agmarshall.VARIANT_arg(longitude) as arg_longitude, \
              agmarshall.VARIANT_arg(latitude) as arg_latitude, \
              agmarshall.DOUBLE_arg(altitude) as arg_altitude, \
-             agmarshall.AgEnum_arg(AgECrdnReferenceShapeType, referenceShape) as arg_referenceShape, \
+             agmarshall.AgEnum_arg(CRDN_REFERENCE_SHAPE_TYPE, referenceShape) as arg_referenceShape, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create_point_fixed_on_central_body"](arg_pointName.COM_val, arg_description.COM_val, arg_longitude.COM_val, arg_latitude.COM_val, arg_altitude.COM_val, arg_referenceShape.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -24485,18 +24485,18 @@ class IVectorGeometryToolPlaneFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolPlaneFactory.")
     
-    def create(self, planeName:str, description:str, planeType:"AgECrdnPlaneType") -> "IVectorGeometryToolPlane":
+    def create(self, planeName:str, description:str, planeType:"CRDN_PLANE_TYPE") -> "IVectorGeometryToolPlane":
         """Creates a VGT plane using the specified name, description and type."""
         with agmarshall.BSTR_arg(planeName) as arg_planeName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnPlaneType, planeType) as arg_planeType, \
+             agmarshall.AgEnum_arg(CRDN_PLANE_TYPE, planeType) as arg_planeType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_planeName.COM_val, arg_description.COM_val, arg_planeType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"AgECrdnPlaneType") -> bool:
+    def is_type_supported(self, type:"CRDN_PLANE_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnPlaneType, type) as arg_type, \
+        with agmarshall.AgEnum_arg(CRDN_PLANE_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -24540,18 +24540,18 @@ class IVectorGeometryToolAngleFactory(object):
         else:
             raise STKAttributeError(attrname + " is not a recognized attribute in IVectorGeometryToolAngleFactory.")
     
-    def create(self, angleName:str, description:str, angleType:"AgECrdnAngleType") -> "IVectorGeometryToolAngle":
+    def create(self, angleName:str, description:str, angleType:"CRDN_ANGLE_TYPE") -> "IVectorGeometryToolAngle":
         """Creates a VGT angle using specified name, description and type."""
         with agmarshall.BSTR_arg(angleName) as arg_angleName, \
              agmarshall.BSTR_arg(description) as arg_description, \
-             agmarshall.AgEnum_arg(AgECrdnAngleType, angleType) as arg_angleType, \
+             agmarshall.AgEnum_arg(CRDN_ANGLE_TYPE, angleType) as arg_angleType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_create"](arg_angleName.COM_val, arg_description.COM_val, arg_angleType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def is_type_supported(self, type:"AgECrdnAngleType") -> bool:
+    def is_type_supported(self, type:"CRDN_ANGLE_TYPE") -> bool:
         """Returns true if the type is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnAngleType, type) as arg_type, \
+        with agmarshall.AgEnum_arg(CRDN_ANGLE_TYPE, type) as arg_type, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_is_type_supported"](arg_type.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
@@ -25548,9 +25548,9 @@ class IAnalysisWorkbenchProvider(object):
             agcls.evaluate_hresult(self.__dict__["_get_conditions"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def supports(self, feature:"AgECrdnKind") -> bool:
+    def supports(self, feature:"CRDN_KIND") -> bool:
         """Tests whether the specified VGT feature is supported."""
-        with agmarshall.AgEnum_arg(AgECrdnKind, feature) as arg_feature, \
+        with agmarshall.AgEnum_arg(CRDN_KIND, feature) as arg_feature, \
              agmarshall.VARIANT_BOOL_arg() as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_supports"](arg_feature.COM_val, byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val

@@ -28,9 +28,7 @@ class Facility(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         Facility.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eFacility, Facility.m_DefaultName
-            ),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, Facility.m_DefaultName),
             IFacility,
         )
 
@@ -38,32 +36,32 @@ class Facility(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, Facility.m_DefaultName)
         Facility.m_Object = None
 
     # endregion
 
     # region CreateDefaultFacilityOnCurrentScenarioCentralBody
     def test_CreateDefaultFacilityOnCurrentScenarioCentralBody(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, Facility.m_DefaultName)
         self.CreateDefaultFacilityOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create a facility on current scenario central body
         facility: "IFacility" = clr.CastAs(
-            root.current_scenario.children.new(AgESTKObjectType.eFacility, "MyFacility"), IFacility
+            root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "MyFacility"), IFacility
         )
 
     # endregion
 
     # region CreateFacilityOnEarth
     def test_CreateFacilityOnEarth(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, Facility.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, Facility.m_DefaultName)
         self.CreateFacilityOnEarth(CodeSnippetsTestBase.m_Root)
 
     def CreateFacilityOnEarth(self, root: "IStkObjectRoot"):
         facility: "IFacility" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(AgESTKObjectType.eFacility, "MyFacility", "Earth"),
+            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.FACILITY, "MyFacility", "Earth"),
             IFacility,
         )
 
@@ -78,8 +76,7 @@ class Facility(CodeSnippetsTestBase):
 
     def CreateFacilityOnOtherPlanet(self, root: "IStkObjectRoot"):
         facObject: "IFacility" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(AgESTKObjectType.eFacility, "Facility1", "Mars"),
-            IFacility,
+            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.FACILITY, "Facility1", "Mars"), IFacility
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance

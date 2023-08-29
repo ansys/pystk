@@ -39,10 +39,10 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         scenario: "IStkObject" = clr.CastAs(TestBase.Application.current_scenario, IStkObject)
         AviatorCodeSnippets.AG_Scenario = scenario
         AviatorCodeSnippets.AG_AC = clr.Convert(
-            (scenario.children.new(AgESTKObjectType.eAircraft, "AviatorAC")), IAircraft
+            (scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC")), IAircraft
         )
         # Set to Propagator to Aviator
-        AviatorCodeSnippets.AG_AC.set_route_type(AgEVePropagatorType.ePropagatorAviator)
+        AviatorCodeSnippets.AG_AC.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
         # Get the aircrafts route (still on the STKObjects side)
         aircraftRoute: "IVehiclePropagatorAviator" = clr.CastAs(
             AviatorCodeSnippets.AG_AC.route, IVehiclePropagatorAviator
@@ -83,7 +83,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def ConfigureAviatorPropagator(self, aircraft: "IAircraft"):
         # Set to Propagator to Aviator
-        aircraft.set_route_type(AgEVePropagatorType.ePropagatorAviator)
+        aircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
         # Get the aircraft's route
         aircraftRoute: "IVehiclePropagatorAviator" = clr.CastAs(aircraft.route, IVehiclePropagatorAviator)
         # Get the Aviator propagator
@@ -144,9 +144,9 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the wind model used for the mission
         windModel: "IWindModel" = mission.wind_model
         # Let's use the mission model
-        windModel.wind_model_source = AgEAvtrWindAtmosModelSource.eMissionModel
+        windModel.wind_model_source = AVTR_WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
         # Let's use constant wind
-        windModel.wind_model_type = AgEAvtrWindModelType.eConstantWind
+        windModel.wind_model_type = AVTR_WIND_MODEL_TYPE.CONSTANT_WIND
         # Get the constant wind model options
         constantWind: "IWindModelConstant" = windModel.mode_as_constant
         # Set the wind bearing
@@ -157,11 +157,11 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the atmosphere model used for the mission
         atmosphere: "IAtmosphereModel" = mission.atmosphere_model
         # Let's use the mission model
-        atmosphere.atmosphere_model_source = AgEAvtrWindAtmosModelSource.eMissionModel
+        atmosphere.atmosphere_model_source = AVTR_WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
         # Get the basic atmosphere options
         basicAtmosphere: "IAtmosphereModelBasic" = atmosphere.mode_as_basic
         # Use standard 1976 atmosphere
-        basicAtmosphere.basic_model_type = AgEAvtrAtmosphereModel.eStandard1976
+        basicAtmosphere.basic_model_type = AVTR_ATMOSPHERE_MODEL.STANDARD1976
         # Opt to override the values
         basicAtmosphere.use_non_standard_atmosphere = True
         # Override the temperature
@@ -213,11 +213,11 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         advFixedWingTool.max_temperature = 900
 
         # Use a subsonic aerodynamic strategy
-        advFixedWingTool.aero_strategy = AgEAvtrAdvFixedWingAeroStrategy.eSubsonicAero
+        advFixedWingTool.aero_strategy = AVTR_ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
         # Cache the aerodynamic data to improve calculation speed
         advFixedWingTool.cache_aero_data = True
         # Use a high bypass turbofan
-        advFixedWingTool.powerplant_strategy = AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanHighBypass
+        advFixedWingTool.powerplant_strategy = AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS
         # Cache the fuel flow data to improve calculation speed
         advFixedWingTool.cache_fuel_flow = True
 
@@ -272,10 +272,10 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def AddAndRemoveProcedures(self, procedures: "IProcedureCollection", propagator: "IAviatorPropagator"):
         # Add a takeoff procedure with a runway as a site. This will add the procedure
-        takeoff: "IProcedure" = procedures.add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff)
+        takeoff: "IProcedure" = procedures.add(AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF)
         # Add a procedure at a given index (starting from 0)
         enroute: "IProcedure" = procedures.add_at_index(
-            1, AgEAvtrSiteType.eSiteEndOfPrevProcedure, AgEAvtrProcedureType.eProcEnroute
+            1, AVTR_SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, AVTR_PROCEDURE_TYPE.PROC_ENROUTE
         )
 
         # Make sure to propagate the mission to calculate the route
@@ -300,7 +300,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     # region ConfigureProcedure
     def test_ConfigureProcedure(self):
         procedure: "IProcedure" = AviatorCodeSnippets.AG_Procedures.add(
-            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff
+            AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF
         )
         self.ConfigureProcedure(procedure)
         AviatorCodeSnippets.AG_Procedures.remove_at_index(0)
@@ -318,7 +318,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     # region ConfigureProcedureWindAtmos
     def test_ConfigureProcedureWindAtmos(self):
         procedure: "IProcedure" = AviatorCodeSnippets.AG_Procedures.add(
-            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff
+            AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF
         )
         self.ConfigureProcedureWindAtmos(procedure)
         AviatorCodeSnippets.AG_Procedures.remove_at_index(0)
@@ -327,9 +327,9 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the wind model for the procedure
         windModel: "IWindModel" = procedure.wind_model
         # Use the procedure model
-        windModel.wind_model_source = AgEAvtrWindAtmosModelSource.eProcedureModel
+        windModel.wind_model_source = AVTR_WIND_ATMOS_MODEL_SOURCE.PROCEDURE_MODEL
         # Let's use constant wind
-        windModel.wind_model_type = AgEAvtrWindModelType.eConstantWind
+        windModel.wind_model_type = AVTR_WIND_MODEL_TYPE.CONSTANT_WIND
         # Get the constant wind model options
         constantWind: "IWindModelConstant" = windModel.mode_as_constant
         # Set the wind bearing
@@ -340,11 +340,11 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the atmosphere model used for the procedure
         atmosphere: "IAtmosphereModel" = procedure.atmosphere_model
         # Let's use the procedure model
-        atmosphere.atmosphere_model_source = AgEAvtrWindAtmosModelSource.eProcedureModel
+        atmosphere.atmosphere_model_source = AVTR_WIND_ATMOS_MODEL_SOURCE.PROCEDURE_MODEL
         # Get the basic atmosphere options
         basicAtmosphere: "IAtmosphereModelBasic" = atmosphere.mode_as_basic
         # Use standard 1976 atmosphere
-        basicAtmosphere.basic_model_type = AgEAvtrAtmosphereModel.eStandard1976
+        basicAtmosphere.basic_model_type = AVTR_ATMOSPHERE_MODEL.STANDARD1976
 
     # endregion
 
@@ -385,7 +385,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the level turns options
         levelTurns: "ILevelTurns" = basicAccModel.level_turns
         # Set a max bank angle of 25
-        levelTurns.set_level_turn(AgEAvtrTurnMode.eTurnModeBankAngle, 25)
+        levelTurns.set_level_turn(AVTR_TURN_MODE.TURN_MODE_BANK_ANGLE, 25)
         # Get the climb and descent transition options
         climbAndDescent: "IClimbAndDescentTransitions" = basicAccModel.climb_and_descent_transitions
         # Set the max pull up G to 1
@@ -398,7 +398,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the aerodynamics
         aero: "IAircraftAero" = basicAccModel.aerodynamics
         # Use simple aerodynamics
-        aero.aero_strategy = AgEAvtrAircraftAeroStrategy.eAircraftAeroSimple
+        aero.aero_strategy = AVTR_AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE
         # Get the options for the simple aerodynamics and set some parameters
         simpleAero: "IAircraftSimpleAero" = aero.mode_as_simple
         simpleAero.s_ref = 5
@@ -408,7 +408,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the propulsion
         prop: "IAircraftProp" = basicAccModel.propulsion
         # Use simple propulsion
-        prop.prop_strategy = AgEAvtrAircraftPropStrategy.eAircraftPropSimple
+        prop.prop_strategy = AVTR_AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE
         # Get the simple propulsion options and set some parameters
         simpleProp: "IAircraftSimpleProp" = prop.mode_as_simple
         simpleProp.max_thrust_accel = 0.6
@@ -435,7 +435,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Set the default cruise altitude
         basicCruiseModel.default_cruise_altitude = 10000
         # Set the airspeed type
-        basicCruiseModel.airspeed_type = AgEAvtrAirspeedType.eTAS
+        basicCruiseModel.airspeed_type = AVTR_AIRSPEED_TYPE.TAS
         # Opt to not use the fuel flow calculated by the aero/prop model and instead specify the values
         basicCruiseModel.use_aero_prop_fuel = False
 
@@ -463,7 +463,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     # region ConfigureProcedureTimeOptions
     def test_ConfigureProcedureTimeOptions(self):
         procedure: "IProcedure" = AviatorCodeSnippets.AG_Procedures.add(
-            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff
+            AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF
         )
         self.ConfigureProcedureTimeOptions(procedure)
         AviatorCodeSnippets.AG_Procedures.remove_at_index(0)
@@ -488,16 +488,16 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def AddTakeoffProcedure(self, procedures: "IProcedureCollection"):
         # Add a takeoff procedure with a runway as a site
         takeoff: "IProcedureTakeoff" = clr.CastAs(
-            procedures.add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff), IProcedureTakeoff
+            procedures.add(AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF), IProcedureTakeoff
         )
 
         # Get the runway heading options
         headingOptions: "IRunwayHeadingOptions" = takeoff.runway_heading_options
         # Opt to use the headwind runway
-        headingOptions.runway_mode = AgEAvtrRunwayHighLowEnd.eHeadwind
+        headingOptions.runway_mode = AVTR_RUNWAY_HIGH_LOW_END.HEADWIND
 
         # Set the takeoff mode and get that interface
-        takeoff.takeoff_mode = AgEAvtrTakeoffMode.eTakeoffNormal
+        takeoff.takeoff_mode = AVTR_TAKEOFF_MODE.TAKEOFF_NORMAL
         takeoffNormal: "ITakeoffNormal" = takeoff.mode_as_normal
 
         # Set the takeoff climb angle
@@ -514,7 +514,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     # region AddEnrouteProcedure
     def test_AddEnrouteProcedure(self):
         procedure: "IProcedure" = AviatorCodeSnippets.AG_Procedures.add(
-            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff
+            AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF
         )
         self.AddEnrouteProcedure(AviatorCodeSnippets.AG_Procedures)
         AviatorCodeSnippets.AG_Procedures.remove_at_index(0)
@@ -523,7 +523,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def AddEnrouteProcedure(self, procedures: "IProcedureCollection"):
         # Add an enroute procedure with a site type of End of Previous Procedure
         enroute: "IProcedureEnroute" = clr.CastAs(
-            procedures.add(AgEAvtrSiteType.eSiteEndOfPrevProcedure, AgEAvtrProcedureType.eProcEnroute),
+            procedures.add(AVTR_SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, AVTR_PROCEDURE_TYPE.PROC_ENROUTE),
             IProcedureEnroute,
         )
         # Get the altitude options
@@ -536,7 +536,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the navigation options
         navigationOptions: "INavigationOptions" = enroute.navigation_options
         # Set the route to arrive on a specified course
-        navigationOptions.nav_mode = AgEAvtrPointToPointMode.eArriveOnCourse
+        navigationOptions.nav_mode = AVTR_POINT_TO_POINT_MODE.ARRIVE_ON_COURSE
         # Set the course
         navigationOptions.arrive_on_course = 30
         # Use a magnetic heading
@@ -545,18 +545,18 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         # Get the navigation options
         airspeedOptions: "ICruiseAirspeedOptions" = enroute.enroute_cruise_airspeed_options
         # Fly at max speed
-        airspeedOptions.cruise_speed_type = AgEAvtrCruiseSpeed.eMaxAirspeed
+        airspeedOptions.cruise_speed_type = AVTR_CRUISE_SPEED.MAX_AIRSPEED
         # To specify an airspeed to fly at, set the speed type to other airspeed
-        airspeedOptions.cruise_speed_type = AgEAvtrCruiseSpeed.eOtherAirspeed
+        airspeedOptions.cruise_speed_type = AVTR_CRUISE_SPEED.OTHER_AIRSPEED
         # Then set the airspeed and airspeed type
-        airspeedOptions.set_other_airspeed(AgEAvtrAirspeedType.eTAS, 200)
+        airspeedOptions.set_other_airspeed(AVTR_AIRSPEED_TYPE.TAS, 200)
 
     # endregion
 
     # region AddBasicManeuverProcedure
     def test_AddBasicManeuverProcedure(self):
         procedure: "IProcedure" = AviatorCodeSnippets.AG_Procedures.add(
-            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff
+            AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF
         )
         self.AddBasicManeuverProcedure(AviatorCodeSnippets.AG_Procedures)
         AviatorCodeSnippets.AG_Procedures.remove_at_index(0)
@@ -565,7 +565,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def AddBasicManeuverProcedure(self, procedures: "IProcedureCollection"):
         # Add a basic maneuver procedure
         basicManeuver: "IProcedureBasicManeuver" = clr.CastAs(
-            procedures.add(AgEAvtrSiteType.eSiteEndOfPrevProcedure, AgEAvtrProcedureType.eProcBasicManeuver),
+            procedures.add(AVTR_SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, AVTR_PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
             IProcedureBasicManeuver,
         )
 
@@ -576,7 +576,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
             basicManeuver.navigation, IBasicManeuverStrategyStraightAhead
         )
         # Opt to maintain course (as opposed to maintain heading)
-        straightAhead.reference_frame = AgEAvtrStraightAheadRefFrame.eMaintainCourse
+        straightAhead.reference_frame = AVTR_STRAIGHT_AHEAD_REF_FRAME.MAINTAIN_COURSE
 
         # Set the profile to use a Autopilot - Vertical Plane strategy
         basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
@@ -585,17 +585,17 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
             basicManeuver.profile, IBasicManeuverStrategyAutopilotProf
         )
         # Opt to maintain the initial altitude
-        autopilot.altitude_mode = AgEAvtrAutopilotAltitudeMode.eAutopilotHoldInitAltitude
+        autopilot.altitude_mode = AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE
         airspeedOptions: "IBasicManeuverAirspeedOptions" = autopilot.airspeed_options
         # Opt to maintain a specified airspeed
-        airspeedOptions.airspeed_mode = AgEAvtrBasicManeuverAirspeedMode.eMaintainSpecifiedAirspeed
+        airspeedOptions.airspeed_mode = AVTR_BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_SPECIFIED_AIRSPEED
         # Specify the airspeed
         airspeedOptions.specified_airspeed = 250
 
         # Configure the options on the Attitude / Performance / Fuel page
-        basicManeuver.flight_mode = AgEAvtrPhaseOfFlight.eFlightPhaseCruise
+        basicManeuver.flight_mode = AVTR_PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE
         # Override the fuel flow
-        basicManeuver.fuel_flow_type = AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowOverride
+        basicManeuver.fuel_flow_type = AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
         basicManeuver.override_fuel_flow_value = 1000
 
         # Set the basic stopping conditions
@@ -609,7 +609,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     # region AddLandingProcedure
     def test_AddLandingProcedure(self):
         procedure: "IProcedure" = AviatorCodeSnippets.AG_Procedures.add(
-            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff
+            AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF
         )
         self.AddLandingProcedure(AviatorCodeSnippets.AG_Procedures)
         AviatorCodeSnippets.AG_Procedures.remove_at_index(0)
@@ -618,16 +618,16 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def AddLandingProcedure(self, procedures: "IProcedureCollection"):
         # Add a landing procedure
         landing: "IProcedureLanding" = clr.CastAs(
-            procedures.add(AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcLanding), IProcedureLanding
+            procedures.add(AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_LANDING), IProcedureLanding
         )
 
         # Get the runway heading options
         headingOptions: "IRunwayHeadingOptions" = landing.runway_heading_options
         # Land from the low end
-        headingOptions.runway_mode = AgEAvtrRunwayHighLowEnd.eLowEnd
+        headingOptions.runway_mode = AVTR_RUNWAY_HIGH_LOW_END.LOW_END
 
         # Use a standard instrument approach
-        landing.approach_mode = AgEAvtrApproachMode.eStandardInstrumentApproach
+        landing.approach_mode = AVTR_APPROACH_MODE.STANDARD_INSTRUMENT_APPROACH
         # Get the options for a standard instrument approach
         sia: "ILandingStandardInstrumentApproach" = landing.mode_as_standard_instrument_approach
         # Change the approach altitude
@@ -650,7 +650,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
             userRunways.remove_child("New User Runway")
 
         takeoff: "IProcedure" = AviatorCodeSnippets.AG_Procedures.add(
-            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff
+            AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF
         )
         self.ConfigureRunwaySite(clr.CastAs(takeoff.site, ISiteRunway))
         AviatorCodeSnippets.AG_Procedures.remove_at_index(0)
@@ -664,7 +664,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         runway.altitude = 5
 
         # Set the altitude reference
-        runway.altitude_ref = AgEAvtrAGLMSL.eAltMSL
+        runway.altitude_ref = AVTR_AGLMSL.ALT_MSL
 
         # Set the heading
         runway.high_end_heading = 195
@@ -688,7 +688,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
             userRunways.add_user_runway("New User Runway")
 
         takeoff: "IProcedure" = AviatorCodeSnippets.AG_Procedures.add(
-            AgEAvtrSiteType.eSiteRunway, AgEAvtrProcedureType.eProcTakeoff
+            AVTR_SITE_TYPE.SITE_RUNWAY, AVTR_PROCEDURE_TYPE.PROC_TAKEOFF
         )
         self.ConfigureRunwayFromCatalog(clr.CastAs(takeoff.site, ISiteRunway), AviatorCodeSnippets.AG_AvtrCatalog)
         AviatorCodeSnippets.AG_Procedures.remove_at_index(0)

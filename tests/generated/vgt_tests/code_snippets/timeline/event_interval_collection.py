@@ -88,11 +88,11 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         asCollectionSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asCollectionSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asCollectionSignaled.signal_sense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
+        asCollectionSignaled.signal_sense = CRDN_SIGNAL_SENSE.TRANSMIT
         basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(
             asCollectionSignaled.signal_delay, ITimeToolSignalDelayBasic
         )
-        basicSignalDelay.speed_option = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
+        basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002

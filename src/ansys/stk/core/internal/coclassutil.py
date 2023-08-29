@@ -4,7 +4,7 @@ import os
 import typing
 import copy
 
-from ctypes import byref, cast, pointer, POINTER, Structure #noqa
+from ctypes import byref, cast, pointer, POINTER, Structure 
 
 from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, PVOID, ULONG, S_OK
 from .comutil import ole32lib, oleaut32lib, IAGFUNCTYPE, IUnknown, Succeeded

@@ -37,9 +37,9 @@ class VO(CodeSnippetsTestBase):
     # region DelayGraphicsUpdates
     @category("VO Tests")
     def test_DelayGraphicsUpdates(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
         self.DelayGraphicsUpdates(CodeSnippetsTestBase.m_Root)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
 
     def DelayGraphicsUpdates(self, root: "IStkObjectRoot"):
         satellite: "ISatellite" = clr.CastAs(root.current_scenario.children["Satellite1"], ISatellite)

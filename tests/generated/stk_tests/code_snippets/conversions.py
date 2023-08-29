@@ -47,7 +47,7 @@ class Conversions(CodeSnippetsTestBase):
         # Convert cartesian dates to cylindrical
         # ConvertPositionArray returns a two dimensional array of cartesian dates
         cylindricalPositions = converter.convert_position_array(
-            AgEPositionType.eCartesian, cartesianPositions, AgEPositionType.eCylindrical
+            POSITION_TYPE.CARTESIAN, cartesianPositions, POSITION_TYPE.CYLINDRICAL
         )
 
         i: int = 0
@@ -67,19 +67,19 @@ class Conversions(CodeSnippetsTestBase):
     def test_ConvertOrbitStateToAnotherRepresentation(self):
         CodeSnippetsTestBase.m_Root.new_scenario("ConvertOrbitStateToAnotherRepresentation")
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), ISatellite
         )
-        sat.set_propagator_type(AgEVePropagatorType.ePropagatorJ2Perturbation)
+        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(sat.propagator, IVehiclePropagatorJ2Perturbation)
 
         self.ConvertOrbitStateToAnotherRepresentation(j2prop.initial_state.representation)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
         CodeSnippetsTestBase.m_Root.close_scenario()
 
     def ConvertOrbitStateToAnotherRepresentation(self, orbit: "IOrbitState"):
         newOrbit: "IOrbitStateClassical" = clr.CastAs(
-            orbit.convert_to(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
+            orbit.convert_to(ORBIT_STATE_TYPE.CLASSICAL), IOrbitStateClassical
         )
 
     # endregion
@@ -94,12 +94,12 @@ class Conversions(CodeSnippetsTestBase):
         b: typing.Any = None
         c: typing.Any = None
 
-        (b, c) = direction.query_euler(AgEEulerDirectionSequence.e12)
+        (b, c) = direction.query_euler(EULER_DIRECTION_SEQUENCE.SEQUENCE_12)
         Console.WriteLine("B = {0}, C = {1}", b, c)
         # Method 2
         # The Query functions returns a one dimension array
         # The number of column rows depends on the representation
-        euler = direction.query_euler_array(AgEEulerDirectionSequence.e12)
+        euler = direction.query_euler_array(EULER_DIRECTION_SEQUENCE.SEQUENCE_12)
         Console.WriteLine("B = {0}, C = {1}", euler[0], euler[1])
 
     # endregion
@@ -108,24 +108,24 @@ class Conversions(CodeSnippetsTestBase):
     def test_AssignIAgOrbitStateToAnotherRepresentation(self):
         CodeSnippetsTestBase.m_Root.new_scenario("AssignIOrbitStateToAnotherRepresentation")
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), ISatellite
         )
-        sat.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         oTwobody: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
 
         self.AssignIAgOrbitStateToAnotherRepresentation(oTwobody.initial_state.representation)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
         CodeSnippetsTestBase.m_Root.close_scenario()
 
     def AssignIAgOrbitStateToAnotherRepresentation(self, orbitState: "IOrbitState"):
         # orbitState can be extended to one of the other representations.
         # Here it is extended to Classical representation.
         newOrbitState: "IOrbitStateClassical" = clr.CastAs(
-            orbitState.convert_to(AgEOrbitStateType.eOrbitStateClassical), IOrbitStateClassical
+            orbitState.convert_to(ORBIT_STATE_TYPE.CLASSICAL), IOrbitStateClassical
         )
 
         # Set the new orbit state parameters
-        newOrbitState.assign_classical(AgECoordinateSystem.eCoordinateSystemICRF, 12000000, 0, 1.8, 0, -1.8, 0)
+        newOrbitState.assign_classical(COORDINATE_SYSTEM.ICRF, 12000000, 0, 1.8, 0, -1.8, 0)
 
     # endregion

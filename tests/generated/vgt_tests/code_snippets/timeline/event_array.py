@@ -46,7 +46,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
         asFiltered.original_time_array = provider.event_arrays["EphemerisTimes"]
 
-        asFiltered.filter_type = AgECrdnEventArrayFilterType.eCrdnEventArrayFilterTypeSkipTimeStep
+        asFiltered.filter_type = CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_TIME_STEP
         asFiltered.include_interval_stop_times = True
 
         # Uses current Time unit preference, this code snippet assumes seconds.
@@ -86,10 +86,10 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asFixedStep.sampling_time_step = 240
-        asFixedStep.reference_type = AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStartOfIntervalList
+        asFixedStep.reference_type = CRDN_SAMPLED_REFERENCE_TIME.START_OF_INTERVAL_LIST
 
         # or using time instants
-        asFixedStep.reference_type = AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeReferenceEvent
+        asFixedStep.reference_type = CRDN_SAMPLED_REFERENCE_TIME.REFERENCE_EVENT
         asFixedStep.reference_time_instant = provider.events["EphemerisStartTime"]
 
         timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
@@ -160,9 +160,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asSignaled.signal_sense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
+        asSignaled.signal_sense = CRDN_SIGNAL_SENSE.TRANSMIT
         basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, ITimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
+        basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.01
@@ -199,7 +199,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
         )
 
         asStartStopTimes.reference_intervals = provider.event_interval_lists["LightingIntervals.Sunlight"]
-        asStartStopTimes.start_stop_option = AgECrdnStartStopOption.eCrdnStartStopOptionCountStartOnly
+        asStartStopTimes.start_stop_option = CRDN_START_STOP_OPTION.COUNT_START_ONLY
 
         timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
@@ -239,7 +239,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
             scalarBound, ICalculationToolConditionScalarBounds
         )
         asScalarBounds.scalar = provider.calc_scalars["GroundTrajectory.Detic.LLA.Latitude"]
-        asScalarBounds.operation = AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionInsideMinMax
+        asScalarBounds.operation = CRDN_CONDITION_THRESHOLD_OPTION.INSIDE_MIN_MAX
         # asScalarBounds.Set(/*$Maximum$Maximum$*/-0.349, /*$Maximum$Maximum$*/0);
 
         asConditionCrossings.condition = scalarBound
@@ -276,7 +276,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
         asExtrema.calculation = provider.calc_scalars["GroundTrajectory.Detic.LLA.Altitude"]
 
         asExtrema.is_global = True
-        asExtrema.extremum_type = AgECrdnExtremumConstants.eCrdnExtremumMaximum
+        asExtrema.extremum_type = CRDN_EXTREMUM_CONSTANTS.MAXIMUM
 
         timeArrays: "ITimeToolFindTimesResult" = eventArray.find_times()
         if timeArrays.is_valid:
@@ -312,7 +312,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
         asFixedStep: "ITimeToolEventArrayFixedStep" = clr.CastAs(twentySecondSample, ITimeToolEventArrayFixedStep)
         asFixedStep.bounding_interval_list = aircraft.vgt.event_interval_lists["AvailabilityIntervals"]
         asFixedStep.sampling_time_step = 20
-        asFixedStep.reference_type = AgECrdnSampledReferenceTime.eCrdnSampledReferenceTimeStartOfIntervalList
+        asFixedStep.reference_type = CRDN_SAMPLED_REFERENCE_TIME.START_OF_INTERVAL_LIST
 
         # At each time step, get the aircraft's altitude and print the value.
         timeArrays: "ITimeToolFindTimesResult" = twentySecondSample.find_times()

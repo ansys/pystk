@@ -152,10 +152,10 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         )
 
         asIntervalList.reference_intervals = provider.event_interval_lists["AttitudeIntervals"]
-        asIntervalList.interval_selection = AgECrdnIntervalSelection.eCrdnIntervalSelectionMaxGap
+        asIntervalList.interval_selection = CRDN_INTERVAL_SELECTION.MAX_GAP
 
         # Or from start
-        asIntervalList.interval_selection = AgECrdnIntervalSelection.eCrdnIntervalSelectionFromStart
+        asIntervalList.interval_selection = CRDN_INTERVAL_SELECTION.FROM_START
         asIntervalList.interval_number = 1
 
         intervalResult: "ITimeToolEventIntervalResult" = eventInterval.find_interval()
@@ -209,9 +209,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asSignaled.signal_sense = AgECrdnSignalSense.eCrdnSignalSenseReceive
+        asSignaled.signal_sense = CRDN_SIGNAL_SENSE.RECEIVE
         basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, ITimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = AgECrdnSpeedOptions.eCrdnLightTransmissionSpeed
+        basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -249,7 +249,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         startEventEpoch: "ITimeToolEvent",
         stopEventEpoch: "ITimeToolEvent",
     ):
-        smartInterval.state = AgECrdnSmartIntervalState.eCrdnSmartIntervalStateStartStop
+        smartInterval.state = CRDN_SMART_INTERVAL_STATE.START_STOP
 
         accessStartEpoch: "ITimeToolEventSmartEpoch" = smartInterval.get_start_epoch()
         accessStartEpoch.set_implicit_time(startEventEpoch)

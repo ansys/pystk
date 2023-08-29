@@ -100,7 +100,7 @@ class STKObjectHelper(object):
         self.m_logger.WriteLine5("\tThe ClassName is: {0}", oObject.class_name)
         # Path
         self.m_logger.WriteLine5("\tThe Path is: {0}", oObject.path)
-        if oObject.class_type != AgESTKObjectType.eMTO:
+        if oObject.class_type != STK_OBJECT_TYPE.MTO:
             # ShortDescription
             self.m_logger.WriteLine5("\tThe current ShortDescription is: {0}", oObject.short_description)
             oObject.short_description = "This is a new short description."
@@ -151,11 +151,11 @@ class STKObjectHelper(object):
 
         # create an additional Satellite
         oSatellite: "ISatellite" = clr.Convert(
-            oObject.root.current_scenario.children.new(AgESTKObjectType.eSatellite, "MIR"), ISatellite
+            oObject.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MIR"), ISatellite
         )
         Assert.assertIsNotNone(oSatellite)
-        oSatellite.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
-        Assert.assertEqual(AgEVePropagatorType.ePropagatorTwoBody, oSatellite.propagator_type)
+        oSatellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        Assert.assertEqual(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
         oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, IVehiclePropagatorTwoBody)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
@@ -200,7 +200,7 @@ class STKObjectHelper(object):
 
             TryCatchAssertBlock.DoAssert("", action8)
 
-        oObject.root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "MIR")
+        oObject.root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "MIR")
         # Root
         oRoot: "IStkObjectRoot" = oObject.root
         Assert.assertIsNotNone(oRoot)
@@ -255,8 +255,8 @@ class STKObjectHelper(object):
         Assert.assertEqual("1 Jul 2007 01:00:00.000", onePtAccess.stop_time)
         onePtAccess.step_size = 120
         Assert.assertEqual(120, onePtAccess.step_size)
-        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.DETAILED
+        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.DETAILED, onePtAccess.summary_option)
         result: "IOnePointAccessResult" = None
         results: "IOnePointAccessResultCollection" = onePtAccess.compute()
 
@@ -284,8 +284,8 @@ class STKObjectHelper(object):
             for c in r.constraints:
                 self.dumpOnePtAccessConstraint(c)
 
-        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryFast
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryFast, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.FAST
+        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.FAST, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
@@ -293,8 +293,8 @@ class STKObjectHelper(object):
             Assert.assertEqual(1, result.constraints.count)
             self.dumpOnePtAccessConstraint(result.constraints[0])
 
-        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly
-        Assert.assertEqual(AgEOnePtAccessSummary.eOnePtAccessSummaryResultOnly, onePtAccess.summary_option)
+        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.RESULT_ONLY
+        Assert.assertEqual(ONE_PT_ACCESS_SUMMARY.RESULT_ONLY, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
@@ -358,27 +358,27 @@ class STKObjectHelper(object):
                         (
                             (
                                 (
-                                    (oObject.class_type == AgESTKObjectType.eAircraft)
-                                    or (oObject.class_type == AgESTKObjectType.eFacility)
+                                    (oObject.class_type == STK_OBJECT_TYPE.AIRCRAFT)
+                                    or (oObject.class_type == STK_OBJECT_TYPE.FACILITY)
                                 )
-                                or (oObject.class_type == AgESTKObjectType.eGroundVehicle)
+                                or (oObject.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE)
                             )
-                            or (oObject.class_type == AgESTKObjectType.eLaunchVehicle)
+                            or (oObject.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE)
                         )
-                        or (oObject.class_type == AgESTKObjectType.eMissile)
+                        or (oObject.class_type == STK_OBJECT_TYPE.MISSILE)
                     )
-                    or (oObject.class_type == AgESTKObjectType.eSatellite)
+                    or (oObject.class_type == STK_OBJECT_TYPE.SATELLITE)
                 )
-                or (oObject.class_type == AgESTKObjectType.eShip)
+                or (oObject.class_type == STK_OBJECT_TYPE.SHIP)
             )
-            or (oObject.class_type == AgESTKObjectType.eTarget)
-        ) or (oObject.class_type == AgESTKObjectType.eSubmarine):
+            or (oObject.class_type == STK_OBJECT_TYPE.TARGET)
+        ) or (oObject.class_type == STK_OBJECT_TYPE.SUBMARINE):
             found: bool = False
 
             j: int = 0
             while j < Array.Length(SupportedChildTypes):
-                objType: "AgESTKObjectType" = clr.Convert(int(SupportedChildTypes[j]), AgESTKObjectType)
-                if objType == AgESTKObjectType.eSensor:
+                objType: "STK_OBJECT_TYPE" = clr.Convert(int(SupportedChildTypes[j]), STK_OBJECT_TYPE)
+                if objType == STK_OBJECT_TYPE.SENSOR:
                     found = True
 
                 j += 1
@@ -386,16 +386,16 @@ class STKObjectHelper(object):
             if not found:
                 Assert.fail(
                     "Sensor should be an available child object of the {0} object",
-                    clr.Convert(oObject.class_type, AgESTKObjectType),
+                    clr.Convert(oObject.class_type, STK_OBJECT_TYPE),
                 )
 
             # New
-            oSensor: "IStkObject" = oCollection.new(AgESTKObjectType.eSensor, "Radar")
+            oSensor: "IStkObject" = oCollection.new(STK_OBJECT_TYPE.SENSOR, "Radar")
             Assert.assertIsNotNone(oSensor)
             # Unload
-            oCollection.unload(AgESTKObjectType.eSensor, "Radar")
+            oCollection.unload(STK_OBJECT_TYPE.SENSOR, "Radar")
 
-        if oObject.class_type == AgESTKObjectType.eScenario:
+        if oObject.class_type == STK_OBJECT_TYPE.SCENARIO:
             oCollection.import_object(TestBase.GetScenarioFile("AreaTargetTests", "at2.at"))
 
         else:
@@ -417,7 +417,7 @@ class STKObjectHelper(object):
             Assert.assertIsNotNone(oEObject)
 
         # GetElements
-        oOECollection: "IStkObjectElementCollection" = oCollection.get_elements(AgESTKObjectType.eSensor)
+        oOECollection: "IStkObjectElementCollection" = oCollection.get_elements(STK_OBJECT_TYPE.SENSOR)
         Assert.assertIsNotNone(oOECollection)
         # Count
         self.m_logger.WriteLine3("\tThe ObjectElement collection contains: {0}", oOECollection.count)
@@ -561,16 +561,16 @@ class DataProviderCollectionHelper(object):
                     # IDataProvider
                     # Console.WriteLine(oCollection[iIndex].Name);
                     self.DataProvider(clr.CastAs(oCollection[iIndex], IDataProvider), oCollection[iIndex].name)
-                    if oCollection[iIndex].type == AgEDataProviderType.eDrFixed:
+                    if oCollection[iIndex].type == DATA_PROVIDER_TYPE.DR_FIXED:
                         self.DataProviderFixed(
                             clr.CastAs(oCollection[iIndex], IDataProviderFixed), oCollection[iIndex].name
                         )
-                    elif oCollection[iIndex].type == AgEDataProviderType.eDrIntvl:
+                    elif oCollection[iIndex].type == DATA_PROVIDER_TYPE.DR_INTVL:
                         self.DataProviderInterval(
                             clr.CastAs(oCollection[iIndex], IDataProviderInterval), oCollection[iIndex].name
                         )
-                    elif ((oCollection[iIndex].type == AgEDataProviderType.eDrTimeVar)) or (
-                        (oCollection[iIndex].type == AgEDataProviderType.eDrIntvlDefined)
+                    elif ((oCollection[iIndex].type == DATA_PROVIDER_TYPE.DR_TIME_VAR)) or (
+                        (oCollection[iIndex].type == DATA_PROVIDER_TYPE.DR_INTVL_DEFINED)
                     ):
                         self.DataProviderTimeVar(
                             clr.CastAs(oCollection[iIndex], IDataProviderTimeVarying), oCollection[iIndex].name
@@ -657,7 +657,7 @@ class DataProviderCollectionHelper(object):
         iIndex: int = 0
         while iIndex < oElements.count:
             strElementName: str = oElements[iIndex].name
-            eType: "AgEDataPrvElementType" = oElements[iIndex].type
+            eType: "DATA_PRV_ELEMENT_TYPE" = oElements[iIndex].type
             Assert.assertFalse(String.IsNullOrEmpty(oElements[iIndex].dimension_name))
 
             iIndex += 1
@@ -716,13 +716,13 @@ class DataProviderCollectionHelper(object):
         self.DrResultDataSets(oResult.data_sets)
         # Message
         self.DrResultMessage(oResult.message)
-        if oResult.category == AgEDrCategories.eDrCatDataSetList:
+        if oResult.category == DR_CATEGORIES.DATA_SET_LIST:
             self.DrResultDataSets(clr.CastAs(oResult.value, IDataProviderResultDataSetCollection))
-        elif oResult.category == AgEDrCategories.eDrCatIntervalList:
+        elif oResult.category == DR_CATEGORIES.INTERVAL_LIST:
             self.DrResultIntervals(clr.CastAs(oResult.value, IDataProviderResultIntervalCollection))
-        elif oResult.category == AgEDrCategories.eDrCatMessage:
+        elif oResult.category == DR_CATEGORIES.MESSAGE:
             self.DrResultMessage(clr.CastAs(oResult.value, IDataProviderResultTextMessage))
-        elif oResult.category == AgEDrCategories.eDrCatSubSectionList:
+        elif oResult.category == DR_CATEGORIES.SUB_SECTION_LIST:
             self.DrResultSections(clr.CastAs(oResult.value, IDataProviderResultSubSectionCollection))
         else:
             Assert.fail("Invalid type!")
@@ -930,18 +930,18 @@ class StkAccessHelper(object):
         Assert.assertIsNotNone(oRoot)
         # AccessTimePeriod
         self.m_logger.WriteLine6("\tThe current AccessTimePeriod is: {0}", oAccess.access_time_period)
-        oAccess.access_time_period = AgEAccessTimeType.eObjectAccessTime
+        oAccess.access_time_period = ACCESS_TIME_TYPE.OBJECT_ACCESS_TIME
         self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
-        Assert.assertEqual(AgEAccessTimeType.eObjectAccessTime, oAccess.access_time_period)
+        Assert.assertEqual(ACCESS_TIME_TYPE.OBJECT_ACCESS_TIME, oAccess.access_time_period)
         # ComputeAccess
         oAccess.compute_access()
-        oAccess.access_time_period = AgEAccessTimeType.eScenarioAccessTime
+        oAccess.access_time_period = ACCESS_TIME_TYPE.SCENARIO_ACCESS_TIME
         self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
-        Assert.assertEqual(AgEAccessTimeType.eScenarioAccessTime, oAccess.access_time_period)
+        Assert.assertEqual(ACCESS_TIME_TYPE.SCENARIO_ACCESS_TIME, oAccess.access_time_period)
         oAccess.compute_access()
-        oAccess.access_time_period = AgEAccessTimeType.eUserSpecAccessTime
+        oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
         self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
-        Assert.assertEqual(AgEAccessTimeType.eUserSpecAccessTime, oAccess.access_time_period)
+        Assert.assertEqual(ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME, oAccess.access_time_period)
         oAccess.compute_access()
         # SpecifyAccessTimePeriod
         dtStart: typing.Any = "1 Jul 1999 00:00:00.00"
@@ -1129,7 +1129,7 @@ class StkAccessHelper(object):
         TryCatchAssertBlock.ExpectedException("read only", action29)
 
         def action30():
-            oAdvanced.aberration_type = AgEAberrationType.eAberrationAnnual
+            oAdvanced.aberration_type = ABERRATION_TYPE.ANNUAL
 
         TryCatchAssertBlock.ExpectedException("read-only", action30)
 
@@ -1139,12 +1139,12 @@ class StkAccessHelper(object):
         TryCatchAssertBlock.ExpectedException("read-only", action31)
 
         def action32():
-            oAdvanced.clock_host = AgEIvClockHost.eIvBase
+            oAdvanced.clock_host = IV_CLOCK_HOST.BASE
 
         TryCatchAssertBlock.ExpectedException("read-only", action32)
 
         def action33():
-            oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
+            oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
 
         TryCatchAssertBlock.ExpectedException("read-only", action33)
 
@@ -1159,15 +1159,15 @@ class StkAccessHelper(object):
 
         TryCatchAssertBlock.ExpectedException("", action34)
 
-        oAdvanced.aberration_type = AgEAberrationType.eAberrationAnnual
-        Assert.assertEqual(AgEAberrationType.eAberrationAnnual, oAdvanced.aberration_type)
-        oAdvanced.aberration_type = AgEAberrationType.eAberrationNone
-        Assert.assertEqual(AgEAberrationType.eAberrationNone, oAdvanced.aberration_type)
-        oAdvanced.aberration_type = AgEAberrationType.eAberrationTotal
-        Assert.assertEqual(AgEAberrationType.eAberrationTotal, oAdvanced.aberration_type)
+        oAdvanced.aberration_type = ABERRATION_TYPE.ANNUAL
+        Assert.assertEqual(ABERRATION_TYPE.ANNUAL, oAdvanced.aberration_type)
+        oAdvanced.aberration_type = ABERRATION_TYPE.NONE
+        Assert.assertEqual(ABERRATION_TYPE.NONE, oAdvanced.aberration_type)
+        oAdvanced.aberration_type = ABERRATION_TYPE.TOTAL
+        Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
 
         def action35():
-            oAdvanced.aberration_type = AgEAberrationType.eAberrationUnknown
+            oAdvanced.aberration_type = ABERRATION_TYPE.UNKNOWN
 
         TryCatchAssertBlock.ExpectedException("", action35)
 
@@ -1176,31 +1176,31 @@ class StkAccessHelper(object):
         Assert.assertTrue(oAdvanced.use_default_clock_host_and_signal_sense)
 
         def action36():
-            oAdvanced.clock_host = AgEIvClockHost.eIvBase
+            oAdvanced.clock_host = IV_CLOCK_HOST.BASE
 
         TryCatchAssertBlock.ExpectedException("read-only", action36)
 
         def action37():
-            oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
+            oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
 
         TryCatchAssertBlock.ExpectedException("read-only", action37)
 
         oAdvanced.use_default_clock_host_and_signal_sense = False
         Assert.assertFalse(oAdvanced.use_default_clock_host_and_signal_sense)
 
-        oAdvanced.clock_host = AgEIvClockHost.eIvBase
-        Assert.assertEqual(AgEIvClockHost.eIvBase, oAdvanced.clock_host)
-        oAdvanced.clock_host = AgEIvClockHost.eIvTarget
-        Assert.assertEqual(AgEIvClockHost.eIvTarget, oAdvanced.clock_host)
+        oAdvanced.clock_host = IV_CLOCK_HOST.BASE
+        Assert.assertEqual(IV_CLOCK_HOST.BASE, oAdvanced.clock_host)
+        oAdvanced.clock_host = IV_CLOCK_HOST.TARGET
+        Assert.assertEqual(IV_CLOCK_HOST.TARGET, oAdvanced.clock_host)
 
         def action38():
-            oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTimeSenseUnknown
+            oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.UNKNOWN
 
         TryCatchAssertBlock.ExpectedException("must be in", action38)
-        oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvTransmit
-        Assert.assertEqual(AgEIvTimeSense.eIvTransmit, oAdvanced.signal_sense_of_clock_host)
-        oAdvanced.signal_sense_of_clock_host = AgEIvTimeSense.eIvReceive
-        Assert.assertEqual(AgEIvTimeSense.eIvReceive, oAdvanced.signal_sense_of_clock_host)
+        oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
+        Assert.assertEqual(IV_TIME_SENSE.TRANSMIT, oAdvanced.signal_sense_of_clock_host)
+        oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
+        Assert.assertEqual(IV_TIME_SENSE.RECEIVE, oAdvanced.signal_sense_of_clock_host)
 
         # Step Size Control
         oAdvanced.use_fixed_time_step = False  # Adaptive
@@ -1488,7 +1488,7 @@ class VODataDisplayHelper(object):
         Assert.assertIsNotNone(oVODataDisplayElement)
 
         def action47():
-            oVODataDisplayElement.location = AgEVOLocation.e3DWindow
+            oVODataDisplayElement.location = VO_LOCATION.WINDOW_3D
 
         # Location
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action47)
@@ -1500,13 +1500,13 @@ class VODataDisplayHelper(object):
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action48)
 
         def action49():
-            oVODataDisplayElement.x_origin = AgEVOXOrigin.eXOriginLeft
+            oVODataDisplayElement.x_origin = VOX_ORIGIN.X_ORIGIN_LEFT
 
         # XOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action49)
 
         def action50():
-            oVODataDisplayElement.y_origin = AgEVOYOrigin.eYOriginBottom
+            oVODataDisplayElement.y_origin = VOY_ORIGIN.Y_ORIGIN_BOTTOM
 
         # YOrigin
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action50)
@@ -1530,13 +1530,13 @@ class VODataDisplayHelper(object):
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action53)
 
         def action54():
-            oVODataDisplayElement.font_size = AgEVOFontSize.eSmall
+            oVODataDisplayElement.font_size = VO_FONT_SIZE.SMALL
 
         # FontSize
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action54)
 
         def action55():
-            oVODataDisplayElement.format = AgEVOFormat.eHorizontal
+            oVODataDisplayElement.format = VO_FORMAT.HORIZONTAL
 
         # Format
         TryCatchAssertBlock.DoAssert("The property should be readonly when IsVisible is False.", action55)
@@ -1579,35 +1579,35 @@ class VODataDisplayHelper(object):
         # Location
         self.m_logger.WriteLine6("\t\t\tThe current Location is: {0}", oVODataDisplayElement.location)
         if self.m_bIsAccessRequired:
-            oVODataDisplayElement.location = AgEVOLocation.eOffsetFromAccessObject
+            oVODataDisplayElement.location = VO_LOCATION.OFFSET_FROM_ACCESS_OBJECT
             self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-            Assert.assertEqual(AgEVOLocation.eOffsetFromAccessObject, oVODataDisplayElement.location)
+            Assert.assertEqual(VO_LOCATION.OFFSET_FROM_ACCESS_OBJECT, oVODataDisplayElement.location)
 
         else:
 
             def action61():
-                oVODataDisplayElement.location = AgEVOLocation.eOffsetFromAccessObject
+                oVODataDisplayElement.location = VO_LOCATION.OFFSET_FROM_ACCESS_OBJECT
 
             TryCatchAssertBlock.DoAssert("Should not allow to set eOffsetFromAccessObject.", action61)
 
         if self.m_bIsChain:
 
             def action62():
-                oVODataDisplayElement.location = AgEVOLocation.eOffsetFromObject
+                oVODataDisplayElement.location = VO_LOCATION.OFFSET_FROM_OBJECT
 
             TryCatchAssertBlock.DoAssert("Chains should not allow to set eOffsetFromObject.", action62)
 
         else:
-            oVODataDisplayElement.location = AgEVOLocation.eOffsetFromObject
+            oVODataDisplayElement.location = VO_LOCATION.OFFSET_FROM_OBJECT
             self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-            Assert.assertEqual(AgEVOLocation.eOffsetFromObject, oVODataDisplayElement.location)
+            Assert.assertEqual(VO_LOCATION.OFFSET_FROM_OBJECT, oVODataDisplayElement.location)
 
-        oVODataDisplayElement.location = AgEVOLocation.eDataDisplayArea
+        oVODataDisplayElement.location = VO_LOCATION.DATA_DISPLAY_AREA
         self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-        Assert.assertEqual(AgEVOLocation.eDataDisplayArea, oVODataDisplayElement.location)
-        oVODataDisplayElement.location = AgEVOLocation.e3DWindow
+        Assert.assertEqual(VO_LOCATION.DATA_DISPLAY_AREA, oVODataDisplayElement.location)
+        oVODataDisplayElement.location = VO_LOCATION.WINDOW_3D
         self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-        Assert.assertEqual(AgEVOLocation.e3DWindow, oVODataDisplayElement.location)
+        Assert.assertEqual(VO_LOCATION.WINDOW_3D, oVODataDisplayElement.location)
         # Font Color
         self.m_logger.WriteLine6("\t\t\tThe current Font Color is: {0}", oVODataDisplayElement.font_color)
         oVODataDisplayElement.font_color = Color.FromArgb(65280)
@@ -1615,20 +1615,20 @@ class VODataDisplayHelper(object):
         AssertEx.AreEqual(Color.FromArgb(65280), oVODataDisplayElement.font_color)
         # XOrigin
         self.m_logger.WriteLine6("\t\t\tThe current X Origin is: {0}", oVODataDisplayElement.x_origin)
-        oVODataDisplayElement.x_origin = AgEVOXOrigin.eXOriginLeft
+        oVODataDisplayElement.x_origin = VOX_ORIGIN.X_ORIGIN_LEFT
         self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
-        Assert.assertEqual(AgEVOXOrigin.eXOriginLeft, oVODataDisplayElement.x_origin)
-        oVODataDisplayElement.x_origin = AgEVOXOrigin.eXOriginRight
+        Assert.assertEqual(VOX_ORIGIN.X_ORIGIN_LEFT, oVODataDisplayElement.x_origin)
+        oVODataDisplayElement.x_origin = VOX_ORIGIN.X_ORIGIN_RIGHT
         self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
-        Assert.assertEqual(AgEVOXOrigin.eXOriginRight, oVODataDisplayElement.x_origin)
+        Assert.assertEqual(VOX_ORIGIN.X_ORIGIN_RIGHT, oVODataDisplayElement.x_origin)
         # YOrigin
         self.m_logger.WriteLine6("\t\t\tThe current Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        oVODataDisplayElement.y_origin = AgEVOYOrigin.eYOriginTop
+        oVODataDisplayElement.y_origin = VOY_ORIGIN.Y_ORIGIN_TOP
         self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        Assert.assertEqual(AgEVOYOrigin.eYOriginTop, oVODataDisplayElement.y_origin)
-        oVODataDisplayElement.y_origin = AgEVOYOrigin.eYOriginBottom
+        Assert.assertEqual(VOY_ORIGIN.Y_ORIGIN_TOP, oVODataDisplayElement.y_origin)
+        oVODataDisplayElement.y_origin = VOY_ORIGIN.Y_ORIGIN_BOTTOM
         self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        Assert.assertEqual(AgEVOYOrigin.eYOriginBottom, oVODataDisplayElement.y_origin)
+        Assert.assertEqual(VOY_ORIGIN.Y_ORIGIN_BOTTOM, oVODataDisplayElement.y_origin)
         # X
         self.m_logger.WriteLine3("\t\t\tThe current X is: {0}", oVODataDisplayElement.x)
         oVODataDisplayElement.x = 12
@@ -1649,26 +1649,26 @@ class VODataDisplayHelper(object):
         Assert.assertEqual(True, oVODataDisplayElement.title)
         # FontSize
         self.m_logger.WriteLine6("\t\t\tThe current Font Size is: {0}", oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = AgEVOFontSize.eLarge
+        oVODataDisplayElement.font_size = VO_FONT_SIZE.LARGE
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(AgEVOFontSize.eLarge, oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = AgEVOFontSize.eSmall
+        Assert.assertEqual(VO_FONT_SIZE.LARGE, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = VO_FONT_SIZE.SMALL
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(AgEVOFontSize.eSmall, oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = AgEVOFontSize.eMedium
+        Assert.assertEqual(VO_FONT_SIZE.SMALL, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = VO_FONT_SIZE.MEDIUM
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(AgEVOFontSize.eMedium, oVODataDisplayElement.font_size)
+        Assert.assertEqual(VO_FONT_SIZE.MEDIUM, oVODataDisplayElement.font_size)
         # Format
         self.m_logger.WriteLine6("\t\t\tThe current Font Format is: {0}", oVODataDisplayElement.format)
-        oVODataDisplayElement.format = AgEVOFormat.eHorizontal
+        oVODataDisplayElement.format = VO_FORMAT.HORIZONTAL
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(AgEVOFormat.eHorizontal, oVODataDisplayElement.format)
-        oVODataDisplayElement.format = AgEVOFormat.eNoLabels
+        Assert.assertEqual(VO_FORMAT.HORIZONTAL, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = VO_FORMAT.NO_LABELS
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(AgEVOFormat.eNoLabels, oVODataDisplayElement.format)
-        oVODataDisplayElement.format = AgEVOFormat.eVertical
+        Assert.assertEqual(VO_FORMAT.NO_LABELS, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = VO_FORMAT.VERTICAL
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(AgEVOFormat.eVertical, oVODataDisplayElement.format)
+        Assert.assertEqual(VO_FORMAT.VERTICAL, oVODataDisplayElement.format)
 
     # endregion
 

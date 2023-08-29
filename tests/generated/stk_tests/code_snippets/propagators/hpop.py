@@ -29,7 +29,7 @@ class HPOP(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         HPOP.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, HPOP.m_DefaultName),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, HPOP.m_DefaultName),
             ISatellite,
         )
         CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
@@ -38,7 +38,7 @@ class HPOP(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, HPOP.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, HPOP.m_DefaultName)
         HPOP.m_Object = None
 
     # endregion
@@ -49,7 +49,7 @@ class HPOP(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "ISatellite"):
         # Set satellite propagator to HPOP
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorHPOP)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)
 
         # Get IVehiclePropagatorLOP interface
         hpopProp: "IVehiclePropagatorHPOP" = clr.CastAs(satellite.propagator, IVehiclePropagatorHPOP)
@@ -67,7 +67,7 @@ class HPOP(CodeSnippetsTestBase):
         )
         hpopDragModel.cd = 1.89
         hpopDragModel.area_mass_ratio = 0.05
-        hpopForceModel.drag.atmospheric_density_model = AgEAtmosphericDensityModel.eMSIS90
+        hpopForceModel.drag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
 
         hpopForceModel.third_body_gravity.remove_third_body("Moon")
 

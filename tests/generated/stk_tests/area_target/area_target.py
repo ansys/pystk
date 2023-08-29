@@ -49,7 +49,7 @@ class EarlyBoundTests(TestBase):
     # region CommonTasks
     def test_CommonTasks(self):
         EarlyBoundTests.AG_AT.common_tasks.set_area_type_ellipse(1, 2, 12)
-        Assert.assertEqual(AgEAreaType.eEllipse, EarlyBoundTests.AG_AT.area_type)
+        Assert.assertEqual(AREA_TYPE.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
         ellipse: "IAreaTypeEllipse" = clr.CastAs(EarlyBoundTests.AG_AT.area_type_data, IAreaTypeEllipse)
         Assert.assertEqual(1, ellipse.semi_major_axis)
         Assert.assertEqual(2, ellipse.semi_minor_axis)
@@ -67,8 +67,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_Basic(self):
         TestBase.logger.WriteLine("----- BASIC TEST ----- BEGIN -----")
-        EarlyBoundTests.AG_AT.area_type = AgEAreaType.eEllipse
-        Assert.assertEqual(AgEAreaType.eEllipse, EarlyBoundTests.AG_AT.area_type)
+        EarlyBoundTests.AG_AT.area_type = AREA_TYPE.ELLIPSE
+        Assert.assertEqual(AREA_TYPE.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
         ellipse: "IAreaTypeEllipse" = clr.Convert(EarlyBoundTests.AG_AT.area_type_data, IAreaTypeEllipse)
         ellipse.bearing = 1
         Assert.assertEqual(1, ellipse.bearing)
@@ -77,8 +77,8 @@ class EarlyBoundTests(TestBase):
         ellipse.semi_minor_axis = 151
         Assert.assertEqual(151, ellipse.semi_minor_axis)
 
-        EarlyBoundTests.AG_AT.area_type = AgEAreaType.ePattern
-        Assert.assertEqual(AgEAreaType.ePattern, EarlyBoundTests.AG_AT.area_type)
+        EarlyBoundTests.AG_AT.area_type = AREA_TYPE.PATTERN
+        Assert.assertEqual(AREA_TYPE.PATTERN, EarlyBoundTests.AG_AT.area_type)
         patterns: "IAreaTypePatternCollection" = clr.Convert(
             EarlyBoundTests.AG_AT.area_type_data, IAreaTypePatternCollection
         )
@@ -238,10 +238,10 @@ class EarlyBoundTests(TestBase):
         AssertEx.AreEqual(EarlyBoundTests.boundaryColorRedGreen, gfx.boundary_color)
         gfx.boundary_pts_visible = True
         Assert.assertTrue(gfx.boundary_pts_visible)
-        gfx.boundary_style = AgELineStyle.eDashDotDotted
-        Assert.assertEqual(AgELineStyle.eDashDotDotted, gfx.boundary_style)
-        gfx.boundary_style = AgELineStyle.eDotted
-        Assert.assertEqual(AgELineStyle.eDotted, gfx.boundary_style)
+        gfx.boundary_style = LINE_STYLE.DASH_DOT_DOTTED
+        Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, gfx.boundary_style)
+        gfx.boundary_style = LINE_STYLE.DOTTED
+        Assert.assertEqual(LINE_STYLE.DOTTED, gfx.boundary_style)
         gfx.boundary_visible = True
         Assert.assertTrue(gfx.boundary_visible)
         gfx.boundary_width = 2
@@ -419,8 +419,8 @@ class EarlyBoundTests(TestBase):
         # test Access VO DataDisplays
         oSatellite: "ISatellite" = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], ISatellite)
         Assert.assertNotEqual(None, oSatellite)
-        oSatellite.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
-        Assert.assertEqual(AgEVePropagatorType.ePropagatorTwoBody, oSatellite.propagator_type)
+        oSatellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        Assert.assertEqual(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
         oPropagator: "IVehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, IVehiclePropagatorTwoBody)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()

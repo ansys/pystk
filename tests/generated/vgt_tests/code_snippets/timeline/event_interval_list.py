@@ -60,18 +60,17 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         listFiltered.original_intervals = provider.event_interval_lists["AttitudeIntervals"]
 
         firstIntervals: "ITimeToolFirstIntervalsFilter" = clr.CastAs(
-            listFiltered.filter_factory.create(AgECrdnPruneFilter.eCrdnPruneFilterFirstIntervals),
-            ITimeToolFirstIntervalsFilter,
+            listFiltered.filter_factory.create(CRDN_PRUNE_FILTER.FIRST_INTERVALS), ITimeToolFirstIntervalsFilter
         )
         firstIntervals.maximum_number_of_intervals = 3
 
         # Or for example satisfaction intervals
         asSatisfactionCondition: "ITimeToolSatisfactionConditionFilter" = clr.CastAs(
-            listFiltered.filter_factory.create(AgECrdnPruneFilter.eCrdnPruneFilterSatisfactionIntervals),
+            listFiltered.filter_factory.create(CRDN_PRUNE_FILTER.SATISFACTION_INTERVALS),
             ITimeToolSatisfactionConditionFilter,
         )
         asSatisfactionCondition.condition = provider.conditions["BeforeStop"]
-        asSatisfactionCondition.duration_kind = AgECrdnIntervalDurationKind.eCrdnIntervalDurationKindAtLeast
+        asSatisfactionCondition.duration_kind = CRDN_INTERVAL_DURATION_KIND.AT_LEAST
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asSatisfactionCondition.interval_duration = 30
@@ -169,7 +168,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
         asListMerged.set_interval_list_a(satelliteVgtProvider.event_interval_lists["AvailabilityIntervals"])
         asListMerged.set_interval_list_b(aircraftVgtProvider.event_interval_lists["AvailabilityIntervals"])
-        asListMerged.merge_operation = AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationMINUS
+        asListMerged.merge_operation = CRDN_EVENT_LIST_MERGE_OPERATION.MINUS
 
         intervals: "ITimeToolIntervalListResult" = intervalList.find_intervals()
         if intervals.is_valid:
@@ -253,11 +252,11 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         asListSingled.base_clock_location = satelliteVgtProvider.points["Center"]
         asListSingled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asListSingled.signal_sense = AgECrdnSignalSense.eCrdnSignalSenseTransmit
+        asListSingled.signal_sense = CRDN_SIGNAL_SENSE.TRANSMIT
         basicSignalDelay: "ITimeToolSignalDelayBasic" = clr.CastAs(
             asListSingled.signal_delay, ITimeToolSignalDelayBasic
         )
-        basicSignalDelay.speed_option = AgECrdnSpeedOptions.eCrdnCustomTransmissionSpeed
+        basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.CUSTOM_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -295,7 +294,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         asScalarBounds: "ICalculationToolConditionScalarBounds" = clr.CastAs(
             aboveBoundCondition, ICalculationToolConditionScalarBounds
         )
-        asScalarBounds.operation = AgECrdnConditionThresholdOption.eCrdnConditionThresholdOptionAboveMin
+        asScalarBounds.operation = CRDN_CONDITION_THRESHOLD_OPTION.ABOVE_MIN
         asScalarBounds.scalar = aircraftVgtProvider.calc_scalars["Trajectory(CBI).Cartesian.Z"]
         # asScalarBounds.Minimum = 4082;
 
@@ -330,7 +329,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         asListMerged: "ITimeToolEventIntervalListMerged" = clr.CastAs(intervalList, ITimeToolEventIntervalListMerged)
         asListMerged.set_interval_list_a(aircraft.vgt.event_interval_lists["AvailabilityIntervals"])
         asListMerged.set_interval_list_b(satelliteAccess.vgt.event_interval_lists["AccessIntervals"])
-        asListMerged.merge_operation = AgECrdnEventListMergeOperation.eCrdnEventListMergeOperationMINUS
+        asListMerged.merge_operation = CRDN_EVENT_LIST_MERGE_OPERATION.MINUS
 
         # Print times without access.
         intervals: "ITimeToolIntervalListResult" = intervalList.find_intervals()

@@ -1191,358 +1191,358 @@ Enumerations
 
 .. autosummary::
 
-    AgEConstants
-    AgEHelpContextIDs
-    AgEErrorCodes
-    AgEAberrationType
-    AgEAnimationModes
-    AgEAnimationOptions
-    AgEAnimationActions
-    AgEAnimationDirections
-    AgEAzElMaskType
-    AgEActionType
-    AgEAxisOffset
-    AgEDrCategories
-    AgEDataProviderType
-    AgEDataPrvElementType
-    AgEAccessTimeType
-    AgEAltRefType
-    AgETerrainNormType
-    AgELightingObstructionModelType
-    AgEDisplayTimesType
-    AgEAreaType
-    AgETrajectoryType
-    AgEOffsetFrameType
-    AgESc3dPtSize
-    AgETerrainFileType
-    AgE3DTilesetSourceType
-    AgEMarkerType
-    AgEVectorAxesConnectType
-    AgEVOMarkerOriginType
-    AgEVOLabelSwapDistance
-    AgEPlPositionSourceType
-    AgEEphemSourceType
-    AgEPlOrbitDisplayType
-    AgEScEndLoopType
-    AgEScRefreshDeltaType
-    AgESnPattern
-    AgESnPointing
-    AgESnPtTrgtBsightType
-    AgEBoresightType
-    AgETrackModeType
-    AgESnAzElBsightAxisType
-    AgESnRefractionType
-    AgESnProjectionDistanceType
-    AgESnLocation
-    AgEScTimeStepType
-    AgENoteShowType
-    AgEGeometricElemType
-    AgESnScanMode
-    AgECnstrBackground
-    AgECnstrGroundTrack
-    AgEIntersectionType
-    AgECnstrLighting
-    AgESnVOProjectionType
-    AgESnVOPulseStyle
-    AgESnVOPulseFrequencyPreset
-    AgELineWidth
-    AgESTKObjectType
-    AgEAccessConstraints
-    AgEBorderWallUpperLowerEdgeAltRef
-    AgEShadowModel
-    AgEMethodToComputeSunPosition
-    AgEAtmosphericDensityModel
-    AgE3dMarkerShape
-    AgELeadTrailData
-    AgETickData
-    AgELoadMethodType
-    AgELLAPositionType
-    AgEVeGfxPass
-    AgEVeGfxVisibleSides
-    AgEVeGfxOffset
-    AgEVeGfxTimeEventType
-    AgEVeGfxAttributes
-    AgEVeGfxElevation
-    AgEVeGfxOptions
-    AgEModelType
-    AgEVeVODropLineType
-    AgEVeVOSigmaScale
-    AgEVeVOAttributes
-    AgERouteVOMarkerType
-    AgEVeEllipseOptions
-    AgEVePropagatorType
-    AgEVeSGP4SwitchMethod
-    AgEVeSGP4TLESelection
-    AgEVeSGP4AutoUpdateSource
-    AgEThirdBodyGravSourceType
-    AgEVeGeomagFluxSrc
-    AgEVeGeomagFluxUpdateRate
-    AgEVeSolarFluxGeoMag
-    AgEVeIntegrationModel
-    AgEVePredictorCorrectorScheme
-    AgEVeMethod
-    AgEVeInterpolationMethod
-    AgEVeFrame
-    AgEVeCorrelationListType
-    AgEVeConsiderAnalysisType
-    AgEVeWayPtCompMethod
-    AgEVeAltitudeRef
-    AgEVeWayPtInterpMethod
-    AgEVeLaunch
-    AgEVeImpact
-    AgEVeLaunchControl
-    AgEVeImpactLocation
-    AgEVePassNumbering
-    AgEVePartialPassMeasurement
-    AgEVeCoordinateSystem
-    AgEVeBreakAngleType
-    AgEVeDirection
-    AgEVOLocation
-    AgEVOXOrigin
-    AgEVOYOrigin
-    AgEVOFontSize
-    AgEAcWGS84WarningType
-    AgESurfaceReference
-    AgEVOFormat
-    AgEAttitudeStandardType
-    AgEVeAttitude
-    AgEVeProfile
-    AgEVeLookAheadMethod
-    AgEVeVOBPlaneTargetPointPosition
-    AgESnAltCrossingSides
-    AgESnAltCrossingDirection
-    AgESnVOInheritFrom2D
-    AgESnVOVisualAppearance
-    AgEChTimePeriodType
-    AgEChConstConstraintsMode
-    AgEDataSaveMode
-    AgECvBounds
-    AgECvPointLocMethod
-    AgECvPointAltitudeMethod
-    AgECvGridClass
-    AgECvAltitudeMethod
-    AgECvGroundAltitudeMethod
-    AgECvDataRetention
-    AgECvRegionAccessAccel
-    AgECvResolution
-    AgECvAssetStatus
-    AgECvAssetGrouping
-    AgEFmDefinitionType
-    AgEFmSatisfactionType
-    AgEFmConstraintName
-    AgEFmCompute
-    AgEFmAcrossAssets
-    AgEFmComputeType
-    AgEFmMethod
-    AgEFmEndGapOption
-    AgEFmGfxContourType
-    AgEFmGfxColorMethod
-    AgEFmGfxFloatingPointFormat
-    AgEFmGfxDirection
-    AgEFmGfxAccumulation
-    AgEFmNAMethodType
-    AgEIvClockHost
-    AgEIvTimeSense
-    AgEGPSAttModelType
-    AgECnCnstrRestriction
-    AgEEventDetection
-    AgESamplingMethod
-    AgECvSatisfactionType
-    AgECCSDSReferenceFrame
-    AgECCSDSDateFormat
-    AgECCSDSEphemFormat
-    AgECCSDSTimeSystem
-    AgEStkEphemCoordinateSystem
-    AgEStkEphemCovarianceType
-    AgEExportToolVersionFormat
-    AgEExportToolTimePeriod
-    AgESpiceInterpolation
-    AgEAttCoordinateAxes
-    AgEAttInclude
-    AgEExportToolStepSize
-    AgETextOutlineStyle
-    AgEMtoRangeMode
-    AgEMtoTrackEval
-    AgEMtoEntirety
-    AgEMtoVisibilityMode
-    AgEMtoObjectInterval
-    AgEMtoInputDataType
-    AgESolidTide
-    AgETimePeriodValueType
-    AgEOnePtAccessStatus
-    AgEOnePtAccessSummary
-    AgELookAheadPropagator
-    AgEVOMarkerOrientation
-    AgESRPModel
-    AgEDragModel
-    AgEVePropagationFrame
-    AgEStarReferenceFrame
-    AgEGPSReferenceWeek
-    AgECvCustomRegionAlgorithm
-    AgEVeGPSSwitchMethod
-    AgEVeGPSElemSelection
-    AgEVeGPSAutoUpdateSource
-    AgEVeGPSAlmanacType
-    AgEStkExternalEphemerisFormat
-    AgEStkExternalFileMessageLevel
-    AgECv3dDrawAtAltMode
-    AgEDistanceOnSphere
-    AgEFmInvalidValueActionType
-    AgEVeSlewTimingBetweenTargets
-    AgEVeSlewMode
-    AgEComponent
-    AgEVmDefinitionType
-    AgEVmSpatialCalcEvalType
-    AgEVmSaveComputedDataType
-    AgEVmDisplayVolumeType
-    AgEVmDisplayQualityType
-    AgEVmLegendNumericNotation
-    AgEVmLevelOrder
-    AgESnEOIRProcessingLevels
-    AgESnEOIRJitterTypes
-    AgESnEOIRScanModes
-    AgESnEOIRBandImageQuality
-    AgESnEOIRBandSpectralShape
-    AgESnEOIRBandSpatialInputMode
-    AgESnEOIRBandSpectralRSRUnits
-    AgESnEOIRBandOpticalInputMode
-    AgESnEOIRBandOpticalTransmissionMode
-    AgESnEOIRBandRadParamLevel
-    AgESnEOIRBandQEMode
-    AgESnEOIRBandQuantizationMode
-    AgESnEOIRBandWavelengthType
-    AgESnEOIRBandSaturationMode
-    AgEVmVolumeGridExportType
-    AgEVmDataExportFormatType
-    AgECnFromToParentConstraint
-    AgEAWBAccessConstraints
-    AgEStatistics
-    AgETimeVarExtremum
-    AgEModelGltfReflectionMapType
-    AgESnVOProjectionTimeDependencyType
-    AgELOPAtmosphericDensityModel
-    AgELowAltAtmosphericDensityModel
-    AgEEphemExportToolFileFormat
-    AgEAdvCATEllipsoidClass
-    AgEAdvCATConjunctionType
-    AgEAdvCATSecondaryEllipsoidsVisibilityType
-    AgEEOIRShapeType
-    AgEEOIRShapeMaterialSpecificationType
-    AgEEOIRThermalModelType
-    AgEEOIRFlightType
-    AgEComponentLinkEmbedControlReferenceType
-    AgESwathComputationalMethod
-    AgEClassicalLocation
-    AgEOrientationAscNode
-    AgEGeodeticSize
-    AgEDelaunayLType
-    AgEDelaunayHType
-    AgEDelaunayGType
-    AgEEquinoctialSizeShape
-    AgEMixedSphericalFPA
-    AgESphericalFPA
-    AgEClassicalSizeShape
-    AgEEquinoctialFormulation
-    AgEScatteringPointProviderType
-    AgEScatteringPointModelType
-    AgEScatteringPointProviderListType
-    AgEPolarizationType
-    AgEPolarizationReferenceAxis
-    AgENoiseTempComputeType
-    AgEPointingStrategyType
-    AgEWaveformType
-    AgEFrequencySpec
-    AgEPRFMode
-    AgEPulseWidthMode
-    AgEWaveformSelectionStrategyType
-    AgEAntennaControlRefType
-    AgEAntennaModelType
-    AgEAntennaContourType
-    AgECircularApertureInputType
-    AgERectangularApertureInputType
-    AgEDirectionProviderType
-    AgEBeamformerType
-    AgEElementConfigurationType
-    AgELatticeType
-    AgESpacingUnit
-    AgELimitsExceededBehaviorType
-    AgEAntennaGraphicsCoordinateSystem
-    AgEAntennaModelInputType
-    AgEAntennaModelCosecantSquaredSidelobeType
-    AgEBeamSelectionStrategyType
-    AgETransmitterModelType
-    AgETransferFunctionType
-    AgEReTransmitterOpMode
-    AgEReceiverModelType
-    AgELinkMarginType
-    AgERadarStcAttenuationType
-    AgERadarFrequencySpec
-    AgERadarSNRContourType
-    AgERadarModelType
-    AgERadarModeType
-    AgERadarWaveformSearchTrackType
-    AgERadarSearchTrackPRFMode
-    AgERadarSearchTrackPulseWidthMode
-    AgERadarSarPRFMode
-    AgERadarSarRangeResolutionMode
-    AgERadarSarPcrMode
-    AgERadarSarPulseIntegrationAnalysisModeType
-    AgERadarPDetType
-    AgERadarPulseIntegrationType
-    AgERadarPulseIntegratorType
-    AgERadarContinuousWaveAnalysisModeType
-    AgERadarClutterGeometryModelType
-    AgERadarClutterMapModelType
-    AgERadarSwerlingCase
-    AgERCSComputeStrategy
-    AgERadarActivityType
-    AgERadarCrossSectionContourGraphicsPolarization
-    AgERFFilterModelType
-    AgEModulatorModelType
-    AgEDemodulatorModelType
-    AgERainLossModelType
-    AgEAtmosphericAbsorptionModelType
-    AgEUrbanTerrestrialLossModelType
-    AgECloudsAndFogFadingLossModelType
-    AgECloudsAndFogLiquidWaterChoices
-    AgEIonosphericFadingLossModelType
-    AgETroposphericScintillationFadingLossModelType
-    AgETroposphericScintillationAverageTimeChoices
-    AgEProjectionHorizontalDatumType
-    AgEBuildHeightReferenceMethod
-    AgEBuildHeightUnit
-    AgETiremPolarizationType
-    AgEVoacapSolarActivityConfigurationType
-    AgEVoacapCoefficientDataType
-    AgELaserPropagationLossModelType
-    AgELaserTroposphericScintillationLossModelType
-    AgEAtmosphericTurbulenceModelType
-    AgEModtranAerosolModelType
-    AgEModtranCloudModelType
-    AgECommSystemReferenceBandwidth
-    AgECommSystemConstrainingRole
-    AgECommSystemSaveMode
-    AgECommSystemAccessEventDetectionType
-    AgECommSystemAccessSamplingMethodType
-    AgECommSystemLinkSelectionCriteriaType
-    AgESpEnvNasaModelsActivity
-    AgESpEnvCrresProtonActivity
-    AgESpEnvCrresRadiationActivity
-    AgESpEnvMagFieldColorMode
-    AgESpEnvMagFieldColorScale
-    AgESpEnvMagneticMainField
-    AgESpEnvMagneticExternalField
-    AgESpEnvSAAChannel
-    AgESpEnvSAAFluxLevel
-    AgEVeSpEnvShapeModel
-    AgEVeSpEnvF10p7Source
-    AgEVeSpEnvMaterial
-    AgEVeSpEnvComputationMode
-    AgEVeSpEnvDoseChannel
-    AgEVeSpEnvDetectorGeometry
-    AgEVeSpEnvDetectorType
-    AgEVeSpEnvApSource
-    AgENotificationFilterMask
+    CONSTANTS
+    HELP_CONTEXT_I_DS
+    ERROR_CODES
+    ABERRATION_TYPE
+    ANIMATION_MODES
+    ANIMATION_OPTIONS
+    ANIMATION_ACTIONS
+    ANIMATION_DIRECTIONS
+    AZ_EL_MASK_TYPE
+    ACTION_TYPE
+    AXIS_OFFSET
+    DR_CATEGORIES
+    DATA_PROVIDER_TYPE
+    DATA_PRV_ELEMENT_TYPE
+    ACCESS_TIME_TYPE
+    ALT_REF_TYPE
+    TERRAIN_NORM_TYPE
+    LIGHTING_OBSTRUCTION_MODEL_TYPE
+    DISPLAY_TIMES_TYPE
+    AREA_TYPE
+    TRAJECTORY_TYPE
+    OFFSET_FRAME_TYPE
+    SC3_D_PT_SIZE
+    TERRAIN_FILE_TYPE
+    TILESET_3D_SOURCE_TYPE
+    MARKER_TYPE
+    VECTOR_AXES_CONNECT_TYPE
+    VO_MARKER_ORIGIN_TYPE
+    VO_LABEL_SWAP_DISTANCE
+    PL_POSITION_SOURCE_TYPE
+    EPHEM_SOURCE_TYPE
+    PL_ORBIT_DISPLAY_TYPE
+    SC_END_LOOP_TYPE
+    SC_REFRESH_DELTA_TYPE
+    SN_PATTERN
+    SN_POINTING
+    SN_PT_TRGT_BSIGHT_TYPE
+    BORESIGHT_TYPE
+    TRACK_MODE_TYPE
+    SN_AZ_EL_BSIGHT_AXIS_TYPE
+    SN_REFRACTION_TYPE
+    SN_PROJECTION_DISTANCE_TYPE
+    SN_LOCATION
+    SC_TIME_STEP_TYPE
+    NOTE_SHOW_TYPE
+    GEOMETRIC_ELEM_TYPE
+    SN_SCAN_MODE
+    CNSTR_BACKGROUND
+    CNSTR_GROUND_TRACK
+    INTERSECTION_TYPE
+    CNSTR_LIGHTING
+    SN_VO_PROJECTION_TYPE
+    SN_VO_PULSE_STYLE
+    SN_VO_PULSE_FREQUENCY_PRESET
+    LINE_WIDTH
+    STK_OBJECT_TYPE
+    ACCESS_CONSTRAINTS
+    BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF
+    SHADOW_MODEL
+    METHOD_TO_COMPUTE_SUN_POSITION
+    ATMOSPHERIC_DENSITY_MODEL
+    MARKER_SHAPE_3D
+    LEAD_TRAIL_DATA
+    TICK_DATA
+    LOAD_METHOD_TYPE
+    LLA_POSITION_TYPE
+    VE_GFX_PASS
+    VE_GFX_VISIBLE_SIDES
+    VE_GFX_OFFSET
+    VE_GFX_TIME_EVENT_TYPE
+    VE_GFX_ATTRIBUTES
+    VE_GFX_ELEVATION
+    VE_GFX_OPTIONS
+    MODEL_TYPE
+    VE_VO_DROP_LINE_TYPE
+    VE_VO_SIGMA_SCALE
+    VE_VO_ATTRIBUTES
+    ROUTE_VO_MARKER_TYPE
+    VE_ELLIPSE_OPTIONS
+    VE_PROPAGATOR_TYPE
+    VE_SGP4_SWITCH_METHOD
+    VE_SGP4TLE_SELECTION
+    VE_SGP4_AUTO_UPDATE_SOURCE
+    THIRD_BODY_GRAV_SOURCE_TYPE
+    VE_GEOMAG_FLUX_SRC
+    VE_GEOMAG_FLUX_UPDATE_RATE
+    VE_SOLAR_FLUX_GEO_MAG
+    VE_INTEGRATION_MODEL
+    VE_PREDICTOR_CORRECTOR_SCHEME
+    VE_METHOD
+    VE_INTERPOLATION_METHOD
+    VE_FRAME
+    VE_CORRELATION_LIST_TYPE
+    VE_CONSIDER_ANALYSIS_TYPE
+    VE_WAY_PT_COMP_METHOD
+    VE_ALTITUDE_REF
+    VE_WAY_PT_INTERP_METHOD
+    VE_LAUNCH
+    VE_IMPACT
+    VE_LAUNCH_CONTROL
+    VE_IMPACT_LOCATION
+    VE_PASS_NUMBERING
+    VE_PARTIAL_PASS_MEASUREMENT
+    VE_COORDINATE_SYSTEM
+    VE_BREAK_ANGLE_TYPE
+    VE_DIRECTION
+    VO_LOCATION
+    VOX_ORIGIN
+    VOY_ORIGIN
+    VO_FONT_SIZE
+    AC_WGS84_WARNING_TYPE
+    SURFACE_REFERENCE
+    VO_FORMAT
+    ATTITUDE_STANDARD_TYPE
+    VE_ATTITUDE
+    VE_PROFILE
+    VE_LOOK_AHEAD_METHOD
+    VE_VOB_PLANE_TARGET_POINT_POSITION
+    SN_ALT_CROSSING_SIDES
+    SN_ALT_CROSSING_DIRECTION
+    SN_VO_INHERIT_FROM2_D
+    SN_VO_VISUAL_APPEARANCE
+    CH_TIME_PERIOD_TYPE
+    CH_CONST_CONSTRAINTS_MODE
+    DATA_SAVE_MODE
+    CV_BOUNDS
+    CV_POINT_LOC_METHOD
+    CV_POINT_ALTITUDE_METHOD
+    CV_GRID_CLASS
+    CV_ALTITUDE_METHOD
+    CV_GROUND_ALTITUDE_METHOD
+    CV_DATA_RETENTION
+    CV_REGION_ACCESS_ACCEL
+    CV_RESOLUTION
+    CV_ASSET_STATUS
+    CV_ASSET_GROUPING
+    FM_DEFINITION_TYPE
+    FM_SATISFACTION_TYPE
+    FM_CONSTRAINT_NAME
+    FM_COMPUTE
+    FM_ACROSS_ASSETS
+    FM_COMPUTE_TYPE
+    FM_METHOD
+    FM_END_GAP_OPTION
+    FM_GFX_CONTOUR_TYPE
+    FM_GFX_COLOR_METHOD
+    FM_GFX_FLOATING_POINT_FORMAT
+    FM_GFX_DIRECTION
+    FM_GFX_ACCUMULATION
+    FM_NA_METHOD_TYPE
+    IV_CLOCK_HOST
+    IV_TIME_SENSE
+    GPS_ATT_MODEL_TYPE
+    CN_CNSTR_RESTRICTION
+    EVENT_DETECTION
+    SAMPLING_METHOD
+    CV_SATISFACTION_TYPE
+    CCSDS_REFERENCE_FRAME
+    CCSDS_DATE_FORMAT
+    CCSDS_EPHEM_FORMAT
+    CCSDS_TIME_SYSTEM
+    STK_EPHEM_COORDINATE_SYSTEM
+    STK_EPHEM_COVARIANCE_TYPE
+    EXPORT_TOOL_VERSION_FORMAT
+    EXPORT_TOOL_TIME_PERIOD
+    SPICE_INTERPOLATION
+    ATT_COORDINATE_AXES
+    ATT_INCLUDE
+    EXPORT_TOOL_STEP_SIZE
+    TEXT_OUTLINE_STYLE
+    MTO_RANGE_MODE
+    MTO_TRACK_EVAL
+    MTO_ENTIRETY
+    MTO_VISIBILITY_MODE
+    MTO_OBJECT_INTERVAL
+    MTO_INPUT_DATA_TYPE
+    SOLID_TIDE
+    TIME_PERIOD_VALUE_TYPE
+    ONE_PT_ACCESS_STATUS
+    ONE_PT_ACCESS_SUMMARY
+    LOOK_AHEAD_PROPAGATOR
+    VO_MARKER_ORIENTATION
+    SRP_MODEL
+    DRAG_MODEL
+    VE_PROPAGATION_FRAME
+    STAR_REFERENCE_FRAME
+    GPS_REFERENCE_WEEK
+    CV_CUSTOM_REGION_ALGORITHM
+    VE_GPS_SWITCH_METHOD
+    VE_GPS_ELEM_SELECTION
+    VE_GPS_AUTO_UPDATE_SOURCE
+    VE_GPS_ALMANAC_TYPE
+    STK_EXTERNAL_EPHEMERIS_FORMAT
+    STK_EXTERNAL_FILE_MESSAGE_LEVEL
+    CV3_D_DRAW_AT_ALT_MODE
+    DISTANCE_ON_SPHERE
+    FM_INVALID_VALUE_ACTION_TYPE
+    VE_SLEW_TIMING_BETWEEN_TARGETS
+    VE_SLEW_MODE
+    COMPONENT
+    VM_DEFINITION_TYPE
+    VM_SPATIAL_CALC_EVAL_TYPE
+    VM_SAVE_COMPUTED_DATA_TYPE
+    VM_DISPLAY_VOLUME_TYPE
+    VM_DISPLAY_QUALITY_TYPE
+    VM_LEGEND_NUMERIC_NOTATION
+    VM_LEVEL_ORDER
+    SN_EOIR_PROCESSING_LEVELS
+    SN_EOIR_JITTER_TYPES
+    SN_EOIR_SCAN_MODES
+    SN_EOIR_BAND_IMAGE_QUALITY
+    SN_EOIR_BAND_SPECTRAL_SHAPE
+    SN_EOIR_BAND_SPATIAL_INPUT_MODE
+    SN_EOIR_BAND_SPECTRAL_RSR_UNITS
+    SN_EOIR_BAND_OPTICAL_INPUT_MODE
+    SN_EOIR_BAND_OPTICAL_TRANSMISSION_MODE
+    SN_EOIR_BAND_RAD_PARAM_LEVEL
+    SN_EOIR_BAND_QE_MODE
+    SN_EOIR_BAND_QUANTIZATION_MODE
+    SN_EOIR_BAND_WAVELENGTH_TYPE
+    SN_EOIR_BAND_SATURATION_MODE
+    VM_VOLUME_GRID_EXPORT_TYPE
+    VM_DATA_EXPORT_FORMAT_TYPE
+    CN_FROM_TO_PARENT_CONSTRAINT
+    AWB_ACCESS_CONSTRAINTS
+    STATISTICS
+    TIME_VAR_EXTREMUM
+    MODEL_GLTF_REFLECTION_MAP_TYPE
+    SN_VO_PROJECTION_TIME_DEPENDENCY_TYPE
+    LOP_ATMOSPHERIC_DENSITY_MODEL
+    LOW_ALT_ATMOSPHERIC_DENSITY_MODEL
+    EPHEM_EXPORT_TOOL_FILE_FORMAT
+    ADV_CAT_ELLIPSOID_CLASS
+    ADV_CAT_CONJUNCTION_TYPE
+    ADV_CAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE
+    EOIR_SHAPE_TYPE
+    EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE
+    EOIR_THERMAL_MODEL_TYPE
+    EOIR_FLIGHT_TYPE
+    COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE
+    SWATH_COMPUTATIONAL_METHOD
+    CLASSICAL_LOCATION
+    ORIENTATION_ASC_NODE
+    GEODETIC_SIZE
+    DELAUNAY_L_TYPE
+    DELAUNAY_H_TYPE
+    DELAUNAY_G_TYPE
+    EQUINOCTIAL_SIZE_SHAPE
+    MIXED_SPHERICAL_FPA
+    SPHERICAL_FPA
+    CLASSICAL_SIZE_SHAPE
+    EQUINOCTIAL_FORMULATION
+    SCATTERING_POINT_PROVIDER_TYPE
+    SCATTERING_POINT_MODEL_TYPE
+    SCATTERING_POINT_PROVIDER_LIST_TYPE
+    POLARIZATION_TYPE
+    POLARIZATION_REFERENCE_AXIS
+    NOISE_TEMP_COMPUTE_TYPE
+    POINTING_STRATEGY_TYPE
+    WAVEFORM_TYPE
+    FREQUENCY_SPEC
+    PRF_MODE
+    PULSE_WIDTH_MODE
+    WAVEFORM_SELECTION_STRATEGY_TYPE
+    ANTENNA_CONTROL_REF_TYPE
+    ANTENNA_MODEL_TYPE
+    ANTENNA_CONTOUR_TYPE
+    CIRCULAR_APERTURE_INPUT_TYPE
+    RECTANGULAR_APERTURE_INPUT_TYPE
+    DIRECTION_PROVIDER_TYPE
+    BEAMFORMER_TYPE
+    ELEMENT_CONFIGURATION_TYPE
+    LATTICE_TYPE
+    SPACING_UNIT
+    LIMITS_EXCEEDED_BEHAVIOR_TYPE
+    ANTENNA_GRAPHICS_COORDINATE_SYSTEM
+    ANTENNA_MODEL_INPUT_TYPE
+    ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE
+    BEAM_SELECTION_STRATEGY_TYPE
+    TRANSMITTER_MODEL_TYPE
+    TRANSFER_FUNCTION_TYPE
+    RE_TRANSMITTER_OP_MODE
+    RECEIVER_MODEL_TYPE
+    LINK_MARGIN_TYPE
+    RADAR_STC_ATTENUATION_TYPE
+    RADAR_FREQUENCY_SPEC
+    RADAR_SNR_CONTOUR_TYPE
+    RADAR_MODEL_TYPE
+    RADAR_MODE_TYPE
+    RADAR_WAVEFORM_SEARCH_TRACK_TYPE
+    RADAR_SEARCH_TRACK_PRF_MODE
+    RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE
+    RADAR_SAR_PRF_MODE
+    RADAR_SAR_RANGE_RESOLUTION_MODE
+    RADAR_SAR_PCR_MODE
+    RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_TYPE
+    RADAR_P_DET_TYPE
+    RADAR_PULSE_INTEGRATION_TYPE
+    RADAR_PULSE_INTEGRATOR_TYPE
+    RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE
+    RADAR_CLUTTER_GEOMETRY_MODEL_TYPE
+    RADAR_CLUTTER_MAP_MODEL_TYPE
+    RADAR_SWERLING_CASE
+    RCS_COMPUTE_STRATEGY
+    RADAR_ACTIVITY_TYPE
+    RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
+    RF_FILTER_MODEL_TYPE
+    MODULATOR_MODEL_TYPE
+    DEMODULATOR_MODEL_TYPE
+    RAIN_LOSS_MODEL_TYPE
+    ATMOSPHERIC_ABSORPTION_MODEL_TYPE
+    URBAN_TERRESTRIAL_LOSS_MODEL_TYPE
+    CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE
+    CLOUDS_AND_FOG_LIQUID_WATER_CHOICES
+    IONOSPHERIC_FADING_LOSS_MODEL_TYPE
+    TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE
+    TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES
+    PROJECTION_HORIZONTAL_DATUM_TYPE
+    BUILD_HEIGHT_REFERENCE_METHOD
+    BUILD_HEIGHT_UNIT
+    TIREM_POLARIZATION_TYPE
+    VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
+    VOACAP_COEFFICIENT_DATA_TYPE
+    LASER_PROPAGATION_LOSS_MODEL_TYPE
+    LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE
+    ATMOSPHERIC_TURBULENCE_MODEL_TYPE
+    MODTRAN_AEROSOL_MODEL_TYPE
+    MODTRAN_CLOUD_MODEL_TYPE
+    COMM_SYSTEM_REFERENCE_BANDWIDTH
+    COMM_SYSTEM_CONSTRAINING_ROLE
+    COMM_SYSTEM_SAVE_MODE
+    COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
+    COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE
+    COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE
+    SP_ENV_NASA_MODELS_ACTIVITY
+    SP_ENV_CRRES_PROTON_ACTIVITY
+    SP_ENV_CRRES_RADIATION_ACTIVITY
+    SP_ENV_MAG_FIELD_COLOR_MODE
+    SP_ENV_MAG_FIELD_COLOR_SCALE
+    SP_ENV_MAGNETIC_MAIN_FIELD
+    SP_ENV_MAGNETIC_EXTERNAL_FIELD
+    SP_ENV_SAA_CHANNEL
+    SP_ENV_SAA_FLUX_LEVEL
+    VE_SP_ENV_SHAPE_MODEL
+    VE_SP_ENV_F_10_P7_SOURCE
+    VE_SP_ENV_MATERIAL
+    VE_SP_ENV_COMPUTATION_MODE
+    VE_SP_ENV_DOSE_CHANNEL
+    VE_SP_ENV_DETECTOR_GEOMETRY
+    VE_SP_ENV_DETECTOR_TYPE
+    VE_SP_ENV_AP_SOURCE
+    NOTIFICATION_FILTER_MASK
 
 
 Classes
@@ -6247,709 +6247,709 @@ Interfaces
 Enumerations
 ~~~~~~~~~~~~
 
-.. autoenum:: AgEConstants
+.. autoenum:: CONSTANTS
     :members:
-.. autoenum:: AgEHelpContextIDs
+.. autoenum:: HELP_CONTEXT_I_DS
     :members:
-.. autoenum:: AgEErrorCodes
+.. autoenum:: ERROR_CODES
     :members:
-.. autoenum:: AgEAberrationType
+.. autoenum:: ABERRATION_TYPE
     :members:
-.. autoenum:: AgEAnimationModes
+.. autoenum:: ANIMATION_MODES
     :members:
-.. autoenum:: AgEAnimationOptions
+.. autoenum:: ANIMATION_OPTIONS
     :members:
-.. autoenum:: AgEAnimationActions
+.. autoenum:: ANIMATION_ACTIONS
     :members:
-.. autoenum:: AgEAnimationDirections
+.. autoenum:: ANIMATION_DIRECTIONS
     :members:
-.. autoenum:: AgEAzElMaskType
+.. autoenum:: AZ_EL_MASK_TYPE
     :members:
-.. autoenum:: AgEActionType
+.. autoenum:: ACTION_TYPE
     :members:
-.. autoenum:: AgEAxisOffset
+.. autoenum:: AXIS_OFFSET
     :members:
-.. autoenum:: AgEDrCategories
+.. autoenum:: DR_CATEGORIES
     :members:
-.. autoenum:: AgEDataProviderType
+.. autoenum:: DATA_PROVIDER_TYPE
     :members:
-.. autoenum:: AgEDataPrvElementType
+.. autoenum:: DATA_PRV_ELEMENT_TYPE
     :members:
-.. autoenum:: AgEAccessTimeType
+.. autoenum:: ACCESS_TIME_TYPE
     :members:
-.. autoenum:: AgEAltRefType
+.. autoenum:: ALT_REF_TYPE
     :members:
-.. autoenum:: AgETerrainNormType
+.. autoenum:: TERRAIN_NORM_TYPE
     :members:
-.. autoenum:: AgELightingObstructionModelType
+.. autoenum:: LIGHTING_OBSTRUCTION_MODEL_TYPE
     :members:
-.. autoenum:: AgEDisplayTimesType
+.. autoenum:: DISPLAY_TIMES_TYPE
     :members:
-.. autoenum:: AgEAreaType
+.. autoenum:: AREA_TYPE
     :members:
-.. autoenum:: AgETrajectoryType
+.. autoenum:: TRAJECTORY_TYPE
     :members:
-.. autoenum:: AgEOffsetFrameType
+.. autoenum:: OFFSET_FRAME_TYPE
     :members:
-.. autoenum:: AgESc3dPtSize
+.. autoenum:: SC3_D_PT_SIZE
     :members:
-.. autoenum:: AgETerrainFileType
+.. autoenum:: TERRAIN_FILE_TYPE
     :members:
-.. autoenum:: AgE3DTilesetSourceType
+.. autoenum:: TILESET_3D_SOURCE_TYPE
     :members:
-.. autoenum:: AgEMarkerType
+.. autoenum:: MARKER_TYPE
     :members:
-.. autoenum:: AgEVectorAxesConnectType
+.. autoenum:: VECTOR_AXES_CONNECT_TYPE
     :members:
-.. autoenum:: AgEVOMarkerOriginType
+.. autoenum:: VO_MARKER_ORIGIN_TYPE
     :members:
-.. autoenum:: AgEVOLabelSwapDistance
+.. autoenum:: VO_LABEL_SWAP_DISTANCE
     :members:
-.. autoenum:: AgEPlPositionSourceType
+.. autoenum:: PL_POSITION_SOURCE_TYPE
     :members:
-.. autoenum:: AgEEphemSourceType
+.. autoenum:: EPHEM_SOURCE_TYPE
     :members:
-.. autoenum:: AgEPlOrbitDisplayType
+.. autoenum:: PL_ORBIT_DISPLAY_TYPE
     :members:
-.. autoenum:: AgEScEndLoopType
+.. autoenum:: SC_END_LOOP_TYPE
     :members:
-.. autoenum:: AgEScRefreshDeltaType
+.. autoenum:: SC_REFRESH_DELTA_TYPE
     :members:
-.. autoenum:: AgESnPattern
+.. autoenum:: SN_PATTERN
     :members:
-.. autoenum:: AgESnPointing
+.. autoenum:: SN_POINTING
     :members:
-.. autoenum:: AgESnPtTrgtBsightType
+.. autoenum:: SN_PT_TRGT_BSIGHT_TYPE
     :members:
-.. autoenum:: AgEBoresightType
+.. autoenum:: BORESIGHT_TYPE
     :members:
-.. autoenum:: AgETrackModeType
+.. autoenum:: TRACK_MODE_TYPE
     :members:
-.. autoenum:: AgESnAzElBsightAxisType
+.. autoenum:: SN_AZ_EL_BSIGHT_AXIS_TYPE
     :members:
-.. autoenum:: AgESnRefractionType
+.. autoenum:: SN_REFRACTION_TYPE
     :members:
-.. autoenum:: AgESnProjectionDistanceType
+.. autoenum:: SN_PROJECTION_DISTANCE_TYPE
     :members:
-.. autoenum:: AgESnLocation
+.. autoenum:: SN_LOCATION
     :members:
-.. autoenum:: AgEScTimeStepType
+.. autoenum:: SC_TIME_STEP_TYPE
     :members:
-.. autoenum:: AgENoteShowType
+.. autoenum:: NOTE_SHOW_TYPE
     :members:
-.. autoenum:: AgEGeometricElemType
+.. autoenum:: GEOMETRIC_ELEM_TYPE
     :members:
-.. autoenum:: AgESnScanMode
+.. autoenum:: SN_SCAN_MODE
     :members:
-.. autoenum:: AgECnstrBackground
+.. autoenum:: CNSTR_BACKGROUND
     :members:
-.. autoenum:: AgECnstrGroundTrack
+.. autoenum:: CNSTR_GROUND_TRACK
     :members:
-.. autoenum:: AgEIntersectionType
+.. autoenum:: INTERSECTION_TYPE
     :members:
-.. autoenum:: AgECnstrLighting
+.. autoenum:: CNSTR_LIGHTING
     :members:
-.. autoenum:: AgESnVOProjectionType
+.. autoenum:: SN_VO_PROJECTION_TYPE
     :members:
-.. autoenum:: AgESnVOPulseStyle
+.. autoenum:: SN_VO_PULSE_STYLE
     :members:
-.. autoenum:: AgESnVOPulseFrequencyPreset
+.. autoenum:: SN_VO_PULSE_FREQUENCY_PRESET
     :members:
-.. autoenum:: AgELineWidth
+.. autoenum:: LINE_WIDTH
     :members:
-.. autoenum:: AgESTKObjectType
+.. autoenum:: STK_OBJECT_TYPE
     :members:
-.. autoenum:: AgEAccessConstraints
+.. autoenum:: ACCESS_CONSTRAINTS
     :members:
-.. autoenum:: AgEBorderWallUpperLowerEdgeAltRef
+.. autoenum:: BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF
     :members:
-.. autoenum:: AgEShadowModel
+.. autoenum:: SHADOW_MODEL
     :members:
-.. autoenum:: AgEMethodToComputeSunPosition
+.. autoenum:: METHOD_TO_COMPUTE_SUN_POSITION
     :members:
-.. autoenum:: AgEAtmosphericDensityModel
+.. autoenum:: ATMOSPHERIC_DENSITY_MODEL
     :members:
-.. autoenum:: AgE3dMarkerShape
+.. autoenum:: MARKER_SHAPE_3D
     :members:
-.. autoenum:: AgELeadTrailData
+.. autoenum:: LEAD_TRAIL_DATA
     :members:
-.. autoenum:: AgETickData
+.. autoenum:: TICK_DATA
     :members:
-.. autoenum:: AgELoadMethodType
+.. autoenum:: LOAD_METHOD_TYPE
     :members:
-.. autoenum:: AgELLAPositionType
+.. autoenum:: LLA_POSITION_TYPE
     :members:
-.. autoenum:: AgEVeGfxPass
+.. autoenum:: VE_GFX_PASS
     :members:
-.. autoenum:: AgEVeGfxVisibleSides
+.. autoenum:: VE_GFX_VISIBLE_SIDES
     :members:
-.. autoenum:: AgEVeGfxOffset
+.. autoenum:: VE_GFX_OFFSET
     :members:
-.. autoenum:: AgEVeGfxTimeEventType
+.. autoenum:: VE_GFX_TIME_EVENT_TYPE
     :members:
-.. autoenum:: AgEVeGfxAttributes
+.. autoenum:: VE_GFX_ATTRIBUTES
     :members:
-.. autoenum:: AgEVeGfxElevation
+.. autoenum:: VE_GFX_ELEVATION
     :members:
-.. autoenum:: AgEVeGfxOptions
+.. autoenum:: VE_GFX_OPTIONS
     :members:
-.. autoenum:: AgEModelType
+.. autoenum:: MODEL_TYPE
     :members:
-.. autoenum:: AgEVeVODropLineType
+.. autoenum:: VE_VO_DROP_LINE_TYPE
     :members:
-.. autoenum:: AgEVeVOSigmaScale
+.. autoenum:: VE_VO_SIGMA_SCALE
     :members:
-.. autoenum:: AgEVeVOAttributes
+.. autoenum:: VE_VO_ATTRIBUTES
     :members:
-.. autoenum:: AgERouteVOMarkerType
+.. autoenum:: ROUTE_VO_MARKER_TYPE
     :members:
-.. autoenum:: AgEVeEllipseOptions
+.. autoenum:: VE_ELLIPSE_OPTIONS
     :members:
-.. autoenum:: AgEVePropagatorType
+.. autoenum:: VE_PROPAGATOR_TYPE
     :members:
-.. autoenum:: AgEVeSGP4SwitchMethod
+.. autoenum:: VE_SGP4_SWITCH_METHOD
     :members:
-.. autoenum:: AgEVeSGP4TLESelection
+.. autoenum:: VE_SGP4TLE_SELECTION
     :members:
-.. autoenum:: AgEVeSGP4AutoUpdateSource
+.. autoenum:: VE_SGP4_AUTO_UPDATE_SOURCE
     :members:
-.. autoenum:: AgEThirdBodyGravSourceType
+.. autoenum:: THIRD_BODY_GRAV_SOURCE_TYPE
     :members:
-.. autoenum:: AgEVeGeomagFluxSrc
+.. autoenum:: VE_GEOMAG_FLUX_SRC
     :members:
-.. autoenum:: AgEVeGeomagFluxUpdateRate
+.. autoenum:: VE_GEOMAG_FLUX_UPDATE_RATE
     :members:
-.. autoenum:: AgEVeSolarFluxGeoMag
+.. autoenum:: VE_SOLAR_FLUX_GEO_MAG
     :members:
-.. autoenum:: AgEVeIntegrationModel
+.. autoenum:: VE_INTEGRATION_MODEL
     :members:
-.. autoenum:: AgEVePredictorCorrectorScheme
+.. autoenum:: VE_PREDICTOR_CORRECTOR_SCHEME
     :members:
-.. autoenum:: AgEVeMethod
+.. autoenum:: VE_METHOD
     :members:
-.. autoenum:: AgEVeInterpolationMethod
+.. autoenum:: VE_INTERPOLATION_METHOD
     :members:
-.. autoenum:: AgEVeFrame
+.. autoenum:: VE_FRAME
     :members:
-.. autoenum:: AgEVeCorrelationListType
+.. autoenum:: VE_CORRELATION_LIST_TYPE
     :members:
-.. autoenum:: AgEVeConsiderAnalysisType
+.. autoenum:: VE_CONSIDER_ANALYSIS_TYPE
     :members:
-.. autoenum:: AgEVeWayPtCompMethod
+.. autoenum:: VE_WAY_PT_COMP_METHOD
     :members:
-.. autoenum:: AgEVeAltitudeRef
+.. autoenum:: VE_ALTITUDE_REF
     :members:
-.. autoenum:: AgEVeWayPtInterpMethod
+.. autoenum:: VE_WAY_PT_INTERP_METHOD
     :members:
-.. autoenum:: AgEVeLaunch
+.. autoenum:: VE_LAUNCH
     :members:
-.. autoenum:: AgEVeImpact
+.. autoenum:: VE_IMPACT
     :members:
-.. autoenum:: AgEVeLaunchControl
+.. autoenum:: VE_LAUNCH_CONTROL
     :members:
-.. autoenum:: AgEVeImpactLocation
+.. autoenum:: VE_IMPACT_LOCATION
     :members:
-.. autoenum:: AgEVePassNumbering
+.. autoenum:: VE_PASS_NUMBERING
     :members:
-.. autoenum:: AgEVePartialPassMeasurement
+.. autoenum:: VE_PARTIAL_PASS_MEASUREMENT
     :members:
-.. autoenum:: AgEVeCoordinateSystem
+.. autoenum:: VE_COORDINATE_SYSTEM
     :members:
-.. autoenum:: AgEVeBreakAngleType
+.. autoenum:: VE_BREAK_ANGLE_TYPE
     :members:
-.. autoenum:: AgEVeDirection
+.. autoenum:: VE_DIRECTION
     :members:
-.. autoenum:: AgEVOLocation
+.. autoenum:: VO_LOCATION
     :members:
-.. autoenum:: AgEVOXOrigin
+.. autoenum:: VOX_ORIGIN
     :members:
-.. autoenum:: AgEVOYOrigin
+.. autoenum:: VOY_ORIGIN
     :members:
-.. autoenum:: AgEVOFontSize
+.. autoenum:: VO_FONT_SIZE
     :members:
-.. autoenum:: AgEAcWGS84WarningType
+.. autoenum:: AC_WGS84_WARNING_TYPE
     :members:
-.. autoenum:: AgESurfaceReference
+.. autoenum:: SURFACE_REFERENCE
     :members:
-.. autoenum:: AgEVOFormat
+.. autoenum:: VO_FORMAT
     :members:
-.. autoenum:: AgEAttitudeStandardType
+.. autoenum:: ATTITUDE_STANDARD_TYPE
     :members:
-.. autoenum:: AgEVeAttitude
+.. autoenum:: VE_ATTITUDE
     :members:
-.. autoenum:: AgEVeProfile
+.. autoenum:: VE_PROFILE
     :members:
-.. autoenum:: AgEVeLookAheadMethod
+.. autoenum:: VE_LOOK_AHEAD_METHOD
     :members:
-.. autoenum:: AgEVeVOBPlaneTargetPointPosition
+.. autoenum:: VE_VOB_PLANE_TARGET_POINT_POSITION
     :members:
-.. autoenum:: AgESnAltCrossingSides
+.. autoenum:: SN_ALT_CROSSING_SIDES
     :members:
-.. autoenum:: AgESnAltCrossingDirection
+.. autoenum:: SN_ALT_CROSSING_DIRECTION
     :members:
-.. autoenum:: AgESnVOInheritFrom2D
+.. autoenum:: SN_VO_INHERIT_FROM2_D
     :members:
-.. autoenum:: AgESnVOVisualAppearance
+.. autoenum:: SN_VO_VISUAL_APPEARANCE
     :members:
-.. autoenum:: AgEChTimePeriodType
+.. autoenum:: CH_TIME_PERIOD_TYPE
     :members:
-.. autoenum:: AgEChConstConstraintsMode
+.. autoenum:: CH_CONST_CONSTRAINTS_MODE
     :members:
-.. autoenum:: AgEDataSaveMode
+.. autoenum:: DATA_SAVE_MODE
     :members:
-.. autoenum:: AgECvBounds
+.. autoenum:: CV_BOUNDS
     :members:
-.. autoenum:: AgECvPointLocMethod
+.. autoenum:: CV_POINT_LOC_METHOD
     :members:
-.. autoenum:: AgECvPointAltitudeMethod
+.. autoenum:: CV_POINT_ALTITUDE_METHOD
     :members:
-.. autoenum:: AgECvGridClass
+.. autoenum:: CV_GRID_CLASS
     :members:
-.. autoenum:: AgECvAltitudeMethod
+.. autoenum:: CV_ALTITUDE_METHOD
     :members:
-.. autoenum:: AgECvGroundAltitudeMethod
+.. autoenum:: CV_GROUND_ALTITUDE_METHOD
     :members:
-.. autoenum:: AgECvDataRetention
+.. autoenum:: CV_DATA_RETENTION
     :members:
-.. autoenum:: AgECvRegionAccessAccel
+.. autoenum:: CV_REGION_ACCESS_ACCEL
     :members:
-.. autoenum:: AgECvResolution
+.. autoenum:: CV_RESOLUTION
     :members:
-.. autoenum:: AgECvAssetStatus
+.. autoenum:: CV_ASSET_STATUS
     :members:
-.. autoenum:: AgECvAssetGrouping
+.. autoenum:: CV_ASSET_GROUPING
     :members:
-.. autoenum:: AgEFmDefinitionType
+.. autoenum:: FM_DEFINITION_TYPE
     :members:
-.. autoenum:: AgEFmSatisfactionType
+.. autoenum:: FM_SATISFACTION_TYPE
     :members:
-.. autoenum:: AgEFmConstraintName
+.. autoenum:: FM_CONSTRAINT_NAME
     :members:
-.. autoenum:: AgEFmCompute
+.. autoenum:: FM_COMPUTE
     :members:
-.. autoenum:: AgEFmAcrossAssets
+.. autoenum:: FM_ACROSS_ASSETS
     :members:
-.. autoenum:: AgEFmComputeType
+.. autoenum:: FM_COMPUTE_TYPE
     :members:
-.. autoenum:: AgEFmMethod
+.. autoenum:: FM_METHOD
     :members:
-.. autoenum:: AgEFmEndGapOption
+.. autoenum:: FM_END_GAP_OPTION
     :members:
-.. autoenum:: AgEFmGfxContourType
+.. autoenum:: FM_GFX_CONTOUR_TYPE
     :members:
-.. autoenum:: AgEFmGfxColorMethod
+.. autoenum:: FM_GFX_COLOR_METHOD
     :members:
-.. autoenum:: AgEFmGfxFloatingPointFormat
+.. autoenum:: FM_GFX_FLOATING_POINT_FORMAT
     :members:
-.. autoenum:: AgEFmGfxDirection
+.. autoenum:: FM_GFX_DIRECTION
     :members:
-.. autoenum:: AgEFmGfxAccumulation
+.. autoenum:: FM_GFX_ACCUMULATION
     :members:
-.. autoenum:: AgEFmNAMethodType
+.. autoenum:: FM_NA_METHOD_TYPE
     :members:
-.. autoenum:: AgEIvClockHost
+.. autoenum:: IV_CLOCK_HOST
     :members:
-.. autoenum:: AgEIvTimeSense
+.. autoenum:: IV_TIME_SENSE
     :members:
-.. autoenum:: AgEGPSAttModelType
+.. autoenum:: GPS_ATT_MODEL_TYPE
     :members:
-.. autoenum:: AgECnCnstrRestriction
+.. autoenum:: CN_CNSTR_RESTRICTION
     :members:
-.. autoenum:: AgEEventDetection
+.. autoenum:: EVENT_DETECTION
     :members:
-.. autoenum:: AgESamplingMethod
+.. autoenum:: SAMPLING_METHOD
     :members:
-.. autoenum:: AgECvSatisfactionType
+.. autoenum:: CV_SATISFACTION_TYPE
     :members:
-.. autoenum:: AgECCSDSReferenceFrame
+.. autoenum:: CCSDS_REFERENCE_FRAME
     :members:
-.. autoenum:: AgECCSDSDateFormat
+.. autoenum:: CCSDS_DATE_FORMAT
     :members:
-.. autoenum:: AgECCSDSEphemFormat
+.. autoenum:: CCSDS_EPHEM_FORMAT
     :members:
-.. autoenum:: AgECCSDSTimeSystem
+.. autoenum:: CCSDS_TIME_SYSTEM
     :members:
-.. autoenum:: AgEStkEphemCoordinateSystem
+.. autoenum:: STK_EPHEM_COORDINATE_SYSTEM
     :members:
-.. autoenum:: AgEStkEphemCovarianceType
+.. autoenum:: STK_EPHEM_COVARIANCE_TYPE
     :members:
-.. autoenum:: AgEExportToolVersionFormat
+.. autoenum:: EXPORT_TOOL_VERSION_FORMAT
     :members:
-.. autoenum:: AgEExportToolTimePeriod
+.. autoenum:: EXPORT_TOOL_TIME_PERIOD
     :members:
-.. autoenum:: AgESpiceInterpolation
+.. autoenum:: SPICE_INTERPOLATION
     :members:
-.. autoenum:: AgEAttCoordinateAxes
+.. autoenum:: ATT_COORDINATE_AXES
     :members:
-.. autoenum:: AgEAttInclude
+.. autoenum:: ATT_INCLUDE
     :members:
-.. autoenum:: AgEExportToolStepSize
+.. autoenum:: EXPORT_TOOL_STEP_SIZE
     :members:
-.. autoenum:: AgETextOutlineStyle
+.. autoenum:: TEXT_OUTLINE_STYLE
     :members:
-.. autoenum:: AgEMtoRangeMode
+.. autoenum:: MTO_RANGE_MODE
     :members:
-.. autoenum:: AgEMtoTrackEval
+.. autoenum:: MTO_TRACK_EVAL
     :members:
-.. autoenum:: AgEMtoEntirety
+.. autoenum:: MTO_ENTIRETY
     :members:
-.. autoenum:: AgEMtoVisibilityMode
+.. autoenum:: MTO_VISIBILITY_MODE
     :members:
-.. autoenum:: AgEMtoObjectInterval
+.. autoenum:: MTO_OBJECT_INTERVAL
     :members:
-.. autoenum:: AgEMtoInputDataType
+.. autoenum:: MTO_INPUT_DATA_TYPE
     :members:
-.. autoenum:: AgESolidTide
+.. autoenum:: SOLID_TIDE
     :members:
-.. autoenum:: AgETimePeriodValueType
+.. autoenum:: TIME_PERIOD_VALUE_TYPE
     :members:
-.. autoenum:: AgEOnePtAccessStatus
+.. autoenum:: ONE_PT_ACCESS_STATUS
     :members:
-.. autoenum:: AgEOnePtAccessSummary
+.. autoenum:: ONE_PT_ACCESS_SUMMARY
     :members:
-.. autoenum:: AgELookAheadPropagator
+.. autoenum:: LOOK_AHEAD_PROPAGATOR
     :members:
-.. autoenum:: AgEVOMarkerOrientation
+.. autoenum:: VO_MARKER_ORIENTATION
     :members:
-.. autoenum:: AgESRPModel
+.. autoenum:: SRP_MODEL
     :members:
-.. autoenum:: AgEDragModel
+.. autoenum:: DRAG_MODEL
     :members:
-.. autoenum:: AgEVePropagationFrame
+.. autoenum:: VE_PROPAGATION_FRAME
     :members:
-.. autoenum:: AgEStarReferenceFrame
+.. autoenum:: STAR_REFERENCE_FRAME
     :members:
-.. autoenum:: AgEGPSReferenceWeek
+.. autoenum:: GPS_REFERENCE_WEEK
     :members:
-.. autoenum:: AgECvCustomRegionAlgorithm
+.. autoenum:: CV_CUSTOM_REGION_ALGORITHM
     :members:
-.. autoenum:: AgEVeGPSSwitchMethod
+.. autoenum:: VE_GPS_SWITCH_METHOD
     :members:
-.. autoenum:: AgEVeGPSElemSelection
+.. autoenum:: VE_GPS_ELEM_SELECTION
     :members:
-.. autoenum:: AgEVeGPSAutoUpdateSource
+.. autoenum:: VE_GPS_AUTO_UPDATE_SOURCE
     :members:
-.. autoenum:: AgEVeGPSAlmanacType
+.. autoenum:: VE_GPS_ALMANAC_TYPE
     :members:
-.. autoenum:: AgEStkExternalEphemerisFormat
+.. autoenum:: STK_EXTERNAL_EPHEMERIS_FORMAT
     :members:
-.. autoenum:: AgEStkExternalFileMessageLevel
+.. autoenum:: STK_EXTERNAL_FILE_MESSAGE_LEVEL
     :members:
-.. autoenum:: AgECv3dDrawAtAltMode
+.. autoenum:: CV3_D_DRAW_AT_ALT_MODE
     :members:
-.. autoenum:: AgEDistanceOnSphere
+.. autoenum:: DISTANCE_ON_SPHERE
     :members:
-.. autoenum:: AgEFmInvalidValueActionType
+.. autoenum:: FM_INVALID_VALUE_ACTION_TYPE
     :members:
-.. autoenum:: AgEVeSlewTimingBetweenTargets
+.. autoenum:: VE_SLEW_TIMING_BETWEEN_TARGETS
     :members:
-.. autoenum:: AgEVeSlewMode
+.. autoenum:: VE_SLEW_MODE
     :members:
-.. autoenum:: AgEComponent
+.. autoenum:: COMPONENT
     :members:
-.. autoenum:: AgEVmDefinitionType
+.. autoenum:: VM_DEFINITION_TYPE
     :members:
-.. autoenum:: AgEVmSpatialCalcEvalType
+.. autoenum:: VM_SPATIAL_CALC_EVAL_TYPE
     :members:
-.. autoenum:: AgEVmSaveComputedDataType
+.. autoenum:: VM_SAVE_COMPUTED_DATA_TYPE
     :members:
-.. autoenum:: AgEVmDisplayVolumeType
+.. autoenum:: VM_DISPLAY_VOLUME_TYPE
     :members:
-.. autoenum:: AgEVmDisplayQualityType
+.. autoenum:: VM_DISPLAY_QUALITY_TYPE
     :members:
-.. autoenum:: AgEVmLegendNumericNotation
+.. autoenum:: VM_LEGEND_NUMERIC_NOTATION
     :members:
-.. autoenum:: AgEVmLevelOrder
+.. autoenum:: VM_LEVEL_ORDER
     :members:
-.. autoenum:: AgESnEOIRProcessingLevels
+.. autoenum:: SN_EOIR_PROCESSING_LEVELS
     :members:
-.. autoenum:: AgESnEOIRJitterTypes
+.. autoenum:: SN_EOIR_JITTER_TYPES
     :members:
-.. autoenum:: AgESnEOIRScanModes
+.. autoenum:: SN_EOIR_SCAN_MODES
     :members:
-.. autoenum:: AgESnEOIRBandImageQuality
+.. autoenum:: SN_EOIR_BAND_IMAGE_QUALITY
     :members:
-.. autoenum:: AgESnEOIRBandSpectralShape
+.. autoenum:: SN_EOIR_BAND_SPECTRAL_SHAPE
     :members:
-.. autoenum:: AgESnEOIRBandSpatialInputMode
+.. autoenum:: SN_EOIR_BAND_SPATIAL_INPUT_MODE
     :members:
-.. autoenum:: AgESnEOIRBandSpectralRSRUnits
+.. autoenum:: SN_EOIR_BAND_SPECTRAL_RSR_UNITS
     :members:
-.. autoenum:: AgESnEOIRBandOpticalInputMode
+.. autoenum:: SN_EOIR_BAND_OPTICAL_INPUT_MODE
     :members:
-.. autoenum:: AgESnEOIRBandOpticalTransmissionMode
+.. autoenum:: SN_EOIR_BAND_OPTICAL_TRANSMISSION_MODE
     :members:
-.. autoenum:: AgESnEOIRBandRadParamLevel
+.. autoenum:: SN_EOIR_BAND_RAD_PARAM_LEVEL
     :members:
-.. autoenum:: AgESnEOIRBandQEMode
+.. autoenum:: SN_EOIR_BAND_QE_MODE
     :members:
-.. autoenum:: AgESnEOIRBandQuantizationMode
+.. autoenum:: SN_EOIR_BAND_QUANTIZATION_MODE
     :members:
-.. autoenum:: AgESnEOIRBandWavelengthType
+.. autoenum:: SN_EOIR_BAND_WAVELENGTH_TYPE
     :members:
-.. autoenum:: AgESnEOIRBandSaturationMode
+.. autoenum:: SN_EOIR_BAND_SATURATION_MODE
     :members:
-.. autoenum:: AgEVmVolumeGridExportType
+.. autoenum:: VM_VOLUME_GRID_EXPORT_TYPE
     :members:
-.. autoenum:: AgEVmDataExportFormatType
+.. autoenum:: VM_DATA_EXPORT_FORMAT_TYPE
     :members:
-.. autoenum:: AgECnFromToParentConstraint
+.. autoenum:: CN_FROM_TO_PARENT_CONSTRAINT
     :members:
-.. autoenum:: AgEAWBAccessConstraints
+.. autoenum:: AWB_ACCESS_CONSTRAINTS
     :members:
-.. autoenum:: AgEStatistics
+.. autoenum:: STATISTICS
     :members:
-.. autoenum:: AgETimeVarExtremum
+.. autoenum:: TIME_VAR_EXTREMUM
     :members:
-.. autoenum:: AgEModelGltfReflectionMapType
+.. autoenum:: MODEL_GLTF_REFLECTION_MAP_TYPE
     :members:
-.. autoenum:: AgESnVOProjectionTimeDependencyType
+.. autoenum:: SN_VO_PROJECTION_TIME_DEPENDENCY_TYPE
     :members:
-.. autoenum:: AgELOPAtmosphericDensityModel
+.. autoenum:: LOP_ATMOSPHERIC_DENSITY_MODEL
     :members:
-.. autoenum:: AgELowAltAtmosphericDensityModel
+.. autoenum:: LOW_ALT_ATMOSPHERIC_DENSITY_MODEL
     :members:
-.. autoenum:: AgEEphemExportToolFileFormat
+.. autoenum:: EPHEM_EXPORT_TOOL_FILE_FORMAT
     :members:
-.. autoenum:: AgEAdvCATEllipsoidClass
+.. autoenum:: ADV_CAT_ELLIPSOID_CLASS
     :members:
-.. autoenum:: AgEAdvCATConjunctionType
+.. autoenum:: ADV_CAT_CONJUNCTION_TYPE
     :members:
-.. autoenum:: AgEAdvCATSecondaryEllipsoidsVisibilityType
+.. autoenum:: ADV_CAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE
     :members:
-.. autoenum:: AgEEOIRShapeType
+.. autoenum:: EOIR_SHAPE_TYPE
     :members:
-.. autoenum:: AgEEOIRShapeMaterialSpecificationType
+.. autoenum:: EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE
     :members:
-.. autoenum:: AgEEOIRThermalModelType
+.. autoenum:: EOIR_THERMAL_MODEL_TYPE
     :members:
-.. autoenum:: AgEEOIRFlightType
+.. autoenum:: EOIR_FLIGHT_TYPE
     :members:
-.. autoenum:: AgEComponentLinkEmbedControlReferenceType
+.. autoenum:: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE
     :members:
-.. autoenum:: AgESwathComputationalMethod
+.. autoenum:: SWATH_COMPUTATIONAL_METHOD
     :members:
-.. autoenum:: AgEClassicalLocation
+.. autoenum:: CLASSICAL_LOCATION
     :members:
-.. autoenum:: AgEOrientationAscNode
+.. autoenum:: ORIENTATION_ASC_NODE
     :members:
-.. autoenum:: AgEGeodeticSize
+.. autoenum:: GEODETIC_SIZE
     :members:
-.. autoenum:: AgEDelaunayLType
+.. autoenum:: DELAUNAY_L_TYPE
     :members:
-.. autoenum:: AgEDelaunayHType
+.. autoenum:: DELAUNAY_H_TYPE
     :members:
-.. autoenum:: AgEDelaunayGType
+.. autoenum:: DELAUNAY_G_TYPE
     :members:
-.. autoenum:: AgEEquinoctialSizeShape
+.. autoenum:: EQUINOCTIAL_SIZE_SHAPE
     :members:
-.. autoenum:: AgEMixedSphericalFPA
+.. autoenum:: MIXED_SPHERICAL_FPA
     :members:
-.. autoenum:: AgESphericalFPA
+.. autoenum:: SPHERICAL_FPA
     :members:
-.. autoenum:: AgEClassicalSizeShape
+.. autoenum:: CLASSICAL_SIZE_SHAPE
     :members:
-.. autoenum:: AgEEquinoctialFormulation
+.. autoenum:: EQUINOCTIAL_FORMULATION
     :members:
-.. autoenum:: AgEScatteringPointProviderType
+.. autoenum:: SCATTERING_POINT_PROVIDER_TYPE
     :members:
-.. autoenum:: AgEScatteringPointModelType
+.. autoenum:: SCATTERING_POINT_MODEL_TYPE
     :members:
-.. autoenum:: AgEScatteringPointProviderListType
+.. autoenum:: SCATTERING_POINT_PROVIDER_LIST_TYPE
     :members:
-.. autoenum:: AgEPolarizationType
+.. autoenum:: POLARIZATION_TYPE
     :members:
-.. autoenum:: AgEPolarizationReferenceAxis
+.. autoenum:: POLARIZATION_REFERENCE_AXIS
     :members:
-.. autoenum:: AgENoiseTempComputeType
+.. autoenum:: NOISE_TEMP_COMPUTE_TYPE
     :members:
-.. autoenum:: AgEPointingStrategyType
+.. autoenum:: POINTING_STRATEGY_TYPE
     :members:
-.. autoenum:: AgEWaveformType
+.. autoenum:: WAVEFORM_TYPE
     :members:
-.. autoenum:: AgEFrequencySpec
+.. autoenum:: FREQUENCY_SPEC
     :members:
-.. autoenum:: AgEPRFMode
+.. autoenum:: PRF_MODE
     :members:
-.. autoenum:: AgEPulseWidthMode
+.. autoenum:: PULSE_WIDTH_MODE
     :members:
-.. autoenum:: AgEWaveformSelectionStrategyType
+.. autoenum:: WAVEFORM_SELECTION_STRATEGY_TYPE
     :members:
-.. autoenum:: AgEAntennaControlRefType
+.. autoenum:: ANTENNA_CONTROL_REF_TYPE
     :members:
-.. autoenum:: AgEAntennaModelType
+.. autoenum:: ANTENNA_MODEL_TYPE
     :members:
-.. autoenum:: AgEAntennaContourType
+.. autoenum:: ANTENNA_CONTOUR_TYPE
     :members:
-.. autoenum:: AgECircularApertureInputType
+.. autoenum:: CIRCULAR_APERTURE_INPUT_TYPE
     :members:
-.. autoenum:: AgERectangularApertureInputType
+.. autoenum:: RECTANGULAR_APERTURE_INPUT_TYPE
     :members:
-.. autoenum:: AgEDirectionProviderType
+.. autoenum:: DIRECTION_PROVIDER_TYPE
     :members:
-.. autoenum:: AgEBeamformerType
+.. autoenum:: BEAMFORMER_TYPE
     :members:
-.. autoenum:: AgEElementConfigurationType
+.. autoenum:: ELEMENT_CONFIGURATION_TYPE
     :members:
-.. autoenum:: AgELatticeType
+.. autoenum:: LATTICE_TYPE
     :members:
-.. autoenum:: AgESpacingUnit
+.. autoenum:: SPACING_UNIT
     :members:
-.. autoenum:: AgELimitsExceededBehaviorType
+.. autoenum:: LIMITS_EXCEEDED_BEHAVIOR_TYPE
     :members:
-.. autoenum:: AgEAntennaGraphicsCoordinateSystem
+.. autoenum:: ANTENNA_GRAPHICS_COORDINATE_SYSTEM
     :members:
-.. autoenum:: AgEAntennaModelInputType
+.. autoenum:: ANTENNA_MODEL_INPUT_TYPE
     :members:
-.. autoenum:: AgEAntennaModelCosecantSquaredSidelobeType
+.. autoenum:: ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE
     :members:
-.. autoenum:: AgEBeamSelectionStrategyType
+.. autoenum:: BEAM_SELECTION_STRATEGY_TYPE
     :members:
-.. autoenum:: AgETransmitterModelType
+.. autoenum:: TRANSMITTER_MODEL_TYPE
     :members:
-.. autoenum:: AgETransferFunctionType
+.. autoenum:: TRANSFER_FUNCTION_TYPE
     :members:
-.. autoenum:: AgEReTransmitterOpMode
+.. autoenum:: RE_TRANSMITTER_OP_MODE
     :members:
-.. autoenum:: AgEReceiverModelType
+.. autoenum:: RECEIVER_MODEL_TYPE
     :members:
-.. autoenum:: AgELinkMarginType
+.. autoenum:: LINK_MARGIN_TYPE
     :members:
-.. autoenum:: AgERadarStcAttenuationType
+.. autoenum:: RADAR_STC_ATTENUATION_TYPE
     :members:
-.. autoenum:: AgERadarFrequencySpec
+.. autoenum:: RADAR_FREQUENCY_SPEC
     :members:
-.. autoenum:: AgERadarSNRContourType
+.. autoenum:: RADAR_SNR_CONTOUR_TYPE
     :members:
-.. autoenum:: AgERadarModelType
+.. autoenum:: RADAR_MODEL_TYPE
     :members:
-.. autoenum:: AgERadarModeType
+.. autoenum:: RADAR_MODE_TYPE
     :members:
-.. autoenum:: AgERadarWaveformSearchTrackType
+.. autoenum:: RADAR_WAVEFORM_SEARCH_TRACK_TYPE
     :members:
-.. autoenum:: AgERadarSearchTrackPRFMode
+.. autoenum:: RADAR_SEARCH_TRACK_PRF_MODE
     :members:
-.. autoenum:: AgERadarSearchTrackPulseWidthMode
+.. autoenum:: RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE
     :members:
-.. autoenum:: AgERadarSarPRFMode
+.. autoenum:: RADAR_SAR_PRF_MODE
     :members:
-.. autoenum:: AgERadarSarRangeResolutionMode
+.. autoenum:: RADAR_SAR_RANGE_RESOLUTION_MODE
     :members:
-.. autoenum:: AgERadarSarPcrMode
+.. autoenum:: RADAR_SAR_PCR_MODE
     :members:
-.. autoenum:: AgERadarSarPulseIntegrationAnalysisModeType
+.. autoenum:: RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_TYPE
     :members:
-.. autoenum:: AgERadarPDetType
+.. autoenum:: RADAR_P_DET_TYPE
     :members:
-.. autoenum:: AgERadarPulseIntegrationType
+.. autoenum:: RADAR_PULSE_INTEGRATION_TYPE
     :members:
-.. autoenum:: AgERadarPulseIntegratorType
+.. autoenum:: RADAR_PULSE_INTEGRATOR_TYPE
     :members:
-.. autoenum:: AgERadarContinuousWaveAnalysisModeType
+.. autoenum:: RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE
     :members:
-.. autoenum:: AgERadarClutterGeometryModelType
+.. autoenum:: RADAR_CLUTTER_GEOMETRY_MODEL_TYPE
     :members:
-.. autoenum:: AgERadarClutterMapModelType
+.. autoenum:: RADAR_CLUTTER_MAP_MODEL_TYPE
     :members:
-.. autoenum:: AgERadarSwerlingCase
+.. autoenum:: RADAR_SWERLING_CASE
     :members:
-.. autoenum:: AgERCSComputeStrategy
+.. autoenum:: RCS_COMPUTE_STRATEGY
     :members:
-.. autoenum:: AgERadarActivityType
+.. autoenum:: RADAR_ACTIVITY_TYPE
     :members:
-.. autoenum:: AgERadarCrossSectionContourGraphicsPolarization
+.. autoenum:: RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
     :members:
-.. autoenum:: AgERFFilterModelType
+.. autoenum:: RF_FILTER_MODEL_TYPE
     :members:
-.. autoenum:: AgEModulatorModelType
+.. autoenum:: MODULATOR_MODEL_TYPE
     :members:
-.. autoenum:: AgEDemodulatorModelType
+.. autoenum:: DEMODULATOR_MODEL_TYPE
     :members:
-.. autoenum:: AgERainLossModelType
+.. autoenum:: RAIN_LOSS_MODEL_TYPE
     :members:
-.. autoenum:: AgEAtmosphericAbsorptionModelType
+.. autoenum:: ATMOSPHERIC_ABSORPTION_MODEL_TYPE
     :members:
-.. autoenum:: AgEUrbanTerrestrialLossModelType
+.. autoenum:: URBAN_TERRESTRIAL_LOSS_MODEL_TYPE
     :members:
-.. autoenum:: AgECloudsAndFogFadingLossModelType
+.. autoenum:: CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE
     :members:
-.. autoenum:: AgECloudsAndFogLiquidWaterChoices
+.. autoenum:: CLOUDS_AND_FOG_LIQUID_WATER_CHOICES
     :members:
-.. autoenum:: AgEIonosphericFadingLossModelType
+.. autoenum:: IONOSPHERIC_FADING_LOSS_MODEL_TYPE
     :members:
-.. autoenum:: AgETroposphericScintillationFadingLossModelType
+.. autoenum:: TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE
     :members:
-.. autoenum:: AgETroposphericScintillationAverageTimeChoices
+.. autoenum:: TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES
     :members:
-.. autoenum:: AgEProjectionHorizontalDatumType
+.. autoenum:: PROJECTION_HORIZONTAL_DATUM_TYPE
     :members:
-.. autoenum:: AgEBuildHeightReferenceMethod
+.. autoenum:: BUILD_HEIGHT_REFERENCE_METHOD
     :members:
-.. autoenum:: AgEBuildHeightUnit
+.. autoenum:: BUILD_HEIGHT_UNIT
     :members:
-.. autoenum:: AgETiremPolarizationType
+.. autoenum:: TIREM_POLARIZATION_TYPE
     :members:
-.. autoenum:: AgEVoacapSolarActivityConfigurationType
+.. autoenum:: VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
     :members:
-.. autoenum:: AgEVoacapCoefficientDataType
+.. autoenum:: VOACAP_COEFFICIENT_DATA_TYPE
     :members:
-.. autoenum:: AgELaserPropagationLossModelType
+.. autoenum:: LASER_PROPAGATION_LOSS_MODEL_TYPE
     :members:
-.. autoenum:: AgELaserTroposphericScintillationLossModelType
+.. autoenum:: LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE
     :members:
-.. autoenum:: AgEAtmosphericTurbulenceModelType
+.. autoenum:: ATMOSPHERIC_TURBULENCE_MODEL_TYPE
     :members:
-.. autoenum:: AgEModtranAerosolModelType
+.. autoenum:: MODTRAN_AEROSOL_MODEL_TYPE
     :members:
-.. autoenum:: AgEModtranCloudModelType
+.. autoenum:: MODTRAN_CLOUD_MODEL_TYPE
     :members:
-.. autoenum:: AgECommSystemReferenceBandwidth
+.. autoenum:: COMM_SYSTEM_REFERENCE_BANDWIDTH
     :members:
-.. autoenum:: AgECommSystemConstrainingRole
+.. autoenum:: COMM_SYSTEM_CONSTRAINING_ROLE
     :members:
-.. autoenum:: AgECommSystemSaveMode
+.. autoenum:: COMM_SYSTEM_SAVE_MODE
     :members:
-.. autoenum:: AgECommSystemAccessEventDetectionType
+.. autoenum:: COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
     :members:
-.. autoenum:: AgECommSystemAccessSamplingMethodType
+.. autoenum:: COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE
     :members:
-.. autoenum:: AgECommSystemLinkSelectionCriteriaType
+.. autoenum:: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE
     :members:
-.. autoenum:: AgESpEnvNasaModelsActivity
+.. autoenum:: SP_ENV_NASA_MODELS_ACTIVITY
     :members:
-.. autoenum:: AgESpEnvCrresProtonActivity
+.. autoenum:: SP_ENV_CRRES_PROTON_ACTIVITY
     :members:
-.. autoenum:: AgESpEnvCrresRadiationActivity
+.. autoenum:: SP_ENV_CRRES_RADIATION_ACTIVITY
     :members:
-.. autoenum:: AgESpEnvMagFieldColorMode
+.. autoenum:: SP_ENV_MAG_FIELD_COLOR_MODE
     :members:
-.. autoenum:: AgESpEnvMagFieldColorScale
+.. autoenum:: SP_ENV_MAG_FIELD_COLOR_SCALE
     :members:
-.. autoenum:: AgESpEnvMagneticMainField
+.. autoenum:: SP_ENV_MAGNETIC_MAIN_FIELD
     :members:
-.. autoenum:: AgESpEnvMagneticExternalField
+.. autoenum:: SP_ENV_MAGNETIC_EXTERNAL_FIELD
     :members:
-.. autoenum:: AgESpEnvSAAChannel
+.. autoenum:: SP_ENV_SAA_CHANNEL
     :members:
-.. autoenum:: AgESpEnvSAAFluxLevel
+.. autoenum:: SP_ENV_SAA_FLUX_LEVEL
     :members:
-.. autoenum:: AgEVeSpEnvShapeModel
+.. autoenum:: VE_SP_ENV_SHAPE_MODEL
     :members:
-.. autoenum:: AgEVeSpEnvF10p7Source
+.. autoenum:: VE_SP_ENV_F_10_P7_SOURCE
     :members:
-.. autoenum:: AgEVeSpEnvMaterial
+.. autoenum:: VE_SP_ENV_MATERIAL
     :members:
-.. autoenum:: AgEVeSpEnvComputationMode
+.. autoenum:: VE_SP_ENV_COMPUTATION_MODE
     :members:
-.. autoenum:: AgEVeSpEnvDoseChannel
+.. autoenum:: VE_SP_ENV_DOSE_CHANNEL
     :members:
-.. autoenum:: AgEVeSpEnvDetectorGeometry
+.. autoenum:: VE_SP_ENV_DETECTOR_GEOMETRY
     :members:
-.. autoenum:: AgEVeSpEnvDetectorType
+.. autoenum:: VE_SP_ENV_DETECTOR_TYPE
     :members:
-.. autoenum:: AgEVeSpEnvApSource
+.. autoenum:: VE_SP_ENV_AP_SOURCE
     :members:
-.. autoenum:: AgENotificationFilterMask
+.. autoenum:: NOTIFICATION_FILTER_MASK
     :members:
 
 

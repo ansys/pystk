@@ -28,14 +28,14 @@ class Ship(CodeSnippetsTestBase):
     # region SetUp
     def setUp(self):
         Ship.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eShip, Ship.m_DefaultName), IShip
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, Ship.m_DefaultName), IShip
         )
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eShip, Ship.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SHIP, Ship.m_DefaultName)
         Ship.m_Object = None
 
     # endregion
@@ -47,7 +47,7 @@ class Ship(CodeSnippetsTestBase):
 
     def CreateShipOnCurrentScenarioCentralBody(self, root: "IStkObjectRoot"):
         # Create the Ship
-        ship: "IShip" = clr.CastAs(root.current_scenario.children.new(AgESTKObjectType.eShip, "MyShip"), IShip)
+        ship: "IShip" = clr.CastAs(root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "MyShip"), IShip)
 
     # endregion
 
@@ -57,7 +57,7 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseGreatArcPropagator(self, ship: "IShip"):
         # Set ship route to great arc
-        ship.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        ship.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(ship.route, IVehiclePropagatorGreatArc)
@@ -70,7 +70,7 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseStkExternalPropagator(self, ship: "IShip"):
         # Set ship route to STK External propagator
-        ship.set_route_type(AgEVePropagatorType.ePropagatorStkExternal)
+        ship.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorStkExternal" = clr.CastAs(ship.route, IVehiclePropagatorStkExternal)
@@ -83,7 +83,7 @@ class Ship(CodeSnippetsTestBase):
 
     def SetShipToUseRealtimePropagator(self, ship: "IShip"):
         # Set ship route to STK External propagator
-        ship.set_route_type(AgEVePropagatorType.ePropagatorRealtime)
+        ship.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
 
         # Retrieve propagator interface if necessary
         propagator: "IVehiclePropagatorRealtime" = clr.CastAs(ship.route, IVehiclePropagatorRealtime)

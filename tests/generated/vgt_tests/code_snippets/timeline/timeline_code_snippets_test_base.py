@@ -13,15 +13,15 @@ class TimelineCodeSnippetsTestBase(CodeSnippetsTestBase):
         CodeSnippetsTestBase.InitializeWithNewScenario(True)
 
         satellite: "ISatellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(AgESTKObjectType.eSatellite, "LEO"), ISatellite
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "LEO"), ISatellite
         )
-        satellite.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        satellite.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         (clr.CastAs(satellite.propagator, IVehiclePropagatorTwoBody)).propagate()
 
         aircraft: "IAircraft" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(AgESTKObjectType.eAircraft, "UAV"), IAircraft
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "UAV"), IAircraft
         )
-        aircraft.set_route_type(AgEVePropagatorType.ePropagatorGreatArc)
+        aircraft.set_route_type(VE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         propagator: "IVehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, IVehiclePropagatorGreatArc)
         waypoints = [
             [40.0399, -75.5973, 3.048, 0.045, 0],
@@ -31,7 +31,7 @@ class TimelineCodeSnippetsTestBase(CodeSnippetsTestBase):
         ]
         propagator.set_points_smooth_rate_and_propagate(waypoints)
 
-        TestBase.Application.current_scenario.children.new(AgESTKObjectType.eFacility, "Facility1")
+        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
 
     # endregion
 

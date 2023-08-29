@@ -42,7 +42,7 @@ class StkObject(CodeSnippetsTestBase):
 
     # region DeleteStkObject
     def test_DeleteStkObject(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eShip, "Ship1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "Ship1")
         self.DeleteStkObject(obj)
 
     def DeleteStkObject(self, stkObject: "IStkObject"):
@@ -52,7 +52,7 @@ class StkObject(CodeSnippetsTestBase):
 
     # region ExportObjectToFile
     def test_ExportObjectToFile(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eStar, "star1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.STAR, "star1")
         self.ExportObjectToFile(obj, TestBase.TemporaryDirectory)
 
     def ExportObjectToFile(self, stkObject: "IStkObject", outputPath: str):
@@ -63,9 +63,9 @@ class StkObject(CodeSnippetsTestBase):
 
     # region RenameAnObject
     def test_RenameAnObject(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eStar, "star1")
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.STAR, "star1")
         self.RenameAnObject(obj)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eStar, obj.instance_name)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.STAR, obj.instance_name)
 
     def RenameAnObject(self, stkObject: "IStkObject"):
         stkObject.instance_name = "NewObjectName"
@@ -75,12 +75,12 @@ class StkObject(CodeSnippetsTestBase):
     # region ConfigureObjectDescription
     def test_ConfigureObjectDescription(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
 
         self.ConfigureObjectDescription(stkobject)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def ConfigureObjectDescription(self, stkobject: "IStkObject"):
         # Set STK Object description
@@ -95,11 +95,9 @@ class StkObject(CodeSnippetsTestBase):
 
     # region AddMetadataToObject
     def test_AddMetadataToObject(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "fac1"
-        )
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
         self.AddMetadataToObject(obj)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, obj.instance_name)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, obj.instance_name)
 
     def AddMetadataToObject(self, stkObject: "IStkObject"):
         stkObject.metadata.set("key", "value")
@@ -108,11 +106,9 @@ class StkObject(CodeSnippetsTestBase):
 
     # region AddReadOnlyMetadataToObject
     def test_AddReadOnlyMetadataToObject(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "fac1"
-        )
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
         self.AddReadOnlyMetadataToObject(obj)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, obj.instance_name)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, obj.instance_name)
 
     def AddReadOnlyMetadataToObject(self, stkObject: "IStkObject"):
         stkObject.metadata.set("key", "value")
@@ -122,12 +118,10 @@ class StkObject(CodeSnippetsTestBase):
 
     # region RemoveMetadataFromObject
     def test_RemoveMetadataFromObject(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "fac1"
-        )
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
         obj.metadata.set("key", "value")
         self.RemoveMetadataFromObject(obj)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, obj.instance_name)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, obj.instance_name)
 
     def RemoveMetadataFromObject(self, stkObject: "IStkObject"):
         stkObject.metadata.remove_key("key")
@@ -136,14 +130,12 @@ class StkObject(CodeSnippetsTestBase):
 
     # region IterateMetadataKeys
     def test_IterateMetadataKeys(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "fac1"
-        )
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
         obj.metadata.set("key1", "value1")
         obj.metadata.set("key2", "value1")
         obj.metadata.set("key3", "value1")
         self.IterateMetadataKeys(obj)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, obj.instance_name)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, obj.instance_name)
 
     def IterateMetadataKeys(self, stkObject: "IStkObject"):
         key: str
@@ -154,13 +146,11 @@ class StkObject(CodeSnippetsTestBase):
 
     # region CheckIfMetadataIsReadOnly
     def test_CheckIfMetadataIsReadOnly(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "fac1"
-        )
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
         obj.metadata.set("test", "value")
         obj.metadata.set_read_only("test", True)
         self.CheckIfMetadataIsReadOnly(obj)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, obj.instance_name)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, obj.instance_name)
 
     def CheckIfMetadataIsReadOnly(self, stkObject: "IStkObject"):
         if stkObject.metadata.get_read_only("test"):
@@ -170,12 +160,10 @@ class StkObject(CodeSnippetsTestBase):
 
     # region CheckIfMetadataContainsKey
     def test_CheckIfMetadataContainsKey(self):
-        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "fac1"
-        )
+        obj: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
         obj.metadata.set("test", "value")
         self.CheckIfMetadataContainsKey(obj)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, obj.instance_name)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, obj.instance_name)
 
     def CheckIfMetadataContainsKey(self, stkObject: "IStkObject"):
         if stkObject.metadata.contains("test"):

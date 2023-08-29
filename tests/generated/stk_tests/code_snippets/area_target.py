@@ -28,7 +28,7 @@ class AreaTarget(CodeSnippetsTestBase):
     def setUp(self):
         self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                AgESTKObjectType.eAreaTarget, AreaTarget.m_DefaultName
+                STK_OBJECT_TYPE.AREA_TARGET, AreaTarget.m_DefaultName
             ),
             IAreaTarget,
         )
@@ -38,7 +38,7 @@ class AreaTarget(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            AgESTKObjectType.eAreaTarget, AreaTarget.m_DefaultName
+            STK_OBJECT_TYPE.AREA_TARGET, AreaTarget.m_DefaultName
         )
         self.m_Object = None
 
@@ -56,7 +56,7 @@ class AreaTarget(CodeSnippetsTestBase):
         # Create the AreaTarget on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget: "IAreaTarget" = clr.CastAs(
-            root.current_scenario.children.new(AgESTKObjectType.eAreaTarget, "MyAreaTarget"), IAreaTarget
+            root.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "MyAreaTarget"), IAreaTarget
         )
 
     # endregion
@@ -69,7 +69,7 @@ class AreaTarget(CodeSnippetsTestBase):
         # By using the fine grained interfaces,
         # BeginUpdate/EndUpdate prevent intermediate redraws
         root.begin_update()
-        areaTarget.area_type = AgEAreaType.ePattern
+        areaTarget.area_type = AREA_TYPE.PATTERN
         patterns: "IAreaTypePatternCollection" = clr.CastAs(areaTarget.area_type_data, IAreaTypePatternCollection)
         patterns.add(40.04, -76.304)
         patterns.add(40.337, -75.922)
@@ -100,7 +100,7 @@ class AreaTarget(CodeSnippetsTestBase):
         # By using the fine grained interfaces,
         # BeginUpdate/EndUpdate prevent intermediate redraws
         root.begin_update()
-        areaTarget.area_type = AgEAreaType.eEllipse
+        areaTarget.area_type = AREA_TYPE.ELLIPSE
         ellipse: "IAreaTypeEllipse" = clr.CastAs(areaTarget.area_type_data, IAreaTypeEllipse)
         ellipse.semi_major_axis = 85.25  # in km (distance dimension)
         ellipse.semi_minor_axis = 80.75  # in km (distance dimension)
@@ -125,7 +125,7 @@ class AreaTarget(CodeSnippetsTestBase):
         self.ListAllPointsInAnAreaTarget(self.m_Object)
 
     def ListAllPointsInAnAreaTarget(self, areaTarget: "IAreaTarget"):
-        if areaTarget.area_type == AgEAreaType.ePattern:
+        if areaTarget.area_type == AREA_TYPE.PATTERN:
             # Get IAreaTypePatternCollection interface from AreaTypeData
             patternPoints: "IAreaTypePatternCollection" = clr.CastAs(
                 areaTarget.area_type_data, IAreaTypePatternCollection

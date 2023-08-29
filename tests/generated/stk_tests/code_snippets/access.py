@@ -37,15 +37,15 @@ class Access(CodeSnippetsTestBase):
     # region AddAndConfigureSunElevationAngleConstraint
     def test_AddAndConfigureSunElevationAngleConstraint(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddAndConfigureSunElevationAngleConstraint(stkobject.access_constraints)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddAndConfigureSunElevationAngleConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
         minmax: "IAccessConstraintMinMax" = clr.CastAs(
-            accessConstraints.add_constraint(AgEAccessConstraints.eCstrSunElevationAngle), IAccessConstraintMinMax
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_SUN_ELEVATION_ANGLE), IAccessConstraintMinMax
         )
         minmax.enable_min = True
         minmax.min = 22.2
@@ -57,15 +57,15 @@ class Access(CodeSnippetsTestBase):
     # region AddAndConfigureLunarElevationAngleConstraint
     def test_AddAndConfigureLunarElevationAngleConstraint(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddAndConfigureLunarElevationAngleConstraint(stkobject.access_constraints)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddAndConfigureLunarElevationAngleConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
         minmax: "IAccessConstraintMinMax" = clr.CastAs(
-            accessConstraints.add_constraint(AgEAccessConstraints.eCstrLunarElevationAngle), IAccessConstraintMinMax
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LUNAR_ELEVATION_ANGLE), IAccessConstraintMinMax
         )
         minmax.enable_min = True
         minmax.min = 11.1
@@ -77,15 +77,15 @@ class Access(CodeSnippetsTestBase):
     # region AddAndConfigureLOSSunExclConstraint
     def test_AddAndConfigureLOSSunExclConstraint(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddAndConfigureLOSSunExclConstraint(stkobject.access_constraints)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddAndConfigureLOSSunExclConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # Angle constraint
         cnstrAngle: "IAccessConstraintAngle" = clr.CastAs(
-            accessConstraints.add_constraint(AgEAccessConstraints.eCstrLOSSunExclusion), IAccessConstraintAngle
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LOS_SUN_EXCLUSION), IAccessConstraintAngle
         )
         cnstrAngle.angle = 176.0
 
@@ -94,33 +94,33 @@ class Access(CodeSnippetsTestBase):
     # region AddAndConfigureLightingConstraint
     def test_AddAndConfigureLightingConstraint(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddAndConfigureLightingConstraint(stkobject.access_constraints)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddAndConfigureLightingConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # Condition constraint
         light: "IAccessConstraintCondition" = clr.CastAs(
-            accessConstraints.add_constraint(AgEAccessConstraints.eCstrLighting), IAccessConstraintCondition
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LIGHTING), IAccessConstraintCondition
         )
-        light.condition = AgECnstrLighting.eDirectSun
+        light.condition = CNSTR_LIGHTING.DIRECT_SUN
 
     # endregion
 
     # region AddAndConfigureAltitudeConstraint
     def test_AddAndConfigureAltitudeConstraint(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddAndConfigureAltitudeConstraint(stkobject.access_constraints)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddAndConfigureAltitudeConstraint(self, accessConstraints: "IAccessConstraintCollection"):
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
         # Attitude constraint
         altitude: "IAccessConstraintMinMax" = clr.CastAs(
-            accessConstraints.add_constraint(AgEAccessConstraints.eCstrAltitude), IAccessConstraintMinMax
+            accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_ALTITUDE), IAccessConstraintMinMax
         )
         altitude.enable_min = True
         altitude.min = 20.5
@@ -130,32 +130,32 @@ class Access(CodeSnippetsTestBase):
     # region AddAccessConstraintsToAnObject
     def test_AddAccessConstraintsToAnObject(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddAccessConstraintsToAnObject(stkobject)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddAccessConstraintsToAnObject(self, stkobject: "IStkObject"):
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
 
         # Add constraints
-        accessConstraints.add_constraint(AgEAccessConstraints.eCstrSunElevationAngle)
+        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_SUN_ELEVATION_ANGLE)
 
     # endregion
 
     # region RemoveAccessConstraintFromAnObject
     def test_RemoveAccessConstraintFromAnObject(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.RemoveAccessConstraintFromAnObject(stkobject)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def RemoveAccessConstraintFromAnObject(self, stkobject: "IStkObject"):
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
 
         # Remove constraints
-        accessConstraints.remove_constraint(AgEAccessConstraints.eCstrSunElevationAngle)
+        accessConstraints.remove_constraint(ACCESS_CONSTRAINTS.CSTR_SUN_ELEVATION_ANGLE)
 
     # endregion
 
@@ -163,15 +163,15 @@ class Access(CodeSnippetsTestBase):
     def test_AddAndConfigureThirdBodyObstructionConstraint(self):
         satelliteName: str = "satellite1"
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eSatellite, satelliteName
+            STK_OBJECT_TYPE.SATELLITE, satelliteName
         )
         self.AddAndConfigureThirdBodyObstructionConstraint(stkobject.access_constraints)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, satelliteName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, satelliteName)
 
     def AddAndConfigureThirdBodyObstructionConstraint(self, accessconstraints: "IAccessConstraintCollection"):
         # Get IAccessConstraintThirdBody interface
         thirdBodyConstraint: "IAccessConstraintThirdBody" = clr.CastAs(
-            accessconstraints.add_constraint(AgEAccessConstraints.eCstrThirdBodyObstruction), IAccessConstraintThirdBody
+            accessconstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_THIRD_BODY_OBSTRUCTION), IAccessConstraintThirdBody
         )
 
         # AvailableObstructions returns a one dimensional array of obstruction paths
@@ -198,17 +198,17 @@ class Access(CodeSnippetsTestBase):
     def test_ListAllConstraintExclusiveZones(self):
         satelliteName: str = "satellite1"
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eSatellite, satelliteName
+            STK_OBJECT_TYPE.SATELLITE, satelliteName
         )
 
-        stkobject.access_constraints.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
-        stkobject.access_constraints.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
-        stkobject.access_constraints.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
-        stkobject.access_constraints.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
-        stkobject.access_constraints.add_constraint(AgEAccessConstraints.eCstrExclusionZone)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
+        stkobject.access_constraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE)
 
         excZones: "IAccessConstraintExclZonesCollection" = clr.CastAs(
-            stkobject.access_constraints.get_active_constraint(AgEAccessConstraints.eCstrExclusionZone),
+            stkobject.access_constraints.get_active_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE),
             IAccessConstraintExclZonesCollection,
         )
         excZones.change_excl_zone(0, -20, -30, 40, 50)
@@ -219,11 +219,11 @@ class Access(CodeSnippetsTestBase):
 
         self.ListAllConstraintExclusiveZones(stkobject.access_constraints)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, satelliteName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, satelliteName)
 
     def ListAllConstraintExclusiveZones(self, accessconstraints: "IAccessConstraintCollection"):
         excZones: "IAccessConstraintExclZonesCollection" = clr.CastAs(
-            accessconstraints.get_active_constraint(AgEAccessConstraints.eCstrExclusionZone),
+            accessconstraints.get_active_constraint(ACCESS_CONSTRAINTS.CSTR_EXCLUSION_ZONE),
             IAccessConstraintExclZonesCollection,
         )
         if excZones != None:
@@ -248,19 +248,19 @@ class Access(CodeSnippetsTestBase):
     # region ComputeAccessBetweenTwoStkObjectsUsingObjectPath
     def test_ComputeAccessBetweenTwoStkObjectsUsingObjectPath(self):
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), ISatellite
         )
         fac: "IFacility" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "fac1"), IFacility
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1"), IFacility
         )
-        sat.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         tb: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
         tb.propagate()
         fac.position.assign_geodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
 
         self.ComputeAccessBetweenTwoStkObjectsUsingObjectPath(clr.Convert(sat, IStkObject))
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "fac1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
     def ComputeAccessBetweenTwoStkObjectsUsingObjectPath(self, stkObject: "IStkObject"):
         # Get access by object path
@@ -274,12 +274,12 @@ class Access(CodeSnippetsTestBase):
     # region ComputeAccessBetweenTwoStkObjectsUsingIAgStkObjectInterface
     def test_ComputeAccessBetweenTwoStkObjectsUsingIAgStkObjectInterface(self):
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), ISatellite
         )
         fac: "IFacility" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "fac1"), IFacility
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1"), IFacility
         )
-        sat.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         tb: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
         tb.propagate()
         fac.position.assign_geodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
@@ -287,8 +287,8 @@ class Access(CodeSnippetsTestBase):
         self.ComputeAccessBetweenTwoStkObjectsUsingIAgStkObjectInterface(
             clr.Convert(sat, IStkObject), clr.Convert(fac, IStkObject)
         )
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "fac1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
     def ComputeAccessBetweenTwoStkObjectsUsingIAgStkObjectInterface(
         self, stkObject1: "IStkObject", stkObject2: "IStkObject"
@@ -304,12 +304,12 @@ class Access(CodeSnippetsTestBase):
     # region ComputeAccessIntervalTimes
     def test_ComputeAccessIntervalTimes(self):
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), ISatellite
         )
         fac: "IFacility" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "fac1"), IFacility
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1"), IFacility
         )
-        sat.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         tb: "IVehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)
         tb.propagate()
         fac.position.assign_geodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
@@ -317,8 +317,8 @@ class Access(CodeSnippetsTestBase):
         access.compute_access()
 
         self.ComputeAccessIntervalTimes(access)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "fac1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
     def ComputeAccessIntervalTimes(self, access: "IStkAccess"):
         # Get and display the Computed Access Intervals
@@ -332,14 +332,12 @@ class Access(CodeSnippetsTestBase):
 
     # region CreateOnePtAccess
     def test_CreateOnePtAccess(self):
-        fac: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "fac1"
-        )
+        fac: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac1")
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "Satellite1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"),
             ISatellite,
         )
-        sat.set_propagator_type(AgEVePropagatorType.ePropagatorJ2Perturbation)
+        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
         j2prop: "IVehiclePropagatorJ2Perturbation" = clr.CastAs(sat.propagator, IVehiclePropagatorJ2Perturbation)
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "1 Jan 2012 13:00:00.000")
         j2prop.step = 60
@@ -347,8 +345,8 @@ class Access(CodeSnippetsTestBase):
 
         self.CreateOnePtAccess(fac)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "Satellite1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
 
     def CreateOnePtAccess(self, facility: "IStkObject"):
         onePtAccess: "IOnePointAccess" = facility.create_one_point_access("Satellite/Satellite1")
@@ -357,7 +355,7 @@ class Access(CodeSnippetsTestBase):
         onePtAccess.start_time = "1 Jan 2012 12:00:00.000"
         onePtAccess.stop_time = "1 Jan 2012 13:00:00.000"
         onePtAccess.step_size = 120
-        onePtAccess.summary_option = AgEOnePtAccessSummary.eOnePtAccessSummaryDetailed
+        onePtAccess.summary_option = ONE_PT_ACCESS_SUMMARY.DETAILED
 
         # Compute results
         results: "IOnePointAccessResultCollection" = onePtAccess.compute()
@@ -387,11 +385,11 @@ class Access(CodeSnippetsTestBase):
 
     # region ComputeAccessAndGetConstraintDataFromDataProvider
     def test_ComputeAccessAndGetConstraintDataFromDataProvider(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "Satellite1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eFacility, "Facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
         self.ComputeAccessAndGetConstraintDataFromDataProvider(CodeSnippetsTestBase.m_Root)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "Facility1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
 
     def ComputeAccessAndGetConstraintDataFromDataProvider(self, root: "IStkObjectRoot"):
         # Compute Access between the facility and the satellite
@@ -449,10 +447,10 @@ class Access(CodeSnippetsTestBase):
     # region EnumerateAvailableConstraints
     def test_EnumerateAvailableConstraints(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.EnumerateAvailableConstraints(stkobject.access_constraints)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def EnumerateAvailableConstraints(self, accessConstraints: "IAccessConstraintCollection"):
         # The AvailableConstraints method returns a rectangular two-dimensional array of available constraints.
@@ -464,7 +462,7 @@ class Access(CodeSnippetsTestBase):
         i: int = 0
         while i < len(arAvailable):
             availName: str = clr.Convert(arAvailable[i][0], str)
-            eAccessConstraint: "AgEAccessConstraints" = clr.Convert(int(arAvailable[i][1]), AgEAccessConstraints)
+            eAccessConstraint: "ACCESS_CONSTRAINTS" = clr.Convert(int(arAvailable[i][1]), ACCESS_CONSTRAINTS)
             Console.WriteLine("\tConstraint {0}: {1} ({2})", i, availName, eAccessConstraint)
 
             i += 1
@@ -474,9 +472,9 @@ class Access(CodeSnippetsTestBase):
     # region ConfigureAccessTimePeriodUsingSmartInterval
     def test_ConfigureAccessTimePeriodUsingSmartInterval(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
-        place: "IStkObject" = scenario.children.new(AgESTKObjectType.ePlace, "ColoradoSprings")
-        aircraft: "IStkObject" = scenario.children.new(AgESTKObjectType.eAircraft, "UAV")
-        aircraft.children.new(AgESTKObjectType.eSensor, "UAVSensor")
+        place: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.PLACE, "ColoradoSprings")
+        aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "UAV")
+        aircraft.children.new(STK_OBJECT_TYPE.SENSOR, "UAVSensor")
         greatArc: "IVehiclePropagatorGreatArc" = clr.Convert(
             (clr.Convert(aircraft, IAircraft)).route, IVehiclePropagatorGreatArc
         )
@@ -507,10 +505,10 @@ class Access(CodeSnippetsTestBase):
 
         # Set the access time period with the times we figured out above.
         access: "IStkAccess" = sensor.get_access_to_object(coloradoSprings)
-        access.access_time_period = AgEAccessTimeType.eUserSpecAccessTime
+        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
         accessTimePeriod: "IAccessTimePeriod" = clr.CastAs(access.access_time_period_data, IAccessTimePeriod)
 
-        accessTimePeriod.access_interval.state = AgECrdnSmartIntervalState.eCrdnSmartIntervalStateStartStop
+        accessTimePeriod.access_interval.state = CRDN_SMART_INTERVAL_STATE.START_STOP
 
         accessStartEpoch: "ITimeToolEventSmartEpoch" = accessTimePeriod.access_interval.get_start_epoch()
         accessStartEpoch.set_implicit_time(timeOfAltMin)
@@ -525,14 +523,14 @@ class Access(CodeSnippetsTestBase):
     # region ConfigureAccessTimePeriodToObjectTimeOfOtherObject
     def test_ConfigureAccessTimePeriodToObjectTimeOfOtherObject(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
-        satellite: "IStkObject" = scenario.children.new(AgESTKObjectType.eSatellite, "GEO")
+        satellite: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO")
         twoBody: "IVehiclePropagatorTwoBody" = clr.Convert(
             (clr.Convert(satellite, ISatellite)).propagator, IVehiclePropagatorTwoBody
         )
         twoBody.propagate()
 
-        aircraft: "IStkObject" = scenario.children.new(AgESTKObjectType.eAircraft, "UAV")
-        aircraft.children.new(AgESTKObjectType.eSensor, "UAVSensor")
+        aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "UAV")
+        aircraft.children.new(STK_OBJECT_TYPE.SENSOR, "UAVSensor")
         greatArc: "IVehiclePropagatorGreatArc" = clr.Convert(
             (clr.Convert(aircraft, IAircraft)).route, IVehiclePropagatorGreatArc
         )
@@ -556,7 +554,7 @@ class Access(CodeSnippetsTestBase):
         otherObject: "IStkObject" = stkRoot.get_object_from_path("/Aircraft/UAV/Sensor/UAVSensor")
         access: "IStkAccess" = satellite.get_access_to_object(otherObject)
 
-        access.access_time_period = AgEAccessTimeType.eUserSpecAccessTime
+        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
         accessTimePeriod: "IAccessTimePeriod" = clr.CastAs(access.access_time_period_data, IAccessTimePeriod)
         if otherObject.vgt.event_intervals.contains("AvailabilityTimeSpan"):
             availabilityTimeSpan: "ITimeToolEventInterval" = otherObject.vgt.event_intervals["AvailabilityTimeSpan"]
@@ -567,12 +565,12 @@ class Access(CodeSnippetsTestBase):
     # region GetAccessBetweenObjectsByPathUsingGetExistingAccesses
     def test_GetAccessBetweenObjectsByPathUsingGetExistingAccesses(self):
         objFac: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "Fac1"
+            STK_OBJECT_TYPE.FACILITY, "Fac1"
         )
         sat: "ISatellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(AgESTKObjectType.eSatellite, "Sat1"), ISatellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Sat1"), ISatellite
         )
-        sat.set_propagator_type(AgEVePropagatorType.ePropagatorTwoBody)
+        sat.set_propagator_type(VE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         (clr.CastAs(sat.propagator, IVehiclePropagatorTwoBody)).propagate()
 
         access: "IStkAccess" = objFac.get_access_to_object(clr.CastAs(sat, IStkObject))
@@ -580,8 +578,8 @@ class Access(CodeSnippetsTestBase):
 
         self.GetAccessBetweenObjectsByPathUsingGetExistingAccesses(CodeSnippetsTestBase.m_Root)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "Fac1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eSatellite, "Sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "Fac1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Sat1")
 
     def GetAccessBetweenObjectsByPathUsingGetExistingAccesses(self, stkRoot: "IStkObjectRoot"):
         scenario: "IScenario" = clr.CastAs(stkRoot.current_scenario, IScenario)
@@ -600,10 +598,10 @@ class Access(CodeSnippetsTestBase):
     # region AddMultipleAccessConstraintsOfTheSameTypeToAnObject
     def test_AddMultipleAccessConstraintsOfTheSameTypeToAnObject(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddMultipleAccessConstraintsOfTheSameTypeToAnObject(stkobject)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddMultipleAccessConstraintsOfTheSameTypeToAnObject(self, stkobject: "IStkObject"):
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
@@ -611,18 +609,18 @@ class Access(CodeSnippetsTestBase):
         # Add constraints
         # Only the eCstrApparentTime, eCstrDuration, eCstrGMT, eCstrIntervals, eCstrLocalTime constraint
         # types can be added multiple times to the constraint collection.
-        accessConstraints.add_constraint(AgEAccessConstraints.eCstrLocalTime)
-        accessConstraints.add_constraint(AgEAccessConstraints.eCstrLocalTime)
+        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LOCAL_TIME)
+        accessConstraints.add_constraint(ACCESS_CONSTRAINTS.CSTR_LOCAL_TIME)
 
     # endregion
 
     # region AddMultipleAWBAccessConstraintsOfTheSameTypeToAnObject
     def test_AddMultipleAWBAccessConstraintsOfTheSameTypeToAnObject(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddMultipleAWBAccessConstraintsOfTheSameTypeToAnObject(stkobject)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddMultipleAWBAccessConstraintsOfTheSameTypeToAnObject(self, stkobject: "IStkObject"):
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
@@ -632,7 +630,7 @@ class Access(CodeSnippetsTestBase):
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
         awbConst: "IAccessConstraintAnalysisWorkbench" = clr.CastAs(
             awbAccessConstraints.add_constraint(
-                AgEAWBAccessConstraints.eCstrAWBVectorMag, (objectPath + " East Vector")
+                AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " East Vector")
             ),
             IAccessConstraintAnalysisWorkbench,
         )
@@ -641,7 +639,7 @@ class Access(CodeSnippetsTestBase):
 
         awbConst2: "IAccessConstraintAnalysisWorkbench" = clr.CastAs(
             awbAccessConstraints.add_constraint(
-                AgEAWBAccessConstraints.eCstrAWBVectorMag, (objectPath + " North Vector")
+                AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " North Vector")
             ),
             IAccessConstraintAnalysisWorkbench,
         )
@@ -653,45 +651,47 @@ class Access(CodeSnippetsTestBase):
     # region RemoveAWBAccessConstraint
     def test_RemoveAWBAccessConstraint(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
         awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
 
         # Add constraints
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
-        awbAccessConstraints.add_constraint(AgEAWBAccessConstraints.eCstrAWBVectorMag, (objectPath + " East Vector"))
+        awbAccessConstraints.add_constraint(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " East Vector"))
         self.RemoveAWBAccessConstraint(stkobject)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def RemoveAWBAccessConstraint(self, stkobject: "IStkObject"):
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
         awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
 
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
-        awbAccessConstraints.remove_constraint(AgEAWBAccessConstraints.eCstrAWBVectorMag, (objectPath + " East Vector"))
+        awbAccessConstraints.remove_constraint(
+            AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " East Vector")
+        )
 
     # endregion
 
     # region ListAllAWBConstraints
     def test_ListAllAWBConstraints(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         accessConstraints: "IAccessConstraintCollection" = stkobject.access_constraints
         awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
 
         # Add constraints
         objectPath: str = (stkobject.class_name + "/") + stkobject.instance_name
-        awbAccessConstraints.add_constraint(AgEAWBAccessConstraints.eCstrAWBVectorMag, (objectPath + " East Vector"))
-        awbAccessConstraints.add_constraint(AgEAWBAccessConstraints.eCstrAWBAngle, (objectPath + " SunAzimuth Angle"))
+        awbAccessConstraints.add_constraint(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, (objectPath + " East Vector"))
+        awbAccessConstraints.add_constraint(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_ANGLE, (objectPath + " SunAzimuth Angle"))
         awbAccessConstraints.add_constraint(
-            AgEAWBAccessConstraints.eCstrAWBCondition, (objectPath + " BeforeStop Condition")
+            AWB_ACCESS_CONSTRAINTS.CSTR_AWB_CONDITION, (objectPath + " BeforeStop Condition")
         )
 
         self.ListAllAWBConstraints(stkobject)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def ListAllAWBConstraints(self, stkobject: "IStkObject"):
         awbaccessconstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
@@ -706,17 +706,17 @@ class Access(CodeSnippetsTestBase):
     # region ListAllAvailableReferencesForAWBConstraintType
     def test_ListAllAvailableReferencesForAWBConstraintType(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.ListAllAvailableReferencesForAWBConstraintType(stkobject)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def ListAllAvailableReferencesForAWBConstraintType(self, stkobject: "IStkObject"):
         awbaccessconstraints: "IAccessConstraintAnalysisWorkbenchCollection" = (
             stkobject.access_constraints.awb_constraints
         )
         availableReference: str
-        for availableReference in awbaccessconstraints.get_available_references(AgEAWBAccessConstraints.eCstrAWBAngle):
+        for availableReference in awbaccessconstraints.get_available_references(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_ANGLE):
             Console.WriteLine("Available Reference: {0}", availableReference)
 
     # endregion
@@ -724,10 +724,10 @@ class Access(CodeSnippetsTestBase):
     # region AddAWBAccessConstraintFromAWBComponent
     def test_AddAWBAccessConstraintFromAWBComponent(self):
         stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            AgESTKObjectType.eFacility, "facility1"
+            STK_OBJECT_TYPE.FACILITY, "facility1"
         )
         self.AddAWBAccessConstraintFromAWBComponent(stkobject)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(AgESTKObjectType.eFacility, "facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "facility1")
 
     def AddAWBAccessConstraintFromAWBComponent(self, stkobject: "IStkObject"):
         if stkobject.vgt.vectors.contains("East"):
@@ -738,7 +738,7 @@ class Access(CodeSnippetsTestBase):
             awbAccessConstraints: "IAccessConstraintAnalysisWorkbenchCollection" = accessConstraints.awb_constraints
 
             awbConst: "IAccessConstraintAnalysisWorkbench" = clr.CastAs(
-                awbAccessConstraints.add_constraint(AgEAWBAccessConstraints.eCstrAWBVectorMag, crdnVec.qualified_path),
+                awbAccessConstraints.add_constraint(AWB_ACCESS_CONSTRAINTS.CSTR_AWB_VECTOR_MAG, crdnVec.qualified_path),
                 IAccessConstraintAnalysisWorkbench,
             )
             awbConst.enable_min = True

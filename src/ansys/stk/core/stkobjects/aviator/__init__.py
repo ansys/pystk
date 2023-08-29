@@ -3,45 +3,45 @@
 ################################################################################ 
 
 __all__ = ["ADDSMessage", "ADDSMessageCollection", "ARINC424Airport", "ARINC424Helipad", "ARINC424Navaid", "ARINC424Runway", 
-"ARINC424Source", "ARINC424Waypoint", "AdvFixedWingElectricPowerplant", "AdvFixedWingEmpiricalJetEngine", "AdvFixedWingExternalAero", 
-"AdvFixedWingExternalProp", "AdvFixedWingGeometryBasic", "AdvFixedWingGeometryVariable", "AdvFixedWingPistonPowerplant", 
-"AdvFixedWingRamjetBasic", "AdvFixedWingScramjetBasic", "AdvFixedWingSubSuperHypersonicAero", "AdvFixedWingSubSuperHypersonicProp", 
-"AdvFixedWingSubsonicAero", "AdvFixedWingSupersonicAero", "AdvFixedWingTool", "AdvFixedWingTurbofanBasicABPowerplant", "AdvFixedWingTurbofanBasicABProp", 
-"AdvFixedWingTurbojetBasicABPowerplant", "AdvFixedWingTurbojetBasicABProp", "AdvFixedWingTurbopropPowerplant", "AeroPropManeuverModeHelper", 
-"AgEAvtrADDSForecastType", "AgEAvtrADDSMissingMsgType", "AgEAvtrADDSMsgExtrapType", "AgEAvtrADDSMsgInterpType", "AgEAvtrAFPROPFuelType", 
-"AgEAvtrAGLMSL", "AgEAvtrAccelManeuverAeroPropMode", "AgEAvtrAccelManeuverMode", "AgEAvtrAccelMode", "AgEAvtrAccelPerfModelOverride", 
-"AgEAvtrAccelerationAdvAccelMode", "AgEAvtrAdvFixedWingAeroStrategy", "AgEAvtrAdvFixedWingGeometry", "AgEAvtrAdvFixedWingPowerplantStrategy", 
-"AgEAvtrAeroPropFlightMode", "AgEAvtrAeroPropSimpleMode", "AgEAvtrAileronRollFlightPath", "AgEAvtrAileronRollMode", "AgEAvtrAircraftAeroStrategy", 
-"AgEAvtrAircraftPropStrategy", "AgEAvtrAirspeedType", "AgEAvtrAltitudeConstraintManeuverMode", "AgEAvtrAltitudeRef", "AgEAvtrAndOr", 
-"AgEAvtrAngleMode", "AgEAvtrApproachMode", "AgEAvtrAtmosphereModel", "AgEAvtrAutopilotAltitudeControlMode", "AgEAvtrAutopilotAltitudeMode", 
-"AgEAvtrAutopilotHorizPlaneMode", "AgEAvtrBallistic3DControlMode", "AgEAvtrBasicFixedWingPropMode", "AgEAvtrBasicManeuverAirspeedMode", 
-"AgEAvtrBasicManeuverAltitudeLimit", "AgEAvtrBasicManeuverFuelFlowType", "AgEAvtrBasicManeuverGlideSpeedControlMode", "AgEAvtrBasicManeuverRefFrame", 
-"AgEAvtrBasicManeuverStrategy", "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits", "AgEAvtrBasicManeuverStrategyNavControlLimit", 
-"AgEAvtrBasicManeuverStrategyPoweredCruiseMode", "AgEAvtrCEAFuelType", "AgEAvtrClimbSpeedType", "AgEAvtrClosureMode", "AgEAvtrClosureValue", 
-"AgEAvtrCruiseMaxPerfSpeedType", "AgEAvtrCruiseSpeed", "AgEAvtrDelayAltMode", "AgEAvtrDelayTurnDir", "AgEAvtrDepartureSpeedMode", 
-"AgEAvtrDescentSpeedType", "AgEAvtrErrorCodes", "AgEAvtrExtEphemFlightMode", "AgEAvtrFlightLineProcType", "AgEAvtrFlyAOALeftRight", 
-"AgEAvtrFlyToFlightPathAngleMode", "AgEAvtrFormationFlyerStopCondition", "AgEAvtrFuelFlowType", "AgEAvtrHoldRefuelDumpMode", 
-"AgEAvtrHoldingDirection", "AgEAvtrHoldingEntryManeuver", "AgEAvtrHoldingProfileMode", "AgEAvtrHoverAltitudeMode", "AgEAvtrHoverHeadingMode", 
-"AgEAvtrHoverMode", "AgEAvtrInterceptMode", "AgEAvtrJetEngineExhaustNozzleType", "AgEAvtrJetEngineIntakeType", "AgEAvtrJetEngineTechnologyLevel", 
-"AgEAvtrJetEngineTurbineType", "AgEAvtrJetFuelType", "AgEAvtrJoinExitArcMethod", "AgEAvtrLandingApproachFixRangeMode", "AgEAvtrLaunchAttitudeMode", 
-"AgEAvtrLaunchDynStateBearingRef", "AgEAvtrLaunchDynStateCoordFrame", "AgEAvtrLineOrientation", "AgEAvtrMinimizeSiteProcTimeDiff", 
-"AgEAvtrMissileAeroStrategy", "AgEAvtrMissilePropStrategy", "AgEAvtrNavigatorTurnDir", "AgEAvtrNumericalIntegrator", "AgEAvtrPerfModelOverride", 
-"AgEAvtrPhaseOfFlight", "AgEAvtrPitch3DControlMode", "AgEAvtrPointToPointMode", "AgEAvtrProcedureType", "AgEAvtrProfileControlLimit", 
-"AgEAvtrPullMode", "AgEAvtrPushPull", "AgEAvtrRamjetMode", "AgEAvtrRefStateAttitudeMode", "AgEAvtrRefStateLateralAccelMode", 
-"AgEAvtrRefStateLongitudinalAccelMode", "AgEAvtrRefStatePerfMode", "AgEAvtrRefuelDumpMode", "AgEAvtrRelAbsBearing", "AgEAvtrRelSpeedAltStopCondition", 
-"AgEAvtrRelativeAltitudeMode", "AgEAvtrRendezvousStopCondition", "AgEAvtrRollLeftRight", "AgEAvtrRollUprightInverted", "AgEAvtrRollingPullMode", 
-"AgEAvtrRotorcraftPowerplantType", "AgEAvtrRunwayHighLowEnd", "AgEAvtrSTKObjectWaypointOffsetMode", "AgEAvtrScramjetMode", 
-"AgEAvtrSearchPatternCourseMode", "AgEAvtrSiteType", "AgEAvtrSmoothAccelLeftRight", "AgEAvtrSmoothAccelStopConditions", 
-"AgEAvtrSmoothTurnFPAMode", "AgEAvtrSmoothTurnMode", "AgEAvtrStationkeepingStopCondition", "AgEAvtrStraightAheadRefFrame", 
-"AgEAvtrTakeoffLandingSpeedMode", "AgEAvtrTakeoffMode", "AgEAvtrTrajectoryBlendMode", "AgEAvtrTransitionToHoverMode", "AgEAvtrTurbineMode", 
-"AgEAvtrTurnDirection", "AgEAvtrTurnMode", "AgEAvtrVTOLFinalHeadingMode", "AgEAvtrVTOLHeadingMode", "AgEAvtrVTOLRateMode", 
-"AgEAvtrVTOLTransitionMode", "AgEAvtrVTOLTranslationFinalCourseMode", "AgEAvtrVTOLTranslationMode", "AgEAvtrVertLandingMode", 
-"AgEAvtrWindAtmosModelSource", "AgEAvtrWindModelType", "AircraftAcceleration", "AircraftAccelerationMode", "AircraftAdvAccelerationModel", 
-"AircraftAdvClimbModel", "AircraftAdvCruiseModel", "AircraftAdvDescentModel", "AircraftAdvLandingModel", "AircraftAdvTakeoffModel", 
-"AircraftAero", "AircraftBasicAccelerationModel", "AircraftBasicClimbModel", "AircraftBasicCruiseModel", "AircraftBasicDescentModel", 
-"AircraftBasicFixedWingAero", "AircraftBasicFixedWingProp", "AircraftBasicLandingModel", "AircraftBasicTakeoffModel", "AircraftCategory", 
-"AircraftClimb", "AircraftCruise", "AircraftDescent", "AircraftExternalAero", "AircraftExternalProp", "AircraftLanding", 
-"AircraftModel", "AircraftModels", "AircraftProp", "AircraftSimpleAero", "AircraftSimpleProp", "AircraftTakeoff", "AircraftTerrainFollow", 
+"ARINC424Source", "ARINC424Waypoint", "AVTR_ACCELERATION_ADV_ACCEL_MODE", "AVTR_ACCEL_MANEUVER_AERO_PROP_MODE", "AVTR_ACCEL_MANEUVER_MODE", 
+"AVTR_ACCEL_MODE", "AVTR_ACCEL_PERF_MODEL_OVERRIDE", "AVTR_ADDS_FORECAST_TYPE", "AVTR_ADDS_MISSING_MSG_TYPE", "AVTR_ADDS_MSG_EXTRAP_TYPE", 
+"AVTR_ADDS_MSG_INTERP_TYPE", "AVTR_ADV_FIXED_WING_AERO_STRATEGY", "AVTR_ADV_FIXED_WING_GEOMETRY", "AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY", 
+"AVTR_AERO_PROP_FLIGHT_MODE", "AVTR_AERO_PROP_SIMPLE_MODE", "AVTR_AFPROP_FUEL_TYPE", "AVTR_AGLMSL", "AVTR_AILERON_ROLL_FLIGHT_PATH", 
+"AVTR_AILERON_ROLL_MODE", "AVTR_AIRCRAFT_AERO_STRATEGY", "AVTR_AIRCRAFT_PROP_STRATEGY", "AVTR_AIRSPEED_TYPE", "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE", 
+"AVTR_ALTITUDE_REF", "AVTR_AND_OR", "AVTR_ANGLE_MODE", "AVTR_APPROACH_MODE", "AVTR_ATMOSPHERE_MODEL", "AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE", 
+"AVTR_AUTOPILOT_ALTITUDE_MODE", "AVTR_AUTOPILOT_HORIZ_PLANE_MODE", "AVTR_BALLISTIC3_D_CONTROL_MODE", "AVTR_BASIC_FIXED_WING_PROP_MODE", 
+"AVTR_BASIC_MANEUVER_AIRSPEED_MODE", "AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT", "AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE", "AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", 
+"AVTR_BASIC_MANEUVER_REF_FRAME", "AVTR_BASIC_MANEUVER_STRATEGY", "AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS", "AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", 
+"AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE", "AVTR_CEA_FUEL_TYPE", "AVTR_CLIMB_SPEED_TYPE", "AVTR_CLOSURE_MODE", 
+"AVTR_CLOSURE_VALUE", "AVTR_CRUISE_MAX_PERF_SPEED_TYPE", "AVTR_CRUISE_SPEED", "AVTR_DELAY_ALT_MODE", "AVTR_DELAY_TURN_DIR", 
+"AVTR_DEPARTURE_SPEED_MODE", "AVTR_DESCENT_SPEED_TYPE", "AVTR_ERROR_CODES", "AVTR_EXT_EPHEM_FLIGHT_MODE", "AVTR_FLIGHT_LINE_PROC_TYPE", 
+"AVTR_FLY_AOA_LEFT_RIGHT", "AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE", "AVTR_FORMATION_FLYER_STOP_CONDITION", "AVTR_FUEL_FLOW_TYPE", 
+"AVTR_HOLDING_DIRECTION", "AVTR_HOLDING_ENTRY_MANEUVER", "AVTR_HOLDING_PROFILE_MODE", "AVTR_HOLD_REFUEL_DUMP_MODE", "AVTR_HOVER_ALTITUDE_MODE", 
+"AVTR_HOVER_HEADING_MODE", "AVTR_HOVER_MODE", "AVTR_INTERCEPT_MODE", "AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE", "AVTR_JET_ENGINE_INTAKE_TYPE", 
+"AVTR_JET_ENGINE_TECHNOLOGY_LEVEL", "AVTR_JET_ENGINE_TURBINE_TYPE", "AVTR_JET_FUEL_TYPE", "AVTR_JOIN_EXIT_ARC_METHOD", "AVTR_LANDING_APPROACH_FIX_RANGE_MODE", 
+"AVTR_LAUNCH_ATTITUDE_MODE", "AVTR_LAUNCH_DYN_STATE_BEARING_REF", "AVTR_LAUNCH_DYN_STATE_COORD_FRAME", "AVTR_LINE_ORIENTATION", 
+"AVTR_MINIMIZE_SITE_PROC_TIME_DIFF", "AVTR_MISSILE_AERO_STRATEGY", "AVTR_MISSILE_PROP_STRATEGY", "AVTR_NAVIGATOR_TURN_DIR", 
+"AVTR_NUMERICAL_INTEGRATOR", "AVTR_PERF_MODEL_OVERRIDE", "AVTR_PHASE_OF_FLIGHT", "AVTR_PITCH3_D_CONTROL_MODE", "AVTR_POINT_TO_POINT_MODE", 
+"AVTR_PROCEDURE_TYPE", "AVTR_PROFILE_CONTROL_LIMIT", "AVTR_PULL_MODE", "AVTR_PUSH_PULL", "AVTR_RAMJET_MODE", "AVTR_REFUEL_DUMP_MODE", 
+"AVTR_REF_STATE_ATTITUDE_MODE", "AVTR_REF_STATE_LATERAL_ACCEL_MODE", "AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE", "AVTR_REF_STATE_PERF_MODE", 
+"AVTR_RELATIVE_ALTITUDE_MODE", "AVTR_REL_ABS_BEARING", "AVTR_REL_SPEED_ALT_STOP_CONDITION", "AVTR_RENDEZVOUS_STOP_CONDITION", 
+"AVTR_ROLLING_PULL_MODE", "AVTR_ROLL_LEFT_RIGHT", "AVTR_ROLL_UPRIGHT_INVERTED", "AVTR_ROTORCRAFT_POWERPLANT_TYPE", "AVTR_RUNWAY_HIGH_LOW_END", 
+"AVTR_SCRAMJET_MODE", "AVTR_SEARCH_PATTERN_COURSE_MODE", "AVTR_SITE_TYPE", "AVTR_SMOOTH_ACCEL_LEFT_RIGHT", "AVTR_SMOOTH_ACCEL_STOP_CONDITIONS", 
+"AVTR_SMOOTH_TURN_FPA_MODE", "AVTR_SMOOTH_TURN_MODE", "AVTR_STATIONKEEPING_STOP_CONDITION", "AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE", 
+"AVTR_STRAIGHT_AHEAD_REF_FRAME", "AVTR_TAKEOFF_LANDING_SPEED_MODE", "AVTR_TAKEOFF_MODE", "AVTR_TRAJECTORY_BLEND_MODE", "AVTR_TRANSITION_TO_HOVER_MODE", 
+"AVTR_TURBINE_MODE", "AVTR_TURN_DIRECTION", "AVTR_TURN_MODE", "AVTR_VERT_LANDING_MODE", "AVTR_VTOL_FINAL_HEADING_MODE", 
+"AVTR_VTOL_HEADING_MODE", "AVTR_VTOL_RATE_MODE", "AVTR_VTOL_TRANSITION_MODE", "AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE", 
+"AVTR_VTOL_TRANSLATION_MODE", "AVTR_WIND_ATMOS_MODEL_SOURCE", "AVTR_WIND_MODEL_TYPE", "AdvFixedWingElectricPowerplant", 
+"AdvFixedWingEmpiricalJetEngine", "AdvFixedWingExternalAero", "AdvFixedWingExternalProp", "AdvFixedWingGeometryBasic", "AdvFixedWingGeometryVariable", 
+"AdvFixedWingPistonPowerplant", "AdvFixedWingRamjetBasic", "AdvFixedWingScramjetBasic", "AdvFixedWingSubSuperHypersonicAero", 
+"AdvFixedWingSubSuperHypersonicProp", "AdvFixedWingSubsonicAero", "AdvFixedWingSupersonicAero", "AdvFixedWingTool", "AdvFixedWingTurbofanBasicABPowerplant", 
+"AdvFixedWingTurbofanBasicABProp", "AdvFixedWingTurbojetBasicABPowerplant", "AdvFixedWingTurbojetBasicABProp", "AdvFixedWingTurbopropPowerplant", 
+"AeroPropManeuverModeHelper", "AircraftAcceleration", "AircraftAccelerationMode", "AircraftAdvAccelerationModel", "AircraftAdvClimbModel", 
+"AircraftAdvCruiseModel", "AircraftAdvDescentModel", "AircraftAdvLandingModel", "AircraftAdvTakeoffModel", "AircraftAero", 
+"AircraftBasicAccelerationModel", "AircraftBasicClimbModel", "AircraftBasicCruiseModel", "AircraftBasicDescentModel", "AircraftBasicFixedWingAero", 
+"AircraftBasicFixedWingProp", "AircraftBasicLandingModel", "AircraftBasicTakeoffModel", "AircraftCategory", "AircraftClimb", 
+"AircraftCruise", "AircraftDescent", "AircraftExternalAero", "AircraftExternalProp", "AircraftLanding", "AircraftModel", 
+"AircraftModels", "AircraftProp", "AircraftSimpleAero", "AircraftSimpleProp", "AircraftTakeoff", "AircraftTerrainFollow", 
 "AircraftTerrainFollowModel", "AircraftVTOL", "AircraftVTOLModel", "AirportCategory", "AltitudeMSLAndLevelOffOptions", "AltitudeMSLOptions", 
 "AltitudeOptions", "ArcAltitudeAndDelayOptions", "ArcAltitudeOptions", "ArcOptions", "ArcVerticalPlaneOptions", "AtmosphereModel", 
 "AtmosphereModelBasic", "AttitudeTransitions", "AviatorPropagator", "BasicFixedWingFwdFlightLiftHelper", "BasicManeuverAirspeedOptions", 
@@ -129,12 +129,12 @@ from ctypes   import byref, POINTER
 from enum     import IntEnum
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
@@ -149,2375 +149,2375 @@ from ...utilities.exceptions import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class AgEAvtrErrorCodes(IntEnum):
+class AVTR_ERROR_CODES(IntEnum):
     """Error Codes."""
     # Object not found.
-    eAvtrErrorObjectNotFound = (((1 << 31) | (4 << 16)) | (0x200 + 1))
+    OBJECT_NOT_FOUND = (((1 << 31) | (4 << 16)) | (0x200 + 1))
     # Index out of range.
-    eAvtrErrorIndexOutOfRange = (((1 << 31) | (4 << 16)) | (0x200 + 2))
+    INDEX_OUT_OF_RANGE = (((1 << 31) | (4 << 16)) | (0x200 + 2))
     # The attribute is invalid.
-    eAvtrErrorInvalidAttribute = (((1 << 31) | (4 << 16)) | (0x200 + 3))
+    INVALID_ATTRIBUTE = (((1 << 31) | (4 << 16)) | (0x200 + 3))
     # The command failed.
-    eAvtrErrorCommandFailed = (((1 << 31) | (4 << 16)) | (0x200 + 4))
+    COMMAND_FAILED = (((1 << 31) | (4 << 16)) | (0x200 + 4))
     # Invalid argument.
-    eAvtrAvtrErrorInvalidArg = (((1 << 31) | (4 << 16)) | (0x200 + 5))
+    AVTR_ERROR_INVALID_ARG = (((1 << 31) | (4 << 16)) | (0x200 + 5))
     # Empty argument.
-    eAvtrErrorEmptyArg = (((1 << 31) | (4 << 16)) | (0x200 + 6))
+    EMPTY_ARG = (((1 << 31) | (4 << 16)) | (0x200 + 6))
     # Object was not removed.
-    eAvtrErrorObjectNotRemoved = (((1 << 31) | (4 << 16)) | (0x200 + 7))
+    OBJECT_NOT_REMOVED = (((1 << 31) | (4 << 16)) | (0x200 + 7))
     # Error renaming object.
-    eAvtrErrorFailedToRenameObject = (((1 << 31) | (4 << 16)) | (0x200 + 8))
+    FAILED_TO_RENAME_OBJECT = (((1 << 31) | (4 << 16)) | (0x200 + 8))
     # Unknown class type.
-    eAvtrErrorUnknownClassType = (((1 << 31) | (4 << 16)) | (0x200 + 9))
+    UNKNOWN_CLASS_TYPE = (((1 << 31) | (4 << 16)) | (0x200 + 9))
     # Failed to create the object.
-    eAvtrErrorFailedToCreateObject = (((1 << 31) | (4 << 16)) | (0x200 + 10))
+    FAILED_TO_CREATE_OBJECT = (((1 << 31) | (4 << 16)) | (0x200 + 10))
     # Invalid choice for object link.
-    eAvtrErrorObjectLinkInvalidChoice = (((1 << 31) | (4 << 16)) | (0x200 + 11))
+    OBJECT_LINK_INVALID_CHOICE = (((1 << 31) | (4 << 16)) | (0x200 + 11))
     # No choices available.
-    eAvtrErrorObjectLinkNoChoices = (((1 << 31) | (4 << 16)) | (0x200 + 12))
+    OBJECT_LINK_NO_CHOICES = (((1 << 31) | (4 << 16)) | (0x200 + 12))
     # Read only attribute.
-    eAvtrErrorReadOnlyAttribute = (((1 << 31) | (4 << 16)) | (0x200 + 13))
+    READ_ONLY_ATTRIBUTE = (((1 << 31) | (4 << 16)) | (0x200 + 13))
     # Invalid constraint list.
-    eAvtrErrorCstrInvalidCstrList = (((1 << 31) | (4 << 16)) | (0x200 + 14))
+    CSTR_INVALID_CSTR_LIST = (((1 << 31) | (4 << 16)) | (0x200 + 14))
     # InvalidConstraint.
-    eAvtrErrorCstrInvalidConstraint = (((1 << 31) | (4 << 16)) | (0x200 + 15))
+    CSTR_INVALID_CONSTRAINT = (((1 << 31) | (4 << 16)) | (0x200 + 15))
     # List if read only.
-    eAvtrErrorListReadOnly = (((1 << 31) | (4 << 16)) | (0x200 + 16))
+    LIST_READ_ONLY = (((1 << 31) | (4 << 16)) | (0x200 + 16))
     # Failed to insert the item into the list.
-    eAvtrErrorListInsertFailed = (((1 << 31) | (4 << 16)) | (0x200 + 17))
+    LIST_INSERT_FAILED = (((1 << 31) | (4 << 16)) | (0x200 + 17))
     # Length is invalid.
-    eAvtrErrorInvalidLength = (((1 << 31) | (4 << 16)) | (0x200 + 18))
+    INVALID_LENGTH = (((1 << 31) | (4 << 16)) | (0x200 + 18))
     # Error loading a file.
-    eAvtrErrorFailedToLoadFile = (((1 << 31) | (4 << 16)) | (0x200 + 19))
+    FAILED_TO_LOAD_FILE = (((1 << 31) | (4 << 16)) | (0x200 + 19))
     # Invalid operation.
-    eAvtrErrorInvalidOperation = (((1 << 31) | (4 << 16)) | (0x200 + 20))
+    INVALID_OPERATION = (((1 << 31) | (4 << 16)) | (0x200 + 20))
     # Method failed.
-    eAvtrErrorMethodInvokeFailed = (((1 << 31) | (4 << 16)) | (0x200 + 21))
+    METHOD_INVOKE_FAILED = (((1 << 31) | (4 << 16)) | (0x200 + 21))
     # Deprecated property or method.
-    eAvtrErrorDeprecated = (((1 << 31) | (4 << 16)) | (0x200 + 22))
+    DEPRECATED = (((1 << 31) | (4 << 16)) | (0x200 + 22))
 
-AgEAvtrErrorCodes.eAvtrErrorObjectNotFound.__doc__ = "Object not found."
-AgEAvtrErrorCodes.eAvtrErrorIndexOutOfRange.__doc__ = "Index out of range."
-AgEAvtrErrorCodes.eAvtrErrorInvalidAttribute.__doc__ = "The attribute is invalid."
-AgEAvtrErrorCodes.eAvtrErrorCommandFailed.__doc__ = "The command failed."
-AgEAvtrErrorCodes.eAvtrAvtrErrorInvalidArg.__doc__ = "Invalid argument."
-AgEAvtrErrorCodes.eAvtrErrorEmptyArg.__doc__ = "Empty argument."
-AgEAvtrErrorCodes.eAvtrErrorObjectNotRemoved.__doc__ = "Object was not removed."
-AgEAvtrErrorCodes.eAvtrErrorFailedToRenameObject.__doc__ = "Error renaming object."
-AgEAvtrErrorCodes.eAvtrErrorUnknownClassType.__doc__ = "Unknown class type."
-AgEAvtrErrorCodes.eAvtrErrorFailedToCreateObject.__doc__ = "Failed to create the object."
-AgEAvtrErrorCodes.eAvtrErrorObjectLinkInvalidChoice.__doc__ = "Invalid choice for object link."
-AgEAvtrErrorCodes.eAvtrErrorObjectLinkNoChoices.__doc__ = "No choices available."
-AgEAvtrErrorCodes.eAvtrErrorReadOnlyAttribute.__doc__ = "Read only attribute."
-AgEAvtrErrorCodes.eAvtrErrorCstrInvalidCstrList.__doc__ = "Invalid constraint list."
-AgEAvtrErrorCodes.eAvtrErrorCstrInvalidConstraint.__doc__ = "InvalidConstraint."
-AgEAvtrErrorCodes.eAvtrErrorListReadOnly.__doc__ = "List if read only."
-AgEAvtrErrorCodes.eAvtrErrorListInsertFailed.__doc__ = "Failed to insert the item into the list."
-AgEAvtrErrorCodes.eAvtrErrorInvalidLength.__doc__ = "Length is invalid."
-AgEAvtrErrorCodes.eAvtrErrorFailedToLoadFile.__doc__ = "Error loading a file."
-AgEAvtrErrorCodes.eAvtrErrorInvalidOperation.__doc__ = "Invalid operation."
-AgEAvtrErrorCodes.eAvtrErrorMethodInvokeFailed.__doc__ = "Method failed."
-AgEAvtrErrorCodes.eAvtrErrorDeprecated.__doc__ = "Deprecated property or method."
+AVTR_ERROR_CODES.OBJECT_NOT_FOUND.__doc__ = "Object not found."
+AVTR_ERROR_CODES.INDEX_OUT_OF_RANGE.__doc__ = "Index out of range."
+AVTR_ERROR_CODES.INVALID_ATTRIBUTE.__doc__ = "The attribute is invalid."
+AVTR_ERROR_CODES.COMMAND_FAILED.__doc__ = "The command failed."
+AVTR_ERROR_CODES.AVTR_ERROR_INVALID_ARG.__doc__ = "Invalid argument."
+AVTR_ERROR_CODES.EMPTY_ARG.__doc__ = "Empty argument."
+AVTR_ERROR_CODES.OBJECT_NOT_REMOVED.__doc__ = "Object was not removed."
+AVTR_ERROR_CODES.FAILED_TO_RENAME_OBJECT.__doc__ = "Error renaming object."
+AVTR_ERROR_CODES.UNKNOWN_CLASS_TYPE.__doc__ = "Unknown class type."
+AVTR_ERROR_CODES.FAILED_TO_CREATE_OBJECT.__doc__ = "Failed to create the object."
+AVTR_ERROR_CODES.OBJECT_LINK_INVALID_CHOICE.__doc__ = "Invalid choice for object link."
+AVTR_ERROR_CODES.OBJECT_LINK_NO_CHOICES.__doc__ = "No choices available."
+AVTR_ERROR_CODES.READ_ONLY_ATTRIBUTE.__doc__ = "Read only attribute."
+AVTR_ERROR_CODES.CSTR_INVALID_CSTR_LIST.__doc__ = "Invalid constraint list."
+AVTR_ERROR_CODES.CSTR_INVALID_CONSTRAINT.__doc__ = "InvalidConstraint."
+AVTR_ERROR_CODES.LIST_READ_ONLY.__doc__ = "List if read only."
+AVTR_ERROR_CODES.LIST_INSERT_FAILED.__doc__ = "Failed to insert the item into the list."
+AVTR_ERROR_CODES.INVALID_LENGTH.__doc__ = "Length is invalid."
+AVTR_ERROR_CODES.FAILED_TO_LOAD_FILE.__doc__ = "Error loading a file."
+AVTR_ERROR_CODES.INVALID_OPERATION.__doc__ = "Invalid operation."
+AVTR_ERROR_CODES.METHOD_INVOKE_FAILED.__doc__ = "Method failed."
+AVTR_ERROR_CODES.DEPRECATED.__doc__ = "Deprecated property or method."
 
-agcls.AgTypeNameMap["AgEAvtrErrorCodes"] = AgEAvtrErrorCodes
+agcls.AgTypeNameMap["AVTR_ERROR_CODES"] = AVTR_ERROR_CODES
 
-class AgEAvtrClosureValue(IntEnum):
+class AVTR_CLOSURE_VALUE(IntEnum):
     """The closure value."""
     # The closure mode
-    eClosureMode = 0
+    CLOSURE_MODE = 0
     # The HOBS max angle offset
-    eMaxAngle = 1
+    MAX_ANGLE = 1
     # The HOBS angle tolerance
-    eAngleTol = 2
+    ANGLE_TOL = 2
 
-AgEAvtrClosureValue.eClosureMode.__doc__ = "The closure mode"
-AgEAvtrClosureValue.eMaxAngle.__doc__ = "The HOBS max angle offset"
-AgEAvtrClosureValue.eAngleTol.__doc__ = "The HOBS angle tolerance"
+AVTR_CLOSURE_VALUE.CLOSURE_MODE.__doc__ = "The closure mode"
+AVTR_CLOSURE_VALUE.MAX_ANGLE.__doc__ = "The HOBS max angle offset"
+AVTR_CLOSURE_VALUE.ANGLE_TOL.__doc__ = "The HOBS angle tolerance"
 
-agcls.AgTypeNameMap["AgEAvtrClosureValue"] = AgEAvtrClosureValue
+agcls.AgTypeNameMap["AVTR_CLOSURE_VALUE"] = AVTR_CLOSURE_VALUE
 
-class AgEAvtrProcedureType(IntEnum):
+class AVTR_PROCEDURE_TYPE(IntEnum):
     """Aviator procedure types."""
     # Airway procedure.
-    eProcAirway = 0
+    PROC_AIRWAY = 0
     # Airway Router procedure.
-    eProcAirwayRouter = 1
+    PROC_AIRWAY_ROUTER = 1
     # ArcEnroute procedure.
-    eProcArcEnroute = 2
+    PROC_ARC_ENROUTE = 2
     # ArcPointToPoint procedure.
-    eProcArcPointToPoint = 3
+    PROC_ARC_POINT_TO_POINT = 3
     # Area Target Search procedure.
-    eProcAreaTargetSearch = 4
+    PROC_AREA_TARGET_SEARCH = 4
     # Basic Maneuver procedure.
-    eProcBasicManeuver = 5
+    PROC_BASIC_MANEUVER = 5
     # Basic Point to Point procedure.
-    eProcBasicPointToPoint = 6
+    PROC_BASIC_POINT_TO_POINT = 6
     # Delay procedure.
-    eProcDelay = 7
+    PROC_DELAY = 7
     # Enroute procedure.
-    eProcEnroute = 8
+    PROC_ENROUTE = 8
     # Flight Line procedure.
-    eProcFlightLine = 9
+    PROC_FLIGHT_LINE = 9
     # Formation Recover procedure.
-    eProcFormationRecover = 10
+    PROC_FORMATION_RECOVER = 10
     # Holding Circular procedure.
-    eProcHoldingCircular = 11
+    PROC_HOLDING_CIRCULAR = 11
     # Holding Figure 8 procedure.
-    eProcHoldingFigure8 = 12
+    PROC_HOLDING_FIGURE8 = 12
     # Holding Racetrack procedure.
-    eProcHoldingRacetrack = 13
+    PROC_HOLDING_RACETRACK = 13
     # Hover procedure.
-    eProcHover = 14
+    PROC_HOVER = 14
     # Hover Translate procedure.
-    eProcHoverTranslate = 15
+    PROC_HOVER_TRANSLATE = 15
     # In Formation procedure.
-    eProcInFormation = 16
+    PROC_IN_FORMATION = 16
     # Landing procedure.
-    eProcLanding = 17
+    PROC_LANDING = 17
     # Launch procedure.
-    eProcLaunch = 18
+    PROC_LAUNCH = 18
     # Parallel Flight Line procedure.
-    eProcParallelFlightLine = 19
+    PROC_PARALLEL_FLIGHT_LINE = 19
     # Reference State procedure.
-    eProcReferenceState = 20
+    PROC_REFERENCE_STATE = 20
     # Super Procedure procedure.
-    eProcSuperProcedure = 21
+    PROC_SUPER_PROCEDURE = 21
     # Takeoff procedure.
-    eProcTakeoff = 22
+    PROC_TAKEOFF = 22
     # Terrain Following procedure.
-    eProcTerrainFollowing = 23
+    PROC_TERRAIN_FOLLOWING = 23
     # Transition to Forward Flight procedure.
-    eProcTransitionToForwardFlight = 24
+    PROC_TRANSITION_TO_FORWARD_FLIGHT = 24
     # Transition To Hover procedure.
-    eProcTransitionToHover = 25
+    PROC_TRANSITION_TO_HOVER = 25
     # Vertical Landing procedure.
-    eProcVerticalLanding = 26
+    PROC_VERTICAL_LANDING = 26
     # Vertical Takeoff procedure.
-    eProcVerticalTakeoff = 27
+    PROC_VERTICAL_TAKEOFF = 27
     # VGT Point procedure.
-    eProcVGTPoint = 28
+    PROC_VGT_POINT = 28
     # LaunchDynState procedure.
-    eProcLaunchDynState = 29
+    PROC_LAUNCH_DYN_STATE = 29
     # LaunchWaypoint procedure.
-    eProcLaunchWaypoint = 30
+    PROC_LAUNCH_WAYPOINT = 30
     # FormationFlyer procedure.
-    eProcFormationFlyer = 31
+    PROC_FORMATION_FLYER = 31
     # ExtEphem procedure.
-    eProcExtEphem = 32
+    PROC_EXT_EPHEM = 32
 
-AgEAvtrProcedureType.eProcAirway.__doc__ = "Airway procedure."
-AgEAvtrProcedureType.eProcAirwayRouter.__doc__ = "Airway Router procedure."
-AgEAvtrProcedureType.eProcArcEnroute.__doc__ = "ArcEnroute procedure."
-AgEAvtrProcedureType.eProcArcPointToPoint.__doc__ = "ArcPointToPoint procedure."
-AgEAvtrProcedureType.eProcAreaTargetSearch.__doc__ = "Area Target Search procedure."
-AgEAvtrProcedureType.eProcBasicManeuver.__doc__ = "Basic Maneuver procedure."
-AgEAvtrProcedureType.eProcBasicPointToPoint.__doc__ = "Basic Point to Point procedure."
-AgEAvtrProcedureType.eProcDelay.__doc__ = "Delay procedure."
-AgEAvtrProcedureType.eProcEnroute.__doc__ = "Enroute procedure."
-AgEAvtrProcedureType.eProcFlightLine.__doc__ = "Flight Line procedure."
-AgEAvtrProcedureType.eProcFormationRecover.__doc__ = "Formation Recover procedure."
-AgEAvtrProcedureType.eProcHoldingCircular.__doc__ = "Holding Circular procedure."
-AgEAvtrProcedureType.eProcHoldingFigure8.__doc__ = "Holding Figure 8 procedure."
-AgEAvtrProcedureType.eProcHoldingRacetrack.__doc__ = "Holding Racetrack procedure."
-AgEAvtrProcedureType.eProcHover.__doc__ = "Hover procedure."
-AgEAvtrProcedureType.eProcHoverTranslate.__doc__ = "Hover Translate procedure."
-AgEAvtrProcedureType.eProcInFormation.__doc__ = "In Formation procedure."
-AgEAvtrProcedureType.eProcLanding.__doc__ = "Landing procedure."
-AgEAvtrProcedureType.eProcLaunch.__doc__ = "Launch procedure."
-AgEAvtrProcedureType.eProcParallelFlightLine.__doc__ = "Parallel Flight Line procedure."
-AgEAvtrProcedureType.eProcReferenceState.__doc__ = "Reference State procedure."
-AgEAvtrProcedureType.eProcSuperProcedure.__doc__ = "Super Procedure procedure."
-AgEAvtrProcedureType.eProcTakeoff.__doc__ = "Takeoff procedure."
-AgEAvtrProcedureType.eProcTerrainFollowing.__doc__ = "Terrain Following procedure."
-AgEAvtrProcedureType.eProcTransitionToForwardFlight.__doc__ = "Transition to Forward Flight procedure."
-AgEAvtrProcedureType.eProcTransitionToHover.__doc__ = "Transition To Hover procedure."
-AgEAvtrProcedureType.eProcVerticalLanding.__doc__ = "Vertical Landing procedure."
-AgEAvtrProcedureType.eProcVerticalTakeoff.__doc__ = "Vertical Takeoff procedure."
-AgEAvtrProcedureType.eProcVGTPoint.__doc__ = "VGT Point procedure."
-AgEAvtrProcedureType.eProcLaunchDynState.__doc__ = "LaunchDynState procedure."
-AgEAvtrProcedureType.eProcLaunchWaypoint.__doc__ = "LaunchWaypoint procedure."
-AgEAvtrProcedureType.eProcFormationFlyer.__doc__ = "FormationFlyer procedure."
-AgEAvtrProcedureType.eProcExtEphem.__doc__ = "ExtEphem procedure."
+AVTR_PROCEDURE_TYPE.PROC_AIRWAY.__doc__ = "Airway procedure."
+AVTR_PROCEDURE_TYPE.PROC_AIRWAY_ROUTER.__doc__ = "Airway Router procedure."
+AVTR_PROCEDURE_TYPE.PROC_ARC_ENROUTE.__doc__ = "ArcEnroute procedure."
+AVTR_PROCEDURE_TYPE.PROC_ARC_POINT_TO_POINT.__doc__ = "ArcPointToPoint procedure."
+AVTR_PROCEDURE_TYPE.PROC_AREA_TARGET_SEARCH.__doc__ = "Area Target Search procedure."
+AVTR_PROCEDURE_TYPE.PROC_BASIC_MANEUVER.__doc__ = "Basic Maneuver procedure."
+AVTR_PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT.__doc__ = "Basic Point to Point procedure."
+AVTR_PROCEDURE_TYPE.PROC_DELAY.__doc__ = "Delay procedure."
+AVTR_PROCEDURE_TYPE.PROC_ENROUTE.__doc__ = "Enroute procedure."
+AVTR_PROCEDURE_TYPE.PROC_FLIGHT_LINE.__doc__ = "Flight Line procedure."
+AVTR_PROCEDURE_TYPE.PROC_FORMATION_RECOVER.__doc__ = "Formation Recover procedure."
+AVTR_PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR.__doc__ = "Holding Circular procedure."
+AVTR_PROCEDURE_TYPE.PROC_HOLDING_FIGURE8.__doc__ = "Holding Figure 8 procedure."
+AVTR_PROCEDURE_TYPE.PROC_HOLDING_RACETRACK.__doc__ = "Holding Racetrack procedure."
+AVTR_PROCEDURE_TYPE.PROC_HOVER.__doc__ = "Hover procedure."
+AVTR_PROCEDURE_TYPE.PROC_HOVER_TRANSLATE.__doc__ = "Hover Translate procedure."
+AVTR_PROCEDURE_TYPE.PROC_IN_FORMATION.__doc__ = "In Formation procedure."
+AVTR_PROCEDURE_TYPE.PROC_LANDING.__doc__ = "Landing procedure."
+AVTR_PROCEDURE_TYPE.PROC_LAUNCH.__doc__ = "Launch procedure."
+AVTR_PROCEDURE_TYPE.PROC_PARALLEL_FLIGHT_LINE.__doc__ = "Parallel Flight Line procedure."
+AVTR_PROCEDURE_TYPE.PROC_REFERENCE_STATE.__doc__ = "Reference State procedure."
+AVTR_PROCEDURE_TYPE.PROC_SUPER_PROCEDURE.__doc__ = "Super Procedure procedure."
+AVTR_PROCEDURE_TYPE.PROC_TAKEOFF.__doc__ = "Takeoff procedure."
+AVTR_PROCEDURE_TYPE.PROC_TERRAIN_FOLLOWING.__doc__ = "Terrain Following procedure."
+AVTR_PROCEDURE_TYPE.PROC_TRANSITION_TO_FORWARD_FLIGHT.__doc__ = "Transition to Forward Flight procedure."
+AVTR_PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER.__doc__ = "Transition To Hover procedure."
+AVTR_PROCEDURE_TYPE.PROC_VERTICAL_LANDING.__doc__ = "Vertical Landing procedure."
+AVTR_PROCEDURE_TYPE.PROC_VERTICAL_TAKEOFF.__doc__ = "Vertical Takeoff procedure."
+AVTR_PROCEDURE_TYPE.PROC_VGT_POINT.__doc__ = "VGT Point procedure."
+AVTR_PROCEDURE_TYPE.PROC_LAUNCH_DYN_STATE.__doc__ = "LaunchDynState procedure."
+AVTR_PROCEDURE_TYPE.PROC_LAUNCH_WAYPOINT.__doc__ = "LaunchWaypoint procedure."
+AVTR_PROCEDURE_TYPE.PROC_FORMATION_FLYER.__doc__ = "FormationFlyer procedure."
+AVTR_PROCEDURE_TYPE.PROC_EXT_EPHEM.__doc__ = "ExtEphem procedure."
 
-agcls.AgTypeNameMap["AgEAvtrProcedureType"] = AgEAvtrProcedureType
+agcls.AgTypeNameMap["AVTR_PROCEDURE_TYPE"] = AVTR_PROCEDURE_TYPE
 
-class AgEAvtrSiteType(IntEnum):
+class AVTR_SITE_TYPE(IntEnum):
     """Aviator site types."""
     # Airport from Catalog site.
-    eSiteAirportFromCatalog = 0
+    SITE_AIRPORT_FROM_CATALOG = 0
     # End of Previous Procedure site.
-    eSiteEndOfPrevProcedure = 1
+    SITE_END_OF_PREV_PROCEDURE = 1
     # Navaid from Catalog site.
-    eSiteNavaidFromCatalog = 2
+    SITE_NAVAID_FROM_CATALOG = 2
     # Reference State site.
-    eSiteReferenceState = 3
+    SITE_REFERENCE_STATE = 3
     # Relative to Previous Procedure site.
-    eSiteRelativeToPrevProcedure = 4
+    SITE_RELATIVE_TO_PREV_PROCEDURE = 4
     # Relative to Stationary STK Object site.
-    eSiteRelativeToStationarySTKObject = 5
+    SITE_RELATIVE_TO_STATIONARY_STK_OBJECT = 5
     # Runway site.
-    eSiteRunway = 6
+    SITE_RUNWAY = 6
     # Runway from Catalog site.
-    eSiteRunwayFromCatalog = 7
+    SITE_RUNWAY_FROM_CATALOG = 7
     # STK Area Target site.
-    eSiteSTKAreaTarget = 8
+    SITE_STK_AREA_TARGET = 8
     # STK Object Waypoint site.
-    eSiteSTKObjectWaypoint = 9
+    SITE_STK_OBJECT_WAYPOINT = 9
     # STK STatic Object site.
-    eSiteSTKStaticObject = 10
+    SITE_STK_STATIC_OBJECT = 10
     # STK Vehicle site.
-    eSiteSTKVehicle = 11
+    SITE_STK_VEHICLE = 11
     # Super Procedure site.
-    eSiteSuperProcedure = 12
+    SITE_SUPER_PROCEDURE = 12
     # VTOL Point site.
-    eSiteVTOLPoint = 13
+    SITE_VTOL_POINT = 13
     # VTOL Point from Catalog site.
-    eSiteVTOLPointFromCatalog = 14
+    SITE_VTOL_POINT_FROM_CATALOG = 14
     # Waypoint site.
-    eSiteWaypoint = 15
+    SITE_WAYPOINT = 15
     # Waypoint from Catalog site.
-    eSiteWaypointFromCatalog = 16
+    SITE_WAYPOINT_FROM_CATALOG = 16
     # DynState site.
-    eSiteDynState = 17
+    SITE_DYN_STATE = 17
 
-AgEAvtrSiteType.eSiteAirportFromCatalog.__doc__ = "Airport from Catalog site."
-AgEAvtrSiteType.eSiteEndOfPrevProcedure.__doc__ = "End of Previous Procedure site."
-AgEAvtrSiteType.eSiteNavaidFromCatalog.__doc__ = "Navaid from Catalog site."
-AgEAvtrSiteType.eSiteReferenceState.__doc__ = "Reference State site."
-AgEAvtrSiteType.eSiteRelativeToPrevProcedure.__doc__ = "Relative to Previous Procedure site."
-AgEAvtrSiteType.eSiteRelativeToStationarySTKObject.__doc__ = "Relative to Stationary STK Object site."
-AgEAvtrSiteType.eSiteRunway.__doc__ = "Runway site."
-AgEAvtrSiteType.eSiteRunwayFromCatalog.__doc__ = "Runway from Catalog site."
-AgEAvtrSiteType.eSiteSTKAreaTarget.__doc__ = "STK Area Target site."
-AgEAvtrSiteType.eSiteSTKObjectWaypoint.__doc__ = "STK Object Waypoint site."
-AgEAvtrSiteType.eSiteSTKStaticObject.__doc__ = "STK STatic Object site."
-AgEAvtrSiteType.eSiteSTKVehicle.__doc__ = "STK Vehicle site."
-AgEAvtrSiteType.eSiteSuperProcedure.__doc__ = "Super Procedure site."
-AgEAvtrSiteType.eSiteVTOLPoint.__doc__ = "VTOL Point site."
-AgEAvtrSiteType.eSiteVTOLPointFromCatalog.__doc__ = "VTOL Point from Catalog site."
-AgEAvtrSiteType.eSiteWaypoint.__doc__ = "Waypoint site."
-AgEAvtrSiteType.eSiteWaypointFromCatalog.__doc__ = "Waypoint from Catalog site."
-AgEAvtrSiteType.eSiteDynState.__doc__ = "DynState site."
+AVTR_SITE_TYPE.SITE_AIRPORT_FROM_CATALOG.__doc__ = "Airport from Catalog site."
+AVTR_SITE_TYPE.SITE_END_OF_PREV_PROCEDURE.__doc__ = "End of Previous Procedure site."
+AVTR_SITE_TYPE.SITE_NAVAID_FROM_CATALOG.__doc__ = "Navaid from Catalog site."
+AVTR_SITE_TYPE.SITE_REFERENCE_STATE.__doc__ = "Reference State site."
+AVTR_SITE_TYPE.SITE_RELATIVE_TO_PREV_PROCEDURE.__doc__ = "Relative to Previous Procedure site."
+AVTR_SITE_TYPE.SITE_RELATIVE_TO_STATIONARY_STK_OBJECT.__doc__ = "Relative to Stationary STK Object site."
+AVTR_SITE_TYPE.SITE_RUNWAY.__doc__ = "Runway site."
+AVTR_SITE_TYPE.SITE_RUNWAY_FROM_CATALOG.__doc__ = "Runway from Catalog site."
+AVTR_SITE_TYPE.SITE_STK_AREA_TARGET.__doc__ = "STK Area Target site."
+AVTR_SITE_TYPE.SITE_STK_OBJECT_WAYPOINT.__doc__ = "STK Object Waypoint site."
+AVTR_SITE_TYPE.SITE_STK_STATIC_OBJECT.__doc__ = "STK STatic Object site."
+AVTR_SITE_TYPE.SITE_STK_VEHICLE.__doc__ = "STK Vehicle site."
+AVTR_SITE_TYPE.SITE_SUPER_PROCEDURE.__doc__ = "Super Procedure site."
+AVTR_SITE_TYPE.SITE_VTOL_POINT.__doc__ = "VTOL Point site."
+AVTR_SITE_TYPE.SITE_VTOL_POINT_FROM_CATALOG.__doc__ = "VTOL Point from Catalog site."
+AVTR_SITE_TYPE.SITE_WAYPOINT.__doc__ = "Waypoint site."
+AVTR_SITE_TYPE.SITE_WAYPOINT_FROM_CATALOG.__doc__ = "Waypoint from Catalog site."
+AVTR_SITE_TYPE.SITE_DYN_STATE.__doc__ = "DynState site."
 
-agcls.AgTypeNameMap["AgEAvtrSiteType"] = AgEAvtrSiteType
+agcls.AgTypeNameMap["AVTR_SITE_TYPE"] = AVTR_SITE_TYPE
 
-class AgEAvtrBasicManeuverStrategy(IntEnum):
+class AVTR_BASIC_MANEUVER_STRATEGY(IntEnum):
     """Basic maneuver strategy types."""
     # Straight Ahead strategy.
-    eStraightAhead = 0
+    STRAIGHT_AHEAD = 0
     # Weave strategy.
-    eWeave = 1
+    WEAVE = 1
 
-AgEAvtrBasicManeuverStrategy.eStraightAhead.__doc__ = "Straight Ahead strategy."
-AgEAvtrBasicManeuverStrategy.eWeave.__doc__ = "Weave strategy."
+AVTR_BASIC_MANEUVER_STRATEGY.STRAIGHT_AHEAD.__doc__ = "Straight Ahead strategy."
+AVTR_BASIC_MANEUVER_STRATEGY.WEAVE.__doc__ = "Weave strategy."
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategy"] = AgEAvtrBasicManeuverStrategy
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_STRATEGY"] = AVTR_BASIC_MANEUVER_STRATEGY
 
-class AgEAvtrStraightAheadRefFrame(IntEnum):
+class AVTR_STRAIGHT_AHEAD_REF_FRAME(IntEnum):
     """Straight Ahead basic maneuver Reference Frame."""
     # Maintain Course.
-    eMaintainCourse = 0
+    MAINTAIN_COURSE = 0
     # Maintain Heading.
-    eMaintainHeading = 1
+    MAINTAIN_HEADING = 1
     # No Lateral Accelerations.
-    eNoLateralAcc = 2
+    NO_LATERAL_ACC = 2
     # Compensate For Coriolis
-    eCompensateCoriolis = 3
+    COMPENSATE_CORIOLIS = 3
 
-AgEAvtrStraightAheadRefFrame.eMaintainCourse.__doc__ = "Maintain Course."
-AgEAvtrStraightAheadRefFrame.eMaintainHeading.__doc__ = "Maintain Heading."
-AgEAvtrStraightAheadRefFrame.eNoLateralAcc.__doc__ = "No Lateral Accelerations."
-AgEAvtrStraightAheadRefFrame.eCompensateCoriolis.__doc__ = "Compensate For Coriolis"
+AVTR_STRAIGHT_AHEAD_REF_FRAME.MAINTAIN_COURSE.__doc__ = "Maintain Course."
+AVTR_STRAIGHT_AHEAD_REF_FRAME.MAINTAIN_HEADING.__doc__ = "Maintain Heading."
+AVTR_STRAIGHT_AHEAD_REF_FRAME.NO_LATERAL_ACC.__doc__ = "No Lateral Accelerations."
+AVTR_STRAIGHT_AHEAD_REF_FRAME.COMPENSATE_CORIOLIS.__doc__ = "Compensate For Coriolis"
 
-agcls.AgTypeNameMap["AgEAvtrStraightAheadRefFrame"] = AgEAvtrStraightAheadRefFrame
+agcls.AgTypeNameMap["AVTR_STRAIGHT_AHEAD_REF_FRAME"] = AVTR_STRAIGHT_AHEAD_REF_FRAME
 
-class AgEAvtrAirspeedType(IntEnum):
+class AVTR_AIRSPEED_TYPE(IntEnum):
     """Airspeed types."""
     # Mach number.
-    eMach = 0
+    MACH = 0
     # Equivalent airspeed.
-    eEAS = 1
+    EAS = 1
     # Calibrated airspeed.
-    eCAS = 2
+    CAS = 2
     # True airspeed.
-    eTAS = 3
+    TAS = 3
 
-AgEAvtrAirspeedType.eMach.__doc__ = "Mach number."
-AgEAvtrAirspeedType.eEAS.__doc__ = "Equivalent airspeed."
-AgEAvtrAirspeedType.eCAS.__doc__ = "Calibrated airspeed."
-AgEAvtrAirspeedType.eTAS.__doc__ = "True airspeed."
+AVTR_AIRSPEED_TYPE.MACH.__doc__ = "Mach number."
+AVTR_AIRSPEED_TYPE.EAS.__doc__ = "Equivalent airspeed."
+AVTR_AIRSPEED_TYPE.CAS.__doc__ = "Calibrated airspeed."
+AVTR_AIRSPEED_TYPE.TAS.__doc__ = "True airspeed."
 
-agcls.AgTypeNameMap["AgEAvtrAirspeedType"] = AgEAvtrAirspeedType
+agcls.AgTypeNameMap["AVTR_AIRSPEED_TYPE"] = AVTR_AIRSPEED_TYPE
 
-class AgEAvtrAeroPropSimpleMode(IntEnum):
+class AVTR_AERO_PROP_SIMPLE_MODE(IntEnum):
     """Aircraft operating mode for basic acceleration models with aerodynamics set to Simple."""
     # Fixed wing operatiog mode.
-    eFixedWing = 0
+    FIXED_WING = 0
     # Helicopter operating mode.
-    eHelicopter = 1
+    HELICOPTER = 1
 
-AgEAvtrAeroPropSimpleMode.eFixedWing.__doc__ = "Fixed wing operatiog mode."
-AgEAvtrAeroPropSimpleMode.eHelicopter.__doc__ = "Helicopter operating mode."
+AVTR_AERO_PROP_SIMPLE_MODE.FIXED_WING.__doc__ = "Fixed wing operatiog mode."
+AVTR_AERO_PROP_SIMPLE_MODE.HELICOPTER.__doc__ = "Helicopter operating mode."
 
-agcls.AgTypeNameMap["AgEAvtrAeroPropSimpleMode"] = AgEAvtrAeroPropSimpleMode
+agcls.AgTypeNameMap["AVTR_AERO_PROP_SIMPLE_MODE"] = AVTR_AERO_PROP_SIMPLE_MODE
 
-class AgEAvtrAeroPropFlightMode(IntEnum):
+class AVTR_AERO_PROP_FLIGHT_MODE(IntEnum):
     """Flight mode for the Aero/Prop maneuver mode helper in aircraft acceleration models."""
     # Forward Flight mode.
-    eFlightPerfForwardFlight = 0
+    FLIGHT_PERF_FORWARD_FLIGHT = 0
     # Hover mode.
-    eFlightPerfHover = 1
+    FLIGHT_PERF_HOVER = 1
     # Takeoff mode.
-    eFlightPerfTakeoff = 2
+    FLIGHT_PERF_TAKEOFF = 2
     # Landing mode.
-    eFlightPerfLanding = 3
+    FLIGHT_PERF_LANDING = 3
     # Weight on wheels mode.
-    eFlightPerfWeightOnWheels = 4
+    FLIGHT_PERF_WEIGHT_ON_WHEELS = 4
 
-AgEAvtrAeroPropFlightMode.eFlightPerfForwardFlight.__doc__ = "Forward Flight mode."
-AgEAvtrAeroPropFlightMode.eFlightPerfHover.__doc__ = "Hover mode."
-AgEAvtrAeroPropFlightMode.eFlightPerfTakeoff.__doc__ = "Takeoff mode."
-AgEAvtrAeroPropFlightMode.eFlightPerfLanding.__doc__ = "Landing mode."
-AgEAvtrAeroPropFlightMode.eFlightPerfWeightOnWheels.__doc__ = "Weight on wheels mode."
+AVTR_AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_FORWARD_FLIGHT.__doc__ = "Forward Flight mode."
+AVTR_AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_HOVER.__doc__ = "Hover mode."
+AVTR_AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_TAKEOFF.__doc__ = "Takeoff mode."
+AVTR_AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_LANDING.__doc__ = "Landing mode."
+AVTR_AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_WEIGHT_ON_WHEELS.__doc__ = "Weight on wheels mode."
 
-agcls.AgTypeNameMap["AgEAvtrAeroPropFlightMode"] = AgEAvtrAeroPropFlightMode
+agcls.AgTypeNameMap["AVTR_AERO_PROP_FLIGHT_MODE"] = AVTR_AERO_PROP_FLIGHT_MODE
 
-class AgEAvtrPhaseOfFlight(IntEnum):
+class AVTR_PHASE_OF_FLIGHT(IntEnum):
     """Flight mode for basic maneuver procedures."""
     # Takeoff flight mode.
-    eFlightPhaseTakeoff = 1
+    FLIGHT_PHASE_TAKEOFF = 1
     # Forward flight climb flight mode.
-    eFlightPhaseClimb = 2
+    FLIGHT_PHASE_CLIMB = 2
     # Forward flight - cruise flight mode.
-    eFlightPhaseCruise = 3
+    FLIGHT_PHASE_CRUISE = 3
     # Forward flight descend flight mode.
-    eFlightPhaseDescend = 4
+    FLIGHT_PHASE_DESCEND = 4
     # Landing flight mode.
-    eFlightPhaseLanding = 5
+    FLIGHT_PHASE_LANDING = 5
     # Rotary wing / hover flight mode
-    eFlightPhaseVTOL = 6
+    FLIGHT_PHASE_VTOL = 6
 
-AgEAvtrPhaseOfFlight.eFlightPhaseTakeoff.__doc__ = "Takeoff flight mode."
-AgEAvtrPhaseOfFlight.eFlightPhaseClimb.__doc__ = "Forward flight climb flight mode."
-AgEAvtrPhaseOfFlight.eFlightPhaseCruise.__doc__ = "Forward flight - cruise flight mode."
-AgEAvtrPhaseOfFlight.eFlightPhaseDescend.__doc__ = "Forward flight descend flight mode."
-AgEAvtrPhaseOfFlight.eFlightPhaseLanding.__doc__ = "Landing flight mode."
-AgEAvtrPhaseOfFlight.eFlightPhaseVTOL.__doc__ = "Rotary wing / hover flight mode"
+AVTR_PHASE_OF_FLIGHT.FLIGHT_PHASE_TAKEOFF.__doc__ = "Takeoff flight mode."
+AVTR_PHASE_OF_FLIGHT.FLIGHT_PHASE_CLIMB.__doc__ = "Forward flight climb flight mode."
+AVTR_PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE.__doc__ = "Forward flight - cruise flight mode."
+AVTR_PHASE_OF_FLIGHT.FLIGHT_PHASE_DESCEND.__doc__ = "Forward flight descend flight mode."
+AVTR_PHASE_OF_FLIGHT.FLIGHT_PHASE_LANDING.__doc__ = "Landing flight mode."
+AVTR_PHASE_OF_FLIGHT.FLIGHT_PHASE_VTOL.__doc__ = "Rotary wing / hover flight mode"
 
-agcls.AgTypeNameMap["AgEAvtrPhaseOfFlight"] = AgEAvtrPhaseOfFlight
+agcls.AgTypeNameMap["AVTR_PHASE_OF_FLIGHT"] = AVTR_PHASE_OF_FLIGHT
 
-class AgEAvtrCruiseSpeed(IntEnum):
+class AVTR_CRUISE_SPEED(IntEnum):
     """Cruise airspeed type for the procedure."""
     # Minimum airspeed.
-    eMinAirspeed = 0
+    MIN_AIRSPEED = 0
     # Maximum endurance airspeed.
-    eMaxEnduranceAirspeed = 1
+    MAX_ENDURANCE_AIRSPEED = 1
     # Maximum range airspeed.
-    eMaxRangeAirspeed = 2
+    MAX_RANGE_AIRSPEED = 2
     # Other airspeed.
-    eOtherAirspeed = 3
+    OTHER_AIRSPEED = 3
     # Maximum airspeed.
-    eMaxAirspeed = 4
+    MAX_AIRSPEED = 4
     # Maximum performance airspeed.
-    eMaxPerfAirspeed = 6
+    MAX_PERF_AIRSPEED = 6
 
-AgEAvtrCruiseSpeed.eMinAirspeed.__doc__ = "Minimum airspeed."
-AgEAvtrCruiseSpeed.eMaxEnduranceAirspeed.__doc__ = "Maximum endurance airspeed."
-AgEAvtrCruiseSpeed.eMaxRangeAirspeed.__doc__ = "Maximum range airspeed."
-AgEAvtrCruiseSpeed.eOtherAirspeed.__doc__ = "Other airspeed."
-AgEAvtrCruiseSpeed.eMaxAirspeed.__doc__ = "Maximum airspeed."
-AgEAvtrCruiseSpeed.eMaxPerfAirspeed.__doc__ = "Maximum performance airspeed."
+AVTR_CRUISE_SPEED.MIN_AIRSPEED.__doc__ = "Minimum airspeed."
+AVTR_CRUISE_SPEED.MAX_ENDURANCE_AIRSPEED.__doc__ = "Maximum endurance airspeed."
+AVTR_CRUISE_SPEED.MAX_RANGE_AIRSPEED.__doc__ = "Maximum range airspeed."
+AVTR_CRUISE_SPEED.OTHER_AIRSPEED.__doc__ = "Other airspeed."
+AVTR_CRUISE_SPEED.MAX_AIRSPEED.__doc__ = "Maximum airspeed."
+AVTR_CRUISE_SPEED.MAX_PERF_AIRSPEED.__doc__ = "Maximum performance airspeed."
 
-agcls.AgTypeNameMap["AgEAvtrCruiseSpeed"] = AgEAvtrCruiseSpeed
+agcls.AgTypeNameMap["AVTR_CRUISE_SPEED"] = AVTR_CRUISE_SPEED
 
-class AgEAvtrTakeoffMode(IntEnum):
+class AVTR_TAKEOFF_MODE(IntEnum):
     """Takeoff procedure mode."""
     # Normal takeoff mode.
-    eTakeoffNormal = 0
+    TAKEOFF_NORMAL = 0
     # Fly to departure point takeoff mode.
-    eTakeoffFlyToDeparturePoint = 1
+    TAKEOFF_FLY_TO_DEPARTURE_POINT = 1
     # Low transition takeoff.
-    eTakeoffLowTransition = 2
+    TAKEOFF_LOW_TRANSITION = 2
 
-AgEAvtrTakeoffMode.eTakeoffNormal.__doc__ = "Normal takeoff mode."
-AgEAvtrTakeoffMode.eTakeoffFlyToDeparturePoint.__doc__ = "Fly to departure point takeoff mode."
-AgEAvtrTakeoffMode.eTakeoffLowTransition.__doc__ = "Low transition takeoff."
+AVTR_TAKEOFF_MODE.TAKEOFF_NORMAL.__doc__ = "Normal takeoff mode."
+AVTR_TAKEOFF_MODE.TAKEOFF_FLY_TO_DEPARTURE_POINT.__doc__ = "Fly to departure point takeoff mode."
+AVTR_TAKEOFF_MODE.TAKEOFF_LOW_TRANSITION.__doc__ = "Low transition takeoff."
 
-agcls.AgTypeNameMap["AgEAvtrTakeoffMode"] = AgEAvtrTakeoffMode
+agcls.AgTypeNameMap["AVTR_TAKEOFF_MODE"] = AVTR_TAKEOFF_MODE
 
-class AgEAvtrApproachMode(IntEnum):
+class AVTR_APPROACH_MODE(IntEnum):
     """Landing procedure approach mode."""
     # Standard instrument approach mode.
-    eStandardInstrumentApproach = 0
+    STANDARD_INSTRUMENT_APPROACH = 0
     # Intercept Glideslope approach mode.
-    eInterceptGlideslope = 1
+    INTERCEPT_GLIDESLOPE = 1
     # Enter downwind pattern approach mode.
-    eEnterDownwindPattern = 2
+    ENTER_DOWNWIND_PATTERN = 2
 
-AgEAvtrApproachMode.eStandardInstrumentApproach.__doc__ = "Standard instrument approach mode."
-AgEAvtrApproachMode.eInterceptGlideslope.__doc__ = "Intercept Glideslope approach mode."
-AgEAvtrApproachMode.eEnterDownwindPattern.__doc__ = "Enter downwind pattern approach mode."
+AVTR_APPROACH_MODE.STANDARD_INSTRUMENT_APPROACH.__doc__ = "Standard instrument approach mode."
+AVTR_APPROACH_MODE.INTERCEPT_GLIDESLOPE.__doc__ = "Intercept Glideslope approach mode."
+AVTR_APPROACH_MODE.ENTER_DOWNWIND_PATTERN.__doc__ = "Enter downwind pattern approach mode."
 
-agcls.AgTypeNameMap["AgEAvtrApproachMode"] = AgEAvtrApproachMode
+agcls.AgTypeNameMap["AVTR_APPROACH_MODE"] = AVTR_APPROACH_MODE
 
-class AgEAvtrNavigatorTurnDir(IntEnum):
+class AVTR_NAVIGATOR_TURN_DIR(IntEnum):
     """Turn mode for procedures with Enroute Turn Direction options."""
     # Automatic turn. Aviator will determine the direction of the turn.
-    eNavigatorTurnAuto = 0
+    NAVIGATOR_TURN_AUTO = 0
     # Left turn.
-    eNavigatorTurnLeft = 1
+    NAVIGATOR_TURN_LEFT = 1
     # Right turn.
-    eNavigatorTurnRight = 2
+    NAVIGATOR_TURN_RIGHT = 2
 
-AgEAvtrNavigatorTurnDir.eNavigatorTurnAuto.__doc__ = "Automatic turn. Aviator will determine the direction of the turn."
-AgEAvtrNavigatorTurnDir.eNavigatorTurnLeft.__doc__ = "Left turn."
-AgEAvtrNavigatorTurnDir.eNavigatorTurnRight.__doc__ = "Right turn."
+AVTR_NAVIGATOR_TURN_DIR.NAVIGATOR_TURN_AUTO.__doc__ = "Automatic turn. Aviator will determine the direction of the turn."
+AVTR_NAVIGATOR_TURN_DIR.NAVIGATOR_TURN_LEFT.__doc__ = "Left turn."
+AVTR_NAVIGATOR_TURN_DIR.NAVIGATOR_TURN_RIGHT.__doc__ = "Right turn."
 
-agcls.AgTypeNameMap["AgEAvtrNavigatorTurnDir"] = AgEAvtrNavigatorTurnDir
+agcls.AgTypeNameMap["AVTR_NAVIGATOR_TURN_DIR"] = AVTR_NAVIGATOR_TURN_DIR
 
-class AgEAvtrBasicManeuverFuelFlowType(IntEnum):
+class AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE(IntEnum):
     """Fuel flow type for basic maneuver procedures."""
     # Fuel flow defined for the current Takeoff performance model.
-    eBasicManeuverFuelFlowTakeoff = 0
+    BASIC_MANEUVER_FUEL_FLOW_TAKEOFF = 0
     # Fuel flow defined for the current Cruise performance model.
-    eBasicManeuverFuelFlowCruise = 1
+    BASIC_MANEUVER_FUEL_FLOW_CRUISE = 1
     # Fuel flow defined for the current Landing performance model.
-    eBasicManeuverFuelFlowLanding = 2
+    BASIC_MANEUVER_FUEL_FLOW_LANDING = 2
     # Fuel flow defined for the current VTOL performance model.
-    eBasicManeuverFuelFlowVTOL = 3
+    BASIC_MANEUVER_FUEL_FLOW_VTOL = 3
     # Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model.
-    eBasicManeuverFuelFlowAeroProp = 4
+    BASIC_MANEUVER_FUEL_FLOW_AERO_PROP = 4
     # Fuel flow defined manually.
-    eBasicManeuverFuelFlowOverride = 5
+    BASIC_MANEUVER_FUEL_FLOW_OVERRIDE = 5
     # Fuel flow defined using the thrust model for this maneuver.
-    eBasicManeuverFuelFlowThrustModel = 6
+    BASIC_MANEUVER_FUEL_FLOW_THRUST_MODEL = 6
 
-AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowTakeoff.__doc__ = "Fuel flow defined for the current Takeoff performance model."
-AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowCruise.__doc__ = "Fuel flow defined for the current Cruise performance model."
-AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowLanding.__doc__ = "Fuel flow defined for the current Landing performance model."
-AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowVTOL.__doc__ = "Fuel flow defined for the current VTOL performance model."
-AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowAeroProp.__doc__ = "Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."
-AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowOverride.__doc__ = "Fuel flow defined manually."
-AgEAvtrBasicManeuverFuelFlowType.eBasicManeuverFuelFlowThrustModel.__doc__ = "Fuel flow defined using the thrust model for this maneuver."
+AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_TAKEOFF.__doc__ = "Fuel flow defined for the current Takeoff performance model."
+AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE.__doc__ = "Fuel flow defined for the current Cruise performance model."
+AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_LANDING.__doc__ = "Fuel flow defined for the current Landing performance model."
+AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_VTOL.__doc__ = "Fuel flow defined for the current VTOL performance model."
+AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_AERO_PROP.__doc__ = "Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."
+AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE.__doc__ = "Fuel flow defined manually."
+AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_THRUST_MODEL.__doc__ = "Fuel flow defined using the thrust model for this maneuver."
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverFuelFlowType"] = AgEAvtrBasicManeuverFuelFlowType
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE"] = AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE
 
-class AgEAvtrBasicManeuverAltitudeLimit(IntEnum):
+class AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT(IntEnum):
     """The type of response Aviator will have if the maneuver attempts to exceed the altitude limit."""
     # Error when altitude limit exceeded.
-    eBasicManeuverAltLimitError = 0
+    BASIC_MANEUVER_ALT_LIMIT_ERROR = 0
     # Stop when altitude limit exceeded.
-    eBasicManeuverAltLimitStop = 1
+    BASIC_MANEUVER_ALT_LIMIT_STOP = 1
     # Continue when altitude limit exceeded.
-    eBasicManeuverAltLimitContinue = 2
+    BASIC_MANEUVER_ALT_LIMIT_CONTINUE = 2
 
-AgEAvtrBasicManeuverAltitudeLimit.eBasicManeuverAltLimitError.__doc__ = "Error when altitude limit exceeded."
-AgEAvtrBasicManeuverAltitudeLimit.eBasicManeuverAltLimitStop.__doc__ = "Stop when altitude limit exceeded."
-AgEAvtrBasicManeuverAltitudeLimit.eBasicManeuverAltLimitContinue.__doc__ = "Continue when altitude limit exceeded."
+AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALT_LIMIT_ERROR.__doc__ = "Error when altitude limit exceeded."
+AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALT_LIMIT_STOP.__doc__ = "Stop when altitude limit exceeded."
+AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALT_LIMIT_CONTINUE.__doc__ = "Continue when altitude limit exceeded."
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverAltitudeLimit"] = AgEAvtrBasicManeuverAltitudeLimit
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT"] = AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT
 
-class AgEAvtrRunwayHighLowEnd(IntEnum):
+class AVTR_RUNWAY_HIGH_LOW_END(IntEnum):
     """Runway heading that the aircraft will use."""
     # High end.
-    eHighEnd = 0
+    HIGH_END = 0
     # Low end.
-    eLowEnd = 1
+    LOW_END = 1
     # Headwind.
-    eHeadwind = 2
+    HEADWIND = 2
 
-AgEAvtrRunwayHighLowEnd.eHighEnd.__doc__ = "High end."
-AgEAvtrRunwayHighLowEnd.eLowEnd.__doc__ = "Low end."
-AgEAvtrRunwayHighLowEnd.eHeadwind.__doc__ = "Headwind."
+AVTR_RUNWAY_HIGH_LOW_END.HIGH_END.__doc__ = "High end."
+AVTR_RUNWAY_HIGH_LOW_END.LOW_END.__doc__ = "Low end."
+AVTR_RUNWAY_HIGH_LOW_END.HEADWIND.__doc__ = "Headwind."
 
-agcls.AgTypeNameMap["AgEAvtrRunwayHighLowEnd"] = AgEAvtrRunwayHighLowEnd
+agcls.AgTypeNameMap["AVTR_RUNWAY_HIGH_LOW_END"] = AVTR_RUNWAY_HIGH_LOW_END
 
-class AgEAvtrBasicManeuverRefFrame(IntEnum):
+class AVTR_BASIC_MANEUVER_REF_FRAME(IntEnum):
     """Reference frame for the basic maneuver strategy."""
     # Earth frame.
-    eEarthFrame = 0
+    EARTH_FRAME = 0
     # Wind frame.
-    eWindFrame = 1
+    WIND_FRAME = 1
 
-AgEAvtrBasicManeuverRefFrame.eEarthFrame.__doc__ = "Earth frame."
-AgEAvtrBasicManeuverRefFrame.eWindFrame.__doc__ = "Wind frame."
+AVTR_BASIC_MANEUVER_REF_FRAME.EARTH_FRAME.__doc__ = "Earth frame."
+AVTR_BASIC_MANEUVER_REF_FRAME.WIND_FRAME.__doc__ = "Wind frame."
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverRefFrame"] = AgEAvtrBasicManeuverRefFrame
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_REF_FRAME"] = AVTR_BASIC_MANEUVER_REF_FRAME
 
-class AgEAvtrBasicManeuverStrategyNavControlLimit(IntEnum):
+class AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT(IntEnum):
     """Method to define the control limits for the aircraft during the maneuver."""
     # Use Accel Perf Model.
-    eNavUseAccelPerfModel = 0
+    NAV_USE_ACCEL_PERF_MODEL = 0
     # Specify min turn radius.
-    eNavMinTurnRadius = 1
+    NAV_MIN_TURN_RADIUS = 1
     # Specify max turn rate.
-    eNavMaxTurnRate = 2
+    NAV_MAX_TURN_RATE = 2
     # Specify max horiz accel.
-    eNavMaxHorizAccel = 3
+    NAV_MAX_HORIZ_ACCEL = 3
 
-AgEAvtrBasicManeuverStrategyNavControlLimit.eNavUseAccelPerfModel.__doc__ = "Use Accel Perf Model."
-AgEAvtrBasicManeuverStrategyNavControlLimit.eNavMinTurnRadius.__doc__ = "Specify min turn radius."
-AgEAvtrBasicManeuverStrategyNavControlLimit.eNavMaxTurnRate.__doc__ = "Specify max turn rate."
-AgEAvtrBasicManeuverStrategyNavControlLimit.eNavMaxHorizAccel.__doc__ = "Specify max horiz accel."
+AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL.__doc__ = "Use Accel Perf Model."
+AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS.__doc__ = "Specify min turn radius."
+AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE.__doc__ = "Specify max turn rate."
+AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL.__doc__ = "Specify max horiz accel."
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategyNavControlLimit"] = AgEAvtrBasicManeuverStrategyNavControlLimit
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"] = AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 
-class AgEAvtrAccelManeuverMode(IntEnum):
+class AVTR_ACCEL_MANEUVER_MODE(IntEnum):
     """The mode that the aircraft will adhere to the specified acceleration parameters."""
     # Constant value (default).
-    eAccelManeuverModeNormal = 0
+    ACCEL_MANEUVER_MODE_NORMAL = 0
     # Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius.
-    eAccelManeuverModeDensityScale = 1
+    ACCEL_MANEUVER_MODE_DENSITY_SCALE = 1
     # Aero/Prop maneuver mode.
-    eAccelManeuverModeAeroProp = 2
+    ACCEL_MANEUVER_MODE_AERO_PROP = 2
 
-AgEAvtrAccelManeuverMode.eAccelManeuverModeNormal.__doc__ = "Constant value (default)."
-AgEAvtrAccelManeuverMode.eAccelManeuverModeDensityScale.__doc__ = "Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius."
-AgEAvtrAccelManeuverMode.eAccelManeuverModeAeroProp.__doc__ = "Aero/Prop maneuver mode."
+AVTR_ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_NORMAL.__doc__ = "Constant value (default)."
+AVTR_ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE.__doc__ = "Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius."
+AVTR_ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_AERO_PROP.__doc__ = "Aero/Prop maneuver mode."
 
-agcls.AgTypeNameMap["AgEAvtrAccelManeuverMode"] = AgEAvtrAccelManeuverMode
+agcls.AgTypeNameMap["AVTR_ACCEL_MANEUVER_MODE"] = AVTR_ACCEL_MANEUVER_MODE
 
-class AgEAvtrAircraftAeroStrategy(IntEnum):
+class AVTR_AIRCRAFT_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
     # Simple aerodynamics.
-    eAircraftAeroSimple = 0
+    AIRCRAFT_AERO_SIMPLE = 0
     # External file aerodynamics.
-    eAircraftAeroExternalFile = 1
+    AIRCRAFT_AERO_EXTERNAL_FILE = 1
     # Basic fixed wing aerodynamics.
-    eAircraftAeroBasicFixedWing = 2
+    AIRCRAFT_AERO_BASIC_FIXED_WING = 2
     # Advanced missile aerodynamics.
-    eAircraftAeroAdvancedMissile = 3
+    AIRCRAFT_AERO_ADVANCED_MISSILE = 3
 
-AgEAvtrAircraftAeroStrategy.eAircraftAeroSimple.__doc__ = "Simple aerodynamics."
-AgEAvtrAircraftAeroStrategy.eAircraftAeroExternalFile.__doc__ = "External file aerodynamics."
-AgEAvtrAircraftAeroStrategy.eAircraftAeroBasicFixedWing.__doc__ = "Basic fixed wing aerodynamics."
-AgEAvtrAircraftAeroStrategy.eAircraftAeroAdvancedMissile.__doc__ = "Advanced missile aerodynamics."
+AVTR_AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE.__doc__ = "Simple aerodynamics."
+AVTR_AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
+AVTR_AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_BASIC_FIXED_WING.__doc__ = "Basic fixed wing aerodynamics."
+AVTR_AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_ADVANCED_MISSILE.__doc__ = "Advanced missile aerodynamics."
 
-agcls.AgTypeNameMap["AgEAvtrAircraftAeroStrategy"] = AgEAvtrAircraftAeroStrategy
+agcls.AgTypeNameMap["AVTR_AIRCRAFT_AERO_STRATEGY"] = AVTR_AIRCRAFT_AERO_STRATEGY
 
-class AgEAvtrAircraftPropStrategy(IntEnum):
+class AVTR_AIRCRAFT_PROP_STRATEGY(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
     # Simple propulsion.
-    eAircraftPropSimple = 0
+    AIRCRAFT_PROP_SIMPLE = 0
     # External file propulsion.
-    eAircraftPropExternalFile = 1
+    AIRCRAFT_PROP_EXTERNAL_FILE = 1
     # Basic fixed wing propulsion.
-    eAircraftPropBasicFixedWing = 2
+    AIRCRAFT_PROP_BASIC_FIXED_WING = 2
     # Missile - Ramjet propulsion.
-    eAircraftPropMissileRamjet = 3
+    AIRCRAFT_PROP_MISSILE_RAMJET = 3
     # Missile - Rocket propulsion.
-    eAircraftPropMissileRocket = 4
+    AIRCRAFT_PROP_MISSILE_ROCKET = 4
     # Missile - Turbojet propulsion.
-    eAircraftPropMissileTurbojet = 5
+    AIRCRAFT_PROP_MISSILE_TURBOJET = 5
 
-AgEAvtrAircraftPropStrategy.eAircraftPropSimple.__doc__ = "Simple propulsion."
-AgEAvtrAircraftPropStrategy.eAircraftPropExternalFile.__doc__ = "External file propulsion."
-AgEAvtrAircraftPropStrategy.eAircraftPropBasicFixedWing.__doc__ = "Basic fixed wing propulsion."
-AgEAvtrAircraftPropStrategy.eAircraftPropMissileRamjet.__doc__ = "Missile - Ramjet propulsion."
-AgEAvtrAircraftPropStrategy.eAircraftPropMissileRocket.__doc__ = "Missile - Rocket propulsion."
-AgEAvtrAircraftPropStrategy.eAircraftPropMissileTurbojet.__doc__ = "Missile - Turbojet propulsion."
+AVTR_AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE.__doc__ = "Simple propulsion."
+AVTR_AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_EXTERNAL_FILE.__doc__ = "External file propulsion."
+AVTR_AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_BASIC_FIXED_WING.__doc__ = "Basic fixed wing propulsion."
+AVTR_AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_RAMJET.__doc__ = "Missile - Ramjet propulsion."
+AVTR_AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_ROCKET.__doc__ = "Missile - Rocket propulsion."
+AVTR_AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_TURBOJET.__doc__ = "Missile - Turbojet propulsion."
 
-agcls.AgTypeNameMap["AgEAvtrAircraftPropStrategy"] = AgEAvtrAircraftPropStrategy
+agcls.AgTypeNameMap["AVTR_AIRCRAFT_PROP_STRATEGY"] = AVTR_AIRCRAFT_PROP_STRATEGY
 
-class AgEAvtrAGLMSL(IntEnum):
+class AVTR_AGLMSL(IntEnum):
     """The altitude mode."""
     # AGl altitude. ALtitude above local terrain
-    eAltAGL = 0
+    ALT_AGL = 0
     # MSL altitude. Altitude above sea level.
-    eAltMSL = 1
+    ALT_MSL = 1
 
-AgEAvtrAGLMSL.eAltAGL.__doc__ = "AGl altitude. ALtitude above local terrain"
-AgEAvtrAGLMSL.eAltMSL.__doc__ = "MSL altitude. Altitude above sea level."
+AVTR_AGLMSL.ALT_AGL.__doc__ = "AGl altitude. ALtitude above local terrain"
+AVTR_AGLMSL.ALT_MSL.__doc__ = "MSL altitude. Altitude above sea level."
 
-agcls.AgTypeNameMap["AgEAvtrAGLMSL"] = AgEAvtrAGLMSL
+agcls.AgTypeNameMap["AVTR_AGLMSL"] = AVTR_AGLMSL
 
-class AgEAvtrLandingApproachFixRangeMode(IntEnum):
+class AVTR_LANDING_APPROACH_FIX_RANGE_MODE(IntEnum):
     """The reference point on the runway for the Approach Fix Range."""
     # Runway center.
-    eRelToRunwayCenter = 0
+    REL_TO_RUNWAY_CENTER = 0
     # Runway end.
-    eRelToRunwayEnd = 1
+    REL_TO_RUNWAY_END = 1
 
-AgEAvtrLandingApproachFixRangeMode.eRelToRunwayCenter.__doc__ = "Runway center."
-AgEAvtrLandingApproachFixRangeMode.eRelToRunwayEnd.__doc__ = "Runway end."
+AVTR_LANDING_APPROACH_FIX_RANGE_MODE.REL_TO_RUNWAY_CENTER.__doc__ = "Runway center."
+AVTR_LANDING_APPROACH_FIX_RANGE_MODE.REL_TO_RUNWAY_END.__doc__ = "Runway end."
 
-agcls.AgTypeNameMap["AgEAvtrLandingApproachFixRangeMode"] = AgEAvtrLandingApproachFixRangeMode
+agcls.AgTypeNameMap["AVTR_LANDING_APPROACH_FIX_RANGE_MODE"] = AVTR_LANDING_APPROACH_FIX_RANGE_MODE
 
-class AgEAvtrAccelerationAdvAccelMode(IntEnum):
+class AVTR_ACCELERATION_ADV_ACCEL_MODE(IntEnum):
     """Acceleration mode for aircraft advanced acceleration models."""
     # Max acceleration.
-    eAccelModeMaxAccel = 0
+    ACCEL_MODE_MAX_ACCEL = 0
     # Manually override the acceleration.
-    eAccelModeOverrideAccel = 1
+    ACCEL_MODE_OVERRIDE_ACCEL = 1
 
-AgEAvtrAccelerationAdvAccelMode.eAccelModeMaxAccel.__doc__ = "Max acceleration."
-AgEAvtrAccelerationAdvAccelMode.eAccelModeOverrideAccel.__doc__ = "Manually override the acceleration."
+AVTR_ACCELERATION_ADV_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL.__doc__ = "Max acceleration."
+AVTR_ACCELERATION_ADV_ACCEL_MODE.ACCEL_MODE_OVERRIDE_ACCEL.__doc__ = "Manually override the acceleration."
 
-agcls.AgTypeNameMap["AgEAvtrAccelerationAdvAccelMode"] = AgEAvtrAccelerationAdvAccelMode
+agcls.AgTypeNameMap["AVTR_ACCELERATION_ADV_ACCEL_MODE"] = AVTR_ACCELERATION_ADV_ACCEL_MODE
 
-class AgEAvtrAccelManeuverAeroPropMode(IntEnum):
+class AVTR_ACCEL_MANEUVER_AERO_PROP_MODE(IntEnum):
     """The mode used for the Aero/Prop maneuver mode helper for aircraft basic acceleration models."""
     # Use Thrust and Lift Coefficient
-    eUseThrustAndLiftCoefficient = 0
+    USE_THRUST_AND_LIFT_COEFFICIENT = 0
     # Use Lift Coefficient only.
-    eUseLiftCoefficientOnly = 1
+    USE_LIFT_COEFFICIENT_ONLY = 1
 
-AgEAvtrAccelManeuverAeroPropMode.eUseThrustAndLiftCoefficient.__doc__ = "Use Thrust and Lift Coefficient"
-AgEAvtrAccelManeuverAeroPropMode.eUseLiftCoefficientOnly.__doc__ = "Use Lift Coefficient only."
+AVTR_ACCEL_MANEUVER_AERO_PROP_MODE.USE_THRUST_AND_LIFT_COEFFICIENT.__doc__ = "Use Thrust and Lift Coefficient"
+AVTR_ACCEL_MANEUVER_AERO_PROP_MODE.USE_LIFT_COEFFICIENT_ONLY.__doc__ = "Use Lift Coefficient only."
 
-agcls.AgTypeNameMap["AgEAvtrAccelManeuverAeroPropMode"] = AgEAvtrAccelManeuverAeroPropMode
+agcls.AgTypeNameMap["AVTR_ACCEL_MANEUVER_AERO_PROP_MODE"] = AVTR_ACCEL_MANEUVER_AERO_PROP_MODE
 
-class AgEAvtrBasicManeuverStrategyAirspeedPerfLimits(IntEnum):
+class AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS(IntEnum):
     """The type of response Aviator will have if the basic maneuver attempts to exceed the airspeed limit."""
     # Constrain the aircraft to not exceed the airspeed limit.
-    eConstrainIfViolated = 0
+    CONSTRAIN_IF_VIOLATED = 0
     # Stop when airspeed limit exceeded..
-    eStopIfViolated = 1
+    STOP_IF_VIOLATED = 1
     # Error when airspeed limit exceeded.
-    eErrorIfViolated = 2
+    ERROR_IF_VIOLATED = 2
     # Ignore when airspeed limit exceeded.
-    eIgnoreIfViolated = 3
+    IGNORE_IF_VIOLATED = 3
 
-AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eConstrainIfViolated.__doc__ = "Constrain the aircraft to not exceed the airspeed limit."
-AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eStopIfViolated.__doc__ = "Stop when airspeed limit exceeded.."
-AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eErrorIfViolated.__doc__ = "Error when airspeed limit exceeded."
-AgEAvtrBasicManeuverStrategyAirspeedPerfLimits.eIgnoreIfViolated.__doc__ = "Ignore when airspeed limit exceeded."
+AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED.__doc__ = "Constrain the aircraft to not exceed the airspeed limit."
+AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED.__doc__ = "Stop when airspeed limit exceeded.."
+AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.ERROR_IF_VIOLATED.__doc__ = "Error when airspeed limit exceeded."
+AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.IGNORE_IF_VIOLATED.__doc__ = "Ignore when airspeed limit exceeded."
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategyAirspeedPerfLimits"] = AgEAvtrBasicManeuverStrategyAirspeedPerfLimits
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS"] = AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
 
-class AgEAvtrBasicManeuverStrategyPoweredCruiseMode(IntEnum):
+class AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE(IntEnum):
     """Powered Cruise Options."""
     # The mode selected is unpowered options.
-    eGlideSpecifyUnPoweredCruise = 0
+    GLIDE_SPECIFY_UN_POWERED_CRUISE = 0
     # The mode selected is specifiy throttle.
-    eGlideSpecifyThrottle = 1
+    GLIDE_SPECIFY_THROTTLE = 1
     # The mode selected is thrust model.
-    eGlideSpecifyThrustModel = 2
+    GLIDE_SPECIFY_THRUST_MODEL = 2
 
-AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyUnPoweredCruise.__doc__ = "The mode selected is unpowered options."
-AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrottle.__doc__ = "The mode selected is specifiy throttle."
-AgEAvtrBasicManeuverStrategyPoweredCruiseMode.eGlideSpecifyThrustModel.__doc__ = "The mode selected is thrust model."
+AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE.GLIDE_SPECIFY_UN_POWERED_CRUISE.__doc__ = "The mode selected is unpowered options."
+AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE.GLIDE_SPECIFY_THROTTLE.__doc__ = "The mode selected is specifiy throttle."
+AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE.GLIDE_SPECIFY_THRUST_MODEL.__doc__ = "The mode selected is thrust model."
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverStrategyPoweredCruiseMode"] = AgEAvtrBasicManeuverStrategyPoweredCruiseMode
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE"] = AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE
 
-class AgEAvtrTurnMode(IntEnum):
+class AVTR_TURN_MODE(IntEnum):
     """The mode to specify an aircraft's level turn performance for acceleration performance models."""
     # Turn G. The standard G force of the aircraft in a turn.
-    eTurnModeTurnG = 0
+    TURN_MODE_TURN_G = 0
     # Bank angle.
-    eTurnModeBankAngle = 1
+    TURN_MODE_BANK_ANGLE = 1
     # Turn acceleration.
-    eTurnModeAccel = 2
+    TURN_MODE_ACCEL = 2
     # Turn radius.
-    eTurnModeRadius = 3
+    TURN_MODE_RADIUS = 3
     # Turn rate.
-    eTurnModeRate = 4
+    TURN_MODE_RATE = 4
 
-AgEAvtrTurnMode.eTurnModeTurnG.__doc__ = "Turn G. The standard G force of the aircraft in a turn."
-AgEAvtrTurnMode.eTurnModeBankAngle.__doc__ = "Bank angle."
-AgEAvtrTurnMode.eTurnModeAccel.__doc__ = "Turn acceleration."
-AgEAvtrTurnMode.eTurnModeRadius.__doc__ = "Turn radius."
-AgEAvtrTurnMode.eTurnModeRate.__doc__ = "Turn rate."
+AVTR_TURN_MODE.TURN_MODE_TURN_G.__doc__ = "Turn G. The standard G force of the aircraft in a turn."
+AVTR_TURN_MODE.TURN_MODE_BANK_ANGLE.__doc__ = "Bank angle."
+AVTR_TURN_MODE.TURN_MODE_ACCEL.__doc__ = "Turn acceleration."
+AVTR_TURN_MODE.TURN_MODE_RADIUS.__doc__ = "Turn radius."
+AVTR_TURN_MODE.TURN_MODE_RATE.__doc__ = "Turn rate."
 
-agcls.AgTypeNameMap["AgEAvtrTurnMode"] = AgEAvtrTurnMode
+agcls.AgTypeNameMap["AVTR_TURN_MODE"] = AVTR_TURN_MODE
 
-class AgEAvtrPointToPointMode(IntEnum):
+class AVTR_POINT_TO_POINT_MODE(IntEnum):
     """The heading or course of the aircraft at the beginning of the procedure."""
     # Fly direct.
-    eFlyDirect = 0
+    FLY_DIRECT = 0
     # Arrive on course for next procedure.
-    eArriveOnCourseForNext = 1
+    ARRIVE_ON_COURSE_FOR_NEXT = 1
     # Arrive on course.
-    eArriveOnCourse = 2
+    ARRIVE_ON_COURSE = 2
     # Inscribed turn.
-    eInscribedTurn = 3
+    INSCRIBED_TURN = 3
     # Arrive on heading into wind.
-    eArriveOnHdgIntoWind = 4
+    ARRIVE_ON_HDG_INTO_WIND = 4
 
-AgEAvtrPointToPointMode.eFlyDirect.__doc__ = "Fly direct."
-AgEAvtrPointToPointMode.eArriveOnCourseForNext.__doc__ = "Arrive on course for next procedure."
-AgEAvtrPointToPointMode.eArriveOnCourse.__doc__ = "Arrive on course."
-AgEAvtrPointToPointMode.eInscribedTurn.__doc__ = "Inscribed turn."
-AgEAvtrPointToPointMode.eArriveOnHdgIntoWind.__doc__ = "Arrive on heading into wind."
+AVTR_POINT_TO_POINT_MODE.FLY_DIRECT.__doc__ = "Fly direct."
+AVTR_POINT_TO_POINT_MODE.ARRIVE_ON_COURSE_FOR_NEXT.__doc__ = "Arrive on course for next procedure."
+AVTR_POINT_TO_POINT_MODE.ARRIVE_ON_COURSE.__doc__ = "Arrive on course."
+AVTR_POINT_TO_POINT_MODE.INSCRIBED_TURN.__doc__ = "Inscribed turn."
+AVTR_POINT_TO_POINT_MODE.ARRIVE_ON_HDG_INTO_WIND.__doc__ = "Arrive on heading into wind."
 
-agcls.AgTypeNameMap["AgEAvtrPointToPointMode"] = AgEAvtrPointToPointMode
+agcls.AgTypeNameMap["AVTR_POINT_TO_POINT_MODE"] = AVTR_POINT_TO_POINT_MODE
 
-class AgEAvtrAltitudeConstraintManeuverMode(IntEnum):
+class AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE(IntEnum):
     """Turn mode for procedures that may require a level off maneuver."""
     # Automatic turn.Aviator will determine the direction of the turn.
-    eLevelOffAutomaticManeuver = 0
+    LEVEL_OFF_AUTOMATIC_MANEUVER = 0
     # Left turn.
-    eLevelOffLeftTurnManeuver = 1
+    LEVEL_OFF_LEFT_TURN_MANEUVER = 1
     # Right turn.
-    eLevelOffRightTurnManeuver = 2
+    LEVEL_OFF_RIGHT_TURN_MANEUVER = 2
     # No turn. A level off maneuver will not be performed.
-    eLevelOffNoManeuver = 3
+    LEVEL_OFF_NO_MANEUVER = 3
 
-AgEAvtrAltitudeConstraintManeuverMode.eLevelOffAutomaticManeuver.__doc__ = "Automatic turn.Aviator will determine the direction of the turn."
-AgEAvtrAltitudeConstraintManeuverMode.eLevelOffLeftTurnManeuver.__doc__ = "Left turn."
-AgEAvtrAltitudeConstraintManeuverMode.eLevelOffRightTurnManeuver.__doc__ = "Right turn."
-AgEAvtrAltitudeConstraintManeuverMode.eLevelOffNoManeuver.__doc__ = "No turn. A level off maneuver will not be performed."
+AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_AUTOMATIC_MANEUVER.__doc__ = "Automatic turn.Aviator will determine the direction of the turn."
+AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER.__doc__ = "Left turn."
+AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_RIGHT_TURN_MANEUVER.__doc__ = "Right turn."
+AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_NO_MANEUVER.__doc__ = "No turn. A level off maneuver will not be performed."
 
-agcls.AgTypeNameMap["AgEAvtrAltitudeConstraintManeuverMode"] = AgEAvtrAltitudeConstraintManeuverMode
+agcls.AgTypeNameMap["AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE"] = AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE
 
-class AgEAvtrWindModelType(IntEnum):
+class AVTR_WIND_MODEL_TYPE(IntEnum):
     """The wind model type."""
     # Constant Wind/Speed.
-    eConstantWind = 0
+    CONSTANT_WIND = 0
     # NOAA ADDS Service.
-    eADDS = 1
+    ADDS = 1
     # Disabled wind model.
-    eDisabled = 2
+    DISABLED = 2
 
-AgEAvtrWindModelType.eConstantWind.__doc__ = "Constant Wind/Speed."
-AgEAvtrWindModelType.eADDS.__doc__ = "NOAA ADDS Service."
-AgEAvtrWindModelType.eDisabled.__doc__ = "Disabled wind model."
+AVTR_WIND_MODEL_TYPE.CONSTANT_WIND.__doc__ = "Constant Wind/Speed."
+AVTR_WIND_MODEL_TYPE.ADDS.__doc__ = "NOAA ADDS Service."
+AVTR_WIND_MODEL_TYPE.DISABLED.__doc__ = "Disabled wind model."
 
-agcls.AgTypeNameMap["AgEAvtrWindModelType"] = AgEAvtrWindModelType
+agcls.AgTypeNameMap["AVTR_WIND_MODEL_TYPE"] = AVTR_WIND_MODEL_TYPE
 
-class AgEAvtrWindAtmosModelSource(IntEnum):
+class AVTR_WIND_ATMOS_MODEL_SOURCE(IntEnum):
     """The source for the wind or atmosphere model."""
     # Scenario Model.
-    eScenarioModel = 0
+    SCENARIO_MODEL = 0
     # Mission Model.
-    eMissionModel = 1
+    MISSION_MODEL = 1
     # Procedure Model.
-    eProcedureModel = 2
+    PROCEDURE_MODEL = 2
 
-AgEAvtrWindAtmosModelSource.eScenarioModel.__doc__ = "Scenario Model."
-AgEAvtrWindAtmosModelSource.eMissionModel.__doc__ = "Mission Model."
-AgEAvtrWindAtmosModelSource.eProcedureModel.__doc__ = "Procedure Model."
+AVTR_WIND_ATMOS_MODEL_SOURCE.SCENARIO_MODEL.__doc__ = "Scenario Model."
+AVTR_WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL.__doc__ = "Mission Model."
+AVTR_WIND_ATMOS_MODEL_SOURCE.PROCEDURE_MODEL.__doc__ = "Procedure Model."
 
-agcls.AgTypeNameMap["AgEAvtrWindAtmosModelSource"] = AgEAvtrWindAtmosModelSource
+agcls.AgTypeNameMap["AVTR_WIND_ATMOS_MODEL_SOURCE"] = AVTR_WIND_ATMOS_MODEL_SOURCE
 
-class AgEAvtrADDSMsgInterpType(IntEnum):
+class AVTR_ADDS_MSG_INTERP_TYPE(IntEnum):
     """The interpolation method for the wind conditions."""
     # One Point Interpolation.
-    eInterpOnePoint = 0
+    INTERP_ONE_POINT = 0
     # Two Point Interpolation.
-    eInterpTwoPoint = 1
+    INTERP_TWO_POINT = 1
 
-AgEAvtrADDSMsgInterpType.eInterpOnePoint.__doc__ = "One Point Interpolation."
-AgEAvtrADDSMsgInterpType.eInterpTwoPoint.__doc__ = "Two Point Interpolation."
+AVTR_ADDS_MSG_INTERP_TYPE.INTERP_ONE_POINT.__doc__ = "One Point Interpolation."
+AVTR_ADDS_MSG_INTERP_TYPE.INTERP_TWO_POINT.__doc__ = "Two Point Interpolation."
 
-agcls.AgTypeNameMap["AgEAvtrADDSMsgInterpType"] = AgEAvtrADDSMsgInterpType
+agcls.AgTypeNameMap["AVTR_ADDS_MSG_INTERP_TYPE"] = AVTR_ADDS_MSG_INTERP_TYPE
 
-class AgEAvtrADDSMissingMsgType(IntEnum):
+class AVTR_ADDS_MISSING_MSG_TYPE(IntEnum):
     """The wind effect to apply if there is an interval gap between messages."""
     # Zero Wind.
-    eMissingMsgZeroWind = 0
+    MISSING_MSG_ZERO_WIND = 0
     # Interpolate End Points.
-    eMissingMsgInterpEndPoints = 1
+    MISSING_MSG_INTERP_END_POINTS = 1
 
-AgEAvtrADDSMissingMsgType.eMissingMsgZeroWind.__doc__ = "Zero Wind."
-AgEAvtrADDSMissingMsgType.eMissingMsgInterpEndPoints.__doc__ = "Interpolate End Points."
+AVTR_ADDS_MISSING_MSG_TYPE.MISSING_MSG_ZERO_WIND.__doc__ = "Zero Wind."
+AVTR_ADDS_MISSING_MSG_TYPE.MISSING_MSG_INTERP_END_POINTS.__doc__ = "Interpolate End Points."
 
-agcls.AgTypeNameMap["AgEAvtrADDSMissingMsgType"] = AgEAvtrADDSMissingMsgType
+agcls.AgTypeNameMap["AVTR_ADDS_MISSING_MSG_TYPE"] = AVTR_ADDS_MISSING_MSG_TYPE
 
-class AgEAvtrADDSMsgExtrapType(IntEnum):
+class AVTR_ADDS_MSG_EXTRAP_TYPE(IntEnum):
     """The wind effect to apply if the procedure(s) extend beyond the intervals of any available messages."""
     # Zero Wind.
-    eExtrapMsgZeroWind = 0
+    EXTRAP_MSG_ZERO_WIND = 0
     # Hold End Point Wind.
-    eExtrapMsgHoldEndPoints = 1
+    EXTRAP_MSG_HOLD_END_POINTS = 1
 
-AgEAvtrADDSMsgExtrapType.eExtrapMsgZeroWind.__doc__ = "Zero Wind."
-AgEAvtrADDSMsgExtrapType.eExtrapMsgHoldEndPoints.__doc__ = "Hold End Point Wind."
+AVTR_ADDS_MSG_EXTRAP_TYPE.EXTRAP_MSG_ZERO_WIND.__doc__ = "Zero Wind."
+AVTR_ADDS_MSG_EXTRAP_TYPE.EXTRAP_MSG_HOLD_END_POINTS.__doc__ = "Hold End Point Wind."
 
-agcls.AgTypeNameMap["AgEAvtrADDSMsgExtrapType"] = AgEAvtrADDSMsgExtrapType
+agcls.AgTypeNameMap["AVTR_ADDS_MSG_EXTRAP_TYPE"] = AVTR_ADDS_MSG_EXTRAP_TYPE
 
-class AgEAvtrADDSForecastType(IntEnum):
+class AVTR_ADDS_FORECAST_TYPE(IntEnum):
     """The forecast type for the NOAA ADDS message."""
     # 6 hour forecast
-    e6Hour = 0
+    HOUR_6 = 0
     # 12 hour forecast
-    e12Hour = 1
+    HOUR_12 = 1
     # 24 hour forecast
-    e24Hour = 2
+    HOUR_24 = 2
 
-AgEAvtrADDSForecastType.e6Hour.__doc__ = "6 hour forecast"
-AgEAvtrADDSForecastType.e12Hour.__doc__ = "12 hour forecast"
-AgEAvtrADDSForecastType.e24Hour.__doc__ = "24 hour forecast"
+AVTR_ADDS_FORECAST_TYPE.HOUR_6.__doc__ = "6 hour forecast"
+AVTR_ADDS_FORECAST_TYPE.HOUR_12.__doc__ = "12 hour forecast"
+AVTR_ADDS_FORECAST_TYPE.HOUR_24.__doc__ = "24 hour forecast"
 
-agcls.AgTypeNameMap["AgEAvtrADDSForecastType"] = AgEAvtrADDSForecastType
+agcls.AgTypeNameMap["AVTR_ADDS_FORECAST_TYPE"] = AVTR_ADDS_FORECAST_TYPE
 
-class AgEAvtrAtmosphereModel(IntEnum):
+class AVTR_ATMOSPHERE_MODEL(IntEnum):
     """The basic atmosphere model type."""
     # 1976 U.S. Standard Atmosphere
-    eStandard1976 = 0
+    STANDARD1976 = 0
     # U.S. MIL HDBK 310 - Hot
-    eMILHot = 1
+    MIL_HOT = 1
     # U.S. MIL HDBK 310 - Cold
-    eMILCold = 2
+    MIL_COLD = 2
     # U.S. MIL HDBK 310 - Low Density
-    eMILLowDensity = 3
+    MIL_LOW_DENSITY = 3
     # U.S. MIL HDBK 310 - High Density
-    eMILHighDensity = 4
+    MIL_HIGH_DENSITY = 4
     # Interpolate MIL HDBK 310 Data
-    eMILInterpolate = 5
+    MIL_INTERPOLATE = 5
 
-AgEAvtrAtmosphereModel.eStandard1976.__doc__ = "1976 U.S. Standard Atmosphere"
-AgEAvtrAtmosphereModel.eMILHot.__doc__ = "U.S. MIL HDBK 310 - Hot"
-AgEAvtrAtmosphereModel.eMILCold.__doc__ = "U.S. MIL HDBK 310 - Cold"
-AgEAvtrAtmosphereModel.eMILLowDensity.__doc__ = "U.S. MIL HDBK 310 - Low Density"
-AgEAvtrAtmosphereModel.eMILHighDensity.__doc__ = "U.S. MIL HDBK 310 - High Density"
-AgEAvtrAtmosphereModel.eMILInterpolate.__doc__ = "Interpolate MIL HDBK 310 Data"
+AVTR_ATMOSPHERE_MODEL.STANDARD1976.__doc__ = "1976 U.S. Standard Atmosphere"
+AVTR_ATMOSPHERE_MODEL.MIL_HOT.__doc__ = "U.S. MIL HDBK 310 - Hot"
+AVTR_ATMOSPHERE_MODEL.MIL_COLD.__doc__ = "U.S. MIL HDBK 310 - Cold"
+AVTR_ATMOSPHERE_MODEL.MIL_LOW_DENSITY.__doc__ = "U.S. MIL HDBK 310 - Low Density"
+AVTR_ATMOSPHERE_MODEL.MIL_HIGH_DENSITY.__doc__ = "U.S. MIL HDBK 310 - High Density"
+AVTR_ATMOSPHERE_MODEL.MIL_INTERPOLATE.__doc__ = "Interpolate MIL HDBK 310 Data"
 
-agcls.AgTypeNameMap["AgEAvtrAtmosphereModel"] = AgEAvtrAtmosphereModel
+agcls.AgTypeNameMap["AVTR_ATMOSPHERE_MODEL"] = AVTR_ATMOSPHERE_MODEL
 
-class AgEAvtrSmoothTurnMode(IntEnum):
+class AVTR_SMOOTH_TURN_MODE(IntEnum):
     """The basic maneuver smooth turn mode."""
     # Specify the load factor of the smooth turn
-    eSmoothTurnLoadFactor = 0
+    SMOOTH_TURN_LOAD_FACTOR = 0
     # Specify the roll angle of the smooth turn
-    eSmoothTurnRollAngle = 1
+    SMOOTH_TURN_ROLL_ANGLE = 1
 
-AgEAvtrSmoothTurnMode.eSmoothTurnLoadFactor.__doc__ = "Specify the load factor of the smooth turn"
-AgEAvtrSmoothTurnMode.eSmoothTurnRollAngle.__doc__ = "Specify the roll angle of the smooth turn"
+AVTR_SMOOTH_TURN_MODE.SMOOTH_TURN_LOAD_FACTOR.__doc__ = "Specify the load factor of the smooth turn"
+AVTR_SMOOTH_TURN_MODE.SMOOTH_TURN_ROLL_ANGLE.__doc__ = "Specify the roll angle of the smooth turn"
 
-agcls.AgTypeNameMap["AgEAvtrSmoothTurnMode"] = AgEAvtrSmoothTurnMode
+agcls.AgTypeNameMap["AVTR_SMOOTH_TURN_MODE"] = AVTR_SMOOTH_TURN_MODE
 
-class AgEAvtrPerfModelOverride(IntEnum):
+class AVTR_PERF_MODEL_OVERRIDE(IntEnum):
     """The performance model override mode."""
     # Use the performance model value
-    ePerfModelValue = 0
+    PERF_MODEL_VALUE = 0
     # Override the performance model value
-    eOverride = 1
+    OVERRIDE = 1
 
-AgEAvtrPerfModelOverride.ePerfModelValue.__doc__ = "Use the performance model value"
-AgEAvtrPerfModelOverride.eOverride.__doc__ = "Override the performance model value"
+AVTR_PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE.__doc__ = "Use the performance model value"
+AVTR_PERF_MODEL_OVERRIDE.OVERRIDE.__doc__ = "Override the performance model value"
 
-agcls.AgTypeNameMap["AgEAvtrPerfModelOverride"] = AgEAvtrPerfModelOverride
+agcls.AgTypeNameMap["AVTR_PERF_MODEL_OVERRIDE"] = AVTR_PERF_MODEL_OVERRIDE
 
-class AgEAvtrBasicManeuverAirspeedMode(IntEnum):
+class AVTR_BASIC_MANEUVER_AIRSPEED_MODE(IntEnum):
     """The basic maneuver airspeed mode."""
     # Maintain the current airspeed
-    eMaintainCurrentAirspeed = 0
+    MAINTAIN_CURRENT_AIRSPEED = 0
     # Maintain the specified airspeed
-    eMaintainSpecifiedAirspeed = 1
+    MAINTAIN_SPECIFIED_AIRSPEED = 1
     # Maintain the minimum airspeed for the aircraft
-    eMaintainMinAirspeed = 2
+    MAINTAIN_MIN_AIRSPEED = 2
     # Maintain the maximum endurance airspeed for the aircraft
-    eMaintainMaxEnduranceAirspeed = 3
+    MAINTAIN_MAX_ENDURANCE_AIRSPEED = 3
     # Maintain the maximum range airspeed for the aircraft
-    eMaintainMaxRangeAirspeed = 4
+    MAINTAIN_MAX_RANGE_AIRSPEED = 4
     # Maintain the maximum airspeed for the aircraft
-    eMaintainMaxAirspeed = 5
+    MAINTAIN_MAX_AIRSPEED = 5
     # Maintain the maximum performance airspeed for the aircraft
-    eMaintainMaxPerformanceAirspeed = 6
+    MAINTAIN_MAX_PERFORMANCE_AIRSPEED = 6
     # Accelerate at the specified rate
-    eAccelAtG = 7
+    ACCEL_AT_G = 7
     # Decelerate at the specified rate
-    eDecelAtG = 8
+    DECEL_AT_G = 8
     # Accel/Decel at the force of gravity (no drag, no thrust)
-    eAccelDecelUnderGravity = 9
+    ACCEL_DECEL_UNDER_GRAVITY = 9
     # Accel/Decel using Aero/Propulsion with throttle setting
-    eAccelDecelAeroProp = 10
+    ACCEL_DECEL_AERO_PROP = 10
     # Specify thrust (using drag from Aerodynamics model)
-    eThrust = 11
+    THRUST = 11
     # Interpolate Accelerate/Decelerate over interval
-    eInterpolateAccelDecel = 12
+    INTERPOLATE_ACCEL_DECEL = 12
 
-AgEAvtrBasicManeuverAirspeedMode.eMaintainCurrentAirspeed.__doc__ = "Maintain the current airspeed"
-AgEAvtrBasicManeuverAirspeedMode.eMaintainSpecifiedAirspeed.__doc__ = "Maintain the specified airspeed"
-AgEAvtrBasicManeuverAirspeedMode.eMaintainMinAirspeed.__doc__ = "Maintain the minimum airspeed for the aircraft"
-AgEAvtrBasicManeuverAirspeedMode.eMaintainMaxEnduranceAirspeed.__doc__ = "Maintain the maximum endurance airspeed for the aircraft"
-AgEAvtrBasicManeuverAirspeedMode.eMaintainMaxRangeAirspeed.__doc__ = "Maintain the maximum range airspeed for the aircraft"
-AgEAvtrBasicManeuverAirspeedMode.eMaintainMaxAirspeed.__doc__ = "Maintain the maximum airspeed for the aircraft"
-AgEAvtrBasicManeuverAirspeedMode.eMaintainMaxPerformanceAirspeed.__doc__ = "Maintain the maximum performance airspeed for the aircraft"
-AgEAvtrBasicManeuverAirspeedMode.eAccelAtG.__doc__ = "Accelerate at the specified rate"
-AgEAvtrBasicManeuverAirspeedMode.eDecelAtG.__doc__ = "Decelerate at the specified rate"
-AgEAvtrBasicManeuverAirspeedMode.eAccelDecelUnderGravity.__doc__ = "Accel/Decel at the force of gravity (no drag, no thrust)"
-AgEAvtrBasicManeuverAirspeedMode.eAccelDecelAeroProp.__doc__ = "Accel/Decel using Aero/Propulsion with throttle setting"
-AgEAvtrBasicManeuverAirspeedMode.eThrust.__doc__ = "Specify thrust (using drag from Aerodynamics model)"
-AgEAvtrBasicManeuverAirspeedMode.eInterpolateAccelDecel.__doc__ = "Interpolate Accelerate/Decelerate over interval"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_CURRENT_AIRSPEED.__doc__ = "Maintain the current airspeed"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_SPECIFIED_AIRSPEED.__doc__ = "Maintain the specified airspeed"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MIN_AIRSPEED.__doc__ = "Maintain the minimum airspeed for the aircraft"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_ENDURANCE_AIRSPEED.__doc__ = "Maintain the maximum endurance airspeed for the aircraft"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_RANGE_AIRSPEED.__doc__ = "Maintain the maximum range airspeed for the aircraft"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_AIRSPEED.__doc__ = "Maintain the maximum airspeed for the aircraft"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_PERFORMANCE_AIRSPEED.__doc__ = "Maintain the maximum performance airspeed for the aircraft"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_AT_G.__doc__ = "Accelerate at the specified rate"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.DECEL_AT_G.__doc__ = "Decelerate at the specified rate"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_UNDER_GRAVITY.__doc__ = "Accel/Decel at the force of gravity (no drag, no thrust)"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_AERO_PROP.__doc__ = "Accel/Decel using Aero/Propulsion with throttle setting"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.THRUST.__doc__ = "Specify thrust (using drag from Aerodynamics model)"
+AVTR_BASIC_MANEUVER_AIRSPEED_MODE.INTERPOLATE_ACCEL_DECEL.__doc__ = "Interpolate Accelerate/Decelerate over interval"
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverAirspeedMode"] = AgEAvtrBasicManeuverAirspeedMode
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_AIRSPEED_MODE"] = AVTR_BASIC_MANEUVER_AIRSPEED_MODE
 
-class AgEAvtrAileronRollFlightPath(IntEnum):
+class AVTR_AILERON_ROLL_FLIGHT_PATH(IntEnum):
     """The flight path option for an aileron roll strategy for a basic maneuver procedure."""
     # Fly a straight line flight path
-    eStraightLineFlightPath = 0
+    STRAIGHT_LINE_FLIGHT_PATH = 0
     # Fly a zero G flight path
-    eZeroGFlightPath = 1
+    ZERO_G_FLIGHT_PATH = 1
 
-AgEAvtrAileronRollFlightPath.eStraightLineFlightPath.__doc__ = "Fly a straight line flight path"
-AgEAvtrAileronRollFlightPath.eZeroGFlightPath.__doc__ = "Fly a zero G flight path"
+AVTR_AILERON_ROLL_FLIGHT_PATH.STRAIGHT_LINE_FLIGHT_PATH.__doc__ = "Fly a straight line flight path"
+AVTR_AILERON_ROLL_FLIGHT_PATH.ZERO_G_FLIGHT_PATH.__doc__ = "Fly a zero G flight path"
 
-agcls.AgTypeNameMap["AgEAvtrAileronRollFlightPath"] = AgEAvtrAileronRollFlightPath
+agcls.AgTypeNameMap["AVTR_AILERON_ROLL_FLIGHT_PATH"] = AVTR_AILERON_ROLL_FLIGHT_PATH
 
-class AgEAvtrRollLeftRight(IntEnum):
+class AVTR_ROLL_LEFT_RIGHT(IntEnum):
     """The roll direction for an aileron roll strategy for a basic maneuver procedure."""
     # Roll left
-    eRollLeft = 0
+    ROLL_LEFT = 0
     # Roll right
-    eRollRight = 1
+    ROLL_RIGHT = 1
 
-AgEAvtrRollLeftRight.eRollLeft.__doc__ = "Roll left"
-AgEAvtrRollLeftRight.eRollRight.__doc__ = "Roll right"
+AVTR_ROLL_LEFT_RIGHT.ROLL_LEFT.__doc__ = "Roll left"
+AVTR_ROLL_LEFT_RIGHT.ROLL_RIGHT.__doc__ = "Roll right"
 
-agcls.AgTypeNameMap["AgEAvtrRollLeftRight"] = AgEAvtrRollLeftRight
+agcls.AgTypeNameMap["AVTR_ROLL_LEFT_RIGHT"] = AVTR_ROLL_LEFT_RIGHT
 
-class AgEAvtrRollUprightInverted(IntEnum):
+class AVTR_ROLL_UPRIGHT_INVERTED(IntEnum):
     """The orientation for an aileron roll strategy for a basic maneuver procedure."""
     # Upright roll
-    eRollUpright = 0
+    ROLL_UPRIGHT = 0
     # Inverted roll
-    eRollInverted = 1
+    ROLL_INVERTED = 1
 
-AgEAvtrRollUprightInverted.eRollUpright.__doc__ = "Upright roll"
-AgEAvtrRollUprightInverted.eRollInverted.__doc__ = "Inverted roll"
+AVTR_ROLL_UPRIGHT_INVERTED.ROLL_UPRIGHT.__doc__ = "Upright roll"
+AVTR_ROLL_UPRIGHT_INVERTED.ROLL_INVERTED.__doc__ = "Inverted roll"
 
-agcls.AgTypeNameMap["AgEAvtrRollUprightInverted"] = AgEAvtrRollUprightInverted
+agcls.AgTypeNameMap["AVTR_ROLL_UPRIGHT_INVERTED"] = AVTR_ROLL_UPRIGHT_INVERTED
 
-class AgEAvtrAileronRollMode(IntEnum):
+class AVTR_AILERON_ROLL_MODE(IntEnum):
     """The roll mode aileron roll strategy for a basic maneuver procedure."""
     # Specify the angle to roll
-    eRollToAngle = 0
+    ROLL_TO_ANGLE = 0
     # Specify the orientation to roll to
-    eRollToOrientation = 1
+    ROLL_TO_ORIENTATION = 1
 
-AgEAvtrAileronRollMode.eRollToAngle.__doc__ = "Specify the angle to roll"
-AgEAvtrAileronRollMode.eRollToOrientation.__doc__ = "Specify the orientation to roll to"
+AVTR_AILERON_ROLL_MODE.ROLL_TO_ANGLE.__doc__ = "Specify the angle to roll"
+AVTR_AILERON_ROLL_MODE.ROLL_TO_ORIENTATION.__doc__ = "Specify the orientation to roll to"
 
-agcls.AgTypeNameMap["AgEAvtrAileronRollMode"] = AgEAvtrAileronRollMode
+agcls.AgTypeNameMap["AVTR_AILERON_ROLL_MODE"] = AVTR_AILERON_ROLL_MODE
 
-class AgEAvtrFlyAOALeftRight(IntEnum):
+class AVTR_FLY_AOA_LEFT_RIGHT(IntEnum):
     """The roll direction for a Fly AOA strategy for a basic maneuver procedure."""
     # Roll left
-    eFlyAOALeft = 0
+    FLY_AOA_LEFT = 0
     # Roll right
-    eFlyAOARight = 1
+    FLY_AOA_RIGHT = 1
     # No roll
-    eFlyAOANoRoll = 2
+    FLY_AOA_NO_ROLL = 2
 
-AgEAvtrFlyAOALeftRight.eFlyAOALeft.__doc__ = "Roll left"
-AgEAvtrFlyAOALeftRight.eFlyAOARight.__doc__ = "Roll right"
-AgEAvtrFlyAOALeftRight.eFlyAOANoRoll.__doc__ = "No roll"
+AVTR_FLY_AOA_LEFT_RIGHT.FLY_AOA_LEFT.__doc__ = "Roll left"
+AVTR_FLY_AOA_LEFT_RIGHT.FLY_AOA_RIGHT.__doc__ = "Roll right"
+AVTR_FLY_AOA_LEFT_RIGHT.FLY_AOA_NO_ROLL.__doc__ = "No roll"
 
-agcls.AgTypeNameMap["AgEAvtrFlyAOALeftRight"] = AgEAvtrFlyAOALeftRight
+agcls.AgTypeNameMap["AVTR_FLY_AOA_LEFT_RIGHT"] = AVTR_FLY_AOA_LEFT_RIGHT
 
-class AgEAvtrSmoothAccelLeftRight(IntEnum):
+class AVTR_SMOOTH_ACCEL_LEFT_RIGHT(IntEnum):
     """The roll direction for a smooth acceleration strategy for a basic maneuver procedure."""
     # Roll left
-    eSmoothAccelLeft = 0
+    SMOOTH_ACCEL_LEFT = 0
     # Roll right
-    eSmoothAccelRight = 1
+    SMOOTH_ACCEL_RIGHT = 1
     # No roll
-    eSmoothAccelNoRoll = 2
+    SMOOTH_ACCEL_NO_ROLL = 2
 
-AgEAvtrSmoothAccelLeftRight.eSmoothAccelLeft.__doc__ = "Roll left"
-AgEAvtrSmoothAccelLeftRight.eSmoothAccelRight.__doc__ = "Roll right"
-AgEAvtrSmoothAccelLeftRight.eSmoothAccelNoRoll.__doc__ = "No roll"
+AVTR_SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_LEFT.__doc__ = "Roll left"
+AVTR_SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_RIGHT.__doc__ = "Roll right"
+AVTR_SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_NO_ROLL.__doc__ = "No roll"
 
-agcls.AgTypeNameMap["AgEAvtrSmoothAccelLeftRight"] = AgEAvtrSmoothAccelLeftRight
+agcls.AgTypeNameMap["AVTR_SMOOTH_ACCEL_LEFT_RIGHT"] = AVTR_SMOOTH_ACCEL_LEFT_RIGHT
 
-class AgEAvtrPullMode(IntEnum):
+class AVTR_PULL_MODE(IntEnum):
     """The pull mode for a pull strategy of a basic maneuver procedure."""
     # Pull to the specified angle
-    ePullToAngle = 0
+    PULL_TO_ANGLE = 0
     # Pull to the horizon plus the additional angle
-    ePullToHorizon = 1
+    PULL_TO_HORIZON = 1
 
-AgEAvtrPullMode.ePullToAngle.__doc__ = "Pull to the specified angle"
-AgEAvtrPullMode.ePullToHorizon.__doc__ = "Pull to the horizon plus the additional angle"
+AVTR_PULL_MODE.PULL_TO_ANGLE.__doc__ = "Pull to the specified angle"
+AVTR_PULL_MODE.PULL_TO_HORIZON.__doc__ = "Pull to the horizon plus the additional angle"
 
-agcls.AgTypeNameMap["AgEAvtrPullMode"] = AgEAvtrPullMode
+agcls.AgTypeNameMap["AVTR_PULL_MODE"] = AVTR_PULL_MODE
 
-class AgEAvtrRollingPullMode(IntEnum):
+class AVTR_ROLLING_PULL_MODE(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
     # Roll to the specified angle
-    eRollToAngleMode = 0
+    ROLL_TO_ANGLE_MODE = 0
     # Roll to the specified orientaiton plus additional angle
-    eRollToOrientationMode = 1
+    ROLL_TO_ORIENTATION_MODE = 1
     # Pull to the specified angle
-    ePullToAngleMode = 2
+    PULL_TO_ANGLE_MODE = 2
     # Pull to the horizon plus the additional angle
-    ePullToHorizonMode = 3
+    PULL_TO_HORIZON_MODE = 3
 
-AgEAvtrRollingPullMode.eRollToAngleMode.__doc__ = "Roll to the specified angle"
-AgEAvtrRollingPullMode.eRollToOrientationMode.__doc__ = "Roll to the specified orientaiton plus additional angle"
-AgEAvtrRollingPullMode.ePullToAngleMode.__doc__ = "Pull to the specified angle"
-AgEAvtrRollingPullMode.ePullToHorizonMode.__doc__ = "Pull to the horizon plus the additional angle"
+AVTR_ROLLING_PULL_MODE.ROLL_TO_ANGLE_MODE.__doc__ = "Roll to the specified angle"
+AVTR_ROLLING_PULL_MODE.ROLL_TO_ORIENTATION_MODE.__doc__ = "Roll to the specified orientaiton plus additional angle"
+AVTR_ROLLING_PULL_MODE.PULL_TO_ANGLE_MODE.__doc__ = "Pull to the specified angle"
+AVTR_ROLLING_PULL_MODE.PULL_TO_HORIZON_MODE.__doc__ = "Pull to the horizon plus the additional angle"
 
-agcls.AgTypeNameMap["AgEAvtrRollingPullMode"] = AgEAvtrRollingPullMode
+agcls.AgTypeNameMap["AVTR_ROLLING_PULL_MODE"] = AVTR_ROLLING_PULL_MODE
 
-class AgEAvtrSmoothAccelStopConditions(IntEnum):
+class AVTR_SMOOTH_ACCEL_STOP_CONDITIONS(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
     # Roll rate and load factor rate achieved
-    eRollRateANDLoadFactor = 0
+    ROLL_RATE_AND_LOAD_FACTOR = 0
     # Roll rate or load factor rate achieved
-    eRollRateORLoadFactor = 1
+    ROLL_RATE_OR_LOAD_FACTOR = 1
     # Basic stop conditions
-    eSmoothAccelNormalStopConditions = 2
+    SMOOTH_ACCEL_NORMAL_STOP_CONDITIONS = 2
 
-AgEAvtrSmoothAccelStopConditions.eRollRateANDLoadFactor.__doc__ = "Roll rate and load factor rate achieved"
-AgEAvtrSmoothAccelStopConditions.eRollRateORLoadFactor.__doc__ = "Roll rate or load factor rate achieved"
-AgEAvtrSmoothAccelStopConditions.eSmoothAccelNormalStopConditions.__doc__ = "Basic stop conditions"
+AVTR_SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_AND_LOAD_FACTOR.__doc__ = "Roll rate and load factor rate achieved"
+AVTR_SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_OR_LOAD_FACTOR.__doc__ = "Roll rate or load factor rate achieved"
+AVTR_SMOOTH_ACCEL_STOP_CONDITIONS.SMOOTH_ACCEL_NORMAL_STOP_CONDITIONS.__doc__ = "Basic stop conditions"
 
-agcls.AgTypeNameMap["AgEAvtrSmoothAccelStopConditions"] = AgEAvtrSmoothAccelStopConditions
+agcls.AgTypeNameMap["AVTR_SMOOTH_ACCEL_STOP_CONDITIONS"] = AVTR_SMOOTH_ACCEL_STOP_CONDITIONS
 
-class AgEAvtrAutopilotHorizPlaneMode(IntEnum):
+class AVTR_AUTOPILOT_HORIZ_PLANE_MODE(IntEnum):
     """The autopilot mode for an autopilot - horizontal plane strategy of a basic maneuver procedure."""
     # The absolute heading mode
-    eAutopilotAbsoluteHeading = 0
+    AUTOPILOT_ABSOLUTE_HEADING = 0
     # The absolute course mode
-    eAutopilotAbsoluteCourse = 1
+    AUTOPILOT_ABSOLUTE_COURSE = 1
     # The relative heading change mode
-    eAutopilotRelativeHeading = 2
+    AUTOPILOT_RELATIVE_HEADING = 2
     # The relative course change mode
-    eAutopilotRelativeCourse = 3
+    AUTOPILOT_RELATIVE_COURSE = 3
     # The set heading rate mode
-    eAutopilotHeadingRate = 4
+    AUTOPILOT_HEADING_RATE = 4
     # The set heading rate  mode
-    eAutopilotCourseRate = 5
+    AUTOPILOT_COURSE_RATE = 5
 
-AgEAvtrAutopilotHorizPlaneMode.eAutopilotAbsoluteHeading.__doc__ = "The absolute heading mode"
-AgEAvtrAutopilotHorizPlaneMode.eAutopilotAbsoluteCourse.__doc__ = "The absolute course mode"
-AgEAvtrAutopilotHorizPlaneMode.eAutopilotRelativeHeading.__doc__ = "The relative heading change mode"
-AgEAvtrAutopilotHorizPlaneMode.eAutopilotRelativeCourse.__doc__ = "The relative course change mode"
-AgEAvtrAutopilotHorizPlaneMode.eAutopilotHeadingRate.__doc__ = "The set heading rate mode"
-AgEAvtrAutopilotHorizPlaneMode.eAutopilotCourseRate.__doc__ = "The set heading rate  mode"
+AVTR_AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_HEADING.__doc__ = "The absolute heading mode"
+AVTR_AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_COURSE.__doc__ = "The absolute course mode"
+AVTR_AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_RELATIVE_HEADING.__doc__ = "The relative heading change mode"
+AVTR_AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_RELATIVE_COURSE.__doc__ = "The relative course change mode"
+AVTR_AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_HEADING_RATE.__doc__ = "The set heading rate mode"
+AVTR_AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_COURSE_RATE.__doc__ = "The set heading rate  mode"
 
-agcls.AgTypeNameMap["AgEAvtrAutopilotHorizPlaneMode"] = AgEAvtrAutopilotHorizPlaneMode
+agcls.AgTypeNameMap["AVTR_AUTOPILOT_HORIZ_PLANE_MODE"] = AVTR_AUTOPILOT_HORIZ_PLANE_MODE
 
-class AgEAvtrAngleMode(IntEnum):
+class AVTR_ANGLE_MODE(IntEnum):
     """The angle mode for a barrel roll strategy of a basic maneuver procedure."""
     # The absolute angle option
-    eRelativeAngle = 0
+    RELATIVE_ANGLE = 0
     # The relative angle option
-    eAbsoluteAngle = 1
+    ABSOLUTE_ANGLE = 1
 
-AgEAvtrAngleMode.eRelativeAngle.__doc__ = "The absolute angle option"
-AgEAvtrAngleMode.eAbsoluteAngle.__doc__ = "The relative angle option"
+AVTR_ANGLE_MODE.RELATIVE_ANGLE.__doc__ = "The absolute angle option"
+AVTR_ANGLE_MODE.ABSOLUTE_ANGLE.__doc__ = "The relative angle option"
 
-agcls.AgTypeNameMap["AgEAvtrAngleMode"] = AgEAvtrAngleMode
+agcls.AgTypeNameMap["AVTR_ANGLE_MODE"] = AVTR_ANGLE_MODE
 
-class AgEAvtrHoverAltitudeMode(IntEnum):
+class AVTR_HOVER_ALTITUDE_MODE(IntEnum):
     """The altitude mode for the lighter than air hover strategy of a basic maneuver procedure."""
     # The hold initial altitude mode
-    eHoverHoldInitAltitude = 0
+    HOVER_HOLD_INIT_ALTITUDE = 0
     # The specify altitude mode
-    eHoverSpecifyAltitude = 1
+    HOVER_SPECIFY_ALTITUDE = 1
     # The specify altitude change mode
-    eHoverSpecifyAltitudeChange = 2
+    HOVER_SPECIFY_ALTITUDE_CHANGE = 2
     # The specify altitude rate mode
-    eHoverSpecifyAltitudeRate = 3
+    HOVER_SPECIFY_ALTITUDE_RATE = 3
     # The hold initial altitude rate mode
-    eHoverHoldInitAltitudeRate = 4
+    HOVER_HOLD_INIT_ALTITUDE_RATE = 4
     # The parachute mode
-    eHoverParachute = 5
+    HOVER_PARACHUTE = 5
 
-AgEAvtrHoverAltitudeMode.eHoverHoldInitAltitude.__doc__ = "The hold initial altitude mode"
-AgEAvtrHoverAltitudeMode.eHoverSpecifyAltitude.__doc__ = "The specify altitude mode"
-AgEAvtrHoverAltitudeMode.eHoverSpecifyAltitudeChange.__doc__ = "The specify altitude change mode"
-AgEAvtrHoverAltitudeMode.eHoverSpecifyAltitudeRate.__doc__ = "The specify altitude rate mode"
-AgEAvtrHoverAltitudeMode.eHoverHoldInitAltitudeRate.__doc__ = "The hold initial altitude rate mode"
-AgEAvtrHoverAltitudeMode.eHoverParachute.__doc__ = "The parachute mode"
+AVTR_HOVER_ALTITUDE_MODE.HOVER_HOLD_INIT_ALTITUDE.__doc__ = "The hold initial altitude mode"
+AVTR_HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE.__doc__ = "The specify altitude mode"
+AVTR_HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE_CHANGE.__doc__ = "The specify altitude change mode"
+AVTR_HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE_RATE.__doc__ = "The specify altitude rate mode"
+AVTR_HOVER_ALTITUDE_MODE.HOVER_HOLD_INIT_ALTITUDE_RATE.__doc__ = "The hold initial altitude rate mode"
+AVTR_HOVER_ALTITUDE_MODE.HOVER_PARACHUTE.__doc__ = "The parachute mode"
 
-agcls.AgTypeNameMap["AgEAvtrHoverAltitudeMode"] = AgEAvtrHoverAltitudeMode
+agcls.AgTypeNameMap["AVTR_HOVER_ALTITUDE_MODE"] = AVTR_HOVER_ALTITUDE_MODE
 
-class AgEAvtrHoverHeadingMode(IntEnum):
+class AVTR_HOVER_HEADING_MODE(IntEnum):
     """The heading mode for the lighter than air hover strategy of a basic maneuver procedure."""
     # The relative to start heading mode
-    eHoverRelative = 0
+    HOVER_RELATIVE = 0
     # The absolute heading mode
-    eHoverAbsolute = 1
+    HOVER_ABSOLUTE = 1
     # The align into wind heading mode
-    eHoverIntoWind = 2
+    HOVER_INTO_WIND = 2
     # The align opposite wind heading mode
-    eHoverOppositeWind = 3
+    HOVER_OPPOSITE_WIND = 3
 
-AgEAvtrHoverHeadingMode.eHoverRelative.__doc__ = "The relative to start heading mode"
-AgEAvtrHoverHeadingMode.eHoverAbsolute.__doc__ = "The absolute heading mode"
-AgEAvtrHoverHeadingMode.eHoverIntoWind.__doc__ = "The align into wind heading mode"
-AgEAvtrHoverHeadingMode.eHoverOppositeWind.__doc__ = "The align opposite wind heading mode"
+AVTR_HOVER_HEADING_MODE.HOVER_RELATIVE.__doc__ = "The relative to start heading mode"
+AVTR_HOVER_HEADING_MODE.HOVER_ABSOLUTE.__doc__ = "The absolute heading mode"
+AVTR_HOVER_HEADING_MODE.HOVER_INTO_WIND.__doc__ = "The align into wind heading mode"
+AVTR_HOVER_HEADING_MODE.HOVER_OPPOSITE_WIND.__doc__ = "The align opposite wind heading mode"
 
-agcls.AgTypeNameMap["AgEAvtrHoverHeadingMode"] = AgEAvtrHoverHeadingMode
+agcls.AgTypeNameMap["AVTR_HOVER_HEADING_MODE"] = AVTR_HOVER_HEADING_MODE
 
-class AgEAvtrAutopilotAltitudeMode(IntEnum):
+class AVTR_AUTOPILOT_ALTITUDE_MODE(IntEnum):
     """The altitude mode for the autopilot - vertical plane strategy of a basic maneuver procedure."""
     # The hold initial altitude mode
-    eAutopilotHoldInitAltitude = 0
+    AUTOPILOT_HOLD_INIT_ALTITUDE = 0
     # The specify altitude mode
-    eAutopilotSpecifyAltitude = 1
+    AUTOPILOT_SPECIFY_ALTITUDE = 1
     # The specify altitude change mode
-    eAutopilotSpecifyAltitudeChange = 2
+    AUTOPILOT_SPECIFY_ALTITUDE_CHANGE = 2
     # The specify altitude rate mode
-    eAutopilotSpecifyAltitudeRate = 3
+    AUTOPILOT_SPECIFY_ALTITUDE_RATE = 3
     # The hold initial altitude rate mode
-    eAutopilotHoldInitAltitudeRate = 4
+    AUTOPILOT_HOLD_INIT_ALTITUDE_RATE = 4
     # The specify wind fram eflight path angle mode
-    eAutopilotSpecifyFPA = 5
+    AUTOPILOT_SPECIFY_FPA = 5
     # The hold initial wind frame flight path angle mode
-    eAutopilotHoldInitFPA = 6
+    AUTOPILOT_HOLD_INIT_FPA = 6
     # The ballistic flight path mode
-    eAutopilotBallistic = 7
+    AUTOPILOT_BALLISTIC = 7
 
-AgEAvtrAutopilotAltitudeMode.eAutopilotHoldInitAltitude.__doc__ = "The hold initial altitude mode"
-AgEAvtrAutopilotAltitudeMode.eAutopilotSpecifyAltitude.__doc__ = "The specify altitude mode"
-AgEAvtrAutopilotAltitudeMode.eAutopilotSpecifyAltitudeChange.__doc__ = "The specify altitude change mode"
-AgEAvtrAutopilotAltitudeMode.eAutopilotSpecifyAltitudeRate.__doc__ = "The specify altitude rate mode"
-AgEAvtrAutopilotAltitudeMode.eAutopilotHoldInitAltitudeRate.__doc__ = "The hold initial altitude rate mode"
-AgEAvtrAutopilotAltitudeMode.eAutopilotSpecifyFPA.__doc__ = "The specify wind fram eflight path angle mode"
-AgEAvtrAutopilotAltitudeMode.eAutopilotHoldInitFPA.__doc__ = "The hold initial wind frame flight path angle mode"
-AgEAvtrAutopilotAltitudeMode.eAutopilotBallistic.__doc__ = "The ballistic flight path mode"
+AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE.__doc__ = "The hold initial altitude mode"
+AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE.__doc__ = "The specify altitude mode"
+AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_CHANGE.__doc__ = "The specify altitude change mode"
+AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_RATE.__doc__ = "The specify altitude rate mode"
+AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE_RATE.__doc__ = "The hold initial altitude rate mode"
+AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FPA.__doc__ = "The specify wind fram eflight path angle mode"
+AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_FPA.__doc__ = "The hold initial wind frame flight path angle mode"
+AVTR_AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_BALLISTIC.__doc__ = "The ballistic flight path mode"
 
-agcls.AgTypeNameMap["AgEAvtrAutopilotAltitudeMode"] = AgEAvtrAutopilotAltitudeMode
+agcls.AgTypeNameMap["AVTR_AUTOPILOT_ALTITUDE_MODE"] = AVTR_AUTOPILOT_ALTITUDE_MODE
 
-class AgEAvtrAutopilotAltitudeControlMode(IntEnum):
+class AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE(IntEnum):
     """The altitude control mode for the autopilot - vertical plane strategy of a basic maneuver procedure."""
     # The control altitude rate mode
-    eAutopilotAltitudeRate = 0
+    AUTOPILOT_ALTITUDE_RATE = 0
     # The control flight path angle mode
-    eAutopilotFPA = 1
+    AUTOPILOT_FPA = 1
     # The climb/descent performance models mode
-    eAutopilotPerfModels = 2
+    AUTOPILOT_PERF_MODELS = 2
 
-AgEAvtrAutopilotAltitudeControlMode.eAutopilotAltitudeRate.__doc__ = "The control altitude rate mode"
-AgEAvtrAutopilotAltitudeControlMode.eAutopilotFPA.__doc__ = "The control flight path angle mode"
-AgEAvtrAutopilotAltitudeControlMode.eAutopilotPerfModels.__doc__ = "The climb/descent performance models mode"
+AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE.__doc__ = "The control altitude rate mode"
+AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA.__doc__ = "The control flight path angle mode"
+AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERF_MODELS.__doc__ = "The climb/descent performance models mode"
 
-agcls.AgTypeNameMap["AgEAvtrAutopilotAltitudeControlMode"] = AgEAvtrAutopilotAltitudeControlMode
+agcls.AgTypeNameMap["AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE"] = AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE
 
-class AgEAvtrClosureMode(IntEnum):
+class AVTR_CLOSURE_MODE(IntEnum):
     """The closure mode for guidance strategies of the basic maneuver procedure."""
     # The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target
-    eClosureNotSet = 0
+    CLOSURE_NOT_SET = 0
     # The closure is required
-    eClosureRequired = 1
+    CLOSURE_REQUIRED = 1
     # The high off boresight mode
-    eHOBS = 2
+    HOBS = 2
 
-AgEAvtrClosureMode.eClosureNotSet.__doc__ = "The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target"
-AgEAvtrClosureMode.eClosureRequired.__doc__ = "The closure is required"
-AgEAvtrClosureMode.eHOBS.__doc__ = "The high off boresight mode"
+AVTR_CLOSURE_MODE.CLOSURE_NOT_SET.__doc__ = "The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target"
+AVTR_CLOSURE_MODE.CLOSURE_REQUIRED.__doc__ = "The closure is required"
+AVTR_CLOSURE_MODE.HOBS.__doc__ = "The high off boresight mode"
 
-agcls.AgTypeNameMap["AgEAvtrClosureMode"] = AgEAvtrClosureMode
+agcls.AgTypeNameMap["AVTR_CLOSURE_MODE"] = AVTR_CLOSURE_MODE
 
-class AgEAvtrInterceptMode(IntEnum):
+class AVTR_INTERCEPT_MODE(IntEnum):
     """The intercept mode for the intercept strategy of the basic maneuver procedure."""
     # The target aspect mode. The aircraft will maintain an approach angle with the target.
-    eTargetAspect = 0
+    TARGET_ASPECT = 0
     # The lateral separation mode. The aircraft will guide to a specific distance from the target
-    eLateralSeparation = 1
+    LATERAL_SEPARATION = 1
 
-AgEAvtrInterceptMode.eTargetAspect.__doc__ = "The target aspect mode. The aircraft will maintain an approach angle with the target."
-AgEAvtrInterceptMode.eLateralSeparation.__doc__ = "The lateral separation mode. The aircraft will guide to a specific distance from the target"
+AVTR_INTERCEPT_MODE.TARGET_ASPECT.__doc__ = "The target aspect mode. The aircraft will maintain an approach angle with the target."
+AVTR_INTERCEPT_MODE.LATERAL_SEPARATION.__doc__ = "The lateral separation mode. The aircraft will guide to a specific distance from the target"
 
-agcls.AgTypeNameMap["AgEAvtrInterceptMode"] = AgEAvtrInterceptMode
+agcls.AgTypeNameMap["AVTR_INTERCEPT_MODE"] = AVTR_INTERCEPT_MODE
 
-class AgEAvtrRendezvousStopCondition(IntEnum):
+class AVTR_RENDEZVOUS_STOP_CONDITION(IntEnum):
     """The stop condition options for a rendezvous formation strategy of the basic maneuver procedure."""
     # The basic stopping conditions will be used.
-    eStopNormal = 0
+    STOP_NORMAL = 0
     # Stop after the target completes the current procedure.
-    eStopAfterTargetCurrentProcedure = 1
+    STOP_AFTER_TARGET_CURRENT_PROCEDURE = 1
     # Stop after the target completes the current phase.
-    eStopAfterTargetCurrentPhase = 2
+    STOP_AFTER_TARGET_CURRENT_PHASE = 2
     # Stop when the target enters a new mode of flight.
-    eStopWhenTargetPerfModeChanges = 3
+    STOP_WHEN_TARGET_PERF_MODE_CHANGES = 3
     # Stop when the target enters a new performance phase.
-    eStopWhenTargetPhaseOfFlightChanges = 4
+    STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 4
 
-AgEAvtrRendezvousStopCondition.eStopNormal.__doc__ = "The basic stopping conditions will be used."
-AgEAvtrRendezvousStopCondition.eStopAfterTargetCurrentProcedure.__doc__ = "Stop after the target completes the current procedure."
-AgEAvtrRendezvousStopCondition.eStopAfterTargetCurrentPhase.__doc__ = "Stop after the target completes the current phase."
-AgEAvtrRendezvousStopCondition.eStopWhenTargetPerfModeChanges.__doc__ = "Stop when the target enters a new mode of flight."
-AgEAvtrRendezvousStopCondition.eStopWhenTargetPhaseOfFlightChanges.__doc__ = "Stop when the target enters a new performance phase."
+AVTR_RENDEZVOUS_STOP_CONDITION.STOP_NORMAL.__doc__ = "The basic stopping conditions will be used."
+AVTR_RENDEZVOUS_STOP_CONDITION.STOP_AFTER_TARGET_CURRENT_PROCEDURE.__doc__ = "Stop after the target completes the current procedure."
+AVTR_RENDEZVOUS_STOP_CONDITION.STOP_AFTER_TARGET_CURRENT_PHASE.__doc__ = "Stop after the target completes the current phase."
+AVTR_RENDEZVOUS_STOP_CONDITION.STOP_WHEN_TARGET_PERF_MODE_CHANGES.__doc__ = "Stop when the target enters a new mode of flight."
+AVTR_RENDEZVOUS_STOP_CONDITION.STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES.__doc__ = "Stop when the target enters a new performance phase."
 
-agcls.AgTypeNameMap["AgEAvtrRendezvousStopCondition"] = AgEAvtrRendezvousStopCondition
+agcls.AgTypeNameMap["AVTR_RENDEZVOUS_STOP_CONDITION"] = AVTR_RENDEZVOUS_STOP_CONDITION
 
-class AgEAvtrFormationFlyerStopCondition(IntEnum):
+class AVTR_FORMATION_FLYER_STOP_CONDITION(IntEnum):
     """The stop condition options for a Formation Flyer procedure."""
     # Stop After FullMission.
-    eFormationFlyerStopAfterFullMission = 0
+    FORMATION_FLYER_STOP_AFTER_FULL_MISSION = 0
     # Stop After Time.
-    eFormationFlyerStopAfterTime = 1
+    FORMATION_FLYER_STOP_AFTER_TIME = 1
     # Stop After FuelState.
-    eFormationFlyerStopAfterFuelState = 2
+    FORMATION_FLYER_STOP_AFTER_FUEL_STATE = 2
     # Stop After DownRange.
-    eFormationFlyerStopAfterDownRange = 3
+    FORMATION_FLYER_STOP_AFTER_DOWN_RANGE = 3
     # Stop When TargetProcedure Changes.
-    eFormationFlyerStopWhenTargetProcedureChanges = 4
+    FORMATION_FLYER_STOP_WHEN_TARGET_PROCEDURE_CHANGES = 4
     # Stop When Target Mission Changes.
-    eFormationFlyerStopWhenTargetMissionChanges = 5
+    FORMATION_FLYER_STOP_WHEN_TARGET_MISSION_CHANGES = 5
     # Stop When Target PhaseOfFlight Changes.
-    eFormationFlyerStopWhenTargetPhaseOfFlightChanges = 6
+    FORMATION_FLYER_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 6
     # Stop When Target PerfMode Changes.
-    eFormationFlyerStopWhenTargetPerfModeChanges = 7
+    FORMATION_FLYER_STOP_WHEN_TARGET_PERF_MODE_CHANGES = 7
 
-AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterFullMission.__doc__ = "Stop After FullMission."
-AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterTime.__doc__ = "Stop After Time."
-AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterFuelState.__doc__ = "Stop After FuelState."
-AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopAfterDownRange.__doc__ = "Stop After DownRange."
-AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopWhenTargetProcedureChanges.__doc__ = "Stop When TargetProcedure Changes."
-AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopWhenTargetMissionChanges.__doc__ = "Stop When Target Mission Changes."
-AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopWhenTargetPhaseOfFlightChanges.__doc__ = "Stop When Target PhaseOfFlight Changes."
-AgEAvtrFormationFlyerStopCondition.eFormationFlyerStopWhenTargetPerfModeChanges.__doc__ = "Stop When Target PerfMode Changes."
+AVTR_FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_AFTER_FULL_MISSION.__doc__ = "Stop After FullMission."
+AVTR_FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_AFTER_TIME.__doc__ = "Stop After Time."
+AVTR_FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_AFTER_FUEL_STATE.__doc__ = "Stop After FuelState."
+AVTR_FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_AFTER_DOWN_RANGE.__doc__ = "Stop After DownRange."
+AVTR_FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_PROCEDURE_CHANGES.__doc__ = "Stop When TargetProcedure Changes."
+AVTR_FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_MISSION_CHANGES.__doc__ = "Stop When Target Mission Changes."
+AVTR_FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES.__doc__ = "Stop When Target PhaseOfFlight Changes."
+AVTR_FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_PERF_MODE_CHANGES.__doc__ = "Stop When Target PerfMode Changes."
 
-agcls.AgTypeNameMap["AgEAvtrFormationFlyerStopCondition"] = AgEAvtrFormationFlyerStopCondition
+agcls.AgTypeNameMap["AVTR_FORMATION_FLYER_STOP_CONDITION"] = AVTR_FORMATION_FLYER_STOP_CONDITION
 
-class AgEAvtrExtEphemFlightMode(IntEnum):
+class AVTR_EXT_EPHEM_FLIGHT_MODE(IntEnum):
     """Flight mode enums for ExtEphem."""
     # ForwardFlightClimb.
-    eExtEphemFlightModeForwardFlightClimb = 0
+    EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB = 0
     # ForwardFlightCruise.
-    eExtEphemFlightModeForwardFlightCruise = 1
+    EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CRUISE = 1
     # ForwardFlightDescend.
-    eExtEphemFlightModeForwardFlightDescend = 2
+    EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_DESCEND = 2
     # Landing.
-    eExtEphemFlightModeLanding = 3
+    EXT_EPHEM_FLIGHT_MODE_LANDING = 3
     # LandingWOW.
-    eExtEphemFlightModeLandingWOW = 4
+    EXT_EPHEM_FLIGHT_MODE_LANDING_WOW = 4
     # Takeoff.
-    eExtEphemFlightModeTakeoff = 5
+    EXT_EPHEM_FLIGHT_MODE_TAKEOFF = 5
     # TakeoffWOW.
-    eExtEphemFlightModeTakeoffWOW = 6
+    EXT_EPHEM_FLIGHT_MODE_TAKEOFF_WOW = 6
     # VTOLHover .
-    eExtEphemFlightModeVTOLHover = 7
+    EXT_EPHEM_FLIGHT_MODE_VTOL_HOVER = 7
 
-AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightClimb.__doc__ = "ForwardFlightClimb."
-AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightCruise.__doc__ = "ForwardFlightCruise."
-AgEAvtrExtEphemFlightMode.eExtEphemFlightModeForwardFlightDescend.__doc__ = "ForwardFlightDescend."
-AgEAvtrExtEphemFlightMode.eExtEphemFlightModeLanding.__doc__ = "Landing."
-AgEAvtrExtEphemFlightMode.eExtEphemFlightModeLandingWOW.__doc__ = "LandingWOW."
-AgEAvtrExtEphemFlightMode.eExtEphemFlightModeTakeoff.__doc__ = "Takeoff."
-AgEAvtrExtEphemFlightMode.eExtEphemFlightModeTakeoffWOW.__doc__ = "TakeoffWOW."
-AgEAvtrExtEphemFlightMode.eExtEphemFlightModeVTOLHover.__doc__ = "VTOLHover ."
+AVTR_EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB.__doc__ = "ForwardFlightClimb."
+AVTR_EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CRUISE.__doc__ = "ForwardFlightCruise."
+AVTR_EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_DESCEND.__doc__ = "ForwardFlightDescend."
+AVTR_EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_LANDING.__doc__ = "Landing."
+AVTR_EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_LANDING_WOW.__doc__ = "LandingWOW."
+AVTR_EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_TAKEOFF.__doc__ = "Takeoff."
+AVTR_EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_TAKEOFF_WOW.__doc__ = "TakeoffWOW."
+AVTR_EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_VTOL_HOVER.__doc__ = "VTOLHover ."
 
-agcls.AgTypeNameMap["AgEAvtrExtEphemFlightMode"] = AgEAvtrExtEphemFlightMode
+agcls.AgTypeNameMap["AVTR_EXT_EPHEM_FLIGHT_MODE"] = AVTR_EXT_EPHEM_FLIGHT_MODE
 
-class AgEAvtrAccelPerfModelOverride(IntEnum):
+class AVTR_ACCEL_PERF_MODEL_OVERRIDE(IntEnum):
     """The acceleration performance model override mode."""
     # Use the acceleration performanc model value.
-    eAccelPerfModelValue = 0
+    ACCEL_PERF_MODEL_VALUE = 0
     # Override the performanc model value.
-    eAccelOverride = 1
+    ACCEL_OVERRIDE = 1
     # Set no limit on the acceleration.
-    eAccelNoLimit = 2
+    ACCEL_NO_LIMIT = 2
 
-AgEAvtrAccelPerfModelOverride.eAccelPerfModelValue.__doc__ = "Use the acceleration performanc model value."
-AgEAvtrAccelPerfModelOverride.eAccelOverride.__doc__ = "Override the performanc model value."
-AgEAvtrAccelPerfModelOverride.eAccelNoLimit.__doc__ = "Set no limit on the acceleration."
+AVTR_ACCEL_PERF_MODEL_OVERRIDE.ACCEL_PERF_MODEL_VALUE.__doc__ = "Use the acceleration performanc model value."
+AVTR_ACCEL_PERF_MODEL_OVERRIDE.ACCEL_OVERRIDE.__doc__ = "Override the performanc model value."
+AVTR_ACCEL_PERF_MODEL_OVERRIDE.ACCEL_NO_LIMIT.__doc__ = "Set no limit on the acceleration."
 
-agcls.AgTypeNameMap["AgEAvtrAccelPerfModelOverride"] = AgEAvtrAccelPerfModelOverride
+agcls.AgTypeNameMap["AVTR_ACCEL_PERF_MODEL_OVERRIDE"] = AVTR_ACCEL_PERF_MODEL_OVERRIDE
 
-class AgEAvtrStationkeepingStopCondition(IntEnum):
+class AVTR_STATIONKEEPING_STOP_CONDITION(IntEnum):
     """The stop condition options for a stationkeeping strategy."""
     # The basic stopping conditions will be used.
-    eStopConditionNotSet = 0
+    STOP_CONDITION_NOT_SET = 0
     # Stop after a specified number of turns.
-    eStopAfterTurnCount = 1
+    STOP_AFTER_TURN_COUNT = 1
     # Stop after a specified duration.
-    eStopAfterDuration = 2
+    STOP_AFTER_DURATION = 2
     # Stop at the specified time.
-    eStopAfterTime = 3
+    STOP_AFTER_TIME = 3
 
-AgEAvtrStationkeepingStopCondition.eStopConditionNotSet.__doc__ = "The basic stopping conditions will be used."
-AgEAvtrStationkeepingStopCondition.eStopAfterTurnCount.__doc__ = "Stop after a specified number of turns."
-AgEAvtrStationkeepingStopCondition.eStopAfterDuration.__doc__ = "Stop after a specified duration."
-AgEAvtrStationkeepingStopCondition.eStopAfterTime.__doc__ = "Stop at the specified time."
+AVTR_STATIONKEEPING_STOP_CONDITION.STOP_CONDITION_NOT_SET.__doc__ = "The basic stopping conditions will be used."
+AVTR_STATIONKEEPING_STOP_CONDITION.STOP_AFTER_TURN_COUNT.__doc__ = "Stop after a specified number of turns."
+AVTR_STATIONKEEPING_STOP_CONDITION.STOP_AFTER_DURATION.__doc__ = "Stop after a specified duration."
+AVTR_STATIONKEEPING_STOP_CONDITION.STOP_AFTER_TIME.__doc__ = "Stop at the specified time."
 
-agcls.AgTypeNameMap["AgEAvtrStationkeepingStopCondition"] = AgEAvtrStationkeepingStopCondition
+agcls.AgTypeNameMap["AVTR_STATIONKEEPING_STOP_CONDITION"] = AVTR_STATIONKEEPING_STOP_CONDITION
 
-class AgEAvtrTurnDirection(IntEnum):
+class AVTR_TURN_DIRECTION(IntEnum):
     """The roll direction for an aileron roll strategy for a basic maneuver procedure."""
     # Turn left
-    eTurnLeft = 0
+    TURN_LEFT = 0
     # Turn right
-    eTurnRight = 2
+    TURN_RIGHT = 2
 
-AgEAvtrTurnDirection.eTurnLeft.__doc__ = "Turn left"
-AgEAvtrTurnDirection.eTurnRight.__doc__ = "Turn right"
+AVTR_TURN_DIRECTION.TURN_LEFT.__doc__ = "Turn left"
+AVTR_TURN_DIRECTION.TURN_RIGHT.__doc__ = "Turn right"
 
-agcls.AgTypeNameMap["AgEAvtrTurnDirection"] = AgEAvtrTurnDirection
+agcls.AgTypeNameMap["AVTR_TURN_DIRECTION"] = AVTR_TURN_DIRECTION
 
-class AgEAvtrProfileControlLimit(IntEnum):
+class AVTR_PROFILE_CONTROL_LIMIT(IntEnum):
     """Method to define the control limits for a profile strategy of a basic maneuver procedure."""
     # Use Accel Perf Model
-    eProfileAccelPerfModel = 0
+    PROFILE_ACCEL_PERF_MODEL = 0
     # Specify the pitch rate
-    eProfilePitchRate = 1
+    PROFILE_PITCH_RATE = 1
 
-AgEAvtrProfileControlLimit.eProfileAccelPerfModel.__doc__ = "Use Accel Perf Model"
-AgEAvtrProfileControlLimit.eProfilePitchRate.__doc__ = "Specify the pitch rate"
+AVTR_PROFILE_CONTROL_LIMIT.PROFILE_ACCEL_PERF_MODEL.__doc__ = "Use Accel Perf Model"
+AVTR_PROFILE_CONTROL_LIMIT.PROFILE_PITCH_RATE.__doc__ = "Specify the pitch rate"
 
-agcls.AgTypeNameMap["AgEAvtrProfileControlLimit"] = AgEAvtrProfileControlLimit
+agcls.AgTypeNameMap["AVTR_PROFILE_CONTROL_LIMIT"] = AVTR_PROFILE_CONTROL_LIMIT
 
-class AgEAvtrRelSpeedAltStopCondition(IntEnum):
+class AVTR_REL_SPEED_ALT_STOP_CONDITION(IntEnum):
     """The stop condition options for a relative speed/altitude strategy."""
     # The basic stopping conditions will be used.
-    eRelSpeedAltStopNormal = 0
+    REL_SPEED_ALT_STOP_NORMAL = 0
     # Stop when the aircraft achieves the range for equal speed.
-    eRelSpeedAltStopMinRangeForEqualSpeed = 1
+    REL_SPEED_ALT_STOP_MIN_RANGE_FOR_EQUAL_SPEED = 1
     # Stop when the aircraft achieves the range to transition speed.
-    eRelSpeedAltStopTransitionSpeedRange = 2
+    REL_SPEED_ALT_STOP_TRANSITION_SPEED_RANGE = 2
     # Stop after the target completes the current procedure.
-    eRelSpeedAltStopAfterTargetCurrentProcedure = 3
+    REL_SPEED_ALT_STOP_AFTER_TARGET_CURRENT_PROCEDURE = 3
     # Stop after the target completes the current phase.
-    eRelSpeedAltStopAfterTargetCurrentPhase = 4
+    REL_SPEED_ALT_STOP_AFTER_TARGET_CURRENT_PHASE = 4
     # Stop when the target enters a new mode of flight.
-    eRelSpeedAltStopWhenTargetPerfModeChanges = 5
+    REL_SPEED_ALT_STOP_WHEN_TARGET_PERF_MODE_CHANGES = 5
     # Stop when the target enters a new performance phase.
-    eRelSpeedAltStopWhenTargetPhaseOfFlightChanges = 6
+    REL_SPEED_ALT_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 6
 
-AgEAvtrRelSpeedAltStopCondition.eRelSpeedAltStopNormal.__doc__ = "The basic stopping conditions will be used."
-AgEAvtrRelSpeedAltStopCondition.eRelSpeedAltStopMinRangeForEqualSpeed.__doc__ = "Stop when the aircraft achieves the range for equal speed."
-AgEAvtrRelSpeedAltStopCondition.eRelSpeedAltStopTransitionSpeedRange.__doc__ = "Stop when the aircraft achieves the range to transition speed."
-AgEAvtrRelSpeedAltStopCondition.eRelSpeedAltStopAfterTargetCurrentProcedure.__doc__ = "Stop after the target completes the current procedure."
-AgEAvtrRelSpeedAltStopCondition.eRelSpeedAltStopAfterTargetCurrentPhase.__doc__ = "Stop after the target completes the current phase."
-AgEAvtrRelSpeedAltStopCondition.eRelSpeedAltStopWhenTargetPerfModeChanges.__doc__ = "Stop when the target enters a new mode of flight."
-AgEAvtrRelSpeedAltStopCondition.eRelSpeedAltStopWhenTargetPhaseOfFlightChanges.__doc__ = "Stop when the target enters a new performance phase."
+AVTR_REL_SPEED_ALT_STOP_CONDITION.REL_SPEED_ALT_STOP_NORMAL.__doc__ = "The basic stopping conditions will be used."
+AVTR_REL_SPEED_ALT_STOP_CONDITION.REL_SPEED_ALT_STOP_MIN_RANGE_FOR_EQUAL_SPEED.__doc__ = "Stop when the aircraft achieves the range for equal speed."
+AVTR_REL_SPEED_ALT_STOP_CONDITION.REL_SPEED_ALT_STOP_TRANSITION_SPEED_RANGE.__doc__ = "Stop when the aircraft achieves the range to transition speed."
+AVTR_REL_SPEED_ALT_STOP_CONDITION.REL_SPEED_ALT_STOP_AFTER_TARGET_CURRENT_PROCEDURE.__doc__ = "Stop after the target completes the current procedure."
+AVTR_REL_SPEED_ALT_STOP_CONDITION.REL_SPEED_ALT_STOP_AFTER_TARGET_CURRENT_PHASE.__doc__ = "Stop after the target completes the current phase."
+AVTR_REL_SPEED_ALT_STOP_CONDITION.REL_SPEED_ALT_STOP_WHEN_TARGET_PERF_MODE_CHANGES.__doc__ = "Stop when the target enters a new mode of flight."
+AVTR_REL_SPEED_ALT_STOP_CONDITION.REL_SPEED_ALT_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES.__doc__ = "Stop when the target enters a new performance phase."
 
-agcls.AgTypeNameMap["AgEAvtrRelSpeedAltStopCondition"] = AgEAvtrRelSpeedAltStopCondition
+agcls.AgTypeNameMap["AVTR_REL_SPEED_ALT_STOP_CONDITION"] = AVTR_REL_SPEED_ALT_STOP_CONDITION
 
-class AgEAvtrRelativeAltitudeMode(IntEnum):
+class AVTR_RELATIVE_ALTITUDE_MODE(IntEnum):
     """The relative altitude mode for a relative speed/altitude strategy."""
     # Maintain the specified altitude offset from the target.
-    eHoldOffsetAlt = 0
+    HOLD_OFFSET_ALT = 0
     # Maintain the altitude offset at the beginning of the maneuver.
-    eHoldInitAltOffset = 1
+    HOLD_INIT_ALT_OFFSET = 1
     # Maintain the specified elevation angle from the target.
-    eHoldElevationAngle = 2
+    HOLD_ELEVATION_ANGLE = 2
     # Maintain the elevation angle at the beginning of the maneuver.
-    eHoldInitElevationAngle = 3
+    HOLD_INIT_ELEVATION_ANGLE = 3
 
-AgEAvtrRelativeAltitudeMode.eHoldOffsetAlt.__doc__ = "Maintain the specified altitude offset from the target."
-AgEAvtrRelativeAltitudeMode.eHoldInitAltOffset.__doc__ = "Maintain the altitude offset at the beginning of the maneuver."
-AgEAvtrRelativeAltitudeMode.eHoldElevationAngle.__doc__ = "Maintain the specified elevation angle from the target."
-AgEAvtrRelativeAltitudeMode.eHoldInitElevationAngle.__doc__ = "Maintain the elevation angle at the beginning of the maneuver."
+AVTR_RELATIVE_ALTITUDE_MODE.HOLD_OFFSET_ALT.__doc__ = "Maintain the specified altitude offset from the target."
+AVTR_RELATIVE_ALTITUDE_MODE.HOLD_INIT_ALT_OFFSET.__doc__ = "Maintain the altitude offset at the beginning of the maneuver."
+AVTR_RELATIVE_ALTITUDE_MODE.HOLD_ELEVATION_ANGLE.__doc__ = "Maintain the specified elevation angle from the target."
+AVTR_RELATIVE_ALTITUDE_MODE.HOLD_INIT_ELEVATION_ANGLE.__doc__ = "Maintain the elevation angle at the beginning of the maneuver."
 
-agcls.AgTypeNameMap["AgEAvtrRelativeAltitudeMode"] = AgEAvtrRelativeAltitudeMode
+agcls.AgTypeNameMap["AVTR_RELATIVE_ALTITUDE_MODE"] = AVTR_RELATIVE_ALTITUDE_MODE
 
-class AgEAvtrFlyToFlightPathAngleMode(IntEnum):
+class AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE(IntEnum):
     """The flight path angle mode mode for a bezier profile strategy."""
     # Fly to a specified altitude rate.
-    eFlyToAltRate = 0
+    FLY_TO_ALT_RATE = 0
     # Fly to a specified flight path angle.
-    eFlyToFlightPathAngle = 1
+    FLY_TO_FLIGHT_PATH_ANGLE = 1
 
-AgEAvtrFlyToFlightPathAngleMode.eFlyToAltRate.__doc__ = "Fly to a specified altitude rate."
-AgEAvtrFlyToFlightPathAngleMode.eFlyToFlightPathAngle.__doc__ = "Fly to a specified flight path angle."
+AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE.FLY_TO_ALT_RATE.__doc__ = "Fly to a specified altitude rate."
+AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE.FLY_TO_FLIGHT_PATH_ANGLE.__doc__ = "Fly to a specified flight path angle."
 
-agcls.AgTypeNameMap["AgEAvtrFlyToFlightPathAngleMode"] = AgEAvtrFlyToFlightPathAngleMode
+agcls.AgTypeNameMap["AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE"] = AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE
 
-class AgEAvtrPushPull(IntEnum):
+class AVTR_PUSH_PULL(IntEnum):
     """The option to pull up or push over for a push/pull profile strategy."""
     # Pull up.
-    ePullUp = 0
+    PULL_UP = 0
     # Push over.
-    ePushOver = 1
+    PUSH_OVER = 1
 
-AgEAvtrPushPull.ePullUp.__doc__ = "Pull up."
-AgEAvtrPushPull.ePushOver.__doc__ = "Push over."
+AVTR_PUSH_PULL.PULL_UP.__doc__ = "Pull up."
+AVTR_PUSH_PULL.PUSH_OVER.__doc__ = "Push over."
 
-agcls.AgTypeNameMap["AgEAvtrPushPull"] = AgEAvtrPushPull
+agcls.AgTypeNameMap["AVTR_PUSH_PULL"] = AVTR_PUSH_PULL
 
-class AgEAvtrAccelMode(IntEnum):
+class AVTR_ACCEL_MODE(IntEnum):
     """The acceleration/decelation option for a push/pull profile strategy."""
     # Accelerate at specified G.
-    eAccel = 0
+    ACCEL = 0
     # Decelerate at specified G.
-    eDecel = 1
+    DECEL = 1
     # Maintain the initial airspeed.
-    eMaintainSpeed = 2
+    MAINTAIN_SPEED = 2
 
-AgEAvtrAccelMode.eAccel.__doc__ = "Accelerate at specified G."
-AgEAvtrAccelMode.eDecel.__doc__ = "Decelerate at specified G."
-AgEAvtrAccelMode.eMaintainSpeed.__doc__ = "Maintain the initial airspeed."
+AVTR_ACCEL_MODE.ACCEL.__doc__ = "Accelerate at specified G."
+AVTR_ACCEL_MODE.DECEL.__doc__ = "Decelerate at specified G."
+AVTR_ACCEL_MODE.MAINTAIN_SPEED.__doc__ = "Maintain the initial airspeed."
 
-agcls.AgTypeNameMap["AgEAvtrAccelMode"] = AgEAvtrAccelMode
+agcls.AgTypeNameMap["AVTR_ACCEL_MODE"] = AVTR_ACCEL_MODE
 
-class AgEAvtrDelayAltMode(IntEnum):
+class AVTR_DELAY_ALT_MODE(IntEnum):
     """The altitude options for a delay procedure."""
     # Use a level off maneuver to fly to the default altitude.
-    eDelayLevelOff = 0
+    DELAY_LEVEL_OFF = 0
     # The default cruise altitude.
-    eDelayDefaultCruiseAlt = 1
+    DELAY_DEFAULT_CRUISE_ALT = 1
     # Override the default altitude.
-    eDelayOverride = 2
+    DELAY_OVERRIDE = 2
 
-AgEAvtrDelayAltMode.eDelayLevelOff.__doc__ = "Use a level off maneuver to fly to the default altitude."
-AgEAvtrDelayAltMode.eDelayDefaultCruiseAlt.__doc__ = "The default cruise altitude."
-AgEAvtrDelayAltMode.eDelayOverride.__doc__ = "Override the default altitude."
+AVTR_DELAY_ALT_MODE.DELAY_LEVEL_OFF.__doc__ = "Use a level off maneuver to fly to the default altitude."
+AVTR_DELAY_ALT_MODE.DELAY_DEFAULT_CRUISE_ALT.__doc__ = "The default cruise altitude."
+AVTR_DELAY_ALT_MODE.DELAY_OVERRIDE.__doc__ = "Override the default altitude."
 
-agcls.AgTypeNameMap["AgEAvtrDelayAltMode"] = AgEAvtrDelayAltMode
+agcls.AgTypeNameMap["AVTR_DELAY_ALT_MODE"] = AVTR_DELAY_ALT_MODE
 
-class AgEAvtrJoinExitArcMethod(IntEnum):
+class AVTR_JOIN_EXIT_ARC_METHOD(IntEnum):
     """The options to join or exit an arc."""
     # The aircraft begins/ends the procedure on a course away from the site.
-    eJoinExitOutbound = 0
+    JOIN_EXIT_OUTBOUND = 0
     # The aircraft begins/ends the procedure at the start bearing.
-    eJoinExitOn = 1
+    JOIN_EXIT_ON = 1
     # The aircraft begins/ends on a course towards the site.
-    eJoinExitInbound = 2
+    JOIN_EXIT_INBOUND = 2
 
-AgEAvtrJoinExitArcMethod.eJoinExitOutbound.__doc__ = "The aircraft begins/ends the procedure on a course away from the site."
-AgEAvtrJoinExitArcMethod.eJoinExitOn.__doc__ = "The aircraft begins/ends the procedure at the start bearing."
-AgEAvtrJoinExitArcMethod.eJoinExitInbound.__doc__ = "The aircraft begins/ends on a course towards the site."
+AVTR_JOIN_EXIT_ARC_METHOD.JOIN_EXIT_OUTBOUND.__doc__ = "The aircraft begins/ends the procedure on a course away from the site."
+AVTR_JOIN_EXIT_ARC_METHOD.JOIN_EXIT_ON.__doc__ = "The aircraft begins/ends the procedure at the start bearing."
+AVTR_JOIN_EXIT_ARC_METHOD.JOIN_EXIT_INBOUND.__doc__ = "The aircraft begins/ends on a course towards the site."
 
-agcls.AgTypeNameMap["AgEAvtrJoinExitArcMethod"] = AgEAvtrJoinExitArcMethod
+agcls.AgTypeNameMap["AVTR_JOIN_EXIT_ARC_METHOD"] = AVTR_JOIN_EXIT_ARC_METHOD
 
-class AgEAvtrFlightLineProcType(IntEnum):
+class AVTR_FLIGHT_LINE_PROC_TYPE(IntEnum):
     """The procedure methodology used to calculate the flight line."""
     # An enroute procedure type.
-    eProcTypeEnroute = 0
+    PROC_TYPE_ENROUTE = 0
     # A basic point to point procedure type.
-    eProcTypeBasicPointToPoint = 1
+    PROC_TYPE_BASIC_POINT_TO_POINT = 1
     # A terrain follow procedure type.
-    eProcTypeTerrainFollow = 2
+    PROC_TYPE_TERRAIN_FOLLOW = 2
 
-AgEAvtrFlightLineProcType.eProcTypeEnroute.__doc__ = "An enroute procedure type."
-AgEAvtrFlightLineProcType.eProcTypeBasicPointToPoint.__doc__ = "A basic point to point procedure type."
-AgEAvtrFlightLineProcType.eProcTypeTerrainFollow.__doc__ = "A terrain follow procedure type."
+AVTR_FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE.__doc__ = "An enroute procedure type."
+AVTR_FLIGHT_LINE_PROC_TYPE.PROC_TYPE_BASIC_POINT_TO_POINT.__doc__ = "A basic point to point procedure type."
+AVTR_FLIGHT_LINE_PROC_TYPE.PROC_TYPE_TERRAIN_FOLLOW.__doc__ = "A terrain follow procedure type."
 
-agcls.AgTypeNameMap["AgEAvtrFlightLineProcType"] = AgEAvtrFlightLineProcType
+agcls.AgTypeNameMap["AVTR_FLIGHT_LINE_PROC_TYPE"] = AVTR_FLIGHT_LINE_PROC_TYPE
 
-class AgEAvtrTransitionToHoverMode(IntEnum):
+class AVTR_TRANSITION_TO_HOVER_MODE(IntEnum):
     """The type of hover to transition to."""
     # Transition to a full stop hover.
-    eFullStop = 0
+    FULL_STOP = 0
     # Transition to a hover with a constant translation rate.
-    eTranslationOnly = 1
+    TRANSLATION_ONLY = 1
     # Transition to a hover with a constant translation and altitude rate.
-    eTranslationAndAltitude = 2
+    TRANSLATION_AND_ALTITUDE = 2
 
-AgEAvtrTransitionToHoverMode.eFullStop.__doc__ = "Transition to a full stop hover."
-AgEAvtrTransitionToHoverMode.eTranslationOnly.__doc__ = "Transition to a hover with a constant translation rate."
-AgEAvtrTransitionToHoverMode.eTranslationAndAltitude.__doc__ = "Transition to a hover with a constant translation and altitude rate."
+AVTR_TRANSITION_TO_HOVER_MODE.FULL_STOP.__doc__ = "Transition to a full stop hover."
+AVTR_TRANSITION_TO_HOVER_MODE.TRANSLATION_ONLY.__doc__ = "Transition to a hover with a constant translation rate."
+AVTR_TRANSITION_TO_HOVER_MODE.TRANSLATION_AND_ALTITUDE.__doc__ = "Transition to a hover with a constant translation and altitude rate."
 
-agcls.AgTypeNameMap["AgEAvtrTransitionToHoverMode"] = AgEAvtrTransitionToHoverMode
+agcls.AgTypeNameMap["AVTR_TRANSITION_TO_HOVER_MODE"] = AVTR_TRANSITION_TO_HOVER_MODE
 
-class AgEAvtrVTOLRateMode(IntEnum):
+class AVTR_VTOL_RATE_MODE(IntEnum):
     """The rate mode for the VTOL procedure."""
     # The rate during the procedure will be maintained.
-    eHaltAutomatic = 0
+    HALT_AUTOMATIC = 0
     # The rate will be set to zero.
-    eAlwaysStop = 1
+    ALWAYS_STOP = 1
 
-AgEAvtrVTOLRateMode.eHaltAutomatic.__doc__ = "The rate during the procedure will be maintained."
-AgEAvtrVTOLRateMode.eAlwaysStop.__doc__ = "The rate will be set to zero."
+AVTR_VTOL_RATE_MODE.HALT_AUTOMATIC.__doc__ = "The rate during the procedure will be maintained."
+AVTR_VTOL_RATE_MODE.ALWAYS_STOP.__doc__ = "The rate will be set to zero."
 
-agcls.AgTypeNameMap["AgEAvtrVTOLRateMode"] = AgEAvtrVTOLRateMode
+agcls.AgTypeNameMap["AVTR_VTOL_RATE_MODE"] = AVTR_VTOL_RATE_MODE
 
-class AgEAvtrHoldingProfileMode(IntEnum):
+class AVTR_HOLDING_PROFILE_MODE(IntEnum):
     """How the aircraft will perform during the holding pattern with respect to airspeed and altitude."""
     # The aircraft will fly the pattern at the speed at which it arrived at the entry point.
-    eSTK8Compatible = 0
+    STK8_COMPATIBLE = 0
     # The aircraft will level off and fly at the cruise speed
-    eLevelOffCruiseSpeed = 1
+    LEVEL_OFF_CRUISE_SPEED = 1
     # The aircraft will climb or descend to the specified altitude.
-    eClimbDescentOnStation = 2
+    CLIMB_DESCENT_ON_STATION = 2
 
-AgEAvtrHoldingProfileMode.eSTK8Compatible.__doc__ = "The aircraft will fly the pattern at the speed at which it arrived at the entry point."
-AgEAvtrHoldingProfileMode.eLevelOffCruiseSpeed.__doc__ = "The aircraft will level off and fly at the cruise speed"
-AgEAvtrHoldingProfileMode.eClimbDescentOnStation.__doc__ = "The aircraft will climb or descend to the specified altitude."
+AVTR_HOLDING_PROFILE_MODE.STK8_COMPATIBLE.__doc__ = "The aircraft will fly the pattern at the speed at which it arrived at the entry point."
+AVTR_HOLDING_PROFILE_MODE.LEVEL_OFF_CRUISE_SPEED.__doc__ = "The aircraft will level off and fly at the cruise speed"
+AVTR_HOLDING_PROFILE_MODE.CLIMB_DESCENT_ON_STATION.__doc__ = "The aircraft will climb or descend to the specified altitude."
 
-agcls.AgTypeNameMap["AgEAvtrHoldingProfileMode"] = AgEAvtrHoldingProfileMode
+agcls.AgTypeNameMap["AVTR_HOLDING_PROFILE_MODE"] = AVTR_HOLDING_PROFILE_MODE
 
-class AgEAvtrHoldingDirection(IntEnum):
+class AVTR_HOLDING_DIRECTION(IntEnum):
     """The turn direction for the aircraft to enter the holding pattern."""
     # Turn left on the way inbound to the site.
-    eInboundLeftTurn = 0
+    INBOUND_LEFT_TURN = 0
     # Turn right on the way inbound to the site.
-    eInboundRightTurn = 1
+    INBOUND_RIGHT_TURN = 1
     # Turn left on the way outbound from the site.
-    eOutboundLeftTurn = 2
+    OUTBOUND_LEFT_TURN = 2
     # Turn right on the way outbound from the site.
-    eOutboundRightTurn = 3
+    OUTBOUND_RIGHT_TURN = 3
 
-AgEAvtrHoldingDirection.eInboundLeftTurn.__doc__ = "Turn left on the way inbound to the site."
-AgEAvtrHoldingDirection.eInboundRightTurn.__doc__ = "Turn right on the way inbound to the site."
-AgEAvtrHoldingDirection.eOutboundLeftTurn.__doc__ = "Turn left on the way outbound from the site."
-AgEAvtrHoldingDirection.eOutboundRightTurn.__doc__ = "Turn right on the way outbound from the site."
+AVTR_HOLDING_DIRECTION.INBOUND_LEFT_TURN.__doc__ = "Turn left on the way inbound to the site."
+AVTR_HOLDING_DIRECTION.INBOUND_RIGHT_TURN.__doc__ = "Turn right on the way inbound to the site."
+AVTR_HOLDING_DIRECTION.OUTBOUND_LEFT_TURN.__doc__ = "Turn left on the way outbound from the site."
+AVTR_HOLDING_DIRECTION.OUTBOUND_RIGHT_TURN.__doc__ = "Turn right on the way outbound from the site."
 
-agcls.AgTypeNameMap["AgEAvtrHoldingDirection"] = AgEAvtrHoldingDirection
+agcls.AgTypeNameMap["AVTR_HOLDING_DIRECTION"] = AVTR_HOLDING_DIRECTION
 
-class AgEAvtrHoldRefuelDumpMode(IntEnum):
+class AVTR_HOLD_REFUEL_DUMP_MODE(IntEnum):
     """Defines when the aircraft will leave the holding pattern after it has completed refueling or dumping fuel."""
     # Turn left on the way inbound to the site.
-    eFullNumerOfTurns = 0
+    FULL_NUMER_OF_TURNS = 0
     # Turn right on the way inbound to the site.
-    eExitAtEndOfTurn = 1
+    EXIT_AT_END_OF_TURN = 1
     # Turn left on the way outbound from the site.
-    eImmediateExit = 2
+    IMMEDIATE_EXIT = 2
 
-AgEAvtrHoldRefuelDumpMode.eFullNumerOfTurns.__doc__ = "Turn left on the way inbound to the site."
-AgEAvtrHoldRefuelDumpMode.eExitAtEndOfTurn.__doc__ = "Turn right on the way inbound to the site."
-AgEAvtrHoldRefuelDumpMode.eImmediateExit.__doc__ = "Turn left on the way outbound from the site."
+AVTR_HOLD_REFUEL_DUMP_MODE.FULL_NUMER_OF_TURNS.__doc__ = "Turn left on the way inbound to the site."
+AVTR_HOLD_REFUEL_DUMP_MODE.EXIT_AT_END_OF_TURN.__doc__ = "Turn right on the way inbound to the site."
+AVTR_HOLD_REFUEL_DUMP_MODE.IMMEDIATE_EXIT.__doc__ = "Turn left on the way outbound from the site."
 
-agcls.AgTypeNameMap["AgEAvtrHoldRefuelDumpMode"] = AgEAvtrHoldRefuelDumpMode
+agcls.AgTypeNameMap["AVTR_HOLD_REFUEL_DUMP_MODE"] = AVTR_HOLD_REFUEL_DUMP_MODE
 
-class AgEAvtrHoldingEntryManeuver(IntEnum):
+class AVTR_HOLDING_ENTRY_MANEUVER(IntEnum):
     """Defines how the aircraft will enter the holding pattern."""
     # The aircraft will enter the holding pattern at the normal holding point.
-    eHoldEntryNoManeuver = 0
+    HOLD_ENTRY_NO_MANEUVER = 0
     # The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook
-    eUseStandardEntryTurns = 1
+    USE_STANDARD_ENTRY_TURNS = 1
     # The aircraft will enter the holding pattern at an alternate entry point.
-    eUseAlternateEntryPoints = 2
+    USE_ALTERNATE_ENTRY_POINTS = 2
 
-AgEAvtrHoldingEntryManeuver.eHoldEntryNoManeuver.__doc__ = "The aircraft will enter the holding pattern at the normal holding point."
-AgEAvtrHoldingEntryManeuver.eUseStandardEntryTurns.__doc__ = "The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook"
-AgEAvtrHoldingEntryManeuver.eUseAlternateEntryPoints.__doc__ = "The aircraft will enter the holding pattern at an alternate entry point."
+AVTR_HOLDING_ENTRY_MANEUVER.HOLD_ENTRY_NO_MANEUVER.__doc__ = "The aircraft will enter the holding pattern at the normal holding point."
+AVTR_HOLDING_ENTRY_MANEUVER.USE_STANDARD_ENTRY_TURNS.__doc__ = "The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook"
+AVTR_HOLDING_ENTRY_MANEUVER.USE_ALTERNATE_ENTRY_POINTS.__doc__ = "The aircraft will enter the holding pattern at an alternate entry point."
 
-agcls.AgTypeNameMap["AgEAvtrHoldingEntryManeuver"] = AgEAvtrHoldingEntryManeuver
+agcls.AgTypeNameMap["AVTR_HOLDING_ENTRY_MANEUVER"] = AVTR_HOLDING_ENTRY_MANEUVER
 
-class AgEAvtrVTOLTransitionMode(IntEnum):
+class AVTR_VTOL_TRANSITION_MODE(IntEnum):
     """The mode to specify the course of the transition maneuver."""
     # Specify a heading relative to the previous procedure.
-    eTransitionRelativeHdg = 0
+    TRANSITION_RELATIVE_HDG = 0
     # Specify an absolute heading.
-    eTransitionAbsoluteHdg = 1
+    TRANSITION_ABSOLUTE_HDG = 1
     # Transition into the wind direction.
-    eTransitionIntoWind = 2
+    TRANSITION_INTO_WIND = 2
 
-AgEAvtrVTOLTransitionMode.eTransitionRelativeHdg.__doc__ = "Specify a heading relative to the previous procedure."
-AgEAvtrVTOLTransitionMode.eTransitionAbsoluteHdg.__doc__ = "Specify an absolute heading."
-AgEAvtrVTOLTransitionMode.eTransitionIntoWind.__doc__ = "Transition into the wind direction."
+AVTR_VTOL_TRANSITION_MODE.TRANSITION_RELATIVE_HDG.__doc__ = "Specify a heading relative to the previous procedure."
+AVTR_VTOL_TRANSITION_MODE.TRANSITION_ABSOLUTE_HDG.__doc__ = "Specify an absolute heading."
+AVTR_VTOL_TRANSITION_MODE.TRANSITION_INTO_WIND.__doc__ = "Transition into the wind direction."
 
-agcls.AgTypeNameMap["AgEAvtrVTOLTransitionMode"] = AgEAvtrVTOLTransitionMode
+agcls.AgTypeNameMap["AVTR_VTOL_TRANSITION_MODE"] = AVTR_VTOL_TRANSITION_MODE
 
-class AgEAvtrVTOLFinalHeadingMode(IntEnum):
+class AVTR_VTOL_FINAL_HEADING_MODE(IntEnum):
     """The mode to specify the heading at the end of the maneuver."""
     # Specify a heading relative to the previous procedure.
-    eFinalHeadingRelative = 0
+    FINAL_HEADING_RELATIVE = 0
     # Specify an absolute heading.
-    eFinalHeadingAbsolute = 1
+    FINAL_HEADING_ABSOLUTE = 1
     # The aircraft have the same heading as the translation bearing.
-    eFinalHeadingTranslationCourse = 2
+    FINAL_HEADING_TRANSLATION_COURSE = 2
 
-AgEAvtrVTOLFinalHeadingMode.eFinalHeadingRelative.__doc__ = "Specify a heading relative to the previous procedure."
-AgEAvtrVTOLFinalHeadingMode.eFinalHeadingAbsolute.__doc__ = "Specify an absolute heading."
-AgEAvtrVTOLFinalHeadingMode.eFinalHeadingTranslationCourse.__doc__ = "The aircraft have the same heading as the translation bearing."
+AVTR_VTOL_FINAL_HEADING_MODE.FINAL_HEADING_RELATIVE.__doc__ = "Specify a heading relative to the previous procedure."
+AVTR_VTOL_FINAL_HEADING_MODE.FINAL_HEADING_ABSOLUTE.__doc__ = "Specify an absolute heading."
+AVTR_VTOL_FINAL_HEADING_MODE.FINAL_HEADING_TRANSLATION_COURSE.__doc__ = "The aircraft have the same heading as the translation bearing."
 
-agcls.AgTypeNameMap["AgEAvtrVTOLFinalHeadingMode"] = AgEAvtrVTOLFinalHeadingMode
+agcls.AgTypeNameMap["AVTR_VTOL_FINAL_HEADING_MODE"] = AVTR_VTOL_FINAL_HEADING_MODE
 
-class AgEAvtrVTOLTranslationMode(IntEnum):
+class AVTR_VTOL_TRANSLATION_MODE(IntEnum):
     """The mode to specify the translation of the VTOL maneuver."""
     # The aircraft will translate on a specific bearing and range.
-    eSetBearingAndRange = 0
+    SET_BEARING_AND_RANGE = 0
     # The aircraft will come to a complete stop.
-    eComeToStop = 1
+    COME_TO_STOP = 1
     # The aircraft will continue to translate with the same rate and direction as it began the procedure.
-    eMaintainRate = 2
+    MAINTAIN_RATE = 2
 
-AgEAvtrVTOLTranslationMode.eSetBearingAndRange.__doc__ = "The aircraft will translate on a specific bearing and range."
-AgEAvtrVTOLTranslationMode.eComeToStop.__doc__ = "The aircraft will come to a complete stop."
-AgEAvtrVTOLTranslationMode.eMaintainRate.__doc__ = "The aircraft will continue to translate with the same rate and direction as it began the procedure."
+AVTR_VTOL_TRANSLATION_MODE.SET_BEARING_AND_RANGE.__doc__ = "The aircraft will translate on a specific bearing and range."
+AVTR_VTOL_TRANSLATION_MODE.COME_TO_STOP.__doc__ = "The aircraft will come to a complete stop."
+AVTR_VTOL_TRANSLATION_MODE.MAINTAIN_RATE.__doc__ = "The aircraft will continue to translate with the same rate and direction as it began the procedure."
 
-agcls.AgTypeNameMap["AgEAvtrVTOLTranslationMode"] = AgEAvtrVTOLTranslationMode
+agcls.AgTypeNameMap["AVTR_VTOL_TRANSLATION_MODE"] = AVTR_VTOL_TRANSLATION_MODE
 
-class AgEAvtrVTOLTranslationFinalCourseMode(IntEnum):
+class AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE(IntEnum):
     """The mode to specify the final course of the VTOL maneuver."""
     # The aircraft will translate directly along the specified bearing and range.
-    eTranslateDirect = 0
+    TRANSLATE_DIRECT = 0
     # The aircraft will translate along a bisecting line between the inbound and outbound course.
-    eBisectInboundOutbound = 1
+    BISECT_INBOUND_OUTBOUND = 1
     # The aircraft will evaluate the procedure ahead to determine the translation bearing and rate.
-    eAnticipateNextTranslation = 2
+    ANTICIPATE_NEXT_TRANSLATION = 2
 
-AgEAvtrVTOLTranslationFinalCourseMode.eTranslateDirect.__doc__ = "The aircraft will translate directly along the specified bearing and range."
-AgEAvtrVTOLTranslationFinalCourseMode.eBisectInboundOutbound.__doc__ = "The aircraft will translate along a bisecting line between the inbound and outbound course."
-AgEAvtrVTOLTranslationFinalCourseMode.eAnticipateNextTranslation.__doc__ = "The aircraft will evaluate the procedure ahead to determine the translation bearing and rate."
+AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE.TRANSLATE_DIRECT.__doc__ = "The aircraft will translate directly along the specified bearing and range."
+AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE.BISECT_INBOUND_OUTBOUND.__doc__ = "The aircraft will translate along a bisecting line between the inbound and outbound course."
+AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE.ANTICIPATE_NEXT_TRANSLATION.__doc__ = "The aircraft will evaluate the procedure ahead to determine the translation bearing and rate."
 
-agcls.AgTypeNameMap["AgEAvtrVTOLTranslationFinalCourseMode"] = AgEAvtrVTOLTranslationFinalCourseMode
+agcls.AgTypeNameMap["AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE"] = AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE
 
-class AgEAvtrHoverMode(IntEnum):
+class AVTR_HOVER_MODE(IntEnum):
     """The hover mode."""
     # Hover in place for a fixed time.
-    eHoverModeFixedTime = 0
+    HOVER_MODE_FIXED_TIME = 0
     # Perform a hovering maneuver.
-    eHoverModeManeuver = 1
+    HOVER_MODE_MANEUVER = 1
 
-AgEAvtrHoverMode.eHoverModeFixedTime.__doc__ = "Hover in place for a fixed time."
-AgEAvtrHoverMode.eHoverModeManeuver.__doc__ = "Perform a hovering maneuver."
+AVTR_HOVER_MODE.HOVER_MODE_FIXED_TIME.__doc__ = "Hover in place for a fixed time."
+AVTR_HOVER_MODE.HOVER_MODE_MANEUVER.__doc__ = "Perform a hovering maneuver."
 
-agcls.AgTypeNameMap["AgEAvtrHoverMode"] = AgEAvtrHoverMode
+agcls.AgTypeNameMap["AVTR_HOVER_MODE"] = AVTR_HOVER_MODE
 
-class AgEAvtrVTOLHeadingMode(IntEnum):
+class AVTR_VTOL_HEADING_MODE(IntEnum):
     """The heading mode for the hover maneuver."""
     # The aircraft's heading is independent of its translation.
-    eHeadingIndependent = 0
+    HEADING_INDEPENDENT = 0
     # The aircraft will align its heading with the translation course.
-    eHeadingAlignTranslationCourse = 1
+    HEADING_ALIGN_TRANSLATION_COURSE = 1
     # The aircraft will set its heading into the wind.
-    eHeadingIntoWind = 2
+    HEADING_INTO_WIND = 2
 
-AgEAvtrVTOLHeadingMode.eHeadingIndependent.__doc__ = "The aircraft's heading is independent of its translation."
-AgEAvtrVTOLHeadingMode.eHeadingAlignTranslationCourse.__doc__ = "The aircraft will align its heading with the translation course."
-AgEAvtrVTOLHeadingMode.eHeadingIntoWind.__doc__ = "The aircraft will set its heading into the wind."
+AVTR_VTOL_HEADING_MODE.HEADING_INDEPENDENT.__doc__ = "The aircraft's heading is independent of its translation."
+AVTR_VTOL_HEADING_MODE.HEADING_ALIGN_TRANSLATION_COURSE.__doc__ = "The aircraft will align its heading with the translation course."
+AVTR_VTOL_HEADING_MODE.HEADING_INTO_WIND.__doc__ = "The aircraft will set its heading into the wind."
 
-agcls.AgTypeNameMap["AgEAvtrVTOLHeadingMode"] = AgEAvtrVTOLHeadingMode
+agcls.AgTypeNameMap["AVTR_VTOL_HEADING_MODE"] = AVTR_VTOL_HEADING_MODE
 
-class AgEAvtrVertLandingMode(IntEnum):
+class AVTR_VERT_LANDING_MODE(IntEnum):
     """The heading mode for a vertical landing maneuver."""
     # The aircraft's heading is independent of its translation.
-    eVertLandingIndependent = 0
+    VERT_LANDING_INDEPENDENT = 0
     # The aircraft will align its heading with the translation course.
-    eVertLandingAlignTranslationCourse = 1
+    VERT_LANDING_ALIGN_TRANSLATION_COURSE = 1
     # The aircraft will set its heading into the wind.
-    eVertLandingIntoWind = 2
+    VERT_LANDING_INTO_WIND = 2
     # The aircraft will align its heading with the translation course  will achieve the specified heading upon arriving.
-    eVertLandingAlignTranslationCourseOverride = 3
+    VERT_LANDING_ALIGN_TRANSLATION_COURSE_OVERRIDE = 3
 
-AgEAvtrVertLandingMode.eVertLandingIndependent.__doc__ = "The aircraft's heading is independent of its translation."
-AgEAvtrVertLandingMode.eVertLandingAlignTranslationCourse.__doc__ = "The aircraft will align its heading with the translation course."
-AgEAvtrVertLandingMode.eVertLandingIntoWind.__doc__ = "The aircraft will set its heading into the wind."
-AgEAvtrVertLandingMode.eVertLandingAlignTranslationCourseOverride.__doc__ = "The aircraft will align its heading with the translation course  will achieve the specified heading upon arriving."
+AVTR_VERT_LANDING_MODE.VERT_LANDING_INDEPENDENT.__doc__ = "The aircraft's heading is independent of its translation."
+AVTR_VERT_LANDING_MODE.VERT_LANDING_ALIGN_TRANSLATION_COURSE.__doc__ = "The aircraft will align its heading with the translation course."
+AVTR_VERT_LANDING_MODE.VERT_LANDING_INTO_WIND.__doc__ = "The aircraft will set its heading into the wind."
+AVTR_VERT_LANDING_MODE.VERT_LANDING_ALIGN_TRANSLATION_COURSE_OVERRIDE.__doc__ = "The aircraft will align its heading with the translation course  will achieve the specified heading upon arriving."
 
-agcls.AgTypeNameMap["AgEAvtrVertLandingMode"] = AgEAvtrVertLandingMode
+agcls.AgTypeNameMap["AVTR_VERT_LANDING_MODE"] = AVTR_VERT_LANDING_MODE
 
-class AgEAvtrLaunchAttitudeMode(IntEnum):
+class AVTR_LAUNCH_ATTITUDE_MODE(IntEnum):
     """The attitude mode for the launch procedure."""
     # The aircraft's attitude is aligned with the specified direction vector.
-    eLaunchAlignDirectionVector = 0
+    LAUNCH_ALIGN_DIRECTION_VECTOR = 0
     # The aircraft will maintain the parent vehicle's attiude at the time of launch.
-    eLaunchHoldParentAttitude = 1
+    LAUNCH_HOLD_PARENT_ATTITUDE = 1
     # The aircraft launches in level flight
-    eLaunchVTOL = 2
+    LAUNCH_VTOL = 2
 
-AgEAvtrLaunchAttitudeMode.eLaunchAlignDirectionVector.__doc__ = "The aircraft's attitude is aligned with the specified direction vector."
-AgEAvtrLaunchAttitudeMode.eLaunchHoldParentAttitude.__doc__ = "The aircraft will maintain the parent vehicle's attiude at the time of launch."
-AgEAvtrLaunchAttitudeMode.eLaunchVTOL.__doc__ = "The aircraft launches in level flight"
+AVTR_LAUNCH_ATTITUDE_MODE.LAUNCH_ALIGN_DIRECTION_VECTOR.__doc__ = "The aircraft's attitude is aligned with the specified direction vector."
+AVTR_LAUNCH_ATTITUDE_MODE.LAUNCH_HOLD_PARENT_ATTITUDE.__doc__ = "The aircraft will maintain the parent vehicle's attiude at the time of launch."
+AVTR_LAUNCH_ATTITUDE_MODE.LAUNCH_VTOL.__doc__ = "The aircraft launches in level flight"
 
-agcls.AgTypeNameMap["AgEAvtrLaunchAttitudeMode"] = AgEAvtrLaunchAttitudeMode
+agcls.AgTypeNameMap["AVTR_LAUNCH_ATTITUDE_MODE"] = AVTR_LAUNCH_ATTITUDE_MODE
 
-class AgEAvtrFuelFlowType(IntEnum):
+class AVTR_FUEL_FLOW_TYPE(IntEnum):
     """The fuel flow type to use for the procedure."""
     # Fuel flow defined for the current Takeoff performance model.
-    eFuelFlowTakeoff = 0
+    FUEL_FLOW_TAKEOFF = 0
     # Fuel flow defined for the current Cruise performance model.
-    eFuelFlowCruise = 1
+    FUEL_FLOW_CRUISE = 1
     # Fuel flow defined for the current Landing performance model.
-    eFuelFlowLanding = 2
+    FUEL_FLOW_LANDING = 2
     # Fuel flow defined for the current VTOL performance model.
-    eFuelFlowVTOL = 3
+    FUEL_FLOW_VTOL = 3
     # Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model.
-    eFuelFlowAeroProp = 4
+    FUEL_FLOW_AERO_PROP = 4
     # Fuel flow defined manually.
-    eFuelFlowOverride = 5
+    FUEL_FLOW_OVERRIDE = 5
 
-AgEAvtrFuelFlowType.eFuelFlowTakeoff.__doc__ = "Fuel flow defined for the current Takeoff performance model."
-AgEAvtrFuelFlowType.eFuelFlowCruise.__doc__ = "Fuel flow defined for the current Cruise performance model."
-AgEAvtrFuelFlowType.eFuelFlowLanding.__doc__ = "Fuel flow defined for the current Landing performance model."
-AgEAvtrFuelFlowType.eFuelFlowVTOL.__doc__ = "Fuel flow defined for the current VTOL performance model."
-AgEAvtrFuelFlowType.eFuelFlowAeroProp.__doc__ = "Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."
-AgEAvtrFuelFlowType.eFuelFlowOverride.__doc__ = "Fuel flow defined manually."
+AVTR_FUEL_FLOW_TYPE.FUEL_FLOW_TAKEOFF.__doc__ = "Fuel flow defined for the current Takeoff performance model."
+AVTR_FUEL_FLOW_TYPE.FUEL_FLOW_CRUISE.__doc__ = "Fuel flow defined for the current Cruise performance model."
+AVTR_FUEL_FLOW_TYPE.FUEL_FLOW_LANDING.__doc__ = "Fuel flow defined for the current Landing performance model."
+AVTR_FUEL_FLOW_TYPE.FUEL_FLOW_VTOL.__doc__ = "Fuel flow defined for the current VTOL performance model."
+AVTR_FUEL_FLOW_TYPE.FUEL_FLOW_AERO_PROP.__doc__ = "Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."
+AVTR_FUEL_FLOW_TYPE.FUEL_FLOW_OVERRIDE.__doc__ = "Fuel flow defined manually."
 
-agcls.AgTypeNameMap["AgEAvtrFuelFlowType"] = AgEAvtrFuelFlowType
+agcls.AgTypeNameMap["AVTR_FUEL_FLOW_TYPE"] = AVTR_FUEL_FLOW_TYPE
 
-class AgEAvtrLineOrientation(IntEnum):
+class AVTR_LINE_ORIENTATION(IntEnum):
     """The orientation for a parallel flight line procedure."""
     # Left of the previous flight line.
-    eFlightLineToLeft = 0
+    FLIGHT_LINE_TO_LEFT = 0
     # Right of the previous flight line.
-    eFlightLineToRight = 1
+    FLIGHT_LINE_TO_RIGHT = 1
 
-AgEAvtrLineOrientation.eFlightLineToLeft.__doc__ = "Left of the previous flight line."
-AgEAvtrLineOrientation.eFlightLineToRight.__doc__ = "Right of the previous flight line."
+AVTR_LINE_ORIENTATION.FLIGHT_LINE_TO_LEFT.__doc__ = "Left of the previous flight line."
+AVTR_LINE_ORIENTATION.FLIGHT_LINE_TO_RIGHT.__doc__ = "Right of the previous flight line."
 
-agcls.AgTypeNameMap["AgEAvtrLineOrientation"] = AgEAvtrLineOrientation
+agcls.AgTypeNameMap["AVTR_LINE_ORIENTATION"] = AVTR_LINE_ORIENTATION
 
-class AgEAvtrRelAbsBearing(IntEnum):
+class AVTR_REL_ABS_BEARING(IntEnum):
     """The options for a bearing that can be relative or absolute."""
     # A bearing relative to the previous course.
-    eRelativeBearing = 0
+    RELATIVE_BEARING = 0
     # A bearing using true north.
-    eTrueBearing = 1
+    TRUE_BEARING = 1
     # A bearing using magnetic north.
-    eMagneticBearing = 2
+    MAGNETIC_BEARING = 2
 
-AgEAvtrRelAbsBearing.eRelativeBearing.__doc__ = "A bearing relative to the previous course."
-AgEAvtrRelAbsBearing.eTrueBearing.__doc__ = "A bearing using true north."
-AgEAvtrRelAbsBearing.eMagneticBearing.__doc__ = "A bearing using magnetic north."
+AVTR_REL_ABS_BEARING.RELATIVE_BEARING.__doc__ = "A bearing relative to the previous course."
+AVTR_REL_ABS_BEARING.TRUE_BEARING.__doc__ = "A bearing using true north."
+AVTR_REL_ABS_BEARING.MAGNETIC_BEARING.__doc__ = "A bearing using magnetic north."
 
-agcls.AgTypeNameMap["AgEAvtrRelAbsBearing"] = AgEAvtrRelAbsBearing
+agcls.AgTypeNameMap["AVTR_REL_ABS_BEARING"] = AVTR_REL_ABS_BEARING
 
-class AgEAvtrBasicFixedWingPropMode(IntEnum):
+class AVTR_BASIC_FIXED_WING_PROP_MODE(IntEnum):
     """The option to specify the thrust (jet engines) or power (propellers)."""
     # Jet - Specify net thrust.
-    eSpecifyThrust = 0
+    SPECIFY_THRUST = 0
     # Propeller - Specify net power.
-    eSpecifyPower = 1
+    SPECIFY_POWER = 1
 
-AgEAvtrBasicFixedWingPropMode.eSpecifyThrust.__doc__ = "Jet - Specify net thrust."
-AgEAvtrBasicFixedWingPropMode.eSpecifyPower.__doc__ = "Propeller - Specify net power."
+AVTR_BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST.__doc__ = "Jet - Specify net thrust."
+AVTR_BASIC_FIXED_WING_PROP_MODE.SPECIFY_POWER.__doc__ = "Propeller - Specify net power."
 
-agcls.AgTypeNameMap["AgEAvtrBasicFixedWingPropMode"] = AgEAvtrBasicFixedWingPropMode
+agcls.AgTypeNameMap["AVTR_BASIC_FIXED_WING_PROP_MODE"] = AVTR_BASIC_FIXED_WING_PROP_MODE
 
-class AgEAvtrClimbSpeedType(IntEnum):
+class AVTR_CLIMB_SPEED_TYPE(IntEnum):
     """The mode to calculate the aircraft's airspeed while climbing for an advanced climb performance model."""
     # The speed at which the aircraft's rate of climb is maximized.
-    eClimbSpeedBestRate = 0
+    CLIMB_SPEED_BEST_RATE = 0
     # The speed at which the aircraft will gain the most altitude over downrange distance.
-    eClimbSpeedBestAngle = 1
+    CLIMB_SPEED_BEST_ANGLE = 1
     # The speed at which the aircraft's fuel consumption is minimized.
-    eClimbSpeedMinFuel = 2
+    CLIMB_SPEED_MIN_FUEL = 2
     # Manually specify the speed.
-    eClimbSpeedOverride = 3
+    CLIMB_SPEED_OVERRIDE = 3
 
-AgEAvtrClimbSpeedType.eClimbSpeedBestRate.__doc__ = "The speed at which the aircraft's rate of climb is maximized."
-AgEAvtrClimbSpeedType.eClimbSpeedBestAngle.__doc__ = "The speed at which the aircraft will gain the most altitude over downrange distance."
-AgEAvtrClimbSpeedType.eClimbSpeedMinFuel.__doc__ = "The speed at which the aircraft's fuel consumption is minimized."
-AgEAvtrClimbSpeedType.eClimbSpeedOverride.__doc__ = "Manually specify the speed."
+AVTR_CLIMB_SPEED_TYPE.CLIMB_SPEED_BEST_RATE.__doc__ = "The speed at which the aircraft's rate of climb is maximized."
+AVTR_CLIMB_SPEED_TYPE.CLIMB_SPEED_BEST_ANGLE.__doc__ = "The speed at which the aircraft will gain the most altitude over downrange distance."
+AVTR_CLIMB_SPEED_TYPE.CLIMB_SPEED_MIN_FUEL.__doc__ = "The speed at which the aircraft's fuel consumption is minimized."
+AVTR_CLIMB_SPEED_TYPE.CLIMB_SPEED_OVERRIDE.__doc__ = "Manually specify the speed."
 
-agcls.AgTypeNameMap["AgEAvtrClimbSpeedType"] = AgEAvtrClimbSpeedType
+agcls.AgTypeNameMap["AVTR_CLIMB_SPEED_TYPE"] = AVTR_CLIMB_SPEED_TYPE
 
-class AgEAvtrCruiseMaxPerfSpeedType(IntEnum):
+class AVTR_CRUISE_MAX_PERF_SPEED_TYPE(IntEnum):
     """The method for defining the maximum performance airspeed of the aircraft for an advanced cruise model."""
     # The lowest speed at which the aircraft can generate lift while pulling maximum Gs.
-    eCornerSpeed = 0
+    CORNER_SPEED = 0
     # The maximum specific excess power without afterburning.
-    eMaxPsDryThrust = 1
+    MAX_PS_DRY_THRUST = 1
     # The maximum specific excess power while afterburning.
-    eMaxPsAfterburner = 2
+    MAX_PS_AFTERBURNER = 2
     # The maximum speed without afterburning.
-    eMaxSpeedDryThrust = 3
+    MAX_SPEED_DRY_THRUST = 3
     # The speed which maximizes the aircraft range while afterburning.
-    eMaxRangeAfterburner = 4
+    MAX_RANGE_AFTERBURNER = 4
 
-AgEAvtrCruiseMaxPerfSpeedType.eCornerSpeed.__doc__ = "The lowest speed at which the aircraft can generate lift while pulling maximum Gs."
-AgEAvtrCruiseMaxPerfSpeedType.eMaxPsDryThrust.__doc__ = "The maximum specific excess power without afterburning."
-AgEAvtrCruiseMaxPerfSpeedType.eMaxPsAfterburner.__doc__ = "The maximum specific excess power while afterburning."
-AgEAvtrCruiseMaxPerfSpeedType.eMaxSpeedDryThrust.__doc__ = "The maximum speed without afterburning."
-AgEAvtrCruiseMaxPerfSpeedType.eMaxRangeAfterburner.__doc__ = "The speed which maximizes the aircraft range while afterburning."
+AVTR_CRUISE_MAX_PERF_SPEED_TYPE.CORNER_SPEED.__doc__ = "The lowest speed at which the aircraft can generate lift while pulling maximum Gs."
+AVTR_CRUISE_MAX_PERF_SPEED_TYPE.MAX_PS_DRY_THRUST.__doc__ = "The maximum specific excess power without afterburning."
+AVTR_CRUISE_MAX_PERF_SPEED_TYPE.MAX_PS_AFTERBURNER.__doc__ = "The maximum specific excess power while afterburning."
+AVTR_CRUISE_MAX_PERF_SPEED_TYPE.MAX_SPEED_DRY_THRUST.__doc__ = "The maximum speed without afterburning."
+AVTR_CRUISE_MAX_PERF_SPEED_TYPE.MAX_RANGE_AFTERBURNER.__doc__ = "The speed which maximizes the aircraft range while afterburning."
 
-agcls.AgTypeNameMap["AgEAvtrCruiseMaxPerfSpeedType"] = AgEAvtrCruiseMaxPerfSpeedType
+agcls.AgTypeNameMap["AVTR_CRUISE_MAX_PERF_SPEED_TYPE"] = AVTR_CRUISE_MAX_PERF_SPEED_TYPE
 
-class AgEAvtrDescentSpeedType(IntEnum):
+class AVTR_DESCENT_SPEED_TYPE(IntEnum):
     """The method for calculating the aircraft's airspeed while descending."""
     # A variable airspeed that maximizes the distance that the aircraft can fly.
-    eDescentMaxRangeCruise = 0
+    DESCENT_MAX_RANGE_CRUISE = 0
     # The speed at which the aircraft's glide ratio is maximized.
-    eDescentMaxGlideRatio = 1
+    DESCENT_MAX_GLIDE_RATIO = 1
     # The speed at which the aircraft's rate of descent is minimized.
-    eDescentMinSinkRate = 2
+    DESCENT_MIN_SINK_RATE = 2
     # A speed relative to the aircraft's stall speed..
-    eDescentStallSpeedRatio = 3
+    DESCENT_STALL_SPEED_RATIO = 3
     # Manually define the airspeed.
-    eDescentSpeedOverride = 4
+    DESCENT_SPEED_OVERRIDE = 4
 
-AgEAvtrDescentSpeedType.eDescentMaxRangeCruise.__doc__ = "A variable airspeed that maximizes the distance that the aircraft can fly."
-AgEAvtrDescentSpeedType.eDescentMaxGlideRatio.__doc__ = "The speed at which the aircraft's glide ratio is maximized."
-AgEAvtrDescentSpeedType.eDescentMinSinkRate.__doc__ = "The speed at which the aircraft's rate of descent is minimized."
-AgEAvtrDescentSpeedType.eDescentStallSpeedRatio.__doc__ = "A speed relative to the aircraft's stall speed.."
-AgEAvtrDescentSpeedType.eDescentSpeedOverride.__doc__ = "Manually define the airspeed."
+AVTR_DESCENT_SPEED_TYPE.DESCENT_MAX_RANGE_CRUISE.__doc__ = "A variable airspeed that maximizes the distance that the aircraft can fly."
+AVTR_DESCENT_SPEED_TYPE.DESCENT_MAX_GLIDE_RATIO.__doc__ = "The speed at which the aircraft's glide ratio is maximized."
+AVTR_DESCENT_SPEED_TYPE.DESCENT_MIN_SINK_RATE.__doc__ = "The speed at which the aircraft's rate of descent is minimized."
+AVTR_DESCENT_SPEED_TYPE.DESCENT_STALL_SPEED_RATIO.__doc__ = "A speed relative to the aircraft's stall speed.."
+AVTR_DESCENT_SPEED_TYPE.DESCENT_SPEED_OVERRIDE.__doc__ = "Manually define the airspeed."
 
-agcls.AgTypeNameMap["AgEAvtrDescentSpeedType"] = AgEAvtrDescentSpeedType
+agcls.AgTypeNameMap["AVTR_DESCENT_SPEED_TYPE"] = AVTR_DESCENT_SPEED_TYPE
 
-class AgEAvtrTakeoffLandingSpeedMode(IntEnum):
+class AVTR_TAKEOFF_LANDING_SPEED_MODE(IntEnum):
     """The method for calculating the aircraft's speed upon leaving the ground or at wheels down."""
     # A multiple of the aircraft's stall speed.
-    eTakeoffLandingStallSpeedRatio = 0
+    TAKEOFF_LANDING_STALL_SPEED_RATIO = 0
     # The speed needed to achieve lift at the specified Angle of Attack.
-    eTakeoffLandingAngleOfAttack = 1
+    TAKEOFF_LANDING_ANGLE_OF_ATTACK = 1
 
-AgEAvtrTakeoffLandingSpeedMode.eTakeoffLandingStallSpeedRatio.__doc__ = "A multiple of the aircraft's stall speed."
-AgEAvtrTakeoffLandingSpeedMode.eTakeoffLandingAngleOfAttack.__doc__ = "The speed needed to achieve lift at the specified Angle of Attack."
+AVTR_TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_STALL_SPEED_RATIO.__doc__ = "A multiple of the aircraft's stall speed."
+AVTR_TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK.__doc__ = "The speed needed to achieve lift at the specified Angle of Attack."
 
-agcls.AgTypeNameMap["AgEAvtrTakeoffLandingSpeedMode"] = AgEAvtrTakeoffLandingSpeedMode
+agcls.AgTypeNameMap["AVTR_TAKEOFF_LANDING_SPEED_MODE"] = AVTR_TAKEOFF_LANDING_SPEED_MODE
 
-class AgEAvtrDepartureSpeedMode(IntEnum):
+class AVTR_DEPARTURE_SPEED_MODE(IntEnum):
     """The method for calculating the aircraft's airspeed upon leaving the ground."""
     # The aircraft will fly at the max climb angle.
-    eMaxClimbAngle = 0
+    MAX_CLIMB_ANGLE = 0
     # The aircraft will fly at the max climb rate.
-    eMaxClimbRate = 1
+    MAX_CLIMB_RATE = 1
     # The aircraft will fly at the airspeed defined in the Climb performance model.
-    eUseClimbModel = 2
+    USE_CLIMB_MODEL = 2
 
-AgEAvtrDepartureSpeedMode.eMaxClimbAngle.__doc__ = "The aircraft will fly at the max climb angle."
-AgEAvtrDepartureSpeedMode.eMaxClimbRate.__doc__ = "The aircraft will fly at the max climb rate."
-AgEAvtrDepartureSpeedMode.eUseClimbModel.__doc__ = "The aircraft will fly at the airspeed defined in the Climb performance model."
+AVTR_DEPARTURE_SPEED_MODE.MAX_CLIMB_ANGLE.__doc__ = "The aircraft will fly at the max climb angle."
+AVTR_DEPARTURE_SPEED_MODE.MAX_CLIMB_RATE.__doc__ = "The aircraft will fly at the max climb rate."
+AVTR_DEPARTURE_SPEED_MODE.USE_CLIMB_MODEL.__doc__ = "The aircraft will fly at the airspeed defined in the Climb performance model."
 
-agcls.AgTypeNameMap["AgEAvtrDepartureSpeedMode"] = AgEAvtrDepartureSpeedMode
+agcls.AgTypeNameMap["AVTR_DEPARTURE_SPEED_MODE"] = AVTR_DEPARTURE_SPEED_MODE
 
-class AgEAvtrAdvFixedWingAeroStrategy(IntEnum):
+class AVTR_ADV_FIXED_WING_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy for the Advanced Fixed Wing Tool."""
     # Define the aerodynamics using an external .aero file.
-    eExternalAeroFile = 0
+    EXTERNAL_AERO_FILE = 0
     # Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft.
-    eSubSuperHyperAero = 1
+    SUB_SUPER_HYPER_AERO = 1
     # Define the aerodynamics for an aircraft that generally travels at subsonic speeds.
-    eSubsonicAero = 2
+    SUBSONIC_AERO = 2
     # Define the aerodynamics for an aircraft that generally travels at supersonic speeds.
-    eSupersonicAero = 3
+    SUPERSONIC_AERO = 3
 
-AgEAvtrAdvFixedWingAeroStrategy.eExternalAeroFile.__doc__ = "Define the aerodynamics using an external .aero file."
-AgEAvtrAdvFixedWingAeroStrategy.eSubSuperHyperAero.__doc__ = "Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."
-AgEAvtrAdvFixedWingAeroStrategy.eSubsonicAero.__doc__ = "Define the aerodynamics for an aircraft that generally travels at subsonic speeds."
-AgEAvtrAdvFixedWingAeroStrategy.eSupersonicAero.__doc__ = "Define the aerodynamics for an aircraft that generally travels at supersonic speeds."
+AVTR_ADV_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE.__doc__ = "Define the aerodynamics using an external .aero file."
+AVTR_ADV_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO.__doc__ = "Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."
+AVTR_ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO.__doc__ = "Define the aerodynamics for an aircraft that generally travels at subsonic speeds."
+AVTR_ADV_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO.__doc__ = "Define the aerodynamics for an aircraft that generally travels at supersonic speeds."
 
-agcls.AgTypeNameMap["AgEAvtrAdvFixedWingAeroStrategy"] = AgEAvtrAdvFixedWingAeroStrategy
+agcls.AgTypeNameMap["AVTR_ADV_FIXED_WING_AERO_STRATEGY"] = AVTR_ADV_FIXED_WING_AERO_STRATEGY
 
-class AgEAvtrAdvFixedWingGeometry(IntEnum):
+class AVTR_ADV_FIXED_WING_GEOMETRY(IntEnum):
     """The method to define the wing geometry of an aircraft in the Advanced Fixed Wing Tool."""
     # Define the static properties of an immovable wing.
-    eBasicGeometry = 0
+    BASIC_GEOMETRY = 0
     # Define the minimum and maximum properties of an adjustable wing.
-    eVariableGeometry = 1
+    VARIABLE_GEOMETRY = 1
 
-AgEAvtrAdvFixedWingGeometry.eBasicGeometry.__doc__ = "Define the static properties of an immovable wing."
-AgEAvtrAdvFixedWingGeometry.eVariableGeometry.__doc__ = "Define the minimum and maximum properties of an adjustable wing."
+AVTR_ADV_FIXED_WING_GEOMETRY.BASIC_GEOMETRY.__doc__ = "Define the static properties of an immovable wing."
+AVTR_ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY.__doc__ = "Define the minimum and maximum properties of an adjustable wing."
 
-agcls.AgTypeNameMap["AgEAvtrAdvFixedWingGeometry"] = AgEAvtrAdvFixedWingGeometry
+agcls.AgTypeNameMap["AVTR_ADV_FIXED_WING_GEOMETRY"] = AVTR_ADV_FIXED_WING_GEOMETRY
 
-class AgEAvtrAdvFixedWingPowerplantStrategy(IntEnum):
+class AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY(IntEnum):
     """The powerplant strategy for the Advanced Fixed Wing Tool."""
     # An electric engine.
-    eElectricPowerplant = 0
+    ELECTRIC_POWERPLANT = 0
     # Define the powerplant using an external .prop file.
-    eExternalPropFile = 1
+    EXTERNAL_PROP_FILE = 1
     # A piston, or reciprocating, engine.
-    ePistonPowerplant = 2
+    PISTON_POWERPLANT = 2
     # A thermodynamic model that includes turbine, ramjet, and scramjet performance modes.
-    eSubSuperHyperPowerplant = 3
+    SUB_SUPER_HYPER_POWERPLANT = 3
     # A thermodynamic model of a dual-spool turbofan engine that has an afterburner.
-    eTurbofanBasicAB = 4
+    TURBOFAN_BASIC_AB = 4
     # An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust.
-    eTurbofanHighBypass = 5
+    TURBOFAN_HIGH_BYPASS = 5
     # An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust.
-    eTurbofanLowBypass = 6
+    TURBOFAN_LOW_BYPASS = 6
     # An empirical model for a turbofan engine that has an afterburner and produces significantly more jet thrust than fan thrust.
-    eTurbofanLowBypassAfterburning = 7
+    TURBOFAN_LOW_BYPASS_AFTERBURNING = 7
     # An empirical model that models a turbojet engine that has an afterburner.
-    eTurbojetAfterburning = 8
+    TURBOJET_AFTERBURNING = 8
     # An empirical model that models a turbojet engine.
-    eTurbojetBasicAB = 9
+    TURBOJET_BASIC_AB = 9
     # An empirical model that models a turbojet engine.
-    eTurbojet = 10
+    TURBOJET = 10
     # An empirical model that models a turboprop engine.
-    eTurboprop = 11
+    TURBOPROP = 11
 
-AgEAvtrAdvFixedWingPowerplantStrategy.eElectricPowerplant.__doc__ = "An electric engine."
-AgEAvtrAdvFixedWingPowerplantStrategy.eExternalPropFile.__doc__ = "Define the powerplant using an external .prop file."
-AgEAvtrAdvFixedWingPowerplantStrategy.ePistonPowerplant.__doc__ = "A piston, or reciprocating, engine."
-AgEAvtrAdvFixedWingPowerplantStrategy.eSubSuperHyperPowerplant.__doc__ = "A thermodynamic model that includes turbine, ramjet, and scramjet performance modes."
-AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanBasicAB.__doc__ = "A thermodynamic model of a dual-spool turbofan engine that has an afterburner."
-AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanHighBypass.__doc__ = "An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust."
-AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanLowBypass.__doc__ = "An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust."
-AgEAvtrAdvFixedWingPowerplantStrategy.eTurbofanLowBypassAfterburning.__doc__ = "An empirical model for a turbofan engine that has an afterburner and produces significantly more jet thrust than fan thrust."
-AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojetAfterburning.__doc__ = "An empirical model that models a turbojet engine that has an afterburner."
-AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojetBasicAB.__doc__ = "An empirical model that models a turbojet engine."
-AgEAvtrAdvFixedWingPowerplantStrategy.eTurbojet.__doc__ = "An empirical model that models a turbojet engine."
-AgEAvtrAdvFixedWingPowerplantStrategy.eTurboprop.__doc__ = "An empirical model that models a turboprop engine."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT.__doc__ = "An electric engine."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE.__doc__ = "Define the powerplant using an external .prop file."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT.__doc__ = "A piston, or reciprocating, engine."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT.__doc__ = "A thermodynamic model that includes turbine, ramjet, and scramjet performance modes."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB.__doc__ = "A thermodynamic model of a dual-spool turbofan engine that has an afterburner."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS.__doc__ = "An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS.__doc__ = "An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS_AFTERBURNING.__doc__ = "An empirical model for a turbofan engine that has an afterburner and produces significantly more jet thrust than fan thrust."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING.__doc__ = "An empirical model that models a turbojet engine that has an afterburner."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB.__doc__ = "An empirical model that models a turbojet engine."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET.__doc__ = "An empirical model that models a turbojet engine."
+AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP.__doc__ = "An empirical model that models a turboprop engine."
 
-agcls.AgTypeNameMap["AgEAvtrAdvFixedWingPowerplantStrategy"] = AgEAvtrAdvFixedWingPowerplantStrategy
+agcls.AgTypeNameMap["AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY"] = AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY
 
-class AgEAvtrMissileAeroStrategy(IntEnum):
+class AVTR_MISSILE_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
     # Simple aerodynamics.
-    eMissileAeroSimple = 0
+    MISSILE_AERO_SIMPLE = 0
     # External file aerodynamics.
-    eMissileAeroExternalFile = 1
+    MISSILE_AERO_EXTERNAL_FILE = 1
     # Advanced missile aerodynamics.
-    eMissileAeroAdvanced = 2
+    MISSILE_AERO_ADVANCED = 2
 
-AgEAvtrMissileAeroStrategy.eMissileAeroSimple.__doc__ = "Simple aerodynamics."
-AgEAvtrMissileAeroStrategy.eMissileAeroExternalFile.__doc__ = "External file aerodynamics."
-AgEAvtrMissileAeroStrategy.eMissileAeroAdvanced.__doc__ = "Advanced missile aerodynamics."
+AVTR_MISSILE_AERO_STRATEGY.MISSILE_AERO_SIMPLE.__doc__ = "Simple aerodynamics."
+AVTR_MISSILE_AERO_STRATEGY.MISSILE_AERO_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
+AVTR_MISSILE_AERO_STRATEGY.MISSILE_AERO_ADVANCED.__doc__ = "Advanced missile aerodynamics."
 
-agcls.AgTypeNameMap["AgEAvtrMissileAeroStrategy"] = AgEAvtrMissileAeroStrategy
+agcls.AgTypeNameMap["AVTR_MISSILE_AERO_STRATEGY"] = AVTR_MISSILE_AERO_STRATEGY
 
-class AgEAvtrMissilePropStrategy(IntEnum):
+class AVTR_MISSILE_PROP_STRATEGY(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
     # Simple propulsion.
-    eMissilePropSimple = 0
+    MISSILE_PROP_SIMPLE = 0
     # External file propulsion.
-    eMissilePropExternalFile = 1
+    MISSILE_PROP_EXTERNAL_FILE = 1
     # Ramjet propulsion.
-    eMissilePropRamjet = 2
+    MISSILE_PROP_RAMJET = 2
     # Rocket propulsion.
-    eMissilePropRocket = 3
+    MISSILE_PROP_ROCKET = 3
     # Turbojet propulsion.
-    eMissilePropTurbojet = 4
+    MISSILE_PROP_TURBOJET = 4
 
-AgEAvtrMissilePropStrategy.eMissilePropSimple.__doc__ = "Simple propulsion."
-AgEAvtrMissilePropStrategy.eMissilePropExternalFile.__doc__ = "External file propulsion."
-AgEAvtrMissilePropStrategy.eMissilePropRamjet.__doc__ = "Ramjet propulsion."
-AgEAvtrMissilePropStrategy.eMissilePropRocket.__doc__ = "Rocket propulsion."
-AgEAvtrMissilePropStrategy.eMissilePropTurbojet.__doc__ = "Turbojet propulsion."
+AVTR_MISSILE_PROP_STRATEGY.MISSILE_PROP_SIMPLE.__doc__ = "Simple propulsion."
+AVTR_MISSILE_PROP_STRATEGY.MISSILE_PROP_EXTERNAL_FILE.__doc__ = "External file propulsion."
+AVTR_MISSILE_PROP_STRATEGY.MISSILE_PROP_RAMJET.__doc__ = "Ramjet propulsion."
+AVTR_MISSILE_PROP_STRATEGY.MISSILE_PROP_ROCKET.__doc__ = "Rocket propulsion."
+AVTR_MISSILE_PROP_STRATEGY.MISSILE_PROP_TURBOJET.__doc__ = "Turbojet propulsion."
 
-agcls.AgTypeNameMap["AgEAvtrMissilePropStrategy"] = AgEAvtrMissilePropStrategy
+agcls.AgTypeNameMap["AVTR_MISSILE_PROP_STRATEGY"] = AVTR_MISSILE_PROP_STRATEGY
 
-class AgEAvtrRotorcraftPowerplantType(IntEnum):
+class AVTR_ROTORCRAFT_POWERPLANT_TYPE(IntEnum):
     """The powerplant type for a rotorcraft."""
     # Electric propulsion.
-    eRotorcraftElectric = 0
+    ROTORCRAFT_ELECTRIC = 0
     # Turboshaft propulsion.
-    eRotorcraftTurboshaft = 1
+    ROTORCRAFT_TURBOSHAFT = 1
     # Piston propulsion.
-    eRotorcraftPiston = 2
+    ROTORCRAFT_PISTON = 2
 
-AgEAvtrRotorcraftPowerplantType.eRotorcraftElectric.__doc__ = "Electric propulsion."
-AgEAvtrRotorcraftPowerplantType.eRotorcraftTurboshaft.__doc__ = "Turboshaft propulsion."
-AgEAvtrRotorcraftPowerplantType.eRotorcraftPiston.__doc__ = "Piston propulsion."
+AVTR_ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_ELECTRIC.__doc__ = "Electric propulsion."
+AVTR_ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_TURBOSHAFT.__doc__ = "Turboshaft propulsion."
+AVTR_ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_PISTON.__doc__ = "Piston propulsion."
 
-agcls.AgTypeNameMap["AgEAvtrRotorcraftPowerplantType"] = AgEAvtrRotorcraftPowerplantType
+agcls.AgTypeNameMap["AVTR_ROTORCRAFT_POWERPLANT_TYPE"] = AVTR_ROTORCRAFT_POWERPLANT_TYPE
 
-class AgEAvtrMinimizeSiteProcTimeDiff(IntEnum):
+class AVTR_MINIMIZE_SITE_PROC_TIME_DIFF(IntEnum):
     """Options for minimizing the time difference between the procedure and site times."""
     # Do not converge the procedure and site times.
-    eMinimizeTimeDifferenceOff = 0
+    MINIMIZE_TIME_DIFFERENCE_OFF = 0
     # Always recalculate.
-    eMinimizeTimeDifferenceAlways = 1
+    MINIMIZE_TIME_DIFFERENCE_ALWAYS = 1
     # Only recalculate when updated.
-    eMinimizeTimeDifferenceNextUpdate = 2
+    MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE = 2
 
-AgEAvtrMinimizeSiteProcTimeDiff.eMinimizeTimeDifferenceOff.__doc__ = "Do not converge the procedure and site times."
-AgEAvtrMinimizeSiteProcTimeDiff.eMinimizeTimeDifferenceAlways.__doc__ = "Always recalculate."
-AgEAvtrMinimizeSiteProcTimeDiff.eMinimizeTimeDifferenceNextUpdate.__doc__ = "Only recalculate when updated."
+AVTR_MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF.__doc__ = "Do not converge the procedure and site times."
+AVTR_MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_ALWAYS.__doc__ = "Always recalculate."
+AVTR_MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE.__doc__ = "Only recalculate when updated."
 
-agcls.AgTypeNameMap["AgEAvtrMinimizeSiteProcTimeDiff"] = AgEAvtrMinimizeSiteProcTimeDiff
+agcls.AgTypeNameMap["AVTR_MINIMIZE_SITE_PROC_TIME_DIFF"] = AVTR_MINIMIZE_SITE_PROC_TIME_DIFF
 
-class AgEAvtrSTKObjectWaypointOffsetMode(IntEnum):
+class AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE(IntEnum):
     """The options to offset the site location relative to the STK Object."""
     # No offset.
-    eOffsetNone = 0
+    OFFSET_NONE = 0
     # Bearing/Range (relative to North).
-    eOffsetBearingRange = 1
+    OFFSET_BEARING_RANGE = 1
     # VGT Point.
-    eOffsetVGTPoint = 2
+    OFFSET_VGT_POINT = 2
     # Bearing/Reange relative to Vehicle course.
-    eOffsetRelativeBearingRange = 3
+    OFFSET_RELATIVE_BEARING_RANGE = 3
 
-AgEAvtrSTKObjectWaypointOffsetMode.eOffsetNone.__doc__ = "No offset."
-AgEAvtrSTKObjectWaypointOffsetMode.eOffsetBearingRange.__doc__ = "Bearing/Range (relative to North)."
-AgEAvtrSTKObjectWaypointOffsetMode.eOffsetVGTPoint.__doc__ = "VGT Point."
-AgEAvtrSTKObjectWaypointOffsetMode.eOffsetRelativeBearingRange.__doc__ = "Bearing/Reange relative to Vehicle course."
+AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE.OFFSET_NONE.__doc__ = "No offset."
+AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE.OFFSET_BEARING_RANGE.__doc__ = "Bearing/Range (relative to North)."
+AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE.OFFSET_VGT_POINT.__doc__ = "VGT Point."
+AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE.OFFSET_RELATIVE_BEARING_RANGE.__doc__ = "Bearing/Reange relative to Vehicle course."
 
-agcls.AgTypeNameMap["AgEAvtrSTKObjectWaypointOffsetMode"] = AgEAvtrSTKObjectWaypointOffsetMode
+agcls.AgTypeNameMap["AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE"] = AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE
 
-class AgEAvtrSearchPatternCourseMode(IntEnum):
+class AVTR_SEARCH_PATTERN_COURSE_MODE(IntEnum):
     """The mode to determine the course of the search pattern."""
     # Automatically begin the search pattern within 0 - 180 degrees.
-    eCourseModeLow = 0
+    COURSE_MODE_LOW = 0
     # Automatically begin the search pattern within 180 - 360 degrees.
-    eCourseModeHigh = 1
+    COURSE_MODE_HIGH = 1
     # Manually define the course of the search pattern.
-    eCourseModeOverride = 2
+    COURSE_MODE_OVERRIDE = 2
 
-AgEAvtrSearchPatternCourseMode.eCourseModeLow.__doc__ = "Automatically begin the search pattern within 0 - 180 degrees."
-AgEAvtrSearchPatternCourseMode.eCourseModeHigh.__doc__ = "Automatically begin the search pattern within 180 - 360 degrees."
-AgEAvtrSearchPatternCourseMode.eCourseModeOverride.__doc__ = "Manually define the course of the search pattern."
+AVTR_SEARCH_PATTERN_COURSE_MODE.COURSE_MODE_LOW.__doc__ = "Automatically begin the search pattern within 0 - 180 degrees."
+AVTR_SEARCH_PATTERN_COURSE_MODE.COURSE_MODE_HIGH.__doc__ = "Automatically begin the search pattern within 180 - 360 degrees."
+AVTR_SEARCH_PATTERN_COURSE_MODE.COURSE_MODE_OVERRIDE.__doc__ = "Manually define the course of the search pattern."
 
-agcls.AgTypeNameMap["AgEAvtrSearchPatternCourseMode"] = AgEAvtrSearchPatternCourseMode
+agcls.AgTypeNameMap["AVTR_SEARCH_PATTERN_COURSE_MODE"] = AVTR_SEARCH_PATTERN_COURSE_MODE
 
-class AgEAvtrDelayTurnDir(IntEnum):
+class AVTR_DELAY_TURN_DIR(IntEnum):
     """Turn mode for procedures with Delay options."""
     # Automatic turn. Aviator will determine the direction of the turn.
-    eDelayTurnAuto = 0
+    DELAY_TURN_AUTO = 0
     # Left turn.
-    eDelayTurnLeft = 1
+    DELAY_TURN_LEFT = 1
     # Right turn.
-    eDelayTurnRight = 2
+    DELAY_TURN_RIGHT = 2
 
-AgEAvtrDelayTurnDir.eDelayTurnAuto.__doc__ = "Automatic turn. Aviator will determine the direction of the turn."
-AgEAvtrDelayTurnDir.eDelayTurnLeft.__doc__ = "Left turn."
-AgEAvtrDelayTurnDir.eDelayTurnRight.__doc__ = "Right turn."
+AVTR_DELAY_TURN_DIR.DELAY_TURN_AUTO.__doc__ = "Automatic turn. Aviator will determine the direction of the turn."
+AVTR_DELAY_TURN_DIR.DELAY_TURN_LEFT.__doc__ = "Left turn."
+AVTR_DELAY_TURN_DIR.DELAY_TURN_RIGHT.__doc__ = "Right turn."
 
-agcls.AgTypeNameMap["AgEAvtrDelayTurnDir"] = AgEAvtrDelayTurnDir
+agcls.AgTypeNameMap["AVTR_DELAY_TURN_DIR"] = AVTR_DELAY_TURN_DIR
 
-class AgEAvtrTrajectoryBlendMode(IntEnum):
+class AVTR_TRAJECTORY_BLEND_MODE(IntEnum):
     """The interpolation mode to determine the aircraft's position and velocity."""
     # Quadratic interpolation using the body frame.
-    eBlendBodyQuadratic = 0
+    BLEND_BODY_QUADRATIC = 0
     # Cubic interpolation using the body frame.
-    eBlendBodyCubic = 1
+    BLEND_BODY_CUBIC = 1
     # Quadratic interpolation using the local horizontal frame.
-    eBlendLHQuadratic = 2
+    BLEND_LH_QUADRATIC = 2
     # Cubic interpolation using the local horizontal frame.
-    eBlendLHCubic = 3
+    BLEND_LH_CUBIC = 3
     # Quadratic interpolation using the Earth-Centered Fixed frame.
-    eBlendECFQuadratic = 4
+    BLEND_ECF_QUADRATIC = 4
     # Cubic interpolation using the Earth-Centered Fixed frame.
-    eBlendECFCubic = 5
+    BLEND_ECF_CUBIC = 5
 
-AgEAvtrTrajectoryBlendMode.eBlendBodyQuadratic.__doc__ = "Quadratic interpolation using the body frame."
-AgEAvtrTrajectoryBlendMode.eBlendBodyCubic.__doc__ = "Cubic interpolation using the body frame."
-AgEAvtrTrajectoryBlendMode.eBlendLHQuadratic.__doc__ = "Quadratic interpolation using the local horizontal frame."
-AgEAvtrTrajectoryBlendMode.eBlendLHCubic.__doc__ = "Cubic interpolation using the local horizontal frame."
-AgEAvtrTrajectoryBlendMode.eBlendECFQuadratic.__doc__ = "Quadratic interpolation using the Earth-Centered Fixed frame."
-AgEAvtrTrajectoryBlendMode.eBlendECFCubic.__doc__ = "Cubic interpolation using the Earth-Centered Fixed frame."
+AVTR_TRAJECTORY_BLEND_MODE.BLEND_BODY_QUADRATIC.__doc__ = "Quadratic interpolation using the body frame."
+AVTR_TRAJECTORY_BLEND_MODE.BLEND_BODY_CUBIC.__doc__ = "Cubic interpolation using the body frame."
+AVTR_TRAJECTORY_BLEND_MODE.BLEND_LH_QUADRATIC.__doc__ = "Quadratic interpolation using the local horizontal frame."
+AVTR_TRAJECTORY_BLEND_MODE.BLEND_LH_CUBIC.__doc__ = "Cubic interpolation using the local horizontal frame."
+AVTR_TRAJECTORY_BLEND_MODE.BLEND_ECF_QUADRATIC.__doc__ = "Quadratic interpolation using the Earth-Centered Fixed frame."
+AVTR_TRAJECTORY_BLEND_MODE.BLEND_ECF_CUBIC.__doc__ = "Cubic interpolation using the Earth-Centered Fixed frame."
 
-agcls.AgTypeNameMap["AgEAvtrTrajectoryBlendMode"] = AgEAvtrTrajectoryBlendMode
+agcls.AgTypeNameMap["AVTR_TRAJECTORY_BLEND_MODE"] = AVTR_TRAJECTORY_BLEND_MODE
 
-class AgEAvtrRefStatePerfMode(IntEnum):
+class AVTR_REF_STATE_PERF_MODE(IntEnum):
     """The type of motion the aircraft is engaged in at the reference state."""
     # Forward Flight - Climb performance mode.
-    eRefStateClimb = 0
+    REF_STATE_CLIMB = 0
     # Forward Flight - Cruise performance mode.
-    eRefStateCruise = 1
+    REF_STATE_CRUISE = 1
     # Forward Flight - Descend performance mode.
-    eRefStateDescend = 2
+    REF_STATE_DESCEND = 2
     # Hover performance mode.
-    eRefStateHover = 3
+    REF_STATE_HOVER = 3
     # Landing performance mode.
-    eRefStateLanding = 4
+    REF_STATE_LANDING = 4
     # Takeoff performance mode.
-    eRefStateTakeoff = 5
+    REF_STATE_TAKEOFF = 5
     # Weight On Wheels - Landing Rollout performance mode
-    eRefStateLandingRollout = 6
+    REF_STATE_LANDING_ROLLOUT = 6
     # Weight On Wheels - Takeoff Run performance mode
-    eRefStateTakeoffRun = 7
+    REF_STATE_TAKEOFF_RUN = 7
 
-AgEAvtrRefStatePerfMode.eRefStateClimb.__doc__ = "Forward Flight - Climb performance mode."
-AgEAvtrRefStatePerfMode.eRefStateCruise.__doc__ = "Forward Flight - Cruise performance mode."
-AgEAvtrRefStatePerfMode.eRefStateDescend.__doc__ = "Forward Flight - Descend performance mode."
-AgEAvtrRefStatePerfMode.eRefStateHover.__doc__ = "Hover performance mode."
-AgEAvtrRefStatePerfMode.eRefStateLanding.__doc__ = "Landing performance mode."
-AgEAvtrRefStatePerfMode.eRefStateTakeoff.__doc__ = "Takeoff performance mode."
-AgEAvtrRefStatePerfMode.eRefStateLandingRollout.__doc__ = "Weight On Wheels - Landing Rollout performance mode"
-AgEAvtrRefStatePerfMode.eRefStateTakeoffRun.__doc__ = "Weight On Wheels - Takeoff Run performance mode"
+AVTR_REF_STATE_PERF_MODE.REF_STATE_CLIMB.__doc__ = "Forward Flight - Climb performance mode."
+AVTR_REF_STATE_PERF_MODE.REF_STATE_CRUISE.__doc__ = "Forward Flight - Cruise performance mode."
+AVTR_REF_STATE_PERF_MODE.REF_STATE_DESCEND.__doc__ = "Forward Flight - Descend performance mode."
+AVTR_REF_STATE_PERF_MODE.REF_STATE_HOVER.__doc__ = "Hover performance mode."
+AVTR_REF_STATE_PERF_MODE.REF_STATE_LANDING.__doc__ = "Landing performance mode."
+AVTR_REF_STATE_PERF_MODE.REF_STATE_TAKEOFF.__doc__ = "Takeoff performance mode."
+AVTR_REF_STATE_PERF_MODE.REF_STATE_LANDING_ROLLOUT.__doc__ = "Weight On Wheels - Landing Rollout performance mode"
+AVTR_REF_STATE_PERF_MODE.REF_STATE_TAKEOFF_RUN.__doc__ = "Weight On Wheels - Takeoff Run performance mode"
 
-agcls.AgTypeNameMap["AgEAvtrRefStatePerfMode"] = AgEAvtrRefStatePerfMode
+agcls.AgTypeNameMap["AVTR_REF_STATE_PERF_MODE"] = AVTR_REF_STATE_PERF_MODE
 
-class AgEAvtrRefStateLongitudinalAccelMode(IntEnum):
+class AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE(IntEnum):
     """The mode to specify the longitudinal acceleration of the aircraft."""
     # Specify the true airspeed acceleration.
-    eSpecifyTASDot = 0
+    SPECIFY_TAS_DOT = 0
     # Specify the groundspeed acceleration.
-    eSpecifyGroundSpeedDot = 1
+    SPECIFY_GROUND_SPEED_DOT = 1
 
-AgEAvtrRefStateLongitudinalAccelMode.eSpecifyTASDot.__doc__ = "Specify the true airspeed acceleration."
-AgEAvtrRefStateLongitudinalAccelMode.eSpecifyGroundSpeedDot.__doc__ = "Specify the groundspeed acceleration."
+AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT.__doc__ = "Specify the true airspeed acceleration."
+AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT.__doc__ = "Specify the groundspeed acceleration."
 
-agcls.AgTypeNameMap["AgEAvtrRefStateLongitudinalAccelMode"] = AgEAvtrRefStateLongitudinalAccelMode
+agcls.AgTypeNameMap["AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE"] = AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE
 
-class AgEAvtrRefStateLateralAccelMode(IntEnum):
+class AVTR_REF_STATE_LATERAL_ACCEL_MODE(IntEnum):
     """The mode to specify the lateral acceleration of the aircraft."""
     # Specify the heading rate of change.
-    eSpecifyHeadingDot = 0
+    SPECIFY_HEADING_DOT = 0
     # Specify the course rate of change.
-    eSpecifyCourseDot = 1
+    SPECIFY_COURSE_DOT = 1
 
-AgEAvtrRefStateLateralAccelMode.eSpecifyHeadingDot.__doc__ = "Specify the heading rate of change."
-AgEAvtrRefStateLateralAccelMode.eSpecifyCourseDot.__doc__ = "Specify the course rate of change."
+AVTR_REF_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT.__doc__ = "Specify the heading rate of change."
+AVTR_REF_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT.__doc__ = "Specify the course rate of change."
 
-agcls.AgTypeNameMap["AgEAvtrRefStateLateralAccelMode"] = AgEAvtrRefStateLateralAccelMode
+agcls.AgTypeNameMap["AVTR_REF_STATE_LATERAL_ACCEL_MODE"] = AVTR_REF_STATE_LATERAL_ACCEL_MODE
 
-class AgEAvtrRefStateAttitudeMode(IntEnum):
+class AVTR_REF_STATE_ATTITUDE_MODE(IntEnum):
     """The mode to specify the attitude rate of change."""
     # Specify the push/pull G.
-    eSpecifyPushPullG = 0
+    SPECIFY_PUSH_PULL_G = 0
     # Specify the pitch rate of change.
-    eSpecifyPitchRate = 1
+    SPECIFY_PITCH_RATE = 1
 
-AgEAvtrRefStateAttitudeMode.eSpecifyPushPullG.__doc__ = "Specify the push/pull G."
-AgEAvtrRefStateAttitudeMode.eSpecifyPitchRate.__doc__ = "Specify the pitch rate of change."
+AVTR_REF_STATE_ATTITUDE_MODE.SPECIFY_PUSH_PULL_G.__doc__ = "Specify the push/pull G."
+AVTR_REF_STATE_ATTITUDE_MODE.SPECIFY_PITCH_RATE.__doc__ = "Specify the pitch rate of change."
 
-agcls.AgTypeNameMap["AgEAvtrRefStateAttitudeMode"] = AgEAvtrRefStateAttitudeMode
+agcls.AgTypeNameMap["AVTR_REF_STATE_ATTITUDE_MODE"] = AVTR_REF_STATE_ATTITUDE_MODE
 
-class AgEAvtrAndOr(IntEnum):
+class AVTR_AND_OR(IntEnum):
     """The option to specify AND or OR."""
     # And option.
-    eAvtrAND = 0
+    AND = 0
     # Or option.
-    eAvtrOR = 1
+    OR = 1
 
-AgEAvtrAndOr.eAvtrAND.__doc__ = "And option."
-AgEAvtrAndOr.eAvtrOR.__doc__ = "Or option."
+AVTR_AND_OR.AND.__doc__ = "And option."
+AVTR_AND_OR.OR.__doc__ = "Or option."
 
-agcls.AgTypeNameMap["AgEAvtrAndOr"] = AgEAvtrAndOr
+agcls.AgTypeNameMap["AVTR_AND_OR"] = AVTR_AND_OR
 
-class AgEAvtrJetEngineTechnologyLevel(IntEnum):
+class AVTR_JET_ENGINE_TECHNOLOGY_LEVEL(IntEnum):
     """The technology level of the jet engine."""
     # Ideal (perfect efficiencies).
-    eIdeal = 0
+    IDEAL = 0
     # Level 1 (1945-1965).
-    eLevel1 = 1
+    LEVEL1 = 1
     # Level 2 (1965-1985).
-    eLevel2 = 2
+    LEVEL2 = 2
     # Level 3 (1985-2005).
-    eLevel3 = 3
+    LEVEL3 = 3
     # Level 4 (2005-2025).
-    eLevel4 = 4
+    LEVEL4 = 4
     # Level 5 (2025-2045).
-    eLevel5 = 5
+    LEVEL5 = 5
 
-AgEAvtrJetEngineTechnologyLevel.eIdeal.__doc__ = "Ideal (perfect efficiencies)."
-AgEAvtrJetEngineTechnologyLevel.eLevel1.__doc__ = "Level 1 (1945-1965)."
-AgEAvtrJetEngineTechnologyLevel.eLevel2.__doc__ = "Level 2 (1965-1985)."
-AgEAvtrJetEngineTechnologyLevel.eLevel3.__doc__ = "Level 3 (1985-2005)."
-AgEAvtrJetEngineTechnologyLevel.eLevel4.__doc__ = "Level 4 (2005-2025)."
-AgEAvtrJetEngineTechnologyLevel.eLevel5.__doc__ = "Level 5 (2025-2045)."
+AVTR_JET_ENGINE_TECHNOLOGY_LEVEL.IDEAL.__doc__ = "Ideal (perfect efficiencies)."
+AVTR_JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL1.__doc__ = "Level 1 (1945-1965)."
+AVTR_JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL2.__doc__ = "Level 2 (1965-1985)."
+AVTR_JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL3.__doc__ = "Level 3 (1985-2005)."
+AVTR_JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL4.__doc__ = "Level 4 (2005-2025)."
+AVTR_JET_ENGINE_TECHNOLOGY_LEVEL.LEVEL5.__doc__ = "Level 5 (2025-2045)."
 
-agcls.AgTypeNameMap["AgEAvtrJetEngineTechnologyLevel"] = AgEAvtrJetEngineTechnologyLevel
+agcls.AgTypeNameMap["AVTR_JET_ENGINE_TECHNOLOGY_LEVEL"] = AVTR_JET_ENGINE_TECHNOLOGY_LEVEL
 
-class AgEAvtrJetEngineIntakeType(IntEnum):
+class AVTR_JET_ENGINE_INTAKE_TYPE(IntEnum):
     """The intake type of the jet engine."""
     # Subsonic nacelles.
-    eSubsonicNacelles = 0
+    SUBSONIC_NACELLES = 0
     # Subsonic embedded.
-    eSubsonicEmbedded = 1
+    SUBSONIC_EMBEDDED = 1
     # Supersonic embedded.
-    eSupersonicEmbedded = 2
+    SUPERSONIC_EMBEDDED = 2
 
-AgEAvtrJetEngineIntakeType.eSubsonicNacelles.__doc__ = "Subsonic nacelles."
-AgEAvtrJetEngineIntakeType.eSubsonicEmbedded.__doc__ = "Subsonic embedded."
-AgEAvtrJetEngineIntakeType.eSupersonicEmbedded.__doc__ = "Supersonic embedded."
+AVTR_JET_ENGINE_INTAKE_TYPE.SUBSONIC_NACELLES.__doc__ = "Subsonic nacelles."
+AVTR_JET_ENGINE_INTAKE_TYPE.SUBSONIC_EMBEDDED.__doc__ = "Subsonic embedded."
+AVTR_JET_ENGINE_INTAKE_TYPE.SUPERSONIC_EMBEDDED.__doc__ = "Supersonic embedded."
 
-agcls.AgTypeNameMap["AgEAvtrJetEngineIntakeType"] = AgEAvtrJetEngineIntakeType
+agcls.AgTypeNameMap["AVTR_JET_ENGINE_INTAKE_TYPE"] = AVTR_JET_ENGINE_INTAKE_TYPE
 
-class AgEAvtrJetEngineTurbineType(IntEnum):
+class AVTR_JET_ENGINE_TURBINE_TYPE(IntEnum):
     """The turbine type of the jet engine."""
     # Uncooled turbine.
-    eUncooled = 0
+    UNCOOLED = 0
     # Cooled turbine.
-    eCooled = 1
+    COOLED = 1
 
-AgEAvtrJetEngineTurbineType.eUncooled.__doc__ = "Uncooled turbine."
-AgEAvtrJetEngineTurbineType.eCooled.__doc__ = "Cooled turbine."
+AVTR_JET_ENGINE_TURBINE_TYPE.UNCOOLED.__doc__ = "Uncooled turbine."
+AVTR_JET_ENGINE_TURBINE_TYPE.COOLED.__doc__ = "Cooled turbine."
 
-agcls.AgTypeNameMap["AgEAvtrJetEngineTurbineType"] = AgEAvtrJetEngineTurbineType
+agcls.AgTypeNameMap["AVTR_JET_ENGINE_TURBINE_TYPE"] = AVTR_JET_ENGINE_TURBINE_TYPE
 
-class AgEAvtrJetEngineExhaustNozzleType(IntEnum):
+class AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE(IntEnum):
     """The exhaust nozzle type of the jet engine."""
     # Fixed Area Convergent.
-    eFixedAreaConvergent = 0
+    FIXED_AREA_CONVERGENT = 0
     # Variable Area Convergent.
-    eVariableAreaConvergent = 1
+    VARIABLE_AREA_CONVERGENT = 1
     # Variable Area Convergent - Divergent.
-    eVariableAreaConvergentDivergent = 2
+    VARIABLE_AREA_CONVERGENT_DIVERGENT = 2
 
-AgEAvtrJetEngineExhaustNozzleType.eFixedAreaConvergent.__doc__ = "Fixed Area Convergent."
-AgEAvtrJetEngineExhaustNozzleType.eVariableAreaConvergent.__doc__ = "Variable Area Convergent."
-AgEAvtrJetEngineExhaustNozzleType.eVariableAreaConvergentDivergent.__doc__ = "Variable Area Convergent - Divergent."
+AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE.FIXED_AREA_CONVERGENT.__doc__ = "Fixed Area Convergent."
+AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE.VARIABLE_AREA_CONVERGENT.__doc__ = "Variable Area Convergent."
+AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE.VARIABLE_AREA_CONVERGENT_DIVERGENT.__doc__ = "Variable Area Convergent - Divergent."
 
-agcls.AgTypeNameMap["AgEAvtrJetEngineExhaustNozzleType"] = AgEAvtrJetEngineExhaustNozzleType
+agcls.AgTypeNameMap["AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE"] = AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE
 
-class AgEAvtrJetFuelType(IntEnum):
+class AVTR_JET_FUEL_TYPE(IntEnum):
     """The jet fuel type."""
     # A kerosene fuel model based on AFPROP.
-    eKeroseneAFPROP = 0
+    KEROSENE_AFPROP = 0
     # A kerosene fuel model based on NASA CEA.
-    eKeroseneCEA = 1
+    KEROSENE_CEA = 1
     # A hydrogen fuel model based on NASA CEA.
-    eHydrogen = 2
+    HYDROGEN = 2
 
-AgEAvtrJetFuelType.eKeroseneAFPROP.__doc__ = "A kerosene fuel model based on AFPROP."
-AgEAvtrJetFuelType.eKeroseneCEA.__doc__ = "A kerosene fuel model based on NASA CEA."
-AgEAvtrJetFuelType.eHydrogen.__doc__ = "A hydrogen fuel model based on NASA CEA."
+AVTR_JET_FUEL_TYPE.KEROSENE_AFPROP.__doc__ = "A kerosene fuel model based on AFPROP."
+AVTR_JET_FUEL_TYPE.KEROSENE_CEA.__doc__ = "A kerosene fuel model based on NASA CEA."
+AVTR_JET_FUEL_TYPE.HYDROGEN.__doc__ = "A hydrogen fuel model based on NASA CEA."
 
-agcls.AgTypeNameMap["AgEAvtrJetFuelType"] = AgEAvtrJetFuelType
+agcls.AgTypeNameMap["AVTR_JET_FUEL_TYPE"] = AVTR_JET_FUEL_TYPE
 
-class AgEAvtrAFPROPFuelType(IntEnum):
+class AVTR_AFPROP_FUEL_TYPE(IntEnum):
     """The AFPROP fuel type."""
     # Override the specific energy.
-    eAFPROPOverride = 0
+    AFPROP_OVERRIDE = 0
     # Jet A fuel model based on AFPROP.
-    eAFPROPJetA = 1
+    AFPROP_JET_A = 1
     # Jet A-1 fuel model based on AFPROP.
-    eAFPROPJetA1 = 2
+    AFPROP_JET_A1 = 2
     # JP-5 fuel model based on AFPROP.
-    eAFPROPJP5 = 3
+    AFPROPJP5 = 3
     # JP-7 fuel model based on AFPROP.
-    eAFPROPJP7 = 4
+    AFPROPJP7 = 4
 
-AgEAvtrAFPROPFuelType.eAFPROPOverride.__doc__ = "Override the specific energy."
-AgEAvtrAFPROPFuelType.eAFPROPJetA.__doc__ = "Jet A fuel model based on AFPROP."
-AgEAvtrAFPROPFuelType.eAFPROPJetA1.__doc__ = "Jet A-1 fuel model based on AFPROP."
-AgEAvtrAFPROPFuelType.eAFPROPJP5.__doc__ = "JP-5 fuel model based on AFPROP."
-AgEAvtrAFPROPFuelType.eAFPROPJP7.__doc__ = "JP-7 fuel model based on AFPROP."
+AVTR_AFPROP_FUEL_TYPE.AFPROP_OVERRIDE.__doc__ = "Override the specific energy."
+AVTR_AFPROP_FUEL_TYPE.AFPROP_JET_A.__doc__ = "Jet A fuel model based on AFPROP."
+AVTR_AFPROP_FUEL_TYPE.AFPROP_JET_A1.__doc__ = "Jet A-1 fuel model based on AFPROP."
+AVTR_AFPROP_FUEL_TYPE.AFPROPJP5.__doc__ = "JP-5 fuel model based on AFPROP."
+AVTR_AFPROP_FUEL_TYPE.AFPROPJP7.__doc__ = "JP-7 fuel model based on AFPROP."
 
-agcls.AgTypeNameMap["AgEAvtrAFPROPFuelType"] = AgEAvtrAFPROPFuelType
+agcls.AgTypeNameMap["AVTR_AFPROP_FUEL_TYPE"] = AVTR_AFPROP_FUEL_TYPE
 
-class AgEAvtrCEAFuelType(IntEnum):
+class AVTR_CEA_FUEL_TYPE(IntEnum):
     """The CEA fuel type."""
     # Override the specific energy.
-    eCEAOverride = 0
+    CEA_OVERRIDE = 0
     # Jet A fuel model based on NASA CEA.
-    eCEAJetA = 1
+    CEA_JET_A = 1
     # Jet A-1 fuel model based on NASA CEA.
-    eCEAJetA1 = 2
+    CEA_JET_A1 = 2
     # JP-5 fuel model based on NASA CEA.
-    eCEAJP5 = 3
+    CEAJP5 = 3
     # JP-7 fuel model based on NASA CEA.
-    eCEAJP7 = 4
+    CEAJP7 = 4
 
-AgEAvtrCEAFuelType.eCEAOverride.__doc__ = "Override the specific energy."
-AgEAvtrCEAFuelType.eCEAJetA.__doc__ = "Jet A fuel model based on NASA CEA."
-AgEAvtrCEAFuelType.eCEAJetA1.__doc__ = "Jet A-1 fuel model based on NASA CEA."
-AgEAvtrCEAFuelType.eCEAJP5.__doc__ = "JP-5 fuel model based on NASA CEA."
-AgEAvtrCEAFuelType.eCEAJP7.__doc__ = "JP-7 fuel model based on NASA CEA."
+AVTR_CEA_FUEL_TYPE.CEA_OVERRIDE.__doc__ = "Override the specific energy."
+AVTR_CEA_FUEL_TYPE.CEA_JET_A.__doc__ = "Jet A fuel model based on NASA CEA."
+AVTR_CEA_FUEL_TYPE.CEA_JET_A1.__doc__ = "Jet A-1 fuel model based on NASA CEA."
+AVTR_CEA_FUEL_TYPE.CEAJP5.__doc__ = "JP-5 fuel model based on NASA CEA."
+AVTR_CEA_FUEL_TYPE.CEAJP7.__doc__ = "JP-7 fuel model based on NASA CEA."
 
-agcls.AgTypeNameMap["AgEAvtrCEAFuelType"] = AgEAvtrCEAFuelType
+agcls.AgTypeNameMap["AVTR_CEA_FUEL_TYPE"] = AVTR_CEA_FUEL_TYPE
 
-class AgEAvtrTurbineMode(IntEnum):
+class AVTR_TURBINE_MODE(IntEnum):
     """The turbine mode for a Sub/Super/Hypersonic powerplant."""
     # Disabled turbine mode.
-    eTurbineModeDisabled = 0
+    TURBINE_MODE_DISABLED = 0
     # Turbojet - Basic w/AB (Thermodynamic model).
-    eTurbineModeTurbojetBasicAB = 1
+    TURBINE_MODE_TURBOJET_BASIC_AB = 1
     # Turbofan - Basic w/AB (Thermodynamic model).
-    eTurbineModeTurbofanBasicAB = 2
+    TURBINE_MODE_TURBOFAN_BASIC_AB = 2
 
-AgEAvtrTurbineMode.eTurbineModeDisabled.__doc__ = "Disabled turbine mode."
-AgEAvtrTurbineMode.eTurbineModeTurbojetBasicAB.__doc__ = "Turbojet - Basic w/AB (Thermodynamic model)."
-AgEAvtrTurbineMode.eTurbineModeTurbofanBasicAB.__doc__ = "Turbofan - Basic w/AB (Thermodynamic model)."
+AVTR_TURBINE_MODE.TURBINE_MODE_DISABLED.__doc__ = "Disabled turbine mode."
+AVTR_TURBINE_MODE.TURBINE_MODE_TURBOJET_BASIC_AB.__doc__ = "Turbojet - Basic w/AB (Thermodynamic model)."
+AVTR_TURBINE_MODE.TURBINE_MODE_TURBOFAN_BASIC_AB.__doc__ = "Turbofan - Basic w/AB (Thermodynamic model)."
 
-agcls.AgTypeNameMap["AgEAvtrTurbineMode"] = AgEAvtrTurbineMode
+agcls.AgTypeNameMap["AVTR_TURBINE_MODE"] = AVTR_TURBINE_MODE
 
-class AgEAvtrRamjetMode(IntEnum):
+class AVTR_RAMJET_MODE(IntEnum):
     """The ramjet mode for a Sub/Super/Hypersonic powerplant."""
     # Disabled ramjet mode.
-    eRamjetModeDisabled = 0
+    RAMJET_MODE_DISABLED = 0
     # Ramjet - Basic mode.
-    eRamjetModeBasic = 1
+    RAMJET_MODE_BASIC = 1
 
-AgEAvtrRamjetMode.eRamjetModeDisabled.__doc__ = "Disabled ramjet mode."
-AgEAvtrRamjetMode.eRamjetModeBasic.__doc__ = "Ramjet - Basic mode."
+AVTR_RAMJET_MODE.RAMJET_MODE_DISABLED.__doc__ = "Disabled ramjet mode."
+AVTR_RAMJET_MODE.RAMJET_MODE_BASIC.__doc__ = "Ramjet - Basic mode."
 
-agcls.AgTypeNameMap["AgEAvtrRamjetMode"] = AgEAvtrRamjetMode
+agcls.AgTypeNameMap["AVTR_RAMJET_MODE"] = AVTR_RAMJET_MODE
 
-class AgEAvtrScramjetMode(IntEnum):
+class AVTR_SCRAMJET_MODE(IntEnum):
     """The scramjet mode for a Sub/Super/Hypersonic powerplant."""
     # Disabled scramjet mode.
-    eScramjetModeDisabled = 0
+    SCRAMJET_MODE_DISABLED = 0
     # Scramjet - Basic mode.
-    eScramjetModeBasic = 1
+    SCRAMJET_MODE_BASIC = 1
 
-AgEAvtrScramjetMode.eScramjetModeDisabled.__doc__ = "Disabled scramjet mode."
-AgEAvtrScramjetMode.eScramjetModeBasic.__doc__ = "Scramjet - Basic mode."
+AVTR_SCRAMJET_MODE.SCRAMJET_MODE_DISABLED.__doc__ = "Disabled scramjet mode."
+AVTR_SCRAMJET_MODE.SCRAMJET_MODE_BASIC.__doc__ = "Scramjet - Basic mode."
 
-agcls.AgTypeNameMap["AgEAvtrScramjetMode"] = AgEAvtrScramjetMode
+agcls.AgTypeNameMap["AVTR_SCRAMJET_MODE"] = AVTR_SCRAMJET_MODE
 
-class AgEAvtrNumericalIntegrator(IntEnum):
+class AVTR_NUMERICAL_INTEGRATOR(IntEnum):
     """The numerical integrator to be used for the procedure."""
     # Runge-Kutta 4th Order Fixed Time Step Integrator
-    eRK4 = 0
+    RK4 = 0
     # Runge-Kutta 4th Order Adpative Time Step Integrator.
-    eRK45 = 1
+    RK45 = 1
 
-AgEAvtrNumericalIntegrator.eRK4.__doc__ = "Runge-Kutta 4th Order Fixed Time Step Integrator"
-AgEAvtrNumericalIntegrator.eRK45.__doc__ = "Runge-Kutta 4th Order Adpative Time Step Integrator."
+AVTR_NUMERICAL_INTEGRATOR.RK4.__doc__ = "Runge-Kutta 4th Order Fixed Time Step Integrator"
+AVTR_NUMERICAL_INTEGRATOR.RK45.__doc__ = "Runge-Kutta 4th Order Adpative Time Step Integrator."
 
-agcls.AgTypeNameMap["AgEAvtrNumericalIntegrator"] = AgEAvtrNumericalIntegrator
+agcls.AgTypeNameMap["AVTR_NUMERICAL_INTEGRATOR"] = AVTR_NUMERICAL_INTEGRATOR
 
-class AgEAvtrBallistic3DControlMode(IntEnum):
+class AVTR_BALLISTIC3_D_CONTROL_MODE(IntEnum):
     """The control mode used to define the ballistic 3D strategy of the basic maneuver procedure."""
     # The vehicle will compensate for the wind along its ballistic trajectory.
-    eBallistic3DCompensateForWind = 0
+    BALLISTIC3_D_COMPENSATE_FOR_WIND = 0
     # Allow the wind to affect the ballistic trajectory.
-    eBallistic3DWindPushesVehicle = 1
+    BALLISTIC3_D_WIND_PUSHES_VEHICLE = 1
     # Model the vehicle as a parachute.
-    eBallistic3DParachuteMode = 2
+    BALLISTIC3_D_PARACHUTE_MODE = 2
 
-AgEAvtrBallistic3DControlMode.eBallistic3DCompensateForWind.__doc__ = "The vehicle will compensate for the wind along its ballistic trajectory."
-AgEAvtrBallistic3DControlMode.eBallistic3DWindPushesVehicle.__doc__ = "Allow the wind to affect the ballistic trajectory."
-AgEAvtrBallistic3DControlMode.eBallistic3DParachuteMode.__doc__ = "Model the vehicle as a parachute."
+AVTR_BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_COMPENSATE_FOR_WIND.__doc__ = "The vehicle will compensate for the wind along its ballistic trajectory."
+AVTR_BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_WIND_PUSHES_VEHICLE.__doc__ = "Allow the wind to affect the ballistic trajectory."
+AVTR_BALLISTIC3_D_CONTROL_MODE.BALLISTIC3_D_PARACHUTE_MODE.__doc__ = "Model the vehicle as a parachute."
 
-agcls.AgTypeNameMap["AgEAvtrBallistic3DControlMode"] = AgEAvtrBallistic3DControlMode
+agcls.AgTypeNameMap["AVTR_BALLISTIC3_D_CONTROL_MODE"] = AVTR_BALLISTIC3_D_CONTROL_MODE
 
-class AgEAvtrLaunchDynStateCoordFrame(IntEnum):
+class AVTR_LAUNCH_DYN_STATE_COORD_FRAME(IntEnum):
     """The coordinate frame used for a LaunchDynState procedure."""
     # The object's body frame.
-    eLaunchDynStateCoordFrameBody = 0
+    LAUNCH_DYN_STATE_COORD_FRAME_BODY = 0
     # The object's local horizontal frame.
-    eLaunchDynStateCoordFrameLocalHorizontal = 1
+    LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL = 1
 
-AgEAvtrLaunchDynStateCoordFrame.eLaunchDynStateCoordFrameBody.__doc__ = "The object's body frame."
-AgEAvtrLaunchDynStateCoordFrame.eLaunchDynStateCoordFrameLocalHorizontal.__doc__ = "The object's local horizontal frame."
+AVTR_LAUNCH_DYN_STATE_COORD_FRAME.LAUNCH_DYN_STATE_COORD_FRAME_BODY.__doc__ = "The object's body frame."
+AVTR_LAUNCH_DYN_STATE_COORD_FRAME.LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL.__doc__ = "The object's local horizontal frame."
 
-agcls.AgTypeNameMap["AgEAvtrLaunchDynStateCoordFrame"] = AgEAvtrLaunchDynStateCoordFrame
+agcls.AgTypeNameMap["AVTR_LAUNCH_DYN_STATE_COORD_FRAME"] = AVTR_LAUNCH_DYN_STATE_COORD_FRAME
 
-class AgEAvtrLaunchDynStateBearingRef(IntEnum):
+class AVTR_LAUNCH_DYN_STATE_BEARING_REF(IntEnum):
     """The vector used as a bearing reference for a LaunchDynState procedure."""
     # The object's velocity vector.
-    eLaunchDynStateBearingRefVelocity = 0
+    LAUNCH_DYN_STATE_BEARING_REF_VELOCITY = 0
     # The X vector of the object's coordinate frame.
-    eLaunchDynStateBearingRefCoordFrameX = 1
+    LAUNCH_DYN_STATE_BEARING_REF_COORD_FRAME_X = 1
     # The object's vector to North.
-    eLaunchDynStateBearingRefNorth = 2
+    LAUNCH_DYN_STATE_BEARING_REF_NORTH = 2
 
-AgEAvtrLaunchDynStateBearingRef.eLaunchDynStateBearingRefVelocity.__doc__ = "The object's velocity vector."
-AgEAvtrLaunchDynStateBearingRef.eLaunchDynStateBearingRefCoordFrameX.__doc__ = "The X vector of the object's coordinate frame."
-AgEAvtrLaunchDynStateBearingRef.eLaunchDynStateBearingRefNorth.__doc__ = "The object's vector to North."
+AVTR_LAUNCH_DYN_STATE_BEARING_REF.LAUNCH_DYN_STATE_BEARING_REF_VELOCITY.__doc__ = "The object's velocity vector."
+AVTR_LAUNCH_DYN_STATE_BEARING_REF.LAUNCH_DYN_STATE_BEARING_REF_COORD_FRAME_X.__doc__ = "The X vector of the object's coordinate frame."
+AVTR_LAUNCH_DYN_STATE_BEARING_REF.LAUNCH_DYN_STATE_BEARING_REF_NORTH.__doc__ = "The object's vector to North."
 
-agcls.AgTypeNameMap["AgEAvtrLaunchDynStateBearingRef"] = AgEAvtrLaunchDynStateBearingRef
+agcls.AgTypeNameMap["AVTR_LAUNCH_DYN_STATE_BEARING_REF"] = AVTR_LAUNCH_DYN_STATE_BEARING_REF
 
-class AgEAvtrAltitudeRef(IntEnum):
+class AVTR_ALTITUDE_REF(IntEnum):
     """The altitude reference."""
     # Altitude above WGS84 ground reference.
-    eAltitudeRefWGS84 = 0
+    ALTITUDE_REF_WGS84 = 0
     # Altitude above Mean Sea Level (MSL).
-    eAltitudeRefMSL = 1
+    ALTITUDE_REF_MSL = 1
     # ALtitude above terrain.
-    eAltitudeRefTerrain = 2
+    ALTITUDE_REF_TERRAIN = 2
 
-AgEAvtrAltitudeRef.eAltitudeRefWGS84.__doc__ = "Altitude above WGS84 ground reference."
-AgEAvtrAltitudeRef.eAltitudeRefMSL.__doc__ = "Altitude above Mean Sea Level (MSL)."
-AgEAvtrAltitudeRef.eAltitudeRefTerrain.__doc__ = "ALtitude above terrain."
+AVTR_ALTITUDE_REF.ALTITUDE_REF_WGS84.__doc__ = "Altitude above WGS84 ground reference."
+AVTR_ALTITUDE_REF.ALTITUDE_REF_MSL.__doc__ = "Altitude above Mean Sea Level (MSL)."
+AVTR_ALTITUDE_REF.ALTITUDE_REF_TERRAIN.__doc__ = "ALtitude above terrain."
 
-agcls.AgTypeNameMap["AgEAvtrAltitudeRef"] = AgEAvtrAltitudeRef
+agcls.AgTypeNameMap["AVTR_ALTITUDE_REF"] = AVTR_ALTITUDE_REF
 
-class AgEAvtrSmoothTurnFPAMode(IntEnum):
+class AVTR_SMOOTH_TURN_FPA_MODE(IntEnum):
     """The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure."""
     # Hold the initial flight path angle.
-    eSmoothTurnFPAHoldInitial = 0
+    SMOOTH_TURN_FPA_HOLD_INITIAL = 0
     # Levell off the flight path angle.
-    eSmoothTurnFPALevelOff = 1
+    SMOOTH_TURN_FPA_LEVEL_OFF = 1
 
-AgEAvtrSmoothTurnFPAMode.eSmoothTurnFPAHoldInitial.__doc__ = "Hold the initial flight path angle."
-AgEAvtrSmoothTurnFPAMode.eSmoothTurnFPALevelOff.__doc__ = "Levell off the flight path angle."
+AVTR_SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_HOLD_INITIAL.__doc__ = "Hold the initial flight path angle."
+AVTR_SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF.__doc__ = "Levell off the flight path angle."
 
-agcls.AgTypeNameMap["AgEAvtrSmoothTurnFPAMode"] = AgEAvtrSmoothTurnFPAMode
+agcls.AgTypeNameMap["AVTR_SMOOTH_TURN_FPA_MODE"] = AVTR_SMOOTH_TURN_FPA_MODE
 
-class AgEAvtrPitch3DControlMode(IntEnum):
+class AVTR_PITCH3_D_CONTROL_MODE(IntEnum):
     """The control mode used to define the pitch 3D strategy of the basic maneuver procedure."""
     # The vehicle will compensate for the wind along its trajectory.
-    ePitch3DCompensateForWind = 0
+    PITCH3_D_COMPENSATE_FOR_WIND = 0
     # Allow the wind to affect the trajectory.
-    ePitch3DWindPushesVehicle = 1
+    PITCH3_D_WIND_PUSHES_VEHICLE = 1
 
-AgEAvtrPitch3DControlMode.ePitch3DCompensateForWind.__doc__ = "The vehicle will compensate for the wind along its trajectory."
-AgEAvtrPitch3DControlMode.ePitch3DWindPushesVehicle.__doc__ = "Allow the wind to affect the trajectory."
+AVTR_PITCH3_D_CONTROL_MODE.PITCH3_D_COMPENSATE_FOR_WIND.__doc__ = "The vehicle will compensate for the wind along its trajectory."
+AVTR_PITCH3_D_CONTROL_MODE.PITCH3_D_WIND_PUSHES_VEHICLE.__doc__ = "Allow the wind to affect the trajectory."
 
-agcls.AgTypeNameMap["AgEAvtrPitch3DControlMode"] = AgEAvtrPitch3DControlMode
+agcls.AgTypeNameMap["AVTR_PITCH3_D_CONTROL_MODE"] = AVTR_PITCH3_D_CONTROL_MODE
 
-class AgEAvtrRefuelDumpMode(IntEnum):
+class AVTR_REFUEL_DUMP_MODE(IntEnum):
     """The modes used to define procedure refuel/dump modes."""
     # RefuelDump Disabled.
-    eRefuelDumpDisabled = 0
+    REFUEL_DUMP_DISABLED = 0
     # Refuel Top Off.
-    eRefuelTopOff = 1
+    REFUEL_TOP_OFF = 1
     # Refuel to specified fuel state.
-    eRefuelToFuelState = 2
+    REFUEL_TO_FUEL_STATE = 2
     # Refuel to specified weight.
-    eRefuelToWeight = 3
+    REFUEL_TO_WEIGHT = 3
     # Refuel specified quantity.
-    eRefuelQuantity = 4
+    REFUEL_QUANTITY = 4
     # Dump to specified fuel state.
-    eDumpToFuelState = 5
+    DUMP_TO_FUEL_STATE = 5
     # Dump to specified weight.
-    eDumpToWeight = 6
+    DUMP_TO_WEIGHT = 6
     # Dump specified quantity.
-    eDumpQuantity = 7
+    DUMP_QUANTITY = 7
 
-AgEAvtrRefuelDumpMode.eRefuelDumpDisabled.__doc__ = "RefuelDump Disabled."
-AgEAvtrRefuelDumpMode.eRefuelTopOff.__doc__ = "Refuel Top Off."
-AgEAvtrRefuelDumpMode.eRefuelToFuelState.__doc__ = "Refuel to specified fuel state."
-AgEAvtrRefuelDumpMode.eRefuelToWeight.__doc__ = "Refuel to specified weight."
-AgEAvtrRefuelDumpMode.eRefuelQuantity.__doc__ = "Refuel specified quantity."
-AgEAvtrRefuelDumpMode.eDumpToFuelState.__doc__ = "Dump to specified fuel state."
-AgEAvtrRefuelDumpMode.eDumpToWeight.__doc__ = "Dump to specified weight."
-AgEAvtrRefuelDumpMode.eDumpQuantity.__doc__ = "Dump specified quantity."
+AVTR_REFUEL_DUMP_MODE.REFUEL_DUMP_DISABLED.__doc__ = "RefuelDump Disabled."
+AVTR_REFUEL_DUMP_MODE.REFUEL_TOP_OFF.__doc__ = "Refuel Top Off."
+AVTR_REFUEL_DUMP_MODE.REFUEL_TO_FUEL_STATE.__doc__ = "Refuel to specified fuel state."
+AVTR_REFUEL_DUMP_MODE.REFUEL_TO_WEIGHT.__doc__ = "Refuel to specified weight."
+AVTR_REFUEL_DUMP_MODE.REFUEL_QUANTITY.__doc__ = "Refuel specified quantity."
+AVTR_REFUEL_DUMP_MODE.DUMP_TO_FUEL_STATE.__doc__ = "Dump to specified fuel state."
+AVTR_REFUEL_DUMP_MODE.DUMP_TO_WEIGHT.__doc__ = "Dump to specified weight."
+AVTR_REFUEL_DUMP_MODE.DUMP_QUANTITY.__doc__ = "Dump specified quantity."
 
-agcls.AgTypeNameMap["AgEAvtrRefuelDumpMode"] = AgEAvtrRefuelDumpMode
+agcls.AgTypeNameMap["AVTR_REFUEL_DUMP_MODE"] = AVTR_REFUEL_DUMP_MODE
 
-class AgEAvtrBasicManeuverGlideSpeedControlMode(IntEnum):
+class AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE(IntEnum):
     """The modes used to define basic maneuver glide speed control modes."""
     # Immediate speed change.
-    eGlideSpeedImmediateChange = 0
+    GLIDE_SPEED_IMMEDIATE_CHANGE = 0
     # Achieve speed at altitude.
-    eGlideSpeedAtAltitude = 1
+    GLIDE_SPEED_AT_ALTITUDE = 1
 
-AgEAvtrBasicManeuverGlideSpeedControlMode.eGlideSpeedImmediateChange.__doc__ = "Immediate speed change."
-AgEAvtrBasicManeuverGlideSpeedControlMode.eGlideSpeedAtAltitude.__doc__ = "Achieve speed at altitude."
+AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE.GLIDE_SPEED_IMMEDIATE_CHANGE.__doc__ = "Immediate speed change."
+AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE.GLIDE_SPEED_AT_ALTITUDE.__doc__ = "Achieve speed at altitude."
 
-agcls.AgTypeNameMap["AgEAvtrBasicManeuverGlideSpeedControlMode"] = AgEAvtrBasicManeuverGlideSpeedControlMode
+agcls.AgTypeNameMap["AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE"] = AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
 
 
 class ISite(object):
@@ -2624,16 +2624,16 @@ class IWindModel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IWindModel.")
     
     @property
-    def wind_model_type(self) -> "AgEAvtrWindModelType":
+    def wind_model_type(self) -> "AVTR_WIND_MODEL_TYPE":
         """The wind model type."""
-        with agmarshall.AgEnum_arg(AgEAvtrWindModelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_WIND_MODEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_wind_model_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @wind_model_type.setter
-    def wind_model_type(self, pVal:"AgEAvtrWindModelType") -> None:
+    def wind_model_type(self, pVal:"AVTR_WIND_MODEL_TYPE") -> None:
         """The wind model type."""
-        with agmarshall.AgEnum_arg(AgEAvtrWindModelType, pVal) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_WIND_MODEL_TYPE, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_wind_model_type"](arg_pVal.COM_val))
 
     @property
@@ -2650,16 +2650,16 @@ class IWindModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_wind_model_type_string"](arg_pVal.COM_val))
 
     @property
-    def wind_model_source(self) -> "AgEAvtrWindAtmosModelSource":
+    def wind_model_source(self) -> "AVTR_WIND_ATMOS_MODEL_SOURCE":
         """The wind model source."""
-        with agmarshall.AgEnum_arg(AgEAvtrWindAtmosModelSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_WIND_ATMOS_MODEL_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_wind_model_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @wind_model_source.setter
-    def wind_model_source(self, pVal:"AgEAvtrWindAtmosModelSource") -> None:
+    def wind_model_source(self, pVal:"AVTR_WIND_ATMOS_MODEL_SOURCE") -> None:
         """The wind model source."""
-        with agmarshall.AgEnum_arg(AgEAvtrWindAtmosModelSource, pVal) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_WIND_ATMOS_MODEL_SOURCE, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_wind_model_source"](arg_pVal.COM_val))
 
     @property
@@ -2751,9 +2751,9 @@ class IADDSMessage(object):
             return arg_pVal.python_val
 
     @property
-    def type(self) -> "AgEAvtrADDSForecastType":
+    def type(self) -> "AVTR_ADDS_FORECAST_TYPE":
         """The ADDS message type."""
-        with agmarshall.AgEnum_arg(AgEAvtrADDSForecastType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ADDS_FORECAST_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -3344,16 +3344,16 @@ class IAircraftSimpleAero(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftSimpleAero.")
     
     @property
-    def operating_mode(self) -> "AgEAvtrAeroPropSimpleMode":
+    def operating_mode(self) -> "AVTR_AERO_PROP_SIMPLE_MODE":
         """The mode option to treat the aircraft as a helicopter or a fixed wing aircraft when calculating the aircraft's attitude."""
-        with agmarshall.AgEnum_arg(AgEAvtrAeroPropSimpleMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AERO_PROP_SIMPLE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_operating_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @operating_mode.setter
-    def operating_mode(self, newVal:"AgEAvtrAeroPropSimpleMode") -> None:
+    def operating_mode(self, newVal:"AVTR_AERO_PROP_SIMPLE_MODE") -> None:
         """The mode option to treat the aircraft as a helicopter or a fixed wing aircraft when calculating the aircraft's attitude."""
-        with agmarshall.AgEnum_arg(AgEAvtrAeroPropSimpleMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AERO_PROP_SIMPLE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_operating_mode"](arg_newVal.COM_val))
 
     @property
@@ -3451,9 +3451,9 @@ class ILevelTurns(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ILevelTurns.")
     
     @property
-    def turn_mode(self) -> "AgEAvtrTurnMode":
+    def turn_mode(self) -> "AVTR_TURN_MODE":
         """Get the turn mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrTurnMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TURN_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -3492,23 +3492,23 @@ class ILevelTurns(object):
             agcls.evaluate_hresult(self.__dict__["_get_turn_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_level_turn(self, turnMode:"AgEAvtrTurnMode", turnValue:typing.Any) -> None:
+    def set_level_turn(self, turnMode:"AVTR_TURN_MODE", turnValue:typing.Any) -> None:
         """Set the level turn mode and corresponding value."""
-        with agmarshall.AgEnum_arg(AgEAvtrTurnMode, turnMode) as arg_turnMode, \
+        with agmarshall.AgEnum_arg(AVTR_TURN_MODE, turnMode) as arg_turnMode, \
              agmarshall.VARIANT_arg(turnValue) as arg_turnValue:
             agcls.evaluate_hresult(self.__dict__["_set_level_turn"](arg_turnMode.COM_val, arg_turnValue.COM_val))
 
     @property
-    def maneuver_mode(self) -> "AgEAvtrAccelManeuverMode":
+    def maneuver_mode(self) -> "AVTR_ACCEL_MANEUVER_MODE":
         """The mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_maneuver_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @maneuver_mode.setter
-    def maneuver_mode(self, newVal:"AgEAvtrAccelManeuverMode") -> None:
+    def maneuver_mode(self, newVal:"AVTR_ACCEL_MANEUVER_MODE") -> None:
         """The mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_mode"](arg_newVal.COM_val))
 
     @property
@@ -3684,16 +3684,16 @@ class IClimbAndDescentTransitions(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_push_over_g"](arg_newVal.COM_val))
 
     @property
-    def maneuver_mode(self) -> "AgEAvtrAccelManeuverMode":
+    def maneuver_mode(self) -> "AVTR_ACCEL_MANEUVER_MODE":
         """The mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_maneuver_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @maneuver_mode.setter
-    def maneuver_mode(self, newVal:"AgEAvtrAccelManeuverMode") -> None:
+    def maneuver_mode(self, newVal:"AVTR_ACCEL_MANEUVER_MODE") -> None:
         """The mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_mode"](arg_newVal.COM_val))
 
     @property
@@ -3953,15 +3953,15 @@ class IAircraftBasicClimbModel(object):
             return arg_pVal.python_val
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """Get the airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the airspeed type and value."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -4821,16 +4821,16 @@ class IAircraftBasicFixedWingProp(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftBasicFixedWingProp.")
     
     @property
-    def propulsion_mode(self) -> "AgEAvtrBasicFixedWingPropMode":
+    def propulsion_mode(self) -> "AVTR_BASIC_FIXED_WING_PROP_MODE":
         """The option of whether to specify net thrust or net power."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicFixedWingPropMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_FIXED_WING_PROP_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_propulsion_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @propulsion_mode.setter
-    def propulsion_mode(self, pVal:"AgEAvtrBasicFixedWingPropMode") -> None:
+    def propulsion_mode(self, pVal:"AVTR_BASIC_FIXED_WING_PROP_MODE") -> None:
         """The option of whether to specify net thrust or net power."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicFixedWingPropMode, pVal) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_FIXED_WING_PROP_MODE, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_propulsion_mode"](arg_pVal.COM_val))
 
     @property
@@ -5048,22 +5048,22 @@ class IAircraftAdvClimbModel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvClimbModel.")
     
     @property
-    def climb_speed_type(self) -> "AgEAvtrClimbSpeedType":
+    def climb_speed_type(self) -> "AVTR_CLIMB_SPEED_TYPE":
         """The mode to calculate the aircraft's airspeed while climbing."""
-        with agmarshall.AgEnum_arg(AgEAvtrClimbSpeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_CLIMB_SPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_climb_speed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @climb_speed_type.setter
-    def climb_speed_type(self, newVal:"AgEAvtrClimbSpeedType") -> None:
+    def climb_speed_type(self, newVal:"AVTR_CLIMB_SPEED_TYPE") -> None:
         """The mode to calculate the aircraft's airspeed while climbing."""
-        with agmarshall.AgEnum_arg(AgEAvtrClimbSpeedType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_CLIMB_SPEED_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_climb_speed_type"](arg_newVal.COM_val))
 
     @property
-    def climb_override_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def climb_override_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """Get the override airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_climb_override_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -5074,9 +5074,9 @@ class IAircraftAdvClimbModel(object):
             agcls.evaluate_hresult(self.__dict__["_get_climb_override_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_climb_override_airspeed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_climb_override_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the override airspeed and airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_climb_override_airspeed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -5120,9 +5120,9 @@ class IAircraftAdvClimbModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_limit"](arg_newVal.COM_val))
 
     @property
-    def airspeed_limit_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_limit_type(self) -> "AVTR_AIRSPEED_TYPE":
         """Get the airspeed limit type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_limit_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -5133,9 +5133,9 @@ class IAircraftAdvClimbModel(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_limit"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed_limit(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_airspeed_limit(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the airspeed limit and airspeed type below the altitude threshold."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_limit"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -5333,16 +5333,16 @@ class IAircraftBasicCruiseModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_scale_fuel_flow_by_non_std_density"](arg_newVal.COM_val))
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @airspeed_type.setter
-    def airspeed_type(self, newVal:"AgEAvtrAirspeedType") -> None:
+    def airspeed_type(self, newVal:"AVTR_AIRSPEED_TYPE") -> None:
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_type"](arg_newVal.COM_val))
 
     @property
@@ -5558,16 +5558,16 @@ class IAircraftAdvCruiseModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_default_cruise_altitude"](arg_newVal.COM_val))
 
     @property
-    def max_perf_airspeed(self) -> "AgEAvtrCruiseMaxPerfSpeedType":
+    def max_perf_airspeed(self) -> "AVTR_CRUISE_MAX_PERF_SPEED_TYPE":
         """The method for defining the maximum performance airspeed of the aircraft with respect to its altitude."""
-        with agmarshall.AgEnum_arg(AgEAvtrCruiseMaxPerfSpeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_CRUISE_MAX_PERF_SPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_max_perf_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @max_perf_airspeed.setter
-    def max_perf_airspeed(self, newVal:"AgEAvtrCruiseMaxPerfSpeedType") -> None:
+    def max_perf_airspeed(self, newVal:"AVTR_CRUISE_MAX_PERF_SPEED_TYPE") -> None:
         """The method for defining the maximum performance airspeed of the aircraft with respect to its altitude."""
-        with agmarshall.AgEnum_arg(AgEAvtrCruiseMaxPerfSpeedType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_CRUISE_MAX_PERF_SPEED_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_max_perf_airspeed"](arg_newVal.COM_val))
 
     @property
@@ -5597,9 +5597,9 @@ class IAircraftAdvCruiseModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_limit"](arg_newVal.COM_val))
 
     @property
-    def airspeed_limit_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_limit_type(self) -> "AVTR_AIRSPEED_TYPE":
         """Get the airspeed limit type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_limit_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -5610,9 +5610,9 @@ class IAircraftAdvCruiseModel(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_limit"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed_limit(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_airspeed_limit(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the airspeed limit and airspeed type below the altitude threshold."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_limit"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -5727,15 +5727,15 @@ class IAircraftBasicDescentModel(object):
             return arg_pVal.python_val
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """Get the airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the airspeed type and value."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -5897,16 +5897,16 @@ class IAircraftAdvDescentModel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvDescentModel.")
     
     @property
-    def descent_speed_type(self) -> "AgEAvtrDescentSpeedType":
+    def descent_speed_type(self) -> "AVTR_DESCENT_SPEED_TYPE":
         """The mode to calculate the aircraft's airspeed while descending ."""
-        with agmarshall.AgEnum_arg(AgEAvtrDescentSpeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_DESCENT_SPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_descent_speed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @descent_speed_type.setter
-    def descent_speed_type(self, newVal:"AgEAvtrDescentSpeedType") -> None:
+    def descent_speed_type(self, newVal:"AVTR_DESCENT_SPEED_TYPE") -> None:
         """The mode to calculate the aircraft's airspeed while descending ."""
-        with agmarshall.AgEnum_arg(AgEAvtrDescentSpeedType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_DESCENT_SPEED_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_descent_speed_type"](arg_newVal.COM_val))
 
     @property
@@ -5923,9 +5923,9 @@ class IAircraftAdvDescentModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_descent_stall_speed_ratio"](arg_newVal.COM_val))
 
     @property
-    def descent_override_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def descent_override_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """Get the override airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_descent_override_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -5936,9 +5936,9 @@ class IAircraftAdvDescentModel(object):
             agcls.evaluate_hresult(self.__dict__["_get_descent_override_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_descent_override_airspeed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_descent_override_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the override airspeed and airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_descent_override_airspeed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -5982,9 +5982,9 @@ class IAircraftAdvDescentModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_limit"](arg_newVal.COM_val))
 
     @property
-    def airspeed_limit_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_limit_type(self) -> "AVTR_AIRSPEED_TYPE":
         """Get the airspeed limit type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_limit_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -5995,9 +5995,9 @@ class IAircraftAdvDescentModel(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_limit"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed_limit(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_airspeed_limit(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the airspeed limit and airspeed type below the altitude threshold."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_limit"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -6087,15 +6087,15 @@ class IAircraftBasicLandingModel(object):
             return arg_pVal.python_val
 
     @property
-    def landing_speed_type(self) -> "AgEAvtrAirspeedType":
+    def landing_speed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The landing speed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_landing_speed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_landing_speed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_landing_speed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the landing speed of the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_landing_speed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -6219,16 +6219,16 @@ class IAircraftAdvLandingModel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvLandingModel.")
     
     @property
-    def landing_speed_mode(self) -> "AgEAvtrTakeoffLandingSpeedMode":
+    def landing_speed_mode(self) -> "AVTR_TAKEOFF_LANDING_SPEED_MODE":
         """The mode to calculate the aircraft's speed at wheels down."""
-        with agmarshall.AgEnum_arg(AgEAvtrTakeoffLandingSpeedMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TAKEOFF_LANDING_SPEED_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_landing_speed_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @landing_speed_mode.setter
-    def landing_speed_mode(self, newVal:"AgEAvtrTakeoffLandingSpeedMode") -> None:
+    def landing_speed_mode(self, newVal:"AVTR_TAKEOFF_LANDING_SPEED_MODE") -> None:
         """The mode to calculate the aircraft's speed at wheels down."""
-        with agmarshall.AgEnum_arg(AgEAvtrTakeoffLandingSpeedMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_TAKEOFF_LANDING_SPEED_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_landing_speed_mode"](arg_newVal.COM_val))
 
     @property
@@ -6377,15 +6377,15 @@ class IAircraftBasicTakeoffModel(object):
             return arg_pVal.python_val
 
     @property
-    def takeoff_speed_type(self) -> "AgEAvtrAirspeedType":
+    def takeoff_speed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The takeoff speed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_takeoff_speed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_takeoff_speed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_takeoff_speed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the takeoff speed of the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_takeoff_speed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -6410,15 +6410,15 @@ class IAircraftBasicTakeoffModel(object):
             return arg_pVal.python_val
 
     @property
-    def departure_speed_type(self) -> "AgEAvtrAirspeedType":
+    def departure_speed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The departure speed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_departure_speed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_departure_speed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_departure_speed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the departure speed of the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_departure_speed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -6548,16 +6548,16 @@ class IAircraftAdvTakeoffModel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAdvTakeoffModel.")
     
     @property
-    def takeoff_speed_mode(self) -> "AgEAvtrTakeoffLandingSpeedMode":
+    def takeoff_speed_mode(self) -> "AVTR_TAKEOFF_LANDING_SPEED_MODE":
         """The mode to calculate the aircraft's airspeed upon leaving the ground."""
-        with agmarshall.AgEnum_arg(AgEAvtrTakeoffLandingSpeedMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TAKEOFF_LANDING_SPEED_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_takeoff_speed_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @takeoff_speed_mode.setter
-    def takeoff_speed_mode(self, newVal:"AgEAvtrTakeoffLandingSpeedMode") -> None:
+    def takeoff_speed_mode(self, newVal:"AVTR_TAKEOFF_LANDING_SPEED_MODE") -> None:
         """The mode to calculate the aircraft's  airspeed upon leaving the ground."""
-        with agmarshall.AgEnum_arg(AgEAvtrTakeoffLandingSpeedMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_TAKEOFF_LANDING_SPEED_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_takeoff_speed_mode"](arg_newVal.COM_val))
 
     @property
@@ -6598,16 +6598,16 @@ class IAircraftAdvTakeoffModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_flaps"](arg_newVal.COM_val))
 
     @property
-    def departure_speed_mode(self) -> "AgEAvtrDepartureSpeedMode":
+    def departure_speed_mode(self) -> "AVTR_DEPARTURE_SPEED_MODE":
         """The mode to calculate the airspeed upon leaving the ground."""
-        with agmarshall.AgEnum_arg(AgEAvtrDepartureSpeedMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_DEPARTURE_SPEED_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_departure_speed_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @departure_speed_mode.setter
-    def departure_speed_mode(self, newVal:"AgEAvtrDepartureSpeedMode") -> None:
+    def departure_speed_mode(self, newVal:"AVTR_DEPARTURE_SPEED_MODE") -> None:
         """The mode to calculate the airspeed upon leaving the ground."""
-        with agmarshall.AgEnum_arg(AgEAvtrDepartureSpeedMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_DEPARTURE_SPEED_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_departure_speed_mode"](arg_newVal.COM_val))
 
     @property
@@ -6618,15 +6618,15 @@ class IAircraftAdvTakeoffModel(object):
             return arg_pVal.python_val
 
     @property
-    def departure_speed_limit_type(self) -> "AgEAvtrAirspeedType":
+    def departure_speed_limit_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The departure speed limim type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_departure_speed_limit_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_departure_speed_limit(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_departure_speed_limit(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the departure speed limit of the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_departure_speed_limit"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -6872,15 +6872,15 @@ class IAircraftVTOLModel(object):
             return arg_pVal.python_val
 
     @property
-    def forward_flight_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def forward_flight_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The forward flight airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_forward_flight_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_forward_flight_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_forward_flight_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the speed at which the aircraft can begin forward flight."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_forward_flight_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -7319,16 +7319,16 @@ class IAdvFixedWingTool(object):
             agcls.evaluate_hresult(self.__dict__["_set_cache_fuel_flow"](arg_newVal.COM_val))
 
     @property
-    def aero_strategy(self) -> "AgEAvtrAdvFixedWingAeroStrategy":
+    def aero_strategy(self) -> "AVTR_ADV_FIXED_WING_AERO_STRATEGY":
         """The aerodynamic strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAdvFixedWingAeroStrategy) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ADV_FIXED_WING_AERO_STRATEGY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_aero_strategy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @aero_strategy.setter
-    def aero_strategy(self, newVal:"AgEAvtrAdvFixedWingAeroStrategy") -> None:
+    def aero_strategy(self, newVal:"AVTR_ADV_FIXED_WING_AERO_STRATEGY") -> None:
         """The aerodynamic strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAdvFixedWingAeroStrategy, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ADV_FIXED_WING_AERO_STRATEGY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_aero_strategy"](arg_newVal.COM_val))
 
     @property
@@ -7360,16 +7360,16 @@ class IAdvFixedWingTool(object):
             return arg_ppRetVal.python_val
 
     @property
-    def powerplant_strategy(self) -> "AgEAvtrAdvFixedWingPowerplantStrategy":
+    def powerplant_strategy(self) -> "AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY":
         """The powerplant strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAdvFixedWingPowerplantStrategy) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_strategy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @powerplant_strategy.setter
-    def powerplant_strategy(self, newVal:"AgEAvtrAdvFixedWingPowerplantStrategy") -> None:
+    def powerplant_strategy(self, newVal:"AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY") -> None:
         """The powerplant  strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAdvFixedWingPowerplantStrategy, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ADV_FIXED_WING_POWERPLANT_STRATEGY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_powerplant_strategy"](arg_newVal.COM_val))
 
     @property
@@ -7557,16 +7557,16 @@ class IAdvFixedWingSubsonicAero(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingSubsonicAero.")
     
     @property
-    def geometry_type(self) -> "AgEAvtrAdvFixedWingGeometry":
+    def geometry_type(self) -> "AVTR_ADV_FIXED_WING_GEOMETRY":
         """The type of wing geometry for the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAdvFixedWingGeometry) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ADV_FIXED_WING_GEOMETRY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_geometry_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @geometry_type.setter
-    def geometry_type(self, newVal:"AgEAvtrAdvFixedWingGeometry") -> None:
+    def geometry_type(self, newVal:"AVTR_ADV_FIXED_WING_GEOMETRY") -> None:
         """The type of wing geometry for the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAdvFixedWingGeometry, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ADV_FIXED_WING_GEOMETRY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_geometry_type"](arg_newVal.COM_val))
 
     @property
@@ -7892,16 +7892,16 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingSubSuperHypersonicProp.")
     
     @property
-    def turbine_mode(self) -> "AgEAvtrTurbineMode":
+    def turbine_mode(self) -> "AVTR_TURBINE_MODE":
         """The turbine operating mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrTurbineMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TURBINE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turbine_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turbine_mode.setter
-    def turbine_mode(self, newVal:"AgEAvtrTurbineMode") -> None:
+    def turbine_mode(self, newVal:"AVTR_TURBINE_MODE") -> None:
         """The turbine operating mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrTurbineMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_TURBINE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turbine_mode"](arg_newVal.COM_val))
 
     @property
@@ -7919,16 +7919,16 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
             return arg_ppRetVal.python_val
 
     @property
-    def ramjet_mode(self) -> "AgEAvtrRamjetMode":
+    def ramjet_mode(self) -> "AVTR_RAMJET_MODE":
         """The ramjet operating mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRamjetMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_RAMJET_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_ramjet_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @ramjet_mode.setter
-    def ramjet_mode(self, newVal:"AgEAvtrRamjetMode") -> None:
+    def ramjet_mode(self, newVal:"AVTR_RAMJET_MODE") -> None:
         """The ramjet operating mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRamjetMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_RAMJET_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_ramjet_mode"](arg_newVal.COM_val))
 
     @property
@@ -7939,16 +7939,16 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
             return arg_ppRetVal.python_val
 
     @property
-    def scramjet_mode(self) -> "AgEAvtrScramjetMode":
+    def scramjet_mode(self) -> "AVTR_SCRAMJET_MODE":
         """The scramjet operating mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrScramjetMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_SCRAMJET_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_scramjet_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @scramjet_mode.setter
-    def scramjet_mode(self, newVal:"AgEAvtrScramjetMode") -> None:
+    def scramjet_mode(self, newVal:"AVTR_SCRAMJET_MODE") -> None:
         """The scramjet operating mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrScramjetMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_SCRAMJET_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_scramjet_mode"](arg_newVal.COM_val))
 
     @property
@@ -8133,16 +8133,16 @@ class IAdvFixedWingSupersonicAero(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAdvFixedWingSupersonicAero.")
     
     @property
-    def geometry_type(self) -> "AgEAvtrAdvFixedWingGeometry":
+    def geometry_type(self) -> "AVTR_ADV_FIXED_WING_GEOMETRY":
         """The type of wing geometry for the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAdvFixedWingGeometry) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ADV_FIXED_WING_GEOMETRY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_geometry_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @geometry_type.setter
-    def geometry_type(self, newVal:"AgEAvtrAdvFixedWingGeometry") -> None:
+    def geometry_type(self, newVal:"AVTR_ADV_FIXED_WING_GEOMETRY") -> None:
         """The type of wing geometry for the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAdvFixedWingGeometry, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ADV_FIXED_WING_GEOMETRY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_geometry_type"](arg_newVal.COM_val))
 
     @property
@@ -9147,16 +9147,16 @@ class IAdvFixedWingTurbojetBasicABProp(object):
             return arg_ppRetVal.python_val
 
     @property
-    def fuel_type(self) -> "AgEAvtrJetFuelType":
+    def fuel_type(self) -> "AVTR_JET_FUEL_TYPE":
         """The jet engine's fuel type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetFuelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_FUEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_type.setter
-    def fuel_type(self, newVal:"AgEAvtrJetFuelType") -> None:
+    def fuel_type(self, newVal:"AVTR_JET_FUEL_TYPE") -> None:
         """The jet engine's fuel type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetFuelType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_FUEL_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_type"](arg_newVal.COM_val))
 
     @property
@@ -9413,16 +9413,16 @@ class IAdvFixedWingTurbofanBasicABProp(object):
             return arg_ppRetVal.python_val
 
     @property
-    def fuel_type(self) -> "AgEAvtrJetFuelType":
+    def fuel_type(self) -> "AVTR_JET_FUEL_TYPE":
         """The jet engine's fuel type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetFuelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_FUEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_type.setter
-    def fuel_type(self, newVal:"AgEAvtrJetFuelType") -> None:
+    def fuel_type(self, newVal:"AVTR_JET_FUEL_TYPE") -> None:
         """The jet engine's fuel type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetFuelType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_FUEL_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_type"](arg_newVal.COM_val))
 
     @property
@@ -9625,16 +9625,16 @@ class IMissileModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_load_factor"](arg_pVal.COM_val))
 
     @property
-    def maneuver_mode(self) -> "AgEAvtrAccelManeuverMode":
+    def maneuver_mode(self) -> "AVTR_ACCEL_MANEUVER_MODE":
         """The mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_maneuver_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @maneuver_mode.setter
-    def maneuver_mode(self, newVal:"AgEAvtrAccelManeuverMode") -> None:
+    def maneuver_mode(self, newVal:"AVTR_ACCEL_MANEUVER_MODE") -> None:
         """The mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_mode"](arg_newVal.COM_val))
 
     @property
@@ -9672,15 +9672,15 @@ class IMissileModel(object):
             return arg_pVal.python_val
 
     @property
-    def climb_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def climb_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The climb airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_climb_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_climb_airspeed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_climb_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the missile's climb airspeed and airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_climb_airspeed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -9731,15 +9731,15 @@ class IMissileModel(object):
             return arg_pVal.python_val
 
     @property
-    def cruise_max_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def cruise_max_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The cruise airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_cruise_max_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_cruise_max_airspeed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_cruise_max_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the missile's max cruise airspeed and airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_cruise_max_airspeed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -9764,15 +9764,15 @@ class IMissileModel(object):
             return arg_pVal.python_val
 
     @property
-    def descent_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def descent_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The descent airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_descent_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_descent_airspeed(self, airspeedType:"AgEAvtrAirspeedType", aispeed:float) -> None:
+    def set_descent_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the missile's descent airspeed and airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(aispeed) as arg_aispeed:
             agcls.evaluate_hresult(self.__dict__["_set_descent_airspeed"](arg_airspeedType.COM_val, arg_aispeed.COM_val))
 
@@ -9966,16 +9966,16 @@ class IMissileAero(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissileAero.")
     
     @property
-    def aero_strategy(self) -> "AgEAvtrMissileAeroStrategy":
+    def aero_strategy(self) -> "AVTR_MISSILE_AERO_STRATEGY":
         """The aerodynamic strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrMissileAeroStrategy) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_MISSILE_AERO_STRATEGY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_aero_strategy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @aero_strategy.setter
-    def aero_strategy(self, newVal:"AgEAvtrMissileAeroStrategy") -> None:
+    def aero_strategy(self, newVal:"AVTR_MISSILE_AERO_STRATEGY") -> None:
         """The aerodynamic strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrMissileAeroStrategy, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_MISSILE_AERO_STRATEGY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_aero_strategy"](arg_newVal.COM_val))
 
     @property
@@ -10049,16 +10049,16 @@ class IMissileProp(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IMissileProp.")
     
     @property
-    def prop_strategy(self) -> "AgEAvtrMissilePropStrategy":
+    def prop_strategy(self) -> "AVTR_MISSILE_PROP_STRATEGY":
         """The propulsion strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrMissilePropStrategy) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_MISSILE_PROP_STRATEGY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_prop_strategy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @prop_strategy.setter
-    def prop_strategy(self, newVal:"AgEAvtrMissilePropStrategy") -> None:
+    def prop_strategy(self, newVal:"AVTR_MISSILE_PROP_STRATEGY") -> None:
         """The propulsion strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrMissilePropStrategy, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_MISSILE_PROP_STRATEGY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_prop_strategy"](arg_newVal.COM_val))
 
     @property
@@ -11959,15 +11959,15 @@ class IRotorcraftModel(object):
             return arg_pVal.python_val
 
     @property
-    def max_safe_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def max_safe_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The maximum safe airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_max_safe_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_max_safe_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_max_safe_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the maximum safe airspeed and airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_max_safe_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -11979,15 +11979,15 @@ class IRotorcraftModel(object):
             return arg_pVal.python_val
 
     @property
-    def max_safe_translation_speed_type(self) -> "AgEAvtrAirspeedType":
+    def max_safe_translation_speed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The maximum safe translation speed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_max_safe_translation_speed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_max_safe_translation_speed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_max_safe_translation_speed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the maximum safe translation airspeed and airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_max_safe_translation_speed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -12301,16 +12301,16 @@ class IRotorcraftProp(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRotorcraftProp.")
     
     @property
-    def powerplant_type(self) -> "AgEAvtrRotorcraftPowerplantType":
+    def powerplant_type(self) -> "AVTR_ROTORCRAFT_POWERPLANT_TYPE":
         """The rotorcraft's powerplant type."""
-        with agmarshall.AgEnum_arg(AgEAvtrRotorcraftPowerplantType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ROTORCRAFT_POWERPLANT_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_powerplant_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @powerplant_type.setter
-    def powerplant_type(self, newVal:"AgEAvtrRotorcraftPowerplantType") -> None:
+    def powerplant_type(self, newVal:"AVTR_ROTORCRAFT_POWERPLANT_TYPE") -> None:
         """The rotorcraft's powerplant type."""
-        with agmarshall.AgEnum_arg(AgEAvtrRotorcraftPowerplantType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ROTORCRAFT_POWERPLANT_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_powerplant_type"](arg_newVal.COM_val))
 
     @property
@@ -13232,55 +13232,55 @@ class IPropulsionEfficiencies(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IPropulsionEfficiencies.")
     
     @property
-    def technology_level(self) -> "AgEAvtrJetEngineTechnologyLevel":
+    def technology_level(self) -> "AVTR_JET_ENGINE_TECHNOLOGY_LEVEL":
         """The technology level of the jet engine."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetEngineTechnologyLevel) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_ENGINE_TECHNOLOGY_LEVEL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_technology_level"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @technology_level.setter
-    def technology_level(self, newVal:"AgEAvtrJetEngineTechnologyLevel") -> None:
+    def technology_level(self, newVal:"AVTR_JET_ENGINE_TECHNOLOGY_LEVEL") -> None:
         """The technology level of the jet engine."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetEngineTechnologyLevel, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_ENGINE_TECHNOLOGY_LEVEL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_technology_level"](arg_newVal.COM_val))
 
     @property
-    def intake_type(self) -> "AgEAvtrJetEngineIntakeType":
+    def intake_type(self) -> "AVTR_JET_ENGINE_INTAKE_TYPE":
         """The jet engine intake type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetEngineIntakeType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_ENGINE_INTAKE_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_intake_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @intake_type.setter
-    def intake_type(self, newVal:"AgEAvtrJetEngineIntakeType") -> None:
+    def intake_type(self, newVal:"AVTR_JET_ENGINE_INTAKE_TYPE") -> None:
         """The jet engine intake type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetEngineIntakeType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_ENGINE_INTAKE_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_intake_type"](arg_newVal.COM_val))
 
     @property
-    def turbine_type(self) -> "AgEAvtrJetEngineTurbineType":
+    def turbine_type(self) -> "AVTR_JET_ENGINE_TURBINE_TYPE":
         """The jet engine turbine type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetEngineTurbineType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_ENGINE_TURBINE_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turbine_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turbine_type.setter
-    def turbine_type(self, newVal:"AgEAvtrJetEngineTurbineType") -> None:
+    def turbine_type(self, newVal:"AVTR_JET_ENGINE_TURBINE_TYPE") -> None:
         """The jet engine turbine type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetEngineTurbineType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_ENGINE_TURBINE_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turbine_type"](arg_newVal.COM_val))
 
     @property
-    def exhaust_nozzle_type(self) -> "AgEAvtrJetEngineExhaustNozzleType":
+    def exhaust_nozzle_type(self) -> "AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE":
         """The jet engine exhaust nozzle type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetEngineExhaustNozzleType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_exhaust_nozzle_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @exhaust_nozzle_type.setter
-    def exhaust_nozzle_type(self, newVal:"AgEAvtrJetEngineExhaustNozzleType") -> None:
+    def exhaust_nozzle_type(self, newVal:"AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE") -> None:
         """The jet engine exhaust nozzle type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetEngineExhaustNozzleType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_ENGINE_EXHAUST_NOZZLE_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_exhaust_nozzle_type"](arg_newVal.COM_val))
 
 
@@ -13327,16 +13327,16 @@ class IFuelModelKeroseneAFPROP(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IFuelModelKeroseneAFPROP.")
     
     @property
-    def subtype(self) -> "AgEAvtrAFPROPFuelType":
+    def subtype(self) -> "AVTR_AFPROP_FUEL_TYPE":
         """The fuel subtype."""
-        with agmarshall.AgEnum_arg(AgEAvtrAFPROPFuelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AFPROP_FUEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_subtype"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @subtype.setter
-    def subtype(self, newVal:"AgEAvtrAFPROPFuelType") -> None:
+    def subtype(self, newVal:"AVTR_AFPROP_FUEL_TYPE") -> None:
         """The fuel subtype."""
-        with agmarshall.AgEnum_arg(AgEAvtrAFPROPFuelType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AFPROP_FUEL_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_subtype"](arg_newVal.COM_val))
 
     @property
@@ -13396,16 +13396,16 @@ class IFuelModelKeroseneCEA(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IFuelModelKeroseneCEA.")
     
     @property
-    def subtype(self) -> "AgEAvtrCEAFuelType":
+    def subtype(self) -> "AVTR_CEA_FUEL_TYPE":
         """The fuel subtype."""
-        with agmarshall.AgEnum_arg(AgEAvtrCEAFuelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_CEA_FUEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_subtype"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @subtype.setter
-    def subtype(self, newVal:"AgEAvtrCEAFuelType") -> None:
+    def subtype(self, newVal:"AVTR_CEA_FUEL_TYPE") -> None:
         """The fuel subtype."""
-        with agmarshall.AgEnum_arg(AgEAvtrCEAFuelType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_CEA_FUEL_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_subtype"](arg_newVal.COM_val))
 
     @property
@@ -13552,16 +13552,16 @@ class IAdvFixedWingRamjetBasic(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_burner_temp"](arg_newVal.COM_val))
 
     @property
-    def fuel_type(self) -> "AgEAvtrJetFuelType":
+    def fuel_type(self) -> "AVTR_JET_FUEL_TYPE":
         """The jet engine's fuel type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetFuelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_FUEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_type.setter
-    def fuel_type(self, newVal:"AgEAvtrJetFuelType") -> None:
+    def fuel_type(self, newVal:"AVTR_JET_FUEL_TYPE") -> None:
         """The jet engine's fuel type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetFuelType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_FUEL_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_type"](arg_newVal.COM_val))
 
     @property
@@ -13716,16 +13716,16 @@ class IAdvFixedWingScramjetBasic(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_burner_temp"](arg_newVal.COM_val))
 
     @property
-    def fuel_type(self) -> "AgEAvtrJetFuelType":
+    def fuel_type(self) -> "AVTR_JET_FUEL_TYPE":
         """The jet engine's fuel type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetFuelType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_FUEL_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_type.setter
-    def fuel_type(self, newVal:"AgEAvtrJetFuelType") -> None:
+    def fuel_type(self, newVal:"AVTR_JET_FUEL_TYPE") -> None:
         """The jet engine's fuel type."""
-        with agmarshall.AgEnum_arg(AgEAvtrJetFuelType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JET_FUEL_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_type"](arg_newVal.COM_val))
 
     @property
@@ -13805,9 +13805,9 @@ class IRefuelDumpProperties(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRefuelDumpProperties.")
     
     @property
-    def refuel_dump_mode(self) -> "AgEAvtrRefuelDumpMode":
+    def refuel_dump_mode(self) -> "AVTR_REFUEL_DUMP_MODE":
         """Get the RefuelDumpMode"""
-        with agmarshall.AgEnum_arg(AgEAvtrRefuelDumpMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REFUEL_DUMP_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_refuel_dump_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -13818,9 +13818,9 @@ class IRefuelDumpProperties(object):
             agcls.evaluate_hresult(self.__dict__["_get_refuel_dump_mode_value"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_refuel_dump_mode(self, mode:"AgEAvtrRefuelDumpMode", value:float) -> None:
+    def set_refuel_dump_mode(self, mode:"AVTR_REFUEL_DUMP_MODE", value:float) -> None:
         """Set RefuelDumpMode and RefuelDumpModeValue if applicable"""
-        with agmarshall.AgEnum_arg(AgEAvtrRefuelDumpMode, mode) as arg_mode, \
+        with agmarshall.AgEnum_arg(AVTR_REFUEL_DUMP_MODE, mode) as arg_mode, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_refuel_dump_mode"](arg_mode.COM_val, arg_value.COM_val))
 
@@ -14015,16 +14015,16 @@ class IAtmosphereModelBasic(object):
             agcls.evaluate_hresult(self.__dict__["_set_name"](arg_newVal.COM_val))
 
     @property
-    def basic_model_type(self) -> "AgEAvtrAtmosphereModel":
+    def basic_model_type(self) -> "AVTR_ATMOSPHERE_MODEL":
         """The type of basic atmosphere."""
-        with agmarshall.AgEnum_arg(AgEAvtrAtmosphereModel) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_ATMOSPHERE_MODEL) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_basic_model_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @basic_model_type.setter
-    def basic_model_type(self, newVal:"AgEAvtrAtmosphereModel") -> None:
+    def basic_model_type(self, newVal:"AVTR_ATMOSPHERE_MODEL") -> None:
         """The type of basic atmosphere."""
-        with agmarshall.AgEnum_arg(AgEAvtrAtmosphereModel, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ATMOSPHERE_MODEL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_basic_model_type"](arg_newVal.COM_val))
 
     @property
@@ -14136,16 +14136,16 @@ class IAtmosphereModel(object):
             agcls.evaluate_hresult(self.__dict__["_set_atmosphere_model_type_string"](arg_pVal.COM_val))
 
     @property
-    def atmosphere_model_source(self) -> "AgEAvtrWindAtmosModelSource":
+    def atmosphere_model_source(self) -> "AVTR_WIND_ATMOS_MODEL_SOURCE":
         """The atmosphere model source."""
-        with agmarshall.AgEnum_arg(AgEAvtrWindAtmosModelSource) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_WIND_ATMOS_MODEL_SOURCE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_atmosphere_model_source"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @atmosphere_model_source.setter
-    def atmosphere_model_source(self, pVal:"AgEAvtrWindAtmosModelSource") -> None:
+    def atmosphere_model_source(self, pVal:"AVTR_WIND_ATMOS_MODEL_SOURCE") -> None:
         """The atmosphere model source."""
-        with agmarshall.AgEnum_arg(AgEAvtrWindAtmosModelSource, pVal) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_WIND_ATMOS_MODEL_SOURCE, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_atmosphere_model_source"](arg_pVal.COM_val))
 
     @property
@@ -14343,42 +14343,42 @@ class IWindModelADDS(object):
             agcls.evaluate_hresult(self.__dict__["_set_blend_time"](arg_newVal.COM_val))
 
     @property
-    def msg_interpolation_type(self) -> "AgEAvtrADDSMsgInterpType":
+    def msg_interpolation_type(self) -> "AVTR_ADDS_MSG_INTERP_TYPE":
         """The message interpolation type."""
-        with agmarshall.AgEnum_arg(AgEAvtrADDSMsgInterpType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_ADDS_MSG_INTERP_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_msg_interpolation_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @msg_interpolation_type.setter
-    def msg_interpolation_type(self, newVal:"AgEAvtrADDSMsgInterpType") -> None:
+    def msg_interpolation_type(self, newVal:"AVTR_ADDS_MSG_INTERP_TYPE") -> None:
         """The message interpolation type."""
-        with agmarshall.AgEnum_arg(AgEAvtrADDSMsgInterpType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ADDS_MSG_INTERP_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_msg_interpolation_type"](arg_newVal.COM_val))
 
     @property
-    def msg_extrapolation_type(self) -> "AgEAvtrADDSMsgExtrapType":
+    def msg_extrapolation_type(self) -> "AVTR_ADDS_MSG_EXTRAP_TYPE":
         """The message extrapolation type."""
-        with agmarshall.AgEnum_arg(AgEAvtrADDSMsgExtrapType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_ADDS_MSG_EXTRAP_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_msg_extrapolation_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @msg_extrapolation_type.setter
-    def msg_extrapolation_type(self, newVal:"AgEAvtrADDSMsgExtrapType") -> None:
+    def msg_extrapolation_type(self, newVal:"AVTR_ADDS_MSG_EXTRAP_TYPE") -> None:
         """The message extrapolation type."""
-        with agmarshall.AgEnum_arg(AgEAvtrADDSMsgExtrapType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ADDS_MSG_EXTRAP_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_msg_extrapolation_type"](arg_newVal.COM_val))
 
     @property
-    def missing_msg_type(self) -> "AgEAvtrADDSMissingMsgType":
+    def missing_msg_type(self) -> "AVTR_ADDS_MISSING_MSG_TYPE":
         """The missing message type."""
-        with agmarshall.AgEnum_arg(AgEAvtrADDSMissingMsgType) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_ADDS_MISSING_MSG_TYPE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_missing_msg_type"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @missing_msg_type.setter
-    def missing_msg_type(self, newVal:"AgEAvtrADDSMissingMsgType") -> None:
+    def missing_msg_type(self, newVal:"AVTR_ADDS_MISSING_MSG_TYPE") -> None:
         """The missing message type."""
-        with agmarshall.AgEnum_arg(AgEAvtrADDSMissingMsgType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ADDS_MISSING_MSG_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_missing_msg_type"](arg_newVal.COM_val))
 
     @property
@@ -15550,16 +15550,16 @@ class IAircraftAero(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAero.")
     
     @property
-    def aero_strategy(self) -> "AgEAvtrAircraftAeroStrategy":
+    def aero_strategy(self) -> "AVTR_AIRCRAFT_AERO_STRATEGY":
         """The aerodynamic strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAircraftAeroStrategy) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRCRAFT_AERO_STRATEGY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_aero_strategy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @aero_strategy.setter
-    def aero_strategy(self, newVal:"AgEAvtrAircraftAeroStrategy") -> None:
+    def aero_strategy(self, newVal:"AVTR_AIRCRAFT_AERO_STRATEGY") -> None:
         """The aerodynamic strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAircraftAeroStrategy, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRCRAFT_AERO_STRATEGY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_aero_strategy"](arg_newVal.COM_val))
 
     @property
@@ -15676,16 +15676,16 @@ class IAircraftProp(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftProp.")
     
     @property
-    def prop_strategy(self) -> "AgEAvtrAircraftPropStrategy":
+    def prop_strategy(self) -> "AVTR_AIRCRAFT_PROP_STRATEGY":
         """The propulsion strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAircraftPropStrategy) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRCRAFT_PROP_STRATEGY) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_prop_strategy"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @prop_strategy.setter
-    def prop_strategy(self, newVal:"AgEAvtrAircraftPropStrategy") -> None:
+    def prop_strategy(self, newVal:"AVTR_AIRCRAFT_PROP_STRATEGY") -> None:
         """The propulsion strategy type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAircraftPropStrategy, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRCRAFT_PROP_STRATEGY, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_prop_strategy"](arg_newVal.COM_val))
 
     @property
@@ -15800,16 +15800,16 @@ class IAircraftAccelerationMode(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftAccelerationMode.")
     
     @property
-    def accel_mode(self) -> "AgEAvtrAccelerationAdvAccelMode":
+    def accel_mode(self) -> "AVTR_ACCELERATION_ADV_ACCEL_MODE":
         """Opt whether to override the acceleration or deceleration of the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelerationAdvAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCELERATION_ADV_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_accel_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @accel_mode.setter
-    def accel_mode(self, newVal:"AgEAvtrAccelerationAdvAccelMode") -> None:
+    def accel_mode(self, newVal:"AVTR_ACCELERATION_ADV_ACCEL_MODE") -> None:
         """Opt whether to override the acceleration or deceleration of the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelerationAdvAccelMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCELERATION_ADV_ACCEL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_accel_mode"](arg_newVal.COM_val))
 
     @property
@@ -15978,29 +15978,29 @@ class IAeroPropManeuverModeHelper(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAeroPropManeuverModeHelper.")
     
     @property
-    def mode(self) -> "AgEAvtrAccelManeuverAeroPropMode":
+    def mode(self) -> "AVTR_ACCEL_MANEUVER_AERO_PROP_MODE":
         """The calculation mode for the Aero/Prop maneuver mode helper."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverAeroPropMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MANEUVER_AERO_PROP_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @mode.setter
-    def mode(self, newVal:"AgEAvtrAccelManeuverAeroPropMode") -> None:
+    def mode(self, newVal:"AVTR_ACCEL_MANEUVER_AERO_PROP_MODE") -> None:
         """The calculation mode for the Aero/Prop maneuver mode helper."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelManeuverAeroPropMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MANEUVER_AERO_PROP_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_mode"](arg_newVal.COM_val))
 
     @property
-    def flight_mode(self) -> "AgEAvtrAeroPropFlightMode":
+    def flight_mode(self) -> "AVTR_AERO_PROP_FLIGHT_MODE":
         """The performance flight mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAeroPropFlightMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AERO_PROP_FLIGHT_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_flight_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @flight_mode.setter
-    def flight_mode(self, newVal:"AgEAvtrAeroPropFlightMode") -> None:
+    def flight_mode(self, newVal:"AVTR_AERO_PROP_FLIGHT_MODE") -> None:
         """The performance flight mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAeroPropFlightMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AERO_PROP_FLIGHT_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_flight_mode"](arg_newVal.COM_val))
 
     @property
@@ -16050,15 +16050,15 @@ class IAeroPropManeuverModeHelper(object):
             return arg_pVal.python_val
 
     @property
-    def ref_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def ref_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The reference airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_ref_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_ref_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_ref_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the reference airspeed and reference airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_ref_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -17514,16 +17514,16 @@ class ICalculationOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_bad_steps"](arg_newVal.COM_val))
 
     @property
-    def integrator_type(self) -> "AgEAvtrNumericalIntegrator":
+    def integrator_type(self) -> "AVTR_NUMERICAL_INTEGRATOR":
         """The integrator type."""
-        with agmarshall.AgEnum_arg(AgEAvtrNumericalIntegrator) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_NUMERICAL_INTEGRATOR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_integrator_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @integrator_type.setter
-    def integrator_type(self, pVal:"AgEAvtrNumericalIntegrator") -> None:
+    def integrator_type(self, pVal:"AVTR_NUMERICAL_INTEGRATOR") -> None:
         """The integrator type."""
-        with agmarshall.AgEnum_arg(AgEAvtrNumericalIntegrator, pVal) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_NUMERICAL_INTEGRATOR, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_integrator_type"](arg_pVal.COM_val))
 
     @property
@@ -17595,16 +17595,16 @@ class INavigationOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in INavigationOptions.")
     
     @property
-    def nav_mode(self) -> "AgEAvtrPointToPointMode":
+    def nav_mode(self) -> "AVTR_POINT_TO_POINT_MODE":
         """The navigation mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPointToPointMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_POINT_TO_POINT_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_nav_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @nav_mode.setter
-    def nav_mode(self, newVal:"AgEAvtrPointToPointMode") -> None:
+    def nav_mode(self, newVal:"AVTR_POINT_TO_POINT_MODE") -> None:
         """The navigation mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPointToPointMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_POINT_TO_POINT_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_nav_mode"](arg_newVal.COM_val))
 
     @property
@@ -17634,29 +17634,29 @@ class INavigationOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_magnetic_heading"](arg_newVal.COM_val))
 
     @property
-    def enroute_first_turn(self) -> "AgEAvtrNavigatorTurnDir":
+    def enroute_first_turn(self) -> "AVTR_NAVIGATOR_TURN_DIR":
         """Option for the first turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_first_turn"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @enroute_first_turn.setter
-    def enroute_first_turn(self, newVal:"AgEAvtrNavigatorTurnDir") -> None:
+    def enroute_first_turn(self, newVal:"AVTR_NAVIGATOR_TURN_DIR") -> None:
         """Option for the first turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_enroute_first_turn"](arg_newVal.COM_val))
 
     @property
-    def enroute_second_turn(self) -> "AgEAvtrNavigatorTurnDir":
+    def enroute_second_turn(self) -> "AVTR_NAVIGATOR_TURN_DIR":
         """Option for the second turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_second_turn"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @enroute_second_turn.setter
-    def enroute_second_turn(self, newVal:"AgEAvtrNavigatorTurnDir") -> None:
+    def enroute_second_turn(self, newVal:"AVTR_NAVIGATOR_TURN_DIR") -> None:
         """Option for the second turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_enroute_second_turn"](arg_newVal.COM_val))
 
 
@@ -17750,16 +17750,16 @@ class IAltitudeMSLAndLevelOffOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_must_level_off"](arg_newVal.COM_val))
 
     @property
-    def level_off_mode(self) -> "AgEAvtrAltitudeConstraintManeuverMode":
+    def level_off_mode(self) -> "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE":
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_off_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @level_off_mode.setter
-    def level_off_mode(self, newVal:"AgEAvtrAltitudeConstraintManeuverMode") -> None:
+    def level_off_mode(self, newVal:"AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE") -> None:
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_level_off_mode"](arg_newVal.COM_val))
 
 
@@ -17892,16 +17892,16 @@ class IAltitudeOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_default_cruise_altitude"](arg_newVal.COM_val))
 
     @property
-    def altitude_reference(self) -> "AgEAvtrAGLMSL":
+    def altitude_reference(self) -> "AVTR_AGLMSL":
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AgEAvtrAGLMSL") -> None:
+    def altitude_reference(self, newVal:"AVTR_AGLMSL") -> None:
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     @property
@@ -17965,16 +17965,16 @@ class IHoverAltitudeOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IHoverAltitudeOptions.")
     
     @property
-    def altitude_reference(self) -> "AgEAvtrAGLMSL":
+    def altitude_reference(self) -> "AVTR_AGLMSL":
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AgEAvtrAGLMSL") -> None:
+    def altitude_reference(self, newVal:"AVTR_AGLMSL") -> None:
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     @property
@@ -17991,16 +17991,16 @@ class IHoverAltitudeOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude"](arg_newVal.COM_val))
 
     @property
-    def final_altitude_rate(self) -> "AgEAvtrVTOLRateMode":
+    def final_altitude_rate(self) -> "AVTR_VTOL_RATE_MODE":
         """The altitude rate of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_altitude_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @final_altitude_rate.setter
-    def final_altitude_rate(self, newVal:"AgEAvtrVTOLRateMode") -> None:
+    def final_altitude_rate(self, newVal:"AVTR_VTOL_RATE_MODE") -> None:
         """The altitude rate of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_altitude_rate"](arg_newVal.COM_val))
 
 
@@ -18256,16 +18256,16 @@ class IArcOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IArcOptions.")
     
     @property
-    def turn_direction(self) -> "AgEAvtrTurnDirection":
+    def turn_direction(self) -> "AVTR_TURN_DIRECTION":
         """The turn direction to the arc."""
-        with agmarshall.AgEnum_arg(AgEAvtrTurnDirection) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TURN_DIRECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turn_direction.setter
-    def turn_direction(self, newVal:"AgEAvtrTurnDirection") -> None:
+    def turn_direction(self, newVal:"AVTR_TURN_DIRECTION") -> None:
         """The turn direction to the arc."""
-        with agmarshall.AgEnum_arg(AgEAvtrTurnDirection, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_TURN_DIRECTION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turn_direction"](arg_newVal.COM_val))
 
     @property
@@ -18321,29 +18321,29 @@ class IArcOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_turn_angle"](arg_newVal.COM_val))
 
     @property
-    def join_arc(self) -> "AgEAvtrJoinExitArcMethod":
+    def join_arc(self) -> "AVTR_JOIN_EXIT_ARC_METHOD":
         """The method to join the arc."""
-        with agmarshall.AgEnum_arg(AgEAvtrJoinExitArcMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JOIN_EXIT_ARC_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_join_arc"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @join_arc.setter
-    def join_arc(self, newVal:"AgEAvtrJoinExitArcMethod") -> None:
+    def join_arc(self, newVal:"AVTR_JOIN_EXIT_ARC_METHOD") -> None:
         """The method to join the arc."""
-        with agmarshall.AgEnum_arg(AgEAvtrJoinExitArcMethod, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JOIN_EXIT_ARC_METHOD, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_join_arc"](arg_newVal.COM_val))
 
     @property
-    def exit_arc(self) -> "AgEAvtrJoinExitArcMethod":
+    def exit_arc(self) -> "AVTR_JOIN_EXIT_ARC_METHOD":
         """The method to exit the arc."""
-        with agmarshall.AgEnum_arg(AgEAvtrJoinExitArcMethod) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_JOIN_EXIT_ARC_METHOD) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_exit_arc"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @exit_arc.setter
-    def exit_arc(self, newVal:"AgEAvtrJoinExitArcMethod") -> None:
+    def exit_arc(self, newVal:"AVTR_JOIN_EXIT_ARC_METHOD") -> None:
         """The method to exit the arc."""
-        with agmarshall.AgEnum_arg(AgEAvtrJoinExitArcMethod, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_JOIN_EXIT_ARC_METHOD, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_exit_arc"](arg_newVal.COM_val))
 
 
@@ -18854,29 +18854,29 @@ class IEnrouteTurnDirectionOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IEnrouteTurnDirectionOptions.")
     
     @property
-    def enroute_first_turn(self) -> "AgEAvtrNavigatorTurnDir":
+    def enroute_first_turn(self) -> "AVTR_NAVIGATOR_TURN_DIR":
         """Option for the first turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_first_turn"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @enroute_first_turn.setter
-    def enroute_first_turn(self, newVal:"AgEAvtrNavigatorTurnDir") -> None:
+    def enroute_first_turn(self, newVal:"AVTR_NAVIGATOR_TURN_DIR") -> None:
         """Option for the first turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_enroute_first_turn"](arg_newVal.COM_val))
 
     @property
-    def enroute_second_turn(self) -> "AgEAvtrNavigatorTurnDir":
+    def enroute_second_turn(self) -> "AVTR_NAVIGATOR_TURN_DIR":
         """Option for the second turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_enroute_second_turn"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @enroute_second_turn.setter
-    def enroute_second_turn(self, newVal:"AgEAvtrNavigatorTurnDir") -> None:
+    def enroute_second_turn(self, newVal:"AVTR_NAVIGATOR_TURN_DIR") -> None:
         """Option for the second turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_enroute_second_turn"](arg_newVal.COM_val))
 
 
@@ -18925,22 +18925,22 @@ class ICruiseAirspeedOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICruiseAirspeedOptions.")
     
     @property
-    def cruise_speed_type(self) -> "AgEAvtrCruiseSpeed":
+    def cruise_speed_type(self) -> "AVTR_CRUISE_SPEED":
         """The method for determining the aircraft's airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrCruiseSpeed) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_CRUISE_SPEED) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_cruise_speed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @cruise_speed_type.setter
-    def cruise_speed_type(self, newVal:"AgEAvtrCruiseSpeed") -> None:
+    def cruise_speed_type(self, newVal:"AVTR_CRUISE_SPEED") -> None:
         """The method for determining the aircraft's airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrCruiseSpeed, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_CRUISE_SPEED, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_cruise_speed_type"](arg_newVal.COM_val))
 
     @property
-    def other_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def other_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type for the other airspeed option."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_other_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -18951,9 +18951,9 @@ class ICruiseAirspeedOptions(object):
             agcls.evaluate_hresult(self.__dict__["_get_other_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_other_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_other_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the cruise airspeed. This option is only enabled if the cruise speed type is set to other."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_other_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -19059,22 +19059,22 @@ class ICruiseAirspeedAndProfileOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ICruiseAirspeedAndProfileOptions.")
     
     @property
-    def cruise_speed_type(self) -> "AgEAvtrCruiseSpeed":
+    def cruise_speed_type(self) -> "AVTR_CRUISE_SPEED":
         """The method for determining the aircraft's airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrCruiseSpeed) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_CRUISE_SPEED) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_cruise_speed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @cruise_speed_type.setter
-    def cruise_speed_type(self, newVal:"AgEAvtrCruiseSpeed") -> None:
+    def cruise_speed_type(self, newVal:"AVTR_CRUISE_SPEED") -> None:
         """The method for determining the aircraft's airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrCruiseSpeed, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_CRUISE_SPEED, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_cruise_speed_type"](arg_newVal.COM_val))
 
     @property
-    def other_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def other_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type for the other airspeed option."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_other_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -19085,9 +19085,9 @@ class ICruiseAirspeedAndProfileOptions(object):
             agcls.evaluate_hresult(self.__dict__["_get_other_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_other_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_other_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the cruise airspeed. This option is only enabled if the cruise speed type is set to other."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_other_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -19232,16 +19232,16 @@ class IRunwayHeadingOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IRunwayHeadingOptions.")
     
     @property
-    def runway_mode(self) -> "AgEAvtrRunwayHighLowEnd":
+    def runway_mode(self) -> "AVTR_RUNWAY_HIGH_LOW_END":
         """The runway heading that the aircraft will use."""
-        with agmarshall.AgEnum_arg(AgEAvtrRunwayHighLowEnd) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_RUNWAY_HIGH_LOW_END) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_runway_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @runway_mode.setter
-    def runway_mode(self, newVal:"AgEAvtrRunwayHighLowEnd") -> None:
+    def runway_mode(self, newVal:"AVTR_RUNWAY_HIGH_LOW_END") -> None:
         """The runway heading that the aircraft will use."""
-        with agmarshall.AgEnum_arg(AgEAvtrRunwayHighLowEnd, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_RUNWAY_HIGH_LOW_END, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_runway_mode"](arg_newVal.COM_val))
 
 
@@ -19454,19 +19454,19 @@ class IProcedureCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get__NewEnum"](byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def add(self, siteType:"AgEAvtrSiteType", procedureType:"AgEAvtrProcedureType") -> "IProcedure":
+    def add(self, siteType:"AVTR_SITE_TYPE", procedureType:"AVTR_PROCEDURE_TYPE") -> "IProcedure":
         """Adds a procedure with the specified site at the end of the current phase."""
-        with agmarshall.AgEnum_arg(AgEAvtrSiteType, siteType) as arg_siteType, \
-             agmarshall.AgEnum_arg(AgEAvtrProcedureType, procedureType) as arg_procedureType, \
+        with agmarshall.AgEnum_arg(AVTR_SITE_TYPE, siteType) as arg_siteType, \
+             agmarshall.AgEnum_arg(AVTR_PROCEDURE_TYPE, procedureType) as arg_procedureType, \
              agmarshall.AgInterface_out_arg() as arg_ppProcedure:
             agcls.evaluate_hresult(self.__dict__["_add"](arg_siteType.COM_val, arg_procedureType.COM_val, byref(arg_ppProcedure.COM_val)))
             return arg_ppProcedure.python_val
 
-    def add_at_index(self, index:int, siteType:"AgEAvtrSiteType", procedureType:"AgEAvtrProcedureType") -> "IProcedure":
+    def add_at_index(self, index:int, siteType:"AVTR_SITE_TYPE", procedureType:"AVTR_PROCEDURE_TYPE") -> "IProcedure":
         """Adds a procedure with the specified site at the given index."""
         with agmarshall.LONG_arg(index) as arg_index, \
-             agmarshall.AgEnum_arg(AgEAvtrSiteType, siteType) as arg_siteType, \
-             agmarshall.AgEnum_arg(AgEAvtrProcedureType, procedureType) as arg_procedureType, \
+             agmarshall.AgEnum_arg(AVTR_SITE_TYPE, siteType) as arg_siteType, \
+             agmarshall.AgEnum_arg(AVTR_PROCEDURE_TYPE, procedureType) as arg_procedureType, \
              agmarshall.AgInterface_out_arg() as arg_ppProcedure:
             agcls.evaluate_hresult(self.__dict__["_add_at_index"](arg_index.COM_val, arg_siteType.COM_val, arg_procedureType.COM_val, byref(arg_ppProcedure.COM_val)))
             return arg_ppProcedure.python_val
@@ -20177,16 +20177,16 @@ class IAircraftTerrainFollowModel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IAircraftTerrainFollowModel.")
     
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @airspeed_type.setter
-    def airspeed_type(self, newVal:"AgEAvtrAirspeedType") -> None:
+    def airspeed_type(self, newVal:"AVTR_AIRSPEED_TYPE") -> None:
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_type"](arg_newVal.COM_val))
 
     @property
@@ -20528,9 +20528,9 @@ class IPropulsionThrust(object):
             agcls.evaluate_hresult(self.__dict__["_set_sustain_thrust_time_limit"](arg_newVal.COM_val))
 
     @property
-    def min_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def min_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The min airspeed type for a thrust model."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_min_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -20541,16 +20541,16 @@ class IPropulsionThrust(object):
             agcls.evaluate_hresult(self.__dict__["_get_min_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_min_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_min_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the min airspeed type and value for a thrust model."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_min_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
     @property
-    def max_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def max_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The max airspeed type for a thrust model."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_max_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -20561,9 +20561,9 @@ class IPropulsionThrust(object):
             agcls.evaluate_hresult(self.__dict__["_get_max_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_max_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_max_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the max airspeed type and value for a thrust model."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_max_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -20673,81 +20673,81 @@ class IBasicManeuverAirspeedOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverAirspeedOptions.")
     
     @property
-    def airspeed_mode(self) -> "AgEAvtrBasicManeuverAirspeedMode":
+    def airspeed_mode(self) -> "AVTR_BASIC_MANEUVER_AIRSPEED_MODE":
         """The active airspeed mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverAirspeedMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_AIRSPEED_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @airspeed_mode.setter
-    def airspeed_mode(self, newVal:"AgEAvtrBasicManeuverAirspeedMode") -> None:
+    def airspeed_mode(self, newVal:"AVTR_BASIC_MANEUVER_AIRSPEED_MODE") -> None:
         """The active airspeed mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverAirspeedMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_AIRSPEED_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_mode"](arg_newVal.COM_val))
 
     @property
-    def min_speed_limits(self) -> "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits":
+    def min_speed_limits(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS":
         """The minimum speed limit type to enforce."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_min_speed_limits"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @min_speed_limits.setter
-    def min_speed_limits(self, newVal:"AgEAvtrBasicManeuverStrategyAirspeedPerfLimits") -> None:
+    def min_speed_limits(self, newVal:"AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS") -> None:
         """The minimum speed limit type to enforce."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_min_speed_limits"](arg_newVal.COM_val))
 
     @property
-    def max_speed_limits(self) -> "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits":
+    def max_speed_limits(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS":
         """The maximum speed limit type to enforce."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_max_speed_limits"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @max_speed_limits.setter
-    def max_speed_limits(self, newVal:"AgEAvtrBasicManeuverStrategyAirspeedPerfLimits") -> None:
+    def max_speed_limits(self, newVal:"AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS") -> None:
         """The maximum speed limit type to enforce."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_max_speed_limits"](arg_newVal.COM_val))
 
     @property
-    def maintain_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def maintain_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type option in the Maintain Current Airspeed mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_maintain_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @maintain_airspeed_type.setter
-    def maintain_airspeed_type(self, newVal:"AgEAvtrAirspeedType") -> None:
+    def maintain_airspeed_type(self, newVal:"AVTR_AIRSPEED_TYPE") -> None:
         """The airspeed type option in the Maintain Current Airspeed mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_maintain_airspeed_type"](arg_newVal.COM_val))
 
     @property
-    def specified_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def specified_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type option in the Maintain Specified Airspeed mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_specified_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @specified_airspeed_type.setter
-    def specified_airspeed_type(self, newVal:"AgEAvtrAirspeedType") -> None:
+    def specified_airspeed_type(self, newVal:"AVTR_AIRSPEED_TYPE") -> None:
         """The airspeed type option in the Maintain Specified Airspeed mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_specified_airspeed_type"](arg_newVal.COM_val))
 
     @property
-    def specified_accel_decel_mode(self) -> "AgEAvtrPerfModelOverride":
+    def specified_accel_decel_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The accel/decel mode for the Maintain Specified Airspeed mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_specified_accel_decel_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @specified_accel_decel_mode.setter
-    def specified_accel_decel_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def specified_accel_decel_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The accel/decel mode for the Maintain Specified Airspeed mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_specified_accel_decel_mode"](arg_newVal.COM_val))
 
     @property
@@ -20803,29 +20803,29 @@ class IBasicManeuverAirspeedOptions(object):
             agcls.evaluate_hresult(self.__dict__["_set_decel_g"](arg_newVal.COM_val))
 
     @property
-    def accel_mode(self) -> "AgEAvtrPerfModelOverride":
+    def accel_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The accel mode for the Accelerate at mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_accel_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @accel_mode.setter
-    def accel_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def accel_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The accel mode for the Accelerate at mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_accel_mode"](arg_newVal.COM_val))
 
     @property
-    def decel_mode(self) -> "AgEAvtrPerfModelOverride":
+    def decel_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The accel mode for the Decelerate at mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_decel_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @decel_mode.setter
-    def decel_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def decel_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The accel mode for the Decelerate at mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_decel_mode"](arg_newVal.COM_val))
 
     @property
@@ -20966,42 +20966,42 @@ class IBasicManeuverStrategyAileronRoll(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyAileronRoll.")
     
     @property
-    def flight_path_option(self) -> "AgEAvtrAileronRollFlightPath":
+    def flight_path_option(self) -> "AVTR_AILERON_ROLL_FLIGHT_PATH":
         """The flight path option."""
-        with agmarshall.AgEnum_arg(AgEAvtrAileronRollFlightPath) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AILERON_ROLL_FLIGHT_PATH) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_flight_path_option"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @flight_path_option.setter
-    def flight_path_option(self, newVal:"AgEAvtrAileronRollFlightPath") -> None:
+    def flight_path_option(self, newVal:"AVTR_AILERON_ROLL_FLIGHT_PATH") -> None:
         """The flight path option."""
-        with agmarshall.AgEnum_arg(AgEAvtrAileronRollFlightPath, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AILERON_ROLL_FLIGHT_PATH, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_flight_path_option"](arg_newVal.COM_val))
 
     @property
-    def active_mode(self) -> "AgEAvtrAileronRollMode":
+    def active_mode(self) -> "AVTR_AILERON_ROLL_MODE":
         """The aileron roll mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAileronRollMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AILERON_ROLL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_active_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @active_mode.setter
-    def active_mode(self, newVal:"AgEAvtrAileronRollMode") -> None:
+    def active_mode(self, newVal:"AVTR_AILERON_ROLL_MODE") -> None:
         """The aileron roll mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAileronRollMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AILERON_ROLL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_active_mode"](arg_newVal.COM_val))
 
     @property
-    def active_turn_direction(self) -> "AgEAvtrRollLeftRight":
+    def active_turn_direction(self) -> "AVTR_ROLL_LEFT_RIGHT":
         """The roll turn direction for the active roll mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollLeftRight) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLL_LEFT_RIGHT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_active_turn_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @active_turn_direction.setter
-    def active_turn_direction(self, newVal:"AgEAvtrRollLeftRight") -> None:
+    def active_turn_direction(self, newVal:"AVTR_ROLL_LEFT_RIGHT") -> None:
         """The roll turn direction for the active roll mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollLeftRight, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLL_LEFT_RIGHT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_active_turn_direction"](arg_newVal.COM_val))
 
     @property
@@ -21018,29 +21018,29 @@ class IBasicManeuverStrategyAileronRoll(object):
             agcls.evaluate_hresult(self.__dict__["_set_active_angle"](arg_newVal.COM_val))
 
     @property
-    def roll_orientation(self) -> "AgEAvtrRollUprightInverted":
+    def roll_orientation(self) -> "AVTR_ROLL_UPRIGHT_INVERTED":
         """The orientation to roll to for the roll to orientation mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollUprightInverted) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLL_UPRIGHT_INVERTED) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_roll_orientation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @roll_orientation.setter
-    def roll_orientation(self, newVal:"AgEAvtrRollUprightInverted") -> None:
+    def roll_orientation(self, newVal:"AVTR_ROLL_UPRIGHT_INVERTED") -> None:
         """The orientation to roll to for the roll to orientation mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollUprightInverted, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLL_UPRIGHT_INVERTED, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_roll_orientation"](arg_newVal.COM_val))
 
     @property
-    def roll_rate_mode(self) -> "AgEAvtrPerfModelOverride":
+    def roll_rate_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The roll rate mode for the aileron roll."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_roll_rate_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def roll_rate_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The roll rate mode for the aileron roll."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_roll_rate_mode"](arg_newVal.COM_val))
 
     @property
@@ -21125,16 +21125,16 @@ class IBasicManeuverStrategyAutopilotNav(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyAutopilotNav.")
     
     @property
-    def active_mode(self) -> "AgEAvtrAutopilotHorizPlaneMode":
+    def active_mode(self) -> "AVTR_AUTOPILOT_HORIZ_PLANE_MODE":
         """The autopilot - horizontal plane mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAutopilotHorizPlaneMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AUTOPILOT_HORIZ_PLANE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_active_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @active_mode.setter
-    def active_mode(self, newVal:"AgEAvtrAutopilotHorizPlaneMode") -> None:
+    def active_mode(self, newVal:"AVTR_AUTOPILOT_HORIZ_PLANE_MODE") -> None:
         """The autopilot - horizontal plane mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrAutopilotHorizPlaneMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AUTOPILOT_HORIZ_PLANE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_active_mode"](arg_newVal.COM_val))
 
     @property
@@ -21164,9 +21164,9 @@ class IBasicManeuverStrategyAutopilotNav(object):
             agcls.evaluate_hresult(self.__dict__["_set_damping_ratio"](arg_newVal.COM_val))
 
     @property
-    def control_limit_mode(self) -> "AgEAvtrBasicManeuverStrategyNavControlLimit":
+    def control_limit_mode(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -21191,9 +21191,9 @@ class IBasicManeuverStrategyAutopilotNav(object):
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_horiz_accel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_control_limit(self, controlLimitMode:"AgEAvtrBasicManeuverStrategyNavControlLimit", controlLimitValue:float) -> None:
+    def set_control_limit(self, controlLimitMode:"AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit, controlLimitMode) as arg_controlLimitMode, \
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitMode) as arg_controlLimitMode, \
              agmarshall.DOUBLE_arg(controlLimitValue) as arg_controlLimitValue:
             agcls.evaluate_hresult(self.__dict__["_set_control_limit"](arg_controlLimitMode.COM_val, arg_controlLimitValue.COM_val))
 
@@ -21299,16 +21299,16 @@ class IBasicManeuverStrategyAutopilotProf(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyAutopilotProf.")
     
     @property
-    def altitude_mode(self) -> "AgEAvtrAutopilotAltitudeMode":
+    def altitude_mode(self) -> "AVTR_AUTOPILOT_ALTITUDE_MODE":
         """The altitude mode of the autopilot - vertical plane strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrAutopilotAltitudeMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AUTOPILOT_ALTITUDE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_mode.setter
-    def altitude_mode(self, newVal:"AgEAvtrAutopilotAltitudeMode") -> None:
+    def altitude_mode(self, newVal:"AVTR_AUTOPILOT_ALTITUDE_MODE") -> None:
         """The altitude mode of the autopilot - vertical plane strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrAutopilotAltitudeMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AUTOPILOT_ALTITUDE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_mode"](arg_newVal.COM_val))
 
     @property
@@ -21364,16 +21364,16 @@ class IBasicManeuverStrategyAutopilotProf(object):
             agcls.evaluate_hresult(self.__dict__["_set_fpa"](arg_newVal.COM_val))
 
     @property
-    def altitude_control_mode(self) -> "AgEAvtrAutopilotAltitudeControlMode":
+    def altitude_control_mode(self) -> "AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE":
         """The altitude control mode for the hold initial altitude, specify altitude, and specify altitude change modes."""
-        with agmarshall.AgEnum_arg(AgEAvtrAutopilotAltitudeControlMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_control_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_control_mode.setter
-    def altitude_control_mode(self, newVal:"AgEAvtrAutopilotAltitudeControlMode") -> None:
+    def altitude_control_mode(self, newVal:"AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE") -> None:
         """The altitude control mode for the hold initial altitude, specify altitude, and specify altitude change modes."""
-        with agmarshall.AgEnum_arg(AgEAvtrAutopilotAltitudeControlMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AUTOPILOT_ALTITUDE_CONTROL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_control_mode"](arg_newVal.COM_val))
 
     @property
@@ -21403,16 +21403,16 @@ class IBasicManeuverStrategyAutopilotProf(object):
             agcls.evaluate_hresult(self.__dict__["_set_control_fpa_value"](arg_newVal.COM_val))
 
     @property
-    def control_limit_mode(self) -> "AgEAvtrPerfModelOverride":
+    def control_limit_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The control limits mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @control_limit_mode.setter
-    def control_limit_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def control_limit_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The control limits mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_control_limit_mode"](arg_newVal.COM_val))
 
     @property
@@ -21554,16 +21554,16 @@ class IBasicManeuverStrategyBarrelRoll(object):
             agcls.evaluate_hresult(self.__dict__["_set_helix_angle"](arg_newVal.COM_val))
 
     @property
-    def helix_angle_mode(self) -> "AgEAvtrAngleMode":
+    def helix_angle_mode(self) -> "AVTR_ANGLE_MODE":
         """The helix angle mode for the barrel roll."""
-        with agmarshall.AgEnum_arg(AgEAvtrAngleMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ANGLE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_helix_angle_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @helix_angle_mode.setter
-    def helix_angle_mode(self, newVal:"AgEAvtrAngleMode") -> None:
+    def helix_angle_mode(self, newVal:"AVTR_ANGLE_MODE") -> None:
         """The helix angle mode for the barrel roll."""
-        with agmarshall.AgEnum_arg(AgEAvtrAngleMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ANGLE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_helix_angle_mode"](arg_newVal.COM_val))
 
     @property
@@ -21619,9 +21619,9 @@ class IBasicManeuverStrategyBarrelRoll(object):
             agcls.evaluate_hresult(self.__dict__["_set_hold_init_tas"](arg_newVal.COM_val))
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -21639,9 +21639,9 @@ class IBasicManeuverStrategyBarrelRoll(object):
             agcls.evaluate_hresult(self.__dict__["_get_bottom_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeeds(self, airspeedType:"AgEAvtrAirspeedType", topAirspeed:float, bottomAirspeed:float) -> None:
+    def set_airspeeds(self, airspeedType:"AVTR_AIRSPEED_TYPE", topAirspeed:float, bottomAirspeed:float) -> None:
         """Set the speeds at the top and bottom of the loop."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(topAirspeed) as arg_topAirspeed, \
              agmarshall.DOUBLE_arg(bottomAirspeed) as arg_bottomAirspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeeds"](arg_airspeedType.COM_val, arg_topAirspeed.COM_val, arg_bottomAirspeed.COM_val))
@@ -21723,16 +21723,16 @@ class IBasicManeuverStrategyLoop(object):
             agcls.evaluate_hresult(self.__dict__["_set_loop_angle"](arg_newVal.COM_val))
 
     @property
-    def loop_angle_mode(self) -> "AgEAvtrAngleMode":
+    def loop_angle_mode(self) -> "AVTR_ANGLE_MODE":
         """The loop angle mode for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrAngleMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ANGLE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_loop_angle_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @loop_angle_mode.setter
-    def loop_angle_mode(self, newVal:"AgEAvtrAngleMode") -> None:
+    def loop_angle_mode(self, newVal:"AVTR_ANGLE_MODE") -> None:
         """The loop angle mode for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrAngleMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ANGLE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_loop_angle_mode"](arg_newVal.COM_val))
 
     @property
@@ -21775,9 +21775,9 @@ class IBasicManeuverStrategyLoop(object):
             agcls.evaluate_hresult(self.__dict__["_set_hold_init_tas"](arg_newVal.COM_val))
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -21795,9 +21795,9 @@ class IBasicManeuverStrategyLoop(object):
             agcls.evaluate_hresult(self.__dict__["_get_bottom_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeeds(self, airspeedType:"AgEAvtrAirspeedType", topAirspeed:float, bottomAirspeed:float) -> None:
+    def set_airspeeds(self, airspeedType:"AVTR_AIRSPEED_TYPE", topAirspeed:float, bottomAirspeed:float) -> None:
         """Set the speeds at the top and bottom of the loop."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(topAirspeed) as arg_topAirspeed, \
              agmarshall.DOUBLE_arg(bottomAirspeed) as arg_bottomAirspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeeds"](arg_airspeedType.COM_val, arg_topAirspeed.COM_val, arg_bottomAirspeed.COM_val))
@@ -21886,16 +21886,16 @@ class IBasicManeuverStrategyLTAHover(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyLTAHover.")
     
     @property
-    def heading_mode(self) -> "AgEAvtrHoverHeadingMode":
+    def heading_mode(self) -> "AVTR_HOVER_HEADING_MODE":
         """The heading mode for the lighter than air hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoverHeadingMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOVER_HEADING_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_heading_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @heading_mode.setter
-    def heading_mode(self, newVal:"AgEAvtrHoverHeadingMode") -> None:
+    def heading_mode(self, newVal:"AVTR_HOVER_HEADING_MODE") -> None:
         """The heading mode for the lighter than air hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoverHeadingMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOVER_HEADING_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_heading_mode"](arg_newVal.COM_val))
 
     @property
@@ -21951,16 +21951,16 @@ class IBasicManeuverStrategyLTAHover(object):
             agcls.evaluate_hresult(self.__dict__["_set_heading_rate"](arg_newVal.COM_val))
 
     @property
-    def altitude_mode(self) -> "AgEAvtrHoverAltitudeMode":
+    def altitude_mode(self) -> "AVTR_HOVER_ALTITUDE_MODE":
         """The altitude mode for the lighter than air hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoverAltitudeMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOVER_ALTITUDE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_mode.setter
-    def altitude_mode(self, newVal:"AgEAvtrHoverAltitudeMode") -> None:
+    def altitude_mode(self, newVal:"AVTR_HOVER_ALTITUDE_MODE") -> None:
         """The altitude mode for the lighter than air hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoverAltitudeMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOVER_ALTITUDE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_mode"](arg_newVal.COM_val))
 
     @property
@@ -22111,29 +22111,29 @@ class IBasicManeuverStrategyFlyAOA(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyFlyAOA.")
     
     @property
-    def turn_direction(self) -> "AgEAvtrFlyAOALeftRight":
+    def turn_direction(self) -> "AVTR_FLY_AOA_LEFT_RIGHT":
         """The roll turn direction for a Fly AOA basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlyAOALeftRight) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FLY_AOA_LEFT_RIGHT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turn_direction.setter
-    def turn_direction(self, newVal:"AgEAvtrFlyAOALeftRight") -> None:
+    def turn_direction(self, newVal:"AVTR_FLY_AOA_LEFT_RIGHT") -> None:
         """The roll turn direction for a Fly AOA basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlyAOALeftRight, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FLY_AOA_LEFT_RIGHT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turn_direction"](arg_newVal.COM_val))
 
     @property
-    def roll_rate_mode(self) -> "AgEAvtrPerfModelOverride":
+    def roll_rate_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The roll rate mode for a Fly AOA basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_roll_rate_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def roll_rate_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The roll rate mode for a Fly AOA basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_roll_rate_mode"](arg_newVal.COM_val))
 
     @property
@@ -22275,16 +22275,16 @@ class IBasicManeuverStrategyPull(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyPull.")
     
     @property
-    def active_mode(self) -> "AgEAvtrPullMode":
+    def active_mode(self) -> "AVTR_PULL_MODE":
         """The pull mode for the pull basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPullMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PULL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_active_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @active_mode.setter
-    def active_mode(self, newVal:"AgEAvtrPullMode") -> None:
+    def active_mode(self, newVal:"AVTR_PULL_MODE") -> None:
         """The pull mode for the pull basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPullMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PULL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_active_mode"](arg_newVal.COM_val))
 
     @property
@@ -22301,16 +22301,16 @@ class IBasicManeuverStrategyPull(object):
             agcls.evaluate_hresult(self.__dict__["_set_active_angle"](arg_newVal.COM_val))
 
     @property
-    def pull_g_mode(self) -> "AgEAvtrPerfModelOverride":
+    def pull_g_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The pull G mode for a pull basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_pull_g_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @pull_g_mode.setter
-    def pull_g_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def pull_g_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The pull G mode for a pull basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_pull_g_mode"](arg_newVal.COM_val))
 
     @property
@@ -22403,29 +22403,29 @@ class IBasicManeuverStrategyRollingPull(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyRollingPull.")
     
     @property
-    def active_mode(self) -> "AgEAvtrRollingPullMode":
+    def active_mode(self) -> "AVTR_ROLLING_PULL_MODE":
         """The active mode for the rolling pull basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollingPullMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLLING_PULL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_active_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @active_mode.setter
-    def active_mode(self, newVal:"AgEAvtrRollingPullMode") -> None:
+    def active_mode(self, newVal:"AVTR_ROLLING_PULL_MODE") -> None:
         """The active mode for the rolling pull basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollingPullMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLLING_PULL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_active_mode"](arg_newVal.COM_val))
 
     @property
-    def turn_direction(self) -> "AgEAvtrRollLeftRight":
+    def turn_direction(self) -> "AVTR_ROLL_LEFT_RIGHT":
         """The turn direction for the active mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollLeftRight) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLL_LEFT_RIGHT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turn_direction.setter
-    def turn_direction(self, newVal:"AgEAvtrRollLeftRight") -> None:
+    def turn_direction(self, newVal:"AVTR_ROLL_LEFT_RIGHT") -> None:
         """The turn direction for the active mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollLeftRight, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLL_LEFT_RIGHT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turn_direction"](arg_newVal.COM_val))
 
     @property
@@ -22442,29 +22442,29 @@ class IBasicManeuverStrategyRollingPull(object):
             agcls.evaluate_hresult(self.__dict__["_set_angle"](arg_newVal.COM_val))
 
     @property
-    def roll_orientation(self) -> "AgEAvtrRollUprightInverted":
+    def roll_orientation(self) -> "AVTR_ROLL_UPRIGHT_INVERTED":
         """The orientation to roll to for the roll to orientation mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollUprightInverted) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLL_UPRIGHT_INVERTED) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_roll_orientation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @roll_orientation.setter
-    def roll_orientation(self, newVal:"AgEAvtrRollUprightInverted") -> None:
+    def roll_orientation(self, newVal:"AVTR_ROLL_UPRIGHT_INVERTED") -> None:
         """The orientation to roll to for the roll to orientation mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrRollUprightInverted, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ROLL_UPRIGHT_INVERTED, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_roll_orientation"](arg_newVal.COM_val))
 
     @property
-    def roll_rate_mode(self) -> "AgEAvtrPerfModelOverride":
+    def roll_rate_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The roll rate mode for the rolling pull."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_roll_rate_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def roll_rate_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The roll rate mode for the rolling pull."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_roll_rate_mode"](arg_newVal.COM_val))
 
     @property
@@ -22481,16 +22481,16 @@ class IBasicManeuverStrategyRollingPull(object):
             agcls.evaluate_hresult(self.__dict__["_set_override_roll_rate"](arg_newVal.COM_val))
 
     @property
-    def pull_g_mode(self) -> "AgEAvtrPerfModelOverride":
+    def pull_g_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The pull G mode for a rolling pull."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_pull_g_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @pull_g_mode.setter
-    def pull_g_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def pull_g_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The pull G mode for a rolling pull."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_pull_g_mode"](arg_newVal.COM_val))
 
     @property
@@ -22607,29 +22607,29 @@ class IBasicManeuverStrategySmoothAccel(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategySmoothAccel.")
     
     @property
-    def turn_direction(self) -> "AgEAvtrSmoothAccelLeftRight":
+    def turn_direction(self) -> "AVTR_SMOOTH_ACCEL_LEFT_RIGHT":
         """The roll turn direction for a Smooth Accel basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrSmoothAccelLeftRight) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_SMOOTH_ACCEL_LEFT_RIGHT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turn_direction.setter
-    def turn_direction(self, newVal:"AgEAvtrSmoothAccelLeftRight") -> None:
+    def turn_direction(self, newVal:"AVTR_SMOOTH_ACCEL_LEFT_RIGHT") -> None:
         """The roll turn direction for a Smooth Accel  basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrSmoothAccelLeftRight, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_SMOOTH_ACCEL_LEFT_RIGHT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turn_direction"](arg_newVal.COM_val))
 
     @property
-    def roll_rate_mode(self) -> "AgEAvtrPerfModelOverride":
+    def roll_rate_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The roll rate mode for a Smooth Accel basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_roll_rate_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def roll_rate_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The roll rate mode for a Smooth Accel basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_roll_rate_mode"](arg_newVal.COM_val))
 
     @property
@@ -22685,16 +22685,16 @@ class IBasicManeuverStrategySmoothAccel(object):
             agcls.evaluate_hresult(self.__dict__["_set_roll_angle"](arg_newVal.COM_val))
 
     @property
-    def load_factor_mode(self) -> "AgEAvtrPerfModelOverride":
+    def load_factor_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The load factor mode for the Smooth Accel basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_load_factor_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @load_factor_mode.setter
-    def load_factor_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def load_factor_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The load factormode for the Smooth Accel basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_load_factor_mode"](arg_newVal.COM_val))
 
     @property
@@ -22750,16 +22750,16 @@ class IBasicManeuverStrategySmoothAccel(object):
             agcls.evaluate_hresult(self.__dict__["_set_pitch_angle"](arg_newVal.COM_val))
 
     @property
-    def stop_conditions(self) -> "AgEAvtrSmoothAccelStopConditions":
+    def stop_conditions(self) -> "AVTR_SMOOTH_ACCEL_STOP_CONDITIONS":
         """The stop condition for the Smooth Accel basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrSmoothAccelStopConditions) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_SMOOTH_ACCEL_STOP_CONDITIONS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_stop_conditions"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @stop_conditions.setter
-    def stop_conditions(self, newVal:"AgEAvtrSmoothAccelStopConditions") -> None:
+    def stop_conditions(self, newVal:"AVTR_SMOOTH_ACCEL_STOP_CONDITIONS") -> None:
         """The stop condition for the Smooth Accel  basic maneuver strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrSmoothAccelStopConditions, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_SMOOTH_ACCEL_STOP_CONDITIONS, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_stop_conditions"](arg_newVal.COM_val))
 
     @property
@@ -22882,29 +22882,29 @@ class IBasicManeuverStrategySmoothTurn(object):
             agcls.evaluate_hresult(self.__dict__["_set_heading_change"](arg_newVal.COM_val))
 
     @property
-    def turn_mode(self) -> "AgEAvtrSmoothTurnMode":
+    def turn_mode(self) -> "AVTR_SMOOTH_TURN_MODE":
         """The turn mode for the smooth turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrSmoothTurnMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_SMOOTH_TURN_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turn_mode.setter
-    def turn_mode(self, newVal:"AgEAvtrSmoothTurnMode") -> None:
+    def turn_mode(self, newVal:"AVTR_SMOOTH_TURN_MODE") -> None:
         """The turn mode for the smooth turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrSmoothTurnMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_SMOOTH_TURN_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turn_mode"](arg_newVal.COM_val))
 
     @property
-    def load_factor_mode(self) -> "AgEAvtrPerfModelOverride":
+    def load_factor_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The load factor mode for the smooth turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_load_factor_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @load_factor_mode.setter
-    def load_factor_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def load_factor_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The load factormode for the smooth turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_load_factor_mode"](arg_newVal.COM_val))
 
     @property
@@ -22934,16 +22934,16 @@ class IBasicManeuverStrategySmoothTurn(object):
             agcls.evaluate_hresult(self.__dict__["_set_override_load_factor"](arg_newVal.COM_val))
 
     @property
-    def roll_rate_mode(self) -> "AgEAvtrPerfModelOverride":
+    def roll_rate_mode(self) -> "AVTR_PERF_MODEL_OVERRIDE":
         """The roll rate mode for the smooth turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_roll_rate_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"AgEAvtrPerfModelOverride") -> None:
+    def roll_rate_mode(self, newVal:"AVTR_PERF_MODEL_OVERRIDE") -> None:
         """The roll rate mode for the smooth turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_roll_rate_mode"](arg_newVal.COM_val))
 
     @property
@@ -22980,16 +22980,16 @@ class IBasicManeuverStrategySmoothTurn(object):
             return arg_ppRetVal.python_val
 
     @property
-    def fpa_mode(self) -> "AgEAvtrSmoothTurnFPAMode":
+    def fpa_mode(self) -> "AVTR_SMOOTH_TURN_FPA_MODE":
         """The flight path angle mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrSmoothTurnFPAMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_SMOOTH_TURN_FPA_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fpa_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fpa_mode.setter
-    def fpa_mode(self, newVal:"AgEAvtrSmoothTurnFPAMode") -> None:
+    def fpa_mode(self, newVal:"AVTR_SMOOTH_TURN_FPA_MODE") -> None:
         """The flight path angle mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrSmoothTurnFPAMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_SMOOTH_TURN_FPA_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fpa_mode"](arg_newVal.COM_val))
 
 
@@ -23044,16 +23044,16 @@ class IBasicManeuverStrategySimpleTurn(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategySimpleTurn.")
     
     @property
-    def reference_frame(self) -> "AgEAvtrBasicManeuverRefFrame":
+    def reference_frame(self) -> "AVTR_BASIC_MANEUVER_REF_FRAME":
         """The reference frame for the simple turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_frame"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @reference_frame.setter
-    def reference_frame(self, inVal:"AgEAvtrBasicManeuverRefFrame") -> None:
+    def reference_frame(self, inVal:"AVTR_BASIC_MANEUVER_REF_FRAME") -> None:
         """The reference frame for the simple turn."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_frame"](arg_inVal.COM_val))
 
     @property
@@ -23267,16 +23267,16 @@ class IBasicManeuverStrategyIntercept(object):
             agcls.evaluate_hresult(self.__dict__["_set_stop_slant_range"](arg_enable.COM_val, arg_range.COM_val))
 
     @property
-    def intercept_mode(self) -> "AgEAvtrInterceptMode":
+    def intercept_mode(self) -> "AVTR_INTERCEPT_MODE":
         """The intercept mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrInterceptMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_INTERCEPT_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_intercept_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @intercept_mode.setter
-    def intercept_mode(self, newVal:"AgEAvtrInterceptMode") -> None:
+    def intercept_mode(self, newVal:"AVTR_INTERCEPT_MODE") -> None:
         """The intercept mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrInterceptMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_INTERCEPT_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_intercept_mode"](arg_newVal.COM_val))
 
     @property
@@ -23319,9 +23319,9 @@ class IBasicManeuverStrategyIntercept(object):
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_factor"](arg_newVal.COM_val))
 
     @property
-    def control_limit_mode(self) -> "AgEAvtrBasicManeuverStrategyNavControlLimit":
+    def control_limit_mode(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -23346,23 +23346,23 @@ class IBasicManeuverStrategyIntercept(object):
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_horiz_accel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_control_limit(self, controlLimitMode:"AgEAvtrBasicManeuverStrategyNavControlLimit", controlLimitValue:float) -> None:
+    def set_control_limit(self, controlLimitMode:"AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit, controlLimitMode) as arg_controlLimitMode, \
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitMode) as arg_controlLimitMode, \
              agmarshall.DOUBLE_arg(controlLimitValue) as arg_controlLimitValue:
             agcls.evaluate_hresult(self.__dict__["_set_control_limit"](arg_controlLimitMode.COM_val, arg_controlLimitValue.COM_val))
 
     @property
-    def closure_mode(self) -> "AgEAvtrClosureMode":
+    def closure_mode(self) -> "AVTR_CLOSURE_MODE":
         """The closure mode for the guidance strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrClosureMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_CLOSURE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_closure_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @closure_mode.setter
-    def closure_mode(self, newVal:"AgEAvtrClosureMode") -> None:
+    def closure_mode(self, newVal:"AVTR_CLOSURE_MODE") -> None:
         """The closure mode for the guidance strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrClosureMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_CLOSURE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_closure_mode"](arg_newVal.COM_val))
 
     @property
@@ -23530,9 +23530,9 @@ class IBasicManeuverStrategyRelativeBearing(object):
             agcls.evaluate_hresult(self.__dict__["_set_min_range"](arg_newVal.COM_val))
 
     @property
-    def control_limit_mode(self) -> "AgEAvtrBasicManeuverStrategyNavControlLimit":
+    def control_limit_mode(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -23557,9 +23557,9 @@ class IBasicManeuverStrategyRelativeBearing(object):
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_horiz_accel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_control_limit(self, controlLimitMode:"AgEAvtrBasicManeuverStrategyNavControlLimit", controlLimitValue:float) -> None:
+    def set_control_limit(self, controlLimitMode:"AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit, controlLimitMode) as arg_controlLimitMode, \
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitMode) as arg_controlLimitMode, \
              agmarshall.DOUBLE_arg(controlLimitValue) as arg_controlLimitValue:
             agcls.evaluate_hresult(self.__dict__["_set_control_limit"](arg_controlLimitMode.COM_val, arg_controlLimitValue.COM_val))
 
@@ -23786,9 +23786,9 @@ class IBasicManeuverStrategyRelativeCourse(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_approach_turn_mode"](arg_newVal.COM_val))
 
     @property
-    def control_limit_mode(self) -> "AgEAvtrBasicManeuverStrategyNavControlLimit":
+    def control_limit_mode(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -23813,23 +23813,23 @@ class IBasicManeuverStrategyRelativeCourse(object):
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_horiz_accel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_control_limit(self, controlLimitMode:"AgEAvtrBasicManeuverStrategyNavControlLimit", controlLimitValue:float) -> None:
+    def set_control_limit(self, controlLimitMode:"AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit, controlLimitMode) as arg_controlLimitMode, \
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitMode) as arg_controlLimitMode, \
              agmarshall.DOUBLE_arg(controlLimitValue) as arg_controlLimitValue:
             agcls.evaluate_hresult(self.__dict__["_set_control_limit"](arg_controlLimitMode.COM_val, arg_controlLimitValue.COM_val))
 
     @property
-    def closure_mode(self) -> "AgEAvtrClosureMode":
+    def closure_mode(self) -> "AVTR_CLOSURE_MODE":
         """The closure mode for the guidance strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrClosureMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_CLOSURE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_closure_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @closure_mode.setter
-    def closure_mode(self, newVal:"AgEAvtrClosureMode") -> None:
+    def closure_mode(self, newVal:"AVTR_CLOSURE_MODE") -> None:
         """The closure mode for the guidance strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrClosureMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_CLOSURE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_closure_mode"](arg_newVal.COM_val))
 
     @property
@@ -24176,16 +24176,16 @@ class IBasicManeuverStrategyRendezvous(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_speed_advantage"](arg_newVal.COM_val))
 
     @property
-    def airspeed_control_mode(self) -> "AgEAvtrAccelPerfModelOverride":
+    def airspeed_control_mode(self) -> "AVTR_ACCEL_PERF_MODEL_OVERRIDE":
         """The method to define the aircraft's acceleration performance in formation."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelPerfModelOverride) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_PERF_MODEL_OVERRIDE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_control_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @airspeed_control_mode.setter
-    def airspeed_control_mode(self, newVal:"AgEAvtrAccelPerfModelOverride") -> None:
+    def airspeed_control_mode(self, newVal:"AVTR_ACCEL_PERF_MODEL_OVERRIDE") -> None:
         """The method to define the aircraft's acceleration performance in formation."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelPerfModelOverride, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_PERF_MODEL_OVERRIDE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_control_mode"](arg_newVal.COM_val))
 
     @property
@@ -24222,16 +24222,16 @@ class IBasicManeuverStrategyRendezvous(object):
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_factor"](arg_enable.COM_val, arg_airspeedFactor.COM_val))
 
     @property
-    def stop_condition(self) -> "AgEAvtrRendezvousStopCondition":
+    def stop_condition(self) -> "AVTR_RENDEZVOUS_STOP_CONDITION":
         """The stopping condition for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrRendezvousStopCondition) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_RENDEZVOUS_STOP_CONDITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_stop_condition"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @stop_condition.setter
-    def stop_condition(self, newVal:"AgEAvtrRendezvousStopCondition") -> None:
+    def stop_condition(self, newVal:"AVTR_RENDEZVOUS_STOP_CONDITION") -> None:
         """The stopping condition for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrRendezvousStopCondition, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_RENDEZVOUS_STOP_CONDITION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_stop_condition"](arg_newVal.COM_val))
 
 
@@ -24427,16 +24427,16 @@ class IBasicManeuverStrategyStationkeeping(object):
             agcls.evaluate_hresult(self.__dict__["_set_desired_radius"](arg_newVal.COM_val))
 
     @property
-    def turn_direction(self) -> "AgEAvtrTurnDirection":
+    def turn_direction(self) -> "AVTR_TURN_DIRECTION":
         """Define if the aircraft turns left or right into the holding circle."""
-        with agmarshall.AgEnum_arg(AgEAvtrTurnDirection) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TURN_DIRECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turn_direction.setter
-    def turn_direction(self, newVal:"AgEAvtrTurnDirection") -> None:
+    def turn_direction(self, newVal:"AVTR_TURN_DIRECTION") -> None:
         """Define if the aircraft turns left or right into the holding circle."""
-        with agmarshall.AgEnum_arg(AgEAvtrTurnDirection, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_TURN_DIRECTION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turn_direction"](arg_newVal.COM_val))
 
     @property
@@ -24453,16 +24453,16 @@ class IBasicManeuverStrategyStationkeeping(object):
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_factor"](arg_newVal.COM_val))
 
     @property
-    def stop_condition(self) -> "AgEAvtrStationkeepingStopCondition":
+    def stop_condition(self) -> "AVTR_STATIONKEEPING_STOP_CONDITION":
         """The stopping condition for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrStationkeepingStopCondition) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_STATIONKEEPING_STOP_CONDITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_stop_condition"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @stop_condition.setter
-    def stop_condition(self, newVal:"AgEAvtrStationkeepingStopCondition") -> None:
+    def stop_condition(self, newVal:"AVTR_STATIONKEEPING_STOP_CONDITION") -> None:
         """The stopping condition for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrStationkeepingStopCondition, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_STATIONKEEPING_STOP_CONDITION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_stop_condition"](arg_newVal.COM_val))
 
     @property
@@ -24531,9 +24531,9 @@ class IBasicManeuverStrategyStationkeeping(object):
             agcls.evaluate_hresult(self.__dict__["_set_stop_after_time"](arg_newVal.COM_val))
 
     @property
-    def control_limit_mode(self) -> "AgEAvtrBasicManeuverStrategyNavControlLimit":
+    def control_limit_mode(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -24558,9 +24558,9 @@ class IBasicManeuverStrategyStationkeeping(object):
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_horiz_accel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_control_limit(self, controlLimitMode:"AgEAvtrBasicManeuverStrategyNavControlLimit", controlLimitValue:float) -> None:
+    def set_control_limit(self, controlLimitMode:"AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit, controlLimitMode) as arg_controlLimitMode, \
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitMode) as arg_controlLimitMode, \
              agmarshall.DOUBLE_arg(controlLimitValue) as arg_controlLimitValue:
             agcls.evaluate_hresult(self.__dict__["_set_control_limit"](arg_controlLimitMode.COM_val, arg_controlLimitValue.COM_val))
 
@@ -24699,9 +24699,9 @@ class IBasicManeuverStrategyRelativeFPA(object):
             agcls.evaluate_hresult(self.__dict__["_set_maneuver_factor"](arg_newVal.COM_val))
 
     @property
-    def control_limit_mode(self) -> "AgEAvtrProfileControlLimit":
+    def control_limit_mode(self) -> "AVTR_PROFILE_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrProfileControlLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PROFILE_CONTROL_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -24712,9 +24712,9 @@ class IBasicManeuverStrategyRelativeFPA(object):
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_pitch_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_control_limit(self, controlLimitMode:"AgEAvtrProfileControlLimit", controlLimitValue:typing.Any) -> None:
+    def set_control_limit(self, controlLimitMode:"AVTR_PROFILE_CONTROL_LIMIT", controlLimitValue:typing.Any) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrProfileControlLimit, controlLimitMode) as arg_controlLimitMode, \
+        with agmarshall.AgEnum_arg(AVTR_PROFILE_CONTROL_LIMIT, controlLimitMode) as arg_controlLimitMode, \
              agmarshall.VARIANT_arg(controlLimitValue) as arg_controlLimitValue:
             agcls.evaluate_hresult(self.__dict__["_set_control_limit"](arg_controlLimitMode.COM_val, arg_controlLimitValue.COM_val))
 
@@ -24958,16 +24958,16 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
             agcls.evaluate_hresult(self.__dict__["_set_target_resolution"](arg_newVal.COM_val))
 
     @property
-    def relative_altitude_mode(self) -> "AgEAvtrRelativeAltitudeMode":
+    def relative_altitude_mode(self) -> "AVTR_RELATIVE_ALTITUDE_MODE":
         """The mode to define the hold objective for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrRelativeAltitudeMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_RELATIVE_ALTITUDE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_relative_altitude_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @relative_altitude_mode.setter
-    def relative_altitude_mode(self, newVal:"AgEAvtrRelativeAltitudeMode") -> None:
+    def relative_altitude_mode(self, newVal:"AVTR_RELATIVE_ALTITUDE_MODE") -> None:
         """The mode to define the hold objective for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrRelativeAltitudeMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_RELATIVE_ALTITUDE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_relative_altitude_mode"](arg_newVal.COM_val))
 
     @property
@@ -24997,9 +24997,9 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_offset"](arg_newVal.COM_val))
 
     @property
-    def airspeed_offset_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_offset_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_offset_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -25010,9 +25010,9 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_offset"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed_offset(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_airspeed_offset(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the airspeed offset value and type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed_offset"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -25102,15 +25102,15 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
             return arg_pVal.python_val
 
     @property
-    def min_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def min_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_min_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_min_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_min_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the minimum airspeed value and type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_min_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -25122,29 +25122,29 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
             return arg_pVal.python_val
 
     @property
-    def max_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def max_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_max_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_max_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_max_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the maximum airspeed value and type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_max_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
     @property
-    def stop_condition(self) -> "AgEAvtrRelSpeedAltStopCondition":
+    def stop_condition(self) -> "AVTR_REL_SPEED_ALT_STOP_CONDITION":
         """The stopping condition for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrRelSpeedAltStopCondition) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REL_SPEED_ALT_STOP_CONDITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_stop_condition"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @stop_condition.setter
-    def stop_condition(self, newVal:"AgEAvtrRelSpeedAltStopCondition") -> None:
+    def stop_condition(self, newVal:"AVTR_REL_SPEED_ALT_STOP_CONDITION") -> None:
         """The stopping condition for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrRelSpeedAltStopCondition, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_REL_SPEED_ALT_STOP_CONDITION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_stop_condition"](arg_newVal.COM_val))
 
     @property
@@ -25239,16 +25239,16 @@ class IBasicManeuverStrategyBezier(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyBezier.")
     
     @property
-    def reference_frame(self) -> "AgEAvtrBasicManeuverRefFrame":
+    def reference_frame(self) -> "AVTR_BASIC_MANEUVER_REF_FRAME":
         """The reference frame the aircraft will use."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_frame"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_frame.setter
-    def reference_frame(self, newVal:"AgEAvtrBasicManeuverRefFrame") -> None:
+    def reference_frame(self, newVal:"AVTR_BASIC_MANEUVER_REF_FRAME") -> None:
         """The reference frame the aircraft will use."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_frame"](arg_newVal.COM_val))
 
     @property
@@ -25285,22 +25285,22 @@ class IBasicManeuverStrategyBezier(object):
             return arg_pVal.python_val
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the fly to airspeed value and type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
     @property
-    def vertical_velocity_mode(self) -> "AgEAvtrFlyToFlightPathAngleMode":
+    def vertical_velocity_mode(self) -> "AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE":
         """The option to specify the flight path angle or the altitude rate."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlyToFlightPathAngleMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_vertical_velocity_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -25318,9 +25318,9 @@ class IBasicManeuverStrategyBezier(object):
             agcls.evaluate_hresult(self.__dict__["_get_altitude_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_vertical_velocity(self, mode:"AgEAvtrFlyToFlightPathAngleMode", value:typing.Any) -> None:
+    def set_vertical_velocity(self, mode:"AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE", value:typing.Any) -> None:
         """Set the flight path angle or altitude rate."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlyToFlightPathAngleMode, mode) as arg_mode, \
+        with agmarshall.AgEnum_arg(AVTR_FLY_TO_FLIGHT_PATH_ANGLE_MODE, mode) as arg_mode, \
              agmarshall.VARIANT_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_vertical_velocity"](arg_mode.COM_val, arg_value.COM_val))
 
@@ -25359,16 +25359,16 @@ class IBasicManeuverStrategyBezier(object):
             return arg_pVal.python_val
 
     @property
-    def stop_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def stop_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type for the airspeed stopping condition."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_stop_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_stop_airspeed(self, enable:bool, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_stop_airspeed(self, enable:bool, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set whether to enable the airspeed stopping condition and the corresponding value."""
         with agmarshall.VARIANT_BOOL_arg(enable) as arg_enable, \
-             agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+             agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_stop_airspeed"](arg_enable.COM_val, arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -25474,29 +25474,29 @@ class IBasicManeuverStrategyPushPull(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyPushPull.")
     
     @property
-    def reference_frame(self) -> "AgEAvtrBasicManeuverRefFrame":
+    def reference_frame(self) -> "AVTR_BASIC_MANEUVER_REF_FRAME":
         """The reference frame the aircraft will use."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_frame"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_frame.setter
-    def reference_frame(self, newVal:"AgEAvtrBasicManeuverRefFrame") -> None:
+    def reference_frame(self, newVal:"AVTR_BASIC_MANEUVER_REF_FRAME") -> None:
         """The reference frame the aircraft will use."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_frame"](arg_newVal.COM_val))
 
     @property
-    def push_pull(self) -> "AgEAvtrPushPull":
+    def push_pull(self) -> "AVTR_PUSH_PULL":
         """The option to push over or pull up."""
-        with agmarshall.AgEnum_arg(AgEAvtrPushPull) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PUSH_PULL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_push_pull"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @push_pull.setter
-    def push_pull(self, newVal:"AgEAvtrPushPull") -> None:
+    def push_pull(self, newVal:"AVTR_PUSH_PULL") -> None:
         """The option to push over or pull up."""
-        with agmarshall.AgEnum_arg(AgEAvtrPushPull, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PUSH_PULL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_push_pull"](arg_newVal.COM_val))
 
     @property
@@ -25513,16 +25513,16 @@ class IBasicManeuverStrategyPushPull(object):
             agcls.evaluate_hresult(self.__dict__["_set_push_pull_g"](arg_newVal.COM_val))
 
     @property
-    def accel_mode(self) -> "AgEAvtrAccelMode":
+    def accel_mode(self) -> "AVTR_ACCEL_MODE":
         """The option to accelerate, decelerate, or maintain the current airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_accel_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @accel_mode.setter
-    def accel_mode(self, newVal:"AgEAvtrAccelMode") -> None:
+    def accel_mode(self, newVal:"AVTR_ACCEL_MODE") -> None:
         """The option to accelerate, decelerate, or maintain the current airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAccelMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ACCEL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_accel_mode"](arg_newVal.COM_val))
 
     @property
@@ -25539,16 +25539,16 @@ class IBasicManeuverStrategyPushPull(object):
             agcls.evaluate_hresult(self.__dict__["_set_accel_decel_g"](arg_newVal.COM_val))
 
     @property
-    def maintain_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def maintain_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type for the maintain airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_maintain_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @maintain_airspeed_type.setter
-    def maintain_airspeed_type(self, newVal:"AgEAvtrAirspeedType") -> None:
+    def maintain_airspeed_type(self, newVal:"AVTR_AIRSPEED_TYPE") -> None:
         """The airspeed type for the maintain airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_maintain_airspeed_type"](arg_newVal.COM_val))
 
     @property
@@ -25626,16 +25626,16 @@ class IBasicManeuverStrategyPushPull(object):
             return arg_pVal.python_val
 
     @property
-    def stop_airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def stop_airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type for the airspeed stopping condition."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_stop_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_stop_airspeed(self, enable:bool, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_stop_airspeed(self, enable:bool, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set whether to enable the airspeed stopping condition and the corresponding value."""
         with agmarshall.VARIANT_BOOL_arg(enable) as arg_enable, \
-             agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+             agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_stop_airspeed"](arg_enable.COM_val, arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -25748,9 +25748,9 @@ class IBasicManeuverStrategyGlideProfile(object):
             return arg_pVal.python_val
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """Get the airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -25779,20 +25779,20 @@ class IBasicManeuverStrategyGlideProfile(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_g"](arg_pVal.COM_val))
 
     @property
-    def max_speed_limits(self) -> "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits":
+    def max_speed_limits(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS":
         """The options of what the procedure will do if the aircraft has exceeded the maximum speed limits."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_max_speed_limits"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @max_speed_limits.setter
-    def max_speed_limits(self, pVal:"AgEAvtrBasicManeuverStrategyAirspeedPerfLimits") -> None:
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyAirspeedPerfLimits, pVal) as arg_pVal:
+    def max_speed_limits(self, pVal:"AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS") -> None:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_max_speed_limits"](arg_pVal.COM_val))
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the airspeed and airspeed type that the aircraft will attempt to achieve and maintain if the hold initial airspeed option is not enabled."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -25809,15 +25809,15 @@ class IBasicManeuverStrategyGlideProfile(object):
             agcls.evaluate_hresult(self.__dict__["_set_compensate_for_coriolis_accel"](arg_newVal.COM_val))
 
     @property
-    def powered_cruise_mode(self) -> "AgEAvtrBasicManeuverStrategyPoweredCruiseMode":
+    def powered_cruise_mode(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE":
         """The powered cruise mode"""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyPoweredCruiseMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_powered_cruise_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @powered_cruise_mode.setter
-    def powered_cruise_mode(self, newVal:"AgEAvtrBasicManeuverStrategyPoweredCruiseMode") -> None:
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyPoweredCruiseMode, newVal) as arg_newVal:
+    def powered_cruise_mode(self, newVal:"AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE") -> None:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_powered_cruise_mode"](arg_newVal.COM_val))
 
     @property
@@ -25840,9 +25840,9 @@ class IBasicManeuverStrategyGlideProfile(object):
             return arg_ppVal.python_val
 
     @property
-    def glide_speed_control_mode(self) -> "AgEAvtrBasicManeuverGlideSpeedControlMode":
+    def glide_speed_control_mode(self) -> "AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE":
         """The glide speed control mode"""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverGlideSpeedControlMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_glide_speed_control_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -25853,9 +25853,9 @@ class IBasicManeuverStrategyGlideProfile(object):
             agcls.evaluate_hresult(self.__dict__["_get_glide_speed_control_alt"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_glide_speed_control_mode(self, eGSMode:"AgEAvtrBasicManeuverGlideSpeedControlMode", dControlAlt:float) -> None:
+    def set_glide_speed_control_mode(self, eGSMode:"AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", dControlAlt:float) -> None:
         """Set the glide speed control mode and altitude"""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverGlideSpeedControlMode, eGSMode) as arg_eGSMode, \
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE, eGSMode) as arg_eGSMode, \
              agmarshall.DOUBLE_arg(dControlAlt) as arg_dControlAlt:
             agcls.evaluate_hresult(self.__dict__["_set_glide_speed_control_mode"](arg_eGSMode.COM_val, arg_dControlAlt.COM_val))
 
@@ -25921,15 +25921,15 @@ class IBasicManeuverStrategyCruiseProfile(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyCruiseProfile.")
     
     @property
-    def reference_frame(self) -> "AgEAvtrBasicManeuverRefFrame":
+    def reference_frame(self) -> "AVTR_BASIC_MANEUVER_REF_FRAME":
         """The reference frame the aircraft will use. Earth Frame will force the aircraft to overcome wind effects. Wind frame will allow the maneuver to be perturbed by wind."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_frame"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_frame.setter
-    def reference_frame(self, pVal:"AgEAvtrBasicManeuverRefFrame") -> None:
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame, pVal) as arg_pVal:
+    def reference_frame(self, pVal:"AVTR_BASIC_MANEUVER_REF_FRAME") -> None:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_frame"](arg_pVal.COM_val))
 
     @property
@@ -26043,15 +26043,15 @@ class IBasicManeuverStrategyStraightAhead(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyStraightAhead.")
     
     @property
-    def reference_frame(self) -> "AgEAvtrStraightAheadRefFrame":
+    def reference_frame(self) -> "AVTR_STRAIGHT_AHEAD_REF_FRAME":
         """The reference frame the aircraft will use to fly straight ahead."""
-        with agmarshall.AgEnum_arg(AgEAvtrStraightAheadRefFrame) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_STRAIGHT_AHEAD_REF_FRAME) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_frame"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_frame.setter
-    def reference_frame(self, pVal:"AgEAvtrStraightAheadRefFrame") -> None:
-        with agmarshall.AgEnum_arg(AgEAvtrStraightAheadRefFrame, pVal) as arg_pVal:
+    def reference_frame(self, pVal:"AVTR_STRAIGHT_AHEAD_REF_FRAME") -> None:
+        with agmarshall.AgEnum_arg(AVTR_STRAIGHT_AHEAD_REF_FRAME, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_frame"](arg_pVal.COM_val))
 
     @property
@@ -26164,9 +26164,9 @@ class IBasicManeuverStrategyWeave(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_distance"](arg_newVal.COM_val))
 
     @property
-    def control_limit_mode(self) -> "AgEAvtrBasicManeuverStrategyNavControlLimit":
+    def control_limit_mode(self) -> "AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -26191,9 +26191,9 @@ class IBasicManeuverStrategyWeave(object):
             agcls.evaluate_hresult(self.__dict__["_get_control_limit_horiz_accel"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_control_limit(self, controlLimitMode:"AgEAvtrBasicManeuverStrategyNavControlLimit", controlLimitValue:float) -> None:
+    def set_control_limit(self, controlLimitMode:"AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverStrategyNavControlLimit, controlLimitMode) as arg_controlLimitMode, \
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitMode) as arg_controlLimitMode, \
              agmarshall.DOUBLE_arg(controlLimitValue) as arg_controlLimitValue:
             agcls.evaluate_hresult(self.__dict__["_set_control_limit"](arg_controlLimitMode.COM_val, arg_controlLimitValue.COM_val))
 
@@ -26263,16 +26263,16 @@ class IBasicManeuverStrategyBallistic3D(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyBallistic3D.")
     
     @property
-    def control_mode(self) -> "AgEAvtrBallistic3DControlMode":
+    def control_mode(self) -> "AVTR_BALLISTIC3_D_CONTROL_MODE":
         """The control mode for the ballistic 3D strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrBallistic3DControlMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BALLISTIC3_D_CONTROL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @control_mode.setter
-    def control_mode(self, newVal:"AgEAvtrBallistic3DControlMode") -> None:
+    def control_mode(self, newVal:"AVTR_BALLISTIC3_D_CONTROL_MODE") -> None:
         """The control mode for the ballistic 3D strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrBallistic3DControlMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BALLISTIC3_D_CONTROL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_newVal.COM_val))
 
     @property
@@ -26379,16 +26379,16 @@ class IBasicManeuverStrategyPitch3D(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IBasicManeuverStrategyPitch3D.")
     
     @property
-    def control_mode(self) -> "AgEAvtrPitch3DControlMode":
+    def control_mode(self) -> "AVTR_PITCH3_D_CONTROL_MODE":
         """The control mode for the pitch 3D strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPitch3DControlMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PITCH3_D_CONTROL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_control_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @control_mode.setter
-    def control_mode(self, newVal:"AgEAvtrPitch3DControlMode") -> None:
+    def control_mode(self, newVal:"AVTR_PITCH3_D_CONTROL_MODE") -> None:
         """The control mode for the pitch 3D strategy."""
-        with agmarshall.AgEnum_arg(AgEAvtrPitch3DControlMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PITCH3_D_CONTROL_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_control_mode"](arg_newVal.COM_val))
 
     @property
@@ -26895,9 +26895,9 @@ class IReferenceStateForwardFlightOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateForwardFlightOptions.")
     
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -26908,9 +26908,9 @@ class IReferenceStateForwardFlightOptions(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the launch airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -26955,15 +26955,15 @@ class IReferenceStateForwardFlightOptions(object):
             return arg_pVal.python_val
 
     @property
-    def longitudinal_accel_type(self) -> "AgEAvtrRefStateLongitudinalAccelMode":
+    def longitudinal_accel_type(self) -> "AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE":
         """The mode to specify the longitudinal acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLongitudinalAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_longitudinal_accel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_longitudinal_accel(self, accelType:"AgEAvtrRefStateLongitudinalAccelMode", value:float) -> None:
+    def set_longitudinal_accel(self, accelType:"AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None:
         """Set the longitudinal acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLongitudinalAccelMode, accelType) as arg_accelType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE, accelType) as arg_accelType, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_longitudinal_accel"](arg_accelType.COM_val, arg_value.COM_val))
 
@@ -27034,15 +27034,15 @@ class IReferenceStateForwardFlightOptions(object):
             return arg_pVal.python_val
 
     @property
-    def lateral_accel_type(self) -> "AgEAvtrRefStateLateralAccelMode":
+    def lateral_accel_type(self) -> "AVTR_REF_STATE_LATERAL_ACCEL_MODE":
         """The mode to specify the lateral acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLateralAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LATERAL_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_lateral_accel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_lateral_accel(self, accelType:"AgEAvtrRefStateLateralAccelMode", value:typing.Any) -> None:
+    def set_lateral_accel(self, accelType:"AVTR_REF_STATE_LATERAL_ACCEL_MODE", value:typing.Any) -> None:
         """Set the lateral acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLateralAccelMode, accelType) as arg_accelType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LATERAL_ACCEL_MODE, accelType) as arg_accelType, \
              agmarshall.VARIANT_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_lateral_accel"](arg_accelType.COM_val, arg_value.COM_val))
 
@@ -27100,15 +27100,15 @@ class IReferenceStateForwardFlightOptions(object):
             return arg_pVal.python_val
 
     @property
-    def attitude_rate_type(self) -> "AgEAvtrRefStateAttitudeMode":
+    def attitude_rate_type(self) -> "AVTR_REF_STATE_ATTITUDE_MODE":
         """The mode to specify the vertical attitude rate."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateAttitudeMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_ATTITUDE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_rate_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_attitude_rate(self, attitudeRateType:"AgEAvtrRefStateAttitudeMode", value:typing.Any) -> None:
+    def set_attitude_rate(self, attitudeRateType:"AVTR_REF_STATE_ATTITUDE_MODE", value:typing.Any) -> None:
         """Set the vertical attitude rate."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateAttitudeMode, attitudeRateType) as arg_attitudeRateType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_ATTITUDE_MODE, attitudeRateType) as arg_attitudeRateType, \
              agmarshall.VARIANT_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_rate"](arg_attitudeRateType.COM_val, arg_value.COM_val))
 
@@ -27244,15 +27244,15 @@ class IReferenceStateHoverOptions(object):
             return arg_pVal.python_val
 
     @property
-    def longitudinal_accel_type(self) -> "AgEAvtrRefStateLongitudinalAccelMode":
+    def longitudinal_accel_type(self) -> "AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE":
         """The mode to specify the longitudinal acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLongitudinalAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_longitudinal_accel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_longitudinal_accel(self, accelType:"AgEAvtrRefStateLongitudinalAccelMode", value:float) -> None:
+    def set_longitudinal_accel(self, accelType:"AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None:
         """Set the longitudinal acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLongitudinalAccelMode, accelType) as arg_accelType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE, accelType) as arg_accelType, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_longitudinal_accel"](arg_accelType.COM_val, arg_value.COM_val))
 
@@ -27375,15 +27375,15 @@ class IReferenceStateHoverOptions(object):
             return arg_pVal.python_val
 
     @property
-    def attitude_rate_type(self) -> "AgEAvtrRefStateAttitudeMode":
+    def attitude_rate_type(self) -> "AVTR_REF_STATE_ATTITUDE_MODE":
         """The mode to specify the vertical attitude rate."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateAttitudeMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_ATTITUDE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_rate_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_attitude_rate(self, attitudeRateType:"AgEAvtrRefStateAttitudeMode", value:typing.Any) -> None:
+    def set_attitude_rate(self, attitudeRateType:"AVTR_REF_STATE_ATTITUDE_MODE", value:typing.Any) -> None:
         """Set the vertical attitude rate."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateAttitudeMode, attitudeRateType) as arg_attitudeRateType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_ATTITUDE_MODE, attitudeRateType) as arg_attitudeRateType, \
              agmarshall.VARIANT_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_rate"](arg_attitudeRateType.COM_val, arg_value.COM_val))
 
@@ -27478,15 +27478,15 @@ class IReferenceStateWeightOnWheelsOptions(object):
             return arg_pVal.python_val
 
     @property
-    def longitudinal_accel_type(self) -> "AgEAvtrRefStateLongitudinalAccelMode":
+    def longitudinal_accel_type(self) -> "AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE":
         """The mode to specify the longitudinal acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLongitudinalAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_longitudinal_accel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_longitudinal_accel(self, accelType:"AgEAvtrRefStateLongitudinalAccelMode", value:float) -> None:
+    def set_longitudinal_accel(self, accelType:"AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None:
         """Set the longitudinal acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLongitudinalAccelMode, accelType) as arg_accelType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE, accelType) as arg_accelType, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_longitudinal_accel"](arg_accelType.COM_val, arg_value.COM_val))
 
@@ -27531,15 +27531,15 @@ class IReferenceStateWeightOnWheelsOptions(object):
             return arg_pVal.python_val
 
     @property
-    def lateral_accel_type(self) -> "AgEAvtrRefStateLateralAccelMode":
+    def lateral_accel_type(self) -> "AVTR_REF_STATE_LATERAL_ACCEL_MODE":
         """The mode to specify the lateral acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLateralAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LATERAL_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_lateral_accel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_lateral_accel(self, accelType:"AgEAvtrRefStateLateralAccelMode", value:typing.Any) -> None:
+    def set_lateral_accel(self, accelType:"AVTR_REF_STATE_LATERAL_ACCEL_MODE", value:typing.Any) -> None:
         """Set the lateral acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLateralAccelMode, accelType) as arg_accelType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LATERAL_ACCEL_MODE, accelType) as arg_accelType, \
              agmarshall.VARIANT_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_lateral_accel"](arg_accelType.COM_val, arg_value.COM_val))
 
@@ -27645,9 +27645,9 @@ class IReferenceStateTakeoffLandingOptions(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IReferenceStateTakeoffLandingOptions.")
     
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -27658,9 +27658,9 @@ class IReferenceStateTakeoffLandingOptions(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the launch airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
@@ -27705,15 +27705,15 @@ class IReferenceStateTakeoffLandingOptions(object):
             return arg_pVal.python_val
 
     @property
-    def longitudinal_accel_type(self) -> "AgEAvtrRefStateLongitudinalAccelMode":
+    def longitudinal_accel_type(self) -> "AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE":
         """The mode to specify the longitudinal acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLongitudinalAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_longitudinal_accel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_longitudinal_accel(self, accelType:"AgEAvtrRefStateLongitudinalAccelMode", value:float) -> None:
+    def set_longitudinal_accel(self, accelType:"AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None:
         """Set the longitudinal acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLongitudinalAccelMode, accelType) as arg_accelType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LONGITUDINAL_ACCEL_MODE, accelType) as arg_accelType, \
              agmarshall.DOUBLE_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_longitudinal_accel"](arg_accelType.COM_val, arg_value.COM_val))
 
@@ -27784,15 +27784,15 @@ class IReferenceStateTakeoffLandingOptions(object):
             return arg_pVal.python_val
 
     @property
-    def lateral_accel_type(self) -> "AgEAvtrRefStateLateralAccelMode":
+    def lateral_accel_type(self) -> "AVTR_REF_STATE_LATERAL_ACCEL_MODE":
         """The mode to specify the lateral acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLateralAccelMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LATERAL_ACCEL_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_lateral_accel_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_lateral_accel(self, accelType:"AgEAvtrRefStateLateralAccelMode", value:typing.Any) -> None:
+    def set_lateral_accel(self, accelType:"AVTR_REF_STATE_LATERAL_ACCEL_MODE", value:typing.Any) -> None:
         """Set the lateral acceleration."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateLateralAccelMode, accelType) as arg_accelType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_LATERAL_ACCEL_MODE, accelType) as arg_accelType, \
              agmarshall.VARIANT_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_lateral_accel"](arg_accelType.COM_val, arg_value.COM_val))
 
@@ -27850,15 +27850,15 @@ class IReferenceStateTakeoffLandingOptions(object):
             return arg_pVal.python_val
 
     @property
-    def attitude_rate_type(self) -> "AgEAvtrRefStateAttitudeMode":
+    def attitude_rate_type(self) -> "AVTR_REF_STATE_ATTITUDE_MODE":
         """The mode to specify the vertical attitude rate."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateAttitudeMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_ATTITUDE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_rate_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_attitude_rate(self, attitudeRateType:"AgEAvtrRefStateAttitudeMode", value:typing.Any) -> None:
+    def set_attitude_rate(self, attitudeRateType:"AVTR_REF_STATE_ATTITUDE_MODE", value:typing.Any) -> None:
         """Set the vertical attitude rate."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStateAttitudeMode, attitudeRateType) as arg_attitudeRateType, \
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_ATTITUDE_MODE, attitudeRateType) as arg_attitudeRateType, \
              agmarshall.VARIANT_arg(value) as arg_value:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_rate"](arg_attitudeRateType.COM_val, arg_value.COM_val))
 
@@ -27947,16 +27947,16 @@ class ILandingEnterDownwindPattern(object):
             agcls.evaluate_hresult(self.__dict__["_set_approach_fix_range"](arg_inVal.COM_val))
 
     @property
-    def approach_fix_range_mode(self) -> "AgEAvtrLandingApproachFixRangeMode":
+    def approach_fix_range_mode(self) -> "AVTR_LANDING_APPROACH_FIX_RANGE_MODE":
         """The reference point on the runway for the Approach Fix Range."""
-        with agmarshall.AgEnum_arg(AgEAvtrLandingApproachFixRangeMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_LANDING_APPROACH_FIX_RANGE_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_approach_fix_range_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @approach_fix_range_mode.setter
-    def approach_fix_range_mode(self, inVal:"AgEAvtrLandingApproachFixRangeMode") -> None:
+    def approach_fix_range_mode(self, inVal:"AVTR_LANDING_APPROACH_FIX_RANGE_MODE") -> None:
         """The reference point on the runway for the Approach Fix Range."""
-        with agmarshall.AgEnum_arg(AgEAvtrLandingApproachFixRangeMode, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(AVTR_LANDING_APPROACH_FIX_RANGE_MODE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_approach_fix_range_mode"](arg_inVal.COM_val))
 
     @property
@@ -27986,16 +27986,16 @@ class ILandingEnterDownwindPattern(object):
             agcls.evaluate_hresult(self.__dict__["_set_abeam_altitude"](arg_inVal.COM_val))
 
     @property
-    def final_turn(self) -> "AgEAvtrNavigatorTurnDir":
+    def final_turn(self) -> "AVTR_NAVIGATOR_TURN_DIR":
         """The direction of the turn that the aircraft will make when it lines up over the runway to land."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_turn"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @final_turn.setter
-    def final_turn(self, inVal:"AgEAvtrNavigatorTurnDir") -> None:
+    def final_turn(self, inVal:"AVTR_NAVIGATOR_TURN_DIR") -> None:
         """The direction of the turn that the aircraft will make when it lines up over the runway to land."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_turn"](arg_inVal.COM_val))
 
     @property
@@ -28123,16 +28123,16 @@ class ILandingInterceptGlideslope(object):
             agcls.evaluate_hresult(self.__dict__["_set_approach_fix_range"](arg_inVal.COM_val))
 
     @property
-    def approach_fix_range_mode(self) -> "AgEAvtrLandingApproachFixRangeMode":
+    def approach_fix_range_mode(self) -> "AVTR_LANDING_APPROACH_FIX_RANGE_MODE":
         """The reference point on the runway for the Approach Fix Range."""
-        with agmarshall.AgEnum_arg(AgEAvtrLandingApproachFixRangeMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_LANDING_APPROACH_FIX_RANGE_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_approach_fix_range_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @approach_fix_range_mode.setter
-    def approach_fix_range_mode(self, inVal:"AgEAvtrLandingApproachFixRangeMode") -> None:
+    def approach_fix_range_mode(self, inVal:"AVTR_LANDING_APPROACH_FIX_RANGE_MODE") -> None:
         """The reference point on the runway for the Approach Fix Range."""
-        with agmarshall.AgEnum_arg(AgEAvtrLandingApproachFixRangeMode, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(AVTR_LANDING_APPROACH_FIX_RANGE_MODE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_approach_fix_range_mode"](arg_inVal.COM_val))
 
     @property
@@ -28268,16 +28268,16 @@ class ILandingStandardInstrumentApproach(object):
             agcls.evaluate_hresult(self.__dict__["_set_approach_altitude"](arg_inVal.COM_val))
 
     @property
-    def level_off_mode(self) -> "AgEAvtrAltitudeConstraintManeuverMode":
+    def level_off_mode(self) -> "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE":
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_off_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @level_off_mode.setter
-    def level_off_mode(self, inVal:"AgEAvtrAltitudeConstraintManeuverMode") -> None:
+    def level_off_mode(self, inVal:"AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE") -> None:
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_level_off_mode"](arg_inVal.COM_val))
 
     @property
@@ -28294,16 +28294,16 @@ class ILandingStandardInstrumentApproach(object):
             agcls.evaluate_hresult(self.__dict__["_set_approach_fix_range"](arg_inVal.COM_val))
 
     @property
-    def approach_fix_range_mode(self) -> "AgEAvtrLandingApproachFixRangeMode":
+    def approach_fix_range_mode(self) -> "AVTR_LANDING_APPROACH_FIX_RANGE_MODE":
         """The reference point on the runway for the Approach Fix Range."""
-        with agmarshall.AgEnum_arg(AgEAvtrLandingApproachFixRangeMode) as arg_pRetVal:
+        with agmarshall.AgEnum_arg(AVTR_LANDING_APPROACH_FIX_RANGE_MODE) as arg_pRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_approach_fix_range_mode"](byref(arg_pRetVal.COM_val)))
             return arg_pRetVal.python_val
 
     @approach_fix_range_mode.setter
-    def approach_fix_range_mode(self, inVal:"AgEAvtrLandingApproachFixRangeMode") -> None:
+    def approach_fix_range_mode(self, inVal:"AVTR_LANDING_APPROACH_FIX_RANGE_MODE") -> None:
         """The reference point on the runway for the Approach Fix Range."""
-        with agmarshall.AgEnum_arg(AgEAvtrLandingApproachFixRangeMode, inVal) as arg_inVal:
+        with agmarshall.AgEnum_arg(AVTR_LANDING_APPROACH_FIX_RANGE_MODE, inVal) as arg_inVal:
             agcls.evaluate_hresult(self.__dict__["_set_approach_fix_range_mode"](arg_inVal.COM_val))
 
     @property
@@ -28546,29 +28546,29 @@ class IProcedureBasicManeuver(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_max_downrange"](arg_newVal.COM_val))
 
     @property
-    def altitude_limit_mode(self) -> "AgEAvtrBasicManeuverAltitudeLimit":
+    def altitude_limit_mode(self) -> "AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT":
         """Get the altitude limit mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverAltitudeLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_limit_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_limit_mode.setter
-    def altitude_limit_mode(self, newVal:"AgEAvtrBasicManeuverAltitudeLimit") -> None:
+    def altitude_limit_mode(self, newVal:"AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT") -> None:
         """Set the altitude limit mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverAltitudeLimit, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_limit_mode"](arg_newVal.COM_val))
 
     @property
-    def terrain_impact_mode(self) -> "AgEAvtrBasicManeuverAltitudeLimit":
+    def terrain_impact_mode(self) -> "AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT":
         """Get the terrain impact mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverAltitudeLimit) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_terrain_impact_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @terrain_impact_mode.setter
-    def terrain_impact_mode(self, newVal:"AgEAvtrBasicManeuverAltitudeLimit") -> None:
+    def terrain_impact_mode(self, newVal:"AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT") -> None:
         """Set the terrain impact mode."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverAltitudeLimit, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_ALTITUDE_LIMIT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_terrain_impact_mode"](arg_newVal.COM_val))
 
     @property
@@ -28625,27 +28625,27 @@ class IProcedureBasicManeuver(object):
             return arg_ppVal.python_val
 
     @property
-    def flight_mode(self) -> "AgEAvtrPhaseOfFlight":
+    def flight_mode(self) -> "AVTR_PHASE_OF_FLIGHT":
         """The type of performance model  that the aircraft will use to fly the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrPhaseOfFlight) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PHASE_OF_FLIGHT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_flight_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @flight_mode.setter
-    def flight_mode(self, newVal:"AgEAvtrPhaseOfFlight") -> None:
-        with agmarshall.AgEnum_arg(AgEAvtrPhaseOfFlight, newVal) as arg_newVal:
+    def flight_mode(self, newVal:"AVTR_PHASE_OF_FLIGHT") -> None:
+        with agmarshall.AgEnum_arg(AVTR_PHASE_OF_FLIGHT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_flight_mode"](arg_newVal.COM_val))
 
     @property
-    def fuel_flow_type(self) -> "AgEAvtrBasicManeuverFuelFlowType":
+    def fuel_flow_type(self) -> "AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE":
         """The source used to calculate the fuel flow for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverFuelFlowType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_flow_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_flow_type.setter
-    def fuel_flow_type(self, newVal:"AgEAvtrBasicManeuverFuelFlowType") -> None:
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverFuelFlowType, newVal) as arg_newVal:
+    def fuel_flow_type(self, newVal:"AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE") -> None:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_FUEL_FLOW_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_flow_type"](arg_newVal.COM_val))
 
     @property
@@ -28915,16 +28915,16 @@ class ISiteVTOLPoint(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude"](arg_newVal.COM_val))
 
     @property
-    def altitude_reference(self) -> "AgEAvtrAGLMSL":
+    def altitude_reference(self) -> "AVTR_AGLMSL":
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AgEAvtrAGLMSL") -> None:
+    def altitude_reference(self, newVal:"AVTR_AGLMSL") -> None:
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     def get_as_site(self) -> "ISite":
@@ -29138,16 +29138,16 @@ class ISiteRelToPrevProcedure(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in ISiteRelToPrevProcedure.")
     
     @property
-    def bearing_mode(self) -> "AgEAvtrRelAbsBearing":
+    def bearing_mode(self) -> "AVTR_REL_ABS_BEARING":
         """The bearing reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrRelAbsBearing) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REL_ABS_BEARING) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_bearing_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @bearing_mode.setter
-    def bearing_mode(self, newVal:"AgEAvtrRelAbsBearing") -> None:
+    def bearing_mode(self, newVal:"AVTR_REL_ABS_BEARING") -> None:
         """The bearing reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrRelAbsBearing, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_REL_ABS_BEARING, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_bearing_mode"](arg_newVal.COM_val))
 
     @property
@@ -29298,16 +29298,16 @@ class ISiteSTKObjectWaypoint(object):
             agcls.evaluate_hresult(self.__dict__["_set_waypoint_time"](arg_newVal.COM_val))
 
     @property
-    def minimize_site_proc_time_diff(self) -> "AgEAvtrMinimizeSiteProcTimeDiff":
+    def minimize_site_proc_time_diff(self) -> "AVTR_MINIMIZE_SITE_PROC_TIME_DIFF":
         """The mode to minimize the time difference between the procedure and site times."""
-        with agmarshall.AgEnum_arg(AgEAvtrMinimizeSiteProcTimeDiff) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_MINIMIZE_SITE_PROC_TIME_DIFF) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_minimize_site_proc_time_diff"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @minimize_site_proc_time_diff.setter
-    def minimize_site_proc_time_diff(self, newVal:"AgEAvtrMinimizeSiteProcTimeDiff") -> None:
+    def minimize_site_proc_time_diff(self, newVal:"AVTR_MINIMIZE_SITE_PROC_TIME_DIFF") -> None:
         """The mode to minimize the time difference between the procedure and site times."""
-        with agmarshall.AgEnum_arg(AgEAvtrMinimizeSiteProcTimeDiff, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_MINIMIZE_SITE_PROC_TIME_DIFF, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_minimize_site_proc_time_diff"](arg_newVal.COM_val))
 
     @property
@@ -29318,16 +29318,16 @@ class ISiteSTKObjectWaypoint(object):
             return arg_pVal.python_val
 
     @property
-    def offset_mode(self) -> "AgEAvtrSTKObjectWaypointOffsetMode":
+    def offset_mode(self) -> "AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE":
         """The mode to offset the site location relative from the STK Object."""
-        with agmarshall.AgEnum_arg(AgEAvtrSTKObjectWaypointOffsetMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_offset_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @offset_mode.setter
-    def offset_mode(self, newVal:"AgEAvtrSTKObjectWaypointOffsetMode") -> None:
+    def offset_mode(self, newVal:"AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE") -> None:
         """The mode to offset the site location relative from the STK Object."""
-        with agmarshall.AgEnum_arg(AgEAvtrSTKObjectWaypointOffsetMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_STK_OBJECT_WAYPOINT_OFFSET_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_offset_mode"](arg_newVal.COM_val))
 
     @property
@@ -29772,16 +29772,16 @@ class ISiteRunway(object):
             agcls.evaluate_hresult(self.__dict__["_set_length"](arg_newVal.COM_val))
 
     @property
-    def altitude_ref(self) -> "AgEAvtrAGLMSL":
+    def altitude_ref(self) -> "AVTR_AGLMSL":
         """The altitude reference for the runway."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_ref"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_ref.setter
-    def altitude_ref(self, newVal:"AgEAvtrAGLMSL") -> None:
+    def altitude_ref(self, newVal:"AVTR_AGLMSL") -> None:
         """The altitude reference for the runway."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_ref"](arg_newVal.COM_val))
 
     @property
@@ -29953,16 +29953,16 @@ class IProcedureLanding(object):
             return arg_ppVal.python_val
 
     @property
-    def approach_mode(self) -> "AgEAvtrApproachMode":
+    def approach_mode(self) -> "AVTR_APPROACH_MODE":
         """The type of landing the aircraft will perform."""
-        with agmarshall.AgEnum_arg(AgEAvtrApproachMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_APPROACH_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_approach_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @approach_mode.setter
-    def approach_mode(self, newVal:"AgEAvtrApproachMode") -> None:
+    def approach_mode(self, newVal:"AVTR_APPROACH_MODE") -> None:
         """The type of landing the aircraft will perform."""
-        with agmarshall.AgEnum_arg(AgEAvtrApproachMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_APPROACH_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_approach_mode"](arg_newVal.COM_val))
 
     def get_as_procedure(self) -> "IProcedure":
@@ -30169,16 +30169,16 @@ class IProcedureExtEphem(object):
             agcls.evaluate_hresult(self.__dict__["_set_duration"](arg_start.COM_val))
 
     @property
-    def flight_mode(self) -> "AgEAvtrExtEphemFlightMode":
+    def flight_mode(self) -> "AVTR_EXT_EPHEM_FLIGHT_MODE":
         """Get the flight mode"""
-        with agmarshall.AgEnum_arg(AgEAvtrExtEphemFlightMode) as arg_mode:
+        with agmarshall.AgEnum_arg(AVTR_EXT_EPHEM_FLIGHT_MODE) as arg_mode:
             agcls.evaluate_hresult(self.__dict__["_get_flight_mode"](byref(arg_mode.COM_val)))
             return arg_mode.python_val
 
     @flight_mode.setter
-    def flight_mode(self, mode:"AgEAvtrExtEphemFlightMode") -> None:
+    def flight_mode(self, mode:"AVTR_EXT_EPHEM_FLIGHT_MODE") -> None:
         """Set the flight mode"""
-        with agmarshall.AgEnum_arg(AgEAvtrExtEphemFlightMode, mode) as arg_mode:
+        with agmarshall.AgEnum_arg(AVTR_EXT_EPHEM_FLIGHT_MODE, mode) as arg_mode:
             agcls.evaluate_hresult(self.__dict__["_set_flight_mode"](arg_mode.COM_val))
 
     def get_as_procedure(self) -> "IProcedure":
@@ -30309,16 +30309,16 @@ class IProcedureFormationFlyer(object):
             agcls.evaluate_hresult(self.__dict__["_set_initial_close_max_speed_advantage"](arg_pVal.COM_val))
 
     @property
-    def stop_condition(self) -> "AgEAvtrFormationFlyerStopCondition":
+    def stop_condition(self) -> "AVTR_FORMATION_FLYER_STOP_CONDITION":
         """Get Stop condition"""
-        with agmarshall.AgEnum_arg(AgEAvtrFormationFlyerStopCondition) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FORMATION_FLYER_STOP_CONDITION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_stop_condition"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @stop_condition.setter
-    def stop_condition(self, pVal:"AgEAvtrFormationFlyerStopCondition") -> None:
+    def stop_condition(self, pVal:"AVTR_FORMATION_FLYER_STOP_CONDITION") -> None:
         """Set Stop condition"""
-        with agmarshall.AgEnum_arg(AgEAvtrFormationFlyerStopCondition, pVal) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FORMATION_FLYER_STOP_CONDITION, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_stop_condition"](arg_pVal.COM_val))
 
     @property
@@ -30508,16 +30508,16 @@ class IProcedureDelay(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureDelay.")
     
     @property
-    def altitude_mode(self) -> "AgEAvtrDelayAltMode":
+    def altitude_mode(self) -> "AVTR_DELAY_ALT_MODE":
         """The mode for handling the altitude of the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrDelayAltMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_DELAY_ALT_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_mode.setter
-    def altitude_mode(self, newVal:"AgEAvtrDelayAltMode") -> None:
+    def altitude_mode(self, newVal:"AVTR_DELAY_ALT_MODE") -> None:
         """The mode for handling the altitude of the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrDelayAltMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_DELAY_ALT_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_mode"](arg_newVal.COM_val))
 
     @property
@@ -30541,16 +30541,16 @@ class IProcedureDelay(object):
             return arg_ppVal.python_val
 
     @property
-    def turn_direction(self) -> "AgEAvtrNavigatorTurnDir":
+    def turn_direction(self) -> "AVTR_NAVIGATOR_TURN_DIR":
         """The turn direction of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turn_direction.setter
-    def turn_direction(self, newVal:"AgEAvtrNavigatorTurnDir") -> None:
+    def turn_direction(self, newVal:"AVTR_NAVIGATOR_TURN_DIR") -> None:
         """The turn direction of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrNavigatorTurnDir, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_NAVIGATOR_TURN_DIR, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turn_direction"](arg_newVal.COM_val))
 
     @property
@@ -30644,16 +30644,16 @@ class IProcedureTakeoff(object):
             return arg_ppVal.python_val
 
     @property
-    def takeoff_mode(self) -> "AgEAvtrTakeoffMode":
+    def takeoff_mode(self) -> "AVTR_TAKEOFF_MODE":
         """The type of takeoff the aircraft will perform."""
-        with agmarshall.AgEnum_arg(AgEAvtrTakeoffMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TAKEOFF_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_takeoff_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @takeoff_mode.setter
-    def takeoff_mode(self, newVal:"AgEAvtrTakeoffMode") -> None:
+    def takeoff_mode(self, newVal:"AVTR_TAKEOFF_MODE") -> None:
         """The type of takeoff the aircraft will perform."""
-        with agmarshall.AgEnum_arg(AgEAvtrTakeoffMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_TAKEOFF_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_takeoff_mode"](arg_newVal.COM_val))
 
     def get_as_procedure(self) -> "IProcedure":
@@ -31006,16 +31006,16 @@ class IProcedureFlightLine(object):
             return arg_ppVal.python_val
 
     @property
-    def procedure_type(self) -> "AgEAvtrFlightLineProcType":
+    def procedure_type(self) -> "AVTR_FLIGHT_LINE_PROC_TYPE":
         """The procedure methodology used to calculate the flight line."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlightLineProcType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FLIGHT_LINE_PROC_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_procedure_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @procedure_type.setter
-    def procedure_type(self, newVal:"AgEAvtrFlightLineProcType") -> None:
+    def procedure_type(self, newVal:"AVTR_FLIGHT_LINE_PROC_TYPE") -> None:
         """The procedure methodology used to calculate the flight line."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlightLineProcType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FLIGHT_LINE_PROC_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_procedure_type"](arg_newVal.COM_val))
 
     @property
@@ -31071,16 +31071,16 @@ class IProcedureFlightLine(object):
             agcls.evaluate_hresult(self.__dict__["_set_must_level_off"](arg_newVal.COM_val))
 
     @property
-    def level_off_mode(self) -> "AgEAvtrAltitudeConstraintManeuverMode":
+    def level_off_mode(self) -> "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE":
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_off_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @level_off_mode.setter
-    def level_off_mode(self, newVal:"AgEAvtrAltitudeConstraintManeuverMode") -> None:
+    def level_off_mode(self, newVal:"AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE") -> None:
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_level_off_mode"](arg_newVal.COM_val))
 
     def get_as_procedure(self) -> "IProcedure":
@@ -31186,29 +31186,29 @@ class IProcedureHoldingCircular(object):
             return arg_ppVal.python_val
 
     @property
-    def profile_mode(self) -> "AgEAvtrHoldingProfileMode":
+    def profile_mode(self) -> "AVTR_HOLDING_PROFILE_MODE":
         """The mode defines how the aircraft will perform the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingProfileMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_PROFILE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_profile_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @profile_mode.setter
-    def profile_mode(self, newVal:"AgEAvtrHoldingProfileMode") -> None:
+    def profile_mode(self, newVal:"AVTR_HOLDING_PROFILE_MODE") -> None:
         """The mode defines how the aircraft will perform the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingProfileMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_PROFILE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_profile_mode"](arg_newVal.COM_val))
 
     @property
-    def level_off_mode(self) -> "AgEAvtrAltitudeConstraintManeuverMode":
+    def level_off_mode(self) -> "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE":
         """The mode for the level off maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_off_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @level_off_mode.setter
-    def level_off_mode(self, newVal:"AgEAvtrAltitudeConstraintManeuverMode") -> None:
+    def level_off_mode(self, newVal:"AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE") -> None:
         """The mode for the level off maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_level_off_mode"](arg_newVal.COM_val))
 
     @property
@@ -31277,16 +31277,16 @@ class IProcedureHoldingCircular(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_alternate_entry_points"](arg_newVal.COM_val))
 
     @property
-    def turn_direction(self) -> "AgEAvtrHoldingDirection":
+    def turn_direction(self) -> "AVTR_HOLDING_DIRECTION":
         """The turn direction to enter the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingDirection) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_DIRECTION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_turn_direction"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @turn_direction.setter
-    def turn_direction(self, newVal:"AgEAvtrHoldingDirection") -> None:
+    def turn_direction(self, newVal:"AVTR_HOLDING_DIRECTION") -> None:
         """The turn direction to enter the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingDirection, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_DIRECTION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_turn_direction"](arg_newVal.COM_val))
 
     @property
@@ -31303,16 +31303,16 @@ class IProcedureHoldingCircular(object):
             agcls.evaluate_hresult(self.__dict__["_set_turns"](arg_newVal.COM_val))
 
     @property
-    def refuel_dump_mode(self) -> "AgEAvtrHoldRefuelDumpMode":
+    def refuel_dump_mode(self) -> "AVTR_HOLD_REFUEL_DUMP_MODE":
         """The mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldRefuelDumpMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLD_REFUEL_DUMP_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_refuel_dump_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @refuel_dump_mode.setter
-    def refuel_dump_mode(self, newVal:"AgEAvtrHoldRefuelDumpMode") -> None:
+    def refuel_dump_mode(self, newVal:"AVTR_HOLD_REFUEL_DUMP_MODE") -> None:
         """The mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldRefuelDumpMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLD_REFUEL_DUMP_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_refuel_dump_mode"](arg_newVal.COM_val))
 
     @property
@@ -31452,29 +31452,29 @@ class IProcedureHoldingFigure8(object):
             return arg_ppVal.python_val
 
     @property
-    def profile_mode(self) -> "AgEAvtrHoldingProfileMode":
+    def profile_mode(self) -> "AVTR_HOLDING_PROFILE_MODE":
         """The mode defines how the aircraft will perform the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingProfileMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_PROFILE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_profile_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @profile_mode.setter
-    def profile_mode(self, newVal:"AgEAvtrHoldingProfileMode") -> None:
+    def profile_mode(self, newVal:"AVTR_HOLDING_PROFILE_MODE") -> None:
         """The mode defines how the aircraft will perform the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingProfileMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_PROFILE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_profile_mode"](arg_newVal.COM_val))
 
     @property
-    def level_off_mode(self) -> "AgEAvtrAltitudeConstraintManeuverMode":
+    def level_off_mode(self) -> "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE":
         """The mode for the level off maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_off_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @level_off_mode.setter
-    def level_off_mode(self, newVal:"AgEAvtrAltitudeConstraintManeuverMode") -> None:
+    def level_off_mode(self, newVal:"AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE") -> None:
         """The mode for the level off maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_level_off_mode"](arg_newVal.COM_val))
 
     @property
@@ -31569,16 +31569,16 @@ class IProcedureHoldingFigure8(object):
             agcls.evaluate_hresult(self.__dict__["_set_turns"](arg_newVal.COM_val))
 
     @property
-    def refuel_dump_mode(self) -> "AgEAvtrHoldRefuelDumpMode":
+    def refuel_dump_mode(self) -> "AVTR_HOLD_REFUEL_DUMP_MODE":
         """The mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldRefuelDumpMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLD_REFUEL_DUMP_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_refuel_dump_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @refuel_dump_mode.setter
-    def refuel_dump_mode(self, newVal:"AgEAvtrHoldRefuelDumpMode") -> None:
+    def refuel_dump_mode(self, newVal:"AVTR_HOLD_REFUEL_DUMP_MODE") -> None:
         """The mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldRefuelDumpMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLD_REFUEL_DUMP_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_refuel_dump_mode"](arg_newVal.COM_val))
 
     @property
@@ -31718,29 +31718,29 @@ class IProcedureHoldingRacetrack(object):
             return arg_ppVal.python_val
 
     @property
-    def profile_mode(self) -> "AgEAvtrHoldingProfileMode":
+    def profile_mode(self) -> "AVTR_HOLDING_PROFILE_MODE":
         """The mode defines how the aircraft will perform the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingProfileMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_PROFILE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_profile_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @profile_mode.setter
-    def profile_mode(self, newVal:"AgEAvtrHoldingProfileMode") -> None:
+    def profile_mode(self, newVal:"AVTR_HOLDING_PROFILE_MODE") -> None:
         """The mode defines how the aircraft will perform the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingProfileMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_PROFILE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_profile_mode"](arg_newVal.COM_val))
 
     @property
-    def level_off_mode(self) -> "AgEAvtrAltitudeConstraintManeuverMode":
+    def level_off_mode(self) -> "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE":
         """The mode for the level off maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_off_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @level_off_mode.setter
-    def level_off_mode(self, newVal:"AgEAvtrAltitudeConstraintManeuverMode") -> None:
+    def level_off_mode(self, newVal:"AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE") -> None:
         """The mode for the level off maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_level_off_mode"](arg_newVal.COM_val))
 
     @property
@@ -31809,16 +31809,16 @@ class IProcedureHoldingRacetrack(object):
             agcls.evaluate_hresult(self.__dict__["_set_width"](arg_newVal.COM_val))
 
     @property
-    def entry_maneuver(self) -> "AgEAvtrHoldingEntryManeuver":
+    def entry_maneuver(self) -> "AVTR_HOLDING_ENTRY_MANEUVER":
         """Defines how the aircraft will enter the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingEntryManeuver) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_ENTRY_MANEUVER) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_entry_maneuver"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @entry_maneuver.setter
-    def entry_maneuver(self, newVal:"AgEAvtrHoldingEntryManeuver") -> None:
+    def entry_maneuver(self, newVal:"AVTR_HOLDING_ENTRY_MANEUVER") -> None:
         """Defines how the aircraft will enter the holding pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldingEntryManeuver, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLDING_ENTRY_MANEUVER, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_entry_maneuver"](arg_newVal.COM_val))
 
     @property
@@ -31835,16 +31835,16 @@ class IProcedureHoldingRacetrack(object):
             agcls.evaluate_hresult(self.__dict__["_set_turns"](arg_newVal.COM_val))
 
     @property
-    def refuel_dump_mode(self) -> "AgEAvtrHoldRefuelDumpMode":
+    def refuel_dump_mode(self) -> "AVTR_HOLD_REFUEL_DUMP_MODE":
         """The mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldRefuelDumpMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLD_REFUEL_DUMP_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_refuel_dump_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @refuel_dump_mode.setter
-    def refuel_dump_mode(self, newVal:"AgEAvtrHoldRefuelDumpMode") -> None:
+    def refuel_dump_mode(self, newVal:"AVTR_HOLD_REFUEL_DUMP_MODE") -> None:
         """The mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoldRefuelDumpMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOLD_REFUEL_DUMP_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_refuel_dump_mode"](arg_newVal.COM_val))
 
     @property
@@ -31953,16 +31953,16 @@ class IProcedureTransitionToHover(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTransitionToHover.")
     
     @property
-    def altitude_reference(self) -> "AgEAvtrAGLMSL":
+    def altitude_reference(self) -> "AVTR_AGLMSL":
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_reference"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_reference.setter
-    def altitude_reference(self, newVal:"AgEAvtrAGLMSL") -> None:
+    def altitude_reference(self, newVal:"AVTR_AGLMSL") -> None:
         """The altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAGLMSL, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AGLMSL, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_reference"](arg_newVal.COM_val))
 
     @property
@@ -32031,16 +32031,16 @@ class IProcedureTransitionToHover(object):
             return arg_ppVal.python_val
 
     @property
-    def smooth_transition_mode(self) -> "AgEAvtrTransitionToHoverMode":
+    def smooth_transition_mode(self) -> "AVTR_TRANSITION_TO_HOVER_MODE":
         """The transition mode of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrTransitionToHoverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TRANSITION_TO_HOVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_smooth_transition_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @smooth_transition_mode.setter
-    def smooth_transition_mode(self, newVal:"AgEAvtrTransitionToHoverMode") -> None:
+    def smooth_transition_mode(self, newVal:"AVTR_TRANSITION_TO_HOVER_MODE") -> None:
         """The transition mode of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrTransitionToHoverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_TRANSITION_TO_HOVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_smooth_transition_mode"](arg_newVal.COM_val))
 
     def get_as_procedure(self) -> "IProcedure":
@@ -32266,16 +32266,16 @@ class IProcedureHover(object):
             return arg_ppVal.python_val
 
     @property
-    def hover_mode(self) -> "AgEAvtrHoverMode":
+    def hover_mode(self) -> "AVTR_HOVER_MODE":
         """The option to have the aircraft hover in place for a fixed time or to perform a hovering maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_HOVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_hover_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @hover_mode.setter
-    def hover_mode(self, newVal:"AgEAvtrHoverMode") -> None:
+    def hover_mode(self, newVal:"AVTR_HOVER_MODE") -> None:
         """The option to have the aircraft hover in place for a fixed time or to perform a hovering maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrHoverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_HOVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_hover_mode"](arg_newVal.COM_val))
 
     @property
@@ -32292,22 +32292,22 @@ class IProcedureHover(object):
             agcls.evaluate_hresult(self.__dict__["_set_fixed_time"](arg_newVal.COM_val))
 
     @property
-    def heading_mode(self) -> "AgEAvtrVTOLHeadingMode":
+    def heading_mode(self) -> "AVTR_VTOL_HEADING_MODE":
         """The heading mode for the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLHeadingMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_HEADING_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_heading_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @heading_mode.setter
-    def heading_mode(self, newVal:"AgEAvtrVTOLHeadingMode") -> None:
+    def heading_mode(self, newVal:"AVTR_VTOL_HEADING_MODE") -> None:
         """The heading mode for the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLHeadingMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_HEADING_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_heading_mode"](arg_newVal.COM_val))
 
     @property
-    def final_heading_mode(self) -> "AgEAvtrVTOLFinalHeadingMode":
+    def final_heading_mode(self) -> "AVTR_VTOL_FINAL_HEADING_MODE":
         """The mode to define the heading at the end of the hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLFinalHeadingMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_FINAL_HEADING_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_heading_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -32348,29 +32348,29 @@ class IProcedureHover(object):
             return arg_pVal.python_val
 
     @property
-    def final_heading_rate(self) -> "AgEAvtrVTOLRateMode":
+    def final_heading_rate(self) -> "AVTR_VTOL_RATE_MODE":
         """The options to define the heading rate of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_heading_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @final_heading_rate.setter
-    def final_heading_rate(self, newVal:"AgEAvtrVTOLRateMode") -> None:
+    def final_heading_rate(self, newVal:"AVTR_VTOL_RATE_MODE") -> None:
         """The options to define the heading rate of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_heading_rate"](arg_newVal.COM_val))
 
     @property
-    def translation_mode(self) -> "AgEAvtrVTOLTranslationMode":
+    def translation_mode(self) -> "AVTR_VTOL_TRANSLATION_MODE":
         """Define how the aircraft will translate during the hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLTranslationMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_TRANSLATION_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_translation_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @translation_mode.setter
-    def translation_mode(self, newVal:"AgEAvtrVTOLTranslationMode") -> None:
+    def translation_mode(self, newVal:"AVTR_VTOL_TRANSLATION_MODE") -> None:
         """Define how the aircraft will translate during the hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLTranslationMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_TRANSLATION_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_translation_mode"](arg_newVal.COM_val))
 
     @property
@@ -32413,29 +32413,29 @@ class IProcedureHover(object):
             agcls.evaluate_hresult(self.__dict__["_set_range"](arg_newVal.COM_val))
 
     @property
-    def final_course_mode(self) -> "AgEAvtrVTOLTranslationFinalCourseMode":
+    def final_course_mode(self) -> "AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE":
         """The mode to specify the final course at the end of the hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLTranslationFinalCourseMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_course_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @final_course_mode.setter
-    def final_course_mode(self, newVal:"AgEAvtrVTOLTranslationFinalCourseMode") -> None:
+    def final_course_mode(self, newVal:"AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE") -> None:
         """The mode to specify the final course at the end of the hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLTranslationFinalCourseMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_course_mode"](arg_newVal.COM_val))
 
     @property
-    def smooth_translation_mode(self) -> "AgEAvtrVTOLRateMode":
+    def smooth_translation_mode(self) -> "AVTR_VTOL_RATE_MODE":
         """The translation mode of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_smooth_translation_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @smooth_translation_mode.setter
-    def smooth_translation_mode(self, newVal:"AgEAvtrVTOLRateMode") -> None:
+    def smooth_translation_mode(self, newVal:"AVTR_VTOL_RATE_MODE") -> None:
         """The translation mode of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_smooth_translation_mode"](arg_newVal.COM_val))
 
     @property
@@ -32538,22 +32538,22 @@ class IProcedureHoverTranslate(object):
             return arg_ppVal.python_val
 
     @property
-    def heading_mode(self) -> "AgEAvtrVTOLHeadingMode":
+    def heading_mode(self) -> "AVTR_VTOL_HEADING_MODE":
         """The heading mode for the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLHeadingMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_HEADING_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_heading_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @heading_mode.setter
-    def heading_mode(self, newVal:"AgEAvtrVTOLHeadingMode") -> None:
+    def heading_mode(self, newVal:"AVTR_VTOL_HEADING_MODE") -> None:
         """The heading mode for the aircraft."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLHeadingMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_HEADING_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_heading_mode"](arg_newVal.COM_val))
 
     @property
-    def final_heading_mode(self) -> "AgEAvtrVTOLFinalHeadingMode":
+    def final_heading_mode(self) -> "AVTR_VTOL_FINAL_HEADING_MODE":
         """The mode to define the heading at the end of the hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLFinalHeadingMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_FINAL_HEADING_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_heading_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -32594,42 +32594,42 @@ class IProcedureHoverTranslate(object):
             return arg_pVal.python_val
 
     @property
-    def final_heading_rate(self) -> "AgEAvtrVTOLRateMode":
+    def final_heading_rate(self) -> "AVTR_VTOL_RATE_MODE":
         """The options to define the heading rate of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_heading_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @final_heading_rate.setter
-    def final_heading_rate(self, newVal:"AgEAvtrVTOLRateMode") -> None:
+    def final_heading_rate(self, newVal:"AVTR_VTOL_RATE_MODE") -> None:
         """The options to define the heading rate of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_heading_rate"](arg_newVal.COM_val))
 
     @property
-    def final_course_mode(self) -> "AgEAvtrVTOLTranslationFinalCourseMode":
+    def final_course_mode(self) -> "AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE":
         """The mode to specify the final course at the end of the hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLTranslationFinalCourseMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_course_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @final_course_mode.setter
-    def final_course_mode(self, newVal:"AgEAvtrVTOLTranslationFinalCourseMode") -> None:
+    def final_course_mode(self, newVal:"AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE") -> None:
         """The mode to specify the final course at the end of the hover."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLTranslationFinalCourseMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_TRANSLATION_FINAL_COURSE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_course_mode"](arg_newVal.COM_val))
 
     @property
-    def smooth_translation_mode(self) -> "AgEAvtrVTOLRateMode":
+    def smooth_translation_mode(self) -> "AVTR_VTOL_RATE_MODE":
         """The translation mode of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_smooth_translation_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @smooth_translation_mode.setter
-    def smooth_translation_mode(self, newVal:"AgEAvtrVTOLRateMode") -> None:
+    def smooth_translation_mode(self, newVal:"AVTR_VTOL_RATE_MODE") -> None:
         """The translation mode of the aircraft at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_smooth_translation_mode"](arg_newVal.COM_val))
 
     @property
@@ -32707,9 +32707,9 @@ class IProcedureTransitionToForwardFlight(object):
             raise STKAttributeError(attrname + " is not a recognized attribute in IProcedureTransitionToForwardFlight.")
     
     @property
-    def transition_course_mode(self) -> "AgEAvtrVTOLTransitionMode":
+    def transition_course_mode(self) -> "AVTR_VTOL_TRANSITION_MODE":
         """The mode to specify the course of the transition maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLTransitionMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_TRANSITION_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_transition_course_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -32845,16 +32845,16 @@ class IProcedureVerticalTakeoff(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_above_point"](arg_newVal.COM_val))
 
     @property
-    def final_altitude_rate(self) -> "AgEAvtrVTOLRateMode":
+    def final_altitude_rate(self) -> "AVTR_VTOL_RATE_MODE":
         """The altitude rate at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_altitude_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @final_altitude_rate.setter
-    def final_altitude_rate(self, newVal:"AgEAvtrVTOLRateMode") -> None:
+    def final_altitude_rate(self, newVal:"AVTR_VTOL_RATE_MODE") -> None:
         """The altitude rate at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_altitude_rate"](arg_newVal.COM_val))
 
     @property
@@ -32999,16 +32999,16 @@ class IProcedureVerticalLanding(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_above_point"](arg_newVal.COM_val))
 
     @property
-    def final_altitude_rate(self) -> "AgEAvtrVTOLRateMode":
+    def final_altitude_rate(self) -> "AVTR_VTOL_RATE_MODE":
         """The altitude rate at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_final_altitude_rate"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @final_altitude_rate.setter
-    def final_altitude_rate(self, newVal:"AgEAvtrVTOLRateMode") -> None:
+    def final_altitude_rate(self, newVal:"AVTR_VTOL_RATE_MODE") -> None:
         """The altitude rate at the end of the procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrVTOLRateMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VTOL_RATE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_final_altitude_rate"](arg_newVal.COM_val))
 
     @property
@@ -33025,16 +33025,16 @@ class IProcedureVerticalLanding(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_offset"](arg_newVal.COM_val))
 
     @property
-    def heading_mode(self) -> "AgEAvtrVertLandingMode":
+    def heading_mode(self) -> "AVTR_VERT_LANDING_MODE":
         """The mode to define the heading during the landing."""
-        with agmarshall.AgEnum_arg(AgEAvtrVertLandingMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_VERT_LANDING_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_heading_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @heading_mode.setter
-    def heading_mode(self, newVal:"AgEAvtrVertLandingMode") -> None:
+    def heading_mode(self, newVal:"AVTR_VERT_LANDING_MODE") -> None:
         """The mode to define the heading during the landing."""
-        with agmarshall.AgEnum_arg(AgEAvtrVertLandingMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_VERT_LANDING_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_heading_mode"](arg_newVal.COM_val))
 
     def set_heading(self, heading:typing.Any, isMagnetic:bool) -> None:
@@ -33225,29 +33225,29 @@ class IProcedureReferenceState(object):
             agcls.evaluate_hresult(self.__dict__["_set_msl_altitude"](arg_newVal.COM_val))
 
     @property
-    def performance_mode(self) -> "AgEAvtrRefStatePerfMode":
+    def performance_mode(self) -> "AVTR_REF_STATE_PERF_MODE":
         """The type of motion the aircraft is engaged in."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStatePerfMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_PERF_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_performance_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @performance_mode.setter
-    def performance_mode(self, newVal:"AgEAvtrRefStatePerfMode") -> None:
+    def performance_mode(self, newVal:"AVTR_REF_STATE_PERF_MODE") -> None:
         """The type of motion the aircraft is engaged in."""
-        with agmarshall.AgEnum_arg(AgEAvtrRefStatePerfMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_REF_STATE_PERF_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_performance_mode"](arg_newVal.COM_val))
 
     @property
-    def reference_frame(self) -> "AgEAvtrBasicManeuverRefFrame":
+    def reference_frame(self) -> "AVTR_BASIC_MANEUVER_REF_FRAME":
         """The reference frame the aircraft will use."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_reference_frame"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @reference_frame.setter
-    def reference_frame(self, newVal:"AgEAvtrBasicManeuverRefFrame") -> None:
+    def reference_frame(self, newVal:"AVTR_BASIC_MANEUVER_REF_FRAME") -> None:
         """The reference frame the aircraft will use."""
-        with agmarshall.AgEnum_arg(AgEAvtrBasicManeuverRefFrame, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_BASIC_MANEUVER_REF_FRAME, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_reference_frame"](arg_newVal.COM_val))
 
     @property
@@ -33466,16 +33466,16 @@ class IProcedureLaunch(object):
             agcls.evaluate_hresult(self.__dict__["_set_direction_vec_name"](arg_pVal.COM_val))
 
     @property
-    def attitude_mode(self) -> "AgEAvtrLaunchAttitudeMode":
+    def attitude_mode(self) -> "AVTR_LAUNCH_ATTITUDE_MODE":
         """The attitude mode during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrLaunchAttitudeMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_LAUNCH_ATTITUDE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @attitude_mode.setter
-    def attitude_mode(self, newVal:"AgEAvtrLaunchAttitudeMode") -> None:
+    def attitude_mode(self, newVal:"AVTR_LAUNCH_ATTITUDE_MODE") -> None:
         """The attitude mode during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrLaunchAttitudeMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_LAUNCH_ATTITUDE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_mode"](arg_newVal.COM_val))
 
     @property
@@ -33505,9 +33505,9 @@ class IProcedureLaunch(object):
             agcls.evaluate_hresult(self.__dict__["_set_accel_g"](arg_newVal.COM_val))
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -33518,23 +33518,23 @@ class IProcedureLaunch(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the launch airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
     @property
-    def fuel_flow_type(self) -> "AgEAvtrFuelFlowType":
+    def fuel_flow_type(self) -> "AVTR_FUEL_FLOW_TYPE":
         """The fuel flow type of the aircraft during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_flow_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_flow_type.setter
-    def fuel_flow_type(self, newVal:"AgEAvtrFuelFlowType") -> None:
+    def fuel_flow_type(self, newVal:"AVTR_FUEL_FLOW_TYPE") -> None:
         """The fuel flow type of the aircraft during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_flow_type"](arg_newVal.COM_val))
 
     @property
@@ -33901,16 +33901,16 @@ class IProcedureAirwayRouter(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_waypoint_range"](arg_newVal.COM_val))
 
     @property
-    def entry_exit_and_or(self) -> "AgEAvtrAndOr":
+    def entry_exit_and_or(self) -> "AVTR_AND_OR":
         """Define how the two Entry/Exit Waypoint constraints will be considered."""
-        with agmarshall.AgEnum_arg(AgEAvtrAndOr) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AND_OR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_entry_exit_and_or"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @entry_exit_and_or.setter
-    def entry_exit_and_or(self, newVal:"AgEAvtrAndOr") -> None:
+    def entry_exit_and_or(self, newVal:"AVTR_AND_OR") -> None:
         """Define how the two Entry/Exit Waypoint constraints will be considered."""
-        with agmarshall.AgEnum_arg(AgEAvtrAndOr, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_AND_OR, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_entry_exit_and_or"](arg_newVal.COM_val))
 
     @property
@@ -34051,16 +34051,16 @@ class IProcedureAreaTargetSearch(object):
             return arg_ppVal.python_val
 
     @property
-    def procedure_type(self) -> "AgEAvtrFlightLineProcType":
+    def procedure_type(self) -> "AVTR_FLIGHT_LINE_PROC_TYPE":
         """The procedure methodology used to calculate the flight line."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlightLineProcType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FLIGHT_LINE_PROC_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_procedure_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @procedure_type.setter
-    def procedure_type(self, newVal:"AgEAvtrFlightLineProcType") -> None:
+    def procedure_type(self, newVal:"AVTR_FLIGHT_LINE_PROC_TYPE") -> None:
         """The procedure methodology used to calculate the flight line."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlightLineProcType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FLIGHT_LINE_PROC_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_procedure_type"](arg_newVal.COM_val))
 
     @property
@@ -34077,16 +34077,16 @@ class IProcedureAreaTargetSearch(object):
             agcls.evaluate_hresult(self.__dict__["_set_max_separation"](arg_newVal.COM_val))
 
     @property
-    def course_mode(self) -> "AgEAvtrSearchPatternCourseMode":
+    def course_mode(self) -> "AVTR_SEARCH_PATTERN_COURSE_MODE":
         """The mode to determine the course of the search pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrSearchPatternCourseMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_SEARCH_PATTERN_COURSE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_course_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @course_mode.setter
-    def course_mode(self, newVal:"AgEAvtrSearchPatternCourseMode") -> None:
+    def course_mode(self, newVal:"AVTR_SEARCH_PATTERN_COURSE_MODE") -> None:
         """The mode to determine the course of the search pattern."""
-        with agmarshall.AgEnum_arg(AgEAvtrSearchPatternCourseMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_SEARCH_PATTERN_COURSE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_course_mode"](arg_newVal.COM_val))
 
     @property
@@ -34142,16 +34142,16 @@ class IProcedureAreaTargetSearch(object):
             agcls.evaluate_hresult(self.__dict__["_set_must_level_off"](arg_newVal.COM_val))
 
     @property
-    def level_off_mode(self) -> "AgEAvtrAltitudeConstraintManeuverMode":
+    def level_off_mode(self) -> "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE":
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_off_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @level_off_mode.setter
-    def level_off_mode(self, newVal:"AgEAvtrAltitudeConstraintManeuverMode") -> None:
+    def level_off_mode(self, newVal:"AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE") -> None:
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_level_off_mode"](arg_newVal.COM_val))
 
     def copy_procedures(self) -> None:
@@ -34365,16 +34365,16 @@ class IProcedureFormationRecover(object):
             agcls.evaluate_hresult(self.__dict__["_set_altitude_offset"](arg_newVal.COM_val))
 
     @property
-    def fuel_flow_type(self) -> "AgEAvtrFuelFlowType":
+    def fuel_flow_type(self) -> "AVTR_FUEL_FLOW_TYPE":
         """The source used to calculate the fuel flow for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_flow_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_flow_type.setter
-    def fuel_flow_type(self, newVal:"AgEAvtrFuelFlowType") -> None:
+    def fuel_flow_type(self, newVal:"AVTR_FUEL_FLOW_TYPE") -> None:
         """The source used to calculate the fuel flow for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_flow_type"](arg_newVal.COM_val))
 
     @property
@@ -34456,16 +34456,16 @@ class IProcedureFormationRecover(object):
             agcls.evaluate_hresult(self.__dict__["_set_display_step_time"](arg_newVal.COM_val))
 
     @property
-    def flight_mode(self) -> "AgEAvtrPhaseOfFlight":
+    def flight_mode(self) -> "AVTR_PHASE_OF_FLIGHT":
         """The type of performance model that the aircraft will use to fly the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrPhaseOfFlight) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PHASE_OF_FLIGHT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_flight_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @flight_mode.setter
-    def flight_mode(self, newVal:"AgEAvtrPhaseOfFlight") -> None:
+    def flight_mode(self, newVal:"AVTR_PHASE_OF_FLIGHT") -> None:
         """The type of performance model that the aircraft will use to fly the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrPhaseOfFlight, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PHASE_OF_FLIGHT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_flight_mode"](arg_newVal.COM_val))
 
     @property
@@ -34508,16 +34508,16 @@ class IProcedureFormationRecover(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_delay"](arg_newVal.COM_val))
 
     @property
-    def delay_turn_dir(self) -> "AgEAvtrDelayTurnDir":
+    def delay_turn_dir(self) -> "AVTR_DELAY_TURN_DIR":
         """The turn direction of the delay."""
-        with agmarshall.AgEnum_arg(AgEAvtrDelayTurnDir) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_DELAY_TURN_DIR) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_delay_turn_dir"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @delay_turn_dir.setter
-    def delay_turn_dir(self, newVal:"AgEAvtrDelayTurnDir") -> None:
+    def delay_turn_dir(self, newVal:"AVTR_DELAY_TURN_DIR") -> None:
         """The turn direction of the delay."""
-        with agmarshall.AgEnum_arg(AgEAvtrDelayTurnDir, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_DELAY_TURN_DIR, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_delay_turn_dir"](arg_newVal.COM_val))
 
 
@@ -34600,16 +34600,16 @@ class IProcedureInFormation(object):
             return arg_ppProcedure.python_val
 
     @property
-    def flight_mode(self) -> "AgEAvtrPhaseOfFlight":
+    def flight_mode(self) -> "AVTR_PHASE_OF_FLIGHT":
         """The type of performance model that the aircraft will use to fly the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrPhaseOfFlight) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PHASE_OF_FLIGHT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_flight_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @flight_mode.setter
-    def flight_mode(self, newVal:"AgEAvtrPhaseOfFlight") -> None:
+    def flight_mode(self, newVal:"AVTR_PHASE_OF_FLIGHT") -> None:
         """The type of performance model that the aircraft will use to fly the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrPhaseOfFlight, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PHASE_OF_FLIGHT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_flight_mode"](arg_newVal.COM_val))
 
     @property
@@ -34665,29 +34665,29 @@ class IProcedureInFormation(object):
             agcls.evaluate_hresult(self.__dict__["_set_display_step_time"](arg_newVal.COM_val))
 
     @property
-    def trajectory_blending(self) -> "AgEAvtrTrajectoryBlendMode":
+    def trajectory_blending(self) -> "AVTR_TRAJECTORY_BLEND_MODE":
         """The interpolation mode to determine the aircraft's position and velocity."""
-        with agmarshall.AgEnum_arg(AgEAvtrTrajectoryBlendMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_TRAJECTORY_BLEND_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_trajectory_blending"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @trajectory_blending.setter
-    def trajectory_blending(self, newVal:"AgEAvtrTrajectoryBlendMode") -> None:
+    def trajectory_blending(self, newVal:"AVTR_TRAJECTORY_BLEND_MODE") -> None:
         """The interpolation mode to determine the aircraft's position and velocity."""
-        with agmarshall.AgEnum_arg(AgEAvtrTrajectoryBlendMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_TRAJECTORY_BLEND_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_trajectory_blending"](arg_newVal.COM_val))
 
     @property
-    def fuel_flow_type(self) -> "AgEAvtrFuelFlowType":
+    def fuel_flow_type(self) -> "AVTR_FUEL_FLOW_TYPE":
         """The source used to calculate the fuel flow for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_flow_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_flow_type.setter
-    def fuel_flow_type(self, newVal:"AgEAvtrFuelFlowType") -> None:
+    def fuel_flow_type(self, newVal:"AVTR_FUEL_FLOW_TYPE") -> None:
         """The source used to calculate the fuel flow for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_flow_type"](arg_newVal.COM_val))
 
     @property
@@ -34818,29 +34818,29 @@ class IProcedureParallelFlightLine(object):
             return arg_ppVal.python_val
 
     @property
-    def procedure_type(self) -> "AgEAvtrFlightLineProcType":
+    def procedure_type(self) -> "AVTR_FLIGHT_LINE_PROC_TYPE":
         """The procedure methodology used to calculate the flight line."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlightLineProcType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FLIGHT_LINE_PROC_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_procedure_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @procedure_type.setter
-    def procedure_type(self, newVal:"AgEAvtrFlightLineProcType") -> None:
+    def procedure_type(self, newVal:"AVTR_FLIGHT_LINE_PROC_TYPE") -> None:
         """The procedure methodology used to calculate the flight line."""
-        with agmarshall.AgEnum_arg(AgEAvtrFlightLineProcType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FLIGHT_LINE_PROC_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_procedure_type"](arg_newVal.COM_val))
 
     @property
-    def orientation(self) -> "AgEAvtrLineOrientation":
+    def orientation(self) -> "AVTR_LINE_ORIENTATION":
         """The placement of the procedure with respect to the previous flight line."""
-        with agmarshall.AgEnum_arg(AgEAvtrLineOrientation) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_LINE_ORIENTATION) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_orientation"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @orientation.setter
-    def orientation(self, newVal:"AgEAvtrLineOrientation") -> None:
+    def orientation(self, newVal:"AVTR_LINE_ORIENTATION") -> None:
         """The placement of the procedure with respect to the previous flight line."""
-        with agmarshall.AgEnum_arg(AgEAvtrLineOrientation, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_LINE_ORIENTATION, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_orientation"](arg_newVal.COM_val))
 
     @property
@@ -34896,16 +34896,16 @@ class IProcedureParallelFlightLine(object):
             agcls.evaluate_hresult(self.__dict__["_set_must_level_off"](arg_newVal.COM_val))
 
     @property
-    def level_off_mode(self) -> "AgEAvtrAltitudeConstraintManeuverMode":
+    def level_off_mode(self) -> "AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE":
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_level_off_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @level_off_mode.setter
-    def level_off_mode(self, newVal:"AgEAvtrAltitudeConstraintManeuverMode") -> None:
+    def level_off_mode(self, newVal:"AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE") -> None:
         """The level off mode. This is only used when the must level off option is on."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeConstraintManeuverMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_CONSTRAINT_MANEUVER_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_level_off_mode"](arg_newVal.COM_val))
 
     def get_as_procedure(self) -> "IProcedure":
@@ -35081,16 +35081,16 @@ class IProcedureVGTPoint(object):
             agcls.evaluate_hresult(self.__dict__["_set_use_max_point_stop_time"](arg_newVal.COM_val))
 
     @property
-    def fuel_flow_type(self) -> "AgEAvtrFuelFlowType":
+    def fuel_flow_type(self) -> "AVTR_FUEL_FLOW_TYPE":
         """The source used to calculate the fuel flow for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_flow_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_flow_type.setter
-    def fuel_flow_type(self, newVal:"AgEAvtrFuelFlowType") -> None:
+    def fuel_flow_type(self, newVal:"AVTR_FUEL_FLOW_TYPE") -> None:
         """The source used to calculate the fuel flow for the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_flow_type"](arg_newVal.COM_val))
 
     @property
@@ -35120,16 +35120,16 @@ class IProcedureVGTPoint(object):
             agcls.evaluate_hresult(self.__dict__["_set_consider_accel_for_fuel_flow"](arg_newVal.COM_val))
 
     @property
-    def flight_mode(self) -> "AgEAvtrPhaseOfFlight":
+    def flight_mode(self) -> "AVTR_PHASE_OF_FLIGHT":
         """The type of performance model that the aircraft will use to fly the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrPhaseOfFlight) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_PHASE_OF_FLIGHT) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_flight_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @flight_mode.setter
-    def flight_mode(self, newVal:"AgEAvtrPhaseOfFlight") -> None:
+    def flight_mode(self, newVal:"AVTR_PHASE_OF_FLIGHT") -> None:
         """The type of performance model that the aircraft will use to fly the maneuver."""
-        with agmarshall.AgEnum_arg(AgEAvtrPhaseOfFlight, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_PHASE_OF_FLIGHT, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_flight_mode"](arg_newVal.COM_val))
 
     @property
@@ -35536,29 +35536,29 @@ class IProcedureLaunchDynState(object):
             agcls.evaluate_hresult(self.__dict__["_set_launch_time"](arg_newVal.COM_val))
 
     @property
-    def coord_frame(self) -> "AgEAvtrLaunchDynStateCoordFrame":
+    def coord_frame(self) -> "AVTR_LAUNCH_DYN_STATE_COORD_FRAME":
         """The reference coordinate frame for the dyn state launch procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrLaunchDynStateCoordFrame) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_LAUNCH_DYN_STATE_COORD_FRAME) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_coord_frame"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @coord_frame.setter
-    def coord_frame(self, pVal:"AgEAvtrLaunchDynStateCoordFrame") -> None:
+    def coord_frame(self, pVal:"AVTR_LAUNCH_DYN_STATE_COORD_FRAME") -> None:
         """The reference coordinate frame for the dyn state launch procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrLaunchDynStateCoordFrame, pVal) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_LAUNCH_DYN_STATE_COORD_FRAME, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_coord_frame"](arg_pVal.COM_val))
 
     @property
-    def bearing_ref(self) -> "AgEAvtrLaunchDynStateBearingRef":
+    def bearing_ref(self) -> "AVTR_LAUNCH_DYN_STATE_BEARING_REF":
         """The bearing reference for the dyn state launch procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrLaunchDynStateBearingRef) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_LAUNCH_DYN_STATE_BEARING_REF) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_bearing_ref"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @bearing_ref.setter
-    def bearing_ref(self, pVal:"AgEAvtrLaunchDynStateBearingRef") -> None:
+    def bearing_ref(self, pVal:"AVTR_LAUNCH_DYN_STATE_BEARING_REF") -> None:
         """The bearing reference for the dyn state launch procedure."""
-        with agmarshall.AgEnum_arg(AgEAvtrLaunchDynStateBearingRef, pVal) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_LAUNCH_DYN_STATE_BEARING_REF, pVal) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_set_bearing_ref"](arg_pVal.COM_val))
 
     @property
@@ -35588,16 +35588,16 @@ class IProcedureLaunchDynState(object):
             agcls.evaluate_hresult(self.__dict__["_set_launch_elevation"](arg_newVal.COM_val))
 
     @property
-    def attitude_mode(self) -> "AgEAvtrLaunchAttitudeMode":
+    def attitude_mode(self) -> "AVTR_LAUNCH_ATTITUDE_MODE":
         """The attitude mode during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrLaunchAttitudeMode) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_LAUNCH_ATTITUDE_MODE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_attitude_mode"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @attitude_mode.setter
-    def attitude_mode(self, newVal:"AgEAvtrLaunchAttitudeMode") -> None:
+    def attitude_mode(self, newVal:"AVTR_LAUNCH_ATTITUDE_MODE") -> None:
         """The attitude mode during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrLaunchAttitudeMode, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_LAUNCH_ATTITUDE_MODE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_attitude_mode"](arg_newVal.COM_val))
 
     @property
@@ -35627,9 +35627,9 @@ class IProcedureLaunchDynState(object):
             agcls.evaluate_hresult(self.__dict__["_set_accel_g"](arg_newVal.COM_val))
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -35640,23 +35640,23 @@ class IProcedureLaunchDynState(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the launch airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
     @property
-    def fuel_flow_type(self) -> "AgEAvtrFuelFlowType":
+    def fuel_flow_type(self) -> "AVTR_FUEL_FLOW_TYPE":
         """The fuel flow type of the aircraft during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_flow_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_flow_type.setter
-    def fuel_flow_type(self, newVal:"AgEAvtrFuelFlowType") -> None:
+    def fuel_flow_type(self, newVal:"AVTR_FUEL_FLOW_TYPE") -> None:
         """The fuel flow type of the aircraft during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_flow_type"](arg_newVal.COM_val))
 
     @property
@@ -35780,16 +35780,16 @@ class IProcedureLaunchWaypoint(object):
             agcls.evaluate_hresult(self.__dict__["_set_launch_time"](arg_newVal.COM_val))
 
     @property
-    def altitude_ref(self) -> "AgEAvtrAltitudeRef":
+    def altitude_ref(self) -> "AVTR_ALTITUDE_REF":
         """The launch altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeRef) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_REF) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_altitude_ref"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @altitude_ref.setter
-    def altitude_ref(self, newVal:"AgEAvtrAltitudeRef") -> None:
+    def altitude_ref(self, newVal:"AVTR_ALTITUDE_REF") -> None:
         """The launch altitude reference."""
-        with agmarshall.AgEnum_arg(AgEAvtrAltitudeRef, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_ALTITUDE_REF, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_altitude_ref"](arg_newVal.COM_val))
 
     @property
@@ -35845,9 +35845,9 @@ class IProcedureLaunchWaypoint(object):
             agcls.evaluate_hresult(self.__dict__["_set_accel_g"](arg_newVal.COM_val))
 
     @property
-    def airspeed_type(self) -> "AgEAvtrAirspeedType":
+    def airspeed_type(self) -> "AVTR_AIRSPEED_TYPE":
         """The airspeed type."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_airspeed_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
@@ -35858,23 +35858,23 @@ class IProcedureLaunchWaypoint(object):
             agcls.evaluate_hresult(self.__dict__["_get_airspeed"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def set_airspeed(self, airspeedType:"AgEAvtrAirspeedType", airspeed:float) -> None:
+    def set_airspeed(self, airspeedType:"AVTR_AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the launch airspeed."""
-        with agmarshall.AgEnum_arg(AgEAvtrAirspeedType, airspeedType) as arg_airspeedType, \
+        with agmarshall.AgEnum_arg(AVTR_AIRSPEED_TYPE, airspeedType) as arg_airspeedType, \
              agmarshall.DOUBLE_arg(airspeed) as arg_airspeed:
             agcls.evaluate_hresult(self.__dict__["_set_airspeed"](arg_airspeedType.COM_val, arg_airspeed.COM_val))
 
     @property
-    def fuel_flow_type(self) -> "AgEAvtrFuelFlowType":
+    def fuel_flow_type(self) -> "AVTR_FUEL_FLOW_TYPE":
         """The fuel flow type of the aircraft during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType) as arg_pVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_fuel_flow_type"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @fuel_flow_type.setter
-    def fuel_flow_type(self, newVal:"AgEAvtrFuelFlowType") -> None:
+    def fuel_flow_type(self, newVal:"AVTR_FUEL_FLOW_TYPE") -> None:
         """The fuel flow type of the aircraft during the launch."""
-        with agmarshall.AgEnum_arg(AgEAvtrFuelFlowType, newVal) as arg_newVal:
+        with agmarshall.AgEnum_arg(AVTR_FUEL_FLOW_TYPE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_fuel_flow_type"](arg_newVal.COM_val))
 
     @property

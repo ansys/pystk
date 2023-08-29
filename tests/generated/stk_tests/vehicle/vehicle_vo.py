@@ -60,12 +60,12 @@ class VOMarkerHelper(object):
         TryCatchAssertBlock.ExpectedException("read only", action2)
 
         def action3():
-            oMarker.marker_type = AgEMarkerType.eImageFile
+            oMarker.marker_type = MARKER_TYPE.IMAGE_FILE
 
         TryCatchAssertBlock.ExpectedException("read only", action3)
 
         def action4():
-            oMarker.orientation_mode = AgEVOMarkerOrientation.eVOMarkerOrientationAngle
+            oMarker.orientation_mode = VO_MARKER_ORIENTATION.ANGLE
 
         TryCatchAssertBlock.ExpectedException("read-only", action4)
 
@@ -83,15 +83,15 @@ class VOMarkerHelper(object):
         oMarker.visible = True
         Assert.assertTrue(oMarker.visible)
 
-        oMarker.marker_type = AgEMarkerType.eShape
-        Assert.assertEqual(AgEMarkerType.eShape, oMarker.marker_type)
+        oMarker.marker_type = MARKER_TYPE.SHAPE
+        Assert.assertEqual(MARKER_TYPE.SHAPE, oMarker.marker_type)
 
         oShape: "IVOMarkerShape" = clr.CastAs(oMarker.marker_data, IVOMarkerShape)
         Assert.assertIsNotNone(oShape)
-        oShape.style = AgE3dMarkerShape.e3dShapeCircle
-        Assert.assertEqual(AgE3dMarkerShape.e3dShapeCircle, oShape.style)
-        oShape.style = AgE3dMarkerShape.e3dShapePoint
-        Assert.assertEqual(AgE3dMarkerShape.e3dShapePoint, oShape.style)
+        oShape.style = MARKER_SHAPE_3D.SHAPE_CIRCLE
+        Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_CIRCLE, oShape.style)
+        oShape.style = MARKER_SHAPE_3D.SHAPE_POINT
+        Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_POINT, oShape.style)
 
         def action7():
             voMarkerFileX: "IVOMarkerFile" = clr.Convert(oMarker.marker_data, IVOMarkerFile)
@@ -99,13 +99,13 @@ class VOMarkerHelper(object):
         TryCatchAssertBlock.DoAssertInvalidCast(action7)
 
         oMarker.marker_type = (
-            AgEMarkerType.eImageFile
+            MARKER_TYPE.IMAGE_FILE
         )  # This property will not be set to this enum. See below, and see helpstrings.
         oMarker.set_marker_image_file(
             TestBase.PathCombine("STKData", "VO", "Markers", "Ship.ppm")
         )  # This will set the MarkerType to eImageFile
 
-        Assert.assertEqual(AgEMarkerType.eImageFile, oMarker.marker_type)
+        Assert.assertEqual(MARKER_TYPE.IMAGE_FILE, oMarker.marker_type)
         oFile: "IVOMarkerFile" = clr.CastAs(oMarker.marker_data, IVOMarkerFile)
         Assert.assertIsNotNone(oFile)
         self.Test_IAgVOMarkerFile(oFile)
@@ -123,32 +123,32 @@ class VOMarkerHelper(object):
 
         TryCatchAssertBlock.ExpectedException("invalid", action9)
 
-        oMarker.x_origin = AgEVOMarkerOriginType.eRight
-        Assert.assertEqual(AgEVOMarkerOriginType.eRight, oMarker.x_origin)
+        oMarker.x_origin = VO_MARKER_ORIGIN_TYPE.RIGHT
+        Assert.assertEqual(VO_MARKER_ORIGIN_TYPE.RIGHT, oMarker.x_origin)
 
         def action10():
-            oMarker.x_origin = AgEVOMarkerOriginType.eTop
+            oMarker.x_origin = VO_MARKER_ORIGIN_TYPE.TOP
 
         TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action10)
 
-        oMarker.y_origin = AgEVOMarkerOriginType.eBottom
-        Assert.assertEqual(AgEVOMarkerOriginType.eBottom, oMarker.y_origin)
+        oMarker.y_origin = VO_MARKER_ORIGIN_TYPE.BOTTOM
+        Assert.assertEqual(VO_MARKER_ORIGIN_TYPE.BOTTOM, oMarker.y_origin)
 
         def action11():
-            oMarker.y_origin = AgEVOMarkerOriginType.eLeft
+            oMarker.y_origin = VO_MARKER_ORIGIN_TYPE.LEFT
 
         TryCatchAssertBlock.ExpectedException("One or more arguments are invalid", action11)
 
-        oMarker.orientation_mode = AgEVOMarkerOrientation.eVOMarkerOrientationNone
-        Assert.assertEqual(AgEVOMarkerOrientation.eVOMarkerOrientationNone, oMarker.orientation_mode)
+        oMarker.orientation_mode = VO_MARKER_ORIENTATION.NONE
+        Assert.assertEqual(VO_MARKER_ORIENTATION.NONE, oMarker.orientation_mode)
 
         def action12():
             oMarker.angle = 1.23
 
         TryCatchAssertBlock.ExpectedException("read only", action12)
         if bIsVehicle:
-            oMarker.orientation_mode = AgEVOMarkerOrientation.eVOMarkerOrientationFollowDirection
-            Assert.assertEqual(AgEVOMarkerOrientation.eVOMarkerOrientationFollowDirection, oMarker.orientation_mode)
+            oMarker.orientation_mode = VO_MARKER_ORIENTATION.FOLLOW_DIRECTION
+            Assert.assertEqual(VO_MARKER_ORIENTATION.FOLLOW_DIRECTION, oMarker.orientation_mode)
 
             oMarker.angle = 1.23456
             Assert.assertEqual(1.23456, oMarker.angle)
@@ -161,12 +161,12 @@ class VOMarkerHelper(object):
         else:
 
             def action14():
-                oMarker.orientation_mode = AgEVOMarkerOrientation.eVOMarkerOrientationFollowDirection
+                oMarker.orientation_mode = VO_MARKER_ORIENTATION.FOLLOW_DIRECTION
 
             TryCatchAssertBlock.ExpectedException("Only supported for vehicle", action14)
 
-        oMarker.orientation_mode = AgEVOMarkerOrientation.eVOMarkerOrientationAngle
-        Assert.assertEqual(AgEVOMarkerOrientation.eVOMarkerOrientationAngle, oMarker.orientation_mode)
+        oMarker.orientation_mode = VO_MARKER_ORIENTATION.ANGLE
+        Assert.assertEqual(VO_MARKER_ORIENTATION.ANGLE, oMarker.orientation_mode)
 
         oMarker.angle = 1.23456
         Assert.assertEqual(1.23456, oMarker.angle)
@@ -208,7 +208,7 @@ class VOModelHelper(object):
         TryCatchAssertBlock.DoAssert("The Scale is readonly when Visible flag is False.", action16)
 
         def action17():
-            oModel.model_type = AgEModelType.eModelFile
+            oModel.model_type = MODEL_TYPE.FILE
 
         TryCatchAssertBlock.DoAssert("The ModelType is readonly when Visible flag is False.", action17)
 
@@ -228,9 +228,9 @@ class VOModelHelper(object):
 
         # ModelType (File)
         self.m_logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = AgEModelType.eModelFile
+        oModel.model_type = MODEL_TYPE.FILE
         self.m_logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(AgEModelType.eModelFile, oModel.model_type)
+        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
         oModelFile: "IVOModelFile" = clr.CastAs(oModel.model_data, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
@@ -254,9 +254,9 @@ class VOModelHelper(object):
         Assert.assertEqual(TestBase.GetScenarioFile("VO", "Models", "satellite.dae"), oModelFile.file_path)
 
         # ModelType (List)
-        oModel.model_type = AgEModelType.eModelList
+        oModel.model_type = MODEL_TYPE.LIST
         self.m_logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(AgEModelType.eModelList, oModel.model_type)
+        Assert.assertEqual(MODEL_TYPE.LIST, oModel.model_type)
         oModelList: "IVOModelCollection" = clr.CastAs(oModel.model_data, IVOModelCollection)
         Assert.assertIsNotNone(oModelList)
         iSize: int = oModelList.count
@@ -357,12 +357,12 @@ class VOModelHelper(object):
         # invoked. This way the users do not have to call EndUpdate
         # after setting a new model to set desired articulations.
         # ------------------------------------------------------------
-        oModel.model_type = AgEModelType.eModelFile
-        Assert.assertTrue((oModel.model_type == AgEModelType.eModelFile))
+        oModel.model_type = MODEL_TYPE.FILE
+        Assert.assertTrue((oModel.model_type == MODEL_TYPE.FILE))
         oldModel: str = (clr.CastAs(oModel.model_data, IVOModelFile)).filename
         self._root.begin_update()
         try:
-            oModel.model_type = AgEModelType.eModelFile
+            oModel.model_type = MODEL_TYPE.FILE
             modelFile: "IVOModelFile" = clr.CastAs(oModel.model_data, IVOModelFile)
             modelFile.filename = "\\STKData\\VO\\Models\\Space\\hubble.mdl"
 
@@ -371,7 +371,7 @@ class VOModelHelper(object):
         finally:
             self._root.end_update()
 
-        oModel.model_type = AgEModelType.eModelList
+        oModel.model_type = MODEL_TYPE.LIST
         modelList: "IVOModelCollection" = clr.CastAs(oModel.model_data, IVOModelCollection)
         while modelList.count > 1:
             modelList.remove((modelList.count - 1))
@@ -389,7 +389,7 @@ class VOModelHelper(object):
 
         finally:
             self._root.end_update()
-            oModel.model_type = AgEModelType.eModelFile
+            oModel.model_type = MODEL_TYPE.FILE
 
     # endregion
 
@@ -713,7 +713,7 @@ class VOTargetModelHelper(object):
         TryCatchAssertBlock.DoAssert("Allows to set illegal value!", action27)
 
         def action28():
-            oModel.gltf_reflection_map_type = AgEModelGltfReflectionMapType.eModelGltfProceduralEnvironment
+            oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
 
         # GLTF
 
@@ -721,18 +721,16 @@ class VOTargetModelHelper(object):
         (
             clr.CastAs(oModel.model_data, IVOModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
-        oModel.gltf_reflection_map_type = AgEModelGltfReflectionMapType.eModelGltfProceduralEnvironment
-        Assert.assertEqual(
-            AgEModelGltfReflectionMapType.eModelGltfProceduralEnvironment, oModel.gltf_reflection_map_type
-        )
+        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
+        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         def action29():
             x: "IVOModelGltfImageBased" = oModel.gltf_image_based
 
         TryCatchAssertBlock.ExpectedException("is not set to Image Based", action29)
 
-        oModel.gltf_reflection_map_type = AgEModelGltfReflectionMapType.eModelGltfImageBased
-        Assert.assertEqual(AgEModelGltfReflectionMapType.eModelGltfImageBased, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
+        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
         gltfImageBased: "IVOModelGltfImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
@@ -1305,7 +1303,7 @@ class VOOffsetLabelHelper(object):
             TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action43)
 
             def action44():
-                oLabel.offset_frame = AgEOffsetFrameType.eOffsetFrameCartesian
+                oLabel.offset_frame = OFFSET_FRAME_TYPE.CARTESIAN
 
             # OffsetFrame
             TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action44)
@@ -1336,7 +1334,7 @@ class VOOffsetLabelHelper(object):
             Assert.assertEqual(False, oLabel.enable)
 
             def action48():
-                oLabel.offset_frame = AgEOffsetFrameType.eOffsetFrameCartesian
+                oLabel.offset_frame = OFFSET_FRAME_TYPE.CARTESIAN
 
             # OffsetFrame
             TryCatchAssertBlock.DoAssert("Should not allow to change a read-only property!", action48)
@@ -1364,9 +1362,9 @@ class VOOffsetLabelHelper(object):
             Assert.assertEqual(True, oLabel.enable)
             # OffsetFrame (Cartesian)
             self.m_logger.WriteLine6("\t\t\tThe current OffsetFrame is: {0}", oLabel.offset_frame)
-            oLabel.offset_frame = AgEOffsetFrameType.eOffsetFrameCartesian
+            oLabel.offset_frame = OFFSET_FRAME_TYPE.CARTESIAN
             self.m_logger.WriteLine6("\t\t\tThe new OffsetFrame is: {0}", oLabel.offset_frame)
-            Assert.assertEqual(AgEOffsetFrameType.eOffsetFrameCartesian, oLabel.offset_frame)
+            Assert.assertEqual(OFFSET_FRAME_TYPE.CARTESIAN, oLabel.offset_frame)
             # X
             self.m_logger.WriteLine6("\t\t\t\tThe current X is: {0}", oLabel.x)
             oLabel.x = 10.1
@@ -1398,9 +1396,9 @@ class VOOffsetLabelHelper(object):
 
             TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value!", action54)
             # OffsetFrame (Pixel)
-            oLabel.offset_frame = AgEOffsetFrameType.eOffsetFramePixel
+            oLabel.offset_frame = OFFSET_FRAME_TYPE.PIXEL
             self.m_logger.WriteLine6("\t\t\tThe new OffsetFrame is: {0}", oLabel.offset_frame)
-            Assert.assertEqual(AgEOffsetFrameType.eOffsetFramePixel, oLabel.offset_frame)
+            Assert.assertEqual(OFFSET_FRAME_TYPE.PIXEL, oLabel.offset_frame)
             # X
             self.m_logger.WriteLine6("\t\t\t\tThe current X is: {0}", oLabel.x)
             oLabel.x = 13.13
@@ -1598,13 +1596,13 @@ class VOBorderWallHelper(object):
         TryCatchAssertBlock.DoAssert("The Use Border Wall should be readonly.", action64)
 
         def action65():
-            oWall.upper_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefMSL
+            oWall.upper_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_MSL
 
         # UpperEdgeAltRef
         TryCatchAssertBlock.DoAssert("The Upper Edge should be readonly.", action65)
 
         def action66():
-            oWall.lower_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefTerrain
+            oWall.lower_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_TERRAIN
 
         # LowerEdgeAltRef
         TryCatchAssertBlock.DoAssert("The Lower Edge should be readonly.", action66)
@@ -1658,13 +1656,13 @@ class VOBorderWallHelper(object):
         Assert.assertEqual(False, oWall.use_border_wall)
 
         def action73():
-            oWall.upper_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefMSL
+            oWall.upper_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_MSL
 
         # UpperEdgeAltRef
         TryCatchAssertBlock.DoAssert("The Upper Edge should be readonly when Use Border Wall flag is False.", action73)
 
         def action74():
-            oWall.lower_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefTerrain
+            oWall.lower_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_TERRAIN
 
         # LowerEdgeAltRef
         TryCatchAssertBlock.DoAssert("The Lower Edge should be readonly when Use Border Wall flag is False.", action74)
@@ -1731,35 +1729,35 @@ class VOBorderWallHelper(object):
         # IsAltRefTypeSupported
         self.m_logger.WriteLine4(
             "\tIsAltRefTypeSupported eAltRefMSL is: {0}",
-            oWall.is_alt_ref_type_supported(AgEBorderWallUpperLowerEdgeAltRef.eAltRefMSL),
+            oWall.is_alt_ref_type_supported(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_MSL),
         )
         self.m_logger.WriteLine4(
             "\tIsAltRefTypeSupported eAltRefObject is: {0}",
-            oWall.is_alt_ref_type_supported(AgEBorderWallUpperLowerEdgeAltRef.eAltRefObject),
+            oWall.is_alt_ref_type_supported(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_OBJECT),
         )
         self.m_logger.WriteLine4(
             "\tIsAltRefTypeSupported eAltRefTerrain is: {0}",
-            oWall.is_alt_ref_type_supported(AgEBorderWallUpperLowerEdgeAltRef.eAltRefTerrain),
+            oWall.is_alt_ref_type_supported(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_TERRAIN),
         )
         self.m_logger.WriteLine4(
             "\tIsAltRefTypeSupported eAltRefWGS84 is: {0}",
-            oWall.is_alt_ref_type_supported(AgEBorderWallUpperLowerEdgeAltRef.eAltRefWGS84),
+            oWall.is_alt_ref_type_supported(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_WGS84),
         )
 
         # UpperEdgeAltRef
         self.m_logger.WriteLine6("\t\tThe current UpperEdge is: {0}", oWall.upper_edge_alt_ref)
-        oWall.upper_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefMSL
+        oWall.upper_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_MSL
         self.m_logger.WriteLine6("\t\tThe new UpperEdge is: {0}", oWall.upper_edge_alt_ref)
-        Assert.assertEqual(AgEBorderWallUpperLowerEdgeAltRef.eAltRefMSL, oWall.upper_edge_alt_ref)
-        oWall.upper_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefObject
+        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_MSL, oWall.upper_edge_alt_ref)
+        oWall.upper_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_OBJECT
         self.m_logger.WriteLine6("\t\tThe new UpperEdge is: {0}", oWall.upper_edge_alt_ref)
-        Assert.assertEqual(AgEBorderWallUpperLowerEdgeAltRef.eAltRefObject, oWall.upper_edge_alt_ref)
-        oWall.upper_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefTerrain
+        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_OBJECT, oWall.upper_edge_alt_ref)
+        oWall.upper_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_TERRAIN
         self.m_logger.WriteLine6("\t\tThe new UpperEdge is: {0}", oWall.upper_edge_alt_ref)
-        Assert.assertEqual(AgEBorderWallUpperLowerEdgeAltRef.eAltRefTerrain, oWall.upper_edge_alt_ref)
-        oWall.upper_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefWGS84
+        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_TERRAIN, oWall.upper_edge_alt_ref)
+        oWall.upper_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_WGS84
         self.m_logger.WriteLine6("\t\tThe new UpperEdge is: {0}", oWall.upper_edge_alt_ref)
-        Assert.assertEqual(AgEBorderWallUpperLowerEdgeAltRef.eAltRefWGS84, oWall.upper_edge_alt_ref)
+        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_WGS84, oWall.upper_edge_alt_ref)
         # UpperEdgeHeight
         self.m_logger.WriteLine6("\t\tThe current UpperEdge Height is: {0}", oWall.upper_edge_height)
         oWall.upper_edge_height = 123.4567
@@ -1773,18 +1771,18 @@ class VOBorderWallHelper(object):
         TryCatchAssertBlock.DoAssert("Cannot set value out of range!", action81)
         # LowerEdgeAltRef
         self.m_logger.WriteLine6("\t\tThe current LowerEdge is: {0}", oWall.lower_edge_alt_ref)
-        oWall.lower_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefMSL
+        oWall.lower_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_MSL
         self.m_logger.WriteLine6("\t\tThe new LowerEdge is: {0}", oWall.lower_edge_alt_ref)
-        Assert.assertEqual(AgEBorderWallUpperLowerEdgeAltRef.eAltRefMSL, oWall.lower_edge_alt_ref)
-        oWall.lower_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefObject
+        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_MSL, oWall.lower_edge_alt_ref)
+        oWall.lower_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_OBJECT
         self.m_logger.WriteLine6("\t\tThe new LowerEdge is: {0}", oWall.lower_edge_alt_ref)
-        Assert.assertEqual(AgEBorderWallUpperLowerEdgeAltRef.eAltRefObject, oWall.lower_edge_alt_ref)
-        oWall.lower_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefTerrain
+        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_OBJECT, oWall.lower_edge_alt_ref)
+        oWall.lower_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_TERRAIN
         self.m_logger.WriteLine6("\t\tThe new LowerEdge is: {0}", oWall.lower_edge_alt_ref)
-        Assert.assertEqual(AgEBorderWallUpperLowerEdgeAltRef.eAltRefTerrain, oWall.lower_edge_alt_ref)
-        oWall.lower_edge_alt_ref = AgEBorderWallUpperLowerEdgeAltRef.eAltRefWGS84
+        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_TERRAIN, oWall.lower_edge_alt_ref)
+        oWall.lower_edge_alt_ref = BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_WGS84
         self.m_logger.WriteLine6("\t\tThe new LowerEdge is: {0}", oWall.lower_edge_alt_ref)
-        Assert.assertEqual(AgEBorderWallUpperLowerEdgeAltRef.eAltRefWGS84, oWall.lower_edge_alt_ref)
+        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALT_REF.ALT_REF_WGS84, oWall.lower_edge_alt_ref)
         # LowerEdgeHeight
         self.m_logger.WriteLine6("\t\tThe current LowerEdge Height is: {0}", oWall.lower_edge_height)
         oWall.lower_edge_height = 123.4567
@@ -1976,39 +1974,39 @@ class VOLabelSwapDistanceHelper(object):
         # DistanceLevel
         self.m_logger.WriteLine6("\tThe current DistanceLevel is: {0}", oSwapDist.distance_level)
         # SetDistanceLevel (eSwapAll)
-        oSwapDist.set_distance_level(AgEVOLabelSwapDistance.eSwapAll)
+        oSwapDist.set_distance_level(VO_LABEL_SWAP_DISTANCE.SWAP_ALL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(AgEVOLabelSwapDistance.eSwapAll, oSwapDist.distance_level)
+        Assert.assertEqual(VO_LABEL_SWAP_DISTANCE.SWAP_ALL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (eSwapMarker)
-        oSwapDist.set_distance_level(AgEVOLabelSwapDistance.eSwapMarker)
+        oSwapDist.set_distance_level(VO_LABEL_SWAP_DISTANCE.SWAP_MARKER)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(AgEVOLabelSwapDistance.eSwapMarker, oSwapDist.distance_level)
+        Assert.assertEqual(VO_LABEL_SWAP_DISTANCE.SWAP_MARKER, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (eSwapMarkerLabel)
-        oSwapDist.set_distance_level(AgEVOLabelSwapDistance.eSwapMarkerLabel)
+        oSwapDist.set_distance_level(VO_LABEL_SWAP_DISTANCE.SWAP_MARKER_LABEL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(AgEVOLabelSwapDistance.eSwapMarkerLabel, oSwapDist.distance_level)
+        Assert.assertEqual(VO_LABEL_SWAP_DISTANCE.SWAP_MARKER_LABEL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (eSwapModelLabel)
-        oSwapDist.set_distance_level(AgEVOLabelSwapDistance.eSwapModelLabel)
+        oSwapDist.set_distance_level(VO_LABEL_SWAP_DISTANCE.SWAP_MODEL_LABEL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(AgEVOLabelSwapDistance.eSwapModelLabel, oSwapDist.distance_level)
+        Assert.assertEqual(VO_LABEL_SWAP_DISTANCE.SWAP_MODEL_LABEL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (eSwapPoint)
-        oSwapDist.set_distance_level(AgEVOLabelSwapDistance.eSwapPoint)
+        oSwapDist.set_distance_level(VO_LABEL_SWAP_DISTANCE.SWAP_POINT)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(AgEVOLabelSwapDistance.eSwapPoint, oSwapDist.distance_level)
+        Assert.assertEqual(VO_LABEL_SWAP_DISTANCE.SWAP_POINT, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
 
         def action88():
-            oSwapDist.set_distance_level(AgEVOLabelSwapDistance.eSwapCustom)
+            oSwapDist.set_distance_level(VO_LABEL_SWAP_DISTANCE.SWAP_CUSTOM)
 
         # SetDistanceLevel (eSwapCustom)
         TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action88)
 
         def action89():
-            oSwapDist.set_distance_level(AgEVOLabelSwapDistance.eSwapUnknown)
+            oSwapDist.set_distance_level(VO_LABEL_SWAP_DISTANCE.SWAP_UNKNOWN)
 
         # SetDistanceLevel (eSwapUnknown)
         TryCatchAssertBlock.DoAssert("Should not allow to set an illegal value.", action89)
@@ -2132,30 +2130,28 @@ class VOVectorsHelper(object):
         self.m_logger.WriteLine3("The AvailableCrdns array contains {0} elements", len(arAvailable))
 
         def action91():
-            refCrdn: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.add(
-                AgEGeometricElemType.eAngleElem, "bogus"
-            )
+            refCrdn: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.add(GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "bogus")
 
         TryCatchAssertBlock.DoAssert("Invalid object.", action91)
 
         def action92():
             oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(
-                clr.Convert((-1), AgEGeometricElemType), "bogus"
+                clr.Convert((-1), GEOMETRIC_ELEM_TYPE), "bogus"
             )
 
-        TryCatchAssertBlock.DoAssert("Invalid AgEGeometricElemType", action92)
+        TryCatchAssertBlock.DoAssert("Invalid GEOMETRIC_ELEM_TYPE", action92)
 
         def action93():
             oElement2: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(
-                AgEGeometricElemType.eAngleElem, ""
+                GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, ""
             )
 
         TryCatchAssertBlock.DoAssert("Invalid crdn name", action93)
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
-            if eType == AgEGeometricElemType.eAngleElem:
+            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            if eType == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
                 refCrdn: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.add(eType, str(arAvailable[iIndex][0]))
                 Assert.assertIsNotNone(refCrdn)
                 self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", refCrdn.name, refCrdn.type_id)
@@ -2169,8 +2165,8 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
-            if eType == AgEGeometricElemType.eAxesElem:
+            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            if eType == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
                 refCrdn: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.add(eType, str(arAvailable[iIndex][0]))
                 Assert.assertIsNotNone(refCrdn)
                 self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", refCrdn.name, refCrdn.type_id)
@@ -2184,8 +2180,8 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
-            if eType == AgEGeometricElemType.ePlaneElem:
+            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            if eType == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
                 refCrdn: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.add(eType, str(arAvailable[iIndex][0]))
                 Assert.assertIsNotNone(refCrdn)
                 self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", refCrdn.name, refCrdn.type_id)
@@ -2199,8 +2195,8 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
-            if eType == AgEGeometricElemType.ePointElem:
+            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            if eType == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
                 refCrdn: "IVOReferenceAnalysisWorkbenchComponent" = oCollection.add(eType, str(arAvailable[iIndex][0]))
                 Assert.assertIsNotNone(refCrdn)
                 self.m_logger.WriteLine7("\tAdded element: Name = {0}, Type = {1}", refCrdn.name, refCrdn.type_id)
@@ -2217,8 +2213,8 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "AgEGeometricElemType" = clr.Convert(int(arAvailable[iIndex][1]), AgEGeometricElemType)
-            if eType == AgEGeometricElemType.eVectorElem:
+            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            if eType == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
                 oVector: "IVOReferenceVectorGeometryToolVector" = clr.Convert(
                     oCollection.add(eType, str(arAvailable[iIndex][0])), IVOReferenceVectorGeometryToolVector
                 )
@@ -2283,15 +2279,15 @@ class VOVectorsHelper(object):
             if not bCaught:
                 Assert.fail("The LabelVisible should be readonly.")
 
-            if refCrdn.type_id == AgEGeometricElemType.eAngleElem:
+            if refCrdn.type_id == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
                 self.RefCrdnAngleReadOnly(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolAngle))
-            elif refCrdn.type_id == AgEGeometricElemType.eAxesElem:
+            elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
                 self.RefCrdnAxesReadOnly(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolAxes))
-            elif refCrdn.type_id == AgEGeometricElemType.ePlaneElem:
+            elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
                 self.RefCrdnPlaneReadOnly(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolPlane))
-            elif refCrdn.type_id == AgEGeometricElemType.ePointElem:
+            elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
                 self.RefCrdnPointReadOnly(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolPoint))
-            elif refCrdn.type_id == AgEGeometricElemType.eVectorElem:
+            elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
                 self.RefCrdnVectorReadOnly(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolVector))
             else:
                 Assert.fail("Invalid TypeID!")
@@ -2312,16 +2308,16 @@ class VOVectorsHelper(object):
             refCrdn.label_visible = True
             self.m_logger.WriteLine4("\tThe new LabelVisible flag is: {0}", refCrdn.label_visible)
             Assert.assertEqual(True, refCrdn.label_visible)
-            if refCrdn.type_id == AgEGeometricElemType.eAngleElem:
+            if refCrdn.type_id == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
                 self.RefCrdnAngle(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolAngle))
-            elif refCrdn.type_id == AgEGeometricElemType.eAxesElem:
+            elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
                 self.RefCrdnAxes(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolAxes))
-            elif refCrdn.type_id == AgEGeometricElemType.ePlaneElem:
+            elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
                 self.RefCrdnPlane(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolPlane))
-            elif refCrdn.type_id == AgEGeometricElemType.ePointElem:
+            elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
                 # 38619: Earth Center point freezes STK
                 self.RefCrdnPoint(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolPoint))
-            elif refCrdn.type_id == AgEGeometricElemType.eVectorElem:
+            elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
                 self.RefCrdnVector(clr.Convert(refCrdn, IVOReferenceVectorGeometryToolVector))
             else:
                 Assert.fail("Invalid TypeID!")
@@ -2349,12 +2345,12 @@ class VOVectorsHelper(object):
         self.m_logger.WriteLine3("After RemoveByName() the Vector Collection contains: {0} elements", oCollection.count)
 
         def action95():
-            oCollection.remove_by_name(clr.Convert((-1), AgEGeometricElemType), "bogus")
+            oCollection.remove_by_name(clr.Convert((-1), GEOMETRIC_ELEM_TYPE), "bogus")
 
         TryCatchAssertBlock.DoAssert("Invalid Remove type", action95)
 
         def action96():
-            oCollection.remove_by_name(AgEGeometricElemType.eAngleElem, "bogus")
+            oCollection.remove_by_name(GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "bogus")
 
         TryCatchAssertBlock.DoAssert("Invalid Remove name", action96)
 
@@ -2500,7 +2496,7 @@ class VOVectorsHelper(object):
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
         try:
             bCaught = False
-            oAxes.connect = AgEVectorAxesConnectType.eConnectLine
+            oAxes.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
 
         except Exception as e:
             bCaught = True
@@ -2572,7 +2568,7 @@ class VOVectorsHelper(object):
 
         try:
             bCaught = False
-            oAxes.connect = AgEVectorAxesConnectType.eConnectLine
+            oAxes.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
 
         except Exception as e:
             bCaught = True
@@ -2603,9 +2599,9 @@ class VOVectorsHelper(object):
         Assert.assertEqual(False, oAxes.transparent)
         # Connect
         self.m_logger.WriteLine6("\t\tThe current Connect is: {0}", oAxes.connect)
-        oAxes.connect = AgEVectorAxesConnectType.eConnectTrace
+        oAxes.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE
         self.m_logger.WriteLine6("\t\tThe new Connect is: {0}", oAxes.connect)
-        Assert.assertEqual(AgEVectorAxesConnectType.eConnectTrace, oAxes.connect)
+        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE, oAxes.connect)
         # Duration
         self.m_logger.WriteLine6("\t\tThe current Duration is: {0}", oAxes.duration)
         oAxes.duration = 12345.6789
@@ -2887,7 +2883,7 @@ class VOVectorsHelper(object):
         bCaught: bool = False
         try:
             bCaught = False
-            oPoint.trajectory_type = AgETrajectoryType.eTrajTrace
+            oPoint.trajectory_type = TRAJECTORY_TYPE.TRACE
 
         except Exception as e:
             bCaught = True
@@ -2970,9 +2966,9 @@ class VOVectorsHelper(object):
         self.m_logger.WriteLine("\tRefCrdnPoint test:")
         # TrajectoryType
         self.m_logger.WriteLine6("\t\tThe current TrajectoryType is: {0}", oPoint.trajectory_type)
-        oPoint.trajectory_type = AgETrajectoryType.eTrajLine
+        oPoint.trajectory_type = TRAJECTORY_TYPE.LINE
         self.m_logger.WriteLine6("\t\tThe new TrajectoryType flag is: {0}", oPoint.trajectory_type)
-        Assert.assertEqual(AgETrajectoryType.eTrajLine, oPoint.trajectory_type)
+        Assert.assertEqual(TRAJECTORY_TYPE.LINE, oPoint.trajectory_type)
         # Size
         self.m_logger.WriteLine6("\t\tThe current Size is: {0}", oPoint.size)
         oPoint.size = 3.21
@@ -3169,7 +3165,7 @@ class VOVectorsHelper(object):
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
 
         def action103():
-            oVector.connect = AgEVectorAxesConnectType.eConnectLine
+            oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
 
         # Connect
         TryCatchAssertBlock.DoAssert("The property should be readonly.", action103)
@@ -3357,7 +3353,7 @@ class VOVectorsHelper(object):
         TryCatchAssertBlock.DoAssert("The Duration should be readonly.", action117)
 
         def action118():
-            oVector.connect = AgEVectorAxesConnectType.eConnectLine
+            oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_LINE
 
         TryCatchAssertBlock.DoAssert("The Connect should be readonly.", action118)
 
@@ -3376,9 +3372,9 @@ class VOVectorsHelper(object):
         Assert.assertEqual(False, oVector.transparent)
         # Connect
         self.m_logger.WriteLine6("\t\tThe current Connect is: {0}", oVector.connect)
-        oVector.connect = AgEVectorAxesConnectType.eConnectTrace
+        oVector.connect = VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE
         self.m_logger.WriteLine6("\t\tThe new Connect is: {0}", oVector.connect)
-        Assert.assertEqual(AgEVectorAxesConnectType.eConnectTrace, oVector.connect)
+        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.CONNECT_TRACE, oVector.connect)
         # Duration
         self.m_logger.WriteLine6("\t\tThe current Duration is: {0}", oVector.duration)
         oVector.duration = 12345.6789
@@ -3543,8 +3539,8 @@ class VOVaporTrailHelper(object):
         # Load a VOModel with attached points
         oModel.visible = True
         Assert.assertTrue(oModel.visible)
-        oModel.model_type = AgEModelType.eModelFile
-        Assert.assertEqual(AgEModelType.eModelFile, oModel.model_type)
+        oModel.model_type = MODEL_TYPE.FILE
+        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
         oModelFile: "IVOModelFile" = clr.Convert(oModel.model_data, IVOModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\tThe current VOModel file is: {0}", oModelFile.filename)

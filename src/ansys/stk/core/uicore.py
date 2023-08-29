@@ -2,9 +2,9 @@
 #          Copyright 2020-2020, Analytical Graphics, Inc.
 ################################################################################ 
 
-__all__ = ["AgEArrangeStyle", "AgEDockStyle", "AgEFloatState", "AgEWindowService", "AgEWindowState", "IUiToolbar", "IUiToolbarCollection", 
-"IUiWindow", "IUiWindowGlobeObject", "IUiWindowMapObject", "IUiWindowsCollection", "UiToolbar", "UiToolbarCollection", "UiWindow", 
-"UiWindowGlobeObject", "UiWindowMapObject", "UiWindowsCollection"]
+__all__ = ["ARRANGE_STYLE", "DOCK_STYLE", "FLOAT_STATE", "IUiToolbar", "IUiToolbarCollection", "IUiWindow", "IUiWindowGlobeObject", 
+"IUiWindowMapObject", "IUiWindowsCollection", "UiToolbar", "UiToolbarCollection", "UiWindow", "UiWindowGlobeObject", "UiWindowMapObject", 
+"UiWindowsCollection", "WINDOW_SERVICE", "WINDOW_STATE"]
 
 import typing
 
@@ -12,12 +12,12 @@ from ctypes   import byref, POINTER
 from enum     import IntEnum
 
 try:
-    from numpy import ndarray # noqa
+    from numpy import ndarray 
 except ModuleNotFoundError:
     pass
     
 try:
-    from pandas import DataFrame # noqa
+    from pandas import DataFrame 
 except ModuleNotFoundError:
     pass
 
@@ -32,83 +32,83 @@ from .utilities.exceptions import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class AgEWindowService(IntEnum):
+class WINDOW_SERVICE(IntEnum):
     """Well-known types of services."""
     # A 2D window.
-    eWindowService2DWindow = 1
+    SERVICE2_D_WINDOW = 1
     # A 3D window.
-    eWindowService3DWindow = 2
+    SERVICE3_D_WINDOW = 2
 
-AgEWindowService.eWindowService2DWindow.__doc__ = "A 2D window."
-AgEWindowService.eWindowService3DWindow.__doc__ = "A 3D window."
+WINDOW_SERVICE.SERVICE2_D_WINDOW.__doc__ = "A 2D window."
+WINDOW_SERVICE.SERVICE3_D_WINDOW.__doc__ = "A 3D window."
 
-agcls.AgTypeNameMap["AgEWindowService"] = AgEWindowService
+agcls.AgTypeNameMap["WINDOW_SERVICE"] = WINDOW_SERVICE
 
-class AgEWindowState(IntEnum):
+class WINDOW_STATE(IntEnum):
     """Window states."""
     # Window is maximized.
-    eWindowStateMaximized = 1
+    MAXIMIZED = 1
     # Window is minimized.
-    eWindowStateMinimized = 2
+    MINIMIZED = 2
     # Normal window state.
-    eWindowStateNormal = 3
+    NORMAL = 3
 
-AgEWindowState.eWindowStateMaximized.__doc__ = "Window is maximized."
-AgEWindowState.eWindowStateMinimized.__doc__ = "Window is minimized."
-AgEWindowState.eWindowStateNormal.__doc__ = "Normal window state."
+WINDOW_STATE.MAXIMIZED.__doc__ = "Window is maximized."
+WINDOW_STATE.MINIMIZED.__doc__ = "Window is minimized."
+WINDOW_STATE.NORMAL.__doc__ = "Normal window state."
 
-agcls.AgTypeNameMap["AgEWindowState"] = AgEWindowState
+agcls.AgTypeNameMap["WINDOW_STATE"] = WINDOW_STATE
 
-class AgEArrangeStyle(IntEnum):
+class ARRANGE_STYLE(IntEnum):
     """Window layout styles."""
     # Child windows are cascaded within the main window.
-    eArrangeStyleCascade = 1
+    CASCADE = 1
     # Child windows are tiled horizontally within the main window.
-    eArrangeStyleTiledHorizontal = 2
+    TILED_HORIZONTAL = 2
     # Child windows are tiled vertically within the main window.
-    eArrangeStyleTiledVertical = 3
+    TILED_VERTICAL = 3
 
-AgEArrangeStyle.eArrangeStyleCascade.__doc__ = "Child windows are cascaded within the main window."
-AgEArrangeStyle.eArrangeStyleTiledHorizontal.__doc__ = "Child windows are tiled horizontally within the main window."
-AgEArrangeStyle.eArrangeStyleTiledVertical.__doc__ = "Child windows are tiled vertically within the main window."
+ARRANGE_STYLE.CASCADE.__doc__ = "Child windows are cascaded within the main window."
+ARRANGE_STYLE.TILED_HORIZONTAL.__doc__ = "Child windows are tiled horizontally within the main window."
+ARRANGE_STYLE.TILED_VERTICAL.__doc__ = "Child windows are tiled vertically within the main window."
 
-agcls.AgTypeNameMap["AgEArrangeStyle"] = AgEArrangeStyle
+agcls.AgTypeNameMap["ARRANGE_STYLE"] = ARRANGE_STYLE
 
-class AgEDockStyle(IntEnum):
+class DOCK_STYLE(IntEnum):
     """Window docking styles."""
     # Child window is integrated into the main window.
-    eDockStyleIntegrated = 1
+    INTEGRATED = 1
     # Child window is docked to the left side of the within the main window.
-    eDockStyleDockedLeft = 2
+    DOCKED_LEFT = 2
     # Child window is docked to the right side of the main window.
-    eDockStyleDockedRight = 3
+    DOCKED_RIGHT = 3
     # Child window is docked to the top of the main window.
-    eDockStyleDockedTop = 4
+    DOCKED_TOP = 4
     # Child window is docked to the bottom of the main window.
-    eDockStyleDockedBottom = 5
+    DOCKED_BOTTOM = 5
     # Child window is not docked or integrated.
-    eDockStyleFloating = 6
+    FLOATING = 6
 
-AgEDockStyle.eDockStyleIntegrated.__doc__ = "Child window is integrated into the main window."
-AgEDockStyle.eDockStyleDockedLeft.__doc__ = "Child window is docked to the left side of the within the main window."
-AgEDockStyle.eDockStyleDockedRight.__doc__ = "Child window is docked to the right side of the main window."
-AgEDockStyle.eDockStyleDockedTop.__doc__ = "Child window is docked to the top of the main window."
-AgEDockStyle.eDockStyleDockedBottom.__doc__ = "Child window is docked to the bottom of the main window."
-AgEDockStyle.eDockStyleFloating.__doc__ = "Child window is not docked or integrated."
+DOCK_STYLE.INTEGRATED.__doc__ = "Child window is integrated into the main window."
+DOCK_STYLE.DOCKED_LEFT.__doc__ = "Child window is docked to the left side of the within the main window."
+DOCK_STYLE.DOCKED_RIGHT.__doc__ = "Child window is docked to the right side of the main window."
+DOCK_STYLE.DOCKED_TOP.__doc__ = "Child window is docked to the top of the main window."
+DOCK_STYLE.DOCKED_BOTTOM.__doc__ = "Child window is docked to the bottom of the main window."
+DOCK_STYLE.FLOATING.__doc__ = "Child window is not docked or integrated."
 
-agcls.AgTypeNameMap["AgEDockStyle"] = AgEDockStyle
+agcls.AgTypeNameMap["DOCK_STYLE"] = DOCK_STYLE
 
-class AgEFloatState(IntEnum):
+class FLOAT_STATE(IntEnum):
     """Floating state."""
     # The UI element is floated.
-    eFloatStateFloated = 1
+    FLOATED = 1
     # The UI element is docked.
-    eFloatStateDocked = 2
+    DOCKED = 2
 
-AgEFloatState.eFloatStateFloated.__doc__ = "The UI element is floated."
-AgEFloatState.eFloatStateDocked.__doc__ = "The UI element is docked."
+FLOAT_STATE.FLOATED.__doc__ = "The UI element is floated."
+FLOAT_STATE.DOCKED.__doc__ = "The UI element is docked."
 
-agcls.AgTypeNameMap["AgEFloatState"] = AgEFloatState
+agcls.AgTypeNameMap["FLOAT_STATE"] = FLOAT_STATE
 
 
 class IUiToolbar(object):
@@ -181,15 +181,15 @@ class IUiToolbar(object):
             agcls.evaluate_hresult(self.__dict__["_set_visible"](arg_newVal.COM_val))
 
     @property
-    def float_state(self) -> "AgEFloatState":
+    def float_state(self) -> "FLOAT_STATE":
         """The float state."""
-        with agmarshall.AgEnum_arg(AgEFloatState) as arg_pVal:
+        with agmarshall.AgEnum_arg(FLOAT_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_float_state"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @float_state.setter
-    def float_state(self, newVal:"AgEFloatState") -> None:
-        with agmarshall.AgEnum_arg(AgEFloatState, newVal) as arg_newVal:
+    def float_state(self, newVal:"FLOAT_STATE") -> None:
+        with agmarshall.AgEnum_arg(FLOAT_STATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_float_state"](arg_newVal.COM_val))
 
 
@@ -397,15 +397,15 @@ class IUiWindow(object):
         agcls.evaluate_hresult(self.__dict__["_activate"]())
 
     @property
-    def window_state(self) -> "AgEWindowState":
+    def window_state(self) -> "WINDOW_STATE":
         """The window state."""
-        with agmarshall.AgEnum_arg(AgEWindowState) as arg_pVal:
+        with agmarshall.AgEnum_arg(WINDOW_STATE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_window_state"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @window_state.setter
-    def window_state(self, newVal:"AgEWindowState") -> None:
-        with agmarshall.AgEnum_arg(AgEWindowState, newVal) as arg_newVal:
+    def window_state(self, newVal:"WINDOW_STATE") -> None:
+        with agmarshall.AgEnum_arg(WINDOW_STATE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_window_state"](arg_newVal.COM_val))
 
     def close(self) -> None:
@@ -461,15 +461,15 @@ class IUiWindow(object):
             agcls.evaluate_hresult(self.__dict__["_set_top"](arg_newVal.COM_val))
 
     @property
-    def dock_style(self) -> "AgEDockStyle":
+    def dock_style(self) -> "DOCK_STYLE":
         """The window docking style."""
-        with agmarshall.AgEnum_arg(AgEDockStyle) as arg_pVal:
+        with agmarshall.AgEnum_arg(DOCK_STYLE) as arg_pVal:
             agcls.evaluate_hresult(self.__dict__["_get_dock_style"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
     @dock_style.setter
-    def dock_style(self, newVal:"AgEDockStyle") -> None:
-        with agmarshall.AgEnum_arg(AgEDockStyle, newVal) as arg_newVal:
+    def dock_style(self, newVal:"DOCK_STYLE") -> None:
+        with agmarshall.AgEnum_arg(DOCK_STYLE, newVal) as arg_newVal:
             agcls.evaluate_hresult(self.__dict__["_set_dock_style"](arg_newVal.COM_val))
 
     @property
@@ -517,9 +517,9 @@ class IUiWindow(object):
             agcls.evaluate_hresult(self.__dict__["_get_service_by_name"](arg_name.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
 
-    def get_service_by_type(self, serviceType:"AgEWindowService") -> typing.Any:
+    def get_service_by_type(self, serviceType:"WINDOW_SERVICE") -> typing.Any:
         """Returns a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
-        with agmarshall.AgEnum_arg(AgEWindowService, serviceType) as arg_serviceType, \
+        with agmarshall.AgEnum_arg(WINDOW_SERVICE, serviceType) as arg_serviceType, \
              agmarshall.AgInterface_out_arg() as arg_ppRetVal:
             agcls.evaluate_hresult(self.__dict__["_get_service_by_type"](arg_serviceType.COM_val, byref(arg_ppRetVal.COM_val)))
             return arg_ppRetVal.python_val
@@ -599,9 +599,9 @@ class IUiWindowsCollection(object):
             agcls.evaluate_hresult(self.__dict__["_get_count"](byref(arg_pVal.COM_val)))
             return arg_pVal.python_val
 
-    def arrange(self, arrangeStyle:"AgEArrangeStyle") -> None:
+    def arrange(self, arrangeStyle:"ARRANGE_STYLE") -> None:
         """Arranges the application windows using the specified style."""
-        with agmarshall.AgEnum_arg(AgEArrangeStyle, arrangeStyle) as arg_arrangeStyle:
+        with agmarshall.AgEnum_arg(ARRANGE_STYLE, arrangeStyle) as arg_arrangeStyle:
             agcls.evaluate_hresult(self.__dict__["_arrange"](arg_arrangeStyle.COM_val))
 
     def add(self, pluginID:str, initData:typing.Any) -> "IUiWindow":
