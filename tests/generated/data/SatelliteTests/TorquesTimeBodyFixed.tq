@@ -1,0 +1,17 @@
+stk.v.5.0
+
+BEGIN Torques
+
+NumberOfTorques 5
+
+	ScenarioEpoch 1 Jul 1999 00:00:00.0
+
+TorquesTimeBodyFixed
+
+	0.000 1.005 -0.003 2.223
+	2.000 1.013 -0.021 2.132
+	4.000 1.024 -0.043 2.085
+	6.000 1.031 -0.065 1.869
+	8.000 1.074 -0.064 1.883
+
+END Torques
