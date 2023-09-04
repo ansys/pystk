@@ -63,7 +63,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Generate the name of the docker image and the container"
         run: |

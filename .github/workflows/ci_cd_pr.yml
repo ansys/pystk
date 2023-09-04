@@ -26,7 +26,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout@v3
+     - uses: actions/checkout@v4
 
      - name: "Update labels"
        uses: micnncim/action-label-syncer@v1
@@ -125,7 +125,7 @@ jobs:
       # the CI/CD session.
 
       - name: "Download latest API docs"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         if: steps.build-doc-full.outcome == 'skipped'
         with:
           ref: "gh-pages"
@@ -172,7 +172,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Generate the name of the docker image and the container"
         run: |
