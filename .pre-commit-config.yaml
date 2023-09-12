@@ -19,7 +19,8 @@ repos:
   rev: v2.2.1
   hooks:
   - id: codespell
-    args: ["--ignore-words", "doc/styles/Vocab/ANSYS/accept.txt"]
+    additional_dependencies:
+      - tomli
 
 - repo: https://github.com/pycqa/pydocstyle
   rev: 6.1.1

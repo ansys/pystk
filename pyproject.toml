@@ -63,6 +63,9 @@ line_length = 80
 default_section = "THIRDPARTY"
 src_paths = ["examples", "doc", "src", "tests"]
 
+[tool.codespell]
+ignore-words = "doc/styles/Vocab/ANSYS/accept.txt"
+
 [tool.coverage.run]
 relative_files = true
 
