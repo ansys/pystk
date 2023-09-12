@@ -55,6 +55,7 @@ Tracker = "https://github.com/pyansys/pystk/issues"
 
 [tool.black]
 line-length = 120
+extend-exclude = ["tests"]
 
 [tool.ruff]
 line-length = 120
@@ -72,7 +73,8 @@ ignore = [
     "D204"  # One blank line required after class docstring.
 ]
 extend-exclude = [
-    "src/ansys/stk/core/internal/*.py"
+    "src/ansys/stk/core/internal/*.py",
+    "tests/**/*.py",
 ]
 
 [tool.ruff.isort]
