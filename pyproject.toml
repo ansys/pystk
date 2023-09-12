@@ -70,14 +70,8 @@ ignore = [
     "D203",  # One blank line required before class docstring.
     "D204"  # One blank line required after class docstring.
 ]
-exclude = [
-    ".git",
-    ".tox",
-    ".venv",
-    "_build",
-    "build",
-    "dist",
-    "venv",
+extend-exclude = [
+    "src/ansys/stk/core/internal/*.py"
 ]
 
 [tool.ruff.isort]
