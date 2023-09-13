@@ -1885,8 +1885,6 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    @category("VO Tests")
-    @category("VO/Vector (3D)")
     @parameterized.expand(
         [
             ("Satellite/Satellite1 Bogus Vector", GEOMETRIC_ELEM_TYPE.VECTOR_ELEM),
@@ -1911,6 +1909,8 @@ class EarlyBoundTests(TestBase):
             ("Satellite/Bogus", GEOMETRIC_ELEM_TYPE.ANGLE_ELEM),
         ]
     )
+    @category("VO Tests")
+    @category("VO/Vector (3D)")
     def test_VOVectorsInvalidChoiceException(self, invalidElementName: str, elementType: "GEOMETRIC_ELEM_TYPE"):
         def code2():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
@@ -1919,8 +1919,6 @@ class EarlyBoundTests(TestBase):
         ex = ExceptionAssert.Throws(code2)
         StringAssert.Contains("not a valid choice", str(ex), "Exception message mismatch")
 
-    @category("VO Tests")
-    @category("VO/Vector (3D)")
     @parameterized.expand(
         [
             ("Satellite/Satellite1 Bogus Axes",),
@@ -1929,6 +1927,8 @@ class EarlyBoundTests(TestBase):
             ("Satellite/Bogus",),
         ]
     )
+    @category("VO Tests")
+    @category("VO/Vector (3D)")
     def test_VOVectorsInvalidVectorAxesException(self, invalidElementName: str):
         def code3():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
@@ -1949,8 +1949,6 @@ class EarlyBoundTests(TestBase):
         ex = ExceptionAssert.Throws(code3)
         StringAssert.Contains("not a valid choice", str(ex), "Exception message mismatch")
 
-    @category("VO Tests")
-    @category("VO/Vector (3D)")
     @parameterized.expand(
         [
             ("Satellite/Satellite1 Bogus Point",),
@@ -1959,6 +1957,8 @@ class EarlyBoundTests(TestBase):
             ("Satellite/Bogus",),
         ]
     )
+    @category("VO Tests")
+    @category("VO/Vector (3D)")
     def test_VOVectorsInvalidVectorPointException(self, invalidElementName: str):
         def code4():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
@@ -1980,8 +1980,6 @@ class EarlyBoundTests(TestBase):
         ex = ExceptionAssert.Throws(code4)
         StringAssert.Contains("not a valid choice", str(ex), "Exception message mismatch")
 
-    @category("VO Tests")
-    @category("VO/Vector (3D)")
     @parameterized.expand(
         [
             ("Satellite/Satellite1 Bogus Axes",),
@@ -1990,6 +1988,8 @@ class EarlyBoundTests(TestBase):
             ("Satellite/Bogus",),
         ]
     )
+    @category("VO Tests")
+    @category("VO/Vector (3D)")
     def test_VOVectorsInvalidAxesAxesException(self, invalidElementName: str):
         def code5():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
@@ -2010,8 +2010,6 @@ class EarlyBoundTests(TestBase):
         ex = ExceptionAssert.Throws(code5)
         StringAssert.Contains("not a valid choice", str(ex), "Exception message mismatch")
 
-    @category("VO Tests")
-    @category("VO/Vector (3D)")
     @parameterized.expand(
         [
             ("Satellite/Satellite1 Bogus System",),
@@ -2020,6 +2018,8 @@ class EarlyBoundTests(TestBase):
             ("Satellite/Bogus",),
         ]
     )
+    @category("VO Tests")
+    @category("VO/Vector (3D)")
     def test_VOVectorsInvalidPointSystemException(self, invalidElementName: str):
         def code6():
             sat: "ISatellite" = clr.CastAs(EarlyBoundTests.AG_SAT, ISatellite)
